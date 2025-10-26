@@ -1,0 +1,177 @@
+﻿using BPSR_DeepsLib;
+using Hexa.NET.ImGui;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BPSR_ZDPS.Windows
+{
+    public static class SettingsWindow
+    {
+        public static string TITLE_ID = "###SettingsWindow";
+
+        static int PreviousSelectedNetworkDeviceIdx = -1;
+        static int SelectedNetworkDeviceIdx = -1;
+        static bool normalizeMeterContributions;
+        static bool useShortWidthNumberFormatting;
+
+        static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
+
+        public static void Open()
+        {
+            ImGuiP.PushOverrideID(ImGuiP.ImHashStr("SettingsStack"));
+            ImGui.OpenPopup(TITLE_ID);
+
+            NetworkDevices = SharpPcap.LibPcap.LibPcapLiveDeviceList.Instance;
+
+            // Set selection to matching device name (the index could have changed since last time we were here)
+            if (!string.IsNullOrEmpty(MessageManager.NetCaptureDeviceName))
+            {
+                for (int i = 0; i < NetworkDevices.Count; i++)
+                {
+                    if (NetworkDevices[i].Name == MessageManager.NetCaptureDeviceName)
+                    {
+                        SelectedNetworkDeviceIdx = i;
+                        if (PreviousSelectedNetworkDeviceIdx == -1)
+                        {
+                            // This is the first time we're opening the menu, so let's set the default previous value as well
+                            // Doing so prevents the capture from being restarted on first save
+                            PreviousSelectedNetworkDeviceIdx = i;
+                        }
+                    }
+                }
+            }
+
+            // Default to first device in list as fallback, if there are any
+            if (SelectedNetworkDeviceIdx == -1 && NetworkDevices?.Count > 0)
+            {
+                SelectedNetworkDeviceIdx = 0;
+            }
+
+            ImGui.PopID();
+        }
+
+        public static void Draw(MainWindow mainWindow)
+        {
+            var io = ImGui.GetIO();
+            var main_viewport = ImGui.GetMainViewport();
+
+            //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
+            ImGui.SetNextWindowSize(new Vector2(500, 600), ImGuiCond.FirstUseEver);
+
+            ImGuiP.PushOverrideID(ImGuiP.ImHashStr("SettingsStack"));
+
+            if (ImGui.BeginPopupModal($"Settings{TITLE_ID}"))
+            {
+                ImGui.SeparatorText("Network Device");
+                ImGui.Text("Select the network device to read from:");
+
+                ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X);
+
+                string network_device_preview = "";
+                if (SelectedNetworkDeviceIdx > -1 && NetworkDevices?.Count > 0)
+                {
+                    network_device_preview = NetworkDevices[SelectedNetworkDeviceIdx].Description;
+                }
+
+                if (ImGui.BeginCombo("##NetworkDeviceCombo", network_device_preview))
+                {
+                    for (int i = 0; i < NetworkDevices?.Count; i++)
+                    {
+                        bool isSelected = (SelectedNetworkDeviceIdx == i);
+                        var device = NetworkDevices[i];
+
+                        string friendlyName = "";
+                        if (!string.IsNullOrEmpty(device.Interface?.FriendlyName))
+                        {
+                            friendlyName = $"{device.Interface?.FriendlyName}\n";
+                        }
+
+                        if (ImGui.Selectable($"{friendlyName}{device.Description}\n{device.Name}", isSelected))
+                        {
+                            SelectedNetworkDeviceIdx = i;
+                        }
+
+                        if (isSelected)
+                        {
+                            ImGui.SetItemDefaultFocus();
+                        }
+                    }
+
+                    if (NetworkDevices == null || NetworkDevices?.Count == 0)
+                    {
+                        ImGui.Selectable("<No Network Devices Found>");
+                    }
+
+                    ImGui.EndCombo();
+                }
+
+                ImGui.SeparatorText("Keybinds");
+
+                ImGui.SeparatorText("Combat");
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Normalize Meter Contribution Bars: ");
+                ImGui.SameLine();
+                ImGui.Checkbox("##NormalizeMeterContributions", ref normalizeMeterContributions);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("When enabled, the bars for each player in a meter will be based on the top player, not the overall contribution.");
+                ImGui.TextWrapped("This means the top player is always considered the '100%%' amount.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Use Short Width Number Formatting: ");
+                ImGui.SameLine();
+                ImGui.Checkbox("##UseShortWidthNumberFormatting", ref useShortWidthNumberFormatting);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("When enabled, uses shorter width number formats when values over 1000 would otherwise be shown.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
+                ImGui.NewLine();
+                if (ImGui.Button("Save"))
+                {
+                    if (SelectedNetworkDeviceIdx != PreviousSelectedNetworkDeviceIdx)
+                    {
+                        PreviousSelectedNetworkDeviceIdx = SelectedNetworkDeviceIdx;
+
+                        MessageManager.StopCapturing();
+
+                        MessageManager.NetCaptureDeviceName = NetworkDevices[SelectedNetworkDeviceIdx].Name;
+
+                        MessageManager.InitializeCapturing();
+                    }
+
+                    AppState.NormalizeMeterContributions = normalizeMeterContributions;
+
+                    AppState.UseShortWidthNumberFormatting = useShortWidthNumberFormatting;
+
+                    ImGui.CloseCurrentPopup();
+                }
+
+                ImGui.SameLine();
+                if (ImGui.Button("Close"))
+                {
+                    SelectedNetworkDeviceIdx = PreviousSelectedNetworkDeviceIdx;
+
+                    normalizeMeterContributions = AppState.NormalizeMeterContributions;
+
+                    useShortWidthNumberFormatting = AppState.UseShortWidthNumberFormatting;
+
+                    ImGui.CloseCurrentPopup();
+                }
+
+                ImGui.EndPopup();
+            }
+
+            ImGui.PopID();
+        }
+    }
+}

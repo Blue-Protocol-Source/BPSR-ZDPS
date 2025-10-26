@@ -1,0 +1,132 @@
+{
+    "Profession_Unknown":
+    {
+        "en": "Unknown",
+        "zh": "未知"
+    },
+    "Profession_ShieldKnight":
+    {
+        "en": "Shield Knight",
+        "zh": "神盾骑士"
+    },
+    "Profession_FrostMage":
+    {
+        "en": "Frost Mage",
+        "zh": "冰魔导师"
+    },
+    "Profession_HeavyGuardian":
+    {
+        "en": "Heavy Guardian",
+        "zh": "巨刃守护者"
+    },
+    "Profession_Marksman":
+    {
+        "en": "Marksman",
+        "zh": "神射手"
+    },
+    "Profession_BeatPerformer":
+    {
+        "en": "Beat Performer",
+        "zh": "灵魂乐手"
+    },
+    "Profession_Stormblade":
+    {
+        "en": "Stormblade",
+        "zh": "雷影剑士"
+    },
+    "Profession_VerdantOracle":
+    {
+        "en": "Verdant Oracle",
+        "zh": "森语者"
+    },
+    "Profession_WindKnight":
+    {
+        "en": "Wind Knight",
+        "zh": "青岚骑士"
+    },
+    "SubProfession_Unknown":
+    {
+        "en": "Unknown",
+        "zh": "未知"
+    },
+    "SubProfession_Skyward":
+    {
+        "en": "Skyward",
+        "zh": "空枪"
+    },
+    "SubProfession_Block":
+    {
+        "en": "Block",
+        "zh": "格挡"
+    },
+    "SubProfession_Concerto":
+    {
+        "en": "Concerto",
+        "zh": "协奏"
+    },
+    "SubProfession_Falconry":
+    {
+        "en": "Falconry",
+        "zh": "鹰弓"
+    },
+    "SubProfession_Iaido":
+    {
+        "en": "Iaido",
+        "zh": "居合"
+    },
+    "SubProfession_Frostbeam":
+    {
+        "en": "Frostbeam",
+        "zh": "射线"
+    },
+    "SubProfession_Icicle":
+    {
+        "en": "Icicle",
+        "zh": "冰矛"
+    },
+    "SubProfession_Lifebind":
+    {
+        "en": "Lifebind",
+        "zh": "愈合"
+    },
+    "SubProfession_Shield":
+    {
+        "en": "Shield",
+        "zh": "光盾"
+    },
+    "SubProfession_Moonstrike":
+    {
+        "en": "Moonstrike",
+        "zh": "月刃"
+    },
+    "SubProfession_Vanguard":
+    {
+        "en": "Vanguard",
+        "zh": "重装"
+    },
+    "SubProfession_Recovery":
+    {
+        "en": "Recovery",
+        "zh": "防盾"
+    },
+    "SubProfession_Dissonance":
+    {
+        "en": "Dissonance",
+        "zh": "狂音"
+    },
+    "SubProfession_Earthfort":
+    {
+        "en": "Earthfort",
+        "zh": "岩盾"
+    },
+    "SubProfession_Smite":
+    {
+        "en": "Smite",
+        "zh": "惩戒"
+    },
+    "SubProfession_Wildpack":
+    {
+        "en": "Wildpack",
+        "zh": "狼弓"
+    }
+}
