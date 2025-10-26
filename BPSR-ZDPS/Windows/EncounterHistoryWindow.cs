@@ -1,0 +1,261 @@
+﻿using Hexa.NET.ImGui;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BPSR_ZDPS.Windows
+{
+    public static class EncounterHistoryWindow
+    {
+        public const string LAYER = "EncounterHistoryWindowLayer";
+
+        public static bool IsOpened = false;
+
+        public static int SelectedEncounterIndex = -1;
+        public static int SelectedOrderByOption = 0;
+
+        public static void Open()
+        {
+            ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
+            ImGui.OpenPopup("###EncounterHistoryWindow");
+            IsOpened = true;
+            ImGui.PopID();
+        }
+
+        public static void Draw(MainWindow mainWindow)
+        {
+            if (!IsOpened)
+            {
+                return;
+            }
+
+            ImGui.SetNextWindowSize(new Vector2(500, 600), ImGuiCond.FirstUseEver);
+
+            ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
+
+            if (ImGui.Begin("Encounter History###EncounterHistoryWindow", ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
+            {
+                // TODO: Support reading history from an encounter cache file as well
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text($"Encounters: {EncounterManager.Encounters.Count - 1}");
+
+                string[] OrderByOptions = { "Order By Damage", "Order By Healing", "Order By Taken" };
+                ImGui.SameLine();
+                ImGui.SetNextItemWidth(ImGui.CalcTextSize($"{OrderByOptions[SelectedOrderByOption]}").X + 32); // Extra spaces to ensure full text is visible
+                ImGui.Combo("##OrderByCombo", ref SelectedOrderByOption, OrderByOptions, OrderByOptions.Length);
+
+                string selectedPreviewText = "";
+                if (EncounterManager.Encounters.Count < SelectedEncounterIndex)
+                {
+                    SelectedEncounterIndex = -1;
+                }
+                else if (SelectedEncounterIndex != -1)
+                {
+                    string encounterStartTime = EncounterManager.Encounters[SelectedEncounterIndex].StartTime.ToString("yyyy-MM-dd HH-mm-ss");
+                    string encounterEndTime = EncounterManager.Encounters[SelectedEncounterIndex].EndTime.ToString("yyyy-MM-dd HH-mm-ss");
+                    string encounterDuration = EncounterManager.Encounters[SelectedEncounterIndex].GetDuration().ToString("hh\\:mm\\:ss");
+                    selectedPreviewText = $"[{SelectedEncounterIndex}] {encounterStartTime} - {encounterEndTime} ({encounterDuration})";
+                }
+                else
+                {
+                    selectedPreviewText = "Select an encounter...";
+                }
+
+                ImGui.SameLine();
+                ImGui.SetNextItemWidth(-1);
+                if (ImGui.BeginCombo("##EncounterHistoryCombo", selectedPreviewText, ImGuiComboFlags.None))
+                {
+                    for (int i = 0; i < EncounterManager.Encounters.Count - 1; i++)
+                    {
+                        bool isSelected = SelectedEncounterIndex == i;
+                        string encounterStartTime = EncounterManager.Encounters[i].StartTime.ToString("yyyy-MM-dd HH:mm:ss");
+                        string encounterEndTime = EncounterManager.Encounters[i].EndTime.ToString("yyyy-MM-dd HH:mm:ss");
+                        string encounterDuration = EncounterManager.Encounters[i].GetDuration().ToString("hh\\:mm\\:ss");
+                        if (ImGui.Selectable($"[{i + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration})##EncounterHistoryItem_{i}", isSelected))
+                        {
+                            // TODO: Load up the historical encounter
+                            SelectedEncounterIndex = i;
+                        }
+
+                        if (isSelected)
+                        {
+                            ImGui.SetItemDefaultFocus();
+                        }
+                    }
+
+                    ImGui.EndCombo();
+                }
+
+                // Display Encounter Stats
+                if (SelectedEncounterIndex != -1)
+                {
+                    ImGuiTableFlags tableFlags = ImGuiTableFlags.ScrollX;
+                    int columnsCount = 21;
+                    if (ImGui.BeginTable("##HistoricalEncounterStatsTable", columnsCount, tableFlags, new Vector2(-1, -1)))
+                    {
+                        ImGui.TableSetupColumn("#");
+                        ImGui.TableSetupColumn("UID");
+                        ImGui.TableSetupColumn("Name");
+                        ImGui.TableSetupColumn("Profession");
+                        ImGui.TableSetupColumn("Ability Score");
+                        ImGui.TableSetupColumn("Total Damage");
+                        ImGui.TableSetupColumn("Total DPS");
+                        ImGui.TableSetupColumn("Crit Rate");
+                        ImGui.TableSetupColumn("Lucky Rate");
+                        ImGui.TableSetupColumn("Crit Damage");
+                        ImGui.TableSetupColumn("Lucky Damage");
+                        ImGui.TableSetupColumn("Crit Lucky Damage");
+                        ImGui.TableSetupColumn("Max Instant DPS");
+                        ImGui.TableSetupColumn("Total Healing Done");
+                        ImGui.TableSetupColumn("Total HPS");
+                        ImGui.TableSetupColumn("Crit Healing Done");
+                        ImGui.TableSetupColumn("Lucky Healing Done");
+                        ImGui.TableSetupColumn("Crit Lucky Healing Done");
+                        ImGui.TableSetupColumn("Max Instant HPS");
+                        ImGui.TableSetupColumn("Damage Taken");
+                        ImGui.TableSetupColumn("Damage Share");
+                        ImGui.TableHeadersRow();
+
+                        var entitiesFiltered = EncounterManager.Encounters[SelectedEncounterIndex].Entities.Where(x => x.EntityType == Zproto.EEntityType.EntChar || x.EntityType == Zproto.EEntityType.EntMonster);
+                        List<Entity> entities;
+                        switch (SelectedOrderByOption)
+                        {
+                            case 0:
+                                entities = entitiesFiltered.OrderByDescending(x => x.TotalDamage).ToList();
+                                break;
+                            case 1:
+                                entities = entitiesFiltered.OrderByDescending(x => x.TotalHealing).ToList();
+                                break;
+                            case 2:
+                                entities = entitiesFiltered.OrderByDescending(x => x.TotalTakenDamage).ToList();
+                                break;
+                            default:
+                                entities = entitiesFiltered.OrderByDescending(x => x.TotalDamage).ToList();
+                                break;
+                        }
+
+                        // Adds vertical padding in each row
+                        ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(ImGui.GetStyle().CellPadding.X, ImGui.GetStyle().CellPadding.Y + 2));
+
+                        for (int entIdx = 0; entIdx < entities.Count; entIdx++)
+                        {
+                            ImGui.TableNextRow();
+                            ImGui.TableNextColumn();
+
+                            var entity = entities[entIdx];
+
+                            string profession = entity.SubProfession ?? entity.Profession ?? "";
+                            if (!string.IsNullOrEmpty(profession))
+                            {
+                                var color = HelperMethods.ProfessionColors(profession);
+                                color = color - new Vector4(0, 0, 0, 0.50f); // Make the color extremely muted since we're going to have a lot of them
+
+                                ImGui.PushStyleColor(ImGuiCol.Header, color);
+                                //ImGui.PushStyleColor(ImGuiCol.TableRowBg, HelperMethods.ProfessionColors(profession));
+                                //ImGui.TableSetBgColor(ImGuiTableBgTarget.RowBg0, ImGui.ColorConvertFloat4ToU32(color));
+                            }
+
+                            if (ImGui.Selectable($"{entIdx + 1}##EntHistSelect_{entIdx}", true, ImGuiSelectableFlags.SpanAllColumns))
+                            {
+                                mainWindow.entityInspector.LoadEntity(entity);
+                            }
+
+                            if (!string.IsNullOrEmpty(profession))
+                            {
+                                ImGui.PopStyleColor();
+                            }
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(entity.UID.ToString());
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(entity.Name ?? $"[{entity.UID}]");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(profession);
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(entity.AbilityScore.ToString());
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(HelperMethods.NumberToShorthand(entity.TotalDamage));
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(HelperMethods.NumberToShorthand(entity.DamageStats.ValuePerSecond));
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text($"{entity.DamageStats.CritRate}%%");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text($"{entity.DamageStats.LuckyRate}%%");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.DamageStats.ValueCritTotal)}");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.DamageStats.ValueLuckyTotal)}");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.DamageStats.ValueCritLuckyTotal)}");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.DamageStats.ValueMax)}");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(HelperMethods.NumberToShorthand(entity.TotalHealing));
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(HelperMethods.NumberToShorthand(entity.HealingStats.ValuePerSecond));
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.HealingStats.ValueCritTotal)}");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.HealingStats.ValueLuckyTotal)}");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.HealingStats.ValueCritLuckyTotal)}");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.HealingStats.ValueMax)}");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(HelperMethods.NumberToShorthand(entity.TotalTakenDamage));
+
+                            ImGui.TableNextColumn();
+                            double totalTaken = 0;
+                            if (entity.TotalTakenDamage > 0)
+                            {
+                                if (entity.EntityType == Zproto.EEntityType.EntChar)
+                                {
+                                    totalTaken = Math.Round(((double)entity.TotalTakenDamage / (double)EncounterManager.Encounters[SelectedEncounterIndex].TotalTakenDamage) * 100, 0);
+                                }
+                                else if (entity.EntityType == Zproto.EEntityType.EntMonster)
+                                {
+                                    totalTaken = Math.Round(((double)entity.TotalTakenDamage / (double)EncounterManager.Encounters[SelectedEncounterIndex].TotalNpcTakenDamage) * 100, 0);
+                                }
+                            }
+                            ImGui.Text(HelperMethods.NumberToShorthand(totalTaken));
+
+                            if (!string.IsNullOrEmpty(profession))
+                            {
+                                //ImGui.PopStyleColor();
+                            }
+                        }
+
+                        ImGui.PopStyleVar();
+
+                        ImGui.EndTable();
+                    }
+                }
+
+                ImGui.End();
+            }
+
+            ImGui.PopID();
+        }
+    }
+}
