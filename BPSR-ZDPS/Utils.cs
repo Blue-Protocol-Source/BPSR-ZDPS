@@ -1,4 +1,5 @@
-﻿using Silk.NET.Direct3D11;
+﻿using BPSR_ZDPS.DataTypes;
+using Silk.NET.Direct3D11;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,9 @@ namespace BPSR_ZDPS
 {
     public static unsafe class Utils
     {
+        // Note: This value MUST MATCH the "Data" folder name for the project resources that AppStrings.json and other files are in
+        // Those files are copied to the output directory at build time with a matching path so if this mismatches then the app will not see them
+        public const string DATA_DIR_NAME = "Data";
         public static readonly Guid D3DDebugObjectName = new(0x429b8c22, 0x9188, 0x4b0c, 0x87, 0x42, 0xac, 0xb0, 0xbf, 0x85, 0xc2, 0x00);
 
         internal static string? GetDebugName(void* target)
@@ -95,7 +99,7 @@ namespace BPSR_ZDPS
             int place = Convert.ToInt32(Math.Floor(Math.Log(absoluteValue, 1000)));
             double shortNumber = Math.Round(absoluteValue / Math.Pow(1000, place), 2);
 
-            if (AppState.UseShortWidthNumberFormatting)
+            if (Settings.Instance.UseShortWidthNumberFormatting)
             {
                 return place == 0 ? ((long)value).ToString() : shortNumber.ToString($"N2") + suf[place];
             }

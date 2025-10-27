@@ -369,7 +369,7 @@ namespace BPSR_ZDPS.Windows
                             {
                                 displayName = stat.Value.Name;
                             }
-                            if (AppState.ShowSkillIconsInDetails)
+                            if (Settings.Instance.ShowSkillIconsInDetails)
                             {
                                 if (HelperMethods.DataTables.Skills.Data.TryGetValue(skillId.ToString(), out var skill))
                                 {

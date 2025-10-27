@@ -15,7 +15,7 @@ namespace BPSR_ZDPS
         public static EntityCache Instance = new();
 
         public EntityCacheFile Cache = new();
-        public string FilePath = Path.Combine("Data", "EntityCache.json");
+        public string FilePath = Path.Combine(Utils.DATA_DIR_NAME, "EntityCache.json");
         public TimeSpan BufferDelay = TimeSpan.FromSeconds(5);
         private Task? SaveTask;
         private readonly System.Threading.Lock syncLock = new();

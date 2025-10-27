@@ -20,16 +20,11 @@ namespace BPSR_ZDPS
         public static int PlayerMeterPlacement { get; set; } // Current position on the active meter, 0 means not on it
 
         public static long PlayerTotalMeterValue { get; set; }
-        public static bool NormalizeMeterContributions { get; set; }
-        public static bool UseShortWidthNumberFormatting { get; set; }
-        public static bool ColorClassIconsByRole { get; set; }
-        public static bool ShowSkillIconsInDetails { get; set; }
-
 
         public static void LoadDataTables()
         {
             // Load table data for resolving with in the future
-            string appStringsFile = Path.Combine("Data", "AppStrings.json");
+            string appStringsFile = Path.Combine(Utils.DATA_DIR_NAME, "AppStrings.json");
             if (File.Exists(appStringsFile))
             {
                 var appStrings = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(File.ReadAllText(appStringsFile));
@@ -37,7 +32,7 @@ namespace BPSR_ZDPS
                 System.Diagnostics.Debug.WriteLine("Loaded AppStrings.json");
             }
 
-            string monsterTableFile = Path.Combine("Data", "MonsterTable.json");
+            string monsterTableFile = Path.Combine(Utils.DATA_DIR_NAME, "MonsterTable.json");
             if (File.Exists(monsterTableFile))
             {
                 var monsters = JsonConvert.DeserializeObject<Dictionary<string, Monster>>(File.ReadAllText(monsterTableFile));
@@ -45,7 +40,7 @@ namespace BPSR_ZDPS
                 System.Diagnostics.Debug.WriteLine("Loaded MonsterTable.json");
             }
 
-            string skillTableFile = Path.Combine("Data", "SkillTable.json");
+            string skillTableFile = Path.Combine(Utils.DATA_DIR_NAME, "SkillTable.json");
             if (File.Exists(skillTableFile))
             {
                 var skills = JsonConvert.DeserializeObject<Dictionary<string, Skill>>(File.ReadAllText(skillTableFile));
@@ -54,7 +49,7 @@ namespace BPSR_ZDPS
             }
 
             // TODO: Every language can have its own 'Overrides' file
-            string skillOverrivesFile = Path.Combine("Data", "SkillOverrides.en.json");
+            string skillOverrivesFile = Path.Combine(Utils.DATA_DIR_NAME, "SkillOverrides.en.json");
             if (File.Exists(skillOverrivesFile))
             {
                 var overrides = JsonConvert.DeserializeObject<Dictionary<string, Skill>>(File.ReadAllText(skillOverrivesFile));

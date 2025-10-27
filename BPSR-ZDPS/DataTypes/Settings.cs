@@ -4,30 +4,31 @@ namespace BPSR_ZDPS.DataTypes;
 
 public class Settings
 {
-    public static Settings Inst = new();
+    public static Settings Instance = new();
     private static string SETTINGS_FILE_NAME = "Settings.json";
-    
-    public string NetCaptureDeviceName          { get; set; }
-    public bool   NormalizeMeterContributions   { get; set; } = true;
-    public bool   UseShortWidthNumberFormatting { get; set; } = true;
-    public bool   ColorClassIconsByRole         { get; set; } = true;
-    public bool   ShowSkillIconsInDetails       { get; set; } = true;
+
+    public string NetCaptureDeviceName { get; set; }
+    public bool NormalizeMeterContributions { get; set; } = true;
+    public bool UseShortWidthNumberFormatting { get; set; } = true;
+    public bool ColorClassIconsByRole { get; set; } = true;
+    public bool ShowSkillIconsInDetails { get; set; } = true;
 
     public static void Load()
     {
-        if (File.Exists(SETTINGS_FILE_NAME))
+        if (File.Exists(Path.Combine(Utils.DATA_DIR_NAME, SETTINGS_FILE_NAME)))
         {
-            var settingsTxt = File.ReadAllText(SETTINGS_FILE_NAME);
-            Inst = JsonConvert.DeserializeObject<Settings>(settingsTxt);
+            var settingsTxt = File.ReadAllText(Path.Combine(Utils.DATA_DIR_NAME, SETTINGS_FILE_NAME));
+            Instance = JsonConvert.DeserializeObject<Settings>(settingsTxt);
         }
-        else {
+        else
+        {
             Save();
         }
     }
-    
+
     public static void Save()
     {
-        var settingsJson = JsonConvert.SerializeObject(Inst, Formatting.Indented);
-        File.WriteAllText(SETTINGS_FILE_NAME, settingsJson);
+        var settingsJson = JsonConvert.SerializeObject(Instance, Formatting.Indented);
+        File.WriteAllText(Path.Combine(Utils.DATA_DIR_NAME, SETTINGS_FILE_NAME), settingsJson);
     }
 }

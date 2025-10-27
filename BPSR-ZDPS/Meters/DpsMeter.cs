@@ -57,7 +57,7 @@ namespace BPSR_ZDPS.Meters
             {
                 var roleColor = Professions.RoleTypeColors(Professions.GetRoleFromBaseProfessionId(profession));
 
-                if (AppState.ColorClassIconsByRole)
+                if (Settings.Instance.ColorClassIconsByRole)
                 {
                     ImGui.ImageWithBg((ImTextureRef)tex, new Vector2(texSize, texSize), new Vector2(0, 0), new Vector2(1, 1), new Vector4(0, 0, 0, 0), roleColor);
                 }
@@ -91,7 +91,7 @@ namespace BPSR_ZDPS.Meters
                 {
                     var entity = playerList.ElementAt(i);
 
-                    if (i == 0 && AppState.NormalizeMeterContributions)
+                    if (i == 0 && Settings.Instance.NormalizeMeterContributions)
                     {
                         topTotalValue = entity.TotalDamage;
                     }
@@ -127,7 +127,7 @@ namespace BPSR_ZDPS.Meters
                     {
                         contribution = Math.Round(((double)entity.TotalDamage / (double)EncounterManager.Current.TotalDamage) * 100, 0);
 
-                        if (AppState.NormalizeMeterContributions)
+                        if (Settings.Instance.NormalizeMeterContributions)
                         {
                             contributionProgressBar = Math.Round(((double)entity.TotalDamage / (double)topTotalValue) * 100, 0);
                         }

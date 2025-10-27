@@ -13,12 +13,29 @@ public static unsafe class ImageHelper
     public static Dictionary<string, ImTextureRef> KeyedImages = [];
     private static Dictionary<ulong, ulong> Textures = [];
 
+    private static D3D11Manager? _manager = null;
+
+    public static void SetDeviceManager(D3D11Manager manager)
+    {
+        _manager = manager;
+    }
+
+    public static ImTextureRef? LoadTexture(string filePath, string? key = null)
+    {
+        return LoadTexture(_manager.Device, _manager.DeviceContext, filePath, key);
+    }
+
     public static ImTextureRef? LoadTexture(ID3D11Device1* device, ID3D11DeviceContext1* context, string filePath, string? key = null)
     {
         if (LoadedImages.TryGetValue(filePath, out var cachedRef))
             return cachedRef;
 
         if (!File.Exists(filePath))
+        {
+            return null;
+        }
+
+        if (device == null)
         {
             return null;
         }

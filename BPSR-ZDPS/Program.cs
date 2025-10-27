@@ -136,7 +136,8 @@ namespace BPSR_ZDPS
                 }
             }
 
-            ImageArchive.LoadBaseImages(manager);
+            ImageHelper.SetDeviceManager(manager);
+            ImageArchive.LoadBaseImages();
 
             // Main loop
             while (GLFW.WindowShouldClose(window) == 0)

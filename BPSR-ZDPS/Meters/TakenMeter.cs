@@ -1,4 +1,5 @@
-﻿using BPSR_ZDPS.Windows;
+﻿using BPSR_ZDPS.DataTypes;
+using BPSR_ZDPS.Windows;
 using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ namespace BPSR_ZDPS.Meters
                 {
                     var entity = playerList.ElementAt(i);
 
-                    if (i == 0 && AppState.NormalizeMeterContributions)
+                    if (i == 0 && Settings.Instance.NormalizeMeterContributions)
                     {
                         topTotalValue = entity.TotalTakenDamage;
                     }
@@ -56,7 +57,7 @@ namespace BPSR_ZDPS.Meters
                     {
                         contribution = Math.Round(((double)entity.TotalTakenDamage / (double)EncounterManager.Current.TotalNpcTakenDamage) * 100, 0);
 
-                        if (AppState.NormalizeMeterContributions)
+                        if (Settings.Instance.NormalizeMeterContributions)
                         {
                             contributionProgressBar = Math.Round(((double)entity.TotalTakenDamage / (double)topTotalValue) * 100, 0);
                         }

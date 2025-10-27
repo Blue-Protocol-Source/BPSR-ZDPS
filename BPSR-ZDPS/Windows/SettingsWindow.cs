@@ -1,4 +1,5 @@
 ﻿using BPSR_DeepsLib;
+using BPSR_ZDPS.DataTypes;
 using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
@@ -30,11 +31,11 @@ namespace BPSR_ZDPS.Windows
             NetworkDevices = SharpPcap.LibPcap.LibPcapLiveDeviceList.Instance;
 
             // Set selection to matching device name (the index could have changed since last time we were here)
-            if (!string.IsNullOrEmpty(MessageManager.NetCaptureDeviceName))
+            if (!string.IsNullOrEmpty(Settings.Instance.NetCaptureDeviceName))
             {
                 for (int i = 0; i < NetworkDevices.Count; i++)
                 {
-                    if (NetworkDevices[i].Name == MessageManager.NetCaptureDeviceName)
+                    if (NetworkDevices[i].Name == Settings.Instance.NetCaptureDeviceName)
                     {
                         SelectedNetworkDeviceIdx = i;
                         if (PreviousSelectedNetworkDeviceIdx == -1)
@@ -178,18 +179,19 @@ namespace BPSR_ZDPS.Windows
 
                         MessageManager.StopCapturing();
 
+                        Settings.Instance.NetCaptureDeviceName = NetworkDevices[SelectedNetworkDeviceIdx].Name;
                         MessageManager.NetCaptureDeviceName = NetworkDevices[SelectedNetworkDeviceIdx].Name;
 
                         MessageManager.InitializeCapturing();
                     }
 
-                    AppState.NormalizeMeterContributions = normalizeMeterContributions;
+                    Settings.Instance.NormalizeMeterContributions = normalizeMeterContributions;
 
-                    AppState.UseShortWidthNumberFormatting = useShortWidthNumberFormatting;
+                    Settings.Instance.UseShortWidthNumberFormatting = useShortWidthNumberFormatting;
 
-                    AppState.ColorClassIconsByRole = colorClassIconsByRole;
+                    Settings.Instance.ColorClassIconsByRole = colorClassIconsByRole;
 
-                    AppState.ShowSkillIconsInDetails = showSkillIconsInDetails;
+                    Settings.Instance.ShowSkillIconsInDetails = showSkillIconsInDetails;
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -200,13 +202,13 @@ namespace BPSR_ZDPS.Windows
                 {
                     SelectedNetworkDeviceIdx = PreviousSelectedNetworkDeviceIdx;
 
-                    normalizeMeterContributions = AppState.NormalizeMeterContributions;
+                    normalizeMeterContributions = Settings.Instance.NormalizeMeterContributions;
 
-                    useShortWidthNumberFormatting = AppState.UseShortWidthNumberFormatting;
+                    useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
 
-                    colorClassIconsByRole = AppState.ColorClassIconsByRole;
+                    colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
 
-                    showSkillIconsInDetails = AppState.ShowSkillIconsInDetails;
+                    showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
 
                     ImGui.CloseCurrentPopup();
                 }

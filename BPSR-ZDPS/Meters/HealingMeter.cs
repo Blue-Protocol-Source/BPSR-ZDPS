@@ -45,7 +45,7 @@ namespace BPSR_ZDPS.Meters
                 {
                     var entity = playerList.ElementAt(i);
 
-                    if (i == 0 && AppState.NormalizeMeterContributions)
+                    if (i == 0 && Settings.Instance.NormalizeMeterContributions)
                     {
                         topTotalValue = entity.TotalHealing;
                     }
@@ -81,7 +81,7 @@ namespace BPSR_ZDPS.Meters
                     {
                         contribution = Math.Round(((double)entity.TotalHealing / (double)EncounterManager.Current.TotalHealing) * 100, 0);
 
-                        if (AppState.NormalizeMeterContributions)
+                        if (Settings.Instance.NormalizeMeterContributions)
                         {
                             contributionProgressBar = Math.Round(((double)entity.TotalHealing / (double)topTotalValue) * 100, 0);
                         }
