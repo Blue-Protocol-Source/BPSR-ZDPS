@@ -804,16 +804,19 @@ namespace BPSR_ZDPS
                             case DungeonFlowInfo.SettlementTimeFieldNumber:
                                 {
                                     var settlement_time = br.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.SettlementTime == {settlement_time}");
                                     break;
                                 }
                             case DungeonFlowInfo.DungeonTimesFieldNumber:
                                 {
                                     var dungeon_times = br.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.DungeonTimes == {dungeon_times}");
                                     break;
                                 }
                             case DungeonFlowInfo.ResultFieldNumber:
                                 {
                                     var result = br.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.Result == {result}");
                                     break;
                                 }
                             default:
@@ -925,11 +928,12 @@ namespace BPSR_ZDPS
                         {
                             case DungeonScore.TotalScoreFieldNumber:
                                 var totalScore = br.ReadInt32();
-                                System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.vData.. TotalScore={totalScore}");
+                                System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonScore.TotalScore={totalScore}");
+                                // This appears to be called when a dungeon is complete enough to unlock boss access - a good time to end the current encounter
                                 break;
                             case DungeonScore.CurRatioFieldNumber:
                                 var curRatio = br.ReadInt32();
-                                System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.vData.. CurRatio={curRatio}");
+                                System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonScore.CurRatio={curRatio}");
                                 break;
                             default:
                                 break;
@@ -994,7 +998,7 @@ namespace BPSR_ZDPS
                     }
                 case DungeonSyncData.DungeonVarAllFieldNumber:
                     {
-
+                        var var = DungeonVarData.Parser.ParseFrom(br.ReadBytes((int)(br.BaseStream.Length - br.BaseStream.Position)));
                         break;
                     }
                 case DungeonSyncData.DungeonRaidInfoFieldNumber:

@@ -68,8 +68,8 @@ namespace BPSR_ZDPS.DataTypes
         public static SubProfessionId GetSubProfessionIdBySkillId(int skillId) => skillId switch
         {
             0 => SubProfessionId.SubProfession_Unknown,
-            1734 or 1739 or 179908 => SubProfessionId.SubProfession_Iaido, // 1714 = Core Skill: Iaido Slash, 179908 = spec skill?, 1724 = spec skill Thunder Cut?
-            179906 => SubProfessionId.SubProfession_Moonstrike, // 44701 = Core Skill: Moon Blade
+            1714 or 1734 or 1739 or 179908 => SubProfessionId.SubProfession_Iaido, // 1714 = Core Skill: Iaido Slash, 179908 = spec skill?, 1724 = spec skill Thunder Cut?
+            1715 or 1740 or 1741 or 179906 => SubProfessionId.SubProfession_Moonstrike, // 44701 = Core Skill: Moon Blade
             120901 or 120902 => SubProfessionId.SubProfession_Icicle,
             1241 => SubProfessionId.SubProfession_Frostbeam,
             1405 or 1418 => SubProfessionId.SubProfession_Vanguard,
@@ -90,8 +90,8 @@ namespace BPSR_ZDPS.DataTypes
         public static string GetSubProfessionNameBySkillId(int skillId) => skillId switch
         {
             0 => AppStrings.GetLocalized("SubProfession_Unknown"),
-            1714 or 1734 => AppStrings.GetLocalized("SubProfession_Iaido"),
-            44701 or 179906 => AppStrings.GetLocalized("SubProfession_Moonstrike"),
+            1714 or 1734 or 1739 or 179908 => AppStrings.GetLocalized("SubProfession_Iaido"),
+            1715 or 1740 or 1741 or 179906 => AppStrings.GetLocalized("SubProfession_Moonstrike"),
             120901 or 120902 => AppStrings.GetLocalized("SubProfession_Icicle"),
             1241 => AppStrings.GetLocalized("SubProfession_Frostbeam"),
             1405 or 1418 => AppStrings.GetLocalized("SubProfession_Vanguard"),

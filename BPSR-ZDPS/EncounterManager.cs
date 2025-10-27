@@ -147,6 +147,11 @@ namespace BPSR_ZDPS
             var attr_id = entity.GetAttrKV("AttrId");
             if (attr_id != null && etype == EEntityType.EntMonster)
             {
+                // Only players tend to come with a valid UID that's already unique to them
+                // The field that claims to normally be the UID for non-players is actually their non-unique ID
+                // Only the Attribute named Id (AttrId) is their real type UID which can be resolved into a name
+                // Also can be used to get all of their setup information from the Monsters table
+                entity.UID = (ulong)(int)attr_id;
                 if (HelperMethods.DataTables.Monsters.Data.ContainsKey(attr_id.ToString()))
                 {
                     entity.SetName(HelperMethods.DataTables.Monsters.Data[attr_id.ToString()].Name);
@@ -159,7 +164,7 @@ namespace BPSR_ZDPS
             var entity = GetOrCreateEntity(uid);
             entity.SetAttrKV(key, value);
 
-            if (key == "AttrId" && entity.EntityType == EEntityType.EntMonster)
+            if (key == "AttrId" && entity.EntityType == EEntityType.EntMonster && string.IsNullOrEmpty(entity.Name))
             {
                 if (HelperMethods.DataTables.Monsters.Data.ContainsKey(value.ToString()))
                 {
@@ -390,7 +395,7 @@ namespace BPSR_ZDPS
 
             //ActionStats.Add(new ActionStat(DateTime.Now, 0, (int)skillId));
 
-            if (string.IsNullOrEmpty(SubProfession))
+            //if (string.IsNullOrEmpty(SubProfession))
             {
                 var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
 
@@ -413,7 +418,7 @@ namespace BPSR_ZDPS
             RegisterSkillData(ESkillType.Healing, skillId, (long)healing, isCrit, isLucky, 0, isCauseLucky);
             //ActionStats.Add(new ActionStat(DateTime.Now, 1, (int)skillId));
 
-            if (string.IsNullOrEmpty(SubProfession))
+            //if (string.IsNullOrEmpty(SubProfession))
             {
                 var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
 

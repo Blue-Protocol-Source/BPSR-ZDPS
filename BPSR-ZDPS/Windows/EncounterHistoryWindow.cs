@@ -161,7 +161,9 @@ namespace BPSR_ZDPS.Windows
 
                             if (ImGui.Selectable($"{entIdx + 1}##EntHistSelect_{entIdx}", true, ImGuiSelectableFlags.SpanAllColumns))
                             {
+                                mainWindow.entityInspector = new();
                                 mainWindow.entityInspector.LoadEntity(entity);
+                                mainWindow.entityInspector.Open();
                             }
 
                             if (!string.IsNullOrEmpty(profession))
