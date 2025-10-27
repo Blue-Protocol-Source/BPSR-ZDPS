@@ -35,7 +35,7 @@ namespace BPSR_ZDPS.Meters
 
             ImGui.AlignTextToFramePadding();
 
-            int texSize = 22;
+            float texSize = ImGui.GetItemRectSize().Y; // Most likely is 22
             float offset = ImGui.CalcTextSize(number).X + (ImGui.GetStyle().ItemSpacing.X * 2) + (texSize + 2);
 
             ImGui.SetCursorPosX(offset);

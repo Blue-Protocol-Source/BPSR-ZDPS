@@ -7,11 +7,17 @@ public class Settings
     public static Settings Instance = new();
     private static string SETTINGS_FILE_NAME = "Settings.json";
 
+    public int Version { get; set; } = 0;
     public string NetCaptureDeviceName { get; set; }
     public bool NormalizeMeterContributions { get; set; } = true;
     public bool UseShortWidthNumberFormatting { get; set; } = true;
     public bool ColorClassIconsByRole { get; set; } = true;
     public bool ShowSkillIconsInDetails { get; set; } = true;
+
+    public void Apply()
+    {
+        MessageManager.NetCaptureDeviceName = NetCaptureDeviceName;
+    }
 
     public static void Load()
     {

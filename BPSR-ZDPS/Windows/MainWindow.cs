@@ -68,11 +68,16 @@ namespace BPSR_ZDPS.Windows
                 // This includes string files and caches
                 AppState.LoadDataTables();
 
-                // TODO: Save and load this from settings
-                var bestDefaultDevice = MessageManager.TryFindBestNetworkDevice();
-                if (bestDefaultDevice != null)
+                Settings.Instance.Apply();
+
+                if (string.IsNullOrEmpty(MessageManager.NetCaptureDeviceName))
                 {
-                    MessageManager.NetCaptureDeviceName = bestDefaultDevice.Name;
+                    var bestDefaultDevice = MessageManager.TryFindBestNetworkDevice();
+                    if (bestDefaultDevice != null)
+                    {
+                        MessageManager.NetCaptureDeviceName = bestDefaultDevice.Name;
+                        Settings.Instance.NetCaptureDeviceName = bestDefaultDevice.Name;
+                    }
                 }
 
                 if (MessageManager.NetCaptureDeviceName != "")

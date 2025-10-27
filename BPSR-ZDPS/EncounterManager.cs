@@ -142,7 +142,7 @@ namespace BPSR_ZDPS
         public void SetEntityType(long uid, EEntityType etype)
         {
             var entity = GetOrCreateEntity(uid);
-            entity.EntityType = etype;
+            entity.SetEntityType(etype);
 
             var attr_id = entity.GetAttrKV("AttrId");
             if (attr_id != null && etype == EEntityType.EntMonster)
@@ -225,7 +225,7 @@ namespace BPSR_ZDPS
     {
         public long UUID { get; set; }
         public long UID { get; set; }
-        public EEntityType EntityType { get; set; }
+        public EEntityType EntityType { get; private set; }
         public string Name { get; private set; }
         public int AbilityScore { get; private set; } = 0;
         public int ProfessionId { get; private set; } = 0;
@@ -291,6 +291,19 @@ namespace BPSR_ZDPS
             if (cached != null && !string.IsNullOrEmpty(name))
             {
                 cached.Name = name;
+            }
+        }
+
+        public void SetEntityType(EEntityType type)
+        {
+            EntityType = type;
+
+            if (type != EEntityType.EntChar)
+            {
+                // We only want a name brought in from the cache for players
+                // Monsters (and other types) should be set from fresh data every time
+                // If we don't do that, we run into many UID collisions unfortunately
+                SetName("");
             }
         }
 

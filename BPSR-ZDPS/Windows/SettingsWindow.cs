@@ -30,6 +30,11 @@ namespace BPSR_ZDPS.Windows
 
             NetworkDevices = SharpPcap.LibPcap.LibPcapLiveDeviceList.Instance;
 
+            normalizeMeterContributions = Settings.Instance.NormalizeMeterContributions;
+            useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
+            colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
+            showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
+
             // Set selection to matching device name (the index could have changed since last time we were here)
             if (!string.IsNullOrEmpty(Settings.Instance.NetCaptureDeviceName))
             {
