@@ -11,6 +11,7 @@ using SixLabors.ImageSharp.PixelFormats;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using BPSR_ZDPS.DataTypes;
 using GLFWwindowPtr = Hexa.NET.GLFW.GLFWwindowPtr;
 
 namespace BPSR_ZDPS
@@ -28,6 +29,8 @@ namespace BPSR_ZDPS
             .Enrich.FromLogContext()
             .WriteTo.Debug()
             .CreateLogger();*/
+            
+            Settings.Load();
 
             GLFW.Init();
 
