@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using BPSR_ZDPS.DataTypes;
+using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace BPSR_ZDPS.Windows
                 return;
             }
 
-            ImGui.SetNextWindowSize(new Vector2(500, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(700, 600), ImGuiCond.FirstUseEver);
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
@@ -150,7 +151,7 @@ namespace BPSR_ZDPS.Windows
                             string profession = entity.SubProfession ?? entity.Profession ?? "";
                             if (!string.IsNullOrEmpty(profession))
                             {
-                                var color = HelperMethods.ProfessionColors(profession);
+                                var color = Professions.ProfessionColors(profession);
                                 color = color - new Vector4(0, 0, 0, 0.50f); // Make the color extremely muted since we're going to have a lot of them
 
                                 ImGui.PushStyleColor(ImGuiCol.Header, color);
@@ -181,10 +182,10 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Text(entity.AbilityScore.ToString());
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(HelperMethods.NumberToShorthand(entity.TotalDamage));
+                            ImGui.Text(Utils.NumberToShorthand(entity.TotalDamage));
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(HelperMethods.NumberToShorthand(entity.DamageStats.ValuePerSecond));
+                            ImGui.Text(Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond));
 
                             ImGui.TableNextColumn();
                             ImGui.Text($"{entity.DamageStats.CritRate}%%");
@@ -193,37 +194,37 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Text($"{entity.DamageStats.LuckyRate}%%");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.DamageStats.ValueCritTotal)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(entity.DamageStats.ValueCritTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.DamageStats.ValueLuckyTotal)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(entity.DamageStats.ValueLuckyTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.DamageStats.ValueCritLuckyTotal)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(entity.DamageStats.ValueCritLuckyTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.DamageStats.ValueMax)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(entity.DamageStats.ValueMax)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(HelperMethods.NumberToShorthand(entity.TotalHealing));
+                            ImGui.Text(Utils.NumberToShorthand(entity.TotalHealing));
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(HelperMethods.NumberToShorthand(entity.HealingStats.ValuePerSecond));
+                            ImGui.Text(Utils.NumberToShorthand(entity.HealingStats.ValuePerSecond));
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.HealingStats.ValueCritTotal)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(entity.HealingStats.ValueCritTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.HealingStats.ValueLuckyTotal)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(entity.HealingStats.ValueLuckyTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.HealingStats.ValueCritLuckyTotal)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(entity.HealingStats.ValueCritLuckyTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(entity.HealingStats.ValueMax)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(entity.HealingStats.ValueMax)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(HelperMethods.NumberToShorthand(entity.TotalTakenDamage));
+                            ImGui.Text(Utils.NumberToShorthand(entity.TotalTakenDamage));
 
                             ImGui.TableNextColumn();
                             double totalTaken = 0;
@@ -238,7 +239,7 @@ namespace BPSR_ZDPS.Windows
                                     totalTaken = Math.Round(((double)entity.TotalTakenDamage / (double)EncounterManager.Encounters[SelectedEncounterIndex].TotalNpcTakenDamage) * 100, 0);
                                 }
                             }
-                            ImGui.Text(HelperMethods.NumberToShorthand(totalTaken));
+                            ImGui.Text(Utils.NumberToShorthand(totalTaken));
 
                             if (!string.IsNullOrEmpty(profession))
                             {

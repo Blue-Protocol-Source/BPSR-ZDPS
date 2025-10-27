@@ -133,6 +133,8 @@ namespace BPSR_ZDPS
                 }
             }
 
+            ImageArchive.LoadBaseImages(manager);
+
             // Main loop
             while (GLFW.WindowShouldClose(window) == 0)
             {

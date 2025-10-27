@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Zproto;
 
 namespace BPSR_ZDPS
 {
@@ -80,5 +81,50 @@ namespace BPSR_ZDPS
                 throw new D3D11Exception(resultCode);
             }
         }
+
+        public static string NumberToShorthand<T>(T number)
+        {
+            string[] suf = { "", "K", "M", "B", "t", "q", "Q", "s", "S", "o", "n", "d", "U", "D", "T" };
+            double value = Convert.ToDouble(number);
+            if (value == 0)
+            {
+                return "0" + suf[0];
+            }
+
+            double absoluteValue = Math.Abs(value);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(absoluteValue, 1000)));
+            double shortNumber = Math.Round(absoluteValue / Math.Pow(1000, place), 2);
+
+            if (AppState.UseShortWidthNumberFormatting)
+            {
+                return place == 0 ? ((long)value).ToString() : shortNumber.ToString($"N2") + suf[place];
+            }
+
+            string fmt = "";
+            if (place > 0)
+            {
+                fmt = "N2";
+            }
+            return $"{(Math.Sign(value) * shortNumber).ToString(fmt)}{suf[place]}";
+        }
+
+        public static EEntityType RawUuidToEntityType(ulong uuid) => (uuid & 0xFFFFUL) switch
+        {
+            64 => EEntityType.EntMonster,
+            128 => EEntityType.EntNpc,
+            192 => EEntityType.EntSceneObject,
+            320 => EEntityType.EntZone,
+            640 => EEntityType.EntChar,
+            1024 => EEntityType.EntCollection, // Another one?
+            33152 => EEntityType.EntBullet,
+            33280 => EEntityType.EntNpc, // Another one?
+            33472 => EEntityType.EntDummy,
+            33664 => EEntityType.EntField,
+            33792 => EEntityType.EntCollection,
+            33984 => EEntityType.EntVehicle,
+            34048 => EEntityType.EntToy,
+            32832 => EEntityType.EntMonster, // Another one?
+            _ => EEntityType.EntErrType,
+        };
     }
 }

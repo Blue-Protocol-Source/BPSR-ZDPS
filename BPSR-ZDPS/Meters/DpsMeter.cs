@@ -1,4 +1,5 @@
-﻿using BPSR_ZDPS.Windows;
+﻿using BPSR_ZDPS.DataTypes;
+using BPSR_ZDPS.Windows;
 using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,51 @@ namespace BPSR_ZDPS.Meters
             ImGui.SameLine();
             ImGui.SetCursorPosX(ImGui.GetCursorPosX() + Math.Max(0.0f, ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize(hint.Remove(hint.Length - 1)).X));
             ImGui.Text(hint);
+            return ret;
+        }
+
+        bool SelectableWithHintImage(string number, string name, string value, int profession)
+        {
+            var startPoint = ImGui.GetCursorPos();
+
+            ImGui.AlignTextToFramePadding();
+
+            int texSize = 22;
+            float offset = ImGui.CalcTextSize(number).X + (ImGui.GetStyle().ItemSpacing.X * 2) + (texSize + 2);
+
+            ImGui.SetCursorPosX(offset);
+            bool ret = ImGui.Selectable(name, false, ImGuiSelectableFlags.SpanAllColumns);
+            ImGui.SameLine();
+
+            ImGui.SetCursorPos(startPoint);
+
+            ImGui.Text(number);
+            ImGui.SameLine();
+
+            var tex = ImageHelper.GetTextureByKey($"Profession_{profession}");
+            
+            if (tex == null)
+            {
+                ImGui.Dummy(new Vector2(texSize, texSize));
+            }
+            else
+            {
+                var roleColor = Professions.RoleTypeColors(Professions.GetRoleFromBaseProfessionId(profession));
+
+                if (AppState.ColorClassIconsByRole)
+                {
+                    ImGui.ImageWithBg((ImTextureRef)tex, new Vector2(texSize, texSize), new Vector2(0, 0), new Vector2(1, 1), new Vector4(0, 0, 0, 0), roleColor);
+                }
+                else
+                {
+                    ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
+                }
+            }
+            
+            ImGui.SameLine();
+            ImGui.SetCursorPosX(ImGui.GetCursorPosX() + Math.Max(0.0f, ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize(value.Remove(value.Length - 1)).X));
+            ImGui.Text(value);
+
             return ret;
         }
 
@@ -90,7 +136,7 @@ namespace BPSR_ZDPS.Meters
                             contributionProgressBar = contribution;
                         }
                     }
-                    string dps_format = $"{HelperMethods.NumberToShorthand(entity.TotalDamage)} ({HelperMethods.NumberToShorthand(entity.DamageStats.ValuePerSecond)}) {contribution.ToString().PadLeft(3, ' ')}%%"; // Format: TotalDamage (DPS) Contribution%
+                    string dps_format = $"{Utils.NumberToShorthand(entity.TotalDamage)} ({Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond)}) {contribution.ToString().PadLeft(3, ' ')}%%"; // Format: TotalDamage (DPS) Contribution%
                     var startPoint = ImGui.GetCursorPos();
                     // ImGui.GetTextLineHeightWithSpacing();
 
@@ -111,12 +157,13 @@ namespace BPSR_ZDPS.Meters
                     //ImGui.GetWindowDrawList().AddRectFilled(ImGui.GetItemRectMin(), ImGui.GetItemRectMax(), ImGui.ColorConvertFloat4ToU32(groupBackground), 5);
                     //renderSplitter.Merge(drawList);
 
-                    ImGui.PushStyleColor(ImGuiCol.PlotHistogram, HelperMethods.ProfessionColors(profession));
+                    ImGui.PushStyleColor(ImGuiCol.PlotHistogram, Professions.ProfessionColors(profession));
                     ImGui.ProgressBar((float)contributionProgressBar / 100.0f, new Vector2(-1, 0), $"##DpsEntryContribution_{i}");
                     ImGui.PopStyleColor();
 
                     ImGui.SetCursorPos(startPoint);
-                    if (SelectableWithHint($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}. {name}-{profession} ({entity.AbilityScore})##DpsEntry_{i}", dps_format))
+                    if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{name}-{profession} ({entity.AbilityScore})##DpsEntry_{i}", dps_format, entity.ProfessionId))
+                    //if (SelectableWithHint($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}. {name}-{profession} ({entity.AbilityScore})##DpsEntry_{i}", dps_format))
                     //if (ImGui.Selectable($"{name}-{profession} ({entity.AbilityScore}) [{entity.UID.ToString()}] ({entity.TotalDamage})##DpsEntry_{i}"))
                     {
                         mainWindow.entityInspector = new EntityInspector();

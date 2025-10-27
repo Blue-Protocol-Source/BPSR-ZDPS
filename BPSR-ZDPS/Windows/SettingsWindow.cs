@@ -17,6 +17,8 @@ namespace BPSR_ZDPS.Windows
         static int SelectedNetworkDeviceIdx = -1;
         static bool normalizeMeterContributions;
         static bool useShortWidthNumberFormatting;
+        static bool colorClassIconsByRole;
+        static bool showSkillIconsInDetails;
 
         static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
 
@@ -61,7 +63,7 @@ namespace BPSR_ZDPS.Windows
 
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
-            ImGui.SetNextWindowSize(new Vector2(500, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(550, 600), ImGuiCond.FirstUseEver);
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr("SettingsStack"));
 
@@ -135,8 +137,40 @@ namespace BPSR_ZDPS.Windows
                 ImGui.EndDisabled();
                 ImGui.Unindent();
 
+                ImGui.SeparatorText("User Interface");
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Color Class Icons By Role Type: ");
+                ImGui.SameLine();
+                ImGui.Checkbox("##ColorClassIconsByRole", ref colorClassIconsByRole);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("When enabled, class icons shown in meters will be colored by their role instead of all being white.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Show Skill Icons In Details: ");
+                ImGui.SameLine();
+                ImGui.Checkbox("##ShowSkillIconsInDetails", ref showSkillIconsInDetails);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("When enabled, skill icons will be displayed, when possible, in the details panel next to skill names.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
+                ImGui.SeparatorText("Development");
+                if (ImGui.Button("Reload DataTables"))
+                {
+                    AppState.LoadDataTables();
+                }
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("Does not update most existing values - mainly works for data set in new Encounters.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
                 ImGui.NewLine();
-                if (ImGui.Button("Save"))
+                if (ImGui.Button("Save", new Vector2(120, 0)))
                 {
                     if (SelectedNetworkDeviceIdx != PreviousSelectedNetworkDeviceIdx)
                     {
@@ -153,17 +187,26 @@ namespace BPSR_ZDPS.Windows
 
                     AppState.UseShortWidthNumberFormatting = useShortWidthNumberFormatting;
 
+                    AppState.ColorClassIconsByRole = colorClassIconsByRole;
+
+                    AppState.ShowSkillIconsInDetails = showSkillIconsInDetails;
+
                     ImGui.CloseCurrentPopup();
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Close"))
+                ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X);
+                if (ImGui.Button("Close", new Vector2(120, 0)))
                 {
                     SelectedNetworkDeviceIdx = PreviousSelectedNetworkDeviceIdx;
 
                     normalizeMeterContributions = AppState.NormalizeMeterContributions;
 
                     useShortWidthNumberFormatting = AppState.UseShortWidthNumberFormatting;
+
+                    colorClassIconsByRole = AppState.ColorClassIconsByRole;
+
+                    showSkillIconsInDetails = AppState.ShowSkillIconsInDetails;
 
                     ImGui.CloseCurrentPopup();
                 }

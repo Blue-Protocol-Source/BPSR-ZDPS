@@ -65,7 +65,7 @@ namespace BPSR_ZDPS.Meters
                             contributionProgressBar = contribution;
                         }
                     }
-                    string dps_format = $"{HelperMethods.NumberToShorthand((long)entity.TotalTakenDamage)} ({entity.TakenStats.ValuePerSecond}) {contribution.ToString().PadLeft(3, ' ')}%%"; // Format: TotalDamage (DPS) Contribution%
+                    string dps_format = $"{Utils.NumberToShorthand((long)entity.TotalTakenDamage)} ({entity.TakenStats.ValuePerSecond}) {contribution.ToString().PadLeft(3, ' ')}%%"; // Format: TotalDamage (DPS) Contribution%
                     var startPoint = ImGui.GetCursorPos();
                     // ImGui.GetTextLineHeightWithSpacing();
 

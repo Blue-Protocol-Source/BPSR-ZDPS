@@ -54,5 +54,19 @@ namespace BPSR_ZDPS.DataTypes
         public float SkillRootShift { get; set; }
         public int CoolTimeType { get; set; }
         // TODO: Finish type
+
+        public string GetIconName()
+        {
+            if (Icon != null && Icon.Length > 0)
+            {
+                int lastSeparator = Icon.LastIndexOf('/');
+                if (lastSeparator != -1)
+                {
+                    return Icon.Substring(lastSeparator + 1);
+                }
+            }
+
+            return Icon;
+        }
     }
 }

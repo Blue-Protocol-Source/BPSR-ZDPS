@@ -1,4 +1,5 @@
-﻿using BPSR_ZDPS.Windows;
+﻿using BPSR_ZDPS.DataTypes;
+using BPSR_ZDPS.Windows;
 using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
@@ -89,14 +90,14 @@ namespace BPSR_ZDPS.Meters
                             contributionProgressBar = contribution;
                         }
                     }
-                    string totalTaken = HelperMethods.NumberToShorthand((long)entity.TotalTakenDamage);
+                    string totalTaken = Utils.NumberToShorthand((long)entity.TotalTakenDamage);
                     string totalHps = entity.TakenStats.ValuePerSecond.ToString();
                     string dps_format = $"{totalTaken} ({totalHps}) {contribution.ToString().PadLeft(3, ' ')}%%";
                     var startPoint = ImGui.GetCursorPos();
 
                     ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f);
 
-                    ImGui.PushStyleColor(ImGuiCol.PlotHistogram, HelperMethods.ProfessionColors(profession));
+                    ImGui.PushStyleColor(ImGuiCol.PlotHistogram, Professions.ProfessionColors(profession));
                     ImGui.ProgressBar((float)contributionProgressBar / 100.0f, new Vector2(-1, 0), $"##TpsEntryContribution_{i}");
                     ImGui.PopStyleColor();
 

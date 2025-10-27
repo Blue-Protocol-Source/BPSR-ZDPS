@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BPSR_ZDPS.DataTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -186,28 +187,28 @@ namespace BPSR_ZDPS
             entity.RegisterSkillActivation(skillId);
         }
 
-        public void AddDamage(ulong uid, long skillId, EDamageProperty damageElement, ulong damage, bool isCrit, bool isLucky, bool isCauseLucky, ulong hpLessen = 0)
+        public void AddDamage(ulong uid, int skillId, EDamageProperty damageElement, ulong damage, bool isCrit, bool isLucky, bool isCauseLucky, ulong hpLessen = 0)
         {
             LastUpdate = DateTime.Now;
             TotalDamage += damage;
             GetOrCreateEntity(uid).AddDamage(skillId, damage, isCrit, isLucky, hpLessen, damageElement, isCauseLucky);
         }
 
-        public void AddHealing(ulong uid, long skillId, EDamageProperty damageElement, ulong healing, bool isCrit, bool isLucky, bool isCauseLucky, ulong targetUid)
+        public void AddHealing(ulong uid, int skillId, EDamageProperty damageElement, ulong healing, bool isCrit, bool isLucky, bool isCauseLucky, ulong targetUid)
         {
             LastUpdate = DateTime.Now;
             TotalHealing += healing;
             GetOrCreateEntity(uid).AddHealing(skillId, healing, isCrit, isLucky, damageElement, isCauseLucky, targetUid);
         }
 
-        public void AddTakenDamage(ulong uid, long skillId, ulong damage, EDamageSource damageSource, bool isMiss, bool isDead, bool isCrit, bool isLucky, ulong hpLessen = 0)
+        public void AddTakenDamage(ulong uid, int skillId, ulong damage, EDamageSource damageSource, bool isMiss, bool isDead, bool isCrit, bool isLucky, ulong hpLessen = 0)
         {
             LastUpdate = DateTime.Now;
             TotalTakenDamage += damage;
             GetOrCreateEntity(uid).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, damageSource, isMiss, isDead);
         }
 
-        public void AddNpcTakenDamage(ulong npcId, ulong attackerUid, long skillId, ulong damage, bool isCrit, bool isLucky, ulong hpLessen = 0, bool isMiss = false, bool isDead = false, string? npcName = null)
+        public void AddNpcTakenDamage(ulong npcId, ulong attackerUid, int skillId, ulong damage, bool isCrit, bool isLucky, ulong hpLessen = 0, bool isMiss = false, bool isDead = false, string? npcName = null)
         {
             LastUpdate = DateTime.Now;
             TotalNpcTakenDamage += damage;
@@ -302,7 +303,7 @@ namespace BPSR_ZDPS
         public void SetProfessionId(int id)
         {
             ProfessionId = id;
-            Profession = HelperMethods.GetProfessionNameFromId(id);
+            Profession = Professions.GetProfessionNameFromId(id);
 
             var cached = EntityCache.Instance.GetOrCreate(UID);
             if (cached != null && id != 0)
@@ -314,7 +315,7 @@ namespace BPSR_ZDPS
         public void SetSubProfessionId(int id)
         {
             SubProfessionId = id;
-            SubProfession = HelperMethods.GetSubProfessionNameFromId(id);
+            SubProfession = Professions.GetSubProfessionNameFromId(id);
 
             var cached = EntityCache.Instance.GetOrCreate(UID);
             if (cached != null && id != 0)
@@ -379,19 +380,19 @@ namespace BPSR_ZDPS
             }
         }
 
-        public void AddDamage(long skillId, ulong damage, bool isCrit, bool isLucky, ulong hpLessen = 0, EDamageProperty? damageElement = null, bool isCauseLucky = false)
+        public void AddDamage(int skillId, ulong damage, bool isCrit, bool isLucky, ulong hpLessen = 0, EDamageProperty? damageElement = null, bool isCauseLucky = false)
         {
             TotalDamage += damage;
 
             DamageStats.AddData((long)damage, isCrit, isLucky, (long)hpLessen, isCauseLucky);
 
-            RegisterSkillData(ESkillType.Damage, (int)skillId, (long)damage, isCrit, isLucky, (long)hpLessen, isCauseLucky);
+            RegisterSkillData(ESkillType.Damage, skillId, (long)damage, isCrit, isLucky, (long)hpLessen, isCauseLucky);
 
             //ActionStats.Add(new ActionStat(DateTime.Now, 0, (int)skillId));
 
             if (string.IsNullOrEmpty(SubProfession))
             {
-                var subProfessionId = HelperMethods.GetSubProfessionIdBySkillId(skillId);
+                var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
 
                 if (subProfessionId != 0)
                 {
@@ -404,17 +405,17 @@ namespace BPSR_ZDPS
             DamageStats.EndTime = DateTime.Now;*/
         }
 
-        public void AddHealing(long skillId, ulong healing, bool isCrit, bool isLucky, EDamageProperty? damageElement = null, bool isCauseLucky = false, ulong targetUid = 0)
+        public void AddHealing(int skillId, ulong healing, bool isCrit, bool isLucky, EDamageProperty? damageElement = null, bool isCauseLucky = false, ulong targetUid = 0)
         {
             TotalHealing += healing;
             HealingStats.AddData((long)healing, isCrit, isLucky, 0, isCauseLucky);
 
-            RegisterSkillData(ESkillType.Healing, (int)skillId, (long)healing, isCrit, isLucky, 0, isCauseLucky);
+            RegisterSkillData(ESkillType.Healing, skillId, (long)healing, isCrit, isLucky, 0, isCauseLucky);
             //ActionStats.Add(new ActionStat(DateTime.Now, 1, (int)skillId));
 
             if (string.IsNullOrEmpty(SubProfession))
             {
-                var subProfessionId = HelperMethods.GetSubProfessionIdBySkillId(skillId);
+                var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
 
                 if (subProfessionId != 0)
                 {
@@ -427,10 +428,10 @@ namespace BPSR_ZDPS
             HealingStats.EndTime = DateTime.Now;*/
         }
 
-        public void AddTakenDamage(long skillId, ulong damage, bool isCrit, bool isLucky, ulong hpLessen = 0, EDamageSource damageSource = 0, bool isMiss = false, bool isDead = false)
+        public void AddTakenDamage(int skillId, ulong damage, bool isCrit, bool isLucky, ulong hpLessen = 0, EDamageSource damageSource = 0, bool isMiss = false, bool isDead = false)
         {
             TotalTakenDamage += damage;
-            RegisterSkillData(ESkillType.Taken, (int)skillId, (long)damage, isCrit, isLucky, (long)hpLessen, false);
+            RegisterSkillData(ESkillType.Taken, skillId, (long)damage, isCrit, isLucky, (long)hpLessen, false);
             /*TakenStats.value += (long)damage;
             TakenStats.StartTime ??= DateTime.Now;
             TakenStats.EndTime = DateTime.Now;*/

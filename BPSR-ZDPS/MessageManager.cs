@@ -11,6 +11,7 @@ using Zproto;
 using Google.Protobuf.Collections;
 using System.Numerics;
 using Silk.NET.Core.Native;
+using BPSR_ZDPS.DataTypes;
 
 namespace BPSR_ZDPS
 {
@@ -207,7 +208,7 @@ namespace BPSR_ZDPS
                     continue;
                 }
 
-                var etype = HelperMethods.RawUuidToEntityType((ulong)entity.Uuid);
+                var etype = Utils.RawUuidToEntityType((ulong)entity.Uuid);
                 if (etype == EEntityType.EntErrType)
                 {
                     System.Diagnostics.Debug.WriteLine($"!!etype == EEntityType.EntErrType!! should have been: {((ulong)entity.Uuid & 0xFFFFUL)} == {entity.EntType.ToString()}");
@@ -270,7 +271,7 @@ namespace BPSR_ZDPS
             ulong targetUid = Shr16(targetUuidRaw);
             var attrCollection = delta.Attrs;
 
-            var eType = HelperMethods.RawUuidToEntityType(targetUuidRaw);
+            var eType = Utils.RawUuidToEntityType(targetUuidRaw);
             if (EncounterManager.Current.GetOrCreateEntity(targetUid).EntityType == EEntityType.EntErrType)
             {
                 EncounterManager.Current.SetEntityType(targetUid, eType);
@@ -303,7 +304,7 @@ namespace BPSR_ZDPS
 
             foreach (var d in skillEffect.Damages)
             {
-                long skillId = d.OwnerId;
+                int skillId = d.OwnerId;
                 if (skillId == 0)
                 {
                     continue;
@@ -320,7 +321,7 @@ namespace BPSR_ZDPS
                 if (isAttackerPlayer && attackerUid != 0)
                 {
                     EncounterManager.Current.SetEntityType(attackerUid, EEntityType.EntChar);
-                    var professionId = HelperMethods.GetBaseProfessionIdBySkillId(skillId);
+                    var professionId = Professions.GetBaseProfessionIdBySkillId(skillId);
                     if (professionId != 0 && EncounterManager.Current.GetOrCreateEntity(attackerUid).ProfessionId <= 0)
                     {
                         EncounterManager.Current.SetProfessionId(attackerUid, professionId);
@@ -480,7 +481,7 @@ namespace BPSR_ZDPS
             var professionList = vData.ProfessionList;
             if (professionList != null && professionList.CurProfessionId != 0)
             {
-                var professionName = HelperMethods.GetProfessionNameFromId(professionList.CurProfessionId);
+                var professionName = Professions.GetProfessionNameFromId(professionList.CurProfessionId);
                 EncounterManager.Current.SetProfessionId(playerUid, professionList.CurProfessionId);
                 AppState.ProfessionId = professionList.CurProfessionId;
                 AppState.ProfessionName = professionName;

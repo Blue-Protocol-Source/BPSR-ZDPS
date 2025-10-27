@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using BPSR_ZDPS.DataTypes;
+using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,7 +95,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Text($"HP: {LoadedEntity.GetAttrKV("AttrHp") ?? "0"}");
                         ImGui.Text($"Max HP: {LoadedEntity.GetAttrKV("AttrMaxHp") ?? "0"}");
                         ImGui.Text($"ATK: {LoadedEntity.GetAttrKV("AttrAttack") ?? "0"}");
-                        string MainStat = HelperMethods.GetBaseProfessionMainStatName(LoadedEntity.ProfessionId);
+                        string MainStat = Professions.GetBaseProfessionMainStatName(LoadedEntity.ProfessionId);
                         if (MainStat == "Strength" || MainStat == "")
                         {
                             ImGui.Text($"Strength: {LoadedEntity.GetAttrKV("AttrStrength") ?? "0"}");
@@ -236,8 +237,8 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("##ValueTotalsRight", ImGuiTableColumnFlags.WidthStretch | ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize, 1f, 1);
 
                         ImGui.TableNextColumn();
-                        ImGui.Text($"{valueTotalLabel} {HelperMethods.NumberToShorthand(combatStats.ValueTotal)}");
-                        ImGui.Text($"{valueTotalPerSecondLabel} {HelperMethods.NumberToShorthand(combatStats.ValuePerSecond)}");
+                        ImGui.Text($"{valueTotalLabel} {Utils.NumberToShorthand(combatStats.ValueTotal)}");
+                        ImGui.Text($"{valueTotalPerSecondLabel} {Utils.NumberToShorthand(combatStats.ValuePerSecond)}");
                         ImGui.Text($"Total Hits: {combatStats.HitsCount}");
 
                         ImGui.TableNextColumn();
@@ -256,13 +257,13 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("##DistributionRight", ImGuiTableColumnFlags.WidthStretch | ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize, 1f, 1);
 
                         ImGui.TableNextColumn();
-                        ImGui.Text($"Total Normal Damage: {HelperMethods.NumberToShorthand(combatStats.ValueNormalTotal)}");
-                        ImGui.Text($"Total Crit Damage: {HelperMethods.NumberToShorthand(combatStats.ValueCritTotal)}");
-                        ImGui.Text($"Total Lucky Damage: {HelperMethods.NumberToShorthand(combatStats.ValueLuckyTotal)}");
+                        ImGui.Text($"Total Normal Damage: {Utils.NumberToShorthand(combatStats.ValueNormalTotal)}");
+                        ImGui.Text($"Total Crit Damage: {Utils.NumberToShorthand(combatStats.ValueCritTotal)}");
+                        ImGui.Text($"Total Lucky Damage: {Utils.NumberToShorthand(combatStats.ValueLuckyTotal)}");
 
                         ImGui.TableNextColumn();
                         ImGui.Text($"Total Lucky Strikes: {combatStats.LuckyCount}");
-                        ImGui.Text($"Total Average Damage: {HelperMethods.NumberToShorthand(combatStats.ValueAverage)}");
+                        ImGui.Text($"Total Average Damage: {Utils.NumberToShorthand(combatStats.ValueAverage)}");
                         ImGui.Text($"Total Casts: {LoadedEntity.TotalCasts}");
 
                         ImGui.EndTable();
@@ -368,13 +369,32 @@ namespace BPSR_ZDPS.Windows
                             {
                                 displayName = stat.Value.Name;
                             }
+                            if (AppState.ShowSkillIconsInDetails)
+                            {
+                                if (HelperMethods.DataTables.Skills.Data.TryGetValue(skillId.ToString(), out var skill))
+                                {
+                                    var skillIconName = skill.GetIconName();
+
+                                    if (!string.IsNullOrEmpty(skillIconName))
+                                    {
+                                        var tex = ImageArchive.LoadImage(Path.Combine("Skills", skillIconName));
+                                        var itemRectSize = ImGui.GetItemRectSize().Y;
+                                        float texSize = itemRectSize;
+                                        if (tex != null)
+                                        {
+                                            ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
+                                            ImGui.SameLine();
+                                        }
+                                    }
+                                }
+                            }
                             ImGui.Text(displayName);
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(stat.Value.ValueTotal)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValueTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(stat.Value.ValuePerSecond)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValuePerSecond)}");
 
                             ImGui.TableNextColumn();
                             ImGui.Text($"{stat.Value.HitsCount}");
@@ -383,7 +403,7 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Text($"{stat.Value.CritRate}%%");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{HelperMethods.NumberToShorthand(stat.Value.ValueAverage)}");
+                            ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValueAverage)}");
 
                             ImGui.TableNextColumn();
                             double totalDamageContribution = 0.0;

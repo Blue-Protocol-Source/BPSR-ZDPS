@@ -1,0 +1,448 @@
+{
+    "2401":
+    {
+        "Name": "Blade of Justice - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_atk"
+    },
+    "2402":
+    {
+        "Name": "Blade of Justice - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_atk"
+    },
+    "2403":
+    {
+        "Name": "Blade of Justice - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_atk"
+    },
+    "2404":
+    {
+        "Name": "Blade of Justice - Stage 4",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_atk"
+    },
+    "2405":
+    {
+        "Name": "Valor Bash",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_tg01"
+    },
+    "2406":
+    {
+        "Name": "Vanguard Strike/Vanguard Pursuit",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_tg02"
+    },
+    "2407":
+    {
+        "Name": "Radiant Infusion",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_ult_01"
+    },
+    "2408":
+    {
+        "Name": "Shield Toss",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx01"
+    },
+    "240101":
+    {
+        "Name": "Shield Toss",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx01"
+    },
+    "2425":
+    {
+        "Name": "Shield Toss",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx01"
+    },
+    "2409":
+    {
+        "Name": "Divine Circle",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx02"
+    },
+    "55404":
+    {
+        "Name": "Divine Circle",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx02"
+    },
+    "2410":
+    {
+        "Name": "Judgment",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx03"
+    },
+    "2451":
+    {
+        "Name": "Judgment (Holy Trigger)",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx03"
+    },
+    "55421":
+    {
+        "Name": "Judgment",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx03"
+    },
+    "2411":
+    {
+        "Name": "Scorching Judgment",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx03_ex"
+    },
+    "2452":
+    {
+        "Name": "Scorching Judgment Sacred Blade",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx03_ex"
+    },
+    "2412":
+    {
+        "Name": "Reckoning",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx04"
+    },
+    "2413":
+    {
+        "Name": "Inferno Reckoning",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx04_ex"
+    },
+    "2414":
+    {
+        "Name": "Holy Barrier",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx05"
+    },
+    "2415":
+    {
+        "Name": "Aegis Ward",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx06"
+    },
+    "55405":
+    {
+        "Name": "Aegis Ward",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx06"
+    },
+    "2416":
+    {
+        "Name": "Condemn",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_atk"
+    },
+    "2417":
+    {
+        "Name": "Enhanced Condemn",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_atk_ex"
+    },
+    "2419":
+    {
+        "Name": "Zeal Crusade",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx07"
+    },
+    "55412":
+    {
+        "Name": "Zeal Crusade",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx07"
+    },
+    "55416":
+    {
+        "Name": "Zeal Crusade",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx07"
+    },
+    "55417":
+    {
+        "Name": "Zeal Crusade",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx07"
+    },
+    "55431":
+    {
+        "Name": "Zeal Crusade",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx07"
+    },
+    "2420":
+    {
+        "Name": "Radiance",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx08"
+    },
+    "55413":
+    {
+        "Name": "Radiance",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx08"
+    },
+    "55414":
+    {
+        "Name": "Radiance",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx08"
+    },
+    "55415":
+    {
+        "Name": "Radiance",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx08"
+    },
+    "2421":
+    {
+        "Name": "Sacred Blade",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx09"
+    },
+    "2450":
+    {
+        "Name": "Radiant Impact",
+        "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_tg01"
+    },
+    "2031101":
+    {
+        "Name": "Lucky Strike (Tachi)"
+    },
+    "2031102":
+    {
+        "Name": "Lucky Strike (Staff)"
+    },
+    "2031104":
+    {
+        "Name": "Lucky Strike (Lance)"
+    },
+    "2031105":
+    {
+        "Name": "Lucky Strike (Forest Ring)"
+    },
+    "2031106":
+    {
+        "Name": "Lucky Strike (Hand Cannon)"
+    },
+    "2031107":
+    {
+        "Name": "Lucky Strike (Great Blade)"
+    },
+    "2031108":
+    {
+        "Name": "Lucky Strike (Ceremony Sword)"
+    },
+    "2031109":
+    {
+        "Name": "Lucky Strike (Bow and Arrow)"
+    },
+    "2031110":
+    {
+        "Name": "Lucky Strike (Sword and Shield)"
+    },
+    "2031111":
+    {
+        "Name": "Lucky Strike (Guitar)"
+    },
+    "2110090":
+    {
+        "Name": "Void Ogre"
+    },
+    "2206401":
+    {
+        "Name": "Divine Strike"
+    },
+    "2110091":
+    {
+        "Name": "Void Damage Converted to Healing"
+    },
+    "3210061":
+    {
+        "Name": "Stunt! Super Critical - Passive"
+    },
+    "391001":
+    {
+        "Name": "Stunt! Chaotic Barrage - Missle 01"
+    },
+    "391002":
+    {
+        "Name": "Stunt! Chaotic Barrage - Missle 02"
+    },
+    "391003":
+    {
+        "Name": "Stunt! Chaotic Barrage - Missle 03"
+    },
+    "391004":
+    {
+        "Name": "Stunt! Chaotic Barrage - Missle 04"
+    },
+    "391005":
+    {
+        "Name": "Stunt! Chaotic Barrage - Missle 05"
+    },
+    "391006":
+    {
+        "Name": "Stunt! Chaotic Barrage - Missle 06"
+    },
+    "230101":
+    {
+        "Name": "Harmonic Anthem - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+    },
+    "230102":
+    {
+        "Name": "Harmonic Anthem - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+    },
+    "230103":
+    {
+        "Name": "Harmonic Anthem - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+    },
+    "230104":
+    {
+        "Name": "Harmonic Anthem - Stage 4",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+    },
+    "2301":
+    {
+        "Name": "Resonant Strings - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2302":
+    {
+        "Name": "Resonant Strings - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2303":
+    {
+        "Name": "Resonant Strings - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2304":
+    {
+        "Name": "Resonant Strings - Stage 4",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2305":
+    {
+        "Name": "Passive Effect Encore Damage"
+    },
+    "2306":
+    {
+        "Name": "Amplified Beat",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_tg01"
+    },
+    "2309":
+    {
+        "Name": "Rhapsody of Flame",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx02"
+    },
+    "230105":
+    {
+        "Name": "Rhapsody of Flame - Stomp",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx02"
+    },
+    "230106":
+    {
+        "Name": "Flame Note Damage",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx02"
+    },
+    "2310":
+    {
+        "Name": "Heroic Melody",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx03"
+    },
+    "2311":
+    {
+        "Name": "Healing Melody",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx04"
+    },
+    "2312":
+    {
+        "Name": "Fivefold Crescendo",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx05"
+    },
+    "2313":
+    {
+        "Name": "Passion Burst",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx06"
+    },
+    "2314":
+    {
+        "Name": "Rock the Stage",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_ult"
+    },
+    "2315":
+    {
+        "Name": "Encore",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx07"
+    },
+    "230401":
+    {
+        "Name": "Encore Damage",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx07"
+    },
+    "2316":
+    {
+        "Name": "Center Stage",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx08"
+    },
+    "2317":
+    {
+        "Name": "Fierce Strike",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx03_01"
+    },
+    "2318":
+    {
+        "Name": "Finale! Healing Movement",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx04_01"
+    },
+    "2319":
+    {
+        "Name": "Sound Wave Surge"
+    },
+    "2320":
+    {
+        "Name": "Flame Blast"
+    },
+    "2321":
+    {
+        "Name": "String Strike - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2322":
+    {
+        "Name": "String Strike - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2323":
+    {
+        "Name": "String Strike - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2324":
+    {
+        "Name": "String Strike - Stage 4",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2330":
+    {
+        "Name": "Flame Pillar Blast (Enhanced)"
+    },
+    "2331":
+    {
+        "Name": "Sound Blaze - Sorching Impact"
+    },
+    "2332":
+    {
+        "Name": "Passion Fury",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_tf03_01"
+    },
+    "2335":
+    {
+        "Name": "Infinite Rhapsody",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_ult01"
+    },
+    "2336":
+    {
+        "Name": "Concert Circuit",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_ult02"
+    },
+    "55301":
+    {
+        "Name": "Flame Fantasy"
+    },
+    "55341":
+    {
+        "Name": "Heroic Melody",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx03"
+    },
+    "55342":
+    {
+        "Name": "Healing Melody",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx04"
+    },
+    "55344":
+    {
+        "Name": "Upgrade: Blast the Field"
+    },
+    "55346":
+    {
+        "Name": "Upgrade: Infinite Fantasy"
+    },
+    "2207151":
+    {
+        "Name": "Fiery Healing"
+    },
+}

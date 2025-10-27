@@ -43,7 +43,7 @@ namespace BPSR_ZDPS.Windows
             var main_viewport = ImGui.GetMainViewport();
 
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSize(new Vector2(500, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(550, 600), ImGuiCond.FirstUseEver);
 
             ImGuiWindowFlags window_flags = ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoDocking;
             
@@ -65,33 +65,8 @@ namespace BPSR_ZDPS.Windows
             {
                 RunOnce = false;
 
-                // Load table data for resolving with in the future
-                string appStringsFile = Path.Combine("Data", "AppStrings.json");
-                if (File.Exists(appStringsFile))
-                {
-                    var appStrings = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(File.ReadAllText(appStringsFile));
-                    AppStrings.Strings = appStrings;
-                    System.Diagnostics.Debug.WriteLine("Loaded AppStrings.json");
-                }
-
-                string monsterTableFile = Path.Combine("Data", "MonsterTable.json");
-                if (File.Exists(monsterTableFile))
-                {
-                    var monsters = JsonConvert.DeserializeObject<Dictionary<string, Monster>>(File.ReadAllText(monsterTableFile));
-                    HelperMethods.DataTables.Monsters.Data = monsters;
-                    System.Diagnostics.Debug.WriteLine("Loaded MonsterTable.json");
-                }
-
-                string skillTableFile = Path.Combine("Data", "SkillTable.json");
-                if (File.Exists(skillTableFile))
-                {
-                    var skills = JsonConvert.DeserializeObject<Dictionary<string, Skill>>(File.ReadAllText(skillTableFile));
-                    HelperMethods.DataTables.Skills.Data = skills;
-                    System.Diagnostics.Debug.WriteLine("Loaded SkillTable.json");
-                }
-
-                // Load up our offline entity cache if it exists to help with initial data resolving when we're not given all the required details
-                EntityCache.Instance.Load();
+                // This includes string files and caches
+                AppState.LoadDataTables();
 
                 // TODO: Save and load this from settings
                 var bestDefaultDevice = MessageManager.TryFindBestNetworkDevice();
