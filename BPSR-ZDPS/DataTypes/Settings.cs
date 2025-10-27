@@ -13,6 +13,7 @@ public class Settings
     public bool UseShortWidthNumberFormatting { get; set; } = true;
     public bool ColorClassIconsByRole { get; set; } = true;
     public bool ShowSkillIconsInDetails { get; set; } = true;
+    public float WindowOpacity = 1.0f;
 
     public void Apply()
     {

@@ -163,6 +163,16 @@ namespace BPSR_ZDPS.Windows
                 ImGui.TextWrapped("When enabled, skill icons will be displayed, when possible, in the details panel next to skill names.");
                 ImGui.EndDisabled();
                 ImGui.Unindent();
+                
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Pinned Window Opacity: ");
+                ImGui.SameLine();
+                ImGui.DragFloat("##PinnedWindowOpacity", ref Settings.Instance.WindowOpacity, 0.01f, 0.0f, 1.0f);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("How transparent a pinned window is.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
 
                 ImGui.SeparatorText("Development");
                 if (ImGui.Button("Reload DataTables"))

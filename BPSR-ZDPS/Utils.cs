@@ -7,6 +7,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Hexa.NET.GLFW;
+using Hexa.NET.ImGui;
 using Zproto;
 
 namespace BPSR_ZDPS
@@ -132,5 +134,45 @@ namespace BPSR_ZDPS
             32832 => EEntityType.EntMonster, // Another one?
             _ => EEntityType.EntErrType,
         };
+        
+        public static void SetWindowTopmost(ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            SetWindowTopmost((IntPtr)viewport.Value.PlatformHandleRaw);
+        }
+        
+        public static void UnsetWindowTopmost(ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            UnsetWindowTopmost((IntPtr)viewport.Value.PlatformHandleRaw);
+        }
+        
+        public static void SetWindowOpacity(float alpha, ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            GLFW.SetWindowOpacity((GLFWwindowPtr) viewport.Value.PlatformHandle, alpha);
+        }
+        
+        public static void BringWindowToFront(ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            User32.SetForegroundWindow((IntPtr)viewport.Value.PlatformHandleRaw);
+        }
+        
+        public static void MinimiseWindow(ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            User32.ShowWindow((IntPtr)viewport.Value.PlatformHandleRaw, User32.SW_MINIMIZE);
+        }
+        
+        public static void SetWindowTopmost(IntPtr hWnd)
+        {
+            User32.SetWindowPos(hWnd, User32.HWND_TOPMOST, 0, 0, 0, 0, User32.SWP_NOMOVE | User32.SWP_NOSIZE);
+        }
+    
+        public static void UnsetWindowTopmost(IntPtr hWnd)
+        {
+            User32.SetWindowPos(hWnd, User32.HWND_NOTOPMOST, 0, 0, 0, 0, User32.SWP_NOMOVE | User32.SWP_NOSIZE);
+        }
     }
 }

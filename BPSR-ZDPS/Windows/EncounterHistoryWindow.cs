@@ -24,6 +24,7 @@ namespace BPSR_ZDPS.Windows
             ImGui.OpenPopup("###EncounterHistoryWindow");
             IsOpened = true;
             ImGui.PopID();
+            Utils.BringWindowToFront();
         }
 
         public static void Draw(MainWindow mainWindow)

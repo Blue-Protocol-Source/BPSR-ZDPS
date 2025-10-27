@@ -30,7 +30,7 @@ namespace BPSR_ZDPS
             netCap = new NetCap();
             netCap.Init(new NetCapConfig()
             {
-                CaptureDeviceName = NetCaptureDeviceName // "\\Device\\NPF_{40699DEA-27A5-4985-ADC0-B00BADABAAEB}"
+                CaptureDeviceName = Settings.Instance.NetCaptureDeviceName // "\\Device\\NPF_{40699DEA-27A5-4985-ADC0-B00BADABAAEB}"
             });
 
             netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.SyncContainerData, ProcessSyncContainerData);

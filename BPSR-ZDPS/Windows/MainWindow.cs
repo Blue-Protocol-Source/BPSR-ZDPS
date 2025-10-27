@@ -13,6 +13,7 @@ using static Zproto.WorldNtfCsharp.Types;
 using Zproto;
 using Newtonsoft.Json;
 using BPSR_ZDPS.DataTypes;
+using Hexa.NET.GLFW;
 
 namespace BPSR_ZDPS.Windows
 {
@@ -26,6 +27,7 @@ namespace BPSR_ZDPS.Windows
 
         List<MeterBase> Meters = new();
         public EntityInspector entityInspector = new();
+        public bool IsTopMost = false;
 
         public void Draw()
         {
@@ -154,15 +156,27 @@ namespace BPSR_ZDPS.Windows
                 {
                     // TODO: Minimize window (might not be possible since we're not actually using GLFW windows at this point)
                     // Likely would need to use ImGuiDockSpaceOverViewport(ImGui.GetMainViewport()); for this main window to attach to platform window
+                    Utils.MinimiseWindow();
                 }
                 ImGui.PopFont();
 
                 ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 3));
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                if (ImGui.MenuItem($"{FASIcons.Thumbtack}"))
-                {
+                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 1.0f, 1.0f, IsTopMost ? 1.0f : 0.5f));
+                if (ImGui.MenuItem($"{FASIcons.Thumbtack}")) {
                     // TODO: Make TopMost (for current and all windows)
+                    if (!IsTopMost) {
+                        Utils.SetWindowTopmost();
+                        Utils.SetWindowOpacity(Settings.Instance.WindowOpacity);
+                        IsTopMost = true;
+                    }
+                    else {
+                        Utils.UnsetWindowTopmost();
+                        Utils.SetWindowOpacity(1.0f);
+                        IsTopMost = false;
+                    }
                 }
+                ImGui.PopStyleColor();
                 ImGui.PopFont();
 
                 // Create new Encounter button
@@ -180,6 +194,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 if (ImGui.BeginMenu($"{FASIcons.Gear}"))  //("O"))
                 {
+                    Utils.SetWindowTopmost();
                     ImGui.PopFont();
 
                     if (ImGui.MenuItem("Encounter History"))
