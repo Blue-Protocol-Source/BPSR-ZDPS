@@ -224,12 +224,7 @@ namespace BPSR_ZDPS.Windows
             ImGui.Text(duration);
 
             ImGui.SameLine();
-            string valuePerSecond = "0";
-            if (AppState.PlayerUID != 0)
-            {
-                valuePerSecond = EncounterManager.Current.GetOrCreateEntity((ulong)AppState.PlayerUID).DamageStats.ValuePerSecond.ToString();
-            }
-            string currentValuePerSecond = $"{AppState.PlayerTotalMeterValue} ({valuePerSecond})";
+            string currentValuePerSecond = $"{Utils.NumberToShorthand(AppState.PlayerTotalMeterValue)} ({Utils.NumberToShorthand(AppState.PlayerMeterValuePerSecond)})";
             ImGui.SetCursorPosX(ImGui.GetCursorPosX() + float.Max(0.0f, ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize(currentValuePerSecond).X));
             ImGui.Text(currentValuePerSecond);
 

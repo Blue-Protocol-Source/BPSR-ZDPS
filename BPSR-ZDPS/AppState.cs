@@ -19,7 +19,8 @@ namespace BPSR_ZDPS
 
         public static int PlayerMeterPlacement { get; set; } // Current position on the active meter, 0 means not on it
 
-        public static long PlayerTotalMeterValue { get; set; }
+        public static ulong PlayerTotalMeterValue { get; set; }
+        public static double PlayerMeterValuePerSecond { get; set; }
 
         public static void LoadDataTables()
         {

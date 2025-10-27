@@ -62,7 +62,8 @@ namespace BPSR_ZDPS.Meters
                     if (AppState.PlayerUID != 0 && AppState.PlayerUID == (long)entity.UID)
                     {
                         AppState.PlayerMeterPlacement = i + 1;
-                        AppState.PlayerTotalMeterValue = (long)entity.TotalHealing;
+                        AppState.PlayerTotalMeterValue = entity.TotalHealing;
+                        AppState.PlayerMeterValuePerSecond = entity.HealingStats.ValuePerSecond;
                     }
 
                     string profession = "Unknown";

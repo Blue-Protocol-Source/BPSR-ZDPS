@@ -20,7 +20,7 @@ namespace BPSR_ZDPS
         private Task? SaveTask;
         private readonly System.Threading.Lock syncLock = new();
 
-        public EntityCacheLine? Get(ulong uid)
+        public EntityCacheLine? Get(long uid)
         {
             if (Cache.Lines.TryGetValue(uid, out var outLine))
             {
@@ -30,7 +30,7 @@ namespace BPSR_ZDPS
             return null;
         }
 
-        public EntityCacheLine GetOrCreate(ulong uid)
+        public EntityCacheLine GetOrCreate(long uid)
         {
             if (Cache.Lines.TryGetValue(uid, out var outLine))
             {
@@ -53,7 +53,7 @@ namespace BPSR_ZDPS
             }
         }
 
-        public void SetName(ulong uid, string name)
+        public void SetName(long uid, string name)
         {
             if (Cache != null)
             {
@@ -131,9 +131,9 @@ namespace BPSR_ZDPS
     public class EntityCacheLine
     {
         [DataMember(Order = 1)]
-        public ulong UUID { get; set; } // Ignoring this for now since too many functions only pass the UID
+        public long UUID { get; set; } // Ignoring this for now since too many functions only pass the UID
         [DataMember(Order = 2)]
-        public ulong UID { get; set; } // In reality we should store the UUID always and store/generate the UID from it so we are never losing data
+        public long UID { get; set; } // In reality we should store the UUID always and store/generate the UID from it so we are never losing data
         [DataMember(Order = 3)]
         public string Name { get; set; } = "";
         [DataMember(Order = 4)]
@@ -152,6 +152,6 @@ namespace BPSR_ZDPS
         // Is there any value in switching to a ConcurrentDictionary for access to AddOrUpdate calls?
         // If so, the value (and update) assignment of AddOrUpdate IS NOT thread-safe still, reading is the only actual atomic operation
         [DataMember(Order = 1)]
-        public System.Collections.Concurrent.ConcurrentDictionary<ulong, EntityCacheLine> Lines { get; set; } = [];
+        public System.Collections.Concurrent.ConcurrentDictionary<long, EntityCacheLine> Lines { get; set; } = [];
     }
 }

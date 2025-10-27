@@ -93,7 +93,7 @@ namespace BPSR_ZDPS
             System.Diagnostics.Debug.WriteLine($"ProcessSyncHitInfo");
         }
 
-        public static void ProcessAttrs(ulong uid, RepeatedField<Attr> attrs)
+        public static void ProcessAttrs(long uid, RepeatedField<Attr> attrs)
         {
             foreach (var attr in attrs)
             {
@@ -193,7 +193,7 @@ namespace BPSR_ZDPS
                     //continue;
                 }
 
-                ulong uid = Shr16((ulong)entity.Uuid);
+                long uid = Shr16(entity.Uuid);
 
                 if (uid == 0)
                 {
@@ -208,7 +208,7 @@ namespace BPSR_ZDPS
                     continue;
                 }
 
-                var etype = Utils.RawUuidToEntityType((ulong)entity.Uuid);
+                var etype = Utils.RawUuidToEntityType(entity.Uuid);
                 if (etype == EEntityType.EntErrType)
                 {
                     System.Diagnostics.Debug.WriteLine($"!!etype == EEntityType.EntErrType!! should have been: {((ulong)entity.Uuid & 0xFFFFUL)} == {entity.EntType.ToString()}");
@@ -261,23 +261,23 @@ namespace BPSR_ZDPS
                 return;
             }
 
-            ulong targetUuidRaw = (ulong)delta.Uuid;
-            if (targetUuidRaw == 0)
+            long targetUuid = delta.Uuid;
+            if (targetUuid == 0)
             {
                 return;
             }
 
-            bool isTargetPlayer = IsUuidPlayerRaw(targetUuidRaw);
-            ulong targetUid = Shr16(targetUuidRaw);
+            bool isTargetPlayer = IsUuidPlayerRaw(targetUuid);
+            long targetUid = Shr16(targetUuid);
             var attrCollection = delta.Attrs;
 
-            var eType = Utils.RawUuidToEntityType(targetUuidRaw);
+            var eType = Utils.RawUuidToEntityType(targetUuid);
             if (EncounterManager.Current.GetOrCreateEntity(targetUid).EntityType == EEntityType.EntErrType)
             {
                 EncounterManager.Current.SetEntityType(targetUid, eType);
                 if (eType == EEntityType.EntErrType)
                 {
-                    System.Diagnostics.Debug.WriteLine($"Entity Error Type: rawUuid={targetUuidRaw},res={targetUid}");
+                    System.Diagnostics.Debug.WriteLine($"Entity Error Type: rawUuid={targetUuid},res={targetUid}");
                 }
             }
 
@@ -310,13 +310,13 @@ namespace BPSR_ZDPS
                     continue;
                 }
 
-                ulong attackerRaw = (ulong)(d.TopSummonerId != 0 ? d.TopSummonerId : d.AttackerUuid);
-                if (attackerRaw == 0)
+                long attackerUuid = (d.TopSummonerId != 0 ? d.TopSummonerId : d.AttackerUuid);
+                if (attackerUuid == 0)
                 {
                     continue;
                 }
-                bool isAttackerPlayer = IsUuidPlayerRaw(attackerRaw);
-                ulong attackerUid = Shr16(attackerRaw);
+                bool isAttackerPlayer = IsUuidPlayerRaw(attackerUuid);
+                long attackerUid = Shr16(attackerUuid);
 
                 if (isAttackerPlayer && attackerUid != 0)
                 {
@@ -343,16 +343,16 @@ namespace BPSR_ZDPS
                     continue;
                 }
 
-                ulong damage = (ulong)(damageSigned < 0 ? -damageSigned : damageSigned);
+                long damage = (damageSigned < 0 ? -damageSigned : damageSigned);
 
                 bool isCrit = d.TypeFlag != null && ((d.TypeFlag & 1) == 1);
                 bool isHeal = d.Type == EDamageType.Heal;
                 var luckyValue = d.LuckyValue;
                 bool isLucky = luckyValue != null && luckyValue != 0;
-                ulong hpLessen = 0;
+                long hpLessen = 0;
                 if (d.HpLessenValue != 0)
                 {
-                    hpLessen = (ulong)d.HpLessenValue;
+                    hpLessen = d.HpLessenValue;
                 }
 
                 bool isCauseLucky = d.TypeFlag != null && ((d.TypeFlag & 0B100) == 0B100);
@@ -413,7 +413,7 @@ namespace BPSR_ZDPS
             {
                 currentUserUuid = uuid;
                 AppState.PlayerUUID = uuid;
-                AppState.PlayerUID = (long)Shr16((ulong)uuid);
+                AppState.PlayerUID = Shr16(uuid);
             }
             var aoiSyncDelta = aoiSyncToMeDelta.BaseDelta;
             if (aoiSyncDelta == null)
@@ -447,7 +447,7 @@ namespace BPSR_ZDPS
             }
 
             AppState.PlayerUID = vData.CharId;
-            ulong playerUid = (ulong)vData.CharId;
+            long playerUid = vData.CharId;
 
             if (vData.RoleLevel?.Level != 0)
             {
@@ -529,7 +529,7 @@ namespace BPSR_ZDPS
                 uint fieldIndex = br.ReadUInt32();
                 _ = br.ReadInt32();
 
-                ulong playerUid = (ulong)currentUserUuid >> 16;
+                long playerUid = currentUserUuid >> 16;
 
                 switch (fieldIndex)
                 {
@@ -1057,9 +1057,9 @@ namespace BPSR_ZDPS
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        static bool IsUuidPlayerRaw(ulong uuidRaw) => (uuidRaw & 0xFFFFUL) == 640UL;
+        static bool IsUuidPlayerRaw(long uuidRaw) => (uuidRaw & 0xFFFFL) == 640L;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        static ulong Shr16(ulong v) => v >> 16;
+        static long Shr16(long v) => v >> 16;
     }
 }

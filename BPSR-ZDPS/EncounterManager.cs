@@ -112,7 +112,7 @@ namespace BPSR_ZDPS
             }
         }
 
-        public Entity GetOrCreateEntity(ulong uid)
+        public Entity GetOrCreateEntity(long uid)
         {
             var entity = Entities.FirstOrDefault(x => x.UID == uid);
             if (entity == null)
@@ -124,22 +124,22 @@ namespace BPSR_ZDPS
             return entity;
         }
 
-        public void SetName(ulong uid, string name)
+        public void SetName(long uid, string name)
         {
             GetOrCreateEntity(uid).SetName(name);
         }
 
-        public void SetAbilityScore(ulong uid, int power)
+        public void SetAbilityScore(long uid, int power)
         {
             GetOrCreateEntity(uid).SetAbilityScore(power);
         }
 
-        public void SetProfessionId(ulong uid,  int professionId)
+        public void SetProfessionId(long uid,  int professionId)
         {
             GetOrCreateEntity(uid).SetProfessionId(professionId);
         }
 
-        public void SetEntityType(ulong uid, EEntityType etype)
+        public void SetEntityType(long uid, EEntityType etype)
         {
             var entity = GetOrCreateEntity(uid);
             entity.EntityType = etype;
@@ -151,7 +151,7 @@ namespace BPSR_ZDPS
                 // The field that claims to normally be the UID for non-players is actually their non-unique ID
                 // Only the Attribute named Id (AttrId) is their real type UID which can be resolved into a name
                 // Also can be used to get all of their setup information from the Monsters table
-                entity.UID = (ulong)(int)attr_id;
+                entity.UID = (int)attr_id;
                 if (HelperMethods.DataTables.Monsters.Data.ContainsKey(attr_id.ToString()))
                 {
                     entity.SetName(HelperMethods.DataTables.Monsters.Data[attr_id.ToString()].Name);
@@ -159,7 +159,7 @@ namespace BPSR_ZDPS
             }
         }
 
-        public void SetAttrKV(ulong uid, string key, object value)
+        public void SetAttrKV(long uid, string key, object value)
         {
             var entity = GetOrCreateEntity(uid);
             entity.SetAttrKV(key, value);
@@ -181,50 +181,50 @@ namespace BPSR_ZDPS
             }
         }
 
-        public object? GetAttrKV(ulong uid, string key)
+        public object? GetAttrKV(long uid, string key)
         {
             return GetOrCreateEntity(uid).GetAttrKV(key);
         }
 
-        public void RegisterSkillActivation(ulong uid, int skillId)
+        public void RegisterSkillActivation(long uid, int skillId)
         {
             var entity = GetOrCreateEntity(uid);
             entity.RegisterSkillActivation(skillId);
         }
 
-        public void AddDamage(ulong uid, int skillId, EDamageProperty damageElement, ulong damage, bool isCrit, bool isLucky, bool isCauseLucky, ulong hpLessen = 0)
+        public void AddDamage(long uid, int skillId, EDamageProperty damageElement, long damage, bool isCrit, bool isLucky, bool isCauseLucky, long hpLessen = 0)
         {
             LastUpdate = DateTime.Now;
-            TotalDamage += damage;
+            TotalDamage += (ulong)damage;
             GetOrCreateEntity(uid).AddDamage(skillId, damage, isCrit, isLucky, hpLessen, damageElement, isCauseLucky);
         }
 
-        public void AddHealing(ulong uid, int skillId, EDamageProperty damageElement, ulong healing, bool isCrit, bool isLucky, bool isCauseLucky, ulong targetUid)
+        public void AddHealing(long uid, int skillId, EDamageProperty damageElement, long healing, bool isCrit, bool isLucky, bool isCauseLucky, long targetUid)
         {
             LastUpdate = DateTime.Now;
-            TotalHealing += healing;
+            TotalHealing += (ulong)healing;
             GetOrCreateEntity(uid).AddHealing(skillId, healing, isCrit, isLucky, damageElement, isCauseLucky, targetUid);
         }
 
-        public void AddTakenDamage(ulong uid, int skillId, ulong damage, EDamageSource damageSource, bool isMiss, bool isDead, bool isCrit, bool isLucky, ulong hpLessen = 0)
+        public void AddTakenDamage(long uid, int skillId, long damage, EDamageSource damageSource, bool isMiss, bool isDead, bool isCrit, bool isLucky, long hpLessen = 0)
         {
             LastUpdate = DateTime.Now;
-            TotalTakenDamage += damage;
+            TotalTakenDamage += (ulong)damage;
             GetOrCreateEntity(uid).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, damageSource, isMiss, isDead);
         }
 
-        public void AddNpcTakenDamage(ulong npcId, ulong attackerUid, int skillId, ulong damage, bool isCrit, bool isLucky, ulong hpLessen = 0, bool isMiss = false, bool isDead = false, string? npcName = null)
+        public void AddNpcTakenDamage(long npcUid, long attackerUid, int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, bool isMiss = false, bool isDead = false, string? npcName = null)
         {
             LastUpdate = DateTime.Now;
-            TotalNpcTakenDamage += damage;
-            GetOrCreateEntity(npcId).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, EDamageSource.Other, isMiss, isDead);
+            TotalNpcTakenDamage += (ulong)damage;
+            GetOrCreateEntity(npcUid).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, EDamageSource.Other, isMiss, isDead);
         }
     }
 
     public class Entity
     {
-        public ulong UID { get; set; }
-        public ulong UIDRaw { get; set; }
+        public long UUID { get; set; }
+        public long UID { get; set; }
         public EEntityType EntityType { get; set; }
         public string Name { get; private set; }
         public int AbilityScore { get; private set; } = 0;
@@ -248,7 +248,7 @@ namespace BPSR_ZDPS
 
         public Dictionary<string, object> Attributes { get; set; } = new();
 
-        public Entity(ulong uid, string name = null)
+        public Entity(long uid, string name = null)
         {
             UID = uid;
             Name = name;
@@ -385,13 +385,13 @@ namespace BPSR_ZDPS
             }
         }
 
-        public void AddDamage(int skillId, ulong damage, bool isCrit, bool isLucky, ulong hpLessen = 0, EDamageProperty? damageElement = null, bool isCauseLucky = false)
+        public void AddDamage(int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, EDamageProperty? damageElement = null, bool isCauseLucky = false)
         {
-            TotalDamage += damage;
+            TotalDamage += (ulong)damage;
 
-            DamageStats.AddData((long)damage, isCrit, isLucky, (long)hpLessen, isCauseLucky);
+            DamageStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky);
 
-            RegisterSkillData(ESkillType.Damage, skillId, (long)damage, isCrit, isLucky, (long)hpLessen, isCauseLucky);
+            RegisterSkillData(ESkillType.Damage, skillId, damage, isCrit, isLucky, hpLessen, isCauseLucky);
 
             //ActionStats.Add(new ActionStat(DateTime.Now, 0, (int)skillId));
 
@@ -410,12 +410,12 @@ namespace BPSR_ZDPS
             DamageStats.EndTime = DateTime.Now;*/
         }
 
-        public void AddHealing(int skillId, ulong healing, bool isCrit, bool isLucky, EDamageProperty? damageElement = null, bool isCauseLucky = false, ulong targetUid = 0)
+        public void AddHealing(int skillId, long healing, bool isCrit, bool isLucky, EDamageProperty? damageElement = null, bool isCauseLucky = false, long targetUid = 0)
         {
-            TotalHealing += healing;
-            HealingStats.AddData((long)healing, isCrit, isLucky, 0, isCauseLucky);
+            TotalHealing += (ulong)healing;
+            HealingStats.AddData(healing, isCrit, isLucky, 0, isCauseLucky);
 
-            RegisterSkillData(ESkillType.Healing, skillId, (long)healing, isCrit, isLucky, 0, isCauseLucky);
+            RegisterSkillData(ESkillType.Healing, skillId, healing, isCrit, isLucky, 0, isCauseLucky);
             //ActionStats.Add(new ActionStat(DateTime.Now, 1, (int)skillId));
 
             //if (string.IsNullOrEmpty(SubProfession))
@@ -433,10 +433,10 @@ namespace BPSR_ZDPS
             HealingStats.EndTime = DateTime.Now;*/
         }
 
-        public void AddTakenDamage(int skillId, ulong damage, bool isCrit, bool isLucky, ulong hpLessen = 0, EDamageSource damageSource = 0, bool isMiss = false, bool isDead = false)
+        public void AddTakenDamage(int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, EDamageSource damageSource = 0, bool isMiss = false, bool isDead = false)
         {
-            TotalTakenDamage += damage;
-            RegisterSkillData(ESkillType.Taken, skillId, (long)damage, isCrit, isLucky, (long)hpLessen, false);
+            TotalTakenDamage += (ulong)damage;
+            RegisterSkillData(ESkillType.Taken, skillId, damage, isCrit, isLucky, hpLessen, false);
             /*TakenStats.value += (long)damage;
             TakenStats.StartTime ??= DateTime.Now;
             TakenStats.EndTime = DateTime.Now;*/

@@ -112,7 +112,7 @@ namespace BPSR_ZDPS
             return $"{(Math.Sign(value) * shortNumber).ToString(fmt)}{suf[place]}";
         }
 
-        public static EEntityType RawUuidToEntityType(ulong uuid) => (uuid & 0xFFFFUL) switch
+        public static EEntityType RawUuidToEntityType(long uuid) => (uuid & 0xFFFFL) switch
         {
             64 => EEntityType.EntMonster,
             128 => EEntityType.EntNpc,
