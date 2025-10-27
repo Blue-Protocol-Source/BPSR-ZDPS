@@ -57,7 +57,7 @@ public class NetCap
         //ConnectionScanTask = Task.Factory.StartNew(ScanForConnections, CancelTokenSrc.Token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
 
         TcpConnectionManager = new TcpConnectionManager();
-        //TcpConnectionManager.ConnectionTimeout = TimeSpan.FromSeconds(3); // Timeout after 3 seconds (that seems like more than enough time)
+        TcpConnectionManager.ConnectionTimeout = TimeSpan.FromSeconds(5); // Timeout after 3 seconds (that seems like more than enough time)
         TcpConnectionManager.OnConnectionFound += TcpConnectionManagerOnOnConnectionFound;
 
         var conns = Utils.GetTCPConnectionsForExe(Config.ExeName)
@@ -190,8 +190,8 @@ public class NetCap
         var tcpGens = new Dictionary<TcpFlow, TcpStreamGenerator>();
         var fromFlow = c.Flows[0];
         var toFlow = c.Flows[1];
-        var tcpGenFrom = new TcpStreamGenerator(fromFlow, TimeSpan.MaxValue, null);
-        var tcpGenTo = new TcpStreamGenerator(toFlow, TimeSpan.MaxValue, null);
+        var tcpGenFrom = new TcpStreamGenerator(fromFlow, TimeSpan.FromSeconds(5), null);
+        var tcpGenTo = new TcpStreamGenerator(toFlow, TimeSpan.FromSeconds(5), null);
         var connStatus = new TcpConnStatus();
 
         var isFromLocal = fromFlow.address.ToString() == LocalAddress;
