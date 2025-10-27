@@ -1,4 +1,551 @@
 {
+    "1201":
+    {
+        "Name": "Raincall Surge - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_skill_atk"
+    },
+    "1202":
+    {
+        "Name": "Raincall Surge - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_skill_atk"
+    },
+    "1203":
+    {
+        "Name": "Raincall Surge - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_skill_atk"
+    },
+    "1204":
+    {
+        "Name": "Raincall Surge - Stage 4",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_skill_atk"
+    },
+    "1210":
+    {
+        "Name": "Maelstrom",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx06"
+    },
+    "1211":
+    {
+        "Name": "Crystal Veil",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx05"
+    },
+    "1216":
+    {
+        "Name": "Enhanced Clearfall Orb"
+    },
+    "1219":
+    {
+        "Name": "Ice Tornado"
+    },
+    "1222":
+    {
+        "Name": "Phantom Dash"
+    },
+    "1223":
+    {
+        "Name": "Phantom Dash"
+    },
+    "1238":
+    {
+        "Name": "Tidal Vortex - Passive Skill",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx04"
+    },
+    "1239":
+    {
+        "Name": "Meteor Storm",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx07"
+    },
+    "1240":
+    {
+        "Name": "Frozen Gale",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx08"
+    },
+    "1241":
+    {
+        "Name": "Frostbeam",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_tg01"
+    },
+    "1242":
+    {
+        "Name": "Frost Lance",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_tg02"
+    },
+    "1243":
+    {
+        "Name": "Permafrost",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx01"
+    },
+    "1244":
+    {
+        "Name": "Blizzard",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx03"
+    },
+    "1245":
+    {
+        "Name": "Frost Shelter",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx02"
+    },
+    "1246":
+    {
+        "Name": "Tidepool",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx04"
+    },
+    "1247":
+    {
+        "Name": "Talent Triggered Comet"
+    },
+    "1248":
+    {
+        "Name": "Glacier Hymn",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_ult"
+    },
+    "1249":
+    {
+        "Name": "Cooperative Crystal",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx07"
+    },
+    "1250":
+    {
+        "Name": "Water Vortex"
+    },
+    "1251":
+    {
+        "Name": "Water Vortex"
+    },
+    "1256":
+    {
+        "Name": "Tidepool",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx04"
+    },
+    "1257":
+    {
+        "Name": "Blizzard",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx03"
+    },
+    "1258":
+    {
+        "Name": "Talent - Crystal Fall"
+    },
+    "1259":
+    {
+        "Name": "Frost Comet"
+    },
+    "1260":
+    {
+        "Name": "Ice Meteor Hologram",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx07"
+    },
+    "1261":
+    {
+        "Name": "Instant Blizzard"
+    },
+    "1262":
+    {
+        "Name": "Ice Meteor Hologram",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx07"
+    },
+    "1263":
+    {
+        "Name": "Staff Ultimate: Powerful Ice Meteor"
+    },
+    "1401":
+    {
+        "Name": "Windborne Grace - Sweep",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq_skill_atk"
+    },
+    "1402":
+    {
+        "Name": "Windborne Grace - Rush/Smash",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq_skill_atk"
+    },
+    "1403":
+    {
+        "Name": "Windborne Grace - Spinning Kick",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq_skill_atk"
+    },
+    "1404":
+    {
+        "Name": "Windborne Grace - Down Smash",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq_skill_atk"
+    },
+    "1405":
+    {
+        "Name": "Gale Thrust",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq_skill_01"
+    },
+    "1406":
+    {
+        "Name": "Windborne Grace",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq_skill_atk"
+    },
+    "1407":
+    {
+        "Name": "Typhoon",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq_skill_02"
+    },
+    "1409":
+    {
+        "Name": "Typhoon Cleave",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_ult_01"
+    },
+    "1410":
+    {
+        "Name": "Typhoon Cleave",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_ult_02"
+    },
+    "1411":
+    {
+        "Name": "Swift Blade",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq_skill_atk"
+    },
+    "1418":
+    {
+        "Name": "Gale Thrust",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_tg01"
+    },
+    "1501":
+    {
+        "Name": "Vines' Embrace - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh_skill_atk"
+    },
+    "1502":
+    {
+        "Name": "Vines' Embrace - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh_skill_atk"
+    },
+    "1503":
+    {
+        "Name": "Vines' Embrace - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh_skill_atk"
+    },
+    "1504":
+    {
+        "Name": "Vines' Embrace - Stage 4",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh_skill_atk"
+    },
+    "1517":
+    {
+        "Name": "Vines' Embrace - Lethal Skill Counter"
+    },
+    "1551":
+    {
+        "Name": "Wild Seed"
+    },
+    "1701":
+    {
+        "Name": "Judgment Cut - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_skill_atk01"
+    },
+    "1702":
+    {
+        "Name": "Judgment Cut - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_skill_atk01"
+    },
+    "1703":
+    {
+        "Name": "Judgment Cut - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_skill_atk01"
+    },
+    "1704":
+    {
+        "Name": "Judgment Cut - Stage 4",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_skill_atk01"
+    },
+    "1724":
+    {
+        "Name": "Thundercut - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_kx06"
+    },
+    "1725":
+    {
+        "Name": "Thundercut - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_kx06"
+    },
+    "1726":
+    {
+        "Name": "Thundercut - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_kx06"
+    },
+    "1739":
+    {
+        "Name": "Perception Slash"
+    },
+    "1740":
+    {
+        "Name": "Storm Scythe (Thundercut - Final Slash)"
+    },
+    "1901":
+    {
+        "Name": "Halberd's Edge 1 / Rock Bomb",
+        "Icon": "ui/atlas/skill_weapon_wr/weapon_wr_skill_atk"
+    },
+    "1902":
+    {
+        "Name": "Halberd's Edge 2 / Rock Bomb",
+        "Icon": "ui/atlas/skill_weapon_wr/weapon_wr_skill_atk"
+    },
+    "1903":
+    {
+        "Name": "Halberd's Edge 3",
+        "Icon": "ui/atlas/skill_weapon_wr/weapon_wr_skill_atk"
+    },
+    "1904":
+    {
+        "Name": "Halberd's Edge 4",
+        "Icon": "ui/atlas/skill_weapon_wr/weapon_wr_skill_atk"
+    },
+    "1909":
+    {
+        "Name": "Halberd's Edge (Jump)"
+    },
+    "1912":
+    {
+        "Name": "Halberd's Edge - Lethal Skill Counter"
+    },
+    "2201":
+    {
+        "Name": "Bullseye",
+        "Icon": "ui/atlas/skill_weapon_gj/weapon_gj-01_atk"
+    },
+    "2288":
+    {
+        "Name": "Light Bomb"
+    },
+    "2289":
+    {
+        "Name": "Rain of Arrows"
+    },
+    "2290":
+    {
+        "Name": "Sharp Eyes - Light Giant Arrow - Focus Monsters (Talent)"
+    },
+    "2291":
+    {
+        "Name": "Double Star Arrow"
+    },
+    "230101":
+    {
+        "Name": "Harmonic Anthem - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+    },
+    "230102":
+    {
+        "Name": "Harmonic Anthem - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+    },
+    "230103":
+    {
+        "Name": "Harmonic Anthem - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+    },
+    "230104":
+    {
+        "Name": "Harmonic Anthem - Stage 4",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+    },
+    "2301":
+    {
+        "Name": "Resonant Strings - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2302":
+    {
+        "Name": "Resonant Strings - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2303":
+    {
+        "Name": "Resonant Strings - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2304":
+    {
+        "Name": "Resonant Strings - Stage 4",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2305":
+    {
+        "Name": "Passive Effect Encore Damage"
+    },
+    "2306":
+    {
+        "Name": "Amplified Beat",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_tg01"
+    },
+    "2309":
+    {
+        "Name": "Rhapsody of Flame",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx02"
+    },
+    "230105":
+    {
+        "Name": "Rhapsody of Flame - Stomp",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx02"
+    },
+    "230106":
+    {
+        "Name": "Flame Note Damage",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx02"
+    },
+    "2310":
+    {
+        "Name": "Heroic Melody",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx03"
+    },
+    "2311":
+    {
+        "Name": "Healing Melody",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx04"
+    },
+    "2312":
+    {
+        "Name": "Fivefold Crescendo",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx05"
+    },
+    "2313":
+    {
+        "Name": "Passion Burst",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx06"
+    },
+    "2314":
+    {
+        "Name": "Rock the Stage",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_ult"
+    },
+    "2315":
+    {
+        "Name": "Encore",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx07"
+    },
+    "230401":
+    {
+        "Name": "Encore Damage",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx07"
+    },
+    "2316":
+    {
+        "Name": "Center Stage",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx08"
+    },
+    "2317":
+    {
+        "Name": "Fierce Strike",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx03_01"
+    },
+    "2318":
+    {
+        "Name": "Finale! Healing Movement",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx04_01"
+    },
+    "2319":
+    {
+        "Name": "Sound Wave Surge"
+    },
+    "2320":
+    {
+        "Name": "Flame Blast"
+    },
+    "2321":
+    {
+        "Name": "String Strike - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2322":
+    {
+        "Name": "String Strike - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2323":
+    {
+        "Name": "String Strike - Stage 3",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2324":
+    {
+        "Name": "String Strike - Stage 4",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+    },
+    "2329":
+    {
+        "Name": "Flame Dancer"
+    },
+    "2330":
+    {
+        "Name": "Flame Pillar Blast (Enhanced)"
+    },
+    "2331":
+    {
+        "Name": "Sound Blaze - Sorching Impact"
+    },
+    "2332":
+    {
+        "Name": "Passion Fury",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_tf03_01"
+    },
+    "2335":
+    {
+        "Name": "Infinite Rhapsody",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_ult01"
+    },
+    "2336":
+    {
+        "Name": "Concert Circuit",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_ult02"
+    },
+    "55301":
+    {
+        "Name": "Flame Fantasy"
+    },
+    "55341":
+    {
+        "Name": "Heroic Melody",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx03"
+    },
+    "55342":
+    {
+        "Name": "Healing Melody",
+        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx04"
+    },
+    "55344":
+    {
+        "Name": "Upgrade: Blast the Field"
+    },
+    "55346":
+    {
+        "Name": "Upgrade: Infinite Fantasy"
+    },
+    "2207151":
+    {
+        "Name": "Fiery Healing"
+    },
+    "2352":
+    {
+        "Name": "Celestial Eagle - Eagle"
+    },
+    "2361":
+    {
+        "Name": "Healing Beat copy"
+    },
+    "2362":
+    {
+        "Name": "Healing Beat copy"
+    },
+    "2363":
+    {
+        "Name": "Healing Beat copy"
+    },
+    "2364":
+    {
+        "Name": "Rock the Stage copy"
+    },
+    "2365":
+    {
+        "Name": "Infinite Rhapsody copy"
+    },
+    "2366":
+    {
+        "Name": "Concert Circuit copy"
+    },
     "2401":
     {
         "Name": "Blade of Justice - Stage 1",
@@ -254,195 +801,2456 @@
     {
         "Name": "Stunt! Chaotic Barrage - Missle 06"
     },
-    "230101":
+    "3698":
     {
-        "Name": "Harmonic Anthem - Stage 1",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+        "Name": "Wind Goblin King (Passive)"
     },
-    "230102":
+    "7003":
     {
-        "Name": "Harmonic Anthem - Stage 2",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+        "Name": "Void Ball: Void Corruption"
     },
-    "230103":
+    "7005":
     {
-        "Name": "Harmonic Anthem - Stage 3",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+        "Name": "Light Ball: Void Cleanse"
     },
-    "230104":
+    "7050":
     {
-        "Name": "Harmonic Anthem - Stage 4",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx01"
+        "Name": "Void Corruption - Tremor"
     },
-    "2301":
+    "7051":
     {
-        "Name": "Resonant Strings - Stage 1",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+        "Name": "Triple Flame Cleave"
     },
-    "2302":
+    "20301":
     {
-        "Name": "Resonant Strings - Stage 2",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+        "Name": "Life Blossom"
     },
-    "2303":
+    "21402":
     {
-        "Name": "Resonant Strings - Stage 3",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+        "Name": "Wild Blossom"
     },
-    "2304":
+    "21404":
     {
-        "Name": "Resonant Strings - Stage 4",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+        "Name": "Nourish"
     },
-    "2305":
+    "21406":
+    {
+        "Name": "Forest Prayer"
+    },
+    "21414":
+    {
+        "Name": "Holy Barrier Lasts"
+    },
+    "21418":
+    {
+        "Name": "Deer Rush"
+    },
+    "21423":
+    {
+        "Name": "Symbiotic Mark"
+    },
+    "21424":
+    {
+        "Name": "Thorns"
+    },
+    "21427":
+    {
+        "Name": "Smite Healing Misses A1"
+    },
+    "21428":
+    {
+        "Name": "Smite Healing Misses A2"
+    },
+    "21429":
+    {
+        "Name": "Smite Healing Misses A3"
+    },
+    "21430":
+    {
+        "Name": "Smite Healing Misses A4"
+    },
+    "27009":
+    {
+        "Name": "Ice Buff"
+    },
+    "31901":
+    {
+        "Name": "Wind Ring of Courage"
+    },
+    "43201":
+    {
+        "Name": "Stormflash"
+    },
+    "44501":
+    {
+        "Name": "Severe Injury"
+    },
+    "44701":
+    {
+        "Name": "Moon Blade"
+    },
+    "50024":
+    {
+        "Name": "Shield"
+    },
+    "50033":
+    {
+        "Name": "Gather Monsters"
+    },
+    "50036":
+    {
+        "Name": "Weak Spot Strike"
+    },
+    "50037":
+    {
+        "Name": "Block Counterattack"
+    },
+    "50042":
+    {
+        "Name": "Super Armor"
+    },
+    "50049":
+    {
+        "Name": "Sandstone Cloak (Persistent)"
+    },
+    "50050":
+    {
+        "Name": "Countercrush"
+    },
+    "50052":
+    {
+        "Name": "Magic Shield"
+    },
+    "50057":
+    {
+        "Name": "Stoneform"
+    },
+    "50058":
+    {
+        "Name": "Brave Bastion"
+    },
+    "50068":
+    {
+        "Name": "Block Counterattack - Strong"
+    },
+    "50101":
+    {
+        "Name": "Five-Stage Resonance"
+    },
+    "50201":
+    {
+        "Name": "Five-Stage Resonance"
+    },
+    "55221":
+    {
+        "Name": "Photon Regorge"
+    },
+    "55223":
+    {
+        "Name": "Focus"
+    },
+    "55231":
+    {
+        "Name": "Explosive Arrow Buff Detonates"
+    },
+    "55235":
+    {
+        "Name": "Light Will - Quadruple Arrow (Splash Damage)"
+    },
+    "55236":
+    {
+        "Name": "Strengthened Special Attack Final Attack Avatar"
+    },
+    "55238":
+    {
+        "Name": "Bow - Ultimate Attraction"
+    },
+    "55239":
+    {
+        "Name": "Light Stasis Immobilization Buff"
+    },
+    "55240":
+    {
+        "Name": "Light Bombardment Area-of-effect Buff"
+    },
+    "55302":
+    {
+        "Name": "Healing Rhythm"
+    },
+    "55304":
+    {
+        "Name": "Surging Quintet"
+    },
+    "55311":
+    {
+        "Name": "Encore Transformation"
+    },
+    "553313":
+    {
+        "Name": "Amplified Harmonic Anthem"
+    },
+    "55314":
+    {
+        "Name": "Encore"
+    },
+    "55328":
+    {
+        "Name": "Double Play of the Highly Anticipated Surge Quintet"
+    },
+    "55335":
+    {
+        "Name": "Highly Anticipated Passionate Stage 3"
+    },
+    "55339":
+    {
+        "Name": "Upgrade - Tour Song"
+    },
+    "55355":
+    {
+        "Name": "Ceasing Healing"
+    },
+    "55432":
+    {
+        "Name": "Cold and Ruthless Crusade Damage Buff"
+    },
+    "100101":
+    {
+        "Name": "Goblin Strike"
+    },
+    "100301":
+    {
+        "Name": "Goblin Slash"
+    },
+    "100302":
+    {
+        "Name": "Goblin Dagger's Two Swipe Attack"
+    },
+    "100309":
+    {
+        "Name": "Goblin Slash - Heroic"
+    },
+    "100412":
+    {
+        "Name": "Shield Guard Charge - Goblin Lair Boss"
+    },
+    "100429":
+    {
+        "Name": "Shield Goblin - Heroic Elite Stab"
+    },
+    "100430":
+    {
+        "Name": "Shield Goblin - Small Heroic Elite Stab"
+    },
+    "100503":
+    {
+        "Name": "Meteor Strike"
+    },
+    "100551":
+    {
+        "Name": "Goblin Mage Fire Meteor Impact (Profession Trial)"
+    },
+    "100552":
+    {
+        "Name": "Goblin Mage Fire Meteor Lingering Flames (Profession Trial)"
+    },
+    "100702":
+    {
+        "Name": "Goblin Crossbow Pushback"
+    },
+    "100708":
+    {
+        "Name": "Goblin Crossbow Rapid Multishot"
+    },
+    "100730":
+    {
+        "Name": "Goblin Crossbowman Active"
+    },
+    "100734":
+    {
+        "Name": "Goblin Crossbow Wind Arrow"
+    },
+    "100739":
+    {
+        "Name": "Scattered Arrow Rain"
+    },
+    "100802":
+    {
+        "Name": "Goblin Axe's Large Slash"
+    },
+    "100803":
+    {
+        "Name": "Goblin Axe's Spin Attack"
+    },
+    "100808":
+    {
+        "Name": "Gale Cleave"
+    },
+    "100850":
+    {
+        "Name": "Goblin Axe's Heavy Swing"
+    },
+    "100862":
+    {
+        "Name": "Goblin Axe's Double Slash"
+    },
+    "100870":
+    {
+        "Name": "Goblin Axe's Wind Sweep"
+    },
+    "101001":
+    {
+        "Name": "Boar Charge"
+    },
+    "101112":
+    {
+        "Name": "Pet Eagle Quick Turn"
+    },
+    "101203":
+    {
+        "Name": "Flame Orc Fire Breath"
+    },
+    "101210":
+    {
+        "Name": "Flame Orc Triple Combo (Enraged)"
+    },
+    "101329":
+    {
+        "Name": "Fire Explosion"
+    },
+    "101340":
+    {
+        "Name": "Fire Blast"
+    },
+    "102640":
+    {
+        "Name": "Special Skill! Hog Rush (Mighty Boar)"
+    },
+    "110412":
+    {
+        "Name": "Laser Ray"
+    },
+    "110503":
+    {
+        "Name": "Self-Destruct"
+    },
+    "110505":
+    {
+        "Name": "Self-Destruct"
+    },
+    "110601":
+    {
+        "Name": "Battle Mech - Punch"
+    },
+    "110603":
+    {
+        "Name": "Battle Mech - Smash"
+    },
+    "110604":
+    {
+        "Name": "Battle Mech - Forward Charge"
+    },
+    "110605":
+    {
+        "Name": "Battle Mech - Jump Slam"
+    },
+    "110607":
+    {
+        "Name": "Battle Mech - Power Slam"
+    },
+    "110609":
+    {
+        "Name": "Battle Mech - Floor Slam"
+    },
+    "110610":
+    {
+        "Name": "Battle Mech 03 - Jump Attack"
+    },
+    "110611":
+    {
+        "Name": "Battle Mech 03 - Three Hit Combo"
+    },
+    "110640":
+    {
+        "Name": "Combat Golem Type 03 - Downward Slam - Class Trial"
+    },
+    "110650":
+    {
+        "Name": "Battle Mech 03 - Downward Slam - Void Dragon"
+    },
+    "110701":
+    {
+        "Name": "Super Mech - Punch"
+    },
+    "110713":
+    {
+        "Name": "Super Mech - Laser Core"
+    },
+    "110721":
+    {
+        "Name": "Super Mech - Gravity Smash"
+    },
+    "110820":
+    {
+        "Name": "Battle Mech - Punch"
+    },
+    "110825":
+    {
+        "Name": "Battle Mech - Overload"
+    },
+    "110852":
+    {
+        "Name": "Single Target Fire Bomb"
+    },
+    "111001":
+    {
+        "Name": "Right Strike"
+    },
+    "111002":
+    {
+        "Name": "Left Strike"
+    },
+    "111003":
+    {
+        "Name": "Two Hit Combo"
+    },
+    "111009":
+    {
+        "Name": "High Explosives Bombs - Full Tracking"
+    },
+    "111055":
+    {
+        "Name": "315 Degree AOE"
+    },
+    "111058":
+    {
+        "Name": "Lethal Skill: Jumping Slam"
+    },
+    "111061":
+    {
+        "Name": "Sky Shatter"
+    },
+    "111070":
+    {
+        "Name": "Superconductive Wave"
+    },
+    "111072":
+    {
+        "Name": "Charged Laser - Lethal"
+    },
+    "111087":
+    {
+        "Name": "Dimensional Oblivion!"
+    },
+    "111092":
+    {
+        "Name": "Chasing Missiles"
+    },
+    "111095":
+    {
+        "Name": "Missile Spread"
+    },
+    "111153":
+    {
+        "Name": "Electromagnetic Outer Ring"
+    },
+    "111154":
+    {
+        "Name": "Electromagnetic Middle Ring"
+    },
+    "111155":
+    {
+        "Name": "Electromagnetic Inner Ring"
+    },
+    "120201":
+    {
+        "Name": "Rain and Tide - Curved Bullet"
+    },
+    "120301":
+    {
+        "Name": "Rain and Tide - Final Blow"
+    },
+    "120401":
+    {
+        "Name": "Rain and Tide - Normal Attack Stage 1"
+    },
+    "120501":
+    {
+        "Name": "Rain and Tide"
+    },
+    "120901":
+    {
+        "Name": "Piercing Ice Spear"
+    },
+    "120902":
+    {
+        "Name": "Ice Spear"
+    },
+    "121302":
+    {
+        "Name": "Ice Arrow"
+    },
+    "121501":
+    {
+        "Name": "Crystal Veil"
+    },
+    "140101":
+    {
+        "Name": "Claw Strike - Two Hit"
+    },
+    "140105":
+    {
+        "Name": "Heavy Forward Smash"
+    },
+    "140108":
+    {
+        "Name": "Lethal Skill: Spin Strike Combo"
+    },
+    "140114":
+    {
+        "Name": "Diving Half Arena Cleave"
+    },
+    "140116":
+    {
+        "Name": "Thunder Vortex"
+    },
+    "140133":
+    {
+        "Name": "Wind Breath"
+    },
+    "140137":
+    {
+        "Name": "Lightning Storm"
+    },
+    "140142":
+    {
+        "Name": "Charge Attraction"
+    },
+    "140143":
+    {
+        "Name": "Lethal Skill: Jump Strike"
+    },
+    "140158":
+    {
+        "Name": "Thunder Burst"
+    },
+    "140160":
+    {
+        "Name": "Wind Explosion"
+    },
+    "140163":
+    {
+        "Name": "Wind Spirit Explosion"
+    },
+    "140165":
+    {
+        "Name": "Thunder Burst - Phase 2"
+    },
+    "140301":
+    {
+        "Name": "Divine Shadow Spiral"
+    },
+    "140401":
+    {
+        "Name": "Dragon Blast Cannon"
+    },
+    "140501":
+    {
+        "Name": "Tornado"
+    },
+    "141104":
+    {
+        "Name": "Mutant Bee Active A1"
+    },
+    "149901":
+    {
+        "Name": "Wind Spiral/Spiral Detonation"
+    },
+    "149902":
+    {
+        "Name": "Spear Piercing"
+    },
+    "149904":
+    {
+        "Name": "Tina Tornado"
+    },
+    "149905":
+    {
+        "Name": "Bird Throw"
+    },
+    "149906":
+    {
+        "Name": "Extreme Storm Cut"
+    },
+    "149907":
+    {
+        "Name": "Sharp Impact (Wind God)"
+    },
+    "150101":
+    {
+        "Name": "Deer Rush"
+    },
+    "150103":
+    {
+        "Name": "Unruly Seed Stage 1"
+    },
+    "150104":
+    {
+        "Name": "Unruly Seed Stage 2"
+    },
+    "150106":
+    {
+        "Name": "Infusion (Left Hand)"
+    },
+    "150107":
+    {
+        "Name": "Infusion (Right Hand)"
+    },
+    "150110":
+    {
+        "Name": "Infusion (Double Infusion Extra)"
+    },
+    "155101":
+    {
+        "Name": "Raikiri"
+    },
+    "155102":
+    {
+        "Name": "Raikiri - Final Attack"
+    },
+    "170101":
+    {
+        "Name": "Swing, Spin, Swing, Slash Combo"
+    },
+    "170103":
+    {
+        "Name": "Pursuit"
+    },
+    "170105":
+    {
+        "Name": "Lethal Skill: Struggle Slash"
+    },
+    "170106":
+    {
+        "Name": "Big Jump"
+    },
+    "170107":
+    {
+        "Name": "Void Corruption: Roar!"
+    },
+    "170108":
+    {
+        "Name": "Void Corruption Mark"
+    },
+    "170109":
+    {
+        "Name": "Void Corruption: Cleave!"
+    },
+    "170110":
+    {
+        "Name": "SLASH!"
+    },
+    "170201":
+    {
+        "Name": "Enraged Four Combo"
+    },
+    "170203":
+    {
+        "Name": "Chase"
+    },
+    "170205":
+    {
+        "Name": "Lethal Skill: Void Erosion Combo"
+    },
+    "170252":
+    {
+        "Name": "Void Residue"
+    },
+    "170253":
+    {
+        "Name": "Void Corruption Floor"
+    },
+    "170254":
+    {
+        "Name": "Void Corruption AOE"
+    },
+    "170255":
+    {
+        "Name": "Void Corruption Pierce"
+    },
+    "170256":
+    {
+        "Name": "Void Corruption Floor"
+    },
+    "170257":
+    {
+        "Name": "Void Corruption Floor"
+    },
+    "170258":
+    {
+        "Name": "Void Corruption: Decimation"
+    },
+    "170259":
+    {
+        "Name": "Void Corruption Decay DMG"
+    },
+    "170260":
+    {
+        "Name": "Void Corruption Decay DMG"
+    },
+    "170401":
+    {
+        "Name": "Pounce"
+    },
+    "170410":
+    {
+        "Name": "Void Corruption Pounce"
+    },
+    "170450":
+    {
+        "Name": "Crawling Monster - Shockwave (Hero Dungeon)"
+    },
+    "179904":
+    {
+        "Name": "Divine Shadow Slash - Final Attack"
+    },
+    "179906":
+    {
+        "Name": "Moon Blade Spin"
+    },
+    "179907":
+    {
+        "Name": "Blade Wind Realm"
+    },
+    "179908":
+    {
+        "Name": "Blade Intent Lightning Strike"
+    },
+    "199902":
+    {
+        "Name": "Earth Collapse and Mountain Destruction"
+    },
+    "199903":
+    {
+        "Name": "Giant Rock Bombardment"
+    },
+    "220101":
+    {
+        "Name": "?Bullseye?"
+    },
+    "220102":
+    {
+        "Name": "Torrent Volley"
+    },
+    "220103":
+    {
+        "Name": "Unerring Hit - Final Blow"
+    },
+    "220104":
+    {
+        "Name": "Double Arrow/Storm Arrow"
+    },
+    "220105":
+    {
+        "Name": "Light Pursuit Arrow"
+    },
+    "220106":
+    {
+        "Name": "Aerial Shot"
+    },
+    "220107":
+    {
+        "Name": "Magic Arrow"
+    },
+    "220108":
+    {
+        "Name": "Explosive Arrow"
+    },
+    "220109":
+    {
+        "Name": "Intimidating Shot"
+    },
+    "220110":
+    {
+        "Name": "Explosive Arrow"
+    },
+    "220111":
+    {
+        "Name": "Radiance Will - Quadruple Arrow"
+    },
+    "220112":
+    {
+        "Name": "Radiance Rift"
+    },
+    "220113":
+    {
+        "Name": "Phantom Falcon"
+    },
+    "220203":
+    {
+        "Name": "Light Will - Quadruple Arrow"
+    },
+    "220301":
+    {
+        "Name": "Sharp Eyes - Light Giant Arrow (Arrow Damage)"
+    },
+    "221101":
+    {
+        "Name": "Unerring Hit - Red Light Counter"
+    },
+    "230501":
     {
         "Name": "Passive Effect Encore Damage"
     },
-    "2306":
+    "231001":
     {
-        "Name": "Amplified Beat",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_tg01"
+        "Name": "Rhapsody of Flame - Damage"
     },
-    "2309":
+    "240102":
     {
-        "Name": "Rhapsody of Flame",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx02"
+        "Name": "Bright Resolve"
     },
-    "230105":
+    "300000":
     {
-        "Name": "Rhapsody of Flame - Stomp",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx02"
+        "Name": "Lethal Skill: Two Phase Jump Smash"
     },
-    "230106":
+    "300001":
     {
-        "Name": "Flame Note Damage",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx02"
+        "Name": "Sweep Right"
     },
-    "2310":
+    "300005":
     {
-        "Name": "Heroic Melody",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx03"
+        "Name": "Triple Attack"
     },
-    "2311":
+    "300011":
     {
-        "Name": "Healing Melody",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx04"
+        "Name": "Forward Charge Strike"
     },
-    "2312":
+    "300013":
     {
-        "Name": "Fivefold Crescendo",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx05"
+        "Name": "Void Erosion Strike"
     },
-    "2313":
+    "300026":
     {
-        "Name": "Passion Burst",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx06"
+        "Name": "Fan Blade Impact"
     },
-    "2314":
+    "300027":
     {
-        "Name": "Rock the Stage",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_ult"
+        "Name": "Clone Death Explosion"
     },
-    "2315":
+    "300028":
     {
-        "Name": "Encore",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx07"
+        "Name": "Lock-On Role Call Stack"
     },
-    "230401":
+    "300054":
     {
-        "Name": "Encore Damage",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx07"
+        "Name": "Void Reverie (Hero)"
     },
-    "2316":
+    "300079":
     {
-        "Name": "Center Stage",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx08"
+        "Name": "Void Reverie Phantom - Rapid Erosion Attack"
     },
-    "2317":
+    "300088":
     {
-        "Name": "Fierce Strike",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx03_01"
+        "Name": "Ground Void Traps"
     },
-    "2318":
+    "300089":
     {
-        "Name": "Finale! Healing Movement",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx04_01"
+        "Name": "Wild Spear Blade - Rapid Void Slash (6 Damage Slices)"
     },
-    "2319":
+    "300090":
     {
-        "Name": "Sound Wave Surge"
+        "Name": "Void Entanglement - Body Erosion"
     },
-    "2320":
+    "300301":
     {
-        "Name": "Flame Blast"
+        "Name": "Dragging Void Spear"
     },
-    "2321":
+    "300401":
     {
-        "Name": "String Strike - Stage 1",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+        "Name": "One-handed Sword Slash 1"
     },
-    "2322":
+    "300402":
     {
-        "Name": "String Strike - Stage 2",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+        "Name": "One-handed Sword Slash 2"
     },
-    "2323":
+    "300403":
     {
-        "Name": "String Strike - Stage 3",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+        "Name": "One-handed Sword Slash 3"
     },
-    "2324":
+    "300407":
     {
-        "Name": "String Strike - Stage 4",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_atk"
+        "Name": "Spearman - Thrust"
     },
-    "2330":
+    "300415":
     {
-        "Name": "Flame Pillar Blast (Enhanced)"
+        "Name": "One-handed Sword Spin"
     },
-    "2331":
+    "300419":
     {
-        "Name": "Sound Blaze - Sorching Impact"
+        "Name": "Rifle - Kick and Triple Shot"
     },
-    "2332":
+    "300431":
     {
-        "Name": "Passion Fury",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_tf03_01"
+        "Name": "Rifle - Piercing Bullet"
     },
-    "2335":
+    "300442":
     {
-        "Name": "Infinite Rhapsody",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_ult01"
+        "Name": "Rifle - Piercing Shot (Andra Extermination Battle Exclusive)"
     },
-    "2336":
+    "300451":
     {
-        "Name": "Concert Circuit",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_ult02"
+        "Name": "Arcado's Bomb (Andra)"
     },
-    "55301":
+    "300452":
     {
-        "Name": "Flame Fantasy"
+        "Name": "Arcado's Shared Lightning"
     },
-    "55341":
+    "300453":
     {
-        "Name": "Heroic Melody",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx03"
+        "Name": "Arcado's Spearmen (Andra)"
     },
-    "55342":
+    "300473":
     {
-        "Name": "Healing Melody",
-        "Icon": "ui/atlas/skill_weapon_jt/weapon_jt-01_kx04"
+        "Name": "Electromagnetic Traps"
     },
-    "55344":
+    "300501":
     {
-        "Name": "Upgrade: Blast the Field"
+        "Name": "Double Erosion Strike"
     },
-    "55346":
+    "301501":
     {
-        "Name": "Upgrade: Infinite Fantasy"
+        "Name": "Twin Mechanoid - Hammer Slam"
     },
-    "2207151":
+    "301504":
     {
-        "Name": "Fiery Healing"
+        "Name": "Twin Mechanoid - Charge"
     },
+    "301520":
+    {
+        "Name": "Twin Kaki - Flame Shield"
+    },
+    "301521":
+    {
+        "Name": "Twin Mechanoid - Flame"
+    },
+    "301522":
+    {
+        "Name": "Twin Machine - Flame Spread Virtual Body"
+    },
+    "301523":
+    {
+        "Name": "Twin Machine Kaki - Assault Heavy Hammer"
+    },
+    "301524":
+    {
+        "Name": "Twin Mechanoid Kaki - Homing Ground Fire"
+    },
+    "301525":
+    {
+        "Name": "Twin Mechanoid - Linkage - Lock-on Flamethrower"
+    },
+    "301526":
+    {
+        "Name": "Twin Mechanoid Warning"
+    },
+    "301625":
+    {
+        "Name": "Twin Mechanoid Flame Strike Telegraph"
+    },
+    "301626":
+    {
+        "Name": "Twin Mechanoid Missile"
+    },
+    "302521":
+    {
+        "Name": "Charge Strike - Heroic"
+    },
+    "391007":
+    {
+        "Name": "Goblin Crossbowman Passive"
+    },
+    "391008":
+    {
+        "Name": "Mutant Bee Passive"
+    },
+    "391301":
+    {
+        "Name": "Stunt! Electro Bomb"
+    },
+    "391401":
+    {
+        "Name": "Void Pulse"
+    },
+    "400329":
+    {
+        "Name": "Basic Attack 2 - Boss"
+    },
+    "400401":
+    {
+        "Name": "Void Phantom - Basic Attack 1"
+    },
+    "500601":
+    {
+        "Name": "Leaping Earth Shatter Shockwave"
+    },
+    "683624":
+    {
+        "Name": "Continuous Health Regeneration BUFF"
+    },
+    "700001":
+    {
+        "Name": "Void Erosion Flame Wave"
+    },
+    "700005":
+    {
+        "Name": "Void Meteor 1"
+    },
+    "700006":
+    {
+        "Name": "Void Meteor 2"
+    },
+    "700013":
+    {
+        "Name": "Dark Eclipse"
+    },
+    "701001":
+    {
+        "Name": "Void Shadow Explosion"
+    },
+    "701002":
+    {
+        "Name": "Void Wave Explosion"
+    },
+    "800008":
+    {
+        "Name": "Arcado's Raijin Dash"
+    },
+    "800009":
+    {
+        "Name": "Twin Mechanism's Halo"
+    },
+    "800010":
+    {
+        "Name": "Twin's Fire Seed"
+    },
+    "800011":
+    {
+        "Name": "Twin's Fury"
+    },
+    "800012":
+    {
+        "Name": "Twin's Fury (Berserk Version)"
+    },
+    "800013":
+    {
+        "Name": "Arcado's Thunderball Lightning Chain"
+    },
+    "806301":
+    {
+        "Name": "Sticky Bomb"
+    },
+    "821026":
+    {
+        "Name": "Damaged Conductive Field Explosion"
+    },
+    "821034":
+    {
+        "Name": "Dimensional Corrosion"
+    },
+    "823010":
+    {
+        "Name": "Flame Aftermath"
+    },
+    "823225":
+    {
+        "Name": "Watcher Attack"
+    },
+    "840012":
+    {
+        "Name": "Void Sigil - Execution"
+    },
+    "855110":
+    {
+        "Name": "Battle Flag Slowdown"
+    },
+    "855137":
+    {
+        "Name": "Burn"
+    },
+    "881009":
+    {
+        "Name": "Necalli Connection Deducts HP"
+    },
+    "881076":
+    {
+        "Name": "Soul Split"
+    },
+    "881077":
+    {
+        "Name": "Soul Pool <Soul Split>"
+    },
+    "881080":
+    {
+        "Name": "Soul Wound"
+    },
+    "881114":
+    {
+        "Name": "Innate Soul Effect (Soul Death)"
+    },
+    "881524":
+    {
+        "Name": "Role Call: Wind Tornado (Random One Line)"
+    },
+    "881550":
+    {
+        "Name": "Electric Brand (Bleeding)"
+    },
+    "881601":
+    {
+        "Name": "Void Corruption: Fracture"
+    },
+    "881603":
+    {
+        "Name": "Void Corruption: Mark (Debuff)"
+    },
+    "900052":
+    {
+        "Name": "Dark Mist Fortress - Void Corruption"
+    },
+    "900055":
+    {
+        "Name": "Dark Mist Fortress - Falling Rocks"
+    },
+    "900056":
+    {
+        "Name": "Dark Mist Fortress - Tower Void Corruption Floor"
+    },
+    "900057":
+    {
+        "Name": "Dark Mist Fortress - Void Corruption Floor - Event Use"
+    },
+    "900071":
+    {
+        "Name": "Tower Climb: Purifying Wave"
+    },
+    "990103":
+    {
+        "Name": "Golden Juggernaut - Earth Corruption Impact"
+    },
+    "990110":
+    {
+        "Name": "Golden Juggernaut - Lightning Ball Explosion"
+    },
+    "990603":
+    {
+        "Name": "Poisoned"
+    },
+    "995129":
+    {
+        "Name": "Lightning Energy Debuff"
+    },
+    "995159":
+    {
+        "Name": "Wind Spirit Summoning Explosion"
+    },
+    "995270":
+    {
+        "Name": "Thunder Suppress"
+    },
+    "1002101":
+    {
+        "Name": "Muku Cudgel's Basic Swing"
+    },
+    "1002102":
+    {
+        "Name": "Muku Cudgel Charge Attack"
+    },
+    "1002201":
+    {
+        "Name": "Whirlwind Slash"
+    },
+    "1002202":
+    {
+        "Name": "Slam Down"
+    },
+    "1002205":
+    {
+        "Name": "Double Slam Down (Non-Lethal Skill)"
+    },
+    "1002406":
+    {
+        "Name": "Hammer Earth Crack - Line"
+    },
+    "1002407":
+    {
+        "Name": "Headbutt Knockout"
+    },
+    "1002440":
+    {
+        "Name": "Stunt! Super Critical"
+    },
+    "1002801":
+    {
+        "Name": "Frost Ogre Three Hit Combo"
+    },
+    "1002802":
+    {
+        "Name": "Lethal Skill: World-Shattering Hammer"
+    },
+    "1002803":
+    {
+        "Name": "Whirlwind Hammer"
+    },
+    "1002804":
+    {
+        "Name": "Frost Breath"
+    },
+    "1002807":
+    {
+        "Name": "Frost Stomp"
+    },
+    "1002811":
+    {
+        "Name": "Frost Ogre - Enrage"
+    },
+    "1002830":
+    {
+        "Name": "Arcane! Frostquake"
+    },
+    "1002850":
+    {
+        "Name": "Frost Ogre Delayed Telegraph Ice Spike"
+    },
+    "1002851":
+    {
+        "Name": "Frost Thorns"
+    },
+    "1005202":
+    {
+        "Name": "Deathmatch"
+    },
+    "1005240":
+    {
+        "Name": "Stunt! Predator Slash"
+    },
+    "1005301":
+    {
+        "Name": "Tetanus"
+    },
+    "1005302":
+    {
+        "Name": "Shadow Instant Kill"
+    },
+    "1005801":
+    {
+        "Name": "Super Slam Down"
+    },
+    "1005802":
+    {
+        "Name": "Whirlwind Slash"
+    },
+    "1005803":
+    {
+        "Name": "Lethal Skill: Void Corruption Slash"
+    },
+    "1005804":
+    {
+        "Name": "Slash"
+    },
+    "1005805":
+    {
+        "Name": "Unblockable Skill"
+    },
+    "1005806":
+    {
+        "Name": "Flurry"
+    },
+    "1005807":
+    {
+        "Name": "Twin Swing Slash"
+    },
+    "1005808":
+    {
+        "Name": "Void Corruption Charge"
+    },
+    "1005810":
+    {
+        "Name": "Frenzied Slash - Class Trial"
+    },
+    "1005811":
+    {
+        "Name": "Double Slash - Class Trial"
+    },
+    "1005901":
+    {
+        "Name": "Muku Vanguard Basic Attack"
+    },
+    "1005902":
+    {
+        "Name": "Muku Vanguard - Jump Smash"
+    },
+    "1005903":
+    {
+        "Name": "Muku Vanguard - Running Rampage"
+    },
+    "1005904":
+    {
+        "Name": "Muku Vanguard - Whirlwind Charge"
+    },
+    "1005905":
+    {
+        "Name": "Muku Vanguard - Counterattack"
+    },
+    "1005920":
+    {
+        "Name": "Muku Duelblade - Forward Slash"
+    },
+    "1005940":
+    {
+        "Name": "Muku Vanguard - Whirlwind Charge"
+    },
+    "1006401":
+    {
+        "Name": "Throw Grenade"
+    },
+    "1006402":
+    {
+        "Name": "Elite Dark Mist Legion Rifle - Electric Trap"
+    },
+    "1006403":
+    {
+        "Name": "Backward Jump Laser Charge"
+    },
+    "1006504":
+    {
+        "Name": "Forward Slash"
+    },
+    "1006505":
+    {
+        "Name": "Whirlwind Slash"
+    },
+    "1006506":
+    {
+        "Name": "Double Slash"
+    },
+    "1006551":
+    {
+        "Name": "Void Corruption: Tremor"
+    },
+    "1006552":
+    {
+        "Name": "Void Corruption: Burst"
+    },
+    "1006901":
+    {
+        "Name": "Arachnocrab King Normal Attack"
+    },
+    "1006902":
+    {
+        "Name": "Arachnocrab King Cocooning"
+    },
+    "1006903":
+    {
+        "Name": "Arachnocrab King Front Bullet Spit"
+    },
+    "1006904":
+    {
+        "Name": "Arachnocrab Silk Ballistic Scatter"
+    },
+    "1006905":
+    {
+        "Name": "Arachnocrab King Frenzied Silk"
+    },
+    "1006906":
+    {
+        "Name": "Arachnocrab King Burrow"
+    },
+    "1006907":
+    {
+        "Name": "Arachnocrab King Jump Smash"
+    },
+    "1006908":
+    {
+        "Name": "Arachnocrab King - Enrage"
+    },
+    "1006940":
+    {
+        "Name": "Arcane! Cocoon Tech"
+    },
+    "1006999":
+    {
+        "Name": "Arachnocrab King Ground Spike"
+    },
+    "1007601":
+    {
+        "Name": "Void Bzzar Basic Attack"
+    },
+    "1007602":
+    {
+        "Name": "Void Bzzar - Big Explosion"
+    },
+    "1007603":
+    {
+        "Name": "Void Bzzar - Transform Player"
+    },
+    "1007604":
+    {
+        "Name": "Void Bzzar - Continuous Projectiles"
+    },
+    "1007701":
+    {
+        "Name": "Venobzzar Incubator - Bombing"
+    },
+    "1007702":
+    {
+        "Name": "Venobzzar Incubator - Summon Poison Bees"
+    },
+    "1007703":
+    {
+        "Name": "Venobzzar Incubator - Corrosive Poison Explosion"
+    },
+    "1007704":
+    {
+        "Name": "Poison Explosion"
+    },
+    "1007705":
+    {
+        "Name": "Venobzzar Incubator - Enrage"
+    },
+    "1007740":
+    {
+        "Name": "Arcane! Poison Explosion"
+    },
+    "1007741":
+    {
+        "Name": "Arcane! Poison Explosion Avatar"
+    },
+    "1007798":
+    {
+        "Name": "Venobzzar Incubator - Poison Pool"
+    },
+    "1007799":
+    {
+        "Name": "Venobzzar Incubator - Delayed Explosion"
+    },
+    "1007801":
+    {
+        "Name": "Wind Dagger Goblin - Basic Attack"
+    },
+    "1007802":
+    {
+        "Name": "Wind Dagger Goblin - Powerful Spin"
+    },
+    "1008001":
+    {
+        "Name": "Great Warhog - Normal Attack"
+    },
+    "1008002":
+    {
+        "Name": "Great Warhog - Linear Roar"
+    },
+    "1008003":
+    {
+        "Name": "Great Warhog - Thunder Ball"
+    },
+    "1008020":
+    {
+        "Name": "Boarrier Storm - Normal Attack"
+    },
+    "1008021":
+    {
+        "Name": "Boarrier Storm - Wind Formation"
+    },
+    "1008040":
+    {
+        "Name": "Stunt! Thunder Ball"
+    },
+    "1008099":
+    {
+        "Name": "Great Warhog - Normal Attack"
+    },
+    "1008101":
+    {
+        "Name": "Iron Fang Normal Attack"
+    },
+    "1008102":
+    {
+        "Name": "Iron Fang - Earth Splitter"
+    },
+    "1008103":
+    {
+        "Name": "Iron Fang - Berserk Roar"
+    },
+    "1008104":
+    {
+        "Name": "Infernal Thrust"
+    },
+    "1008105":
+    {
+        "Name": "Iron Fang - Enrage"
+    },
+    "1008140":
+    {
+        "Name": "Ultimate - Hell Stab"
+    },
+    "1008440":
+    {
+        "Name": "Arcane! Azure Gale"
+    },
+    "1008540":
+    {
+        "Name": "Arcane! Silent Tide"
+    },
+    "1008641":
+    {
+        "Name": "Stunt! Whirlwind Strike"
+    },
+    "1010440":
+    {
+        "Name": "Stunt! Thunder Suppress"
+    },
+    "1205004":
+    {
+        "Name": "Pursuit of the Golem"
+    },
+    "1205009":
+    {
+        "Name": "Golem's Summon Missile"
+    },
+    "1205011":
+    {
+        "Name": "Golem's Pursuit - Random Area"
+    },
+    "1205012":
+    {
+        "Name": "Giant Golem's Right-Hand Slam"
+    },
+    "1205013":
+    {
+        "Name": "Giant Golem's Left-Hand Slam"
+    },
+    "1205014":
+    {
+        "Name": "Giant Golem's Double-Hand Slam"
+    },
+    "1301101":
+    {
+        "Name": "Normal Attack Quadruple Hit"
+    },
+    "1301104":
+    {
+        "Name": "Denvel Great Slash with Void Corruption - Performance"
+    },
+    "1301105":
+    {
+        "Name": "Small Denvel's Downward Slash"
+    },
+    "1700101":
+    {
+        "Name": "Golden Juggernaut - Basic Attack 1"
+    },
+    "1700102":
+    {
+        "Name": "Golden Juggernaut - Charged Three Hit Combo"
+    },
+    "1700103":
+    {
+        "Name": "Golden Juggernaut - Stomp"
+    },
+    "1700105":
+    {
+        "Name": "Golden Juggernaut - Basic Right Attack"
+    },
+    "1700106":
+    {
+        "Name": "Golden Juggernaut - Basic Left Attack"
+    },
+    "1700110":
+    {
+        "Name": "Golden Juggernaut - Enrage"
+    },
+    "1700120":
+    {
+        "Name": "Golden Juggernaut - Lightning Strike 01"
+    },
+    "1700121":
+    {
+        "Name": "Golden Juggernaut - Earth Corruption AOE"
+    },
+    "1700307":
+    {
+        "Name": "Spider - Left Strike - Heroic"
+    },
+    "1700308":
+    {
+        "Name": "Spider - Right Strike - Heroic"
+    },
+    "1700401":
+    {
+        "Name": "Muku Chief - Basic Attack"
+    },
+    "1700402":
+    {
+        "Name": "Frenzied Jump Slam"
+    },
+    "1700403":
+    {
+        "Name": "Shattered Stone Missile"
+    },
+    "1700404":
+    {
+        "Name": "Shockwave"
+    },
+    "1700405":
+    {
+        "Name": "Head-on Charge"
+    },
+    "1700440":
+    {
+        "Name": "Arcane! Furious Hammer"
+    },
+    "1700820":
+    {
+        "Name": "Wolf Coordinated Attack"
+    },
+    "1700824":
+    {
+        "Name": "Tail Drift"
+    },
+    "1700825":
+    {
+        "Name": "Companion - Foxen Pounce"
+    },
+    "1700826":
+    {
+        "Name": "Companion - Powerful Pounce"
+    },
+    "1700827":
+    {
+        "Name": "Companion - Basic Attack"
+    },
+    "1701103":
+    {
+        "Name": "Instant Kill"
+    },
+    "1701201":
+    {
+        "Name": "Boar Basic Attack"
+    },
+    "1701202":
+    {
+        "Name": "Forward Boar Charge"
+    },
+    "1701204":
+    {
+        "Name": "Boar Charge"
+    },
+    "1701205":
+    {
+        "Name": "Boar Swipe Right"
+    },
+    "1701206":
+    {
+        "Name": "Boar Swipe Left"
+    },
+    "1701209":
+    {
+        "Name": "Heroic Boar - Swipe Right"
+    },
+    "1701210":
+    {
+        "Name": "Heroic Boar - Swipe Left"
+    },
+    "2000103":
+    {
+        "Name": "Goblin Mage's Fireball"
+    },
+    "2000203":
+    {
+        "Name": "Archer's Arrow"
+    },
+    "2000206":
+    {
+        "Name": "Kanamia Voodoo Warrior's Slash"
+    },
+    "2000208":
+    {
+        "Name": "Kanamia High Hunter's Spreadshot"
+    },
+    "2000211":
+    {
+        "Name": "Charged Shot"
+    },
+    "2001501":
+    {
+        "Name": "Kanamia Voodoo Warrior's Front Chop"
+    },
+    "2001507":
+    {
+        "Name": "Ancestral Inspiration"
+    },
+    "2001509":
+    {
+        "Name": "Heavy Slash"
+    },
+    "2001510":
+    {
+        "Name": "Kanamia Voodoo Warrior's Vengeful Flame Slash"
+    },
+    "2001603":
+    {
+        "Name": "Crossbow Arrow Rain"
+    },
+    "2001604":
+    {
+        "Name": "Storm Goblin's Typhoon"
+    },
+    "2001606":
+    {
+        "Name": "Tempest Ogre's Lightning Strike"
+    },
+    "2001607":
+    {
+        "Name": "Flame Orc's Lingering Fire"
+    },
+    "2001608":
+    {
+        "Name": "Goblin King - Lightning Strike"
+    },
+    "2001609":
+    {
+        "Name": "Goblin King - Wind Circle"
+    },
+    "2001610":
+    {
+        "Name": "Slow Arrow Rain"
+    },
+    "2001618":
+    {
+        "Name": "Laser Cross"
+    },
+    "2001619":
+    {
+        "Name": "Molten Sludge"
+    },
+    "2001703":
+    {
+        "Name": "Three Hit Combo"
+    },
+    "2001705":
+    {
+        "Name": "Slash Left Side"
+    },
+    "2001709":
+    {
+        "Name": "Kanamia Assassin's Double Stab"
+    },
+    "2001710":
+    {
+        "Name": "Fan of Knives"
+    },
+    "2001711":
+    {
+        "Name": "Armor-Piercing Assassination"
+    },
+    "2001722":
+    {
+        "Name": "Throwing Dagger"
+    },
+    "2001725":
+    {
+        "Name": "Backflip Void Corruption Dagger Five-Shot (Hero Dungeon)"
+    },
+    "2001726":
+    {
+        "Name": "Two-Stage Basic Attack (Hero Dungeon)"
+    },
+    "2001727":
+    {
+        "Name": "Void Corruption: Shadow Pursuit"
+    },
+    "2001728":
+    {
+        "Name": "Armor-Piercing Assassination"
+    },
+    "2001740":
+    {
+        "Name": "Stunt! Blink Ambush"
+    },
+    "2002212":
+    {
+        "Name": "Wind Ball Explosion"
+    },
+    "2002220":
+    {
+        "Name": "Earth Cracker"
+    },
+    "2002250":
+    {
+        "Name": "Lightning Pizza - Goblin Boss (8 Damage Slices)"
+    },
+    "2002255":
+    {
+        "Name": "Thunderball Explosion"
+    },
+    "2002402":
+    {
+        "Name": "Lethal Skill: Tempest Stomp"
+    },
+    "2002403":
+    {
+        "Name": "Tempest Ogre's Heavy Swing"
+    },
+    "2002405":
+    {
+        "Name": "Tempest Ogre's Heavy Spin"
+    },
+    "2002406":
+    {
+        "Name": "Tempest Ogre's Three Hit Combo"
+    },
+    "2002415":
+    {
+        "Name": "Tempest Ogre - Enrage"
+    },
+    "2002420":
+    {
+        "Name": "Tempest Ogre's Wind Pull"
+    },
+    "2002440":
+    {
+        "Name": "Arcane! Thunderfall Grasp"
+    },
+    "2002702":
+    {
+        "Name": "Muku King - Diagonal Slash"
+    },
+    "2002705":
+    {
+        "Name": "Muku King - Spinning Strike"
+    },
+    "2002708":
+    {
+        "Name": "Lethal Skill: Muku King - Charge"
+    },
+    "2002709":
+    {
+        "Name": "Muku King - Enrage"
+    },
+    "2002802":
+    {
+        "Name": "Goblin King - Forward Swing"
+    },
+    "2002803":
+    {
+        "Name": "Lethal Skill: Goblin King - Swing Retreat"
+    },
+    "2002804":
+    {
+        "Name": "Goblin King Spinning Strike"
+    },
+    "2002812":
+    {
+        "Name": "Goblin King - Forward Strike"
+    },
+    "2002814":
+    {
+        "Name": "Goblin King - Three Hit Combo"
+    },
+    "2002824":
+    {
+        "Name": "Lethal Skill - Sweep"
+    },
+    "2002825":
+    {
+        "Name": "Gobling King - Jump Attack"
+    },
+    "2002836":
+    {
+        "Name": "Storm Goblin King - Enrage"
+    },
+    "2002853":
+    {
+        "Name": "Special Skill! Falling Stars (Fire Brother)"
+    },
+    "2002901":
+    {
+        "Name": "Axe Chop"
+    },
+    "2002903":
+    {
+        "Name": "Triple Slash"
+    },
+    "2002904":
+    {
+        "Name": "Knock Up"
+    },
+    "2002905":
+    {
+        "Name": "Whirlwind Slash"
+    },
+    "2002910":
+    {
+        "Name": "Ancestral Flame Burst"
+    },
+    "2110012":
+    {
+        "Name": "Ultimate! Pulse Blessing (King M'k)"
+    },
+    "2110062":
+    {
+        "Name": "Roaring Command (Goblin King Summons Greataxe Goblins)"
+    },
+    "2110066":
+    {
+        "Name": "Special Skill! Earth Shield (Bandit Guard Captain)"
+    },
+    "2110071":
+    {
+        "Name": "Boar King's Chain Lightning Primary Buff"
+    },
+    "2110072":
+    {
+        "Name": "Boar King's Chain Lightning Variable A"
+    },
+    "2110073":
+    {
+        "Name": "Boar King's Chain Lightning Variable B"
+    },
+    "2110074":
+    {
+        "Name": "Boar King's Chain Lightning Variable C - Hit Effect"
+    },
+    "2110083":
+    {
+        "Name": "Fire Healing"
+    },
+    "2110085":
+    {
+        "Name": "Thunder Seed (Olvera)"
+    },
+    "2110096":
+    {
+        "Name": "Ultimate! Thunder Roar (Gold Fang) (Thunder Strike)"
+    },
+    "2110099":
+    {
+        "Name": "Toxic Hive (Persistent)"
+    },
+    "2201070":
+    {
+        "Name": "Block Damage Reduction"
+    },
+    "2201080":
+    {
+        "Name": "Block Recovery"
+    },
+    "2201172":
+    {
+        "Name": "Breath of Fortitude"
+    },
+    "2201240":
+    {
+        "Name": "Shield Echo"
+    },
+    "2201362":
+    {
+        "Name": "Sand Crystal Shock"
+    },
+    "2201410":
+    {
+        "Name": "Sandstone Revival"
+    },
+    "2201493":
+    {
+        "Name": "Recovery (Rock Shield)"
+    },
+    "2201570":
+    {
+        "Name": "Rock Shield"
+    },
+    "2202091":
+    {
+        "Name": "Healing: Heal Link"
+    },
+    "2202120":
+    {
+        "Name": "Eluna's Shield"
+    },
+    "2202211":
+    {
+        "Name": "Green Burst (Healing)"
+    },
+    "2202262":
+    {
+        "Name": "Recovery Aura Health Buff"
+    },
+    "2202271":
+    {
+        "Name": "Holy Light from Heaven Activates Buff"
+    },
+    "2202291":
+    {
+        "Name": "Life Gift - Healing Sub-Buff"
+    },
+    "2202311":
+    {
+        "Name": "Healing: Nourishing Seed"
+    },
+    "2202581":
+    {
+        "Name": "Collapse! Boom~"
+    },
+    "2202582":
+    {
+        "Name": "Collapse! Boom~"
+    },
+    "2203091":
+    {
+        "Name": "Life Drain (Bite Detonation)"
+    },
+    "2203101":
+    {
+        "Name": "Life Drain"
+    },
+    "2203102":
+    {
+        "Name": "Life Drain (Coordinated Attack Detonation)"
+    },
+    "2203141":
+    {
+        "Name": "Life Drain (Ray Arrow Detonation)"
+    },
+    "2203181":
+    {
+        "Name": "Lightning Shock"
+    },
+    "2203291":
+    {
+        "Name": "Falcon Strike"
+    },
+    "2203302":
+    {
+        "Name": "Life Drain (Tail Sweep Detonation)"
+    },
+    "2203311":
+    {
+        "Name": "Explosive Arrow (Splash)"
+    },
+    "2203512":
+    {
+        "Name": "Trampled"
+    },
+    "2203521":
+    {
+        "Name": "Implosion (Steel Beak Trigger)"
+    },
+    "2203621":
+    {
+        "Name": "Prism"
+    },
+    "2203622":
+    {
+        "Name": "Prism Splash"
+    },
+    "2204081":
+    {
+        "Name": "Frostbolt Explosion"
+    },
+    "2204241":
+    {
+        "Name": "Frost Blast"
+    },
+    "2204320":
+    {
+        "Name": "Icy Pulse"
+    },
+    "2205060":
+    {
+        "Name": "Fierce Strike"
+    },
+    "2205071":
+    {
+        "Name": "Rip"
+    },
+    "2205450":
+    {
+        "Name": "Wind Ring of Courage Lifesteal"
+    },
+    "2206240":
+    {
+        "Name": "Holy Radiance"
+    },
+    "2206241":
+    {
+        "Name": "Holy Mark"
+    },
+    "2206243":
+    {
+        "Name": "Holy Mark Damage"
+    },
+    "2206460":
+    {
+        "Name": "Shield Ward"
+    },
+    "2206552":
+    {
+        "Name": "Core of Light"
+    },
+    "2207141":
+    {
+        "Name": "Musical Notes"
+    },
+    "2207431":
+    {
+        "Name": "Flame Law Healing"
+    },
+    "2207500":
+    {
+        "Name": "Ultimate Attention"
+    },
+    "2207620":
+    {
+        "Name": "Energy Release"
+    },
+    "2207660":
+    {
+        "Name": "Ultimate Attention"
+    },
+    "2207681":
+    {
+        "Name": "Spiral Performance"
+    },
+    "2406140":
+    {
+        "Name": "Causes AoE when gaining a shield (Set)"
+    },
+    "2900540":
+    {
+        "Name": "Ultimate! Instant Slash (Olvera)"
+    },
+    "3001031":
+    {
+        "Name": "Void Aura"
+    },
+    "3001170":
+    {
+        "Name": "Void Wave Health Recovery"
+    },
+    "3030909":
+    {
+        "Name": "Void Human Claw Combo (Hero Dungeon)"
+    },
+    "3030910":
+    {
+        "Name": "Void Corruption: Self-Destruct (Heroic)"
+    },
+    "3040101":
+    {
+        "Name": "Shadow Gunner's Basic Attack"
+    },
+    "3040102":
+    {
+        "Name": "Shadow Blade's Attack 2"
+    },
+    "3040103":
+    {
+        "Name": "Shadow Blade's Attack 3"
+    },
+    "3040104":
+    {
+        "Name": "Shadow Blade's Jump Strike"
+    },
+    "3040105":
+    {
+        "Name": "Shadow Blade's Thrust Attack"
+    },
+    "3040120":
+    {
+        "Name": "Smoke Bomb - Void"
+    },
+    "3040310":
+    {
+        "Name": "Dark Mist Legion Shield Countercrush (Heroic)"
+    },
+    "3081001":
+    {
+        "Name": "Heavy Earth Slash - Two Hits"
+    },
+    "3081007":
+    {
+        "Name": "Lethal Skill: Slash Spin"
+    },
+    "3081012":
+    {
+        "Name": "Heavy Jump - Earthquake"
+    },
+    "3081023":
+    {
+        "Name": "Stunt! Heavy Slash"
+    },
+    "3081031":
+    {
+        "Name": "Double Slash - Heroic"
+    },
+    "3081032":
+    {
+        "Name": "Whirlwind Slash - Heroic"
+    },
+    "3081034":
+    {
+        "Name": "Heavy Strike - Heroic"
+    },
+    "3210021":
+    {
+        "Name": "Ultimate! Meteor Fall (Wind Brother) (Active)"
+    },
+    "3210031":
+    {
+        "Name": "Thunder Demon Passive"
+    },
+    "3210051":
+    {
+        "Name": "Bandit Passive"
+    },
+    "3210081":
+    {
+        "Name": "Lizardman Hunter Passive"
+    },
+    "3210092":
+    {
+        "Name": "Lizardman King Passive"
+    },
+    "3210101":
+    {
+        "Name": "King M'kor - Shield"
+    },
+    "3913001":
+    {
+        "Name": "Special Skill! Electromagnetic Bomb (Gunner)"
+    },
+    "3936001":
+    {
+        "Name": "Special Skill! Silent Water (Lizardman Mage)"
+    },
+    "4000201":
+    {
+        "Name": "Hunter Triple Shot"
+    },
+    "4000401":
+    {
+        "Name": "Lethal Skill: Heavy Slash"
+    },
+    "4000501":
+    {
+        "Name": "Spinning Flame Axe"
+    },
+    "4000601":
+    {
+        "Name": "Wandering Soul Ball"
+    },
+    "4001001":
+    {
+        "Name": "Deadly Three-way Slash"
+    },
+    "4001002":
+    {
+        "Name": "Swift Forward Swing"
+    },
+    "4001011":
+    {
+        "Name": "Final Burst"
+    },
+    "4001014":
+    {
+        "Name": "Jump Smash - Performance"
+    },
+    "4001022":
+    {
+        "Name": "Thunderstorm Floor"
+    },
+    "4001023":
+    {
+        "Name": "Thunderstorm"
+    },
+    "4001024":
+    {
+        "Name": "Lightning Crystal Wave"
+    },
+    "4010501":
+    {
+        "Name": "Lightning Orb"
+    },
+    "4015006":
+    {
+        "Name": "Goblin Mage - Wind Shot"
+    },
+    "4030020":
+    {
+        "Name": "Quinin - Charge"
+    },
+    "4030022":
+    {
+        "Name": "Quinin - Stealth Strike"
+    },
+    "4030027":
+    {
+        "Name": "Stellar Engram Orb Explosion"
+    },
+    "4032001":
+    {
+        "Name": "Rolling Boulder"
+    },
+    "4039806":
+    {
+        "Name": "Soul Trial"
+    },
+    "4039897":
+    {
+        "Name": "Soul Rain - Ball Explosion"
+    },
+    "4039900":
+    {
+        "Name": "Split Arrow"
+    },
+    "4039905":
+    {
+        "Name": "Lethal Skill: Deadly Punch"
+    },
+    "4039999":
+    {
+        "Name": "Void Meteor Stack"
+    },
+    "4040001":
+    {
+        "Name": "Forward Swipe - Two Hit"
+    },
+    "4040002":
+    {
+        "Name": "Death Charge"
+    },
+    "4040005":
+    {
+        "Name": "Heroic Throw"
+    },
+    "4040006":
+    {
+        "Name": "Lethal Skill: Heroic Smash"
+    },
+    "4040008":
+    {
+        "Name": "Soul Split"
+    },
+    "4040010":
+    {
+        "Name": "Soul Harvest"
+    },
+    "4040011":
+    {
+        "Name": "Soul of the Dead"
+    },
+    "4040014":
+    {
+        "Name": "Phase Transition Roar"
+    },
+    "4040015":
+    {
+        "Name": "Infuse Ancestral Power"
+    },
+    "4040016":
+    {
+        "Name": "Mountain Shattering Slash!"
+    },
+    "4040020":
+    {
+        "Name": "Hellfire"
+    },
+    "4040022":
+    {
+        "Name": "Flying Axe Explosion"
+    },
+    "10010301":
+    {
+        "Name": "Goblin King - Wind Ball"
+    },
+    "10020101":
+    {
+        "Name": "Ice Core - Ice Arrow"
+    },
+    "10040102":
+    {
+        "Name": "Goblin Sword and Shield - Wind Blade Slash"
+    },
+    "10040103":
+    {
+        "Name": "Goblin Sword and Shield - Wind Blade Slash"
+    },
+    "10050101":
+    {
+        "Name": "Blazing Goblin Fireball"
+    },
+    "10070101":
+    {
+        "Name": "Goblin Crossbow's Arrow"
+    },
+    "10070301":
+    {
+        "Name": "Goblin Crossbow's Scattershot"
+    },
+    "10073401":
+    {
+        "Name": "Erosion Arrow"
+    },
+    "10090101":
+    {
+        "Name": "Erosion Arrow"
+    },
+    "10100101":
+    {
+        "Name": "Boar Charge V1"
+    },
+    "10100102":
+    {
+        "Name": "Boar Charge V2"
+    },
+    "11010101":
+    {
+        "Name": "Defensive Type 06 - Scatter Laser"
+    },
+    "11040101":
+    {
+        "Name": "Rifle - Basic Attack"
+    },
+    "11040301":
+    {
+        "Name": "Sentinel Type 01's Laser Attack"
+    },
+    "11102201":
+    {
+        "Name": "Electromagnetic Vulnerability"
+    },
+    "12010103":
+    {
+        "Name": "Dagger Muku's Jump Slam"
+    },
+    "13312101":
+    {
+        "Name": "Rift Leap"
+    },
+    "13312102":
+    {
+        "Name": "Annihilation Pulse"
+    },
+    "14010101":
+    {
+        "Name": "Wind Blast"
+    },
+    "14040302":
+    {
+        "Name": "Slow Wind Tornado"
+    },
+    "100561":
+    {
+        "Name": "Flame Tunnel - Heroic"
+    }
 }

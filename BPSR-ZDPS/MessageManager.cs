@@ -930,6 +930,7 @@ namespace BPSR_ZDPS
                                 var totalScore = br.ReadInt32();
                                 System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonScore.TotalScore={totalScore}");
                                 // This appears to be called when a dungeon is complete enough to unlock boss access - a good time to end the current encounter
+                                EncounterManager.StartEncounter();
                                 break;
                             case DungeonScore.CurRatioFieldNumber:
                                 var curRatio = br.ReadInt32();

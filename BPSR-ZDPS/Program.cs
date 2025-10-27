@@ -184,6 +184,7 @@ namespace BPSR_ZDPS
                 manager.Present(1, 0);
             }
 
+            Settings.Save();
             MessageManager.StopCapturing();
 
             ImGuiImplD3D11.Shutdown();

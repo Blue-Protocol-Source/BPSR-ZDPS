@@ -121,6 +121,7 @@ namespace BPSR_ZDPS
             640 => EEntityType.EntChar,
             704 => EEntityType.EntDummy,
             1024 => EEntityType.EntCollection, // Another one?
+            32960 => EEntityType.EntSceneObject,
             33152 => EEntityType.EntBullet,
             33280 => EEntityType.EntNpc, // Another one?
             33472 => EEntityType.EntDummy,

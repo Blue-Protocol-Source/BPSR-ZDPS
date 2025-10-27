@@ -337,6 +337,14 @@ public class NetCap
             }
 
             var len = BinaryPrimitives.ReadUInt32BigEndian(msgData);
+
+            // HACK: Fix crashing when in very high populated areas (like the town crafting spot)
+            if ((int)len > msgData.Length)
+            {
+                System.Diagnostics.Debug.WriteLine("ParsePacket (len > msgData.Length) !! Skipping packet to recover");
+                return;
+            }
+
             var rawMsgType = BinaryPrimitives.ReadInt16BigEndian(msgData[4..]);
             var isCompressed = (rawMsgType & 0x8000) != 0;
             var msgType = (MsgTypeId)(rawMsgType & 0x7FFF);

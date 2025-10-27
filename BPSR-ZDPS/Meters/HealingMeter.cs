@@ -28,6 +28,51 @@ namespace BPSR_ZDPS.Meters
             return ret;
         }
 
+        bool SelectableWithHintImage(string number, string name, string value, int profession)
+        {
+            var startPoint = ImGui.GetCursorPos();
+
+            ImGui.AlignTextToFramePadding();
+
+            float texSize = ImGui.GetItemRectSize().Y; // Most likely is 22
+            float offset = ImGui.CalcTextSize(number).X + (ImGui.GetStyle().ItemSpacing.X * 2) + (texSize + 2);
+
+            ImGui.SetCursorPosX(offset);
+            bool ret = ImGui.Selectable(name, false, ImGuiSelectableFlags.SpanAllColumns);
+            ImGui.SameLine();
+
+            ImGui.SetCursorPos(startPoint);
+
+            ImGui.Text(number);
+            ImGui.SameLine();
+
+            var tex = ImageHelper.GetTextureByKey($"Profession_{profession}");
+
+            if (tex == null)
+            {
+                ImGui.Dummy(new Vector2(texSize, texSize));
+            }
+            else
+            {
+                var roleColor = Professions.RoleTypeColors(Professions.GetRoleFromBaseProfessionId(profession));
+
+                if (Settings.Instance.ColorClassIconsByRole)
+                {
+                    ImGui.ImageWithBg((ImTextureRef)tex, new Vector2(texSize, texSize), new Vector2(0, 0), new Vector2(1, 1), new Vector4(0, 0, 0, 0), roleColor);
+                }
+                else
+                {
+                    ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
+                }
+            }
+
+            ImGui.SameLine();
+            ImGui.SetCursorPosX(ImGui.GetCursorPosX() + Math.Max(0.0f, ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize(value.Remove(value.Length - 1)).X));
+            ImGui.Text(value);
+
+            return ret;
+        }
+
         public override void Draw(MainWindow mainWindow)
         {
             ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(2, ImGui.GetStyle().FramePadding.Y));
@@ -91,8 +136,8 @@ namespace BPSR_ZDPS.Meters
                             contributionProgressBar = contribution;
                         }
                     }
-                    string totalHealing = Utils.NumberToShorthand((long)entity.TotalHealing);
-                    string totalHps = entity.HealingStats.ValuePerSecond.ToString();
+                    string totalHealing = Utils.NumberToShorthand(entity.TotalHealing);
+                    string totalHps = Utils.NumberToShorthand(entity.HealingStats.ValuePerSecond);
                     string dps_format = $"{totalHealing} ({totalHps}) {contribution.ToString().PadLeft(3, ' ')}%%";
                     var startPoint = ImGui.GetCursorPos();
 
@@ -103,7 +148,8 @@ namespace BPSR_ZDPS.Meters
                     ImGui.PopStyleColor();
 
                     ImGui.SetCursorPos(startPoint);
-                    if (SelectableWithHint($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}. {name}-{profession} ({entity.AbilityScore})##HpsEntry_{i}", dps_format))
+                    if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{name}-{profession} ({entity.AbilityScore})##HpsEntry_{i}", dps_format, entity.ProfessionId))
+                    //if (SelectableWithHint($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}. {name}-{profession} ({entity.AbilityScore})##HpsEntry_{i}", dps_format))
                     {
                         mainWindow.entityInspector = new EntityInspector();
                         mainWindow.entityInspector.LoadEntity(entity);
