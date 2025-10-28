@@ -20,6 +20,7 @@ namespace BPSR_ZDPS.Windows
         static bool useShortWidthNumberFormatting;
         static bool colorClassIconsByRole;
         static bool showSkillIconsInDetails;
+        static float windowOpacity;
 
         static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
 
@@ -34,6 +35,7 @@ namespace BPSR_ZDPS.Windows
             useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
             colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
             showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
+            windowOpacity = Settings.Instance.WindowOpacity;
 
             // Set selection to matching device name (the index could have changed since last time we were here)
             if (!string.IsNullOrEmpty(Settings.Instance.NetCaptureDeviceName))
@@ -167,7 +169,10 @@ namespace BPSR_ZDPS.Windows
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Pinned Window Opacity: ");
                 ImGui.SameLine();
-                ImGui.DragFloat("##PinnedWindowOpacity", ref Settings.Instance.WindowOpacity, 0.01f, 0.0f, 1.0f);
+                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                ImGui.SliderFloat("##PinnedWindowOpacity", ref windowOpacity, 0.01f, 1.0f, $"{(int)(windowOpacity * 100)}");
+                ImGui.PopStyleColor(2);
                 ImGui.Indent();
                 ImGui.BeginDisabled(true);
                 ImGui.TextWrapped("How transparent a pinned window is.");
@@ -182,6 +187,17 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Indent();
                 ImGui.BeginDisabled(true);
                 ImGui.TextWrapped("Does not update most existing values - mainly works for data set in new Encounters.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
+                if (ImGui.Button("Restart Capture"))
+                {
+                    MessageManager.StopCapturing();
+                    MessageManager.InitializeCapturing();
+                }
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("Turns the MessageManager off and on to resolve issues of stalled data.");
                 ImGui.EndDisabled();
                 ImGui.Unindent();
 
@@ -208,6 +224,8 @@ namespace BPSR_ZDPS.Windows
 
                     Settings.Instance.ShowSkillIconsInDetails = showSkillIconsInDetails;
 
+                    Settings.Instance.WindowOpacity = windowOpacity;
+
                     ImGui.CloseCurrentPopup();
                 }
 
@@ -224,6 +242,8 @@ namespace BPSR_ZDPS.Windows
                     colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
 
                     showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
+
+                    windowOpacity = Settings.Instance.WindowOpacity;
 
                     ImGui.CloseCurrentPopup();
                 }

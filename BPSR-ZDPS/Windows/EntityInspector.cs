@@ -21,6 +21,9 @@ namespace BPSR_ZDPS.Windows
 
         public bool IsOpened = false;
 
+        private bool PersistantTracking = false;
+        private int LoadedFromEncounterIdx = -1;
+
         public ETableFilterMode TableFilterMode = ETableFilterMode.SkillsDamage;
 
         public enum ETableFilterMode : int
@@ -57,6 +60,16 @@ namespace BPSR_ZDPS.Windows
             ImGui.SetNextWindowSize(new Vector2(800, 600), ImGuiCond.FirstUseEver);
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
+
+            if (PersistantTracking && LoadedFromEncounterIdx != EncounterManager.Encounters.Count - 1)
+            {
+                var foundEntity = EncounterManager.Current.Entities.Where(x => x.UID == LoadedEntity.UID);
+                if (foundEntity.Any())
+                {
+                    LoadEntity(foundEntity.First());
+                    LoadedFromEncounterIdx = EncounterManager.Encounters.Count - 1;
+                }
+            }
 
             string entityName = "";
             if (!string.IsNullOrEmpty(LoadedEntity.Name))
@@ -453,6 +466,9 @@ namespace BPSR_ZDPS.Windows
                 }
                 else if (TableFilterMode == ETableFilterMode.Debug)
                 {
+                    ImGui.Checkbox("Persistent Tracking", ref PersistantTracking);
+                    ImGui.TextWrapped("Enable this to track the current entity across new encounters instead of sticking to the one it was opened for.");
+
                     ImGui.Text("Skill Stats:");
                     ImGui.SetNextItemWidth(-1);
                     if (ImGui.BeginListBox("##SkillStatsListBox"))

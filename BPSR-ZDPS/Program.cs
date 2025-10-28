@@ -211,16 +211,21 @@ namespace BPSR_ZDPS
             HelperMethods.Fonts.Add("Segoe", segoe);
             ImGui.PushFont(HelperMethods.Fonts["Segoe"], 18.0f);
 
-            HelperMethods.Fonts.Add("Cascadia-Mono", io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\CascadiaMono.ttf", 18.0f));
-            ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 18.0f);
+            // Windows 11 doesn't actually have this anymore so we can't rely on the system, we have to embed it
+            //HelperMethods.Fonts.Add("Cascadia-Mono", io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\CascadiaMono.ttf", 18.0f));
+            //ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 18.0f);
+            var ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaMono.ttf");
+            var res = ff.BindToImGui(18.0f);
+            HelperMethods.Fonts.Add("Cascadia-Mono", res);
+            ff.Dispose();
 
             ImGui.AddFontDefault(HelperMethods.Fonts["Segoe"].ContainerAtlas);
 
             HelperMethods.Fonts.Add("Segoe-Bold", io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\segoeuib.ttf", 18.0f));
             ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], 18.0f);
 
-            var ff = new FontFile("BPSR_ZDPS.Fonts.FAS.ttf", new GlyphRange(0x0021, 0xF8FF));
-            var res = ff.BindToImGui(18.0f);
+            ff = new FontFile("BPSR_ZDPS.Fonts.FAS.ttf", new GlyphRange(0x0021, 0xF8FF));
+            res = ff.BindToImGui(18.0f);
             HelperMethods.Fonts.Add("FASIcons", res);
             ff.Dispose();
 

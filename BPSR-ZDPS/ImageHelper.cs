@@ -30,10 +30,19 @@ public static unsafe class ImageHelper
         if (LoadedImages.TryGetValue(filePath, out var cachedRef))
             return cachedRef;
 
+        // TODO: Change this so if it finds a local file, it loads it but if not, it search the internal assembly, and lastly a web request
         if (!File.Exists(filePath))
         {
             return null;
         }
+        /*else if (System.Reflection.Assembly.GetEntryAssembly().GetManifestResourceNames().Contains(filePath))
+        {
+            System.Reflection.Assembly.GetEntryAssembly().GetManifestResourceStream(filePath);
+        }
+        else
+        {
+            // TODO: Attempt an WebRequest to get the image
+        }*/
 
         if (device == null)
         {

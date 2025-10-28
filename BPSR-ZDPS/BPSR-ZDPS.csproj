@@ -7,15 +7,22 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ApplicationIcon>Resources\BPSR_Benchmark_Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\CascadiaMono.ttf" />
     <None Remove="Fonts\FAS.ttf" />
     <None Remove="Fonts\fot-seuratpron-m.otf" />
     <None Remove="Fonts\SourceHanSansSC-Regular.otf" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Resources\BPSR_Benchmark_Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\CascadiaMono.ttf" />
     <EmbeddedResource Include="Fonts\FAS.ttf" />
     <EmbeddedResource Include="Fonts\fot-seuratpron-m.otf" />
     <EmbeddedResource Include="Fonts\SourceHanSansSC-Regular.otf" />

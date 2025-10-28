@@ -165,12 +165,14 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 1.0f, 1.0f, IsTopMost ? 1.0f : 0.5f));
                 if (ImGui.MenuItem($"{FASIcons.Thumbtack}")) {
                     // TODO: Make TopMost (for current and all windows)
-                    if (!IsTopMost) {
+                    if (!IsTopMost)
+                    {
                         Utils.SetWindowTopmost();
                         Utils.SetWindowOpacity(Settings.Instance.WindowOpacity);
                         IsTopMost = true;
                     }
-                    else {
+                    else
+                    {
                         Utils.UnsetWindowTopmost();
                         Utils.SetWindowOpacity(1.0f);
                         IsTopMost = false;
@@ -194,7 +196,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 if (ImGui.BeginMenu($"{FASIcons.Gear}"))  //("O"))
                 {
-                    Utils.SetWindowTopmost();
+                    //Utils.SetWindowTopmost();
                     ImGui.PopFont();
 
                     if (ImGui.MenuItem("Encounter History"))

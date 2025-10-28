@@ -238,7 +238,7 @@ namespace BPSR_ZDPS
         public CombatStats2 HealingStats { get; set; } = new();
         public CombatStats2 TakenStats { get; set; } = new();
 
-        public Dictionary<int, CombatStats2> SkillStats { get; set; } = new();
+        public System.Collections.Concurrent.ConcurrentDictionary<int, CombatStats2> SkillStats { get; set; } = new();
         public List<ActionStat> ActionStats { get; set; } = new();
 
         public ulong TotalDamage { get; set; } = 0;
@@ -365,7 +365,7 @@ namespace BPSR_ZDPS
                 }
 
                 combatStats.RegisterActivation();
-                SkillStats.Add(skillId, combatStats);
+                SkillStats.TryAdd(skillId, combatStats);
             }
             else
             {
@@ -389,7 +389,7 @@ namespace BPSR_ZDPS
                 }
 
                 combatStats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky);
-                SkillStats.Add(skillId, combatStats);
+                SkillStats.TryAdd(skillId, combatStats);
             }
             else
             {

@@ -831,7 +831,8 @@
     },
     "21404":
     {
-        "Name": "Nourish"
+        "Name": "Nourish",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx04"
     },
     "21406":
     {
@@ -3252,5 +3253,49 @@
     "100561":
     {
         "Name": "Flame Tunnel - Heroic"
+    },
+    "101401":
+    {
+        "Name": "Ice Dragon - Claw Double Strike"
+    },
+    "101403":
+    {
+        "Name": "Frost Slam"
+    },
+    "101408":
+    {
+        "Name": "Froststorm"
+    },
+    "101411":
+    {
+        "Name": "Frost Impact"
+    },
+    "101483":
+    {
+        "Name": "Frost Smash: Tankbuster"
+    },
+    "101494":
+    {
+        "Name": "Zero-Degree Snowfield"
+    },
+    "101497":
+    {
+        "Name": "Touch of Frost Storm"
+    },
+    "101451":
+    {
+        "Name": "Endless Winter - Ice Explosion"
+    },
+    "882115":
+    {
+        "Name": "Burning Zone Ticks"
+    },
+    "882158":
+    {
+        "Name": "Burning Impact"
+    },
+    "1002403":
+    {
+        "Name": "Whirlwind Hammer"
     }
 }
