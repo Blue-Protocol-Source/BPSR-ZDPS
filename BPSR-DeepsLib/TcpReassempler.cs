@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.IO.Pipelines;
 using System.Net;
 using PacketDotNet;
@@ -66,7 +67,7 @@ public class TcpReassempler
                 NextExpectedSeq = tcpPacket.SequenceNumber;
 
             var fragment = new PacketFragment(tcpPacket.SequenceNumber, tcpPacket.PayloadData);
-            Packets.Add(tcpPacket.SequenceNumber, fragment);
+            Packets.TryAdd(tcpPacket.SequenceNumber, fragment);
             NumPacketsSeen++;
             LastPacketAt = DateTime.Now;
             CheckAndPushContinuesData();
@@ -80,7 +81,7 @@ public class TcpReassempler
                 var mem = Pipe.Writer.GetMemory(segment.PayloadData.Length);
                 segment.PayloadData.CopyTo(mem);
                 Pipe.Writer.Advance(segment.PayloadData.Length);
-                Pipe.Writer.FlushAsync().AsTask().GetAwaiter().GetResult();
+                Pipe.Writer.FlushAsync();
                 NumBytesSent += (ulong)segment.PayloadData.Length;
                 
                 NextExpectedSeq = segment.SequenceNumber + (uint)segment.PayloadData.Length;

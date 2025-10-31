@@ -174,7 +174,7 @@ public class NetCap
         {
             NumConnectionReaders++;
             while (conn.IsAlive && !CancelTokenSrc.IsCancellationRequested && !conn.CancelTokenSrc.IsCancellationRequested) {
-                var buff = await conn.Pipe.Reader.ReadAtLeastAsync(6, conn.CancelTokenSrc.Token);
+                var buff = await conn.Pipe.Reader.ReadAtLeastAsync(6);
                 if (buff.IsCompleted)
                     return;
                 Span<byte> header = new byte[6];
