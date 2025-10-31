@@ -229,7 +229,12 @@
     },
     "1551":
     {
-        "Name": "Wild Seed"
+        "Name": "Regen Bud: Wild Seed"
+    },
+    "1560":
+    {
+        "Name": "Healing Ring (Spreads once, heals once)",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx05"
     },
     "1701":
     {
@@ -827,7 +832,8 @@
     },
     "21402":
     {
-        "Name": "Wild Blossom"
+        "Name": "Wild Blossom",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_tg01"
     },
     "21404":
     {
@@ -836,11 +842,13 @@
     },
     "21406":
     {
-        "Name": "Forest Prayer"
+        "Name": "Grove Wish",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx02"
     },
     "21414":
     {
-        "Name": "Holy Barrier Lasts"
+        "Name": "Divine Circle Bloom",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_ult"
     },
     "21418":
     {
@@ -1390,25 +1398,35 @@
     {
         "Name": "Deer Rush"
     },
+    "1550":
+    {
+        "Name": "Feral Seed - Seed Meteor",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx09"
+    },
     "150103":
     {
-        "Name": "Unruly Seed Stage 1"
+        "Name": "Feral Seed - Stage 1",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx09"
     },
     "150104":
     {
-        "Name": "Unruly Seed Stage 2"
+        "Name": "Feral Seed - Stage 2",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx09"
     },
     "150106":
     {
-        "Name": "Infusion (Left Hand)"
+        "Name": "Infusion (Left Hand)",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx01"
     },
     "150107":
     {
-        "Name": "Infusion (Right Hand)"
+        "Name": "Infusion (Right Hand)",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx01"
     },
     "150110":
     {
-        "Name": "Infusion (Double Infusion Extra)"
+        "Name": "Infusion (Double Infusion Extra)",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx01"
     },
     "155101":
     {
@@ -2796,7 +2814,7 @@
     },
     "2202311":
     {
-        "Name": "Healing: Nourishing Seed"
+        "Name": "Regen Bud: Nourishing Seed"
     },
     "2202581":
     {
@@ -3274,6 +3292,10 @@
     {
         "Name": "Frost Smash: Tankbuster"
     },
+    "101493":
+    {
+        "Name": "Avalanche"
+    },
     "101494":
     {
         "Name": "Zero-Degree Snowfield"
@@ -3297,5 +3319,17 @@
     "1002403":
     {
         "Name": "Whirlwind Hammer"
+    },
+    "920026":
+    {
+        "Name": "Trichroma Halo"
+    },
+    "998410":
+    {
+        "Name": "Brambleblood Armor"
+    },
+    "998381":
+    {
+        "Name": "Seismic Strike"
     }
 }

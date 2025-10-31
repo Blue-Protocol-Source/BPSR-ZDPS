@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using Hexa.NET.GLFW;
 using Hexa.NET.ImGui;
 using Zproto;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp;
+using System.Reflection;
 
 namespace BPSR_ZDPS
 {
@@ -173,6 +176,51 @@ namespace BPSR_ZDPS
         public static void UnsetWindowTopmost(IntPtr hWnd)
         {
             User32.SetWindowPos(hWnd, User32.HWND_NOTOPMOST, 0, 0, 0, 0, User32.SWP_NOMOVE | User32.SWP_NOSIZE);
+        }
+
+        public static unsafe void SetCurrentWindowIcon()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string iconAssemblyPath = "BPSR_ZDPS.Resources.MainWindowIcon.png";
+            using (var iconStream = assembly.GetManifestResourceStream(iconAssemblyPath))
+            {
+                if (iconStream != null)
+                {
+                    SetCurrentWindowIcon(iconStream);
+                }
+            }
+        }
+
+        static unsafe void SetCurrentWindowIcon(Stream IconFileStream)
+        {
+            using (Image<Rgba32> image = Image.Load<Rgba32>(IconFileStream))
+            {
+                // Convert image data to byte array
+                byte[] pixels = new byte[image.Width * image.Height * 4];
+                image.CopyPixelDataTo(pixels);
+
+                // Allocate unmanaged memory for pixels
+                IntPtr pixelsPtr = Marshal.AllocHGlobal(pixels.Length);
+                Marshal.Copy(pixels, 0, pixelsPtr, pixels.Length);
+
+                // Create GLFWimage structure
+                GLFWimage iconImage = new GLFWimage
+                {
+                    Width = image.Width,
+                    Height = image.Height,
+                    Pixels = (byte*)pixelsPtr
+                };
+
+                // Create an array for GLFWimage structures (though we only have one currently)
+                GLFWimage[] images = new GLFWimage[] { iconImage };
+
+                // Pin the array to prevent garbage collection during the call
+                GCHandle handle = GCHandle.Alloc(images, GCHandleType.Pinned);
+                IntPtr imagesPtr = handle.AddrOfPinnedObject();
+
+                GLFW.SetWindowIcon((GLFWwindowPtr)ImGui.GetWindowViewport().PlatformHandle, 1, (GLFWimage*)imagesPtr);
+                handle.Free();
+            }
         }
     }
 }

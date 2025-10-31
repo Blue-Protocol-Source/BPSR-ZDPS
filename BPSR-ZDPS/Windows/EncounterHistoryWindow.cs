@@ -17,14 +17,18 @@ namespace BPSR_ZDPS.Windows
 
         public static int SelectedEncounterIndex = -1;
         public static int SelectedOrderByOption = 0;
+        public static int SelectedViewMode = 0;
+
+        static int RunOnceDelayed = 0;
 
         public static void Open()
         {
+            RunOnceDelayed = 0;
+
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
             ImGui.OpenPopup("###EncounterHistoryWindow");
             IsOpened = true;
             ImGui.PopID();
-            Utils.BringWindowToFront();
         }
 
         public static void Draw(MainWindow mainWindow)
@@ -40,6 +44,52 @@ namespace BPSR_ZDPS.Windows
 
             if (ImGui.Begin("Encounter History###EncounterHistoryWindow", ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
             {
+                if (RunOnceDelayed == 0)
+                {
+                    RunOnceDelayed++;
+                }
+                else if (RunOnceDelayed == 1)
+                {
+                    RunOnceDelayed++;
+                    Utils.SetCurrentWindowIcon();
+                    Utils.BringWindowToFront();
+                }
+
+                ImGui.BeginDisabled(true);
+                int viewMode = SelectedViewMode;
+                var tabButtonHalfWidth = (ImGui.GetContentRegionAvail().X / 2) - (ImGui.GetStyle().ItemSpacing.X / 2);
+
+                if (viewMode == 0)
+                {
+                    ImGui.PushStyleColor(ImGuiCol.Button, Colors.DimGray);
+                }
+                if (ImGui.Button("View By Each Individual Encounter", new Vector2(tabButtonHalfWidth, 0)))
+                {
+                    SelectedViewMode = 0;
+                }
+                if (viewMode == 0)
+                {
+                    ImGui.PopStyleColor();
+                }
+
+                ImGui.SameLine();
+                if (viewMode == 1)
+                {
+                    ImGui.PushStyleColor(ImGuiCol.Button, Colors.DimGray);
+                }
+                if (ImGui.Button("View By Each Grouped Battle", new Vector2(tabButtonHalfWidth, 0)))
+                {
+                    SelectedViewMode = 1;
+                    // TODO: Allow viewing encounters grouped by their BattleId and showing the combined totals for them
+
+                    var battles = EncounterManager.Encounters.GroupBy(x => x.BattleId);
+                }
+                if (viewMode == 1)
+                {
+                    ImGui.PopStyleColor();
+                }
+                ImGui.EndDisabled();
+
                 // TODO: Support reading history from an encounter cache file as well
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text($"Encounters: {EncounterManager.Encounters.Count - 1}");
@@ -95,7 +145,7 @@ namespace BPSR_ZDPS.Windows
                 if (SelectedEncounterIndex != -1)
                 {
                     ImGuiTableFlags tableFlags = ImGuiTableFlags.ScrollX;
-                    int columnsCount = 21;
+                    int columnsCount = 22;
                     if (ImGui.BeginTable("##HistoricalEncounterStatsTable", columnsCount, tableFlags, new Vector2(-1, -1)))
                     {
                         ImGui.TableSetupColumn("#");
@@ -111,11 +161,12 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Lucky Damage");
                         ImGui.TableSetupColumn("Crit Lucky Damage");
                         ImGui.TableSetupColumn("Max Instant DPS");
-                        ImGui.TableSetupColumn("Total Healing Done");
+                        ImGui.TableSetupColumn("Total Healing");
                         ImGui.TableSetupColumn("Total HPS");
-                        ImGui.TableSetupColumn("Crit Healing Done");
-                        ImGui.TableSetupColumn("Lucky Healing Done");
-                        ImGui.TableSetupColumn("Crit Lucky Healing Done");
+                        ImGui.TableSetupColumn("Total Overhealing");
+                        ImGui.TableSetupColumn("Crit Healing");
+                        ImGui.TableSetupColumn("Lucky Healing");
+                        ImGui.TableSetupColumn("Crit Lucky Healing");
                         ImGui.TableSetupColumn("Max Instant HPS");
                         ImGui.TableSetupColumn("Damage Taken");
                         ImGui.TableSetupColumn("Damage Share");
@@ -215,6 +266,9 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Text(Utils.NumberToShorthand(entity.HealingStats.ValuePerSecond));
 
                             ImGui.TableNextColumn();
+                            ImGui.Text(Utils.NumberToShorthand(entity.TotalOverhealing));
+
+                            ImGui.TableNextColumn();
                             ImGui.Text($"{Utils.NumberToShorthand(entity.HealingStats.ValueCritTotal)}");
 
                             ImGui.TableNextColumn();
@@ -242,7 +296,7 @@ namespace BPSR_ZDPS.Windows
                                     totalTaken = Math.Round(((double)entity.TotalTakenDamage / (double)EncounterManager.Encounters[SelectedEncounterIndex].TotalNpcTakenDamage) * 100, 0);
                                 }
                             }
-                            ImGui.Text(Utils.NumberToShorthand(totalTaken));
+                            ImGui.Text($"{Utils.NumberToShorthand(totalTaken)}%%");
 
                             if (!string.IsNullOrEmpty(profession))
                             {

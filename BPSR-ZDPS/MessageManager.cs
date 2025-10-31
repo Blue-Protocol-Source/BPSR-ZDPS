@@ -12,6 +12,7 @@ using Google.Protobuf.Collections;
 using System.Numerics;
 using Silk.NET.Core.Native;
 using BPSR_ZDPS.DataTypes;
+using static HexaGen.Runtime.MemoryPool;
 
 namespace BPSR_ZDPS
 {
@@ -169,9 +170,54 @@ namespace BPSR_ZDPS
                             System.Diagnostics.Debug.WriteLine($"[YOU] had {(EAttrType)attr.Id} = {reader.ReadInt32()}");
                         }
                         break;
+                    case EAttrType.AttrShieldList:
+                        {
+                            //System.Diagnostics.Debug.WriteLine($"AttrShieldList");
+                            while (!reader.IsAtEnd)
+                            {
+                                uint tag = reader.ReadTag();
+                                int fieldNumber = Google.Protobuf.WireFormat.GetTagFieldNumber(tag);
+                                Google.Protobuf.WireFormat.WireType wireType = Google.Protobuf.WireFormat.GetTagWireType(tag);
+
+                                if (wireType != Google.Protobuf.WireFormat.WireType.LengthDelimited)
+                                {
+                                    reader.SkipLastField();
+                                    continue;
+                                }
+
+                                int len = reader.ReadLength();
+                                //System.Diagnostics.Debug.WriteLine($"len={len}");
+                                var inf = ShieldInfo.Parser.ParseFrom(reader);
+                                //System.Diagnostics.Debug.WriteLine($"uuid={inf.Uuid}, type={inf.ShieldType}, value={inf.Value}, initialvalue={inf.InitialValue}, maxvalue={inf.MaxValue}");
+
+                                EncounterManager.Current.SetAttrKV(uid, "AttrShieldList", inf);
+                            }
+
+                            //var count = reader.ReadInt32();
+                            //System.Diagnostics.Debug.WriteLine($"AttrShieldList.count={count}");
+
+                            /*var uuid = reader.ReadInt64();
+                            System.Diagnostics.Debug.WriteLine($"shieldInfo[].uuid={uuid}");
+                            var type = reader.ReadInt32();
+                            System.Diagnostics.Debug.WriteLine($"shieldInfo[].type={type}");
+                            var value = reader.ReadInt64();
+                            System.Diagnostics.Debug.WriteLine($"shieldInfo[].value={value}");
+                            var InitialValue = reader.ReadInt64();
+                            System.Diagnostics.Debug.WriteLine($"shieldInfo[].InitialValue={InitialValue}");
+                            var MaxValue = reader.ReadInt64();
+                            System.Diagnostics.Debug.WriteLine($"shieldInfo[].MaxValue={MaxValue}");
+
+                            // We got some bytes left over still for some reason
+                            var unk1 = reader.ReadInt32();
+                            System.Diagnostics.Debug.WriteLine($"shieldInfo[].unk1={unk1}");
+                            var unk2 = reader.ReadInt32();
+                            System.Diagnostics.Debug.WriteLine($"shieldInfo[].unk2={unk2}");*/
+                            break;
+                        }
                     default:
                         string attr_name = ((EAttrType)attr.Id).ToString();
                         EncounterManager.Current.SetAttrKV(uid, attr_name, reader.ReadInt32());
+                        //System.Diagnostics.Debug.WriteLine($"{attr_name} was hit");
                         break;
                 }
             }
@@ -281,7 +327,7 @@ namespace BPSR_ZDPS
                 }
             }
 
-            if (attrCollection?.Attrs != null)
+            if (attrCollection?.Attrs != null && attrCollection.Attrs.Any())
             {
                 if (isTargetPlayer)
                 {
@@ -296,7 +342,27 @@ namespace BPSR_ZDPS
                 }
             }
 
+            if (delta.TempAttrs != null && delta.TempAttrs.Attrs.Any())
+            {
+                //System.Diagnostics.Debug.WriteLine($"delta.TempAttrs.Attrs.count = {delta.TempAttrs.Attrs.Count}");
+            }
+
+            if (delta.BuffEffect != null && (targetUid == 285140 || targetUid == 29288969))
+            {
+                //System.Diagnostics.Debug.WriteLine($"delta.BuffEffect={delta.BuffEffect.BuffEffects.Count}");
+            }
+
+            if (delta.BuffInfos != null && targetUid == 285140)
+            {
+                //System.Diagnostics.Debug.WriteLine($"delta.BuffInfos={delta.BuffInfos.BuffInfos.Count}");
+            }
+
             var skillEffect = delta.SkillEffects;
+            if (skillEffect != null)
+            {
+                //System.Diagnostics.Debug.WriteLine($"skillEffect({skillEffect.Damages.Count})={skillEffect}");
+            }
+            
             if (skillEffect?.Damages == null || skillEffect.Damages.Count == 0)
             {
                 return;
@@ -304,6 +370,17 @@ namespace BPSR_ZDPS
 
             foreach (var d in skillEffect.Damages)
             {
+                // OwnerId = SkillId this is coming from
+                // OwnerLevel = Level of the Skill this came from
+                // TopSummonerId = If exists, Entity UUID that summoned this skill damage source (ex: Battle Imagines use this)
+                // Property = Element of the damage if it has any
+                // DamageMode = Physical or Magical damage type
+
+                // HpLessen = Actual Health modification from this skill
+                // Value = Requested Health modification
+                // IsDead = Skill killed an entity with this damage event
+                // If IsDead is true, and Value > HpLessen, the difference is the Overkill amount
+
                 int skillId = d.OwnerId;
                 if (skillId == 0)
                 {
@@ -383,7 +460,7 @@ namespace BPSR_ZDPS
                         EncounterManager.Current.AddTakenDamage(targetUid, skillId, damage, damageSource, isMiss, isDead, isCrit, isLucky, hpLessen);
 
                         // This is an NPC applying damage to a target, register the damage dealt now to the NPC doing it
-                        EncounterManager.Current.AddDamage(attackerUid, skillId, d.Property, damage, isCrit, isLucky, isCauseLucky, hpLessen);
+                        EncounterManager.Current.AddDamage(attackerUid, skillId, d.Property, damage, isCrit, isLucky, isCauseLucky, hpLessen, d.Type, d.DamageMode);
                     }
                 }
                 else
@@ -392,7 +469,7 @@ namespace BPSR_ZDPS
                     {
                         // AddDamage
                         //System.Diagnostics.Debug.WriteLine($"AddDamage({attackerUuid}, {skillId}, {damageElement}, {damage}, {isCrit}, {isLucky}, {isCauseLucky}, {hpLessen})");
-                        EncounterManager.Current.AddDamage(attackerUid, skillId, d.Property, damage, isCrit, isLucky, isCauseLucky, hpLessen);
+                        EncounterManager.Current.AddDamage(attackerUid, skillId, d.Property, damage, isCrit, isLucky, isCauseLucky, hpLessen, d.Type, d.DamageMode);
                     }
 
                     // AddNpcTakenDamage
@@ -432,6 +509,7 @@ namespace BPSR_ZDPS
 
 
             // We'll spin up a new encounter before processing any of this data so it's nice and fresh in the new encounter
+            EncounterManager.StartNewBattle();
             EncounterManager.StartEncounter();
 
             var syncContainerData = SyncContainerData.Parser.ParseFrom(payloadBuffer);
@@ -730,6 +808,303 @@ namespace BPSR_ZDPS
             using var ms = new MemoryStream(buf, writable: false);
             using var br = new BinaryReader(ms);
 
+            System.Diagnostics.Debug.WriteLine("ProcessSyncDungeonDirtyData");
+
+            var dataFuncs = new Dictionary<int, Action<BinaryReader>>()
+            {
+                {
+                    DungeonSyncData.SceneUuidFieldNumber, dungeonSyncData =>
+                    {
+                        dungeonSyncData.ReadInt32();
+                        dungeonSyncData.ReadInt32();
+                    }
+                },
+                {
+                    DungeonSyncData.FlowInfoFieldNumber, dungeonSyncData =>
+                    {
+                        var flowInfoDataFuncs = new Dictionary<int, Action<BinaryReader>>()
+                        {
+                            {
+                                DungeonFlowInfo.StateFieldNumber, dungeonFlowInfo =>
+                                {
+                                    var state = dungeonFlowInfo.ReadInt32();
+                                    _ = dungeonFlowInfo.ReadInt32();
+
+                                    EDungeonState dungeonState = (EDungeonState)state;
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.State == {dungeonState}");
+
+                                    if (dungeonState == EDungeonState.DungeonStateEnd)
+                                    {
+                                        // Encounter has ended
+                                        EncounterManager.StopEncounter();
+                                    }
+                                    else if (dungeonState == EDungeonState.DungeonStateReady)
+                                    {
+                                        // Encounter is in prep phase
+                                    }
+                                    else if (dungeonState == EDungeonState.DungeonStatePlaying)
+                                    {
+                                        // Encounter has begun
+                                        EncounterManager.StopEncounter();
+                                        EncounterManager.StartNewBattle();
+                                        EncounterManager.StartEncounter();
+                                    }
+                                }
+                            },
+                            {
+                                DungeonFlowInfo.ActiveTimeFieldNumber, dungeonFlowInfo =>
+                                {
+                                    var active_time = dungeonFlowInfo.ReadInt32();
+                                    dungeonFlowInfo.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.ActiveTime == {active_time}");
+                                }
+                            },
+                            {
+                                DungeonFlowInfo.ReadyTimeFieldNumber, dungeonFlowInfo =>
+                                {
+                                    var ready_time = dungeonFlowInfo.ReadInt32();
+                                    dungeonFlowInfo.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.ReadyTime == {ready_time}");
+                                }
+                            },
+                            {
+                                DungeonFlowInfo.PlayTimeFieldNumber, dungeonFlowInfo =>
+                                {
+                                    var play_time = dungeonFlowInfo.ReadInt32();
+                                    dungeonFlowInfo.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.PlayTime == {play_time}");
+                                }
+                            },
+                            {
+                                DungeonFlowInfo.EndTimeFieldNumber, dungeonFlowInfo =>
+                                {
+                                    var end_time = dungeonFlowInfo.ReadInt32();
+                                    dungeonFlowInfo.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.EndTime == {end_time}");
+                                }
+                            },
+                            {
+                                DungeonFlowInfo.SettlementTimeFieldNumber, dungeonFlowInfo =>
+                                {
+                                    var settlement_time = dungeonFlowInfo.ReadInt32();
+                                    dungeonFlowInfo.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.SettlementTime == {settlement_time}");
+                                }
+                            },
+                            {
+                                DungeonFlowInfo.DungeonTimesFieldNumber, dungeonFlowInfo =>
+                                {
+                                    var dungeon_times = dungeonFlowInfo.ReadInt32();
+                                    dungeonFlowInfo.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.DungeonTimes == {dungeon_times}");
+                                }
+                            },
+                            {
+                                DungeonFlowInfo.ResultFieldNumber, dungeonFlowInfo =>
+                                {
+                                    var result = dungeonFlowInfo.ReadInt32();
+                                    dungeonFlowInfo.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.Result == {result}");
+                                }
+                            }
+                        };
+
+                        ReadBinaryContainer(dungeonSyncData, flowInfoDataFuncs, "DungeonFlowInfo");
+                    }
+                },
+                {
+                    DungeonSyncData.DungeonVarFieldNumber, dungeonSyncData =>
+                    {
+                        var dungeonVarDataFuncs = new Dictionary<int, Action<BinaryReader>>()
+                        {
+                            {
+                                DungeonVar.DungeonVarDataFieldNumber, dungeonVarData =>
+                                {
+                                    int count = dungeonVarData.ReadInt32();
+                                    dungeonVarData.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonVar.count={count}");
+                                    if (count == -4)
+                                    {
+                                        return;
+                                    }
+
+                                    Dictionary<string, int> kvp = new();
+
+                                    string lastName = "";
+
+                                    for (int i = 0; i < count; i++)
+                                    {
+                                        var dungeonVarDataDataFuncs = new Dictionary<int, Action<BinaryReader>>()
+                                        {
+                                            {
+                                                DungeonVarData.NameFieldNumber, dungeonVarDataData =>
+                                                {
+                                                    var length = dungeonVarDataData.ReadInt32();
+                                                    dungeonVarDataData.ReadInt32();
+
+                                                    var name = Encoding.UTF8.GetString(dungeonVarDataData.ReadBytes(length));
+                                                    dungeonVarDataData.ReadInt32();
+
+                                                    lastName = name;
+
+                                                    //System.Diagnostics.Debug.WriteLine($"dungeonVarDataData.name={name}");
+                                                }
+                                            },
+                                            {
+                                                DungeonVarData.ValueFieldNumber, dungeonVarDataData =>
+                                                {
+                                                    var value = dungeonVarDataData.ReadInt32();
+                                                    dungeonVarDataData.ReadInt32();
+
+                                                    kvp[lastName] = value;
+
+                                                    //System.Diagnostics.Debug.WriteLine($"dungeonVarDataData.value={value}");
+                                                }
+                                            }
+                                        };
+
+                                        ReadBinaryContainer(dungeonVarData, dungeonVarDataDataFuncs, "DungeonVarData");
+                                    }
+
+                                    //System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonVar kvp={kvp}");
+                                }
+                            }
+                        };
+
+                        ReadBinaryContainer(dungeonSyncData, dungeonVarDataFuncs, "DungeonVar");
+                    }
+                },
+                {
+                    DungeonSyncData.DungeonScoreFieldNumber, dungeonSyncData =>
+                    {
+                        var scoreDataFuncs = new Dictionary<int, Action<BinaryReader>>()
+                        {
+                            {
+                                DungeonScore.TotalScoreFieldNumber, dungeonScore =>
+                                {
+                                    var totalScore = dungeonScore.ReadInt32();
+                                    dungeonScore.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonScore.TotalScore={totalScore}");
+                                }
+                            },
+                            {
+                                DungeonScore.CurRatioFieldNumber, dungeonScore =>
+                                {
+                                    var curRatio = dungeonScore.ReadInt32();
+                                    dungeonScore.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonScore.CurRatio={curRatio}");
+                                }
+                            }
+                        };
+
+                        ReadBinaryContainer(dungeonSyncData, scoreDataFuncs, "DungeonScore");
+                    }
+                },
+                {
+                    DungeonSyncData.ReviveInfoFieldNumber, dungeonSyncData =>
+                    {
+                        var reviveInfoFuncs = new Dictionary<int, Action<BinaryReader>>()
+                        {
+                            {
+                                DungeonReviveInfo.ReviveIdsFieldNumber, dungeonReviveInfo =>
+                                {
+                                    List<int> revive_ids = new();
+
+                                    var count = dungeonReviveInfo.ReadInt32();
+                                    dungeonReviveInfo.ReadInt32();
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonReviveInfo.ReviveIds.count={count}");
+                                    if (count == -4)
+                                    {
+                                        return;
+                                    }
+
+                                    for (int i = 0; i < count; i++)
+                                    {
+                                        var id = dungeonReviveInfo.ReadInt32();
+                                        dungeonReviveInfo.ReadInt32();
+                                        revive_ids.Add(id);
+                                        System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonReviveInfo.ReviveIds[{i}].id={id}");
+                                    }
+                                }
+                            },
+                            {
+                                DungeonReviveInfo.ReviveMapFieldNumber, dungeonReviveInfo =>
+                                {
+                                    int add = dungeonReviveInfo.ReadInt32();
+                                    _ = dungeonReviveInfo.ReadInt32();
+                                    int remove = 0;
+                                    int update = 0;
+                                    if (add == -4)
+                                    {
+                                        System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonReviveInfo.ReviveMap.add={add} (Early Exit)");
+                                        return;
+                                    }
+                                    if (add == -1)
+                                    {
+                                        System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonReviveInfo.ReviveMap.add={add} (Get New Value)");
+                                        add = dungeonReviveInfo.ReadInt32();
+                                    }
+                                    else
+                                    {
+                                        remove = dungeonReviveInfo.ReadInt32();
+                                        _ = dungeonReviveInfo.ReadInt32();
+                                        update = dungeonReviveInfo.ReadInt32();
+                                        _ = dungeonReviveInfo.ReadInt32();
+                                    }
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonReviveInfo.ReviveMap.add={add}");
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonReviveInfo.ReviveMap.remove={remove}");
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonReviveInfo.ReviveMap.update={update}");
+
+                                    Dictionary<int, int> reviveMap = new();
+
+                                    for (int i = 0; i < add; i++)
+                                    {
+                                        int dk = dungeonReviveInfo.ReadInt32();
+                                        _ = dungeonReviveInfo.ReadInt32();
+                                        int dv = dungeonReviveInfo.ReadInt32();
+                                        _ = dungeonReviveInfo.ReadInt32();
+
+                                        reviveMap.Add(dk, dv);
+			                        }
+                                    for (int i = 0; i < remove; i++)
+                                    {
+                                        int dk = dungeonReviveInfo.ReadInt32();
+                                        _ = dungeonReviveInfo.ReadInt32();
+
+                                        if (!reviveMap.Remove(dk))
+                                        {
+                                            System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonReviveInfo.ReviveMap did not find key to remove ({dk})");
+                                        }
+                                    }
+                                    for (int i = 0; i < update; i++)
+                                    {
+                                        int dk = dungeonReviveInfo.ReadInt32();
+                                        _ = dungeonReviveInfo.ReadInt32();
+                                        int dv = dungeonReviveInfo.ReadInt32();
+                                        _ = dungeonReviveInfo.ReadInt32();
+
+                                        if (reviveMap.ContainsKey(dk))
+                                        {
+                                            reviveMap[dk] = dv;
+                                        }
+                                        else
+                                        {
+                                            System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonReviveInfo.ReviveMap did not find key to update ({dk})");
+                                            reviveMap.Add(dk, dv);
+                                        }
+                                    }
+                                }
+                            }
+                        };
+
+                        ReadBinaryContainer(dungeonSyncData, reviveInfoFuncs, "DungeonReviveInfo");
+                    }
+                }
+            };
+
+            ReadBinaryContainer(br, dataFuncs, "SyncDungeonDirtyData");
+            return;
+
             if (!DoesStreamHaveIdentifier(br))
             {
                 return;
@@ -918,6 +1293,31 @@ namespace BPSR_ZDPS
                     }
                 case DungeonSyncData.DungeonScoreFieldNumber:
                     {
+                        while (br.BaseStream.Position < br.BaseStream.Length)
+                        {
+                            int tag = br.ReadInt32();
+                            if (tag != -2)
+                            {
+                                // Invalid begin tag: {tag}
+                                // return;
+                            }
+                            int size = br.ReadInt32();
+                            if (size == -3)
+                            {
+                                // return;
+                            }
+                            long offset = br.BaseStream.Position;
+                            int index = br.ReadInt32();
+
+                            // while 0 < index
+                            // {
+                            // read data
+                            // else
+                            // if no function to read this data, br.BaseStream.Position = offset + size;
+                            // index = br.ReadInt32();
+                            // }
+                        }
+
                         if (!DoesStreamHaveIdentifier(br))
                         {
                             break;
@@ -984,6 +1384,18 @@ namespace BPSR_ZDPS
                     }
                 case DungeonSyncData.ReviveInfoFieldNumber:
                     {
+                        // Likely need to do this check always
+                        /*if (!DoesStreamHaveIdentifier(br))
+                        {
+                            break;
+                        }
+                        uint subFieldIndex = br.ReadUInt32();
+                        _ = br.ReadInt32();*/
+
+                        // DungeonReviveInfo: revivie_ids = vec<int32>; revivie_map = hashmap<int32, int32>
+                        // This seems to be consistent when there's a raid wipe
+                        var revive_info = DungeonReviveInfo.Parser.ParseFrom(br.ReadBytes((int)(br.BaseStream.Length - br.BaseStream.Position)));
+
 
                         break;
                     }
@@ -1014,6 +1426,66 @@ namespace BPSR_ZDPS
                     }
                 default:
                     break;
+            }
+        }
+
+        static void ReadBinaryContainer(BinaryReader br, Dictionary<int, Action<BinaryReader>> dataFuncs, string debugName = "")
+        {
+            // TODO: ensure object with dataFuncs functions is given
+
+            if (br.BaseStream.Position + 8 >= br.BaseStream.Length)
+            {
+                System.Diagnostics.Debug.WriteLine($"Stream container size is too small! Pos:{br.BaseStream.Position} Len:{br.BaseStream.Length}");
+                return;
+            }
+
+            int tag = br.ReadInt32();
+            _ = br.ReadInt32();
+            if (tag != -2)
+            {
+                System.Diagnostics.Debug.WriteLine($"Invalid begin tag: {tag}");
+                return;
+            }
+            
+            int size = br.ReadInt32();
+            _ = br.ReadInt32();
+            if (size == -3)
+            {
+                return;
+            }
+            if (size < 0)
+            {
+                System.Diagnostics.Debug.WriteLine($"ReadBinaryContainer size was unexpectedly negative! size = {size}");
+                return;
+            }
+
+            long offset = br.BaseStream.Position;
+            int index = br.ReadInt32(); // "Field Number"
+            _ = br.ReadInt32();
+
+            while (0 < index)
+            {
+                //System.Diagnostics.Debug.WriteLine($"Container block size = {size}");
+                if (!string.IsNullOrEmpty(debugName))
+                {
+                    System.Diagnostics.Debug.WriteLine($"{debugName} FieldNumber(index)={index}");
+                }
+
+                if (dataFuncs.ContainsKey(index))
+                {
+                    dataFuncs[index](br);
+                }
+                else
+                {
+                    br.BaseStream.Position = offset + size;
+                }
+
+                index = br.ReadInt32();
+                _ = br.ReadInt32();
+            }
+            if (index != -3)
+            {
+                System.Diagnostics.Debug.WriteLine($"Invalid end tag: {index}");
             }
         }
 

@@ -24,6 +24,8 @@ namespace BPSR_ZDPS.Windows
         private bool PersistantTracking = false;
         private int LoadedFromEncounterIdx = -1;
 
+        static int RunOnceDelayed = 0;
+
         public ETableFilterMode TableFilterMode = ETableFilterMode.SkillsDamage;
 
         public enum ETableFilterMode : int
@@ -37,6 +39,7 @@ namespace BPSR_ZDPS.Windows
 
         public void Open()
         {
+            RunOnceDelayed = 0;
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
             //ImGui.OpenPopup("###EntityInspectorWindow");
             IsOpened = true;
@@ -83,6 +86,17 @@ namespace BPSR_ZDPS.Windows
 
             if (ImGui.Begin($"Entity Inspector - {entityName}###EntityInspectorWindow", ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
             {
+                if (RunOnceDelayed == 0)
+                {
+                    RunOnceDelayed++;
+                }
+                else if (RunOnceDelayed == 1)
+                {
+                    RunOnceDelayed++;
+                    Utils.SetCurrentWindowIcon();
+                    Utils.BringWindowToFront();
+                }
+
                 if (ImGui.BeginTable("##EntityProperties", 2, ImGuiTableFlags.None))
                 {
                     ImGui.TableSetupColumn("##PropsLeft", ImGuiTableColumnFlags.WidthStretch | ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize, 1f, 0);
@@ -221,6 +235,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.TableNextColumn();
 
                     string valueTotalLabel = "";
+                    string valueExtraTotalLabel = "";
                     string valueTotalPerSecondLabel = "";
 
                     CombatStats2 combatStats = null;
@@ -230,16 +245,19 @@ namespace BPSR_ZDPS.Windows
                         case ETableFilterMode.SkillsHealing:
                             combatStats = LoadedEntity.HealingStats;
                             valueTotalLabel = "Total Healing:";
+                            valueExtraTotalLabel = "Total Overheal:";
                             valueTotalPerSecondLabel = "Total HPS:";
                             break;
                         case ETableFilterMode.SkillsTaken:
                             combatStats = LoadedEntity.TakenStats;
                             valueTotalLabel = "Total Taken:";
+                            valueExtraTotalLabel = "Total Shield:";
                             valueTotalPerSecondLabel = "Total DPS:";
                             break;
                         default:
                             combatStats = LoadedEntity.DamageStats;
                             valueTotalLabel = "Total Damage:";
+                            valueExtraTotalLabel = "Total Shield Break:";
                             valueTotalPerSecondLabel = "Total DPS:";
                             break;
                     }
@@ -252,11 +270,19 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableNextColumn();
                         ImGui.Text($"{valueTotalLabel} {Utils.NumberToShorthand(combatStats.ValueTotal)}");
                         ImGui.Text($"{valueTotalPerSecondLabel} {Utils.NumberToShorthand(combatStats.ValuePerSecond)}");
+                        if (TableFilterMode == ETableFilterMode.SkillsDamage)
+                        {
+                            ImGui.Text($"{valueExtraTotalLabel} {Utils.NumberToShorthand(LoadedEntity.TotalShieldBreak)}");
+                        }
+                        else if (TableFilterMode == ETableFilterMode.SkillsHealing)
+                        {
+                            ImGui.Text($"{valueExtraTotalLabel} {Utils.NumberToShorthand(LoadedEntity.TotalOverhealing)}");
+                        }
                         ImGui.Text($"Total Hits: {combatStats.HitsCount}");
 
                         ImGui.TableNextColumn();
-                        ImGui.Text($"Total Crit Rate: {combatStats.CritRate}");
-                        ImGui.Text($"Total Lucky Rate: {combatStats.LuckyRate}");
+                        ImGui.Text($"Total Crit Rate: {combatStats.CritRate}%%");
+                        ImGui.Text($"Total Lucky Rate: {combatStats.LuckyRate}%%");
                         ImGui.Text($"Total Crits: {combatStats.CritCount}");
 
                         ImGui.EndTable();

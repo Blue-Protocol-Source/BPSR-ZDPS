@@ -83,7 +83,9 @@ namespace BPSR_ZDPS.Meters
                 ImGui.PopStyleVar();
 
                 // Call .ToList() to create a copy of the data in memory as it might change
-                var playerList = EncounterManager.Current?.Entities.Where(x => x.EntityType == Zproto.EEntityType.EntChar).OrderByDescending(x => x.TotalDamage).ToList();
+                var playerList = EncounterManager.Current?.Entities
+                    .Where(x => x.EntityType == Zproto.EEntityType.EntChar && (Settings.Instance.OnlyShowDamageContributorsInMeters ? x.TotalDamage > 0 : true))
+                    .OrderByDescending(x => x.TotalDamage).ToList();
 
                 ulong topTotalValue = 0;
 

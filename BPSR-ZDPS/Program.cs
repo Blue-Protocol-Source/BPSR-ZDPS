@@ -53,12 +53,12 @@ namespace BPSR_ZDPS
             }
 
             Assembly assembly = Assembly.GetExecutingAssembly();
-            string iconAssemblyPath = "ZDPS.Resources.MainWindowIcon.png";
+            string iconAssemblyPath = "BPSR_ZDPS.Resources.MainWindowIcon.png";
             using (var iconStream = assembly.GetManifestResourceStream(iconAssemblyPath))
             {
                 if (iconStream != null)
                 {
-                    // SetWindowIcon(window, iconStream);
+                    SetWindowIcon(window, iconStream);
                 }
             }
 
@@ -132,7 +132,7 @@ namespace BPSR_ZDPS
             {
                 if (iconStream != null)
                 {
-                    // SetWindowIcon(window, iconStream);
+                    SetWindowIcon(window, iconStream);
                 }
             }
 
@@ -186,6 +186,8 @@ namespace BPSR_ZDPS
 
             Settings.Save();
             MessageManager.StopCapturing();
+
+            HotKeyManager.UnregisterAllHotKeys();
 
             ImGuiImplD3D11.Shutdown();
             ImGuiImplD3D11.SetCurrentContext(null);

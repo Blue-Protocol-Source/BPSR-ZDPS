@@ -17,10 +17,12 @@ namespace BPSR_ZDPS
         public static Encounter? Current => Encounters.Count > 0 ? Encounters[CurrentEncounter] : null;
 
         public static int CurrentEncounter = 0;
+        public static int CurrentBattleId = 0;
 
         static EncounterManager()
         {
             // Give a default encounter for now
+            StartNewBattle();
             StartEncounter();
         }
 
@@ -35,14 +37,14 @@ namespace BPSR_ZDPS
                 }
             }
 
-            Encounters.Add(new Encounter());
+            Encounters.Add(new Encounter(CurrentBattleId));
 
             CurrentEncounter = Encounters.Count - 1;
         }
 
         public static void StopEncounter()
         {
-            if (Current != null)
+            if (Current != null && Current.EndTime == DateTime.MinValue)
             {
                 Current.SetEndTime(DateTime.Now);
             }
@@ -61,10 +63,19 @@ namespace BPSR_ZDPS
                 StartEncounter();
             }    
         }
+
+        public static void StartNewBattle()
+        {
+            // This increments an internal ID for encounters to use that allows them to be grouped together by "battle"
+            // These are typically going to be just splitting encounters up by instance (which is changed via map traveling)
+            CurrentBattleId++;
+        }
     }
 
     public class Encounter
     {
+        public int BattleId { get; set; }
+
         public DateTime StartTime { get; private set; }
         public DateTime EndTime { get; private set; }
         private TimeSpan? Duration { get; set; }
@@ -72,20 +83,24 @@ namespace BPSR_ZDPS
         public List<Entity> Entities { get; set; }
 
         public ulong TotalDamage { get; set; } = 0;
+        public ulong TotalShieldBreak { get; set; } = 0;
         public ulong TotalHealing { get; set; } = 0;
+        public ulong TotalOverhealing { get; set; } = 0;
         public ulong TotalTakenDamage { get; set; } = 0;
         public ulong TotalNpcTakenDamage { get; set; } = 0;
 
-        public Encounter()
+        public Encounter(int battleId = 0)
         {
             SetStartTime(DateTime.Now);
             Entities = new();
+            BattleId = battleId;
         }
 
-        public Encounter(DateTime startTime)
+        public Encounter(DateTime startTime, int battleId = 0)
         {
             SetStartTime(startTime);
             Entities = new();
+            BattleId = battleId;
         }
 
         public void SetStartTime(DateTime start)
@@ -102,7 +117,7 @@ namespace BPSR_ZDPS
 
         public TimeSpan GetDuration()
         {
-            if (EndTime == DateTime.MinValue)
+            if (EndTime == DateTime.MinValue || Duration == null)
             {
                 return DateTime.Now.Subtract(StartTime).Duration();
             }
@@ -192,18 +207,39 @@ namespace BPSR_ZDPS
             entity.RegisterSkillActivation(skillId);
         }
 
-        public void AddDamage(long uid, int skillId, EDamageProperty damageElement, long damage, bool isCrit, bool isLucky, bool isCauseLucky, long hpLessen = 0)
+        public void AddDamage(long uid, int skillId, EDamageProperty damageElement, long damage, bool isCrit, bool isLucky, bool isCauseLucky, long hpLessen = 0, EDamageType? damageType = null, EDamageMode? damageMode = null)
         {
             LastUpdate = DateTime.Now;
             TotalDamage += (ulong)damage;
-            GetOrCreateEntity(uid).AddDamage(skillId, damage, isCrit, isLucky, hpLessen, damageElement, isCauseLucky);
+            if (damageType != null && damageType == EDamageType.Absorbed)
+            {
+                TotalShieldBreak += (ulong)damage;
+            }
+            GetOrCreateEntity(uid).AddDamage(skillId, damage, isCrit, isLucky, hpLessen, damageElement, isCauseLucky, damageType, damageMode);
         }
 
         public void AddHealing(long uid, int skillId, EDamageProperty damageElement, long healing, bool isCrit, bool isLucky, bool isCauseLucky, long targetUid)
         {
             LastUpdate = DateTime.Now;
             TotalHealing += (ulong)healing;
-            GetOrCreateEntity(uid).AddHealing(skillId, healing, isCrit, isLucky, damageElement, isCauseLucky, targetUid);
+
+            var entity = GetOrCreateEntity(uid);
+
+            long? currentHp = entity.GetAttrKV("AttrHp") as long?;
+            long? maxHp = entity.GetAttrKV("AttrMaxHp") as long?;
+
+            long overhealing = 0;
+            long effectiveHealing = 0;
+
+            if ((currentHp != null && maxHp != null) && (currentHp + healing > maxHp))
+            {
+                effectiveHealing = (long)(maxHp - currentHp);
+                overhealing = healing - effectiveHealing;
+            }
+
+            TotalOverhealing += (ulong)overhealing;
+            
+            entity.AddHealing(skillId, healing, overhealing, isCrit, isLucky, damageElement, isCauseLucky, targetUid);
         }
 
         public void AddTakenDamage(long uid, int skillId, long damage, EDamageSource damageSource, bool isMiss, bool isDead, bool isCrit, bool isLucky, long hpLessen = 0)
@@ -242,8 +278,11 @@ namespace BPSR_ZDPS
         public List<ActionStat> ActionStats { get; set; } = new();
 
         public ulong TotalDamage { get; set; } = 0;
+        public ulong TotalShieldBreak { get; set; } = 0;
         public ulong TotalHealing { get; set; } = 0;
+        public ulong TotalOverhealing { get; set; } = 0;
         public ulong TotalTakenDamage { get; set; } = 0;
+        public ulong TotalShield { get; set; } = 0;
         public ulong TotalCasts { get; set; } = 0;
 
         public Dictionary<string, object> Attributes { get; set; } = new();
@@ -398,9 +437,14 @@ namespace BPSR_ZDPS
             }
         }
 
-        public void AddDamage(int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, EDamageProperty? damageElement = null, bool isCauseLucky = false)
+        public void AddDamage(int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, EDamageProperty? damageElement = null, bool isCauseLucky = false, EDamageType? damageType = null, EDamageMode? damageMode = null)
         {
             TotalDamage += (ulong)damage;
+
+            if (damageType != null && damageType == EDamageType.Absorbed)
+            {
+                TotalShieldBreak += (ulong)damage;
+            }
 
             DamageStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky);
 
@@ -423,12 +467,13 @@ namespace BPSR_ZDPS
             DamageStats.EndTime = DateTime.Now;*/
         }
 
-        public void AddHealing(int skillId, long healing, bool isCrit, bool isLucky, EDamageProperty? damageElement = null, bool isCauseLucky = false, long targetUid = 0)
+        public void AddHealing(int skillId, long healing, long overhealing, bool isCrit, bool isLucky, EDamageProperty? damageElement = null, bool isCauseLucky = false, long targetUid = 0)
         {
             TotalHealing += (ulong)healing;
+            TotalOverhealing += (ulong)overhealing;
             HealingStats.AddData(healing, isCrit, isLucky, 0, isCauseLucky);
 
-            RegisterSkillData(ESkillType.Healing, skillId, healing, isCrit, isLucky, 0, isCauseLucky);
+            RegisterSkillData(ESkillType.Healing, skillId, healing, isCrit, isLucky, overhealing, isCauseLucky);
             //ActionStats.Add(new ActionStat(DateTime.Now, 1, (int)skillId));
 
             //if (string.IsNullOrEmpty(SubProfession))

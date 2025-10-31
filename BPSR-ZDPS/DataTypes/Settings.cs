@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using BPSR_ZDPS.Windows;
+using Newtonsoft.Json;
 
 namespace BPSR_ZDPS.DataTypes;
 
@@ -13,11 +14,24 @@ public class Settings
     public bool UseShortWidthNumberFormatting { get; set; } = true;
     public bool ColorClassIconsByRole { get; set; } = true;
     public bool ShowSkillIconsInDetails { get; set; } = true;
+    public bool OnlyShowDamageContributorsInMeters { get; set; } = false;
     public float WindowOpacity = 1.0f;
+
+    public uint HotkeysEncounterReset { get; set; }
 
     public void Apply()
     {
         MessageManager.NetCaptureDeviceName = NetCaptureDeviceName;
+
+        
+    }
+
+    public void ApplyHotKeys(MainWindow mainWindow)
+    {
+        if (HotkeysEncounterReset > 0)
+        {
+            HotKeyManager.RegisterKey("EncounterReset", mainWindow.CreateNewEncounter, HotkeysEncounterReset);
+        }
     }
 
     public static void Load()

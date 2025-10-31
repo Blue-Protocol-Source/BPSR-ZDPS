@@ -68,7 +68,7 @@ namespace BPSR_ZDPS.DataTypes
         public static SubProfessionId GetSubProfessionIdBySkillId(int skillId) => skillId switch
         {
             0 => SubProfessionId.SubProfession_Unknown,
-            1714 or 1734 or 1739 or 179908 => SubProfessionId.SubProfession_Iaido, // 1714 = Core Skill: Iaido Slash, 179908 = spec skill?, 1724 = spec skill Thunder Cut?
+            1714 or 1734 => SubProfessionId.SubProfession_Iaido, // 1714 = Core Skill: Iaido Slash, 179908 = spec skill?, 1724 = spec skill Thunder Cut?
             1715 or 1740 or 1741 or 179906 => SubProfessionId.SubProfession_Moonstrike, // 44701 = Core Skill: Moon Blade
             120901 or 120902 => SubProfessionId.SubProfession_Icicle,
             1241 => SubProfessionId.SubProfession_Frostbeam,

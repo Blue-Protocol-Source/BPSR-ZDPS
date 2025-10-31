@@ -12,6 +12,7 @@ namespace BPSR_ZDPS.Windows
 {
     public static class SettingsWindow
     {
+        public const string LAYER = "SettingsWindowLayer";
         public static string TITLE_ID = "###SettingsWindow";
 
         static int PreviousSelectedNetworkDeviceIdx = -1;
@@ -20,13 +21,22 @@ namespace BPSR_ZDPS.Windows
         static bool useShortWidthNumberFormatting;
         static bool colorClassIconsByRole;
         static bool showSkillIconsInDetails;
+        static bool onlyShowDamageContributorsInMeters;
         static float windowOpacity;
+
+        static bool IsBindingEncounterResetKey = false;
+        static uint EncounterResetKey;
+        static string EncounterResetKeyName = "";
 
         static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
 
+        static int RunOnceDelayed = 0;
+
         public static void Open()
         {
-            ImGuiP.PushOverrideID(ImGuiP.ImHashStr("SettingsStack"));
+            RunOnceDelayed = 0;
+
+            ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
             ImGui.OpenPopup(TITLE_ID);
 
             NetworkDevices = SharpPcap.LibPcap.LibPcapLiveDeviceList.Instance;
@@ -35,7 +45,18 @@ namespace BPSR_ZDPS.Windows
             useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
             colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
             showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
+            onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
             windowOpacity = Settings.Instance.WindowOpacity;
+
+            EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
+            if (EncounterResetKey == 0)
+            {
+                EncounterResetKeyName = "[UNBOUND]";
+            }
+            else
+            {
+                EncounterResetKeyName = ImGui.GetKeyNameS(HotKeyManager.VirtualKeyToImGuiKey((int)EncounterResetKey));
+            }
 
             // Set selection to matching device name (the index could have changed since last time we were here)
             if (!string.IsNullOrEmpty(Settings.Instance.NetCaptureDeviceName))
@@ -61,6 +82,9 @@ namespace BPSR_ZDPS.Windows
                 SelectedNetworkDeviceIdx = 0;
             }
 
+            // Disable all HotKeys while we're in the Settings menu to prevent unexpected behavior when rebinding
+            HotKeyManager.UnregisterAllHotKeys();
+
             ImGui.PopID();
         }
 
@@ -71,12 +95,27 @@ namespace BPSR_ZDPS.Windows
 
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
-            ImGui.SetNextWindowSize(new Vector2(550, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(550, 750), ImGuiCond.FirstUseEver);
 
-            ImGuiP.PushOverrideID(ImGuiP.ImHashStr("SettingsStack"));
+            ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
             if (ImGui.BeginPopupModal($"Settings{TITLE_ID}"))
             {
+                if (RunOnceDelayed == 0)
+                {
+                    RunOnceDelayed++;
+                }
+                else if (RunOnceDelayed == 2)
+                {
+                    RunOnceDelayed++;
+                    Utils.SetCurrentWindowIcon();
+                    Utils.BringWindowToFront();
+                }
+                else if (RunOnceDelayed < 3)
+                {
+                    RunOnceDelayed++;
+                }
+
                 ImGui.SeparatorText("Network Device");
                 ImGui.Text("Select the network device to read from:");
 
@@ -121,6 +160,10 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SeparatorText("Keybinds");
+                ImGui.TextWrapped("Below are global hotkey keybinds for the application. Click on the box and press a key to bind it.");
+                ImGui.TextWrapped("Press Escape to cancel the rebinding process.");
+
+                RebindKeyButton("Encounter Reset", ref EncounterResetKey, ref EncounterResetKeyName);
 
                 ImGui.SeparatorText("Combat");
 
@@ -165,7 +208,17 @@ namespace BPSR_ZDPS.Windows
                 ImGui.TextWrapped("When enabled, skill icons will be displayed, when possible, in the details panel next to skill names.");
                 ImGui.EndDisabled();
                 ImGui.Unindent();
-                
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Only Show Damage Contributors In Meters: ");
+                ImGui.SameLine();
+                ImGui.Checkbox("##OnlyShowContributorsInMeters", ref onlyShowDamageContributorsInMeters);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("When enabled, only players who have dealt damage will show in the DPS meter.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Pinned Window Opacity: ");
                 ImGui.SameLine();
@@ -224,7 +277,11 @@ namespace BPSR_ZDPS.Windows
 
                     Settings.Instance.ShowSkillIconsInDetails = showSkillIconsInDetails;
 
+                    Settings.Instance.OnlyShowDamageContributorsInMeters = onlyShowDamageContributorsInMeters;
+
                     Settings.Instance.WindowOpacity = windowOpacity;
+
+                    RegisterAllHotkeys(mainWindow);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -243,7 +300,21 @@ namespace BPSR_ZDPS.Windows
 
                     showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
 
+                    onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
+
                     windowOpacity = Settings.Instance.WindowOpacity;
+
+                    EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
+                    if (EncounterResetKey == 0)
+                    {
+                        EncounterResetKeyName = "[UNBOUND]";
+                    }
+                    else
+                    {
+                        EncounterResetKeyName = ImGui.GetKeyNameS(HotKeyManager.VirtualKeyToImGuiKey((int)EncounterResetKey));
+                    }
+
+                    RegisterAllHotkeys(mainWindow);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -252,6 +323,74 @@ namespace BPSR_ZDPS.Windows
             }
 
             ImGui.PopID();
+        }
+
+        static void RegisterAllHotkeys(MainWindow mainWindow)
+        {
+            if (EncounterResetKey != 0)// && EncounterResetKey != Settings.Instance.HotkeysEncounterReset)
+            {
+                HotKeyManager.RegisterKey("EncounterReset", mainWindow.CreateNewEncounter, EncounterResetKey);
+            }
+            Settings.Instance.HotkeysEncounterReset = EncounterResetKey;
+        }
+
+        public static void RebindKeyButton(string bindingName, ref uint bindingVariable, ref string bindingVariableName)
+        {
+            ImGui.Text($"{bindingName}:");
+            ImGui.AlignTextToFramePadding();
+
+            string bindDisplay = "[UNBOUND]";
+
+            if (IsBindingEncounterResetKey == true)
+            {
+                for (uint key = (uint)ImGuiKey.NamedKeyBegin; key < (uint)ImGuiKey.NamedKeyEnd; key++)
+                {
+                    if (ImGui.IsKeyPressed(ImGuiKey.Escape))
+                    {
+                        IsBindingEncounterResetKey = false;
+                    }
+                    else if (ImGui.IsKeyPressed((ImGuiKey)key))
+                    {
+                        ImGuiKey[] blacklistedKeys =
+                            [
+                            ImGuiKey.ModAlt, ImGuiKey.LeftAlt, ImGuiKey.RightAlt, ImGuiKey.ReservedForModAlt,
+                            ImGuiKey.ModCtrl, ImGuiKey.LeftCtrl, ImGuiKey.RightCtrl, ImGuiKey.ReservedForModCtrl,
+                            ImGuiKey.ModShift, ImGuiKey.LeftShift, ImGuiKey.RightShift, ImGuiKey.ReservedForModShift,
+                            ImGuiKey.ModMask, ImGuiKey.ModSuper, ImGuiKey.LeftSuper, ImGuiKey.RightSuper, ImGuiKey.ReservedForModSuper,
+                            ImGuiKey.MouseLeft, ImGuiKey.MouseMiddle, ImGuiKey.MouseRight, ImGuiKey.MouseWheelX, ImGuiKey.MouseWheelY,
+                            ImGuiKey.Escape,
+                            ];
+                        
+                        if (!blacklistedKeys.Contains((ImGuiKey)key))
+                        {
+                            string keyName = ImGui.GetKeyNameS((ImGuiKey)key);
+                            bindingVariable = (uint)HotKeyManager.ImGuiKeyToVirtualKey((ImGuiKey)key);
+                            bindingVariableName = keyName;
+                            IsBindingEncounterResetKey = false;
+                        }
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(bindingVariableName))
+            {
+                bindDisplay = bindingVariableName;
+            }
+            ImGui.SameLine();
+            bool isInBindingState = IsBindingEncounterResetKey;
+
+            if (isInBindingState)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Button, ImGui.GetStyle().Colors[(int)ImGuiCol.ButtonHovered]);
+            }
+            if (ImGui.Button($"{bindDisplay}", new Vector2(120, 0)))
+            {
+                IsBindingEncounterResetKey = true;
+            }
+            if (isInBindingState)
+            {
+                ImGui.PopStyleColor();
+            }
         }
     }
 }

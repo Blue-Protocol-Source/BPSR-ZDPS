@@ -15,6 +15,7 @@ namespace BPSR_ZDPS
     public class HelperMethods
     {
         public static GLFWwindowPtr GLFWwindow;
+        public static IntPtr MainWindowPlatformHandleRaw;
         public static Dictionary<string, ImFontPtr> Fonts = new();
 
         public static class DataTables

@@ -15,6 +15,7 @@
     <None Remove="Fonts\FAS.ttf" />
     <None Remove="Fonts\fot-seuratpron-m.otf" />
     <None Remove="Fonts\SourceHanSansSC-Regular.otf" />
+    <None Remove="Resources\MainWindowIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +27,7 @@
     <EmbeddedResource Include="Fonts\FAS.ttf" />
     <EmbeddedResource Include="Fonts\fot-seuratpron-m.otf" />
     <EmbeddedResource Include="Fonts\SourceHanSansSC-Regular.otf" />
+    <EmbeddedResource Include="Resources\MainWindowIcon.png" />
   </ItemGroup>
 
   <ItemGroup>

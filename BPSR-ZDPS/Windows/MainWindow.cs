@@ -22,6 +22,7 @@ namespace BPSR_ZDPS.Windows
         Vector2 MainMenuBarSize;
 
         static bool RunOnce = true;
+        static int RunOnceDelayed = 0;
 
         static int SelectedTabIndex = 0;
 
@@ -92,6 +93,24 @@ namespace BPSR_ZDPS.Windows
                 Meters.Add(new HealingMeter());
                 Meters.Add(new TankingMeter());
                 Meters.Add(new TakenMeter());
+            }
+            if (RunOnceDelayed == 0)
+            {
+                RunOnceDelayed++;
+            }
+            else if (RunOnceDelayed == 1)
+            {
+                RunOnceDelayed++;
+                unsafe
+                {
+                    HelperMethods.MainWindowPlatformHandleRaw = (IntPtr)ImGui.GetWindowViewport().PlatformHandleRaw;
+                }
+                
+                HotKeyManager.SetWndProc();
+
+                Settings.Instance.ApplyHotKeys(this);
+
+                Utils.SetCurrentWindowIcon();
             }
 
             ImGuiTableFlags table_flags = ImGuiTableFlags.SizingStretchSame;
@@ -187,9 +206,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 if (ImGui.MenuItem($"{FASIcons.Rotate}"))
                 {
-                    EncounterManager.StopEncounter();
-                    System.Diagnostics.Debug.WriteLine($"Starting new manual encounter at {DateTime.Now}");
-                    EncounterManager.StartEncounter();
+                    CreateNewEncounter();
                 }
                 ImGui.PopFont();
 
@@ -260,6 +277,13 @@ namespace BPSR_ZDPS.Windows
             ImGui.Text(currentValuePerSecond);
 
             ImGui.EndChild();
+        }
+
+        public void CreateNewEncounter()
+        {
+            EncounterManager.StopEncounter();
+            System.Diagnostics.Debug.WriteLine($"Starting new manual encounter at {DateTime.Now}");
+            EncounterManager.StartEncounter();
         }
     }
 }
