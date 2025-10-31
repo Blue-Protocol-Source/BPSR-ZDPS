@@ -16,8 +16,22 @@ public static class NetDebug
         ImGui.SetNextWindowSize(new Vector2(1000, 600), ImGuiCond.FirstUseEver);
         ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
+
+        var netCap = MessageManager.netCap;
         if (ImGui.Begin("Network Debug"u8, ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking)) {
-            ImGui.Text($"Packets in queue: {MessageManager.netCap.RawPacketQueue.Count}");
+            if (ImGui.BeginTable("ExampleTable", 2, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {
+                ImGui.TableNextColumn();
+                ImGui.Text($"Packets in queue: {MessageManager.netCap.RawPacketQueue.Count}");
+                ImGui.TableNextColumn();
+                ImGui.Text($"Num Seen Packets: {MessageManager.netCap.NumSeenPackets:##,##}");
+                
+                ImGui.TableNextColumn();
+                ImGui.Text($"Last Packet Seen: {(DateTime.Now - MessageManager.netCap.LastPacketSeenAt).TotalSeconds:00.00}s ago");
+                ImGui.TableNextColumn();
+                ImGui.Text($"Num Active Stream Readers: {netCap.NumConnectionReaders}");
+
+                ImGui.EndTable();
+            }
             
             if (ImGui.CollapsingHeader("Seen Connections")) {
                 if (ImGui.BeginTable("SeenConnectionsTable", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {

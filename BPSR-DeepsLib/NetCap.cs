@@ -16,7 +16,7 @@ namespace BPSR_DeepsLib;
 public class NetCap
 {
     private NetCapConfig         Config;
-    private ICaptureDevice       CaptureDevice;
+    public ICaptureDevice       CaptureDevice;
     private TcpConnectionManager TcpConnectionManager;
     private string               LocalAddress;
     public TcpReassempler       TcpReassempler;
@@ -30,6 +30,9 @@ public class NetCap
     private byte[] DecompressionScratchBuffer = new byte[1024 * 1024];
     private Dictionary<NotifyId, Action<ReadOnlySpan<byte>>> NotifyHandlers = new();
     public Dictionary<IPAddress, PendingConnState> SeenConnectionStates = [];
+    public ulong NumSeenPackets = 0;
+    public DateTime LastPacketSeenAt = DateTime.MinValue;
+    public int NumConnectionReaders = 0;
 
     private bool IsDebugCaptureFileMode = false;
     private string DebugCaptureFile = "";//@"C:\Users\Xennma\Documents\BPSR_PacketCapture.pcap";
@@ -109,6 +112,9 @@ public class NetCap
         if (tcpPacket == null)
             return;
 
+        NumSeenPackets++;
+        LastPacketSeenAt = DateTime.Now;
+
         if (!IsGamePacket(ipv4, tcpPacket))
             return;
         
@@ -166,8 +172,11 @@ public class NetCap
     {
         var task = Task.Factory.StartNew(async () =>
         {
-            while (conn.IsAlive && !CancelTokenSrc.IsCancellationRequested) {
-                var buff = await conn.Pipe.Reader.ReadAsync();
+            NumConnectionReaders++;
+            while (conn.IsAlive && !CancelTokenSrc.IsCancellationRequested && !conn.CancelTokenSrc.IsCancellationRequested) {
+                var buff = await conn.Pipe.Reader.ReadAtLeastAsync(6, conn.CancelTokenSrc.Token);
+                if (buff.IsCompleted)
+                    return;
                 Span<byte> header = new byte[6];
                 buff.Buffer.Slice(0, 6).CopyTo(header);
                 var len = BinaryPrimitives.ReadUInt32BigEndian(header);
@@ -183,6 +192,8 @@ public class NetCap
                 }
                 await Task.Delay(30);
             }
+
+            NumConnectionReaders--;
             Debug.WriteLine($"{conn.EndPoint} finished reading");
         }, CancelTokenSrc.Token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
     }

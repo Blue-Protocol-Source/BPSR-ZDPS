@@ -27,6 +27,7 @@ public class TcpReassempler
         var conn = Connections[ep]; 
         if (tcpPacket.Reset || tcpPacket.Finished || tcpPacket.Synchronize) {
             conn.IsAlive = false;
+            conn.CancelTokenSrc.Cancel();
             lock (Connections) {
                 Connections.Remove(conn.EndPoint);
             }
@@ -43,7 +44,7 @@ public class TcpReassempler
         public const int NUM_PACKETS_BEFORE_CLEAN_UP = 200;
         
         public IPEndPoint EndPoint = endPoint;
-        public Dictionary<uint, TcpPacket> Packets = new();
+        public Dictionary<uint, PacketFragment> Packets = new();
         public uint? NextExpectedSeq = null;
         public uint LastSeq = 0;
         public Pipe Pipe = new Pipe();
@@ -51,6 +52,7 @@ public class TcpReassempler
         public DateTime LastPacketAt = DateTime.MinValue;
         public ulong NumBytesSent;
         public ulong NumPacketsSeen;
+        public CancellationTokenSource CancelTokenSrc = new();
 
         public void AddPacket(TcpPacket tcpPacket)
         {
@@ -62,8 +64,9 @@ public class TcpReassempler
             
             if (NextExpectedSeq == null)
                 NextExpectedSeq = tcpPacket.SequenceNumber;
-            
-            Packets.Add(tcpPacket.SequenceNumber, tcpPacket);
+
+            var fragment = new PacketFragment(tcpPacket.SequenceNumber, tcpPacket.PayloadData);
+            Packets.Add(tcpPacket.SequenceNumber, fragment);
             NumPacketsSeen++;
             LastPacketAt = DateTime.Now;
             CheckAndPushContinuesData();
@@ -94,4 +97,11 @@ public class TcpReassempler
             }
         }
     }
+}
+
+public class PacketFragment(uint seqNum, byte[] data)
+{
+    public uint SequenceNumber = seqNum;
+    public byte[] PayloadData = data;
+    public DateTime ArriveTime = DateTime.Now;
 }
