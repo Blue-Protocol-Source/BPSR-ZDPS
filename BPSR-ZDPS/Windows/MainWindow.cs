@@ -106,7 +106,7 @@ namespace BPSR_ZDPS.Windows
                     HelperMethods.MainWindowPlatformHandleRaw = (IntPtr)ImGui.GetWindowViewport().PlatformHandleRaw;
                 }
                 
-                HotKeyManager.SetWndProc();
+                HotKeyManager.SetHookProc();
 
                 Settings.Instance.ApplyHotKeys(this);
 
@@ -172,7 +172,7 @@ namespace BPSR_ZDPS.Windows
 
                 ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 4));
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                if (ImGui.MenuItem($"{FASIcons.Minus}"))
+                if (ImGui.MenuItem($"{FASIcons.WindowMinimize}"))
                 {
                     // TODO: Minimize window (might not be possible since we're not actually using GLFW windows at this point)
                     // Likely would need to use ImGuiDockSpaceOverViewport(ImGui.GetMainViewport()); for this main window to attach to platform window
@@ -200,6 +200,7 @@ namespace BPSR_ZDPS.Windows
                 }
                 ImGui.PopStyleColor();
                 ImGui.PopFont();
+                ImGui.SetItemTooltip("Pin Window As Top Most");
 
                 // Create new Encounter button
                 ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 2));
@@ -209,6 +210,7 @@ namespace BPSR_ZDPS.Windows
                     CreateNewEncounter();
                 }
                 ImGui.PopFont();
+                ImGui.SetItemTooltip("Start New Encounter");
 
                 ImGui.SetCursorPosX(MainMenuBarSize.X - settingsWidth);
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());

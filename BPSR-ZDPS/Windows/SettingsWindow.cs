@@ -95,7 +95,7 @@ namespace BPSR_ZDPS.Windows
 
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
-            ImGui.SetNextWindowSize(new Vector2(550, 750), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(650, 850), ImGuiCond.FirstUseEver);
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
@@ -160,10 +160,22 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SeparatorText("Keybinds");
-                ImGui.TextWrapped("Below are global hotkey keybinds for the application. Click on the box and press a key to bind it.");
+
+                ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
+                ImGui.BeginChild("##KeybindsNotice", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
+                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                ImGui.TextWrapped("Important Note:");
+                ImGui.PopFont();
+                ImGui.TextWrapped("Keybinds only work while the game is in focus if ZDPS is being run as Administrator. This is a limitation imposed by the Game Devs.");
+                ImGui.EndChild();
+                ImGui.PopStyleColor();
+
+                ImGui.TextWrapped("Below are global hotkey keybinds for the application. Click on the box and press a key to bind it. Modifier keys (Ctrl/Alt/Shift) are not supported.");
                 ImGui.TextWrapped("Press Escape to cancel the rebinding process.");
 
+                ImGui.Indent();
                 RebindKeyButton("Encounter Reset", ref EncounterResetKey, ref EncounterResetKeyName);
+                ImGui.Unindent();
 
                 ImGui.SeparatorText("Combat");
 
@@ -336,8 +348,8 @@ namespace BPSR_ZDPS.Windows
 
         public static void RebindKeyButton(string bindingName, ref uint bindingVariable, ref string bindingVariableName)
         {
-            ImGui.Text($"{bindingName}:");
             ImGui.AlignTextToFramePadding();
+            ImGui.Text($"{bindingName}:");
 
             string bindDisplay = "[UNBOUND]";
 
@@ -358,7 +370,7 @@ namespace BPSR_ZDPS.Windows
                             ImGuiKey.ModShift, ImGuiKey.LeftShift, ImGuiKey.RightShift, ImGuiKey.ReservedForModShift,
                             ImGuiKey.ModMask, ImGuiKey.ModSuper, ImGuiKey.LeftSuper, ImGuiKey.RightSuper, ImGuiKey.ReservedForModSuper,
                             ImGuiKey.MouseLeft, ImGuiKey.MouseMiddle, ImGuiKey.MouseRight, ImGuiKey.MouseWheelX, ImGuiKey.MouseWheelY,
-                            ImGuiKey.Escape,
+                            ImGuiKey.Escape, ImGuiKey.F12
                             ];
                         
                         if (!blacklistedKeys.Contains((ImGuiKey)key))
