@@ -36,6 +36,7 @@ namespace BPSR_ZDPS.Windows
             SettingsWindow.Draw(this);
             EncounterHistoryWindow.Draw(this);
             entityInspector.Draw(this);
+            NetDebug.Draw();
         }
 
         static bool p_open = true;
@@ -207,6 +208,14 @@ namespace BPSR_ZDPS.Windows
                     if (ImGui.MenuItem("Settings"))
                     {
                         SettingsWindow.Open();
+                    }
+                    ImGui.Separator();
+                    if (ImGui.BeginMenu("Debug"))
+                    {
+                        if (ImGui.MenuItem("Net Debug")) {
+                            NetDebug.IsOpened = !NetDebug.IsOpened;
+                        }
+                        ImGui.EndMenu();
                     }
                     ImGui.Separator();
                     if (ImGui.MenuItem("Exit"))

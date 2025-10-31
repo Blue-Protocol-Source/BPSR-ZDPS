@@ -1,4 +1,4 @@
-﻿using BPSR_DeepsLib.ServiceMethods;
+﻿using System.Buffers;
 using Microsoft.Extensions.ObjectPool;
 using PacketDotNet;
 using PacketDotNet.Connections;
@@ -7,28 +7,29 @@ using SharpPcap;
 using SharpPcap.LibPcap;
 using System.Buffers.Binary;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Net;
-using Zproto;
 using ZstdSharp;
 
 namespace BPSR_DeepsLib;
 
 public class NetCap
 {
-    private NetCapConfig Config;
-    private ICaptureDevice CaptureDevice;
+    private NetCapConfig         Config;
+    private ICaptureDevice       CaptureDevice;
     private TcpConnectionManager TcpConnectionManager;
-    private string LocalAddress;
+    private string               LocalAddress;
+    public TcpReassempler       TcpReassempler;
 
     private CancellationTokenSource CancelTokenSrc = new();
-    private ObjectPool<RawPacket> RawPacketPool = ObjectPool.Create(new DefaultPooledObjectPolicy<RawPacket>());
-    private ConcurrentQueue<RawPacket> RawPacketQueue = new();
+    public ObjectPool<RawPacket> RawPacketPool = ObjectPool.Create(new DefaultPooledObjectPolicy<RawPacket>());
+    public ConcurrentQueue<RawPacket> RawPacketQueue = new();
     private Task PacketParseTask;
     private Task ConnectionScanTask;
     private List<string> ServerConnections = [];
     private byte[] DecompressionScratchBuffer = new byte[1024 * 1024];
     private Dictionary<NotifyId, Action<ReadOnlySpan<byte>>> NotifyHandlers = new();
-    private Dictionary<IPAddress, PendingConnState> SeenConnectionStates = [];
+    public Dictionary<IPAddress, PendingConnState> SeenConnectionStates = [];
 
     private bool IsDebugCaptureFileMode = false;
     private string DebugCaptureFile = "";//@"C:\Users\Xennma\Documents\BPSR_PacketCapture.pcap";
@@ -55,17 +56,9 @@ public class NetCap
 
         PacketParseTask = Task.Factory.StartNew(ParsePacketsLoop, CancelTokenSrc.Token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
         //ConnectionScanTask = Task.Factory.StartNew(ScanForConnections, CancelTokenSrc.Token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
-
-        TcpConnectionManager = new TcpConnectionManager();
-        TcpConnectionManager.ConnectionTimeout = TimeSpan.FromSeconds(5); // Timeout after 3 seconds (that seems like more than enough time)
-        TcpConnectionManager.OnConnectionFound += TcpConnectionManagerOnOnConnectionFound;
-
-        var conns = Utils.GetTCPConnectionsForExe(Config.ExeName)
-                         .Where(x => x.RemoteAddress != "127.0.0.1" && x.RemotePort != 443 && x.RemotePort != 80);
-
-        Log.Information("Found TCP connections: {Connections}", conns.Select(x => $"{x.RemoteAddress}:{x.RemotePort}"));
-        LocalAddress = conns.Select(x => x.LocalAddress).FirstOrDefault();
-        Log.Information("Local address: {LocalAddress}", LocalAddress);
+        
+        TcpReassempler = new TcpReassempler();
+        TcpReassempler.OnNewConnection += OnNewConnection;
 
         CaptureDevice.Filter = "tcp";
         CaptureDevice.OnPacketArrival += DeviceOnOnPacketArrival;
@@ -118,29 +111,11 @@ public class NetCap
 
         if (!IsGamePacket(ipv4, tcpPacket))
             return;
-
-        TcpConnectionManager.ProcessPacket(rawPacket.Timeval, tcpPacket);
+        
+        TcpReassempler.AddPacket(ipv4, tcpPacket, rawPacket.Timeval);
+        //TcpConnectionManager.ProcessPacket(rawPacket.Timeval, tcpPacket);
     }
-
-    private bool IsGameConnection(IPv4Packet ip, TcpPacket tcp)
-    {
-        var destAddr = $"{ip.DestinationAddress}:{tcp.DestinationPort}";
-        var srcAddr = $"{ip.SourceAddress}:{tcp.SourcePort}";
-
-        lock (ServerConnections)
-        {
-            for (int i = 0; i < ServerConnections.Count; i++)
-            {
-                if (destAddr == ServerConnections[i] || srcAddr == ServerConnections[i])
-                {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
+    
     // Look for a packet that matches what we expect from a game packet
     // eg the len makes sense and the msg type is in a valid range
     private bool IsGamePacket(IPv4Packet ip, TcpPacket tcp)
@@ -166,7 +141,9 @@ public class NetCap
         else if (!hadState)
         {
             state = new PendingConnState(ip.DestinationAddress);
-            SeenConnectionStates.TryAdd(ip.DestinationAddress, state);
+            lock (SeenConnectionStates) {
+                SeenConnectionStates.TryAdd(ip.DestinationAddress, state);
+            }
         }
 
         var data = tcp.PayloadData;
@@ -185,134 +162,38 @@ public class NetCap
         return false;
     }
 
-    private void TcpConnectionManagerOnOnConnectionFound(TcpConnection c)
+    private void OnNewConnection(TcpReassempler.TcpConnection conn)
     {
-        var tcpGens = new Dictionary<TcpFlow, TcpStreamGenerator>();
-        var fromFlow = c.Flows[0];
-        var toFlow = c.Flows[1];
-        var tcpGenFrom = new TcpStreamGenerator(fromFlow, TimeSpan.FromSeconds(5), null);
-        var tcpGenTo = new TcpStreamGenerator(toFlow, TimeSpan.FromSeconds(5), null);
-        var connStatus = new TcpConnStatus();
-
-        var isFromLocal = fromFlow.address.ToString() == LocalAddress;
-        tcpGenFrom.OnCallback += (gen, condition) => HandleFlowPacket(fromFlow, gen, toFlow, !isFromLocal, connStatus);
-        tcpGenTo.OnCallback += (gen, condition) => HandleFlowPacket(toFlow, gen, fromFlow, isFromLocal, connStatus);
-
-        tcpGens.Add(toFlow, tcpGenFrom);
-        tcpGens.Add(fromFlow, tcpGenTo);
-    }
-
-    private TcpStreamGenerator.CallbackReturnValue HandleFlowPacket(TcpFlow fromFlow, TcpStreamGenerator gen, TcpFlow? toFlow, bool fromServer, TcpConnStatus connStatus)
-    {
-        var tcpPayloadSize = gen.tcpStream.Length - gen.tcpStream.Position;
-        if (tcpPayloadSize >= 6)
+        var task = Task.Factory.StartNew(async () =>
         {
-            Span<byte> header = stackalloc byte[6];
-            gen.tcpStream.ReadExactly(header);
-            gen.tcpStream.Seek(-6, SeekOrigin.Current);
-            var len = BinaryPrimitives.ReadUInt32BigEndian(header);
-            var opCode = BinaryPrimitives.ReadUInt16BigEndian(header[4..]);
-            var canReadWholeMsg = tcpPayloadSize >= len;
-            var flow = fromServer ? toFlow : fromFlow;
-
-            if (!canReadWholeMsg)
-            {
-                return TcpStreamGenerator.CallbackReturnValue.ContinueMonitoring;
-            }
-
-            if (fromServer)
-            {
-                SplitIntoMessages(fromFlow, fromServer, gen.tcpStream);
-                //return TcpStreamGenerator.CallbackReturnValue.ContinueMonitoring;
-            }
-
-            if (!fromServer)
-            {
-                SplitIntoMessages(fromFlow, fromServer, gen.tcpStream);
-                //return TcpStreamGenerator.CallbackReturnValue.ContinueMonitoring;
-            }
-
-            // Try to sync to a message boundary
-            if (fromServer)
-            {
-                if (!connStatus.IsServerSyncedUp)
-                {
-                    if (len == 6 && opCode == 4)
-                    {
-                        connStatus.IsServerSyncedUp = true;
-                        Log.Information("Server is synced up");
-                    }
-                    else
-                    {
-                        // Not the keep alive? packet, so we keep looking on the next packet
-                        gen.tcpStream.Seek(0, SeekOrigin.End);
-                        return TcpStreamGenerator.CallbackReturnValue.ContinueMonitoring;
-                    }
+            while (conn.IsAlive && !CancelTokenSrc.IsCancellationRequested) {
+                var buff = await conn.Pipe.Reader.ReadAsync();
+                Span<byte> header = new byte[6];
+                buff.Buffer.Slice(0, 6).CopyTo(header);
+                var len = BinaryPrimitives.ReadUInt32BigEndian(header);
+                if (buff.Buffer.Length >= len) {
+                    var rawPacket = RawPacketPool.Get();
+                    rawPacket.Set((int)len);
+                    buff.Buffer.Slice(0, len).CopyTo(rawPacket.Data.AsSpan()[..(int)len]);
+                    RawPacketQueue.Enqueue(rawPacket);
+                    conn.Pipe.Reader.AdvanceTo(buff.Buffer.GetPosition(len));
                 }
-            }
-            else
-            {
-                if (!connStatus.IsClientSyncedUp)
-                {
-                    if (len == 6 && opCode == 4)
-                    {
-                        connStatus.IsClientSyncedUp = true;
-                        Log.Information("Client is synced up");
-                    }
-                    else
-                    {
-                        // Not the keep alive? packet, so we keep looking on the next packet
-                        gen.tcpStream.Seek(0, SeekOrigin.End);
-                        return TcpStreamGenerator.CallbackReturnValue.ContinueMonitoring;
-                    }
+                else {
+                    conn.Pipe.Reader.AdvanceTo(buff.Buffer.Start);
                 }
+                await Task.Delay(30);
             }
-
-            if (gen.tcpStream.Position == gen.tcpStream.Length)
-            {
-                gen.FreePackets();
-                var buffer = gen.tcpStream.GetBuffer();
-                Array.Clear(buffer, 0, buffer.Length);
-                gen.tcpStream.Position = 0;
-                gen.tcpStream.SetLength(0);
-                gen.tcpStream.Capacity = 0;
-            }
-        }
-
-        return TcpStreamGenerator.CallbackReturnValue.ContinueMonitoring;
+            Debug.WriteLine($"{conn.EndPoint} finished reading");
+        }, CancelTokenSrc.Token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
     }
-
-    private void SplitIntoMessages(TcpFlow flow, bool isFromServer, TcpStream stream)
-    {
-        Span<byte> header = stackalloc byte[6];
-
-        while (stream.Position + 6 <= stream.Length)
-        {
-            stream.ReadExactly(header);
-            stream.Seek(-header.Length, SeekOrigin.Current);
-            var len = BinaryPrimitives.ReadUInt32BigEndian(header);
-            var msgType = BinaryPrimitives.ReadInt16BigEndian(header[4..]);
-            var canReadWholeMsg = stream.Length - stream.Position >= len;
-
-            if (!canReadWholeMsg)
-            {
-                return;
-            }
-
-            var rawPacket = RawPacketPool.Get();
-            rawPacket.Set(isFromServer, (int)len);
-            stream.ReadExactly(rawPacket.Data.AsSpan()[..(int)len]);
-            RawPacketQueue.Enqueue(rawPacket);
-        }
-    }
-
+    
     private void ParsePacketsLoop()
     {
         while (!CancelTokenSrc.IsCancellationRequested)
         {
             if (RawPacketQueue.TryDequeue(out var rawPacket))
             {
-                ParsePacket(rawPacket.IsFromServer, rawPacket.Data[..rawPacket.Len]);
+                ParsePacket(rawPacket.Data[..rawPacket.Len]);
 
                 // Important to return the packet to the pool!
                 rawPacket.Return();
@@ -325,7 +206,7 @@ public class NetCap
         }
     }
 
-    private void ParsePacket(bool isFromServer, ReadOnlySpan<byte> data)
+    private void ParsePacket(ReadOnlySpan<byte> data)
     {
         int offset = 0;
         while (offset < data.Length)
@@ -382,11 +263,11 @@ public class NetCap
         if (isCompressed)
         {
             var decompressed = Decompress(data[4..]);
-            ParsePacket(true, decompressed);
+            ParsePacket(decompressed);
         }
         else
         {
-            ParsePacket(true, data[4..]);
+            ParsePacket(data[4..]);
         }
     }
 
@@ -459,7 +340,9 @@ public class NetCap
             CaptureDevice.StopCapture();
             CaptureDevice.Close();
             ServerConnections.Clear();
-            SeenConnectionStates.Clear();
+            lock (SeenConnectionStates) {
+                SeenConnectionStates.Clear();
+            }
 
             Log.Information("Capture device stopped");
         }
@@ -523,9 +406,4 @@ public class PendingConnState(IPAddress addr)
     public IPAddress IPAddress { get; set; } = addr;
     public DateTime FirstSeenAt { get; set; } = DateTime.Now;
     public bool? IsGameConnection = null;
-}
-
-public class NetCapStats
-{
-    public ConcurrentDictionary<string, int> NumPacketsPerConnection { get; set; } = [];
 }
