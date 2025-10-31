@@ -188,6 +188,7 @@ namespace BPSR_ZDPS
             MessageManager.StopCapturing();
 
             HotKeyManager.UnregisterAllHotKeys();
+            HotKeyManager.UnregisterHookProc();
 
             ImGuiImplD3D11.Shutdown();
             ImGuiImplD3D11.SetCurrentContext(null);
