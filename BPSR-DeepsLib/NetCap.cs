@@ -23,6 +23,7 @@ public class NetCap
     public ConcurrentQueue<RawPacket> RawPacketQueue = new();
     private Task PacketParseTask;
     private byte[] DecompressionScratchBuffer = new byte[1024 * 1024];
+    private Decompressor _decompressor = new();
     private Dictionary<NotifyId, Action<ReadOnlySpan<byte>>> NotifyHandlers = new();
     public ulong NumSeenPackets = 0;
     public DateTime LastPacketSeenAt = DateTime.MinValue;
@@ -113,6 +114,11 @@ public class NetCap
         if (tcpPacket.DestinationPort <= 1000 || tcpPacket.SourcePort <= 1000)
             return;
 
+        if (IsDebugCaptureFileMode) {
+            TcpReassempler.AddPacket(ipv4, tcpPacket, rawPacket.Timeval);
+            return;
+        }
+
         var connId = new ConnectionId(ipv4.SourceAddress.ToString(), tcpPacket.SourcePort, ipv4.DestinationAddress.ToString(), tcpPacket.DestinationPort);
         if (!ConnectionFilters.TryGetValue(connId, out var allowed))
         {
@@ -150,7 +156,7 @@ public class NetCap
 
                 if (msgType > 8)
                 {
-                    var msg = $"!! Message Type Was not in expected range, maybe this is not a game connection! {conn.EndPoint}";
+                    var msg = $"!! Message Type ({msgType}) Was not in expected range, maybe this is not a game connection! {conn.EndPoint}";
                     Debug.WriteLine(msg);
                     ImportantLogMsgs.Add(msg);
                 }
@@ -202,14 +208,6 @@ public class NetCap
             }
 
             var len = BinaryPrimitives.ReadUInt32BigEndian(msgData);
-
-            // HACK: Fix crashing when in very high populated areas (like the town crafting spot)
-            if ((int)len > msgData.Length)
-            {
-                System.Diagnostics.Debug.WriteLine("ParsePacket (len > msgData.Length) !! Skipping packet to recover");
-                return;
-            }
-
             var rawMsgType = BinaryPrimitives.ReadInt16BigEndian(msgData[4..]);
             var isCompressed = (rawMsgType & 0x8000) != 0;
             var msgType = (MsgTypeId)(rawMsgType & 0x7FFF);
@@ -281,14 +279,10 @@ public class NetCap
 
         //Log.Information("Service UUID: {ServiceUuid}, Stub ID: {StubId}, Method ID: {MethodId}, IsCompressed: {IsCompressed}", serviceUuid, stubId, methodId, isCompressed);
     }
-
+    
     private ReadOnlySpan<byte> Decompress(ReadOnlySpan<byte> data)
     {
-        // Seems to only work on streams
-        var ms = new MemoryStream(data.ToArray());
-        var stream = new DecompressionStream(ms);
-        var decompressedLen = stream.Read(DecompressionScratchBuffer);
-
+        var decompressedLen = _decompressor.Unwrap(data, DecompressionScratchBuffer);
         return DecompressionScratchBuffer.AsSpan()[..decompressedLen];
     }
 

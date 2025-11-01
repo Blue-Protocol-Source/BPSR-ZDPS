@@ -119,7 +119,7 @@ public static class NetDebug
                 {
                     foreach (var msg in MessageManager.netCap.ImportantLogMsgs)
                     {
-                        ImGui.NextColumn();
+                        ImGui.TableNextColumn();
                         ImGui.Text(msg);
                     }
 
