@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using Hexa.NET.ImGui;
+using static BPSR_DeepsLib.TcpReassembler;
 
 namespace BPSR_ZDPS.Windows;
 
@@ -33,82 +34,99 @@ public static class NetDebug
                 ImGui.EndTable();
             }
             
-            if (ImGui.CollapsingHeader("Seen Connections")) {
+            if (ImGui.CollapsingHeader("Connection Filters")) {
                 if (ImGui.BeginTable("SeenConnectionsTable", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {
-                    ImGui.TableSetupColumn("IP Address");
-                    ImGui.TableSetupColumn("First Seen");
-                    ImGui.TableSetupColumn("Is Game Connection");
+                    ImGui.TableSetupColumn("Source");
+                    ImGui.TableSetupColumn("Destination");
+                    ImGui.TableSetupColumn("Is Game");
                     ImGui.TableHeadersRow();
 
-                    lock (MessageManager.netCap.TcpReassempler.Connections) {
-                        foreach (var seenCon in MessageManager.netCap.SeenConnectionStates) {
-                            ImGui.TableNextRow();
+                    foreach (var seenCon in MessageManager.netCap.ConnectionFilters) {
+                        ImGui.TableNextRow();
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text(seenCon.Key.ToString());
+                        ImGui.TableNextColumn();
+                        ImGui.Text($"{seenCon.Key.SrcIP}:{seenCon.Key.SrcPort}");
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text(seenCon.Value.FirstSeenAt.ToString("HH:mm:ss"));
+                        ImGui.TableNextColumn();
+                        ImGui.Text($"{seenCon.Key.DstIP}:{seenCon.Key.DstPort}");
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text(seenCon.Value.IsGameConnection.HasValue
-                                ? (seenCon.Value.IsGameConnection.Value ? "Yes" : "No")
-                                : "Unknown");
-                        }
+                        ImGui.TableNextColumn();
+                        ImGui.PushStyleColor(ImGuiCol.Text, seenCon.Value ? new Vector4(0.25f, 0.85f, 0.35f, 1.0f) : new Vector4(0.85f, 0.25f, 0.25f, 1.0f));
+                        ImGui.Text(seenCon.Value ? "Yes" : "No");
+                        ImGui.PopStyleColor();
                     }
 
                     ImGui.EndTable();
                 }
             }
             
-            if (ImGui.CollapsingHeader("Active TCP Connections")) {
-                if (ImGui.BeginTable("TcpConnectionsTable", 8, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {
+            if (ImGui.CollapsingHeader("Active TCP Streams")) {
+                if (ImGui.BeginTable("TcpConnectionsTable", 9, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {
                     ImGui.TableSetupColumn("Endpoint", ImGuiTableColumnFlags.WidthFixed, 180.0f);
-                    ImGui.TableSetupColumn("Status", ImGuiTableColumnFlags.WidthFixed, 60.0f);
                     ImGui.TableSetupColumn("Next Expected Seq", ImGuiTableColumnFlags.WidthFixed, 100.0f);
                     ImGui.TableSetupColumn("Last Seq", ImGuiTableColumnFlags.WidthFixed, 100.0f);
+                    ImGui.TableSetupColumn("Seq Diff", ImGuiTableColumnFlags.WidthFixed, 100.0f);
                     ImGui.TableSetupColumn("Cached", ImGuiTableColumnFlags.WidthFixed, 50.0f);
                     ImGui.TableSetupColumn("Bytes Sent", ImGuiTableColumnFlags.WidthFixed, 100.0f);
                     ImGui.TableSetupColumn("Packets Seen", ImGuiTableColumnFlags.WidthFixed, 100.0f);
                     ImGui.TableSetupColumn("Last Packet At", ImGuiTableColumnFlags.WidthStretch);
+                    ImGui.TableSetupColumn("Remove", ImGuiTableColumnFlags.WidthFixed, 80.0f);
                     ImGui.TableHeadersRow();
 
-                    lock (MessageManager.netCap.TcpReassempler.Connections) {
-                        foreach (var conn in MessageManager.netCap.TcpReassempler.Connections) {
-                            ImGui.TableNextRow();
+                    foreach (var conn in MessageManager.netCap.TcpReassempler.Connections) {
+                        ImGui.TableNextRow();
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text(conn.Key.ToString());
+                        ImGui.TableNextColumn();
+                        ImGui.Text(conn.Key.ToString());
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text(conn.Value.IsAlive ? "Alive" : "Dead");
+                        ImGui.TableNextColumn();
+                        ImGui.Text(conn.Value.NextExpectedSeq.HasValue
+                            ? conn.Value.NextExpectedSeq.Value.ToString()
+                            : "N/A");
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text(conn.Value.NextExpectedSeq.HasValue
-                                ? conn.Value.NextExpectedSeq.Value.ToString()
-                                : "N/A");
+                        ImGui.TableNextColumn();
+                        ImGui.Text(conn.Value.LastSeq.ToString());
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text(conn.Value.LastSeq.ToString());
+                        ImGui.TableNextColumn();
+                        ImGui.Text((conn.Value.NextExpectedSeq - conn.Value.LastSeq).ToString());
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text(conn.Value.Packets.Count.ToString());
+                        ImGui.TableNextColumn();
+                        ImGui.Text(conn.Value.Packets.Count.ToString());
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text(FormatBytes(conn.Value.NumBytesSent));
+                        ImGui.TableNextColumn();
+                        ImGui.Text(FormatBytes(conn.Value.NumBytesSent));
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text($"{conn.Value.NumPacketsSeen:###,###}");
+                        ImGui.TableNextColumn();
+                        ImGui.Text($"{conn.Value.NumPacketsSeen:###,###}");
 
-                            ImGui.TableNextColumn();
-                            ImGui.Text($"{(DateTime.Now - conn.Value.LastPacketAt).TotalSeconds:0.0}s ago");
+                        ImGui.TableNextColumn();
+                        ImGui.Text($"{(DateTime.Now - conn.Value.LastPacketAt).TotalSeconds:0.0}s ago");
+
+                        ImGui.TableNextColumn();
+                        if (ImGui.Button($"Remove##{conn.Key}"))
+                        {
+                            MessageManager.netCap.TcpReassempler.RemoveConnection(conn.Value);
                         }
                     }
 
                     ImGui.EndTable();
                 }
             }
-            
+
+            if (ImGui.CollapsingHeader("Important Logs"))
+            {
+                if (ImGui.BeginTable("ImportantLogs", 1, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame))
+                {
+                    foreach (var msg in MessageManager.netCap.ImportantLogMsgs)
+                    {
+                        ImGui.NextColumn();
+                        ImGui.Text(msg);
+                    }
+
+                    ImGui.EndTable();
+                }
+            }
+
             ImGui.End();
         }
         

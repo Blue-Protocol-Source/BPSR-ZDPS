@@ -1,7 +1,6 @@
 ﻿using System.Buffers;
 using Microsoft.Extensions.ObjectPool;
 using PacketDotNet;
-using PacketDotNet.Connections;
 using Serilog;
 using SharpPcap;
 using SharpPcap.LibPcap;
@@ -15,24 +14,21 @@ namespace BPSR_DeepsLib;
 
 public class NetCap
 {
-    private NetCapConfig         Config;
-    public ICaptureDevice       CaptureDevice;
-    private TcpConnectionManager TcpConnectionManager;
-    private string               LocalAddress;
-    public TcpReassempler       TcpReassempler;
+    private NetCapConfig Config;
+    public ICaptureDevice CaptureDevice;
+    public TcpReassembler TcpReassempler;
 
     private CancellationTokenSource CancelTokenSrc = new();
     public ObjectPool<RawPacket> RawPacketPool = ObjectPool.Create(new DefaultPooledObjectPolicy<RawPacket>());
     public ConcurrentQueue<RawPacket> RawPacketQueue = new();
     private Task PacketParseTask;
-    private Task ConnectionScanTask;
-    private List<string> ServerConnections = [];
     private byte[] DecompressionScratchBuffer = new byte[1024 * 1024];
     private Dictionary<NotifyId, Action<ReadOnlySpan<byte>>> NotifyHandlers = new();
-    public Dictionary<IPAddress, PendingConnState> SeenConnectionStates = [];
     public ulong NumSeenPackets = 0;
     public DateTime LastPacketSeenAt = DateTime.MinValue;
     public int NumConnectionReaders = 0;
+    public ConcurrentDictionary<ConnectionId, bool> ConnectionFilters = new();
+    public ConcurrentBag<string> ImportantLogMsgs = [];
 
     private bool IsDebugCaptureFileMode = false;
     private string DebugCaptureFile = "";//@"C:\Users\Xennma\Documents\BPSR_PacketCapture.pcap";
@@ -58,12 +54,11 @@ public class NetCap
         
 
         PacketParseTask = Task.Factory.StartNew(ParsePacketsLoop, CancelTokenSrc.Token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
-        //ConnectionScanTask = Task.Factory.StartNew(ScanForConnections, CancelTokenSrc.Token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
-        
-        TcpReassempler = new TcpReassempler();
+
+        TcpReassempler = new TcpReassembler();
         TcpReassempler.OnNewConnection += OnNewConnection;
 
-        CaptureDevice.Filter = "tcp";
+        CaptureDevice.Filter = "tcp and not portrange 0-1000";
         CaptureDevice.OnPacketArrival += DeviceOnOnPacketArrival;
         CaptureDevice.StartCapture();
 
@@ -115,82 +110,60 @@ public class NetCap
         NumSeenPackets++;
         LastPacketSeenAt = DateTime.Now;
 
-        if (!IsGamePacket(ipv4, tcpPacket))
+        if (tcpPacket.DestinationPort <= 1000 || tcpPacket.SourcePort <= 1000)
             return;
-        
+
+        var connId = new ConnectionId(ipv4.SourceAddress.ToString(), tcpPacket.SourcePort, ipv4.DestinationAddress.ToString(), tcpPacket.DestinationPort);
+        if (!ConnectionFilters.TryGetValue(connId, out var allowed))
+        {
+            if (IsFromGame(ipv4, tcpPacket)) {
+                ConnectionFilters.TryAdd(connId, true);
+            }
+            else {
+                ConnectionFilters.TryAdd(connId, false);
+                return;
+            }
+        }
+
+        if (!allowed)
+            return;
+
         TcpReassempler.AddPacket(ipv4, tcpPacket, rawPacket.Timeval);
-        //TcpConnectionManager.ProcessPacket(rawPacket.Timeval, tcpPacket);
-    }
-    
-    // Look for a packet that matches what we expect from a game packet
-    // eg the len makes sense and the msg type is in a valid range
-    private bool IsGamePacket(IPv4Packet ip, TcpPacket tcp)
-    {
-        if (tcp.DestinationPort <= 1000 || tcp.SourcePort <= 1000)
-            return false;
-
-        PendingConnState state;
-        var hadState = SeenConnectionStates.TryGetValue(ip.DestinationAddress, out state);
-        if (hadState && state.IsGameConnection.HasValue)
-        {
-            return state.IsGameConnection.Value;
-        }
-        else if (hadState && !state.IsGameConnection.HasValue)
-        {
-            var noPacketInTimeFrame = (DateTime.Now - state.FirstSeenAt) > TimeSpan.FromSeconds(10);
-            if (noPacketInTimeFrame)
-            {
-                state.IsGameConnection = false;
-                return false;
-            }
-        }
-        else if (!hadState)
-        {
-            state = new PendingConnState(ip.DestinationAddress);
-            lock (SeenConnectionStates) {
-                SeenConnectionStates.TryAdd(ip.DestinationAddress, state);
-            }
-        }
-
-        var data = tcp.PayloadData;
-        if (data.Length >= 6)
-        {
-            var len = BinaryPrimitives.ReadUInt32BigEndian(data);
-            var rawMsgType = BinaryPrimitives.ReadInt16BigEndian(data[4..]);
-            var msgType = (rawMsgType & 0x7FFF);
-            if (len == data.Length && msgType >= 0 && msgType <= 8)
-            {
-                state.IsGameConnection = true;
-                return true;
-            }
-        }
-
-        return false;
     }
 
-    private void OnNewConnection(TcpReassempler.TcpConnection conn)
+    private void OnNewConnection(TcpReassembler.TcpConnection conn)
     {
         var task = Task.Factory.StartNew(async () =>
         {
             NumConnectionReaders++;
             while (conn.IsAlive && !CancelTokenSrc.IsCancellationRequested && !conn.CancelTokenSrc.IsCancellationRequested) {
                 var buff = await conn.Pipe.Reader.ReadAtLeastAsync(6);
-                if (buff.IsCompleted)
-                    return;
+                if (buff.IsCompleted || buff.IsCanceled)
+                    break;
+
                 Span<byte> header = new byte[6];
                 buff.Buffer.Slice(0, 6).CopyTo(header);
                 var len = BinaryPrimitives.ReadUInt32BigEndian(header);
-                if (buff.Buffer.Length >= len) {
-                    var rawPacket = RawPacketPool.Get();
-                    rawPacket.Set((int)len);
-                    buff.Buffer.Slice(0, len).CopyTo(rawPacket.Data.AsSpan()[..(int)len]);
-                    RawPacketQueue.Enqueue(rawPacket);
-                    conn.Pipe.Reader.AdvanceTo(buff.Buffer.GetPosition(len));
+                var rawMsgType = BinaryPrimitives.ReadInt16BigEndian(header[4..]);
+                var msgType = (rawMsgType & 0x7FFF);
+                conn.Pipe.Reader.AdvanceTo(buff.Buffer.Start);
+
+                if (msgType > 8)
+                {
+                    var msg = $"!! Message Type Was not in expected range, maybe this is not a game connection! {conn.EndPoint}";
+                    Debug.WriteLine(msg);
+                    ImportantLogMsgs.Add(msg);
                 }
-                else {
-                    conn.Pipe.Reader.AdvanceTo(buff.Buffer.Start);
-                }
-                await Task.Delay(30);
+
+                var msgBuff = await conn.Pipe.Reader.ReadAtLeastAsync((int)len);
+                if (msgBuff.IsCompleted || msgBuff.IsCanceled)
+                    break;
+
+                var rawPacket = RawPacketPool.Get();
+                rawPacket.Set((int)len);
+                msgBuff.Buffer.Slice(0, len).CopyTo(rawPacket.Data.AsSpan()[..(int)len]);
+                RawPacketQueue.Enqueue(rawPacket);
+                conn.Pipe.Reader.AdvanceTo(msgBuff.Buffer.GetPosition(len));
             }
 
             NumConnectionReaders--;
@@ -319,27 +292,20 @@ public class NetCap
         return DecompressionScratchBuffer.AsSpan()[..decompressedLen];
     }
 
-    private void ScanForConnections()
+    private bool IsFromGame(IPv4Packet ip, TcpPacket tcp)
     {
-        while (!CancelTokenSrc.IsCancellationRequested)
-        {
-            var conns = GetConnections();
-            lock (ServerConnections)
-            {
-                ServerConnections.Clear();
-                ServerConnections.AddRange(conns.Select(x => $"{x.RemoteAddress}:{x.RemotePort}"));
-            }
+        var sw = Stopwatch.StartNew();
+        var conns = Utils.GetTCPConnectionsForExe(Config.ExeName);
+        var isGameConnection = conns.Any((x =>
+            (x.LocalAddress == ip.SourceAddress.ToString() && x.LocalPort == tcp.SourcePort) ||
+            (x.RemoteAddress == ip.SourceAddress.ToString() && x.RemotePort == tcp.SourcePort) ||
+            (x.LocalAddress == ip.DestinationAddress.ToString() && x.LocalPort == tcp.DestinationPort) ||
+            (x.RemoteAddress == ip.DestinationAddress.ToString() && x.RemotePort == tcp.DestinationPort)));
 
-            Task.Delay(Config.ConnectionScanInterval).Wait();
-        }
-    }
-
-    private IEnumerable<TcpHelper.TcpRow> GetConnections()
-    {
-        var conns = Utils.GetTCPConnectionsForExe(Config.ExeName)
-                         .Where(x => x.RemoteAddress != "127.0.0.1" && x.RemotePort != 443 && x.RemotePort != 80);
-
-        return conns;
+        sw.Stop();
+        Debug.WriteLine($"Checking {ip.SourceAddress}:{tcp.SourcePort} > {ip.DestinationAddress}:{tcp.DestinationPort} is game connection: {isGameConnection}, took {sw.ElapsedMilliseconds}ms");
+        
+        return isGameConnection;
     }
 
     public void Stop()
@@ -350,10 +316,7 @@ public class NetCap
         {
             CaptureDevice.StopCapture();
             CaptureDevice.Close();
-            ServerConnections.Clear();
-            lock (SeenConnectionStates) {
-                SeenConnectionStates.Clear();
-            }
+            ConnectionFilters.Clear();
 
             Log.Information("Capture device stopped");
         }
