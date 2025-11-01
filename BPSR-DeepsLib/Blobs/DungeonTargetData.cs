@@ -12,7 +12,7 @@ public class DungeonTargetData : BlobType
     {
     }
 
-    public DungeonTargetData(BlobReader blob) : base(blob)
+    public DungeonTargetData(BlobReader blob) : base(ref blob)
     {
     }
     

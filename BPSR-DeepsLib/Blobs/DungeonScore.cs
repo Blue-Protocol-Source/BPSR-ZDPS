@@ -2,7 +2,7 @@
 
 namespace BPSR_DeepsLib.Blobs;
 
-public class DungeonScore(BlobReader blob) : BlobType(blob)
+public class DungeonScore(BlobReader blob) : BlobType(ref blob)
 {
     public int? TotalScore;
     public int? CurRatio;

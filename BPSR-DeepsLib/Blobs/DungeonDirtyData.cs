@@ -2,7 +2,7 @@
 
 namespace BPSR_DeepsLib.Blobs;
 
-public class DungeonDirtyData(BlobReader blob) : BlobType(blob)
+public class DungeonDirtyData(BlobReader blob) : BlobType(ref blob)
 {
     public uint?         SceneUuid;
     public DungeonScore? Score;

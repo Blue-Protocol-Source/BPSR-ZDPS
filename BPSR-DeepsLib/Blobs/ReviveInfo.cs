@@ -2,7 +2,7 @@
 
 namespace BPSR_DeepsLib.Blobs;
 
-public class ReviveInfo(BlobReader blob) : BlobType(blob)
+public class ReviveInfo(BlobReader blob) : BlobType(ref blob)
 {
     public Dictionary<int, int>? ReviveMap;
     

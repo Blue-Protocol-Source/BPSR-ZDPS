@@ -11,7 +11,7 @@ public class BlobType
         
     }
     
-    public BlobType(BlobReader blob)
+    public BlobType(ref BlobReader blob)
     {
         Read(ref blob);
     }

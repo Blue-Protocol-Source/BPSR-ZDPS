@@ -8,7 +8,7 @@ public class DungeonTarget : BlobType
     {
     }
 
-    public DungeonTarget(BlobReader blob) : base(blob)
+    public DungeonTarget(BlobReader blob) : base(ref blob)
     {
     }
 
