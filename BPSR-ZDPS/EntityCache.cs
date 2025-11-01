@@ -20,9 +20,9 @@ namespace BPSR_ZDPS
         private Task? SaveTask;
         private readonly System.Threading.Lock syncLock = new();
 
-        public EntityCacheLine? Get(long uid)
+        public EntityCacheLine? Get(long uuid)
         {
-            if (Cache.Lines.TryGetValue(uid, out var outLine))
+            if (Cache.Lines.TryGetValue(uuid, out var outLine))
             {
                 return outLine;
             }
@@ -30,15 +30,15 @@ namespace BPSR_ZDPS
             return null;
         }
 
-        public EntityCacheLine GetOrCreate(long uid)
+        public EntityCacheLine GetOrCreate(long uuid)
         {
-            if (Cache.Lines.TryGetValue(uid, out var outLine))
+            if (Cache.Lines.TryGetValue(uuid, out var outLine))
             {
                 return outLine;
             }
 
-            var newEntityCacheLine = new EntityCacheLine() { UID = uid };
-            Cache.Lines.TryAdd(uid, newEntityCacheLine);
+            var newEntityCacheLine = new EntityCacheLine() { UUID = uuid };
+            Cache.Lines.TryAdd(uuid, newEntityCacheLine);
 
             return newEntityCacheLine;
         }
@@ -49,21 +49,21 @@ namespace BPSR_ZDPS
         {
             if (Cache != null)
             {
-                Cache.Lines[item.UID] = item;
+                Cache.Lines[item.UUID] = item;
             }
         }
 
-        public void SetName(long uid, string name)
+        public void SetName(long uuid, string name)
         {
             if (Cache != null)
             {
-                if (Cache.Lines.TryGetValue(uid, out var item))
+                if (Cache.Lines.TryGetValue(uuid, out var item))
                 {
                     item.Name = name;
                 }
                 else
                 {
-                    Cache.Lines.TryAdd(uid, new EntityCacheLine() { UID = uid, Name = name });
+                    Cache.Lines.TryAdd(uuid, new EntityCacheLine() { UUID = uuid, Name = name });
                 }
             }
         }

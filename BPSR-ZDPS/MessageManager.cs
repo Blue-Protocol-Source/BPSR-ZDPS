@@ -94,7 +94,7 @@ namespace BPSR_ZDPS
             System.Diagnostics.Debug.WriteLine($"ProcessSyncHitInfo");
         }
 
-        public static void ProcessAttrs(long uid, RepeatedField<Attr> attrs)
+        public static void ProcessAttrs(long uuid, RepeatedField<Attr> attrs)
         {
             foreach (var attr in attrs)
             {
@@ -107,7 +107,7 @@ namespace BPSR_ZDPS
                 switch ((EAttrType)attr.Id)
                 {
                     case EAttrType.AttrName:
-                        EncounterManager.Current.SetName(uid, reader.ReadString());
+                        EncounterManager.Current.SetName(uuid, reader.ReadString());
                         break;
                     case EAttrType.AttrSkillId:
                         {
@@ -117,55 +117,55 @@ namespace BPSR_ZDPS
                             // Extra details like damage and such come from the AoiSyncDelta
 
                             // When SetAttrKV is called with AttrSkillId, it will register for us
-                            EncounterManager.Current.SetAttrKV(uid, attr_name_id, skillId);
+                            EncounterManager.Current.SetAttrKV(uuid, attr_name_id, skillId);
                             break;
                         }
                     case EAttrType.AttrProfessionId:
-                        EncounterManager.Current.SetProfessionId(uid, reader.ReadInt32());
+                        EncounterManager.Current.SetProfessionId(uuid, reader.ReadInt32());
                         break;
                     case EAttrType.AttrFightPoint:
-                        EncounterManager.Current.SetAbilityScore(uid, reader.ReadInt32());
+                        EncounterManager.Current.SetAbilityScore(uuid, reader.ReadInt32());
                         break;
                     case EAttrType.AttrLevel:
-                        EncounterManager.Current.SetAttrKV(uid, "AttrLevel", reader.ReadInt32());
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrLevel", reader.ReadInt32());
                         break;
                     case EAttrType.AttrRankLevel:
-                        EncounterManager.Current.SetAttrKV(uid, "AttrRankLevel", reader.ReadInt32());
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrRankLevel", reader.ReadInt32());
                         break;
                     case EAttrType.AttrCri:
-                        EncounterManager.Current.SetAttrKV(uid, "AttrCri", reader.ReadInt32());
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrCri", reader.ReadInt32());
                         break;
                     case EAttrType.AttrLuck:
-                        EncounterManager.Current.SetAttrKV(uid, "AttrLuck", reader.ReadInt32());
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrLuck", reader.ReadInt32());
                         break;
                     case EAttrType.AttrHp:
-                        EncounterManager.Current.SetAttrKV(uid, "AttrHp", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrHp", reader.ReadInt64());
                         break;
                     case EAttrType.AttrMaxHp:
-                        EncounterManager.Current.SetAttrKV(uid, "AttrMaxHp", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrMaxHp", reader.ReadInt64());
                         break;
                     case EAttrType.AttrAttack:
-                        EncounterManager.Current.SetAttrKV(uid, "AttrAttack", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrAttack", reader.ReadInt64());
                         break;
                     case EAttrType.AttrDefense:
-                        EncounterManager.Current.SetAttrKV(uid, "AttrDefense", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrDefense", reader.ReadInt64());
                         break;
                     case EAttrType.AttrPos:
                         var pos = Vec3.Parser.ParseFrom(reader);
-                        EncounterManager.Current.SetAttrKV(uid, "AttrPos", pos);
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrPos", pos);
                         break;
                     case EAttrType.AttrTargetPos:
                         var target_pos = Vec3.Parser.ParseFrom(reader);
-                        EncounterManager.Current.SetAttrKV(uid, "AttrTargetPos", target_pos);
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrTargetPos", target_pos);
                         break;
                     case EAttrType.AttrState:
                         var entityState = reader.ReadInt32();
                         EActorState state = (EActorState)entityState;
-                        EncounterManager.Current.SetAttrKV(uid, "AttrState", state);
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrState", state);
                         break;
                     case EAttrType.AttrCombatState:
                     case EAttrType.AttrInBattleShow:
-                        if (uid == 285140 && attr.Id == 104 || attr.Id == 186)
+                        if (uuid == 285140 && attr.Id == 104 || attr.Id == 186)
                         {
                             System.Diagnostics.Debug.WriteLine($"[YOU] had {(EAttrType)attr.Id} = {reader.ReadInt32()}");
                         }
@@ -190,7 +190,7 @@ namespace BPSR_ZDPS
                                 var inf = ShieldInfo.Parser.ParseFrom(reader);
                                 //System.Diagnostics.Debug.WriteLine($"uuid={inf.Uuid}, type={inf.ShieldType}, value={inf.Value}, initialvalue={inf.InitialValue}, maxvalue={inf.MaxValue}");
 
-                                EncounterManager.Current.SetAttrKV(uid, "AttrShieldList", inf);
+                                EncounterManager.Current.SetAttrKV(uuid, "AttrShieldList", inf);
                             }
 
                             //var count = reader.ReadInt32();
@@ -216,7 +216,7 @@ namespace BPSR_ZDPS
                         }
                     default:
                         string attr_name = ((EAttrType)attr.Id).ToString();
-                        EncounterManager.Current.SetAttrKV(uid, attr_name, reader.ReadInt32());
+                        EncounterManager.Current.SetAttrKV(uuid, attr_name, reader.ReadInt32());
                         //System.Diagnostics.Debug.WriteLine($"{attr_name} was hit");
                         break;
                 }
@@ -246,7 +246,7 @@ namespace BPSR_ZDPS
                     continue;
                 }
 
-                EncounterManager.Current.SetEntityType(uid, entity.EntType);
+                EncounterManager.Current.SetEntityType(entity.Uuid, entity.EntType);
 
                 var attrCollection = entity.Attrs;
                 if (attrCollection?.Attrs == null)
@@ -264,12 +264,12 @@ namespace BPSR_ZDPS
                 {
                     case EEntityType.EntMonster:
                         {
-                            ProcessAttrs(uid, attrCollection.Attrs);
+                            ProcessAttrs(entity.Uuid, attrCollection.Attrs);
                             break;
                         }
                     case EEntityType.EntChar:
                         {
-                            ProcessAttrs(uid, attrCollection.Attrs);
+                            ProcessAttrs(entity.Uuid, attrCollection.Attrs);
                             break;
                         }
                     case EEntityType.EntClientBullet:
@@ -318,9 +318,9 @@ namespace BPSR_ZDPS
             var attrCollection = delta.Attrs;
 
             var eType = Utils.RawUuidToEntityType(targetUuid);
-            if (EncounterManager.Current.GetOrCreateEntity(targetUid).EntityType == EEntityType.EntErrType)
+            if (EncounterManager.Current.GetOrCreateEntity(targetUuid).EntityType == EEntityType.EntErrType)
             {
-                EncounterManager.Current.SetEntityType(targetUid, eType);
+                EncounterManager.Current.SetEntityType(targetUuid, eType);
                 if (eType == EEntityType.EntErrType)
                 {
                     System.Diagnostics.Debug.WriteLine($"Entity Error Type: rawUuid={targetUuid},res={targetUid}");
@@ -333,12 +333,12 @@ namespace BPSR_ZDPS
                 {
                     // Note: This was previously passing targetUuidRaw in instead of targetUuid which seemed wrong?
                     //EncounterManager.Current.SetEntityType(targetUuid, EEntityType.EntChar);
-                    ProcessAttrs(targetUid, attrCollection.Attrs);
+                    ProcessAttrs(targetUuid, attrCollection.Attrs);
                 }
                 else
                 {
                     //System.Diagnostics.Debug.WriteLine($"ProcessAoiSyncDelta Uuid={targetUuidRaw},Res={targetUuid}");
-                    ProcessAttrs(targetUid, attrCollection.Attrs);
+                    ProcessAttrs(targetUuid, attrCollection.Attrs);
                 }
             }
 
@@ -347,12 +347,12 @@ namespace BPSR_ZDPS
                 //System.Diagnostics.Debug.WriteLine($"delta.TempAttrs.Attrs.count = {delta.TempAttrs.Attrs.Count}");
             }
 
-            if (delta.BuffEffect != null && (targetUid == 285140 || targetUid == 29288969))
+            if (delta.BuffEffect != null && (targetUuid == 285140 || targetUuid == 29288969))
             {
                 //System.Diagnostics.Debug.WriteLine($"delta.BuffEffect={delta.BuffEffect.BuffEffects.Count}");
             }
 
-            if (delta.BuffInfos != null && targetUid == 285140)
+            if (delta.BuffInfos != null && targetUuid == 285140)
             {
                 //System.Diagnostics.Debug.WriteLine($"delta.BuffInfos={delta.BuffInfos.BuffInfos.Count}");
             }
@@ -395,13 +395,13 @@ namespace BPSR_ZDPS
                 bool isAttackerPlayer = IsUuidPlayerRaw(attackerUuid);
                 long attackerUid = Shr16(attackerUuid);
 
-                if (isAttackerPlayer && attackerUid != 0)
+                if (isAttackerPlayer && attackerUuid != 0)
                 {
-                    EncounterManager.Current.SetEntityType(attackerUid, EEntityType.EntChar);
+                    EncounterManager.Current.SetEntityType(attackerUuid, EEntityType.EntChar);
                     var professionId = Professions.GetBaseProfessionIdBySkillId(skillId);
-                    if (professionId != 0 && EncounterManager.Current.GetOrCreateEntity(attackerUid).ProfessionId <= 0)
+                    if (professionId != 0 && EncounterManager.Current.GetOrCreateEntity(attackerUuid).ProfessionId <= 0)
                     {
-                        EncounterManager.Current.SetProfessionId(attackerUid, professionId);
+                        EncounterManager.Current.SetProfessionId(attackerUuid, professionId);
                     }
                     // var info = GetPlayerBasicInfo(attackerUid);
                 }
@@ -451,16 +451,16 @@ namespace BPSR_ZDPS
                     {
                         // AddHealing
                         //System.Diagnostics.Debug.WriteLine($"AddHealing({(isAttackerPlayer ? attackerUuid : 0)}, {skillId}, {damageElement}, {hpLessen}, {isCrit}, {isLucky}, {isCauseLucky}, {targetUuid})");
-                        EncounterManager.Current.AddHealing((isAttackerPlayer ? attackerUid : 0), skillId, d.Property, hpLessen, isCrit, isLucky, isCauseLucky, targetUid);
+                        EncounterManager.Current.AddHealing((isAttackerPlayer ? attackerUuid : 0), skillId, d.Property, hpLessen, isCrit, isLucky, isCauseLucky, targetUuid);
                     }
                     else
                     {
                         // AddTakenDamage
                         //System.Diagnostics.Debug.WriteLine($"AddTakenDamage({targetUuid}, {skillId}, {damage}, {damageSource}, {isMiss}, {isDead}, {isCrit}, {hpLessen})");
-                        EncounterManager.Current.AddTakenDamage(targetUid, skillId, damage, damageSource, isMiss, isDead, isCrit, isLucky, hpLessen);
+                        EncounterManager.Current.AddTakenDamage(targetUuid, skillId, damage, damageSource, isMiss, isDead, isCrit, isLucky, hpLessen);
 
                         // This is an NPC applying damage to a target, register the damage dealt now to the NPC doing it
-                        EncounterManager.Current.AddDamage(attackerUid, skillId, d.Property, damage, isCrit, isLucky, isCauseLucky, hpLessen, d.Type, d.DamageMode);
+                        EncounterManager.Current.AddDamage(attackerUuid, skillId, d.Property, damage, isCrit, isLucky, isCauseLucky, hpLessen, d.Type, d.DamageMode);
                     }
                 }
                 else
@@ -469,17 +469,18 @@ namespace BPSR_ZDPS
                     {
                         // AddDamage
                         //System.Diagnostics.Debug.WriteLine($"AddDamage({attackerUuid}, {skillId}, {damageElement}, {damage}, {isCrit}, {isLucky}, {isCauseLucky}, {hpLessen})");
-                        EncounterManager.Current.AddDamage(attackerUid, skillId, d.Property, damage, isCrit, isLucky, isCauseLucky, hpLessen, d.Type, d.DamageMode);
+                        EncounterManager.Current.AddDamage(attackerUuid, skillId, d.Property, damage, isCrit, isLucky, isCauseLucky, hpLessen, d.Type, d.DamageMode);
                     }
 
                     // AddNpcTakenDamage
                     //System.Diagnostics.Debug.WriteLine($"AddNpcTakenDamage({targetUuid}, {attackerUuid}, {skillId}, {damage}, {isCrit}, {isLucky}, {hpLessen}, {isMiss}, {isDead})");
-                    EncounterManager.Current.AddNpcTakenDamage(targetUid, attackerUid, skillId, damage, isCrit, isLucky, hpLessen, isMiss, isDead);
+                    EncounterManager.Current.AddNpcTakenDamage(targetUuid, attackerUuid, skillId, damage, isCrit, isLucky, hpLessen, isMiss, isDead);
                 }
             }
         }
 
         public static long currentUserUuid = 0;
+        public static CharSerialize? cachedSyncContainerData = null;
 
         public static void ProcessSyncToMeDeltaInfo(ReadOnlySpan<byte> payloadBuffer)
         {
@@ -491,6 +492,7 @@ namespace BPSR_ZDPS
                 currentUserUuid = uuid;
                 AppState.PlayerUUID = uuid;
                 AppState.PlayerUID = Shr16(uuid);
+                ProcessCachedSyncContainerData();
             }
             var aoiSyncDelta = aoiSyncToMeDelta.BaseDelta;
             if (aoiSyncDelta == null)
@@ -523,6 +525,18 @@ namespace BPSR_ZDPS
             {
                 return;
             }
+
+            if (currentUserUuid != 0)
+            {
+                ProcessCachedSyncContainerData(vData);
+            }
+            else
+            {
+                // We haven't identified our own UUID yet, store this for the next event
+                cachedSyncContainerData = vData;
+            }
+
+            return;
 
             AppState.PlayerUID = vData.CharId;
             long playerUid = vData.CharId;
@@ -580,6 +594,71 @@ namespace BPSR_ZDPS
             }
         }
 
+        public static void ProcessCachedSyncContainerData(CharSerialize? syncContainerData = null)
+        {
+            if (currentUserUuid != 0 && (cachedSyncContainerData != null || syncContainerData != null))
+            {
+                long playerUid = Shr16(currentUserUuid);
+
+                CharSerialize? vData = cachedSyncContainerData ?? syncContainerData;
+
+                if (vData.RoleLevel?.Level != 0)
+                {
+                    EncounterManager.Current.SetAttrKV(currentUserUuid, "AttrLevel", vData.RoleLevel.Level);
+                }
+
+                if (vData.Attr?.CurHp != 0)
+                {
+                    EncounterManager.Current.SetAttrKV(currentUserUuid, "AttrHp", vData.Attr.CurHp);
+                }
+
+                if (vData.Attr?.MaxHp != 0)
+                {
+                    EncounterManager.Current.SetAttrKV(currentUserUuid, "AttrMaxHp", vData.Attr.MaxHp);
+                }
+
+                if (vData.CharBase != null)
+                {
+                    if (!string.IsNullOrEmpty(vData.CharBase.Name))
+                    {
+                        EncounterManager.Current.SetName(currentUserUuid, vData.CharBase.Name);
+                        AppState.PlayerName = vData.CharBase.Name;
+                    }
+
+                    if (vData.CharBase.FightPoint != 0)
+                    {
+                        EncounterManager.Current.SetAbilityScore(currentUserUuid, vData.CharBase.FightPoint);
+                    }
+                }
+
+                var professionList = vData.ProfessionList;
+                if (professionList != null && professionList.CurProfessionId != 0)
+                {
+                    var professionName = Professions.GetProfessionNameFromId(professionList.CurProfessionId);
+                    EncounterManager.Current.SetProfessionId(currentUserUuid, professionList.CurProfessionId);
+                    AppState.ProfessionId = professionList.CurProfessionId;
+                    AppState.ProfessionName = professionName;
+                }
+
+                var sceneData = vData.SceneData;
+                if (sceneData != null)
+                {
+
+                }
+
+                if (vData.Equip != null)
+                {
+                    foreach (var equip in vData.Equip.EquipList_)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"{currentUserUuid} :: equip::slot={equip.Value.EquipSlot},refinelvl={equip.Value.EquipSlotRefineLevel}");
+                    }
+                }
+
+                // Release the memory this held (typically is ~140KB)
+                cachedSyncContainerData = null;
+            }
+        }
+
         public static void ProcessSyncContainerDirtyData(ReadOnlySpan<byte> payloadBuffer)
         {
             try
@@ -609,6 +688,9 @@ namespace BPSR_ZDPS
 
                 long playerUid = currentUserUuid >> 16;
 
+                // Ensure we've already processed our own full sync first
+                ProcessCachedSyncContainerData();
+
                 switch (fieldIndex)
                 {
                     case CharSerialize.CharBaseFieldNumber:
@@ -626,7 +708,7 @@ namespace BPSR_ZDPS
                                         string playerName = StreamReadString(br);
                                         if (!string.IsNullOrEmpty(playerName))
                                         {
-                                            EncounterManager.Current.SetName(playerUid, playerName);
+                                            EncounterManager.Current.SetName(currentUserUuid, playerName);
                                             AppState.PlayerName = playerName;
                                         }
                                         break;
@@ -651,7 +733,7 @@ namespace BPSR_ZDPS
                                         _ = br.ReadInt32();
                                         if (fightPoint != 0)
                                         {
-                                            EncounterManager.Current.SetAbilityScore(playerUid, (int)fightPoint);
+                                            EncounterManager.Current.SetAbilityScore(currentUserUuid, (int)fightPoint);
                                         }
 
                                         break;
@@ -677,13 +759,13 @@ namespace BPSR_ZDPS
                                 case UserFightAttr.CurHpFieldNumber:
                                     {
                                         long curHp = br.ReadInt64();
-                                        EncounterManager.Current.SetAttrKV(playerUid, "AttrHp", curHp);
+                                        EncounterManager.Current.SetAttrKV(currentUserUuid, "AttrHp", curHp);
                                         break;
                                     }
                                 case UserFightAttr.MaxHpFieldNumber:
                                     {
                                         long maxHp = br.ReadInt64();
-                                        EncounterManager.Current.SetAttrKV(playerUid, "AttrMaxHp", maxHp);
+                                        EncounterManager.Current.SetAttrKV(currentUserUuid, "AttrMaxHp", maxHp);
                                         break;
                                     }
                                 case UserFightAttr.OriginEnergyFieldNumber:
@@ -730,7 +812,7 @@ namespace BPSR_ZDPS
                                         _ = br.ReadInt32();
                                         if (curProfessionId != 0)
                                         {
-                                            EncounterManager.Current.SetProfessionId(playerUid, (int)curProfessionId);
+                                            EncounterManager.Current.SetProfessionId(currentUserUuid, (int)curProfessionId);
                                         }
                                         break;
                                     }
@@ -757,6 +839,9 @@ namespace BPSR_ZDPS
 
         public static void ProcessSyncDungeonData(ReadOnlySpan<byte> payloadBuffer)
         {
+            // Make sure our own character container was processed if possible first
+            ProcessCachedSyncContainerData();
+
             // This might only occur on map change and comes from the current player, no one else
             // Teleports do not trigger this
             // Generally the dungeon has not begun at this point, it's likely not even in the Ready state

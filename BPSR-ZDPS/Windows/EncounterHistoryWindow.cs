@@ -109,7 +109,7 @@ namespace BPSR_ZDPS.Windows
                     string encounterStartTime = EncounterManager.Encounters[SelectedEncounterIndex].StartTime.ToString("yyyy-MM-dd HH-mm-ss");
                     string encounterEndTime = EncounterManager.Encounters[SelectedEncounterIndex].EndTime.ToString("yyyy-MM-dd HH-mm-ss");
                     string encounterDuration = EncounterManager.Encounters[SelectedEncounterIndex].GetDuration().ToString("hh\\:mm\\:ss");
-                    selectedPreviewText = $"[{SelectedEncounterIndex}] {encounterStartTime} - {encounterEndTime} ({encounterDuration})";
+                    selectedPreviewText = $"[{SelectedEncounterIndex + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration})";
                 }
                 else
                 {
@@ -145,7 +145,7 @@ namespace BPSR_ZDPS.Windows
                 if (SelectedEncounterIndex != -1)
                 {
                     ImGuiTableFlags tableFlags = ImGuiTableFlags.ScrollX;
-                    int columnsCount = 22;
+                    int columnsCount = 24;
                     if (ImGui.BeginTable("##HistoricalEncounterStatsTable", columnsCount, tableFlags, new Vector2(-1, -1)))
                     {
                         ImGui.TableSetupColumn("#");
@@ -155,6 +155,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Ability Score");
                         ImGui.TableSetupColumn("Total Damage");
                         ImGui.TableSetupColumn("Total DPS");
+                        ImGui.TableSetupColumn("Shield Break");
                         ImGui.TableSetupColumn("Crit Rate");
                         ImGui.TableSetupColumn("Lucky Rate");
                         ImGui.TableSetupColumn("Crit Damage");
@@ -163,6 +164,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Max Instant DPS");
                         ImGui.TableSetupColumn("Total Healing");
                         ImGui.TableSetupColumn("Total HPS");
+                        ImGui.TableSetupColumn("Effective Healing");
                         ImGui.TableSetupColumn("Total Overhealing");
                         ImGui.TableSetupColumn("Crit Healing");
                         ImGui.TableSetupColumn("Lucky Healing");
@@ -242,6 +244,9 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Text(Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond));
 
                             ImGui.TableNextColumn();
+                            ImGui.Text(Utils.NumberToShorthand(entity.TotalShieldBreak));
+
+                            ImGui.TableNextColumn();
                             ImGui.Text($"{entity.DamageStats.CritRate}%%");
 
                             ImGui.TableNextColumn();
@@ -264,6 +269,9 @@ namespace BPSR_ZDPS.Windows
 
                             ImGui.TableNextColumn();
                             ImGui.Text(Utils.NumberToShorthand(entity.HealingStats.ValuePerSecond));
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(Utils.NumberToShorthand(entity.TotalHealing - entity.TotalOverhealing));
 
                             ImGui.TableNextColumn();
                             ImGui.Text(Utils.NumberToShorthand(entity.TotalOverhealing));

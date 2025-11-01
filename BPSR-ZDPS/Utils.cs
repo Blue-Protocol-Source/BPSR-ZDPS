@@ -137,7 +137,54 @@ namespace BPSR_ZDPS
             32832 => EEntityType.EntMonster, // Another one?
             _ => EEntityType.EntErrType,
         };
+
+        public enum EEntityType_Lua
+        {
+            EntErrType = 0,
+            EntMonster = 1,
+            EntNpc = 2,
+            EntSceneObject = 3,
+            EntZone = 5,
+            EntBullet = 6,
+            EntClientBullet = 7,
+            EntPet = 8,
+            EntChar = 10,
+            EntDummy = 11,
+            EntDrop = 12,
+            EntField = 14,
+            EntTrap = 15,
+            EntCollection = 16,
+            EntStaticObject = 18,
+            EntVehicle = 19,
+            EntToy = 19,
+            EntCommunityHouse = 21,
+            EntHouseItem = 22,
+            EntCount = 23
+        }
+
+        // Converts UUID to EntityId (UID)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static long UuidToEntityId(long uuid) => uuid >> 16;
+
+        // Converts EntityId (UID) to UUID
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static long EntityIdToUuid(long uid, long entityType, bool isSummon, bool isClient) => uid << 16 | ((isSummon ? 1L : 0L) << 15) | ((isClient ? 1L : 0L) << 14) | (entityType << 6);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static long UuidToEntityType(long uuid) => (uuid >> 6) & 31;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsSummonByUuid(long uuid) => ((uuid >> 15) & 1) == 1;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsClientByUuid(long uuid) => ((uuid >> 14) & 1) == 1;
+
+        // Checks if EntityId (UID) is an AI (Bot)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool CheckIsAiByEntityId(long uid) => ((uid >> 10) & 1) != 0;
+
         
+
         public static void SetWindowTopmost(ImGuiViewportPtr? viewport = null)
         {
             viewport = viewport ?? ImGui.GetWindowViewport();

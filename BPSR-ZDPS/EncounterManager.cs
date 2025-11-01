@@ -127,36 +127,36 @@ namespace BPSR_ZDPS
             }
         }
 
-        public Entity GetOrCreateEntity(long uid)
+        public Entity GetOrCreateEntity(long uuid)
         {
-            var entity = Entities.FirstOrDefault(x => x.UID == uid);
+            var entity = Entities.FirstOrDefault(x => x.UUID == uuid);
             if (entity == null)
             {
-                entity = new Entity(uid);
+                entity = new Entity(uuid);
                 Entities.Add(entity);
             }
 
             return entity;
         }
 
-        public void SetName(long uid, string name)
+        public void SetName(long uuid, string name)
         {
-            GetOrCreateEntity(uid).SetName(name);
+            GetOrCreateEntity(uuid).SetName(name);
         }
 
-        public void SetAbilityScore(long uid, int power)
+        public void SetAbilityScore(long uuid, int power)
         {
-            GetOrCreateEntity(uid).SetAbilityScore(power);
+            GetOrCreateEntity(uuid).SetAbilityScore(power);
         }
 
-        public void SetProfessionId(long uid,  int professionId)
+        public void SetProfessionId(long uuid,  int professionId)
         {
-            GetOrCreateEntity(uid).SetProfessionId(professionId);
+            GetOrCreateEntity(uuid).SetProfessionId(professionId);
         }
 
-        public void SetEntityType(long uid, EEntityType etype)
+        public void SetEntityType(long uuid, EEntityType etype)
         {
-            var entity = GetOrCreateEntity(uid);
+            var entity = GetOrCreateEntity(uuid);
             entity.SetEntityType(etype);
 
             var attr_id = entity.GetAttrKV("AttrId");
@@ -174,9 +174,9 @@ namespace BPSR_ZDPS
             }
         }
 
-        public void SetAttrKV(long uid, string key, object value)
+        public void SetAttrKV(long uuid, string key, object value)
         {
-            var entity = GetOrCreateEntity(uid);
+            var entity = GetOrCreateEntity(uuid);
             entity.SetAttrKV(key, value);
 
             if (key == "AttrId" && entity.EntityType == EEntityType.EntMonster && string.IsNullOrEmpty(entity.Name))
@@ -196,18 +196,18 @@ namespace BPSR_ZDPS
             }
         }
 
-        public object? GetAttrKV(long uid, string key)
+        public object? GetAttrKV(long uuid, string key)
         {
-            return GetOrCreateEntity(uid).GetAttrKV(key);
+            return GetOrCreateEntity(uuid).GetAttrKV(key);
         }
 
-        public void RegisterSkillActivation(long uid, int skillId)
+        public void RegisterSkillActivation(long uuid, int skillId)
         {
-            var entity = GetOrCreateEntity(uid);
+            var entity = GetOrCreateEntity(uuid);
             entity.RegisterSkillActivation(skillId);
         }
 
-        public void AddDamage(long uid, int skillId, EDamageProperty damageElement, long damage, bool isCrit, bool isLucky, bool isCauseLucky, long hpLessen = 0, EDamageType? damageType = null, EDamageMode? damageMode = null)
+        public void AddDamage(long uuid, int skillId, EDamageProperty damageElement, long damage, bool isCrit, bool isLucky, bool isCauseLucky, long hpLessen = 0, EDamageType? damageType = null, EDamageMode? damageMode = null)
         {
             LastUpdate = DateTime.Now;
             TotalDamage += (ulong)damage;
@@ -215,15 +215,15 @@ namespace BPSR_ZDPS
             {
                 TotalShieldBreak += (ulong)damage;
             }
-            GetOrCreateEntity(uid).AddDamage(skillId, damage, isCrit, isLucky, hpLessen, damageElement, isCauseLucky, damageType, damageMode);
+            GetOrCreateEntity(uuid).AddDamage(skillId, damage, isCrit, isLucky, hpLessen, damageElement, isCauseLucky, damageType, damageMode);
         }
 
-        public void AddHealing(long uid, int skillId, EDamageProperty damageElement, long healing, bool isCrit, bool isLucky, bool isCauseLucky, long targetUid)
+        public void AddHealing(long uuid, int skillId, EDamageProperty damageElement, long healing, bool isCrit, bool isLucky, bool isCauseLucky, long targetUuid)
         {
             LastUpdate = DateTime.Now;
             TotalHealing += (ulong)healing;
 
-            var entity = GetOrCreateEntity(uid);
+            var entity = GetOrCreateEntity(uuid);
 
             long? currentHp = entity.GetAttrKV("AttrHp") as long?;
             long? maxHp = entity.GetAttrKV("AttrMaxHp") as long?;
@@ -239,21 +239,21 @@ namespace BPSR_ZDPS
 
             TotalOverhealing += (ulong)overhealing;
             
-            entity.AddHealing(skillId, healing, overhealing, isCrit, isLucky, damageElement, isCauseLucky, targetUid);
+            entity.AddHealing(skillId, healing, overhealing, isCrit, isLucky, damageElement, isCauseLucky, targetUuid);
         }
 
-        public void AddTakenDamage(long uid, int skillId, long damage, EDamageSource damageSource, bool isMiss, bool isDead, bool isCrit, bool isLucky, long hpLessen = 0)
+        public void AddTakenDamage(long uuid, int skillId, long damage, EDamageSource damageSource, bool isMiss, bool isDead, bool isCrit, bool isLucky, long hpLessen = 0)
         {
             LastUpdate = DateTime.Now;
             TotalTakenDamage += (ulong)damage;
-            GetOrCreateEntity(uid).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, damageSource, isMiss, isDead);
+            GetOrCreateEntity(uuid).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, damageSource, isMiss, isDead);
         }
 
-        public void AddNpcTakenDamage(long npcUid, long attackerUid, int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, bool isMiss = false, bool isDead = false, string? npcName = null)
+        public void AddNpcTakenDamage(long npcUuid, long attackerUid, int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, bool isMiss = false, bool isDead = false, string? npcName = null)
         {
             LastUpdate = DateTime.Now;
             TotalNpcTakenDamage += (ulong)damage;
-            GetOrCreateEntity(npcUid).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, EDamageSource.Other, isMiss, isDead);
+            GetOrCreateEntity(npcUuid).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, EDamageSource.Other, isMiss, isDead);
         }
     }
 
@@ -287,12 +287,15 @@ namespace BPSR_ZDPS
 
         public Dictionary<string, object> Attributes { get; set; } = new();
 
-        public Entity(long uid, string name = null)
+        public Entity(long uuid, string name = null)
         {
-            UID = uid;
+            UUID = uuid;
+            UID = Utils.UuidToEntityId(uuid);
             Name = name;
 
-            var cached = EntityCache.Instance.GetOrCreate(uid);
+            SetEntityType((EEntityType)Utils.UuidToEntityType(uuid));
+
+            var cached = EntityCache.Instance.GetOrCreate(uuid);
             if (cached != null)
             {
                 if (string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(cached.Name))
@@ -326,7 +329,7 @@ namespace BPSR_ZDPS
         {
             Name = name;
 
-            var cached = EntityCache.Instance.GetOrCreate(UID);
+            var cached = EntityCache.Instance.GetOrCreate(UUID);
             if (cached != null && !string.IsNullOrEmpty(name))
             {
                 cached.Name = name;
@@ -350,7 +353,7 @@ namespace BPSR_ZDPS
         {
             AbilityScore = abilityScore;
 
-            var cached = EntityCache.Instance.GetOrCreate(UID);
+            var cached = EntityCache.Instance.GetOrCreate(UUID);
             if (cached != null && abilityScore != 0)
             {
                 cached.AblityScore = abilityScore;
@@ -362,7 +365,7 @@ namespace BPSR_ZDPS
             ProfessionId = id;
             Profession = Professions.GetProfessionNameFromId(id);
 
-            var cached = EntityCache.Instance.GetOrCreate(UID);
+            var cached = EntityCache.Instance.GetOrCreate(UUID);
             if (cached != null && id != 0)
             {
                 cached.ProfessionId = id;
@@ -374,7 +377,7 @@ namespace BPSR_ZDPS
             SubProfessionId = id;
             SubProfession = Professions.GetSubProfessionNameFromId(id);
 
-            var cached = EntityCache.Instance.GetOrCreate(UID);
+            var cached = EntityCache.Instance.GetOrCreate(UUID);
             if (cached != null && id != 0)
             {
                 cached.SubProfessionId = id;
@@ -385,7 +388,7 @@ namespace BPSR_ZDPS
         {
             Level = level;
 
-            var cached = EntityCache.Instance.GetOrCreate(UID);
+            var cached = EntityCache.Instance.GetOrCreate(UUID);
             if (cached != null && level != 0)
             {
                 cached.Level = level;
@@ -467,7 +470,7 @@ namespace BPSR_ZDPS
             DamageStats.EndTime = DateTime.Now;*/
         }
 
-        public void AddHealing(int skillId, long healing, long overhealing, bool isCrit, bool isLucky, EDamageProperty? damageElement = null, bool isCauseLucky = false, long targetUid = 0)
+        public void AddHealing(int skillId, long healing, long overhealing, bool isCrit, bool isLucky, EDamageProperty? damageElement = null, bool isCauseLucky = false, long targetUuid = 0)
         {
             TotalHealing += (ulong)healing;
             TotalOverhealing += (ulong)overhealing;
