@@ -116,10 +116,12 @@ public class TcpReassembler
                     return;
                 }
             }
-            
-            if (Packets.ContainsKey(tcpPacket.SequenceNumber) || tcpPacket.SequenceNumber < LastSeq || !IsAlive)
+
+            var hasPacketWithSequence = Packets.ContainsKey(tcpPacket.SequenceNumber);
+            var seqIsLessThanLast = tcpPacket.SequenceNumber < LastSeq;
+            if (hasPacketWithSequence || seqIsLessThanLast || !IsAlive)
             {
-                Debug.WriteLine($"Got a duplicate packet or was older than read. NextExpectedSeq: {NextExpectedSeq}, SequenceNumber: {tcpPacket.SequenceNumber}");
+                Debug.WriteLine($"Got a duplicate packet or was older than read. NextExpectedSeq: {NextExpectedSeq}, SequenceNumber: {tcpPacket.SequenceNumber}, WasDupe: {hasPacketWithSequence}, WasLess Than Last: {seqIsLessThanLast}, IsAlive: {IsAlive}, Packet Data Len: {tcpPacket.PayloadData.Length}");
                 return;
             }
             
@@ -131,6 +133,15 @@ public class TcpReassembler
             NumPacketsSeen++;
             LastPacketAt = DateTime.Now;
             CheckAndPushContinuesData();
+
+            if (NextExpectedSeq == LastSeq)
+            {
+                var msg = $"NextExpectedSeq == LastSeq, {NextExpectedSeq} == {LastSeq}, Resetting Seq to restart.";
+                Debug.WriteLine(msg);
+                Console.WriteLine(msg);
+                NextExpectedSeq = null;
+                LastSeq = 0;
+            }
         }
 
         private void CheckAndPushContinuesData()
