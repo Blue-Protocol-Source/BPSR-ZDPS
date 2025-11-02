@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿using System.Buffers.Binary;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.IO.Pipelines;
 using System.Net;
@@ -98,9 +99,24 @@ public class TcpReassembler
         public ulong NumBytesSent;
         public ulong NumPacketsSeen;
         public CancellationTokenSource CancelTokenSrc = new();
+        public bool IsSynced = false;
 
         public void AddPacket(TcpPacket tcpPacket)
+        
         {
+            if (!IsSynced)
+            {
+                if (tcpPacket.PayloadData.Length >= 6 && BinaryPrimitives.ReadInt32BigEndian(tcpPacket.PayloadData) == tcpPacket.PayloadData.Length &&
+                    (BinaryPrimitives.ReadInt16BigEndian(tcpPacket.PayloadData.AsSpan()[4..]) & 0x7FFF) <= 8)
+                {
+                    IsSynced = true;
+                    Debug.WriteLine($"Connection {EndPoint} is synced");
+                }
+                else {
+                    return;
+                }
+            }
+            
             if (Packets.ContainsKey(tcpPacket.SequenceNumber) || tcpPacket.SequenceNumber < LastSeq || !IsAlive)
             {
                 Debug.WriteLine($"Got a duplicate packet or was older than read. NextExpectedSeq: {NextExpectedSeq}, SequenceNumber: {tcpPacket.SequenceNumber}");
