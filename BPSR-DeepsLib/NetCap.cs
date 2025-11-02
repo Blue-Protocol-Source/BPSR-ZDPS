@@ -156,11 +156,12 @@ public class NetCap
 
                 if (msgType > 8)
                 {
-                    var msg = $"!! Message Type ({msgType}) Was not in expected range, maybe this is not a game connection! {conn.EndPoint}";
+                    var msg = $"!! Message Type ({msgType}) Was not in expected range, maybe this is not a game connection! {conn.EndPoint} -> {conn.DestEndPoint}";
                     Debug.WriteLine(msg);
                     ImportantLogMsgs.Add(msg);
                     var connId = new ConnectionId(conn.EndPoint.Address.ToString(), (ushort)conn.EndPoint.Port, conn.DestEndPoint.Address.ToString(), (ushort)conn.DestEndPoint.Port);
-                    ConnectionFilters[connId] = false;
+                    //ConnectionFilters[connId] = false;
+                    TcpReassempler.RemoveConnection(connId);
                     break;
                 }
 

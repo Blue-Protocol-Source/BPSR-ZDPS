@@ -38,6 +38,19 @@ public class TcpReassembler
         RemoveTimedOutConnections();
     }
 
+    public void RemoveConnection(ConnectionId connId)
+    {
+        if (Connections.TryGetValue(connId.SrcEp, out var srcConn))
+        {
+            RemoveConnection(srcConn);
+        }
+
+        if (Connections.TryGetValue(connId.DestEp, out var destConn))
+        {
+            RemoveConnection(destConn);       
+        }
+    }
+
     private void RemoveTimedOutConnections()
     {
         if (DateTime.Now - LastConnectionCleanUpTime >= ConnectionCleanUpInterval)
