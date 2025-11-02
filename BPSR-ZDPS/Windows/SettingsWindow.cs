@@ -32,6 +32,8 @@ namespace BPSR_ZDPS.Windows
 
         static int RunOnceDelayed = 0;
 
+        static bool IsElevated = false;
+
         public static void Open()
         {
             RunOnceDelayed = 0;
@@ -104,6 +106,10 @@ namespace BPSR_ZDPS.Windows
                 if (RunOnceDelayed == 0)
                 {
                     RunOnceDelayed++;
+                    using (var identity = System.Security.Principal.WindowsIdentity.GetCurrent())
+                    {
+                        IsElevated = new System.Security.Principal.WindowsPrincipal(identity).IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
+                    }
                 }
                 else if (RunOnceDelayed == 2)
                 {
@@ -161,14 +167,17 @@ namespace BPSR_ZDPS.Windows
 
                 ImGui.SeparatorText("Keybinds");
 
-                ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
-                ImGui.BeginChild("##KeybindsNotice", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
-                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
-                ImGui.TextWrapped("Important Note:");
-                ImGui.PopFont();
-                ImGui.TextWrapped("Keybinds only work while the game is in focus if ZDPS is being run as Administrator. This is a limitation imposed by the Game Devs.");
-                ImGui.EndChild();
-                ImGui.PopStyleColor();
+                if (IsElevated == false)
+                {
+                    ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
+                    ImGui.BeginChild("##KeybindsNotice", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
+                    ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                    ImGui.TextWrapped("Important Note:");
+                    ImGui.PopFont();
+                    ImGui.TextWrapped("Keybinds only work while the game is in focus if ZDPS is being run as Administrator. This is a limitation imposed by the Game Devs.");
+                    ImGui.EndChild();
+                    ImGui.PopStyleColor();
+                }
 
                 ImGui.TextWrapped("Below are global hotkey keybinds for the application. Click on the box and press a key to bind it. Modifier keys (Ctrl/Alt/Shift) are not supported.");
                 ImGui.TextWrapped("Press Escape to cancel the rebinding process.");
