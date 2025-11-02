@@ -10,7 +10,7 @@ namespace BPSR_DeepsLib
         public ushort DstPort = dstPort;
 
         public IPEndPoint SrcEp => IPEndPoint.Parse($"{SrcIP}:{SrcPort}");
-        public IPEndPoint DestEp => IPEndPoint.Parse($"{DestEp}:{DestEp}");
+        public IPEndPoint DestEp => IPEndPoint.Parse($"{DestEp}:{dstPort}");
 
         public string GetId()
         {
