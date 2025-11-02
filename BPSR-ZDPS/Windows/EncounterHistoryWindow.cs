@@ -109,7 +109,8 @@ namespace BPSR_ZDPS.Windows
                     string encounterStartTime = EncounterManager.Encounters[SelectedEncounterIndex].StartTime.ToString("yyyy-MM-dd HH-mm-ss");
                     string encounterEndTime = EncounterManager.Encounters[SelectedEncounterIndex].EndTime.ToString("yyyy-MM-dd HH-mm-ss");
                     string encounterDuration = EncounterManager.Encounters[SelectedEncounterIndex].GetDuration().ToString("hh\\:mm\\:ss");
-                    selectedPreviewText = $"[{SelectedEncounterIndex + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration})";
+                    string encounterSceneName = $" {EncounterManager.Encounters[SelectedEncounterIndex].SceneName}" ?? "";
+                    selectedPreviewText = $"[{SelectedEncounterIndex + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration}){encounterSceneName}";
                 }
                 else
                 {
@@ -126,7 +127,8 @@ namespace BPSR_ZDPS.Windows
                         string encounterStartTime = EncounterManager.Encounters[i].StartTime.ToString("yyyy-MM-dd HH:mm:ss");
                         string encounterEndTime = EncounterManager.Encounters[i].EndTime.ToString("yyyy-MM-dd HH:mm:ss");
                         string encounterDuration = EncounterManager.Encounters[i].GetDuration().ToString("hh\\:mm\\:ss");
-                        if (ImGui.Selectable($"[{i + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration})##EncounterHistoryItem_{i}", isSelected))
+                        string encounterSceneName = $" {EncounterManager.Encounters[i].SceneName}" ?? "";
+                        if (ImGui.Selectable($"[{i + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration}){encounterSceneName}##EncounterHistoryItem_{i}", isSelected))
                         {
                             // TODO: Load up the historical encounter
                             SelectedEncounterIndex = i;
@@ -322,6 +324,11 @@ namespace BPSR_ZDPS.Windows
             }
 
             ImGui.PopID();
+        }
+
+        public static void GroupEncountersByBattleId(long battleId)
+        {
+            var battleGroups = EncounterManager.Encounters.GroupBy(x => x.BattleId);
         }
     }
 }

@@ -18,6 +18,8 @@ namespace BPSR_ZDPS
 
         public static int CurrentEncounter = 0;
         public static int CurrentBattleId = 0;
+        public static uint LevelMapId {  get; private set; }
+        public static string SceneName { get; private set; }
 
         static EncounterManager()
         {
@@ -26,20 +28,36 @@ namespace BPSR_ZDPS
             StartEncounter();
         }
 
-        public static void StartEncounter()
+        public static void StartEncounter(bool force = false)
         {
             if (Current != null)
             {
-                if (Current.EndTime == DateTime.MinValue)
+                if (force || (Current.EndTime == DateTime.MinValue && Current.HasStatsBeenRecorded()))
                 {
                     // We called StartEncounter without first stopping the current one
                     StopEncounter();
+                }
+                else
+                {
+                    // Nothing has actually happened in this encounter, so let's just reset the time and reuse it
+                    Current.SetStartTime(DateTime.Now);
+                    if (LevelMapId > 0)
+                    {
+                        SetSceneId(LevelMapId);
+                    }
+                    return;
                 }
             }
 
             Encounters.Add(new Encounter(CurrentBattleId));
 
             CurrentEncounter = Encounters.Count - 1;
+
+            // Reuse last sceneId as our current one (it may not always be right but hopefully is right enough)
+            if (LevelMapId > 0)
+            {
+                SetSceneId(LevelMapId);
+            }
         }
 
         public static void StopEncounter()
@@ -70,11 +88,37 @@ namespace BPSR_ZDPS
             // These are typically going to be just splitting encounters up by instance (which is changed via map traveling)
             CurrentBattleId++;
         }
+
+        // While we technically use the 'LevelMapId' and not the 'SceneId' field, it's just another type of SceneId ultimately
+        public static void SetSceneId(uint levelMapId)
+        {
+            LevelMapId = levelMapId;
+            if (levelMapId > 0)
+            {
+                if (HelperMethods.DataTables.Scenes.Data.TryGetValue(levelMapId.ToString(), out var scene))
+                {
+                    SceneName = scene.Name;
+                }
+                else
+                {
+                    SceneName = "";
+                }
+            }
+            else
+            {
+                SceneName = "";
+            }
+
+            Current.SceneId = LevelMapId;
+            Current.SceneName = SceneName;
+        }
     }
 
     public class Encounter
     {
         public int BattleId { get; set; }
+        public uint SceneId { get; set; }
+        public string SceneName { get; set; }
 
         public DateTime StartTime { get; private set; }
         public DateTime EndTime { get; private set; }
@@ -199,6 +243,11 @@ namespace BPSR_ZDPS
         public object? GetAttrKV(long uuid, string key)
         {
             return GetOrCreateEntity(uuid).GetAttrKV(key);
+        }
+
+        public bool HasStatsBeenRecorded()
+        {
+            return TotalDamage > 0 && TotalHealing > 0 && TotalTakenDamage > 0 && TotalNpcTakenDamage > 0;
         }
 
         public void RegisterSkillActivation(long uuid, int skillId)

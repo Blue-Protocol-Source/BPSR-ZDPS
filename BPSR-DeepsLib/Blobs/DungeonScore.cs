@@ -9,11 +9,12 @@ public class DungeonScore(BlobReader blob) : BlobType(ref blob)
 
     public override bool ParseField(int index, ref BlobReader blob)
     {
-        switch (index) {
-            case 1:
+        switch (index)
+        {
+            case Zproto.DungeonScore.TotalScoreFieldNumber:
                 TotalScore = blob.ReadInt();
                 return true;
-            case 2:
+            case Zproto.DungeonScore.CurRatioFieldNumber:
                 CurRatio = blob.ReadInt();
                 return true;
             default:

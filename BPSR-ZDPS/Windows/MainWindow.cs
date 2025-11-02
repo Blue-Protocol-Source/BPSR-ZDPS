@@ -38,6 +38,7 @@ namespace BPSR_ZDPS.Windows
             EncounterHistoryWindow.Draw(this);
             entityInspector.Draw(this);
             NetDebug.Draw();
+            DebugDungeonTracker.Draw(this);
         }
 
         static bool p_open = true;
@@ -231,8 +232,13 @@ namespace BPSR_ZDPS.Windows
                     ImGui.Separator();
                     if (ImGui.BeginMenu("Debug"))
                     {
-                        if (ImGui.MenuItem("Net Debug")) {
+                        if (ImGui.MenuItem("Net Debug"))
+                        {
                             NetDebug.IsOpened = !NetDebug.IsOpened;
+                        }
+                        if (ImGui.MenuItem("Dungeon Tracker"))
+                        {
+                            DebugDungeonTracker.Open();
                         }
                         ImGui.EndMenu();
                     }
@@ -285,7 +291,7 @@ namespace BPSR_ZDPS.Windows
         {
             EncounterManager.StopEncounter();
             System.Diagnostics.Debug.WriteLine($"Starting new manual encounter at {DateTime.Now}");
-            EncounterManager.StartEncounter();
+            EncounterManager.StartEncounter(true);
         }
     }
 }

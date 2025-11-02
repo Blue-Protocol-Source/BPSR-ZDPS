@@ -22,6 +22,8 @@ namespace BPSR_ZDPS
         {
             public static MonsterTable Monsters = new MonsterTable();
             public static SkillTable Skills = new SkillTable();
+            public static TargetTable Targets = new TargetTable();
+            public static SceneTable Scenes = new SceneTable();
         }
     }
 }

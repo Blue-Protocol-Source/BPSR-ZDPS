@@ -73,6 +73,23 @@ namespace BPSR_ZDPS
             }
             // TODO: Map Icon from SkillTable to SkillId lookups and trim path to final part after a '/'
 
+
+            string targetTableFile = Path.Combine(Utils.DATA_DIR_NAME, "TargetTable.json");
+            if (File.Exists(targetTableFile))
+            {
+                var targets = JsonConvert.DeserializeObject<Dictionary<string, Target>>(File.ReadAllText(targetTableFile));
+                HelperMethods.DataTables.Targets.Data = targets;
+                System.Diagnostics.Debug.WriteLine("Loaded TargetTable.json");
+            }
+
+            string sceneTableFile = Path.Combine(Utils.DATA_DIR_NAME, "SceneTable.json");
+            if (File.Exists(sceneTableFile))
+            {
+                var scenes = JsonConvert.DeserializeObject<Dictionary<string, Scene>>(File.ReadAllText(sceneTableFile));
+                HelperMethods.DataTables.Scenes.Data = scenes;
+                System.Diagnostics.Debug.WriteLine("Loaded SceneTable.json");
+            }
+
             // Load up our offline entity cache if it exists to help with initial data resolving when we're not given all the required details
             EntityCache.Instance.Load();
         }

@@ -1,5 +1,6 @@
 ﻿using BPSR_ZDPS.DataTypes;
 using Hexa.NET.ImGui;
+using Silk.NET.Core.Native;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +67,7 @@ namespace BPSR_ZDPS.Windows
 
             if (PersistantTracking && LoadedFromEncounterIdx != EncounterManager.Encounters.Count - 1)
             {
-                var foundEntity = EncounterManager.Current.Entities.Where(x => x.UID == LoadedEntity.UID);
+                var foundEntity = EncounterManager.Current.Entities.Where(x => x.UUID == LoadedEntity.UUID);
                 if (foundEntity.Any())
                 {
                     LoadEntity(foundEntity.First());
@@ -103,6 +104,31 @@ namespace BPSR_ZDPS.Windows
                     ImGui.TableSetupColumn("##PropsRight", ImGuiTableColumnFlags.WidthStretch | ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize, 1f, 1);
 
                     ImGui.TableNextColumn();
+
+                    var cursorStart = ImGui.GetCursorPos();
+                    if (LoadedEntity.EntityType == Zproto.EEntityType.EntChar)
+                    {
+                        // Render a background image of the base profession for players
+                        var tex = ImageHelper.GetTextureByKey($"Profession_{LoadedEntity.ProfessionId}");
+                        if (tex != null)
+                        {
+                            float texSize = 96.0f;
+                            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - texSize - ImGui.GetStyle().ItemSpacing.X - ImGui.GetStyle().FramePadding.X);
+                            if (Settings.Instance.ColorClassIconsByRole == false)
+                            {
+                                var roleColor = Professions.RoleTypeColors(Professions.GetRoleFromBaseProfessionId(LoadedEntity.ProfessionId));
+                                roleColor.Z = roleColor.Z * 0.5f;
+                                ImGui.ImageWithBg((ImTextureRef)tex, new Vector2(texSize, texSize), new Vector2(0, 0), new Vector2(1, 1), new Vector4(0, 0, 0, 0), roleColor);
+                            }
+                            else
+                            {
+                                //ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
+                                ImGui.ImageWithBg((ImTextureRef)tex, new Vector2(texSize, texSize), new Vector2(0, 0), new Vector2(1, 1), new Vector4(0, 0, 0, 0), new Vector4(1, 1, 1, 0.50f));
+                            }
+                            
+                            ImGui.SetCursorPos(cursorStart);
+                        }
+                    }
 
                     ImGui.Text($"Name: {LoadedEntity.Name}");
                     ImGui.Text($"Level: {LoadedEntity.Level}");
@@ -340,6 +366,10 @@ namespace BPSR_ZDPS.Windows
                     }
                 }
 
+                ImGui.SameLine();
+                ImGui.Checkbox("Persistent Tracking", ref PersistantTracking);
+                ImGui.SetItemTooltip("Enable this to track the current entity across new encounters instead of sticking to the one it was opened for.");
+
                 if (TableFilterMode == ETableFilterMode.SkillsDamage || TableFilterMode == ETableFilterMode.SkillsHealing || TableFilterMode == ETableFilterMode.SkillsTaken)
                 {
                     ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f, ImGui.GetStyle().CellPadding.Y));
@@ -492,8 +522,7 @@ namespace BPSR_ZDPS.Windows
                 }
                 else if (TableFilterMode == ETableFilterMode.Debug)
                 {
-                    ImGui.Checkbox("Persistent Tracking", ref PersistantTracking);
-                    ImGui.TextWrapped("Enable this to track the current entity across new encounters instead of sticking to the one it was opened for.");
+                    ImGui.Text($"UUID: {LoadedEntity.UUID}");
 
                     ImGui.Text("Skill Stats:");
                     ImGui.SetNextItemWidth(-1);

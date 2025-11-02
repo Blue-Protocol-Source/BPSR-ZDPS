@@ -239,7 +239,7 @@ namespace BPSR_ZDPS
                     //continue;
                 }
 
-                long uid = Shr16(entity.Uuid);
+                long uid = Utils.UuidToEntityId(entity.Uuid);
 
                 if (uid == 0)
                 {
@@ -313,8 +313,8 @@ namespace BPSR_ZDPS
                 return;
             }
 
-            bool isTargetPlayer = IsUuidPlayerRaw(targetUuid);
-            long targetUid = Shr16(targetUuid);
+            bool isTargetPlayer = (Utils.UuidToEntityType(targetUuid) == (long)EEntityType.EntChar); //IsUuidPlayerRaw(targetUuid);
+            long targetUid = Utils.UuidToEntityId(targetUuid);
             var attrCollection = delta.Attrs;
 
             var eType = Utils.RawUuidToEntityType(targetUuid);
@@ -393,7 +393,7 @@ namespace BPSR_ZDPS
                     continue;
                 }
                 bool isAttackerPlayer = IsUuidPlayerRaw(attackerUuid);
-                long attackerUid = Shr16(attackerUuid);
+                long attackerUid = Utils.UuidToEntityId(attackerUuid);
 
                 if (isAttackerPlayer && attackerUuid != 0)
                 {
@@ -480,7 +480,6 @@ namespace BPSR_ZDPS
         }
 
         public static long currentUserUuid = 0;
-        public static CharSerialize? cachedSyncContainerData = null;
 
         public static void ProcessSyncToMeDeltaInfo(ReadOnlySpan<byte> payloadBuffer)
         {
@@ -491,8 +490,7 @@ namespace BPSR_ZDPS
             {
                 currentUserUuid = uuid;
                 AppState.PlayerUUID = uuid;
-                AppState.PlayerUID = Shr16(uuid);
-                ProcessCachedSyncContainerData();
+                AppState.PlayerUID = Utils.UuidToEntityId(uuid);
             }
             var aoiSyncDelta = aoiSyncToMeDelta.BaseDelta;
             if (aoiSyncDelta == null)
@@ -526,47 +524,39 @@ namespace BPSR_ZDPS
                 return;
             }
 
-            if (currentUserUuid != 0)
-            {
-                ProcessCachedSyncContainerData(vData);
-            }
-            else
-            {
-                // We haven't identified our own UUID yet, store this for the next event
-                cachedSyncContainerData = vData;
-            }
+            long playerUuid = Utils.EntityIdToUuid(vData.CharId, (long)EEntityType.EntChar, false, false);
 
-            return;
+            System.Diagnostics.Debug.WriteLine($"ProcessSyncContainerData converted UID:{vData.CharId} into UUID:{playerUuid}");
 
             AppState.PlayerUID = vData.CharId;
             long playerUid = vData.CharId;
 
             if (vData.RoleLevel?.Level != 0)
             {
-                EncounterManager.Current.SetAttrKV(playerUid, "AttrLevel", vData.RoleLevel.Level);
+                EncounterManager.Current.SetAttrKV(playerUuid, "AttrLevel", vData.RoleLevel.Level);
             }
 
             if (vData.Attr?.CurHp != 0)
             {
-                EncounterManager.Current.SetAttrKV(playerUid, "AttrHp", vData.Attr.CurHp);
+                EncounterManager.Current.SetAttrKV(playerUuid, "AttrHp", vData.Attr.CurHp);
             }
 
             if (vData.Attr?.MaxHp != 0)
             {
-                EncounterManager.Current.SetAttrKV(playerUid, "AttrMaxHp", vData.Attr.MaxHp);
+                EncounterManager.Current.SetAttrKV(playerUuid, "AttrMaxHp", vData.Attr.MaxHp);
             }
 
             if (vData.CharBase != null)
             {
                 if (!string.IsNullOrEmpty(vData.CharBase.Name))
                 {
-                    EncounterManager.Current.SetName(playerUid, vData.CharBase.Name);
+                    EncounterManager.Current.SetName(playerUuid, vData.CharBase.Name);
                     AppState.PlayerName = vData.CharBase.Name;
                 }
 
                 if (vData.CharBase.FightPoint != 0)
                 {
-                    EncounterManager.Current.SetAbilityScore(playerUid, vData.CharBase.FightPoint);
+                    EncounterManager.Current.SetAbilityScore(playerUuid, vData.CharBase.FightPoint);
                 }
             }
 
@@ -574,7 +564,7 @@ namespace BPSR_ZDPS
             if (professionList != null && professionList.CurProfessionId != 0)
             {
                 var professionName = Professions.GetProfessionNameFromId(professionList.CurProfessionId);
-                EncounterManager.Current.SetProfessionId(playerUid, professionList.CurProfessionId);
+                EncounterManager.Current.SetProfessionId(playerUuid, professionList.CurProfessionId);
                 AppState.ProfessionId = professionList.CurProfessionId;
                 AppState.ProfessionName = professionName;
             }
@@ -582,7 +572,9 @@ namespace BPSR_ZDPS
             var sceneData = vData.SceneData;
             if (sceneData != null)
             {
+                System.Diagnostics.Debug.WriteLine($"ProcessSyncContainerData.SceneData:\n{sceneData}");
 
+                EncounterManager.SetSceneId(sceneData.LevelMapId);
             }
 
             if (vData.Equip != null)
@@ -591,71 +583,6 @@ namespace BPSR_ZDPS
                 {
                     System.Diagnostics.Debug.WriteLine($"{playerUid} :: equip::slot={equip.Value.EquipSlot},refinelvl={equip.Value.EquipSlotRefineLevel}");
                 }
-            }
-        }
-
-        public static void ProcessCachedSyncContainerData(CharSerialize? syncContainerData = null)
-        {
-            if (currentUserUuid != 0 && (cachedSyncContainerData != null || syncContainerData != null))
-            {
-                long playerUid = Shr16(currentUserUuid);
-
-                CharSerialize? vData = cachedSyncContainerData ?? syncContainerData;
-
-                if (vData.RoleLevel?.Level != 0)
-                {
-                    EncounterManager.Current.SetAttrKV(currentUserUuid, "AttrLevel", vData.RoleLevel.Level);
-                }
-
-                if (vData.Attr?.CurHp != 0)
-                {
-                    EncounterManager.Current.SetAttrKV(currentUserUuid, "AttrHp", vData.Attr.CurHp);
-                }
-
-                if (vData.Attr?.MaxHp != 0)
-                {
-                    EncounterManager.Current.SetAttrKV(currentUserUuid, "AttrMaxHp", vData.Attr.MaxHp);
-                }
-
-                if (vData.CharBase != null)
-                {
-                    if (!string.IsNullOrEmpty(vData.CharBase.Name))
-                    {
-                        EncounterManager.Current.SetName(currentUserUuid, vData.CharBase.Name);
-                        AppState.PlayerName = vData.CharBase.Name;
-                    }
-
-                    if (vData.CharBase.FightPoint != 0)
-                    {
-                        EncounterManager.Current.SetAbilityScore(currentUserUuid, vData.CharBase.FightPoint);
-                    }
-                }
-
-                var professionList = vData.ProfessionList;
-                if (professionList != null && professionList.CurProfessionId != 0)
-                {
-                    var professionName = Professions.GetProfessionNameFromId(professionList.CurProfessionId);
-                    EncounterManager.Current.SetProfessionId(currentUserUuid, professionList.CurProfessionId);
-                    AppState.ProfessionId = professionList.CurProfessionId;
-                    AppState.ProfessionName = professionName;
-                }
-
-                var sceneData = vData.SceneData;
-                if (sceneData != null)
-                {
-
-                }
-
-                if (vData.Equip != null)
-                {
-                    foreach (var equip in vData.Equip.EquipList_)
-                    {
-                        System.Diagnostics.Debug.WriteLine($"{currentUserUuid} :: equip::slot={equip.Value.EquipSlot},refinelvl={equip.Value.EquipSlotRefineLevel}");
-                    }
-                }
-
-                // Release the memory this held (typically is ~140KB)
-                cachedSyncContainerData = null;
             }
         }
 
@@ -687,9 +614,6 @@ namespace BPSR_ZDPS
                 _ = br.ReadInt32();
 
                 long playerUid = currentUserUuid >> 16;
-
-                // Ensure we've already processed our own full sync first
-                ProcessCachedSyncContainerData();
 
                 switch (fieldIndex)
                 {
@@ -839,9 +763,6 @@ namespace BPSR_ZDPS
 
         public static void ProcessSyncDungeonData(ReadOnlySpan<byte> payloadBuffer)
         {
-            // Make sure our own character container was processed if possible first
-            ProcessCachedSyncContainerData();
-
             // This might only occur on map change and comes from the current player, no one else
             // Teleports do not trigger this
             // Generally the dungeon has not begun at this point, it's likely not even in the Ready state
@@ -885,6 +806,64 @@ namespace BPSR_ZDPS
             }
 
             var buf = dirty.VData.Buffer.ToByteArray();
+
+            var dun = new BPSR_DeepsLib.Blobs.DungeonDirtyData(new BlobReader(buf));
+
+            if (dun?.FlowInfo != null)
+            {
+                if (dun.FlowInfo?.State != null)
+                {
+                    EDungeonState dungeonState = (EDungeonState)dun.FlowInfo.State;
+                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.State == {dungeonState}");
+                    if (dungeonState == EDungeonState.DungeonStateEnd)
+                    {
+                        // Encounter has ended
+                        EncounterManager.StopEncounter();
+                    }
+                    else if (dungeonState == EDungeonState.DungeonStateReady)
+                    {
+                        // Encounter is in prep phase
+                    }
+                    else if (dungeonState == EDungeonState.DungeonStatePlaying)
+                    {
+                        // Encounter has begun
+                        EncounterManager.StopEncounter();
+                        EncounterManager.StartNewBattle();
+                        EncounterManager.StartEncounter();
+                    }
+                }
+            }
+
+            if (dun?.Target?.TargetData != null)
+            {
+                if (dun.Target.TargetData.Count > 1)
+                {
+                    System.Diagnostics.Debug.WriteLine("Target.TargetData.Count > 1!!");
+                }
+
+                // We typically only have a single entry
+                // Must ForEach as the keys here are TargetId's
+                foreach (var target in dun.Target.TargetData)
+                {
+                    // Not all encounters are created equal, how they use these is unique per encounter
+                    // For example, Tina won't clear or update Target on wipe while Ice Dragon Raid does
+                    if (target.Value.Complete == 1 && target.Value.Nums > 0)
+                    {
+                        // Current objective is complete when Complete == 1
+                        // Overall objective is complere when Nums is also > 0
+                        EncounterManager.StopEncounter();
+                    }
+                    else if (target.Value.Complete == 0 && target.Value.Nums == 0)
+                    {
+                        // We got a new objective, either advanced the phase or reset... or advanced and the devs are trolling with too many states
+                        EncounterManager.StopEncounter();
+                        EncounterManager.StartEncounter();
+                    }
+                    BPSR_ZDPS.Windows.DebugDungeonTracker.DungeonTargetDataTracker.Enqueue(target);
+                }
+            }
+
+            return;
 
             //var reader = new Google.Protobuf.CodedInputStream(buf);
             //var dungeonSyncData = DungeonSyncData.Parser.ParseFrom(reader);
@@ -995,6 +974,157 @@ namespace BPSR_ZDPS
                         };
 
                         ReadBinaryContainer(dungeonSyncData, flowInfoDataFuncs, "DungeonFlowInfo");
+                    }
+                },
+                {
+                    DungeonSyncData.TargetFieldNumber, dungeonSyncData =>
+                    {
+                        var targetDataFuncs = new Dictionary<int, Action<BinaryReader>>
+                        {
+                            {
+                                DungeonTarget.TargetDataFieldNumber, dungeonTarget =>
+                                {
+                                    int add = dungeonTarget.ReadInt32();
+                                    _ = dungeonTarget.ReadInt32();
+                                    int remove = 0;
+                                    int update = 0;
+                                    if (add == -4)
+                                    {
+                                        System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonTarget.TargetData.add={add} (Early Exit)");
+                                        return;
+                                    }
+                                    if (add == -1)
+                                    {
+                                        System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonTarget.TargetData.add={add} (Get New Value)");
+                                        add = dungeonTarget.ReadInt32();
+                                    }
+                                    else
+                                    {
+                                        remove = dungeonTarget.ReadInt32();
+                                        _ = dungeonTarget.ReadInt32();
+                                        update = dungeonTarget.ReadInt32();
+                                        _ = dungeonTarget.ReadInt32();
+                                    }
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonTarget.TargetData.add={add}");
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonTarget.TargetData.remove={remove}");
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonTarget.TargetData.update={update}");
+
+                                    Dictionary<int, DungeonTargetData> targetData = new();
+
+                                    for (int i = 0; i < add; i++)
+                                    {
+                                        int dk = dungeonTarget.ReadInt32();
+                                        _ = dungeonTarget.ReadInt32();
+
+                                        DungeonTargetData dv = new();
+
+                                        var targetDataDataFuncs = new Dictionary<int, Action<BinaryReader>>
+                                        {
+                                            {
+                                                DungeonTargetData.TargetIdFieldNumber, dungeonTargetDataData =>
+                                                {
+                                                    var targetId = dungeonTargetDataData.ReadInt32();
+                                                    dungeonTargetDataData.ReadInt32();
+
+                                                    dv.TargetId = targetId;
+                                                }
+                                            },
+                                            {
+                                                DungeonTargetData.NumsFieldNumber, dungeonTargetDataData =>
+                                                {
+                                                    var nums = dungeonTargetDataData.ReadInt32();
+                                                    dungeonTargetDataData.ReadInt32();
+
+                                                    dv.Nums = nums;
+                                                }
+                                            },
+                                            {
+                                                DungeonTargetData.CompleteFieldNumber, dungeonTargetDataData =>
+                                                {
+                                                    var complete = dungeonTargetDataData.ReadInt32();
+                                                    dungeonTargetDataData.ReadInt32();
+
+                                                    dv.Complete = complete;
+                                                }
+                                            }
+                                        };
+
+                                        ReadBinaryContainer(dungeonTarget, targetDataDataFuncs, "DungeonTargetDataData");
+
+                                        targetData.Add(dk, dv);
+                                    }
+                                    for (int i = 0; i < remove; i++)
+                                    {
+                                        int dk = dungeonTarget.ReadInt32();
+                                        _ = dungeonTarget.ReadInt32();
+
+                                        if (!targetData.Remove(dk))
+                                        {
+                                            System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonTarget.TargetData did not find key to remove ({dk})");
+                                        }
+                                    }
+                                    for (int i = 0; i < update; i++)
+                                    {
+                                        int dk = dungeonTarget.ReadInt32();
+                                        _ = dungeonTarget.ReadInt32();
+
+                                        DungeonTargetData dv = new();
+
+                                        var targetDataDataFuncs = new Dictionary<int, Action<BinaryReader>>
+                                        {
+                                            {
+                                                DungeonTargetData.TargetIdFieldNumber, dungeonTargetDataData =>
+                                                {
+                                                    var targetId = dungeonTargetDataData.ReadInt32();
+                                                    dungeonTargetDataData.ReadInt32();
+
+                                                    dv.TargetId = targetId;
+                                                }
+                                            },
+                                            {
+                                                DungeonTargetData.NumsFieldNumber, dungeonTargetDataData =>
+                                                {
+                                                    var nums = dungeonTargetDataData.ReadInt32();
+                                                    dungeonTargetDataData.ReadInt32();
+
+                                                    dv.Nums = nums;
+                                                }
+                                            },
+                                            {
+                                                DungeonTargetData.CompleteFieldNumber, dungeonTargetDataData =>
+                                                {
+                                                    var complete = dungeonTargetDataData.ReadInt32();
+                                                    dungeonTargetDataData.ReadInt32();
+
+                                                    dv.Complete = complete;
+                                                }
+                                            }
+                                        };
+
+                                        ReadBinaryContainer(dungeonTarget, targetDataDataFuncs, "DungeonTargetDataData");
+
+                                        if (targetData.ContainsKey(dk))
+                                        {
+                                            targetData[dk] = dv;
+                                        }
+                                        else
+                                        {
+                                            System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonTarget.TargetData did not find key to update ({dk})");
+                                            targetData.Add(dk, dv);
+                                        }
+                                    }
+
+                                    foreach (var dataItem in targetData)
+                                    {
+                                        //BPSR_ZDPS.Windows.DebugDungeonTracker.DungeonTargetDataTracker.Enqueue(dataItem);
+                                    }
+
+                                    System.Diagnostics.Debug.WriteLine($"syncDungeonDirtyData.DungeonTarget.TargetData finished");
+                                }
+                            }
+                        };
+
+                        ReadBinaryContainer(dungeonSyncData, targetDataFuncs, "DungeonTarget");
                     }
                 },
                 {
@@ -1616,8 +1746,5 @@ namespace BPSR_ZDPS
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static bool IsUuidPlayerRaw(long uuidRaw) => (uuidRaw & 0xFFFFL) == 640L;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        static long Shr16(long v) => v >> 16;
     }
 }

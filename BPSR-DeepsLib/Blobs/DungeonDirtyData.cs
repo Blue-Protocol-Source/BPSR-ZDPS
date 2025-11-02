@@ -4,25 +4,34 @@ namespace BPSR_DeepsLib.Blobs;
 
 public class DungeonDirtyData(BlobReader blob) : BlobType(ref blob)
 {
-    public uint?         SceneUuid;
-    public DungeonScore? Score;
-    public ReviveInfo?   ReviveInfo;
+    public uint? SceneUuid;
+    public DungeonFlowInfo? FlowInfo;
     public DungeonTarget? Target;
+    public DungeonVar? DungeonVar;
+    public DungeonScore? Score;
+    public DungeonReviveInfo? ReviveInfo;
 
     public override bool ParseField(int index, ref BlobReader blob)
     {
-        switch (index) {
+        switch (index)
+        {
             case DungeonSyncData.SceneUuidFieldNumber:
                 SceneUuid = blob.ReadUInt();
+                return true;
+            case DungeonSyncData.FlowInfoFieldNumber:
+                FlowInfo = new(blob);
+                return true;
+            case DungeonSyncData.TargetFieldNumber:
+                Target = new(blob);
+                return true;
+            case DungeonSyncData.DungeonVarFieldNumber:
+                DungeonVar = new(blob);
                 return true;
             case DungeonSyncData.DungeonScoreFieldNumber:
                 Score = new(blob);
                 return true;
             case DungeonSyncData.ReviveInfoFieldNumber:
                 ReviveInfo = new(blob);
-                return true;
-            case DungeonSyncData.TargetFieldNumber:
-                Target = new(blob);
                 return true;
             default:
                 return false;
