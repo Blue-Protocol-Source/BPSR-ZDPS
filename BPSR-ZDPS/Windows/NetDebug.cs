@@ -8,11 +8,23 @@ public static class NetDebug
 {
     public const string LAYER = "NetDebugLayer";
     public static bool IsOpened = false;
+     static int RunOnceDelayed = 0;
 
     public static void Draw()
     {
         if (!IsOpened)
             return;
+        
+        if (RunOnceDelayed == 1)
+        {
+            RunOnceDelayed++;
+            Utils.SetCurrentWindowIcon();
+            Utils.BringWindowToFront();
+        }
+        else if (RunOnceDelayed < 1)
+        {
+            RunOnceDelayed++;
+        }
         
         ImGui.SetNextWindowSize(new Vector2(1000, 600), ImGuiCond.FirstUseEver);
         ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -61,11 +73,12 @@ public static class NetDebug
             }
             
             if (ImGui.CollapsingHeader("Active TCP Streams")) {
-                if (ImGui.BeginTable("TcpConnectionsTable", 9, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {
+                if (ImGui.BeginTable("TcpConnectionsTable", 10, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {
                     ImGui.TableSetupColumn("Endpoint", ImGuiTableColumnFlags.WidthFixed, 180.0f);
+                    ImGui.TableSetupColumn("Is Synced", ImGuiTableColumnFlags.WidthFixed, 60.0f);
                     ImGui.TableSetupColumn("Next Expected Seq", ImGuiTableColumnFlags.WidthFixed, 100.0f);
                     ImGui.TableSetupColumn("Last Seq", ImGuiTableColumnFlags.WidthFixed, 100.0f);
-                    ImGui.TableSetupColumn("Seq Diff", ImGuiTableColumnFlags.WidthFixed, 100.0f);
+                    ImGui.TableSetupColumn("Seq Diff", ImGuiTableColumnFlags.WidthFixed, 50.0f);
                     ImGui.TableSetupColumn("Cached", ImGuiTableColumnFlags.WidthFixed, 50.0f);
                     ImGui.TableSetupColumn("Bytes Sent", ImGuiTableColumnFlags.WidthFixed, 100.0f);
                     ImGui.TableSetupColumn("Packets Seen", ImGuiTableColumnFlags.WidthFixed, 100.0f);
@@ -78,6 +91,11 @@ public static class NetDebug
 
                         ImGui.TableNextColumn();
                         ImGui.Text(conn.Key.ToString());
+                        
+                        ImGui.TableNextColumn();
+                        ImGui.PushStyleColor(ImGuiCol.Text, conn.Value.IsSynced ? Colors.Green : Colors.Red);
+                        ImGui.Text(conn.Value.IsSynced ? "Yes" : "No");
+                        ImGui.PopStyleColor();
 
                         ImGui.TableNextColumn();
                         ImGui.Text(conn.Value.NextExpectedSeq.HasValue

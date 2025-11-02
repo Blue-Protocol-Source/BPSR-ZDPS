@@ -510,7 +510,7 @@ namespace BPSR_ZDPS
 
             // We'll spin up a new encounter before processing any of this data so it's nice and fresh in the new encounter
             EncounterManager.StartNewBattle();
-            EncounterManager.StartEncounter();
+            EncounterManager.StartEncounter(true);
 
             var syncContainerData = SyncContainerData.Parser.ParseFrom(payloadBuffer);
             if (syncContainerData?.VData == null)
