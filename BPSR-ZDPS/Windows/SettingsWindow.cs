@@ -22,6 +22,8 @@ namespace BPSR_ZDPS.Windows
         static bool colorClassIconsByRole;
         static bool showSkillIconsInDetails;
         static bool onlyShowDamageContributorsInMeters;
+        static bool useAutomaticWipeDetection;
+        static bool skipTeleportStateCheckInAutomaticWipeDetection;
         static float windowOpacity;
 
         static bool IsBindingEncounterResetKey = false;
@@ -48,6 +50,8 @@ namespace BPSR_ZDPS.Windows
             colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
             showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
             onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
+            useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
+            skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
             windowOpacity = Settings.Instance.WindowOpacity;
 
             EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
@@ -209,6 +213,26 @@ namespace BPSR_ZDPS.Windows
                 ImGui.EndDisabled();
                 ImGui.Unindent();
 
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Use Automatic Wipe Detection: ");
+                ImGui.SameLine();
+                ImGui.Checkbox("##UseAutomaticWipeDetection", ref useAutomaticWipeDetection);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("When enabled, ZDPS will attempt to detect party wipes against bosses and start a new encounter automatically.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Skip Teleport State Check In Automatic Wipe Detection: ");
+                ImGui.SameLine();
+                ImGui.Checkbox("##SkipTeleportStateCheckInAutomaticWipeDetection", ref skipTeleportStateCheckInAutomaticWipeDetection);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("When enabled, the 'Teleport' Player State requirement in Automatic Wipe Detection is not performed. You probably want this Disabled.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
                 ImGui.SeparatorText("User Interface");
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Color Class Icons By Role Type: ");
@@ -300,6 +324,10 @@ namespace BPSR_ZDPS.Windows
 
                     Settings.Instance.OnlyShowDamageContributorsInMeters = onlyShowDamageContributorsInMeters;
 
+                    Settings.Instance.UseAutomaticWipeDetection = useAutomaticWipeDetection;
+
+                    Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection = skipTeleportStateCheckInAutomaticWipeDetection;
+
                     Settings.Instance.WindowOpacity = windowOpacity;
 
                     RegisterAllHotkeys(mainWindow);
@@ -322,6 +350,10 @@ namespace BPSR_ZDPS.Windows
                     showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
 
                     onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
+
+                    useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
+
+                    skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
 
                     windowOpacity = Settings.Instance.WindowOpacity;
 

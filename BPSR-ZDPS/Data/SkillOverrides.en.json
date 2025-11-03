@@ -1054,6 +1054,10 @@
     {
         "Name": "Meteor Strike"
     },
+    "100560":
+    {
+        "Name": "Goblin Mage - Meteor Strike"
+    },
     "100551":
     {
         "Name": "Goblin Mage Fire Meteor Impact (Profession Trial)"
@@ -1384,7 +1388,8 @@
     },
     "149905":
     {
-        "Name": "Bird Throw"
+        "Name": "Azure Sever",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_kx06"
     },
     "149906":
     {
@@ -1554,7 +1559,7 @@
     },
     "220101":
     {
-        "Name": "?Bullseye?"
+        "Name": "Bullseye"
     },
     "220102":
     {

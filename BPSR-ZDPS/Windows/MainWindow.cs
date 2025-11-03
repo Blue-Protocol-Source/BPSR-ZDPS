@@ -106,8 +106,9 @@ namespace BPSR_ZDPS.Windows
                 {
                     HelperMethods.MainWindowPlatformHandleRaw = (IntPtr)ImGui.GetWindowViewport().PlatformHandleRaw;
                 }
-                
-                HotKeyManager.SetHookProc();
+
+                HotKeyManager.SetWndProc();
+                //HotKeyManager.SetHookProc();
 
                 Settings.Instance.ApplyHotKeys(this);
 

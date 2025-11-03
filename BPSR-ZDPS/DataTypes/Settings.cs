@@ -15,6 +15,8 @@ public class Settings
     public bool ColorClassIconsByRole { get; set; } = true;
     public bool ShowSkillIconsInDetails { get; set; } = true;
     public bool OnlyShowDamageContributorsInMeters { get; set; } = false;
+    public bool UseAutomaticWipeDetection { get; set; } = true;
+    public bool SkipTeleportStateCheckInAutomaticWipeDetection { get; set; } = false;
     public float WindowOpacity = 1.0f;
 
     public uint HotkeysEncounterReset { get; set; }

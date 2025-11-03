@@ -13,6 +13,7 @@ using System.Numerics;
 using Silk.NET.Core.Native;
 using BPSR_ZDPS.DataTypes;
 using static HexaGen.Runtime.MemoryPool;
+using System.Collections.Concurrent;
 
 namespace BPSR_ZDPS
 {
@@ -162,14 +163,20 @@ namespace BPSR_ZDPS
                         var entityState = reader.ReadInt32();
                         EActorState state = (EActorState)entityState;
                         EncounterManager.Current.SetAttrKV(uuid, "AttrState", state);
+
+                        if (uuid == currentUserUuid)
+                        {
+                            CheckForWipe();
+                        }
+                        
                         break;
-                    case EAttrType.AttrCombatState:
+                    /*case EAttrType.AttrCombatState:
                     case EAttrType.AttrInBattleShow:
                         if (uuid == 285140 && attr.Id == 104 || attr.Id == 186)
                         {
                             System.Diagnostics.Debug.WriteLine($"[YOU] had {(EAttrType)attr.Id} = {reader.ReadInt32()}");
                         }
-                        break;
+                        break;*/
                     case EAttrType.AttrShieldList:
                         {
                             //System.Diagnostics.Debug.WriteLine($"AttrShieldList");
@@ -347,12 +354,12 @@ namespace BPSR_ZDPS
                 //System.Diagnostics.Debug.WriteLine($"delta.TempAttrs.Attrs.count = {delta.TempAttrs.Attrs.Count}");
             }
 
-            if (delta.BuffEffect != null && (targetUuid == 285140 || targetUuid == 29288969))
+            if (delta.BuffEffect != null)
             {
                 //System.Diagnostics.Debug.WriteLine($"delta.BuffEffect={delta.BuffEffect.BuffEffects.Count}");
             }
 
-            if (delta.BuffInfos != null && targetUuid == 285140)
+            if (delta.BuffInfos != null)
             {
                 //System.Diagnostics.Debug.WriteLine($"delta.BuffInfos={delta.BuffInfos.BuffInfos.Count}");
             }
@@ -797,6 +804,112 @@ namespace BPSR_ZDPS
             System.Diagnostics.Debug.WriteLine($"syncDungeonData.vData State={vData.FlowInfo.State},TotalScore={vData.DungeonScore.TotalScore},CurRatio={vData.DungeonScore.CurRatio}");
         }
 
+        public static ConcurrentQueue<EActorState> PlayerStateHistory = new();
+        public static void CheckForWipe()
+        {
+            // An encounter is considered a wipe when all the following are true:
+            // Player was in the Dead state and is now going into the TelePort state either from Dead or Resurrection
+            // All known bosses have 100% HP
+            // In order to track this, we must hold onto the last couple player states
+
+            if (!Settings.Instance.UseAutomaticWipeDetection)
+            {
+                return;
+            }
+
+            if (currentUserUuid != 0)
+            {
+                var playerEntity = EncounterManager.Current.GetOrCreateEntity(currentUserUuid);
+                var attrState = playerEntity.GetAttrKV("AttrState");
+                if (attrState != null)
+                {
+                    //System.Diagnostics.Debug.WriteLine($"{currentUserUuid} state = {attrState}");
+
+                    if (PlayerStateHistory == null)
+                    {
+                        PlayerStateHistory = new();
+                    }
+
+                    if (PlayerStateHistory.Count >= 5)
+                    {
+                        PlayerStateHistory.TryDequeue(out _);
+                    }
+
+                    // NOTE: We have changed to only calling from the AttrState setter for now
+                    // Since we call this function from multiple locations instead of only when an update to the state occurs
+                    // We'll only be adding the latest unique state to our history tracker for now
+                    // If there end up being wipe patterns that use duplicate state ordering, we can adjust it later to work with that
+                    //if (PlayerStateHistory.Last() != EActorState.ActorStateDefault && PlayerStateHistory.Last() != (EActorState)attrState)
+                    {
+                        PlayerStateHistory.Enqueue((EActorState)attrState);
+                    }
+                }
+                else
+                {
+                    return;
+                }
+
+                // Perform Player State pattern check
+                // Wipe state patterns:
+                // ActorStateDead > ActorStateResurrection > ActorStateTelePort
+                // ActorStateDead > ActorStateTelePort
+                bool useNoTeleportWipePattern = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
+                bool isStateWipePattern = false;
+                int stateCount = PlayerStateHistory.Count();
+                if (useNoTeleportWipePattern == false && stateCount >= 3 && PlayerStateHistory.ElementAt(stateCount - 1) == EActorState.ActorStateTelePort)
+                {
+                    if (PlayerStateHistory.ElementAt(stateCount - 2) == EActorState.ActorStateResurrection)
+                    {
+                        if (PlayerStateHistory.ElementAt(stateCount - 3) == EActorState.ActorStateDead)
+                        {
+                            isStateWipePattern = true;
+                        }
+                    }
+                    else if (PlayerStateHistory.ElementAt(stateCount - 2) == EActorState.ActorStateDead)
+                    {
+                        isStateWipePattern = true;
+                    }
+                }
+                else if (useNoTeleportWipePattern && stateCount >= 2 && PlayerStateHistory.ElementAt(stateCount - 1) == EActorState.ActorStateResurrection)
+                {
+                    if (PlayerStateHistory.ElementAt(stateCount - 2) == EActorState.ActorStateDead)
+                    {
+                        isStateWipePattern = true;
+                    }
+                }
+                //System.Diagnostics.Debug.WriteLine($"useNoTeleportWipePattern == {useNoTeleportWipePattern} && isStateWipePattern == {isStateWipePattern}");
+
+                if (isStateWipePattern)
+                {
+                    // The player state is in a wipe pattern
+                    // Check if there is a Boss type monster
+                    var bosses = EncounterManager.Current.Entities.Where(x => x.MonsterType == 2);
+                    //System.Diagnostics.Debug.WriteLine($"bosses.Count = {bosses.Count()}");
+
+                    if (bosses.Count() > 0)
+                    {
+                        int bossesAtMaxHp = 0;
+                        foreach (var boss in bosses)
+                        {
+                            // If all bosses are full HP, then let's call it a wipe
+                            long? hp = boss.GetAttrKV("AttrHp") as long?;
+                            long? maxHp = boss.GetAttrKV("AttrMaxHp") as long?;
+                            // Might need to use MaxHpTotal?
+                            if (hp != null && maxHp != null && hp > 0 && maxHp > 0 && hp >= maxHp)
+                            {
+                                //System.Diagnostics.Debug.WriteLine($"We've hit a wipe (bossesAtMaxHp = {bossesAtMaxHp})! Start up a new encounter");
+                                EncounterManager.StartEncounter();
+                            }
+                            else
+                            {
+                                //System.Diagnostics.Debug.WriteLine($"We didn't hit a wipe yet {boss.UUID} - {boss.Name} {hp} / {maxHp}");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         public static void ProcessSyncDungeonDirtyData(ReadOnlySpan<byte> payloadBuffer)
         {
             var dirty = SyncDungeonDirtyData.Parser.ParseFrom(payloadBuffer);
@@ -827,9 +940,19 @@ namespace BPSR_ZDPS
                     else if (dungeonState == EDungeonState.DungeonStatePlaying)
                     {
                         // Encounter has begun
-                        EncounterManager.StopEncounter();
-                        EncounterManager.StartNewBattle();
-                        EncounterManager.StartEncounter();
+                        //EncounterManager.StopEncounter();
+                        if (EncounterManager.Current.HasStatsBeenRecorded())
+                        {
+                            // Start up a new BattleId if we've already recording actions happening before the dungeon's proper start
+                            // This prevents us from throwing away any data of potential interest to the user
+                            EncounterManager.StartNewBattle();
+                            EncounterManager.StartEncounter(true);
+                        }
+                        else
+                        {
+                            EncounterManager.StartEncounter();
+                        }
+                        
                     }
                 }
             }
@@ -857,8 +980,15 @@ namespace BPSR_ZDPS
                     {
                         // We got a new objective, either advanced the phase or reset... or advanced and the devs are trolling with too many states
                         EncounterManager.StopEncounter();
-                        EncounterManager.StartEncounter();
+                        EncounterManager.StartEncounter(true);
                     }
+
+                    // Since people may never open this window, let's ensure the list doesn't just grow forever
+                    if (BPSR_ZDPS.Windows.DebugDungeonTracker.DungeonTargetDataTracker.Count() > 100)
+                    {
+                        BPSR_ZDPS.Windows.DebugDungeonTracker.DungeonTargetDataTracker.TryDequeue(out _);
+                    }
+
                     BPSR_ZDPS.Windows.DebugDungeonTracker.DungeonTargetDataTracker.Enqueue(target);
                 }
             }

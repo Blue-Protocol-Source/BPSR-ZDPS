@@ -84,6 +84,7 @@ namespace BPSR_ZDPS
             HotKey? registeredKey = RegisteredKeys.Where(x => x.Name == keyName).FirstOrDefault();
             if (registeredKey != null && registeredKey.Value.Name == keyName)
             {
+                UnregisterHotKey(HelperMethods.MainWindowPlatformHandleRaw, registeredKey.Value.Id);
                 RegisteredKeys.Remove(registeredKey.Value);
             }
 
@@ -97,12 +98,20 @@ namespace BPSR_ZDPS
                 Id = nextId,
                 HotKeyAction = action
             };
-            RegisteredKeys.Add(newKey);
+            if (RegisterHotKey(HelperMethods.MainWindowPlatformHandleRaw, newKey.Id, HotKeyManager.MOD_NOREPEAT | modififers, vk))
+            {
+                RegisteredKeys.Add(newKey);
+            }
         }
 
         public static void UnregisterAllHotKeys()
         {
-            RegisteredKeys.Clear();
+            foreach (var key in RegisteredKeys)
+            {
+                UnregisterHotKey(HelperMethods.MainWindowPlatformHandleRaw, key.Id);
+            }
+
+            //RegisteredKeys.Clear();
         }
 
         public static void UnregisterHookProc()
@@ -112,6 +121,15 @@ namespace BPSR_ZDPS
                 User32.UnhookWindowsHookEx(HotKeysHookHandle);
                 HotKeysHookHandle = IntPtr.Zero;
             }
+        }
+
+        public unsafe static void SetWndProc()
+        {
+            HotKeysWndProc = new WndProc(HotKeyWndProc);
+
+            IntPtr newProcPtr = Marshal.GetFunctionPointerForDelegate(HotKeysWndProc);
+
+            OriginalWndProc = SetWindowLongPtr(HelperMethods.MainWindowPlatformHandleRaw, GWLP_WNDPROC, newProcPtr);
         }
 
         public static void SetHookProc()
@@ -130,6 +148,22 @@ namespace BPSR_ZDPS
                 var lastError = Marshal.GetLastWin32Error();
                 System.Diagnostics.Debug.WriteLine($"SetHookProc.GetLastWin32Error = {lastError}");
             }
+        }
+
+        public static IntPtr HotKeyWndProc(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam)
+        {
+            if (msg == WM_HOTKEY)
+            {
+                var hotKeyId = wParam.ToInt32();
+
+                HotKey? boundKeys = RegisteredKeys.Where(x => x.Id == hotKeyId).FirstOrDefault();
+                if (boundKeys != null)
+                {
+                    boundKeys?.HotKeyAction();
+                }
+            }
+
+            return CallWindowProc(OriginalWndProc, hWnd, msg, wParam, lParam);
         }
 
         public static IntPtr HotKeyHookProc(int nCode, IntPtr wParam, IntPtr lParam)

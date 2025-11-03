@@ -61,7 +61,7 @@ namespace BPSR_ZDPS.Windows
 
             var main_viewport = ImGui.GetMainViewport();
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSize(new Vector2(800, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(840, 600), ImGuiCond.FirstUseEver);
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
@@ -114,7 +114,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             float texSize = 96.0f;
                             ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - texSize - ImGui.GetStyle().ItemSpacing.X - ImGui.GetStyle().FramePadding.X);
-                            if (Settings.Instance.ColorClassIconsByRole == false)
+                            if (Settings.Instance.ColorClassIconsByRole)
                             {
                                 var roleColor = Professions.RoleTypeColors(Professions.GetRoleFromBaseProfessionId(LoadedEntity.ProfessionId));
                                 roleColor.Z = roleColor.Z * 0.5f;
@@ -304,6 +304,10 @@ namespace BPSR_ZDPS.Windows
                         {
                             ImGui.Text($"{valueExtraTotalLabel} {Utils.NumberToShorthand(LoadedEntity.TotalOverhealing)}");
                         }
+                        else if (TableFilterMode == ETableFilterMode.SkillsTaken)
+                        {
+                            // TODO: Add 'Total Shield' value
+                        }
                         ImGui.Text($"Total Hits: {combatStats.HitsCount}");
 
                         ImGui.TableNextColumn();
@@ -374,11 +378,26 @@ namespace BPSR_ZDPS.Windows
                 {
                     ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f, ImGui.GetStyle().CellPadding.Y));
 
-                    if (ImGui.BeginTable("##SkillStatsTable", 8, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit))
+                    int columnCount = 8;
+                    if (TableFilterMode == ETableFilterMode.SkillsDamage)
+                    {
+                        columnCount = 8;
+                    }
+                    else if (TableFilterMode == ETableFilterMode.SkillsHealing)
+                    {
+                        columnCount = 8;
+                    }
+                    else if (TableFilterMode == ETableFilterMode.SkillsTaken)
+                    {
+                        columnCount = 9;
+                    }
+
+                    if (ImGui.BeginTable("##SkillStatsTable", columnCount, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit))
                     {
                         string valueTotalColumnName = "Damage";
                         string valuePerSecondColumnName = "Total DPS";
                         string valueShareColumnName = "Total DMG %";
+                        string valueExtraStatColumnName = "";
 
                         IReadOnlyList<KeyValuePair<int, CombatStats2>> skillStats = null;
 
@@ -401,6 +420,7 @@ namespace BPSR_ZDPS.Windows
                                 valueTotalColumnName = "Damage";
                                 valuePerSecondColumnName = "Total DPS";
                                 valueShareColumnName = "Total DMG %";
+                                valueExtraStatColumnName = "Deaths";
                                 break;
                             default:
                                 skillStats = (IReadOnlyList<KeyValuePair<int, CombatStats2>>)(LoadedEntity.SkillStats.Where(x => x.Value.SkillType == ESkillType.Damage).OrderByDescending(x => x.Value.ValueTotal).ToList());
@@ -418,6 +438,12 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Crit Rate");
                         ImGui.TableSetupColumn("Avg Per Hit");
                         ImGui.TableSetupColumn(valueShareColumnName);
+
+                        if (TableFilterMode == ETableFilterMode.SkillsTaken)
+                        {
+                            ImGui.TableSetupColumn(valueExtraStatColumnName);
+                        }
+
                         ImGui.TableHeadersRow();
 
                         for (int i = 0; i < skillStats.Count; i++)
@@ -495,6 +521,12 @@ namespace BPSR_ZDPS.Windows
                                 totalDamageContribution = Math.Round(((double)stat.Value.ValueTotal / (double)entityTotalValue) * 100.0, 0);
                             }
                             ImGui.Text($"{totalDamageContribution}%%");
+
+                            if (TableFilterMode == ETableFilterMode.SkillsTaken)
+                            {
+                                ImGui.TableNextColumn();
+                                ImGui.Text($"{stat.Value.KillCount}");
+                            }
                         }
 
                         ImGui.EndTable();
@@ -523,6 +555,7 @@ namespace BPSR_ZDPS.Windows
                 else if (TableFilterMode == ETableFilterMode.Debug)
                 {
                     ImGui.Text($"UUID: {LoadedEntity.UUID}");
+                    ImGui.Text($"MonsterType: {LoadedEntity.MonsterType}");
 
                     ImGui.Text("Skill Stats:");
                     ImGui.SetNextItemWidth(-1);

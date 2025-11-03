@@ -1,5 +1,6 @@
 ﻿using BPSR_ZDPS.DataTypes;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -41,6 +42,7 @@ namespace BPSR_ZDPS
                 {
                     // Nothing has actually happened in this encounter, so let's just reset the time and reuse it
                     Current.SetStartTime(DateTime.Now);
+                    Current.SetEndTime(DateTime.MinValue);
                     if (LevelMapId > 0)
                     {
                         SetSceneId(LevelMapId);
@@ -124,7 +126,7 @@ namespace BPSR_ZDPS
         public DateTime EndTime { get; private set; }
         private TimeSpan? Duration { get; set; }
         public DateTime LastUpdate { get; set; }
-        public List<Entity> Entities { get; set; }
+        public ConcurrentStack<Entity> Entities { get; set; }
 
         public ulong TotalDamage { get; set; } = 0;
         public ulong TotalShieldBreak { get; set; } = 0;
@@ -132,6 +134,7 @@ namespace BPSR_ZDPS
         public ulong TotalOverhealing { get; set; } = 0;
         public ulong TotalTakenDamage { get; set; } = 0;
         public ulong TotalNpcTakenDamage { get; set; } = 0;
+        public ulong TotalDeaths { get; set; } = 0;
 
         public Encounter(int battleId = 0)
         {
@@ -177,7 +180,7 @@ namespace BPSR_ZDPS
             if (entity == null)
             {
                 entity = new Entity(uuid);
-                Entities.Add(entity);
+                Entities.Push(entity);
             }
 
             return entity;
@@ -211,9 +214,10 @@ namespace BPSR_ZDPS
                 // Only the Attribute named Id (AttrId) is their real type UID which can be resolved into a name
                 // Also can be used to get all of their setup information from the Monsters table
                 entity.UID = (int)attr_id;
-                if (HelperMethods.DataTables.Monsters.Data.ContainsKey(attr_id.ToString()))
+                if (HelperMethods.DataTables.Monsters.Data.TryGetValue(attr_id.ToString(), out var monsterEntry))
                 {
-                    entity.SetName(HelperMethods.DataTables.Monsters.Data[attr_id.ToString()].Name);
+                    entity.SetName(monsterEntry.Name);
+                    entity.SetMonsterType(monsterEntry.MonsterType);
                 }
             }
         }
@@ -225,9 +229,10 @@ namespace BPSR_ZDPS
 
             if (key == "AttrId" && entity.EntityType == EEntityType.EntMonster && string.IsNullOrEmpty(entity.Name))
             {
-                if (HelperMethods.DataTables.Monsters.Data.ContainsKey(value.ToString()))
+                if (HelperMethods.DataTables.Monsters.Data.TryGetValue(value.ToString(), out var monsterEntry))
                 {
-                    entity.SetName(HelperMethods.DataTables.Monsters.Data[value.ToString()].Name);
+                    entity.SetName(monsterEntry.Name);
+                    entity.SetMonsterType(monsterEntry.MonsterType);
                 }
             }
             else if (key == "AttrLevel")
@@ -237,6 +242,13 @@ namespace BPSR_ZDPS
             else if (key == "AttrSkillId")
             {
                 entity.RegisterSkillActivation((int)value);
+            }
+            else if (key == "AttrState")
+            {
+                if ((EActorState)value == EActorState.ActorStateDead)
+                {
+                    entity.IncrementDeaths();
+                }
             }
         }
 
@@ -306,7 +318,7 @@ namespace BPSR_ZDPS
         }
     }
 
-    public class Entity
+    public class Entity : System.ICloneable
     {
         public long UUID { get; set; }
         public long UID { get; set; }
@@ -333,8 +345,28 @@ namespace BPSR_ZDPS
         public ulong TotalTakenDamage { get; set; } = 0;
         public ulong TotalShield { get; set; } = 0;
         public ulong TotalCasts { get; set; } = 0;
+        public ulong TotalDeaths { get; set; } = 0;
+
+        // Monster specific variables
+        // When -1, this is unset (non-Monsters will be at -1), when 1 this is Elite, when 2 it is a boss
+        public int MonsterType { get; set; } = -1;
 
         public Dictionary<string, object> Attributes { get; set; } = new();
+
+        public object Clone()
+        {
+            var cloned = this.MemberwiseClone();
+            ((Entity)cloned).DamageStats = (CombatStats2)this.DamageStats.Clone();
+            ((Entity)cloned).HealingStats = (CombatStats2)this.HealingStats.Clone();
+            ((Entity)cloned).TakenStats = (CombatStats2)this.TakenStats.Clone();
+            //((Entity)cloned).SkillStats.Clear();
+            // This cursed loop ensures we dereference all the items and don't break the current encounter tracker
+            foreach (var skillStat in this.SkillStats)
+            {
+                ((Entity)cloned).SkillStats.AddOrUpdate(skillStat.Key, (CombatStats2)skillStat.Value.Clone(), (key, value) => (CombatStats2)skillStat.Value.Clone());
+            }
+            return cloned;
+        }
 
         public Entity(long uuid, string name = null)
         {
@@ -444,6 +476,21 @@ namespace BPSR_ZDPS
             }
         }
 
+        public void IncrementDeaths()
+        {
+            TotalDeaths++;
+        }
+
+        public void SetDeaths(ulong deaths)
+        {
+            TotalDeaths = deaths;
+        }
+
+        public void SetMonsterType(int type)
+        {
+            MonsterType = type;
+        }
+
         public void RegisterSkillActivation(int skillId)
         {
             if (!SkillStats.TryGetValue(skillId, out var stats))
@@ -466,7 +513,7 @@ namespace BPSR_ZDPS
             TotalCasts++;
         }
 
-        public void RegisterSkillData(ESkillType skillType, int skillId, long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky)
+        public void RegisterSkillData(ESkillType skillType, int skillId, long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, bool isDead = false)
         {
             if (!SkillStats.TryGetValue(skillId, out var stats))
             {
@@ -479,13 +526,13 @@ namespace BPSR_ZDPS
                     combatStats.SetName(HelperMethods.DataTables.Skills.Data[skillId.ToString()].Name);
                 }
 
-                combatStats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky);
+                combatStats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky, isDead);
                 SkillStats.TryAdd(skillId, combatStats);
             }
             else
             {
                 stats.SetSkillType(skillType);
-                stats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky);
+                stats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky, isDead);
             }
         }
 
@@ -546,7 +593,7 @@ namespace BPSR_ZDPS
         public void AddTakenDamage(int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, EDamageSource damageSource = 0, bool isMiss = false, bool isDead = false)
         {
             TotalTakenDamage += (ulong)damage;
-            RegisterSkillData(ESkillType.Taken, skillId, damage, isCrit, isLucky, hpLessen, false);
+            RegisterSkillData(ESkillType.Taken, skillId, damage, isCrit, isLucky, hpLessen, false, isDead);
             /*TakenStats.value += (long)damage;
             TakenStats.StartTime ??= DateTime.Now;
             TakenStats.EndTime = DateTime.Now;*/
@@ -561,6 +608,65 @@ namespace BPSR_ZDPS
         {
             return Attributes.TryGetValue(key, out var val) ? val : null;
         }
+
+        // Merges the data from another entity with this one, does not check the UUIDs match first
+        public void MergeEntity(Entity newEntity)
+        {
+            Name = newEntity.Name;
+            Level = newEntity.Level;
+            if (newEntity.AbilityScore > 0)
+            {
+                SetAbilityScore(newEntity.AbilityScore);
+            }
+            if (newEntity.ProfessionId > 0)
+            {
+                SetProfessionId(newEntity.ProfessionId);
+            }
+            if (newEntity.SubProfessionId > 0)
+            {
+                SetSubProfessionId(newEntity.SubProfessionId);
+            }
+            
+            TotalDamage += newEntity.TotalDamage;
+            TotalShieldBreak += newEntity.TotalShieldBreak;
+            TotalHealing += newEntity.TotalHealing;
+            TotalOverhealing += newEntity.TotalOverhealing;
+            TotalTakenDamage += newEntity.TotalTakenDamage;
+            TotalShield += newEntity.TotalShield;
+            TotalCasts += newEntity.TotalCasts;
+            TotalDeaths += newEntity.TotalDeaths;
+
+            DamageStats.MergeCombatStats(newEntity.DamageStats);
+            HealingStats.MergeCombatStats(newEntity.HealingStats);
+            TakenStats.MergeCombatStats(newEntity.TakenStats);
+
+            // Merge Attributes, this might be a bit weird given what values Attributes can hold
+            foreach (var newAttr in newEntity.Attributes)
+            {
+                if (Attributes.ContainsKey(newAttr.Key))
+                {
+                    Attributes[newAttr.Key] = newAttr.Value;
+                }
+                else
+                {
+                    Attributes.Add(newAttr.Key, newAttr.Value);
+                }
+            }
+
+            // Merge SkillStats
+            foreach (var newSkillStat in newEntity.SkillStats)
+            {
+                SkillStats.TryGetValue(newSkillStat.Key, out var foundSkill);
+                if (foundSkill != null)
+                {
+                    foundSkill.MergeCombatStats(newSkillStat.Value);
+                }
+                else
+                {
+                    SkillStats.TryAdd(newSkillStat.Key, (CombatStats2)newSkillStat.Value.Clone());
+                }
+            }
+        }
     }
 
     public enum ESkillType : int
@@ -571,7 +677,7 @@ namespace BPSR_ZDPS
         Taken = 3
     }
 
-    public class CombatStats2
+    public class CombatStats2 : System.ICloneable
     {
         public string Name { get; private set; }
         public ESkillType SkillType { get; private set; } = ESkillType.Unknown;
@@ -604,6 +710,11 @@ namespace BPSR_ZDPS
 
         public DateTime? StartTime = null;
         public DateTime? EndTime = null;
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
 
         public void SetName(string name)
         {
@@ -652,7 +763,7 @@ namespace BPSR_ZDPS
             ValueLuckyTotal += (ulong)value;
         }
 
-        public void AddData(long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky)
+        public void AddData(long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, bool isDead = false)
         {
             StartTime ??= DateTime.Now;
             EndTime = DateTime.Now;
@@ -681,6 +792,11 @@ namespace BPSR_ZDPS
                 CritLuckyCount++;
             }
 
+            if (isDead)
+            {
+                KillCount++;
+            }
+
             HitsCount++;
 
             ValueCritLuckyTotal = ValueCritTotal + ValueLuckyTotal;
@@ -688,6 +804,80 @@ namespace BPSR_ZDPS
             ValueAverage = HitsCount > 0 ? Math.Round(((double)ValueTotal / (double)HitsCount), 0) : 0.0;
             CritRate = HitsCount > 0 ? Math.Round(((double)CritCount / (double)HitsCount) * 100.0, 0) : 0.0;
             LuckyRate = HitsCount > 0 ? Math.Round(((double)LuckyCount / (double)HitsCount) * 100.0, 0) : 0.0;
+
+            if (StartTime != null && EndTime != null && StartTime < EndTime)
+            {
+                var seconds = (EndTime.Value - StartTime.Value).TotalSeconds;
+                if (seconds >= 1.0)
+                {
+                    ValuePerSecond = seconds > 0 ? Math.Round((double)ValueTotal / seconds, 0) : 0;
+                }
+                else
+                {
+                    ValuePerSecond = ValueTotal;
+                }
+            }
+        }
+
+        // Merges the data from another Combat Stats with this one, always uses the new Name and SkillType
+        public void MergeCombatStats(CombatStats2 newCombatStats)
+        {
+            if (!string.IsNullOrEmpty(newCombatStats.Name))
+            {
+                SetName(newCombatStats.Name);
+            }
+            SetSkillType(newCombatStats.SkillType);
+
+            ValueTotal += newCombatStats.ValueTotal;
+            ValueNormalTotal += newCombatStats.ValueNormalTotal;
+            ValueCritTotal += newCombatStats.ValueCritTotal;
+            ValueLuckyTotal += newCombatStats.ValueLuckyTotal;
+            ValueCritLuckyTotal += newCombatStats.ValueCritLuckyTotal;
+            ValueMax = newCombatStats.ValueMax > ValueMax ? newCombatStats.ValueMax : ValueMax;
+            ValueMin = newCombatStats.ValueMin < ValueMin ? newCombatStats.ValueMin : ValueMin;
+
+            MissCount += newCombatStats.MissCount;
+            CritCount += newCombatStats.CritCount;
+            LuckyCount += newCombatStats.LuckyCount;
+            CritLuckyCount += newCombatStats.CritLuckyCount;
+            NormalCount += newCombatStats.NormalCount;
+            KillCount += newCombatStats.KillCount;
+            HitsCount += newCombatStats.HitsCount;
+            CastsCount += newCombatStats.CastsCount;
+
+            ValueAverage = HitsCount > 0 ? Math.Round(((double)ValueTotal / (double)HitsCount), 0) : 0.0;
+            CritRate = HitsCount > 0 ? Math.Round(((double)CritCount / (double)HitsCount) * 100.0, 0) : 0.0;
+            LuckyRate = HitsCount > 0 ? Math.Round(((double)LuckyCount / (double)HitsCount) * 100.0, 0) : 0.0;
+
+            if (newCombatStats.StartTime.HasValue)
+            {
+                if (StartTime.HasValue)
+                {
+                    if (newCombatStats.StartTime.Value < StartTime.Value)
+                    {
+                        StartTime = newCombatStats.StartTime.Value;
+                    }
+                }
+                else
+                {
+                    StartTime = newCombatStats.StartTime.Value;
+                }
+            }
+
+            if (newCombatStats.EndTime.HasValue)
+            {
+                if (EndTime.HasValue)
+                {
+                    if (newCombatStats.EndTime.Value > EndTime.Value)
+                    {
+                        EndTime = newCombatStats.EndTime.Value;
+                    }
+                }
+                else
+                {
+                    EndTime = newCombatStats.EndTime.Value;
+                }
+            }
 
             if (StartTime != null && EndTime != null && StartTime < EndTime)
             {
