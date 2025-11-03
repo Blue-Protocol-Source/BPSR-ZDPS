@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO.Pipelines;
 using System.Net;
 using PacketDotNet;
+using Serilog;
 using SharpPcap;
 
 namespace BPSR_DeepsLib;
@@ -24,14 +25,14 @@ public class TcpReassembler
             var newConn = new TcpConnection(ep, destEp);
             Connections.TryAdd(ep, newConn);
             OnNewConnection?.Invoke(newConn);
-            Debug.WriteLine($"Got a new connection {ep}");
+            Log.Logger.Information("Got a new connection {ep}", ep);
         }
 
         var conn = Connections[ep];
         if (tcpPacket.Reset || tcpPacket.Finished || tcpPacket.Synchronize)
         {
             RemoveConnection(conn);
-            Debug.WriteLine($"Removed connection {ep}, Reset: {tcpPacket.Reset}, Finished: {tcpPacket.Finished}, Synchronize: {tcpPacket.Synchronize}");
+            Log.Logger.Information($"Removed connection {ep}, Reset: {tcpPacket.Reset}, Finished: {tcpPacket.Finished}, Synchronize: {tcpPacket.Synchronize}");
             return;
         }
 
@@ -71,7 +72,7 @@ public class TcpReassembler
             }
 
             LastConnectionCleanUpTime = DateTime.Now;
-            Debug.WriteLine($"Removed {toRemove.Count} connections");
+            Log.Logger.Information($"Removed {toRemove.Count} connections");
         }
     }
 
@@ -110,7 +111,7 @@ public class TcpReassembler
                     (BinaryPrimitives.ReadInt16BigEndian(tcpPacket.PayloadData.AsSpan()[4..]) & 0x7FFF) <= 8)
                 {
                     IsSynced = true;
-                    Debug.WriteLine($"Connection {EndPoint} is synced");
+                    Log.Logger.Information($"Connection {EndPoint} is synced");
                 }
                 else {
                     return;
@@ -167,7 +168,7 @@ public class TcpReassembler
             }
 
             if (toRemove.Count() > 0)
-                Debug.WriteLine($"Cleaned up {toRemove.Count()} packets");
+                Log.Logger.Information($"Cleaned up {toRemove.Count()} packets");
         }
     }
 }

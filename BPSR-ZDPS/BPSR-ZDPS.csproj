@@ -38,6 +38,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
     <PackageReference Include="Serilog.Sinks.Debug" Version="3.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageReference Include="Silk.NET.Direct3D.Compilers" Version="2.22.0" />
     <PackageReference Include="Silk.NET.Direct3D11" Version="2.22.0" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />

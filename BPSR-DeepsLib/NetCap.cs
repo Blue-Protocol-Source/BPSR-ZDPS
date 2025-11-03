@@ -159,6 +159,7 @@ public class NetCap
                     var msg = $"!! Message Type ({msgType}) Was not in expected range, maybe this is not a game connection! {conn.EndPoint} -> {conn.DestEndPoint}";
                     Debug.WriteLine(msg);
                     ImportantLogMsgs.Add(msg);
+                    Log.Logger.Information(msg);
                     var connId = new ConnectionId(conn.EndPoint.Address.ToString(), (ushort)conn.EndPoint.Port, conn.DestEndPoint.Address.ToString(), (ushort)conn.DestEndPoint.Port);
                     //ConnectionFilters[connId] = false;
                     TcpReassempler.RemoveConnection(connId);
@@ -177,7 +178,7 @@ public class NetCap
             }
 
             NumConnectionReaders--;
-            Debug.WriteLine($"{conn.EndPoint} finished reading");
+            Log.Logger.Information($"{conn.EndPoint} finished reading");
         }, CancelTokenSrc.Token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
     }
     
@@ -272,7 +273,7 @@ public class NetCap
 
         if (!Enum.IsDefined(typeof(EServiceId), serviceUuid))
         {
-            System.Diagnostics.Debug.WriteLine($"Unknown ServiceId = {serviceUuid} MethodId = {methodId}");
+            Log.Logger.Information($"Unknown ServiceId = {serviceUuid} MethodId = {methodId}");
         }
 
         var id = new NotifyId(serviceUuid, methodId);
@@ -301,7 +302,7 @@ public class NetCap
             (x.RemoteAddress == ip.DestinationAddress.ToString() && x.RemotePort == tcp.DestinationPort)));
 
         sw.Stop();
-        Debug.WriteLine($"Checking {ip.SourceAddress}:{tcp.SourcePort} > {ip.DestinationAddress}:{tcp.DestinationPort} is game connection: {isGameConnection}, took {sw.ElapsedMilliseconds}ms");
+        Log.Logger.Information($"Checking {ip.SourceAddress}:{tcp.SourcePort} > {ip.DestinationAddress}:{tcp.DestinationPort} is game connection: {isGameConnection}, took {sw.ElapsedMilliseconds}ms");
         
         return isGameConnection;
     }

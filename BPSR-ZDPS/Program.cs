@@ -23,14 +23,17 @@ namespace BPSR_ZDPS
         private static D3D11Manager manager;
 
         static void Main(string[] args)
-        {
-            /*Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Debug()
-            .Enrich.FromLogContext()
-            .WriteTo.Debug()
-            .CreateLogger();*/
-            
+        {            
             Settings.Load();
+
+            var logBuilder = new LoggerConfiguration();
+            logBuilder = logBuilder.MinimumLevel.Debug()
+            .Enrich.FromLogContext();
+
+            if (Settings.Instance.LogToFile)
+                logBuilder = logBuilder.WriteTo.File("ZDPS_log.txt");
+
+            Log.Logger = logBuilder.CreateLogger();
 
             GLFW.Init();
 

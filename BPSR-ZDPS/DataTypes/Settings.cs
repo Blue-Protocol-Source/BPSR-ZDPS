@@ -18,6 +18,7 @@ public class Settings
     public bool UseAutomaticWipeDetection { get; set; } = true;
     public bool SkipTeleportStateCheckInAutomaticWipeDetection { get; set; } = false;
     public float WindowOpacity = 1.0f;
+    public bool LogToFile { get; set; } = false;
 
     public uint HotkeysEncounterReset { get; set; }
 
