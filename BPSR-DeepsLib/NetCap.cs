@@ -294,7 +294,7 @@ public class NetCap
     private bool IsFromGame(IPv4Packet ip, TcpPacket tcp)
     {
         var sw = Stopwatch.StartNew();
-        var conns = Utils.GetTCPConnectionsForExe(Config.ExeName);
+        var conns = Utils.GetTCPConnectionsForExe(Config.ExeNames);
         var isGameConnection = conns.Any((x =>
             (x.LocalAddress == ip.SourceAddress.ToString() && x.LocalPort == tcp.SourcePort) ||
             (x.RemoteAddress == ip.SourceAddress.ToString() && x.RemotePort == tcp.SourcePort) ||

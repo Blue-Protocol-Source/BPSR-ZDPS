@@ -5,19 +5,23 @@ namespace BPSR_DeepsLib;
 
 public class Utils
 {
-    public static List<TcpHelper.TcpRow> GetTCPConnectionsForExe(string filename = "BPSR")
+    public static List<TcpHelper.TcpRow> GetTCPConnectionsForExe(string[] filenames)
     {
         List<TcpHelper.TcpRow> tcpConns = [];
-        
-        var process = Process.GetProcessesByName(filename).FirstOrDefault();
-        if (process == null) {
-            Log.Warning("Couldn't find process with filename {Filename}", filename);
-            return tcpConns;
+
+        List<int> pids = [];
+        foreach (var filename in filenames)
+        {
+            var process = Process.GetProcessesByName(filename).FirstOrDefault();
+            if (process != null)
+            {
+                pids.Add(process.Id);
+            }
         }
         
         var tcpConnections = TcpHelper.GetExtendedTcpTable();
         foreach (var conn in tcpConnections) {
-            if (conn.owningPid == process.Id) {
+            if (pids.Contains(conn.owningPid)) {
                 tcpConns.Add(conn);
             }
         }
@@ -25,6 +29,7 @@ public class Utils
         return tcpConns;
     }
 
+    /*
     public static void PrintExeTCPConnections(string filename = "BPSR")
     {
         Log.Information("TCP connections for {Filename}", filename);
@@ -39,4 +44,5 @@ public class Utils
                 conn.state);
         }
     }
+    */
 }
