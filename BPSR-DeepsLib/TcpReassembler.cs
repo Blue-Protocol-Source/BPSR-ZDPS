@@ -1,6 +1,5 @@
 ﻿using System.Buffers.Binary;
 using System.Collections.Concurrent;
-using System.Diagnostics;
 using System.IO.Pipelines;
 using System.Net;
 using PacketDotNet;
@@ -11,6 +10,8 @@ namespace BPSR_DeepsLib;
 
 public class TcpReassembler
 {
+    public static ILogger Log = Serilog.Log.ForContext<TcpReassembler>();
+
     public static TimeSpan ConnectionCleanUpInterval = TimeSpan.FromSeconds(60);
     public Action<TcpConnection> OnNewConnection;
     public ConcurrentDictionary<IPEndPoint, TcpConnection> Connections = new();
@@ -25,14 +26,14 @@ public class TcpReassembler
             var newConn = new TcpConnection(ep, destEp);
             Connections.TryAdd(ep, newConn);
             OnNewConnection?.Invoke(newConn);
-            Log.Logger.Information("Got a new connection {ep}", ep);
+            Log.Information("Got a new connection {ep}", ep);
         }
 
         var conn = Connections[ep];
         if (tcpPacket.Reset || tcpPacket.Finished || tcpPacket.Synchronize)
         {
             RemoveConnection(conn);
-            Log.Logger.Information($"Removed connection {ep}, Reset: {tcpPacket.Reset}, Finished: {tcpPacket.Finished}, Synchronize: {tcpPacket.Synchronize}");
+            Log.Information($"Removed connection {ep}, Reset: {tcpPacket.Reset}, Finished: {tcpPacket.Finished}, Synchronize: {tcpPacket.Synchronize}");
             return;
         }
 
@@ -72,7 +73,10 @@ public class TcpReassembler
             }
 
             LastConnectionCleanUpTime = DateTime.Now;
-            Log.Logger.Information($"Removed {toRemove.Count} connections");
+            if (toRemove.Count > 0)
+            {
+                Log.Information($"Removed {toRemove.Count} connections");
+            }
         }
     }
 
@@ -111,19 +115,31 @@ public class TcpReassembler
                     (BinaryPrimitives.ReadInt16BigEndian(tcpPacket.PayloadData.AsSpan()[4..]) & 0x7FFF) <= 8)
                 {
                     IsSynced = true;
-                    Log.Logger.Information($"Connection {EndPoint} is synced");
+                    Log.Information($"Connection {EndPoint} is synced");
                 }
                 else {
                     return;
                 }
             }
 
-            var hasPacketWithSequence = Packets.ContainsKey(tcpPacket.SequenceNumber);
-            var seqIsLessThanLast = tcpPacket.SequenceNumber < LastSeq;
-            if (hasPacketWithSequence || seqIsLessThanLast || !IsAlive)
+            if (Packets.ContainsKey(tcpPacket.SequenceNumber))
             {
-                //Debug.WriteLine($"Got a duplicate packet or was older than read. NextExpectedSeq: {NextExpectedSeq}, SequenceNumber: {tcpPacket.SequenceNumber}, WasDupe: {hasPacketWithSequence}, WasLess Than Last: {seqIsLessThanLast}, IsAlive: {IsAlive}, Packet Data Len: {tcpPacket.PayloadData.Length}");
-                //return;
+                Log.Warning("{ep} has duplicate packet {SequenceNumber}",
+                    EndPoint, tcpPacket.SequenceNumber);
+            }
+
+            if (tcpPacket.SequenceNumber < LastSeq)
+            {
+                Log.Warning("{ep} tcpPacket.SequenceNumber < LastSeq, {SequenceNumber} < {LastSeq}",
+                    EndPoint, tcpPacket.SequenceNumber, LastSeq);
+            }
+
+            if (tcpPacket.SequenceNumber < NextExpectedSeq &&
+                tcpPacket.SequenceNumber >= LastSeq &&
+                (tcpPacket.SequenceNumber + tcpPacket.PayloadData.Length) > NextExpectedSeq)
+            {
+                Log.Warning("{SrcEp} -> {DestEp} had overlap! NextExpectedSeq: {NextExpectedSeq}, SeqNumber: {SequenceNumber} to {PacketEndPos}",
+                    EndPoint, DestEndPoint, NextExpectedSeq, tcpPacket.SequenceNumber, (tcpPacket.SequenceNumber + tcpPacket.PayloadData.Length));
             }
             
             if (NextExpectedSeq == null)
@@ -168,7 +184,7 @@ public class TcpReassembler
             }
 
             if (toRemove.Count() > 0)
-                Log.Logger.Information($"Cleaned up {toRemove.Count()} packets");
+                Log.Information($"Cleaned up {toRemove.Count()} packets");
         }
     }
 }
