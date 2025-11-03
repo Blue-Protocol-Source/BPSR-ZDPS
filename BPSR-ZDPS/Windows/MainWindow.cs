@@ -23,6 +23,7 @@ namespace BPSR_ZDPS.Windows
 
         static bool RunOnce = true;
         static int RunOnceDelayed = 0;
+        static int SettingsRunOnceDelayedPerOpen = 0;
 
         static int SelectedTabIndex = 0;
 
@@ -218,7 +219,28 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 if (ImGui.BeginMenu($"{FASIcons.Gear}"))  //("O"))
                 {
-                    //Utils.SetWindowTopmost();
+                    if (SettingsRunOnceDelayedPerOpen == 0)
+                    {
+                        SettingsRunOnceDelayedPerOpen++;
+                    }
+                    else if (SettingsRunOnceDelayedPerOpen == 2)
+                    {
+                        SettingsRunOnceDelayedPerOpen++;
+
+                        if (IsTopMost)
+                        {
+                            Utils.SetWindowTopmost();
+                        }
+                        else
+                        {
+                            Utils.UnsetWindowTopmost();
+                        }
+                    }
+                    else
+                    {
+                        SettingsRunOnceDelayedPerOpen++;
+                    }
+
                     ImGui.PopFont();
 
                     if (ImGui.MenuItem("Encounter History"))
@@ -252,6 +274,7 @@ namespace BPSR_ZDPS.Windows
                 }
                 else
                 {
+                    SettingsRunOnceDelayedPerOpen = 0;
                     ImGui.PopFont();
                 }
                 settingsWidth = ImGui.GetItemRectSize().X;

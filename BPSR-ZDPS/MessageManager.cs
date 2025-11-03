@@ -968,19 +968,22 @@ namespace BPSR_ZDPS
                 // Must ForEach as the keys here are TargetId's
                 foreach (var target in dun.Target.TargetData)
                 {
-                    // Not all encounters are created equal, how they use these is unique per encounter
-                    // For example, Tina won't clear or update Target on wipe while Ice Dragon Raid does
-                    if (target.Value.Complete == 1 && target.Value.Nums > 0)
+                    if (Settings.Instance.SplitEncountersOnNewPhases)
                     {
-                        // Current objective is complete when Complete == 1
-                        // Overall objective is complere when Nums is also > 0
-                        EncounterManager.StopEncounter();
-                    }
-                    else if (target.Value.Complete == 0 && target.Value.Nums == 0)
-                    {
-                        // We got a new objective, either advanced the phase or reset... or advanced and the devs are trolling with too many states
-                        EncounterManager.StopEncounter();
-                        EncounterManager.StartEncounter(true);
+                        // Not all encounters are created equal, how they use these is unique per encounter
+                        // For example, Tina won't clear or update Target on wipe while Ice Dragon Raid does
+                        if (target.Value.Complete == 1 && target.Value.Nums > 0)
+                        {
+                            // Current objective is complete when Complete == 1
+                            // Overall objective is complere when Nums is also > 0
+                            EncounterManager.StopEncounter();
+                        }
+                        else if (target.Value.Complete == 0 && target.Value.Nums == 0)
+                        {
+                            // We got a new objective, either advanced the phase or reset... or advanced and the devs are trolling with too many states
+                            EncounterManager.StopEncounter();
+                            EncounterManager.StartEncounter(true);
+                        }
                     }
 
                     // Since people may never open this window, let's ensure the list doesn't just grow forever

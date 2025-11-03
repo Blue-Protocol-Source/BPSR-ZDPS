@@ -3336,5 +3336,25 @@
     "998381":
     {
         "Name": "Seismic Strike"
+    },
+    "10240101":
+    {
+        "Name": "Bone Dragon - Basic Attack Combo"
+    },
+    "10240103":
+    {
+        "Name": "Bone Dragon - Claw Rip"
+    },
+    "10240106":
+    {
+        "Name": "Bone Dragon - Enrage"
+    },
+    "10240131":
+    {
+        "Name": "Void Corruption Banishment"
+    },
+    "10240198":
+    {
+        "Name": "Void Ball Release"
     }
 }

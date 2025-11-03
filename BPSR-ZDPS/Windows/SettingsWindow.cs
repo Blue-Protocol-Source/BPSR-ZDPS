@@ -24,7 +24,10 @@ namespace BPSR_ZDPS.Windows
         static bool onlyShowDamageContributorsInMeters;
         static bool useAutomaticWipeDetection;
         static bool skipTeleportStateCheckInAutomaticWipeDetection;
+        static bool splitEncountersOnNewPhases;
         static float windowOpacity;
+
+        static bool logToFile;
 
         static bool IsBindingEncounterResetKey = false;
         static uint EncounterResetKey;
@@ -52,7 +55,10 @@ namespace BPSR_ZDPS.Windows
             onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
             useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
             skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
+            splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
             windowOpacity = Settings.Instance.WindowOpacity;
+
+            logToFile = Settings.Instance.LogToFile;
 
             EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
             if (EncounterResetKey == 0)
@@ -233,6 +239,16 @@ namespace BPSR_ZDPS.Windows
                 ImGui.EndDisabled();
                 ImGui.Unindent();
 
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Split Encounters On New Phases: ");
+                ImGui.SameLine();
+                ImGui.Checkbox("##SplitEncountersOnNewPhases", ref splitEncountersOnNewPhases);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("When enabled, encounters are automatically split across phase changes. This allows bosses to be split from the rest of a dungeon. It also splits raid boss phases. This probably should be enabled.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
                 ImGui.SeparatorText("User Interface");
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Color Class Icons By Role Type: ");
@@ -299,6 +315,16 @@ namespace BPSR_ZDPS.Windows
                 ImGui.EndDisabled();
                 ImGui.Unindent();
 
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Write Debug Log To File: ");
+                ImGui.SameLine();
+                ImGui.Checkbox("##LogToFile", ref logToFile);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("When enabled, writes a debug log for ZDPS (ZDPS_log.txt). Applies after restarting ZDPS.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
                 ImGui.NewLine();
                 if (ImGui.Button("Save", new Vector2(120, 0)))
                 {
@@ -328,7 +354,11 @@ namespace BPSR_ZDPS.Windows
 
                     Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection = skipTeleportStateCheckInAutomaticWipeDetection;
 
+                    Settings.Instance.SplitEncountersOnNewPhases = splitEncountersOnNewPhases;
+
                     Settings.Instance.WindowOpacity = windowOpacity;
+
+                    Settings.Instance.LogToFile = logToFile;
 
                     RegisterAllHotkeys(mainWindow);
 
@@ -355,7 +385,11 @@ namespace BPSR_ZDPS.Windows
 
                     skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
 
+                    splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
+
                     windowOpacity = Settings.Instance.WindowOpacity;
+
+                    logToFile = Settings.Instance.LogToFile;
 
                     EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
                     if (EncounterResetKey == 0)

@@ -31,7 +31,9 @@ namespace BPSR_ZDPS
             .Enrich.FromLogContext();
 
             if (Settings.Instance.LogToFile)
+            {
                 logBuilder = logBuilder.WriteTo.File("ZDPS_log.txt");
+            }
 
             Log.Logger = logBuilder.CreateLogger();
 

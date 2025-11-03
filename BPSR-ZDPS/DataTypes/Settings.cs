@@ -17,6 +17,7 @@ public class Settings
     public bool OnlyShowDamageContributorsInMeters { get; set; } = false;
     public bool UseAutomaticWipeDetection { get; set; } = true;
     public bool SkipTeleportStateCheckInAutomaticWipeDetection { get; set; } = false;
+    public bool SplitEncountersOnNewPhases { get; set; } = true;
     public float WindowOpacity = 1.0f;
     public bool LogToFile { get; set; } = false;
 
