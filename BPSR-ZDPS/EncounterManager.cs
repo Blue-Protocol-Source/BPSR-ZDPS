@@ -129,12 +129,17 @@ namespace BPSR_ZDPS
         public ConcurrentStack<Entity> Entities { get; set; }
 
         public ulong TotalDamage { get; set; } = 0;
+        public ulong TotalNpcDamage { get; set; } = 0;
         public ulong TotalShieldBreak { get; set; } = 0;
+        public ulong TotalNpcShieldBreak { get; set; } = 0;
         public ulong TotalHealing { get; set; } = 0;
+        public ulong TotalNpcHealing { get; set; } = 0;
         public ulong TotalOverhealing { get; set; } = 0;
+        public ulong TotalNpcOverhealing { get; set; } = 0;
         public ulong TotalTakenDamage { get; set; } = 0;
         public ulong TotalNpcTakenDamage { get; set; } = 0;
         public ulong TotalDeaths { get; set; } = 0;
+        public ulong TotalNpcDeaths { get; set; } = 0;
 
         public Encounter(int battleId = 0)
         {
@@ -259,7 +264,7 @@ namespace BPSR_ZDPS
 
         public bool HasStatsBeenRecorded()
         {
-            return TotalDamage > 0 && TotalHealing > 0 && TotalTakenDamage > 0 && TotalNpcTakenDamage > 0;
+            return TotalDamage > 0 || TotalHealing > 0 || TotalTakenDamage > 0 || TotalNpcTakenDamage > 0 || TotalNpcDamage > 0 || TotalNpcShieldBreak > 0 || TotalNpcHealing > 0;
         }
 
         public void RegisterSkillActivation(long uuid, int skillId)
@@ -271,7 +276,18 @@ namespace BPSR_ZDPS
         public void AddDamage(long uuid, int skillId, EDamageProperty damageElement, long damage, bool isCrit, bool isLucky, bool isCauseLucky, long hpLessen = 0, EDamageType? damageType = null, EDamageMode? damageMode = null)
         {
             LastUpdate = DateTime.Now;
-            TotalDamage += (ulong)damage;
+
+            var uuidType = (EEntityType)Utils.UuidToEntityType(uuid);
+
+            if (uuidType == EEntityType.EntMonster)
+            {
+                TotalNpcDamage += (ulong)damage;
+            }
+            else
+            {
+                TotalDamage += (ulong)damage;
+            }
+            
             if (damageType != null && damageType == EDamageType.Absorbed)
             {
                 TotalShieldBreak += (ulong)damage;

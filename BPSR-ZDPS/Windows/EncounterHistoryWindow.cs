@@ -120,8 +120,8 @@ namespace BPSR_ZDPS.Windows
                 }
                 else if (SelectedEncounterIndex != -1)
                 {
-                    string encounterStartTime = encounters[SelectedEncounterIndex].StartTime.ToString("yyyy-MM-dd HH-mm-ss");
-                    string encounterEndTime = encounters[SelectedEncounterIndex].EndTime.ToString("yyyy-MM-dd HH-mm-ss");
+                    string encounterStartTime = encounters[SelectedEncounterIndex].StartTime.ToString("yyyy-MM-dd HH:mm:ss");
+                    string encounterEndTime = encounters[SelectedEncounterIndex].EndTime.ToString("yyyy-MM-dd HH:mm:ss");
                     string encounterDuration = encounters[SelectedEncounterIndex].GetDuration().ToString("hh\\:mm\\:ss");
                     string encounterSceneName = $" {encounters[SelectedEncounterIndex].SceneName}" ?? "";
                     selectedPreviewText = $"[{SelectedEncounterIndex + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration}){encounterSceneName}";
@@ -194,7 +194,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Crit Lucky Healing");
                         ImGui.TableSetupColumn("Max Instant HPS");
                         ImGui.TableSetupColumn("Damage Taken");
-                        ImGui.TableSetupColumn("Damage Share");
+                        ImGui.TableSetupColumn("DMG Taken %");
                         ImGui.TableSetupColumn("Deaths");
                         ImGui.TableHeadersRow();
 
@@ -262,7 +262,20 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Text(entity.AbilityScore.ToString());
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(Utils.NumberToShorthand(entity.TotalDamage));
+                            string totalDamageDealt = Utils.NumberToShorthand(entity.TotalDamage);
+                            double totalDamagePct = 0;
+                            if (entity.TotalDamage > 0)
+                            {
+                                if (entity.EntityType == Zproto.EEntityType.EntMonster)
+                                {
+                                    totalDamagePct = Math.Round(((double)entity.TotalDamage / (double)encounters[SelectedEncounterIndex].TotalNpcDamage) * 100, 0);
+                                }
+                                else
+                                {
+                                    totalDamagePct = Math.Round(((double)entity.TotalDamage / (double)encounters[SelectedEncounterIndex].TotalDamage) * 100, 0);
+                                }
+                            }
+                            ImGui.Text($"{totalDamageDealt} ({totalDamagePct}%%)");
 
                             ImGui.TableNextColumn();
                             ImGui.Text(Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond));
@@ -384,9 +397,13 @@ namespace BPSR_ZDPS.Windows
                     }
 
                     enc.TotalDamage += encounter.TotalDamage;
+                    enc.TotalNpcDamage += encounter.TotalNpcDamage;
                     enc.TotalShieldBreak += encounter.TotalShieldBreak;
+                    enc.TotalNpcShieldBreak += encounter.TotalNpcShieldBreak;
                     enc.TotalHealing += encounter.TotalHealing;
+                    enc.TotalNpcHealing += encounter.TotalNpcHealing;
                     enc.TotalOverhealing += encounter.TotalOverhealing;
+                    enc.TotalNpcOverhealing += encounter.TotalNpcOverhealing;
                     enc.TotalTakenDamage += encounter.TotalTakenDamage;
                     enc.TotalNpcTakenDamage += encounter.TotalNpcTakenDamage;
 

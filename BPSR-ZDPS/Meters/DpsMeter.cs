@@ -126,9 +126,12 @@ namespace BPSR_ZDPS.Meters
 
                     double contribution = 0.0;
                     double contributionProgressBar = 0.0;
-                    if (EncounterManager.Current.TotalDamage != 0)
+                    // TotalDamage is the player only total, TotalNpcDamage is only for monster's totals
+                    ulong totalEncounterDamage = EncounterManager.Current.TotalDamage;
+
+                    if (totalEncounterDamage != 0)
                     {
-                        contribution = Math.Round(((double)entity.TotalDamage / (double)EncounterManager.Current.TotalDamage) * 100, 0);
+                        contribution = Math.Round(((double)entity.TotalDamage / (double)totalEncounterDamage) * 100, 0);
 
                         if (Settings.Instance.NormalizeMeterContributions)
                         {
