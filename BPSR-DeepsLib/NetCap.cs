@@ -30,6 +30,8 @@ public class NetCap
     public int NumConnectionReaders = 0;
     public ConcurrentDictionary<ConnectionId, bool> ConnectionFilters = new();
     public ConcurrentBag<string> ImportantLogMsgs = [];
+    public ulong NumGameMessagesSeen = 0;
+    public ulong NumGameMessagesDequeued = 0;
 
     private bool IsDebugCaptureFileMode = false;
     private string DebugCaptureFile = "";//@"C:\Users\Xennma\Documents\BPSR_PacketCapture.pcap";
@@ -154,7 +156,8 @@ public class NetCap
                 var msgType = (rawMsgType & 0x7FFF);
                 conn.Pipe.Reader.AdvanceTo(buff.Buffer.Start);
 
-                if (msgType > 8)
+                /*
+                if (msgType > 20)
                 {
                     var msg = $"!! Message Type ({msgType}) Was not in expected range, maybe this is not a game connection! {conn.EndPoint} -> {conn.DestEndPoint}";
                     Debug.WriteLine(msg);
@@ -164,7 +167,7 @@ public class NetCap
                     //ConnectionFilters[connId] = false;
                     TcpReassempler.RemoveConnection(connId);
                     break;
-                }
+                }*/
 
                 var msgBuff = await conn.Pipe.Reader.ReadAtLeastAsync((int)len);
                 if (msgBuff.IsCompleted || msgBuff.IsCanceled)
@@ -175,6 +178,7 @@ public class NetCap
                 msgBuff.Buffer.Slice(0, len).CopyTo(rawPacket.Data.AsSpan()[..(int)len]);
                 RawPacketQueue.Enqueue(rawPacket);
                 conn.Pipe.Reader.AdvanceTo(msgBuff.Buffer.GetPosition(len));
+                NumGameMessagesSeen++;
             }
 
             NumConnectionReaders--;
@@ -193,6 +197,7 @@ public class NetCap
                 // Important to return the packet to the pool!
                 rawPacket.Return();
                 RawPacketPool.Return(rawPacket);
+                NumGameMessagesDequeued++;
             }
             else
             {

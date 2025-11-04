@@ -28,7 +28,8 @@ namespace BPSR_ZDPS
 
             var logBuilder = new LoggerConfiguration();
             logBuilder = logBuilder.MinimumLevel.Debug()
-            .Enrich.FromLogContext();
+            .Enrich.FromLogContext()
+            .WriteTo.Debug();
 
             if (Settings.Instance.LogToFile)
             {

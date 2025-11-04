@@ -37,11 +37,16 @@ public static class NetDebug
                 ImGui.Text($"Packets in queue: {MessageManager.netCap.RawPacketQueue.Count}");
                 ImGui.TableNextColumn();
                 ImGui.Text($"Num Seen Packets: {MessageManager.netCap.NumSeenPackets:##,##}");
-                
+
+                ImGui.TableNextColumn();
+                ImGui.Text($"Num Active Stream Readers: {netCap.NumConnectionReaders}");
+                ImGui.TableNextColumn();
+                ImGui.Text($"Num Game Messages Seen: {MessageManager.netCap.NumGameMessagesSeen:##,##}");
+
                 ImGui.TableNextColumn();
                 ImGui.Text($"Last Packet Seen: {(DateTime.Now - MessageManager.netCap.LastPacketSeenAt).TotalSeconds:00.00}s ago");
                 ImGui.TableNextColumn();
-                ImGui.Text($"Num Active Stream Readers: {netCap.NumConnectionReaders}");
+                ImGui.Text($"Num Game Messages Dequeued: {MessageManager.netCap.NumGameMessagesDequeued:##,##}");
 
                 ImGui.EndTable();
             }

@@ -112,7 +112,7 @@ public class TcpReassembler
             if (!IsSynced)
             {
                 if (tcpPacket.PayloadData.Length >= 6 && BinaryPrimitives.ReadInt32BigEndian(tcpPacket.PayloadData) == tcpPacket.PayloadData.Length &&
-                    (BinaryPrimitives.ReadInt16BigEndian(tcpPacket.PayloadData.AsSpan()[4..]) & 0x7FFF) <= 8)
+                    (BinaryPrimitives.ReadInt16BigEndian(tcpPacket.PayloadData.AsSpan()[4..]) & 0x7FFF) <= 9)
                 {
                     IsSynced = true;
                     Log.Information($"Connection {EndPoint} is synced");
