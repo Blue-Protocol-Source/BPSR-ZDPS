@@ -23,7 +23,7 @@ public class TcpReassembler
         if (!Connections.ContainsKey(ep))
         {
             var destEp = new IPEndPoint(ipPacket.DestinationAddress, tcpPacket.DestinationPort);
-            var newConn = new TcpConnection(ep, destEp);
+            var newConn = new TcpConnection(ep, destEp, this);
             Connections.TryAdd(ep, newConn);
             OnNewConnection?.Invoke(newConn);
             Log.Information("Got a new connection {ep}", ep);
@@ -89,10 +89,11 @@ public class TcpReassembler
         conn.Pipe.Writer.Complete();
     }
 
-    public class TcpConnection(IPEndPoint endPoint, IPEndPoint destEndPoint)
+    public class TcpConnection(IPEndPoint endPoint, IPEndPoint destEndPoint, TcpReassembler owner)
     {
         public const int NUM_PACKETS_BEFORE_CLEAN_UP = 200;
-        
+        public const int MAX_DUPE_PACKET_SEQ_DIFF = 1000;
+
         public IPEndPoint EndPoint = endPoint;
         public IPEndPoint DestEndPoint = destEndPoint;
         public Dictionary<uint, PacketFragment> Packets = new();
@@ -105,6 +106,7 @@ public class TcpReassembler
         public ulong NumPacketsSeen;
         public CancellationTokenSource CancelTokenSrc = new();
         public bool IsSynced = false;
+        public TcpReassembler Owner = owner;
 
         public void AddPacket(TcpPacket tcpPacket)
         
@@ -124,14 +126,23 @@ public class TcpReassembler
 
             if (Packets.ContainsKey(tcpPacket.SequenceNumber))
             {
-                Log.Warning("{ep} has duplicate packet {SequenceNumber}",
-                    EndPoint, tcpPacket.SequenceNumber);
+                Log.Warning("{SrcEp} -> {DestEp} has duplicate packet {SequenceNumber}, LastSeq: {LastSeq}, Packets.Len: {numPackets}",
+                    EndPoint, DestEndPoint, tcpPacket.SequenceNumber, LastSeq, Packets.Count);
+
+                // I don't like this but its a catch for something going wrong
+                if (tcpPacket.SequenceNumber - LastSeq >= MAX_DUPE_PACKET_SEQ_DIFF)
+                {
+                    Log.Error("{SrcEp} -> {DestEp} dupe exceeded {MAX_DUPE_PACKET_SEQ_DIFF}, removing stream to reset :<, SequenceNumber: {SequenceNumber}, LastSeq: {LastSeq}, Diff {Diff}",
+                        EndPoint, DestEndPoint, MAX_DUPE_PACKET_SEQ_DIFF, tcpPacket.SequenceNumber, LastSeq, (tcpPacket.SequenceNumber - LastSeq));
+                    
+                    Owner.RemoveConnection(this);
+                }
             }
 
             if (tcpPacket.SequenceNumber < LastSeq)
             {
-                Log.Warning("{ep} tcpPacket.SequenceNumber < LastSeq, {SequenceNumber} < {LastSeq}",
-                    EndPoint, tcpPacket.SequenceNumber, LastSeq);
+                Log.Warning("{SrcEp} -> {DestEp} tcpPacket.SequenceNumber < LastSeq, {SequenceNumber} < {LastSeq}",
+                    EndPoint, DestEndPoint, tcpPacket.SequenceNumber, LastSeq);
             }
 
             if (tcpPacket.SequenceNumber < NextExpectedSeq &&
@@ -184,7 +195,7 @@ public class TcpReassembler
             }
 
             if (toRemove.Count() > 0)
-                Log.Information($"Cleaned up {toRemove.Count()} packets");
+                Log.Information($"{EndPoint} -> {DestEndPoint}, Cleaned up {toRemove.Count()} packets");
         }
     }
 }

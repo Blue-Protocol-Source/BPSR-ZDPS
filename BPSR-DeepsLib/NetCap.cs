@@ -233,16 +233,19 @@ public class NetCap
                     ParseFrameDown(msgPayload, isCompressed);
                     break;
                 case MsgTypeId.Call:
-                    Log.Information("Call: {MsgPayload}", msgPayload.Length);
+                    //Log.Information("Call: {MsgPayload}", msgPayload.Length);
                     break;
                 case MsgTypeId.Return:
-                    Log.Information("Return: {MsgPayload}", msgPayload.Length);
+                    //Log.Information("Return: {MsgPayload}", msgPayload.Length);
                     break;
                 case MsgTypeId.None:
                 case MsgTypeId.Echo:
                 case MsgTypeId.FrameUp:
                 case MsgTypeId.UNK1:
                 case MsgTypeId.UNK2:
+                    break;
+                default:
+                    Log.Information("Got an unknown message type: {msgType}", msgType);
                     break;
             }
         }
