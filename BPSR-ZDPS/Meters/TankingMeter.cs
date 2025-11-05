@@ -7,6 +7,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using ZLinq;
 
 namespace BPSR_ZDPS.Meters
 {
@@ -82,13 +83,13 @@ namespace BPSR_ZDPS.Meters
                 ImGui.PopStyleVar();
 
                 // Call .ToList() to create a copy of the data in memory as it might change
-                var playerList = EncounterManager.Current?.Entities.Where(x => x.EntityType == Zproto.EEntityType.EntChar && x.TotalTakenDamage > 0).OrderByDescending(x => x.TotalTakenDamage).ToList();
+                var playerList = EncounterManager.Current?.Entities.AsValueEnumerable().Where(x => x.EntityType == Zproto.EEntityType.EntChar && x.TotalTakenDamage > 0).OrderByDescending(x => x.TotalTakenDamage).ToList();
 
                 ulong topTotalValue = 0;
 
                 for (int i = 0; i < playerList?.Count(); i++)
                 {
-                    var entity = playerList.ElementAt(i);
+                    var entity = playerList[i];
 
                     if (i == 0 && Settings.Instance.NormalizeMeterContributions)
                     {

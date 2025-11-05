@@ -7,6 +7,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using ZLinq;
 
 namespace BPSR_ZDPS.Windows
 {
@@ -68,7 +69,7 @@ namespace BPSR_ZDPS.Windows
 
             if (PersistantTracking && LoadedFromEncounterIdx != EncounterManager.Encounters.Count - 1)
             {
-                var foundEntity = EncounterManager.Current.Entities.Where(x => x.UUID == LoadedEntity.UUID);
+                var foundEntity = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.UUID == LoadedEntity.UUID);
                 if (foundEntity.Any())
                 {
                     LoadEntity(foundEntity.First());
@@ -405,26 +406,26 @@ namespace BPSR_ZDPS.Windows
                         switch (TableFilterMode)
                         {
                             case ETableFilterMode.SkillsDamage:
-                                skillStats = (IReadOnlyList<KeyValuePair<int, CombatStats2>>)(LoadedEntity.SkillStats.Where(x => x.Value.SkillType == ESkillType.Damage).OrderByDescending(x => x.Value.ValueTotal).ToList());
+                                skillStats = (IReadOnlyList<KeyValuePair<int, CombatStats2>>)(LoadedEntity.SkillStats.AsValueEnumerable().Where(x => x.Value.SkillType == ESkillType.Damage).OrderByDescending(x => x.Value.ValueTotal).ToList());
                                 valueTotalColumnName = "Damage";
                                 valuePerSecondColumnName = "Total DPS";
                                 valueShareColumnName = "Total DMG %";
                                 break;
                             case ETableFilterMode.SkillsHealing:
-                                skillStats = (IReadOnlyList<KeyValuePair<int, CombatStats2>>)(LoadedEntity.SkillStats.Where(x => x.Value.SkillType == ESkillType.Healing).OrderByDescending(x => x.Value.ValueTotal).ToList());
+                                skillStats = (IReadOnlyList<KeyValuePair<int, CombatStats2>>)(LoadedEntity.SkillStats.AsValueEnumerable().Where(x => x.Value.SkillType == ESkillType.Healing).OrderByDescending(x => x.Value.ValueTotal).ToList());
                                 valueTotalColumnName = "Healing";
                                 valuePerSecondColumnName = "Total HPS";
                                 valueShareColumnName = "Total HEAL %";
                                 break;
                             case ETableFilterMode.SkillsTaken:
-                                skillStats = (IReadOnlyList<KeyValuePair<int, CombatStats2>>)(LoadedEntity.SkillStats.Where(x => x.Value.SkillType == ESkillType.Taken).OrderByDescending(x => x.Value.ValueTotal).ToList());
+                                skillStats = (IReadOnlyList<KeyValuePair<int, CombatStats2>>)(LoadedEntity.SkillStats.AsValueEnumerable().Where(x => x.Value.SkillType == ESkillType.Taken).OrderByDescending(x => x.Value.ValueTotal).ToList());
                                 valueTotalColumnName = "Damage";
                                 valuePerSecondColumnName = "Total DPS";
                                 valueShareColumnName = "Total DMG %";
                                 valueExtraStatColumnName = "Deaths";
                                 break;
                             default:
-                                skillStats = (IReadOnlyList<KeyValuePair<int, CombatStats2>>)(LoadedEntity.SkillStats.Where(x => x.Value.SkillType == ESkillType.Damage).OrderByDescending(x => x.Value.ValueTotal).ToList());
+                                skillStats = (IReadOnlyList<KeyValuePair<int, CombatStats2>>)(LoadedEntity.SkillStats.AsValueEnumerable().Where(x => x.Value.SkillType == ESkillType.Damage).OrderByDescending(x => x.Value.ValueTotal).ToList());
                                 valueTotalColumnName = "Damage";
                                 valuePerSecondColumnName = "Total DPS";
                                 valueShareColumnName = "Total DMG %";
@@ -557,7 +558,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f, ImGui.GetStyle().CellPadding.Y));
 
-                    if (ImGui.BeginTable("##BuffEventsTable", 9, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit))
+                    if (ImGui.BeginTable("##BuffEventsTable", 10, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit))
                     {
                         ImGui.TableSetupScrollFreeze(0, 1);
                         ImGui.TableSetupColumn("UUID");
@@ -565,6 +566,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Skill ID");
                         ImGui.TableSetupColumn("Level");
                         ImGui.TableSetupColumn("Type");
+                        ImGui.TableSetupColumn("Layers");
                         ImGui.TableSetupColumn("Duration");
                         ImGui.TableSetupColumn("Caster", ImGuiTableColumnFlags.WidthStretch, 50f);
                         ImGui.TableSetupColumn("Add Time");
@@ -573,31 +575,58 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableHeadersRow();
 
                         ImGuiListClipper clipper = new();
-                        clipper.Begin(LoadedEntity.BuffEvents.Count);
+                        int buffCount = LoadedEntity.BuffEvents.Count;
+                        clipper.Begin(buffCount);
                         while (clipper.Step())
                         {
                             for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
                             {
-                                var buffEvent = LoadedEntity.BuffEvents.ElementAt((LoadedEntity.BuffEvents.Count - 1) - i);
-                                int buffUuid = buffEvent.Key;
+                                var buffEvent = LoadedEntity.BuffEvents[(buffCount - 1) - i];
+                                int buffUuid = (int)buffEvent.Uuid;
 
                                 ImGui.TableNextColumn();
 
-                                
-
-                                int buffTypeColor = -1; // 0 = Buff, 1 = Shield, 2 = Debuff
+                                int buffTypeColor = -1; // 0 = Skill, 1 = Talent, 2 = Special/Unknown, (Overrides) 3 = Shield
                                 string extraTooltip = "";
-                                if (buffEvent.Value.AttributeName == "AttrShieldList")
+                                if (buffEvent.AttributeName == "AttrShieldList")
                                 {
-                                    buffTypeColor = 1;
-                                    var shieldInfo = (Zproto.ShieldInfo)buffEvent.Value.Data;
+                                    buffTypeColor = 3;
+                                    var shieldInfo = (Zproto.ShieldInfo)buffEvent.Data;
                                     extraTooltip = $"\nShieldInfo: Value={shieldInfo.Value}, InitialValue={shieldInfo.InitialValue}, MaxValue={shieldInfo.MaxValue}";
 
                                 }
+                                else if (buffEvent.Duration < 0)
+                                {
+                                    // Permanent passives (typically from talents) will be excluded
+                                    buffTypeColor = -1;
+                                }
+                                else
+                                {
+                                    if (buffEvent.BuffType < 3)
+                                    {
+                                        buffTypeColor = buffEvent.BuffType;
+                                    }
+                                    else
+                                    {
+                                        // Unexpected BuffType
+                                    }
+                                }
 
-                                if (buffTypeColor == 1)
+                                if (buffTypeColor == 3)
                                 {
                                     ImGui.PushStyleColor(ImGuiCol.Header, Colors.DimGray);
+                                }
+                                else if (buffTypeColor == 0)
+                                {
+                                    ImGui.PushStyleColor(ImGuiCol.Header, Colors.Goldenrod_Transparent);
+                                }
+                                else if (buffTypeColor == 1)
+                                {
+                                    ImGui.PushStyleColor(ImGuiCol.Header, Colors.SkyBlue_Transparent);
+                                }
+                                if (buffTypeColor == 2)
+                                {
+                                    ImGui.PushStyleColor(ImGuiCol.Header, Colors.DarkRed_Transparent);
                                 }
 
                                 if (ImGui.Selectable($"{buffUuid}##BuffEventEntry_{i}", true, ImGuiSelectableFlags.SpanAllColumns))
@@ -610,64 +639,77 @@ namespace BPSR_ZDPS.Windows
                                     ImGui.PopStyleColor();
                                 }
                                 
-                                if (!string.IsNullOrEmpty(buffEvent.Value.Description))
+                                if (!string.IsNullOrEmpty(buffEvent.Description))
                                 {
-                                    ImGui.SetItemTooltip($"{buffEvent.Value.Description.Replace("%", "%%")}{extraTooltip}");
+                                    ImGui.SetItemTooltip($"{buffEvent.Description.Replace("%", "%%")}{extraTooltip}");
                                 }
 
                                 ImGui.TableNextColumn();
                                 string displayName = "";
-                                if (!string.IsNullOrEmpty(buffEvent.Value.Name))
+                                if (!string.IsNullOrEmpty(buffEvent.Name))
                                 {
-                                    displayName = buffEvent.Value.Name;
+                                    displayName = buffEvent.Name;
                                 }
                                 if (Settings.Instance.ShowSkillIconsInDetails)
                                 {
-                                    // TODO
+                                    if (!string.IsNullOrWhiteSpace(buffEvent.Icon))
+                                    {
+                                        var tex = ImageArchive.LoadImage(Path.Combine("Buffs", buffEvent.Icon));
+                                        var itemRectSize = ImGui.GetItemRectSize().Y - ImGui.GetStyle().ItemSpacing.Y;
+                                        float texSize = itemRectSize;
+                                        if (tex != null)
+                                        {
+                                            ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
+                                            ImGui.SameLine();
+                                        }
+                                    }
                                 }
                                 ImGui.Text(displayName);
 
                                 ImGui.TableNextColumn();
-                                ImGui.Text($"{buffEvent.Value.SourceConfigId}");
+                                ImGui.Text($"{buffEvent.SourceConfigId}");
 
                                 ImGui.TableNextColumn();
-                                ImGui.Text($"{buffEvent.Value.Level}");
+                                ImGui.Text($"{buffEvent.Level}");
 
                                 ImGui.TableNextColumn();
-                                ImGui.Text($"{buffEvent.Value.BuffType}");
+                                ImGui.Text($"{buffEvent.BuffType}");
 
                                 ImGui.TableNextColumn();
-                                string displayDuration = buffEvent.Value.Duration.ToString();
-                                if (buffEvent.Value.Duration > 0)
+                                ImGui.Text($"{buffEvent.Layer}");
+
+                                ImGui.TableNextColumn();
+                                string displayDuration = buffEvent.Duration.ToString();
+                                if (buffEvent.Duration > 0)
                                 {
-                                    displayDuration = (buffEvent.Value.Duration / 1000.0f).ToString();
+                                    displayDuration = (buffEvent.Duration / 1000.0f).ToString();
                                 }
                                 ImGui.Text($"{displayDuration}s");
 
                                 ImGui.TableNextColumn();
-                                if (!string.IsNullOrEmpty(buffEvent.Value.EntityCasterName))
+                                if (!string.IsNullOrEmpty(buffEvent.EntityCasterName))
                                 {
-                                    ImGui.Text($"{buffEvent.Value.EntityCasterName}");
+                                    ImGui.Text($"{buffEvent.EntityCasterName}");
                                 }
                                 else
                                 {
-                                    ImGui.Text($"{buffEvent.Value.FireUuid}");
+                                    ImGui.Text($"{buffEvent.FireUuid}");
                                 }
 
 
                                 ImGui.TableNextColumn();
                                 string addTime = "";
-                                if (buffEvent.Value.EventAddTime.TotalMilliseconds > 0)
+                                if (buffEvent.EventAddTime.TotalMilliseconds > 0)
                                 {
-                                    addTime = buffEvent.Value.EventAddTime.ToString("hh\\:mm\\:ss");
+                                    addTime = buffEvent.EventAddTime.ToString("hh\\:mm\\:ss");
                                 }
                                 ImGui.Text($"{addTime}");
 
                                 ImGui.TableNextColumn();
                                 string removeTime = "";
-                                if (buffEvent.Value.EventRemoveTime.TotalMilliseconds > 0)
+                                if (buffEvent.EventRemoveTime.TotalMilliseconds > 0)
                                 {
-                                    removeTime = buffEvent.Value.EventRemoveTime.ToString("hh\\:mm\\:ss");
+                                    removeTime = buffEvent.EventRemoveTime.ToString("hh\\:mm\\:ss");
                                 }
                                 ImGui.Text($"{removeTime}");
                             }

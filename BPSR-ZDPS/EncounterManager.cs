@@ -258,7 +258,7 @@ namespace BPSR_ZDPS
             else if (key == "AttrShieldList")
             {
                 var shieldInfo = (ShieldInfo)value;
-                System.Diagnostics.Debug.WriteLine($"SetAttrKV({uuid})::AttrShieldList.ShieldInfo = {shieldInfo}");
+                //System.Diagnostics.Debug.WriteLine($"SetAttrKV({uuid})::AttrShieldList.ShieldInfo = {shieldInfo}");
                 entity.AddBuffEventAttribute((int)shieldInfo.Uuid, "AttrShieldList", shieldInfo);
                 //AddShieldGained(uuid, shieldInfo.Uuid, shieldInfo.Value, shieldInfo.InitialValue, shieldInfo.MaxValue);
             }
@@ -390,7 +390,10 @@ namespace BPSR_ZDPS
         public ulong TotalCasts { get; set; } = 0;
         public ulong TotalDeaths { get; set; } = 0;
 
-        public ConcurrentDictionary<int, BuffEvent> BuffEvents { get; set; } = new();
+        // The key is the BuffUuid, however it is specifically a ulong here to enable key-based and index-based lookups
+        // An OrderedDictionary automatically uses an int32 as the index lookup and using an int32 as the key overrides that
+        // Whenever we want to perform a key-based (BuffUuid) lookup on this, cast to a ulong to make it work
+        public ThreadSafeOrderedDictionary<ulong, BuffEvent> BuffEvents { get; set; } = new();
 
         // Monster specific variables
         // When -1, this is unset (non-Monsters will be at -1), when 1 this is Elite, when 2 it is a boss
@@ -646,12 +649,11 @@ namespace BPSR_ZDPS
 
         public void NotifyBuffEvent(EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId, TimeSpan encounterTime)
         {
-            if (buffEventType == EBuffEventType.BuffEventAddTo)
+            if (baseId > 0)
             {
-                if (!BuffEvents.TryGetValue(buffUuid, out var buffEvent))
+                if (!BuffEvents.TryGetValue((ulong)buffUuid, out var buffEvent))
                 {
                     buffEvent = new BuffEvent(buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId);
-                    buffEvent.SetAddTime(encounterTime.Duration());
                 }
                 else
                 {
@@ -660,20 +662,21 @@ namespace BPSR_ZDPS
                         buffEvent.SetEvent(buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId);
                     }
                 }
-                
-                BuffEvents.AddOrUpdate(buffUuid, buffEvent, (key, val) => buffEvent);
+                buffEvent.SetAddTime(encounterTime.Duration());
+
+                BuffEvents[(ulong)buffUuid] = buffEvent;
             }
-            else if (buffEventType == EBuffEventType.BuffEventRemove)
+            else
             {
-                if (!BuffEvents.TryGetValue(buffUuid, out var buffEvent))
+                if (!BuffEvents.TryGetValue((ulong)buffUuid, out var buffEvent))
                 {
                     // A remove event would only be coming with the uuid and type
                     buffEvent = new BuffEvent(buffUuid);
                 }
                 buffEvent.SetRemoveTime(encounterTime.Duration());
-                BuffEvents.AddOrUpdate(buffUuid, buffEvent, (key, val) => buffEvent);
+                BuffEvents[(ulong)buffUuid] = buffEvent;
             }
-            else
+            //else
             {
                 //System.Diagnostics.Debug.WriteLine($"NotifyBuffEvent Unhandled BuffEventType: {buffEventType}");
             }
@@ -681,13 +684,19 @@ namespace BPSR_ZDPS
 
         public void AddBuffEventAttribute(int buffUuid, string attributeName, object? attributeValue)
         {
-            if (!BuffEvents.TryGetValue(buffUuid, out var buffEvent))
+            if (!BuffEvents.TryGetValue((ulong)buffUuid, out var buffEvent))
             {
                 buffEvent = new BuffEvent(buffUuid);
+
+                if (attributeName == "AttrShieldList" && attributeValue != null)
+                {
+                    var shieldInfo = (ShieldInfo)attributeValue;
+                    TotalShield += (ulong)shieldInfo.InitialValue;
+                }
             }
             buffEvent.AddData(attributeName, attributeValue);
 
-            BuffEvents.AddOrUpdate(buffUuid, buffEvent, (key, val) => buffEvent);
+            BuffEvents[(ulong)buffUuid] = buffEvent;
         }
 
         public void SetAttrKV(string key, object value)
@@ -987,15 +996,15 @@ namespace BPSR_ZDPS
 
     public class BuffEvent
     {
-        public int BuffType { get; private set; } // 0 = Debuff, 1 = Buff, 2 = Special
+        public int BuffType { get; private set; } // Source type of buff 0 = Skill, 1 = Talent, 2 = Special?
         public long Uuid { get; private set; }
-        public int BaseId { get; private set; }
+        public int BaseId { get; private set; } // Buff Id in BuffTable
         public int Level { get; private set; }
         public long FireUuid { get; private set; }
         public string EntityCasterName { get; private set; }
         public int Layer { get; private set; }
         public int Duration { get; private set; }
-        public int SourceConfigId { get; private set; }
+        public int SourceConfigId { get; private set; } // Original Skill Id
         public string Name { get; private set; }
         public string Description { get; private set; }
         public string Icon { get; private set; }
@@ -1026,7 +1035,21 @@ namespace BPSR_ZDPS
                 {
                     Name = buffTableData.Name;
                     Description = buffTableData.Desc;
-                    Icon = buffTableData.Icon;
+                    Icon = buffTableData.GetIconName();
+                    BuffType = buffTableData.BuffType;
+                }
+            }
+
+            if (sourceConfigId > 0)
+            {
+                if (HelperMethods.DataTables.Skills.Data.TryGetValue(sourceConfigId.ToString(), out var skillTableData))
+                {
+                    //Name = $"{Name} ({skillTableData.Name})";
+
+                    if (string.IsNullOrWhiteSpace(Icon))
+                    {
+                        Icon = skillTableData.GetIconName();
+                    }
                 }
             }
         }

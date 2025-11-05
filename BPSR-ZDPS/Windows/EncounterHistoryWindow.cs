@@ -6,6 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using ZLinq;
 
 namespace BPSR_ZDPS.Windows
 {
@@ -170,7 +171,7 @@ namespace BPSR_ZDPS.Windows
                 if (SelectedEncounterIndex != -1)
                 {
                     ImGuiTableFlags tableFlags = ImGuiTableFlags.ScrollX;
-                    int columnsCount = 25;
+                    int columnsCount = 26;
                     if (ImGui.BeginTable("##HistoricalEncounterStatsTable", columnsCount, tableFlags, new Vector2(-1, -1)))
                     {
                         ImGui.TableSetupColumn("#");
@@ -187,6 +188,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Lucky DMG");
                         ImGui.TableSetupColumn("Crit Lucky DMG");
                         ImGui.TableSetupColumn("Max Instant DPS");
+                        ImGui.TableSetupColumn("Shield Gain");
                         ImGui.TableSetupColumn("Total Healing");
                         ImGui.TableSetupColumn("Total HPS");
                         ImGui.TableSetupColumn("Effective Healing");
@@ -200,7 +202,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Deaths");
                         ImGui.TableHeadersRow();
 
-                        var entitiesFiltered = encounters[SelectedEncounterIndex].Entities.Where(x => x.EntityType == Zproto.EEntityType.EntChar || x.EntityType == Zproto.EEntityType.EntMonster);
+                        var entitiesFiltered = encounters[SelectedEncounterIndex].Entities.AsValueEnumerable().Where(x => x.EntityType == Zproto.EEntityType.EntChar || x.EntityType == Zproto.EEntityType.EntMonster);
                         List<Entity> entities;
                         switch (SelectedOrderByOption)
                         {
@@ -302,6 +304,9 @@ namespace BPSR_ZDPS.Windows
 
                             ImGui.TableNextColumn();
                             ImGui.Text($"{Utils.NumberToShorthand(entity.DamageStats.ValueMax)}");
+
+                            ImGui.TableNextColumn();
+                            ImGui.Text(Utils.NumberToShorthand(entity.TotalShield));
 
                             ImGui.TableNextColumn();
                             ImGui.Text(Utils.NumberToShorthand(entity.TotalHealing));
@@ -411,7 +416,7 @@ namespace BPSR_ZDPS.Windows
 
                     foreach (var entity in encounter.Entities)
                     {
-                        var foundEnt = enc.Entities.Where(x => x.UUID == entity.UUID);
+                        var foundEnt = enc.Entities.AsValueEnumerable().Where(x => x.UUID == entity.UUID);
                         if (foundEnt.Any())
                         {
                             var match = foundEnt.First();

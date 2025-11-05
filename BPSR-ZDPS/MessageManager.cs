@@ -14,6 +14,7 @@ using Silk.NET.Core.Native;
 using BPSR_ZDPS.DataTypes;
 using static HexaGen.Runtime.MemoryPool;
 using System.Collections.Concurrent;
+using ZLinq;
 
 namespace BPSR_ZDPS
 {
@@ -366,10 +367,22 @@ namespace BPSR_ZDPS
 
                     if (delta.BuffInfos != null)
                     {
-                        var matchInfo = delta.BuffInfos.BuffInfos.Where(x => x.BuffUuid == buffEffect.BuffUuid);
+                        var matchInfo = delta.BuffInfos.BuffInfos.AsValueEnumerable().Where(x => x.BuffUuid == buffEffect.BuffUuid);
                         if (matchInfo.Any())
                         {
                             var buffInfo = matchInfo.First();
+                            foreach (var logicInfo in buffInfo.LogicEffect)
+                            {
+                                if (logicInfo.RawData.Length > 0)
+                                {
+                                    var reader = new Google.Protobuf.CodedInputStream(logicInfo.RawData.ToByteArray());
+                                    //int x = reader.ReadInt32();
+                                    //int y = reader.ReadInt32();
+                                    var x = reader.ReadInt64();
+                                    var y = reader.ReadInt64();
+                                    //System.Diagnostics.Debug.WriteLine($"effectType = {logicInfo.EffectType}, x = {x}, y = {y}");
+                                }
+                            }
                             EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId);
                         }
                     }
@@ -912,7 +925,7 @@ namespace BPSR_ZDPS
                 {
                     // The player state is in a wipe pattern
                     // Check if there is a Boss type monster
-                    var bosses = EncounterManager.Current.Entities.Where(x => x.MonsterType == 2);
+                    var bosses = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.MonsterType == 2);
                     //System.Diagnostics.Debug.WriteLine($"bosses.Count = {bosses.Count()}");
 
                     if (bosses.Count() > 0)

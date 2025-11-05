@@ -41,5 +41,29 @@ namespace BPSR_ZDPS.DataTypes
         public int HudSwitch { get; set; }
         public int TimeRefreshType { get; set; }
         public int PlayType { get; set; }
+
+        public string GetIconName()
+        {
+            // Prioritize the HUD Icon that users would normally see
+            if (ShowHUDIcon != null && ShowHUDIcon.Length > 0)
+            {
+                int lastSeparator = ShowHUDIcon.LastIndexOf('/');
+                if (lastSeparator != -1)
+                {
+                    return ShowHUDIcon.Substring(lastSeparator + 1);
+                }
+            }
+
+            if (Icon != null && Icon.Length > 0)
+            {
+                int lastSeparator = Icon.LastIndexOf('/');
+                if (lastSeparator != -1)
+                {
+                    return Icon.Substring(lastSeparator + 1);
+                }
+            }
+
+            return Icon;
+        }
     }
 }
