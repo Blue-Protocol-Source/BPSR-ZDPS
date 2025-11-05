@@ -31,8 +31,16 @@ namespace BPSR_ZDPS
             .Enrich.FromLogContext()
             .WriteTo.Debug();
 
+            logBuilder.WriteTo.Console(Serilog.Events.LogEventLevel.Error);
+
             if (Settings.Instance.LogToFile)
             {
+                if (File.Exists("ZDPS_log.txt"))
+                {
+                    File.Copy("ZDPS_log.txt", "ZDPS_log_last_run.txt", true);
+                    File.Delete("ZDPS_log.txt");
+                }
+
                 logBuilder = logBuilder.WriteTo.File("ZDPS_log.txt");
             }
 
