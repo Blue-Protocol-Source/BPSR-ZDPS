@@ -189,13 +189,14 @@ public class TcpReassembler
             var toRemove = Packets.Where(x => x.Value.SequenceNumber < LastSeq ||
                                 x.Value.PayloadData.Length == 0 ||
                                 (DateTime.Now - x.Value.ArriveTime).TotalSeconds >= 10);
+
+            if (toRemove.Count() > 0)
+                Log.Information($"{EndPoint} -> {DestEndPoint}, Cleaned up {toRemove.Count()} packets");
+
             foreach (var item in toRemove)
             {
                 Packets.Remove(item.Key);
             }
-
-            if (toRemove.Count() > 0)
-                Log.Information($"{EndPoint} -> {DestEndPoint}, Cleaned up {toRemove.Count()} packets");
         }
     }
 }
