@@ -58,10 +58,10 @@ namespace BPSR_ZDPS.DataTypes
         public float WeeknessDuration { get; set; }
         public float FractureDuration { get; set; }
         public bool BehitLightIsOpen { get; set; }
-        public object BornClientBuffs { get; set; }
-        public object DeadClientBuffs { get; set; }
+        public List<int> BornClientBuffs { get; set; }
+        public List<int> DeadClientBuffs { get; set; }
         public bool HudInScreen { get; set; }
-        public object BloodMark { get; set; }
+        public List<int> BloodMark { get; set; }
         public float HudPosParam { get; set; }
         public int MonsterLogicLevel { get; set; }
         public int DropPackageID { get; set; }

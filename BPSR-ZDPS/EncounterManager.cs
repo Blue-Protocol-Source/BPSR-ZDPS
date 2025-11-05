@@ -255,6 +255,13 @@ namespace BPSR_ZDPS
                     entity.IncrementDeaths();
                 }
             }
+            else if (key == "AttrShieldList")
+            {
+                var shieldInfo = (ShieldInfo)value;
+                System.Diagnostics.Debug.WriteLine($"SetAttrKV({uuid})::AttrShieldList.ShieldInfo = {shieldInfo}");
+                entity.AddBuffEventAttribute((int)shieldInfo.Uuid, "AttrShieldList", shieldInfo);
+                //AddShieldGained(uuid, shieldInfo.Uuid, shieldInfo.Value, shieldInfo.InitialValue, shieldInfo.MaxValue);
+            }
         }
 
         public object? GetAttrKV(long uuid, string key)
@@ -332,6 +339,26 @@ namespace BPSR_ZDPS
             TotalNpcTakenDamage += (ulong)damage;
             GetOrCreateEntity(npcUuid).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, EDamageSource.Other, isMiss, isDead);
         }
+
+        public void AddShieldGained(long entityUuid, long shieldBuffUuid, long value, long initialValue, long maxValue = 0)
+        {
+            // Check to make sure the shieldBuffUuid is not already in the shieldGain list, otherwise this is just an update for an existing shield and we're only tracking total gain for now
+            //GetOrCreateEntity(entityUuid).AddBuffEventAttribute(shieldBuffUuid, "AttrShieldList", 0);
+        }
+
+        public void NotifyBuffEvent(long entityUuid, EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, int layer, int duration, int sourceConfigId)
+        {
+            string entityCasterName = "";
+            if (fireUuid > 0)
+            {
+                var caster = GetOrCreateEntity(fireUuid);
+                if (!string.IsNullOrEmpty(caster.Name))
+                {
+                    entityCasterName = caster.Name;
+                }
+            }
+            GetOrCreateEntity(entityUuid).NotifyBuffEvent(buffEventType, buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId, DateTime.Now.Subtract(EncounterManager.Current.StartTime));
+        }
     }
 
     public class Entity : System.ICloneable
@@ -351,7 +378,7 @@ namespace BPSR_ZDPS
         public CombatStats2 HealingStats { get; set; } = new();
         public CombatStats2 TakenStats { get; set; } = new();
 
-        public System.Collections.Concurrent.ConcurrentDictionary<int, CombatStats2> SkillStats { get; set; } = new();
+        public ConcurrentDictionary<int, CombatStats2> SkillStats { get; set; } = new();
         public List<ActionStat> ActionStats { get; set; } = new();
 
         public ulong TotalDamage { get; set; } = 0;
@@ -362,6 +389,8 @@ namespace BPSR_ZDPS
         public ulong TotalShield { get; set; } = 0;
         public ulong TotalCasts { get; set; } = 0;
         public ulong TotalDeaths { get; set; } = 0;
+
+        public ConcurrentDictionary<int, BuffEvent> BuffEvents { get; set; } = new();
 
         // Monster specific variables
         // When -1, this is unset (non-Monsters will be at -1), when 1 this is Elite, when 2 it is a boss
@@ -613,6 +642,52 @@ namespace BPSR_ZDPS
             /*TakenStats.value += (long)damage;
             TakenStats.StartTime ??= DateTime.Now;
             TakenStats.EndTime = DateTime.Now;*/
+        }
+
+        public void NotifyBuffEvent(EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId, TimeSpan encounterTime)
+        {
+            if (buffEventType == EBuffEventType.BuffEventAddTo)
+            {
+                if (!BuffEvents.TryGetValue(buffUuid, out var buffEvent))
+                {
+                    buffEvent = new BuffEvent(buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId);
+                    buffEvent.SetAddTime(encounterTime.Duration());
+                }
+                else
+                {
+                    if (buffEvent.BaseId <= 0)
+                    {
+                        buffEvent.SetEvent(buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId);
+                    }
+                }
+                
+                BuffEvents.AddOrUpdate(buffUuid, buffEvent, (key, val) => buffEvent);
+            }
+            else if (buffEventType == EBuffEventType.BuffEventRemove)
+            {
+                if (!BuffEvents.TryGetValue(buffUuid, out var buffEvent))
+                {
+                    // A remove event would only be coming with the uuid and type
+                    buffEvent = new BuffEvent(buffUuid);
+                }
+                buffEvent.SetRemoveTime(encounterTime.Duration());
+                BuffEvents.AddOrUpdate(buffUuid, buffEvent, (key, val) => buffEvent);
+            }
+            else
+            {
+                //System.Diagnostics.Debug.WriteLine($"NotifyBuffEvent Unhandled BuffEventType: {buffEventType}");
+            }
+        }
+
+        public void AddBuffEventAttribute(int buffUuid, string attributeName, object? attributeValue)
+        {
+            if (!BuffEvents.TryGetValue(buffUuid, out var buffEvent))
+            {
+                buffEvent = new BuffEvent(buffUuid);
+            }
+            buffEvent.AddData(attributeName, attributeValue);
+
+            BuffEvents.AddOrUpdate(buffUuid, buffEvent, (key, val) => buffEvent);
         }
 
         public void SetAttrKV(string key, object value)
@@ -905,6 +980,96 @@ namespace BPSR_ZDPS
                 else
                 {
                     ValuePerSecond = ValueTotal;
+                }
+            }
+        }
+    }
+
+    public class BuffEvent
+    {
+        public int BuffType { get; private set; } // 0 = Debuff, 1 = Buff, 2 = Special
+        public long Uuid { get; private set; }
+        public int BaseId { get; private set; }
+        public int Level { get; private set; }
+        public long FireUuid { get; private set; }
+        public string EntityCasterName { get; private set; }
+        public int Layer { get; private set; }
+        public int Duration { get; private set; }
+        public int SourceConfigId { get; private set; }
+        public string Name { get; private set; }
+        public string Description { get; private set; }
+        public string Icon { get; private set; }
+        public TimeSpan EventAddTime { get; private set; }
+        public TimeSpan EventRemoveTime { get; private set; }
+        public string AttributeName { get; private set; }
+        public object? Data { get; private set; }
+
+        public BuffEvent(long uuid)
+        {
+            Uuid = uuid;
+        }
+
+        public BuffEvent(int uuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId)
+        {
+            Uuid = uuid;
+            BaseId = baseId;
+            Level = level;
+            FireUuid = fireUuid;
+            EntityCasterName = entityCasterName;
+            Layer = layer;
+            Duration = duration;
+            SourceConfigId = sourceConfigId;
+
+            if (BaseId > 0)
+            {
+                if (HelperMethods.DataTables.Buffs.Data.TryGetValue(baseId.ToString(), out var buffTableData))
+                {
+                    Name = buffTableData.Name;
+                    Description = buffTableData.Desc;
+                    Icon = buffTableData.Icon;
+                }
+            }
+        }
+
+        public void AddData(string attributeName, object? data)
+        {
+            AttributeName = attributeName;
+            Data = data;
+        }
+
+        public void SetAddTime(TimeSpan time)
+        {
+            EventAddTime = time;
+        }
+
+        public void SetRemoveTime(TimeSpan time)
+        {
+            EventRemoveTime = time;
+        }
+
+        public void SetEntitySourceNameFromUuid(string name)
+        {
+
+        }
+
+        public void SetEvent(int uuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId)
+        {
+            Uuid = uuid;
+            BaseId = baseId;
+            Level = level;
+            FireUuid = fireUuid;
+            EntityCasterName = entityCasterName;
+            Layer = layer;
+            Duration = duration;
+            SourceConfigId = sourceConfigId;
+
+            if (BaseId > 0)
+            {
+                if (HelperMethods.DataTables.Buffs.Data.TryGetValue(baseId.ToString(), out var buffTableData))
+                {
+                    Name = buffTableData.Name;
+                    Description = buffTableData.Desc;
+                    Icon = buffTableData.Icon;
                 }
             }
         }

@@ -90,6 +90,14 @@ namespace BPSR_ZDPS
                 System.Diagnostics.Debug.WriteLine("Loaded SceneTable.json");
             }
 
+            string buffTableFile = Path.Combine(Utils.DATA_DIR_NAME, "BuffTable.json");
+            if (File.Exists(buffTableFile))
+            {
+                var buffs = JsonConvert.DeserializeObject<Dictionary<string, Buff>>(File.ReadAllText(buffTableFile));
+                HelperMethods.DataTables.Buffs.Data = buffs;
+                System.Diagnostics.Debug.WriteLine("Loaded BuffTable.json");
+            }
+
             // Load up our offline entity cache if it exists to help with initial data resolving when we're not given all the required details
             EntityCache.Instance.Load();
         }

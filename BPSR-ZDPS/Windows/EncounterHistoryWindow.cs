@@ -70,6 +70,7 @@ namespace BPSR_ZDPS.Windows
                 if (ImGui.Button("View By Each Individual Encounter", new Vector2(tabButtonHalfWidth, 0)))
                 {
                     SelectedViewMode = 0;
+                    SelectedEncounterIndex = -1;
                 }
                 if (viewMode == 0)
                 {
@@ -84,6 +85,7 @@ namespace BPSR_ZDPS.Windows
                 if (ImGui.Button("View By Each Grouped Battle", new Vector2(tabButtonHalfWidth, 0)))
                 {
                     SelectedViewMode = 1;
+                    SelectedEncounterIndex = -1;
                     // TODO: Allow viewing encounters grouped by their BattleId and showing the combined totals for them
 
                     GroupEncountersByBattleId();
@@ -105,7 +107,7 @@ namespace BPSR_ZDPS.Windows
                 else
                 {
                     encounters = GroupedBattles;
-                    ImGui.Text($"Battles: {GroupedBattles.Count}");
+                    ImGui.Text($"Battles: {GroupedBattles.Count - 1}");
                 }
 
                 string[] OrderByOptions = { "Order By Damage", "Order By Healing", "Order By Taken" };
@@ -181,9 +183,9 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Shield Break");
                         ImGui.TableSetupColumn("Crit Rate");
                         ImGui.TableSetupColumn("Lucky Rate");
-                        ImGui.TableSetupColumn("Crit Damage");
-                        ImGui.TableSetupColumn("Lucky Damage");
-                        ImGui.TableSetupColumn("Crit Lucky Damage");
+                        ImGui.TableSetupColumn("Crit DMG");
+                        ImGui.TableSetupColumn("Lucky DMG");
+                        ImGui.TableSetupColumn("Crit Lucky DMG");
                         ImGui.TableSetupColumn("Max Instant DPS");
                         ImGui.TableSetupColumn("Total Healing");
                         ImGui.TableSetupColumn("Total HPS");
@@ -194,7 +196,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Crit Lucky Healing");
                         ImGui.TableSetupColumn("Max Instant HPS");
                         ImGui.TableSetupColumn("Damage Taken");
-                        ImGui.TableSetupColumn("DMG Taken %");
+                        ImGui.TableSetupColumn("Taken %");
                         ImGui.TableSetupColumn("Deaths");
                         ImGui.TableHeadersRow();
 

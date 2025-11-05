@@ -24,6 +24,7 @@ namespace BPSR_ZDPS
             public static SkillTable Skills = new SkillTable();
             public static TargetTable Targets = new TargetTable();
             public static SceneTable Scenes = new SceneTable();
+            public static BuffTable Buffs = new BuffTable();
         }
     }
 }

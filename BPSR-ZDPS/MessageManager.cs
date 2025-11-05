@@ -357,12 +357,41 @@ namespace BPSR_ZDPS
             if (delta.BuffEffect != null)
             {
                 //System.Diagnostics.Debug.WriteLine($"delta.BuffEffect={delta.BuffEffect.BuffEffects.Count}");
+
+                for (int buffIdx = 0; buffIdx < delta.BuffEffect.BuffEffects.Count; buffIdx++)
+                {
+                    // Shield buffs appear to use Type == BuffEventAddTo and BuffEventRemove
+                    var buffEffect = delta.BuffEffect.BuffEffects[buffIdx];
+                    //System.Diagnostics.Debug.WriteLine($"BuffEffect[{buffIdx}] = {buffEffect}");
+
+                    if (delta.BuffInfos != null)
+                    {
+                        var matchInfo = delta.BuffInfos.BuffInfos.Where(x => x.BuffUuid == buffEffect.BuffUuid);
+                        if (matchInfo.Any())
+                        {
+                            var buffInfo = matchInfo.First();
+                            EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId);
+                        }
+                    }
+                    else
+                    {
+                        // Most commonly appears to include EBuffEventType.BuffEventRemove, EBuffEventType.BuffEventAddTo, EBuffEventType.BuffEventRemoveLayer
+
+                        EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, 0, 0, 0);
+                    }
+                }
             }
 
-            if (delta.BuffInfos != null)
+            /*if (delta.BuffInfos != null)
             {
-                //System.Diagnostics.Debug.WriteLine($"delta.BuffInfos={delta.BuffInfos.BuffInfos.Count}");
-            }
+                System.Diagnostics.Debug.WriteLine($"delta.BuffInfos={delta.BuffInfos.BuffInfos.Count}");
+
+                for (int buffIdx = 0; buffIdx < delta.BuffInfos.BuffInfos.Count; buffIdx++)
+                {
+                    var buffInfo = delta.BuffInfos.BuffInfos[buffIdx];
+                    System.Diagnostics.Debug.WriteLine($"BuffInfo[{buffIdx}] = {buffInfo}");
+                }
+            }*/
 
             var skillEffect = delta.SkillEffects;
             if (skillEffect != null)
@@ -968,6 +997,10 @@ namespace BPSR_ZDPS
                 // Must ForEach as the keys here are TargetId's
                 foreach (var target in dun.Target.TargetData)
                 {
+                    // Potentially use a TargetId blacklist to stop known messy targets from causing weird resets
+                    // 3010101/3010102 in Stimen Vault lead to bad tracking as a floor is cleared (sent just before last enemy is fully dead)
+                    // We can provide a list of predetermined id's for users to opt out of tracking here and rely on other targets or states
+
                     if (Settings.Instance.SplitEncountersOnNewPhases)
                     {
                         // Not all encounters are created equal, how they use these is unique per encounter

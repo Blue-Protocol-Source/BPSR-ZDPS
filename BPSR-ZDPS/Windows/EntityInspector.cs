@@ -35,6 +35,7 @@ namespace BPSR_ZDPS.Windows
             SkillsHealing,
             SkillsTaken,
             Attributes,
+            Buffs,
             Debug
         }
 
@@ -343,7 +344,7 @@ namespace BPSR_ZDPS.Windows
 
                 ImGui.Separator();
 
-                string[] FilterButtons = { "Damage", "Healing", "Taken", "Attributes", "Debug" };
+                string[] FilterButtons = { "Damage", "Healing", "Taken", "Attributes", "Buffs", "Debug" };
 
                 for (int filerBtnIdx = 0; filerBtnIdx < FilterButtons.Length; filerBtnIdx++)
                 {
@@ -551,6 +552,132 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.EndListBox();
                     }
+                }
+                else if (TableFilterMode == ETableFilterMode.Buffs)
+                {
+                    ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f, ImGui.GetStyle().CellPadding.Y));
+
+                    if (ImGui.BeginTable("##BuffEventsTable", 9, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit))
+                    {
+                        ImGui.TableSetupScrollFreeze(0, 1);
+                        ImGui.TableSetupColumn("UUID");
+                        ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch, 100f);
+                        ImGui.TableSetupColumn("Skill ID");
+                        ImGui.TableSetupColumn("Level");
+                        ImGui.TableSetupColumn("Type");
+                        ImGui.TableSetupColumn("Duration");
+                        ImGui.TableSetupColumn("Caster", ImGuiTableColumnFlags.WidthStretch, 50f);
+                        ImGui.TableSetupColumn("Add Time");
+                        ImGui.TableSetupColumn("Remove Time");
+
+                        ImGui.TableHeadersRow();
+
+                        ImGuiListClipper clipper = new();
+                        clipper.Begin(LoadedEntity.BuffEvents.Count);
+                        while (clipper.Step())
+                        {
+                            for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+                            {
+                                var buffEvent = LoadedEntity.BuffEvents.ElementAt((LoadedEntity.BuffEvents.Count - 1) - i);
+                                int buffUuid = buffEvent.Key;
+
+                                ImGui.TableNextColumn();
+
+                                
+
+                                int buffTypeColor = -1; // 0 = Buff, 1 = Shield, 2 = Debuff
+                                string extraTooltip = "";
+                                if (buffEvent.Value.AttributeName == "AttrShieldList")
+                                {
+                                    buffTypeColor = 1;
+                                    var shieldInfo = (Zproto.ShieldInfo)buffEvent.Value.Data;
+                                    extraTooltip = $"\nShieldInfo: Value={shieldInfo.Value}, InitialValue={shieldInfo.InitialValue}, MaxValue={shieldInfo.MaxValue}";
+
+                                }
+
+                                if (buffTypeColor == 1)
+                                {
+                                    ImGui.PushStyleColor(ImGuiCol.Header, Colors.DimGray);
+                                }
+
+                                if (ImGui.Selectable($"{buffUuid}##BuffEventEntry_{i}", true, ImGuiSelectableFlags.SpanAllColumns))
+                                {
+
+                                }
+
+                                if (buffTypeColor > -1)
+                                {
+                                    ImGui.PopStyleColor();
+                                }
+                                
+                                if (!string.IsNullOrEmpty(buffEvent.Value.Description))
+                                {
+                                    ImGui.SetItemTooltip($"{buffEvent.Value.Description.Replace("%", "%%")}{extraTooltip}");
+                                }
+
+                                ImGui.TableNextColumn();
+                                string displayName = "";
+                                if (!string.IsNullOrEmpty(buffEvent.Value.Name))
+                                {
+                                    displayName = buffEvent.Value.Name;
+                                }
+                                if (Settings.Instance.ShowSkillIconsInDetails)
+                                {
+                                    // TODO
+                                }
+                                ImGui.Text(displayName);
+
+                                ImGui.TableNextColumn();
+                                ImGui.Text($"{buffEvent.Value.SourceConfigId}");
+
+                                ImGui.TableNextColumn();
+                                ImGui.Text($"{buffEvent.Value.Level}");
+
+                                ImGui.TableNextColumn();
+                                ImGui.Text($"{buffEvent.Value.BuffType}");
+
+                                ImGui.TableNextColumn();
+                                string displayDuration = buffEvent.Value.Duration.ToString();
+                                if (buffEvent.Value.Duration > 0)
+                                {
+                                    displayDuration = (buffEvent.Value.Duration / 1000.0f).ToString();
+                                }
+                                ImGui.Text($"{displayDuration}s");
+
+                                ImGui.TableNextColumn();
+                                if (!string.IsNullOrEmpty(buffEvent.Value.EntityCasterName))
+                                {
+                                    ImGui.Text($"{buffEvent.Value.EntityCasterName}");
+                                }
+                                else
+                                {
+                                    ImGui.Text($"{buffEvent.Value.FireUuid}");
+                                }
+
+
+                                ImGui.TableNextColumn();
+                                string addTime = "";
+                                if (buffEvent.Value.EventAddTime.TotalMilliseconds > 0)
+                                {
+                                    addTime = buffEvent.Value.EventAddTime.ToString("hh\\:mm\\:ss");
+                                }
+                                ImGui.Text($"{addTime}");
+
+                                ImGui.TableNextColumn();
+                                string removeTime = "";
+                                if (buffEvent.Value.EventRemoveTime.TotalMilliseconds > 0)
+                                {
+                                    removeTime = buffEvent.Value.EventRemoveTime.ToString("hh\\:mm\\:ss");
+                                }
+                                ImGui.Text($"{removeTime}");
+                            }
+                        }
+                        clipper.End();
+
+                        ImGui.EndTable();
+                    }
+
+                    ImGui.PopStyleVar();
                 }
                 else if (TableFilterMode == ETableFilterMode.Debug)
                 {
