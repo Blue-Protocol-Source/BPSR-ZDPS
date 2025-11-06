@@ -6,6 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using ZLinq;
 using Zproto;
 
 namespace BPSR_ZDPS
@@ -664,6 +665,12 @@ namespace BPSR_ZDPS
                 }
                 buffEvent.SetAddTime(encounterTime.Duration());
 
+                // FIXME: For right now, limit buff tracking history to only the past 100 events per player until we write them off to a file
+                if (BuffEvents.Count > 99)
+                {
+                    BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
+                }
+
                 BuffEvents[(ulong)buffUuid] = buffEvent;
             }
             else
@@ -674,6 +681,13 @@ namespace BPSR_ZDPS
                     buffEvent = new BuffEvent(buffUuid);
                 }
                 buffEvent.SetRemoveTime(encounterTime.Duration());
+
+                // FIXME: For right now, limit buff tracking history to only the past 100 events per player until we write them off to a file
+                if (BuffEvents.Count > 99)
+                {
+                    BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
+                }
+
                 BuffEvents[(ulong)buffUuid] = buffEvent;
             }
             //else
@@ -695,6 +709,12 @@ namespace BPSR_ZDPS
                 }
             }
             buffEvent.AddData(attributeName, attributeValue);
+
+            // FIXME: For right now, limit buff tracking history to only the past 100 events per player until we write them off to a file
+            if (BuffEvents.Count > 99)
+            {
+                BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
+            }
 
             BuffEvents[(ulong)buffUuid] = buffEvent;
         }
@@ -997,6 +1017,7 @@ namespace BPSR_ZDPS
     public class BuffEvent
     {
         public int BuffType { get; private set; } // Source type of buff 0 = Skill, 1 = Talent, 2 = Special?
+        public int BuffPriority { get; private set; }
         public long Uuid { get; private set; }
         public int BaseId { get; private set; } // Buff Id in BuffTable
         public int Level { get; private set; }
@@ -1037,6 +1058,7 @@ namespace BPSR_ZDPS
                     Description = buffTableData.Desc;
                     Icon = buffTableData.GetIconName();
                     BuffType = buffTableData.BuffType;
+                    BuffPriority = buffTableData.BuffPriority;
                 }
             }
 
