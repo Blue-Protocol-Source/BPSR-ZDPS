@@ -127,7 +127,7 @@ namespace BPSR_ZDPS
         public DateTime EndTime { get; private set; }
         private TimeSpan? Duration { get; set; }
         public DateTime LastUpdate { get; set; }
-        public ConcurrentStack<Entity> Entities { get; set; }
+        public ConcurrentDictionary<long, Entity> Entities { get; set; }
 
         public ulong TotalDamage { get; set; } = 0;
         public ulong TotalNpcDamage { get; set; } = 0;
@@ -182,14 +182,16 @@ namespace BPSR_ZDPS
 
         public Entity GetOrCreateEntity(long uuid)
         {
-            var entity = Entities.FirstOrDefault(x => x.UUID == uuid);
-            if (entity == null)
+            if (Entities.TryGetValue(uuid, out var entity))
+            {
+                return entity;
+            }
+            else
             {
                 entity = new Entity(uuid);
-                Entities.Push(entity);
+                Entities.TryAdd(uuid, entity);
+                return entity;
             }
-
-            return entity;
         }
 
         public void SetName(long uuid, string name)

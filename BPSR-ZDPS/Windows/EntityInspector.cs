@@ -69,10 +69,9 @@ namespace BPSR_ZDPS.Windows
 
             if (PersistantTracking && LoadedFromEncounterIdx != EncounterManager.Encounters.Count - 1)
             {
-                var foundEntity = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.UUID == LoadedEntity.UUID);
-                if (foundEntity.Any())
+                if (EncounterManager.Current.Entities.TryGetValue(LoadedEntity.UUID, out var foundEntity))
                 {
-                    LoadEntity(foundEntity.First());
+                    LoadEntity(foundEntity);
                     LoadedFromEncounterIdx = EncounterManager.Encounters.Count - 1;
                 }
             }

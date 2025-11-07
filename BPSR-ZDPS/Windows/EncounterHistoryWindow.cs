@@ -202,21 +202,21 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Deaths");
                         ImGui.TableHeadersRow();
 
-                        var entitiesFiltered = encounters[SelectedEncounterIndex].Entities.AsValueEnumerable().Where(x => x.EntityType == Zproto.EEntityType.EntChar || x.EntityType == Zproto.EEntityType.EntMonster);
+                        var entitiesFiltered = encounters[SelectedEncounterIndex].Entities.AsValueEnumerable().Where(x => x.Value.EntityType == Zproto.EEntityType.EntChar || x.Value.EntityType == Zproto.EEntityType.EntMonster);
                         List<Entity> entities;
                         switch (SelectedOrderByOption)
                         {
                             case 0:
-                                entities = entitiesFiltered.OrderByDescending(x => x.TotalDamage).ToList();
+                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalDamage).Select(kvp => kvp.Value).ToList();
                                 break;
                             case 1:
-                                entities = entitiesFiltered.OrderByDescending(x => x.TotalHealing).ToList();
+                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalHealing).Select(kvp => kvp.Value).ToList();
                                 break;
                             case 2:
-                                entities = entitiesFiltered.OrderByDescending(x => x.TotalTakenDamage).ToList();
+                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalTakenDamage).Select(kvp => kvp.Value).ToList();
                                 break;
                             default:
-                                entities = entitiesFiltered.OrderByDescending(x => x.TotalDamage).ToList();
+                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalDamage).Select(kvp => kvp.Value).ToList();
                                 break;
                         }
 
@@ -416,16 +416,13 @@ namespace BPSR_ZDPS.Windows
 
                     foreach (var entity in encounter.Entities)
                     {
-                        var foundEnt = enc.Entities.AsValueEnumerable().Where(x => x.UUID == entity.UUID);
-                        if (foundEnt.Any())
+                        if (enc.Entities.TryGetValue(entity.Value.UUID, out var foundEnt))
                         {
-                            var match = foundEnt.First();
-
-                            match.MergeEntity(entity);
+                            foundEnt.MergeEntity(entity.Value);
                         }
                         else
                         {
-                            enc.Entities.Push((Entity)entity.Clone());
+                            enc.Entities.TryAdd(entity.Value.UUID, (Entity)entity.Value.Clone());
                         }
                     }
                 }

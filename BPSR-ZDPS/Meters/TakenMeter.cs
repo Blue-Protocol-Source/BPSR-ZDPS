@@ -33,13 +33,13 @@ namespace BPSR_ZDPS.Meters
             if (ImGui.BeginListBox("##TakenMeterList", new Vector2(-1, -1)))
             {
                 // Call .ToList() to create a copy of the data in memory as it might change
-                var playerList = EncounterManager.Current?.Entities.AsValueEnumerable().Where(x => x.EntityType == Zproto.EEntityType.EntMonster).OrderByDescending(x => x.TotalTakenDamage).ToList();
+                var playerList = EncounterManager.Current?.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == Zproto.EEntityType.EntMonster).OrderByDescending(x => x.Value.TotalTakenDamage).ToList();
 
                 ulong topTotalValue = 0;
 
                 for (int i = 0; i < playerList?.Count(); i++)
                 {
-                    var entity = playerList[i];
+                    var entity = playerList[i].Value;
 
                     if (i == 0 && Settings.Instance.NormalizeMeterContributions)
                     {

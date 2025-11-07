@@ -2719,7 +2719,7 @@
     },
     "2110012":
     {
-        "Name": "Ultimate! Pulse Blessing (King M'k)"
+        "Name": "Ultimate! Pulse Blessing (Muku King)"
     },
     "2110062":
     {
@@ -3047,7 +3047,7 @@
     },
     "3210101":
     {
-        "Name": "King M'kor - Shield"
+        "Name": "Muku King - Passive Shield"
     },
     "3913001":
     {
@@ -3356,5 +3356,9 @@
     "10240198":
     {
         "Name": "Void Ball Release"
+    },
+    "802906":
+    {
+        "Name": "Wind Particle"
     }
 }

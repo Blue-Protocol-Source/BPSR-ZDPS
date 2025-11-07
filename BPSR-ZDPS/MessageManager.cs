@@ -222,6 +222,12 @@ namespace BPSR_ZDPS
                             System.Diagnostics.Debug.WriteLine($"shieldInfo[].unk2={unk2}");*/
                             break;
                         }
+                    case EAttrType.AttrSummonerId:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrSummonerId", reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrTopSummonerId:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrTopSummonerId", reader.ReadInt64());
+                        break;
                     default:
                         string attr_name = ((EAttrType)attr.Id).ToString();
                         EncounterManager.Current.SetAttrKV(uuid, attr_name, reader.ReadInt32());
@@ -371,18 +377,6 @@ namespace BPSR_ZDPS
                         if (matchInfo.Any())
                         {
                             var buffInfo = matchInfo.First();
-                            foreach (var logicInfo in buffInfo.LogicEffect)
-                            {
-                                if (logicInfo.RawData.Length > 0)
-                                {
-                                    var reader = new Google.Protobuf.CodedInputStream(logicInfo.RawData.ToByteArray());
-                                    //int x = reader.ReadInt32();
-                                    //int y = reader.ReadInt32();
-                                    var x = reader.ReadInt64();
-                                    var y = reader.ReadInt64();
-                                    //System.Diagnostics.Debug.WriteLine($"effectType = {logicInfo.EffectType}, x = {x}, y = {y}");
-                                }
-                            }
                             EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId);
                         }
                     }
@@ -925,7 +919,7 @@ namespace BPSR_ZDPS
                 {
                     // The player state is in a wipe pattern
                     // Check if there is a Boss type monster
-                    var bosses = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.MonsterType == 2);
+                    var bosses = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.Value.MonsterType == 2);
                     //System.Diagnostics.Debug.WriteLine($"bosses.Count = {bosses.Count()}");
 
                     if (bosses.Count() > 0)
@@ -934,8 +928,8 @@ namespace BPSR_ZDPS
                         foreach (var boss in bosses)
                         {
                             // If all bosses are full HP, then let's call it a wipe
-                            long? hp = boss.GetAttrKV("AttrHp") as long?;
-                            long? maxHp = boss.GetAttrKV("AttrMaxHp") as long?;
+                            long? hp = boss.Value.GetAttrKV("AttrHp") as long?;
+                            long? maxHp = boss.Value.GetAttrKV("AttrMaxHp") as long?;
                             // Might need to use MaxHpTotal?
                             if (hp != null && maxHp != null && hp > 0 && maxHp > 0 && hp >= maxHp)
                             {
