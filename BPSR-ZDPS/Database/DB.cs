@@ -1,9 +1,11 @@
 ﻿using Dapper;
 using Microsoft.Data.Sqlite;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Serilog;
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.Reflection;
 using System.Text;
 using System.Text.Unicode;
 using static BPSR_ZDPS.DBSchema;
@@ -110,7 +112,11 @@ namespace BPSR_ZDPS
             {
                 var decompressed = Decompressor.Unwrap(entityBlob.Data);
                 var entitiesJson = Encoding.UTF8.GetString(decompressed.ToArray());
-                encounter.Entities = JsonConvert.DeserializeObject<ConcurrentDictionary<long, Entity>>(entitiesJson);
+                encounter.Entities = JsonConvert.DeserializeObject<ConcurrentDictionary<long, Entity>>(entitiesJson, new JsonSerializerSettings()
+                {
+                    ContractResolver = new PrivateResolver(),
+                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
+                });
             }
             else
             {
@@ -151,6 +157,21 @@ namespace BPSR_ZDPS
             }
 
             return encounters;
+        }
+    }
+
+    public class PrivateResolver : DefaultContractResolver
+    {
+        protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
+        {
+            var prop = base.CreateProperty(member, memberSerialization);
+            if (!prop.Writable)
+            {
+                var property = member as PropertyInfo;
+                var hasPrivateSetter = property?.GetSetMethod(true) != null;
+                prop.Writable = hasPrivateSetter;
+            }
+            return prop;
         }
     }
 }

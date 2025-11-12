@@ -48,7 +48,7 @@ namespace BPSR_ZDPS
 
             DB.Init();
 
-            DB.LoadEncounter(10);
+            DB.LoadEncounter(6);
 
             GLFW.Init();
 

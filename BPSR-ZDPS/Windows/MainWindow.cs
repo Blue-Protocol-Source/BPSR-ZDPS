@@ -37,6 +37,7 @@ namespace BPSR_ZDPS.Windows
 
             SettingsWindow.Draw(this);
             EncounterHistoryWindow.Draw(this);
+            EncounterHistoryWindowDB.Draw(this);
             entityInspector.Draw(this);
             NetDebug.Draw();
             DebugDungeonTracker.Draw(this);
@@ -247,6 +248,12 @@ namespace BPSR_ZDPS.Windows
                     {
                         EncounterHistoryWindow.Open();
                     }
+
+                    if (ImGui.MenuItem("Encounter History (Yell at Arkii version cause you hate it :<)"))
+                    {
+                        EncounterHistoryWindowDB.Open();
+                    }
+
                     ImGui.Separator();
                     if (ImGui.MenuItem("Settings"))
                     {

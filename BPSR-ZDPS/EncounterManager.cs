@@ -437,6 +437,7 @@ namespace BPSR_ZDPS
             return cloned;
         }
 
+        [JsonConstructor]
         public Entity(long uuid, string name = null)
         {
             UUID = uuid;

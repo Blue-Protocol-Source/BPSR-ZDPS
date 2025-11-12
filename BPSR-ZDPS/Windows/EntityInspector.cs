@@ -177,7 +177,7 @@ namespace BPSR_ZDPS.Windows
                         double CritPctValue = 0.0;
                         if (CritPct != null)
                         {
-                            CritPctValue = Math.Round((int)CritPct / 100.0, 2);
+                            CritPctValue = Math.Round((int)(long)CritPct / 100.0, 2);
                         }
                         ImGui.Text($"Crit: {CritPctValue}%% ({CriValue})");
 
@@ -185,13 +185,13 @@ namespace BPSR_ZDPS.Windows
                         int HasteValue = 0;
                         if (Haste != null)
                         {
-                            HasteValue = (int)Haste;
+                            HasteValue = (int)(long)Haste;
                         }
                         var HastePct = LoadedEntity.GetAttrKV("AttrHastePct");
                         double HastePctValue = 0.0;
                         if (HastePct != null)
                         {
-                            HastePctValue = Math.Round((int)HastePct / 100.0, 2);
+                            HastePctValue = Math.Round((int)(long)HastePct / 100.0, 2);
                         }
                         ImGui.Text($"Haste: {HastePctValue}%% ({HasteValue})");
 
@@ -206,7 +206,7 @@ namespace BPSR_ZDPS.Windows
                         double LuckPctValue = 0.0;
                         if (LuckPct != null)
                         {
-                            LuckPctValue = Math.Round((int)LuckPct / 100.0, 2);
+                            LuckPctValue = Math.Round((int)(long)LuckPct / 100.0, 2);
                         }
                         ImGui.Text($"Luck: {LuckPctValue}%% ({LuckValue})");
 
@@ -214,13 +214,13 @@ namespace BPSR_ZDPS.Windows
                         int MasteryValue = 0;
                         if (Mastery != null)
                         {
-                            MasteryValue = (int)Mastery;
+                            MasteryValue = (int)(long)Mastery;
                         }
                         var MasteryPct = LoadedEntity.GetAttrKV("AttrMasteryPct");
                         double MasteryPctValue = 0.0;
                         if (MasteryPct != null)
                         {
-                            MasteryPctValue = Math.Round((int)MasteryPct / 100.0, 2);
+                            MasteryPctValue = Math.Round((int)(long)MasteryPct / 100.0, 2);
                         }
                         ImGui.Text($"Mastery: {MasteryPctValue}%% ({MasteryValue})");
 
@@ -228,13 +228,13 @@ namespace BPSR_ZDPS.Windows
                         int VersatilityValue = 0;
                         if (Versatility != null)
                         {
-                            VersatilityValue = (int)Versatility;
+                            VersatilityValue = (int)(long)Versatility;
                         }
                         var VersatilityPct = LoadedEntity.GetAttrKV("AttrVersatilityPct");
                         double VersatilityPctValue = 0.0;
                         if (VersatilityPct != null)
                         {
-                            VersatilityPctValue = Math.Round((int)VersatilityPct / 100.0, 2);
+                            VersatilityPctValue = Math.Round((int)(long)VersatilityPct / 100.0, 2);
                         }
                         ImGui.Text($"Versatility: {VersatilityPctValue} ({VersatilityValue})");
 
@@ -242,7 +242,7 @@ namespace BPSR_ZDPS.Windows
                         double BlockPctValue = 0.0;
                         if (BlockPct != null)
                         {
-                            BlockPctValue = Math.Round((int)BlockPct / 100.0, 2);
+                            BlockPctValue = Math.Round((int)(long)BlockPct / 100.0, 2);
                         }
                         ImGui.Text($"Block: {BlockPctValue}%%");
 
