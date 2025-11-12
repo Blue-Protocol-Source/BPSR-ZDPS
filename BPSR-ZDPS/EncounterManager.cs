@@ -1,4 +1,5 @@
 ﻿using BPSR_ZDPS.DataTypes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -51,10 +52,14 @@ namespace BPSR_ZDPS
                     return;
                 }
             }
-
             Encounters.Add(new Encounter(CurrentBattleId));
 
             CurrentEncounter = Encounters.Count - 1;
+
+            if (CurrentEncounter >= 1)
+            {
+                DB.InsertEncounter(Encounters[CurrentEncounter - 1]);
+            }
 
             // Reuse last sceneId as our current one (it may not always be right but hopefully is right enough)
             if (LevelMapId > 0)
@@ -89,7 +94,14 @@ namespace BPSR_ZDPS
         {
             // This increments an internal ID for encounters to use that allows them to be grouped together by "battle"
             // These are typically going to be just splitting encounters up by instance (which is changed via map traveling)
-            CurrentBattleId++;
+
+            if (CurrentBattleId != 0)
+            {
+                DB.UpdateBattleInfo((ulong)CurrentBattleId, LevelMapId, SceneName);
+            }
+
+            var battleId = DB.StartBattle(LevelMapId, SceneName);
+            CurrentBattleId = (int)battleId;
         }
 
         // While we technically use the 'LevelMapId' and not the 'SceneId' field, it's just another type of SceneId ultimately
@@ -117,8 +129,9 @@ namespace BPSR_ZDPS
         }
     }
 
-    public class Encounter
+    public class  Encounter
     {
+        public ulong EncounterId { get; set; }
         public int BattleId { get; set; }
         public uint SceneId { get; set; }
         public string SceneName { get; set; }
@@ -141,6 +154,11 @@ namespace BPSR_ZDPS
         public ulong TotalNpcTakenDamage { get; set; } = 0;
         public ulong TotalDeaths { get; set; } = 0;
         public ulong TotalNpcDeaths { get; set; } = 0;
+
+        public Encounter()
+        {
+
+        }
 
         public Encounter(int battleId = 0)
         {
@@ -1041,6 +1059,7 @@ namespace BPSR_ZDPS
             Uuid = uuid;
         }
 
+        [JsonConstructor]
         public BuffEvent(int uuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId)
         {
             Uuid = uuid;

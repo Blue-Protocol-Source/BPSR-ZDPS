@@ -27,7 +27,7 @@ namespace BPSR_ZDPS
             Settings.Load();
 
             var logBuilder = new LoggerConfiguration();
-            logBuilder = logBuilder.MinimumLevel.Debug()
+            logBuilder = logBuilder.MinimumLevel.Verbose()
             .Enrich.FromLogContext()
             .WriteTo.Debug();
 
@@ -45,6 +45,10 @@ namespace BPSR_ZDPS
             }
 
             Log.Logger = logBuilder.CreateLogger();
+
+            DB.Init();
+
+            DB.LoadEncounter(10);
 
             GLFW.Init();
 
