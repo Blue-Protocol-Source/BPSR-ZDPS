@@ -11,6 +11,7 @@ namespace BPSR_ZDPS
             conn.Execute(EntitiesSql.CreateTable);
             conn.Execute(BattlesSql.CreateTable);
             conn.Execute(DbDataSql.CreateTable);
+            conn.Execute(EntityCacheLineSql.CreateTable);
         }
 
         public static class EncounterSql
@@ -115,5 +116,38 @@ namespace BPSR_ZDPS
 
                 INSERT INTO DbData (Version) VALUES (1.0)";
         }
+
+        public static class EntityCacheLineSql
+        {
+            public const string CreateTable = @"
+                CREATE TABLE IF NOT EXISTS EntityCache (
+                    UUID INTEGER PRIMARY KEY,
+                    UID INTEGER NOT NULL,
+                    Name TEXT NOT NULL,
+                    Level INTEGER NOT NULL,
+                    AblityScore INTEGER NOT NULL,
+                    ProfessionId INTEGER NOT NULL,
+                    SubProfessionId INTEGER NOT NULL
+                );";
+
+            public const string InsertOrReplace = @"
+                INSERT OR REPLACE INTO EntityCache
+                (UUID, UID, Name, Level, AblityScore, ProfessionId, SubProfessionId)
+                VALUES (@UUID, @UID, @Name, @Level, @AblityScore, @ProfessionId, @SubProfessionId);";
+
+            public const string SelectAll = @"SELECT * FROM EntityCache;";
+
+            public const string SelectByUUID = @"SELECT * FROM EntityCache WHERE UUID = @UUID;";
+
+            public const string SelectByUID = @"SELECT * FROM EntityCache WHERE UID = @UID;";
+
+            public const string GetOrCreateDefaultByUUID = @"
+                INSERT INTO EntityCache (UUID, UID, Name, Level, AblityScore, ProfessionId, SubProfessionId)
+                SELECT @UUID, (@UID >> 16), '', 0, 0, 0, 0
+                WHERE NOT EXISTS (SELECT 1 FROM EntityCache WHERE UUID = @UUID);
+
+                SELECT * FROM EntityCache WHERE UUID = @UUID;";
+        }
+
     }
 }

@@ -120,6 +120,11 @@ namespace BPSR_ZDPS
             }
         }
 
+        public void PortToDB()
+        {
+            DB.UpdateEntityCacheLines(Cache.Lines.Values);
+        }
+
         // TODO: Will store very basic info for each entity encountered and update it if a change is found
         // Details will include the UUID, UID, Name, AbilityScore, Profession/SubProfession
         // This data will be used as a first-to-load dataset for giving a starting point of resolved data in the meter

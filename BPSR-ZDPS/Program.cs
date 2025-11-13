@@ -48,8 +48,6 @@ namespace BPSR_ZDPS
 
             DB.Init();
 
-            DB.LoadEncounter(6);
-
             GLFW.Init();
 
             GLFW.WindowHint(GLFW.GLFW_CLIENT_API, GLFW.GLFW_NO_API);

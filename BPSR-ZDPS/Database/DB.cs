@@ -7,7 +7,6 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Reflection;
 using System.Text;
-using System.Text.Unicode;
 using static BPSR_ZDPS.DBSchema;
 
 namespace BPSR_ZDPS
@@ -16,30 +15,23 @@ namespace BPSR_ZDPS
     {
         private static SqliteConnection DbConn;
         private static ILogger Log;
-        private static ZstdSharp.Compressor Compressor;
-        private static ZstdSharp.Decompressor Decompressor;
+        private static ZstdSharp.Compressor Compressor = new ZstdSharp.Compressor();
+        private static ZstdSharp.Decompressor Decompressor = new ZstdSharp.Decompressor();
 
         public static void Init()
         {
             Log = Serilog.Log.Logger.ForContext<DB>();
-            Compressor = new ZstdSharp.Compressor();
-            Decompressor = new ZstdSharp.Decompressor();
             DbConn = new SqliteConnection("Data Source=ZDPS_Logs.db");
             DbConn.Open();
 
             CreateTables(DbConn);
         }
 
+        // Encounters
         public static ulong GetNextEncounterId()
         {
             const string sql = "SELECT COALESCE(MAX(EncounterId), 0) + 1 FROM Encounters";
             return DbConn.QuerySingle<ulong>(sql);
-        }
-
-        public static int GetNextBattleId()
-        {
-            const string sql = "SELECT COALESCE(MAX(BattleId), 0) + 1 FROM Battles";
-            return DbConn.QuerySingle<int>(sql);
         }
 
         public static ulong InsertEncounter(Encounter encounter)
@@ -67,33 +59,6 @@ namespace BPSR_ZDPS
             File.WriteAllText($"TestJsonEncounters/Encounter_{encounterId}_Write.json", JsonConvert.SerializeObject(encounter, Formatting.Indented));
 
             return encounterId;
-        }
-
-        public static ulong StartBattle(uint sceneId, string sceneName)
-        {
-            var battle = new Battle()
-            {
-                SceneId = sceneId,
-                SceneName = sceneName ?? "",
-                StartTime = DateTime.Now
-            };
-
-            var battleId = DbConn.QuerySingle<ulong>(BattlesSql.Insert, battle);
-
-            return battleId;
-        }
-
-        public static void UpdateBattleInfo(ulong battleId, uint sceneId, string sceneName)
-        {
-            var battle = new Battle()
-            {
-                BattleId = battleId,
-                SceneId = sceneId,
-                SceneName = sceneName ?? "",
-                EndTime = DateTime.Now
-            };
-
-            DbConn.Execute(BattlesSql.Update, battle);
         }
 
         public static Encounter? LoadEncounter(ulong encounterId)
@@ -139,6 +104,40 @@ namespace BPSR_ZDPS
             return encounters;
         }
 
+        // Battles
+        public static int GetNextBattleId()
+        {
+            const string sql = "SELECT COALESCE(MAX(BattleId), 0) + 1 FROM Battles";
+            return DbConn.QuerySingle<int>(sql);
+        }
+
+        public static ulong StartBattle(uint sceneId, string sceneName)
+        {
+            var battle = new Battle()
+            {
+                SceneId = sceneId,
+                SceneName = sceneName ?? "",
+                StartTime = DateTime.Now
+            };
+
+            var battleId = DbConn.QuerySingle<ulong>(BattlesSql.Insert, battle);
+
+            return battleId;
+        }
+
+        public static void UpdateBattleInfo(ulong battleId, uint sceneId, string sceneName)
+        {
+            var battle = new Battle()
+            {
+                BattleId = battleId,
+                SceneId = sceneId,
+                SceneName = sceneName ?? "",
+                EndTime = DateTime.Now
+            };
+
+            DbConn.Execute(BattlesSql.Update, battle);
+        }
+
         public static List<Battle> LoadBattles()
         {
             var battles = DbConn.Query<Battle>(BattlesSql.SelectAll).ToList();
@@ -157,6 +156,43 @@ namespace BPSR_ZDPS
             }
 
             return encounters;
+        }
+
+        // Entity Cache
+        public static EntityCacheLine? GetEntityCacheLineByUUID(long uuid)
+        {
+            var line = DbConn.QuerySingleOrDefault<EntityCacheLine>(EntityCacheLineSql.SelectByUUID, uuid);
+            return line;
+        }
+
+        public static EntityCacheLine? GetEntityCacheLineByUID(long uid)
+        {
+            var line = DbConn.QuerySingleOrDefault<EntityCacheLine>(EntityCacheLineSql.SelectByUID, uid);
+            return line;
+        }
+
+        public static EntityCacheLine? GetOrCreateEntityCacheLineByUUID(long uuid)
+        {
+            var line = DbConn.QuerySingle<EntityCacheLine>(EntityCacheLineSql.GetOrCreateDefaultByUUID, uuid);
+            return line;
+        }
+
+        public static bool UpdateEntityCacheLine(EntityCacheLine line)
+        {
+            var result = DbConn.Execute(EntityCacheLineSql.InsertOrReplace, line);
+            return result > 0;
+        }
+
+        public static bool UpdateEntityCacheLines(IEnumerable<EntityCacheLine> lines)
+        {
+            var sw = Stopwatch.StartNew();
+            using var trans = DbConn.BeginTransaction();
+            var result = DbConn.Execute(EntityCacheLineSql.InsertOrReplace, lines, trans);
+            trans.Commit();
+            sw.Stop();
+            Log.Information("UpdateEntityCacheLines took {elapsed} to insert {numLines}", sw.Elapsed, lines.Count());
+
+            return result > 0;
         }
     }
 
