@@ -161,25 +161,25 @@ namespace BPSR_ZDPS
         // Entity Cache
         public static EntityCacheLine? GetEntityCacheLineByUUID(long uuid)
         {
-            var line = DbConn.QuerySingleOrDefault<EntityCacheLine>(EntityCacheLineSql.SelectByUUID, uuid);
+            var line = DbConn.QuerySingleOrDefault<EntityCacheLine>(EntityCacheSql.SelectByUUID, uuid);
             return line;
         }
 
         public static EntityCacheLine? GetEntityCacheLineByUID(long uid)
         {
-            var line = DbConn.QuerySingleOrDefault<EntityCacheLine>(EntityCacheLineSql.SelectByUID, uid);
+            var line = DbConn.QuerySingleOrDefault<EntityCacheLine>(EntityCacheSql.SelectByUID, uid);
             return line;
         }
 
         public static EntityCacheLine? GetOrCreateEntityCacheLineByUUID(long uuid)
         {
-            var line = DbConn.QuerySingle<EntityCacheLine>(EntityCacheLineSql.GetOrCreateDefaultByUUID, uuid);
+            var line = DbConn.QuerySingle<EntityCacheLine>(EntityCacheSql.GetOrCreateDefaultByUUID, uuid);
             return line;
         }
 
         public static bool UpdateEntityCacheLine(EntityCacheLine line)
         {
-            var result = DbConn.Execute(EntityCacheLineSql.InsertOrReplace, line);
+            var result = DbConn.Execute(EntityCacheSql.InsertOrReplace, line);
             return result > 0;
         }
 
@@ -187,7 +187,7 @@ namespace BPSR_ZDPS
         {
             var sw = Stopwatch.StartNew();
             using var trans = DbConn.BeginTransaction();
-            var result = DbConn.Execute(EntityCacheLineSql.InsertOrReplace, lines, trans);
+            var result = DbConn.Execute(EntityCacheSql.InsertOrReplace, lines, trans);
             trans.Commit();
             sw.Stop();
             Log.Information("UpdateEntityCacheLines took {elapsed} to insert {numLines}", sw.Elapsed, lines.Count());

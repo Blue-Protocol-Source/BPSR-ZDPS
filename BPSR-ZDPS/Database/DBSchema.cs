@@ -11,7 +11,7 @@ namespace BPSR_ZDPS
             conn.Execute(EntitiesSql.CreateTable);
             conn.Execute(BattlesSql.CreateTable);
             conn.Execute(DbDataSql.CreateTable);
-            conn.Execute(EntityCacheLineSql.CreateTable);
+            conn.Execute(EntityCacheSql.CreateTable);
         }
 
         public static class EncounterSql
@@ -117,7 +117,7 @@ namespace BPSR_ZDPS
                 INSERT INTO DbData (Version) VALUES (1.0)";
         }
 
-        public static class EntityCacheLineSql
+        public static class EntityCacheSql
         {
             public const string CreateTable = @"
                 CREATE TABLE IF NOT EXISTS EntityCache (
