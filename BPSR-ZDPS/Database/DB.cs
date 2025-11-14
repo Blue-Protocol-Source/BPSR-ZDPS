@@ -146,7 +146,7 @@ namespace BPSR_ZDPS
 
         public static List<Encounter> LoadEncountersForBattleId(ulong battleId)
         {
-            var encountersSum = DbConn.Query<Encounter>(EncounterSql.SelectByBattleId, battleId);
+            var encountersSum = DbConn.Query<Encounter>(EncounterSql.SelectByBattleId,new { BattleId = battleId });
             var encounters = new List<Encounter>(encountersSum.Count());
 
             foreach (var encounter in encountersSum)
@@ -209,5 +209,7 @@ namespace BPSR_ZDPS
             }
             return prop;
         }
+
+
     }
 }

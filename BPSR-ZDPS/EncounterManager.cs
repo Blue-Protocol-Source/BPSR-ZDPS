@@ -17,7 +17,7 @@ namespace BPSR_ZDPS
         public static List<Encounter> Encounters { get; private set; } = new();
         public static int SelectedEncounter = -1;
 
-        public static Encounter? Current => Encounters.Count > 0 ? Encounters[CurrentEncounter] : null;
+        public static Encounter? Current = null;
 
         public static int CurrentEncounter = 0;
         public static int CurrentBattleId = 0;
@@ -52,14 +52,17 @@ namespace BPSR_ZDPS
                     return;
                 }
             }
-            Encounters.Add(new Encounter(CurrentBattleId));
+            //Encounters.Add(new Encounter(CurrentBattleId));
 
-            CurrentEncounter = Encounters.Count - 1;
+            //CurrentEncounter = Encounters.Count - 1;
 
-            if (CurrentEncounter >= 1)
+            if (Current != null)
             {
-                DB.InsertEncounter(Encounters[CurrentEncounter - 1]);
+                DB.InsertEncounter(Current);
             }
+
+            Current = new Encounter(CurrentBattleId);
+
 
             // Reuse last sceneId as our current one (it may not always be right but hopefully is right enough)
             if (LevelMapId > 0)
@@ -140,7 +143,7 @@ namespace BPSR_ZDPS
         public DateTime EndTime { get; private set; }
         private TimeSpan? Duration { get; set; }
         public DateTime LastUpdate { get; set; }
-        public ConcurrentDictionary<long, Entity> Entities { get; set; }
+        public ConcurrentDictionary<long, Entity> Entities { get; set; } = [];
 
         public ulong TotalDamage { get; set; } = 0;
         public ulong TotalNpcDamage { get; set; } = 0;
@@ -747,7 +750,14 @@ namespace BPSR_ZDPS
 
         public object? GetAttrKV(string key)
         {
-            return Attributes.TryGetValue(key, out var val) ? val : null;
+            var value = Attributes.TryGetValue(key, out var val) ? val : null;
+            if (value is long longValue)
+            {
+                if (longValue > Int32.MinValue && longValue < Int32.MaxValue)
+                    return (int)longValue;
+            }
+
+            return value;
         }
 
         // Merges the data from another entity with this one, does not check the UUIDs match first
