@@ -546,8 +546,10 @@ namespace BPSR_ZDPS.Windows
                         for (int i = 0; i < attributes.Count; i++)
                         {
                             var attr = attributes.ElementAt(i);
-
-                            ImGui.Text($"[{i}] {attr.Key} = {attr.Value.ToString()}");
+                            if (attr.Key != "$type")
+                            {
+                                ImGui.Text($"[{i}] {attr.Key} = {attr.Value.ToString()}");
+                            }
                         }
 
                         ImGui.EndListBox();

@@ -751,13 +751,18 @@ namespace BPSR_ZDPS
         public object? GetAttrKV(string key)
         {
             var value = Attributes.TryGetValue(key, out var val) ? val : null;
-            if (value is long longValue)
+            return value;
+        }
+
+        public T GetAttrKV<T>(string key) where T : struct
+        {
+            var value = Attributes.TryGetValue(key, out var val) ? val : null;
+            if (typeof(T) == typeof(long))
             {
-                if (longValue > Int32.MinValue && longValue < Int32.MaxValue)
-                    return (int)longValue;
+                //return ((T)(int)value);
             }
 
-            return value;
+            return (T)value;
         }
 
         // Merges the data from another entity with this one, does not check the UUIDs match first

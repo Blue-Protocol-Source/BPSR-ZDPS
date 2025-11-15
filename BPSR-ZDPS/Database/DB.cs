@@ -1,11 +1,10 @@
-﻿using Dapper;
+﻿using BPSR_ZDPS.Database;
+using Dapper;
 using Microsoft.Data.Sqlite;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using Serilog;
 using System.Collections.Concurrent;
 using System.Diagnostics;
-using System.Reflection;
 using System.Text;
 using static BPSR_ZDPS.DBSchema;
 
@@ -41,7 +40,10 @@ namespace BPSR_ZDPS
             var encounterId = DbConn.QuerySingle<ulong>(EncounterSql.Insert, encounter, transaction);
             encounter.EncounterId = encounterId;
 
-            var entitiesJson = JsonConvert.SerializeObject(encounter.Entities);
+            var entitiesJson = JsonConvert.SerializeObject(encounter.Entities, Formatting.None, new JsonSerializerSettings()
+            {
+                TypeNameHandling = Newtonsoft.Json.TypeNameHandling.All
+            });
             var entitiesAsBytes = ASCIIEncoding.UTF8.GetBytes(entitiesJson);
             var compressed = Compressor.Wrap(entitiesAsBytes);
 
@@ -55,8 +57,8 @@ namespace BPSR_ZDPS
             sw.Stop();
             Log.Information("Saving encounter {encounterId} to DB took: {duration}", encounterId, sw.Elapsed);
 
-            Directory.CreateDirectory("TestJsonEncounters");
-            File.WriteAllText($"TestJsonEncounters/Encounter_{encounterId}_Write.json", JsonConvert.SerializeObject(encounter, Formatting.Indented));
+            //Directory.CreateDirectory("TestJsonEncounters");
+            //File.WriteAllText($"TestJsonEncounters/Encounter_{encounterId}_Write.json", entitiesJson);
 
             return encounterId;
         }
@@ -80,8 +82,10 @@ namespace BPSR_ZDPS
                 encounter.Entities = JsonConvert.DeserializeObject<ConcurrentDictionary<long, Entity>>(entitiesJson, new JsonSerializerSettings()
                 {
                     ContractResolver = new PrivateResolver(),
-                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
-                });
+                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+                    TypeNameHandling = Newtonsoft.Json.TypeNameHandling.All,
+                    Converters = [new DictionaryObjectConverter()]
+                })!;
             }
             else
             {
@@ -92,8 +96,8 @@ namespace BPSR_ZDPS
             sw.Stop();
             Log.Information("Loading encounter {encounterId} from DB took: {duration}", encounterId, sw.Elapsed);
 
-            Directory.CreateDirectory("TestJsonEncounters");
-            File.WriteAllText($"TestJsonEncounters/Encounter_{encounterId}_Read.json", JsonConvert.SerializeObject(encounter, Formatting.Indented));
+            //Directory.CreateDirectory("TestJsonEncounters");
+            //File.WriteAllText($"TestJsonEncounters/Encounter_{encounterId}_Read.json", JsonConvert.SerializeObject(encounter, Formatting.Indented));
 
             return encounter;
         }
@@ -194,22 +198,5 @@ namespace BPSR_ZDPS
 
             return result > 0;
         }
-    }
-
-    public class PrivateResolver : DefaultContractResolver
-    {
-        protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
-        {
-            var prop = base.CreateProperty(member, memberSerialization);
-            if (!prop.Writable)
-            {
-                var property = member as PropertyInfo;
-                var hasPrivateSetter = property?.GetSetMethod(true) != null;
-                prop.Writable = hasPrivateSetter;
-            }
-            return prop;
-        }
-
-
     }
 }
