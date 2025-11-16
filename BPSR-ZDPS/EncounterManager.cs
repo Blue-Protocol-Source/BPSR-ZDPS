@@ -100,11 +100,11 @@ namespace BPSR_ZDPS
 
             if (CurrentBattleId != 0)
             {
-                DB.UpdateBattleInfo((ulong)CurrentBattleId, LevelMapId, SceneName);
+                DB.UpdateBattleInfo(CurrentBattleId, LevelMapId, SceneName);
             }
 
             var battleId = DB.StartBattle(LevelMapId, SceneName);
-            CurrentBattleId = (int)battleId;
+            CurrentBattleId = battleId;
         }
 
         // While we technically use the 'LevelMapId' and not the 'SceneId' field, it's just another type of SceneId ultimately
@@ -485,6 +485,9 @@ namespace BPSR_ZDPS
                     SetSubProfessionId(cached.SubProfessionId);
                 }
             }
+
+            // Ensure cache is updated with latest used name from here
+            SetName(Name);
         }
 
         public void SetName(string name)
@@ -507,7 +510,10 @@ namespace BPSR_ZDPS
                 // We only want a name brought in from the cache for players
                 // Monsters (and other types) should be set from fresh data every time
                 // If we don't do that, we run into many UID collisions unfortunately
-                SetName("");
+
+                // TODO: Disable this for now
+
+                //SetName("");
             }
         }
 

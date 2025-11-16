@@ -115,7 +115,7 @@ namespace BPSR_ZDPS
             return DbConn.QuerySingle<int>(sql);
         }
 
-        public static ulong StartBattle(uint sceneId, string sceneName)
+        public static int StartBattle(uint sceneId, string sceneName)
         {
             var battle = new Battle()
             {
@@ -124,12 +124,12 @@ namespace BPSR_ZDPS
                 StartTime = DateTime.Now
             };
 
-            var battleId = DbConn.QuerySingle<ulong>(BattlesSql.Insert, battle);
+            var battleId = DbConn.QuerySingle<int>(BattlesSql.Insert, battle);
 
             return battleId;
         }
 
-        public static void UpdateBattleInfo(ulong battleId, uint sceneId, string sceneName)
+        public static void UpdateBattleInfo(int battleId, uint sceneId, string sceneName)
         {
             var battle = new Battle()
             {
@@ -148,9 +148,9 @@ namespace BPSR_ZDPS
             return battles;
         }
 
-        public static List<Encounter> LoadEncountersForBattleId(ulong battleId)
+        public static List<Encounter> LoadEncountersForBattleId(int battleId)
         {
-            var encountersSum = DbConn.Query<Encounter>(EncounterSql.SelectByBattleId,new { BattleId = battleId });
+            var encountersSum = DbConn.Query<Encounter>(EncounterSql.SelectByBattleId, new { BattleId = battleId });
             var encounters = new List<Encounter>(encountersSum.Count());
 
             foreach (var encounter in encountersSum)

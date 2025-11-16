@@ -2,7 +2,7 @@
 {
     public class Battle
     {
-        public ulong BattleId { get; set; }
+        public int BattleId { get; set; }
         public uint SceneId { get; set; }
         public string SceneName { get; set; }
         public DateTime StartTime { get; set; }
