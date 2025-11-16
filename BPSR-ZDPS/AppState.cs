@@ -100,7 +100,7 @@ namespace BPSR_ZDPS
 
             // Load up our offline entity cache if it exists to help with initial data resolving when we're not given all the required details
             EntityCache.Instance.Load();
-            EntityCache.Instance.PortToDB();
+            //EntityCache.Instance.PortToDB();
         }
     }
 }

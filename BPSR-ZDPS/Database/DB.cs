@@ -20,7 +20,7 @@ namespace BPSR_ZDPS
         public static void Init()
         {
             Log = Serilog.Log.Logger.ForContext<DB>();
-            DbConn = new SqliteConnection("Data Source=ZDPS_Logs.db");
+            DbConn = new SqliteConnection($"Data Source={Utils.DATA_DIR_NAME}/ZDPS_Logs.db");
             DbConn.Open();
 
             CreateTables(DbConn);
