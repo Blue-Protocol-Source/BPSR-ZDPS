@@ -443,12 +443,12 @@ namespace BPSR_ZDPS
             return cloned;
         }
 
-        [JsonConstructor]
         public void RemoveEventHandlers()
         {
             SkillActivated = null;
         }
-        
+
+        [JsonConstructor]
         public Entity(long uuid, string name = null)
         {
             UUID = uuid;
