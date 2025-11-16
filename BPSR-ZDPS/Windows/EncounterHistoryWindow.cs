@@ -22,6 +22,8 @@ namespace BPSR_ZDPS.Windows
         public static int SelectedIndexByBattle = -1;
         public static int SelectedViewMode = 0;
 
+        static List<Encounter> Encounters = new();
+        static List<Battle> Battles = new();
         static List<Encounter> GroupedBattles = new();
 
         static int RunOnceDelayed = 0;
@@ -34,6 +36,30 @@ namespace BPSR_ZDPS.Windows
             ImGui.OpenPopup("###EncounterHistoryWindow");
             IsOpened = true;
             ImGui.PopID();
+
+            LoadFromDB();
+        }
+
+        public static void LoadFromDB()
+        {
+            // Skip last encounter as it's going to be the current live one and we don't want that in our "historical" view
+            Encounters = DB.LoadEncounterSummaries().OrderBy(x => x.StartTime).SkipLast(1).ToList();
+            Battles = DB.LoadBattles().OrderBy(x => x.StartTime).ToList();
+
+            // Convert Battles into fake merged encounters
+            GroupedBattles = new();
+            foreach (var battle in Battles)
+            {
+                var enc = new Encounter()
+                {
+                    BattleId = battle.BattleId,
+                    SceneId = battle.SceneId,
+                    SceneName = battle.SceneName,
+                };
+                enc.SetStartTime(battle.StartTime);
+                enc.SetEndTime(battle.EndTime);
+                GroupedBattles.Add(enc);
+            }
         }
 
         public static void Draw(MainWindow mainWindow)
@@ -72,6 +98,8 @@ namespace BPSR_ZDPS.Windows
                 {
                     SelectedViewMode = 0;
                     SelectedEncounterIndex = -1;
+
+                    LoadFromDB();
                 }
                 if (viewMode == 0)
                 {
@@ -89,7 +117,8 @@ namespace BPSR_ZDPS.Windows
                     SelectedEncounterIndex = -1;
                     // TODO: Allow viewing encounters grouped by their BattleId and showing the combined totals for them
 
-                    GroupEncountersByBattleId();
+                    //GroupEncountersByBattleId();
+                    LoadFromDB();
                 }
                 if (viewMode == 1)
                 {
@@ -102,13 +131,14 @@ namespace BPSR_ZDPS.Windows
                 ImGui.AlignTextToFramePadding();
                 if (SelectedViewMode == 0)
                 {
-                    encounters = EncounterManager.Encounters;
-                    ImGui.Text($"Encounters: {EncounterManager.Encounters.Count - 1}");
+                    encounters = Encounters;
+                    ImGui.Text($"Encounters: {encounters.Count - 1}");
                 }
                 else
                 {
                     encounters = GroupedBattles;
-                    ImGui.Text($"Battles: {GroupedBattles.Count - 1}");
+                    // We subtract 2 because the current encounter is also in here
+                    ImGui.Text($"Battles: {Battles.Count - 1}");
                 }
 
                 string[] OrderByOptions = { "Order By Damage", "Order By Healing", "Order By Taken" };
@@ -123,11 +153,8 @@ namespace BPSR_ZDPS.Windows
                 }
                 else if (SelectedEncounterIndex != -1)
                 {
-                    string encounterStartTime = encounters[SelectedEncounterIndex].StartTime.ToString("yyyy-MM-dd HH:mm:ss");
-                    string encounterEndTime = encounters[SelectedEncounterIndex].EndTime.ToString("yyyy-MM-dd HH:mm:ss");
-                    string encounterDuration = encounters[SelectedEncounterIndex].GetDuration().ToString("hh\\:mm\\:ss");
-                    string encounterSceneName = $" {encounters[SelectedEncounterIndex].SceneName}" ?? "";
-                    selectedPreviewText = $"[{SelectedEncounterIndex + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration}){encounterSceneName}";
+                    var selectedEncounter = encounters[SelectedEncounterIndex];
+                    selectedPreviewText = BuildDropdownStringName(selectedEncounter.StartTime, selectedEncounter.EndTime, selectedEncounter.SceneName, SelectedEncounterIndex);
                 }
                 else
                 {
@@ -148,14 +175,26 @@ namespace BPSR_ZDPS.Windows
                     for (int i = 0; i < encounters.Count - 1; i++)
                     {
                         bool isSelected = SelectedEncounterIndex == i;
-                        string encounterStartTime = encounters[i].StartTime.ToString("yyyy-MM-dd HH:mm:ss");
-                        string encounterEndTime = encounters[i].EndTime.ToString("yyyy-MM-dd HH:mm:ss");
-                        string encounterDuration = encounters[i].GetDuration().ToString("hh\\:mm\\:ss");
-                        string encounterSceneName = $" {encounters[i].SceneName}" ?? "";
-                        if (ImGui.Selectable($"[{i + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration}){encounterSceneName}##EncounterHistoryItem_{i}", isSelected))
+                        string encounterLabel = BuildDropdownStringName(encounters[i].StartTime, encounters[i].EndTime, encounters[i].SceneName, i);
+                        if (ImGui.Selectable(encounterLabel, isSelected))
                         {
                             // TODO: Load up the historical encounter
+
+                            // TODO: This clean up logic won't play nice if the Entity Inspector is open on a Historical
+                            if (!isSelected && SelectedEncounterIndex != -1)
+                            {
+                                encounters[SelectedEncounterIndex].Entities.Clear();
+                            }
+
                             SelectedEncounterIndex = i;
+                            if (SelectedViewMode == 0)
+                            {
+                                encounters[SelectedEncounterIndex] = DB.LoadEncounter(encounters[SelectedEncounterIndex].EncounterId);
+                            }
+                            else
+                            {
+                                encounters[SelectedEncounterIndex] = CalcBattleEncounter(encounters[SelectedEncounterIndex].BattleId, encounters[SelectedEncounterIndex]);
+                            }
                         }
 
                         if (isSelected)
@@ -371,64 +410,69 @@ namespace BPSR_ZDPS.Windows
             ImGui.PopID();
         }
 
-        public static void GroupEncountersByBattleId()
+        private static string BuildDropdownStringName(DateTime startTime, DateTime endTime, string sceneName, int idx)
         {
-            GroupedBattles.Clear();
-            GroupedBattles = new();
+            var encounterStartTime = startTime.ToString("yyyy-MM-dd HH:mm:ss");
+            var encounterEndTime = endTime.ToString("yyyy-MM-dd HH:mm:ss");
+            var encounterDuration = (endTime - startTime).ToString("hh\\:mm\\:ss");
+            var encounterSceneName = $" {sceneName}" ?? "";
+            var text = $"[{idx + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration}){encounterSceneName}##EncounterHistoryItem_{idx}";
 
-            // This is going to be an expensive operation (many many iterations will occur within), don't do it constantly
-            var battleGroups = EncounterManager.Encounters.GroupBy(x => x.BattleId);
-            foreach (var group in battleGroups)
+            return text;
+        }
+
+        public static Encounter CalcBattleEncounter(int battleId, Encounter original)
+        {
+            var encounters = DB.LoadEncountersForBattleId(battleId);
+            if (encounters.Count == 0)
             {
-                Encounter enc = new();
-                
-                // group.Key == BattleId
-                foreach (var encounter in group)
+                return original;
+            }
+
+            Encounter enc = new Encounter();
+
+            var firstEncounter = encounters.First();
+            var lastEncounter = encounters.Last();
+
+            if (firstEncounter != null)
+            {
+                enc.SetStartTime(firstEncounter.StartTime);
+                enc.BattleId = firstEncounter.BattleId;
+            }
+            if (lastEncounter != null)
+            {
+                enc.SetEndTime(lastEncounter.EndTime);
+                enc.SceneId = lastEncounter.SceneId;
+                enc.SceneName = lastEncounter.SceneName;
+            }
+
+            foreach (var encounter in encounters)
+            {
+                enc.TotalDamage += encounter.TotalDamage;
+                enc.TotalNpcDamage += encounter.TotalNpcDamage;
+                enc.TotalShieldBreak += encounter.TotalShieldBreak;
+                enc.TotalNpcShieldBreak += encounter.TotalNpcShieldBreak;
+                enc.TotalHealing += encounter.TotalHealing;
+                enc.TotalNpcHealing += encounter.TotalNpcHealing;
+                enc.TotalOverhealing += encounter.TotalOverhealing;
+                enc.TotalNpcOverhealing += encounter.TotalNpcOverhealing;
+                enc.TotalTakenDamage += encounter.TotalTakenDamage;
+                enc.TotalNpcTakenDamage += encounter.TotalNpcTakenDamage;
+
+                foreach (var entity in encounter.Entities)
                 {
-                    // Add up all the values within each encounter in this battle group then store it in the new list
-                    if (group.First() == encounter)
+                    if (enc.Entities.TryGetValue(entity.Value.UUID, out var foundEnt))
                     {
-                        // This will only fire once so we can use it to initialize data from just the first encounter
-                        enc.BattleId = encounter.BattleId;
-                        enc.SetStartTime(encounter.StartTime);
+                        foundEnt.MergeEntity(entity.Value);
                     }
-                    if (group.Last() == encounter)
+                    else
                     {
-                        enc.SetEndTime(encounter.EndTime);
-                    }
-
-                    if (enc.SceneId == 0)
-                    {
-                        enc.SceneId = encounter.SceneId;
-                        enc.SceneName = encounter.SceneName;
-                    }
-
-                    enc.TotalDamage += encounter.TotalDamage;
-                    enc.TotalNpcDamage += encounter.TotalNpcDamage;
-                    enc.TotalShieldBreak += encounter.TotalShieldBreak;
-                    enc.TotalNpcShieldBreak += encounter.TotalNpcShieldBreak;
-                    enc.TotalHealing += encounter.TotalHealing;
-                    enc.TotalNpcHealing += encounter.TotalNpcHealing;
-                    enc.TotalOverhealing += encounter.TotalOverhealing;
-                    enc.TotalNpcOverhealing += encounter.TotalNpcOverhealing;
-                    enc.TotalTakenDamage += encounter.TotalTakenDamage;
-                    enc.TotalNpcTakenDamage += encounter.TotalNpcTakenDamage;
-
-                    foreach (var entity in encounter.Entities)
-                    {
-                        if (enc.Entities.TryGetValue(entity.Value.UUID, out var foundEnt))
-                        {
-                            foundEnt.MergeEntity(entity.Value);
-                        }
-                        else
-                        {
-                            enc.Entities.TryAdd(entity.Value.UUID, (Entity)entity.Value.Clone());
-                        }
+                        enc.Entities.TryAdd(entity.Value.UUID, (Entity)entity.Value.Clone());
                     }
                 }
-
-                GroupedBattles.Add(enc);
             }
+
+            return enc;
         }
     }
 }

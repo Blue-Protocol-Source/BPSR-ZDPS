@@ -14,7 +14,6 @@ namespace BPSR_ZDPS
 {
     public static class EncounterManager
     {
-        public static List<Encounter> Encounters { get; private set; } = new();
         public static int SelectedEncounter = -1;
 
         public static Encounter? Current = null;
