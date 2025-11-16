@@ -31,7 +31,8 @@
     },
     "1216":
     {
-        "Name": "Enhanced Clearfall Orb"
+        "Name": "Enhanced Crystal Veil",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx05"
     },
     "1219":
     {
@@ -92,7 +93,7 @@
     },
     "1247":
     {
-        "Name": "Talent Triggered Comet"
+        "Name": "(Talent) Frost Comet"
     },
     "1248":
     {
@@ -203,6 +204,59 @@
         "Name": "Gale Thrust",
         "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_tg01"
     },
+    "1419":
+    {
+        "Name": "Skyfall",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_tg02"
+    },
+    "1420":
+    {
+        "Name": "Galeform",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_kx01"
+    },
+    "1421":
+    {
+        "Name": "Spiral Thrust",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_kx02"
+    },
+    "1422":
+    {
+        "Name": "Breach Pursuit",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_kx03"
+    },
+    "1423":
+    {
+        "Name": "Aegis Gale",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_kx04"
+    },
+    "1424":
+    {
+        "Name": "Instant Edge",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_kx05"
+    },
+    "1425":
+    {
+        "Name": "Falcon Toss",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_kx06"
+    },
+    "1426":
+    {
+        "Name": "Typhoon Cleave",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_ult_01"
+    },
+    "1427":
+    {
+        "Name": "Breach Pursuit",
+        "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_kx03"
+    },
+    "1428":
+    {
+        "Name": "Spear Thrust"
+    },
+    "1429":
+    {
+        "Name": "Tornado"
+    },
     "1501":
     {
         "Name": "Vines' Embrace - Stage 1",
@@ -256,6 +310,16 @@
         "Name": "Judgment Cut - Stage 4",
         "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_skill_atk01"
     },
+    "1714":
+    {
+        "Name": "Iaido Slash",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_tg01"
+    },
+    "1715":
+    {
+        "Name": "Moonstrike",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_tg02"
+    },
     "1724":
     {
         "Name": "Thundercut - Stage 1",
@@ -270,6 +334,20 @@
     {
         "Name": "Thundercut - Stage 3",
         "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_kx06"
+    },
+    "1727":
+    {
+        "Name": "Piercing Slash"
+    },
+    "1731":
+    {
+        "Name": "Stormflash",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_kx08"
+    },
+    "1732":
+    {
+        "Name": "Stormflash",
+        "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_kx08"
     },
     "1739":
     {
@@ -312,6 +390,10 @@
         "Name": "Bullseye",
         "Icon": "ui/atlas/skill_weapon_gj/weapon_gj-01_atk"
     },
+    "2240":
+    {
+        "Name": "Lumi Torrent"
+    },
     "2288":
     {
         "Name": "Light Bomb"
@@ -322,11 +404,26 @@
     },
     "2290":
     {
-        "Name": "Sharp Eyes - Light Giant Arrow - Focus Monsters (Talent)"
+        "Name": "Luminary Bolt - Focus Monsters (Talent)",
+        "Icon": "ui/atlas/skill_weapon_gj/weapon_gj-01_ult"
     },
     "2291":
     {
-        "Name": "Double Star Arrow"
+        "Name": "Photon Explosion"
+    },
+    "2294":
+    {
+        "Name": "Quadraflare"
+    },
+    "2295":
+    {
+        "Name": "Luminary Bolt (Gravity Orb)",
+        "Icon": "ui/atlas/skill_weapon_gj/weapon_gj-01_ult"
+        
+    },
+    "2296":
+    {
+        "Name": "Phantom Falcon"
     },
     "230101":
     {
@@ -1116,7 +1213,7 @@
     },
     "101112":
     {
-        "Name": "Pet Eagle Quick Turn"
+        "Name": "Falcon Dive"
     },
     "101203":
     {
@@ -1276,19 +1373,23 @@
     },
     "120201":
     {
-        "Name": "Rain and Tide - Curved Bullet"
+        "Name": "Raincall Surge - Curved Bullet",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_skill_atk"
     },
     "120301":
     {
-        "Name": "Rain and Tide - Final Blow"
+        "Name": "Raincall Surge - Final Blow",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_skill_atk"
     },
     "120401":
     {
-        "Name": "Rain and Tide - Normal Attack Stage 1"
+        "Name": "Raincall Surge - Normal Attack Stage 1",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_skill_atk"
     },
     "120501":
     {
-        "Name": "Rain and Tide"
+        "Name": "Raincall Surge",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_skill_atk"
     },
     "120901":
     {
@@ -1304,7 +1405,8 @@
     },
     "121501":
     {
-        "Name": "Crystal Veil"
+        "Name": "Crystal Veil",
+        "Icon": "ui/atlas/skill_weapon_mz/weapon_mz-01_kx05"
     },
     "140101":
     {
@@ -1539,15 +1641,19 @@
     },
     "179906":
     {
-        "Name": "Moon Blade Spin"
+        "Name": "Moonstrike Whirl"
     },
     "179907":
     {
-        "Name": "Blade Wind Realm"
+        "Name": "Bladewind Domain"
     },
     "179908":
     {
-        "Name": "Blade Intent Lightning Strike"
+        "Name": "Thunderstrike"
+    },
+    "179910":
+    {
+        "Name": "Thunderburst"
     },
     "199902":
     {
@@ -1567,19 +1673,19 @@
     },
     "220103":
     {
-        "Name": "Unerring Hit - Final Blow"
+        "Name": "Bullseye - Final Blow"
     },
     "220104":
     {
-        "Name": "Double Arrow/Storm Arrow"
+        "Name": "Storm Arrow"
     },
     "220105":
     {
-        "Name": "Light Pursuit Arrow"
+        "Name": "Lightseeker Arrow"
     },
     "220106":
     {
-        "Name": "Aerial Shot"
+        "Name": "Double Arrow"
     },
     "220107":
     {
@@ -1615,11 +1721,12 @@
     },
     "220301":
     {
-        "Name": "Sharp Eyes - Light Giant Arrow (Arrow Damage)"
+        "Name": "Luminary Bolt (Arrow Damage)",
+        "Icon": "ui/atlas/skill_weapon_gj/weapon_gj-01_ult"
     },
     "221101":
     {
-        "Name": "Unerring Hit - Red Light Counter"
+        "Name": "Bullseye - Lethal Skill Counter"
     },
     "230501":
     {
@@ -2435,23 +2542,23 @@
     },
     "1700820":
     {
-        "Name": "Wolf Coordinated Attack"
+        "Name": "Wild Wolf - Coordinated Attack"
     },
     "1700824":
     {
-        "Name": "Tail Drift"
+        "Name": "Wild Wolf - Tail Sweep"
     },
     "1700825":
     {
-        "Name": "Companion - Foxen Pounce"
+        "Name": "Wild Wolf - Foxen Pounce"
     },
     "1700826":
     {
-        "Name": "Companion - Powerful Pounce"
+        "Name": "Wild Wolf - Powerful Pounce"
     },
     "1700827":
     {
-        "Name": "Companion - Basic Attack"
+        "Name": "Wild Wolf - Basic Attack"
     },
     "1701103":
     {
@@ -2831,23 +2938,23 @@
     },
     "2203091":
     {
-        "Name": "Life Drain (Bite Detonation)"
+        "Name": "Bleed (Bite Detonation)"
     },
     "2203101":
     {
-        "Name": "Life Drain"
+        "Name": "Bleed"
     },
     "2203102":
     {
-        "Name": "Life Drain (Coordinated Attack Detonation)"
+        "Name": "Bleed (Coordinated Attack Detonation)"
     },
     "2203141":
     {
-        "Name": "Life Drain (Ray Arrow Detonation)"
+        "Name": "Bleed (Ray Arrow Detonation)"
     },
     "2203181":
     {
-        "Name": "Lightning Shock"
+        "Name": "Falcon Lightning Strike"
     },
     "2203291":
     {
@@ -2855,7 +2962,7 @@
     },
     "2203302":
     {
-        "Name": "Life Drain (Tail Sweep Detonation)"
+        "Name": "Bleed (Tail Sweep Detonation)"
     },
     "2203311":
     {
@@ -3360,5 +3467,29 @@
     "802906":
     {
         "Name": "Wind Particle"
+    },
+    "110310":
+    {
+        "Name": "(S1 Affix) Dispersed Energy"
+    },
+    "10270101":
+    {
+        "Name": "Light Dragon's Right Claw Strike"
+    },
+    "882301":
+    {
+        "Name": "Spacetime Collapse (Tankbuster)"
+    },
+    "10270119":
+    {
+        "Name": "Light Dragon's Spacetime Blitz"
+    },
+    "10270159":
+    {
+        "Name": "Void Collapse Zone"
+    },
+    "304102":
+    {
+        "Name": "Soldier Bullet CBT3"
     }
 }

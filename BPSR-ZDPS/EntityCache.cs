@@ -37,7 +37,7 @@ namespace BPSR_ZDPS
                 return outLine;
             }
 
-            var newEntityCacheLine = new EntityCacheLine() { UUID = uuid };
+            var newEntityCacheLine = new EntityCacheLine() { UUID = uuid, UID = Utils.UuidToEntityId(uuid) };
             Cache.Lines.TryAdd(uuid, newEntityCacheLine);
 
             return newEntityCacheLine;
@@ -63,7 +63,7 @@ namespace BPSR_ZDPS
                 }
                 else
                 {
-                    Cache.Lines.TryAdd(uuid, new EntityCacheLine() { UUID = uuid, Name = name });
+                    Cache.Lines.TryAdd(uuid, new EntityCacheLine() { UUID = uuid, UID = Utils.UuidToEntityId(uuid), Name = name });
                 }
             }
         }

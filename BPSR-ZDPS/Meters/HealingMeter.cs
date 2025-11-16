@@ -85,7 +85,7 @@ namespace BPSR_ZDPS.Meters
                 // Call .ToList() to create a copy of the data in memory as it might change
                 var playerList = EncounterManager.Current?.Entities.AsValueEnumerable()
                     .Where(x => x.Value.EntityType == Zproto.EEntityType.EntChar && x.Value.TotalHealing > 0)
-                    .OrderByDescending(x => x.Value.TotalHealing).ToList();
+                    .OrderByDescending(x => x.Value.TotalHealing).ToArray();
 
                 ulong topTotalValue = 0;
 

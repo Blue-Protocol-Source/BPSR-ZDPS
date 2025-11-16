@@ -39,6 +39,9 @@ namespace BPSR_ZDPS.Windows
 
         static bool IsElevated = false;
 
+        static bool WindowLostVisibility = false;
+        static Vector2 WindowLastVisiblePos = new();
+
         public static void Open()
         {
             RunOnceDelayed = 0;
@@ -105,10 +108,24 @@ namespace BPSR_ZDPS.Windows
             var io = ImGui.GetIO();
             var main_viewport = ImGui.GetMainViewport();
 
-            //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
-            ImGui.SetNextWindowSize(new Vector2(650, 850), ImGuiCond.FirstUseEver);
+            // TODO: Open window at center of current active monitor
+            // Will need to use GLFW to figure out monitors/sizes/positions/etc
 
+            //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSizeConstraints(new Vector2(500, 350), new Vector2(ImGui.GETFLTMAX()));
+            ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
+
+            // HACK: Workaround a multi-viewport issue when a popupmodal is being moved around on a different monitor than the main window
+            // The popupmodal can sometimes just randomly disappear completely but is still considered opened and active by imgui
+            if (WindowLostVisibility)
+            {
+                WindowLostVisibility = false;
+                // The offset here is required to retrigger the window display logic
+                // Note that redisplaying the window does invalidate the handle until the new one is fully created
+                ImGui.SetNextWindowPos(WindowLastVisiblePos + new Vector2(1, 1), ImGuiCond.Always);
+            }
+
+            ImGui.SetNextWindowSize(new Vector2(650, 650), ImGuiCond.FirstUseEver);
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
             if (ImGui.BeginPopupModal($"Settings{TITLE_ID}"))
@@ -131,199 +148,267 @@ namespace BPSR_ZDPS.Windows
                 {
                     RunOnceDelayed++;
                 }
-
-                ImGui.SeparatorText("Network Device");
-                ImGui.Text("Select the network device to read from:");
-
-                ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X);
-
-                string network_device_preview = "";
-                if (SelectedNetworkDeviceIdx > -1 && NetworkDevices?.Count > 0)
+                else if (RunOnceDelayed > 2)
                 {
-                    network_device_preview = NetworkDevices[SelectedNetworkDeviceIdx].Description;
+                    // TODO: Rate-limit frequency of this check?
+
+                    // HACK: Workaround a multi-viewport issue when a popupmodal is being moved around on a different monitor than the main window
+                    // The popupmodal can sometimes just randomly disappear completely but is still considered opened and active by imgui
+                    if (!Utils.IsCurrentPlatformWindowVisible())
+                    {
+                        System.Diagnostics.Debug.WriteLine($"SettingsWindow recovering!");
+                        WindowLastVisiblePos = ImGui.GetWindowPos();
+                        WindowLostVisibility = true;
+                    }
                 }
 
-                if (ImGui.BeginCombo("##NetworkDeviceCombo", network_device_preview))
+                ImGuiTabBarFlags tabBarFlags = ImGuiTabBarFlags.NoTabListScrollingButtons | ImGuiTabBarFlags.NoTooltip | ImGuiTabBarFlags.NoCloseWithMiddleMouseButton;
+                if (ImGui.BeginTabBar("##SettingsTabs", tabBarFlags))
                 {
-                    for (int i = 0; i < NetworkDevices?.Count; i++)
+                    if (ImGui.BeginTabItem("General"))
                     {
-                        bool isSelected = (SelectedNetworkDeviceIdx == i);
-                        var device = NetworkDevices[i];
+                        var contentRegionAvail = ImGui.GetContentRegionAvail();
+                        ImGui.BeginChild("##GeneralTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
 
-                        string friendlyName = "";
-                        if (!string.IsNullOrEmpty(device.Interface?.FriendlyName))
+                        ImGui.SeparatorText("Network Device");
+                        ImGui.Text("Select the network device to read from:");
+
+                        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X);
+
+                        string network_device_preview = "";
+                        if (SelectedNetworkDeviceIdx > -1 && NetworkDevices?.Count > 0)
                         {
-                            friendlyName = $"{device.Interface?.FriendlyName}\n";
+                            network_device_preview = NetworkDevices[SelectedNetworkDeviceIdx].Description;
                         }
 
-                        if (ImGui.Selectable($"{friendlyName}{device.Description}\n{device.Name}", isSelected))
+                        if (ImGui.BeginCombo("##NetworkDeviceCombo", network_device_preview))
                         {
-                            SelectedNetworkDeviceIdx = i;
+                            for (int i = 0; i < NetworkDevices?.Count; i++)
+                            {
+                                bool isSelected = (SelectedNetworkDeviceIdx == i);
+                                var device = NetworkDevices[i];
+
+                                string friendlyName = "";
+                                if (!string.IsNullOrEmpty(device.Interface?.FriendlyName))
+                                {
+                                    friendlyName = $"{device.Interface?.FriendlyName}\n";
+                                }
+
+                                if (ImGui.Selectable($"{friendlyName}{device.Description}\n{device.Name}", isSelected))
+                                {
+                                    SelectedNetworkDeviceIdx = i;
+                                }
+
+                                if (isSelected)
+                                {
+                                    ImGui.SetItemDefaultFocus();
+                                }
+
+                                ImGui.Separator();
+                            }
+
+                            if (NetworkDevices == null || NetworkDevices?.Count == 0)
+                            {
+                                ImGui.Selectable("<No Network Devices Found>");
+                            }
+
+                            ImGui.EndCombo();
                         }
 
-                        if (isSelected)
+                        ImGui.SeparatorText("Keybinds");
+
+                        if (IsElevated == false)
                         {
-                            ImGui.SetItemDefaultFocus();
+                            ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
+                            ImGui.BeginChild("##KeybindsNotice", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
+                            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                            ImGui.TextWrapped("Important Note:");
+                            ImGui.PopFont();
+                            ImGui.TextWrapped("Keybinds only work while the game is in focus if ZDPS is being run as Administrator. This is a limitation imposed by the Game Devs.");
+                            ImGui.EndChild();
+                            ImGui.PopStyleColor();
                         }
+
+                        ImGui.TextWrapped("Below are global hotkey keybinds for the application. Click on the box and press a key to bind it. Modifier keys (Ctrl/Alt/Shift) are not supported.");
+                        ImGui.TextWrapped("Press Escape to cancel the rebinding process.");
+
+                        ImGui.Indent();
+                        RebindKeyButton("Encounter Reset", ref EncounterResetKey, ref EncounterResetKeyName);
+                        ImGui.Unindent();
+
+                        ImGui.EndChild();
+                        ImGui.EndTabItem();
                     }
 
-                    if (NetworkDevices == null || NetworkDevices?.Count == 0)
+                    if (ImGui.BeginTabItem("Combat"))
                     {
-                        ImGui.Selectable("<No Network Devices Found>");
+                        var contentRegionAvail = ImGui.GetContentRegionAvail();
+                        ImGui.BeginChild("##CombatTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ImGui.SeparatorText("Combat");
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Normalize Meter Contribution Bars: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##NormalizeMeterContributions", ref normalizeMeterContributions);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, the bars for each player in a meter will be based on the top player, not the overall contribution.");
+                        ImGui.TextWrapped("This means the top player is always considered the '100%%' amount.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Use Short Width Number Formatting: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##UseShortWidthNumberFormatting", ref useShortWidthNumberFormatting);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, uses shorter width number formats when values over 1000 would otherwise be shown.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Use Automatic Wipe Detection: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##UseAutomaticWipeDetection", ref useAutomaticWipeDetection);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, ZDPS will attempt to detect party wipes against bosses and start a new encounter automatically.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Skip Teleport State Check In Automatic Wipe Detection: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##SkipTeleportStateCheckInAutomaticWipeDetection", ref skipTeleportStateCheckInAutomaticWipeDetection);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, the 'Teleport' Player State requirement in Automatic Wipe Detection is not performed. You probably want this Disabled.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Split Encounters On New Phases: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##SplitEncountersOnNewPhases", ref splitEncountersOnNewPhases);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, encounters are automatically split across phase changes. This allows bosses to be split from the rest of a dungeon. It also splits raid boss phases. This probably should be enabled.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        bool displayTrueDps = false;
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Display True DPS [Not Yet Implemented]: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##DisplayTrueDPS", ref displayTrueDps);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, the DPS value shown in the DPS Meter is the true DPS rather than the 'Active DPS'. This means it is recalculated every second instead of only using the time the entity was actively participating in combat pressing buttons.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.EndChild();
+                        ImGui.EndTabItem();
                     }
 
-                    ImGui.EndCombo();
+                    if (ImGui.BeginTabItem("User Interface"))
+                    {
+                        var contentRegionAvail = ImGui.GetContentRegionAvail();
+                        ImGui.BeginChild("##UserInterfaceTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ImGui.SeparatorText("User Interface");
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Color Class Icons By Role Type: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##ColorClassIconsByRole", ref colorClassIconsByRole);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, class icons shown in meters will be colored by their role instead of all being white.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Show Skill Icons In Details: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##ShowSkillIconsInDetails", ref showSkillIconsInDetails);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, skill icons will be displayed, when possible, in the details panel next to skill names.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Only Show Damage Contributors In Meters: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##OnlyShowContributorsInMeters", ref onlyShowDamageContributorsInMeters);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, only players who have dealt damage will show in the DPS meter.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Pinned Window Opacity: ");
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SliderFloat("##PinnedWindowOpacity", ref windowOpacity, 0.01f, 1.0f, $"{(int)(windowOpacity * 100)}");
+                        ImGui.PopStyleColor(2);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("How transparent a pinned window is.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.EndChild();
+                        ImGui.EndTabItem();
+                    }
+
+                    if (ImGui.BeginTabItem("Development"))
+                    {
+                        var contentRegionAvail = ImGui.GetContentRegionAvail();
+                        ImGui.BeginChild("##DevelopmentTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ImGui.SeparatorText("Development");
+                        if (ImGui.Button("Reload DataTables"))
+                        {
+                            AppState.LoadDataTables();
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Does not update most existing values - mainly works for data set in new Encounters.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        if (ImGui.Button("Restart Capture"))
+                        {
+                            MessageManager.StopCapturing();
+                            MessageManager.InitializeCapturing();
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Turns the MessageManager off and on to resolve issues of stalled data.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Write Debug Log To File: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##LogToFile", ref logToFile);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, writes a debug log for ZDPS (ZDPS_log.txt). Applies after restarting ZDPS.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.EndChild();
+                        ImGui.EndTabItem();
+                    }
+
+                    ImGui.EndTabBar();
                 }
-
-                ImGui.SeparatorText("Keybinds");
-
-                if (IsElevated == false)
-                {
-                    ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
-                    ImGui.BeginChild("##KeybindsNotice", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
-                    ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
-                    ImGui.TextWrapped("Important Note:");
-                    ImGui.PopFont();
-                    ImGui.TextWrapped("Keybinds only work while the game is in focus if ZDPS is being run as Administrator. This is a limitation imposed by the Game Devs.");
-                    ImGui.EndChild();
-                    ImGui.PopStyleColor();
-                }
-
-                ImGui.TextWrapped("Below are global hotkey keybinds for the application. Click on the box and press a key to bind it. Modifier keys (Ctrl/Alt/Shift) are not supported.");
-                ImGui.TextWrapped("Press Escape to cancel the rebinding process.");
-
-                ImGui.Indent();
-                RebindKeyButton("Encounter Reset", ref EncounterResetKey, ref EncounterResetKeyName);
-                ImGui.Unindent();
-
-                ImGui.SeparatorText("Combat");
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Normalize Meter Contribution Bars: ");
-                ImGui.SameLine();
-                ImGui.Checkbox("##NormalizeMeterContributions", ref normalizeMeterContributions);
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("When enabled, the bars for each player in a meter will be based on the top player, not the overall contribution.");
-                ImGui.TextWrapped("This means the top player is always considered the '100%%' amount.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Use Short Width Number Formatting: ");
-                ImGui.SameLine();
-                ImGui.Checkbox("##UseShortWidthNumberFormatting", ref useShortWidthNumberFormatting);
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("When enabled, uses shorter width number formats when values over 1000 would otherwise be shown.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Use Automatic Wipe Detection: ");
-                ImGui.SameLine();
-                ImGui.Checkbox("##UseAutomaticWipeDetection", ref useAutomaticWipeDetection);
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("When enabled, ZDPS will attempt to detect party wipes against bosses and start a new encounter automatically.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Skip Teleport State Check In Automatic Wipe Detection: ");
-                ImGui.SameLine();
-                ImGui.Checkbox("##SkipTeleportStateCheckInAutomaticWipeDetection", ref skipTeleportStateCheckInAutomaticWipeDetection);
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("When enabled, the 'Teleport' Player State requirement in Automatic Wipe Detection is not performed. You probably want this Disabled.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Split Encounters On New Phases: ");
-                ImGui.SameLine();
-                ImGui.Checkbox("##SplitEncountersOnNewPhases", ref splitEncountersOnNewPhases);
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("When enabled, encounters are automatically split across phase changes. This allows bosses to be split from the rest of a dungeon. It also splits raid boss phases. This probably should be enabled.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                ImGui.SeparatorText("User Interface");
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Color Class Icons By Role Type: ");
-                ImGui.SameLine();
-                ImGui.Checkbox("##ColorClassIconsByRole", ref colorClassIconsByRole);
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("When enabled, class icons shown in meters will be colored by their role instead of all being white.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Show Skill Icons In Details: ");
-                ImGui.SameLine();
-                ImGui.Checkbox("##ShowSkillIconsInDetails", ref showSkillIconsInDetails);
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("When enabled, skill icons will be displayed, when possible, in the details panel next to skill names.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Only Show Damage Contributors In Meters: ");
-                ImGui.SameLine();
-                ImGui.Checkbox("##OnlyShowContributorsInMeters", ref onlyShowDamageContributorsInMeters);
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("When enabled, only players who have dealt damage will show in the DPS meter.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Pinned Window Opacity: ");
-                ImGui.SameLine();
-                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
-                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                ImGui.SliderFloat("##PinnedWindowOpacity", ref windowOpacity, 0.01f, 1.0f, $"{(int)(windowOpacity * 100)}");
-                ImGui.PopStyleColor(2);
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("How transparent a pinned window is.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                ImGui.SeparatorText("Development");
-                if (ImGui.Button("Reload DataTables"))
-                {
-                    AppState.LoadDataTables();
-                }
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("Does not update most existing values - mainly works for data set in new Encounters.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                if (ImGui.Button("Restart Capture"))
-                {
-                    MessageManager.StopCapturing();
-                    MessageManager.InitializeCapturing();
-                }
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("Turns the MessageManager off and on to resolve issues of stalled data.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Write Debug Log To File: ");
-                ImGui.SameLine();
-                ImGui.Checkbox("##LogToFile", ref logToFile);
-                ImGui.Indent();
-                ImGui.BeginDisabled(true);
-                ImGui.TextWrapped("When enabled, writes a debug log for ZDPS (ZDPS_log.txt). Applies after restarting ZDPS.");
-                ImGui.EndDisabled();
-                ImGui.Unindent();
 
                 ImGui.NewLine();
                 if (ImGui.Button("Save", new Vector2(120, 0)))
