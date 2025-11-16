@@ -44,8 +44,8 @@ namespace BPSR_ZDPS.Windows
 
         public static void LoadFromDB()
         {
-            Encounters = DB.LoadEncounterSummaries();
-            Battles = DB.LoadBattles();
+            Encounters = DB.LoadEncounterSummaries().OrderByDescending(x => x.StartTime).ToList();
+            Battles = DB.LoadBattles().OrderByDescending(x => x.StartTime).ToList();
         }
 
         public static void Draw(MainWindow mainWindow)
@@ -84,6 +84,8 @@ namespace BPSR_ZDPS.Windows
                 {
                     SelectedViewMode = 0;
                     SelectedEncounterIndex = -1;
+
+                    LoadFromDB();
                 }
                 if (viewMode == 0)
                 {
@@ -136,11 +138,8 @@ namespace BPSR_ZDPS.Windows
                 }
                 else if (SelectedEncounterIndex != -1)
                 {
-                    string encounterStartTime = encounters[SelectedEncounterIndex].StartTime.ToString("yyyy-MM-dd HH:mm:ss");
-                    string encounterEndTime = encounters[SelectedEncounterIndex].EndTime.ToString("yyyy-MM-dd HH:mm:ss");
-                    string encounterDuration = encounters[SelectedEncounterIndex].GetDuration().ToString("hh\\:mm\\:ss");
-                    string encounterSceneName = $" {encounters[SelectedEncounterIndex].SceneName}" ?? "";
-                    selectedPreviewText = $"[{SelectedEncounterIndex + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration}){encounterSceneName}";
+                    var encoutner = encounters[SelectedEncounterIndex];
+                    selectedPreviewText = BuildDropdownStringName(encoutner.StartTime, encoutner.EndTime, encoutner.SceneName, SelectedEncounterIndex);
                 }
                 else
                 {
