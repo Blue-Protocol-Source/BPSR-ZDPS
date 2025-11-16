@@ -9,6 +9,7 @@ public class DungeonDirtyData(BlobReader blob) : BlobType(ref blob)
     public DungeonTarget? Target;
     public DungeonVar? DungeonVar;
     public DungeonScore? Score;
+    public DungeonPlayerList? PlayerList;
     public DungeonReviveInfo? ReviveInfo;
 
     public override bool ParseField(int index, ref BlobReader blob)
@@ -29,6 +30,9 @@ public class DungeonDirtyData(BlobReader blob) : BlobType(ref blob)
                 return true;
             case DungeonSyncData.DungeonScoreFieldNumber:
                 Score = new(blob);
+                return true;
+            case DungeonSyncData.DungeonPlayerListFieldNumber:
+                PlayerList = new(blob);
                 return true;
             case DungeonSyncData.ReviveInfoFieldNumber:
                 ReviveInfo = new(blob);

@@ -183,7 +183,24 @@ namespace BPSR_ZDPS
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool CheckIsAiByEntityId(long uid) => ((uid >> 10) & 1) != 0;
 
-        
+        public static bool IsCurrentPlatformWindowVisible()
+        {
+            if (ImGui.GetWindowViewport().PlatformHandle != null)
+            {
+                int isVisible = GLFW.GetWindowAttrib((GLFWwindowPtr)ImGui.GetWindowViewport().PlatformHandle, GLFW.GLFW_VISIBLE);
+                if (isVisible > 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static void SetCurrentPlatformWindowVisible()
+        {
+            GLFW.SetWindowAttrib((GLFWwindowPtr)ImGui.GetWindowViewport().PlatformHandle, GLFW.GLFW_VISIBLE, 1);
+        }
 
         public static void SetWindowTopmost(ImGuiViewportPtr? viewport = null)
         {

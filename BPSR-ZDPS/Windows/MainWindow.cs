@@ -40,6 +40,7 @@ namespace BPSR_ZDPS.Windows
             entityInspector.Draw(this);
             NetDebug.Draw();
             DebugDungeonTracker.Draw(this);
+            RaidManager.Draw(this);
         }
 
         static bool p_open = true;
@@ -262,6 +263,10 @@ namespace BPSR_ZDPS.Windows
                         if (ImGui.MenuItem("Dungeon Tracker"))
                         {
                             DebugDungeonTracker.Open();
+                        }
+                        if (ImGui.MenuItem("Raid Manager"))
+                        {
+                            RaidManager.Open();
                         }
                         ImGui.EndMenu();
                     }

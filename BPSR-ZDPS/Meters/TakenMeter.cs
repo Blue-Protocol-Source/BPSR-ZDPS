@@ -33,7 +33,7 @@ namespace BPSR_ZDPS.Meters
             if (ImGui.BeginListBox("##TakenMeterList", new Vector2(-1, -1)))
             {
                 // Call .ToList() to create a copy of the data in memory as it might change
-                var playerList = EncounterManager.Current?.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == Zproto.EEntityType.EntMonster).OrderByDescending(x => x.Value.TotalTakenDamage).ToList();
+                var playerList = EncounterManager.Current?.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == Zproto.EEntityType.EntMonster).OrderByDescending(x => x.Value.TotalTakenDamage).ToArray();
 
                 ulong topTotalValue = 0;
 

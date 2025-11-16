@@ -644,6 +644,47 @@ namespace BPSR_ZDPS
                 }
 
                 var buf = dirty.VData.Buffer.ToByteArray();
+                var ser = new BPSR_DeepsLib.Blobs.CharSerialize(new BlobReader(buf));
+
+                if (ser.CharBaseInfo != null)
+                {
+                    if (!string.IsNullOrEmpty(ser.CharBaseInfo.Name))
+                    {
+                        EncounterManager.Current.SetName(currentUserUuid, ser.CharBaseInfo.Name);
+                        AppState.PlayerName = ser.CharBaseInfo.Name;
+                    }
+                    if (ser.CharBaseInfo.FightPoint != null)
+                    {
+                        EncounterManager.Current.SetAbilityScore(currentUserUuid, (int)ser.CharBaseInfo.FightPoint);
+                    }
+
+                    if (ser.CharBaseInfo.TeamInfo != null)
+                    {
+                        System.Diagnostics.Debug.WriteLine("ser.CharBaseInfo.TeamInfo != null)");
+                    }
+                }
+
+                if (ser.Attr != null)
+                {
+                    if (ser.Attr.CurHp != null)
+                    {
+                        EncounterManager.Current.SetAttrKV(currentUserUuid, "AttrHp", ser.Attr.CurHp);
+                    }
+                    if (ser.Attr.MaxHp != null)
+                    {
+                        EncounterManager.Current.SetAttrKV(currentUserUuid, "AttrMaxHp", ser.Attr.MaxHp);
+                    }
+                }
+
+                if (ser.ProfessionList != null)
+                {
+                    if (ser.ProfessionList.CurProfessionId != null)
+                    {
+                        EncounterManager.Current.SetProfessionId(currentUserUuid, (int)ser.ProfessionList.CurProfessionId);
+                    }
+                }
+
+                return;
 
                 using var ms = new MemoryStream(buf, writable: false);
                 using var br = new BinaryReader(ms);
@@ -691,6 +732,13 @@ namespace BPSR_ZDPS
                                             var x = br.ReadInt32();
                                             personal_state.Add(x);
                                         }
+
+                                        break;
+                                    }
+                                case CharBaseInfo.AreaIdFieldNumber:
+                                    {
+                                        int areaId = br.ReadInt32();
+                                        _ = br.ReadInt32();
 
                                         break;
                                     }
@@ -816,6 +864,12 @@ namespace BPSR_ZDPS
             }
 
             var vData = syncDungeonData.VData;
+
+            if (vData.DungeonPlayerList != null && vData.DungeonPlayerList.PlayerInfos.Count > 0)
+            {
+                System.Diagnostics.Debug.WriteLine("vData.DungeonPlayerList != null");
+                System.Diagnostics.Debug.WriteLine(vData.DungeonPlayerList.PlayerInfos);
+            }
 
             for(int listIdx = 0; listIdx < vData.Title.TitleList.Count; listIdx++)
             {
@@ -957,6 +1011,12 @@ namespace BPSR_ZDPS
             var buf = dirty.VData.Buffer.ToByteArray();
 
             var dun = new BPSR_DeepsLib.Blobs.DungeonDirtyData(new BlobReader(buf));
+
+            if (dun?.PlayerList != null && dun?.PlayerList.PlayerInfos.Count > 0)
+            {
+                System.Diagnostics.Debug.WriteLine("dun?.PlayerList != null");
+                System.Diagnostics.Debug.WriteLine(dun?.PlayerList.PlayerInfos);
+            }
 
             if (dun?.FlowInfo != null)
             {

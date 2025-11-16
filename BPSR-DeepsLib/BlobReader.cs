@@ -85,6 +85,17 @@ public class BlobReader
         return val;
     }
 
+    public string ReadString()
+    {
+        var length = ReadUInt();
+
+        var bytes = Buff.AsSpan()[Offset..(int)length];
+
+        Offset += ((int)length + 4);
+
+        return bytes.Length == 0 ? string.Empty : System.Text.Encoding.UTF8.GetString(bytes);
+    }
+
     public Dictionary<int, T> ReadHashMap<T>()
     {
         int add = ReadInt();

@@ -86,7 +86,7 @@ namespace BPSR_ZDPS.Meters
                 // Call .ToList() to create a copy of the data in memory as it might change
                 var playerList = EncounterManager.Current?.Entities.AsValueEnumerable()
                     .Where(x => x.Value.EntityType == Zproto.EEntityType.EntChar && (Settings.Instance.OnlyShowDamageContributorsInMeters ? x.Value.TotalDamage > 0 : true))
-                    .OrderByDescending(x => x.Value.TotalDamage).ToList();
+                    .OrderByDescending(x => x.Value.TotalDamage).ToArray();
 
                 ulong topTotalValue = 0;
 
