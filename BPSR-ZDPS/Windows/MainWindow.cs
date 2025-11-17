@@ -277,7 +277,7 @@ namespace BPSR_ZDPS.Windows
                     {
                         if (ImGui.MenuItem("Net Debug"))
                         {
-                            NetDebug.IsOpened = !NetDebug.IsOpened;
+                            NetDebug.Open();
                         }
                         if (ImGui.MenuItem("Dungeon Tracker"))
                         {
