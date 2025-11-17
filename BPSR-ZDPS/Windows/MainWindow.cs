@@ -53,6 +53,7 @@ namespace BPSR_ZDPS.Windows
 
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSize(new Vector2(550, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSizeConstraints(new Vector2(375, 150), new Vector2(ImGui.GETFLTMAX()));
 
             ImGuiWindowFlags window_flags = ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoDocking;
             
@@ -178,6 +179,13 @@ namespace BPSR_ZDPS.Windows
 
                 ImGui.Text("ZDPS - BPSR Damage Meter");
 
+                if (Utils.AppVersion != null)
+                {
+                    //ImGui.SetCursorPosX(MainMenuBarSize.X - (35 * 5)); // This pushes it against the previous button instead of having a gap
+                    //ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X); // This loosely locks it to right side
+                    ImGui.TextDisabled($"v{Utils.AppVersion}");
+                }
+
                 ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 4));
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 if (ImGui.MenuItem($"{FASIcons.WindowMinimize}"))
@@ -222,7 +230,7 @@ namespace BPSR_ZDPS.Windows
 
                 ImGui.SetCursorPosX(MainMenuBarSize.X - settingsWidth);
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                if (ImGui.BeginMenu($"{FASIcons.Gear}"))  //("O"))
+                if (ImGui.BeginMenu($"{FASIcons.Gear}"))
                 {
                     if (SettingsRunOnceDelayedPerOpen == 0)
                     {
@@ -318,6 +326,13 @@ namespace BPSR_ZDPS.Windows
             }
 
             ImGui.Text(duration);
+
+            if (!string.IsNullOrEmpty(EncounterManager.Current.SceneName))
+            {
+                ImGui.SameLine();
+                // We don't need to prefix with a space due to actual item spacing handling it for us
+                ImGui.TextUnformatted($"- {EncounterManager.Current.SceneName}");
+            }
 
             ImGui.SameLine();
             string currentValuePerSecond = $"{Utils.NumberToShorthand(AppState.PlayerTotalMeterValue)} ({Utils.NumberToShorthand(AppState.PlayerMeterValuePerSecond)})";

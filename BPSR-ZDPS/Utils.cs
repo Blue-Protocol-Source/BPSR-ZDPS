@@ -23,6 +23,8 @@ namespace BPSR_ZDPS
         public const string DATA_DIR_NAME = "Data";
         public static readonly Guid D3DDebugObjectName = new(0x429b8c22, 0x9188, 0x4b0c, 0x87, 0x42, 0xac, 0xb0, 0xbf, 0x85, 0xc2, 0x00);
 
+        public static Version AppVersion { get; set; } = typeof(Utils).Assembly.GetName().Version;
+
         internal static string? GetDebugName(void* target)
         {
             ID3D11DeviceChild* child = (ID3D11DeviceChild*)target;

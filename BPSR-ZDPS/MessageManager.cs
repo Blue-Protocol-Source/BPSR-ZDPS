@@ -222,6 +222,27 @@ namespace BPSR_ZDPS
                             System.Diagnostics.Debug.WriteLine($"shieldInfo[].unk2={unk2}");*/
                             break;
                         }
+                    case EAttrType.AttrStiffTarget:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrStiffTarget", reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrStiffStageTime:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrStiffStageTime", reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrSkillBeginTime:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrSkillBeginTime", reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrFirstAttack:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrFirstAttack", reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrCombatStateTime:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrCombatStateTime", reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrTargetUuid:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrTargetUuid", reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrTargetId:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrTargetId", reader.ReadInt64());
+                        break;
                     case EAttrType.AttrSummonerId:
                         EncounterManager.Current.SetAttrKV(uuid, "AttrSummonerId", reader.ReadInt64());
                         break;

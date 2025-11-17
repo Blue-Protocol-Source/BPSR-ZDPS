@@ -487,7 +487,7 @@ namespace BPSR_ZDPS
             }
 
             // Ensure cache is updated with latest used name from here
-            SetName(Name);
+            //SetName(Name);
         }
 
         public void SetName(string name)

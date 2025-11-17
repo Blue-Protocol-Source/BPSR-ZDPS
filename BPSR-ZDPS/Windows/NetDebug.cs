@@ -7,32 +7,48 @@ namespace BPSR_ZDPS.Windows;
 public static class NetDebug
 {
     public const string LAYER = "NetDebugLayer";
+    public static string TITLE_ID = "###NetDebugWindow";
     public static bool IsOpened = false;
-     static int RunOnceDelayed = 0;
+    static int RunOnceDelayed = 0;
+
+    public static void Open()
+    {
+        RunOnceDelayed = 0;
+        ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
+        ImGui.OpenPopup(TITLE_ID);
+        IsOpened = true;
+        ImGui.PopID();
+    }
 
     public static void Draw()
     {
         if (!IsOpened)
             return;
         
-        if (RunOnceDelayed == 1)
-        {
-            RunOnceDelayed++;
-            Utils.SetCurrentWindowIcon();
-            Utils.BringWindowToFront();
-        }
-        else if (RunOnceDelayed < 1)
-        {
-            RunOnceDelayed++;
-        }
-        
         ImGui.SetNextWindowSize(new Vector2(1000, 600), ImGuiCond.FirstUseEver);
+
         ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
-
         var netCap = MessageManager.netCap;
-        if (ImGui.Begin("Network Debug"u8, ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking)) {
-            if (ImGui.BeginTable("ExampleTable", 2, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {
+        if (ImGui.Begin($"Network Debug{TITLE_ID}", ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
+        {
+            if (RunOnceDelayed == 0)
+            {
+                RunOnceDelayed++;
+            }
+            else if (RunOnceDelayed == 2)
+            {
+                RunOnceDelayed++;
+                Utils.SetCurrentWindowIcon();
+                Utils.BringWindowToFront();
+            }
+            else if (RunOnceDelayed < 3)
+            {
+                RunOnceDelayed++;
+            }
+
+            if (ImGui.BeginTable("ExampleTable", 2, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame))
+            {
                 ImGui.TableNextColumn();
                 ImGui.Text($"Packets in queue: {MessageManager.netCap.RawPacketQueue.Count}");
                 ImGui.TableNextColumn();
@@ -51,8 +67,10 @@ public static class NetDebug
                 ImGui.EndTable();
             }
             
-            if (ImGui.CollapsingHeader("Connection Filters")) {
-                if (ImGui.BeginTable("SeenConnectionsTable", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {
+            if (ImGui.CollapsingHeader("Connection Filters"))
+            {
+                if (ImGui.BeginTable("SeenConnectionsTable", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame))
+                {
                     ImGui.TableSetupColumn("Source");
                     ImGui.TableSetupColumn("Destination");
                     ImGui.TableSetupColumn("Is Game");
@@ -77,7 +95,8 @@ public static class NetDebug
                 }
             }
             
-            if (ImGui.CollapsingHeader("Active TCP Streams")) {
+            if (ImGui.CollapsingHeader("Active TCP Streams"))
+            {
                 if (ImGui.BeginTable("TcpConnectionsTable", 10, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {
                     ImGui.TableSetupColumn("Endpoint", ImGuiTableColumnFlags.WidthFixed, 180.0f);
                     ImGui.TableSetupColumn("Is Synced", ImGuiTableColumnFlags.WidthFixed, 60.0f);
@@ -91,7 +110,8 @@ public static class NetDebug
                     ImGui.TableSetupColumn("Remove", ImGuiTableColumnFlags.WidthFixed, 80.0f);
                     ImGui.TableHeadersRow();
 
-                    foreach (var conn in MessageManager.netCap.TcpReassempler.Connections) {
+                    foreach (var conn in MessageManager.netCap.TcpReassempler.Connections)
+                    {
                         ImGui.TableNextRow();
 
                         ImGui.TableNextColumn();
@@ -103,9 +123,7 @@ public static class NetDebug
                         ImGui.PopStyleColor();
 
                         ImGui.TableNextColumn();
-                        ImGui.Text(conn.Value.NextExpectedSeq.HasValue
-                            ? conn.Value.NextExpectedSeq.Value.ToString()
-                            : "N/A");
+                        ImGui.Text(conn.Value.NextExpectedSeq.HasValue ? conn.Value.NextExpectedSeq.Value.ToString() : "N/A");
 
                         ImGui.TableNextColumn();
                         ImGui.Text(conn.Value.LastSeq.ToString());

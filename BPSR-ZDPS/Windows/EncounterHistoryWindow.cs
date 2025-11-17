@@ -69,7 +69,7 @@ namespace BPSR_ZDPS.Windows
                 return;
             }
 
-            ImGui.SetNextWindowSize(new Vector2(700, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(740, 675), ImGuiCond.Appearing);
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
@@ -154,7 +154,8 @@ namespace BPSR_ZDPS.Windows
                 else if (SelectedEncounterIndex != -1)
                 {
                     var selectedEncounter = encounters[SelectedEncounterIndex];
-                    selectedPreviewText = BuildDropdownStringName(selectedEncounter.StartTime, selectedEncounter.EndTime, selectedEncounter.SceneName, SelectedEncounterIndex);
+                    var selectedTuple = BuildDropdownStringName(selectedEncounter.StartTime, selectedEncounter.EndTime, selectedEncounter.SceneName, SelectedEncounterIndex);
+                    selectedPreviewText = $"[{SelectedEncounterIndex + 1}] {selectedTuple.Item1} ({selectedTuple.Item2}) {selectedTuple.Item3}";
                 }
                 else
                 {
@@ -169,14 +170,18 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SameLine();
+                // Change the height of the combo box dropdown menu
+                //ImGui.SetNextWindowSize(new Vector2(0, 400));
                 ImGui.SetNextItemWidth(-1);
-                if (ImGui.BeginCombo("##EncounterHistoryCombo", selectedPreviewText, ImGuiComboFlags.None))
+                if (ImGui.BeginCombo("##EncounterHistoryCombo", selectedPreviewText, ImGuiComboFlags.HeightLarge))
                 {
                     for (int i = 0; i < encounters.Count; i++)
                     {
                         bool isSelected = SelectedEncounterIndex == i;
-                        string encounterLabel = BuildDropdownStringName(encounters[i].StartTime, encounters[i].EndTime, encounters[i].SceneName, i);
-                        if (ImGui.Selectable(encounterLabel, isSelected))
+
+                        string encounterIndexText = $"[{i + 1}]";
+                        var encounterTuple = BuildDropdownStringName(encounters[i].StartTime, encounters[i].EndTime, encounters[i].SceneName, i);
+                        if (ImGui.Selectable(encounterIndexText, isSelected, ImGuiSelectableFlags.SpanAllColumns))
                         {
                             // TODO: Load up the historical encounter
 
@@ -201,6 +206,13 @@ namespace BPSR_ZDPS.Windows
                         {
                             ImGui.SetItemDefaultFocus();
                         }
+
+                        ImGui.SameLine();
+                        ImGui.TextUnformatted(encounterTuple.Item1);
+                        ImGui.SameLine();
+                        ImGui.TextColored(Colors.Wheat, $"({encounterTuple.Item2})");
+                        ImGui.SameLine();
+                        ImGui.TextColored(Colors.LightBlue, $"{encounterTuple.Item3}");
                     }
 
                     ImGui.EndCombo();
@@ -410,15 +422,15 @@ namespace BPSR_ZDPS.Windows
             ImGui.PopID();
         }
 
-        private static string BuildDropdownStringName(DateTime startTime, DateTime endTime, string sceneName, int idx)
+        private static (string, string, string) BuildDropdownStringName(DateTime startTime, DateTime endTime, string sceneName, int idx)
         {
             var encounterStartTime = startTime.ToString("yyyy-MM-dd HH:mm:ss");
-            var encounterEndTime = endTime.ToString("yyyy-MM-dd HH:mm:ss");
+            var encounterEndTime = endTime.ToString("HH:mm:ss"); // endTime.ToString("yyyy-MM-dd HH:mm:ss");
             var encounterDuration = (endTime - startTime).ToString("hh\\:mm\\:ss");
             var encounterSceneName = $" {sceneName}" ?? "";
             var text = $"[{idx + 1}] {encounterStartTime} - {encounterEndTime} ({encounterDuration}){encounterSceneName}##EncounterHistoryItem_{idx}";
 
-            return text;
+            return ($"{encounterStartTime} - {encounterEndTime}", encounterDuration, encounterSceneName);
         }
 
         public static Encounter CalcBattleEncounter(int battleId, Encounter original)
