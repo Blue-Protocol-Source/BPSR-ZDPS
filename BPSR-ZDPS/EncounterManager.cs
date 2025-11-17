@@ -99,7 +99,7 @@ namespace BPSR_ZDPS
 
             if (CurrentBattleId != 0)
             {
-                DB.UpdateBattleInfo(CurrentBattleId, LevelMapId, SceneName);
+                DB.UpdateBattleEnd(CurrentBattleId);
             }
 
             var battleId = DB.StartBattle(LevelMapId, SceneName);
@@ -128,6 +128,7 @@ namespace BPSR_ZDPS
 
             Current.SceneId = LevelMapId;
             Current.SceneName = SceneName;
+            DB.UpdateBattleInfo(CurrentBattleId, LevelMapId, SceneName);
         }
     }
 

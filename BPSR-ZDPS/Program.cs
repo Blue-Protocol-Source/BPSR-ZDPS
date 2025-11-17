@@ -216,6 +216,11 @@ namespace BPSR_ZDPS
             // Clean up and terminate GLFW
             GLFW.DestroyWindow(window);
             GLFW.Terminate();
+
+            if (Settings.Instance.UseDatabaseForEncounterHistory && Settings.Instance.DatabaseRetentionPolicyDays > 0)
+            {
+                DB.ClearOldEncounters(Settings.Instance.DatabaseRetentionPolicyDays);
+            }
         }
 
         static unsafe void Window_Resized_Callback(Hexa.NET.GLFW.GLFWwindow* window, int width, int height)

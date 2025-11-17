@@ -7,14 +7,14 @@ namespace BPSR_ZDPS
     {
         public static void CreateTables(IDbConnection conn)
         {
-            conn.Execute(EncounterSql.CreateTable);
-            conn.Execute(EntitiesSql.CreateTable);
-            conn.Execute(BattlesSql.CreateTable);
-            conn.Execute(DbDataSql.CreateTable);
-            conn.Execute(EntityCacheSql.CreateTable);
+            conn.Execute(Encounter.CreateTable);
+            conn.Execute(Entities.CreateTable);
+            conn.Execute(Battles.CreateTable);
+            conn.Execute(DbData.CreateTable);
+            conn.Execute(EntityCache.CreateTable);
         }
 
-        public static class EncounterSql
+        public static class Encounter
         {
             public const string Insert = @"
                 INSERT INTO Encounters (
@@ -32,7 +32,11 @@ namespace BPSR_ZDPS
 
             public const string SelectAll = @"SELECT * FROM Encounters ORDER BY StartTime DESC";
             public const string SelectById = @"SELECT * FROM Encounters WHERE EncounterId = @EncounterId";
-            public const string SelectByBattleId = @"SELECT * FROM Encounters WHERE BattleId = @BattleId ORDER BY StartTime";
+            public const string SelectByBattleId = 
+                @"SELECT * FROM Encounters WHERE BattleId = @BattleId ORDER BY StartTime";
+            
+            public const string RemoveEncountersOlderThan = 
+                @"DELETE FROM Encounters WHERE EndTime IS NOT NULL AND datetime(EndTime) < @Date;";
 
             public const string CreateTable = @"
                 CREATE TABLE IF NOT EXISTS Encounters (
@@ -58,7 +62,7 @@ namespace BPSR_ZDPS
                 )";
         }
 
-        public static class EntitiesSql
+        public static class Entities
         {
             public const string Insert = @"
                 INSERT INTO Entities (
@@ -70,6 +74,9 @@ namespace BPSR_ZDPS
 
             public const string SelectByEncounterId = @"SELECT * FROM Entities WHERE EncounterId = @EncounterId";
 
+            public const string DeleteEntitiesCachesWithNoEncounters =
+                @"DELETE FROM Entities WHERE NOT EXISTS (SELECT 1 FROM Encounters WHERE Encounters.EncounterId = Entities.EncounterId);";
+
             public const string CreateTable = @"
                 CREATE TABLE IF NOT EXISTS Entities (
                     EncounterId INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -77,7 +84,7 @@ namespace BPSR_ZDPS
                 );";
         }
 
-        public static class BattlesSql
+        public static class Battles
         {
             public const string Insert = @"
                 INSERT INTO Battles (
@@ -87,13 +94,13 @@ namespace BPSR_ZDPS
                 );
                 SELECT last_insert_rowid();";
 
-            public const string Update = @"
-                UPDATE Battles SET SceneId = @SceneId, SceneName = @SceneName, EndTime = @EndTime WHERE BattleId = @BattleId
-            ";
-
+            public const string Update = @"UPDATE Battles SET SceneId = @SceneId, SceneName = @SceneName WHERE BattleId = @BattleId";
+            public const string UpdateEndTime = @"UPDATE Battles SET EndTime = @EndTime WHERE BattleId = @BattleId";
             public const string SelectByBattleId = @"SELECT * FROM Battles WHERE BattleId = @BattleId";
+            public const string SelectAll = @"SELECT * FROM Battles WHERE EndTime NOT NULL";
 
-            public const string SelectAll = @"SELECT * FROM Battles";
+            public const string DeleteBattlesWithNoEncounters =
+                @"DELETE FROM Battles WHERE NOT EXISTS (SELECT 1 FROM Encounters WHERE Encounters.BattleId = Battles.BattleId);";
 
             public const string CreateTable = @"
                 CREATE TABLE IF NOT EXISTS Battles (
@@ -105,7 +112,7 @@ namespace BPSR_ZDPS
                 );";
         }
 
-        public static class DbDataSql
+        public static class DbData
         {
             public const string Select = @"SELECT * FROM DbData";
 
@@ -117,7 +124,7 @@ namespace BPSR_ZDPS
                 INSERT INTO DbData (Version) VALUES (1.0)";
         }
 
-        public static class EntityCacheSql
+        public static class EntityCache
         {
             public const string CreateTable = @"
                 CREATE TABLE IF NOT EXISTS EntityCache (
@@ -136,11 +143,8 @@ namespace BPSR_ZDPS
                 VALUES (@UUID, @UID, @Name, @Level, @AblityScore, @ProfessionId, @SubProfessionId);";
 
             public const string SelectAll = @"SELECT * FROM EntityCache;";
-
             public const string SelectByUUID = @"SELECT * FROM EntityCache WHERE UUID = @UUID;";
-
             public const string SelectByUID = @"SELECT * FROM EntityCache WHERE UID = @UID;";
-
             public const string GetOrCreateDefaultByUUID = @"
                 INSERT INTO EntityCache (UUID, UID, Name, Level, AblityScore, ProfessionId, SubProfessionId)
                 SELECT @UUID, (@UID >> 16), '', 0, 0, 0, 0
@@ -148,6 +152,5 @@ namespace BPSR_ZDPS
 
                 SELECT * FROM EntityCache WHERE UUID = @UUID;";
         }
-
     }
 }

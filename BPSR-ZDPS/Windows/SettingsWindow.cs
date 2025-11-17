@@ -445,43 +445,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.NewLine();
                 if (ImGui.Button("Save", new Vector2(120, 0)))
                 {
-                    if (SelectedNetworkDeviceIdx != PreviousSelectedNetworkDeviceIdx)
-                    {
-                        PreviousSelectedNetworkDeviceIdx = SelectedNetworkDeviceIdx;
-
-                        MessageManager.StopCapturing();
-
-                        Settings.Instance.NetCaptureDeviceName = NetworkDevices[SelectedNetworkDeviceIdx].Name;
-                        MessageManager.NetCaptureDeviceName = NetworkDevices[SelectedNetworkDeviceIdx].Name;
-
-                        MessageManager.InitializeCapturing();
-                    }
-
-                    Settings.Instance.NormalizeMeterContributions = normalizeMeterContributions;
-
-                    Settings.Instance.UseShortWidthNumberFormatting = useShortWidthNumberFormatting;
-
-                    Settings.Instance.ColorClassIconsByRole = colorClassIconsByRole;
-
-                    Settings.Instance.ShowSkillIconsInDetails = showSkillIconsInDetails;
-
-                    Settings.Instance.OnlyShowDamageContributorsInMeters = onlyShowDamageContributorsInMeters;
-
-                    Settings.Instance.UseAutomaticWipeDetection = useAutomaticWipeDetection;
-
-                    Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection = skipTeleportStateCheckInAutomaticWipeDetection;
-
-                    Settings.Instance.SplitEncountersOnNewPhases = splitEncountersOnNewPhases;
-
-                    Settings.Instance.WindowOpacity = windowOpacity;
-
-                    Settings.Instance.UseDatabaseForEncounterHistory = useDatabaseForEncounterHistory;
-
-                    Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;
-
-                    Settings.Instance.LogToFile = logToFile;
-
-                    RegisterAllHotkeys(mainWindow);
+                    Save(mainWindow);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -535,6 +499,49 @@ namespace BPSR_ZDPS.Windows
             }
 
             ImGui.PopID();
+        }
+
+        private static void Save(MainWindow mainWindow)
+        {
+            if (SelectedNetworkDeviceIdx != PreviousSelectedNetworkDeviceIdx)
+            {
+                PreviousSelectedNetworkDeviceIdx = SelectedNetworkDeviceIdx;
+
+                MessageManager.StopCapturing();
+
+                Settings.Instance.NetCaptureDeviceName = NetworkDevices[SelectedNetworkDeviceIdx].Name;
+                MessageManager.NetCaptureDeviceName = NetworkDevices[SelectedNetworkDeviceIdx].Name;
+
+                MessageManager.InitializeCapturing();
+            }
+
+            Settings.Instance.NormalizeMeterContributions = normalizeMeterContributions;
+
+            Settings.Instance.UseShortWidthNumberFormatting = useShortWidthNumberFormatting;
+
+            Settings.Instance.ColorClassIconsByRole = colorClassIconsByRole;
+
+            Settings.Instance.ShowSkillIconsInDetails = showSkillIconsInDetails;
+
+            Settings.Instance.OnlyShowDamageContributorsInMeters = onlyShowDamageContributorsInMeters;
+
+            Settings.Instance.UseAutomaticWipeDetection = useAutomaticWipeDetection;
+
+            Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection = skipTeleportStateCheckInAutomaticWipeDetection;
+
+            Settings.Instance.SplitEncountersOnNewPhases = splitEncountersOnNewPhases;
+
+            Settings.Instance.WindowOpacity = windowOpacity;
+
+            Settings.Instance.UseDatabaseForEncounterHistory = useDatabaseForEncounterHistory;
+
+            Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;
+
+            Settings.Instance.LogToFile = logToFile;
+
+            RegisterAllHotkeys(mainWindow);
+
+            DB.Init();
         }
 
         static void RegisterAllHotkeys(MainWindow mainWindow)

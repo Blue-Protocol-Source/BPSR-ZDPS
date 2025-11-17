@@ -23,6 +23,7 @@ namespace BPSR_ZDPS.Windows
         public static FileInfo? DbFileInfo;
         public static bool DbFileExists = false;
         static EDeleteDuration DeleteTimeFrame = EDeleteDuration.None;
+        static DBCleanUpResults? CleanUpResults = null;
 
         enum EDeleteDuration
         {
@@ -40,6 +41,7 @@ namespace BPSR_ZDPS.Windows
             IsOpened = true;
             DbFileInfo = new FileInfo(DB.DbFilePath);
             DbFileExists = DbFileInfo.Exists;
+            CleanUpResults = null;
             ImGui.PopID();
         }
 
@@ -118,6 +120,11 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PopStyleColor(3);
                 ImGui.EndDisabled();
 
+                if (CleanUpResults != null)
+                {
+                    ImGui.TextUnformatted($"Deleted {CleanUpResults.EncountersDeleted} encounters and {CleanUpResults.BattlesDeleted} battles.");
+                }
+
                 DeleteConfirmationPrompt();
 
                 ImGui.EndPopup();
@@ -137,6 +144,20 @@ namespace BPSR_ZDPS.Windows
                 if (ImGui.Button("Yes", new Vector2(buttonWidth, 0)))
                 {
                     // TODO: Either set a flag to use DeleteTimeFrame value or directly use it here and call the DB delete function
+                    var deleteDays = DeleteTimeFrame switch
+                    {
+                        EDeleteDuration.None => -1,
+                        EDeleteDuration.OneDay => 1,
+                        EDeleteDuration.FiveDays => 5,
+                        EDeleteDuration.AllTime => 0,
+                        _ => -1,
+                    };
+
+                    if (deleteDays != -1)
+                    {
+                        CleanUpResults = DB.ClearOldEncounters(deleteDays);
+                    }
+
                     ImGui.CloseCurrentPopup();
                 }
 

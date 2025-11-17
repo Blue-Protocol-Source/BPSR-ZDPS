@@ -1,4 +1,5 @@
 ﻿using BPSR_ZDPS.Database;
+using BPSR_ZDPS.DataTypes;
 using Dapper;
 using Microsoft.Data.Sqlite;
 using Newtonsoft.Json;
@@ -6,7 +7,6 @@ using Serilog;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Text;
-using static BPSR_ZDPS.DBSchema;
 
 namespace BPSR_ZDPS
 {
@@ -22,11 +22,18 @@ namespace BPSR_ZDPS
 
         public static void Init()
         {
-            Log = Serilog.Log.Logger.ForContext<DB>();
-            DbConn = new SqliteConnection($"Data Source={DbFilePath}");
+            Log = Log ?? Serilog.Log.Logger.ForContext<DB>();
+            if (DbConn != null)
+            {
+                DbConn.Close();
+                DbConn.Dispose();
+            }
+
+            var useFileDb = Settings.Instance.UseDatabaseForEncounterHistory;
+            DbConn = new SqliteConnection($"Data Source={(useFileDb ? DbFilePath : ":memory:")}");
             DbConn.Open();
 
-            CreateTables(DbConn);
+            DBSchema.CreateTables(DbConn);
         }
 
         // Encounters
@@ -46,7 +53,7 @@ namespace BPSR_ZDPS
         {
             var sw = Stopwatch.StartNew();
             using var transaction = DbConn.BeginTransaction();
-            var encounterId = DbConn.QuerySingle<ulong>(EncounterSql.Insert, encounter, transaction);
+            var encounterId = DbConn.QuerySingle<ulong>(DBSchema.Encounter.Insert, encounter, transaction);
             encounter.EncounterId = encounterId;
 
             var entitiesJson = JsonConvert.SerializeObject(encounter.Entities, Formatting.None, new JsonSerializerSettings()
@@ -59,7 +66,7 @@ namespace BPSR_ZDPS
             var entityBlob = new EntityBlobTable();
             entityBlob.EncounterId = encounterId;
             entityBlob.Data = compressed.ToArray();
-            DbConn.Execute(EntitiesSql.Insert, entityBlob);
+            DbConn.Execute(DBSchema.Entities.Insert, entityBlob);
 
             transaction.Commit();
 
@@ -75,7 +82,7 @@ namespace BPSR_ZDPS
         public static Encounter? LoadEncounter(ulong encounterId)
         {
             var sw = Stopwatch.StartNew();
-            var encounter = DbConn.QuerySingleOrDefault<Encounter>(EncounterSql.SelectById, new { EncounterId = encounterId });
+            var encounter = DbConn.QuerySingleOrDefault<Encounter>(DBSchema.Encounter.SelectById, new { EncounterId = encounterId });
 
             if (encounter == null)
             {
@@ -83,7 +90,7 @@ namespace BPSR_ZDPS
                 return null;
             }
 
-            var entityBlob = DbConn.QuerySingleOrDefault<EntityBlobTable>(EntitiesSql.SelectByEncounterId, new { EncounterId = encounterId });
+            var entityBlob = DbConn.QuerySingleOrDefault<EntityBlobTable>(DBSchema.Entities.SelectByEncounterId, new { EncounterId = encounterId });
             if (entityBlob?.Data != null)
             {
                 var decompressed = Decompressor.Unwrap(entityBlob.Data);
@@ -113,8 +120,24 @@ namespace BPSR_ZDPS
 
         public static List<Encounter> LoadEncounterSummaries()
         {
-            var encounters = DbConn.Query<Encounter>(EncounterSql.SelectAll).ToList();
+            var encounters = DbConn.Query<Encounter>(DBSchema.Encounter.SelectAll).ToList();
             return encounters;
+        }
+
+        public static DBCleanUpResults ClearOldEncounters(int olderThanDays)
+        {
+            var date = DateTime.Now.AddDays(olderThanDays * -1);
+            var results = new DBCleanUpResults();
+            results.EncountersDeleted = DbConn.Execute(DBSchema.Encounter.RemoveEncountersOlderThan, new { Date = date });
+            results.EntitiesCachesDeleted = DbConn.Execute(DBSchema.Entities.DeleteEntitiesCachesWithNoEncounters);
+            results.BattlesDeleted = DbConn.Execute(DBSchema.Battles.DeleteBattlesWithNoEncounters);
+
+            DbConn.Execute("VACUUM");
+
+            Log.Information("Cleaned up {EncountersDeleted} encounters and {BattlesDeleted} battles, with {EntitesCachesDeleted} cachedEntities",
+                    results.EncountersDeleted, results.BattlesDeleted, results.EntitiesCachesDeleted);
+            
+            return results;
         }
 
         // Battles
@@ -133,7 +156,7 @@ namespace BPSR_ZDPS
                 StartTime = DateTime.Now
             };
 
-            var battleId = DbConn.QuerySingle<int>(BattlesSql.Insert, battle);
+            var battleId = DbConn.QuerySingle<int>(DBSchema.Battles.Insert, battle);
 
             return battleId;
         }
@@ -144,22 +167,32 @@ namespace BPSR_ZDPS
             {
                 BattleId = battleId,
                 SceneId = sceneId,
-                SceneName = sceneName ?? "",
+                SceneName = sceneName ?? ""
+            };
+
+            DbConn.Execute(DBSchema.Battles.Update, battle);
+        }
+
+        public static void UpdateBattleEnd(int battleId)
+        {
+            var battle = new Battle()
+            {
+                BattleId = battleId,
                 EndTime = DateTime.Now
             };
 
-            DbConn.Execute(BattlesSql.Update, battle);
+            DbConn.Execute(DBSchema.Battles.UpdateEndTime, battle);
         }
 
         public static List<Battle> LoadBattles()
         {
-            var battles = DbConn.Query<Battle>(BattlesSql.SelectAll).ToList();
+            var battles = DbConn.Query<Battle>(DBSchema.Battles.SelectAll).ToList();
             return battles;
         }
 
         public static List<Encounter> LoadEncountersForBattleId(int battleId)
         {
-            var encountersSum = DbConn.Query<Encounter>(EncounterSql.SelectByBattleId, new { BattleId = battleId });
+            var encountersSum = DbConn.Query<Encounter>(DBSchema.Encounter.SelectByBattleId, new { BattleId = battleId });
             var encounters = new List<Encounter>(encountersSum.Count());
 
             foreach (var encounter in encountersSum)
@@ -174,25 +207,25 @@ namespace BPSR_ZDPS
         // Entity Cache
         public static EntityCacheLine? GetEntityCacheLineByUUID(long uuid)
         {
-            var line = DbConn.QuerySingleOrDefault<EntityCacheLine>(EntityCacheSql.SelectByUUID, uuid);
+            var line = DbConn.QuerySingleOrDefault<EntityCacheLine>(DBSchema.EntityCache.SelectByUUID, uuid);
             return line;
         }
 
         public static EntityCacheLine? GetEntityCacheLineByUID(long uid)
         {
-            var line = DbConn.QuerySingleOrDefault<EntityCacheLine>(EntityCacheSql.SelectByUID, uid);
+            var line = DbConn.QuerySingleOrDefault<EntityCacheLine>(DBSchema.EntityCache.SelectByUID, uid);
             return line;
         }
 
         public static EntityCacheLine? GetOrCreateEntityCacheLineByUUID(long uuid)
         {
-            var line = DbConn.QuerySingle<EntityCacheLine>(EntityCacheSql.GetOrCreateDefaultByUUID, uuid);
+            var line = DbConn.QuerySingle<EntityCacheLine>(DBSchema.EntityCache.GetOrCreateDefaultByUUID, uuid);
             return line;
         }
 
         public static bool UpdateEntityCacheLine(EntityCacheLine line)
         {
-            var result = DbConn.Execute(EntityCacheSql.InsertOrReplace, line);
+            var result = DbConn.Execute(DBSchema.EntityCache.InsertOrReplace, line);
             return result > 0;
         }
 
@@ -200,12 +233,19 @@ namespace BPSR_ZDPS
         {
             var sw = Stopwatch.StartNew();
             using var trans = DbConn.BeginTransaction();
-            var result = DbConn.Execute(EntityCacheSql.InsertOrReplace, lines, trans);
+            var result = DbConn.Execute(DBSchema.EntityCache.InsertOrReplace, lines, trans);
             trans.Commit();
             sw.Stop();
             Log.Information("UpdateEntityCacheLines took {elapsed} to insert {numLines}", sw.Elapsed, lines.Count());
 
             return result > 0;
         }
+    }
+
+    public class DBCleanUpResults
+    {
+        public int EncountersDeleted { get; set; } = 0;
+        public int BattlesDeleted { get; set; } = 0;
+        public int EntitiesCachesDeleted { get; set; } = 0;
     }
 }
