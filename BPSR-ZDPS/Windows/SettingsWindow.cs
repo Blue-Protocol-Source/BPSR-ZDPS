@@ -28,6 +28,7 @@ namespace BPSR_ZDPS.Windows
         static float windowOpacity;
         static bool useDatabaseForEncounterHistory;
         static int databaseRetentionPolicyDays;
+        static bool limitEncounterBuffTrackingWithoutDatabase;
 
         static bool logToFile;
 
@@ -64,6 +65,7 @@ namespace BPSR_ZDPS.Windows
             windowOpacity = Settings.Instance.WindowOpacity;
             useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
             databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
+            limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
 
             logToFile = Settings.Instance.LogToFile;
 
@@ -242,13 +244,15 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.SeparatorText("Database");
 
+                        ShowRestartRequiredNotice(Settings.Instance.UseDatabaseForEncounterHistory != useDatabaseForEncounterHistory, "Use Database For Encounter History");
+
                         ImGui.AlignTextToFramePadding();
                         ImGui.Text("Use Database For Encounter History: ");
                         ImGui.SameLine();
                         ImGui.Checkbox("##UseDatabaseForEncounterHistory", ref useDatabaseForEncounterHistory);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("When enabled, all encounter data is saved into a local database file (ZDatabase.db) to reduce memory usage and allow viewing between ZDPS sessions.");
+                        ImGui.TextWrapped("When enabled, all encounter data is saved into a local database file (ZDatabase.db) to reduce memory usage and allow viewing between ZDPS sessions. Applies after restarting ZDPS.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -264,6 +268,18 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
                         ImGui.TextWrapped("How long to keep previous Encounter History data for. When not set to Keep Forever, expired data is automatically deleted on application close.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+                        ImGui.EndDisabled();
+
+                        ImGui.BeginDisabled(useDatabaseForEncounterHistory);
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Limit Encounter Buff Tracking Without Database: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##LimitEncounterBuffTrackingWithoutDatabase", ref limitEncounterBuffTrackingWithoutDatabase);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, buffs are limited to only the latest 100 per entity instead of being limitless. This only applies if the Database is disabled to allow reduced memory usage. This setting is not retroactive.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
                         ImGui.EndDisabled();
@@ -425,6 +441,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
+                        ShowRestartRequiredNotice(Settings.Instance.LogToFile != logToFile, "Write Debug Log To File");
                         ImGui.AlignTextToFramePadding();
                         ImGui.Text("Write Debug Log To File: ");
                         ImGui.SameLine();
@@ -477,6 +494,8 @@ namespace BPSR_ZDPS.Windows
                     useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
 
                     databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
+
+                    limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
 
                     logToFile = Settings.Instance.LogToFile;
 
@@ -537,11 +556,28 @@ namespace BPSR_ZDPS.Windows
 
             Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;
 
+            Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase = limitEncounterBuffTrackingWithoutDatabase;
+
             Settings.Instance.LogToFile = logToFile;
 
             RegisterAllHotkeys(mainWindow);
 
             DB.Init();
+        }
+
+        static void ShowRestartRequiredNotice(bool showCondition, string settingName)
+        {
+            if (showCondition)
+            {
+                ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
+                ImGui.BeginChild($"##RestartRequiredNotice_{settingName}", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
+                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                ImGui.TextUnformatted("Important Note:");
+                ImGui.PopFont();
+                ImGui.TextWrapped($"Changing the [{settingName}] setting requires restarting ZDPS to take effect.");
+                ImGui.EndChild();
+                ImGui.PopStyleColor();
+            }
         }
 
         static void RegisterAllHotkeys(MainWindow mainWindow)

@@ -80,7 +80,7 @@ namespace BPSR_ZDPS.Windows
                 bool isDatabaseEnabled = Settings.Instance.UseDatabaseForEncounterHistory;
                 bool isHistoryWindowOpen = EncounterHistoryWindow.IsOpened;
                 bool isInspectorWindowOpen = mainWindow.entityInspector.IsOpened;
-                bool isAllowedToManage = DbFileExists && isDatabaseEnabled && (isHistoryWindowOpen || isInspectorWindowOpen);
+                bool isAllowedToManage = DbFileExists && isDatabaseEnabled && !isHistoryWindowOpen && !isInspectorWindowOpen;
 
                 ImGui.SeparatorText("ZDatabase.db Stats");
                 if (DbFileExists)
@@ -94,9 +94,16 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SeparatorText("Delete Encounter History");
+                if (!isAllowedToManage)
+                {
+                    ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                    ImGui.TextUnformatted("Please close Encounter History and Entity Inspector windows to enable management options.");
+                    ImGui.PopStyleColor();
+                }
+
+                ImGui.BeginDisabled(!isAllowedToManage);
                 ImGui.TextUnformatted("Select duration to delete encounter history for:");
 
-                ImGui.BeginDisabled(isAllowedToManage);
                 ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkRed_Transparent);
                 ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Colors.Red_Transparent);
                 ImGui.PushStyleColor(ImGuiCol.ButtonActive, Colors.Red);
