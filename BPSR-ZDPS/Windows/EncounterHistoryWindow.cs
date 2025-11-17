@@ -43,7 +43,7 @@ namespace BPSR_ZDPS.Windows
         public static void LoadFromDB()
         {
             // Skip last encounter as it's going to be the current live one and we don't want that in our "historical" view
-            Encounters = DB.LoadEncounterSummaries().OrderBy(x => x.StartTime).SkipLast(1).ToList();
+            Encounters = DB.LoadEncounterSummaries().OrderBy(x => x.StartTime).ToList();
             Battles = DB.LoadBattles().OrderBy(x => x.StartTime).ToList();
 
             // Convert Battles into fake merged encounters
@@ -172,7 +172,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetNextItemWidth(-1);
                 if (ImGui.BeginCombo("##EncounterHistoryCombo", selectedPreviewText, ImGuiComboFlags.None))
                 {
-                    for (int i = 0; i < encounters.Count - 1; i++)
+                    for (int i = 0; i < encounters.Count; i++)
                     {
                         bool isSelected = SelectedEncounterIndex == i;
                         string encounterLabel = BuildDropdownStringName(encounters[i].StartTime, encounters[i].EndTime, encounters[i].SceneName, i);
