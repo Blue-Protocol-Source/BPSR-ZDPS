@@ -709,10 +709,10 @@ namespace BPSR_ZDPS
                 buffEvent.SetAddTime(encounterTime.Duration());
 
                 // FIXME: For right now, limit buff tracking history to only the past 100 events per player until we write them off to a file
-                if (BuffEvents.Count > 99)
+                /*if (BuffEvents.Count > 99)
                 {
                     BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
-                }
+                }*/
 
                 BuffEvents[(ulong)buffUuid] = buffEvent;
             }
@@ -726,10 +726,10 @@ namespace BPSR_ZDPS
                 buffEvent.SetRemoveTime(encounterTime.Duration());
 
                 // FIXME: For right now, limit buff tracking history to only the past 100 events per player until we write them off to a file
-                if (BuffEvents.Count > 99)
+                /*if (BuffEvents.Count > 99)
                 {
                     BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
-                }
+                }*/
 
                 BuffEvents[(ulong)buffUuid] = buffEvent;
             }
@@ -754,10 +754,10 @@ namespace BPSR_ZDPS
             buffEvent.AddData(attributeName, attributeValue);
 
             // FIXME: For right now, limit buff tracking history to only the past 100 events per player until we write them off to a file
-            if (BuffEvents.Count > 99)
+            /*if (BuffEvents.Count > 99)
             {
                 BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
-            }
+            }*/
 
             BuffEvents[(ulong)buffUuid] = buffEvent;
         }
