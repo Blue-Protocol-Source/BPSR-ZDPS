@@ -21,6 +21,7 @@ public class Settings
     public float WindowOpacity = 1.0f;
     public bool UseDatabaseForEncounterHistory { get; set; } = true;
     public int DatabaseRetentionPolicyDays { get; set; } = 0;
+    public bool LimitEncounterBuffTrackingWithoutDatabase { get; set; } = false;
     public bool LogToFile { get; set; } = false;
 
     public uint HotkeysEncounterReset { get; set; }
