@@ -91,6 +91,27 @@ namespace BPSR_ZDPS
             }
         }
 
+        public static string BytesToString<T>(T number)
+        {
+            string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
+            double value = Convert.ToDouble(number);
+            if (value == 0)
+            {
+                return "0" + suf[0];
+            }
+
+            double absoluteValue = Math.Abs(value);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(absoluteValue, 1024)));
+            double shortNumber = Math.Round(absoluteValue / Math.Pow(1024, place), 2);
+
+            string fmt = "";
+            if (place > 0)
+            {
+                fmt = "N2";
+            }
+            return $"{(Math.Sign(value) * shortNumber).ToString(fmt)}{suf[place]}";
+        }
+
         public static string NumberToShorthand<T>(T number)
         {
             string[] suf = { "", "K", "M", "B", "t", "q", "Q", "s", "S", "o", "n", "d", "U", "D", "T" };

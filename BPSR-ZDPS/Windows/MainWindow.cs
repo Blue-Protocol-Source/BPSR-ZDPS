@@ -30,6 +30,7 @@ namespace BPSR_ZDPS.Windows
         List<MeterBase> Meters = new();
         public EntityInspector entityInspector = new();
         public bool IsTopMost = false;
+        public Vector2 WindowPosition;
 
         public void Draw()
         {
@@ -41,6 +42,7 @@ namespace BPSR_ZDPS.Windows
             NetDebug.Draw();
             DebugDungeonTracker.Draw(this);
             RaidManager.Draw(this);
+            DatabaseManagerWindow.Draw(this);
         }
 
         static bool p_open = true;
@@ -65,6 +67,8 @@ namespace BPSR_ZDPS.Windows
                 ImGui.End();
                 return;
             }
+
+            WindowPosition = ImGui.GetWindowPos();
 
             DrawMenuBar();
 
@@ -248,6 +252,12 @@ namespace BPSR_ZDPS.Windows
                     {
                         EncounterHistoryWindow.Open();
                     }
+
+                    if (ImGui.MenuItem("Database Manager"))
+                    {
+                        DatabaseManagerWindow.Open();
+                    }
+                    ImGui.SetItemTooltip("Manage the ZDatabase.db contents");
 
                     ImGui.Separator();
                     if (ImGui.MenuItem("Settings"))

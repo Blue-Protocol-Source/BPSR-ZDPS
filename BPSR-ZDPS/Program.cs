@@ -106,7 +106,7 @@ namespace BPSR_ZDPS
             io.ConfigFlags |= ImGuiConfigFlags.NavEnableGamepad;      // Enable Gamepad Controls
             io.ConfigFlags |= ImGuiConfigFlags.DockingEnable;         // Enable Docking
             io.ConfigFlags |= ImGuiConfigFlags.ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
-            io.ConfigViewportsNoAutoMerge = false;
+            io.ConfigViewportsNoAutoMerge = true; // If this is false, putting an ImGui window on top of an GLFW window will dock into it even if it's not shown
             io.ConfigViewportsNoTaskBarIcon = false;
 
             LoadFonts();

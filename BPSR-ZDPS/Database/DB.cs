@@ -12,6 +12,9 @@ namespace BPSR_ZDPS
 {
     public class DB
     {
+        public const string DbFileName = "ZDatabase.db";
+        public static string DbFilePath = Path.Combine(Utils.DATA_DIR_NAME, DbFileName);
+
         private static SqliteConnection DbConn;
         private static ILogger Log;
         private static ZstdSharp.Compressor Compressor = new ZstdSharp.Compressor();
@@ -20,7 +23,7 @@ namespace BPSR_ZDPS
         public static void Init()
         {
             Log = Serilog.Log.Logger.ForContext<DB>();
-            DbConn = new SqliteConnection($"Data Source={Utils.DATA_DIR_NAME}/ZDPS_Logs.db");
+            DbConn = new SqliteConnection($"Data Source={DbFilePath}");
             DbConn.Open();
 
             CreateTables(DbConn);
@@ -30,6 +33,12 @@ namespace BPSR_ZDPS
         public static ulong GetNextEncounterId()
         {
             const string sql = "SELECT COALESCE(MAX(EncounterId), 0) + 1 FROM Encounters";
+            return DbConn.QuerySingle<ulong>(sql);
+        }
+
+        public static ulong GetNumEncounters()
+        {
+            const string sql = "SELECT COUNT(*) FROM Encounters";
             return DbConn.QuerySingle<ulong>(sql);
         }
 

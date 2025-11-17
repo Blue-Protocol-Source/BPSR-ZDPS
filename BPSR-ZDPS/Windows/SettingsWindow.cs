@@ -26,6 +26,8 @@ namespace BPSR_ZDPS.Windows
         static bool skipTeleportStateCheckInAutomaticWipeDetection;
         static bool splitEncountersOnNewPhases;
         static float windowOpacity;
+        static bool useDatabaseForEncounterHistory;
+        static int databaseRetentionPolicyDays;
 
         static bool logToFile;
 
@@ -60,6 +62,8 @@ namespace BPSR_ZDPS.Windows
             skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
             splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
             windowOpacity = Settings.Instance.WindowOpacity;
+            useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
+            databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
 
             logToFile = Settings.Instance.LogToFile;
 
@@ -235,6 +239,34 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Indent();
                         RebindKeyButton("Encounter Reset", ref EncounterResetKey, ref EncounterResetKeyName);
                         ImGui.Unindent();
+
+                        ImGui.SeparatorText("Database");
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Use Database For Encounter History: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##UseDatabaseForEncounterHistory", ref useDatabaseForEncounterHistory);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, all encounter data is saved into a local database file (ZDatabase.db) to reduce memory usage and allow viewing between ZDPS sessions.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.BeginDisabled(!useDatabaseForEncounterHistory);
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Database Encounter History Retention Policy: ");
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.SliderInt("##DatabaseRetentionPolicyDays", ref databaseRetentionPolicyDays, 0, 30, databaseRetentionPolicyDays == 0 ? "Keep Forever" : $"{databaseRetentionPolicyDays} Days");
+                        ImGui.PopStyleColor(2);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("How long to keep previous Encounter History data for. When not set to Keep Forever, expired data is automatically deleted on application close.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+                        ImGui.EndDisabled();
 
                         ImGui.EndChild();
                         ImGui.EndTabItem();
@@ -443,6 +475,10 @@ namespace BPSR_ZDPS.Windows
 
                     Settings.Instance.WindowOpacity = windowOpacity;
 
+                    Settings.Instance.UseDatabaseForEncounterHistory = useDatabaseForEncounterHistory;
+
+                    Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;
+
                     Settings.Instance.LogToFile = logToFile;
 
                     RegisterAllHotkeys(mainWindow);
@@ -473,6 +509,10 @@ namespace BPSR_ZDPS.Windows
                     splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
 
                     windowOpacity = Settings.Instance.WindowOpacity;
+
+                    useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
+
+                    databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
 
                     logToFile = Settings.Instance.LogToFile;
 
