@@ -93,15 +93,30 @@ namespace BPSR_ZDPS
             var entityBlob = DbConn.QuerySingleOrDefault<EntityBlobTable>(DBSchema.Entities.SelectByEncounterId, new { EncounterId = encounterId });
             if (entityBlob?.Data != null)
             {
-                var decompressed = Decompressor.Unwrap(entityBlob.Data);
-                var entitiesJson = Encoding.UTF8.GetString(decompressed.ToArray());
-                encounter.Entities = JsonConvert.DeserializeObject<ConcurrentDictionary<long, Entity>>(entitiesJson, new JsonSerializerSettings()
+                using (var memStream = new MemoryStream(entityBlob.Data))
                 {
-                    ContractResolver = new PrivateResolver(),
-                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-                    TypeNameHandling = Newtonsoft.Json.TypeNameHandling.All,
-                    Converters = [new DictionaryObjectConverter()]
-                })!;
+                    using (var decompStream = new ZstdSharp.DecompressionStream(memStream))
+                    {
+                        using (var streamReader = new StreamReader(decompStream))
+                        {
+                            using (JsonTextReader reader = new JsonTextReader(streamReader))
+                            {
+                                JsonSerializer serializer = new JsonSerializer()
+                                {
+                                    ContractResolver = new PrivateResolver(),
+                                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+                                    TypeNameHandling = Newtonsoft.Json.TypeNameHandling.All
+                                };
+                                serializer.Converters.Add(new DictionaryObjectConverter());
+
+                                encounter.Entities = serializer.Deserialize<ConcurrentDictionary<long, Entity>>(reader)!;
+                            }
+                        }
+                    }
+                }
+
+                // Forcefully release the Generation 2 memory that the above just used
+                GC.Collect(2);
             }
             else
             {

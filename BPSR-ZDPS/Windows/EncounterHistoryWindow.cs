@@ -28,6 +28,8 @@ namespace BPSR_ZDPS.Windows
 
         static int RunOnceDelayed = 0;
 
+        static bool ShouldTrackOpenState = false;
+
         public static void Open()
         {
             RunOnceDelayed = 0;
@@ -38,6 +40,19 @@ namespace BPSR_ZDPS.Windows
             ImGui.PopID();
 
             LoadFromDB();
+
+            // Restore encounter data for previously selected encounter on window open (this may cause a brief hitch while it opens)
+            if (SelectedEncounterIndex > -1)
+            {
+                if (SelectedViewMode == 0)
+                {
+                    Encounters[SelectedEncounterIndex] = DB.LoadEncounter(Encounters[SelectedEncounterIndex].EncounterId);
+                }
+                else
+                {
+                    GroupedBattles[SelectedEncounterIndex] = CalcBattleEncounter(GroupedBattles[SelectedEncounterIndex].BattleId, GroupedBattles[SelectedEncounterIndex]);
+                }
+            }
         }
 
         public static void LoadFromDB()
@@ -75,6 +90,8 @@ namespace BPSR_ZDPS.Windows
 
             if (ImGui.Begin("Encounter History###EncounterHistoryWindow", ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
             {
+                ShouldTrackOpenState = true;
+
                 if (RunOnceDelayed == 0)
                 {
                     RunOnceDelayed++;
@@ -417,6 +434,16 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.End();
+            }
+
+            if (!IsOpened && ShouldTrackOpenState)
+            {
+                ShouldTrackOpenState = false;
+                // Window is closing
+
+                GroupedBattles.Clear();
+                Battles.Clear();
+                Encounters.Clear();
             }
 
             ImGui.PopID();
