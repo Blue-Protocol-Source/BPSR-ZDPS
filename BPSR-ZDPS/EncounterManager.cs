@@ -259,6 +259,7 @@ namespace BPSR_ZDPS
             // We used to care if the entity already had a name, but there were strange incorrect name issues, so now we don't
             if (key == "AttrId" && entity.EntityType == EEntityType.EntMonster)
             {
+                entity.UID = (int)value;
                 if (HelperMethods.DataTables.Monsters.Data.TryGetValue(value.ToString(), out var monsterEntry))
                 {
                     entity.SetName(monsterEntry.Name);
