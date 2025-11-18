@@ -112,6 +112,7 @@ namespace BPSR_ZDPS.Windows
             }
 
             ImGui.SetNextWindowSize(new Vector2(740, 675), ImGuiCond.Appearing);
+            ImGui.SetNextWindowSizeConstraints(new Vector2(500, 250), new Vector2(ImGui.GETFLTMAX()));
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
@@ -310,31 +311,32 @@ namespace BPSR_ZDPS.Windows
 
                         if (IsLoadingFromDatabase)
                         {
-                            ImGui.Text("Please wait, loading encounter data...");
+                            ImGui.TextUnformatted("Please wait, loading encounter data...");
                         }
 
+                        // TODO: This should be created and ordered only when the user changes ordering, not every single frame even if we can afford the cost
                         var entitiesFiltered = encounters[SelectedEncounterIndex].Entities.AsValueEnumerable().Where(x => x.Value.EntityType == Zproto.EEntityType.EntChar || x.Value.EntityType == Zproto.EEntityType.EntMonster);
-                        List<Entity> entities;
+                        Entity[] entities;
                         switch (SelectedOrderByOption)
                         {
                             case 0:
-                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalDamage).Select(kvp => kvp.Value).ToList();
+                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalDamage).Select(kvp => kvp.Value).ToArray();
                                 break;
                             case 1:
-                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalHealing).Select(kvp => kvp.Value).ToList();
+                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalHealing).Select(kvp => kvp.Value).ToArray();
                                 break;
                             case 2:
-                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalTakenDamage).Select(kvp => kvp.Value).ToList();
+                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalTakenDamage).Select(kvp => kvp.Value).ToArray();
                                 break;
                             default:
-                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalDamage).Select(kvp => kvp.Value).ToList();
+                                entities = entitiesFiltered.OrderByDescending(x => x.Value.TotalDamage).Select(kvp => kvp.Value).ToArray();
                                 break;
                         }
 
                         // Adds vertical padding in each row
                         ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(ImGui.GetStyle().CellPadding.X, ImGui.GetStyle().CellPadding.Y + 2));
 
-                        for (int entIdx = 0; entIdx < entities.Count; entIdx++)
+                        for (int entIdx = 0; entIdx < entities.Length; entIdx++)
                         {
                             ImGui.TableNextRow();
                             ImGui.TableNextColumn();
@@ -365,16 +367,16 @@ namespace BPSR_ZDPS.Windows
                             }
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(entity.UID.ToString());
+                            ImGui.TextUnformatted(entity.UID.ToString());
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(entity.Name ?? $"[{entity.UID}]");
+                            ImGui.TextUnformatted(entity.Name ?? $"[{entity.UID}]");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(profession);
+                            ImGui.TextUnformatted(profession);
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(entity.AbilityScore.ToString());
+                            ImGui.TextUnformatted(entity.AbilityScore.ToString());
 
                             ImGui.TableNextColumn();
                             string totalDamageDealt = Utils.NumberToShorthand(entity.TotalDamage);
@@ -390,61 +392,62 @@ namespace BPSR_ZDPS.Windows
                                     totalDamagePct = Math.Round(((double)entity.TotalDamage / (double)encounters[SelectedEncounterIndex].TotalDamage) * 100, 0);
                                 }
                             }
-                            ImGui.Text($"{totalDamageDealt} ({totalDamagePct}%%)");
+                            // Since we're using TextUnformatted instead of Text we don't need to escape the % symbol
+                            ImGui.TextUnformatted($"{totalDamageDealt} ({totalDamagePct}%)");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond));
+                            ImGui.TextUnformatted(Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond));
 
                             ImGui.TableNextColumn();
                             ImGui.Text(Utils.NumberToShorthand(entity.TotalShieldBreak));
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{entity.DamageStats.CritRate}%%");
+                            ImGui.TextUnformatted($"{entity.DamageStats.CritRate}%");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{entity.DamageStats.LuckyRate}%%");
+                            ImGui.TextUnformatted($"{entity.DamageStats.LuckyRate}%");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{Utils.NumberToShorthand(entity.DamageStats.ValueCritTotal)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(entity.DamageStats.ValueCritTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{Utils.NumberToShorthand(entity.DamageStats.ValueLuckyTotal)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(entity.DamageStats.ValueLuckyTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{Utils.NumberToShorthand(entity.DamageStats.ValueCritLuckyTotal)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(entity.DamageStats.ValueCritLuckyTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{Utils.NumberToShorthand(entity.DamageStats.ValueMax)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(entity.DamageStats.ValueMax)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(Utils.NumberToShorthand(entity.TotalShield));
+                            ImGui.TextUnformatted(Utils.NumberToShorthand(entity.TotalShield));
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(Utils.NumberToShorthand(entity.TotalHealing));
+                            ImGui.TextUnformatted(Utils.NumberToShorthand(entity.TotalHealing));
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(Utils.NumberToShorthand(entity.HealingStats.ValuePerSecond));
+                            ImGui.TextUnformatted(Utils.NumberToShorthand(entity.HealingStats.ValuePerSecond));
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(Utils.NumberToShorthand(entity.TotalHealing - entity.TotalOverhealing));
+                            ImGui.TextUnformatted(Utils.NumberToShorthand(entity.TotalHealing - entity.TotalOverhealing));
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(Utils.NumberToShorthand(entity.TotalOverhealing));
+                            ImGui.TextUnformatted(Utils.NumberToShorthand(entity.TotalOverhealing));
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{Utils.NumberToShorthand(entity.HealingStats.ValueCritTotal)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(entity.HealingStats.ValueCritTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{Utils.NumberToShorthand(entity.HealingStats.ValueLuckyTotal)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(entity.HealingStats.ValueLuckyTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{Utils.NumberToShorthand(entity.HealingStats.ValueCritLuckyTotal)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(entity.HealingStats.ValueCritLuckyTotal)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{Utils.NumberToShorthand(entity.HealingStats.ValueMax)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(entity.HealingStats.ValueMax)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text(Utils.NumberToShorthand(entity.TotalTakenDamage));
+                            ImGui.TextUnformatted(Utils.NumberToShorthand(entity.TotalTakenDamage));
 
                             ImGui.TableNextColumn();
                             double totalTaken = 0;
@@ -459,10 +462,10 @@ namespace BPSR_ZDPS.Windows
                                     totalTaken = Math.Round(((double)entity.TotalTakenDamage / (double)encounters[SelectedEncounterIndex].TotalNpcTakenDamage) * 100, 0);
                                 }
                             }
-                            ImGui.Text($"{Utils.NumberToShorthand(totalTaken)}%%");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(totalTaken)}%%");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{entity.TotalDeaths}");
+                            ImGui.TextUnformatted($"{entity.TotalDeaths}");
 
                             if (!string.IsNullOrEmpty(profession))
                             {
