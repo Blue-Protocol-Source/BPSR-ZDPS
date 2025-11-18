@@ -233,7 +233,7 @@ namespace BPSR_ZDPS
             var io = ImGui.GetIO();
             var segoe = io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\segoeui.ttf", 18.0f);
             HelperMethods.Fonts.Add("Segoe", segoe);
-            ImGui.PushFont(HelperMethods.Fonts["Segoe"], 18.0f);
+            //ImGui.PushFont(HelperMethods.Fonts["Segoe"], 18.0f);
 
             // Windows 11 doesn't actually have this anymore so we can't rely on the system, we have to embed it
             //HelperMethods.Fonts.Add("Cascadia-Mono", io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\CascadiaMono.ttf", 18.0f));
@@ -246,7 +246,7 @@ namespace BPSR_ZDPS
             ImGui.AddFontDefault(HelperMethods.Fonts["Segoe"].ContainerAtlas);
 
             HelperMethods.Fonts.Add("Segoe-Bold", io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\segoeuib.ttf", 18.0f));
-            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], 18.0f);
+            //ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], 18.0f);
 
             ff = new FontFile("BPSR_ZDPS.Fonts.FAS.ttf", new GlyphRange(0x0021, 0xF8FF));
             res = ff.BindToImGui(18.0f);
@@ -254,7 +254,8 @@ namespace BPSR_ZDPS
             ff.Dispose();
 
             // Japanese character supporting font (this is a bit heavy to load into memory - 5MB)
-            ff = new FontFile("BPSR_ZDPS.Fonts.fot-seuratpron-m.otf");
+            //ff = new FontFile("BPSR_ZDPS.Fonts.fot-seuratpron-m.otf");
+            ff = new FontFile("BPSR_ZDPS.Fonts.fot-seuratpron-m.otf", new GlyphRange(0x3000, 0x303F));
             res = ff.BindToImGui(18.0f);
             HelperMethods.Fonts.Add("Seurat", res);
             ff.Dispose();
