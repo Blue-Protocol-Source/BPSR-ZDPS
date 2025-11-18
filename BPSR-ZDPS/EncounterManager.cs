@@ -256,7 +256,8 @@ namespace BPSR_ZDPS
             var entity = GetOrCreateEntity(uuid);
             entity.SetAttrKV(key, value);
 
-            if (key == "AttrId" && entity.EntityType == EEntityType.EntMonster && string.IsNullOrEmpty(entity.Name))
+            // We used to care if the entity already had a name, but there were strange incorrect name issues, so now we don't
+            if (key == "AttrId" && entity.EntityType == EEntityType.EntMonster)
             {
                 if (HelperMethods.DataTables.Monsters.Data.TryGetValue(value.ToString(), out var monsterEntry))
                 {
@@ -514,6 +515,21 @@ namespace BPSR_ZDPS
                 // TODO: Disable this for now
 
                 //SetName("");
+            }
+
+            if (type == EEntityType.EntMonster)
+            {
+                // Always reset the name and monster type data if we have an AttrId at this point
+                var attr_id = GetAttrKV("AttrId");
+                if (attr_id != null)
+                {
+                    UID = (int)attr_id;
+                    if (HelperMethods.DataTables.Monsters.Data.TryGetValue(attr_id.ToString(), out var monsterEntry))
+                    {
+                        SetName(monsterEntry.Name);
+                        SetMonsterType(monsterEntry.MonsterType);
+                    }
+                }
             }
         }
 
