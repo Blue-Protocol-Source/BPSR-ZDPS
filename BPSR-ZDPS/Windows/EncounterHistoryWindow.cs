@@ -30,6 +30,8 @@ namespace BPSR_ZDPS.Windows
 
         static bool ShouldTrackOpenState = false;
 
+        static bool IsLoadingFromDatabase = false;
+
         public static void Open()
         {
             RunOnceDelayed = 0;
@@ -39,10 +41,10 @@ namespace BPSR_ZDPS.Windows
             IsOpened = true;
             ImGui.PopID();
 
-            LoadFromDB();
+            //LoadFromDB();
 
             // Restore encounter data for previously selected encounter on window open (this may cause a brief hitch while it opens)
-            if (SelectedEncounterIndex > -1)
+            /*if (SelectedEncounterIndex > -1)
             {
                 if (SelectedViewMode == 0)
                 {
@@ -52,11 +54,28 @@ namespace BPSR_ZDPS.Windows
                 {
                     GroupedBattles[SelectedEncounterIndex] = CalcBattleEncounter(GroupedBattles[SelectedEncounterIndex].BattleId, GroupedBattles[SelectedEncounterIndex]);
                 }
-            }
+            }*/
+            //HandleEncounterSelection();
+            HandleDBLoad(true);
+        }
+
+        public static void HandleDBLoad(bool includeSelectionHandle = false)
+        {
+            Task.Run(async () =>
+            {
+                LoadFromDB();
+
+                if (includeSelectionHandle)
+                {
+                    HandleEncounterSelection();
+                }
+            });
         }
 
         public static void LoadFromDB()
         {
+            IsLoadingFromDatabase = true;
+
             // Skip last encounter as it's going to be the current live one and we don't want that in our "historical" view
             Encounters = DB.LoadEncounterSummaries().OrderBy(x => x.StartTime).ToList();
             Battles = DB.LoadBattles().OrderBy(x => x.StartTime).ToList();
@@ -75,10 +94,18 @@ namespace BPSR_ZDPS.Windows
                 enc.SetEndTime(battle.EndTime);
                 GroupedBattles.Add(enc);
             }
+
+            IsLoadingFromDatabase = false;
         }
 
         public static void Draw(MainWindow mainWindow)
         {
+            if (!IsOpened && IsLoadingFromDatabase)
+            {
+                // Cancel the close attempt since we're loading database data still
+                IsOpened = true;
+            }
+
             if (!IsOpened)
             {
                 return;
@@ -103,7 +130,7 @@ namespace BPSR_ZDPS.Windows
                     Utils.BringWindowToFront();
                 }
 
-                ImGui.BeginDisabled(false);
+                ImGui.BeginDisabled(IsLoadingFromDatabase);
                 int viewMode = SelectedViewMode;
                 var tabButtonHalfWidth = (ImGui.GetContentRegionAvail().X / 2) - (ImGui.GetStyle().ItemSpacing.X / 2);
 
@@ -116,7 +143,8 @@ namespace BPSR_ZDPS.Windows
                     SelectedViewMode = 0;
                     SelectedEncounterIndex = -1;
 
-                    LoadFromDB();
+                    //LoadFromDB();
+                    HandleDBLoad();
                 }
                 if (viewMode == 0)
                 {
@@ -135,13 +163,22 @@ namespace BPSR_ZDPS.Windows
                     // TODO: Allow viewing encounters grouped by their BattleId and showing the combined totals for them
 
                     //GroupEncountersByBattleId();
-                    LoadFromDB();
+                    //LoadFromDB();
+                    HandleDBLoad();
                 }
                 if (viewMode == 1)
                 {
                     ImGui.PopStyleColor();
                 }
                 ImGui.EndDisabled();
+
+                if (IsLoadingFromDatabase)
+                {
+                    ImGui.Text("Please wait, loading encounter history...");
+                    ImGui.End();
+                    ImGui.PopID();
+                    return;
+                }
 
                 List<Encounter> encounters = new List<Encounter>();
                 // TODO: Support reading history from an encounter cache file as well
@@ -209,14 +246,15 @@ namespace BPSR_ZDPS.Windows
                             }
 
                             SelectedEncounterIndex = i;
-                            if (SelectedViewMode == 0)
+                            /*if (SelectedViewMode == 0)
                             {
                                 encounters[SelectedEncounterIndex] = DB.LoadEncounter(encounters[SelectedEncounterIndex].EncounterId);
                             }
                             else
                             {
                                 encounters[SelectedEncounterIndex] = CalcBattleEncounter(encounters[SelectedEncounterIndex].BattleId, encounters[SelectedEncounterIndex]);
-                            }
+                            }*/
+                            HandleEncounterSelection();
                         }
 
                         if (isSelected)
@@ -269,6 +307,11 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Taken %");
                         ImGui.TableSetupColumn("Deaths");
                         ImGui.TableHeadersRow();
+
+                        if (IsLoadingFromDatabase)
+                        {
+                            ImGui.Text("Please wait, loading encounter data...");
+                        }
 
                         var entitiesFiltered = encounters[SelectedEncounterIndex].Entities.AsValueEnumerable().Where(x => x.Value.EntityType == Zproto.EEntityType.EntChar || x.Value.EntityType == Zproto.EEntityType.EntMonster);
                         List<Entity> entities;
@@ -436,14 +479,39 @@ namespace BPSR_ZDPS.Windows
                 ImGui.End();
             }
 
+            if (!IsOpened && IsLoadingFromDatabase)
+            {
+                // Cancel the close attempt since we're loading database data still
+                IsOpened = true;
+            }
+
             if (!IsOpened && ShouldTrackOpenState)
             {
                 ShouldTrackOpenState = false;
                 // Window is closing
 
+                if (SelectedEncounterIndex > -1)
+                {
+                    if (SelectedViewMode == 0)
+                    {
+                        Encounters[SelectedEncounterIndex] = new Encounter();
+                    }
+                    else
+                    {
+                        GroupedBattles[SelectedEncounterIndex] = new Encounter();
+                    }
+                }
+
                 GroupedBattles.Clear();
                 Battles.Clear();
                 Encounters.Clear();
+
+                // This isn't pretty but it helps us release as much memory as we can once the window has been closed
+                Task.Delay(1000).ContinueWith(x =>
+                {
+                    System.Runtime.GCSettings.LargeObjectHeapCompactionMode = System.Runtime.GCLargeObjectHeapCompactionMode.CompactOnce;
+                    GC.Collect(2);
+                });
             }
 
             ImGui.PopID();
@@ -460,11 +528,34 @@ namespace BPSR_ZDPS.Windows
             return ($"{encounterStartTime} - {encounterEndTime}", encounterDuration, encounterSceneName);
         }
 
+        public static void HandleEncounterSelection()
+        {
+            if (SelectedEncounterIndex > -1)
+            {
+                Task.Run(() =>
+                {
+                    IsLoadingFromDatabase = true;
+
+                    if (SelectedViewMode == 0)
+                    {
+                        Encounters[SelectedEncounterIndex] = DB.LoadEncounter(Encounters[SelectedEncounterIndex].EncounterId);
+                    }
+                    else
+                    {
+                        GroupedBattles[SelectedEncounterIndex] = CalcBattleEncounter(GroupedBattles[SelectedEncounterIndex].BattleId, GroupedBattles[SelectedEncounterIndex]);
+                    }
+
+                    IsLoadingFromDatabase = false;
+                });
+            }
+        }
+
         public static Encounter CalcBattleEncounter(int battleId, Encounter original)
         {
             var encounters = DB.LoadEncountersForBattleId(battleId);
             if (encounters.Count == 0)
             {
+                IsLoadingFromDatabase = false;
                 return original;
             }
 
