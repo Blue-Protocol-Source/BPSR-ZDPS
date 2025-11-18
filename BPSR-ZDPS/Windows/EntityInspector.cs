@@ -296,14 +296,18 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.TableNextColumn();
                         ImGui.Text($"{valueTotalLabel} {Utils.NumberToShorthand(combatStats.ValueTotal)}");
+                        ImGui.SetItemTooltip($"{combatStats.ValueTotal:N0}");
                         ImGui.Text($"{valueTotalPerSecondLabel} {Utils.NumberToShorthand(combatStats.ValuePerSecond)}");
+                        ImGui.SetItemTooltip($"{combatStats.ValuePerSecond:N0}");
                         if (TableFilterMode == ETableFilterMode.SkillsDamage)
                         {
                             ImGui.Text($"{valueExtraTotalLabel} {Utils.NumberToShorthand(LoadedEntity.TotalShieldBreak)}");
+                            ImGui.SetItemTooltip($"{LoadedEntity.TotalShieldBreak:N0}");
                         }
                         else if (TableFilterMode == ETableFilterMode.SkillsHealing)
                         {
                             ImGui.Text($"{valueExtraTotalLabel} {Utils.NumberToShorthand(LoadedEntity.TotalOverhealing)}");
+                            ImGui.SetItemTooltip($"{LoadedEntity.TotalOverhealing:N0}");
                         }
                         else if (TableFilterMode == ETableFilterMode.SkillsTaken)
                         {
@@ -328,12 +332,16 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.TableNextColumn();
                         ImGui.Text($"Total Normal Damage: {Utils.NumberToShorthand(combatStats.ValueNormalTotal)}");
+                        ImGui.SetItemTooltip($"{combatStats.ValueNormalTotal:N0}");
                         ImGui.Text($"Total Crit Damage: {Utils.NumberToShorthand(combatStats.ValueCritTotal)}");
+                        ImGui.SetItemTooltip($"{combatStats.ValueCritTotal:N0}");
                         ImGui.Text($"Total Lucky Damage: {Utils.NumberToShorthand(combatStats.ValueLuckyTotal)}");
+                        ImGui.SetItemTooltip($"{combatStats.ValueLuckyTotal:N0}");
 
                         ImGui.TableNextColumn();
                         ImGui.Text($"Total Lucky Strikes: {combatStats.LuckyCount}");
                         ImGui.Text($"Total Average Damage: {Utils.NumberToShorthand(combatStats.ValueAverage)}");
+                        ImGui.SetItemTooltip($"{combatStats.ValueAverage:N0}");
                         ImGui.Text($"Total Casts: {LoadedEntity.TotalCasts}");
 
                         ImGui.EndTable();
