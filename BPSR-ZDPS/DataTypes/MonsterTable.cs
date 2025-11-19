@@ -24,7 +24,7 @@ namespace BPSR_ZDPS.DataTypes
         public List<int> SkillIds { get; set; }
         public List<int> HatredBuildType { get; set; }
         public bool IsFlying { get; set; }
-        public object SightConfig { get; set; }
+        public List<List<int>> SightConfig { get; set; }
         public bool IsAccurateSight { get; set; }
         public bool IsShowAlertOutCamera { get; set; }
         public List<int> HatredAway { get; set; }
@@ -65,15 +65,15 @@ namespace BPSR_ZDPS.DataTypes
         public float HudPosParam { get; set; }
         public int MonsterLogicLevel { get; set; }
         public int DropPackageID { get; set; }
-        public object DropPackageRange { get; set; }
-        public object StatusInfo { get; set; }
-        public object StatusTransition { get; set; }
-        public object InteractionTemplate { get; set; }
-        public object ShowStatusInfo { get; set; }
-        public object ShowStatusTransition { get; set; }
-        public object AppearDisAppearCfg { get; set; }
+        public List<float> DropPackageRange { get; set; }
+        public List<List<int>> StatusInfo { get; set; }
+        public List<List<int>> StatusTransition { get; set; }
+        public List<List<int>> InteractionTemplate { get; set; }
+        public List<List<int>> ShowStatusInfo { get; set; }
+        public List<List<int>> ShowStatusTransition { get; set; }
+        public List<Vector2> AppearDisAppearCfg { get; set; }
         public List<Vector2> DissolutionCfg { get; set; }
-        public object LifeInfo { get; set; }
+        public List<int> LifeInfo { get; set; }
         public float UIHiddenDis { get; set; }
         public bool IsNotGround { get; set; }
         public int BornSkillId { get; set; }

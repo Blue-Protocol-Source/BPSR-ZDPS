@@ -98,6 +98,30 @@ namespace BPSR_ZDPS
                 System.Diagnostics.Debug.WriteLine("Loaded BuffTable.json");
             }
 
+            // TODO: Every language can have its own 'Overrides' file
+            string buffOverrivesFile = Path.Combine(Utils.DATA_DIR_NAME, "BuffOverrides.en.json");
+            if (File.Exists(buffOverrivesFile))
+            {
+                var overrides = JsonConvert.DeserializeObject<Dictionary<string, Buff>>(File.ReadAllText(buffOverrivesFile));
+                foreach (var item in overrides)
+                {
+                    if (HelperMethods.DataTables.Buffs.Data.TryGetValue(item.Key, out var buff))
+                    {
+                        buff.Name = item.Value.Name;
+                        buff.Desc = item.Value.Desc;
+                        buff.Icon = item.Value.Icon;
+                    }
+                    else
+                    {
+                        buff = new Buff();
+                        buff.Name = item.Value.Name;
+                        buff.Icon = item.Value.Icon;
+                        HelperMethods.DataTables.Buffs.Data.Add(item.Key, buff);
+                    }
+                }
+                System.Diagnostics.Debug.WriteLine("Loaded BuffOverrides.en.json");
+            }
+
             // Load up our offline entity cache if it exists to help with initial data resolving when we're not given all the required details
             EntityCache.Instance.Load();
             //EntityCache.Instance.PortToDB();

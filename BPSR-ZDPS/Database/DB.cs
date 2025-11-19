@@ -56,19 +56,38 @@ namespace BPSR_ZDPS
             var encounterId = DbConn.QuerySingle<ulong>(DBSchema.Encounter.Insert, encounter, transaction);
             encounter.EncounterId = encounterId;
 
-            var entitiesJson = JsonConvert.SerializeObject(encounter.Entities, Formatting.None, new JsonSerializerSettings()
+            using (var memoryStream = new MemoryStream())
             {
-                TypeNameHandling = Newtonsoft.Json.TypeNameHandling.All
-            });
-            var entitiesAsBytes = ASCIIEncoding.UTF8.GetBytes(entitiesJson);
-            var compressed = Compressor.Wrap(entitiesAsBytes);
+                using (var compStream = new ZstdSharp.CompressionStream(memoryStream))
+                {
+                    using (var streamWriter = new StreamWriter(compStream, Encoding.UTF8, 1024, true))
+                    {
+                        using (var writer = new JsonTextWriter(streamWriter))
+                        {
+                            JsonSerializer serializer = new JsonSerializer()
+                            {
+                                Formatting = Formatting.None,
+                                TypeNameHandling = TypeNameHandling.All,
+                            };
+                            serializer.Serialize(writer, encounter.Entities);
+                            writer.Flush();
+                        }
+                        streamWriter.Flush();
+                    }
+                    compStream.Flush();
+                }
 
-            var entityBlob = new EntityBlobTable();
-            entityBlob.EncounterId = encounterId;
-            entityBlob.Data = compressed.ToArray();
-            DbConn.Execute(DBSchema.Entities.Insert, entityBlob);
+                var entityBlob = new EntityBlobTable();
+                entityBlob.EncounterId = encounterId;
+                entityBlob.Data = memoryStream.ToArray();
+                Log.Information($"Enounter's entityBlob.Data.Length = {entityBlob.Data.Length}");
+                DbConn.Execute(DBSchema.Entities.Insert, entityBlob);
 
-            transaction.Commit();
+                transaction.Commit();
+            }
+
+            // Forcefully release the Generation 2 memory that the above just used
+            GC.Collect(2);
 
             sw.Stop();
             Log.Information("Saving encounter {encounterId} to DB took: {duration}", encounterId, sw.Elapsed);

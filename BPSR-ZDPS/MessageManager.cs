@@ -222,6 +222,12 @@ namespace BPSR_ZDPS
                             System.Diagnostics.Debug.WriteLine($"shieldInfo[].unk2={unk2}");*/
                             break;
                         }
+                    case EAttrType.AttrActionTime:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrActionTime", reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrActionUpperTime:
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrActionUpperTime", reader.ReadInt64());
+                        break;
                     case EAttrType.AttrStiffTarget:
                         EncounterManager.Current.SetAttrKV(uuid, "AttrStiffTarget", reader.ReadInt64());
                         break;
@@ -289,12 +295,6 @@ namespace BPSR_ZDPS
                     continue;
                 }
 
-                var etype = Utils.RawUuidToEntityType(entity.Uuid);
-                if (etype == EEntityType.EntErrType)
-                {
-                    System.Diagnostics.Debug.WriteLine($"!!etype == EEntityType.EntErrType!! should have been: {((ulong)entity.Uuid & 0xFFFFUL)} == {entity.EntType.ToString()}");
-                }
-
                 switch (entity.EntType)
                 {
                     case EEntityType.EntMonster:
@@ -351,16 +351,6 @@ namespace BPSR_ZDPS
             bool isTargetPlayer = (Utils.UuidToEntityType(targetUuid) == (long)EEntityType.EntChar); //IsUuidPlayerRaw(targetUuid);
             long targetUid = Utils.UuidToEntityId(targetUuid);
             var attrCollection = delta.Attrs;
-
-            var eType = Utils.RawUuidToEntityType(targetUuid);
-            if (EncounterManager.Current.GetOrCreateEntity(targetUuid).EntityType == EEntityType.EntErrType)
-            {
-                EncounterManager.Current.SetEntityType(targetUuid, eType);
-                if (eType == EEntityType.EntErrType)
-                {
-                    System.Diagnostics.Debug.WriteLine($"Entity Error Type: rawUuid={targetUuid},res={targetUid}");
-                }
-            }
 
             if (attrCollection?.Attrs != null && attrCollection.Attrs.Any())
             {
@@ -432,32 +422,34 @@ namespace BPSR_ZDPS
                 return;
             }
 
-            foreach (var d in skillEffect.Damages)
+            foreach (var syncDamageInfo in skillEffect.Damages)
             {
                 // OwnerId = SkillId this is coming from
                 // OwnerLevel = Level of the Skill this came from
                 // TopSummonerId = If exists, Entity UUID that summoned this skill damage source (ex: Battle Imagines use this)
-                // Property = Element of the damage if it has any
+                // Property = Element of the damage if it has any (ex: General, Light, Dark, Fire, Frost, etc.)
                 // DamageMode = Physical or Magical damage type
 
                 // HpLessen = Actual Health modification from this skill
                 // Value = Requested Health modification
+                // LuckyValue = Lucky Strike version of Value (only one of these can be present at a time)
                 // IsDead = Skill killed an entity with this damage event
                 // If IsDead is true, and Value > HpLessen, the difference is the Overkill amount
 
-                int skillId = d.OwnerId;
+                //System.Diagnostics.Debug.WriteLine(syncDamageInfo);
+
+                int skillId = syncDamageInfo.OwnerId;
                 if (skillId == 0)
                 {
                     continue;
                 }
 
-                long attackerUuid = (d.TopSummonerId != 0 ? d.TopSummonerId : d.AttackerUuid);
+                long attackerUuid = (syncDamageInfo.TopSummonerId != 0 ? syncDamageInfo.TopSummonerId : syncDamageInfo.AttackerUuid);
                 if (attackerUuid == 0)
                 {
                     continue;
                 }
                 bool isAttackerPlayer = IsUuidPlayerRaw(attackerUuid);
-                long attackerUid = Utils.UuidToEntityId(attackerUuid);
 
                 if (isAttackerPlayer && attackerUuid != 0)
                 {
@@ -467,78 +459,51 @@ namespace BPSR_ZDPS
                     {
                         EncounterManager.Current.SetProfessionId(attackerUuid, professionId);
                     }
-                    // var info = GetPlayerBasicInfo(attackerUid);
                 }
 
-                long damageSigned = 0;
-                if (d.Value != 0)
+                long damage = 0;
+                if (syncDamageInfo.Value != 0)
                 {
-                    damageSigned = d.Value;
+                    damage = syncDamageInfo.Value;
                 }
-                else if (d.LuckyValue != 0)
+                else if (syncDamageInfo.LuckyValue != 0)
                 {
-                    damageSigned = d.LuckyValue;
+                    damage = syncDamageInfo.LuckyValue;
                 }
-                if (damageSigned == 0)
+                // If damage is 0, the target was likely Immune and the DamageType value will reflect that
+                // We will still pass it on so it can be properly registered in the encounter/entity
+
+                if (damage < 0)
                 {
-                    continue;
+                    System.Diagnostics.Debug.WriteLine("syncDamageInfo damage value is negative!");
+                    System.Diagnostics.Debug.WriteLine(syncDamageInfo);
                 }
 
-                long damage = (damageSigned < 0 ? -damageSigned : damageSigned);
-
-                bool isCrit = d.TypeFlag != null && ((d.TypeFlag & 1) == 1);
-                bool isHeal = d.Type == EDamageType.Heal;
-                var luckyValue = d.LuckyValue;
+                bool isCrit = syncDamageInfo.TypeFlag != null && ((syncDamageInfo.TypeFlag & 1) == 1);
+                bool isHeal = syncDamageInfo.Type == EDamageType.Heal;
+                var luckyValue = syncDamageInfo.LuckyValue;
                 bool isLucky = luckyValue != null && luckyValue != 0;
-                long hpLessen = 0;
-                if (d.HpLessenValue != 0)
+                long hpLessen = syncDamageInfo.HpLessenValue;
+
+                bool isCauseLucky = syncDamageInfo.TypeFlag != null && ((syncDamageInfo.TypeFlag & 0B100) == 0B100);
+
+                bool isMiss = syncDamageInfo.IsMiss;
+
+                bool isDead = syncDamageInfo.IsDead;
+
+                string damageElement = syncDamageInfo.Property.ToString();
+
+                EDamageSource damageSource = syncDamageInfo.DamageSource;
+
+                if (isHeal)
                 {
-                    hpLessen = d.HpLessenValue;
-                }
-
-                bool isCauseLucky = d.TypeFlag != null && ((d.TypeFlag & 0B100) == 0B100);
-
-                bool isMiss = d.IsMiss;
-
-                bool isDead = d.IsDead;
-
-                string damageElement = d.Property.ToString();
-
-                EDamageSource damageSource = d.DamageSource;
-
-
-                // TODO: Use SkillId to map a profession to the attacker if they are a player
-
-                if (isTargetPlayer)
-                {
-                    if (isHeal)
-                    {
-                        // AddHealing
-                        //System.Diagnostics.Debug.WriteLine($"AddHealing({(isAttackerPlayer ? attackerUuid : 0)}, {skillId}, {damageElement}, {hpLessen}, {isCrit}, {isLucky}, {isCauseLucky}, {targetUuid})");
-                        EncounterManager.Current.AddHealing((isAttackerPlayer ? attackerUuid : 0), skillId, d.Property, hpLessen, isCrit, isLucky, isCauseLucky, targetUuid);
-                    }
-                    else
-                    {
-                        // AddTakenDamage
-                        //System.Diagnostics.Debug.WriteLine($"AddTakenDamage({targetUuid}, {skillId}, {damage}, {damageSource}, {isMiss}, {isDead}, {isCrit}, {hpLessen})");
-                        EncounterManager.Current.AddTakenDamage(targetUuid, skillId, damage, damageSource, isMiss, isDead, isCrit, isLucky, hpLessen);
-
-                        // This is an NPC applying damage to a target, register the damage dealt now to the NPC doing it
-                        EncounterManager.Current.AddDamage(attackerUuid, skillId, d.Property, damage, isCrit, isLucky, isCauseLucky, hpLessen, d.Type, d.DamageMode);
-                    }
+                    EncounterManager.Current.AddHealing((isAttackerPlayer ? attackerUuid : 0), targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
                 }
                 else
                 {
-                    if (!isHeal && isAttackerPlayer)
-                    {
-                        // AddDamage
-                        //System.Diagnostics.Debug.WriteLine($"AddDamage({attackerUuid}, {skillId}, {damageElement}, {damage}, {isCrit}, {isLucky}, {isCauseLucky}, {hpLessen})");
-                        EncounterManager.Current.AddDamage(attackerUuid, skillId, d.Property, damage, isCrit, isLucky, isCauseLucky, hpLessen, d.Type, d.DamageMode);
-                    }
+                    EncounterManager.Current.AddDamage(attackerUuid, targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
 
-                    // AddNpcTakenDamage
-                    //System.Diagnostics.Debug.WriteLine($"AddNpcTakenDamage({targetUuid}, {attackerUuid}, {skillId}, {damage}, {isCrit}, {isLucky}, {hpLessen}, {isMiss}, {isDead})");
-                    EncounterManager.Current.AddNpcTakenDamage(targetUuid, attackerUuid, skillId, damage, isCrit, isLucky, hpLessen, isMiss, isDead);
+                    EncounterManager.Current.AddTakenDamage(attackerUuid, targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
                 }
             }
         }

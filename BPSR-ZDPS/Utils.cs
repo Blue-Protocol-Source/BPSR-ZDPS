@@ -140,26 +140,32 @@ namespace BPSR_ZDPS
             return $"{(Math.Sign(value) * shortNumber).ToString(fmt)}{suf[place]}";
         }
 
-        public static EEntityType RawUuidToEntityType(long uuid) => (uuid & 0xFFFFL) switch
+        public static string DamagePropertyToIconPath(EDamageProperty damageElement)
         {
-            64 => EEntityType.EntMonster,
-            128 => EEntityType.EntNpc,
-            192 => EEntityType.EntSceneObject,
-            320 => EEntityType.EntZone,
-            640 => EEntityType.EntChar,
-            704 => EEntityType.EntDummy,
-            1024 => EEntityType.EntCollection, // Another one?
-            32960 => EEntityType.EntSceneObject,
-            33152 => EEntityType.EntBullet,
-            33280 => EEntityType.EntNpc, // Another one?
-            33472 => EEntityType.EntDummy,
-            33664 => EEntityType.EntField,
-            33792 => EEntityType.EntCollection,
-            33984 => EEntityType.EntVehicle,
-            34048 => EEntityType.EntToy,
-            32832 => EEntityType.EntMonster, // Another one?
-            _ => EEntityType.EntErrType,
-        };
+            switch (damageElement)
+            {
+                case EDamageProperty.General:
+                    return Path.Combine("Elements", "General_v1");
+                case EDamageProperty.Fire:
+                    return Path.Combine("Elements", "Fire_v1");
+                case EDamageProperty.Water:
+                    return Path.Combine("Elements", "Ice_v1");
+                case EDamageProperty.Electricity:
+                    return Path.Combine("Elements", "Thunder_v1");
+                case EDamageProperty.Wood:
+                    return Path.Combine("Elements", "Forst_v1");
+                case EDamageProperty.Wind:
+                    return Path.Combine("Elements", "Wind_v1");
+                case EDamageProperty.Rock:
+                    return Path.Combine("Elements", "Rock_v1");
+                case EDamageProperty.Light:
+                    return Path.Combine("Elements", "Light_v1");
+                case EDamageProperty.Dark:
+                    return Path.Combine("Elements", "Dark_v1");
+                default:
+                    return "";
+            }
+        }
 
         public enum EEntityType_Lua
         {

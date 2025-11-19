@@ -495,7 +495,20 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Text(displayName);
 
                             ImGui.TableNextColumn();
+                            var damageElementIconPath = Utils.DamagePropertyToIconPath(stat.Value.DamageElement);
+                            if (!string.IsNullOrEmpty(damageElementIconPath))
+                            {
+                                var tex = ImageArchive.LoadImage(damageElementIconPath);
+                                var itemRectSize = ImGui.GetItemRectSize().Y;
+                                float texSize = itemRectSize;
+                                if (tex != null)
+                                {
+                                    ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
+                                    ImGui.SameLine();
+                                }
+                            }
                             ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValueTotal)}");
+                            ImGui.SetItemTooltip($"Type: {stat.Value.DamageMode}\nElement: {stat.Value.DamageElement}");
 
                             ImGui.TableNextColumn();
                             ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValuePerSecond)}");

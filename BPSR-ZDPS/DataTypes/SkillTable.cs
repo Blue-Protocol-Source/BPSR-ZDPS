@@ -18,7 +18,7 @@ namespace BPSR_ZDPS.DataTypes
         public string Desc { get; set; }
         public string Name { get; set; }
         public int SkillLevelGroup { get; set; }
-        public object SkillPreloadGroup { get; set; }
+        public List<int> SkillPreloadGroup { get; set; }
         public List<int> EffectIDs { get; set; }
         public int SkillType { get; set; }
         public int SlotPassiveType { get; set; }

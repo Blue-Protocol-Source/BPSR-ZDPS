@@ -306,34 +306,55 @@ namespace BPSR_ZDPS
             entity.RegisterSkillActivation(skillId);
         }
 
-        public void AddDamage(long uuid, int skillId, EDamageProperty damageElement, long damage, bool isCrit, bool isLucky, bool isCauseLucky, long hpLessen = 0, EDamageType? damageType = null, EDamageMode? damageMode = null)
+        public void AddDamage(
+            long attackerUuid, long targetUuid, int skillId, long damage, long hpLessen,
+            EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
         {
             LastUpdate = DateTime.Now;
 
-            var uuidType = (EEntityType)Utils.UuidToEntityType(uuid);
+            var attackerType = (EEntityType)Utils.UuidToEntityType(attackerUuid);
+            var targetType = (EEntityType)Utils.UuidToEntityType(targetUuid);
 
-            if (uuidType == EEntityType.EntMonster)
+            if (attackerType == EEntityType.EntMonster)
             {
                 TotalNpcDamage += (ulong)damage;
+                if (damageType == EDamageType.Absorbed)
+                {
+                    TotalNpcShieldBreak += (ulong)damage;
+                }
             }
             else
             {
                 TotalDamage += (ulong)damage;
+                if (damageType == EDamageType.Absorbed)
+                {
+                    TotalShieldBreak += (ulong)damage;
+                }
             }
-            
-            if (damageType != null && damageType == EDamageType.Absorbed)
-            {
-                TotalShieldBreak += (ulong)damage;
-            }
-            GetOrCreateEntity(uuid).AddDamage(skillId, damage, isCrit, isLucky, hpLessen, damageElement, isCauseLucky, damageType, damageMode);
+
+            GetOrCreateEntity(attackerUuid).AddDamage(targetUuid, skillId, damage, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
         }
 
-        public void AddHealing(long uuid, int skillId, EDamageProperty damageElement, long healing, bool isCrit, bool isLucky, bool isCauseLucky, long targetUuid)
+        public void AddHealing(
+            long attackerUuid, long targetUuid, int skillId, long damage, long hpLessen,
+            EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
         {
             LastUpdate = DateTime.Now;
-            TotalHealing += (ulong)healing;
 
-            var entity = GetOrCreateEntity(uuid);
+            var attackerType = (EEntityType)Utils.UuidToEntityType(attackerUuid);
+
+            if (attackerType == EEntityType.EntMonster)
+            {
+                // TODO: Track NPC healing totals?
+            }
+            else
+            {
+                TotalHealing += (ulong)damage;
+            }
+
+            var entity = GetOrCreateEntity(attackerUuid);
 
             long? currentHp = entity.GetAttrKV("AttrHp") as long?;
             long? maxHp = entity.GetAttrKV("AttrMaxHp") as long?;
@@ -341,29 +362,42 @@ namespace BPSR_ZDPS
             long overhealing = 0;
             long effectiveHealing = 0;
 
-            if ((currentHp != null && maxHp != null) && (currentHp + healing > maxHp))
+            if ((currentHp != null && maxHp != null) && (currentHp + damage > maxHp))
             {
                 effectiveHealing = (long)(maxHp - currentHp);
-                overhealing = healing - effectiveHealing;
+                overhealing = damage - effectiveHealing;
             }
 
-            TotalOverhealing += (ulong)overhealing;
+            if (attackerType == EEntityType.EntMonster)
+            {
+                // TODO: Track NPC overhealing totals?
+            }
+            else
+            {
+                TotalOverhealing += (ulong)overhealing;
+            }
             
-            entity.AddHealing(skillId, healing, overhealing, isCrit, isLucky, damageElement, isCauseLucky, targetUuid);
+            entity.AddHealing(targetUuid, skillId, damage, overhealing, effectiveHealing, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
         }
 
-        public void AddTakenDamage(long uuid, int skillId, long damage, EDamageSource damageSource, bool isMiss, bool isDead, bool isCrit, bool isLucky, long hpLessen = 0)
+        public void AddTakenDamage(
+            long attackerUuid, long targetUuid, int skillId, long damage, long hpLessen,
+            EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
         {
             LastUpdate = DateTime.Now;
-            TotalTakenDamage += (ulong)damage;
-            GetOrCreateEntity(uuid).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, damageSource, isMiss, isDead);
-        }
 
-        public void AddNpcTakenDamage(long npcUuid, long attackerUid, int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, bool isMiss = false, bool isDead = false, string? npcName = null)
-        {
-            LastUpdate = DateTime.Now;
-            TotalNpcTakenDamage += (ulong)damage;
-            GetOrCreateEntity(npcUuid).AddTakenDamage(skillId, damage, isCrit, isLucky, hpLessen, EDamageSource.Other, isMiss, isDead);
+            var targetType = (EEntityType)Utils.UuidToEntityType(targetUuid);
+            if (targetType == EEntityType.EntMonster)
+            {
+                TotalNpcTakenDamage += (ulong)damage;
+            }
+            else
+            {
+                TotalTakenDamage += (ulong)damage;
+            }
+
+            GetOrCreateEntity(targetUuid).AddTakenDamage(attackerUuid, skillId, damage, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
         }
 
         public void AddShieldGained(long entityUuid, long shieldBuffUuid, long value, long initialValue, long maxValue = 0)
@@ -623,7 +657,7 @@ namespace BPSR_ZDPS
             SkillActivated?.Invoke(this, e);
         }
 
-        public void RegisterSkillData(ESkillType skillType, int skillId, long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, bool isDead = false)
+        public void RegisterSkillData(ESkillType skillType, int skillId, long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead = false)
         {
             if (!SkillStats.TryGetValue(skillId, out var stats))
             {
@@ -636,77 +670,66 @@ namespace BPSR_ZDPS
                     combatStats.SetName(skill.Name);
                 }
 
-                combatStats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky, isDead);
+                combatStats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky, damageElement, damageType, damageMode, isDead);
                 SkillStats.TryAdd(skillId, combatStats);
             }
             else
             {
                 stats.SetSkillType(skillType);
-                stats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky, isDead);
+                stats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky, damageElement, damageType, damageMode, isDead);
             }
         }
 
-        public void AddDamage(int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, EDamageProperty? damageElement = null, bool isCauseLucky = false, EDamageType? damageType = null, EDamageMode? damageMode = null)
+        public void AddDamage(long targetUuid, int skillId, long damage, long hpLessen,
+            EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
         {
             TotalDamage += (ulong)damage;
 
-            if (damageType != null && damageType == EDamageType.Absorbed)
+            if (damageType == EDamageType.Absorbed)
             {
                 TotalShieldBreak += (ulong)damage;
             }
 
-            DamageStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky);
+            DamageStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode);
 
-            RegisterSkillData(ESkillType.Damage, skillId, damage, isCrit, isLucky, hpLessen, isCauseLucky);
+            RegisterSkillData(ESkillType.Damage, skillId, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode);
 
-            //ActionStats.Add(new ActionStat(DateTime.Now, 0, (int)skillId));
-
-            //if (string.IsNullOrEmpty(SubProfession))
+            // Always attempt to update the sub profession data as they may have changed classes or not been detected properly yet
+            var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
+            if (subProfessionId != 0)
             {
-                var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
-
-                if (subProfessionId != 0)
-                {
-                    SetSubProfessionId((int)subProfessionId);
-                }
+                SetSubProfessionId((int)subProfessionId);
             }
-
-            /*DamageStats.value += (long)damage;
-            DamageStats.StartTime ??= DateTime.Now;
-            DamageStats.EndTime = DateTime.Now;*/
         }
 
-        public void AddHealing(int skillId, long healing, long overhealing, bool isCrit, bool isLucky, EDamageProperty? damageElement = null, bool isCauseLucky = false, long targetUuid = 0)
+        public void AddHealing(
+            long targetUuid, int skillId, long damage, long overhealing, long effectiveHealing, long hpLessen,
+            EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
         {
-            TotalHealing += (ulong)healing;
+            TotalHealing += (ulong)damage;
             TotalOverhealing += (ulong)overhealing;
-            HealingStats.AddData(healing, isCrit, isLucky, 0, isCauseLucky);
+            HealingStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode);
 
-            RegisterSkillData(ESkillType.Healing, skillId, healing, isCrit, isLucky, overhealing, isCauseLucky);
-            //ActionStats.Add(new ActionStat(DateTime.Now, 1, (int)skillId));
+            RegisterSkillData(ESkillType.Healing, skillId, damage, isCrit, isLucky, overhealing, isCauseLucky, damageElement, damageType, damageMode);
 
-            //if (string.IsNullOrEmpty(SubProfession))
+            // Always attempt to update the sub profession data as they may have changed classes or not been detected properly yet
+            var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
+            if (subProfessionId != 0)
             {
-                var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
-
-                if (subProfessionId != 0)
-                {
-                    SetSubProfessionId((int)subProfessionId);
-                }
+                SetSubProfessionId((int)subProfessionId);
             }
-
-            /*HealingStats.value += (long)healing;
-            HealingStats.StartTime ??= DateTime.Now;
-            HealingStats.EndTime = DateTime.Now;*/
         }
 
-        public void AddTakenDamage(int skillId, long damage, bool isCrit, bool isLucky, long hpLessen = 0, EDamageSource damageSource = 0, bool isMiss = false, bool isDead = false)
+        public void AddTakenDamage(
+            long attackerUuid, int skillId, long damage, long hpLessen,
+            EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
         {
             TotalTakenDamage += (ulong)damage;
-            RegisterSkillData(ESkillType.Taken, skillId, damage, isCrit, isLucky, hpLessen, false, isDead);
-            /*TakenStats.value += (long)damage;
-            TakenStats.StartTime ??= DateTime.Now;
-            TakenStats.EndTime = DateTime.Now;*/
+            TakenStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead);
+            RegisterSkillData(ESkillType.Taken, skillId, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead);
         }
 
         public void NotifyBuffEvent(EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId, TimeSpan encounterTime)
@@ -726,7 +749,7 @@ namespace BPSR_ZDPS
                 }
                 buffEvent.SetAddTime(encounterTime.Duration());
 
-                if (Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase && BuffEvents.Count > 99)
+                if (!Settings.Instance.UseDatabaseForEncounterHistory && Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase && BuffEvents.Count > 99)
                 {
                     BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
                 }
@@ -742,7 +765,7 @@ namespace BPSR_ZDPS
                 }
                 buffEvent.SetRemoveTime(encounterTime.Duration());
 
-                if (Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase && BuffEvents.Count > 99)
+                if (!Settings.Instance.UseDatabaseForEncounterHistory && Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase && BuffEvents.Count > 99)
                 {
                     BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
                 }
@@ -769,7 +792,7 @@ namespace BPSR_ZDPS
             }
             buffEvent.AddData(attributeName, attributeValue);
 
-            if (Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase && BuffEvents.Count > 99)
+            if (!Settings.Instance.UseDatabaseForEncounterHistory && Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase && BuffEvents.Count > 99)
             {
                 BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
             }
@@ -878,6 +901,9 @@ namespace BPSR_ZDPS
         public string Name { get; private set; }
         public ESkillType SkillType { get; private set; } = ESkillType.Unknown;
 
+        public EDamageProperty DamageElement { get; private set; }
+        public EDamageMode DamageMode { get; private set; }
+
         public ulong ValueTotal { get; private set; }
         public ulong ValueNormalTotal { get; private set; }
         public ulong ValueCritTotal { get; private set; }
@@ -906,6 +932,8 @@ namespace BPSR_ZDPS
 
         public DateTime? StartTime = null;
         public DateTime? EndTime = null;
+
+        public List<SkillSnapshot> SkillSnapshots { get; private set; } = new();
 
         public object Clone()
         {
@@ -959,12 +987,16 @@ namespace BPSR_ZDPS
             ValueLuckyTotal += (ulong)value;
         }
 
-        public void AddData(long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, bool isDead = false)
+        public void AddData(long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead = false)
         {
-            StartTime ??= DateTime.Now;
-            EndTime = DateTime.Now;
+            DateTime now = DateTime.Now;
+            StartTime ??= now;
+            EndTime = now;
 
             AddValue(value);
+
+            DamageElement = damageElement;
+            DamageMode = damageMode;
 
             if (isCrit)
             {
@@ -1013,6 +1045,37 @@ namespace BPSR_ZDPS
                     ValuePerSecond = ValueTotal;
                 }
             }
+
+            AddSnapshot(value, isCrit, isLucky, hpLessenValue, isCauseLucky, damageElement, damageType, damageMode, isDead, now);
+        }
+
+        public void AddSnapshot(long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, DateTime timestamp)
+        {
+            var snapshot = new SkillSnapshot()
+            {
+                Value = value,
+                IsCrit = isCrit,
+                IsLucky = isLucky,
+                IsCritLucky = isCrit && isLucky,
+                IsCauseLucky = isCauseLucky,
+                DamageElement = damageElement,
+                DamageType = damageType,
+                DamageMode = damageMode,
+                IsKill = isDead,
+                Timestamp = timestamp
+            };
+
+            if (damageType == EDamageType.Miss)
+            {
+                snapshot.IsMiss = true;
+            }
+            else
+            {
+                // TODO: May want to refine this logic more or just remove it all
+                snapshot.IsHit = true;
+            }
+
+            SkillSnapshots.Add(snapshot);
         }
 
         // Merges the data from another Combat Stats with this one, always uses the new Name and SkillType
@@ -1088,6 +1151,25 @@ namespace BPSR_ZDPS
                 }
             }
         }
+    }
+
+    public class SkillSnapshot
+    {
+        public long Value { get; set; }
+
+        public EDamageProperty DamageElement { get; set; }
+        public EDamageType DamageType { get; set; }
+        public EDamageMode DamageMode { get; set; }
+
+        public bool IsCrit { get; set; }
+        public bool IsLucky { get; set; }
+        public bool IsCritLucky { get; set; }
+        public bool IsCauseLucky { get; set; }
+        public bool IsHit { get; set; }
+        public bool IsMiss { get; set; }
+        public bool IsKill { get; set; }
+
+        public DateTime? Timestamp { get; set; } = null;
     }
 
     public class BuffEvent

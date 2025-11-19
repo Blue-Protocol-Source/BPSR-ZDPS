@@ -21,14 +21,14 @@ namespace BPSR_ZDPS.DataTypes
         public int ParentId { get; set; }
         public bool IsShereParentSceneData { get; set; }
         public int SceneResourceId { get; set; }
-        public object SceneUI { get; set; }
+        public List<string> SceneUI { get; set; }
         public Vector2 MapSize { get; set; }
         public Vector2  MapOffset { get; set; }
         public List<List<int>> MapEntryCondition { get; set; }
-        public object AudioBank { get; set; }
+        public List<string> AudioBank { get; set; }
         public int BornId { get; set; }
         public List<int> ReviveTableId { get; set; }
-        public object BGM { get; set; }
+        public List<string> BGM { get; set; } // TODO: This may not be a string list
         public string LoadingBGM { get; set; }
         public float FallDis { get; set; }
         public int Weather { get; set; }
