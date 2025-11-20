@@ -21,12 +21,12 @@ namespace BPSR_ZDPS
                     BattleId, SceneId, SceneName, SceneSubName, BossUUID, BossAttrId, BossName, BossHpPct, Note, StartTime, EndTime, LastUpdate, 
                     TotalDamage, TotalNpcDamage, TotalShieldBreak, TotalNpcShieldBreak,
                     TotalHealing, TotalNpcHealing, TotalOverhealing, TotalNpcOverhealing,
-                    TotalTakenDamage, TotalNpcTakenDamage, TotalDeaths, TotalNpcDeaths, IsWipe
+                    TotalTakenDamage, TotalNpcTakenDamage, TotalDeaths, TotalNpcDeaths, IsWipe, ExDataBlob
                 ) VALUES (
                     @BattleId, @SceneId, @SceneName, @SceneSubName, @BossUUID, @BossAttrId, @BossName, @BossHpPct, @Note, @StartTime, @EndTime, @LastUpdate,
                     @TotalDamage, @TotalNpcDamage, @TotalShieldBreak, @TotalNpcShieldBreak,
                     @TotalHealing, @TotalNpcHealing, @TotalOverhealing, @TotalNpcOverhealing,
-                    @TotalTakenDamage, @TotalNpcTakenDamage, @TotalDeaths, @TotalNpcDeaths, @IsWipe
+                    @TotalTakenDamage, @TotalNpcTakenDamage, @TotalDeaths, @TotalNpcDeaths, @IsWipe, @ExDataBlob
                 );
                 SELECT last_insert_rowid();";
 

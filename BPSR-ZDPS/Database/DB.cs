@@ -5,6 +5,7 @@ using Microsoft.Data.Sqlite;
 using Newtonsoft.Json;
 using Serilog;
 using System.Collections.Concurrent;
+using System.Data.Common;
 using System.Diagnostics;
 using System.Text;
 
@@ -53,6 +54,12 @@ namespace BPSR_ZDPS
         {
             var sw = Stopwatch.StartNew();
             using var transaction = DbConn.BeginTransaction();
+
+            using var encMs = new MemoryStream();
+            ProtoBuf.Serializer.Serialize(encMs, encounter.ExData);
+            encMs.Flush();
+            encounter.ExDataBlob = Compressor.Wrap(encMs.ToArray()).ToArray();
+
             var encounterId = DbConn.QuerySingle<ulong>(DBSchema.Encounter.Insert, encounter, transaction);
             encounter.EncounterId = encounterId;
 
@@ -108,6 +115,10 @@ namespace BPSR_ZDPS
                 Log.Warning("Encounter {encounterId} not found in database", encounterId);
                 return null;
             }
+
+            var decompressedEncEx = Decompressor.Unwrap(encounter.ExDataBlob);
+            ProtoBuf.Serializer.Deserialize<EncounterExData>(decompressedEncEx, encounter.ExData);
+            encounter.ExDataBlob = null;
 
             var entityBlob = DbConn.QuerySingleOrDefault<EntityBlobTable>(DBSchema.Entities.SelectByEncounterId, new { EncounterId = encounterId });
             if (entityBlob?.Data != null)

@@ -1,10 +1,12 @@
 ﻿using BPSR_ZDPS.DataTypes;
 using Newtonsoft.Json;
+using ProtoBuf;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using ZLinq;
@@ -166,6 +168,7 @@ namespace BPSR_ZDPS
         public bool IsWipe { get; set; } = false;
 
         public EncounterExData ExData { get; set; } = new();
+        public byte[] ExDataBlob {  get; set; }
 
         public Encounter()
         {
@@ -453,8 +456,12 @@ namespace BPSR_ZDPS
         }
     }
 
+    [ProtoContract]
     public class EncounterExData
     {
+        [ProtoMember(1)]
+        public string Test { get; set; } = "UWU";
+
         public EncounterExData() { }
     }
 
