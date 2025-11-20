@@ -63,7 +63,7 @@ namespace BPSR_ZDPS.Windows
 
             var main_viewport = ImGui.GetMainViewport();
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSize(new Vector2(840, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(880, 600), ImGuiCond.FirstUseEver);
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
@@ -110,7 +110,7 @@ namespace BPSR_ZDPS.Windows
                     if (LoadedEntity.EntityType == Zproto.EEntityType.EntChar)
                     {
                         // Render a background image of the base profession for players
-                        var tex = ImageHelper.GetTextureByKey($"Profession_{LoadedEntity.ProfessionId}");
+                        var tex = ImageHelper.GetTextureByKey($"Profession_{LoadedEntity.ProfessionId}_128");
                         if (tex != null)
                         {
                             float texSize = 96.0f;
@@ -118,7 +118,7 @@ namespace BPSR_ZDPS.Windows
                             if (Settings.Instance.ColorClassIconsByRole)
                             {
                                 var roleColor = Professions.RoleTypeColors(Professions.GetRoleFromBaseProfessionId(LoadedEntity.ProfessionId));
-                                roleColor.Z = roleColor.Z * 0.5f;
+                                roleColor.W = roleColor.W * 0.75f;
                                 ImGui.ImageWithBg((ImTextureRef)tex, new Vector2(texSize, texSize), new Vector2(0, 0), new Vector2(1, 1), new Vector4(0, 0, 0, 0), roleColor);
                             }
                             else
@@ -495,20 +495,23 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Text(displayName);
 
                             ImGui.TableNextColumn();
-                            var damageElementIconPath = Utils.DamagePropertyToIconPath(stat.Value.DamageElement);
-                            if (!string.IsNullOrEmpty(damageElementIconPath))
+                            if (Settings.Instance.ShowSkillIconsInDetails)
                             {
-                                var tex = ImageArchive.LoadImage(damageElementIconPath);
-                                var itemRectSize = ImGui.GetItemRectSize().Y;
-                                float texSize = itemRectSize;
-                                if (tex != null)
+                                var damageElementIconPath = Utils.DamagePropertyToIconPath(stat.Value.DamageElement);
+                                if (!string.IsNullOrEmpty(damageElementIconPath))
                                 {
-                                    ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
-                                    ImGui.SameLine();
+                                    var tex = ImageArchive.LoadImage(damageElementIconPath);
+                                    var itemRectSize = ImGui.GetItemRectSize().Y;
+                                    float texSize = itemRectSize;
+                                    if (tex != null)
+                                    {
+                                        ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
+                                        ImGui.SameLine();
+                                    }
                                 }
                             }
                             ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValueTotal)}");
-                            ImGui.SetItemTooltip($"Type: {stat.Value.DamageMode}\nElement: {stat.Value.DamageElement}");
+                            ImGui.SetItemTooltip($"Type: {stat.Value.DamageMode}\nElement: {Utils.DamagePropertyToString(stat.Value.DamageElement)}");
 
                             ImGui.TableNextColumn();
                             ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValuePerSecond)}");

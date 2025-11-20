@@ -132,12 +132,18 @@ namespace BPSR_ZDPS
         }
     }
 
-    public class  Encounter
+    public class Encounter
     {
         public ulong EncounterId { get; set; }
         public int BattleId { get; set; }
         public uint SceneId { get; set; }
         public string SceneName { get; set; }
+        public string SceneSubName { get; set; }
+        public long BossUUID { get; set; }
+        public long BossAttrId { get; set; }
+        public string BossName { get; set; }
+        public int BossHpPct { get; set; }
+        public string Note { get; set; }
 
         public DateTime StartTime { get; private set; }
         public DateTime EndTime { get; private set; }
@@ -157,6 +163,9 @@ namespace BPSR_ZDPS
         public ulong TotalNpcTakenDamage { get; set; } = 0;
         public ulong TotalDeaths { get; set; } = 0;
         public ulong TotalNpcDeaths { get; set; } = 0;
+        public bool IsWipe { get; set; } = false;
+
+        public EncounterExData ExData { get; set; } = new();
 
         public Encounter()
         {
@@ -279,6 +288,14 @@ namespace BPSR_ZDPS
                 if ((EActorState)value == EActorState.ActorStateDead)
                 {
                     entity.IncrementDeaths();
+                    if (entity.EntityType == EEntityType.EntChar)
+                    {
+                        IncrementDeaths();
+                    }
+                    else if (entity.EntityType == EEntityType.EntMonster)
+                    {
+                        IncrementNpcDeaths();
+                    }
                 }
             }
             else if (key == "AttrShieldList")
@@ -288,6 +305,21 @@ namespace BPSR_ZDPS
                 entity.AddBuffEventAttribute((int)shieldInfo.Uuid, "AttrShieldList", shieldInfo);
                 //AddShieldGained(uuid, shieldInfo.Uuid, shieldInfo.Value, shieldInfo.InitialValue, shieldInfo.MaxValue);
             }
+        }
+
+        public void IncrementDeaths()
+        {
+            TotalDeaths++;
+        }
+
+        public void IncrementNpcDeaths()
+        {
+            TotalNpcDeaths++;
+        }
+
+        public void SetWipeState(bool state)
+        {
+            IsWipe = state;
         }
 
         public object? GetAttrKV(long uuid, string key)
@@ -421,6 +453,11 @@ namespace BPSR_ZDPS
         }
     }
 
+    public class EncounterExData
+    {
+        public EncounterExData() { }
+    }
+
     public class Entity : System.ICloneable
     {
         public long UUID { get; set; }
@@ -501,9 +538,9 @@ namespace BPSR_ZDPS
                     SetName(cached.Name);
                 }
 
-                if (AbilityScore == 0 && cached.AblityScore != 0)
+                if (AbilityScore == 0 && cached.AbilityScore != 0)
                 {
-                    SetAbilityScore(cached.AblityScore);
+                    SetAbilityScore(cached.AbilityScore);
                 }
 
                 if (Level == 0 && cached.Level != 0)
@@ -575,7 +612,7 @@ namespace BPSR_ZDPS
             var cached = EntityCache.Instance.GetOrCreate(UUID);
             if (cached != null && abilityScore != 0)
             {
-                cached.AblityScore = abilityScore;
+                cached.AbilityScore = abilityScore;
             }
         }
 

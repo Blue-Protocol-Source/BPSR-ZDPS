@@ -11,12 +11,39 @@ namespace BPSR_ZDPS.DataTypes
 {
     public static class Professions
     {
+        public static string GetProfessionIconPathFromId(int professionId)
+        {
+            switch ((EProfessionId)professionId)
+            { 
+                case EProfessionId.Profession_Stormblade:
+                    return Path.Combine("Professions", "Profession_1");
+                case EProfessionId.Profession_FrostMage:
+                    return Path.Combine("Professions", "Profession_2");
+                case EProfessionId.Profession_TwinStriker:
+                    return Path.Combine("Professions", "Profession_3");
+                case EProfessionId.Profession_WindKnight:
+                    return Path.Combine("Professions", "Profession_4");
+                case EProfessionId.Profession_VerdantOracle:
+                    return Path.Combine("Professions", "Profession_5");
+                case EProfessionId.Profession_HeavyGuardian:
+                    return Path.Combine("Professions", "Profession_9");
+                case EProfessionId.Profession_Marksman:
+                    return Path.Combine("Professions", "Profession_11");
+                case EProfessionId.Profession_ShieldKnight:
+                    return Path.Combine("Professions", "Profession_12");
+                case EProfessionId.Profession_BeatPerformer:
+                    return Path.Combine("Professions", "Profession_13");
+                default:
+                    return "";
+            }
+        }
+
         public static string GetProfessionNameFromId(int professionId) => professionId switch
         {
             0 => AppStrings.GetLocalized("Profession_Unknown"),
             1 => AppStrings.GetLocalized("Profession_Stormblade"),
             2 => AppStrings.GetLocalized("Profession_FrostMage"),
-            3 => "Purifying Evilfire Axe", // PurifyingAxe
+            3 => AppStrings.GetLocalized("Profession_TwinStriker"),
             4 => AppStrings.GetLocalized("Profession_WindKnight"),
             5 => AppStrings.GetLocalized("Profession_VerdantOracle"),
             8 => "Thunder Flash Hand Cannon", // ThunderHandCannon
@@ -157,20 +184,20 @@ namespace BPSR_ZDPS.DataTypes
         {
             switch (professionId)
             {
-                case (int)ProfessionId.Profession_Stormblade:
-                case (int)ProfessionId.Profession_Marksman:
+                case (int)EProfessionId.Profession_Stormblade:
+                case (int)EProfessionId.Profession_Marksman:
                     {
                         return "Agility";
                     }
-                case (int)ProfessionId.Profession_FrostMage:
-                case (int)ProfessionId.Profession_VerdantOracle:
-                case (int)ProfessionId.Profession_BeatPerformer:
+                case (int)EProfessionId.Profession_FrostMage:
+                case (int)EProfessionId.Profession_VerdantOracle:
+                case (int)EProfessionId.Profession_BeatPerformer:
                     {
                         return "Intellect";
                     }
-                case (int)ProfessionId.Profession_WindKnight:
-                case (int)ProfessionId.Profession_ShieldKnight:
-                case (int)ProfessionId.Profession_HeavyGuardian:
+                case (int)EProfessionId.Profession_WindKnight:
+                case (int)EProfessionId.Profession_ShieldKnight:
+                case (int)EProfessionId.Profession_HeavyGuardian:
                     {
                         return "Strength";
                     }
@@ -185,16 +212,16 @@ namespace BPSR_ZDPS.DataTypes
         {
             switch (professionId)
             {
-                case (int)ProfessionId.Profession_Stormblade:
-                case (int)ProfessionId.Profession_FrostMage:
-                case (int)ProfessionId.Profession_WindKnight:
-                case (int)ProfessionId.Profession_Marksman:
+                case (int)EProfessionId.Profession_Stormblade:
+                case (int)EProfessionId.Profession_FrostMage:
+                case (int)EProfessionId.Profession_WindKnight:
+                case (int)EProfessionId.Profession_Marksman:
                     return ERoleType.DPS;
-                case (int)ProfessionId.Profession_HeavyGuardian:
-                case (int)ProfessionId.Profession_ShieldKnight:
+                case (int)EProfessionId.Profession_HeavyGuardian:
+                case (int)EProfessionId.Profession_ShieldKnight:
                     return ERoleType.Tank;
-                case (int)ProfessionId.Profession_VerdantOracle:
-                case (int)ProfessionId.Profession_BeatPerformer:
+                case (int)EProfessionId.Profession_VerdantOracle:
+                case (int)EProfessionId.Profession_BeatPerformer:
                     return ERoleType.Healer;
                 default:
                     return ERoleType.None;
@@ -206,9 +233,12 @@ namespace BPSR_ZDPS.DataTypes
             switch (roleType)
             {
                 case ERoleType.DPS:
-                    return new Vector4(230 / 255f, 0, 0, 0.50f);
+                    //return new Vector4(230 / 255f, 0, 0, 0.50f);
+                    return new Vector4(227 / 255f, 36 / 255f, 36 / 255f, 0.50f);
                 case ERoleType.Tank:
-                    return new Vector4(51 / 255f, 102 / 255f, 255 / 255f, 0.50f);
+                    //return new Vector4(51 / 255f, 102 / 255f, 255 / 255f, 0.50f);
+                    //return new Vector4(69 / 255f, 174 / 255f, 240 / 255f, 0.50f);
+                    return new Vector4(17 / 255f, 136 / 255f, 212 / 255f, 0.50f);
                 case ERoleType.Healer:
                     return new Vector4(0, 204 / 255f, 0, 0.50f);
                 default:

@@ -973,6 +973,7 @@ namespace BPSR_ZDPS
                             // Might need to use MaxHpTotal?
                             if (hp != null && maxHp != null && hp > 0 && maxHp > 0 && hp >= maxHp)
                             {
+                                EncounterManager.Current.SetWipeState(true);
                                 //System.Diagnostics.Debug.WriteLine($"We've hit a wipe (bossesAtMaxHp = {bossesAtMaxHp})! Start up a new encounter");
                                 EncounterManager.StartEncounter();
                             }

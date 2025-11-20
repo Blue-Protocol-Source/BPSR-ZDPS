@@ -153,7 +153,7 @@ namespace BPSR_ZDPS
                 case EDamageProperty.Electricity:
                     return Path.Combine("Elements", "Thunder_v1");
                 case EDamageProperty.Wood:
-                    return Path.Combine("Elements", "Forst_v1");
+                    return Path.Combine("Elements", "Forest_v1");
                 case EDamageProperty.Wind:
                     return Path.Combine("Elements", "Wind_v1");
                 case EDamageProperty.Rock:
@@ -162,6 +162,33 @@ namespace BPSR_ZDPS
                     return Path.Combine("Elements", "Light_v1");
                 case EDamageProperty.Dark:
                     return Path.Combine("Elements", "Dark_v1");
+                default:
+                    return "";
+            }
+        }
+
+        public static string DamagePropertyToString(EDamageProperty damageElement)
+        {
+            switch (damageElement)
+            {
+                case EDamageProperty.General:
+                    return "General";
+                case EDamageProperty.Fire:
+                    return "Fire";
+                case EDamageProperty.Water:
+                    return "Ice"; // Frost
+                case EDamageProperty.Electricity:
+                    return "Lightning"; // Thunder
+                case EDamageProperty.Wood:
+                    return "Forest";
+                case EDamageProperty.Wind:
+                    return "Wind";
+                case EDamageProperty.Rock:
+                    return "Earth";
+                case EDamageProperty.Light:
+                    return "Light";
+                case EDamageProperty.Dark:
+                    return "Dark";
                 default:
                     return "";
             }

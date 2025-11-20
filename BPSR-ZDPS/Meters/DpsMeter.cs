@@ -20,61 +20,6 @@ namespace BPSR_ZDPS.Meters
             Name = "DPS";
         }
 
-        bool SelectableWithHint(string label, string hint)
-        {
-            ImGui.AlignTextToFramePadding(); // This makes the entries about 1/3 larger but keeps it nicely centered
-            bool ret = ImGui.Selectable(label);
-            ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetCursorPosX() + Math.Max(0.0f, ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize(hint.Remove(hint.Length - 1)).X));
-            ImGui.Text(hint);
-            return ret;
-        }
-
-        bool SelectableWithHintImage(string number, string name, string value, int profession)
-        {
-            var startPoint = ImGui.GetCursorPos();
-
-            ImGui.AlignTextToFramePadding();
-
-            float texSize = ImGui.GetItemRectSize().Y; // Most likely is 22
-            float offset = ImGui.CalcTextSize(number).X + (ImGui.GetStyle().ItemSpacing.X * 2) + (texSize + 2);
-
-            ImGui.SetCursorPosX(offset);
-            bool ret = ImGui.Selectable(name, false, ImGuiSelectableFlags.SpanAllColumns);
-            ImGui.SameLine();
-
-            ImGui.SetCursorPos(startPoint);
-
-            ImGui.Text(number);
-            ImGui.SameLine();
-
-            var tex = ImageHelper.GetTextureByKey($"Profession_{profession}");
-            
-            if (tex == null)
-            {
-                ImGui.Dummy(new Vector2(texSize, texSize));
-            }
-            else
-            {
-                var roleColor = Professions.RoleTypeColors(Professions.GetRoleFromBaseProfessionId(profession));
-
-                if (Settings.Instance.ColorClassIconsByRole)
-                {
-                    ImGui.ImageWithBg((ImTextureRef)tex, new Vector2(texSize, texSize), new Vector2(0, 0), new Vector2(1, 1), new Vector4(0, 0, 0, 0), roleColor);
-                }
-                else
-                {
-                    ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
-                }
-            }
-            
-            ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetCursorPosX() + Math.Max(0.0f, ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize(value.Remove(value.Length - 1)).X));
-            ImGui.Text(value);
-
-            return ret;
-        }
-
         public override void Draw(MainWindow mainWindow)
         {
             ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(2, ImGui.GetStyle().FramePadding.Y));
@@ -83,7 +28,6 @@ namespace BPSR_ZDPS.Meters
             {
                 ImGui.PopStyleVar();
 
-                // Call .ToList() to create a copy of the data in memory as it might change
                 var playerList = EncounterManager.Current?.Entities.AsValueEnumerable()
                     .Where(x => x.Value.EntityType == Zproto.EEntityType.EntChar && (Settings.Instance.OnlyShowDamageContributorsInMeters ? x.Value.TotalDamage > 0 : true))
                     .OrderByDescending(x => x.Value.TotalDamage).ToArray();
@@ -108,7 +52,7 @@ namespace BPSR_ZDPS.Meters
                     {
                         name = $"[U:{entity.UID}]";
                     }
-                    if (AppState.PlayerUID != 0 && AppState.PlayerUID == entity.UID)
+                    if (AppState.PlayerUUID != 0 && AppState.PlayerUUID == entity.UUID)
                     {
                         AppState.PlayerMeterPlacement = i + 1;
                         AppState.PlayerTotalMeterValue = entity.TotalDamage;
@@ -143,7 +87,7 @@ namespace BPSR_ZDPS.Meters
                             contributionProgressBar = contribution;
                         }
                     }
-                    string dps_format = $"{Utils.NumberToShorthand(entity.TotalDamage)} ({Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond)}) {contribution.ToString().PadLeft(3, ' ')}%%"; // Format: TotalDamage (DPS) Contribution%
+                    string dps_format = $"{Utils.NumberToShorthand(entity.TotalDamage)} ({Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond)}) {contribution.ToString().PadLeft(3, ' ')}%"; // Format: TotalDamage (DPS) Contribution%
                     var startPoint = ImGui.GetCursorPos();
                     // ImGui.GetTextLineHeightWithSpacing();
 

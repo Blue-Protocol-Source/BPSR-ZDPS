@@ -136,15 +136,15 @@ namespace BPSR_ZDPS
     public class EntityCacheLine
     {
         [DataMember(Order = 1)]
-        public long UUID { get; set; } // Ignoring this for now since too many functions only pass the UID
+        public long UUID { get; set; }
         [DataMember(Order = 2)]
-        public long UID { get; set; } // In reality we should store the UUID always and store/generate the UID from it so we are never losing data
+        public long UID { get; set; }
         [DataMember(Order = 3)]
         public string Name { get; set; } = "";
         [DataMember(Order = 4)]
         public int Level { get; set; } = 0;
         [DataMember(Order = 5)]
-        public int AblityScore { get; set; } = 0;
+        public int AbilityScore { get; set; } = 0;
         [DataMember(Order = 6)]
         public int ProfessionId { get; set; } = 0;
         [DataMember(Order = 7)]

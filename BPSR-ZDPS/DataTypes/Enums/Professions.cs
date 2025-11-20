@@ -16,12 +16,12 @@ namespace BPSR_ZDPS.DataTypes.Enums
             DPS = 3
         }
 
-        public enum ProfessionId : int
+        public enum EProfessionId : int
         {
             Profession_Unknown = 0,
             Profession_Stormblade = 1,
             Profession_FrostMage = 2,
-            // PurifyingAxe
+            Profession_TwinStriker = 3,
             Profession_WindKnight = 4,
             Profession_VerdantOracle = 5,
             // UNK
