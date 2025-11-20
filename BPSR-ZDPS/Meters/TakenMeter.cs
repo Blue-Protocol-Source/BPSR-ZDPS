@@ -23,8 +23,8 @@ namespace BPSR_ZDPS.Meters
             ImGui.AlignTextToFramePadding(); // This makes the entries about 1/3 larger but keeps it nicely centered
             bool ret = ImGui.Selectable(label);
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetCursorPosX() + Math.Max(0.0f, ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize(hint.Remove(hint.Length - 1)).X));
-            ImGui.Text(hint);
+            ImGui.SetCursorPosX(ImGui.GetCursorPosX() + Math.Max(0.0f, ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize(hint).X));
+            ImGui.TextUnformatted(hint);
             return ret;
         }
 
@@ -32,7 +32,6 @@ namespace BPSR_ZDPS.Meters
         {
             if (ImGui.BeginListBox("##TakenMeterList", new Vector2(-1, -1)))
             {
-                // Call .ToList() to create a copy of the data in memory as it might change
                 var playerList = EncounterManager.Current?.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == Zproto.EEntityType.EntMonster).OrderByDescending(x => x.Value.TotalTakenDamage).ToArray();
 
                 ulong topTotalValue = 0;
@@ -52,6 +51,13 @@ namespace BPSR_ZDPS.Meters
                         name = entity.Name;
                     }
 
+                    if (AppState.PlayerUUID != 0 && AppState.PlayerUUID == entity.UUID)
+                    {
+                        AppState.PlayerMeterPlacement = i + 1;
+                        AppState.PlayerTotalMeterValue = entity.TotalTakenDamage;
+                        AppState.PlayerMeterValuePerSecond = entity.TakenStats.ValuePerSecond;
+                    }
+
                     double contribution = 0.0;
                     double contributionProgressBar = 0.0;
                     if (EncounterManager.Current.TotalNpcTakenDamage != 0)
@@ -67,7 +73,7 @@ namespace BPSR_ZDPS.Meters
                             contributionProgressBar = contribution;
                         }
                     }
-                    string dps_format = $"{Utils.NumberToShorthand(entity.TotalTakenDamage)} ({Utils.NumberToShorthand(entity.TakenStats.ValuePerSecond)}) {contribution.ToString().PadLeft(3, ' ')}%%"; // Format: TotalDamage (DPS) Contribution%
+                    string dps_format = $"{Utils.NumberToShorthand(entity.TotalTakenDamage)} ({Utils.NumberToShorthand(entity.TakenStats.ValuePerSecond)}) {contribution.ToString().PadLeft(3, ' ')}%"; // Format: TotalDamage (DPS) Contribution%
                     var startPoint = ImGui.GetCursorPos();
                     // ImGui.GetTextLineHeightWithSpacing();
 

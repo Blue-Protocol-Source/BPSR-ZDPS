@@ -19,61 +19,6 @@ namespace BPSR_ZDPS.Meters
             Name = "Tanking";
         }
 
-        bool SelectableWithHint(string label, string hint)
-        {
-            ImGui.AlignTextToFramePadding(); // This makes the entries about 1/3 larger but keeps it nicely centered
-            bool ret = ImGui.Selectable(label);
-            ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetCursorPosX() + Math.Max(0.0f, ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize(hint.Remove(hint.Length - 1)).X));
-            ImGui.Text(hint);
-            return ret;
-        }
-
-        bool SelectableWithHintImage(string number, string name, string value, int profession)
-        {
-            var startPoint = ImGui.GetCursorPos();
-
-            ImGui.AlignTextToFramePadding();
-
-            float texSize = ImGui.GetItemRectSize().Y; // Most likely is 22
-            float offset = ImGui.CalcTextSize(number).X + (ImGui.GetStyle().ItemSpacing.X * 2) + (texSize + 2);
-
-            ImGui.SetCursorPosX(offset);
-            bool ret = ImGui.Selectable(name, false, ImGuiSelectableFlags.SpanAllColumns);
-            ImGui.SameLine();
-
-            ImGui.SetCursorPos(startPoint);
-
-            ImGui.Text(number);
-            ImGui.SameLine();
-
-            var tex = ImageHelper.GetTextureByKey($"Profession_{profession}");
-
-            if (tex == null)
-            {
-                ImGui.Dummy(new Vector2(texSize, texSize));
-            }
-            else
-            {
-                var roleColor = Professions.RoleTypeColors(Professions.GetRoleFromBaseProfessionId(profession));
-
-                if (Settings.Instance.ColorClassIconsByRole)
-                {
-                    ImGui.ImageWithBg((ImTextureRef)tex, new Vector2(texSize, texSize), new Vector2(0, 0), new Vector2(1, 1), new Vector4(0, 0, 0, 0), roleColor);
-                }
-                else
-                {
-                    ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
-                }
-            }
-
-            ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetCursorPosX() + Math.Max(0.0f, ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize(value.Remove(value.Length - 1)).X));
-            ImGui.Text(value);
-
-            return ret;
-        }
-
         public override void Draw(MainWindow mainWindow)
         {
             ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(2, ImGui.GetStyle().FramePadding.Y));
@@ -82,7 +27,6 @@ namespace BPSR_ZDPS.Meters
             {
                 ImGui.PopStyleVar();
 
-                // Call .ToList() to create a copy of the data in memory as it might change
                 var playerList = EncounterManager.Current?.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == Zproto.EEntityType.EntChar && x.Value.TotalTakenDamage > 0).OrderByDescending(x => x.Value.TotalTakenDamage).ToArray();
 
                 ulong topTotalValue = 0;
@@ -139,7 +83,7 @@ namespace BPSR_ZDPS.Meters
                     }
                     string totalTaken = Utils.NumberToShorthand(entity.TotalTakenDamage);
                     string totalTps = Utils.NumberToShorthand(entity.TakenStats.ValuePerSecond);
-                    string dps_format = $"{totalTaken} ({totalTps}) {contribution.ToString().PadLeft(3, ' ')}%%";
+                    string dps_format = $"{totalTaken} ({totalTps}) {contribution.ToString().PadLeft(3, ' ')}%";
                     var startPoint = ImGui.GetCursorPos();
 
                     ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f);

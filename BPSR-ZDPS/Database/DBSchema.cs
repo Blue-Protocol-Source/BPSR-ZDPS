@@ -18,15 +18,15 @@ namespace BPSR_ZDPS
         {
             public const string Insert = @"
                 INSERT INTO Encounters (
-                    BattleId, SceneId, SceneName, StartTime, EndTime, LastUpdate, 
+                    BattleId, SceneId, SceneName, SceneSubName, BossUUID, BossAttrId, BossName, BossHpPct, Note, StartTime, EndTime, LastUpdate, 
                     TotalDamage, TotalNpcDamage, TotalShieldBreak, TotalNpcShieldBreak,
                     TotalHealing, TotalNpcHealing, TotalOverhealing, TotalNpcOverhealing,
-                    TotalTakenDamage, TotalNpcTakenDamage, TotalDeaths, TotalNpcDeaths
+                    TotalTakenDamage, TotalNpcTakenDamage, TotalDeaths, TotalNpcDeaths, IsWipe
                 ) VALUES (
-                    @BattleId, @SceneId, @SceneName, @StartTime, @EndTime, @LastUpdate,
+                    @BattleId, @SceneId, @SceneName, @SceneSubName, @BossUUID, @BossAttrId, @BossName, @BossHpPct, @Note, @StartTime, @EndTime, @LastUpdate,
                     @TotalDamage, @TotalNpcDamage, @TotalShieldBreak, @TotalNpcShieldBreak,
                     @TotalHealing, @TotalNpcHealing, @TotalOverhealing, @TotalNpcOverhealing,
-                    @TotalTakenDamage, @TotalNpcTakenDamage, @TotalDeaths, @TotalNpcDeaths
+                    @TotalTakenDamage, @TotalNpcTakenDamage, @TotalDeaths, @TotalNpcDeaths, @IsWipe
                 );
                 SELECT last_insert_rowid();";
 
@@ -44,6 +44,12 @@ namespace BPSR_ZDPS
                     BattleId INTEGER NOT NULL,
                     SceneId INTEGER NOT NULL,
                     SceneName TEXT,
+                    SceneSubName TEXT,
+                    BossUUID INTEGER DEFAULT 0,
+                    BossAttrId INTEGER DEFAULT 0,
+                    BossName TEXT,
+                    BossHpPct INTEGER DEFAULT 0,
+                    Note TEXT,
                     StartTime TEXT NOT NULL,
                     EndTime TEXT,
                     LastUpdate TEXT,
@@ -58,7 +64,9 @@ namespace BPSR_ZDPS
                     TotalTakenDamage INTEGER DEFAULT 0,
                     TotalNpcTakenDamage INTEGER DEFAULT 0,
                     TotalDeaths INTEGER DEFAULT 0,
-                    TotalNpcDeaths INTEGER DEFAULT 0
+                    TotalNpcDeaths INTEGER DEFAULT 0,
+                    IsWipe INTEGER DEFAULT 0,
+                    ExDataBlob BLOB
                 )";
         }
 
@@ -132,21 +140,21 @@ namespace BPSR_ZDPS
                     UID INTEGER NOT NULL,
                     Name TEXT NOT NULL,
                     Level INTEGER NOT NULL,
-                    AblityScore INTEGER NOT NULL,
+                    AbilityScore INTEGER NOT NULL,
                     ProfessionId INTEGER NOT NULL,
                     SubProfessionId INTEGER NOT NULL
                 );";
 
             public const string InsertOrReplace = @"
                 INSERT OR REPLACE INTO EntityCache
-                (UUID, UID, Name, Level, AblityScore, ProfessionId, SubProfessionId)
-                VALUES (@UUID, @UID, @Name, @Level, @AblityScore, @ProfessionId, @SubProfessionId);";
+                (UUID, UID, Name, Level, AbilityScore, ProfessionId, SubProfessionId)
+                VALUES (@UUID, @UID, @Name, @Level, @AbilityScore, @ProfessionId, @SubProfessionId);";
 
             public const string SelectAll = @"SELECT * FROM EntityCache;";
             public const string SelectByUUID = @"SELECT * FROM EntityCache WHERE UUID = @UUID;";
             public const string SelectByUID = @"SELECT * FROM EntityCache WHERE UID = @UID;";
             public const string GetOrCreateDefaultByUUID = @"
-                INSERT INTO EntityCache (UUID, UID, Name, Level, AblityScore, ProfessionId, SubProfessionId)
+                INSERT INTO EntityCache (UUID, UID, Name, Level, AbilityScore, ProfessionId, SubProfessionId)
                 SELECT @UUID, (@UID >> 16), '', 0, 0, 0, 0
                 WHERE NOT EXISTS (SELECT 1 FROM EntityCache WHERE UUID = @UUID);
 

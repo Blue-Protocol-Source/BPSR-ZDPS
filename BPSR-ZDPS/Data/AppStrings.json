@@ -4,15 +4,29 @@
         "en": "Unknown",
         "zh": "未知"
     },
-    "Profession_ShieldKnight":
+    "Profession_Stormblade":
     {
-        "en": "Shield Knight",
-        "zh": "神盾骑士"
+        "en": "Stormblade",
+        "zh": "雷影剑士"
     },
     "Profession_FrostMage":
     {
         "en": "Frost Mage",
         "zh": "冰魔导师"
+    },
+    "Profession_TwinStriker":
+    {
+        "en": "Twin Striker"
+    },
+    "Profession_WindKnight":
+    {
+        "en": "Wind Knight",
+        "zh": "青岚骑士"
+    },
+    "Profession_VerdantOracle":
+    {
+        "en": "Verdant Oracle",
+        "zh": "森语者"
     },
     "Profession_HeavyGuardian":
     {
@@ -24,25 +38,15 @@
         "en": "Marksman",
         "zh": "神射手"
     },
+    "Profession_ShieldKnight":
+    {
+        "en": "Shield Knight",
+        "zh": "神盾骑士"
+    },
     "Profession_BeatPerformer":
     {
         "en": "Beat Performer",
         "zh": "灵魂乐手"
-    },
-    "Profession_Stormblade":
-    {
-        "en": "Stormblade",
-        "zh": "雷影剑士"
-    },
-    "Profession_VerdantOracle":
-    {
-        "en": "Verdant Oracle",
-        "zh": "森语者"
-    },
-    "Profession_WindKnight":
-    {
-        "en": "Wind Knight",
-        "zh": "青岚骑士"
     },
     "SubProfession_Unknown":
     {
