@@ -563,6 +563,9 @@ namespace BPSR_ZDPS.Windows
             RegisterAllHotkeys(mainWindow);
 
             DB.Init();
+
+            // Write out the new settings to file now that they've been applied
+            Settings.Save();
         }
 
         static void ShowRestartRequiredNotice(bool showCondition, string settingName)
