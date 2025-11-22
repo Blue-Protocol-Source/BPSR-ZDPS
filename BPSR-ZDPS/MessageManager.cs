@@ -92,7 +92,7 @@ namespace BPSR_ZDPS
             return null;
         }
 
-        public static void ProcessSyncHitInfo(ReadOnlySpan<byte> payloadBuffer)
+        public static void ProcessSyncHitInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             System.Diagnostics.Debug.WriteLine($"ProcessSyncHitInfo");
         }
@@ -265,9 +265,11 @@ namespace BPSR_ZDPS
             }
         }
 
-        public static void ProcessSyncNearEntities(ReadOnlySpan<byte> payloadBuffer)
+        public static void ProcessSyncNearEntities(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             BattleStateMachine.CheckDeferredCalls();
+
+            Log.Information($"ProcessSyncNearEntities: Meesage arrival time: {extraData.ArrivalTime}. Diff to DateTime now: {DateTime.Now - extraData.ArrivalTime}");
 
             var syncNearEntities = SyncNearEntities.Parser.ParseFrom(payloadBuffer);
             if (syncNearEntities.Appear == null || syncNearEntities.Appear.Count == 0)
@@ -323,7 +325,7 @@ namespace BPSR_ZDPS
             }
         }
 
-        public static void ProcessSyncNearDeltaInfo(ReadOnlySpan<byte> payloadBuffer)
+        public static void ProcessSyncNearDeltaInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             BattleStateMachine.CheckDeferredCalls();
 
@@ -517,7 +519,7 @@ namespace BPSR_ZDPS
 
         public static long currentUserUuid = 0;
 
-        public static void ProcessSyncToMeDeltaInfo(ReadOnlySpan<byte> payloadBuffer)
+        public static void ProcessSyncToMeDeltaInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             BattleStateMachine.CheckDeferredCalls();
 
@@ -538,7 +540,7 @@ namespace BPSR_ZDPS
             ProcessAoiSyncDelta(aoiSyncDelta);
         }
 
-        public static void ProcessSyncContainerData(ReadOnlySpan<byte> payloadBuffer)
+        public static void ProcessSyncContainerData(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             BattleStateMachine.CheckDeferredCalls();
             // This might only occur on map change and comes from the current player, no one else
@@ -629,7 +631,7 @@ namespace BPSR_ZDPS
             }
         }
 
-        public static void ProcessSyncContainerDirtyData(ReadOnlySpan<byte> payloadBuffer)
+        public static void ProcessSyncContainerDirtyData(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             BattleStateMachine.CheckDeferredCalls();
 
@@ -862,7 +864,7 @@ namespace BPSR_ZDPS
             }
         }
 
-        public static void ProcessSyncDungeonData(ReadOnlySpan<byte> payloadBuffer)
+        public static void ProcessSyncDungeonData(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             BattleStateMachine.CheckDeferredCalls();
 
@@ -1017,7 +1019,7 @@ namespace BPSR_ZDPS
             }
         }
 
-        public static void ProcessSyncDungeonDirtyData(ReadOnlySpan<byte> payloadBuffer)
+        public static void ProcessSyncDungeonDirtyData(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             BattleStateMachine.CheckDeferredCalls();
 

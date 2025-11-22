@@ -6,6 +6,7 @@ public class RawPacket
 {
     public byte[] Data { get; set; }
     public int Len { get; set; }
+    public DateTime LastPacketTime { get; set; } = DateTime.MinValue;
 
     public void Set(int len)
     {

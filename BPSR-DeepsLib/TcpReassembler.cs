@@ -107,6 +107,7 @@ public class TcpReassembler
         public CancellationTokenSource CancelTokenSrc = new();
         public bool IsSynced = false;
         public TcpReassembler Owner = owner;
+        public DateTime LastPacketTime;
 
         public void AddPacket(TcpPacket tcpPacket)
         
@@ -167,7 +168,8 @@ public class TcpReassembler
         {
             while (NextExpectedSeq.HasValue && Packets.TryGetValue(NextExpectedSeq.Value, out var segment)) {
                 Packets.Remove(NextExpectedSeq.Value);
-                
+
+                LastPacketTime = segment.ArriveTime;
                 var mem = Pipe.Writer.GetMemory(segment.PayloadData.Length);
                 segment.PayloadData.CopyTo(mem);
                 Pipe.Writer.Advance(segment.PayloadData.Length);

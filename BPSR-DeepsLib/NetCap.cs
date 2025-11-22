@@ -24,7 +24,7 @@ public class NetCap
     private Task PacketParseTask;
     private byte[] DecompressionScratchBuffer = new byte[1024 * 1024];
     private Decompressor _decompressor = new();
-    private Dictionary<NotifyId, Action<ReadOnlySpan<byte>>> NotifyHandlers = new();
+    private Dictionary<NotifyId, Action<ReadOnlySpan<byte>, ExtraPacketData>> NotifyHandlers = new();
     public ulong NumSeenPackets = 0;
     public DateTime LastPacketSeenAt = DateTime.MinValue;
     public int NumConnectionReaders = 0;
@@ -68,12 +68,12 @@ public class NetCap
         Log.Information("Capture device started");
     }
 
-    public void RegisterNotifyHandler(ulong serviceId, uint methodId, Action<ReadOnlySpan<byte>> handler)
+    public void RegisterNotifyHandler(ulong serviceId, uint methodId, Action<ReadOnlySpan<byte>, ExtraPacketData> handler)
     {
         NotifyHandlers.Add(new NotifyId(serviceId, methodId), handler);
     }
 
-    public void RegisterWorldNotifyHandler(ServiceMethods.WorldNtf methodId, Action<ReadOnlySpan<byte>> handler)
+    public void RegisterWorldNotifyHandler(ServiceMethods.WorldNtf methodId, Action<ReadOnlySpan<byte>, ExtraPacketData> handler)
     {
         NotifyHandlers.Add(new NotifyId((ulong)EServiceId.WorldNtf, (uint)methodId), handler);
     }
@@ -175,6 +175,7 @@ public class NetCap
 
                 var rawPacket = RawPacketPool.Get();
                 rawPacket.Set((int)len);
+                rawPacket.LastPacketTime = conn.LastPacketTime;
                 msgBuff.Buffer.Slice(0, len).CopyTo(rawPacket.Data.AsSpan()[..(int)len]);
                 RawPacketQueue.Enqueue(rawPacket);
                 conn.Pipe.Reader.AdvanceTo(msgBuff.Buffer.GetPosition(len));
@@ -192,7 +193,7 @@ public class NetCap
         {
             if (RawPacketQueue.TryDequeue(out var rawPacket))
             {
-                ParsePacket(rawPacket.Data[..rawPacket.Len]);
+                ParsePacket(rawPacket.Data[..rawPacket.Len], rawPacket.LastPacketTime);
 
                 // Important to return the packet to the pool!
                 rawPacket.Return();
@@ -206,7 +207,7 @@ public class NetCap
         }
     }
 
-    private void ParsePacket(ReadOnlySpan<byte> data)
+    private void ParsePacket(ReadOnlySpan<byte> data, DateTime lastPacketTime)
     {
         int offset = 0;
         while (offset < data.Length)
@@ -227,10 +228,10 @@ public class NetCap
             switch (msgType)
             {
                 case MsgTypeId.Notify:
-                    ParseNotify(msgPayload, isCompressed);
+                    ParseNotify(msgPayload, isCompressed, lastPacketTime);
                     break;
                 case MsgTypeId.FrameDown:
-                    ParseFrameDown(msgPayload, isCompressed);
+                    ParseFrameDown(msgPayload, isCompressed, lastPacketTime);
                     break;
                 case MsgTypeId.Call:
                     //Log.Information("Call: {MsgPayload}", msgPayload.Length);
@@ -251,22 +252,22 @@ public class NetCap
         }
     }
 
-    private void ParseFrameDown(ReadOnlySpan<byte> data, bool isCompressed)
+    private void ParseFrameDown(ReadOnlySpan<byte> data, bool isCompressed, DateTime lastPacketTime)
     {
         var seqNum = BinaryPrimitives.ReadUInt32BigEndian(data);
 
         if (isCompressed)
         {
             var decompressed = Decompress(data[4..]);
-            ParsePacket(decompressed);
+            ParsePacket(decompressed, lastPacketTime);
         }
         else
         {
-            ParsePacket(data[4..]);
+            ParsePacket(data[4..], lastPacketTime);
         }
     }
 
-    private void ParseNotify(ReadOnlySpan<byte> data, bool isCompressed)
+    private void ParseNotify(ReadOnlySpan<byte> data, bool isCompressed, DateTime lastPacketTime)
     {
         var serviceUuid = BinaryPrimitives.ReadUInt64BigEndian(data);
         var stubId = BinaryPrimitives.ReadUInt32BigEndian(data[8..]);
@@ -287,7 +288,8 @@ public class NetCap
         var id = new NotifyId(serviceUuid, methodId);
         if (NotifyHandlers.TryGetValue(id, out var handler))
         {
-            handler(msgData);
+            var extraData = new ExtraPacketData(lastPacketTime);
+            handler(msgData, extraData);
         }
 
         //Log.Information("Service UUID: {ServiceUuid}, Stub ID: {StubId}, Method ID: {MethodId}, IsCompressed: {IsCompressed}", serviceUuid, stubId, methodId, isCompressed);

@@ -45,12 +45,12 @@ class Program
                 CaptureDeviceName = "\\Device\\NPF_{40699DEA-27A5-4985-ADC0-B00BADABAAEB}"
             });
 
-            netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.SyncNearDeltaInfo, span =>
+            netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.SyncNearDeltaInfo, (span, extraData) =>
             {
                 ProcessSyncNearDeltaInfo(span);
             });
 
-            netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.SyncToMeDeltaInfo, span =>
+            netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.SyncToMeDeltaInfo, (span, extraData) =>
             {
                 ProcessSyncToMeDeltaInfo(span);
             });
