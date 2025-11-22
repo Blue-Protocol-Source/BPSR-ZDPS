@@ -10,6 +10,7 @@ public class CharSerialize(BlobReader blob) : BlobType(ref blob)
 {
     public int? CharId;
     public CharBaseInfo? CharBaseInfo;
+    public SceneData? SceneData;
     // ...
     public UserFightAttr? Attr;
     // ...
@@ -26,6 +27,9 @@ public class CharSerialize(BlobReader blob) : BlobType(ref blob)
                 return true;
             case Zproto.CharSerialize.CharBaseFieldNumber:
                 CharBaseInfo = new(blob);
+                return true;
+            case Zproto.CharSerialize.SceneDataFieldNumber:
+                SceneData = new(blob);
                 return true;
             case Zproto.CharSerialize.AttrFieldNumber:
                 Attr = new(blob);

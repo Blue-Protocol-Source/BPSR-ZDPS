@@ -17,7 +17,8 @@ namespace BPSR_ZDPS.Windows
         public static bool IsOpened = false;
         static int RunOnceDelayed = 0;
 
-        public static ConcurrentQueue<KeyValuePair< int, BPSR_DeepsLib.Blobs.DungeonTargetData>> DungeonTargetDataTracker = new();
+        //public static ConcurrentQueue<KeyValuePair< int, BPSR_DeepsLib.Blobs.DungeonTargetData>> DungeonTargetDataTracker = new();
+        public static ConcurrentQueue<KeyValuePair<int, Zproto.DungeonTargetData>> DungeonTargetDataTracker = new();
 
         public static void Open()
         {

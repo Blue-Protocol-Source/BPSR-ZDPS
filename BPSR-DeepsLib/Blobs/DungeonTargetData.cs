@@ -32,4 +32,15 @@ public class DungeonTargetData : BlobType
                 return false;
         }
     }
+
+    public static implicit operator Zproto.DungeonTargetData(DungeonTargetData targetData)
+    {
+        var data = new Zproto.DungeonTargetData()
+        {
+            Complete = targetData.Complete ?? 0,
+            Nums = targetData.Nums ?? 0,
+            TargetId = targetData.TargetId ?? 0
+        };
+        return data;
+    }
 }

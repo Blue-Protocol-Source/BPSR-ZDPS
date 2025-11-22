@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BPSR_ZDPS.DataTypes.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,8 @@ namespace BPSR_ZDPS.DataTypes
         public string Name { get; set; }
         public string Icon { get; set; }
         public string Desc { get; set; }
-        public int BuffType { get; set; }
-        public int BuffPriority { get; set; }
+        public Enum.EBuffType? BuffType { get; set; }
+        public Enum.EBuffPriority? BuffPriority { get; set; }
         public int TipsDescription { get; set; }
         public int Visible { get; set; }
         public List<int> RepeatAddRule { get; set; }

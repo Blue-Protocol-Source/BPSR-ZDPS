@@ -1,11 +1,93 @@
 {
+    "55405":
+    {
+        "Name": "Aegis Ward",
+        "BuffType": 1
+    },
     "55420":
     {
         "Name": "Shield Toss",
         "Desc": "Actions Interrupted. DMG -10%"
     },
+    "55421":
+    {
+        "Name": "Judgment Healing",
+        "BuffType": 1
+    },
+    "55424":
+    {
+        "Name": "Condemn Boost",
+        "BuffType": 1
+    },
+    "680101":
+    {
+        "Name": "Air Float",
+        "BuffType": 1
+    },
+    "680201":
+    {
+        "Name": "Dash Jump",
+        "BuffType": 1
+    },
+    "680401":
+    {
+        "Name": "Wall Jump",
+        "BuffType": 1
+    },
+    "680501":
+    {
+        "Name": "Wall Running",
+        "BuffType": 1
+    },
+    "680701":
+    {
+        "Name": "Auto Vault",
+        "BuffType": 1
+    },
+    "682501":
+    {
+        "Name": "Chain Jump",
+        "BuffType": 1
+    },
+    "682503":
+    {
+        "Name": "Chain Jump",
+        "BuffType": 1
+    },
+    "682505":
+    {
+        "Name": "Chain Jump",
+        "BuffType": 1
+    },
+    "2110091":
+    {
+        "Name": "Convert damage received into healing",
+        "BuffType": 1
+    },
+    "2200601":
+    {
+        "Name": "Divine Scythe",
+        "BuffType": 1
+    },
+    "2206010":
+    {
+        "Name": "Lightforged Body",
+        "BuffType": 1
+    },
+    "2206020":
+    {
+        "Name": "Condemn",
+        "BuffType": 1
+    },
+    "2206171":
+    {
+        "Name": "Lightforged Greatsword",
+        "Desc": "Aegis Ward Sword - Sub Buff",
+        "BuffType": 1
+    },
     "3210060":
     {
-        "Name": "Stunt! Super Critical - Passive"
+        "Name": "Stunt! Super Critical - Passive",
+        "BuffType": 1
     }
 }

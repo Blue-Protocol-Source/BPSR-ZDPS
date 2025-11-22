@@ -266,6 +266,8 @@ namespace BPSR_ZDPS
 
         public static void ProcessSyncNearEntities(ReadOnlySpan<byte> payloadBuffer)
         {
+            BattleStateMachine.CheckDeferredCalls();
+
             var syncNearEntities = SyncNearEntities.Parser.ParseFrom(payloadBuffer);
             if (syncNearEntities.Appear == null || syncNearEntities.Appear.Count == 0)
             {
@@ -322,6 +324,8 @@ namespace BPSR_ZDPS
 
         public static void ProcessSyncNearDeltaInfo(ReadOnlySpan<byte> payloadBuffer)
         {
+            BattleStateMachine.CheckDeferredCalls();
+
             var syncNearDeltaInfo = SyncNearDeltaInfo.Parser.ParseFrom(payloadBuffer);
             //Log.Information("Notify: {Hex}", BitConverter.ToString(span.ToArray()));
             if (syncNearDeltaInfo.DeltaInfos == null || syncNearDeltaInfo.DeltaInfos.Count == 0)
@@ -337,6 +341,8 @@ namespace BPSR_ZDPS
 
         public static void ProcessAoiSyncDelta(AoiSyncDelta delta)
         {
+            BattleStateMachine.CheckDeferredCalls();
+
             if (delta == null)
             {
                 return;
@@ -512,6 +518,8 @@ namespace BPSR_ZDPS
 
         public static void ProcessSyncToMeDeltaInfo(ReadOnlySpan<byte> payloadBuffer)
         {
+            BattleStateMachine.CheckDeferredCalls();
+
             var syncToMeDeltaInfo = SyncToMeDeltaInfo.Parser.ParseFrom(payloadBuffer);
             var aoiSyncToMeDelta = syncToMeDeltaInfo.DeltaInfo;
             long uuid = aoiSyncToMeDelta.Uuid;
@@ -531,6 +539,7 @@ namespace BPSR_ZDPS
 
         public static void ProcessSyncContainerData(ReadOnlySpan<byte> payloadBuffer)
         {
+            BattleStateMachine.CheckDeferredCalls();
             // This might only occur on map change and comes from the current player, no one else
             // Teleports do not trigger this
             // As this occurs the moment a load actually begins, many states are likely not going to be set yet
@@ -538,8 +547,12 @@ namespace BPSR_ZDPS
 
 
             // We'll spin up a new encounter before processing any of this data so it's nice and fresh in the new encounter
-            EncounterManager.StartNewBattle();
-            EncounterManager.StartEncounter(true);
+            if (false)
+            {
+                EncounterManager.StartNewBattle();
+                EncounterManager.StartEncounter(true);
+            }
+            BattleStateMachine.StartNewBattle();
 
             var syncContainerData = SyncContainerData.Parser.ParseFrom(payloadBuffer);
             if (syncContainerData?.VData == null)
@@ -617,6 +630,8 @@ namespace BPSR_ZDPS
 
         public static void ProcessSyncContainerDirtyData(ReadOnlySpan<byte> payloadBuffer)
         {
+            BattleStateMachine.CheckDeferredCalls();
+
             try
             {
                 if (currentUserUuid == 0)
@@ -667,6 +682,14 @@ namespace BPSR_ZDPS
                     if (ser.ProfessionList.CurProfessionId != null)
                     {
                         EncounterManager.Current.SetProfessionId(currentUserUuid, (int)ser.ProfessionList.CurProfessionId);
+                    }
+                }
+
+                if (ser.SceneData != null)
+                {
+                    if (ser.SceneData.LevelMapId != null)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"ser.SceneData.LevelMapId = {ser.SceneData.LevelMapId})");
                     }
                 }
 
@@ -840,6 +863,8 @@ namespace BPSR_ZDPS
 
         public static void ProcessSyncDungeonData(ReadOnlySpan<byte> payloadBuffer)
         {
+            BattleStateMachine.CheckDeferredCalls();
+
             // This might only occur on map change and comes from the current player, no one else
             // Teleports do not trigger this
             // Generally the dungeon has not begun at this point, it's likely not even in the Ready state
@@ -867,8 +892,12 @@ namespace BPSR_ZDPS
                 }
             }
 
+            BattleStateMachine.DungeonStateHistoryAdd(vData.FlowInfo.State);
+
             foreach (var targetData in vData.Target.TargetData)
             {
+                BattleStateMachine.DungeonTargetDataHistoryAdd(targetData.Value);
+                BPSR_ZDPS.Windows.DebugDungeonTracker.DungeonTargetDataTracker.Enqueue(targetData);
                 System.Diagnostics.Debug.WriteLine($"Target.TargetData[{targetData.Key}]: TargetId={targetData.Value.TargetId},Nums={targetData.Value.Nums},Complete={targetData.Value.Complete}");
             }
 
@@ -989,6 +1018,8 @@ namespace BPSR_ZDPS
 
         public static void ProcessSyncDungeonDirtyData(ReadOnlySpan<byte> payloadBuffer)
         {
+            BattleStateMachine.CheckDeferredCalls();
+
             var dirty = SyncDungeonDirtyData.Parser.ParseFrom(payloadBuffer);
             if (dirty?.VData?.Buffer == null || dirty.VData.Buffer.Length == 0)
             {
@@ -1010,32 +1041,36 @@ namespace BPSR_ZDPS
                 if (dun.FlowInfo?.State != null)
                 {
                     EDungeonState dungeonState = (EDungeonState)dun.FlowInfo.State;
-                    System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.State == {dungeonState}");
-                    if (dungeonState == EDungeonState.DungeonStateEnd)
+                    BattleStateMachine.DungeonStateHistoryAdd(dungeonState);
+                    if (false)
                     {
-                        // Encounter has ended
-                        EncounterManager.StopEncounter();
-                    }
-                    else if (dungeonState == EDungeonState.DungeonStateReady)
-                    {
-                        // Encounter is in prep phase
-                    }
-                    else if (dungeonState == EDungeonState.DungeonStatePlaying)
-                    {
-                        // Encounter has begun
-                        //EncounterManager.StopEncounter();
-                        if (EncounterManager.Current.HasStatsBeenRecorded())
+                        System.Diagnostics.Debug.WriteLine($"SyncDungeonDirtyData.DungeonFlowInfo.State == {dungeonState}");
+                        if (dungeonState == EDungeonState.DungeonStateEnd)
                         {
-                            // Start up a new BattleId if we've already recording actions happening before the dungeon's proper start
-                            // This prevents us from throwing away any data of potential interest to the user
-                            EncounterManager.StartNewBattle();
-                            EncounterManager.StartEncounter(true);
+                            // Encounter has ended
+                            EncounterManager.StopEncounter();
                         }
-                        else
+                        else if (dungeonState == EDungeonState.DungeonStateReady)
                         {
-                            EncounterManager.StartEncounter();
+                            // Encounter is in prep phase
                         }
-                        
+                        else if (dungeonState == EDungeonState.DungeonStatePlaying)
+                        {
+                            // Encounter has begun
+                            //EncounterManager.StopEncounter();
+                            if (EncounterManager.Current.HasStatsBeenRecorded())
+                            {
+                                // Start up a new BattleId if we've already recording actions happening before the dungeon's proper start
+                                // This prevents us from throwing away any data of potential interest to the user
+                                EncounterManager.StartNewBattle();
+                                EncounterManager.StartEncounter(true);
+                            }
+                            else
+                            {
+                                EncounterManager.StartEncounter();
+                            }
+
+                        }
                     }
                 }
             }
@@ -1054,22 +1089,24 @@ namespace BPSR_ZDPS
                     // Potentially use a TargetId blacklist to stop known messy targets from causing weird resets
                     // 3010101/3010102 in Stimen Vault lead to bad tracking as a floor is cleared (sent just before last enemy is fully dead)
                     // We can provide a list of predetermined id's for users to opt out of tracking here and rely on other targets or states
-
-                    if (Settings.Instance.SplitEncountersOnNewPhases)
+                    if (false)
                     {
-                        // Not all encounters are created equal, how they use these is unique per encounter
-                        // For example, Tina won't clear or update Target on wipe while Ice Dragon Raid does
-                        if (target.Value.Complete == 1 && target.Value.Nums > 0)
+                        if (Settings.Instance.SplitEncountersOnNewPhases)
                         {
-                            // Current objective is complete when Complete == 1
-                            // Overall objective is complere when Nums is also > 0
-                            EncounterManager.StopEncounter();
-                        }
-                        else if (target.Value.Complete == 0 && target.Value.Nums == 0)
-                        {
-                            // We got a new objective, either advanced the phase or reset... or advanced and the devs are trolling with too many states
-                            EncounterManager.StopEncounter();
-                            EncounterManager.StartEncounter(true);
+                            // Not all encounters are created equal, how they use these is unique per encounter
+                            // For example, Tina won't clear or update Target on wipe while Ice Dragon Raid does
+                            if (target.Value.Complete == 1 && target.Value.Nums > 0)
+                            {
+                                // Current objective is complete when Complete == 1
+                                // Overall objective is complere when Nums is also > 0
+                                EncounterManager.StopEncounter();
+                            }
+                            else if (target.Value.Complete == 0 && target.Value.Nums == 0)
+                            {
+                                // We got a new objective, either advanced the phase or reset... or advanced and the devs are trolling with too many states
+                                EncounterManager.StopEncounter();
+                                EncounterManager.StartEncounter(true);
+                            }
                         }
                     }
 
@@ -1079,7 +1116,8 @@ namespace BPSR_ZDPS
                         BPSR_ZDPS.Windows.DebugDungeonTracker.DungeonTargetDataTracker.TryDequeue(out _);
                     }
 
-                    BPSR_ZDPS.Windows.DebugDungeonTracker.DungeonTargetDataTracker.Enqueue(target);
+                    BattleStateMachine.DungeonTargetDataHistoryAdd(target.Value);
+                    BPSR_ZDPS.Windows.DebugDungeonTracker.DungeonTargetDataTracker.Enqueue(new KeyValuePair<int, DungeonTargetData>(target.Key, target.Value));
                 }
             }
 

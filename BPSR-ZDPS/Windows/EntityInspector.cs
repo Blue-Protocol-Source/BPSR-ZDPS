@@ -611,11 +611,11 @@ namespace BPSR_ZDPS.Windows
 
                                 ImGui.TableNextColumn();
 
-                                int buffTypeColor = -1; // 0 = Skill, 1 = Talent, 2 = Special/Unknown, (Overrides) 3 = Shield
+                                int buffTypeColor = -1; // 0 = Debuff, 1 = Buff, 2 = Special/Unknown, (Overrides) 99 = Shield
                                 string extraTooltip = "";
                                 if (buffEvent.AttributeName == "AttrShieldList")
                                 {
-                                    buffTypeColor = 3;
+                                    buffTypeColor = 99;
                                     var shieldInfo = (Zproto.ShieldInfo)buffEvent.Data;
                                     extraTooltip = $"\nShieldInfo: Value={shieldInfo.Value}, InitialValue={shieldInfo.InitialValue}, MaxValue={shieldInfo.MaxValue}";
 
@@ -627,31 +627,41 @@ namespace BPSR_ZDPS.Windows
                                 }
                                 else
                                 {
-                                    if (buffEvent.BuffType < 3)
+                                    switch (buffEvent.BuffType)
                                     {
-                                        buffTypeColor = buffEvent.BuffType;
-                                    }
-                                    else
-                                    {
-                                        // Unexpected BuffType
+                                        case DataTypes.Enum.EBuffType.Debuff:
+                                            buffTypeColor = 0;
+                                            break;
+                                        case DataTypes.Enum.EBuffType.Gain:
+                                            buffTypeColor = 1;
+                                            break;
+                                        case DataTypes.Enum.EBuffType.GainRecovery:
+                                            buffTypeColor = 1;
+                                            break;
+                                        case DataTypes.Enum.EBuffType.Item:
+                                            buffTypeColor = 2;
+                                            break;
+                                        default:
+                                            // Unexpected BuffType
+                                            break;
                                     }
                                 }
 
-                                if (buffTypeColor == 3)
+                                if (buffTypeColor == 99)
                                 {
                                     ImGui.PushStyleColor(ImGuiCol.Header, Colors.DimGray);
                                 }
                                 else if (buffTypeColor == 0)
                                 {
-                                    ImGui.PushStyleColor(ImGuiCol.Header, Colors.Goldenrod_Transparent);
+                                    ImGui.PushStyleColor(ImGuiCol.Header, Colors.DarkRed_Transparent);
                                 }
                                 else if (buffTypeColor == 1)
                                 {
-                                    ImGui.PushStyleColor(ImGuiCol.Header, Colors.SkyBlue_Transparent);
+                                    ImGui.PushStyleColor(ImGuiCol.Header, Colors.LightGreen_Transparent);
                                 }
                                 if (buffTypeColor == 2)
                                 {
-                                    ImGui.PushStyleColor(ImGuiCol.Header, Colors.DarkRed_Transparent);
+                                    ImGui.PushStyleColor(ImGuiCol.Header, Colors.Goldenrod_Transparent);
                                 }
 
                                 if (ImGui.Selectable($"{buffUuid}##BuffEventEntry_{i}", true, ImGuiSelectableFlags.SpanAllColumns))
@@ -666,7 +676,7 @@ namespace BPSR_ZDPS.Windows
                                 
                                 if (!string.IsNullOrEmpty(buffEvent.Description))
                                 {
-                                    ImGui.SetItemTooltip($"{buffEvent.Description.Replace("%", "%%")}{extraTooltip}");
+                                    ImGui.SetItemTooltip($"Buff Id: {buffEvent.BaseId}\n{buffEvent.Description.Replace("%", "%%")}{extraTooltip}");
                                 }
 
                                 ImGui.TableNextColumn();

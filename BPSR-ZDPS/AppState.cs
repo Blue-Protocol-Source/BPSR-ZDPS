@@ -58,8 +58,8 @@ namespace BPSR_ZDPS
                 {
                     if (HelperMethods.DataTables.Skills.Data.TryGetValue(item.Key, out var skill))
                     {
-                        skill.Name = item.Value.Name;
-                        skill.Icon = item.Value.Icon;
+                        skill.Name = string.IsNullOrEmpty(item.Value.Name) ? skill.Name : item.Value.Name;
+                        skill.Icon = string.IsNullOrEmpty(item.Value.Icon) ? skill.Icon : item.Value.Icon;
                     }
                     else
                     {
@@ -107,15 +107,29 @@ namespace BPSR_ZDPS
                 {
                     if (HelperMethods.DataTables.Buffs.Data.TryGetValue(item.Key, out var buff))
                     {
-                        buff.Name = item.Value.Name;
-                        buff.Desc = item.Value.Desc;
-                        buff.Icon = item.Value.Icon;
+                        buff.Name = string.IsNullOrEmpty(item.Value.Name) ? buff.Name : item.Value.Name;
+                        buff.Desc = string.IsNullOrEmpty(item.Value.Desc) ? buff.Desc : item.Value.Desc;
+                        buff.Icon = string.IsNullOrEmpty(item.Value.Icon) ? buff.Icon : item.Value.Icon;
+                        buff.ShowHUDIcon = string.IsNullOrEmpty(item.Value.ShowHUDIcon) ? buff.ShowHUDIcon : item.Value.ShowHUDIcon;
+
+                        if (item.Value.BuffType.HasValue)
+                        {
+                            buff.BuffType = item.Value.BuffType.Value;
+                        }
+                        if (item.Value.BuffPriority.HasValue)
+                        {
+                            buff.BuffPriority = item.Value.BuffPriority.Value;
+                        }
                     }
                     else
                     {
                         buff = new Buff();
                         buff.Name = item.Value.Name;
+                        buff.Desc = item.Value.Desc;
                         buff.Icon = item.Value.Icon;
+                        buff.ShowHUDIcon = item.Value.ShowHUDIcon;
+                        buff.BuffType = item.Value.BuffType;
+                        buff.BuffPriority = item.Value.BuffPriority;
                         HelperMethods.DataTables.Buffs.Data.Add(item.Key, buff);
                     }
                 }

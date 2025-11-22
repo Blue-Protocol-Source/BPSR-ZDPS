@@ -22,7 +22,7 @@ namespace BPSR_ZDPS
 
         public static int CurrentEncounter = 0;
         public static int CurrentBattleId = 0;
-        public static uint LevelMapId {  get; private set; }
+        public static uint LevelMapId { get; private set; }
         public static string SceneName { get; private set; }
 
         static EncounterManager()
@@ -1218,12 +1218,13 @@ namespace BPSR_ZDPS
 
     public class BuffEvent
     {
-        public int BuffType { get; private set; } // Source type of buff 0 = Skill, 1 = Talent, 2 = Special?
-        public int BuffPriority { get; private set; }
+        public DataTypes.Enum.EBuffType BuffType { get; private set; }
+        public DataTypes.Enum.EBuffPriority BuffPriority { get; private set; }
+        public int BuffVisibility { get; private set; }
         public long Uuid { get; private set; }
         public int BaseId { get; private set; } // Buff Id in BuffTable
         public int Level { get; private set; }
-        public long FireUuid { get; private set; }
+        public long FireUuid { get; private set; } // UUID of entity that cast this event
         public string EntityCasterName { get; private set; }
         public int Layer { get; private set; }
         public int Duration { get; private set; }
@@ -1231,6 +1232,8 @@ namespace BPSR_ZDPS
         public string Name { get; private set; }
         public string Description { get; private set; }
         public string Icon { get; private set; }
+        public int BuffAbilityType { get; private set; }
+        public int BuffAbilitySubType { get; private set; }
         public TimeSpan EventAddTime { get; private set; }
         public TimeSpan EventRemoveTime { get; private set; }
         public string AttributeName { get; private set; }
@@ -1260,8 +1263,11 @@ namespace BPSR_ZDPS
                     Name = buffTableData.Name;
                     Description = buffTableData.Desc;
                     Icon = buffTableData.GetIconName();
-                    BuffType = buffTableData.BuffType;
-                    BuffPriority = buffTableData.BuffPriority;
+                    BuffType = buffTableData.BuffType.Value;
+                    BuffPriority = buffTableData.BuffPriority.Value;
+                    BuffVisibility = buffTableData.Visible;
+                    BuffAbilityType = buffTableData.BuffAbilityType;
+                    BuffAbilitySubType = buffTableData.BuffAbilitySubType;
                 }
             }
 
@@ -1318,6 +1324,13 @@ namespace BPSR_ZDPS
                     Name = buffTableData.Name;
                     Description = buffTableData.Desc;
                     Icon = buffTableData.Icon;
+
+                    // These should have already existed from the constructor
+                    BuffType = buffTableData.BuffType.Value;
+                    BuffPriority = buffTableData.BuffPriority.Value;
+                    BuffVisibility = buffTableData.Visible;
+                    BuffAbilityType = buffTableData.BuffAbilityType;
+                    BuffAbilitySubType = buffTableData.BuffAbilitySubType;
                 }
             }
         }
