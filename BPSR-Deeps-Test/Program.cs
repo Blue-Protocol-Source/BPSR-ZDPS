@@ -1,5 +1,6 @@
 ﻿using BPSR_DeepsLib;
 using Serilog;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Zproto;
 using static Zproto.WorldNtfCsharp.Types;
@@ -15,6 +16,24 @@ class Program
             .Enrich.FromLogContext()
             .WriteTo.Console()
             .CreateLogger();
+
+        //Utils.GetTCPConnectionsForExe(["BPSR", "BPSR_STEAM"]);
+
+        for (int i = 0; i < 200; i++)
+        {
+            var sw = Stopwatch.StartNew();
+            //Process.GetProcessesByName("BPSR");
+            sw.Stop();
+            //Log.Information("GetProcessesByName took: {time}ms", sw.ElapsedMilliseconds);
+        }
+
+        for (int i = 0; i < 200; i++)
+        {
+            var sw3 = Stopwatch.StartNew();
+            //var process2 = Process.GetProcessById(106200);
+            sw3.Stop();
+            //Log.Information("GetProcessesByID took: {time}ms", sw3.ElapsedMilliseconds);
+        }
 
         try
         {

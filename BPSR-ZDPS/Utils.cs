@@ -311,6 +311,30 @@ namespace BPSR_ZDPS
             }
         }
 
+        public static string GameCapturePreferenceToName(GameCapturePreference pref)
+        {
+            var gamePrefName = pref switch
+            {
+                GameCapturePreference.Auto => "Auto",
+                GameCapturePreference.Steam => "Steam",
+                GameCapturePreference.Standalone => "Standalone",
+            };
+
+            return gamePrefName;
+        }
+
+        public static string[] GameCapturePreferenceToExeNames(GameCapturePreference pref)
+        {
+            string[] exeNameToCapture = pref switch
+            {
+                GameCapturePreference.Auto => ["BPSR", "BPSR_STEAM"],
+                GameCapturePreference.Steam => ["BPSR_STEAM"],
+                GameCapturePreference.Standalone => ["BPSR"]
+            };
+
+            return exeNameToCapture;
+        }
+
         static unsafe void SetCurrentWindowIcon(Stream IconFileStream)
         {
             using (Image<Rgba32> image = Image.Load<Rgba32>(IconFileStream))

@@ -23,6 +23,7 @@ public class Settings
     public int DatabaseRetentionPolicyDays { get; set; } = 0;
     public bool LimitEncounterBuffTrackingWithoutDatabase { get; set; } = false;
     public bool LogToFile { get; set; } = false;
+    public GameCapturePreference GameCapturePreference { get; set; } = GameCapturePreference.Auto;
 
     public uint HotkeysEncounterReset { get; set; }
 
@@ -59,4 +60,11 @@ public class Settings
         var settingsJson = JsonConvert.SerializeObject(Instance, Formatting.Indented);
         File.WriteAllText(Path.Combine(Utils.DATA_DIR_NAME, SETTINGS_FILE_NAME), settingsJson);
     }
+}
+
+public enum GameCapturePreference
+{
+    Auto,
+    Steam,
+    Standalone
 }

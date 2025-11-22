@@ -37,6 +37,7 @@ namespace BPSR_ZDPS.Windows
         static string EncounterResetKeyName = "";
 
         static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
+        static GameCapturePreference GameCapturePreference;
 
         static int RunOnceDelayed = 0;
 
@@ -66,8 +67,10 @@ namespace BPSR_ZDPS.Windows
             useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
             databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
             limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
+            GameCapturePreference = Settings.Instance.GameCapturePreference;
 
             logToFile = Settings.Instance.LogToFile;
+
 
             EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
             if (EncounterResetKey == 0)
@@ -220,6 +223,36 @@ namespace BPSR_ZDPS.Windows
 
                             ImGui.EndCombo();
                         }
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.TextUnformatted("Game Capture Preference: ");
+                        ImGui.SameLine();
+
+                        var gamePrefName = Utils.GameCapturePreferenceToName(GameCapturePreference);
+                        ImGui.SetNextItemWidth(150);
+                        if (ImGui.BeginCombo("##GameCapturePreference", gamePrefName))
+                        {
+                            if (ImGui.Selectable("Auto"))
+                            {
+                                GameCapturePreference = GameCapturePreference.Auto;
+                            }
+                            else if (ImGui.Selectable("Standalone"))
+                            {
+                                GameCapturePreference = GameCapturePreference.Standalone;
+                            }
+                            else if (ImGui.Selectable("Steam"))
+                            {
+                                GameCapturePreference = GameCapturePreference.Steam;
+                            }
+
+                            ImGui.EndCombo();
+                        }
+
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Select which game version you want ZDPS to capture from, can leave on auto to just work.\nAuto will automatically detect and use the currently running version.\nSteam and Standalone will only listen for data from their respective versions, allowing both to be run simultaneously and only report DPS for one.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
 
                         ImGui.SeparatorText("Keybinds");
 
@@ -522,7 +555,7 @@ namespace BPSR_ZDPS.Windows
 
         private static void Save(MainWindow mainWindow)
         {
-            if (SelectedNetworkDeviceIdx != PreviousSelectedNetworkDeviceIdx)
+            if (SelectedNetworkDeviceIdx != PreviousSelectedNetworkDeviceIdx || GameCapturePreference != Settings.Instance.GameCapturePreference)
             {
                 PreviousSelectedNetworkDeviceIdx = SelectedNetworkDeviceIdx;
 
@@ -530,6 +563,8 @@ namespace BPSR_ZDPS.Windows
 
                 Settings.Instance.NetCaptureDeviceName = NetworkDevices[SelectedNetworkDeviceIdx].Name;
                 MessageManager.NetCaptureDeviceName = NetworkDevices[SelectedNetworkDeviceIdx].Name;
+
+                Settings.Instance.GameCapturePreference = GameCapturePreference;
 
                 MessageManager.InitializeCapturing();
             }
