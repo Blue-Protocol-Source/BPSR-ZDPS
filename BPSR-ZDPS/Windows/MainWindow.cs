@@ -351,7 +351,7 @@ namespace BPSR_ZDPS.Windows
         public void CreateNewEncounter()
         {
             EncounterManager.StopEncounter();
-            System.Diagnostics.Debug.WriteLine($"Starting new manual encounter at {DateTime.Now}");
+            Log.Information($"Starting new manual encounter at {DateTime.Now}");
             EncounterManager.StartEncounter(true);
         }
     }

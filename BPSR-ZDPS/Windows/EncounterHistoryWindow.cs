@@ -111,7 +111,7 @@ namespace BPSR_ZDPS.Windows
                 return;
             }
 
-            ImGui.SetNextWindowSize(new Vector2(740, 675), ImGuiCond.Appearing);
+            ImGui.SetNextWindowSize(new Vector2(740, 675), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(500, 250), new Vector2(ImGui.GETFLTMAX()));
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -462,7 +462,7 @@ namespace BPSR_ZDPS.Windows
                                     totalTaken = Math.Round(((double)entity.TotalTakenDamage / (double)encounters[SelectedEncounterIndex].TotalNpcTakenDamage) * 100, 0);
                                 }
                             }
-                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(totalTaken)}%%");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(totalTaken)}%");
 
                             ImGui.TableNextColumn();
                             ImGui.TextUnformatted($"{entity.TotalDeaths}");

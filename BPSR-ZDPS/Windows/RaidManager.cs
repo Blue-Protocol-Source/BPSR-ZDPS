@@ -372,6 +372,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.SameLine();
                         ImGui.SetNextItemWidth(-1);
                         ImGui.InputInt("##SkillCastConditionSkillCooldownInt", ref SelectedSkillCooldown, 1, 1, ImGuiInputTextFlags.None);
+                        ImGui.SetItemTooltip($"Enter the cooldown time in milliseconds (ms) you want to use for this skill.\nMS = Seconds * 1000. Current entered value in seconds = {Math.Round(SelectedSkillCooldown / 1000.0f, 4)}");
 
                         ImGui.BeginDisabled(SelectedSkill == null);
                         if (ImGui.Button("Add Skill To Tracker"))

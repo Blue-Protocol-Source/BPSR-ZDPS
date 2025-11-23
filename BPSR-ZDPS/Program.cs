@@ -200,6 +200,12 @@ namespace BPSR_ZDPS
                 manager.Present(1, 0);
             }
 
+            // Save the current encounter to the database before exiting
+            if (EncounterManager.Current != null)
+            {
+                DB.InsertEncounter(EncounterManager.Current);
+            }
+
             Settings.Save();
             MessageManager.StopCapturing();
 

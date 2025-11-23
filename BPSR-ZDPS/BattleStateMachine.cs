@@ -1,4 +1,5 @@
 ﻿using BPSR_ZDPS.DataTypes;
+using Serilog;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace BPSR_ZDPS
         // Called at the start of a Map Load/Enter event before Objective and State data is set
         public static void StartNewBattle()
         {
-            System.Diagnostics.Debug.WriteLine($"{DateTime.Now} - BattleStateMachine.StartNewBattle");
+            Log.Information($"{DateTime.Now} - BattleStateMachine.StartNewBattle");
             PreviousDungeonTargetData = null;
             DeferredTime = null;
             DungeonTargetDataHistory.Clear();
@@ -32,7 +33,7 @@ namespace BPSR_ZDPS
         public static void DungeonStateHistoryAdd(EDungeonState dungeonState)
         {
             DungeonStateHistory.Enqueue(new KeyValuePair<EDungeonState, DateTime>(dungeonState, DateTime.Now));
-            System.Diagnostics.Debug.WriteLine($"{DateTime.Now} - BattleStateMachine.DungeonStateHistoryAdd: {dungeonState}");
+            Log.Information($"{DateTime.Now} - BattleStateMachine.DungeonStateHistoryAdd: {dungeonState}");
 
             if (dungeonState == EDungeonState.DungeonStateNull)
             {
@@ -76,7 +77,7 @@ namespace BPSR_ZDPS
             var newDungeonTargetData = new KeyValuePair<DungeonTargetData, DateTime>(dungeonTargetData, DateTime.Now);
 
             DungeonTargetDataHistory.Enqueue(newDungeonTargetData);
-            System.Diagnostics.Debug.WriteLine($"{DateTime.Now} - BattleStateMachine.DungeonTargetDataHistoryAdd: TargetId={dungeonTargetData.TargetId}, Complete={dungeonTargetData.Complete}, Nums={dungeonTargetData.Nums}");
+            Log.Information($"{DateTime.Now} - BattleStateMachine.DungeonTargetDataHistoryAdd: TargetId={dungeonTargetData.TargetId}, Complete={dungeonTargetData.Complete}, Nums={dungeonTargetData.Nums}");
 
             if (DungeonTargetDataHistory.Count > 2 && dungeonTargetData.Complete == 0 && dungeonTargetData.Nums == 0)
             {
@@ -87,7 +88,7 @@ namespace BPSR_ZDPS
                     if (firstObjective.Key.TargetId != 0 && PreviousDungeonTargetData.Value.Key.TargetId != 0 && PreviousDungeonTargetData.Value.Key.TargetId != firstObjective.Key.TargetId && firstObjective.Key.TargetId == dungeonTargetData.TargetId)
                     {
                         PreviousDungeonTargetData = newDungeonTargetData;
-                        System.Diagnostics.Debug.WriteLine($"{DateTime.Now} - BattleStateMachine.DungeonTargetDataHistoryAdd: RestartCheckHit!");
+                        Log.Information($"{DateTime.Now} - BattleStateMachine.DungeonTargetDataHistoryAdd: RestartCheckHit!");
                         // Our first map entry objective is the same as the newest one we were just given
                         // This is likely some form of reset such as killing one of the Raid bosses but others have not been beat yet
                         EncounterManager.StopEncounter();

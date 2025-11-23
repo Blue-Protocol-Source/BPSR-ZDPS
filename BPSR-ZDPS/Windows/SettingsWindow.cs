@@ -43,9 +43,6 @@ namespace BPSR_ZDPS.Windows
 
         static bool IsElevated = false;
 
-        static bool WindowLostVisibility = false;
-        static Vector2 WindowLastVisiblePos = new();
-
         public static void Open()
         {
             RunOnceDelayed = 0;
@@ -122,17 +119,7 @@ namespace BPSR_ZDPS.Windows
 
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(500, 350), new Vector2(ImGui.GETFLTMAX()));
-            ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
-
-            // HACK: Workaround a multi-viewport issue when a popupmodal is being moved around on a different monitor than the main window
-            // The popupmodal can sometimes just randomly disappear completely but is still considered opened and active by imgui
-            if (WindowLostVisibility)
-            {
-                WindowLostVisibility = false;
-                // The offset here is required to retrigger the window display logic
-                // Note that redisplaying the window does invalidate the handle until the new one is fully created
-                ImGui.SetNextWindowPos(WindowLastVisiblePos + new Vector2(1, 1), ImGuiCond.Always);
-            }
+            //ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
 
             ImGui.SetNextWindowSize(new Vector2(650, 650), ImGuiCond.FirstUseEver);
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -156,19 +143,6 @@ namespace BPSR_ZDPS.Windows
                 else if (RunOnceDelayed < 3)
                 {
                     RunOnceDelayed++;
-                }
-                else if (RunOnceDelayed > 2)
-                {
-                    // TODO: Rate-limit frequency of this check?
-
-                    // HACK: Workaround a multi-viewport issue when a popupmodal is being moved around on a different monitor than the main window
-                    // The popupmodal can sometimes just randomly disappear completely but is still considered opened and active by imgui
-                    if (!Utils.IsCurrentPlatformWindowVisible())
-                    {
-                        System.Diagnostics.Debug.WriteLine($"SettingsWindow recovering!");
-                        WindowLastVisiblePos = ImGui.GetWindowPos();
-                        WindowLostVisibility = true;
-                    }
                 }
 
                 ImGuiTabBarFlags tabBarFlags = ImGuiTabBarFlags.NoTabListScrollingButtons | ImGuiTabBarFlags.NoTooltip | ImGuiTabBarFlags.NoCloseWithMiddleMouseButton;
@@ -250,7 +224,7 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("Select which game version you want ZDPS to capture from, can leave on auto to just work.\nAuto will automatically detect and use the currently running version.\nSteam and Standalone will only listen for data from their respective versions, allowing both to be run simultaneously and only report DPS for one.");
+                        ImGui.TextWrapped("Select which game version you want ZDPS to capture from.\nAuto will automatically detect and use the currently running version.\nSteam and Standalone will only listen for data from their respective versions, allowing both to be run simultaneously and only report DPS for one.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
