@@ -66,6 +66,17 @@ namespace BPSR_ZDPS
                         skill = new Skill();
                         skill.Name = item.Value.Name;
                         skill.Icon = item.Value.Icon;
+                        if (item.Value.Id != 0)
+                        {
+                            skill.Id = item.Value.Id;
+                        }
+                        else
+                        {
+                            if (int.TryParse(item.Key, out int newId))
+                            {
+                                skill.Id = newId;
+                            }
+                        }
                         HelperMethods.DataTables.Skills.Data.Add(item.Key, skill);
                     }
                 }
@@ -130,6 +141,7 @@ namespace BPSR_ZDPS
                         buff.ShowHUDIcon = item.Value.ShowHUDIcon;
                         buff.BuffType = item.Value.BuffType;
                         buff.BuffPriority = item.Value.BuffPriority;
+                        buff.Id = string.IsNullOrWhiteSpace(item.Value.Id) ? item.Key : item.Value.Id;
                         HelperMethods.DataTables.Buffs.Data.Add(item.Key, buff);
                     }
                 }

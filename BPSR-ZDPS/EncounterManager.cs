@@ -24,6 +24,12 @@ namespace BPSR_ZDPS
         public static int CurrentBattleId = 0;
         public static uint LevelMapId { get; private set; }
         public static string SceneName { get; private set; }
+        public delegate void BattleStartEventHandler(EventArgs e);
+        public static event BattleStartEventHandler BattleStart;
+        public delegate void EncounterStartEventHandler(EventArgs e);
+        public static event EncounterStartEventHandler EncounterStart;
+        public delegate void EncounterEndEventHandler(EventArgs e);
+        public static event EncounterEndEventHandler EncounterEnd;
 
         static EncounterManager()
         {
@@ -70,6 +76,8 @@ namespace BPSR_ZDPS
             {
                 SetSceneId(LevelMapId);
             }
+
+            OnEncounterStart(new EventArgs());
         }
 
         public static void StopEncounter()
@@ -78,6 +86,9 @@ namespace BPSR_ZDPS
             {
                 Current.SetEndTime(DateTime.Now);
             }
+
+            OnEncounterEnd(new EventArgs());
+
             EntityCache.Instance.Save();
         }
 
@@ -106,6 +117,8 @@ namespace BPSR_ZDPS
 
             var battleId = DB.StartBattle(LevelMapId, SceneName);
             CurrentBattleId = battleId;
+
+            OnBattleStart(new EventArgs());
         }
 
         // While we technically use the 'LevelMapId' and not the 'SceneId' field, it's just another type of SceneId ultimately
@@ -131,6 +144,21 @@ namespace BPSR_ZDPS
             Current.SceneId = LevelMapId;
             Current.SceneName = SceneName;
             DB.UpdateBattleInfo(CurrentBattleId, LevelMapId, SceneName);
+        }
+
+        static void OnBattleStart(EventArgs e)
+        {
+            BattleStart?.Invoke(e);
+        }
+
+        static void OnEncounterStart(EventArgs e)
+        {
+            EncounterStart?.Invoke(e);
+        }
+
+        static void OnEncounterEnd(EventArgs e)
+        {
+            EncounterEnd?.Invoke(e);
         }
     }
 
@@ -693,7 +721,7 @@ namespace BPSR_ZDPS
             }
 
             TotalCasts++;
-            OnSkillActivated(new SkillActivatedEventArgs { SkillId = skillId, ActivationDateTime = DateTime.Now });
+            OnSkillActivated(new SkillActivatedEventArgs { CasterUuid = UUID, SkillId = skillId, ActivationDateTime = DateTime.Now });
         }
 
         protected virtual void OnSkillActivated(SkillActivatedEventArgs e)
@@ -928,6 +956,7 @@ namespace BPSR_ZDPS
 
     public class SkillActivatedEventArgs : EventArgs
     {
+        public long CasterUuid { get; set; }
         public int SkillId { get; set; }
         public DateTime ActivationDateTime { get; set; }
     }

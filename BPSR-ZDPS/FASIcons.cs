@@ -8,6 +8,7 @@ namespace BPSR_ZDPS
 {
     public static class FASIcons
     {
+        public static char XMark = '\uF00d'; // F00D
         public static char Folder = '\uF07B'; // F07B, F114, 01F4C1, 01F5BF
         public static char FolderOpen = '\uF07C'; // F07C, F115, 01F4C2, 01F5C1
         public static char File = '\uF016'; // F016, F15B, 01F4C4, 01F5CB
@@ -29,7 +30,17 @@ namespace BPSR_ZDPS
         public static char Upload = '\uF093'; // F093
         public static char FloppyDisk = '\uF0C7'; // F0C7, 01F4BE, 01F5AA
         public static char Sitemap = '\uF0E8'; // F0E8
+        public static char AnglesLeft = '\uF100'; // F100
+        public static char AnglesRight = '\uF101'; // F101
+        public static char AnglesUp = '\uF102'; // F102
+        public static char AnglesDown = '\uF103'; // F103
+        public static char AngleLeft = '\uF104'; // F104
+        public static char AngleRight = '\uF105'; // F105
+        public static char AngleUp = '\uF106'; // F106
+        public static char AngleDown = '\uF107'; // F107
+        public static char Crop = '\uF125'; // F125
         public static char ArrowRotateLeft = '\u21BA'; // 21BA, F0E2
+        public static char Database = '\uF1C0'; // F1C0
         public static char FilePDF = '\uF1C1'; // F1C1
         public static char FileWord = '\uF1C2'; // F1C2
         public static char FileExcel = '\uF1C3'; // F1C3
@@ -46,6 +57,7 @@ namespace BPSR_ZDPS
         public static char WindowMaximize = '\uF2D0'; // F2D0, 01F5D6
         public static char WindowMinimize = '\uF2D1'; // F2D1, 01F5D5
         public static char WindowRestore = '\uF2D2'; // F2D2
+        public static char SquareXMark = '\uF2D3'; // F2D3
         public static char RotateLeft = '\uF2EA'; // F2EA
         public static char Rotate = '\uF2F1'; // F2F1, 01F504
         public static char Pencil = '\u270F'; // 270F, F040, F303
@@ -132,7 +144,6 @@ namespace BPSR_ZDPS
         public static char Wifi = '\uF1EB'; // F1EB
         public static char LifeRing = '\uF1CD'; // F1CD
         public static char CircleNotch = '\uF1CE'; // F1CE
-        public static char Database = '\uF1C0'; // F1C0
         public static char Recycle = '\u2672'; // 2672, 267A, 267B, F1B8
         public static char Cubes = '\uF1B3'; // F1B3
         public static char Cube = '\uF1B2'; // F1B2
