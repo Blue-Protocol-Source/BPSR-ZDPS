@@ -1,4 +1,5 @@
-﻿using BPSR_ZDPS.DataTypes;
+﻿using BPSR_DeepsLib;
+using BPSR_ZDPS.DataTypes;
 using Newtonsoft.Json;
 using ProtoBuf;
 using System;
@@ -373,9 +374,9 @@ namespace BPSR_ZDPS
         public void AddDamage(
             long attackerUuid, long targetUuid, int skillId, long damage, long hpLessen,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
-            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, ExtraPacketData extraPacketData)
         {
-            LastUpdate = DateTime.Now;
+            LastUpdate = extraPacketData.ArrivalTime;
 
             var attackerType = (EEntityType)Utils.UuidToEntityType(attackerUuid);
             var targetType = (EEntityType)Utils.UuidToEntityType(targetUuid);
@@ -397,15 +398,15 @@ namespace BPSR_ZDPS
                 }
             }
 
-            GetOrCreateEntity(attackerUuid).AddDamage(targetUuid, skillId, damage, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
+            GetOrCreateEntity(attackerUuid).AddDamage(targetUuid, skillId, damage, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraPacketData);
         }
 
         public void AddHealing(
             long attackerUuid, long targetUuid, int skillId, long damage, long hpLessen,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
-            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, ExtraPacketData extraPacketData)
         {
-            LastUpdate = DateTime.Now;
+            LastUpdate = extraPacketData.ArrivalTime;
 
             var attackerType = (EEntityType)Utils.UuidToEntityType(attackerUuid);
 
@@ -441,15 +442,15 @@ namespace BPSR_ZDPS
                 TotalOverhealing += (ulong)overhealing;
             }
             
-            entity.AddHealing(targetUuid, skillId, damage, overhealing, effectiveHealing, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
+            entity.AddHealing(targetUuid, skillId, damage, overhealing, effectiveHealing, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraPacketData);
         }
 
         public void AddTakenDamage(
             long attackerUuid, long targetUuid, int skillId, long damage, long hpLessen,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
-            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, ExtraPacketData extraPacketData)
         {
-            LastUpdate = DateTime.Now;
+            LastUpdate = extraPacketData.ArrivalTime;
 
             var targetType = (EEntityType)Utils.UuidToEntityType(targetUuid);
             if (targetType == EEntityType.EntMonster)
@@ -461,7 +462,7 @@ namespace BPSR_ZDPS
                 TotalTakenDamage += (ulong)damage;
             }
 
-            GetOrCreateEntity(targetUuid).AddTakenDamage(attackerUuid, skillId, damage, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
+            GetOrCreateEntity(targetUuid).AddTakenDamage(attackerUuid, skillId, damage, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraPacketData);
         }
 
         public void AddShieldGained(long entityUuid, long shieldBuffUuid, long value, long initialValue, long maxValue = 0)
@@ -470,7 +471,7 @@ namespace BPSR_ZDPS
             //GetOrCreateEntity(entityUuid).AddBuffEventAttribute(shieldBuffUuid, "AttrShieldList", 0);
         }
 
-        public void NotifyBuffEvent(long entityUuid, EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, int layer, int duration, int sourceConfigId)
+        public void NotifyBuffEvent(long entityUuid, EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, int layer, int duration, int sourceConfigId, ExtraPacketData extraPacketData)
         {
             string entityCasterName = "";
             if (fireUuid > 0)
@@ -730,7 +731,7 @@ namespace BPSR_ZDPS
             SkillActivated?.Invoke(this, e);
         }
 
-        public void RegisterSkillData(ESkillType skillType, int skillId, long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead = false)
+        public void RegisterSkillData(ESkillType skillType, int skillId, long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, ExtraPacketData extraPacketData)
         {
             if (!SkillStats.TryGetValue(skillId, out var stats))
             {
@@ -743,19 +744,19 @@ namespace BPSR_ZDPS
                     combatStats.SetName(skill.Name);
                 }
 
-                combatStats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky, damageElement, damageType, damageMode, isDead);
+                combatStats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky, damageElement, damageType, damageMode, isDead, extraPacketData);
                 SkillStats.TryAdd(skillId, combatStats);
             }
             else
             {
                 stats.SetSkillType(skillType);
-                stats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky, damageElement, damageType, damageMode, isDead);
+                stats.AddData(value, isCrit, isLucky, hpLessenValue, isCauseLucky, damageElement, damageType, damageMode, isDead, extraPacketData);
             }
         }
 
         public void AddDamage(long targetUuid, int skillId, long damage, long hpLessen,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
-            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, ExtraPacketData extraPacketData)
         {
             TotalDamage += (ulong)damage;
 
@@ -764,9 +765,9 @@ namespace BPSR_ZDPS
                 TotalShieldBreak += (ulong)damage;
             }
 
-            DamageStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode);
+            DamageStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead, extraPacketData);
 
-            RegisterSkillData(ESkillType.Damage, skillId, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode);
+            RegisterSkillData(ESkillType.Damage, skillId, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead, extraPacketData);
 
             // Always attempt to update the sub profession data as they may have changed classes or not been detected properly yet
             var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
@@ -779,13 +780,13 @@ namespace BPSR_ZDPS
         public void AddHealing(
             long targetUuid, int skillId, long damage, long overhealing, long effectiveHealing, long hpLessen,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
-            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, ExtraPacketData extraPacketData)
         {
             TotalHealing += (ulong)damage;
             TotalOverhealing += (ulong)overhealing;
-            HealingStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode);
+            HealingStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead, extraPacketData);
 
-            RegisterSkillData(ESkillType.Healing, skillId, damage, isCrit, isLucky, overhealing, isCauseLucky, damageElement, damageType, damageMode);
+            RegisterSkillData(ESkillType.Healing, skillId, damage, isCrit, isLucky, overhealing, isCauseLucky, damageElement, damageType, damageMode, isDead, extraPacketData);
 
             // Always attempt to update the sub profession data as they may have changed classes or not been detected properly yet
             var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
@@ -798,11 +799,11 @@ namespace BPSR_ZDPS
         public void AddTakenDamage(
             long attackerUuid, int skillId, long damage, long hpLessen,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
-            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead)
+            bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, ExtraPacketData extraPacketData)
         {
             TotalTakenDamage += (ulong)damage;
-            TakenStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead);
-            RegisterSkillData(ESkillType.Taken, skillId, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead);
+            TakenStats.AddData(damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead, extraPacketData);
+            RegisterSkillData(ESkillType.Taken, skillId, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead, extraPacketData);
         }
 
         public void NotifyBuffEvent(EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId, TimeSpan encounterTime)
@@ -1061,9 +1062,9 @@ namespace BPSR_ZDPS
             ValueLuckyTotal += (ulong)value;
         }
 
-        public void AddData(long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead = false)
+        public void AddData(long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, ExtraPacketData extraPacketData)
         {
-            DateTime now = DateTime.Now;
+            DateTime now = extraPacketData.ArrivalTime;
             StartTime ??= now;
             EndTime = now;
 

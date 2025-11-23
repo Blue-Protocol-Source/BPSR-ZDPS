@@ -397,14 +397,14 @@ namespace BPSR_ZDPS
                         if (matchInfo.Any())
                         {
                             var buffInfo = matchInfo.First();
-                            EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId);
+                            EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId, extraData);
                         }
                     }
                     else
                     {
                         // Most commonly appears to include EBuffEventType.BuffEventRemove, EBuffEventType.BuffEventAddTo, EBuffEventType.BuffEventRemoveLayer
 
-                        EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, 0, 0, 0);
+                        EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, 0, 0, 0, extraData);
                     }
                 }
             }
@@ -506,13 +506,13 @@ namespace BPSR_ZDPS
 
                 if (isHeal)
                 {
-                    EncounterManager.Current.AddHealing((isAttackerPlayer ? attackerUuid : 0), targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
+                    EncounterManager.Current.AddHealing((isAttackerPlayer ? attackerUuid : 0), targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraData);
                 }
                 else
                 {
-                    EncounterManager.Current.AddDamage(attackerUuid, targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
+                    EncounterManager.Current.AddDamage(attackerUuid, targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraData);
 
-                    EncounterManager.Current.AddTakenDamage(attackerUuid, targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead);
+                    EncounterManager.Current.AddTakenDamage(attackerUuid, targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraData);
                 }
             }
         }
