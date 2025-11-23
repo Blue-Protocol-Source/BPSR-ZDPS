@@ -37,7 +37,7 @@ public class TcpReassembler
             return;
         }
 
-        conn.AddPacket(tcpPacket);
+        conn.AddPacket(tcpPacket, timeval);
         RemoveTimedOutConnections();
     }
 
@@ -109,7 +109,7 @@ public class TcpReassembler
         public TcpReassembler Owner = owner;
         public DateTime LastPacketTime;
 
-        public void AddPacket(TcpPacket tcpPacket)
+        public void AddPacket(TcpPacket tcpPacket, PosixTimeval timeVal)
         
         {
             if (!IsSynced)
@@ -157,7 +157,7 @@ public class TcpReassembler
             if (NextExpectedSeq == null)
                 NextExpectedSeq = tcpPacket.SequenceNumber;
 
-            var fragment = new PacketFragment(tcpPacket.SequenceNumber, tcpPacket.PayloadData);
+            var fragment = new PacketFragment(tcpPacket.SequenceNumber, tcpPacket.PayloadData, timeVal.Date);
             Packets.TryAdd(tcpPacket.SequenceNumber, fragment);
             NumPacketsSeen++;
             LastPacketAt = DateTime.Now;
@@ -203,9 +203,9 @@ public class TcpReassembler
     }
 }
 
-public class PacketFragment(uint seqNum, byte[] data)
+public class PacketFragment(uint seqNum, byte[] data, DateTime arrivalTime)
 {
     public uint SequenceNumber = seqNum;
     public byte[] PayloadData = data;
-    public DateTime ArriveTime = DateTime.Now;
+    public DateTime ArriveTime = arrivalTime;
 }
