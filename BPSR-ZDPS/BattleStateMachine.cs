@@ -76,7 +76,7 @@ namespace BPSR_ZDPS
             var newDungeonTargetData = new KeyValuePair<DungeonTargetData, DateTime>(dungeonTargetData, DateTime.Now);
 
             DungeonTargetDataHistory.Enqueue(newDungeonTargetData);
-            System.Diagnostics.Debug.WriteLine($"{DateTime.Now} - BattleStateMachine.DungeonTargetDataHistoryAdd: {dungeonTargetData}");
+            System.Diagnostics.Debug.WriteLine($"{DateTime.Now} - BattleStateMachine.DungeonTargetDataHistoryAdd: TargetId={dungeonTargetData.TargetId}, Complete={dungeonTargetData.Complete}, Nums={dungeonTargetData.Nums}");
 
             if (DungeonTargetDataHistory.Count > 2 && dungeonTargetData.Complete == 0 && dungeonTargetData.Nums == 0)
             {

@@ -42,12 +42,13 @@ namespace BPSR_ZDPS
         {
             if (Current != null)
             {
-                if (force || (Current.EndTime == DateTime.MinValue && Current.HasStatsBeenRecorded()))
+                bool hasStatsBeenRecorded = Current.HasStatsBeenRecorded();
+                if (force || (Current.EndTime == DateTime.MinValue && hasStatsBeenRecorded))
                 {
                     // We called StartEncounter without first stopping the current one
                     StopEncounter();
                 }
-                else
+                else if (Current.EndTime == DateTime.MinValue && !hasStatsBeenRecorded)
                 {
                     // Nothing has actually happened in this encounter, so let's just reset the time and reuse it
                     Current.SetStartTime(DateTime.Now);

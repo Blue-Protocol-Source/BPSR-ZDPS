@@ -269,7 +269,7 @@ namespace BPSR_ZDPS
         {
             BattleStateMachine.CheckDeferredCalls();
 
-            Log.Information($"ProcessSyncNearEntities: Meesage arrival time: {extraData.ArrivalTime}. Diff to DateTime now: {DateTime.Now - extraData.ArrivalTime}");
+            //Log.Information($"ProcessSyncNearEntities: Meesage arrival time: {extraData.ArrivalTime}. Diff to DateTime now: {DateTime.Now - extraData.ArrivalTime}");
 
             var syncNearEntities = SyncNearEntities.Parser.ParseFrom(payloadBuffer);
             if (syncNearEntities.Appear == null || syncNearEntities.Appear.Count == 0)
@@ -338,11 +338,11 @@ namespace BPSR_ZDPS
 
             foreach (var aoiSyncDelta in syncNearDeltaInfo.DeltaInfos)
             {
-                ProcessAoiSyncDelta(aoiSyncDelta);
+                ProcessAoiSyncDelta(aoiSyncDelta, extraData);
             }
         }
 
-        public static void ProcessAoiSyncDelta(AoiSyncDelta delta)
+        public static void ProcessAoiSyncDelta(AoiSyncDelta delta, ExtraPacketData extraData)
         {
             BattleStateMachine.CheckDeferredCalls();
 
@@ -537,7 +537,7 @@ namespace BPSR_ZDPS
             {
                 return;
             }
-            ProcessAoiSyncDelta(aoiSyncDelta);
+            ProcessAoiSyncDelta(aoiSyncDelta, extraData);
         }
 
         public static void ProcessSyncContainerData(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)

@@ -23,7 +23,7 @@ namespace BPSR_ZDPS.Windows
         static Vector2 MenuBarSize;
         static bool HasInitBindings = false;
 
-        static Dictionary<long, List<TrackedSkill>> TrackedEntities = new();
+        static OrderedDictionary<long, List<TrackedSkill>> TrackedEntities = new();
         static Dictionary<long, TrackedSkill> TrackedSkills = new();
 
         static string EntityNameFilter = "";
@@ -113,6 +113,11 @@ namespace BPSR_ZDPS.Windows
                 {
                     ImGui.PopStyleVar();
                     int trackedEntityIdx = 0;
+
+                    long delayMoveKeySelection = -1;
+                    int delayMoveIdxTarget = -1;
+                    int delayMoveDirection = -1; // 0 = Up, 1 = Down, 2 = Remove
+
                     foreach (var trackedEntity in TrackedEntities)
                     {
                         ImGui.Text($"{trackedEntityIdx + 1}.");
@@ -126,7 +131,9 @@ namespace BPSR_ZDPS.Windows
                         ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                         if (ImGui.Button($"{FASIcons.ChevronUp}##MoveUpBtn_{trackedEntityIdx}"))
                         {
-
+                            delayMoveKeySelection = trackedEntity.Key;
+                            delayMoveIdxTarget = trackedEntityIdx - 1;
+                            delayMoveDirection = 0;
                         }
                         ImGui.PopFont();
                         ImGui.EndDisabled();
@@ -136,7 +143,9 @@ namespace BPSR_ZDPS.Windows
                         ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                         if (ImGui.Button($"{FASIcons.ChevronDown}##MoveDownBtn_{trackedEntityIdx}"))
                         {
-
+                            delayMoveKeySelection = trackedEntity.Key;
+                            delayMoveIdxTarget = trackedEntityIdx + 1;
+                            delayMoveDirection = 1;
                         }
                         ImGui.PopFont();
                         ImGui.EndDisabled();
@@ -146,6 +155,8 @@ namespace BPSR_ZDPS.Windows
                         ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                         if (ImGui.Button($"{FASIcons.Minus}##RemoveBtn_{trackedEntityIdx}"))
                         {
+                            delayMoveKeySelection = trackedEntity.Key;
+                            delayMoveDirection = 2;
 
                         }
                         ImGui.PopFont();
@@ -183,6 +194,26 @@ namespace BPSR_ZDPS.Windows
 
                         trackedEntityIdx++;
                     }
+
+                    if (delayMoveKeySelection > -1)
+                    {
+                        if (delayMoveDirection == 0 || delayMoveDirection == 1)
+                        {
+                            var item = TrackedEntities[delayMoveKeySelection];
+
+                            TrackedEntities.Remove(delayMoveKeySelection);
+
+                            TrackedEntities.Insert(delayMoveIdxTarget, delayMoveKeySelection, item);
+                        }
+                        else if (delayMoveDirection == 2)
+                        {
+                            TrackedEntities.Remove(delayMoveKeySelection);
+                        }
+                    }
+
+                    delayMoveKeySelection = -1;
+                    delayMoveIdxTarget = -1;
+                    delayMoveDirection = -1;
 
                     ImGui.EndListBox();
                 }
