@@ -224,7 +224,7 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("Select which game version you want ZDPS to capture from.\nAuto will automatically detect and use the currently running version.\nSteam and Standalone will only listen for data from their respective versions, allowing both to be run simultaneously and only report DPS for one.");
+                        ImGui.TextWrapped("Select which game version you want ZDPS to capture from.\nAuto will automatically detect and use the currently running version. Two simultaneous clients will cause data problems while on Auto.\nSteam and Standalone will only listen for data from their respective versions, allowing both to be run simultaneously and only report DPS for one.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
