@@ -14,6 +14,7 @@ namespace BPSR_ZDPS.Windows
     {
         public const string LAYER = "RaidManagerWindowLayer";
         public static string TITLE_ID = "###RaidManagerWindow";
+        public static string TITLE = "Cooldown Priority Tracker";
         public static bool IsOpened = false;
         public static bool IsTopMost = false;
         public static bool CollapseToContentOnly = false;
@@ -83,7 +84,7 @@ namespace BPSR_ZDPS.Windows
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
-            if (ImGui.Begin($"Raid Manager{TITLE_ID}", ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoDocking))
+            if (ImGui.Begin($"{TITLE}{TITLE_ID}", ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoDocking))
             {
                 if (RunOnceDelayed == 0)
                 {
@@ -98,7 +99,6 @@ namespace BPSR_ZDPS.Windows
 
                 DrawMenuBar();
 
-                ImGui.Text("Cooldown Priority Tracker");
                 // Select a list of entities to track their casts
                 // When they cast a specific skill, begin tracking the cooldown time for it
                 // Indicate they are on cooldown and have the next entity in priority ready to go
@@ -396,7 +396,7 @@ namespace BPSR_ZDPS.Windows
             {
                 MenuBarSize = ImGui.GetWindowSize();
 
-                ImGui.Text("Raid Manager");
+                ImGui.Text($"Raid Manager - {TITLE}");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 3));
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());

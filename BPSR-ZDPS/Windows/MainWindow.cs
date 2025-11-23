@@ -267,6 +267,16 @@ namespace BPSR_ZDPS.Windows
                     }
                     ImGui.SetItemTooltip("Manage the ZDatabase.db contents");
 
+                    if (ImGui.BeginMenu("Raid Manager"))
+                    {
+                        if (ImGui.MenuItem("Cooldown Priority Tracker"))
+                        {
+                            RaidManager.Open();
+                        }
+
+                        ImGui.EndMenu();
+                    }
+
                     ImGui.Separator();
                     if (ImGui.MenuItem("Settings"))
                     {
@@ -282,10 +292,6 @@ namespace BPSR_ZDPS.Windows
                         if (ImGui.MenuItem("Dungeon Tracker"))
                         {
                             DebugDungeonTracker.Open();
-                        }
-                        if (ImGui.MenuItem("Raid Manager"))
-                        {
-                            RaidManager.Open();
                         }
                         ImGui.EndMenu();
                     }
