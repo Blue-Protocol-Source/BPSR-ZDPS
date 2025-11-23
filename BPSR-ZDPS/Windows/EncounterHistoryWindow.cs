@@ -187,13 +187,13 @@ namespace BPSR_ZDPS.Windows
                 if (SelectedViewMode == 0)
                 {
                     encounters = Encounters;
-                    ImGui.Text($"Encounters: {encounters.Count - 1}");
+                    ImGui.Text($"Encounters: {encounters.Count}");
                 }
                 else
                 {
                     encounters = GroupedBattles;
                     // We subtract 2 because the current encounter is also in here
-                    ImGui.Text($"Battles: {Battles.Count - 1}");
+                    ImGui.Text($"Battles: {Battles.Count}");
                 }
 
                 string[] OrderByOptions = { "Order By Damage", "Order By Healing", "Order By Taken" };
