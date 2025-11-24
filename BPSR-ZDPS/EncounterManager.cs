@@ -31,6 +31,8 @@ namespace BPSR_ZDPS
         public static event EncounterStartEventHandler EncounterStart;
         public delegate void EncounterEndEventHandler(EventArgs e);
         public static event EncounterEndEventHandler EncounterEnd;
+        public delegate void EncounterEndFinalEventHandler(EncounterEndFinalData e);
+        public static event EncounterEndFinalEventHandler EncounterEndFinal;
 
         static EncounterManager()
         {
@@ -47,7 +49,7 @@ namespace BPSR_ZDPS
                 if (force || (Current.EndTime == DateTime.MinValue && hasStatsBeenRecorded))
                 {
                     // We called StartEncounter without first stopping the current one
-                    StopEncounter();
+                    StopEncounter(true);
                 }
                 else if (Current.EndTime == DateTime.MinValue && !hasStatsBeenRecorded)
                 {
@@ -82,7 +84,7 @@ namespace BPSR_ZDPS
             OnEncounterStart(new EventArgs());
         }
 
-        public static void StopEncounter()
+        public static void StopEncounter(bool isKnownFinal = false)
         {
             if (Current != null && Current.EndTime == DateTime.MinValue)
             {
@@ -91,7 +93,21 @@ namespace BPSR_ZDPS
 
             OnEncounterEnd(new EventArgs());
 
+            if (isKnownFinal)
+            {
+                BattleStateMachine.SetDeferredEncounterEndFinalData(DateTime.Now, new EncounterEndFinalData() { EncounterId = Current.EncounterId, BattleId = Current.BattleId });
+            }
+            else
+            {
+                BattleStateMachine.SetDeferredEncounterEndFinalData(DateTime.Now.AddSeconds(5), new EncounterEndFinalData() { EncounterId = Current.EncounterId, BattleId = Current.BattleId });
+            }
+
             EntityCache.Instance.Save();
+        }
+
+        public static void SignalEncounterEndFinal(EncounterEndFinalData data)
+        {
+            OnEncounterEndFinal(data);
         }
 
         public static void UpdateEncounterState()
@@ -161,6 +177,11 @@ namespace BPSR_ZDPS
         static void OnEncounterEnd(EventArgs e)
         {
             EncounterEnd?.Invoke(e);
+        }
+
+        static void OnEncounterEndFinal(EncounterEndFinalData e)
+        {
+            EncounterEndFinal?.Invoke(e);
         }
     }
 

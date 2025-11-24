@@ -14,7 +14,9 @@ namespace BPSR_ZDPS
     {
         public static ConcurrentQueue<KeyValuePair<EDungeonState, DateTime>> DungeonStateHistory { get; private set; } = new();
         public static ConcurrentQueue<KeyValuePair<DungeonTargetData, DateTime>> DungeonTargetDataHistory { get; private set; } = new();
-        public static DateTime? DeferredTime { get; private set; } = null;
+        public static DateTime? DeferredEncounterStartTime { get; private set; } = null;
+        public static DateTime? DeferredEncounterEndFinalTime { get; private set; } = null;
+        public static EncounterEndFinalData? DeferredEncounterEndFinalData { get; private set; } = null;
         static KeyValuePair<DungeonTargetData, DateTime>? PreviousDungeonTargetData = null;
 
         // Called at the start of a Map Load/Enter event before Objective and State data is set
@@ -22,7 +24,9 @@ namespace BPSR_ZDPS
         {
             Log.Information($"{DateTime.Now} - BattleStateMachine.StartNewBattle");
             PreviousDungeonTargetData = null;
-            DeferredTime = null;
+            DeferredEncounterStartTime = null;
+            DeferredEncounterEndFinalTime = null;
+            DeferredEncounterEndFinalData = null;
             DungeonTargetDataHistory.Clear();
             DungeonStateHistory.Clear();
 
@@ -58,7 +62,7 @@ namespace BPSR_ZDPS
             else if (dungeonState == EDungeonState.DungeonStateEnd)
             {
                 // End encounter (this is when a dungeon's timer typically stops ticking)
-                EncounterManager.StopEncounter();
+                EncounterManager.StopEncounter(true);
                 // Do not have to worry about Settlement or Vote state as they can only occur after End
             }
 
@@ -119,7 +123,7 @@ namespace BPSR_ZDPS
                     // New objective set
 
                     // TODO: If this was set within a very short time after Complete, delay the start creation to allow resolving effects against despawning enemies properly
-                    DeferredTime = DateTime.Now.AddSeconds(1);
+                    DeferredEncounterStartTime = DateTime.Now.AddSeconds(1);
                     //Task.Run(() => { Thread.Sleep(1000); EncounterManager.StartEncounter(); });
                     //EncounterManager.StartEncounter();
                 }
@@ -133,14 +137,35 @@ namespace BPSR_ZDPS
             }
         }
 
+        public static void SetDeferredEncounterEndFinalData(DateTime dateTime, EncounterEndFinalData data)
+        {
+            DeferredEncounterEndFinalTime = dateTime;
+            DeferredEncounterEndFinalData = data;
+        }
+
         public static void CheckDeferredCalls()
         {
-            if (DeferredTime.HasValue && DateTime.Now.CompareTo(DeferredTime) >= 0)
+            if (DeferredEncounterStartTime.HasValue && DateTime.Now.CompareTo(DeferredEncounterStartTime) >= 0)
             {
-                DeferredTime = null;
+                DeferredEncounterStartTime = null;
 
                 EncounterManager.StartEncounter();
             }
+
+            if (DeferredEncounterEndFinalTime.HasValue && DateTime.Now.CompareTo(DeferredEncounterEndFinalTime) >= 0)
+            {
+                DeferredEncounterEndFinalTime = null;
+
+                EncounterManager.SignalEncounterEndFinal(DeferredEncounterEndFinalData);
+
+                DeferredEncounterEndFinalData = null;
+            }
         }
+    }
+
+    public class EncounterEndFinalData
+    {
+        public ulong EncounterId;
+        public int BattleId;
     }
 }
