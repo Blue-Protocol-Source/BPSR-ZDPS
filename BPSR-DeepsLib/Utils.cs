@@ -18,19 +18,12 @@ public class Utils
             if (ProcessCache.TryGetValue(filename, out var processCache))
             {
                 // Check that it is sill running
-                try
+                if (Kernel32.IsProcessAlive(processCache.ProcessId))
                 {
-                    if (Process.GetProcessById(processCache.ProcessId).ProcessName == processCache.ProcessName)
-                    {
-                        pids.Add(processCache.ProcessId);
-                        continue;
-                    }
-                    else
-                    {
-                        ProcessCache.Remove(filename);
-                    }
+                    pids.Add(processCache.ProcessId);
+                    continue;
                 }
-                catch (Exception)
+                else
                 {
                     ProcessCache.Remove(filename);
                 }
