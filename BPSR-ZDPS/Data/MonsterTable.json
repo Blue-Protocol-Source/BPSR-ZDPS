@@ -48030,7 +48030,7 @@
   },
   "8077": {
     "Id": 8077,
-    "Name": "Void Spawnerer",
+    "Name": "Void Spawner",
     "ModelID": 465056,
     "MonsterType": 0,
     "BloodTubeCount": 1,
@@ -48137,7 +48137,7 @@
   },
   "8078": {
     "Id": 8078,
-    "Name": "Void Spawnerer",
+    "Name": "Void Spawner",
     "ModelID": 465057,
     "MonsterType": 0,
     "BloodTubeCount": 1,
@@ -48242,7 +48242,7 @@
   },
   "8079": {
     "Id": 8079,
-    "Name": "Void Spawnerer",
+    "Name": "Void Spawner",
     "ModelID": 465058,
     "MonsterType": 0,
     "BloodTubeCount": 1,
@@ -48347,7 +48347,7 @@
   },
   "8080": {
     "Id": 8080,
-    "Name": "Grace (Void Spawnerer)",
+    "Name": "Grace (Void Spawner)",
     "ModelID": 465055,
     "MonsterType": 1,
     "BloodTubeCount": 1,
