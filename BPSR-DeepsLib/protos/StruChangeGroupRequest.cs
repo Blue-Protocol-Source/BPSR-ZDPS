@@ -24,9 +24,9 @@ namespace Zproto {
     static StruChangeGroupRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2NoYW5nZV9ncm91cF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iOwoS",
-            "Q2hhbmdlR3JvdXBSZXF1ZXN0Eg4KBmNoYXJJZBgCIAEoAxIVCg10YXJnZXRH",
-            "cm91cElkGAMgASgFYgZwcm90bzM="));
+            "Ch9zdHJ1X2NoYW5nZV9ncm91cF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iPgoS",
+            "Q2hhbmdlR3JvdXBSZXF1ZXN0Eg8KB2NoYXJfaWQYAiABKAMSFwoPdGFyZ2V0",
+            "X2dyb3VwX2lkGAMgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ChangeGroupRequest(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetGroupId" field.</summary>
+    /// <summary>Field number for the "target_group_id" field.</summary>
     public const int TargetGroupIdFieldNumber = 3;
     private int targetGroupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

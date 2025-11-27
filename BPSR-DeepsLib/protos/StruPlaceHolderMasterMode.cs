@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3BsYWNlX2hvbGRlcl9tYXN0ZXJfbW9kZS5wcm90bxIGenByb3Rv",
-            "GihzdHJ1X21hc3Rlcl9tb2RlX2RpZmZfZHVuZ2Vvbl9pbmZvLnByb3RvIuAB",
-            "ChVQbGFjZUhvbGRlck1hc3Rlck1vZGUSSQoObWFzdGVyTW9kZUluZm8YASAD",
-            "KAsyMS56cHJvdG8uUGxhY2VIb2xkZXJNYXN0ZXJNb2RlLk1hc3Rlck1vZGVJ",
-            "bmZvRW50cnkSEAoIdXNlck5hbWUYAiABKAkSEAoIc2Vhc29uSWQYAyABKAUa",
-            "WAoTTWFzdGVyTW9kZUluZm9FbnRyeRILCgNrZXkYASABKAUSMAoFdmFsdWUY",
-            "AiABKAsyIS56cHJvdG8uTWFzdGVyTW9kZURpZmZEdW5nZW9uSW5mbzoCOAFi",
-            "BnByb3RvMw=="));
+            "GihzdHJ1X21hc3Rlcl9tb2RlX2RpZmZfZHVuZ2Vvbl9pbmZvLnByb3RvIuQB",
+            "ChVQbGFjZUhvbGRlck1hc3Rlck1vZGUSSwoQbWFzdGVyX21vZGVfaW5mbxgB",
+            "IAMoCzIxLnpwcm90by5QbGFjZUhvbGRlck1hc3Rlck1vZGUuTWFzdGVyTW9k",
+            "ZUluZm9FbnRyeRIRCgl1c2VyX25hbWUYAiABKAkSEQoJc2Vhc29uX2lkGAMg",
+            "ASgFGlgKE01hc3Rlck1vZGVJbmZvRW50cnkSCwoDa2V5GAEgASgFEjAKBXZh",
+            "bHVlGAIgASgLMiEuenByb3RvLk1hc3Rlck1vZGVEaWZmRHVuZ2VvbkluZm86",
+            "AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMasterModeDiffDungeonInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new PlaceHolderMasterMode(this);
     }
 
-    /// <summary>Field number for the "masterModeInfo" field.</summary>
+    /// <summary>Field number for the "master_mode_info" field.</summary>
     public const int MasterModeInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.MasterModeDiffDungeonInfo>.Codec _map_masterModeInfo_codec
         = new pbc::MapField<int, global::Zproto.MasterModeDiffDungeonInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MasterModeDiffDungeonInfo.Parser), 10);
@@ -100,7 +100,7 @@ namespace Zproto {
       get { return masterModeInfo_; }
     }
 
-    /// <summary>Field number for the "userName" field.</summary>
+    /// <summary>Field number for the "user_name" field.</summary>
     public const int UserNameFieldNumber = 2;
     private string userName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "seasonId" field.</summary>
+    /// <summary>Field number for the "season_id" field.</summary>
     public const int SeasonIdFieldNumber = 3;
     private int seasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

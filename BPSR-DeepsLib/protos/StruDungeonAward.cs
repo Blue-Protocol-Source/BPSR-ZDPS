@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2R1bmdlb25fYXdhcmQucHJvdG8SBnpwcm90bxoPc3RydV9pdGVt",
-            "LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8itgEKDER1bmdlb25Bd2Fy",
+            "LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iuQEKDER1bmdlb25Bd2Fy",
             "ZBIuCgVpdGVtcxgBIAMoCzIfLnpwcm90by5EdW5nZW9uQXdhcmQuSXRlbXNF",
-            "bnRyeRISCgpmbGFnQXNzaXN0GAIgASgFEhIKCmF3YXJkQ291bnQYAyABKAUS",
-            "EgoKZmlyc3RJdGVtcxgEIAMoAxo6CgpJdGVtc0VudHJ5EgsKA2tleRgBIAEo",
-            "AxIbCgV2YWx1ZRgCIAEoCzIMLnpwcm90by5JdGVtOgI4AWIGcHJvdG8z"));
+            "bnRyeRITCgtmbGFnX2Fzc2lzdBgCIAEoBRITCgthd2FyZF9jb3VudBgDIAEo",
+            "BRITCgtmaXJzdF9pdGVtcxgEIAMoAxo6CgpJdGVtc0VudHJ5EgsKA2tleRgB",
+            "IAEoAxIbCgV2YWx1ZRgCIAEoCzIMLnpwcm90by5JdGVtOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "flagAssist" field.</summary>
+    /// <summary>Field number for the "flag_assist" field.</summary>
     public const int FlagAssistFieldNumber = 2;
     private int flagAssist_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "awardCount" field.</summary>
+    /// <summary>Field number for the "award_count" field.</summary>
     public const int AwardCountFieldNumber = 3;
     private int awardCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "firstItems" field.</summary>
+    /// <summary>Field number for the "first_items" field.</summary>
     public const int FirstItemsFieldNumber = 4;
     private static readonly pb::FieldCodec<long> _repeated_firstItems_codec
         = pb::FieldCodec.ForInt64(34);

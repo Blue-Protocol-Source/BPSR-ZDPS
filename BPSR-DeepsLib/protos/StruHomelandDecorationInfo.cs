@@ -26,13 +26,13 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X2hvbWVsYW5kX2RlY29yYXRpb25faW5mby5wcm90bxIGenByb3Rv",
             "GiJzdHJ1X2hvbWVsYW5kX2xhbXBsaWdodF9pbmZvLnByb3RvGiFzdHJ1X2hv",
-            "bWVsYW5kX21hdGVyaWFsX2luZm8ucHJvdG8i7AEKFkhvbWVsYW5kRGVjb3Jh",
-            "dGlvbkluZm8SNAoNbGFtcGxpZ2h0SW5mbxgBIAEoCzIdLnpwcm90by5Ib21l",
-            "bGFuZExhbXBsaWdodEluZm8SSAoNbWF0ZXJpYWxJbmZvcxgCIAMoCzIxLnpw",
-            "cm90by5Ib21lbGFuZERlY29yYXRpb25JbmZvLk1hdGVyaWFsSW5mb3NFbnRy",
-            "eRpSChJNYXRlcmlhbEluZm9zRW50cnkSCwoDa2V5GAEgASgFEisKBXZhbHVl",
-            "GAIgASgLMhwuenByb3RvLkhvbWVsYW5kTWF0ZXJpYWxJbmZvOgI4AWIGcHJv",
-            "dG8z"));
+            "bWVsYW5kX21hdGVyaWFsX2luZm8ucHJvdG8i7gEKFkhvbWVsYW5kRGVjb3Jh",
+            "dGlvbkluZm8SNQoObGFtcGxpZ2h0X2luZm8YASABKAsyHS56cHJvdG8uSG9t",
+            "ZWxhbmRMYW1wbGlnaHRJbmZvEkkKDm1hdGVyaWFsX2luZm9zGAIgAygLMjEu",
+            "enByb3RvLkhvbWVsYW5kRGVjb3JhdGlvbkluZm8uTWF0ZXJpYWxJbmZvc0Vu",
+            "dHJ5GlIKEk1hdGVyaWFsSW5mb3NFbnRyeRILCgNrZXkYASABKAUSKwoFdmFs",
+            "dWUYAiABKAsyHC56cHJvdG8uSG9tZWxhbmRNYXRlcmlhbEluZm86AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomelandLamplightInfoReflection.Descriptor, global::Zproto.StruHomelandMaterialInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new HomelandDecorationInfo(this);
     }
 
-    /// <summary>Field number for the "lamplightInfo" field.</summary>
+    /// <summary>Field number for the "lamplight_info" field.</summary>
     public const int LamplightInfoFieldNumber = 1;
     private global::Zproto.HomelandLamplightInfo lamplightInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "materialInfos" field.</summary>
+    /// <summary>Field number for the "material_infos" field.</summary>
     public const int MaterialInfosFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.HomelandMaterialInfo>.Codec _map_materialInfos_codec
         = new pbc::MapField<int, global::Zproto.HomelandMaterialInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HomelandMaterialInfo.Parser), 18);

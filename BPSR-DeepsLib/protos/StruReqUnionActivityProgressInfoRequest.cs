@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjNzdHJ1X3JlcV91bmlvbl9hY3Rpdml0eV9wcm9ncmVzc19pbmZvX3JlcXVl",
-            "c3QucHJvdG8SBnpwcm90byJKCiNSZXFVbmlvbkFjdGl2aXR5UHJvZ3Jlc3NJ",
-            "bmZvUmVxdWVzdBIPCgd1bmlvbklkGAIgASgFEhIKCmFjdGl2aXR5SWQYAyAB",
-            "KAViBnByb3RvMw=="));
+            "c3QucHJvdG8SBnpwcm90byJMCiNSZXFVbmlvbkFjdGl2aXR5UHJvZ3Jlc3NJ",
+            "bmZvUmVxdWVzdBIQCgh1bmlvbl9pZBgCIAEoBRITCgthY3Rpdml0eV9pZBgD",
+            "IAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ReqUnionActivityProgressInfoRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private int unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activityId" field.</summary>
+    /// <summary>Field number for the "activity_id" field.</summary>
     public const int ActivityIdFieldNumber = 3;
     private int activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

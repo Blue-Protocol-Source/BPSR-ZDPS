@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X2hvbWVsYW5kX3dhcmVob3VzZV90YWtlX291dF9yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8iawofSG9tZWxhbmRXYXJlaG91c2VUYWtlT3V0UmVxdWVz",
-            "dBIPCgdncmlkUG9zGAEgASgFEhEKCWl0ZW1DZmdJZBgCIAEoBRIPCgdpdGVt",
-            "TnVtGAMgASgFEhMKC293bmVyQ2hhcklkGAQgASgDYgZwcm90bzM="));
+            "b3RvEgZ6cHJvdG8icQofSG9tZWxhbmRXYXJlaG91c2VUYWtlT3V0UmVxdWVz",
+            "dBIQCghncmlkX3BvcxgBIAEoBRITCgtpdGVtX2NmZ19pZBgCIAEoBRIQCghp",
+            "dGVtX251bRgDIAEoBRIVCg1vd25lcl9jaGFyX2lkGAQgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new HomelandWarehouseTakeOutRequest(this);
     }
 
-    /// <summary>Field number for the "gridPos" field.</summary>
+    /// <summary>Field number for the "grid_pos" field.</summary>
     public const int GridPosFieldNumber = 1;
     private int gridPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemCfgId" field.</summary>
+    /// <summary>Field number for the "item_cfg_id" field.</summary>
     public const int ItemCfgIdFieldNumber = 2;
     private int itemCfgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemNum" field.</summary>
+    /// <summary>Field number for the "item_num" field.</summary>
     public const int ItemNumFieldNumber = 3;
     private int itemNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ownerCharId" field.</summary>
+    /// <summary>Field number for the "owner_char_id" field.</summary>
     public const int OwnerCharIdFieldNumber = 4;
     private long ownerCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

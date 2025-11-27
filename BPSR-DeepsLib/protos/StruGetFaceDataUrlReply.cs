@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2dldF9mYWNlX2RhdGFfdXJsX3JlcGx5LnByb3RvEgZ6cHJvdG8a",
-            "F2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIk8KE0dldEZhY2VEYXRhVXJsUmVw",
-            "bHkSEwoLZmFjZURhdGFVcmwYASABKAkSIwoHZXJyQ29kZRgCIAEoDjISLnpw",
-            "cm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "F2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIlIKE0dldEZhY2VEYXRhVXJsUmVw",
+            "bHkSFQoNZmFjZV9kYXRhX3VybBgBIAEoCRIkCghlcnJfY29kZRgCIAEoDjIS",
+            "Lnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new GetFaceDataUrlReply(this);
     }
 
-    /// <summary>Field number for the "faceDataUrl" field.</summary>
+    /// <summary>Field number for the "face_data_url" field.</summary>
     public const int FaceDataUrlFieldNumber = 1;
     private string faceDataUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CjtzdHJ1X25vdGlmeV9jb21tdW5pdHlfZ2xvYmFsX2F1dGhvcml0eV9jaGFu",
             "Z2VfcmVxdWVzdC5wcm90bxIGenByb3RvGiNzdHJ1X2NvbW11bml0eV9hdXRo",
-            "b3JpdHlfaW5mby5wcm90byJkCitOb3RpZnlDb21tdW5pdHlHbG9iYWxBdXRo",
-            "b3JpdHlDaGFuZ2VSZXF1ZXN0EjUKDWF1dGhvcml0eUluZm8YASABKAsyHi56",
-            "cHJvdG8uQ29tbXVuaXR5QXV0aG9yaXR5SW5mb2IGcHJvdG8z"));
+            "b3JpdHlfaW5mby5wcm90byJlCitOb3RpZnlDb21tdW5pdHlHbG9iYWxBdXRo",
+            "b3JpdHlDaGFuZ2VSZXF1ZXN0EjYKDmF1dGhvcml0eV9pbmZvGAEgASgLMh4u",
+            "enByb3RvLkNvbW11bml0eUF1dGhvcml0eUluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityAuthorityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new NotifyCommunityGlobalAuthorityChangeRequest(this);
     }
 
-    /// <summary>Field number for the "authorityInfo" field.</summary>
+    /// <summary>Field number for the "authority_info" field.</summary>
     public const int AuthorityInfoFieldNumber = 1;
     private global::Zproto.CommunityAuthorityInfo authorityInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

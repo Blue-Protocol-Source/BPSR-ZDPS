@@ -24,8 +24,8 @@ namespace Zproto {
     static StruUninstallModRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3VuaW5zdGFsbF9tb2RfcmVxdWVzdC5wcm90bxIGenByb3RvIiUK",
-            "E1VuaW5zdGFsbE1vZFJlcXVlc3QSDgoGc2xvdElkGAEgASgFYgZwcm90bzM="));
+            "CiBzdHJ1X3VuaW5zdGFsbF9tb2RfcmVxdWVzdC5wcm90bxIGenByb3RvIiYK",
+            "E1VuaW5zdGFsbE1vZFJlcXVlc3QSDwoHc2xvdF9pZBgBIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new UninstallModRequest(this);
     }
 
-    /// <summary>Field number for the "slotId" field.</summary>
+    /// <summary>Field number for the "slot_id" field.</summary>
     public const int SlotIdFieldNumber = 1;
     private int slotId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

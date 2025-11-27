@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSetHobbyMarkRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3NldF9ob2JieV9tYXJrX3JlcXVlc3QucHJvdG8SBnpwcm90byIn",
-            "ChNTZXRIb2JieU1hcmtSZXF1ZXN0EhAKCG1hcmtMaXN0GAIgAygFYgZwcm90",
-            "bzM="));
+            "CiFzdHJ1X3NldF9ob2JieV9tYXJrX3JlcXVlc3QucHJvdG8SBnpwcm90byIo",
+            "ChNTZXRIb2JieU1hcmtSZXF1ZXN0EhEKCW1hcmtfbGlzdBgCIAMoBWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new SetHobbyMarkRequest(this);
     }
 
-    /// <summary>Field number for the "markList" field.</summary>
+    /// <summary>Field number for the "mark_list" field.</summary>
     public const int MarkListFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_markList_codec
         = pb::FieldCodec.ForInt32(18);

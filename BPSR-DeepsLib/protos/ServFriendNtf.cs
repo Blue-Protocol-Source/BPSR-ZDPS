@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "ChVzZXJ2X2ZyaWVuZF9udGYucHJvdG8SBnpwcm90bxotc3RydV9ub3RpZnlf",
             "ZnJpZW5kbGluZXNzX2V4cF9sdl9yZXF1ZXN0LnByb3RvGiVzdHJ1X25vdGlm",
-            "eV91cGRhdGVfZGF0YV9yZXF1ZXN0LnByb3RvIqcBCglGcmllbmROdGYaRQoQ",
-            "Tm90aWZ5VXBkYXRlRGF0YRIxCgh2UmVxdWVzdBgBIAEoCzIfLnpwcm90by5O",
-            "b3RpZnlVcGRhdGVEYXRhUmVxdWVzdBpTChdOb3RpZnlGcmllbmRsaW5lc3NF",
-            "eHBMdhI4Cgh2UmVxdWVzdBgBIAEoCzImLnpwcm90by5Ob3RpZnlGcmllbmRs",
-            "aW5lc3NFeHBMdlJlcXVlc3RiBnByb3RvMw=="));
+            "eV91cGRhdGVfZGF0YV9yZXF1ZXN0LnByb3RvIqkBCglGcmllbmROdGYaRgoQ",
+            "Tm90aWZ5VXBkYXRlRGF0YRIyCgl2X3JlcXVlc3QYASABKAsyHy56cHJvdG8u",
+            "Tm90aWZ5VXBkYXRlRGF0YVJlcXVlc3QaVAoXTm90aWZ5RnJpZW5kbGluZXNz",
+            "RXhwTHYSOQoJdl9yZXF1ZXN0GAEgASgLMiYuenByb3RvLk5vdGlmeUZyaWVu",
+            "ZGxpbmVzc0V4cEx2UmVxdWVzdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNotifyFriendlinessExpLvRequestReflection.Descriptor, global::Zproto.StruNotifyUpdateDataRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -251,7 +251,7 @@ namespace Zproto {
           return new NotifyUpdateData(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyUpdateDataRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -458,7 +458,7 @@ namespace Zproto {
           return new NotifyFriendlinessExpLv(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyFriendlinessExpLvRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

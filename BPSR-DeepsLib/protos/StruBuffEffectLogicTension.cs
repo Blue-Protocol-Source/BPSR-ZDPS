@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2J1ZmZfZWZmZWN0X2xvZ2ljX3RlbnNpb24ucHJvdG8SBnpwcm90",
-            "byJpChZCdWZmRWZmZWN0TG9naWNUZW5zaW9uEhIKCnRhcmdldFV1aWQYASAB",
-            "KAMSEAoIc3RyZW5ndGgYAiADKAUSFgoOc3RyZW5ndGhMZW5ndGgYAyABKAUS",
-            "EQoJbWF4TGVuZ3RoGAQgASgFYgZwcm90bzM="));
+            "byJsChZCdWZmRWZmZWN0TG9naWNUZW5zaW9uEhMKC3RhcmdldF91dWlkGAEg",
+            "ASgDEhAKCHN0cmVuZ3RoGAIgAygFEhcKD3N0cmVuZ3RoX2xlbmd0aBgDIAEo",
+            "BRISCgptYXhfbGVuZ3RoGAQgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new BuffEffectLogicTension(this);
     }
 
-    /// <summary>Field number for the "targetUuid" field.</summary>
+    /// <summary>Field number for the "target_uuid" field.</summary>
     public const int TargetUuidFieldNumber = 1;
     private long targetUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       get { return strength_; }
     }
 
-    /// <summary>Field number for the "strengthLength" field.</summary>
+    /// <summary>Field number for the "strength_length" field.</summary>
     public const int StrengthLengthFieldNumber = 3;
     private int strengthLength_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +121,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxLength" field.</summary>
+    /// <summary>Field number for the "max_length" field.</summary>
     public const int MaxLengthFieldNumber = 4;
     private int maxLength_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

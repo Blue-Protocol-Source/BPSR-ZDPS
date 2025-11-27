@@ -52,58 +52,58 @@ namespace Zproto {
             "eS5wcm90bxosc3RydV9zZXRfcHJpdmF0ZV9jaGF0X2hhc19yZWFkX3JlcXVl",
             "c3QucHJvdG8aKnN0cnVfc2V0X3dvcmxkX2NoYXRfY2hhbm5lbF9pZF9yZXBs",
             "eS5wcm90bxosc3RydV9zZXRfd29ybGRfY2hhdF9jaGFubmVsX2lkX3JlcXVl",
-            "c3QucHJvdG8ighIKCENoaXRDaGF0GkAKE1NlbmRDaGl0Q2hhdE1zZ19SZXQS",
-            "KQoDcmV0GAEgASgLMhwuenByb3RvLlNlbmRDaGl0Q2hhdE1zZ1JlcGx5GkMK",
-            "D1NlbmRDaGl0Q2hhdE1zZxIwCgh2UmVxdWVzdBgBIAEoCzIeLnpwcm90by5T",
-            "ZW5kQ2hpdENoYXRNc2dSZXF1ZXN0GkYKFkdldENoaXBDaGF0UmVjb3Jkc19S",
-            "ZXQSLAoDcmV0GAEgASgLMh8uenByb3RvLkdldENoaXBDaGF0UmVjb3Jkc1Jl",
-            "cGx5GkkKEkdldENoaXBDaGF0UmVjb3JkcxIzCgh2UmVxdWVzdBgBIAEoCzIh",
-            "Lnpwcm90by5HZXRDaGlwQ2hhdFJlY29yZHNSZXF1ZXN0GkwKGUdldFByaXZh",
-            "dGVDaGF0VGFyZ2V0c19SZXQSLwoDcmV0GAEgASgLMiIuenByb3RvLkdldFBy",
-            "aXZhdGVDaGF0VGFyZ2V0c1JlcGx5Gk8KFUdldFByaXZhdGVDaGF0VGFyZ2V0",
-            "cxI2Cgh2UmVxdWVzdBgBIAEoCzIkLnpwcm90by5HZXRQcml2YXRlQ2hhdFRh",
-            "cmdldHNSZXF1ZXN0GlIKHENyZWF0ZVByaXZhdGVDaGF0U2Vzc2lvbl9SZXQS",
-            "MgoDcmV0GAEgASgLMiUuenByb3RvLkNyZWF0ZVByaXZhdGVDaGF0U2Vzc2lv",
-            "blJlcGx5GlUKGENyZWF0ZVByaXZhdGVDaGF0U2Vzc2lvbhI5Cgh2UmVxdWVz",
-            "dBgBIAEoCzInLnpwcm90by5DcmVhdGVQcml2YXRlQ2hhdFNlc3Npb25SZXF1",
-            "ZXN0GlIKHERlbGV0ZVByaXZhdGVDaGF0U2Vzc2lvbl9SZXQSMgoDcmV0GAEg",
-            "ASgLMiUuenByb3RvLkRlbGV0ZVByaXZhdGVDaGF0U2Vzc2lvblJlcGx5GlUK",
-            "GERlbGV0ZVByaXZhdGVDaGF0U2Vzc2lvbhI5Cgh2UmVxdWVzdBgBIAEoCzIn",
-            "Lnpwcm90by5EZWxldGVQcml2YXRlQ2hhdFNlc3Npb25SZXF1ZXN0GkwKGVNl",
-            "dFByaXZhdGVDaGF0SGFzUmVhZF9SZXQSLwoDcmV0GAEgASgLMiIuenByb3Rv",
-            "LlNldFByaXZhdGVDaGF0SGFzUmVhZFJlcGx5Gk8KFVNldFByaXZhdGVDaGF0",
-            "SGFzUmVhZBI2Cgh2UmVxdWVzdBgBIAEoCzIkLnpwcm90by5TZXRQcml2YXRl",
-            "Q2hhdEhhc1JlYWRSZXF1ZXN0GkoKGFByaXZhdGVDaGF0VGFyZ2V0VG9wX1Jl",
-            "dBIuCgNyZXQYASABKAsyIS56cHJvdG8uUHJpdmF0ZUNoYXRUYXJnZXRUb3BS",
-            "ZXBseRpNChRQcml2YXRlQ2hhdFRhcmdldFRvcBI1Cgh2UmVxdWVzdBgBIAEo",
-            "CzIjLnpwcm90by5Qcml2YXRlQ2hhdFRhcmdldFRvcFJlcXVlc3QaTgoaUHJp",
-            "dmF0ZUNoYXRUYXJnZXRCbG9ja19SZXQSMAoDcmV0GAEgASgLMiMuenByb3Rv",
-            "LlByaXZhdGVDaGF0VGFyZ2V0QmxvY2tSZXBseRpRChZQcml2YXRlQ2hhdFRh",
-            "cmdldEJsb2NrEjcKCHZSZXF1ZXN0GAEgASgLMiUuenByb3RvLlByaXZhdGVD",
-            "aGF0VGFyZ2V0QmxvY2tSZXF1ZXN0GkoKGFByaXZhdGVDaGF0QmxvY2tMaXN0",
-            "X1JldBIuCgNyZXQYASABKAsyIS56cHJvdG8uUHJpdmF0ZUNoYXRCbG9ja0xp",
-            "c3RSZXBseRpNChRQcml2YXRlQ2hhdEJsb2NrTGlzdBI1Cgh2UmVxdWVzdBgB",
-            "IAEoCzIjLnpwcm90by5Qcml2YXRlQ2hhdEJsb2NrTGlzdFJlcXVlc3QaTAoZ",
-            "U2V0V29ybGRDaGF0Q2hhbm5lbElkX1JldBIvCgNyZXQYASABKAsyIi56cHJv",
-            "dG8uU2V0V29ybGRDaGF0Q2hhbm5lbElkUmVwbHkaTwoVU2V0V29ybGRDaGF0",
-            "Q2hhbm5lbElkEjYKCHZSZXF1ZXN0GAEgASgLMiQuenByb3RvLlNldFdvcmxk",
-            "Q2hhdENoYW5uZWxJZFJlcXVlc3QaTAoZR2V0V29ybGRDaGF0Q2hhbm5lbElk",
-            "X1JldBIvCgNyZXQYASABKAsyIi56cHJvdG8uR2V0V29ybGRDaGF0Q2hhbm5l",
-            "bElkUmVwbHkaTwoVR2V0V29ybGRDaGF0Q2hhbm5lbElkEjYKCHZSZXF1ZXN0",
-            "GAEgASgLMiQuenByb3RvLkdldFdvcmxkQ2hhdENoYW5uZWxJZFJlcXVlc3Qa",
-            "PAoRUXVlcnlDaGF0TXV0ZV9SZXQSJwoDcmV0GAEgASgLMhouenByb3RvLlF1",
-            "ZXJ5Q2hhdE11dGVSZXBseRo/Cg1RdWVyeUNoYXRNdXRlEi4KCHZSZXF1ZXN0",
-            "GAEgASgLMhwuenByb3RvLlF1ZXJ5Q2hhdE11dGVSZXF1ZXN0GjsKGFNlbmRT",
-            "eXNDaGF0SHlwZXJ0ZXh0X1JldBIfCgNyZXQYASABKA4yEi56cHJvdG8uRUVy",
-            "cm9yQ29kZRpNChRTZW5kU3lzQ2hhdEh5cGVydGV4dBI1Cgh2UmVxdWVzdBgB",
-            "IAEoCzIjLnpwcm90by5TZW5kU3lzQ2hhdEh5cGVydGV4dFJlcXVlc3QaOgoX",
-            "QXJrU2hhcmVXaXRoVGVuY2VudF9SZXQSHwoDcmV0GAEgASgOMhIuenByb3Rv",
-            "LkVFcnJvckNvZGUaSwoTQXJrU2hhcmVXaXRoVGVuY2VudBI0Cgh2UmVxdWVz",
-            "dBgBIAEoCzIiLnpwcm90by5BcmtTaGFyZVdpdGhUZW5jZW50UmVxdWVzdBpM",
-            "ChlHZXRBcmtKc29uV2l0aFRlbmNlbnRfUmV0Ei8KA3JldBgBIAEoCzIiLnpw",
-            "cm90by5HZXRBcmtKc29uV2l0aFRlbmNlbnRSZXBseRpPChVHZXRBcmtKc29u",
-            "V2l0aFRlbmNlbnQSNgoIdlJlcXVlc3QYASABKAsyJC56cHJvdG8uR2V0QXJr",
-            "SnNvbldpdGhUZW5jZW50UmVxdWVzdGIGcHJvdG8z"));
+            "c3QucHJvdG8ikRIKCENoaXRDaGF0GkAKE1NlbmRDaGl0Q2hhdE1zZ19SZXQS",
+            "KQoDcmV0GAEgASgLMhwuenByb3RvLlNlbmRDaGl0Q2hhdE1zZ1JlcGx5GkQK",
+            "D1NlbmRDaGl0Q2hhdE1zZxIxCgl2X3JlcXVlc3QYASABKAsyHi56cHJvdG8u",
+            "U2VuZENoaXRDaGF0TXNnUmVxdWVzdBpGChZHZXRDaGlwQ2hhdFJlY29yZHNf",
+            "UmV0EiwKA3JldBgBIAEoCzIfLnpwcm90by5HZXRDaGlwQ2hhdFJlY29yZHNS",
+            "ZXBseRpKChJHZXRDaGlwQ2hhdFJlY29yZHMSNAoJdl9yZXF1ZXN0GAEgASgL",
+            "MiEuenByb3RvLkdldENoaXBDaGF0UmVjb3Jkc1JlcXVlc3QaTAoZR2V0UHJp",
+            "dmF0ZUNoYXRUYXJnZXRzX1JldBIvCgNyZXQYASABKAsyIi56cHJvdG8uR2V0",
+            "UHJpdmF0ZUNoYXRUYXJnZXRzUmVwbHkaUAoVR2V0UHJpdmF0ZUNoYXRUYXJn",
+            "ZXRzEjcKCXZfcmVxdWVzdBgBIAEoCzIkLnpwcm90by5HZXRQcml2YXRlQ2hh",
+            "dFRhcmdldHNSZXF1ZXN0GlIKHENyZWF0ZVByaXZhdGVDaGF0U2Vzc2lvbl9S",
+            "ZXQSMgoDcmV0GAEgASgLMiUuenByb3RvLkNyZWF0ZVByaXZhdGVDaGF0U2Vz",
+            "c2lvblJlcGx5GlYKGENyZWF0ZVByaXZhdGVDaGF0U2Vzc2lvbhI6Cgl2X3Jl",
+            "cXVlc3QYASABKAsyJy56cHJvdG8uQ3JlYXRlUHJpdmF0ZUNoYXRTZXNzaW9u",
+            "UmVxdWVzdBpSChxEZWxldGVQcml2YXRlQ2hhdFNlc3Npb25fUmV0EjIKA3Jl",
+            "dBgBIAEoCzIlLnpwcm90by5EZWxldGVQcml2YXRlQ2hhdFNlc3Npb25SZXBs",
+            "eRpWChhEZWxldGVQcml2YXRlQ2hhdFNlc3Npb24SOgoJdl9yZXF1ZXN0GAEg",
+            "ASgLMicuenByb3RvLkRlbGV0ZVByaXZhdGVDaGF0U2Vzc2lvblJlcXVlc3Qa",
+            "TAoZU2V0UHJpdmF0ZUNoYXRIYXNSZWFkX1JldBIvCgNyZXQYASABKAsyIi56",
+            "cHJvdG8uU2V0UHJpdmF0ZUNoYXRIYXNSZWFkUmVwbHkaUAoVU2V0UHJpdmF0",
+            "ZUNoYXRIYXNSZWFkEjcKCXZfcmVxdWVzdBgBIAEoCzIkLnpwcm90by5TZXRQ",
+            "cml2YXRlQ2hhdEhhc1JlYWRSZXF1ZXN0GkoKGFByaXZhdGVDaGF0VGFyZ2V0",
+            "VG9wX1JldBIuCgNyZXQYASABKAsyIS56cHJvdG8uUHJpdmF0ZUNoYXRUYXJn",
+            "ZXRUb3BSZXBseRpOChRQcml2YXRlQ2hhdFRhcmdldFRvcBI2Cgl2X3JlcXVl",
+            "c3QYASABKAsyIy56cHJvdG8uUHJpdmF0ZUNoYXRUYXJnZXRUb3BSZXF1ZXN0",
+            "Gk4KGlByaXZhdGVDaGF0VGFyZ2V0QmxvY2tfUmV0EjAKA3JldBgBIAEoCzIj",
+            "Lnpwcm90by5Qcml2YXRlQ2hhdFRhcmdldEJsb2NrUmVwbHkaUgoWUHJpdmF0",
+            "ZUNoYXRUYXJnZXRCbG9jaxI4Cgl2X3JlcXVlc3QYASABKAsyJS56cHJvdG8u",
+            "UHJpdmF0ZUNoYXRUYXJnZXRCbG9ja1JlcXVlc3QaSgoYUHJpdmF0ZUNoYXRC",
+            "bG9ja0xpc3RfUmV0Ei4KA3JldBgBIAEoCzIhLnpwcm90by5Qcml2YXRlQ2hh",
+            "dEJsb2NrTGlzdFJlcGx5Gk4KFFByaXZhdGVDaGF0QmxvY2tMaXN0EjYKCXZf",
+            "cmVxdWVzdBgBIAEoCzIjLnpwcm90by5Qcml2YXRlQ2hhdEJsb2NrTGlzdFJl",
+            "cXVlc3QaTAoZU2V0V29ybGRDaGF0Q2hhbm5lbElkX1JldBIvCgNyZXQYASAB",
+            "KAsyIi56cHJvdG8uU2V0V29ybGRDaGF0Q2hhbm5lbElkUmVwbHkaUAoVU2V0",
+            "V29ybGRDaGF0Q2hhbm5lbElkEjcKCXZfcmVxdWVzdBgBIAEoCzIkLnpwcm90",
+            "by5TZXRXb3JsZENoYXRDaGFubmVsSWRSZXF1ZXN0GkwKGUdldFdvcmxkQ2hh",
+            "dENoYW5uZWxJZF9SZXQSLwoDcmV0GAEgASgLMiIuenByb3RvLkdldFdvcmxk",
+            "Q2hhdENoYW5uZWxJZFJlcGx5GlAKFUdldFdvcmxkQ2hhdENoYW5uZWxJZBI3",
+            "Cgl2X3JlcXVlc3QYASABKAsyJC56cHJvdG8uR2V0V29ybGRDaGF0Q2hhbm5l",
+            "bElkUmVxdWVzdBo8ChFRdWVyeUNoYXRNdXRlX1JldBInCgNyZXQYASABKAsy",
+            "Gi56cHJvdG8uUXVlcnlDaGF0TXV0ZVJlcGx5GkAKDVF1ZXJ5Q2hhdE11dGUS",
+            "LwoJdl9yZXF1ZXN0GAEgASgLMhwuenByb3RvLlF1ZXJ5Q2hhdE11dGVSZXF1",
+            "ZXN0GjsKGFNlbmRTeXNDaGF0SHlwZXJ0ZXh0X1JldBIfCgNyZXQYASABKA4y",
+            "Ei56cHJvdG8uRUVycm9yQ29kZRpOChRTZW5kU3lzQ2hhdEh5cGVydGV4dBI2",
+            "Cgl2X3JlcXVlc3QYASABKAsyIy56cHJvdG8uU2VuZFN5c0NoYXRIeXBlcnRl",
+            "eHRSZXF1ZXN0GjoKF0Fya1NoYXJlV2l0aFRlbmNlbnRfUmV0Eh8KA3JldBgB",
+            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlGkwKE0Fya1NoYXJlV2l0aFRlbmNl",
+            "bnQSNQoJdl9yZXF1ZXN0GAEgASgLMiIuenByb3RvLkFya1NoYXJlV2l0aFRl",
+            "bmNlbnRSZXF1ZXN0GkwKGUdldEFya0pzb25XaXRoVGVuY2VudF9SZXQSLwoD",
+            "cmV0GAEgASgLMiIuenByb3RvLkdldEFya0pzb25XaXRoVGVuY2VudFJlcGx5",
+            "GlAKFUdldEFya0pzb25XaXRoVGVuY2VudBI3Cgl2X3JlcXVlc3QYASABKAsy",
+            "JC56cHJvdG8uR2V0QXJrSnNvbldpdGhUZW5jZW50UmVxdWVzdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruArkShareWithTencentRequestReflection.Descriptor, global::Zproto.StruCreatePrivateChatSessionReplyReflection.Descriptor, global::Zproto.StruCreatePrivateChatSessionRequestReflection.Descriptor, global::Zproto.StruDeletePrivateChatSessionReplyReflection.Descriptor, global::Zproto.StruDeletePrivateChatSessionRequestReflection.Descriptor, global::Zproto.StruGetArkJsonWithTencentReplyReflection.Descriptor, global::Zproto.StruGetArkJsonWithTencentRequestReflection.Descriptor, global::Zproto.StruGetChipChatRecordsReplyReflection.Descriptor, global::Zproto.StruGetChipChatRecordsRequestReflection.Descriptor, global::Zproto.StruGetPrivateChatTargetsReplyReflection.Descriptor, global::Zproto.StruGetPrivateChatTargetsRequestReflection.Descriptor, global::Zproto.StruGetWorldChatChannelIdReplyReflection.Descriptor, global::Zproto.StruGetWorldChatChannelIdRequestReflection.Descriptor, global::Zproto.StruPrivateChatBlockListReplyReflection.Descriptor, global::Zproto.StruPrivateChatBlockListRequestReflection.Descriptor, global::Zproto.StruPrivateChatTargetBlockReplyReflection.Descriptor, global::Zproto.StruPrivateChatTargetBlockRequestReflection.Descriptor, global::Zproto.StruPrivateChatTargetTopReplyReflection.Descriptor, global::Zproto.StruPrivateChatTargetTopRequestReflection.Descriptor, global::Zproto.StruQueryChatMuteReplyReflection.Descriptor, global::Zproto.StruQueryChatMuteRequestReflection.Descriptor, global::Zproto.StruSendChitChatMsgReplyReflection.Descriptor, global::Zproto.StruSendChitChatMsgRequestReflection.Descriptor, global::Zproto.StruSendSysChatHypertextRequestReflection.Descriptor, global::Zproto.StruSetPrivateChatHasReadReplyReflection.Descriptor, global::Zproto.StruSetPrivateChatHasReadRequestReflection.Descriptor, global::Zproto.StruSetWorldChatChannelIdReplyReflection.Descriptor, global::Zproto.StruSetWorldChatChannelIdRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -559,7 +559,7 @@ namespace Zproto {
           return new SendChitChatMsg(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.SendChitChatMsgRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -973,7 +973,7 @@ namespace Zproto {
           return new GetChipChatRecords(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetChipChatRecordsRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1387,7 +1387,7 @@ namespace Zproto {
           return new GetPrivateChatTargets(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetPrivateChatTargetsRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1801,7 +1801,7 @@ namespace Zproto {
           return new CreatePrivateChatSession(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.CreatePrivateChatSessionRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2215,7 +2215,7 @@ namespace Zproto {
           return new DeletePrivateChatSession(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.DeletePrivateChatSessionRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2629,7 +2629,7 @@ namespace Zproto {
           return new SetPrivateChatHasRead(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.SetPrivateChatHasReadRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3043,7 +3043,7 @@ namespace Zproto {
           return new PrivateChatTargetTop(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.PrivateChatTargetTopRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3457,7 +3457,7 @@ namespace Zproto {
           return new PrivateChatTargetBlock(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.PrivateChatTargetBlockRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3871,7 +3871,7 @@ namespace Zproto {
           return new PrivateChatBlockList(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.PrivateChatBlockListRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4285,7 +4285,7 @@ namespace Zproto {
           return new SetWorldChatChannelId(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.SetWorldChatChannelIdRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4699,7 +4699,7 @@ namespace Zproto {
           return new GetWorldChatChannelId(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetWorldChatChannelIdRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5113,7 +5113,7 @@ namespace Zproto {
           return new QueryChatMute(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.QueryChatMuteRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5518,7 +5518,7 @@ namespace Zproto {
           return new SendSysChatHypertext(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.SendSysChatHypertextRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5923,7 +5923,7 @@ namespace Zproto {
           return new ArkShareWithTencent(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.ArkShareWithTencentRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6337,7 +6337,7 @@ namespace Zproto {
           return new GetArkJsonWithTencent(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetArkJsonWithTencentRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

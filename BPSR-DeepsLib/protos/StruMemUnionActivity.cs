@@ -26,14 +26,14 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X21lbV91bmlvbl9hY3Rpdml0eS5wcm90bxIGenByb3RvGh1zdHJ1",
             "X25vdF9jbGFpbWVkX3Jld2FyZC5wcm90bxogc3RydV91bmlvbl9hY3Rpdml0",
-            "eV90YXJnZXQucHJvdG8iuQIKEE1lbVVuaW9uQWN0aXZpdHkSFwoPbGFzdFJl",
-            "ZnJlc2hUaW1lGAEgASgDEkYKD3BlcnNvbmFsVGFyZ2V0cxgCIAMoCzItLnpw",
-            "cm90by5NZW1VbmlvbkFjdGl2aXR5LlBlcnNvbmFsVGFyZ2V0c0VudHJ5Eh0K",
-            "FXJlY2VpdmVkUG9pbnRBd2FyZElkcxgDIAMoBRI3ChVub0NsYWltZWRBY3Rp",
-            "dmVBd2FyZHMYBCADKAsyGC56cHJvdG8uTm90Q2xhaW1lZFJld2FyZBIXCg9u",
-            "ZXh0UmVmcmVzaFRpbWUYBSABKAMaUwoUUGVyc29uYWxUYXJnZXRzRW50cnkS",
-            "CwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgLMhsuenByb3RvLlVuaW9uQWN0",
-            "aXZpdHlUYXJnZXQ6AjgBYgZwcm90bzM="));
+            "eV90YXJnZXQucHJvdG8ixAIKEE1lbVVuaW9uQWN0aXZpdHkSGQoRbGFzdF9y",
+            "ZWZyZXNoX3RpbWUYASABKAMSRwoQcGVyc29uYWxfdGFyZ2V0cxgCIAMoCzIt",
+            "Lnpwcm90by5NZW1VbmlvbkFjdGl2aXR5LlBlcnNvbmFsVGFyZ2V0c0VudHJ5",
+            "EiAKGHJlY2VpdmVkX3BvaW50X2F3YXJkX2lkcxgDIAMoBRI6Chhub19jbGFp",
+            "bWVkX2FjdGl2ZV9hd2FyZHMYBCADKAsyGC56cHJvdG8uTm90Q2xhaW1lZFJl",
+            "d2FyZBIZChFuZXh0X3JlZnJlc2hfdGltZRgFIAEoAxpTChRQZXJzb25hbFRh",
+            "cmdldHNFbnRyeRILCgNrZXkYASABKAUSKgoFdmFsdWUYAiABKAsyGy56cHJv",
+            "dG8uVW5pb25BY3Rpdml0eVRhcmdldDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNotClaimedRewardReflection.Descriptor, global::Zproto.StruUnionActivityTargetReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +93,7 @@ namespace Zproto {
       return new MemUnionActivity(this);
     }
 
-    /// <summary>Field number for the "lastRefreshTime" field.</summary>
+    /// <summary>Field number for the "last_refresh_time" field.</summary>
     public const int LastRefreshTimeFieldNumber = 1;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "personalTargets" field.</summary>
+    /// <summary>Field number for the "personal_targets" field.</summary>
     public const int PersonalTargetsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.UnionActivityTarget>.Codec _map_personalTargets_codec
         = new pbc::MapField<int, global::Zproto.UnionActivityTarget>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionActivityTarget.Parser), 18);
@@ -116,7 +116,7 @@ namespace Zproto {
       get { return personalTargets_; }
     }
 
-    /// <summary>Field number for the "receivedPointAwardIds" field.</summary>
+    /// <summary>Field number for the "received_point_award_ids" field.</summary>
     public const int ReceivedPointAwardIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_receivedPointAwardIds_codec
         = pb::FieldCodec.ForInt32(26);
@@ -127,7 +127,7 @@ namespace Zproto {
       get { return receivedPointAwardIds_; }
     }
 
-    /// <summary>Field number for the "noClaimedActiveAwards" field.</summary>
+    /// <summary>Field number for the "no_claimed_active_awards" field.</summary>
     public const int NoClaimedActiveAwardsFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Zproto.NotClaimedReward> _repeated_noClaimedActiveAwards_codec
         = pb::FieldCodec.ForMessage(34, global::Zproto.NotClaimedReward.Parser);
@@ -138,7 +138,7 @@ namespace Zproto {
       get { return noClaimedActiveAwards_; }
     }
 
-    /// <summary>Field number for the "nextRefreshTime" field.</summary>
+    /// <summary>Field number for the "next_refresh_time" field.</summary>
     public const int NextRefreshTimeFieldNumber = 5;
     private long nextRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

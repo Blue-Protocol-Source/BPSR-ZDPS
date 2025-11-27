@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2NvdW50ZXJfbGlzdC5wcm90bxIGenByb3RvGhdzdHJ1X2NvdW50",
-            "ZXJfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIo4BCgtDb3Vu",
-            "dGVyTGlzdBI3Cgpjb3VudGVyTWFwGAEgAygLMiMuenByb3RvLkNvdW50ZXJM",
-            "aXN0LkNvdW50ZXJNYXBFbnRyeRpGCg9Db3VudGVyTWFwRW50cnkSCwoDa2V5",
-            "GAEgASgFEiIKBXZhbHVlGAIgASgLMhMuenByb3RvLkNvdW50ZXJJbmZvOgI4",
-            "AWIGcHJvdG8z"));
+            "ZXJfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIo8BCgtDb3Vu",
+            "dGVyTGlzdBI4Cgtjb3VudGVyX21hcBgBIAMoCzIjLnpwcm90by5Db3VudGVy",
+            "TGlzdC5Db3VudGVyTWFwRW50cnkaRgoPQ291bnRlck1hcEVudHJ5EgsKA2tl",
+            "eRgBIAEoBRIiCgV2YWx1ZRgCIAEoCzITLnpwcm90by5Db3VudGVySW5mbzoC",
+            "OAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCounterInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CounterList(this);
     }
 
-    /// <summary>Field number for the "counterMap" field.</summary>
+    /// <summary>Field number for the "counter_map" field.</summary>
     public const int CounterMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.CounterInfo>.Codec _map_counterMap_codec
         = new pbc::MapField<int, global::Zproto.CounterInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CounterInfo.Parser), 10);

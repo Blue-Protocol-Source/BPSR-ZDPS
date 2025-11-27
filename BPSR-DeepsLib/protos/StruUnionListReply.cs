@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "ChtzdHJ1X3VuaW9uX2xpc3RfcmVwbHkucHJvdG8SBnpwcm90bxoXZW51bV9l",
             "X2Vycm9yX2NvZGUucHJvdG8aGnN0cnVfdW5pb25fbGlzdF9kYXRhLnByb3Rv",
-            "Il8KDlVuaW9uTGlzdFJlcGx5EigKCXVuaW9uTGlzdBgBIAMoCzIVLnpwcm90",
-            "by5Vbmlvbkxpc3REYXRhEiMKB2VyckNvZGUYAiABKA4yEi56cHJvdG8uRUVy",
-            "cm9yQ29kZWIGcHJvdG8z"));
+            "ImEKDlVuaW9uTGlzdFJlcGx5EikKCnVuaW9uX2xpc3QYASADKAsyFS56cHJv",
+            "dG8uVW5pb25MaXN0RGF0YRIkCghlcnJfY29kZRgCIAEoDjISLnpwcm90by5F",
+            "RXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionListDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new UnionListReply(this);
     }
 
-    /// <summary>Field number for the "unionList" field.</summary>
+    /// <summary>Field number for the "union_list" field.</summary>
     public const int UnionListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.UnionListData> _repeated_unionList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.UnionListData.Parser);
@@ -96,7 +96,7 @@ namespace Zproto {
       get { return unionList_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

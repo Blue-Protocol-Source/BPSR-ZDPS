@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2R1bmdlb25fdGFyZ2V0X2RhdGEucHJvdG8SBnpwcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIkUKEUR1bmdlb25UYXJnZXREYXRhEhAKCHRh",
-            "cmdldElkGAEgASgFEgwKBG51bXMYAiABKAUSEAoIY29tcGxldGUYAyABKAVi",
-            "BnByb3RvMw=="));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIkYKEUR1bmdlb25UYXJnZXREYXRhEhEKCXRh",
+            "cmdldF9pZBgBIAEoBRIMCgRudW1zGAIgASgFEhAKCGNvbXBsZXRlGAMgASgF",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new DungeonTargetData(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

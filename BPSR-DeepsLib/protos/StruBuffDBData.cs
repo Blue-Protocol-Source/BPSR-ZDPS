@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2J1ZmZfZF9iX2RhdGEucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIv4BCgpCdWZmREJEYXRhEhAKCGJ1ZmZVdWlkGAEgASgD",
-            "Eg8KB2ZpcmVySWQYAiABKAMSFAoMYnVmZkNvbmZpZ0lkGAMgASgNEg4KBmJh",
-            "c2VJZBgEIAEoDRINCgVsZXZlbBgFIAEoDRINCgVsYXllchgGIAEoDRIQCghk",
-            "dXJhdGlvbhgHIAEoBRINCgVjb3VudBgIIAEoBRISCgpjcmVhdGVUaW1lGAkg",
-            "ASgDEg4KBnBhcnRJZBgKIAEoBRIVCg1jcmVhdGVTY2VuZUlkGAsgASgFEhcK",
-            "D2N1c3RvbVBhcmFtc0tleRgMIAMoCRIUCgxjdXN0b21QYXJhbXMYDSADKAVi",
-            "BnByb3RvMw=="));
+            "eV9tYXNrLnByb3RvIooCCgpCdWZmREJEYXRhEhEKCWJ1ZmZfdXVpZBgBIAEo",
+            "AxIQCghmaXJlcl9pZBgCIAEoAxIWCg5idWZmX2NvbmZpZ19pZBgDIAEoDRIP",
+            "CgdiYXNlX2lkGAQgASgNEg0KBWxldmVsGAUgASgNEg0KBWxheWVyGAYgASgN",
+            "EhAKCGR1cmF0aW9uGAcgASgFEg0KBWNvdW50GAggASgFEhMKC2NyZWF0ZV90",
+            "aW1lGAkgASgDEg8KB3BhcnRfaWQYCiABKAUSFwoPY3JlYXRlX3NjZW5lX2lk",
+            "GAsgASgFEhkKEWN1c3RvbV9wYXJhbXNfa2V5GAwgAygJEhUKDWN1c3RvbV9w",
+            "YXJhbXMYDSADKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       return new BuffDBData(this);
     }
 
-    /// <summary>Field number for the "buffUuid" field.</summary>
+    /// <summary>Field number for the "buff_uuid" field.</summary>
     public const int BuffUuidFieldNumber = 1;
     private long buffUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "firerId" field.</summary>
+    /// <summary>Field number for the "firer_id" field.</summary>
     public const int FirerIdFieldNumber = 2;
     private long firerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buffConfigId" field.</summary>
+    /// <summary>Field number for the "buff_config_id" field.</summary>
     public const int BuffConfigIdFieldNumber = 3;
     private uint buffConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "baseId" field.</summary>
+    /// <summary>Field number for the "base_id" field.</summary>
     public const int BaseIdFieldNumber = 4;
     private uint baseId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -195,7 +195,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "createTime" field.</summary>
+    /// <summary>Field number for the "create_time" field.</summary>
     public const int CreateTimeFieldNumber = 9;
     private long createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -207,7 +207,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "partId" field.</summary>
+    /// <summary>Field number for the "part_id" field.</summary>
     public const int PartIdFieldNumber = 10;
     private int partId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -219,7 +219,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "createSceneId" field.</summary>
+    /// <summary>Field number for the "create_scene_id" field.</summary>
     public const int CreateSceneIdFieldNumber = 11;
     private int createSceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -231,7 +231,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "customParamsKey" field.</summary>
+    /// <summary>Field number for the "custom_params_key" field.</summary>
     public const int CustomParamsKeyFieldNumber = 12;
     private static readonly pb::FieldCodec<string> _repeated_customParamsKey_codec
         = pb::FieldCodec.ForString(98);
@@ -242,7 +242,7 @@ namespace Zproto {
       get { return customParamsKey_; }
     }
 
-    /// <summary>Field number for the "customParams" field.</summary>
+    /// <summary>Field number for the "custom_params" field.</summary>
     public const int CustomParamsFieldNumber = 13;
     private static readonly pb::FieldCodec<int> _repeated_customParams_codec
         = pb::FieldCodec.ForInt32(106);

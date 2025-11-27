@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X2dldF9ob21lbGFuZF9jaGVja19pbl9jb250ZW50X3JlcGx5LnBy",
-            "b3RvEgZ6cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIl0KHkdldEhv",
-            "bWVsYW5kQ2hlY2tJbkNvbnRlbnRSZXBseRIWCg5jaGVja0luQ29udGVudBgB",
-            "IAEoCRIjCgdlcnJDb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnBy",
-            "b3RvMw=="));
+            "b3RvEgZ6cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvImAKHkdldEhv",
+            "bWVsYW5kQ2hlY2tJbkNvbnRlbnRSZXBseRIYChBjaGVja19pbl9jb250ZW50",
+            "GAEgASgJEiQKCGVycl9jb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new GetHomelandCheckInContentReply(this);
     }
 
-    /// <summary>Field number for the "checkInContent" field.</summary>
+    /// <summary>Field number for the "check_in_content" field.</summary>
     public const int CheckInContentFieldNumber = 1;
     private string checkInContent_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

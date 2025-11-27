@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CjFzdHJ1X3NldF9wZXJzb25hbF96b25lX3VfaV9wb3NpdGlvbl9yZXF1ZXN0",
             "LnByb3RvEgZ6cHJvdG8aHnN0cnVfZWRpdG9yX3VfaV9wb3NpdGlvbi5wcm90",
-            "byJQCiBTZXRQZXJzb25hbFpvbmVVSVBvc2l0aW9uUmVxdWVzdBIsCgp1aVBv",
-            "c2l0aW9uGAEgAygLMhguenByb3RvLkVkaXRvclVJUG9zaXRpb25iBnByb3Rv",
-            "Mw=="));
+            "byJRCiBTZXRQZXJzb25hbFpvbmVVSVBvc2l0aW9uUmVxdWVzdBItCgt1aV9w",
+            "b3NpdGlvbhgBIAMoCzIYLnpwcm90by5FZGl0b3JVSVBvc2l0aW9uYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruEditorUIPositionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new SetPersonalZoneUIPositionRequest(this);
     }
 
-    /// <summary>Field number for the "uiPosition" field.</summary>
+    /// <summary>Field number for the "ui_position" field.</summary>
     public const int UiPositionFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.EditorUIPosition> _repeated_uiPosition_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.EditorUIPosition.Parser);

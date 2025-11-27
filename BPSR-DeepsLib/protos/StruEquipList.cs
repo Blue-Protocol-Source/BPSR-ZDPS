@@ -27,20 +27,20 @@ namespace Zproto {
             "ChVzdHJ1X2VxdWlwX2xpc3QucHJvdG8SBnpwcm90bxoVc3RydV9lcXVpcF9h",
             "dHRyLnByb3RvGh1zdHJ1X2VxdWlwX2VuY2hhbnRfaW5mby5wcm90bxoVc3Ry",
             "dV9lcXVpcF9pbmZvLnByb3RvGhpzdHJ1X2VxdWlwX3N1aXRfaW5mby5wcm90",
-            "bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIsgECglFcXVpcExpc3QSMwoJZXF1",
-            "aXBMaXN0GAEgAygLMiAuenByb3RvLkVxdWlwTGlzdC5FcXVpcExpc3RFbnRy",
-            "eRIkCgllcXVpcEF0dHIYAiABKAsyES56cHJvdG8uRXF1aXBBdHRyEj8KD2Vx",
-            "dWlwUmVjYXN0SW5mbxgEIAMoCzImLnpwcm90by5FcXVpcExpc3QuRXF1aXBS",
-            "ZWNhc3RJbmZvRW50cnkSOQoMZXF1aXBFbmNoYW50GAUgAygLMiMuenByb3Rv",
-            "LkVxdWlwTGlzdC5FcXVpcEVuY2hhbnRFbnRyeRI5CgxzdWl0SW5mb0RpY3QY",
-            "BiADKAsyIy56cHJvdG8uRXF1aXBMaXN0LlN1aXRJbmZvRGljdEVudHJ5GkMK",
-            "DkVxdWlwTGlzdEVudHJ5EgsKA2tleRgBIAEoBRIgCgV2YWx1ZRgCIAEoCzIR",
-            "Lnpwcm90by5FcXVpcEluZm86AjgBGkkKFEVxdWlwUmVjYXN0SW5mb0VudHJ5",
-            "EgsKA2tleRgBIAEoBBIgCgV2YWx1ZRgCIAEoCzIRLnpwcm90by5FcXVpcEF0",
-            "dHI6AjgBGk0KEUVxdWlwRW5jaGFudEVudHJ5EgsKA2tleRgBIAEoAxInCgV2",
-            "YWx1ZRgCIAEoCzIYLnpwcm90by5FcXVpcEVuY2hhbnRJbmZvOgI4ARpKChFT",
-            "dWl0SW5mb0RpY3RFbnRyeRILCgNrZXkYASABKAUSJAoFdmFsdWUYAiABKAsy",
-            "FS56cHJvdG8uRXF1aXBTdWl0SW5mbzoCOAFiBnByb3RvMw=="));
+            "bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIs8ECglFcXVpcExpc3QSNAoKZXF1",
+            "aXBfbGlzdBgBIAMoCzIgLnpwcm90by5FcXVpcExpc3QuRXF1aXBMaXN0RW50",
+            "cnkSJQoKZXF1aXBfYXR0chgCIAEoCzIRLnpwcm90by5FcXVpcEF0dHISQQoR",
+            "ZXF1aXBfcmVjYXN0X2luZm8YBCADKAsyJi56cHJvdG8uRXF1aXBMaXN0LkVx",
+            "dWlwUmVjYXN0SW5mb0VudHJ5EjoKDWVxdWlwX2VuY2hhbnQYBSADKAsyIy56",
+            "cHJvdG8uRXF1aXBMaXN0LkVxdWlwRW5jaGFudEVudHJ5EjsKDnN1aXRfaW5m",
+            "b19kaWN0GAYgAygLMiMuenByb3RvLkVxdWlwTGlzdC5TdWl0SW5mb0RpY3RF",
+            "bnRyeRpDCg5FcXVpcExpc3RFbnRyeRILCgNrZXkYASABKAUSIAoFdmFsdWUY",
+            "AiABKAsyES56cHJvdG8uRXF1aXBJbmZvOgI4ARpJChRFcXVpcFJlY2FzdElu",
+            "Zm9FbnRyeRILCgNrZXkYASABKAQSIAoFdmFsdWUYAiABKAsyES56cHJvdG8u",
+            "RXF1aXBBdHRyOgI4ARpNChFFcXVpcEVuY2hhbnRFbnRyeRILCgNrZXkYASAB",
+            "KAMSJwoFdmFsdWUYAiABKAsyGC56cHJvdG8uRXF1aXBFbmNoYW50SW5mbzoC",
+            "OAEaSgoRU3VpdEluZm9EaWN0RW50cnkSCwoDa2V5GAEgASgFEiQKBXZhbHVl",
+            "GAIgASgLMhUuenByb3RvLkVxdWlwU3VpdEluZm86AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruEquipAttrReflection.Descriptor, global::Zproto.StruEquipEnchantInfoReflection.Descriptor, global::Zproto.StruEquipInfoReflection.Descriptor, global::Zproto.StruEquipSuitInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -100,7 +100,7 @@ namespace Zproto {
       return new EquipList(this);
     }
 
-    /// <summary>Field number for the "equipList" field.</summary>
+    /// <summary>Field number for the "equip_list" field.</summary>
     public const int EquipList_FieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.EquipInfo>.Codec _map_equipList_codec
         = new pbc::MapField<int, global::Zproto.EquipInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.EquipInfo.Parser), 10);
@@ -111,7 +111,7 @@ namespace Zproto {
       get { return equipList_; }
     }
 
-    /// <summary>Field number for the "equipAttr" field.</summary>
+    /// <summary>Field number for the "equip_attr" field.</summary>
     public const int EquipAttrFieldNumber = 2;
     private global::Zproto.EquipAttr equipAttr_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "equipRecastInfo" field.</summary>
+    /// <summary>Field number for the "equip_recast_info" field.</summary>
     public const int EquipRecastInfoFieldNumber = 4;
     private static readonly pbc::MapField<ulong, global::Zproto.EquipAttr>.Codec _map_equipRecastInfo_codec
         = new pbc::MapField<ulong, global::Zproto.EquipAttr>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::Zproto.EquipAttr.Parser), 34);
@@ -134,7 +134,7 @@ namespace Zproto {
       get { return equipRecastInfo_; }
     }
 
-    /// <summary>Field number for the "equipEnchant" field.</summary>
+    /// <summary>Field number for the "equip_enchant" field.</summary>
     public const int EquipEnchantFieldNumber = 5;
     private static readonly pbc::MapField<long, global::Zproto.EquipEnchantInfo>.Codec _map_equipEnchant_codec
         = new pbc::MapField<long, global::Zproto.EquipEnchantInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.EquipEnchantInfo.Parser), 42);
@@ -145,7 +145,7 @@ namespace Zproto {
       get { return equipEnchant_; }
     }
 
-    /// <summary>Field number for the "suitInfoDict" field.</summary>
+    /// <summary>Field number for the "suit_info_dict" field.</summary>
     public const int SuitInfoDictFieldNumber = 6;
     private static readonly pbc::MapField<int, global::Zproto.EquipSuitInfo>.Codec _map_suitInfoDict_codec
         = new pbc::MapField<int, global::Zproto.EquipSuitInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.EquipSuitInfo.Parser), 50);

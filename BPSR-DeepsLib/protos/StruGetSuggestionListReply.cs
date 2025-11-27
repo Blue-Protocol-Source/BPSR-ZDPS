@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X2dldF9zdWdnZXN0aW9uX2xpc3RfcmVwbHkucHJvdG8SBnpwcm90",
             "bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aGHN0cnVfcGVyc29uYWxfZGF0",
-            "YS5wcm90byLWAQoWR2V0U3VnZ2VzdGlvbkxpc3RSZXBseRJKCg5zdWdnZXN0",
-            "aW9uTGlzdBgBIAMoCzIyLnpwcm90by5HZXRTdWdnZXN0aW9uTGlzdFJlcGx5",
-            "LlN1Z2dlc3Rpb25MaXN0RW50cnkSIwoHZXJyQ29kZRgCIAEoDjISLnpwcm90",
-            "by5FRXJyb3JDb2RlGksKE1N1Z2dlc3Rpb25MaXN0RW50cnkSCwoDa2V5GAEg",
-            "ASgFEiMKBXZhbHVlGAIgASgLMhQuenByb3RvLlBlcnNvbmFsRGF0YToCOAFi",
-            "BnByb3RvMw=="));
+            "YS5wcm90byLYAQoWR2V0U3VnZ2VzdGlvbkxpc3RSZXBseRJLCg9zdWdnZXN0",
+            "aW9uX2xpc3QYASADKAsyMi56cHJvdG8uR2V0U3VnZ2VzdGlvbkxpc3RSZXBs",
+            "eS5TdWdnZXN0aW9uTGlzdEVudHJ5EiQKCGVycl9jb2RlGAIgASgOMhIuenBy",
+            "b3RvLkVFcnJvckNvZGUaSwoTU3VnZ2VzdGlvbkxpc3RFbnRyeRILCgNrZXkY",
+            "ASABKAUSIwoFdmFsdWUYAiABKAsyFC56cHJvdG8uUGVyc29uYWxEYXRhOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruPersonalDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new GetSuggestionListReply(this);
     }
 
-    /// <summary>Field number for the "suggestionList" field.</summary>
+    /// <summary>Field number for the "suggestion_list" field.</summary>
     public const int SuggestionListFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.PersonalData>.Codec _map_suggestionList_codec
         = new pbc::MapField<int, global::Zproto.PersonalData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.PersonalData.Parser), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return suggestionList_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

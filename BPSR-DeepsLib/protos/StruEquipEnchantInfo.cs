@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X2VxdWlwX2VuY2hhbnRfaW5mby5wcm90bxIGenByb3RvGh9lbnVt",
             "X2VfZXF1aXBfZW5jaGFudF90eXBlLnByb3RvGhVzdHJ1X2RpcnR5X21hc2su",
-            "cHJvdG8icwoQRXF1aXBFbmNoYW50SW5mbxIZChFlbmNoYW50SXRlbVR5cGVJ",
-            "ZBgBIAEoBRIUCgxlbmNoYW50TGV2ZWwYAiABKAUSLgoLZW5jaGFudFR5cGUY",
-            "AyABKA4yGS56cHJvdG8uRUVxdWlwRW5jaGFudFR5cGViBnByb3RvMw=="));
+            "cHJvdG8ieAoQRXF1aXBFbmNoYW50SW5mbxIcChRlbmNoYW50X2l0ZW1fdHlw",
+            "ZV9pZBgBIAEoBRIVCg1lbmNoYW50X2xldmVsGAIgASgFEi8KDGVuY2hhbnRf",
+            "dHlwZRgDIAEoDjIZLnpwcm90by5FRXF1aXBFbmNoYW50VHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEEquipEnchantTypeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new EquipEnchantInfo(this);
     }
 
-    /// <summary>Field number for the "enchantItemTypeId" field.</summary>
+    /// <summary>Field number for the "enchant_item_type_id" field.</summary>
     public const int EnchantItemTypeIdFieldNumber = 1;
     private int enchantItemTypeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "enchantLevel" field.</summary>
+    /// <summary>Field number for the "enchant_level" field.</summary>
     public const int EnchantLevelFieldNumber = 2;
     private int enchantLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "enchantType" field.</summary>
+    /// <summary>Field number for the "enchant_type" field.</summary>
     public const int EnchantTypeFieldNumber = 3;
     private global::Zproto.EEquipEnchantType enchantType_ = global::Zproto.EEquipEnchantType.EequipEnchantNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

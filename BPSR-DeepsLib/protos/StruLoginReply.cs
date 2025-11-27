@@ -25,16 +25,17 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2xvZ2luX3JlcGx5LnByb3RvEgZ6cHJvdG8aF3N0cnVfYWNjb3Vu",
-            "dF9pbmZvLnByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byKHAwoKTG9n",
-            "aW5SZXBseRIoCgthY2NvdW50SW5mbxgCIAEoCzITLnpwcm90by5BY2NvdW50",
-            "SW5mbxIRCgliZWdpblRpbWUYAyABKAMSFwoPcHJvdG9jb2xWZXJzaW9uGAQg",
-            "ASgJEhUKDWNvbmZpZ1ZlcnNpb24YBSABKAkSEAoIdGltZVpvbmUYBiABKAkS",
-            "EwoLaXNQcml2aWxlZ2UYByABKAgSPgoOcGxhdGZvcm1Db25maWcYCCADKAsy",
-            "Ji56cHJvdG8uTG9naW5SZXBseS5QbGF0Zm9ybUNvbmZpZ0VudHJ5EhcKD2lz",
-            "Q2hhbmdlQWNjb3VudBgJIAEoCBIZChFpbnN0YWxsQ2hhbm5lbERpcxgKIAEo",
-            "BRIVCg1SZWdDaGFubmVsRGlzGAsgASgFEiMKB2VyckNvZGUYDCABKA4yEi56",
-            "cHJvdG8uRUVycm9yQ29kZRo1ChNQbGF0Zm9ybUNvbmZpZ0VudHJ5EgsKA2tl",
-            "eRgBIAEoBRINCgV2YWx1ZRgCIAEoCToCOAFiBnByb3RvMw=="));
+            "dF9pbmZvLnByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byKVAwoKTG9n",
+            "aW5SZXBseRIpCgxhY2NvdW50X2luZm8YAiABKAsyEy56cHJvdG8uQWNjb3Vu",
+            "dEluZm8SEgoKYmVnaW5fdGltZRgDIAEoAxIYChBwcm90b2NvbF92ZXJzaW9u",
+            "GAQgASgJEhYKDmNvbmZpZ192ZXJzaW9uGAUgASgJEhEKCXRpbWVfem9uZRgG",
+            "IAEoCRIUCgxpc19wcml2aWxlZ2UYByABKAgSPwoPcGxhdGZvcm1fY29uZmln",
+            "GAggAygLMiYuenByb3RvLkxvZ2luUmVwbHkuUGxhdGZvcm1Db25maWdFbnRy",
+            "eRIZChFpc19jaGFuZ2VfYWNjb3VudBgJIAEoCBIbChNpbnN0YWxsX2NoYW5u",
+            "ZWxfZGlzGAogASgFEhcKD3JlZ19jaGFubmVsX2RpcxgLIAEoBRIkCghlcnJf",
+            "Y29kZRgMIAEoDjISLnpwcm90by5FRXJyb3JDb2RlGjUKE1BsYXRmb3JtQ29u",
+            "ZmlnRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgJOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAccountInfoReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -100,7 +101,7 @@ namespace Zproto {
       return new LoginReply(this);
     }
 
-    /// <summary>Field number for the "accountInfo" field.</summary>
+    /// <summary>Field number for the "account_info" field.</summary>
     public const int AccountInfoFieldNumber = 2;
     private global::Zproto.AccountInfo accountInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "beginTime" field.</summary>
+    /// <summary>Field number for the "begin_time" field.</summary>
     public const int BeginTimeFieldNumber = 3;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "protocolVersion" field.</summary>
+    /// <summary>Field number for the "protocol_version" field.</summary>
     public const int ProtocolVersionFieldNumber = 4;
     private string protocolVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "configVersion" field.</summary>
+    /// <summary>Field number for the "config_version" field.</summary>
     public const int ConfigVersionFieldNumber = 5;
     private string configVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,7 +149,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "timeZone" field.</summary>
+    /// <summary>Field number for the "time_zone" field.</summary>
     public const int TimeZoneFieldNumber = 6;
     private string timeZone_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -160,7 +161,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isPrivilege" field.</summary>
+    /// <summary>Field number for the "is_privilege" field.</summary>
     public const int IsPrivilegeFieldNumber = 7;
     private bool isPrivilege_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -172,7 +173,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "platformConfig" field.</summary>
+    /// <summary>Field number for the "platform_config" field.</summary>
     public const int PlatformConfigFieldNumber = 8;
     private static readonly pbc::MapField<int, string>.Codec _map_platformConfig_codec
         = new pbc::MapField<int, string>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForString(18, ""), 66);
@@ -183,7 +184,7 @@ namespace Zproto {
       get { return platformConfig_; }
     }
 
-    /// <summary>Field number for the "isChangeAccount" field.</summary>
+    /// <summary>Field number for the "is_change_account" field.</summary>
     public const int IsChangeAccountFieldNumber = 9;
     private bool isChangeAccount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -195,7 +196,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "installChannelDis" field.</summary>
+    /// <summary>Field number for the "install_channel_dis" field.</summary>
     public const int InstallChannelDisFieldNumber = 10;
     private int installChannelDis_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -207,7 +208,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "RegChannelDis" field.</summary>
+    /// <summary>Field number for the "reg_channel_dis" field.</summary>
     public const int RegChannelDisFieldNumber = 11;
     private int regChannelDis_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -219,7 +220,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 12;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

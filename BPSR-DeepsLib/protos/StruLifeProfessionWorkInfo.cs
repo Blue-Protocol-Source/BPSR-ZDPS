@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2xpZmVfcHJvZmVzc2lvbl93b3JrX2luZm8ucHJvdG8SBnpwcm90",
-            "bxoPc3RydV9pdGVtLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ioQEK",
-            "FkxpZmVQcm9mZXNzaW9uV29ya0luZm8SGAoQbGlmZVByb2Zlc3Npb25JZBgB",
-            "IAEoDRIRCgliZWdpblRpbWUYAiABKA0SDwoHZW5kVGltZRgDIAEoDRINCgVj",
-            "b3VudBgEIAEoDRIMCgRjb3N0GAUgASgNEhwKBnJld2FyZBgGIAMoCzIMLnpw",
-            "cm90by5JdGVtEg4KBmNvc3RJZBgHIAEoDWIGcHJvdG8z"));
+            "bxoPc3RydV9pdGVtLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ipgEK",
+            "FkxpZmVQcm9mZXNzaW9uV29ya0luZm8SGgoSbGlmZV9wcm9mZXNzaW9uX2lk",
+            "GAEgASgNEhIKCmJlZ2luX3RpbWUYAiABKA0SEAoIZW5kX3RpbWUYAyABKA0S",
+            "DQoFY291bnQYBCABKA0SDAoEY29zdBgFIAEoDRIcCgZyZXdhcmQYBiADKAsy",
+            "DC56cHJvdG8uSXRlbRIPCgdjb3N0X2lkGAcgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +91,7 @@ namespace Zproto {
       return new LifeProfessionWorkInfo(this);
     }
 
-    /// <summary>Field number for the "lifeProfessionId" field.</summary>
+    /// <summary>Field number for the "life_profession_id" field.</summary>
     public const int LifeProfessionIdFieldNumber = 1;
     private uint lifeProfessionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "beginTime" field.</summary>
+    /// <summary>Field number for the "begin_time" field.</summary>
     public const int BeginTimeFieldNumber = 2;
     private uint beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "endTime" field.</summary>
+    /// <summary>Field number for the "end_time" field.</summary>
     public const int EndTimeFieldNumber = 3;
     private uint endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,7 +162,7 @@ namespace Zproto {
       get { return reward_; }
     }
 
-    /// <summary>Field number for the "costId" field.</summary>
+    /// <summary>Field number for the "cost_id" field.</summary>
     public const int CostIdFieldNumber = 7;
     private uint costId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

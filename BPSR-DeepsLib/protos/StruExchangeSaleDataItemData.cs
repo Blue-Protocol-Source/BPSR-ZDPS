@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X2V4Y2hhbmdlX3NhbGVfZGF0YV9pdGVtX2RhdGEucHJvdG8SBnpw",
-            "cm90byJUChhFeGNoYW5nZVNhbGVEYXRhSXRlbURhdGESDAoEZ3VpZBgBIAEo",
-            "CRILCgNudW0YAiABKAUSDAoEcmF0ZRgDIAEoBRIPCgdlbmRUaW1lGAQgASgD",
-            "YgZwcm90bzM="));
+            "cm90byJVChhFeGNoYW5nZVNhbGVEYXRhSXRlbURhdGESDAoEZ3VpZBgBIAEo",
+            "CRILCgNudW0YAiABKAUSDAoEcmF0ZRgDIAEoBRIQCghlbmRfdGltZRgEIAEo",
+            "A2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "endTime" field.</summary>
+    /// <summary>Field number for the "end_time" field.</summary>
     public const int EndTimeFieldNumber = 4;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

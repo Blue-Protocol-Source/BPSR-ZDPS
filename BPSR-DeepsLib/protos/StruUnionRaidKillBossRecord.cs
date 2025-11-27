@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X3VuaW9uX3JhaWRfa2lsbF9ib3NzX3JlY29yZC5wcm90bxIGenBy",
-            "b3RvIk0KF1VuaW9uUmFpZEtpbGxCb3NzUmVjb3JkEg4KBmNoYXJJZBgBIAEo",
-            "AxIQCghDaGFyTmFtZRgCIAEoCRIQCghraWxsVGltZRgDIAEoA2IGcHJvdG8z"));
+            "b3RvIlAKF1VuaW9uUmFpZEtpbGxCb3NzUmVjb3JkEg8KB2NoYXJfaWQYASAB",
+            "KAMSEQoJY2hhcl9uYW1lGAIgASgJEhEKCWtpbGxfdGltZRgDIAEoA2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new UnionRaidKillBossRecord(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "CharName" field.</summary>
+    /// <summary>Field number for the "char_name" field.</summary>
     public const int CharNameFieldNumber = 2;
     private string charName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "killTime" field.</summary>
+    /// <summary>Field number for the "kill_time" field.</summary>
     public const int KillTimeFieldNumber = 3;
     private long killTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

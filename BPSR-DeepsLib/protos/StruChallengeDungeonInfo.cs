@@ -26,15 +26,15 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X2NoYWxsZW5nZV9kdW5nZW9uX2luZm8ucHJvdG8SBnpwcm90bxoX",
             "c3RydV9kdW5nZW9uX2luZm8ucHJvdG8aH3N0cnVfZHVuZ2Vvbl90YXJnZXRf",
-            "YXdhcmQucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLMAgoUQ2hhbGxl",
-            "bmdlRHVuZ2VvbkluZm8SQgoLZHVuZ2VvbkluZm8YASADKAsyLS56cHJvdG8u",
-            "Q2hhbGxlbmdlRHVuZ2VvbkluZm8uRHVuZ2VvbkluZm9FbnRyeRJQChJkdW5n",
-            "ZW9uVGFyZ2V0QXdhcmQYAiADKAsyNC56cHJvdG8uQ2hhbGxlbmdlRHVuZ2Vv",
-            "bkluZm8uRHVuZ2VvblRhcmdldEF3YXJkRW50cnkaRwoQRHVuZ2VvbkluZm9F",
-            "bnRyeRILCgNrZXkYASABKAUSIgoFdmFsdWUYAiABKAsyEy56cHJvdG8uRHVu",
-            "Z2VvbkluZm86AjgBGlUKF0R1bmdlb25UYXJnZXRBd2FyZEVudHJ5EgsKA2tl",
-            "eRgBIAEoBRIpCgV2YWx1ZRgCIAEoCzIaLnpwcm90by5EdW5nZW9uVGFyZ2V0",
-            "QXdhcmQ6AjgBYgZwcm90bzM="));
+            "YXdhcmQucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLPAgoUQ2hhbGxl",
+            "bmdlRHVuZ2VvbkluZm8SQwoMZHVuZ2Vvbl9pbmZvGAEgAygLMi0uenByb3Rv",
+            "LkNoYWxsZW5nZUR1bmdlb25JbmZvLkR1bmdlb25JbmZvRW50cnkSUgoUZHVu",
+            "Z2Vvbl90YXJnZXRfYXdhcmQYAiADKAsyNC56cHJvdG8uQ2hhbGxlbmdlRHVu",
+            "Z2VvbkluZm8uRHVuZ2VvblRhcmdldEF3YXJkRW50cnkaRwoQRHVuZ2Vvbklu",
+            "Zm9FbnRyeRILCgNrZXkYASABKAUSIgoFdmFsdWUYAiABKAsyEy56cHJvdG8u",
+            "RHVuZ2VvbkluZm86AjgBGlUKF0R1bmdlb25UYXJnZXRBd2FyZEVudHJ5EgsK",
+            "A2tleRgBIAEoBRIpCgV2YWx1ZRgCIAEoCzIaLnpwcm90by5EdW5nZW9uVGFy",
+            "Z2V0QXdhcmQ6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonInfoReflection.Descriptor, global::Zproto.StruDungeonTargetAwardReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +91,7 @@ namespace Zproto {
       return new ChallengeDungeonInfo(this);
     }
 
-    /// <summary>Field number for the "dungeonInfo" field.</summary>
+    /// <summary>Field number for the "dungeon_info" field.</summary>
     public const int DungeonInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.DungeonInfo>.Codec _map_dungeonInfo_codec
         = new pbc::MapField<int, global::Zproto.DungeonInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonInfo.Parser), 10);
@@ -102,7 +102,7 @@ namespace Zproto {
       get { return dungeonInfo_; }
     }
 
-    /// <summary>Field number for the "dungeonTargetAward" field.</summary>
+    /// <summary>Field number for the "dungeon_target_award" field.</summary>
     public const int DungeonTargetAwardFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.DungeonTargetAward>.Codec _map_dungeonTargetAward_codec
         = new pbc::MapField<int, global::Zproto.DungeonTargetAward>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonTargetAward.Parser), 18);

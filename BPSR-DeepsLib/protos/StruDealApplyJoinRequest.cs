@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2RlYWxfYXBwbHlfam9pbl9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "OgoURGVhbEFwcGx5Sm9pblJlcXVlc3QSEwoLYXBwbGljYW50SWQYAiABKAMS",
-            "DQoFYWdyZWUYAyABKAhiBnByb3RvMw=="));
+            "OwoURGVhbEFwcGx5Sm9pblJlcXVlc3QSFAoMYXBwbGljYW50X2lkGAIgASgD",
+            "Eg0KBWFncmVlGAMgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DealApplyJoinRequest(this);
     }
 
-    /// <summary>Field number for the "applicantId" field.</summary>
+    /// <summary>Field number for the "applicant_id" field.</summary>
     public const int ApplicantIdFieldNumber = 2;
     private long applicantId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

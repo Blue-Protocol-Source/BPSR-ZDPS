@@ -28,16 +28,16 @@ namespace Zproto {
             "ZXBseS5wcm90bxoec3RydV9kZWxldGVfbWFpbF9yZXF1ZXN0LnByb3RvGiNz",
             "dHJ1X2dldF9tYWlsX3V1aWRfbGlzdF9yZXBseS5wcm90bxolc3RydV9nZXRf",
             "bWFpbF91dWlkX2xpc3RfcmVxdWVzdC5wcm90bxoac3RydV9yZWFkX21haWxf",
-            "cmVwbHkucHJvdG8aHHN0cnVfcmVhZF9tYWlsX3JlcXVlc3QucHJvdG8i6wIK",
+            "cmVwbHkucHJvdG8aHHN0cnVfcmVhZF9tYWlsX3JlcXVlc3QucHJvdG8i7gIK",
             "BE1haWwaMgoMUmVhZE1haWxfUmV0EiIKA3JldBgBIAEoCzIVLnpwcm90by5S",
-            "ZWFkTWFpbFJlcGx5GjUKCFJlYWRNYWlsEikKCHZSZXF1ZXN0GAEgASgLMhcu",
-            "enByb3RvLlJlYWRNYWlsUmVxdWVzdBo2Cg5EZWxldGVNYWlsX1JldBIkCgNy",
-            "ZXQYASABKAsyFy56cHJvdG8uRGVsZXRlTWFpbFJlcGx5GjkKCkRlbGV0ZU1h",
-            "aWwSKwoIdlJlcXVlc3QYASABKAsyGS56cHJvdG8uRGVsZXRlTWFpbFJlcXVl",
-            "c3QaQAoTR2V0TWFpbFV1aWRMaXN0X1JldBIpCgNyZXQYASABKAsyHC56cHJv",
-            "dG8uR2V0TWFpbFV1aWRMaXN0UmVwbHkaQwoPR2V0TWFpbFV1aWRMaXN0EjAK",
-            "CHZSZXF1ZXN0GAEgASgLMh4uenByb3RvLkdldE1haWxVdWlkTGlzdFJlcXVl",
-            "c3RiBnByb3RvMw=="));
+            "ZWFkTWFpbFJlcGx5GjYKCFJlYWRNYWlsEioKCXZfcmVxdWVzdBgBIAEoCzIX",
+            "Lnpwcm90by5SZWFkTWFpbFJlcXVlc3QaNgoORGVsZXRlTWFpbF9SZXQSJAoD",
+            "cmV0GAEgASgLMhcuenByb3RvLkRlbGV0ZU1haWxSZXBseRo6CgpEZWxldGVN",
+            "YWlsEiwKCXZfcmVxdWVzdBgBIAEoCzIZLnpwcm90by5EZWxldGVNYWlsUmVx",
+            "dWVzdBpAChNHZXRNYWlsVXVpZExpc3RfUmV0EikKA3JldBgBIAEoCzIcLnpw",
+            "cm90by5HZXRNYWlsVXVpZExpc3RSZXBseRpECg9HZXRNYWlsVXVpZExpc3QS",
+            "MQoJdl9yZXF1ZXN0GAEgASgLMh4uenByb3RvLkdldE1haWxVdWlkTGlzdFJl",
+            "cXVlc3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDeleteMailReplyReflection.Descriptor, global::Zproto.StruDeleteMailRequestReflection.Descriptor, global::Zproto.StruGetMailUuidListReplyReflection.Descriptor, global::Zproto.StruGetMailUuidListRequestReflection.Descriptor, global::Zproto.StruReadMailReplyReflection.Descriptor, global::Zproto.StruReadMailRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -469,7 +469,7 @@ namespace Zproto {
           return new ReadMail(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.ReadMailRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -883,7 +883,7 @@ namespace Zproto {
           return new DeleteMail(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.DeleteMailRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1297,7 +1297,7 @@ namespace Zproto {
           return new GetMailUuidList(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetMailUuidListRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

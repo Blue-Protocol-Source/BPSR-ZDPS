@@ -27,15 +27,15 @@ namespace Zproto {
             "Ch1zdHJ1X2R1bmdlb25fdW5pb25faW5mby5wcm90bxIGenByb3RvGhVzdHJ1",
             "X2RhbmNlX2JhbGwucHJvdG8aGXN0cnVfdW5pb25fYnVpbGRpbmcucHJvdG8a",
             "HnN0cnVfdW5pb25fZV9zY3JlZW5faW5mby5wcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIu4CChBEdW5nZW9uVW5pb25JbmZvEg8KB3VuaW9uSWQYASAB",
-            "KAMSRAoOdW5pb25CdWlsZGluZ3MYAiADKAsyLC56cHJvdG8uRHVuZ2VvblVu",
-            "aW9uSW5mby5VbmlvbkJ1aWxkaW5nc0VudHJ5EkAKDGVTY3JlZW5JbmZvcxgD",
-            "IAMoCzIqLnpwcm90by5EdW5nZW9uVW5pb25JbmZvLkVTY3JlZW5JbmZvc0Vu",
-            "dHJ5EiQKCWRhbmNlQmFsbBgEIAEoCzIRLnpwcm90by5EYW5jZUJhbGwaTAoT",
-            "VW5pb25CdWlsZGluZ3NFbnRyeRILCgNrZXkYASABKAUSJAoFdmFsdWUYAiAB",
-            "KAsyFS56cHJvdG8uVW5pb25CdWlsZGluZzoCOAEaTQoRRVNjcmVlbkluZm9z",
-            "RW50cnkSCwoDa2V5GAEgASgFEicKBXZhbHVlGAIgASgLMhguenByb3RvLlVu",
-            "aW9uRVNjcmVlbkluZm86AjgBYgZwcm90bzM="));
+            "YXNrLnByb3RvIvMCChBEdW5nZW9uVW5pb25JbmZvEhAKCHVuaW9uX2lkGAEg",
+            "ASgDEkUKD3VuaW9uX2J1aWxkaW5ncxgCIAMoCzIsLnpwcm90by5EdW5nZW9u",
+            "VW5pb25JbmZvLlVuaW9uQnVpbGRpbmdzRW50cnkSQgoOZV9zY3JlZW5faW5m",
+            "b3MYAyADKAsyKi56cHJvdG8uRHVuZ2VvblVuaW9uSW5mby5FU2NyZWVuSW5m",
+            "b3NFbnRyeRIlCgpkYW5jZV9iYWxsGAQgASgLMhEuenByb3RvLkRhbmNlQmFs",
+            "bBpMChNVbmlvbkJ1aWxkaW5nc0VudHJ5EgsKA2tleRgBIAEoBRIkCgV2YWx1",
+            "ZRgCIAEoCzIVLnpwcm90by5VbmlvbkJ1aWxkaW5nOgI4ARpNChFFU2NyZWVu",
+            "SW5mb3NFbnRyeRILCgNrZXkYASABKAUSJwoFdmFsdWUYAiABKAsyGC56cHJv",
+            "dG8uVW5pb25FU2NyZWVuSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDanceBallReflection.Descriptor, global::Zproto.StruUnionBuildingReflection.Descriptor, global::Zproto.StruUnionEScreenInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +94,7 @@ namespace Zproto {
       return new DungeonUnionInfo(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -106,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unionBuildings" field.</summary>
+    /// <summary>Field number for the "union_buildings" field.</summary>
     public const int UnionBuildingsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.UnionBuilding>.Codec _map_unionBuildings_codec
         = new pbc::MapField<int, global::Zproto.UnionBuilding>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionBuilding.Parser), 18);
@@ -117,7 +117,7 @@ namespace Zproto {
       get { return unionBuildings_; }
     }
 
-    /// <summary>Field number for the "eScreenInfos" field.</summary>
+    /// <summary>Field number for the "e_screen_infos" field.</summary>
     public const int EScreenInfosFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.UnionEScreenInfo>.Codec _map_eScreenInfos_codec
         = new pbc::MapField<int, global::Zproto.UnionEScreenInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionEScreenInfo.Parser), 26);
@@ -128,7 +128,7 @@ namespace Zproto {
       get { return eScreenInfos_; }
     }
 
-    /// <summary>Field number for the "danceBall" field.</summary>
+    /// <summary>Field number for the "dance_ball" field.</summary>
     public const int DanceBallFieldNumber = 4;
     private global::Zproto.DanceBall danceBall_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X2FjdGl2ZV9wcm9mZXNzaW9uX3RhbGVudF9yZXF1ZXN0LnByb3Rv",
-            "EgZ6cHJvdG8iTAodQWN0aXZlUHJvZmVzc2lvblRhbGVudFJlcXVlc3QSFAoM",
-            "cHJvZmVzc2lvbklkGAEgASgFEhUKDXRhbGVudE5vZGVJZHMYAyADKAViBnBy",
-            "b3RvMw=="));
+            "EgZ6cHJvdG8iTwodQWN0aXZlUHJvZmVzc2lvblRhbGVudFJlcXVlc3QSFQoN",
+            "cHJvZmVzc2lvbl9pZBgBIAEoBRIXCg90YWxlbnRfbm9kZV9pZHMYAyADKAVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ActiveProfessionTalentRequest(this);
     }
 
-    /// <summary>Field number for the "professionId" field.</summary>
+    /// <summary>Field number for the "profession_id" field.</summary>
     public const int ProfessionIdFieldNumber = 1;
     private int professionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "talentNodeIds" field.</summary>
+    /// <summary>Field number for the "talent_node_ids" field.</summary>
     public const int TalentNodeIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_talentNodeIds_codec
         = pb::FieldCodec.ForInt32(26);

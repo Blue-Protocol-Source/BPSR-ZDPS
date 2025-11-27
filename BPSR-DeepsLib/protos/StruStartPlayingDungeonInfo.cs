@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X3N0YXJ0X3BsYXlpbmdfZHVuZ2Vvbl9pbmZvLnByb3RvEgZ6cHJv",
-            "dG8iKwoXU3RhcnRQbGF5aW5nRHVuZ2VvbkluZm8SEAoIaXNVc2VLZXkYASAB",
-            "KAhiBnByb3RvMw=="));
+            "dG8iLQoXU3RhcnRQbGF5aW5nRHVuZ2VvbkluZm8SEgoKaXNfdXNlX2tleRgB",
+            "IAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new StartPlayingDungeonInfo(this);
     }
 
-    /// <summary>Field number for the "isUseKey" field.</summary>
+    /// <summary>Field number for the "is_use_key" field.</summary>
     public const int IsUseKeyFieldNumber = 1;
     private bool isUseKey_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

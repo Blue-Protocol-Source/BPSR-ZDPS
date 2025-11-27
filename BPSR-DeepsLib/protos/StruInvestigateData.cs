@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "ChtzdHJ1X2ludmVzdGlnYXRlX2RhdGEucHJvdG8SBnpwcm90bxobc3RydV9p",
             "bnZlc3RpZ2F0ZV9zdGVwLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i",
-            "nQEKD0ludmVzdGlnYXRlRGF0YRIKCgJpZBgBIAEoDRI1CgdzdGVwSWRzGAIg",
-            "AygLMiQuenByb3RvLkludmVzdGlnYXRlRGF0YS5TdGVwSWRzRW50cnkaRwoM",
-            "U3RlcElkc0VudHJ5EgsKA2tleRgBIAEoBRImCgV2YWx1ZRgCIAEoCzIXLnpw",
-            "cm90by5JbnZlc3RpZ2F0ZVN0ZXA6AjgBYgZwcm90bzM="));
+            "ngEKD0ludmVzdGlnYXRlRGF0YRIKCgJpZBgBIAEoDRI2CghzdGVwX2lkcxgC",
+            "IAMoCzIkLnpwcm90by5JbnZlc3RpZ2F0ZURhdGEuU3RlcElkc0VudHJ5GkcK",
+            "DFN0ZXBJZHNFbnRyeRILCgNrZXkYASABKAUSJgoFdmFsdWUYAiABKAsyFy56",
+            "cHJvdG8uSW52ZXN0aWdhdGVTdGVwOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruInvestigateStepReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "stepIds" field.</summary>
+    /// <summary>Field number for the "step_ids" field.</summary>
     public const int StepIdsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.InvestigateStep>.Codec _map_stepIds_codec
         = new pbc::MapField<int, global::Zproto.InvestigateStep>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.InvestigateStep.Parser), 18);

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruShapeshiftSkillReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X3NoYXBlc2hpZnRfc2tpbGwucHJvdG8SBnpwcm90byIxCg9TaGFw",
-            "ZXNoaWZ0U2tpbGwSDQoFaW5kZXgYASABKAUSDwoHc2tpbGxJZBgCIAEoBWIG",
-            "cHJvdG8z"));
+            "ChtzdHJ1X3NoYXBlc2hpZnRfc2tpbGwucHJvdG8SBnpwcm90byIyCg9TaGFw",
+            "ZXNoaWZ0U2tpbGwSDQoFaW5kZXgYASABKAUSEAoIc2tpbGxfaWQYAiABKAVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skillId" field.</summary>
+    /// <summary>Field number for the "skill_id" field.</summary>
     public const int SkillIdFieldNumber = 2;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X3JlcV9zd2l0Y2hfc2NlbmVfbGluZV9yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8iQQoZUmVxU3dpdGNoU2NlbmVMaW5lUmVxdWVzdBIOCgZsaW5lSWQY",
-            "AiABKA0SFAoMdGFyZ2V0Q2hhcklkGAMgASgDYgZwcm90bzM="));
+            "cHJvdG8iRAoZUmVxU3dpdGNoU2NlbmVMaW5lUmVxdWVzdBIPCgdsaW5lX2lk",
+            "GAIgASgNEhYKDnRhcmdldF9jaGFyX2lkGAMgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ReqSwitchSceneLineRequest(this);
     }
 
-    /// <summary>Field number for the "lineId" field.</summary>
+    /// <summary>Field number for the "line_id" field.</summary>
     public const int LineIdFieldNumber = 2;
     private uint lineId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetCharId" field.</summary>
+    /// <summary>Field number for the "target_char_id" field.</summary>
     public const int TargetCharIdFieldNumber = 3;
     private long targetCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

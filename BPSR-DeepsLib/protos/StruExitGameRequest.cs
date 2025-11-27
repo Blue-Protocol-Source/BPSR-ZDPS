@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X2V4aXRfZ2FtZV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8aFnN0cnVf",
-            "ZGV2aWNlX2luZm8ucHJvdG8iOQoPRXhpdEdhbWVSZXF1ZXN0EiYKCmRldmlj",
-            "ZUluZm8YASABKAsyEi56cHJvdG8uRGV2aWNlSW5mb2IGcHJvdG8z"));
+            "ZGV2aWNlX2luZm8ucHJvdG8iOgoPRXhpdEdhbWVSZXF1ZXN0EicKC2Rldmlj",
+            "ZV9pbmZvGAEgASgLMhIuenByb3RvLkRldmljZUluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDeviceInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ExitGameRequest(this);
     }
 
-    /// <summary>Field number for the "deviceInfo" field.</summary>
+    /// <summary>Field number for the "device_info" field.</summary>
     public const int DeviceInfoFieldNumber = 1;
     private global::Zproto.DeviceInfo deviceInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

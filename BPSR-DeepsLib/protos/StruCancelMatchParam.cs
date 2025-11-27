@@ -24,8 +24,8 @@ namespace Zproto {
     static StruCancelMatchParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X2NhbmNlbF9tYXRjaF9wYXJhbS5wcm90bxIGenByb3RvIiYKEENh",
-            "bmNlbE1hdGNoUGFyYW0SEgoKbWF0Y2hUb2tlbhgBIAEoCWIGcHJvdG8z"));
+            "Ch1zdHJ1X2NhbmNlbF9tYXRjaF9wYXJhbS5wcm90bxIGenByb3RvIicKEENh",
+            "bmNlbE1hdGNoUGFyYW0SEwoLbWF0Y2hfdG9rZW4YASABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new CancelMatchParam(this);
     }
 
-    /// <summary>Field number for the "matchToken" field.</summary>
+    /// <summary>Field number for the "match_token" field.</summary>
     public const int MatchTokenFieldNumber = 1;
     private string matchToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

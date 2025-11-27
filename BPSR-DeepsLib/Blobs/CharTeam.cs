@@ -15,7 +15,7 @@ public class CharTeam : BlobType
     public List<long>? CharIds;
     public bool? IsMatching;
     public int? CharTeamVersion;
-    public Dictionary<int, TeamMemData> TeamMemberData;
+    public Dictionary<long, TeamMemData> TeamMemberData;
 
     public CharTeam()
     {
@@ -51,7 +51,7 @@ public class CharTeam : BlobType
                 CharTeamVersion = blob.ReadInt();
                 return true;
             case Zproto.CharTeam.TeamMemberDataFieldNumber:
-                TeamMemberData = blob.ReadHashMap<TeamMemData>();
+                TeamMemberData = blob.ReadHashMap<long, TeamMemData>();
                 return true;
             default:
                 return false;

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X3NvcnRfcGFja2FnZV9wYXJhbS5wcm90bxIGenByb3RvGhpzdHJ1",
-            "X3NvcnRfaXRlbV9wYXJhbS5wcm90byJSChBTb3J0UGFja2FnZVBhcmFtEhMK",
-            "C3BhY2thZ2VUeXBlGAEgASgFEikKCml0ZW1QYXJhbXMYAiADKAsyFS56cHJv",
-            "dG8uU29ydEl0ZW1QYXJhbWIGcHJvdG8z"));
+            "X3NvcnRfaXRlbV9wYXJhbS5wcm90byJUChBTb3J0UGFja2FnZVBhcmFtEhQK",
+            "DHBhY2thZ2VfdHlwZRgBIAEoBRIqCgtpdGVtX3BhcmFtcxgCIAMoCzIVLnpw",
+            "cm90by5Tb3J0SXRlbVBhcmFtYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSortItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new SortPackageParam(this);
     }
 
-    /// <summary>Field number for the "packageType" field.</summary>
+    /// <summary>Field number for the "package_type" field.</summary>
     public const int PackageTypeFieldNumber = 1;
     private int packageType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemParams" field.</summary>
+    /// <summary>Field number for the "item_params" field.</summary>
     public const int ItemParamsFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.SortItemParam> _repeated_itemParams_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.SortItemParam.Parser);

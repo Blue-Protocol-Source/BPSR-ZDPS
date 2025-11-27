@@ -24,9 +24,9 @@ namespace Zproto {
     static StruEquipCreateRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2VxdWlwX2NyZWF0ZV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iRQoS",
-            "RXF1aXBDcmVhdGVSZXF1ZXN0EhUKDWVxdWlwQ29uZmlnSWQYASABKAUSGAoQ",
-            "Y29uc3VtZUVxdWlwVXVpZBgCIAEoA2IGcHJvdG8z"));
+            "Ch9zdHJ1X2VxdWlwX2NyZWF0ZV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iSQoS",
+            "RXF1aXBDcmVhdGVSZXF1ZXN0EhcKD2VxdWlwX2NvbmZpZ19pZBgBIAEoBRIa",
+            "ChJjb25zdW1lX2VxdWlwX3V1aWQYAiABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new EquipCreateRequest(this);
     }
 
-    /// <summary>Field number for the "equipConfigId" field.</summary>
+    /// <summary>Field number for the "equip_config_id" field.</summary>
     public const int EquipConfigIdFieldNumber = 1;
     private int equipConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "consumeEquipUuid" field.</summary>
+    /// <summary>Field number for the "consume_equip_uuid" field.</summary>
     public const int ConsumeEquipUuidFieldNumber = 2;
     private long consumeEquipUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

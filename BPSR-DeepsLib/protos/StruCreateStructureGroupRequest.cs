@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2NyZWF0ZV9zdHJ1Y3R1cmVfZ3JvdXBfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvIlcKG0NyZWF0ZVN0cnVjdHVyZUdyb3VwUmVxdWVzdBIRCglncm91",
-            "cE5hbWUYASABKAkSFAoMc3RydWN0dXJlSWRzGAIgAygDEg8KB2lzT3V0ZXIY",
-            "AyABKAhiBnByb3RvMw=="));
+            "enByb3RvIloKG0NyZWF0ZVN0cnVjdHVyZUdyb3VwUmVxdWVzdBISCgpncm91",
+            "cF9uYW1lGAEgASgJEhUKDXN0cnVjdHVyZV9pZHMYAiADKAMSEAoIaXNfb3V0",
+            "ZXIYAyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CreateStructureGroupRequest(this);
     }
 
-    /// <summary>Field number for the "groupName" field.</summary>
+    /// <summary>Field number for the "group_name" field.</summary>
     public const int GroupNameFieldNumber = 1;
     private string groupName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "structureIds" field.</summary>
+    /// <summary>Field number for the "structure_ids" field.</summary>
     public const int StructureIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_structureIds_codec
         = pb::FieldCodec.ForInt64(18);
@@ -108,7 +108,7 @@ namespace Zproto {
       get { return structureIds_; }
     }
 
-    /// <summary>Field number for the "isOuter" field.</summary>
+    /// <summary>Field number for the "is_outer" field.</summary>
     public const int IsOuterFieldNumber = 3;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

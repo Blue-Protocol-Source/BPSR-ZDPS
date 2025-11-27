@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X21vbnN0ZXJfaHVudF90YXJnZXQucHJvdG8SBnpwcm90bxoec3Ry",
             "dV9tb25zdGVyX3RhcmdldF9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2su",
-            "cHJvdG8ivwEKEU1vbnN0ZXJIdW50VGFyZ2V0EhEKCW1vbnN0ZXJJZBgBIAEo",
-            "BRJFCg50YXJnZXRJbmZvTGlzdBgCIAMoCzItLnpwcm90by5Nb25zdGVySHVu",
-            "dFRhcmdldC5UYXJnZXRJbmZvTGlzdEVudHJ5GlAKE1RhcmdldEluZm9MaXN0",
-            "RW50cnkSCwoDa2V5GAEgASgFEigKBXZhbHVlGAIgASgLMhkuenByb3RvLk1v",
-            "bnN0ZXJUYXJnZXRJbmZvOgI4AWIGcHJvdG8z"));
+            "cHJvdG8iwgEKEU1vbnN0ZXJIdW50VGFyZ2V0EhIKCm1vbnN0ZXJfaWQYASAB",
+            "KAUSRwoQdGFyZ2V0X2luZm9fbGlzdBgCIAMoCzItLnpwcm90by5Nb25zdGVy",
+            "SHVudFRhcmdldC5UYXJnZXRJbmZvTGlzdEVudHJ5GlAKE1RhcmdldEluZm9M",
+            "aXN0RW50cnkSCwoDa2V5GAEgASgFEigKBXZhbHVlGAIgASgLMhkuenByb3Rv",
+            "Lk1vbnN0ZXJUYXJnZXRJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMonsterTargetInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new MonsterHuntTarget(this);
     }
 
-    /// <summary>Field number for the "monsterId" field.</summary>
+    /// <summary>Field number for the "monster_id" field.</summary>
     public const int MonsterIdFieldNumber = 1;
     private int monsterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetInfoList" field.</summary>
+    /// <summary>Field number for the "target_info_list" field.</summary>
     public const int TargetInfoListFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.MonsterTargetInfo>.Codec _map_targetInfoList_codec
         = new pbc::MapField<int, global::Zproto.MonsterTargetInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MonsterTargetInfo.Parser), 18);

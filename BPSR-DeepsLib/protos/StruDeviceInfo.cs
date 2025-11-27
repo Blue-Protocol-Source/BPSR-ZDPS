@@ -24,21 +24,22 @@ namespace Zproto {
     static StruDeviceInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X2RldmljZV9pbmZvLnByb3RvEgZ6cHJvdG8ivAMKCkRldmljZUlu",
-            "Zm8SFQoNY2xpZW50VmVyc2lvbhgBIAEoCRIWCg5zeXN0ZW1Tb2Z0d2FyZRgC",
-            "IAEoCRIWCg5zeXN0ZW1IYXJkd2FyZRgDIAEoCRITCgt0ZWxlY29tT3BlchgE",
-            "IAEoCRIPCgduZXR3b3JrGAUgASgJEhMKC3NjcmVlbldpZHRoGAYgASgFEhMK",
-            "C3NjcmVlbkhpZ2h0GAcgASgFEg8KB2RlbnNpdHkYCCABKAISDwoHY2hhbm5l",
-            "bBgJIAEoCRITCgtjcHVIYXJkd2FyZRgKIAEoCRIOCgZtZW1vcnkYCyABKAUS",
-            "EAoIZ2xSZW5kZXIYDCABKAkSEQoJZ0xWZXJzaW9uGA0gASgJEhAKCGRldmlj",
-            "ZUlkGA4gASgJEhEKCXZDbGllbnRJUBgPIAEoCRITCgt2Q2xpZW50SVBWNhgQ",
-            "IAEoCRIUCgxBTkRST0lEX09BSUQYESABKAkSEAoISU9TX0NBSUQYEiABKAkS",
-            "FwoPcGxhdGZvcm1Vc2VyVGFnGBMgASgJEgsKA01BQxgUIAEoCRIRCgl1c2Vy",
-            "QWdlbnQYFSABKAkSEAoIT0xEX0NBSUQYFiABKAliBnByb3RvMw=="));
+            "ChZzdHJ1X2RldmljZV9pbmZvLnByb3RvEgZ6cHJvdG8izgMKCkRldmljZUlu",
+            "Zm8SFgoOY2xpZW50X3ZlcnNpb24YASABKAkSFwoPc3lzdGVtX3NvZnR3YXJl",
+            "GAIgASgJEhcKD3N5c3RlbV9oYXJkd2FyZRgDIAEoCRIUCgx0ZWxlY29tX29w",
+            "ZXIYBCABKAkSDwoHbmV0d29yaxgFIAEoCRIUCgxzY3JlZW5fd2lkdGgYBiAB",
+            "KAUSFAoMc2NyZWVuX2hpZ2h0GAcgASgFEg8KB2RlbnNpdHkYCCABKAISDwoH",
+            "Y2hhbm5lbBgJIAEoCRIUCgxjcHVfaGFyZHdhcmUYCiABKAkSDgoGbWVtb3J5",
+            "GAsgASgFEhEKCWdsX3JlbmRlchgMIAEoCRITCgtnX2xfdmVyc2lvbhgNIAEo",
+            "CRIRCglkZXZpY2VfaWQYDiABKAkSEwoLdl9jbGllbnRfaXAYDyABKAkSFQoN",
+            "dl9jbGllbnRfaXB2NhgQIAEoCRIUCgxBTkRST0lEX09BSUQYESABKAkSEAoI",
+            "SU9TX0NBSUQYEiABKAkSGQoRcGxhdGZvcm1fdXNlcl90YWcYEyABKAkSCwoD",
+            "bWFjGBQgASgJEhIKCnVzZXJfYWdlbnQYFSABKAkSEAoIT0xEX0NBSUQYFiAB",
+            "KAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.DeviceInfo), global::Zproto.DeviceInfo.Parser, new[]{ "ClientVersion", "SystemSoftware", "SystemHardware", "TelecomOper", "Network", "ScreenWidth", "ScreenHight", "Density", "Channel", "CpuHardware", "Memory", "GlRender", "GLVersion", "DeviceId", "VClientIP", "VClientIPV6", "ANDROIDOAID", "IOSCAID", "PlatformUserTag", "MAC", "UserAgent", "OLDCAID" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.DeviceInfo), global::Zproto.DeviceInfo.Parser, new[]{ "ClientVersion", "SystemSoftware", "SystemHardware", "TelecomOper", "Network", "ScreenWidth", "ScreenHight", "Density", "Channel", "CpuHardware", "Memory", "GlRender", "GLVersion", "DeviceId", "VClientIp", "VClientIpv6", "ANDROIDOAID", "IOSCAID", "PlatformUserTag", "Mac", "UserAgent", "OLDCAID" }, null, null, null, null)
           }));
     }
     #endregion
@@ -94,12 +95,12 @@ namespace Zproto {
       glRender_ = other.glRender_;
       gLVersion_ = other.gLVersion_;
       deviceId_ = other.deviceId_;
-      vClientIP_ = other.vClientIP_;
-      vClientIPV6_ = other.vClientIPV6_;
+      vClientIp_ = other.vClientIp_;
+      vClientIpv6_ = other.vClientIpv6_;
       aNDROIDOAID_ = other.aNDROIDOAID_;
       iOSCAID_ = other.iOSCAID_;
       platformUserTag_ = other.platformUserTag_;
-      mAC_ = other.mAC_;
+      mac_ = other.mac_;
       userAgent_ = other.userAgent_;
       oLDCAID_ = other.oLDCAID_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -111,7 +112,7 @@ namespace Zproto {
       return new DeviceInfo(this);
     }
 
-    /// <summary>Field number for the "clientVersion" field.</summary>
+    /// <summary>Field number for the "client_version" field.</summary>
     public const int ClientVersionFieldNumber = 1;
     private string clientVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "systemSoftware" field.</summary>
+    /// <summary>Field number for the "system_software" field.</summary>
     public const int SystemSoftwareFieldNumber = 2;
     private string systemSoftware_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +136,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "systemHardware" field.</summary>
+    /// <summary>Field number for the "system_hardware" field.</summary>
     public const int SystemHardwareFieldNumber = 3;
     private string systemHardware_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,7 +148,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "telecomOper" field.</summary>
+    /// <summary>Field number for the "telecom_oper" field.</summary>
     public const int TelecomOperFieldNumber = 4;
     private string telecomOper_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -171,7 +172,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "screenWidth" field.</summary>
+    /// <summary>Field number for the "screen_width" field.</summary>
     public const int ScreenWidthFieldNumber = 6;
     private int screenWidth_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -183,7 +184,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "screenHight" field.</summary>
+    /// <summary>Field number for the "screen_hight" field.</summary>
     public const int ScreenHightFieldNumber = 7;
     private int screenHight_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -219,7 +220,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cpuHardware" field.</summary>
+    /// <summary>Field number for the "cpu_hardware" field.</summary>
     public const int CpuHardwareFieldNumber = 10;
     private string cpuHardware_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -243,7 +244,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "glRender" field.</summary>
+    /// <summary>Field number for the "gl_render" field.</summary>
     public const int GlRenderFieldNumber = 12;
     private string glRender_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -255,7 +256,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "gLVersion" field.</summary>
+    /// <summary>Field number for the "g_l_version" field.</summary>
     public const int GLVersionFieldNumber = 13;
     private string gLVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -267,7 +268,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "deviceId" field.</summary>
+    /// <summary>Field number for the "device_id" field.</summary>
     public const int DeviceIdFieldNumber = 14;
     private string deviceId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -279,27 +280,27 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "vClientIP" field.</summary>
-    public const int VClientIPFieldNumber = 15;
-    private string vClientIP_ = "";
+    /// <summary>Field number for the "v_client_ip" field.</summary>
+    public const int VClientIpFieldNumber = 15;
+    private string vClientIp_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string VClientIP {
-      get { return vClientIP_; }
+    public string VClientIp {
+      get { return vClientIp_; }
       set {
-        vClientIP_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        vClientIp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "vClientIPV6" field.</summary>
-    public const int VClientIPV6FieldNumber = 16;
-    private string vClientIPV6_ = "";
+    /// <summary>Field number for the "v_client_ipv6" field.</summary>
+    public const int VClientIpv6FieldNumber = 16;
+    private string vClientIpv6_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string VClientIPV6 {
-      get { return vClientIPV6_; }
+    public string VClientIpv6 {
+      get { return vClientIpv6_; }
       set {
-        vClientIPV6_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        vClientIpv6_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -327,7 +328,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "platformUserTag" field.</summary>
+    /// <summary>Field number for the "platform_user_tag" field.</summary>
     public const int PlatformUserTagFieldNumber = 19;
     private string platformUserTag_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -339,19 +340,19 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "MAC" field.</summary>
-    public const int MACFieldNumber = 20;
-    private string mAC_ = "";
+    /// <summary>Field number for the "mac" field.</summary>
+    public const int MacFieldNumber = 20;
+    private string mac_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string MAC {
-      get { return mAC_; }
+    public string Mac {
+      get { return mac_; }
       set {
-        mAC_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        mac_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "userAgent" field.</summary>
+    /// <summary>Field number for the "user_agent" field.</summary>
     public const int UserAgentFieldNumber = 21;
     private string userAgent_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -404,12 +405,12 @@ namespace Zproto {
       if (GlRender != other.GlRender) return false;
       if (GLVersion != other.GLVersion) return false;
       if (DeviceId != other.DeviceId) return false;
-      if (VClientIP != other.VClientIP) return false;
-      if (VClientIPV6 != other.VClientIPV6) return false;
+      if (VClientIp != other.VClientIp) return false;
+      if (VClientIpv6 != other.VClientIpv6) return false;
       if (ANDROIDOAID != other.ANDROIDOAID) return false;
       if (IOSCAID != other.IOSCAID) return false;
       if (PlatformUserTag != other.PlatformUserTag) return false;
-      if (MAC != other.MAC) return false;
+      if (Mac != other.Mac) return false;
       if (UserAgent != other.UserAgent) return false;
       if (OLDCAID != other.OLDCAID) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -433,12 +434,12 @@ namespace Zproto {
       if (GlRender.Length != 0) hash ^= GlRender.GetHashCode();
       if (GLVersion.Length != 0) hash ^= GLVersion.GetHashCode();
       if (DeviceId.Length != 0) hash ^= DeviceId.GetHashCode();
-      if (VClientIP.Length != 0) hash ^= VClientIP.GetHashCode();
-      if (VClientIPV6.Length != 0) hash ^= VClientIPV6.GetHashCode();
+      if (VClientIp.Length != 0) hash ^= VClientIp.GetHashCode();
+      if (VClientIpv6.Length != 0) hash ^= VClientIpv6.GetHashCode();
       if (ANDROIDOAID.Length != 0) hash ^= ANDROIDOAID.GetHashCode();
       if (IOSCAID.Length != 0) hash ^= IOSCAID.GetHashCode();
       if (PlatformUserTag.Length != 0) hash ^= PlatformUserTag.GetHashCode();
-      if (MAC.Length != 0) hash ^= MAC.GetHashCode();
+      if (Mac.Length != 0) hash ^= Mac.GetHashCode();
       if (UserAgent.Length != 0) hash ^= UserAgent.GetHashCode();
       if (OLDCAID.Length != 0) hash ^= OLDCAID.GetHashCode();
       if (_unknownFields != null) {
@@ -515,13 +516,13 @@ namespace Zproto {
         output.WriteRawTag(114);
         output.WriteString(DeviceId);
       }
-      if (VClientIP.Length != 0) {
+      if (VClientIp.Length != 0) {
         output.WriteRawTag(122);
-        output.WriteString(VClientIP);
+        output.WriteString(VClientIp);
       }
-      if (VClientIPV6.Length != 0) {
+      if (VClientIpv6.Length != 0) {
         output.WriteRawTag(130, 1);
-        output.WriteString(VClientIPV6);
+        output.WriteString(VClientIpv6);
       }
       if (ANDROIDOAID.Length != 0) {
         output.WriteRawTag(138, 1);
@@ -535,9 +536,9 @@ namespace Zproto {
         output.WriteRawTag(154, 1);
         output.WriteString(PlatformUserTag);
       }
-      if (MAC.Length != 0) {
+      if (Mac.Length != 0) {
         output.WriteRawTag(162, 1);
-        output.WriteString(MAC);
+        output.WriteString(Mac);
       }
       if (UserAgent.Length != 0) {
         output.WriteRawTag(170, 1);
@@ -613,13 +614,13 @@ namespace Zproto {
         output.WriteRawTag(114);
         output.WriteString(DeviceId);
       }
-      if (VClientIP.Length != 0) {
+      if (VClientIp.Length != 0) {
         output.WriteRawTag(122);
-        output.WriteString(VClientIP);
+        output.WriteString(VClientIp);
       }
-      if (VClientIPV6.Length != 0) {
+      if (VClientIpv6.Length != 0) {
         output.WriteRawTag(130, 1);
-        output.WriteString(VClientIPV6);
+        output.WriteString(VClientIpv6);
       }
       if (ANDROIDOAID.Length != 0) {
         output.WriteRawTag(138, 1);
@@ -633,9 +634,9 @@ namespace Zproto {
         output.WriteRawTag(154, 1);
         output.WriteString(PlatformUserTag);
       }
-      if (MAC.Length != 0) {
+      if (Mac.Length != 0) {
         output.WriteRawTag(162, 1);
-        output.WriteString(MAC);
+        output.WriteString(Mac);
       }
       if (UserAgent.Length != 0) {
         output.WriteRawTag(170, 1);
@@ -697,11 +698,11 @@ namespace Zproto {
       if (DeviceId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceId);
       }
-      if (VClientIP.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(VClientIP);
+      if (VClientIp.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(VClientIp);
       }
-      if (VClientIPV6.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(VClientIPV6);
+      if (VClientIpv6.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(VClientIpv6);
       }
       if (ANDROIDOAID.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(ANDROIDOAID);
@@ -712,8 +713,8 @@ namespace Zproto {
       if (PlatformUserTag.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(PlatformUserTag);
       }
-      if (MAC.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(MAC);
+      if (Mac.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Mac);
       }
       if (UserAgent.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(UserAgent);
@@ -775,11 +776,11 @@ namespace Zproto {
       if (other.DeviceId.Length != 0) {
         DeviceId = other.DeviceId;
       }
-      if (other.VClientIP.Length != 0) {
-        VClientIP = other.VClientIP;
+      if (other.VClientIp.Length != 0) {
+        VClientIp = other.VClientIp;
       }
-      if (other.VClientIPV6.Length != 0) {
-        VClientIPV6 = other.VClientIPV6;
+      if (other.VClientIpv6.Length != 0) {
+        VClientIpv6 = other.VClientIpv6;
       }
       if (other.ANDROIDOAID.Length != 0) {
         ANDROIDOAID = other.ANDROIDOAID;
@@ -790,8 +791,8 @@ namespace Zproto {
       if (other.PlatformUserTag.Length != 0) {
         PlatformUserTag = other.PlatformUserTag;
       }
-      if (other.MAC.Length != 0) {
-        MAC = other.MAC;
+      if (other.Mac.Length != 0) {
+        Mac = other.Mac;
       }
       if (other.UserAgent.Length != 0) {
         UserAgent = other.UserAgent;
@@ -875,11 +876,11 @@ namespace Zproto {
             break;
           }
           case 122: {
-            VClientIP = input.ReadString();
+            VClientIp = input.ReadString();
             break;
           }
           case 130: {
-            VClientIPV6 = input.ReadString();
+            VClientIpv6 = input.ReadString();
             break;
           }
           case 138: {
@@ -895,7 +896,7 @@ namespace Zproto {
             break;
           }
           case 162: {
-            MAC = input.ReadString();
+            Mac = input.ReadString();
             break;
           }
           case 170: {
@@ -982,11 +983,11 @@ namespace Zproto {
             break;
           }
           case 122: {
-            VClientIP = input.ReadString();
+            VClientIp = input.ReadString();
             break;
           }
           case 130: {
-            VClientIPV6 = input.ReadString();
+            VClientIpv6 = input.ReadString();
             break;
           }
           case 138: {
@@ -1002,7 +1003,7 @@ namespace Zproto {
             break;
           }
           case 162: {
-            MAC = input.ReadString();
+            Mac = input.ReadString();
             break;
           }
           case 170: {

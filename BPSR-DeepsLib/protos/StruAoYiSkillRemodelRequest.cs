@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2FvX3lpX3NraWxsX3JlbW9kZWxfcmVxdWVzdC5wcm90bxIGenBy",
-            "b3RvIi0KF0FvWWlTa2lsbFJlbW9kZWxSZXF1ZXN0EhIKCmFveWlTdGFySWQY",
-            "ASABKAViBnByb3RvMw=="));
+            "b3RvIi8KF0FvWWlTa2lsbFJlbW9kZWxSZXF1ZXN0EhQKDGFveWlfc3Rhcl9p",
+            "ZBgBIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new AoYiSkillRemodelRequest(this);
     }
 
-    /// <summary>Field number for the "aoyiStarId" field.</summary>
+    /// <summary>Field number for the "aoyi_star_id" field.</summary>
     public const int AoyiStarIdFieldNumber = 1;
     private int aoyiStarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

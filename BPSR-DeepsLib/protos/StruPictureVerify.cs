@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3BpY3R1cmVfdmVyaWZ5LnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byJHCg1QaWN0dXJlVmVyaWZ5EgwKBHNpemUYASABKA0S",
-            "FwoPUmV2aWV3U3RhcnRUaW1lGAMgASgNEg8KB3ZlcnNpb24YBCABKANiBnBy",
-            "b3RvMw=="));
+            "dHlfbWFzay5wcm90byJJCg1QaWN0dXJlVmVyaWZ5EgwKBHNpemUYASABKA0S",
+            "GQoRcmV2aWV3X3N0YXJ0X3RpbWUYAyABKA0SDwoHdmVyc2lvbhgEIAEoA2IG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ReviewStartTime" field.</summary>
+    /// <summary>Field number for the "review_start_time" field.</summary>
     public const int ReviewStartTimeFieldNumber = 3;
     private uint reviewStartTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

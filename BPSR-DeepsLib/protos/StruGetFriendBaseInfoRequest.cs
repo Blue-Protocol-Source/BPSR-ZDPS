@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X2dldF9mcmllbmRfYmFzZV9pbmZvX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90byIqChhHZXRGcmllbmRCYXNlSW5mb1JlcXVlc3QSDgoGY2hhcklkGAIg",
-            "ASgDYgZwcm90bzM="));
+            "cm90byIrChhHZXRGcmllbmRCYXNlSW5mb1JlcXVlc3QSDwoHY2hhcl9pZBgC",
+            "IAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new GetFriendBaseInfoRequest(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

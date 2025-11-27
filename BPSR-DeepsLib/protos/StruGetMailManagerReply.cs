@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X2dldF9tYWlsX21hbmFnZXJfcmVwbHkucHJvdG8SBnpwcm90bxoX",
-            "ZW51bV9lX2Vycm9yX2NvZGUucHJvdG8ilgEKE0dldE1haWxNYW5hZ2VyUmVw",
-            "bHkSEQoJbm9ybWFsTnVtGAEgASgFEhgKEG5vcm1hbFVuUmVhZExpc3QYAiAD",
-            "KAMSEgoKY29sbGVjdE51bRgDIAEoBRIZChFjb2xsZWN0VW5SZWFkTGlzdBgG",
-            "IAMoAxIjCgdlcnJDb2RlGAcgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnBy",
-            "b3RvMw=="));
+            "ZW51bV9lX2Vycm9yX2NvZGUucHJvdG8inwEKE0dldE1haWxNYW5hZ2VyUmVw",
+            "bHkSEgoKbm9ybWFsX251bRgBIAEoBRIbChNub3JtYWxfdW5fcmVhZF9saXN0",
+            "GAIgAygDEhMKC2NvbGxlY3RfbnVtGAMgASgFEhwKFGNvbGxlY3RfdW5fcmVh",
+            "ZF9saXN0GAYgAygDEiQKCGVycl9jb2RlGAcgASgOMhIuenByb3RvLkVFcnJv",
+            "ckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new GetMailManagerReply(this);
     }
 
-    /// <summary>Field number for the "normalNum" field.</summary>
+    /// <summary>Field number for the "normal_num" field.</summary>
     public const int NormalNumFieldNumber = 1;
     private int normalNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "normalUnReadList" field.</summary>
+    /// <summary>Field number for the "normal_un_read_list" field.</summary>
     public const int NormalUnReadListFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_normalUnReadList_codec
         = pb::FieldCodec.ForInt64(18);
@@ -112,7 +112,7 @@ namespace Zproto {
       get { return normalUnReadList_; }
     }
 
-    /// <summary>Field number for the "collectNum" field.</summary>
+    /// <summary>Field number for the "collect_num" field.</summary>
     public const int CollectNumFieldNumber = 3;
     private int collectNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "collectUnReadList" field.</summary>
+    /// <summary>Field number for the "collect_un_read_list" field.</summary>
     public const int CollectUnReadListFieldNumber = 6;
     private static readonly pb::FieldCodec<long> _repeated_collectUnReadList_codec
         = pb::FieldCodec.ForInt64(50);
@@ -135,7 +135,7 @@ namespace Zproto {
       get { return collectUnReadList_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 7;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

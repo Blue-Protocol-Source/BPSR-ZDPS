@@ -24,9 +24,9 @@ namespace Zproto {
     static StruDungeonRollParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X2R1bmdlb25fcm9sbF9wYXJhbS5wcm90bxIGenByb3RvIjEKEER1",
-            "bmdlb25Sb2xsUGFyYW0SDQoFaW5kZXgYASABKAUSDgoGZ2l2ZVVwGAIgASgI",
-            "YgZwcm90bzM="));
+            "Ch1zdHJ1X2R1bmdlb25fcm9sbF9wYXJhbS5wcm90bxIGenByb3RvIjIKEER1",
+            "bmdlb25Sb2xsUGFyYW0SDQoFaW5kZXgYASABKAUSDwoHZ2l2ZV91cBgCIAEo",
+            "CGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "giveUp" field.</summary>
+    /// <summary>Field number for the "give_up" field.</summary>
     public const int GiveUpFieldNumber = 2;
     private bool giveUp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

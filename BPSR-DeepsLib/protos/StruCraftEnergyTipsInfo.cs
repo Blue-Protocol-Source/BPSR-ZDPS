@@ -24,9 +24,9 @@ namespace Zproto {
     static StruCraftEnergyTipsInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2NyYWZ0X2VuZXJneV90aXBzX2luZm8ucHJvdG8SBnpwcm90byI8",
-            "ChNDcmFmdEVuZXJneVRpcHNJbmZvEhQKDGNvbnN1bWVWYWx1ZRgBIAEoBRIP",
-            "CgdyZXNpZHVlGAIgASgFYgZwcm90bzM="));
+            "CiFzdHJ1X2NyYWZ0X2VuZXJneV90aXBzX2luZm8ucHJvdG8SBnpwcm90byI9",
+            "ChNDcmFmdEVuZXJneVRpcHNJbmZvEhUKDWNvbnN1bWVfdmFsdWUYASABKAUS",
+            "DwoHcmVzaWR1ZRgCIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new CraftEnergyTipsInfo(this);
     }
 
-    /// <summary>Field number for the "consumeValue" field.</summary>
+    /// <summary>Field number for the "consume_value" field.</summary>
     public const int ConsumeValueFieldNumber = 1;
     private int consumeValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

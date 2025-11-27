@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X2ludml0ZV91c2VyX2RhdGEucHJvdG8SBnpwcm90bxoWc3RydV9h",
-            "dmF0YXJfaW5mby5wcm90byI4Cg5JbnZpdGVVc2VyRGF0YRImCgphdmF0YXJJ",
-            "bmZvGAEgASgLMhIuenByb3RvLkF2YXRhckluZm9iBnByb3RvMw=="));
+            "dmF0YXJfaW5mby5wcm90byI5Cg5JbnZpdGVVc2VyRGF0YRInCgthdmF0YXJf",
+            "aW5mbxgBIAEoCzISLnpwcm90by5BdmF0YXJJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new InviteUserData(this);
     }
 
-    /// <summary>Field number for the "avatarInfo" field.</summary>
+    /// <summary>Field number for the "avatar_info" field.</summary>
     public const int AvatarInfoFieldNumber = 1;
     private global::Zproto.AvatarInfo avatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

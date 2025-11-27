@@ -30,21 +30,22 @@ namespace Zproto {
             "YWN0aXZpdHkucHJvdG8aGXN0cnVfdW5pb25fYnVpbGRpbmcucHJvdG8aHHN0",
             "cnVfdW5pb25fZWZmZWN0X2J1ZmYucHJvdG8aFXN0cnVfdW5pb25faW5mby5w",
             "cm90bxoZc3RydV91bmlvbl9yZXNvdXJjZS5wcm90bxocc3RydV91c2VyX3N1",
-            "bW1hcnlfZGF0YS5wcm90byKHBQoRUmVxVW5pb25JbmZvUmVwbHkSHwoEaW5m",
-            "bxgBIAEoCzIRLnpwcm90by5VbmlvbkluZm8SKAoLcmVjcnVpdEluZm8YAiAB",
-            "KAsyEy56cHJvdG8uUmVjcnVpdEluZm8SLgoNcHJlc2lkZW50SW5mbxgDIAEo",
-            "CzIXLnpwcm90by5Vc2VyU3VtbWFyeURhdGESRQoOdW5pb25CdWlsZGluZ3MY",
-            "BCADKAsyLS56cHJvdG8uUmVxVW5pb25JbmZvUmVwbHkuVW5pb25CdWlsZGlu",
-            "Z3NFbnRyeRIsCg11bmlvbkFjdGl2aXR5GAUgASgLMhUuenByb3RvLlVuaW9u",
-            "QWN0aXZpdHkSLgoMc2VsZkFjdGl2aXR5GAYgASgLMhguenByb3RvLk1lbVVu",
-            "aW9uQWN0aXZpdHkSSQoQdW5pb25SZXNvdXJjZUxpYhgHIAMoCzIvLnpwcm90",
-            "by5SZXFVbmlvbkluZm9SZXBseS5VbmlvblJlc291cmNlTGliRW50cnkSFgoO",
-            "c2VsZlNwZWVkVGltZXMYCCABKAUSLAoLZWZmZWN0QnVmZnMYCSADKAsyFy56",
-            "cHJvdG8uVW5pb25FZmZlY3RCdWZmEiMKB2VyckNvZGUYCiABKA4yEi56cHJv",
-            "dG8uRUVycm9yQ29kZRpMChNVbmlvbkJ1aWxkaW5nc0VudHJ5EgsKA2tleRgB",
-            "IAEoBRIkCgV2YWx1ZRgCIAEoCzIVLnpwcm90by5VbmlvbkJ1aWxkaW5nOgI4",
-            "ARpOChVVbmlvblJlc291cmNlTGliRW50cnkSCwoDa2V5GAEgASgFEiQKBXZh",
-            "bHVlGAIgASgLMhUuenByb3RvLlVuaW9uUmVzb3VyY2U6AjgBYgZwcm90bzM="));
+            "bW1hcnlfZGF0YS5wcm90byKSBQoRUmVxVW5pb25JbmZvUmVwbHkSHwoEaW5m",
+            "bxgBIAEoCzIRLnpwcm90by5VbmlvbkluZm8SKQoMcmVjcnVpdF9pbmZvGAIg",
+            "ASgLMhMuenByb3RvLlJlY3J1aXRJbmZvEi8KDnByZXNpZGVudF9pbmZvGAMg",
+            "ASgLMhcuenByb3RvLlVzZXJTdW1tYXJ5RGF0YRJGCg91bmlvbl9idWlsZGlu",
+            "Z3MYBCADKAsyLS56cHJvdG8uUmVxVW5pb25JbmZvUmVwbHkuVW5pb25CdWls",
+            "ZGluZ3NFbnRyeRItCg51bmlvbl9hY3Rpdml0eRgFIAEoCzIVLnpwcm90by5V",
+            "bmlvbkFjdGl2aXR5Ei8KDXNlbGZfYWN0aXZpdHkYBiABKAsyGC56cHJvdG8u",
+            "TWVtVW5pb25BY3Rpdml0eRJLChJ1bmlvbl9yZXNvdXJjZV9saWIYByADKAsy",
+            "Ly56cHJvdG8uUmVxVW5pb25JbmZvUmVwbHkuVW5pb25SZXNvdXJjZUxpYkVu",
+            "dHJ5EhgKEHNlbGZfc3BlZWRfdGltZXMYCCABKAUSLQoMZWZmZWN0X2J1ZmZz",
+            "GAkgAygLMhcuenByb3RvLlVuaW9uRWZmZWN0QnVmZhIkCghlcnJfY29kZRgK",
+            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlGkwKE1VuaW9uQnVpbGRpbmdzRW50",
+            "cnkSCwoDa2V5GAEgASgFEiQKBXZhbHVlGAIgASgLMhUuenByb3RvLlVuaW9u",
+            "QnVpbGRpbmc6AjgBGk4KFVVuaW9uUmVzb3VyY2VMaWJFbnRyeRILCgNrZXkY",
+            "ASABKAUSJAoFdmFsdWUYAiABKAsyFS56cHJvdG8uVW5pb25SZXNvdXJjZToC",
+            "OAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruMemUnionActivityReflection.Descriptor, global::Zproto.StruRecruitInfoReflection.Descriptor, global::Zproto.StruUnionActivityReflection.Descriptor, global::Zproto.StruUnionBuildingReflection.Descriptor, global::Zproto.StruUnionEffectBuffReflection.Descriptor, global::Zproto.StruUnionInfoReflection.Descriptor, global::Zproto.StruUnionResourceReflection.Descriptor, global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -121,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "recruitInfo" field.</summary>
+    /// <summary>Field number for the "recruit_info" field.</summary>
     public const int RecruitInfoFieldNumber = 2;
     private global::Zproto.RecruitInfo recruitInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +134,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "presidentInfo" field.</summary>
+    /// <summary>Field number for the "president_info" field.</summary>
     public const int PresidentInfoFieldNumber = 3;
     private global::Zproto.UserSummaryData presidentInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -145,7 +146,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unionBuildings" field.</summary>
+    /// <summary>Field number for the "union_buildings" field.</summary>
     public const int UnionBuildingsFieldNumber = 4;
     private static readonly pbc::MapField<int, global::Zproto.UnionBuilding>.Codec _map_unionBuildings_codec
         = new pbc::MapField<int, global::Zproto.UnionBuilding>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionBuilding.Parser), 34);
@@ -156,7 +157,7 @@ namespace Zproto {
       get { return unionBuildings_; }
     }
 
-    /// <summary>Field number for the "unionActivity" field.</summary>
+    /// <summary>Field number for the "union_activity" field.</summary>
     public const int UnionActivityFieldNumber = 5;
     private global::Zproto.UnionActivity unionActivity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,7 +169,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "selfActivity" field.</summary>
+    /// <summary>Field number for the "self_activity" field.</summary>
     public const int SelfActivityFieldNumber = 6;
     private global::Zproto.MemUnionActivity selfActivity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -180,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unionResourceLib" field.</summary>
+    /// <summary>Field number for the "union_resource_lib" field.</summary>
     public const int UnionResourceLibFieldNumber = 7;
     private static readonly pbc::MapField<int, global::Zproto.UnionResource>.Codec _map_unionResourceLib_codec
         = new pbc::MapField<int, global::Zproto.UnionResource>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionResource.Parser), 58);
@@ -191,7 +192,7 @@ namespace Zproto {
       get { return unionResourceLib_; }
     }
 
-    /// <summary>Field number for the "selfSpeedTimes" field.</summary>
+    /// <summary>Field number for the "self_speed_times" field.</summary>
     public const int SelfSpeedTimesFieldNumber = 8;
     private int selfSpeedTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -203,7 +204,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "effectBuffs" field.</summary>
+    /// <summary>Field number for the "effect_buffs" field.</summary>
     public const int EffectBuffsFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Zproto.UnionEffectBuff> _repeated_effectBuffs_codec
         = pb::FieldCodec.ForMessage(74, global::Zproto.UnionEffectBuff.Parser);
@@ -214,7 +215,7 @@ namespace Zproto {
       get { return effectBuffs_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 10;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

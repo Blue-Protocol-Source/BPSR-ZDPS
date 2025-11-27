@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2hvbWVsYW5kX3NldF9sYW1wbGlnaHRfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvGhNzdHJ1X2ludF92ZWMzLnByb3RvIpEBChtIb21lbGFuZFNldExh",
-            "bXBsaWdodFJlcXVlc3QSFgoObGFtcGxpZ2h0TGV2ZWwYASABKAUSJwoObGFt",
-            "cGxpZ2h0Q29sb3IYAiABKAsyDy56cHJvdG8uSW50VmVjMxISCgpkYXlOaWdo",
-            "dElkGAMgASgFEgwKBG1vZGUYBCABKAUSDwoHaXNPdXRlchgFIAEoCGIGcHJv",
-            "dG8z"));
+            "enByb3RvGhNzdHJ1X2ludF92ZWMzLnByb3RvIpYBChtIb21lbGFuZFNldExh",
+            "bXBsaWdodFJlcXVlc3QSFwoPbGFtcGxpZ2h0X2xldmVsGAEgASgFEigKD2xh",
+            "bXBsaWdodF9jb2xvchgCIAEoCzIPLnpwcm90by5JbnRWZWMzEhQKDGRheV9u",
+            "aWdodF9pZBgDIAEoBRIMCgRtb2RlGAQgASgFEhAKCGlzX291dGVyGAUgASgI",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIntVec3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new HomelandSetLamplightRequest(this);
     }
 
-    /// <summary>Field number for the "lamplightLevel" field.</summary>
+    /// <summary>Field number for the "lamplight_level" field.</summary>
     public const int LamplightLevelFieldNumber = 1;
     private int lamplightLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lamplightColor" field.</summary>
+    /// <summary>Field number for the "lamplight_color" field.</summary>
     public const int LamplightColorFieldNumber = 2;
     private global::Zproto.IntVec3 lamplightColor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dayNightId" field.</summary>
+    /// <summary>Field number for the "day_night_id" field.</summary>
     public const int DayNightIdFieldNumber = 3;
     private int dayNightId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isOuter" field.</summary>
+    /// <summary>Field number for the "is_outer" field.</summary>
     public const int IsOuterFieldNumber = 5;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

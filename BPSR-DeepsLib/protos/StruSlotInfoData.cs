@@ -24,10 +24,10 @@ namespace Zproto {
     static StruSlotInfoDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X3Nsb3RfaW5mb19kYXRhLnByb3RvEgZ6cHJvdG8ieQoMU2xvdElu",
-            "Zm9EYXRhEgoKAmlkGAEgASgFEg8KB3NraWxsSWQYAiABKAUSEQoJaXNSZXBs",
-            "YWNlGAMgASgIEhIKCnNob3dFZmZlY3QYBCABKAgSCgoCY2QYBSABKAMSGQoR",
-            "aXNBdXRvQmF0dGxlQ2xvc2UYBiABKAhiBnByb3RvMw=="));
+            "ChlzdHJ1X3Nsb3RfaW5mb19kYXRhLnByb3RvEgZ6cHJvdG8ifwoMU2xvdElu",
+            "Zm9EYXRhEgoKAmlkGAEgASgFEhAKCHNraWxsX2lkGAIgASgFEhIKCmlzX3Jl",
+            "cGxhY2UYAyABKAgSEwoLc2hvd19lZmZlY3QYBCABKAgSCgoCY2QYBSABKAMS",
+            "HAoUaXNfYXV0b19iYXR0bGVfY2xvc2UYBiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skillId" field.</summary>
+    /// <summary>Field number for the "skill_id" field.</summary>
     public const int SkillIdFieldNumber = 2;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isReplace" field.</summary>
+    /// <summary>Field number for the "is_replace" field.</summary>
     public const int IsReplaceFieldNumber = 3;
     private bool isReplace_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "showEffect" field.</summary>
+    /// <summary>Field number for the "show_effect" field.</summary>
     public const int ShowEffectFieldNumber = 4;
     private bool showEffect_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,7 +148,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isAutoBattleClose" field.</summary>
+    /// <summary>Field number for the "is_auto_battle_close" field.</summary>
     public const int IsAutoBattleCloseFieldNumber = 6;
     private bool isAutoBattleClose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

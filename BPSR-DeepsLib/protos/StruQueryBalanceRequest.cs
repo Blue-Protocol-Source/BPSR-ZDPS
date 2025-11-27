@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X3F1ZXJ5X2JhbGFuY2VfcmVxdWVzdC5wcm90bxIGenByb3RvGhVl",
             "bnVtX2VfcGF5X3R5cGUucHJvdG8aH2VudW1fZV9xdWVyeV9iYWxhbmNlX3R5",
-            "cGUucHJvdG8idwoTUXVlcnlCYWxhbmNlUmVxdWVzdBIhCgdwYXlUeXBlGAEg",
-            "ASgOMhAuenByb3RvLkVQYXlUeXBlEiwKCXF1ZXJ5VHlwZRgCIAEoDjIZLnpw",
-            "cm90by5FUXVlcnlCYWxhbmNlVHlwZRIPCgdleHREYXRhGAMgASgJYgZwcm90",
-            "bzM="));
+            "cGUucHJvdG8iegoTUXVlcnlCYWxhbmNlUmVxdWVzdBIiCghwYXlfdHlwZRgB",
+            "IAEoDjIQLnpwcm90by5FUGF5VHlwZRItCgpxdWVyeV90eXBlGAIgASgOMhku",
+            "enByb3RvLkVRdWVyeUJhbGFuY2VUeXBlEhAKCGV4dF9kYXRhGAMgASgJYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPayTypeReflection.Descriptor, global::Zproto.EnumEQueryBalanceTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new QueryBalanceRequest(this);
     }
 
-    /// <summary>Field number for the "payType" field.</summary>
+    /// <summary>Field number for the "pay_type" field.</summary>
     public const int PayTypeFieldNumber = 1;
     private global::Zproto.EPayType payType_ = global::Zproto.EPayType.PayTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "queryType" field.</summary>
+    /// <summary>Field number for the "query_type" field.</summary>
     public const int QueryTypeFieldNumber = 2;
     private global::Zproto.EQueryBalanceType queryType_ = global::Zproto.EQueryBalanceType.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "extData" field.</summary>
+    /// <summary>Field number for the "ext_data" field.</summary>
     public const int ExtDataFieldNumber = 3;
     private string extData_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

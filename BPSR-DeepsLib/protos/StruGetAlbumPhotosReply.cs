@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X2dldF9hbGJ1bV9waG90b3NfcmVwbHkucHJvdG8SBnpwcm90bxoX",
             "ZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aG3N0cnVfcGhvdG9fZ3JhcGhfc2hv",
-            "dy5wcm90byKIAQoTR2V0QWxidW1QaG90b3NSZXBseRIOCgZjaGFySWQYAyAB",
-            "KAMSDwoHYWxidW1JZBgEIAEoDRIrCgtwaG90b0dyYXBocxgFIAMoCzIWLnpw",
-            "cm90by5QaG90b0dyYXBoU2hvdxIjCgdlcnJDb2RlGAYgASgOMhIuenByb3Rv",
-            "LkVFcnJvckNvZGViBnByb3RvMw=="));
+            "dy5wcm90byKMAQoTR2V0QWxidW1QaG90b3NSZXBseRIPCgdjaGFyX2lkGAMg",
+            "ASgDEhAKCGFsYnVtX2lkGAQgASgNEiwKDHBob3RvX2dyYXBocxgFIAMoCzIW",
+            "Lnpwcm90by5QaG90b0dyYXBoU2hvdxIkCghlcnJfY29kZRgGIAEoDjISLnpw",
+            "cm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruPhotoGraphShowReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new GetAlbumPhotosReply(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 3;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "albumId" field.</summary>
+    /// <summary>Field number for the "album_id" field.</summary>
     public const int AlbumIdFieldNumber = 4;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photoGraphs" field.</summary>
+    /// <summary>Field number for the "photo_graphs" field.</summary>
     public const int PhotoGraphsFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.PhotoGraphShow> _repeated_photoGraphs_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.PhotoGraphShow.Parser);
@@ -123,7 +123,7 @@ namespace Zproto {
       get { return photoGraphs_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X3ByaXZhdGVfY2hhdF90YXJnZXRfYmxvY2tfcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvIkMKHVByaXZhdGVDaGF0VGFyZ2V0QmxvY2tSZXF1ZXN0EhAK",
-            "CHRhcmdldElkGAEgASgNEhAKCHNldEJsb2NrGAIgASgIYgZwcm90bzM="));
+            "bxIGenByb3RvIkUKHVByaXZhdGVDaGF0VGFyZ2V0QmxvY2tSZXF1ZXN0EhEK",
+            "CXRhcmdldF9pZBgBIAEoDRIRCglzZXRfYmxvY2sYAiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new PrivateChatTargetBlockRequest(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "setBlock" field.</summary>
+    /// <summary>Field number for the "set_block" field.</summary>
     public const int SetBlockFieldNumber = 2;
     private bool setBlock_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X21vbnN0ZXJfdGFyZ2V0X2luZm8ucHJvdG8SBnpwcm90bxofZW51",
             "bV9tb25zdGVyX3RhcmdldF9hd2FyZC5wcm90bxoVc3RydV9kaXJ0eV9tYXNr",
-            "LnByb3RvIokBChFNb25zdGVyVGFyZ2V0SW5mbxIKCgJpZBgBIAEoBRISCgp0",
-            "YXJnZXRVdWlkGAIgASgFEhIKCnRhcmdldFR5cGUYAyABKAUSEQoJdGFyZ2V0",
-            "TnVtGAQgASgFEi0KCWF3YXJkRmxhZxgFIAEoDjIaLnpwcm90by5Nb25zdGVy",
-            "VGFyZ2V0QXdhcmRiBnByb3RvMw=="));
+            "LnByb3RvIo0BChFNb25zdGVyVGFyZ2V0SW5mbxIKCgJpZBgBIAEoBRITCgt0",
+            "YXJnZXRfdXVpZBgCIAEoBRITCgt0YXJnZXRfdHlwZRgDIAEoBRISCgp0YXJn",
+            "ZXRfbnVtGAQgASgFEi4KCmF3YXJkX2ZsYWcYBSABKA4yGi56cHJvdG8uTW9u",
+            "c3RlclRhcmdldEF3YXJkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumMonsterTargetAwardReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetUuid" field.</summary>
+    /// <summary>Field number for the "target_uuid" field.</summary>
     public const int TargetUuidFieldNumber = 2;
     private int targetUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetType" field.</summary>
+    /// <summary>Field number for the "target_type" field.</summary>
     public const int TargetTypeFieldNumber = 3;
     private int targetType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetNum" field.</summary>
+    /// <summary>Field number for the "target_num" field.</summary>
     public const int TargetNumFieldNumber = 4;
     private int targetNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "awardFlag" field.</summary>
+    /// <summary>Field number for the "award_flag" field.</summary>
     public const int AwardFlagFieldNumber = 5;
     private global::Zproto.MonsterTargetAward awardFlag_ = global::Zproto.MonsterTargetAward.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

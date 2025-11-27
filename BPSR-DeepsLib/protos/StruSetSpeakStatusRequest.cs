@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3NldF9zcGVha19zdGF0dXNfcmVxdWVzdC5wcm90bxIGenByb3Rv",
-            "GhllbnVtX2Vfc3BlYWtfc3RhdHVzLnByb3RvIkIKFVNldFNwZWFrU3RhdHVz",
-            "UmVxdWVzdBIpCgtzcGVha1N0YXR1cxgCIAEoDjIULnpwcm90by5FU3BlYWtT",
-            "dGF0dXNiBnByb3RvMw=="));
+            "GhllbnVtX2Vfc3BlYWtfc3RhdHVzLnByb3RvIkMKFVNldFNwZWFrU3RhdHVz",
+            "UmVxdWVzdBIqCgxzcGVha19zdGF0dXMYAiABKA4yFC56cHJvdG8uRVNwZWFr",
+            "U3RhdHVzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumESpeakStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetSpeakStatusRequest(this);
     }
 
-    /// <summary>Field number for the "speakStatus" field.</summary>
+    /// <summary>Field number for the "speak_status" field.</summary>
     public const int SpeakStatusFieldNumber = 2;
     private global::Zproto.ESpeakStatus speakStatus_ = global::Zproto.ESpeakStatus.Default;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

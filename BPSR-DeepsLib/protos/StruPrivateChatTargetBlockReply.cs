@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X3ByaXZhdGVfY2hhdF90YXJnZXRfYmxvY2tfcmVwbHkucHJvdG8S",
-            "Bnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iZgobUHJpdmF0ZUNo",
-            "YXRUYXJnZXRCbG9ja1JlcGx5EhAKCHRhcmdldElkGAEgASgNEhAKCHNldEJs",
-            "b2NrGAIgASgIEiMKB2VyckNvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29k",
-            "ZWIGcHJvdG8z"));
+            "Bnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iaQobUHJpdmF0ZUNo",
+            "YXRUYXJnZXRCbG9ja1JlcGx5EhEKCXRhcmdldF9pZBgBIAEoDRIRCglzZXRf",
+            "YmxvY2sYAiABKAgSJAoIZXJyX2NvZGUYAyABKA4yEi56cHJvdG8uRUVycm9y",
+            "Q29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new PrivateChatTargetBlockReply(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "setBlock" field.</summary>
+    /// <summary>Field number for the "set_block" field.</summary>
     public const int SetBlockFieldNumber = 2;
     private bool setBlock_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

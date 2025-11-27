@@ -27,13 +27,13 @@ namespace Zproto {
             "ChFzZXJ2X3NvY2lhbC5wcm90bxIGenByb3RvGh5zdHJ1X2NoYW5nZV9hdmF0",
             "YXJfcmVwbHkucHJvdG8aIHN0cnVfY2hhbmdlX2F2YXRhcl9yZXF1ZXN0LnBy",
             "b3RvGiBzdHJ1X2dldF9zb2NpYWxfZGF0YV9yZXBseS5wcm90bxoic3RydV9n",
-            "ZXRfc29jaWFsX2RhdGFfcmVxdWVzdC5wcm90byKCAgoGU29jaWFsGjwKEUdl",
+            "ZXRfc29jaWFsX2RhdGFfcmVxdWVzdC5wcm90byKEAgoGU29jaWFsGjwKEUdl",
             "dFNvY2lhbERhdGFfUmV0EicKA3JldBgBIAEoCzIaLnpwcm90by5HZXRTb2Np",
-            "YWxEYXRhUmVwbHkaPwoNR2V0U29jaWFsRGF0YRIuCgh2UmVxdWVzdBgBIAEo",
-            "CzIcLnpwcm90by5HZXRTb2NpYWxEYXRhUmVxdWVzdBo6ChBDaGFuZ2VBdmF0",
-            "YXJfUmV0EiYKA3JldBgBIAEoCzIZLnpwcm90by5DaGFuZ2VBdmF0YXJSZXBs",
-            "eRo9CgxDaGFuZ2VBdmF0YXISLQoIdlJlcXVlc3QYASABKAsyGy56cHJvdG8u",
-            "Q2hhbmdlQXZhdGFyUmVxdWVzdGIGcHJvdG8z"));
+            "YWxEYXRhUmVwbHkaQAoNR2V0U29jaWFsRGF0YRIvCgl2X3JlcXVlc3QYASAB",
+            "KAsyHC56cHJvdG8uR2V0U29jaWFsRGF0YVJlcXVlc3QaOgoQQ2hhbmdlQXZh",
+            "dGFyX1JldBImCgNyZXQYASABKAsyGS56cHJvdG8uQ2hhbmdlQXZhdGFyUmVw",
+            "bHkaPgoMQ2hhbmdlQXZhdGFyEi4KCXZfcmVxdWVzdBgBIAEoCzIbLnpwcm90",
+            "by5DaGFuZ2VBdmF0YXJSZXF1ZXN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruChangeAvatarReplyReflection.Descriptor, global::Zproto.StruChangeAvatarRequestReflection.Descriptor, global::Zproto.StruGetSocialDataReplyReflection.Descriptor, global::Zproto.StruGetSocialDataRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -463,7 +463,7 @@ namespace Zproto {
           return new GetSocialData(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetSocialDataRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -877,7 +877,7 @@ namespace Zproto {
           return new ChangeAvatar(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.ChangeAvatarRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

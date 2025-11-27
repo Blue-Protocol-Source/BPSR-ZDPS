@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2FjY291bnRfZGF0YS5wcm90bxIGenByb3RvGhZlbnVtX3N5c3Rl",
-            "bV90eXBlLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8idgoLQWNjb3Vu",
-            "dERhdGESDgoGb3BlbklkGAEgASgJEg8KB3Nka1R5cGUYAiABKAUSEQoJYWNj",
-            "b3VudElkGAMgASgJEhMKC2FjY291bnRVdWlkGAQgASgJEh4KAm9zGAUgASgO",
-            "MhIuenByb3RvLlN5c3RlbVR5cGViBnByb3RvMw=="));
+            "bV90eXBlLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iegoLQWNjb3Vu",
+            "dERhdGESDwoHb3Blbl9pZBgBIAEoCRIQCghzZGtfdHlwZRgCIAEoBRISCgph",
+            "Y2NvdW50X2lkGAMgASgJEhQKDGFjY291bnRfdXVpZBgEIAEoCRIeCgJvcxgF",
+            "IAEoDjISLnpwcm90by5TeXN0ZW1UeXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumSystemTypeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new AccountData(this);
     }
 
-    /// <summary>Field number for the "openId" field.</summary>
+    /// <summary>Field number for the "open_id" field.</summary>
     public const int OpenIdFieldNumber = 1;
     private string openId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sdkType" field.</summary>
+    /// <summary>Field number for the "sdk_type" field.</summary>
     public const int SdkTypeFieldNumber = 2;
     private int sdkType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "accountId" field.</summary>
+    /// <summary>Field number for the "account_id" field.</summary>
     public const int AccountIdFieldNumber = 3;
     private string accountId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "accountUuid" field.</summary>
+    /// <summary>Field number for the "account_uuid" field.</summary>
     public const int AccountUuidFieldNumber = 4;
     private string accountUuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

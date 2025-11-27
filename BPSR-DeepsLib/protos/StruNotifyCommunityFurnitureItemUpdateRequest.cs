@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjlzdHJ1X25vdGlmeV9jb21tdW5pdHlfZnVybml0dXJlX2l0ZW1fdXBkYXRl",
-            "X3JlcXVlc3QucHJvdG8SBnpwcm90byKvAQopTm90aWZ5Q29tbXVuaXR5RnVy",
-            "bml0dXJlSXRlbVVwZGF0ZVJlcXVlc3QSUQoIYWRkSXRlbXMYASADKAsyPy56",
-            "cHJvdG8uTm90aWZ5Q29tbXVuaXR5RnVybml0dXJlSXRlbVVwZGF0ZVJlcXVl",
-            "c3QuQWRkSXRlbXNFbnRyeRovCg1BZGRJdGVtc0VudHJ5EgsKA2tleRgBIAEo",
-            "BRINCgV2YWx1ZRgCIAEoAzoCOAFiBnByb3RvMw=="));
+            "X3JlcXVlc3QucHJvdG8SBnpwcm90byKwAQopTm90aWZ5Q29tbXVuaXR5RnVy",
+            "bml0dXJlSXRlbVVwZGF0ZVJlcXVlc3QSUgoJYWRkX2l0ZW1zGAEgAygLMj8u",
+            "enByb3RvLk5vdGlmeUNvbW11bml0eUZ1cm5pdHVyZUl0ZW1VcGRhdGVSZXF1",
+            "ZXN0LkFkZEl0ZW1zRW50cnkaLwoNQWRkSXRlbXNFbnRyeRILCgNrZXkYASAB",
+            "KAUSDQoFdmFsdWUYAiABKAM6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new NotifyCommunityFurnitureItemUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "addItems" field.</summary>
+    /// <summary>Field number for the "add_items" field.</summary>
     public const int AddItemsFieldNumber = 1;
     private static readonly pbc::MapField<int, long>.Codec _map_addItems_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 10);

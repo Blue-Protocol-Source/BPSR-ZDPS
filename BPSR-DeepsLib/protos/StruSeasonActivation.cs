@@ -26,15 +26,16 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X3NlYXNvbl9hY3RpdmF0aW9uLnByb3RvEgZ6cHJvdG8aI3N0cnVf",
             "c2Vhc29uX2FjdGl2YXRpb25fdGFyZ2V0LnByb3RvGhVzdHJ1X2RpcnR5X21h",
-            "c2sucHJvdG8i/gIKEFNlYXNvbkFjdGl2YXRpb24SEAoIc2Vhc29uSWQYASAB",
-            "KAUSFwoPYWN0aXZhdGlvblBvaW50GAIgASgFEhMKC3JlZnJlc2hUaW1lGAMg",
-            "ASgFEkoKEWFjdGl2YXRpb25UYXJnZXRzGAQgAygLMi8uenByb3RvLlNlYXNv",
-            "bkFjdGl2YXRpb24uQWN0aXZhdGlvblRhcmdldHNFbnRyeRJKChFzdGFnZVJl",
-            "d2FyZFN0YXR1cxgFIAMoCzIvLnpwcm90by5TZWFzb25BY3RpdmF0aW9uLlN0",
-            "YWdlUmV3YXJkU3RhdHVzRW50cnkaWAoWQWN0aXZhdGlvblRhcmdldHNFbnRy",
-            "eRILCgNrZXkYASABKAUSLQoFdmFsdWUYAiABKAsyHi56cHJvdG8uU2Vhc29u",
-            "QWN0aXZhdGlvblRhcmdldDoCOAEaOAoWU3RhZ2VSZXdhcmRTdGF0dXNFbnRy",
-            "eRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "c2sucHJvdG8ihAMKEFNlYXNvbkFjdGl2YXRpb24SEQoJc2Vhc29uX2lkGAEg",
+            "ASgFEhgKEGFjdGl2YXRpb25fcG9pbnQYAiABKAUSFAoMcmVmcmVzaF90aW1l",
+            "GAMgASgFEksKEmFjdGl2YXRpb25fdGFyZ2V0cxgEIAMoCzIvLnpwcm90by5T",
+            "ZWFzb25BY3RpdmF0aW9uLkFjdGl2YXRpb25UYXJnZXRzRW50cnkSTAoTc3Rh",
+            "Z2VfcmV3YXJkX3N0YXR1cxgFIAMoCzIvLnpwcm90by5TZWFzb25BY3RpdmF0",
+            "aW9uLlN0YWdlUmV3YXJkU3RhdHVzRW50cnkaWAoWQWN0aXZhdGlvblRhcmdl",
+            "dHNFbnRyeRILCgNrZXkYASABKAUSLQoFdmFsdWUYAiABKAsyHi56cHJvdG8u",
+            "U2Vhc29uQWN0aXZhdGlvblRhcmdldDoCOAEaOAoWU3RhZ2VSZXdhcmRTdGF0",
+            "dXNFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSeasonActivationTargetReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +95,7 @@ namespace Zproto {
       return new SeasonActivation(this);
     }
 
-    /// <summary>Field number for the "seasonId" field.</summary>
+    /// <summary>Field number for the "season_id" field.</summary>
     public const int SeasonIdFieldNumber = 1;
     private int seasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -106,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activationPoint" field.</summary>
+    /// <summary>Field number for the "activation_point" field.</summary>
     public const int ActivationPointFieldNumber = 2;
     private int activationPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -118,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refreshTime" field.</summary>
+    /// <summary>Field number for the "refresh_time" field.</summary>
     public const int RefreshTimeFieldNumber = 3;
     private int refreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -130,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activationTargets" field.</summary>
+    /// <summary>Field number for the "activation_targets" field.</summary>
     public const int ActivationTargetsFieldNumber = 4;
     private static readonly pbc::MapField<int, global::Zproto.SeasonActivationTarget>.Codec _map_activationTargets_codec
         = new pbc::MapField<int, global::Zproto.SeasonActivationTarget>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonActivationTarget.Parser), 34);
@@ -141,7 +142,7 @@ namespace Zproto {
       get { return activationTargets_; }
     }
 
-    /// <summary>Field number for the "stageRewardStatus" field.</summary>
+    /// <summary>Field number for the "stage_reward_status" field.</summary>
     public const int StageRewardStatusFieldNumber = 5;
     private static readonly pbc::MapField<uint, int>.Codec _map_stageRewardStatus_codec
         = new pbc::MapField<uint, int>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 42);

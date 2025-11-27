@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci9zdHJ1X25vdGlmeV91bmlvbl9yZXNvdXJjZV9jaGFuZ2VfcmVxdWVzdC5w",
-            "cm90bxIGenByb3RvGhlzdHJ1X3VuaW9uX3Jlc291cmNlLnByb3RvIuMBCiBO",
-            "b3RpZnlVbmlvblJlc291cmNlQ2hhbmdlUmVxdWVzdBJaChFjaGFuZ2VSZXNv",
-            "dXJjZUxpYhgCIAMoCzI/Lnpwcm90by5Ob3RpZnlVbmlvblJlc291cmNlQ2hh",
-            "bmdlUmVxdWVzdC5DaGFuZ2VSZXNvdXJjZUxpYkVudHJ5EhIKCmRvbm9yTWVt",
-            "SWQYAyABKAMaTwoWQ2hhbmdlUmVzb3VyY2VMaWJFbnRyeRILCgNrZXkYASAB",
-            "KAUSJAoFdmFsdWUYAiABKAsyFS56cHJvdG8uVW5pb25SZXNvdXJjZToCOAFi",
-            "BnByb3RvMw=="));
+            "cm90bxIGenByb3RvGhlzdHJ1X3VuaW9uX3Jlc291cmNlLnByb3RvIucBCiBO",
+            "b3RpZnlVbmlvblJlc291cmNlQ2hhbmdlUmVxdWVzdBJcChNjaGFuZ2VfcmVz",
+            "b3VyY2VfbGliGAIgAygLMj8uenByb3RvLk5vdGlmeVVuaW9uUmVzb3VyY2VD",
+            "aGFuZ2VSZXF1ZXN0LkNoYW5nZVJlc291cmNlTGliRW50cnkSFAoMZG9ub3Jf",
+            "bWVtX2lkGAMgASgDGk8KFkNoYW5nZVJlc291cmNlTGliRW50cnkSCwoDa2V5",
+            "GAEgASgFEiQKBXZhbHVlGAIgASgLMhUuenByb3RvLlVuaW9uUmVzb3VyY2U6",
+            "AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUnionResourceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new NotifyUnionResourceChangeRequest(this);
     }
 
-    /// <summary>Field number for the "changeResourceLib" field.</summary>
+    /// <summary>Field number for the "change_resource_lib" field.</summary>
     public const int ChangeResourceLibFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.UnionResource>.Codec _map_changeResourceLib_codec
         = new pbc::MapField<int, global::Zproto.UnionResource>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionResource.Parser), 18);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return changeResourceLib_; }
     }
 
-    /// <summary>Field number for the "donorMemId" field.</summary>
+    /// <summary>Field number for the "donor_mem_id" field.</summary>
     public const int DonorMemIdFieldNumber = 3;
     private long donorMemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

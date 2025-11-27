@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X3BsYWNlX2hvbGRlcl9maXNoX3BlcnNvbmFsX3RvdGFsLnByb3Rv",
-            "EgZ6cHJvdG8i4gEKHFBsYWNlSG9sZGVyRmlzaFBlcnNvbmFsVG90YWwSDQoF",
-            "VG90YWwYASABKAMSEQoJTXl0aFRvdGFsGAIgASgDEhMKC1N1bUZpc2hUeXBl",
-            "GAMgASgFEhYKDlN1bVNlYUxpZmVUeXBlGAQgASgFEhQKDFN1bVRyYXNoVHlw",
-            "ZRgFIAEoBRISCgpNb3N0RmlzaElkGAYgASgFEhIKCkZhdm91clplcm8YByAB",
-            "KAUSEAoIdXNlck5hbWUYCCABKAkSEQoJdW5pb25OYW1lGAkgASgJEhAKCGlz",
-            "TmV3YmllGAogASgIYgZwcm90bzM="));
+            "EgZ6cHJvdG8i8AEKHFBsYWNlSG9sZGVyRmlzaFBlcnNvbmFsVG90YWwSDQoF",
+            "dG90YWwYASABKAMSEgoKbXl0aF90b3RhbBgCIAEoAxIVCg1zdW1fZmlzaF90",
+            "eXBlGAMgASgFEhkKEXN1bV9zZWFfbGlmZV90eXBlGAQgASgFEhYKDnN1bV90",
+            "cmFzaF90eXBlGAUgASgFEhQKDG1vc3RfZmlzaF9pZBgGIAEoBRITCgtmYXZv",
+            "dXJfemVybxgHIAEoBRIRCgl1c2VyX25hbWUYCCABKAkSEgoKdW5pb25fbmFt",
+            "ZRgJIAEoCRIRCglpc19uZXdiaWUYCiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       return new PlaceHolderFishPersonalTotal(this);
     }
 
-    /// <summary>Field number for the "Total" field.</summary>
+    /// <summary>Field number for the "total" field.</summary>
     public const int TotalFieldNumber = 1;
     private long total_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -107,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "MythTotal" field.</summary>
+    /// <summary>Field number for the "myth_total" field.</summary>
     public const int MythTotalFieldNumber = 2;
     private long mythTotal_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -119,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "SumFishType" field.</summary>
+    /// <summary>Field number for the "sum_fish_type" field.</summary>
     public const int SumFishTypeFieldNumber = 3;
     private int sumFishType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "SumSeaLifeType" field.</summary>
+    /// <summary>Field number for the "sum_sea_life_type" field.</summary>
     public const int SumSeaLifeTypeFieldNumber = 4;
     private int sumSeaLifeType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,7 +143,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "SumTrashType" field.</summary>
+    /// <summary>Field number for the "sum_trash_type" field.</summary>
     public const int SumTrashTypeFieldNumber = 5;
     private int sumTrashType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,7 +155,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "MostFishId" field.</summary>
+    /// <summary>Field number for the "most_fish_id" field.</summary>
     public const int MostFishIdFieldNumber = 6;
     private int mostFishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "FavourZero" field.</summary>
+    /// <summary>Field number for the "favour_zero" field.</summary>
     public const int FavourZeroFieldNumber = 7;
     private int favourZero_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,7 +179,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "userName" field.</summary>
+    /// <summary>Field number for the "user_name" field.</summary>
     public const int UserNameFieldNumber = 8;
     private string userName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -191,7 +191,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unionName" field.</summary>
+    /// <summary>Field number for the "union_name" field.</summary>
     public const int UnionNameFieldNumber = 9;
     private string unionName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -203,7 +203,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isNewbie" field.</summary>
+    /// <summary>Field number for the "is_newbie" field.</summary>
     public const int IsNewbieFieldNumber = 10;
     private bool isNewbie_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

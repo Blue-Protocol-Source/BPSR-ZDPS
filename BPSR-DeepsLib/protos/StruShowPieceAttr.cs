@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3Nob3dfcGllY2VfYXR0ci5wcm90bxIGenByb3RvGhpzdHJ1X3No",
-            "b3dfcGllY2VfcGFpci5wcm90byJdCg1TaG93UGllY2VBdHRyEigKCXBpZWNl",
-            "SW5mbxgBIAEoCzIVLnpwcm90by5TaG93UGllY2VQYWlyEhEKCWJlZ2luVGlt",
-            "ZRgCIAEoAxIPCgdlbmRUaW1lGAMgASgDYgZwcm90bzM="));
+            "b3dfcGllY2VfcGFpci5wcm90byJgCg1TaG93UGllY2VBdHRyEikKCnBpZWNl",
+            "X2luZm8YASABKAsyFS56cHJvdG8uU2hvd1BpZWNlUGFpchISCgpiZWdpbl90",
+            "aW1lGAIgASgDEhAKCGVuZF90aW1lGAMgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruShowPiecePairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ShowPieceAttr(this);
     }
 
-    /// <summary>Field number for the "pieceInfo" field.</summary>
+    /// <summary>Field number for the "piece_info" field.</summary>
     public const int PieceInfoFieldNumber = 1;
     private global::Zproto.ShowPiecePair pieceInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "beginTime" field.</summary>
+    /// <summary>Field number for the "begin_time" field.</summary>
     public const int BeginTimeFieldNumber = 2;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "endTime" field.</summary>
+    /// <summary>Field number for the "end_time" field.</summary>
     public const int EndTimeFieldNumber = 3;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

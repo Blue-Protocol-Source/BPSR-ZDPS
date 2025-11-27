@@ -24,8 +24,8 @@ namespace Zproto {
     static StruReforgeKeyParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X3JlZm9yZ2Vfa2V5X3BhcmFtLnByb3RvEgZ6cHJvdG8iIwoPUmVm",
-            "b3JnZUtleVBhcmFtEhAKCGl0ZW1VdWlkGAEgASgDYgZwcm90bzM="));
+            "ChxzdHJ1X3JlZm9yZ2Vfa2V5X3BhcmFtLnByb3RvEgZ6cHJvdG8iJAoPUmVm",
+            "b3JnZUtleVBhcmFtEhEKCWl0ZW1fdXVpZBgBIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new ReforgeKeyParam(this);
     }
 
-    /// <summary>Field number for the "itemUuid" field.</summary>
+    /// <summary>Field number for the "item_uuid" field.</summary>
     public const int ItemUuidFieldNumber = 1;
     private long itemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

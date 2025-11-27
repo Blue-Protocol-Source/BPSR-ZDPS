@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2VxdWlwX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvInIKCUVxdWlwSW5mbxIRCgllcXVpcFNsb3QYASABKAUSEAoI",
-            "aXRlbVV1aWQYAiABKAQSHAoUZXF1aXBTbG90UmVmaW5lTGV2ZWwYAyABKA0S",
-            "IgoaZXF1aXBTbG90UmVmaW5lRmFpbGVkQ291bnQYBCABKA1iBnByb3RvMw=="));
+            "YXNrLnByb3RvInsKCUVxdWlwSW5mbxISCgplcXVpcF9zbG90GAEgASgFEhEK",
+            "CWl0ZW1fdXVpZBgCIAEoBBIfChdlcXVpcF9zbG90X3JlZmluZV9sZXZlbBgD",
+            "IAEoDRImCh5lcXVpcF9zbG90X3JlZmluZV9mYWlsZWRfY291bnQYBCABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new EquipInfo(this);
     }
 
-    /// <summary>Field number for the "equipSlot" field.</summary>
+    /// <summary>Field number for the "equip_slot" field.</summary>
     public const int EquipSlotFieldNumber = 1;
     private int equipSlot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemUuid" field.</summary>
+    /// <summary>Field number for the "item_uuid" field.</summary>
     public const int ItemUuidFieldNumber = 2;
     private ulong itemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "equipSlotRefineLevel" field.</summary>
+    /// <summary>Field number for the "equip_slot_refine_level" field.</summary>
     public const int EquipSlotRefineLevelFieldNumber = 3;
     private uint equipSlotRefineLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "equipSlotRefineFailedCount" field.</summary>
+    /// <summary>Field number for the "equip_slot_refine_failed_count" field.</summary>
     public const int EquipSlotRefineFailedCountFieldNumber = 4;
     private uint equipSlotRefineFailedCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

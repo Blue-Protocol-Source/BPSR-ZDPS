@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2FjdGl2aXR5X3Jld2FyZF9saW1pdF90aW1lcy5wcm90bxIGenBy",
-            "b3RvGhdlbnVtX2VfdGltZXJfdHlwZS5wcm90byJiChhBY3Rpdml0eVJld2Fy",
-            "ZExpbWl0VGltZXMSJQoJdGltZXNUeXBlGAEgASgOMhIuenByb3RvLkVUaW1l",
-            "clR5cGUSDQoFdGltZXMYAiABKA0SEAoIbWF4VGltZXMYAyABKA1iBnByb3Rv",
-            "Mw=="));
+            "b3RvGhdlbnVtX2VfdGltZXJfdHlwZS5wcm90byJkChhBY3Rpdml0eVJld2Fy",
+            "ZExpbWl0VGltZXMSJgoKdGltZXNfdHlwZRgBIAEoDjISLnpwcm90by5FVGlt",
+            "ZXJUeXBlEg0KBXRpbWVzGAIgASgNEhEKCW1heF90aW1lcxgDIAEoDWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETimerTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new ActivityRewardLimitTimes(this);
     }
 
-    /// <summary>Field number for the "timesType" field.</summary>
+    /// <summary>Field number for the "times_type" field.</summary>
     public const int TimesTypeFieldNumber = 1;
     private global::Zproto.ETimerType timesType_ = global::Zproto.ETimerType.TimerTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxTimes" field.</summary>
+    /// <summary>Field number for the "max_times" field.</summary>
     public const int MaxTimesFieldNumber = 3;
     private uint maxTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

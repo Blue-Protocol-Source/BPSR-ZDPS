@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2FwcGx5X2pvaW5fdGVhbV9yZXBseS5wcm90bxIGenByb3RvGhdl",
-            "bnVtX2VfZXJyb3JfY29kZS5wcm90byJJChJBcHBseUpvaW5UZWFtUmVwbHkS",
-            "DgoGdGVhbUlkGAEgAygDEiMKB2VyckNvZGUYAiABKA4yEi56cHJvdG8uRUVy",
-            "cm9yQ29kZWIGcHJvdG8z"));
+            "bnVtX2VfZXJyb3JfY29kZS5wcm90byJLChJBcHBseUpvaW5UZWFtUmVwbHkS",
+            "DwoHdGVhbV9pZBgBIAMoAxIkCghlcnJfY29kZRgCIAEoDjISLnpwcm90by5F",
+            "RXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ApplyJoinTeamReply(this);
     }
 
-    /// <summary>Field number for the "teamId" field.</summary>
+    /// <summary>Field number for the "team_id" field.</summary>
     public const int TeamIdFieldNumber = 1;
     private static readonly pb::FieldCodec<long> _repeated_teamId_codec
         = pb::FieldCodec.ForInt64(10);
@@ -95,7 +95,7 @@ namespace Zproto {
       get { return teamId_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,8 +24,8 @@ namespace Zproto {
     static StruApplyToRideParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X2FwcGx5X3RvX3JpZGVfcGFyYW0ucHJvdG8SBnpwcm90byIkChBB",
-            "cHBseVRvUmlkZVBhcmFtEhAKCHRhcmdldElkGAEgASgDYgZwcm90bzM="));
+            "Ch5zdHJ1X2FwcGx5X3RvX3JpZGVfcGFyYW0ucHJvdG8SBnpwcm90byIlChBB",
+            "cHBseVRvUmlkZVBhcmFtEhEKCXRhcmdldF9pZBgBIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new ApplyToRideParam(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private long targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

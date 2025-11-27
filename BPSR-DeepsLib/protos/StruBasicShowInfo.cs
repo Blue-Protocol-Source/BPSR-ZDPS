@@ -25,15 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X2Jhc2ljX3Nob3dfaW5mby5wcm90bxIGenByb3RvGhZlbnVtX2Vf",
-            "Ym9keV9zaXplLnByb3RvIrYBCg1CYXNpY1Nob3dJbmZvEg4KBmNoYXJJRBgB",
-            "IAEoAxIMCgRuYW1lGAIgASgJEg4KBmdlbmRlchgDIAEoBRIjCghib2R5U2l6",
-            "ZRgEIAEoDjIRLnpwcm90by5FQm9keVNpemUSDQoFbGV2ZWwYBSABKAUSFwoP",
-            "Y3VyVGFsZW50UG9vbElkGAYgASgNEhgKEHVuaW9uSHVudFJhbmRJZHgYByAB",
-            "KA0SEAoIaXNOZXdiaWUYCCABKAhiBnByb3RvMw=="));
+            "Ym9keV9zaXplLnByb3RvIr8BCg1CYXNpY1Nob3dJbmZvEg8KB2NoYXJfaWQY",
+            "ASABKAMSDAoEbmFtZRgCIAEoCRIOCgZnZW5kZXIYAyABKAUSJAoJYm9keV9z",
+            "aXplGAQgASgOMhEuenByb3RvLkVCb2R5U2l6ZRINCgVsZXZlbBgFIAEoBRIa",
+            "ChJjdXJfdGFsZW50X3Bvb2xfaWQYBiABKA0SGwoTdW5pb25faHVudF9yYW5k",
+            "X2lkeBgHIAEoDRIRCglpc19uZXdiaWUYCCABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEBodySizeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.BasicShowInfo), global::Zproto.BasicShowInfo.Parser, new[]{ "CharID", "Name", "Gender", "BodySize", "Level", "CurTalentPoolId", "UnionHuntRandIdx", "IsNewbie" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.BasicShowInfo), global::Zproto.BasicShowInfo.Parser, new[]{ "CharId", "Name", "Gender", "BodySize", "Level", "CurTalentPoolId", "UnionHuntRandIdx", "IsNewbie" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,7 +75,7 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BasicShowInfo(BasicShowInfo other) : this() {
-      charID_ = other.charID_;
+      charId_ = other.charId_;
       name_ = other.name_;
       gender_ = other.gender_;
       bodySize_ = other.bodySize_;
@@ -92,15 +92,15 @@ namespace Zproto {
       return new BasicShowInfo(this);
     }
 
-    /// <summary>Field number for the "charID" field.</summary>
-    public const int CharIDFieldNumber = 1;
-    private long charID_;
+    /// <summary>Field number for the "char_id" field.</summary>
+    public const int CharIdFieldNumber = 1;
+    private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long CharID {
-      get { return charID_; }
+    public long CharId {
+      get { return charId_; }
       set {
-        charID_ = value;
+        charId_ = value;
       }
     }
 
@@ -128,7 +128,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bodySize" field.</summary>
+    /// <summary>Field number for the "body_size" field.</summary>
     public const int BodySizeFieldNumber = 4;
     private global::Zproto.EBodySize bodySize_ = global::Zproto.EBodySize.BodySizeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "curTalentPoolId" field.</summary>
+    /// <summary>Field number for the "cur_talent_pool_id" field.</summary>
     public const int CurTalentPoolIdFieldNumber = 6;
     private uint curTalentPoolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -164,7 +164,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unionHuntRandIdx" field.</summary>
+    /// <summary>Field number for the "union_hunt_rand_idx" field.</summary>
     public const int UnionHuntRandIdxFieldNumber = 7;
     private uint unionHuntRandIdx_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -176,7 +176,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isNewbie" field.</summary>
+    /// <summary>Field number for the "is_newbie" field.</summary>
     public const int IsNewbieFieldNumber = 8;
     private bool isNewbie_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -203,7 +203,7 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CharID != other.CharID) return false;
+      if (CharId != other.CharId) return false;
       if (Name != other.Name) return false;
       if (Gender != other.Gender) return false;
       if (BodySize != other.BodySize) return false;
@@ -218,7 +218,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CharID != 0L) hash ^= CharID.GetHashCode();
+      if (CharId != 0L) hash ^= CharId.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Gender != 0) hash ^= Gender.GetHashCode();
       if (BodySize != global::Zproto.EBodySize.BodySizeNull) hash ^= BodySize.GetHashCode();
@@ -244,9 +244,9 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CharID != 0L) {
+      if (CharId != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt64(CharID);
+        output.WriteInt64(CharId);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(18);
@@ -286,9 +286,9 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CharID != 0L) {
+      if (CharId != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt64(CharID);
+        output.WriteInt64(CharId);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(18);
@@ -328,8 +328,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CharID != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CharID);
+      if (CharId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CharId);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
@@ -364,8 +364,8 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      if (other.CharID != 0L) {
-        CharID = other.CharID;
+      if (other.CharId != 0L) {
+        CharId = other.CharId;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -408,7 +408,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            CharID = input.ReadInt64();
+            CharId = input.ReadInt64();
             break;
           }
           case 18: {
@@ -459,7 +459,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            CharID = input.ReadInt64();
+            CharId = input.ReadInt64();
             break;
           }
           case 18: {

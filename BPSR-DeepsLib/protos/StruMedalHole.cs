@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X21lZGFsX2hvbGUucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIj4KCU1lZGFsSG9sZRIOCgZob2xlSWQYASABKA0SEQoJaG9s",
-            "ZUxldmVsGAIgASgNEg4KBmN1ckV4cBgDIAEoDWIGcHJvdG8z"));
+            "YXNrLnByb3RvIkEKCU1lZGFsSG9sZRIPCgdob2xlX2lkGAEgASgNEhIKCmhv",
+            "bGVfbGV2ZWwYAiABKA0SDwoHY3VyX2V4cBgDIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new MedalHole(this);
     }
 
-    /// <summary>Field number for the "holeId" field.</summary>
+    /// <summary>Field number for the "hole_id" field.</summary>
     public const int HoleIdFieldNumber = 1;
     private uint holeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "holeLevel" field.</summary>
+    /// <summary>Field number for the "hole_level" field.</summary>
     public const int HoleLevelFieldNumber = 2;
     private uint holeLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "curExp" field.</summary>
+    /// <summary>Field number for the "cur_exp" field.</summary>
     public const int CurExpFieldNumber = 3;
     private uint curExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

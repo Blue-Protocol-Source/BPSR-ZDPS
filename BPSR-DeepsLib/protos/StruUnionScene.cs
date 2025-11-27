@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X3VuaW9uX3NjZW5lLnByb3RvEgZ6cHJvdG8aHGVudW1fdW5pb25f",
-            "ZW50ZXJfc2NlbmUucHJvdG8iSQoKVW5pb25TY2VuZRIPCgd1bmlvbklkGAEg",
-            "ASgDEioKCWVudGVyVHlwZRgCIAEoDjIXLnpwcm90by5VbmlvbkVudGVyU2Nl",
-            "bmViBnByb3RvMw=="));
+            "ZW50ZXJfc2NlbmUucHJvdG8iSwoKVW5pb25TY2VuZRIQCgh1bmlvbl9pZBgB",
+            "IAEoAxIrCgplbnRlcl90eXBlGAIgASgOMhcuenByb3RvLlVuaW9uRW50ZXJT",
+            "Y2VuZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumUnionEnterSceneReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new UnionScene(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "enterType" field.</summary>
+    /// <summary>Field number for the "enter_type" field.</summary>
     public const int EnterTypeFieldNumber = 2;
     private global::Zproto.UnionEnterScene enterType_ = global::Zproto.UnionEnterScene.Normal;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

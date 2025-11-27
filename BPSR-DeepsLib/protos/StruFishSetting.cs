@@ -25,20 +25,21 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2Zpc2hfc2V0dGluZy5wcm90bxIGenByb3RvGhZzdHJ1X2Zpc2hf",
-            "cmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iwwQKC0Zpc2hT",
-            "ZXR0aW5nEg4KBmJhaXRJZBgCIAEoBRITCgtleHBlcmllbmNlcxgDIAEoBRIW",
-            "Cg5yZXNlYXJjaEZpc2hJZBgEIAEoBRI5CgtmaXNoUmVjb3JkcxgFIAMoCzIk",
-            "Lnpwcm90by5GaXNoU2V0dGluZy5GaXNoUmVjb3Jkc0VudHJ5EkUKEWZpc2hS",
-            "b2REdXJhYmlsaXR5GAYgAygLMiouenByb3RvLkZpc2hTZXR0aW5nLkZpc2hS",
-            "b2REdXJhYmlsaXR5RW50cnkSDwoHcm9kVXVpZBgHIAEoBBI5CgtsZXZlbFJl",
-            "d2FyZBgIIAMoCzIkLnpwcm90by5GaXNoU2V0dGluZy5MZXZlbFJld2FyZEVu",
-            "dHJ5Ej0KDXplcm9GaXNoVGltZXMYCSADKAsyJi56cHJvdG8uRmlzaFNldHRp",
-            "bmcuWmVyb0Zpc2hUaW1lc0VudHJ5GkYKEEZpc2hSZWNvcmRzRW50cnkSCwoD",
-            "a2V5GAEgASgFEiEKBXZhbHVlGAIgASgLMhIuenByb3RvLkZpc2hSZWNvcmQ6",
-            "AjgBGjgKFkZpc2hSb2REdXJhYmlsaXR5RW50cnkSCwoDa2V5GAEgASgEEg0K",
-            "BXZhbHVlGAIgASgFOgI4ARoyChBMZXZlbFJld2FyZEVudHJ5EgsKA2tleRgB",
-            "IAEoBRINCgV2YWx1ZRgCIAEoCDoCOAEaNAoSWmVyb0Zpc2hUaW1lc0VudHJ5",
-            "EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAFiBnByb3RvMw=="));
+            "cmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8izQQKC0Zpc2hT",
+            "ZXR0aW5nEg8KB2JhaXRfaWQYAiABKAUSEwoLZXhwZXJpZW5jZXMYAyABKAUS",
+            "GAoQcmVzZWFyY2hfZmlzaF9pZBgEIAEoBRI6CgxmaXNoX3JlY29yZHMYBSAD",
+            "KAsyJC56cHJvdG8uRmlzaFNldHRpbmcuRmlzaFJlY29yZHNFbnRyeRJHChNm",
+            "aXNoX3JvZF9kdXJhYmlsaXR5GAYgAygLMiouenByb3RvLkZpc2hTZXR0aW5n",
+            "LkZpc2hSb2REdXJhYmlsaXR5RW50cnkSEAoIcm9kX3V1aWQYByABKAQSOgoM",
+            "bGV2ZWxfcmV3YXJkGAggAygLMiQuenByb3RvLkZpc2hTZXR0aW5nLkxldmVs",
+            "UmV3YXJkRW50cnkSPwoPemVyb19maXNoX3RpbWVzGAkgAygLMiYuenByb3Rv",
+            "LkZpc2hTZXR0aW5nLlplcm9GaXNoVGltZXNFbnRyeRpGChBGaXNoUmVjb3Jk",
+            "c0VudHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1ZRgCIAEoCzISLnpwcm90by5G",
+            "aXNoUmVjb3JkOgI4ARo4ChZGaXNoUm9kRHVyYWJpbGl0eUVudHJ5EgsKA2tl",
+            "eRgBIAEoBBINCgV2YWx1ZRgCIAEoBToCOAEaMgoQTGV2ZWxSZXdhcmRFbnRy",
+            "eRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAg6AjgBGjQKElplcm9GaXNo",
+            "VGltZXNFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAM6AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFishRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +102,7 @@ namespace Zproto {
       return new FishSetting(this);
     }
 
-    /// <summary>Field number for the "baitId" field.</summary>
+    /// <summary>Field number for the "bait_id" field.</summary>
     public const int BaitIdFieldNumber = 2;
     private int baitId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "researchFishId" field.</summary>
+    /// <summary>Field number for the "research_fish_id" field.</summary>
     public const int ResearchFishIdFieldNumber = 4;
     private int researchFishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fishRecords" field.</summary>
+    /// <summary>Field number for the "fish_records" field.</summary>
     public const int FishRecordsFieldNumber = 5;
     private static readonly pbc::MapField<int, global::Zproto.FishRecord>.Codec _map_fishRecords_codec
         = new pbc::MapField<int, global::Zproto.FishRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FishRecord.Parser), 42);
@@ -148,7 +149,7 @@ namespace Zproto {
       get { return fishRecords_; }
     }
 
-    /// <summary>Field number for the "fishRodDurability" field.</summary>
+    /// <summary>Field number for the "fish_rod_durability" field.</summary>
     public const int FishRodDurabilityFieldNumber = 6;
     private static readonly pbc::MapField<ulong, int>.Codec _map_fishRodDurability_codec
         = new pbc::MapField<ulong, int>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForInt32(16, 0), 50);
@@ -159,7 +160,7 @@ namespace Zproto {
       get { return fishRodDurability_; }
     }
 
-    /// <summary>Field number for the "rodUuid" field.</summary>
+    /// <summary>Field number for the "rod_uuid" field.</summary>
     public const int RodUuidFieldNumber = 7;
     private ulong rodUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -171,7 +172,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "levelReward" field.</summary>
+    /// <summary>Field number for the "level_reward" field.</summary>
     public const int LevelRewardFieldNumber = 8;
     private static readonly pbc::MapField<int, bool>.Codec _map_levelReward_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 66);
@@ -182,7 +183,7 @@ namespace Zproto {
       get { return levelReward_; }
     }
 
-    /// <summary>Field number for the "zeroFishTimes" field.</summary>
+    /// <summary>Field number for the "zero_fish_times" field.</summary>
     public const int ZeroFishTimesFieldNumber = 9;
     private static readonly pbc::MapField<int, long>.Codec _map_zeroFishTimes_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 74);

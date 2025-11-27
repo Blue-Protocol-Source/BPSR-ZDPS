@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ci5zdHJ1X2hvbWVfbGFuZF9jbHV0dGVyX2dlbmVyYXRpb25fcmVjb3JkLnBy",
             "b3RvEgZ6cHJvdG8aJHN0cnVfY2x1dHRlcl9nZW5lcmF0aW9uX3JlY29yZC5w",
-            "cm90byLjAQofSG9tZUxhbmRDbHV0dGVyR2VuZXJhdGlvblJlY29yZBJhChVo",
-            "b21lTGFuZENsdXR0ZXJSZWNvcmQYASADKAsyQi56cHJvdG8uSG9tZUxhbmRD",
-            "bHV0dGVyR2VuZXJhdGlvblJlY29yZC5Ib21lTGFuZENsdXR0ZXJSZWNvcmRF",
-            "bnRyeRpdChpIb21lTGFuZENsdXR0ZXJSZWNvcmRFbnRyeRILCgNrZXkYASAB",
-            "KAUSLgoFdmFsdWUYAiABKAsyHy56cHJvdG8uQ2x1dHRlckdlbmVyYXRpb25S",
-            "ZWNvcmQ6AjgBYgZwcm90bzM="));
+            "cm90byLmAQofSG9tZUxhbmRDbHV0dGVyR2VuZXJhdGlvblJlY29yZBJkChho",
+            "b21lX2xhbmRfY2x1dHRlcl9yZWNvcmQYASADKAsyQi56cHJvdG8uSG9tZUxh",
+            "bmRDbHV0dGVyR2VuZXJhdGlvblJlY29yZC5Ib21lTGFuZENsdXR0ZXJSZWNv",
+            "cmRFbnRyeRpdChpIb21lTGFuZENsdXR0ZXJSZWNvcmRFbnRyeRILCgNrZXkY",
+            "ASABKAUSLgoFdmFsdWUYAiABKAsyHy56cHJvdG8uQ2x1dHRlckdlbmVyYXRp",
+            "b25SZWNvcmQ6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruClutterGenerationRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new HomeLandClutterGenerationRecord(this);
     }
 
-    /// <summary>Field number for the "homeLandClutterRecord" field.</summary>
+    /// <summary>Field number for the "home_land_clutter_record" field.</summary>
     public const int HomeLandClutterRecordFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.ClutterGenerationRecord>.Codec _map_homeLandClutterRecord_codec
         = new pbc::MapField<int, global::Zproto.ClutterGenerationRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ClutterGenerationRecord.Parser), 10);

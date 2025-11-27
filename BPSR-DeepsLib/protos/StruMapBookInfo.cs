@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X21hcF9ib29rX2luZm8ucHJvdG8SBnpwcm90bxobc3RydV9tYXBf",
-            "c3RpY2tlcl9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iuQEK",
-            "C01hcEJvb2tJbmZvEgoKAmlkGAEgASgNEj0KDW1hcFN0aWNrZXJNYXAYAiAD",
-            "KAsyJi56cHJvdG8uTWFwQm9va0luZm8uTWFwU3RpY2tlck1hcEVudHJ5EhEK",
-            "CWF3YXJkRmxhZxgDIAEoDRpMChJNYXBTdGlja2VyTWFwRW50cnkSCwoDa2V5",
-            "GAEgASgNEiUKBXZhbHVlGAIgASgLMhYuenByb3RvLk1hcFN0aWNrZXJJbmZv",
-            "OgI4AWIGcHJvdG8z"));
+            "c3RpY2tlcl9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ivAEK",
+            "C01hcEJvb2tJbmZvEgoKAmlkGAEgASgNEj8KD21hcF9zdGlja2VyX21hcBgC",
+            "IAMoCzImLnpwcm90by5NYXBCb29rSW5mby5NYXBTdGlja2VyTWFwRW50cnkS",
+            "EgoKYXdhcmRfZmxhZxgDIAEoDRpMChJNYXBTdGlja2VyTWFwRW50cnkSCwoD",
+            "a2V5GAEgASgNEiUKBXZhbHVlGAIgASgLMhYuenByb3RvLk1hcFN0aWNrZXJJ",
+            "bmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMapStickerInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mapStickerMap" field.</summary>
+    /// <summary>Field number for the "map_sticker_map" field.</summary>
     public const int MapStickerMapFieldNumber = 2;
     private static readonly pbc::MapField<uint, global::Zproto.MapStickerInfo>.Codec _map_mapStickerMap_codec
         = new pbc::MapField<uint, global::Zproto.MapStickerInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MapStickerInfo.Parser), 18);
@@ -111,7 +111,7 @@ namespace Zproto {
       get { return mapStickerMap_; }
     }
 
-    /// <summary>Field number for the "awardFlag" field.</summary>
+    /// <summary>Field number for the "award_flag" field.</summary>
     public const int AwardFlagFieldNumber = 3;
     private uint awardFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

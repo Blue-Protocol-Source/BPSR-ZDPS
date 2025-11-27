@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2hvbWVsYW5kX3BsYXllcl93YXJlaG91c2VfaW5mby5wcm90bxIG",
-            "enByb3RvGiJzdHJ1X2hvbWVfbGFuZF9pdGVtX2luc3RhbmNlLnByb3RvIsMB",
-            "ChtIb21lbGFuZFBsYXllcldhcmVob3VzZUluZm8STwoOZnVybml0dXJlSXRl",
-            "bXMYASADKAsyNy56cHJvdG8uSG9tZWxhbmRQbGF5ZXJXYXJlaG91c2VJbmZv",
-            "LkZ1cm5pdHVyZUl0ZW1zRW50cnkaUwoTRnVybml0dXJlSXRlbXNFbnRyeRIL",
-            "CgNrZXkYASABKAMSKwoFdmFsdWUYAiABKAsyHC56cHJvdG8uSG9tZUxhbmRJ",
-            "dGVtSW5zdGFuY2U6AjgBYgZwcm90bzM="));
+            "enByb3RvGiJzdHJ1X2hvbWVfbGFuZF9pdGVtX2luc3RhbmNlLnByb3RvIsQB",
+            "ChtIb21lbGFuZFBsYXllcldhcmVob3VzZUluZm8SUAoPZnVybml0dXJlX2l0",
+            "ZW1zGAEgAygLMjcuenByb3RvLkhvbWVsYW5kUGxheWVyV2FyZWhvdXNlSW5m",
+            "by5GdXJuaXR1cmVJdGVtc0VudHJ5GlMKE0Z1cm5pdHVyZUl0ZW1zRW50cnkS",
+            "CwoDa2V5GAEgASgDEisKBXZhbHVlGAIgASgLMhwuenByb3RvLkhvbWVMYW5k",
+            "SXRlbUluc3RhbmNlOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomeLandItemInstanceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new HomelandPlayerWarehouseInfo(this);
     }
 
-    /// <summary>Field number for the "furnitureItems" field.</summary>
+    /// <summary>Field number for the "furniture_items" field.</summary>
     public const int FurnitureItemsFieldNumber = 1;
     private static readonly pbc::MapField<long, global::Zproto.HomeLandItemInstance>.Codec _map_furnitureItems_codec
         = new pbc::MapField<long, global::Zproto.HomeLandItemInstance>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.HomeLandItemInstance.Parser), 10);

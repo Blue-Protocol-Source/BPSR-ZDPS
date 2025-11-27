@@ -24,8 +24,8 @@ namespace Zproto {
     static StruUnionBossDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X3VuaW9uX2Jvc3NfZGF0YS5wcm90bxIGenByb3RvIiAKDVVuaW9u",
-            "Qm9zc0RhdGESDwoHa2lsbENudBgBIAEoBWIGcHJvdG8z"));
+            "ChpzdHJ1X3VuaW9uX2Jvc3NfZGF0YS5wcm90bxIGenByb3RvIiEKDVVuaW9u",
+            "Qm9zc0RhdGESEAoIa2lsbF9jbnQYASABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new UnionBossData(this);
     }
 
-    /// <summary>Field number for the "killCnt" field.</summary>
+    /// <summary>Field number for the "kill_cnt" field.</summary>
     public const int KillCntFieldNumber = 1;
     private int killCnt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

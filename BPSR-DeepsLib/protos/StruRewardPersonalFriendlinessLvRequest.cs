@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjJzdHJ1X3Jld2FyZF9wZXJzb25hbF9mcmllbmRsaW5lc3NfbHZfcmVxdWVz",
-            "dC5wcm90bxIGenByb3RvIkYKI1Jld2FyZFBlcnNvbmFsRnJpZW5kbGluZXNz",
-            "THZSZXF1ZXN0EhAKCGZyaWVuZElkGAEgASgDEg0KBWxldmVsGAIgASgFYgZw",
-            "cm90bzM="));
+            "dC5wcm90bxIGenByb3RvIkcKI1Jld2FyZFBlcnNvbmFsRnJpZW5kbGluZXNz",
+            "THZSZXF1ZXN0EhEKCWZyaWVuZF9pZBgBIAEoAxINCgVsZXZlbBgCIAEoBWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new RewardPersonalFriendlinessLvRequest(this);
     }
 
-    /// <summary>Field number for the "friendId" field.</summary>
+    /// <summary>Field number for the "friend_id" field.</summary>
     public const int FriendIdFieldNumber = 1;
     private long friendId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

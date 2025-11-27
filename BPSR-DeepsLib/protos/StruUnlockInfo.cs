@@ -24,8 +24,8 @@ namespace Zproto {
     static StruUnlockInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X3VubG9ja19pbmZvLnByb3RvEgZ6cHJvdG8iHgoKVW5sb2NrSW5m",
-            "bxIQCghvYmplY3RJZBgBIAEoBGIGcHJvdG8z"));
+            "ChZzdHJ1X3VubG9ja19pbmZvLnByb3RvEgZ6cHJvdG8iHwoKVW5sb2NrSW5m",
+            "bxIRCglvYmplY3RfaWQYASABKARiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new UnlockInfo(this);
     }
 
-    /// <summary>Field number for the "objectId" field.</summary>
+    /// <summary>Field number for the "object_id" field.</summary>
     public const int ObjectIdFieldNumber = 1;
     private ulong objectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

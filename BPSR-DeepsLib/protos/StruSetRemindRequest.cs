@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSetRemindRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X3NldF9yZW1pbmRfcmVxdWVzdC5wcm90bxIGenByb3RvIjQKEFNl",
-            "dFJlbWluZFJlcXVlc3QSDgoGY2hhcklkGAIgASgDEhAKCGlzUmVtaW5kGAMg",
-            "ASgIYgZwcm90bzM="));
+            "Ch1zdHJ1X3NldF9yZW1pbmRfcmVxdWVzdC5wcm90bxIGenByb3RvIjYKEFNl",
+            "dFJlbWluZFJlcXVlc3QSDwoHY2hhcl9pZBgCIAEoAxIRCglpc19yZW1pbmQY",
+            "AyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetRemindRequest(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isRemind" field.</summary>
+    /// <summary>Field number for the "is_remind" field.</summary>
     public const int IsRemindFieldNumber = 3;
     private bool isRemind_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

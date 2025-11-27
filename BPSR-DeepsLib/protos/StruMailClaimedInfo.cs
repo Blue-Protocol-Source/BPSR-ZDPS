@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X21haWxfY2xhaW1lZF9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byKjAQoPTWFpbENsYWltZWRJbmZvEhoKEmF0dGFj",
-            "aG1lbnRNYWlsTGlzdBgBIAMoAxI/CgxjbGFpbWVkTWFpbHMYAiADKAsyKS56",
-            "cHJvdG8uTWFpbENsYWltZWRJbmZvLkNsYWltZWRNYWlsc0VudHJ5GjMKEUNs",
-            "YWltZWRNYWlsc0VudHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1ZRgCIAEoAzoC",
-            "OAFiBnByb3RvMw=="));
+            "ZGlydHlfbWFzay5wcm90byKmAQoPTWFpbENsYWltZWRJbmZvEhwKFGF0dGFj",
+            "aG1lbnRfbWFpbF9saXN0GAEgAygDEkAKDWNsYWltZWRfbWFpbHMYAiADKAsy",
+            "KS56cHJvdG8uTWFpbENsYWltZWRJbmZvLkNsYWltZWRNYWlsc0VudHJ5GjMK",
+            "EUNsYWltZWRNYWlsc0VudHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1ZRgCIAEo",
+            "AzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new MailClaimedInfo(this);
     }
 
-    /// <summary>Field number for the "attachmentMailList" field.</summary>
+    /// <summary>Field number for the "attachment_mail_list" field.</summary>
     public const int AttachmentMailListFieldNumber = 1;
     private static readonly pb::FieldCodec<long> _repeated_attachmentMailList_codec
         = pb::FieldCodec.ForInt64(10);
@@ -97,7 +97,7 @@ namespace Zproto {
       get { return attachmentMailList_; }
     }
 
-    /// <summary>Field number for the "claimedMails" field.</summary>
+    /// <summary>Field number for the "claimed_mails" field.</summary>
     public const int ClaimedMailsFieldNumber = 2;
     private static readonly pbc::MapField<long, long>.Codec _map_claimedMails_codec
         = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 18);

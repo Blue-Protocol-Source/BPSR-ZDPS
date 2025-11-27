@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2dldF9mYWNlX3VwX3Rva2VuX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "byIrChVHZXRGYWNlVXBUb2tlblJlcXVlc3QSEgoKZmlsZVN1ZmZpeBgBIAEo",
-            "CWIGcHJvdG8z"));
+            "byIsChVHZXRGYWNlVXBUb2tlblJlcXVlc3QSEwoLZmlsZV9zdWZmaXgYASAB",
+            "KAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new GetFaceUpTokenRequest(this);
     }
 
-    /// <summary>Field number for the "fileSuffix" field.</summary>
+    /// <summary>Field number for the "file_suffix" field.</summary>
     public const int FileSuffixFieldNumber = 1;
     private string fileSuffix_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

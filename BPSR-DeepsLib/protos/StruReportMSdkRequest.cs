@@ -24,10 +24,10 @@ namespace Zproto {
     static StruReportMSdkRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X3JlcG9ydF9tX3Nka19yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iWAoR",
-            "UmVwb3J0TVNka1JlcXVlc3QSDgoGb3BlbklkGAIgASgJEhAKCHJ1bGVOYW1l",
-            "GAMgASgJEg8KB3RyYWNlSWQYBCABKAkSEAoIZXhlY1RpbWUYBSABKAViBnBy",
-            "b3RvMw=="));
+            "Ch9zdHJ1X3JlcG9ydF9tX3Nka19yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iXAoR",
+            "UmVwb3J0TVNka1JlcXVlc3QSDwoHb3Blbl9pZBgCIAEoCRIRCglydWxlX25h",
+            "bWUYAyABKAkSEAoIdHJhY2VfaWQYBCABKAkSEQoJZXhlY190aW1lGAUgASgF",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new ReportMSdkRequest(this);
     }
 
-    /// <summary>Field number for the "openId" field.</summary>
+    /// <summary>Field number for the "open_id" field.</summary>
     public const int OpenIdFieldNumber = 2;
     private string openId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ruleName" field.</summary>
+    /// <summary>Field number for the "rule_name" field.</summary>
     public const int RuleNameFieldNumber = 3;
     private string ruleName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "traceId" field.</summary>
+    /// <summary>Field number for the "trace_id" field.</summary>
     public const int TraceIdFieldNumber = 4;
     private string traceId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "execTime" field.</summary>
+    /// <summary>Field number for the "exec_time" field.</summary>
     public const int ExecTimeFieldNumber = 5;
     private int execTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,11 +24,12 @@ namespace Zproto {
     static StruHttpCachePhotoInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X2h0dHBfY2FjaGVfcGhvdG9faW5mby5wcm90bxIGenByb3RvIqsB",
-            "ChJodHRwQ2FjaGVQaG90b0luZm8SVgoWaHR0cENhY2hlUGhvdG9JbmZvRGlj",
-            "dBgBIAMoCzI2Lnpwcm90by5odHRwQ2FjaGVQaG90b0luZm8uSHR0cENhY2hl",
-            "UGhvdG9JbmZvRGljdEVudHJ5Gj0KG0h0dHBDYWNoZVBob3RvSW5mb0RpY3RF",
-            "bnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBYgZwcm90bzM="));
+            "CiBzdHJ1X2h0dHBfY2FjaGVfcGhvdG9faW5mby5wcm90bxIGenByb3RvIq8B",
+            "ChJodHRwQ2FjaGVQaG90b0luZm8SWgoaaHR0cF9jYWNoZV9waG90b19pbmZv",
+            "X2RpY3QYASADKAsyNi56cHJvdG8uaHR0cENhY2hlUGhvdG9JbmZvLkh0dHBD",
+            "YWNoZVBob3RvSW5mb0RpY3RFbnRyeRo9ChtIdHRwQ2FjaGVQaG90b0luZm9E",
+            "aWN0RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new httpCachePhotoInfo(this);
     }
 
-    /// <summary>Field number for the "httpCachePhotoInfoDict" field.</summary>
+    /// <summary>Field number for the "http_cache_photo_info_dict" field.</summary>
     public const int HttpCachePhotoInfoDictFieldNumber = 1;
     private static readonly pbc::MapField<string, string>.Codec _map_httpCachePhotoInfoDict_codec
         = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 10);

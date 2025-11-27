@@ -214,6 +214,11 @@ namespace BPSR_ZDPS
                                 // Reset color early so we can safely break out of the loop for the handler to properly apply
                                 // There may be a single frame of bad drawing caused by this but it won't be visible to most users
                                 ImGui.PopStyleColor();
+
+                                // Shortcut the end paths for the current stack to safely return to state outside the file browser
+                                ImGui.EndTable();
+                                ImGui.EndPopup();
+                                ImGui.PopID();
                                 return;
                             }
                         }

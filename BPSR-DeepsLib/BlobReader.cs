@@ -89,14 +89,14 @@ public class BlobReader
     {
         var length = ReadUInt();
 
-        var bytes = Buff.AsSpan()[Offset..(int)length];
+        var bytes = Buff.AsSpan()[Offset..(Offset + (int)length)];
 
         Offset += ((int)length + 4);
 
         return bytes.Length == 0 ? string.Empty : System.Text.Encoding.UTF8.GetString(bytes);
     }
 
-    public Dictionary<int, T> ReadHashMap<T>()
+    public Dictionary<T, X> ReadHashMap<T, X>()
     {
         int add = ReadInt();
         int remove = 0;
@@ -120,18 +120,18 @@ public class BlobReader
 
         Debug.WriteLine($"HashMap.add={add}, remove={remove}, update={update}");
 
-        var hashMap = new Dictionary<int, T>();
+        var hashMap = new Dictionary<T, X>();
 
         for (int i = 0; i < add; i++)
         {
-            var dk = ReadInt();
-            var val = ReadType<T>(this);
+            var dk = ReadType<T>(this);
+            var val = ReadType<X>(this);
             hashMap.Add(dk, val);
         }
 
         for (int i = 0; i < remove; i++)
         {
-            int dk = ReadInt();
+            var dk = ReadType<T>(this);
             if (hashMap.Remove(dk))
             {
                 Debug.WriteLine($"HashMap did not find key to remove: {dk}");
@@ -140,13 +140,13 @@ public class BlobReader
 
         for (int i = 0; i < update; i++)
         {
-            int dk = ReadInt();
+            var dk = ReadType<T>(this);
             if (hashMap.ContainsKey(dk))
-                hashMap[dk] = ReadType<T>(this);
+                hashMap[dk] = ReadType<X>(this);
             else
             {
                 Debug.WriteLine($"HashMap did not find key to update: {dk}");
-                hashMap.Add(dk, ReadType<T>(this));
+                hashMap.Add(dk, ReadType<X>(this));
             }
         }
 
@@ -205,6 +205,14 @@ public class BlobReader
         {
             return (T)(object)blob.ReadUInt();
         }
+        if (typeof(T) == typeof(long))
+        {
+            return (T)(object)blob.ReadLong();
+        }
+        if (typeof(T) == typeof(ulong))
+        {
+            return (T)(object)blob.ReadULong();
+        }
         if (typeof(T) == typeof(short))
         {
             return (T)(object)blob.ReadShort();
@@ -216,6 +224,10 @@ public class BlobReader
         if (typeof(T) == typeof(byte))
         {
             return (T)(object)blob.ReadByte();
+        }
+        if (typeof(T) == typeof(string))
+        {
+            return (T)(object)blob.ReadString();
         }
         if (typeof(T).IsSubclassOf(typeof(BlobType)))
         {

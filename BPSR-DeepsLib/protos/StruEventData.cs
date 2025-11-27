@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2V2ZW50X2RhdGEucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIm0KCUV2ZW50RGF0YRIRCglldmVudFR5cGUYASABKAUSEQoJ",
-            "aW50UGFyYW1zGAIgAygFEhIKCmxvbmdQYXJhbXMYAyADKAMSEwoLZmxvYXRQ",
-            "YXJhbXMYBCADKAISEQoJc3RyUGFyYW1zGAUgAygJYgZwcm90bzM="));
+            "YXNrLnByb3RvInIKCUV2ZW50RGF0YRISCgpldmVudF90eXBlGAEgASgFEhIK",
+            "CmludF9wYXJhbXMYAiADKAUSEwoLbG9uZ19wYXJhbXMYAyADKAMSFAoMZmxv",
+            "YXRfcGFyYW1zGAQgAygCEhIKCnN0cl9wYXJhbXMYBSADKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new EventData(this);
     }
 
-    /// <summary>Field number for the "eventType" field.</summary>
+    /// <summary>Field number for the "event_type" field.</summary>
     public const int EventTypeFieldNumber = 1;
     private int eventType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "intParams" field.</summary>
+    /// <summary>Field number for the "int_params" field.</summary>
     public const int IntParamsFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_intParams_codec
         = pb::FieldCodec.ForInt32(18);
@@ -110,7 +110,7 @@ namespace Zproto {
       get { return intParams_; }
     }
 
-    /// <summary>Field number for the "longParams" field.</summary>
+    /// <summary>Field number for the "long_params" field.</summary>
     public const int LongParamsFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_longParams_codec
         = pb::FieldCodec.ForInt64(26);
@@ -121,7 +121,7 @@ namespace Zproto {
       get { return longParams_; }
     }
 
-    /// <summary>Field number for the "floatParams" field.</summary>
+    /// <summary>Field number for the "float_params" field.</summary>
     public const int FloatParamsFieldNumber = 4;
     private static readonly pb::FieldCodec<float> _repeated_floatParams_codec
         = pb::FieldCodec.ForFloat(34);
@@ -132,7 +132,7 @@ namespace Zproto {
       get { return floatParams_; }
     }
 
-    /// <summary>Field number for the "strParams" field.</summary>
+    /// <summary>Field number for the "str_params" field.</summary>
     public const int StrParamsFieldNumber = 5;
     private static readonly pb::FieldCodec<string> _repeated_strParams_codec
         = pb::FieldCodec.ForString(42);

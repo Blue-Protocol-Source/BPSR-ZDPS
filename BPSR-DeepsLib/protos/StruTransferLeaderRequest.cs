@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X3RyYW5zZmVyX2xlYWRlcl9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "LAoVVHJhbnNmZXJMZWFkZXJSZXF1ZXN0EhMKC25ld0xlYWRlcklkGAMgASgD",
-            "YgZwcm90bzM="));
+            "LgoVVHJhbnNmZXJMZWFkZXJSZXF1ZXN0EhUKDW5ld19sZWFkZXJfaWQYAyAB",
+            "KANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new TransferLeaderRequest(this);
     }
 
-    /// <summary>Field number for the "newLeaderId" field.</summary>
+    /// <summary>Field number for the "new_leader_id" field.</summary>
     public const int NewLeaderIdFieldNumber = 3;
     private long newLeaderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

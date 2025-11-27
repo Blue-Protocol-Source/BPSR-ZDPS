@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X3ByaXZpbGVnZV9hY3RpdmF0ZV9yZXF1ZXN0LnByb3RvEgZ6cHJv",
-            "dG8aF3N0cnVfbGF1bmNoX3BhcmFtLnByb3RvIkQKGFByaXZpbGVnZUFjdGl2",
-            "YXRlUmVxdWVzdBIoCgtsYXVuY2hQYXJhbRgDIAEoCzITLnpwcm90by5MYXVu",
-            "Y2hQYXJhbWIGcHJvdG8z"));
+            "dG8aF3N0cnVfbGF1bmNoX3BhcmFtLnByb3RvIkUKGFByaXZpbGVnZUFjdGl2",
+            "YXRlUmVxdWVzdBIpCgxsYXVuY2hfcGFyYW0YAyABKAsyEy56cHJvdG8uTGF1",
+            "bmNoUGFyYW1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLaunchParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new PrivilegeActivateRequest(this);
     }
 
-    /// <summary>Field number for the "launchParam" field.</summary>
+    /// <summary>Field number for the "launch_param" field.</summary>
     public const int LaunchParamFieldNumber = 3;
     private global::Zproto.LaunchParam launchParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNzdHJ1X21vZF9hdHRyLnByb3RvEgZ6cHJvdG8aGHN0cnVfbW9kX2F0dHJf",
-            "aW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvImIKB01vZEF0dHIS",
-            "EAoIbG9hZEZsYWcYASABKAUSDAoEdHlwZRgCIAEoBRINCgVsZXZlbBgDIAEo",
-            "BRIoCgttb2RBdHRySW5mbxgEIAMoCzITLnpwcm90by5Nb2RBdHRySW5mb2IG",
-            "cHJvdG8z"));
+            "aW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvImUKB01vZEF0dHIS",
+            "EQoJbG9hZF9mbGFnGAEgASgFEgwKBHR5cGUYAiABKAUSDQoFbGV2ZWwYAyAB",
+            "KAUSKgoNbW9kX2F0dHJfaW5mbxgEIAMoCzITLnpwcm90by5Nb2RBdHRySW5m",
+            "b2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruModAttrInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new ModAttr(this);
     }
 
-    /// <summary>Field number for the "loadFlag" field.</summary>
+    /// <summary>Field number for the "load_flag" field.</summary>
     public const int LoadFlagFieldNumber = 1;
     private int loadFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "modAttrInfo" field.</summary>
+    /// <summary>Field number for the "mod_attr_info" field.</summary>
     public const int ModAttrInfoFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Zproto.ModAttrInfo> _repeated_modAttrInfo_codec
         = pb::FieldCodec.ForMessage(34, global::Zproto.ModAttrInfo.Parser);

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2FmZml4X2RhdGEucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIh0KCUFmZml4RGF0YRIQCghhZmZpeElkcxgBIAMoBWIGcHJv",
-            "dG8z"));
+            "YXNrLnByb3RvIh4KCUFmZml4RGF0YRIRCglhZmZpeF9pZHMYASADKAViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new AffixData(this);
     }
 
-    /// <summary>Field number for the "affixIds" field.</summary>
+    /// <summary>Field number for the "affix_ids" field.</summary>
     public const int AffixIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_affixIds_codec
         = pb::FieldCodec.ForInt32(10);

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjhzdHJ1X3NldF9wZXJzb25hbF96b25lX2J1c2luZXNzX2NhcmRfc3R5bGVf",
-            "cmVxdWVzdC5wcm90bxIGenByb3RvIkYKJ1NldFBlcnNvbmFsWm9uZUJ1c2lu",
-            "ZXNzQ2FyZFN0eWxlUmVxdWVzdBIbChNidXNpbmVzc0NhcmRTdHlsZUlkGAEg",
-            "ASgFYgZwcm90bzM="));
+            "cmVxdWVzdC5wcm90bxIGenByb3RvIkkKJ1NldFBlcnNvbmFsWm9uZUJ1c2lu",
+            "ZXNzQ2FyZFN0eWxlUmVxdWVzdBIeChZidXNpbmVzc19jYXJkX3N0eWxlX2lk",
+            "GAEgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetPersonalZoneBusinessCardStyleRequest(this);
     }
 
-    /// <summary>Field number for the "businessCardStyleId" field.</summary>
+    /// <summary>Field number for the "business_card_style_id" field.</summary>
     public const int BusinessCardStyleIdFieldNumber = 1;
     private int businessCardStyleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X2N1dF9zY2VuZV9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVfZXZl",
-            "bnRfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvImcKDEN1dFNj",
-            "ZW5lSW5mbxISCgpjdXRTY2VuZUlkGAEgASgFEgwKBGZsYWcYAiABKA0SDwoH",
-            "c2NlbmVJZBgDIAEoDRIkCglldmVudERhdGEYBCABKAsyES56cHJvdG8uRXZl",
-            "bnREYXRhYgZwcm90bzM="));
+            "bnRfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvImsKDEN1dFNj",
+            "ZW5lSW5mbxIUCgxjdXRfc2NlbmVfaWQYASABKAUSDAoEZmxhZxgCIAEoDRIQ",
+            "CghzY2VuZV9pZBgDIAEoDRIlCgpldmVudF9kYXRhGAQgASgLMhEuenByb3Rv",
+            "LkV2ZW50RGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruEventDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new CutSceneInfo(this);
     }
 
-    /// <summary>Field number for the "cutSceneId" field.</summary>
+    /// <summary>Field number for the "cut_scene_id" field.</summary>
     public const int CutSceneIdFieldNumber = 1;
     private int cutSceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sceneId" field.</summary>
+    /// <summary>Field number for the "scene_id" field.</summary>
     public const int SceneIdFieldNumber = 3;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "eventData" field.</summary>
+    /// <summary>Field number for the "event_data" field.</summary>
     public const int EventDataFieldNumber = 4;
     private global::Zproto.EventData eventData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

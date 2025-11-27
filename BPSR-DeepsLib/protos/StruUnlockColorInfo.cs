@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3VubG9ja19jb2xvcl9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byKMAgoPVW5sb2NrQ29sb3JJbmZvEj8KDGNvbG9y",
-            "SW5mb01hcBgBIAMoCzIpLnpwcm90by5VbmxvY2tDb2xvckluZm8uQ29sb3JJ",
-            "bmZvTWFwRW50cnkSSQoRY29sb3JCbG9ja0luZm9NYXAYAiADKAsyLi56cHJv",
-            "dG8uVW5sb2NrQ29sb3JJbmZvLkNvbG9yQmxvY2tJbmZvTWFwRW50cnkaMwoR",
-            "Q29sb3JJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgI",
-            "OgI4ARo4ChZDb2xvckJsb2NrSW5mb01hcEVudHJ5EgsKA2tleRgBIAEoBRIN",
-            "CgV2YWx1ZRgCIAEoCDoCOAFiBnByb3RvMw=="));
+            "ZGlydHlfbWFzay5wcm90byKRAgoPVW5sb2NrQ29sb3JJbmZvEkEKDmNvbG9y",
+            "X2luZm9fbWFwGAEgAygLMikuenByb3RvLlVubG9ja0NvbG9ySW5mby5Db2xv",
+            "ckluZm9NYXBFbnRyeRJMChRjb2xvcl9ibG9ja19pbmZvX21hcBgCIAMoCzIu",
+            "Lnpwcm90by5VbmxvY2tDb2xvckluZm8uQ29sb3JCbG9ja0luZm9NYXBFbnRy",
+            "eRozChFDb2xvckluZm9NYXBFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
+            "AiABKAg6AjgBGjgKFkNvbG9yQmxvY2tJbmZvTWFwRW50cnkSCwoDa2V5GAEg",
+            "ASgFEg0KBXZhbHVlGAIgASgIOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new UnlockColorInfo(this);
     }
 
-    /// <summary>Field number for the "colorInfoMap" field.</summary>
+    /// <summary>Field number for the "color_info_map" field.</summary>
     public const int ColorInfoMapFieldNumber = 1;
     private static readonly pbc::MapField<int, bool>.Codec _map_colorInfoMap_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return colorInfoMap_; }
     }
 
-    /// <summary>Field number for the "colorBlockInfoMap" field.</summary>
+    /// <summary>Field number for the "color_block_info_map" field.</summary>
     public const int ColorBlockInfoMapFieldNumber = 2;
     private static readonly pbc::MapField<int, bool>.Codec _map_colorBlockInfoMap_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 18);

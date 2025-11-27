@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CiVzdHJ1X2dldF9mYWNlX3VwbG9hZF9kYXRhX3JlcGx5LnByb3RvEgZ6cHJv",
             "dG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhtzdHJ1X2ZhY2VfdXBsb2Fk",
-            "X2RhdGEucHJvdG8ibgoWR2V0RmFjZVVwbG9hZERhdGFSZXBseRIvCg9mYWNl",
-            "Q29zRGF0YUxpc3QYASADKAsyFi56cHJvdG8uRmFjZVVwbG9hZERhdGESIwoH",
-            "ZXJyQ29kZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "X2RhdGEucHJvdG8icgoWR2V0RmFjZVVwbG9hZERhdGFSZXBseRIyChJmYWNl",
+            "X2Nvc19kYXRhX2xpc3QYASADKAsyFi56cHJvdG8uRmFjZVVwbG9hZERhdGES",
+            "JAoIZXJyX2NvZGUYAiABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruFaceUploadDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new GetFaceUploadDataReply(this);
     }
 
-    /// <summary>Field number for the "faceCosDataList" field.</summary>
+    /// <summary>Field number for the "face_cos_data_list" field.</summary>
     public const int FaceCosDataListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.FaceUploadData> _repeated_faceCosDataList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.FaceUploadData.Parser);
@@ -96,7 +96,7 @@ namespace Zproto {
       get { return faceCosDataList_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,16 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2l0ZW1fcGFja2FnZS5wcm90bxIGenByb3RvGhJzdHJ1X3BhY2th",
-            "Z2UucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKDAwoLSXRlbVBhY2th",
+            "Z2UucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKIAwoLSXRlbVBhY2th",
             "Z2USMwoIcGFja2FnZXMYASADKAsyIS56cHJvdG8uSXRlbVBhY2thZ2UuUGFj",
-            "a2FnZXNFbnRyeRI5Cgt1bmxvY2tJdGVtcxgCIAMoCzIkLnpwcm90by5JdGVt",
-            "UGFja2FnZS5VbmxvY2tJdGVtc0VudHJ5EhAKCHF1aWNrQmFyGAMgASgFEhAK",
-            "CGl0ZW1VdWlkGAQgASgFEjcKCnVzZUdyb3VwQ2QYBSADKAsyIy56cHJvdG8u",
-            "SXRlbVBhY2thZ2UuVXNlR3JvdXBDZEVudHJ5GkAKDVBhY2thZ2VzRW50cnkS",
-            "CwoDa2V5GAEgASgFEh4KBXZhbHVlGAIgASgLMg8uenByb3RvLlBhY2thZ2U6",
-            "AjgBGjIKEFVubG9ja0l0ZW1zRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVl",
-            "GAIgASgFOgI4ARoxCg9Vc2VHcm91cENkRW50cnkSCwoDa2V5GAEgASgFEg0K",
-            "BXZhbHVlGAIgASgDOgI4AWIGcHJvdG8z"));
+            "a2FnZXNFbnRyeRI6Cgx1bmxvY2tfaXRlbXMYAiADKAsyJC56cHJvdG8uSXRl",
+            "bVBhY2thZ2UuVW5sb2NrSXRlbXNFbnRyeRIRCglxdWlja19iYXIYAyABKAUS",
+            "EQoJaXRlbV91dWlkGAQgASgFEjkKDHVzZV9ncm91cF9jZBgFIAMoCzIjLnpw",
+            "cm90by5JdGVtUGFja2FnZS5Vc2VHcm91cENkRW50cnkaQAoNUGFja2FnZXNF",
+            "bnRyeRILCgNrZXkYASABKAUSHgoFdmFsdWUYAiABKAsyDy56cHJvdG8uUGFj",
+            "a2FnZToCOAEaMgoQVW5sb2NrSXRlbXNFbnRyeRILCgNrZXkYASABKAUSDQoF",
+            "dmFsdWUYAiABKAU6AjgBGjEKD1VzZUdyb3VwQ2RFbnRyeRILCgNrZXkYASAB",
+            "KAUSDQoFdmFsdWUYAiABKAM6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPackageReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -105,7 +105,7 @@ namespace Zproto {
       get { return packages_; }
     }
 
-    /// <summary>Field number for the "unlockItems" field.</summary>
+    /// <summary>Field number for the "unlock_items" field.</summary>
     public const int UnlockItemsFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_unlockItems_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);
@@ -116,7 +116,7 @@ namespace Zproto {
       get { return unlockItems_; }
     }
 
-    /// <summary>Field number for the "quickBar" field.</summary>
+    /// <summary>Field number for the "quick_bar" field.</summary>
     public const int QuickBarFieldNumber = 3;
     private int quickBar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +128,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemUuid" field.</summary>
+    /// <summary>Field number for the "item_uuid" field.</summary>
     public const int ItemUuidFieldNumber = 4;
     private int itemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +140,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "useGroupCd" field.</summary>
+    /// <summary>Field number for the "use_group_cd" field.</summary>
     public const int UseGroupCdFieldNumber = 5;
     private static readonly pbc::MapField<int, long>.Codec _map_useGroupCd_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 42);

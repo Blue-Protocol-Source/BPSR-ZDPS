@@ -24,10 +24,10 @@ namespace Zproto {
     static StruShieldInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X3NoaWVsZF9pbmZvLnByb3RvEgZ6cHJvdG8iZQoKU2hpZWxkSW5m",
-            "bxIMCgR1dWlkGAEgASgDEhIKCnNoaWVsZFR5cGUYAiABKAUSDQoFdmFsdWUY",
-            "AyABKAMSFAoMaW5pdGlhbFZhbHVlGAQgASgDEhAKCG1heFZhbHVlGAUgASgD",
-            "YgZwcm90bzM="));
+            "ChZzdHJ1X3NoaWVsZF9pbmZvLnByb3RvEgZ6cHJvdG8iaAoKU2hpZWxkSW5m",
+            "bxIMCgR1dWlkGAEgASgDEhMKC3NoaWVsZF90eXBlGAIgASgFEg0KBXZhbHVl",
+            "GAMgASgDEhUKDWluaXRpYWxfdmFsdWUYBCABKAMSEQoJbWF4X3ZhbHVlGAUg",
+            "ASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "shieldType" field.</summary>
+    /// <summary>Field number for the "shield_type" field.</summary>
     public const int ShieldTypeFieldNumber = 2;
     private int shieldType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "initialValue" field.</summary>
+    /// <summary>Field number for the "initial_value" field.</summary>
     public const int InitialValueFieldNumber = 4;
     private long initialValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxValue" field.</summary>
+    /// <summary>Field number for the "max_value" field.</summary>
     public const int MaxValueFieldNumber = 5;
     private long maxValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

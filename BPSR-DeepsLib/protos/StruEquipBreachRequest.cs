@@ -24,8 +24,8 @@ namespace Zproto {
     static StruEquipBreachRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2VxdWlwX2JyZWFjaF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iJgoS",
-            "RXF1aXBCcmVhY2hSZXF1ZXN0EhAKCGVxdWlwVWlkGAEgASgDYgZwcm90bzM="));
+            "Ch9zdHJ1X2VxdWlwX2JyZWFjaF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iJwoS",
+            "RXF1aXBCcmVhY2hSZXF1ZXN0EhEKCWVxdWlwX3VpZBgBIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new EquipBreachRequest(this);
     }
 
-    /// <summary>Field number for the "equipUid" field.</summary>
+    /// <summary>Field number for the "equip_uid" field.</summary>
     public const int EquipUidFieldNumber = 1;
     private long equipUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

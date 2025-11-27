@@ -24,9 +24,9 @@ namespace Zproto {
     static StruUpgradeModRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X3VwZ3JhZGVfbW9kX3JlcXVlc3QucHJvdG8SBnpwcm90byJAChFV",
-            "cGdyYWRlTW9kUmVxdWVzdBIPCgdtb2RVdWlkGAEgASgDEhoKEnBhcnRFZmZl",
-            "Y3RDb25maWdJZBgCIAEoBWIGcHJvdG8z"));
+            "Ch5zdHJ1X3VwZ3JhZGVfbW9kX3JlcXVlc3QucHJvdG8SBnpwcm90byJEChFV",
+            "cGdyYWRlTW9kUmVxdWVzdBIQCghtb2RfdXVpZBgBIAEoAxIdChVwYXJ0X2Vm",
+            "ZmVjdF9jb25maWdfaWQYAiABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new UpgradeModRequest(this);
     }
 
-    /// <summary>Field number for the "modUuid" field.</summary>
+    /// <summary>Field number for the "mod_uuid" field.</summary>
     public const int ModUuidFieldNumber = 1;
     private long modUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "partEffectConfigId" field.</summary>
+    /// <summary>Field number for the "part_effect_config_id" field.</summary>
     public const int PartEffectConfigIdFieldNumber = 2;
     private int partEffectConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

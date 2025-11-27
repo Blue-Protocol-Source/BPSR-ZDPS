@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3VzZV9zbG90X3JlcXVlc3QucHJvdG8SBnpwcm90bxoaZW51bV9l",
-            "X3VzZV9zbG90X3R5cGUucHJvdG8iWgoOVXNlU2xvdFJlcXVlc3QSDgoGc2xv",
-            "dElkGAEgASgFEiUKB3VzZVR5cGUYAiABKA4yFC56cHJvdG8uRVVzZVNsb3RU",
-            "eXBlEhEKCWV4dHJhRGF0YRgDIAEoDGIGcHJvdG8z"));
+            "X3VzZV9zbG90X3R5cGUucHJvdG8iXQoOVXNlU2xvdFJlcXVlc3QSDwoHc2xv",
+            "dF9pZBgBIAEoBRImCgh1c2VfdHlwZRgCIAEoDjIULnpwcm90by5FVXNlU2xv",
+            "dFR5cGUSEgoKZXh0cmFfZGF0YRgDIAEoDGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEUseSlotTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new UseSlotRequest(this);
     }
 
-    /// <summary>Field number for the "slotId" field.</summary>
+    /// <summary>Field number for the "slot_id" field.</summary>
     public const int SlotIdFieldNumber = 1;
     private int slotId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "useType" field.</summary>
+    /// <summary>Field number for the "use_type" field.</summary>
     public const int UseTypeFieldNumber = 2;
     private global::Zproto.EUseSlotType useType_ = global::Zproto.EUseSlotType.UseSlotTypeOther;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "extraData" field.</summary>
+    /// <summary>Field number for the "extra_data" field.</summary>
     public const int ExtraDataFieldNumber = 3;
     private pb::ByteString extraData_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

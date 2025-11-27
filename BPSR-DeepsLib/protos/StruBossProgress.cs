@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2Jvc3NfcHJvZ3Jlc3MucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIiUKDEJvc3NQcm9ncmVzcxIVCg10b3RhbEF3YXJkQ250",
-            "GAEgASgFYgZwcm90bzM="));
+            "eV9tYXNrLnByb3RvIicKDEJvc3NQcm9ncmVzcxIXCg90b3RhbF9hd2FyZF9j",
+            "bnQYASABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new BossProgress(this);
     }
 
-    /// <summary>Field number for the "totalAwardCnt" field.</summary>
+    /// <summary>Field number for the "total_award_cnt" field.</summary>
     public const int TotalAwardCntFieldNumber = 1;
     private int totalAwardCnt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

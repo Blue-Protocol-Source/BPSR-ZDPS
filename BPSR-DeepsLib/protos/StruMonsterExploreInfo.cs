@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X21vbnN0ZXJfZXhwbG9yZV9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0",
-            "cnVfZGlydHlfbWFzay5wcm90byK5AQoSTW9uc3RlckV4cGxvcmVJbmZvEhAK",
-            "CGlzVW5sb2NrGAEgASgIEjwKCXRhcmdldE51bRgCIAMoCzIpLnpwcm90by5N",
-            "b25zdGVyRXhwbG9yZUluZm8uVGFyZ2V0TnVtRW50cnkSEQoJYXdhcmRGbGFn",
-            "GAMgASgNEg4KBmlzRmxhZxgEIAEoCBowCg5UYXJnZXROdW1FbnRyeRILCgNr",
-            "ZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "cnVfZGlydHlfbWFzay5wcm90byK9AQoSTW9uc3RlckV4cGxvcmVJbmZvEhEK",
+            "CWlzX3VubG9jaxgBIAEoCBI9Cgp0YXJnZXRfbnVtGAIgAygLMikuenByb3Rv",
+            "Lk1vbnN0ZXJFeHBsb3JlSW5mby5UYXJnZXROdW1FbnRyeRISCgphd2FyZF9m",
+            "bGFnGAMgASgNEg8KB2lzX2ZsYWcYBCABKAgaMAoOVGFyZ2V0TnVtRW50cnkS",
+            "CwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new MonsterExploreInfo(this);
     }
 
-    /// <summary>Field number for the "isUnlock" field.</summary>
+    /// <summary>Field number for the "is_unlock" field.</summary>
     public const int IsUnlockFieldNumber = 1;
     private bool isUnlock_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetNum" field.</summary>
+    /// <summary>Field number for the "target_num" field.</summary>
     public const int TargetNumFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_targetNum_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);
@@ -111,7 +111,7 @@ namespace Zproto {
       get { return targetNum_; }
     }
 
-    /// <summary>Field number for the "awardFlag" field.</summary>
+    /// <summary>Field number for the "award_flag" field.</summary>
     public const int AwardFlagFieldNumber = 3;
     private uint awardFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isFlag" field.</summary>
+    /// <summary>Field number for the "is_flag" field.</summary>
     public const int IsFlagFieldNumber = 4;
     private bool isFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

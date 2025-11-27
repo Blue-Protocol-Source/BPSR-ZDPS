@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X3F1ZXJ5X2NoYXRfbXV0ZV9yZXBseS5wcm90bxIGenByb3RvGhdl",
-            "bnVtX2VfZXJyb3JfY29kZS5wcm90byJeChJRdWVyeUNoYXRNdXRlUmVwbHkS",
-            "DQoFaXNCYW4YASABKAgSFAoMZW5kVGltZXN0YW1wGAIgASgDEiMKB2VyckNv",
-            "ZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "bnVtX2VfZXJyb3JfY29kZS5wcm90byJhChJRdWVyeUNoYXRNdXRlUmVwbHkS",
+            "DgoGaXNfYmFuGAEgASgIEhUKDWVuZF90aW1lc3RhbXAYAiABKAMSJAoIZXJy",
+            "X2NvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new QueryChatMuteReply(this);
     }
 
-    /// <summary>Field number for the "isBan" field.</summary>
+    /// <summary>Field number for the "is_ban" field.</summary>
     public const int IsBanFieldNumber = 1;
     private bool isBan_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "endTimestamp" field.</summary>
+    /// <summary>Field number for the "end_timestamp" field.</summary>
     public const int EndTimestampFieldNumber = 2;
     private long endTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,10 +24,10 @@ namespace Zproto {
     static StruReviveInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X3Jldml2ZV9pbmZvLnByb3RvEgZ6cHJvdG8iegoKUmV2aXZlSW5m",
-            "bxI4CgtyZXZpdmVDb3VudBgBIAMoCzIjLnpwcm90by5SZXZpdmVJbmZvLlJl",
-            "dml2ZUNvdW50RW50cnkaMgoQUmV2aXZlQ291bnRFbnRyeRILCgNrZXkYASAB",
-            "KAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "ChZzdHJ1X3Jldml2ZV9pbmZvLnByb3RvEgZ6cHJvdG8iewoKUmV2aXZlSW5m",
+            "bxI5CgxyZXZpdmVfY291bnQYASADKAsyIy56cHJvdG8uUmV2aXZlSW5mby5S",
+            "ZXZpdmVDb3VudEVudHJ5GjIKEFJldml2ZUNvdW50RW50cnkSCwoDa2V5GAEg",
+            "ASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ReviveInfo(this);
     }
 
-    /// <summary>Field number for the "reviveCount" field.</summary>
+    /// <summary>Field number for the "revive_count" field.</summary>
     public const int ReviveCountFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_reviveCount_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);

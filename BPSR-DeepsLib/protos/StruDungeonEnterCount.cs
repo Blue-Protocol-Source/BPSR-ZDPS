@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2R1bmdlb25fZW50ZXJfY291bnQucHJvdG8SBnpwcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIjoKEUR1bmdlb25FbnRlckNvdW50EhEKCWVu",
-            "dGVyVGltZRgBIAEoDRISCgplbnRlckNvdW50GAIgASgFYgZwcm90bzM="));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIjwKEUR1bmdlb25FbnRlckNvdW50EhIKCmVu",
+            "dGVyX3RpbWUYASABKA0SEwoLZW50ZXJfY291bnQYAiABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DungeonEnterCount(this);
     }
 
-    /// <summary>Field number for the "enterTime" field.</summary>
+    /// <summary>Field number for the "enter_time" field.</summary>
     public const int EnterTimeFieldNumber = 1;
     private uint enterTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "enterCount" field.</summary>
+    /// <summary>Field number for the "enter_count" field.</summary>
     public const int EnterCountFieldNumber = 2;
     private int enterCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

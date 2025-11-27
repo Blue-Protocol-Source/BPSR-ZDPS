@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci1zdHJ1X3VuX2JpbmRfZ3JvdXBfd2l0aF90ZW5jZW50X3JlcXVlc3QucHJv",
-            "dG8SBnpwcm90byIwCh1VbkJpbmRHcm91cFdpdGhUZW5jZW50UmVxdWVzdBIP",
-            "Cgd1bmlvbklkGAEgASgDYgZwcm90bzM="));
+            "dG8SBnpwcm90byIxCh1VbkJpbmRHcm91cFdpdGhUZW5jZW50UmVxdWVzdBIQ",
+            "Cgh1bmlvbl9pZBgBIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new UnBindGroupWithTencentRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

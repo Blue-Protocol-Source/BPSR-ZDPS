@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X3dhdGVyX3VwZGF0ZV9zdHJ1Y3R1cmVfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvGhxzdHJ1X3N0cnVjdHVyZV9sYW5kX29wLnByb3RvIlIKG1dhdGVy",
-            "VXBkYXRlU3RydWN0dXJlUmVxdWVzdBIOCgZob21lSWQYASABKAMSIwoCb3AY",
-            "AiABKAsyFy56cHJvdG8uU3RydWN0dXJlTGFuZE9wYgZwcm90bzM="));
+            "enByb3RvGhxzdHJ1X3N0cnVjdHVyZV9sYW5kX29wLnByb3RvIlMKG1dhdGVy",
+            "VXBkYXRlU3RydWN0dXJlUmVxdWVzdBIPCgdob21lX2lkGAEgASgDEiMKAm9w",
+            "GAIgASgLMhcuenByb3RvLlN0cnVjdHVyZUxhbmRPcGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStructureLandOpReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new WaterUpdateStructureRequest(this);
     }
 
-    /// <summary>Field number for the "homeId" field.</summary>
+    /// <summary>Field number for the "home_id" field.</summary>
     public const int HomeIdFieldNumber = 1;
     private long homeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

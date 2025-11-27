@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3NlYXNvbl9yYW5rX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvIj8KDlNlYXNvblJhbmtJbmZvEhMKC2N1clJhbktT",
-            "dGFyGAEgASgNEhgKEHJlY2VpdmVkUmFua1N0YXIYAiADKA1iBnByb3RvMw=="));
+            "aXJ0eV9tYXNrLnByb3RvIkQKDlNlYXNvblJhbmtJbmZvEhYKDmN1cl9yYW5f",
+            "a19zdGFyGAEgASgNEhoKEnJlY2VpdmVkX3Jhbmtfc3RhchgCIAMoDWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new SeasonRankInfo(this);
     }
 
-    /// <summary>Field number for the "curRanKStar" field.</summary>
+    /// <summary>Field number for the "cur_ran_k_star" field.</summary>
     public const int CurRanKStarFieldNumber = 1;
     private uint curRanKStar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "receivedRankStar" field.</summary>
+    /// <summary>Field number for the "received_rank_star" field.</summary>
     public const int ReceivedRankStarFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_receivedRankStar_codec
         = pb::FieldCodec.ForUInt32(18);

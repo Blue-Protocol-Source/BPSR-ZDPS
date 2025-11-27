@@ -26,14 +26,14 @@ namespace Zproto {
           string.Concat(
             "ChVzdHJ1X2dhc2hhX2RhdGEucHJvdG8SBnpwcm90bxofc3RydV9nYXNoYV9n",
             "dWFyYW50ZWVfaW5mby5wcm90bxoVc3RydV9nYXNoYV9pbmZvLnByb3RvGhVz",
-            "dHJ1X2RpcnR5X21hc2sucHJvdG8iqQIKCUdhc2hhRGF0YRI1CgpnYXNoYUlu",
-            "Zm9zGAEgAygLMiEuenByb3RvLkdhc2hhRGF0YS5HYXNoYUluZm9zRW50cnkS",
-            "RwoTZ2FzaGFHdWFyYW50ZWVJbmZvcxgCIAMoCzIqLnpwcm90by5HYXNoYURh",
-            "dGEuR2FzaGFHdWFyYW50ZWVJbmZvc0VudHJ5GkQKD0dhc2hhSW5mb3NFbnRy",
-            "eRILCgNrZXkYASABKA0SIAoFdmFsdWUYAiABKAsyES56cHJvdG8uR2FzaGFJ",
-            "bmZvOgI4ARpWChhHYXNoYUd1YXJhbnRlZUluZm9zRW50cnkSCwoDa2V5GAEg",
-            "ASgNEikKBXZhbHVlGAIgASgLMhouenByb3RvLkdhc2hhR3VhcmFudGVlSW5m",
-            "bzoCOAFiBnByb3RvMw=="));
+            "dHJ1X2RpcnR5X21hc2sucHJvdG8irAIKCUdhc2hhRGF0YRI2CgtnYXNoYV9p",
+            "bmZvcxgBIAMoCzIhLnpwcm90by5HYXNoYURhdGEuR2FzaGFJbmZvc0VudHJ5",
+            "EkkKFWdhc2hhX2d1YXJhbnRlZV9pbmZvcxgCIAMoCzIqLnpwcm90by5HYXNo",
+            "YURhdGEuR2FzaGFHdWFyYW50ZWVJbmZvc0VudHJ5GkQKD0dhc2hhSW5mb3NF",
+            "bnRyeRILCgNrZXkYASABKA0SIAoFdmFsdWUYAiABKAsyES56cHJvdG8uR2Fz",
+            "aGFJbmZvOgI4ARpWChhHYXNoYUd1YXJhbnRlZUluZm9zRW50cnkSCwoDa2V5",
+            "GAEgASgNEikKBXZhbHVlGAIgASgLMhouenByb3RvLkdhc2hhR3VhcmFudGVl",
+            "SW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruGashaGuaranteeInfoReflection.Descriptor, global::Zproto.StruGashaInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new GashaData(this);
     }
 
-    /// <summary>Field number for the "gashaInfos" field.</summary>
+    /// <summary>Field number for the "gasha_infos" field.</summary>
     public const int GashaInfosFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.GashaInfo>.Codec _map_gashaInfos_codec
         = new pbc::MapField<uint, global::Zproto.GashaInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.GashaInfo.Parser), 10);
@@ -101,7 +101,7 @@ namespace Zproto {
       get { return gashaInfos_; }
     }
 
-    /// <summary>Field number for the "gashaGuaranteeInfos" field.</summary>
+    /// <summary>Field number for the "gasha_guarantee_infos" field.</summary>
     public const int GashaGuaranteeInfosFieldNumber = 2;
     private static readonly pbc::MapField<uint, global::Zproto.GashaGuaranteeInfo>.Codec _map_gashaGuaranteeInfos_codec
         = new pbc::MapField<uint, global::Zproto.GashaGuaranteeInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.GashaGuaranteeInfo.Parser), 18);

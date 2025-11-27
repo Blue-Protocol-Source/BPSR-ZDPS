@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X21hdGNoX3BsYXllcl9zaG93X2luZm8ucHJvdG8SBnpwcm90bxoW",
             "c3RydV9hdmF0YXJfaW5mby5wcm90bxoWZW51bV9lX2JvZHlfc2l6ZS5wcm90",
-            "bxodc3RydV9wZXJzb25hbF96b25lX3Nob3cucHJvdG8ivwEKE01hdGNoUGxh",
-            "eWVyU2hvd0luZm8SDAoEbmFtZRgBIAEoCRIOCgZnZW5kZXIYAiABKAUSIwoI",
-            "Ym9keVNpemUYAyABKA4yES56cHJvdG8uRUJvZHlTaXplEg0KBWxldmVsGAQg",
-            "ASgFEiYKCmF2YXRhckluZm8YBSABKAsyEi56cHJvdG8uQXZhdGFySW5mbxIu",
-            "CgxwZXJzb25hbFpvbmUYBiABKAsyGC56cHJvdG8uUGVyc29uYWxab25lU2hv",
-            "d2IGcHJvdG8z"));
+            "bxodc3RydV9wZXJzb25hbF96b25lX3Nob3cucHJvdG8iwgEKE01hdGNoUGxh",
+            "eWVyU2hvd0luZm8SDAoEbmFtZRgBIAEoCRIOCgZnZW5kZXIYAiABKAUSJAoJ",
+            "Ym9keV9zaXplGAMgASgOMhEuenByb3RvLkVCb2R5U2l6ZRINCgVsZXZlbBgE",
+            "IAEoBRInCgthdmF0YXJfaW5mbxgFIAEoCzISLnpwcm90by5BdmF0YXJJbmZv",
+            "Ei8KDXBlcnNvbmFsX3pvbmUYBiABKAsyGC56cHJvdG8uUGVyc29uYWxab25l",
+            "U2hvd2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAvatarInfoReflection.Descriptor, global::Zproto.EnumEBodySizeReflection.Descriptor, global::Zproto.StruPersonalZoneShowReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -116,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bodySize" field.</summary>
+    /// <summary>Field number for the "body_size" field.</summary>
     public const int BodySizeFieldNumber = 3;
     private global::Zproto.EBodySize bodySize_ = global::Zproto.EBodySize.BodySizeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +140,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "avatarInfo" field.</summary>
+    /// <summary>Field number for the "avatar_info" field.</summary>
     public const int AvatarInfoFieldNumber = 5;
     private global::Zproto.AvatarInfo avatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "personalZone" field.</summary>
+    /// <summary>Field number for the "personal_zone" field.</summary>
     public const int PersonalZoneFieldNumber = 6;
     private global::Zproto.PersonalZoneShow personalZone_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

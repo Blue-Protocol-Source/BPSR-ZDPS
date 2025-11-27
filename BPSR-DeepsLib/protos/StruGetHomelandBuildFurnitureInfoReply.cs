@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CjJzdHJ1X2dldF9ob21lbGFuZF9idWlsZF9mdXJuaXR1cmVfaW5mb19yZXBs",
             "eS5wcm90bxIGenByb3RvGilzdHJ1X2NvbW11bml0eV9idWlsZF9mdXJuaXR1",
-            "cmVfaW5mby5wcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8ihQEKIkdl",
-            "dEhvbWVsYW5kQnVpbGRGdXJuaXR1cmVJbmZvUmVwbHkSOgoNZnVybml0dXJl",
-            "SW5mbxgBIAMoCzIjLnpwcm90by5Db21tdW5pdHlCdWlsZEZ1cm5pdHVyZUlu",
-            "Zm8SIwoHZXJyQ29kZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90",
-            "bzM="));
+            "cmVfaW5mby5wcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8ihwEKIkdl",
+            "dEhvbWVsYW5kQnVpbGRGdXJuaXR1cmVJbmZvUmVwbHkSOwoOZnVybml0dXJl",
+            "X2luZm8YASADKAsyIy56cHJvdG8uQ29tbXVuaXR5QnVpbGRGdXJuaXR1cmVJ",
+            "bmZvEiQKCGVycl9jb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityBuildFurnitureInfoReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new GetHomelandBuildFurnitureInfoReply(this);
     }
 
-    /// <summary>Field number for the "furnitureInfo" field.</summary>
+    /// <summary>Field number for the "furniture_info" field.</summary>
     public const int FurnitureInfoFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.CommunityBuildFurnitureInfo> _repeated_furnitureInfo_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.CommunityBuildFurnitureInfo.Parser);
@@ -98,7 +98,7 @@ namespace Zproto {
       get { return furnitureInfo_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

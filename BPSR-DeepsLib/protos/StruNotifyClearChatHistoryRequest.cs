@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CixzdHJ1X25vdGlmeV9jbGVhcl9jaGF0X2hpc3RvcnlfcmVxdWVzdC5wcm90",
             "bxIGenByb3RvGiFlbnVtX2NoaXRfY2hhdF9jaGFubmVsX3R5cGUucHJvdG8i",
-            "YwodTm90aWZ5Q2xlYXJDaGF0SGlzdG9yeVJlcXVlc3QSMAoLY2hhbm5lbFR5",
-            "cGUYASABKA4yGy56cHJvdG8uQ2hpdENoYXRDaGFubmVsVHlwZRIQCgh0YXJn",
-            "ZXRJZBgCIAEoCWIGcHJvdG8z"));
+            "ZQodTm90aWZ5Q2xlYXJDaGF0SGlzdG9yeVJlcXVlc3QSMQoMY2hhbm5lbF90",
+            "eXBlGAEgASgOMhsuenByb3RvLkNoaXRDaGF0Q2hhbm5lbFR5cGUSEQoJdGFy",
+            "Z2V0X2lkGAIgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumChitChatChannelTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new NotifyClearChatHistoryRequest(this);
     }
 
-    /// <summary>Field number for the "channelType" field.</summary>
+    /// <summary>Field number for the "channel_type" field.</summary>
     public const int ChannelTypeFieldNumber = 1;
     private global::Zproto.ChitChatChannelType channelType_ = global::Zproto.ChitChatChannelType.ChannelNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 2;
     private string targetId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

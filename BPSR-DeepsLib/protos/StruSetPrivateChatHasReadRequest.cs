@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X3NldF9wcml2YXRlX2NoYXRfaGFzX3JlYWRfcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvIkYKHFNldFByaXZhdGVDaGF0SGFzUmVhZFJlcXVlc3QSEAoI",
-            "dGFyZ2V0SWQYASABKA0SFAoMbWF4UmVhZE1zZ0lkGAIgASgDYgZwcm90bzM="));
+            "bxIGenByb3RvIkoKHFNldFByaXZhdGVDaGF0SGFzUmVhZFJlcXVlc3QSEQoJ",
+            "dGFyZ2V0X2lkGAEgASgNEhcKD21heF9yZWFkX21zZ19pZBgCIAEoA2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new SetPrivateChatHasReadRequest(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxReadMsgId" field.</summary>
+    /// <summary>Field number for the "max_read_msg_id" field.</summary>
     public const int MaxReadMsgIdFieldNumber = 2;
     private long maxReadMsgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

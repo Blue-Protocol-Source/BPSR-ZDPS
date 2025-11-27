@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X3NlbmRfY2hpdF9jaGF0X21zZ19yZXBseS5wcm90bxIGenByb3Rv",
             "GhhzdHJ1X2NoaXRfY2hhdF9tc2cucHJvdG8aF2VudW1fZV9lcnJvcl9jb2Rl",
-            "LnByb3RvInQKFFNlbmRDaGl0Q2hhdE1zZ1JlcGx5EiQKB3Nob3dNc2cYAyAB",
-            "KAsyEy56cHJvdG8uQ2hpdENoYXRNc2cSEQoJY2RFbmRUaW1lGAQgASgDEiMK",
-            "B2VyckNvZGUYBSABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "LnByb3RvIngKFFNlbmRDaGl0Q2hhdE1zZ1JlcGx5EiUKCHNob3dfbXNnGAMg",
+            "ASgLMhMuenByb3RvLkNoaXRDaGF0TXNnEhMKC2NkX2VuZF90aW1lGAQgASgD",
+            "EiQKCGVycl9jb2RlGAUgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruChitChatMsgReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new SendChitChatMsgReply(this);
     }
 
-    /// <summary>Field number for the "showMsg" field.</summary>
+    /// <summary>Field number for the "show_msg" field.</summary>
     public const int ShowMsgFieldNumber = 3;
     private global::Zproto.ChitChatMsg showMsg_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cdEndTime" field.</summary>
+    /// <summary>Field number for the "cd_end_time" field.</summary>
     public const int CdEndTimeFieldNumber = 4;
     private long cdEndTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

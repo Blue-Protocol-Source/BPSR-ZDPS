@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2F3YXJkX2RhdGEucHJvdG8SBnpwcm90bxoPc3RydV9pdGVtLnBy",
-            "b3RvIjkKCUF3YXJkRGF0YRIPCgdhd2FyZElkGAEgASgFEhsKBWl0ZW1zGAIg",
-            "AygLMgwuenByb3RvLkl0ZW1iBnByb3RvMw=="));
+            "b3RvIjoKCUF3YXJkRGF0YRIQCghhd2FyZF9pZBgBIAEoBRIbCgVpdGVtcxgC",
+            "IAMoCzIMLnpwcm90by5JdGVtYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new AwardData(this);
     }
 
-    /// <summary>Field number for the "awardId" field.</summary>
+    /// <summary>Field number for the "award_id" field.</summary>
     public const int AwardIdFieldNumber = 1;
     private int awardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

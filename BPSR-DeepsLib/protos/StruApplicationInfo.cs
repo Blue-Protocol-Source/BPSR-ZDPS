@@ -24,9 +24,9 @@ namespace Zproto {
     static StruApplicationInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X2FwcGxpY2F0aW9uX2luZm8ucHJvdG8SBnpwcm90byJECg9BcHBs",
-            "aWNhdGlvbkluZm8SDgoGY2hhcklkGAEgASgDEg4KBnNvdXJjZRgCIAEoBRIR",
-            "Cgl0aW1lU3RhbXAYAyABKANiBnByb3RvMw=="));
+            "ChtzdHJ1X2FwcGxpY2F0aW9uX2luZm8ucHJvdG8SBnpwcm90byJGCg9BcHBs",
+            "aWNhdGlvbkluZm8SDwoHY2hhcl9pZBgBIAEoAxIOCgZzb3VyY2UYAiABKAUS",
+            "EgoKdGltZV9zdGFtcBgDIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ApplicationInfo(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "timeStamp" field.</summary>
+    /// <summary>Field number for the "time_stamp" field.</summary>
     public const int TimeStampFieldNumber = 3;
     private long timeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

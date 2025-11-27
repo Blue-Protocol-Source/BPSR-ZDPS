@@ -24,9 +24,9 @@ namespace Zproto {
     static StruDanceActiveReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdzdHJ1X2RhbmNlX2FjdGl2ZS5wcm90bxIGenByb3RvIjAKC0RhbmNlQWN0",
-            "aXZlEg8KB3VuaW9uSWQYASABKAMSEAoIYWN0aW9uSWQYAiABKAViBnByb3Rv",
-            "Mw=="));
+            "ChdzdHJ1X2RhbmNlX2FjdGl2ZS5wcm90bxIGenByb3RvIjIKC0RhbmNlQWN0",
+            "aXZlEhAKCHVuaW9uX2lkGAEgASgDEhEKCWFjdGlvbl9pZBgCIAEoBWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DanceActive(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "actionId" field.</summary>
+    /// <summary>Field number for the "action_id" field.</summary>
     public const int ActionIdFieldNumber = 2;
     private int actionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

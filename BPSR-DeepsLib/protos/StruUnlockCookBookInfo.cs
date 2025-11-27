@@ -24,11 +24,11 @@ namespace Zproto {
     static StruUnlockCookBookInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3VubG9ja19jb29rX2Jvb2tfaW5mby5wcm90bxIGenByb3RvIpMB",
-            "ChJVbmxvY2tDb29rQm9va0luZm8SEAoIYm9va0xpc3QYASADKAUSOgoIZm9v",
-            "ZExpc3QYAiADKAsyKC56cHJvdG8uVW5sb2NrQ29va0Jvb2tJbmZvLkZvb2RM",
-            "aXN0RW50cnkaLwoNRm9vZExpc3RFbnRyeRILCgNrZXkYASABKAUSDQoFdmFs",
-            "dWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "CiBzdHJ1X3VubG9ja19jb29rX2Jvb2tfaW5mby5wcm90bxIGenByb3RvIpUB",
+            "ChJVbmxvY2tDb29rQm9va0luZm8SEQoJYm9va19saXN0GAEgAygFEjsKCWZv",
+            "b2RfbGlzdBgCIAMoCzIoLnpwcm90by5VbmxvY2tDb29rQm9va0luZm8uRm9v",
+            "ZExpc3RFbnRyeRovCg1Gb29kTGlzdEVudHJ5EgsKA2tleRgBIAEoBRINCgV2",
+            "YWx1ZRgCIAEoBToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new UnlockCookBookInfo(this);
     }
 
-    /// <summary>Field number for the "bookList" field.</summary>
+    /// <summary>Field number for the "book_list" field.</summary>
     public const int BookListFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_bookList_codec
         = pb::FieldCodec.ForInt32(10);
@@ -96,7 +96,7 @@ namespace Zproto {
       get { return bookList_; }
     }
 
-    /// <summary>Field number for the "foodList" field.</summary>
+    /// <summary>Field number for the "food_list" field.</summary>
     public const int FoodListFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_foodList_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);

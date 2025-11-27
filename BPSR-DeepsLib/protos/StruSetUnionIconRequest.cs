@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSetUnionIconRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3NldF91bmlvbl9pY29uX3JlcXVlc3QucHJvdG8SBnpwcm90byI0",
-            "ChNTZXRVbmlvbkljb25SZXF1ZXN0Eg8KB3VuaW9uSWQYAiABKAMSDAoESWNv",
-            "bhgDIAMoDWIGcHJvdG8z"));
+            "CiFzdHJ1X3NldF91bmlvbl9pY29uX3JlcXVlc3QucHJvdG8SBnpwcm90byI1",
+            "ChNTZXRVbmlvbkljb25SZXF1ZXN0EhAKCHVuaW9uX2lkGAIgASgDEgwKBGlj",
+            "b24YAyADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetUnionIconRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "Icon" field.</summary>
+    /// <summary>Field number for the "icon" field.</summary>
     public const int IconFieldNumber = 3;
     private static readonly pb::FieldCodec<uint> _repeated_icon_codec
         = pb::FieldCodec.ForUInt32(26);

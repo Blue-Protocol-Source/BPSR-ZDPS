@@ -24,9 +24,9 @@ namespace Zproto {
     static StruClutterReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJzdHJ1X2NsdXR0ZXIucHJvdG8SBnpwcm90byI9CgdDbHV0dGVyEgwKBHV1",
-            "aWQYASABKAMSEAoIY29uZmlnSWQYAiABKAUSEgoKcG9zaXRpb25JZBgDIAEo",
-            "BWIGcHJvdG8z"));
+            "ChJzdHJ1X2NsdXR0ZXIucHJvdG8SBnpwcm90byI/CgdDbHV0dGVyEgwKBHV1",
+            "aWQYASABKAMSEQoJY29uZmlnX2lkGAIgASgFEhMKC3Bvc2l0aW9uX2lkGAMg",
+            "ASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "configId" field.</summary>
+    /// <summary>Field number for the "config_id" field.</summary>
     public const int ConfigIdFieldNumber = 2;
     private int configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "positionId" field.</summary>
+    /// <summary>Field number for the "position_id" field.</summary>
     public const int PositionIdFieldNumber = 3;
     private int positionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

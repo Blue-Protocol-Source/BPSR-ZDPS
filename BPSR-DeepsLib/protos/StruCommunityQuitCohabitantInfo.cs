@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2NvbW11bml0eV9xdWl0X2NvaGFiaXRhbnRfaW5mby5wcm90bxIG",
-            "enByb3RvIlUKG0NvbW11bml0eVF1aXRDb2hhYml0YW50SW5mbxIOCgZjaGFy",
-            "SWQYASABKAMSDgoGaG9tZUlkGAIgASgDEhYKDm9wZXJhdG9yQ2hhcklkGAMg",
-            "ASgDYgZwcm90bzM="));
+            "enByb3RvIlkKG0NvbW11bml0eVF1aXRDb2hhYml0YW50SW5mbxIPCgdjaGFy",
+            "X2lkGAEgASgDEg8KB2hvbWVfaWQYAiABKAMSGAoQb3BlcmF0b3JfY2hhcl9p",
+            "ZBgDIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CommunityQuitCohabitantInfo(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeId" field.</summary>
+    /// <summary>Field number for the "home_id" field.</summary>
     public const int HomeIdFieldNumber = 2;
     private long homeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "operatorCharId" field.</summary>
+    /// <summary>Field number for the "operator_char_id" field.</summary>
     public const int OperatorCharIdFieldNumber = 3;
     private long operatorCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

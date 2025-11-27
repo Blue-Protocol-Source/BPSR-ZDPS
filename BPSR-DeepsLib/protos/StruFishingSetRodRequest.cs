@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2Zpc2hpbmdfc2V0X3JvZF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "JwoURmlzaGluZ1NldFJvZFJlcXVlc3QSDwoHcm9kVXVpZBgCIAEoBGIGcHJv",
-            "dG8z"));
+            "KAoURmlzaGluZ1NldFJvZFJlcXVlc3QSEAoIcm9kX3V1aWQYAiABKARiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new FishingSetRodRequest(this);
     }
 
-    /// <summary>Field number for the "rodUuid" field.</summary>
+    /// <summary>Field number for the "rod_uuid" field.</summary>
     public const int RodUuidFieldNumber = 2;
     private ulong rodUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

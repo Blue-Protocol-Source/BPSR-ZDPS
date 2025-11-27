@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzZXJ2X3dvcmxkX2xvZ2luX250Zi5wcm90bxIGenByb3RvGipzdHJ1X25v",
-            "dGlmeV9pbnN0cnVjdGlvbl9pbmZvX3JlcXVlc3QucHJvdG8iXQoNV29ybGRM",
-            "b2dpbk50ZhpMChVOb3RpZnlJbnN0cnVjdGlvbkluZm8SMwoFdkluZm8YASAB",
-            "KAsyJC56cHJvdG8uTm90aWZ5SW5zdHJ1Y3Rpb25JbmZvUmVxdWVzdGIGcHJv",
-            "dG8z"));
+            "dGlmeV9pbnN0cnVjdGlvbl9pbmZvX3JlcXVlc3QucHJvdG8iXgoNV29ybGRM",
+            "b2dpbk50ZhpNChVOb3RpZnlJbnN0cnVjdGlvbkluZm8SNAoGdl9pbmZvGAEg",
+            "ASgLMiQuenByb3RvLk5vdGlmeUluc3RydWN0aW9uSW5mb1JlcXVlc3RiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNotifyInstructionInfoRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -248,7 +248,7 @@ namespace Zproto {
           return new NotifyInstructionInfo(this);
         }
 
-        /// <summary>Field number for the "vInfo" field.</summary>
+        /// <summary>Field number for the "v_info" field.</summary>
         public const int VInfoFieldNumber = 1;
         private global::Zproto.NotifyInstructionInfoRequest vInfo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

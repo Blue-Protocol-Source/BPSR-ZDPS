@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X25vdGlmeV91cGRhdGVfZGF0YV9yZXF1ZXN0LnByb3RvEgZ6cHJv",
-            "dG8aFnN0cnVfZnJpZW5kX2RhdGEucHJvdG8ivQEKF05vdGlmeVVwZGF0ZURh",
-            "dGFSZXF1ZXN0EkcKDG9wZXJhdGlvbk1hcBgBIAMoCzIxLnpwcm90by5Ob3Rp",
-            "ZnlVcGRhdGVEYXRhUmVxdWVzdC5PcGVyYXRpb25NYXBFbnRyeRIkCghzeW5j",
-            "RGF0YRgCIAEoCzISLnpwcm90by5GcmllbmREYXRhGjMKEU9wZXJhdGlvbk1h",
-            "cEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoBToCOAFiBnByb3Rv",
-            "Mw=="));
+            "dG8aFnN0cnVfZnJpZW5kX2RhdGEucHJvdG8ivwEKF05vdGlmeVVwZGF0ZURh",
+            "dGFSZXF1ZXN0EkgKDW9wZXJhdGlvbl9tYXAYASADKAsyMS56cHJvdG8uTm90",
+            "aWZ5VXBkYXRlRGF0YVJlcXVlc3QuT3BlcmF0aW9uTWFwRW50cnkSJQoJc3lu",
+            "Y19kYXRhGAIgASgLMhIuenByb3RvLkZyaWVuZERhdGEaMwoRT3BlcmF0aW9u",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFriendDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new NotifyUpdateDataRequest(this);
     }
 
-    /// <summary>Field number for the "operationMap" field.</summary>
+    /// <summary>Field number for the "operation_map" field.</summary>
     public const int OperationMapFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_operationMap_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);
@@ -98,7 +98,7 @@ namespace Zproto {
       get { return operationMap_; }
     }
 
-    /// <summary>Field number for the "syncData" field.</summary>
+    /// <summary>Field number for the "sync_data" field.</summary>
     public const int SyncDataFieldNumber = 2;
     private global::Zproto.FriendData syncData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

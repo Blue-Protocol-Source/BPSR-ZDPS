@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X3NldF91bmlvbl9jb3Zlcl9waG90b19yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8iPQoZU2V0VW5pb25Db3ZlclBob3RvUmVxdWVzdBIPCgd1bmlvbklk",
-            "GAEgASgDEg8KB3Bob3RvSWQYAiABKA1iBnByb3RvMw=="));
+            "cHJvdG8iPwoZU2V0VW5pb25Db3ZlclBob3RvUmVxdWVzdBIQCgh1bmlvbl9p",
+            "ZBgBIAEoAxIQCghwaG90b19pZBgCIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetUnionCoverPhotoRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photoId" field.</summary>
+    /// <summary>Field number for the "photo_id" field.</summary>
     public const int PhotoIdFieldNumber = 2;
     private uint photoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

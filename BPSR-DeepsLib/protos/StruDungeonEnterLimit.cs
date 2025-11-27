@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2R1bmdlb25fZW50ZXJfbGltaXQucHJvdG8SBnpwcm90bxoec3Ry",
             "dV9kdW5nZW9uX2VudGVyX2NvdW50LnByb3RvGhVzdHJ1X2RpcnR5X21hc2su",
-            "cHJvdG8ioAEKEUR1bmdlb25FbnRlckxpbWl0Ej0KCmVudGVyQ291bnQYASAD",
-            "KAsyKS56cHJvdG8uRHVuZ2VvbkVudGVyTGltaXQuRW50ZXJDb3VudEVudHJ5",
-            "GkwKD0VudGVyQ291bnRFbnRyeRILCgNrZXkYASABKAUSKAoFdmFsdWUYAiAB",
-            "KAsyGS56cHJvdG8uRHVuZ2VvbkVudGVyQ291bnQ6AjgBYgZwcm90bzM="));
+            "cHJvdG8ioQEKEUR1bmdlb25FbnRlckxpbWl0Ej4KC2VudGVyX2NvdW50GAEg",
+            "AygLMikuenByb3RvLkR1bmdlb25FbnRlckxpbWl0LkVudGVyQ291bnRFbnRy",
+            "eRpMCg9FbnRlckNvdW50RW50cnkSCwoDa2V5GAEgASgFEigKBXZhbHVlGAIg",
+            "ASgLMhkuenByb3RvLkR1bmdlb25FbnRlckNvdW50OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonEnterCountReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new DungeonEnterLimit(this);
     }
 
-    /// <summary>Field number for the "enterCount" field.</summary>
+    /// <summary>Field number for the "enter_count" field.</summary>
     public const int EnterCountFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.DungeonEnterCount>.Codec _map_enterCount_codec
         = new pbc::MapField<int, global::Zproto.DungeonEnterCount>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonEnterCount.Parser), 10);

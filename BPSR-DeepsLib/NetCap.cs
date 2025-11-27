@@ -73,6 +73,11 @@ public class NetCap
         NotifyHandlers.Add(new NotifyId(serviceId, methodId), handler);
     }
 
+    public void RegisterMatchNotifyHandler(ServiceMethods.MatchNtf methodId, Action<ReadOnlySpan<byte>, ExtraPacketData> handler)
+    {
+        NotifyHandlers.Add(new NotifyId((ulong)EServiceId.MatchNtf, (uint)methodId), handler);
+    }
+
     public void RegisterWorldNotifyHandler(ServiceMethods.WorldNtf methodId, Action<ReadOnlySpan<byte>, ExtraPacketData> handler)
     {
         NotifyHandlers.Add(new NotifyId((ulong)EServiceId.WorldNtf, (uint)methodId), handler);

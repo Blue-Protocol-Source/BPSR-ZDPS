@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3BheV9zdWNjZXNzX3JlcGx5LnByb3RvEgZ6cHJvdG8aF2VudW1f",
-            "ZV9lcnJvcl9jb2RlLnByb3RvIjYKD1BheVN1Y2Nlc3NSZXBseRIjCgdlcnJD",
-            "b2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "ZV9lcnJvcl9jb2RlLnByb3RvIjcKD1BheVN1Y2Nlc3NSZXBseRIkCghlcnJf",
+            "Y29kZRgBIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new PaySuccessReply(this);
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

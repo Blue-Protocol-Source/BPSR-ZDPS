@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2ludml0ZV9hcHBseV9yaWRlX3BhcmFtLnByb3RvEgZ6cHJvdG8i",
-            "PAoUSW52aXRlQXBwbHlSaWRlUGFyYW0SEAoIZHJpdmVySWQYASABKAMSEgoK",
-            "ZHJpdmVyTmFtZRgCIAEoCWIGcHJvdG8z"));
+            "PgoUSW52aXRlQXBwbHlSaWRlUGFyYW0SEQoJZHJpdmVyX2lkGAEgASgDEhMK",
+            "C2RyaXZlcl9uYW1lGAIgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new InviteApplyRideParam(this);
     }
 
-    /// <summary>Field number for the "driverId" field.</summary>
+    /// <summary>Field number for the "driver_id" field.</summary>
     public const int DriverIdFieldNumber = 1;
     private long driverId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "driverName" field.</summary>
+    /// <summary>Field number for the "driver_name" field.</summary>
     public const int DriverNameFieldNumber = 2;
     private string driverName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

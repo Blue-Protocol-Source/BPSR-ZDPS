@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2dldF9hbGJ1bV9waG90b3NfcmVxdWVzdC5wcm90bxIGenByb3Rv",
-            "IjgKFUdldEFsYnVtUGhvdG9zUmVxdWVzdBIOCgZjaGFySWQYAiABKAMSDwoH",
-            "YWxidW1JZBgDIAEoDWIGcHJvdG8z"));
+            "IjoKFUdldEFsYnVtUGhvdG9zUmVxdWVzdBIPCgdjaGFyX2lkGAIgASgDEhAK",
+            "CGFsYnVtX2lkGAMgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new GetAlbumPhotosRequest(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "albumId" field.</summary>
+    /// <summary>Field number for the "album_id" field.</summary>
     public const int AlbumIdFieldNumber = 3;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

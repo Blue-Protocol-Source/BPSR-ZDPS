@@ -24,8 +24,8 @@ namespace Zproto {
     static StruKickOutRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X2tpY2tfb3V0X3JlcXVlc3QucHJvdG8SBnpwcm90byIgCg5LaWNr",
-            "T3V0UmVxdWVzdBIOCgZ2TWVtSWQYAyABKANiBnByb3RvMw=="));
+            "ChtzdHJ1X2tpY2tfb3V0X3JlcXVlc3QucHJvdG8SBnpwcm90byIiCg5LaWNr",
+            "T3V0UmVxdWVzdBIQCgh2X21lbV9pZBgDIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new KickOutRequest(this);
     }
 
-    /// <summary>Field number for the "vMemId" field.</summary>
+    /// <summary>Field number for the "v_mem_id" field.</summary>
     public const int VMemIdFieldNumber = 3;
     private long vMemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

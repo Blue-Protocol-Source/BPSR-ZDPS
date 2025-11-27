@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X3NldF9wZXJzb25hbF96b25lX3RhZ3NfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvIkEKGlNldFBlcnNvbmFsWm9uZVRhZ3NSZXF1ZXN0EhUKDW9ubGlu",
-            "ZVBlcmlvZHMYAiADKAUSDAoEdGFncxgDIAMoBWIGcHJvdG8z"));
+            "enByb3RvIkIKGlNldFBlcnNvbmFsWm9uZVRhZ3NSZXF1ZXN0EhYKDm9ubGlu",
+            "ZV9wZXJpb2RzGAIgAygFEgwKBHRhZ3MYAyADKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetPersonalZoneTagsRequest(this);
     }
 
-    /// <summary>Field number for the "onlinePeriods" field.</summary>
+    /// <summary>Field number for the "online_periods" field.</summary>
     public const int OnlinePeriodsFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_onlinePeriods_codec
         = pb::FieldCodec.ForInt32(18);

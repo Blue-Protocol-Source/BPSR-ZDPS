@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "Ch9zdHJ1X3NldF91bmlvbl9uYW1lX3JlcGx5LnByb3RvEgZ6cHJvdG8aF2Vu",
             "dW1fZV9lcnJvcl9jb2RlLnByb3RvGhpzdHJ1X3VuaW9uX2Jhc2VfZGF0YS5w",
-            "cm90byJxChFTZXRVbmlvbk5hbWVSZXBseRISCgpwYXNzVGltZU1zGAEgASgD",
-            "EiMKBGRhdGEYAiABKAsyFS56cHJvdG8uVW5pb25CYXNlRGF0YRIjCgdlcnJD",
-            "b2RlGAMgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "cm90byJ0ChFTZXRVbmlvbk5hbWVSZXBseRIUCgxwYXNzX3RpbWVfbXMYASAB",
+            "KAMSIwoEZGF0YRgCIAEoCzIVLnpwcm90by5VbmlvbkJhc2VEYXRhEiQKCGVy",
+            "cl9jb2RlGAMgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionBaseDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new SetUnionNameReply(this);
     }
 
-    /// <summary>Field number for the "passTimeMs" field.</summary>
+    /// <summary>Field number for the "pass_time_ms" field.</summary>
     public const int PassTimeMsFieldNumber = 1;
     private long passTimeMs_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

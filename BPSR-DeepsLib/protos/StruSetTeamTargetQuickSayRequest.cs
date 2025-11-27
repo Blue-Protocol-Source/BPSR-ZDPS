@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X3NldF90ZWFtX3RhcmdldF9xdWlja19zYXlfcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvIkAKHFNldFRlYW1UYXJnZXRRdWlja1NheVJlcXVlc3QSDAoE",
-            "ZGVzYxgBIAEoCRISCgpxdWlja1NheUlkGAIgASgFYgZwcm90bzM="));
+            "bxIGenByb3RvIkIKHFNldFRlYW1UYXJnZXRRdWlja1NheVJlcXVlc3QSDAoE",
+            "ZGVzYxgBIAEoCRIUCgxxdWlja19zYXlfaWQYAiABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "quickSayId" field.</summary>
+    /// <summary>Field number for the "quick_say_id" field.</summary>
     public const int QuickSayIdFieldNumber = 2;
     private int quickSayId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

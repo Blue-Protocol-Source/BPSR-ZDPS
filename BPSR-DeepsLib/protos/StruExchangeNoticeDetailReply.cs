@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CidzdHJ1X2V4Y2hhbmdlX25vdGljZV9kZXRhaWxfcmVwbHkucHJvdG8SBnpw",
             "cm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aI3N0cnVfZXhjaGFuZ2Vf",
-            "cHJpY2VfaXRlbV9kYXRhLnByb3RvIqQBChlFeGNoYW5nZU5vdGljZURldGFp",
+            "cHJpY2VfaXRlbV9kYXRhLnByb3RvIqgBChlFeGNoYW5nZU5vdGljZURldGFp",
             "bFJlcGx5EiwKBWl0ZW1zGAIgAygLMh0uenByb3RvLkV4Y2hhbmdlUHJpY2VJ",
-            "dGVtRGF0YRIRCgl0b3RhbFBhZ2UYAyABKAUSDwoHY3VyUGFnZRgEIAEoBRIQ",
-            "CghtaW5QcmljZRgFIAEoAxIjCgdlcnJDb2RlGAYgASgOMhIuenByb3RvLkVF",
-            "cnJvckNvZGViBnByb3RvMw=="));
+            "dGVtRGF0YRISCgp0b3RhbF9wYWdlGAMgASgFEhAKCGN1cl9wYWdlGAQgASgF",
+            "EhEKCW1pbl9wcmljZRgFIAEoAxIkCghlcnJfY29kZRgGIAEoDjISLnpwcm90",
+            "by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruExchangePriceItemDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +101,7 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "totalPage" field.</summary>
+    /// <summary>Field number for the "total_page" field.</summary>
     public const int TotalPageFieldNumber = 3;
     private int totalPage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "curPage" field.</summary>
+    /// <summary>Field number for the "cur_page" field.</summary>
     public const int CurPageFieldNumber = 4;
     private int curPage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "minPrice" field.</summary>
+    /// <summary>Field number for the "min_price" field.</summary>
     public const int MinPriceFieldNumber = 5;
     private long minPrice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X3NjZW5lX3JlY29yZC5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5",
-            "X21hc2sucHJvdG8igwEKC1NjZW5lUmVjb3JkEgsKA2NudBgBIAEoBBI1Cgln",
-            "cm91cENudHMYAiADKAsyIi56cHJvdG8uU2NlbmVSZWNvcmQuR3JvdXBDbnRz",
-            "RW50cnkaMAoOR3JvdXBDbnRzRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVl",
-            "GAIgASgEOgI4AWIGcHJvdG8z"));
+            "X21hc2sucHJvdG8ihAEKC1NjZW5lUmVjb3JkEgsKA2NudBgBIAEoBBI2Cgpn",
+            "cm91cF9jbnRzGAIgAygLMiIuenByb3RvLlNjZW5lUmVjb3JkLkdyb3VwQ250",
+            "c0VudHJ5GjAKDkdyb3VwQ250c0VudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1",
+            "ZRgCIAEoBDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "groupCnts" field.</summary>
+    /// <summary>Field number for the "group_cnts" field.</summary>
     public const int GroupCntsFieldNumber = 2;
     private static readonly pbc::MapField<int, ulong>.Codec _map_groupCnts_codec
         = new pbc::MapField<int, ulong>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForUInt64(16, 0UL), 18);

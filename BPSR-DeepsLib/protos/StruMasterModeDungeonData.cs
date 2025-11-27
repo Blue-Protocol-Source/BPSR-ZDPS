@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X21hc3Rlcl9tb2RlX2R1bmdlb25fZGF0YS5wcm90bxIGenByb3Rv",
-            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iPAoVTWFzdGVyTW9kZUR1bmdlb25E",
-            "YXRhEhMKC3NlYXNvblNjb3JlGAEgASgFEg4KBmlzU2hvdxgCIAEoCGIGcHJv",
-            "dG8z"));
+            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iPgoVTWFzdGVyTW9kZUR1bmdlb25E",
+            "YXRhEhQKDHNlYXNvbl9zY29yZRgBIAEoBRIPCgdpc19zaG93GAIgASgIYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new MasterModeDungeonData(this);
     }
 
-    /// <summary>Field number for the "seasonScore" field.</summary>
+    /// <summary>Field number for the "season_score" field.</summary>
     public const int SeasonScoreFieldNumber = 1;
     private int seasonScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isShow" field.</summary>
+    /// <summary>Field number for the "is_show" field.</summary>
     public const int IsShowFieldNumber = 2;
     private bool isShow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

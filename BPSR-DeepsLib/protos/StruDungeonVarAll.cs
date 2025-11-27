@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X2R1bmdlb25fdmFyX2FsbC5wcm90bxIGenByb3RvGhZzdHJ1X2R1",
-            "bmdlb25fdmFyLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iowEKDUR1",
-            "bmdlb25WYXJBbGwSRQoQZHVuZ2VvblZhckFsbE1hcBgBIAMoCzIrLnpwcm90",
-            "by5EdW5nZW9uVmFyQWxsLkR1bmdlb25WYXJBbGxNYXBFbnRyeRpLChVEdW5n",
-            "ZW9uVmFyQWxsTWFwRW50cnkSCwoDa2V5GAEgASgDEiEKBXZhbHVlGAIgASgL",
-            "MhIuenByb3RvLkR1bmdlb25WYXI6AjgBYgZwcm90bzM="));
+            "bmdlb25fdmFyLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ipgEKDUR1",
+            "bmdlb25WYXJBbGwSSAoTZHVuZ2Vvbl92YXJfYWxsX21hcBgBIAMoCzIrLnpw",
+            "cm90by5EdW5nZW9uVmFyQWxsLkR1bmdlb25WYXJBbGxNYXBFbnRyeRpLChVE",
+            "dW5nZW9uVmFyQWxsTWFwRW50cnkSCwoDa2V5GAEgASgDEiEKBXZhbHVlGAIg",
+            "ASgLMhIuenByb3RvLkR1bmdlb25WYXI6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonVarReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new DungeonVarAll(this);
     }
 
-    /// <summary>Field number for the "dungeonVarAllMap" field.</summary>
+    /// <summary>Field number for the "dungeon_var_all_map" field.</summary>
     public const int DungeonVarAllMapFieldNumber = 1;
     private static readonly pbc::MapField<long, global::Zproto.DungeonVar>.Codec _map_dungeonVarAllMap_codec
         = new pbc::MapField<long, global::Zproto.DungeonVar>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonVar.Parser), 10);

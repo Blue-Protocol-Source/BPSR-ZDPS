@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X2NoYWxsZW5nZV9kdW5nZW9uX3Njb3JlX2F3YXJkX3BhcmFtLnBy",
-            "b3RvEgZ6cHJvdG8iRAofQ2hhbGxlbmdlRHVuZ2VvblNjb3JlQXdhcmRQYXJh",
-            "bRIPCgdncm91cElkGAEgASgFEhAKCHRhcmdldElkGAIgASgFYgZwcm90bzM="));
+            "b3RvEgZ6cHJvdG8iRgofQ2hhbGxlbmdlRHVuZ2VvblNjb3JlQXdhcmRQYXJh",
+            "bRIQCghncm91cF9pZBgBIAEoBRIRCgl0YXJnZXRfaWQYAiABKAViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new ChallengeDungeonScoreAwardParam(this);
     }
 
-    /// <summary>Field number for the "groupId" field.</summary>
+    /// <summary>Field number for the "group_id" field.</summary>
     public const int GroupIdFieldNumber = 1;
     private int groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 2;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

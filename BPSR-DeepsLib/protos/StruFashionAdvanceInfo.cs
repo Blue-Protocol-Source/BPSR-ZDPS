@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X2Zhc2hpb25fYWR2YW5jZV9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0",
-            "cnVfZGlydHlfbWFzay5wcm90byJTChJGYXNoaW9uQWR2YW5jZUluZm8SEQoJ",
-            "ZmFzaGlvbklkGAEgASgFEhYKDnVzaW5nQWR2YW5jZUlkGAIgASgFEhIKCmFk",
-            "dmFuY2VJZHMYAyADKAViBnByb3RvMw=="));
+            "cnVfZGlydHlfbWFzay5wcm90byJXChJGYXNoaW9uQWR2YW5jZUluZm8SEgoK",
+            "ZmFzaGlvbl9pZBgBIAEoBRIYChB1c2luZ19hZHZhbmNlX2lkGAIgASgFEhMK",
+            "C2FkdmFuY2VfaWRzGAMgAygFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new FashionAdvanceInfo(this);
     }
 
-    /// <summary>Field number for the "fashionId" field.</summary>
+    /// <summary>Field number for the "fashion_id" field.</summary>
     public const int FashionIdFieldNumber = 1;
     private int fashionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "usingAdvanceId" field.</summary>
+    /// <summary>Field number for the "using_advance_id" field.</summary>
     public const int UsingAdvanceIdFieldNumber = 2;
     private int usingAdvanceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "advanceIds" field.</summary>
+    /// <summary>Field number for the "advance_ids" field.</summary>
     public const int AdvanceIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_advanceIds_codec
         = pb::FieldCodec.ForInt32(26);

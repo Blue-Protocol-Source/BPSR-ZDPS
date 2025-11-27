@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X2VxdWlwX3N1aXRfaW5mby5wcm90bxIGenByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8iiQEKDUVxdWlwU3VpdEluZm8SNQoIc3VpdEF0dHIY",
-            "AyADKAsyIy56cHJvdG8uRXF1aXBTdWl0SW5mby5TdWl0QXR0ckVudHJ5EhAK",
-            "CGF0dHJUeXBlGAQgASgFGi8KDVN1aXRBdHRyRW50cnkSCwoDa2V5GAEgASgF",
-            "Eg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
+            "cnR5X21hc2sucHJvdG8iiwEKDUVxdWlwU3VpdEluZm8SNgoJc3VpdF9hdHRy",
+            "GAMgAygLMiMuenByb3RvLkVxdWlwU3VpdEluZm8uU3VpdEF0dHJFbnRyeRIR",
+            "CglhdHRyX3R5cGUYBCABKAUaLwoNU3VpdEF0dHJFbnRyeRILCgNrZXkYASAB",
+            "KAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new EquipSuitInfo(this);
     }
 
-    /// <summary>Field number for the "suitAttr" field.</summary>
+    /// <summary>Field number for the "suit_attr" field.</summary>
     public const int SuitAttrFieldNumber = 3;
     private static readonly pbc::MapField<int, int>.Codec _map_suitAttr_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 26);
@@ -96,7 +96,7 @@ namespace Zproto {
       get { return suitAttr_; }
     }
 
-    /// <summary>Field number for the "attrType" field.</summary>
+    /// <summary>Field number for the "attr_type" field.</summary>
     public const int AttrTypeFieldNumber = 4;
     private int attrType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

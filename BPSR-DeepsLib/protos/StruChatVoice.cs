@@ -24,9 +24,9 @@ namespace Zproto {
     static StruChatVoiceReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVzdHJ1X2NoYXRfdm9pY2UucHJvdG8SBnpwcm90byI6CglDaGF0Vm9pY2US",
-            "DgoGZmlsZUlkGAEgASgJEgwKBHRleHQYAiABKAkSDwoHc2Vjb25kcxgDIAEo",
-            "DWIGcHJvdG8z"));
+            "ChVzdHJ1X2NoYXRfdm9pY2UucHJvdG8SBnpwcm90byI7CglDaGF0Vm9pY2US",
+            "DwoHZmlsZV9pZBgBIAEoCRIMCgR0ZXh0GAIgASgJEg8KB3NlY29uZHMYAyAB",
+            "KA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ChatVoice(this);
     }
 
-    /// <summary>Field number for the "fileId" field.</summary>
+    /// <summary>Field number for the "file_id" field.</summary>
     public const int FileIdFieldNumber = 1;
     private string fileId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

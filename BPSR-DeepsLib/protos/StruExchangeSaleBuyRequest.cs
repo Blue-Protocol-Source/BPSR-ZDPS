@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2V4Y2hhbmdlX3NhbGVfYnV5X3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "byJFChZFeGNoYW5nZVNhbGVCdXlSZXF1ZXN0EgwKBHJhdGUYASABKAUSCwoD",
-            "bnVtGAIgASgFEhAKCGVsc2VSYXRlGAMgASgFYgZwcm90bzM="));
+            "byJGChZFeGNoYW5nZVNhbGVCdXlSZXF1ZXN0EgwKBHJhdGUYASABKAUSCwoD",
+            "bnVtGAIgASgFEhEKCWVsc2VfcmF0ZRgDIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "elseRate" field.</summary>
+    /// <summary>Field number for the "else_rate" field.</summary>
     public const int ElseRateFieldNumber = 3;
     private int elseRate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

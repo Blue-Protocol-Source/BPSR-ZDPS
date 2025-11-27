@@ -24,9 +24,9 @@ namespace Zproto {
     static StruDeleteMailRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X2RlbGV0ZV9tYWlsX3JlcXVlc3QucHJvdG8SBnpwcm90byI6ChFE",
-            "ZWxldGVNYWlsUmVxdWVzdBIPCgdtYWlsSWRzGAIgAygDEhQKDHVuR2V0TWFp",
-            "bElkcxgDIAMoA2IGcHJvdG8z"));
+            "Ch5zdHJ1X2RlbGV0ZV9tYWlsX3JlcXVlc3QucHJvdG8SBnpwcm90byI+ChFE",
+            "ZWxldGVNYWlsUmVxdWVzdBIQCghtYWlsX2lkcxgCIAMoAxIXCg91bl9nZXRf",
+            "bWFpbF9pZHMYAyADKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DeleteMailRequest(this);
     }
 
-    /// <summary>Field number for the "mailIds" field.</summary>
+    /// <summary>Field number for the "mail_ids" field.</summary>
     public const int MailIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_mailIds_codec
         = pb::FieldCodec.ForInt64(18);
@@ -94,7 +94,7 @@ namespace Zproto {
       get { return mailIds_; }
     }
 
-    /// <summary>Field number for the "unGetMailIds" field.</summary>
+    /// <summary>Field number for the "un_get_mail_ids" field.</summary>
     public const int UnGetMailIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_unGetMailIds_codec
         = pb::FieldCodec.ForInt64(26);

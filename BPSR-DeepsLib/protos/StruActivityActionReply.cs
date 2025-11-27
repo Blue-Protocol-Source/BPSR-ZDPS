@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X2FjdGl2aXR5X2FjdGlvbl9yZXBseS5wcm90bxIGenByb3RvGhdl",
             "bnVtX2VfZXJyb3JfY29kZS5wcm90bxoUc3RydV9wYXlfcmVwbHkucHJvdG8i",
-            "XgoTQWN0aXZpdHlBY3Rpb25SZXBseRIiCghwYXlSZXBseRgBIAEoCzIQLnpw",
-            "cm90by5QYXlSZXBseRIjCgdlcnJDb2RlGAIgASgOMhIuenByb3RvLkVFcnJv",
-            "ckNvZGViBnByb3RvMw=="));
+            "YAoTQWN0aXZpdHlBY3Rpb25SZXBseRIjCglwYXlfcmVwbHkYASABKAsyEC56",
+            "cHJvdG8uUGF5UmVwbHkSJAoIZXJyX2NvZGUYAiABKA4yEi56cHJvdG8uRUVy",
+            "cm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruPayReplyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ActivityActionReply(this);
     }
 
-    /// <summary>Field number for the "payReply" field.</summary>
+    /// <summary>Field number for the "pay_reply" field.</summary>
     public const int PayReplyFieldNumber = 1;
     private global::Zproto.PayReply payReply_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

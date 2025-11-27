@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChFzZXJ2X3JlcG9ydC5wcm90bxIGenByb3RvGhdlbnVtX2VfZXJyb3JfY29k",
-            "ZS5wcm90bxogc3RydV9yZXBvcnRfdXBsb2FkX3JlcXVlc3QucHJvdG8ifAoG",
+            "ZS5wcm90bxogc3RydV9yZXBvcnRfdXBsb2FkX3JlcXVlc3QucHJvdG8ifQoG",
             "UmVwb3J0GjMKEFJlcG9ydFVwbG9hZF9SZXQSHwoDcmV0GAEgASgOMhIuenBy",
-            "b3RvLkVFcnJvckNvZGUaPQoMUmVwb3J0VXBsb2FkEi0KCHZSZXF1ZXN0GAEg",
-            "ASgLMhsuenByb3RvLlJlcG9ydFVwbG9hZFJlcXVlc3RiBnByb3RvMw=="));
+            "b3RvLkVFcnJvckNvZGUaPgoMUmVwb3J0VXBsb2FkEi4KCXZfcmVxdWVzdBgB",
+            "IAEoCzIbLnpwcm90by5SZXBvcnRVcGxvYWRSZXF1ZXN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruReportUploadRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -447,7 +447,7 @@ namespace Zproto {
           return new ReportUpload(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.ReportUploadRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X3JkX2Nvb2tfcmVwbHkucHJvdG8SBnpwcm90bxoXZW51bV9lX2Vy",
-            "cm9yX2NvZGUucHJvdG8iVAoLUmRDb29rUmVwbHkSEAoIcmVjaXBlSWQYASAB",
-            "KAUSDgoGZm9vZElkGAIgASgFEiMKB2VyckNvZGUYAyABKA4yEi56cHJvdG8u",
-            "RUVycm9yQ29kZWIGcHJvdG8z"));
+            "cm9yX2NvZGUucHJvdG8iVwoLUmRDb29rUmVwbHkSEQoJcmVjaXBlX2lkGAEg",
+            "ASgFEg8KB2Zvb2RfaWQYAiABKAUSJAoIZXJyX2NvZGUYAyABKA4yEi56cHJv",
+            "dG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new RdCookReply(this);
     }
 
-    /// <summary>Field number for the "recipeId" field.</summary>
+    /// <summary>Field number for the "recipe_id" field.</summary>
     public const int RecipeIdFieldNumber = 1;
     private int recipeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "foodId" field.</summary>
+    /// <summary>Field number for the "food_id" field.</summary>
     public const int FoodIdFieldNumber = 2;
     private int foodId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

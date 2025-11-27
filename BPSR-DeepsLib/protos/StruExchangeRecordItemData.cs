@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X2V4Y2hhbmdlX3JlY29yZF9pdGVtX2RhdGEucHJvdG8SBnpwcm90",
             "bxolZW51bV9lX2V4Y2hhbmdlX3ByZV9pdGVtX3Jlc3VsdC5wcm90bxoPc3Ry",
-            "dV9pdGVtLnByb3RvIqcBChZFeGNoYW5nZVJlY29yZEl0ZW1EYXRhEhAKCGNv",
-            "bmZpZ0lkGAEgASgFEgsKA251bRgCIAEoBRINCgVwcmljZRgDIAEoBRIMCgR0",
-            "aW1lGAQgASgDEjEKCXByZVJlc3VsdBgFIAEoDjIeLnpwcm90by5FRXhjaGFu",
-            "Z2VQcmVJdGVtUmVzdWx0Eh4KCGl0ZW1JbmZvGAYgASgLMgwuenByb3RvLkl0",
-            "ZW1iBnByb3RvMw=="));
+            "dV9pdGVtLnByb3RvIqoBChZFeGNoYW5nZVJlY29yZEl0ZW1EYXRhEhEKCWNv",
+            "bmZpZ19pZBgBIAEoBRILCgNudW0YAiABKAUSDQoFcHJpY2UYAyABKAUSDAoE",
+            "dGltZRgEIAEoAxIyCgpwcmVfcmVzdWx0GAUgASgOMh4uenByb3RvLkVFeGNo",
+            "YW5nZVByZUl0ZW1SZXN1bHQSHwoJaXRlbV9pbmZvGAYgASgLMgwuenByb3Rv",
+            "Lkl0ZW1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEExchangePreItemResultReflection.Descriptor, global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +91,7 @@ namespace Zproto {
       return new ExchangeRecordItemData(this);
     }
 
-    /// <summary>Field number for the "configId" field.</summary>
+    /// <summary>Field number for the "config_id" field.</summary>
     public const int ConfigIdFieldNumber = 1;
     private int configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "preResult" field.</summary>
+    /// <summary>Field number for the "pre_result" field.</summary>
     public const int PreResultFieldNumber = 5;
     private global::Zproto.EExchangePreItemResult preResult_ = global::Zproto.EExchangePreItemResult.ExchangePreItemResultNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemInfo" field.</summary>
+    /// <summary>Field number for the "item_info" field.</summary>
     public const int ItemInfoFieldNumber = 6;
     private global::Zproto.Item itemInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

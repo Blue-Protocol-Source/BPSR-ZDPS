@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CidzdHJ1X3NoYXJlX29iamVjdF9pbl9jaGF0X3JlcXVlc3QucHJvdG8SBnpw",
             "cm90bxohZW51bV9jaGl0X2NoYXRfY2hhbm5lbF90eXBlLnByb3RvGhxlbnVt",
-            "X3NoYXJlX29iamVjdF90eXBlLnByb3RvIt0BChhTaGFyZU9iamVjdEluQ2hh",
-            "dFJlcXVlc3QSMAoLY2hhbm5lbFR5cGUYASABKA4yGy56cHJvdG8uQ2hpdENo",
-            "YXRDaGFubmVsVHlwZRIrCgpvYmplY3RUeXBlGAIgASgOMhcuenByb3RvLlNo",
-            "YXJlT2JqZWN0VHlwZRISCgpvYmplY3RVdUlkGAMgASgDEhIKCmJlZm9yZURl",
-            "c2MYBCABKAkSEQoJYWZ0ZXJEZXNjGAUgASgJEhQKDHRhcmdldENoYXJJZBgG",
-            "IAEoAxIRCglwYXJhbUxpc3QYByADKANiBnByb3RvMw=="));
+            "X3NoYXJlX29iamVjdF90eXBlLnByb3RvIuYBChhTaGFyZU9iamVjdEluQ2hh",
+            "dFJlcXVlc3QSMQoMY2hhbm5lbF90eXBlGAEgASgOMhsuenByb3RvLkNoaXRD",
+            "aGF0Q2hhbm5lbFR5cGUSLAoLb2JqZWN0X3R5cGUYAiABKA4yFy56cHJvdG8u",
+            "U2hhcmVPYmplY3RUeXBlEhQKDG9iamVjdF91dV9pZBgDIAEoAxITCgtiZWZv",
+            "cmVfZGVzYxgEIAEoCRISCgphZnRlcl9kZXNjGAUgASgJEhYKDnRhcmdldF9j",
+            "aGFyX2lkGAYgASgDEhIKCnBhcmFtX2xpc3QYByADKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumChitChatChannelTypeReflection.Descriptor, global::Zproto.EnumShareObjectTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +93,7 @@ namespace Zproto {
       return new ShareObjectInChatRequest(this);
     }
 
-    /// <summary>Field number for the "channelType" field.</summary>
+    /// <summary>Field number for the "channel_type" field.</summary>
     public const int ChannelTypeFieldNumber = 1;
     private global::Zproto.ChitChatChannelType channelType_ = global::Zproto.ChitChatChannelType.ChannelNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "objectType" field.</summary>
+    /// <summary>Field number for the "object_type" field.</summary>
     public const int ObjectTypeFieldNumber = 2;
     private global::Zproto.ShareObjectType objectType_ = global::Zproto.ShareObjectType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "objectUuId" field.</summary>
+    /// <summary>Field number for the "object_uu_id" field.</summary>
     public const int ObjectUuIdFieldNumber = 3;
     private long objectUuId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "beforeDesc" field.</summary>
+    /// <summary>Field number for the "before_desc" field.</summary>
     public const int BeforeDescFieldNumber = 4;
     private string beforeDesc_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "afterDesc" field.</summary>
+    /// <summary>Field number for the "after_desc" field.</summary>
     public const int AfterDescFieldNumber = 5;
     private string afterDesc_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetCharId" field.</summary>
+    /// <summary>Field number for the "target_char_id" field.</summary>
     public const int TargetCharIdFieldNumber = 6;
     private long targetCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -165,7 +165,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "paramList" field.</summary>
+    /// <summary>Field number for the "param_list" field.</summary>
     public const int ParamListFieldNumber = 7;
     private static readonly pb::FieldCodec<long> _repeated_paramList_codec
         = pb::FieldCodec.ForInt64(58);

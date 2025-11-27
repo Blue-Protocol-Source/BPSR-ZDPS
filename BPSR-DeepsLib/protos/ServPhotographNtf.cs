@@ -29,16 +29,16 @@ namespace Zproto {
             "YXJfdG9rZW5fcmVxdWVzdC5wcm90bxopc3RydV9yZXZpZXdfYXZhdGFyX2lu",
             "Zm9fbnRmX3JlcXVlc3QucHJvdG8aKnN0cnVfdXBsb2FkX3Bob3RvX3Jlc3Vs",
             "dF9udGZfcmVxdWVzdC5wcm90bxosc3RydV91cGxvYWRfcGljdHVyZV9yZXN1",
-            "bHRfbnRmX3JlcXVlc3QucHJvdG8iiAMKDVBob3RvZ3JhcGhOdGYaRQoQR2V0",
-            "UGhvdG9Ub2tlbk50ZhIxCgh2UmVxdWVzdBgBIAEoCzIfLnpwcm90by5HZXRQ",
-            "aG90b1Rva2VuTnRmUmVxdWVzdBpNChRVcGxvYWRQaG90b1Jlc3VsdE50ZhI1",
-            "Cgh2UmVxdWVzdBgBIAEoCzIjLnpwcm90by5VcGxvYWRQaG90b1Jlc3VsdE50",
-            "ZlJlcXVlc3QaUQoWVXBsb2FkUGljdHVyZVJlc3VsdE50ZhI3Cgh2UmVxdWVz",
-            "dBgBIAEoCzIlLnpwcm90by5VcGxvYWRQaWN0dXJlUmVzdWx0TnRmUmVxdWVz",
-            "dBpBCg5SZXRBdmF0YXJUb2tlbhIvCgh2UmVxdWVzdBgBIAEoCzIdLnpwcm90",
-            "by5SZXRBdmF0YXJUb2tlblJlcXVlc3QaSwoTUmV2aWV3QXZhdGFySW5mb050",
-            "ZhI0Cgh2UmVxdWVzdBgBIAEoCzIiLnpwcm90by5SZXZpZXdBdmF0YXJJbmZv",
-            "TnRmUmVxdWVzdGIGcHJvdG8z"));
+            "bHRfbnRmX3JlcXVlc3QucHJvdG8ijQMKDVBob3RvZ3JhcGhOdGYaRgoQR2V0",
+            "UGhvdG9Ub2tlbk50ZhIyCgl2X3JlcXVlc3QYASABKAsyHy56cHJvdG8uR2V0",
+            "UGhvdG9Ub2tlbk50ZlJlcXVlc3QaTgoUVXBsb2FkUGhvdG9SZXN1bHROdGYS",
+            "NgoJdl9yZXF1ZXN0GAEgASgLMiMuenByb3RvLlVwbG9hZFBob3RvUmVzdWx0",
+            "TnRmUmVxdWVzdBpSChZVcGxvYWRQaWN0dXJlUmVzdWx0TnRmEjgKCXZfcmVx",
+            "dWVzdBgBIAEoCzIlLnpwcm90by5VcGxvYWRQaWN0dXJlUmVzdWx0TnRmUmVx",
+            "dWVzdBpCCg5SZXRBdmF0YXJUb2tlbhIwCgl2X3JlcXVlc3QYASABKAsyHS56",
+            "cHJvdG8uUmV0QXZhdGFyVG9rZW5SZXF1ZXN0GkwKE1Jldmlld0F2YXRhcklu",
+            "Zm9OdGYSNQoJdl9yZXF1ZXN0GAEgASgLMiIuenByb3RvLlJldmlld0F2YXRh",
+            "ckluZm9OdGZSZXF1ZXN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruGetPhotoTokenNtfRequestReflection.Descriptor, global::Zproto.StruRetAvatarTokenRequestReflection.Descriptor, global::Zproto.StruReviewAvatarInfoNtfRequestReflection.Descriptor, global::Zproto.StruUploadPhotoResultNtfRequestReflection.Descriptor, global::Zproto.StruUploadPictureResultNtfRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -262,7 +262,7 @@ namespace Zproto {
           return new GetPhotoTokenNtf(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetPhotoTokenNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -469,7 +469,7 @@ namespace Zproto {
           return new UploadPhotoResultNtf(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.UploadPhotoResultNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -676,7 +676,7 @@ namespace Zproto {
           return new UploadPictureResultNtf(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.UploadPictureResultNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -883,7 +883,7 @@ namespace Zproto {
           return new RetAvatarToken(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.RetAvatarTokenRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1090,7 +1090,7 @@ namespace Zproto {
           return new ReviewAvatarInfoNtf(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.ReviewAvatarInfoNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

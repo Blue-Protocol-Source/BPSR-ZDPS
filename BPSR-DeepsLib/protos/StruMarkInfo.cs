@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X21hcmtfaW5mby5wcm90bxIGenByb3RvGhhzdHJ1X21hcmtfcG9z",
-            "aXRpb24ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byJxCghNYXJrSW5m",
-            "bxINCgV0YWdJZBgBIAEoAxINCgV0aXRsZRgCIAEoCRIPCgdjb250ZW50GAMg",
-            "ASgJEg4KBmljb25JZBgEIAEoDRImCghwb3NpdGlvbhgFIAEoCzIULnpwcm90",
-            "by5NYXJrUG9zaXRpb25iBnByb3RvMw=="));
+            "aXRpb24ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byJzCghNYXJrSW5m",
+            "bxIOCgZ0YWdfaWQYASABKAMSDQoFdGl0bGUYAiABKAkSDwoHY29udGVudBgD",
+            "IAEoCRIPCgdpY29uX2lkGAQgASgNEiYKCHBvc2l0aW9uGAUgASgLMhQuenBy",
+            "b3RvLk1hcmtQb3NpdGlvbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMarkPositionReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new MarkInfo(this);
     }
 
-    /// <summary>Field number for the "tagId" field.</summary>
+    /// <summary>Field number for the "tag_id" field.</summary>
     public const int TagIdFieldNumber = 1;
     private long tagId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "iconId" field.</summary>
+    /// <summary>Field number for the "icon_id" field.</summary>
     public const int IconIdFieldNumber = 4;
     private uint iconId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

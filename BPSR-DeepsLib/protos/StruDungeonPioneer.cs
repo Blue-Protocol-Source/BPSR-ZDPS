@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "ChpzdHJ1X2R1bmdlb25fcGlvbmVlci5wcm90bxIGenByb3RvGiBzdHJ1X2Nv",
             "bXBsZXRlZF90YXJnZXRfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIsMBCg5EdW5nZW9uUGlvbmVlchJUChdjb21wbGV0ZWRUYXJnZXRUaGlz",
-            "VGltZRgBIAMoCzIzLnpwcm90by5EdW5nZW9uUGlvbmVlci5Db21wbGV0ZWRU",
-            "YXJnZXRUaGlzVGltZUVudHJ5GlsKHENvbXBsZXRlZFRhcmdldFRoaXNUaW1l",
-            "RW50cnkSCwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgLMhsuenByb3RvLkNv",
-            "bXBsZXRlZFRhcmdldEluZm86AjgBYgZwcm90bzM="));
+            "b3RvIsYBCg5EdW5nZW9uUGlvbmVlchJXChpjb21wbGV0ZWRfdGFyZ2V0X3Ro",
+            "aXNfdGltZRgBIAMoCzIzLnpwcm90by5EdW5nZW9uUGlvbmVlci5Db21wbGV0",
+            "ZWRUYXJnZXRUaGlzVGltZUVudHJ5GlsKHENvbXBsZXRlZFRhcmdldFRoaXNU",
+            "aW1lRW50cnkSCwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgLMhsuenByb3Rv",
+            "LkNvbXBsZXRlZFRhcmdldEluZm86AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCompletedTargetInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new DungeonPioneer(this);
     }
 
-    /// <summary>Field number for the "completedTargetThisTime" field.</summary>
+    /// <summary>Field number for the "completed_target_this_time" field.</summary>
     public const int CompletedTargetThisTimeFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.CompletedTargetInfo>.Codec _map_completedTargetThisTime_codec
         = new pbc::MapField<int, global::Zproto.CompletedTargetInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CompletedTargetInfo.Parser), 10);

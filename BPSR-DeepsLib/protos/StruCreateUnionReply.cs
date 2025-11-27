@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X2NyZWF0ZV91bmlvbl9yZXBseS5wcm90bxIGenByb3RvGhdlbnVt",
             "X2VfZXJyb3JfY29kZS5wcm90bxoVc3RydV91bmlvbl9pbmZvLnByb3RvGhxz",
-            "dHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIp4BChBDcmVhdGVVbmlvblJl",
-            "cGx5EhQKDG5leHRKb2luVGltZRgBIAEoAxIfCgRpbmZvGAIgASgLMhEuenBy",
-            "b3RvLlVuaW9uSW5mbxIuCg1wcmVzaWRlbnRJbmZvGAMgASgLMhcuenByb3Rv",
-            "LlVzZXJTdW1tYXJ5RGF0YRIjCgdlcnJDb2RlGAQgASgOMhIuenByb3RvLkVF",
-            "cnJvckNvZGViBnByb3RvMw=="));
+            "dHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIqIBChBDcmVhdGVVbmlvblJl",
+            "cGx5EhYKDm5leHRfam9pbl90aW1lGAEgASgDEh8KBGluZm8YAiABKAsyES56",
+            "cHJvdG8uVW5pb25JbmZvEi8KDnByZXNpZGVudF9pbmZvGAMgASgLMhcuenBy",
+            "b3RvLlVzZXJTdW1tYXJ5RGF0YRIkCghlcnJfY29kZRgEIAEoDjISLnpwcm90",
+            "by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionInfoReflection.Descriptor, global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new CreateUnionReply(this);
     }
 
-    /// <summary>Field number for the "nextJoinTime" field.</summary>
+    /// <summary>Field number for the "next_join_time" field.</summary>
     public const int NextJoinTimeFieldNumber = 1;
     private long nextJoinTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "presidentInfo" field.</summary>
+    /// <summary>Field number for the "president_info" field.</summary>
     public const int PresidentInfoFieldNumber = 3;
     private global::Zproto.UserSummaryData presidentInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

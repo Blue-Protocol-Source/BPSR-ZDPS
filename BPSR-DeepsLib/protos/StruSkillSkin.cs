@@ -24,8 +24,8 @@ namespace Zproto {
     static StruSkillSkinReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVzdHJ1X3NraWxsX3NraW4ucHJvdG8SBnpwcm90byIsCglTa2lsbFNraW4S",
-            "DwoHc2tpbGxJZBgBIAEoDRIOCgZza2luSWQYAiABKA1iBnByb3RvMw=="));
+            "ChVzdHJ1X3NraWxsX3NraW4ucHJvdG8SBnpwcm90byIuCglTa2lsbFNraW4S",
+            "EAoIc2tpbGxfaWQYASABKA0SDwoHc2tpbl9pZBgCIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new SkillSkin(this);
     }
 
-    /// <summary>Field number for the "skillId" field.</summary>
+    /// <summary>Field number for the "skill_id" field.</summary>
     public const int SkillIdFieldNumber = 1;
     private uint skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -94,7 +94,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skinId" field.</summary>
+    /// <summary>Field number for the "skin_id" field.</summary>
     public const int SkinIdFieldNumber = 2;
     private uint skinId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

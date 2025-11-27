@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X2J1ZmZfYXR0cl9lZmZlY3QucHJvdG8SBnpwcm90bxoec3RydV9i",
-            "dWZmX2F0dHJfc2hvd19pbmZvLnByb3RvIkAKDkJ1ZmZBdHRyRWZmZWN0Ei4K",
-            "DGF0dHJTaG93SW5mbxgBIAMoCzIYLnpwcm90by5CdWZmQXR0clNob3dJbmZv",
-            "YgZwcm90bzM="));
+            "dWZmX2F0dHJfc2hvd19pbmZvLnByb3RvIkIKDkJ1ZmZBdHRyRWZmZWN0EjAK",
+            "DmF0dHJfc2hvd19pbmZvGAEgAygLMhguenByb3RvLkJ1ZmZBdHRyU2hvd0lu",
+            "Zm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBuffAttrShowInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new BuffAttrEffect(this);
     }
 
-    /// <summary>Field number for the "attrShowInfo" field.</summary>
+    /// <summary>Field number for the "attr_show_info" field.</summary>
     public const int AttrShowInfoFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.BuffAttrShowInfo> _repeated_attrShowInfo_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.BuffAttrShowInfo.Parser);

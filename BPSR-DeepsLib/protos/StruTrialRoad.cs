@@ -26,13 +26,13 @@ namespace Zproto {
           string.Concat(
             "ChVzdHJ1X3RyaWFsX3JvYWQucHJvdG8SBnpwcm90bxonc3RydV90cmlhbF9y",
             "b2FkX3Jvb21fdGFyZ2V0X2F3YXJkLnByb3RvGiJzdHJ1X3RyaWFsX3JvYWRf",
-            "dGFyZ2V0X2F3YXJkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i6wEK",
-            "CVRyaWFsUm9hZBIQCghwYXNzUm9vbRgBIAMoBRI/Cg9yb29tVGFyZ2V0QXdh",
-            "cmQYAiADKAsyJi56cHJvdG8uVHJpYWxSb2FkLlJvb21UYXJnZXRBd2FyZEVu",
-            "dHJ5EjEKC3RhcmdldEF3YXJkGAMgASgLMhwuenByb3RvLlRyaWFsUm9hZFRh",
-            "cmdldEF3YXJkGlgKFFJvb21UYXJnZXRBd2FyZEVudHJ5EgsKA2tleRgBIAEo",
-            "BRIvCgV2YWx1ZRgCIAEoCzIgLnpwcm90by5UcmlhbFJvYWRSb29tVGFyZ2V0",
-            "QXdhcmQ6AjgBYgZwcm90bzM="));
+            "dGFyZ2V0X2F3YXJkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i7wEK",
+            "CVRyaWFsUm9hZBIRCglwYXNzX3Jvb20YASADKAUSQQoRcm9vbV90YXJnZXRf",
+            "YXdhcmQYAiADKAsyJi56cHJvdG8uVHJpYWxSb2FkLlJvb21UYXJnZXRBd2Fy",
+            "ZEVudHJ5EjIKDHRhcmdldF9hd2FyZBgDIAEoCzIcLnpwcm90by5UcmlhbFJv",
+            "YWRUYXJnZXRBd2FyZBpYChRSb29tVGFyZ2V0QXdhcmRFbnRyeRILCgNrZXkY",
+            "ASABKAUSLwoFdmFsdWUYAiABKAsyIC56cHJvdG8uVHJpYWxSb2FkUm9vbVRh",
+            "cmdldEF3YXJkOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTrialRoadRoomTargetAwardReflection.Descriptor, global::Zproto.StruTrialRoadTargetAwardReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new TrialRoad(this);
     }
 
-    /// <summary>Field number for the "passRoom" field.</summary>
+    /// <summary>Field number for the "pass_room" field.</summary>
     public const int PassRoomFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_passRoom_codec
         = pb::FieldCodec.ForInt32(10);
@@ -101,7 +101,7 @@ namespace Zproto {
       get { return passRoom_; }
     }
 
-    /// <summary>Field number for the "roomTargetAward" field.</summary>
+    /// <summary>Field number for the "room_target_award" field.</summary>
     public const int RoomTargetAwardFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.TrialRoadRoomTargetAward>.Codec _map_roomTargetAward_codec
         = new pbc::MapField<int, global::Zproto.TrialRoadRoomTargetAward>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.TrialRoadRoomTargetAward.Parser), 18);
@@ -112,7 +112,7 @@ namespace Zproto {
       get { return roomTargetAward_; }
     }
 
-    /// <summary>Field number for the "targetAward" field.</summary>
+    /// <summary>Field number for the "target_award" field.</summary>
     public const int TargetAwardFieldNumber = 3;
     private global::Zproto.TrialRoadTargetAward targetAward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

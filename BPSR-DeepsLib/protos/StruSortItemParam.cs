@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSortItemParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X3NvcnRfaXRlbV9wYXJhbS5wcm90bxIGenByb3RvIjkKDVNvcnRJ",
-            "dGVtUGFyYW0SEwoLc3JjSXRlbVV1aWQYASABKAMSEwoLZHN0SXRlbVV1aWQY",
-            "AiABKANiBnByb3RvMw=="));
+            "ChpzdHJ1X3NvcnRfaXRlbV9wYXJhbS5wcm90bxIGenByb3RvIj0KDVNvcnRJ",
+            "dGVtUGFyYW0SFQoNc3JjX2l0ZW1fdXVpZBgBIAEoAxIVCg1kc3RfaXRlbV91",
+            "dWlkGAIgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SortItemParam(this);
     }
 
-    /// <summary>Field number for the "srcItemUuid" field.</summary>
+    /// <summary>Field number for the "src_item_uuid" field.</summary>
     public const int SrcItemUuidFieldNumber = 1;
     private long srcItemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dstItemUuid" field.</summary>
+    /// <summary>Field number for the "dst_item_uuid" field.</summary>
     public const int DstItemUuidFieldNumber = 2;
     private long dstItemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

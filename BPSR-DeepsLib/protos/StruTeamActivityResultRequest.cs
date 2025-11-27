@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X3RlYW1fYWN0aXZpdHlfcmVzdWx0X3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iUQoZVGVhbUFjdGl2aXR5",
-            "UmVzdWx0UmVxdWVzdBIPCgd2Q2hhcklkGAEgASgDEiMKB2VyckNvZGUYAiAB",
-            "KA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "cm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iVAoZVGVhbUFjdGl2aXR5",
+            "UmVzdWx0UmVxdWVzdBIRCgl2X2NoYXJfaWQYASABKAMSJAoIZXJyX2NvZGUY",
+            "AiABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new TeamActivityResultRequest(this);
     }
 
-    /// <summary>Field number for the "vCharId" field.</summary>
+    /// <summary>Field number for the "v_char_id" field.</summary>
     public const int VCharIdFieldNumber = 1;
     private long vCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2R1bmdlb25fcGxhbmV0X21lbW9yeV9yb29tLnByb3RvEgZ6cHJv",
-            "dG8aFXN0cnVfZGlydHlfbWFzay5wcm90byIpChdEdW5nZW9uUGxhbmV0TWVt",
-            "b3J5Um9vbRIOCgZyb29tSWQYASABKAViBnByb3RvMw=="));
+            "dG8aFXN0cnVfZGlydHlfbWFzay5wcm90byIqChdEdW5nZW9uUGxhbmV0TWVt",
+            "b3J5Um9vbRIPCgdyb29tX2lkGAEgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new DungeonPlanetMemoryRoom(this);
     }
 
-    /// <summary>Field number for the "roomId" field.</summary>
+    /// <summary>Field number for the "room_id" field.</summary>
     public const int RoomIdFieldNumber = 1;
     private int roomId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

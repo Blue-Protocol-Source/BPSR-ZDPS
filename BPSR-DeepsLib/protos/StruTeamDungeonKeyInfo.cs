@@ -24,10 +24,10 @@ namespace Zproto {
     static StruTeamDungeonKeyInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3RlYW1fZHVuZ2Vvbl9rZXlfaW5mby5wcm90bxIGenByb3RvImUK",
-            "ElRlYW1EdW5nZW9uS2V5SW5mbxIOCgZjaGFySWQYASABKAMSFgoOcm9sbEF3",
-            "YXJkQ291bnQYAiABKAUSFQoNa2V5QXdhcmRDb3VudBgDIAEoBRIQCghpc0Fz",
-            "c2lzdBgEIAEoCGIGcHJvdG8z"));
+            "CiBzdHJ1X3RlYW1fZHVuZ2Vvbl9rZXlfaW5mby5wcm90bxIGenByb3RvImsK",
+            "ElRlYW1EdW5nZW9uS2V5SW5mbxIPCgdjaGFyX2lkGAEgASgDEhgKEHJvbGxf",
+            "YXdhcmRfY291bnQYAiABKAUSFwoPa2V5X2F3YXJkX2NvdW50GAMgASgFEhEK",
+            "CWlzX2Fzc2lzdBgEIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new TeamDungeonKeyInfo(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rollAwardCount" field.</summary>
+    /// <summary>Field number for the "roll_award_count" field.</summary>
     public const int RollAwardCountFieldNumber = 2;
     private int rollAwardCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "keyAwardCount" field.</summary>
+    /// <summary>Field number for the "key_award_count" field.</summary>
     public const int KeyAwardCountFieldNumber = 3;
     private int keyAwardCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isAssist" field.</summary>
+    /// <summary>Field number for the "is_assist" field.</summary>
     public const int IsAssistFieldNumber = 4;
     private bool isAssist_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

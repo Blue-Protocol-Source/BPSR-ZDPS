@@ -1,0 +1,35 @@
+﻿namespace BPSR_DeepsLib.ServiceMethods;
+
+public enum GrpcTeamNtf
+{
+    NoticeUpdateTeamInfo = 0x1,
+    NoticeUpdateTeamMemberInfo = 0x2,
+    NotifyJoinTeam = 0x3,
+    NotifyLeaveTeam = 0x4,
+    NotifyApplyJoin = 0x5,
+    NotifyInvitation = 0x6,
+    NotifyRefuseInvite = 0x7,
+    NotifyLeaderApplyListSize = 0x8,
+    NotifyApplyBeLeader = 0x9,
+    NotifyRejectApplicant = 0xA,
+    NotifyBeTransferLeader = 0xB,
+    NotifyRefuseBeTransferLeader = 0xC,
+    NoticeTeamDissolve = 0xD,
+    NotifyTeamActivityState = 0xE,
+    TeamActivityResult = 0xF,
+    TeamActivityListResult = 0x10,
+    TeamActivityVoteResult = 0x11,
+    NotifyCharMatchResult = 0x12,
+    NotifyTeamMatchResult = 0x13,
+    NotifyCharAbortMatch = 0x14,
+    UpdateTeamMemBeCall = 0x15,
+    NotifyTeamMemBeCall = 0x16,
+    NotifyTeamMemBeCallResult = 0x17,
+    NotifyTeamEnterErr = 0x18,
+    NotifyTeamMemMicrophoneStatusChange = 0x19,
+    NotifyTeamMemsSpeakStatusChange = 0x1A,
+    NotifyTeamMemVoiceIdChange = 0x1B,
+    NotifyTeamChangeMemberType = 0x1C,
+    NotifyTeamGroupUpdate = 0x1D,
+    NotifyInviteJoinDungeons = 0x1E
+}

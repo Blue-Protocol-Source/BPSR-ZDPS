@@ -24,10 +24,10 @@ namespace Zproto {
     static StruReplaceSkillInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X3JlcGxhY2Vfc2tpbGxfaW5mby5wcm90bxIGenByb3RvIloKEFJl",
-            "cGxhY2VTa2lsbEluZm8SDAoEVXVpZBgBIAEoBRIRCgliZWdpblRpbWUYAiAB",
-            "KAMSDwoHc2tpbGxJZBgDIAEoBRIUCgxyZXBsYWNlU2tpbGwYBCABKAViBnBy",
-            "b3RvMw=="));
+            "Ch1zdHJ1X3JlcGxhY2Vfc2tpbGxfaW5mby5wcm90bxIGenByb3RvIl0KEFJl",
+            "cGxhY2VTa2lsbEluZm8SDAoEdXVpZBgBIAEoBRISCgpiZWdpbl90aW1lGAIg",
+            "ASgDEhAKCHNraWxsX2lkGAMgASgFEhUKDXJlcGxhY2Vfc2tpbGwYBCABKAVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new ReplaceSkillInfo(this);
     }
 
-    /// <summary>Field number for the "Uuid" field.</summary>
+    /// <summary>Field number for the "uuid" field.</summary>
     public const int UuidFieldNumber = 1;
     private int uuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "beginTime" field.</summary>
+    /// <summary>Field number for the "begin_time" field.</summary>
     public const int BeginTimeFieldNumber = 2;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skillId" field.</summary>
+    /// <summary>Field number for the "skill_id" field.</summary>
     public const int SkillIdFieldNumber = 3;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "replaceSkill" field.</summary>
+    /// <summary>Field number for the "replace_skill" field.</summary>
     public const int ReplaceSkillFieldNumber = 4;
     private int replaceSkill_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

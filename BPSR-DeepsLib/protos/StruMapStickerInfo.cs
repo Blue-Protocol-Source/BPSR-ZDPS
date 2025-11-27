@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "ChtzdHJ1X21hcF9zdGlja2VyX2luZm8ucHJvdG8SBnpwcm90bxogc3RydV9t",
             "YXBfc3RpY2tlcl90YXNrX2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5w",
-            "cm90byLBAQoOTWFwU3RpY2tlckluZm8SOgoKc3RpY2tlck1hcBgBIAMoCzIm",
-            "Lnpwcm90by5NYXBTdGlja2VySW5mby5TdGlja2VyTWFwRW50cnkSEQoJZmlu",
-            "aXNoTWFwGAIgAygNEhEKCWF3YXJkRmxhZxgDIAEoDRpNCg9TdGlja2VyTWFw",
-            "RW50cnkSCwoDa2V5GAEgASgNEikKBXZhbHVlGAIgASgLMhouenByb3RvLk1h",
-            "cFN0aWNrZXJUYXNrSW5mbzoCOAFiBnByb3RvMw=="));
+            "cm90byLEAQoOTWFwU3RpY2tlckluZm8SOwoLc3RpY2tlcl9tYXAYASADKAsy",
+            "Ji56cHJvdG8uTWFwU3RpY2tlckluZm8uU3RpY2tlck1hcEVudHJ5EhIKCmZp",
+            "bmlzaF9tYXAYAiADKA0SEgoKYXdhcmRfZmxhZxgDIAEoDRpNCg9TdGlja2Vy",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgNEikKBXZhbHVlGAIgASgLMhouenByb3Rv",
+            "Lk1hcFN0aWNrZXJUYXNrSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMapStickerTaskInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new MapStickerInfo(this);
     }
 
-    /// <summary>Field number for the "stickerMap" field.</summary>
+    /// <summary>Field number for the "sticker_map" field.</summary>
     public const int StickerMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.MapStickerTaskInfo>.Codec _map_stickerMap_codec
         = new pbc::MapField<uint, global::Zproto.MapStickerTaskInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MapStickerTaskInfo.Parser), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return stickerMap_; }
     }
 
-    /// <summary>Field number for the "finishMap" field.</summary>
+    /// <summary>Field number for the "finish_map" field.</summary>
     public const int FinishMapFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_finishMap_codec
         = pb::FieldCodec.ForUInt32(18);
@@ -110,7 +110,7 @@ namespace Zproto {
       get { return finishMap_; }
     }
 
-    /// <summary>Field number for the "awardFlag" field.</summary>
+    /// <summary>Field number for the "award_flag" field.</summary>
     public const int AwardFlagFieldNumber = 3;
     private uint awardFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

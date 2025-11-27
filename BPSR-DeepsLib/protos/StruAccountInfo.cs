@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2FjY291bnRfaW5mby5wcm90bxIGenByb3RvGhZzdHJ1X3NvY2lh",
-            "bF9kYXRhLnByb3RvIoUCCgtBY2NvdW50SW5mbxIRCglhY2NvdW50SWQYASAB",
-            "KAkSDgoGb3BlbklkGAIgASgJEiEKBWNoYXJzGAMgAygLMhIuenByb3RvLlNv",
-            "Y2lhbERhdGESDQoFdG9rZW4YBSABKAkSFAoMcmVzdHJpY3RUaW1lGAYgASgD",
-            "Ek0KFWRlbGV0ZUNoYXJJZHNMZWZ0VGltZRgHIAMoCzIuLnpwcm90by5BY2Nv",
-            "dW50SW5mby5EZWxldGVDaGFySWRzTGVmdFRpbWVFbnRyeRo8ChpEZWxldGVD",
-            "aGFySWRzTGVmdFRpbWVFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiAB",
-            "KAM6AjgBYgZwcm90bzM="));
+            "bF9kYXRhLnByb3RvIowCCgtBY2NvdW50SW5mbxISCgphY2NvdW50X2lkGAEg",
+            "ASgJEg8KB29wZW5faWQYAiABKAkSIQoFY2hhcnMYAyADKAsyEi56cHJvdG8u",
+            "U29jaWFsRGF0YRINCgV0b2tlbhgFIAEoCRIVCg1yZXN0cmljdF90aW1lGAYg",
+            "ASgDElEKGWRlbGV0ZV9jaGFyX2lkc19sZWZ0X3RpbWUYByADKAsyLi56cHJv",
+            "dG8uQWNjb3VudEluZm8uRGVsZXRlQ2hhcklkc0xlZnRUaW1lRW50cnkaPAoa",
+            "RGVsZXRlQ2hhcklkc0xlZnRUaW1lRW50cnkSCwoDa2V5GAEgASgDEg0KBXZh",
+            "bHVlGAIgASgDOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSocialDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +92,7 @@ namespace Zproto {
       return new AccountInfo(this);
     }
 
-    /// <summary>Field number for the "accountId" field.</summary>
+    /// <summary>Field number for the "account_id" field.</summary>
     public const int AccountIdFieldNumber = 1;
     private string accountId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "openId" field.</summary>
+    /// <summary>Field number for the "open_id" field.</summary>
     public const int OpenIdFieldNumber = 2;
     private string openId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "restrictTime" field.</summary>
+    /// <summary>Field number for the "restrict_time" field.</summary>
     public const int RestrictTimeFieldNumber = 6;
     private long restrictTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "deleteCharIdsLeftTime" field.</summary>
+    /// <summary>Field number for the "delete_char_ids_left_time" field.</summary>
     public const int DeleteCharIdsLeftTimeFieldNumber = 7;
     private static readonly pbc::MapField<long, long>.Codec _map_deleteCharIdsLeftTime_codec
         = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 58);

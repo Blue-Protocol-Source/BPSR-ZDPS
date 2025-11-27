@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3VzZXJfcmVjb21tZW5kX3BsYXlfZGF0YS5wcm90bxIGenByb3Rv",
-            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ihwEKFVVzZXJSZWNvbW1lbmRQbGF5",
-            "RGF0YRI9CghwbGF5TWFpbBgBIAMoCzIrLnpwcm90by5Vc2VyUmVjb21tZW5k",
-            "UGxheURhdGEuUGxheU1haWxFbnRyeRovCg1QbGF5TWFpbEVudHJ5EgsKA2tl",
-            "eRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAFiBnByb3RvMw=="));
+            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iiAEKFVVzZXJSZWNvbW1lbmRQbGF5",
+            "RGF0YRI+CglwbGF5X21haWwYASADKAsyKy56cHJvdG8uVXNlclJlY29tbWVu",
+            "ZFBsYXlEYXRhLlBsYXlNYWlsRW50cnkaLwoNUGxheU1haWxFbnRyeRILCgNr",
+            "ZXkYASABKAUSDQoFdmFsdWUYAiABKAM6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new UserRecommendPlayData(this);
     }
 
-    /// <summary>Field number for the "playMail" field.</summary>
+    /// <summary>Field number for the "play_mail" field.</summary>
     public const int PlayMailFieldNumber = 1;
     private static readonly pbc::MapField<int, long>.Codec _map_playMail_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 10);

@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3NlYXNvbl9yYW5rX2RhdGEucHJvdG8SBnpwcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvIoIBCg5TZWFzb25SYW5rRGF0YRI8CgtzZWFzb25S",
-            "YW5rcxgBIAMoCzInLnpwcm90by5TZWFzb25SYW5rRGF0YS5TZWFzb25SYW5r",
-            "c0VudHJ5GjIKEFNlYXNvblJhbmtzRW50cnkSCwoDa2V5GAEgASgNEg0KBXZh",
-            "bHVlGAIgASgNOgI4AWIGcHJvdG8z"));
+            "aXJ0eV9tYXNrLnByb3RvIoMBCg5TZWFzb25SYW5rRGF0YRI9CgxzZWFzb25f",
+            "cmFua3MYASADKAsyJy56cHJvdG8uU2Vhc29uUmFua0RhdGEuU2Vhc29uUmFu",
+            "a3NFbnRyeRoyChBTZWFzb25SYW5rc0VudHJ5EgsKA2tleRgBIAEoDRINCgV2",
+            "YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new SeasonRankData(this);
     }
 
-    /// <summary>Field number for the "seasonRanks" field.</summary>
+    /// <summary>Field number for the "season_ranks" field.</summary>
     public const int SeasonRanksFieldNumber = 1;
     private static readonly pbc::MapField<uint, uint>.Codec _map_seasonRanks_codec
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 10);

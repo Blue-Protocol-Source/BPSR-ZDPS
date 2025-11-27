@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CjFzdHJ1X25vdGljZV91cGRhdGVfdGVhbV9tZW1iZXJfaW5mb19yZXF1ZXN0",
             "LnByb3RvEgZ6cHJvdG8aJXN0cnVfdGVhbV9tZW1iZXJfZmFzdF9zeW5jX2Rh",
-            "dGEucHJvdG8aGHN0cnVfdGVhbV9tZW1fZGF0YS5wcm90byKUAQohTm90aWNl",
-            "VXBkYXRlVGVhbU1lbWJlckluZm9SZXF1ZXN0EjsKE3RlYW1NZW1iZXJTeW5j",
-            "RGF0YXMYBSADKAsyHi56cHJvdG8uVGVhbU1lbWJlckZhc3RTeW5jRGF0YRIy",
-            "ChV0ZWFtTWVtYmVyU29jaWFsRGF0YXMYBiADKAsyEy56cHJvdG8uVGVhbU1l",
-            "bURhdGFiBnByb3RvMw=="));
+            "dGEucHJvdG8aGHN0cnVfdGVhbV9tZW1fZGF0YS5wcm90byKaAQohTm90aWNl",
+            "VXBkYXRlVGVhbU1lbWJlckluZm9SZXF1ZXN0Ej4KFnRlYW1fbWVtYmVyX3N5",
+            "bmNfZGF0YXMYBSADKAsyHi56cHJvdG8uVGVhbU1lbWJlckZhc3RTeW5jRGF0",
+            "YRI1Chh0ZWFtX21lbWJlcl9zb2NpYWxfZGF0YXMYBiADKAsyEy56cHJvdG8u",
+            "VGVhbU1lbURhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTeamMemberFastSyncDataReflection.Descriptor, global::Zproto.StruTeamMemDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new NoticeUpdateTeamMemberInfoRequest(this);
     }
 
-    /// <summary>Field number for the "teamMemberSyncDatas" field.</summary>
+    /// <summary>Field number for the "team_member_sync_datas" field.</summary>
     public const int TeamMemberSyncDatasFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.TeamMemberFastSyncData> _repeated_teamMemberSyncDatas_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.TeamMemberFastSyncData.Parser);
@@ -98,7 +98,7 @@ namespace Zproto {
       get { return teamMemberSyncDatas_; }
     }
 
-    /// <summary>Field number for the "teamMemberSocialDatas" field.</summary>
+    /// <summary>Field number for the "team_member_social_datas" field.</summary>
     public const int TeamMemberSocialDatasFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Zproto.TeamMemData> _repeated_teamMemberSocialDatas_codec
         = pb::FieldCodec.ForMessage(50, global::Zproto.TeamMemData.Parser);

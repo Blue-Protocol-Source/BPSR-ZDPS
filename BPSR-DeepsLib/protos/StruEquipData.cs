@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2VxdWlwX2RhdGEucHJvdG8SBnpwcm90bxoVc3RydV9lcXVpcF9u",
-            "aW5lLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iMgoJRXF1aXBEYXRh",
-            "EiUKCmVxdWlwSW5mb3MYASADKAsyES56cHJvdG8uRXF1aXBOaW5lYgZwcm90",
-            "bzM="));
+            "aW5lLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iMwoJRXF1aXBEYXRh",
+            "EiYKC2VxdWlwX2luZm9zGAEgAygLMhEuenByb3RvLkVxdWlwTmluZWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruEquipNineReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new EquipData(this);
     }
 
-    /// <summary>Field number for the "equipInfos" field.</summary>
+    /// <summary>Field number for the "equip_infos" field.</summary>
     public const int EquipInfosFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.EquipNine> _repeated_equipInfos_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.EquipNine.Parser);

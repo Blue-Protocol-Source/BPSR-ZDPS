@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X3NldF90ZWFtX3RhcmdldF9pbmZvX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90byJbChhTZXRUZWFtVGFyZ2V0SW5mb1JlcXVlc3QSEAoIdGFyZ2V0SWQY",
-            "AiABKA0SDAoEc2hvdxgDIAEoCBIRCglhdXRvTWF0Y2gYBCABKAgSDAoEZGVz",
-            "YxgFIAEoCWIGcHJvdG8z"));
+            "cm90byJdChhTZXRUZWFtVGFyZ2V0SW5mb1JlcXVlc3QSEQoJdGFyZ2V0X2lk",
+            "GAIgASgNEgwKBHNob3cYAyABKAgSEgoKYXV0b19tYXRjaBgEIAEoCBIMCgRk",
+            "ZXNjGAUgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new SetTeamTargetInfoRequest(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 2;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "autoMatch" field.</summary>
+    /// <summary>Field number for the "auto_match" field.</summary>
     public const int AutoMatchFieldNumber = 4;
     private bool autoMatch_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

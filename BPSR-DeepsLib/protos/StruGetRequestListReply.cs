@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X2dldF9yZXF1ZXN0X2xpc3RfcmVwbHkucHJvdG8SBnpwcm90bxoX",
             "ZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aHHN0cnVfcmVxdWVzdF9qb2luX2lu",
-            "Zm8ucHJvdG8iZAoTR2V0UmVxdWVzdExpc3RSZXBseRIoCgdyZXFMaXN0GAEg",
-            "AygLMhcuenByb3RvLlJlcXVlc3RKb2luSW5mbxIjCgdlcnJDb2RlGAIgASgO",
-            "MhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "Zm8ucHJvdG8iZgoTR2V0UmVxdWVzdExpc3RSZXBseRIpCghyZXFfbGlzdBgB",
+            "IAMoCzIXLnpwcm90by5SZXF1ZXN0Sm9pbkluZm8SJAoIZXJyX2NvZGUYAiAB",
+            "KA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruRequestJoinInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new GetRequestListReply(this);
     }
 
-    /// <summary>Field number for the "reqList" field.</summary>
+    /// <summary>Field number for the "req_list" field.</summary>
     public const int ReqListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.RequestJoinInfo> _repeated_reqList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.RequestJoinInfo.Parser);
@@ -96,7 +96,7 @@ namespace Zproto {
       get { return reqList_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

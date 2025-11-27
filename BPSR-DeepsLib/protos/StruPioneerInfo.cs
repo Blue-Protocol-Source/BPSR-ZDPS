@@ -25,16 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X3Bpb25lZXJfaW5mby5wcm90bxIGenByb3RvGhdlbnVtX2VfZXJy",
-            "b3JfY29kZS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIokDCgtQaW9u",
-            "ZWVySW5mbxIUCgxjdXJyZW50VG90YWwYASABKA0SMQoHdGFyZ2V0cxgCIAMo",
-            "CzIgLnpwcm90by5QaW9uZWVySW5mby5UYXJnZXRzRW50cnkSLwoGYXdhcmRz",
-            "GAMgAygLMh8uenByb3RvLlBpb25lZXJJbmZvLkF3YXJkc0VudHJ5EjsKDGVu",
-            "dGVyZWRab25lcxgEIAMoCzIlLnpwcm90by5QaW9uZWVySW5mby5FbnRlcmVk",
-            "Wm9uZXNFbnRyeRIKCgJpZBgFIAEoDRIjCgdlcnJDb2RlGAYgASgOMhIuenBy",
-            "b3RvLkVFcnJvckNvZGUaLgoMVGFyZ2V0c0VudHJ5EgsKA2tleRgBIAEoDRIN",
-            "CgV2YWx1ZRgCIAEoDToCOAEaLQoLQXdhcmRzRW50cnkSCwoDa2V5GAEgASgF",
-            "Eg0KBXZhbHVlGAIgASgIOgI4ARozChFFbnRlcmVkWm9uZXNFbnRyeRILCgNr",
-            "ZXkYASABKA0SDQoFdmFsdWUYAiABKAg6AjgBYgZwcm90bzM="));
+            "b3JfY29kZS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIowDCgtQaW9u",
+            "ZWVySW5mbxIVCg1jdXJyZW50X3RvdGFsGAEgASgNEjEKB3RhcmdldHMYAiAD",
+            "KAsyIC56cHJvdG8uUGlvbmVlckluZm8uVGFyZ2V0c0VudHJ5Ei8KBmF3YXJk",
+            "cxgDIAMoCzIfLnpwcm90by5QaW9uZWVySW5mby5Bd2FyZHNFbnRyeRI8Cg1l",
+            "bnRlcmVkX3pvbmVzGAQgAygLMiUuenByb3RvLlBpb25lZXJJbmZvLkVudGVy",
+            "ZWRab25lc0VudHJ5EgoKAmlkGAUgASgNEiQKCGVycl9jb2RlGAYgASgOMhIu",
+            "enByb3RvLkVFcnJvckNvZGUaLgoMVGFyZ2V0c0VudHJ5EgsKA2tleRgBIAEo",
+            "DRINCgV2YWx1ZRgCIAEoDToCOAEaLQoLQXdhcmRzRW50cnkSCwoDa2V5GAEg",
+            "ASgFEg0KBXZhbHVlGAIgASgIOgI4ARozChFFbnRlcmVkWm9uZXNFbnRyeRIL",
+            "CgNrZXkYASABKA0SDQoFdmFsdWUYAiABKAg6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       return new PioneerInfo(this);
     }
 
-    /// <summary>Field number for the "currentTotal" field.</summary>
+    /// <summary>Field number for the "current_total" field.</summary>
     public const int CurrentTotalFieldNumber = 1;
     private uint currentTotal_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +129,7 @@ namespace Zproto {
       get { return awards_; }
     }
 
-    /// <summary>Field number for the "enteredZones" field.</summary>
+    /// <summary>Field number for the "entered_zones" field.</summary>
     public const int EnteredZonesFieldNumber = 4;
     private static readonly pbc::MapField<uint, bool>.Codec _map_enteredZones_codec
         = new pbc::MapField<uint, bool>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForBool(16, false), 34);
@@ -152,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

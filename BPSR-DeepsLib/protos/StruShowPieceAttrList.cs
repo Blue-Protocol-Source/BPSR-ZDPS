@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X3Nob3dfcGllY2VfYXR0cl9saXN0LnByb3RvEgZ6cHJvdG8aGnN0",
-            "cnVfc2hvd19waWVjZV9hdHRyLnByb3RvIkIKEVNob3dQaWVjZUF0dHJMaXN0",
-            "Ei0KDnNob3dQaWVjZUF0dHJzGAEgAygLMhUuenByb3RvLlNob3dQaWVjZUF0",
-            "dHJiBnByb3RvMw=="));
+            "cnVfc2hvd19waWVjZV9hdHRyLnByb3RvIkQKEVNob3dQaWVjZUF0dHJMaXN0",
+            "Ei8KEHNob3dfcGllY2VfYXR0cnMYASADKAsyFS56cHJvdG8uU2hvd1BpZWNl",
+            "QXR0cmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruShowPieceAttrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ShowPieceAttrList(this);
     }
 
-    /// <summary>Field number for the "showPieceAttrs" field.</summary>
+    /// <summary>Field number for the "show_piece_attrs" field.</summary>
     public const int ShowPieceAttrsFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.ShowPieceAttr> _repeated_showPieceAttrs_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.ShowPieceAttr.Parser);

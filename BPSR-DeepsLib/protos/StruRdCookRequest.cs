@@ -24,9 +24,9 @@ namespace Zproto {
     static StruRdCookRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X3JkX2Nvb2tfcmVxdWVzdC5wcm90bxIGenByb3RvIjsKDVJkQ29v",
-            "a1JlcXVlc3QSFQoNbWFpbk1hdGVyaWFscxgBIAMoBRITCgtjb29rTWV0aG9k",
-            "cxgCIAMoBWIGcHJvdG8z"));
+            "ChpzdHJ1X3JkX2Nvb2tfcmVxdWVzdC5wcm90bxIGenByb3RvIj0KDVJkQ29v",
+            "a1JlcXVlc3QSFgoObWFpbl9tYXRlcmlhbHMYASADKAUSFAoMY29va19tZXRo",
+            "b2RzGAIgAygFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new RdCookRequest(this);
     }
 
-    /// <summary>Field number for the "mainMaterials" field.</summary>
+    /// <summary>Field number for the "main_materials" field.</summary>
     public const int MainMaterialsFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_mainMaterials_codec
         = pb::FieldCodec.ForInt32(10);
@@ -94,7 +94,7 @@ namespace Zproto {
       get { return mainMaterials_; }
     }
 
-    /// <summary>Field number for the "cookMethods" field.</summary>
+    /// <summary>Field number for the "cook_methods" field.</summary>
     public const int CookMethodsFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_cookMethods_codec
         = pb::FieldCodec.ForInt32(18);

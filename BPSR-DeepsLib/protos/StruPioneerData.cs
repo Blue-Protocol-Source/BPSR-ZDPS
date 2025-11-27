@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X3Bpb25lZXJfZGF0YS5wcm90bxIGenByb3RvGhdzdHJ1X3Bpb25l",
-            "ZXJfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIoUBCgtQaW9u",
-            "ZWVyRGF0YRIxCgdpbmZvTWFwGAEgAygLMiAuenByb3RvLlBpb25lZXJEYXRh",
-            "LkluZm9NYXBFbnRyeRpDCgxJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgNEiIK",
-            "BXZhbHVlGAIgASgLMhMuenByb3RvLlBpb25lZXJJbmZvOgI4AWIGcHJvdG8z"));
+            "ZXJfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIoYBCgtQaW9u",
+            "ZWVyRGF0YRIyCghpbmZvX21hcBgBIAMoCzIgLnpwcm90by5QaW9uZWVyRGF0",
+            "YS5JbmZvTWFwRW50cnkaQwoMSW5mb01hcEVudHJ5EgsKA2tleRgBIAEoDRIi",
+            "CgV2YWx1ZRgCIAEoCzITLnpwcm90by5QaW9uZWVySW5mbzoCOAFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPioneerInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new PioneerData(this);
     }
 
-    /// <summary>Field number for the "infoMap" field.</summary>
+    /// <summary>Field number for the "info_map" field.</summary>
     public const int InfoMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.PioneerInfo>.Codec _map_infoMap_codec
         = new pbc::MapField<uint, global::Zproto.PioneerInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.PioneerInfo.Parser), 10);

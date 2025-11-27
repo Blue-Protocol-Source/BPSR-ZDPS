@@ -26,18 +26,18 @@ namespace Zproto {
           string.Concat(
             "CjZzdHJ1X2dldF9ob21lbGFuZF9mdXJuaXR1cmVfd2FyZWhvdXNlX2luZm9f",
             "cmVwbHkucHJvdG8SBnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8a",
-            "InN0cnVfaG9tZV9sYW5kX2l0ZW1faW5zdGFuY2UucHJvdG8i5QMKJkdldEhv",
+            "InN0cnVfaG9tZV9sYW5kX2l0ZW1faW5zdGFuY2UucHJvdG8i6AMKJkdldEhv",
             "bWVsYW5kRnVybml0dXJlV2FyZWhvdXNlSW5mb1JlcGx5EkgKBWl0ZW1zGAEg",
             "AygLMjkuenByb3RvLkdldEhvbWVsYW5kRnVybml0dXJlV2FyZWhvdXNlSW5m",
             "b1JlcGx5Lkl0ZW1zRW50cnkSSAoFc2xvdHMYAiADKAsyOS56cHJvdG8uR2V0",
             "SG9tZWxhbmRGdXJuaXR1cmVXYXJlaG91c2VJbmZvUmVwbHkuU2xvdHNFbnRy",
-            "eRJUCgtpdGVtVG9TbG90cxgDIAMoCzI/Lnpwcm90by5HZXRIb21lbGFuZEZ1",
-            "cm5pdHVyZVdhcmVob3VzZUluZm9SZXBseS5JdGVtVG9TbG90c0VudHJ5EiMK",
-            "B2VyckNvZGUYBCABKA4yEi56cHJvdG8uRUVycm9yQ29kZRpKCgpJdGVtc0Vu",
-            "dHJ5EgsKA2tleRgBIAEoAxIrCgV2YWx1ZRgCIAEoCzIcLnpwcm90by5Ib21l",
-            "TGFuZEl0ZW1JbnN0YW5jZToCOAEaLAoKU2xvdHNFbnRyeRILCgNrZXkYASAB",
-            "KAMSDQoFdmFsdWUYAiABKAM6AjgBGjIKEEl0ZW1Ub1Nsb3RzRW50cnkSCwoD",
-            "a2V5GAEgASgDEg0KBXZhbHVlGAIgASgDOgI4AWIGcHJvdG8z"));
+            "eRJWCg1pdGVtX3RvX3Nsb3RzGAMgAygLMj8uenByb3RvLkdldEhvbWVsYW5k",
+            "RnVybml0dXJlV2FyZWhvdXNlSW5mb1JlcGx5Lkl0ZW1Ub1Nsb3RzRW50cnkS",
+            "JAoIZXJyX2NvZGUYBCABKA4yEi56cHJvdG8uRUVycm9yQ29kZRpKCgpJdGVt",
+            "c0VudHJ5EgsKA2tleRgBIAEoAxIrCgV2YWx1ZRgCIAEoCzIcLnpwcm90by5I",
+            "b21lTGFuZEl0ZW1JbnN0YW5jZToCOAEaLAoKU2xvdHNFbnRyeRILCgNrZXkY",
+            "ASABKAMSDQoFdmFsdWUYAiABKAM6AjgBGjIKEEl0ZW1Ub1Nsb3RzRW50cnkS",
+            "CwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgDOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruHomeLandItemInstanceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -118,7 +118,7 @@ namespace Zproto {
       get { return slots_; }
     }
 
-    /// <summary>Field number for the "itemToSlots" field.</summary>
+    /// <summary>Field number for the "item_to_slots" field.</summary>
     public const int ItemToSlotsFieldNumber = 3;
     private static readonly pbc::MapField<long, long>.Codec _map_itemToSlots_codec
         = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 26);
@@ -129,7 +129,7 @@ namespace Zproto {
       get { return itemToSlots_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

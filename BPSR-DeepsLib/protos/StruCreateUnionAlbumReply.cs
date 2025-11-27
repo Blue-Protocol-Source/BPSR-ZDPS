@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X2NyZWF0ZV91bmlvbl9hbGJ1bV9yZXBseS5wcm90bxIGenByb3Rv",
             "GhVzdHJ1X2FsYnVtX3Nob3cucHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnBy",
-            "b3RvImIKFUNyZWF0ZVVuaW9uQWxidW1SZXBseRIkCglhbGJ1bUluZm8YASAB",
-            "KAsyES56cHJvdG8uQWxidW1TaG93EiMKB2VyckNvZGUYAiABKA4yEi56cHJv",
-            "dG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "b3RvImQKFUNyZWF0ZVVuaW9uQWxidW1SZXBseRIlCgphbGJ1bV9pbmZvGAEg",
+            "ASgLMhEuenByb3RvLkFsYnVtU2hvdxIkCghlcnJfY29kZRgCIAEoDjISLnpw",
+            "cm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAlbumShowReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CreateUnionAlbumReply(this);
     }
 
-    /// <summary>Field number for the "albumInfo" field.</summary>
+    /// <summary>Field number for the "album_info" field.</summary>
     public const int AlbumInfoFieldNumber = 1;
     private global::Zproto.AlbumShow albumInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

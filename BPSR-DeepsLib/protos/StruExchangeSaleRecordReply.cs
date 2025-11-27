@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiVzdHJ1X2V4Y2hhbmdlX3NhbGVfcmVjb3JkX3JlcGx5LnByb3RvEgZ6cHJv",
             "dG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGh9zdHJ1X2V4Y2hhbmdlX3Nh",
-            "bGVfcmVjb3JkLnByb3RvIp0BChdFeGNoYW5nZVNhbGVSZWNvcmRSZXBseRIt",
-            "CglidXlSZWNvcmQYAiADKAsyGi56cHJvdG8uRXhjaGFuZ2VTYWxlUmVjb3Jk",
-            "Ei4KCnNlbGxSZWNvcmQYAyADKAsyGi56cHJvdG8uRXhjaGFuZ2VTYWxlUmVj",
-            "b3JkEiMKB2VyckNvZGUYBCABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJv",
-            "dG8z"));
+            "bGVfcmVjb3JkLnByb3RvIqABChdFeGNoYW5nZVNhbGVSZWNvcmRSZXBseRIu",
+            "CgpidXlfcmVjb3JkGAIgAygLMhouenByb3RvLkV4Y2hhbmdlU2FsZVJlY29y",
+            "ZBIvCgtzZWxsX3JlY29yZBgDIAMoCzIaLnpwcm90by5FeGNoYW5nZVNhbGVS",
+            "ZWNvcmQSJAoIZXJyX2NvZGUYBCABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruExchangeSaleRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new ExchangeSaleRecordReply(this);
     }
 
-    /// <summary>Field number for the "buyRecord" field.</summary>
+    /// <summary>Field number for the "buy_record" field.</summary>
     public const int BuyRecordFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.ExchangeSaleRecord> _repeated_buyRecord_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.ExchangeSaleRecord.Parser);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return buyRecord_; }
     }
 
-    /// <summary>Field number for the "sellRecord" field.</summary>
+    /// <summary>Field number for the "sell_record" field.</summary>
     public const int SellRecordFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.ExchangeSaleRecord> _repeated_sellRecord_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.ExchangeSaleRecord.Parser);
@@ -110,7 +110,7 @@ namespace Zproto {
       get { return sellRecord_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

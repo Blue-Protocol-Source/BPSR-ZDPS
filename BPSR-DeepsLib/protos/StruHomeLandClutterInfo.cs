@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X2hvbWVfbGFuZF9jbHV0dGVyX2luZm8ucHJvdG8SBnpwcm90bxoS",
-            "c3RydV9jbHV0dGVyLnByb3RvIqkBChNIb21lTGFuZENsdXR0ZXJJbmZvEkkK",
-            "D2hvbWVMYW5kQ2x1dHRlchgBIAMoCzIwLnpwcm90by5Ib21lTGFuZENsdXR0",
-            "ZXJJbmZvLkhvbWVMYW5kQ2x1dHRlckVudHJ5GkcKFEhvbWVMYW5kQ2x1dHRl",
-            "ckVudHJ5EgsKA2tleRgBIAEoAxIeCgV2YWx1ZRgCIAEoCzIPLnpwcm90by5D",
-            "bHV0dGVyOgI4AWIGcHJvdG8z"));
+            "c3RydV9jbHV0dGVyLnByb3RvIqsBChNIb21lTGFuZENsdXR0ZXJJbmZvEksK",
+            "EWhvbWVfbGFuZF9jbHV0dGVyGAEgAygLMjAuenByb3RvLkhvbWVMYW5kQ2x1",
+            "dHRlckluZm8uSG9tZUxhbmRDbHV0dGVyRW50cnkaRwoUSG9tZUxhbmRDbHV0",
+            "dGVyRW50cnkSCwoDa2V5GAEgASgDEh4KBXZhbHVlGAIgASgLMg8uenByb3Rv",
+            "LkNsdXR0ZXI6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruClutterReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new HomeLandClutterInfo(this);
     }
 
-    /// <summary>Field number for the "homeLandClutter" field.</summary>
+    /// <summary>Field number for the "home_land_clutter" field.</summary>
     public const int HomeLandClutterFieldNumber = 1;
     private static readonly pbc::MapField<long, global::Zproto.Clutter>.Codec _map_homeLandClutter_codec
         = new pbc::MapField<long, global::Zproto.Clutter>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.Clutter.Parser), 10);

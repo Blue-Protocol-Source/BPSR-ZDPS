@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiVzdHJ1X2dldF90bXBfYWxidW1fcGhvdG9zX3JlcGx5LnByb3RvEgZ6cHJv",
             "dG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhtzdHJ1X3Bob3RvX2dyYXBo",
-            "X3Nob3cucHJvdG8imgEKFkdldFRtcEFsYnVtUGhvdG9zUmVwbHkSKwoLcGhv",
-            "dG9HcmFwaHMYASADKAsyFi56cHJvdG8uUGhvdG9HcmFwaFNob3cSFgoOY3Vy",
-            "VXBsb2FkVGltZXMYAiABKAUSFgoObWF4VXBsb2FkVGltZXMYAyABKAUSIwoH",
-            "ZXJyQ29kZRgEIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "X3Nob3cucHJvdG8ioAEKFkdldFRtcEFsYnVtUGhvdG9zUmVwbHkSLAoMcGhv",
+            "dG9fZ3JhcGhzGAEgAygLMhYuenByb3RvLlBob3RvR3JhcGhTaG93EhgKEGN1",
+            "cl91cGxvYWRfdGltZXMYAiABKAUSGAoQbWF4X3VwbG9hZF90aW1lcxgDIAEo",
+            "BRIkCghlcnJfY29kZRgEIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruPhotoGraphShowReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new GetTmpAlbumPhotosReply(this);
     }
 
-    /// <summary>Field number for the "photoGraphs" field.</summary>
+    /// <summary>Field number for the "photo_graphs" field.</summary>
     public const int PhotoGraphsFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.PhotoGraphShow> _repeated_photoGraphs_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.PhotoGraphShow.Parser);
@@ -99,7 +100,7 @@ namespace Zproto {
       get { return photoGraphs_; }
     }
 
-    /// <summary>Field number for the "curUploadTimes" field.</summary>
+    /// <summary>Field number for the "cur_upload_times" field.</summary>
     public const int CurUploadTimesFieldNumber = 2;
     private int curUploadTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxUploadTimes" field.</summary>
+    /// <summary>Field number for the "max_upload_times" field.</summary>
     public const int MaxUploadTimesFieldNumber = 3;
     private int maxUploadTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

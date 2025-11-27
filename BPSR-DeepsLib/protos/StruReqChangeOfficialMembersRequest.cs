@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X3JlcV9jaGFuZ2Vfb2ZmaWNpYWxfbWVtYmVyc19yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8iwQEKH1JlcUNoYW5nZU9mZmljaWFsTWVtYmVyc1JlcXVl",
-            "c3QSDwoHdW5pb25JZBgCIAEoAxJVCg9jaGFuZ2VPZmZpY2lhbHMYAyADKAsy",
-            "PC56cHJvdG8uUmVxQ2hhbmdlT2ZmaWNpYWxNZW1iZXJzUmVxdWVzdC5DaGFu",
-            "Z2VPZmZpY2lhbHNFbnRyeRo2ChRDaGFuZ2VPZmZpY2lhbHNFbnRyeRILCgNr",
-            "ZXkYASABKA0SDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "b3RvEgZ6cHJvdG8iwwEKH1JlcUNoYW5nZU9mZmljaWFsTWVtYmVyc1JlcXVl",
+            "c3QSEAoIdW5pb25faWQYAiABKAMSVgoQY2hhbmdlX29mZmljaWFscxgDIAMo",
+            "CzI8Lnpwcm90by5SZXFDaGFuZ2VPZmZpY2lhbE1lbWJlcnNSZXF1ZXN0LkNo",
+            "YW5nZU9mZmljaWFsc0VudHJ5GjYKFENoYW5nZU9mZmljaWFsc0VudHJ5EgsK",
+            "A2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoBToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new ReqChangeOfficialMembersRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "changeOfficials" field.</summary>
+    /// <summary>Field number for the "change_officials" field.</summary>
     public const int ChangeOfficialsFieldNumber = 3;
     private static readonly pbc::MapField<uint, int>.Codec _map_changeOfficials_codec
         = new pbc::MapField<uint, int>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 26);

@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X3JlcV90cmFuc2Zlcl9wcmVzaWRlbnRfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvIkcKG1JlcVRyYW5zZmVyUHJlc2lkZW50UmVxdWVzdBIPCgd1bmlv",
-            "bklkGAIgASgDEhcKD3ZOZXdQcmVzaWRlbnRJZBgDIAEoDWIGcHJvdG8z"));
+            "enByb3RvIksKG1JlcVRyYW5zZmVyUHJlc2lkZW50UmVxdWVzdBIQCgh1bmlv",
+            "bl9pZBgCIAEoAxIaChJ2X25ld19wcmVzaWRlbnRfaWQYAyABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new ReqTransferPresidentRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "vNewPresidentId" field.</summary>
+    /// <summary>Field number for the "v_new_president_id" field.</summary>
     public const int VNewPresidentIdFieldNumber = 3;
     private uint vNewPresidentId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

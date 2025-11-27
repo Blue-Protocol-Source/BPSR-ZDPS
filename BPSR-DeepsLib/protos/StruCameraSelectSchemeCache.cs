@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2NhbWVyYV9zZWxlY3Rfc2NoZW1lX2NhY2hlLnByb3RvEgZ6cHJv",
-            "dG8aHXN0cnVfY2FtZXJhX3NjaGVtZV9pbmZvLnByb3RvIk4KF2NhbWVyYVNl",
-            "bGVjdFNjaGVtZUNhY2hlEjMKEWNhbWVyYVNjaGVtZUNhY2hlGAEgASgLMhgu",
-            "enByb3RvLmNhbWVyYVNjaGVtZUluZm9iBnByb3RvMw=="));
+            "dG8aHXN0cnVfY2FtZXJhX3NjaGVtZV9pbmZvLnByb3RvIlAKF2NhbWVyYVNl",
+            "bGVjdFNjaGVtZUNhY2hlEjUKE2NhbWVyYV9zY2hlbWVfY2FjaGUYASABKAsy",
+            "GC56cHJvdG8uY2FtZXJhU2NoZW1lSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCameraSchemeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new cameraSelectSchemeCache(this);
     }
 
-    /// <summary>Field number for the "cameraSchemeCache" field.</summary>
+    /// <summary>Field number for the "camera_scheme_cache" field.</summary>
     public const int CameraSchemeCacheFieldNumber = 1;
     private global::Zproto.cameraSchemeInfo cameraSchemeCache_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

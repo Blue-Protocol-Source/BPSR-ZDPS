@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X21vbnRobHlfY2FyZF9pbmZvLnByb3RvEgZ6cHJvdG8aImVudW1f",
             "ZV9yZWNlaXZlX3Jld2FyZF9zdGF0dXMucHJvdG8aGnN0cnVfbW9udGhfY2Fy",
-            "ZF9pdGVtLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8izgEKD01vbnRo",
-            "bHlDYXJkSW5mbxI2ChBsaW1pdEF3YXJkU3RhdHVzGAEgASgOMhwuenByb3Rv",
-            "LkVSZWNlaXZlUmV3YXJkU3RhdHVzEjEKC2F3YXJkU3RhdHVzGAIgASgOMhwu",
-            "enByb3RvLkVSZWNlaXZlUmV3YXJkU3RhdHVzEiwKDW1vbnRoQ2FyZEl0ZW0Y",
-            "AyABKAsyFS56cHJvdG8uTW9udGhDYXJkSXRlbRIRCgliZWdpblRpbWUYBCAB",
-            "KAMSDwoHZW5kVGltZRgFIAEoA2IGcHJvdG8z"));
+            "ZF9pdGVtLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i1QEKD01vbnRo",
+            "bHlDYXJkSW5mbxI4ChJsaW1pdF9hd2FyZF9zdGF0dXMYASABKA4yHC56cHJv",
+            "dG8uRVJlY2VpdmVSZXdhcmRTdGF0dXMSMgoMYXdhcmRfc3RhdHVzGAIgASgO",
+            "MhwuenByb3RvLkVSZWNlaXZlUmV3YXJkU3RhdHVzEi4KD21vbnRoX2NhcmRf",
+            "aXRlbRgDIAEoCzIVLnpwcm90by5Nb250aENhcmRJdGVtEhIKCmJlZ2luX3Rp",
+            "bWUYBCABKAMSEAoIZW5kX3RpbWUYBSABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEReceiveRewardStatusReflection.Descriptor, global::Zproto.StruMonthCardItemReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +91,7 @@ namespace Zproto {
       return new MonthlyCardInfo(this);
     }
 
-    /// <summary>Field number for the "limitAwardStatus" field.</summary>
+    /// <summary>Field number for the "limit_award_status" field.</summary>
     public const int LimitAwardStatusFieldNumber = 1;
     private global::Zproto.EReceiveRewardStatus limitAwardStatus_ = global::Zproto.EReceiveRewardStatus.NotReceive;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "awardStatus" field.</summary>
+    /// <summary>Field number for the "award_status" field.</summary>
     public const int AwardStatusFieldNumber = 2;
     private global::Zproto.EReceiveRewardStatus awardStatus_ = global::Zproto.EReceiveRewardStatus.NotReceive;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "monthCardItem" field.</summary>
+    /// <summary>Field number for the "month_card_item" field.</summary>
     public const int MonthCardItemFieldNumber = 3;
     private global::Zproto.MonthCardItem monthCardItem_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "beginTime" field.</summary>
+    /// <summary>Field number for the "begin_time" field.</summary>
     public const int BeginTimeFieldNumber = 4;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "endTime" field.</summary>
+    /// <summary>Field number for the "end_time" field.</summary>
     public const int EndTimeFieldNumber = 5;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

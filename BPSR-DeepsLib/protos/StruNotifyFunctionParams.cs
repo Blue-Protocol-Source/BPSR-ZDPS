@@ -24,9 +24,9 @@ namespace Zproto {
     static StruNotifyFunctionParamsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X25vdGlmeV9mdW5jdGlvbl9wYXJhbXMucHJvdG8SBnpwcm90byIt",
-            "ChROb3RpZnlGdW5jdGlvblBhcmFtcxIVCg1jbG9zZUZ1bmN0aW9uGAEgAygF",
-            "YgZwcm90bzM="));
+            "CiFzdHJ1X25vdGlmeV9mdW5jdGlvbl9wYXJhbXMucHJvdG8SBnpwcm90byIu",
+            "ChROb3RpZnlGdW5jdGlvblBhcmFtcxIWCg5jbG9zZV9mdW5jdGlvbhgBIAMo",
+            "BWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new NotifyFunctionParams(this);
     }
 
-    /// <summary>Field number for the "closeFunction" field.</summary>
+    /// <summary>Field number for the "close_function" field.</summary>
     public const int CloseFunctionFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_closeFunction_codec
         = pb::FieldCodec.ForInt32(10);

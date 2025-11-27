@@ -52,6 +52,13 @@ namespace BPSR_ZDPS
 
             netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.SyncDungeonDirtyData, ProcessSyncDungeonDirtyData);
 
+            netCap.RegisterMatchNotifyHandler(BPSR_DeepsLib.ServiceMethods.MatchNtf.EnterMatchResult, ProcessEnterMatchResult);
+            netCap.RegisterMatchNotifyHandler(BPSR_DeepsLib.ServiceMethods.MatchNtf.CancelMatchResult, ProcessCancelMatchResult);
+            netCap.RegisterMatchNotifyHandler(BPSR_DeepsLib.ServiceMethods.MatchNtf.MatchReadyStatus, ProcessMatchReadyStatus);
+
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NoticeUpdateTeamInfo, ProcessNoticeUpdateTeamInfo);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NoticeUpdateTeamMemberInfo, ProcessNoticeUpdateTeamMemberInfo);
+
             netCap.Start();
             System.Diagnostics.Debug.WriteLine("MessageManager.InitializeCapturing : Capturing Started...");
         }
@@ -90,6 +97,101 @@ namespace BPSR_ZDPS
             }
 
             return null;
+        }
+
+        public static void ProcessNoticeUpdateTeamInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNoticeUpdateTeamInfo");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NoticeUpdateTeamInfo.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            //System.Diagnostics.Debug.WriteLine(vData);
+        }
+
+        public static void ProcessNoticeUpdateTeamMemberInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNoticeUpdateTeamMemberInfo");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NoticeUpdateTeamMemberInfo.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            //System.Diagnostics.Debug.WriteLine(vData);
+        }
+
+        public static void ProcessEnterMatchResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            // Fired when Matchmaking begins
+            //System.Diagnostics.Debug.WriteLine("ProcessEnterMatchResult");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = MatchNtf.Types.EnterMatchResultNtf.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            MatchManager.ProcessEnterMatchResult(vData, extraData);
+        }
+
+        public static void ProcessCancelMatchResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            // Fired when Matchmaking ends
+            //System.Diagnostics.Debug.WriteLine("ProcessCancelMatchResult");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = MatchNtf.Types.CancelMatchResultNtf.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            MatchManager.ProcessCancelMatchResult(vData, extraData);
+        }
+
+        public static void ProcessMatchReadyStatus(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            // Fires each time a ready status is changed
+            //System.Diagnostics.Debug.WriteLine("ProcessMatchReadyStatus");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = MatchNtf.Types.MatchReadyStatusNtf.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            MatchManager.ProcessMatchReadyStatus(vData, extraData);
         }
 
         public static void ProcessSyncHitInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
@@ -897,6 +999,13 @@ namespace BPSR_ZDPS
 
             BattleStateMachine.DungeonStateHistoryAdd(vData.FlowInfo.State);
 
+            int dungeonVarDataIdx = 0;
+            foreach (var dungeonVarData in vData.DungeonVar.DungeonVarData)
+            {
+                System.Diagnostics.Debug.WriteLine($"DungeonVar.DungeonVarData[{dungeonVarDataIdx}] = {dungeonVarData}");
+                dungeonVarDataIdx++;
+            }
+
             foreach (var targetData in vData.Target.TargetData)
             {
                 BattleStateMachine.DungeonTargetDataHistoryAdd(targetData.Value);
@@ -1078,6 +1187,81 @@ namespace BPSR_ZDPS
                 }
             }
 
+            if (dun?.Damage != null)
+            {
+                foreach (var item in dun.Damage.Damages)
+                {
+                    System.Diagnostics.Debug.WriteLine($"dun.Damage.Damages = {item.Key}, {item.Value}");
+                }
+            }
+
+            if (dun?.DungeonPioneer != null)
+            {
+                foreach (var item in dun?.DungeonPioneer?.CompletedTargetThisTime)
+                {
+                    var CompletedTargetListIdx = 0;
+                    foreach (var completedTargetList in item.Value.CompletedTargetList)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"[{item.Key}]CompletedTargetList[{CompletedTargetListIdx}] = {completedTargetList.Key}, {completedTargetList.Value}");
+                        CompletedTargetListIdx++;
+                    }
+                }
+            }
+
+            if (dun?.DungeonVar?.Data != null)
+            {
+                if (dun?.DungeonVar?.Data.Count > 1)
+                {
+                    System.Diagnostics.Debug.WriteLine("DungeonVar.Data.Count > 1!!");
+                }
+
+                int dungeonVarDataIdx = 0;
+                foreach (var dungeonVarData in dun.DungeonVar.Data)
+                {
+                    System.Diagnostics.Debug.WriteLine($"dun.DungeonVar.Data.dungeonVarData[{dungeonVarDataIdx}] = {dungeonVarData.Name}, {dungeonVarData.Value}");
+
+                    dungeonVarDataIdx++;
+                }
+            }
+
+            if (dun?.DungeonEvent?.DungeonEventData != null)
+            {
+                foreach (var dungeonEventData in dun.DungeonEvent.DungeonEventData)
+                {
+                    System.Diagnostics.Debug.WriteLine($"[{dungeonEventData.Key}]DungeonEventData = {dungeonEventData.Value.EventId}, {dungeonEventData.Value.StartTime}, {dungeonEventData.Value.State}, {dungeonEventData.Value.Result}");
+                    foreach (var dungeonTarget in dungeonEventData.Value.DungeonTarget)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"- {dungeonTarget.Key}: {dungeonTarget.Value.TargetId}, {dungeonTarget.Value.Complete}, {dungeonTarget.Value.Nums}");
+                    }
+                }
+            }
+
+            if (dun?.TimerInfo != null)
+            {
+                System.Diagnostics.Debug.WriteLine($"dun.TimerInfo = {dun.TimerInfo.TimerType}, {dun.TimerInfo.StartTime}, {dun.TimerInfo.DungeonTimes}, {dun.TimerInfo.Direction}, {dun.TimerInfo.Index}, {dun.TimerInfo.ChangeTime}, {dun.TimerInfo.EffectType}, {dun.TimerInfo.PauseTime}, {dun.TimerInfo.PauseTotalTime}, {dun.TimerInfo.OutLookType}");
+            }
+
+            if (dun?.DungeonVarAll?.DungeonVarAllMap?.Count > 0)
+            {
+                if (dun?.DungeonVar?.Data.Count > 1)
+                {
+                    System.Diagnostics.Debug.WriteLine("DungeonVarAll.DungeonVarAllMap.Count > 1!!");
+                }
+
+                int dungeonVarAllMapIdx = 0;
+                foreach (var dungeonVarAllMap in dun.DungeonVarAll.DungeonVarAllMap)
+                {
+                    int dungeonVarDataIdx = 0;
+                    foreach (var dungeonVarData in dungeonVarAllMap.Value.Data)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"dun.DungeonVarAll.DungeonVarAllMap.[{dungeonVarAllMapIdx}][{dungeonVarAllMap.Key}][{dungeonVarDataIdx}] = {dungeonVarData.Name}, {dungeonVarData.Value}");
+                        dungeonVarDataIdx++;
+                    }
+
+                    dungeonVarAllMapIdx++;
+                }
+            }
+
             if (dun?.Target?.TargetData != null)
             {
                 if (dun.Target.TargetData.Count > 1)
@@ -1089,6 +1273,7 @@ namespace BPSR_ZDPS
                 // Must ForEach as the keys here are TargetId's
                 foreach (var target in dun.Target.TargetData)
                 {
+                    System.Diagnostics.Debug.WriteLine($"dun.Target.TargetData.Target = {target.Key}, [TargetId:{target.Value.TargetId}, Complete:{target.Value.Complete}, Nums:{target.Value.Nums}]");
                     // Potentially use a TargetId blacklist to stop known messy targets from causing weird resets
                     // 3010101/3010102 in Stimen Vault lead to bad tracking as a floor is cleared (sent just before last enemy is fully dead)
                     // We can provide a list of predetermined id's for users to opt out of tracking here and rely on other targets or states

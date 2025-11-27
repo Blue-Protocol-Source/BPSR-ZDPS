@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X3Nsb3RfaW5mby5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5X21h",
-            "c2sucHJvdG8iQgoIU2xvdEluZm8SCgoCaWQYASABKAUSDwoHc2tpbGxJZBgC",
-            "IAEoBRIZChFpc0F1dG9CYXR0bGVDbG9zZRgDIAEoCGIGcHJvdG8z"));
+            "c2sucHJvdG8iRgoIU2xvdEluZm8SCgoCaWQYASABKAUSEAoIc2tpbGxfaWQY",
+            "AiABKAUSHAoUaXNfYXV0b19iYXR0bGVfY2xvc2UYAyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skillId" field.</summary>
+    /// <summary>Field number for the "skill_id" field.</summary>
     public const int SkillIdFieldNumber = 2;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isAutoBattleClose" field.</summary>
+    /// <summary>Field number for the "is_auto_battle_close" field.</summary>
     public const int IsAutoBattleCloseFieldNumber = 3;
     private bool isAutoBattleClose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

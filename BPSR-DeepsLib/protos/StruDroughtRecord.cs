@@ -24,10 +24,11 @@ namespace Zproto {
     static StruDroughtRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X2Ryb3VnaHRfcmVjb3JkLnByb3RvEgZ6cHJvdG8ihgEKDURyb3Vn",
-            "aHRSZWNvcmQSEwoLdHJpZ2dlclRpbWUYASABKAMSEQoJc2VnbWVudElkGAIg",
-            "ASgFEhAKCGR1cmF0aW9uGAMgASgDEhUKDWFjdHVhbEVuZFRpbWUYBCABKAMS",
-            "EQoJaXNXYXRlcmVkGAUgASgIEhEKCUlzRXhwaXJlZBgGIAEoCGIGcHJvdG8z"));
+            "ChlzdHJ1X2Ryb3VnaHRfcmVjb3JkLnByb3RvEgZ6cHJvdG8ijAEKDURyb3Vn",
+            "aHRSZWNvcmQSFAoMdHJpZ2dlcl90aW1lGAEgASgDEhIKCnNlZ21lbnRfaWQY",
+            "AiABKAUSEAoIZHVyYXRpb24YAyABKAMSFwoPYWN0dWFsX2VuZF90aW1lGAQg",
+            "ASgDEhIKCmlzX3dhdGVyZWQYBSABKAgSEgoKaXNfZXhwaXJlZBgGIAEoCGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new DroughtRecord(this);
     }
 
-    /// <summary>Field number for the "triggerTime" field.</summary>
+    /// <summary>Field number for the "trigger_time" field.</summary>
     public const int TriggerTimeFieldNumber = 1;
     private long triggerTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "segmentId" field.</summary>
+    /// <summary>Field number for the "segment_id" field.</summary>
     public const int SegmentIdFieldNumber = 2;
     private int segmentId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "actualEndTime" field.</summary>
+    /// <summary>Field number for the "actual_end_time" field.</summary>
     public const int ActualEndTimeFieldNumber = 4;
     private long actualEndTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isWatered" field.</summary>
+    /// <summary>Field number for the "is_watered" field.</summary>
     public const int IsWateredFieldNumber = 5;
     private bool isWatered_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,7 +149,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "IsExpired" field.</summary>
+    /// <summary>Field number for the "is_expired" field.</summary>
     public const int IsExpiredFieldNumber = 6;
     private bool isExpired_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

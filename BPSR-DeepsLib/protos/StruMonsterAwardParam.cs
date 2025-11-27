@@ -24,9 +24,9 @@ namespace Zproto {
     static StruMonsterAwardParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X21vbnN0ZXJfYXdhcmRfcGFyYW0ucHJvdG8SBnpwcm90byI3ChFN",
-            "b25zdGVyQXdhcmRQYXJhbRIRCgltb25zdGVySWQYASABKAUSDwoHc3RhZ2VJ",
-            "ZBgCIAEoBWIGcHJvdG8z"));
+            "Ch5zdHJ1X21vbnN0ZXJfYXdhcmRfcGFyYW0ucHJvdG8SBnpwcm90byI5ChFN",
+            "b25zdGVyQXdhcmRQYXJhbRISCgptb25zdGVyX2lkGAEgASgFEhAKCHN0YWdl",
+            "X2lkGAIgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new MonsterAwardParam(this);
     }
 
-    /// <summary>Field number for the "monsterId" field.</summary>
+    /// <summary>Field number for the "monster_id" field.</summary>
     public const int MonsterIdFieldNumber = 1;
     private int monsterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "stageId" field.</summary>
+    /// <summary>Field number for the "stage_id" field.</summary>
     public const int StageIdFieldNumber = 2;
     private int stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

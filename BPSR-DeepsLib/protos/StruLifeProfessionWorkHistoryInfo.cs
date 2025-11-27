@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CixzdHJ1X2xpZmVfcHJvZmVzc2lvbl93b3JrX2hpc3RvcnlfaW5mby5wcm90",
             "bxIGenByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxokc3RydV9saWZl",
-            "X3Byb2Zlc3Npb25fd29ya19pbmZvLnByb3RvIncKHUxpZmVQcm9mZXNzaW9u",
-            "V29ya0hpc3RvcnlJbmZvEjEKCXdvcmtJbmZvcxgBIAMoCzIeLnpwcm90by5M",
-            "aWZlUHJvZmVzc2lvbldvcmtJbmZvEiMKB2VyckNvZGUYAiABKA4yEi56cHJv",
-            "dG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "X3Byb2Zlc3Npb25fd29ya19pbmZvLnByb3RvInkKHUxpZmVQcm9mZXNzaW9u",
+            "V29ya0hpc3RvcnlJbmZvEjIKCndvcmtfaW5mb3MYASADKAsyHi56cHJvdG8u",
+            "TGlmZVByb2Zlc3Npb25Xb3JrSW5mbxIkCghlcnJfY29kZRgCIAEoDjISLnpw",
+            "cm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruLifeProfessionWorkInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new LifeProfessionWorkHistoryInfo(this);
     }
 
-    /// <summary>Field number for the "workInfos" field.</summary>
+    /// <summary>Field number for the "work_infos" field.</summary>
     public const int WorkInfosFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.LifeProfessionWorkInfo> _repeated_workInfos_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.LifeProfessionWorkInfo.Parser);
@@ -97,7 +97,7 @@ namespace Zproto {
       get { return workInfos_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

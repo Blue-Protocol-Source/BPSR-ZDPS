@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X2RlbGV0ZV9wcml2YXRlX2NoYXRfc2Vzc2lvbl9yZXBseS5wcm90",
-            "bxIGenByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byJWCh1EZWxldGVQ",
-            "cml2YXRlQ2hhdFNlc3Npb25SZXBseRIQCgh0YXJnZXRJZBgBIAEoDRIjCgdl",
-            "cnJDb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "bxIGenByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byJYCh1EZWxldGVQ",
+            "cml2YXRlQ2hhdFNlc3Npb25SZXBseRIRCgl0YXJnZXRfaWQYASABKA0SJAoI",
+            "ZXJyX2NvZGUYAiABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new DeletePrivateChatSessionReply(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

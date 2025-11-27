@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3JlY29ubmVjdF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8aF3N0cnVf",
-            "bGF1bmNoX3BhcmFtLnByb3RvIqABChBSZWNvbm5lY3RSZXF1ZXN0EhEKCWFj",
-            "Y291bnRJZBgDIAEoCRINCgV0b2tlbhgEIAEoCRIVCg1jbGllbnRWZXJzaW9u",
-            "GAUgASgJEh0KFWNsaWVudFJlc291cmNlVmVyc2lvbhgGIAEoCRIKCgJvcxgH",
-            "IAEoBRIoCgtsYXVuY2hQYXJhbRgJIAEoCzITLnpwcm90by5MYXVuY2hQYXJh",
-            "bWIGcHJvdG8z"));
+            "bGF1bmNoX3BhcmFtLnByb3RvIqUBChBSZWNvbm5lY3RSZXF1ZXN0EhIKCmFj",
+            "Y291bnRfaWQYAyABKAkSDQoFdG9rZW4YBCABKAkSFgoOY2xpZW50X3ZlcnNp",
+            "b24YBSABKAkSHwoXY2xpZW50X3Jlc291cmNlX3ZlcnNpb24YBiABKAkSCgoC",
+            "b3MYByABKAUSKQoMbGF1bmNoX3BhcmFtGAkgASgLMhMuenByb3RvLkxhdW5j",
+            "aFBhcmFtYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLaunchParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new ReconnectRequest(this);
     }
 
-    /// <summary>Field number for the "accountId" field.</summary>
+    /// <summary>Field number for the "account_id" field.</summary>
     public const int AccountIdFieldNumber = 3;
     private string accountId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "clientVersion" field.</summary>
+    /// <summary>Field number for the "client_version" field.</summary>
     public const int ClientVersionFieldNumber = 5;
     private string clientVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "clientResourceVersion" field.</summary>
+    /// <summary>Field number for the "client_resource_version" field.</summary>
     public const int ClientResourceVersionFieldNumber = 6;
     private string clientResourceVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +150,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "launchParam" field.</summary>
+    /// <summary>Field number for the "launch_param" field.</summary>
     public const int LaunchParamFieldNumber = 9;
     private global::Zproto.LaunchParam launchParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

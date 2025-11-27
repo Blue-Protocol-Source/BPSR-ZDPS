@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X3VubG9ja19wcm9maWNpZW5jeS5wcm90bxIGenByb3RvGhVzdHJ1",
-            "X2RpcnR5X21hc2sucHJvdG8iKwoRVW5sb2NrUHJvZmljaWVuY3kSFgoOdW5s",
-            "b2NrQnVmZmVySWQYASADKAViBnByb3RvMw=="));
+            "X2RpcnR5X21hc2sucHJvdG8iLQoRVW5sb2NrUHJvZmljaWVuY3kSGAoQdW5s",
+            "b2NrX2J1ZmZlcl9pZBgBIAMoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new UnlockProficiency(this);
     }
 
-    /// <summary>Field number for the "unlockBufferId" field.</summary>
+    /// <summary>Field number for the "unlock_buffer_id" field.</summary>
     public const int UnlockBufferIdFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_unlockBufferId_codec
         = pb::FieldCodec.ForInt32(10);

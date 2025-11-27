@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X3NldHRsZW1lbnRfcG9zaXRpb25fcGFyYW0ucHJvdG8SBnpwcm90",
-            "bxoec3RydV9zZXR0bGVtZW50X3Bvc2l0aW9uLnByb3RvIqcBChdTZXR0bGVt",
-            "ZW50UG9zaXRpb25QYXJhbRI/Cgh2VXNlclBvcxgBIAMoCzItLnpwcm90by5T",
-            "ZXR0bGVtZW50UG9zaXRpb25QYXJhbS5WVXNlclBvc0VudHJ5GksKDVZVc2Vy",
-            "UG9zRW50cnkSCwoDa2V5GAEgASgNEikKBXZhbHVlGAIgASgLMhouenByb3Rv",
-            "LlNldHRsZW1lbnRQb3NpdGlvbjoCOAFiBnByb3RvMw=="));
+            "bxoec3RydV9zZXR0bGVtZW50X3Bvc2l0aW9uLnByb3RvIqkBChdTZXR0bGVt",
+            "ZW50UG9zaXRpb25QYXJhbRJBCgp2X3VzZXJfcG9zGAEgAygLMi0uenByb3Rv",
+            "LlNldHRsZW1lbnRQb3NpdGlvblBhcmFtLlZVc2VyUG9zRW50cnkaSwoNVlVz",
+            "ZXJQb3NFbnRyeRILCgNrZXkYASABKA0SKQoFdmFsdWUYAiABKAsyGi56cHJv",
+            "dG8uU2V0dGxlbWVudFBvc2l0aW9uOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSettlementPositionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new SettlementPositionParam(this);
     }
 
-    /// <summary>Field number for the "vUserPos" field.</summary>
+    /// <summary>Field number for the "v_user_pos" field.</summary>
     public const int VUserPosFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.SettlementPosition>.Codec _map_vUserPos_codec
         = new pbc::MapField<uint, global::Zproto.SettlementPosition>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SettlementPosition.Parser), 10);

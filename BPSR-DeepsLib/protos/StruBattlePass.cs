@@ -26,14 +26,14 @@ namespace Zproto {
           string.Concat(
             "ChZzdHJ1X2JhdHRsZV9wYXNzLnByb3RvEgZ6cHJvdG8aIXN0cnVfYmF0dGxl",
             "X3Bhc3NfYXdhcmRfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3Rv",
-            "IrsCCgpCYXR0bGVQYXNzEgoKAmlkGAEgASgFEg0KBWxldmVsGAIgASgFEg4K",
-            "BmN1cmV4cBgDIAEoBRIPCgd3ZWVrRXhwGAQgASgFEhMKC2V4cExhc3RUaW1l",
-            "GAUgASgFEhAKCGlzVW5sb2NrGAYgASgIEhQKDGJ1eU5vcm1hbFBhcxgHIAEo",
-            "CBIUCgxidXlQcmltZVBhc3MYCCABKAgSLAoFYXdhcmQYCSADKAsyHS56cHJv",
-            "dG8uQmF0dGxlUGFzcy5Bd2FyZEVudHJ5Eg8KB2lzVmFsaWQYCiABKAgSFAoM",
-            "aXNTZW5kZWRNYWlsGAsgASgIGkkKCkF3YXJkRW50cnkSCwoDa2V5GAEgASgF",
-            "EioKBXZhbHVlGAIgASgLMhsuenByb3RvLkJhdHRsZVBhc3NBd2FyZEluZm86",
-            "AjgBYgZwcm90bzM="));
+            "IsYCCgpCYXR0bGVQYXNzEgoKAmlkGAEgASgFEg0KBWxldmVsGAIgASgFEg4K",
+            "BmN1cmV4cBgDIAEoBRIQCgh3ZWVrX2V4cBgEIAEoBRIVCg1leHBfbGFzdF90",
+            "aW1lGAUgASgFEhEKCWlzX3VubG9jaxgGIAEoCBIWCg5idXlfbm9ybWFsX3Bh",
+            "cxgHIAEoCBIWCg5idXlfcHJpbWVfcGFzcxgIIAEoCBIsCgVhd2FyZBgJIAMo",
+            "CzIdLnpwcm90by5CYXR0bGVQYXNzLkF3YXJkRW50cnkSEAoIaXNfdmFsaWQY",
+            "CiABKAgSFgoOaXNfc2VuZGVkX21haWwYCyABKAgaSQoKQXdhcmRFbnRyeRIL",
+            "CgNrZXkYASABKAUSKgoFdmFsdWUYAiABKAsyGy56cHJvdG8uQmF0dGxlUGFz",
+            "c0F3YXJkSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBattlePassAwardInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -135,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "weekExp" field.</summary>
+    /// <summary>Field number for the "week_exp" field.</summary>
     public const int WeekExpFieldNumber = 4;
     private int weekExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,7 +147,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "expLastTime" field.</summary>
+    /// <summary>Field number for the "exp_last_time" field.</summary>
     public const int ExpLastTimeFieldNumber = 5;
     private int expLastTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -159,7 +159,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isUnlock" field.</summary>
+    /// <summary>Field number for the "is_unlock" field.</summary>
     public const int IsUnlockFieldNumber = 6;
     private bool isUnlock_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -171,7 +171,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buyNormalPas" field.</summary>
+    /// <summary>Field number for the "buy_normal_pas" field.</summary>
     public const int BuyNormalPasFieldNumber = 7;
     private bool buyNormalPas_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -183,7 +183,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buyPrimePass" field.</summary>
+    /// <summary>Field number for the "buy_prime_pass" field.</summary>
     public const int BuyPrimePassFieldNumber = 8;
     private bool buyPrimePass_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -206,7 +206,7 @@ namespace Zproto {
       get { return award_; }
     }
 
-    /// <summary>Field number for the "isValid" field.</summary>
+    /// <summary>Field number for the "is_valid" field.</summary>
     public const int IsValidFieldNumber = 10;
     private bool isValid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -218,7 +218,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isSendedMail" field.</summary>
+    /// <summary>Field number for the "is_sended_mail" field.</summary>
     public const int IsSendedMailFieldNumber = 11;
     private bool isSendedMail_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

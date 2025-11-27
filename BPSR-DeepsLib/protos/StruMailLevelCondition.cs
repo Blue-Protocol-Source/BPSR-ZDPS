@@ -24,9 +24,9 @@ namespace Zproto {
     static StruMailLevelConditionReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X21haWxfbGV2ZWxfY29uZGl0aW9uLnByb3RvEgZ6cHJvdG8iRgoS",
+            "Ch9zdHJ1X21haWxfbGV2ZWxfY29uZGl0aW9uLnByb3RvEgZ6cHJvdG8iSAoS",
             "TWFpbExldmVsQ29uZGl0aW9uEgsKA21pbhgBIAEoBRILCgNtYXgYAiABKAUS",
-            "FgoOaW5jbHVkZUxldmVsVXAYAyABKAhiBnByb3RvMw=="));
+            "GAoQaW5jbHVkZV9sZXZlbF91cBgDIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "includeLevelUp" field.</summary>
+    /// <summary>Field number for the "include_level_up" field.</summary>
     public const int IncludeLevelUpFieldNumber = 3;
     private bool includeLevelUp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X2dldF9hcmtfanNvbl93aXRoX3RlbmNlbnRfcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvIkcKHEdldEFya0pzb25XaXRoVGVuY2VudFJlcXVlc3QSEwoL",
-            "c2VsZWZPcGVuSWQYASABKAkSEgoKc2VsZWZUb2tlbhgCIAEoCWIGcHJvdG8z"));
+            "bxIGenByb3RvIkoKHEdldEFya0pzb25XaXRoVGVuY2VudFJlcXVlc3QSFQoN",
+            "c2VsZWZfb3Blbl9pZBgBIAEoCRITCgtzZWxlZl90b2tlbhgCIAEoCWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new GetArkJsonWithTencentRequest(this);
     }
 
-    /// <summary>Field number for the "selefOpenId" field.</summary>
+    /// <summary>Field number for the "selef_open_id" field.</summary>
     public const int SelefOpenIdFieldNumber = 1;
     private string selefOpenId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "selefToken" field.</summary>
+    /// <summary>Field number for the "selef_token" field.</summary>
     public const int SelefTokenFieldNumber = 2;
     private string selefToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

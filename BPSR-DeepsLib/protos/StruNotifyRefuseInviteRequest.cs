@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X25vdGlmeV9yZWZ1c2VfaW52aXRlX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90byJFChlOb3RpZnlSZWZ1c2VJbnZpdGVSZXF1ZXN0EhQKDGludml0ZWVz",
-            "TmFtZRgBIAEoCRISCgppbnZpdGVlc0lkGAIgASgDYgZwcm90bzM="));
+            "cm90byJHChlOb3RpZnlSZWZ1c2VJbnZpdGVSZXF1ZXN0EhUKDWludml0ZWVz",
+            "X25hbWUYASABKAkSEwoLaW52aXRlZXNfaWQYAiABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyRefuseInviteRequest(this);
     }
 
-    /// <summary>Field number for the "inviteesName" field.</summary>
+    /// <summary>Field number for the "invitees_name" field.</summary>
     public const int InviteesNameFieldNumber = 1;
     private string inviteesName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "inviteesId" field.</summary>
+    /// <summary>Field number for the "invitees_id" field.</summary>
     public const int InviteesIdFieldNumber = 2;
     private long inviteesId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

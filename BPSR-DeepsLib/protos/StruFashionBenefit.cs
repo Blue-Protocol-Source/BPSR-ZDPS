@@ -27,18 +27,19 @@ namespace Zproto {
             "ChpzdHJ1X2Zhc2hpb25fYmVuZWZpdC5wcm90bxIGenByb3RvGi1zdHJ1X2Zh",
             "c2hpb25fYmVuZWZpdF9jb2xsZWN0aW9uX2hpc3RvcnkucHJvdG8aJHN0cnVf",
             "ZmFzaGlvbl9iZW5lZml0X3Rhc2tfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIvYDCg5GYXNoaW9uQmVuZWZpdBIUCgxsYXN0UmV3YXJkSWQY",
-            "ASABKAUSDQoFbGV2ZWwYAiABKAUSEgoKcG9pbnRzVGFzaxgDIAEoBRITCgtw",
-            "b2ludHNDeWNsZRgEIAEoBRIYChBwb2ludHNDb2xsZWN0aW9uGAUgASgFEjYK",
-            "CHRhc2tMaXN0GAYgAygLMiQuenByb3RvLkZhc2hpb25CZW5lZml0LlRhc2tM",
-            "aXN0RW50cnkSQgoRY29sbGVjdGlvbkhpc3RvcnkYByADKAsyJy56cHJvdG8u",
-            "RmFzaGlvbkJlbmVmaXRDb2xsZWN0aW9uSGlzdG9yeRIXCg9uZXh0UmVmcmVz",
-            "aFRpbWUYCCABKAMSEQoJbWF4UG9pbnRzGAkgASgFEhMKC2xhc3RBZGRUaW1l",
-            "GAogASgDEhcKD2N1ckRheU1heFBvaW50cxgLIAEoBRITCgtleHBpcmVDeWNs",
-            "ZRgMIAEoBRIRCglsYXN0TGV2ZWwYDSABKAUSFgoOZmlydEV4cGlyZVRpbWUY",
-            "DiABKAMSFQoNbGFzdFJld2FyZElkcxgPIAMoBRpPCg1UYXNrTGlzdEVudHJ5",
-            "EgsKA2tleRgBIAEoBRItCgV2YWx1ZRgCIAEoCzIeLnpwcm90by5GYXNoaW9u",
-            "QmVuZWZpdFRhc2tJbmZvOgI4AWIGcHJvdG8z"));
+            "YXNrLnByb3RvIosECg5GYXNoaW9uQmVuZWZpdBIWCg5sYXN0X3Jld2FyZF9p",
+            "ZBgBIAEoBRINCgVsZXZlbBgCIAEoBRITCgtwb2ludHNfdGFzaxgDIAEoBRIU",
+            "Cgxwb2ludHNfY3ljbGUYBCABKAUSGQoRcG9pbnRzX2NvbGxlY3Rpb24YBSAB",
+            "KAUSNwoJdGFza19saXN0GAYgAygLMiQuenByb3RvLkZhc2hpb25CZW5lZml0",
+            "LlRhc2tMaXN0RW50cnkSQwoSY29sbGVjdGlvbl9oaXN0b3J5GAcgAygLMicu",
+            "enByb3RvLkZhc2hpb25CZW5lZml0Q29sbGVjdGlvbkhpc3RvcnkSGQoRbmV4",
+            "dF9yZWZyZXNoX3RpbWUYCCABKAMSEgoKbWF4X3BvaW50cxgJIAEoBRIVCg1s",
+            "YXN0X2FkZF90aW1lGAogASgDEhoKEmN1cl9kYXlfbWF4X3BvaW50cxgLIAEo",
+            "BRIUCgxleHBpcmVfY3ljbGUYDCABKAUSEgoKbGFzdF9sZXZlbBgNIAEoBRIY",
+            "ChBmaXJ0X2V4cGlyZV90aW1lGA4gASgDEhcKD2xhc3RfcmV3YXJkX2lkcxgP",
+            "IAMoBRpPCg1UYXNrTGlzdEVudHJ5EgsKA2tleRgBIAEoBRItCgV2YWx1ZRgC",
+            "IAEoCzIeLnpwcm90by5GYXNoaW9uQmVuZWZpdFRhc2tJbmZvOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFashionBenefitCollectionHistoryReflection.Descriptor, global::Zproto.StruFashionBenefitTaskInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -108,7 +109,7 @@ namespace Zproto {
       return new FashionBenefit(this);
     }
 
-    /// <summary>Field number for the "lastRewardId" field.</summary>
+    /// <summary>Field number for the "last_reward_id" field.</summary>
     public const int LastRewardIdFieldNumber = 1;
     private int lastRewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -132,7 +133,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pointsTask" field.</summary>
+    /// <summary>Field number for the "points_task" field.</summary>
     public const int PointsTaskFieldNumber = 3;
     private int pointsTask_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -144,7 +145,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pointsCycle" field.</summary>
+    /// <summary>Field number for the "points_cycle" field.</summary>
     public const int PointsCycleFieldNumber = 4;
     private int pointsCycle_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -156,7 +157,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pointsCollection" field.</summary>
+    /// <summary>Field number for the "points_collection" field.</summary>
     public const int PointsCollectionFieldNumber = 5;
     private int pointsCollection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,7 +169,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "taskList" field.</summary>
+    /// <summary>Field number for the "task_list" field.</summary>
     public const int TaskListFieldNumber = 6;
     private static readonly pbc::MapField<int, global::Zproto.FashionBenefitTaskInfo>.Codec _map_taskList_codec
         = new pbc::MapField<int, global::Zproto.FashionBenefitTaskInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FashionBenefitTaskInfo.Parser), 50);
@@ -179,7 +180,7 @@ namespace Zproto {
       get { return taskList_; }
     }
 
-    /// <summary>Field number for the "collectionHistory" field.</summary>
+    /// <summary>Field number for the "collection_history" field.</summary>
     public const int CollectionHistoryFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Zproto.FashionBenefitCollectionHistory> _repeated_collectionHistory_codec
         = pb::FieldCodec.ForMessage(58, global::Zproto.FashionBenefitCollectionHistory.Parser);
@@ -190,7 +191,7 @@ namespace Zproto {
       get { return collectionHistory_; }
     }
 
-    /// <summary>Field number for the "nextRefreshTime" field.</summary>
+    /// <summary>Field number for the "next_refresh_time" field.</summary>
     public const int NextRefreshTimeFieldNumber = 8;
     private long nextRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -202,7 +203,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxPoints" field.</summary>
+    /// <summary>Field number for the "max_points" field.</summary>
     public const int MaxPointsFieldNumber = 9;
     private int maxPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -214,7 +215,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastAddTime" field.</summary>
+    /// <summary>Field number for the "last_add_time" field.</summary>
     public const int LastAddTimeFieldNumber = 10;
     private long lastAddTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -226,7 +227,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "curDayMaxPoints" field.</summary>
+    /// <summary>Field number for the "cur_day_max_points" field.</summary>
     public const int CurDayMaxPointsFieldNumber = 11;
     private int curDayMaxPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -238,7 +239,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "expireCycle" field.</summary>
+    /// <summary>Field number for the "expire_cycle" field.</summary>
     public const int ExpireCycleFieldNumber = 12;
     private int expireCycle_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -250,7 +251,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastLevel" field.</summary>
+    /// <summary>Field number for the "last_level" field.</summary>
     public const int LastLevelFieldNumber = 13;
     private int lastLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -262,7 +263,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "firtExpireTime" field.</summary>
+    /// <summary>Field number for the "firt_expire_time" field.</summary>
     public const int FirtExpireTimeFieldNumber = 14;
     private long firtExpireTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -274,7 +275,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastRewardIds" field.</summary>
+    /// <summary>Field number for the "last_reward_ids" field.</summary>
     public const int LastRewardIdsFieldNumber = 15;
     private static readonly pb::FieldCodec<int> _repeated_lastRewardIds_codec
         = pb::FieldCodec.ForInt32(122);

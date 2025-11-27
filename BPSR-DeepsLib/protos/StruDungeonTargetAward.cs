@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch9zdHJ1X2R1bmdlb25fdGFyZ2V0X2F3YXJkLnByb3RvEgZ6cHJvdG8aInN0",
             "cnVfZHVuZ2Vvbl90YXJnZXRfcHJvZ3Jlc3MucHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byLHAQoSRHVuZ2VvblRhcmdldEF3YXJkElQKFWR1bmdlb25U",
-            "YXJnZXRQcm9ncmVzcxgBIAMoCzI1Lnpwcm90by5EdW5nZW9uVGFyZ2V0QXdh",
-            "cmQuRHVuZ2VvblRhcmdldFByb2dyZXNzRW50cnkaWwoaRHVuZ2VvblRhcmdl",
-            "dFByb2dyZXNzRW50cnkSCwoDa2V5GAEgASgFEiwKBXZhbHVlGAIgASgLMh0u",
-            "enByb3RvLkR1bmdlb25UYXJnZXRQcm9ncmVzczoCOAFiBnByb3RvMw=="));
+            "bWFzay5wcm90byLJAQoSRHVuZ2VvblRhcmdldEF3YXJkElYKF2R1bmdlb25f",
+            "dGFyZ2V0X3Byb2dyZXNzGAEgAygLMjUuenByb3RvLkR1bmdlb25UYXJnZXRB",
+            "d2FyZC5EdW5nZW9uVGFyZ2V0UHJvZ3Jlc3NFbnRyeRpbChpEdW5nZW9uVGFy",
+            "Z2V0UHJvZ3Jlc3NFbnRyeRILCgNrZXkYASABKAUSLAoFdmFsdWUYAiABKAsy",
+            "HS56cHJvdG8uRHVuZ2VvblRhcmdldFByb2dyZXNzOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonTargetProgressReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new DungeonTargetAward(this);
     }
 
-    /// <summary>Field number for the "dungeonTargetProgress" field.</summary>
+    /// <summary>Field number for the "dungeon_target_progress" field.</summary>
     public const int DungeonTargetProgressFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.DungeonTargetProgress>.Codec _map_dungeonTargetProgress_codec
         = new pbc::MapField<int, global::Zproto.DungeonTargetProgress>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonTargetProgress.Parser), 10);

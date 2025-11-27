@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2NvbXBsZXRlZF90YXJnZXRfaW5mby5wcm90bxIGenByb3RvGhVz",
-            "dHJ1X2RpcnR5X21hc2sucHJvdG8ipAEKE0NvbXBsZXRlZFRhcmdldEluZm8S",
-            "UQoTY29tcGxldGVkVGFyZ2V0TGlzdBgBIAMoCzI0Lnpwcm90by5Db21wbGV0",
-            "ZWRUYXJnZXRJbmZvLkNvbXBsZXRlZFRhcmdldExpc3RFbnRyeRo6ChhDb21w",
-            "bGV0ZWRUYXJnZXRMaXN0RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIg",
-            "ASgIOgI4AWIGcHJvdG8z"));
+            "dHJ1X2RpcnR5X21hc2sucHJvdG8ipgEKE0NvbXBsZXRlZFRhcmdldEluZm8S",
+            "UwoVY29tcGxldGVkX3RhcmdldF9saXN0GAEgAygLMjQuenByb3RvLkNvbXBs",
+            "ZXRlZFRhcmdldEluZm8uQ29tcGxldGVkVGFyZ2V0TGlzdEVudHJ5GjoKGENv",
+            "bXBsZXRlZFRhcmdldExpc3RFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
+            "AiABKAg6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CompletedTargetInfo(this);
     }
 
-    /// <summary>Field number for the "completedTargetList" field.</summary>
+    /// <summary>Field number for the "completed_target_list" field.</summary>
     public const int CompletedTargetListFieldNumber = 1;
     private static readonly pbc::MapField<int, bool>.Codec _map_completedTargetList_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 10);

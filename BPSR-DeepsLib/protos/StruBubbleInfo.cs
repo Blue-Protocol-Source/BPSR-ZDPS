@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2J1YmJsZV9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byJ2CgpCdWJibGVJbmZvEhMKC2J1YmJsZVNjb3JlGAEgASgN",
-            "EhgKEGJ1YmJsZUF3YXJkQ291bnQYAiABKA0SIAoYYWRkaXRpb25hbFRhcmdl",
-            "dFV1aWRMaXN0GAMgAygEEhcKD2xhc3RSZWZyZXNoVGltZRgEIAEoA2IGcHJv",
-            "dG8z"));
+            "bWFzay5wcm90byJ+CgpCdWJibGVJbmZvEhQKDGJ1YmJsZV9zY29yZRgBIAEo",
+            "DRIaChJidWJibGVfYXdhcmRfY291bnQYAiABKA0SIwobYWRkaXRpb25hbF90",
+            "YXJnZXRfdXVpZF9saXN0GAMgAygEEhkKEWxhc3RfcmVmcmVzaF90aW1lGAQg",
+            "ASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new BubbleInfo(this);
     }
 
-    /// <summary>Field number for the "bubbleScore" field.</summary>
+    /// <summary>Field number for the "bubble_score" field.</summary>
     public const int BubbleScoreFieldNumber = 1;
     private uint bubbleScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bubbleAwardCount" field.</summary>
+    /// <summary>Field number for the "bubble_award_count" field.</summary>
     public const int BubbleAwardCountFieldNumber = 2;
     private uint bubbleAwardCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "additionalTargetUuidList" field.</summary>
+    /// <summary>Field number for the "additional_target_uuid_list" field.</summary>
     public const int AdditionalTargetUuidListFieldNumber = 3;
     private static readonly pb::FieldCodec<ulong> _repeated_additionalTargetUuidList_codec
         = pb::FieldCodec.ForUInt64(26);
@@ -122,7 +122,7 @@ namespace Zproto {
       get { return additionalTargetUuidList_; }
     }
 
-    /// <summary>Field number for the "lastRefreshTime" field.</summary>
+    /// <summary>Field number for the "last_refresh_time" field.</summary>
     public const int LastRefreshTimeFieldNumber = 4;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

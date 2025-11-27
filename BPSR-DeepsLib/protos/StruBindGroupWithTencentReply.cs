@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X2JpbmRfZ3JvdXBfd2l0aF90ZW5jZW50X3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhVzdHJ1X3VuaW9uX2lu",
-            "Zm8ucHJvdG8iZgoZQmluZEdyb3VwV2l0aFRlbmNlbnRSZXBseRIkCgl1bmlv",
-            "bkluZm8YASABKAsyES56cHJvdG8uVW5pb25JbmZvEiMKB2VyckNvZGUYAiAB",
-            "KA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "Zm8ucHJvdG8iaAoZQmluZEdyb3VwV2l0aFRlbmNlbnRSZXBseRIlCgp1bmlv",
+            "bl9pbmZvGAEgASgLMhEuenByb3RvLlVuaW9uSW5mbxIkCghlcnJfY29kZRgC",
+            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new BindGroupWithTencentReply(this);
     }
 
-    /// <summary>Field number for the "unionInfo" field.</summary>
+    /// <summary>Field number for the "union_info" field.</summary>
     public const int UnionInfoFieldNumber = 1;
     private global::Zproto.UnionInfo unionInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

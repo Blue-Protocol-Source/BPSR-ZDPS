@@ -10,6 +10,11 @@ public class SocialData : BlobType
 {
     public long? CharId;
     public string? AccountId;
+    public BasicData? BasicData;
+    public ProfessionData? ProfessionData;
+    public EquipData? EquipData;
+    public SceneData? SceneData;
+    public CharTeam? TeamData;
 
     public SocialData()
     {
@@ -28,6 +33,21 @@ public class SocialData : BlobType
                 return true;
             case Zproto.SocialData.AccountIdFieldNumber:
                 AccountId = blob.ReadString();
+                return true;
+            case Zproto.SocialData.BasicDataFieldNumber:
+                BasicData = new(blob);
+                return true;
+            case Zproto.SocialData.ProfessionDataFieldNumber:
+                ProfessionData = new(blob);
+                return true;
+            case Zproto.SocialData.EquipDataFieldNumber:
+                EquipData = new(blob);
+                return true;
+            case Zproto.SocialData.SceneDataFieldNumber:
+                SceneData = new(blob);
+                return true;
+            case Zproto.SocialData.TeamDataFieldNumber:
+                TeamData = new(blob);
                 return true;
             default:
                 return false;

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2NsaWVudF9jdXN0b21fZXZlbnRfcGFyYW1zLnByb3RvEgZ6cHJv",
-            "dG8iMAoXQ2xpZW50Q3VzdG9tRXZlbnRQYXJhbXMSFQoNY3VzdG9tRXZlbnRJ",
-            "ZBgBIAEoBWIGcHJvdG8z"));
+            "dG8iMgoXQ2xpZW50Q3VzdG9tRXZlbnRQYXJhbXMSFwoPY3VzdG9tX2V2ZW50",
+            "X2lkGAEgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ClientCustomEventParams(this);
     }
 
-    /// <summary>Field number for the "customEventId" field.</summary>
+    /// <summary>Field number for the "custom_event_id" field.</summary>
     public const int CustomEventIdFieldNumber = 1;
     private int customEventId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

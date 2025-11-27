@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjNzdHJ1X2NvbW11bml0eV9hY2NlcHRfcmVqZWN0X2ludml0YXRpb25fcmVw",
-            "bHkucHJvdG8SBnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iYwok",
-            "Q29tbXVuaXR5QWNjZXB0UmVqZWN0SW52aXRhdGlvblJlcGx5EiMKB2VyckNv",
-            "ZGUYASABKA4yEi56cHJvdG8uRUVycm9yQ29kZRIWCg5jaGVja0luQ29udGVu",
-            "dBgCIAEoCWIGcHJvdG8z"));
+            "bHkucHJvdG8SBnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iZgok",
+            "Q29tbXVuaXR5QWNjZXB0UmVqZWN0SW52aXRhdGlvblJlcGx5EiQKCGVycl9j",
+            "b2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUSGAoQY2hlY2tfaW5fY29u",
+            "dGVudBgCIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CommunityAcceptRejectInvitationReply(this);
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "checkInContent" field.</summary>
+    /// <summary>Field number for the "check_in_content" field.</summary>
     public const int CheckInContentFieldNumber = 2;
     private string checkInContent_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2Zhc2hpb25fZGF0YS5wcm90bxIGenByb3RvGhdzdHJ1X2Zhc2hp",
-            "b25faW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIjgKC0Zhc2hp",
-            "b25EYXRhEikKDGZhc2hpb25JbmZvcxgBIAMoCzITLnpwcm90by5GYXNoaW9u",
-            "SW5mb2IGcHJvdG8z"));
+            "b25faW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIjkKC0Zhc2hp",
+            "b25EYXRhEioKDWZhc2hpb25faW5mb3MYASADKAsyEy56cHJvdG8uRmFzaGlv",
+            "bkluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFashionInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new FashionData(this);
     }
 
-    /// <summary>Field number for the "fashionInfos" field.</summary>
+    /// <summary>Field number for the "fashion_infos" field.</summary>
     public const int FashionInfosFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.FashionInfo> _repeated_fashionInfos_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.FashionInfo.Parser);

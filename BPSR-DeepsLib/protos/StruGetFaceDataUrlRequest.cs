@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2dldF9mYWNlX2RhdGFfdXJsX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "bxobc3RydV9mYWNlX3VwbG9hZF9kYXRhLnByb3RvIkEKFUdldEZhY2VEYXRh",
-            "VXJsUmVxdWVzdBIoCghmYWNlRGF0YRgBIAEoCzIWLnpwcm90by5GYWNlVXBs",
-            "b2FkRGF0YWIGcHJvdG8z"));
+            "bxobc3RydV9mYWNlX3VwbG9hZF9kYXRhLnByb3RvIkIKFUdldEZhY2VEYXRh",
+            "VXJsUmVxdWVzdBIpCglmYWNlX2RhdGEYASABKAsyFi56cHJvdG8uRmFjZVVw",
+            "bG9hZERhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFaceUploadDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new GetFaceDataUrlRequest(this);
     }
 
-    /// <summary>Field number for the "faceData" field.</summary>
+    /// <summary>Field number for the "face_data" field.</summary>
     public const int FaceDataFieldNumber = 1;
     private global::Zproto.FaceUploadData faceData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

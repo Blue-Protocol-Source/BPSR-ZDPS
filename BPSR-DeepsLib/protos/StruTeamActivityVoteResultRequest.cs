@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X3RlYW1fYWN0aXZpdHlfdm90ZV9yZXN1bHRfcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvGhplbnVtX2VfdGVhbV92b3RlX3JldC5wcm90byJUCh1UZWFt",
+            "bxIGenByb3RvGhplbnVtX2VfdGVhbV92b3RlX3JldC5wcm90byJWCh1UZWFt",
             "QWN0aXZpdHlWb3RlUmVzdWx0UmVxdWVzdBIiCgRjb2RlGAEgASgOMhQuenBy",
-            "b3RvLkVUZWFtVm90ZVJldBIPCgd2Q2hhcklkGAIgASgDYgZwcm90bzM="));
+            "b3RvLkVUZWFtVm90ZVJldBIRCgl2X2NoYXJfaWQYAiABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETeamVoteRetReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "vCharId" field.</summary>
+    /// <summary>Field number for the "v_char_id" field.</summary>
     public const int VCharIdFieldNumber = 2;
     private long vCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -27,13 +27,13 @@ namespace Zproto {
             "CihzdHJ1X2dldF9ob21lbGFuZF9jb2hhYml0YW50X3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aIHN0cnVfY29tbXVuaXR5X3BsYXllcl9pbmZvLnByb3RvGh1zdHJ1",
             "X2NvbW11bml0eV90cmFuc2Zlci5wcm90bxoXZW51bV9lX2Vycm9yX2NvZGUu",
-            "cHJvdG8ijwIKGkdldEhvbWVsYW5kQ29oYWJpdGFudFJlcGx5EjQKEXRyYW5z",
-            "ZmVyQ29tbXVuaXR5GAEgASgLMhkuenByb3RvLkNvbW11bml0eVRyYW5zZmVy",
-            "EkYKCmNvaGFiaXRhbnQYAiADKAsyMi56cHJvdG8uR2V0SG9tZWxhbmRDb2hh",
-            "Yml0YW50UmVwbHkuQ29oYWJpdGFudEVudHJ5EiMKB2VyckNvZGUYAyABKA4y",
-            "Ei56cHJvdG8uRUVycm9yQ29kZRpOCg9Db2hhYml0YW50RW50cnkSCwoDa2V5",
-            "GAEgASgDEioKBXZhbHVlGAIgASgLMhsuenByb3RvLkNvbW11bml0eVBsYXll",
-            "ckluZm86AjgBYgZwcm90bzM="));
+            "cHJvdG8ikQIKGkdldEhvbWVsYW5kQ29oYWJpdGFudFJlcGx5EjUKEnRyYW5z",
+            "ZmVyX2NvbW11bml0eRgBIAEoCzIZLnpwcm90by5Db21tdW5pdHlUcmFuc2Zl",
+            "chJGCgpjb2hhYml0YW50GAIgAygLMjIuenByb3RvLkdldEhvbWVsYW5kQ29o",
+            "YWJpdGFudFJlcGx5LkNvaGFiaXRhbnRFbnRyeRIkCghlcnJfY29kZRgDIAEo",
+            "DjISLnpwcm90by5FRXJyb3JDb2RlGk4KD0NvaGFiaXRhbnRFbnRyeRILCgNr",
+            "ZXkYASABKAMSKgoFdmFsdWUYAiABKAsyGy56cHJvdG8uQ29tbXVuaXR5UGxh",
+            "eWVySW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityPlayerInfoReflection.Descriptor, global::Zproto.StruCommunityTransferReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +91,7 @@ namespace Zproto {
       return new GetHomelandCohabitantReply(this);
     }
 
-    /// <summary>Field number for the "transferCommunity" field.</summary>
+    /// <summary>Field number for the "transfer_community" field.</summary>
     public const int TransferCommunityFieldNumber = 1;
     private global::Zproto.CommunityTransfer transferCommunity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +114,7 @@ namespace Zproto {
       get { return cohabitant_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

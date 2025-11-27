@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X25vdGlmeV91bmlvbl9hY3Rpdml0eV9yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8iRAoaTm90aWZ5VW5pb25BY3Rpdml0eVJlcXVlc3QSEgoKYWN0aXZp",
-            "dHlJZBgCIAEoBRISCgpub3RpZnlUeXBlGAMgASgFYgZwcm90bzM="));
+            "cHJvdG8iRgoaTm90aWZ5VW5pb25BY3Rpdml0eVJlcXVlc3QSEwoLYWN0aXZp",
+            "dHlfaWQYAiABKAUSEwoLbm90aWZ5X3R5cGUYAyABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyUnionActivityRequest(this);
     }
 
-    /// <summary>Field number for the "activityId" field.</summary>
+    /// <summary>Field number for the "activity_id" field.</summary>
     public const int ActivityIdFieldNumber = 2;
     private int activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "notifyType" field.</summary>
+    /// <summary>Field number for the "notify_type" field.</summary>
     public const int NotifyTypeFieldNumber = 3;
     private int notifyType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3VzZXJfc2NlbmVfaW5mby5wcm90bxIGenByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8iQwoNVXNlclNjZW5lSW5mbxIPCgdzY2VuZUlkGAEg",
-            "ASgFEhEKCXNjZW5lR3VpZBgCIAEoCRIOCgZsaW5lSWQYAyABKAViBnByb3Rv",
-            "Mw=="));
+            "cnR5X21hc2sucHJvdG8iRgoNVXNlclNjZW5lSW5mbxIQCghzY2VuZV9pZBgB",
+            "IAEoBRISCgpzY2VuZV9ndWlkGAIgASgJEg8KB2xpbmVfaWQYAyABKAViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new UserSceneInfo(this);
     }
 
-    /// <summary>Field number for the "sceneId" field.</summary>
+    /// <summary>Field number for the "scene_id" field.</summary>
     public const int SceneIdFieldNumber = 1;
     private int sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sceneGuid" field.</summary>
+    /// <summary>Field number for the "scene_guid" field.</summary>
     public const int SceneGuidFieldNumber = 2;
     private string sceneGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lineId" field.</summary>
+    /// <summary>Field number for the "line_id" field.</summary>
     public const int LineIdFieldNumber = 3;
     private int lineId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

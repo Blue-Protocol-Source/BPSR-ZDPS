@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2NvbW11bml0eV9xdWl0X2NvaGFiaXRhbnQucHJvdG8SBnpwcm90",
-            "byJBChdDb21tdW5pdHlRdWl0Q29oYWJpdGFudBIYChBpc0luaXRpYXRpdmVR",
-            "dWl0GAEgASgIEgwKBHRpbWUYAiABKANiBnByb3RvMw=="));
+            "byJDChdDb21tdW5pdHlRdWl0Q29oYWJpdGFudBIaChJpc19pbml0aWF0aXZl",
+            "X3F1aXQYASABKAgSDAoEdGltZRgCIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new CommunityQuitCohabitant(this);
     }
 
-    /// <summary>Field number for the "isInitiativeQuit" field.</summary>
+    /// <summary>Field number for the "is_initiative_quit" field.</summary>
     public const int IsInitiativeQuitFieldNumber = 1;
     private bool isInitiativeQuit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

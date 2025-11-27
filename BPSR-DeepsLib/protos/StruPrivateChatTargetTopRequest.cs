@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X3ByaXZhdGVfY2hhdF90YXJnZXRfdG9wX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byI/ChtQcml2YXRlQ2hhdFRhcmdldFRvcFJlcXVlc3QSEAoIdGFy",
-            "Z2V0SWQYASABKA0SDgoGc2V0VG9wGAIgASgIYgZwcm90bzM="));
+            "Bnpwcm90byJBChtQcml2YXRlQ2hhdFRhcmdldFRvcFJlcXVlc3QSEQoJdGFy",
+            "Z2V0X2lkGAEgASgNEg8KB3NldF90b3AYAiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new PrivateChatTargetTopRequest(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "setTop" field.</summary>
+    /// <summary>Field number for the "set_top" field.</summary>
     public const int SetTopFieldNumber = 2;
     private bool setTop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

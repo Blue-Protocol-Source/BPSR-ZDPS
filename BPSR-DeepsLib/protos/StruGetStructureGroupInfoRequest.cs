@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X2dldF9zdHJ1Y3R1cmVfZ3JvdXBfaW5mb19yZXF1ZXN0LnByb3Rv",
-            "EgZ6cHJvdG8iLwocR2V0U3RydWN0dXJlR3JvdXBJbmZvUmVxdWVzdBIPCgdp",
-            "c091dGVyGAEgASgIYgZwcm90bzM="));
+            "EgZ6cHJvdG8iMAocR2V0U3RydWN0dXJlR3JvdXBJbmZvUmVxdWVzdBIQCghp",
+            "c19vdXRlchgBIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new GetStructureGroupInfoRequest(this);
     }
 
-    /// <summary>Field number for the "isOuter" field.</summary>
+    /// <summary>Field number for the "is_outer" field.</summary>
     public const int IsOuterFieldNumber = 1;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

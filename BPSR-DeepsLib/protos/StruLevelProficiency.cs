@@ -26,14 +26,14 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X2xldmVsX3Byb2ZpY2llbmN5LnByb3RvEgZ6cHJvdG8aHXN0cnVf",
             "dW5sb2NrX3Byb2ZpY2llbmN5LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJv",
-            "dG8iyAIKEExldmVsUHJvZmljaWVuY3kSTgoTdXNpbmdQcm9maWNpZW5jeU1h",
-            "cBgBIAMoCzIxLnpwcm90by5MZXZlbFByb2ZpY2llbmN5LlVzaW5nUHJvZmlj",
-            "aWVuY3lNYXBFbnRyeRJQChR1bmxvY2tQcm9maWNpZW5jeU1hcBgCIAMoCzIy",
-            "Lnpwcm90by5MZXZlbFByb2ZpY2llbmN5LlVubG9ja1Byb2ZpY2llbmN5TWFw",
-            "RW50cnkaOgoYVXNpbmdQcm9maWNpZW5jeU1hcEVudHJ5EgsKA2tleRgBIAEo",
-            "BRINCgV2YWx1ZRgCIAEoBToCOAEaVgoZVW5sb2NrUHJvZmljaWVuY3lNYXBF",
-            "bnRyeRILCgNrZXkYASABKAUSKAoFdmFsdWUYAiABKAsyGS56cHJvdG8uVW5s",
-            "b2NrUHJvZmljaWVuY3k6AjgBYgZwcm90bzM="));
+            "dG8izAIKEExldmVsUHJvZmljaWVuY3kSUAoVdXNpbmdfcHJvZmljaWVuY3lf",
+            "bWFwGAEgAygLMjEuenByb3RvLkxldmVsUHJvZmljaWVuY3kuVXNpbmdQcm9m",
+            "aWNpZW5jeU1hcEVudHJ5ElIKFnVubG9ja19wcm9maWNpZW5jeV9tYXAYAiAD",
+            "KAsyMi56cHJvdG8uTGV2ZWxQcm9maWNpZW5jeS5VbmxvY2tQcm9maWNpZW5j",
+            "eU1hcEVudHJ5GjoKGFVzaW5nUHJvZmljaWVuY3lNYXBFbnRyeRILCgNrZXkY",
+            "ASABKAUSDQoFdmFsdWUYAiABKAU6AjgBGlYKGVVubG9ja1Byb2ZpY2llbmN5",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgFEigKBXZhbHVlGAIgASgLMhkuenByb3Rv",
+            "LlVubG9ja1Byb2ZpY2llbmN5OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUnlockProficiencyReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new LevelProficiency(this);
     }
 
-    /// <summary>Field number for the "usingProficiencyMap" field.</summary>
+    /// <summary>Field number for the "using_proficiency_map" field.</summary>
     public const int UsingProficiencyMapFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_usingProficiencyMap_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);
@@ -101,7 +101,7 @@ namespace Zproto {
       get { return usingProficiencyMap_; }
     }
 
-    /// <summary>Field number for the "unlockProficiencyMap" field.</summary>
+    /// <summary>Field number for the "unlock_proficiency_map" field.</summary>
     public const int UnlockProficiencyMapFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.UnlockProficiency>.Codec _map_unlockProficiencyMap_codec
         = new pbc::MapField<int, global::Zproto.UnlockProficiency>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnlockProficiency.Parser), 18);

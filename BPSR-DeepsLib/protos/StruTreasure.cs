@@ -25,16 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNzdHJ1X3RyZWFzdXJlLnByb3RvEgZ6cHJvdG8aHHN0cnVfdHJlYXN1cmVf",
-            "aXRlbV9yb3cucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byL7AgoIVHJl",
+            "aXRlbV9yb3cucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKDAwoIVHJl",
             "YXN1cmUSKAoEcm93cxgBIAMoCzIaLnpwcm90by5UcmVhc3VyZS5Sb3dzRW50",
-            "cnkSNgoLaGlzdG9yeVJvd3MYAiADKAsyIS56cHJvdG8uVHJlYXN1cmUuSGlz",
-            "dG9yeVJvd3NFbnRyeRIMCgRmbGFnGAMgASgIEhMKC3JlZnJlc2hUaW1lGAQg",
-            "ASgDEhYKDnNlbGVjdGVkUmV3YXJkGAUgAygFEhAKCHNlYXNvbklkGAYgASgF",
-            "EhQKDGxhc3RTZWFzb25JZBgHIAEoBRIXCg9sYXN0UmVmcmVzaFRpbWUYCCAB",
-            "KAMaRAoJUm93c0VudHJ5EgsKA2tleRgBIAEoBRImCgV2YWx1ZRgCIAEoCzIX",
-            "Lnpwcm90by5UcmVhc3VyZUl0ZW1Sb3c6AjgBGksKEEhpc3RvcnlSb3dzRW50",
-            "cnkSCwoDa2V5GAEgASgFEiYKBXZhbHVlGAIgASgLMhcuenByb3RvLlRyZWFz",
-            "dXJlSXRlbVJvdzoCOAFiBnByb3RvMw=="));
+            "cnkSNwoMaGlzdG9yeV9yb3dzGAIgAygLMiEuenByb3RvLlRyZWFzdXJlLkhp",
+            "c3RvcnlSb3dzRW50cnkSDAoEZmxhZxgDIAEoCBIUCgxyZWZyZXNoX3RpbWUY",
+            "BCABKAMSFwoPc2VsZWN0ZWRfcmV3YXJkGAUgAygFEhEKCXNlYXNvbl9pZBgG",
+            "IAEoBRIWCg5sYXN0X3NlYXNvbl9pZBgHIAEoBRIZChFsYXN0X3JlZnJlc2hf",
+            "dGltZRgIIAEoAxpECglSb3dzRW50cnkSCwoDa2V5GAEgASgFEiYKBXZhbHVl",
+            "GAIgASgLMhcuenByb3RvLlRyZWFzdXJlSXRlbVJvdzoCOAEaSwoQSGlzdG9y",
+            "eVJvd3NFbnRyeRILCgNrZXkYASABKAUSJgoFdmFsdWUYAiABKAsyFy56cHJv",
+            "dG8uVHJlYXN1cmVJdGVtUm93OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTreasureItemRowReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -108,7 +108,7 @@ namespace Zproto {
       get { return rows_; }
     }
 
-    /// <summary>Field number for the "historyRows" field.</summary>
+    /// <summary>Field number for the "history_rows" field.</summary>
     public const int HistoryRowsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.TreasureItemRow>.Codec _map_historyRows_codec
         = new pbc::MapField<int, global::Zproto.TreasureItemRow>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.TreasureItemRow.Parser), 18);
@@ -131,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refreshTime" field.</summary>
+    /// <summary>Field number for the "refresh_time" field.</summary>
     public const int RefreshTimeFieldNumber = 4;
     private long refreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,7 +143,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "selectedReward" field.</summary>
+    /// <summary>Field number for the "selected_reward" field.</summary>
     public const int SelectedRewardFieldNumber = 5;
     private static readonly pb::FieldCodec<int> _repeated_selectedReward_codec
         = pb::FieldCodec.ForInt32(42);
@@ -154,7 +154,7 @@ namespace Zproto {
       get { return selectedReward_; }
     }
 
-    /// <summary>Field number for the "seasonId" field.</summary>
+    /// <summary>Field number for the "season_id" field.</summary>
     public const int SeasonIdFieldNumber = 6;
     private int seasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -166,7 +166,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastSeasonId" field.</summary>
+    /// <summary>Field number for the "last_season_id" field.</summary>
     public const int LastSeasonIdFieldNumber = 7;
     private int lastSeasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -178,7 +178,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastRefreshTime" field.</summary>
+    /// <summary>Field number for the "last_refresh_time" field.</summary>
     public const int LastRefreshTimeFieldNumber = 8;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X25vdGlmeV9jb21tdW5pdHlfYXBwbHlfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvGh9zdHJ1X2NvbW11bml0eV9hcHBseV9pbmZvLnByb3RvIkwKG05v",
-            "dGlmeUNvbW11bml0eUFwcGx5UmVxdWVzdBItCglhcHBseUluZm8YASABKAsy",
-            "Gi56cHJvdG8uQ29tbXVuaXR5QXBwbHlJbmZvYgZwcm90bzM="));
+            "enByb3RvGh9zdHJ1X2NvbW11bml0eV9hcHBseV9pbmZvLnByb3RvIk0KG05v",
+            "dGlmeUNvbW11bml0eUFwcGx5UmVxdWVzdBIuCgphcHBseV9pbmZvGAEgASgL",
+            "MhouenByb3RvLkNvbW11bml0eUFwcGx5SW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityApplyInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyCommunityApplyRequest(this);
     }
 
-    /// <summary>Field number for the "applyInfo" field.</summary>
+    /// <summary>Field number for the "apply_info" field.</summary>
     public const int ApplyInfoFieldNumber = 1;
     private global::Zproto.CommunityApplyInfo applyInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

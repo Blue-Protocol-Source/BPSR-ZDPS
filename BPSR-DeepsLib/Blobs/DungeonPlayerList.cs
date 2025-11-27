@@ -8,7 +8,7 @@ namespace BPSR_DeepsLib.Blobs;
 
 public class DungeonPlayerList : BlobType
 {
-    public Dictionary<int, DungeonPlayerInfo> PlayerInfos;
+    public Dictionary<uint, DungeonPlayerInfo> PlayerInfos;
 
     public DungeonPlayerList()
     {
@@ -23,7 +23,7 @@ public class DungeonPlayerList : BlobType
         switch (index)
         {
             case Zproto.DungeonPlayerList.PlayerInfosFieldNumber:
-                PlayerInfos = blob.ReadHashMap<DungeonPlayerInfo>();
+                PlayerInfos = blob.ReadHashMap<uint, DungeonPlayerInfo>();
                 return true;
             default:
                 return false;

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruFaceUploadDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X2ZhY2VfdXBsb2FkX2RhdGEucHJvdG8SBnpwcm90byI3Cg5GYWNl",
-            "VXBsb2FkRGF0YRIRCglzaG9ydEd1aWQYASABKAkSEgoKZmlsZVN1ZmZpeBgC",
-            "IAEoCWIGcHJvdG8z"));
+            "ChtzdHJ1X2ZhY2VfdXBsb2FkX2RhdGEucHJvdG8SBnpwcm90byI5Cg5GYWNl",
+            "VXBsb2FkRGF0YRISCgpzaG9ydF9ndWlkGAEgASgJEhMKC2ZpbGVfc3VmZml4",
+            "GAIgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new FaceUploadData(this);
     }
 
-    /// <summary>Field number for the "shortGuid" field.</summary>
+    /// <summary>Field number for the "short_guid" field.</summary>
     public const int ShortGuidFieldNumber = 1;
     private string shortGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fileSuffix" field.</summary>
+    /// <summary>Field number for the "file_suffix" field.</summary>
     public const int FileSuffixFieldNumber = 2;
     private string fileSuffix_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

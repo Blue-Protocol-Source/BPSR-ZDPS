@@ -16,7 +16,7 @@ public class TeamMemData : BlobType
     public int? SceneId;
     public bool? VoiceIsOpen;
     public int? GroupId;
-    public Dictionary<int, TeamMemberSocialData> SocialData;
+    public TeamMemberSocialData? SocialData;
 
     public TeamMemData()
     {
@@ -55,7 +55,7 @@ public class TeamMemData : BlobType
                 GroupId = blob.ReadInt();
                 return true;
             case Zproto.TeamMemData.SocialDataFieldNumber:
-                SocialData = blob.ReadHashMap<TeamMemberSocialData>();
+                SocialData = new(blob);
                 return true;
             default:
                 return false;

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruEndBubbleActRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2VuZF9idWJibGVfYWN0X3JlcXVlc3QucHJvdG8SBnpwcm90byIq",
-            "ChNFbmRCdWJibGVBY3RSZXF1ZXN0EhMKC2J1YmJsZUFjdElkGAEgASgFYgZw",
-            "cm90bzM="));
+            "CiFzdHJ1X2VuZF9idWJibGVfYWN0X3JlcXVlc3QucHJvdG8SBnpwcm90byIs",
+            "ChNFbmRCdWJibGVBY3RSZXF1ZXN0EhUKDWJ1YmJsZV9hY3RfaWQYASABKAVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new EndBubbleActRequest(this);
     }
 
-    /// <summary>Field number for the "bubbleActId" field.</summary>
+    /// <summary>Field number for the "bubble_act_id" field.</summary>
     public const int BubbleActIdFieldNumber = 1;
     private int bubbleActId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

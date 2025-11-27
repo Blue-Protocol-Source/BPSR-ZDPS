@@ -27,43 +27,43 @@ namespace Zproto {
             "ChpzdHJ1X3F1ZXN0X2RhdGFfbGlzdC5wcm90bxIGenByb3RvGhVzdHJ1X3F1",
             "ZXN0X2RhdGEucHJvdG8aGHN0cnVfcXVlc3RfaGlzdG9yeS5wcm90bxobc3Ry",
             "dV93b3JsZF9xdWVzdF9pbmZvLnByb3RvGhtzdHJ1X3dvcmxkX3F1ZXN0X2xp",
-            "c3QucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKuDAoNUXVlc3REYXRh",
-            "TGlzdBI1CghxdWVzdE1hcBgBIAMoCzIjLnpwcm90by5RdWVzdERhdGFMaXN0",
-            "LlF1ZXN0TWFwRW50cnkSOwoLZmluaXNoUXVlc3QYAiADKAsyJi56cHJvdG8u",
-            "UXVlc3REYXRhTGlzdC5GaW5pc2hRdWVzdEVudHJ5EhIKCnRyYWNraW5nSWQY",
-            "AyABKA0SRQoQZmluaXNoUmVzZXRRdWVzdBgEIAMoCzIrLnpwcm90by5RdWVz",
-            "dERhdGFMaXN0LkZpbmlzaFJlc2V0UXVlc3RFbnRyeRI5CgpoaXN0b3J5TWFw",
-            "GAUgAygLMiUuenByb3RvLlF1ZXN0RGF0YUxpc3QuSGlzdG9yeU1hcEVudHJ5",
-            "EhsKE3dvcmxkUXVlc3RUaW1lU3RhbXAYBiABKAMSQQoOd29ybGRRdWVzdElu",
-            "Zm8YByADKAsyKS56cHJvdG8uUXVlc3REYXRhTGlzdC5Xb3JsZFF1ZXN0SW5m",
-            "b0VudHJ5EkcKEWFsbFdvcmxkUXVlc3RMaXN0GAggAygLMiwuenByb3RvLlF1",
-            "ZXN0RGF0YUxpc3QuQWxsV29ybGRRdWVzdExpc3RFbnRyeRJHChFibHVlV29y",
-            "bGRRdWVzdE1hcBgJIAMoCzIsLnpwcm90by5RdWVzdERhdGFMaXN0LkJsdWVX",
-            "b3JsZFF1ZXN0TWFwRW50cnkSPwoNZmlsdGVyRXZlbnRJZBgKIAMoCzIoLnpw",
-            "cm90by5RdWVzdERhdGFMaXN0LkZpbHRlckV2ZW50SWRFbnRyeRIXCg9hY2Nl",
-            "cHRRdWVzdExpc3QYCyADKA0SHAoUZm9sbG93V29ybGRRdWVzdExpc3QYDCAD",
-            "KA0SSQoSdHJhY2tPcHRpb25hbFF1ZXN0GA0gAygLMi0uenByb3RvLlF1ZXN0",
-            "RGF0YUxpc3QuVHJhY2tPcHRpb25hbFF1ZXN0RW50cnkSTwoVZmluaXNoUmVz",
-            "ZXRRdWVzdENvdW50GA4gAygLMjAuenByb3RvLlF1ZXN0RGF0YUxpc3QuRmlu",
-            "aXNoUmVzZXRRdWVzdENvdW50RW50cnkSQQoOYWNjZXB0UXVlc3RNYXAYDyAD",
-            "KAsyKS56cHJvdG8uUXVlc3REYXRhTGlzdC5BY2NlcHRRdWVzdE1hcEVudHJ5",
-            "Eg8KB3ZlcnNpb24YECABKAQaQgoNUXVlc3RNYXBFbnRyeRILCgNrZXkYASAB",
-            "KA0SIAoFdmFsdWUYAiABKAsyES56cHJvdG8uUXVlc3REYXRhOgI4ARoyChBG",
-            "aW5pc2hRdWVzdEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoCDoC",
-            "OAEaNwoVRmluaXNoUmVzZXRRdWVzdEVudHJ5EgsKA2tleRgBIAEoDRINCgV2",
-            "YWx1ZRgCIAEoDToCOAEaRwoPSGlzdG9yeU1hcEVudHJ5EgsKA2tleRgBIAEo",
-            "DRIjCgV2YWx1ZRgCIAEoCzIULnpwcm90by5RdWVzdEhpc3Rvcnk6AjgBGk0K",
-            "E1dvcmxkUXVlc3RJbmZvRW50cnkSCwoDa2V5GAEgASgNEiUKBXZhbHVlGAIg",
-            "ASgLMhYuenByb3RvLldvcmxkUXVlc3RJbmZvOgI4ARo4ChZBbGxXb3JsZFF1",
-            "ZXN0TGlzdEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAEa",
-            "OAoWQmx1ZVdvcmxkUXVlc3RNYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFs",
-            "dWUYAiABKA06AjgBGkwKEkZpbHRlckV2ZW50SWRFbnRyeRILCgNrZXkYASAB",
-            "KAUSJQoFdmFsdWUYAiABKAsyFi56cHJvdG8ud29ybGRRdWVzdExpc3Q6AjgB",
-            "GjkKF1RyYWNrT3B0aW9uYWxRdWVzdEVudHJ5EgsKA2tleRgBIAEoDRINCgV2",
-            "YWx1ZRgCIAEoDToCOAEaPAoaRmluaXNoUmVzZXRRdWVzdENvdW50RW50cnkS",
-            "CwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4ARo1ChNBY2NlcHRRdWVz",
-            "dE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoCDoCOAFiBnBy",
-            "b3RvMw=="));
+            "c3QucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLNDAoNUXVlc3REYXRh",
+            "TGlzdBI2CglxdWVzdF9tYXAYASADKAsyIy56cHJvdG8uUXVlc3REYXRhTGlz",
+            "dC5RdWVzdE1hcEVudHJ5EjwKDGZpbmlzaF9xdWVzdBgCIAMoCzImLnpwcm90",
+            "by5RdWVzdERhdGFMaXN0LkZpbmlzaFF1ZXN0RW50cnkSEwoLdHJhY2tpbmdf",
+            "aWQYAyABKA0SRwoSZmluaXNoX3Jlc2V0X3F1ZXN0GAQgAygLMisuenByb3Rv",
+            "LlF1ZXN0RGF0YUxpc3QuRmluaXNoUmVzZXRRdWVzdEVudHJ5EjoKC2hpc3Rv",
+            "cnlfbWFwGAUgAygLMiUuenByb3RvLlF1ZXN0RGF0YUxpc3QuSGlzdG9yeU1h",
+            "cEVudHJ5Eh4KFndvcmxkX3F1ZXN0X3RpbWVfc3RhbXAYBiABKAMSQwoQd29y",
+            "bGRfcXVlc3RfaW5mbxgHIAMoCzIpLnpwcm90by5RdWVzdERhdGFMaXN0Lldv",
+            "cmxkUXVlc3RJbmZvRW50cnkSSgoUYWxsX3dvcmxkX3F1ZXN0X2xpc3QYCCAD",
+            "KAsyLC56cHJvdG8uUXVlc3REYXRhTGlzdC5BbGxXb3JsZFF1ZXN0TGlzdEVu",
+            "dHJ5EkoKFGJsdWVfd29ybGRfcXVlc3RfbWFwGAkgAygLMiwuenByb3RvLlF1",
+            "ZXN0RGF0YUxpc3QuQmx1ZVdvcmxkUXVlc3RNYXBFbnRyeRJBCg9maWx0ZXJf",
+            "ZXZlbnRfaWQYCiADKAsyKC56cHJvdG8uUXVlc3REYXRhTGlzdC5GaWx0ZXJF",
+            "dmVudElkRW50cnkSGQoRYWNjZXB0X3F1ZXN0X2xpc3QYCyADKA0SHwoXZm9s",
+            "bG93X3dvcmxkX3F1ZXN0X2xpc3QYDCADKA0SSwoUdHJhY2tfb3B0aW9uYWxf",
+            "cXVlc3QYDSADKAsyLS56cHJvdG8uUXVlc3REYXRhTGlzdC5UcmFja09wdGlv",
+            "bmFsUXVlc3RFbnRyeRJSChhmaW5pc2hfcmVzZXRfcXVlc3RfY291bnQYDiAD",
+            "KAsyMC56cHJvdG8uUXVlc3REYXRhTGlzdC5GaW5pc2hSZXNldFF1ZXN0Q291",
+            "bnRFbnRyeRJDChBhY2NlcHRfcXVlc3RfbWFwGA8gAygLMikuenByb3RvLlF1",
+            "ZXN0RGF0YUxpc3QuQWNjZXB0UXVlc3RNYXBFbnRyeRIPCgd2ZXJzaW9uGBAg",
+            "ASgEGkIKDVF1ZXN0TWFwRW50cnkSCwoDa2V5GAEgASgNEiAKBXZhbHVlGAIg",
+            "ASgLMhEuenByb3RvLlF1ZXN0RGF0YToCOAEaMgoQRmluaXNoUXVlc3RFbnRy",
+            "eRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKAg6AjgBGjcKFUZpbmlzaFJl",
+            "c2V0UXVlc3RFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgB",
+            "GkcKD0hpc3RvcnlNYXBFbnRyeRILCgNrZXkYASABKA0SIwoFdmFsdWUYAiAB",
+            "KAsyFC56cHJvdG8uUXVlc3RIaXN0b3J5OgI4ARpNChNXb3JsZFF1ZXN0SW5m",
+            "b0VudHJ5EgsKA2tleRgBIAEoDRIlCgV2YWx1ZRgCIAEoCzIWLnpwcm90by5X",
+            "b3JsZFF1ZXN0SW5mbzoCOAEaOAoWQWxsV29ybGRRdWVzdExpc3RFbnRyeRIL",
+            "CgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBGjgKFkJsdWVXb3JsZFF1",
+            "ZXN0TWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4ARpM",
+            "ChJGaWx0ZXJFdmVudElkRW50cnkSCwoDa2V5GAEgASgFEiUKBXZhbHVlGAIg",
+            "ASgLMhYuenByb3RvLndvcmxkUXVlc3RMaXN0OgI4ARo5ChdUcmFja09wdGlv",
+            "bmFsUXVlc3RFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgB",
+            "GjwKGkZpbmlzaFJlc2V0UXVlc3RDb3VudEVudHJ5EgsKA2tleRgBIAEoDRIN",
+            "CgV2YWx1ZRgCIAEoDToCOAEaNQoTQWNjZXB0UXVlc3RNYXBFbnRyeRILCgNr",
+            "ZXkYASABKA0SDQoFdmFsdWUYAiABKAg6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruQuestDataReflection.Descriptor, global::Zproto.StruQuestHistoryReflection.Descriptor, global::Zproto.StruWorldQuestInfoReflection.Descriptor, global::Zproto.StruWorldQuestListReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -134,7 +134,7 @@ namespace Zproto {
       return new QuestDataList(this);
     }
 
-    /// <summary>Field number for the "questMap" field.</summary>
+    /// <summary>Field number for the "quest_map" field.</summary>
     public const int QuestMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.QuestData>.Codec _map_questMap_codec
         = new pbc::MapField<uint, global::Zproto.QuestData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.QuestData.Parser), 10);
@@ -145,7 +145,7 @@ namespace Zproto {
       get { return questMap_; }
     }
 
-    /// <summary>Field number for the "finishQuest" field.</summary>
+    /// <summary>Field number for the "finish_quest" field.</summary>
     public const int FinishQuestFieldNumber = 2;
     private static readonly pbc::MapField<uint, bool>.Codec _map_finishQuest_codec
         = new pbc::MapField<uint, bool>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForBool(16, false), 18);
@@ -156,7 +156,7 @@ namespace Zproto {
       get { return finishQuest_; }
     }
 
-    /// <summary>Field number for the "trackingId" field.</summary>
+    /// <summary>Field number for the "tracking_id" field.</summary>
     public const int TrackingIdFieldNumber = 3;
     private uint trackingId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,7 +168,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "finishResetQuest" field.</summary>
+    /// <summary>Field number for the "finish_reset_quest" field.</summary>
     public const int FinishResetQuestFieldNumber = 4;
     private static readonly pbc::MapField<uint, uint>.Codec _map_finishResetQuest_codec
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 34);
@@ -179,7 +179,7 @@ namespace Zproto {
       get { return finishResetQuest_; }
     }
 
-    /// <summary>Field number for the "historyMap" field.</summary>
+    /// <summary>Field number for the "history_map" field.</summary>
     public const int HistoryMapFieldNumber = 5;
     private static readonly pbc::MapField<uint, global::Zproto.QuestHistory>.Codec _map_historyMap_codec
         = new pbc::MapField<uint, global::Zproto.QuestHistory>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.QuestHistory.Parser), 42);
@@ -190,7 +190,7 @@ namespace Zproto {
       get { return historyMap_; }
     }
 
-    /// <summary>Field number for the "worldQuestTimeStamp" field.</summary>
+    /// <summary>Field number for the "world_quest_time_stamp" field.</summary>
     public const int WorldQuestTimeStampFieldNumber = 6;
     private long worldQuestTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -202,7 +202,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "worldQuestInfo" field.</summary>
+    /// <summary>Field number for the "world_quest_info" field.</summary>
     public const int WorldQuestInfoFieldNumber = 7;
     private static readonly pbc::MapField<uint, global::Zproto.WorldQuestInfo>.Codec _map_worldQuestInfo_codec
         = new pbc::MapField<uint, global::Zproto.WorldQuestInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.WorldQuestInfo.Parser), 58);
@@ -213,7 +213,7 @@ namespace Zproto {
       get { return worldQuestInfo_; }
     }
 
-    /// <summary>Field number for the "allWorldQuestList" field.</summary>
+    /// <summary>Field number for the "all_world_quest_list" field.</summary>
     public const int AllWorldQuestListFieldNumber = 8;
     private static readonly pbc::MapField<uint, uint>.Codec _map_allWorldQuestList_codec
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 66);
@@ -224,7 +224,7 @@ namespace Zproto {
       get { return allWorldQuestList_; }
     }
 
-    /// <summary>Field number for the "blueWorldQuestMap" field.</summary>
+    /// <summary>Field number for the "blue_world_quest_map" field.</summary>
     public const int BlueWorldQuestMapFieldNumber = 9;
     private static readonly pbc::MapField<uint, uint>.Codec _map_blueWorldQuestMap_codec
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 74);
@@ -235,7 +235,7 @@ namespace Zproto {
       get { return blueWorldQuestMap_; }
     }
 
-    /// <summary>Field number for the "filterEventId" field.</summary>
+    /// <summary>Field number for the "filter_event_id" field.</summary>
     public const int FilterEventIdFieldNumber = 10;
     private static readonly pbc::MapField<int, global::Zproto.worldQuestList>.Codec _map_filterEventId_codec
         = new pbc::MapField<int, global::Zproto.worldQuestList>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.worldQuestList.Parser), 82);
@@ -246,7 +246,7 @@ namespace Zproto {
       get { return filterEventId_; }
     }
 
-    /// <summary>Field number for the "acceptQuestList" field.</summary>
+    /// <summary>Field number for the "accept_quest_list" field.</summary>
     public const int AcceptQuestListFieldNumber = 11;
     private static readonly pb::FieldCodec<uint> _repeated_acceptQuestList_codec
         = pb::FieldCodec.ForUInt32(90);
@@ -257,7 +257,7 @@ namespace Zproto {
       get { return acceptQuestList_; }
     }
 
-    /// <summary>Field number for the "followWorldQuestList" field.</summary>
+    /// <summary>Field number for the "follow_world_quest_list" field.</summary>
     public const int FollowWorldQuestListFieldNumber = 12;
     private static readonly pb::FieldCodec<uint> _repeated_followWorldQuestList_codec
         = pb::FieldCodec.ForUInt32(98);
@@ -268,7 +268,7 @@ namespace Zproto {
       get { return followWorldQuestList_; }
     }
 
-    /// <summary>Field number for the "trackOptionalQuest" field.</summary>
+    /// <summary>Field number for the "track_optional_quest" field.</summary>
     public const int TrackOptionalQuestFieldNumber = 13;
     private static readonly pbc::MapField<uint, uint>.Codec _map_trackOptionalQuest_codec
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 106);
@@ -279,7 +279,7 @@ namespace Zproto {
       get { return trackOptionalQuest_; }
     }
 
-    /// <summary>Field number for the "finishResetQuestCount" field.</summary>
+    /// <summary>Field number for the "finish_reset_quest_count" field.</summary>
     public const int FinishResetQuestCountFieldNumber = 14;
     private static readonly pbc::MapField<uint, uint>.Codec _map_finishResetQuestCount_codec
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 114);
@@ -290,7 +290,7 @@ namespace Zproto {
       get { return finishResetQuestCount_; }
     }
 
-    /// <summary>Field number for the "acceptQuestMap" field.</summary>
+    /// <summary>Field number for the "accept_quest_map" field.</summary>
     public const int AcceptQuestMapFieldNumber = 15;
     private static readonly pbc::MapField<uint, bool>.Codec _map_acceptQuestMap_codec
         = new pbc::MapField<uint, bool>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForBool(16, false), 122);

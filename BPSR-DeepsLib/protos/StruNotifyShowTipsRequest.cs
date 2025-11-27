@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X25vdGlmeV9zaG93X3RpcHNfcmVxdWVzdC5wcm90bxIGenByb3Rv",
-            "GhRzdHJ1X3RpcHNfaW5mby5wcm90byI7ChVOb3RpZnlTaG93VGlwc1JlcXVl",
-            "c3QSIgoIdGlwc0luZm8YASABKAsyEC56cHJvdG8uVGlwc0luZm9iBnByb3Rv",
-            "Mw=="));
+            "GhRzdHJ1X3RpcHNfaW5mby5wcm90byI8ChVOb3RpZnlTaG93VGlwc1JlcXVl",
+            "c3QSIwoJdGlwc19pbmZvGAEgASgLMhAuenByb3RvLlRpcHNJbmZvYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTipsInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyShowTipsRequest(this);
     }
 
-    /// <summary>Field number for the "tipsInfo" field.</summary>
+    /// <summary>Field number for the "tips_info" field.</summary>
     public const int TipsInfoFieldNumber = 1;
     private global::Zproto.TipsInfo tipsInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

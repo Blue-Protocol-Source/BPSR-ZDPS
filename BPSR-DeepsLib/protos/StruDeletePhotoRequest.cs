@@ -24,8 +24,8 @@ namespace Zproto {
     static StruDeletePhotoRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2RlbGV0ZV9waG90b19yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iJQoS",
-            "RGVsZXRlUGhvdG9SZXF1ZXN0Eg8KB3Bob3RvSWQYAiABKA1iBnByb3RvMw=="));
+            "Ch9zdHJ1X2RlbGV0ZV9waG90b19yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iJgoS",
+            "RGVsZXRlUGhvdG9SZXF1ZXN0EhAKCHBob3RvX2lkGAIgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new DeletePhotoRequest(this);
     }
 
-    /// <summary>Field number for the "photoId" field.</summary>
+    /// <summary>Field number for the "photo_id" field.</summary>
     public const int PhotoIdFieldNumber = 2;
     private uint photoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

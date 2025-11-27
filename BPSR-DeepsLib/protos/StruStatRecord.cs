@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X3N0YXRfcmVjb3JkLnByb3RvEgZ6cHJvdG8aF3N0cnVfc2NlbmVf",
-            "cmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ihwIKClN0YXRS",
-            "ZWNvcmQSCwoDY250GAEgASgEEjQKCWdyb3VwQ250cxgCIAMoCzIhLnpwcm90",
-            "by5TdGF0UmVjb3JkLkdyb3VwQ250c0VudHJ5EjoKDHNjZW5lUmVjb3JkcxgD",
-            "IAMoCzIkLnpwcm90by5TdGF0UmVjb3JkLlNjZW5lUmVjb3Jkc0VudHJ5GjAK",
-            "Dkdyb3VwQ250c0VudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoBDoC",
-            "OAEaSAoRU2NlbmVSZWNvcmRzRW50cnkSCwoDa2V5GAEgASgFEiIKBXZhbHVl",
-            "GAIgASgLMhMuenByb3RvLlNjZW5lUmVjb3JkOgI4AWIGcHJvdG8z"));
+            "cmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iiQIKClN0YXRS",
+            "ZWNvcmQSCwoDY250GAEgASgEEjUKCmdyb3VwX2NudHMYAiADKAsyIS56cHJv",
+            "dG8uU3RhdFJlY29yZC5Hcm91cENudHNFbnRyeRI7Cg1zY2VuZV9yZWNvcmRz",
+            "GAMgAygLMiQuenByb3RvLlN0YXRSZWNvcmQuU2NlbmVSZWNvcmRzRW50cnka",
+            "MAoOR3JvdXBDbnRzRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgE",
+            "OgI4ARpIChFTY2VuZVJlY29yZHNFbnRyeRILCgNrZXkYASABKAUSIgoFdmFs",
+            "dWUYAiABKAsyEy56cHJvdG8uU2NlbmVSZWNvcmQ6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSceneRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "groupCnts" field.</summary>
+    /// <summary>Field number for the "group_cnts" field.</summary>
     public const int GroupCntsFieldNumber = 2;
     private static readonly pbc::MapField<int, ulong>.Codec _map_groupCnts_codec
         = new pbc::MapField<int, ulong>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForUInt64(16, 0UL), 18);
@@ -112,7 +112,7 @@ namespace Zproto {
       get { return groupCnts_; }
     }
 
-    /// <summary>Field number for the "sceneRecords" field.</summary>
+    /// <summary>Field number for the "scene_records" field.</summary>
     public const int SceneRecordsFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.SceneRecord>.Codec _map_sceneRecords_codec
         = new pbc::MapField<int, global::Zproto.SceneRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SceneRecord.Parser), 26);

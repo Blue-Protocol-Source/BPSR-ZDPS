@@ -27,18 +27,18 @@ namespace Zproto {
             "ChlzdHJ1X2FjdGl2aXR5X2F3YXJkLnByb3RvEgZ6cHJvdG8aI3N0cnVfYWN0",
             "aXZpdHlfcmV3YXJkX3Byb2dyZXNzLnByb3RvGhhzdHJ1X2J1eV9naWZ0X2lu",
             "Zm8ucHJvdG8aI2VudW1fZV9hY3Rpdml0eV9vYnRhaW5fc3RhdHVzLnByb3Rv",
-            "IogECg1BY3Rpdml0eUF3YXJkEg8KB2F3YXJkSWQYASABKAUSHQoVcmV3YXJk",
-            "X3Nob3dfYmVnaW50aW1lGAIgASgDEhsKE3Jld2FyZF9zaG93X2VuZHRpbWUY",
-            "AyABKAMSGAoQcmV3YXJkX2JlZ2ludGltZRgEIAEoAxIWCg5yZXdhcmRfZW5k",
-            "dGltZRgFIAEoAxI3Cgljb25kaXRpb24YBiADKAsyJC56cHJvdG8uQWN0aXZp",
-            "dHlBd2FyZC5Db25kaXRpb25FbnRyeRI1CghpdGVtTGlzdBgHIAMoCzIjLnpw",
-            "cm90by5BY3Rpdml0eUF3YXJkLkl0ZW1MaXN0RW50cnkSEQoJYXdhcmRMaXN0",
-            "GAggAygFEjMKDG9idGFpblN0YXR1cxgJIAEoDjIdLnpwcm90by5FQWN0aXZp",
-            "dHlPYnRhaW5TdGF0dXMSNAoMcHJvZ3Jlc3NMaXN0GAogASgLMh4uenByb3Rv",
-            "LkFjdGl2aXR5UmV3YXJkUHJvZ3Jlc3MSJwoKcmV3YXJkSW5mbxgLIAEoCzIT",
-            "Lnpwcm90by5CdXlHaWZ0SW5mbxowCg5Db25kaXRpb25FbnRyeRILCgNrZXkY",
-            "ASABKAUSDQoFdmFsdWUYAiABKAk6AjgBGi8KDUl0ZW1MaXN0RW50cnkSCwoD",
-            "a2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
+            "Io4ECg1BY3Rpdml0eUF3YXJkEhAKCGF3YXJkX2lkGAEgASgFEh0KFXJld2Fy",
+            "ZF9zaG93X2JlZ2ludGltZRgCIAEoAxIbChNyZXdhcmRfc2hvd19lbmR0aW1l",
+            "GAMgASgDEhgKEHJld2FyZF9iZWdpbnRpbWUYBCABKAMSFgoOcmV3YXJkX2Vu",
+            "ZHRpbWUYBSABKAMSNwoJY29uZGl0aW9uGAYgAygLMiQuenByb3RvLkFjdGl2",
+            "aXR5QXdhcmQuQ29uZGl0aW9uRW50cnkSNgoJaXRlbV9saXN0GAcgAygLMiMu",
+            "enByb3RvLkFjdGl2aXR5QXdhcmQuSXRlbUxpc3RFbnRyeRISCgphd2FyZF9s",
+            "aXN0GAggAygFEjQKDW9idGFpbl9zdGF0dXMYCSABKA4yHS56cHJvdG8uRUFj",
+            "dGl2aXR5T2J0YWluU3RhdHVzEjUKDXByb2dyZXNzX2xpc3QYCiABKAsyHi56",
+            "cHJvdG8uQWN0aXZpdHlSZXdhcmRQcm9ncmVzcxIoCgtyZXdhcmRfaW5mbxgL",
+            "IAEoCzITLnpwcm90by5CdXlHaWZ0SW5mbxowCg5Db25kaXRpb25FbnRyeRIL",
+            "CgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAk6AjgBGi8KDUl0ZW1MaXN0RW50",
+            "cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActivityRewardProgressReflection.Descriptor, global::Zproto.StruBuyGiftInfoReflection.Descriptor, global::Zproto.EnumEActivityObtainStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -104,7 +104,7 @@ namespace Zproto {
       return new ActivityAward(this);
     }
 
-    /// <summary>Field number for the "awardId" field.</summary>
+    /// <summary>Field number for the "award_id" field.</summary>
     public const int AwardIdFieldNumber = 1;
     private int awardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -175,7 +175,7 @@ namespace Zproto {
       get { return condition_; }
     }
 
-    /// <summary>Field number for the "itemList" field.</summary>
+    /// <summary>Field number for the "item_list" field.</summary>
     public const int ItemListFieldNumber = 7;
     private static readonly pbc::MapField<int, int>.Codec _map_itemList_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 58);
@@ -186,7 +186,7 @@ namespace Zproto {
       get { return itemList_; }
     }
 
-    /// <summary>Field number for the "awardList" field.</summary>
+    /// <summary>Field number for the "award_list" field.</summary>
     public const int AwardListFieldNumber = 8;
     private static readonly pb::FieldCodec<int> _repeated_awardList_codec
         = pb::FieldCodec.ForInt32(66);
@@ -197,7 +197,7 @@ namespace Zproto {
       get { return awardList_; }
     }
 
-    /// <summary>Field number for the "obtainStatus" field.</summary>
+    /// <summary>Field number for the "obtain_status" field.</summary>
     public const int ObtainStatusFieldNumber = 9;
     private global::Zproto.EActivityObtainStatus obtainStatus_ = global::Zproto.EActivityObtainStatus.ActivityObtainStatusNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -209,7 +209,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "progressList" field.</summary>
+    /// <summary>Field number for the "progress_list" field.</summary>
     public const int ProgressListFieldNumber = 10;
     private global::Zproto.ActivityRewardProgress progressList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -221,7 +221,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rewardInfo" field.</summary>
+    /// <summary>Field number for the "reward_info" field.</summary>
     public const int RewardInfoFieldNumber = 11;
     private global::Zproto.BuyGiftInfo rewardInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

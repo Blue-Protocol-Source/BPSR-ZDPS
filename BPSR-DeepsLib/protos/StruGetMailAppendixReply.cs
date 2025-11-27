@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X2dldF9tYWlsX2FwcGVuZGl4X3JlcGx5LnByb3RvEgZ6cHJvdG8a",
             "F2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGg9zdHJ1X2l0ZW0ucHJvdG8aFHN0",
-            "cnVfbWFpbF9iYXNlLnByb3RvItIBChRHZXRNYWlsQXBwZW5kaXhSZXBseRI2",
+            "cnVfbWFpbF9iYXNlLnByb3RvItMBChRHZXRNYWlsQXBwZW5kaXhSZXBseRI2",
             "CgVtYWlscxgDIAMoCzInLnpwcm90by5HZXRNYWlsQXBwZW5kaXhSZXBseS5N",
-            "YWlsc0VudHJ5Eh0KB3Jld2FyZHMYBCADKAsyDC56cHJvdG8uSXRlbRIjCgdl",
-            "cnJDb2RlGAUgASgOMhIuenByb3RvLkVFcnJvckNvZGUaPgoKTWFpbHNFbnRy",
-            "eRILCgNrZXkYASABKAMSHwoFdmFsdWUYAiABKAsyEC56cHJvdG8uTWFpbEJh",
-            "c2U6AjgBYgZwcm90bzM="));
+            "YWlsc0VudHJ5Eh0KB3Jld2FyZHMYBCADKAsyDC56cHJvdG8uSXRlbRIkCghl",
+            "cnJfY29kZRgFIAEoDjISLnpwcm90by5FRXJyb3JDb2RlGj4KCk1haWxzRW50",
+            "cnkSCwoDa2V5GAEgASgDEh8KBXZhbHVlGAIgASgLMhAuenByb3RvLk1haWxC",
+            "YXNlOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruMailBaseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -111,7 +111,7 @@ namespace Zproto {
       get { return rewards_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

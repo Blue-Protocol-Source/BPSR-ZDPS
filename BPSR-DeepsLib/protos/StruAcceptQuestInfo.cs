@@ -24,9 +24,9 @@ namespace Zproto {
     static StruAcceptQuestInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X2FjY2VwdF9xdWVzdF9pbmZvLnByb3RvEgZ6cHJvdG8iNQoPQWNj",
-            "ZXB0UXVlc3RJbmZvEg8KB3F1ZXN0SWQYASABKAUSEQoJcGFyYW1MaXN0GAIg",
-            "AygFYgZwcm90bzM="));
+            "ChxzdHJ1X2FjY2VwdF9xdWVzdF9pbmZvLnByb3RvEgZ6cHJvdG8iNwoPQWNj",
+            "ZXB0UXVlc3RJbmZvEhAKCHF1ZXN0X2lkGAEgASgFEhIKCnBhcmFtX2xpc3QY",
+            "AiADKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new AcceptQuestInfo(this);
     }
 
-    /// <summary>Field number for the "questId" field.</summary>
+    /// <summary>Field number for the "quest_id" field.</summary>
     public const int QuestIdFieldNumber = 1;
     private int questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "paramList" field.</summary>
+    /// <summary>Field number for the "param_list" field.</summary>
     public const int ParamListFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_paramList_codec
         = pb::FieldCodec.ForInt32(18);

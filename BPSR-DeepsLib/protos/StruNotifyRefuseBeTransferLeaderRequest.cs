@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjNzdHJ1X25vdGlmeV9yZWZ1c2VfYmVfdHJhbnNmZXJfbGVhZGVyX3JlcXVl",
-            "c3QucHJvdG8SBnpwcm90byI0CiNOb3RpZnlSZWZ1c2VCZVRyYW5zZmVyTGVh",
-            "ZGVyUmVxdWVzdBINCgVtZW1JZBgBIAEoA2IGcHJvdG8z"));
+            "c3QucHJvdG8SBnpwcm90byI1CiNOb3RpZnlSZWZ1c2VCZVRyYW5zZmVyTGVh",
+            "ZGVyUmVxdWVzdBIOCgZtZW1faWQYASABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new NotifyRefuseBeTransferLeaderRequest(this);
     }
 
-    /// <summary>Field number for the "memId" field.</summary>
+    /// <summary>Field number for the "mem_id" field.</summary>
     public const int MemIdFieldNumber = 1;
     private long memId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X3Bpdm90X2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIlkKCVBpdm90SW5mbxIKCgJpZBgBIAEoBRISCgpicmVha1Bv",
-            "aW50GAIgAygFEhMKC3Jld2FyZFN0YWdlGAMgAygFEhcKD3Jld2FyZEZ1bGxT",
-            "dGF0ZRgEIAEoBWIGcHJvdG8z"));
+            "YXNrLnByb3RvIl0KCVBpdm90SW5mbxIKCgJpZBgBIAEoBRITCgticmVha19w",
+            "b2ludBgCIAMoBRIUCgxyZXdhcmRfc3RhZ2UYAyADKAUSGQoRcmV3YXJkX2Z1",
+            "bGxfc3RhdGUYBCABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "breakPoint" field.</summary>
+    /// <summary>Field number for the "break_point" field.</summary>
     public const int BreakPointFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_breakPoint_codec
         = pb::FieldCodec.ForInt32(18);
@@ -109,7 +109,7 @@ namespace Zproto {
       get { return breakPoint_; }
     }
 
-    /// <summary>Field number for the "rewardStage" field.</summary>
+    /// <summary>Field number for the "reward_stage" field.</summary>
     public const int RewardStageFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_rewardStage_codec
         = pb::FieldCodec.ForInt32(26);
@@ -120,7 +120,7 @@ namespace Zproto {
       get { return rewardStage_; }
     }
 
-    /// <summary>Field number for the "rewardFullState" field.</summary>
+    /// <summary>Field number for the "reward_full_state" field.</summary>
     public const int RewardFullStateFieldNumber = 4;
     private int rewardFullState_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

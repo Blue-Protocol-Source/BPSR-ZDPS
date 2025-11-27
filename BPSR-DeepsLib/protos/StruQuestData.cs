@@ -25,18 +25,18 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X3F1ZXN0X2RhdGEucHJvdG8SBnpwcm90bxoeZW51bV9lX3F1ZXN0",
-            "X3N0ZXBfc3RhdHVzLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i0gMK",
-            "CVF1ZXN0RGF0YRIKCgJpZBgBIAEoDRIOCgZzdGVwSWQYAiABKA0SDQoFc3Rh",
-            "dGUYAyABKA0SMwoJdGFyZ2V0TnVtGAQgAygLMiAuenByb3RvLlF1ZXN0RGF0",
-            "YS5UYXJnZXROdW1FbnRyeRI5Cgx0YXJnZXRNYXhOdW0YBSADKAsyIy56cHJv",
-            "dG8uUXVlc3REYXRhLlRhcmdldE1heE51bUVudHJ5EhUKDXN0ZXBMaW1pdFRp",
-            "bWUYBiABKAMSLAoKc3RlcFN0YXR1cxgHIAEoDjIYLnpwcm90by5FUXVlc3RT",
-            "dGVwU3RhdHVzEhQKDGFkZExpbWl0VGltZRgIIAEoDRI1Cgp0YXJnZXRUeXBl",
-            "GAkgAygLMiEuenByb3RvLlF1ZXN0RGF0YS5UYXJnZXRUeXBlRW50cnkaMAoO",
-            "VGFyZ2V0TnVtRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4",
-            "ARozChFUYXJnZXRNYXhOdW1FbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
-            "AiABKAU6AjgBGjEKD1RhcmdldFR5cGVFbnRyeRILCgNrZXkYASABKAUSDQoF",
-            "dmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "X3N0ZXBfc3RhdHVzLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i3AMK",
+            "CVF1ZXN0RGF0YRIKCgJpZBgBIAEoDRIPCgdzdGVwX2lkGAIgASgNEg0KBXN0",
+            "YXRlGAMgASgNEjQKCnRhcmdldF9udW0YBCADKAsyIC56cHJvdG8uUXVlc3RE",
+            "YXRhLlRhcmdldE51bUVudHJ5EjsKDnRhcmdldF9tYXhfbnVtGAUgAygLMiMu",
+            "enByb3RvLlF1ZXN0RGF0YS5UYXJnZXRNYXhOdW1FbnRyeRIXCg9zdGVwX2xp",
+            "bWl0X3RpbWUYBiABKAMSLQoLc3RlcF9zdGF0dXMYByABKA4yGC56cHJvdG8u",
+            "RVF1ZXN0U3RlcFN0YXR1cxIWCg5hZGRfbGltaXRfdGltZRgIIAEoDRI2Cgt0",
+            "YXJnZXRfdHlwZRgJIAMoCzIhLnpwcm90by5RdWVzdERhdGEuVGFyZ2V0VHlw",
+            "ZUVudHJ5GjAKDlRhcmdldE51bUVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1",
+            "ZRgCIAEoBToCOAEaMwoRVGFyZ2V0TWF4TnVtRW50cnkSCwoDa2V5GAEgASgF",
+            "Eg0KBXZhbHVlGAIgASgFOgI4ARoxCg9UYXJnZXRUeXBlRW50cnkSCwoDa2V5",
+            "GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEQuestStepStatusReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "stepId" field.</summary>
+    /// <summary>Field number for the "step_id" field.</summary>
     public const int StepIdFieldNumber = 2;
     private uint stepId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +136,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetNum" field.</summary>
+    /// <summary>Field number for the "target_num" field.</summary>
     public const int TargetNumFieldNumber = 4;
     private static readonly pbc::MapField<int, int>.Codec _map_targetNum_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 34);
@@ -147,7 +147,7 @@ namespace Zproto {
       get { return targetNum_; }
     }
 
-    /// <summary>Field number for the "targetMaxNum" field.</summary>
+    /// <summary>Field number for the "target_max_num" field.</summary>
     public const int TargetMaxNumFieldNumber = 5;
     private static readonly pbc::MapField<int, int>.Codec _map_targetMaxNum_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 42);
@@ -158,7 +158,7 @@ namespace Zproto {
       get { return targetMaxNum_; }
     }
 
-    /// <summary>Field number for the "stepLimitTime" field.</summary>
+    /// <summary>Field number for the "step_limit_time" field.</summary>
     public const int StepLimitTimeFieldNumber = 6;
     private long stepLimitTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -170,7 +170,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "stepStatus" field.</summary>
+    /// <summary>Field number for the "step_status" field.</summary>
     public const int StepStatusFieldNumber = 7;
     private global::Zproto.EQuestStepStatus stepStatus_ = global::Zproto.EQuestStepStatus.QuestStepGoing;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -182,7 +182,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "addLimitTime" field.</summary>
+    /// <summary>Field number for the "add_limit_time" field.</summary>
     public const int AddLimitTimeFieldNumber = 8;
     private uint addLimitTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -194,7 +194,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetType" field.</summary>
+    /// <summary>Field number for the "target_type" field.</summary>
     public const int TargetTypeFieldNumber = 9;
     private static readonly pbc::MapField<int, int>.Codec _map_targetType_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 74);

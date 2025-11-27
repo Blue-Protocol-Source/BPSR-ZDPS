@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X3JlY2hhcmdlX2RhdGEucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvInkKDFJlY2hhcmdlRGF0YRIYChBhY2N1bXVsYXRlQW1v",
-            "dW50GAEgASgDEhgKEGxhc3RSZWNoYXJnZVRpbWUYAiABKAMSGgoSbGFzdFJl",
-            "Y2hhcmdlQW1vdW50GAMgASgDEhkKEWxhc3REaWFtb25kQW1vdW50GAQgASgD",
-            "YgZwcm90bzM="));
+            "eV9tYXNrLnByb3RvIoABCgxSZWNoYXJnZURhdGESGQoRYWNjdW11bGF0ZV9h",
+            "bW91bnQYASABKAMSGgoSbGFzdF9yZWNoYXJnZV90aW1lGAIgASgDEhwKFGxh",
+            "c3RfcmVjaGFyZ2VfYW1vdW50GAMgASgDEhsKE2xhc3RfZGlhbW9uZF9hbW91",
+            "bnQYBCABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new RechargeData(this);
     }
 
-    /// <summary>Field number for the "accumulateAmount" field.</summary>
+    /// <summary>Field number for the "accumulate_amount" field.</summary>
     public const int AccumulateAmountFieldNumber = 1;
     private long accumulateAmount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastRechargeTime" field.</summary>
+    /// <summary>Field number for the "last_recharge_time" field.</summary>
     public const int LastRechargeTimeFieldNumber = 2;
     private long lastRechargeTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastRechargeAmount" field.</summary>
+    /// <summary>Field number for the "last_recharge_amount" field.</summary>
     public const int LastRechargeAmountFieldNumber = 3;
     private long lastRechargeAmount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastDiamondAmount" field.</summary>
+    /// <summary>Field number for the "last_diamond_amount" field.</summary>
     public const int LastDiamondAmountFieldNumber = 4;
     private long lastDiamondAmount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

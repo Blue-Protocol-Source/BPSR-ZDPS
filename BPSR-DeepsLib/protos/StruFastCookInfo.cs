@@ -24,9 +24,10 @@ namespace Zproto {
     static StruFastCookInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X2Zhc3RfY29va19pbmZvLnByb3RvEgZ6cHJvdG8iWQoMRmFzdENv",
-            "b2tJbmZvEg4KBmJvb2tJZBgBIAEoBRINCgVjb3VudBgCIAEoBRIVCg1tYWlu",
-            "TWF0ZXJpYWxzGAMgAygFEhMKC2Nvb2tNZXRob2RzGAQgAygFYgZwcm90bzM="));
+            "ChlzdHJ1X2Zhc3RfY29va19pbmZvLnByb3RvEgZ6cHJvdG8iXAoMRmFzdENv",
+            "b2tJbmZvEg8KB2Jvb2tfaWQYASABKAUSDQoFY291bnQYAiABKAUSFgoObWFp",
+            "bl9tYXRlcmlhbHMYAyADKAUSFAoMY29va19tZXRob2RzGAQgAygFYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new FastCookInfo(this);
     }
 
-    /// <summary>Field number for the "bookId" field.</summary>
+    /// <summary>Field number for the "book_id" field.</summary>
     public const int BookIdFieldNumber = 1;
     private int bookId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mainMaterials" field.</summary>
+    /// <summary>Field number for the "main_materials" field.</summary>
     public const int MainMaterialsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_mainMaterials_codec
         = pb::FieldCodec.ForInt32(26);
@@ -120,7 +121,7 @@ namespace Zproto {
       get { return mainMaterials_; }
     }
 
-    /// <summary>Field number for the "cookMethods" field.</summary>
+    /// <summary>Field number for the "cook_methods" field.</summary>
     public const int CookMethodsFieldNumber = 4;
     private static readonly pb::FieldCodec<int> _repeated_cookMethods_codec
         = pb::FieldCodec.ForInt32(34);

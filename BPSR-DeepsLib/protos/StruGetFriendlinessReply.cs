@@ -26,13 +26,14 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X2dldF9mcmllbmRsaW5lc3NfcmVwbHkucHJvdG8SBnpwcm90bxoX",
             "ZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aF3N0cnVfZnJpZW5kbGluZXNzLnBy",
-            "b3RvGh1zdHJ1X3RvdGFsX2ZyaWVuZGxpbmVzcy5wcm90byKOAgoUR2V0RnJp",
-            "ZW5kbGluZXNzUmVwbHkSTAoQZnJpZW5kbGluZXNzTGlzdBgBIAMoCzIyLnpw",
-            "cm90by5HZXRGcmllbmRsaW5lc3NSZXBseS5GcmllbmRsaW5lc3NMaXN0RW50",
-            "cnkSNAoRdG90YWxGcmllbmRsaW5lc3MYAiABKAsyGS56cHJvdG8uVG90YWxG",
-            "cmllbmRsaW5lc3MSIwoHZXJyQ29kZRgDIAEoDjISLnpwcm90by5FRXJyb3JD",
-            "b2RlGk0KFUZyaWVuZGxpbmVzc0xpc3RFbnRyeRILCgNrZXkYASABKAMSIwoF",
-            "dmFsdWUYAiABKAsyFC56cHJvdG8uRnJpZW5kbGluZXNzOgI4AWIGcHJvdG8z"));
+            "b3RvGh1zdHJ1X3RvdGFsX2ZyaWVuZGxpbmVzcy5wcm90byKRAgoUR2V0RnJp",
+            "ZW5kbGluZXNzUmVwbHkSTQoRZnJpZW5kbGluZXNzX2xpc3QYASADKAsyMi56",
+            "cHJvdG8uR2V0RnJpZW5kbGluZXNzUmVwbHkuRnJpZW5kbGluZXNzTGlzdEVu",
+            "dHJ5EjUKEnRvdGFsX2ZyaWVuZGxpbmVzcxgCIAEoCzIZLnpwcm90by5Ub3Rh",
+            "bEZyaWVuZGxpbmVzcxIkCghlcnJfY29kZRgDIAEoDjISLnpwcm90by5FRXJy",
+            "b3JDb2RlGk0KFUZyaWVuZGxpbmVzc0xpc3RFbnRyeRILCgNrZXkYASABKAMS",
+            "IwoFdmFsdWUYAiABKAsyFC56cHJvdG8uRnJpZW5kbGluZXNzOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruFriendlinessReflection.Descriptor, global::Zproto.StruTotalFriendlinessReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new GetFriendlinessReply(this);
     }
 
-    /// <summary>Field number for the "friendlinessList" field.</summary>
+    /// <summary>Field number for the "friendliness_list" field.</summary>
     public const int FriendlinessListFieldNumber = 1;
     private static readonly pbc::MapField<long, global::Zproto.Friendliness>.Codec _map_friendlinessList_codec
         = new pbc::MapField<long, global::Zproto.Friendliness>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.Friendliness.Parser), 10);
@@ -101,7 +102,7 @@ namespace Zproto {
       get { return friendlinessList_; }
     }
 
-    /// <summary>Field number for the "totalFriendliness" field.</summary>
+    /// <summary>Field number for the "total_friendliness" field.</summary>
     public const int TotalFriendlinessFieldNumber = 2;
     private global::Zproto.TotalFriendliness totalFriendliness_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

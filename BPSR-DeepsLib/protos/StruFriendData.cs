@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2ZyaWVuZF9kYXRhLnByb3RvEgZ6cHJvdG8aG3N0cnVfZnJpZW5k",
-            "X2Jhc2VfaW5mby5wcm90bxoYc3RydV9wZXJzb25hbF9pbmZvLnByb3RvIloK",
+            "X2Jhc2VfaW5mby5wcm90bxoYc3RydV9wZXJzb25hbF9pbmZvLnByb3RvIlsK",
             "CkZyaWVuZERhdGESIgoEaW5mbxgBIAEoCzIULnpwcm90by5QZXJzb25hbElu",
-            "Zm8SKAoIYmFzZUluZm8YAiABKAsyFi56cHJvdG8uRnJpZW5kQmFzZUluZm9i",
-            "BnByb3RvMw=="));
+            "Zm8SKQoJYmFzZV9pbmZvGAIgASgLMhYuenByb3RvLkZyaWVuZEJhc2VJbmZv",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFriendBaseInfoReflection.Descriptor, global::Zproto.StruPersonalInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "baseInfo" field.</summary>
+    /// <summary>Field number for the "base_info" field.</summary>
     public const int BaseInfoFieldNumber = 2;
     private global::Zproto.FriendBaseInfo baseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X21hcmtfZGF0YS5wcm90bxIGenByb3RvGhRzdHJ1X21hcmtfaW5m",
-            "by5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqYBCghNYXJrRGF0YRIK",
-            "CgJpZBgBIAEoBRI2CgttYXJrSW5mb01hcBgCIAMoCzIhLnpwcm90by5NYXJr",
-            "RGF0YS5NYXJrSW5mb01hcEVudHJ5EhAKCG1hcmtVdWlkGAMgASgFGkQKEE1h",
-            "cmtJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgDEh8KBXZhbHVlGAIgASgLMhAu",
-            "enByb3RvLk1hcmtJbmZvOgI4AWIGcHJvdG8z"));
+            "by5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqkBCghNYXJrRGF0YRIK",
+            "CgJpZBgBIAEoBRI4Cg1tYXJrX2luZm9fbWFwGAIgAygLMiEuenByb3RvLk1h",
+            "cmtEYXRhLk1hcmtJbmZvTWFwRW50cnkSEQoJbWFya191dWlkGAMgASgFGkQK",
+            "EE1hcmtJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgDEh8KBXZhbHVlGAIgASgL",
+            "MhAuenByb3RvLk1hcmtJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMarkInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "markInfoMap" field.</summary>
+    /// <summary>Field number for the "mark_info_map" field.</summary>
     public const int MarkInfoMapFieldNumber = 2;
     private static readonly pbc::MapField<long, global::Zproto.MarkInfo>.Codec _map_markInfoMap_codec
         = new pbc::MapField<long, global::Zproto.MarkInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.MarkInfo.Parser), 18);
@@ -110,7 +110,7 @@ namespace Zproto {
       get { return markInfoMap_; }
     }
 
-    /// <summary>Field number for the "markUuid" field.</summary>
+    /// <summary>Field number for the "mark_uuid" field.</summary>
     public const int MarkUuidFieldNumber = 3;
     private int markUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

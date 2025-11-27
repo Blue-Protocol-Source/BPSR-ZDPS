@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X2Rpc3NvbHZlX3N0cnVjdHVyZV9ncm91cF9yZXF1ZXN0LnByb3Rv",
-            "EgZ6cHJvdG8iQQodRGlzc29sdmVTdHJ1Y3R1cmVHcm91cFJlcXVlc3QSDwoH",
-            "Z3JvdXBJZBgBIAEoAxIPCgdpc091dGVyGAIgASgIYgZwcm90bzM="));
+            "EgZ6cHJvdG8iQwodRGlzc29sdmVTdHJ1Y3R1cmVHcm91cFJlcXVlc3QSEAoI",
+            "Z3JvdXBfaWQYASABKAMSEAoIaXNfb3V0ZXIYAiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DissolveStructureGroupRequest(this);
     }
 
-    /// <summary>Field number for the "groupId" field.</summary>
+    /// <summary>Field number for the "group_id" field.</summary>
     public const int GroupIdFieldNumber = 1;
     private long groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isOuter" field.</summary>
+    /// <summary>Field number for the "is_outer" field.</summary>
     public const int IsOuterFieldNumber = 2;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

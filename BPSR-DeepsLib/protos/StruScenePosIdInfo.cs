@@ -24,8 +24,8 @@ namespace Zproto {
     static StruScenePosIdInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X3NjZW5lX3Bvc19pZF9pbmZvLnByb3RvEgZ6cHJvdG8iJAoOU2Nl",
-            "bmVQb3NJZEluZm8SEgoKc2NlbmVQb3NJZBgBIAEoBWIGcHJvdG8z"));
+            "ChxzdHJ1X3NjZW5lX3Bvc19pZF9pbmZvLnByb3RvEgZ6cHJvdG8iJgoOU2Nl",
+            "bmVQb3NJZEluZm8SFAoMc2NlbmVfcG9zX2lkGAEgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new ScenePosIdInfo(this);
     }
 
-    /// <summary>Field number for the "scenePosId" field.</summary>
+    /// <summary>Field number for the "scene_pos_id" field.</summary>
     public const int ScenePosIdFieldNumber = 1;
     private int scenePosId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

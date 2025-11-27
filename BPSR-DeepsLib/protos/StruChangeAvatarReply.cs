@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2NoYW5nZV9hdmF0YXJfcmVwbHkucHJvdG8SBnpwcm90bxoXZW51",
-            "bV9lX2Vycm9yX2NvZGUucHJvdG8iWwoRQ2hhbmdlQXZhdGFyUmVwbHkSEAoI",
-            "YXZhdGFySWQYASABKAUSDwoHc3VjY2VzcxgCIAEoCBIjCgdlcnJDb2RlGAMg",
-            "ASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "bV9lX2Vycm9yX2NvZGUucHJvdG8iXQoRQ2hhbmdlQXZhdGFyUmVwbHkSEQoJ",
+            "YXZhdGFyX2lkGAEgASgFEg8KB3N1Y2Nlc3MYAiABKAgSJAoIZXJyX2NvZGUY",
+            "AyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ChangeAvatarReply(this);
     }
 
-    /// <summary>Field number for the "avatarId" field.</summary>
+    /// <summary>Field number for the "avatar_id" field.</summary>
     public const int AvatarIdFieldNumber = 1;
     private int avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

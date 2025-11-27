@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X2dtX3Jlc3VsdC5wcm90bxIGenByb3RvGhdlbnVtX2VfZXJyb3Jf",
-            "Y29kZS5wcm90byJnCghHbVJlc3VsdBIPCgdzdWNjZXNzGAEgASgIEhIKCmZh",
-            "aWxSZWFzb24YAiABKAkSEQoJcmV0UGFyYW1zGAMgAygJEiMKB2VyckNvZGUY",
-            "BCABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "Y29kZS5wcm90byJqCghHbVJlc3VsdBIPCgdzdWNjZXNzGAEgASgIEhMKC2Zh",
+            "aWxfcmVhc29uGAIgASgJEhIKCnJldF9wYXJhbXMYAyADKAkSJAoIZXJyX2Nv",
+            "ZGUYBCABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "failReason" field.</summary>
+    /// <summary>Field number for the "fail_reason" field.</summary>
     public const int FailReasonFieldNumber = 2;
     private string failReason_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "retParams" field.</summary>
+    /// <summary>Field number for the "ret_params" field.</summary>
     public const int RetParamsFieldNumber = 3;
     private static readonly pb::FieldCodec<string> _repeated_retParams_codec
         = pb::FieldCodec.ForString(26);
@@ -121,7 +121,7 @@ namespace Zproto {
       get { return retParams_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

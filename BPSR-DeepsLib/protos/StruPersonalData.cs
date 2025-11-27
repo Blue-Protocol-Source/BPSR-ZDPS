@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "ChhzdHJ1X3BlcnNvbmFsX2RhdGEucHJvdG8SBnpwcm90bxoYc3RydV9wZXJz",
             "b25hbF9pbmZvLnByb3RvGhxzdHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3Rv",
-            "Im8KDFBlcnNvbmFsRGF0YRIOCgZjaGFySWQYASABKAMSIgoEaW5mbxgCIAEo",
-            "CzIULnpwcm90by5QZXJzb25hbEluZm8SKwoKc29jaWFsRGF0YRgDIAEoCzIX",
-            "Lnpwcm90by5Vc2VyU3VtbWFyeURhdGFiBnByb3RvMw=="));
+            "InEKDFBlcnNvbmFsRGF0YRIPCgdjaGFyX2lkGAEgASgDEiIKBGluZm8YAiAB",
+            "KAsyFC56cHJvdG8uUGVyc29uYWxJbmZvEiwKC3NvY2lhbF9kYXRhGAMgASgL",
+            "MhcuenByb3RvLlVzZXJTdW1tYXJ5RGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPersonalInfoReflection.Descriptor, global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new PersonalData(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "socialData" field.</summary>
+    /// <summary>Field number for the "social_data" field.</summary>
     public const int SocialDataFieldNumber = 3;
     private global::Zproto.UserSummaryData socialData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

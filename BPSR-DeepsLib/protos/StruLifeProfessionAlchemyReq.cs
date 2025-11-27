@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2xpZmVfcHJvZmVzc2lvbl9hbGNoZW15X3JlcS5wcm90bxIGenBy",
-            "b3RvIjsKGExpZmVQcm9mZXNzaW9uQWxjaGVteVJlcRIQCghyZWNpcGVJZBgB",
-            "IAEoBRINCgVjb3VudBgCIAEoBWIGcHJvdG8z"));
+            "b3RvIjwKGExpZmVQcm9mZXNzaW9uQWxjaGVteVJlcRIRCglyZWNpcGVfaWQY",
+            "ASABKAUSDQoFY291bnQYAiABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new LifeProfessionAlchemyReq(this);
     }
 
-    /// <summary>Field number for the "recipeId" field.</summary>
+    /// <summary>Field number for the "recipe_id" field.</summary>
     public const int RecipeIdFieldNumber = 1;
     private int recipeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

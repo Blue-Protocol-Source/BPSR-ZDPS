@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X2dhc2hhX3dpc2hfc2VsZWN0aW9uX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90byI7ChlHYXNoYVdpc2hTZWxlY3Rpb25SZXF1ZXN0Eg4KBnBvb2xJZBgB",
-            "IAEoBRIOCgZ3aXNoSWQYAiABKAViBnByb3RvMw=="));
+            "cm90byI9ChlHYXNoYVdpc2hTZWxlY3Rpb25SZXF1ZXN0Eg8KB3Bvb2xfaWQY",
+            "ASABKAUSDwoHd2lzaF9pZBgCIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new GashaWishSelectionRequest(this);
     }
 
-    /// <summary>Field number for the "poolId" field.</summary>
+    /// <summary>Field number for the "pool_id" field.</summary>
     public const int PoolIdFieldNumber = 1;
     private int poolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "wishId" field.</summary>
+    /// <summary>Field number for the "wish_id" field.</summary>
     public const int WishIdFieldNumber = 2;
     private int wishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

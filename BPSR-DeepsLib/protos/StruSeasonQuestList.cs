@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X3NlYXNvbl9xdWVzdF9saXN0LnByb3RvEgZ6cHJvdG8aHHN0cnVf",
             "c2Vhc29uX3F1ZXN0X2RhdGEucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90",
-            "byLGAQoPU2Vhc29uUXVlc3RMaXN0EjkKCXNlYXNvbk1hcBgBIAMoCzImLnpw",
-            "cm90by5TZWFzb25RdWVzdExpc3QuU2Vhc29uTWFwRW50cnkSEwoLcmVmcmVz",
-            "aFdlZWsYAiABKAUSGAoQcmVmcmVzaFRpbWVTdGFtcBgDIAEoAxpJCg5TZWFz",
-            "b25NYXBFbnRyeRILCgNrZXkYASABKA0SJgoFdmFsdWUYAiABKAsyFy56cHJv",
-            "dG8uU2Vhc29uUXVlc3REYXRhOgI4AWIGcHJvdG8z"));
+            "byLKAQoPU2Vhc29uUXVlc3RMaXN0EjoKCnNlYXNvbl9tYXAYASADKAsyJi56",
+            "cHJvdG8uU2Vhc29uUXVlc3RMaXN0LlNlYXNvbk1hcEVudHJ5EhQKDHJlZnJl",
+            "c2hfd2VlaxgCIAEoBRIaChJyZWZyZXNoX3RpbWVfc3RhbXAYAyABKAMaSQoO",
+            "U2Vhc29uTWFwRW50cnkSCwoDa2V5GAEgASgNEiYKBXZhbHVlGAIgASgLMhcu",
+            "enByb3RvLlNlYXNvblF1ZXN0RGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSeasonQuestDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new SeasonQuestList(this);
     }
 
-    /// <summary>Field number for the "seasonMap" field.</summary>
+    /// <summary>Field number for the "season_map" field.</summary>
     public const int SeasonMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.SeasonQuestData>.Codec _map_seasonMap_codec
         = new pbc::MapField<uint, global::Zproto.SeasonQuestData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonQuestData.Parser), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return seasonMap_; }
     }
 
-    /// <summary>Field number for the "refreshWeek" field.</summary>
+    /// <summary>Field number for the "refresh_week" field.</summary>
     public const int RefreshWeekFieldNumber = 2;
     private int refreshWeek_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refreshTimeStamp" field.</summary>
+    /// <summary>Field number for the "refresh_time_stamp" field.</summary>
     public const int RefreshTimeStampFieldNumber = 3;
     private long refreshTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X2Zpc2hpbmdfcmVzdWx0X3JlcG9ydF9yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8iLwoaRmlzaGluZ1Jlc3VsdFJlcG9ydFJlcXVlc3QSEQoJaXNTdWNj",
-            "ZXNzGAEgASgIYgZwcm90bzM="));
+            "cHJvdG8iMAoaRmlzaGluZ1Jlc3VsdFJlcG9ydFJlcXVlc3QSEgoKaXNfc3Vj",
+            "Y2VzcxgBIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new FishingResultReportRequest(this);
     }
 
-    /// <summary>Field number for the "isSuccess" field.</summary>
+    /// <summary>Field number for the "is_success" field.</summary>
     public const int IsSuccessFieldNumber = 1;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

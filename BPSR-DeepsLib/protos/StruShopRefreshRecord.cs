@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X3Nob3BfcmVmcmVzaF9yZWNvcmQucHJvdG8SBnpwcm90bxolc3Ry",
             "dV9wbGF5ZXJfcmVmcmVzaF9zaG9wX3JlY29yZC5wcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIu4BChFTaG9wUmVmcmVzaFJlY29yZBIYChByZWZyZXNo",
-            "VGltZXN0YW1wGAMgASgDEhQKDHJlZnJlc2hDb3VudBgEIAEoBRJNChJzaG9w",
-            "UmVmcmVzaFJlY29yZHMYBSADKAsyMS56cHJvdG8uU2hvcFJlZnJlc2hSZWNv",
-            "cmQuU2hvcFJlZnJlc2hSZWNvcmRzRW50cnkaWgoXU2hvcFJlZnJlc2hSZWNv",
-            "cmRzRW50cnkSCwoDa2V5GAEgASgFEi4KBXZhbHVlGAIgASgLMh8uenByb3Rv",
-            "LlBsYXllclJlZnJlc2hTaG9wUmVjb3JkOgI4AWIGcHJvdG8z"));
+            "eV9tYXNrLnByb3RvIvIBChFTaG9wUmVmcmVzaFJlY29yZBIZChFyZWZyZXNo",
+            "X3RpbWVzdGFtcBgDIAEoAxIVCg1yZWZyZXNoX2NvdW50GAQgASgFEk8KFHNo",
+            "b3BfcmVmcmVzaF9yZWNvcmRzGAUgAygLMjEuenByb3RvLlNob3BSZWZyZXNo",
+            "UmVjb3JkLlNob3BSZWZyZXNoUmVjb3Jkc0VudHJ5GloKF1Nob3BSZWZyZXNo",
+            "UmVjb3Jkc0VudHJ5EgsKA2tleRgBIAEoBRIuCgV2YWx1ZRgCIAEoCzIfLnpw",
+            "cm90by5QbGF5ZXJSZWZyZXNoU2hvcFJlY29yZDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPlayerRefreshShopRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new ShopRefreshRecord(this);
     }
 
-    /// <summary>Field number for the "refreshTimestamp" field.</summary>
+    /// <summary>Field number for the "refresh_timestamp" field.</summary>
     public const int RefreshTimestampFieldNumber = 3;
     private long refreshTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refreshCount" field.</summary>
+    /// <summary>Field number for the "refresh_count" field.</summary>
     public const int RefreshCountFieldNumber = 4;
     private int refreshCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "shopRefreshRecords" field.</summary>
+    /// <summary>Field number for the "shop_refresh_records" field.</summary>
     public const int ShopRefreshRecordsFieldNumber = 5;
     private static readonly pbc::MapField<int, global::Zproto.PlayerRefreshShopRecord>.Codec _map_shopRefreshRecords_codec
         = new pbc::MapField<int, global::Zproto.PlayerRefreshShopRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.PlayerRefreshShopRecord.Parser), 42);

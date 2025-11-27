@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2VxdWlwX25pbmUucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIioKCUVxdWlwTmluZRIMCgRzbG90GAEgASgFEg8KB2VxdWlw",
-            "SUQYAiABKAViBnByb3RvMw=="));
+            "YXNrLnByb3RvIisKCUVxdWlwTmluZRIMCgRzbG90GAEgASgFEhAKCGVxdWlw",
+            "X2lkGAIgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.EquipNine), global::Zproto.EquipNine.Parser, new[]{ "Slot", "EquipID" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.EquipNine), global::Zproto.EquipNine.Parser, new[]{ "Slot", "EquipId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,7 +73,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EquipNine(EquipNine other) : this() {
       slot_ = other.slot_;
-      equipID_ = other.equipID_;
+      equipId_ = other.equipId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,15 +95,15 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "equipID" field.</summary>
-    public const int EquipIDFieldNumber = 2;
-    private int equipID_;
+    /// <summary>Field number for the "equip_id" field.</summary>
+    public const int EquipIdFieldNumber = 2;
+    private int equipId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int EquipID {
-      get { return equipID_; }
+    public int EquipId {
+      get { return equipId_; }
       set {
-        equipID_ = value;
+        equipId_ = value;
       }
     }
 
@@ -123,7 +123,7 @@ namespace Zproto {
         return true;
       }
       if (Slot != other.Slot) return false;
-      if (EquipID != other.EquipID) return false;
+      if (EquipId != other.EquipId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,7 +132,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       if (Slot != 0) hash ^= Slot.GetHashCode();
-      if (EquipID != 0) hash ^= EquipID.GetHashCode();
+      if (EquipId != 0) hash ^= EquipId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,9 +155,9 @@ namespace Zproto {
         output.WriteRawTag(8);
         output.WriteInt32(Slot);
       }
-      if (EquipID != 0) {
+      if (EquipId != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(EquipID);
+        output.WriteInt32(EquipId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -173,9 +173,9 @@ namespace Zproto {
         output.WriteRawTag(8);
         output.WriteInt32(Slot);
       }
-      if (EquipID != 0) {
+      if (EquipId != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(EquipID);
+        output.WriteInt32(EquipId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -190,8 +190,8 @@ namespace Zproto {
       if (Slot != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Slot);
       }
-      if (EquipID != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EquipID);
+      if (EquipId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EquipId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -208,8 +208,8 @@ namespace Zproto {
       if (other.Slot != 0) {
         Slot = other.Slot;
       }
-      if (other.EquipID != 0) {
-        EquipID = other.EquipID;
+      if (other.EquipId != 0) {
+        EquipId = other.EquipId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,7 +235,7 @@ namespace Zproto {
             break;
           }
           case 16: {
-            EquipID = input.ReadInt32();
+            EquipId = input.ReadInt32();
             break;
           }
         }
@@ -262,7 +262,7 @@ namespace Zproto {
             break;
           }
           case 16: {
-            EquipID = input.ReadInt32();
+            EquipId = input.ReadInt32();
             break;
           }
         }

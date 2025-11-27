@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2J1ZmZfZW5lcmd5X2Rpc3BsYXlfaW5mby5wcm90bxIGenByb3Rv",
-            "IikKFUJ1ZmZFbmVyZ3lEaXNwbGF5SW5mbxIQCghlZmZlY3RJZBgBIAEoBWIG",
-            "cHJvdG8z"));
+            "IioKFUJ1ZmZFbmVyZ3lEaXNwbGF5SW5mbxIRCgllZmZlY3RfaWQYASABKAVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new BuffEnergyDisplayInfo(this);
     }
 
-    /// <summary>Field number for the "effectId" field.</summary>
+    /// <summary>Field number for the "effect_id" field.</summary>
     public const int EffectIdFieldNumber = 1;
     private int effectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

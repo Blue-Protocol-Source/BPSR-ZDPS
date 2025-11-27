@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3JpZGVfc2VhdF9pbmZvLnByb3RvEgZ6cHJvdG8aGXN0cnVfcGFz",
-            "c2VuZ2VyX2luZm8ucHJvdG8iTwoMUmlkZVNlYXRJbmZvEhQKDGNvbnRyb2xs",
-            "ZXJJZBgBIAEoAxIpCgpwYXNzZW5nZXJzGAIgAygLMhUuenByb3RvLlBhc3Nl",
-            "bmdlckluZm9iBnByb3RvMw=="));
+            "c2VuZ2VyX2luZm8ucHJvdG8iUAoMUmlkZVNlYXRJbmZvEhUKDWNvbnRyb2xs",
+            "ZXJfaWQYASABKAMSKQoKcGFzc2VuZ2VycxgCIAMoCzIVLnpwcm90by5QYXNz",
+            "ZW5nZXJJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPassengerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new RideSeatInfo(this);
     }
 
-    /// <summary>Field number for the "controllerId" field.</summary>
+    /// <summary>Field number for the "controller_id" field.</summary>
     public const int ControllerIdFieldNumber = 1;
     private long controllerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

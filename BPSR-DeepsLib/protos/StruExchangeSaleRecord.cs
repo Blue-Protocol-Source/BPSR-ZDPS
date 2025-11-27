@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X2V4Y2hhbmdlX3NhbGVfcmVjb3JkLnByb3RvEgZ6cHJvdG8aD3N0",
-            "cnVfaXRlbS5wcm90byJsChJFeGNoYW5nZVNhbGVSZWNvcmQSCwoDbnVtGAEg",
+            "cnVfaXRlbS5wcm90byJtChJFeGNoYW5nZVNhbGVSZWNvcmQSCwoDbnVtGAEg",
             "ASgNEgwKBHJhdGUYAiABKA0SDQoFbW9uZXkYAyABKA0SDAoEdGltZRgEIAEo",
-            "AxIeCghpdGVtSW5mbxgFIAEoCzIMLnpwcm90by5JdGVtYgZwcm90bzM="));
+            "AxIfCglpdGVtX2luZm8YBSABKAsyDC56cHJvdG8uSXRlbWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -135,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemInfo" field.</summary>
+    /// <summary>Field number for the "item_info" field.</summary>
     public const int ItemInfoFieldNumber = 5;
     private global::Zproto.Item itemInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CilzdHJ1X2VudGVyX21hdGNoX3Jlc3VsdF9udGZfcmVxdWVzdC5wcm90bxIG",
             "enByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxoVc3RydV9tYXRjaF9p",
-            "bmZvLnByb3RvInoKGkVudGVyTWF0Y2hSZXN1bHROdGZSZXF1ZXN0EiMKB2Vy",
-            "ckNvZGUYASABKA4yEi56cHJvdG8uRUVycm9yQ29kZRIkCgltYXRjaEluZm8Y",
-            "AiABKAsyES56cHJvdG8uTWF0Y2hJbmZvEhEKCWlzUmVFbnRlchgDIAEoCGIG",
-            "cHJvdG8z"));
+            "bmZvLnByb3RvIn4KGkVudGVyTWF0Y2hSZXN1bHROdGZSZXF1ZXN0EiQKCGVy",
+            "cl9jb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUSJQoKbWF0Y2hfaW5m",
+            "bxgCIAEoCzIRLnpwcm90by5NYXRjaEluZm8SEwoLaXNfcmVfZW50ZXIYAyAB",
+            "KAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruMatchInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new EnterMatchResultNtfRequest(this);
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "matchInfo" field.</summary>
+    /// <summary>Field number for the "match_info" field.</summary>
     public const int MatchInfoFieldNumber = 2;
     private global::Zproto.MatchInfo matchInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isReEnter" field.</summary>
+    /// <summary>Field number for the "is_re_enter" field.</summary>
     public const int IsReEnterFieldNumber = 3;
     private bool isReEnter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

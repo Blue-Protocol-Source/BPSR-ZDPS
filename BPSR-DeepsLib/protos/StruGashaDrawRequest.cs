@@ -24,9 +24,9 @@ namespace Zproto {
     static StruGashaDrawRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X2dhc2hhX2RyYXdfcmVxdWVzdC5wcm90bxIGenByb3RvIjEKEEdh",
-            "c2hhRHJhd1JlcXVlc3QSDQoFY291bnQYASABKAUSDgoGcG9vbElkGAIgASgF",
-            "YgZwcm90bzM="));
+            "Ch1zdHJ1X2dhc2hhX2RyYXdfcmVxdWVzdC5wcm90bxIGenByb3RvIjIKEEdh",
+            "c2hhRHJhd1JlcXVlc3QSDQoFY291bnQYASABKAUSDwoHcG9vbF9pZBgCIAEo",
+            "BWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "poolId" field.</summary>
+    /// <summary>Field number for the "pool_id" field.</summary>
     public const int PoolIdFieldNumber = 2;
     private int poolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

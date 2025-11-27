@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X3Byb2Zlc3Npb25fc2tpbGxfcmVzZXRfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvIjMKG1Byb2Zlc3Npb25Ta2lsbFJlc2V0UmVxdWVzdBIUCgxwcm9m",
-            "ZXNzaW9uSWQYASABKAViBnByb3RvMw=="));
+            "enByb3RvIjQKG1Byb2Zlc3Npb25Ta2lsbFJlc2V0UmVxdWVzdBIVCg1wcm9m",
+            "ZXNzaW9uX2lkGAEgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ProfessionSkillResetRequest(this);
     }
 
-    /// <summary>Field number for the "professionId" field.</summary>
+    /// <summary>Field number for the "profession_id" field.</summary>
     public const int ProfessionIdFieldNumber = 1;
     private int professionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

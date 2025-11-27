@@ -24,9 +24,9 @@ namespace Zproto {
     static StruWorldBossRankInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X3dvcmxkX2Jvc3NfcmFua19pbmZvLnByb3RvEgZ6cHJvdG8iMgoR",
-            "V29ybGRCb3NzUmFua0luZm8SDgoGY2hhcklkGAEgASgDEg0KBXNjb3JlGAIg",
-            "ASgFYgZwcm90bzM="));
+            "Ch9zdHJ1X3dvcmxkX2Jvc3NfcmFua19pbmZvLnByb3RvEgZ6cHJvdG8iMwoR",
+            "V29ybGRCb3NzUmFua0luZm8SDwoHY2hhcl9pZBgBIAEoAxINCgVzY29yZRgC",
+            "IAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new WorldBossRankInfo(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2FjaGlldmVtZW50LnByb3RvEgZ6cHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byJMCgtBY2hpZXZlbWVudBIRCglmaW5pc2hOdW0YASABKA0S",
-            "EwoLaGFzUmVjZWl2ZWQYAiABKAgSFQoNYmVnaW5Qcm9ncmVzcxgDIAEoBGIG",
-            "cHJvdG8z"));
+            "bWFzay5wcm90byJPCgtBY2hpZXZlbWVudBISCgpmaW5pc2hfbnVtGAEgASgN",
+            "EhQKDGhhc19yZWNlaXZlZBgCIAEoCBIWCg5iZWdpbl9wcm9ncmVzcxgDIAEo",
+            "BGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new Achievement(this);
     }
 
-    /// <summary>Field number for the "finishNum" field.</summary>
+    /// <summary>Field number for the "finish_num" field.</summary>
     public const int FinishNumFieldNumber = 1;
     private uint finishNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hasReceived" field.</summary>
+    /// <summary>Field number for the "has_received" field.</summary>
     public const int HasReceivedFieldNumber = 2;
     private bool hasReceived_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "beginProgress" field.</summary>
+    /// <summary>Field number for the "begin_progress" field.</summary>
     public const int BeginProgressFieldNumber = 3;
     private ulong beginProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

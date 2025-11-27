@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X3RlYW1faW5mby5wcm90bxIGenByb3RvGhlzdHJ1X3RlYW1fYmFz",
-            "ZV9pbmZvLnByb3RvGhhzdHJ1X3RlYW1fbWVtX2RhdGEucHJvdG8itwEKCFRl",
-            "YW1JbmZvEg4KBnRlYW1JZBgBIAEoAxIuCgdtZW1iZXJzGAIgAygLMh0uenBy",
-            "b3RvLlRlYW1JbmZvLk1lbWJlcnNFbnRyeRImCghiYXNlSW5mbxgDIAEoCzIU",
-            "Lnpwcm90by5UZWFtQmFzZUluZm8aQwoMTWVtYmVyc0VudHJ5EgsKA2tleRgB",
-            "IAEoAxIiCgV2YWx1ZRgCIAEoCzITLnpwcm90by5UZWFtTWVtRGF0YToCOAFi",
-            "BnByb3RvMw=="));
+            "ZV9pbmZvLnByb3RvGhhzdHJ1X3RlYW1fbWVtX2RhdGEucHJvdG8iuQEKCFRl",
+            "YW1JbmZvEg8KB3RlYW1faWQYASABKAMSLgoHbWVtYmVycxgCIAMoCzIdLnpw",
+            "cm90by5UZWFtSW5mby5NZW1iZXJzRW50cnkSJwoJYmFzZV9pbmZvGAMgASgL",
+            "MhQuenByb3RvLlRlYW1CYXNlSW5mbxpDCgxNZW1iZXJzRW50cnkSCwoDa2V5",
+            "GAEgASgDEiIKBXZhbHVlGAIgASgLMhMuenByb3RvLlRlYW1NZW1EYXRhOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTeamBaseInfoReflection.Descriptor, global::Zproto.StruTeamMemDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new TeamInfo(this);
     }
 
-    /// <summary>Field number for the "teamId" field.</summary>
+    /// <summary>Field number for the "team_id" field.</summary>
     public const int TeamIdFieldNumber = 1;
     private long teamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       get { return members_; }
     }
 
-    /// <summary>Field number for the "baseInfo" field.</summary>
+    /// <summary>Field number for the "base_info" field.</summary>
     public const int BaseInfoFieldNumber = 3;
     private global::Zproto.TeamBaseInfo baseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "ChpzdHJ1X2dldF9waG90b19yZXBseS5wcm90bxIGenByb3RvGhdlbnVtX2Vf",
             "ZXJyb3JfY29kZS5wcm90bxobc3RydV9waG90b19ncmFwaF9zaG93LnByb3Rv",
-            "IoEBCg1HZXRQaG90b1JlcGx5Eg4KBmNoYXJJZBgDIAEoAxIPCgdwaG90b0lk",
-            "GAQgASgNEioKCnBob3RvR3JhcGgYBSABKAsyFi56cHJvdG8uUGhvdG9HcmFw",
-            "aFNob3cSIwoHZXJyQ29kZRgGIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZw",
-            "cm90bzM="));
+            "IoUBCg1HZXRQaG90b1JlcGx5Eg8KB2NoYXJfaWQYAyABKAMSEAoIcGhvdG9f",
+            "aWQYBCABKA0SKwoLcGhvdG9fZ3JhcGgYBSABKAsyFi56cHJvdG8uUGhvdG9H",
+            "cmFwaFNob3cSJAoIZXJyX2NvZGUYBiABKA4yEi56cHJvdG8uRUVycm9yQ29k",
+            "ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruPhotoGraphShowReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new GetPhotoReply(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 3;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photoId" field.</summary>
+    /// <summary>Field number for the "photo_id" field.</summary>
     public const int PhotoIdFieldNumber = 4;
     private uint photoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photoGraph" field.</summary>
+    /// <summary>Field number for the "photo_graph" field.</summary>
     public const int PhotoGraphFieldNumber = 5;
     private global::Zproto.PhotoGraphShow photoGraph_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

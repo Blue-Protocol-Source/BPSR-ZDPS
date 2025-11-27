@@ -24,8 +24,9 @@ namespace Zproto {
     static StruShowMasterModeScoreReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3Nob3dfbWFzdGVyX21vZGVfc2NvcmUucHJvdG8SBnpwcm90byIl",
-            "ChNTaG93TWFzdGVyTW9kZVNjb3JlEg4KBmlzU2hvdxgBIAEoCGIGcHJvdG8z"));
+            "CiFzdHJ1X3Nob3dfbWFzdGVyX21vZGVfc2NvcmUucHJvdG8SBnpwcm90byIm",
+            "ChNTaG93TWFzdGVyTW9kZVNjb3JlEg8KB2lzX3Nob3cYASABKAhiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new ShowMasterModeScore(this);
     }
 
-    /// <summary>Field number for the "isShow" field.</summary>
+    /// <summary>Field number for the "is_show" field.</summary>
     public const int IsShowFieldNumber = 1;
     private bool isShow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

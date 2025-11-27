@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSeasonBpAwardReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X3NlYXNvbl9icF9hd2FyZC5wcm90bxIGenByb3RvIjEKDVNlYXNv",
-            "bkJwQXdhcmQSEAoIdGFyZ2V0SWQYASABKAUSDgoGb25la2V5GAIgASgIYgZw",
-            "cm90bzM="));
+            "ChpzdHJ1X3NlYXNvbl9icF9hd2FyZC5wcm90bxIGenByb3RvIjIKDVNlYXNv",
+            "bkJwQXdhcmQSEQoJdGFyZ2V0X2lkGAEgASgFEg4KBm9uZWtleRgCIAEoCGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SeasonBpAward(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

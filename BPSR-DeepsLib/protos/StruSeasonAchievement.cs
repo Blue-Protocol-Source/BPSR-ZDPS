@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X3NlYXNvbl9hY2hpZXZlbWVudC5wcm90bxIGenByb3RvGhZzdHJ1",
-            "X2FjaGlldmVtZW50LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8irwEK",
-            "EVNlYXNvbkFjaGlldmVtZW50EksKEXNlYXNvbkFjaGlldmVtZW50GAEgAygL",
-            "MjAuenByb3RvLlNlYXNvbkFjaGlldmVtZW50LlNlYXNvbkFjaGlldmVtZW50",
-            "RW50cnkaTQoWU2Vhc29uQWNoaWV2ZW1lbnRFbnRyeRILCgNrZXkYASABKA0S",
-            "IgoFdmFsdWUYAiABKAsyEy56cHJvdG8uQWNoaWV2ZW1lbnQ6AjgBYgZwcm90",
-            "bzM="));
+            "X2FjaGlldmVtZW50LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8isAEK",
+            "EVNlYXNvbkFjaGlldmVtZW50EkwKEnNlYXNvbl9hY2hpZXZlbWVudBgBIAMo",
+            "CzIwLnpwcm90by5TZWFzb25BY2hpZXZlbWVudC5TZWFzb25BY2hpZXZlbWVu",
+            "dEVudHJ5Gk0KFlNlYXNvbkFjaGlldmVtZW50RW50cnkSCwoDa2V5GAEgASgN",
+            "EiIKBXZhbHVlGAIgASgLMhMuenByb3RvLkFjaGlldmVtZW50OgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAchievementReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new SeasonAchievement(this);
     }
 
-    /// <summary>Field number for the "seasonAchievement" field.</summary>
+    /// <summary>Field number for the "season_achievement" field.</summary>
     public const int SeasonAchievement_FieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.Achievement>.Codec _map_seasonAchievement_codec
         = new pbc::MapField<uint, global::Zproto.Achievement>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.Achievement.Parser), 10);

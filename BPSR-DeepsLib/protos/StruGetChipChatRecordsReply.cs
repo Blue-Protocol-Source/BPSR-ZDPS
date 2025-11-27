@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiZzdHJ1X2dldF9jaGlwX2NoYXRfcmVjb3Jkc19yZXBseS5wcm90bxIGenBy",
             "b3RvGhhzdHJ1X2NoaXRfY2hhdF9tc2cucHJvdG8aF2VudW1fZV9lcnJvcl9j",
-            "b2RlLnByb3RvIo4BChdHZXRDaGlwQ2hhdFJlY29yZHNSZXBseRINCgVpc0Vu",
-            "ZBgDIAEoCBIUCgxtYXhSZWFkTXNnSWQYBCABKAMSKQoMbXVsdGlNc2dMaXN0",
-            "GAUgAygLMhMuenByb3RvLkNoaXRDaGF0TXNnEiMKB2VyckNvZGUYBiABKA4y",
-            "Ei56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "b2RlLnByb3RvIpUBChdHZXRDaGlwQ2hhdFJlY29yZHNSZXBseRIOCgZpc19l",
+            "bmQYAyABKAgSFwoPbWF4X3JlYWRfbXNnX2lkGAQgASgDEisKDm11bHRpX21z",
+            "Z19saXN0GAUgAygLMhMuenByb3RvLkNoaXRDaGF0TXNnEiQKCGVycl9jb2Rl",
+            "GAYgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruChitChatMsgReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new GetChipChatRecordsReply(this);
     }
 
-    /// <summary>Field number for the "isEnd" field.</summary>
+    /// <summary>Field number for the "is_end" field.</summary>
     public const int IsEndFieldNumber = 3;
     private bool isEnd_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxReadMsgId" field.</summary>
+    /// <summary>Field number for the "max_read_msg_id" field.</summary>
     public const int MaxReadMsgIdFieldNumber = 4;
     private long maxReadMsgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "multiMsgList" field.</summary>
+    /// <summary>Field number for the "multi_msg_list" field.</summary>
     public const int MultiMsgListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.ChitChatMsg> _repeated_multiMsgList_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.ChitChatMsg.Parser);
@@ -123,7 +123,7 @@ namespace Zproto {
       get { return multiMsgList_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

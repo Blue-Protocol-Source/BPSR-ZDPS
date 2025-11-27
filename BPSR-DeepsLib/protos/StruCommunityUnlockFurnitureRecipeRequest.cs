@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjRzdHJ1X2NvbW11bml0eV91bmxvY2tfZnVybml0dXJlX3JlY2lwZV9yZXF1",
-            "ZXN0LnByb3RvEgZ6cHJvdG8iPAolQ29tbXVuaXR5VW5sb2NrRnVybml0dXJl",
-            "UmVjaXBlUmVxdWVzdBITCgtmdXJuaXR1cmVJZBgBIAEoBWIGcHJvdG8z"));
+            "ZXN0LnByb3RvEgZ6cHJvdG8iPQolQ29tbXVuaXR5VW5sb2NrRnVybml0dXJl",
+            "UmVjaXBlUmVxdWVzdBIUCgxmdXJuaXR1cmVfaWQYASABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new CommunityUnlockFurnitureRecipeRequest(this);
     }
 
-    /// <summary>Field number for the "furnitureId" field.</summary>
+    /// <summary>Field number for the "furniture_id" field.</summary>
     public const int FurnitureIdFieldNumber = 1;
     private int furnitureId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

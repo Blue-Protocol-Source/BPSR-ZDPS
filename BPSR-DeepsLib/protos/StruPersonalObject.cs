@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "ChpzdHJ1X3BlcnNvbmFsX29iamVjdC5wcm90bxIGenByb3RvGiBzdHJ1X3Nj",
             "ZW5lX3BlcnNvbmFsX29iamVjdC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIqIBCg5QZXJzb25hbE9iamVjdBI+CgxzY2VuZU9iakRhdGEYASADKAsy",
-            "KC56cHJvdG8uUGVyc29uYWxPYmplY3QuU2NlbmVPYmpEYXRhRW50cnkaUAoR",
-            "U2NlbmVPYmpEYXRhRW50cnkSCwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgL",
-            "MhsuenByb3RvLlNjZW5lUGVyc29uYWxPYmplY3Q6AjgBYgZwcm90bzM="));
+            "b3RvIqQBCg5QZXJzb25hbE9iamVjdBJACg5zY2VuZV9vYmpfZGF0YRgBIAMo",
+            "CzIoLnpwcm90by5QZXJzb25hbE9iamVjdC5TY2VuZU9iakRhdGFFbnRyeRpQ",
+            "ChFTY2VuZU9iakRhdGFFbnRyeRILCgNrZXkYASABKAUSKgoFdmFsdWUYAiAB",
+            "KAsyGy56cHJvdG8uU2NlbmVQZXJzb25hbE9iamVjdDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruScenePersonalObjectReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new PersonalObject(this);
     }
 
-    /// <summary>Field number for the "sceneObjData" field.</summary>
+    /// <summary>Field number for the "scene_obj_data" field.</summary>
     public const int SceneObjDataFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.ScenePersonalObject>.Codec _map_sceneObjData_codec
         = new pbc::MapField<int, global::Zproto.ScenePersonalObject>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ScenePersonalObject.Parser), 10);

@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CjNzdHJ1X25vdGlmeV9jb21tdW5pdHlfdHJhbnNmZXJfY2hhbmdlX3JlcXVl",
             "c3QucHJvdG8SBnpwcm90bxodc3RydV9jb21tdW5pdHlfdHJhbnNmZXIucHJv",
-            "dG8iXAokTm90aWZ5Q29tbXVuaXR5VHJhbnNmZXJDaGFuZ2VSZXF1ZXN0EjQK",
-            "EXRyYW5zZmVyQ29tbXVuaXR5GAEgASgLMhkuenByb3RvLkNvbW11bml0eVRy",
-            "YW5zZmVyYgZwcm90bzM="));
+            "dG8iXQokTm90aWZ5Q29tbXVuaXR5VHJhbnNmZXJDaGFuZ2VSZXF1ZXN0EjUK",
+            "EnRyYW5zZmVyX2NvbW11bml0eRgBIAEoCzIZLnpwcm90by5Db21tdW5pdHlU",
+            "cmFuc2ZlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityTransferReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new NotifyCommunityTransferChangeRequest(this);
     }
 
-    /// <summary>Field number for the "transferCommunity" field.</summary>
+    /// <summary>Field number for the "transfer_community" field.</summary>
     public const int TransferCommunityFieldNumber = 1;
     private global::Zproto.CommunityTransfer transferCommunity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

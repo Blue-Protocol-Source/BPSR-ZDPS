@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2FveWlfc2tpbGxfdXBncmFkZV9yZXF1ZXN0LnByb3RvEgZ6cHJv",
-            "dG8iPwoXQW95aVNraWxsVXBncmFkZVJlcXVlc3QSDwoHc2tpbGxJZBgBIAEo",
-            "BRITCgt0YXJnZXRMZXZlbBgCIAEoBWIGcHJvdG8z"));
+            "dG8iQQoXQW95aVNraWxsVXBncmFkZVJlcXVlc3QSEAoIc2tpbGxfaWQYASAB",
+            "KAUSFAoMdGFyZ2V0X2xldmVsGAIgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new AoyiSkillUpgradeRequest(this);
     }
 
-    /// <summary>Field number for the "skillId" field.</summary>
+    /// <summary>Field number for the "skill_id" field.</summary>
     public const int SkillIdFieldNumber = 1;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetLevel" field.</summary>
+    /// <summary>Field number for the "target_level" field.</summary>
     public const int TargetLevelFieldNumber = 2;
     private int targetLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

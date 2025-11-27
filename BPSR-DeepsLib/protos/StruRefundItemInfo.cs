@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3JlZnVuZF9pdGVtX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvInkKDlJlZnVuZEl0ZW1JbmZvEjYKCGl0ZW1MaXN0",
-            "GAEgAygLMiQuenByb3RvLlJlZnVuZEl0ZW1JbmZvLkl0ZW1MaXN0RW50cnka",
-            "LwoNSXRlbUxpc3RFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAM6",
-            "AjgBYgZwcm90bzM="));
+            "aXJ0eV9tYXNrLnByb3RvInoKDlJlZnVuZEl0ZW1JbmZvEjcKCWl0ZW1fbGlz",
+            "dBgBIAMoCzIkLnpwcm90by5SZWZ1bmRJdGVtSW5mby5JdGVtTGlzdEVudHJ5",
+            "Gi8KDUl0ZW1MaXN0RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgD",
+            "OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new RefundItemInfo(this);
     }
 
-    /// <summary>Field number for the "itemList" field.</summary>
+    /// <summary>Field number for the "item_list" field.</summary>
     public const int ItemListFieldNumber = 1;
     private static readonly pbc::MapField<int, long>.Codec _map_itemList_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 10);

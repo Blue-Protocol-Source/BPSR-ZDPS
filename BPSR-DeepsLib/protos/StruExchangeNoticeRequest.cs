@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2V4Y2hhbmdlX25vdGljZV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "NgoVRXhjaGFuZ2VOb3RpY2VSZXF1ZXN0EgwKBHR5cGUYASABKAUSDwoHc3Vi",
-            "VHlwZRgCIAEoBWIGcHJvdG8z"));
+            "NwoVRXhjaGFuZ2VOb3RpY2VSZXF1ZXN0EgwKBHR5cGUYASABKAUSEAoIc3Vi",
+            "X3R5cGUYAiABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "subType" field.</summary>
+    /// <summary>Field number for the "sub_type" field.</summary>
     public const int SubTypeFieldNumber = 2;
     private int subType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

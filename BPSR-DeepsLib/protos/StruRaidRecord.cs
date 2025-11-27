@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X3JhaWRfcmVjb3JkLnByb3RvEgZ6cHJvdG8aGHN0cnVfYm9zc19w",
-            "cm9ncmVzcy5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIpMBCgpSYWlk",
-            "UmVjb3JkEjoKDGJvc3NQcm9ncmVzcxgCIAMoCzIkLnpwcm90by5SYWlkUmVj",
-            "b3JkLkJvc3NQcm9ncmVzc0VudHJ5GkkKEUJvc3NQcm9ncmVzc0VudHJ5EgsK",
-            "A2tleRgBIAEoBRIjCgV2YWx1ZRgCIAEoCzIULnpwcm90by5Cb3NzUHJvZ3Jl",
-            "c3M6AjgBYgZwcm90bzM="));
+            "cm9ncmVzcy5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIpQBCgpSYWlk",
+            "UmVjb3JkEjsKDWJvc3NfcHJvZ3Jlc3MYAiADKAsyJC56cHJvdG8uUmFpZFJl",
+            "Y29yZC5Cb3NzUHJvZ3Jlc3NFbnRyeRpJChFCb3NzUHJvZ3Jlc3NFbnRyeRIL",
+            "CgNrZXkYASABKAUSIwoFdmFsdWUYAiABKAsyFC56cHJvdG8uQm9zc1Byb2dy",
+            "ZXNzOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBossProgressReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new RaidRecord(this);
     }
 
-    /// <summary>Field number for the "bossProgress" field.</summary>
+    /// <summary>Field number for the "boss_progress" field.</summary>
     public const int BossProgressFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.BossProgress>.Codec _map_bossProgress_codec
         = new pbc::MapField<int, global::Zproto.BossProgress>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.BossProgress.Parser), 18);

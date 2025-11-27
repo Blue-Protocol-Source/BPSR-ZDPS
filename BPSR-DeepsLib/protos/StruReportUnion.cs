@@ -24,8 +24,8 @@ namespace Zproto {
     static StruReportUnionReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdzdHJ1X3JlcG9ydF91bmlvbi5wcm90bxIGenByb3RvIh4KC1JlcG9ydFVu",
-            "aW9uEg8KB3VuaW9uSWQYASABKAliBnByb3RvMw=="));
+            "ChdzdHJ1X3JlcG9ydF91bmlvbi5wcm90bxIGenByb3RvIh8KC1JlcG9ydFVu",
+            "aW9uEhAKCHVuaW9uX2lkGAEgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new ReportUnion(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private string unionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

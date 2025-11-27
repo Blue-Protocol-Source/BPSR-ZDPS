@@ -27,16 +27,16 @@ namespace Zproto {
             "ChRzdHJ1X3N0cnVjdHVyZS5wcm90bxIGenByb3RvGhNzdHJ1X2ludF92ZWMz",
             "LnByb3RvGiJzdHJ1X3N0cnVjdHVyZV9mYXJtbGFuZF9pbmZvLnByb3RvGiNz",
             "dHJ1X3N0cnVjdHVyZV9sYW1wbGlnaHRfaW5mby5wcm90bxoic3RydV9zdHJ1",
-            "Y3R1cmVfbWF0ZXJpYWxfaW5mby5wcm90bxoPc3RydV92ZWM0LnByb3RvIuoC",
-            "CglTdHJ1Y3R1cmUSDAoEdXVpZBgBIAEoAxISCgpjbGllbnRVdWlkGAIgASgD",
-            "Eg8KB2dyb3VwSWQYAyABKAMSDgoGaXRlbUlkGAQgASgFEg4KBmNoYXJJZBgF",
-            "IAEoAxIhCghwb3NpdGlvbhgGIAEoCzIPLnpwcm90by5JbnRWZWMzEiAKCnF1",
-            "YXRlcm5pb24YByABKAsyDC56cHJvdG8uVmVjNBIWCg5vcGVyYXRvckNoYXJJ",
-            "ZBgIIAEoAxIMCgRuYW1lGAkgASgJEjMKDG1hdGVyaWFsSW5mbxgKIAEoCzId",
-            "Lnpwcm90by5TdHJ1Y3R1cmVNYXRlcmlhbEluZm8SNQoNbGFtcGxpZ2h0SW5m",
-            "bxgLIAEoCzIeLnpwcm90by5TdHJ1Y3R1cmVMYW1wbGlnaHRJbmZvEjMKDGZh",
-            "cm1sYW5kSW5mbxgMIAEoCzIdLnpwcm90by5TdHJ1Y3R1cmVGYXJtbGFuZElu",
-            "Zm9iBnByb3RvMw=="));
+            "Y3R1cmVfbWF0ZXJpYWxfaW5mby5wcm90bxoPc3RydV92ZWM0LnByb3RvIvMC",
+            "CglTdHJ1Y3R1cmUSDAoEdXVpZBgBIAEoAxITCgtjbGllbnRfdXVpZBgCIAEo",
+            "AxIQCghncm91cF9pZBgDIAEoAxIPCgdpdGVtX2lkGAQgASgFEg8KB2NoYXJf",
+            "aWQYBSABKAMSIQoIcG9zaXRpb24YBiABKAsyDy56cHJvdG8uSW50VmVjMxIg",
+            "CgpxdWF0ZXJuaW9uGAcgASgLMgwuenByb3RvLlZlYzQSGAoQb3BlcmF0b3Jf",
+            "Y2hhcl9pZBgIIAEoAxIMCgRuYW1lGAkgASgJEjQKDW1hdGVyaWFsX2luZm8Y",
+            "CiABKAsyHS56cHJvdG8uU3RydWN0dXJlTWF0ZXJpYWxJbmZvEjYKDmxhbXBs",
+            "aWdodF9pbmZvGAsgASgLMh4uenByb3RvLlN0cnVjdHVyZUxhbXBsaWdodElu",
+            "Zm8SNAoNZmFybWxhbmRfaW5mbxgMIAEoCzIdLnpwcm90by5TdHJ1Y3R1cmVG",
+            "YXJtbGFuZEluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIntVec3Reflection.Descriptor, global::Zproto.StruStructureFarmlandInfoReflection.Descriptor, global::Zproto.StruStructureLamplightInfoReflection.Descriptor, global::Zproto.StruStructureMaterialInfoReflection.Descriptor, global::Zproto.StruVec4Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -115,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "clientUuid" field.</summary>
+    /// <summary>Field number for the "client_uuid" field.</summary>
     public const int ClientUuidFieldNumber = 2;
     private long clientUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "groupId" field.</summary>
+    /// <summary>Field number for the "group_id" field.</summary>
     public const int GroupIdFieldNumber = 3;
     private long groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemId" field.</summary>
+    /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 4;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 5;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -187,7 +187,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "operatorCharId" field.</summary>
+    /// <summary>Field number for the "operator_char_id" field.</summary>
     public const int OperatorCharIdFieldNumber = 8;
     private long operatorCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -211,7 +211,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "materialInfo" field.</summary>
+    /// <summary>Field number for the "material_info" field.</summary>
     public const int MaterialInfoFieldNumber = 10;
     private global::Zproto.StructureMaterialInfo materialInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -223,7 +223,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lamplightInfo" field.</summary>
+    /// <summary>Field number for the "lamplight_info" field.</summary>
     public const int LamplightInfoFieldNumber = 11;
     private global::Zproto.StructureLamplightInfo lamplightInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -235,7 +235,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "farmlandInfo" field.</summary>
+    /// <summary>Field number for the "farmland_info" field.</summary>
     public const int FarmlandInfoFieldNumber = 12;
     private global::Zproto.StructureFarmlandInfo farmlandInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

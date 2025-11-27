@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X2R1bmdlb25fd2Vla190YXJnZXRfbGlzdC5wcm90bxIGenByb3Rv",
             "GiJzdHJ1X2R1bmdlb25fdGFyZ2V0X3Byb2dyZXNzLnByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8iwQEKFUR1bmdlb25XZWVrVGFyZ2V0TGlzdBJBCgp3",
-            "ZWVrVGFyZ2V0GAEgAygLMi0uenByb3RvLkR1bmdlb25XZWVrVGFyZ2V0TGlz",
-            "dC5XZWVrVGFyZ2V0RW50cnkSEwoLcmVmcmVzaFRpbWUYAiABKA0aUAoPV2Vl",
-            "a1RhcmdldEVudHJ5EgsKA2tleRgBIAEoBRIsCgV2YWx1ZRgCIAEoCzIdLnpw",
-            "cm90by5EdW5nZW9uVGFyZ2V0UHJvZ3Jlc3M6AjgBYgZwcm90bzM="));
+            "cnR5X21hc2sucHJvdG8iwwEKFUR1bmdlb25XZWVrVGFyZ2V0TGlzdBJCCgt3",
+            "ZWVrX3RhcmdldBgBIAMoCzItLnpwcm90by5EdW5nZW9uV2Vla1RhcmdldExp",
+            "c3QuV2Vla1RhcmdldEVudHJ5EhQKDHJlZnJlc2hfdGltZRgCIAEoDRpQCg9X",
+            "ZWVrVGFyZ2V0RW50cnkSCwoDa2V5GAEgASgFEiwKBXZhbHVlGAIgASgLMh0u",
+            "enByb3RvLkR1bmdlb25UYXJnZXRQcm9ncmVzczoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonTargetProgressReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new DungeonWeekTargetList(this);
     }
 
-    /// <summary>Field number for the "weekTarget" field.</summary>
+    /// <summary>Field number for the "week_target" field.</summary>
     public const int WeekTargetFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.DungeonTargetProgress>.Codec _map_weekTarget_codec
         = new pbc::MapField<int, global::Zproto.DungeonTargetProgress>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonTargetProgress.Parser), 10);
@@ -98,7 +98,7 @@ namespace Zproto {
       get { return weekTarget_; }
     }
 
-    /// <summary>Field number for the "refreshTime" field.</summary>
+    /// <summary>Field number for the "refresh_time" field.</summary>
     public const int RefreshTimeFieldNumber = 2;
     private uint refreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

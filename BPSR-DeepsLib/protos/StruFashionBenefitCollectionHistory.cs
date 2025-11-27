@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci1zdHJ1X2Zhc2hpb25fYmVuZWZpdF9jb2xsZWN0aW9uX2hpc3RvcnkucHJv",
-            "dG8SBnpwcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvImMKH0Zhc2hpb25C",
-            "ZW5lZml0Q29sbGVjdGlvbkhpc3RvcnkSEQoJZmFzaGlvbklkGAEgASgFEgwK",
-            "BHRpbWUYAiABKAMSDAoEdHlwZRgDIAEoBRIRCglwYXJhbWV0ZXIYBCABKAVi",
-            "BnByb3RvMw=="));
+            "dG8SBnpwcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvImQKH0Zhc2hpb25C",
+            "ZW5lZml0Q29sbGVjdGlvbkhpc3RvcnkSEgoKZmFzaGlvbl9pZBgBIAEoBRIM",
+            "CgR0aW1lGAIgASgDEgwKBHR5cGUYAyABKAUSEQoJcGFyYW1ldGVyGAQgASgF",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new FashionBenefitCollectionHistory(this);
     }
 
-    /// <summary>Field number for the "fashionId" field.</summary>
+    /// <summary>Field number for the "fashion_id" field.</summary>
     public const int FashionIdFieldNumber = 1;
     private int fashionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

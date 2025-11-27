@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X3JlcV91bmlvbl9hY3Rpdml0eV9yYW5rX3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGiNzdHJ1X3VuaW9uX2Fj",
-            "dGl2aXR5X3JhbmtfaW5mby5wcm90byJxChlSZXFVbmlvbkFjdGl2aXR5UmFu",
-            "a1JlcGx5Ei8KCHJhbmtMaXN0GAEgAygLMh0uenByb3RvLlVuaW9uQWN0aXZp",
-            "dHlSYW5rSW5mbxIjCgdlcnJDb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNv",
-            "ZGViBnByb3RvMw=="));
+            "dGl2aXR5X3JhbmtfaW5mby5wcm90byJzChlSZXFVbmlvbkFjdGl2aXR5UmFu",
+            "a1JlcGx5EjAKCXJhbmtfbGlzdBgBIAMoCzIdLnpwcm90by5VbmlvbkFjdGl2",
+            "aXR5UmFua0luZm8SJAoIZXJyX2NvZGUYAiABKA4yEi56cHJvdG8uRUVycm9y",
+            "Q29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionActivityRankInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new ReqUnionActivityRankReply(this);
     }
 
-    /// <summary>Field number for the "rankList" field.</summary>
+    /// <summary>Field number for the "rank_list" field.</summary>
     public const int RankListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.UnionActivityRankInfo> _repeated_rankList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.UnionActivityRankInfo.Parser);
@@ -97,7 +97,7 @@ namespace Zproto {
       get { return rankList_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

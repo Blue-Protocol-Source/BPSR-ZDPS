@@ -24,8 +24,8 @@ namespace Zproto {
     static StruMonsterAwardInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X21vbnN0ZXJfYXdhcmRfaW5mby5wcm90bxIGenByb3RvIiUKEE1v",
-            "bnN0ZXJBd2FyZEluZm8SEQoJbW9uc3RlcklkGAEgASgFYgZwcm90bzM="));
+            "Ch1zdHJ1X21vbnN0ZXJfYXdhcmRfaW5mby5wcm90bxIGenByb3RvIiYKEE1v",
+            "bnN0ZXJBd2FyZEluZm8SEgoKbW9uc3Rlcl9pZBgBIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new MonsterAwardInfo(this);
     }
 
-    /// <summary>Field number for the "monsterId" field.</summary>
+    /// <summary>Field number for the "monster_id" field.</summary>
     public const int MonsterIdFieldNumber = 1;
     private int monsterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

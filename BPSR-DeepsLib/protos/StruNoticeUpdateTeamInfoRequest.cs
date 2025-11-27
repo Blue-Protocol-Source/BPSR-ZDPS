@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X25vdGljZV91cGRhdGVfdGVhbV9pbmZvX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90bxoZc3RydV90ZWFtX2Jhc2VfaW5mby5wcm90byJFChtOb3RpY2VV",
-            "cGRhdGVUZWFtSW5mb1JlcXVlc3QSJgoIYmFzZUluZm8YASABKAsyFC56cHJv",
-            "dG8uVGVhbUJhc2VJbmZvYgZwcm90bzM="));
+            "Bnpwcm90bxoZc3RydV90ZWFtX2Jhc2VfaW5mby5wcm90byJGChtOb3RpY2VV",
+            "cGRhdGVUZWFtSW5mb1JlcXVlc3QSJwoJYmFzZV9pbmZvGAEgASgLMhQuenBy",
+            "b3RvLlRlYW1CYXNlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTeamBaseInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NoticeUpdateTeamInfoRequest(this);
     }
 
-    /// <summary>Field number for the "baseInfo" field.</summary>
+    /// <summary>Field number for the "base_info" field.</summary>
     public const int BaseInfoFieldNumber = 1;
     private global::Zproto.TeamBaseInfo baseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

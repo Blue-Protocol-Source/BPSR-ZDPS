@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2xhdW5jaF9wYXJhbS5wcm90bxIGenByb3RvGhplbnVtX2xhdW5j",
-            "aF9wbGF0Zm9ybS5wcm90byJQCgtMYXVuY2hQYXJhbRIuCg5sYXVuY2hQbGF0",
-            "Zm9ybRgBIAEoDjIWLnpwcm90by5MYXVuY2hQbGF0Zm9ybRIRCgl1bmlxdWVV",
-            "aWQYAiABKAliBnByb3RvMw=="));
+            "aF9wbGF0Zm9ybS5wcm90byJSCgtMYXVuY2hQYXJhbRIvCg9sYXVuY2hfcGxh",
+            "dGZvcm0YASABKA4yFi56cHJvdG8uTGF1bmNoUGxhdGZvcm0SEgoKdW5pcXVl",
+            "X3VpZBgCIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumLaunchPlatformReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new LaunchParam(this);
     }
 
-    /// <summary>Field number for the "launchPlatform" field.</summary>
+    /// <summary>Field number for the "launch_platform" field.</summary>
     public const int LaunchPlatformFieldNumber = 1;
     private global::Zproto.LaunchPlatform launchPlatform_ = global::Zproto.LaunchPlatform.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "uniqueUid" field.</summary>
+    /// <summary>Field number for the "unique_uid" field.</summary>
     public const int UniqueUidFieldNumber = 2;
     private string uniqueUid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

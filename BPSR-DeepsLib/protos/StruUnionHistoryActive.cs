@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X3VuaW9uX2hpc3RvcnlfYWN0aXZlLnByb3RvEgZ6cHJvdG8aFXN0",
-            "cnVfZGlydHlfbWFzay5wcm90byI7ChJVbmlvbkhpc3RvcnlBY3RpdmUSDwoH",
-            "dW5pb25JZBgBIAEoAxIUCgxhY3RpdmVQb2ludHMYAiABKANiBnByb3RvMw=="));
+            "cnVfZGlydHlfbWFzay5wcm90byI9ChJVbmlvbkhpc3RvcnlBY3RpdmUSEAoI",
+            "dW5pb25faWQYASABKAMSFQoNYWN0aXZlX3BvaW50cxgCIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new UnionHistoryActive(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activePoints" field.</summary>
+    /// <summary>Field number for the "active_points" field.</summary>
     public const int ActivePointsFieldNumber = 2;
     private long activePoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

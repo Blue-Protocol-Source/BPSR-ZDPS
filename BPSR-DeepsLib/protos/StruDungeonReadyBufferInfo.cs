@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2R1bmdlb25fcmVhZHlfYnVmZmVyX2luZm8ucHJvdG8SBnpwcm90",
-            "byI6ChZEdW5nZW9uUmVhZHlCdWZmZXJJbmZvEg4KBmJ1ZmZJZBgBIAEoBRIQ",
-            "CghidWZmVGltZRgCIAEoBWIGcHJvdG8z"));
+            "byI8ChZEdW5nZW9uUmVhZHlCdWZmZXJJbmZvEg8KB2J1ZmZfaWQYASABKAUS",
+            "EQoJYnVmZl90aW1lGAIgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DungeonReadyBufferInfo(this);
     }
 
-    /// <summary>Field number for the "buffId" field.</summary>
+    /// <summary>Field number for the "buff_id" field.</summary>
     public const int BuffIdFieldNumber = 1;
     private int buffId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buffTime" field.</summary>
+    /// <summary>Field number for the "buff_time" field.</summary>
     public const int BuffTimeFieldNumber = 2;
     private int buffTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

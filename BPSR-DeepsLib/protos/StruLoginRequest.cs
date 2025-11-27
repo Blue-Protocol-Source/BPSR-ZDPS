@@ -25,22 +25,22 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2xvZ2luX3JlcXVlc3QucHJvdG8SBnpwcm90bxoWc3RydV9kZXZp",
-            "Y2VfaW5mby5wcm90bxoXc3RydV9sYXVuY2hfcGFyYW0ucHJvdG8iwAMKDExv",
-            "Z2luUmVxdWVzdBIOCgZvcGVuSWQYAiABKAkSDQoFdG9rZW4YAyABKAkSDwoH",
-            "c2RrVHlwZRgEIAEoBRIRCgljaGFubmVsSWQYBSABKAUSCgoCb3MYBiABKAUS",
-            "FAoMcGxhdGZvcm1UeXBlGAcgASgFEiYKCmRldmljZUluZm8YCCABKAsyEi56",
-            "cHJvdG8uRGV2aWNlSW5mbxIVCg1jbGllbnRWZXJzaW9uGAkgASgJEhcKD3By",
-            "b3RvY29sVmVyc2lvbhgKIAEoCRIVCg1jb25maWdWZXJzaW9uGAsgASgJEg4K",
-            "BmFyZWFJZBgMIAEoBRIZChFpT1NBZFNlcnZpY2VUb2tlbhgNIAEoCRISCgpw",
-            "YXlFeHREYXRhGA4gASgJEh0KFWNsaWVudFJlc291cmNlVmVyc2lvbhgPIAEo",
-            "CRIoCgtsYXVuY2hQYXJhbRgSIAEoCzITLnpwcm90by5MYXVuY2hQYXJhbRIT",
-            "CgthcmVhSWRUb2tlbhgTIAEoCRITCgtpc0Nsb3VkR2FtZRgUIAEoCBISCgpk",
-            "aXN0aW5jdElEGBUgASgJEhYKDmJvdW5kUHJvdmlkZXJzGBYgAygJYgZwcm90",
-            "bzM="));
+            "Y2VfaW5mby5wcm90bxoXc3RydV9sYXVuY2hfcGFyYW0ucHJvdG8i2AMKDExv",
+            "Z2luUmVxdWVzdBIPCgdvcGVuX2lkGAIgASgJEg0KBXRva2VuGAMgASgJEhAK",
+            "CHNka190eXBlGAQgASgFEhIKCmNoYW5uZWxfaWQYBSABKAUSCgoCb3MYBiAB",
+            "KAUSFQoNcGxhdGZvcm1fdHlwZRgHIAEoBRInCgtkZXZpY2VfaW5mbxgIIAEo",
+            "CzISLnpwcm90by5EZXZpY2VJbmZvEhYKDmNsaWVudF92ZXJzaW9uGAkgASgJ",
+            "EhgKEHByb3RvY29sX3ZlcnNpb24YCiABKAkSFgoOY29uZmlnX3ZlcnNpb24Y",
+            "CyABKAkSDwoHYXJlYV9pZBgMIAEoBRIdChVpX29zX2FkX3NlcnZpY2VfdG9r",
+            "ZW4YDSABKAkSFAoMcGF5X2V4dF9kYXRhGA4gASgJEh8KF2NsaWVudF9yZXNv",
+            "dXJjZV92ZXJzaW9uGA8gASgJEikKDGxhdW5jaF9wYXJhbRgSIAEoCzITLnpw",
+            "cm90by5MYXVuY2hQYXJhbRIVCg1hcmVhX2lkX3Rva2VuGBMgASgJEhUKDWlz",
+            "X2Nsb3VkX2dhbWUYFCABKAgSEwoLZGlzdGluY3RfaWQYFSABKAkSFwoPYm91",
+            "bmRfcHJvdmlkZXJzGBYgAygJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDeviceInfoReflection.Descriptor, global::Zproto.StruLaunchParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.LoginRequest), global::Zproto.LoginRequest.Parser, new[]{ "OpenId", "Token", "SdkType", "ChannelId", "Os", "PlatformType", "DeviceInfo", "ClientVersion", "ProtocolVersion", "ConfigVersion", "AreaId", "IOSAdServiceToken", "PayExtData", "ClientResourceVersion", "LaunchParam", "AreaIdToken", "IsCloudGame", "DistinctID", "BoundProviders" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.LoginRequest), global::Zproto.LoginRequest.Parser, new[]{ "OpenId", "Token", "SdkType", "ChannelId", "Os", "PlatformType", "DeviceInfo", "ClientVersion", "ProtocolVersion", "ConfigVersion", "AreaId", "IOsAdServiceToken", "PayExtData", "ClientResourceVersion", "LaunchParam", "AreaIdToken", "IsCloudGame", "DistinctId", "BoundProviders" }, null, null, null, null)
           }));
     }
     #endregion
@@ -93,13 +93,13 @@ namespace Zproto {
       protocolVersion_ = other.protocolVersion_;
       configVersion_ = other.configVersion_;
       areaId_ = other.areaId_;
-      iOSAdServiceToken_ = other.iOSAdServiceToken_;
+      iOsAdServiceToken_ = other.iOsAdServiceToken_;
       payExtData_ = other.payExtData_;
       clientResourceVersion_ = other.clientResourceVersion_;
       launchParam_ = other.launchParam_ != null ? other.launchParam_.Clone() : null;
       areaIdToken_ = other.areaIdToken_;
       isCloudGame_ = other.isCloudGame_;
-      distinctID_ = other.distinctID_;
+      distinctId_ = other.distinctId_;
       boundProviders_ = other.boundProviders_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -110,7 +110,7 @@ namespace Zproto {
       return new LoginRequest(this);
     }
 
-    /// <summary>Field number for the "openId" field.</summary>
+    /// <summary>Field number for the "open_id" field.</summary>
     public const int OpenIdFieldNumber = 2;
     private string openId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,7 +134,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sdkType" field.</summary>
+    /// <summary>Field number for the "sdk_type" field.</summary>
     public const int SdkTypeFieldNumber = 4;
     private int sdkType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -146,7 +146,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "channelId" field.</summary>
+    /// <summary>Field number for the "channel_id" field.</summary>
     public const int ChannelIdFieldNumber = 5;
     private int channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -170,7 +170,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "platformType" field.</summary>
+    /// <summary>Field number for the "platform_type" field.</summary>
     public const int PlatformTypeFieldNumber = 7;
     private int platformType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -182,7 +182,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "deviceInfo" field.</summary>
+    /// <summary>Field number for the "device_info" field.</summary>
     public const int DeviceInfoFieldNumber = 8;
     private global::Zproto.DeviceInfo deviceInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -194,7 +194,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "clientVersion" field.</summary>
+    /// <summary>Field number for the "client_version" field.</summary>
     public const int ClientVersionFieldNumber = 9;
     private string clientVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -206,7 +206,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "protocolVersion" field.</summary>
+    /// <summary>Field number for the "protocol_version" field.</summary>
     public const int ProtocolVersionFieldNumber = 10;
     private string protocolVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -218,7 +218,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "configVersion" field.</summary>
+    /// <summary>Field number for the "config_version" field.</summary>
     public const int ConfigVersionFieldNumber = 11;
     private string configVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -230,7 +230,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "areaId" field.</summary>
+    /// <summary>Field number for the "area_id" field.</summary>
     public const int AreaIdFieldNumber = 12;
     private int areaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -242,19 +242,19 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "iOSAdServiceToken" field.</summary>
-    public const int IOSAdServiceTokenFieldNumber = 13;
-    private string iOSAdServiceToken_ = "";
+    /// <summary>Field number for the "i_os_ad_service_token" field.</summary>
+    public const int IOsAdServiceTokenFieldNumber = 13;
+    private string iOsAdServiceToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string IOSAdServiceToken {
-      get { return iOSAdServiceToken_; }
+    public string IOsAdServiceToken {
+      get { return iOsAdServiceToken_; }
       set {
-        iOSAdServiceToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        iOsAdServiceToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "payExtData" field.</summary>
+    /// <summary>Field number for the "pay_ext_data" field.</summary>
     public const int PayExtDataFieldNumber = 14;
     private string payExtData_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -266,7 +266,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "clientResourceVersion" field.</summary>
+    /// <summary>Field number for the "client_resource_version" field.</summary>
     public const int ClientResourceVersionFieldNumber = 15;
     private string clientResourceVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -278,7 +278,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "launchParam" field.</summary>
+    /// <summary>Field number for the "launch_param" field.</summary>
     public const int LaunchParamFieldNumber = 18;
     private global::Zproto.LaunchParam launchParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -290,7 +290,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "areaIdToken" field.</summary>
+    /// <summary>Field number for the "area_id_token" field.</summary>
     public const int AreaIdTokenFieldNumber = 19;
     private string areaIdToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -302,7 +302,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isCloudGame" field.</summary>
+    /// <summary>Field number for the "is_cloud_game" field.</summary>
     public const int IsCloudGameFieldNumber = 20;
     private bool isCloudGame_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -314,19 +314,19 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "distinctID" field.</summary>
-    public const int DistinctIDFieldNumber = 21;
-    private string distinctID_ = "";
+    /// <summary>Field number for the "distinct_id" field.</summary>
+    public const int DistinctIdFieldNumber = 21;
+    private string distinctId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DistinctID {
-      get { return distinctID_; }
+    public string DistinctId {
+      get { return distinctId_; }
       set {
-        distinctID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        distinctId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "boundProviders" field.</summary>
+    /// <summary>Field number for the "bound_providers" field.</summary>
     public const int BoundProvidersFieldNumber = 22;
     private static readonly pb::FieldCodec<string> _repeated_boundProviders_codec
         = pb::FieldCodec.ForString(178);
@@ -363,13 +363,13 @@ namespace Zproto {
       if (ProtocolVersion != other.ProtocolVersion) return false;
       if (ConfigVersion != other.ConfigVersion) return false;
       if (AreaId != other.AreaId) return false;
-      if (IOSAdServiceToken != other.IOSAdServiceToken) return false;
+      if (IOsAdServiceToken != other.IOsAdServiceToken) return false;
       if (PayExtData != other.PayExtData) return false;
       if (ClientResourceVersion != other.ClientResourceVersion) return false;
       if (!object.Equals(LaunchParam, other.LaunchParam)) return false;
       if (AreaIdToken != other.AreaIdToken) return false;
       if (IsCloudGame != other.IsCloudGame) return false;
-      if (DistinctID != other.DistinctID) return false;
+      if (DistinctId != other.DistinctId) return false;
       if(!boundProviders_.Equals(other.boundProviders_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -389,13 +389,13 @@ namespace Zproto {
       if (ProtocolVersion.Length != 0) hash ^= ProtocolVersion.GetHashCode();
       if (ConfigVersion.Length != 0) hash ^= ConfigVersion.GetHashCode();
       if (AreaId != 0) hash ^= AreaId.GetHashCode();
-      if (IOSAdServiceToken.Length != 0) hash ^= IOSAdServiceToken.GetHashCode();
+      if (IOsAdServiceToken.Length != 0) hash ^= IOsAdServiceToken.GetHashCode();
       if (PayExtData.Length != 0) hash ^= PayExtData.GetHashCode();
       if (ClientResourceVersion.Length != 0) hash ^= ClientResourceVersion.GetHashCode();
       if (launchParam_ != null) hash ^= LaunchParam.GetHashCode();
       if (AreaIdToken.Length != 0) hash ^= AreaIdToken.GetHashCode();
       if (IsCloudGame != false) hash ^= IsCloudGame.GetHashCode();
-      if (DistinctID.Length != 0) hash ^= DistinctID.GetHashCode();
+      if (DistinctId.Length != 0) hash ^= DistinctId.GetHashCode();
       hash ^= boundProviders_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -459,9 +459,9 @@ namespace Zproto {
         output.WriteRawTag(96);
         output.WriteInt32(AreaId);
       }
-      if (IOSAdServiceToken.Length != 0) {
+      if (IOsAdServiceToken.Length != 0) {
         output.WriteRawTag(106);
-        output.WriteString(IOSAdServiceToken);
+        output.WriteString(IOsAdServiceToken);
       }
       if (PayExtData.Length != 0) {
         output.WriteRawTag(114);
@@ -483,9 +483,9 @@ namespace Zproto {
         output.WriteRawTag(160, 1);
         output.WriteBool(IsCloudGame);
       }
-      if (DistinctID.Length != 0) {
+      if (DistinctId.Length != 0) {
         output.WriteRawTag(170, 1);
-        output.WriteString(DistinctID);
+        output.WriteString(DistinctId);
       }
       boundProviders_.WriteTo(output, _repeated_boundProviders_codec);
       if (_unknownFields != null) {
@@ -542,9 +542,9 @@ namespace Zproto {
         output.WriteRawTag(96);
         output.WriteInt32(AreaId);
       }
-      if (IOSAdServiceToken.Length != 0) {
+      if (IOsAdServiceToken.Length != 0) {
         output.WriteRawTag(106);
-        output.WriteString(IOSAdServiceToken);
+        output.WriteString(IOsAdServiceToken);
       }
       if (PayExtData.Length != 0) {
         output.WriteRawTag(114);
@@ -566,9 +566,9 @@ namespace Zproto {
         output.WriteRawTag(160, 1);
         output.WriteBool(IsCloudGame);
       }
-      if (DistinctID.Length != 0) {
+      if (DistinctId.Length != 0) {
         output.WriteRawTag(170, 1);
-        output.WriteString(DistinctID);
+        output.WriteString(DistinctId);
       }
       boundProviders_.WriteTo(ref output, _repeated_boundProviders_codec);
       if (_unknownFields != null) {
@@ -614,8 +614,8 @@ namespace Zproto {
       if (AreaId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AreaId);
       }
-      if (IOSAdServiceToken.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(IOSAdServiceToken);
+      if (IOsAdServiceToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IOsAdServiceToken);
       }
       if (PayExtData.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PayExtData);
@@ -632,8 +632,8 @@ namespace Zproto {
       if (IsCloudGame != false) {
         size += 2 + 1;
       }
-      if (DistinctID.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(DistinctID);
+      if (DistinctId.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(DistinctId);
       }
       size += boundProviders_.CalculateSize(_repeated_boundProviders_codec);
       if (_unknownFields != null) {
@@ -684,8 +684,8 @@ namespace Zproto {
       if (other.AreaId != 0) {
         AreaId = other.AreaId;
       }
-      if (other.IOSAdServiceToken.Length != 0) {
-        IOSAdServiceToken = other.IOSAdServiceToken;
+      if (other.IOsAdServiceToken.Length != 0) {
+        IOsAdServiceToken = other.IOsAdServiceToken;
       }
       if (other.PayExtData.Length != 0) {
         PayExtData = other.PayExtData;
@@ -705,8 +705,8 @@ namespace Zproto {
       if (other.IsCloudGame != false) {
         IsCloudGame = other.IsCloudGame;
       }
-      if (other.DistinctID.Length != 0) {
-        DistinctID = other.DistinctID;
+      if (other.DistinctId.Length != 0) {
+        DistinctId = other.DistinctId;
       }
       boundProviders_.Add(other.boundProviders_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -776,7 +776,7 @@ namespace Zproto {
             break;
           }
           case 106: {
-            IOSAdServiceToken = input.ReadString();
+            IOsAdServiceToken = input.ReadString();
             break;
           }
           case 114: {
@@ -803,7 +803,7 @@ namespace Zproto {
             break;
           }
           case 170: {
-            DistinctID = input.ReadString();
+            DistinctId = input.ReadString();
             break;
           }
           case 178: {
@@ -877,7 +877,7 @@ namespace Zproto {
             break;
           }
           case 106: {
-            IOSAdServiceToken = input.ReadString();
+            IOsAdServiceToken = input.ReadString();
             break;
           }
           case 114: {
@@ -904,7 +904,7 @@ namespace Zproto {
             break;
           }
           case 170: {
-            DistinctID = input.ReadString();
+            DistinctId = input.ReadString();
             break;
           }
           case 178: {

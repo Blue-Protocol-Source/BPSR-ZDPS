@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X2ludml0ZV9qb2luX2R1bmdlb25zX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90byIzChlJbnZpdGVKb2luRHVuZ2VvbnNSZXF1ZXN0EhYKDmludml0ZVJl",
-            "Y2VpdmVyGAEgASgDYgZwcm90bzM="));
+            "cm90byI0ChlJbnZpdGVKb2luRHVuZ2VvbnNSZXF1ZXN0EhcKD2ludml0ZV9y",
+            "ZWNlaXZlchgBIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new InviteJoinDungeonsRequest(this);
     }
 
-    /// <summary>Field number for the "inviteReceiver" field.</summary>
+    /// <summary>Field number for the "invite_receiver" field.</summary>
     public const int InviteReceiverFieldNumber = 1;
     private long inviteReceiver_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

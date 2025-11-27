@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2ltYWdlX2luZm8ucHJvdG8SBnpwcm90bxoZZW51bV9lX3BpY3R1",
-            "cmVfdHlwZS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIooBCglJbWFn",
+            "cmVfdHlwZS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIo4BCglJbWFn",
             "ZUluZm8SIgoEdHlwZRgBIAEoDjIULnpwcm90by5FUGljdHVyZVR5cGUSDAoE",
-            "c2l6ZRgCIAEoDRIPCgd2ZXJzaW9uGAMgASgNEg4KBmNvc1VybBgEIAEoCRIR",
-            "CglleHRyYUluZm8YBSABKAkSFwoPcmV2aWV3U3RhcnRUaW1lGAYgASgNYgZw",
-            "cm90bzM="));
+            "c2l6ZRgCIAEoDRIPCgd2ZXJzaW9uGAMgASgNEg8KB2Nvc191cmwYBCABKAkS",
+            "EgoKZXh0cmFfaW5mbxgFIAEoCRIZChFyZXZpZXdfc3RhcnRfdGltZRgGIAEo",
+            "DWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPictureTypeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -126,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cosUrl" field.</summary>
+    /// <summary>Field number for the "cos_url" field.</summary>
     public const int CosUrlFieldNumber = 4;
     private string cosUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "extraInfo" field.</summary>
+    /// <summary>Field number for the "extra_info" field.</summary>
     public const int ExtraInfoFieldNumber = 5;
     private string extraInfo_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +150,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "reviewStartTime" field.</summary>
+    /// <summary>Field number for the "review_start_time" field.</summary>
     public const int ReviewStartTimeFieldNumber = 6;
     private uint reviewStartTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

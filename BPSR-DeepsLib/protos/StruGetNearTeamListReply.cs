@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X2dldF9uZWFyX3RlYW1fbGlzdF9yZXBseS5wcm90bxIGenByb3Rv",
             "GhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxoUc3RydV9zaG93X3RlYW0ucHJv",
-            "dG8ioQEKFEdldE5lYXJUZWFtTGlzdFJlcGx5EiIKCHRlYW1MaXN0GAEgAygL",
-            "MhAuenByb3RvLlNob3dUZWFtEhEKCWlzUmVmcmVzaBgCIAEoCBITCgttZW1i",
-            "ZXJDb3VudBgEIAEoBRIYChBJZ25vcmVTZWxmVGFsZW50GAUgASgIEiMKB2Vy",
-            "ckNvZGUYBiABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "dG8ipwEKFEdldE5lYXJUZWFtTGlzdFJlcGx5EiMKCXRlYW1fbGlzdBgBIAMo",
+            "CzIQLnpwcm90by5TaG93VGVhbRISCgppc19yZWZyZXNoGAIgASgIEhQKDG1l",
+            "bWJlcl9jb3VudBgEIAEoBRIaChJpZ25vcmVfc2VsZl90YWxlbnQYBSABKAgS",
+            "JAoIZXJyX2NvZGUYBiABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruShowTeamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new GetNearTeamListReply(this);
     }
 
-    /// <summary>Field number for the "teamList" field.</summary>
+    /// <summary>Field number for the "team_list" field.</summary>
     public const int TeamListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.ShowTeam> _repeated_teamList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.ShowTeam.Parser);
@@ -100,7 +100,7 @@ namespace Zproto {
       get { return teamList_; }
     }
 
-    /// <summary>Field number for the "isRefresh" field.</summary>
+    /// <summary>Field number for the "is_refresh" field.</summary>
     public const int IsRefreshFieldNumber = 2;
     private bool isRefresh_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "memberCount" field.</summary>
+    /// <summary>Field number for the "member_count" field.</summary>
     public const int MemberCountFieldNumber = 4;
     private int memberCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "IgnoreSelfTalent" field.</summary>
+    /// <summary>Field number for the "ignore_self_talent" field.</summary>
     public const int IgnoreSelfTalentFieldNumber = 5;
     private bool ignoreSelfTalent_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +136,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

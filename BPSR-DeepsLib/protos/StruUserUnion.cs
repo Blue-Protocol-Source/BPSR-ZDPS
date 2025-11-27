@@ -27,18 +27,19 @@ namespace Zproto {
             "ChVzdHJ1X3VzZXJfdW5pb24ucHJvdG8SBnpwcm90bxoec3RydV91bmlvbl9k",
             "YW5jZV9oaXN0b3J5LnByb3RvGh9zdHJ1X3VuaW9uX2hpc3RvcnlfYWN0aXZl",
             "LnByb3RvGh9zdHJ1X3VzZXJfdW5pb25faHVudF9pbmZvLnByb3RvGhVzdHJ1",
-            "X2RpcnR5X21hc2sucHJvdG8i9AMKCVVzZXJVbmlvbhIPCgd1bmlvbklkGAEg",
-            "ASgDEhQKDG5leHRKb2luVGltZRgCIAEoBBI7Cg1yZXFVbmlvblRpbWVzGAMg",
-            "AygLMiQuenByb3RvLlVzZXJVbmlvbi5SZXFVbmlvblRpbWVzRW50cnkSEAoI",
-            "am9pbkZsYWcYBCABKAgSFAoMY29sbGVjdGVkSWRzGAUgAygDEhwKFGFjdGl2",
-            "ZUF3YXJkUmVzZXRUaW1lGAYgASgDEhgKEHJlY2VpdmVkQXdhcmRJZHMYByAD",
-            "KAUSNwoTaGlzdG9yeUFjdGl2ZVBvaW50cxgIIAMoCzIaLnpwcm90by5Vbmlv",
-            "bkhpc3RvcnlBY3RpdmUSHQoVYWN0aXZlTGFzdFJlZnJlc2hUaW1lGAkgASgD",
-            "EhwKFGZpbmlzaERhaWx5QWN0aXZlSWRzGAogAygFEhEKCWxlYXZlVGltZRgL",
-            "IAEoBBIuCgtkYW5jZVJlY29yZBgNIAEoCzIZLnpwcm90by5VbmlvbkRhbmNl",
-            "SGlzdG9yeRI0ChF1c2VyVW5pb25IdW50SW5mbxgOIAEoCzIZLnpwcm90by5V",
-            "c2VyVW5pb25IdW50SW5mbxo0ChJSZXFVbmlvblRpbWVzRW50cnkSCwoDa2V5",
-            "GAEgASgDEg0KBXZhbHVlGAIgASgEOgI4AWIGcHJvdG8z"));
+            "X2RpcnR5X21hc2sucHJvdG8ijQQKCVVzZXJVbmlvbhIQCgh1bmlvbl9pZBgB",
+            "IAEoAxIWCg5uZXh0X2pvaW5fdGltZRgCIAEoBBI9Cg9yZXFfdW5pb25fdGlt",
+            "ZXMYAyADKAsyJC56cHJvdG8uVXNlclVuaW9uLlJlcVVuaW9uVGltZXNFbnRy",
+            "eRIRCglqb2luX2ZsYWcYBCABKAgSFQoNY29sbGVjdGVkX2lkcxgFIAMoAxIf",
+            "ChdhY3RpdmVfYXdhcmRfcmVzZXRfdGltZRgGIAEoAxIaChJyZWNlaXZlZF9h",
+            "d2FyZF9pZHMYByADKAUSOQoVaGlzdG9yeV9hY3RpdmVfcG9pbnRzGAggAygL",
+            "MhouenByb3RvLlVuaW9uSGlzdG9yeUFjdGl2ZRIgChhhY3RpdmVfbGFzdF9y",
+            "ZWZyZXNoX3RpbWUYCSABKAMSHwoXZmluaXNoX2RhaWx5X2FjdGl2ZV9pZHMY",
+            "CiADKAUSEgoKbGVhdmVfdGltZRgLIAEoBBIvCgxkYW5jZV9yZWNvcmQYDSAB",
+            "KAsyGS56cHJvdG8uVW5pb25EYW5jZUhpc3RvcnkSNwoUdXNlcl91bmlvbl9o",
+            "dW50X2luZm8YDiABKAsyGS56cHJvdG8uVXNlclVuaW9uSHVudEluZm8aNAoS",
+            "UmVxVW5pb25UaW1lc0VudHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1ZRgCIAEo",
+            "BDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUnionDanceHistoryReflection.Descriptor, global::Zproto.StruUnionHistoryActiveReflection.Descriptor, global::Zproto.StruUserUnionHuntInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -106,7 +107,7 @@ namespace Zproto {
       return new UserUnion(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -118,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "nextJoinTime" field.</summary>
+    /// <summary>Field number for the "next_join_time" field.</summary>
     public const int NextJoinTimeFieldNumber = 2;
     private ulong nextJoinTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -130,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "reqUnionTimes" field.</summary>
+    /// <summary>Field number for the "req_union_times" field.</summary>
     public const int ReqUnionTimesFieldNumber = 3;
     private static readonly pbc::MapField<long, ulong>.Codec _map_reqUnionTimes_codec
         = new pbc::MapField<long, ulong>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForUInt64(16, 0UL), 26);
@@ -141,7 +142,7 @@ namespace Zproto {
       get { return reqUnionTimes_; }
     }
 
-    /// <summary>Field number for the "joinFlag" field.</summary>
+    /// <summary>Field number for the "join_flag" field.</summary>
     public const int JoinFlagFieldNumber = 4;
     private bool joinFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,7 +154,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "collectedIds" field.</summary>
+    /// <summary>Field number for the "collected_ids" field.</summary>
     public const int CollectedIdsFieldNumber = 5;
     private static readonly pb::FieldCodec<long> _repeated_collectedIds_codec
         = pb::FieldCodec.ForInt64(42);
@@ -164,7 +165,7 @@ namespace Zproto {
       get { return collectedIds_; }
     }
 
-    /// <summary>Field number for the "activeAwardResetTime" field.</summary>
+    /// <summary>Field number for the "active_award_reset_time" field.</summary>
     public const int ActiveAwardResetTimeFieldNumber = 6;
     private long activeAwardResetTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -176,7 +177,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "receivedAwardIds" field.</summary>
+    /// <summary>Field number for the "received_award_ids" field.</summary>
     public const int ReceivedAwardIdsFieldNumber = 7;
     private static readonly pb::FieldCodec<int> _repeated_receivedAwardIds_codec
         = pb::FieldCodec.ForInt32(58);
@@ -187,7 +188,7 @@ namespace Zproto {
       get { return receivedAwardIds_; }
     }
 
-    /// <summary>Field number for the "historyActivePoints" field.</summary>
+    /// <summary>Field number for the "history_active_points" field.</summary>
     public const int HistoryActivePointsFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Zproto.UnionHistoryActive> _repeated_historyActivePoints_codec
         = pb::FieldCodec.ForMessage(66, global::Zproto.UnionHistoryActive.Parser);
@@ -198,7 +199,7 @@ namespace Zproto {
       get { return historyActivePoints_; }
     }
 
-    /// <summary>Field number for the "activeLastRefreshTime" field.</summary>
+    /// <summary>Field number for the "active_last_refresh_time" field.</summary>
     public const int ActiveLastRefreshTimeFieldNumber = 9;
     private long activeLastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -210,7 +211,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "finishDailyActiveIds" field.</summary>
+    /// <summary>Field number for the "finish_daily_active_ids" field.</summary>
     public const int FinishDailyActiveIdsFieldNumber = 10;
     private static readonly pb::FieldCodec<int> _repeated_finishDailyActiveIds_codec
         = pb::FieldCodec.ForInt32(82);
@@ -221,7 +222,7 @@ namespace Zproto {
       get { return finishDailyActiveIds_; }
     }
 
-    /// <summary>Field number for the "leaveTime" field.</summary>
+    /// <summary>Field number for the "leave_time" field.</summary>
     public const int LeaveTimeFieldNumber = 11;
     private ulong leaveTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -233,7 +234,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "danceRecord" field.</summary>
+    /// <summary>Field number for the "dance_record" field.</summary>
     public const int DanceRecordFieldNumber = 13;
     private global::Zproto.UnionDanceHistory danceRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -245,7 +246,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "userUnionHuntInfo" field.</summary>
+    /// <summary>Field number for the "user_union_hunt_info" field.</summary>
     public const int UserUnionHuntInfoFieldNumber = 14;
     private global::Zproto.UserUnionHuntInfo userUnionHuntInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

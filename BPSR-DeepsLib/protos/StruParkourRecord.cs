@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3BhcmtvdXJfcmVjb3JkLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byJBCg1QYXJrb3VyUmVjb3JkEgwKBHRpbWUYASABKA0S",
-            "DQoFc3RhdGUYAiABKA0SEwoLcGVyZmVjdFRpbWUYAyABKA1iBnByb3RvMw=="));
+            "dHlfbWFzay5wcm90byJCCg1QYXJrb3VyUmVjb3JkEgwKBHRpbWUYASABKA0S",
+            "DQoFc3RhdGUYAiABKA0SFAoMcGVyZmVjdF90aW1lGAMgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "perfectTime" field.</summary>
+    /// <summary>Field number for the "perfect_time" field.</summary>
     public const int PerfectTimeFieldNumber = 3;
     private uint perfectTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

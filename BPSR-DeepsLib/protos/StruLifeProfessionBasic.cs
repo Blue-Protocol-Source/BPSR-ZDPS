@@ -26,13 +26,13 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X2xpZmVfcHJvZmVzc2lvbl9iYXNpYy5wcm90bxIGenByb3RvGilz",
             "dHJ1X2xpZnRfcHJvZmVzc2lvbl9zcGVjaWFsaXphdGlvbi5wcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIocCChNMaWZlUHJvZmVzc2lvbkJhc2ljEgoK",
+            "dV9kaXJ0eV9tYXNrLnByb3RvIokCChNMaWZlUHJvZmVzc2lvbkJhc2ljEgoK",
             "AmlkGAEgASgFEg0KBWxldmVsGAIgASgFEgsKA2V4cBgDIAEoBRJHCg5zcGVj",
             "aWFsaXphdGlvbhgFIAMoCzIvLnpwcm90by5MaWZlUHJvZmVzc2lvbkJhc2lj",
-            "LlNwZWNpYWxpemF0aW9uRW50cnkSIgoaY3VycmVudFNwZWNpYWxpemF0aW9u",
-            "UG9pbnQYBiABKAUaWwoTU3BlY2lhbGl6YXRpb25FbnRyeRILCgNrZXkYASAB",
-            "KAUSMwoFdmFsdWUYAiABKAsyJC56cHJvdG8uTGlmdFByb2Zlc3Npb25TcGVj",
-            "aWFsaXphdGlvbjoCOAFiBnByb3RvMw=="));
+            "LlNwZWNpYWxpemF0aW9uRW50cnkSJAocY3VycmVudF9zcGVjaWFsaXphdGlv",
+            "bl9wb2ludBgGIAEoBRpbChNTcGVjaWFsaXphdGlvbkVudHJ5EgsKA2tleRgB",
+            "IAEoBRIzCgV2YWx1ZRgCIAEoCzIkLnpwcm90by5MaWZ0UHJvZmVzc2lvblNw",
+            "ZWNpYWxpemF0aW9uOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLiftProfessionSpecializationReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -139,7 +139,7 @@ namespace Zproto {
       get { return specialization_; }
     }
 
-    /// <summary>Field number for the "currentSpecializationPoint" field.</summary>
+    /// <summary>Field number for the "current_specialization_point" field.</summary>
     public const int CurrentSpecializationPointFieldNumber = 6;
     private int currentSpecializationPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

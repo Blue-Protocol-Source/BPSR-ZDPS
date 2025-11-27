@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X2RlbGV0ZV9hbGJ1bV9yZXBseS5wcm90bxIGenByb3RvGhdlbnVt",
-            "X2VfZXJyb3JfY29kZS5wcm90byJdChBEZWxldGVBbGJ1bVJlcGx5Eg8KB2Fs",
-            "YnVtSWQYAyABKA0SEwoLZGVsUGhvdG9JZHMYBCADKA0SIwoHZXJyQ29kZRgF",
-            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "X2VfZXJyb3JfY29kZS5wcm90byJhChBEZWxldGVBbGJ1bVJlcGx5EhAKCGFs",
+            "YnVtX2lkGAMgASgNEhUKDWRlbF9waG90b19pZHMYBCADKA0SJAoIZXJyX2Nv",
+            "ZGUYBSABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new DeleteAlbumReply(this);
     }
 
-    /// <summary>Field number for the "albumId" field.</summary>
+    /// <summary>Field number for the "album_id" field.</summary>
     public const int AlbumIdFieldNumber = 3;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "delPhotoIds" field.</summary>
+    /// <summary>Field number for the "del_photo_ids" field.</summary>
     public const int DelPhotoIdsFieldNumber = 4;
     private static readonly pb::FieldCodec<uint> _repeated_delPhotoIds_codec
         = pb::FieldCodec.ForUInt32(34);
@@ -108,7 +108,7 @@ namespace Zproto {
       get { return delPhotoIds_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

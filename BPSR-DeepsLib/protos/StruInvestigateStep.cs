@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X2ludmVzdGlnYXRlX3N0ZXAucHJvdG8SBnpwcm90bxoWc3RydV9h",
-            "bnN3ZXJfbGlzdC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqoBCg9J",
-            "bnZlc3RpZ2F0ZVN0ZXASDQoFY2x1ZXMYASADKAUSPwoMcmVhc29uaW5nTWFw",
-            "GAIgAygLMikuenByb3RvLkludmVzdGlnYXRlU3RlcC5SZWFzb25pbmdNYXBF",
-            "bnRyeRpHChFSZWFzb25pbmdNYXBFbnRyeRILCgNrZXkYASABKAUSIQoFdmFs",
-            "dWUYAiABKAsyEi56cHJvdG8uQW5zd2VyTGlzdDoCOAFiBnByb3RvMw=="));
+            "bnN3ZXJfbGlzdC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqsBCg9J",
+            "bnZlc3RpZ2F0ZVN0ZXASDQoFY2x1ZXMYASADKAUSQAoNcmVhc29uaW5nX21h",
+            "cBgCIAMoCzIpLnpwcm90by5JbnZlc3RpZ2F0ZVN0ZXAuUmVhc29uaW5nTWFw",
+            "RW50cnkaRwoRUmVhc29uaW5nTWFwRW50cnkSCwoDa2V5GAEgASgFEiEKBXZh",
+            "bHVlGAIgASgLMhIuenByb3RvLkFuc3dlckxpc3Q6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAnswerListReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       get { return clues_; }
     }
 
-    /// <summary>Field number for the "reasoningMap" field.</summary>
+    /// <summary>Field number for the "reasoning_map" field.</summary>
     public const int ReasoningMapFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.AnswerList>.Codec _map_reasoningMap_codec
         = new pbc::MapField<int, global::Zproto.AnswerList>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.AnswerList.Parser), 18);

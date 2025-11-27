@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X3JldF9hdmF0YXJfdG9rZW5fcmVxdWVzdC5wcm90bxIGenByb3Rv",
             "GhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxobc3RydV90bXBfdG9rZW5fcmVz",
-            "dWx0LnByb3RvImQKFVJldEF2YXRhclRva2VuUmVxdWVzdBIjCgdlcnJDb2Rl",
-            "GAIgASgOMhIuenByb3RvLkVFcnJvckNvZGUSJgoGcmVzdWx0GAMgASgLMhYu",
-            "enByb3RvLlRtcFRva2VuUmVzdWx0YgZwcm90bzM="));
+            "dWx0LnByb3RvImUKFVJldEF2YXRhclRva2VuUmVxdWVzdBIkCghlcnJfY29k",
+            "ZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2RlEiYKBnJlc3VsdBgDIAEoCzIW",
+            "Lnpwcm90by5UbXBUb2tlblJlc3VsdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruTmpTokenResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new RetAvatarTokenRequest(this);
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

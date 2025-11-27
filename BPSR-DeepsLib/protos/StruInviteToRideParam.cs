@@ -24,8 +24,8 @@ namespace Zproto {
     static StruInviteToRideParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2ludml0ZV90b19yaWRlX3BhcmFtLnByb3RvEgZ6cHJvdG8iJgoR",
-            "SW52aXRlVG9SaWRlUGFyYW0SEQoJaW52aXRlcklkGAEgASgDYgZwcm90bzM="));
+            "Ch9zdHJ1X2ludml0ZV90b19yaWRlX3BhcmFtLnByb3RvEgZ6cHJvdG8iJwoR",
+            "SW52aXRlVG9SaWRlUGFyYW0SEgoKaW52aXRlcl9pZBgBIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new InviteToRideParam(this);
     }
 
-    /// <summary>Field number for the "inviterId" field.</summary>
+    /// <summary>Field number for the "inviter_id" field.</summary>
     public const int InviterIdFieldNumber = 1;
     private long inviterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

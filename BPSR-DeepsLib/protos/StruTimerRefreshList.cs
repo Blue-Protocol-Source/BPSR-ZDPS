@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X3RpbWVyX3JlZnJlc2hfbGlzdC5wcm90bxIGenByb3RvGh1zdHJ1",
             "X3RpbWVyX3JlZnJlc2hfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIqABChBUaW1lclJlZnJlc2hMaXN0Ej4KC3JlZnJlc2hEYXRhGAEgAygL",
-            "MikuenByb3RvLlRpbWVyUmVmcmVzaExpc3QuUmVmcmVzaERhdGFFbnRyeRpM",
-            "ChBSZWZyZXNoRGF0YUVudHJ5EgsKA2tleRgBIAEoDRInCgV2YWx1ZRgCIAEo",
-            "CzIYLnpwcm90by5UaW1lclJlZnJlc2hJbmZvOgI4AWIGcHJvdG8z"));
+            "b3RvIqEBChBUaW1lclJlZnJlc2hMaXN0Ej8KDHJlZnJlc2hfZGF0YRgBIAMo",
+            "CzIpLnpwcm90by5UaW1lclJlZnJlc2hMaXN0LlJlZnJlc2hEYXRhRW50cnka",
+            "TAoQUmVmcmVzaERhdGFFbnRyeRILCgNrZXkYASABKA0SJwoFdmFsdWUYAiAB",
+            "KAsyGC56cHJvdG8uVGltZXJSZWZyZXNoSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTimerRefreshInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new TimerRefreshList(this);
     }
 
-    /// <summary>Field number for the "refreshData" field.</summary>
+    /// <summary>Field number for the "refresh_data" field.</summary>
     public const int RefreshDataFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.TimerRefreshInfo>.Codec _map_refreshData_codec
         = new pbc::MapField<uint, global::Zproto.TimerRefreshInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.TimerRefreshInfo.Parser), 10);

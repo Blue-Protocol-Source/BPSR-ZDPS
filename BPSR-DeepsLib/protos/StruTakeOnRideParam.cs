@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X3Rha2Vfb25fcmlkZV9wYXJhbS5wcm90bxIGenByb3RvGh9lbnVt",
-            "X2VfcmlkZV9wcm9wZXJ0eV90eXBlLnByb3RvIk4KD1Rha2VPblJpZGVQYXJh",
-            "bRIrCghSaWRlVHlwZRgBIAEoDjIZLnpwcm90by5FUmlkZVByb3BlcnR5VHlw",
-            "ZRIOCgZSaWRlSWQYAiABKAViBnByb3RvMw=="));
+            "X2VfcmlkZV9wcm9wZXJ0eV90eXBlLnByb3RvIlAKD1Rha2VPblJpZGVQYXJh",
+            "bRIsCglyaWRlX3R5cGUYASABKA4yGS56cHJvdG8uRVJpZGVQcm9wZXJ0eVR5",
+            "cGUSDwoHcmlkZV9pZBgCIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumERidePropertyTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new TakeOnRideParam(this);
     }
 
-    /// <summary>Field number for the "RideType" field.</summary>
+    /// <summary>Field number for the "ride_type" field.</summary>
     public const int RideTypeFieldNumber = 1;
     private global::Zproto.ERidePropertyType rideType_ = global::Zproto.ERidePropertyType.RidePropertyTypeNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "RideId" field.</summary>
+    /// <summary>Field number for the "ride_id" field.</summary>
     public const int RideIdFieldNumber = 2;
     private int rideId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

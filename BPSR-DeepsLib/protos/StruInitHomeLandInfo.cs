@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2luaXRfaG9tZV9sYW5kX2luZm8ucHJvdG8SBnpwcm90bxojc3Ry",
             "dV9ob21lbGFuZF9kZWNvcmF0aW9uX2luZm8ucHJvdG8aFHN0cnVfc3RydWN0",
-            "dXJlLnByb3RvIt8BChBJbml0SG9tZUxhbmRJbmZvEg8KB2lzT3V0ZXIYASAB",
-            "KAgSPAoKc3RydWN0dXJlcxgCIAMoCzIoLnpwcm90by5Jbml0SG9tZUxhbmRJ",
-            "bmZvLlN0cnVjdHVyZXNFbnRyeRI2Cg5kZWNvcmF0aW9uSW5mbxgDIAEoCzIe",
-            "Lnpwcm90by5Ib21lbGFuZERlY29yYXRpb25JbmZvGkQKD1N0cnVjdHVyZXNF",
-            "bnRyeRILCgNrZXkYASABKAMSIAoFdmFsdWUYAiABKAsyES56cHJvdG8uU3Ry",
-            "dWN0dXJlOgI4AWIGcHJvdG8z"));
+            "dXJlLnByb3RvIuEBChBJbml0SG9tZUxhbmRJbmZvEhAKCGlzX291dGVyGAEg",
+            "ASgIEjwKCnN0cnVjdHVyZXMYAiADKAsyKC56cHJvdG8uSW5pdEhvbWVMYW5k",
+            "SW5mby5TdHJ1Y3R1cmVzRW50cnkSNwoPZGVjb3JhdGlvbl9pbmZvGAMgASgL",
+            "Mh4uenByb3RvLkhvbWVsYW5kRGVjb3JhdGlvbkluZm8aRAoPU3RydWN0dXJl",
+            "c0VudHJ5EgsKA2tleRgBIAEoAxIgCgV2YWx1ZRgCIAEoCzIRLnpwcm90by5T",
+            "dHJ1Y3R1cmU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomelandDecorationInfoReflection.Descriptor, global::Zproto.StruStructureReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new InitHomeLandInfo(this);
     }
 
-    /// <summary>Field number for the "isOuter" field.</summary>
+    /// <summary>Field number for the "is_outer" field.</summary>
     public const int IsOuterFieldNumber = 1;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       get { return structures_; }
     }
 
-    /// <summary>Field number for the "decorationInfo" field.</summary>
+    /// <summary>Field number for the "decoration_info" field.</summary>
     public const int DecorationInfoFieldNumber = 3;
     private global::Zproto.HomelandDecorationInfo decorationInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CjBzdHJ1X3NwZWVkX3VwX3VwZ3JhZGVfdW5pb25fYnVpbGRpbmdfcmVwbHku",
             "cHJvdG8SBnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aGXN0cnVf",
-            "dW5pb25fYnVpbGRpbmcucHJvdG8ikAEKIFNwZWVkVXBVcGdyYWRlVW5pb25C",
-            "dWlsZGluZ1JlcGx5Ei8KEHVwZ3JhZGVCdWlsZEluZm8YASABKAsyFS56cHJv",
-            "dG8uVW5pb25CdWlsZGluZxIWCg5zZWxmU3BlZWRUaW1lcxgCIAEoBRIjCgdl",
-            "cnJDb2RlGAMgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "dW5pb25fYnVpbGRpbmcucHJvdG8ilQEKIFNwZWVkVXBVcGdyYWRlVW5pb25C",
+            "dWlsZGluZ1JlcGx5EjEKEnVwZ3JhZGVfYnVpbGRfaW5mbxgBIAEoCzIVLnpw",
+            "cm90by5VbmlvbkJ1aWxkaW5nEhgKEHNlbGZfc3BlZWRfdGltZXMYAiABKAUS",
+            "JAoIZXJyX2NvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionBuildingReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new SpeedUpUpgradeUnionBuildingReply(this);
     }
 
-    /// <summary>Field number for the "upgradeBuildInfo" field.</summary>
+    /// <summary>Field number for the "upgrade_build_info" field.</summary>
     public const int UpgradeBuildInfoFieldNumber = 1;
     private global::Zproto.UnionBuilding upgradeBuildInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "selfSpeedTimes" field.</summary>
+    /// <summary>Field number for the "self_speed_times" field.</summary>
     public const int SelfSpeedTimesFieldNumber = 2;
     private int selfSpeedTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

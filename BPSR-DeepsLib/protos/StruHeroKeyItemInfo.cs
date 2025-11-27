@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X2hlcm9fa2V5X2l0ZW1faW5mby5wcm90bxIGenByb3RvGh1zdHJ1",
             "X2hlcm9fa2V5X3JvbGxfaW5mby5wcm90bxoPc3RydV9pdGVtLnByb3RvGhVz",
-            "dHJ1X2RpcnR5X21hc2sucHJvdG8isAEKD0hlcm9LZXlJdGVtSW5mbxIaCgRp",
-            "dGVtGAEgASgLMgwuenByb3RvLkl0ZW0SNwoIcm9sbEluZm8YAiADKAsyJS56",
-            "cHJvdG8uSGVyb0tleUl0ZW1JbmZvLlJvbGxJbmZvRW50cnkaSAoNUm9sbElu",
-            "Zm9FbnRyeRILCgNrZXkYASABKA0SJgoFdmFsdWUYAiABKAsyFy56cHJvdG8u",
-            "SGVyb0tleVJvbGxJbmZvOgI4AWIGcHJvdG8z"));
+            "dHJ1X2RpcnR5X21hc2sucHJvdG8isQEKD0hlcm9LZXlJdGVtSW5mbxIaCgRp",
+            "dGVtGAEgASgLMgwuenByb3RvLkl0ZW0SOAoJcm9sbF9pbmZvGAIgAygLMiUu",
+            "enByb3RvLkhlcm9LZXlJdGVtSW5mby5Sb2xsSW5mb0VudHJ5GkgKDVJvbGxJ",
+            "bmZvRW50cnkSCwoDa2V5GAEgASgNEiYKBXZhbHVlGAIgASgLMhcuenByb3Rv",
+            "Lkhlcm9LZXlSb2xsSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHeroKeyRollInfoReflection.Descriptor, global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rollInfo" field.</summary>
+    /// <summary>Field number for the "roll_info" field.</summary>
     public const int RollInfoFieldNumber = 2;
     private static readonly pbc::MapField<uint, global::Zproto.HeroKeyRollInfo>.Codec _map_rollInfo_codec
         = new pbc::MapField<uint, global::Zproto.HeroKeyRollInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HeroKeyRollInfo.Parser), 18);

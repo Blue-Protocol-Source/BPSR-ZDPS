@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CjhzdHJ1X25vdGlmeV9ob21lbGFuZF93YXJlaG91c2VfZ3JpZF9jaGFuZ2Vf",
             "cmVxdWVzdC5wcm90bxIGenByb3RvGiNzdHJ1X2NvbW11bml0eV93YXJlaG91",
-            "c2VfZ3JpZC5wcm90byJdCihOb3RpZnlIb21lbGFuZFdhcmVob3VzZUdyaWRD",
-            "aGFuZ2VSZXF1ZXN0EjEKCWl0ZW1JbmZvcxgBIAMoCzIeLnpwcm90by5Db21t",
-            "dW5pdHlXYXJlaG91c2VHcmlkYgZwcm90bzM="));
+            "c2VfZ3JpZC5wcm90byJeCihOb3RpZnlIb21lbGFuZFdhcmVob3VzZUdyaWRD",
+            "aGFuZ2VSZXF1ZXN0EjIKCml0ZW1faW5mb3MYASADKAsyHi56cHJvdG8uQ29t",
+            "bXVuaXR5V2FyZWhvdXNlR3JpZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityWarehouseGridReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new NotifyHomelandWarehouseGridChangeRequest(this);
     }
 
-    /// <summary>Field number for the "itemInfos" field.</summary>
+    /// <summary>Field number for the "item_infos" field.</summary>
     public const int ItemInfosFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.CommunityWarehouseGrid> _repeated_itemInfos_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.CommunityWarehouseGrid.Parser);

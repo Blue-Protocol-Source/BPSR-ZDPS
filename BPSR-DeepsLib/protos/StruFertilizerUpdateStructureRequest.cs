@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X2ZlcnRpbGl6ZXJfdXBkYXRlX3N0cnVjdHVyZV9yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8aHHN0cnVfc3RydWN0dXJlX2xhbmRfb3AucHJvdG8iZwog",
-            "RmVydGlsaXplclVwZGF0ZVN0cnVjdHVyZVJlcXVlc3QSDgoGaG9tZUlkGAEg",
-            "ASgDEiMKAm9wGAIgASgLMhcuenByb3RvLlN0cnVjdHVyZUxhbmRPcBIOCgZp",
-            "dGVtSWQYAyABKAViBnByb3RvMw=="));
+            "b3RvEgZ6cHJvdG8aHHN0cnVfc3RydWN0dXJlX2xhbmRfb3AucHJvdG8iaQog",
+            "RmVydGlsaXplclVwZGF0ZVN0cnVjdHVyZVJlcXVlc3QSDwoHaG9tZV9pZBgB",
+            "IAEoAxIjCgJvcBgCIAEoCzIXLnpwcm90by5TdHJ1Y3R1cmVMYW5kT3ASDwoH",
+            "aXRlbV9pZBgDIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStructureLandOpReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new FertilizerUpdateStructureRequest(this);
     }
 
-    /// <summary>Field number for the "homeId" field.</summary>
+    /// <summary>Field number for the "home_id" field.</summary>
     public const int HomeIdFieldNumber = 1;
     private long homeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemId" field.</summary>
+    /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 3;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

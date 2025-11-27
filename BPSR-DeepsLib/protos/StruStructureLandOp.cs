@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3N0cnVjdHVyZV9sYW5kX29wLnByb3RvEgZ6cHJvdG8aHGVudW1f",
-            "c3RydWN0dXJlX29wX3R5cGUucHJvdG8iSAoPU3RydWN0dXJlTGFuZE9wEicK",
-            "Bm9wVHlwZRgBIAEoDjIXLnpwcm90by5TdHJ1Y3R1cmVPcFR5cGUSDAoEdXVp",
-            "ZBgCIAEoA2IGcHJvdG8z"));
+            "c3RydWN0dXJlX29wX3R5cGUucHJvdG8iSQoPU3RydWN0dXJlTGFuZE9wEigK",
+            "B29wX3R5cGUYASABKA4yFy56cHJvdG8uU3RydWN0dXJlT3BUeXBlEgwKBHV1",
+            "aWQYAiABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumStructureOpTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new StructureLandOp(this);
     }
 
-    /// <summary>Field number for the "opType" field.</summary>
+    /// <summary>Field number for the "op_type" field.</summary>
     public const int OpTypeFieldNumber = 1;
     private global::Zproto.StructureOpType opType_ = global::Zproto.StructureOpType.Add;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

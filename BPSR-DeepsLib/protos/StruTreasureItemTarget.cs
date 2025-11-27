@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "Ch9zdHJ1X3RyZWFzdXJlX2l0ZW1fdGFyZ2V0LnByb3RvEgZ6cHJvdG8aGHN0",
             "cnVfdHJlYXN1cmVfaXRlbS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3Rv",
-            "Il8KElRyZWFzdXJlSXRlbVRhcmdldBIQCgh0YXJnZXRJZBgBIAEoBRIRCgl0",
-            "YXJnZXROdW0YAiABKAUSJAoGcmV3YXJkGAMgASgLMhQuenByb3RvLlRyZWFz",
-            "dXJlSXRlbWIGcHJvdG8z"));
+            "ImEKElRyZWFzdXJlSXRlbVRhcmdldBIRCgl0YXJnZXRfaWQYASABKAUSEgoK",
+            "dGFyZ2V0X251bRgCIAEoBRIkCgZyZXdhcmQYAyABKAsyFC56cHJvdG8uVHJl",
+            "YXN1cmVJdGVtYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTreasureItemReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new TreasureItemTarget(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetNum" field.</summary>
+    /// <summary>Field number for the "target_num" field.</summary>
     public const int TargetNumFieldNumber = 2;
     private int targetNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

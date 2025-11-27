@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X3ByaXZpbGVnZV9lZmZlY3RfbGlzdF9kYXRhLnByb3RvEgZ6cHJv",
-            "dG8aJ3N0cnVfc2luZ2xlX3ByaXZpbGVnZV9lZmZlY3RfZGF0YS5wcm90byJZ",
-            "ChdQcml2aWxlZ2VFZmZlY3RMaXN0RGF0YRI+ChNwcml2aWxlZ2VFZmZlY3RE",
-            "YXRhGAEgAygLMiEuenByb3RvLlNpbmdsZVByaXZpbGVnZUVmZmVjdERhdGFi",
-            "BnByb3RvMw=="));
+            "dG8aJ3N0cnVfc2luZ2xlX3ByaXZpbGVnZV9lZmZlY3RfZGF0YS5wcm90byJb",
+            "ChdQcml2aWxlZ2VFZmZlY3RMaXN0RGF0YRJAChVwcml2aWxlZ2VfZWZmZWN0",
+            "X2RhdGEYASADKAsyIS56cHJvdG8uU2luZ2xlUHJpdmlsZWdlRWZmZWN0RGF0",
+            "YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSinglePrivilegeEffectDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new PrivilegeEffectListData(this);
     }
 
-    /// <summary>Field number for the "privilegeEffectData" field.</summary>
+    /// <summary>Field number for the "privilege_effect_data" field.</summary>
     public const int PrivilegeEffectDataFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.SinglePrivilegeEffectData> _repeated_privilegeEffectData_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.SinglePrivilegeEffectData.Parser);

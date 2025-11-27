@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "ChhzZXJ2X2h0dHBfcGxhdGZvcm0ucHJvdG8SBnpwcm90bxobc3RydV90ZXh0",
             "X2NoZWNrX3JlcGx5LnByb3RvGh1zdHJ1X3RleHRfY2hlY2tfcmVxdWVzdC5w",
-            "cm90byJ9CgxIdHRwUGxhdGZvcm0aNAoNVGV4dENoZWNrX1JldBIjCgNyZXQY",
-            "ASABKAsyFi56cHJvdG8uVGV4dENoZWNrUmVwbHkaNwoJVGV4dENoZWNrEioK",
-            "CHZSZXF1ZXN0GAEgASgLMhguenByb3RvLlRleHRDaGVja1JlcXVlc3RiBnBy",
-            "b3RvMw=="));
+            "cm90byJ+CgxIdHRwUGxhdGZvcm0aNAoNVGV4dENoZWNrX1JldBIjCgNyZXQY",
+            "ASABKAsyFi56cHJvdG8uVGV4dENoZWNrUmVwbHkaOAoJVGV4dENoZWNrEisK",
+            "CXZfcmVxdWVzdBgBIAEoCzIYLnpwcm90by5UZXh0Q2hlY2tSZXF1ZXN0YgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTextCheckReplyReflection.Descriptor, global::Zproto.StruTextCheckRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -457,7 +457,7 @@ namespace Zproto {
           return new TextCheck(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.TextCheckRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

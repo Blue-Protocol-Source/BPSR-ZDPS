@@ -24,9 +24,9 @@ namespace Zproto {
     static StruUnionResourceReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X3VuaW9uX3Jlc291cmNlLnByb3RvEgZ6cHJvdG8iNgoNVW5pb25S",
-            "ZXNvdXJjZRIOCgZzdW1OdW0YASABKAMSFQoNdGltZXJMaW1pdE51bRgCIAEo",
-            "BWIGcHJvdG8z"));
+            "ChlzdHJ1X3VuaW9uX3Jlc291cmNlLnByb3RvEgZ6cHJvdG8iOQoNVW5pb25S",
+            "ZXNvdXJjZRIPCgdzdW1fbnVtGAEgASgDEhcKD3RpbWVyX2xpbWl0X251bRgC",
+            "IAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new UnionResource(this);
     }
 
-    /// <summary>Field number for the "sumNum" field.</summary>
+    /// <summary>Field number for the "sum_num" field.</summary>
     public const int SumNumFieldNumber = 1;
     private long sumNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "timerLimitNum" field.</summary>
+    /// <summary>Field number for the "timer_limit_num" field.</summary>
     public const int TimerLimitNumFieldNumber = 2;
     private int timerLimitNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

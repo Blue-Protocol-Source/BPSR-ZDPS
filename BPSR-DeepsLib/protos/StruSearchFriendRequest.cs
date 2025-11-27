@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSearchFriendRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3NlYXJjaF9mcmllbmRfcmVxdWVzdC5wcm90bxIGenByb3RvIiwK",
-            "E1NlYXJjaEZyaWVuZFJlcXVlc3QSFQoNc2VhcmNoQ29udGVudBgCIAEoCWIG",
-            "cHJvdG8z"));
+            "CiBzdHJ1X3NlYXJjaF9mcmllbmRfcmVxdWVzdC5wcm90bxIGenByb3RvIi0K",
+            "E1NlYXJjaEZyaWVuZFJlcXVlc3QSFgoOc2VhcmNoX2NvbnRlbnQYAiABKAli",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new SearchFriendRequest(this);
     }
 
-    /// <summary>Field number for the "searchContent" field.</summary>
+    /// <summary>Field number for the "search_content" field.</summary>
     public const int SearchContentFieldNumber = 2;
     private string searchContent_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

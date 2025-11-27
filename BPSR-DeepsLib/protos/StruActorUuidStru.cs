@@ -24,9 +24,9 @@ namespace Zproto {
     static StruActorUuidStruReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X2FjdG9yX3V1aWRfc3RydS5wcm90bxIGenByb3RvIkgKDUFjdG9y",
-            "VXVpZFN0cnUSEQoJYWN0b3JUeXBlGAEgASgFEhAKCGlzU3VtbW9uGAIgASgI",
-            "EhIKCmluc3RhbmNlSWQYAyABKAViBnByb3RvMw=="));
+            "ChpzdHJ1X2FjdG9yX3V1aWRfc3RydS5wcm90bxIGenByb3RvIksKDUFjdG9y",
+            "VXVpZFN0cnUSEgoKYWN0b3JfdHlwZRgBIAEoBRIRCglpc19zdW1tb24YAiAB",
+            "KAgSEwoLaW5zdGFuY2VfaWQYAyABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ActorUuidStru(this);
     }
 
-    /// <summary>Field number for the "actorType" field.</summary>
+    /// <summary>Field number for the "actor_type" field.</summary>
     public const int ActorTypeFieldNumber = 1;
     private int actorType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isSummon" field.</summary>
+    /// <summary>Field number for the "is_summon" field.</summary>
     public const int IsSummonFieldNumber = 2;
     private bool isSummon_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "instanceId" field.</summary>
+    /// <summary>Field number for the "instance_id" field.</summary>
     public const int InstanceIdFieldNumber = 3;
     private int instanceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

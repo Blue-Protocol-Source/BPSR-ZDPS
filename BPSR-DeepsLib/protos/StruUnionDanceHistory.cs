@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X3VuaW9uX2RhbmNlX2hpc3RvcnkucHJvdG8SBnpwcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIloKEVVuaW9uRGFuY2VIaXN0b3J5EhQKDGRh",
-            "bmNlRW5kVGltZRgBIAEoAxIWCg5zZW50RGFuY2VBd2FyZBgCIAEoCBIXCg9k",
-            "cmF3bkRhbmNlQXdhcmQYAyABKAhiBnByb3RvMw=="));
+            "dV9kaXJ0eV9tYXNrLnByb3RvImAKEVVuaW9uRGFuY2VIaXN0b3J5EhYKDmRh",
+            "bmNlX2VuZF90aW1lGAEgASgDEhgKEHNlbnRfZGFuY2VfYXdhcmQYAiABKAgS",
+            "GQoRZHJhd25fZGFuY2VfYXdhcmQYAyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new UnionDanceHistory(this);
     }
 
-    /// <summary>Field number for the "danceEndTime" field.</summary>
+    /// <summary>Field number for the "dance_end_time" field.</summary>
     public const int DanceEndTimeFieldNumber = 1;
     private long danceEndTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sentDanceAward" field.</summary>
+    /// <summary>Field number for the "sent_dance_award" field.</summary>
     public const int SentDanceAwardFieldNumber = 2;
     private bool sentDanceAward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "drawnDanceAward" field.</summary>
+    /// <summary>Field number for the "drawn_dance_award" field.</summary>
     public const int DrawnDanceAwardFieldNumber = 3;
     private bool drawnDanceAward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,8 +24,8 @@ namespace Zproto {
     static StruExitActRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X2V4aXRfYWN0X3JlcXVlc3QucHJvdG8SBnpwcm90byIfCg5FeGl0",
-            "QWN0UmVxdWVzdBINCgVhY3RJZBgBIAEoBWIGcHJvdG8z"));
+            "ChtzdHJ1X2V4aXRfYWN0X3JlcXVlc3QucHJvdG8SBnpwcm90byIgCg5FeGl0",
+            "QWN0UmVxdWVzdBIOCgZhY3RfaWQYASABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new ExitActRequest(this);
     }
 
-    /// <summary>Field number for the "actId" field.</summary>
+    /// <summary>Field number for the "act_id" field.</summary>
     public const int ActIdFieldNumber = 1;
     private int actId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

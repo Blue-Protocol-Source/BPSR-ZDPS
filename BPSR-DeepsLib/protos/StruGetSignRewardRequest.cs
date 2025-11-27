@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2dldF9zaWduX3Jld2FyZF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "OgoUR2V0U2lnblJld2FyZFJlcXVlc3QSEAoIc2lnblR5cGUYASABKAUSEAoI",
-            "c2lnbkRheXMYAiABKAViBnByb3RvMw=="));
+            "PAoUR2V0U2lnblJld2FyZFJlcXVlc3QSEQoJc2lnbl90eXBlGAEgASgFEhEK",
+            "CXNpZ25fZGF5cxgCIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new GetSignRewardRequest(this);
     }
 
-    /// <summary>Field number for the "signType" field.</summary>
+    /// <summary>Field number for the "sign_type" field.</summary>
     public const int SignTypeFieldNumber = 1;
     private int signType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "signDays" field.</summary>
+    /// <summary>Field number for the "sign_days" field.</summary>
     public const int SignDaysFieldNumber = 2;
     private int signDays_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

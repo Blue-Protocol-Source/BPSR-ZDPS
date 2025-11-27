@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3NjZW5lX2x1YV9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byKBAQoMU2NlbmVMdWFEYXRhEjwKDHNjZW5lTHVhSW5m",
-            "bxgBIAMoCzImLnpwcm90by5TY2VuZUx1YURhdGEuU2NlbmVMdWFJbmZvRW50",
-            "cnkaMwoRU2NlbmVMdWFJbmZvRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVl",
-            "GAIgASgJOgI4AWIGcHJvdG8z"));
+            "dHlfbWFzay5wcm90byKDAQoMU2NlbmVMdWFEYXRhEj4KDnNjZW5lX2x1YV9p",
+            "bmZvGAEgAygLMiYuenByb3RvLlNjZW5lTHVhRGF0YS5TY2VuZUx1YUluZm9F",
+            "bnRyeRozChFTY2VuZUx1YUluZm9FbnRyeRILCgNrZXkYASABKA0SDQoFdmFs",
+            "dWUYAiABKAk6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new SceneLuaData(this);
     }
 
-    /// <summary>Field number for the "sceneLuaInfo" field.</summary>
+    /// <summary>Field number for the "scene_lua_info" field.</summary>
     public const int SceneLuaInfoFieldNumber = 1;
     private static readonly pbc::MapField<uint, string>.Codec _map_sceneLuaInfo_codec
         = new pbc::MapField<uint, string>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForString(18, ""), 10);

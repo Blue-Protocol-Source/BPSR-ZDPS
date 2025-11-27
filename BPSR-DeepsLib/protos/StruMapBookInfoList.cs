@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X21hcF9ib29rX2luZm9fbGlzdC5wcm90bxIGenByb3RvGhhzdHJ1",
-            "X21hcF9ib29rX2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKW",
-            "AQoPTWFwQm9va0luZm9MaXN0EjsKCm1hcEJvb2tNYXAYASADKAsyJy56cHJv",
-            "dG8uTWFwQm9va0luZm9MaXN0Lk1hcEJvb2tNYXBFbnRyeRpGCg9NYXBCb29r",
-            "TWFwRW50cnkSCwoDa2V5GAEgASgNEiIKBXZhbHVlGAIgASgLMhMuenByb3Rv",
-            "Lk1hcEJvb2tJbmZvOgI4AWIGcHJvdG8z"));
+            "X21hcF9ib29rX2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKY",
+            "AQoPTWFwQm9va0luZm9MaXN0Ej0KDG1hcF9ib29rX21hcBgBIAMoCzInLnpw",
+            "cm90by5NYXBCb29rSW5mb0xpc3QuTWFwQm9va01hcEVudHJ5GkYKD01hcEJv",
+            "b2tNYXBFbnRyeRILCgNrZXkYASABKA0SIgoFdmFsdWUYAiABKAsyEy56cHJv",
+            "dG8uTWFwQm9va0luZm86AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMapBookInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new MapBookInfoList(this);
     }
 
-    /// <summary>Field number for the "mapBookMap" field.</summary>
+    /// <summary>Field number for the "map_book_map" field.</summary>
     public const int MapBookMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.MapBookInfo>.Codec _map_mapBookMap_codec
         = new pbc::MapField<uint, global::Zproto.MapBookInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MapBookInfo.Parser), 10);

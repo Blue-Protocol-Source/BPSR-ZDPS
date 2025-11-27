@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSetFlagInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhzdHJ1X3NldF9mbGFnX2luZm8ucHJvdG8SBnpwcm90byIwCgtTZXRGbGFn",
-            "SW5mbxIRCgltb25zdGVySWQYASABKAUSDgoGaXNGbGFnGAIgASgIYgZwcm90",
-            "bzM="));
+            "ChhzdHJ1X3NldF9mbGFnX2luZm8ucHJvdG8SBnpwcm90byIyCgtTZXRGbGFn",
+            "SW5mbxISCgptb25zdGVyX2lkGAEgASgFEg8KB2lzX2ZsYWcYAiABKAhiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetFlagInfo(this);
     }
 
-    /// <summary>Field number for the "monsterId" field.</summary>
+    /// <summary>Field number for the "monster_id" field.</summary>
     public const int MonsterIdFieldNumber = 1;
     private int monsterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isFlag" field.</summary>
+    /// <summary>Field number for the "is_flag" field.</summary>
     public const int IsFlagFieldNumber = 2;
     private bool isFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

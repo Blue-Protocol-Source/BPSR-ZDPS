@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X25vdGlmeV9iZV9tdXRlZF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "OwoUTm90aWZ5QmVNdXRlZFJlcXVlc3QSDQoFaXNCYW4YASABKAgSFAoMZW5k",
-            "VGltZXN0YW1wGAIgASgDYgZwcm90bzM="));
+            "PQoUTm90aWZ5QmVNdXRlZFJlcXVlc3QSDgoGaXNfYmFuGAEgASgIEhUKDWVu",
+            "ZF90aW1lc3RhbXAYAiABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyBeMutedRequest(this);
     }
 
-    /// <summary>Field number for the "isBan" field.</summary>
+    /// <summary>Field number for the "is_ban" field.</summary>
     public const int IsBanFieldNumber = 1;
     private bool isBan_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "endTimestamp" field.</summary>
+    /// <summary>Field number for the "end_timestamp" field.</summary>
     public const int EndTimestampFieldNumber = 2;
     private long endTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

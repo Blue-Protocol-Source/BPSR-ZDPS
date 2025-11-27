@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2FwcHJvdmFsX3JlcXVlc3RfcmVxdWVzdC5wcm90bxIGenByb3Rv",
-            "IqkBChZBcHByb3ZhbFJlcXVlc3RSZXF1ZXN0Eg8KB3VuaW9uSWQYAiABKAMS",
-            "SAoNdkFwcHJvdmFsTGlzdBgDIAMoCzIxLnpwcm90by5BcHByb3ZhbFJlcXVl",
-            "c3RSZXF1ZXN0LlZBcHByb3ZhbExpc3RFbnRyeRo0ChJWQXBwcm92YWxMaXN0",
-            "RW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgIOgI4AWIGcHJvdG8z"));
+            "IqwBChZBcHByb3ZhbFJlcXVlc3RSZXF1ZXN0EhAKCHVuaW9uX2lkGAIgASgD",
+            "EkoKD3ZfYXBwcm92YWxfbGlzdBgDIAMoCzIxLnpwcm90by5BcHByb3ZhbFJl",
+            "cXVlc3RSZXF1ZXN0LlZBcHByb3ZhbExpc3RFbnRyeRo0ChJWQXBwcm92YWxM",
+            "aXN0RW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgIOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new ApprovalRequestRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "vApprovalList" field.</summary>
+    /// <summary>Field number for the "v_approval_list" field.</summary>
     public const int VApprovalListFieldNumber = 3;
     private static readonly pbc::MapField<long, bool>.Codec _map_vApprovalList_codec
         = new pbc::MapField<long, bool>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForBool(16, false), 26);

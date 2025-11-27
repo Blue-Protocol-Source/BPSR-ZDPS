@@ -28,28 +28,29 @@ namespace Zproto {
             "dGFyX2luZm8ucHJvdG8aFHN0cnVfY2hhcl90ZWFtLnByb3RvGhZlbnVtX2Vf",
             "Ym9keV9zaXplLnByb3RvGhNlbnVtX2VfZ2VuZGVyLnByb3RvGhRzdHJ1X2Zh",
             "Y2VfZGF0YS5wcm90bxoXc3RydV9wcm9maWxlX2luZm8ucHJvdG8aFXN0cnVf",
-            "dXNlcl91bmlvbi5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIp8HCgxD",
-            "aGFyQmFzZUluZm8SDgoGY2hhcklkGAEgASgDEhEKCWFjY291bnRJZBgCIAEo",
-            "CRIOCgZzaG93SWQYAyABKAMSEAoIc2VydmVySWQYBCABKA0SDAoEbmFtZRgF",
-            "IAEoCRIfCgZnZW5kZXIYBiABKA4yDy56cHJvdG8uRUdlbmRlchIRCglpc0Rl",
-            "bGV0ZWQYByABKAgSEAoIaXNGb3JiaWQYCCABKAgSDgoGaXNNdXRlGAkgASgI",
-            "EgkKAXgYCiABKAISCQoBeRgLIAEoAhIJCgFaGAwgASgCEgsKA2RpchgNIAEo",
-            "AhIiCghmYWNlRGF0YRgOIAEoCzIQLnpwcm90by5GYWNlRGF0YRIOCgZjYXJk",
-            "SWQYDyABKA0SEgoKY3JlYXRlVGltZRgQIAEoAxISCgpvbmxpbmVUaW1lGBEg",
-            "ASgDEhMKC29mZmxpbmVUaW1lGBIgASgDEigKC3Byb2ZpbGVJbmZvGBMgASgL",
-            "MhMuenByb3RvLlByb2ZpbGVJbmZvEiIKCHRlYW1JbmZvGBQgASgLMhAuenBy",
-            "b3RvLkNoYXJUZWFtEhEKCUNoYXJTdGF0ZRgVIAEoBBIjCghib2R5U2l6ZRgW",
-            "IAEoDjIRLnpwcm90by5FQm9keVNpemUSJAoJdW5pb25JbmZvGBcgASgLMhEu",
-            "enByb3RvLlVzZXJVbmlvbhIVCg1wZXJzb25hbFN0YXRlGBggAygFEiYKCmF2",
-            "YXRhckluZm8YGSABKAsyEi56cHJvdG8uQXZhdGFySW5mbxIXCg90b3RhbE9u",
-            "bGluZVRpbWUYGiABKAQSDgoGb3BlbklkGBsgASgJEg8KB3Nka1R5cGUYHCAB",
-            "KAUSCgoCb3MYHSABKAUSGAoQaW5pdFByb2Zlc3Npb25JZBgfIAEoBRIYChBs",
-            "YXN0Q2FsVG90YWxUaW1lGCAgASgEEg4KBmFyZWFJZBghIAEoBRIVCg1jbGll",
-            "bnRWZXJzaW9uGCIgASgJEhIKCmZpZ2h0UG9pbnQYIyABKAUSDwoHc3VtU2F2",
-            "ZRgkIAEoAxIdChVjbGllbnRSZXNvdXJjZVZlcnNpb24YJSABKAkSFwoPbGFz",
-            "dE9mZmxpbmVUaW1lGCYgASgDEhUKDWRheUFjY0R1clRpbWUYJyABKAUSGwoT",
-            "bGFzdEFjY0R1clRpbWVzdGFtcBgoIAEoAxISCgpzYXZlU2VyaWFsGCkgASgD",
-            "EhYKDmxhc3RPbmxpbmVUaW1lGCogASgDYgZwcm90bzM="));
+            "dXNlcl91bmlvbi5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIswHCgxD",
+            "aGFyQmFzZUluZm8SDwoHY2hhcl9pZBgBIAEoAxISCgphY2NvdW50X2lkGAIg",
+            "ASgJEg8KB3Nob3dfaWQYAyABKAMSEQoJc2VydmVyX2lkGAQgASgNEgwKBG5h",
+            "bWUYBSABKAkSHwoGZ2VuZGVyGAYgASgOMg8uenByb3RvLkVHZW5kZXISEgoK",
+            "aXNfZGVsZXRlZBgHIAEoCBIRCglpc19mb3JiaWQYCCABKAgSDwoHaXNfbXV0",
+            "ZRgJIAEoCBIJCgF4GAogASgCEgkKAXkYCyABKAISCQoBehgMIAEoAhILCgNk",
+            "aXIYDSABKAISIwoJZmFjZV9kYXRhGA4gASgLMhAuenByb3RvLkZhY2VEYXRh",
+            "Eg8KB2NhcmRfaWQYDyABKA0SEwoLY3JlYXRlX3RpbWUYECABKAMSEwoLb25s",
+            "aW5lX3RpbWUYESABKAMSFAoMb2ZmbGluZV90aW1lGBIgASgDEikKDHByb2Zp",
+            "bGVfaW5mbxgTIAEoCzITLnpwcm90by5Qcm9maWxlSW5mbxIjCgl0ZWFtX2lu",
+            "Zm8YFCABKAsyEC56cHJvdG8uQ2hhclRlYW0SEgoKY2hhcl9zdGF0ZRgVIAEo",
+            "BBIkCglib2R5X3NpemUYFiABKA4yES56cHJvdG8uRUJvZHlTaXplEiUKCnVu",
+            "aW9uX2luZm8YFyABKAsyES56cHJvdG8uVXNlclVuaW9uEhYKDnBlcnNvbmFs",
+            "X3N0YXRlGBggAygFEicKC2F2YXRhcl9pbmZvGBkgASgLMhIuenByb3RvLkF2",
+            "YXRhckluZm8SGQoRdG90YWxfb25saW5lX3RpbWUYGiABKAQSDwoHb3Blbl9p",
+            "ZBgbIAEoCRIQCghzZGtfdHlwZRgcIAEoBRIKCgJvcxgdIAEoBRIaChJpbml0",
+            "X3Byb2Zlc3Npb25faWQYHyABKAUSGwoTbGFzdF9jYWxfdG90YWxfdGltZRgg",
+            "IAEoBBIPCgdhcmVhX2lkGCEgASgFEhYKDmNsaWVudF92ZXJzaW9uGCIgASgJ",
+            "EhMKC2ZpZ2h0X3BvaW50GCMgASgFEhAKCHN1bV9zYXZlGCQgASgDEh8KF2Ns",
+            "aWVudF9yZXNvdXJjZV92ZXJzaW9uGCUgASgJEhkKEWxhc3Rfb2ZmbGluZV90",
+            "aW1lGCYgASgDEhgKEGRheV9hY2NfZHVyX3RpbWUYJyABKAUSHgoWbGFzdF9h",
+            "Y2NfZHVyX3RpbWVzdGFtcBgoIAEoAxITCgtzYXZlX3NlcmlhbBgpIAEoAxIY",
+            "ChBsYXN0X29ubGluZV90aW1lGCogASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAvatarInfoReflection.Descriptor, global::Zproto.StruCharTeamReflection.Descriptor, global::Zproto.EnumEBodySizeReflection.Descriptor, global::Zproto.EnumEGenderReflection.Descriptor, global::Zproto.StruFaceDataReflection.Descriptor, global::Zproto.StruProfileInfoReflection.Descriptor, global::Zproto.StruUserUnionReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -145,7 +146,7 @@ namespace Zproto {
       return new CharBaseInfo(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -157,7 +158,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "accountId" field.</summary>
+    /// <summary>Field number for the "account_id" field.</summary>
     public const int AccountIdFieldNumber = 2;
     private string accountId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,7 +170,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "showId" field.</summary>
+    /// <summary>Field number for the "show_id" field.</summary>
     public const int ShowIdFieldNumber = 3;
     private long showId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -181,7 +182,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "serverId" field.</summary>
+    /// <summary>Field number for the "server_id" field.</summary>
     public const int ServerIdFieldNumber = 4;
     private uint serverId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -217,7 +218,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isDeleted" field.</summary>
+    /// <summary>Field number for the "is_deleted" field.</summary>
     public const int IsDeletedFieldNumber = 7;
     private bool isDeleted_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -229,7 +230,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isForbid" field.</summary>
+    /// <summary>Field number for the "is_forbid" field.</summary>
     public const int IsForbidFieldNumber = 8;
     private bool isForbid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -241,7 +242,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isMute" field.</summary>
+    /// <summary>Field number for the "is_mute" field.</summary>
     public const int IsMuteFieldNumber = 9;
     private bool isMute_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -277,7 +278,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "Z" field.</summary>
+    /// <summary>Field number for the "z" field.</summary>
     public const int ZFieldNumber = 12;
     private float z_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -301,7 +302,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "faceData" field.</summary>
+    /// <summary>Field number for the "face_data" field.</summary>
     public const int FaceDataFieldNumber = 14;
     private global::Zproto.FaceData faceData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -313,7 +314,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cardId" field.</summary>
+    /// <summary>Field number for the "card_id" field.</summary>
     public const int CardIdFieldNumber = 15;
     private uint cardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -325,7 +326,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "createTime" field.</summary>
+    /// <summary>Field number for the "create_time" field.</summary>
     public const int CreateTimeFieldNumber = 16;
     private long createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -337,7 +338,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "onlineTime" field.</summary>
+    /// <summary>Field number for the "online_time" field.</summary>
     public const int OnlineTimeFieldNumber = 17;
     private long onlineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -349,7 +350,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "offlineTime" field.</summary>
+    /// <summary>Field number for the "offline_time" field.</summary>
     public const int OfflineTimeFieldNumber = 18;
     private long offlineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -361,7 +362,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "profileInfo" field.</summary>
+    /// <summary>Field number for the "profile_info" field.</summary>
     public const int ProfileInfoFieldNumber = 19;
     private global::Zproto.ProfileInfo profileInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -373,7 +374,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "teamInfo" field.</summary>
+    /// <summary>Field number for the "team_info" field.</summary>
     public const int TeamInfoFieldNumber = 20;
     private global::Zproto.CharTeam teamInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -385,7 +386,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "CharState" field.</summary>
+    /// <summary>Field number for the "char_state" field.</summary>
     public const int CharStateFieldNumber = 21;
     private ulong charState_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -397,7 +398,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bodySize" field.</summary>
+    /// <summary>Field number for the "body_size" field.</summary>
     public const int BodySizeFieldNumber = 22;
     private global::Zproto.EBodySize bodySize_ = global::Zproto.EBodySize.BodySizeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -409,7 +410,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unionInfo" field.</summary>
+    /// <summary>Field number for the "union_info" field.</summary>
     public const int UnionInfoFieldNumber = 23;
     private global::Zproto.UserUnion unionInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -421,7 +422,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "personalState" field.</summary>
+    /// <summary>Field number for the "personal_state" field.</summary>
     public const int PersonalStateFieldNumber = 24;
     private static readonly pb::FieldCodec<int> _repeated_personalState_codec
         = pb::FieldCodec.ForInt32(194);
@@ -432,7 +433,7 @@ namespace Zproto {
       get { return personalState_; }
     }
 
-    /// <summary>Field number for the "avatarInfo" field.</summary>
+    /// <summary>Field number for the "avatar_info" field.</summary>
     public const int AvatarInfoFieldNumber = 25;
     private global::Zproto.AvatarInfo avatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -444,7 +445,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "totalOnlineTime" field.</summary>
+    /// <summary>Field number for the "total_online_time" field.</summary>
     public const int TotalOnlineTimeFieldNumber = 26;
     private ulong totalOnlineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -456,7 +457,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "openId" field.</summary>
+    /// <summary>Field number for the "open_id" field.</summary>
     public const int OpenIdFieldNumber = 27;
     private string openId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -468,7 +469,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sdkType" field.</summary>
+    /// <summary>Field number for the "sdk_type" field.</summary>
     public const int SdkTypeFieldNumber = 28;
     private int sdkType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -492,7 +493,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "initProfessionId" field.</summary>
+    /// <summary>Field number for the "init_profession_id" field.</summary>
     public const int InitProfessionIdFieldNumber = 31;
     private int initProfessionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -504,7 +505,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastCalTotalTime" field.</summary>
+    /// <summary>Field number for the "last_cal_total_time" field.</summary>
     public const int LastCalTotalTimeFieldNumber = 32;
     private ulong lastCalTotalTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -516,7 +517,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "areaId" field.</summary>
+    /// <summary>Field number for the "area_id" field.</summary>
     public const int AreaIdFieldNumber = 33;
     private int areaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -528,7 +529,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "clientVersion" field.</summary>
+    /// <summary>Field number for the "client_version" field.</summary>
     public const int ClientVersionFieldNumber = 34;
     private string clientVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -540,7 +541,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fightPoint" field.</summary>
+    /// <summary>Field number for the "fight_point" field.</summary>
     public const int FightPointFieldNumber = 35;
     private int fightPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -552,7 +553,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sumSave" field.</summary>
+    /// <summary>Field number for the "sum_save" field.</summary>
     public const int SumSaveFieldNumber = 36;
     private long sumSave_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -564,7 +565,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "clientResourceVersion" field.</summary>
+    /// <summary>Field number for the "client_resource_version" field.</summary>
     public const int ClientResourceVersionFieldNumber = 37;
     private string clientResourceVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -576,7 +577,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastOfflineTime" field.</summary>
+    /// <summary>Field number for the "last_offline_time" field.</summary>
     public const int LastOfflineTimeFieldNumber = 38;
     private long lastOfflineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -588,7 +589,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dayAccDurTime" field.</summary>
+    /// <summary>Field number for the "day_acc_dur_time" field.</summary>
     public const int DayAccDurTimeFieldNumber = 39;
     private int dayAccDurTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -600,7 +601,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastAccDurTimestamp" field.</summary>
+    /// <summary>Field number for the "last_acc_dur_timestamp" field.</summary>
     public const int LastAccDurTimestampFieldNumber = 40;
     private long lastAccDurTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -612,7 +613,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "saveSerial" field.</summary>
+    /// <summary>Field number for the "save_serial" field.</summary>
     public const int SaveSerialFieldNumber = 41;
     private long saveSerial_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -624,7 +625,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastOnlineTime" field.</summary>
+    /// <summary>Field number for the "last_online_time" field.</summary>
     public const int LastOnlineTimeFieldNumber = 42;
     private long lastOnlineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

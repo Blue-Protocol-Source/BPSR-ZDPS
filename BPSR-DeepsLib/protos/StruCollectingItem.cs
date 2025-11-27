@@ -24,10 +24,10 @@ namespace Zproto {
     static StruCollectingItemReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X2NvbGxlY3RpbmdfaXRlbS5wcm90bxIGenByb3RvIlwKDkNvbGxl",
-            "Y3RpbmdJdGVtEg4KBml0ZW1JZBgBIAEoBRIUCgxjb2xsZWN0ZWROdW0YAiAB",
-            "KAMSFAoMY29sbGVjdFByaWNlGAMgASgFEg4KBklzSGlnaBgEIAEoCGIGcHJv",
-            "dG8z"));
+            "ChpzdHJ1X2NvbGxlY3RpbmdfaXRlbS5wcm90bxIGenByb3RvImAKDkNvbGxl",
+            "Y3RpbmdJdGVtEg8KB2l0ZW1faWQYASABKAUSFQoNY29sbGVjdGVkX251bRgC",
+            "IAEoAxIVCg1jb2xsZWN0X3ByaWNlGAMgASgFEg8KB2lzX2hpZ2gYBCABKAhi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new CollectingItem(this);
     }
 
-    /// <summary>Field number for the "itemId" field.</summary>
+    /// <summary>Field number for the "item_id" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "collectedNum" field.</summary>
+    /// <summary>Field number for the "collected_num" field.</summary>
     public const int CollectedNumFieldNumber = 2;
     private long collectedNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "collectPrice" field.</summary>
+    /// <summary>Field number for the "collect_price" field.</summary>
     public const int CollectPriceFieldNumber = 3;
     private int collectPrice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "IsHigh" field.</summary>
+    /// <summary>Field number for the "is_high" field.</summary>
     public const int IsHighFieldNumber = 4;
     private bool isHigh_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNzdHJ1X3BheV9kYXRhLnByb3RvEgZ6cHJvdG8aGXN0cnVfZmlyc3RfcGF5",
-            "X2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byJ+CgdQYXlEYXRh",
-            "Ei0KB3BheURhdGEYASADKAsyHC56cHJvdG8uUGF5RGF0YS5QYXlEYXRhRW50",
-            "cnkaRAoMUGF5RGF0YUVudHJ5EgsKA2tleRgBIAEoBRIjCgV2YWx1ZRgCIAEo",
-            "CzIULnpwcm90by5GaXJzdFBheUluZm86AjgBYgZwcm90bzM="));
+            "X2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byJ/CgdQYXlEYXRh",
+            "Ei4KCHBheV9kYXRhGAEgAygLMhwuenByb3RvLlBheURhdGEuUGF5RGF0YUVu",
+            "dHJ5GkQKDFBheURhdGFFbnRyeRILCgNrZXkYASABKAUSIwoFdmFsdWUYAiAB",
+            "KAsyFC56cHJvdG8uRmlyc3RQYXlJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFirstPayInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new PayData(this);
     }
 
-    /// <summary>Field number for the "payData" field.</summary>
+    /// <summary>Field number for the "pay_data" field.</summary>
     public const int PayData_FieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.FirstPayInfo>.Codec _map_payData_codec
         = new pbc::MapField<int, global::Zproto.FirstPayInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FirstPayInfo.Parser), 10);

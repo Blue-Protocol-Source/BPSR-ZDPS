@@ -24,15 +24,15 @@ namespace Zproto {
     static StruGetFirstPayInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X2dldF9maXJzdF9wYXlfaW5mby5wcm90bxIGenByb3RvIqABCg9H",
-            "ZXRGaXJzdFBheUluZm8SQQoNbGFkZGVyUGF5SW5mbxgBIAMoCzIqLnpwcm90",
-            "by5HZXRGaXJzdFBheUluZm8uTGFkZGVyUGF5SW5mb0VudHJ5EhQKDGV4dHJh",
-            "QXdhcmRJRBgCIAEoBRo0ChJMYWRkZXJQYXlJbmZvRW50cnkSCwoDa2V5GAEg",
-            "ASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
+            "Ch1zdHJ1X2dldF9maXJzdF9wYXlfaW5mby5wcm90bxIGenByb3RvIqQBCg9H",
+            "ZXRGaXJzdFBheUluZm8SQwoPbGFkZGVyX3BheV9pbmZvGAEgAygLMiouenBy",
+            "b3RvLkdldEZpcnN0UGF5SW5mby5MYWRkZXJQYXlJbmZvRW50cnkSFgoOZXh0",
+            "cmFfYXdhcmRfaWQYAiABKAUaNAoSTGFkZGVyUGF5SW5mb0VudHJ5EgsKA2tl",
+            "eRgBIAEoBRINCgV2YWx1ZRgCIAEoBToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.GetFirstPayInfo), global::Zproto.GetFirstPayInfo.Parser, new[]{ "LadderPayInfo", "ExtraAwardID" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.GetFirstPayInfo), global::Zproto.GetFirstPayInfo.Parser, new[]{ "LadderPayInfo", "ExtraAwardId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -75,7 +75,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetFirstPayInfo(GetFirstPayInfo other) : this() {
       ladderPayInfo_ = other.ladderPayInfo_.Clone();
-      extraAwardID_ = other.extraAwardID_;
+      extraAwardId_ = other.extraAwardId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,7 +85,7 @@ namespace Zproto {
       return new GetFirstPayInfo(this);
     }
 
-    /// <summary>Field number for the "ladderPayInfo" field.</summary>
+    /// <summary>Field number for the "ladder_pay_info" field.</summary>
     public const int LadderPayInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_ladderPayInfo_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);
@@ -96,15 +96,15 @@ namespace Zproto {
       get { return ladderPayInfo_; }
     }
 
-    /// <summary>Field number for the "extraAwardID" field.</summary>
-    public const int ExtraAwardIDFieldNumber = 2;
-    private int extraAwardID_;
+    /// <summary>Field number for the "extra_award_id" field.</summary>
+    public const int ExtraAwardIdFieldNumber = 2;
+    private int extraAwardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int ExtraAwardID {
-      get { return extraAwardID_; }
+    public int ExtraAwardId {
+      get { return extraAwardId_; }
       set {
-        extraAwardID_ = value;
+        extraAwardId_ = value;
       }
     }
 
@@ -124,7 +124,7 @@ namespace Zproto {
         return true;
       }
       if (!LadderPayInfo.Equals(other.LadderPayInfo)) return false;
-      if (ExtraAwardID != other.ExtraAwardID) return false;
+      if (ExtraAwardId != other.ExtraAwardId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -133,7 +133,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= LadderPayInfo.GetHashCode();
-      if (ExtraAwardID != 0) hash ^= ExtraAwardID.GetHashCode();
+      if (ExtraAwardId != 0) hash ^= ExtraAwardId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -153,9 +153,9 @@ namespace Zproto {
       output.WriteRawMessage(this);
     #else
       ladderPayInfo_.WriteTo(output, _map_ladderPayInfo_codec);
-      if (ExtraAwardID != 0) {
+      if (ExtraAwardId != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(ExtraAwardID);
+        output.WriteInt32(ExtraAwardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,9 +168,9 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       ladderPayInfo_.WriteTo(ref output, _map_ladderPayInfo_codec);
-      if (ExtraAwardID != 0) {
+      if (ExtraAwardId != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(ExtraAwardID);
+        output.WriteInt32(ExtraAwardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -183,8 +183,8 @@ namespace Zproto {
     public int CalculateSize() {
       int size = 0;
       size += ladderPayInfo_.CalculateSize(_map_ladderPayInfo_codec);
-      if (ExtraAwardID != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ExtraAwardID);
+      if (ExtraAwardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ExtraAwardId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -199,8 +199,8 @@ namespace Zproto {
         return;
       }
       ladderPayInfo_.MergeFrom(other.ladderPayInfo_);
-      if (other.ExtraAwardID != 0) {
-        ExtraAwardID = other.ExtraAwardID;
+      if (other.ExtraAwardId != 0) {
+        ExtraAwardId = other.ExtraAwardId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -226,7 +226,7 @@ namespace Zproto {
             break;
           }
           case 16: {
-            ExtraAwardID = input.ReadInt32();
+            ExtraAwardId = input.ReadInt32();
             break;
           }
         }
@@ -253,7 +253,7 @@ namespace Zproto {
             break;
           }
           case 16: {
-            ExtraAwardID = input.ReadInt32();
+            ExtraAwardId = input.ReadInt32();
             break;
           }
         }

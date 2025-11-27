@@ -24,9 +24,9 @@ namespace Zproto {
     static StruReportPictureReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X3JlcG9ydF9waWN0dXJlLnByb3RvEgZ6cHJvdG8iRQoNUmVwb3J0",
-            "UGljdHVyZRIRCglwaWN0dXJlSWQYASABKAkSEgoKdGFyZ2V0VXVpZBgCIAEo",
-            "AxINCgV1bmlvbhgDIAEoCGIGcHJvdG8z"));
+            "ChlzdHJ1X3JlcG9ydF9waWN0dXJlLnByb3RvEgZ6cHJvdG8iRwoNUmVwb3J0",
+            "UGljdHVyZRISCgpwaWN0dXJlX2lkGAEgASgJEhMKC3RhcmdldF91dWlkGAIg",
+            "ASgDEg0KBXVuaW9uGAMgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ReportPicture(this);
     }
 
-    /// <summary>Field number for the "pictureId" field.</summary>
+    /// <summary>Field number for the "picture_id" field.</summary>
     public const int PictureIdFieldNumber = 1;
     private string pictureId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetUuid" field.</summary>
+    /// <summary>Field number for the "target_uuid" field.</summary>
     public const int TargetUuidFieldNumber = 2;
     private long targetUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X2NoYXJfc3RhdGlzdGljc19kYXRhLnByb3RvEgZ6cHJvdG8aFXN0",
-            "cnVfZGlydHlfbWFzay5wcm90byI+ChJDaGFyU3RhdGlzdGljc0RhdGESEQoJ",
-            "TG9naW5EYXlzGAEgASgFEhUKDUxhc3RMb2dpblRpbWUYAiABKARiBnByb3Rv",
-            "Mw=="));
+            "cnVfZGlydHlfbWFzay5wcm90byJBChJDaGFyU3RhdGlzdGljc0RhdGESEgoK",
+            "bG9naW5fZGF5cxgBIAEoBRIXCg9sYXN0X2xvZ2luX3RpbWUYAiABKARiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new CharStatisticsData(this);
     }
 
-    /// <summary>Field number for the "LoginDays" field.</summary>
+    /// <summary>Field number for the "login_days" field.</summary>
     public const int LoginDaysFieldNumber = 1;
     private int loginDays_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "LastLoginTime" field.</summary>
+    /// <summary>Field number for the "last_login_time" field.</summary>
     public const int LastLoginTimeFieldNumber = 2;
     private ulong lastLoginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

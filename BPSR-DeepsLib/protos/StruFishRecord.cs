@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2Zpc2hfcmVjb3JkLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byKFAgoKRmlzaFJlY29yZBIOCgZmaXNoSWQYASABKAUSEQoJ",
-            "Zmlyc3RGbGFnGAIgASgIEgwKBHNpemUYAyABKAUSEwoLbWlsbGlzZWNvbmQY",
-            "BCABKAMSEAoIcmVzZWFyY2gYBSABKAUSDQoFY291bnQYBiABKA0SDwoHbWlu",
-            "U2l6ZRgHIAEoBRIaChJtaW5TaXplbWlsbGlzZWNvbmQYCCABKAMSMgoIc3Rh",
-            "ckNudHMYCSADKAsyIC56cHJvdG8uRmlzaFJlY29yZC5TdGFyQ250c0VudHJ5",
-            "Gi8KDVN0YXJDbnRzRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgD",
-            "OgI4AWIGcHJvdG8z"));
+            "bWFzay5wcm90byKKAgoKRmlzaFJlY29yZBIPCgdmaXNoX2lkGAEgASgFEhIK",
+            "CmZpcnN0X2ZsYWcYAiABKAgSDAoEc2l6ZRgDIAEoBRITCgttaWxsaXNlY29u",
+            "ZBgEIAEoAxIQCghyZXNlYXJjaBgFIAEoBRINCgVjb3VudBgGIAEoDRIQCght",
+            "aW5fc2l6ZRgHIAEoBRIbChNtaW5fc2l6ZW1pbGxpc2Vjb25kGAggASgDEjMK",
+            "CXN0YXJfY250cxgJIAMoCzIgLnpwcm90by5GaXNoUmVjb3JkLlN0YXJDbnRz",
+            "RW50cnkaLwoNU3RhckNudHNFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
+            "AiABKAM6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       return new FishRecord(this);
     }
 
-    /// <summary>Field number for the "fishId" field.</summary>
+    /// <summary>Field number for the "fish_id" field.</summary>
     public const int FishIdFieldNumber = 1;
     private int fishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -107,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "firstFlag" field.</summary>
+    /// <summary>Field number for the "first_flag" field.</summary>
     public const int FirstFlagFieldNumber = 2;
     private bool firstFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "minSize" field.</summary>
+    /// <summary>Field number for the "min_size" field.</summary>
     public const int MinSizeFieldNumber = 7;
     private int minSize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,7 +179,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "minSizemillisecond" field.</summary>
+    /// <summary>Field number for the "min_sizemillisecond" field.</summary>
     public const int MinSizemillisecondFieldNumber = 8;
     private long minSizemillisecond_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -191,7 +191,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "starCnts" field.</summary>
+    /// <summary>Field number for the "star_cnts" field.</summary>
     public const int StarCntsFieldNumber = 9;
     private static readonly pbc::MapField<int, long>.Codec _map_starCnts_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 74);

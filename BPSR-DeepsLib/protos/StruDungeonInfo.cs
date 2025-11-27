@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2R1bmdlb25faW5mby5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5",
-            "X21hc2sucHJvdG8iagoLRHVuZ2VvbkluZm8SEQoJZHVuZ2VvbklEGAEgASgF",
-            "EhUKDWNvbXBsZXRlQ291bnQYAiABKAUSEAoIYXdhcmRGbGcYAyABKAUSDQoF",
-            "c2NvcmUYBCABKAUSEAoIcGFzc1RpbWUYBSABKAViBnByb3RvMw=="));
+            "X21hc2sucHJvdG8ibgoLRHVuZ2VvbkluZm8SEgoKZHVuZ2Vvbl9pZBgBIAEo",
+            "BRIWCg5jb21wbGV0ZV9jb3VudBgCIAEoBRIRCglhd2FyZF9mbGcYAyABKAUS",
+            "DQoFc2NvcmUYBCABKAUSEQoJcGFzc190aW1lGAUgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.DungeonInfo), global::Zproto.DungeonInfo.Parser, new[]{ "DungeonID", "CompleteCount", "AwardFlg", "Score", "PassTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.DungeonInfo), global::Zproto.DungeonInfo.Parser, new[]{ "DungeonId", "CompleteCount", "AwardFlg", "Score", "PassTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,7 +73,7 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonInfo(DungeonInfo other) : this() {
-      dungeonID_ = other.dungeonID_;
+      dungeonId_ = other.dungeonId_;
       completeCount_ = other.completeCount_;
       awardFlg_ = other.awardFlg_;
       score_ = other.score_;
@@ -87,19 +87,19 @@ namespace Zproto {
       return new DungeonInfo(this);
     }
 
-    /// <summary>Field number for the "dungeonID" field.</summary>
-    public const int DungeonIDFieldNumber = 1;
-    private int dungeonID_;
+    /// <summary>Field number for the "dungeon_id" field.</summary>
+    public const int DungeonIdFieldNumber = 1;
+    private int dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int DungeonID {
-      get { return dungeonID_; }
+    public int DungeonId {
+      get { return dungeonId_; }
       set {
-        dungeonID_ = value;
+        dungeonId_ = value;
       }
     }
 
-    /// <summary>Field number for the "completeCount" field.</summary>
+    /// <summary>Field number for the "complete_count" field.</summary>
     public const int CompleteCountFieldNumber = 2;
     private int completeCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "awardFlg" field.</summary>
+    /// <summary>Field number for the "award_flg" field.</summary>
     public const int AwardFlgFieldNumber = 3;
     private int awardFlg_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "passTime" field.</summary>
+    /// <summary>Field number for the "pass_time" field.</summary>
     public const int PassTimeFieldNumber = 5;
     private int passTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,7 +162,7 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DungeonID != other.DungeonID) return false;
+      if (DungeonId != other.DungeonId) return false;
       if (CompleteCount != other.CompleteCount) return false;
       if (AwardFlg != other.AwardFlg) return false;
       if (Score != other.Score) return false;
@@ -174,7 +174,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (DungeonID != 0) hash ^= DungeonID.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       if (CompleteCount != 0) hash ^= CompleteCount.GetHashCode();
       if (AwardFlg != 0) hash ^= AwardFlg.GetHashCode();
       if (Score != 0) hash ^= Score.GetHashCode();
@@ -197,9 +197,9 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DungeonID != 0) {
+      if (DungeonId != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(DungeonID);
+        output.WriteInt32(DungeonId);
       }
       if (CompleteCount != 0) {
         output.WriteRawTag(16);
@@ -227,9 +227,9 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DungeonID != 0) {
+      if (DungeonId != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(DungeonID);
+        output.WriteInt32(DungeonId);
       }
       if (CompleteCount != 0) {
         output.WriteRawTag(16);
@@ -257,8 +257,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (DungeonID != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DungeonID);
+      if (DungeonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DungeonId);
       }
       if (CompleteCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(CompleteCount);
@@ -284,8 +284,8 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      if (other.DungeonID != 0) {
-        DungeonID = other.DungeonID;
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
       }
       if (other.CompleteCount != 0) {
         CompleteCount = other.CompleteCount;
@@ -319,7 +319,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            DungeonID = input.ReadInt32();
+            DungeonId = input.ReadInt32();
             break;
           }
           case 16: {
@@ -358,7 +358,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            DungeonID = input.ReadInt32();
+            DungeonId = input.ReadInt32();
             break;
           }
           case 16: {

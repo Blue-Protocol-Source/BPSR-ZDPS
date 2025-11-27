@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3Byb2Zlc3Npb25fZGF0YS5wcm90bxIGenByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8iOgoOUHJvZmVzc2lvbkRhdGESFAoMcHJvZmVzc2lv",
-            "bklkGAEgASgFEhIKCldlYXBvblNraW4YAiABKAViBnByb3RvMw=="));
+            "cnR5X21hc2sucHJvdG8iPAoOUHJvZmVzc2lvbkRhdGESFQoNcHJvZmVzc2lv",
+            "bl9pZBgBIAEoBRITCgt3ZWFwb25fc2tpbhgCIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ProfessionData(this);
     }
 
-    /// <summary>Field number for the "professionId" field.</summary>
+    /// <summary>Field number for the "profession_id" field.</summary>
     public const int ProfessionIdFieldNumber = 1;
     private int professionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "WeaponSkin" field.</summary>
+    /// <summary>Field number for the "weapon_skin" field.</summary>
     public const int WeaponSkinFieldNumber = 2;
     private int weaponSkin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

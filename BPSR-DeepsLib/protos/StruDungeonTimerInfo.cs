@@ -28,16 +28,16 @@ namespace Zproto {
             "X2VfZHVuZ2Vvbl90aW1lcl9kaXJlY3Rpb24ucHJvdG8aJmVudW1fZV9kdW5n",
             "ZW9uX3RpbWVyX2VmZmVjdF90eXBlLnByb3RvGiplbnVtX2VfZHVuZ2Vvbl90",
             "aW1lcl90aW1lcl9sb29rX3R5cGUucHJvdG8aH2VudW1fZV9kdW5nZW9uX3Rp",
-            "bWVyX3R5cGUucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLuAgoQRHVu",
+            "bWVyX3R5cGUucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byL5AgoQRHVu",
             "Z2VvblRpbWVySW5mbxInCgR0eXBlGAEgASgOMhkuenByb3RvLkVEdW5nZW9u",
-            "VGltZXJUeXBlEhEKCXN0YXJ0VGltZRgCIAEoBRIUCgxkdW5nZW9uVGltZXMY",
-            "AyABKAUSMQoJZGlyZWN0aW9uGAQgASgOMh4uenByb3RvLkVEdW5nZW9uVGlt",
-            "ZXJEaXJlY3Rpb24SDQoFaW5kZXgYBSABKAUSEgoKY2hhbmdlVGltZRgGIAEo",
-            "BRIzCgplZmZlY3RUeXBlGAcgASgOMh8uenByb3RvLkVEdW5nZW9uVGltZXJF",
-            "ZmZlY3RUeXBlEhEKCXBhdXNlVGltZRgIIAEoBRIWCg5wYXVzZVRvdGFsVGlt",
-            "ZRgJIAEoBRI3CgtvdXRMb29rVHlwZRgKIAEoDjIiLnpwcm90by5FRHVuZ2Vv",
-            "blRpbWVyVGltZXJMb29rVHlwZRIZChFjdXJQYXVzZVRpbWVzdGFtcBgLIAEo",
-            "BWIGcHJvdG8z"));
+            "VGltZXJUeXBlEhIKCnN0YXJ0X3RpbWUYAiABKAUSFQoNZHVuZ2Vvbl90aW1l",
+            "cxgDIAEoBRIxCglkaXJlY3Rpb24YBCABKA4yHi56cHJvdG8uRUR1bmdlb25U",
+            "aW1lckRpcmVjdGlvbhINCgVpbmRleBgFIAEoBRITCgtjaGFuZ2VfdGltZRgG",
+            "IAEoBRI0CgtlZmZlY3RfdHlwZRgHIAEoDjIfLnpwcm90by5FRHVuZ2VvblRp",
+            "bWVyRWZmZWN0VHlwZRISCgpwYXVzZV90aW1lGAggASgFEhgKEHBhdXNlX3Rv",
+            "dGFsX3RpbWUYCSABKAUSOQoNb3V0X2xvb2tfdHlwZRgKIAEoDjIiLnpwcm90",
+            "by5FRHVuZ2VvblRpbWVyVGltZXJMb29rVHlwZRIbChNjdXJfcGF1c2VfdGlt",
+            "ZXN0YW1wGAsgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEDungeonTimerDirectionReflection.Descriptor, global::Zproto.EnumEDungeonTimerEffectTypeReflection.Descriptor, global::Zproto.EnumEDungeonTimerTimerLookTypeReflection.Descriptor, global::Zproto.EnumEDungeonTimerTypeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -115,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "startTime" field.</summary>
+    /// <summary>Field number for the "start_time" field.</summary>
     public const int StartTimeFieldNumber = 2;
     private int startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeonTimes" field.</summary>
+    /// <summary>Field number for the "dungeon_times" field.</summary>
     public const int DungeonTimesFieldNumber = 3;
     private int dungeonTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -163,7 +163,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "changeTime" field.</summary>
+    /// <summary>Field number for the "change_time" field.</summary>
     public const int ChangeTimeFieldNumber = 6;
     private int changeTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -175,7 +175,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "effectType" field.</summary>
+    /// <summary>Field number for the "effect_type" field.</summary>
     public const int EffectTypeFieldNumber = 7;
     private global::Zproto.EDungeonTimerEffectType effectType_ = global::Zproto.EDungeonTimerEffectType.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -187,7 +187,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pauseTime" field.</summary>
+    /// <summary>Field number for the "pause_time" field.</summary>
     public const int PauseTimeFieldNumber = 8;
     private int pauseTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -199,7 +199,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pauseTotalTime" field.</summary>
+    /// <summary>Field number for the "pause_total_time" field.</summary>
     public const int PauseTotalTimeFieldNumber = 9;
     private int pauseTotalTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -211,7 +211,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "outLookType" field.</summary>
+    /// <summary>Field number for the "out_look_type" field.</summary>
     public const int OutLookTypeFieldNumber = 10;
     private global::Zproto.EDungeonTimerTimerLookType outLookType_ = global::Zproto.EDungeonTimerTimerLookType.Default;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -223,7 +223,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "curPauseTimestamp" field.</summary>
+    /// <summary>Field number for the "cur_pause_timestamp" field.</summary>
     public const int CurPauseTimestampFieldNumber = 11;
     private int curPauseTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

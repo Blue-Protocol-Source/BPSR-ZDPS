@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3ByaXZhdGVfY2hhdF90YXJnZXRfaW5mby5wcm90bxIGenByb3Rv",
-            "GhhzdHJ1X2NoaXRfY2hhdF9tc2cucHJvdG8idAoVUHJpdmF0ZUNoYXRUYXJn",
-            "ZXRJbmZvEg4KBmNoYXJJZBgBIAEoAxIUCgxtYXhSZWFkTXNnSWQYAiABKAMS",
-            "DQoFaXNUb3AYAyABKAgSJgoJbGF0ZXN0TXNnGAQgASgLMhMuenByb3RvLkNo",
-            "aXRDaGF0TXNnYgZwcm90bzM="));
+            "GhhzdHJ1X2NoaXRfY2hhdF9tc2cucHJvdG8iegoVUHJpdmF0ZUNoYXRUYXJn",
+            "ZXRJbmZvEg8KB2NoYXJfaWQYASABKAMSFwoPbWF4X3JlYWRfbXNnX2lkGAIg",
+            "ASgDEg4KBmlzX3RvcBgDIAEoCBInCgpsYXRlc3RfbXNnGAQgASgLMhMuenBy",
+            "b3RvLkNoaXRDaGF0TXNnYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruChitChatMsgReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new PrivateChatTargetInfo(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxReadMsgId" field.</summary>
+    /// <summary>Field number for the "max_read_msg_id" field.</summary>
     public const int MaxReadMsgIdFieldNumber = 2;
     private long maxReadMsgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isTop" field.</summary>
+    /// <summary>Field number for the "is_top" field.</summary>
     public const int IsTopFieldNumber = 3;
     private bool isTop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "latestMsg" field.</summary>
+    /// <summary>Field number for the "latest_msg" field.</summary>
     public const int LatestMsgFieldNumber = 4;
     private global::Zproto.ChitChatMsg latestMsg_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

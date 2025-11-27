@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X3BheV9yZXBseS5wcm90bxIGenByb3RvGhdlbnVtX2VfZXJyb3Jf",
-            "Y29kZS5wcm90byJnCghQYXlSZXBseRIQCghzZXJ2ZXJJZBgCIAEoCRIRCglw",
-            "cm9kdWN0SWQYAyABKAUSEQoJZXh0cmFEYXRhGAQgASgJEiMKB2VyckNvZGUY",
-            "BSABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "Y29kZS5wcm90byJrCghQYXlSZXBseRIRCglzZXJ2ZXJfaWQYAiABKAkSEgoK",
+            "cHJvZHVjdF9pZBgDIAEoBRISCgpleHRyYV9kYXRhGAQgASgJEiQKCGVycl9j",
+            "b2RlGAUgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new PayReply(this);
     }
 
-    /// <summary>Field number for the "serverId" field.</summary>
+    /// <summary>Field number for the "server_id" field.</summary>
     public const int ServerIdFieldNumber = 2;
     private string serverId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "productId" field.</summary>
+    /// <summary>Field number for the "product_id" field.</summary>
     public const int ProductIdFieldNumber = 3;
     private int productId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "extraData" field.</summary>
+    /// <summary>Field number for the "extra_data" field.</summary>
     public const int ExtraDataFieldNumber = 4;
     private string extraData_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

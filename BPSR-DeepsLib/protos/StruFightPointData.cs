@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "ChtzdHJ1X2ZpZ2h0X3BvaW50X2RhdGEucHJvdG8SBnpwcm90bxofc3RydV9m",
             "aWdodF9wb2ludF9zdWJfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIuIBCg5GaWdodFBvaW50RGF0YRIUCgxmdW5jdGlvblR5cGUYASABKAUS",
-            "EgoKdG90YWxQb2ludBgCIAEoBRINCgVwb2ludBgDIAEoBRJECg9zdWJGdW5j",
-            "dGlvbkRhdGEYBCADKAsyKy56cHJvdG8uRmlnaHRQb2ludERhdGEuU3ViRnVu",
-            "Y3Rpb25EYXRhRW50cnkaUQoUU3ViRnVuY3Rpb25EYXRhRW50cnkSCwoDa2V5",
-            "GAEgASgFEigKBXZhbHVlGAIgASgLMhkuenByb3RvLkZpZ2h0UG9pbnRTdWJE",
-            "YXRhOgI4AWIGcHJvdG8z"));
+            "b3RvIuYBCg5GaWdodFBvaW50RGF0YRIVCg1mdW5jdGlvbl90eXBlGAEgASgF",
+            "EhMKC3RvdGFsX3BvaW50GAIgASgFEg0KBXBvaW50GAMgASgFEkYKEXN1Yl9m",
+            "dW5jdGlvbl9kYXRhGAQgAygLMisuenByb3RvLkZpZ2h0UG9pbnREYXRhLlN1",
+            "YkZ1bmN0aW9uRGF0YUVudHJ5GlEKFFN1YkZ1bmN0aW9uRGF0YUVudHJ5EgsK",
+            "A2tleRgBIAEoBRIoCgV2YWx1ZRgCIAEoCzIZLnpwcm90by5GaWdodFBvaW50",
+            "U3ViRGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFightPointSubDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new FightPointData(this);
     }
 
-    /// <summary>Field number for the "functionType" field.</summary>
+    /// <summary>Field number for the "function_type" field.</summary>
     public const int FunctionTypeFieldNumber = 1;
     private int functionType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "totalPoint" field.</summary>
+    /// <summary>Field number for the "total_point" field.</summary>
     public const int TotalPointFieldNumber = 2;
     private int totalPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "subFunctionData" field.</summary>
+    /// <summary>Field number for the "sub_function_data" field.</summary>
     public const int SubFunctionDataFieldNumber = 4;
     private static readonly pbc::MapField<int, global::Zproto.FightPointSubData>.Codec _map_subFunctionData_codec
         = new pbc::MapField<int, global::Zproto.FightPointSubData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FightPointSubData.Parser), 34);

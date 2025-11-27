@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjRzdHJ1X25vdGlmeV9saWZlX3Byb2Zlc3Npb25fdW5sb2NrX3JlY2lwZV9p",
-            "bmZvLnByb3RvEgZ6cHJvdG8iOQokTm90aWZ5TGlmZVByb2Zlc3Npb25Vbmxv",
-            "Y2tSZWNpcGVJbmZvEhEKCXJlY2lwZUlkcxgBIAMoBWIGcHJvdG8z"));
+            "bmZvLnByb3RvEgZ6cHJvdG8iOgokTm90aWZ5TGlmZVByb2Zlc3Npb25Vbmxv",
+            "Y2tSZWNpcGVJbmZvEhIKCnJlY2lwZV9pZHMYASADKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new NotifyLifeProfessionUnlockRecipeInfo(this);
     }
 
-    /// <summary>Field number for the "recipeIds" field.</summary>
+    /// <summary>Field number for the "recipe_ids" field.</summary>
     public const int RecipeIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_recipeIds_codec
         = pb::FieldCodec.ForInt32(10);

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruDecomposeModRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X2RlY29tcG9zZV9tb2RfcmVxdWVzdC5wcm90bxIGenByb3RvIicK",
-            "E0RlY29tcG9zZU1vZFJlcXVlc3QSEAoIbW9kVXVpZHMYASADKANiBnByb3Rv",
-            "Mw=="));
+            "CiBzdHJ1X2RlY29tcG9zZV9tb2RfcmVxdWVzdC5wcm90bxIGenByb3RvIigK",
+            "E0RlY29tcG9zZU1vZFJlcXVlc3QSEQoJbW9kX3V1aWRzGAEgAygDYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new DecomposeModRequest(this);
     }
 
-    /// <summary>Field number for the "modUuids" field.</summary>
+    /// <summary>Field number for the "mod_uuids" field.</summary>
     public const int ModUuidsFieldNumber = 1;
     private static readonly pb::FieldCodec<long> _repeated_modUuids_codec
         = pb::FieldCodec.ForInt64(10);

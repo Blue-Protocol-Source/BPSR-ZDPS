@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2R1bmdlb25fcGxheWVyX2xpc3QucHJvdG8SBnpwcm90bxoec3Ry",
             "dV9kdW5nZW9uX3BsYXllcl9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2su",
-            "cHJvdG8iowEKEUR1bmdlb25QbGF5ZXJMaXN0Ej8KC3BsYXllckluZm9zGAEg",
-            "AygLMiouenByb3RvLkR1bmdlb25QbGF5ZXJMaXN0LlBsYXllckluZm9zRW50",
-            "cnkaTQoQUGxheWVySW5mb3NFbnRyeRILCgNrZXkYASABKA0SKAoFdmFsdWUY",
-            "AiABKAsyGS56cHJvdG8uRHVuZ2VvblBsYXllckluZm86AjgBYgZwcm90bzM="));
+            "cHJvdG8ipAEKEUR1bmdlb25QbGF5ZXJMaXN0EkAKDHBsYXllcl9pbmZvcxgB",
+            "IAMoCzIqLnpwcm90by5EdW5nZW9uUGxheWVyTGlzdC5QbGF5ZXJJbmZvc0Vu",
+            "dHJ5Gk0KEFBsYXllckluZm9zRW50cnkSCwoDa2V5GAEgASgNEigKBXZhbHVl",
+            "GAIgASgLMhkuenByb3RvLkR1bmdlb25QbGF5ZXJJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonPlayerInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new DungeonPlayerList(this);
     }
 
-    /// <summary>Field number for the "playerInfos" field.</summary>
+    /// <summary>Field number for the "player_infos" field.</summary>
     public const int PlayerInfosFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.DungeonPlayerInfo>.Codec _map_playerInfos_codec
         = new pbc::MapField<uint, global::Zproto.DungeonPlayerInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonPlayerInfo.Parser), 10);

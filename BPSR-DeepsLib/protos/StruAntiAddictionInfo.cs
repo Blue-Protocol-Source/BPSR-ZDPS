@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2FudGlfYWRkaWN0aW9uX2luZm8ucHJvdG8SBnpwcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIiUKEUFudGlBZGRpY3Rpb25JbmZvEhAKCGxh",
-            "c3RUaW1lGAEgASgNYgZwcm90bzM="));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIiYKEUFudGlBZGRpY3Rpb25JbmZvEhEKCWxh",
+            "c3RfdGltZRgBIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new AntiAddictionInfo(this);
     }
 
-    /// <summary>Field number for the "lastTime" field.</summary>
+    /// <summary>Field number for the "last_time" field.</summary>
     public const int LastTimeFieldNumber = 1;
     private uint lastTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

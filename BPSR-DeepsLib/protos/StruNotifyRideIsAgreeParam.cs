@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X25vdGlmeV9yaWRlX2lzX2FncmVlX3BhcmFtLnByb3RvEgZ6cHJv",
-            "dG8aHmVudW1fZV9hcHBseV9yaWRlX3Jlc3VsdC5wcm90byJkChZOb3RpZnlS",
-            "aWRlSXNBZ3JlZVBhcmFtEg4KBmNoYXJJZBgBIAEoAxIQCghjaGFyTmFtZRgC",
-            "IAEoCRIoCgZyZXN1bHQYAyABKA4yGC56cHJvdG8uRUFwcGx5UmlkZVJlc3Vs",
-            "dGIGcHJvdG8z"));
+            "dG8aHmVudW1fZV9hcHBseV9yaWRlX3Jlc3VsdC5wcm90byJmChZOb3RpZnlS",
+            "aWRlSXNBZ3JlZVBhcmFtEg8KB2NoYXJfaWQYASABKAMSEQoJY2hhcl9uYW1l",
+            "GAIgASgJEigKBnJlc3VsdBgDIAEoDjIYLnpwcm90by5FQXBwbHlSaWRlUmVz",
+            "dWx0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEApplyRideResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new NotifyRideIsAgreeParam(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "charName" field.</summary>
+    /// <summary>Field number for the "char_name" field.</summary>
     public const int CharNameFieldNumber = 2;
     private string charName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

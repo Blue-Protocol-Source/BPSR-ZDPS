@@ -30,6 +30,11 @@ namespace BPSR_ZDPS.Windows
         static int databaseRetentionPolicyDays;
         static bool limitEncounterBuffTrackingWithoutDatabase;
 
+        static bool playNotificationSoundOnMatchmake;
+        static string matchmakeNotificationSoundPath;
+        static bool loopNotificationSoundOnMatchmake;
+        static float matchmakeNotificationVolume;
+
         static bool logToFile;
 
         static bool IsBindingEncounterResetKey = false;
@@ -65,6 +70,11 @@ namespace BPSR_ZDPS.Windows
             databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
             limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
             GameCapturePreference = Settings.Instance.GameCapturePreference;
+
+            playNotificationSoundOnMatchmake = Settings.Instance.PlayNotificationSoundOnMatchmake;
+            matchmakeNotificationSoundPath = Settings.Instance.MatchmakeNotificationSoundPath;
+            loopNotificationSoundOnMatchmake = Settings.Instance.LoopNotificationSoundOnMatchmake;
+            matchmakeNotificationVolume = Settings.Instance.MatchmakeNotificationVolume;
 
             logToFile = Settings.Instance.LogToFile;
 
@@ -421,6 +431,76 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndTabItem();
                     }
 
+                    if (ImGui.BeginTabItem("Matchmaking"))
+                    {
+                        var contentRegionAvail = ImGui.GetContentRegionAvail();
+                        ImGui.BeginChild("##MatchmakingTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Play Notification Sound On Matchmake: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##PlayNotificationSoundOnMatchmake", ref playNotificationSoundOnMatchmake);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, play a notification sound alert when the matchmaker finds players and is waiting for you to accept.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.BeginDisabled(!playNotificationSoundOnMatchmake);
+                        ImGui.Indent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Matchmake Notification Sound Path: ");
+                        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X - 140 - ImGui.GetStyle().ItemSpacing.X);
+                        ImGui.InputText("##MatchmakeNotificationSoundPath", ref matchmakeNotificationSoundPath, 1024);
+                        ImGui.SameLine();
+                        if (ImGui.Button("Browse...", new Vector2(140, 0)))
+                        {
+                            string defaultDir = File.Exists(matchmakeNotificationSoundPath) ? Path.GetDirectoryName(matchmakeNotificationSoundPath) : "";
+
+                            ImFileBrowser.OpenFile((selectedFilePath)=>
+                            {
+                                System.Diagnostics.Debug.WriteLine($"MatchmakeNotificationSoundPath = {selectedFilePath}");
+                                matchmakeNotificationSoundPath = selectedFilePath;
+                            },
+                            "Select a sound file...", defaultDir, "MP3 (*.mp3)|*.mp3|WAV (*.wav)|*.wav|All Files (*.*)|*.*", 0);
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("File path to a custom sound file to play when the matchmake notification occurs.\nA default sound will be used if none is set or the file is invalid.\nNote: Only MP3 and WAV are supported formats.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Loop Notification Sound On Matchmake: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##loopNotificationSoundOnMatchmake", ref loopNotificationSoundOnMatchmake);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, the notification sound will loop until you accept the queue pop or it is canceled.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Matchmake Notification Volume Level: ");
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SliderFloat("##MatchmakeNotificationVolume", ref matchmakeNotificationVolume, 0.10f, 3.0f, $"{(int)(matchmakeNotificationVolume * 100)}%%");
+                        ImGui.PopStyleColor(2);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Volume scale of the played back notification sound. 100%% is the normal sound level of the audio file. Values above 100%% may not always appear louder. If you need a louder sound, please edit your file in an external program to increase loudness.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.Unindent();
+                        ImGui.EndDisabled();
+
+                        ImGui.EndChild();
+                        ImGui.EndTabItem();
+                    }
+
                     if (ImGui.BeginTabItem("Development"))
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
@@ -504,6 +584,14 @@ namespace BPSR_ZDPS.Windows
 
                     limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
 
+                    playNotificationSoundOnMatchmake = Settings.Instance.PlayNotificationSoundOnMatchmake;
+
+                    matchmakeNotificationSoundPath = Settings.Instance.MatchmakeNotificationSoundPath;
+
+                    loopNotificationSoundOnMatchmake = Settings.Instance.LoopNotificationSoundOnMatchmake;
+
+                    matchmakeNotificationVolume = Settings.Instance.MatchmakeNotificationVolume;
+
                     logToFile = Settings.Instance.LogToFile;
 
                     EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
@@ -520,6 +608,8 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.CloseCurrentPopup();
                 }
+
+                ImFileBrowser.Draw();
 
                 ImGui.EndPopup();
             }
@@ -566,6 +656,14 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;
 
             Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase = limitEncounterBuffTrackingWithoutDatabase;
+
+            Settings.Instance.PlayNotificationSoundOnMatchmake = playNotificationSoundOnMatchmake;
+
+            Settings.Instance.MatchmakeNotificationSoundPath = matchmakeNotificationSoundPath;
+
+            Settings.Instance.LoopNotificationSoundOnMatchmake = loopNotificationSoundOnMatchmake;
+
+            Settings.Instance.MatchmakeNotificationVolume = matchmakeNotificationVolume;
 
             Settings.Instance.LogToFile = logToFile;
 

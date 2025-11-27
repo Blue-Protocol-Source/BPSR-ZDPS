@@ -27,20 +27,20 @@ namespace Zproto {
             "ChpzdHJ1X3Byb2Zlc3Npb25fbGlzdC5wcm90bxIGenByb3RvGhpzdHJ1X3By",
             "b2Zlc3Npb25faW5mby5wcm90bxogc3RydV9wcm9mZXNzaW9uX3NraWxsX2lu",
             "Zm8ucHJvdG8aIXN0cnVfcHJvZmVzc2lvbl90YWxlbnRfaW5mby5wcm90bxoV",
-            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIr8ECg5Qcm9mZXNzaW9uTGlzdBIXCg9j",
-            "dXJQcm9mZXNzaW9uSWQYASABKAUSHAoUY3VyQXNzaXN0UHJvZmVzc2lvbnMY",
-            "AyADKAUSQgoOcHJvZmVzc2lvbkxpc3QYBCADKAsyKi56cHJvdG8uUHJvZmVz",
-            "c2lvbkxpc3QuUHJvZmVzc2lvbkxpc3RFbnRyeRJGChBhb3lpU2tpbGxJbmZv",
-            "TWFwGAcgAygLMiwuenByb3RvLlByb2Zlc3Npb25MaXN0LkFveWlTa2lsbElu",
-            "Zm9NYXBFbnRyeRIZChF0b3RhbFRhbGVudFBvaW50cxgIIAEoDRIdChV0b3Rh",
-            "bFRhbGVudFJlc2V0Q291bnQYCSABKA0SOgoKdGFsZW50TGlzdBgKIAMoCzIm",
-            "Lnpwcm90by5Qcm9mZXNzaW9uTGlzdC5UYWxlbnRMaXN0RW50cnkaTQoTUHJv",
-            "ZmVzc2lvbkxpc3RFbnRyeRILCgNrZXkYASABKAUSJQoFdmFsdWUYAiABKAsy",
-            "Fi56cHJvdG8uUHJvZmVzc2lvbkluZm86AjgBGlQKFUFveWlTa2lsbEluZm9N",
-            "YXBFbnRyeRILCgNrZXkYASABKAUSKgoFdmFsdWUYAiABKAsyGy56cHJvdG8u",
-            "UHJvZmVzc2lvblNraWxsSW5mbzoCOAEaTwoPVGFsZW50TGlzdEVudHJ5EgsK",
-            "A2tleRgBIAEoBRIrCgV2YWx1ZRgCIAEoCzIcLnpwcm90by5Qcm9mZXNzaW9u",
-            "VGFsZW50SW5mbzoCOAFiBnByb3RvMw=="));
+            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIs0ECg5Qcm9mZXNzaW9uTGlzdBIZChFj",
+            "dXJfcHJvZmVzc2lvbl9pZBgBIAEoBRIeChZjdXJfYXNzaXN0X3Byb2Zlc3Np",
+            "b25zGAMgAygFEkMKD3Byb2Zlc3Npb25fbGlzdBgEIAMoCzIqLnpwcm90by5Q",
+            "cm9mZXNzaW9uTGlzdC5Qcm9mZXNzaW9uTGlzdEVudHJ5EkkKE2FveWlfc2tp",
+            "bGxfaW5mb19tYXAYByADKAsyLC56cHJvdG8uUHJvZmVzc2lvbkxpc3QuQW95",
+            "aVNraWxsSW5mb01hcEVudHJ5EhsKE3RvdGFsX3RhbGVudF9wb2ludHMYCCAB",
+            "KA0SIAoYdG90YWxfdGFsZW50X3Jlc2V0X2NvdW50GAkgASgNEjsKC3RhbGVu",
+            "dF9saXN0GAogAygLMiYuenByb3RvLlByb2Zlc3Npb25MaXN0LlRhbGVudExp",
+            "c3RFbnRyeRpNChNQcm9mZXNzaW9uTGlzdEVudHJ5EgsKA2tleRgBIAEoBRIl",
+            "CgV2YWx1ZRgCIAEoCzIWLnpwcm90by5Qcm9mZXNzaW9uSW5mbzoCOAEaVAoV",
+            "QW95aVNraWxsSW5mb01hcEVudHJ5EgsKA2tleRgBIAEoBRIqCgV2YWx1ZRgC",
+            "IAEoCzIbLnpwcm90by5Qcm9mZXNzaW9uU2tpbGxJbmZvOgI4ARpPCg9UYWxl",
+            "bnRMaXN0RW50cnkSCwoDa2V5GAEgASgFEisKBXZhbHVlGAIgASgLMhwuenBy",
+            "b3RvLlByb2Zlc3Npb25UYWxlbnRJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruProfessionInfoReflection.Descriptor, global::Zproto.StruProfessionSkillInfoReflection.Descriptor, global::Zproto.StruProfessionTalentInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +102,7 @@ namespace Zproto {
       return new ProfessionList(this);
     }
 
-    /// <summary>Field number for the "curProfessionId" field.</summary>
+    /// <summary>Field number for the "cur_profession_id" field.</summary>
     public const int CurProfessionIdFieldNumber = 1;
     private int curProfessionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "curAssistProfessions" field.</summary>
+    /// <summary>Field number for the "cur_assist_professions" field.</summary>
     public const int CurAssistProfessionsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_curAssistProfessions_codec
         = pb::FieldCodec.ForInt32(26);
@@ -125,7 +125,7 @@ namespace Zproto {
       get { return curAssistProfessions_; }
     }
 
-    /// <summary>Field number for the "professionList" field.</summary>
+    /// <summary>Field number for the "profession_list" field.</summary>
     public const int ProfessionList_FieldNumber = 4;
     private static readonly pbc::MapField<int, global::Zproto.ProfessionInfo>.Codec _map_professionList_codec
         = new pbc::MapField<int, global::Zproto.ProfessionInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ProfessionInfo.Parser), 34);
@@ -136,7 +136,7 @@ namespace Zproto {
       get { return professionList_; }
     }
 
-    /// <summary>Field number for the "aoyiSkillInfoMap" field.</summary>
+    /// <summary>Field number for the "aoyi_skill_info_map" field.</summary>
     public const int AoyiSkillInfoMapFieldNumber = 7;
     private static readonly pbc::MapField<int, global::Zproto.ProfessionSkillInfo>.Codec _map_aoyiSkillInfoMap_codec
         = new pbc::MapField<int, global::Zproto.ProfessionSkillInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ProfessionSkillInfo.Parser), 58);
@@ -147,7 +147,7 @@ namespace Zproto {
       get { return aoyiSkillInfoMap_; }
     }
 
-    /// <summary>Field number for the "totalTalentPoints" field.</summary>
+    /// <summary>Field number for the "total_talent_points" field.</summary>
     public const int TotalTalentPointsFieldNumber = 8;
     private uint totalTalentPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -159,7 +159,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "totalTalentResetCount" field.</summary>
+    /// <summary>Field number for the "total_talent_reset_count" field.</summary>
     public const int TotalTalentResetCountFieldNumber = 9;
     private uint totalTalentResetCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -171,7 +171,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "talentList" field.</summary>
+    /// <summary>Field number for the "talent_list" field.</summary>
     public const int TalentListFieldNumber = 10;
     private static readonly pbc::MapField<int, global::Zproto.ProfessionTalentInfo>.Codec _map_talentList_codec
         = new pbc::MapField<int, global::Zproto.ProfessionTalentInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ProfessionTalentInfo.Parser), 82);

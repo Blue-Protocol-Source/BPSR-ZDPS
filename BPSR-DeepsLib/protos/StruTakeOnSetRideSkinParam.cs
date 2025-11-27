@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X3Rha2Vfb25fc2V0X3JpZGVfc2tpbl9wYXJhbS5wcm90bxIGenBy",
-            "b3RvIigKFlRha2VPblNldFJpZGVTa2luUGFyYW0SDgoGU2tpbklkGAEgASgF",
-            "YgZwcm90bzM="));
+            "b3RvIikKFlRha2VPblNldFJpZGVTa2luUGFyYW0SDwoHc2tpbl9pZBgBIAEo",
+            "BWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new TakeOnSetRideSkinParam(this);
     }
 
-    /// <summary>Field number for the "SkinId" field.</summary>
+    /// <summary>Field number for the "skin_id" field.</summary>
     public const int SkinIdFieldNumber = 1;
     private int skinId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

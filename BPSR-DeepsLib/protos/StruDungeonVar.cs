@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2R1bmdlb25fdmFyLnByb3RvEgZ6cHJvdG8aG3N0cnVfZHVuZ2Vv",
-            "bl92YXJfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIjwKCkR1",
-            "bmdlb25WYXISLgoOZHVuZ2VvblZhckRhdGEYASADKAsyFi56cHJvdG8uRHVu",
-            "Z2VvblZhckRhdGFiBnByb3RvMw=="));
+            "bl92YXJfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIj4KCkR1",
+            "bmdlb25WYXISMAoQZHVuZ2Vvbl92YXJfZGF0YRgBIAMoCzIWLnpwcm90by5E",
+            "dW5nZW9uVmFyRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonVarDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DungeonVar(this);
     }
 
-    /// <summary>Field number for the "dungeonVarData" field.</summary>
+    /// <summary>Field number for the "dungeon_var_data" field.</summary>
     public const int DungeonVarDataFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.DungeonVarData> _repeated_dungeonVarData_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.DungeonVarData.Parser);

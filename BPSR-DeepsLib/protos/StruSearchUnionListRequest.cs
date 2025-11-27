@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X3NlYXJjaF91bmlvbl9saXN0X3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "byIvChZTZWFyY2hVbmlvbkxpc3RSZXF1ZXN0EhUKDXNlYXJjaENvbnRlbnQY",
-            "AiABKAliBnByb3RvMw=="));
+            "byIwChZTZWFyY2hVbmlvbkxpc3RSZXF1ZXN0EhYKDnNlYXJjaF9jb250ZW50",
+            "GAIgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new SearchUnionListRequest(this);
     }
 
-    /// <summary>Field number for the "searchContent" field.</summary>
+    /// <summary>Field number for the "search_content" field.</summary>
     public const int SearchContentFieldNumber = 2;
     private string searchContent_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

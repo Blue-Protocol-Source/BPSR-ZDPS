@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X2Ryb3BfYXdhcmRfaGlzdG9yeS5wcm90bxIGenByb3RvGhVzdHJ1",
-            "X2RpcnR5X21hc2sucHJvdG8iQAoQRHJvcEF3YXJkSGlzdG9yeRIKCgJJZBgB",
-            "IAEoBRINCgVDb3VudBgCIAEoBRIRCglDeWNsZVRpbWUYAyABKANiBnByb3Rv",
-            "Mw=="));
+            "X2RpcnR5X21hc2sucHJvdG8iQQoQRHJvcEF3YXJkSGlzdG9yeRIKCgJpZBgB",
+            "IAEoBRINCgVjb3VudBgCIAEoBRISCgpjeWNsZV90aW1lGAMgASgDYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new DropAwardHistory(this);
     }
 
-    /// <summary>Field number for the "Id" field.</summary>
+    /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private int id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "Count" field.</summary>
+    /// <summary>Field number for the "count" field.</summary>
     public const int CountFieldNumber = 2;
     private int count_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "CycleTime" field.</summary>
+    /// <summary>Field number for the "cycle_time" field.</summary>
     public const int CycleTimeFieldNumber = 3;
     private long cycleTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

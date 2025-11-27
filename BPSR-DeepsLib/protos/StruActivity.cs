@@ -26,19 +26,19 @@ namespace Zproto {
           string.Concat(
             "ChNzdHJ1X2FjdGl2aXR5LnByb3RvEgZ6cHJvdG8aGXN0cnVfYWN0aXZpdHlf",
             "YXdhcmQucHJvdG8aHGVudW1fZV9hY3Rpdml0eV9zdGF0dXMucHJvdG8aGmVu",
-            "dW1fZV9hY3Rpdml0eV90eXBlLnByb3RvIo4ECghBY3Rpdml0eRIUCgxhY3Rp",
-            "dml0eVV1aWQYASABKAMSGAoQYWN0aXZpdHlDb25maWdJZBgCIAEoDRI4Cgxh",
-            "Y3Rpdml0eU5hbWUYAyADKAsyIi56cHJvdG8uQWN0aXZpdHkuQWN0aXZpdHlO",
-            "YW1lRW50cnkSKwoMYWN0aXZpdHlUeXBlGAQgASgOMhUuenByb3RvLkVBY3Rp",
-            "dml0eVR5cGUSEQoJc3RhcnRUaW1lGAUgASgEEg8KB2VuZFRpbWUYBiABKAQS",
-            "LAoGbm90aWNlGAggAygLMhwuenByb3RvLkFjdGl2aXR5Lk5vdGljZUVudHJ5",
-            "Eg8KB29yZGVySWQYCSABKAUSJwoGc3RhdHVzGAogASgOMhcuenByb3RvLkVB",
-            "Y3Rpdml0eVN0YXR1cxIyCglhd2FyZExpc3QYCyADKAsyHy56cHJvdG8uQWN0",
-            "aXZpdHkuQXdhcmRMaXN0RW50cnkaMwoRQWN0aXZpdHlOYW1lRW50cnkSCwoD",
-            "a2V5GAEgASgFEg0KBXZhbHVlGAIgASgJOgI4ARotCgtOb3RpY2VFbnRyeRIL",
-            "CgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAk6AjgBGkcKDkF3YXJkTGlzdEVu",
-            "dHJ5EgsKA2tleRgBIAEoBRIkCgV2YWx1ZRgCIAEoCzIVLnpwcm90by5BY3Rp",
-            "dml0eUF3YXJkOgI4AWIGcHJvdG8z"));
+            "dW1fZV9hY3Rpdml0eV90eXBlLnByb3RvIpcECghBY3Rpdml0eRIVCg1hY3Rp",
+            "dml0eV91dWlkGAEgASgDEhoKEmFjdGl2aXR5X2NvbmZpZ19pZBgCIAEoDRI5",
+            "Cg1hY3Rpdml0eV9uYW1lGAMgAygLMiIuenByb3RvLkFjdGl2aXR5LkFjdGl2",
+            "aXR5TmFtZUVudHJ5EiwKDWFjdGl2aXR5X3R5cGUYBCABKA4yFS56cHJvdG8u",
+            "RUFjdGl2aXR5VHlwZRISCgpzdGFydF90aW1lGAUgASgEEhAKCGVuZF90aW1l",
+            "GAYgASgEEiwKBm5vdGljZRgIIAMoCzIcLnpwcm90by5BY3Rpdml0eS5Ob3Rp",
+            "Y2VFbnRyeRIQCghvcmRlcl9pZBgJIAEoBRInCgZzdGF0dXMYCiABKA4yFy56",
+            "cHJvdG8uRUFjdGl2aXR5U3RhdHVzEjMKCmF3YXJkX2xpc3QYCyADKAsyHy56",
+            "cHJvdG8uQWN0aXZpdHkuQXdhcmRMaXN0RW50cnkaMwoRQWN0aXZpdHlOYW1l",
+            "RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgJOgI4ARotCgtOb3Rp",
+            "Y2VFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAk6AjgBGkcKDkF3",
+            "YXJkTGlzdEVudHJ5EgsKA2tleRgBIAEoBRIkCgV2YWx1ZRgCIAEoCzIVLnpw",
+            "cm90by5BY3Rpdml0eUF3YXJkOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActivityAwardReflection.Descriptor, global::Zproto.EnumEActivityStatusReflection.Descriptor, global::Zproto.EnumEActivityTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -103,7 +103,7 @@ namespace Zproto {
       return new Activity(this);
     }
 
-    /// <summary>Field number for the "activityUuid" field.</summary>
+    /// <summary>Field number for the "activity_uuid" field.</summary>
     public const int ActivityUuidFieldNumber = 1;
     private long activityUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activityConfigId" field.</summary>
+    /// <summary>Field number for the "activity_config_id" field.</summary>
     public const int ActivityConfigIdFieldNumber = 2;
     private uint activityConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activityName" field.</summary>
+    /// <summary>Field number for the "activity_name" field.</summary>
     public const int ActivityNameFieldNumber = 3;
     private static readonly pbc::MapField<int, string>.Codec _map_activityName_codec
         = new pbc::MapField<int, string>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForString(18, ""), 26);
@@ -138,7 +138,7 @@ namespace Zproto {
       get { return activityName_; }
     }
 
-    /// <summary>Field number for the "activityType" field.</summary>
+    /// <summary>Field number for the "activity_type" field.</summary>
     public const int ActivityTypeFieldNumber = 4;
     private global::Zproto.EActivityType activityType_ = global::Zproto.EActivityType.ActivityTypeNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +150,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "startTime" field.</summary>
+    /// <summary>Field number for the "start_time" field.</summary>
     public const int StartTimeFieldNumber = 5;
     private ulong startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,7 +162,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "endTime" field.</summary>
+    /// <summary>Field number for the "end_time" field.</summary>
     public const int EndTimeFieldNumber = 6;
     private ulong endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -185,7 +185,7 @@ namespace Zproto {
       get { return notice_; }
     }
 
-    /// <summary>Field number for the "orderId" field.</summary>
+    /// <summary>Field number for the "order_id" field.</summary>
     public const int OrderIdFieldNumber = 9;
     private int orderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -209,7 +209,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "awardList" field.</summary>
+    /// <summary>Field number for the "award_list" field.</summary>
     public const int AwardListFieldNumber = 11;
     private static readonly pbc::MapField<int, global::Zproto.ActivityAward>.Codec _map_awardList_codec
         = new pbc::MapField<int, global::Zproto.ActivityAward>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ActivityAward.Parser), 90);

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3BsYXllcl9idXlfcmVjb3JkLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byI2Cg9QbGF5ZXJCdXlSZWNvcmQSDQoFY291bnQY",
-            "AiABKAUSFAoMYnV5VGltZXN0YW1wGAMgASgDYgZwcm90bzM="));
+            "ZGlydHlfbWFzay5wcm90byI3Cg9QbGF5ZXJCdXlSZWNvcmQSDQoFY291bnQY",
+            "AiABKAUSFQoNYnV5X3RpbWVzdGFtcBgDIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buyTimestamp" field.</summary>
+    /// <summary>Field number for the "buy_timestamp" field.</summary>
     public const int BuyTimestampFieldNumber = 3;
     private long buyTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

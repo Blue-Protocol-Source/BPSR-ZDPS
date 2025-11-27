@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X2JhdGNoX3NlYXJjaF91bmlvbl9saXN0X3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byIyChtCYXRjaFNlYXJjaFVuaW9uTGlzdFJlcXVlc3QSEwoLdW5p",
-            "b25JZExpc3QYAiADKANiBnByb3RvMw=="));
+            "Bnpwcm90byI0ChtCYXRjaFNlYXJjaFVuaW9uTGlzdFJlcXVlc3QSFQoNdW5p",
+            "b25faWRfbGlzdBgCIAMoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new BatchSearchUnionListRequest(this);
     }
 
-    /// <summary>Field number for the "unionIdList" field.</summary>
+    /// <summary>Field number for the "union_id_list" field.</summary>
     public const int UnionIdListFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_unionIdList_codec
         = pb::FieldCodec.ForInt64(18);

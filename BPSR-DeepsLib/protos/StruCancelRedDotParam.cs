@@ -24,8 +24,8 @@ namespace Zproto {
     static StruCancelRedDotParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2NhbmNlbF9yZWRfZG90X3BhcmFtLnByb3RvEgZ6cHJvdG8iJQoR",
-            "Q2FuY2VsUmVkRG90UGFyYW0SEAoIcmVkRG90SWQYASABKAViBnByb3RvMw=="));
+            "Ch9zdHJ1X2NhbmNlbF9yZWRfZG90X3BhcmFtLnByb3RvEgZ6cHJvdG8iJwoR",
+            "Q2FuY2VsUmVkRG90UGFyYW0SEgoKcmVkX2RvdF9pZBgBIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new CancelRedDotParam(this);
     }
 
-    /// <summary>Field number for the "redDotId" field.</summary>
+    /// <summary>Field number for the "red_dot_id" field.</summary>
     public const int RedDotIdFieldNumber = 1;
     private int redDotId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

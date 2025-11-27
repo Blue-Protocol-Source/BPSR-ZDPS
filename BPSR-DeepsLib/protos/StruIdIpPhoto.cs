@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2lkX2lwX3Bob3RvLnByb3RvEgZ6cHJvdG8aFnN0cnVfaWRfaXBf",
-            "aW1hZ2UucHJvdG8iQgoJSWRJcFBob3RvEg8KB3Bob3RvSWQYASABKA0SJAoJ",
-            "aW1hZ2VMaXN0GAIgAygLMhEuenByb3RvLklkSXBJbWFnZWIGcHJvdG8z"));
+            "aW1hZ2UucHJvdG8iRAoJSWRJcFBob3RvEhAKCHBob3RvX2lkGAEgASgNEiUK",
+            "CmltYWdlX2xpc3QYAiADKAsyES56cHJvdG8uSWRJcEltYWdlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIdIpImageReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new IdIpPhoto(this);
     }
 
-    /// <summary>Field number for the "photoId" field.</summary>
+    /// <summary>Field number for the "photo_id" field.</summary>
     public const int PhotoIdFieldNumber = 1;
     private uint photoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "imageList" field.</summary>
+    /// <summary>Field number for the "image_list" field.</summary>
     public const int ImageListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.IdIpImage> _repeated_imageList_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.IdIpImage.Parser);

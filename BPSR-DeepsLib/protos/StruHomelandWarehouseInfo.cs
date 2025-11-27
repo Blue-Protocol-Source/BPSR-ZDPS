@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2hvbWVsYW5kX3dhcmVob3VzZV9pbmZvLnByb3RvEgZ6cHJvdG8a",
-            "I3N0cnVfY29tbXVuaXR5X3dhcmVob3VzZV9ncmlkLnByb3RvIrkBChVIb21l",
-            "bGFuZFdhcmVob3VzZUluZm8SSQoOd2FyZWhvdXNlR3JpZHMYASADKAsyMS56",
-            "cHJvdG8uSG9tZWxhbmRXYXJlaG91c2VJbmZvLldhcmVob3VzZUdyaWRzRW50",
-            "cnkaVQoTV2FyZWhvdXNlR3JpZHNFbnRyeRILCgNrZXkYASABKAUSLQoFdmFs",
-            "dWUYAiABKAsyHi56cHJvdG8uQ29tbXVuaXR5V2FyZWhvdXNlR3JpZDoCOAFi",
-            "BnByb3RvMw=="));
+            "I3N0cnVfY29tbXVuaXR5X3dhcmVob3VzZV9ncmlkLnByb3RvIroBChVIb21l",
+            "bGFuZFdhcmVob3VzZUluZm8SSgoPd2FyZWhvdXNlX2dyaWRzGAEgAygLMjEu",
+            "enByb3RvLkhvbWVsYW5kV2FyZWhvdXNlSW5mby5XYXJlaG91c2VHcmlkc0Vu",
+            "dHJ5GlUKE1dhcmVob3VzZUdyaWRzRW50cnkSCwoDa2V5GAEgASgFEi0KBXZh",
+            "bHVlGAIgASgLMh4uenByb3RvLkNvbW11bml0eVdhcmVob3VzZUdyaWQ6AjgB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityWarehouseGridReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new HomelandWarehouseInfo(this);
     }
 
-    /// <summary>Field number for the "warehouseGrids" field.</summary>
+    /// <summary>Field number for the "warehouse_grids" field.</summary>
     public const int WarehouseGridsFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.CommunityWarehouseGrid>.Codec _map_warehouseGrids_codec
         = new pbc::MapField<int, global::Zproto.CommunityWarehouseGrid>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CommunityWarehouseGrid.Parser), 10);

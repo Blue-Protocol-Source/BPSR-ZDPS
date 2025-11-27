@@ -26,15 +26,15 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X3NlYXNvbl9hY2hpZXZlbWVudF9saXN0LnByb3RvEgZ6cHJvdG8a",
             "HXN0cnVfc2Vhc29uX2FjaGlldmVtZW50LnByb3RvGhVzdHJ1X2RpcnR5X21h",
-            "c2sucHJvdG8i1gIKFVNlYXNvbkFjaGlldmVtZW50TGlzdBJXChVzZWFzb25B",
-            "Y2hpZXZlbWVudExpc3QYASADKAsyOC56cHJvdG8uU2Vhc29uQWNoaWV2ZW1l",
-            "bnRMaXN0LlNlYXNvbkFjaGlldmVtZW50TGlzdEVudHJ5EkUKDGhhc0luaXRE",
-            "b25lcxgCIAMoCzIvLnpwcm90by5TZWFzb25BY2hpZXZlbWVudExpc3QuSGFz",
-            "SW5pdERvbmVzRW50cnkSDwoHdmVyc2lvbhgDIAEoBBpXChpTZWFzb25BY2hp",
-            "ZXZlbWVudExpc3RFbnRyeRILCgNrZXkYASABKA0SKAoFdmFsdWUYAiABKAsy",
-            "GS56cHJvdG8uU2Vhc29uQWNoaWV2ZW1lbnQ6AjgBGjMKEUhhc0luaXREb25l",
-            "c0VudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoCDoCOAFiBnByb3Rv",
-            "Mw=="));
+            "c2sucHJvdG8i2gIKFVNlYXNvbkFjaGlldmVtZW50TGlzdBJZChdzZWFzb25f",
+            "YWNoaWV2ZW1lbnRfbGlzdBgBIAMoCzI4Lnpwcm90by5TZWFzb25BY2hpZXZl",
+            "bWVudExpc3QuU2Vhc29uQWNoaWV2ZW1lbnRMaXN0RW50cnkSRwoOaGFzX2lu",
+            "aXRfZG9uZXMYAiADKAsyLy56cHJvdG8uU2Vhc29uQWNoaWV2ZW1lbnRMaXN0",
+            "Lkhhc0luaXREb25lc0VudHJ5Eg8KB3ZlcnNpb24YAyABKAQaVwoaU2Vhc29u",
+            "QWNoaWV2ZW1lbnRMaXN0RW50cnkSCwoDa2V5GAEgASgNEigKBXZhbHVlGAIg",
+            "ASgLMhkuenByb3RvLlNlYXNvbkFjaGlldmVtZW50OgI4ARozChFIYXNJbml0",
+            "RG9uZXNFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKAg6AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSeasonAchievementReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +92,7 @@ namespace Zproto {
       return new SeasonAchievementList(this);
     }
 
-    /// <summary>Field number for the "seasonAchievementList" field.</summary>
+    /// <summary>Field number for the "season_achievement_list" field.</summary>
     public const int SeasonAchievementList_FieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.SeasonAchievement>.Codec _map_seasonAchievementList_codec
         = new pbc::MapField<uint, global::Zproto.SeasonAchievement>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonAchievement.Parser), 10);
@@ -103,7 +103,7 @@ namespace Zproto {
       get { return seasonAchievementList_; }
     }
 
-    /// <summary>Field number for the "hasInitDones" field.</summary>
+    /// <summary>Field number for the "has_init_dones" field.</summary>
     public const int HasInitDonesFieldNumber = 2;
     private static readonly pbc::MapField<uint, bool>.Codec _map_hasInitDones_codec
         = new pbc::MapField<uint, bool>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForBool(16, false), 18);

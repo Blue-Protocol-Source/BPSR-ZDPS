@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch9zdHJ1X3NlYXNvbl9icF9xdWVzdF9saXN0LnByb3RvEgZ6cHJvdG8aH3N0",
             "cnVfc2Vhc29uX2JwX3F1ZXN0X2RhdGEucHJvdG8aFXN0cnVfZGlydHlfbWFz",
-            "ay5wcm90byLKAQoRU2Vhc29uQnBRdWVzdExpc3QSOwoJc2Vhc29uTWFwGAEg",
-            "AygLMiguenByb3RvLlNlYXNvbkJwUXVlc3RMaXN0LlNlYXNvbk1hcEVudHJ5",
-            "EhEKCXJhbmRvbU1hcBgCIAMoDRIYChByZWZyZXNoVGltZVN0YW1wGAMgASgD",
-            "GksKDlNlYXNvbk1hcEVudHJ5EgsKA2tleRgBIAEoDRIoCgV2YWx1ZRgCIAEo",
-            "CzIZLnpwcm90by5TZWFzb25CcFF1ZXN0RGF0YToCOAFiBnByb3RvMw=="));
+            "ay5wcm90byLOAQoRU2Vhc29uQnBRdWVzdExpc3QSPAoKc2Vhc29uX21hcBgB",
+            "IAMoCzIoLnpwcm90by5TZWFzb25CcFF1ZXN0TGlzdC5TZWFzb25NYXBFbnRy",
+            "eRISCgpyYW5kb21fbWFwGAIgAygNEhoKEnJlZnJlc2hfdGltZV9zdGFtcBgD",
+            "IAEoAxpLCg5TZWFzb25NYXBFbnRyeRILCgNrZXkYASABKA0SKAoFdmFsdWUY",
+            "AiABKAsyGS56cHJvdG8uU2Vhc29uQnBRdWVzdERhdGE6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSeasonBpQuestDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new SeasonBpQuestList(this);
     }
 
-    /// <summary>Field number for the "seasonMap" field.</summary>
+    /// <summary>Field number for the "season_map" field.</summary>
     public const int SeasonMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.SeasonBpQuestData>.Codec _map_seasonMap_codec
         = new pbc::MapField<uint, global::Zproto.SeasonBpQuestData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonBpQuestData.Parser), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return seasonMap_; }
     }
 
-    /// <summary>Field number for the "randomMap" field.</summary>
+    /// <summary>Field number for the "random_map" field.</summary>
     public const int RandomMapFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_randomMap_codec
         = pb::FieldCodec.ForUInt32(18);
@@ -110,7 +110,7 @@ namespace Zproto {
       get { return randomMap_; }
     }
 
-    /// <summary>Field number for the "refreshTimeStamp" field.</summary>
+    /// <summary>Field number for the "refresh_time_stamp" field.</summary>
     public const int RefreshTimeStampFieldNumber = 3;
     private long refreshTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

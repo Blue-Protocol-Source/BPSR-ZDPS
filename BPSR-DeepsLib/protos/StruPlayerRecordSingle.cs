@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X3BsYXllcl9yZWNvcmRfc2luZ2xlLnByb3RvEgZ6cHJvdG8aFXN0",
-            "cnVfZGlydHlfbWFzay5wcm90byJbChJQbGF5ZXJSZWNvcmRTaW5nbGUSCgoC",
-            "SWQYASABKAUSEgoKVG90YWxDb3VudBgCIAEoBRISCgpDeWNsZUNvdW50GAMg",
-            "ASgDEhEKCUN5Y2xlVGltZRgEIAEoA2IGcHJvdG8z"));
+            "cnVfZGlydHlfbWFzay5wcm90byJeChJQbGF5ZXJSZWNvcmRTaW5nbGUSCgoC",
+            "aWQYASABKAUSEwoLdG90YWxfY291bnQYAiABKAUSEwoLY3ljbGVfY291bnQY",
+            "AyABKAMSEgoKY3ljbGVfdGltZRgEIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new PlayerRecordSingle(this);
     }
 
-    /// <summary>Field number for the "Id" field.</summary>
+    /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private int id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "TotalCount" field.</summary>
+    /// <summary>Field number for the "total_count" field.</summary>
     public const int TotalCountFieldNumber = 2;
     private int totalCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "CycleCount" field.</summary>
+    /// <summary>Field number for the "cycle_count" field.</summary>
     public const int CycleCountFieldNumber = 3;
     private long cycleCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "CycleTime" field.</summary>
+    /// <summary>Field number for the "cycle_time" field.</summary>
     public const int CycleTimeFieldNumber = 4;
     private long cycleTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

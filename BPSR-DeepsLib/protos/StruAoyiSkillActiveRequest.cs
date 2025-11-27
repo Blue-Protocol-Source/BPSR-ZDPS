@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2FveWlfc2tpbGxfYWN0aXZlX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "byIpChZBb3lpU2tpbGxBY3RpdmVSZXF1ZXN0Eg8KB3NraWxsSWQYASABKAVi",
-            "BnByb3RvMw=="));
+            "byIqChZBb3lpU2tpbGxBY3RpdmVSZXF1ZXN0EhAKCHNraWxsX2lkGAEgASgF",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new AoyiSkillActiveRequest(this);
     }
 
-    /// <summary>Field number for the "skillId" field.</summary>
+    /// <summary>Field number for the "skill_id" field.</summary>
     public const int SkillIdFieldNumber = 1;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

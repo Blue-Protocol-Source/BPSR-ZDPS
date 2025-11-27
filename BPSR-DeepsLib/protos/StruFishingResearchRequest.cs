@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2Zpc2hpbmdfcmVzZWFyY2hfcmVxdWVzdC5wcm90bxIGenByb3Rv",
-            "IjcKFkZpc2hpbmdSZXNlYXJjaFJlcXVlc3QSDgoGZmlzaElkGAEgASgFEg0K",
-            "BWNvdW50GAIgASgFYgZwcm90bzM="));
+            "IjgKFkZpc2hpbmdSZXNlYXJjaFJlcXVlc3QSDwoHZmlzaF9pZBgBIAEoBRIN",
+            "CgVjb3VudBgCIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new FishingResearchRequest(this);
     }
 
-    /// <summary>Field number for the "fishId" field.</summary>
+    /// <summary>Field number for the "fish_id" field.</summary>
     public const int FishIdFieldNumber = 1;
     private int fishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

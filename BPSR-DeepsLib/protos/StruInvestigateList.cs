@@ -26,14 +26,14 @@ namespace Zproto {
           string.Concat(
             "ChtzdHJ1X2ludmVzdGlnYXRlX2xpc3QucHJvdG8SBnpwcm90bxobc3RydV9p",
             "bnZlc3RpZ2F0ZV9kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i",
-            "yAIKD0ludmVzdGlnYXRlTGlzdBJDCg5pbnZlc3RpZ2F0ZU1hcBgBIAMoCzIr",
-            "Lnpwcm90by5JbnZlc3RpZ2F0ZUxpc3QuSW52ZXN0aWdhdGVNYXBFbnRyeRJL",
-            "ChJjb21wSW52ZXN0aWdhdGVNYXAYAiADKAsyLy56cHJvdG8uSW52ZXN0aWdh",
-            "dGVMaXN0LkNvbXBJbnZlc3RpZ2F0ZU1hcEVudHJ5EhgKEGNvbXBSZWFzb25p",
-            "bmdNYXAYAyADKA0aTgoTSW52ZXN0aWdhdGVNYXBFbnRyeRILCgNrZXkYASAB",
-            "KA0SJgoFdmFsdWUYAiABKAsyFy56cHJvdG8uSW52ZXN0aWdhdGVEYXRhOgI4",
-            "ARo5ChdDb21wSW52ZXN0aWdhdGVNYXBFbnRyeRILCgNrZXkYASABKA0SDQoF",
-            "dmFsdWUYAiABKAg6AjgBYgZwcm90bzM="));
+            "zQIKD0ludmVzdGlnYXRlTGlzdBJECg9pbnZlc3RpZ2F0ZV9tYXAYASADKAsy",
+            "Ky56cHJvdG8uSW52ZXN0aWdhdGVMaXN0LkludmVzdGlnYXRlTWFwRW50cnkS",
+            "TQoUY29tcF9pbnZlc3RpZ2F0ZV9tYXAYAiADKAsyLy56cHJvdG8uSW52ZXN0",
+            "aWdhdGVMaXN0LkNvbXBJbnZlc3RpZ2F0ZU1hcEVudHJ5EhoKEmNvbXBfcmVh",
+            "c29uaW5nX21hcBgDIAMoDRpOChNJbnZlc3RpZ2F0ZU1hcEVudHJ5EgsKA2tl",
+            "eRgBIAEoDRImCgV2YWx1ZRgCIAEoCzIXLnpwcm90by5JbnZlc3RpZ2F0ZURh",
+            "dGE6AjgBGjkKF0NvbXBJbnZlc3RpZ2F0ZU1hcEVudHJ5EgsKA2tleRgBIAEo",
+            "DRINCgV2YWx1ZRgCIAEoCDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruInvestigateDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +91,7 @@ namespace Zproto {
       return new InvestigateList(this);
     }
 
-    /// <summary>Field number for the "investigateMap" field.</summary>
+    /// <summary>Field number for the "investigate_map" field.</summary>
     public const int InvestigateMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.InvestigateData>.Codec _map_investigateMap_codec
         = new pbc::MapField<uint, global::Zproto.InvestigateData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.InvestigateData.Parser), 10);
@@ -102,7 +102,7 @@ namespace Zproto {
       get { return investigateMap_; }
     }
 
-    /// <summary>Field number for the "compInvestigateMap" field.</summary>
+    /// <summary>Field number for the "comp_investigate_map" field.</summary>
     public const int CompInvestigateMapFieldNumber = 2;
     private static readonly pbc::MapField<uint, bool>.Codec _map_compInvestigateMap_codec
         = new pbc::MapField<uint, bool>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForBool(16, false), 18);
@@ -113,7 +113,7 @@ namespace Zproto {
       get { return compInvestigateMap_; }
     }
 
-    /// <summary>Field number for the "compReasoningMap" field.</summary>
+    /// <summary>Field number for the "comp_reasoning_map" field.</summary>
     public const int CompReasoningMapFieldNumber = 3;
     private static readonly pb::FieldCodec<uint> _repeated_compReasoningMap_codec
         = pb::FieldCodec.ForUInt32(26);

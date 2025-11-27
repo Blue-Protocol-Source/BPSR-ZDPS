@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X3NldF93b3JsZF9jaGF0X2NoYW5uZWxfaWRfcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvIjEKHFNldFdvcmxkQ2hhdENoYW5uZWxJZFJlcXVlc3QSEQoJ",
-            "Y2hhbm5lbElkGAEgASgNYgZwcm90bzM="));
+            "bxIGenByb3RvIjIKHFNldFdvcmxkQ2hhdENoYW5uZWxJZFJlcXVlc3QSEgoK",
+            "Y2hhbm5lbF9pZBgBIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new SetWorldChatChannelIdRequest(this);
     }
 
-    /// <summary>Field number for the "channelId" field.</summary>
+    /// <summary>Field number for the "channel_id" field.</summary>
     public const int ChannelIdFieldNumber = 1;
     private uint channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

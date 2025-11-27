@@ -24,8 +24,9 @@ namespace Zproto {
     static StruCreateGroupRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2NyZWF0ZV9ncm91cF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iJwoS",
-            "Q3JlYXRlR3JvdXBSZXF1ZXN0EhEKCWdyb3VwTmFtZRgBIAEoCWIGcHJvdG8z"));
+            "Ch9zdHJ1X2NyZWF0ZV9ncm91cF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iKAoS",
+            "Q3JlYXRlR3JvdXBSZXF1ZXN0EhIKCmdyb3VwX25hbWUYASABKAliBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new CreateGroupRequest(this);
     }
 
-    /// <summary>Field number for the "groupName" field.</summary>
+    /// <summary>Field number for the "group_name" field.</summary>
     public const int GroupNameFieldNumber = 1;
     private string groupName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

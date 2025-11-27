@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zZXJ2X2dycGNfY2hhcmFjdG9yX250Zi5wcm90bxIGenByb3RvGihzdHJ1",
-            "X2dldF9mYWNlX3VwX3Rva2VuX250Zl9yZXF1ZXN0LnByb3RvIlsKEEdycGND",
-            "aGFyYWN0b3JOdGYaRwoRR2V0RmFjZVVwVG9rZW5OdGYSMgoIdlJlcXVlc3QY",
-            "ASABKAsyIC56cHJvdG8uR2V0RmFjZVVwVG9rZW5OdGZSZXF1ZXN0YgZwcm90",
-            "bzM="));
+            "X2dldF9mYWNlX3VwX3Rva2VuX250Zl9yZXF1ZXN0LnByb3RvIlwKEEdycGND",
+            "aGFyYWN0b3JOdGYaSAoRR2V0RmFjZVVwVG9rZW5OdGYSMwoJdl9yZXF1ZXN0",
+            "GAEgASgLMiAuenByb3RvLkdldEZhY2VVcFRva2VuTnRmUmVxdWVzdGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruGetFaceUpTokenNtfRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -248,7 +248,7 @@ namespace Zproto {
           return new GetFaceUpTokenNtf(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetFaceUpTokenNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

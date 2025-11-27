@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjFzdHJ1X2ludml0ZV9qb2luX2dyb3VwX3dpdGhfdGVuY2VudF9yZXF1ZXN0",
-            "LnByb3RvEgZ6cHJvdG8iTwohSW52aXRlSm9pbkdyb3VwV2l0aFRlbmNlbnRS",
-            "ZXF1ZXN0Eg8KB3VuaW9uSWQYASABKAMSDAoEZGVzYxgCIAEoCRILCgN1cmwY",
-            "AyABKAliBnByb3RvMw=="));
+            "LnByb3RvEgZ6cHJvdG8iUAohSW52aXRlSm9pbkdyb3VwV2l0aFRlbmNlbnRS",
+            "ZXF1ZXN0EhAKCHVuaW9uX2lkGAEgASgDEgwKBGRlc2MYAiABKAkSCwoDdXJs",
+            "GAMgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new InviteJoinGroupWithTencentRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

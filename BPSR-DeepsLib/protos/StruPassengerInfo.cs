@@ -24,9 +24,9 @@ namespace Zproto {
     static StruPassengerInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X3Bhc3Nlbmdlcl9pbmZvLnByb3RvEgZ6cHJvdG8iLgoNUGFzc2Vu",
-            "Z2VySW5mbxIPCgdzZWF0TnVtGAEgASgFEgwKBHV1aWQYAiABKANiBnByb3Rv",
-            "Mw=="));
+            "ChlzdHJ1X3Bhc3Nlbmdlcl9pbmZvLnByb3RvEgZ6cHJvdG8iLwoNUGFzc2Vu",
+            "Z2VySW5mbxIQCghzZWF0X251bRgBIAEoBRIMCgR1dWlkGAIgASgDYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new PassengerInfo(this);
     }
 
-    /// <summary>Field number for the "seatNum" field.</summary>
+    /// <summary>Field number for the "seat_num" field.</summary>
     public const int SeatNumFieldNumber = 1;
     private int seatNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

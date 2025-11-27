@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CidzdHJ1X2dldF91bmlvbl9yZXNvdXJjZV9saWJfcmVwbHkucHJvdG8SBnpw",
             "cm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aGXN0cnVfdW5pb25fcmVz",
-            "b3VyY2UucHJvdG8i4QEKGEdldFVuaW9uUmVzb3VyY2VMaWJSZXBseRJQChB1",
-            "bmlvblJlc291cmNlTGliGAEgAygLMjYuenByb3RvLkdldFVuaW9uUmVzb3Vy",
-            "Y2VMaWJSZXBseS5VbmlvblJlc291cmNlTGliRW50cnkSIwoHZXJyQ29kZRgC",
-            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlGk4KFVVuaW9uUmVzb3VyY2VMaWJF",
-            "bnRyeRILCgNrZXkYASABKAUSJAoFdmFsdWUYAiABKAsyFS56cHJvdG8uVW5p",
-            "b25SZXNvdXJjZToCOAFiBnByb3RvMw=="));
+            "b3VyY2UucHJvdG8i5AEKGEdldFVuaW9uUmVzb3VyY2VMaWJSZXBseRJSChJ1",
+            "bmlvbl9yZXNvdXJjZV9saWIYASADKAsyNi56cHJvdG8uR2V0VW5pb25SZXNv",
+            "dXJjZUxpYlJlcGx5LlVuaW9uUmVzb3VyY2VMaWJFbnRyeRIkCghlcnJfY29k",
+            "ZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2RlGk4KFVVuaW9uUmVzb3VyY2VM",
+            "aWJFbnRyeRILCgNrZXkYASABKAUSJAoFdmFsdWUYAiABKAsyFS56cHJvdG8u",
+            "VW5pb25SZXNvdXJjZToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionResourceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new GetUnionResourceLibReply(this);
     }
 
-    /// <summary>Field number for the "unionResourceLib" field.</summary>
+    /// <summary>Field number for the "union_resource_lib" field.</summary>
     public const int UnionResourceLibFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.UnionResource>.Codec _map_unionResourceLib_codec
         = new pbc::MapField<int, global::Zproto.UnionResource>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionResource.Parser), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return unionResourceLib_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

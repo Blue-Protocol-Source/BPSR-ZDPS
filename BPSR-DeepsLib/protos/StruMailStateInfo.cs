@@ -24,9 +24,9 @@ namespace Zproto {
     static StruMailStateInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X21haWxfc3RhdGVfaW5mby5wcm90bxIGenByb3RvIjgKDU1haWxT",
-            "dGF0ZUluZm8SEQoJbWFpbFN0YXRlGAEgASgNEhQKDG1haWxDb25maWdJZBgC",
-            "IAEoDWIGcHJvdG8z"));
+            "ChpzdHJ1X21haWxfc3RhdGVfaW5mby5wcm90bxIGenByb3RvIjsKDU1haWxT",
+            "dGF0ZUluZm8SEgoKbWFpbF9zdGF0ZRgBIAEoDRIWCg5tYWlsX2NvbmZpZ19p",
+            "ZBgCIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new MailStateInfo(this);
     }
 
-    /// <summary>Field number for the "mailState" field.</summary>
+    /// <summary>Field number for the "mail_state" field.</summary>
     public const int MailStateFieldNumber = 1;
     private uint mailState_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mailConfigId" field.</summary>
+    /// <summary>Field number for the "mail_config_id" field.</summary>
     public const int MailConfigIdFieldNumber = 2;
     private uint mailConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

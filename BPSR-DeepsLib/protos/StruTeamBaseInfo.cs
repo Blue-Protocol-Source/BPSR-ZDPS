@@ -26,15 +26,15 @@ namespace Zproto {
           string.Concat(
             "ChlzdHJ1X3RlYW1fYmFzZV9pbmZvLnByb3RvEgZ6cHJvdG8aHWVudW1fZV90",
             "ZWFtX21lbWJlcl90eXBlLnByb3RvGiFzdHJ1X3RlYW1fbWVtYmVyX2dyb3Vw",
-            "X2luZm8ucHJvdG8i9AIKDFRlYW1CYXNlSW5mbxIOCgZ0ZWFtSWQYASABKAMS",
-            "EAoIdGFyZ2V0SWQYAiABKA0SEAoIbGVhZGVySWQYAyABKAMSDAoEZGVzYxgE",
-            "IAEoCRIRCglhdXRvTWF0Y2gYBSABKAgSEAoIaGFsbFNob3cYBiABKAgSEAoI",
-            "bWF0Y2hpbmcYByABKAgSLwoOdGVhbU1lbWJlclR5cGUYCCABKA4yFy56cHJv",
-            "dG8uRVRlYW1NZW1iZXJUeXBlEkwKFHRlYW1NZW1iZXJHcm91cEluZm9zGAkg",
-            "AygLMi4uenByb3RvLlRlYW1CYXNlSW5mby5UZWFtTWVtYmVyR3JvdXBJbmZv",
-            "c0VudHJ5EhIKCmNyZWF0ZVRpbWUYCiABKAMaWAoZVGVhbU1lbWJlckdyb3Vw",
-            "SW5mb3NFbnRyeRILCgNrZXkYASABKAUSKgoFdmFsdWUYAiABKAsyGy56cHJv",
-            "dG8uVGVhbU1lbWJlckdyb3VwSW5mbzoCOAFiBnByb3RvMw=="));
+            "X2luZm8ucHJvdG8i/wIKDFRlYW1CYXNlSW5mbxIPCgd0ZWFtX2lkGAEgASgD",
+            "EhEKCXRhcmdldF9pZBgCIAEoDRIRCglsZWFkZXJfaWQYAyABKAMSDAoEZGVz",
+            "YxgEIAEoCRISCgphdXRvX21hdGNoGAUgASgIEhEKCWhhbGxfc2hvdxgGIAEo",
+            "CBIQCghtYXRjaGluZxgHIAEoCBIxChB0ZWFtX21lbWJlcl90eXBlGAggASgO",
+            "MhcuenByb3RvLkVUZWFtTWVtYmVyVHlwZRJPChd0ZWFtX21lbWJlcl9ncm91",
+            "cF9pbmZvcxgJIAMoCzIuLnpwcm90by5UZWFtQmFzZUluZm8uVGVhbU1lbWJl",
+            "ckdyb3VwSW5mb3NFbnRyeRITCgtjcmVhdGVfdGltZRgKIAEoAxpYChlUZWFt",
+            "TWVtYmVyR3JvdXBJbmZvc0VudHJ5EgsKA2tleRgBIAEoBRIqCgV2YWx1ZRgC",
+            "IAEoCzIbLnpwcm90by5UZWFtTWVtYmVyR3JvdXBJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETeamMemberTypeReflection.Descriptor, global::Zproto.StruTeamMemberGroupInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       return new TeamBaseInfo(this);
     }
 
-    /// <summary>Field number for the "teamId" field.</summary>
+    /// <summary>Field number for the "team_id" field.</summary>
     public const int TeamIdFieldNumber = 1;
     private long teamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 2;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "leaderId" field.</summary>
+    /// <summary>Field number for the "leader_id" field.</summary>
     public const int LeaderIdFieldNumber = 3;
     private long leaderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,7 +147,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "autoMatch" field.</summary>
+    /// <summary>Field number for the "auto_match" field.</summary>
     public const int AutoMatchFieldNumber = 5;
     private bool autoMatch_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -159,7 +159,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hallShow" field.</summary>
+    /// <summary>Field number for the "hall_show" field.</summary>
     public const int HallShowFieldNumber = 6;
     private bool hallShow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -183,7 +183,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "teamMemberType" field.</summary>
+    /// <summary>Field number for the "team_member_type" field.</summary>
     public const int TeamMemberTypeFieldNumber = 8;
     private global::Zproto.ETeamMemberType teamMemberType_ = global::Zproto.ETeamMemberType.Five;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -195,7 +195,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "teamMemberGroupInfos" field.</summary>
+    /// <summary>Field number for the "team_member_group_infos" field.</summary>
     public const int TeamMemberGroupInfosFieldNumber = 9;
     private static readonly pbc::MapField<int, global::Zproto.TeamMemberGroupInfo>.Codec _map_teamMemberGroupInfos_codec
         = new pbc::MapField<int, global::Zproto.TeamMemberGroupInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemberGroupInfo.Parser), 74);
@@ -206,7 +206,7 @@ namespace Zproto {
       get { return teamMemberGroupInfos_; }
     }
 
-    /// <summary>Field number for the "createTime" field.</summary>
+    /// <summary>Field number for the "create_time" field.</summary>
     public const int CreateTimeFieldNumber = 10;
     private long createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

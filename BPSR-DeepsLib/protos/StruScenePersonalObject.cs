@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X3NjZW5lX3BlcnNvbmFsX29iamVjdC5wcm90bxIGenByb3RvGjBz",
             "dHJ1X3NlcnZlcl9zdGF0ZV9vYmplY3RfaW50ZXJhY3Rpb25fcGFyYW0ucHJv",
-            "dG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLDAQoTU2NlbmVQZXJzb25hbE9i",
-            "amVjdBJJCg9wZXJzb25hbE9iakRhdGEYASADKAsyMC56cHJvdG8uU2NlbmVQ",
-            "ZXJzb25hbE9iamVjdC5QZXJzb25hbE9iakRhdGFFbnRyeRphChRQZXJzb25h",
-            "bE9iakRhdGFFbnRyeRILCgNrZXkYASABKAMSOAoFdmFsdWUYAiABKAsyKS56",
-            "cHJvdG8uU2VydmVyU3RhdGVPYmplY3RJbnRlcmFjdGlvblBhcmFtOgI4AWIG",
-            "cHJvdG8z"));
+            "dG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLFAQoTU2NlbmVQZXJzb25hbE9i",
+            "amVjdBJLChFwZXJzb25hbF9vYmpfZGF0YRgBIAMoCzIwLnpwcm90by5TY2Vu",
+            "ZVBlcnNvbmFsT2JqZWN0LlBlcnNvbmFsT2JqRGF0YUVudHJ5GmEKFFBlcnNv",
+            "bmFsT2JqRGF0YUVudHJ5EgsKA2tleRgBIAEoAxI4CgV2YWx1ZRgCIAEoCzIp",
+            "Lnpwcm90by5TZXJ2ZXJTdGF0ZU9iamVjdEludGVyYWN0aW9uUGFyYW06AjgB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruServerStateObjectInteractionParamReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new ScenePersonalObject(this);
     }
 
-    /// <summary>Field number for the "personalObjData" field.</summary>
+    /// <summary>Field number for the "personal_obj_data" field.</summary>
     public const int PersonalObjDataFieldNumber = 1;
     private static readonly pbc::MapField<long, global::Zproto.ServerStateObjectInteractionParam>.Codec _map_personalObjData_codec
         = new pbc::MapField<long, global::Zproto.ServerStateObjectInteractionParam>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.ServerStateObjectInteractionParam.Parser), 10);

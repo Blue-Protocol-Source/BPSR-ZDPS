@@ -24,9 +24,9 @@ namespace Zproto {
     static StruMatchReadyParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X21hdGNoX3JlYWR5X3BhcmFtLnByb3RvEgZ6cHJvdG8iNgoPTWF0",
-            "Y2hSZWFkeVBhcmFtEg8KB2lzUmVhZHkYASABKAgSEgoKbWF0Y2hUb2tlbhgC",
-            "IAEoCWIGcHJvdG8z"));
+            "ChxzdHJ1X21hdGNoX3JlYWR5X3BhcmFtLnByb3RvEgZ6cHJvdG8iOAoPTWF0",
+            "Y2hSZWFkeVBhcmFtEhAKCGlzX3JlYWR5GAEgASgIEhMKC21hdGNoX3Rva2Vu",
+            "GAIgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new MatchReadyParam(this);
     }
 
-    /// <summary>Field number for the "isReady" field.</summary>
+    /// <summary>Field number for the "is_ready" field.</summary>
     public const int IsReadyFieldNumber = 1;
     private bool isReady_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "matchToken" field.</summary>
+    /// <summary>Field number for the "match_token" field.</summary>
     public const int MatchTokenFieldNumber = 2;
     private string matchToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

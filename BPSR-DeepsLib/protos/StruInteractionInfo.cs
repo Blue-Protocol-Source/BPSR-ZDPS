@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X2ludGVyYWN0aW9uX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvIpUBCg9JbnRlcmFjdGlvbkluZm8SGAoQaW50ZXJh",
-            "Y3Rpb25TdGFnZRgBIAEoBRIQCghhY3Rpb25JZBgCIAEoBRIUCgxvcmlnaW5h",
-            "dG9ySWQYAyABKAMSEQoJaW52aXRlZUlkGAQgASgDEhQKDGlzT3JpZ2luYXRv",
-            "chgFIAEoCBIXCg9pbnRlcmFjdGlvblR5cGUYBiABKAViBnByb3RvMw=="));
+            "aXJ0eV9tYXNrLnByb3RvIpsBCg9JbnRlcmFjdGlvbkluZm8SGQoRaW50ZXJh",
+            "Y3Rpb25fc3RhZ2UYASABKAUSEQoJYWN0aW9uX2lkGAIgASgFEhUKDW9yaWdp",
+            "bmF0b3JfaWQYAyABKAMSEgoKaW52aXRlZV9pZBgEIAEoAxIVCg1pc19vcmln",
+            "aW5hdG9yGAUgASgIEhgKEGludGVyYWN0aW9uX3R5cGUYBiABKAViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new InteractionInfo(this);
     }
 
-    /// <summary>Field number for the "interactionStage" field.</summary>
+    /// <summary>Field number for the "interaction_stage" field.</summary>
     public const int InteractionStageFieldNumber = 1;
     private int interactionStage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "actionId" field.</summary>
+    /// <summary>Field number for the "action_id" field.</summary>
     public const int ActionIdFieldNumber = 2;
     private int actionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "originatorId" field.</summary>
+    /// <summary>Field number for the "originator_id" field.</summary>
     public const int OriginatorIdFieldNumber = 3;
     private long originatorId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "inviteeId" field.</summary>
+    /// <summary>Field number for the "invitee_id" field.</summary>
     public const int InviteeIdFieldNumber = 4;
     private long inviteeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isOriginator" field.</summary>
+    /// <summary>Field number for the "is_originator" field.</summary>
     public const int IsOriginatorFieldNumber = 5;
     private bool isOriginator_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,7 +150,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "interactionType" field.</summary>
+    /// <summary>Field number for the "interaction_type" field.</summary>
     public const int InteractionTypeFieldNumber = 6;
     private int interactionType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

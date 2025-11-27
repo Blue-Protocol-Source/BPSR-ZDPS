@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2Ryb3BfY29udGFpbmVyX3NpbmdsZS5wcm90bxIGenByb3RvGhVz",
-            "dHJ1X2RpcnR5X21hc2sucHJvdG8iWQoTRHJvcENvbnRhaW5lclNpbmdsZRIK",
-            "CgJJZBgBIAEoBRINCgVDb3VudBgCIAEoBRIRCglDeWNsZVRpbWUYAyABKAMS",
-            "FAoMSGlzdG9yeUNvdW50GAQgASgFYgZwcm90bzM="));
+            "dHJ1X2RpcnR5X21hc2sucHJvdG8iWwoTRHJvcENvbnRhaW5lclNpbmdsZRIK",
+            "CgJpZBgBIAEoBRINCgVjb3VudBgCIAEoBRISCgpjeWNsZV90aW1lGAMgASgD",
+            "EhUKDWhpc3RvcnlfY291bnQYBCABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new DropContainerSingle(this);
     }
 
-    /// <summary>Field number for the "Id" field.</summary>
+    /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private int id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "Count" field.</summary>
+    /// <summary>Field number for the "count" field.</summary>
     public const int CountFieldNumber = 2;
     private int count_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "CycleTime" field.</summary>
+    /// <summary>Field number for the "cycle_time" field.</summary>
     public const int CycleTimeFieldNumber = 3;
     private long cycleTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "HistoryCount" field.</summary>
+    /// <summary>Field number for the "history_count" field.</summary>
     public const int HistoryCountFieldNumber = 4;
     private int historyCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

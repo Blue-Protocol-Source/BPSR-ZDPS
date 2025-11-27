@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X3VuaW9uX2Vfc2NyZWVuX2luZm8ucHJvdG8SBnpwcm90bxobc3Ry",
             "dV9waG90b19ncmFwaF9zaG93LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJv",
-            "dG8iUgoQVW5pb25FU2NyZWVuSW5mbxIRCgllU2NyZWVuSWQYASABKAUSKwoL",
-            "cGhvdG9HcmFwaHMYAiADKAsyFi56cHJvdG8uUGhvdG9HcmFwaFNob3diBnBy",
-            "b3RvMw=="));
+            "dG8iVQoQVW5pb25FU2NyZWVuSW5mbxITCgtlX3NjcmVlbl9pZBgBIAEoBRIs",
+            "CgxwaG90b19ncmFwaHMYAiADKAsyFi56cHJvdG8uUGhvdG9HcmFwaFNob3di",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPhotoGraphShowReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new UnionEScreenInfo(this);
     }
 
-    /// <summary>Field number for the "eScreenId" field.</summary>
+    /// <summary>Field number for the "e_screen_id" field.</summary>
     public const int EScreenIdFieldNumber = 1;
     private int eScreenId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photoGraphs" field.</summary>
+    /// <summary>Field number for the "photo_graphs" field.</summary>
     public const int PhotoGraphsFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.PhotoGraphShow> _repeated_photoGraphs_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.PhotoGraphShow.Parser);

@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch9zdHJ1X21vbnN0ZXJfZXhwbG9yZV9saXN0LnByb3RvEgZ6cHJvdG8aH3N0",
             "cnVfbW9uc3Rlcl9leHBsb3JlX2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFz",
-            "ay5wcm90byK7AQoSTW9uc3RlckV4cGxvcmVMaXN0Ek4KEm1vbnN0ZXJFeHBs",
-            "b3JlTGlzdBgBIAMoCzIyLnpwcm90by5Nb25zdGVyRXhwbG9yZUxpc3QuTW9u",
-            "c3RlckV4cGxvcmVMaXN0RW50cnkaVQoXTW9uc3RlckV4cGxvcmVMaXN0RW50",
-            "cnkSCwoDa2V5GAEgASgFEikKBXZhbHVlGAIgASgLMhouenByb3RvLk1vbnN0",
-            "ZXJFeHBsb3JlSW5mbzoCOAFiBnByb3RvMw=="));
+            "ay5wcm90byK9AQoSTW9uc3RlckV4cGxvcmVMaXN0ElAKFG1vbnN0ZXJfZXhw",
+            "bG9yZV9saXN0GAEgAygLMjIuenByb3RvLk1vbnN0ZXJFeHBsb3JlTGlzdC5N",
+            "b25zdGVyRXhwbG9yZUxpc3RFbnRyeRpVChdNb25zdGVyRXhwbG9yZUxpc3RF",
+            "bnRyeRILCgNrZXkYASABKAUSKQoFdmFsdWUYAiABKAsyGi56cHJvdG8uTW9u",
+            "c3RlckV4cGxvcmVJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMonsterExploreInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new MonsterExploreList(this);
     }
 
-    /// <summary>Field number for the "monsterExploreList" field.</summary>
+    /// <summary>Field number for the "monster_explore_list" field.</summary>
     public const int MonsterExploreList_FieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.MonsterExploreInfo>.Codec _map_monsterExploreList_codec
         = new pbc::MapField<int, global::Zproto.MonsterExploreInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MonsterExploreInfo.Parser), 10);

@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X2dhbWVfZnVuY3Rpb25fZGF0YS5wcm90bxIGenByb3RvGh1zdHJ1",
             "X2Z1bmN0aW9uX3RpbWVfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvItQBChBHYW1lRnVuY3Rpb25EYXRhEgoKAklkGAEgASgNEg0KBXN0YXRl",
-            "GAIgASgIEhEKCXByb2R1Y3RJZBgDIAEoDRJCCg1mdW5jdGlvblRpbWVzGAQg",
-            "AygLMisuenByb3RvLkdhbWVGdW5jdGlvbkRhdGEuRnVuY3Rpb25UaW1lc0Vu",
-            "dHJ5Gk4KEkZ1bmN0aW9uVGltZXNFbnRyeRILCgNrZXkYASABKA0SJwoFdmFs",
-            "dWUYAiABKAsyGC56cHJvdG8uRnVuY3Rpb25UaW1lRGF0YToCOAFiBnByb3Rv",
-            "Mw=="));
+            "b3RvItYBChBHYW1lRnVuY3Rpb25EYXRhEgoKAmlkGAEgASgNEg0KBXN0YXRl",
+            "GAIgASgIEhIKCnByb2R1Y3RfaWQYAyABKA0SQwoOZnVuY3Rpb25fdGltZXMY",
+            "BCADKAsyKy56cHJvdG8uR2FtZUZ1bmN0aW9uRGF0YS5GdW5jdGlvblRpbWVz",
+            "RW50cnkaTgoSRnVuY3Rpb25UaW1lc0VudHJ5EgsKA2tleRgBIAEoDRInCgV2",
+            "YWx1ZRgCIAEoCzIYLnpwcm90by5GdW5jdGlvblRpbWVEYXRhOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFunctionTimeDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new GameFunctionData(this);
     }
 
-    /// <summary>Field number for the "Id" field.</summary>
+    /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "productId" field.</summary>
+    /// <summary>Field number for the "product_id" field.</summary>
     public const int ProductIdFieldNumber = 3;
     private uint productId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "functionTimes" field.</summary>
+    /// <summary>Field number for the "function_times" field.</summary>
     public const int FunctionTimesFieldNumber = 4;
     private static readonly pbc::MapField<uint, global::Zproto.FunctionTimeData>.Codec _map_functionTimes_codec
         = new pbc::MapField<uint, global::Zproto.FunctionTimeData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FunctionTimeData.Parser), 34);

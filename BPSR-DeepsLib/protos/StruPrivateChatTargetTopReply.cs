@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X3ByaXZhdGVfY2hhdF90YXJnZXRfdG9wX3JlcGx5LnByb3RvEgZ6",
-            "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvImIKGVByaXZhdGVDaGF0",
-            "VGFyZ2V0VG9wUmVwbHkSEAoIdGFyZ2V0SWQYASABKA0SDgoGc2V0VG9wGAIg",
-            "ASgIEiMKB2VyckNvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJv",
-            "dG8z"));
+            "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvImUKGVByaXZhdGVDaGF0",
+            "VGFyZ2V0VG9wUmVwbHkSEQoJdGFyZ2V0X2lkGAEgASgNEg8KB3NldF90b3AY",
+            "AiABKAgSJAoIZXJyX2NvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new PrivateChatTargetTopReply(this);
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "setTop" field.</summary>
+    /// <summary>Field number for the "set_top" field.</summary>
     public const int SetTopFieldNumber = 2;
     private bool setTop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

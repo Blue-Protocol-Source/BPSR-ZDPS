@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X3NldF9hbGJ1bV9jb3Zlcl9yZXBseS5wcm90bxIGenByb3RvGhdl",
             "bnVtX2VfZXJyb3JfY29kZS5wcm90bxoVc3RydV9pbWFnZV9pbmZvLnByb3Rv",
-            "Io8BChJTZXRBbGJ1bUNvdmVyUmVwbHkSDwoHYWxidW1JZBgDIAEoDRIUCgxj",
-            "b3ZlclBob3RvSWQYBCABKA0SLQoSY292ZXJUaHVtYm5haWxJbmZvGAUgASgL",
-            "MhEuenByb3RvLkltYWdlSW5mbxIjCgdlcnJDb2RlGAYgASgOMhIuenByb3Rv",
-            "LkVFcnJvckNvZGViBnByb3RvMw=="));
+            "IpUBChJTZXRBbGJ1bUNvdmVyUmVwbHkSEAoIYWxidW1faWQYAyABKA0SFgoO",
+            "Y292ZXJfcGhvdG9faWQYBCABKA0SLwoUY292ZXJfdGh1bWJuYWlsX2luZm8Y",
+            "BSABKAsyES56cHJvdG8uSW1hZ2VJbmZvEiQKCGVycl9jb2RlGAYgASgOMhIu",
+            "enByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruImageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new SetAlbumCoverReply(this);
     }
 
-    /// <summary>Field number for the "albumId" field.</summary>
+    /// <summary>Field number for the "album_id" field.</summary>
     public const int AlbumIdFieldNumber = 3;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "coverPhotoId" field.</summary>
+    /// <summary>Field number for the "cover_photo_id" field.</summary>
     public const int CoverPhotoIdFieldNumber = 4;
     private uint coverPhotoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "coverThumbnailInfo" field.</summary>
+    /// <summary>Field number for the "cover_thumbnail_info" field.</summary>
     public const int CoverThumbnailInfoFieldNumber = 5;
     private global::Zproto.ImageInfo coverThumbnailInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

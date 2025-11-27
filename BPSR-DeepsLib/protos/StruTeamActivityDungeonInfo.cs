@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X3RlYW1fYWN0aXZpdHlfZHVuZ2Vvbl9pbmZvLnByb3RvEgZ6cHJv",
-            "dG8aD3N0cnVfaXRlbS5wcm90bxoVc3RydV9zY2VuZV9pbmZvLnByb3RvIl4K",
-            "F1RlYW1BY3Rpdml0eUR1bmdlb25JbmZvEiQKCXNjZW5lSW5mbxgBIAEoCzIR",
-            "Lnpwcm90by5TY2VuZUluZm8SHQoHdXNlSXRlbRgCIAEoCzIMLnpwcm90by5J",
-            "dGVtYgZwcm90bzM="));
+            "dG8aD3N0cnVfaXRlbS5wcm90bxoVc3RydV9zY2VuZV9pbmZvLnByb3RvImAK",
+            "F1RlYW1BY3Rpdml0eUR1bmdlb25JbmZvEiUKCnNjZW5lX2luZm8YASABKAsy",
+            "ES56cHJvdG8uU2NlbmVJbmZvEh4KCHVzZV9pdGVtGAIgASgLMgwuenByb3Rv",
+            "Lkl0ZW1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruSceneInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new TeamActivityDungeonInfo(this);
     }
 
-    /// <summary>Field number for the "sceneInfo" field.</summary>
+    /// <summary>Field number for the "scene_info" field.</summary>
     public const int SceneInfoFieldNumber = 1;
     private global::Zproto.SceneInfo sceneInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "useItem" field.</summary>
+    /// <summary>Field number for the "use_item" field.</summary>
     public const int UseItemFieldNumber = 2;
     private global::Zproto.Item useItem_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

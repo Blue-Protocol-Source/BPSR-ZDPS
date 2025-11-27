@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2ludml0ZV9qb2luX3VuaW9uX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "byJyChZJbnZpdGVKb2luVW5pb25SZXF1ZXN0EhAKCEludml0ZUlkGAIgASgD",
-            "EhIKCmludml0ZU5hbWUYAyABKAkSEQoJdW5pb25OYW1lGAQgASgJEg8KB3Vu",
-            "aW9uSWQYBSABKAMSDgoGY2hhcmlkGAYgASgDYgZwcm90bzM="));
+            "byJ2ChZJbnZpdGVKb2luVW5pb25SZXF1ZXN0EhEKCWludml0ZV9pZBgCIAEo",
+            "AxITCgtpbnZpdGVfbmFtZRgDIAEoCRISCgp1bmlvbl9uYW1lGAQgASgJEhAK",
+            "CHVuaW9uX2lkGAUgASgDEg4KBmNoYXJpZBgGIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new InviteJoinUnionRequest(this);
     }
 
-    /// <summary>Field number for the "InviteId" field.</summary>
+    /// <summary>Field number for the "invite_id" field.</summary>
     public const int InviteIdFieldNumber = 2;
     private long inviteId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "inviteName" field.</summary>
+    /// <summary>Field number for the "invite_name" field.</summary>
     public const int InviteNameFieldNumber = 3;
     private string inviteName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unionName" field.</summary>
+    /// <summary>Field number for the "union_name" field.</summary>
     public const int UnionNameFieldNumber = 4;
     private string unionName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 5;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

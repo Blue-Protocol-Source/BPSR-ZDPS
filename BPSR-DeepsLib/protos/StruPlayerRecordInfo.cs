@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X3BsYXllcl9yZWNvcmRfaW5mby5wcm90bxIGenByb3RvGh9zdHJ1",
             "X3BsYXllcl9yZWNvcmRfc2luZ2xlLnByb3RvGhVzdHJ1X2RpcnR5X21hc2su",
-            "cHJvdG8iqAEKEFBsYXllclJlY29yZEluZm8SQgoNcGxheWVyUmVjb3JkcxgB",
-            "IAMoCzIrLnpwcm90by5QbGF5ZXJSZWNvcmRJbmZvLlBsYXllclJlY29yZHNF",
-            "bnRyeRpQChJQbGF5ZXJSZWNvcmRzRW50cnkSCwoDa2V5GAEgASgFEikKBXZh",
-            "bHVlGAIgASgLMhouenByb3RvLlBsYXllclJlY29yZFNpbmdsZToCOAFiBnBy",
-            "b3RvMw=="));
+            "cHJvdG8iqQEKEFBsYXllclJlY29yZEluZm8SQwoOcGxheWVyX3JlY29yZHMY",
+            "ASADKAsyKy56cHJvdG8uUGxheWVyUmVjb3JkSW5mby5QbGF5ZXJSZWNvcmRz",
+            "RW50cnkaUAoSUGxheWVyUmVjb3Jkc0VudHJ5EgsKA2tleRgBIAEoBRIpCgV2",
+            "YWx1ZRgCIAEoCzIaLnpwcm90by5QbGF5ZXJSZWNvcmRTaW5nbGU6AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPlayerRecordSingleReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new PlayerRecordInfo(this);
     }
 
-    /// <summary>Field number for the "playerRecords" field.</summary>
+    /// <summary>Field number for the "player_records" field.</summary>
     public const int PlayerRecordsFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.PlayerRecordSingle>.Codec _map_playerRecords_codec
         = new pbc::MapField<int, global::Zproto.PlayerRecordSingle>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.PlayerRecordSingle.Parser), 10);

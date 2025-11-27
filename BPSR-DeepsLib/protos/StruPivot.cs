@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChBzdHJ1X3Bpdm90LnByb3RvEgZ6cHJvdG8aFXN0cnVfcGl2b3RfaW5mby5w",
-            "cm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIuoBCgVQaXZvdBIpCgZwaXZv",
-            "dHMYASADKAsyGS56cHJvdG8uUGl2b3QuUGl2b3RzRW50cnkSLwoJbWFwUGl2",
-            "b3RzGAIgAygLMhwuenByb3RvLlBpdm90Lk1hcFBpdm90c0VudHJ5GkAKC1Bp",
-            "dm90c0VudHJ5EgsKA2tleRgBIAEoBRIgCgV2YWx1ZRgCIAEoCzIRLnpwcm90",
-            "by5QaXZvdEluZm86AjgBGkMKDk1hcFBpdm90c0VudHJ5EgsKA2tleRgBIAEo",
-            "BRIgCgV2YWx1ZRgCIAEoCzIRLnpwcm90by5QaXZvdEluZm86AjgBYgZwcm90",
-            "bzM="));
+            "cm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIusBCgVQaXZvdBIpCgZwaXZv",
+            "dHMYASADKAsyGS56cHJvdG8uUGl2b3QuUGl2b3RzRW50cnkSMAoKbWFwX3Bp",
+            "dm90cxgCIAMoCzIcLnpwcm90by5QaXZvdC5NYXBQaXZvdHNFbnRyeRpACgtQ",
+            "aXZvdHNFbnRyeRILCgNrZXkYASABKAUSIAoFdmFsdWUYAiABKAsyES56cHJv",
+            "dG8uUGl2b3RJbmZvOgI4ARpDCg5NYXBQaXZvdHNFbnRyeRILCgNrZXkYASAB",
+            "KAUSIAoFdmFsdWUYAiABKAsyES56cHJvdG8uUGl2b3RJbmZvOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPivotInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return pivots_; }
     }
 
-    /// <summary>Field number for the "mapPivots" field.</summary>
+    /// <summary>Field number for the "map_pivots" field.</summary>
     public const int MapPivotsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.PivotInfo>.Codec _map_mapPivots_codec
         = new pbc::MapField<int, global::Zproto.PivotInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.PivotInfo.Parser), 18);

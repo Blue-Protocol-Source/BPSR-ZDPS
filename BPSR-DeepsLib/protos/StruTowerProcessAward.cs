@@ -24,9 +24,9 @@ namespace Zproto {
     static StruTowerProcessAwardReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X3Rvd2VyX3Byb2Nlc3NfYXdhcmQucHJvdG8SBnpwcm90byI2ChFU",
-            "b3dlclByb2Nlc3NBd2FyZBIRCgljbGltYlVwSWQYASABKAUSDgoGb25lS2V5",
-            "GAIgASgIYgZwcm90bzM="));
+            "Ch5zdHJ1X3Rvd2VyX3Byb2Nlc3NfYXdhcmQucHJvdG8SBnpwcm90byI5ChFU",
+            "b3dlclByb2Nlc3NBd2FyZBITCgtjbGltYl91cF9pZBgBIAEoBRIPCgdvbmVf",
+            "a2V5GAIgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new TowerProcessAward(this);
     }
 
-    /// <summary>Field number for the "climbUpId" field.</summary>
+    /// <summary>Field number for the "climb_up_id" field.</summary>
     public const int ClimbUpIdFieldNumber = 1;
     private int climbUpId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "oneKey" field.</summary>
+    /// <summary>Field number for the "one_key" field.</summary>
     public const int OneKeyFieldNumber = 2;
     private bool oneKey_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

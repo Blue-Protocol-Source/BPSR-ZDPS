@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3VzZXJfZmlnaHRfYXR0ci5wcm90bxIGenByb3RvGhlzdHJ1X3Nr",
-            "aWxsX2NfZF9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ixAEK",
-            "DVVzZXJGaWdodEF0dHISDQoFY3VySHAYASABKAMSDQoFbWF4SHAYAiABKAMS",
-            "FAoMb3JpZ2luRW5lcmd5GAMgASgCEhMKC3Jlc291cmNlSWRzGAQgAygNEhEK",
-            "CXJlc291cmNlcxgFIAMoDRIOCgZpc0RlYWQYBiABKAUSEAoIZGVhZFRpbWUY",
-            "ByABKAMSEAoIcmV2aXZlSWQYCCABKAUSIwoGY2RJbmZvGAkgAygLMhMuenBy",
-            "b3RvLlNraWxsQ0RJbmZvYgZwcm90bzM="));
+            "aWxsX2NfZF9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8izAEK",
+            "DVVzZXJGaWdodEF0dHISDgoGY3VyX2hwGAEgASgDEg4KBm1heF9ocBgCIAEo",
+            "AxIVCg1vcmlnaW5fZW5lcmd5GAMgASgCEhQKDHJlc291cmNlX2lkcxgEIAMo",
+            "DRIRCglyZXNvdXJjZXMYBSADKA0SDwoHaXNfZGVhZBgGIAEoBRIRCglkZWFk",
+            "X3RpbWUYByABKAMSEQoJcmV2aXZlX2lkGAggASgFEiQKB2NkX2luZm8YCSAD",
+            "KAsyEy56cHJvdG8uU2tpbGxDREluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSkillCDInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +94,7 @@ namespace Zproto {
       return new UserFightAttr(this);
     }
 
-    /// <summary>Field number for the "curHp" field.</summary>
+    /// <summary>Field number for the "cur_hp" field.</summary>
     public const int CurHpFieldNumber = 1;
     private long curHp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -106,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxHp" field.</summary>
+    /// <summary>Field number for the "max_hp" field.</summary>
     public const int MaxHpFieldNumber = 2;
     private long maxHp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -118,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "originEnergy" field.</summary>
+    /// <summary>Field number for the "origin_energy" field.</summary>
     public const int OriginEnergyFieldNumber = 3;
     private float originEnergy_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -130,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "resourceIds" field.</summary>
+    /// <summary>Field number for the "resource_ids" field.</summary>
     public const int ResourceIdsFieldNumber = 4;
     private static readonly pb::FieldCodec<uint> _repeated_resourceIds_codec
         = pb::FieldCodec.ForUInt32(34);
@@ -152,7 +152,7 @@ namespace Zproto {
       get { return resources_; }
     }
 
-    /// <summary>Field number for the "isDead" field.</summary>
+    /// <summary>Field number for the "is_dead" field.</summary>
     public const int IsDeadFieldNumber = 6;
     private int isDead_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -164,7 +164,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "deadTime" field.</summary>
+    /// <summary>Field number for the "dead_time" field.</summary>
     public const int DeadTimeFieldNumber = 7;
     private long deadTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -176,7 +176,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "reviveId" field.</summary>
+    /// <summary>Field number for the "revive_id" field.</summary>
     public const int ReviveIdFieldNumber = 8;
     private int reviveId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -188,7 +188,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cdInfo" field.</summary>
+    /// <summary>Field number for the "cd_info" field.</summary>
     public const int CdInfoFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Zproto.SkillCDInfo> _repeated_cdInfo_codec
         = pb::FieldCodec.ForMessage(74, global::Zproto.SkillCDInfo.Parser);

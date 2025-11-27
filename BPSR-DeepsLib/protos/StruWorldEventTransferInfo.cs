@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X3dvcmxkX2V2ZW50X3RyYW5zZmVyX2luZm8ucHJvdG8SBnpwcm90",
-            "byIpChZXb3JsZEV2ZW50VHJhbnNmZXJJbmZvEg8KB2V2ZW50SWQYASABKAVi",
-            "BnByb3RvMw=="));
+            "byIqChZXb3JsZEV2ZW50VHJhbnNmZXJJbmZvEhAKCGV2ZW50X2lkGAEgASgF",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new WorldEventTransferInfo(this);
     }
 
-    /// <summary>Field number for the "eventId" field.</summary>
+    /// <summary>Field number for the "event_id" field.</summary>
     public const int EventIdFieldNumber = 1;
     private int eventId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

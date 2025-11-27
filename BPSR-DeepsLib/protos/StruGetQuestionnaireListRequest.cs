@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2dldF9xdWVzdGlvbm5haXJlX2xpc3RfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvIlIKG0dldFF1ZXN0aW9ubmFpcmVMaXN0UmVxdWVzdBINCgVsZXZl",
-            "bBgBIAEoBRIQCghsb2dpbkRheRgCIAEoBRISCgpsYW5ndWFnZUlkGAMgASgF",
-            "YgZwcm90bzM="));
+            "enByb3RvIlQKG0dldFF1ZXN0aW9ubmFpcmVMaXN0UmVxdWVzdBINCgVsZXZl",
+            "bBgBIAEoBRIRCglsb2dpbl9kYXkYAiABKAUSEwoLbGFuZ3VhZ2VfaWQYAyAB",
+            "KAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "loginDay" field.</summary>
+    /// <summary>Field number for the "login_day" field.</summary>
     public const int LoginDayFieldNumber = 2;
     private int loginDay_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "languageId" field.</summary>
+    /// <summary>Field number for the "language_id" field.</summary>
     public const int LanguageIdFieldNumber = 3;
     private int languageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

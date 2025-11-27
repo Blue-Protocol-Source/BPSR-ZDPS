@@ -26,15 +26,15 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X3BlcnNvbmFsX3dvcmxkX2Jvc3NfaW5mby5wcm90bxIGenByb3Rv",
             "GhxzdHJ1X2NvbW1vbl9hd2FyZF9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21h",
-            "c2sucHJvdG8i5wIKFVBlcnNvbmFsV29ybGRCb3NzSW5mbxINCgVzY29yZRgB",
-            "IAEoBRJJCg5zY29yZUF3YXJkSW5mbxgCIAMoCzIxLnpwcm90by5QZXJzb25h",
-            "bFdvcmxkQm9zc0luZm8uU2NvcmVBd2FyZEluZm9FbnRyeRJHCg1ib3NzQXdh",
-            "cmRJbmZvGAMgAygLMjAuenByb3RvLlBlcnNvbmFsV29ybGRCb3NzSW5mby5C",
-            "b3NzQXdhcmRJbmZvRW50cnkSDAoEdXVpZBgEIAEoBRpOChNTY29yZUF3YXJk",
-            "SW5mb0VudHJ5EgsKA2tleRgBIAEoBRImCgV2YWx1ZRgCIAEoCzIXLnpwcm90",
-            "by5Db21tb25Bd2FyZEluZm86AjgBGk0KEkJvc3NBd2FyZEluZm9FbnRyeRIL",
-            "CgNrZXkYASABKAUSJgoFdmFsdWUYAiABKAsyFy56cHJvdG8uQ29tbW9uQXdh",
-            "cmRJbmZvOgI4AWIGcHJvdG8z"));
+            "c2sucHJvdG8i6wIKFVBlcnNvbmFsV29ybGRCb3NzSW5mbxINCgVzY29yZRgB",
+            "IAEoBRJLChBzY29yZV9hd2FyZF9pbmZvGAIgAygLMjEuenByb3RvLlBlcnNv",
+            "bmFsV29ybGRCb3NzSW5mby5TY29yZUF3YXJkSW5mb0VudHJ5EkkKD2Jvc3Nf",
+            "YXdhcmRfaW5mbxgDIAMoCzIwLnpwcm90by5QZXJzb25hbFdvcmxkQm9zc0lu",
+            "Zm8uQm9zc0F3YXJkSW5mb0VudHJ5EgwKBHV1aWQYBCABKAUaTgoTU2NvcmVB",
+            "d2FyZEluZm9FbnRyeRILCgNrZXkYASABKAUSJgoFdmFsdWUYAiABKAsyFy56",
+            "cHJvdG8uQ29tbW9uQXdhcmRJbmZvOgI4ARpNChJCb3NzQXdhcmRJbmZvRW50",
+            "cnkSCwoDa2V5GAEgASgFEiYKBXZhbHVlGAIgASgLMhcuenByb3RvLkNvbW1v",
+            "bkF3YXJkSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommonAwardInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -105,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scoreAwardInfo" field.</summary>
+    /// <summary>Field number for the "score_award_info" field.</summary>
     public const int ScoreAwardInfoFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.CommonAwardInfo>.Codec _map_scoreAwardInfo_codec
         = new pbc::MapField<int, global::Zproto.CommonAwardInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CommonAwardInfo.Parser), 18);
@@ -116,7 +116,7 @@ namespace Zproto {
       get { return scoreAwardInfo_; }
     }
 
-    /// <summary>Field number for the "bossAwardInfo" field.</summary>
+    /// <summary>Field number for the "boss_award_info" field.</summary>
     public const int BossAwardInfoFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.CommonAwardInfo>.Codec _map_bossAwardInfo_codec
         = new pbc::MapField<int, global::Zproto.CommonAwardInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CommonAwardInfo.Parser), 26);

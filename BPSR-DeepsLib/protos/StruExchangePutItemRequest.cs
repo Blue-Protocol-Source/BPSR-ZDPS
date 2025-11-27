@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2V4Y2hhbmdlX3B1dF9pdGVtX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "byJTChZFeGNoYW5nZVB1dEl0ZW1SZXF1ZXN0EgwKBHV1aWQYAiABKAMSCwoD",
-            "bnVtGAMgASgFEgwKBHN0ZXAYBCABKAUSEAoIaXNQdWJsaWMYBSABKAhiBnBy",
-            "b3RvMw=="));
+            "byJUChZFeGNoYW5nZVB1dEl0ZW1SZXF1ZXN0EgwKBHV1aWQYAiABKAMSCwoD",
+            "bnVtGAMgASgFEgwKBHN0ZXAYBCABKAUSEQoJaXNfcHVibGljGAUgASgIYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isPublic" field.</summary>
+    /// <summary>Field number for the "is_public" field.</summary>
     public const int IsPublicFieldNumber = 5;
     private bool isPublic_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

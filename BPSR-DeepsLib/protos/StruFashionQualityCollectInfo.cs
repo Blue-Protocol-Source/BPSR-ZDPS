@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X2Zhc2hpb25fcXVhbGl0eV9jb2xsZWN0X2luZm8ucHJvdG8SBnpw",
-            "cm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIpsBChlGYXNoaW9uUXVhbGl0",
-            "eUNvbGxlY3RJbmZvEkkKDHF1YWxpdHlDb3VudBgBIAMoCzIzLnpwcm90by5G",
-            "YXNoaW9uUXVhbGl0eUNvbGxlY3RJbmZvLlF1YWxpdHlDb3VudEVudHJ5GjMK",
-            "EVF1YWxpdHlDb3VudEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEo",
-            "BToCOAFiBnByb3RvMw=="));
+            "cm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIpwBChlGYXNoaW9uUXVhbGl0",
+            "eUNvbGxlY3RJbmZvEkoKDXF1YWxpdHlfY291bnQYASADKAsyMy56cHJvdG8u",
+            "RmFzaGlvblF1YWxpdHlDb2xsZWN0SW5mby5RdWFsaXR5Q291bnRFbnRyeRoz",
+            "ChFRdWFsaXR5Q291bnRFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiAB",
+            "KAU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new FashionQualityCollectInfo(this);
     }
 
-    /// <summary>Field number for the "qualityCount" field.</summary>
+    /// <summary>Field number for the "quality_count" field.</summary>
     public const int QualityCountFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_qualityCount_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);

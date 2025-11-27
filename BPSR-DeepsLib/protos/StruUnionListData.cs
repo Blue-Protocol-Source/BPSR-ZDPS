@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "ChpzdHJ1X3VuaW9uX2xpc3RfZGF0YS5wcm90bxIGenByb3RvGhpzdHJ1X3Vu",
             "aW9uX2Jhc2VfZGF0YS5wcm90bxocc3RydV91c2VyX3N1bW1hcnlfZGF0YS5w",
-            "cm90byKJAQoNVW5pb25MaXN0RGF0YRInCghiYXNlSW5mbxgBIAEoCzIVLnpw",
-            "cm90by5VbmlvbkJhc2VEYXRhEg0KBWlzUmVxGAIgASgIEi4KDXByZXNpZGVu",
-            "dEluZm8YAyABKAsyFy56cHJvdG8uVXNlclN1bW1hcnlEYXRhEhAKCGF1dG9Q",
-            "YXNzGAQgASgIYgZwcm90bzM="));
+            "cm90byKNAQoNVW5pb25MaXN0RGF0YRIoCgliYXNlX2luZm8YASABKAsyFS56",
+            "cHJvdG8uVW5pb25CYXNlRGF0YRIOCgZpc19yZXEYAiABKAgSLwoOcHJlc2lk",
+            "ZW50X2luZm8YAyABKAsyFy56cHJvdG8uVXNlclN1bW1hcnlEYXRhEhEKCWF1",
+            "dG9fcGFzcxgEIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUnionBaseDataReflection.Descriptor, global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new UnionListData(this);
     }
 
-    /// <summary>Field number for the "baseInfo" field.</summary>
+    /// <summary>Field number for the "base_info" field.</summary>
     public const int BaseInfoFieldNumber = 1;
     private global::Zproto.UnionBaseData baseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isReq" field.</summary>
+    /// <summary>Field number for the "is_req" field.</summary>
     public const int IsReqFieldNumber = 2;
     private bool isReq_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "presidentInfo" field.</summary>
+    /// <summary>Field number for the "president_info" field.</summary>
     public const int PresidentInfoFieldNumber = 3;
     private global::Zproto.UserSummaryData presidentInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "autoPass" field.</summary>
+    /// <summary>Field number for the "auto_pass" field.</summary>
     public const int AutoPassFieldNumber = 4;
     private bool autoPass_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

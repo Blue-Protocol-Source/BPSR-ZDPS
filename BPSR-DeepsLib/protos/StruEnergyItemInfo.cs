@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X2VuZXJneV9pdGVtX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvIloKDkVuZXJneUl0ZW1JbmZvEg8KB3F1ZXVlSWQY",
-            "ASABKA0SEAoIY29sdW1uSWQYAiABKA0SEwoLcmVmaW5lU3RhdGUYAyABKA0S",
-            "EAoIZ2FpblRpbWUYBCABKANiBnByb3RvMw=="));
+            "aXJ0eV9tYXNrLnByb3RvIl4KDkVuZXJneUl0ZW1JbmZvEhAKCHF1ZXVlX2lk",
+            "GAEgASgNEhEKCWNvbHVtbl9pZBgCIAEoDRIUCgxyZWZpbmVfc3RhdGUYAyAB",
+            "KA0SEQoJZ2Fpbl90aW1lGAQgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new EnergyItemInfo(this);
     }
 
-    /// <summary>Field number for the "queueId" field.</summary>
+    /// <summary>Field number for the "queue_id" field.</summary>
     public const int QueueIdFieldNumber = 1;
     private uint queueId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "columnId" field.</summary>
+    /// <summary>Field number for the "column_id" field.</summary>
     public const int ColumnIdFieldNumber = 2;
     private uint columnId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refineState" field.</summary>
+    /// <summary>Field number for the "refine_state" field.</summary>
     public const int RefineStateFieldNumber = 3;
     private uint refineState_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "gainTime" field.</summary>
+    /// <summary>Field number for the "gain_time" field.</summary>
     public const int GainTimeFieldNumber = 4;
     private long gainTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

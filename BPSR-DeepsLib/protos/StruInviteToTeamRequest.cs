@@ -24,9 +24,9 @@ namespace Zproto {
     static StruInviteToTeamRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2ludml0ZV90b190ZWFtX3JlcXVlc3QucHJvdG8SBnpwcm90byIs",
-            "ChNJbnZpdGVUb1RlYW1SZXF1ZXN0EhUKDWludml0ZWVDaGFySWQYAiABKANi",
-            "BnByb3RvMw=="));
+            "CiFzdHJ1X2ludml0ZV90b190ZWFtX3JlcXVlc3QucHJvdG8SBnpwcm90byIu",
+            "ChNJbnZpdGVUb1RlYW1SZXF1ZXN0EhcKD2ludml0ZWVfY2hhcl9pZBgCIAEo",
+            "A2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new InviteToTeamRequest(this);
     }
 
-    /// <summary>Field number for the "inviteeCharId" field.</summary>
+    /// <summary>Field number for the "invitee_char_id" field.</summary>
     public const int InviteeCharIdFieldNumber = 2;
     private long inviteeCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

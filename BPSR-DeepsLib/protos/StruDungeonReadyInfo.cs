@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X2R1bmdlb25fcmVhZHlfaW5mby5wcm90bxIGenByb3RvGiRzdHJ1",
             "X2R1bmdlb25fcmVhZHlfYnVmZmVyX2luZm8ucHJvdG8aInN0cnVfZHVuZ2Vv",
-            "bl9yZWFkeV9pdGVtX2luZm8ucHJvdG8isgEKEER1bmdlb25SZWFkeUluZm8S",
-            "DwoHaXNSZWFkeRgBIAEoCBItCgVidWZmcxgCIAMoCzIeLnpwcm90by5EdW5n",
-            "ZW9uUmVhZHlCdWZmZXJJbmZvEjEKC21lZGljYW1lbnRzGAMgAygLMhwuenBy",
-            "b3RvLkR1bmdlb25SZWFkeUl0ZW1JbmZvEisKBWl0ZW1zGAQgAygLMhwuenBy",
-            "b3RvLkR1bmdlb25SZWFkeUl0ZW1JbmZvYgZwcm90bzM="));
+            "bl9yZWFkeV9pdGVtX2luZm8ucHJvdG8iswEKEER1bmdlb25SZWFkeUluZm8S",
+            "EAoIaXNfcmVhZHkYASABKAgSLQoFYnVmZnMYAiADKAsyHi56cHJvdG8uRHVu",
+            "Z2VvblJlYWR5QnVmZmVySW5mbxIxCgttZWRpY2FtZW50cxgDIAMoCzIcLnpw",
+            "cm90by5EdW5nZW9uUmVhZHlJdGVtSW5mbxIrCgVpdGVtcxgEIAMoCzIcLnpw",
+            "cm90by5EdW5nZW9uUmVhZHlJdGVtSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonReadyBufferInfoReflection.Descriptor, global::Zproto.StruDungeonReadyItemInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new DungeonReadyInfo(this);
     }
 
-    /// <summary>Field number for the "isReady" field.</summary>
+    /// <summary>Field number for the "is_ready" field.</summary>
     public const int IsReadyFieldNumber = 1;
     private bool isReady_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

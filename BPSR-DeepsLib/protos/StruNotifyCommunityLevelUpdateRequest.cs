@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjBzdHJ1X25vdGlmeV9jb21tdW5pdHlfbGV2ZWxfdXBkYXRlX3JlcXVlc3Qu",
-            "cHJvdG8SBnpwcm90byKRAQohTm90aWZ5Q29tbXVuaXR5TGV2ZWxVcGRhdGVS",
-            "ZXF1ZXN0EhAKCG5ld0xldmVsGAEgASgFEg4KBm5ld0V4cBgCIAEoAxIQCghv",
-            "bGRMZXZlbBgDIAEoBRIOCgZvbGRFeHAYBCABKAMSEwoLb2xkUmVzb3VyY2UY",
-            "BSABKAMSEwoLbmV3UmVzb3VyY2UYBiABKANiBnByb3RvMw=="));
+            "cHJvdG8SBnpwcm90byKXAQohTm90aWZ5Q29tbXVuaXR5TGV2ZWxVcGRhdGVS",
+            "ZXF1ZXN0EhEKCW5ld19sZXZlbBgBIAEoBRIPCgduZXdfZXhwGAIgASgDEhEK",
+            "CW9sZF9sZXZlbBgDIAEoBRIPCgdvbGRfZXhwGAQgASgDEhQKDG9sZF9yZXNv",
+            "dXJjZRgFIAEoAxIUCgxuZXdfcmVzb3VyY2UYBiABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new NotifyCommunityLevelUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "newLevel" field.</summary>
+    /// <summary>Field number for the "new_level" field.</summary>
     public const int NewLevelFieldNumber = 1;
     private int newLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "newExp" field.</summary>
+    /// <summary>Field number for the "new_exp" field.</summary>
     public const int NewExpFieldNumber = 2;
     private long newExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "oldLevel" field.</summary>
+    /// <summary>Field number for the "old_level" field.</summary>
     public const int OldLevelFieldNumber = 3;
     private int oldLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "oldExp" field.</summary>
+    /// <summary>Field number for the "old_exp" field.</summary>
     public const int OldExpFieldNumber = 4;
     private long oldExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "oldResource" field.</summary>
+    /// <summary>Field number for the "old_resource" field.</summary>
     public const int OldResourceFieldNumber = 5;
     private long oldResource_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,7 +149,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "newResource" field.</summary>
+    /// <summary>Field number for the "new_resource" field.</summary>
     public const int NewResourceFieldNumber = 6;
     private long newResource_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

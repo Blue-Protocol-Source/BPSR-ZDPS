@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2FwcGx5X2pvaW5fdGVhbV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "JgoUQXBwbHlKb2luVGVhbVJlcXVlc3QSDgoGdGVhbUlkGAIgAygDYgZwcm90",
-            "bzM="));
+            "JwoUQXBwbHlKb2luVGVhbVJlcXVlc3QSDwoHdGVhbV9pZBgCIAMoA2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ApplyJoinTeamRequest(this);
     }
 
-    /// <summary>Field number for the "teamId" field.</summary>
+    /// <summary>Field number for the "team_id" field.</summary>
     public const int TeamIdFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_teamId_codec
         = pb::FieldCodec.ForInt64(18);

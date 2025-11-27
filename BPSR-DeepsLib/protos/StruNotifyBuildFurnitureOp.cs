@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X25vdGlmeV9idWlsZF9mdXJuaXR1cmVfb3AucHJvdG8SBnpwcm90",
             "bxoiZW51bV9idWlsZF9mdXJuaXR1cmVfb3BfdHlwZS5wcm90bxopc3RydV9j",
-            "b21tdW5pdHlfYnVpbGRfZnVybml0dXJlX2luZm8ucHJvdG8ifgoWTm90aWZ5",
-            "QnVpbGRGdXJuaXR1cmVPcBIsCgZvcFR5cGUYASABKA4yHC56cHJvdG8uQnVp",
-            "bGRGdXJuaXR1cmVPcFR5cGUSNgoJZnVybml0dXJlGAIgASgLMiMuenByb3Rv",
-            "LkNvbW11bml0eUJ1aWxkRnVybml0dXJlSW5mb2IGcHJvdG8z"));
+            "b21tdW5pdHlfYnVpbGRfZnVybml0dXJlX2luZm8ucHJvdG8ifwoWTm90aWZ5",
+            "QnVpbGRGdXJuaXR1cmVPcBItCgdvcF90eXBlGAEgASgOMhwuenByb3RvLkJ1",
+            "aWxkRnVybml0dXJlT3BUeXBlEjYKCWZ1cm5pdHVyZRgCIAEoCzIjLnpwcm90",
+            "by5Db21tdW5pdHlCdWlsZEZ1cm5pdHVyZUluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumBuildFurnitureOpTypeReflection.Descriptor, global::Zproto.StruCommunityBuildFurnitureInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new NotifyBuildFurnitureOp(this);
     }
 
-    /// <summary>Field number for the "opType" field.</summary>
+    /// <summary>Field number for the "op_type" field.</summary>
     public const int OpTypeFieldNumber = 1;
     private global::Zproto.BuildFurnitureOpType opType_ = global::Zproto.BuildFurnitureOpType.BuildFurnitureOpAdd;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

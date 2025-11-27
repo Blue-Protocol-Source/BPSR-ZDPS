@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "Ch9zdHJ1X2dldF9hbGxfYWxidW1zX3JlcGx5LnByb3RvEgZ6cHJvdG8aFXN0",
             "cnVfYWxidW1fc2hvdy5wcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8i",
-            "bgoRR2V0QWxsQWxidW1zUmVwbHkSDgoGY2hhcklkGAMgASgDEiQKCWFsbEFs",
-            "YnVtcxgEIAMoCzIRLnpwcm90by5BbGJ1bVNob3cSIwoHZXJyQ29kZRgFIAEo",
-            "DjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "cQoRR2V0QWxsQWxidW1zUmVwbHkSDwoHY2hhcl9pZBgDIAEoAxIlCgphbGxf",
+            "YWxidW1zGAQgAygLMhEuenByb3RvLkFsYnVtU2hvdxIkCghlcnJfY29kZRgF",
+            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAlbumShowReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new GetAllAlbumsReply(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 3;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "allAlbums" field.</summary>
+    /// <summary>Field number for the "all_albums" field.</summary>
     public const int AllAlbumsFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Zproto.AlbumShow> _repeated_allAlbums_codec
         = pb::FieldCodec.ForMessage(34, global::Zproto.AlbumShow.Parser);
@@ -109,7 +109,7 @@ namespace Zproto {
       get { return allAlbums_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

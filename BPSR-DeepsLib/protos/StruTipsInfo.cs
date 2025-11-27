@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X3RpcHNfaW5mby5wcm90bxIGenByb3RvGhdlbnVtX2VfZXJyb3Jf",
-            "Y29kZS5wcm90byJVCghUaXBzSW5mbxIQCgh0aXBzVHlwZRgBIAEoBRIjCgdl",
-            "cnJDb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGUSEgoKdGlwc1BhcmFt",
-            "cxgDIAEoDGIGcHJvdG8z"));
+            "Y29kZS5wcm90byJYCghUaXBzSW5mbxIRCgl0aXBzX3R5cGUYASABKAUSJAoI",
+            "ZXJyX2NvZGUYAiABKA4yEi56cHJvdG8uRUVycm9yQ29kZRITCgt0aXBzX3Bh",
+            "cmFtcxgDIAEoDGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new TipsInfo(this);
     }
 
-    /// <summary>Field number for the "tipsType" field.</summary>
+    /// <summary>Field number for the "tips_type" field.</summary>
     public const int TipsTypeFieldNumber = 1;
     private int tipsType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "tipsParams" field.</summary>
+    /// <summary>Field number for the "tips_params" field.</summary>
     public const int TipsParamsFieldNumber = 3;
     private pb::ByteString tipsParams_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

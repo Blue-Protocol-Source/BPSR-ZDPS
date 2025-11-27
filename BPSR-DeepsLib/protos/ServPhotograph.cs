@@ -50,57 +50,57 @@ namespace Zproto {
             "LnByb3RvGiZzdHJ1X3NldF9waG90b19zY2hlbWVfbmFtZV9yZXBseS5wcm90",
             "bxooc3RydV9zZXRfcGhvdG9fc2NoZW1lX25hbWVfcmVxdWVzdC5wcm90bxoo",
             "c3RydV91cGxvYWRfcGhvdG9fc3VjY2Vzc2Z1bF9yZXBseS5wcm90bxoqc3Ry",
-            "dV91cGxvYWRfcGhvdG9fc3VjY2Vzc2Z1bF9yZXF1ZXN0LnByb3RvIqQRCgpQ",
-            "aG90b2dyYXBoGkMKD0dldFBob3RvVXBUb2tlbhIwCgh2UmVxdWVzdBgBIAEo",
-            "CzIeLnpwcm90by5HZXRQaG90b1VwVG9rZW5SZXF1ZXN0GjgKD0RlbGV0ZVBo",
-            "b3RvX1JldBIlCgNyZXQYASABKAsyGC56cHJvdG8uRGVsZXRlUGhvdG9SZXBs",
-            "eRo7CgtEZWxldGVQaG90bxIsCgh2UmVxdWVzdBgBIAEoCzIaLnpwcm90by5E",
-            "ZWxldGVQaG90b1JlcXVlc3QaOgoQR2V0QWxsQWxidW1zX1JldBImCgNyZXQY",
-            "ASABKAsyGS56cHJvdG8uR2V0QWxsQWxidW1zUmVwbHkaPQoMR2V0QWxsQWxi",
-            "dW1zEi0KCHZSZXF1ZXN0GAEgASgLMhsuenByb3RvLkdldEFsbEFsYnVtc1Jl",
-            "cXVlc3QaPgoSR2V0QWxidW1QaG90b3NfUmV0EigKA3JldBgBIAEoCzIbLnpw",
-            "cm90by5HZXRBbGJ1bVBob3Rvc1JlcGx5GkEKDkdldEFsYnVtUGhvdG9zEi8K",
-            "CHZSZXF1ZXN0GAEgASgLMh0uenByb3RvLkdldEFsYnVtUGhvdG9zUmVxdWVz",
-            "dBo4Cg9DcmVhdGVBbGJ1bV9SZXQSJQoDcmV0GAEgASgLMhguenByb3RvLkNy",
-            "ZWF0ZUFsYnVtUmVwbHkaOwoLQ3JlYXRlQWxidW0SLAoIdlJlcXVlc3QYASAB",
-            "KAsyGi56cHJvdG8uQ3JlYXRlQWxidW1SZXF1ZXN0GjgKD0RlbGV0ZUFsYnVt",
-            "X1JldBIlCgNyZXQYASABKAsyGC56cHJvdG8uRGVsZXRlQWxidW1SZXBseRo7",
-            "CgtEZWxldGVBbGJ1bRIsCgh2UmVxdWVzdBgBIAEoCzIaLnpwcm90by5EZWxl",
-            "dGVBbGJ1bVJlcXVlc3QaPgoSRWRpdEFsYnVtUmlnaHRfUmV0EigKA3JldBgB",
-            "IAEoCzIbLnpwcm90by5FZGl0QWxidW1SaWdodFJlcGx5GkEKDkVkaXRBbGJ1",
-            "bVJpZ2h0Ei8KCHZSZXF1ZXN0GAEgASgLMh0uenByb3RvLkVkaXRBbGJ1bVJp",
-            "Z2h0UmVxdWVzdBo8ChFFZGl0QWxidW1OYW1lX1JldBInCgNyZXQYASABKAsy",
-            "Gi56cHJvdG8uRWRpdEFsYnVtTmFtZVJlcGx5Gj8KDUVkaXRBbGJ1bU5hbWUS",
-            "LgoIdlJlcXVlc3QYASABKAsyHC56cHJvdG8uRWRpdEFsYnVtTmFtZVJlcXVl",
-            "c3QaPAoRU2V0QWxidW1Db3Zlcl9SZXQSJwoDcmV0GAEgASgLMhouenByb3Rv",
-            "LlNldEFsYnVtQ292ZXJSZXBseRo/Cg1TZXRBbGJ1bUNvdmVyEi4KCHZSZXF1",
-            "ZXN0GAEgASgLMhwuenByb3RvLlNldEFsYnVtQ292ZXJSZXF1ZXN0GkIKFE1v",
-            "dmVQaG90b1RvQWxidW1fUmV0EioKA3JldBgBIAEoCzIdLnpwcm90by5Nb3Zl",
-            "UGhvdG9Ub0FsYnVtUmVwbHkaRQoQTW92ZVBob3RvVG9BbGJ1bRIxCgh2UmVx",
-            "dWVzdBgBIAEoCzIfLnpwcm90by5Nb3ZlUGhvdG9Ub0FsYnVtUmVxdWVzdBpB",
-            "Cg5HZXRBdmF0YXJUb2tlbhIvCgh2UmVxdWVzdBgBIAEoCzIdLnpwcm90by5H",
-            "ZXRBdmF0YXJUb2tlblJlcXVlc3QaMgoMR2V0UGhvdG9fUmV0EiIKA3JldBgB",
-            "IAEoCzIVLnpwcm90by5HZXRQaG90b1JlcGx5GjUKCEdldFBob3RvEikKCHZS",
-            "ZXF1ZXN0GAEgASgLMhcuenByb3RvLkdldFBob3RvUmVxdWVzdBpMChlVcGxv",
-            "YWRQaG90b1N1Y2Nlc3NmdWxfUmV0Ei8KA3JldBgBIAEoCzIiLnpwcm90by5V",
-            "cGxvYWRQaG90b1N1Y2Nlc3NmdWxSZXBseRpPChVVcGxvYWRQaG90b1N1Y2Nl",
-            "c3NmdWwSNgoIdlJlcXVlc3QYASABKAsyJC56cHJvdG8uVXBsb2FkUGhvdG9T",
-            "dWNjZXNzZnVsUmVxdWVzdBpIChdHZXRSZXZpZXdBdmF0YXJJbmZvX1JldBIt",
-            "CgNyZXQYASABKAsyIC56cHJvdG8uR2V0UmV2aWV3QXZhdGFySW5mb1JlcGx5",
-            "GksKE0dldFJldmlld0F2YXRhckluZm8SNAoIdlJlcXVlc3QYASABKAsyIi56",
-            "cHJvdG8uR2V0UmV2aWV3QXZhdGFySW5mb1JlcXVlc3QaQgoUR2V0RnVuY1Bo",
-            "b3RvTGlzdF9SZXQSKgoDcmV0GAEgASgLMh0uenByb3RvLkdldEZ1bmNQaG90",
-            "b0xpc3RSZXBseRpFChBHZXRGdW5jUGhvdG9MaXN0EjEKCHZSZXF1ZXN0GAEg",
-            "ASgLMh8uenByb3RvLkdldEZ1bmNQaG90b0xpc3RSZXF1ZXN0GjMKEERlbEZ1",
-            "bmNQaG90b19SZXQSHwoDcmV0GAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUa",
-            "PQoMRGVsRnVuY1Bob3RvEi0KCHZSZXF1ZXN0GAEgASgLMhsuenByb3RvLkRl",
-            "bEZ1bmNQaG90b1JlcXVlc3QaRgoWU2V0UGhvdG9TY2hlbWVOYW1lX1JldBIs",
-            "CgNyZXQYASABKAsyHy56cHJvdG8uU2V0UGhvdG9TY2hlbWVOYW1lUmVwbHka",
-            "SQoSU2V0UGhvdG9TY2hlbWVOYW1lEjMKCHZSZXF1ZXN0GAEgASgLMiEuenBy",
-            "b3RvLlNldFBob3RvU2NoZW1lTmFtZVJlcXVlc3QaMQoOQ2hlY2tJbWFnZV9S",
-            "ZXQSHwoDcmV0GAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUaOQoKQ2hlY2tJ",
-            "bWFnZRIrCgh2UmVxdWVzdBgBIAEoCzIZLnpwcm90by5DaGVja0ltYWdlUmVx",
-            "dWVzdGIGcHJvdG8z"));
+            "dV91cGxvYWRfcGhvdG9fc3VjY2Vzc2Z1bF9yZXF1ZXN0LnByb3RvIrYRCgpQ",
+            "aG90b2dyYXBoGkQKD0dldFBob3RvVXBUb2tlbhIxCgl2X3JlcXVlc3QYASAB",
+            "KAsyHi56cHJvdG8uR2V0UGhvdG9VcFRva2VuUmVxdWVzdBo4Cg9EZWxldGVQ",
+            "aG90b19SZXQSJQoDcmV0GAEgASgLMhguenByb3RvLkRlbGV0ZVBob3RvUmVw",
+            "bHkaPAoLRGVsZXRlUGhvdG8SLQoJdl9yZXF1ZXN0GAEgASgLMhouenByb3Rv",
+            "LkRlbGV0ZVBob3RvUmVxdWVzdBo6ChBHZXRBbGxBbGJ1bXNfUmV0EiYKA3Jl",
+            "dBgBIAEoCzIZLnpwcm90by5HZXRBbGxBbGJ1bXNSZXBseRo+CgxHZXRBbGxB",
+            "bGJ1bXMSLgoJdl9yZXF1ZXN0GAEgASgLMhsuenByb3RvLkdldEFsbEFsYnVt",
+            "c1JlcXVlc3QaPgoSR2V0QWxidW1QaG90b3NfUmV0EigKA3JldBgBIAEoCzIb",
+            "Lnpwcm90by5HZXRBbGJ1bVBob3Rvc1JlcGx5GkIKDkdldEFsYnVtUGhvdG9z",
+            "EjAKCXZfcmVxdWVzdBgBIAEoCzIdLnpwcm90by5HZXRBbGJ1bVBob3Rvc1Jl",
+            "cXVlc3QaOAoPQ3JlYXRlQWxidW1fUmV0EiUKA3JldBgBIAEoCzIYLnpwcm90",
+            "by5DcmVhdGVBbGJ1bVJlcGx5GjwKC0NyZWF0ZUFsYnVtEi0KCXZfcmVxdWVz",
+            "dBgBIAEoCzIaLnpwcm90by5DcmVhdGVBbGJ1bVJlcXVlc3QaOAoPRGVsZXRl",
+            "QWxidW1fUmV0EiUKA3JldBgBIAEoCzIYLnpwcm90by5EZWxldGVBbGJ1bVJl",
+            "cGx5GjwKC0RlbGV0ZUFsYnVtEi0KCXZfcmVxdWVzdBgBIAEoCzIaLnpwcm90",
+            "by5EZWxldGVBbGJ1bVJlcXVlc3QaPgoSRWRpdEFsYnVtUmlnaHRfUmV0EigK",
+            "A3JldBgBIAEoCzIbLnpwcm90by5FZGl0QWxidW1SaWdodFJlcGx5GkIKDkVk",
+            "aXRBbGJ1bVJpZ2h0EjAKCXZfcmVxdWVzdBgBIAEoCzIdLnpwcm90by5FZGl0",
+            "QWxidW1SaWdodFJlcXVlc3QaPAoRRWRpdEFsYnVtTmFtZV9SZXQSJwoDcmV0",
+            "GAEgASgLMhouenByb3RvLkVkaXRBbGJ1bU5hbWVSZXBseRpACg1FZGl0QWxi",
+            "dW1OYW1lEi8KCXZfcmVxdWVzdBgBIAEoCzIcLnpwcm90by5FZGl0QWxidW1O",
+            "YW1lUmVxdWVzdBo8ChFTZXRBbGJ1bUNvdmVyX1JldBInCgNyZXQYASABKAsy",
+            "Gi56cHJvdG8uU2V0QWxidW1Db3ZlclJlcGx5GkAKDVNldEFsYnVtQ292ZXIS",
+            "LwoJdl9yZXF1ZXN0GAEgASgLMhwuenByb3RvLlNldEFsYnVtQ292ZXJSZXF1",
+            "ZXN0GkIKFE1vdmVQaG90b1RvQWxidW1fUmV0EioKA3JldBgBIAEoCzIdLnpw",
+            "cm90by5Nb3ZlUGhvdG9Ub0FsYnVtUmVwbHkaRgoQTW92ZVBob3RvVG9BbGJ1",
+            "bRIyCgl2X3JlcXVlc3QYASABKAsyHy56cHJvdG8uTW92ZVBob3RvVG9BbGJ1",
+            "bVJlcXVlc3QaQgoOR2V0QXZhdGFyVG9rZW4SMAoJdl9yZXF1ZXN0GAEgASgL",
+            "Mh0uenByb3RvLkdldEF2YXRhclRva2VuUmVxdWVzdBoyCgxHZXRQaG90b19S",
+            "ZXQSIgoDcmV0GAEgASgLMhUuenByb3RvLkdldFBob3RvUmVwbHkaNgoIR2V0",
+            "UGhvdG8SKgoJdl9yZXF1ZXN0GAEgASgLMhcuenByb3RvLkdldFBob3RvUmVx",
+            "dWVzdBpMChlVcGxvYWRQaG90b1N1Y2Nlc3NmdWxfUmV0Ei8KA3JldBgBIAEo",
+            "CzIiLnpwcm90by5VcGxvYWRQaG90b1N1Y2Nlc3NmdWxSZXBseRpQChVVcGxv",
+            "YWRQaG90b1N1Y2Nlc3NmdWwSNwoJdl9yZXF1ZXN0GAEgASgLMiQuenByb3Rv",
+            "LlVwbG9hZFBob3RvU3VjY2Vzc2Z1bFJlcXVlc3QaSAoXR2V0UmV2aWV3QXZh",
+            "dGFySW5mb19SZXQSLQoDcmV0GAEgASgLMiAuenByb3RvLkdldFJldmlld0F2",
+            "YXRhckluZm9SZXBseRpMChNHZXRSZXZpZXdBdmF0YXJJbmZvEjUKCXZfcmVx",
+            "dWVzdBgBIAEoCzIiLnpwcm90by5HZXRSZXZpZXdBdmF0YXJJbmZvUmVxdWVz",
+            "dBpCChRHZXRGdW5jUGhvdG9MaXN0X1JldBIqCgNyZXQYASABKAsyHS56cHJv",
+            "dG8uR2V0RnVuY1Bob3RvTGlzdFJlcGx5GkYKEEdldEZ1bmNQaG90b0xpc3QS",
+            "MgoJdl9yZXF1ZXN0GAEgASgLMh8uenByb3RvLkdldEZ1bmNQaG90b0xpc3RS",
+            "ZXF1ZXN0GjMKEERlbEZ1bmNQaG90b19SZXQSHwoDcmV0GAEgASgOMhIuenBy",
+            "b3RvLkVFcnJvckNvZGUaPgoMRGVsRnVuY1Bob3RvEi4KCXZfcmVxdWVzdBgB",
+            "IAEoCzIbLnpwcm90by5EZWxGdW5jUGhvdG9SZXF1ZXN0GkYKFlNldFBob3Rv",
+            "U2NoZW1lTmFtZV9SZXQSLAoDcmV0GAEgASgLMh8uenByb3RvLlNldFBob3Rv",
+            "U2NoZW1lTmFtZVJlcGx5GkoKElNldFBob3RvU2NoZW1lTmFtZRI0Cgl2X3Jl",
+            "cXVlc3QYASABKAsyIS56cHJvdG8uU2V0UGhvdG9TY2hlbWVOYW1lUmVxdWVz",
+            "dBoxCg5DaGVja0ltYWdlX1JldBIfCgNyZXQYASABKA4yEi56cHJvdG8uRUVy",
+            "cm9yQ29kZRo6CgpDaGVja0ltYWdlEiwKCXZfcmVxdWVzdBgBIAEoCzIZLnpw",
+            "cm90by5DaGVja0ltYWdlUmVxdWVzdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruCheckImageRequestReflection.Descriptor, global::Zproto.StruCreateAlbumReplyReflection.Descriptor, global::Zproto.StruCreateAlbumRequestReflection.Descriptor, global::Zproto.StruDelFuncPhotoRequestReflection.Descriptor, global::Zproto.StruDeleteAlbumReplyReflection.Descriptor, global::Zproto.StruDeleteAlbumRequestReflection.Descriptor, global::Zproto.StruDeletePhotoReplyReflection.Descriptor, global::Zproto.StruDeletePhotoRequestReflection.Descriptor, global::Zproto.StruEditAlbumNameReplyReflection.Descriptor, global::Zproto.StruEditAlbumNameRequestReflection.Descriptor, global::Zproto.StruEditAlbumRightReplyReflection.Descriptor, global::Zproto.StruEditAlbumRightRequestReflection.Descriptor, global::Zproto.StruGetAlbumPhotosReplyReflection.Descriptor, global::Zproto.StruGetAlbumPhotosRequestReflection.Descriptor, global::Zproto.StruGetAllAlbumsReplyReflection.Descriptor, global::Zproto.StruGetAllAlbumsRequestReflection.Descriptor, global::Zproto.StruGetAvatarTokenRequestReflection.Descriptor, global::Zproto.StruGetFuncPhotoListReplyReflection.Descriptor, global::Zproto.StruGetFuncPhotoListRequestReflection.Descriptor, global::Zproto.StruGetPhotoReplyReflection.Descriptor, global::Zproto.StruGetPhotoRequestReflection.Descriptor, global::Zproto.StruGetPhotoUpTokenRequestReflection.Descriptor, global::Zproto.StruGetReviewAvatarInfoReplyReflection.Descriptor, global::Zproto.StruGetReviewAvatarInfoRequestReflection.Descriptor, global::Zproto.StruMovePhotoToAlbumReplyReflection.Descriptor, global::Zproto.StruMovePhotoToAlbumRequestReflection.Descriptor, global::Zproto.StruSetAlbumCoverReplyReflection.Descriptor, global::Zproto.StruSetAlbumCoverRequestReflection.Descriptor, global::Zproto.StruSetPhotoSchemeNameReplyReflection.Descriptor, global::Zproto.StruSetPhotoSchemeNameRequestReflection.Descriptor, global::Zproto.StruUploadPhotoSuccessfulReplyReflection.Descriptor, global::Zproto.StruUploadPhotoSuccessfulRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -353,7 +353,7 @@ namespace Zproto {
           return new GetPhotoUpToken(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetPhotoUpTokenRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -767,7 +767,7 @@ namespace Zproto {
           return new DeletePhoto(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.DeletePhotoRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1181,7 +1181,7 @@ namespace Zproto {
           return new GetAllAlbums(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetAllAlbumsRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1595,7 +1595,7 @@ namespace Zproto {
           return new GetAlbumPhotos(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetAlbumPhotosRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2009,7 +2009,7 @@ namespace Zproto {
           return new CreateAlbum(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.CreateAlbumRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2423,7 +2423,7 @@ namespace Zproto {
           return new DeleteAlbum(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.DeleteAlbumRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2837,7 +2837,7 @@ namespace Zproto {
           return new EditAlbumRight(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.EditAlbumRightRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3251,7 +3251,7 @@ namespace Zproto {
           return new EditAlbumName(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.EditAlbumNameRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3665,7 +3665,7 @@ namespace Zproto {
           return new SetAlbumCover(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.SetAlbumCoverRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4079,7 +4079,7 @@ namespace Zproto {
           return new MovePhotoToAlbum(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.MovePhotoToAlbumRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4286,7 +4286,7 @@ namespace Zproto {
           return new GetAvatarToken(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetAvatarTokenRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4700,7 +4700,7 @@ namespace Zproto {
           return new GetPhoto(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetPhotoRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5114,7 +5114,7 @@ namespace Zproto {
           return new UploadPhotoSuccessful(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.UploadPhotoSuccessfulRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5528,7 +5528,7 @@ namespace Zproto {
           return new GetReviewAvatarInfo(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetReviewAvatarInfoRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5942,7 +5942,7 @@ namespace Zproto {
           return new GetFuncPhotoList(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetFuncPhotoListRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6347,7 +6347,7 @@ namespace Zproto {
           return new DelFuncPhoto(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.DelFuncPhotoRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6761,7 +6761,7 @@ namespace Zproto {
           return new SetPhotoSchemeName(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.SetPhotoSchemeNameRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7166,7 +7166,7 @@ namespace Zproto {
           return new CheckImage(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.CheckImageRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

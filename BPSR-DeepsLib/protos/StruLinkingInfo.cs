@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2xpbmtpbmdfaW5mby5wcm90bxIGenByb3RvGhpzdHJ1X2FjdG9y",
-            "X3V1aWRfc3RydS5wcm90byJvCgtMaW5raW5nSW5mbxIQCghpc0RlbGV0ZRgB",
-            "IAEoCBIQCghlZmZlY3RpZBgCIAEoBRIQCghidWZmVXVpZBgDIAEoBRIqCgt0",
-            "YXJnZXRVdWlkcxgEIAMoCzIVLnpwcm90by5BY3RvclV1aWRTdHJ1YgZwcm90",
-            "bzM="));
+            "X3V1aWRfc3RydS5wcm90byJyCgtMaW5raW5nSW5mbxIRCglpc19kZWxldGUY",
+            "ASABKAgSEAoIZWZmZWN0aWQYAiABKAUSEQoJYnVmZl91dWlkGAMgASgFEisK",
+            "DHRhcmdldF91dWlkcxgEIAMoCzIVLnpwcm90by5BY3RvclV1aWRTdHJ1YgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActorUuidStruReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new LinkingInfo(this);
     }
 
-    /// <summary>Field number for the "isDelete" field.</summary>
+    /// <summary>Field number for the "is_delete" field.</summary>
     public const int IsDeleteFieldNumber = 1;
     private bool isDelete_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buffUuid" field.</summary>
+    /// <summary>Field number for the "buff_uuid" field.</summary>
     public const int BuffUuidFieldNumber = 3;
     private int buffUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetUuids" field.</summary>
+    /// <summary>Field number for the "target_uuids" field.</summary>
     public const int TargetUuidsFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Zproto.ActorUuidStru> _repeated_targetUuids_codec
         = pb::FieldCodec.ForMessage(34, global::Zproto.ActorUuidStru.Parser);

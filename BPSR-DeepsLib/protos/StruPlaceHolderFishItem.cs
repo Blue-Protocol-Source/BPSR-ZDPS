@@ -24,9 +24,9 @@ namespace Zproto {
     static StruPlaceHolderFishItemReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3BsYWNlX2hvbGRlcl9maXNoX2l0ZW0ucHJvdG8SBnpwcm90byIz",
-            "ChNQbGFjZUhvbGRlckZpc2hJdGVtEg4KBkZpc2hJZBgBIAEoBRIMCgRTaXpl",
-            "GAIgASgFYgZwcm90bzM="));
+            "CiFzdHJ1X3BsYWNlX2hvbGRlcl9maXNoX2l0ZW0ucHJvdG8SBnpwcm90byI0",
+            "ChNQbGFjZUhvbGRlckZpc2hJdGVtEg8KB2Zpc2hfaWQYASABKAUSDAoEc2l6",
+            "ZRgCIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new PlaceHolderFishItem(this);
     }
 
-    /// <summary>Field number for the "FishId" field.</summary>
+    /// <summary>Field number for the "fish_id" field.</summary>
     public const int FishIdFieldNumber = 1;
     private int fishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "Size" field.</summary>
+    /// <summary>Field number for the "size" field.</summary>
     public const int SizeFieldNumber = 2;
     private int size_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X3NldF91bmlvbl9lX3NjcmVlbl9waG90b19yZXF1ZXN0LnByb3Rv",
-            "EgZ6cHJvdG8iVgobU2V0VW5pb25FU2NyZWVuUGhvdG9SZXF1ZXN0Eg8KB3Vu",
-            "aW9uSWQYASABKAMSEQoJZVNjcmVlbklkGAIgASgFEhMKC3Bob3RvSWRMaXN0",
-            "GAQgAygNYgZwcm90bzM="));
+            "EgZ6cHJvdG8iWwobU2V0VW5pb25FU2NyZWVuUGhvdG9SZXF1ZXN0EhAKCHVu",
+            "aW9uX2lkGAEgASgDEhMKC2Vfc2NyZWVuX2lkGAIgASgFEhUKDXBob3RvX2lk",
+            "X2xpc3QYBCADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new SetUnionEScreenPhotoRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "eScreenId" field.</summary>
+    /// <summary>Field number for the "e_screen_id" field.</summary>
     public const int EScreenIdFieldNumber = 2;
     private int eScreenId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photoIdList" field.</summary>
+    /// <summary>Field number for the "photo_id_list" field.</summary>
     public const int PhotoIdListFieldNumber = 4;
     private static readonly pb::FieldCodec<uint> _repeated_photoIdList_codec
         = pb::FieldCodec.ForUInt32(34);

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruTeamMemberGroupInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3RlYW1fbWVtYmVyX2dyb3VwX2luZm8ucHJvdG8SBnpwcm90byI3",
-            "ChNUZWFtTWVtYmVyR3JvdXBJbmZvEg8KB2dyb3VwSWQYASABKAUSDwoHY2hh",
-            "cklkcxgCIAMoA2IGcHJvdG8z"));
+            "CiFzdHJ1X3RlYW1fbWVtYmVyX2dyb3VwX2luZm8ucHJvdG8SBnpwcm90byI5",
+            "ChNUZWFtTWVtYmVyR3JvdXBJbmZvEhAKCGdyb3VwX2lkGAEgASgFEhAKCGNo",
+            "YXJfaWRzGAIgAygDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new TeamMemberGroupInfo(this);
     }
 
-    /// <summary>Field number for the "groupId" field.</summary>
+    /// <summary>Field number for the "group_id" field.</summary>
     public const int GroupIdFieldNumber = 1;
     private int groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "charIds" field.</summary>
+    /// <summary>Field number for the "char_ids" field.</summary>
     public const int CharIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_charIds_codec
         = pb::FieldCodec.ForInt64(18);

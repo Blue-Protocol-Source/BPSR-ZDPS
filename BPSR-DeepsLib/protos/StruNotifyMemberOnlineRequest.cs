@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X25vdGlmeV9tZW1iZXJfb25saW5lX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90byJHChlOb3RpZnlNZW1iZXJPbmxpbmVSZXF1ZXN0EhQKDG1lbWJlcklk",
-            "TGlzdBgBIAMoAxIUCgxvZmZsaW5lVGltZXIYAiADKANiBnByb3RvMw=="));
+            "cm90byJKChlOb3RpZnlNZW1iZXJPbmxpbmVSZXF1ZXN0EhYKDm1lbWJlcl9p",
+            "ZF9saXN0GAEgAygDEhUKDW9mZmxpbmVfdGltZXIYAiADKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyMemberOnlineRequest(this);
     }
 
-    /// <summary>Field number for the "memberIdList" field.</summary>
+    /// <summary>Field number for the "member_id_list" field.</summary>
     public const int MemberIdListFieldNumber = 1;
     private static readonly pb::FieldCodec<long> _repeated_memberIdList_codec
         = pb::FieldCodec.ForInt64(10);
@@ -94,7 +94,7 @@ namespace Zproto {
       get { return memberIdList_; }
     }
 
-    /// <summary>Field number for the "offlineTimer" field.</summary>
+    /// <summary>Field number for the "offline_timer" field.</summary>
     public const int OfflineTimerFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_offlineTimer_codec
         = pb::FieldCodec.ForInt64(18);

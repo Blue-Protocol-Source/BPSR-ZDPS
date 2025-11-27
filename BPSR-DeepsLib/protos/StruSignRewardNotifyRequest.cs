@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X3NpZ25fcmV3YXJkX25vdGlmeV9yZXF1ZXN0LnByb3RvEgZ6cHJv",
-            "dG8aG3N0cnVfc2lnbl9yZXdhcmRfZGF0YS5wcm90byLkAQoXU2lnblJld2Fy",
-            "ZE5vdGlmeVJlcXVlc3QSEAoIc2lnbkRheXMYASADKAUSEgoKcmV3YXJkRGF5",
-            "cxgCIAMoBRJRChFzaWduUmV3YXJkRGF0YU1hcBgDIAMoCzI2Lnpwcm90by5T",
-            "aWduUmV3YXJkTm90aWZ5UmVxdWVzdC5TaWduUmV3YXJkRGF0YU1hcEVudHJ5",
-            "GlAKFlNpZ25SZXdhcmREYXRhTWFwRW50cnkSCwoDa2V5GAEgASgFEiUKBXZh",
-            "bHVlGAIgASgLMhYuenByb3RvLlNpZ25SZXdhcmREYXRhOgI4AWIGcHJvdG8z"));
+            "dG8aG3N0cnVfc2lnbl9yZXdhcmRfZGF0YS5wcm90byLpAQoXU2lnblJld2Fy",
+            "ZE5vdGlmeVJlcXVlc3QSEQoJc2lnbl9kYXlzGAEgAygFEhMKC3Jld2FyZF9k",
+            "YXlzGAIgAygFElQKFHNpZ25fcmV3YXJkX2RhdGFfbWFwGAMgAygLMjYuenBy",
+            "b3RvLlNpZ25SZXdhcmROb3RpZnlSZXF1ZXN0LlNpZ25SZXdhcmREYXRhTWFw",
+            "RW50cnkaUAoWU2lnblJld2FyZERhdGFNYXBFbnRyeRILCgNrZXkYASABKAUS",
+            "JQoFdmFsdWUYAiABKAsyFi56cHJvdG8uU2lnblJld2FyZERhdGE6AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSignRewardDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new SignRewardNotifyRequest(this);
     }
 
-    /// <summary>Field number for the "signDays" field.</summary>
+    /// <summary>Field number for the "sign_days" field.</summary>
     public const int SignDaysFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_signDays_codec
         = pb::FieldCodec.ForInt32(10);
@@ -99,7 +100,7 @@ namespace Zproto {
       get { return signDays_; }
     }
 
-    /// <summary>Field number for the "rewardDays" field.</summary>
+    /// <summary>Field number for the "reward_days" field.</summary>
     public const int RewardDaysFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_rewardDays_codec
         = pb::FieldCodec.ForInt32(18);
@@ -110,7 +111,7 @@ namespace Zproto {
       get { return rewardDays_; }
     }
 
-    /// <summary>Field number for the "signRewardDataMap" field.</summary>
+    /// <summary>Field number for the "sign_reward_data_map" field.</summary>
     public const int SignRewardDataMapFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.SignRewardData>.Codec _map_signRewardDataMap_codec
         = new pbc::MapField<int, global::Zproto.SignRewardData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SignRewardData.Parser), 26);

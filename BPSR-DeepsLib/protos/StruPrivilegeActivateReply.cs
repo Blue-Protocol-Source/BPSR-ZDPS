@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3ByaXZpbGVnZV9hY3RpdmF0ZV9yZXBseS5wcm90bxIGenByb3Rv",
-            "GhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byJrChZQcml2aWxlZ2VBY3RpdmF0",
-            "ZVJlcGx5EiMKB2VyckNvZGUYASABKA4yEi56cHJvdG8uRUVycm9yQ29kZRIT",
-            "Cgtpc1ByaXZpbGVnZRgCIAEoCBIXCg9pc0NoYW5nZUFjY291bnQYAyABKAhi",
-            "BnByb3RvMw=="));
+            "GhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byJvChZQcml2aWxlZ2VBY3RpdmF0",
+            "ZVJlcGx5EiQKCGVycl9jb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUS",
+            "FAoMaXNfcHJpdmlsZWdlGAIgASgIEhkKEWlzX2NoYW5nZV9hY2NvdW50GAMg",
+            "ASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new PrivilegeActivateReply(this);
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isPrivilege" field.</summary>
+    /// <summary>Field number for the "is_privilege" field.</summary>
     public const int IsPrivilegeFieldNumber = 2;
     private bool isPrivilege_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isChangeAccount" field.</summary>
+    /// <summary>Field number for the "is_change_account" field.</summary>
     public const int IsChangeAccountFieldNumber = 3;
     private bool isChangeAccount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

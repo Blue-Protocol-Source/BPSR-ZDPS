@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2RlcG9zaXRfd2FyZWhvdXNlX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "byI8ChdEZXBvc2l0V2FyZWhvdXNlUmVxdWVzdBIQCghpdGVtVXVpZBgBIAEo",
-            "AxIPCgdpdGVtTnVtGAMgASgDYgZwcm90bzM="));
+            "byI+ChdEZXBvc2l0V2FyZWhvdXNlUmVxdWVzdBIRCglpdGVtX3V1aWQYASAB",
+            "KAMSEAoIaXRlbV9udW0YAyABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DepositWarehouseRequest(this);
     }
 
-    /// <summary>Field number for the "itemUuid" field.</summary>
+    /// <summary>Field number for the "item_uuid" field.</summary>
     public const int ItemUuidFieldNumber = 1;
     private long itemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemNum" field.</summary>
+    /// <summary>Field number for the "item_num" field.</summary>
     public const int ItemNumFieldNumber = 3;
     private long itemNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

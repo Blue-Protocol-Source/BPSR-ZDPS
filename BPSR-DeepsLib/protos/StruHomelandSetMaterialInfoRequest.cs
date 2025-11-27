@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci1zdHJ1X2hvbWVsYW5kX3NldF9tYXRlcmlhbF9pbmZvX3JlcXVlc3QucHJv",
-            "dG8SBnpwcm90byJcCh5Ib21lbGFuZFNldE1hdGVyaWFsSW5mb1JlcXVlc3QS",
-            "FQoNc3RydWN0dXJlVHlwZRgBIAEoBRISCgptYXRlcmlhbElkGAIgASgFEg8K",
-            "B2lzT3V0ZXIYAyABKAhiBnByb3RvMw=="));
+            "dG8SBnpwcm90byJfCh5Ib21lbGFuZFNldE1hdGVyaWFsSW5mb1JlcXVlc3QS",
+            "FgoOc3RydWN0dXJlX3R5cGUYASABKAUSEwoLbWF0ZXJpYWxfaWQYAiABKAUS",
+            "EAoIaXNfb3V0ZXIYAyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new HomelandSetMaterialInfoRequest(this);
     }
 
-    /// <summary>Field number for the "structureType" field.</summary>
+    /// <summary>Field number for the "structure_type" field.</summary>
     public const int StructureTypeFieldNumber = 1;
     private int structureType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "materialId" field.</summary>
+    /// <summary>Field number for the "material_id" field.</summary>
     public const int MaterialIdFieldNumber = 2;
     private int materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isOuter" field.</summary>
+    /// <summary>Field number for the "is_outer" field.</summary>
     public const int IsOuterFieldNumber = 3;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

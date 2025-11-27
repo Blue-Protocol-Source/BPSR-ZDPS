@@ -27,13 +27,13 @@ namespace Zproto {
             "ChRzZXJ2X21hdGNoX250Zi5wcm90bxIGenByb3RvGipzdHJ1X2NhbmNlbF9t",
             "YXRjaF9yZXN1bHRfbnRmX3JlcXVlc3QucHJvdG8aKXN0cnVfZW50ZXJfbWF0",
             "Y2hfcmVzdWx0X250Zl9yZXF1ZXN0LnByb3RvGilzdHJ1X21hdGNoX3JlYWR5",
-            "X3N0YXR1c19udGZfcmVxdWVzdC5wcm90byLzAQoITWF0Y2hOdGYaSwoTRW50",
-            "ZXJNYXRjaFJlc3VsdE50ZhI0Cgh2UmVxdWVzdBgBIAEoCzIiLnpwcm90by5F",
-            "bnRlck1hdGNoUmVzdWx0TnRmUmVxdWVzdBpNChRDYW5jZWxNYXRjaFJlc3Vs",
-            "dE50ZhI1Cgh2UmVxdWVzdBgBIAEoCzIjLnpwcm90by5DYW5jZWxNYXRjaFJl",
-            "c3VsdE50ZlJlcXVlc3QaSwoTTWF0Y2hSZWFkeVN0YXR1c050ZhI0Cgh2UmVx",
-            "dWVzdBgBIAEoCzIiLnpwcm90by5NYXRjaFJlYWR5U3RhdHVzTnRmUmVxdWVz",
-            "dGIGcHJvdG8z"));
+            "X3N0YXR1c19udGZfcmVxdWVzdC5wcm90byL2AQoITWF0Y2hOdGYaTAoTRW50",
+            "ZXJNYXRjaFJlc3VsdE50ZhI1Cgl2X3JlcXVlc3QYASABKAsyIi56cHJvdG8u",
+            "RW50ZXJNYXRjaFJlc3VsdE50ZlJlcXVlc3QaTgoUQ2FuY2VsTWF0Y2hSZXN1",
+            "bHROdGYSNgoJdl9yZXF1ZXN0GAEgASgLMiMuenByb3RvLkNhbmNlbE1hdGNo",
+            "UmVzdWx0TnRmUmVxdWVzdBpMChNNYXRjaFJlYWR5U3RhdHVzTnRmEjUKCXZf",
+            "cmVxdWVzdBgBIAEoCzIiLnpwcm90by5NYXRjaFJlYWR5U3RhdHVzTnRmUmVx",
+            "dWVzdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCancelMatchResultNtfRequestReflection.Descriptor, global::Zproto.StruEnterMatchResultNtfRequestReflection.Descriptor, global::Zproto.StruMatchReadyStatusNtfRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -255,7 +255,7 @@ namespace Zproto {
           return new EnterMatchResultNtf(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.EnterMatchResultNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -462,7 +462,7 @@ namespace Zproto {
           return new CancelMatchResultNtf(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.CancelMatchResultNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -669,7 +669,7 @@ namespace Zproto {
           return new MatchReadyStatusNtf(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.MatchReadyStatusNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

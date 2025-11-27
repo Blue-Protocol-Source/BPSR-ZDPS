@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X2Nvb2tfYm9vay5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5X21h",
-            "c2sucHJvdG8iHgoIQ29va0Jvb2sSEgoKY3JlYXRlVGltZRgBIAEoDWIGcHJv",
-            "dG8z"));
+            "c2sucHJvdG8iHwoIQ29va0Jvb2sSEwoLY3JlYXRlX3RpbWUYASABKA1iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new CookBook(this);
     }
 
-    /// <summary>Field number for the "createTime" field.</summary>
+    /// <summary>Field number for the "create_time" field.</summary>
     public const int CreateTimeFieldNumber = 1;
     private uint createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

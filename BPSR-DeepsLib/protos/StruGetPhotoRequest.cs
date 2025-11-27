@@ -24,9 +24,9 @@ namespace Zproto {
     static StruGetPhotoRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X2dldF9waG90b19yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iMgoPR2V0",
-            "UGhvdG9SZXF1ZXN0Eg4KBmNoYXJJZBgCIAEoAxIPCgdwaG90b0lkGAMgASgN",
-            "YgZwcm90bzM="));
+            "ChxzdHJ1X2dldF9waG90b19yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iNAoPR2V0",
+            "UGhvdG9SZXF1ZXN0Eg8KB2NoYXJfaWQYAiABKAMSEAoIcGhvdG9faWQYAyAB",
+            "KA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new GetPhotoRequest(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photoId" field.</summary>
+    /// <summary>Field number for the "photo_id" field.</summary>
     public const int PhotoIdFieldNumber = 3;
     private uint photoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

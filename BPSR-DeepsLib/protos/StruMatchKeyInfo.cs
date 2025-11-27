@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X21hdGNoX2tleV9pbmZvLnByb3RvEgZ6cHJvdG8aF2VudW1fZV9t",
-            "YXRjaF90eXBlLnByb3RvIl0KDE1hdGNoS2V5SW5mbxIPCgdtYXRjaElkGAEg",
-            "ASgFEiUKCW1hdGNoVHlwZRgCIAEoDjISLnpwcm90by5FTWF0Y2hUeXBlEhUK",
-            "DW1hdGNoVHlwZVV1aWQYAyABKANiBnByb3RvMw=="));
+            "YXRjaF90eXBlLnByb3RvImEKDE1hdGNoS2V5SW5mbxIQCghtYXRjaF9pZBgB",
+            "IAEoBRImCgptYXRjaF90eXBlGAIgASgOMhIuenByb3RvLkVNYXRjaFR5cGUS",
+            "FwoPbWF0Y2hfdHlwZV91dWlkGAMgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEMatchTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new MatchKeyInfo(this);
     }
 
-    /// <summary>Field number for the "matchId" field.</summary>
+    /// <summary>Field number for the "match_id" field.</summary>
     public const int MatchIdFieldNumber = 1;
     private int matchId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "matchType" field.</summary>
+    /// <summary>Field number for the "match_type" field.</summary>
     public const int MatchTypeFieldNumber = 2;
     private global::Zproto.EMatchType matchType_ = global::Zproto.EMatchType.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "matchTypeUuid" field.</summary>
+    /// <summary>Field number for the "match_type_uuid" field.</summary>
     public const int MatchTypeUuidFieldNumber = 3;
     private long matchTypeUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

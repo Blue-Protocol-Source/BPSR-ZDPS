@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X3NlYXNvbl9jZW50ZXJfaGlzdG9yeS5wcm90bxIGenByb3RvGhZz",
             "dHJ1X2JhdHRsZV9wYXNzLnByb3RvGh9zdHJ1X3NlYXNvbl9icF9xdWVzdF9s",
-            "aXN0LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ibQoTU2Vhc29uQ2Vu",
-            "dGVySGlzdG9yeRImCgpiYXR0bGVQYXNzGAEgASgLMhIuenByb3RvLkJhdHRs",
-            "ZVBhc3MSLgoLYnBRdWVzdExpc3QYAiABKAsyGS56cHJvdG8uU2Vhc29uQnBR",
-            "dWVzdExpc3RiBnByb3RvMw=="));
+            "aXN0LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8icAoTU2Vhc29uQ2Vu",
+            "dGVySGlzdG9yeRInCgtiYXR0bGVfcGFzcxgBIAEoCzISLnpwcm90by5CYXR0",
+            "bGVQYXNzEjAKDWJwX3F1ZXN0X2xpc3QYAiABKAsyGS56cHJvdG8uU2Vhc29u",
+            "QnBRdWVzdExpc3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBattlePassReflection.Descriptor, global::Zproto.StruSeasonBpQuestListReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new SeasonCenterHistory(this);
     }
 
-    /// <summary>Field number for the "battlePass" field.</summary>
+    /// <summary>Field number for the "battle_pass" field.</summary>
     public const int BattlePassFieldNumber = 1;
     private global::Zproto.BattlePass battlePass_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bpQuestList" field.</summary>
+    /// <summary>Field number for the "bp_quest_list" field.</summary>
     public const int BpQuestListFieldNumber = 2;
     private global::Zproto.SeasonBpQuestList bpQuestList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

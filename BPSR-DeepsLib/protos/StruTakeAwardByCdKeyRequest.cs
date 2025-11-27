@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X3Rha2VfYXdhcmRfYnlfY2Rfa2V5X3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90byIoChdUYWtlQXdhcmRCeUNkS2V5UmVxdWVzdBINCgVjZEtleRgBIAEo",
-            "CWIGcHJvdG8z"));
+            "cm90byIpChdUYWtlQXdhcmRCeUNkS2V5UmVxdWVzdBIOCgZjZF9rZXkYASAB",
+            "KAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new TakeAwardByCdKeyRequest(this);
     }
 
-    /// <summary>Field number for the "cdKey" field.</summary>
+    /// <summary>Field number for the "cd_key" field.</summary>
     public const int CdKeyFieldNumber = 1;
     private string cdKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

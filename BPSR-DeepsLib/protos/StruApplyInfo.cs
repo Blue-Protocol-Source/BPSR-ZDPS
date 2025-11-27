@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2FwcGx5X2luZm8ucHJvdG8SBnpwcm90bxocc3RydV91c2VyX3N1",
-            "bW1hcnlfZGF0YS5wcm90byJbCglBcHBseUluZm8SDgoGY2hhcklkGAEgASgD",
-            "EgwKBHRpbWUYBCABKAQSMAoPdXNlclN1bW1hcnlEYXRhGAkgASgLMhcuenBy",
-            "b3RvLlVzZXJTdW1tYXJ5RGF0YWIGcHJvdG8z"));
+            "bW1hcnlfZGF0YS5wcm90byJeCglBcHBseUluZm8SDwoHY2hhcl9pZBgBIAEo",
+            "AxIMCgR0aW1lGAQgASgEEjIKEXVzZXJfc3VtbWFyeV9kYXRhGAkgASgLMhcu",
+            "enByb3RvLlVzZXJTdW1tYXJ5RGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ApplyInfo(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "userSummaryData" field.</summary>
+    /// <summary>Field number for the "user_summary_data" field.</summary>
     public const int UserSummaryDataFieldNumber = 9;
     private global::Zproto.UserSummaryData userSummaryData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

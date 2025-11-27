@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X25vdGlmeV9idXlfc2hvcF9yZXN1bHRfcGFyYW0ucHJvdG8SBnpw",
-            "cm90bxokc3RydV9ub3RpZnlfYnV5X3Nob3BfaXRlbV9pbmZvLnByb3RvImMK",
-            "GE5vdGlmeUJ1eVNob3BSZXN1bHRQYXJhbRIPCgdlcnJDb2RlGAEgASgFEjYK",
-            "D2J1eVNob3BJdGVtSW5mbxgCIAMoCzIdLnpwcm90by5Ob3RpZnlCdXlTaG9w",
-            "SXRlbUluZm9iBnByb3RvMw=="));
+            "cm90bxokc3RydV9ub3RpZnlfYnV5X3Nob3BfaXRlbV9pbmZvLnByb3RvImcK",
+            "GE5vdGlmeUJ1eVNob3BSZXN1bHRQYXJhbRIQCghlcnJfY29kZRgBIAEoBRI5",
+            "ChJidXlfc2hvcF9pdGVtX2luZm8YAiADKAsyHS56cHJvdG8uTm90aWZ5QnV5",
+            "U2hvcEl0ZW1JbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNotifyBuyShopItemInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new NotifyBuyShopResultParam(this);
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private int errCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buyShopItemInfo" field.</summary>
+    /// <summary>Field number for the "buy_shop_item_info" field.</summary>
     public const int BuyShopItemInfoFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.NotifyBuyShopItemInfo> _repeated_buyShopItemInfo_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.NotifyBuyShopItemInfo.Parser);

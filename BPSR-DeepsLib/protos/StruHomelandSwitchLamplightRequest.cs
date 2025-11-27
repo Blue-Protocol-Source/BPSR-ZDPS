@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CixzdHJ1X2hvbWVsYW5kX3N3aXRjaF9sYW1wbGlnaHRfcmVxdWVzdC5wcm90",
             "bxIGenByb3RvGiVlbnVtX2VfaG9tZWxhbmRfbGFtcGxpZ2h0X3N0YXRlLnBy",
-            "b3RvIoEBCh5Ib21lbGFuZFN3aXRjaExhbXBsaWdodFJlcXVlc3QSFQoNc3Ry",
-            "dWN0dXJlVXVpZBgBIAEoAxI3Cg5sYW1wbGlnaHRTdGF0ZRgCIAEoDjIfLnpw",
-            "cm90by5FSG9tZWxhbmRMYW1wbGlnaHRTdGF0ZRIPCgdpc091dGVyGAMgASgI",
-            "YgZwcm90bzM="));
+            "b3RvIoQBCh5Ib21lbGFuZFN3aXRjaExhbXBsaWdodFJlcXVlc3QSFgoOc3Ry",
+            "dWN0dXJlX3V1aWQYASABKAMSOAoPbGFtcGxpZ2h0X3N0YXRlGAIgASgOMh8u",
+            "enByb3RvLkVIb21lbGFuZExhbXBsaWdodFN0YXRlEhAKCGlzX291dGVyGAMg",
+            "ASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEHomelandLamplightStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new HomelandSwitchLamplightRequest(this);
     }
 
-    /// <summary>Field number for the "structureUuid" field.</summary>
+    /// <summary>Field number for the "structure_uuid" field.</summary>
     public const int StructureUuidFieldNumber = 1;
     private long structureUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lamplightState" field.</summary>
+    /// <summary>Field number for the "lamplight_state" field.</summary>
     public const int LamplightStateFieldNumber = 2;
     private global::Zproto.EHomelandLamplightState lamplightState_ = global::Zproto.EHomelandLamplightState.HomelandLamplightStateDefault;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isOuter" field.</summary>
+    /// <summary>Field number for the "is_outer" field.</summary>
     public const int IsOuterFieldNumber = 3;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

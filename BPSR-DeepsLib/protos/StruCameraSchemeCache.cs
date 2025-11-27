@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2NhbWVyYV9zY2hlbWVfY2FjaGUucHJvdG8SBnpwcm90bxodc3Ry",
-            "dV9jYW1lcmFfc2NoZW1lX2luZm8ucHJvdG8isQEKEWNhbWVyYVNjaGVtZUNh",
-            "Y2hlEkkKEGNhbWVyYVNjaGVtZURpY3QYASADKAsyLy56cHJvdG8uY2FtZXJh",
-            "U2NoZW1lQ2FjaGUuQ2FtZXJhU2NoZW1lRGljdEVudHJ5GlEKFUNhbWVyYVNj",
-            "aGVtZURpY3RFbnRyeRILCgNrZXkYASABKAkSJwoFdmFsdWUYAiABKAsyGC56",
-            "cHJvdG8uY2FtZXJhU2NoZW1lSW5mbzoCOAFiBnByb3RvMw=="));
+            "dV9jYW1lcmFfc2NoZW1lX2luZm8ucHJvdG8iswEKEWNhbWVyYVNjaGVtZUNh",
+            "Y2hlEksKEmNhbWVyYV9zY2hlbWVfZGljdBgBIAMoCzIvLnpwcm90by5jYW1l",
+            "cmFTY2hlbWVDYWNoZS5DYW1lcmFTY2hlbWVEaWN0RW50cnkaUQoVQ2FtZXJh",
+            "U2NoZW1lRGljdEVudHJ5EgsKA2tleRgBIAEoCRInCgV2YWx1ZRgCIAEoCzIY",
+            "Lnpwcm90by5jYW1lcmFTY2hlbWVJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCameraSchemeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new cameraSchemeCache(this);
     }
 
-    /// <summary>Field number for the "cameraSchemeDict" field.</summary>
+    /// <summary>Field number for the "camera_scheme_dict" field.</summary>
     public const int CameraSchemeDictFieldNumber = 1;
     private static readonly pbc::MapField<string, global::Zproto.cameraSchemeInfo>.Codec _map_cameraSchemeDict_codec
         = new pbc::MapField<string, global::Zproto.cameraSchemeInfo>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Zproto.cameraSchemeInfo.Parser), 10);

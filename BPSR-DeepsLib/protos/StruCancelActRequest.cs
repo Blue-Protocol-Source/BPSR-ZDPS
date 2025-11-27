@@ -24,8 +24,8 @@ namespace Zproto {
     static StruCancelActRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X2NhbmNlbF9hY3RfcmVxdWVzdC5wcm90bxIGenByb3RvIiEKEENh",
-            "bmNlbEFjdFJlcXVlc3QSDQoFYWN0SWQYASABKAViBnByb3RvMw=="));
+            "Ch1zdHJ1X2NhbmNlbF9hY3RfcmVxdWVzdC5wcm90bxIGenByb3RvIiIKEENh",
+            "bmNlbEFjdFJlcXVlc3QSDgoGYWN0X2lkGAEgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new CancelActRequest(this);
     }
 
-    /// <summary>Field number for the "actId" field.</summary>
+    /// <summary>Field number for the "act_id" field.</summary>
     public const int ActIdFieldNumber = 1;
     private int actId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

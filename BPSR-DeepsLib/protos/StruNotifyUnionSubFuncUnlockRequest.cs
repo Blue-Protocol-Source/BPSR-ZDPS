@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci9zdHJ1X25vdGlmeV91bmlvbl9zdWJfZnVuY191bmxvY2tfcmVxdWVzdC5w",
-            "cm90bxIGenByb3RvGhllbnVtX3VuaW9uX3N1Yl9mdW5jLnByb3RvIkwKH05v",
-            "dGlmeVVuaW9uU3ViRnVuY1VubG9ja1JlcXVlc3QSKQoLc3ViRnVuY1R5cGUY",
-            "ASABKA4yFC56cHJvdG8uVW5pb25TdWJGdW5jYgZwcm90bzM="));
+            "cm90bxIGenByb3RvGhllbnVtX3VuaW9uX3N1Yl9mdW5jLnByb3RvIk4KH05v",
+            "dGlmeVVuaW9uU3ViRnVuY1VubG9ja1JlcXVlc3QSKwoNc3ViX2Z1bmNfdHlw",
+            "ZRgBIAEoDjIULnpwcm90by5VbmlvblN1YkZ1bmNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumUnionSubFuncReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyUnionSubFuncUnlockRequest(this);
     }
 
-    /// <summary>Field number for the "subFuncType" field.</summary>
+    /// <summary>Field number for the "sub_func_type" field.</summary>
     public const int SubFuncTypeFieldNumber = 1;
     private global::Zproto.UnionSubFunc subFuncType_ = global::Zproto.UnionSubFunc.TypeNode;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

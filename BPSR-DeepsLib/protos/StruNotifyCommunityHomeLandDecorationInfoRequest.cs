@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Cj1zdHJ1X25vdGlmeV9jb21tdW5pdHlfaG9tZV9sYW5kX2RlY29yYXRpb25f",
             "aW5mb19yZXF1ZXN0LnByb3RvEgZ6cHJvdG8aI3N0cnVfaG9tZWxhbmRfZGVj",
-            "b3JhdGlvbl9pbmZvLnByb3RvIncKLE5vdGlmeUNvbW11bml0eUhvbWVMYW5k",
-            "RGVjb3JhdGlvbkluZm9SZXF1ZXN0Eg8KB2lzT3V0ZXIYASABKAgSNgoOZGVj",
-            "b3JhdGlvbkluZm8YAiABKAsyHi56cHJvdG8uSG9tZWxhbmREZWNvcmF0aW9u",
-            "SW5mb2IGcHJvdG8z"));
+            "b3JhdGlvbl9pbmZvLnByb3RvInkKLE5vdGlmeUNvbW11bml0eUhvbWVMYW5k",
+            "RGVjb3JhdGlvbkluZm9SZXF1ZXN0EhAKCGlzX291dGVyGAEgASgIEjcKD2Rl",
+            "Y29yYXRpb25faW5mbxgCIAEoCzIeLnpwcm90by5Ib21lbGFuZERlY29yYXRp",
+            "b25JbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomelandDecorationInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new NotifyCommunityHomeLandDecorationInfoRequest(this);
     }
 
-    /// <summary>Field number for the "isOuter" field.</summary>
+    /// <summary>Field number for the "is_outer" field.</summary>
     public const int IsOuterFieldNumber = 1;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "decorationInfo" field.</summary>
+    /// <summary>Field number for the "decoration_info" field.</summary>
     public const int DecorationInfoFieldNumber = 2;
     private global::Zproto.HomelandDecorationInfo decorationInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

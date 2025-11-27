@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2R1bmdlb25fcmV2aXZlX2luZm8ucHJvdG8SBnpwcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIpUBChFEdW5nZW9uUmV2aXZlSW5mbxIRCgly",
-            "ZXZpdmVJZHMYASADKAUSOwoJcmV2aXZlTWFwGAIgAygLMiguenByb3RvLkR1",
-            "bmdlb25SZXZpdmVJbmZvLlJldml2ZU1hcEVudHJ5GjAKDlJldml2ZU1hcEVu",
-            "dHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoBToCOAFiBnByb3RvMw=="));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIpcBChFEdW5nZW9uUmV2aXZlSW5mbxISCgpy",
+            "ZXZpdmVfaWRzGAEgAygFEjwKCnJldml2ZV9tYXAYAiADKAsyKC56cHJvdG8u",
+            "RHVuZ2VvblJldml2ZUluZm8uUmV2aXZlTWFwRW50cnkaMAoOUmV2aXZlTWFw",
+            "RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new DungeonReviveInfo(this);
     }
 
-    /// <summary>Field number for the "reviveIds" field.</summary>
+    /// <summary>Field number for the "revive_ids" field.</summary>
     public const int ReviveIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_reviveIds_codec
         = pb::FieldCodec.ForInt32(10);
@@ -96,7 +96,7 @@ namespace Zproto {
       get { return reviveIds_; }
     }
 
-    /// <summary>Field number for the "reviveMap" field.</summary>
+    /// <summary>Field number for the "revive_map" field.</summary>
     public const int ReviveMapFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_reviveMap_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);

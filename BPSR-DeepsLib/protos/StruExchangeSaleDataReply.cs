@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X2V4Y2hhbmdlX3NhbGVfZGF0YV9yZXBseS5wcm90bxIGenByb3Rv",
             "GhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxonc3RydV9leGNoYW5nZV9zYWxl",
-            "X2RhdGFfaXRlbV9kYXRhLnByb3RvIn4KFUV4Y2hhbmdlU2FsZURhdGFSZXBs",
-            "eRIvCgVpdGVtcxgCIAMoCzIgLnpwcm90by5FeGNoYW5nZVNhbGVEYXRhSXRl",
-            "bURhdGESDwoHbWluUmF0ZRgDIAEoDRIjCgdlcnJDb2RlGAQgASgOMhIuenBy",
-            "b3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "X2RhdGFfaXRlbV9kYXRhLnByb3RvIoABChVFeGNoYW5nZVNhbGVEYXRhUmVw",
+            "bHkSLwoFaXRlbXMYAiADKAsyIC56cHJvdG8uRXhjaGFuZ2VTYWxlRGF0YUl0",
+            "ZW1EYXRhEhAKCG1pbl9yYXRlGAMgASgNEiQKCGVycl9jb2RlGAQgASgOMhIu",
+            "enByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruExchangeSaleDataItemDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +98,7 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "minRate" field.</summary>
+    /// <summary>Field number for the "min_rate" field.</summary>
     public const int MinRateFieldNumber = 3;
     private uint minRate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

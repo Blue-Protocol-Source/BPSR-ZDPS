@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3NpZ25fc3RhdHVzX2xpc3QucHJvdG8SBnpwcm90bxoWc3RydV9z",
-            "aWduX3N0YXR1cy5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIp8BCg5T",
-            "aWduU3RhdHVzTGlzdBJCCg5zaWduU3RhdHVzRGF0YRgBIAMoCzIqLnpwcm90",
-            "by5TaWduU3RhdHVzTGlzdC5TaWduU3RhdHVzRGF0YUVudHJ5GkkKE1NpZ25T",
-            "dGF0dXNEYXRhRW50cnkSCwoDa2V5GAEgASgFEiEKBXZhbHVlGAIgASgLMhIu",
-            "enByb3RvLlNpZ25TdGF0dXM6AjgBYgZwcm90bzM="));
+            "aWduX3N0YXR1cy5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqEBCg5T",
+            "aWduU3RhdHVzTGlzdBJEChBzaWduX3N0YXR1c19kYXRhGAEgAygLMiouenBy",
+            "b3RvLlNpZ25TdGF0dXNMaXN0LlNpZ25TdGF0dXNEYXRhRW50cnkaSQoTU2ln",
+            "blN0YXR1c0RhdGFFbnRyeRILCgNrZXkYASABKAUSIQoFdmFsdWUYAiABKAsy",
+            "Ei56cHJvdG8uU2lnblN0YXR1czoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSignStatusReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new SignStatusList(this);
     }
 
-    /// <summary>Field number for the "signStatusData" field.</summary>
+    /// <summary>Field number for the "sign_status_data" field.</summary>
     public const int SignStatusDataFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.SignStatus>.Codec _map_signStatusData_codec
         = new pbc::MapField<int, global::Zproto.SignStatus>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SignStatus.Parser), 10);

@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X3N0cnVjdHVyZV9vcC5wcm90bxIGenByb3RvGhRzdHJ1X3N0cnVj",
-            "dHVyZS5wcm90bxocZW51bV9zdHJ1Y3R1cmVfb3BfdHlwZS5wcm90byJcCgtT",
-            "dHJ1Y3R1cmVPcBInCgZvcFR5cGUYASABKA4yFy56cHJvdG8uU3RydWN0dXJl",
-            "T3BUeXBlEiQKCXN0cnVjdHVyZRgCIAEoCzIRLnpwcm90by5TdHJ1Y3R1cmVi",
-            "BnByb3RvMw=="));
+            "dHVyZS5wcm90bxocZW51bV9zdHJ1Y3R1cmVfb3BfdHlwZS5wcm90byJdCgtT",
+            "dHJ1Y3R1cmVPcBIoCgdvcF90eXBlGAEgASgOMhcuenByb3RvLlN0cnVjdHVy",
+            "ZU9wVHlwZRIkCglzdHJ1Y3R1cmUYAiABKAsyES56cHJvdG8uU3RydWN0dXJl",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStructureReflection.Descriptor, global::Zproto.EnumStructureOpTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new StructureOp(this);
     }
 
-    /// <summary>Field number for the "opType" field.</summary>
+    /// <summary>Field number for the "op_type" field.</summary>
     public const int OpTypeFieldNumber = 1;
     private global::Zproto.StructureOpType opType_ = global::Zproto.StructureOpType.Add;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

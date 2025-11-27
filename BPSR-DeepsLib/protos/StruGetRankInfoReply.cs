@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2dldF9yYW5rX2luZm9fcmVwbHkucHJvdG8SBnpwcm90bxoXZW51",
             "bV9lX2Vycm9yX2NvZGUucHJvdG8aGXN0cnVfZmlzaF9yYW5rX2xpc3QucHJv",
-            "dG8ihQEKEEdldFJhbmtJbmZvUmVwbHkSDgoGZmlzaElkGAEgASgFEhQKDGZp",
-            "c2hSYW5rVHlwZRgCIAEoBRImCghyYW5rTGlzdBgDIAEoCzIULnpwcm90by5G",
-            "aXNoUmFua0xpc3QSIwoHZXJyQ29kZRgEIAEoDjISLnpwcm90by5FRXJyb3JD",
-            "b2RlYgZwcm90bzM="));
+            "dG8iigEKEEdldFJhbmtJbmZvUmVwbHkSDwoHZmlzaF9pZBgBIAEoBRIWCg5m",
+            "aXNoX3JhbmtfdHlwZRgCIAEoBRInCglyYW5rX2xpc3QYAyABKAsyFC56cHJv",
+            "dG8uRmlzaFJhbmtMaXN0EiQKCGVycl9jb2RlGAQgASgOMhIuenByb3RvLkVF",
+            "cnJvckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruFishRankListReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new GetRankInfoReply(this);
     }
 
-    /// <summary>Field number for the "fishId" field.</summary>
+    /// <summary>Field number for the "fish_id" field.</summary>
     public const int FishIdFieldNumber = 1;
     private int fishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fishRankType" field.</summary>
+    /// <summary>Field number for the "fish_rank_type" field.</summary>
     public const int FishRankTypeFieldNumber = 2;
     private int fishRankType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rankList" field.</summary>
+    /// <summary>Field number for the "rank_list" field.</summary>
     public const int RankListFieldNumber = 3;
     private global::Zproto.FishRankList rankList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSelectCharRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X3NlbGVjdF9jaGFyX3JlcXVlc3QucHJvdG8SBnpwcm90byJCChFT",
-            "ZWxlY3RDaGFyUmVxdWVzdBINCgV0b2tlbhgCIAEoCRIOCgZjaGFySWQYAyAB",
-            "KAMSDgoGYXJlYUlkGAUgASgFYgZwcm90bzM="));
+            "Ch5zdHJ1X3NlbGVjdF9jaGFyX3JlcXVlc3QucHJvdG8SBnpwcm90byJEChFT",
+            "ZWxlY3RDaGFyUmVxdWVzdBINCgV0b2tlbhgCIAEoCRIPCgdjaGFyX2lkGAMg",
+            "ASgDEg8KB2FyZWFfaWQYBSABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 3;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "areaId" field.</summary>
+    /// <summary>Field number for the "area_id" field.</summary>
     public const int AreaIdFieldNumber = 5;
     private int areaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

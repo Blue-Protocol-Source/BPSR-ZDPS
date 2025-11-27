@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3VzZXJfYXR0cl9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byIxCgxVc2VyQXR0ckRhdGESDQoFc3RhdGUYAyABKAUS",
-            "EgoKZmlnaHRQb2ludBgEIAEoA2IGcHJvdG8z"));
+            "dHlfbWFzay5wcm90byIyCgxVc2VyQXR0ckRhdGESDQoFc3RhdGUYAyABKAUS",
+            "EwoLZmlnaHRfcG9pbnQYBCABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fightPoint" field.</summary>
+    /// <summary>Field number for the "fight_point" field.</summary>
     public const int FightPointFieldNumber = 4;
     private long fightPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

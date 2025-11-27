@@ -25,17 +25,17 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X2VxdWlwX2F0dHJfc2V0LnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byLRAwoMRXF1aXBBdHRyU2V0EjYKCWJhc2ljQXR0chgB",
-            "IAMoCzIjLnpwcm90by5FcXVpcEF0dHJTZXQuQmFzaWNBdHRyRW50cnkSOgoL",
-            "YWR2YW5jZUF0dHIYAiADKAsyJS56cHJvdG8uRXF1aXBBdHRyU2V0LkFkdmFu",
-            "Y2VBdHRyRW50cnkSOAoKcmVjYXN0QXR0chgDIAMoCzIkLnpwcm90by5FcXVp",
-            "cEF0dHJTZXQuUmVjYXN0QXR0ckVudHJ5EkIKD3JhcmVRdWFsaXR5QXR0chgE",
-            "IAMoCzIpLnpwcm90by5FcXVpcEF0dHJTZXQuUmFyZVF1YWxpdHlBdHRyRW50",
-            "cnkaMAoOQmFzaWNBdHRyRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIg",
-            "ASgFOgI4ARoyChBBZHZhbmNlQXR0ckVudHJ5EgsKA2tleRgBIAEoBRINCgV2",
-            "YWx1ZRgCIAEoBToCOAEaMQoPUmVjYXN0QXR0ckVudHJ5EgsKA2tleRgBIAEo",
-            "BRINCgV2YWx1ZRgCIAEoBToCOAEaNgoUUmFyZVF1YWxpdHlBdHRyRW50cnkS",
-            "CwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
+            "dHlfbWFzay5wcm90byLWAwoMRXF1aXBBdHRyU2V0EjcKCmJhc2ljX2F0dHIY",
+            "ASADKAsyIy56cHJvdG8uRXF1aXBBdHRyU2V0LkJhc2ljQXR0ckVudHJ5EjsK",
+            "DGFkdmFuY2VfYXR0chgCIAMoCzIlLnpwcm90by5FcXVpcEF0dHJTZXQuQWR2",
+            "YW5jZUF0dHJFbnRyeRI5CgtyZWNhc3RfYXR0chgDIAMoCzIkLnpwcm90by5F",
+            "cXVpcEF0dHJTZXQuUmVjYXN0QXR0ckVudHJ5EkQKEXJhcmVfcXVhbGl0eV9h",
+            "dHRyGAQgAygLMikuenByb3RvLkVxdWlwQXR0clNldC5SYXJlUXVhbGl0eUF0",
+            "dHJFbnRyeRowCg5CYXNpY0F0dHJFbnRyeRILCgNrZXkYASABKAUSDQoFdmFs",
+            "dWUYAiABKAU6AjgBGjIKEEFkdmFuY2VBdHRyRW50cnkSCwoDa2V5GAEgASgF",
+            "Eg0KBXZhbHVlGAIgASgFOgI4ARoxCg9SZWNhc3RBdHRyRW50cnkSCwoDa2V5",
+            "GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4ARo2ChRSYXJlUXVhbGl0eUF0dHJF",
+            "bnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +94,7 @@ namespace Zproto {
       return new EquipAttrSet(this);
     }
 
-    /// <summary>Field number for the "basicAttr" field.</summary>
+    /// <summary>Field number for the "basic_attr" field.</summary>
     public const int BasicAttrFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_basicAttr_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);
@@ -105,7 +105,7 @@ namespace Zproto {
       get { return basicAttr_; }
     }
 
-    /// <summary>Field number for the "advanceAttr" field.</summary>
+    /// <summary>Field number for the "advance_attr" field.</summary>
     public const int AdvanceAttrFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_advanceAttr_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);
@@ -116,7 +116,7 @@ namespace Zproto {
       get { return advanceAttr_; }
     }
 
-    /// <summary>Field number for the "recastAttr" field.</summary>
+    /// <summary>Field number for the "recast_attr" field.</summary>
     public const int RecastAttrFieldNumber = 3;
     private static readonly pbc::MapField<int, int>.Codec _map_recastAttr_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 26);
@@ -127,7 +127,7 @@ namespace Zproto {
       get { return recastAttr_; }
     }
 
-    /// <summary>Field number for the "rareQualityAttr" field.</summary>
+    /// <summary>Field number for the "rare_quality_attr" field.</summary>
     public const int RareQualityAttrFieldNumber = 4;
     private static readonly pbc::MapField<int, int>.Codec _map_rareQualityAttr_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 34);

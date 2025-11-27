@@ -28,12 +28,12 @@ namespace Zproto {
             "GjFzdHJ1X2NvbW11bml0eV9idWxsZXRpbl9ib2FyZF9vcGVyYXRvcl9jaGFy",
             "LnByb3RvGi9zdHJ1X2NvbW11bml0eV9idWxsZXRpbl9ib2FyZF90YXJnZXRf",
             "Y2hhci5wcm90bxoqZW51bV9lX2NvbW11bml0eV9idWxsZXRpbl9ib2FyZF90",
-            "eXBlLnByb3RvIuoBChZDb21tdW5pdHlCdWxsZXRpbkJvYXJkEjEKBHR5cGUY",
-            "ASABKA4yIy56cHJvdG8uRUNvbW11bml0eUJ1bGxldGluQm9hcmRUeXBlEkAK",
-            "DG9wZXJhdG9yQ2hhchgCIAEoCzIqLnpwcm90by5Db21tdW5pdHlCdWxsZXRp",
-            "bkJvYXJkT3BlcmF0b3JDaGFyEjwKCnRhcmdldENoYXIYAyABKAsyKC56cHJv",
-            "dG8uQ29tbXVuaXR5QnVsbGV0aW5Cb2FyZFRhcmdldENoYXISDAoEdGltZRgE",
-            "IAEoAxIPCgdjb250ZW50GAUgAygJYgZwcm90bzM="));
+            "eXBlLnByb3RvIuwBChZDb21tdW5pdHlCdWxsZXRpbkJvYXJkEjEKBHR5cGUY",
+            "ASABKA4yIy56cHJvdG8uRUNvbW11bml0eUJ1bGxldGluQm9hcmRUeXBlEkEK",
+            "DW9wZXJhdG9yX2NoYXIYAiABKAsyKi56cHJvdG8uQ29tbXVuaXR5QnVsbGV0",
+            "aW5Cb2FyZE9wZXJhdG9yQ2hhchI9Cgt0YXJnZXRfY2hhchgDIAEoCzIoLnpw",
+            "cm90by5Db21tdW5pdHlCdWxsZXRpbkJvYXJkVGFyZ2V0Q2hhchIMCgR0aW1l",
+            "GAQgASgDEg8KB2NvbnRlbnQYBSADKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityBulletinBoardOperatorCharReflection.Descriptor, global::Zproto.StruCommunityBulletinBoardTargetCharReflection.Descriptor, global::Zproto.EnumECommunityBulletinBoardTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -105,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "operatorChar" field.</summary>
+    /// <summary>Field number for the "operator_char" field.</summary>
     public const int OperatorCharFieldNumber = 2;
     private global::Zproto.CommunityBulletinBoardOperatorChar operatorChar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetChar" field.</summary>
+    /// <summary>Field number for the "target_char" field.</summary>
     public const int TargetCharFieldNumber = 3;
     private global::Zproto.CommunityBulletinBoardTargetChar targetChar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

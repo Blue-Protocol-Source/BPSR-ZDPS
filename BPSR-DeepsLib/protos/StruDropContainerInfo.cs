@@ -26,15 +26,15 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2Ryb3BfY29udGFpbmVyX2luZm8ucHJvdG8SBnpwcm90bxodc3Ry",
             "dV9kcm9wX2F3YXJkX2hpc3RvcnkucHJvdG8aIHN0cnVfZHJvcF9jb250YWlu",
-            "ZXJfc2luZ2xlLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i0gIKEURy",
-            "b3BDb250YWluZXJJbmZvEkUKDkRyb3BDb250YWluZXJzGAEgAygLMi0uenBy",
-            "b3RvLkRyb3BDb250YWluZXJJbmZvLkRyb3BDb250YWluZXJzRW50cnkSTQoS",
-            "RHJvcEF3YXJkSGlzdG9yaWVzGAIgAygLMjEuenByb3RvLkRyb3BDb250YWlu",
-            "ZXJJbmZvLkRyb3BBd2FyZEhpc3Rvcmllc0VudHJ5GlIKE0Ryb3BDb250YWlu",
-            "ZXJzRW50cnkSCwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgLMhsuenByb3Rv",
-            "LkRyb3BDb250YWluZXJTaW5nbGU6AjgBGlMKF0Ryb3BBd2FyZEhpc3Rvcmll",
-            "c0VudHJ5EgsKA2tleRgBIAEoBRInCgV2YWx1ZRgCIAEoCzIYLnpwcm90by5E",
-            "cm9wQXdhcmRIaXN0b3J5OgI4AWIGcHJvdG8z"));
+            "ZXJfc2luZ2xlLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i1QIKEURy",
+            "b3BDb250YWluZXJJbmZvEkYKD2Ryb3BfY29udGFpbmVycxgBIAMoCzItLnpw",
+            "cm90by5Ecm9wQ29udGFpbmVySW5mby5Ecm9wQ29udGFpbmVyc0VudHJ5Ek8K",
+            "FGRyb3BfYXdhcmRfaGlzdG9yaWVzGAIgAygLMjEuenByb3RvLkRyb3BDb250",
+            "YWluZXJJbmZvLkRyb3BBd2FyZEhpc3Rvcmllc0VudHJ5GlIKE0Ryb3BDb250",
+            "YWluZXJzRW50cnkSCwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgLMhsuenBy",
+            "b3RvLkRyb3BDb250YWluZXJTaW5nbGU6AjgBGlMKF0Ryb3BBd2FyZEhpc3Rv",
+            "cmllc0VudHJ5EgsKA2tleRgBIAEoBRInCgV2YWx1ZRgCIAEoCzIYLnpwcm90",
+            "by5Ecm9wQXdhcmRIaXN0b3J5OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDropAwardHistoryReflection.Descriptor, global::Zproto.StruDropContainerSingleReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +91,7 @@ namespace Zproto {
       return new DropContainerInfo(this);
     }
 
-    /// <summary>Field number for the "DropContainers" field.</summary>
+    /// <summary>Field number for the "drop_containers" field.</summary>
     public const int DropContainersFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.DropContainerSingle>.Codec _map_dropContainers_codec
         = new pbc::MapField<int, global::Zproto.DropContainerSingle>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DropContainerSingle.Parser), 10);
@@ -102,7 +102,7 @@ namespace Zproto {
       get { return dropContainers_; }
     }
 
-    /// <summary>Field number for the "DropAwardHistories" field.</summary>
+    /// <summary>Field number for the "drop_award_histories" field.</summary>
     public const int DropAwardHistoriesFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.DropAwardHistory>.Codec _map_dropAwardHistories_codec
         = new pbc::MapField<int, global::Zproto.DropAwardHistory>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DropAwardHistory.Parser), 18);

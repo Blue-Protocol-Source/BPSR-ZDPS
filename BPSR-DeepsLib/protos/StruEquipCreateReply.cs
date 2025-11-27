@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X2VxdWlwX2NyZWF0ZV9yZXBseS5wcm90bxIGenByb3RvGhdlbnVt",
-            "X2VfZXJyb3JfY29kZS5wcm90byJKChBFcXVpcENyZWF0ZVJlcGx5EiMKB2Vy",
-            "ckNvZGUYASABKA4yEi56cHJvdG8uRUVycm9yQ29kZRIRCglpdGVtVXVpZHMY",
-            "AiADKANiBnByb3RvMw=="));
+            "X2VfZXJyb3JfY29kZS5wcm90byJMChBFcXVpcENyZWF0ZVJlcGx5EiQKCGVy",
+            "cl9jb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUSEgoKaXRlbV91dWlk",
+            "cxgCIAMoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new EquipCreateReply(this);
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemUuids" field.</summary>
+    /// <summary>Field number for the "item_uuids" field.</summary>
     public const int ItemUuidsFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_itemUuids_codec
         = pb::FieldCodec.ForInt64(18);

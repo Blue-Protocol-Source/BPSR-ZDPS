@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X3Jldmlld19hdmF0YXJfaW5mb19udGZfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvGhZzdHJ1X2F2YXRhcl9pbmZvLnByb3RvIkQKGlJldmlld0F2YXRh",
-            "ckluZm9OdGZSZXF1ZXN0EiYKCkF2YXRhckluZm8YAiABKAsyEi56cHJvdG8u",
-            "QXZhdGFySW5mb2IGcHJvdG8z"));
+            "enByb3RvGhZzdHJ1X2F2YXRhcl9pbmZvLnByb3RvIkUKGlJldmlld0F2YXRh",
+            "ckluZm9OdGZSZXF1ZXN0EicKC2F2YXRhcl9pbmZvGAIgASgLMhIuenByb3Rv",
+            "LkF2YXRhckluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ReviewAvatarInfoNtfRequest(this);
     }
 
-    /// <summary>Field number for the "AvatarInfo" field.</summary>
+    /// <summary>Field number for the "avatar_info" field.</summary>
     public const int AvatarInfoFieldNumber = 2;
     private global::Zproto.AvatarInfo avatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

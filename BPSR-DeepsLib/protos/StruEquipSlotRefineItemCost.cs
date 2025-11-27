@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2VxdWlwX3Nsb3RfcmVmaW5lX2l0ZW1fY29zdC5wcm90bxIGenBy",
-            "b3RvIkIKF0VxdWlwU2xvdFJlZmluZUl0ZW1Db3N0EhQKDGl0ZW1Db25maWdJ",
-            "ZBgBIAEoBRIRCglpdGVtQ291bnQYAiABKA1iBnByb3RvMw=="));
+            "b3RvIkUKF0VxdWlwU2xvdFJlZmluZUl0ZW1Db3N0EhYKDml0ZW1fY29uZmln",
+            "X2lkGAEgASgFEhIKCml0ZW1fY291bnQYAiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new EquipSlotRefineItemCost(this);
     }
 
-    /// <summary>Field number for the "itemConfigId" field.</summary>
+    /// <summary>Field number for the "item_config_id" field.</summary>
     public const int ItemConfigIdFieldNumber = 1;
     private int itemConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemCount" field.</summary>
+    /// <summary>Field number for the "item_count" field.</summary>
     public const int ItemCountFieldNumber = 2;
     private uint itemCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

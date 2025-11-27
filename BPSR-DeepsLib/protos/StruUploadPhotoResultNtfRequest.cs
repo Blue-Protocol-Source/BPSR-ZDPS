@@ -27,10 +27,10 @@ namespace Zproto {
             "CipzdHJ1X3VwbG9hZF9waG90b19yZXN1bHRfbnRmX3JlcXVlc3QucHJvdG8S",
             "Bnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aH2VudW1fZV9wbGF0",
             "Zm9ybV9mdW5jX3R5cGUucHJvdG8aG3N0cnVfcGhvdG9fZ3JhcGhfc2hvdy5w",
-            "cm90byKaAQobVXBsb2FkUGhvdG9SZXN1bHROdGZSZXF1ZXN0EiMKB2VyckNv",
-            "ZGUYAiABKA4yEi56cHJvdG8uRUVycm9yQ29kZRIpCglwaG90b0luZm8YAyAB",
-            "KAsyFi56cHJvdG8uUGhvdG9HcmFwaFNob3cSKwoIZnVuY1R5cGUYBCABKA4y",
-            "GS56cHJvdG8uRVBsYXRmb3JtRnVuY1R5cGViBnByb3RvMw=="));
+            "cm90byKdAQobVXBsb2FkUGhvdG9SZXN1bHROdGZSZXF1ZXN0EiQKCGVycl9j",
+            "b2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGUSKgoKcGhvdG9faW5mbxgD",
+            "IAEoCzIWLnpwcm90by5QaG90b0dyYXBoU2hvdxIsCglmdW5jX3R5cGUYBCAB",
+            "KA4yGS56cHJvdG8uRVBsYXRmb3JtRnVuY1R5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.EnumEPlatformFuncTypeReflection.Descriptor, global::Zproto.StruPhotoGraphShowReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new UploadPhotoResultNtfRequest(this);
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photoInfo" field.</summary>
+    /// <summary>Field number for the "photo_info" field.</summary>
     public const int PhotoInfoFieldNumber = 3;
     private global::Zproto.PhotoGraphShow photoInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "funcType" field.</summary>
+    /// <summary>Field number for the "func_type" field.</summary>
     public const int FuncTypeFieldNumber = 4;
     private global::Zproto.EPlatformFuncType funcType_ = global::Zproto.EPlatformFuncType.EfuncTypeDefault;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

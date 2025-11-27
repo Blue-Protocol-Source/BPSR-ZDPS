@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3BsYWNlX2hvbGRlcl9pdGVtLnByb3RvEgZ6cHJvdG8aD3N0cnVf",
-            "aXRlbS5wcm90byJFCg9QbGFjZUhvbGRlckl0ZW0SEAoIY29uZmlnSWQYASAB",
-            "KA0SIAoKSXRlbURldGFpbBgCIAEoCzIMLnpwcm90by5JdGVtYgZwcm90bzM="));
+            "aXRlbS5wcm90byJHCg9QbGFjZUhvbGRlckl0ZW0SEQoJY29uZmlnX2lkGAEg",
+            "ASgNEiEKC2l0ZW1fZGV0YWlsGAIgASgLMgwuenByb3RvLkl0ZW1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new PlaceHolderItem(this);
     }
 
-    /// <summary>Field number for the "configId" field.</summary>
+    /// <summary>Field number for the "config_id" field.</summary>
     public const int ConfigIdFieldNumber = 1;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ItemDetail" field.</summary>
+    /// <summary>Field number for the "item_detail" field.</summary>
     public const int ItemDetailFieldNumber = 2;
     private global::Zproto.Item itemDetail_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

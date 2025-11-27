@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CjFzdHJ1X3JlcV91bmlvbl9hY3Rpdml0eV9wcm9ncmVzc19pbmZvX3JlcGx5",
             "LnByb3RvEgZ6cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGidzdHJ1",
-            "X3VuaW9uX2FjdGl2aXR5X3Byb2dyZXNzX2luZm8ucHJvdG8igQEKIVJlcVVu",
-            "aW9uQWN0aXZpdHlQcm9ncmVzc0luZm9SZXBseRI3Cgxwcm9ncmVzc0luZm8Y",
-            "ASABKAsyIS56cHJvdG8uVW5pb25BY3Rpdml0eVByb2dyZXNzSW5mbxIjCgdl",
-            "cnJDb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "X3VuaW9uX2FjdGl2aXR5X3Byb2dyZXNzX2luZm8ucHJvdG8igwEKIVJlcVVu",
+            "aW9uQWN0aXZpdHlQcm9ncmVzc0luZm9SZXBseRI4Cg1wcm9ncmVzc19pbmZv",
+            "GAEgASgLMiEuenByb3RvLlVuaW9uQWN0aXZpdHlQcm9ncmVzc0luZm8SJAoI",
+            "ZXJyX2NvZGUYAiABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionActivityProgressInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new ReqUnionActivityProgressInfoReply(this);
     }
 
-    /// <summary>Field number for the "progressInfo" field.</summary>
+    /// <summary>Field number for the "progress_info" field.</summary>
     public const int ProgressInfoFieldNumber = 1;
     private global::Zproto.UnionActivityProgressInfo progressInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

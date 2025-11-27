@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "ChdzdHJ1X21vZF9uZXdfYXR0ci5wcm90bxIGenByb3RvGiJzdHJ1X21vZF9w",
             "YXJ0X3VwZ3JhZGVfcmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJv",
-            "dG8iVAoKTW9kTmV3QXR0chIQCghtb2RQYXJ0cxgBIAMoBRI0Cg51cGdyYWRl",
-            "UmVjb3JkcxgCIAMoCzIcLnpwcm90by5Nb2RQYXJ0VXBncmFkZVJlY29yZGIG",
-            "cHJvdG8z"));
+            "dG8iVgoKTW9kTmV3QXR0chIRCgltb2RfcGFydHMYASADKAUSNQoPdXBncmFk",
+            "ZV9yZWNvcmRzGAIgAygLMhwuenByb3RvLk1vZFBhcnRVcGdyYWRlUmVjb3Jk",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruModPartUpgradeRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ModNewAttr(this);
     }
 
-    /// <summary>Field number for the "modParts" field.</summary>
+    /// <summary>Field number for the "mod_parts" field.</summary>
     public const int ModPartsFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_modParts_codec
         = pb::FieldCodec.ForInt32(10);
@@ -96,7 +96,7 @@ namespace Zproto {
       get { return modParts_; }
     }
 
-    /// <summary>Field number for the "upgradeRecords" field.</summary>
+    /// <summary>Field number for the "upgrade_records" field.</summary>
     public const int UpgradeRecordsFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.ModPartUpgradeRecord> _repeated_upgradeRecords_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.ModPartUpgradeRecord.Parser);

@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3N0YXRpc3RpY3NfZGF0YS5wcm90bxIGenByb3RvGhZzdHJ1X3N0",
-            "YXRfcmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8inAEKDlN0",
-            "YXRpc3RpY3NEYXRhEkAKDXN0YXRSZWNvcmRNYXAYASADKAsyKS56cHJvdG8u",
-            "U3RhdGlzdGljc0RhdGEuU3RhdFJlY29yZE1hcEVudHJ5GkgKElN0YXRSZWNv",
-            "cmRNYXBFbnRyeRILCgNrZXkYASABKAUSIQoFdmFsdWUYAiABKAsyEi56cHJv",
-            "dG8uU3RhdFJlY29yZDoCOAFiBnByb3RvMw=="));
+            "YXRfcmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ingEKDlN0",
+            "YXRpc3RpY3NEYXRhEkIKD3N0YXRfcmVjb3JkX21hcBgBIAMoCzIpLnpwcm90",
+            "by5TdGF0aXN0aWNzRGF0YS5TdGF0UmVjb3JkTWFwRW50cnkaSAoSU3RhdFJl",
+            "Y29yZE1hcEVudHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1ZRgCIAEoCzISLnpw",
+            "cm90by5TdGF0UmVjb3JkOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStatRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new StatisticsData(this);
     }
 
-    /// <summary>Field number for the "statRecordMap" field.</summary>
+    /// <summary>Field number for the "stat_record_map" field.</summary>
     public const int StatRecordMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.StatRecord>.Codec _map_statRecordMap_codec
         = new pbc::MapField<int, global::Zproto.StatRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.StatRecord.Parser), 10);

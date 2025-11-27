@@ -26,13 +26,13 @@ namespace Zproto {
           string.Concat(
             "ChRzdHJ1X3Nob3dfdGVhbS5wcm90bxIGenByb3RvGhVzdHJ1X2FwcGx5X3Rp",
             "bWUucHJvdG8aHWVudW1fZV90ZWFtX21lbWJlcl90eXBlLnByb3RvGhhzdHJ1",
-            "X3RlYW1fbWVtX2RhdGEucHJvdG8i8wEKCFNob3dUZWFtEg4KBnRlYW1JZBgB",
-            "IAEoAxIQCghsZWFkZXJJZBgCIAEoAxIQCgh0YXJnZXRJZBgDIAEoDRIQCght",
-            "YXRjaGluZxgEIAEoCBIMCgRkZXNjGAUgASgJEiEKBG1lbXMYBiADKAsyEy56",
-            "cHJvdG8uVGVhbU1lbURhdGESFQoNc2V0VGFyZ2V0VGltZRgHIAEoBBIoCg1h",
-            "cHBseVRpbWVMaXN0GAggAygLMhEuenByb3RvLkFwcGx5VGltZRIvCg50ZWFt",
-            "TWVtYmVyVHlwZRgJIAEoDjIXLnpwcm90by5FVGVhbU1lbWJlclR5cGViBnBy",
-            "b3RvMw=="));
+            "X3RlYW1fbWVtX2RhdGEucHJvdG8i/AEKCFNob3dUZWFtEg8KB3RlYW1faWQY",
+            "ASABKAMSEQoJbGVhZGVyX2lkGAIgASgDEhEKCXRhcmdldF9pZBgDIAEoDRIQ",
+            "CghtYXRjaGluZxgEIAEoCBIMCgRkZXNjGAUgASgJEiEKBG1lbXMYBiADKAsy",
+            "Ey56cHJvdG8uVGVhbU1lbURhdGESFwoPc2V0X3RhcmdldF90aW1lGAcgASgE",
+            "EioKD2FwcGx5X3RpbWVfbGlzdBgIIAMoCzIRLnpwcm90by5BcHBseVRpbWUS",
+            "MQoQdGVhbV9tZW1iZXJfdHlwZRgJIAEoDjIXLnpwcm90by5FVGVhbU1lbWJl",
+            "clR5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruApplyTimeReflection.Descriptor, global::Zproto.EnumETeamMemberTypeReflection.Descriptor, global::Zproto.StruTeamMemDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace Zproto {
       return new ShowTeam(this);
     }
 
-    /// <summary>Field number for the "teamId" field.</summary>
+    /// <summary>Field number for the "team_id" field.</summary>
     public const int TeamIdFieldNumber = 1;
     private long teamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "leaderId" field.</summary>
+    /// <summary>Field number for the "leader_id" field.</summary>
     public const int LeaderIdFieldNumber = 2;
     private long leaderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,7 +120,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 3;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +167,7 @@ namespace Zproto {
       get { return mems_; }
     }
 
-    /// <summary>Field number for the "setTargetTime" field.</summary>
+    /// <summary>Field number for the "set_target_time" field.</summary>
     public const int SetTargetTimeFieldNumber = 7;
     private ulong setTargetTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,7 +179,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "applyTimeList" field.</summary>
+    /// <summary>Field number for the "apply_time_list" field.</summary>
     public const int ApplyTimeListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Zproto.ApplyTime> _repeated_applyTimeList_codec
         = pb::FieldCodec.ForMessage(66, global::Zproto.ApplyTime.Parser);
@@ -190,7 +190,7 @@ namespace Zproto {
       get { return applyTimeList_; }
     }
 
-    /// <summary>Field number for the "teamMemberType" field.</summary>
+    /// <summary>Field number for the "team_member_type" field.</summary>
     public const int TeamMemberTypeFieldNumber = 9;
     private global::Zproto.ETeamMemberType teamMemberType_ = global::Zproto.ETeamMemberType.Five;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

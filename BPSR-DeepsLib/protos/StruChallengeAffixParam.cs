@@ -24,9 +24,9 @@ namespace Zproto {
     static StruChallengeAffixParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X2NoYWxsZW5nZV9hZmZpeF9wYXJhbS5wcm90bxIGenByb3RvIjYK",
-            "E0NoYWxsZW5nZUFmZml4UGFyYW0SEQoJZHVuZ2VvbklkGAEgASgFEgwKBGRp",
-            "ZmYYAiABKAViBnByb3RvMw=="));
+            "CiBzdHJ1X2NoYWxsZW5nZV9hZmZpeF9wYXJhbS5wcm90bxIGenByb3RvIjcK",
+            "E0NoYWxsZW5nZUFmZml4UGFyYW0SEgoKZHVuZ2Vvbl9pZBgBIAEoBRIMCgRk",
+            "aWZmGAIgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ChallengeAffixParam(this);
     }
 
-    /// <summary>Field number for the "dungeonId" field.</summary>
+    /// <summary>Field number for the "dungeon_id" field.</summary>
     public const int DungeonIdFieldNumber = 1;
     private int dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

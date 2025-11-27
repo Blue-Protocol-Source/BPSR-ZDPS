@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X3JpZGVfc2tpbl9jb250YWluZXIucHJvdG8SBnpwcm90bxoZc3Ry",
             "dV9yaWRlX3NraW5fZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3Rv",
-            "IqABChFSaWRlU2tpbkNvbnRhaW5lchISCgpyaWRlU2tpbklkGAEgASgFEjMK",
-            "BXNpbmtzGAIgAygLMiQuenByb3RvLlJpZGVTa2luQ29udGFpbmVyLlNpbmtz",
-            "RW50cnkaQgoKU2lua3NFbnRyeRILCgNrZXkYASABKA0SIwoFdmFsdWUYAiAB",
-            "KAsyFC56cHJvdG8uUmlkZVNraW5EYXRhOgI4AWIGcHJvdG8z"));
+            "IqIBChFSaWRlU2tpbkNvbnRhaW5lchIUCgxyaWRlX3NraW5faWQYASABKAUS",
+            "MwoFc2lua3MYAiADKAsyJC56cHJvdG8uUmlkZVNraW5Db250YWluZXIuU2lu",
+            "a3NFbnRyeRpCCgpTaW5rc0VudHJ5EgsKA2tleRgBIAEoDRIjCgV2YWx1ZRgC",
+            "IAEoCzIULnpwcm90by5SaWRlU2tpbkRhdGE6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruRideSkinDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new RideSkinContainer(this);
     }
 
-    /// <summary>Field number for the "rideSkinId" field.</summary>
+    /// <summary>Field number for the "ride_skin_id" field.</summary>
     public const int RideSkinIdFieldNumber = 1;
     private int rideSkinId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

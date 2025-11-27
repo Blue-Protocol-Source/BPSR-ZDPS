@@ -24,9 +24,9 @@ namespace Zproto {
     static StruExchangeItemInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X2V4Y2hhbmdlX2l0ZW1faW5mby5wcm90bxIGenByb3RvIlMKEEV4",
-            "Y2hhbmdlSXRlbUluZm8SEAoIY29uZmlnSWQYASABKA0SCwoDbnVtGAIgASgN",
-            "EhAKCG1pblByaWNlGAMgASgNEg4KBmlzQ2FyZRgEIAEoCGIGcHJvdG8z"));
+            "Ch1zdHJ1X2V4Y2hhbmdlX2l0ZW1faW5mby5wcm90bxIGenByb3RvIlYKEEV4",
+            "Y2hhbmdlSXRlbUluZm8SEQoJY29uZmlnX2lkGAEgASgNEgsKA251bRgCIAEo",
+            "DRIRCgltaW5fcHJpY2UYAyABKA0SDwoHaXNfY2FyZRgEIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ExchangeItemInfo(this);
     }
 
-    /// <summary>Field number for the "configId" field.</summary>
+    /// <summary>Field number for the "config_id" field.</summary>
     public const int ConfigIdFieldNumber = 1;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "minPrice" field.</summary>
+    /// <summary>Field number for the "min_price" field.</summary>
     public const int MinPriceFieldNumber = 3;
     private uint minPrice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +121,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isCare" field.</summary>
+    /// <summary>Field number for the "is_care" field.</summary>
     public const int IsCareFieldNumber = 4;
     private bool isCare_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X3RlYW1fZHVuZ2Vvbl9jaGVja19yZXN1bHQucHJvdG8SBnpwcm90",
-            "byKlAQoWVGVhbUR1bmdlb25DaGVja1Jlc3VsdBIRCglkdW5nZW9uSWQYASAB",
-            "KAUSRAoLY2hlY2tSZXN1bHQYAiADKAsyLy56cHJvdG8uVGVhbUR1bmdlb25D",
-            "aGVja1Jlc3VsdC5DaGVja1Jlc3VsdEVudHJ5GjIKEENoZWNrUmVzdWx0RW50",
-            "cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
+            "byKnAQoWVGVhbUR1bmdlb25DaGVja1Jlc3VsdBISCgpkdW5nZW9uX2lkGAEg",
+            "ASgFEkUKDGNoZWNrX3Jlc3VsdBgCIAMoCzIvLnpwcm90by5UZWFtRHVuZ2Vv",
+            "bkNoZWNrUmVzdWx0LkNoZWNrUmVzdWx0RW50cnkaMgoQQ2hlY2tSZXN1bHRF",
+            "bnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new TeamDungeonCheckResult(this);
     }
 
-    /// <summary>Field number for the "dungeonId" field.</summary>
+    /// <summary>Field number for the "dungeon_id" field.</summary>
     public const int DungeonIdFieldNumber = 1;
     private int dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "checkResult" field.</summary>
+    /// <summary>Field number for the "check_result" field.</summary>
     public const int CheckResultFieldNumber = 2;
     private static readonly pbc::MapField<long, int>.Codec _map_checkResult_codec
         = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 18);

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSwitchProfessionInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3N3aXRjaF9wcm9mZXNzaW9uX2luZm8ucHJvdG8SBnpwcm90byIs",
-            "ChRTd2l0Y2hQcm9mZXNzaW9uSW5mbxIUCgxwcm9mZXNzaW9uSWQYASABKAVi",
-            "BnByb3RvMw=="));
+            "CiFzdHJ1X3N3aXRjaF9wcm9mZXNzaW9uX2luZm8ucHJvdG8SBnpwcm90byIt",
+            "ChRTd2l0Y2hQcm9mZXNzaW9uSW5mbxIVCg1wcm9mZXNzaW9uX2lkGAEgASgF",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new SwitchProfessionInfo(this);
     }
 
-    /// <summary>Field number for the "professionId" field.</summary>
+    /// <summary>Field number for the "profession_id" field.</summary>
     public const int ProfessionIdFieldNumber = 1;
     private int professionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

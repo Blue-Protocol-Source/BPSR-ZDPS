@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X3NjZW5lX2ludGVyYWN0aW9uX2luZm8ucHJvdG8SBnpwcm90bxoP",
-            "c3RydV92ZWMzLnByb3RvIk8KFFNjZW5lSW50ZXJhY3Rpb25JbmZvEg0KBW9i",
-            "aklkGAEgASgFEg0KBXBvc0lkGAIgASgFEhkKA3BvcxgDIAEoCzIMLnpwcm90",
-            "by5WZWMzYgZwcm90bzM="));
+            "c3RydV92ZWMzLnByb3RvIlEKFFNjZW5lSW50ZXJhY3Rpb25JbmZvEg4KBm9i",
+            "al9pZBgBIAEoBRIOCgZwb3NfaWQYAiABKAUSGQoDcG9zGAMgASgLMgwuenBy",
+            "b3RvLlZlYzNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruVec3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new SceneInteractionInfo(this);
     }
 
-    /// <summary>Field number for the "objId" field.</summary>
+    /// <summary>Field number for the "obj_id" field.</summary>
     public const int ObjIdFieldNumber = 1;
     private int objId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "posId" field.</summary>
+    /// <summary>Field number for the "pos_id" field.</summary>
     public const int PosIdFieldNumber = 2;
     private int posId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

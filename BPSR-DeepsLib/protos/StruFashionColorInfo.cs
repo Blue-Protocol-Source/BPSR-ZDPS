@@ -25,14 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X2Zhc2hpb25fY29sb3JfaW5mby5wcm90bxIGenByb3RvGhNzdHJ1",
-            "X2ludF92ZWMzLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ipQIKEEZh",
+            "X2ludF92ZWMzLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ipgIKEEZh",
             "c2hpb25Db2xvckluZm8SCgoCaWQYASABKAUSNAoGY29sb3JzGAIgAygLMiQu",
-            "enByb3RvLkZhc2hpb25Db2xvckluZm8uQ29sb3JzRW50cnkSRgoPYXR0YWNo",
-            "bWVudENvbG9yGAMgAygLMi0uenByb3RvLkZhc2hpb25Db2xvckluZm8uQXR0",
-            "YWNobWVudENvbG9yRW50cnkaPgoLQ29sb3JzRW50cnkSCwoDa2V5GAEgASgF",
-            "Eh4KBXZhbHVlGAIgASgLMg8uenByb3RvLkludFZlYzM6AjgBGkcKFEF0dGFj",
-            "aG1lbnRDb2xvckVudHJ5EgsKA2tleRgBIAEoBRIeCgV2YWx1ZRgCIAEoCzIP",
-            "Lnpwcm90by5JbnRWZWMzOgI4AWIGcHJvdG8z"));
+            "enByb3RvLkZhc2hpb25Db2xvckluZm8uQ29sb3JzRW50cnkSRwoQYXR0YWNo",
+            "bWVudF9jb2xvchgDIAMoCzItLnpwcm90by5GYXNoaW9uQ29sb3JJbmZvLkF0",
+            "dGFjaG1lbnRDb2xvckVudHJ5Gj4KC0NvbG9yc0VudHJ5EgsKA2tleRgBIAEo",
+            "BRIeCgV2YWx1ZRgCIAEoCzIPLnpwcm90by5JbnRWZWMzOgI4ARpHChRBdHRh",
+            "Y2htZW50Q29sb3JFbnRyeRILCgNrZXkYASABKAUSHgoFdmFsdWUYAiABKAsy",
+            "Dy56cHJvdG8uSW50VmVjMzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIntVec3Reflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -113,7 +113,7 @@ namespace Zproto {
       get { return colors_; }
     }
 
-    /// <summary>Field number for the "attachmentColor" field.</summary>
+    /// <summary>Field number for the "attachment_color" field.</summary>
     public const int AttachmentColorFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.IntVec3>.Codec _map_attachmentColor_codec
         = new pbc::MapField<int, global::Zproto.IntVec3>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.IntVec3.Parser), 26);

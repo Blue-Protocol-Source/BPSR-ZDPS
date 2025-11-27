@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X2R1bmdlb25fdGl0bGVfbGlzdC5wcm90bxIGenByb3RvGh1zdHJ1",
             "X2R1bmdlb25fdGl0bGVfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIpoBChBEdW5nZW9uVGl0bGVMaXN0EjoKCXRpdGxlSW5mbxgBIAMoCzIn",
-            "Lnpwcm90by5EdW5nZW9uVGl0bGVMaXN0LlRpdGxlSW5mb0VudHJ5GkoKDlRp",
-            "dGxlSW5mb0VudHJ5EgsKA2tleRgBIAEoBRInCgV2YWx1ZRgCIAEoCzIYLnpw",
-            "cm90by5EdW5nZW9uVGl0bGVJbmZvOgI4AWIGcHJvdG8z"));
+            "b3RvIpsBChBEdW5nZW9uVGl0bGVMaXN0EjsKCnRpdGxlX2luZm8YASADKAsy",
+            "Jy56cHJvdG8uRHVuZ2VvblRpdGxlTGlzdC5UaXRsZUluZm9FbnRyeRpKCg5U",
+            "aXRsZUluZm9FbnRyeRILCgNrZXkYASABKAUSJwoFdmFsdWUYAiABKAsyGC56",
+            "cHJvdG8uRHVuZ2VvblRpdGxlSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonTitleInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new DungeonTitleList(this);
     }
 
-    /// <summary>Field number for the "titleInfo" field.</summary>
+    /// <summary>Field number for the "title_info" field.</summary>
     public const int TitleInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.DungeonTitleInfo>.Codec _map_titleInfo_codec
         = new pbc::MapField<int, global::Zproto.DungeonTitleInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonTitleInfo.Parser), 10);

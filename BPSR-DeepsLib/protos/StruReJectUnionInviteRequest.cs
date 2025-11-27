@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X3JlX2plY3RfdW5pb25faW52aXRlX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90byIsChhSZUplY3RVbmlvbkludml0ZVJlcXVlc3QSEAoISW52aXRlSWQY",
-            "ASABKANiBnByb3RvMw=="));
+            "cm90byItChhSZUplY3RVbmlvbkludml0ZVJlcXVlc3QSEQoJaW52aXRlX2lk",
+            "GAEgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ReJectUnionInviteRequest(this);
     }
 
-    /// <summary>Field number for the "InviteId" field.</summary>
+    /// <summary>Field number for the "invite_id" field.</summary>
     public const int InviteIdFieldNumber = 1;
     private long inviteId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

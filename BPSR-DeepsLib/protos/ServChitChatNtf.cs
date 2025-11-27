@@ -28,15 +28,15 @@ namespace Zproto {
             "ZnlfYWRkX3ByaXZhdGVfY2hhdF9zZXNzaW9uX3JlcXVlc3QucHJvdG8aInN0",
             "cnVfbm90aWZ5X2JlX211dGVkX3JlcXVlc3QucHJvdG8aLHN0cnVfbm90aWZ5",
             "X2NsZWFyX2NoYXRfaGlzdG9yeV9yZXF1ZXN0LnByb3RvGi9zdHJ1X25vdGlm",
-            "eV9uZXdlc3RfY2hpdF9jaGF0X21zZ3NfcmVxdWVzdC5wcm90byLVAgoLQ2hp",
-            "dENoYXROdGYaVQoYTm90aWZ5TmV3ZXN0Q2hpdENoYXRNc2dzEjkKCHZSZXF1",
-            "ZXN0GAEgASgLMicuenByb3RvLk5vdGlmeU5ld2VzdENoaXRDaGF0TXNnc1Jl",
-            "cXVlc3QaPwoNTm90aWZ5QmVNdXRlZBIuCgh2UmVxdWVzdBgBIAEoCzIcLnpw",
-            "cm90by5Ob3RpZnlCZU11dGVkUmVxdWVzdBpbChtOb3RpZnlBZGRQcml2YXRl",
-            "Q2hhdFNlc3Npb24SPAoIdlJlcXVlc3QYASABKAsyKi56cHJvdG8uTm90aWZ5",
-            "QWRkUHJpdmF0ZUNoYXRTZXNzaW9uUmVxdWVzdBpRChZOb3RpZnlDbGVhckNo",
-            "YXRIaXN0b3J5EjcKCHZSZXF1ZXN0GAEgASgLMiUuenByb3RvLk5vdGlmeUNs",
-            "ZWFyQ2hhdEhpc3RvcnlSZXF1ZXN0YgZwcm90bzM="));
+            "eV9uZXdlc3RfY2hpdF9jaGF0X21zZ3NfcmVxdWVzdC5wcm90byLZAgoLQ2hp",
+            "dENoYXROdGYaVgoYTm90aWZ5TmV3ZXN0Q2hpdENoYXRNc2dzEjoKCXZfcmVx",
+            "dWVzdBgBIAEoCzInLnpwcm90by5Ob3RpZnlOZXdlc3RDaGl0Q2hhdE1zZ3NS",
+            "ZXF1ZXN0GkAKDU5vdGlmeUJlTXV0ZWQSLwoJdl9yZXF1ZXN0GAEgASgLMhwu",
+            "enByb3RvLk5vdGlmeUJlTXV0ZWRSZXF1ZXN0GlwKG05vdGlmeUFkZFByaXZh",
+            "dGVDaGF0U2Vzc2lvbhI9Cgl2X3JlcXVlc3QYASABKAsyKi56cHJvdG8uTm90",
+            "aWZ5QWRkUHJpdmF0ZUNoYXRTZXNzaW9uUmVxdWVzdBpSChZOb3RpZnlDbGVh",
+            "ckNoYXRIaXN0b3J5EjgKCXZfcmVxdWVzdBgBIAEoCzIlLnpwcm90by5Ob3Rp",
+            "ZnlDbGVhckNoYXRIaXN0b3J5UmVxdWVzdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNotifyAddPrivateChatSessionRequestReflection.Descriptor, global::Zproto.StruNotifyBeMutedRequestReflection.Descriptor, global::Zproto.StruNotifyClearChatHistoryRequestReflection.Descriptor, global::Zproto.StruNotifyNewestChitChatMsgsRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -259,7 +259,7 @@ namespace Zproto {
           return new NotifyNewestChitChatMsgs(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyNewestChitChatMsgsRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -466,7 +466,7 @@ namespace Zproto {
           return new NotifyBeMuted(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyBeMutedRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -673,7 +673,7 @@ namespace Zproto {
           return new NotifyAddPrivateChatSession(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyAddPrivateChatSessionRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -880,7 +880,7 @@ namespace Zproto {
           return new NotifyClearChatHistory(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyClearChatHistoryRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

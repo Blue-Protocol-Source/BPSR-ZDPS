@@ -26,15 +26,16 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X3NlYXNvbl9tZWRhbF9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
             "bWVkYWxfaG9sZS5wcm90bxoVc3RydV9tZWRhbF9ub2RlLnByb3RvGhVzdHJ1",
-            "X2RpcnR5X21hc2sucHJvdG8i9gIKD1NlYXNvbk1lZGFsSW5mbxIQCghzZWFz",
-            "b25JZBgBIAEoDRJFCg9ub3JtYWxIb2xlSW5mb3MYAiADKAsyLC56cHJvdG8u",
-            "U2Vhc29uTWVkYWxJbmZvLk5vcm1hbEhvbGVJbmZvc0VudHJ5EicKDGNvcmVI",
-            "b2xlSW5mbxgDIAEoCzIRLnpwcm90by5NZWRhbEhvbGUSSQoRY29yZUhvbGVO",
-            "b2RlSW5mb3MYBCADKAsyLi56cHJvdG8uU2Vhc29uTWVkYWxJbmZvLkNvcmVI",
-            "b2xlTm9kZUluZm9zRW50cnkaSQoUTm9ybWFsSG9sZUluZm9zRW50cnkSCwoD",
-            "a2V5GAEgASgNEiAKBXZhbHVlGAIgASgLMhEuenByb3RvLk1lZGFsSG9sZToC",
-            "OAEaSwoWQ29yZUhvbGVOb2RlSW5mb3NFbnRyeRILCgNrZXkYASABKA0SIAoF",
-            "dmFsdWUYAiABKAsyES56cHJvdG8uTWVkYWxOb2RlOgI4AWIGcHJvdG8z"));
+            "X2RpcnR5X21hc2sucHJvdG8i/gIKD1NlYXNvbk1lZGFsSW5mbxIRCglzZWFz",
+            "b25faWQYASABKA0SRwoRbm9ybWFsX2hvbGVfaW5mb3MYAiADKAsyLC56cHJv",
+            "dG8uU2Vhc29uTWVkYWxJbmZvLk5vcm1hbEhvbGVJbmZvc0VudHJ5EikKDmNv",
+            "cmVfaG9sZV9pbmZvGAMgASgLMhEuenByb3RvLk1lZGFsSG9sZRJMChRjb3Jl",
+            "X2hvbGVfbm9kZV9pbmZvcxgEIAMoCzIuLnpwcm90by5TZWFzb25NZWRhbElu",
+            "Zm8uQ29yZUhvbGVOb2RlSW5mb3NFbnRyeRpJChROb3JtYWxIb2xlSW5mb3NF",
+            "bnRyeRILCgNrZXkYASABKA0SIAoFdmFsdWUYAiABKAsyES56cHJvdG8uTWVk",
+            "YWxIb2xlOgI4ARpLChZDb3JlSG9sZU5vZGVJbmZvc0VudHJ5EgsKA2tleRgB",
+            "IAEoDRIgCgV2YWx1ZRgCIAEoCzIRLnpwcm90by5NZWRhbE5vZGU6AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMedalHoleReflection.Descriptor, global::Zproto.StruMedalNodeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +94,7 @@ namespace Zproto {
       return new SeasonMedalInfo(this);
     }
 
-    /// <summary>Field number for the "seasonId" field.</summary>
+    /// <summary>Field number for the "season_id" field.</summary>
     public const int SeasonIdFieldNumber = 1;
     private uint seasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "normalHoleInfos" field.</summary>
+    /// <summary>Field number for the "normal_hole_infos" field.</summary>
     public const int NormalHoleInfosFieldNumber = 2;
     private static readonly pbc::MapField<uint, global::Zproto.MedalHole>.Codec _map_normalHoleInfos_codec
         = new pbc::MapField<uint, global::Zproto.MedalHole>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MedalHole.Parser), 18);
@@ -116,7 +117,7 @@ namespace Zproto {
       get { return normalHoleInfos_; }
     }
 
-    /// <summary>Field number for the "coreHoleInfo" field.</summary>
+    /// <summary>Field number for the "core_hole_info" field.</summary>
     public const int CoreHoleInfoFieldNumber = 3;
     private global::Zproto.MedalHole coreHoleInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "coreHoleNodeInfos" field.</summary>
+    /// <summary>Field number for the "core_hole_node_infos" field.</summary>
     public const int CoreHoleNodeInfosFieldNumber = 4;
     private static readonly pbc::MapField<uint, global::Zproto.MedalNode>.Codec _map_coreHoleNodeInfos_codec
         = new pbc::MapField<uint, global::Zproto.MedalNode>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MedalNode.Parser), 34);

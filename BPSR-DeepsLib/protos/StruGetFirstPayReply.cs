@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2dldF9maXJzdF9wYXlfcmVwbHkucHJvdG8SBnpwcm90bxoXZW51",
             "bV9lX2Vycm9yX2NvZGUucHJvdG8aHXN0cnVfZ2V0X2ZpcnN0X3BheV9pbmZv",
-            "LnByb3RvIuABChBHZXRGaXJzdFBheVJlcGx5EhQKDGZpcnN0UGF5SW5mbxgB",
-            "IAMoBRJCCg1sYWRkZXJQYXlJbmZvGAIgAygLMisuenByb3RvLkdldEZpcnN0",
-            "UGF5UmVwbHkuTGFkZGVyUGF5SW5mb0VudHJ5EiMKB2VyckNvZGUYAyABKA4y",
-            "Ei56cHJvdG8uRUVycm9yQ29kZRpNChJMYWRkZXJQYXlJbmZvRW50cnkSCwoD",
-            "a2V5GAEgASgFEiYKBXZhbHVlGAIgASgLMhcuenByb3RvLkdldEZpcnN0UGF5",
-            "SW5mbzoCOAFiBnByb3RvMw=="));
+            "LnByb3RvIuUBChBHZXRGaXJzdFBheVJlcGx5EhYKDmZpcnN0X3BheV9pbmZv",
+            "GAEgAygFEkQKD2xhZGRlcl9wYXlfaW5mbxgCIAMoCzIrLnpwcm90by5HZXRG",
+            "aXJzdFBheVJlcGx5LkxhZGRlclBheUluZm9FbnRyeRIkCghlcnJfY29kZRgD",
+            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlGk0KEkxhZGRlclBheUluZm9FbnRy",
+            "eRILCgNrZXkYASABKAUSJgoFdmFsdWUYAiABKAsyFy56cHJvdG8uR2V0Rmly",
+            "c3RQYXlJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruGetFirstPayInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new GetFirstPayReply(this);
     }
 
-    /// <summary>Field number for the "firstPayInfo" field.</summary>
+    /// <summary>Field number for the "first_pay_info" field.</summary>
     public const int FirstPayInfoFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_firstPayInfo_codec
         = pb::FieldCodec.ForInt32(10);
@@ -100,7 +100,7 @@ namespace Zproto {
       get { return firstPayInfo_; }
     }
 
-    /// <summary>Field number for the "ladderPayInfo" field.</summary>
+    /// <summary>Field number for the "ladder_pay_info" field.</summary>
     public const int LadderPayInfoFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.GetFirstPayInfo>.Codec _map_ladderPayInfo_codec
         = new pbc::MapField<int, global::Zproto.GetFirstPayInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.GetFirstPayInfo.Parser), 18);
@@ -111,7 +111,7 @@ namespace Zproto {
       get { return ladderPayInfo_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

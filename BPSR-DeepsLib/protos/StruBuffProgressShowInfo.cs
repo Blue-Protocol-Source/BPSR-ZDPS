@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2J1ZmZfcHJvZ3Jlc3Nfc2hvd19pbmZvLnByb3RvEgZ6cHJvdG8i",
-            "fAoUQnVmZlByb2dyZXNzU2hvd0luZm8SDwoHaXNDbG9zZRgBIAEoCBIMCgRs",
-            "YXN0GAIgASgFEg0KBXZhbHVlGAMgASgFEg0KBXNwZWVkGAQgASgCEhMKC2No",
-            "YW5nZVZhbHVlGAUgASgFEhIKCmlzT25seVNlbGYYBiABKAhiBnByb3RvMw=="));
+            "gAEKFEJ1ZmZQcm9ncmVzc1Nob3dJbmZvEhAKCGlzX2Nsb3NlGAEgASgIEgwK",
+            "BGxhc3QYAiABKAUSDQoFdmFsdWUYAyABKAUSDQoFc3BlZWQYBCABKAISFAoM",
+            "Y2hhbmdlX3ZhbHVlGAUgASgFEhQKDGlzX29ubHlfc2VsZhgGIAEoCGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new BuffProgressShowInfo(this);
     }
 
-    /// <summary>Field number for the "isClose" field.</summary>
+    /// <summary>Field number for the "is_close" field.</summary>
     public const int IsCloseFieldNumber = 1;
     private bool isClose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "changeValue" field.</summary>
+    /// <summary>Field number for the "change_value" field.</summary>
     public const int ChangeValueFieldNumber = 5;
     private int changeValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,7 +149,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isOnlySelf" field.</summary>
+    /// <summary>Field number for the "is_only_self" field.</summary>
     public const int IsOnlySelfFieldNumber = 6;
     private bool isOnlySelf_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

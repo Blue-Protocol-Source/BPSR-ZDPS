@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjBzdHJ1X3NlcnZlcl9zdGF0ZV9vYmplY3RfaW50ZXJhY3Rpb25fcGFyYW0u",
-            "cHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvImUKIVNlcnZl",
-            "clN0YXRlT2JqZWN0SW50ZXJhY3Rpb25QYXJhbRIPCgdvYmpVdWlkGAEgASgD",
-            "EhIKCnN0YXRlVmFsdWUYAiABKAUSGwoTbGFzdEludGVyYWN0aW9uVGltZRgD",
-            "IAEoA2IGcHJvdG8z"));
+            "cHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvImkKIVNlcnZl",
+            "clN0YXRlT2JqZWN0SW50ZXJhY3Rpb25QYXJhbRIQCghvYmpfdXVpZBgBIAEo",
+            "AxITCgtzdGF0ZV92YWx1ZRgCIAEoBRIdChVsYXN0X2ludGVyYWN0aW9uX3Rp",
+            "bWUYAyABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new ServerStateObjectInteractionParam(this);
     }
 
-    /// <summary>Field number for the "objUuid" field.</summary>
+    /// <summary>Field number for the "obj_uuid" field.</summary>
     public const int ObjUuidFieldNumber = 1;
     private long objUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "stateValue" field.</summary>
+    /// <summary>Field number for the "state_value" field.</summary>
     public const int StateValueFieldNumber = 2;
     private int stateValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastInteractionTime" field.</summary>
+    /// <summary>Field number for the "last_interaction_time" field.</summary>
     public const int LastInteractionTimeFieldNumber = 3;
     private long lastInteractionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

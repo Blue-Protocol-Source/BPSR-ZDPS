@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2dldF9tYWlsX2FwcGVuZGl4X3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "byI6ChZHZXRNYWlsQXBwZW5kaXhSZXF1ZXN0Eg8KB21haWxJZHMYAiADKAMS",
-            "DwoHb25seUdldBgDIAEoCGIGcHJvdG8z"));
+            "byI8ChZHZXRNYWlsQXBwZW5kaXhSZXF1ZXN0EhAKCG1haWxfaWRzGAIgAygD",
+            "EhAKCG9ubHlfZ2V0GAMgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new GetMailAppendixRequest(this);
     }
 
-    /// <summary>Field number for the "mailIds" field.</summary>
+    /// <summary>Field number for the "mail_ids" field.</summary>
     public const int MailIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_mailIds_codec
         = pb::FieldCodec.ForInt64(18);
@@ -94,7 +94,7 @@ namespace Zproto {
       get { return mailIds_; }
     }
 
-    /// <summary>Field number for the "onlyGet" field.</summary>
+    /// <summary>Field number for the "only_get" field.</summary>
     public const int OnlyGetFieldNumber = 3;
     private bool onlyGet_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

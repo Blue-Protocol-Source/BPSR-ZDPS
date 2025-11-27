@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X3F1ZXJ5X3Byb2R1Y3RfcmVxdWVzdC5wcm90bxIGenByb3RvGhVl",
-            "bnVtX2VfcGF5X3R5cGUucHJvdG8iOAoTUXVlcnlQcm9kdWN0UmVxdWVzdBIh",
-            "CgdwYXlUeXBlGAEgASgOMhAuenByb3RvLkVQYXlUeXBlYgZwcm90bzM="));
+            "bnVtX2VfcGF5X3R5cGUucHJvdG8iOQoTUXVlcnlQcm9kdWN0UmVxdWVzdBIi",
+            "CghwYXlfdHlwZRgBIAEoDjIQLnpwcm90by5FUGF5VHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPayTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new QueryProductRequest(this);
     }
 
-    /// <summary>Field number for the "payType" field.</summary>
+    /// <summary>Field number for the "pay_type" field.</summary>
     public const int PayTypeFieldNumber = 1;
     private global::Zproto.EPayType payType_ = global::Zproto.EPayType.PayTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

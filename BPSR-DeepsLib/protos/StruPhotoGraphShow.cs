@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "ChtzdHJ1X3Bob3RvX2dyYXBoX3Nob3cucHJvdG8SBnpwcm90bxoVc3RydV9p",
             "bWFnZV9pbmZvLnByb3RvGhtzdHJ1X3Bob3RvX293bmVyX2RhdGEucHJvdG8a",
-            "FXN0cnVfZGlydHlfbWFzay5wcm90byKWAQoOUGhvdG9HcmFwaFNob3cSDwoH",
-            "cGhvdG9JZBgBIAEoDRIhCgZpbWFnZXMYAiADKAsyES56cHJvdG8uSW1hZ2VJ",
-            "bmZvEhIKCnJlbmRlckluZm8YAyABKAkSEQoJcGhvdG9EZXNjGAQgASgJEikK",
-            "CW93bmVySW5mbxgFIAEoCzIWLnpwcm90by5QaG90b093bmVyRGF0YWIGcHJv",
-            "dG8z"));
+            "FXN0cnVfZGlydHlfbWFzay5wcm90byKaAQoOUGhvdG9HcmFwaFNob3cSEAoI",
+            "cGhvdG9faWQYASABKA0SIQoGaW1hZ2VzGAIgAygLMhEuenByb3RvLkltYWdl",
+            "SW5mbxITCgtyZW5kZXJfaW5mbxgDIAEoCRISCgpwaG90b19kZXNjGAQgASgJ",
+            "EioKCm93bmVyX2luZm8YBSABKAsyFi56cHJvdG8uUGhvdG9Pd25lckRhdGFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruImageInfoReflection.Descriptor, global::Zproto.StruPhotoOwnerDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new PhotoGraphShow(this);
     }
 
-    /// <summary>Field number for the "photoId" field.</summary>
+    /// <summary>Field number for the "photo_id" field.</summary>
     public const int PhotoIdFieldNumber = 1;
     private uint photoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +113,7 @@ namespace Zproto {
       get { return images_; }
     }
 
-    /// <summary>Field number for the "renderInfo" field.</summary>
+    /// <summary>Field number for the "render_info" field.</summary>
     public const int RenderInfoFieldNumber = 3;
     private string renderInfo_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photoDesc" field.</summary>
+    /// <summary>Field number for the "photo_desc" field.</summary>
     public const int PhotoDescFieldNumber = 4;
     private string photoDesc_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ownerInfo" field.</summary>
+    /// <summary>Field number for the "owner_info" field.</summary>
     public const int OwnerInfoFieldNumber = 5;
     private global::Zproto.PhotoOwnerData ownerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

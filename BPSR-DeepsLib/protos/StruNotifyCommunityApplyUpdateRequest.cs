@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjBzdHJ1X25vdGlmeV9jb21tdW5pdHlfYXBwbHlfdXBkYXRlX3JlcXVlc3Qu",
-            "cHJvdG8SBnpwcm90byI1CiFOb3RpZnlDb21tdW5pdHlBcHBseVVwZGF0ZVJl",
-            "cXVlc3QSEAoIaXNVcGRhdGUYASABKAhiBnByb3RvMw=="));
+            "cHJvdG8SBnpwcm90byI2CiFOb3RpZnlDb21tdW5pdHlBcHBseVVwZGF0ZVJl",
+            "cXVlc3QSEQoJaXNfdXBkYXRlGAEgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new NotifyCommunityApplyUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "isUpdate" field.</summary>
+    /// <summary>Field number for the "is_update" field.</summary>
     public const int IsUpdateFieldNumber = 1;
     private bool isUpdate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

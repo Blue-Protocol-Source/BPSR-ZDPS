@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X21hc3Rlcl9tb2RlX2R1bmdlb25faW5mby5wcm90bxIGenByb3Rv",
             "GipzdHJ1X3NlYXNvbl9tYXN0ZXJfbW9kZV9kdW5nZW9uX2luZm8ucHJvdG8a",
-            "FXN0cnVfZGlydHlfbWFzay5wcm90byLjAQoVTWFzdGVyTW9kZUR1bmdlb25J",
-            "bmZvElcKFW1hc3Rlck1vZGVEdW5nZW9uSW5mbxgBIAMoCzI4Lnpwcm90by5N",
-            "YXN0ZXJNb2RlRHVuZ2VvbkluZm8uTWFzdGVyTW9kZUR1bmdlb25JbmZvRW50",
-            "cnkSDgoGaXNTaG93GAIgASgIGmEKGk1hc3Rlck1vZGVEdW5nZW9uSW5mb0Vu",
-            "dHJ5EgsKA2tleRgBIAEoBRIyCgV2YWx1ZRgCIAEoCzIjLnpwcm90by5TZWFz",
-            "b25NYXN0ZXJNb2RlRHVuZ2VvbkluZm86AjgBYgZwcm90bzM="));
+            "FXN0cnVfZGlydHlfbWFzay5wcm90byLnAQoVTWFzdGVyTW9kZUR1bmdlb25J",
+            "bmZvEloKGG1hc3Rlcl9tb2RlX2R1bmdlb25faW5mbxgBIAMoCzI4Lnpwcm90",
+            "by5NYXN0ZXJNb2RlRHVuZ2VvbkluZm8uTWFzdGVyTW9kZUR1bmdlb25JbmZv",
+            "RW50cnkSDwoHaXNfc2hvdxgCIAEoCBphChpNYXN0ZXJNb2RlRHVuZ2Vvbklu",
+            "Zm9FbnRyeRILCgNrZXkYASABKAUSMgoFdmFsdWUYAiABKAsyIy56cHJvdG8u",
+            "U2Vhc29uTWFzdGVyTW9kZUR1bmdlb25JbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSeasonMasterModeDungeonInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new MasterModeDungeonInfo(this);
     }
 
-    /// <summary>Field number for the "masterModeDungeonInfo" field.</summary>
+    /// <summary>Field number for the "master_mode_dungeon_info" field.</summary>
     public const int MasterModeDungeonInfo_FieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.SeasonMasterModeDungeonInfo>.Codec _map_masterModeDungeonInfo_codec
         = new pbc::MapField<int, global::Zproto.SeasonMasterModeDungeonInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonMasterModeDungeonInfo.Parser), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return masterModeDungeonInfo_; }
     }
 
-    /// <summary>Field number for the "isShow" field.</summary>
+    /// <summary>Field number for the "is_show" field.</summary>
     public const int IsShowFieldNumber = 2;
     private bool isShow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

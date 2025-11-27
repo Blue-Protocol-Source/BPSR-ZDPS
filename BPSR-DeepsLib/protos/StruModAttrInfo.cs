@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X21vZF9hdHRyX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIrEBCgtNb2RBdHRySW5mbxIMCgR0eXBlGAEgASgFEgoK",
-            "AmlkGAIgASgFEg0KBXZhbHVlGAMgASgFEkEKD2VmZmVjdFBhcmFtZXRlchgE",
-            "IAMoCzIoLnpwcm90by5Nb2RBdHRySW5mby5FZmZlY3RQYXJhbWV0ZXJFbnRy",
-            "eRo2ChRFZmZlY3RQYXJhbWV0ZXJFbnRyeRILCgNrZXkYASABKA0SDQoFdmFs",
-            "dWUYAiABKAk6AjgBYgZwcm90bzM="));
+            "eV9tYXNrLnByb3RvIrIBCgtNb2RBdHRySW5mbxIMCgR0eXBlGAEgASgFEgoK",
+            "AmlkGAIgASgFEg0KBXZhbHVlGAMgASgFEkIKEGVmZmVjdF9wYXJhbWV0ZXIY",
+            "BCADKAsyKC56cHJvdG8uTW9kQXR0ckluZm8uRWZmZWN0UGFyYW1ldGVyRW50",
+            "cnkaNgoURWZmZWN0UGFyYW1ldGVyRW50cnkSCwoDa2V5GAEgASgNEg0KBXZh",
+            "bHVlGAIgASgJOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "effectParameter" field.</summary>
+    /// <summary>Field number for the "effect_parameter" field.</summary>
     public const int EffectParameterFieldNumber = 4;
     private static readonly pbc::MapField<uint, string>.Codec _map_effectParameter_codec
         = new pbc::MapField<uint, string>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForString(18, ""), 34);

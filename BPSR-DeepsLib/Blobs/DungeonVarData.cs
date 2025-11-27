@@ -5,9 +5,9 @@ namespace BPSR_DeepsLib.Blobs;
 
 public class DungeonVarData : BlobType
 {
-    public Dictionary<string, int> kvp = new();
+    public string Name = "";
+    public int Value;
 
-    private string lastName = "";
 
     public DungeonVarData()
     {
@@ -22,15 +22,15 @@ public class DungeonVarData : BlobType
         switch (index)
         {
             case Zproto.DungeonVarData.NameFieldNumber:
-                int length = blob.ReadInt();
-                string name = Encoding.UTF8.GetString(blob.ReadBytes(length));
-                lastName = name;
+                Name = blob.ReadString();
 
                 //System.Diagnostics.Debug.WriteLine($"DungeonVarData.Name={name}");
                 return true;
             case Zproto.DungeonVarData.ValueFieldNumber:
-                int value = blob.ReadInt();
-                kvp[lastName] = value;
+                //int value = blob.ReadInt();
+                //kvp[lastName] = value;
+
+                Value = blob.ReadInt();
 
                 //System.Diagnostics.Debug.WriteLine($"DungeonVarData.Value={value}");
                 return true;

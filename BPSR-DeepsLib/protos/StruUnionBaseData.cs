@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3VuaW9uX2Jhc2VfZGF0YS5wcm90bxIGenByb3RvGhtzdHJ1X3Bo",
-            "b3RvX2dyYXBoX3Nob3cucHJvdG8ihAIKDVVuaW9uQmFzZURhdGESCgoCSWQY",
-            "ASABKAMSDAoESWNvbhgCIAMoDRIMCgROYW1lGAMgASgJEg0KBWxldmVsGAQg",
-            "ASgNEgsKA251bRgFIAEoDRIOCgZtYXhOdW0YBiABKA0SDAoEdGFncxgHIAMo",
-            "DRITCgtkZWNsYXJhdGlvbhgIIAEoCRITCgtwcmVzaWRlbnRJZBgJIAEoAxIR",
-            "CglvbmxpbmVOdW0YCiABKA0SDgoGc2xvZ2FuGAsgASgJEi4KDmNvdmVyUGhv",
-            "dG9JbmZvGAwgASgLMhYuenByb3RvLlBob3RvR3JhcGhTaG93EhQKDGNvdmVy",
-            "UGhvdG9JZBgNIAEoDWIGcHJvdG8z"));
+            "b3RvX2dyYXBoX3Nob3cucHJvdG8iiwIKDVVuaW9uQmFzZURhdGESCgoCaWQY",
+            "ASABKAMSDAoEaWNvbhgCIAMoDRIMCgRuYW1lGAMgASgJEg0KBWxldmVsGAQg",
+            "ASgNEgsKA251bRgFIAEoDRIPCgdtYXhfbnVtGAYgASgNEgwKBHRhZ3MYByAD",
+            "KA0SEwoLZGVjbGFyYXRpb24YCCABKAkSFAoMcHJlc2lkZW50X2lkGAkgASgD",
+            "EhIKCm9ubGluZV9udW0YCiABKA0SDgoGc2xvZ2FuGAsgASgJEjAKEGNvdmVy",
+            "X3Bob3RvX2luZm8YDCABKAsyFi56cHJvdG8uUGhvdG9HcmFwaFNob3cSFgoO",
+            "Y292ZXJfcGhvdG9faWQYDSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPhotoGraphShowReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       return new UnionBaseData(this);
     }
 
-    /// <summary>Field number for the "Id" field.</summary>
+    /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private long id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "Icon" field.</summary>
+    /// <summary>Field number for the "icon" field.</summary>
     public const int IconFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_icon_codec
         = pb::FieldCodec.ForUInt32(18);
@@ -122,7 +122,7 @@ namespace Zproto {
       get { return icon_; }
     }
 
-    /// <summary>Field number for the "Name" field.</summary>
+    /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 3;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -158,7 +158,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxNum" field.</summary>
+    /// <summary>Field number for the "max_num" field.</summary>
     public const int MaxNumFieldNumber = 6;
     private uint maxNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -193,7 +193,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "presidentId" field.</summary>
+    /// <summary>Field number for the "president_id" field.</summary>
     public const int PresidentIdFieldNumber = 9;
     private long presidentId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -205,7 +205,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "onlineNum" field.</summary>
+    /// <summary>Field number for the "online_num" field.</summary>
     public const int OnlineNumFieldNumber = 10;
     private uint onlineNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -229,7 +229,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "coverPhotoInfo" field.</summary>
+    /// <summary>Field number for the "cover_photo_info" field.</summary>
     public const int CoverPhotoInfoFieldNumber = 12;
     private global::Zproto.PhotoGraphShow coverPhotoInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -241,7 +241,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "coverPhotoId" field.</summary>
+    /// <summary>Field number for the "cover_photo_id" field.</summary>
     public const int CoverPhotoIdFieldNumber = 13;
     private uint coverPhotoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

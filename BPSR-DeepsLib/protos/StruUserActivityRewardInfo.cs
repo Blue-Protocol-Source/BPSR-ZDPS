@@ -26,7 +26,7 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X3VzZXJfYWN0aXZpdHlfcmV3YXJkX2luZm8ucHJvdG8SBnpwcm90",
             "bxodc3RydV9nYW1lX2Z1bmN0aW9uX2RhdGEucHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byLCAQoWVXNlckFjdGl2aXR5UmV3YXJkSW5mbxIKCgJJZBgB",
+            "bWFzay5wcm90byLCAQoWVXNlckFjdGl2aXR5UmV3YXJkSW5mbxIKCgJpZBgB",
             "IAEoDRIOCgZzdGF0dXMYAiABKA0SQAoJZnVuY3Rpb25zGAMgAygLMi0uenBy",
             "b3RvLlVzZXJBY3Rpdml0eVJld2FyZEluZm8uRnVuY3Rpb25zRW50cnkaSgoO",
             "RnVuY3Rpb25zRW50cnkSCwoDa2V5GAEgASgNEicKBXZhbHVlGAIgASgLMhgu",
@@ -88,7 +88,7 @@ namespace Zproto {
       return new UserActivityRewardInfo(this);
     }
 
-    /// <summary>Field number for the "Id" field.</summary>
+    /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

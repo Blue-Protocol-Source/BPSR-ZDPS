@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2Zpc2hpbmdfcmVzdWx0X3JlcG9ydF9yZXBseS5wcm90bxIGenBy",
-            "b3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byKpAQoYRmlzaGluZ1Jlc3Vs",
-            "dFJlcG9ydFJlcGx5EhsKE2R1cmFiaWxpdHlFeGhhdXN0ZWQYASABKAgSDwoH",
-            "aXNCdXJzdBgCIAEoCBIVCg1CYWl0RXhoYXVzdGVkGAMgASgIEgwKBHNpemUY",
-            "BCABKAUSFQoNc2l6ZU5ld1JlY29yZBgFIAEoCBIjCgdlcnJDb2RlGAYgASgO",
-            "MhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "b3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byKvAQoYRmlzaGluZ1Jlc3Vs",
+            "dFJlcG9ydFJlcGx5EhwKFGR1cmFiaWxpdHlfZXhoYXVzdGVkGAEgASgIEhAK",
+            "CGlzX2J1cnN0GAIgASgIEhYKDmJhaXRfZXhoYXVzdGVkGAMgASgIEgwKBHNp",
+            "emUYBCABKAUSFwoPc2l6ZV9uZXdfcmVjb3JkGAUgASgIEiQKCGVycl9jb2Rl",
+            "GAYgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new FishingResultReportReply(this);
     }
 
-    /// <summary>Field number for the "durabilityExhausted" field.</summary>
+    /// <summary>Field number for the "durability_exhausted" field.</summary>
     public const int DurabilityExhaustedFieldNumber = 1;
     private bool durabilityExhausted_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isBurst" field.</summary>
+    /// <summary>Field number for the "is_burst" field.</summary>
     public const int IsBurstFieldNumber = 2;
     private bool isBurst_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "BaitExhausted" field.</summary>
+    /// <summary>Field number for the "bait_exhausted" field.</summary>
     public const int BaitExhaustedFieldNumber = 3;
     private bool baitExhausted_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sizeNewRecord" field.</summary>
+    /// <summary>Field number for the "size_new_record" field.</summary>
     public const int SizeNewRecordFieldNumber = 5;
     private bool sizeNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +150,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X25vdGlmeV9hcHBseV9iZV9sZWFkZXJfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvGhxzdHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIkYKGk5vdGlm",
-            "eUFwcGx5QmVMZWFkZXJSZXF1ZXN0EigKB21lbURhdGEYASABKAsyFy56cHJv",
-            "dG8uVXNlclN1bW1hcnlEYXRhYgZwcm90bzM="));
+            "enByb3RvGhxzdHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIkcKGk5vdGlm",
+            "eUFwcGx5QmVMZWFkZXJSZXF1ZXN0EikKCG1lbV9kYXRhGAEgASgLMhcuenBy",
+            "b3RvLlVzZXJTdW1tYXJ5RGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyApplyBeLeaderRequest(this);
     }
 
-    /// <summary>Field number for the "memData" field.</summary>
+    /// <summary>Field number for the "mem_data" field.</summary>
     public const int MemDataFieldNumber = 1;
     private global::Zproto.UserSummaryData memData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

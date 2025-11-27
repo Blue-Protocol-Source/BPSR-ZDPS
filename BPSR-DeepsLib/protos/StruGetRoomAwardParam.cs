@@ -24,9 +24,9 @@ namespace Zproto {
     static StruGetRoomAwardParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2dldF9yb29tX2F3YXJkX3BhcmFtLnByb3RvEgZ6cHJvdG8iNQoR",
-            "R2V0Um9vbUF3YXJkUGFyYW0SDgoGcm9vbUlkGAEgASgFEhAKCHRhcmdldElk",
-            "GAIgASgFYgZwcm90bzM="));
+            "Ch9zdHJ1X2dldF9yb29tX2F3YXJkX3BhcmFtLnByb3RvEgZ6cHJvdG8iNwoR",
+            "R2V0Um9vbUF3YXJkUGFyYW0SDwoHcm9vbV9pZBgBIAEoBRIRCgl0YXJnZXRf",
+            "aWQYAiABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new GetRoomAwardParam(this);
     }
 
-    /// <summary>Field number for the "roomId" field.</summary>
+    /// <summary>Field number for the "room_id" field.</summary>
     public const int RoomIdFieldNumber = 1;
     private int roomId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 2;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

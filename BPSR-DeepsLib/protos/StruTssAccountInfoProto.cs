@@ -24,13 +24,13 @@ namespace Zproto {
     static StruTssAccountInfoProtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3Rzc19hY2NvdW50X2luZm9fcHJvdG8ucHJvdG8SBnpwcm90byLn",
-            "AQoTVHNzQWNjb3VudEluZm9Qcm90bxIPCgdhY2NvdW50GAEgASgJEhMKC2Fj",
-            "Y291bnRUeXBlGAIgASgNEg4KBnBsYXRJZBgDIAEoDRIOCgZnYW1lSWQYBCAB",
-            "KA0SDwoHd29ybGRJZBgFIAEoDRIRCgljaGFubmVsSWQYBiABKA0SDgoGcm9s",
-            "ZUlkGAcgASgDEhAKCGFudGlEYXRhGAggASgMEhEKCWFjY291bnRJZBgJIAEo",
-            "CRIQCghjbGllbnRJcBgKIAEoCRIQCghyb2xlTmFtZRgLIAEoCRINCgVpbmRl",
-            "eBgMIAEoDWIGcHJvdG8z"));
+            "CiFzdHJ1X3Rzc19hY2NvdW50X2luZm9fcHJvdG8ucHJvdG8SBnpwcm90byLx",
+            "AQoTVHNzQWNjb3VudEluZm9Qcm90bxIPCgdhY2NvdW50GAEgASgJEhQKDGFj",
+            "Y291bnRfdHlwZRgCIAEoDRIPCgdwbGF0X2lkGAMgASgNEg8KB2dhbWVfaWQY",
+            "BCABKA0SEAoId29ybGRfaWQYBSABKA0SEgoKY2hhbm5lbF9pZBgGIAEoDRIP",
+            "Cgdyb2xlX2lkGAcgASgDEhEKCWFudGlfZGF0YRgIIAEoDBISCgphY2NvdW50",
+            "X2lkGAkgASgJEhEKCWNsaWVudF9pcBgKIAEoCRIRCglyb2xlX25hbWUYCyAB",
+            "KAkSDQoFaW5kZXgYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "accountType" field.</summary>
+    /// <summary>Field number for the "account_type" field.</summary>
     public const int AccountTypeFieldNumber = 2;
     private uint accountType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +121,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "platId" field.</summary>
+    /// <summary>Field number for the "plat_id" field.</summary>
     public const int PlatIdFieldNumber = 3;
     private uint platId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +133,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "gameId" field.</summary>
+    /// <summary>Field number for the "game_id" field.</summary>
     public const int GameIdFieldNumber = 4;
     private uint gameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -145,7 +145,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "worldId" field.</summary>
+    /// <summary>Field number for the "world_id" field.</summary>
     public const int WorldIdFieldNumber = 5;
     private uint worldId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -157,7 +157,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "channelId" field.</summary>
+    /// <summary>Field number for the "channel_id" field.</summary>
     public const int ChannelIdFieldNumber = 6;
     private uint channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,7 +169,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "roleId" field.</summary>
+    /// <summary>Field number for the "role_id" field.</summary>
     public const int RoleIdFieldNumber = 7;
     private long roleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -181,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "antiData" field.</summary>
+    /// <summary>Field number for the "anti_data" field.</summary>
     public const int AntiDataFieldNumber = 8;
     private pb::ByteString antiData_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -193,7 +193,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "accountId" field.</summary>
+    /// <summary>Field number for the "account_id" field.</summary>
     public const int AccountIdFieldNumber = 9;
     private string accountId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -205,7 +205,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "clientIp" field.</summary>
+    /// <summary>Field number for the "client_ip" field.</summary>
     public const int ClientIpFieldNumber = 10;
     private string clientIp_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -217,7 +217,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "roleName" field.</summary>
+    /// <summary>Field number for the "role_name" field.</summary>
     public const int RoleNameFieldNumber = 11;
     private string roleName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

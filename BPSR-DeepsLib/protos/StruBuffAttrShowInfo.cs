@@ -24,9 +24,9 @@ namespace Zproto {
     static StruBuffAttrShowInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X2J1ZmZfYXR0cl9zaG93X2luZm8ucHJvdG8SBnpwcm90byIuChBC",
-            "dWZmQXR0clNob3dJbmZvEgoKAmlkGAEgASgFEg4KBmlzR2FpbhgCIAEoCGIG",
-            "cHJvdG8z"));
+            "Ch5zdHJ1X2J1ZmZfYXR0cl9zaG93X2luZm8ucHJvdG8SBnpwcm90byIvChBC",
+            "dWZmQXR0clNob3dJbmZvEgoKAmlkGAEgASgFEg8KB2lzX2dhaW4YAiABKAhi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isGain" field.</summary>
+    /// <summary>Field number for the "is_gain" field.</summary>
     public const int IsGainFieldNumber = 2;
     private bool isGain_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

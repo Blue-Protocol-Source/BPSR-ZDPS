@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "Ci9zdHJ1X2NvbW11bml0eV9idWxsZXRpbl9ib2FyZF90YXJnZXRfY2hhci5w",
             "cm90bxIGenByb3RvGiRzdHJ1X2NvbW11bml0eV9jaGFyX2Jhc2ljX2RhdGEu",
-            "cHJvdG8iaQogQ29tbXVuaXR5QnVsbGV0aW5Cb2FyZFRhcmdldENoYXISDgoG",
-            "Y2hhcklkGAEgASgDEjUKDWNoYXJCYXNpY0RhdGEYAiABKAsyHi56cHJvdG8u",
-            "Q29tbXVuaXR5Q2hhckJhc2ljRGF0YWIGcHJvdG8z"));
+            "cHJvdG8ibAogQ29tbXVuaXR5QnVsbGV0aW5Cb2FyZFRhcmdldENoYXISDwoH",
+            "Y2hhcl9pZBgBIAEoAxI3Cg9jaGFyX2Jhc2ljX2RhdGEYAiABKAsyHi56cHJv",
+            "dG8uQ29tbXVuaXR5Q2hhckJhc2ljRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityCharBasicDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CommunityBulletinBoardTargetChar(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "charBasicData" field.</summary>
+    /// <summary>Field number for the "char_basic_data" field.</summary>
     public const int CharBasicDataFieldNumber = 2;
     private global::Zproto.CommunityCharBasicData charBasicData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -9,7 +9,7 @@ public class Settings
     private static string SETTINGS_FILE_NAME = "Settings.json";
 
     public int Version { get; set; } = 0;
-    public string NetCaptureDeviceName { get; set; }
+    public string NetCaptureDeviceName { get; set; } = "";
     public bool NormalizeMeterContributions { get; set; } = true;
     public bool UseShortWidthNumberFormatting { get; set; } = true;
     public bool ColorClassIconsByRole { get; set; } = true;
@@ -24,6 +24,10 @@ public class Settings
     public bool LimitEncounterBuffTrackingWithoutDatabase { get; set; } = false;
     public bool LogToFile { get; set; } = false;
     public GameCapturePreference GameCapturePreference { get; set; } = GameCapturePreference.Auto;
+    public bool PlayNotificationSoundOnMatchmake { get; set; } = false;
+    public string MatchmakeNotificationSoundPath { get; set; } = "";
+    public bool LoopNotificationSoundOnMatchmake { get; set; } = false;
+    public float MatchmakeNotificationVolume { get; set;} = 1.0f;
 
     public uint HotkeysEncounterReset { get; set; }
 

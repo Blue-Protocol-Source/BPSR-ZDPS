@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2ltYWdlX2Nvc19rZXkucHJvdG8SBnpwcm90bxoZZW51bV9lX3Bp",
-            "Y3R1cmVfdHlwZS5wcm90byJUCgtJbWFnZUNvc0tleRIiCgR0eXBlGAEgASgO",
-            "MhQuenByb3RvLkVQaWN0dXJlVHlwZRIOCgZjb3NLZXkYAiABKAkSEQoJZXh0",
-            "cmFJbmZvGAMgASgJYgZwcm90bzM="));
+            "Y3R1cmVfdHlwZS5wcm90byJWCgtJbWFnZUNvc0tleRIiCgR0eXBlGAEgASgO",
+            "MhQuenByb3RvLkVQaWN0dXJlVHlwZRIPCgdjb3Nfa2V5GAIgASgJEhIKCmV4",
+            "dHJhX2luZm8YAyABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPictureTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cosKey" field.</summary>
+    /// <summary>Field number for the "cos_key" field.</summary>
     public const int CosKeyFieldNumber = 2;
     private string cosKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "extraInfo" field.</summary>
+    /// <summary>Field number for the "extra_info" field.</summary>
     public const int ExtraInfoFieldNumber = 3;
     private string extraInfo_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

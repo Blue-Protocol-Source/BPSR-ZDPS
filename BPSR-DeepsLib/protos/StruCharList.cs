@@ -24,8 +24,8 @@ namespace Zproto {
     static StruCharListReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRzdHJ1X2NoYXJfbGlzdC5wcm90bxIGenByb3RvIh4KCENoYXJMaXN0EhIK",
-            "Cm1lbWJlckxpc3QYASADKANiBnByb3RvMw=="));
+            "ChRzdHJ1X2NoYXJfbGlzdC5wcm90bxIGenByb3RvIh8KCENoYXJMaXN0EhMK",
+            "C21lbWJlcl9saXN0GAEgAygDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new CharList(this);
     }
 
-    /// <summary>Field number for the "memberList" field.</summary>
+    /// <summary>Field number for the "member_list" field.</summary>
     public const int MemberListFieldNumber = 1;
     private static readonly pb::FieldCodec<long> _repeated_memberList_codec
         = pb::FieldCodec.ForInt64(10);

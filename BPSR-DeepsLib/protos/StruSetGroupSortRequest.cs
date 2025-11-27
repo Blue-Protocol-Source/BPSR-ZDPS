@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSetGroupSortRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3NldF9ncm91cF9zb3J0X3JlcXVlc3QucHJvdG8SBnpwcm90byIo",
-            "ChNTZXRHcm91cFNvcnRSZXF1ZXN0EhEKCWdyb3VwU29ydBgCIAMoBWIGcHJv",
-            "dG8z"));
+            "CiFzdHJ1X3NldF9ncm91cF9zb3J0X3JlcXVlc3QucHJvdG8SBnpwcm90byIp",
+            "ChNTZXRHcm91cFNvcnRSZXF1ZXN0EhIKCmdyb3VwX3NvcnQYAiADKAViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new SetGroupSortRequest(this);
     }
 
-    /// <summary>Field number for the "groupSort" field.</summary>
+    /// <summary>Field number for the "group_sort" field.</summary>
     public const int GroupSortFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_groupSort_codec
         = pb::FieldCodec.ForInt32(18);

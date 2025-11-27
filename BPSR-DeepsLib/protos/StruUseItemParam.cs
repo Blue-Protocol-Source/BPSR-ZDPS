@@ -24,11 +24,11 @@ namespace Zproto {
     static StruUseItemParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X3VzZV9pdGVtX3BhcmFtLnByb3RvEgZ6cHJvdG8ioAEKDFVzZUl0",
-            "ZW1QYXJhbRIQCghpdGVtVXVpZBgBIAEoAxINCgVwYXJhbRgCIAEoCRIwCgZz",
-            "ZWxlY3QYAyADKAsyIC56cHJvdG8uVXNlSXRlbVBhcmFtLlNlbGVjdEVudHJ5",
-            "Eg4KBnVzZU51bRgEIAEoBRotCgtTZWxlY3RFbnRyeRILCgNrZXkYASABKA0S",
-            "DQoFdmFsdWUYAiABKA06AjgBYgZwcm90bzM="));
+            "ChlzdHJ1X3VzZV9pdGVtX3BhcmFtLnByb3RvEgZ6cHJvdG8iogEKDFVzZUl0",
+            "ZW1QYXJhbRIRCglpdGVtX3V1aWQYASABKAMSDQoFcGFyYW0YAiABKAkSMAoG",
+            "c2VsZWN0GAMgAygLMiAuenByb3RvLlVzZUl0ZW1QYXJhbS5TZWxlY3RFbnRy",
+            "eRIPCgd1c2VfbnVtGAQgASgFGi0KC1NlbGVjdEVudHJ5EgsKA2tleRgBIAEo",
+            "DRINCgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new UseItemParam(this);
     }
 
-    /// <summary>Field number for the "itemUuid" field.</summary>
+    /// <summary>Field number for the "item_uuid" field.</summary>
     public const int ItemUuidFieldNumber = 1;
     private long itemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       get { return select_; }
     }
 
-    /// <summary>Field number for the "useNum" field.</summary>
+    /// <summary>Field number for the "use_num" field.</summary>
     public const int UseNumFieldNumber = 4;
     private int useNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

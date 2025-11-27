@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X2Zpc2hfcmFua19pbmZvLnByb3RvEgZ6cHJvdG8aHHN0cnVfdXNl",
-            "cl9zdW1tYXJ5X2RhdGEucHJvdG8iXgoMRmlzaFJhbmtJbmZvEhMKC21pbGxp",
-            "c2Vjb25kGAEgASgDEgwKBHNpemUYAiABKAUSKwoKcGxheWVyRGF0YRgDIAEo",
-            "CzIXLnpwcm90by5Vc2VyU3VtbWFyeURhdGFiBnByb3RvMw=="));
+            "cl9zdW1tYXJ5X2RhdGEucHJvdG8iXwoMRmlzaFJhbmtJbmZvEhMKC21pbGxp",
+            "c2Vjb25kGAEgASgDEgwKBHNpemUYAiABKAUSLAoLcGxheWVyX2RhdGEYAyAB",
+            "KAsyFy56cHJvdG8uVXNlclN1bW1hcnlEYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "playerData" field.</summary>
+    /// <summary>Field number for the "player_data" field.</summary>
     public const int PlayerDataFieldNumber = 3;
     private global::Zproto.UserSummaryData playerData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

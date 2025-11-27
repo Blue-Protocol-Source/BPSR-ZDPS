@@ -2,9 +2,17 @@
 
 namespace BPSR_DeepsLib.Blobs;
 
-public class DungeonVar(BlobReader blob) : BlobType(ref blob)
+public class DungeonVar : BlobType
 {
     public List<DungeonVarData>? Data;
+
+    public DungeonVar()
+    {
+    }
+
+    public DungeonVar(BlobReader blob) : base(ref blob)
+    {
+    }
 
     public override bool ParseField(int index, ref BlobReader blob)
     {

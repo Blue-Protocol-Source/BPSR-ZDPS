@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjdzdHJ1X2NvbW11bml0eV9idWlsZF9mdXJuaXR1cmVfYWNjZWxlcmF0ZV9y",
-            "ZXF1ZXN0LnByb3RvEgZ6cHJvdG8iTAooQ29tbXVuaXR5QnVpbGRGdXJuaXR1",
-            "cmVBY2NlbGVyYXRlUmVxdWVzdBIRCglidWlsZFV1aWQYASABKAMSDQoFY291",
-            "bnQYAiABKAViBnByb3RvMw=="));
+            "ZXF1ZXN0LnByb3RvEgZ6cHJvdG8iTQooQ29tbXVuaXR5QnVpbGRGdXJuaXR1",
+            "cmVBY2NlbGVyYXRlUmVxdWVzdBISCgpidWlsZF91dWlkGAEgASgDEg0KBWNv",
+            "dW50GAIgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new CommunityBuildFurnitureAccelerateRequest(this);
     }
 
-    /// <summary>Field number for the "buildUuid" field.</summary>
+    /// <summary>Field number for the "build_uuid" field.</summary>
     public const int BuildUuidFieldNumber = 1;
     private long buildUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

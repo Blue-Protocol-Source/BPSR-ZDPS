@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X2ZhY2VfZGF0YS5wcm90bxIGenByb3RvGhNzdHJ1X2ludF92ZWMz",
-            "LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i9AEKCEZhY2VEYXRhEjAK",
-            "CGZhY2VJbmZvGAEgAygLMh4uenByb3RvLkZhY2VEYXRhLkZhY2VJbmZvRW50",
-            "cnkSMgoJY29sb3JJbmZvGAIgAygLMh8uenByb3RvLkZhY2VEYXRhLkNvbG9y",
-            "SW5mb0VudHJ5Eg4KBmhlaWdodBgDIAEoAhovCg1GYWNlSW5mb0VudHJ5EgsK",
-            "A2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoBToCOAEaQQoOQ29sb3JJbmZvRW50",
-            "cnkSCwoDa2V5GAEgASgFEh4KBXZhbHVlGAIgASgLMg8uenByb3RvLkludFZl",
-            "YzM6AjgBYgZwcm90bzM="));
+            "LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i9gEKCEZhY2VEYXRhEjEK",
+            "CWZhY2VfaW5mbxgBIAMoCzIeLnpwcm90by5GYWNlRGF0YS5GYWNlSW5mb0Vu",
+            "dHJ5EjMKCmNvbG9yX2luZm8YAiADKAsyHy56cHJvdG8uRmFjZURhdGEuQ29s",
+            "b3JJbmZvRW50cnkSDgoGaGVpZ2h0GAMgASgCGi8KDUZhY2VJbmZvRW50cnkS",
+            "CwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4ARpBCg5Db2xvckluZm9F",
+            "bnRyeRILCgNrZXkYASABKAUSHgoFdmFsdWUYAiABKAsyDy56cHJvdG8uSW50",
+            "VmVjMzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIntVec3Reflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new FaceData(this);
     }
 
-    /// <summary>Field number for the "faceInfo" field.</summary>
+    /// <summary>Field number for the "face_info" field.</summary>
     public const int FaceInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_faceInfo_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);
@@ -100,7 +100,7 @@ namespace Zproto {
       get { return faceInfo_; }
     }
 
-    /// <summary>Field number for the "colorInfo" field.</summary>
+    /// <summary>Field number for the "color_info" field.</summary>
     public const int ColorInfoFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.IntVec3>.Codec _map_colorInfo_codec
         = new pbc::MapField<int, global::Zproto.IntVec3>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.IntVec3.Parser), 18);

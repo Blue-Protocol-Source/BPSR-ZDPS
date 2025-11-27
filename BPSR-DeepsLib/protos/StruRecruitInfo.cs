@@ -24,9 +24,9 @@ namespace Zproto {
     static StruRecruitInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdzdHJ1X3JlY3J1aXRfaW5mby5wcm90bxIGenByb3RvIjUKC1JlY3J1aXRJ",
-            "bmZvEhEKCWpvaW5MZXZlbBgBIAEoDRITCgtpbnN0cnVjdGlvbhgCIAEoCWIG",
-            "cHJvdG8z"));
+            "ChdzdHJ1X3JlY3J1aXRfaW5mby5wcm90bxIGenByb3RvIjYKC1JlY3J1aXRJ",
+            "bmZvEhIKCmpvaW5fbGV2ZWwYASABKA0SEwoLaW5zdHJ1Y3Rpb24YAiABKAli",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new RecruitInfo(this);
     }
 
-    /// <summary>Field number for the "joinLevel" field.</summary>
+    /// <summary>Field number for the "join_level" field.</summary>
     public const int JoinLevelFieldNumber = 1;
     private uint joinLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

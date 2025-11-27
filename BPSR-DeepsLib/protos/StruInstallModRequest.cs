@@ -24,9 +24,9 @@ namespace Zproto {
     static StruInstallModRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X2luc3RhbGxfbW9kX3JlcXVlc3QucHJvdG8SBnpwcm90byI0ChFJ",
-            "bnN0YWxsTW9kUmVxdWVzdBIOCgZzbG90SWQYASABKAUSDwoHbW9kVXVpZBgC",
-            "IAEoA2IGcHJvdG8z"));
+            "Ch5zdHJ1X2luc3RhbGxfbW9kX3JlcXVlc3QucHJvdG8SBnpwcm90byI2ChFJ",
+            "bnN0YWxsTW9kUmVxdWVzdBIPCgdzbG90X2lkGAEgASgFEhAKCG1vZF91dWlk",
+            "GAIgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new InstallModRequest(this);
     }
 
-    /// <summary>Field number for the "slotId" field.</summary>
+    /// <summary>Field number for the "slot_id" field.</summary>
     public const int SlotIdFieldNumber = 1;
     private int slotId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "modUuid" field.</summary>
+    /// <summary>Field number for the "mod_uuid" field.</summary>
     public const int ModUuidFieldNumber = 2;
     private long modUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CjFzdHJ1X25vdGlmeV91bmlvbl9hY3Rpdml0eV9wcm9ncmVzc19yZXF1ZXN0",
             "LnByb3RvEgZ6cHJvdG8aJ3N0cnVfdW5pb25fYWN0aXZpdHlfcHJvZ3Jlc3Nf",
-            "aW5mby5wcm90byJdCiJOb3RpZnlVbmlvbkFjdGl2aXR5UHJvZ3Jlc3NSZXF1",
-            "ZXN0EjcKDHByb2dyZXNzSW5mbxgCIAEoCzIhLnpwcm90by5VbmlvbkFjdGl2",
-            "aXR5UHJvZ3Jlc3NJbmZvYgZwcm90bzM="));
+            "aW5mby5wcm90byJeCiJOb3RpZnlVbmlvbkFjdGl2aXR5UHJvZ3Jlc3NSZXF1",
+            "ZXN0EjgKDXByb2dyZXNzX2luZm8YAiABKAsyIS56cHJvdG8uVW5pb25BY3Rp",
+            "dml0eVByb2dyZXNzSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUnionActivityProgressInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new NotifyUnionActivityProgressRequest(this);
     }
 
-    /// <summary>Field number for the "progressInfo" field.</summary>
+    /// <summary>Field number for the "progress_info" field.</summary>
     public const int ProgressInfoFieldNumber = 2;
     private global::Zproto.UnionActivityProgressInfo progressInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

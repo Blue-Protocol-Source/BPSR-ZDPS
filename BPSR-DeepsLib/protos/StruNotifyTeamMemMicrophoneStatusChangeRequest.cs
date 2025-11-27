@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CjtzdHJ1X25vdGlmeV90ZWFtX21lbV9taWNyb3Bob25lX3N0YXR1c19jaGFu",
             "Z2VfcmVxdWVzdC5wcm90bxIGenByb3RvGh5lbnVtX2VfbWljcm9waG9uZV9z",
-            "dGF0dXMucHJvdG8icwoqTm90aWZ5VGVhbU1lbU1pY3JvcGhvbmVTdGF0dXND",
-            "aGFuZ2VSZXF1ZXN0EhAKCG1lbWJlcklkGAEgASgDEjMKEG1pY3JvcGhvbmVT",
-            "dGF0dXMYAiABKA4yGS56cHJvdG8uRU1pY3JvcGhvbmVTdGF0dXNiBnByb3Rv",
-            "Mw=="));
+            "dGF0dXMucHJvdG8idQoqTm90aWZ5VGVhbU1lbU1pY3JvcGhvbmVTdGF0dXND",
+            "aGFuZ2VSZXF1ZXN0EhEKCW1lbWJlcl9pZBgBIAEoAxI0ChFtaWNyb3Bob25l",
+            "X3N0YXR1cxgCIAEoDjIZLnpwcm90by5FTWljcm9waG9uZVN0YXR1c2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEMicrophoneStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new NotifyTeamMemMicrophoneStatusChangeRequest(this);
     }
 
-    /// <summary>Field number for the "memberId" field.</summary>
+    /// <summary>Field number for the "member_id" field.</summary>
     public const int MemberIdFieldNumber = 1;
     private long memberId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "microphoneStatus" field.</summary>
+    /// <summary>Field number for the "microphone_status" field.</summary>
     public const int MicrophoneStatusFieldNumber = 2;
     private global::Zproto.EMicrophoneStatus microphoneStatus_ = global::Zproto.EMicrophoneStatus.Opened;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

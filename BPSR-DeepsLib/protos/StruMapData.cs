@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNzdHJ1X21hcF9kYXRhLnByb3RvEgZ6cHJvdG8aFHN0cnVfbWFya19kYXRh",
-            "LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i9wEKB01hcERhdGESNQoL",
-            "bWFya0RhdGFNYXAYASADKAsyIC56cHJvdG8uTWFwRGF0YS5NYXJrRGF0YU1h",
-            "cEVudHJ5Ei0KB2FyZXNNYXAYAiADKAsyHC56cHJvdG8uTWFwRGF0YS5BcmVz",
-            "TWFwRW50cnkSEAoIbWFya1V1aWQYAyABKAUaRAoQTWFya0RhdGFNYXBFbnRy",
-            "eRILCgNrZXkYASABKAUSHwoFdmFsdWUYAiABKAsyEC56cHJvdG8uTWFya0Rh",
-            "dGE6AjgBGi4KDEFyZXNNYXBFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
-            "AiABKAg6AjgBYgZwcm90bzM="));
+            "LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i+wEKB01hcERhdGESNwoN",
+            "bWFya19kYXRhX21hcBgBIAMoCzIgLnpwcm90by5NYXBEYXRhLk1hcmtEYXRh",
+            "TWFwRW50cnkSLgoIYXJlc19tYXAYAiADKAsyHC56cHJvdG8uTWFwRGF0YS5B",
+            "cmVzTWFwRW50cnkSEQoJbWFya191dWlkGAMgASgFGkQKEE1hcmtEYXRhTWFw",
+            "RW50cnkSCwoDa2V5GAEgASgFEh8KBXZhbHVlGAIgASgLMhAuenByb3RvLk1h",
+            "cmtEYXRhOgI4ARouCgxBcmVzTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZh",
+            "bHVlGAIgASgIOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMarkDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new MapData(this);
     }
 
-    /// <summary>Field number for the "markDataMap" field.</summary>
+    /// <summary>Field number for the "mark_data_map" field.</summary>
     public const int MarkDataMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.MarkData>.Codec _map_markDataMap_codec
         = new pbc::MapField<int, global::Zproto.MarkData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MarkData.Parser), 10);
@@ -100,7 +100,7 @@ namespace Zproto {
       get { return markDataMap_; }
     }
 
-    /// <summary>Field number for the "aresMap" field.</summary>
+    /// <summary>Field number for the "ares_map" field.</summary>
     public const int AresMapFieldNumber = 2;
     private static readonly pbc::MapField<int, bool>.Codec _map_aresMap_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 18);
@@ -111,7 +111,7 @@ namespace Zproto {
       get { return aresMap_; }
     }
 
-    /// <summary>Field number for the "markUuid" field.</summary>
+    /// <summary>Field number for the "mark_uuid" field.</summary>
     public const int MarkUuidFieldNumber = 3;
     private int markUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

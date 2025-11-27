@@ -24,8 +24,8 @@ namespace Zproto {
     static StruDirtyMaskReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVzdHJ1X2RpcnR5X21hc2sucHJvdG8SBnpwcm90byIdCglEaXJ0eU1hc2sS",
-            "EAoIZGlydHlLZXkYASADKANiBnByb3RvMw=="));
+            "ChVzdHJ1X2RpcnR5X21hc2sucHJvdG8SBnpwcm90byIeCglEaXJ0eU1hc2sS",
+            "EQoJZGlydHlfa2V5GAEgAygDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new DirtyMask(this);
     }
 
-    /// <summary>Field number for the "dirtyKey" field.</summary>
+    /// <summary>Field number for the "dirty_key" field.</summary>
     public const int DirtyKeyFieldNumber = 1;
     private static readonly pb::FieldCodec<long> _repeated_dirtyKey_codec
         = pb::FieldCodec.ForInt64(10);

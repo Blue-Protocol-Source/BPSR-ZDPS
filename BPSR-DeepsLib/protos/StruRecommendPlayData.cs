@@ -26,13 +26,13 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X3JlY29tbWVuZF9wbGF5X2RhdGEucHJvdG8SBnpwcm90bxobZW51",
             "bV9lX3RpbWVyX2V4ZV90eXBlLnByb3RvGhdlbnVtX2VfdGltZXJfdHlwZS5w",
-            "cm90byKCAgoRUmVjb21tZW5kUGxheURhdGESFgoOc3RhcnRUaW1lc3RhbXAY",
-            "ASABKAMSFAoMZW5kVGltZXN0YW1wGAIgASgDEg4KBmlzT3BlbhgEIAEoCBIV",
-            "Cg1sYXN0VGltZVN0YW1wGAUgASgDEhgKEGxhc3RFbmRUaW1lU3RhbXAYBiAB",
-            "KAMSFQoNbmV4dFRpbWVTdGFtcBgHIAEoAxIYChBuZXh0RW5kVGltZVN0YW1w",
-            "GAggASgDEiYKB2N1clR5cGUYCSABKA4yFS56cHJvdG8uRVRpbWVyRXhlVHlw",
-            "ZRIlCgl0aW1lclR5cGUYCiABKA4yEi56cHJvdG8uRVRpbWVyVHlwZWIGcHJv",
-            "dG8z"));
+            "cm90byKRAgoRUmVjb21tZW5kUGxheURhdGESFwoPc3RhcnRfdGltZXN0YW1w",
+            "GAEgASgDEhUKDWVuZF90aW1lc3RhbXAYAiABKAMSDwoHaXNfb3BlbhgEIAEo",
+            "CBIXCg9sYXN0X3RpbWVfc3RhbXAYBSABKAMSGwoTbGFzdF9lbmRfdGltZV9z",
+            "dGFtcBgGIAEoAxIXCg9uZXh0X3RpbWVfc3RhbXAYByABKAMSGwoTbmV4dF9l",
+            "bmRfdGltZV9zdGFtcBgIIAEoAxInCghjdXJfdHlwZRgJIAEoDjIVLnpwcm90",
+            "by5FVGltZXJFeGVUeXBlEiYKCnRpbWVyX3R5cGUYCiABKA4yEi56cHJvdG8u",
+            "RVRpbWVyVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETimerExeTypeReflection.Descriptor, global::Zproto.EnumETimerTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace Zproto {
       return new RecommendPlayData(this);
     }
 
-    /// <summary>Field number for the "startTimestamp" field.</summary>
+    /// <summary>Field number for the "start_timestamp" field.</summary>
     public const int StartTimestampFieldNumber = 1;
     private long startTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "endTimestamp" field.</summary>
+    /// <summary>Field number for the "end_timestamp" field.</summary>
     public const int EndTimestampFieldNumber = 2;
     private long endTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,7 +120,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isOpen" field.</summary>
+    /// <summary>Field number for the "is_open" field.</summary>
     public const int IsOpenFieldNumber = 4;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -132,7 +132,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastTimeStamp" field.</summary>
+    /// <summary>Field number for the "last_time_stamp" field.</summary>
     public const int LastTimeStampFieldNumber = 5;
     private long lastTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -144,7 +144,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastEndTimeStamp" field.</summary>
+    /// <summary>Field number for the "last_end_time_stamp" field.</summary>
     public const int LastEndTimeStampFieldNumber = 6;
     private long lastEndTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -156,7 +156,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "nextTimeStamp" field.</summary>
+    /// <summary>Field number for the "next_time_stamp" field.</summary>
     public const int NextTimeStampFieldNumber = 7;
     private long nextTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,7 +168,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "nextEndTimeStamp" field.</summary>
+    /// <summary>Field number for the "next_end_time_stamp" field.</summary>
     public const int NextEndTimeStampFieldNumber = 8;
     private long nextEndTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -180,7 +180,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "curType" field.</summary>
+    /// <summary>Field number for the "cur_type" field.</summary>
     public const int CurTypeFieldNumber = 9;
     private global::Zproto.ETimerExeType curType_ = global::Zproto.ETimerExeType.TimerExeTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -192,7 +192,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "timerType" field.</summary>
+    /// <summary>Field number for the "timer_type" field.</summary>
     public const int TimerTypeFieldNumber = 10;
     private global::Zproto.ETimerType timerType_ = global::Zproto.ETimerType.TimerTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

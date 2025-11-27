@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X2x1Y2t5X3ZhbHVlX21nci5wcm90bxIGenByb3RvGhtzdHJ1X2x1",
-            "Y2t5X3ZhbHVlX2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKx",
-            "AQoNTHVja3lWYWx1ZU1nchI/Cg1sdWNrVmFsdWVJbmZvGAEgAygLMiguenBy",
-            "b3RvLkx1Y2t5VmFsdWVNZ3IuTHVja1ZhbHVlSW5mb0VudHJ5EhEKCWluaXRW",
-            "YWx1ZRgCIAEoCBpMChJMdWNrVmFsdWVJbmZvRW50cnkSCwoDa2V5GAEgASgF",
-            "EiUKBXZhbHVlGAIgASgLMhYuenByb3RvLkx1Y2t5VmFsdWVJbmZvOgI4AWIG",
-            "cHJvdG8z"));
+            "Y2t5X3ZhbHVlX2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byK0",
+            "AQoNTHVja3lWYWx1ZU1nchJBCg9sdWNrX3ZhbHVlX2luZm8YASADKAsyKC56",
+            "cHJvdG8uTHVja3lWYWx1ZU1nci5MdWNrVmFsdWVJbmZvRW50cnkSEgoKaW5p",
+            "dF92YWx1ZRgCIAEoCBpMChJMdWNrVmFsdWVJbmZvRW50cnkSCwoDa2V5GAEg",
+            "ASgFEiUKBXZhbHVlGAIgASgLMhYuenByb3RvLkx1Y2t5VmFsdWVJbmZvOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLuckyValueInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new LuckyValueMgr(this);
     }
 
-    /// <summary>Field number for the "luckValueInfo" field.</summary>
+    /// <summary>Field number for the "luck_value_info" field.</summary>
     public const int LuckValueInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.LuckyValueInfo>.Codec _map_luckValueInfo_codec
         = new pbc::MapField<int, global::Zproto.LuckyValueInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.LuckyValueInfo.Parser), 10);
@@ -98,7 +98,7 @@ namespace Zproto {
       get { return luckValueInfo_; }
     }
 
-    /// <summary>Field number for the "initValue" field.</summary>
+    /// <summary>Field number for the "init_value" field.</summary>
     public const int InitValueFieldNumber = 2;
     private bool initValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

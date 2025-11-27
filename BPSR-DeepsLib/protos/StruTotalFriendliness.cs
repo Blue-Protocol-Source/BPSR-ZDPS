@@ -24,10 +24,11 @@ namespace Zproto {
     static StruTotalFriendlinessReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X3RvdGFsX2ZyaWVuZGxpbmVzcy5wcm90bxIGenByb3RvIn4KEVRv",
-            "dGFsRnJpZW5kbGluZXNzEg0KBWxldmVsGAEgASgFEg4KBmN1ckV4cBgCIAEo",
-            "BRIXCg91cGRhdGVUaW1lU3RhbXAYAyABKAMSGQoRdG9kYXlUb3RhbEFkZEV4",
-            "cHMYBCABKAUSFgoOZ290TGV2ZWxBd2FyZHMYBSADKAViBnByb3RvMw=="));
+            "Ch1zdHJ1X3RvdGFsX2ZyaWVuZGxpbmVzcy5wcm90bxIGenByb3RvIoYBChFU",
+            "b3RhbEZyaWVuZGxpbmVzcxINCgVsZXZlbBgBIAEoBRIPCgdjdXJfZXhwGAIg",
+            "ASgFEhkKEXVwZGF0ZV90aW1lX3N0YW1wGAMgASgDEhwKFHRvZGF5X3RvdGFs",
+            "X2FkZF9leHBzGAQgASgFEhgKEGdvdF9sZXZlbF9hd2FyZHMYBSADKAViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "curExp" field.</summary>
+    /// <summary>Field number for the "cur_exp" field.</summary>
     public const int CurExpFieldNumber = 2;
     private int curExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "updateTimeStamp" field.</summary>
+    /// <summary>Field number for the "update_time_stamp" field.</summary>
     public const int UpdateTimeStampFieldNumber = 3;
     private long updateTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "todayTotalAddExps" field.</summary>
+    /// <summary>Field number for the "today_total_add_exps" field.</summary>
     public const int TodayTotalAddExpsFieldNumber = 4;
     private int todayTotalAddExps_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +136,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "gotLevelAwards" field.</summary>
+    /// <summary>Field number for the "got_level_awards" field.</summary>
     public const int GotLevelAwardsFieldNumber = 5;
     private static readonly pb::FieldCodec<int> _repeated_gotLevelAwards_codec
         = pb::FieldCodec.ForInt32(42);

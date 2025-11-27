@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X25ld2JpZV9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byJPCgpOZXdiaWVEYXRhEhcKD3RvdGFsT25saW5lVGltZRgB",
-            "IAEoAxIQCghpc05ld2JpZRgCIAEoCBIWCg5pc0NhbmNlbE5ld2JpZRgDIAEo",
-            "CGIGcHJvdG8z"));
+            "bWFzay5wcm90byJUCgpOZXdiaWVEYXRhEhkKEXRvdGFsX29ubGluZV90aW1l",
+            "GAEgASgDEhEKCWlzX25ld2JpZRgCIAEoCBIYChBpc19jYW5jZWxfbmV3Ymll",
+            "GAMgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new NewbieData(this);
     }
 
-    /// <summary>Field number for the "totalOnlineTime" field.</summary>
+    /// <summary>Field number for the "total_online_time" field.</summary>
     public const int TotalOnlineTimeFieldNumber = 1;
     private long totalOnlineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isNewbie" field.</summary>
+    /// <summary>Field number for the "is_newbie" field.</summary>
     public const int IsNewbieFieldNumber = 2;
     private bool isNewbie_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isCancelNewbie" field.</summary>
+    /// <summary>Field number for the "is_cancel_newbie" field.</summary>
     public const int IsCancelNewbieFieldNumber = 3;
     private bool isCancelNewbie_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

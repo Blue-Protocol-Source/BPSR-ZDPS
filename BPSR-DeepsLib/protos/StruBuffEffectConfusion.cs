@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2J1ZmZfZWZmZWN0X2NvbmZ1c2lvbi5wcm90bxIGenByb3RvGidl",
-            "bnVtX2VfYnVmZl9lZmZlY3RfY29uZnVzaW9uX3R5cGUucHJvdG8iWQoTQnVm",
+            "bnVtX2VfYnVmZl9lZmZlY3RfY29uZnVzaW9uX3R5cGUucHJvdG8iWgoTQnVm",
             "ZkVmZmVjdENvbmZ1c2lvbhIuCgR0eXBlGAEgASgOMiAuenByb3RvLkVCdWZm",
-            "RWZmZWN0Q29uZnVzaW9uVHlwZRISCgpyYW5kUmFkaXVzGAIgASgCYgZwcm90",
-            "bzM="));
+            "RWZmZWN0Q29uZnVzaW9uVHlwZRITCgtyYW5kX3JhZGl1cxgCIAEoAmIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEBuffEffectConfusionTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "randRadius" field.</summary>
+    /// <summary>Field number for the "rand_radius" field.</summary>
     public const int RandRadiusFieldNumber = 2;
     private float randRadius_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

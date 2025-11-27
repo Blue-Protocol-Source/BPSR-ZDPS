@@ -25,17 +25,17 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X2N1dF9zY2VuZV9pbmZvcy5wcm90bxIGenByb3RvGhlzdHJ1X2N1",
-            "dF9zY2VuZV9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ilgMK",
-            "DUN1dFNjZW5lSW5mb3MSPwoNY3V0U2NlbmVJbmZvcxgBIAMoCzIoLnpwcm90",
-            "by5DdXRTY2VuZUluZm9zLkN1dFNjZW5lSW5mb3NFbnRyeRJHChFmaW5pc2hl",
-            "ZEN1dFNjZW5lcxgCIAMoCzIsLnpwcm90by5DdXRTY2VuZUluZm9zLkZpbmlz",
-            "aGVkQ3V0U2NlbmVzRW50cnkSPwoNZmluaXNoZWRJbmZvcxgDIAMoCzIoLnpw",
-            "cm90by5DdXRTY2VuZUluZm9zLkZpbmlzaGVkSW5mb3NFbnRyeRpKChJDdXRT",
-            "Y2VuZUluZm9zRW50cnkSCwoDa2V5GAEgASgFEiMKBXZhbHVlGAIgASgLMhQu",
-            "enByb3RvLkN1dFNjZW5lSW5mbzoCOAEaOAoWRmluaXNoZWRDdXRTY2VuZXNF",
-            "bnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAg6AjgBGjQKEkZpbmlz",
-            "aGVkSW5mb3NFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiABKAg6AjgB",
-            "YgZwcm90bzM="));
+            "dF9zY2VuZV9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8imwMK",
+            "DUN1dFNjZW5lSW5mb3MSQQoPY3V0X3NjZW5lX2luZm9zGAEgAygLMiguenBy",
+            "b3RvLkN1dFNjZW5lSW5mb3MuQ3V0U2NlbmVJbmZvc0VudHJ5EkkKE2Zpbmlz",
+            "aGVkX2N1dF9zY2VuZXMYAiADKAsyLC56cHJvdG8uQ3V0U2NlbmVJbmZvcy5G",
+            "aW5pc2hlZEN1dFNjZW5lc0VudHJ5EkAKDmZpbmlzaGVkX2luZm9zGAMgAygL",
+            "MiguenByb3RvLkN1dFNjZW5lSW5mb3MuRmluaXNoZWRJbmZvc0VudHJ5GkoK",
+            "EkN1dFNjZW5lSW5mb3NFbnRyeRILCgNrZXkYASABKAUSIwoFdmFsdWUYAiAB",
+            "KAsyFC56cHJvdG8uQ3V0U2NlbmVJbmZvOgI4ARo4ChZGaW5pc2hlZEN1dFNj",
+            "ZW5lc0VudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoCDoCOAEaNAoS",
+            "RmluaXNoZWRJbmZvc0VudHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1ZRgCIAEo",
+            "CDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCutSceneInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +93,7 @@ namespace Zproto {
       return new CutSceneInfos(this);
     }
 
-    /// <summary>Field number for the "cutSceneInfos" field.</summary>
+    /// <summary>Field number for the "cut_scene_infos" field.</summary>
     public const int CutSceneInfos_FieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.CutSceneInfo>.Codec _map_cutSceneInfos_codec
         = new pbc::MapField<int, global::Zproto.CutSceneInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CutSceneInfo.Parser), 10);
@@ -104,7 +104,7 @@ namespace Zproto {
       get { return cutSceneInfos_; }
     }
 
-    /// <summary>Field number for the "finishedCutScenes" field.</summary>
+    /// <summary>Field number for the "finished_cut_scenes" field.</summary>
     public const int FinishedCutScenesFieldNumber = 2;
     private static readonly pbc::MapField<int, bool>.Codec _map_finishedCutScenes_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 18);
@@ -115,7 +115,7 @@ namespace Zproto {
       get { return finishedCutScenes_; }
     }
 
-    /// <summary>Field number for the "finishedInfos" field.</summary>
+    /// <summary>Field number for the "finished_infos" field.</summary>
     public const int FinishedInfosFieldNumber = 3;
     private static readonly pbc::MapField<long, bool>.Codec _map_finishedInfos_codec
         = new pbc::MapField<long, bool>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForBool(16, false), 26);

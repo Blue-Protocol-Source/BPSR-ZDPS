@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X2RlbF9mdW5jX3Bob3RvX3JlcXVlc3QucHJvdG8SBnpwcm90bxof",
-            "ZW51bV9lX3BsYXRmb3JtX2Z1bmNfdHlwZS5wcm90byJkChNEZWxGdW5jUGhv",
-            "dG9SZXF1ZXN0EisKCGZ1bmNUeXBlGAEgASgOMhkuenByb3RvLkVQbGF0Zm9y",
-            "bUZ1bmNUeXBlEg8KB293bmVySWQYAiABKAMSDwoHcGhvdG9JZBgDIAEoDWIG",
-            "cHJvdG8z"));
+            "ZW51bV9lX3BsYXRmb3JtX2Z1bmNfdHlwZS5wcm90byJnChNEZWxGdW5jUGhv",
+            "dG9SZXF1ZXN0EiwKCWZ1bmNfdHlwZRgBIAEoDjIZLnpwcm90by5FUGxhdGZv",
+            "cm1GdW5jVHlwZRIQCghvd25lcl9pZBgCIAEoAxIQCghwaG90b19pZBgDIAEo",
+            "DWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPlatformFuncTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new DelFuncPhotoRequest(this);
     }
 
-    /// <summary>Field number for the "funcType" field.</summary>
+    /// <summary>Field number for the "func_type" field.</summary>
     public const int FuncTypeFieldNumber = 1;
     private global::Zproto.EPlatformFuncType funcType_ = global::Zproto.EPlatformFuncType.EfuncTypeDefault;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ownerId" field.</summary>
+    /// <summary>Field number for the "owner_id" field.</summary>
     public const int OwnerIdFieldNumber = 2;
     private long ownerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photoId" field.</summary>
+    /// <summary>Field number for the "photo_id" field.</summary>
     public const int PhotoIdFieldNumber = 3;
     private uint photoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

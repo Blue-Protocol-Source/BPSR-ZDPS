@@ -24,9 +24,9 @@ namespace Zproto {
     static StruDeleteItemParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X2RlbGV0ZV9pdGVtX3BhcmFtLnByb3RvEgZ6cHJvdG8iMgoPRGVs",
-            "ZXRlSXRlbVBhcmFtEhAKCGl0ZW1VdWlkGAEgASgDEg0KBWNvdW50GAIgASgD",
-            "YgZwcm90bzM="));
+            "ChxzdHJ1X2RlbGV0ZV9pdGVtX3BhcmFtLnByb3RvEgZ6cHJvdG8iMwoPRGVs",
+            "ZXRlSXRlbVBhcmFtEhEKCWl0ZW1fdXVpZBgBIAEoAxINCgVjb3VudBgCIAEo",
+            "A2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DeleteItemParam(this);
     }
 
-    /// <summary>Field number for the "itemUuid" field.</summary>
+    /// <summary>Field number for the "item_uuid" field.</summary>
     public const int ItemUuidFieldNumber = 1;
     private long itemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

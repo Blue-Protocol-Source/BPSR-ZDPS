@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X2x1Y2t5X3ZhbHVlX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvIkUKDkx1Y2t5VmFsdWVJbmZvEg4KBmx1Y2tJZBgB",
-            "IAEoBRIRCglsdWNrVmFsdWUYAiABKAUSEAoIbmV4dFRpbWUYAyABKANiBnBy",
-            "b3RvMw=="));
+            "aXJ0eV9tYXNrLnByb3RvIkgKDkx1Y2t5VmFsdWVJbmZvEg8KB2x1Y2tfaWQY",
+            "ASABKAUSEgoKbHVja192YWx1ZRgCIAEoBRIRCgluZXh0X3RpbWUYAyABKANi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new LuckyValueInfo(this);
     }
 
-    /// <summary>Field number for the "luckId" field.</summary>
+    /// <summary>Field number for the "luck_id" field.</summary>
     public const int LuckIdFieldNumber = 1;
     private int luckId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "luckValue" field.</summary>
+    /// <summary>Field number for the "luck_value" field.</summary>
     public const int LuckValueFieldNumber = 2;
     private int luckValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "nextTime" field.</summary>
+    /// <summary>Field number for the "next_time" field.</summary>
     public const int NextTimeFieldNumber = 3;
     private long nextTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

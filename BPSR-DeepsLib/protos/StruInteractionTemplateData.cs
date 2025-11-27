@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2ludGVyYWN0aW9uX3RlbXBsYXRlX2RhdGEucHJvdG8SBnpwcm90",
-            "bxooZW51bV9lX2ludGVyYWN0aW9uX3RlbXBsYXRlX2FjdGlvbi5wcm90byKr",
+            "bxooZW51bV9lX2ludGVyYWN0aW9uX3RlbXBsYXRlX2FjdGlvbi5wcm90byKx",
             "AQoXSW50ZXJhY3Rpb25UZW1wbGF0ZURhdGESMAoEdHlwZRgBIAEoDjIiLnpw",
-            "cm90by5FSW50ZXJhY3Rpb25UZW1wbGF0ZUFjdGlvbhIQCghvYmplY3RJZBgC",
-            "IAEoBBISCgp0ZW1wbGF0ZUlkGAMgASgFEhIKCmhvbWVsYW5kSWQYBCABKAMS",
-            "DQoFcG9zSWQYBSABKAUSFQoNc3ViVGVtcGxhdGVJZBgGIAEoBWIGcHJvdG8z"));
+            "cm90by5FSW50ZXJhY3Rpb25UZW1wbGF0ZUFjdGlvbhIRCglvYmplY3RfaWQY",
+            "AiABKAQSEwoLdGVtcGxhdGVfaWQYAyABKAUSEwoLaG9tZWxhbmRfaWQYBCAB",
+            "KAMSDgoGcG9zX2lkGAUgASgFEhcKD3N1Yl90ZW1wbGF0ZV9pZBgGIAEoBWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEInteractionTemplateActionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "objectId" field.</summary>
+    /// <summary>Field number for the "object_id" field.</summary>
     public const int ObjectIdFieldNumber = 2;
     private ulong objectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "templateId" field.</summary>
+    /// <summary>Field number for the "template_id" field.</summary>
     public const int TemplateIdFieldNumber = 3;
     private int templateId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homelandId" field.</summary>
+    /// <summary>Field number for the "homeland_id" field.</summary>
     public const int HomelandIdFieldNumber = 4;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "posId" field.</summary>
+    /// <summary>Field number for the "pos_id" field.</summary>
     public const int PosIdFieldNumber = 5;
     private int posId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "subTemplateId" field.</summary>
+    /// <summary>Field number for the "sub_template_id" field.</summary>
     public const int SubTemplateIdFieldNumber = 6;
     private int subTemplateId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

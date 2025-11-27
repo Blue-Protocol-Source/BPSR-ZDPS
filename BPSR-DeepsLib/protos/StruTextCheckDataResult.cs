@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X3RleHRfY2hlY2tfZGF0YV9yZXN1bHQucHJvdG8SBnpwcm90bxoX",
             "ZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aIXN0cnVfdGV4dF9jaGVja19pdGVt",
-            "X3Jlc3VsdC5wcm90byJ8ChNUZXh0Q2hlY2tEYXRhUmVzdWx0EiMKB2VyckNv",
-            "ZGUYASABKA4yEi56cHJvdG8uRUVycm9yQ29kZRIOCgZlcnJNc2cYAiABKAkS",
-            "MAoLaXRlbVJlc3VsdHMYAyADKAsyGy56cHJvdG8uVGV4dENoZWNrSXRlbVJl",
-            "c3VsdGIGcHJvdG8z"));
+            "X3Jlc3VsdC5wcm90byJ/ChNUZXh0Q2hlY2tEYXRhUmVzdWx0EiQKCGVycl9j",
+            "b2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUSDwoHZXJyX21zZxgCIAEo",
+            "CRIxCgxpdGVtX3Jlc3VsdHMYAyADKAsyGy56cHJvdG8uVGV4dENoZWNrSXRl",
+            "bVJlc3VsdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruTextCheckItemResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new TextCheckDataResult(this);
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errMsg" field.</summary>
+    /// <summary>Field number for the "err_msg" field.</summary>
     public const int ErrMsgFieldNumber = 2;
     private string errMsg_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemResults" field.</summary>
+    /// <summary>Field number for the "item_results" field.</summary>
     public const int ItemResultsFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.TextCheckItemResult> _repeated_itemResults_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.TextCheckItemResult.Parser);

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X3JlY29tbWVuZF9wbGF5X21hdGNoX3BhcmFtLnByb3RvEgZ6cHJv",
-            "dG8iLQoXUmVjb21tZW5kUGxheU1hdGNoUGFyYW0SEgoKYWN0aXZpdHlJZBgB",
-            "IAEoBWIGcHJvdG8z"));
+            "dG8iLgoXUmVjb21tZW5kUGxheU1hdGNoUGFyYW0SEwoLYWN0aXZpdHlfaWQY",
+            "ASABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new RecommendPlayMatchParam(this);
     }
 
-    /// <summary>Field number for the "activityId" field.</summary>
+    /// <summary>Field number for the "activity_id" field.</summary>
     public const int ActivityIdFieldNumber = 1;
     private int activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

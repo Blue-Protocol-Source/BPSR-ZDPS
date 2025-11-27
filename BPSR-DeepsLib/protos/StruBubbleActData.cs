@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X2J1YmJsZV9hY3RfZGF0YS5wcm90bxIGenByb3RvGhZzdHJ1X2J1",
-            "YmJsZV9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ikQEKDUJ1",
-            "YmJsZUFjdERhdGESOQoKYnViYmxlSW5mbxgFIAMoCzIlLnpwcm90by5CdWJi",
-            "bGVBY3REYXRhLkJ1YmJsZUluZm9FbnRyeRpFCg9CdWJibGVJbmZvRW50cnkS",
-            "CwoDa2V5GAEgASgFEiEKBXZhbHVlGAIgASgLMhIuenByb3RvLkJ1YmJsZUlu",
-            "Zm86AjgBYgZwcm90bzM="));
+            "YmJsZV9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ikgEKDUJ1",
+            "YmJsZUFjdERhdGESOgoLYnViYmxlX2luZm8YBSADKAsyJS56cHJvdG8uQnVi",
+            "YmxlQWN0RGF0YS5CdWJibGVJbmZvRW50cnkaRQoPQnViYmxlSW5mb0VudHJ5",
+            "EgsKA2tleRgBIAEoBRIhCgV2YWx1ZRgCIAEoCzISLnpwcm90by5CdWJibGVJ",
+            "bmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBubbleInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new BubbleActData(this);
     }
 
-    /// <summary>Field number for the "bubbleInfo" field.</summary>
+    /// <summary>Field number for the "bubble_info" field.</summary>
     public const int BubbleInfoFieldNumber = 5;
     private static readonly pbc::MapField<int, global::Zproto.BubbleInfo>.Codec _map_bubbleInfo_codec
         = new pbc::MapField<int, global::Zproto.BubbleInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.BubbleInfo.Parser), 42);

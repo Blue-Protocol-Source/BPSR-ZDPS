@@ -24,9 +24,9 @@ namespace Zproto {
     static StruCommunityTransferReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X2NvbW11bml0eV90cmFuc2Zlci5wcm90bxIGenByb3RvIkMKEUNv",
-            "bW11bml0eVRyYW5zZmVyEg4KBmNoYXJJZBgBIAEoAxIMCgR0aW1lGAIgASgD",
-            "EhAKCGxhc3RUaW1lGAMgASgDYgZwcm90bzM="));
+            "Ch1zdHJ1X2NvbW11bml0eV90cmFuc2Zlci5wcm90bxIGenByb3RvIkUKEUNv",
+            "bW11bml0eVRyYW5zZmVyEg8KB2NoYXJfaWQYASABKAMSDAoEdGltZRgCIAEo",
+            "AxIRCglsYXN0X3RpbWUYAyABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new CommunityTransfer(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastTime" field.</summary>
+    /// <summary>Field number for the "last_time" field.</summary>
     public const int LastTimeFieldNumber = 3;
     private long lastTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

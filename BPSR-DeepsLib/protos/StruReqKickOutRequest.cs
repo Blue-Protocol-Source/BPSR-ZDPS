@@ -24,9 +24,9 @@ namespace Zproto {
     static StruReqKickOutRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X3JlcV9raWNrX291dF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iNgoR",
-            "UmVxS2lja091dFJlcXVlc3QSDwoHdW5pb25JZBgCIAEoAxIQCgh2S2lja0lk",
-            "cxgDIAMoA2IGcHJvdG8z"));
+            "Ch9zdHJ1X3JlcV9raWNrX291dF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iOQoR",
+            "UmVxS2lja091dFJlcXVlc3QSEAoIdW5pb25faWQYAiABKAMSEgoKdl9raWNr",
+            "X2lkcxgDIAMoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ReqKickOutRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "vKickIds" field.</summary>
+    /// <summary>Field number for the "v_kick_ids" field.</summary>
     public const int VKickIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_vKickIds_codec
         = pb::FieldCodec.ForInt64(26);

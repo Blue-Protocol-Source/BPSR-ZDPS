@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CipzdHJ1X2xpZmVfcHJvZmVzc2lvbl9yX2RfYWxjaGVteV9yZXQucHJvdG8S",
             "Bnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aD3N0cnVfaXRlbS5w",
-            "cm90byKOAQoaTGlmZVByb2Zlc3Npb25SREFsY2hlbXlSZXQSFgoOaXNVbmxv",
-            "Y2tSZWNpcGUYASABKAgSFgoOdW5sb2NrUmVjaXBlSWQYAiABKA0SGwoFaXRl",
-            "bXMYAyADKAsyDC56cHJvdG8uSXRlbRIjCgdlcnJDb2RlGAQgASgOMhIuenBy",
-            "b3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "cm90byKTAQoaTGlmZVByb2Zlc3Npb25SREFsY2hlbXlSZXQSGAoQaXNfdW5s",
+            "b2NrX3JlY2lwZRgBIAEoCBIYChB1bmxvY2tfcmVjaXBlX2lkGAIgASgNEhsK",
+            "BWl0ZW1zGAMgAygLMgwuenByb3RvLkl0ZW0SJAoIZXJyX2NvZGUYBCABKA4y",
+            "Ei56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new LifeProfessionRDAlchemyRet(this);
     }
 
-    /// <summary>Field number for the "isUnlockRecipe" field.</summary>
+    /// <summary>Field number for the "is_unlock_recipe" field.</summary>
     public const int IsUnlockRecipeFieldNumber = 1;
     private bool isUnlockRecipe_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unlockRecipeId" field.</summary>
+    /// <summary>Field number for the "unlock_recipe_id" field.</summary>
     public const int UnlockRecipeIdFieldNumber = 2;
     private uint unlockRecipeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

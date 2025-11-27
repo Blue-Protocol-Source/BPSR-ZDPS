@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X3Byb2Zlc3Npb25fdGFsZW50X2luZm8ucHJvdG8SBnpwcm90bxoV",
-            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIoEBChRQcm9mZXNzaW9uVGFsZW50SW5m",
-            "bxIYChB1c2VkVGFsZW50UG9pbnRzGAEgASgNEhUKDXRhbGVudE5vZGVJZHMY",
-            "AiADKA0SGAoQdGFsZW50U3RhZ2VDZmdJZBgEIAEoBRIeChZ0YWxlbnRJbGVn",
-            "YWxSZXNldENvdW50GAUgASgFYgZwcm90bzM="));
+            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIosBChRQcm9mZXNzaW9uVGFsZW50SW5m",
+            "bxIaChJ1c2VkX3RhbGVudF9wb2ludHMYASABKA0SFwoPdGFsZW50X25vZGVf",
+            "aWRzGAIgAygNEhsKE3RhbGVudF9zdGFnZV9jZmdfaWQYBCABKAUSIQoZdGFs",
+            "ZW50X2lsZWdhbF9yZXNldF9jb3VudBgFIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new ProfessionTalentInfo(this);
     }
 
-    /// <summary>Field number for the "usedTalentPoints" field.</summary>
+    /// <summary>Field number for the "used_talent_points" field.</summary>
     public const int UsedTalentPointsFieldNumber = 1;
     private uint usedTalentPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "talentNodeIds" field.</summary>
+    /// <summary>Field number for the "talent_node_ids" field.</summary>
     public const int TalentNodeIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_talentNodeIds_codec
         = pb::FieldCodec.ForUInt32(18);
@@ -110,7 +110,7 @@ namespace Zproto {
       get { return talentNodeIds_; }
     }
 
-    /// <summary>Field number for the "talentStageCfgId" field.</summary>
+    /// <summary>Field number for the "talent_stage_cfg_id" field.</summary>
     public const int TalentStageCfgIdFieldNumber = 4;
     private int talentStageCfgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "talentIlegalResetCount" field.</summary>
+    /// <summary>Field number for the "talent_ilegal_reset_count" field.</summary>
     public const int TalentIlegalResetCountFieldNumber = 5;
     private int talentIlegalResetCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

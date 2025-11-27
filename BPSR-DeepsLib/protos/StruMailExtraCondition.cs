@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X21haWxfZXh0cmFfY29uZGl0aW9uLnByb3RvEgZ6cHJvdG8aH3N0",
-            "cnVfbWFpbF9sZXZlbF9jb25kaXRpb24ucHJvdG8ifwoSTWFpbEV4dHJhQ29u",
-            "ZGl0aW9uEikKBWxldmVsGAEgASgLMhouenByb3RvLk1haWxMZXZlbENvbmRp",
-            "dGlvbhIVCg1sb2dpbkNoYW5uZWxzGAIgAygFEhYKDmxhc3RBY3RpdmVEYXlz",
-            "GAMgASgFEg8KB2FyZWFJZHMYBCADKAliBnByb3RvMw=="));
+            "cnVfbWFpbF9sZXZlbF9jb25kaXRpb24ucHJvdG8igwEKEk1haWxFeHRyYUNv",
+            "bmRpdGlvbhIpCgVsZXZlbBgBIAEoCzIaLnpwcm90by5NYWlsTGV2ZWxDb25k",
+            "aXRpb24SFgoObG9naW5fY2hhbm5lbHMYAiADKAUSGAoQbGFzdF9hY3RpdmVf",
+            "ZGF5cxgDIAEoBRIQCghhcmVhX2lkcxgEIAMoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMailLevelConditionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "loginChannels" field.</summary>
+    /// <summary>Field number for the "login_channels" field.</summary>
     public const int LoginChannelsFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_loginChannels_codec
         = pb::FieldCodec.ForInt32(18);
@@ -110,7 +110,7 @@ namespace Zproto {
       get { return loginChannels_; }
     }
 
-    /// <summary>Field number for the "lastActiveDays" field.</summary>
+    /// <summary>Field number for the "last_active_days" field.</summary>
     public const int LastActiveDaysFieldNumber = 3;
     private int lastActiveDays_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "areaIds" field.</summary>
+    /// <summary>Field number for the "area_ids" field.</summary>
     public const int AreaIdsFieldNumber = 4;
     private static readonly pb::FieldCodec<string> _repeated_areaIds_codec
         = pb::FieldCodec.ForString(34);

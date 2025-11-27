@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X3BsYWNlX2hvbGRlcl9zY2VuZV9wb3NpdGlvbi5wcm90bxIGenBy",
-            "b3RvInQKGFBsYWNlSG9sZGVyU2NlbmVQb3NpdGlvbhIPCgdTY2VuZUlkGAEg",
-            "ASgFEg4KBkxpbmVJZBgCIAEoBRIRCglQb3NpdGlvblgYAyABKAUSEQoJUG9z",
-            "aXRpb25ZGAQgASgFEhEKCVBvc2l0aW9uWhgFIAEoBWIGcHJvdG8z"));
+            "b3RvInYKGFBsYWNlSG9sZGVyU2NlbmVQb3NpdGlvbhIQCghzY2VuZV9pZBgB",
+            "IAEoBRIPCgdsaW5lX2lkGAIgASgFEhEKCXBvc2l0aW9ueBgDIAEoBRIRCglw",
+            "b3NpdGlvbnkYBCABKAUSEQoJcG9zaXRpb256GAUgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PlaceHolderScenePosition), global::Zproto.PlaceHolderScenePosition.Parser, new[]{ "SceneId", "LineId", "PositionX", "PositionY", "PositionZ" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PlaceHolderScenePosition), global::Zproto.PlaceHolderScenePosition.Parser, new[]{ "SceneId", "LineId", "Positionx", "Positiony", "Positionz" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,9 +75,9 @@ namespace Zproto {
     public PlaceHolderScenePosition(PlaceHolderScenePosition other) : this() {
       sceneId_ = other.sceneId_;
       lineId_ = other.lineId_;
-      positionX_ = other.positionX_;
-      positionY_ = other.positionY_;
-      positionZ_ = other.positionZ_;
+      positionx_ = other.positionx_;
+      positiony_ = other.positiony_;
+      positionz_ = other.positionz_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,7 +87,7 @@ namespace Zproto {
       return new PlaceHolderScenePosition(this);
     }
 
-    /// <summary>Field number for the "SceneId" field.</summary>
+    /// <summary>Field number for the "scene_id" field.</summary>
     public const int SceneIdFieldNumber = 1;
     private int sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "LineId" field.</summary>
+    /// <summary>Field number for the "line_id" field.</summary>
     public const int LineIdFieldNumber = 2;
     private int lineId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,39 +111,39 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "PositionX" field.</summary>
-    public const int PositionXFieldNumber = 3;
-    private int positionX_;
+    /// <summary>Field number for the "positionx" field.</summary>
+    public const int PositionxFieldNumber = 3;
+    private int positionx_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int PositionX {
-      get { return positionX_; }
+    public int Positionx {
+      get { return positionx_; }
       set {
-        positionX_ = value;
+        positionx_ = value;
       }
     }
 
-    /// <summary>Field number for the "PositionY" field.</summary>
-    public const int PositionYFieldNumber = 4;
-    private int positionY_;
+    /// <summary>Field number for the "positiony" field.</summary>
+    public const int PositionyFieldNumber = 4;
+    private int positiony_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int PositionY {
-      get { return positionY_; }
+    public int Positiony {
+      get { return positiony_; }
       set {
-        positionY_ = value;
+        positiony_ = value;
       }
     }
 
-    /// <summary>Field number for the "PositionZ" field.</summary>
-    public const int PositionZFieldNumber = 5;
-    private int positionZ_;
+    /// <summary>Field number for the "positionz" field.</summary>
+    public const int PositionzFieldNumber = 5;
+    private int positionz_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int PositionZ {
-      get { return positionZ_; }
+    public int Positionz {
+      get { return positionz_; }
       set {
-        positionZ_ = value;
+        positionz_ = value;
       }
     }
 
@@ -164,9 +164,9 @@ namespace Zproto {
       }
       if (SceneId != other.SceneId) return false;
       if (LineId != other.LineId) return false;
-      if (PositionX != other.PositionX) return false;
-      if (PositionY != other.PositionY) return false;
-      if (PositionZ != other.PositionZ) return false;
+      if (Positionx != other.Positionx) return false;
+      if (Positiony != other.Positiony) return false;
+      if (Positionz != other.Positionz) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -176,9 +176,9 @@ namespace Zproto {
       int hash = 1;
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (LineId != 0) hash ^= LineId.GetHashCode();
-      if (PositionX != 0) hash ^= PositionX.GetHashCode();
-      if (PositionY != 0) hash ^= PositionY.GetHashCode();
-      if (PositionZ != 0) hash ^= PositionZ.GetHashCode();
+      if (Positionx != 0) hash ^= Positionx.GetHashCode();
+      if (Positiony != 0) hash ^= Positiony.GetHashCode();
+      if (Positionz != 0) hash ^= Positionz.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -205,17 +205,17 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt32(LineId);
       }
-      if (PositionX != 0) {
+      if (Positionx != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(PositionX);
+        output.WriteInt32(Positionx);
       }
-      if (PositionY != 0) {
+      if (Positiony != 0) {
         output.WriteRawTag(32);
-        output.WriteInt32(PositionY);
+        output.WriteInt32(Positiony);
       }
-      if (PositionZ != 0) {
+      if (Positionz != 0) {
         output.WriteRawTag(40);
-        output.WriteInt32(PositionZ);
+        output.WriteInt32(Positionz);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -235,17 +235,17 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt32(LineId);
       }
-      if (PositionX != 0) {
+      if (Positionx != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(PositionX);
+        output.WriteInt32(Positionx);
       }
-      if (PositionY != 0) {
+      if (Positiony != 0) {
         output.WriteRawTag(32);
-        output.WriteInt32(PositionY);
+        output.WriteInt32(Positiony);
       }
-      if (PositionZ != 0) {
+      if (Positionz != 0) {
         output.WriteRawTag(40);
-        output.WriteInt32(PositionZ);
+        output.WriteInt32(Positionz);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -263,14 +263,14 @@ namespace Zproto {
       if (LineId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(LineId);
       }
-      if (PositionX != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PositionX);
+      if (Positionx != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Positionx);
       }
-      if (PositionY != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PositionY);
+      if (Positiony != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Positiony);
       }
-      if (PositionZ != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PositionZ);
+      if (Positionz != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Positionz);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -290,14 +290,14 @@ namespace Zproto {
       if (other.LineId != 0) {
         LineId = other.LineId;
       }
-      if (other.PositionX != 0) {
-        PositionX = other.PositionX;
+      if (other.Positionx != 0) {
+        Positionx = other.Positionx;
       }
-      if (other.PositionY != 0) {
-        PositionY = other.PositionY;
+      if (other.Positiony != 0) {
+        Positiony = other.Positiony;
       }
-      if (other.PositionZ != 0) {
-        PositionZ = other.PositionZ;
+      if (other.Positionz != 0) {
+        Positionz = other.Positionz;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -327,15 +327,15 @@ namespace Zproto {
             break;
           }
           case 24: {
-            PositionX = input.ReadInt32();
+            Positionx = input.ReadInt32();
             break;
           }
           case 32: {
-            PositionY = input.ReadInt32();
+            Positiony = input.ReadInt32();
             break;
           }
           case 40: {
-            PositionZ = input.ReadInt32();
+            Positionz = input.ReadInt32();
             break;
           }
         }
@@ -366,15 +366,15 @@ namespace Zproto {
             break;
           }
           case 24: {
-            PositionX = input.ReadInt32();
+            Positionx = input.ReadInt32();
             break;
           }
           case 32: {
-            PositionY = input.ReadInt32();
+            Positiony = input.ReadInt32();
             break;
           }
           case 40: {
-            PositionZ = input.ReadInt32();
+            Positionz = input.ReadInt32();
             break;
           }
         }

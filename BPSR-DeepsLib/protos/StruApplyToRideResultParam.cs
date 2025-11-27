@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2FwcGx5X3RvX3JpZGVfcmVzdWx0X3BhcmFtLnByb3RvEgZ6cHJv",
-            "dG8aHmVudW1fZV9hcHBseV9yaWRlX3Jlc3VsdC5wcm90byJTChZBcHBseVRv",
-            "UmlkZVJlc3VsdFBhcmFtEg8KB3ZPcmlnSWQYASABKAMSKAoGcmVzdWx0GAIg",
-            "ASgOMhguenByb3RvLkVBcHBseVJpZGVSZXN1bHRiBnByb3RvMw=="));
+            "dG8aHmVudW1fZV9hcHBseV9yaWRlX3Jlc3VsdC5wcm90byJVChZBcHBseVRv",
+            "UmlkZVJlc3VsdFBhcmFtEhEKCXZfb3JpZ19pZBgBIAEoAxIoCgZyZXN1bHQY",
+            "AiABKA4yGC56cHJvdG8uRUFwcGx5UmlkZVJlc3VsdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEApplyRideResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ApplyToRideResultParam(this);
     }
 
-    /// <summary>Field number for the "vOrigId" field.</summary>
+    /// <summary>Field number for the "v_orig_id" field.</summary>
     public const int VOrigIdFieldNumber = 1;
     private long vOrigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

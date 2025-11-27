@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2dldF9tYWlsX3V1aWRfbGlzdF9yZXBseS5wcm90bxIGenByb3Rv",
-            "GhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byJRChRHZXRNYWlsVXVpZExpc3RS",
-            "ZXBseRIUCgxtYWlsVXVpZExpc3QYAyADKAMSIwoHZXJyQ29kZRgEIAEoDjIS",
-            "Lnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "GhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byJUChRHZXRNYWlsVXVpZExpc3RS",
+            "ZXBseRIWCg5tYWlsX3V1aWRfbGlzdBgDIAMoAxIkCghlcnJfY29kZRgEIAEo",
+            "DjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new GetMailUuidListReply(this);
     }
 
-    /// <summary>Field number for the "mailUuidList" field.</summary>
+    /// <summary>Field number for the "mail_uuid_list" field.</summary>
     public const int MailUuidListFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_mailUuidList_codec
         = pb::FieldCodec.ForInt64(26);
@@ -95,7 +95,7 @@ namespace Zproto {
       get { return mailUuidList_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

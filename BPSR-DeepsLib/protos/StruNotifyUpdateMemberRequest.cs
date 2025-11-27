@@ -27,12 +27,12 @@ namespace Zproto {
             "CidzdHJ1X25vdGlmeV91cGRhdGVfbWVtYmVyX3JlcXVlc3QucHJvdG8SBnpw",
             "cm90bxohZW51bV9lbnVtX3VuaW9uX25vdGlmeV90eXBlLnByb3RvGhVzdHJ1",
             "X3VuaW9uX2luZm8ucHJvdG8aF3N0cnVfdW5pb25fbWVtYmVyLnByb3RvGhxz",
-            "dHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIscBChlOb3RpZnlVcGRhdGVN",
+            "dHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIssBChlOb3RpZnlVcGRhdGVN",
             "ZW1iZXJSZXF1ZXN0Eh8KBGluZm8YAiABKAsyES56cHJvdG8uVW5pb25JbmZv",
-            "EisKDm1lbWJlckluZm9MaXN0GAMgAygLMhMuenByb3RvLlVuaW9uTWVtYmVy",
-            "EikKBHR5cGUYBCABKA4yGy56cHJvdG8uRW51bVVuaW9uTm90aWZ5VHlwZRIx",
-            "ChBtZW1iZXJTb2NpYWxMaXN0GAUgAygLMhcuenByb3RvLlVzZXJTdW1tYXJ5",
-            "RGF0YWIGcHJvdG8z"));
+            "Ei0KEG1lbWJlcl9pbmZvX2xpc3QYAyADKAsyEy56cHJvdG8uVW5pb25NZW1i",
+            "ZXISKQoEdHlwZRgEIAEoDjIbLnpwcm90by5FbnVtVW5pb25Ob3RpZnlUeXBl",
+            "EjMKEm1lbWJlcl9zb2NpYWxfbGlzdBgFIAMoCzIXLnpwcm90by5Vc2VyU3Vt",
+            "bWFyeURhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEnumUnionNotifyTypeReflection.Descriptor, global::Zproto.StruUnionInfoReflection.Descriptor, global::Zproto.StruUnionMemberReflection.Descriptor, global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -103,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "memberInfoList" field.</summary>
+    /// <summary>Field number for the "member_info_list" field.</summary>
     public const int MemberInfoListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.UnionMember> _repeated_memberInfoList_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.UnionMember.Parser);
@@ -126,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "memberSocialList" field.</summary>
+    /// <summary>Field number for the "member_social_list" field.</summary>
     public const int MemberSocialListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.UserSummaryData> _repeated_memberSocialList_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.UserSummaryData.Parser);

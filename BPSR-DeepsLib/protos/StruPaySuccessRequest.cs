@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X3BheV9zdWNjZXNzX3JlcXVlc3QucHJvdG8SBnpwcm90bxoVZW51",
-            "bV9lX3BheV90eXBlLnByb3RvIkcKEVBheVN1Y2Nlc3NSZXF1ZXN0EiEKB3Bh",
-            "eVR5cGUYASABKA4yEC56cHJvdG8uRVBheVR5cGUSDwoHZXh0RGF0YRgCIAEo",
-            "CWIGcHJvdG8z"));
+            "bV9lX3BheV90eXBlLnByb3RvIkkKEVBheVN1Y2Nlc3NSZXF1ZXN0EiIKCHBh",
+            "eV90eXBlGAEgASgOMhAuenByb3RvLkVQYXlUeXBlEhAKCGV4dF9kYXRhGAIg",
+            "ASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPayTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new PaySuccessRequest(this);
     }
 
-    /// <summary>Field number for the "payType" field.</summary>
+    /// <summary>Field number for the "pay_type" field.</summary>
     public const int PayTypeFieldNumber = 1;
     private global::Zproto.EPayType payType_ = global::Zproto.EPayType.PayTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "extData" field.</summary>
+    /// <summary>Field number for the "ext_data" field.</summary>
     public const int ExtDataFieldNumber = 2;
     private string extData_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

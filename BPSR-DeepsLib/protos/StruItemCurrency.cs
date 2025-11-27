@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2l0ZW1fY3VycmVuY3kucHJvdG8SBnpwcm90bxoYc3RydV9jdXJy",
-            "ZW5jeV9kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iqgEKDEl0",
-            "ZW1DdXJyZW5jeRIOCgZpc0luaXQYASABKAgSPgoNY3VycmVuY3lEYXRhcxgC",
-            "IAMoCzInLnpwcm90by5JdGVtQ3VycmVuY3kuQ3VycmVuY3lEYXRhc0VudHJ5",
-            "GkoKEkN1cnJlbmN5RGF0YXNFbnRyeRILCgNrZXkYASABKAUSIwoFdmFsdWUY",
-            "AiABKAsyFC56cHJvdG8uQ3VycmVuY3lEYXRhOgI4AWIGcHJvdG8z"));
+            "ZW5jeV9kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8irAEKDEl0",
+            "ZW1DdXJyZW5jeRIPCgdpc19pbml0GAEgASgIEj8KDmN1cnJlbmN5X2RhdGFz",
+            "GAIgAygLMicuenByb3RvLkl0ZW1DdXJyZW5jeS5DdXJyZW5jeURhdGFzRW50",
+            "cnkaSgoSQ3VycmVuY3lEYXRhc0VudHJ5EgsKA2tleRgBIAEoBRIjCgV2YWx1",
+            "ZRgCIAEoCzIULnpwcm90by5DdXJyZW5jeURhdGE6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCurrencyDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new ItemCurrency(this);
     }
 
-    /// <summary>Field number for the "isInit" field.</summary>
+    /// <summary>Field number for the "is_init" field.</summary>
     public const int IsInitFieldNumber = 1;
     private bool isInit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "currencyDatas" field.</summary>
+    /// <summary>Field number for the "currency_datas" field.</summary>
     public const int CurrencyDatasFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.CurrencyData>.Codec _map_currencyDatas_codec
         = new pbc::MapField<int, global::Zproto.CurrencyData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CurrencyData.Parser), 18);

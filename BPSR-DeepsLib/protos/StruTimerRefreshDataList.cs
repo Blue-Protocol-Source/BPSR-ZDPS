@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X3RpbWVyX3JlZnJlc2hfZGF0YV9saXN0LnByb3RvEgZ6cHJvdG8a",
             "HXN0cnVfdGltZXJfcmVmcmVzaF9saXN0LnByb3RvGhVzdHJ1X2RpcnR5X21h",
-            "c2sucHJvdG8itAEKFFRpbWVyUmVmcmVzaERhdGFMaXN0EkoKD3JlZnJlc2hE",
-            "YXRhTGlzdBgBIAMoCzIxLnpwcm90by5UaW1lclJlZnJlc2hEYXRhTGlzdC5S",
-            "ZWZyZXNoRGF0YUxpc3RFbnRyeRpQChRSZWZyZXNoRGF0YUxpc3RFbnRyeRIL",
-            "CgNrZXkYASABKA0SJwoFdmFsdWUYAiABKAsyGC56cHJvdG8uVGltZXJSZWZy",
-            "ZXNoTGlzdDoCOAFiBnByb3RvMw=="));
+            "c2sucHJvdG8itgEKFFRpbWVyUmVmcmVzaERhdGFMaXN0EkwKEXJlZnJlc2hf",
+            "ZGF0YV9saXN0GAEgAygLMjEuenByb3RvLlRpbWVyUmVmcmVzaERhdGFMaXN0",
+            "LlJlZnJlc2hEYXRhTGlzdEVudHJ5GlAKFFJlZnJlc2hEYXRhTGlzdEVudHJ5",
+            "EgsKA2tleRgBIAEoDRInCgV2YWx1ZRgCIAEoCzIYLnpwcm90by5UaW1lclJl",
+            "ZnJlc2hMaXN0OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTimerRefreshListReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new TimerRefreshDataList(this);
     }
 
-    /// <summary>Field number for the "refreshDataList" field.</summary>
+    /// <summary>Field number for the "refresh_data_list" field.</summary>
     public const int RefreshDataListFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.TimerRefreshList>.Codec _map_refreshDataList_codec
         = new pbc::MapField<uint, global::Zproto.TimerRefreshList>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.TimerRefreshList.Parser), 10);

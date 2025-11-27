@@ -26,17 +26,17 @@ namespace Zproto {
           string.Concat(
             "ChVzdHJ1X3VuaW9uX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9kYW5jZV9i",
             "YWxsLnByb3RvGhpzdHJ1X3VuaW9uX2Jhc2VfZGF0YS5wcm90bxoWc3RydV91",
-            "bmlvbl9ldmVudC5wcm90bxoZc3RydV91bmlvbl9vZmZpY2lhbC5wcm90byKS",
-            "AwoJVW5pb25JbmZvEicKCGJhc2VJbmZvGAEgASgLMhUuenByb3RvLlVuaW9u",
-            "QmFzZURhdGESJwoLdW5pb25FdmVudHMYAyADKAsyEi56cHJvdG8uVW5pb25F",
-            "dmVudBIzCglvZmZpY2lhbHMYBCADKAsyIC56cHJvdG8uVW5pb25JbmZvLk9m",
-            "ZmljaWFsc0VudHJ5EhAKCGF1dG9QYXNzGAUgASgIEhIKCmNyZWF0ZVRpbWUY",
-            "BiABKAMSFgoOY2hhbmdlTmFtZVRpbWUYByABKAMSFwoPam9pbkNyb3dGdW5k",
-            "TnVtGAggASgDEiQKCWRhbmNlQmFsbBgJIAEoCzIRLnpwcm90by5EYW5jZUJh",
-            "bGwSDwoHZ3JvdXBJZBgKIAEoCRIRCglncm91cFR5cGUYCyABKAUSFAoMaXNO",
-            "YW1lUmVnaXN0GAwgASgIGkcKDk9mZmljaWFsc0VudHJ5EgsKA2tleRgBIAEo",
-            "BRIkCgV2YWx1ZRgCIAEoCzIVLnpwcm90by5Vbmlvbk9mZmljaWFsOgI4AWIG",
-            "cHJvdG8z"));
+            "bmlvbl9ldmVudC5wcm90bxoZc3RydV91bmlvbl9vZmZpY2lhbC5wcm90byKg",
+            "AwoJVW5pb25JbmZvEigKCWJhc2VfaW5mbxgBIAEoCzIVLnpwcm90by5Vbmlv",
+            "bkJhc2VEYXRhEigKDHVuaW9uX2V2ZW50cxgDIAMoCzISLnpwcm90by5Vbmlv",
+            "bkV2ZW50EjMKCW9mZmljaWFscxgEIAMoCzIgLnpwcm90by5VbmlvbkluZm8u",
+            "T2ZmaWNpYWxzRW50cnkSEQoJYXV0b19wYXNzGAUgASgIEhMKC2NyZWF0ZV90",
+            "aW1lGAYgASgDEhgKEGNoYW5nZV9uYW1lX3RpbWUYByABKAMSGgoSam9pbl9j",
+            "cm93X2Z1bmRfbnVtGAggASgDEiUKCmRhbmNlX2JhbGwYCSABKAsyES56cHJv",
+            "dG8uRGFuY2VCYWxsEhAKCGdyb3VwX2lkGAogASgJEhIKCmdyb3VwX3R5cGUY",
+            "CyABKAUSFgoOaXNfbmFtZV9yZWdpc3QYDCABKAgaRwoOT2ZmaWNpYWxzRW50",
+            "cnkSCwoDa2V5GAEgASgFEiQKBXZhbHVlGAIgASgLMhUuenByb3RvLlVuaW9u",
+            "T2ZmaWNpYWw6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDanceBallReflection.Descriptor, global::Zproto.StruUnionBaseDataReflection.Descriptor, global::Zproto.StruUnionEventReflection.Descriptor, global::Zproto.StruUnionOfficialReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +102,7 @@ namespace Zproto {
       return new UnionInfo(this);
     }
 
-    /// <summary>Field number for the "baseInfo" field.</summary>
+    /// <summary>Field number for the "base_info" field.</summary>
     public const int BaseInfoFieldNumber = 1;
     private global::Zproto.UnionBaseData baseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unionEvents" field.</summary>
+    /// <summary>Field number for the "union_events" field.</summary>
     public const int UnionEventsFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.UnionEvent> _repeated_unionEvents_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.UnionEvent.Parser);
@@ -136,7 +136,7 @@ namespace Zproto {
       get { return officials_; }
     }
 
-    /// <summary>Field number for the "autoPass" field.</summary>
+    /// <summary>Field number for the "auto_pass" field.</summary>
     public const int AutoPassFieldNumber = 5;
     private bool autoPass_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,7 +148,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "createTime" field.</summary>
+    /// <summary>Field number for the "create_time" field.</summary>
     public const int CreateTimeFieldNumber = 6;
     private long createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -160,7 +160,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "changeNameTime" field.</summary>
+    /// <summary>Field number for the "change_name_time" field.</summary>
     public const int ChangeNameTimeFieldNumber = 7;
     private long changeNameTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -172,7 +172,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "joinCrowFundNum" field.</summary>
+    /// <summary>Field number for the "join_crow_fund_num" field.</summary>
     public const int JoinCrowFundNumFieldNumber = 8;
     private long joinCrowFundNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -184,7 +184,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "danceBall" field.</summary>
+    /// <summary>Field number for the "dance_ball" field.</summary>
     public const int DanceBallFieldNumber = 9;
     private global::Zproto.DanceBall danceBall_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -196,7 +196,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "groupId" field.</summary>
+    /// <summary>Field number for the "group_id" field.</summary>
     public const int GroupIdFieldNumber = 10;
     private string groupId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -208,7 +208,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "groupType" field.</summary>
+    /// <summary>Field number for the "group_type" field.</summary>
     public const int GroupTypeFieldNumber = 11;
     private int groupType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -220,7 +220,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isNameRegist" field.</summary>
+    /// <summary>Field number for the "is_name_regist" field.</summary>
     public const int IsNameRegistFieldNumber = 12;
     private bool isNameRegist_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

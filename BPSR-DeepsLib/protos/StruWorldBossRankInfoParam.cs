@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X3dvcmxkX2Jvc3NfcmFua19pbmZvX3BhcmFtLnByb3RvEgZ6cHJv",
-            "dG8aH3N0cnVfd29ybGRfYm9zc19yYW5rX2luZm8ucHJvdG8iRgoWV29ybGRC",
-            "b3NzUmFua0luZm9QYXJhbRIsCglyYW5rSW5mb3MYASADKAsyGS56cHJvdG8u",
-            "V29ybGRCb3NzUmFua0luZm9iBnByb3RvMw=="));
+            "dG8aH3N0cnVfd29ybGRfYm9zc19yYW5rX2luZm8ucHJvdG8iRwoWV29ybGRC",
+            "b3NzUmFua0luZm9QYXJhbRItCgpyYW5rX2luZm9zGAEgAygLMhkuenByb3Rv",
+            "LldvcmxkQm9zc1JhbmtJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruWorldBossRankInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new WorldBossRankInfoParam(this);
     }
 
-    /// <summary>Field number for the "rankInfos" field.</summary>
+    /// <summary>Field number for the "rank_infos" field.</summary>
     public const int RankInfosFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.WorldBossRankInfo> _repeated_rankInfos_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.WorldBossRankInfo.Parser);

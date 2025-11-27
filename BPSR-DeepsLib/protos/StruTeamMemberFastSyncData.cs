@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X3RlYW1fbWVtYmVyX2Zhc3Rfc3luY19kYXRhLnByb3RvEgZ6cHJv",
-            "dG8aE3N0cnVfcG9zaXRpb24ucHJvdG8ihwEKFlRlYW1NZW1iZXJGYXN0U3lu",
-            "Y0RhdGESDgoGY2hhcklkGAEgASgDEg8KB3NjZW5lSWQYAiABKAUSIgoIcG9z",
-            "aXRpb24YAyABKAsyEC56cHJvdG8uUG9zaXRpb24SCgoCaHAYBCABKAMSDQoF",
-            "bWF4SHAYBSABKAMSDQoFc3RhdGUYBiABKAViBnByb3RvMw=="));
+            "dG8aE3N0cnVfcG9zaXRpb24ucHJvdG8iigEKFlRlYW1NZW1iZXJGYXN0U3lu",
+            "Y0RhdGESDwoHY2hhcl9pZBgBIAEoAxIQCghzY2VuZV9pZBgCIAEoBRIiCghw",
+            "b3NpdGlvbhgDIAEoCzIQLnpwcm90by5Qb3NpdGlvbhIKCgJocBgEIAEoAxIO",
+            "CgZtYXhfaHAYBSABKAMSDQoFc3RhdGUYBiABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPositionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new TeamMemberFastSyncData(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sceneId" field.</summary>
+    /// <summary>Field number for the "scene_id" field.</summary>
     public const int SceneIdFieldNumber = 2;
     private int sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxHp" field.</summary>
+    /// <summary>Field number for the "max_hp" field.</summary>
     public const int MaxHpFieldNumber = 5;
     private long maxHp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

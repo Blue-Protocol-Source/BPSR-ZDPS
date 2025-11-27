@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X25vdGlmeV9idWlsZGluZ191cGdyYWRlX2VuZF9yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8iSQofTm90aWZ5QnVpbGRpbmdVcGdyYWRlRW5kUmVxdWVz",
-            "dBISCgpidWlsZGluZ0lkGAIgASgFEhIKCmJ1aWxkTGV2ZWwYAyABKAViBnBy",
-            "b3RvMw=="));
+            "b3RvEgZ6cHJvdG8iSwofTm90aWZ5QnVpbGRpbmdVcGdyYWRlRW5kUmVxdWVz",
+            "dBITCgtidWlsZGluZ19pZBgCIAEoBRITCgtidWlsZF9sZXZlbBgDIAEoBWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new NotifyBuildingUpgradeEndRequest(this);
     }
 
-    /// <summary>Field number for the "buildingId" field.</summary>
+    /// <summary>Field number for the "building_id" field.</summary>
     public const int BuildingIdFieldNumber = 2;
     private int buildingId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buildLevel" field.</summary>
+    /// <summary>Field number for the "build_level" field.</summary>
     public const int BuildLevelFieldNumber = 3;
     private int buildLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

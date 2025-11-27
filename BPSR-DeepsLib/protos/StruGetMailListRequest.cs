@@ -24,9 +24,9 @@ namespace Zproto {
     static StruGetMailListRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X2dldF9tYWlsX2xpc3RfcmVxdWVzdC5wcm90bxIGenByb3RvIkkK",
+            "CiBzdHJ1X2dldF9tYWlsX2xpc3RfcmVxdWVzdC5wcm90bxIGenByb3RvIkoK",
             "EkdldE1haWxMaXN0UmVxdWVzdBIMCgRwYWdlGAIgASgFEhIKCmltcG9ydGFu",
-            "Y2UYAyABKAUSEQoJaXNDb2xsZWN0GAQgASgIYgZwcm90bzM="));
+            "Y2UYAyABKAUSEgoKaXNfY29sbGVjdBgEIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isCollect" field.</summary>
+    /// <summary>Field number for the "is_collect" field.</summary>
     public const int IsCollectFieldNumber = 4;
     private bool isCollect_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

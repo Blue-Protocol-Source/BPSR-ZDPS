@@ -24,9 +24,9 @@ namespace Zproto {
     static StruUnionEventReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X3VuaW9uX2V2ZW50LnByb3RvEgZ6cHJvdG8iRAoKVW5pb25FdmVu",
-            "dBIPCgdldmVudElkGAEgASgFEhEKCWV2ZW50VGltZRgCIAEoBBISCgpldmVu",
-            "dFBhcmFtGAMgAygJYgZwcm90bzM="));
+            "ChZzdHJ1X3VuaW9uX2V2ZW50LnByb3RvEgZ6cHJvdG8iRwoKVW5pb25FdmVu",
+            "dBIQCghldmVudF9pZBgBIAEoBRISCgpldmVudF90aW1lGAIgASgEEhMKC2V2",
+            "ZW50X3BhcmFtGAMgAygJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new UnionEvent(this);
     }
 
-    /// <summary>Field number for the "eventId" field.</summary>
+    /// <summary>Field number for the "event_id" field.</summary>
     public const int EventIdFieldNumber = 1;
     private int eventId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "eventTime" field.</summary>
+    /// <summary>Field number for the "event_time" field.</summary>
     public const int EventTimeFieldNumber = 2;
     private ulong eventTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "eventParam" field.</summary>
+    /// <summary>Field number for the "event_param" field.</summary>
     public const int EventParamFieldNumber = 3;
     private static readonly pb::FieldCodec<string> _repeated_eventParam_codec
         = pb::FieldCodec.ForString(26);

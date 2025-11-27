@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CipzdHJ1X3NlbmRfc3lzX2NoYXRfaHlwZXJ0ZXh0X3JlcXVlc3QucHJvdG8S",
             "Bnpwcm90bxoZc3RydV9jaGF0X2h5cGVydGV4dC5wcm90bxohZW51bV9jaGl0",
-            "X2NoYXRfY2hhbm5lbF90eXBlLnByb3RvIsMBChtTZW5kU3lzQ2hhdEh5cGVy",
-            "dGV4dFJlcXVlc3QSMAoLY2hhbm5lbFR5cGUYASABKA4yGy56cHJvdG8uQ2hp",
-            "dENoYXRDaGFubmVsVHlwZRIoCgloeXBlcnRleHQYAiABKAsyFS56cHJvdG8u",
-            "Q2hhdEh5cGVydGV4dBIUCgx0YXJnZXRDaGFySWQYAyABKAMSEgoKc2VuZENo",
-            "YXJJZBgEIAEoAxIMCgR0ZXh0GAUgASgJEhAKCHNlbmRUb01lGAYgASgIYgZw",
-            "cm90bzM="));
+            "X2NoYXRfY2hhbm5lbF90eXBlLnByb3RvIsoBChtTZW5kU3lzQ2hhdEh5cGVy",
+            "dGV4dFJlcXVlc3QSMQoMY2hhbm5lbF90eXBlGAEgASgOMhsuenByb3RvLkNo",
+            "aXRDaGF0Q2hhbm5lbFR5cGUSKAoJaHlwZXJ0ZXh0GAIgASgLMhUuenByb3Rv",
+            "LkNoYXRIeXBlcnRleHQSFgoOdGFyZ2V0X2NoYXJfaWQYAyABKAMSFAoMc2Vu",
+            "ZF9jaGFyX2lkGAQgASgDEgwKBHRleHQYBSABKAkSEgoKc2VuZF90b19tZRgG",
+            "IAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruChatHypertextReflection.Descriptor, global::Zproto.EnumChitChatChannelTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +92,7 @@ namespace Zproto {
       return new SendSysChatHypertextRequest(this);
     }
 
-    /// <summary>Field number for the "channelType" field.</summary>
+    /// <summary>Field number for the "channel_type" field.</summary>
     public const int ChannelTypeFieldNumber = 1;
     private global::Zproto.ChitChatChannelType channelType_ = global::Zproto.ChitChatChannelType.ChannelNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetCharId" field.</summary>
+    /// <summary>Field number for the "target_char_id" field.</summary>
     public const int TargetCharIdFieldNumber = 3;
     private long targetCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +128,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sendCharId" field.</summary>
+    /// <summary>Field number for the "send_char_id" field.</summary>
     public const int SendCharIdFieldNumber = 4;
     private long sendCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sendToMe" field.</summary>
+    /// <summary>Field number for the "send_to_me" field.</summary>
     public const int SendToMeFieldNumber = 6;
     private bool sendToMe_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

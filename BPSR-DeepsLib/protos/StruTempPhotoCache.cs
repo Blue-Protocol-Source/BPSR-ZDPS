@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3RlbXBfcGhvdG9fY2FjaGUucHJvdG8SBnpwcm90bxogc3RydV90",
-            "ZW1wX3Bob3RvX2NhY2hlX2luZm8ucHJvdG8iswEKDnRlbXBQaG90b0NhY2hl",
-            "EkoKEnRlbXBQaG90b0NhY2hlRGljdBgBIAMoCzIuLnpwcm90by50ZW1wUGhv",
-            "dG9DYWNoZS5UZW1wUGhvdG9DYWNoZURpY3RFbnRyeRpVChdUZW1wUGhvdG9D",
-            "YWNoZURpY3RFbnRyeRILCgNrZXkYASABKAkSKQoFdmFsdWUYAiABKAsyGi56",
-            "cHJvdG8udGVtcFBob3RvQ2FjaGVJbmZvOgI4AWIGcHJvdG8z"));
+            "ZW1wX3Bob3RvX2NhY2hlX2luZm8ucHJvdG8itgEKDnRlbXBQaG90b0NhY2hl",
+            "Ek0KFXRlbXBfcGhvdG9fY2FjaGVfZGljdBgBIAMoCzIuLnpwcm90by50ZW1w",
+            "UGhvdG9DYWNoZS5UZW1wUGhvdG9DYWNoZURpY3RFbnRyeRpVChdUZW1wUGhv",
+            "dG9DYWNoZURpY3RFbnRyeRILCgNrZXkYASABKAkSKQoFdmFsdWUYAiABKAsy",
+            "Gi56cHJvdG8udGVtcFBob3RvQ2FjaGVJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTempPhotoCacheInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new tempPhotoCache(this);
     }
 
-    /// <summary>Field number for the "tempPhotoCacheDict" field.</summary>
+    /// <summary>Field number for the "temp_photo_cache_dict" field.</summary>
     public const int TempPhotoCacheDictFieldNumber = 1;
     private static readonly pbc::MapField<string, global::Zproto.tempPhotoCacheInfo>.Codec _map_tempPhotoCacheDict_codec
         = new pbc::MapField<string, global::Zproto.tempPhotoCacheInfo>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Zproto.tempPhotoCacheInfo.Parser), 10);

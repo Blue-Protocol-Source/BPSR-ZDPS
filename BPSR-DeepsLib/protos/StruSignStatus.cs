@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X3NpZ25fc3RhdHVzLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byJuCgpTaWduU3RhdHVzEhAKCGlzU2lnbmVkGAEgASgIEhIK",
-            "CmlzUmV3YXJkZWQYAiABKAgSFAoMaXNTdXBwbGVtZW50GAMgASgIEhAKCHNp",
-            "Z25UaW1lGAQgASgDEhIKCnJld2FyZFRpbWUYBSABKANiBnByb3RvMw=="));
+            "bWFzay5wcm90byJzCgpTaWduU3RhdHVzEhEKCWlzX3NpZ25lZBgBIAEoCBIT",
+            "Cgtpc19yZXdhcmRlZBgCIAEoCBIVCg1pc19zdXBwbGVtZW50GAMgASgIEhEK",
+            "CXNpZ25fdGltZRgEIAEoAxITCgtyZXdhcmRfdGltZRgFIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new SignStatus(this);
     }
 
-    /// <summary>Field number for the "isSigned" field.</summary>
+    /// <summary>Field number for the "is_signed" field.</summary>
     public const int IsSignedFieldNumber = 1;
     private bool isSigned_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isRewarded" field.</summary>
+    /// <summary>Field number for the "is_rewarded" field.</summary>
     public const int IsRewardedFieldNumber = 2;
     private bool isRewarded_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isSupplement" field.</summary>
+    /// <summary>Field number for the "is_supplement" field.</summary>
     public const int IsSupplementFieldNumber = 3;
     private bool isSupplement_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "signTime" field.</summary>
+    /// <summary>Field number for the "sign_time" field.</summary>
     public const int SignTimeFieldNumber = 4;
     private long signTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rewardTime" field.</summary>
+    /// <summary>Field number for the "reward_time" field.</summary>
     public const int RewardTimeFieldNumber = 5;
     private long rewardTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

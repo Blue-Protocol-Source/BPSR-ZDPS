@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X21vbnRobHlfY2FyZF9idXlfbGlzdC5wcm90bxIGenByb3RvGhVz",
-            "dHJ1X2RpcnR5X21hc2sucHJvdG8iUgoSTW9udGhseUNhcmRCdXlMaXN0EhEK",
-            "CWJlZ2luVGltZRgBIAEoAxIPCgdlbmRUaW1lGAIgASgDEhgKEGxhc3RBd2Fy",
-            "ZERheVRpbWUYAyABKANiBnByb3RvMw=="));
+            "dHJ1X2RpcnR5X21hc2sucHJvdG8iVwoSTW9udGhseUNhcmRCdXlMaXN0EhIK",
+            "CmJlZ2luX3RpbWUYASABKAMSEAoIZW5kX3RpbWUYAiABKAMSGwoTbGFzdF9h",
+            "d2FyZF9kYXlfdGltZRgDIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new MonthlyCardBuyList(this);
     }
 
-    /// <summary>Field number for the "beginTime" field.</summary>
+    /// <summary>Field number for the "begin_time" field.</summary>
     public const int BeginTimeFieldNumber = 1;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "endTime" field.</summary>
+    /// <summary>Field number for the "end_time" field.</summary>
     public const int EndTimeFieldNumber = 2;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastAwardDayTime" field.</summary>
+    /// <summary>Field number for the "last_award_day_time" field.</summary>
     public const int LastAwardDayTimeFieldNumber = 3;
     private long lastAwardDayTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

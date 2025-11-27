@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2J1eV9zaG9wX2l0ZW1fcmVxdWVzdC5wcm90bxIGenByb3RvGh1z",
-            "dHJ1X2J1eV9zaG9wX2l0ZW1faW5mby5wcm90byLAAQoSQnV5U2hvcEl0ZW1S",
-            "ZXF1ZXN0EkgKD2J1eVNob3BJdGVtSW5mbxgCIAMoCzIvLnpwcm90by5CdXlT",
-            "aG9wSXRlbVJlcXVlc3QuQnV5U2hvcEl0ZW1JbmZvRW50cnkSDwoHZXh0RGF0",
-            "YRgGIAEoCRpPChRCdXlTaG9wSXRlbUluZm9FbnRyeRILCgNrZXkYASABKAUS",
-            "JgoFdmFsdWUYAiABKAsyFy56cHJvdG8uQnV5U2hvcEl0ZW1JbmZvOgI4AWIG",
-            "cHJvdG8z"));
+            "dHJ1X2J1eV9zaG9wX2l0ZW1faW5mby5wcm90byLEAQoSQnV5U2hvcEl0ZW1S",
+            "ZXF1ZXN0EksKEmJ1eV9zaG9wX2l0ZW1faW5mbxgCIAMoCzIvLnpwcm90by5C",
+            "dXlTaG9wSXRlbVJlcXVlc3QuQnV5U2hvcEl0ZW1JbmZvRW50cnkSEAoIZXh0",
+            "X2RhdGEYBiABKAkaTwoUQnV5U2hvcEl0ZW1JbmZvRW50cnkSCwoDa2V5GAEg",
+            "ASgFEiYKBXZhbHVlGAIgASgLMhcuenByb3RvLkJ1eVNob3BJdGVtSW5mbzoC",
+            "OAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBuyShopItemInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new BuyShopItemRequest(this);
     }
 
-    /// <summary>Field number for the "buyShopItemInfo" field.</summary>
+    /// <summary>Field number for the "buy_shop_item_info" field.</summary>
     public const int BuyShopItemInfoFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.BuyShopItemInfo>.Codec _map_buyShopItemInfo_codec
         = new pbc::MapField<int, global::Zproto.BuyShopItemInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.BuyShopItemInfo.Parser), 18);
@@ -98,7 +98,7 @@ namespace Zproto {
       get { return buyShopItemInfo_; }
     }
 
-    /// <summary>Field number for the "extData" field.</summary>
+    /// <summary>Field number for the "ext_data" field.</summary>
     public const int ExtDataFieldNumber = 6;
     private string extData_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2V4Y2hhbmdlX3NlbGxfaXRlbV9yZXF1ZXN0LnByb3RvEgZ6cHJv",
-            "dG8iMQoXRXhjaGFuZ2VTZWxsSXRlbVJlcXVlc3QSFgoObW9udGhDYXJkVmFs",
-            "aWQYASABKAhiBnByb3RvMw=="));
+            "dG8iMwoXRXhjaGFuZ2VTZWxsSXRlbVJlcXVlc3QSGAoQbW9udGhfY2FyZF92",
+            "YWxpZBgBIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ExchangeSellItemRequest(this);
     }
 
-    /// <summary>Field number for the "monthCardValid" field.</summary>
+    /// <summary>Field number for the "month_card_valid" field.</summary>
     public const int MonthCardValidFieldNumber = 1;
     private bool monthCardValid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

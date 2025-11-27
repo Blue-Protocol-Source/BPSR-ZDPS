@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X3NldF91bmlvbl9hdXRvX3Bhc3NfcmVxdWVzdC5wcm90bxIGenBy",
-            "b3RvIjwKF1NldFVuaW9uQXV0b1Bhc3NSZXF1ZXN0Eg8KB3VuaW9uSWQYAiAB",
-            "KAMSEAoIYXV0b1Bhc3MYAyABKAhiBnByb3RvMw=="));
+            "b3RvIj4KF1NldFVuaW9uQXV0b1Bhc3NSZXF1ZXN0EhAKCHVuaW9uX2lkGAIg",
+            "ASgDEhEKCWF1dG9fcGFzcxgDIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetUnionAutoPassRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "autoPass" field.</summary>
+    /// <summary>Field number for the "auto_pass" field.</summary>
     public const int AutoPassFieldNumber = 3;
     private bool autoPass_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

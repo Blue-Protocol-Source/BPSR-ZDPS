@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X3NvdXJjZV9wcml2aWxlZ2VfZWZmZWN0X2RhdGEucHJvdG8SBnpw",
-            "cm90bxolc3RydV9wcml2aWxlZ2VfZWZmZWN0X2xpc3RfZGF0YS5wcm90byLR",
-            "AQoZU291cmNlUHJpdmlsZWdlRWZmZWN0RGF0YRJXChNwcml2aWxlZ2VFZmZl",
-            "Y3RzTWFwGAEgAygLMjouenByb3RvLlNvdXJjZVByaXZpbGVnZUVmZmVjdERh",
-            "dGEuUHJpdmlsZWdlRWZmZWN0c01hcEVudHJ5GlsKGFByaXZpbGVnZUVmZmVj",
-            "dHNNYXBFbnRyeRILCgNrZXkYASABKAUSLgoFdmFsdWUYAiABKAsyHy56cHJv",
-            "dG8uUHJpdmlsZWdlRWZmZWN0TGlzdERhdGE6AjgBYgZwcm90bzM="));
+            "cm90bxolc3RydV9wcml2aWxlZ2VfZWZmZWN0X2xpc3RfZGF0YS5wcm90byLT",
+            "AQoZU291cmNlUHJpdmlsZWdlRWZmZWN0RGF0YRJZChVwcml2aWxlZ2VfZWZm",
+            "ZWN0c19tYXAYASADKAsyOi56cHJvdG8uU291cmNlUHJpdmlsZWdlRWZmZWN0",
+            "RGF0YS5Qcml2aWxlZ2VFZmZlY3RzTWFwRW50cnkaWwoYUHJpdmlsZWdlRWZm",
+            "ZWN0c01hcEVudHJ5EgsKA2tleRgBIAEoBRIuCgV2YWx1ZRgCIAEoCzIfLnpw",
+            "cm90by5Qcml2aWxlZ2VFZmZlY3RMaXN0RGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPrivilegeEffectListDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new SourcePrivilegeEffectData(this);
     }
 
-    /// <summary>Field number for the "privilegeEffectsMap" field.</summary>
+    /// <summary>Field number for the "privilege_effects_map" field.</summary>
     public const int PrivilegeEffectsMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.PrivilegeEffectListData>.Codec _map_privilegeEffectsMap_codec
         = new pbc::MapField<int, global::Zproto.PrivilegeEffectListData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.PrivilegeEffectListData.Parser), 10);

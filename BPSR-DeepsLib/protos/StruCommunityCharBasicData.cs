@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X2NvbW11bml0eV9jaGFyX2Jhc2ljX2RhdGEucHJvdG8SBnpwcm90",
             "bxoWc3RydV9hdmF0YXJfaW5mby5wcm90bxoVc3RydV9iYXNpY19kYXRhLnBy",
-            "b3RvGhpzdHJ1X3Byb2Zlc3Npb25fZGF0YS5wcm90byKWAQoWQ29tbXVuaXR5",
-            "Q2hhckJhc2ljRGF0YRIkCgliYXNpY0RhdGEYASABKAsyES56cHJvdG8uQmFz",
-            "aWNEYXRhEiYKCmF2YXRhckluZm8YAiABKAsyEi56cHJvdG8uQXZhdGFySW5m",
-            "bxIuCg5wcm9mZXNzaW9uRGF0YRgDIAEoCzIWLnpwcm90by5Qcm9mZXNzaW9u",
-            "RGF0YWIGcHJvdG8z"));
+            "b3RvGhpzdHJ1X3Byb2Zlc3Npb25fZGF0YS5wcm90byKZAQoWQ29tbXVuaXR5",
+            "Q2hhckJhc2ljRGF0YRIlCgpiYXNpY19kYXRhGAEgASgLMhEuenByb3RvLkJh",
+            "c2ljRGF0YRInCgthdmF0YXJfaW5mbxgCIAEoCzISLnpwcm90by5BdmF0YXJJ",
+            "bmZvEi8KD3Byb2Zlc3Npb25fZGF0YRgDIAEoCzIWLnpwcm90by5Qcm9mZXNz",
+            "aW9uRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAvatarInfoReflection.Descriptor, global::Zproto.StruBasicDataReflection.Descriptor, global::Zproto.StruProfessionDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new CommunityCharBasicData(this);
     }
 
-    /// <summary>Field number for the "basicData" field.</summary>
+    /// <summary>Field number for the "basic_data" field.</summary>
     public const int BasicDataFieldNumber = 1;
     private global::Zproto.BasicData basicData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "avatarInfo" field.</summary>
+    /// <summary>Field number for the "avatar_info" field.</summary>
     public const int AvatarInfoFieldNumber = 2;
     private global::Zproto.AvatarInfo avatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "professionData" field.</summary>
+    /// <summary>Field number for the "profession_data" field.</summary>
     public const int ProfessionDataFieldNumber = 3;
     private global::Zproto.ProfessionData professionData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,27 +26,28 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X2NhbWVyYV9zY2hlbWVfaW5mby5wcm90bxIGenByb3RvGh5lbnVt",
             "X2NhbWVyYV9wYXR0ZXJuX3R5cGUucHJvdG8aHWVudW1fY2FtZXJhX3NjaGVt",
-            "ZV90eXBlLnByb3RvIuAFChBjYW1lcmFTY2hlbWVJbmZvEjQKEWNhbWVyYVBh",
-            "dHRlcm5UeXBlGAEgASgOMhkuenByb3RvLkNhbWVyYVBhdHRlcm5UeXBlEjIK",
-            "EGNhbWVyYVNjaGVtZVR5cGUYAiABKA4yGC56cHJvdG8uQ2FtZXJhU2NoZW1l",
-            "VHlwZRIRCglzY2hlbWVLZXkYAyABKAkSEgoKc2NoZW1lTmFtZRgEIAEoCRIS",
-            "CgpzY2hlbWVUaW1lGAUgASgEEhAKCGV4cG9zdXJlGAYgASgCEhAKCGNvbnRy",
-            "YXN0GAcgASgCEhIKCnNhdHVyYXRpb24YCCABKAISEgoKaG9yaXpvbnRhbBgJ",
-            "IAEoAhIQCgh2ZXJ0aWNhbBgKIAEoAhINCgVhbmdsZRgLIAEoAhIQCghkZXB0",
-            "aFRhZxgMIAEoCBIQCghhcGVydHVyZRgNIAEoAhIRCgluZWFyQmxlbmQYDiAB",
-            "KAISEAoIZmFyQmxlbmQYDyABKAISEAoIZm9jdXNUYWcYECABKAgSDQoFZm9j",
-            "dXMYESABKAISEQoJd29ybGRUaW1lGBIgASgCEhQKDGlzSGVhZEZvbGxvdxgT",
-            "IAEoCBITCgtpc0V5ZUZvbGxvdxgUIAEoCBJGCg9zaG93RW50aXR5RGljdHMY",
-            "FSADKAsyLS56cHJvdG8uY2FtZXJhU2NoZW1lSW5mby5TaG93RW50aXR5RGlj",
-            "dHNFbnRyeRI+CgtzaG93VUlEaWN0cxgWIAMoCzIpLnpwcm90by5jYW1lcmFT",
-            "Y2hlbWVJbmZvLlNob3dVSURpY3RzRW50cnkSEgoKZmlsdGVyUGF0aBgXIAEo",
-            "CRIKCgJpZBgYIAEoBBo2ChRTaG93RW50aXR5RGljdHNFbnRyeRILCgNrZXkY",
-            "ASABKAQSDQoFdmFsdWUYAiABKAg6AjgBGjIKEFNob3dVSURpY3RzRW50cnkS",
-            "CwoDa2V5GAEgASgEEg0KBXZhbHVlGAIgASgIOgI4AWIGcHJvdG8z"));
+            "ZV90eXBlLnByb3RvIvUFChBjYW1lcmFTY2hlbWVJbmZvEjYKE2NhbWVyYV9w",
+            "YXR0ZXJuX3R5cGUYASABKA4yGS56cHJvdG8uQ2FtZXJhUGF0dGVyblR5cGUS",
+            "NAoSY2FtZXJhX3NjaGVtZV90eXBlGAIgASgOMhguenByb3RvLkNhbWVyYVNj",
+            "aGVtZVR5cGUSEgoKc2NoZW1lX2tleRgDIAEoCRITCgtzY2hlbWVfbmFtZRgE",
+            "IAEoCRITCgtzY2hlbWVfdGltZRgFIAEoBBIQCghleHBvc3VyZRgGIAEoAhIQ",
+            "Cghjb250cmFzdBgHIAEoAhISCgpzYXR1cmF0aW9uGAggASgCEhIKCmhvcml6",
+            "b250YWwYCSABKAISEAoIdmVydGljYWwYCiABKAISDQoFYW5nbGUYCyABKAIS",
+            "EQoJZGVwdGhfdGFnGAwgASgIEhAKCGFwZXJ0dXJlGA0gASgCEhIKCm5lYXJf",
+            "YmxlbmQYDiABKAISEQoJZmFyX2JsZW5kGA8gASgCEhEKCWZvY3VzX3RhZxgQ",
+            "IAEoCBINCgVmb2N1cxgRIAEoAhISCgp3b3JsZF90aW1lGBIgASgCEhYKDmlz",
+            "X2hlYWRfZm9sbG93GBMgASgIEhUKDWlzX2V5ZV9mb2xsb3cYFCABKAgSSAoR",
+            "c2hvd19lbnRpdHlfZGljdHMYFSADKAsyLS56cHJvdG8uY2FtZXJhU2NoZW1l",
+            "SW5mby5TaG93RW50aXR5RGljdHNFbnRyeRJACg1zaG93X3VpX2RpY3RzGBYg",
+            "AygLMikuenByb3RvLmNhbWVyYVNjaGVtZUluZm8uU2hvd1VpRGljdHNFbnRy",
+            "eRITCgtmaWx0ZXJfcGF0aBgXIAEoCRIKCgJpZBgYIAEoBBo2ChRTaG93RW50",
+            "aXR5RGljdHNFbnRyeRILCgNrZXkYASABKAQSDQoFdmFsdWUYAiABKAg6AjgB",
+            "GjIKEFNob3dVaURpY3RzRW50cnkSCwoDa2V5GAEgASgEEg0KBXZhbHVlGAIg",
+            "ASgIOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumCameraPatternTypeReflection.Descriptor, global::Zproto.EnumCameraSchemeTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.cameraSchemeInfo), global::Zproto.cameraSchemeInfo.Parser, new[]{ "CameraPatternType", "CameraSchemeType", "SchemeKey", "SchemeName", "SchemeTime", "Exposure", "Contrast", "Saturation", "Horizontal", "Vertical", "Angle", "DepthTag", "Aperture", "NearBlend", "FarBlend", "FocusTag", "Focus", "WorldTime", "IsHeadFollow", "IsEyeFollow", "ShowEntityDicts", "ShowUIDicts", "FilterPath", "Id" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.cameraSchemeInfo), global::Zproto.cameraSchemeInfo.Parser, new[]{ "CameraPatternType", "CameraSchemeType", "SchemeKey", "SchemeName", "SchemeTime", "Exposure", "Contrast", "Saturation", "Horizontal", "Vertical", "Angle", "DepthTag", "Aperture", "NearBlend", "FarBlend", "FocusTag", "Focus", "WorldTime", "IsHeadFollow", "IsEyeFollow", "ShowEntityDicts", "ShowUiDicts", "FilterPath", "Id" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -109,7 +110,7 @@ namespace Zproto {
       isHeadFollow_ = other.isHeadFollow_;
       isEyeFollow_ = other.isEyeFollow_;
       showEntityDicts_ = other.showEntityDicts_.Clone();
-      showUIDicts_ = other.showUIDicts_.Clone();
+      showUiDicts_ = other.showUiDicts_.Clone();
       filterPath_ = other.filterPath_;
       id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -121,7 +122,7 @@ namespace Zproto {
       return new cameraSchemeInfo(this);
     }
 
-    /// <summary>Field number for the "cameraPatternType" field.</summary>
+    /// <summary>Field number for the "camera_pattern_type" field.</summary>
     public const int CameraPatternTypeFieldNumber = 1;
     private global::Zproto.CameraPatternType cameraPatternType_ = global::Zproto.CameraPatternType.Default;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +134,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cameraSchemeType" field.</summary>
+    /// <summary>Field number for the "camera_scheme_type" field.</summary>
     public const int CameraSchemeTypeFieldNumber = 2;
     private global::Zproto.CameraSchemeType cameraSchemeType_ = global::Zproto.CameraSchemeType.DefaultScheme;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -145,7 +146,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "schemeKey" field.</summary>
+    /// <summary>Field number for the "scheme_key" field.</summary>
     public const int SchemeKeyFieldNumber = 3;
     private string schemeKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -157,7 +158,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "schemeName" field.</summary>
+    /// <summary>Field number for the "scheme_name" field.</summary>
     public const int SchemeNameFieldNumber = 4;
     private string schemeName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,7 +170,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "schemeTime" field.</summary>
+    /// <summary>Field number for the "scheme_time" field.</summary>
     public const int SchemeTimeFieldNumber = 5;
     private ulong schemeTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -253,7 +254,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "depthTag" field.</summary>
+    /// <summary>Field number for the "depth_tag" field.</summary>
     public const int DepthTagFieldNumber = 12;
     private bool depthTag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -277,7 +278,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "nearBlend" field.</summary>
+    /// <summary>Field number for the "near_blend" field.</summary>
     public const int NearBlendFieldNumber = 14;
     private float nearBlend_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -289,7 +290,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "farBlend" field.</summary>
+    /// <summary>Field number for the "far_blend" field.</summary>
     public const int FarBlendFieldNumber = 15;
     private float farBlend_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -301,7 +302,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "focusTag" field.</summary>
+    /// <summary>Field number for the "focus_tag" field.</summary>
     public const int FocusTagFieldNumber = 16;
     private bool focusTag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -325,7 +326,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "worldTime" field.</summary>
+    /// <summary>Field number for the "world_time" field.</summary>
     public const int WorldTimeFieldNumber = 18;
     private float worldTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -337,7 +338,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isHeadFollow" field.</summary>
+    /// <summary>Field number for the "is_head_follow" field.</summary>
     public const int IsHeadFollowFieldNumber = 19;
     private bool isHeadFollow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -349,7 +350,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isEyeFollow" field.</summary>
+    /// <summary>Field number for the "is_eye_follow" field.</summary>
     public const int IsEyeFollowFieldNumber = 20;
     private bool isEyeFollow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -361,7 +362,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "showEntityDicts" field.</summary>
+    /// <summary>Field number for the "show_entity_dicts" field.</summary>
     public const int ShowEntityDictsFieldNumber = 21;
     private static readonly pbc::MapField<ulong, bool>.Codec _map_showEntityDicts_codec
         = new pbc::MapField<ulong, bool>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForBool(16, false), 170);
@@ -372,18 +373,18 @@ namespace Zproto {
       get { return showEntityDicts_; }
     }
 
-    /// <summary>Field number for the "showUIDicts" field.</summary>
-    public const int ShowUIDictsFieldNumber = 22;
-    private static readonly pbc::MapField<ulong, bool>.Codec _map_showUIDicts_codec
+    /// <summary>Field number for the "show_ui_dicts" field.</summary>
+    public const int ShowUiDictsFieldNumber = 22;
+    private static readonly pbc::MapField<ulong, bool>.Codec _map_showUiDicts_codec
         = new pbc::MapField<ulong, bool>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForBool(16, false), 178);
-    private readonly pbc::MapField<ulong, bool> showUIDicts_ = new pbc::MapField<ulong, bool>();
+    private readonly pbc::MapField<ulong, bool> showUiDicts_ = new pbc::MapField<ulong, bool>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<ulong, bool> ShowUIDicts {
-      get { return showUIDicts_; }
+    public pbc::MapField<ulong, bool> ShowUiDicts {
+      get { return showUiDicts_; }
     }
 
-    /// <summary>Field number for the "filterPath" field.</summary>
+    /// <summary>Field number for the "filter_path" field.</summary>
     public const int FilterPathFieldNumber = 23;
     private string filterPath_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -443,7 +444,7 @@ namespace Zproto {
       if (IsHeadFollow != other.IsHeadFollow) return false;
       if (IsEyeFollow != other.IsEyeFollow) return false;
       if (!ShowEntityDicts.Equals(other.ShowEntityDicts)) return false;
-      if (!ShowUIDicts.Equals(other.ShowUIDicts)) return false;
+      if (!ShowUiDicts.Equals(other.ShowUiDicts)) return false;
       if (FilterPath != other.FilterPath) return false;
       if (Id != other.Id) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -474,7 +475,7 @@ namespace Zproto {
       if (IsHeadFollow != false) hash ^= IsHeadFollow.GetHashCode();
       if (IsEyeFollow != false) hash ^= IsEyeFollow.GetHashCode();
       hash ^= ShowEntityDicts.GetHashCode();
-      hash ^= ShowUIDicts.GetHashCode();
+      hash ^= ShowUiDicts.GetHashCode();
       if (FilterPath.Length != 0) hash ^= FilterPath.GetHashCode();
       if (Id != 0UL) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
@@ -576,7 +577,7 @@ namespace Zproto {
         output.WriteBool(IsEyeFollow);
       }
       showEntityDicts_.WriteTo(output, _map_showEntityDicts_codec);
-      showUIDicts_.WriteTo(output, _map_showUIDicts_codec);
+      showUiDicts_.WriteTo(output, _map_showUiDicts_codec);
       if (FilterPath.Length != 0) {
         output.WriteRawTag(186, 1);
         output.WriteString(FilterPath);
@@ -676,7 +677,7 @@ namespace Zproto {
         output.WriteBool(IsEyeFollow);
       }
       showEntityDicts_.WriteTo(ref output, _map_showEntityDicts_codec);
-      showUIDicts_.WriteTo(ref output, _map_showUIDicts_codec);
+      showUiDicts_.WriteTo(ref output, _map_showUiDicts_codec);
       if (FilterPath.Length != 0) {
         output.WriteRawTag(186, 1);
         output.WriteString(FilterPath);
@@ -756,7 +757,7 @@ namespace Zproto {
         size += 2 + 1;
       }
       size += showEntityDicts_.CalculateSize(_map_showEntityDicts_codec);
-      size += showUIDicts_.CalculateSize(_map_showUIDicts_codec);
+      size += showUiDicts_.CalculateSize(_map_showUiDicts_codec);
       if (FilterPath.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(FilterPath);
       }
@@ -836,7 +837,7 @@ namespace Zproto {
         IsEyeFollow = other.IsEyeFollow;
       }
       showEntityDicts_.MergeFrom(other.showEntityDicts_);
-      showUIDicts_.MergeFrom(other.showUIDicts_);
+      showUiDicts_.MergeFrom(other.showUiDicts_);
       if (other.FilterPath.Length != 0) {
         FilterPath = other.FilterPath;
       }
@@ -947,7 +948,7 @@ namespace Zproto {
             break;
           }
           case 178: {
-            showUIDicts_.AddEntriesFrom(input, _map_showUIDicts_codec);
+            showUiDicts_.AddEntriesFrom(input, _map_showUiDicts_codec);
             break;
           }
           case 186: {
@@ -1062,7 +1063,7 @@ namespace Zproto {
             break;
           }
           case 178: {
-            showUIDicts_.AddEntriesFrom(ref input, _map_showUIDicts_codec);
+            showUiDicts_.AddEntriesFrom(ref input, _map_showUiDicts_codec);
             break;
           }
           case 186: {

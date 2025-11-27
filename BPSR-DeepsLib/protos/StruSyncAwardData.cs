@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3N5bmNfYXdhcmRfZGF0YS5wcm90bxIGenByb3RvGhlzdHJ1X2xl",
-            "dmVsX3VwX2F3YXJkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iqAEK",
-            "DVN5bmNBd2FyZERhdGESRwoRbGV2ZWxVcEF3YXJkSW5mb3MYASADKAsyLC56",
-            "cHJvdG8uU3luY0F3YXJkRGF0YS5MZXZlbFVwQXdhcmRJbmZvc0VudHJ5Gk4K",
-            "FkxldmVsVXBBd2FyZEluZm9zRW50cnkSCwoDa2V5GAEgASgNEiMKBXZhbHVl",
-            "GAIgASgLMhQuenByb3RvLkxldmVsVXBBd2FyZDoCOAFiBnByb3RvMw=="));
+            "dmVsX3VwX2F3YXJkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iqwEK",
+            "DVN5bmNBd2FyZERhdGESSgoUbGV2ZWxfdXBfYXdhcmRfaW5mb3MYASADKAsy",
+            "LC56cHJvdG8uU3luY0F3YXJkRGF0YS5MZXZlbFVwQXdhcmRJbmZvc0VudHJ5",
+            "Gk4KFkxldmVsVXBBd2FyZEluZm9zRW50cnkSCwoDa2V5GAEgASgNEiMKBXZh",
+            "bHVlGAIgASgLMhQuenByb3RvLkxldmVsVXBBd2FyZDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLevelUpAwardReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new SyncAwardData(this);
     }
 
-    /// <summary>Field number for the "levelUpAwardInfos" field.</summary>
+    /// <summary>Field number for the "level_up_award_infos" field.</summary>
     public const int LevelUpAwardInfosFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.LevelUpAward>.Codec _map_levelUpAwardInfos_codec
         = new pbc::MapField<uint, global::Zproto.LevelUpAward>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.LevelUpAward.Parser), 10);

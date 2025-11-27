@@ -27,17 +27,17 @@ namespace Zproto {
             "ChdzdHJ1X21vbnRobHlfY2FyZC5wcm90bxIGenByb3RvGg9zdHJ1X2l0ZW0u",
             "cHJvdG8aIHN0cnVfbW9udGhseV9jYXJkX2J1eV9saXN0LnByb3RvGhxzdHJ1",
             "X21vbnRobHlfY2FyZF9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJv",
-            "dG8iugMKC01vbnRobHlDYXJkEhIKCmV4cGlyZVRpbWUYASABKAMSQQoPbW9u",
-            "dGhseUNhcmRJbmZvGAIgAygLMiguenByb3RvLk1vbnRobHlDYXJkLk1vbnRo",
-            "bHlDYXJkSW5mb0VudHJ5EiAKGGxhc3RBd2FyZE1vbnRobHlDYXJkVGltZRgD",
-            "IAEoBRITCgt0aXBzQ2xpY2tlZBgEIAEoBRIPCgd0aXBzRGF5GAUgASgFEhsK",
-            "BWl0ZW1zGAYgAygLMgwuenByb3RvLkl0ZW0SRwoSbW9udGhseUNhcmRCdXlM",
-            "aXN0GAcgAygLMisuenByb3RvLk1vbnRobHlDYXJkLk1vbnRobHlDYXJkQnV5",
-            "TGlzdEVudHJ5Gk8KFE1vbnRobHlDYXJkSW5mb0VudHJ5EgsKA2tleRgBIAEo",
-            "BRImCgV2YWx1ZRgCIAEoCzIXLnpwcm90by5Nb250aGx5Q2FyZEluZm86AjgB",
-            "GlUKF01vbnRobHlDYXJkQnV5TGlzdEVudHJ5EgsKA2tleRgBIAEoAxIpCgV2",
-            "YWx1ZRgCIAEoCzIaLnpwcm90by5Nb250aGx5Q2FyZEJ1eUxpc3Q6AjgBYgZw",
-            "cm90bzM="));
+            "dG8ixgMKC01vbnRobHlDYXJkEhMKC2V4cGlyZV90aW1lGAEgASgDEkMKEW1v",
+            "bnRobHlfY2FyZF9pbmZvGAIgAygLMiguenByb3RvLk1vbnRobHlDYXJkLk1v",
+            "bnRobHlDYXJkSW5mb0VudHJ5EiQKHGxhc3RfYXdhcmRfbW9udGhseV9jYXJk",
+            "X3RpbWUYAyABKAUSFAoMdGlwc19jbGlja2VkGAQgASgFEhAKCHRpcHNfZGF5",
+            "GAUgASgFEhsKBWl0ZW1zGAYgAygLMgwuenByb3RvLkl0ZW0SSgoVbW9udGhs",
+            "eV9jYXJkX2J1eV9saXN0GAcgAygLMisuenByb3RvLk1vbnRobHlDYXJkLk1v",
+            "bnRobHlDYXJkQnV5TGlzdEVudHJ5Gk8KFE1vbnRobHlDYXJkSW5mb0VudHJ5",
+            "EgsKA2tleRgBIAEoBRImCgV2YWx1ZRgCIAEoCzIXLnpwcm90by5Nb250aGx5",
+            "Q2FyZEluZm86AjgBGlUKF01vbnRobHlDYXJkQnV5TGlzdEVudHJ5EgsKA2tl",
+            "eRgBIAEoAxIpCgV2YWx1ZRgCIAEoCzIaLnpwcm90by5Nb250aGx5Q2FyZEJ1",
+            "eUxpc3Q6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruMonthlyCardBuyListReflection.Descriptor, global::Zproto.StruMonthlyCardInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       return new MonthlyCard(this);
     }
 
-    /// <summary>Field number for the "expireTime" field.</summary>
+    /// <summary>Field number for the "expire_time" field.</summary>
     public const int ExpireTimeFieldNumber = 1;
     private long expireTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "monthlyCardInfo" field.</summary>
+    /// <summary>Field number for the "monthly_card_info" field.</summary>
     public const int MonthlyCardInfoFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.MonthlyCardInfo>.Codec _map_monthlyCardInfo_codec
         = new pbc::MapField<int, global::Zproto.MonthlyCardInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MonthlyCardInfo.Parser), 18);
@@ -122,7 +122,7 @@ namespace Zproto {
       get { return monthlyCardInfo_; }
     }
 
-    /// <summary>Field number for the "lastAwardMonthlyCardTime" field.</summary>
+    /// <summary>Field number for the "last_award_monthly_card_time" field.</summary>
     public const int LastAwardMonthlyCardTimeFieldNumber = 3;
     private int lastAwardMonthlyCardTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,7 +134,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "tipsClicked" field.</summary>
+    /// <summary>Field number for the "tips_clicked" field.</summary>
     public const int TipsClickedFieldNumber = 4;
     private int tipsClicked_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -146,7 +146,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "tipsDay" field.</summary>
+    /// <summary>Field number for the "tips_day" field.</summary>
     public const int TipsDayFieldNumber = 5;
     private int tipsDay_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,7 +169,7 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "monthlyCardBuyList" field.</summary>
+    /// <summary>Field number for the "monthly_card_buy_list" field.</summary>
     public const int MonthlyCardBuyListFieldNumber = 7;
     private static readonly pbc::MapField<long, global::Zproto.MonthlyCardBuyList>.Codec _map_monthlyCardBuyList_codec
         = new pbc::MapField<long, global::Zproto.MonthlyCardBuyList>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.MonthlyCardBuyList.Parser), 58);

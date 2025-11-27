@@ -24,10 +24,10 @@ namespace Zproto {
     static StruGashaRecordItemInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2dhc2hhX3JlY29yZF9pdGVtX2luZm8ucHJvdG8SBnpwcm90byJV",
-            "ChNHYXNoYVJlY29yZEl0ZW1JbmZvEhAKCGNvbmZpZ0lkGAEgASgFEg0KBWNv",
-            "dW50GAIgASgNEgwKBHRpbWUYAyABKAMSDwoHcXVhbGl0eRgEIAEoBWIGcHJv",
-            "dG8z"));
+            "CiFzdHJ1X2dhc2hhX3JlY29yZF9pdGVtX2luZm8ucHJvdG8SBnpwcm90byJW",
+            "ChNHYXNoYVJlY29yZEl0ZW1JbmZvEhEKCWNvbmZpZ19pZBgBIAEoBRINCgVj",
+            "b3VudBgCIAEoDRIMCgR0aW1lGAMgASgDEg8KB3F1YWxpdHkYBCABKAViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new GashaRecordItemInfo(this);
     }
 
-    /// <summary>Field number for the "configId" field.</summary>
+    /// <summary>Field number for the "config_id" field.</summary>
     public const int ConfigIdFieldNumber = 1;
     private int configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

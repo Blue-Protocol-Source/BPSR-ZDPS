@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2dldF9mcmllbmRsaW5lc3NfcmVxdWVzdC5wcm90bxIGenByb3Rv",
-            "IisKFkdldEZyaWVuZGxpbmVzc1JlcXVlc3QSEQoJZnJpZW5kSWRzGAEgAygD",
-            "YgZwcm90bzM="));
+            "IiwKFkdldEZyaWVuZGxpbmVzc1JlcXVlc3QSEgoKZnJpZW5kX2lkcxgBIAMo",
+            "A2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new GetFriendlinessRequest(this);
     }
 
-    /// <summary>Field number for the "friendIds" field.</summary>
+    /// <summary>Field number for the "friend_ids" field.</summary>
     public const int FriendIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<long> _repeated_friendIds_codec
         = pb::FieldCodec.ForInt64(10);

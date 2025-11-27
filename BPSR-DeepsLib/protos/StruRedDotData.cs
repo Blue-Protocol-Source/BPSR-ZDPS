@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X3JlZF9kb3RfZGF0YS5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5",
-            "X21hc2sucHJvdG8ihgIKClJlZERvdERhdGESTAoVcGVybWFuZW50Q2xvc2Vk",
-            "UmVkRG90GAEgAygLMi0uenByb3RvLlJlZERvdERhdGEuUGVybWFuZW50Q2xv",
-            "c2VkUmVkRG90RW50cnkSOAoLcmVkRG90Q291bnQYAiADKAsyIy56cHJvdG8u",
-            "UmVkRG90RGF0YS5SZWREb3RDb3VudEVudHJ5GjwKGlBlcm1hbmVudENsb3Nl",
-            "ZFJlZERvdEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoCDoCOAEa",
-            "MgoQUmVkRG90Q291bnRFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiAB",
-            "KAU6AjgBYgZwcm90bzM="));
+            "X21hc2sucHJvdG8iiwIKClJlZERvdERhdGESTwoYcGVybWFuZW50X2Nsb3Nl",
+            "ZF9yZWRfZG90GAEgAygLMi0uenByb3RvLlJlZERvdERhdGEuUGVybWFuZW50",
+            "Q2xvc2VkUmVkRG90RW50cnkSOgoNcmVkX2RvdF9jb3VudBgCIAMoCzIjLnpw",
+            "cm90by5SZWREb3REYXRhLlJlZERvdENvdW50RW50cnkaPAoaUGVybWFuZW50",
+            "Q2xvc2VkUmVkRG90RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgI",
+            "OgI4ARoyChBSZWREb3RDb3VudEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1",
+            "ZRgCIAEoBToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new RedDotData(this);
     }
 
-    /// <summary>Field number for the "permanentClosedRedDot" field.</summary>
+    /// <summary>Field number for the "permanent_closed_red_dot" field.</summary>
     public const int PermanentClosedRedDotFieldNumber = 1;
     private static readonly pbc::MapField<int, bool>.Codec _map_permanentClosedRedDot_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return permanentClosedRedDot_; }
     }
 
-    /// <summary>Field number for the "redDotCount" field.</summary>
+    /// <summary>Field number for the "red_dot_count" field.</summary>
     public const int RedDotCountFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_redDotCount_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);

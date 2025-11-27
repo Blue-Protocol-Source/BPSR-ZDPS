@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X2dldF9hY3Rpdml0eV9saXN0X3JlcGx5LnByb3RvEgZ6cHJvdG8a",
             "E3N0cnVfYWN0aXZpdHkucHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3Rv",
-            "ImMKFEdldEFjdGl2aXR5TGlzdFJlcGx5EiYKDGFjdGl2aXR5TGlzdBgBIAMo",
-            "CzIQLnpwcm90by5BY3Rpdml0eRIjCgdlcnJDb2RlGAIgASgOMhIuenByb3Rv",
-            "LkVFcnJvckNvZGViBnByb3RvMw=="));
+            "ImUKFEdldEFjdGl2aXR5TGlzdFJlcGx5EicKDWFjdGl2aXR5X2xpc3QYASAD",
+            "KAsyEC56cHJvdG8uQWN0aXZpdHkSJAoIZXJyX2NvZGUYAiABKA4yEi56cHJv",
+            "dG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActivityReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new GetActivityListReply(this);
     }
 
-    /// <summary>Field number for the "activityList" field.</summary>
+    /// <summary>Field number for the "activity_list" field.</summary>
     public const int ActivityListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.Activity> _repeated_activityList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.Activity.Parser);
@@ -96,7 +96,7 @@ namespace Zproto {
       get { return activityList_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

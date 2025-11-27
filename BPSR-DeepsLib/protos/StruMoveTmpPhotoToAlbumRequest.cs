@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X21vdmVfdG1wX3Bob3RvX3RvX2FsYnVtX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byJSChpNb3ZlVG1wUGhvdG9Ub0FsYnVtUmVxdWVzdBIPCgd1bmlv",
-            "bklkGAEgASgDEhIKCnRtcFBob3RvSWQYAiABKA0SDwoHYWxidW1JZBgDIAEo",
-            "DWIGcHJvdG8z"));
+            "Bnpwcm90byJWChpNb3ZlVG1wUGhvdG9Ub0FsYnVtUmVxdWVzdBIQCgh1bmlv",
+            "bl9pZBgBIAEoAxIUCgx0bXBfcGhvdG9faWQYAiABKA0SEAoIYWxidW1faWQY",
+            "AyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new MoveTmpPhotoToAlbumRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "tmpPhotoId" field.</summary>
+    /// <summary>Field number for the "tmp_photo_id" field.</summary>
     public const int TmpPhotoIdFieldNumber = 2;
     private uint tmpPhotoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "albumId" field.</summary>
+    /// <summary>Field number for the "album_id" field.</summary>
     public const int AlbumIdFieldNumber = 3;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

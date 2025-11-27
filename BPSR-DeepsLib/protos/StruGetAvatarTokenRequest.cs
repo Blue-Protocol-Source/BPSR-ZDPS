@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X2dldF9hdmF0YXJfdG9rZW5fcmVxdWVzdC5wcm90bxIGenByb3Rv",
             "GhllbnVtX2VfcGljdHVyZV90eXBlLnByb3RvGhlzdHJ1X3BpY3R1cmVfdmVy",
-            "aWZ5LnByb3RvIpUBChVHZXRBdmF0YXJUb2tlblJlcXVlc3QSKQoKdmVyaWZ5",
-            "SW5mbxgCIAEoCzIVLnpwcm90by5QaWN0dXJlVmVyaWZ5EikKC3BpY3R1cmVU",
-            "eXBlGAMgASgOMhQuenByb3RvLkVQaWN0dXJlVHlwZRIRCglwaWN0dXJlSWQY",
-            "BCABKAUSEwoLcGljdHVyZU5hbWUYBSABKAliBnByb3RvMw=="));
+            "aWZ5LnByb3RvIpkBChVHZXRBdmF0YXJUb2tlblJlcXVlc3QSKgoLdmVyaWZ5",
+            "X2luZm8YAiABKAsyFS56cHJvdG8uUGljdHVyZVZlcmlmeRIqCgxwaWN0dXJl",
+            "X3R5cGUYAyABKA4yFC56cHJvdG8uRVBpY3R1cmVUeXBlEhIKCnBpY3R1cmVf",
+            "aWQYBCABKAUSFAoMcGljdHVyZV9uYW1lGAUgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPictureTypeReflection.Descriptor, global::Zproto.StruPictureVerifyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new GetAvatarTokenRequest(this);
     }
 
-    /// <summary>Field number for the "verifyInfo" field.</summary>
+    /// <summary>Field number for the "verify_info" field.</summary>
     public const int VerifyInfoFieldNumber = 2;
     private global::Zproto.PictureVerify verifyInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pictureType" field.</summary>
+    /// <summary>Field number for the "picture_type" field.</summary>
     public const int PictureTypeFieldNumber = 3;
     private global::Zproto.EPictureType pictureType_ = global::Zproto.EPictureType.EnormalPicture;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pictureId" field.</summary>
+    /// <summary>Field number for the "picture_id" field.</summary>
     public const int PictureIdFieldNumber = 4;
     private int pictureId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pictureName" field.</summary>
+    /// <summary>Field number for the "picture_name" field.</summary>
     public const int PictureNameFieldNumber = 5;
     private string pictureName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

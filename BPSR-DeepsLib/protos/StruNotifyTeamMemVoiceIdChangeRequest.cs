@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjJzdHJ1X25vdGlmeV90ZWFtX21lbV92b2ljZV9pZF9jaGFuZ2VfcmVxdWVz",
-            "dC5wcm90bxIGenByb3RvGhdzdHJ1X3Nlc3Npb25faW5mby5wcm90byJsCiFO",
+            "dC5wcm90bxIGenByb3RvGhdzdHJ1X3Nlc3Npb25faW5mby5wcm90byJuCiFO",
             "b3RpZnlUZWFtTWVtVm9pY2VJZENoYW5nZVJlcXVlc3QSJAoHc2Vzc2lvbhgB",
-            "IAEoCzITLnpwcm90by5TZXNzaW9uSW5mbxIQCghtZW1iZXJJZBgCIAEoAxIP",
-            "Cgd2b2ljZUlkGAMgASgFYgZwcm90bzM="));
+            "IAEoCzITLnpwcm90by5TZXNzaW9uSW5mbxIRCgltZW1iZXJfaWQYAiABKAMS",
+            "EAoIdm9pY2VfaWQYAyABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSessionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "memberId" field.</summary>
+    /// <summary>Field number for the "member_id" field.</summary>
     public const int MemberIdFieldNumber = 2;
     private long memberId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "voiceId" field.</summary>
+    /// <summary>Field number for the "voice_id" field.</summary>
     public const int VoiceIdFieldNumber = 3;
     private int voiceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3dvcmxkX2V2ZW50X21hcC5wcm90bxIGenByb3RvGhtzdHJ1X3dv",
-            "cmxkX2V2ZW50X2RhdGEucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLR",
-            "AQoNV29ybGRFdmVudE1hcBI1CghldmVudE1hcBgBIAMoCzIjLnpwcm90by5X",
-            "b3JsZEV2ZW50TWFwLkV2ZW50TWFwRW50cnkSEwoLYWNjZXB0Q291bnQYAiAB",
-            "KAUSFgoObGFzdFVwZGF0ZVRpbWUYAyABKAMSEwoLcmVmcmVzaFRpbWUYBCAB",
-            "KAMaRwoNRXZlbnRNYXBFbnRyeRILCgNrZXkYASABKA0SJQoFdmFsdWUYAiAB",
-            "KAsyFi56cHJvdG8ud29ybGRFdmVudERhdGE6AjgBYgZwcm90bzM="));
+            "cmxkX2V2ZW50X2RhdGEucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLW",
+            "AQoNV29ybGRFdmVudE1hcBI2CglldmVudF9tYXAYASADKAsyIy56cHJvdG8u",
+            "V29ybGRFdmVudE1hcC5FdmVudE1hcEVudHJ5EhQKDGFjY2VwdF9jb3VudBgC",
+            "IAEoBRIYChBsYXN0X3VwZGF0ZV90aW1lGAMgASgDEhQKDHJlZnJlc2hfdGlt",
+            "ZRgEIAEoAxpHCg1FdmVudE1hcEVudHJ5EgsKA2tleRgBIAEoDRIlCgV2YWx1",
+            "ZRgCIAEoCzIWLnpwcm90by53b3JsZEV2ZW50RGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruWorldEventDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new WorldEventMap(this);
     }
 
-    /// <summary>Field number for the "eventMap" field.</summary>
+    /// <summary>Field number for the "event_map" field.</summary>
     public const int EventMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.worldEventData>.Codec _map_eventMap_codec
         = new pbc::MapField<uint, global::Zproto.worldEventData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.worldEventData.Parser), 10);
@@ -100,7 +100,7 @@ namespace Zproto {
       get { return eventMap_; }
     }
 
-    /// <summary>Field number for the "acceptCount" field.</summary>
+    /// <summary>Field number for the "accept_count" field.</summary>
     public const int AcceptCountFieldNumber = 2;
     private int acceptCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastUpdateTime" field.</summary>
+    /// <summary>Field number for the "last_update_time" field.</summary>
     public const int LastUpdateTimeFieldNumber = 3;
     private long lastUpdateTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refreshTime" field.</summary>
+    /// <summary>Field number for the "refresh_time" field.</summary>
     public const int RefreshTimeFieldNumber = 4;
     private long refreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

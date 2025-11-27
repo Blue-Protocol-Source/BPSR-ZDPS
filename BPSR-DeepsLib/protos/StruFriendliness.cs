@@ -24,13 +24,13 @@ namespace Zproto {
     static StruFriendlinessReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdzdHJ1X2ZyaWVuZGxpbmVzcy5wcm90bxIGenByb3RvIvgBCgxGcmllbmRs",
-            "aW5lc3MSDQoFbGV2ZWwYASABKAUSDgoGY3VyRXhwGAIgASgFEhcKD3VwZGF0",
-            "ZVRpbWVTdGFtcBgDIAEoAxIZChF0b2RheVRvdGFsQWRkRXhwcxgEIAEoBRJE",
-            "ChB0b2RheVBhcnRBZGRFeHBzGAUgAygLMiouenByb3RvLkZyaWVuZGxpbmVz",
-            "cy5Ub2RheVBhcnRBZGRFeHBzRW50cnkSFgoOZ290TGV2ZWxBd2FyZHMYBiAD",
-            "KAUaNwoVVG9kYXlQYXJ0QWRkRXhwc0VudHJ5EgsKA2tleRgBIAEoBRINCgV2",
-            "YWx1ZRgCIAEoBToCOAFiBnByb3RvMw=="));
+            "ChdzdHJ1X2ZyaWVuZGxpbmVzcy5wcm90bxIGenByb3RvIoMCCgxGcmllbmRs",
+            "aW5lc3MSDQoFbGV2ZWwYASABKAUSDwoHY3VyX2V4cBgCIAEoBRIZChF1cGRh",
+            "dGVfdGltZV9zdGFtcBgDIAEoAxIcChR0b2RheV90b3RhbF9hZGRfZXhwcxgE",
+            "IAEoBRJHChN0b2RheV9wYXJ0X2FkZF9leHBzGAUgAygLMiouenByb3RvLkZy",
+            "aWVuZGxpbmVzcy5Ub2RheVBhcnRBZGRFeHBzRW50cnkSGAoQZ290X2xldmVs",
+            "X2F3YXJkcxgGIAMoBRo3ChVUb2RheVBhcnRBZGRFeHBzRW50cnkSCwoDa2V5",
+            "GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -103,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "curExp" field.</summary>
+    /// <summary>Field number for the "cur_exp" field.</summary>
     public const int CurExpFieldNumber = 2;
     private int curExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "updateTimeStamp" field.</summary>
+    /// <summary>Field number for the "update_time_stamp" field.</summary>
     public const int UpdateTimeStampFieldNumber = 3;
     private long updateTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "todayTotalAddExps" field.</summary>
+    /// <summary>Field number for the "today_total_add_exps" field.</summary>
     public const int TodayTotalAddExpsFieldNumber = 4;
     private int todayTotalAddExps_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "todayPartAddExps" field.</summary>
+    /// <summary>Field number for the "today_part_add_exps" field.</summary>
     public const int TodayPartAddExpsFieldNumber = 5;
     private static readonly pbc::MapField<int, int>.Codec _map_todayPartAddExps_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 42);
@@ -150,7 +150,7 @@ namespace Zproto {
       get { return todayPartAddExps_; }
     }
 
-    /// <summary>Field number for the "gotLevelAwards" field.</summary>
+    /// <summary>Field number for the "got_level_awards" field.</summary>
     public const int GotLevelAwardsFieldNumber = 6;
     private static readonly pb::FieldCodec<int> _repeated_gotLevelAwards_codec
         = pb::FieldCodec.ForInt32(50);

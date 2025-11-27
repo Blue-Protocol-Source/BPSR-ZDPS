@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CjFzdHJ1X25vdGlmeV93YXJlaG91c2VfcGFzc2l2ZV9leGlzdF9yZXF1ZXN0",
             "LnByb3RvEgZ6cHJvdG8aHmVudW1fd2FyZWhvdXNlX2V4aXRfdHlwZS5wcm90",
-            "byJhCiJOb3RpZnlXYXJlaG91c2VQYXNzaXZlRXhpc3RSZXF1ZXN0EisKCGV4",
-            "aXRUeXBlGAEgASgOMhkuenByb3RvLldhcmVob3VzZUV4aXRUeXBlEg4KBmNo",
-            "YXJJZBgCIAEoA2IGcHJvdG8z"));
+            "byJjCiJOb3RpZnlXYXJlaG91c2VQYXNzaXZlRXhpc3RSZXF1ZXN0EiwKCWV4",
+            "aXRfdHlwZRgBIAEoDjIZLnpwcm90by5XYXJlaG91c2VFeGl0VHlwZRIPCgdj",
+            "aGFyX2lkGAIgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumWarehouseExitTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new NotifyWarehousePassiveExistRequest(this);
     }
 
-    /// <summary>Field number for the "exitType" field.</summary>
+    /// <summary>Field number for the "exit_type" field.</summary>
     public const int ExitTypeFieldNumber = 1;
     private global::Zproto.WarehouseExitType exitType_ = global::Zproto.WarehouseExitType.Self;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

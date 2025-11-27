@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X21pc2NfaW5mby5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5X21h",
-            "c2sucHJvdG8ikQEKCE1pc2NJbmZvEkgKFGV4cHJlc3Npb25JZHNMZWFybmVk",
-            "GAEgAygLMiouenByb3RvLk1pc2NJbmZvLkV4cHJlc3Npb25JZHNMZWFybmVk",
-            "RW50cnkaOwoZRXhwcmVzc2lvbklkc0xlYXJuZWRFbnRyeRILCgNrZXkYASAB",
-            "KAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "c2sucHJvdG8ikwEKCE1pc2NJbmZvEkoKFmV4cHJlc3Npb25faWRzX2xlYXJu",
+            "ZWQYASADKAsyKi56cHJvdG8uTWlzY0luZm8uRXhwcmVzc2lvbklkc0xlYXJu",
+            "ZWRFbnRyeRo7ChlFeHByZXNzaW9uSWRzTGVhcm5lZEVudHJ5EgsKA2tleRgB",
+            "IAEoBRINCgV2YWx1ZRgCIAEoBToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new MiscInfo(this);
     }
 
-    /// <summary>Field number for the "expressionIdsLearned" field.</summary>
+    /// <summary>Field number for the "expression_ids_learned" field.</summary>
     public const int ExpressionIdsLearnedFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_expressionIdsLearned_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);

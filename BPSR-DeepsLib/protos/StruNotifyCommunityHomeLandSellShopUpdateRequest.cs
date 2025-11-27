@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "Cj5zdHJ1X25vdGlmeV9jb21tdW5pdHlfaG9tZV9sYW5kX3NlbGxfc2hvcF91",
             "cGRhdGVfcmVxdWVzdC5wcm90bxIGenByb3RvGiNzdHJ1X2hvbWVfbGFuZF9z",
-            "ZWxsX3Nob3BfaW5mby5wcm90byJqCixOb3RpZnlDb21tdW5pdHlIb21lTGFu",
-            "ZFNlbGxTaG9wVXBkYXRlUmVxdWVzdBI6ChRob21lTGFuZFNlbGxTaG9wSW5m",
-            "bxgBIAEoCzIcLnpwcm90by5Ib21lTGFuZFNlbGxTaG9wSW5mb2IGcHJvdG8z"));
+            "ZWxsX3Nob3BfaW5mby5wcm90byJuCixOb3RpZnlDb21tdW5pdHlIb21lTGFu",
+            "ZFNlbGxTaG9wVXBkYXRlUmVxdWVzdBI+Chhob21lX2xhbmRfc2VsbF9zaG9w",
+            "X2luZm8YASABKAsyHC56cHJvdG8uSG9tZUxhbmRTZWxsU2hvcEluZm9iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomeLandSellShopInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new NotifyCommunityHomeLandSellShopUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "homeLandSellShopInfo" field.</summary>
+    /// <summary>Field number for the "home_land_sell_shop_info" field.</summary>
     public const int HomeLandSellShopInfoFieldNumber = 1;
     private global::Zproto.HomeLandSellShopInfo homeLandSellShopInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

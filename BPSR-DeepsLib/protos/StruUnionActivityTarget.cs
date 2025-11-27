@@ -24,10 +24,10 @@ namespace Zproto {
     static StruUnionActivityTargetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3VuaW9uX2FjdGl2aXR5X3RhcmdldC5wcm90bxIGenByb3RvImwK",
-            "E1VuaW9uQWN0aXZpdHlUYXJnZXQSDgoGY3VyTnVtGAEgASgFEhMKC2hhc0Zp",
-            "bmlzaGVkGAIgASgIEhcKD2xhc3RSZWZyZXNoVGltZRgDIAEoAxIXCg9uZXh0",
-            "UmVmcmVzaFRpbWUYBCABKANiBnByb3RvMw=="));
+            "CiBzdHJ1X3VuaW9uX2FjdGl2aXR5X3RhcmdldC5wcm90bxIGenByb3RvInIK",
+            "E1VuaW9uQWN0aXZpdHlUYXJnZXQSDwoHY3VyX251bRgBIAEoBRIUCgxoYXNf",
+            "ZmluaXNoZWQYAiABKAgSGQoRbGFzdF9yZWZyZXNoX3RpbWUYAyABKAMSGQoR",
+            "bmV4dF9yZWZyZXNoX3RpbWUYBCABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new UnionActivityTarget(this);
     }
 
-    /// <summary>Field number for the "curNum" field.</summary>
+    /// <summary>Field number for the "cur_num" field.</summary>
     public const int CurNumFieldNumber = 1;
     private int curNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hasFinished" field.</summary>
+    /// <summary>Field number for the "has_finished" field.</summary>
     public const int HasFinishedFieldNumber = 2;
     private bool hasFinished_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lastRefreshTime" field.</summary>
+    /// <summary>Field number for the "last_refresh_time" field.</summary>
     public const int LastRefreshTimeFieldNumber = 3;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "nextRefreshTime" field.</summary>
+    /// <summary>Field number for the "next_refresh_time" field.</summary>
     public const int NextRefreshTimeFieldNumber = 4;
     private long nextRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

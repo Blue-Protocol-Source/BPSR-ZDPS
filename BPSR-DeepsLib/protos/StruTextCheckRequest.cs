@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X3RleHRfY2hlY2tfcmVxdWVzdC5wcm90bxIGenByb3RvGhdzdHJ1",
             "X3Nlc3Npb25faW5mby5wcm90bxogZW51bV90ZXh0X2NoZWNrX3NjZW5lX3R5",
-            "cGUucHJvdG8i2QEKEFRleHRDaGVja1JlcXVlc3QSJAoHc2Vzc2lvbhgBIAEo",
-            "CzITLnpwcm90by5TZXNzaW9uSW5mbxItCglzY2VuZVR5cGUYAiABKA4yGi56",
-            "cHJvdG8uVGV4dENoZWNrU2NlbmVUeXBlEgsKA3N0chgDIAMoCRI0CgZwYXJh",
-            "bWUYBCADKAsyJC56cHJvdG8uVGV4dENoZWNrUmVxdWVzdC5QYXJhbWVFbnRy",
-            "eRotCgtQYXJhbWVFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6",
-            "AjgBYgZwcm90bzM="));
+            "cGUucHJvdG8i2gEKEFRleHRDaGVja1JlcXVlc3QSJAoHc2Vzc2lvbhgBIAEo",
+            "CzITLnpwcm90by5TZXNzaW9uSW5mbxIuCgpzY2VuZV90eXBlGAIgASgOMhou",
+            "enByb3RvLlRleHRDaGVja1NjZW5lVHlwZRILCgNzdHIYAyADKAkSNAoGcGFy",
+            "YW1lGAQgAygLMiQuenByb3RvLlRleHRDaGVja1JlcXVlc3QuUGFyYW1lRW50",
+            "cnkaLQoLUGFyYW1lRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJ",
+            "OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSessionInfoReflection.Descriptor, global::Zproto.EnumTextCheckSceneTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sceneType" field.</summary>
+    /// <summary>Field number for the "scene_type" field.</summary>
     public const int SceneTypeFieldNumber = 2;
     private global::Zproto.TextCheckSceneType sceneType_ = global::Zproto.TextCheckSceneType.TextCheckError;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

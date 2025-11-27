@@ -15,7 +15,7 @@ public class DungeonReviveInfo(BlobReader blob) : BlobType(ref blob)
                 ReviveIds = blob.ReadList<int>();
                 return true;
             case Zproto.DungeonReviveInfo.ReviveMapFieldNumber:
-                ReviveMap = blob.ReadHashMap<int>();
+                ReviveMap = blob.ReadHashMap<int, int>();
                 return true;
             default:
                 return false;

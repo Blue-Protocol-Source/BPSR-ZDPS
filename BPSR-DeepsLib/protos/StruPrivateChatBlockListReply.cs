@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X3ByaXZhdGVfY2hhdF9ibG9ja19saXN0X3JlcGx5LnByb3RvEgZ6",
-            "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIlUKGVByaXZhdGVDaGF0",
-            "QmxvY2tMaXN0UmVwbHkSEwoLYmxvY2tJZExpc3QYASADKAMSIwoHZXJyQ29k",
-            "ZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIlgKGVByaXZhdGVDaGF0",
+            "QmxvY2tMaXN0UmVwbHkSFQoNYmxvY2tfaWRfbGlzdBgBIAMoAxIkCghlcnJf",
+            "Y29kZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new PrivateChatBlockListReply(this);
     }
 
-    /// <summary>Field number for the "blockIdList" field.</summary>
+    /// <summary>Field number for the "block_id_list" field.</summary>
     public const int BlockIdListFieldNumber = 1;
     private static readonly pb::FieldCodec<long> _repeated_blockIdList_codec
         = pb::FieldCodec.ForInt64(10);
@@ -95,7 +95,7 @@ namespace Zproto {
       get { return blockIdList_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

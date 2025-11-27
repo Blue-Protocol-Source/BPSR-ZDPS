@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci9zdHJ1X25vdGlmeV93YXJlaG91c2VfZ3JpZF9jaGFuZ2VfcmVxdWVzdC5w",
-            "cm90bxIGenByb3RvGhlzdHJ1X3dhcmVob3VzZV9ncmlkLnByb3RvIn4KIE5v",
-            "dGlmeVdhcmVob3VzZUdyaWRDaGFuZ2VSZXF1ZXN0EiwKDXdhcmVob3VzZUdy",
-            "aWQYASABKAsyFS56cHJvdG8uV2FyZWhvdXNlR3JpZBIVCg10YWtlT3V0Q2hh",
-            "cklkGAIgASgDEhUKDWRlcG9zaXRDaGFySWQYAyABKANiBnByb3RvMw=="));
+            "cm90bxIGenByb3RvGhlzdHJ1X3dhcmVob3VzZV9ncmlkLnByb3RvIoQBCiBO",
+            "b3RpZnlXYXJlaG91c2VHcmlkQ2hhbmdlUmVxdWVzdBItCg53YXJlaG91c2Vf",
+            "Z3JpZBgBIAEoCzIVLnpwcm90by5XYXJlaG91c2VHcmlkEhgKEHRha2Vfb3V0",
+            "X2NoYXJfaWQYAiABKAMSFwoPZGVwb3NpdF9jaGFyX2lkGAMgASgDYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruWarehouseGridReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new NotifyWarehouseGridChangeRequest(this);
     }
 
-    /// <summary>Field number for the "warehouseGrid" field.</summary>
+    /// <summary>Field number for the "warehouse_grid" field.</summary>
     public const int WarehouseGridFieldNumber = 1;
     private global::Zproto.WarehouseGrid warehouseGrid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "takeOutCharId" field.</summary>
+    /// <summary>Field number for the "take_out_char_id" field.</summary>
     public const int TakeOutCharIdFieldNumber = 2;
     private long takeOutCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "depositCharId" field.</summary>
+    /// <summary>Field number for the "deposit_char_id" field.</summary>
     public const int DepositCharIdFieldNumber = 3;
     private long depositCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

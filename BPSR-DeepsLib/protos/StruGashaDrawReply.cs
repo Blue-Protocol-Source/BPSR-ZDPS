@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "ChtzdHJ1X2dhc2hhX2RyYXdfcmVwbHkucHJvdG8SBnpwcm90bxoXZW51bV9l",
             "X2Vycm9yX2NvZGUucHJvdG8aD3N0cnVfaXRlbS5wcm90bxocc3RydV9yZXBs",
-            "YWNlX2l0ZW1fZGF0YS5wcm90byLgAQoOR2FzaGFEcmF3UmVwbHkSGwoFaXRl",
-            "bXMYASADKAsyDC56cHJvdG8uSXRlbRI+CgxyZXBsYWNlSXRlbXMYAiADKAsy",
-            "KC56cHJvdG8uR2FzaGFEcmF3UmVwbHkuUmVwbGFjZUl0ZW1zRW50cnkSIwoH",
-            "ZXJyQ29kZRgDIAEoDjISLnpwcm90by5FRXJyb3JDb2RlGkwKEVJlcGxhY2VJ",
-            "dGVtc0VudHJ5EgsKA2tleRgBIAEoBRImCgV2YWx1ZRgCIAEoCzIXLnpwcm90",
-            "by5SZXBsYWNlSXRlbURhdGE6AjgBYgZwcm90bzM="));
+            "YWNlX2l0ZW1fZGF0YS5wcm90byLiAQoOR2FzaGFEcmF3UmVwbHkSGwoFaXRl",
+            "bXMYASADKAsyDC56cHJvdG8uSXRlbRI/Cg1yZXBsYWNlX2l0ZW1zGAIgAygL",
+            "MiguenByb3RvLkdhc2hhRHJhd1JlcGx5LlJlcGxhY2VJdGVtc0VudHJ5EiQK",
+            "CGVycl9jb2RlGAMgASgOMhIuenByb3RvLkVFcnJvckNvZGUaTAoRUmVwbGFj",
+            "ZUl0ZW1zRW50cnkSCwoDa2V5GAEgASgFEiYKBXZhbHVlGAIgASgLMhcuenBy",
+            "b3RvLlJlcGxhY2VJdGVtRGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruReplaceItemDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -100,7 +100,7 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "replaceItems" field.</summary>
+    /// <summary>Field number for the "replace_items" field.</summary>
     public const int ReplaceItemsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.ReplaceItemData>.Codec _map_replaceItems_codec
         = new pbc::MapField<int, global::Zproto.ReplaceItemData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ReplaceItemData.Parser), 18);
@@ -111,7 +111,7 @@ namespace Zproto {
       get { return replaceItems_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

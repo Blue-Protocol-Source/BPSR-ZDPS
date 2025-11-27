@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X2pvaW5fdW5pb25fZ3Jvd19mdW5jX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90byJAChhKb2luVW5pb25Hcm93RnVuY1JlcXVlc3QSDwoHdW5pb25JZBgB",
-            "IAEoAxITCgtncm93RnVuY1BvcxgCIAEoBWIGcHJvdG8z"));
+            "cm90byJDChhKb2luVW5pb25Hcm93RnVuY1JlcXVlc3QSEAoIdW5pb25faWQY",
+            "ASABKAMSFQoNZ3Jvd19mdW5jX3BvcxgCIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new JoinUnionGrowFuncRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "growFuncPos" field.</summary>
+    /// <summary>Field number for the "grow_func_pos" field.</summary>
     public const int GrowFuncPosFieldNumber = 2;
     private int growFuncPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

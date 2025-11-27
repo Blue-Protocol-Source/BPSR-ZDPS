@@ -24,9 +24,9 @@ namespace Zproto {
     static StruTeamMemCallRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3RlYW1fbWVtX2NhbGxfcmVxdWVzdC5wcm90bxIGenByb3RvIigK",
-            "ElRlYW1NZW1DYWxsUmVxdWVzdBISCgpjYWxsU3RhdHVzGAIgASgFYgZwcm90",
-            "bzM="));
+            "CiBzdHJ1X3RlYW1fbWVtX2NhbGxfcmVxdWVzdC5wcm90bxIGenByb3RvIikK",
+            "ElRlYW1NZW1DYWxsUmVxdWVzdBITCgtjYWxsX3N0YXR1cxgCIAEoBWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new TeamMemCallRequest(this);
     }
 
-    /// <summary>Field number for the "callStatus" field.</summary>
+    /// <summary>Field number for the "call_status" field.</summary>
     public const int CallStatusFieldNumber = 2;
     private int callStatus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

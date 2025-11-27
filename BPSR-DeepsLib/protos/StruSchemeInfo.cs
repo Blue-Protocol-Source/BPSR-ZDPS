@@ -24,8 +24,8 @@ namespace Zproto {
     static StruSchemeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X3NjaGVtZV9pbmZvLnByb3RvEgZ6cHJvdG8iJAoKc2NoZW1lSW5m",
-            "bxIWCg5zY2hlbWVJbmZvS2V5cxgBIAMoCWIGcHJvdG8z"));
+            "ChZzdHJ1X3NjaGVtZV9pbmZvLnByb3RvEgZ6cHJvdG8iJgoKc2NoZW1lSW5m",
+            "bxIYChBzY2hlbWVfaW5mb19rZXlzGAEgAygJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new schemeInfo(this);
     }
 
-    /// <summary>Field number for the "schemeInfoKeys" field.</summary>
+    /// <summary>Field number for the "scheme_info_keys" field.</summary>
     public const int SchemeInfoKeysFieldNumber = 1;
     private static readonly pb::FieldCodec<string> _repeated_schemeInfoKeys_codec
         = pb::FieldCodec.ForString(10);

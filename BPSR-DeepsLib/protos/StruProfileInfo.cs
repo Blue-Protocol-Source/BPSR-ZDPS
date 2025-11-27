@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X3Byb2ZpbGVfaW5mby5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5",
-            "X21hc2sucHJvdG8iSQoLUHJvZmlsZUluZm8SEQoJcHJvZmlsZUlkGAEgASgF",
-            "EhIKCnByb2ZpbGVVcmwYAiABKAkSEwoLaGFsZkJvZHlVcmwYAyABKAliBnBy",
-            "b3RvMw=="));
+            "X21hc2sucHJvdG8iTQoLUHJvZmlsZUluZm8SEgoKcHJvZmlsZV9pZBgBIAEo",
+            "BRITCgtwcm9maWxlX3VybBgCIAEoCRIVCg1oYWxmX2JvZHlfdXJsGAMgASgJ",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ProfileInfo(this);
     }
 
-    /// <summary>Field number for the "profileId" field.</summary>
+    /// <summary>Field number for the "profile_id" field.</summary>
     public const int ProfileIdFieldNumber = 1;
     private int profileId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "profileUrl" field.</summary>
+    /// <summary>Field number for the "profile_url" field.</summary>
     public const int ProfileUrlFieldNumber = 2;
     private string profileUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "halfBodyUrl" field.</summary>
+    /// <summary>Field number for the "half_body_url" field.</summary>
     public const int HalfBodyUrlFieldNumber = 3;
     private string halfBodyUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

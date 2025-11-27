@@ -42,43 +42,44 @@ namespace Zproto {
             "cG9ydF9tX3Nka19yZXF1ZXN0LnByb3RvGhxzdHJ1X3NlbGVjdF9jaGFyX3Jl",
             "cGx5LnByb3RvGh5zdHJ1X3NlbGVjdF9jaGFyX3JlcXVlc3QucHJvdG8aJ3N0",
             "cnVfdGFrZV9hd2FyZF9ieV9jZF9rZXlfcmVxdWVzdC5wcm90bxomc3RydV91",
-            "cGxvYWRfZmFjZV9zdWNjZXNzX3JlcXVlc3QucHJvdG8izQwKDUdycGNDaGFy",
+            "cGxvYWRfZmFjZV9zdWNjZXNzX3JlcXVlc3QucHJvdG8i2wwKDUdycGNDaGFy",
             "YWN0b3IaLAoJTG9naW5fUmV0Eh8KA3JldBgBIAEoCzISLnpwcm90by5Mb2dp",
-            "blJlcGx5Gi8KBUxvZ2luEiYKCHZSZXF1ZXN0GAEgASgLMhQuenByb3RvLkxv",
-            "Z2luUmVxdWVzdBo2Cg5DcmVhdGVDaGFyX1JldBIkCgNyZXQYASABKAsyFy56",
-            "cHJvdG8uQ3JlYXRlQ2hhclJlcGx5GjkKCkNyZWF0ZUNoYXISKwoIdlJlcXVl",
-            "c3QYASABKAsyGS56cHJvdG8uQ3JlYXRlQ2hhclJlcXVlc3QaNgoOU2VsZWN0",
-            "Q2hhcl9SZXQSJAoDcmV0GAEgASgLMhcuenByb3RvLlNlbGVjdENoYXJSZXBs",
-            "eRo5CgpTZWxlY3RDaGFyEisKCHZSZXF1ZXN0GAEgASgLMhkuenByb3RvLlNl",
-            "bGVjdENoYXJSZXF1ZXN0GjYKDkRlbGV0ZUNoYXJfUmV0EiQKA3JldBgBIAEo",
-            "CzIXLnpwcm90by5EZWxldGVDaGFyUmVwbHkaOQoKRGVsZXRlQ2hhchIrCgh2",
-            "UmVxdWVzdBgBIAEoCzIZLnpwcm90by5EZWxldGVDaGFyUmVxdWVzdBo0Cg1S",
-            "ZWNvbm5lY3RfUmV0EiMKA3JldBgBIAEoCzIWLnpwcm90by5SZWNvbm5lY3RS",
-            "ZXBseRo3CglSZWNvbm5lY3QSKgoIdlJlcXVlc3QYASABKAsyGC56cHJvdG8u",
-            "UmVjb25uZWN0UmVxdWVzdBo1CghFeGl0R2FtZRIpCgh2UmVxdWVzdBgBIAEo",
-            "CzIXLnpwcm90by5FeGl0R2FtZVJlcXVlc3QaMQoOUmVwb3J0TVNka19SZXQS",
-            "HwoDcmV0GAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUaOQoKUmVwb3J0TVNk",
-            "axIrCgh2UmVxdWVzdBgBIAEoCzIZLnpwcm90by5SZXBvcnRNU2RrUmVxdWVz",
-            "dBpBCg5HZXRGYWNlVXBUb2tlbhIvCgh2UmVxdWVzdBgBIAEoCzIdLnpwcm90",
-            "by5HZXRGYWNlVXBUb2tlblJlcXVlc3QaOAoVVXBsb2FkRmFjZVN1Y2Nlc3Nf",
-            "UmV0Eh8KA3JldBgBIAEoDjISLnpwcm90by5FRXJyb3JDb2RlGkcKEVVwbG9h",
-            "ZEZhY2VTdWNjZXNzEjIKCHZSZXF1ZXN0GAEgASgLMiAuenByb3RvLlVwbG9h",
-            "ZEZhY2VTdWNjZXNzUmVxdWVzdBpEChVHZXRGYWNlVXBsb2FkRGF0YV9SZXQS",
-            "KwoDcmV0GAEgASgLMh4uenByb3RvLkdldEZhY2VVcGxvYWREYXRhUmVwbHka",
-            "RwoRR2V0RmFjZVVwbG9hZERhdGESMgoIdlJlcXVlc3QYASABKAsyIC56cHJv",
-            "dG8uR2V0RmFjZVVwbG9hZERhdGFSZXF1ZXN0Gj4KEkdldEZhY2VEYXRhVXJs",
-            "X1JldBIoCgNyZXQYASABKAsyGy56cHJvdG8uR2V0RmFjZURhdGFVcmxSZXBs",
-            "eRpBCg5HZXRGYWNlRGF0YVVybBIvCgh2UmVxdWVzdBgBIAEoCzIdLnpwcm90",
-            "by5HZXRGYWNlRGF0YVVybFJlcXVlc3QaQgoUQ2FuY2VsRGVsZXRlQ2hhcl9S",
-            "ZXQSKgoDcmV0GAEgASgLMh0uenByb3RvLkNhbmNlbERlbGV0ZUNoYXJSZXBs",
-            "eRpFChBDYW5jZWxEZWxldGVDaGFyEjEKCHZSZXF1ZXN0GAEgASgLMh8uenBy",
-            "b3RvLkNhbmNlbERlbGV0ZUNoYXJSZXF1ZXN0GkQKFVByaXZpbGVnZUFjdGl2",
-            "YXRlX1JldBIrCgNyZXQYASABKAsyHi56cHJvdG8uUHJpdmlsZWdlQWN0aXZh",
-            "dGVSZXBseRpHChFQcml2aWxlZ2VBY3RpdmF0ZRIyCgh2UmVxdWVzdBgBIAEo",
-            "CzIgLnpwcm90by5Qcml2aWxlZ2VBY3RpdmF0ZVJlcXVlc3QaNwoUVGFrZUF3",
-            "YXJkQnlDZEtleV9SZXQSHwoDcmV0GAEgASgOMhIuenByb3RvLkVFcnJvckNv",
-            "ZGUaRQoQVGFrZUF3YXJkQnlDZEtleRIxCgh2UmVxdWVzdBgBIAEoCzIfLnpw",
-            "cm90by5UYWtlQXdhcmRCeUNkS2V5UmVxdWVzdGIGcHJvdG8z"));
+            "blJlcGx5GjAKBUxvZ2luEicKCXZfcmVxdWVzdBgBIAEoCzIULnpwcm90by5M",
+            "b2dpblJlcXVlc3QaNgoOQ3JlYXRlQ2hhcl9SZXQSJAoDcmV0GAEgASgLMhcu",
+            "enByb3RvLkNyZWF0ZUNoYXJSZXBseRo6CgpDcmVhdGVDaGFyEiwKCXZfcmVx",
+            "dWVzdBgBIAEoCzIZLnpwcm90by5DcmVhdGVDaGFyUmVxdWVzdBo2Cg5TZWxl",
+            "Y3RDaGFyX1JldBIkCgNyZXQYASABKAsyFy56cHJvdG8uU2VsZWN0Q2hhclJl",
+            "cGx5GjoKClNlbGVjdENoYXISLAoJdl9yZXF1ZXN0GAEgASgLMhkuenByb3Rv",
+            "LlNlbGVjdENoYXJSZXF1ZXN0GjYKDkRlbGV0ZUNoYXJfUmV0EiQKA3JldBgB",
+            "IAEoCzIXLnpwcm90by5EZWxldGVDaGFyUmVwbHkaOgoKRGVsZXRlQ2hhchIs",
+            "Cgl2X3JlcXVlc3QYASABKAsyGS56cHJvdG8uRGVsZXRlQ2hhclJlcXVlc3Qa",
+            "NAoNUmVjb25uZWN0X1JldBIjCgNyZXQYASABKAsyFi56cHJvdG8uUmVjb25u",
+            "ZWN0UmVwbHkaOAoJUmVjb25uZWN0EisKCXZfcmVxdWVzdBgBIAEoCzIYLnpw",
+            "cm90by5SZWNvbm5lY3RSZXF1ZXN0GjYKCEV4aXRHYW1lEioKCXZfcmVxdWVz",
+            "dBgBIAEoCzIXLnpwcm90by5FeGl0R2FtZVJlcXVlc3QaMQoOUmVwb3J0TVNk",
+            "a19SZXQSHwoDcmV0GAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUaOgoKUmVw",
+            "b3J0TVNkaxIsCgl2X3JlcXVlc3QYASABKAsyGS56cHJvdG8uUmVwb3J0TVNk",
+            "a1JlcXVlc3QaQgoOR2V0RmFjZVVwVG9rZW4SMAoJdl9yZXF1ZXN0GAEgASgL",
+            "Mh0uenByb3RvLkdldEZhY2VVcFRva2VuUmVxdWVzdBo4ChVVcGxvYWRGYWNl",
+            "U3VjY2Vzc19SZXQSHwoDcmV0GAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUa",
+            "SAoRVXBsb2FkRmFjZVN1Y2Nlc3MSMwoJdl9yZXF1ZXN0GAEgASgLMiAuenBy",
+            "b3RvLlVwbG9hZEZhY2VTdWNjZXNzUmVxdWVzdBpEChVHZXRGYWNlVXBsb2Fk",
+            "RGF0YV9SZXQSKwoDcmV0GAEgASgLMh4uenByb3RvLkdldEZhY2VVcGxvYWRE",
+            "YXRhUmVwbHkaSAoRR2V0RmFjZVVwbG9hZERhdGESMwoJdl9yZXF1ZXN0GAEg",
+            "ASgLMiAuenByb3RvLkdldEZhY2VVcGxvYWREYXRhUmVxdWVzdBo+ChJHZXRG",
+            "YWNlRGF0YVVybF9SZXQSKAoDcmV0GAEgASgLMhsuenByb3RvLkdldEZhY2VE",
+            "YXRhVXJsUmVwbHkaQgoOR2V0RmFjZURhdGFVcmwSMAoJdl9yZXF1ZXN0GAEg",
+            "ASgLMh0uenByb3RvLkdldEZhY2VEYXRhVXJsUmVxdWVzdBpCChRDYW5jZWxE",
+            "ZWxldGVDaGFyX1JldBIqCgNyZXQYASABKAsyHS56cHJvdG8uQ2FuY2VsRGVs",
+            "ZXRlQ2hhclJlcGx5GkYKEENhbmNlbERlbGV0ZUNoYXISMgoJdl9yZXF1ZXN0",
+            "GAEgASgLMh8uenByb3RvLkNhbmNlbERlbGV0ZUNoYXJSZXF1ZXN0GkQKFVBy",
+            "aXZpbGVnZUFjdGl2YXRlX1JldBIrCgNyZXQYASABKAsyHi56cHJvdG8uUHJp",
+            "dmlsZWdlQWN0aXZhdGVSZXBseRpIChFQcml2aWxlZ2VBY3RpdmF0ZRIzCgl2",
+            "X3JlcXVlc3QYASABKAsyIC56cHJvdG8uUHJpdmlsZWdlQWN0aXZhdGVSZXF1",
+            "ZXN0GjcKFFRha2VBd2FyZEJ5Q2RLZXlfUmV0Eh8KA3JldBgBIAEoDjISLnpw",
+            "cm90by5FRXJyb3JDb2RlGkYKEFRha2VBd2FyZEJ5Q2RLZXkSMgoJdl9yZXF1",
+            "ZXN0GAEgASgLMh8uenByb3RvLlRha2VBd2FyZEJ5Q2RLZXlSZXF1ZXN0YgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruCancelDeleteCharReplyReflection.Descriptor, global::Zproto.StruCancelDeleteCharRequestReflection.Descriptor, global::Zproto.StruCreateCharReplyReflection.Descriptor, global::Zproto.StruCreateCharRequestReflection.Descriptor, global::Zproto.StruDeleteCharReplyReflection.Descriptor, global::Zproto.StruDeleteCharRequestReflection.Descriptor, global::Zproto.StruExitGameRequestReflection.Descriptor, global::Zproto.StruGetFaceDataUrlReplyReflection.Descriptor, global::Zproto.StruGetFaceDataUrlRequestReflection.Descriptor, global::Zproto.StruGetFaceUpTokenRequestReflection.Descriptor, global::Zproto.StruGetFaceUploadDataReplyReflection.Descriptor, global::Zproto.StruGetFaceUploadDataRequestReflection.Descriptor, global::Zproto.StruLoginReplyReflection.Descriptor, global::Zproto.StruLoginRequestReflection.Descriptor, global::Zproto.StruPrivilegeActivateReplyReflection.Descriptor, global::Zproto.StruPrivilegeActivateRequestReflection.Descriptor, global::Zproto.StruReconnectReplyReflection.Descriptor, global::Zproto.StruReconnectRequestReflection.Descriptor, global::Zproto.StruReportMSdkRequestReflection.Descriptor, global::Zproto.StruSelectCharReplyReflection.Descriptor, global::Zproto.StruSelectCharRequestReflection.Descriptor, global::Zproto.StruTakeAwardByCdKeyRequestReflection.Descriptor, global::Zproto.StruUploadFaceSuccessRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -530,7 +531,7 @@ namespace Zproto {
           return new Login(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.LoginRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -944,7 +945,7 @@ namespace Zproto {
           return new CreateChar(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.CreateCharRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1358,7 +1359,7 @@ namespace Zproto {
           return new SelectChar(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.SelectCharRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1772,7 +1773,7 @@ namespace Zproto {
           return new DeleteChar(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.DeleteCharRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2186,7 +2187,7 @@ namespace Zproto {
           return new Reconnect(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.ReconnectRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2393,7 +2394,7 @@ namespace Zproto {
           return new ExitGame(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.ExitGameRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2798,7 +2799,7 @@ namespace Zproto {
           return new ReportMSdk(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.ReportMSdkRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3005,7 +3006,7 @@ namespace Zproto {
           return new GetFaceUpToken(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetFaceUpTokenRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3410,7 +3411,7 @@ namespace Zproto {
           return new UploadFaceSuccess(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.UploadFaceSuccessRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3824,7 +3825,7 @@ namespace Zproto {
           return new GetFaceUploadData(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetFaceUploadDataRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4238,7 +4239,7 @@ namespace Zproto {
           return new GetFaceDataUrl(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetFaceDataUrlRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4652,7 +4653,7 @@ namespace Zproto {
           return new CancelDeleteChar(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.CancelDeleteCharRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5066,7 +5067,7 @@ namespace Zproto {
           return new PrivilegeActivate(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.PrivilegeActivateRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5471,7 +5472,7 @@ namespace Zproto {
           return new TakeAwardByCdKey(this);
         }
 
-        /// <summary>Field number for the "vRequest" field.</summary>
+        /// <summary>Field number for the "v_request" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.TakeAwardByCdKeyRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjRzdHJ1X2dldF9ob21lbGFuZF9idWlsZF9mdXJuaXR1cmVfaW5mb19yZXF1",
-            "ZXN0LnByb3RvEgZ6cHJvdG8iOQokR2V0SG9tZWxhbmRCdWlsZEZ1cm5pdHVy",
-            "ZUluZm9SZXF1ZXN0EhEKCWJ1aWxkVHlwZRgBIAEoBWIGcHJvdG8z"));
+            "ZXN0LnByb3RvEgZ6cHJvdG8iOgokR2V0SG9tZWxhbmRCdWlsZEZ1cm5pdHVy",
+            "ZUluZm9SZXF1ZXN0EhIKCmJ1aWxkX3R5cGUYASABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new GetHomelandBuildFurnitureInfoRequest(this);
     }
 
-    /// <summary>Field number for the "buildType" field.</summary>
+    /// <summary>Field number for the "build_type" field.</summary>
     public const int BuildTypeFieldNumber = 1;
     private int buildType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

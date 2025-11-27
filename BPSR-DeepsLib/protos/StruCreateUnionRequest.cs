@@ -24,10 +24,10 @@ namespace Zproto {
     static StruCreateUnionRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2NyZWF0ZV91bmlvbl9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8icwoS",
-            "Q3JlYXRlVW5pb25SZXF1ZXN0EhEKCXVuaW9uTmFtZRgCIAEoCRIRCgl1bmlv",
-            "bkljb24YAyADKA0SEwoLZGVjbGFyYXRpb24YBCABKAkSFAoMYXV0b0FwcHJv",
-            "dmFsGAUgASgIEgwKBHRhZ3MYBiADKA1iBnByb3RvMw=="));
+            "Ch9zdHJ1X2NyZWF0ZV91bmlvbl9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8idgoS",
+            "Q3JlYXRlVW5pb25SZXF1ZXN0EhIKCnVuaW9uX25hbWUYAiABKAkSEgoKdW5p",
+            "b25faWNvbhgDIAMoDRITCgtkZWNsYXJhdGlvbhgEIAEoCRIVCg1hdXRvX2Fw",
+            "cHJvdmFsGAUgASgIEgwKBHRhZ3MYBiADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new CreateUnionRequest(this);
     }
 
-    /// <summary>Field number for the "unionName" field.</summary>
+    /// <summary>Field number for the "union_name" field.</summary>
     public const int UnionNameFieldNumber = 2;
     private string unionName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unionIcon" field.</summary>
+    /// <summary>Field number for the "union_icon" field.</summary>
     public const int UnionIconFieldNumber = 3;
     private static readonly pb::FieldCodec<uint> _repeated_unionIcon_codec
         = pb::FieldCodec.ForUInt32(26);
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "autoApproval" field.</summary>
+    /// <summary>Field number for the "auto_approval" field.</summary>
     public const int AutoApprovalFieldNumber = 5;
     private bool autoApproval_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

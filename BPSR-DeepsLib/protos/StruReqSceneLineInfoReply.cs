@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X3JlcV9zY2VuZV9saW5lX2luZm9fcmVwbHkucHJvdG8SBnpwcm90",
             "bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aGnN0cnVfc2NlbmVfbGluZV9k",
-            "YXRhLnByb3RvImYKFVJlcVNjZW5lTGluZUluZm9SZXBseRIoCglsaW5lSW5m",
-            "b3MYASADKAsyFS56cHJvdG8uU2NlbmVMaW5lRGF0YRIjCgdlcnJDb2RlGAIg",
-            "ASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "YXRhLnByb3RvImgKFVJlcVNjZW5lTGluZUluZm9SZXBseRIpCgpsaW5lX2lu",
+            "Zm9zGAEgAygLMhUuenByb3RvLlNjZW5lTGluZURhdGESJAoIZXJyX2NvZGUY",
+            "AiABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruSceneLineDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ReqSceneLineInfoReply(this);
     }
 
-    /// <summary>Field number for the "lineInfos" field.</summary>
+    /// <summary>Field number for the "line_infos" field.</summary>
     public const int LineInfosFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.SceneLineData> _repeated_lineInfos_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.SceneLineData.Parser);
@@ -96,7 +96,7 @@ namespace Zproto {
       get { return lineInfos_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

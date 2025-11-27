@@ -28,13 +28,13 @@ namespace Zproto {
             "dHJ1X2NvbW11bml0eV9jaGFyX2Jhc2ljX2RhdGEucHJvdG8aKnN0cnVfY29t",
             "bXVuaXR5X3BsYXllcl9hdXRob3JpdHlfaW5mby5wcm90bxokc3RydV9jb21t",
             "dW5pdHlfcXVpdF9jb2hhYml0YW50LnByb3RvGiVzdHJ1X2hvbWVfbGFuZF9w",
-            "bGF5ZXJfdGFza19pbmZvLnByb3RvIogCChNDb21tdW5pdHlQbGF5ZXJJbmZv",
-            "EjUKDWNvbW11bml0eUNoYXIYASABKAsyHi56cHJvdG8uQ29tbXVuaXR5Q2hh",
-            "ckJhc2ljRGF0YRJBChNwbGF5ZXJBdXRob3JpdHlJbmZvGAIgASgLMiQuenBy",
-            "b3RvLkNvbW11bml0eVBsYXllckF1dGhvcml0eUluZm8SNwoOcXVpdENvaGFi",
-            "aXRhbnQYAyABKAsyHy56cHJvdG8uQ29tbXVuaXR5UXVpdENvaGFiaXRhbnQS",
-            "PgoWaG9tZUxhbmRQbGF5ZXJUYXNrSW5mbxgEIAEoCzIeLnpwcm90by5Ib21l",
-            "TGFuZFBsYXllclRhc2tJbmZvYgZwcm90bzM="));
+            "bGF5ZXJfdGFza19pbmZvLnByb3RvIpACChNDb21tdW5pdHlQbGF5ZXJJbmZv",
+            "EjYKDmNvbW11bml0eV9jaGFyGAEgASgLMh4uenByb3RvLkNvbW11bml0eUNo",
+            "YXJCYXNpY0RhdGESQwoVcGxheWVyX2F1dGhvcml0eV9pbmZvGAIgASgLMiQu",
+            "enByb3RvLkNvbW11bml0eVBsYXllckF1dGhvcml0eUluZm8SOAoPcXVpdF9j",
+            "b2hhYml0YW50GAMgASgLMh8uenByb3RvLkNvbW11bml0eVF1aXRDb2hhYml0",
+            "YW50EkIKGmhvbWVfbGFuZF9wbGF5ZXJfdGFza19pbmZvGAQgASgLMh4uenBy",
+            "b3RvLkhvbWVMYW5kUGxheWVyVGFza0luZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityCharBasicDataReflection.Descriptor, global::Zproto.StruCommunityPlayerAuthorityInfoReflection.Descriptor, global::Zproto.StruCommunityQuitCohabitantReflection.Descriptor, global::Zproto.StruHomeLandPlayerTaskInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +93,7 @@ namespace Zproto {
       return new CommunityPlayerInfo(this);
     }
 
-    /// <summary>Field number for the "communityChar" field.</summary>
+    /// <summary>Field number for the "community_char" field.</summary>
     public const int CommunityCharFieldNumber = 1;
     private global::Zproto.CommunityCharBasicData communityChar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "playerAuthorityInfo" field.</summary>
+    /// <summary>Field number for the "player_authority_info" field.</summary>
     public const int PlayerAuthorityInfoFieldNumber = 2;
     private global::Zproto.CommunityPlayerAuthorityInfo playerAuthorityInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "quitCohabitant" field.</summary>
+    /// <summary>Field number for the "quit_cohabitant" field.</summary>
     public const int QuitCohabitantFieldNumber = 3;
     private global::Zproto.CommunityQuitCohabitant quitCohabitant_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeLandPlayerTaskInfo" field.</summary>
+    /// <summary>Field number for the "home_land_player_task_info" field.</summary>
     public const int HomeLandPlayerTaskInfoFieldNumber = 4;
     private global::Zproto.HomeLandPlayerTaskInfo homeLandPlayerTaskInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

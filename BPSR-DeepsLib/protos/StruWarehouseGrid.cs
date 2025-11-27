@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3dhcmVob3VzZV9ncmlkLnByb3RvEgZ6cHJvdG8aD3N0cnVfaXRl",
-            "bS5wcm90byJRCg1XYXJlaG91c2VHcmlkEgsKA3BvcxgBIAEoBRITCgtvd25l",
-            "ckNoYXJJZBgCIAEoAxIeCghpdGVtSW5mbxgDIAEoCzIMLnpwcm90by5JdGVt",
-            "YgZwcm90bzM="));
+            "bS5wcm90byJUCg1XYXJlaG91c2VHcmlkEgsKA3BvcxgBIAEoBRIVCg1vd25l",
+            "cl9jaGFyX2lkGAIgASgDEh8KCWl0ZW1faW5mbxgDIAEoCzIMLnpwcm90by5J",
+            "dGVtYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ownerCharId" field.</summary>
+    /// <summary>Field number for the "owner_char_id" field.</summary>
     public const int OwnerCharIdFieldNumber = 2;
     private long ownerCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemInfo" field.</summary>
+    /// <summary>Field number for the "item_info" field.</summary>
     public const int ItemInfoFieldNumber = 3;
     private global::Zproto.Item itemInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

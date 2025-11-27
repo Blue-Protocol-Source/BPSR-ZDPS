@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X3NldF9taWNyb3Bob25lX3N0YXR1c19yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8aHmVudW1fZV9taWNyb3Bob25lX3N0YXR1cy5wcm90byJRChpTZXRN",
-            "aWNyb3Bob25lU3RhdHVzUmVxdWVzdBIzChBtaWNyb3Bob25lU3RhdHVzGAIg",
-            "ASgOMhkuenByb3RvLkVNaWNyb3Bob25lU3RhdHVzYgZwcm90bzM="));
+            "cHJvdG8aHmVudW1fZV9taWNyb3Bob25lX3N0YXR1cy5wcm90byJSChpTZXRN",
+            "aWNyb3Bob25lU3RhdHVzUmVxdWVzdBI0ChFtaWNyb3Bob25lX3N0YXR1cxgC",
+            "IAEoDjIZLnpwcm90by5FTWljcm9waG9uZVN0YXR1c2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEMicrophoneStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetMicrophoneStatusRequest(this);
     }
 
-    /// <summary>Field number for the "microphoneStatus" field.</summary>
+    /// <summary>Field number for the "microphone_status" field.</summary>
     public const int MicrophoneStatusFieldNumber = 2;
     private global::Zproto.EMicrophoneStatus microphoneStatus_ = global::Zproto.EMicrophoneStatus.Opened;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

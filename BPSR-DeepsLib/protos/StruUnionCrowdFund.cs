@@ -24,13 +24,13 @@ namespace Zproto {
     static StruUnionCrowdFundReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X3VuaW9uX2Nyb3dkX2Z1bmQucHJvdG8SBnpwcm90byLlAQoOVW5p",
-            "b25Dcm93ZEZ1bmQSFQoNZnVuZEJlZ2luVGltZRgBIAEoAxJACg1mdW5kUG9z",
-            "Q2hhcklkGAIgAygLMikuenByb3RvLlVuaW9uQ3Jvd2RGdW5kLkZ1bmRQb3ND",
-            "aGFySWRFbnRyeRIUCgxidWlsZEVuZFRpbWUYAyABKAMSGAoQYnVpbGRpbmdG",
-            "aW5pc2hlZBgEIAEoCBIUCgxmdW5kSGFzQmVnaW4YBSABKAgaNAoSRnVuZFBv",
-            "c0NoYXJJZEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAFi",
-            "BnByb3RvMw=="));
+            "ChtzdHJ1X3VuaW9uX2Nyb3dkX2Z1bmQucHJvdG8SBnpwcm90byLvAQoOVW5p",
+            "b25Dcm93ZEZ1bmQSFwoPZnVuZF9iZWdpbl90aW1lGAEgASgDEkMKEGZ1bmRf",
+            "cG9zX2NoYXJfaWQYAiADKAsyKS56cHJvdG8uVW5pb25Dcm93ZEZ1bmQuRnVu",
+            "ZFBvc0NoYXJJZEVudHJ5EhYKDmJ1aWxkX2VuZF90aW1lGAMgASgDEhkKEWJ1",
+            "aWxkaW5nX2ZpbmlzaGVkGAQgASgIEhYKDmZ1bmRfaGFzX2JlZ2luGAUgASgI",
+            "GjQKEkZ1bmRQb3NDaGFySWRFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
+            "AiABKAM6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new UnionCrowdFund(this);
     }
 
-    /// <summary>Field number for the "fundBeginTime" field.</summary>
+    /// <summary>Field number for the "fund_begin_time" field.</summary>
     public const int FundBeginTimeFieldNumber = 1;
     private long fundBeginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fundPosCharId" field.</summary>
+    /// <summary>Field number for the "fund_pos_char_id" field.</summary>
     public const int FundPosCharIdFieldNumber = 2;
     private static readonly pbc::MapField<int, long>.Codec _map_fundPosCharId_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 18);
@@ -113,7 +113,7 @@ namespace Zproto {
       get { return fundPosCharId_; }
     }
 
-    /// <summary>Field number for the "buildEndTime" field.</summary>
+    /// <summary>Field number for the "build_end_time" field.</summary>
     public const int BuildEndTimeFieldNumber = 3;
     private long buildEndTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buildingFinished" field.</summary>
+    /// <summary>Field number for the "building_finished" field.</summary>
     public const int BuildingFinishedFieldNumber = 4;
     private bool buildingFinished_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fundHasBegin" field.</summary>
+    /// <summary>Field number for the "fund_has_begin" field.</summary>
     public const int FundHasBeginFieldNumber = 5;
     private bool fundHasBegin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

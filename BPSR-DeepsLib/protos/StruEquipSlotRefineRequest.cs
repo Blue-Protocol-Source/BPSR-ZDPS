@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2VxdWlwX3Nsb3RfcmVmaW5lX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "bxomc3RydV9lcXVpcF9zbG90X3JlZmluZV9pdGVtX2Nvc3QucHJvdG8iXwoW",
-            "RXF1aXBTbG90UmVmaW5lUmVxdWVzdBIOCgZzbG90SWQYASABKA0SNQoMaXRl",
-            "bUNvc3RMaXN0GAIgAygLMh8uenByb3RvLkVxdWlwU2xvdFJlZmluZUl0ZW1D",
-            "b3N0YgZwcm90bzM="));
+            "bxomc3RydV9lcXVpcF9zbG90X3JlZmluZV9pdGVtX2Nvc3QucHJvdG8iYgoW",
+            "RXF1aXBTbG90UmVmaW5lUmVxdWVzdBIPCgdzbG90X2lkGAEgASgNEjcKDml0",
+            "ZW1fY29zdF9saXN0GAIgAygLMh8uenByb3RvLkVxdWlwU2xvdFJlZmluZUl0",
+            "ZW1Db3N0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruEquipSlotRefineItemCostReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new EquipSlotRefineRequest(this);
     }
 
-    /// <summary>Field number for the "slotId" field.</summary>
+    /// <summary>Field number for the "slot_id" field.</summary>
     public const int SlotIdFieldNumber = 1;
     private uint slotId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "itemCostList" field.</summary>
+    /// <summary>Field number for the "item_cost_list" field.</summary>
     public const int ItemCostListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.EquipSlotRefineItemCost> _repeated_itemCostList_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.EquipSlotRefineItemCost.Parser);

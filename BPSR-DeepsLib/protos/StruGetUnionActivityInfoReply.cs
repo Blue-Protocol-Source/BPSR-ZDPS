@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X2dldF91bmlvbl9hY3Rpdml0eV9pbmZvX3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGh1zdHJ1X21lbV91bmlv",
-            "bl9hY3Rpdml0eS5wcm90bxoZc3RydV91bmlvbl9hY3Rpdml0eS5wcm90byKe",
-            "AQoZR2V0VW5pb25BY3Rpdml0eUluZm9SZXBseRIsCg11bmlvbkFjdGl2aXR5",
-            "GAEgASgLMhUuenByb3RvLlVuaW9uQWN0aXZpdHkSLgoMc2VsZkFjdGl2aXR5",
-            "GAIgASgLMhguenByb3RvLk1lbVVuaW9uQWN0aXZpdHkSIwoHZXJyQ29kZRgD",
-            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "bl9hY3Rpdml0eS5wcm90bxoZc3RydV91bmlvbl9hY3Rpdml0eS5wcm90byKh",
+            "AQoZR2V0VW5pb25BY3Rpdml0eUluZm9SZXBseRItCg51bmlvbl9hY3Rpdml0",
+            "eRgBIAEoCzIVLnpwcm90by5VbmlvbkFjdGl2aXR5Ei8KDXNlbGZfYWN0aXZp",
+            "dHkYAiABKAsyGC56cHJvdG8uTWVtVW5pb25BY3Rpdml0eRIkCghlcnJfY29k",
+            "ZRgDIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruMemUnionActivityReflection.Descriptor, global::Zproto.StruUnionActivityReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new GetUnionActivityInfoReply(this);
     }
 
-    /// <summary>Field number for the "unionActivity" field.</summary>
+    /// <summary>Field number for the "union_activity" field.</summary>
     public const int UnionActivityFieldNumber = 1;
     private global::Zproto.UnionActivity unionActivity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "selfActivity" field.</summary>
+    /// <summary>Field number for the "self_activity" field.</summary>
     public const int SelfActivityFieldNumber = 2;
     private global::Zproto.MemUnionActivity selfActivity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

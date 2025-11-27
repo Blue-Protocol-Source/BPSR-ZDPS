@@ -26,20 +26,20 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X2R1bmdlb25fd29ybGRfYm9zc19zZXR0bGVtZW50LnByb3RvEgZ6",
             "cHJvdG8aGHN0cnVfZHVuZ2Vvbl9hd2FyZC5wcm90bxocc3RydV9kdW5nZW9u",
-            "X2Jvc3NfcmFuay5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIpgEChpE",
-            "dW5nZW9uV29ybGRCb3NzU2V0dGxlbWVudBIVCg1ib3NzSHBQZXJjZW50GAEg",
-            "ASgFEjAKD2R1bmdlb25Cb3NzUmFuaxgCIAEoCzIXLnpwcm90by5EdW5nZW9u",
-            "Qm9zc1JhbmsSPAoFYXdhcmQYAyADKAsyLS56cHJvdG8uRHVuZ2Vvbldvcmxk",
-            "Qm9zc1NldHRsZW1lbnQuQXdhcmRFbnRyeRJMCg1ib3NzUmFua0F3YXJkGAQg",
-            "AygLMjUuenByb3RvLkR1bmdlb25Xb3JsZEJvc3NTZXR0bGVtZW50LkJvc3NS",
-            "YW5rQXdhcmRFbnRyeRJKCgxsYXN0SGl0QXdhcmQYBSADKAsyNC56cHJvdG8u",
-            "RHVuZ2VvbldvcmxkQm9zc1NldHRsZW1lbnQuTGFzdEhpdEF3YXJkRW50cnka",
-            "QgoKQXdhcmRFbnRyeRILCgNrZXkYASABKAMSIwoFdmFsdWUYAiABKAsyFC56",
-            "cHJvdG8uRHVuZ2VvbkF3YXJkOgI4ARpKChJCb3NzUmFua0F3YXJkRW50cnkS",
-            "CwoDa2V5GAEgASgDEiMKBXZhbHVlGAIgASgLMhQuenByb3RvLkR1bmdlb25B",
-            "d2FyZDoCOAEaSQoRTGFzdEhpdEF3YXJkRW50cnkSCwoDa2V5GAEgASgDEiMK",
-            "BXZhbHVlGAIgASgLMhQuenByb3RvLkR1bmdlb25Bd2FyZDoCOAFiBnByb3Rv",
-            "Mw=="));
+            "X2Jvc3NfcmFuay5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqAEChpE",
+            "dW5nZW9uV29ybGRCb3NzU2V0dGxlbWVudBIXCg9ib3NzX2hwX3BlcmNlbnQY",
+            "ASABKAUSMgoRZHVuZ2Vvbl9ib3NzX3JhbmsYAiABKAsyFy56cHJvdG8uRHVu",
+            "Z2VvbkJvc3NSYW5rEjwKBWF3YXJkGAMgAygLMi0uenByb3RvLkR1bmdlb25X",
+            "b3JsZEJvc3NTZXR0bGVtZW50LkF3YXJkRW50cnkSTgoPYm9zc19yYW5rX2F3",
+            "YXJkGAQgAygLMjUuenByb3RvLkR1bmdlb25Xb3JsZEJvc3NTZXR0bGVtZW50",
+            "LkJvc3NSYW5rQXdhcmRFbnRyeRJMCg5sYXN0X2hpdF9hd2FyZBgFIAMoCzI0",
+            "Lnpwcm90by5EdW5nZW9uV29ybGRCb3NzU2V0dGxlbWVudC5MYXN0SGl0QXdh",
+            "cmRFbnRyeRpCCgpBd2FyZEVudHJ5EgsKA2tleRgBIAEoAxIjCgV2YWx1ZRgC",
+            "IAEoCzIULnpwcm90by5EdW5nZW9uQXdhcmQ6AjgBGkoKEkJvc3NSYW5rQXdh",
+            "cmRFbnRyeRILCgNrZXkYASABKAMSIwoFdmFsdWUYAiABKAsyFC56cHJvdG8u",
+            "RHVuZ2VvbkF3YXJkOgI4ARpJChFMYXN0SGl0QXdhcmRFbnRyeRILCgNrZXkY",
+            "ASABKAMSIwoFdmFsdWUYAiABKAsyFC56cHJvdG8uRHVuZ2VvbkF3YXJkOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonAwardReflection.Descriptor, global::Zproto.StruDungeonBossRankReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +99,7 @@ namespace Zproto {
       return new DungeonWorldBossSettlement(this);
     }
 
-    /// <summary>Field number for the "bossHpPercent" field.</summary>
+    /// <summary>Field number for the "boss_hp_percent" field.</summary>
     public const int BossHpPercentFieldNumber = 1;
     private int bossHpPercent_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeonBossRank" field.</summary>
+    /// <summary>Field number for the "dungeon_boss_rank" field.</summary>
     public const int DungeonBossRankFieldNumber = 2;
     private global::Zproto.DungeonBossRank dungeonBossRank_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,7 +134,7 @@ namespace Zproto {
       get { return award_; }
     }
 
-    /// <summary>Field number for the "bossRankAward" field.</summary>
+    /// <summary>Field number for the "boss_rank_award" field.</summary>
     public const int BossRankAwardFieldNumber = 4;
     private static readonly pbc::MapField<long, global::Zproto.DungeonAward>.Codec _map_bossRankAward_codec
         = new pbc::MapField<long, global::Zproto.DungeonAward>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonAward.Parser), 34);
@@ -145,7 +145,7 @@ namespace Zproto {
       get { return bossRankAward_; }
     }
 
-    /// <summary>Field number for the "lastHitAward" field.</summary>
+    /// <summary>Field number for the "last_hit_award" field.</summary>
     public const int LastHitAwardFieldNumber = 5;
     private static readonly pbc::MapField<long, global::Zproto.DungeonAward>.Codec _map_lastHitAward_codec
         = new pbc::MapField<long, global::Zproto.DungeonAward>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonAward.Parser), 42);

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruChangeAvatarRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X2NoYW5nZV9hdmF0YXJfcmVxdWVzdC5wcm90bxIGenByb3RvIicK",
-            "E0NoYW5nZUF2YXRhclJlcXVlc3QSEAoIYXZhdGFySWQYAiABKAViBnByb3Rv",
-            "Mw=="));
+            "CiBzdHJ1X2NoYW5nZV9hdmF0YXJfcmVxdWVzdC5wcm90bxIGenByb3RvIigK",
+            "E0NoYW5nZUF2YXRhclJlcXVlc3QSEQoJYXZhdGFyX2lkGAIgASgFYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ChangeAvatarRequest(this);
     }
 
-    /// <summary>Field number for the "avatarId" field.</summary>
+    /// <summary>Field number for the "avatar_id" field.</summary>
     public const int AvatarIdFieldNumber = 2;
     private int avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

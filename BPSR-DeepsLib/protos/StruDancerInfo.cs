@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2RhbmNlcl9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byJlCgpEYW5jZXJJbmZvEg4KBmNoYXJJZBgBIAEoAxIRCglk",
-            "YW5jZVNlY3MYAiABKAUSEQoJaXNEYW5jaW5nGAMgASgIEhAKCGhhc0RyYXdu",
-            "GAQgASgIEg8KB2hhc1NlbmQYBSABKAhiBnByb3RvMw=="));
+            "bWFzay5wcm90byJqCgpEYW5jZXJJbmZvEg8KB2NoYXJfaWQYASABKAMSEgoK",
+            "ZGFuY2Vfc2VjcxgCIAEoBRISCgppc19kYW5jaW5nGAMgASgIEhEKCWhhc19k",
+            "cmF3bhgEIAEoCBIQCghoYXNfc2VuZBgFIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new DancerInfo(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "danceSecs" field.</summary>
+    /// <summary>Field number for the "dance_secs" field.</summary>
     public const int DanceSecsFieldNumber = 2;
     private int danceSecs_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isDancing" field.</summary>
+    /// <summary>Field number for the "is_dancing" field.</summary>
     public const int IsDancingFieldNumber = 3;
     private bool isDancing_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hasDrawn" field.</summary>
+    /// <summary>Field number for the "has_drawn" field.</summary>
     public const int HasDrawnFieldNumber = 4;
     private bool hasDrawn_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hasSend" field.</summary>
+    /// <summary>Field number for the "has_send" field.</summary>
     public const int HasSendFieldNumber = 5;
     private bool hasSend_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

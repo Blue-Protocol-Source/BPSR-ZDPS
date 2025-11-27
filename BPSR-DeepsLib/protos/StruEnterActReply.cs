@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X2VudGVyX2FjdF9yZXBseS5wcm90bxIGenByb3RvGhdlbnVtX2Vf",
-            "ZXJyb3JfY29kZS5wcm90byJICg1FbnRlckFjdFJlcGx5EhIKCm1hdGNoVG9r",
-            "ZW4YASABKAkSIwoHZXJyQ29kZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2Rl",
-            "YgZwcm90bzM="));
+            "ZXJyb3JfY29kZS5wcm90byJKCg1FbnRlckFjdFJlcGx5EhMKC21hdGNoX3Rv",
+            "a2VuGAEgASgJEiQKCGVycl9jb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNv",
+            "ZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new EnterActReply(this);
     }
 
-    /// <summary>Field number for the "matchToken" field.</summary>
+    /// <summary>Field number for the "match_token" field.</summary>
     public const int MatchTokenFieldNumber = 1;
     private string matchToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

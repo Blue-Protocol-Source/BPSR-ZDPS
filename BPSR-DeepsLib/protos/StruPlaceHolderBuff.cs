@@ -24,8 +24,8 @@ namespace Zproto {
     static StruPlaceHolderBuffReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X3BsYWNlX2hvbGRlcl9idWZmLnByb3RvEgZ6cHJvdG8iIQoPUGxh",
-            "Y2VIb2xkZXJCdWZmEg4KBmJ1ZmZJZBgBIAEoBWIGcHJvdG8z"));
+            "ChxzdHJ1X3BsYWNlX2hvbGRlcl9idWZmLnByb3RvEgZ6cHJvdG8iIgoPUGxh",
+            "Y2VIb2xkZXJCdWZmEg8KB2J1ZmZfaWQYASABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new PlaceHolderBuff(this);
     }
 
-    /// <summary>Field number for the "buffId" field.</summary>
+    /// <summary>Field number for the "buff_id" field.</summary>
     public const int BuffIdFieldNumber = 1;
     private int buffId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

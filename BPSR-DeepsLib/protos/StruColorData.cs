@@ -25,18 +25,18 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2NvbG9yX2RhdGEucHJvdG8SBnpwcm90bxoTc3RydV9pbnRfdmVj",
-            "My5wcm90byLtAwoJQ29sb3JEYXRhEjMKCWNvbG9yRGljdBgBIAMoCzIgLnpw",
-            "cm90by5Db2xvckRhdGEuQ29sb3JEaWN0RW50cnkSMwoJcmVzZXREaWN0GAIg",
-            "AygLMiAuenByb3RvLkNvbG9yRGF0YS5SZXNldERpY3RFbnRyeRI/Cg9hdHRh",
-            "Y2htZW50Q29sb3IYAyADKAsyJi56cHJvdG8uQ29sb3JEYXRhLkF0dGFjaG1l",
-            "bnRDb2xvckVudHJ5Ej8KD2F0dGFjaG1lbnRSZXNldBgEIAMoCzImLnpwcm90",
-            "by5Db2xvckRhdGEuQXR0YWNobWVudFJlc2V0RW50cnkaQQoOQ29sb3JEaWN0",
-            "RW50cnkSCwoDa2V5GAEgASgFEh4KBXZhbHVlGAIgASgLMg8uenByb3RvLklu",
-            "dFZlYzM6AjgBGjAKDlJlc2V0RGljdEVudHJ5EgsKA2tleRgBIAEoBRINCgV2",
-            "YWx1ZRgCIAEoCDoCOAEaRwoUQXR0YWNobWVudENvbG9yRW50cnkSCwoDa2V5",
-            "GAEgASgFEh4KBXZhbHVlGAIgASgLMg8uenByb3RvLkludFZlYzM6AjgBGjYK",
-            "FEF0dGFjaG1lbnRSZXNldEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgC",
-            "IAEoCDoCOAFiBnByb3RvMw=="));
+            "My5wcm90byLxAwoJQ29sb3JEYXRhEjQKCmNvbG9yX2RpY3QYASADKAsyIC56",
+            "cHJvdG8uQ29sb3JEYXRhLkNvbG9yRGljdEVudHJ5EjQKCnJlc2V0X2RpY3QY",
+            "AiADKAsyIC56cHJvdG8uQ29sb3JEYXRhLlJlc2V0RGljdEVudHJ5EkAKEGF0",
+            "dGFjaG1lbnRfY29sb3IYAyADKAsyJi56cHJvdG8uQ29sb3JEYXRhLkF0dGFj",
+            "aG1lbnRDb2xvckVudHJ5EkAKEGF0dGFjaG1lbnRfcmVzZXQYBCADKAsyJi56",
+            "cHJvdG8uQ29sb3JEYXRhLkF0dGFjaG1lbnRSZXNldEVudHJ5GkEKDkNvbG9y",
+            "RGljdEVudHJ5EgsKA2tleRgBIAEoBRIeCgV2YWx1ZRgCIAEoCzIPLnpwcm90",
+            "by5JbnRWZWMzOgI4ARowCg5SZXNldERpY3RFbnRyeRILCgNrZXkYASABKAUS",
+            "DQoFdmFsdWUYAiABKAg6AjgBGkcKFEF0dGFjaG1lbnRDb2xvckVudHJ5EgsK",
+            "A2tleRgBIAEoBRIeCgV2YWx1ZRgCIAEoCzIPLnpwcm90by5JbnRWZWMzOgI4",
+            "ARo2ChRBdHRhY2htZW50UmVzZXRFbnRyeRILCgNrZXkYASABKAUSDQoFdmFs",
+            "dWUYAiABKAg6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIntVec3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       return new ColorData(this);
     }
 
-    /// <summary>Field number for the "colorDict" field.</summary>
+    /// <summary>Field number for the "color_dict" field.</summary>
     public const int ColorDictFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.IntVec3>.Codec _map_colorDict_codec
         = new pbc::MapField<int, global::Zproto.IntVec3>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.IntVec3.Parser), 10);
@@ -106,7 +106,7 @@ namespace Zproto {
       get { return colorDict_; }
     }
 
-    /// <summary>Field number for the "resetDict" field.</summary>
+    /// <summary>Field number for the "reset_dict" field.</summary>
     public const int ResetDictFieldNumber = 2;
     private static readonly pbc::MapField<int, bool>.Codec _map_resetDict_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 18);
@@ -117,7 +117,7 @@ namespace Zproto {
       get { return resetDict_; }
     }
 
-    /// <summary>Field number for the "attachmentColor" field.</summary>
+    /// <summary>Field number for the "attachment_color" field.</summary>
     public const int AttachmentColorFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.IntVec3>.Codec _map_attachmentColor_codec
         = new pbc::MapField<int, global::Zproto.IntVec3>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.IntVec3.Parser), 26);
@@ -128,7 +128,7 @@ namespace Zproto {
       get { return attachmentColor_; }
     }
 
-    /// <summary>Field number for the "attachmentReset" field.</summary>
+    /// <summary>Field number for the "attachment_reset" field.</summary>
     public const int AttachmentResetFieldNumber = 4;
     private static readonly pbc::MapField<int, bool>.Codec _map_attachmentReset_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 34);

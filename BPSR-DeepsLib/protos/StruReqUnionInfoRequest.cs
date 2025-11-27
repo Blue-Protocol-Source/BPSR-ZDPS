@@ -24,9 +24,9 @@ namespace Zproto {
     static StruReqUnionInfoRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3JlcV91bmlvbl9pbmZvX3JlcXVlc3QucHJvdG8SBnpwcm90byIm",
-            "ChNSZXFVbmlvbkluZm9SZXF1ZXN0Eg8KB3VuaW9uSWQYAiABKANiBnByb3Rv",
-            "Mw=="));
+            "CiFzdHJ1X3JlcV91bmlvbl9pbmZvX3JlcXVlc3QucHJvdG8SBnpwcm90byIn",
+            "ChNSZXFVbmlvbkluZm9SZXF1ZXN0EhAKCHVuaW9uX2lkGAIgASgDYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ReqUnionInfoRequest(this);
     }
 
-    /// <summary>Field number for the "unionId" field.</summary>
+    /// <summary>Field number for the "union_id" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

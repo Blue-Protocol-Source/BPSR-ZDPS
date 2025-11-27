@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2J1ZmZfZWZmZWN0X2xvZ2ljX2dyYXZpdHkucHJvdG8SBnpwcm90",
-            "bxofZW51bV9lX2dyYXZpdGF0aW9uYWxfdHlwZS5wcm90byL3AQoWQnVmZkVm",
+            "bxofZW51bV9lX2dyYXZpdGF0aW9uYWxfdHlwZS5wcm90byKCAgoWQnVmZkVm",
             "ZmVjdExvZ2ljR3Jhdml0eRIoCgR0eXBlGAEgASgOMhouenByb3RvLkVHcmF2",
-            "aXRhdGlvbmFsVHlwZRIQCghzdHJlbmd0aBgCIAEoAhITCgtzdHJlbmd0aExv",
-            "dxgDIAEoAhIWCg5pbnRlcm5hbFJhZGl1cxgEIAEoAhIWCg5leHRlcm5hbFJh",
-            "ZGl1cxgFIAEoAhISCgplbnRpdHlUeXBlGAYgASgFEhYKDmNhbXBUYXJnZXRU",
-            "eXBlGAcgASgFEhUKDWlzSW1wYWN0SG92ZXIYCCABKAgSGQoRaXNVc2VXZWln",
-            "aHRGYWN0b3IYCSABKAhiBnByb3RvMw=="));
+            "aXRhdGlvbmFsVHlwZRIQCghzdHJlbmd0aBgCIAEoAhIUCgxzdHJlbmd0aF9s",
+            "b3cYAyABKAISFwoPaW50ZXJuYWxfcmFkaXVzGAQgASgCEhcKD2V4dGVybmFs",
+            "X3JhZGl1cxgFIAEoAhITCgtlbnRpdHlfdHlwZRgGIAEoBRIYChBjYW1wX3Rh",
+            "cmdldF90eXBlGAcgASgFEhcKD2lzX2ltcGFjdF9ob3ZlchgIIAEoCBIcChRp",
+            "c191c2Vfd2VpZ2h0X2ZhY3RvchgJIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEGravitationalTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -119,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "strengthLow" field.</summary>
+    /// <summary>Field number for the "strength_low" field.</summary>
     public const int StrengthLowFieldNumber = 3;
     private float strengthLow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "internalRadius" field.</summary>
+    /// <summary>Field number for the "internal_radius" field.</summary>
     public const int InternalRadiusFieldNumber = 4;
     private float internalRadius_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,7 +143,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "externalRadius" field.</summary>
+    /// <summary>Field number for the "external_radius" field.</summary>
     public const int ExternalRadiusFieldNumber = 5;
     private float externalRadius_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,7 +155,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "entityType" field.</summary>
+    /// <summary>Field number for the "entity_type" field.</summary>
     public const int EntityTypeFieldNumber = 6;
     private int entityType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "campTargetType" field.</summary>
+    /// <summary>Field number for the "camp_target_type" field.</summary>
     public const int CampTargetTypeFieldNumber = 7;
     private int campTargetType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,7 +179,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isImpactHover" field.</summary>
+    /// <summary>Field number for the "is_impact_hover" field.</summary>
     public const int IsImpactHoverFieldNumber = 8;
     private bool isImpactHover_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -191,7 +191,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isUseWeightFactor" field.</summary>
+    /// <summary>Field number for the "is_use_weight_factor" field.</summary>
     public const int IsUseWeightFactorFieldNumber = 9;
     private bool isUseWeightFactor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

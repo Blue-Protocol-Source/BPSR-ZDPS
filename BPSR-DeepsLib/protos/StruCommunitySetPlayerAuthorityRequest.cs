@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CjFzdHJ1X2NvbW11bml0eV9zZXRfcGxheWVyX2F1dGhvcml0eV9yZXF1ZXN0",
             "LnByb3RvEgZ6cHJvdG8aKnN0cnVfY29tbXVuaXR5X3BsYXllcl9hdXRob3Jp",
-            "dHlfaW5mby5wcm90byJxCiJDb21tdW5pdHlTZXRQbGF5ZXJBdXRob3JpdHlS",
-            "ZXF1ZXN0Eg4KBmNoYXJJZBgBIAEoAxI7Cg1hdXRob3JpdHlJbmZvGAIgASgL",
-            "MiQuenByb3RvLkNvbW11bml0eVBsYXllckF1dGhvcml0eUluZm9iBnByb3Rv",
-            "Mw=="));
+            "dHlfaW5mby5wcm90byJzCiJDb21tdW5pdHlTZXRQbGF5ZXJBdXRob3JpdHlS",
+            "ZXF1ZXN0Eg8KB2NoYXJfaWQYASABKAMSPAoOYXV0aG9yaXR5X2luZm8YAiAB",
+            "KAsyJC56cHJvdG8uQ29tbXVuaXR5UGxheWVyQXV0aG9yaXR5SW5mb2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityPlayerAuthorityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new CommunitySetPlayerAuthorityRequest(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "authorityInfo" field.</summary>
+    /// <summary>Field number for the "authority_info" field.</summary>
     public const int AuthorityInfoFieldNumber = 2;
     private global::Zproto.CommunityPlayerAuthorityInfo authorityInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

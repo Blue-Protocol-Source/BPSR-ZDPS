@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSetShowHallRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3NldF9zaG93X2hhbGxfcmVxdWVzdC5wcm90bxIGenByb3RvIjkK",
-            "ElNldFNob3dIYWxsUmVxdWVzdBIOCgZpc1Nob3cYAiABKAgSEwoLaXNTZXJ2",
-            "ZXJTZXQYAyABKAhiBnByb3RvMw=="));
+            "CiBzdHJ1X3NldF9zaG93X2hhbGxfcmVxdWVzdC5wcm90bxIGenByb3RvIjwK",
+            "ElNldFNob3dIYWxsUmVxdWVzdBIPCgdpc19zaG93GAIgASgIEhUKDWlzX3Nl",
+            "cnZlcl9zZXQYAyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetShowHallRequest(this);
     }
 
-    /// <summary>Field number for the "isShow" field.</summary>
+    /// <summary>Field number for the "is_show" field.</summary>
     public const int IsShowFieldNumber = 2;
     private bool isShow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isServerSet" field.</summary>
+    /// <summary>Field number for the "is_server_set" field.</summary>
     public const int IsServerSetFieldNumber = 3;
     private bool isServerSet_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X25vdGlmeV9pbnZpdGF0aW9uX3JlcXVlc3QucHJvdG8SBnpwcm90",
             "bxodZW51bV9lX3RlYW1fbWVtYmVyX3R5cGUucHJvdG8aHHN0cnVfdXNlcl9z",
-            "dW1tYXJ5X2RhdGEucHJvdG8irQEKF05vdGlmeUludml0YXRpb25SZXF1ZXN0",
-            "Eg4KBnRlYW1pZBgBIAEoAxIQCgh0YXJnZXRJZBgCIAEoDRIPCgd0ZWFtTnVt",
-            "GAMgASgNEi4KDWludml0ZU1lbURhdGEYBCABKAsyFy56cHJvdG8uVXNlclN1",
-            "bW1hcnlEYXRhEi8KDnRlYW1NZW1iZXJUeXBlGAUgASgOMhcuenByb3RvLkVU",
-            "ZWFtTWVtYmVyVHlwZWIGcHJvdG8z"));
+            "dW1tYXJ5X2RhdGEucHJvdG8iswEKF05vdGlmeUludml0YXRpb25SZXF1ZXN0",
+            "Eg4KBnRlYW1pZBgBIAEoAxIRCgl0YXJnZXRfaWQYAiABKA0SEAoIdGVhbV9u",
+            "dW0YAyABKA0SMAoPaW52aXRlX21lbV9kYXRhGAQgASgLMhcuenByb3RvLlVz",
+            "ZXJTdW1tYXJ5RGF0YRIxChB0ZWFtX21lbWJlcl90eXBlGAUgASgOMhcuenBy",
+            "b3RvLkVUZWFtTWVtYmVyVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETeamMemberTypeReflection.Descriptor, global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 2;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "teamNum" field.</summary>
+    /// <summary>Field number for the "team_num" field.</summary>
     public const int TeamNumFieldNumber = 3;
     private uint teamNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "inviteMemData" field.</summary>
+    /// <summary>Field number for the "invite_mem_data" field.</summary>
     public const int InviteMemDataFieldNumber = 4;
     private global::Zproto.UserSummaryData inviteMemData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "teamMemberType" field.</summary>
+    /// <summary>Field number for the "team_member_type" field.</summary>
     public const int TeamMemberTypeFieldNumber = 5;
     private global::Zproto.ETeamMemberType teamMemberType_ = global::Zproto.ETeamMemberType.Five;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

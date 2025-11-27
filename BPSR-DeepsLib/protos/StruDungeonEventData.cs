@@ -27,14 +27,14 @@ namespace Zproto {
             "Ch1zdHJ1X2R1bmdlb25fZXZlbnRfZGF0YS5wcm90bxIGenByb3RvGh9lbnVt",
             "X2R1bmdlb25fZXZlbnRfcmVzdWx0LnByb3RvGh5lbnVtX2R1bmdlb25fZXZl",
             "bnRfc3RhdGUucHJvdG8aHnN0cnVfZHVuZ2Vvbl90YXJnZXRfZGF0YS5wcm90",
-            "bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqECChBEdW5nZW9uRXZlbnREYXRh",
-            "Eg8KB2V2ZW50SWQYASABKAUSEQoJc3RhcnRUaW1lGAIgASgFEigKBXN0YXRl",
-            "GAMgASgOMhkuenByb3RvLkR1bmdlb25FdmVudFN0YXRlEioKBnJlc3VsdBgE",
-            "IAEoDjIaLnpwcm90by5EdW5nZW9uRXZlbnRSZXN1bHQSQgoNZHVuZ2VvblRh",
-            "cmdldBgFIAMoCzIrLnpwcm90by5EdW5nZW9uRXZlbnREYXRhLkR1bmdlb25U",
-            "YXJnZXRFbnRyeRpPChJEdW5nZW9uVGFyZ2V0RW50cnkSCwoDa2V5GAEgASgF",
-            "EigKBXZhbHVlGAIgASgLMhkuenByb3RvLkR1bmdlb25UYXJnZXREYXRhOgI4",
-            "AWIGcHJvdG8z"));
+            "bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqQCChBEdW5nZW9uRXZlbnREYXRh",
+            "EhAKCGV2ZW50X2lkGAEgASgFEhIKCnN0YXJ0X3RpbWUYAiABKAUSKAoFc3Rh",
+            "dGUYAyABKA4yGS56cHJvdG8uRHVuZ2VvbkV2ZW50U3RhdGUSKgoGcmVzdWx0",
+            "GAQgASgOMhouenByb3RvLkR1bmdlb25FdmVudFJlc3VsdBJDCg5kdW5nZW9u",
+            "X3RhcmdldBgFIAMoCzIrLnpwcm90by5EdW5nZW9uRXZlbnREYXRhLkR1bmdl",
+            "b25UYXJnZXRFbnRyeRpPChJEdW5nZW9uVGFyZ2V0RW50cnkSCwoDa2V5GAEg",
+            "ASgFEigKBXZhbHVlGAIgASgLMhkuenByb3RvLkR1bmdlb25UYXJnZXREYXRh",
+            "OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumDungeonEventResultReflection.Descriptor, global::Zproto.EnumDungeonEventStateReflection.Descriptor, global::Zproto.StruDungeonTargetDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +94,7 @@ namespace Zproto {
       return new DungeonEventData(this);
     }
 
-    /// <summary>Field number for the "eventId" field.</summary>
+    /// <summary>Field number for the "event_id" field.</summary>
     public const int EventIdFieldNumber = 1;
     private int eventId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -106,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "startTime" field.</summary>
+    /// <summary>Field number for the "start_time" field.</summary>
     public const int StartTimeFieldNumber = 2;
     private int startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -142,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeonTarget" field.</summary>
+    /// <summary>Field number for the "dungeon_target" field.</summary>
     public const int DungeonTargetFieldNumber = 5;
     private static readonly pbc::MapField<int, global::Zproto.DungeonTargetData>.Codec _map_dungeonTarget_codec
         = new pbc::MapField<int, global::Zproto.DungeonTargetData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonTargetData.Parser), 42);

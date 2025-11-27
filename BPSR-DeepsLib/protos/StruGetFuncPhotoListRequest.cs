@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2dldF9mdW5jX3Bob3RvX2xpc3RfcmVxdWVzdC5wcm90bxIGenBy",
-            "b3RvGh9lbnVtX2VfcGxhdGZvcm1fZnVuY190eXBlLnByb3RvIlcKF0dldEZ1",
-            "bmNQaG90b0xpc3RSZXF1ZXN0EisKCGZ1bmNUeXBlGAEgASgOMhkuenByb3Rv",
-            "LkVQbGF0Zm9ybUZ1bmNUeXBlEg8KB293bmVySWQYAiABKANiBnByb3RvMw=="));
+            "b3RvGh9lbnVtX2VfcGxhdGZvcm1fZnVuY190eXBlLnByb3RvIlkKF0dldEZ1",
+            "bmNQaG90b0xpc3RSZXF1ZXN0EiwKCWZ1bmNfdHlwZRgBIAEoDjIZLnpwcm90",
+            "by5FUGxhdGZvcm1GdW5jVHlwZRIQCghvd25lcl9pZBgCIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPlatformFuncTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new GetFuncPhotoListRequest(this);
     }
 
-    /// <summary>Field number for the "funcType" field.</summary>
+    /// <summary>Field number for the "func_type" field.</summary>
     public const int FuncTypeFieldNumber = 1;
     private global::Zproto.EPlatformFuncType funcType_ = global::Zproto.EPlatformFuncType.EfuncTypeDefault;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ownerId" field.</summary>
+    /// <summary>Field number for the "owner_id" field.</summary>
     public const int OwnerIdFieldNumber = 2;
     private long ownerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

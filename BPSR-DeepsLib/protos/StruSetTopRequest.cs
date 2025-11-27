@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSetTopRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X3NldF90b3BfcmVxdWVzdC5wcm90bxIGenByb3RvIi4KDVNldFRv",
-            "cFJlcXVlc3QSDgoGY2hhcklkGAIgASgDEg0KBWlzVG9wGAMgASgIYgZwcm90",
-            "bzM="));
+            "ChpzdHJ1X3NldF90b3BfcmVxdWVzdC5wcm90bxIGenByb3RvIjAKDVNldFRv",
+            "cFJlcXVlc3QSDwoHY2hhcl9pZBgCIAEoAxIOCgZpc190b3AYAyABKAhiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetTopRequest(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isTop" field.</summary>
+    /// <summary>Field number for the "is_top" field.</summary>
     public const int IsTopFieldNumber = 3;
     private bool isTop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

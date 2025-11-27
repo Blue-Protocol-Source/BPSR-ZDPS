@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X25vdGlmeV90ZWFtX21lbV9iZV9jYWxsX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byI8ChpOb3RpZnlUZWFtTWVtQmVDYWxsUmVxdWVzdBIQCghsZWFk",
-            "ZXJJZBgBIAEoAxIMCgR0aW1lGAIgASgEYgZwcm90bzM="));
+            "Bnpwcm90byI9ChpOb3RpZnlUZWFtTWVtQmVDYWxsUmVxdWVzdBIRCglsZWFk",
+            "ZXJfaWQYASABKAMSDAoEdGltZRgCIAEoBGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyTeamMemBeCallRequest(this);
     }
 
-    /// <summary>Field number for the "leaderId" field.</summary>
+    /// <summary>Field number for the "leader_id" field.</summary>
     public const int LeaderIdFieldNumber = 1;
     private long leaderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

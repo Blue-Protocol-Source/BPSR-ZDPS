@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3dlZWtseV90b3dlcl9pbmZvLnByb3RvEgZ6cHJvdG8aL3N0cnVf",
-            "ZHVuZ2Vvbl9yYW5kb21fZW50aXR5X2NvbmZpZ19pZF9pbmZvLnByb3RvIncK",
-            "D1dlZWtseVRvd2VySW5mbxIRCgljbGltYlVwSWQYASABKAUSEgoKY29udGlu",
-            "dW91cxgCIAEoCBI9CgxyYW5kRW50aXRpZXMYAyABKAsyJy56cHJvdG8uRHVu",
-            "Z2VvblJhbmRvbUVudGl0eUNvbmZpZ0lkSW5mb2IGcHJvdG8z"));
+            "ZHVuZ2Vvbl9yYW5kb21fZW50aXR5X2NvbmZpZ19pZF9pbmZvLnByb3RvInoK",
+            "D1dlZWtseVRvd2VySW5mbxITCgtjbGltYl91cF9pZBgBIAEoBRISCgpjb250",
+            "aW51b3VzGAIgASgIEj4KDXJhbmRfZW50aXRpZXMYAyABKAsyJy56cHJvdG8u",
+            "RHVuZ2VvblJhbmRvbUVudGl0eUNvbmZpZ0lkSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonRandomEntityConfigIdInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new WeeklyTowerInfo(this);
     }
 
-    /// <summary>Field number for the "climbUpId" field.</summary>
+    /// <summary>Field number for the "climb_up_id" field.</summary>
     public const int ClimbUpIdFieldNumber = 1;
     private int climbUpId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "randEntities" field.</summary>
+    /// <summary>Field number for the "rand_entities" field.</summary>
     public const int RandEntitiesFieldNumber = 3;
     private global::Zproto.DungeonRandomEntityConfigIdInfo randEntities_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

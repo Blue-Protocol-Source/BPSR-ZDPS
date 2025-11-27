@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X3NpZ25faW5mby5wcm90bxIGenByb3RvGhtzdHJ1X3NpZ25fc3Rh",
-            "dHVzX2xpc3QucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKFAQoIU2ln",
-            "bkluZm8SMAoIc2lnbkluZm8YASADKAsyHi56cHJvdG8uU2lnbkluZm8uU2ln",
-            "bkluZm9FbnRyeRpHCg1TaWduSW5mb0VudHJ5EgsKA2tleRgBIAEoBRIlCgV2",
-            "YWx1ZRgCIAEoCzIWLnpwcm90by5TaWduU3RhdHVzTGlzdDoCOAFiBnByb3Rv",
-            "Mw=="));
+            "dHVzX2xpc3QucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKGAQoIU2ln",
+            "bkluZm8SMQoJc2lnbl9pbmZvGAEgAygLMh4uenByb3RvLlNpZ25JbmZvLlNp",
+            "Z25JbmZvRW50cnkaRwoNU2lnbkluZm9FbnRyeRILCgNrZXkYASABKAUSJQoF",
+            "dmFsdWUYAiABKAsyFi56cHJvdG8uU2lnblN0YXR1c0xpc3Q6AjgBYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSignStatusListReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new SignInfo(this);
     }
 
-    /// <summary>Field number for the "signInfo" field.</summary>
+    /// <summary>Field number for the "sign_info" field.</summary>
     public const int SignInfo_FieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.SignStatusList>.Codec _map_signInfo_codec
         = new pbc::MapField<int, global::Zproto.SignStatusList>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SignStatusList.Parser), 10);

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X25vdGlmeV9pbnZpdGVfam9pbl9kdW5nZW9uc19yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8iWAofTm90aWZ5SW52aXRlSm9pbkR1bmdlb25zUmVxdWVz",
-            "dBIQCghncm91cEtleRgBIAEoCRIRCglkdW5nZW9uSWQYAiABKAUSEAoIc2Vu",
-            "ZGVySWQYAyABKANiBnByb3RvMw=="));
+            "b3RvEgZ6cHJvdG8iWwofTm90aWZ5SW52aXRlSm9pbkR1bmdlb25zUmVxdWVz",
+            "dBIRCglncm91cF9rZXkYASABKAkSEgoKZHVuZ2Vvbl9pZBgCIAEoBRIRCglz",
+            "ZW5kZXJfaWQYAyABKANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new NotifyInviteJoinDungeonsRequest(this);
     }
 
-    /// <summary>Field number for the "groupKey" field.</summary>
+    /// <summary>Field number for the "group_key" field.</summary>
     public const int GroupKeyFieldNumber = 1;
     private string groupKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeonId" field.</summary>
+    /// <summary>Field number for the "dungeon_id" field.</summary>
     public const int DungeonIdFieldNumber = 2;
     private int dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "senderId" field.</summary>
+    /// <summary>Field number for the "sender_id" field.</summary>
     public const int SenderIdFieldNumber = 3;
     private long senderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

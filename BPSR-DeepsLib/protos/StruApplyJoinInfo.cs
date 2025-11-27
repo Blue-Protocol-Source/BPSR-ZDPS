@@ -24,9 +24,9 @@ namespace Zproto {
     static StruApplyJoinInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X2FwcGx5X2pvaW5faW5mby5wcm90bxIGenByb3RvIjQKDUFwcGx5",
-            "Sm9pbkluZm8SDgoGY2hhcklkGAEgASgDEhMKC3JlcXVlc3RUaW1lGAIgASgD",
-            "YgZwcm90bzM="));
+            "ChpzdHJ1X2FwcGx5X2pvaW5faW5mby5wcm90bxIGenByb3RvIjYKDUFwcGx5",
+            "Sm9pbkluZm8SDwoHY2hhcl9pZBgBIAEoAxIUCgxyZXF1ZXN0X3RpbWUYAiAB",
+            "KANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ApplyJoinInfo(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "requestTime" field.</summary>
+    /// <summary>Field number for the "request_time" field.</summary>
     public const int RequestTimeFieldNumber = 2;
     private long requestTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

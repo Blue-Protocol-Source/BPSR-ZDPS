@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2hvbWVfbGFuZF9zZWxsX3Nob3BfaW5mby5wcm90bxIGenByb3Rv",
-            "GhpzdHJ1X2NvbGxlY3RpbmdfaXRlbS5wcm90byLbAQoUSG9tZUxhbmRTZWxs",
-            "U2hvcEluZm8SDgoGaXNJbml0GAEgASgIEhcKD25leHRSZWZsdXNoVGltZRgC",
-            "IAEoAxJKCg9jb2xsZWN0aW5nSXRlbXMYAyADKAsyMS56cHJvdG8uSG9tZUxh",
-            "bmRTZWxsU2hvcEluZm8uQ29sbGVjdGluZ0l0ZW1zRW50cnkaTgoUQ29sbGVj",
-            "dGluZ0l0ZW1zRW50cnkSCwoDa2V5GAEgASgFEiUKBXZhbHVlGAIgASgLMhYu",
-            "enByb3RvLkNvbGxlY3RpbmdJdGVtOgI4AWIGcHJvdG8z"));
+            "GhpzdHJ1X2NvbGxlY3RpbmdfaXRlbS5wcm90byLfAQoUSG9tZUxhbmRTZWxs",
+            "U2hvcEluZm8SDwoHaXNfaW5pdBgBIAEoCBIZChFuZXh0X3JlZmx1c2hfdGlt",
+            "ZRgCIAEoAxJLChBjb2xsZWN0aW5nX2l0ZW1zGAMgAygLMjEuenByb3RvLkhv",
+            "bWVMYW5kU2VsbFNob3BJbmZvLkNvbGxlY3RpbmdJdGVtc0VudHJ5Gk4KFENv",
+            "bGxlY3RpbmdJdGVtc0VudHJ5EgsKA2tleRgBIAEoBRIlCgV2YWx1ZRgCIAEo",
+            "CzIWLnpwcm90by5Db2xsZWN0aW5nSXRlbToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCollectingItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new HomeLandSellShopInfo(this);
     }
 
-    /// <summary>Field number for the "isInit" field.</summary>
+    /// <summary>Field number for the "is_init" field.</summary>
     public const int IsInitFieldNumber = 1;
     private bool isInit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "nextReflushTime" field.</summary>
+    /// <summary>Field number for the "next_reflush_time" field.</summary>
     public const int NextReflushTimeFieldNumber = 2;
     private long nextReflushTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "collectingItems" field.</summary>
+    /// <summary>Field number for the "collecting_items" field.</summary>
     public const int CollectingItemsFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.CollectingItem>.Codec _map_collectingItems_codec
         = new pbc::MapField<int, global::Zproto.CollectingItem>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CollectingItem.Parser), 26);

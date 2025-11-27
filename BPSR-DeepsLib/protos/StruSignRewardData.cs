@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSignRewardDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X3NpZ25fcmV3YXJkX2RhdGEucHJvdG8SBnpwcm90byI2Cg5TaWdu",
-            "UmV3YXJkRGF0YRIQCghzaWduRGF5cxgBIAMoBRISCgpyZXdhcmREYXlzGAIg",
-            "AygFYgZwcm90bzM="));
+            "ChtzdHJ1X3NpZ25fcmV3YXJkX2RhdGEucHJvdG8SBnpwcm90byI4Cg5TaWdu",
+            "UmV3YXJkRGF0YRIRCglzaWduX2RheXMYASADKAUSEwoLcmV3YXJkX2RheXMY",
+            "AiADKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SignRewardData(this);
     }
 
-    /// <summary>Field number for the "signDays" field.</summary>
+    /// <summary>Field number for the "sign_days" field.</summary>
     public const int SignDaysFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_signDays_codec
         = pb::FieldCodec.ForInt32(10);
@@ -94,7 +94,7 @@ namespace Zproto {
       get { return signDays_; }
     }
 
-    /// <summary>Field number for the "rewardDays" field.</summary>
+    /// <summary>Field number for the "reward_days" field.</summary>
     public const int RewardDaysFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_rewardDays_codec
         = pb::FieldCodec.ForInt32(18);

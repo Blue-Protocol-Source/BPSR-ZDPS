@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg5zdHJ1X21vZC5wcm90bxIGenByb3RvGhNzdHJ1X21vZF9pbmZvLnByb3Rv",
-            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i0gEKA01vZBIrCghtb2RTbG90cxgB",
-            "IAMoCzIZLnpwcm90by5Nb2QuTW9kU2xvdHNFbnRyeRIrCghtb2RJbmZvcxgC",
-            "IAMoCzIZLnpwcm90by5Nb2QuTW9kSW5mb3NFbnRyeRovCg1Nb2RTbG90c0Vu",
-            "dHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAEaQAoNTW9kSW5m",
-            "b3NFbnRyeRILCgNrZXkYASABKAMSHgoFdmFsdWUYAiABKAsyDy56cHJvdG8u",
-            "TW9kSW5mbzoCOAFiBnByb3RvMw=="));
+            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i1AEKA01vZBIsCgltb2Rfc2xvdHMY",
+            "ASADKAsyGS56cHJvdG8uTW9kLk1vZFNsb3RzRW50cnkSLAoJbW9kX2luZm9z",
+            "GAIgAygLMhkuenByb3RvLk1vZC5Nb2RJbmZvc0VudHJ5Gi8KDU1vZFNsb3Rz",
+            "RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgDOgI4ARpACg1Nb2RJ",
+            "bmZvc0VudHJ5EgsKA2tleRgBIAEoAxIeCgV2YWx1ZRgCIAEoCzIPLnpwcm90",
+            "by5Nb2RJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruModInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new Mod(this);
     }
 
-    /// <summary>Field number for the "modSlots" field.</summary>
+    /// <summary>Field number for the "mod_slots" field.</summary>
     public const int ModSlotsFieldNumber = 1;
     private static readonly pbc::MapField<int, long>.Codec _map_modSlots_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 10);
@@ -98,7 +98,7 @@ namespace Zproto {
       get { return modSlots_; }
     }
 
-    /// <summary>Field number for the "modInfos" field.</summary>
+    /// <summary>Field number for the "mod_infos" field.</summary>
     public const int ModInfosFieldNumber = 2;
     private static readonly pbc::MapField<long, global::Zproto.ModInfo>.Codec _map_modInfos_codec
         = new pbc::MapField<long, global::Zproto.ModInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.ModInfo.Parser), 18);

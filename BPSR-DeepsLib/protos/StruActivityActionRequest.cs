@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2FjdGl2aXR5X2FjdGlvbl9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8a",
-            "FWVudW1fZV9wYXlfdHlwZS5wcm90byJiChVBY3Rpdml0eUFjdGlvblJlcXVl",
-            "c3QSFAoMYWN0aXZpdHlVdWlkGAEgASgDEhAKCHJld2FyZElkGAIgASgFEiEK",
-            "B3BheVR5cGUYAyABKA4yEC56cHJvdG8uRVBheVR5cGViBnByb3RvMw=="));
+            "FWVudW1fZV9wYXlfdHlwZS5wcm90byJlChVBY3Rpdml0eUFjdGlvblJlcXVl",
+            "c3QSFQoNYWN0aXZpdHlfdXVpZBgBIAEoAxIRCglyZXdhcmRfaWQYAiABKAUS",
+            "IgoIcGF5X3R5cGUYAyABKA4yEC56cHJvdG8uRVBheVR5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPayTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ActivityActionRequest(this);
     }
 
-    /// <summary>Field number for the "activityUuid" field.</summary>
+    /// <summary>Field number for the "activity_uuid" field.</summary>
     public const int ActivityUuidFieldNumber = 1;
     private long activityUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rewardId" field.</summary>
+    /// <summary>Field number for the "reward_id" field.</summary>
     public const int RewardIdFieldNumber = 2;
     private int rewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "payType" field.</summary>
+    /// <summary>Field number for the "pay_type" field.</summary>
     public const int PayTypeFieldNumber = 3;
     private global::Zproto.EPayType payType_ = global::Zproto.EPayType.PayTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruPlaceHolderFishRankReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3BsYWNlX2hvbGRlcl9maXNoX3JhbmsucHJvdG8SBnpwcm90byJB",
-            "ChNQbGFjZUhvbGRlckZpc2hSYW5rEg4KBkZpc2hJZBgBIAEoBRIMCgRTaXpl",
-            "GAIgASgFEgwKBFJhbmsYAyABKAViBnByb3RvMw=="));
+            "CiFzdHJ1X3BsYWNlX2hvbGRlcl9maXNoX3JhbmsucHJvdG8SBnpwcm90byJC",
+            "ChNQbGFjZUhvbGRlckZpc2hSYW5rEg8KB2Zpc2hfaWQYASABKAUSDAoEc2l6",
+            "ZRgCIAEoBRIMCgRyYW5rGAMgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new PlaceHolderFishRank(this);
     }
 
-    /// <summary>Field number for the "FishId" field.</summary>
+    /// <summary>Field number for the "fish_id" field.</summary>
     public const int FishIdFieldNumber = 1;
     private int fishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "Size" field.</summary>
+    /// <summary>Field number for the "size" field.</summary>
     public const int SizeFieldNumber = 2;
     private int size_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "Rank" field.</summary>
+    /// <summary>Field number for the "rank" field.</summary>
     public const int RankFieldNumber = 3;
     private int rank_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

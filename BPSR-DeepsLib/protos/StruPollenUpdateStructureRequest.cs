@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CipzdHJ1X3BvbGxlbl91cGRhdGVfc3RydWN0dXJlX3JlcXVlc3QucHJvdG8S",
             "Bnpwcm90bxoic3RydV9ob21lX2xhbmRfaXRlbV9pbnN0YW5jZS5wcm90bxoc",
-            "c3RydV9zdHJ1Y3R1cmVfbGFuZF9vcC5wcm90byKJAQocUG9sbGVuVXBkYXRl",
-            "U3RydWN0dXJlUmVxdWVzdBIOCgZob21lSWQYASABKAMSIwoCb3AYAiABKAsy",
-            "Fy56cHJvdG8uU3RydWN0dXJlTGFuZE9wEjQKDnBvbGxlbkluc3RhbmNlGAMg",
-            "ASgLMhwuenByb3RvLkhvbWVMYW5kSXRlbUluc3RhbmNlYgZwcm90bzM="));
+            "c3RydV9zdHJ1Y3R1cmVfbGFuZF9vcC5wcm90byKLAQocUG9sbGVuVXBkYXRl",
+            "U3RydWN0dXJlUmVxdWVzdBIPCgdob21lX2lkGAEgASgDEiMKAm9wGAIgASgL",
+            "MhcuenByb3RvLlN0cnVjdHVyZUxhbmRPcBI1Cg9wb2xsZW5faW5zdGFuY2UY",
+            "AyABKAsyHC56cHJvdG8uSG9tZUxhbmRJdGVtSW5zdGFuY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomeLandItemInstanceReflection.Descriptor, global::Zproto.StruStructureLandOpReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new PollenUpdateStructureRequest(this);
     }
 
-    /// <summary>Field number for the "homeId" field.</summary>
+    /// <summary>Field number for the "home_id" field.</summary>
     public const int HomeIdFieldNumber = 1;
     private long homeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pollenInstance" field.</summary>
+    /// <summary>Field number for the "pollen_instance" field.</summary>
     public const int PollenInstanceFieldNumber = 3;
     private global::Zproto.HomeLandItemInstance pollenInstance_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

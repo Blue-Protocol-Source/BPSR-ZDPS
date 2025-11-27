@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CjtzdHJ1X25vdGlmeV9ob21lX2xhbmRfcGxheWVyX3Rhc2tfaW5mb191cGRh",
             "dGVfcmVxdWVzdC5wcm90bxIGenByb3RvGiVzdHJ1X2hvbWVfbGFuZF9wbGF5",
-            "ZXJfdGFza19pbmZvLnByb3RvIlwKKU5vdGlmeUhvbWVMYW5kUGxheWVyVGFz",
-            "a0luZm9VcGRhdGVSZXF1ZXN0Ei8KB25ld0luZm8YASABKAsyHi56cHJvdG8u",
-            "SG9tZUxhbmRQbGF5ZXJUYXNrSW5mb2IGcHJvdG8z"));
+            "ZXJfdGFza19pbmZvLnByb3RvIl0KKU5vdGlmeUhvbWVMYW5kUGxheWVyVGFz",
+            "a0luZm9VcGRhdGVSZXF1ZXN0EjAKCG5ld19pbmZvGAEgASgLMh4uenByb3Rv",
+            "LkhvbWVMYW5kUGxheWVyVGFza0luZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomeLandPlayerTaskInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new NotifyHomeLandPlayerTaskInfoUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "newInfo" field.</summary>
+    /// <summary>Field number for the "new_info" field.</summary>
     public const int NewInfoFieldNumber = 1;
     private global::Zproto.HomeLandPlayerTaskInfo newInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

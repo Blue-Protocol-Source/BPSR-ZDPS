@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X3JlY2VpdmVfc2NvcmVfcmV3YXJkX3BhcmFtLnByb3RvEgZ6cHJv",
-            "dG8iLQoXUmVjZWl2ZVNjb3JlUmV3YXJkUGFyYW0SEgoKc2NvcmVTdGFnZRgB",
-            "IAEoBWIGcHJvdG8z"));
+            "dG8iLgoXUmVjZWl2ZVNjb3JlUmV3YXJkUGFyYW0SEwoLc2NvcmVfc3RhZ2UY",
+            "ASABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ReceiveScoreRewardParam(this);
     }
 
-    /// <summary>Field number for the "scoreStage" field.</summary>
+    /// <summary>Field number for the "score_stage" field.</summary>
     public const int ScoreStageFieldNumber = 1;
     private int scoreStage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

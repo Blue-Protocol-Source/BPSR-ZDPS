@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3dvcmxkX3F1ZXN0X2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvIlAKDldvcmxkUXVlc3RJbmZvEhQKDGZpbmlzaFBv",
-            "aW50cxgBIAEoDRIPCgdyZXdhcmRzGAIgAygNEhcKD0V4Y2VlZGluZ1BvaW50",
-            "cxgDIAEoDWIGcHJvdG8z"));
+            "aXJ0eV9tYXNrLnByb3RvIlIKDldvcmxkUXVlc3RJbmZvEhUKDWZpbmlzaF9w",
+            "b2ludHMYASABKA0SDwoHcmV3YXJkcxgCIAMoDRIYChBleGNlZWRpbmdfcG9p",
+            "bnRzGAMgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new WorldQuestInfo(this);
     }
 
-    /// <summary>Field number for the "finishPoints" field.</summary>
+    /// <summary>Field number for the "finish_points" field.</summary>
     public const int FinishPointsFieldNumber = 1;
     private uint finishPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +108,7 @@ namespace Zproto {
       get { return rewards_; }
     }
 
-    /// <summary>Field number for the "ExceedingPoints" field.</summary>
+    /// <summary>Field number for the "exceeding_points" field.</summary>
     public const int ExceedingPointsFieldNumber = 3;
     private uint exceedingPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

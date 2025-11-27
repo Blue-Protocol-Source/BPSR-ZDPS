@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3JpZGVfc2tpbl9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byIkCgxSaWRlU2tpbkRhdGESFAoMYWN0aXZhdGVUaW1l",
-            "GAEgASgDYgZwcm90bzM="));
+            "dHlfbWFzay5wcm90byIlCgxSaWRlU2tpbkRhdGESFQoNYWN0aXZhdGVfdGlt",
+            "ZRgBIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new RideSkinData(this);
     }
 
-    /// <summary>Field number for the "activateTime" field.</summary>
+    /// <summary>Field number for the "activate_time" field.</summary>
     public const int ActivateTimeFieldNumber = 1;
     private long activateTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

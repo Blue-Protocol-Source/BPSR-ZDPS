@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X3dlZWtseV90b3dlcl9yZWNvcmQucHJvdG8SBnpwcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvImUKEVdlZWtseVRvd2VyUmVjb3JkEhEKCWJl",
-            "Z2luVGltZRgBIAEoAxIUCgxtYXhDbGltYlVwSWQYAiABKAUSFwoPYXdhcmRD",
-            "bGltYlVwSWRzGAMgAygFEg4KBnJ1bGVJZBgEIAEoBWIGcHJvdG8z"));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIm0KEVdlZWtseVRvd2VyUmVjb3JkEhIKCmJl",
+            "Z2luX3RpbWUYASABKAMSFwoPbWF4X2NsaW1iX3VwX2lkGAIgASgFEhoKEmF3",
+            "YXJkX2NsaW1iX3VwX2lkcxgDIAMoBRIPCgdydWxlX2lkGAQgASgFYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new WeeklyTowerRecord(this);
     }
 
-    /// <summary>Field number for the "beginTime" field.</summary>
+    /// <summary>Field number for the "begin_time" field.</summary>
     public const int BeginTimeFieldNumber = 1;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "maxClimbUpId" field.</summary>
+    /// <summary>Field number for the "max_climb_up_id" field.</summary>
     public const int MaxClimbUpIdFieldNumber = 2;
     private int maxClimbUpId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "awardClimbUpIds" field.</summary>
+    /// <summary>Field number for the "award_climb_up_ids" field.</summary>
     public const int AwardClimbUpIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_awardClimbUpIds_codec
         = pb::FieldCodec.ForInt32(26);
@@ -121,7 +122,7 @@ namespace Zproto {
       get { return awardClimbUpIds_; }
     }
 
-    /// <summary>Field number for the "ruleId" field.</summary>
+    /// <summary>Field number for the "rule_id" field.</summary>
     public const int RuleIdFieldNumber = 4;
     private int ruleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

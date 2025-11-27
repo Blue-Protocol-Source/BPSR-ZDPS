@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X25vdGlmeV9iZV90cmFuc2Zlcl9sZWFkZXJfcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvGhxzdHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIkwKHU5v",
-            "dGlmeUJlVHJhbnNmZXJMZWFkZXJSZXF1ZXN0EisKCmxlYWRlckRhdGEYASAB",
-            "KAsyFy56cHJvdG8uVXNlclN1bW1hcnlEYXRhYgZwcm90bzM="));
+            "bxIGenByb3RvGhxzdHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIk0KHU5v",
+            "dGlmeUJlVHJhbnNmZXJMZWFkZXJSZXF1ZXN0EiwKC2xlYWRlcl9kYXRhGAEg",
+            "ASgLMhcuenByb3RvLlVzZXJTdW1tYXJ5RGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyBeTransferLeaderRequest(this);
     }
 
-    /// <summary>Field number for the "leaderData" field.</summary>
+    /// <summary>Field number for the "leader_data" field.</summary>
     public const int LeaderDataFieldNumber = 1;
     private global::Zproto.UserSummaryData leaderData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

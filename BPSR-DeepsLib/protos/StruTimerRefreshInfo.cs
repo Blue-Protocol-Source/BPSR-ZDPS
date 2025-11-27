@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X3RpbWVyX3JlZnJlc2hfaW5mby5wcm90bxIGenByb3RvGhVzdHJ1",
-            "X2RpcnR5X21hc2sucHJvdG8iKwoQVGltZXJSZWZyZXNoSW5mbxIXCg9sYXN0",
-            "UmVmcmVzaFRpbWUYASABKANiBnByb3RvMw=="));
+            "X2RpcnR5X21hc2sucHJvdG8iLQoQVGltZXJSZWZyZXNoSW5mbxIZChFsYXN0",
+            "X3JlZnJlc2hfdGltZRgBIAEoA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new TimerRefreshInfo(this);
     }
 
-    /// <summary>Field number for the "lastRefreshTime" field.</summary>
+    /// <summary>Field number for the "last_refresh_time" field.</summary>
     public const int LastRefreshTimeFieldNumber = 1;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

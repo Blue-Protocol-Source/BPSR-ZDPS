@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CilzdHJ1X3VuaW9uX2dldF9raWxsX2Jvc3NfZGF0YV9yZXBseS5wcm90bxIG",
             "enByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxomc3RydV91bmlvbl9y",
-            "YWlkX2tpbGxfYm9zc19yZWNvcmQucHJvdG8iiwEKGVVuaW9uR2V0S2lsbEJv",
-            "c3NEYXRhUmVwbHkSDwoHa2lsbENudBgBIAEoBRI4Cg9raWxsQm9zc1JlY29y",
-            "ZHMYAiADKAsyHy56cHJvdG8uVW5pb25SYWlkS2lsbEJvc3NSZWNvcmQSIwoH",
-            "ZXJyQ29kZRgDIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "YWlkX2tpbGxfYm9zc19yZWNvcmQucHJvdG8ijwEKGVVuaW9uR2V0S2lsbEJv",
+            "c3NEYXRhUmVwbHkSEAoIa2lsbF9jbnQYASABKAUSOgoRa2lsbF9ib3NzX3Jl",
+            "Y29yZHMYAiADKAsyHy56cHJvdG8uVW5pb25SYWlkS2lsbEJvc3NSZWNvcmQS",
+            "JAoIZXJyX2NvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionRaidKillBossRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new UnionGetKillBossDataReply(this);
     }
 
-    /// <summary>Field number for the "killCnt" field.</summary>
+    /// <summary>Field number for the "kill_cnt" field.</summary>
     public const int KillCntFieldNumber = 1;
     private int killCnt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "killBossRecords" field.</summary>
+    /// <summary>Field number for the "kill_boss_records" field.</summary>
     public const int KillBossRecordsFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.UnionRaidKillBossRecord> _repeated_killBossRecords_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.UnionRaidKillBossRecord.Parser);
@@ -110,7 +110,7 @@ namespace Zproto {
       get { return killBossRecords_; }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X25vdGlmeV9sZWF2ZV90ZWFtX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "byI7ChZOb3RpZnlMZWF2ZVRlYW1SZXF1ZXN0Eg4KBmNoYXJJZBgBIAEoAxIR",
-            "CglsZWF2ZVR5cGUYAiABKAViBnByb3RvMw=="));
+            "byI9ChZOb3RpZnlMZWF2ZVRlYW1SZXF1ZXN0Eg8KB2NoYXJfaWQYASABKAMS",
+            "EgoKbGVhdmVfdHlwZRgCIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyLeaveTeamRequest(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "leaveType" field.</summary>
+    /// <summary>Field number for the "leave_type" field.</summary>
     public const int LeaveTypeFieldNumber = 2;
     private int leaveType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

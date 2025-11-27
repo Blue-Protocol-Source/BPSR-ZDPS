@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2dhc2hhX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIqUBCglHYXNoYUluZm8SCgoCaWQYASABKA0SEQoJZHJhd0Nv",
-            "dW50GAQgASgNEhMKC3JlZnJlc2hUaW1lGAUgASgDEg4KBndpc2hJZBgIIAEo",
-            "DRIRCgl3aXNoVmFsdWUYCSABKA0SFwoPd2lzaEZpbmlzaENvdW50GAogASgN",
-            "EhUKDXdpc2hSZXNldFRpbWUYCyABKAMSEQoJd2lzaExpbWl0GAwgASgNYgZw",
-            "cm90bzM="));
+            "YXNrLnByb3RvIq4BCglHYXNoYUluZm8SCgoCaWQYASABKA0SEgoKZHJhd19j",
+            "b3VudBgEIAEoDRIUCgxyZWZyZXNoX3RpbWUYBSABKAMSDwoHd2lzaF9pZBgI",
+            "IAEoDRISCgp3aXNoX3ZhbHVlGAkgASgNEhkKEXdpc2hfZmluaXNoX2NvdW50",
+            "GAogASgNEhcKD3dpc2hfcmVzZXRfdGltZRgLIAEoAxISCgp3aXNoX2xpbWl0",
+            "GAwgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -104,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "drawCount" field.</summary>
+    /// <summary>Field number for the "draw_count" field.</summary>
     public const int DrawCountFieldNumber = 4;
     private uint drawCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refreshTime" field.</summary>
+    /// <summary>Field number for the "refresh_time" field.</summary>
     public const int RefreshTimeFieldNumber = 5;
     private long refreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +128,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "wishId" field.</summary>
+    /// <summary>Field number for the "wish_id" field.</summary>
     public const int WishIdFieldNumber = 8;
     private uint wishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +140,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "wishValue" field.</summary>
+    /// <summary>Field number for the "wish_value" field.</summary>
     public const int WishValueFieldNumber = 9;
     private uint wishValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "wishFinishCount" field.</summary>
+    /// <summary>Field number for the "wish_finish_count" field.</summary>
     public const int WishFinishCountFieldNumber = 10;
     private uint wishFinishCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -164,7 +164,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "wishResetTime" field.</summary>
+    /// <summary>Field number for the "wish_reset_time" field.</summary>
     public const int WishResetTimeFieldNumber = 11;
     private long wishResetTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -176,7 +176,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "wishLimit" field.</summary>
+    /// <summary>Field number for the "wish_limit" field.</summary>
     public const int WishLimitFieldNumber = 12;
     private uint wishLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

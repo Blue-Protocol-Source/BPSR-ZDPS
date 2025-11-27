@@ -25,14 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X3JlcG9ydF9jaGF0LnByb3RvEgZ6cHJvdG8aIWVudW1fY2hpdF9j",
-            "aGF0X2NoYW5uZWxfdHlwZS5wcm90byJ6CgpSZXBvcnRDaGF0EjQKD2NoYXRD",
-            "aGFubmVsVHlwZRgBIAEoDjIbLnpwcm90by5DaGl0Q2hhdENoYW5uZWxUeXBl",
-            "EhEKCWNoYW5uZWxJZBgCIAEoCRIOCgZjaGF0SUQYAyABKAMSEwoLY2hhdENv",
-            "bnRlbnQYBCABKAliBnByb3RvMw=="));
+            "aGF0X2NoYW5uZWxfdHlwZS5wcm90byJ/CgpSZXBvcnRDaGF0EjYKEWNoYXRf",
+            "Y2hhbm5lbF90eXBlGAEgASgOMhsuenByb3RvLkNoaXRDaGF0Q2hhbm5lbFR5",
+            "cGUSEgoKY2hhbm5lbF9pZBgCIAEoCRIPCgdjaGF0X2lkGAMgASgDEhQKDGNo",
+            "YXRfY29udGVudBgEIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumChitChatChannelTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ReportChat), global::Zproto.ReportChat.Parser, new[]{ "ChatChannelType", "ChannelId", "ChatID", "ChatContent" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ReportChat), global::Zproto.ReportChat.Parser, new[]{ "ChatChannelType", "ChannelId", "ChatId", "ChatContent" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,7 +76,7 @@ namespace Zproto {
     public ReportChat(ReportChat other) : this() {
       chatChannelType_ = other.chatChannelType_;
       channelId_ = other.channelId_;
-      chatID_ = other.chatID_;
+      chatId_ = other.chatId_;
       chatContent_ = other.chatContent_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,7 +87,7 @@ namespace Zproto {
       return new ReportChat(this);
     }
 
-    /// <summary>Field number for the "chatChannelType" field.</summary>
+    /// <summary>Field number for the "chat_channel_type" field.</summary>
     public const int ChatChannelTypeFieldNumber = 1;
     private global::Zproto.ChitChatChannelType chatChannelType_ = global::Zproto.ChitChatChannelType.ChannelNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "channelId" field.</summary>
+    /// <summary>Field number for the "channel_id" field.</summary>
     public const int ChannelIdFieldNumber = 2;
     private string channelId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,19 +111,19 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "chatID" field.</summary>
-    public const int ChatIDFieldNumber = 3;
-    private long chatID_;
+    /// <summary>Field number for the "chat_id" field.</summary>
+    public const int ChatIdFieldNumber = 3;
+    private long chatId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long ChatID {
-      get { return chatID_; }
+    public long ChatId {
+      get { return chatId_; }
       set {
-        chatID_ = value;
+        chatId_ = value;
       }
     }
 
-    /// <summary>Field number for the "chatContent" field.</summary>
+    /// <summary>Field number for the "chat_content" field.</summary>
     public const int ChatContentFieldNumber = 4;
     private string chatContent_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +152,7 @@ namespace Zproto {
       }
       if (ChatChannelType != other.ChatChannelType) return false;
       if (ChannelId != other.ChannelId) return false;
-      if (ChatID != other.ChatID) return false;
+      if (ChatId != other.ChatId) return false;
       if (ChatContent != other.ChatContent) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -163,7 +163,7 @@ namespace Zproto {
       int hash = 1;
       if (ChatChannelType != global::Zproto.ChitChatChannelType.ChannelNull) hash ^= ChatChannelType.GetHashCode();
       if (ChannelId.Length != 0) hash ^= ChannelId.GetHashCode();
-      if (ChatID != 0L) hash ^= ChatID.GetHashCode();
+      if (ChatId != 0L) hash ^= ChatId.GetHashCode();
       if (ChatContent.Length != 0) hash ^= ChatContent.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -191,9 +191,9 @@ namespace Zproto {
         output.WriteRawTag(18);
         output.WriteString(ChannelId);
       }
-      if (ChatID != 0L) {
+      if (ChatId != 0L) {
         output.WriteRawTag(24);
-        output.WriteInt64(ChatID);
+        output.WriteInt64(ChatId);
       }
       if (ChatContent.Length != 0) {
         output.WriteRawTag(34);
@@ -217,9 +217,9 @@ namespace Zproto {
         output.WriteRawTag(18);
         output.WriteString(ChannelId);
       }
-      if (ChatID != 0L) {
+      if (ChatId != 0L) {
         output.WriteRawTag(24);
-        output.WriteInt64(ChatID);
+        output.WriteInt64(ChatId);
       }
       if (ChatContent.Length != 0) {
         output.WriteRawTag(34);
@@ -241,8 +241,8 @@ namespace Zproto {
       if (ChannelId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ChannelId);
       }
-      if (ChatID != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ChatID);
+      if (ChatId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ChatId);
       }
       if (ChatContent.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ChatContent);
@@ -265,8 +265,8 @@ namespace Zproto {
       if (other.ChannelId.Length != 0) {
         ChannelId = other.ChannelId;
       }
-      if (other.ChatID != 0L) {
-        ChatID = other.ChatID;
+      if (other.ChatId != 0L) {
+        ChatId = other.ChatId;
       }
       if (other.ChatContent.Length != 0) {
         ChatContent = other.ChatContent;
@@ -299,7 +299,7 @@ namespace Zproto {
             break;
           }
           case 24: {
-            ChatID = input.ReadInt64();
+            ChatId = input.ReadInt64();
             break;
           }
           case 34: {
@@ -334,7 +334,7 @@ namespace Zproto {
             break;
           }
           case 24: {
-            ChatID = input.ReadInt64();
+            ChatId = input.ReadInt64();
             break;
           }
           case 34: {

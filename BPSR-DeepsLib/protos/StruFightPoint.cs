@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2ZpZ2h0X3BvaW50LnByb3RvEgZ6cHJvdG8aG3N0cnVfZmlnaHRf",
-            "cG9pbnRfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIrQBCgpG",
-            "aWdodFBvaW50EhcKD3RvdGFsRmlnaHRQb2ludBgBIAEoBRI+Cg5maWdodFBv",
-            "aW50RGF0YRgCIAMoCzImLnpwcm90by5GaWdodFBvaW50LkZpZ2h0UG9pbnRE",
-            "YXRhRW50cnkaTQoTRmlnaHRQb2ludERhdGFFbnRyeRILCgNrZXkYASABKAUS",
-            "JQoFdmFsdWUYAiABKAsyFi56cHJvdG8uRmlnaHRQb2ludERhdGE6AjgBYgZw",
-            "cm90bzM="));
+            "cG9pbnRfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIrgBCgpG",
+            "aWdodFBvaW50EhkKEXRvdGFsX2ZpZ2h0X3BvaW50GAEgASgFEkAKEGZpZ2h0",
+            "X3BvaW50X2RhdGEYAiADKAsyJi56cHJvdG8uRmlnaHRQb2ludC5GaWdodFBv",
+            "aW50RGF0YUVudHJ5Gk0KE0ZpZ2h0UG9pbnREYXRhRW50cnkSCwoDa2V5GAEg",
+            "ASgFEiUKBXZhbHVlGAIgASgLMhYuenByb3RvLkZpZ2h0UG9pbnREYXRhOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFightPointDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new FightPoint(this);
     }
 
-    /// <summary>Field number for the "totalFightPoint" field.</summary>
+    /// <summary>Field number for the "total_fight_point" field.</summary>
     public const int TotalFightPointFieldNumber = 1;
     private int totalFightPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fightPointData" field.</summary>
+    /// <summary>Field number for the "fight_point_data" field.</summary>
     public const int FightPointDataFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.FightPointData>.Codec _map_fightPointData_codec
         = new pbc::MapField<int, global::Zproto.FightPointData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FightPointData.Parser), 18);

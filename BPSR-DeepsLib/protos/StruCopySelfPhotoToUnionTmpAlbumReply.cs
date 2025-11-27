@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjNzdHJ1X2NvcHlfc2VsZl9waG90b190b191bmlvbl90bXBfYWxidW1fcmVw",
-            "bHkucHJvdG8SBnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iYAoh",
-            "Q29weVNlbGZQaG90b1RvVW5pb25UbXBBbGJ1bVJlcGx5EhYKDmN1clVwbG9h",
-            "ZFRpbWVzGAEgASgFEiMKB2VyckNvZGUYAiABKA4yEi56cHJvdG8uRUVycm9y",
-            "Q29kZWIGcHJvdG8z"));
+            "bHkucHJvdG8SBnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iYwoh",
+            "Q29weVNlbGZQaG90b1RvVW5pb25UbXBBbGJ1bVJlcGx5EhgKEGN1cl91cGxv",
+            "YWRfdGltZXMYASABKAUSJAoIZXJyX2NvZGUYAiABKA4yEi56cHJvdG8uRUVy",
+            "cm9yQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CopySelfPhotoToUnionTmpAlbumReply(this);
     }
 
-    /// <summary>Field number for the "curUploadTimes" field.</summary>
+    /// <summary>Field number for the "cur_upload_times" field.</summary>
     public const int CurUploadTimesFieldNumber = 1;
     private int curUploadTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "errCode" field.</summary>
+    /// <summary>Field number for the "err_code" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

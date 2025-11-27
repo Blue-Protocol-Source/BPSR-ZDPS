@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjRzdHJ1X2NvbW11bml0eV9idWlsZF9mdXJuaXR1cmVfcmVjZWl2ZV9yZXF1",
-            "ZXN0LnByb3RvEgZ6cHJvdG8iSQolQ29tbXVuaXR5QnVpbGRGdXJuaXR1cmVS",
-            "ZWNlaXZlUmVxdWVzdBIRCglidWlsZFV1aWQYASABKAMSDQoFaXNBbGwYAiAB",
-            "KAhiBnByb3RvMw=="));
+            "ZXN0LnByb3RvEgZ6cHJvdG8iSwolQ29tbXVuaXR5QnVpbGRGdXJuaXR1cmVS",
+            "ZWNlaXZlUmVxdWVzdBISCgpidWlsZF91dWlkGAEgASgDEg4KBmlzX2FsbBgC",
+            "IAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new CommunityBuildFurnitureReceiveRequest(this);
     }
 
-    /// <summary>Field number for the "buildUuid" field.</summary>
+    /// <summary>Field number for the "build_uuid" field.</summary>
     public const int BuildUuidFieldNumber = 1;
     private long buildUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "isAll" field.</summary>
+    /// <summary>Field number for the "is_all" field.</summary>
     public const int IsAllFieldNumber = 2;
     private bool isAll_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

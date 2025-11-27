@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X2xlYWRlcl9nZXRfYXBwbHlfbGlzdF9yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8iLgoZTGVhZGVyR2V0QXBwbHlMaXN0UmVxdWVzdBIRCglpc1JlZnJl",
-            "c2gYAiABKAhiBnByb3RvMw=="));
+            "cHJvdG8iLwoZTGVhZGVyR2V0QXBwbHlMaXN0UmVxdWVzdBISCgppc19yZWZy",
+            "ZXNoGAIgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new LeaderGetApplyListRequest(this);
     }
 
-    /// <summary>Field number for the "isRefresh" field.</summary>
+    /// <summary>Field number for the "is_refresh" field.</summary>
     public const int IsRefreshFieldNumber = 2;
     private bool isRefresh_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

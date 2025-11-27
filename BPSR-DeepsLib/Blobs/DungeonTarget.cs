@@ -16,10 +16,20 @@ public class DungeonTarget : BlobType
     {
         switch (index) {
             case Zproto.DungeonTarget.TargetDataFieldNumber:
-                TargetData = blob.ReadHashMap<DungeonTargetData>();
+                TargetData = blob.ReadHashMap<int, DungeonTargetData>();
                 return true;
             default:
                 return false;
         }
+    }
+
+    public static implicit operator Zproto.DungeonTarget(DungeonTarget dungeonTarget)
+    {
+        var target = new Zproto.DungeonTarget();
+        foreach (var item in dungeonTarget.TargetData)
+        {
+            target.TargetData.Add(item.Key, item.Value);
+        }
+        return target;
     }
 }

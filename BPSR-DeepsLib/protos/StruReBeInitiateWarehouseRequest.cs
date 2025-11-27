@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X3JlX2JlX2luaXRpYXRlX3dhcmVob3VzZV9yZXF1ZXN0LnByb3Rv",
-            "EgZ6cHJvdG8iVwocUmVCZUluaXRpYXRlV2FyZWhvdXNlUmVxdWVzdBITCgtX",
-            "YXJlaG91c2VJZBgBIAEoAxINCgVhZ3JlZRgCIAEoCBITCgtwcmVzaWRlbnRJ",
-            "ZBgDIAEoA2IGcHJvdG8z"));
+            "EgZ6cHJvdG8iWQocUmVCZUluaXRpYXRlV2FyZWhvdXNlUmVxdWVzdBIUCgx3",
+            "YXJlaG91c2VfaWQYASABKAMSDQoFYWdyZWUYAiABKAgSFAoMcHJlc2lkZW50",
+            "X2lkGAMgASgDYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ReBeInitiateWarehouseRequest(this);
     }
 
-    /// <summary>Field number for the "WarehouseId" field.</summary>
+    /// <summary>Field number for the "warehouse_id" field.</summary>
     public const int WarehouseIdFieldNumber = 1;
     private long warehouseId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "presidentId" field.</summary>
+    /// <summary>Field number for the "president_id" field.</summary>
     public const int PresidentIdFieldNumber = 3;
     private long presidentId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

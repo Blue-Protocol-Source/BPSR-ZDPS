@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CjpzdHJ1X25vdGlmeV9saWZlX3Byb2Zlc3Npb25fd29ya19oaXN0b3J5X2No",
             "YW5nZV9pbmZvLnByb3RvEgZ6cHJvdG8aJHN0cnVfbGlmZV9wcm9mZXNzaW9u",
-            "X3dvcmtfaW5mby5wcm90byJeCilOb3RpZnlMaWZlUHJvZmVzc2lvbldvcmtI",
-            "aXN0b3J5Q2hhbmdlSW5mbxIxCgl3b3JrSW5mb3MYASADKAsyHi56cHJvdG8u",
-            "TGlmZVByb2Zlc3Npb25Xb3JrSW5mb2IGcHJvdG8z"));
+            "X3dvcmtfaW5mby5wcm90byJfCilOb3RpZnlMaWZlUHJvZmVzc2lvbldvcmtI",
+            "aXN0b3J5Q2hhbmdlSW5mbxIyCgp3b3JrX2luZm9zGAEgAygLMh4uenByb3Rv",
+            "LkxpZmVQcm9mZXNzaW9uV29ya0luZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLifeProfessionWorkInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new NotifyLifeProfessionWorkHistoryChangeInfo(this);
     }
 
-    /// <summary>Field number for the "workInfos" field.</summary>
+    /// <summary>Field number for the "work_infos" field.</summary>
     public const int WorkInfosFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.LifeProfessionWorkInfo> _repeated_workInfos_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.LifeProfessionWorkInfo.Parser);

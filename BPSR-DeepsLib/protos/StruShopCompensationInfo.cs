@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X3Nob3BfY29tcGVuc2F0aW9uX2luZm8ucHJvdG8SBnpwcm90bxoV",
-            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIj0KFFNob3BDb21wZW5zYXRpb25JbmZv",
-            "EhUKDWVudG9yU3RvcmVOdW0YASABKAMSDgoGYnV5TnVtGAIgASgDYgZwcm90",
-            "bzM="));
+            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIkAKFFNob3BDb21wZW5zYXRpb25JbmZv",
+            "EhcKD2VudG9yX3N0b3JlX251bRgBIAEoAxIPCgdidXlfbnVtGAIgASgDYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ShopCompensationInfo(this);
     }
 
-    /// <summary>Field number for the "entorStoreNum" field.</summary>
+    /// <summary>Field number for the "entor_store_num" field.</summary>
     public const int EntorStoreNumFieldNumber = 1;
     private long entorStoreNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buyNum" field.</summary>
+    /// <summary>Field number for the "buy_num" field.</summary>
     public const int BuyNumFieldNumber = 2;
     private long buyNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

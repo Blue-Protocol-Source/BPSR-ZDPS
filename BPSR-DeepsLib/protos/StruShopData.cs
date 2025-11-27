@@ -27,18 +27,18 @@ namespace Zproto {
             "ChRzdHJ1X3Nob3BfZGF0YS5wcm90bxIGenByb3RvGhxzdHJ1X3BsYXllcl9i",
             "dXlfcmVjb3JkLnByb3RvGiFzdHJ1X3Nob3BfY29tcGVuc2F0aW9uX2RhdGEu",
             "cHJvdG8aHnN0cnVfc2hvcF9yZWZyZXNoX3JlY29yZC5wcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvIvsDCghTaG9wRGF0YRI2CgtyZWZyZXNoTGlzdBgB",
-            "IAMoCzIhLnpwcm90by5TaG9wRGF0YS5SZWZyZXNoTGlzdEVudHJ5EkIKEW5v",
-            "cm1hbFNob3BSZWNvcmRzGAIgAygLMicuenByb3RvLlNob3BEYXRhLk5vcm1h",
-            "bFNob3BSZWNvcmRzRW50cnkSQgoRc2Vhc29uU2hvcFJlY29yZHMYAyADKAsy",
-            "Jy56cHJvdG8uU2hvcERhdGEuU2Vhc29uU2hvcFJlY29yZHNFbnRyeRI6ChRj",
-            "b21wZW5zYXRpb25JdGVtRGF0YRgEIAEoCzIcLnpwcm90by5TaG9wQ29tcGVu",
-            "c2F0aW9uRGF0YRpNChBSZWZyZXNoTGlzdEVudHJ5EgsKA2tleRgBIAEoBRIo",
-            "CgV2YWx1ZRgCIAEoCzIZLnpwcm90by5TaG9wUmVmcmVzaFJlY29yZDoCOAEa",
-            "UQoWTm9ybWFsU2hvcFJlY29yZHNFbnRyeRILCgNrZXkYASABKAUSJgoFdmFs",
-            "dWUYAiABKAsyFy56cHJvdG8uUGxheWVyQnV5UmVjb3JkOgI4ARpRChZTZWFz",
-            "b25TaG9wUmVjb3Jkc0VudHJ5EgsKA2tleRgBIAEoBRImCgV2YWx1ZRgCIAEo",
-            "CzIXLnpwcm90by5QbGF5ZXJCdXlSZWNvcmQ6AjgBYgZwcm90bzM="));
+            "aXJ0eV9tYXNrLnByb3RvIoIECghTaG9wRGF0YRI3CgxyZWZyZXNoX2xpc3QY",
+            "ASADKAsyIS56cHJvdG8uU2hvcERhdGEuUmVmcmVzaExpc3RFbnRyeRJEChNu",
+            "b3JtYWxfc2hvcF9yZWNvcmRzGAIgAygLMicuenByb3RvLlNob3BEYXRhLk5v",
+            "cm1hbFNob3BSZWNvcmRzRW50cnkSRAoTc2Vhc29uX3Nob3BfcmVjb3JkcxgD",
+            "IAMoCzInLnpwcm90by5TaG9wRGF0YS5TZWFzb25TaG9wUmVjb3Jkc0VudHJ5",
+            "EjwKFmNvbXBlbnNhdGlvbl9pdGVtX2RhdGEYBCABKAsyHC56cHJvdG8uU2hv",
+            "cENvbXBlbnNhdGlvbkRhdGEaTQoQUmVmcmVzaExpc3RFbnRyeRILCgNrZXkY",
+            "ASABKAUSKAoFdmFsdWUYAiABKAsyGS56cHJvdG8uU2hvcFJlZnJlc2hSZWNv",
+            "cmQ6AjgBGlEKFk5vcm1hbFNob3BSZWNvcmRzRW50cnkSCwoDa2V5GAEgASgF",
+            "EiYKBXZhbHVlGAIgASgLMhcuenByb3RvLlBsYXllckJ1eVJlY29yZDoCOAEa",
+            "UQoWU2Vhc29uU2hvcFJlY29yZHNFbnRyeRILCgNrZXkYASABKAUSJgoFdmFs",
+            "dWUYAiABKAsyFy56cHJvdG8uUGxheWVyQnV5UmVjb3JkOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPlayerBuyRecordReflection.Descriptor, global::Zproto.StruShopCompensationDataReflection.Descriptor, global::Zproto.StruShopRefreshRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       return new ShopData(this);
     }
 
-    /// <summary>Field number for the "refreshList" field.</summary>
+    /// <summary>Field number for the "refresh_list" field.</summary>
     public const int RefreshListFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.ShopRefreshRecord>.Codec _map_refreshList_codec
         = new pbc::MapField<int, global::Zproto.ShopRefreshRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ShopRefreshRecord.Parser), 10);
@@ -108,7 +108,7 @@ namespace Zproto {
       get { return refreshList_; }
     }
 
-    /// <summary>Field number for the "normalShopRecords" field.</summary>
+    /// <summary>Field number for the "normal_shop_records" field.</summary>
     public const int NormalShopRecordsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.PlayerBuyRecord>.Codec _map_normalShopRecords_codec
         = new pbc::MapField<int, global::Zproto.PlayerBuyRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.PlayerBuyRecord.Parser), 18);
@@ -119,7 +119,7 @@ namespace Zproto {
       get { return normalShopRecords_; }
     }
 
-    /// <summary>Field number for the "seasonShopRecords" field.</summary>
+    /// <summary>Field number for the "season_shop_records" field.</summary>
     public const int SeasonShopRecordsFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.PlayerBuyRecord>.Codec _map_seasonShopRecords_codec
         = new pbc::MapField<int, global::Zproto.PlayerBuyRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.PlayerBuyRecord.Parser), 26);
@@ -130,7 +130,7 @@ namespace Zproto {
       get { return seasonShopRecords_; }
     }
 
-    /// <summary>Field number for the "compensationItemData" field.</summary>
+    /// <summary>Field number for the "compensation_item_data" field.</summary>
     public const int CompensationItemDataFieldNumber = 4;
     private global::Zproto.ShopCompensationData compensationItemData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

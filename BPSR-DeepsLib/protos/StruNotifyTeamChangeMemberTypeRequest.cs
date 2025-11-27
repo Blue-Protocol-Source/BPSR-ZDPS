@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "CjFzdHJ1X25vdGlmeV90ZWFtX2NoYW5nZV9tZW1iZXJfdHlwZV9yZXF1ZXN0",
             "LnByb3RvEgZ6cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGh1lbnVt",
-            "X2VfdGVhbV9tZW1iZXJfdHlwZS5wcm90byKNAQohTm90aWZ5VGVhbUNoYW5n",
-            "ZU1lbWJlclR5cGVSZXF1ZXN0EiUKCWVycm9yQ29kZRgBIAEoDjISLnpwcm90",
-            "by5FRXJyb3JDb2RlEi8KDnRlYW1NZW1iZXJUeXBlGAIgASgOMhcuenByb3Rv",
-            "LkVUZWFtTWVtYmVyVHlwZRIQCgh0YXJnZXRJZBgDIAEoBWIGcHJvdG8z"));
+            "X2VfdGVhbV9tZW1iZXJfdHlwZS5wcm90byKRAQohTm90aWZ5VGVhbUNoYW5n",
+            "ZU1lbWJlclR5cGVSZXF1ZXN0EiYKCmVycm9yX2NvZGUYASABKA4yEi56cHJv",
+            "dG8uRUVycm9yQ29kZRIxChB0ZWFtX21lbWJlcl90eXBlGAIgASgOMhcuenBy",
+            "b3RvLkVUZWFtTWVtYmVyVHlwZRIRCgl0YXJnZXRfaWQYAyABKAViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.EnumETeamMemberTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new NotifyTeamChangeMemberTypeRequest(this);
     }
 
-    /// <summary>Field number for the "errorCode" field.</summary>
+    /// <summary>Field number for the "error_code" field.</summary>
     public const int ErrorCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errorCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "teamMemberType" field.</summary>
+    /// <summary>Field number for the "team_member_type" field.</summary>
     public const int TeamMemberTypeFieldNumber = 2;
     private global::Zproto.ETeamMemberType teamMemberType_ = global::Zproto.ETeamMemberType.Five;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "targetId" field.</summary>
+    /// <summary>Field number for the "target_id" field.</summary>
     public const int TargetIdFieldNumber = 3;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

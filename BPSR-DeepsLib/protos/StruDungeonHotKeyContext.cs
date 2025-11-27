@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2R1bmdlb25faG90X2tleV9jb250ZXh0LnByb3RvEgZ6cHJvdG8a",
-            "D3N0cnVfaXRlbS5wcm90byJFChREdW5nZW9uSG90S2V5Q29udGV4dBIOCgZj",
-            "aGFySWQYASABKAMSHQoHdXNlSXRlbRgCIAEoCzIMLnpwcm90by5JdGVtYgZw",
-            "cm90bzM="));
+            "D3N0cnVfaXRlbS5wcm90byJHChREdW5nZW9uSG90S2V5Q29udGV4dBIPCgdj",
+            "aGFyX2lkGAEgASgDEh4KCHVzZV9pdGVtGAIgASgLMgwuenByb3RvLkl0ZW1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new DungeonHotKeyContext(this);
     }
 
-    /// <summary>Field number for the "charId" field.</summary>
+    /// <summary>Field number for the "char_id" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "useItem" field.</summary>
+    /// <summary>Field number for the "use_item" field.</summary>
     public const int UseItemFieldNumber = 2;
     private global::Zproto.Item useItem_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
