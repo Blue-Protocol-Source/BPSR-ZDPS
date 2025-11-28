@@ -175,24 +175,6 @@ namespace BPSR_ZDPS
                     continue;
                 }
 
-                /*if (HelperMethods.SaveNextFrame)
-                {
-                    HelperMethods.SaveNextFrame = false;
-
-                    unsafe
-                    {
-
-                        Silk.NET.Direct3D11.ID3D11Texture2D* tex = HelperMethods.offscreenImGuiRenderer.RenderToTexture(512, 512, () =>
-                        {
-                            ImGui.Text("Hidden Window Rendering");
-                            ImGui.Button("Component Button");
-                        });
-
-                        TextureSaveUtil.SaveTextureAsPng(HelperMethods._manager.Device, HelperMethods._manager.DeviceContext, tex, "output.png");
-                    }
-                }*/
-                ImGui.SetCurrentContext(guiContext);
-                ImGuiImplD3D11.SetCurrentContext(guiContext);
                 ImGuiImplD3D11.NewFrame();
                 ImGuiImplGLFW.NewFrame();
                 ImGui.NewFrame();
