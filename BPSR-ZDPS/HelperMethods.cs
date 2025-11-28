@@ -17,6 +17,7 @@ namespace BPSR_ZDPS
         public static GLFWwindowPtr GLFWwindow;
         public static IntPtr MainWindowPlatformHandleRaw;
         public static Dictionary<string, ImFontPtr> Fonts = new();
+        public static bool SaveNextFrame = false;
 
         public static class DataTables
         {

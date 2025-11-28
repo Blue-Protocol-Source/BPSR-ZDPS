@@ -609,6 +609,39 @@ namespace BPSR_ZDPS.Windows
                     ImGui.CloseCurrentPopup();
                 }
 
+                if (ImGui.Button("Make Tex2D"))
+                {
+                    HelperMethods.SaveNextFrame = true;
+                }
+
+                if (HelperMethods.SaveNextFrame == true)
+                {
+                    unsafe
+                    {
+                        if (imTexTest == null || counter < 5)
+                        {
+                            Silk.NET.Direct3D11.ID3D11Texture2D* tex = OffscreenImGuiRenderer.RenderToTexture(512, 512, () =>
+                            {
+                                ImGui.Begin("Hidden Window");
+                                ImGui.Text("Hidden Window Rendering");
+                                ImGui.Button("Component Button");
+                                ImGui.End();
+                            });
+
+                            Silk.NET.Direct3D11.ID3D11ShaderResourceView* rtv = null;
+                            ((Silk.NET.Direct3D11.ID3D11Device1*)OffscreenImGuiRenderer.D3D11Manager.Device)->CreateShaderResourceView((Silk.NET.Direct3D11.ID3D11Resource*)tex, null, &rtv);
+                            imTexTest = new ImTextureRef(null, rtv);
+                            counter++;
+
+                            //TextureSaveUtil.SaveTextureAsPng(OffscreenImGuiRenderer.D3D11Manager.Device, OffscreenImGuiRenderer.D3D11Manager.DeviceContext, tex, "output.png");
+                        }
+
+                        ImGui.BeginChild("##dbgChild", ImGuiChildFlags.Borders);
+                        ImGui.Image(imTexTest.Value, new Vector2(512, 512));
+                        ImGui.EndChild();
+                    }
+                }
+
                 ImFileBrowser.Draw();
 
                 ImGui.EndPopup();
@@ -616,6 +649,8 @@ namespace BPSR_ZDPS.Windows
 
             ImGui.PopID();
         }
+        static int counter = 0;
+        static ImTextureRef? imTexTest = null;
 
         private static void Save(MainWindow mainWindow)
         {
