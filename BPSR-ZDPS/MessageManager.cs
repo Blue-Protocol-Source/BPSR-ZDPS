@@ -688,14 +688,13 @@ namespace BPSR_ZDPS
                     continue;
                 }
 
-                switch (entity.EntType)
+                ProcessAttrs(entity.Uuid, attrCollection.Attrs);
+
+                /*switch (entity.EntType)
                 {
                     case EEntityType.EntMonster:
-                        {
-                            ProcessAttrs(entity.Uuid, attrCollection.Attrs);
-                            break;
-                        }
                     case EEntityType.EntChar:
+                    case EEntityType.EntField:
                         {
                             ProcessAttrs(entity.Uuid, attrCollection.Attrs);
                             break;
@@ -709,7 +708,7 @@ namespace BPSR_ZDPS
                         break;
                     default:
                         break;
-                }
+                }*/
             }
         }
 
