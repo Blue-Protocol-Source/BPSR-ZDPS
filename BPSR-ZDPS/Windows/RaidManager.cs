@@ -36,6 +36,8 @@ namespace BPSR_ZDPS.Windows
         static float EntityFilterSectionHeight = 0.0f;
         static float SkillFilterSectionHeight = 0.0f;
 
+        static bool HasBoundEvents = false;
+
         public static void Open()
         {
             RunOnceDelayed = 0;
@@ -52,23 +54,27 @@ namespace BPSR_ZDPS.Windows
             {
                 HasInitBindings = true;
                 EncounterManager.EncounterStart += RaidManager_EncounterStart;
-                EncounterManager.EncounterEnd += RaidManager_EncounterEnd;
+                EncounterManager.EncounterEndFinal += RaidManager_EncounterEnd;
             }
         }
 
-        private static void RaidManager_EncounterEnd(EventArgs e)
+        private static void RaidManager_EncounterEnd(EncounterEndFinalData e)
         {
-            foreach (var trackedEntity in TrackedEntities)
-            {
-                EncounterManager.Current.GetOrCreateEntity(trackedEntity.Key).RemoveEventHandlers();
-            }
+            HasBoundEvents = false;
+            EncounterManager.Current.RemoveEventHandlers();
         }
 
         private static void RaidManager_EncounterStart(EventArgs e)
         {
-            foreach (var trackedEntity in TrackedEntities)
+            BindCurrentEncounterEvents();
+        }
+
+        private static void BindCurrentEncounterEvents()
+        {
+            if (!HasBoundEvents)
             {
-                EncounterManager.Current.GetOrCreateEntity(trackedEntity.Key).SkillActivated += RaidManager_Entity_SkillActivated;
+                HasBoundEvents = true;
+                EncounterManager.Current.SkillActivated += RaidManager_Entity_SkillActivated;
             }
         }
 
@@ -262,7 +268,7 @@ namespace BPSR_ZDPS.Windows
                                             if (ImGui.Button($"{FASIcons.Minus}##RemoveBtn_{matchIdx}", new Vector2(30, 30)))
                                             {
                                                 TrackedEntities.Remove(match.Value.UUID);
-                                                EncounterManager.Current.GetOrCreateEntity(match.Value.UUID).SkillActivated -= RaidManager_Entity_SkillActivated;
+                                                BindCurrentEncounterEvents();
                                             }
                                             ImGui.PopFont();
                                             ImGui.PopStyleColor();
@@ -274,7 +280,7 @@ namespace BPSR_ZDPS.Windows
                                             if (ImGui.Button($"{FASIcons.Plus}##AddBtn_{matchIdx}", new Vector2(30, 30)))
                                             {
                                                 TrackedEntities.Add(match.Value.UUID, new List<TrackedSkill>());
-                                                EncounterManager.Current.GetOrCreateEntity(match.Value.UUID).SkillActivated += RaidManager_Entity_SkillActivated;
+                                                BindCurrentEncounterEvents();
                                             }
                                             ImGui.PopFont();
                                             ImGui.PopStyleColor();
@@ -381,6 +387,7 @@ namespace BPSR_ZDPS.Windows
                             TrackedSkills.Add(SelectedSkill.SkillId, SelectedSkill);
                             SelectedSkill = null;
                             SelectedSkillCooldown = 0;
+                            BindCurrentEncounterEvents();
                         }
                         ImGui.EndDisabled();
                         if (SelectedSkill == null)
@@ -392,23 +399,6 @@ namespace BPSR_ZDPS.Windows
 
                     }
                     SkillFilterSectionHeight = ImGui.GetCursorPosY() - skillFilterStartPos;
-
-                    // Debug buttons
-                    if (false)
-                    {
-                        if (ImGui.Button("Bind All Test"))
-                        {
-                            AddEventHandlersToEntities();
-                        }
-                        ImGui.SameLine();
-                        if (ImGui.Button("Unbind All Test"))
-                        {
-                            foreach (var trackedEntity in TrackedEntities)
-                            {
-                                EncounterManager.Current.GetOrCreateEntity(trackedEntity.Key).RemoveEventHandlers();
-                            }
-                        }
-                    }
                 }
                 else
                 {
@@ -482,17 +472,6 @@ namespace BPSR_ZDPS.Windows
                 MenuBarButtonWidth = ImGui.GetItemRectSize().X;
 
                 ImGui.EndMenuBar();
-            }
-        }
-
-        public static void AddEventHandlersToEntities()
-        {
-            // TODO: Loop through each SelectedEntityUuids and bind the event handler for skill activation
-            // This should be executed whenever a new Encounter is started so that it continues to update as new ones occur
-            // As Encounters end, handlers will need to be removed (this may be handled on the Entity side already)
-            foreach (var trackedEntity in TrackedEntities)
-            {
-                EncounterManager.Current.GetOrCreateEntity(trackedEntity.Key).SkillActivated += RaidManager_Entity_SkillActivated;
             }
         }
 

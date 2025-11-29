@@ -218,6 +218,9 @@ namespace BPSR_ZDPS
         public ulong TotalNpcDeaths { get; set; } = 0;
         public bool IsWipe { get; set; } = false;
 
+        public delegate void SkillActivatedEventHandler(object sender, SkillActivatedEventArgs e);
+        public event SkillActivatedEventHandler SkillActivated;
+
         public EncounterExData ExData { get; set; } = new();
         public byte[] ExDataBlob {  get; set; }
 
@@ -335,6 +338,7 @@ namespace BPSR_ZDPS
             }
             else if (key == "AttrSkillId")
             {
+                OnSkillActivated(new SkillActivatedEventArgs { CasterUuid = uuid, SkillId = (int)value, ActivationDateTime = DateTime.Now });
                 entity.RegisterSkillActivation((int)value);
             }
             else if (key == "AttrState")
@@ -504,6 +508,16 @@ namespace BPSR_ZDPS
                 }
             }
             GetOrCreateEntity(entityUuid).NotifyBuffEvent(buffEventType, buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId, DateTime.Now.Subtract(EncounterManager.Current.StartTime));
+        }
+
+        protected virtual void OnSkillActivated(SkillActivatedEventArgs e)
+        {
+            SkillActivated?.Invoke(this, e);
+        }
+
+        public void RemoveEventHandlers()
+        {
+            SkillActivated = null;
         }
     }
 

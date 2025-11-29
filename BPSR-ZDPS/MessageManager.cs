@@ -52,12 +52,31 @@ namespace BPSR_ZDPS
 
             netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.SyncDungeonDirtyData, ProcessSyncDungeonDirtyData);
 
+            netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.NotifyAllMemberReady, ProcessNotifyAllMemberReady);
+            netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.NotifyCaptainReady, ProcessNotifyCaptainReady);
+
             netCap.RegisterMatchNotifyHandler(BPSR_DeepsLib.ServiceMethods.MatchNtf.EnterMatchResult, ProcessEnterMatchResult);
             netCap.RegisterMatchNotifyHandler(BPSR_DeepsLib.ServiceMethods.MatchNtf.CancelMatchResult, ProcessCancelMatchResult);
             netCap.RegisterMatchNotifyHandler(BPSR_DeepsLib.ServiceMethods.MatchNtf.MatchReadyStatus, ProcessMatchReadyStatus);
 
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NoticeUpdateTeamInfo, ProcessNoticeUpdateTeamInfo);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NoticeUpdateTeamMemberInfo, ProcessNoticeUpdateTeamMemberInfo);
+            //
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyTeamActivityState, ProcessNotifyTeamActivityState);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.TeamActivityResult, ProcessTeamActivityResult);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.TeamActivityListResult, ProcessTeamActivityListResult);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.TeamActivityVoteResult, ProcessTeamActivityVoteResult);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyCharMatchResult, ProcessNotifyCharMatchResult);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyTeamMatchResult, ProcessNotifyTeamMatchResult);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyCharAbortMatch, ProcessNotifyCharAbortMatch);
+            //
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.UpdateTeamMemBeCall, ProcessUpdateTeamMemBeCall);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyTeamMemBeCall, ProcessNotifyTeamMemBeCall);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyTeamMemBeCallResult, ProcessNotifyTeamMemBeCallResult);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyTeamEnterErr, ProcessNotifyTeamEnterErr);
+
+            // Uncomment to debug print unhandled events
+            //netCap.RegisterUnhandledHandler(ProcessUnhandled);
 
             netCap.Start();
             System.Diagnostics.Debug.WriteLine("MessageManager.InitializeCapturing : Capturing Started...");
@@ -99,6 +118,64 @@ namespace BPSR_ZDPS
             return null;
         }
 
+        public static void ProcessUnhandled(NotifyId notifyId, ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine($"ProcessUnhandled ServiceId:{(EServiceId)notifyId.ServiceId} MethodId:{notifyId.MethodId} Payload.Length:{payloadBuffer.Length}");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+        }
+
+        public static void ProcessNotifyAllMemberReady(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNotifyAllMemberReady");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = WorldNtf.Types.NotifyAllMemberReady.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            // This is called to open the Ready Check UI (vOpenOrClose will always be true)
+            NotificationAlertManager.PlayNotifyAudio(NotificationAlertManager.NotificationType.ReadyCheck);
+        }
+
+        public static void ProcessNotifyCaptainReady(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNotifyCaptainReady");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = WorldNtf.Types.NotifyCaptainReady.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            if (vData.VCharId == AppState.PlayerUID)
+            {
+                // Current player is "responding" to the Ready Check
+                if (vData.VReadyInfo.IsReady)
+                {
+                    // Player responded "Ready"
+                }
+                else
+                {
+                    // Player responded "Not Ready" or did not respond in time
+                }
+                NotificationAlertManager.StopNotifyAudio();
+            }
+        }
+
         public static void ProcessNoticeUpdateTeamInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             //System.Diagnostics.Debug.WriteLine("ProcessNoticeUpdateTeamInfo");
@@ -114,7 +191,7 @@ namespace BPSR_ZDPS
                 return;
             }
 
-            //System.Diagnostics.Debug.WriteLine(vData);
+            GrpcTeamManager.ProcessNoticeUpdateTeamInfo(vData, extraData);
         }
 
         public static void ProcessNoticeUpdateTeamMemberInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
@@ -132,13 +209,222 @@ namespace BPSR_ZDPS
                 return;
             }
 
+            GrpcTeamManager.ProcessNoticeUpdateTeamMemberInfo(vData, extraData);
+        }
+
+        public static void ProcessNotifyTeamActivityState(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNotifyTeamActivityState");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyTeamActivityState.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            GrpcTeamManager.ProcessNotifyTeamActivityState(vData, extraData);
+        }
+
+        public static void ProcessTeamActivityResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessTeamActivityResult");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.TeamActivityResult.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            GrpcTeamManager.ProcessTeamActivityResult(vData, extraData);
+        }
+
+        public static void ProcessTeamActivityListResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessTeamActivityListResult");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.TeamActivityListResult.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            GrpcTeamManager.ProcessTeamActivityListResult(vData, extraData);
+        }
+
+        public static void ProcessTeamActivityVoteResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessTeamActivityVoteResult");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.TeamActivityVoteResult.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            GrpcTeamManager.ProcessTeamActivityVoteResult(vData, extraData);
+        }
+
+        public static void ProcessNotifyCharMatchResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine("ProcessNotifyCharMatchResult");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyCharMatchResult.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            System.Diagnostics.Debug.WriteLine(vData);
+        }
+
+        public static void ProcessNotifyTeamMatchResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine("ProcessNotifyTeamMatchResult");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyTeamMatchResult.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            System.Diagnostics.Debug.WriteLine(vData);
+        }
+
+        public static void ProcessNotifyCharAbortMatch(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine("ProcessNotifyCharAbortMatch");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyCharAbortMatch.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            System.Diagnostics.Debug.WriteLine(vData);
+        }
+
+        public static void ProcessUpdateTeamMemBeCall(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine("ProcessUpdateTeamMemBeCall");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.UpdateTeamMemBeCall.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            //System.Diagnostics.Debug.WriteLine(vData);
+        }
+
+        public static void ProcessNotifyTeamMemBeCall(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine("ProcessNotifyTeamMemBeCall");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyTeamMemBeCall.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            //System.Diagnostics.Debug.WriteLine(vData);
+        }
+
+        public static void ProcessNotifyTeamMemBeCallResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine("ProcessNotifyTeamMemBeCallResult");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyTeamMemBeCallResult.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            //System.Diagnostics.Debug.WriteLine(vData);
+        }
+
+        public static void ProcessNotifyTeamEnterErr(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine("ProcessNotifyTeamEnterErr");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyTeamEnterErr.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
             //System.Diagnostics.Debug.WriteLine(vData);
         }
 
         public static void ProcessEnterMatchResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             // Fired when Matchmaking begins
-            //System.Diagnostics.Debug.WriteLine("ProcessEnterMatchResult");
+            System.Diagnostics.Debug.WriteLine("ProcessEnterMatchResult");
             if (payloadBuffer.Length == 0)
             {
                 return;
@@ -157,7 +443,7 @@ namespace BPSR_ZDPS
         public static void ProcessCancelMatchResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             // Fired when Matchmaking ends
-            //System.Diagnostics.Debug.WriteLine("ProcessCancelMatchResult");
+            System.Diagnostics.Debug.WriteLine("ProcessCancelMatchResult");
 
             if (payloadBuffer.Length == 0)
             {
@@ -177,7 +463,7 @@ namespace BPSR_ZDPS
         public static void ProcessMatchReadyStatus(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             // Fires each time a ready status is changed
-            //System.Diagnostics.Debug.WriteLine("ProcessMatchReadyStatus");
+            System.Diagnostics.Debug.WriteLine("ProcessMatchReadyStatus");
 
             if (payloadBuffer.Length == 0)
             {
@@ -402,14 +688,13 @@ namespace BPSR_ZDPS
                     continue;
                 }
 
-                switch (entity.EntType)
+                ProcessAttrs(entity.Uuid, attrCollection.Attrs);
+
+                /*switch (entity.EntType)
                 {
                     case EEntityType.EntMonster:
-                        {
-                            ProcessAttrs(entity.Uuid, attrCollection.Attrs);
-                            break;
-                        }
                     case EEntityType.EntChar:
+                    case EEntityType.EntField:
                         {
                             ProcessAttrs(entity.Uuid, attrCollection.Attrs);
                             break;
@@ -423,7 +708,7 @@ namespace BPSR_ZDPS
                         break;
                     default:
                         break;
-                }
+                }*/
             }
         }
 
@@ -1229,9 +1514,12 @@ namespace BPSR_ZDPS
                 foreach (var dungeonEventData in dun.DungeonEvent.DungeonEventData)
                 {
                     System.Diagnostics.Debug.WriteLine($"[{dungeonEventData.Key}]DungeonEventData = {dungeonEventData.Value.EventId}, {dungeonEventData.Value.StartTime}, {dungeonEventData.Value.State}, {dungeonEventData.Value.Result}");
-                    foreach (var dungeonTarget in dungeonEventData.Value.DungeonTarget)
+                    if (dungeonEventData.Value.DungeonTarget != null)
                     {
-                        System.Diagnostics.Debug.WriteLine($"- {dungeonTarget.Key}: {dungeonTarget.Value.TargetId}, {dungeonTarget.Value.Complete}, {dungeonTarget.Value.Nums}");
+                        foreach (var dungeonTarget in dungeonEventData.Value.DungeonTarget)
+                        {
+                            System.Diagnostics.Debug.WriteLine($"- {dungeonTarget.Key}: {dungeonTarget.Value.TargetId}, {dungeonTarget.Value.Complete}, {dungeonTarget.Value.Nums}");
+                        }
                     }
                 }
             }
