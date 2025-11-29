@@ -5,13 +5,10 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using System.IO.Hashing;
 using System.Net.Http.Headers;
-using System.Net.Mime;
 using System.Runtime.InteropServices;
-using System.Security.Policy;
 using System.Text;
 using ZLinq;
 using Zproto;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace BPSR_ZDPS.Web
 {
@@ -23,48 +20,56 @@ namespace BPSR_ZDPS.Web
         {
             try
             {
-                var teamId = CreateTeamId(encounter);
-                var reportData = new EncounterReport()
+                var task = Task.Factory.StartNew(() =>
                 {
-                    TeamID = teamId,
-                    EncounterName = encounter.SceneName,
-                    Duration = encounter.GetDuration()
-                };
-
-                var players = encounter.Entities.AsValueEnumerable()
-                    .Where(x => x.Value.EntityType == EEntityType.EntChar);
-
-                foreach (var player in players)
-                {
-                    var partyMember = new PartyMember()
+                    var teamId = CreateTeamId(encounter);
+                    var discordWebHookInfo = Utils.SplitAndValidateDiscordWebhook(Settings.Instance.WebHookDiscordUrl);
+                    var reportData = new EncounterReport()
                     {
-                        Name = player.Value.Name,
-                        CombatScore = (ulong)player.Value.AbilityScore,
-                        Dps = player.Value.TotalDamage,
-                        Hps = player.Value.TotalHealing,
-                        DamageTaken = player.Value.TotalTakenDamage,
-                        DamagePct = 0,
+                        TeamID = teamId,
+                        EncounterName = encounter.SceneName,
+                        Duration = encounter.EndTime - encounter.StartTime,
+                        DiscordWebhookId = discordWebHookInfo.Value.id,
+                        DiscordWebhookToken = discordWebHookInfo.Value.token,
                     };
 
-                    reportData.Party.Add(partyMember);
-                }
+                    var players = encounter.Entities.AsValueEnumerable()
+                        .Where(x => x.Value.EntityType == EEntityType.EntChar);
 
-                using var imgMs = new MemoryStream();
-                img.SaveAsPng(imgMs);
+                    foreach (var player in players)
+                    {
+                        var partyMember = new PartyMember()
+                        {
+                            Name = player.Value.Name,
+                            CombatScore = (ulong)player.Value.AbilityScore,
+                            Dps = player.Value.TotalDamage,
+                            Hps = player.Value.TotalHealing,
+                            DamageTaken = player.Value.TotalTakenDamage,
+                            DamagePct = 0,
+                        };
 
-                var reportJson = JsonConvert.SerializeObject(reportData);
+                        reportData.Party.Add(partyMember);
+                    }
 
-                using var form = new MultipartFormDataContent();
-                form.Add(new StringContent(reportJson, Encoding.UTF8, "application/json"), "report");
+                    using var imgMs = new MemoryStream();
+                    img.SaveAsPng(imgMs);
+                    imgMs.Flush();
+                    imgMs.Position = 0;
 
-                var fileContent = new StreamContent(imgMs);
-                fileContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
-                form.Add(fileContent, "img", "img.png");
+                    var reportJson = JsonConvert.SerializeObject(reportData);
 
-                var url = $"{Settings.Instance.WebHookServerUrl}/report/discord";
-                var response = HttpClient.PostAsync(url, form);
+                    using var form = new MultipartFormDataContent();
+                    form.Add(new StringContent(reportJson, Encoding.UTF8, "application/json"), "report");
 
-                Log.Information($"SubmitReportToDiscordWebhook: Status: {response.Status}, StatusCode: {response.Result.StatusCode}");
+                    var fileContent = new StreamContent(imgMs);
+                    fileContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+                    form.Add(fileContent, "img", "img.png");
+
+                    var url = $"{Settings.Instance.WebHookServerUrl}/report/discord";
+                    var response = HttpClient.PostAsync(url, form);
+
+                    Log.Information($"SubmitReportToDiscordWebhook: Status: {response.Status}, StatusCode: {response.Result.StatusCode}");
+                });
             }
             catch (Exception ex)
             {

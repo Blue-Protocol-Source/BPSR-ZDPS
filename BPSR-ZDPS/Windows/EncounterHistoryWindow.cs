@@ -1,4 +1,5 @@
 ﻿using BPSR_ZDPS.DataTypes;
+using BPSR_ZDPS.Web;
 using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
@@ -279,7 +280,8 @@ namespace BPSR_ZDPS.Windows
                 {
                     if (SelectedEncounterIndex != -1 && encounters[SelectedEncounterIndex] != null)
                     {
-                        ReportImgGen.CreateReportImg(encounters[SelectedEncounterIndex]);
+                        var img = ReportImgGen.CreateReportImg(encounters[SelectedEncounterIndex]);
+                        WebManager.SubmitReportToDiscordWebhook(encounters[SelectedEncounterIndex], img, Settings.Instance.WebHookDiscordUrl);
                     }
                 }
 

@@ -32,7 +32,8 @@ public class Settings
     public string ReadyCheckNotificationSoundPath { get; set; } = "";
     public bool LoopNotificationSoundOnReadyCheck { get; set; } = false;
     public float ReadyCheckNotificationVolume { get; set; } = 1.0f;
-    public string WebHookServerUrl { get; set; } = "http://localhost:5000";
+    public string WebHookServerUrl { get; set; } = "http://localhost:5146";
+    public bool WebHookReportsEnabled { get; set; } = false;
     public string WebHookDiscordUrl { get; set; } = "";
 
     public uint HotkeysEncounterReset { get; set; }

@@ -338,14 +338,25 @@ namespace BPSR_ZDPS
 
         public static (string id, string token)? SplitAndValidateDiscordWebhook(string url)
         {
-            var uri = new Uri(url);
+            const string DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/";
 
-            if (uri.Host.Equals("discord", StringComparison.InvariantCultureIgnoreCase))
+            try
             {
+                if (url.StartsWith(DISCORD_WEBHOOK_URL, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    var pathSegments = url.Substring(DISCORD_WEBHOOK_URL.Length).Split('/');
+                    if (pathSegments.Length == 2)
+                    {
+                        return (pathSegments[0], pathSegments[1]);
+                    }
+                }
 
+                return null;
             }
-
-            return ("", "");
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         static unsafe void SetCurrentWindowIcon(Stream IconFileStream)

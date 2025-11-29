@@ -48,6 +48,10 @@ namespace BPSR_ZDPS.Windows
         static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
         static GameCapturePreference GameCapturePreference;
 
+        static bool enableWebHook = false;
+        static string discordWebHookUrl = "";
+        static bool isDiscordWebHookUrlValid = true;
+
         static int RunOnceDelayed = 0;
 
         static bool IsElevated = false;
@@ -84,6 +88,9 @@ namespace BPSR_ZDPS.Windows
             readyCheckNotificationSoundPath = Settings.Instance.ReadyCheckNotificationSoundPath;
             loopNotificationSoundOnReadyCheck = Settings.Instance.LoopNotificationSoundOnReadyCheck;
             readyCheckNotificationVolume = Settings.Instance.ReadyCheckNotificationVolume;
+
+            enableWebHook = Settings.Instance.WebHookReportsEnabled;
+            discordWebHookUrl = Settings.Instance.WebHookDiscordUrl;
 
             logToFile = Settings.Instance.LogToFile;
 
@@ -613,6 +620,56 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndTabItem();
                     }
 
+
+                    if (ImGui.BeginTabItem("Web"))
+                    {
+                        var contentRegionAvail = ImGui.GetContentRegionAvail();
+                        ImGui.BeginChild("##WebTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ImGui.SeparatorText("Discord Web Hook Reporting");
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Enable Sending encounter dps reports: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##WebHookDpsReports", ref enableWebHook);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, sends an after encounter DPS report to the given Discord webhook.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Webhook URL: ");
+                        ImGui.SameLine();
+                        if (ImGui.InputText("##WebHookURL", ref discordWebHookUrl, 256))
+                        {
+                            if (Utils.SplitAndValidateDiscordWebhook(discordWebHookUrl) != null)
+                            {
+                                isDiscordWebHookUrlValid = true;
+                            }
+                            else
+                            {
+                                isDiscordWebHookUrlValid = false;
+                            }
+                        }
+
+                        if (!isDiscordWebHookUrlValid)
+                        {
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("Please check the url given, that doesn't look right");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+                        }
+
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("The Discord web hook URL to send too");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.EndChild();
+                        ImGui.EndTabItem();
+                    }
                     ImGui.EndTabBar();
                 }
 
@@ -752,6 +809,10 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.ReadyCheckNotificationVolume = readyCheckNotificationVolume;
 
             Settings.Instance.LogToFile = logToFile;
+
+            Settings.Instance.WebHookReportsEnabled = enableWebHook;
+
+            Settings.Instance.WebHookDiscordUrl = discordWebHookUrl;
 
             RegisterAllHotkeys(mainWindow);
 

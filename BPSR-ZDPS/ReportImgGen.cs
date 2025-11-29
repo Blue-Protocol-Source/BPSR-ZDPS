@@ -22,6 +22,8 @@ namespace BPSR_ZDPS
                 });
 
                 var img = TextureSaveUtil.Texture2DToPng(OffscreenImGuiRenderer.D3D11Manager.Device, OffscreenImGuiRenderer.D3D11Manager.DeviceContext, tex);
+                img.SaveAsPng("test.png");
+                
                 return img;
             }
         }

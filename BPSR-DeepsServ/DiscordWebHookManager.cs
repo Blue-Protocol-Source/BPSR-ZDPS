@@ -59,9 +59,16 @@ namespace BPSR_DeepsServ
                         Title = "ZDPS Encounter Report",
                         Color = 10412141,
                         Description = $"**Encounter**: {report.EncounterName}\n**Duration**: {report.Duration}",
+                        Fields = [
+                            new EmbedField()
+                            {
+                                Name = "Debug",
+                                Value = $"TeamID: {report.TeamID}"
+                            }
+                        ],
                         Image = new EmbedImage()
                         {
-                            Url = "attachment://dpsImg.jpg"
+                            Url = "attachment://img.png"
                         }
                     }
                 ]
@@ -102,7 +109,7 @@ namespace BPSR_DeepsServ
                 await using var fileStream = imgFile.OpenReadStream();
                 var fileContent = new StreamContent(fileStream);
                 fileContent.Headers.ContentType = new MediaTypeHeaderValue(imgFile.ContentType);
-                form.Add(fileContent, "dpsImg", "dpsImg.jpg");
+                form.Add(fileContent, "img", "img.png");
 
                 var response = await HttpClient.PostAsync(url, form);
 
