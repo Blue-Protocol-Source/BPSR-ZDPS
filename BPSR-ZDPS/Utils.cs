@@ -13,6 +13,7 @@ using Zproto;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp;
 using System.Reflection;
+using System.Security.Policy;
 
 namespace BPSR_ZDPS
 {
@@ -333,6 +334,18 @@ namespace BPSR_ZDPS
             };
 
             return exeNameToCapture;
+        }
+
+        public static (string id, string token)? SplitAndValidateDiscordWebhook(string url)
+        {
+            var uri = new Uri(url);
+
+            if (uri.Host.Equals("discord", StringComparison.InvariantCultureIgnoreCase))
+            {
+
+            }
+
+            return ("", "");
         }
 
         static unsafe void SetCurrentWindowIcon(Stream IconFileStream)

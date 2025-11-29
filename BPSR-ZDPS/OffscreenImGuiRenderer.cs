@@ -146,6 +146,8 @@ namespace BPSR_ZDPS
                 ImGui.RenderPlatformWindowsDefault();
             }
 
+            _context->Flush();
+
             // Restore previous render target
             _context->OMSetRenderTargets(1, &oldRT, null);
             if (oldRT != null) oldRT->Release();

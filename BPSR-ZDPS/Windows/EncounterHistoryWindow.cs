@@ -227,7 +227,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SameLine();
                 // Change the height of the combo box dropdown menu
                 //ImGui.SetNextWindowSize(new Vector2(0, 400));
-                ImGui.SetNextItemWidth(-1);
+                ImGui.SetNextItemWidth(-35);
                 if (ImGui.BeginCombo("##EncounterHistoryCombo", selectedPreviewText, ImGuiComboFlags.HeightLarge))
                 {
                     for (int i = 0; i < encounters.Count; i++)
@@ -272,6 +272,15 @@ namespace BPSR_ZDPS.Windows
                     }
 
                     ImGui.EndCombo();
+                }
+
+                ImGui.SameLine();
+                if (ImGui.Button(":>"))
+                {
+                    if (SelectedEncounterIndex != -1 && encounters[SelectedEncounterIndex] != null)
+                    {
+                        ReportImgGen.CreateReportImg(encounters[SelectedEncounterIndex]);
+                    }
                 }
 
                 // Display Encounter Stats

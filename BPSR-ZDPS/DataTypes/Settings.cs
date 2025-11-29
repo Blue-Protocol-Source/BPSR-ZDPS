@@ -28,6 +28,8 @@ public class Settings
     public string MatchmakeNotificationSoundPath { get; set; } = "";
     public bool LoopNotificationSoundOnMatchmake { get; set; } = false;
     public float MatchmakeNotificationVolume { get; set;} = 1.0f;
+    public string WebHookServerUrl { get; set; } = "http://localhost:5000";
+    public string WebHookDiscordUrl { get; set; } = "";
 
     public uint HotkeysEncounterReset { get; set; }
 
