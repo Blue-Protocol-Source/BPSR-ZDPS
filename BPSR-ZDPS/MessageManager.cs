@@ -52,6 +52,9 @@ namespace BPSR_ZDPS
 
             netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.SyncDungeonDirtyData, ProcessSyncDungeonDirtyData);
 
+            netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.NotifyAllMemberReady, ProcessNotifyAllMemberReady);
+            netCap.RegisterWorldNotifyHandler(BPSR_DeepsLib.ServiceMethods.WorldNtf.NotifyCaptainReady, ProcessNotifyCaptainReady);
+
             netCap.RegisterMatchNotifyHandler(BPSR_DeepsLib.ServiceMethods.MatchNtf.EnterMatchResult, ProcessEnterMatchResult);
             netCap.RegisterMatchNotifyHandler(BPSR_DeepsLib.ServiceMethods.MatchNtf.CancelMatchResult, ProcessCancelMatchResult);
             netCap.RegisterMatchNotifyHandler(BPSR_DeepsLib.ServiceMethods.MatchNtf.MatchReadyStatus, ProcessMatchReadyStatus);
@@ -67,7 +70,13 @@ namespace BPSR_ZDPS
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyTeamMatchResult, ProcessNotifyTeamMatchResult);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyCharAbortMatch, ProcessNotifyCharAbortMatch);
             //
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.UpdateTeamMemBeCall, ProcessUpdateTeamMemBeCall);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyTeamMemBeCall, ProcessNotifyTeamMemBeCall);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyTeamMemBeCallResult, ProcessNotifyTeamMemBeCallResult);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyTeamEnterErr, ProcessNotifyTeamEnterErr);
+
+            // Uncomment to debug print unhandled events
+            //netCap.RegisterUnhandledHandler(ProcessUnhandled);
 
             netCap.Start();
             System.Diagnostics.Debug.WriteLine("MessageManager.InitializeCapturing : Capturing Started...");
@@ -107,6 +116,64 @@ namespace BPSR_ZDPS
             }
 
             return null;
+        }
+
+        public static void ProcessUnhandled(NotifyId notifyId, ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine($"ProcessUnhandled ServiceId:{(EServiceId)notifyId.ServiceId} MethodId:{notifyId.MethodId} Payload.Length:{payloadBuffer.Length}");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+        }
+
+        public static void ProcessNotifyAllMemberReady(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNotifyAllMemberReady");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = WorldNtf.Types.NotifyAllMemberReady.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            // This is called to open the Ready Check UI (vOpenOrClose will always be true)
+            NotificationAlertManager.PlayNotifyAudio(NotificationAlertManager.NotificationType.ReadyCheck);
+        }
+
+        public static void ProcessNotifyCaptainReady(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNotifyCaptainReady");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = WorldNtf.Types.NotifyCaptainReady.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            if (vData.VCharId == AppState.PlayerUID)
+            {
+                // Current player is "responding" to the Ready Check
+                if (vData.VReadyInfo.IsReady)
+                {
+                    // Player responded "Ready"
+                }
+                else
+                {
+                    // Player responded "Not Ready" or did not respond in time
+                }
+                NotificationAlertManager.StopNotifyAudio();
+            }
         }
 
         public static void ProcessNoticeUpdateTeamInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
@@ -278,6 +345,63 @@ namespace BPSR_ZDPS
             System.Diagnostics.Debug.WriteLine(vData);
         }
 
+        public static void ProcessUpdateTeamMemBeCall(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine("ProcessUpdateTeamMemBeCall");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.UpdateTeamMemBeCall.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            //System.Diagnostics.Debug.WriteLine(vData);
+        }
+
+        public static void ProcessNotifyTeamMemBeCall(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine("ProcessNotifyTeamMemBeCall");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyTeamMemBeCall.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            //System.Diagnostics.Debug.WriteLine(vData);
+        }
+
+        public static void ProcessNotifyTeamMemBeCallResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            System.Diagnostics.Debug.WriteLine("ProcessNotifyTeamMemBeCallResult");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyTeamMemBeCallResult.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            //System.Diagnostics.Debug.WriteLine(vData);
+        }
+
         public static void ProcessNotifyTeamEnterErr(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
             System.Diagnostics.Debug.WriteLine("ProcessNotifyTeamEnterErr");
@@ -294,7 +418,7 @@ namespace BPSR_ZDPS
                 return;
             }
 
-            System.Diagnostics.Debug.WriteLine(vData);
+            //System.Diagnostics.Debug.WriteLine(vData);
         }
 
         public static void ProcessEnterMatchResult(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)

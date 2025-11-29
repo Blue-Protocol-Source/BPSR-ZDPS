@@ -36,7 +36,7 @@ namespace BPSR_ZDPS
                 {
                     // Alert the player they need to accept the activity
                     System.Diagnostics.Debug.WriteLine("Current Player is TeamActivity member and needs to vote");
-                    NotificationAlertManager.PlayNotifyAudio();
+                    NotificationAlertManager.PlayNotifyAudio(NotificationAlertManager.NotificationType.Matchmake);
                 }
             }
             else if (vData.VRequest.State.State == ETeamActivityState.EteamActivityNo)

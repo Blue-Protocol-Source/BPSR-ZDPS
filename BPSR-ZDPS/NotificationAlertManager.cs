@@ -16,51 +16,89 @@ namespace BPSR_ZDPS
 
         static AudioFileReader? NotificationAudioFileReader = null;
         static WaveOutEvent? NotificationWaveOutEvent = null;
+        static NotificationType NotificationEventType = NotificationType.Generic;
         static bool ShouldStop = false;
 
-        public static void PlayNotifyAudio()
+        public enum NotificationType : int
         {
-            if (Settings.Instance.PlayNotificationSoundOnMatchmake)
+            Generic = 0,
+            Matchmake = 1,
+            ReadyCheck = 2
+        }
+
+        public static void PlayNotifyAudio(NotificationType notificationType = NotificationType.Generic)
+        {
+            string audioPath = DEFAULT_NOTIFICATION_AUDIO_FILE;
+            float volumeScale = 1.0f;
+            NotificationEventType = notificationType;
+
+            switch (notificationType)
             {
-                if (!string.IsNullOrEmpty(Settings.Instance.MatchmakeNotificationSoundPath) && File.Exists(Settings.Instance.MatchmakeNotificationSoundPath))
-                {
-                    NotificationAudioFileReader = new AudioFileReader(Settings.Instance.MatchmakeNotificationSoundPath);
-                }
-                else
-                {
-                    if (File.Exists(DEFAULT_NOTIFICATION_AUDIO_FILE))
+                case NotificationType.Matchmake:
+                    if (!Settings.Instance.PlayNotificationSoundOnMatchmake)
                     {
-                        NotificationAudioFileReader = new AudioFileReader(DEFAULT_NOTIFICATION_AUDIO_FILE);
-                    }
-                    else
-                    {
-                        Log.Error("Unable to locate Default Notification Audio file for MatchManager playback!");
                         return;
                     }
-                }
-                ShouldStop = false;
 
-                if (Settings.Instance.MatchmakeNotificationVolume > 1.0f)
-                {
-                    // Only go through using this sampler if the volume was changed above "100%" as it incurs a performance penalty to runtime increase beyond 1.0
-                    var volumeSampleProvider = new VolumeSampleProvider(NotificationAudioFileReader);
-                    volumeSampleProvider.Volume = Settings.Instance.MatchmakeNotificationVolume;
+                    if (!string.IsNullOrEmpty(Settings.Instance.MatchmakeNotificationSoundPath) && File.Exists(Settings.Instance.MatchmakeNotificationSoundPath))
+                    {
+                        audioPath = Settings.Instance.MatchmakeNotificationSoundPath;
+                    }
 
-                    NotificationWaveOutEvent = new WaveOutEvent();
-                    NotificationWaveOutEvent.PlaybackStopped += NotificationWaveOutEvent_PlaybackStopped;
+                    volumeScale = Settings.Instance.MatchmakeNotificationVolume;
+                    break;
+                case NotificationType.ReadyCheck:
+                    if (!Settings.Instance.PlayNotificationSoundOnReadyCheck)
+                    {
+                        return;
+                    }
 
-                    NotificationWaveOutEvent.Init(volumeSampleProvider);
-                }
-                else
-                {
-                    NotificationWaveOutEvent = new WaveOutEvent();
-                    NotificationWaveOutEvent.PlaybackStopped += NotificationWaveOutEvent_PlaybackStopped;
-                    NotificationWaveOutEvent.Init(NotificationAudioFileReader);
-                    NotificationWaveOutEvent.Volume = Settings.Instance.MatchmakeNotificationVolume;
-                }
+                    if (!string.IsNullOrEmpty(Settings.Instance.ReadyCheckNotificationSoundPath) && File.Exists(Settings.Instance.ReadyCheckNotificationSoundPath))
+                    {
+                        audioPath = Settings.Instance.ReadyCheckNotificationSoundPath;
+                    }
 
-                NotificationWaveOutEvent.Play();
+                    volumeScale = Settings.Instance.ReadyCheckNotificationVolume;
+                    break;
             }
+
+            if (audioPath == DEFAULT_NOTIFICATION_AUDIO_FILE)
+            {
+                if (!File.Exists(DEFAULT_NOTIFICATION_AUDIO_FILE))
+                {
+                    Log.Error("Unable to locate Default Notification Audio file for NotificationAlertManager playback!");
+                    return;
+                }
+            }
+            else if (string.IsNullOrWhiteSpace(audioPath))
+            {
+                Log.Error("No audio file path was specified for NotificationAlertManager.PlayNotifyAudio!");
+                return;
+            }
+
+            NotificationAudioFileReader = new AudioFileReader(audioPath);
+            ShouldStop = false;
+
+            if (volumeScale > 1.0f)
+            {
+                // Only go through using this sampler if the volume was changed above "100%" as it incurs a performance penalty to runtime increase beyond 1.0
+                var volumeSampleProvider = new VolumeSampleProvider(NotificationAudioFileReader);
+                volumeSampleProvider.Volume = volumeScale;
+
+                NotificationWaveOutEvent = new WaveOutEvent();
+                NotificationWaveOutEvent.PlaybackStopped += NotificationWaveOutEvent_PlaybackStopped;
+
+                NotificationWaveOutEvent.Init(volumeSampleProvider);
+            }
+            else
+            {
+                NotificationWaveOutEvent = new WaveOutEvent();
+                NotificationWaveOutEvent.PlaybackStopped += NotificationWaveOutEvent_PlaybackStopped;
+                NotificationWaveOutEvent.Init(NotificationAudioFileReader);
+                NotificationWaveOutEvent.Volume = volumeScale;
+            }
+
+            NotificationWaveOutEvent.Play();
         }
 
         public static void StopNotifyAudio()
@@ -74,9 +112,23 @@ namespace BPSR_ZDPS
 
         private static void NotificationWaveOutEvent_PlaybackStopped(object? sender, StoppedEventArgs e)
         {
+            bool shouldLoop = false;
+            switch (NotificationEventType)
+            {
+                case NotificationType.Generic:
+                    shouldLoop = false;
+                    break;
+                case NotificationType.Matchmake:
+                    shouldLoop = Settings.Instance.LoopNotificationSoundOnMatchmake;
+                    break;
+                case NotificationType.ReadyCheck:
+                    shouldLoop = Settings.Instance.LoopNotificationSoundOnReadyCheck;
+                    break;
+            }
+
             if (NotificationWaveOutEvent != null)
             {
-                if (ShouldStop == false && Settings.Instance.LoopNotificationSoundOnMatchmake)
+                if (ShouldStop == false && shouldLoop)
                 {
                     // Keep looping the audio until actually requested to stop
                     NotificationAudioFileReader.Seek(0, SeekOrigin.Begin);

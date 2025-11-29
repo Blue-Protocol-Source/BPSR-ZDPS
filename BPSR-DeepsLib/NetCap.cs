@@ -25,6 +25,7 @@ public class NetCap
     private byte[] DecompressionScratchBuffer = new byte[1024 * 1024];
     private Decompressor _decompressor = new();
     private Dictionary<NotifyId, Action<ReadOnlySpan<byte>, ExtraPacketData>> NotifyHandlers = new();
+    private Action<NotifyId, ReadOnlySpan<byte>, ExtraPacketData>? UnhandledHandler = null;
     public ulong NumSeenPackets = 0;
     public DateTime LastPacketSeenAt = DateTime.MinValue;
     public int NumConnectionReaders = 0;
@@ -66,6 +67,11 @@ public class NetCap
         CaptureDevice.StartCapture();
 
         Log.Information("Capture device started");
+    }
+
+    public void RegisterUnhandledHandler(Action<NotifyId, ReadOnlySpan<byte>, ExtraPacketData> handler)
+    {
+        UnhandledHandler = handler;
     }
 
     public void RegisterNotifyHandler(ulong serviceId, uint methodId, Action<ReadOnlySpan<byte>, ExtraPacketData> handler)
@@ -295,6 +301,11 @@ public class NetCap
         {
             var extraData = new ExtraPacketData(lastPacketTime);
             handler(msgData, extraData);
+        }
+        else if (UnhandledHandler != null)
+        {
+            var extraData = new ExtraPacketData(lastPacketTime);
+            UnhandledHandler(id, msgData, extraData);
         }
 
         //Log.Information("Service UUID: {ServiceUuid}, Stub ID: {StubId}, Method ID: {MethodId}, IsCompressed: {IsCompressed}", serviceUuid, stubId, methodId, isCompressed);

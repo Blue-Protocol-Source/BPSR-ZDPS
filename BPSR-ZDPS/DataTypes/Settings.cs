@@ -28,6 +28,10 @@ public class Settings
     public string MatchmakeNotificationSoundPath { get; set; } = "";
     public bool LoopNotificationSoundOnMatchmake { get; set; } = false;
     public float MatchmakeNotificationVolume { get; set;} = 1.0f;
+    public bool PlayNotificationSoundOnReadyCheck { get; set; } = false;
+    public string ReadyCheckNotificationSoundPath { get; set; } = "";
+    public bool LoopNotificationSoundOnReadyCheck { get; set; } = false;
+    public float ReadyCheckNotificationVolume { get; set; } = 1.0f;
 
     public uint HotkeysEncounterReset { get; set; }
 

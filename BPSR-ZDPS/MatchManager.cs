@@ -19,7 +19,7 @@ namespace BPSR_ZDPS
             if (vData.VRequest.MatchInfo.MatchStatus == EMatchStatus.WaitReady)
             {
                 // The match queue has "popped" and is now waiting for everyone to accept it
-                NotificationAlertManager.PlayNotifyAudio();
+                NotificationAlertManager.PlayNotifyAudio(NotificationAlertManager.NotificationType.Matchmake);
             }
         }
 
