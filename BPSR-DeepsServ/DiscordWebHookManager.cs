@@ -1,10 +1,10 @@
 ﻿using BPSR_DeepsServ.Models;
 using System.Collections.Concurrent;
 using System.IO.Hashing;
+using System.Net;
 using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Text.Json;
 
 namespace BPSR_DeepsServ
 {
@@ -15,21 +15,22 @@ namespace BPSR_DeepsServ
         private ConcurrentDictionary<ulong, ReportTeamState> ReportDedupeData = [];
         private readonly HttpClient HttpClient = new ();
 
-        public async Task<bool> ProcessEncounterReport(EncounterReport report, IFormFile imgFile)
+        public async Task<HttpResponseMessage> ProcessEncounterReport(string id, string token, ulong teamId, string payload, IFormFileCollection files)
         {
-            if (IsDupe(report))
+            if (IsDupe(id, token, teamId))
             {
-                return false;
+                return new HttpResponseMessage(HttpStatusCode.AlreadyReported);
             }
 
-            var result = await SendWebhook(report, imgFile);
+            var sendUrl = $"https://discord.com/api/webhooks/{id}/{token}";
+            var result = await SendWebhook(sendUrl, payload, files);
 
-            return true;
+            return result;
         }
 
-        private bool IsDupe(EncounterReport report)
+        private bool IsDupe(string discordId, string discordToken, ulong teamId)
         {
-            var id = CreateTeamHookReportId(report);
+            var id = CreateTeamHookReportId(discordId, discordToken, teamId);
             if (ReportDedupeData.TryGetValue(id, out var data))
             {
                 if ((data.ReportedAt + DupeWindowDuration) <= DateTime.Now)
@@ -47,46 +48,42 @@ namespace BPSR_DeepsServ
             return false;
         }
 
-        private ulong CreateTeamHookReportId(EncounterReport report)
+        private ulong CreateTeamHookReportId(string id, string token, ulong teamId)
         {
             var hash = new XxHash64();
-            hash.Append(MemoryMarshal.Cast<ulong, byte>([report.TeamID]));
-            hash.Append(Encoding.UTF8.GetBytes(report.DiscordWebhookId));
-            hash.Append(Encoding.UTF8.GetBytes(report.DiscordWebhookToken));
+            hash.Append(MemoryMarshal.Cast<ulong, byte>([teamId]));
+            hash.Append(Encoding.UTF8.GetBytes(id));
+            hash.Append(Encoding.UTF8.GetBytes(token));
             var hashUlong = hash.GetCurrentHashAsUInt64();
 
             return hashUlong;
         }
 
-        private string GetWebHookUrl(EncounterReport report)
-        {
-            var url = $"https://discord.com/api/webhooks/{report.DiscordWebhookId}/{report.DiscordWebhookToken}";
-            return url;
-        }
-
-        private async Task<bool> SendWebhook(EncounterReport report, IFormFile imgFile)
+        private async Task<HttpResponseMessage> SendWebhook(string url, string payload, IFormFileCollection files)
         {
             try
             {
                 using var form = new MultipartFormDataContent();
-                form.Add(new StringContent(report.Payload, Encoding.UTF8, "application/json"), "payload_json");
+                form.Add(new StringContent(payload, Encoding.UTF8, "application/json"), "payload_json");
 
-                await using var fileStream = imgFile.OpenReadStream();
-                var fileContent = new StreamContent(fileStream);
-                fileContent.Headers.ContentType = new MediaTypeHeaderValue(imgFile.ContentType);
-                form.Add(fileContent, "img", "img.png");
+                foreach (var file in files)
+                {
+                    var fileStream = file.OpenReadStream();
+                    var fileContent = new StreamContent(fileStream);
+                    fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
+                    form.Add(fileContent, file.Name, file.FileName);
+                }
 
-                var sendUrl = GetWebHookUrl(report);
-                var response = await HttpClient.PostAsync(sendUrl, form);
+                var response = await HttpClient.PostAsync(url, form);
 
-                return true;
+                return response;
             }
             catch (Exception ex)
             {
 
             }
 
-            return false;
+            return new HttpResponseMessage(HttpStatusCode.InternalServerError);
         }
     }
 }

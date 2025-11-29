@@ -20,36 +20,30 @@ namespace BPSR_ZDPS.Web
         {
             try
             {
-                var task = Task.Factory.StartNew(() =>
+                var task = Task.Factory.StartNew(async () =>
                 {
                     var teamId = CreateTeamId(encounter);
                     var discordWebHookInfo = Utils.SplitAndValidateDiscordWebhook(Settings.Instance.WebHookDiscordUrl);
-                    var reportData = new EncounterReport()
-                    {
-                        TeamID = teamId,
-                        Payload = "{\r\n  \"embeds\": [\r\n    {\r\n      \"title\": \"ZDPS Report\",\r\n      \"description\": \"**Encounter:** The Fallen Tower\\n**Time:** 12:45\",\r\n      \"color\": 10412141,\r\n      \"fields\": [\r\n        {\r\n          \"name\": \"Player\",\r\n          \"value\": \"Evie\\nZoey\\nLuna\",\r\n          \"inline\": true\r\n        },\r\n        {\r\n          \"name\": \"DPS Contribution\",\r\n          \"value\": \"██████████ 100%\\n████████  92%\\n██████    69%\",\r\n          \"inline\": true\r\n        },\r\n        {\r\n          \"name\": \"DPS | HPS | Taken\",\r\n          \"value\": \" 7520 | 1820 | 24110\\n 6930 |  210 | 18335\\n 5210 | 2940 |  9880\",\r\n          \"inline\": true\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n",
-                        DiscordWebhookId = discordWebHookInfo.Value.id,
-                        DiscordWebhookToken = discordWebHookInfo.Value.token,
-                    };
+                    var msg = CreateDiscordMessage(encounter, teamId);
+                    var msgJson = JsonConvert.SerializeObject(msg, Formatting.Indented);
 
                     using var imgMs = new MemoryStream();
                     img.SaveAsPng(imgMs);
                     imgMs.Flush();
                     imgMs.Position = 0;
 
-                    var reportJson = JsonConvert.SerializeObject(reportData);
-
                     using var form = new MultipartFormDataContent();
-                    form.Add(new StringContent(reportJson, Encoding.UTF8, "application/json"), "report");
+                    form.Add(new StringContent(msgJson, Encoding.UTF8, "application/json"), "payload_json");
 
                     var fileContent = new StreamContent(imgMs);
                     fileContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
                     form.Add(fileContent, "img", "img.png");
+                    form.Headers.Add("X-ZDPS-TeamID", $"{teamId}");
 
-                    var url = $"{Settings.Instance.WebHookServerUrl}/report/discord";
-                    var response = HttpClient.PostAsync(url, form);
+                    var url = $"{Settings.Instance.WebHookServerUrl}/report/discord/{discordWebHookInfo.Value.id}/{discordWebHookInfo.Value.token}";
+                    var response = await HttpClient.PostAsync(url, form);
 
-                    Log.Information($"SubmitReportToDiscordWebhook: Status: {response.Status}, StatusCode: {response.Result.StatusCode}");
+                    Log.Information($"SubmitReportToDiscordWebhook: StatusCode: {response.StatusCode}");
                 });
             }
             catch (Exception ex)
@@ -75,13 +69,25 @@ namespace BPSR_ZDPS.Web
 
             return hashUlong;
         }
-    }
 
-    public class EncounterReport
-    {
-        public ulong TeamID { get; set; } = 0;
-        public string Payload { get; set; } = "";
-        public string DiscordWebhookId { get; set; } = "";
-        public string DiscordWebhookToken { get; set; } = "";
+        private static DiscordWebhookPayload CreateDiscordMessage(Encounter encounter, ulong teamId)
+        {
+            var unixStartTime = new DateTimeOffset(encounter.StartTime).ToUnixTimeSeconds();
+            var msgContent =
+                $"""
+                **ZDPS Report**
+                **Encounter**: {encounter.SceneName}
+                **Started At**: <t:{unixStartTime}:F> <t:{unixStartTime}:R>
+                **Duration**: {(encounter.EndTime - encounter.StartTime).ToString(@"hh\:mm\:ss")}
+                **TeamID**: ``{teamId}``
+                """;
+
+            var msg = new DiscordWebhookPayload("ZDPS", msgContent)
+            {
+                AvatarURL = "https://media.discordapp.net/attachments/1443057617113977015/1444260874784084008/co25l4.jpg?ex=692c1041&is=692abec1&hm=75449222af948cba198474a8e580e9e5e12a7f8bbd546935aeeec00d8ba7cb2d&=&format=webp"
+            };
+
+            return msg;
+        }
     }
 }

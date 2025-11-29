@@ -1,55 +1,66 @@
-﻿namespace BPSR_DeepsServ.Models
-{
-    using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using Zproto;
 
-    public class DiscordWebhookPayload
+namespace BPSR_ZDPS.DataTypes
+{
+    public class DiscordWebhookPayload(string username, string content)
     {
-        [JsonPropertyName("embeds")]
+        [JsonProperty("username")]
+        public string Username { get; set; } = username;
+
+        [JsonProperty("avatar_url ")]
+        public string AvatarURL { get; set; }
+
+        [JsonProperty("content")]
+        public string Content { get; set; } = content;
+
+        [JsonProperty("embeds")]
         public List<DiscordEmbed> Embeds { get; set; } = [];
     }
 
     public class DiscordEmbed
     {
-        [JsonPropertyName("title")]
+        [JsonProperty("title")]
         public string Title { get; set; }
 
-        [JsonPropertyName("type")]
+        [JsonProperty("type")]
         public string Type { get; set; } = "rich";
 
-        [JsonPropertyName("description")]
+        [JsonProperty("description")]
         public string Description { get; set; }
 
-        [JsonPropertyName("url")]
+        [JsonProperty("url")]
         public string Url { get; set; }
 
-        [JsonPropertyName("timestamp")]
+        [JsonProperty("timestamp")]
         public DateTime? Timestamp { get; set; }
 
-        [JsonPropertyName("color")]
+        [JsonProperty("color")]
         public int? Color { get; set; }
 
-        [JsonPropertyName("footer")]
+        [JsonProperty("footer")]
         public EmbedFooter Footer { get; set; }
 
-        [JsonPropertyName("image")]
+        [JsonProperty("image")]
         public EmbedImage Image { get; set; }
 
-        [JsonPropertyName("thumbnail")]
+        [JsonProperty("thumbnail")]
         public EmbedThumbnail Thumbnail { get; set; }
 
-        [JsonPropertyName("author")]
+        [JsonProperty("author")]
         public EmbedAuthor Author { get; set; }
 
-        [JsonPropertyName("fields")]
+        [JsonProperty("fields")]
         public List<EmbedField> Fields { get; set; } = [];
     }
 
     public class EmbedFooter
     {
-        [JsonPropertyName("text")]
+        [JsonProperty("text")]
         public string Text { get; set; }
 
-        [JsonPropertyName("icon_url")]
+        [JsonProperty("icon_url")]
         public string IconUrl { get; set; }
     }
 
@@ -61,32 +72,31 @@
 
     public class EmbedThumbnail
     {
-        [JsonPropertyName("url")]
+        [JsonProperty("url")]
         public string Url { get; set; }
     }
 
     public class EmbedAuthor
     {
-        [JsonPropertyName("name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonPropertyName("url")]
+        [JsonProperty("url")]
         public string Url { get; set; }
 
-        [JsonPropertyName("icon_url")]
+        [JsonProperty("icon_url")]
         public string IconUrl { get; set; }
     }
 
     public class EmbedField
     {
-        [JsonPropertyName("name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonPropertyName("value")]
+        [JsonProperty("value")]
         public string Value { get; set; }
 
-        [JsonPropertyName("inline")]
+        [JsonProperty("inline")]
         public bool? Inline { get; set; }
     }
-
 }

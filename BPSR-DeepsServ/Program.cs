@@ -1,5 +1,5 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
 
 namespace BPSR_DeepsServ
 {
@@ -19,29 +19,30 @@ namespace BPSR_DeepsServ
             var app = builder.Build();
 
             var reportsAPI = app.MapGroup("/report");
-            reportsAPI.MapPost("/discord", HandleDiscordReport).DisableAntiforgery();
+            reportsAPI.MapPost("/discord/{id}/{token}", HandleDiscordReport).DisableAntiforgery();
 
             app.Run();
         }
 
-        static async Task<IResult> HandleDiscordReport([FromForm] string report, [FromForm] IFormFile img)
+        static async Task<IResult> HandleDiscordReport([FromRoute] string id, [FromRoute] string token, [FromForm] string payload_json, [FromForm] IFormFileCollection files, HttpRequest request)
         {
             try
             {
-                var reportData = JsonSerializer.Deserialize(report, AppJsonSerializerContext.Default.EncounterReport);
-                if (reportData == null)
+                if (request.Headers.TryGetValue("X-ZDPS-TeamId", out var teamIdStr))
                 {
-                    return Results.BadRequest("No report data");
-                }
-                
-                var reportStatus = await DiscordWebHooks.ProcessEncounterReport(reportData, img);
-                if (reportStatus)
-                {
-                    return Results.Ok();
+                    if (ulong.TryParse(teamIdStr, out var teamId))
+                    {
+                        var result = await DiscordWebHooks.ProcessEncounterReport(id, token, teamId, payload_json, files);
+                        return result.IsSuccessStatusCode ? Results.Ok(result) : Results.BadRequest(result);
+                    }
+                    else
+                    {
+                        return Results.Ok("Nope");
+                    }
                 }
                 else
                 {
-                    return Results.Ok("Already reported");
+                    return Results.Ok("Nope");
                 }
             }
             catch (Exception ex)
