@@ -6,7 +6,6 @@ namespace BPSR_DeepsServ
     [JsonSourceGenerationOptions(WriteIndented = true)]
     [JsonSerializable(typeof(ReportForm))]
     [JsonSerializable(typeof(EncounterReport))]
-    [JsonSerializable(typeof(PartyMember))]
     [JsonSerializable(typeof(DiscordWebhookPayload))]
     [JsonSerializable(typeof(DiscordEmbed))]
     [JsonSerializable(typeof(EmbedFooter))]

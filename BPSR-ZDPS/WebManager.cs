@@ -27,29 +27,10 @@ namespace BPSR_ZDPS.Web
                     var reportData = new EncounterReport()
                     {
                         TeamID = teamId,
-                        EncounterName = encounter.SceneName,
-                        Duration = encounter.EndTime - encounter.StartTime,
+                        Payload = "{\r\n  \"embeds\": [\r\n    {\r\n      \"title\": \"ZDPS Report\",\r\n      \"description\": \"**Encounter:** The Fallen Tower\\n**Time:** 12:45\",\r\n      \"color\": 10412141,\r\n      \"fields\": [\r\n        {\r\n          \"name\": \"Player\",\r\n          \"value\": \"Evie\\nZoey\\nLuna\",\r\n          \"inline\": true\r\n        },\r\n        {\r\n          \"name\": \"DPS Contribution\",\r\n          \"value\": \"██████████ 100%\\n████████  92%\\n██████    69%\",\r\n          \"inline\": true\r\n        },\r\n        {\r\n          \"name\": \"DPS | HPS | Taken\",\r\n          \"value\": \" 7520 | 1820 | 24110\\n 6930 |  210 | 18335\\n 5210 | 2940 |  9880\",\r\n          \"inline\": true\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n",
                         DiscordWebhookId = discordWebHookInfo.Value.id,
                         DiscordWebhookToken = discordWebHookInfo.Value.token,
                     };
-
-                    var players = encounter.Entities.AsValueEnumerable()
-                        .Where(x => x.Value.EntityType == EEntityType.EntChar);
-
-                    foreach (var player in players)
-                    {
-                        var partyMember = new PartyMember()
-                        {
-                            Name = player.Value.Name,
-                            CombatScore = (ulong)player.Value.AbilityScore,
-                            Dps = player.Value.TotalDamage,
-                            Hps = player.Value.TotalHealing,
-                            DamageTaken = player.Value.TotalTakenDamage,
-                            DamagePct = 0,
-                        };
-
-                        reportData.Party.Add(partyMember);
-                    }
 
                     using var imgMs = new MemoryStream();
                     img.SaveAsPng(imgMs);
@@ -99,20 +80,8 @@ namespace BPSR_ZDPS.Web
     public class EncounterReport
     {
         public ulong TeamID { get; set; } = 0;
-        public string EncounterName { get; set; } = "";
-        public TimeSpan Duration { get; set; } = TimeSpan.FromSeconds(0);
+        public string Payload { get; set; } = "";
         public string DiscordWebhookId { get; set; } = "";
         public string DiscordWebhookToken { get; set; } = "";
-        public List<PartyMember> Party { get; set; } = [];
-    }
-
-    public class PartyMember
-    {
-        public string Name { get; set; } = "";
-        public ulong CombatScore { get; set; }
-        public ulong Dps { get; set; }
-        public ulong Hps { get; set; }
-        public ulong DamageTaken { get; set; }
-        public float DamagePct { get; set; }
     }
 }
