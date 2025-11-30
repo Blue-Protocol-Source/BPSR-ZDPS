@@ -62,6 +62,7 @@ namespace BPSR_ZDPS.Windows
         {
             HasBoundEvents = false;
             EncounterManager.Current.RemoveEventHandlers();
+            System.Diagnostics.Debug.WriteLine("RaidManager_EncounterEnd");
         }
 
         private static void RaidManager_EncounterStart(EventArgs e)
@@ -74,8 +75,10 @@ namespace BPSR_ZDPS.Windows
             if (!HasBoundEvents)
             {
                 HasBoundEvents = true;
-                EncounterManager.Current.SkillActivated += RaidManager_Entity_SkillActivated;
             }
+            EncounterManager.Current.RemoveEventHandlers();
+            EncounterManager.Current.SkillActivated += RaidManager_Entity_SkillActivated;
+            System.Diagnostics.Debug.WriteLine("BindCurrentEncounterEvents");
         }
 
         public static void Draw(MainWindow mainWindow)

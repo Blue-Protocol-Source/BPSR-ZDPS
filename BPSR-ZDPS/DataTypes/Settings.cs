@@ -23,7 +23,7 @@ public class Settings
     public int DatabaseRetentionPolicyDays { get; set; } = 0;
     public bool LimitEncounterBuffTrackingWithoutDatabase { get; set; } = false;
     public bool LogToFile { get; set; } = false;
-    public GameCapturePreference GameCapturePreference { get; set; } = GameCapturePreference.Auto;
+    public EGameCapturePreference GameCapturePreference { get; set; } = EGameCapturePreference.Auto;
     public bool PlayNotificationSoundOnMatchmake { get; set; } = false;
     public string MatchmakeNotificationSoundPath { get; set; } = "";
     public bool LoopNotificationSoundOnMatchmake { get; set; } = false;
@@ -32,9 +32,12 @@ public class Settings
     public string ReadyCheckNotificationSoundPath { get; set; } = "";
     public bool LoopNotificationSoundOnReadyCheck { get; set; } = false;
     public float ReadyCheckNotificationVolume { get; set; } = 1.0f;
-    public string WebHookServerUrl { get; set; } = "http://localhost:5146";
-    public bool WebHookReportsEnabled { get; set; } = false;
-    public string WebHookDiscordUrl { get; set; } = "";
+    public bool SaveEncounterReportToFile { get; set; } = false;
+    public bool WebhookReportsEnabled { get; set; } = false;
+    public EWebhookReportsMode WebhookReportsMode { get; set; } = EWebhookReportsMode.Discord;
+    public string WebhookReportsDeduplicationServerUrl { get; set; } = "http://localhost:5146";
+    public string WebhookReportsDiscordUrl { get; set; } = "";
+    public string WebhookReportsCustomUrl { get; set; } = "";
 
     public uint HotkeysEncounterReset { get; set; }
 
@@ -73,9 +76,16 @@ public class Settings
     }
 }
 
-public enum GameCapturePreference
+public enum EGameCapturePreference
 {
     Auto,
     Steam,
     Standalone
+}
+
+public enum EWebhookReportsMode
+{
+    DiscordDeduplication,
+    Discord,
+    Custom
 }

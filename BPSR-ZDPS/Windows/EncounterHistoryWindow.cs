@@ -33,6 +33,8 @@ namespace BPSR_ZDPS.Windows
 
         static bool IsLoadingFromDatabase = false;
 
+        static EncounterReportWindow encounterReportWindow = new();
+
         public static void Open()
         {
             RunOnceDelayed = 0;
@@ -111,6 +113,8 @@ namespace BPSR_ZDPS.Windows
             {
                 return;
             }
+
+            encounterReportWindow.Draw();
 
             ImGui.SetNextWindowSize(new Vector2(740, 675), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(500, 250), new Vector2(ImGui.GETFLTMAX()));
@@ -280,8 +284,11 @@ namespace BPSR_ZDPS.Windows
                 {
                     if (SelectedEncounterIndex != -1 && encounters[SelectedEncounterIndex] != null)
                     {
+                        //encounterReportWindow = new();
+                        //encounterReportWindow.Open(encounters[SelectedEncounterIndex]);
+
                         var img = ReportImgGen.CreateReportImg(encounters[SelectedEncounterIndex]);
-                        WebManager.SubmitReportToDiscordWebhook(encounters[SelectedEncounterIndex], img, Settings.Instance.WebHookDiscordUrl);
+                        WebManager.SubmitReportToWebhook(encounters[SelectedEncounterIndex], img, Settings.Instance.WebhookReportsDiscordUrl);
                     }
                 }
 

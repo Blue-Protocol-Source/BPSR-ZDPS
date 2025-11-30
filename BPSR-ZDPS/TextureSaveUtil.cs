@@ -50,9 +50,9 @@ namespace BPSR_ZDPS
 
                             for (int x = 0; x < width; x++)
                             {
-                                byte b = srcRow[x * 4 + 0];
+                                byte r = srcRow[x * 4 + 0];
                                 byte g = srcRow[x * 4 + 1];
-                                byte r = srcRow[x * 4 + 2];
+                                byte b = srcRow[x * 4 + 2];
                                 byte a = srcRow[x * 4 + 3];
 
                                 dest[x] = new Rgba32(r, g, b, a);

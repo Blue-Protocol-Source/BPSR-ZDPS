@@ -312,25 +312,25 @@ namespace BPSR_ZDPS
             }
         }
 
-        public static string GameCapturePreferenceToName(GameCapturePreference pref)
+        public static string GameCapturePreferenceToName(EGameCapturePreference pref)
         {
             var gamePrefName = pref switch
             {
-                GameCapturePreference.Auto => "Auto",
-                GameCapturePreference.Steam => "Steam",
-                GameCapturePreference.Standalone => "Standalone",
+                EGameCapturePreference.Auto => "Auto",
+                EGameCapturePreference.Steam => "Steam",
+                EGameCapturePreference.Standalone => "Standalone",
             };
 
             return gamePrefName;
         }
 
-        public static string[] GameCapturePreferenceToExeNames(GameCapturePreference pref)
+        public static string[] GameCapturePreferenceToExeNames(EGameCapturePreference pref)
         {
             string[] exeNameToCapture = pref switch
             {
-                GameCapturePreference.Auto => ["BPSR", "BPSR_STEAM"],
-                GameCapturePreference.Steam => ["BPSR_STEAM"],
-                GameCapturePreference.Standalone => ["BPSR"]
+                EGameCapturePreference.Auto => ["BPSR", "BPSR_STEAM"],
+                EGameCapturePreference.Steam => ["BPSR_STEAM"],
+                EGameCapturePreference.Standalone => ["BPSR"]
             };
 
             return exeNameToCapture;

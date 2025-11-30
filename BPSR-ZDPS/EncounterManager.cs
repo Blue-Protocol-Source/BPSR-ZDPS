@@ -39,6 +39,7 @@ namespace BPSR_ZDPS
             // Give a default encounter for now
             StartNewBattle();
             StartEncounter();
+            IntegrationManager.InitBindings();
         }
 
         public static void StartEncounter(bool force = false)
@@ -62,6 +63,10 @@ namespace BPSR_ZDPS
                     }
                     return;
                 }
+
+                // This is safe to call to ensure we're sending a proper End Final before a new Encounter is made no matter what
+                BattleStateMachine.SetDeferredEncounterEndFinalData(DateTime.Now, new EncounterEndFinalData() { EncounterId = Current.EncounterId, BattleId = Current.BattleId });
+                BattleStateMachine.CheckDeferredCalls();
             }
             //Encounters.Add(new Encounter(CurrentBattleId));
 
@@ -108,6 +113,10 @@ namespace BPSR_ZDPS
         public static void SignalEncounterEndFinal(EncounterEndFinalData data)
         {
             OnEncounterEndFinal(data);
+            if (Current != null)
+            {
+                Current.RemoveEventHandlers();
+            }
         }
 
         public static void UpdateEncounterState()
@@ -220,6 +229,8 @@ namespace BPSR_ZDPS
 
         public delegate void SkillActivatedEventHandler(object sender, SkillActivatedEventArgs e);
         public event SkillActivatedEventHandler SkillActivated;
+        public delegate void HpUpdatedEventHandler(object sender, HpUpdatedEventArgs e);
+        public event HpUpdatedEventHandler BossHpUpdated;
 
         public EncounterExData ExData { get; set; } = new();
         public byte[] ExDataBlob {  get; set; }
@@ -313,6 +324,7 @@ namespace BPSR_ZDPS
                 {
                     entity.SetName(monsterEntry.Name);
                     entity.SetMonsterType(monsterEntry.MonsterType);
+                    UpdateEncounterBossData(entity, (int)attr_id);
                 }
             }
         }
@@ -330,6 +342,7 @@ namespace BPSR_ZDPS
                 {
                     entity.SetName(monsterEntry.Name);
                     entity.SetMonsterType(monsterEntry.MonsterType);
+                    UpdateEncounterBossData(entity, (int)value);
                 }
             }
             else if (key == "AttrLevel")
@@ -362,6 +375,38 @@ namespace BPSR_ZDPS
                 //System.Diagnostics.Debug.WriteLine($"SetAttrKV({uuid})::AttrShieldList.ShieldInfo = {shieldInfo}");
                 entity.AddBuffEventAttribute((int)shieldInfo.Uuid, "AttrShieldList", shieldInfo);
                 //AddShieldGained(uuid, shieldInfo.Uuid, shieldInfo.Value, shieldInfo.InitialValue, shieldInfo.MaxValue);
+            }
+            else if (key == "AttrHp")
+            {
+                entity.SetHpValues((long)value, -1);
+            }
+            else if (key == "AttrMaxHp")
+            {
+                entity.SetHpValues(-1, (long)value);
+            }
+        }
+
+        public void UpdateEncounterBossData(Entity entity, int attr_id)
+        {
+            if (entity.MonsterType == 2)
+            {
+                if (BossUUID != entity.UUID)
+                {
+                    if (BossUUID != 0)
+                    {
+                        if (Entities.TryGetValue(BossUUID, out var oldBoss))
+                        {
+                            oldBoss.HpUpdated -= OnBossHpUpdated;
+                        }
+                    }
+
+                    entity.HpUpdated += OnBossHpUpdated;
+                }
+
+                // This is a boss
+                BossUUID = entity.UUID;
+                BossName = entity.Name;
+                BossAttrId = (long)attr_id;
             }
         }
 
@@ -515,9 +560,17 @@ namespace BPSR_ZDPS
             SkillActivated?.Invoke(this, e);
         }
 
+        protected virtual void OnBossHpUpdated(object sender, HpUpdatedEventArgs e)
+        {
+            Entity entity = (Entity)sender;
+            BossHpPct = (int)(((double)entity.Hp / (double)entity.MaxHp) * 10000.0);
+            BossHpUpdated?.Invoke(sender, e);
+        }
+
         public void RemoveEventHandlers()
         {
             SkillActivated = null;
+            BossHpUpdated = null;
         }
     }
 
@@ -568,10 +621,15 @@ namespace BPSR_ZDPS
         // When -1, this is unset (non-Monsters will be at -1), when 1 this is Elite, when 2 it is a boss
         public int MonsterType { get; set; } = -1;
 
+        public long Hp { get; private set; } = 0;
+        public long MaxHp { get; private set; } = 0;
+
         public Dictionary<string, object> Attributes { get; set; } = new();
 
         public delegate void SkillActivatedEventHandler(object sender, SkillActivatedEventArgs e);
         public event SkillActivatedEventHandler SkillActivated;
+        public delegate void HpUpdatedEventHandler(object sender, HpUpdatedEventArgs e);
+        public event HpUpdatedEventHandler HpUpdated;
 
         public object Clone()
         {
@@ -591,6 +649,7 @@ namespace BPSR_ZDPS
         public void RemoveEventHandlers()
         {
             SkillActivated = null;
+            HpUpdated = null;
         }
 
         [JsonConstructor]
@@ -721,6 +780,29 @@ namespace BPSR_ZDPS
             {
                 cached.Level = level;
             }
+        }
+
+        public void SetHpValues(long hp = -1, long maxHp = -1)
+        {
+            if (hp != -1)
+            {
+                Hp = hp;
+            }
+
+            if (maxHp != -1)
+            {
+                MaxHp = maxHp;
+            }
+
+            if ((Hp > -1) && (MaxHp > -1))
+            {
+                OnHpUpdated(new HpUpdatedEventArgs() { EntityUuid = UUID, Hp = Hp, MaxHp = MaxHp, UpdateDateTime = DateTime.Now });
+            }
+        }
+
+        protected virtual void OnHpUpdated(HpUpdatedEventArgs e)
+        {
+            HpUpdated?.Invoke(this, e);
         }
 
         public void IncrementDeaths()
@@ -996,6 +1078,14 @@ namespace BPSR_ZDPS
         public long CasterUuid { get; set; }
         public int SkillId { get; set; }
         public DateTime ActivationDateTime { get; set; }
+    }
+
+    public class HpUpdatedEventArgs : EventArgs
+    {
+        public long EntityUuid { get; set; }
+        public long Hp { get; set; }
+        public long MaxHp { get; set; }
+        public DateTime UpdateDateTime { get; set; }
     }
 
     public enum ESkillType : int

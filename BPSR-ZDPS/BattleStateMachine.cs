@@ -139,6 +139,12 @@ namespace BPSR_ZDPS
 
         public static void SetDeferredEncounterEndFinalData(DateTime dateTime, EncounterEndFinalData data)
         {
+            if (data.EncounterId == DeferredEncounterEndFinalData?.EncounterId && dateTime.CompareTo(DeferredEncounterEndFinalTime) >= 0)
+            {
+                // We only want to register for a new final end if it's a new encounter being ended, or we're updating an existing request to occur sooner
+                return;
+            }
+
             DeferredEncounterEndFinalTime = dateTime;
             DeferredEncounterEndFinalData = data;
         }

@@ -9,7 +9,7 @@ namespace BPSR_ZDPS.DataTypes
         [JsonProperty("username")]
         public string Username { get; set; } = username;
 
-        [JsonProperty("avatar_url ")]
+        [JsonProperty("avatar_url")]
         public string AvatarURL { get; set; }
 
         [JsonProperty("content")]

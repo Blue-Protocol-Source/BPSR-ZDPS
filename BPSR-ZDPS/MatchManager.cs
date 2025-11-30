@@ -32,6 +32,7 @@ namespace BPSR_ZDPS
         {
             foreach (var matchPlayerInfo in vData.VRequest.MatchPlayerInfo)
             {
+                // Unless player moves/teleports after starting ZDPS, the AppState.PlayerUID will be 0 initially
                 if (matchPlayerInfo.CharId == AppState.PlayerUID)
                 {
                     if (matchPlayerInfo.ReadyStatus == EMatchReadyStatus.Ready)
