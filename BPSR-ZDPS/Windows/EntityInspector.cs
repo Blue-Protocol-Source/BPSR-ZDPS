@@ -495,6 +495,7 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Text(displayName);
 
                             ImGui.TableNextColumn();
+                            ImGui.BeginGroup();
                             if (Settings.Instance.ShowSkillIconsInDetails)
                             {
                                 var damageElementIconPath = Utils.DamagePropertyToIconPath(stat.Value.DamageElement);
@@ -511,6 +512,7 @@ namespace BPSR_ZDPS.Windows
                                 }
                             }
                             ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValueTotal)}");
+                            ImGui.EndGroup();
                             ImGui.SetItemTooltip($"Type: {stat.Value.DamageMode}\nElement: {Utils.DamagePropertyToString(stat.Value.DamageElement)}");
 
                             ImGui.TableNextColumn();

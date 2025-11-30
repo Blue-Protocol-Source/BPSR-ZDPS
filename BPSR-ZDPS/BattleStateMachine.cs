@@ -26,7 +26,7 @@ namespace BPSR_ZDPS
             PreviousDungeonTargetData = null;
             DeferredEncounterStartTime = null;
             DeferredEncounterEndFinalTime = null;
-            DeferredEncounterEndFinalData = null;
+            // We do not null the DeferredEncounterEndFinalData as we use it to ensure we don't send multiple End Final calls
             DungeonTargetDataHistory.Clear();
             DungeonStateHistory.Clear();
 
@@ -139,10 +139,20 @@ namespace BPSR_ZDPS
 
         public static void SetDeferredEncounterEndFinalData(DateTime dateTime, EncounterEndFinalData data)
         {
-            if (data.EncounterId == DeferredEncounterEndFinalData?.EncounterId && dateTime.CompareTo(DeferredEncounterEndFinalTime) >= 0)
+            if (DeferredEncounterEndFinalData != null && DeferredEncounterEndFinalData.EncounterId == data.EncounterId)
             {
-                // We only want to register for a new final end if it's a new encounter being ended, or we're updating an existing request to occur sooner
-                return;
+                // We have previously set the End Final data for this Encounter, if we have no Time set then the actual Signal has been completed and we don't want to do it again
+                // If the time however does exist and is later than our incoming time, then we'll allow updating it to be sooner
+                if (DeferredEncounterEndFinalTime == null)
+                {
+                    // Encounter has already signaled the final end
+                    return;
+                }
+                else if (dateTime.CompareTo(DeferredEncounterEndFinalTime) >= 0)
+                {
+                    // We'll only allow updating the time to be sooner, not later
+                    return;
+                }
             }
 
             DeferredEncounterEndFinalTime = dateTime;
@@ -164,7 +174,7 @@ namespace BPSR_ZDPS
 
                 EncounterManager.SignalEncounterEndFinal(DeferredEncounterEndFinalData);
 
-                DeferredEncounterEndFinalData = null;
+                // We do not null the DeferredEncounterEndFinalData as we use it to ensure we don't send multiple End Final calls
             }
         }
     }

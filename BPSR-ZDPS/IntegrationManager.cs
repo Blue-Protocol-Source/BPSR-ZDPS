@@ -59,6 +59,11 @@ namespace BPSR_ZDPS
                     });
                 };
             }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine($"IntegrationManager EncounterEndFinal did not detect a dead boss or wipe in Battle:{e.BattleId} Encounter: {e.EncounterId}.");
+                System.Diagnostics.Debug.WriteLine($"BossUUID:{EncounterManager.Current.BossUUID}, BossHpPct:{EncounterManager.Current.BossHpPct}, IsWipe:{EncounterManager.Current.IsWipe}");
+            }
         }
     }
 }

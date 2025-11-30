@@ -78,6 +78,7 @@ namespace BPSR_ZDPS
             }
 
             Current = new Encounter(CurrentBattleId);
+            Current.EncounterId = DB.GetNextEncounterId();
 
 
             // Reuse last sceneId as our current one (it may not always be right but hopefully is right enough)
@@ -358,6 +359,10 @@ namespace BPSR_ZDPS
             {
                 if ((EActorState)value == EActorState.ActorStateDead)
                 {
+                    // The server does not send a final HP value update when the State also changes, so we'll fake one
+                    // We do this before fully processing the State change
+                    SetAttrKV(uuid, "AttrHp", 0L);
+
                     entity.IncrementDeaths();
                     if (entity.EntityType == EEntityType.EntChar)
                     {
