@@ -20,13 +20,22 @@ namespace BPSR_ZDPS
 
         private static void EncounterManager_EncounterEndFinal(EncounterEndFinalData e)
         {
+            // Only care about encounters with actual data in them
+            if (!EncounterManager.Current.HasStatsBeenRecorded())
+            {
+                return;
+            }
+
             // Only create reports when there is a boss in the encounter and it is dead or the encounter is a wipe
-            if (EncounterManager.Current.BossUUID > 0 && (EncounterManager.Current.BossHpPct == 0 || EncounterManager.Current.IsWipe))
+            if (e.Reason == EncounterStartReason.NewObjective || (EncounterManager.Current.BossUUID > 0 && (EncounterManager.Current.BossHpPct == 0 || EncounterManager.Current.IsWipe)))
             {
                 System.Diagnostics.Debug.WriteLine("IntegrationManager is creating an Encounter Report.");
                 HelperMethods.DeferredImGuiRenderAction = () =>
                 {
-                    var img = ReportImgGen.CreateReportImg(EncounterManager.Current);
+                    // Hold onto a reference for the Encounter as once we enter the task it will no longer be the current one and may already be moved into the database
+                    var encounter = EncounterManager.Current;
+
+                    var img = ReportImgGen.CreateReportImg(encounter);
                     Task.Factory.StartNew(() =>
                     {
                         if (Settings.Instance.WebhookReportsEnabled)
@@ -37,7 +46,7 @@ namespace BPSR_ZDPS
                                 case EWebhookReportsMode.Discord:
                                     if (!string.IsNullOrEmpty(Settings.Instance.WebhookReportsDiscordUrl))
                                     {
-                                        WebManager.SubmitReportToWebhook(EncounterManager.Current, img, Settings.Instance.WebhookReportsDiscordUrl);
+                                        WebManager.SubmitReportToWebhook(encounter, img, Settings.Instance.WebhookReportsDiscordUrl);
                                     }
                                     else
                                     {
@@ -47,7 +56,7 @@ namespace BPSR_ZDPS
                                 case EWebhookReportsMode.Custom:
                                     if (!string.IsNullOrEmpty(Settings.Instance.WebhookReportsCustomUrl))
                                     {
-                                        WebManager.SubmitReportToWebhook(EncounterManager.Current, img, Settings.Instance.WebhookReportsCustomUrl);
+                                        WebManager.SubmitReportToWebhook(encounter, img, Settings.Instance.WebhookReportsCustomUrl);
                                     }
                                     else
                                     {

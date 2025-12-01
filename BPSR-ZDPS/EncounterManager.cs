@@ -42,8 +42,11 @@ namespace BPSR_ZDPS
             IntegrationManager.InitBindings();
         }
 
-        public static void StartEncounter(bool force = false)
+        public static void StartEncounter(bool force = false, EncounterStartReason reason = EncounterStartReason.None)
         {
+            string priorBossName = "";
+            int priorEncounterPhase = 0;
+
             if (Current != null)
             {
                 bool hasStatsBeenRecorded = Current.HasStatsBeenRecorded();
@@ -64,8 +67,34 @@ namespace BPSR_ZDPS
                     return;
                 }
 
+                if ((reason == EncounterStartReason.NewObjective || reason == EncounterStartReason.Wipe) && hasStatsBeenRecorded)
+                {
+                    // We're likely entering a new phase (either raid boss phase or dungeon phase going into boss)
+                    priorBossName = Current.BossName;
+
+                    if (!string.IsNullOrEmpty(Current.SceneSubName))
+                    {
+                        // Break the current sub name into parts to try and figure out what our current phase number is to increment for upcoming encounter
+                        var subNameParts = Current.SceneSubName.Split(' ', StringSplitOptions.TrimEntries);
+                        if (subNameParts.Length > 1)
+                        {
+                            if (int.TryParse(subNameParts.Last(), out var phaseNumber))
+                            {
+                                // For now we trust this is a string ending with out Phase number
+                                priorEncounterPhase = phaseNumber;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // This is our first split
+                        Current.SceneSubName = "Phase 1";
+                        priorEncounterPhase = 1;
+                    }
+                }
+
                 // This is safe to call to ensure we're sending a proper End Final before a new Encounter is made no matter what
-                BattleStateMachine.SetDeferredEncounterEndFinalData(DateTime.Now, new EncounterEndFinalData() { EncounterId = Current.EncounterId, BattleId = Current.BattleId });
+                BattleStateMachine.SetDeferredEncounterEndFinalData(DateTime.Now, new EncounterEndFinalData() { EncounterId = Current.EncounterId, BattleId = Current.BattleId, Reason = reason });
                 BattleStateMachine.CheckDeferredCalls();
             }
             //Encounters.Add(new Encounter(CurrentBattleId));
@@ -79,7 +108,17 @@ namespace BPSR_ZDPS
 
             Current = new Encounter(CurrentBattleId);
             Current.EncounterId = DB.GetNextEncounterId();
-
+            if ((reason == EncounterStartReason.NewObjective || reason == EncounterStartReason.Wipe))
+            {
+                if (!string.IsNullOrEmpty(priorBossName))
+                {
+                    Current.BossName = priorBossName;
+                }
+                if (priorEncounterPhase > 0)
+                {
+                    Current.SceneSubName = $"Phase {priorEncounterPhase + 1}";
+                }
+            }
 
             // Reuse last sceneId as our current one (it may not always be right but hopefully is right enough)
             if (LevelMapId > 0)
@@ -193,6 +232,14 @@ namespace BPSR_ZDPS
         {
             EncounterEndFinal?.Invoke(e);
         }
+    }
+
+    public enum EncounterStartReason : int
+    {
+        None = 0, // No reason given (generic start)
+        NewObjective = 1, // New Objective potentially a new Phase
+        Wipe = 2, // Current Encounter was a wipe
+        Force = 3, // We don't know the reason but we know it needs to force a new one (possibly a map transition)
     }
 
     public class Encounter

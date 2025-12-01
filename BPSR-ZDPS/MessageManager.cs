@@ -1401,7 +1401,7 @@ namespace BPSR_ZDPS
                             {
                                 EncounterManager.Current.SetWipeState(true);
                                 //System.Diagnostics.Debug.WriteLine($"We've hit a wipe (bossesAtMaxHp = {bossesAtMaxHp})! Start up a new encounter");
-                                EncounterManager.StartEncounter();
+                                EncounterManager.StartEncounter(false, EncounterStartReason.Wipe);
                             }
                             else
                             {
