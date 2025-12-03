@@ -13,6 +13,7 @@ using Zproto;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp;
 using System.Reflection;
+using System.Security.Policy;
 
 namespace BPSR_ZDPS
 {
@@ -311,28 +312,51 @@ namespace BPSR_ZDPS
             }
         }
 
-        public static string GameCapturePreferenceToName(GameCapturePreference pref)
+        public static string GameCapturePreferenceToName(EGameCapturePreference pref)
         {
             var gamePrefName = pref switch
             {
-                GameCapturePreference.Auto => "Auto",
-                GameCapturePreference.Steam => "Steam",
-                GameCapturePreference.Standalone => "Standalone",
+                EGameCapturePreference.Auto => "Auto",
+                EGameCapturePreference.Steam => "Steam",
+                EGameCapturePreference.Standalone => "Standalone",
             };
 
             return gamePrefName;
         }
 
-        public static string[] GameCapturePreferenceToExeNames(GameCapturePreference pref)
+        public static string[] GameCapturePreferenceToExeNames(EGameCapturePreference pref)
         {
             string[] exeNameToCapture = pref switch
             {
-                GameCapturePreference.Auto => ["BPSR", "BPSR_STEAM"],
-                GameCapturePreference.Steam => ["BPSR_STEAM"],
-                GameCapturePreference.Standalone => ["BPSR"]
+                EGameCapturePreference.Auto => ["BPSR", "BPSR_STEAM"],
+                EGameCapturePreference.Steam => ["BPSR_STEAM"],
+                EGameCapturePreference.Standalone => ["BPSR"]
             };
 
             return exeNameToCapture;
+        }
+
+        public static (string id, string token)? SplitAndValidateDiscordWebhook(string url)
+        {
+            const string DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/";
+
+            try
+            {
+                if (url.StartsWith(DISCORD_WEBHOOK_URL, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    var pathSegments = url.Substring(DISCORD_WEBHOOK_URL.Length).Split('/');
+                    if (pathSegments.Length == 2)
+                    {
+                        return (pathSegments[0], pathSegments[1]);
+                    }
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         static unsafe void SetCurrentWindowIcon(Stream IconFileStream)

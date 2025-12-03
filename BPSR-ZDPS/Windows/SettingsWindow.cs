@@ -46,7 +46,16 @@ namespace BPSR_ZDPS.Windows
         static string EncounterResetKeyName = "";
 
         static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
-        static GameCapturePreference GameCapturePreference;
+        static EGameCapturePreference GameCapturePreference;
+
+        static bool saveEncounterReportToFile;
+        static bool webhookReportsEnabled;
+        static EWebhookReportsMode webhookReportsMode;
+        static string webhookReportsDeduplicationServerUrl;
+        static string webhookReportsDiscordUrl;
+        static string webhookReportsCustomUrl;
+
+        static bool IsDiscordWebhookUrlValid = true;
 
         static int RunOnceDelayed = 0;
 
@@ -61,32 +70,7 @@ namespace BPSR_ZDPS.Windows
 
             NetworkDevices = SharpPcap.LibPcap.LibPcapLiveDeviceList.Instance;
 
-            normalizeMeterContributions = Settings.Instance.NormalizeMeterContributions;
-            useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
-            colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
-            showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
-            onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
-            useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
-            skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
-            splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
-            windowOpacity = Settings.Instance.WindowOpacity;
-            useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
-            databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
-            limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
-            GameCapturePreference = Settings.Instance.GameCapturePreference;
-
-            playNotificationSoundOnMatchmake = Settings.Instance.PlayNotificationSoundOnMatchmake;
-            matchmakeNotificationSoundPath = Settings.Instance.MatchmakeNotificationSoundPath;
-            loopNotificationSoundOnMatchmake = Settings.Instance.LoopNotificationSoundOnMatchmake;
-            matchmakeNotificationVolume = Settings.Instance.MatchmakeNotificationVolume;
-
-            playNotificationSoundOnReadyCheck = Settings.Instance.PlayNotificationSoundOnReadyCheck;
-            readyCheckNotificationSoundPath = Settings.Instance.ReadyCheckNotificationSoundPath;
-            loopNotificationSoundOnReadyCheck = Settings.Instance.LoopNotificationSoundOnReadyCheck;
-            readyCheckNotificationVolume = Settings.Instance.ReadyCheckNotificationVolume;
-
-            logToFile = Settings.Instance.LogToFile;
-
+            Load();
 
             EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
             if (EncounterResetKey == 0)
@@ -223,19 +207,19 @@ namespace BPSR_ZDPS.Windows
 
                         var gamePrefName = Utils.GameCapturePreferenceToName(GameCapturePreference);
                         ImGui.SetNextItemWidth(150);
-                        if (ImGui.BeginCombo("##GameCapturePreference", gamePrefName))
+                        if (ImGui.BeginCombo("##EGameCapturePreference", gamePrefName))
                         {
                             if (ImGui.Selectable("Auto"))
                             {
-                                GameCapturePreference = GameCapturePreference.Auto;
+                                GameCapturePreference = EGameCapturePreference.Auto;
                             }
                             else if (ImGui.Selectable("Standalone"))
                             {
-                                GameCapturePreference = GameCapturePreference.Standalone;
+                                GameCapturePreference = EGameCapturePreference.Standalone;
                             }
                             else if (ImGui.Selectable("Steam"))
                             {
-                                GameCapturePreference = GameCapturePreference.Steam;
+                                GameCapturePreference = EGameCapturePreference.Steam;
                             }
 
                             ImGui.EndCombo();
@@ -613,6 +597,153 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndTabItem();
                     }
 
+                    if (ImGui.BeginTabItem("Integrations"))
+                    {
+                        var contentRegionAvail = ImGui.GetContentRegionAvail();
+                        ImGui.BeginChild("##IntegrationsTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Save Encounter Report To File: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##SaveEncounterReportToFile", ref saveEncounterReportToFile);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, writes a report file to the Reports folder located next to ZDPS.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.SeparatorText("ZDPS Report Webhooks");
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.TextUnformatted("Webhook Mode: ");
+                        ImGui.SameLine();
+                        ImGui.SetNextItemWidth(-1);
+
+                        string reportsModeName = "";
+                        switch (webhookReportsMode)
+                        {
+                            case EWebhookReportsMode.DiscordDeduplication:
+                                reportsModeName = "Discord Deduplication";
+                                break;
+                            case EWebhookReportsMode.Discord:
+                                reportsModeName = "Discord Webhook";
+                                break;
+                            case EWebhookReportsMode.Custom:
+                                reportsModeName = "Custom URL";
+                                break;
+                        }
+
+                        if (ImGui.BeginCombo("##WebhookMode", $"{reportsModeName}", ImGuiComboFlags.None))
+                        {
+                            if (ImGui.Selectable("Discord Deduplication"))
+                            {
+                                webhookReportsMode = EWebhookReportsMode.DiscordDeduplication;
+                            }
+                            ImGui.SetItemTooltip("Send to a Discord Webhook after using a ZDPS Server to check if the same report was sent already within a short timeframe.");
+                            if (ImGui.Selectable("Discord Webhook"))
+                            {
+                                webhookReportsMode = EWebhookReportsMode.Discord;
+                            }
+                            ImGui.SetItemTooltip("Send directly to a Discord Webhook.");
+                            if (ImGui.Selectable("Custom URL"))
+                            {
+                                webhookReportsMode = EWebhookReportsMode.Custom;
+                            }
+                            ImGui.SetItemTooltip("Send directly to a custom URL of your choice.");
+                            ImGui.EndCombo();
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Select the type of Webhook Mode you want to use for sending ZDPS Reports.\n'Discord Deduplication' is recommended if other users may be sending the same Encounter Report to the same Discord Channel at the same time to avoid duplicate messages.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        // TODO: Maybe allow adding multiple Webhooks and toggling the enabled state of each one (should allow entering a friendly name next to them too)
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text($"Send Encounter Reports To {reportsModeName}: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##WebhookReportsEnabled", ref webhookReportsEnabled);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped($"When enabled, sends an Encounter Report to the given {reportsModeName} server.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.BeginDisabled(!webhookReportsEnabled);
+                        ImGui.Indent();
+
+                        switch (webhookReportsMode)
+                        {
+                            case EWebhookReportsMode.DiscordDeduplication:
+                            case EWebhookReportsMode.Discord:
+                                if (webhookReportsMode == EWebhookReportsMode.DiscordDeduplication)
+                                {
+                                    ImGui.AlignTextToFramePadding();
+                                    ImGui.Text("Deduplication Server URL: ");
+                                    ImGui.SameLine();
+                                    ImGui.SetNextItemWidth(-1);
+                                    ImGui.InputText("##WebhookReportsDeduplicationServerUrl", ref webhookReportsDeduplicationServerUrl, 512);
+                                    ImGui.Indent();
+                                    ImGui.BeginDisabled(true);
+                                    ImGui.TextWrapped("The Discord Deduplication Server URL to prevent duplicate reports with.");
+                                    ImGui.EndDisabled();
+                                    ImGui.Unindent();
+                                }
+
+                                ImGui.AlignTextToFramePadding();
+                                ImGui.Text("Webhook URL: ");
+                                ImGui.SameLine();
+                                ImGui.SetNextItemWidth(-1);
+                                if (ImGui.InputText("##WebhookReportsDiscordUrl", ref webhookReportsDiscordUrl, 512))
+                                {
+                                    if (Utils.SplitAndValidateDiscordWebhook(webhookReportsDiscordUrl) != null)
+                                    {
+                                        IsDiscordWebhookUrlValid = true;
+                                    }
+                                    else
+                                    {
+                                        IsDiscordWebhookUrlValid = false;
+                                    }
+                                }
+
+                                if (!IsDiscordWebhookUrlValid)
+                                {
+                                    ImGui.Indent();
+                                    ImGui.BeginDisabled(true);
+                                    ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                                    ImGui.TextWrapped("The entered URL appears invalid.");
+                                    ImGui.PopStyleColor();
+                                    ImGui.EndDisabled();
+                                    ImGui.Unindent();
+                                }
+
+                                ImGui.Indent();
+                                ImGui.BeginDisabled(true);
+                                ImGui.TextWrapped("The Discord Webhook URL to send reports to.");
+                                ImGui.EndDisabled();
+                                ImGui.Unindent();
+                                break;
+                            case EWebhookReportsMode.Custom:
+                                ImGui.AlignTextToFramePadding();
+                                ImGui.Text("Webhook URL: ");
+                                ImGui.SameLine();
+                                ImGui.SetNextItemWidth(-1);
+                                ImGui.InputText("##WebhookReportsCustomUrl", ref webhookReportsCustomUrl, 512);
+                                ImGui.Indent();
+                                ImGui.BeginDisabled(true);
+                                ImGui.TextWrapped("The Custom URL to send reports to.");
+                                ImGui.EndDisabled();
+                                ImGui.Unindent();
+                                break;
+                        }
+
+                        ImGui.Unindent();
+                        ImGui.EndDisabled();
+
+                        ImGui.EndChild();
+                        ImGui.EndTabItem();
+                    }
                     ImGui.EndTabBar();
                 }
 
@@ -630,47 +761,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     SelectedNetworkDeviceIdx = PreviousSelectedNetworkDeviceIdx;
 
-                    normalizeMeterContributions = Settings.Instance.NormalizeMeterContributions;
-
-                    useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
-
-                    colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
-
-                    showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
-
-                    onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
-
-                    useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
-
-                    skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
-
-                    splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
-
-                    windowOpacity = Settings.Instance.WindowOpacity;
-
-                    useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
-
-                    databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
-
-                    limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
-
-                    playNotificationSoundOnMatchmake = Settings.Instance.PlayNotificationSoundOnMatchmake;
-
-                    matchmakeNotificationSoundPath = Settings.Instance.MatchmakeNotificationSoundPath;
-
-                    loopNotificationSoundOnMatchmake = Settings.Instance.LoopNotificationSoundOnMatchmake;
-
-                    matchmakeNotificationVolume = Settings.Instance.MatchmakeNotificationVolume;
-
-                    playNotificationSoundOnReadyCheck = Settings.Instance.PlayNotificationSoundOnReadyCheck;
-
-                    readyCheckNotificationSoundPath = Settings.Instance.ReadyCheckNotificationSoundPath;
-
-                    loopNotificationSoundOnReadyCheck = Settings.Instance.LoopNotificationSoundOnReadyCheck;
-
-                    readyCheckNotificationVolume = Settings.Instance.ReadyCheckNotificationVolume;
-
-                    logToFile = Settings.Instance.LogToFile;
+                    Load();
 
                     EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
                     if (EncounterResetKey == 0)
@@ -695,6 +786,42 @@ namespace BPSR_ZDPS.Windows
             ImGui.PopID();
         }
 
+        private static void Load()
+        {
+            normalizeMeterContributions = Settings.Instance.NormalizeMeterContributions;
+            useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
+            colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
+            showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
+            onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
+            useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
+            skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
+            splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
+            windowOpacity = Settings.Instance.WindowOpacity;
+            useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
+            databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
+            limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
+            GameCapturePreference = Settings.Instance.GameCapturePreference;
+
+            playNotificationSoundOnMatchmake = Settings.Instance.PlayNotificationSoundOnMatchmake;
+            matchmakeNotificationSoundPath = Settings.Instance.MatchmakeNotificationSoundPath;
+            loopNotificationSoundOnMatchmake = Settings.Instance.LoopNotificationSoundOnMatchmake;
+            matchmakeNotificationVolume = Settings.Instance.MatchmakeNotificationVolume;
+
+            playNotificationSoundOnReadyCheck = Settings.Instance.PlayNotificationSoundOnReadyCheck;
+            readyCheckNotificationSoundPath = Settings.Instance.ReadyCheckNotificationSoundPath;
+            loopNotificationSoundOnReadyCheck = Settings.Instance.LoopNotificationSoundOnReadyCheck;
+            readyCheckNotificationVolume = Settings.Instance.ReadyCheckNotificationVolume;
+
+            saveEncounterReportToFile = Settings.Instance.SaveEncounterReportToFile;
+            webhookReportsEnabled = Settings.Instance.WebhookReportsEnabled;
+            webhookReportsMode = Settings.Instance.WebhookReportsMode;
+            webhookReportsDeduplicationServerUrl = Settings.Instance.WebhookReportsDeduplicationServerUrl;
+            webhookReportsDiscordUrl = Settings.Instance.WebhookReportsDiscordUrl;
+            webhookReportsCustomUrl = Settings.Instance.WebhookReportsCustomUrl;
+
+            logToFile = Settings.Instance.LogToFile;
+        }
+
         private static void Save(MainWindow mainWindow)
         {
             if (SelectedNetworkDeviceIdx != PreviousSelectedNetworkDeviceIdx || GameCapturePreference != Settings.Instance.GameCapturePreference)
@@ -712,44 +839,34 @@ namespace BPSR_ZDPS.Windows
             }
 
             Settings.Instance.NormalizeMeterContributions = normalizeMeterContributions;
-
             Settings.Instance.UseShortWidthNumberFormatting = useShortWidthNumberFormatting;
-
             Settings.Instance.ColorClassIconsByRole = colorClassIconsByRole;
-
             Settings.Instance.ShowSkillIconsInDetails = showSkillIconsInDetails;
-
             Settings.Instance.OnlyShowDamageContributorsInMeters = onlyShowDamageContributorsInMeters;
-
             Settings.Instance.UseAutomaticWipeDetection = useAutomaticWipeDetection;
-
             Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection = skipTeleportStateCheckInAutomaticWipeDetection;
-
             Settings.Instance.SplitEncountersOnNewPhases = splitEncountersOnNewPhases;
-
             Settings.Instance.WindowOpacity = windowOpacity;
-
             Settings.Instance.UseDatabaseForEncounterHistory = useDatabaseForEncounterHistory;
-
             Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;
-
             Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase = limitEncounterBuffTrackingWithoutDatabase;
 
             Settings.Instance.PlayNotificationSoundOnMatchmake = playNotificationSoundOnMatchmake;
-
             Settings.Instance.MatchmakeNotificationSoundPath = matchmakeNotificationSoundPath;
-
             Settings.Instance.LoopNotificationSoundOnMatchmake = loopNotificationSoundOnMatchmake;
-
             Settings.Instance.MatchmakeNotificationVolume = matchmakeNotificationVolume;
 
             Settings.Instance.PlayNotificationSoundOnReadyCheck = playNotificationSoundOnReadyCheck;
-
             Settings.Instance.ReadyCheckNotificationSoundPath = readyCheckNotificationSoundPath;
-
             Settings.Instance.LoopNotificationSoundOnReadyCheck = loopNotificationSoundOnReadyCheck;
-
             Settings.Instance.ReadyCheckNotificationVolume = readyCheckNotificationVolume;
+
+            Settings.Instance.SaveEncounterReportToFile = saveEncounterReportToFile;
+            Settings.Instance.WebhookReportsEnabled = webhookReportsEnabled;
+            Settings.Instance.WebhookReportsMode = webhookReportsMode;
+            Settings.Instance.WebhookReportsDeduplicationServerUrl = webhookReportsDeduplicationServerUrl;
+            Settings.Instance.WebhookReportsDiscordUrl = webhookReportsDiscordUrl;
+            Settings.Instance.WebhookReportsCustomUrl = webhookReportsCustomUrl;
 
             Settings.Instance.LogToFile = logToFile;
 

@@ -277,6 +277,50 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndMenu();
                     }
 
+                    if (ImGui.BeginMenu("Benchmark"))
+                    {
+                        ImGui.TextUnformatted("Enter how many seconds you want to run a Benchmark session for:");
+                        ImGui.SetNextItemWidth(-1);
+                        int benchmarkTime = AppState.BenchmarkTime;
+                        ImGui.BeginDisabled(AppState.IsBenchmarkMode);
+                        if (ImGui.InputInt("##BenchmarkTimeInput", ref benchmarkTime, 1, 10))
+                        {
+                            if (benchmarkTime < 0)
+                            {
+                                benchmarkTime = 0;
+                            }
+                            else if (benchmarkTime > 1200)
+                            {
+                                // Limit to 1200 Seconds (20 minutes)
+                                benchmarkTime = 1200;
+                            }
+                            AppState.BenchmarkTime = benchmarkTime;
+                        }
+                        ImGui.EndDisabled();
+                        
+                        ImGui.TextUnformatted("Note: The Benchmark time will start after the next attack.\nOnly data for your character will be processed.");
+                        if (AppState.IsBenchmarkMode)
+                        {
+                            if (ImGui.Button("Stop Benchmark Early", new Vector2(-1, 0)))
+                            {
+                                AppState.HasBenchmarkBegun = false;
+                                AppState.IsBenchmarkMode = false;
+                                EncounterManager.StartEncounter(false, EncounterStartReason.BenchmarkEnd);
+                            }
+                            ImGui.SetItemTooltip("Stops the current Benchmark before the time limit is reached.");
+                        }
+                        else
+                        {
+                            if (ImGui.Button("Start Benchmark", new Vector2(-1, 0)))
+                            {
+                                AppState.IsBenchmarkMode = true;
+                                CreateNewEncounter();
+                            }
+                        }
+                        
+                        ImGui.EndMenu();
+                    }
+
                     ImGui.Separator();
                     if (ImGui.MenuItem("Settings"))
                     {
@@ -331,6 +375,11 @@ namespace BPSR_ZDPS.Windows
                 duration = EncounterManager.Current.GetDuration().ToString("hh\\:mm\\:ss");
             }
 
+            if (AppState.IsBenchmarkMode && !AppState.HasBenchmarkBegun)
+            {
+                duration = "00:00:00";
+            }
+
             ImGui.Text(duration);
 
             if (!string.IsNullOrEmpty(EncounterManager.Current.SceneName))
@@ -338,6 +387,12 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SameLine();
                 // We don't need to prefix with a space due to actual item spacing handling it for us
                 ImGui.TextUnformatted($"- {EncounterManager.Current.SceneName}");
+            }
+
+            if (AppState.IsBenchmarkMode)
+            {
+                ImGui.SameLine();
+                ImGui.TextUnformatted($"[BENCHMARK ({AppState.BenchmarkTime}s)]");
             }
 
             ImGui.SameLine();

@@ -1,4 +1,5 @@
 ﻿using BPSR_ZDPS.DataTypes;
+using BPSR_ZDPS.Web;
 using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,8 @@ namespace BPSR_ZDPS.Windows
         static bool ShouldTrackOpenState = false;
 
         static bool IsLoadingFromDatabase = false;
+
+        static EncounterReportWindow encounterReportWindow = new();
 
         public static void Open()
         {
@@ -110,6 +113,8 @@ namespace BPSR_ZDPS.Windows
             {
                 return;
             }
+
+            encounterReportWindow.Draw();
 
             ImGui.SetNextWindowSize(new Vector2(740, 675), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(500, 250), new Vector2(ImGui.GETFLTMAX()));
@@ -272,6 +277,20 @@ namespace BPSR_ZDPS.Windows
                     }
 
                     ImGui.EndCombo();
+                }
+                if (SelectedEncounterIndex > -1 && ImGui.BeginPopupContextWindow())
+                {
+                    if (ImGui.Selectable("Send Debug Report"))
+                    {
+                        if (SelectedEncounterIndex != -1 && encounters[SelectedEncounterIndex] != null)
+                        {
+                            var img = ReportImgGen.CreateReportImg(encounters[SelectedEncounterIndex]);
+                            WebManager.SubmitReportToWebhook(encounters[SelectedEncounterIndex], img, Settings.Instance.WebhookReportsDiscordUrl);
+                        }
+                    }
+                    ImGui.SetItemTooltip("For Debug Purposes Only!\nForcefully sends the selected Encounter Report to the configured Discord URL Webhook.");
+
+                    ImGui.EndPopup();
                 }
 
                 // Display Encounter Stats

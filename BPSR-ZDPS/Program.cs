@@ -202,6 +202,12 @@ namespace BPSR_ZDPS
                 //manager.Present((uint)isMouseDragging ? 0 : 1, 0);
 
                 manager.Present(1, 0);
+
+                if (HelperMethods.DeferredImGuiRenderAction != null)
+                {
+                    HelperMethods.DeferredImGuiRenderAction.Invoke();
+                    HelperMethods.DeferredImGuiRenderAction = null;
+                }
             }
 
             // Save the current encounter to the database before exiting

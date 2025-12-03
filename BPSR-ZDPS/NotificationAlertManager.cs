@@ -128,7 +128,8 @@ namespace BPSR_ZDPS
 
             if (NotificationWaveOutEvent != null)
             {
-                if (ShouldStop == false && shouldLoop)
+                // Only allow looping to occur if we know the PlayerUID
+                if (ShouldStop == false && shouldLoop && AppState.PlayerUID != 0)
                 {
                     // Keep looping the audio until actually requested to stop
                     NotificationAudioFileReader.Seek(0, SeekOrigin.Begin);
