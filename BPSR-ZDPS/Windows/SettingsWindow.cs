@@ -50,6 +50,7 @@ namespace BPSR_ZDPS.Windows
         static EGameCapturePreference GameCapturePreference;
 
         static bool saveEncounterReportToFile;
+        static int reportFileRetentionPolicyDays;
         static bool webhookReportsEnabled;
         static EWebhookReportsMode webhookReportsMode;
         static string webhookReportsDeduplicationServerUrl;
@@ -630,6 +631,24 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
+                        ImGui.BeginDisabled(!saveEncounterReportToFile);
+                        ImGui.Indent();
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Report File Retention Policy: ");
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.SliderInt("##ReportFileRetentionPolicyDays", ref reportFileRetentionPolicyDays, 0, 30, reportFileRetentionPolicyDays == 0 ? "Keep Forever" : $"{reportFileRetentionPolicyDays} Days");
+                        ImGui.PopStyleColor(2);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("How long to keep locally saved Report files for. When not set to Keep Forever, expired data is automatically deleted on application close.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+                        ImGui.Unindent();
+                        ImGui.EndDisabled();
+
                         ImGui.SeparatorText("ZDPS Report Webhooks");
 
                         ImGui.AlignTextToFramePadding();
@@ -833,6 +852,7 @@ namespace BPSR_ZDPS.Windows
             readyCheckNotificationVolume = Settings.Instance.ReadyCheckNotificationVolume;
 
             saveEncounterReportToFile = Settings.Instance.SaveEncounterReportToFile;
+            reportFileRetentionPolicyDays = Settings.Instance.ReportFileRetentionPolicyDays;
             webhookReportsEnabled = Settings.Instance.WebhookReportsEnabled;
             webhookReportsMode = Settings.Instance.WebhookReportsMode;
             webhookReportsDeduplicationServerUrl = Settings.Instance.WebhookReportsDeduplicationServerUrl;
@@ -884,6 +904,7 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.ReadyCheckNotificationVolume = readyCheckNotificationVolume;
 
             Settings.Instance.SaveEncounterReportToFile = saveEncounterReportToFile;
+            Settings.Instance.ReportFileRetentionPolicyDays = reportFileRetentionPolicyDays;
             Settings.Instance.WebhookReportsEnabled = webhookReportsEnabled;
             Settings.Instance.WebhookReportsMode = webhookReportsMode;
             Settings.Instance.WebhookReportsDeduplicationServerUrl = webhookReportsDeduplicationServerUrl;

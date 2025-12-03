@@ -34,6 +34,7 @@ public class Settings
     public bool LoopNotificationSoundOnReadyCheck { get; set; } = false;
     public float ReadyCheckNotificationVolume { get; set; } = 1.0f;
     public bool SaveEncounterReportToFile { get; set; } = false;
+    public int ReportFileRetentionPolicyDays { get; set; } = 0;
     public bool WebhookReportsEnabled { get; set; } = false;
     public EWebhookReportsMode WebhookReportsMode { get; set; } = EWebhookReportsMode.Discord;
     public string WebhookReportsDeduplicationServerUrl { get; set; } = "http://localhost:5146";

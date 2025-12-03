@@ -237,6 +237,54 @@ namespace BPSR_ZDPS
             {
                 DB.ClearOldEncounters(Settings.Instance.DatabaseRetentionPolicyDays);
             }
+
+            if (Settings.Instance.SaveEncounterReportToFile && Settings.Instance.ReportFileRetentionPolicyDays > 0)
+            {
+                var reportFiles = Directory.EnumerateFiles(Path.Combine("Reports"));
+                foreach (var file in reportFiles)
+                {
+                    var fileExtension = Path.GetExtension(file);
+                    if (!fileExtension.Equals(".png", StringComparison.OrdinalIgnoreCase))
+                    {
+                        continue;
+                    }
+
+                    var fileName = Path.GetFileNameWithoutExtension(file);
+
+                    if (!fileName.StartsWith("Report_"))
+                    {
+                        continue;
+                    }
+
+                    var strippedName = fileName.Substring(7);
+
+                    if (DateTime.TryParseExact(strippedName, "yyyy-MM-dd_HH-mm-ss-ff", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out var parsed))
+                    {
+                        // File name format matches being one of our generated Reports, it's finally safe to now attempt deleting it per the retention policy setting
+                        var difference = DateTime.Now.Subtract(parsed);
+
+                        if (difference.TotalDays > Settings.Instance.ReportFileRetentionPolicyDays)
+                        {
+                            try
+                            {
+                                File.Delete(file);
+                            }
+                            catch (IOException ioException)
+                            {
+                                Serilog.Log.Error($"IO Error deleting Report file {file} per Retention Policy (Days = {Settings.Instance.ReportFileRetentionPolicyDays}, Difference = {difference}). Error: {ioException.Message}");
+                            }
+                            catch (UnauthorizedAccessException uaException)
+                            {
+                                Serilog.Log.Error($"Unauthorized Access Error deleting Report file {file} per Retention Policy (Days = {Settings.Instance.ReportFileRetentionPolicyDays}, Difference = {difference}). Error: {uaException.Message}");
+                            }
+                            catch (Exception ex)
+                            {
+                                Serilog.Log.Error($"Error deleting Report file {file} per Retention Policy (Days = {Settings.Instance.ReportFileRetentionPolicyDays}, Difference = {difference}). Error: {ex.Message}");
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         static unsafe void Window_Resized_Callback(Hexa.NET.GLFW.GLFWwindow* window, int width, int height)
