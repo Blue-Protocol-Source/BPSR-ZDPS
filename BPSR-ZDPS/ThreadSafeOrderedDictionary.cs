@@ -19,7 +19,6 @@ namespace BPSR_ZDPS
             _readerWriterLock = new ReaderWriterLockSlim();
         }
 
-        // Implement IDictionary<TKey, TValue> interface methods with locking
         public void Add(TKey key, TValue value)
         {
             _readerWriterLock.EnterWriteLock();
@@ -140,8 +139,6 @@ namespace BPSR_ZDPS
             }
         }
 
-        // Other IDictionary<TKey, TValue> and ICollection<KeyValuePair<TKey, TValue>> methods would also be implemented with appropriate locks.
-        // For example, Count, Clear, Keys, Values, GetEnumerator, etc.
         public int Count
         {
             get
@@ -226,7 +223,6 @@ namespace BPSR_ZDPS
             return GetEnumerator();
         }
 
-        // ... (other IDictionary and ICollection methods)
         public bool IsReadOnly => false;
 
         public void Add(KeyValuePair<TKey, TValue> item)
