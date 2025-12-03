@@ -76,22 +76,22 @@ namespace BPSR_ZDPS.Meters
 
                     if (totalEncounterDamage != 0)
                     {
-                        contribution = Math.Round(((double)entity.TotalDamage / (double)totalEncounterDamage) * 100, 0);
+                        contribution = Math.Round(((double)entity.TotalDamage / (double)totalEncounterDamage) * 100, 4);
 
                         if (Settings.Instance.NormalizeMeterContributions)
                         {
-                            contributionProgressBar = Math.Round(((double)entity.TotalDamage / (double)topTotalValue) * 100, 0);
+                            contributionProgressBar = Math.Round(((double)entity.TotalDamage / (double)topTotalValue) * 100, 4);
                         }
                         else
                         {
                             contributionProgressBar = contribution;
                         }
                     }
-                    string dps_format = $"{Utils.NumberToShorthand(entity.TotalDamage)} ({Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond)}) {contribution.ToString().PadLeft(3, ' ')}%"; // Format: TotalDamage (DPS) Contribution%
+                    string dps_format = $"{Utils.NumberToShorthand(entity.TotalDamage)} ({Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond)}) {contribution.ToString("F0").PadLeft(3, ' ')}%"; // Format: TotalDamage (DPS) Contribution%
                     var startPoint = ImGui.GetCursorPos();
                     // ImGui.GetTextLineHeightWithSpacing();
 
-                    ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f);
+                    ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f * Settings.Instance.MeterBarScale);
 
                     // TODO: Make progress bar fill the entire line just like how the Selectable already is (as seen with hover state)
 

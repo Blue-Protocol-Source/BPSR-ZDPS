@@ -26,6 +26,7 @@ namespace BPSR_ZDPS.Windows
         static bool skipTeleportStateCheckInAutomaticWipeDetection;
         static bool splitEncountersOnNewPhases;
         static float windowOpacity;
+        static float meterBarScale;
         static bool useDatabaseForEncounterHistory;
         static int databaseRetentionPolicyDays;
         static bool limitEncounterBuffTrackingWithoutDatabase;
@@ -167,7 +168,7 @@ namespace BPSR_ZDPS.Windows
                             network_device_preview = NetworkDevices[SelectedNetworkDeviceIdx].Description;
                         }
 
-                        if (ImGui.BeginCombo("##NetworkDeviceCombo", network_device_preview))
+                        if (ImGui.BeginCombo("##NetworkDeviceCombo", network_device_preview, ImGuiComboFlags.HeightLarge))
                         {
                             for (int i = 0; i < NetworkDevices?.Count; i++)
                             {
@@ -409,14 +410,27 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.AlignTextToFramePadding();
                         ImGui.Text("Pinned Window Opacity: ");
-                        ImGui.SameLine();
+                        ImGui.SetNextItemWidth(-1);
                         ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                         ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                        ImGui.SliderFloat("##PinnedWindowOpacity", ref windowOpacity, 0.01f, 1.0f, $"{(int)(windowOpacity * 100)}");
+                        ImGui.SliderFloat("##PinnedWindowOpacity", ref windowOpacity, 0.05f, 1.0f, $"{(int)(windowOpacity * 100)}%%");
                         ImGui.PopStyleColor(2);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
                         ImGui.TextWrapped("How transparent a pinned window is.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Meter Bar Scale: ");
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SliderFloat("##MeterBarScale", ref meterBarScale, 0.80f, 2.0f, $"{(int)(meterBarScale * 100)}%%");
+                        ImGui.PopStyleColor(2);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Scaling for how large the bars in the meter windows should be. 100%% is the default scale.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -601,6 +615,10 @@ namespace BPSR_ZDPS.Windows
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
                         ImGui.BeginChild("##IntegrationsTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ShowGenericImportantNotice(!useAutomaticWipeDetection, "AutoWipeDetectionDisabled", "[Use Automatic Wipe Detection] is currently Disabled. Reports may be incorrect until it is Enabled again.");
+                        ShowGenericImportantNotice(skipTeleportStateCheckInAutomaticWipeDetection, "SkipTeleportStateCheckInAutomaticWipeDetectionEnabled", "[Skip Teleport State Check In Automatic Wipe Detection] is currently Enabled. Reports may be incorrect until it is Disabled again.");
+                        ShowGenericImportantNotice(!splitEncountersOnNewPhases, "SplitEncountersOnNewPhasesDisabled", "[Split Encounters On New Phases] is currently Disabled. Reports may be incorrect until it is Enabled again.");
 
                         ImGui.AlignTextToFramePadding();
                         ImGui.Text("Save Encounter Report To File: ");
@@ -797,6 +815,8 @@ namespace BPSR_ZDPS.Windows
             skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
             splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
             windowOpacity = Settings.Instance.WindowOpacity;
+            meterBarScale = Settings.Instance.MeterBarScale;
+
             useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
             databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
             limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
@@ -847,6 +867,8 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection = skipTeleportStateCheckInAutomaticWipeDetection;
             Settings.Instance.SplitEncountersOnNewPhases = splitEncountersOnNewPhases;
             Settings.Instance.WindowOpacity = windowOpacity;
+            Settings.Instance.MeterBarScale = meterBarScale;
+
             Settings.Instance.UseDatabaseForEncounterHistory = useDatabaseForEncounterHistory;
             Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;
             Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase = limitEncounterBuffTrackingWithoutDatabase;
@@ -888,6 +910,21 @@ namespace BPSR_ZDPS.Windows
                 ImGui.TextUnformatted("Important Note:");
                 ImGui.PopFont();
                 ImGui.TextWrapped($"Changing the [{settingName}] setting requires restarting ZDPS to take effect.");
+                ImGui.EndChild();
+                ImGui.PopStyleColor();
+            }
+        }
+
+        static void ShowGenericImportantNotice(bool showCondition, string uniqueName, string text)
+        {
+            if (showCondition)
+            {
+                ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
+                ImGui.BeginChild($"##GenericImportantNotice_{uniqueName}", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
+                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                ImGui.TextUnformatted("Important Note:");
+                ImGui.PopFont();
+                ImGui.TextWrapped($"{text}");
                 ImGui.EndChild();
                 ImGui.PopStyleColor();
             }
