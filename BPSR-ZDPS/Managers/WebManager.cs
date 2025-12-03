@@ -12,9 +12,15 @@ using Zproto;
 
 namespace BPSR_ZDPS.Web
 {
-    public class WebManager
+    public static class WebManager
     {
         private static HttpClient HttpClient = new HttpClient();
+
+        static WebManager()
+        {
+            HttpClient.DefaultRequestHeaders.Add("User-Agent", $"ZDPS/{Utils.AppVersion}");
+            HttpClient.DefaultRequestHeaders.Add("X-ZDPS-Version", Utils.AppVersion.ToString());
+        }
 
         public static void SubmitReportToWebhook(Encounter encounter, Image<Rgba32> img, string webhookUrl)
         {
@@ -65,6 +71,31 @@ namespace BPSR_ZDPS.Web
             catch (Exception ex)
             {
                 Log.Error(ex, "SubmitReportToWebhook Error");
+            }
+        }
+
+        public static void SubmitBPTimerRequest(object data, string endpoint, string apiKey)
+        {
+            try
+            {
+                var task = Task.Factory.StartNew(async () =>
+                {
+                    string msgJson = JsonConvert.SerializeObject(data, Formatting.Indented);
+
+                    var content = new StringContent(msgJson, Encoding.UTF8, "application/json");
+
+                    var request = new HttpRequestMessage(HttpMethod.Post, endpoint);
+                    request.Content = content;
+                    request.Headers.Add("X-API-Key", apiKey);
+
+                    var response = await HttpClient.SendAsync(request);
+
+                    Log.Information($"SubmitBPTimerRequest: StatusCode: {response.StatusCode}");
+                });
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "SubmitBPTimerRequest Error");
             }
         }
 

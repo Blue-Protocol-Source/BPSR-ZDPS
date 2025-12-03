@@ -1,0 +1,54 @@
+﻿using BPSR_ZDPS.DataTypes.External;
+using BPSR_ZDPS.Web;
+using Serilog;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BPSR_ZDPS.Managers.External
+{
+    public static class BPTimerManager
+    {
+        const int REPORT_HP_INTERVAL = 5;
+        const string HOST = "https://db.bptimer.com";
+        const string API_KEY = "";
+
+        static BPTimerHpReport? LastSentRequest = null;
+
+        public static void SendHpReport(Entity entity, int line)
+        {
+            var hpPct = (int)Math.Round(((double)entity.Hp / (double)entity.MaxHp) * 100.0, 0);
+            var canReport = hpPct % REPORT_HP_INTERVAL == 0 && LastSentRequest?.HpPct != hpPct;
+
+            if (string.IsNullOrEmpty(API_KEY))
+            {
+                Log.Error("Error in BPTimerManager: API_KEY was not set!");
+                return;
+            }
+
+            if (canReport)
+            {
+                // We'll assume (0, 0, 0) means no position has been set yet
+                bool hasPositionData = entity.Position.Length() != 0.0f;
+
+                var report = new BPTimerHpReport()
+                {
+                    MonsterId = entity.UID,
+                    HpPct = hpPct,
+                    Line = line,
+                    PosX = hasPositionData ? entity.Position.X : null,
+                    PosY = hasPositionData ? entity.Position.Y : null,
+                    PosZ = hasPositionData ? entity.Position.Z : null,
+                    AccountId = null,
+                    UID = AppState.PlayerUID
+                };
+
+                LastSentRequest = report;
+
+                WebManager.SubmitBPTimerRequest(report, $"{HOST}/api/create-hp-report", API_KEY);
+            }
+        }
+    }
+}

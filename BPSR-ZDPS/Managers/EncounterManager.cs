@@ -471,6 +471,10 @@ namespace BPSR_ZDPS
                 // Find the entity for the AttrSummonerId/AttrTopSummonerId and update their Skill matching this entity's AttrSkillId
                 UpdateCasterSkillTierLevel(0, entity, (int)value);
             }
+            else if (key == "AttrPos")
+            {
+                entity.SetPosition(((Zproto.Vec3)value).ToVector3());
+            }
         }
 
         public void UpdateCasterSkillTierLevel(long casterUuid, Entity summoned, int skillTierLevel = -1)
@@ -749,6 +753,7 @@ namespace BPSR_ZDPS
         public int SubProfessionId { get; private set; } = 0;
         public string SubProfession { get; private set; }
         public int Level { get; set; } = 0;
+        public Vector3 Position { get; private set; } = new();
 
         public CombatStats2 DamageStats { get; set; } = new();
         public CombatStats2 HealingStats { get; set; } = new();
@@ -935,6 +940,11 @@ namespace BPSR_ZDPS
             {
                 cached.Level = level;
             }
+        }
+
+        public void SetPosition(Vector3 position)
+        {
+            Position = position;
         }
 
         /// <summary>
