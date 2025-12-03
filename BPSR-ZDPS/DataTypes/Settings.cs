@@ -1,4 +1,5 @@
-﻿using BPSR_ZDPS.Windows;
+﻿using BPSR_ZDPS.DataTypes.External;
+using BPSR_ZDPS.Windows;
 using Newtonsoft.Json;
 
 namespace BPSR_ZDPS.DataTypes;
@@ -40,6 +41,9 @@ public class Settings
     public string WebhookReportsDeduplicationServerUrl { get; set; } = "http://localhost:5146";
     public string WebhookReportsDiscordUrl { get; set; } = "";
     public string WebhookReportsCustomUrl { get; set; } = "";
+
+    // Settings specific to External components
+    public SettingsExternal External { get; set; } = new();
 
     public uint HotkeysEncounterReset { get; set; }
 
@@ -90,4 +94,9 @@ public enum EWebhookReportsMode
     DiscordDeduplication,
     Discord,
     Custom
+}
+
+public class SettingsExternal
+{
+    public BPTimerSettings BPTimerSettings { get; set; } = new();
 }

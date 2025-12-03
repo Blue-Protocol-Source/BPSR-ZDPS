@@ -14,7 +14,7 @@ namespace BPSR_ZDPS.DataTypes.External
         [JsonProperty("hp_pct")]
         public int HpPct;
         [JsonProperty("line")]
-        public int Line;
+        public uint Line;
         [JsonProperty("pos_x", NullValueHandling = NullValueHandling.Ignore)]
         public float? PosX;
         [JsonProperty("pos_y", NullValueHandling = NullValueHandling.Ignore)]

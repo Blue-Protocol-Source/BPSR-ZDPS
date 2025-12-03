@@ -57,6 +57,11 @@ namespace BPSR_ZDPS.Windows
         static string webhookReportsDiscordUrl;
         static string webhookReportsCustomUrl;
 
+        // External Settings
+        static bool externalBPTimerEnabled;
+        static bool externalBPTimerIncludeCharacterId;
+        static bool externalBPTimerFieldBossHpReportsEnabled;
+
         static bool IsDiscordWebhookUrlValid = true;
 
         static int RunOnceDelayed = 0;
@@ -414,7 +419,10 @@ namespace BPSR_ZDPS.Windows
                         ImGui.SetNextItemWidth(-1);
                         ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                         ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                        ImGui.SliderFloat("##PinnedWindowOpacity", ref windowOpacity, 0.05f, 1.0f, $"{(int)(windowOpacity * 100)}%%");
+                        if (ImGui.SliderFloat("##PinnedWindowOpacity", ref windowOpacity, 0.05f, 1.0f, $"{(int)(windowOpacity * 100)}%%"))
+                        {
+                            windowOpacity = MathF.Round(windowOpacity, 2);
+                        }
                         ImGui.PopStyleColor(2);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
@@ -427,7 +435,10 @@ namespace BPSR_ZDPS.Windows
                         ImGui.SetNextItemWidth(-1);
                         ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                         ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                        ImGui.SliderFloat("##MeterBarScale", ref meterBarScale, 0.80f, 2.0f, $"{(int)(meterBarScale * 100)}%%");
+                        if (ImGui.SliderFloat("##MeterBarScale", ref meterBarScale, 0.80f, 2.0f, $"{(int)(meterBarScale * 100)}%%"))
+                        {
+                            meterBarScale = MathF.Round(meterBarScale, 2);
+                        }
                         ImGui.PopStyleColor(2);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
@@ -494,7 +505,10 @@ namespace BPSR_ZDPS.Windows
                         ImGui.SetNextItemWidth(-1);
                         ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                         ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                        ImGui.SliderFloat("##MatchmakeNotificationVolume", ref matchmakeNotificationVolume, 0.10f, 3.0f, $"{(int)(matchmakeNotificationVolume * 100)}%%");
+                        if (ImGui.SliderFloat("##MatchmakeNotificationVolume", ref matchmakeNotificationVolume, 0.10f, 3.0f, $"{(int)(matchmakeNotificationVolume * 100)}%%"))
+                        {
+                            matchmakeNotificationVolume = MathF.Round(matchmakeNotificationVolume, 2);
+                        }
                         ImGui.PopStyleColor(2);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
@@ -555,7 +569,10 @@ namespace BPSR_ZDPS.Windows
                         ImGui.SetNextItemWidth(-1);
                         ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                         ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                        ImGui.SliderFloat("##ReadyCheckNotificationVolume", ref readyCheckNotificationVolume, 0.10f, 3.0f, $"{(int)(readyCheckNotificationVolume * 100)}%%");
+                        if (ImGui.SliderFloat("##ReadyCheckNotificationVolume", ref readyCheckNotificationVolume, 0.10f, 3.0f, $"{(int)(readyCheckNotificationVolume * 100)}%%"))
+                        {
+                            readyCheckNotificationVolume = MathF.Round(readyCheckNotificationVolume, 2);
+                        }
                         ImGui.PopStyleColor(2);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
@@ -778,6 +795,65 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Unindent();
                         ImGui.EndDisabled();
 
+                        if (ImGui.CollapsingHeader("BPTimer", ImGuiTreeNodeFlags.DefaultOpen))
+                        {
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("BPTimer Enabled: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##ExternalBPTimerEnabled", ref externalBPTimerEnabled);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, allows sending reports back to BPTimer.com.");
+                            bool hasBPTimerReports = externalBPTimerFieldBossHpReportsEnabled;
+                            if (!hasBPTimerReports)
+                            {
+                                ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                            }
+                            else
+                            {
+                                ImGui.PushStyleColor(ImGuiCol.Text, Colors.Green);
+                            }
+                            ImGui.TextWrapped("Note: This setting alone does not enable reports. They must be enabled individually below.");
+                            ImGui.PopStyleColor();
+
+                            ImGui.EndDisabled();
+                            if (ImGui.CollapsingHeader("Data Collection##BPTimerDataCollectionSection"))
+                            {
+                                ImGui.TextUnformatted("BPTimer collects the following data:");
+                                ImGui.BulletText("Boss ID/HP/Position");
+                                ImGui.BulletText("Player Line Number");
+                                ImGui.BulletText("Player UID (if you opt-in below)");
+                                ImGui.BulletText("Your IP Address");
+                            }
+                            ImGui.Unindent();
+
+                            ImGui.BeginDisabled(!externalBPTimerEnabled);
+                            ImGui.Indent();
+
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("Include Own Character Data In Report: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##ExternalBPTimerIncludeCharacterId", ref externalBPTimerIncludeCharacterId);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, your Character UID will be included in the reported data.");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+                            
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("BPTimer Field Boss HP Reports: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##ExternalBPTimerFieldBossHpReportsEnabled", ref externalBPTimerFieldBossHpReportsEnabled);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, reports Field Boss HP data back to BPTimer.com.");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+
+                            ImGui.Unindent();
+                            ImGui.EndDisabled();
+                        }
+
                         ImGui.EndChild();
                         ImGui.EndTabItem();
                     }
@@ -785,7 +861,8 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.NewLine();
-                if (ImGui.Button("Save", new Vector2(120, 0)))
+                float buttonWidth = 120;
+                if (ImGui.Button("Save", new Vector2(buttonWidth, 0)))
                 {
                     Save(mainWindow);
 
@@ -793,8 +870,8 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SameLine();
-                ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X);
-                if (ImGui.Button("Close", new Vector2(120, 0)))
+                ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonWidth);
+                if (ImGui.Button("Close", new Vector2(buttonWidth, 0)))
                 {
                     SelectedNetworkDeviceIdx = PreviousSelectedNetworkDeviceIdx;
 
@@ -860,6 +937,11 @@ namespace BPSR_ZDPS.Windows
             webhookReportsCustomUrl = Settings.Instance.WebhookReportsCustomUrl;
 
             logToFile = Settings.Instance.LogToFile;
+
+            // External
+            externalBPTimerEnabled = Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled;
+            externalBPTimerIncludeCharacterId = Settings.Instance.External.BPTimerSettings.ExternalBPTimerIncludeCharacterId;
+            externalBPTimerFieldBossHpReportsEnabled = Settings.Instance.External.BPTimerSettings.ExternalBPTimerFieldBossHpReportsEnabled;
         }
 
         private static void Save(MainWindow mainWindow)
@@ -912,6 +994,11 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.WebhookReportsCustomUrl = webhookReportsCustomUrl;
 
             Settings.Instance.LogToFile = logToFile;
+
+            // External
+            Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled = externalBPTimerEnabled;
+            Settings.Instance.External.BPTimerSettings.ExternalBPTimerIncludeCharacterId = externalBPTimerIncludeCharacterId;
+            Settings.Instance.External.BPTimerSettings.ExternalBPTimerFieldBossHpReportsEnabled = externalBPTimerFieldBossHpReportsEnabled;
 
             RegisterAllHotkeys(mainWindow);
 

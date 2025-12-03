@@ -311,6 +311,7 @@ namespace BPSR_ZDPS
         // Fields here are not stored in the Database
         public List<long> BossUUIDs { get; set; } = new();
         public EDungeonState DungeonState { get; set; } = EDungeonState.DungeonStateNull;
+        public uint ChannelLine { get; set; } = 0;
 
         public Encounter()
         {
@@ -523,13 +524,6 @@ namespace BPSR_ZDPS
             {
                 if (!BossUUIDs.Contains(entity.UUID))
                 {
-                    /*if (BossUUID != 0)
-                    {
-                        if (Entities.TryGetValue(BossUUID, out var oldBoss))
-                        {
-                            oldBoss.HpUpdated -= OnBossHpUpdated;
-                        }
-                    }*/
                     BossUUIDs.Add(entity.UUID);
                     entity.HpUpdated += OnBossHpUpdated;
                 }
@@ -542,6 +536,11 @@ namespace BPSR_ZDPS
                     BossAttrId = (long)attr_id;
                 }
             }
+        }
+
+        public void SetChannelLineNumber(uint line)
+        {
+            ChannelLine = line;
         }
 
         public void IncrementDeaths()

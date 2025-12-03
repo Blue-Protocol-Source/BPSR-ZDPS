@@ -1,4 +1,5 @@
-﻿using BPSR_ZDPS.DataTypes.External;
+﻿using BPSR_ZDPS.DataTypes;
+using BPSR_ZDPS.DataTypes.External;
 using BPSR_ZDPS.Web;
 using Serilog;
 using System;
@@ -17,8 +18,18 @@ namespace BPSR_ZDPS.Managers.External
 
         static BPTimerHpReport? LastSentRequest = null;
 
-        public static void SendHpReport(Entity entity, int line)
+        public static void SendHpReport(Entity entity, uint line)
         {
+            if (!Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled)
+            {
+                return;
+            }
+
+            if (!Settings.Instance.External.BPTimerSettings.ExternalBPTimerFieldBossHpReportsEnabled)
+            {
+                return;
+            }
+
             var hpPct = (int)Math.Round(((double)entity.Hp / (double)entity.MaxHp) * 100.0, 0);
             var canReport = hpPct % REPORT_HP_INTERVAL == 0 && LastSentRequest?.HpPct != hpPct;
 
@@ -33,6 +44,8 @@ namespace BPSR_ZDPS.Managers.External
                 // We'll assume (0, 0, 0) means no position has been set yet
                 bool hasPositionData = entity.Position.Length() != 0.0f;
 
+                long? uid = (Settings.Instance.External.BPTimerSettings.ExternalBPTimerIncludeCharacterId ? AppState.PlayerUID : null);
+
                 var report = new BPTimerHpReport()
                 {
                     MonsterId = entity.UID,
@@ -42,7 +55,7 @@ namespace BPSR_ZDPS.Managers.External
                     PosY = hasPositionData ? entity.Position.Y : null,
                     PosZ = hasPositionData ? entity.Position.Z : null,
                     AccountId = null,
-                    UID = AppState.PlayerUID
+                    UID = uid
                 };
 
                 LastSentRequest = report;
