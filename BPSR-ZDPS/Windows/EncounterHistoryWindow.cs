@@ -232,7 +232,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SameLine();
                 // Change the height of the combo box dropdown menu
                 //ImGui.SetNextWindowSize(new Vector2(0, 400));
-                ImGui.SetNextItemWidth(-35);
+                ImGui.SetNextItemWidth(-1);
                 if (ImGui.BeginCombo("##EncounterHistoryCombo", selectedPreviewText, ImGuiComboFlags.HeightLarge))
                 {
                     for (int i = 0; i < encounters.Count; i++)
@@ -278,18 +278,19 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.EndCombo();
                 }
-
-                ImGui.SameLine();
-                if (ImGui.Button(":>"))
+                if (SelectedEncounterIndex > -1 && ImGui.BeginPopupContextWindow())
                 {
-                    if (SelectedEncounterIndex != -1 && encounters[SelectedEncounterIndex] != null)
+                    if (ImGui.Selectable("Send Debug Report"))
                     {
-                        //encounterReportWindow = new();
-                        //encounterReportWindow.Open(encounters[SelectedEncounterIndex]);
-
-                        var img = ReportImgGen.CreateReportImg(encounters[SelectedEncounterIndex]);
-                        WebManager.SubmitReportToWebhook(encounters[SelectedEncounterIndex], img, Settings.Instance.WebhookReportsDiscordUrl);
+                        if (SelectedEncounterIndex != -1 && encounters[SelectedEncounterIndex] != null)
+                        {
+                            var img = ReportImgGen.CreateReportImg(encounters[SelectedEncounterIndex]);
+                            WebManager.SubmitReportToWebhook(encounters[SelectedEncounterIndex], img, Settings.Instance.WebhookReportsDiscordUrl);
+                        }
                     }
+                    ImGui.SetItemTooltip("For Debug Purposes Only!\nForcefully sends the selected Encounter Report to the configured Discord URL Webhook.");
+
+                    ImGui.EndPopup();
                 }
 
                 // Display Encounter Stats
