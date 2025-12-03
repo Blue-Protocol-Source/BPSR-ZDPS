@@ -91,10 +91,11 @@ namespace BPSR_ZDPS.Web
             var unixStartTime = new DateTimeOffset(encounter.StartTime).ToUnixTimeSeconds();
 
             string encounterName = $"**Encounter**:{(encounter.IsWipe ? " `Wipe`" : "")} {encounter.SceneName}{(!string.IsNullOrEmpty(encounter.SceneSubName) ? $" - {encounter.SceneSubName}" : "")}";
-            string bossDetails = $"{(!string.IsNullOrEmpty(encounter.BossName) ? $"**Boss**: {encounter.BossName}{(encounter.BossHpPct > 0 ? $" ({Math.Round(encounter.BossHpPct / 100.0f, 2)}%)" : "")}" : "")}";
+            string bossDetails = $"{(!string.IsNullOrEmpty(encounter.BossName) ? $"**Boss**: {encounter.BossName}{(encounter.BossHpPct > 0 ? $" ({Math.Round(encounter.BossHpPct / 1000.0f, 2)}%)" : "")}" : "")}";
 
             var msgContentBuilder = new StringBuilder();
             msgContentBuilder.AppendLine("**ZDPS Report**");
+            msgContentBuilder.AppendLine($"**Reporter**: {AppState.PlayerName}");
             msgContentBuilder.AppendLine(encounterName);
             if (!string.IsNullOrEmpty(bossDetails))
             {

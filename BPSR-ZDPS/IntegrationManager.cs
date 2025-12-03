@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZLinq;
+using Zproto;
 
 namespace BPSR_ZDPS
 {
@@ -26,8 +27,37 @@ namespace BPSR_ZDPS
                 return;
             }
 
+            // We do not currently care about creating reports for benchmarks
+            if (e.Reason == EncounterStartReason.BenchmarkEnd)
+            {
+                return;
+            }
+
+            // Don't create reports for Null (Open World) states as we don't handle their encounters nicely yet
+            if (EncounterManager.Current.DungeonState == EDungeonState.DungeonStateNull)
+            {
+                return;
+            }
+
+            // TODO: Add setting to only allow creating reports if more than one player exists (or some min count)
+            // TODO: (Do this after we correctly track boss/entity hp/state in here) If Reason is not NewObjective, and it's not a wipe, if the boss has HP remaining consider it a "ran out of time" event
+
             // Only create reports when there is a boss in the encounter and it is dead or the encounter is a wipe
-            if (e.Reason == EncounterStartReason.NewObjective || (EncounterManager.Current.BossUUID > 0 && (EncounterManager.Current.BossHpPct == 0 || EncounterManager.Current.IsWipe)))
+            EncounterManager.Current.Entities.TryGetValue(EncounterManager.Current.BossUUID, out var bossEntity);
+            var bossState = bossEntity?.GetAttrKV("AttrState");
+            var bossHp = bossEntity?.GetAttrKV("AttrHp");
+            var bossMaxHp = bossEntity?.GetAttrKV("AttrMaxHp");
+            if (bossEntity != null)
+            {
+                System.Diagnostics.Debug.WriteLine($"BossAttrHp={bossHp}, BossAttrMaxHp={bossMaxHp}, HpPct={EncounterManager.Current.BossHpPct}");
+            }
+            if (
+                e.Reason == EncounterStartReason.NewObjective ||
+                (
+                EncounterManager.Current.BossUUID > 0 && (bossState != null && (bossEntity?.Hp == 0 || (EActorState)bossState == EActorState.ActorStateDead) || EncounterManager.Current.IsWipe)
+                )
+                )
+            //if (e.Reason == EncounterStartReason.NewObjective || (EncounterManager.Current.BossUUID > 0 && (EncounterManager.Current.BossHpPct == 0 || EncounterManager.Current.IsWipe)))
             {
                 System.Diagnostics.Debug.WriteLine("IntegrationManager is creating an Encounter Report.");
                 HelperMethods.DeferredImGuiRenderAction = () =>
@@ -72,6 +102,10 @@ namespace BPSR_ZDPS
             {
                 System.Diagnostics.Debug.WriteLine($"IntegrationManager EncounterEndFinal did not detect a dead boss or wipe in Battle:{e.BattleId} Encounter: {e.EncounterId}.");
                 System.Diagnostics.Debug.WriteLine($"BossUUID:{EncounterManager.Current.BossUUID}, BossHpPct:{EncounterManager.Current.BossHpPct}, IsWipe:{EncounterManager.Current.IsWipe}");
+                if (bossState != null)
+                {
+                    System.Diagnostics.Debug.WriteLine($"BossState {(EActorState)bossState}");
+                }
             }
         }
     }

@@ -164,6 +164,22 @@ namespace BPSR_ZDPS
 
         public static void CheckDeferredCalls()
         {
+            if (AppState.IsBenchmarkMode && AppState.HasBenchmarkBegun)
+            {
+                if (EncounterManager.Current.GetDuration().TotalSeconds >= AppState.BenchmarkTime)
+                {
+                    AppState.HasBenchmarkBegun = false;
+                    AppState.IsBenchmarkMode = false;
+
+                    DeferredEncounterEndFinalTime = null;
+
+                    EncounterManager.SignalEncounterEndFinal(new EncounterEndFinalData() { BattleId = EncounterManager.CurrentBattleId, EncounterId = (ulong)EncounterManager.CurrentEncounter, Reason = EncounterStartReason.BenchmarkEnd });
+                    EncounterManager.StartEncounter(false, EncounterStartReason.BenchmarkEnd);
+                    
+                    return;
+                }
+            }
+
             if (DeferredEncounterStartTime.HasValue && DateTime.Now.CompareTo(DeferredEncounterStartTime) >= 0)
             {
                 DeferredEncounterStartTime = null;

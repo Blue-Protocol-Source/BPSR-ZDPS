@@ -22,6 +22,10 @@ namespace BPSR_ZDPS
         public static ulong PlayerTotalMeterValue { get; set; }
         public static double PlayerMeterValuePerSecond { get; set; }
 
+        public static bool IsBenchmarkMode { get; set; }
+        public static int BenchmarkTime { get; set; }
+        public static bool HasBenchmarkBegun { get; set; }
+
         public static void LoadDataTables()
         {
             // Load table data for resolving with in the future
