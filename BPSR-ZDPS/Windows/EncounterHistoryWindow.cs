@@ -235,7 +235,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetNextItemWidth(-1);
                 if (ImGui.BeginCombo("##EncounterHistoryCombo", selectedPreviewText, ImGuiComboFlags.HeightLarge))
                 {
-                    for (int i = 0; i < encounters.Count; i++)
+                    for (int i = encounters.Count - 1; i >= 0 ; i--)
                     {
                         bool isSelected = SelectedEncounterIndex == i;
 
