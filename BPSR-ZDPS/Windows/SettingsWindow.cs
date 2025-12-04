@@ -822,6 +822,8 @@ namespace BPSR_ZDPS.Windows
                                 ImGui.TextUnformatted("BPTimer collects the following data:");
                                 ImGui.BulletText("Boss ID/HP/Position");
                                 ImGui.BulletText("Player Line Number");
+                                ImGui.BulletText("Account ID");
+                                ImGui.SetItemTooltip("This is being used to determine what game region is being played on.");
                                 ImGui.BulletText("Player UID (if you opt-in below)");
                                 ImGui.BulletText("Your IP Address");
                             }

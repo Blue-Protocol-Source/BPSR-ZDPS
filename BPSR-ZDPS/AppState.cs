@@ -12,6 +12,7 @@ namespace BPSR_ZDPS
     {
         public static long PlayerUUID { get; set; } // Original raw UUID
         public static long PlayerUID { get; set; }  // Resolved UUID into UID
+        public static string AccountId { get; set; }
         public static string PlayerName { get; set; }
         public static int ProfessionId { get; set; }
         public static string ProfessionName { get; set; }

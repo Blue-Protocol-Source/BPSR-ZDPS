@@ -986,6 +986,7 @@ namespace BPSR_ZDPS
             System.Diagnostics.Debug.WriteLine($"ProcessSyncContainerData converted UID:{vData.CharId} into UUID:{playerUuid}");
 
             AppState.PlayerUID = vData.CharId;
+            AppState.AccountId = vData.CharBase.AccountId;
             long playerUid = vData.CharId;
 
             if (vData.RoleLevel?.Level != 0)
@@ -1069,6 +1070,10 @@ namespace BPSR_ZDPS
                     {
                         EncounterManager.Current.SetName(currentUserUuid, ser.CharBaseInfo.Name);
                         AppState.PlayerName = ser.CharBaseInfo.Name;
+                    }
+                    if (!string.IsNullOrEmpty(ser.CharBaseInfo.AccountId) && string.IsNullOrEmpty(AppState.AccountId))
+                    {
+                        AppState.AccountId = ser.CharBaseInfo.AccountId;
                     }
                     if (ser.CharBaseInfo.FightPoint != null)
                     {

@@ -54,7 +54,7 @@ namespace BPSR_ZDPS.Managers.External
                     PosX = hasPositionData ? entity.Position.X : null,
                     PosY = hasPositionData ? entity.Position.Y : null,
                     PosZ = hasPositionData ? entity.Position.Z : null,
-                    AccountId = null,
+                    AccountId = AppState.AccountId,
                     UID = uid
                 };
 
