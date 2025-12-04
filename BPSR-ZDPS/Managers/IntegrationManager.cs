@@ -42,6 +42,15 @@ namespace BPSR_ZDPS
                 return;
             }
 
+            // We perform a check to make sure the setting is above 0 before iterating through the entity list to improve performance for most users who do not set a min count
+            if (Settings.Instance.MinimumPlayerCountToCreateReport > 0)
+            {
+                if (EncounterManager.Current.Entities.Count(x => x.Value.EntityType == EEntityType.EntChar) < Settings.Instance.MinimumPlayerCountToCreateReport)
+                {
+                    return;
+                }
+            }
+
             // TODO: Add setting to only allow creating reports if more than one player exists (or some min count)
             // TODO: (Do this after we correctly track boss/entity hp/state in here) If Reason is not NewObjective, and it's not a wipe, if the boss has HP remaining consider it a "ran out of time" event
 

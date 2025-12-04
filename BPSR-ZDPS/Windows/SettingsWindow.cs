@@ -51,6 +51,7 @@ namespace BPSR_ZDPS.Windows
 
         static bool saveEncounterReportToFile;
         static int reportFileRetentionPolicyDays;
+        static int minimumPlayerCountToCreateReport;
         static bool webhookReportsEnabled;
         static EWebhookReportsMode webhookReportsMode;
         static string webhookReportsDeduplicationServerUrl;
@@ -666,6 +667,20 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Unindent();
                         ImGui.EndDisabled();
 
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Minimum Player Count To Create Report: ");
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.SliderInt("##MinimumPlayerCountToCreateReport", ref minimumPlayerCountToCreateReport, 0, 20, minimumPlayerCountToCreateReport == 0 ? "Any" : $"{minimumPlayerCountToCreateReport} Players");
+                        ImGui.PopStyleColor(2);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("The number of players required in an Encounter to create a report for. This applies to both local saving and Webhook sending.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
                         ImGui.SeparatorText("ZDPS Report Webhooks");
 
                         ImGui.AlignTextToFramePadding();
@@ -934,6 +949,7 @@ namespace BPSR_ZDPS.Windows
 
             saveEncounterReportToFile = Settings.Instance.SaveEncounterReportToFile;
             reportFileRetentionPolicyDays = Settings.Instance.ReportFileRetentionPolicyDays;
+            minimumPlayerCountToCreateReport = Settings.Instance.MinimumPlayerCountToCreateReport;
             webhookReportsEnabled = Settings.Instance.WebhookReportsEnabled;
             webhookReportsMode = Settings.Instance.WebhookReportsMode;
             webhookReportsDeduplicationServerUrl = Settings.Instance.WebhookReportsDeduplicationServerUrl;
@@ -991,6 +1007,7 @@ namespace BPSR_ZDPS.Windows
 
             Settings.Instance.SaveEncounterReportToFile = saveEncounterReportToFile;
             Settings.Instance.ReportFileRetentionPolicyDays = reportFileRetentionPolicyDays;
+            Settings.Instance.MinimumPlayerCountToCreateReport = minimumPlayerCountToCreateReport;
             Settings.Instance.WebhookReportsEnabled = webhookReportsEnabled;
             Settings.Instance.WebhookReportsMode = webhookReportsMode;
             Settings.Instance.WebhookReportsDeduplicationServerUrl = webhookReportsDeduplicationServerUrl;

@@ -23,6 +23,7 @@ namespace BPSR_ZDPS.Windows
         public static int SelectedIndexByBattle = -1;
         public static int SelectedViewMode = 0;
         public static EEntityFilterMode EntityFilterMode = EEntityFilterMode.All;
+        public static bool HideEntitiesWithNoDamageDealt = false;
 
         static List<Encounter> Encounters = new();
         static List<Battle> Battles = new();
@@ -395,6 +396,11 @@ namespace BPSR_ZDPS.Windows
                                     break;
                             }
 
+                            if (HideEntitiesWithNoDamageDealt && entity.TotalDamage == 0)
+                            {
+                                continue;
+                            }
+
                             ImGui.TableNextRow();
                             ImGui.TableNextColumn();
 
@@ -551,6 +557,10 @@ namespace BPSR_ZDPS.Windows
                                     EntityFilterMode = EEntityFilterMode.BossesOnly;
                                 }
                                 ImGui.EndMenu();
+                            }
+                            if (ImGui.MenuItem("Hide Entities With No Damage", HideEntitiesWithNoDamageDealt))
+                            {
+                                HideEntitiesWithNoDamageDealt = !HideEntitiesWithNoDamageDealt;
                             }
                             ImGui.EndPopup();
                         }
