@@ -258,6 +258,14 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.Indent();
                         RebindKeyButton("Encounter Reset", ref EncounterResetKey, ref EncounterResetKeyName);
+                        if (splitEncountersOnNewPhases)
+                        {
+                            ImGui.Indent();
+                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
+                            ImGui.TextWrapped("[Split Encounters On New Phases] is Enabled. You likely do not need this keybind to manually reset an Encounter. ZDPS will handle Encounter separation for you.");
+                            ImGui.PopStyleColor();
+                            ImGui.Unindent();
+                        }
                         ImGui.Unindent();
 
                         ImGui.SeparatorText("Database");
