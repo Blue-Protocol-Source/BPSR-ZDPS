@@ -2,6 +2,8 @@
 
 public enum WorldNtf
 {
+    NotifySwitchScene = 0x1, // 1
+    NotifySwitchSceneEnd = 0x2, // 2
     EnterScene = 0x3, // 3
     NotifyLoadSceneEnd = 0x4, // 4
     Teleport = 0x5, // 5
@@ -73,7 +75,14 @@ public enum WorldNtf
     NotifyQuestGiveUp = 0x4D, // 77
     NotifyQuestComplete = 0x4E, // 78
     NotifyUserAllValidBattlePassData = 0x4F, // 79
+    NotifyPlayerBeginInteraction = 0x51, // 81
+    SyncSubSceneAttrs = 0x52, // 82
     QteBegin = 0x3001, // 12289
+    SyncClientUseSkill = 0x3002, // 12290
+    NotifyBuffChange = 0x3003, // 12291
+    SyncServerSkillStageEnd = 0x3004, // 12292
+    SyncServerSkillEnd = 0x3005, // 12293
+    SyncServerSkillSingingTimeSub = 0x3006, // 12294
     QuestAbort = 0x6001, // 24577
     NotifyBuyShopResult = 0x29001, // 167937
     NotifyShopItemCanBuy = 0x29002, // 167938
