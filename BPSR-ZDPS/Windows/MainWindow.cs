@@ -41,7 +41,7 @@ namespace BPSR_ZDPS.Windows
             entityInspector.Draw(this);
             NetDebug.Draw();
             DebugDungeonTracker.Draw(this);
-            RaidManager.Draw(this);
+            RaidManagerCooldownsWindow.Draw(this);
             DatabaseManagerWindow.Draw(this);
         }
 
@@ -271,7 +271,7 @@ namespace BPSR_ZDPS.Windows
                     {
                         if (ImGui.MenuItem("Cooldown Priority Tracker"))
                         {
-                            RaidManager.Open();
+                            RaidManagerCooldownsWindow.Open();
                         }
 
                         ImGui.EndMenu();

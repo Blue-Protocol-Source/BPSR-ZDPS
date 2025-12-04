@@ -10,7 +10,7 @@ using ZLinq;
 
 namespace BPSR_ZDPS.Windows
 {
-    public static class RaidManager
+    public static class RaidManagerCooldownsWindow
     {
         public const string LAYER = "RaidManagerWindowLayer";
         public static string TITLE_ID = "###RaidManagerWindow";
