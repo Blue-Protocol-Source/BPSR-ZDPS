@@ -819,13 +819,15 @@ namespace BPSR_ZDPS.Windows
                             ImGui.EndDisabled();
                             if (ImGui.CollapsingHeader("Data Collection##BPTimerDataCollectionSection"))
                             {
+                                ImGui.Indent();
                                 ImGui.TextUnformatted("BPTimer collects the following data:");
                                 ImGui.BulletText("Boss ID/HP/Position");
-                                ImGui.BulletText("Player Line Number");
+                                ImGui.BulletText("Character Line Number");
                                 ImGui.BulletText("Account ID");
                                 ImGui.SetItemTooltip("This is being used to determine what game region is being played on.");
-                                ImGui.BulletText("Player UID (if you opt-in below)");
+                                ImGui.BulletText("Character UID (if you opt-in below)");
                                 ImGui.BulletText("Your IP Address");
+                                ImGui.Unindent();
                             }
                             ImGui.Unindent();
 
@@ -848,7 +850,7 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Checkbox("##ExternalBPTimerFieldBossHpReportsEnabled", ref externalBPTimerFieldBossHpReportsEnabled);
                             ImGui.Indent();
                             ImGui.BeginDisabled(true);
-                            ImGui.TextWrapped("When enabled, reports Field Boss HP data back to BPTimer.com.");
+                            ImGui.TextWrapped("When enabled, reports Field Boss (and Magical Creature) HP data back to BPTimer.com.");
                             ImGui.EndDisabled();
                             ImGui.Unindent();
 

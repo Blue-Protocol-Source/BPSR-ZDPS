@@ -1,4 +1,5 @@
 ﻿using BPSR_ZDPS.DataTypes;
+using BPSR_ZDPS.Managers.External;
 using BPSR_ZDPS.Web;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace BPSR_ZDPS
         public static void InitBindings()
         {
             EncounterManager.EncounterEndFinal += EncounterManager_EncounterEndFinal;
+
+            BPTimerManager.InitializeBindings();
 
             System.Diagnostics.Debug.WriteLine("IntegrationManager InitBindings");
         }

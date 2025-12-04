@@ -303,7 +303,8 @@ namespace BPSR_ZDPS
         public delegate void SkillActivatedEventHandler(object sender, SkillActivatedEventArgs e);
         public event SkillActivatedEventHandler SkillActivated;
         public delegate void HpUpdatedEventHandler(object sender, HpUpdatedEventArgs e);
-        public event HpUpdatedEventHandler BossHpUpdated;
+        public event HpUpdatedEventHandler BossHpUpdated; // Only used for Bosses
+        public event HpUpdatedEventHandler EntityHpUpdated; // Used for all Entities
 
         public EncounterExData ExData { get; set; } = new();
         public byte[] ExDataBlob {  get; set; }
@@ -460,6 +461,10 @@ namespace BPSR_ZDPS
             }
             else if (key == "AttrHp")
             {
+                if (!entity.IsHpUpdatedHandlerSubscribed(OnEntityHpUpdated))
+                {
+                    entity.HpUpdated += OnEntityHpUpdated;
+                }
                 entity.SetHpValues((long)value, -1);
             }
             else if (key == "AttrMaxHp")
@@ -520,7 +525,7 @@ namespace BPSR_ZDPS
 
         public void UpdateEncounterBossData(Entity entity, int attr_id)
         {
-            if (entity.MonsterType == 2)
+            if (entity.MonsterType == EMonsterType.Boss)
             {
                 if (!BossUUIDs.Contains(entity.UUID))
                 {
@@ -724,10 +729,26 @@ namespace BPSR_ZDPS
             BossHpUpdated?.Invoke(sender, e);
         }
 
+        protected virtual void OnEntityHpUpdated(object sender, HpUpdatedEventArgs e)
+        {
+            EntityHpUpdated?.Invoke(sender, e);
+        }
+
+        public void RemoveEntityHandlers()
+        {
+            foreach (var entity in Entities)
+            {
+                entity.Value.RemoveEventHandlers();
+            }
+        }
+
         public void RemoveEventHandlers()
         {
             SkillActivated = null;
             BossHpUpdated = null;
+            EntityHpUpdated = null;
+
+            RemoveEntityHandlers();
         }
     }
 
@@ -777,7 +798,7 @@ namespace BPSR_ZDPS
 
         // Monster specific variables
         // When -1, this is unset (non-Monsters will be at -1), when 1 this is Elite, when 2 it is a boss
-        public int MonsterType { get; set; } = -1;
+        public EMonsterType MonsterType { get; set; } = EMonsterType.Unknown;
 
         public long Hp { get; private set; } = 0;
         public long MaxHp { get; private set; } = 0;
@@ -997,7 +1018,7 @@ namespace BPSR_ZDPS
 
         public void SetMonsterType(int type)
         {
-            MonsterType = type;
+            MonsterType = (EMonsterType)type;
         }
 
         public void RegisterSkillActivation(int skillId)
@@ -1193,6 +1214,12 @@ namespace BPSR_ZDPS
             return (T)value;
         }
 
+        public bool IsHpUpdatedHandlerSubscribed(HpUpdatedEventHandler handler)
+        {
+            Delegate[] invocationList = HpUpdated?.GetInvocationList();
+            return invocationList != null && invocationList.Contains(handler);
+        }
+
         // Merges the data from another entity with this one, does not check the UUIDs match first
         public void MergeEntity(Entity newEntity)
         {
@@ -1251,6 +1278,14 @@ namespace BPSR_ZDPS
                 }
             }
         }
+    }
+
+    public enum EMonsterType : int
+    {
+        Unknown = -1,
+        Monster = 0,
+        Elite = 1,
+        Boss = 2
     }
 
     public class SkillActivatedEventArgs : EventArgs

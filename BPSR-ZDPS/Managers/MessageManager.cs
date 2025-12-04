@@ -1417,7 +1417,7 @@ namespace BPSR_ZDPS
                 {
                     // The player state is in a wipe pattern
                     // Check if there is a Boss type monster
-                    var bosses = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.Value.MonsterType == 2);
+                    var bosses = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.Value.MonsterType == EMonsterType.Boss);
                     //System.Diagnostics.Debug.WriteLine($"bosses.Count = {bosses.Count()}");
 
                     if (bosses.Count() > 0)

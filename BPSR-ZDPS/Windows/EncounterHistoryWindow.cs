@@ -386,7 +386,7 @@ namespace BPSR_ZDPS.Windows
                                     }
                                     break;
                                 case EEntityFilterMode.BossesOnly:
-                                    if (entity.MonsterType != 2)
+                                    if (entity.MonsterType != EMonsterType.Boss)
                                     {
                                         continue;
                                     }

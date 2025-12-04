@@ -54,14 +54,14 @@ namespace BPSR_ZDPS.Windows
             {
                 HasInitBindings = true;
                 EncounterManager.EncounterStart += RaidManager_EncounterStart;
-                EncounterManager.EncounterEndFinal += RaidManager_EncounterEnd;
+                EncounterManager.EncounterEndFinal += RaidManager_EncounterEndFinal;
             }
         }
 
-        private static void RaidManager_EncounterEnd(EncounterEndFinalData e)
+        private static void RaidManager_EncounterEndFinal(EncounterEndFinalData e)
         {
             HasBoundEvents = false;
-            EncounterManager.Current.RemoveEventHandlers();
+            EncounterManager.Current.SkillActivated -= RaidManager_Entity_SkillActivated;
             System.Diagnostics.Debug.WriteLine("RaidManager_EncounterEnd");
         }
 
@@ -76,7 +76,7 @@ namespace BPSR_ZDPS.Windows
             {
                 HasBoundEvents = true;
             }
-            EncounterManager.Current.RemoveEventHandlers();
+            EncounterManager.Current.SkillActivated -= RaidManager_Entity_SkillActivated;
             EncounterManager.Current.SkillActivated += RaidManager_Entity_SkillActivated;
             System.Diagnostics.Debug.WriteLine("BindCurrentEncounterEvents");
         }
