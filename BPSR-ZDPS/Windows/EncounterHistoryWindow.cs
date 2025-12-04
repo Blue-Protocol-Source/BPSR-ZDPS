@@ -22,6 +22,7 @@ namespace BPSR_ZDPS.Windows
         public static int SelectedIndexByEncounter = -1;
         public static int SelectedIndexByBattle = -1;
         public static int SelectedViewMode = 0;
+        public static EEntityFilterMode EntityFilterMode = EEntityFilterMode.All;
 
         static List<Encounter> Encounters = new();
         static List<Battle> Battles = new();
@@ -34,6 +35,14 @@ namespace BPSR_ZDPS.Windows
         static bool IsLoadingFromDatabase = false;
 
         static EncounterReportWindow encounterReportWindow = new();
+
+        public enum EEntityFilterMode : int
+        {
+            All = 0,
+            PlayersOnly = 1,
+            MonstersOnly = 2,
+            BossesOnly = 3
+        };
 
         public static void Open()
         {
@@ -278,7 +287,7 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.EndCombo();
                 }
-                if (SelectedEncounterIndex > -1 && ImGui.BeginPopupContextWindow())
+                if (SelectedEncounterIndex > -1 && ImGui.BeginPopup("##DebugReportPopup"))
                 {
                     if (ImGui.Selectable("Send Debug Report"))
                     {
@@ -292,6 +301,7 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.EndPopup();
                 }
+                ImGui.OpenPopupOnItemClick("##DebugReportPopup", ImGuiPopupFlags.MouseButtonRight);
 
                 // Display Encounter Stats
                 if (SelectedEncounterIndex != -1)
@@ -357,10 +367,36 @@ namespace BPSR_ZDPS.Windows
 
                         for (int entIdx = 0; entIdx < entities.Length; entIdx++)
                         {
+                            var entity = entities[entIdx];
+
+                            switch (EntityFilterMode)
+                            {
+                                case EEntityFilterMode.All:
+                                    break;
+                                case EEntityFilterMode.PlayersOnly:
+                                    if (entity.EntityType != Zproto.EEntityType.EntChar)
+                                    {
+                                        continue;
+                                    }
+                                    break;
+                                case EEntityFilterMode.MonstersOnly:
+                                    if (entity.EntityType != Zproto.EEntityType.EntMonster)
+                                    {
+                                        continue;
+                                    }
+                                    break;
+                                case EEntityFilterMode.BossesOnly:
+                                    if (entity.MonsterType != 2)
+                                    {
+                                        continue;
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+
                             ImGui.TableNextRow();
                             ImGui.TableNextColumn();
-
-                            var entity = entities[entIdx];
 
                             string profession = entity.SubProfession ?? entity.Profession ?? "";
                             if (!string.IsNullOrEmpty(profession))
@@ -493,6 +529,31 @@ namespace BPSR_ZDPS.Windows
                         }
 
                         ImGui.PopStyleVar();
+
+                        if (SelectedEncounterIndex > -1 && ImGui.BeginPopupContextWindow())
+                        {
+                            if (ImGui.BeginMenu("Entity Filter"))
+                            {
+                                if (ImGui.MenuItem("All", EntityFilterMode == EEntityFilterMode.All))
+                                {
+                                    EntityFilterMode = EEntityFilterMode.All;
+                                }
+                                if (ImGui.MenuItem("Players Only", EntityFilterMode == EEntityFilterMode.PlayersOnly))
+                                {
+                                    EntityFilterMode = EEntityFilterMode.PlayersOnly;
+                                }
+                                if (ImGui.MenuItem("Monsters Only", EntityFilterMode == EEntityFilterMode.MonstersOnly))
+                                {
+                                    EntityFilterMode = EEntityFilterMode.MonstersOnly;
+                                }
+                                if (ImGui.MenuItem("Bosses Only", EntityFilterMode == EEntityFilterMode.BossesOnly))
+                                {
+                                    EntityFilterMode = EEntityFilterMode.BossesOnly;
+                                }
+                                ImGui.EndMenu();
+                            }
+                            ImGui.EndPopup();
+                        }
 
                         ImGui.EndTable();
                     }
