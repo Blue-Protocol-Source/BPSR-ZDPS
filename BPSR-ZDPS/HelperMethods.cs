@@ -25,6 +25,8 @@ namespace BPSR_ZDPS
             public static TargetTable Targets = new TargetTable();
             public static SceneTable Scenes = new SceneTable();
             public static BuffTable Buffs = new BuffTable();
+            public static ModTable Modules = new ModTable();
+            public static ModEffectTable ModEffects = new ModEffectTable();
         }
     }
 }

@@ -49,6 +49,22 @@ namespace BPSR_ZDPS
                 System.Diagnostics.Debug.WriteLine("Loaded SkillTable.json");
             }
 
+            string modTableFile = Path.Combine(Utils.DATA_DIR_NAME, "ModTable.json");
+            if (File.Exists(modTableFile))
+            {
+                var modules = JsonConvert.DeserializeObject<Dictionary<int, ModuleData>>(File.ReadAllText(modTableFile));
+                HelperMethods.DataTables.Modules.Data = modules;
+                System.Diagnostics.Debug.WriteLine("Loaded ModTable.json");
+            }
+
+            string modEffectsFile = Path.Combine(Utils.DATA_DIR_NAME, "ModEffectTable.json");
+            if (File.Exists(modEffectsFile))
+            {
+                var modEffects = JsonConvert.DeserializeObject<Dictionary<int, EffectData>>(File.ReadAllText(modEffectsFile));
+                HelperMethods.DataTables.ModEffects.Data = modEffects;
+                System.Diagnostics.Debug.WriteLine("Loaded ModEffects.json");
+            }
+
             // TODO: Every language can have its own 'Overrides' file
             string skillOverrivesFile = Path.Combine(Utils.DATA_DIR_NAME, "SkillOverrides.en.json");
             if (File.Exists(skillOverrivesFile))

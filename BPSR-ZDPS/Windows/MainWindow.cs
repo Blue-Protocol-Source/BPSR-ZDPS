@@ -43,6 +43,7 @@ namespace BPSR_ZDPS.Windows
             DebugDungeonTracker.Draw(this);
             RaidManager.Draw(this);
             DatabaseManagerWindow.Draw(this);
+            ModuleSolver.Draw();
         }
 
         static bool p_open = true;
@@ -81,6 +82,8 @@ namespace BPSR_ZDPS.Windows
                 AppState.LoadDataTables();
 
                 Settings.Instance.Apply();
+
+                ModuleSolver.Init();
 
                 if (string.IsNullOrEmpty(MessageManager.NetCaptureDeviceName))
                 {

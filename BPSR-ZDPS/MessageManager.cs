@@ -15,6 +15,7 @@ using BPSR_ZDPS.DataTypes;
 using static HexaGen.Runtime.MemoryPool;
 using System.Collections.Concurrent;
 using ZLinq;
+using BPSR_ZDPS.Windows;
 
 namespace BPSR_ZDPS
 {
@@ -955,6 +956,8 @@ namespace BPSR_ZDPS
             {
                 return;
             }
+
+            ModuleSolver.SetPlayerInv(vData);
 
             long playerUuid = Utils.EntityIdToUuid(vData.CharId, (long)EEntityType.EntChar, false, false);
 
