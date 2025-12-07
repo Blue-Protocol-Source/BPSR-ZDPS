@@ -280,6 +280,12 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndMenu();
                     }
 
+                    if (ImGui.MenuItem("Module Solver"))
+                    {
+                        ModuleSolver.Open();
+                    }
+                    ImGui.SetItemTooltip("FInd the best module combos for your build");
+
                     ImGui.Separator();
                     if (ImGui.MenuItem("Settings"))
                     {

@@ -1,23 +1,18 @@
 ﻿using Hexa.NET.ImGui;
+using Newtonsoft.Json;
 using Serilog;
-using System.Collections;
 using System.Collections.Frozen;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Net.WebSockets;
 using System.Numerics;
-using System.Xml.Linq;
 using ZLinq;
 using Zproto;
 
-namespace BPSR_ZDPS.Windows
+namespace BPSR_ZDPS
 {
     public class ModuleSolver
     {
-        private static bool _isOpen = true;
-        private static CharSerialize PlayerData = null;
-        private static Package PlayerModulesPackage = null;
+        private static bool IsOpen = true;
+        private static PlayerModDataSave PlayerModData = new PlayerModDataSave();
         private static FrozenDictionary<int, ModStatInfo> ModStatInfos;
         private static FrozenDictionary<int, ModuleType> ModTypeMapping;
         private static string ModuleImgBasePath;
@@ -25,10 +20,15 @@ namespace BPSR_ZDPS.Windows
         private static int NumAttackModules = 0;
         private static int NumSupportModules = 0;
         private static int NumGuardModules = 0;
+        private static string ModSavePath => Path.Combine(Utils.DATA_DIR_NAME, "ModulesSaveData.json");
 
         private static List<ModStatInfo> CurrentStatPriority = [];
         private static ModStatInfo PendingStatToAdd = null;
         private static List<ModComboResult> BestModResults = [];
+        private static bool ShouldBlockMainUI = false;
+        private static bool IsCalculating = false;
+        private static Task ModuleCalcTask;
+        static int RunOnceDelayed = 0;
 
         public static List<long> FilteredModules = [];
 
@@ -57,32 +57,68 @@ namespace BPSR_ZDPS.Windows
                 effectStatTypes.FirstOrDefault(x => x.StatId == 1409),
                 effectStatTypes.FirstOrDefault(x => x.StatId == 1113)
             ];
+
+            LoadSavedModData(ModSavePath);
+        }
+
+        public static void Open()
+        {
+            RunOnceDelayed = 0;
+            IsOpen = true;
         }
 
         public static void SetPlayerInv(CharSerialize data)
         {
-            PlayerData = data;
-
-            Package? modulePackages = PlayerData?.ItemPackage?.Packages[5];
-            if (modulePackages != null)
+            PlayerModData = new PlayerModDataSave()
             {
-                PlayerModulesPackage = modulePackages;
-                NumTotalModules = modulePackages.Items.Count();
-                NumAttackModules = modulePackages.Items.Count(x => IsModuleOfType(x.Value.ConfigId, ModuleType.Attack));
-                NumSupportModules = modulePackages.Items.Count(x => IsModuleOfType(x.Value.ConfigId, ModuleType.Support));
-                NumGuardModules = modulePackages.Items.Count(x => IsModuleOfType(x.Value.ConfigId, ModuleType.Guard));
+                ModulesPackage = data.ItemPackage?.Packages[5] ?? null,
+                Mod = data?.Mod ?? null
+            };
+
+            SaveModData(ModSavePath);
+            ModuleInvUpdated();
+        }
+
+        private static void ModuleInvUpdated()
+        {
+            if (PlayerModData.ModulesPackage != null)
+            {
+                NumTotalModules = PlayerModData.ModulesPackage.Items.Count();
+                NumAttackModules = PlayerModData.ModulesPackage.Items.Count(x => IsModuleOfType(x.Value.ConfigId, ModuleType.Attack));
+                NumSupportModules = PlayerModData.ModulesPackage.Items.Count(x => IsModuleOfType(x.Value.ConfigId, ModuleType.Support));
+                NumGuardModules = PlayerModData.ModulesPackage.Items.Count(x => IsModuleOfType(x.Value.ConfigId, ModuleType.Guard));
             }
         }
 
         public static void Draw()
         {
-            if (!_isOpen) return;
+            if (!IsOpen) return;
 
             var windowSize = new Vector2(800, 500);
-            float leftWidth = 250;
+            float leftWidth = 320;
             ImGui.SetNextWindowSize(windowSize, ImGuiCond.FirstUseEver);
-            if (ImGui.Begin("Module Solver", ref _isOpen, ImGuiWindowFlags.None))
+            ImGui.SetNextWindowSizeConstraints(new Vector2(1270, 700), new Vector2(float.PositiveInfinity, float.PositiveInfinity));
+            if (ImGui.Begin("Module Solver", ref IsOpen, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
             {
+                if (RunOnceDelayed == 0)
+                {
+                    RunOnceDelayed++;
+                }
+                else if (RunOnceDelayed == 1)
+                {
+                    RunOnceDelayed++;
+                    Utils.SetCurrentWindowIcon();
+                    Utils.BringWindowToFront();
+                }
+
+                var shouldBlock = CheckAndDrawNoModulesBanner();
+                if (ModuleCalcTask?.Status == TaskStatus.Running)
+                {
+                    DrawBanner("Calculating best module combos!\nThis could take a while.", 0xFF005DD9, "Thinking.png", true);
+                }
+
+                ImGui.BeginDisabled(ShouldBlockMainUI || shouldBlock);
+
                 if (ImGui.BeginTabBar("MainTabBar", ImGuiTabBarFlags.None))
                 {
                     if (ImGui.BeginTabItem("Solver"))
@@ -99,21 +135,36 @@ namespace BPSR_ZDPS.Windows
 
                     if (ImGui.BeginTabItem("Settings"))
                     {
-                        ImGui.Text("Additional options will go here...");
+                        ImGui.Text("Settings will go here.");
+                        var itsEvieFrFr = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"));
+                        if (itsEvieFrFr.HasValue)
+                        {
+                            ImGui.Image(itsEvieFrFr.Value, new Vector2(200, 200));
+                        }
                         ImGui.EndTabItem();
                     }
 
                     ImGui.EndTabBar();
                 }
+
+                ImGui.EndDisabled();
             }
 
             ImGui.End();
         }
 
-        private static void DrawSolverTab(Vector2 windowSize, float leftWidth)
+        private static async Task DrawSolverTab(Vector2 windowSize, float leftWidth)
         {
             var contentRegion = ImGui.GetContentRegionAvail();
-            ImGui.BeginChild("LeftSection", new Vector2(leftWidth, contentRegion.Y - 28), ImGuiChildFlags.Borders);
+            ImGui.SetCursorPosY(58);
+
+            var clipStart = ImGui.GetCursorScreenPos();
+            ImGui.PushClipRect(clipStart, clipStart + new Vector2(leftWidth, 20), true);
+            ImGui.SeparatorText($"Config");
+            ImGui.PopClipRect();
+            ImGui.SetCursorPosY(85);
+
+            ImGui.BeginChild("LeftSection", new Vector2(leftWidth, contentRegion.Y - 55), ImGuiChildFlags.Borders);
             ImGui.SeparatorText("Stat Priority");
             ImGui.Spacing();
 
@@ -172,64 +223,50 @@ namespace BPSR_ZDPS.Windows
             ImGui.SetCursorPosX(leftWidth + 8);
             ImGui.SetCursorPosY(58);
 
-            ImGui.SeparatorText($"Results: {FilteredModules.Count()}");
+            ImGui.SeparatorText($"Results");
             ImGui.SetCursorPosX(leftWidth + 8);
             ImGui.SetCursorPosY(85);
 
             ImGui.BeginChild("RightSection", new Vector2(windowSize.X - leftWidth - 5, contentRegion.Y - 55), ImGuiChildFlags.Borders);
             ImGui.Spacing();
 
-            /*
-            foreach (var itemId in FilteredModules)
+            if (BestModResults.Count > 0)
             {
-                var item = PlayerModulesPackage.Items[itemId];
-                DrawModule(itemId, item);
-            }*/
-
-            for (int i = 0; i < BestModResults.Count; i++)
-            {
-                ModComboResult modsResult = BestModResults[i];
-                if (ImGui.CollapsingHeader($"Result: {i}"))
+                lock (BestModResults)
                 {
-                    ImGui.TextUnformatted($"Score: {modsResult.Score}");
-
-                    var perLine = 3;
-                    var statPos = ImGui.GetCursorPos();
-                    for (int i1 = 0; i1 < modsResult.Stats.Length; i1++)
+                    lock (FilteredModules)
                     {
-                        PowerCore stat = modsResult.Stats[i1];
-                        ImGui.SetCursorPos(statPos + new Vector2(i1 * 100, 0));
-                        DrawModuleStat(stat.Id, stat.Value);
-                    }
+                        bool[] resultsOpenStates = new bool[BestModResults.Count];
+                        resultsOpenStates[0] = true;
+                        for (int i = 0; i < BestModResults.Count; i++)
+                        {
+                            ModComboResult modsResult = BestModResults[i];
+                            if (ImGui.CollapsingHeader($"Result: {i + 1} (Score: {modsResult.Score})", (resultsOpenStates[i] ? ImGuiTreeNodeFlags.DefaultOpen : ImGuiTreeNodeFlags.None)))
+                            {
+                                var perLine = 3;
+                                var statPos = ImGui.GetCursorPos();
+                                for (int i1 = 0; i1 < modsResult.Stats.Length; i1++)
+                                {
+                                    PowerCore stat = modsResult.Stats[i1];
+                                    ImGui.SetCursorPos(statPos + new Vector2(i1 * 100, 0));
+                                    DrawModuleStat(stat.Id, stat.Value);
+                                }
 
-                    if (modsResult.ModuleSet.Mod1 != 0)
-                    {
-                        var modId = FilteredModules[modsResult.ModuleSet.Mod1];
-                        var mod = PlayerModulesPackage.Items[modId];
-                        DrawModule(modId, mod, true);
-                        ImGui.SetCursorPos(ImGui.GetCursorPos() + new Vector2(500, -108));
-                    }
-
-                    if (modsResult.ModuleSet.Mod2 != 0)
-                    {
-                        var modId = FilteredModules[modsResult.ModuleSet.Mod2];
-                        var mod = PlayerModulesPackage.Items[modId];
-                        DrawModule(modId, mod, true);
-                    }
-
-                    if (modsResult.ModuleSet.Mod3 != 0)
-                    {
-                        var modId = FilteredModules[modsResult.ModuleSet.Mod3];
-                        var mod = PlayerModulesPackage.Items[modId];
-                        DrawModule(modId, mod, true);
-                        ImGui.SetCursorPos(ImGui.GetCursorPos() + new Vector2(500, -108));
-                    }
-
-                    if (modsResult.ModuleSet.Mod4 != 0)
-                    {
-                        var modId = FilteredModules[modsResult.ModuleSet.Mod4];
-                        var mod = PlayerModulesPackage.Items[modId];
-                        DrawModule(modId, mod, true);
+                                var mods = modsResult.ModuleSet.Mods;
+                                for (int i1 = 0; i1 < mods.Length; i1++)
+                                {
+                                    var modId = FilteredModules[mods[i1]];
+                                    var modItem = PlayerModData.ModulesPackage.Items[modId];
+                                    DrawModule(modId, modItem);
+                                    if ((i1 % 2) == 0)
+                                    {
+                                        ImGui.SameLine();
+                                        ImGui.Dummy(new Vector2(20, 0));
+                                        ImGui.SameLine();
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -238,7 +275,12 @@ namespace BPSR_ZDPS.Windows
             ImGui.SetCursorPosX(leftWidth + 8);
             if (ImGui.Button("Calculate", new Vector2(contentRegion.X - leftWidth, 0)))
             {
-                CalculateBestModules();
+                ModuleCalcTask = Task.Factory.StartNew(() =>
+                {
+                    ShouldBlockMainUI = true;
+                    CalculateBestModules();
+                    ShouldBlockMainUI = false;
+                });
             }
         }
 
@@ -349,19 +391,17 @@ namespace BPSR_ZDPS.Windows
 
         private static void DrawModuleInv()
         {
-            if (PlayerData?.ItemPackage?.Packages[5] == null)
-            {
-                ImGui.TextUnformatted("Please change zone to get inventory data :>");
-                return;
-            }
-
             var contentSize = ImGui.GetContentRegionAvail();
             ImGui.BeginChild("##ModuleInv", new Vector2(-1, contentSize.Y - 25));
-            var modulesInv = PlayerData.ItemPackage.Packages[5];
-            foreach (var item in modulesInv.Items)
+            var numPerLine = Math.Floor(ImGui.GetContentRegionAvail().X / MOD_DISPLAY_SIZE.X);
+            int i = 0;
+            foreach (var item in PlayerModData.ModulesPackage?.Items ?? [])
             {
                 DrawModule(item.Key, item.Value);
-                ImGui.Separator();
+                if ((++i % numPerLine) != 0)
+                {
+                    ImGui.SameLine();
+                }
             }
             ImGui.EndChild();
 
@@ -369,13 +409,14 @@ namespace BPSR_ZDPS.Windows
             ImGui.TextUnformatted($"Total: {NumTotalModules} | Attack: {NumAttackModules} | Support: {NumSupportModules} | Guard: {NumGuardModules}");
         }
 
+        static Vector2 MOD_ICON_SIZE = new Vector2(80, 80);
+        static Vector2 MOD_DISPLAY_SIZE = new Vector2(410, 105);
         public static void DrawModule(long id, Item item, bool showId = false)
         {
-            Vector2 ModIconSize = new Vector2(80, 80);
-            Vector2 ModDisplaySize = new Vector2(300, 90);
-
             var modTypeData = HelperMethods.DataTables.Modules.Data[item.ConfigId];
-            var modInfo = PlayerData.Mod.ModInfos[id];
+            var modInfo = PlayerModData.Mod.ModInfos[id];
+            var startPos = ImGui.GetCursorPos();
+            ImGui.PushClipRect(ImGui.GetCursorScreenPos(), ImGui.GetCursorScreenPos() + MOD_DISPLAY_SIZE, true);
             ImGui.BeginGroup();
             var qualityBg = GetItemQualityBg(item.Quality);
             var modIcon = GetModuleIcon(item.ConfigId);
@@ -387,29 +428,33 @@ namespace BPSR_ZDPS.Windows
             ImGui.PopFont();
 
             var pos = ImGui.GetCursorPos();
-            ImGui.Image(qualityBg, new Vector2(80, 80));
+            ImGui.Image(qualityBg, MOD_ICON_SIZE);
             ImGui.SetCursorPos(pos);
-            ImGui.Image(modIcon, new Vector2(80, 80));
+            ImGui.Image(modIcon, MOD_ICON_SIZE);
 
             if (showId)
             {
                 ImGui.SetCursorPos(pos);
                 ImGui.TextUnformatted($"ID: {id}");
-                ImGui.SetCursorPos(pos + new Vector2(0, 80));
+                ImGui.SetCursorPos(pos + new Vector2(0, MOD_ICON_SIZE.Y));
             }
 
             pos = ImGui.GetCursorPos();
-            ImGui.SetCursorPos(pos + new Vector2(100, -80));
+            ImGui.SetCursorPos(pos + new Vector2(100, -MOD_ICON_SIZE.Y));
             var numStats = item.ModNewAttr.ModParts.Count();
             for (int i = 0; i < numStats; i++)
             {
                 var partId = item.ModNewAttr.ModParts[i];
                 var level = modInfo.InitLinkNums[i];
-                ImGui.SetCursorPos(pos + new Vector2(100 + (i * 100), -84));
+                ImGui.SetCursorPos(pos + new Vector2(100 + (i * 100), -(MOD_ICON_SIZE.Y + 4)));
                 DrawModuleStat(partId, level);
             }
 
             ImGui.EndGroup();
+            ImGui.PopClipRect();
+
+            ImGui.SetCursorPos(startPos);
+            ImGui.Dummy(MOD_DISPLAY_SIZE);
         }
 
         private static void DrawModuleStat(int partId, int level)
@@ -430,6 +475,96 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetCursorPos(pos + new Vector2((size.X / 2) - 10, 60));
                 ImGui.TextUnformatted($"+{level}");
                 ImGui.PopFont();
+            }
+        }
+
+        private static bool CheckAndDrawNoModulesBanner()
+        {
+            if (PlayerModData == null || PlayerModData.ModulesPackage?.Items == null || PlayerModData.Mod == null)
+            {
+                DrawBanner("Please change line or teleport to load module inventory data.", 0xFFAD5E15, "Looking.png");
+                return true;
+            }
+
+            return false;
+        }
+
+        static float BannerImgPulseTimer = 0f;
+        private static void DrawBanner(string msg, uint bgColor, string img = null, bool animate = false)
+        {
+            float bannerheight = 200;
+            var pos = ImGui.GetCursorScreenPos();
+            var size = ImGui.GetContentRegionAvail();
+            var start = pos + new Vector2(0, (size.Y / 2) - (bannerheight / 2));
+            var drawList = ImGui.GetForegroundDrawList();
+
+            drawList.AddRectFilled(
+                start,
+                start + new Vector2(size.X, bannerheight),
+                bgColor
+            );
+
+            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], 30.0f);
+            var txtSize = ImGui.CalcTextSize(msg);
+            var txtStartPos = start + new Vector2(size.X / 2 - txtSize.X / 2, (bannerheight / 2) - (txtSize.Y / 2));
+            drawList.AddText(txtStartPos, ImGui.ColorConvertFloat4ToU32(Colors.White), msg);
+            ImGui.PopFont();
+
+            var imgRef = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, img));
+            if (imgRef.HasValue)
+            {
+                var offset = new Vector2(5, 5);
+                if (animate)
+                {
+                    BannerImgPulseTimer += ImGui.GetIO().DeltaTime;
+                    Vector2 pulseAmount = new Vector2(5, 5);
+                    float pulseSpeed = 1;
+                    offset = new Vector2(
+                        pulseAmount.X * MathF.Sin(BannerImgPulseTimer * MathF.PI * pulseSpeed),
+                        pulseAmount.Y * MathF.Sin(BannerImgPulseTimer * MathF.PI * pulseSpeed)
+                    );
+                }
+
+                var imgSize = new Vector2(bannerheight, bannerheight) + offset;
+                var imgStart = txtStartPos - new Vector2(imgSize.X + 40, (imgSize.Y / 2) - txtSize.Y / 2);
+                drawList.AddImage(imgRef.Value, imgStart, imgStart + imgSize);
+            }
+        }
+
+        private static void LoadSavedModData(string path)
+        {
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    Log.Information("No modules data saved at {Path}", path);
+                    return;
+                }
+
+                var txt = File.ReadAllText(path);
+                var modData = JsonConvert.DeserializeObject<PlayerModDataSave>(txt);
+                if (modData != null)
+                {
+                    PlayerModData = modData;
+                    ModuleInvUpdated();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error loading Mod data from {Path}", path);
+            }
+        }
+
+        private static void SaveModData(string path)
+        {
+            try
+            {
+                var jsonTxt = JsonConvert.SerializeObject(PlayerModData, Formatting.Indented);
+                File.WriteAllText(path, jsonTxt);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error saving Mod Data to {Path}", path);
             }
         }
 
@@ -466,12 +601,12 @@ namespace BPSR_ZDPS.Windows
 
         private static void CalculateBestModules()
         {
-            var filtered = FilterModulesWithStats();
-            FilteredModules = filtered;
+            lock (BestModResults)
+            {
+                BestModResults.Clear();
+            }
 
-            var shortIds = new ushort[filtered.Count];
-            for (ushort i = 0; i < filtered.Count; i++)
-                shortIds[i] = i;
+            var filtered = FilterModulesWithStats();
 
             // Create short indices
             // Create base scores for modules
@@ -507,10 +642,10 @@ namespace BPSR_ZDPS.Windows
                                 Mod4 = (ushort)l
                             };
 
-                            var mod1Cores = GetModPowerCores(FilteredModules[i]);
-                            var mod2Cores = GetModPowerCores(FilteredModules[j]);
-                            var mod3Cores = GetModPowerCores(FilteredModules[k]);
-                            var mod4Cores = GetModPowerCores(FilteredModules[l]);
+                            var mod1Cores = GetModPowerCores(filtered[i]);
+                            var mod2Cores = GetModPowerCores(filtered[j]);
+                            var mod3Cores = GetModPowerCores(filtered[k]);
+                            var mod4Cores = GetModPowerCores(filtered[l]);
 
                             var allCores = new List<PowerCore>(10);
                             allCores.AddRange(mod1Cores);
@@ -568,7 +703,7 @@ namespace BPSR_ZDPS.Windows
             });
             sw.Stop();
 
-            var top10 = bestMods.DistinctBy(x => $"{x.ModuleSet.Mod1}_{x.ModuleSet.Mod2}_{x.ModuleSet.Mod3}_{x.ModuleSet.Mod4}").OrderByDescending(x => x.Score).Take(100).ToList();
+            var top10 = bestMods.DistinctBy(x => $"{x.ModuleSet.Mod1}_{x.ModuleSet.Mod2}_{x.ModuleSet.Mod3}_{x.ModuleSet.Mod4}").OrderByDescending(x => x.Score).Take(10).ToList();
             for (int i1 = 0; i1 < top10.Count; i1++)
             {
                 ModComboResult modSet = top10[i1];
@@ -576,7 +711,7 @@ namespace BPSR_ZDPS.Windows
                 var mods = modSet.ModuleSet.Mods;
                 for (int i = 0; i < mods.Length; i++)
                 {
-                    var modId = FilteredModules[mods[i]];
+                    var modId = filtered[mods[i]];
                     var powerCores = GetModPowerCores(modId);
                     foreach (var powerCore in powerCores)
                     {
@@ -592,11 +727,20 @@ namespace BPSR_ZDPS.Windows
                     }
                 }
 
-                modSet.Stats = coreStats.Values.ToArray();
+                modSet.Stats = coreStats.Values.OrderByDescending(x => x.Value).ToArray();
 
                 top10[i1] = modSet;
             }
-            BestModResults = top10;
+
+            lock (BestModResults)
+            {
+                BestModResults = top10;
+            }
+
+            lock (FilteredModules)
+            {
+                FilteredModules = filtered;
+            }
 
             Log.Information($"Combos took: {sw.Elapsed}");
 
@@ -605,8 +749,8 @@ namespace BPSR_ZDPS.Windows
 
         private static ushort CalcModuleScore(long id)
         {
-            var modItem = PlayerModulesPackage.Items[id];
-            var modInfo = PlayerData.Mod.ModInfos[id];
+            var modItem = PlayerModData.ModulesPackage.Items[id];
+            var modInfo = PlayerModData.Mod.ModInfos[id];
             ushort score = 0;
             for (int i = 0; i < modItem.ModNewAttr.ModParts.Count; i++)
             {
@@ -623,8 +767,8 @@ namespace BPSR_ZDPS.Windows
         {
             var powerCores = new List<PowerCore>();
 
-            var modItem = PlayerModulesPackage.Items[id];
-            var modInfo = PlayerData.Mod.ModInfos[id];
+            var modItem = PlayerModData.ModulesPackage.Items[id];
+            var modInfo = PlayerModData.Mod.ModInfos[id];
             for (int i = 0; i < modItem.ModNewAttr.ModParts.Count; i++)
             {
                 var statId = modItem.ModNewAttr.ModParts[i];
@@ -646,7 +790,7 @@ namespace BPSR_ZDPS.Windows
         private static List<long> FilterModulesWithStats()
         {
             var modules = new List<long>();
-            foreach (var item in PlayerModulesPackage.Items)
+            foreach (var item in PlayerModData.ModulesPackage.Items)
             {
                 if (item.Value.ModNewAttr.ModParts.Any(x => CurrentStatPriority.Any(y => y.StatId == x)))
                 {
@@ -720,5 +864,11 @@ namespace BPSR_ZDPS.Windows
     {
         public int Id;
         public int Value;
+    }
+
+    public class PlayerModDataSave
+    {
+        public Package ModulesPackage;
+        public Mod Mod;
     }
 }
