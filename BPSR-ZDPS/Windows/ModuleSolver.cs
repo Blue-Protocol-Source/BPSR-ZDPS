@@ -11,7 +11,7 @@ namespace BPSR_ZDPS
 {
     public class ModuleSolver
     {
-        private static bool IsOpen = true;
+        private static bool IsOpen = false;
         private static PlayerModDataSave PlayerModData = new PlayerModDataSave();
         private static FrozenDictionary<int, ModStatInfo> ModStatInfos;
         private static FrozenDictionary<int, ModuleType> ModTypeMapping;
