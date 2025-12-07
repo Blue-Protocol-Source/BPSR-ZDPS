@@ -493,8 +493,13 @@ namespace BPSR_ZDPS.Windows
                                 }
                             }
                             ImGui.Text(displayName);
+                            if (stat.Value.Level > 0)
+                            {
+                                ImGui.SetItemTooltip($"Level: {stat.Value.Level}{(stat.Value.TierLevel > 0 ? $"\nTier: {stat.Value.TierLevel}" : "")}");
+                            }
 
                             ImGui.TableNextColumn();
+                            ImGui.BeginGroup();
                             if (Settings.Instance.ShowSkillIconsInDetails)
                             {
                                 var damageElementIconPath = Utils.DamagePropertyToIconPath(stat.Value.DamageElement);
@@ -511,6 +516,7 @@ namespace BPSR_ZDPS.Windows
                                 }
                             }
                             ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValueTotal)}");
+                            ImGui.EndGroup();
                             ImGui.SetItemTooltip($"Type: {stat.Value.DamageMode}\nElement: {Utils.DamagePropertyToString(stat.Value.DamageElement)}");
 
                             ImGui.TableNextColumn();

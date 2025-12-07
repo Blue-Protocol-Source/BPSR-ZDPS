@@ -70,11 +70,11 @@ namespace BPSR_ZDPS.Meters
                     double contributionProgressBar = 0.0;
                     if (EncounterManager.Current.TotalHealing != 0)
                     {
-                        contribution = Math.Round(((double)entity.TotalTakenDamage / (double)EncounterManager.Current.TotalTakenDamage) * 100, 0);
+                        contribution = Math.Round(((double)entity.TotalTakenDamage / (double)EncounterManager.Current.TotalTakenDamage) * 100, 4);
 
                         if (Settings.Instance.NormalizeMeterContributions)
                         {
-                            contributionProgressBar = Math.Round(((double)entity.TotalTakenDamage / (double)topTotalValue) * 100, 0);
+                            contributionProgressBar = Math.Round(((double)entity.TotalTakenDamage / (double)topTotalValue) * 100, 4);
                         }
                         else
                         {
@@ -83,10 +83,10 @@ namespace BPSR_ZDPS.Meters
                     }
                     string totalTaken = Utils.NumberToShorthand(entity.TotalTakenDamage);
                     string totalTps = Utils.NumberToShorthand(entity.TakenStats.ValuePerSecond);
-                    string dps_format = $"{totalTaken} ({totalTps}) {contribution.ToString().PadLeft(3, ' ')}%";
+                    string dps_format = $"{totalTaken} ({totalTps}) {contribution.ToString("F0").PadLeft(3, ' ')}%";
                     var startPoint = ImGui.GetCursorPos();
 
-                    ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f);
+                    ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f * Settings.Instance.MeterBarScale);
 
                     ImGui.PushStyleColor(ImGuiCol.PlotHistogram, Professions.ProfessionColors(profession));
                     ImGui.ProgressBar((float)contributionProgressBar / 100.0f, new Vector2(-1, 0), $"##TpsEntryContribution_{i}");

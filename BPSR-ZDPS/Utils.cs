@@ -13,6 +13,9 @@ using Zproto;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp;
 using System.Reflection;
+using System.Security.Policy;
+using System.IO.Hashing;
+using ZLinq;
 
 namespace BPSR_ZDPS
 {
@@ -138,6 +141,29 @@ namespace BPSR_ZDPS
                 fmt = "N2";
             }
             return $"{(Math.Sign(value) * shortNumber).ToString(fmt)}{suf[place]}";
+        }
+
+        /// <summary>
+        /// Generates the ZDPS TeamId for the given Encounter. This is not the same as the TeamId used by the game for parties.
+        /// </summary>
+        /// <param name="encounter"></param>
+        /// <returns></returns>
+        public static ulong CreateZTeamId(Encounter encounter)
+        {
+            var hash = new XxHash64();
+            var playerIds = encounter.Entities.AsValueEnumerable()
+                .Where(x => x.Value.EntityType == EEntityType.EntChar)
+                .Select(x => x.Value.UUID)
+                .Order();
+
+            foreach (var id in playerIds)
+            {
+                hash.Append(MemoryMarshal.Cast<long, byte>([id]));
+            }
+
+            var hashUlong = hash.GetCurrentHashAsUInt64();
+
+            return hashUlong;
         }
 
         public static string DamagePropertyToIconPath(EDamageProperty damageElement)
@@ -311,28 +337,51 @@ namespace BPSR_ZDPS
             }
         }
 
-        public static string GameCapturePreferenceToName(GameCapturePreference pref)
+        public static string GameCapturePreferenceToName(EGameCapturePreference pref)
         {
             var gamePrefName = pref switch
             {
-                GameCapturePreference.Auto => "Auto",
-                GameCapturePreference.Steam => "Steam",
-                GameCapturePreference.Standalone => "Standalone",
+                EGameCapturePreference.Auto => "Auto",
+                EGameCapturePreference.Steam => "Steam",
+                EGameCapturePreference.Standalone => "Standalone",
             };
 
             return gamePrefName;
         }
 
-        public static string[] GameCapturePreferenceToExeNames(GameCapturePreference pref)
+        public static string[] GameCapturePreferenceToExeNames(EGameCapturePreference pref)
         {
             string[] exeNameToCapture = pref switch
             {
-                GameCapturePreference.Auto => ["BPSR", "BPSR_STEAM"],
-                GameCapturePreference.Steam => ["BPSR_STEAM"],
-                GameCapturePreference.Standalone => ["BPSR"]
+                EGameCapturePreference.Auto => ["BPSR", "BPSR_STEAM"],
+                EGameCapturePreference.Steam => ["BPSR_STEAM"],
+                EGameCapturePreference.Standalone => ["BPSR"]
             };
 
             return exeNameToCapture;
+        }
+
+        public static (string id, string token)? SplitAndValidateDiscordWebhook(string url)
+        {
+            const string DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/";
+
+            try
+            {
+                if (url.StartsWith(DISCORD_WEBHOOK_URL, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    var pathSegments = url.Substring(DISCORD_WEBHOOK_URL.Length).Split('/');
+                    if (pathSegments.Length == 2)
+                    {
+                        return (pathSegments[0], pathSegments[1]);
+                    }
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         static unsafe void SetCurrentWindowIcon(Stream IconFileStream)

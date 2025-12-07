@@ -785,7 +785,7 @@
     },
     "55417":
     {
-        "Name": "Zeal Crusade",
+        "Name": "Zeal Crusade (Ruthless Rewind)",
         "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_kx07"
     },
     "55431":
@@ -1117,7 +1117,7 @@
     },
     "55432":
     {
-        "Name": "Cold and Ruthless Crusade Damage Buff"
+        "Name": "Zeal Crusade (DMG Boost)"
     },
     "100101":
     {
@@ -1902,7 +1902,7 @@
     },
     "391008":
     {
-        "Name": "Mutant Bee Passive"
+        "Name": "Stunt! Transform into Bee (Passive)"
     },
     "391301":
     {
@@ -3142,19 +3142,19 @@
     },
     "3210051":
     {
-        "Name": "Bandit Passive"
+        "Name": "Arcane! Blazing Axe (Passive)"
     },
     "3210081":
     {
-        "Name": "Lizardman Hunter Passive"
+        "Name": "Stunt! Thunder Suppress (Passive)"
     },
     "3210092":
     {
-        "Name": "Lizardman King Passive"
+        "Name": "Arcane! Silent Tide (Passive)"
     },
     "3210101":
     {
-        "Name": "Muku King - Passive Shield"
+        "Name": "Arcane! Pulse Benediction (Passive Shield)"
     },
     "3913001":
     {

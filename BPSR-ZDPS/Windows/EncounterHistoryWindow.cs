@@ -1,4 +1,5 @@
 ﻿using BPSR_ZDPS.DataTypes;
+using BPSR_ZDPS.Web;
 using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,8 @@ namespace BPSR_ZDPS.Windows
         public static int SelectedIndexByEncounter = -1;
         public static int SelectedIndexByBattle = -1;
         public static int SelectedViewMode = 0;
+        public static EEntityFilterMode EntityFilterMode = EEntityFilterMode.All;
+        public static bool HideEntitiesWithNoDamageDealt = false;
 
         static List<Encounter> Encounters = new();
         static List<Battle> Battles = new();
@@ -31,6 +34,16 @@ namespace BPSR_ZDPS.Windows
         static bool ShouldTrackOpenState = false;
 
         static bool IsLoadingFromDatabase = false;
+
+        static EncounterReportWindow encounterReportWindow = new();
+
+        public enum EEntityFilterMode : int
+        {
+            All = 0,
+            PlayersOnly = 1,
+            MonstersOnly = 2,
+            BossesOnly = 3
+        };
 
         public static void Open()
         {
@@ -110,6 +123,8 @@ namespace BPSR_ZDPS.Windows
             {
                 return;
             }
+
+            encounterReportWindow.Draw();
 
             ImGui.SetNextWindowSize(new Vector2(740, 675), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(500, 250), new Vector2(ImGui.GETFLTMAX()));
@@ -230,7 +245,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetNextItemWidth(-1);
                 if (ImGui.BeginCombo("##EncounterHistoryCombo", selectedPreviewText, ImGuiComboFlags.HeightLarge))
                 {
-                    for (int i = 0; i < encounters.Count; i++)
+                    for (int i = encounters.Count - 1; i >= 0 ; i--)
                     {
                         bool isSelected = SelectedEncounterIndex == i;
 
@@ -273,6 +288,21 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.EndCombo();
                 }
+                if (SelectedEncounterIndex > -1 && ImGui.BeginPopup("##DebugReportPopup"))
+                {
+                    if (ImGui.Selectable("Send Debug Report"))
+                    {
+                        if (SelectedEncounterIndex != -1 && encounters[SelectedEncounterIndex] != null)
+                        {
+                            var img = ReportImgGen.CreateReportImg(encounters[SelectedEncounterIndex]);
+                            WebManager.SubmitReportToWebhook(encounters[SelectedEncounterIndex], img, Settings.Instance.WebhookReportsDiscordUrl);
+                        }
+                    }
+                    ImGui.SetItemTooltip("For Debug Purposes Only!\nForcefully sends the selected Encounter Report to the configured Discord URL Webhook.");
+
+                    ImGui.EndPopup();
+                }
+                ImGui.OpenPopupOnItemClick("##DebugReportPopup", ImGuiPopupFlags.MouseButtonRight);
 
                 // Display Encounter Stats
                 if (SelectedEncounterIndex != -1)
@@ -338,10 +368,41 @@ namespace BPSR_ZDPS.Windows
 
                         for (int entIdx = 0; entIdx < entities.Length; entIdx++)
                         {
+                            var entity = entities[entIdx];
+
+                            switch (EntityFilterMode)
+                            {
+                                case EEntityFilterMode.All:
+                                    break;
+                                case EEntityFilterMode.PlayersOnly:
+                                    if (entity.EntityType != Zproto.EEntityType.EntChar)
+                                    {
+                                        continue;
+                                    }
+                                    break;
+                                case EEntityFilterMode.MonstersOnly:
+                                    if (entity.EntityType != Zproto.EEntityType.EntMonster)
+                                    {
+                                        continue;
+                                    }
+                                    break;
+                                case EEntityFilterMode.BossesOnly:
+                                    if (entity.MonsterType != EMonsterType.Boss)
+                                    {
+                                        continue;
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            if (HideEntitiesWithNoDamageDealt && entity.TotalDamage == 0)
+                            {
+                                continue;
+                            }
+
                             ImGui.TableNextRow();
                             ImGui.TableNextColumn();
-
-                            var entity = entities[entIdx];
 
                             string profession = entity.SubProfession ?? entity.Profession ?? "";
                             if (!string.IsNullOrEmpty(profession))
@@ -474,6 +535,35 @@ namespace BPSR_ZDPS.Windows
                         }
 
                         ImGui.PopStyleVar();
+
+                        if (SelectedEncounterIndex > -1 && ImGui.BeginPopupContextWindow())
+                        {
+                            if (ImGui.BeginMenu("Entity Filter"))
+                            {
+                                if (ImGui.MenuItem("All", EntityFilterMode == EEntityFilterMode.All))
+                                {
+                                    EntityFilterMode = EEntityFilterMode.All;
+                                }
+                                if (ImGui.MenuItem("Players Only", EntityFilterMode == EEntityFilterMode.PlayersOnly))
+                                {
+                                    EntityFilterMode = EEntityFilterMode.PlayersOnly;
+                                }
+                                if (ImGui.MenuItem("Monsters Only", EntityFilterMode == EEntityFilterMode.MonstersOnly))
+                                {
+                                    EntityFilterMode = EEntityFilterMode.MonstersOnly;
+                                }
+                                if (ImGui.MenuItem("Bosses Only", EntityFilterMode == EEntityFilterMode.BossesOnly))
+                                {
+                                    EntityFilterMode = EEntityFilterMode.BossesOnly;
+                                }
+                                ImGui.EndMenu();
+                            }
+                            if (ImGui.MenuItem("Hide Entities With No Damage", HideEntitiesWithNoDamageDealt))
+                            {
+                                HideEntitiesWithNoDamageDealt = !HideEntitiesWithNoDamageDealt;
+                            }
+                            ImGui.EndPopup();
+                        }
 
                         ImGui.EndTable();
                     }

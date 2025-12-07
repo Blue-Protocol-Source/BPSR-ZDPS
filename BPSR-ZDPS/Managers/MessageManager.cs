@@ -645,6 +645,26 @@ namespace BPSR_ZDPS
                     case EAttrType.AttrTopSummonerId:
                         EncounterManager.Current.SetAttrKV(uuid, "AttrTopSummonerId", reader.ReadInt64());
                         break;
+                    case EAttrType.AttrHateList:
+                        // This is called a "List" but it is not a list at all. It's a single item of just a UUID and Threat Value for the current target
+                        while (!reader.IsAtEnd)
+                        {
+                            uint tag = reader.ReadTag();
+                            int fieldNumber = Google.Protobuf.WireFormat.GetTagFieldNumber(tag);
+                            Google.Protobuf.WireFormat.WireType wireType = Google.Protobuf.WireFormat.GetTagWireType(tag);
+
+                            if (wireType != Google.Protobuf.WireFormat.WireType.LengthDelimited)
+                            {
+                                reader.SkipLastField();
+                                continue;
+                            }
+
+                            var len = reader.ReadLength();
+
+                            var info = HateInfo.Parser.ParseFrom(reader);
+                            EncounterManager.Current.SetAttrKV(uuid, "AttrHateList", info);
+                        }
+                        break;
                     default:
                         string attr_name = ((EAttrType)attr.Id).ToString();
                         EncounterManager.Current.SetAttrKV(uuid, attr_name, reader.ReadInt32());
@@ -656,8 +676,6 @@ namespace BPSR_ZDPS
 
         public static void ProcessSyncNearEntities(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
-            BattleStateMachine.CheckDeferredCalls();
-
             //Log.Information($"ProcessSyncNearEntities: Meesage arrival time: {extraData.ArrivalTime}. Diff to DateTime now: {DateTime.Now - extraData.ArrivalTime}");
 
             var syncNearEntities = SyncNearEntities.Parser.ParseFrom(payloadBuffer);
@@ -711,12 +729,13 @@ namespace BPSR_ZDPS
                         break;
                 }*/
             }
+
+            // We do this at the end in case we need to capture an entity Attr before a potential Start/End call happens
+            BattleStateMachine.CheckDeferredCalls();
         }
 
         public static void ProcessSyncNearDeltaInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
-            BattleStateMachine.CheckDeferredCalls();
-
             var syncNearDeltaInfo = SyncNearDeltaInfo.Parser.ParseFrom(payloadBuffer);
             //Log.Information("Notify: {Hex}", BitConverter.ToString(span.ToArray()));
             if (syncNearDeltaInfo.DeltaInfos == null || syncNearDeltaInfo.DeltaInfos.Count == 0)
@@ -728,12 +747,13 @@ namespace BPSR_ZDPS
             {
                 ProcessAoiSyncDelta(aoiSyncDelta, extraData);
             }
+
+            // We do this at the end in case we need to capture an entity Attr before a potential Start/End call happens
+            BattleStateMachine.CheckDeferredCalls();
         }
 
         public static void ProcessAoiSyncDelta(AoiSyncDelta delta, ExtraPacketData extraData)
         {
-            BattleStateMachine.CheckDeferredCalls();
-
             if (delta == null)
             {
                 return;
@@ -848,6 +868,27 @@ namespace BPSR_ZDPS
                 }
                 bool isAttackerPlayer = IsUuidPlayerRaw(attackerUuid);
 
+                if (syncDamageInfo.TopSummonerId != 0)
+                {
+                    if (EncounterManager.Current.Entities.TryGetValue(syncDamageInfo.AttackerUuid, out var summonedEntity))
+                    {
+                        EncounterManager.Current.UpdateCasterSkillTierLevel(syncDamageInfo.TopSummonerId, summonedEntity);
+                    }
+                }
+
+                if (AppState.IsBenchmarkMode && isAttackerPlayer && attackerUuid != AppState.PlayerUUID)
+                {
+                    // Only record benchmarking player related details
+                    // All Monsters and other non-player entities will be processed still
+                    return;
+                }
+                else if (AppState.IsBenchmarkMode && isAttackerPlayer && attackerUuid == AppState.PlayerUUID && !AppState.HasBenchmarkBegun)
+                {
+                    AppState.HasBenchmarkBegun = true;
+                    // This will automatically restart our Encounter Start Time to handle the start of the Benchmark Encounter
+                    EncounterManager.StartEncounter(false, EncounterStartReason.BenchmarkStart);
+                }
+
                 if (isAttackerPlayer && attackerUuid != 0)
                 {
                     EncounterManager.Current.SetEntityType(attackerUuid, EEntityType.EntChar);
@@ -894,23 +935,24 @@ namespace BPSR_ZDPS
 
                 if (isHeal)
                 {
-                    EncounterManager.Current.AddHealing((isAttackerPlayer ? attackerUuid : 0), targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraData);
+                    EncounterManager.Current.AddHealing((isAttackerPlayer ? attackerUuid : 0), targetUuid, skillId, syncDamageInfo.OwnerLevel, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraData);
                 }
                 else
                 {
-                    EncounterManager.Current.AddDamage(attackerUuid, targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraData);
+                    EncounterManager.Current.AddDamage(attackerUuid, targetUuid, skillId, syncDamageInfo.OwnerLevel, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraData);
 
-                    EncounterManager.Current.AddTakenDamage(attackerUuid, targetUuid, skillId, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraData);
+                    EncounterManager.Current.AddTakenDamage(attackerUuid, targetUuid, skillId, syncDamageInfo.OwnerLevel, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraData);
                 }
             }
+
+            // We do this at the end in case we need to capture an entity Attr before a potential Start/End call happens
+            BattleStateMachine.CheckDeferredCalls();
         }
 
         public static long currentUserUuid = 0;
 
         public static void ProcessSyncToMeDeltaInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
         {
-            BattleStateMachine.CheckDeferredCalls();
-
             var syncToMeDeltaInfo = SyncToMeDeltaInfo.Parser.ParseFrom(payloadBuffer);
             var aoiSyncToMeDelta = syncToMeDeltaInfo.DeltaInfo;
             long uuid = aoiSyncToMeDelta.Uuid;
@@ -926,6 +968,9 @@ namespace BPSR_ZDPS
                 return;
             }
             ProcessAoiSyncDelta(aoiSyncDelta, extraData);
+
+            // We do this at the end in case we need to capture an entity Attr before a potential Start/End call happens
+            BattleStateMachine.CheckDeferredCalls();
         }
 
         public static void ProcessSyncContainerData(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
@@ -964,6 +1009,7 @@ namespace BPSR_ZDPS
             System.Diagnostics.Debug.WriteLine($"ProcessSyncContainerData converted UID:{vData.CharId} into UUID:{playerUuid}");
 
             AppState.PlayerUID = vData.CharId;
+            AppState.AccountId = vData.CharBase.AccountId;
             long playerUid = vData.CharId;
 
             if (vData.RoleLevel?.Level != 0)
@@ -1010,6 +1056,7 @@ namespace BPSR_ZDPS
                 System.Diagnostics.Debug.WriteLine($"ProcessSyncContainerData.SceneData:\n{sceneData}");
 
                 EncounterManager.SetSceneId(sceneData.LevelMapId);
+                EncounterManager.Current.SetChannelLineNumber(sceneData.LineId);
             }
 
             if (vData.Equip != null)
@@ -1046,6 +1093,10 @@ namespace BPSR_ZDPS
                     {
                         EncounterManager.Current.SetName(currentUserUuid, ser.CharBaseInfo.Name);
                         AppState.PlayerName = ser.CharBaseInfo.Name;
+                    }
+                    if (!string.IsNullOrEmpty(ser.CharBaseInfo.AccountId) && string.IsNullOrEmpty(AppState.AccountId))
+                    {
+                        AppState.AccountId = ser.CharBaseInfo.AccountId;
                     }
                     if (ser.CharBaseInfo.FightPoint != null)
                     {
@@ -1285,6 +1336,7 @@ namespace BPSR_ZDPS
                 }
             }
 
+            EncounterManager.Current.DungeonState = vData.FlowInfo.State;
             BattleStateMachine.DungeonStateHistoryAdd(vData.FlowInfo.State);
 
             int dungeonVarDataIdx = 0;
@@ -1388,7 +1440,7 @@ namespace BPSR_ZDPS
                 {
                     // The player state is in a wipe pattern
                     // Check if there is a Boss type monster
-                    var bosses = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.Value.MonsterType == 2);
+                    var bosses = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.Value.MonsterType == EMonsterType.Boss);
                     //System.Diagnostics.Debug.WriteLine($"bosses.Count = {bosses.Count()}");
 
                     if (bosses.Count() > 0)
@@ -1404,7 +1456,7 @@ namespace BPSR_ZDPS
                             {
                                 EncounterManager.Current.SetWipeState(true);
                                 //System.Diagnostics.Debug.WriteLine($"We've hit a wipe (bossesAtMaxHp = {bossesAtMaxHp})! Start up a new encounter");
-                                EncounterManager.StartEncounter();
+                                EncounterManager.StartEncounter(false, EncounterStartReason.Wipe);
                             }
                             else
                             {
@@ -1441,6 +1493,7 @@ namespace BPSR_ZDPS
                 if (dun.FlowInfo?.State != null)
                 {
                     EDungeonState dungeonState = (EDungeonState)dun.FlowInfo.State;
+                    EncounterManager.Current.DungeonState = dungeonState;
                     BattleStateMachine.DungeonStateHistoryAdd(dungeonState);
                     if (false)
                     {

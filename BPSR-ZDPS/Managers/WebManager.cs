@@ -1,0 +1,278 @@
+﻿using BPSR_ZDPS.DataTypes;
+using Newtonsoft.Json;
+using Serilog;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
+using System.IO.Hashing;
+using System.Net.Http.Headers;
+using System.Net.ServerSentEvents;
+using System.Runtime.InteropServices;
+using System.Text;
+using ZLinq;
+using Zproto;
+
+namespace BPSR_ZDPS.Web
+{
+    public static class WebManager
+    {
+        private static HttpClient HttpClient = new HttpClient();
+
+        static WebManager()
+        {
+            HttpClient.DefaultRequestHeaders.Add("User-Agent", $"ZDPS/{Utils.AppVersion}");
+            HttpClient.DefaultRequestHeaders.Add("X-ZDPS-Version", Utils.AppVersion.ToString());
+        }
+
+        public static void SubmitReportToWebhook(Encounter encounter, Image<Rgba32> img, string webhookUrl)
+        {
+            try
+            {
+                var task = Task.Factory.StartNew(async () =>
+                {
+                    var teamId = Utils.CreateZTeamId(encounter);
+                    var msg = CreateDiscordMessage(encounter, teamId);
+                    var msgJson = JsonConvert.SerializeObject(msg, Formatting.Indented);
+
+                    using var imgMs = new MemoryStream();
+                    img.SaveAsPng(imgMs);
+                    imgMs.Flush();
+                    imgMs.Position = 0;
+
+                    using var form = new MultipartFormDataContent();
+                    form.Add(new StringContent(msgJson, Encoding.UTF8, "application/json"), "payload_json");
+
+                    var fileContent = new StreamContent(imgMs);
+                    fileContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+                    form.Add(fileContent, "report", "report.png");
+                    form.Headers.Add("X-ZDPS-ZTeamID", $"{teamId}");
+
+                    string url = "";
+                    if (Settings.Instance.WebhookReportsMode == EWebhookReportsMode.DiscordDeduplication)
+                    {
+                        // Construct url for going to the deduplication server
+                        var discordWebHookInfo = Utils.SplitAndValidateDiscordWebhook(Settings.Instance.WebhookReportsDiscordUrl);
+                        url = $"{Settings.Instance.WebhookReportsDeduplicationServerUrl}/report/discord/{discordWebHookInfo.Value.id}/{discordWebHookInfo.Value.token}";
+                    }
+                    else if (Settings.Instance.WebhookReportsMode == EWebhookReportsMode.Discord)
+                    {
+                        // Directly send to Discord
+                        url = $"{webhookUrl}";
+                    }
+                    else if (Settings.Instance.WebhookReportsMode == EWebhookReportsMode.Custom)
+                    {
+                        // Directly send to Custom URL
+                        url = $"{webhookUrl}";
+                    }
+
+                    var response = await HttpClient.PostAsync(url, form);
+
+                    Log.Information($"SubmitReportToWebhook: StatusCode: {response.StatusCode}");
+                });
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "SubmitReportToWebhook Error");
+            }
+        }
+
+        public static void SubmitBPTimerRequest(object data, string endpoint, string apiKey)
+        {
+            try
+            {
+                var task = Task.Factory.StartNew(async () =>
+                {
+                    string msgJson = JsonConvert.SerializeObject(data, Formatting.Indented);
+
+                    var content = new StringContent(msgJson, Encoding.UTF8, "application/json");
+
+                    var request = new HttpRequestMessage(HttpMethod.Post, endpoint);
+                    request.Content = content;
+                    request.Headers.Add("X-API-Key", apiKey);
+
+                    var response = await HttpClient.SendAsync(request);
+
+                    Log.Information($"SubmitBPTimerRequest: StatusCode: {response.StatusCode}");
+                    if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                    {
+                        Log.Error($"{msgJson}");
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "SubmitBPTimerRequest Error");
+            }
+        }
+
+        public static async Task<object?> BPTimerFetchAllMobs(string endpoint)
+        {
+            var response = await HttpClient.GetAsync(endpoint);
+
+            Log.Information($"BPTimerFetchAllMobs: StatusCode: {response.StatusCode}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject(content);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<object?> BPTimerFetchMobChannelStatus(string endpoint)
+        {
+            var response = await HttpClient.GetAsync(endpoint);
+
+            Log.Information($"BPTimerFetchMobChannelStatus: StatusCode: {response.StatusCode}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject(content);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task BPTimerOpenRealtimeStream(string endpoint, string apiKey, CancellationToken? cancellationToken = null)
+        {
+            Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.InProgress;
+            using var client = new HttpClient();
+            var request = new HttpRequestMessage(HttpMethod.Get, endpoint);
+            request.Headers.Add("Accept", "text/event-stream");
+            request.Headers.Add("Cache-Control", "no-cache");
+            request.Headers.Add("X-API-Key", apiKey);
+
+            client.DefaultRequestHeaders.Add("User-Agent", $"ZDPS/{Utils.AppVersion}");
+            client.DefaultRequestHeaders.Add("X-ZDPS-Version", Utils.AppVersion.ToString());
+            var response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+
+            if (cancellationToken != null && cancellationToken.Value.IsCancellationRequested)
+            {
+                System.Diagnostics.Debug.WriteLine("BPTimerOpenRealtimeStream Cancelled");
+                Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.Cancelled;
+                return;
+            }
+
+            if(!response.IsSuccessStatusCode)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error in BPTimerOpenRealtimeStream StatusCode: {response.StatusCode}");
+                Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.Error;
+                return;
+            }
+
+            using var stream = await response.Content.ReadAsStreamAsync();
+
+            await foreach (SseItem<string> item in SseParser.Create(stream).EnumerateAsync())
+            {
+                if (cancellationToken != null && cancellationToken.Value.IsCancellationRequested)
+                {
+                    System.Diagnostics.Debug.WriteLine("BPTimerOpenRealtimeStream Cancelled");
+                    Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.Cancelled;
+                    return;
+                }
+
+                if (item.EventType == "PB_CONNECT")
+                {
+                    var data = JsonConvert.DeserializeObject(item.Data);
+                    string clientId = ((Newtonsoft.Json.Linq.JObject)data)["clientId"].ToString();
+                    var subscribeResult = await BPTimerSubscribe(endpoint, clientId, apiKey);
+                    if (subscribeResult)
+                    {
+                        Log.Information($"Connected to PocketBase Realtime. Client ID: {clientId}");
+                        Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.Complete;
+                    }
+                    else
+                    {
+                        Log.Error($"Failed connected to PocketBase Realtime. Client ID: {clientId}");
+                        Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.Error;
+                        return;
+                    }
+                }
+                else if (item.EventType == "mob_hp_updates")
+                {
+                    var mobHpUpdate = JsonConvert.DeserializeObject<List<DataTypes.External.BPTimerMobHpUpdate>>(item.Data, new JsonSerializerSettings() { Converters = { new DataTypes.External.BPTimerMobHpUpdateConverter() } });
+                    Managers.External.BPTimerManager.HandleMobHpUpdateEvent(mobHpUpdate);
+                }
+                else if (item.EventType == "mob_resets")
+                {
+                    // This occurs when a monster type is schduled to respawn
+                    Managers.External.BPTimerManager.HandleMobResetEvent(JsonConvert.DeserializeObject<List<string>>(item.Data));
+                }
+                else if (item.EventType.StartsWith("PB_"))
+                {
+                    Log.Debug($"Realtime control event = {item.EventType} in BPTimerOpenRealtimeStream");
+                }
+                else
+                {
+                    Log.Debug($"Unhandled SseItem.EventType = {item.EventType} in BPTimerOpenRealtimeStream");
+                }
+
+                if (cancellationToken != null && cancellationToken.Value.IsCancellationRequested)
+                {
+                    System.Diagnostics.Debug.WriteLine("BPTimerOpenRealtimeStream Cancelled");
+                    Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.Cancelled;
+                    return;
+                }
+            }
+        }
+
+        public static async Task<bool> BPTimerSubscribe(string endpoint, string clientId, string apiKey)
+        {
+            try
+            {
+                var msgJson = JsonConvert.SerializeObject(new DataTypes.External.BPTimerSubscribe() { ClientId = clientId, Subscriptions = new() { "mob_hp_updates", "mob_resets" } }, Formatting.Indented);
+                var content = new StringContent(msgJson, Encoding.UTF8, "application/json");
+                var request = new HttpRequestMessage(HttpMethod.Post, endpoint);
+                request.Content = content;
+                request.Headers.Add("X-API-Key", apiKey);
+                var response = await HttpClient.SendAsync(request);
+
+                Log.Information($"BPTimerSubscribe: StatusCode: {response.StatusCode}");
+                if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                {
+                    Log.Error($"{msgJson}");
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "BPTimerSubscribe Error");
+                return false;
+            }
+        }
+
+        private static DiscordWebhookPayload CreateDiscordMessage(Encounter encounter, ulong teamId)
+        {
+            var unixStartTime = new DateTimeOffset(encounter.StartTime).ToUnixTimeSeconds();
+
+            string encounterName = $"**Encounter**:{(encounter.IsWipe ? " `Wipe`" : "")} {encounter.SceneName}{(!string.IsNullOrEmpty(encounter.SceneSubName) ? $" - {encounter.SceneSubName}" : "")}";
+            string bossDetails = $"{(!string.IsNullOrEmpty(encounter.BossName) ? $"**Boss**: {encounter.BossName}{(encounter.BossHpPct > 0 ? $" ({Math.Round(encounter.BossHpPct / 1000.0f, 2)}%)" : "")}" : "")}";
+
+            var msgContentBuilder = new StringBuilder();
+            msgContentBuilder.AppendLine("**ZDPS Report**");
+            msgContentBuilder.AppendLine($"**Reporter**: {AppState.PlayerName}");
+            msgContentBuilder.AppendLine(encounterName);
+            if (!string.IsNullOrEmpty(bossDetails))
+            {
+                msgContentBuilder.AppendLine(bossDetails);
+            }
+            msgContentBuilder.AppendLine($"**Started At**: <t:{unixStartTime}:F> <t:{unixStartTime}:R>");
+            msgContentBuilder.AppendLine($"**Duration**: {(encounter.EndTime - encounter.StartTime).ToString(@"hh\:mm\:ss")}");
+            msgContentBuilder.AppendLine($"**ZTeamID**: ``{teamId}``");
+
+            var msg = new DiscordWebhookPayload("ZDPS", msgContentBuilder.ToString())
+            {
+                AvatarURL = "https://media.discordapp.net/attachments/1443057617113977015/1444260874784084008/co25l4.jpg?ex=692c1041&is=692abec1&hm=75449222af948cba198474a8e580e9e5e12a7f8bbd546935aeeec00d8ba7cb2d&=&format=webp"
+            };
+
+            return msg;
+        }
+    }
+}

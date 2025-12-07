@@ -1,4 +1,5 @@
-﻿using BPSR_ZDPS.Windows;
+﻿using BPSR_ZDPS.DataTypes.External;
+using BPSR_ZDPS.Windows;
 using Newtonsoft.Json;
 
 namespace BPSR_ZDPS.DataTypes;
@@ -19,11 +20,12 @@ public class Settings
     public bool SkipTeleportStateCheckInAutomaticWipeDetection { get; set; } = false;
     public bool SplitEncountersOnNewPhases { get; set; } = true;
     public float WindowOpacity = 1.0f;
+    public float MeterBarScale = 1.0f;
     public bool UseDatabaseForEncounterHistory { get; set; } = true;
     public int DatabaseRetentionPolicyDays { get; set; } = 0;
     public bool LimitEncounterBuffTrackingWithoutDatabase { get; set; } = false;
     public bool LogToFile { get; set; } = false;
-    public GameCapturePreference GameCapturePreference { get; set; } = GameCapturePreference.Auto;
+    public EGameCapturePreference GameCapturePreference { get; set; } = EGameCapturePreference.Auto;
     public bool PlayNotificationSoundOnMatchmake { get; set; } = false;
     public string MatchmakeNotificationSoundPath { get; set; } = "";
     public bool LoopNotificationSoundOnMatchmake { get; set; } = false;
@@ -32,6 +34,17 @@ public class Settings
     public string ReadyCheckNotificationSoundPath { get; set; } = "";
     public bool LoopNotificationSoundOnReadyCheck { get; set; } = false;
     public float ReadyCheckNotificationVolume { get; set; } = 1.0f;
+    public bool SaveEncounterReportToFile { get; set; } = false;
+    public int ReportFileRetentionPolicyDays { get; set; } = 0;
+    public int MinimumPlayerCountToCreateReport { get; set; } = 0;
+    public bool WebhookReportsEnabled { get; set; } = false;
+    public EWebhookReportsMode WebhookReportsMode { get; set; } = EWebhookReportsMode.Discord;
+    public string WebhookReportsDeduplicationServerUrl { get; set; } = "http://localhost:5146";
+    public string WebhookReportsDiscordUrl { get; set; } = "";
+    public string WebhookReportsCustomUrl { get; set; } = "";
+
+    // Settings specific to External components
+    public SettingsExternal External { get; set; } = new();
 
     public uint HotkeysEncounterReset { get; set; }
 
@@ -70,9 +83,21 @@ public class Settings
     }
 }
 
-public enum GameCapturePreference
+public enum EGameCapturePreference
 {
     Auto,
     Steam,
     Standalone
+}
+
+public enum EWebhookReportsMode
+{
+    DiscordDeduplication,
+    Discord,
+    Custom
+}
+
+public class SettingsExternal
+{
+    public BPTimerSettings BPTimerSettings { get; set; } = new();
 }

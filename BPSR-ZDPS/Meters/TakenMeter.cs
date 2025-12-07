@@ -62,22 +62,22 @@ namespace BPSR_ZDPS.Meters
                     double contributionProgressBar = 0.0;
                     if (EncounterManager.Current.TotalNpcTakenDamage != 0)
                     {
-                        contribution = Math.Round(((double)entity.TotalTakenDamage / (double)EncounterManager.Current.TotalNpcTakenDamage) * 100, 0);
+                        contribution = Math.Round(((double)entity.TotalTakenDamage / (double)EncounterManager.Current.TotalNpcTakenDamage) * 100, 4);
 
                         if (Settings.Instance.NormalizeMeterContributions)
                         {
-                            contributionProgressBar = Math.Round(((double)entity.TotalTakenDamage / (double)topTotalValue) * 100, 0);
+                            contributionProgressBar = Math.Round(((double)entity.TotalTakenDamage / (double)topTotalValue) * 100, 4);
                         }
                         else
                         {
                             contributionProgressBar = contribution;
                         }
                     }
-                    string dps_format = $"{Utils.NumberToShorthand(entity.TotalTakenDamage)} ({Utils.NumberToShorthand(entity.TakenStats.ValuePerSecond)}) {contribution.ToString().PadLeft(3, ' ')}%"; // Format: TotalDamage (DPS) Contribution%
+                    string dps_format = $"{Utils.NumberToShorthand(entity.TotalTakenDamage)} ({Utils.NumberToShorthand(entity.TakenStats.ValuePerSecond)}) {contribution.ToString("F0").PadLeft(3, ' ')}%"; // Format: TotalDamage (DPS) Contribution%
                     var startPoint = ImGui.GetCursorPos();
                     // ImGui.GetTextLineHeightWithSpacing();
 
-                    ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f);
+                    ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f * Settings.Instance.MeterBarScale);
 
                     ImGui.ProgressBar((float)contributionProgressBar / 100.0f, new Vector2(-1, 0), $"##TakenEntryContribution_{i}");
 

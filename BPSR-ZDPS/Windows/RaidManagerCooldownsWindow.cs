@@ -10,10 +10,10 @@ using ZLinq;
 
 namespace BPSR_ZDPS.Windows
 {
-    public static class RaidManager
+    public static class RaidManagerCooldownsWindow
     {
         public const string LAYER = "RaidManagerWindowLayer";
-        public static string TITLE_ID = "###RaidManagerWindow";
+        public static string TITLE_ID = "###RaidManagerCooldownPriorityTrackerWindow";
         public static string TITLE = "Cooldown Priority Tracker";
         public static bool IsOpened = false;
         public static bool IsTopMost = false;
@@ -54,14 +54,15 @@ namespace BPSR_ZDPS.Windows
             {
                 HasInitBindings = true;
                 EncounterManager.EncounterStart += RaidManager_EncounterStart;
-                EncounterManager.EncounterEndFinal += RaidManager_EncounterEnd;
+                EncounterManager.EncounterEndFinal += RaidManager_EncounterEndFinal;
             }
         }
 
-        private static void RaidManager_EncounterEnd(EncounterEndFinalData e)
+        private static void RaidManager_EncounterEndFinal(EncounterEndFinalData e)
         {
             HasBoundEvents = false;
-            EncounterManager.Current.RemoveEventHandlers();
+            EncounterManager.Current.SkillActivated -= RaidManager_Entity_SkillActivated;
+            System.Diagnostics.Debug.WriteLine("RaidManager_EncounterEndFinal");
         }
 
         private static void RaidManager_EncounterStart(EventArgs e)
@@ -74,8 +75,10 @@ namespace BPSR_ZDPS.Windows
             if (!HasBoundEvents)
             {
                 HasBoundEvents = true;
-                EncounterManager.Current.SkillActivated += RaidManager_Entity_SkillActivated;
             }
+            EncounterManager.Current.SkillActivated -= RaidManager_Entity_SkillActivated;
+            EncounterManager.Current.SkillActivated += RaidManager_Entity_SkillActivated;
+            System.Diagnostics.Debug.WriteLine("BindCurrentEncounterEvents");
         }
 
         public static void Draw(MainWindow mainWindow)

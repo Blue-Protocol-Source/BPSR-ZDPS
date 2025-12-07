@@ -15,6 +15,7 @@ namespace BPSR_ZDPS
         public static ConcurrentQueue<KeyValuePair<EDungeonState, DateTime>> DungeonStateHistory { get; private set; } = new();
         public static ConcurrentQueue<KeyValuePair<DungeonTargetData, DateTime>> DungeonTargetDataHistory { get; private set; } = new();
         public static DateTime? DeferredEncounterStartTime { get; private set; } = null;
+        public static EncounterStartReason DeferredEncounterStartReason { get; private set; } = EncounterStartReason.None;
         public static DateTime? DeferredEncounterEndFinalTime { get; private set; } = null;
         public static EncounterEndFinalData? DeferredEncounterEndFinalData { get; private set; } = null;
         static KeyValuePair<DungeonTargetData, DateTime>? PreviousDungeonTargetData = null;
@@ -25,13 +26,14 @@ namespace BPSR_ZDPS
             Log.Information($"{DateTime.Now} - BattleStateMachine.StartNewBattle");
             PreviousDungeonTargetData = null;
             DeferredEncounterStartTime = null;
+            DeferredEncounterStartReason = EncounterStartReason.None;
             DeferredEncounterEndFinalTime = null;
-            DeferredEncounterEndFinalData = null;
+            // We do not null the DeferredEncounterEndFinalData as we use it to ensure we don't send multiple End Final calls
             DungeonTargetDataHistory.Clear();
             DungeonStateHistory.Clear();
 
             EncounterManager.StartNewBattle();
-            EncounterManager.StartEncounter(true);
+            EncounterManager.StartEncounter(true, EncounterStartReason.Force);
         }
 
         public static void DungeonStateHistoryAdd(EDungeonState dungeonState)
@@ -52,7 +54,7 @@ namespace BPSR_ZDPS
                 if (EncounterManager.Current.HasStatsBeenRecorded())
                 {
                     // A battle was already created for us but we are forcing a new encounter to be made to keep the generated data separate from the prior states
-                    EncounterManager.StartEncounter(true);
+                    EncounterManager.StartEncounter(true, EncounterStartReason.Force);
                 }
                 else
                 {
@@ -123,6 +125,7 @@ namespace BPSR_ZDPS
                     // New objective set
 
                     // TODO: If this was set within a very short time after Complete, delay the start creation to allow resolving effects against despawning enemies properly
+                    DeferredEncounterStartReason = EncounterStartReason.NewObjective;
                     DeferredEncounterStartTime = DateTime.Now.AddSeconds(1);
                     //Task.Run(() => { Thread.Sleep(1000); EncounterManager.StartEncounter(); });
                     //EncounterManager.StartEncounter();
@@ -139,17 +142,51 @@ namespace BPSR_ZDPS
 
         public static void SetDeferredEncounterEndFinalData(DateTime dateTime, EncounterEndFinalData data)
         {
+            if (DeferredEncounterEndFinalData != null && DeferredEncounterEndFinalData.EncounterId == data.EncounterId)
+            {
+                // We have previously set the End Final data for this Encounter, if we have no Time set then the actual Signal has been completed and we don't want to do it again
+                // If the time however does exist and is later than our incoming time, then we'll allow updating it to be sooner
+                if (DeferredEncounterEndFinalTime == null)
+                {
+                    // Encounter has already signaled the final end
+                    return;
+                }
+                else if (dateTime.CompareTo(DeferredEncounterEndFinalTime) >= 0)
+                {
+                    // We'll only allow updating the time to be sooner, not later
+                    return;
+                }
+            }
+
             DeferredEncounterEndFinalTime = dateTime;
             DeferredEncounterEndFinalData = data;
         }
 
         public static void CheckDeferredCalls()
         {
+            if (AppState.IsBenchmarkMode && AppState.HasBenchmarkBegun)
+            {
+                if (EncounterManager.Current.GetDuration().TotalSeconds >= AppState.BenchmarkTime)
+                {
+                    AppState.HasBenchmarkBegun = false;
+                    AppState.IsBenchmarkMode = false;
+
+                    DeferredEncounterEndFinalTime = null;
+
+                    EncounterManager.SignalEncounterEndFinal(new EncounterEndFinalData() { BattleId = EncounterManager.CurrentBattleId, EncounterId = (ulong)EncounterManager.CurrentEncounter, Reason = EncounterStartReason.BenchmarkEnd });
+                    EncounterManager.StartEncounter(false, EncounterStartReason.BenchmarkEnd);
+                    
+                    return;
+                }
+            }
+
             if (DeferredEncounterStartTime.HasValue && DateTime.Now.CompareTo(DeferredEncounterStartTime) >= 0)
             {
                 DeferredEncounterStartTime = null;
 
-                EncounterManager.StartEncounter();
+                EncounterManager.StartEncounter(false, DeferredEncounterStartReason);
+
+                DeferredEncounterStartReason = EncounterStartReason.None;
             }
 
             if (DeferredEncounterEndFinalTime.HasValue && DateTime.Now.CompareTo(DeferredEncounterEndFinalTime) >= 0)
@@ -158,7 +195,7 @@ namespace BPSR_ZDPS
 
                 EncounterManager.SignalEncounterEndFinal(DeferredEncounterEndFinalData);
 
-                DeferredEncounterEndFinalData = null;
+                // We do not null the DeferredEncounterEndFinalData as we use it to ensure we don't send multiple End Final calls
             }
         }
     }
@@ -167,5 +204,6 @@ namespace BPSR_ZDPS
     {
         public ulong EncounterId;
         public int BattleId;
+        public EncounterStartReason Reason;
     }
 }

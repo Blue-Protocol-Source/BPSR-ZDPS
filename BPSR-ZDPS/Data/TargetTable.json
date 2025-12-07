@@ -1206,6 +1206,69 @@
     "SpVariableName": [],
     "IsShowSpVariableProgress": []
   },
+  "7601": {
+    "Id": 7601,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 76,
+    "Param": [],
+    "TargetPos": "",
+    "IsTeamShare": false,
+    "TargetDes": "Cocoon Condensation Phase",
+    "IsShowProgress": false,
+    "SpVariable": [
+      ""
+    ],
+    "SpVariableLimit": [
+      ""
+    ],
+    "SpVariableName": [
+      "Current Energy"
+    ],
+    "IsShowSpVariableProgress": []
+  },
+  "7602": {
+    "Id": 7602,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 76,
+    "Param": [],
+    "TargetPos": "",
+    "IsTeamShare": false,
+    "TargetDes": "Cocoon Diffusion Phase",
+    "IsShowProgress": false,
+    "SpVariable": [
+      ""
+    ],
+    "SpVariableLimit": [
+      ""
+    ],
+    "SpVariableName": [
+      "Remaining Energy"
+    ],
+    "IsShowSpVariableProgress": []
+  },
+  "7603": {
+    "Id": 7603,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 76,
+    "Param": [],
+    "TargetPos": "",
+    "IsTeamShare": false,
+    "TargetDes": "Withering Interval",
+    "IsShowProgress": false,
+    "SpVariable": [
+      ""
+    ],
+    "SpVariableLimit": [
+      ""
+    ],
+    "SpVariableName": [
+      "Waiting Time"
+    ],
+    "IsShowSpVariableProgress": []
+  },
   "8901": {
     "Id": 8901,
     "TargetType": 9,
@@ -10381,7 +10444,7 @@
     "Param": [],
     "TargetPos": "",
     "IsTeamShare": false,
-    "TargetDes": "Corrupted Source HP below 40%",
+    "TargetDes": "Destroy the Corrupted Source within 60s",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -10396,7 +10459,7 @@
     "Param": [],
     "TargetPos": "",
     "IsTeamShare": false,
-    "TargetDes": "Destroy the Corrupted Source",
+    "TargetDes": "Destroy the Corrupted Source within 40s",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],

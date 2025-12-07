@@ -26,6 +26,7 @@ namespace BPSR_ZDPS.Windows
         static bool skipTeleportStateCheckInAutomaticWipeDetection;
         static bool splitEncountersOnNewPhases;
         static float windowOpacity;
+        static float meterBarScale;
         static bool useDatabaseForEncounterHistory;
         static int databaseRetentionPolicyDays;
         static bool limitEncounterBuffTrackingWithoutDatabase;
@@ -46,7 +47,23 @@ namespace BPSR_ZDPS.Windows
         static string EncounterResetKeyName = "";
 
         static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
-        static GameCapturePreference GameCapturePreference;
+        static EGameCapturePreference GameCapturePreference;
+
+        static bool saveEncounterReportToFile;
+        static int reportFileRetentionPolicyDays;
+        static int minimumPlayerCountToCreateReport;
+        static bool webhookReportsEnabled;
+        static EWebhookReportsMode webhookReportsMode;
+        static string webhookReportsDeduplicationServerUrl;
+        static string webhookReportsDiscordUrl;
+        static string webhookReportsCustomUrl;
+
+        // External Settings
+        static bool externalBPTimerEnabled;
+        static bool externalBPTimerIncludeCharacterId;
+        static bool externalBPTimerFieldBossHpReportsEnabled;
+
+        static bool IsDiscordWebhookUrlValid = true;
 
         static int RunOnceDelayed = 0;
 
@@ -61,32 +78,7 @@ namespace BPSR_ZDPS.Windows
 
             NetworkDevices = SharpPcap.LibPcap.LibPcapLiveDeviceList.Instance;
 
-            normalizeMeterContributions = Settings.Instance.NormalizeMeterContributions;
-            useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
-            colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
-            showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
-            onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
-            useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
-            skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
-            splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
-            windowOpacity = Settings.Instance.WindowOpacity;
-            useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
-            databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
-            limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
-            GameCapturePreference = Settings.Instance.GameCapturePreference;
-
-            playNotificationSoundOnMatchmake = Settings.Instance.PlayNotificationSoundOnMatchmake;
-            matchmakeNotificationSoundPath = Settings.Instance.MatchmakeNotificationSoundPath;
-            loopNotificationSoundOnMatchmake = Settings.Instance.LoopNotificationSoundOnMatchmake;
-            matchmakeNotificationVolume = Settings.Instance.MatchmakeNotificationVolume;
-
-            playNotificationSoundOnReadyCheck = Settings.Instance.PlayNotificationSoundOnReadyCheck;
-            readyCheckNotificationSoundPath = Settings.Instance.ReadyCheckNotificationSoundPath;
-            loopNotificationSoundOnReadyCheck = Settings.Instance.LoopNotificationSoundOnReadyCheck;
-            readyCheckNotificationVolume = Settings.Instance.ReadyCheckNotificationVolume;
-
-            logToFile = Settings.Instance.LogToFile;
-
+            Load();
 
             EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
             if (EncounterResetKey == 0)
@@ -183,7 +175,7 @@ namespace BPSR_ZDPS.Windows
                             network_device_preview = NetworkDevices[SelectedNetworkDeviceIdx].Description;
                         }
 
-                        if (ImGui.BeginCombo("##NetworkDeviceCombo", network_device_preview))
+                        if (ImGui.BeginCombo("##NetworkDeviceCombo", network_device_preview, ImGuiComboFlags.HeightLarge))
                         {
                             for (int i = 0; i < NetworkDevices?.Count; i++)
                             {
@@ -223,19 +215,19 @@ namespace BPSR_ZDPS.Windows
 
                         var gamePrefName = Utils.GameCapturePreferenceToName(GameCapturePreference);
                         ImGui.SetNextItemWidth(150);
-                        if (ImGui.BeginCombo("##GameCapturePreference", gamePrefName))
+                        if (ImGui.BeginCombo("##EGameCapturePreference", gamePrefName))
                         {
                             if (ImGui.Selectable("Auto"))
                             {
-                                GameCapturePreference = GameCapturePreference.Auto;
+                                GameCapturePreference = EGameCapturePreference.Auto;
                             }
                             else if (ImGui.Selectable("Standalone"))
                             {
-                                GameCapturePreference = GameCapturePreference.Standalone;
+                                GameCapturePreference = EGameCapturePreference.Standalone;
                             }
                             else if (ImGui.Selectable("Steam"))
                             {
-                                GameCapturePreference = GameCapturePreference.Steam;
+                                GameCapturePreference = EGameCapturePreference.Steam;
                             }
 
                             ImGui.EndCombo();
@@ -266,6 +258,14 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.Indent();
                         RebindKeyButton("Encounter Reset", ref EncounterResetKey, ref EncounterResetKeyName);
+                        if (splitEncountersOnNewPhases)
+                        {
+                            ImGui.Indent();
+                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
+                            ImGui.TextWrapped("[Split Encounters On New Phases] is Enabled. You likely do not need this keybind to manually reset an Encounter. ZDPS will handle Encounter separation for you.");
+                            ImGui.PopStyleColor();
+                            ImGui.Unindent();
+                        }
                         ImGui.Unindent();
 
                         ImGui.SeparatorText("Database");
@@ -425,14 +425,33 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.AlignTextToFramePadding();
                         ImGui.Text("Pinned Window Opacity: ");
-                        ImGui.SameLine();
+                        ImGui.SetNextItemWidth(-1);
                         ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                         ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                        ImGui.SliderFloat("##PinnedWindowOpacity", ref windowOpacity, 0.01f, 1.0f, $"{(int)(windowOpacity * 100)}");
+                        if (ImGui.SliderFloat("##PinnedWindowOpacity", ref windowOpacity, 0.05f, 1.0f, $"{(int)(windowOpacity * 100)}%%"))
+                        {
+                            windowOpacity = MathF.Round(windowOpacity, 2);
+                        }
                         ImGui.PopStyleColor(2);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
                         ImGui.TextWrapped("How transparent a pinned window is.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Meter Bar Scale: ");
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        if (ImGui.SliderFloat("##MeterBarScale", ref meterBarScale, 0.80f, 2.0f, $"{(int)(meterBarScale * 100)}%%"))
+                        {
+                            meterBarScale = MathF.Round(meterBarScale, 2);
+                        }
+                        ImGui.PopStyleColor(2);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Scaling for how large the bars in the meter windows should be. 100%% is the default scale.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -495,7 +514,10 @@ namespace BPSR_ZDPS.Windows
                         ImGui.SetNextItemWidth(-1);
                         ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                         ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                        ImGui.SliderFloat("##MatchmakeNotificationVolume", ref matchmakeNotificationVolume, 0.10f, 3.0f, $"{(int)(matchmakeNotificationVolume * 100)}%%");
+                        if (ImGui.SliderFloat("##MatchmakeNotificationVolume", ref matchmakeNotificationVolume, 0.10f, 3.0f, $"{(int)(matchmakeNotificationVolume * 100)}%%"))
+                        {
+                            matchmakeNotificationVolume = MathF.Round(matchmakeNotificationVolume, 2);
+                        }
                         ImGui.PopStyleColor(2);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
@@ -556,7 +578,10 @@ namespace BPSR_ZDPS.Windows
                         ImGui.SetNextItemWidth(-1);
                         ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                         ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                        ImGui.SliderFloat("##ReadyCheckNotificationVolume", ref readyCheckNotificationVolume, 0.10f, 3.0f, $"{(int)(readyCheckNotificationVolume * 100)}%%");
+                        if (ImGui.SliderFloat("##ReadyCheckNotificationVolume", ref readyCheckNotificationVolume, 0.10f, 3.0f, $"{(int)(readyCheckNotificationVolume * 100)}%%"))
+                        {
+                            readyCheckNotificationVolume = MathF.Round(readyCheckNotificationVolume, 2);
+                        }
                         ImGui.PopStyleColor(2);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
@@ -613,11 +638,258 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndTabItem();
                     }
 
+                    if (ImGui.BeginTabItem("Integrations"))
+                    {
+                        var contentRegionAvail = ImGui.GetContentRegionAvail();
+                        ImGui.BeginChild("##IntegrationsTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ShowGenericImportantNotice(!useAutomaticWipeDetection, "AutoWipeDetectionDisabled", "[Use Automatic Wipe Detection] is currently Disabled. Reports may be incorrect until it is Enabled again.");
+                        ShowGenericImportantNotice(skipTeleportStateCheckInAutomaticWipeDetection, "SkipTeleportStateCheckInAutomaticWipeDetectionEnabled", "[Skip Teleport State Check In Automatic Wipe Detection] is currently Enabled. Reports may be incorrect until it is Disabled again.");
+                        ShowGenericImportantNotice(!splitEncountersOnNewPhases, "SplitEncountersOnNewPhasesDisabled", "[Split Encounters On New Phases] is currently Disabled. Reports may be incorrect until it is Enabled again.");
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Save Encounter Report To File: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##SaveEncounterReportToFile", ref saveEncounterReportToFile);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, writes a report file to the Reports folder located next to ZDPS.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.BeginDisabled(!saveEncounterReportToFile);
+                        ImGui.Indent();
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Report File Retention Policy: ");
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.SliderInt("##ReportFileRetentionPolicyDays", ref reportFileRetentionPolicyDays, 0, 30, reportFileRetentionPolicyDays == 0 ? "Keep Forever" : $"{reportFileRetentionPolicyDays} Days");
+                        ImGui.PopStyleColor(2);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("How long to keep locally saved Report files for. When not set to Keep Forever, expired data is automatically deleted on application close.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+                        ImGui.Unindent();
+                        ImGui.EndDisabled();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Minimum Player Count To Create Report: ");
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.SliderInt("##MinimumPlayerCountToCreateReport", ref minimumPlayerCountToCreateReport, 0, 20, minimumPlayerCountToCreateReport == 0 ? "Any" : $"{minimumPlayerCountToCreateReport} Players");
+                        ImGui.PopStyleColor(2);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("The number of players required in an Encounter to create a report for. This applies to both local saving and Webhook sending.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.SeparatorText("ZDPS Report Webhooks");
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.TextUnformatted("Webhook Mode: ");
+                        ImGui.SameLine();
+                        ImGui.SetNextItemWidth(-1);
+
+                        string reportsModeName = "";
+                        switch (webhookReportsMode)
+                        {
+                            case EWebhookReportsMode.DiscordDeduplication:
+                                reportsModeName = "Discord Deduplication";
+                                break;
+                            case EWebhookReportsMode.Discord:
+                                reportsModeName = "Discord Webhook";
+                                break;
+                            case EWebhookReportsMode.Custom:
+                                reportsModeName = "Custom URL";
+                                break;
+                        }
+
+                        if (ImGui.BeginCombo("##WebhookMode", $"{reportsModeName}", ImGuiComboFlags.None))
+                        {
+                            if (ImGui.Selectable("Discord Deduplication"))
+                            {
+                                webhookReportsMode = EWebhookReportsMode.DiscordDeduplication;
+                            }
+                            ImGui.SetItemTooltip("Send to a Discord Webhook after using a ZDPS Server to check if the same report was sent already within a short timeframe.");
+                            if (ImGui.Selectable("Discord Webhook"))
+                            {
+                                webhookReportsMode = EWebhookReportsMode.Discord;
+                            }
+                            ImGui.SetItemTooltip("Send directly to a Discord Webhook.");
+                            if (ImGui.Selectable("Custom URL"))
+                            {
+                                webhookReportsMode = EWebhookReportsMode.Custom;
+                            }
+                            ImGui.SetItemTooltip("Send directly to a custom URL of your choice.");
+                            ImGui.EndCombo();
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Select the type of Webhook Mode you want to use for sending ZDPS Reports.\n'Discord Deduplication' is recommended if other users may be sending the same Encounter Report to the same Discord Channel at the same time to avoid duplicate messages.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        // TODO: Maybe allow adding multiple Webhooks and toggling the enabled state of each one (should allow entering a friendly name next to them too)
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text($"Send Encounter Reports To {reportsModeName}: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##WebhookReportsEnabled", ref webhookReportsEnabled);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped($"When enabled, sends an Encounter Report to the given {reportsModeName} server.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.BeginDisabled(!webhookReportsEnabled);
+                        ImGui.Indent();
+
+                        switch (webhookReportsMode)
+                        {
+                            case EWebhookReportsMode.DiscordDeduplication:
+                            case EWebhookReportsMode.Discord:
+                                if (webhookReportsMode == EWebhookReportsMode.DiscordDeduplication)
+                                {
+                                    ImGui.AlignTextToFramePadding();
+                                    ImGui.Text("Deduplication Server URL: ");
+                                    ImGui.SameLine();
+                                    ImGui.SetNextItemWidth(-1);
+                                    ImGui.InputText("##WebhookReportsDeduplicationServerUrl", ref webhookReportsDeduplicationServerUrl, 512);
+                                    ImGui.Indent();
+                                    ImGui.BeginDisabled(true);
+                                    ImGui.TextWrapped("The Discord Deduplication Server URL to prevent duplicate reports with.");
+                                    ImGui.EndDisabled();
+                                    ImGui.Unindent();
+                                }
+
+                                ImGui.AlignTextToFramePadding();
+                                ImGui.Text("Webhook URL: ");
+                                ImGui.SameLine();
+                                ImGui.SetNextItemWidth(-1);
+                                if (ImGui.InputText("##WebhookReportsDiscordUrl", ref webhookReportsDiscordUrl, 512))
+                                {
+                                    if (Utils.SplitAndValidateDiscordWebhook(webhookReportsDiscordUrl) != null)
+                                    {
+                                        IsDiscordWebhookUrlValid = true;
+                                    }
+                                    else
+                                    {
+                                        IsDiscordWebhookUrlValid = false;
+                                    }
+                                }
+
+                                if (!IsDiscordWebhookUrlValid)
+                                {
+                                    ImGui.Indent();
+                                    ImGui.BeginDisabled(true);
+                                    ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                                    ImGui.TextWrapped("The entered URL appears invalid.");
+                                    ImGui.PopStyleColor();
+                                    ImGui.EndDisabled();
+                                    ImGui.Unindent();
+                                }
+
+                                ImGui.Indent();
+                                ImGui.BeginDisabled(true);
+                                ImGui.TextWrapped("The Discord Webhook URL to send reports to.");
+                                ImGui.EndDisabled();
+                                ImGui.Unindent();
+                                break;
+                            case EWebhookReportsMode.Custom:
+                                ImGui.AlignTextToFramePadding();
+                                ImGui.Text("Webhook URL: ");
+                                ImGui.SameLine();
+                                ImGui.SetNextItemWidth(-1);
+                                ImGui.InputText("##WebhookReportsCustomUrl", ref webhookReportsCustomUrl, 512);
+                                ImGui.Indent();
+                                ImGui.BeginDisabled(true);
+                                ImGui.TextWrapped("The Custom URL to send reports to.");
+                                ImGui.EndDisabled();
+                                ImGui.Unindent();
+                                break;
+                        }
+
+                        ImGui.Unindent();
+                        ImGui.EndDisabled();
+
+                        if (ImGui.CollapsingHeader("BPTimer", ImGuiTreeNodeFlags.DefaultOpen))
+                        {
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("BPTimer Enabled: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##ExternalBPTimerEnabled", ref externalBPTimerEnabled);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, allows sending reports back to BPTimer.com.");
+                            bool hasBPTimerReports = externalBPTimerFieldBossHpReportsEnabled;
+                            if (!hasBPTimerReports)
+                            {
+                                ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                            }
+                            else
+                            {
+                                ImGui.PushStyleColor(ImGuiCol.Text, Colors.Green);
+                            }
+                            ImGui.TextWrapped("Note: This setting alone does not enable reports. They must be enabled individually below.");
+                            ImGui.PopStyleColor();
+
+                            ImGui.EndDisabled();
+                            if (ImGui.CollapsingHeader("Data Collection##BPTimerDataCollectionSection"))
+                            {
+                                ImGui.Indent();
+                                ImGui.TextUnformatted("BPTimer collects the following data:");
+                                ImGui.BulletText("Boss ID/HP/Position");
+                                ImGui.BulletText("Character Line Number");
+                                ImGui.BulletText("Account ID");
+                                ImGui.SetItemTooltip("This is being used to determine what game region is being played on.");
+                                ImGui.BulletText("Character UID (if you opt-in below)");
+                                ImGui.BulletText("Your IP Address");
+                                ImGui.Unindent();
+                            }
+                            ImGui.Unindent();
+
+                            ImGui.BeginDisabled(!externalBPTimerEnabled);
+                            ImGui.Indent();
+
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("Include Own Character Data In Report: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##ExternalBPTimerIncludeCharacterId", ref externalBPTimerIncludeCharacterId);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, your Character UID will be included in the reported data.");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+                            
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("BPTimer Field Boss HP Reports: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##ExternalBPTimerFieldBossHpReportsEnabled", ref externalBPTimerFieldBossHpReportsEnabled);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, reports Field Boss (and Magical Creature) HP data back to BPTimer.com.");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+
+                            ImGui.Unindent();
+                            ImGui.EndDisabled();
+                        }
+
+                        ImGui.EndChild();
+                        ImGui.EndTabItem();
+                    }
                     ImGui.EndTabBar();
                 }
 
                 ImGui.NewLine();
-                if (ImGui.Button("Save", new Vector2(120, 0)))
+                float buttonWidth = 120;
+                if (ImGui.Button("Save", new Vector2(buttonWidth, 0)))
                 {
                     Save(mainWindow);
 
@@ -625,52 +897,12 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SameLine();
-                ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X);
-                if (ImGui.Button("Close", new Vector2(120, 0)))
+                ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - buttonWidth);
+                if (ImGui.Button("Close", new Vector2(buttonWidth, 0)))
                 {
                     SelectedNetworkDeviceIdx = PreviousSelectedNetworkDeviceIdx;
 
-                    normalizeMeterContributions = Settings.Instance.NormalizeMeterContributions;
-
-                    useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
-
-                    colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
-
-                    showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
-
-                    onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
-
-                    useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
-
-                    skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
-
-                    splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
-
-                    windowOpacity = Settings.Instance.WindowOpacity;
-
-                    useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
-
-                    databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
-
-                    limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
-
-                    playNotificationSoundOnMatchmake = Settings.Instance.PlayNotificationSoundOnMatchmake;
-
-                    matchmakeNotificationSoundPath = Settings.Instance.MatchmakeNotificationSoundPath;
-
-                    loopNotificationSoundOnMatchmake = Settings.Instance.LoopNotificationSoundOnMatchmake;
-
-                    matchmakeNotificationVolume = Settings.Instance.MatchmakeNotificationVolume;
-
-                    playNotificationSoundOnReadyCheck = Settings.Instance.PlayNotificationSoundOnReadyCheck;
-
-                    readyCheckNotificationSoundPath = Settings.Instance.ReadyCheckNotificationSoundPath;
-
-                    loopNotificationSoundOnReadyCheck = Settings.Instance.LoopNotificationSoundOnReadyCheck;
-
-                    readyCheckNotificationVolume = Settings.Instance.ReadyCheckNotificationVolume;
-
-                    logToFile = Settings.Instance.LogToFile;
+                    Load();
 
                     EncounterResetKey = Settings.Instance.HotkeysEncounterReset;
                     if (EncounterResetKey == 0)
@@ -695,6 +927,51 @@ namespace BPSR_ZDPS.Windows
             ImGui.PopID();
         }
 
+        private static void Load()
+        {
+            normalizeMeterContributions = Settings.Instance.NormalizeMeterContributions;
+            useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
+            colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
+            showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
+            onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
+            useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
+            skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
+            splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
+            windowOpacity = Settings.Instance.WindowOpacity;
+            meterBarScale = Settings.Instance.MeterBarScale;
+
+            useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
+            databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
+            limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
+            GameCapturePreference = Settings.Instance.GameCapturePreference;
+
+            playNotificationSoundOnMatchmake = Settings.Instance.PlayNotificationSoundOnMatchmake;
+            matchmakeNotificationSoundPath = Settings.Instance.MatchmakeNotificationSoundPath;
+            loopNotificationSoundOnMatchmake = Settings.Instance.LoopNotificationSoundOnMatchmake;
+            matchmakeNotificationVolume = Settings.Instance.MatchmakeNotificationVolume;
+
+            playNotificationSoundOnReadyCheck = Settings.Instance.PlayNotificationSoundOnReadyCheck;
+            readyCheckNotificationSoundPath = Settings.Instance.ReadyCheckNotificationSoundPath;
+            loopNotificationSoundOnReadyCheck = Settings.Instance.LoopNotificationSoundOnReadyCheck;
+            readyCheckNotificationVolume = Settings.Instance.ReadyCheckNotificationVolume;
+
+            saveEncounterReportToFile = Settings.Instance.SaveEncounterReportToFile;
+            reportFileRetentionPolicyDays = Settings.Instance.ReportFileRetentionPolicyDays;
+            minimumPlayerCountToCreateReport = Settings.Instance.MinimumPlayerCountToCreateReport;
+            webhookReportsEnabled = Settings.Instance.WebhookReportsEnabled;
+            webhookReportsMode = Settings.Instance.WebhookReportsMode;
+            webhookReportsDeduplicationServerUrl = Settings.Instance.WebhookReportsDeduplicationServerUrl;
+            webhookReportsDiscordUrl = Settings.Instance.WebhookReportsDiscordUrl;
+            webhookReportsCustomUrl = Settings.Instance.WebhookReportsCustomUrl;
+
+            logToFile = Settings.Instance.LogToFile;
+
+            // External
+            externalBPTimerEnabled = Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled;
+            externalBPTimerIncludeCharacterId = Settings.Instance.External.BPTimerSettings.ExternalBPTimerIncludeCharacterId;
+            externalBPTimerFieldBossHpReportsEnabled = Settings.Instance.External.BPTimerSettings.ExternalBPTimerFieldBossHpReportsEnabled;
+        }
+
         private static void Save(MainWindow mainWindow)
         {
             if (SelectedNetworkDeviceIdx != PreviousSelectedNetworkDeviceIdx || GameCapturePreference != Settings.Instance.GameCapturePreference)
@@ -712,46 +989,45 @@ namespace BPSR_ZDPS.Windows
             }
 
             Settings.Instance.NormalizeMeterContributions = normalizeMeterContributions;
-
             Settings.Instance.UseShortWidthNumberFormatting = useShortWidthNumberFormatting;
-
             Settings.Instance.ColorClassIconsByRole = colorClassIconsByRole;
-
             Settings.Instance.ShowSkillIconsInDetails = showSkillIconsInDetails;
-
             Settings.Instance.OnlyShowDamageContributorsInMeters = onlyShowDamageContributorsInMeters;
-
             Settings.Instance.UseAutomaticWipeDetection = useAutomaticWipeDetection;
-
             Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection = skipTeleportStateCheckInAutomaticWipeDetection;
-
             Settings.Instance.SplitEncountersOnNewPhases = splitEncountersOnNewPhases;
-
             Settings.Instance.WindowOpacity = windowOpacity;
+            Settings.Instance.MeterBarScale = meterBarScale;
 
             Settings.Instance.UseDatabaseForEncounterHistory = useDatabaseForEncounterHistory;
-
             Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;
-
             Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase = limitEncounterBuffTrackingWithoutDatabase;
 
             Settings.Instance.PlayNotificationSoundOnMatchmake = playNotificationSoundOnMatchmake;
-
             Settings.Instance.MatchmakeNotificationSoundPath = matchmakeNotificationSoundPath;
-
             Settings.Instance.LoopNotificationSoundOnMatchmake = loopNotificationSoundOnMatchmake;
-
             Settings.Instance.MatchmakeNotificationVolume = matchmakeNotificationVolume;
 
             Settings.Instance.PlayNotificationSoundOnReadyCheck = playNotificationSoundOnReadyCheck;
-
             Settings.Instance.ReadyCheckNotificationSoundPath = readyCheckNotificationSoundPath;
-
             Settings.Instance.LoopNotificationSoundOnReadyCheck = loopNotificationSoundOnReadyCheck;
-
             Settings.Instance.ReadyCheckNotificationVolume = readyCheckNotificationVolume;
 
+            Settings.Instance.SaveEncounterReportToFile = saveEncounterReportToFile;
+            Settings.Instance.ReportFileRetentionPolicyDays = reportFileRetentionPolicyDays;
+            Settings.Instance.MinimumPlayerCountToCreateReport = minimumPlayerCountToCreateReport;
+            Settings.Instance.WebhookReportsEnabled = webhookReportsEnabled;
+            Settings.Instance.WebhookReportsMode = webhookReportsMode;
+            Settings.Instance.WebhookReportsDeduplicationServerUrl = webhookReportsDeduplicationServerUrl;
+            Settings.Instance.WebhookReportsDiscordUrl = webhookReportsDiscordUrl;
+            Settings.Instance.WebhookReportsCustomUrl = webhookReportsCustomUrl;
+
             Settings.Instance.LogToFile = logToFile;
+
+            // External
+            Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled = externalBPTimerEnabled;
+            Settings.Instance.External.BPTimerSettings.ExternalBPTimerIncludeCharacterId = externalBPTimerIncludeCharacterId;
+            Settings.Instance.External.BPTimerSettings.ExternalBPTimerFieldBossHpReportsEnabled = externalBPTimerFieldBossHpReportsEnabled;
 
             RegisterAllHotkeys(mainWindow);
 
@@ -771,6 +1047,21 @@ namespace BPSR_ZDPS.Windows
                 ImGui.TextUnformatted("Important Note:");
                 ImGui.PopFont();
                 ImGui.TextWrapped($"Changing the [{settingName}] setting requires restarting ZDPS to take effect.");
+                ImGui.EndChild();
+                ImGui.PopStyleColor();
+            }
+        }
+
+        static void ShowGenericImportantNotice(bool showCondition, string uniqueName, string text)
+        {
+            if (showCondition)
+            {
+                ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
+                ImGui.BeginChild($"##GenericImportantNotice_{uniqueName}", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
+                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                ImGui.TextUnformatted("Important Note:");
+                ImGui.PopFont();
+                ImGui.TextWrapped($"{text}");
                 ImGui.EndChild();
                 ImGui.PopStyleColor();
             }
