@@ -24,6 +24,20 @@ namespace BPSR_ZDPS.Managers.External
 
         static bool IsEncounterBound = false;
 
+        public static ESpawnDataLoadStatus SpawnDataLoaded = ESpawnDataLoadStatus.NotLoaded;
+        public static ESpawnDataLoadStatus SpawnDataRealtimeConnection = ESpawnDataLoadStatus.NotLoaded;
+        public static List<MobsDescriptor> MobsDescriptors = new();
+        public static List<StatusDescriptor> StatusDescriptors = new();
+
+        public enum ESpawnDataLoadStatus : int
+        {
+            NotLoaded = 0,
+            InProgress = 1,
+            Complete = 2,
+            Error = 3,
+            Cancelled = 4
+        }
+
         public static void InitializeBindings()
         {
             System.Diagnostics.Debug.WriteLine("BPTimer InitializeBindings()");
@@ -74,7 +88,7 @@ namespace BPSR_ZDPS.Managers.External
 
             var entity = EncounterManager.Current.GetOrCreateEntity(e.EntityUuid);
             var attrId = entity.GetAttrKV("AttrId");
-            if (attrId != null && SupportedEntityReportList.Contains((int)attrId))
+            if (EncounterManager.Current.ChannelLine > 0 && attrId != null && SupportedEntityReportList.Contains((int)attrId))
             {
                 SendHpReport(entity, EncounterManager.Current.ChannelLine);
             }
@@ -126,5 +140,239 @@ namespace BPSR_ZDPS.Managers.External
                 WebManager.SubmitBPTimerRequest(report, $"{HOST}/api/create-hp-report", API_KEY);
             }
         }
+
+        public static void FetchAllMobs()
+        {
+            var task = Task.Factory.StartNew(async () =>
+            {
+                SpawnDataLoaded = ESpawnDataLoadStatus.InProgress;
+
+                // First fetch all mobs from /api/collections/mobs/records
+                var mobs = await WebManager.BPTimerFetchAllMobs($"{HOST}/api/collections/mobs/records?page=1&perPage=100&sort=uid&expand=map&skipTotal=1");
+
+                if (mobs == null)
+                {
+                    Log.Error("BPTimerManager FetchAllMobs Error getting data for mobs");
+                    SpawnDataLoaded = ESpawnDataLoadStatus.Error;
+                    return;
+                }
+
+                // Next fetch all mob channel status from /api/colllections/mob_channel_status/records
+                Newtonsoft.Json.Linq.JObject mob_channel_status = new();
+                int requestedItemsPerPage = 200;
+                int lastItemsCount = 0;
+                int pageNum = 1;
+                do
+                {
+                    // Filter example
+                    // https://db.bptimer.com/api/collections/mob_channel_status/records?page=1&perPage=150&skipTotal=1&filter=mob='717bt1uqt4jqu31f' || mob='tmai6ri61xgjgfm'
+
+                    var status_response = await WebManager.BPTimerFetchMobChannelStatus($"{HOST}/api/collections/mob_channel_status/records?page={pageNum}&perPage={requestedItemsPerPage}&skipTotal=1");
+                    if (status_response != null)
+                    {
+                        lastItemsCount = ((Newtonsoft.Json.Linq.JObject)status_response)["items"].Count();
+                        mob_channel_status.Merge(status_response);
+                        pageNum++;
+                    }
+                    else
+                    {
+                        lastItemsCount = 0;
+                    }
+                } while (lastItemsCount == requestedItemsPerPage);
+
+                if (mob_channel_status.Count == 0)
+                {
+                    Log.Error("BPTimerManager FetchAllMobs Error getting data for mob channel status");
+                    SpawnDataLoaded = ESpawnDataLoadStatus.Error;
+                    return;
+                }
+
+                // TODO: Map the id and name fields from mobs together for lookups
+
+                if (mobs != null && mob_channel_status.Count > 0)
+                {
+                    Newtonsoft.Json.Linq.JToken mobs_items = ((Newtonsoft.Json.Linq.JObject)mobs)["items"];
+                    Newtonsoft.Json.Linq.JToken channel_status_items = ((Newtonsoft.Json.Linq.JObject)mob_channel_status)["items"];
+                    System.Diagnostics.Debug.WriteLine(channel_status_items);
+
+                    foreach (var mob in mobs_items)
+                    {
+                        long monsterId = long.Parse(mob["monster_id"].ToString());
+                        string gameMonsterName = "";
+
+                        if (HelperMethods.DataTables.Monsters.Data.TryGetValue(monsterId.ToString(), out var monster))
+                        {
+                            if (!string.IsNullOrEmpty(monster.Name))
+                            {
+                                gameMonsterName = monster.Name;
+                            }
+                        }
+
+                        MobsDescriptors.Add(new MobsDescriptor()
+                        {
+                            MobId = mob["id"].ToString(),
+                            MobName = mob["name"].ToString(),
+                            MobType = mob["type"].ToString(),
+                            MobRespawnTime = int.Parse(mob["respawn_time"].ToString()),
+                            MobUID = int.Parse(mob["uid"].ToString()),
+                            MobMapId = mob["expand"]["map"]["id"].ToString(),
+                            MobMapName = mob["expand"]["map"]["name"].ToString(),
+                            MobMapTotalChannels = int.Parse(mob["expand"]["map"]["total_channels"].ToString()),
+                            MobMapUID = int.Parse(mob["expand"]["map"]["uid"].ToString()),
+                            MonsterId = long.Parse(mob["monster_id"].ToString()),
+                            GameMobName = gameMonsterName
+                        });
+                    }
+
+                    foreach (var status in channel_status_items)
+                    {
+                        var mobId = status["mob"];
+                        var channelNumber = status["channel_number"] ?? 0;
+                        var lastUpdate = status["last_update"] ?? status["update"] ?? "";
+                        var lastHp = status["last_hp"] ?? 0;
+                        var location = status["location_image"] ?? "";
+
+                        long monsterId = 0;
+                        var match = MobsDescriptors.Where(x => x.MobId == mobId.ToString());
+                        if (match.Any())
+                        {
+                            monsterId = match.First().MonsterId;
+                        }
+
+                        StatusDescriptors.Add(new StatusDescriptor()
+                        {
+                            MobId = mobId.ToString(),
+                            ChannelNumber = int.Parse(channelNumber.ToString()),
+                            UpdateTime = lastUpdate.ToString(),
+                            LastHp = int.Parse(lastHp.ToString()),
+                            UpdateTimestamp = (!string.IsNullOrEmpty(lastUpdate.ToString()) ? DateTime.ParseExact(lastUpdate.ToString(), "yyyy-MM-dd HH:mm:ss.fffZ", System.Globalization.CultureInfo.InvariantCulture): null),
+                            Location = location.ToString(),
+                            MonsterId = monsterId
+                        });
+                    }
+
+                    SpawnDataLoaded = ESpawnDataLoadStatus.Complete;
+                }
+                else
+                {
+                    Log.Error("BPTimerManager FetchAllMobs Error parsing data");
+                    SpawnDataLoaded = ESpawnDataLoadStatus.Error;
+                }
+            });
+        }
+
+        public static CancellationTokenSource StartRealtime()
+        {
+            var cancellationTokenSource = new CancellationTokenSource();
+
+            SpawnDataRealtimeConnection = ESpawnDataLoadStatus.InProgress;
+            var task = Task.Factory.StartNew(async () =>
+            {
+                while (!cancellationTokenSource.IsCancellationRequested)
+                {
+                    try
+                    {
+                        await WebManager.BPTimerOpenRealtimeStream($"{HOST}/api/realtime", API_KEY, cancellationTokenSource.Token);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"BPTimerOpenRealtimeStream SSE Error: {ex.Message}");
+                        await Task.Delay(500);
+                    }
+                }
+            });
+            return cancellationTokenSource;
+        }
+
+        public static void HandleMobHpUpdateEvent(List<BPTimerMobHpUpdate> updates)
+        {
+            foreach (var update in updates)
+            {
+                bool foundEntryToUpdate = false;
+                int idx = 0;
+                foreach (var item in StatusDescriptors)
+                {
+                    if (item.MobId == update.MobId && item.ChannelNumber == update.Channel)
+                    {
+                        item.LastHp = update.Hp;
+                        DateTime timestamp = DateTime.Now;
+                        item.UpdateTime = timestamp.ToString("yyyy-MM-dd HH:mm:ss.fffZ");
+                        item.UpdateTimestamp = timestamp;
+                        item.Location = update.Location ?? "";
+
+                        foundEntryToUpdate = true;
+                        // Each update entry can only for be a single item
+                        break;
+                    }
+                    idx++;
+                }
+                if (!foundEntryToUpdate)
+                {
+                    // The entry did not exist for some reason, we'll need to add it in now
+                    DateTime timestamp = DateTime.Now;
+                    long monsterId = 0;
+                    var match = MobsDescriptors.Where(x => x.MobId == update.MobId);
+                    if (match.Any())
+                    {
+                        monsterId = match.First().MonsterId;
+                    }
+
+                    StatusDescriptors.Add(new StatusDescriptor()
+                    {
+                        MobId = update.MobId,
+                        ChannelNumber = update.Channel,
+                        LastHp = update.Hp,
+                        UpdateTime = timestamp.ToString("yyyy-MM-dd HH:mm:ss.fffZ"),
+                        UpdateTimestamp = timestamp,
+                        Location = update.Location ?? "",
+                        MonsterId = monsterId
+                    });
+                }
+            }
+        }
+
+        public static void HandleMobResetEvent(List<string> resets)
+        {
+            foreach (var mobId in resets)
+            {
+                foreach (var status in StatusDescriptors)
+                {
+                    if (status.MobId == mobId)
+                    {
+                        DateTime timestamp = DateTime.Now;
+
+                        status.LastHp = 0;
+                        status.UpdateTime = timestamp.ToString("yyyy-MM-dd HH:mm:ss.fffZ");
+                        status.UpdateTimestamp = timestamp;
+                    }
+                }
+            }
+        }
+    }
+
+    public class MobsDescriptor
+    {
+        public string MobId { get; set; }
+        public string MobName { get; set; }
+        public string MobType { get; set; }
+        public int MobRespawnTime { get; set; }
+        public int MobUID { get; set; }
+        public string MobMapId { get; set; }
+        public string MobMapName { get; set; }
+        public int MobMapTotalChannels { get; set; }
+        public int MobMapUID { get; set; }
+        public long MonsterId { get; set; }
+        public string GameMobName { get; set; }
+    }
+
+    public class StatusDescriptor
+    {
+        public string MobId { get; set; }
+        public int ChannelNumber { get; set; }
+        public string UpdateTime { get; set; }
+        public DateTime? UpdateTimestamp { get; set; }
+        public int LastHp { get; set; }
+        public string Location { get; set; }
+        public long MonsterId { get; set; }
     }
 }

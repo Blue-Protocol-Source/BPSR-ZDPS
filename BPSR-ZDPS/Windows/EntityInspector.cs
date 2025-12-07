@@ -495,7 +495,7 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Text(displayName);
                             if (stat.Value.Level > 0)
                             {
-                                ImGui.SetItemTooltip($"Level: {stat.Value.Level}{(stat.Value.SummonLevel > 0 ? $"\nTier: {stat.Value.SummonLevel}" : "")}");
+                                ImGui.SetItemTooltip($"Level: {stat.Value.Level}{(stat.Value.TierLevel > 0 ? $"\nTier: {stat.Value.TierLevel}" : "")}");
                             }
 
                             ImGui.TableNextColumn();

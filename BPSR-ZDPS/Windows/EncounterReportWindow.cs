@@ -50,12 +50,13 @@ namespace BPSR_ZDPS.Windows
 
             ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono_Offscreen"], 18f);
 
-            string TitleText = $"ZDPS Report (v{Utils.AppVersion}) - Encounter: {encounter.SceneName} ({(encounter.EndTime - encounter.StartTime).ToString("hh\\:mm\\:ss")}) [TeamId: {WebManager.CreateTeamId(encounter)}]";
+            string TitleText = $"ZDPS Report (v{Utils.AppVersion}) - Encounter: {encounter.SceneName} ({(encounter.EndTime - encounter.StartTime).ToString("hh\\:mm\\:ss")}) [ZTeamId: {Utils.CreateZTeamId(encounter)}]";
             ImGui.SetNextWindowSize(new Vector2(-1, -1), ImGuiCond.Always);
             ImGui.Begin($"{TitleText}###EncounterReportWindow", ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoResize);
 
             ImGui.PushFont(HelperMethods.Fonts["Segoe_Offscreen"], 18f);
-            if (ImGui.BeginTable("##ReportTable", 23, ImGuiTableFlags.ScrollX | ImGuiTableFlags.ScrollY, new Vector2(-1, -1)))
+            // Removed ImGuiTableFlags.ScrollX for the direct SizingFixedFit flag instead to perform same layout be ensure the scroll bar never appears at the bottom
+            if (ImGui.BeginTable("##ReportTable", 23, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit, new Vector2(-1, -1)))
             {
                 ImGui.TableSetupColumn("#");
                 ImGui.TableSetupColumn("UID");

@@ -644,6 +644,26 @@ namespace BPSR_ZDPS
                     case EAttrType.AttrTopSummonerId:
                         EncounterManager.Current.SetAttrKV(uuid, "AttrTopSummonerId", reader.ReadInt64());
                         break;
+                    case EAttrType.AttrHateList:
+                        // This is called a "List" but it is not a list at all. It's a single item of just a UUID and Threat Value for the current target
+                        while (!reader.IsAtEnd)
+                        {
+                            uint tag = reader.ReadTag();
+                            int fieldNumber = Google.Protobuf.WireFormat.GetTagFieldNumber(tag);
+                            Google.Protobuf.WireFormat.WireType wireType = Google.Protobuf.WireFormat.GetTagWireType(tag);
+
+                            if (wireType != Google.Protobuf.WireFormat.WireType.LengthDelimited)
+                            {
+                                reader.SkipLastField();
+                                continue;
+                            }
+
+                            var len = reader.ReadLength();
+
+                            var info = HateInfo.Parser.ParseFrom(reader);
+                            EncounterManager.Current.SetAttrKV(uuid, "AttrHateList", info);
+                        }
+                        break;
                     default:
                         string attr_name = ((EAttrType)attr.Id).ToString();
                         EncounterManager.Current.SetAttrKV(uuid, attr_name, reader.ReadInt32());

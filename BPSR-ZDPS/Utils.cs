@@ -14,6 +14,8 @@ using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp;
 using System.Reflection;
 using System.Security.Policy;
+using System.IO.Hashing;
+using ZLinq;
 
 namespace BPSR_ZDPS
 {
@@ -139,6 +141,29 @@ namespace BPSR_ZDPS
                 fmt = "N2";
             }
             return $"{(Math.Sign(value) * shortNumber).ToString(fmt)}{suf[place]}";
+        }
+
+        /// <summary>
+        /// Generates the ZDPS TeamId for the given Encounter. This is not the same as the TeamId used by the game for parties.
+        /// </summary>
+        /// <param name="encounter"></param>
+        /// <returns></returns>
+        public static ulong CreateZTeamId(Encounter encounter)
+        {
+            var hash = new XxHash64();
+            var playerIds = encounter.Entities.AsValueEnumerable()
+                .Where(x => x.Value.EntityType == EEntityType.EntChar)
+                .Select(x => x.Value.UUID)
+                .Order();
+
+            foreach (var id in playerIds)
+            {
+                hash.Append(MemoryMarshal.Cast<long, byte>([id]));
+            }
+
+            var hashUlong = hash.GetCurrentHashAsUInt64();
+
+            return hashUlong;
         }
 
         public static string DamagePropertyToIconPath(EDamageProperty damageElement)

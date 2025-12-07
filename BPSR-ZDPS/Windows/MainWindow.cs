@@ -42,7 +42,9 @@ namespace BPSR_ZDPS.Windows
             NetDebug.Draw();
             DebugDungeonTracker.Draw(this);
             RaidManagerCooldownsWindow.Draw(this);
+            RaidManagerThreatWindow.Draw(this);
             DatabaseManagerWindow.Draw(this);
+            SpawnTrackerWindow.Draw(this);
         }
 
         static bool p_open = true;
@@ -274,6 +276,11 @@ namespace BPSR_ZDPS.Windows
                             RaidManagerCooldownsWindow.Open();
                         }
 
+                        if (ImGui.MenuItem("Threat Tracker"))
+                        {
+                            RaidManagerThreatWindow.Open();
+                        }
+
                         ImGui.EndMenu();
                     }
 
@@ -318,6 +325,25 @@ namespace BPSR_ZDPS.Windows
                             }
                         }
                         
+                        ImGui.EndMenu();
+                    }
+
+                    if (ImGui.BeginMenu("Integrations"))
+                    {
+                        bool isBPTimerEnabled = Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled;
+                        if (ImGui.BeginMenu("BPTimer", isBPTimerEnabled))
+                        {
+                            if (ImGui.MenuItem("Spawn Tracker"))
+                            {
+                                SpawnTrackerWindow.Open();
+                            }
+                            ImGui.SetItemTooltip("View Field Boss and Magical Creature spawns.\nUses the data from BPTimer.com website.");
+                            ImGui.EndMenu();
+                        }
+                        if (!isBPTimerEnabled)
+                        {
+                            ImGui.SetItemTooltip("[BPTimer] must be Enabled in the [Settings > Integrations] menu.");
+                        }
                         ImGui.EndMenu();
                     }
 

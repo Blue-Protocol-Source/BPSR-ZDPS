@@ -13,7 +13,7 @@ namespace BPSR_ZDPS.Windows
     public static class RaidManagerCooldownsWindow
     {
         public const string LAYER = "RaidManagerWindowLayer";
-        public static string TITLE_ID = "###RaidManagerWindow";
+        public static string TITLE_ID = "###RaidManagerCooldownPriorityTrackerWindow";
         public static string TITLE = "Cooldown Priority Tracker";
         public static bool IsOpened = false;
         public static bool IsTopMost = false;
@@ -62,7 +62,7 @@ namespace BPSR_ZDPS.Windows
         {
             HasBoundEvents = false;
             EncounterManager.Current.SkillActivated -= RaidManager_Entity_SkillActivated;
-            System.Diagnostics.Debug.WriteLine("RaidManager_EncounterEnd");
+            System.Diagnostics.Debug.WriteLine("RaidManager_EncounterEndFinal");
         }
 
         private static void RaidManager_EncounterStart(EventArgs e)

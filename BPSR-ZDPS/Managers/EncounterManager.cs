@@ -305,6 +305,8 @@ namespace BPSR_ZDPS
         public delegate void HpUpdatedEventHandler(object sender, HpUpdatedEventArgs e);
         public event HpUpdatedEventHandler BossHpUpdated; // Only used for Bosses
         public event HpUpdatedEventHandler EntityHpUpdated; // Used for all Entities
+        public delegate void ThreatListUpdatedEventHandler(object sender, ThreatListUpdatedEventArgs e);
+        public event ThreatListUpdatedEventHandler EntityThreatListUpdated; // This is not a real list, just the current target and their threat value
 
         public EncounterExData ExData { get; set; } = new();
         public byte[] ExDataBlob {  get; set; }
@@ -474,12 +476,31 @@ namespace BPSR_ZDPS
             else if (key == "AttrSkillRemodelLevel")
             {
                 // This has a Tier Level
-                // Find the entity for the AttrSummonerId/AttrTopSummonerId and update their Skill matching this entity's AttrSkillId
-                UpdateCasterSkillTierLevel(0, entity, (int)value);
+                if (entity.EntityType == EEntityType.EntChar || entity.EntityType == EEntityType.EntMonster)
+                {
+                    UpdateCasterSkillTierLevel(uuid, entity, (int)value);
+                }
+                else
+                {
+                    // Find the entity for the AttrSummonerId/AttrTopSummonerId and update their Skill matching this entity's AttrSkillId
+                    UpdateCasterSkillTierLevel(0, entity, (int)value);
+                }
             }
             else if (key == "AttrPos")
             {
                 entity.SetPosition(((Zproto.Vec3)value).ToVector3());
+            }
+            else if (key == "AttrHateList")
+            {
+                if(!entity.IsThreatListUpdatedHandlerSubscribed(OnEntityThreatListUpdated))
+                {
+                    entity.ThreatListUpdated += OnEntityThreatListUpdated;
+                }
+
+                // This is called a "List" but it is not a list at all. It's a single item of just a UUID and Threat Value for the current target
+                var hateInfo = (HateInfo)value;
+                ThreatInfo threatInfo = new() { EntityUuid = hateInfo.Uuid, ThreatValue = hateInfo.HateVal };
+                entity.SetThreatList(threatInfo);
             }
         }
 
@@ -734,6 +755,11 @@ namespace BPSR_ZDPS
             EntityHpUpdated?.Invoke(sender, e);
         }
 
+        protected virtual void OnEntityThreatListUpdated(object sender, ThreatListUpdatedEventArgs e)
+        {
+            EntityThreatListUpdated?.Invoke(sender, e);
+        }
+
         public void RemoveEntityHandlers()
         {
             foreach (var entity in Entities)
@@ -804,12 +830,17 @@ namespace BPSR_ZDPS
         public long MaxHp { get; private set; } = 0;
         public ConcurrentQueue<long> RecentHpHistory { get; private set; } = new();
 
+        public ThreatInfo ThreatInfo { get; private set; } = new();
+        public ConcurrentQueue<ThreatInfo> RecentThreatInfoHistory { get; private set; } = new();
+
         public Dictionary<string, object> Attributes { get; set; } = new();
 
         public delegate void SkillActivatedEventHandler(object sender, SkillActivatedEventArgs e);
         public event SkillActivatedEventHandler SkillActivated;
         public delegate void HpUpdatedEventHandler(object sender, HpUpdatedEventArgs e);
         public event HpUpdatedEventHandler HpUpdated;
+        public delegate void ThreatListUpdatedEventHandler(object sender, ThreatListUpdatedEventArgs e);
+        public event ThreatListUpdatedEventHandler ThreatListUpdated;
 
         public object Clone()
         {
@@ -830,6 +861,7 @@ namespace BPSR_ZDPS
         {
             SkillActivated = null;
             HpUpdated = null;
+            ThreatListUpdated = null;
         }
 
         [JsonConstructor]
@@ -1004,6 +1036,24 @@ namespace BPSR_ZDPS
         protected virtual void OnHpUpdated(HpUpdatedEventArgs e)
         {
             HpUpdated?.Invoke(this, e);
+        }
+
+        public void SetThreatList(ThreatInfo threatInfo)
+        {
+            if (RecentThreatInfoHistory.Count > 5)
+            {
+                RecentThreatInfoHistory.TryDequeue(out _);
+            }
+            RecentThreatInfoHistory.Enqueue(threatInfo);
+
+            ThreatInfo = threatInfo;
+
+            OnThreatListUpdated(new ThreatListUpdatedEventArgs() { EntityUuid = UUID, ThreatInfo = ThreatInfo });
+        }
+
+        protected virtual void OnThreatListUpdated(ThreatListUpdatedEventArgs e)
+        {
+            ThreatListUpdated?.Invoke(this, e);
         }
 
         public void IncrementDeaths()
@@ -1220,6 +1270,12 @@ namespace BPSR_ZDPS
             return invocationList != null && invocationList.Contains(handler);
         }
 
+        public bool IsThreatListUpdatedHandlerSubscribed(ThreatListUpdatedEventHandler handler)
+        {
+            Delegate[] invocationList = ThreatListUpdated?.GetInvocationList();
+            return invocationList != null && invocationList.Contains(handler);
+        }
+
         // Merges the data from another entity with this one, does not check the UUIDs match first
         public void MergeEntity(Entity newEntity)
         {
@@ -1303,6 +1359,18 @@ namespace BPSR_ZDPS
         public DateTime UpdateDateTime { get; set; }
     }
 
+    public class ThreatInfo
+    {
+        public long EntityUuid { get; set; }
+        public long ThreatValue { get; set; }
+    }
+
+    public class ThreatListUpdatedEventArgs : EventArgs
+    {
+        public long EntityUuid { get; set; }
+        public ThreatInfo ThreatInfo { get; set; } = new();
+    }
+
     public enum ESkillType : int
     {
         Unknown = 0,
@@ -1316,7 +1384,7 @@ namespace BPSR_ZDPS
         public string Name { get; private set; }
         public ESkillType SkillType { get; private set; } = ESkillType.Unknown;
         public int Level { get; private set; }
-        public int SummonLevel { get; private set; }
+        public int TierLevel { get; private set; }
         public long SummonUUID { get; private set; }
 
         public EDamageProperty DamageElement { get; private set; }
@@ -1472,7 +1540,7 @@ namespace BPSR_ZDPS
         public void SetSummonData(long uuid, int level)
         {
             SummonUUID = uuid;
-            SummonLevel = level;
+            TierLevel = level;
         }
 
         public void AddSnapshot(long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, DateTime timestamp)
