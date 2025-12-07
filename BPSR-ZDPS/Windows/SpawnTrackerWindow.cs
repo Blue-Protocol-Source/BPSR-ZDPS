@@ -211,7 +211,7 @@ namespace BPSR_ZDPS.Windows
                             {
                                 name = mob.MobName;
                             }
-                            ImGui.Selectable($"{name} [{mob.MobMapName}]##MobBtn_{mob.MobId}", ImGuiSelectableFlags.SpanAllColumns);
+                            ImGui.Selectable($"{name} [{mob.MobMapName}]##MobLabel_{mob.MobId}", ImGuiSelectableFlags.SpanAllColumns);
 
                             ImGui.EndGroup();
                             var groupSize = ImGui.GetItemRectSize();
@@ -235,11 +235,6 @@ namespace BPSR_ZDPS.Windows
                             bool endedOnSameLine = false;
                             foreach (var status in statusDescriptors)
                             {
-                                /*if (status.MobId != mob.MobId)
-                                {
-                                    continue;
-                                }*/
-
                                 float lineWidth = 50;
                                 int lineItemCount = (int)MathF.Floor(groupSize.X / (lineWidth + ImGui.GetStyle().ItemSpacing.X));
 
@@ -253,6 +248,7 @@ namespace BPSR_ZDPS.Windows
                                 {
                                     pct = 0.0f;
                                     isUnknown = true;
+                                    // We don't call 'continue' so that Unknown lines still show up in the UI
                                     //continue;
                                 }
                                 else if (pct == 0.0f)
@@ -265,8 +261,6 @@ namespace BPSR_ZDPS.Windows
                                 {
                                     continue;
                                 }
-
-                                // TODO: Sort by lowest HP first and only show up to 3 lines of data when including "expired" lines
 
                                 bool isCriticalHp = pct < 0.20 && !isDead && !isUnknown;
 
@@ -313,13 +307,12 @@ namespace BPSR_ZDPS.Windows
                                 }
                                 else
                                 {
-                                    //ImGui.SetItemTooltip($"{MathF.Round(pct * 100, 0)}%%\n{status.UpdateTimestamp}");
                                     if (ImGui.IsItemHovered() && ImGui.BeginTooltip())
                                     {
                                         ImGui.TextUnformatted($"{MathF.Round(pct * 100, 0)}%\n{status.UpdateTimestamp}");
                                         if (!string.IsNullOrEmpty(status.Location))
                                         {
-                                            // Location is set when we have a mob that can spanw in multiple areas
+                                            // Location is set when we have a mob that can spawn in multiple areas
                                             var tex = ImageArchive.LoadImage(Path.Combine("BPTimer", "Maps", $"{status.MonsterId}_{status.Location}"));
                                             if (tex != null)
                                             {
@@ -342,23 +335,6 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.EndListBox();
                 }
-
-                /*if (ImGui.Button("Get Data"))
-                {
-                    BPTimerManager.MobsDescriptors.Clear();
-                    BPTimerManager.StatusDescriptors.Clear();
-                    BPTimerManager.FetchAllMobs();
-                }
-
-                ImGui.SameLine();
-                if (ImGui.Button("Realtime"))
-                {
-                    if (RealtimeCancellationTokenSource != null)
-                    {
-                        RealtimeCancellationTokenSource.Cancel();
-                    }
-                    RealtimeCancellationTokenSource = BPTimerManager.StartRealtime();
-                }*/
 
                 ImGui.End();
             }

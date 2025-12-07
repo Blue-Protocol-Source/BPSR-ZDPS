@@ -63,6 +63,8 @@ namespace BPSR_ZDPS
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NoticeUpdateTeamInfo, ProcessNoticeUpdateTeamInfo);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NoticeUpdateTeamMemberInfo, ProcessNoticeUpdateTeamMemberInfo);
             //
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyJoinTeam, ProcessNotifyJoinTeam);
+
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.NotifyTeamActivityState, ProcessNotifyTeamActivityState);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.TeamActivityResult, ProcessTeamActivityResult);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_DeepsLib.ServiceMethods.GrpcTeamNtf.TeamActivityListResult, ProcessTeamActivityListResult);
@@ -211,6 +213,24 @@ namespace BPSR_ZDPS
             }
 
             GrpcTeamManager.ProcessNoticeUpdateTeamMemberInfo(vData, extraData);
+        }
+
+        public static void ProcessNotifyJoinTeam(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNotifyJoinTeam");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyJoinTeam.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            GrpcTeamManager.ProcessNotifyJoinTeam(vData, extraData);
         }
 
         public static void ProcessNotifyTeamActivityState(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)

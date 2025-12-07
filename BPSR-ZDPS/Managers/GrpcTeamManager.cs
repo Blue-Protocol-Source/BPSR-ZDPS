@@ -12,12 +12,48 @@ namespace BPSR_ZDPS
     {
         public static void ProcessNoticeUpdateTeamInfo(GrpcTeamNtf.Types.NoticeUpdateTeamInfo vData, ExtraPacketData extraData)
         {
-            
+
         }
 
         public static void ProcessNoticeUpdateTeamMemberInfo(GrpcTeamNtf.Types.NoticeUpdateTeamMemberInfo vData, ExtraPacketData extraData)
         {
-            
+
+        }
+
+        public static void ProcessNotifyJoinTeam(GrpcTeamNtf.Types.NotifyJoinTeam vData, ExtraPacketData extraData)
+        {
+            foreach (var member in vData.VRequest.MemberData)
+            {
+                long uuid = Utils.EntityIdToUuid(member.CharId, (long)EEntityType.EntChar, false, false);
+
+                var cached = EntityCache.Instance.GetOrCreate(uuid);
+                if (cached != null)
+                {
+                    string name = member.SocialData.BasicData.Name;
+                    if (!string.IsNullOrEmpty(name))
+                    {
+                        cached.Name = member.SocialData.BasicData.Name;
+                    }
+
+                    int level = member.SocialData.BasicData.Level;
+                    if (level > 0)
+                    {
+                        cached.Level = level;
+                    }
+
+                    long abilityscore = member.SocialData.UserAttrData.FightPoint;
+                    if (abilityscore > 0)
+                    {
+                        cached.AbilityScore = (int)abilityscore;
+                    }
+
+                    int professionId = member.SocialData.ProfessionData.ProfessionId;
+                    if (professionId > 0)
+                    {
+                        cached.ProfessionId = professionId;
+                    }
+                }
+            }
         }
 
         public static void ProcessNotifyTeamActivityState(GrpcTeamNtf.Types.NotifyTeamActivityState vData, ExtraPacketData extraData)

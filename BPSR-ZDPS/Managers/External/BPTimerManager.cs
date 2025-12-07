@@ -59,8 +59,6 @@ namespace BPSR_ZDPS.Managers.External
             System.Diagnostics.Debug.WriteLine("BPTimerManager_EncounterEndFinal");
             if (IsEncounterBound)
             {
-                System.Diagnostics.Debug.WriteLine("BPTimerManager_EncounterEndFinal Actioned");
-
                 IsEncounterBound = false;
                 EncounterManager.Current.EntityHpUpdated -= BPTimerManager_EntityHpUpdated;
             }
@@ -71,8 +69,6 @@ namespace BPSR_ZDPS.Managers.External
             System.Diagnostics.Debug.WriteLine("BPTimerManager_EncounterStart");
             if (!IsEncounterBound)
             {
-                System.Diagnostics.Debug.WriteLine("BPTimerManager_EncounterStart Actioned");
-
                 IsEncounterBound = true;
                 EncounterManager.Current.EntityHpUpdated += BPTimerManager_EntityHpUpdated;
             }

@@ -153,14 +153,14 @@ namespace BPSR_ZDPS.Web
 
             if (cancellationToken != null && cancellationToken.Value.IsCancellationRequested)
             {
-                System.Diagnostics.Debug.WriteLine("BPTimerOpenRealtimeStream Cancelled");
+                Log.Debug("BPTimerOpenRealtimeStream Cancelled");
                 Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.Cancelled;
                 return;
             }
 
             if(!response.IsSuccessStatusCode)
             {
-                System.Diagnostics.Debug.WriteLine($"Error in BPTimerOpenRealtimeStream StatusCode: {response.StatusCode}");
+                Log.Error($"Error in BPTimerOpenRealtimeStream StatusCode: {response.StatusCode}");
                 Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.Error;
                 return;
             }
@@ -171,7 +171,7 @@ namespace BPSR_ZDPS.Web
             {
                 if (cancellationToken != null && cancellationToken.Value.IsCancellationRequested)
                 {
-                    System.Diagnostics.Debug.WriteLine("BPTimerOpenRealtimeStream Cancelled");
+                    Log.Debug("BPTimerOpenRealtimeStream Cancelled");
                     Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.Cancelled;
                     return;
                 }
@@ -214,7 +214,7 @@ namespace BPSR_ZDPS.Web
 
                 if (cancellationToken != null && cancellationToken.Value.IsCancellationRequested)
                 {
-                    System.Diagnostics.Debug.WriteLine("BPTimerOpenRealtimeStream Cancelled");
+                    Log.Debug("BPTimerOpenRealtimeStream Cancelled");
                     Managers.External.BPTimerManager.SpawnDataRealtimeConnection = Managers.External.BPTimerManager.ESpawnDataLoadStatus.Cancelled;
                     return;
                 }
