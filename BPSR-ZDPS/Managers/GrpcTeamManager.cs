@@ -29,28 +29,39 @@ namespace BPSR_ZDPS
                 var cached = EntityCache.Instance.GetOrCreate(uuid);
                 if (cached != null)
                 {
-                    string name = member.SocialData.BasicData.Name;
-                    if (!string.IsNullOrEmpty(name))
+                    // Have to do a lot of null checks because bots are actually missing a lot of fields in this event
+
+                    if (member.SocialData.BasicData != null)
                     {
-                        cached.Name = member.SocialData.BasicData.Name;
+                        string name = member.SocialData.BasicData.Name;
+                        if (!string.IsNullOrEmpty(name))
+                        {
+                            cached.Name = member.SocialData.BasicData.Name;
+                        }
+
+                        int level = member.SocialData.BasicData.Level;
+                        if (level > 0)
+                        {
+                            cached.Level = level;
+                        }
                     }
 
-                    int level = member.SocialData.BasicData.Level;
-                    if (level > 0)
+                    if (member.SocialData.UserAttrData != null)
                     {
-                        cached.Level = level;
+                        long abilityscore = member.SocialData.UserAttrData.FightPoint;
+                        if (abilityscore > 0)
+                        {
+                            cached.AbilityScore = (int)abilityscore;
+                        }
                     }
 
-                    long abilityscore = member.SocialData.UserAttrData.FightPoint;
-                    if (abilityscore > 0)
+                    if (member.SocialData.ProfessionData != null)
                     {
-                        cached.AbilityScore = (int)abilityscore;
-                    }
-
-                    int professionId = member.SocialData.ProfessionData.ProfessionId;
-                    if (professionId > 0)
-                    {
-                        cached.ProfessionId = professionId;
+                        int professionId = member.SocialData.ProfessionData.ProfessionId;
+                        if (professionId > 0)
+                        {
+                            cached.ProfessionId = professionId;
+                        }
                     }
                 }
             }

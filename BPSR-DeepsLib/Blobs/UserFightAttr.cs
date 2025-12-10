@@ -16,7 +16,7 @@ public class UserFightAttr : BlobType
     public int? IsDead;
     public long? DeadTime;
     public int? ReviveId;
-    // CDInfo
+    public SkillCDInfo? CDInfo;
 
     public UserFightAttr()
     {
@@ -53,6 +53,9 @@ public class UserFightAttr : BlobType
                 return true;
             case Zproto.UserFightAttr.ReviveIdFieldNumber:
                 ReviveId = blob.ReadInt();
+                return true;
+            case Zproto.UserFightAttr.CdInfoFieldNumber:
+                CDInfo = new(blob);
                 return true;
             default:
                 return false;

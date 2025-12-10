@@ -85,7 +85,7 @@ namespace BPSR_ZDPS.Meters
                     if (SelectableWithHint($"{name} [{entity.UID.ToString()}]##TakenEntry_{i}", dps_format))
                     {
                         mainWindow.entityInspector = new EntityInspector();
-                        mainWindow.entityInspector.LoadEntity(entity);
+                        mainWindow.entityInspector.LoadEntity(entity, EncounterManager.Current.StartTime);
                         mainWindow.entityInspector.Open();
                     }
 

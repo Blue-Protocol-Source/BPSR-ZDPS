@@ -16,7 +16,7 @@ public class CharSerialize(BlobReader blob) : BlobType(ref blob)
     // ...
     public ProfessionList? ProfessionList;
     // ...
-    // public FightPoint? FightPoint;
+    public FightPoint? FightPoint;
 
     public override bool ParseField(int index, ref BlobReader blob)
     {
@@ -36,6 +36,9 @@ public class CharSerialize(BlobReader blob) : BlobType(ref blob)
                 return true;
             case Zproto.CharSerialize.ProfessionListFieldNumber:
                 ProfessionList = new(blob);
+                return true;
+            case Zproto.CharSerialize.FightPointFieldNumber:
+                FightPoint = new(blob);
                 return true;
             default:
                 return false;

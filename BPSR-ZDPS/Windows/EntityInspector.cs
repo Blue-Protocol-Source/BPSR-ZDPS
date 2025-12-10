@@ -21,6 +21,7 @@ namespace BPSR_ZDPS.Windows
         // be context aware - if pulling from a historical report, maintain that reference even if current encounter changes
         // if pulling from current, maintain a connection to current encounter to show latest data as encounters change
         public Entity? LoadedEntity { get; set; }
+        public DateTime? LoadedEncounterStartTime { get; private set; }
 
         public bool IsOpened = false;
 
@@ -81,7 +82,7 @@ namespace BPSR_ZDPS.Windows
             {
                 if (EncounterManager.Current.Entities.TryGetValue(LoadedEntity.UUID, out var foundEntity))
                 {
-                    LoadEntity(foundEntity);
+                    LoadEntity(foundEntity, EncounterManager.Current.StartTime);
                     //LoadedFromEncounterIdx = EncounterManager.Encounters.Count - 1;
                 }
             }
@@ -777,7 +778,9 @@ namespace BPSR_ZDPS.Windows
                     if (LoadedEntity.DamageStats.SkillSnapshots.Count > 0)
                     {
                         // TODO: Optimize all of this, it's just made to be functional right now
-                        var startTime = LoadedEntity.DamageStats.StartTime;
+
+                        // TODO: Give option to clamp StartTime to when the entity performed first attack (LoadedEntity.DamageStats.StartTime)
+                        var startTime = LoadedEncounterStartTime?.ToUniversalTime() ?? LoadedEntity.DamageStats.StartTime;
 
                         if (HasLoadedGraphsData && LoadedEntity.DamageStats.SkillSnapshots.Count != SkillSnapshotsDamage.Length)
                         {
@@ -791,8 +794,14 @@ namespace BPSR_ZDPS.Windows
 
                             HasLoadedGraphsData = true;
 
-                            SkillSnapshotTimestampSeconds = LoadedEntity.DamageStats.SkillSnapshots.AsValueEnumerable().Select(x => x.Timestamp.Value.Subtract(startTime.Value).TotalSeconds).ToArray();
-                            SkillSnapshotsDamage = LoadedEntity.DamageStats.SkillSnapshots.AsValueEnumerable().Select(x => (double)x.Value).ToArray();
+                            List<double> tempSkillSnapshotTimestampSeconds = new() { 0 };
+                            List<double> tempSkillSnapshotsDamage = new() { 0 };
+
+                            tempSkillSnapshotTimestampSeconds.AddRange(LoadedEntity.DamageStats.SkillSnapshots.AsValueEnumerable().Select(x => x.Timestamp.Value.Subtract(startTime.Value).TotalSeconds).ToList());
+                            tempSkillSnapshotsDamage.AddRange(LoadedEntity.DamageStats.SkillSnapshots.AsValueEnumerable().Select(x => (double)x.Value).ToArray());
+
+                            SkillSnapshotTimestampSeconds = tempSkillSnapshotTimestampSeconds.ToArray();
+                            SkillSnapshotsDamage = tempSkillSnapshotsDamage.ToArray();
 
                             double lastAdded = 0;
                             foreach (var value in SkillSnapshotsDamage)
@@ -922,9 +931,10 @@ namespace BPSR_ZDPS.Windows
             ImGui.PopID();
         }
 
-        public void LoadEntity(Entity entity)
+        public void LoadEntity(Entity entity, DateTime encounterStartTime)
         {
             LoadedEntity = entity;
+            LoadedEncounterStartTime = encounterStartTime;
 
             HasLoadedGraphsData = false;
             SkillSnapshotTimestampSeconds = [];

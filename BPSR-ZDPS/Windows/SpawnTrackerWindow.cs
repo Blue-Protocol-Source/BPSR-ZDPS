@@ -38,7 +38,7 @@ namespace BPSR_ZDPS.Windows
             ImGui.OpenPopup(TITLE_ID);
             IsOpened = true;
             InitializeBindings();
-            if (BPTimerManager.SpawnDataLoaded == BPTimerManager.ESpawnDataLoadStatus.NotLoaded || BPTimerManager.SpawnDataLoaded == BPTimerManager.ESpawnDataLoadStatus.Error)
+            if (BPTimerManager.SpawnDataLoaded == BPTimerManager.ESpawnDataLoadStatus.NotLoaded || BPTimerManager.SpawnDataLoaded == BPTimerManager.ESpawnDataLoadStatus.Error || BPTimerManager.SpawnDataRealtimeConnection == BPTimerManager.ESpawnDataLoadStatus.Error)
             {
                 BPTimerManager.SpawnDataLoaded = BPTimerManager.ESpawnDataLoadStatus.InProgress;
                 BPTimerManager.MobsDescriptors.Clear();

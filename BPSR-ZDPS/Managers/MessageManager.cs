@@ -1106,6 +1106,7 @@ namespace BPSR_ZDPS
 
                 if (ser.SceneData != null)
                 {
+                    Log.Debug($"ser.sceneData = {ser.SceneData}");
                     if (ser.SceneData.LevelMapId != null)
                     {
                         System.Diagnostics.Debug.WriteLine($"ser.SceneData.LevelMapId = {ser.SceneData.LevelMapId})");

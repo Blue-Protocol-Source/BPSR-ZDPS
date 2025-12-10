@@ -44,8 +44,24 @@ namespace BPSR_ZDPS
             // Don't create reports for Null (Open World) states as we don't handle their encounters nicely yet
             if (EncounterManager.Current.DungeonState == EDungeonState.DungeonStateNull && e.Reason != EncounterStartReason.Restart && e.Reason != EncounterStartReason.NewObjective)
             {
-                Log.Debug($"Encounter was reported as being in the Open World and we do not support it yet");
-                return;
+                if (BattleStateMachine.DungeonStateHistory.Count > 0)
+                {
+                    var lastBSMDungeonState = BattleStateMachine.DungeonStateHistory.Last();
+                    if (lastBSMDungeonState.Key != EDungeonState.DungeonStateNull)
+                    {
+                        Log.Debug($"Current.DungeonState == EDungeonState.DungeonStateNull but BattleStateMachine.DungeonStateHistory reported it to actually be {lastBSMDungeonState}. Avoiding invalid Open World exit state.");
+                    }
+                    else
+                    {
+                        Log.Debug($"Encounter was reported as being in the Open World and we do not support it yet");
+                        return;
+                    }
+                }
+                else
+                {
+                    Log.Debug($"Encounter was reported as being in the Open World and we do not support it yet");
+                    return;
+                }
             }
 
             // We perform a check to make sure the setting is above 0 before iterating through the entity list to improve performance for most users who do not set a min count

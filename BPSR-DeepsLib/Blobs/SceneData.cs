@@ -15,7 +15,7 @@ namespace BPSR_DeepsLib.Blobs
         public Position? LevelPos;
         public uint? LevelMapId;
         public uint? LevelReviveId;
-        public Dictionary<uint, uint>? RecordId; // Unsupported
+        public Dictionary<uint, uint>? RecordId;
         public uint? PlaneId;
         public bool? CanSwitchLayer; // Unsupported
         public Position? BeforeFallPos;
@@ -53,9 +53,9 @@ namespace BPSR_DeepsLib.Blobs
                 case Zproto.SceneData.LevelReviveIdFieldNumber:
                     LevelReviveId = blob.ReadUInt();
                     return true;
-                /*case Zproto.SceneData.RecordIdFieldNumber:
-                    RecordId = blob.ReadHashMap<>(); // TODO: This requires ReadHashMap to support non-int32 keys
-                    return true;*/
+                case Zproto.SceneData.RecordIdFieldNumber:
+                    RecordId = blob.ReadHashMap<uint, uint>();
+                    return true;
                 case Zproto.SceneData.PlaneIdFieldNumber:
                     PlaneId = blob.ReadUInt();
                     return true;
