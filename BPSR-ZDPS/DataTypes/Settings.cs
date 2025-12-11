@@ -19,6 +19,7 @@ public class Settings
     public bool UseAutomaticWipeDetection { get; set; } = true;
     public bool SkipTeleportStateCheckInAutomaticWipeDetection { get; set; } = false;
     public bool SplitEncountersOnNewPhases { get; set; } = true;
+    public bool DisplayTruePerSecondValuesInMeters { get; set; } = false;
     public float WindowOpacity = 1.0f;
     public float MeterBarScale = 1.0f;
     public bool UseDatabaseForEncounterHistory { get; set; } = true;

@@ -25,6 +25,7 @@ namespace BPSR_ZDPS.Windows
         static bool useAutomaticWipeDetection;
         static bool skipTeleportStateCheckInAutomaticWipeDetection;
         static bool splitEncountersOnNewPhases;
+        static bool displayTruePerSecondValuesInMeters;
         static float windowOpacity;
         static float meterBarScale;
         static bool useDatabaseForEncounterHistory;
@@ -374,14 +375,13 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
-                        bool displayTrueDps = false;
                         ImGui.AlignTextToFramePadding();
-                        ImGui.Text("Display True DPS [Not Yet Implemented]: ");
+                        ImGui.Text("Display True Per Second Values In Meters: ");
                         ImGui.SameLine();
-                        ImGui.Checkbox("##DisplayTrueDPS", ref displayTrueDps);
+                        ImGui.Checkbox("##DisplayTruePerSecondValuesInMeters", ref displayTruePerSecondValuesInMeters);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("When enabled, the DPS value shown in the DPS Meter is the true DPS rather than the 'Active DPS'. This means it is recalculated every second instead of only using the time the entity was actively participating in combat pressing buttons.");
+                        ImGui.TextWrapped("When enabled, the Damage, Healing, and Taken Per Second value shown in the Meters will have the 'true' Per Second value, shown in square brackets, in addition to the normal 'Active Per Second' value. This means it is recalculated every second instead of only using the time the entity was actively participating in combat pressing buttons.\nNote: Both values are accurate, they are just two different metrics.\nThis only works starting from the Next Encounter. It is not retroactive and this value currently only will be shown in the Meters UI.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -424,38 +424,6 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TextWrapped("When enabled, only players who have dealt damage will show in the DPS meter.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
-
-                        /*ImGui.AlignTextToFramePadding();
-                        ImGui.Text("Pinned Window Opacity: ");
-                        ImGui.SetNextItemWidth(-1);
-                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
-                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                        if (ImGui.SliderFloat("##PinnedWindowOpacity", ref windowOpacity, 0.05f, 1.0f, $"{(int)(windowOpacity * 100)}%%"))
-                        {
-                            windowOpacity = MathF.Round(windowOpacity, 2);
-                        }
-                        ImGui.PopStyleColor(2);
-                        ImGui.Indent();
-                        ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("How transparent a pinned window is.");
-                        ImGui.EndDisabled();
-                        ImGui.Unindent();*/
-
-                        /*ImGui.AlignTextToFramePadding();
-                        ImGui.Text("Meter Bar Scale: ");
-                        ImGui.SetNextItemWidth(-1);
-                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
-                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                        if (ImGui.SliderFloat("##MeterBarScale", ref meterBarScale, 0.80f, 2.0f, $"{(int)(meterBarScale * 100)}%%"))
-                        {
-                            meterBarScale = MathF.Round(meterBarScale, 2);
-                        }
-                        ImGui.PopStyleColor(2);
-                        ImGui.Indent();
-                        ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("Scaling for how large the bars in the meter windows should be. 100%% is the default scale.");
-                        ImGui.EndDisabled();
-                        ImGui.Unindent();*/
 
                         if (ImGui.CollapsingHeader("Pinned (Top Most) Window Opacities"))
                         {
@@ -1091,6 +1059,7 @@ namespace BPSR_ZDPS.Windows
             useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
             skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
             splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
+            displayTruePerSecondValuesInMeters = Settings.Instance.DisplayTruePerSecondValuesInMeters;
             windowOpacity = Settings.Instance.WindowOpacity;
             meterBarScale = Settings.Instance.MeterBarScale;
 
@@ -1152,6 +1121,7 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.UseAutomaticWipeDetection = useAutomaticWipeDetection;
             Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection = skipTeleportStateCheckInAutomaticWipeDetection;
             Settings.Instance.SplitEncountersOnNewPhases = splitEncountersOnNewPhases;
+            Settings.Instance.DisplayTruePerSecondValuesInMeters = displayTruePerSecondValuesInMeters;
             Settings.Instance.WindowOpacity = windowOpacity;
             Settings.Instance.MeterBarScale = meterBarScale;
 

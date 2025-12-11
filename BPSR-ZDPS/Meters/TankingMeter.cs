@@ -81,9 +81,14 @@ namespace BPSR_ZDPS.Meters
                             contributionProgressBar = contribution;
                         }
                     }
+                    string truePerSecond = "";
+                    if (Settings.Instance.DisplayTruePerSecondValuesInMeters)
+                    {
+                        truePerSecond = $"[{Utils.NumberToShorthand(entity.TakenStats.TrueValuePerSecond)}] ";
+                    }
                     string totalTaken = Utils.NumberToShorthand(entity.TotalTakenDamage);
                     string totalTps = Utils.NumberToShorthand(entity.TakenStats.ValuePerSecond);
-                    string dps_format = $"{totalTaken} ({totalTps}) {contribution.ToString("F0").PadLeft(3, ' ')}%";
+                    string tps_format = $"{totalTaken} {truePerSecond}({totalTps}) {contribution.ToString("F0").PadLeft(3, ' ')}%";
                     var startPoint = ImGui.GetCursorPos();
 
                     ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f * Settings.Instance.MeterBarScale);
@@ -93,8 +98,8 @@ namespace BPSR_ZDPS.Meters
                     ImGui.PopStyleColor();
 
                     ImGui.SetCursorPos(startPoint);
-                    if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{name}-{profession} ({entity.AbilityScore})##TpsEntry_{i}", dps_format, entity.ProfessionId))
-                    //if (SelectableWithHint($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}. {name}-{profession} ({entity.AbilityScore})##TpsEntry_{i}", dps_format))
+                    if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{name}-{profession} ({entity.AbilityScore})##TpsEntry_{i}", tps_format, entity.ProfessionId))
+                    //if (SelectableWithHint($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}. {name}-{profession} ({entity.AbilityScore})##TpsEntry_{i}", tps_format))
                     {
                         mainWindow.entityInspector = new EntityInspector();
                         mainWindow.entityInspector.LoadEntity(entity, EncounterManager.Current.StartTime);

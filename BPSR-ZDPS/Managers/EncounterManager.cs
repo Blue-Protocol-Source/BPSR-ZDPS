@@ -34,6 +34,8 @@ namespace BPSR_ZDPS
         public delegate void EncounterEndFinalEventHandler(EncounterEndFinalData e);
         public static event EncounterEndFinalEventHandler EncounterEndFinal;
 
+        public static CancellationTokenSource UpdateTruePerValuesCTS = new CancellationTokenSource();
+
         static EncounterManager()
         {
             // Give a default encounter for now
@@ -147,6 +149,16 @@ namespace BPSR_ZDPS
                 SetSceneId(LevelMapId);
             }
 
+            UpdateTruePerValuesCTS = new();
+            if (Settings.Instance.DisplayTruePerSecondValuesInMeters)
+            {
+                // Only allow calculating the True Per Second if it was enabled since there is a performance cost to doing so
+                Task.Run(() =>
+                {
+                    UpdateTruePerValues(UpdateTruePerValuesCTS);
+                });
+            }
+
             OnEncounterStart(new EventArgs());
         }
 
@@ -156,6 +168,8 @@ namespace BPSR_ZDPS
             {
                 Current.SetEndTime(DateTime.Now);
             }
+
+            UpdateTruePerValuesCTS.Cancel();
 
             OnEncounterEnd(new EventArgs());
 
@@ -233,6 +247,30 @@ namespace BPSR_ZDPS
             Current.SceneId = LevelMapId;
             Current.SceneName = SceneName;
             DB.UpdateBattleInfo(CurrentBattleId, LevelMapId, SceneName);
+        }
+
+        public static async void UpdateTruePerValues(CancellationTokenSource cancellationTokenSource)
+        {
+            var timer = new PeriodicTimer(TimeSpan.FromSeconds(1));
+
+            while (!cancellationTokenSource.IsCancellationRequested && await timer.WaitForNextTickAsync())
+            {
+                var duration_rep = 1 / Current.GetDuration().TotalSeconds;
+                if (Current.TotalDamage > 0)
+                {
+                    var entities = Current.Entities.AsValueEnumerable();
+                    foreach (var entity in entities)
+                    {
+                        var trueDamagePerSecond = entity.Value.TotalDamage * duration_rep;
+                        var trueHealingPerSecond = entity.Value.TotalHealing * duration_rep;
+                        var trueTakenPerSecond = entity.Value.TotalTakenDamage * duration_rep;
+
+                        entity.Value.DamageStats.TrueValuePerSecond = trueDamagePerSecond;
+                        entity.Value.HealingStats.TrueValuePerSecond = trueHealingPerSecond;
+                        entity.Value.TakenStats.TrueValuePerSecond = trueTakenPerSecond;
+                    }
+                }
+            }
         }
 
         static void OnBattleStart(EventArgs e)
@@ -1389,6 +1427,7 @@ namespace BPSR_ZDPS
         public long ValueMin { get; private set; }
         public double ValueAverage { get; private set; }
         public double ValuePerSecond { get; private set; }
+        public double TrueValuePerSecond { get; set; }
 
         public uint MissCount { get; private set; }
         public double MissRate { get; private set; }
