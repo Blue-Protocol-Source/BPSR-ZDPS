@@ -1,12 +1,12 @@
-﻿using BPSR_ZDPS.DataTypes.Modules;
+﻿using BPSR_ZDPS.DataTypes;
+using BPSR_ZDPS.DataTypes.Modules;
+using BPSR_ZDPS.Managers;
 using Hexa.NET.ImGui;
 using Newtonsoft.Json;
 using Serilog;
-using System.Buffers.Text;
 using System.Collections.Frozen;
-using System.Diagnostics;
 using System.Numerics;
-using System.Text;
+using System.Runtime.Intrinsics.X86;
 using ZLinq;
 using Zproto;
 
@@ -155,6 +155,21 @@ namespace BPSR_ZDPS
                             }
                         }
 
+                        string[] solverNames = ["Legacy", "Fallback", "Normal"];
+                        int selectedSolver = (int)Settings.Instance.WindowSettings.ModuleWindow.SolverMode;
+
+                        ImGui.TextUnformatted("Solver Mode:");
+                        ImGui.SameLine();
+                        ImGui.SetNextItemWidth(300);
+                        ImGui.Combo("##SolverMode", ref selectedSolver, solverNames, 3);
+                        Settings.Instance.WindowSettings.ModuleWindow.SolverMode = (SolverModes)selectedSolver;
+
+                        ImGui.Spacing();
+                        ImGui.SeparatorText("Debug Info");
+                        ImGui.TextUnformatted($"IsHardwareAccelerated: {Vector.IsHardwareAccelerated}");
+                        ImGui.TextUnformatted($"Avx2: {Avx2.IsSupported}");
+                        ImGui.TextUnformatted($"Size: {Vector<byte>.Count}");
+
                         ImGui.Text("Settings will go here.");
                         var itsEvieFrFr = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"));
                         if (itsEvieFrFr.HasValue)
@@ -237,7 +252,7 @@ namespace BPSR_ZDPS
 
             ImGui.SetCursorPos(pos + new Vector2(leftWidth - 50, 0));
             var isAlreadyAdded = SolverConfig.StatPrioritys.Any(x => x.Id == PendingStatToAdd.StatId);
-            ImGui.BeginDisabled(isAlreadyAdded);
+            ImGui.BeginDisabled(isAlreadyAdded && SolverConfig.StatPrioritys.Count <= 8);
             if (ImGui.Button("Add", new Vector2(50, 0)))
             {
                 SolverConfig.StatPrioritys.Add(new StatPrio()
@@ -369,6 +384,14 @@ namespace BPSR_ZDPS
             ImGui.PopFont();
 
             var availSize = ImGui.GetContentRegionAvail();
+            ImGui.SetCursorPos(pos + new Vector2(availSize.X - 70, 5));
+            ImGui.SetNextItemWidth(40);
+            if (ImGui.InputInt($"##MinLevel{i}", ref SolverConfig.StatPrioritys[i].MinLevel, 0))
+            {
+                wasChanged = true;
+            }
+            ImGui.SetItemTooltip("The minimum level needed for this stat to be considered.\nLeave 0 to use any level.");
+
             ImGui.SetCursorPos(pos + new Vector2(availSize.X - 25, 0));
             ImGui.PushFont(HelperMethods.Fonts["FASIcons"], 13.0f);
             ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkRed);
@@ -383,57 +406,6 @@ namespace BPSR_ZDPS
             ImGui.Separator();
 
             return (shouldRemove, wasChanged);
-        }
-
-        private static void DrawIconCombo()
-        {
-            Vector2 size = new Vector2(140, 28);
-
-            ImGui.PushStyleColor(ImGuiCol.FrameBg, 0xFF202020);
-            ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(6, 4));
-
-            // This behaves like an input box / frame
-            if (ImGui.BeginChild("StatSelector_preview", size))
-            {
-                // Make the preview clickable: open popup on click
-                if (ImGui.IsWindowHovered() && ImGui.IsMouseClicked(ImGuiMouseButton.Left))
-                {
-                    ImGui.OpenPopup("StatSelector");
-                }
-
-                // Draw icon + text for selected item
-                ImGui.Image(PendingStatToAdd.IconRef.Value, new Vector2(20, 20));
-                ImGui.SameLine();
-                ImGui.Text(PendingStatToAdd.Name);
-            }
-            ImGui.EndChild();
-
-            ImGui.PopStyleColor();
-            ImGui.PopStyleVar();
-
-            // ----- DROPDOWN CONTENT -----
-            if (ImGui.BeginPopup("StatSelector"))
-            {
-                for (int i = 0; i < ModStatInfos.Values.Length; i++)
-                {
-                    ImGui.PushID(i);
-
-                    bool isSelected = false;
-                    ImGui.Selectable("##sel", isSelected);
-                        //selectedIndex = i;
-
-                    // Draw the row manually
-                    Vector2 pos = ImGui.GetItemRectMin();
-                    ImGui.SetCursorScreenPos(pos + new Vector2(4, 2));
-                    ImGui.Image(ModStatInfos.Values[i].IconRef.Value, new Vector2(20, 20));
-                    ImGui.SameLine();
-                    ImGui.Text(ModStatInfos.Values[i].Name);
-
-                    ImGui.PopID();
-                }
-
-                ImGui.EndPopup();
-            }
         }
 
         private static void DrawModuleInv()
@@ -651,204 +623,12 @@ namespace BPSR_ZDPS
 
         private static void CalculateBestModules()
         {
-            lock (BestModResults)
-            {
-                BestModResults.Clear();
-            }
+            var modWindowSettings = Settings.Instance.WindowSettings.ModuleWindow;
+            var solver = new ModuleOptimizer();
+            var results = solver.Solve(SolverConfig, PlayerModData, Settings.Instance.WindowSettings.ModuleWindow.SolverMode);
 
-            var filtered = FilterModulesWithStats();
-
-            // Create short indices
-            // Create base scores for modules
-            // Score combos based on the stat priorities and breakpoints reached
-
-            // Build module scores
-            ushort[] baseModuleScores = new ushort[filtered.Count];
-            for (int i = 0; i < filtered.Count; i++)
-            {
-                var score = CalcModuleScore(filtered[i]);
-                baseModuleScores[i] = score;
-            }
-
-            var numCombos = CountCombinations4(filtered.Count());
-            var sw = Stopwatch.StartNew();
-            var numMods = filtered.Count;
-            var bestMods = new List<ModComboResult>();
-            Parallel.For(0, numMods - 3, i =>
-            {
-                ModComboResult[] topBest = new ModComboResult[10];
-
-                for (int j = i + 1; j < numMods - 2; j++)
-                {
-                    for (int k = j + 1; k < numMods - 1; k++)
-                    {
-                        for (int l = k + 1; l < numMods; l++)
-                        {
-                            var combo = new ModuleSet()
-                            {
-                                Mod1 = (ushort)i,
-                                Mod2 = (ushort)j,
-                                Mod3 = (ushort)k,
-                                Mod4 = (ushort)l
-                            };
-
-                            var mod1Cores = GetModPowerCores(filtered[i]);
-                            var mod2Cores = GetModPowerCores(filtered[j]);
-                            var mod3Cores = GetModPowerCores(filtered[k]);
-                            var mod4Cores = GetModPowerCores(filtered[l]);
-
-                            var allCores = new List<PowerCore>(10);
-                            allCores.AddRange(mod1Cores);
-                            allCores.AddRange(mod2Cores);
-                            allCores.AddRange(mod3Cores);
-                            allCores.AddRange(mod4Cores);
-
-                            int totalScore = 0;
-
-                            var grouped = allCores.AsValueEnumerable().GroupBy(x => x.Id);
-                            foreach (var group in grouped)
-                            {
-                                var statMul = GetStatMultiplier(group.Key);
-                                var total = group.AsValueEnumerable().Select(y => y.Value).Sum();
-                                var breakPointBonus = total switch
-                                {
-                                    >= 20 => 64,
-                                    >= 16 => 32,
-                                    >= 12 => 16,
-                                    >= 8 => 8,
-                                    >= 4 => 4,
-                                    >= 1 => 2,
-                                    _ => 0
-                                };
-
-                                var score = (Math.Clamp(total, 0, 20) + breakPointBonus) * statMul;
-                                totalScore += score;
-                            }
-                            
-                            //.SelectMany(x => x.AsValueEnumerable().Select(y => y.Value).Sum());
-
-                            //var score = baseModuleScores[i] + baseModuleScores[j] + baseModuleScores[k] + baseModuleScores[l];
-                            for (int bestIdx = 0; bestIdx < topBest.Length; bestIdx++)
-                            {
-                                var best = topBest[bestIdx];
-                                if (totalScore > best.Score)
-                                {
-                                    topBest[bestIdx].ModuleSet = combo;
-                                    topBest[bestIdx].Score = totalScore;
-                                }
-                            }
-
-                            /*var mod1 = PlayerModulesPackage.Items[filtered[i]];
-                            var mod2 = PlayerModulesPackage.Items[filtered[j]];
-                            var mod3 = PlayerModulesPackage.Items[filtered[k]];
-                            var mod4 = PlayerModulesPackage.Items[filtered[l]];*/
-                        }
-                    }
-                }
-
-                lock (bestMods)
-                {
-                    bestMods.AddRange(topBest);
-                }
-            });
-            sw.Stop();
-
-            var top10 = bestMods.DistinctBy(x => $"{x.ModuleSet.Mod1}_{x.ModuleSet.Mod2}_{x.ModuleSet.Mod3}_{x.ModuleSet.Mod4}").OrderByDescending(x => x.Score).Take(10).ToList();
-            for (int i1 = 0; i1 < top10.Count; i1++)
-            {
-                ModComboResult modSet = top10[i1];
-                var coreStats = new Dictionary<long, PowerCore>();
-                var mods = modSet.ModuleSet.Mods;
-                for (int i = 0; i < mods.Length; i++)
-                {
-                    var modId = filtered[mods[i]];
-                    var powerCores = GetModPowerCores(modId);
-                    foreach (var powerCore in powerCores)
-                    {
-                        if (coreStats.TryGetValue(powerCore.Id, out var existingCore))
-                        {
-                            existingCore.Value += powerCore.Value;
-                            coreStats[powerCore.Id] = existingCore;
-                        }
-                        else
-                        {
-                            coreStats.Add(powerCore.Id, powerCore);
-                        }
-                    }
-                }
-
-                modSet.Stats = coreStats.Values.OrderByDescending(x => x.Value).ToArray();
-
-                top10[i1] = modSet;
-            }
-
-            lock (BestModResults)
-            {
-                BestModResults = top10;
-            }
-
-            lock (FilteredModules)
-            {
-                FilteredModules = filtered;
-            }
-
-            Log.Information($"Combos took: {sw.Elapsed}");
-
-            Log.Information($"filtered: {filtered.Count()}, NumCombos: {numCombos}");
-        }
-
-        private static ushort CalcModuleScore(long id)
-        {
-            var modItem = PlayerModData.ModulesPackage.Items[id];
-            var modInfo = PlayerModData.Mod.ModInfos[id];
-            ushort score = 0;
-            for (int i = 0; i < modItem.ModNewAttr.ModParts.Count; i++)
-            {
-                var statId = modItem.ModNewAttr.ModParts[i];
-                var statValue = modInfo.InitLinkNums[i];
-                var statMultiplier = GetStatMultiplier(statId);
-                score += (ushort)(statValue * statMultiplier);
-            }
-
-            return score;
-        }
-
-        private static List<PowerCore> GetModPowerCores(long id)
-        {
-            var powerCores = new List<PowerCore>();
-
-            var modItem = PlayerModData.ModulesPackage.Items[id];
-            var modInfo = PlayerModData.Mod.ModInfos[id];
-            for (int i = 0; i < modItem.ModNewAttr.ModParts.Count; i++)
-            {
-                var statId = modItem.ModNewAttr.ModParts[i];
-                var statValue = modInfo.InitLinkNums[i];
-
-                var powerCore = new PowerCore()
-                {
-                    Id = statId,
-                    Value = statValue,
-                };
-
-                powerCores.Add(powerCore);
-            }
-
-            return powerCores;
-        }
-
-        // 44,224,635
-        private static List<long> FilterModulesWithStats()
-        {
-            var modules = new List<long>();
-            foreach (var item in PlayerModData.ModulesPackage.Items)
-            {
-                if (item.Value.ModNewAttr.ModParts.Any(x => SolverConfig.StatPrioritys.Any(y => y.Id == x)))
-                {
-                    modules.Add(item.Key);
-                }
-            }
-
-            return modules.ToList();
+            FilteredModules = results.FilteredModules;
+            BestModResults = results.BestModResults;
         }
 
         public static long CountCombinations4(int n)
@@ -856,20 +636,6 @@ namespace BPSR_ZDPS
             if (n < 4) return 0;
             return (long)n * (n - 1) * (n - 2) * (n - 3) / 24;
         }
-
-        private static ushort GetStatMultiplier(int statId)
-        {
-            for (int i = 0; i < SolverConfig.StatPrioritys.Count; i++)
-            {
-                if (SolverConfig.StatPrioritys[i].Id == statId)
-                {
-                    return (ushort)(SolverConfig.StatPrioritys.Count - i);
-                }
-            }
-
-            return 0;
-        }
-
     }
 
     public enum ModuleType
@@ -931,5 +697,19 @@ namespace BPSR_ZDPS
     public class ModuleWindowSettings
     {
         public List<Preset> Presets = [];
+        public SolverModes SolverMode = SolverModes.Normal;
+    }
+
+    public enum SolverModes
+    {
+        Legacy,
+        Fallback,
+        Normal
+    }
+
+    public class SolverResult
+    {
+        public List<ModComboResult> BestModResults = [];
+        public List<long> FilteredModules = [];
     }
 }
