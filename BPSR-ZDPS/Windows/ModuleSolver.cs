@@ -390,7 +390,7 @@ namespace BPSR_ZDPS
             {
                 wasChanged = true;
             }
-            ImGui.SetItemTooltip("The minimum level needed for this stat to be considered.\nLeave 0 to use any level.");
+            ImGui.SetItemTooltip("The minimum link value needed for this stat to be considered.\nLeave 0 to use any level.");
 
             ImGui.SetCursorPos(pos + new Vector2(availSize.X - 25, 0));
             ImGui.PushFont(HelperMethods.Fonts["FASIcons"], 13.0f);
