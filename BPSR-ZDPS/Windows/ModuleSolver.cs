@@ -2,6 +2,7 @@
 using BPSR_ZDPS.DataTypes.Modules;
 using BPSR_ZDPS.Managers;
 using Hexa.NET.ImGui;
+using Hexa.NET.ImGui.Backends.GLFW;
 using Newtonsoft.Json;
 using Serilog;
 using System.Collections.Frozen;
@@ -46,6 +47,7 @@ namespace BPSR_ZDPS
                 StatId = x.Value.EffectID,
                 IconRef = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, $"{x.Value.EffectConfigIcon.Split('/').Last()}.png")) ??
                     ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "missing.png")),
+                CombatScore = x.Value.FightValue
             });
 
             ModStatInfos = effectStatTypes.ToFrozenDictionary(x => x.StatId, y => y);
@@ -54,6 +56,8 @@ namespace BPSR_ZDPS
             PendingStatToAdd = effectStatTypes.FirstOrDefault();
 
             LoadSavedModData(ModSavePath);
+
+            SolverConfig = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config;
         }
 
         public static void Open()
@@ -133,48 +137,99 @@ namespace BPSR_ZDPS
 
                     if (ImGui.BeginTabItem("Settings"))
                     {
-                        //if (ImGui.CollapsingHeader("Presets"))
+                        if (ImGui.BeginTable("settings_table", 2, ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.PadOuterX | ImGuiTableFlags.BordersInnerH))
                         {
-                            ImGui.AlignTextToFramePadding();
-                            ImGui.Text("Preset Share Code: ");
-                            ImGui.SameLine();
-                            ImGui.SetNextItemWidth(400);
-                            if (ImGui.InputText("##PresetCode", ref CurrentPresetString, 1000, ImGuiInputTextFlags.AutoSelectAll))
-                            {
+                            ImGui.TableSetupColumn("Label", ImGuiTableColumnFlags.WidthFixed, 150f);
+                            ImGui.TableSetupColumn("Value", ImGuiTableColumnFlags.WidthStretch);
 
-                            }
-                            ImGui.SameLine();
-                            if (ImGui.Button("Apply"))
+                            AddSettingRow("Preset Share Code: ", () => {
+                                ImGui.SetNextItemWidth(400);
+                                if (ImGui.InputText("##PresetCode", ref CurrentPresetString, 1000, ImGuiInputTextFlags.AutoSelectAll))
+                                {
+
+                                }
+                                ImGui.SameLine();
+                                if (ImGui.Button("Apply"))
+                                {
+                                    SolverConfig.FromString(CurrentPresetString);
+                                }
+                                ImGui.SameLine();
+                                if (ImGui.Button("Copy"))
+                                {
+                                    ImGui.SetClipboardText(CurrentPresetString);
+                                }
+                            });
+
+                            AddSettingRow("Solver Mode:", () =>
                             {
-                                SolverConfig.FromString(CurrentPresetString);
-                            }
-                            ImGui.SameLine();
-                            if (ImGui.Button("Copy"))
-                            {
-                                ImGui.SetClipboardText(CurrentPresetString);
-                            }
+                                string[] solverNames = ["Legacy", "Fallback", "Normal"];
+                                int selectedSolver = (int)Settings.Instance.WindowSettings.ModuleWindow.SolverMode;
+                                ImGui.SetNextItemWidth(300);
+                                ImGui.Combo("##SolverMode", ref selectedSolver, solverNames, 3);
+                                Settings.Instance.WindowSettings.ModuleWindow.SolverMode = (SolverModes)selectedSolver;
+                            });
+                            ImGui.EndTable();
                         }
 
-                        string[] solverNames = ["Legacy", "Fallback", "Normal"];
-                        int selectedSolver = (int)Settings.Instance.WindowSettings.ModuleWindow.SolverMode;
+                        if (ImGui.CollapsingHeader("Link Level Boosts"))
+                        {
+                            var linkLevelSettingsWidth = 300;
+                            //ImGui.PushClipRect(ImGui.GetCursorScreenPos(), ImGui.GetCursorScreenPos() + new Vector2(linkLevelSettingsWidth, 100000), false);
+                            if (ImGui.BeginTable("LinkLevelBoosts", 2))
+                            {
+                                ImGui.TableSetupColumn("1", ImGuiTableColumnFlags.WidthFixed, 300f);
+                                ImGui.TableSetupColumn("2", ImGuiTableColumnFlags.WidthStretch);
 
-                        ImGui.TextUnformatted("Solver Mode:");
-                        ImGui.SameLine();
-                        ImGui.SetNextItemWidth(300);
-                        ImGui.Combo("##SolverMode", ref selectedSolver, solverNames, 3);
-                        Settings.Instance.WindowSettings.ModuleWindow.SolverMode = (SolverModes)selectedSolver;
+                                ImGui.TableNextColumn();
+                                if (ImGui.BeginTable("LinkLevelBoostsValues", 2, ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.PadOuterX | ImGuiTableFlags.BordersInnerH))
+                                {
+                                    ImGui.TableSetupColumn("Label", ImGuiTableColumnFlags.WidthFixed, 80f);
+                                    ImGui.TableSetupColumn("Value", ImGuiTableColumnFlags.WidthStretch);
 
-                        ImGui.Spacing();
-                        ImGui.SeparatorText("Debug Info");
-                        ImGui.TextUnformatted($"IsHardwareAccelerated: {Vector.IsHardwareAccelerated}");
+
+                                    if (Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.LinkLevelBonus.Length != 6)
+                                    {
+                                        Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.LinkLevelBonus = new byte[6];
+                                    }
+
+                                    for (int i = 0; i < 6; i++)
+                                    {
+                                        ImGui.TableNextColumn();
+                                        ImGui.TextUnformatted($"Link {i + 1}: ");
+                                        ImGui.TableNextColumn();
+                                        int val = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.LinkLevelBonus[i];
+                                        //ImGui.SetNextItemWidth(100);
+                                        ImGui.InputInt($"##LinkLevelBoost{i}", ref val, 0);
+                                        val = Math.Clamp(val, 0, 20);
+                                        Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.LinkLevelBonus[i] = (byte)val;
+                                    }
+
+                                    ImGui.EndTable();
+                                }
+                                ImGui.TableNextColumn();
+                                ImGui.SeparatorText("Link Level Boost Description");
+                                ImGui.TextWrapped("Set the bonus points awarded to a module combination when its Link Level matches or exceeds the given value.\n" +
+                                    $"eg. A combo that has 'Crit Focus' at +16 would have a link level of '5' and get a points boost of {Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.LinkLevelBonus[4]} ");
+
+                                ImGui.EndTable();
+                            }
+                            //ImGui.PopClipRect();
+                        }
+
+                        ImGui.SetCursorPos(ImGui.GetWindowSize() - new Vector2(300, 62));
+                        //ImGui.SeparatorText("Debug Info");
+                        ImGui.TextUnformatted($"HW Accel: {Vector.IsHardwareAccelerated}");
+                        ImGui.SetCursorPos(ImGui.GetWindowSize() - new Vector2(300, 42));
                         ImGui.TextUnformatted($"Avx2: {Avx2.IsSupported}");
+                        ImGui.SetCursorPos(ImGui.GetWindowSize() - new Vector2(300, 22));
                         ImGui.TextUnformatted($"Size: {Vector<byte>.Count}");
 
-                        ImGui.Text("Settings will go here.");
                         var itsEvieFrFr = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"));
                         if (itsEvieFrFr.HasValue)
                         {
-                            ImGui.Image(itsEvieFrFr.Value, new Vector2(200, 200));
+                            var size = new Vector2(200, 200);
+                            var start = ImGui.GetWindowPos() + ImGui.GetWindowSize() - size - new Vector2(0, -5);
+                            ImGui.GetForegroundDrawList().AddImage(itsEvieFrFr.Value, start, start + size);
                         }
 
                         ImGui.EndTabItem();
@@ -187,6 +242,17 @@ namespace BPSR_ZDPS
             }
 
             ImGui.End();
+        }
+
+        private static void AddSettingRow(string label, Action valueWidget)
+        {
+            ImGui.TableNextRow();
+            ImGui.TableNextColumn();
+            ImGui.Text(label);
+            ImGui.TableNextColumn();
+            //ImGui.PushItemWidth(-1);
+            valueWidget?.Invoke();
+            //ImGui.PopItemWidth();
         }
 
         private static async Task DrawSolverTab(Vector2 windowSize, float leftWidth)
@@ -202,6 +268,40 @@ namespace BPSR_ZDPS
 
             var configChanged = false;
             ImGui.BeginChild("LeftSection", new Vector2(leftWidth, contentRegion.Y - 55), ImGuiChildFlags.Borders);
+            ImGui.SeparatorText("Quality");
+
+            bool basicQuality = SolverConfig.QualitiesV2.TryGetValue(2, out var temp) ? temp : false;
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted("Basic"u8);
+            ImGui.SameLine();
+            if (ImGui.Checkbox("##Basic", ref basicQuality))
+            {
+                SolverConfig.QualitiesV2[2] = basicQuality;
+            }
+
+            ImGui.SameLine();
+
+            bool advancedQuality = SolverConfig.QualitiesV2.TryGetValue(3, out var temp2) ? temp2 : false;
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted("Advanced"u8);
+            ImGui.SameLine();
+            if (ImGui.Checkbox("##Advanced", ref advancedQuality))
+            {
+                SolverConfig.QualitiesV2[3] = advancedQuality;
+            }
+
+            ImGui.SameLine();
+
+            bool excellentQuality = SolverConfig.QualitiesV2.TryGetValue(4, out var temp3) ? temp3 : false;
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted("Excellent"u8);
+            ImGui.SameLine();
+            if (ImGui.Checkbox("##Excellent", ref excellentQuality))
+            {
+                SolverConfig.QualitiesV2[4] = excellentQuality;
+            }
+            ImGui.Spacing();
+
             ImGui.SeparatorText("Stat Priority");
             ImGui.Spacing();
 
@@ -252,7 +352,7 @@ namespace BPSR_ZDPS
 
             ImGui.SetCursorPos(pos + new Vector2(leftWidth - 50, 0));
             var isAlreadyAdded = SolverConfig.StatPrioritys.Any(x => x.Id == PendingStatToAdd.StatId);
-            ImGui.BeginDisabled(isAlreadyAdded && SolverConfig.StatPrioritys.Count <= 8);
+            ImGui.BeginDisabled(isAlreadyAdded || SolverConfig.StatPrioritys.Count >= 7);
             if (ImGui.Button("Add", new Vector2(50, 0)))
             {
                 SolverConfig.StatPrioritys.Add(new StatPrio()
@@ -651,6 +751,7 @@ namespace BPSR_ZDPS
         public string Icon { get; set; }
         public int StatId   { get; set; }
         public ImTextureRef? IconRef { get; set; }
+        public int CombatScore { get; set; }
     }
 
     public class ModTypeInfo
@@ -691,13 +792,14 @@ namespace BPSR_ZDPS
     public class Preset
     {
         public string Name;
-        public SolverConfig Config;
+        public SolverConfig Config = new SolverConfig();
     }
 
     public class ModuleWindowSettings
     {
         public List<Preset> Presets = [];
         public SolverModes SolverMode = SolverModes.Normal;
+        public Preset LastUsedPreset = new Preset();
     }
 
     public enum SolverModes

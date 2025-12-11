@@ -4,8 +4,9 @@ namespace BPSR_ZDPS.DataTypes.Modules
 {
     public class SolverConfig
     {
-        public List<int> Qualities = [];
+        public Dictionary<int, bool> QualitiesV2 = new Dictionary<int, bool>() { { 2, false }, { 3, true }, { 4, true } };
         public List<StatPrio> StatPrioritys = [];
+        public byte[] LinkLevelBonus = [1,2,3,4,8,12];
 
         public string SaveToString(bool asBase64 = false)
         {
@@ -18,10 +19,10 @@ namespace BPSR_ZDPS.DataTypes.Modules
             }
 
             sb.Append("|");
-            for (int i = 0; i < Qualities.Count; i++)
+            /*for (int i = 0; i < QualitiesV2.Count; i++)
             {
-                sb.Append($"{Qualities[i]}{(Qualities.Count - 1 == i ? "" : ",")}");
-            }
+                sb.Append($"{QualitiesV2[i]}{(QualitiesV2.Count - 1 == i ? "" : ",")}");
+            }*/
 
             if (asBase64)
             {
@@ -38,7 +39,7 @@ namespace BPSR_ZDPS.DataTypes.Modules
             {
                 if (str.StartsWith("ZMO:"))
                 {
-                    Qualities.Clear();
+                    QualitiesV2.Clear();
                     StatPrioritys.Clear();
 
                     var configParts = str.Substring(4).Split('|');
@@ -57,6 +58,8 @@ namespace BPSR_ZDPS.DataTypes.Modules
                             StatPrioritys.Add(prio);
                         }
                     }
+
+                    StatPrioritys = StatPrioritys.Take(8).ToList();
                 }
             }
             catch (Exception ex)

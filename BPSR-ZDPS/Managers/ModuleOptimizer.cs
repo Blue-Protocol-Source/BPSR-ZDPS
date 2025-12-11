@@ -200,16 +200,19 @@ namespace BPSR_ZDPS.Managers
                             {
                                 var statMul = GetStatMultiplier(config, group.Key);
                                 var total = group.AsValueEnumerable().Select(y => y.Value).Sum();
-                                var breakPointBonus = total switch
+
+                                var bonusIdx = total switch
                                 {
-                                    >= 20 => 64,
-                                    >= 16 => 32,
-                                    >= 12 => 16,
-                                    >= 8 => 8,
-                                    >= 4 => 4,
-                                    >= 1 => 2,
+                                    >= 20 => 5,
+                                    >= 16 => 4,
+                                    >= 12 => 3,
+                                    >= 8 => 2,
+                                    >= 4 => 1,
+                                    >= 1 => 0,
                                     _ => 0
                                 };
+
+                                var breakPointBonus = (byte)config.LinkLevelBonus[bonusIdx];
 
                                 var score = (Math.Clamp(total, 0, 20) + breakPointBonus) * statMul;
                                 var hasStatLimit = statLimits.TryGetValue(group.Key, out var statLimit);
@@ -282,7 +285,7 @@ namespace BPSR_ZDPS.Managers
         {
             const int MAX_LEVEL = 20;
             int statIdx = 0;
-            var possableStats = filtered.SelectMany(x =>
+            var possableStats = filtered.AsValueEnumerable().SelectMany(x =>
                 playerMods.ModulesPackage.Items[x].ModNewAttr.ModParts)
                     .Distinct().Order().ToDictionary(x => x, y => statIdx++);
 
@@ -314,30 +317,33 @@ namespace BPSR_ZDPS.Managers
             Vector<byte> statCap = new Vector<byte>(MAX_LEVEL);
 
             var statMins = new byte[vecCount];
+            var statMask = new byte[vecCount];
             foreach (var statPrio in config.StatPrioritys)
             {
                 if (possableStats.TryGetValue(statPrio.Id, out var idx))
                 {
                     statMins[idx] = (byte)statPrio.MinLevel;
+                    statMask[idx] = 1;
                 }
             }
             Vector<byte> statMinsVec = new Vector<byte>(statMins);
+            Vector<byte> statMaskVec = new Vector<byte>(statMask);
 
             var breakPointBoosts = new byte[vecCount];
             for (int i = 0; i < vecCount; i++)
             {
-                var bonus = i switch
+                var bonusIdx = i switch
                 {
-                    >= 20 => 64,
-                    >= 16 => 32,
-                    >= 12 => 16,
-                    >= 8 => 8,
-                    >= 4 => 4,
-                    >= 1 => 2,
+                    >= 20 => 5,
+                    >= 16 => 4,
+                    >= 12 => 3,
+                    >= 8 => 2,
+                    >= 4 => 1,
+                    >= 1 => 0,
                     _ => 0
                 };
 
-                breakPointBoosts[i] = (byte)bonus;
+                breakPointBoosts[i] = (byte)config.LinkLevelBonus[bonusIdx];
             }
 
             var numMods = filtered.Count;
@@ -371,13 +377,14 @@ namespace BPSR_ZDPS.Managers
                             var multied = passedMinValues * modStatMultplier;
 
                             byte breakPointBonus = 0;
+                            var breakPointValues = passedMinValues;
                             for (int idx = 0; idx < Vector<byte>.Count; idx++)
                             {
-                                var val = (byte)(breakPointBoosts[passedMinValues[idx]]);
+                                var val = (byte)(breakPointBoosts[breakPointValues[idx]] * modStatMultplier[idx]);
                                 breakPointBonus += val;
                             }
 
-                            int score = Vector.Sum(multied) + breakPointBonus;
+                            int score = Vector.Sum(multied);
 
                             for (int bestIdx = 0; bestIdx < topBest.Length; bestIdx++)
                             {
@@ -449,9 +456,13 @@ namespace BPSR_ZDPS.Managers
             var modules = new List<long>();
             foreach (var item in playerMods.ModulesPackage.Items)
             {
-                if (item.Value.ModNewAttr.ModParts.Any(x => config.StatPrioritys.Any(y => y.Id == x)))
+                var qualityValue = Math.Clamp(item.Value.Quality, 0, 4);
+                if (config.QualitiesV2.TryGetValue(qualityValue, out var quality) ? quality : false)
                 {
-                    modules.Add(item.Key);
+                    if (item.Value.ModNewAttr.ModParts.Any(x => config.StatPrioritys.Any(y => y.Id == x)))
+                    {
+                        modules.Add(item.Key);
+                    }
                 }
             }
 
