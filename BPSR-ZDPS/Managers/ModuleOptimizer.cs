@@ -425,7 +425,7 @@ namespace BPSR_ZDPS.Managers
             });
             sw.Stop();
 
-            var top10 = bestMods.DistinctBy(x => $"{x.ModuleSet.Mod1}_{x.ModuleSet.Mod2}_{x.ModuleSet.Mod3}_{x.ModuleSet.Mod4}").OrderByDescending(x => x.Score).Take(10).ToList();
+            var top10 = bestMods.AsValueEnumerable().Where(x => x.Score > 0).DistinctBy(x => $"{x.ModuleSet.Mod1}_{x.ModuleSet.Mod2}_{x.ModuleSet.Mod3}_{x.ModuleSet.Mod4}").OrderByDescending(x => x.Score).Take(10).ToList();
             for (int i1 = 0; i1 < top10.Count; i1++)
             {
                 ModComboResult modSet = top10[i1];
@@ -453,7 +453,6 @@ namespace BPSR_ZDPS.Managers
 
                 top10[i1] = modSet;
             }
-
 
             var result = new SolverResult()
             {

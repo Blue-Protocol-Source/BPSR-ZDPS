@@ -18,6 +18,7 @@ namespace BPSR_ZDPS
     {
         private static bool IsOpen = false;
         private static PlayerModDataSave PlayerModData = new PlayerModDataSave();
+        private static PlayerModDataSave ResultsPlayerModData = new PlayerModDataSave();
         private static FrozenDictionary<int, ModStatInfo> ModStatInfos;
         private static FrozenDictionary<int, ModuleType> ModTypeMapping;
         private static FrozenDictionary<string, int> StatCombatScores;
@@ -29,8 +30,8 @@ namespace BPSR_ZDPS
         private static string ModSavePath => Path.Combine(Utils.DATA_DIR_NAME, "ModulesSaveData.json");
 
         private static SolverConfig SolverConfig = new SolverConfig();
-        private static ModStatInfo PendingStatToAdd = null;
-        private static List<ModComboResult> BestModResults = [];
+        private static ModStatInfo? PendingStatToAdd = null;
+        private static List<ModComboResult>? BestModResults = null;
         private static bool ShouldBlockMainUI = false;
         private static bool IsCalculating = false;
         private static Task ModuleCalcTask;
@@ -48,7 +49,7 @@ namespace BPSR_ZDPS
                 Icon = x.Value.EffectConfigIcon,
                 StatId = x.Value.EffectID,
                 IconRef = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, $"{x.Value.EffectConfigIcon.Split('/').Last()}.png")) ??
-                    ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "missing.png"))
+                    ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"))
             });
 
             StatCombatScores = HelperMethods.DataTables.ModEffects.Data
@@ -242,12 +243,12 @@ namespace BPSR_ZDPS
                         ImGui.SetCursorPos(ImGui.GetWindowSize() - new Vector2(300, 22));
                         ImGui.TextUnformatted($"Size: {Vector<byte>.Count}");
 
-                        var itsEvieFrFr = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"));
-                        if (itsEvieFrFr.HasValue)
+                        var tina = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"));
+                        if (tina.HasValue)
                         {
                             var size = new Vector2(200, 200);
                             var start = ImGui.GetWindowPos() + ImGui.GetWindowSize() - size - new Vector2(0, -5);
-                            ImGui.GetForegroundDrawList().AddImage(itsEvieFrFr.Value, start, start + size);
+                            ImGui.GetForegroundDrawList().AddImage(tina.Value, start, start + size);
                         }
 
                         ImGui.EndTabItem();
@@ -409,9 +410,9 @@ namespace BPSR_ZDPS
             ImGui.BeginChild("RightSection", new Vector2(windowSize.X - leftWidth - 5, contentRegion.Y - 55), ImGuiChildFlags.Borders);
             ImGui.Spacing();
 
-            if (BestModResults.Count > 0)
+            if (BestModResults?.Count > 0)
             {
-                lock (PlayerModData)
+                lock (ResultsPlayerModData)
                 {
                     lock (BestModResults)
                     {
@@ -438,8 +439,8 @@ namespace BPSR_ZDPS
                                     for (int i1 = 0; i1 < mods.Length; i1++)
                                     {
                                         var modId = FilteredModules[mods[i1]];
-                                        var modItem = PlayerModData.ModulesPackage.Items[modId];
-                                        DrawModule(modId, modItem);
+                                        var modItem = ResultsPlayerModData.ModulesPackage.Items[modId];
+                                        DrawModule(ResultsPlayerModData, modId, modItem);
                                         if ((i1 % 2) == 0)
                                         {
                                             ImGui.SameLine();
@@ -451,6 +452,20 @@ namespace BPSR_ZDPS
                             }
                         }
                     }
+                }
+            }
+            else if (!IsCalculating && BestModResults != null)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
+                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], 22f);
+                ImGui.TextUnformatted("Unable to create a valid combination. Please adjust the Stat Priorities and try again.");
+                ImGui.PopFont();
+                ImGui.PopStyleColor();
+
+                var sad = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Tired.png"));
+                if (sad != null)
+                {
+                    ImGui.Image(sad.Value, new Vector2(200, 200));
                 }
             }
 
@@ -550,7 +565,7 @@ namespace BPSR_ZDPS
             int i = 0;
             foreach (var item in PlayerModData.ModulesPackage?.Items ?? [])
             {
-                DrawModule(item.Key, item.Value);
+                DrawModule(PlayerModData, item.Key, item.Value);
                 if ((++i % numPerLine) != 0)
                 {
                     ImGui.SameLine();
@@ -564,10 +579,10 @@ namespace BPSR_ZDPS
 
         static Vector2 MOD_ICON_SIZE = new Vector2(80, 80);
         static Vector2 MOD_DISPLAY_SIZE = new Vector2(410, 105);
-        public static void DrawModule(long id, Item item, bool showId = false)
+        public static void DrawModule(PlayerModDataSave modInv, long id, Item item, bool showId = false)
         {
             var modTypeData = HelperMethods.DataTables.Modules.Data[item.ConfigId];
-            var modInfo = PlayerModData.Mod.ModInfos[id];
+            var modInfo = modInv.Mod.ModInfos[id];
             var startPos = ImGui.GetCursorPos();
             ImGui.PushClipRect(ImGui.GetCursorScreenPos(), ImGui.GetCursorScreenPos() + MOD_DISPLAY_SIZE, true);
             ImGui.BeginGroup();
@@ -740,7 +755,7 @@ namespace BPSR_ZDPS
                 5500303 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_protect4.png")),
                 5500304 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_protect4.png")),
 
-                _ => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "missing.png"))
+                _ => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"))
             };
 
             return icon.Value;
@@ -748,7 +763,7 @@ namespace BPSR_ZDPS
 
         private static ImTextureRef GetItemQualityBg(int quality)
         {
-            var icon = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, $"item_quality_{quality}.png")) ?? ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "missing.png"));
+            var icon = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, $"item_quality_{quality}.png")) ?? ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"));
 
             return icon.Value;
         }
@@ -757,12 +772,19 @@ namespace BPSR_ZDPS
 
         private static void CalculateBestModules()
         {
+            FilteredModules = [];
+            BestModResults = [];
+            IsCalculating = true;
+
             var modWindowSettings = Settings.Instance.WindowSettings.ModuleWindow;
             var solver = new ModuleOptimizer();
-            var results = solver.Solve(SolverConfig, PlayerModData, Settings.Instance.WindowSettings.ModuleWindow.SolverMode);
+            ResultsPlayerModData = PlayerModData;
+            var results = solver.Solve(SolverConfig, ResultsPlayerModData, Settings.Instance.WindowSettings.ModuleWindow.SolverMode);
 
             FilteredModules = results.FilteredModules;
             BestModResults = results.BestModResults;
+
+            IsCalculating = false;
         }
 
         public static long CountCombinations4(int n)

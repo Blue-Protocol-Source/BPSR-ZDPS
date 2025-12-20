@@ -1155,6 +1155,9 @@
     <None Update="Data\Images\Modules\Thinking.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\Images\Modules\Tired.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Images\Professions\128\Profession_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
