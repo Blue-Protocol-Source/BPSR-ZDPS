@@ -10,6 +10,7 @@ public class Settings
     private static string SETTINGS_FILE_NAME = "Settings.json";
 
     public int Version { get; set; } = 0;
+    public System.Numerics.Vector2 MainWindowPosition { get; set; } = new System.Numerics.Vector2();
     public string NetCaptureDeviceName { get; set; } = "";
     public bool NormalizeMeterContributions { get; set; } = true;
     public bool UseShortWidthNumberFormatting { get; set; } = true;

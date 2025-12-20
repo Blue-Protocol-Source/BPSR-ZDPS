@@ -31,6 +31,7 @@ namespace BPSR_ZDPS.Windows
         public EntityInspector entityInspector = new();
         public bool IsTopMost = false;
         public Vector2 WindowPosition;
+        public Vector2 NextWindowPosition = new();
 
         public void Draw()
         {
@@ -57,6 +58,17 @@ namespace BPSR_ZDPS.Windows
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSize(new Vector2(550, 600), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(375, 150), new Vector2(ImGui.GETFLTMAX()));
+
+            if (Settings.Instance.MainWindowPosition != new Vector2())
+            {
+                ImGui.SetNextWindowPos(Settings.Instance.MainWindowPosition, ImGuiCond.FirstUseEver);
+            }
+
+            if (NextWindowPosition != new Vector2())
+            {
+                ImGui.SetNextWindowPos(NextWindowPosition * new Vector2(0.5f, 0.5f), ImGuiCond.Always, new Vector2(0.5f, 0.5f));
+                NextWindowPosition = new Vector2();
+            }
 
             ImGuiWindowFlags exWindowFlags = ImGuiWindowFlags.None;
             if (AppState.MousePassthrough && IsTopMost)
@@ -274,7 +286,7 @@ namespace BPSR_ZDPS.Windows
                     {
                         DatabaseManagerWindow.Open();
                     }
-                    ImGui.SetItemTooltip("Manage the ZDatabase.db contents");
+                    ImGui.SetItemTooltip("Manage the ZDatabase.db contents.");
 
                     if (ImGui.BeginMenu("Raid Manager"))
                     {
@@ -380,6 +392,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.Separator();
                     if (ImGui.MenuItem("Exit"))
                     {
+                        Settings.Instance.MainWindowPosition = WindowPosition;
                         p_open = false;
                     }
                     ImGui.EndMenu();

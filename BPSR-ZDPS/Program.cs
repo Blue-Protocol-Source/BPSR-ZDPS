@@ -139,12 +139,6 @@ namespace BPSR_ZDPS
             unsafe
             {
                 GLFW.SetFramebufferSizeCallback(window, Window_Resized_Callback);
-                /*GLFW.SetFramebufferSizeCallback(window, Resized);
-
-                unsafe void Resized(Hexa.NET.GLFW.GLFWwindow* window, int width, int height)
-                {
-                    manager.Resize(width, height);
-                }*/
             }
 
             InitWindows();
@@ -301,15 +295,15 @@ namespace BPSR_ZDPS
                             }
                             catch (IOException ioException)
                             {
-                                Serilog.Log.Error($"IO Error deleting Report file {file} per Retention Policy (Days = {Settings.Instance.ReportFileRetentionPolicyDays}, Difference = {difference}). Error: {ioException.Message}");
+                                Log.Error($"IO Error deleting Report file {file} per Retention Policy (Days = {Settings.Instance.ReportFileRetentionPolicyDays}, Difference = {difference}). Error: {ioException.Message}");
                             }
                             catch (UnauthorizedAccessException uaException)
                             {
-                                Serilog.Log.Error($"Unauthorized Access Error deleting Report file {file} per Retention Policy (Days = {Settings.Instance.ReportFileRetentionPolicyDays}, Difference = {difference}). Error: {uaException.Message}");
+                                Log.Error($"Unauthorized Access Error deleting Report file {file} per Retention Policy (Days = {Settings.Instance.ReportFileRetentionPolicyDays}, Difference = {difference}). Error: {uaException.Message}");
                             }
                             catch (Exception ex)
                             {
-                                Serilog.Log.Error($"Error deleting Report file {file} per Retention Policy (Days = {Settings.Instance.ReportFileRetentionPolicyDays}, Difference = {difference}). Error: {ex.Message}");
+                                Log.Error($"Error deleting Report file {file} per Retention Policy (Days = {Settings.Instance.ReportFileRetentionPolicyDays}, Difference = {difference}). Error: {ex.Message}");
                             }
                         }
                     }

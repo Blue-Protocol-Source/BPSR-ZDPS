@@ -138,7 +138,7 @@ namespace BPSR_ZDPS.Windows
             ImGui.SetNextWindowSizeConstraints(new Vector2(500, 350), new Vector2(ImGui.GETFLTMAX()));
             //ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
 
-            ImGui.SetNextWindowSize(new Vector2(650, 650), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(650, 680), ImGuiCond.FirstUseEver);
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
             if (ImGui.BeginPopupModal($"Settings{TITLE_ID}"))
@@ -162,7 +162,7 @@ namespace BPSR_ZDPS.Windows
                     RunOnceDelayed++;
                 }
 
-                ImGuiTabBarFlags tabBarFlags = ImGuiTabBarFlags.NoTabListScrollingButtons | ImGuiTabBarFlags.NoTooltip | ImGuiTabBarFlags.NoCloseWithMiddleMouseButton;
+                ImGuiTabBarFlags tabBarFlags = ImGuiTabBarFlags.FittingPolicyScroll | ImGuiTabBarFlags.NoTooltip | ImGuiTabBarFlags.NoCloseWithMiddleMouseButton;
                 if (ImGui.BeginTabBar("##SettingsTabs", tabBarFlags))
                 {
                     if (ImGui.BeginTabItem("General"))
@@ -580,6 +580,20 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Unindent();
                         }
 
+                        ImGui.SeparatorText("Window Property Resets");
+
+                        if (ImGui.Button("Reset Main Window Position"))
+                        {
+                            var glfwMonitor = Hexa.NET.GLFW.GLFW.GetPrimaryMonitor();
+                            var glfwVidMode = Hexa.NET.GLFW.GLFW.GetVideoMode(glfwMonitor);
+                            mainWindow.NextWindowPosition = new Vector2(glfwVidMode.Width, glfwVidMode.Height);
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Resets the Main Window back to the original default center screen position on your primary monitor.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
                         ImGui.EndChild();
                         ImGui.EndTabItem();
                     }
@@ -589,6 +603,7 @@ namespace BPSR_ZDPS.Windows
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
                         ImGui.BeginChild("##MatchmakingTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
 
+                        ImGui.SeparatorText("Matchmaking");
                         ImGui.AlignTextToFramePadding();
                         ImGui.Text("Play Notification Sound On Matchmake: ");
                         ImGui.SameLine();
@@ -777,6 +792,8 @@ namespace BPSR_ZDPS.Windows
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
                         ImGui.BeginChild("##IntegrationsTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ImGui.SeparatorText("Integrations");
 
                         ShowGenericImportantNotice(!useAutomaticWipeDetection, "AutoWipeDetectionDisabled", "[Use Automatic Wipe Detection] is currently Disabled. Reports may be incorrect until it is Enabled again.");
                         ShowGenericImportantNotice(skipTeleportStateCheckInAutomaticWipeDetection, "SkipTeleportStateCheckInAutomaticWipeDetectionEnabled", "[Skip Teleport State Check In Automatic Wipe Detection] is currently Enabled. Reports may be incorrect until it is Disabled again.");
