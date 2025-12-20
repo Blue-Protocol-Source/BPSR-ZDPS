@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Serilog;
+using System.Collections.Frozen;
+using System.Text;
 
 namespace BPSR_ZDPS.DataTypes.Modules
 {
@@ -16,7 +18,7 @@ namespace BPSR_ZDPS.DataTypes.Modules
             sb.Append("ZMO:");
             for (int i = 0; i < StatPriorities.Count; i++)
             {
-                var stat = $"{StatPriorities[i].Id}-{StatPriorities[i].MinLevel}";
+                var stat = $"{StatPriorities[i].Id}-{StatPriorities[i].MinLevel}-{StatPriorities[i].ReqLevel}";
                 sb.Append($"{stat}{(StatPriorities.Count - 1 == i ? "" : ",")}");
             }
 
@@ -54,20 +56,34 @@ namespace BPSR_ZDPS.DataTypes.Modules
                             var prio = new StatPrio()
                             {
                                 Id = int.Parse(statParts[0]),
-                                MinLevel = int.Parse(statParts[1])
+                                MinLevel = 0, //Math.Clamp(int.Parse(statParts[1]), 0, 20),
+                                ReqLevel = Math.Clamp(int.Parse(statParts[2]), 0, 20),
                             };
 
                             StatPriorities.Add(prio);
                         }
                     }
 
-                    StatPriorities = StatPriorities.Take(8).ToList();
+                    StatPriorities = StatPriorities.Take(12).ToList();
                 }
             }
             catch (Exception ex)
             {
-
+                Log.Error(ex, "Error parsing preset string for config.");
             }
+        }
+
+        public bool Verify(FrozenDictionary<int, ModStatInfo> modStats)
+        {
+            foreach (var stat in StatPriorities)
+            {
+                if (!modStats.ContainsKey(stat.Id))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

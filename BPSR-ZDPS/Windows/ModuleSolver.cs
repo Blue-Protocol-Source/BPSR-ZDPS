@@ -150,14 +150,19 @@ namespace BPSR_ZDPS
 
                             AddSettingRow("Preset Share Code: ", () => {
                                 ImGui.SetNextItemWidth(400);
-                                if (ImGui.InputText("##PresetCode", ref CurrentPresetString, 1000, ImGuiInputTextFlags.AutoSelectAll))
+                                if (ImGui.InputText("##PresetCode", ref CurrentPresetString, 1024, ImGuiInputTextFlags.AutoSelectAll))
                                 {
 
                                 }
                                 ImGui.SameLine();
                                 if (ImGui.Button("Apply"))
                                 {
-                                    SolverConfig.FromString(CurrentPresetString);
+                                    var solverConfig = new SolverConfig();
+                                    solverConfig.FromString(CurrentPresetString);
+                                    if (solverConfig.Verify(ModStatInfos))
+                                    {
+                                        SolverConfig = solverConfig;
+                                    }
                                 }
                                 ImGui.SameLine();
                                 if (ImGui.Button("Copy"))
@@ -239,7 +244,7 @@ namespace BPSR_ZDPS
                         //ImGui.SeparatorText("Debug Info");
                         ImGui.TextUnformatted($"HW Accel: {Vector.IsHardwareAccelerated}");
                         ImGui.SetCursorPos(ImGui.GetWindowSize() - new Vector2(300, 42));
-                        ImGui.TextUnformatted($"Avx2: {Avx2.IsSupported}");
+                        ImGui.TextUnformatted($"AVX2: {Avx2.IsSupported}");
                         ImGui.SetCursorPos(ImGui.GetWindowSize() - new Vector2(300, 22));
                         ImGui.TextUnformatted($"Size: {Vector<byte>.Count}");
 
