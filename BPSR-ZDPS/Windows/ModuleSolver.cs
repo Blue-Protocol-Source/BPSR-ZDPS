@@ -1,9 +1,7 @@
 ﻿using BPSR_ZDPS.DataTypes;
 using BPSR_ZDPS.DataTypes.Modules;
 using BPSR_ZDPS.Managers;
-using Hexa.NET.GLFW;
 using Hexa.NET.ImGui;
-using Hexa.NET.ImGui.Backends.GLFW;
 using Newtonsoft.Json;
 using Serilog;
 using System.Collections.Frozen;
@@ -17,11 +15,12 @@ namespace BPSR_ZDPS
     public class ModuleSolver
     {
         private static bool IsOpen = false;
+
+        public static FrozenDictionary<string, int> StatCombatScores;
         private static PlayerModDataSave PlayerModData = new PlayerModDataSave();
         private static PlayerModDataSave ResultsPlayerModData = new PlayerModDataSave();
         private static FrozenDictionary<int, ModStatInfo> ModStatInfos;
         private static FrozenDictionary<int, ModuleType> ModTypeMapping;
-        private static FrozenDictionary<string, int> StatCombatScores;
         private static string ModuleImgBasePath;
         private static int NumTotalModules = 0;
         private static int NumAttackModules = 0;
@@ -37,6 +36,7 @@ namespace BPSR_ZDPS
         private static Task ModuleCalcTask;
         private static string CurrentPresetString = "";
         static int RunOnceDelayed = 0;
+        private static bool ShouldTrackOpenState;
 
         public static List<long> FilteredModules = [];
 
@@ -100,6 +100,11 @@ namespace BPSR_ZDPS
 
         public static void Draw()
         {
+            if (!IsOpen && IsCalculating)
+            {
+                IsOpen = true;
+            }
+
             if (!IsOpen) return;
 
             var windowSize = new Vector2(800, 500);
@@ -108,6 +113,8 @@ namespace BPSR_ZDPS
             ImGui.SetNextWindowSizeConstraints(new Vector2(1270, 700), new Vector2(float.PositiveInfinity, float.PositiveInfinity));
             if (ImGui.Begin("Module Optimizer", ref IsOpen, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
             {
+                ShouldTrackOpenState = true;
+
                 if (RunOnceDelayed == 0)
                 {
                     RunOnceDelayed++;
@@ -263,6 +270,17 @@ namespace BPSR_ZDPS
                 }
 
                 ImGui.EndDisabled();
+            }
+
+            if (!IsOpen && ShouldTrackOpenState && !IsCalculating)
+            {
+                ShouldTrackOpenState = false;
+
+                ResultsPlayerModData = new PlayerModDataSave();
+                BestModResults = null;
+                FilteredModules.Clear();
+
+                GC.Collect();
             }
 
             ImGui.End();
@@ -429,7 +447,7 @@ namespace BPSR_ZDPS
                                 resultsOpenStates[i] = i <= 1;
 
                                 ModComboResult modsResult = BestModResults[i];
-                                if (ImGui.CollapsingHeader($"Result: {i + 1} (ZScore: {modsResult.Score})", (resultsOpenStates[i] ? ImGuiTreeNodeFlags.DefaultOpen : ImGuiTreeNodeFlags.None)))
+                                if (ImGui.CollapsingHeader($"Result: {i + 1} (Ability Score: {modsResult.CombatScore:#,##}) [ZScore: {modsResult.Score:#,##}]", (resultsOpenStates[i] ? ImGuiTreeNodeFlags.DefaultOpen : ImGuiTreeNodeFlags.None)))
                                 {
                                     var perLine = 3;
                                     var statPos = ImGui.GetCursorPos();
@@ -440,12 +458,13 @@ namespace BPSR_ZDPS
                                         DrawModuleStat(stat.Id, stat.Value);
                                     }
 
+                                    bool isCtrlPressed = ImGui.IsKeyDown(ImGuiKey.LeftCtrl);
                                     var mods = modsResult.ModuleSet.Mods;
                                     for (int i1 = 0; i1 < mods.Length; i1++)
                                     {
                                         var modId = FilteredModules[mods[i1]];
                                         var modItem = ResultsPlayerModData.ModulesPackage.Items[modId];
-                                        DrawModule(ResultsPlayerModData, modId, modItem);
+                                        DrawModule(ResultsPlayerModData, modId, modItem, isCtrlPressed);
                                         if ((i1 % 2) == 0)
                                         {
                                             ImGui.SameLine();
@@ -568,9 +587,10 @@ namespace BPSR_ZDPS
             ImGui.BeginChild("##ModuleInv", new Vector2(-1, contentSize.Y - 25));
             var numPerLine = Math.Floor(ImGui.GetContentRegionAvail().X / MOD_DISPLAY_SIZE.X);
             int i = 0;
+            bool isCtrlPressed = ImGui.IsKeyDown(ImGuiKey.LeftCtrl);
             foreach (var item in PlayerModData.ModulesPackage?.Items ?? [])
             {
-                DrawModule(PlayerModData, item.Key, item.Value);
+                DrawModule(PlayerModData, item.Key, item.Value, isCtrlPressed);
                 if ((++i % numPerLine) != 0)
                 {
                     ImGui.SameLine();
@@ -796,30 +816,6 @@ namespace BPSR_ZDPS
         {
             if (n < 4) return 0;
             return (long)n * (n - 1) * (n - 2) * (n - 3) / 24;
-        }
-
-        public static int CalcCombosCombatScore(PowerCore[] cores)
-        {
-            int cs = 0;
-            foreach (var core in cores)
-            {
-                var enhanceLevel = core.Value switch
-                {
-                    >= 20 => 20,
-                    >= 16 => 16,
-                    >= 12 => 12,
-                    >= 8 => 8,
-                    >= 4 => 4,
-                    >= 2 => 2,
-                    >= 1 => 1,
-                    _ => 0
-                };
-
-                var statCs = StatCombatScores.TryGetValue($"{core.Id}_{enhanceLevel}", out var temp) ? temp : 0;
-                cs += statCs;
-            }
-
-            return cs;
         }
     }
 

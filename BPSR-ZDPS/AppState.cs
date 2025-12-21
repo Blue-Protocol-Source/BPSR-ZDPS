@@ -73,6 +73,14 @@ namespace BPSR_ZDPS
                 Log.Information("Loaded ModEffectTable.json");
             }
 
+            string ModLinkEffectsFile = Path.Combine(Utils.DATA_DIR_NAME, "ModLinkEffectTable.json");
+            if (File.Exists(modEffectTableFile))
+            {
+                var modLinkEffects = JsonConvert.DeserializeObject<Dictionary<int, ModLinkEffect>>(File.ReadAllText(ModLinkEffectsFile));
+                HelperMethods.DataTables.ModLinkEffects.Data = modLinkEffects;
+                Log.Information("Loaded ModLinkEffectTable.json");
+            }
+
             // TODO: Every language can have its own 'Overrides' file
             string skillOverrivesFile = Path.Combine(Utils.DATA_DIR_NAME, "SkillOverrides.en.json");
             if (File.Exists(skillOverrivesFile))

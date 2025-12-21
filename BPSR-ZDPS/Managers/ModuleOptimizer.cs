@@ -147,6 +147,15 @@ namespace BPSR_ZDPS.Managers
 
                 modSet.Stats = coreStats.Values.OrderByDescending(x => x.Value).ToArray();
 
+                var reslovedModSet = new ModuleSet()
+                {
+                    Mod1 = (ushort)filtered[mods[0]],
+                    Mod2 = (ushort)filtered[mods[1]],
+                    Mod3 = (ushort)filtered[mods[2]],
+                    Mod4 = (ushort)filtered[mods[3]]
+                };
+                modSet.CombatScore = CalcCombosCombatScore(playerMods, reslovedModSet);
+
                 top10[i1] = modSet;
             }
 
@@ -268,6 +277,15 @@ namespace BPSR_ZDPS.Managers
                 }
 
                 modSet.Stats = coreStats.Values.OrderByDescending(x => x.Value).ToArray();
+
+                var reslovedModSet = new ModuleSet()
+                {
+                    Mod1 = (ushort)filtered[mods[0]],
+                    Mod2 = (ushort)filtered[mods[1]],
+                    Mod3 = (ushort)filtered[mods[2]],
+                    Mod4 = (ushort)filtered[mods[3]]
+                };
+                modSet.CombatScore = CalcCombosCombatScore(playerMods, reslovedModSet);
 
                 top10[i1] = modSet;
             }
@@ -451,6 +469,15 @@ namespace BPSR_ZDPS.Managers
 
                 modSet.Stats = coreStats.Values.OrderByDescending(x => x.Value).ToArray();
 
+                var reslovedModSet = new ModuleSet()
+                {
+                    Mod1 = (ushort)filtered[mods[0]],
+                    Mod2 = (ushort)filtered[mods[1]],
+                    Mod3 = (ushort)filtered[mods[2]],
+                    Mod4 = (ushort)filtered[mods[3]]
+                };
+                modSet.CombatScore = CalcCombosCombatScore(playerMods, reslovedModSet);
+
                 top10[i1] = modSet;
             }
 
@@ -531,6 +558,57 @@ namespace BPSR_ZDPS.Managers
             }
 
             return powerCores;
+        }
+
+        public int CalcCombosCombatScore(PlayerModDataSave playerMods, ModuleSet modSet)
+        {
+            Dictionary<int, PowerCore> coresDict = [];
+            foreach (var mod in modSet.Mods)
+            {
+                if (mod != 0)
+                {
+                    var modCores = GetModPowerCores(playerMods, mod);
+                    foreach (var modCore in modCores)
+                    {
+                        if (coresDict.ContainsKey(modCore.Id))
+                        {
+                            var core = coresDict[modCore.Id];
+                            core.Value += modCore.Value;
+                            coresDict[modCore.Id] = core;
+                        }
+                        else
+                        {
+                            coresDict[modCore.Id] = modCore;
+                        }
+                    }
+                }
+            }
+
+            int cs = 0;
+            foreach (var core in coresDict.Values)
+            {
+                var enhanceLevel = 0;
+                int[] enhanceLevels = [1, 4, 8, 12, 16, 20];
+                for (int i = 0; i < 6; i++)
+                {
+                    if (core.Value >= enhanceLevels[i])
+                    {
+                        enhanceLevel = enhanceLevels[i];
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                var statCs = ModuleSolver.StatCombatScores.TryGetValue($"{core.Id}_{enhanceLevel}", out var temp) ? temp : 0;
+                cs += statCs;
+            }
+
+            var enhancementLevels = coresDict.Values.Sum(x => x.Value);
+            var enhancementScore = HelperMethods.DataTables.ModLinkEffects.Data.TryGetValue(enhancementLevels + 1, out var tempScore) ? tempScore?.FightValue ?? 0 : 0;
+
+            return cs + enhancementScore;
         }
     }
 }

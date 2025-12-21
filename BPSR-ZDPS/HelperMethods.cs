@@ -28,6 +28,7 @@ namespace BPSR_ZDPS
             public static BuffTable Buffs = new BuffTable();
             public static ModTable Modules = new ModTable();
             public static ModEffectTable ModEffects = new ModEffectTable();
+            public static ModLinkEffectTable ModLinkEffects = new ModLinkEffectTable();
         }
     }
 }
