@@ -877,7 +877,6 @@ namespace BPSR_ZDPS
         public CombatStats2 TakenStats { get; set; } = new();
 
         public ConcurrentDictionary<int, CombatStats2> SkillStats { get; set; } = new();
-        public List<ActionStat> ActionStats { get; set; } = new();
 
         public ulong TotalDamage { get; set; } = 0;
         public ulong TotalShieldBreak { get; set; } = 0;
@@ -1843,26 +1842,6 @@ namespace BPSR_ZDPS
                     BuffAbilityType = buffTableData.BuffAbilityType;
                     BuffAbilitySubType = buffTableData.BuffAbilitySubType;
                 }
-            }
-        }
-    }
-
-    public class ActionStat
-    {
-        public DateTime ActivationTime;
-        public int ActionType;
-        public int ActionId; // Typically is a SkillId
-        public string ActionName;
-
-        public ActionStat(DateTime activationTime, int actionType, int actionId)
-        {
-            ActivationTime = activationTime;
-            ActionType = actionType;
-            ActionId = actionId;
-
-            if (HelperMethods.DataTables.Skills.Data.ContainsKey(actionId.ToString()))
-            {
-                ActionName = HelperMethods.DataTables.Skills.Data[actionId.ToString()].Name;
             }
         }
     }

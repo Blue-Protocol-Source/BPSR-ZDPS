@@ -229,8 +229,6 @@ namespace BPSR_ZDPS.Managers.External
                     return;
                 }
 
-                // TODO: Map the id and name fields from mobs together for lookups
-
                 if (mobs != null && mob_channel_status.Count > 0)
                 {
                     var mobs_items = ((Newtonsoft.Json.Linq.JObject)mobs)["items"].ToObject<List<MobsResponse>>();
@@ -270,6 +268,7 @@ namespace BPSR_ZDPS.Managers.External
                             MobMapName = mob.Expand.Map.Name,
                             MobMapTotalChannels = region_data ?? new(),
                             MobMapUID = mob.Expand.Map.UID,
+                            HasMultipleLocations = mob.Location,
                             MonsterId = monsterId,
                             GameMobName = gameMonsterName
                         });
@@ -456,6 +455,7 @@ namespace BPSR_ZDPS.Managers.External
         public string MobMapName { get; set; }
         public Dictionary<string, int> MobMapTotalChannels = new();
         public int MobMapUID { get; set; }
+        public bool HasMultipleLocations { get; set; }
         public long MonsterId { get; set; }
         public string GameMobName { get; set; }
     }

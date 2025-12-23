@@ -117,6 +117,7 @@ public class SettingsExternal
 public class WindowSettingsBase : ICloneable
 {
     public Vector2 WindowPosition { get; set; } = new();
+    public Vector2 WindowSize { get; set; } = new();
 
     public virtual object Clone()
     {

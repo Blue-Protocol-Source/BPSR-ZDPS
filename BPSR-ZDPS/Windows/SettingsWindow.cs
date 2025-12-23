@@ -594,6 +594,46 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
+                        if (ImGui.Button("Reset Main Window Size"))
+                        {
+                            mainWindow.NextWindowSize = mainWindow.DefaultWindowSize;
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Resets the Main Window back to the original size.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        if (ImGui.Button("Reset Raid Manager Cooldown Tracker Size"))
+                        {
+                            RaidManagerCooldownsWindow.ResetWindowSize = true;
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Resets the Raid Manager Cooldown Tracker window back to the original size.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        if (ImGui.Button("Reset Entity Cache Viewer Size"))
+                        {
+                            EntityCacheViewerWindow.ResetWindowSize = true;
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Resets the Entity Cache Viewer window back to the original size.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        if (ImGui.Button("Reset BPTimer Spawn Tracker Size"))
+                        {
+                            SpawnTrackerWindow.ResetWindowSize = true;
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Resets the BPTimer Spawn Tracker window back to the original size.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
                         ImGui.EndChild();
                         ImGui.EndTabItem();
                     }
@@ -914,7 +954,8 @@ namespace BPSR_ZDPS.Windows
                         {
                             case EWebhookReportsMode.DiscordDeduplication:
                             case EWebhookReportsMode.Discord:
-                                if (webhookReportsMode == EWebhookReportsMode.DiscordDeduplication)
+                            case EWebhookReportsMode.FallbackDiscordDeduplication:
+                                if (webhookReportsMode == EWebhookReportsMode.DiscordDeduplication || webhookReportsMode == EWebhookReportsMode.FallbackDiscordDeduplication)
                                 {
                                     ImGui.AlignTextToFramePadding();
                                     ImGui.Text("Deduplication Server URL: ");
@@ -924,6 +965,10 @@ namespace BPSR_ZDPS.Windows
                                     ImGui.Indent();
                                     ImGui.BeginDisabled(true);
                                     ImGui.TextWrapped("The Discord Deduplication Server URL to prevent duplicate reports with.");
+                                    if (webhookReportsMode == EWebhookReportsMode.FallbackDiscordDeduplication)
+                                    {
+                                        ImGui.TextWrapped("Note: The server must have Fallback support Enabled for this to work as expected since it will handle sending the Discord request for you.");
+                                    }
                                     ImGui.EndDisabled();
                                     ImGui.Unindent();
                                 }

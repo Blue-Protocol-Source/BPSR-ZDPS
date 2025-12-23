@@ -20,6 +20,8 @@ namespace BPSR_ZDPS
         public static bool IsOpened = false;
         public static bool IsTopMost = false;
         public static bool CollapseToContentOnly = false;
+        public static Vector2 DefaultWindowSize = new Vector2(700, 600);
+        public static bool ResetWindowSize = false;
 
         static int RunOnceDelayed = 0;
         static Vector2 MenuBarSize;
@@ -53,8 +55,19 @@ namespace BPSR_ZDPS
                 return;
             }
 
-            ImGui.SetNextWindowSize(new Vector2(700, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(DefaultWindowSize, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(300, 300), new Vector2(ImGui.GETFLTMAX()));
+
+            if (Settings.Instance.WindowSettings.SpawnTracker.WindowSize != new Vector2())
+            {
+                ImGui.SetNextWindowSize(Settings.Instance.WindowSettings.SpawnTracker.WindowSize, ImGuiCond.FirstUseEver);
+            }
+
+            if (ResetWindowSize)
+            {
+                ImGui.SetNextWindowSize(DefaultWindowSize, ImGuiCond.Always);
+                ResetWindowSize = false;
+            }
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
@@ -176,6 +189,7 @@ namespace BPSR_ZDPS
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 if (ImGui.MenuItem($"X##CloseBtn"))
                 {
+                    Settings.Instance.WindowSettings.SpawnTracker.WindowSize = ImGui.GetWindowSize();
                     IsOpened = false;
                 }
                 ImGui.PopFont();

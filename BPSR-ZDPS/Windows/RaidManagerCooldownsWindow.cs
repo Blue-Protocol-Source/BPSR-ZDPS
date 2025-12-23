@@ -18,6 +18,8 @@ namespace BPSR_ZDPS.Windows
         public static bool IsOpened = false;
         public static bool IsTopMost = false;
         public static bool CollapseToContentOnly = false;
+        public static Vector2 DefaultWindowSize = new Vector2(700, 600);
+        public static bool ResetWindowSize = false;
 
         static int RunOnceDelayed = 0;
         static Vector2 MenuBarSize;
@@ -88,12 +90,23 @@ namespace BPSR_ZDPS.Windows
                 return;
             }
 
-            ImGui.SetNextWindowSize(new Vector2(700, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(DefaultWindowSize, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(300, 240), new Vector2(ImGui.GETFLTMAX()));
 
             if (Settings.Instance.WindowSettings.RaidManagerCooldowns.WindowPosition != new Vector2())
             {
                 ImGui.SetNextWindowPos(Settings.Instance.WindowSettings.RaidManagerCooldowns.WindowPosition, ImGuiCond.FirstUseEver);
+            }
+
+            if (Settings.Instance.WindowSettings.RaidManagerCooldowns.WindowSize != new Vector2())
+            {
+                ImGui.SetNextWindowSize(Settings.Instance.WindowSettings.RaidManagerCooldowns.WindowSize, ImGuiCond.FirstUseEver);
+            }
+
+            if (ResetWindowSize)
+            {
+                ImGui.SetNextWindowSize(DefaultWindowSize, ImGuiCond.Always);
+                ResetWindowSize = false;
             }
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -495,6 +508,7 @@ namespace BPSR_ZDPS.Windows
                 if (ImGui.MenuItem($"X##CloseBtn"))
                 {
                     Settings.Instance.WindowSettings.RaidManagerCooldowns.WindowPosition = ImGui.GetWindowPos();
+                    Settings.Instance.WindowSettings.RaidManagerCooldowns.WindowSize = ImGui.GetWindowSize();
                     IsOpened = false;
                 }
                 ImGui.PopFont();

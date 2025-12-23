@@ -32,6 +32,9 @@ namespace BPSR_ZDPS.Windows
         public bool IsTopMost = false;
         public Vector2 WindowPosition;
         public Vector2 NextWindowPosition = new();
+        public Vector2 DefaultWindowSize = new Vector2(550, 600);
+        public Vector2 WindowSize;
+        public Vector2 NextWindowSize = new();
 
         public void Draw()
         {
@@ -56,7 +59,7 @@ namespace BPSR_ZDPS.Windows
             var main_viewport = ImGui.GetMainViewport();
 
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSize(new Vector2(550, 600), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(DefaultWindowSize, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(375, 150), new Vector2(ImGui.GETFLTMAX()));
 
             if (Settings.Instance.WindowSettings.MainWindow.WindowPosition != new Vector2())
@@ -64,10 +67,21 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetNextWindowPos(Settings.Instance.WindowSettings.MainWindow.WindowPosition, ImGuiCond.FirstUseEver);
             }
 
+            if (Settings.Instance.WindowSettings.MainWindow.WindowSize != new Vector2())
+            {
+                ImGui.SetNextWindowSize(Settings.Instance.WindowSettings.MainWindow.WindowSize, ImGuiCond.FirstUseEver);
+            }
+
             if (NextWindowPosition != new Vector2())
             {
                 ImGui.SetNextWindowPos(NextWindowPosition * new Vector2(0.5f, 0.5f), ImGuiCond.Always, new Vector2(0.5f, 0.5f));
                 NextWindowPosition = new Vector2();
+            }
+
+            if (NextWindowSize != new Vector2())
+            {
+                ImGui.SetNextWindowSize(NextWindowSize, ImGuiCond.Always);
+                NextWindowSize = new Vector2();
             }
 
             ImGuiWindowFlags exWindowFlags = ImGuiWindowFlags.None;
@@ -91,6 +105,7 @@ namespace BPSR_ZDPS.Windows
             }
 
             WindowPosition = ImGui.GetWindowPos();
+            WindowSize = ImGui.GetWindowSize();
 
             DrawMenuBar();
 
@@ -402,6 +417,7 @@ namespace BPSR_ZDPS.Windows
                     if (ImGui.MenuItem("Exit"))
                     {
                         Settings.Instance.WindowSettings.MainWindow.WindowPosition = WindowPosition;
+                        Settings.Instance.WindowSettings.MainWindow.WindowSize = WindowSize;
                         p_open = false;
                     }
                     ImGui.EndMenu();
