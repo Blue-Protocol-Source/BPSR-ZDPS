@@ -680,18 +680,24 @@ namespace BPSR_ZDPS
 
             if (attackerType == EEntityType.EntMonster)
             {
-                TotalNpcDamage += (ulong)damage;
-                if (damageType == EDamageType.Absorbed)
+                if (damageType != EDamageType.Immune)
                 {
-                    TotalNpcShieldBreak += (ulong)damage;
+                    TotalNpcDamage += (ulong)damage;
+                    if (damageType == EDamageType.Absorbed)
+                    {
+                        TotalNpcShieldBreak += (ulong)damage;
+                    }
                 }
             }
             else
             {
-                TotalDamage += (ulong)damage;
-                if (damageType == EDamageType.Absorbed)
+                if (damageType != EDamageType.Immune)
                 {
-                    TotalShieldBreak += (ulong)damage;
+                    TotalDamage += (ulong)damage;
+                    if (damageType == EDamageType.Absorbed)
+                    {
+                        TotalShieldBreak += (ulong)damage;
+                    }
                 }
             }
 
@@ -752,11 +758,17 @@ namespace BPSR_ZDPS
             var targetType = (EEntityType)Utils.UuidToEntityType(targetUuid);
             if (targetType == EEntityType.EntMonster)
             {
-                TotalNpcTakenDamage += (ulong)damage;
+                if (damageType != EDamageType.Immune)
+                {
+                    TotalNpcTakenDamage += (ulong)damage;
+                }
             }
             else
             {
-                TotalTakenDamage += (ulong)damage;
+                if (damageType != EDamageType.Immune)
+                {
+                    TotalTakenDamage += (ulong)damage;
+                } 
             }
 
             GetOrCreateEntity(targetUuid).AddTakenDamage(attackerUuid, skillId, skillLevel, damage, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, extraPacketData);
@@ -1454,6 +1466,7 @@ namespace BPSR_ZDPS
         public ulong ValueCritTotal { get; private set; }
         public ulong ValueLuckyTotal { get; private set; }
         public ulong ValueCritLuckyTotal { get; private set; }
+        public ulong ValueImmuneTotal { get; private set; }
         public long ValueMax { get; private set; }
         public long ValueMin { get; private set; }
         public double ValueAverage { get; private set; }
@@ -1475,6 +1488,7 @@ namespace BPSR_ZDPS
         public uint KillCount { get; private set; }
         public ulong HitsCount { get; private set; }
         public uint CastsCount { get; private set; }
+        public ulong ImmuneCount { get; private set; }
 
         public DateTime? StartTime = null;
         public DateTime? EndTime = null;
@@ -1533,49 +1547,74 @@ namespace BPSR_ZDPS
             ValueLuckyTotal += (ulong)value;
         }
 
+        private void AddImmuneValue(long value)
+        {
+            ValueImmuneTotal += (ulong)value;
+        }
+
         public void AddData(long value, int level, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, ExtraPacketData extraPacketData)
         {
             DateTime now = extraPacketData.ArrivalTime;
             StartTime ??= now;
             EndTime = now;
 
-            AddValue(value);
-
             Level = level;
 
             DamageElement = damageElement;
             DamageMode = damageMode;
 
-            if (isCrit)
+            if (damageType == EDamageType.Immune)
             {
-                CritCount++;
-                AddCritValue(value);
+                ImmuneCount++;
+                AddImmuneValue(value);
             }
-
-            if (isLucky)
+            else if (damageType == EDamageType.Miss)
             {
-                LuckyCount++;
-                AddLuckyValue(value);
-            }
-
-            if (!isCrit && !isLucky)
-            {
-                NormalCount++;
-                AddNormalValue(value);
+                MissCount++;
+                if (MissCount > 0 && HitsCount == 0)
+                {
+                    MissRate = 100.0;
+                }
+                else
+                {
+                    MissRate = MissCount > 0 ? Math.Round(((double)MissCount / (double)HitsCount) * 100.0, 0) : 0.0;
+                }
             }
             else
             {
-                CritLuckyCount++;
+                AddValue(value);
+
+                if (isCrit)
+                {
+                    CritCount++;
+                    AddCritValue(value);
+                }
+
+                if (isLucky)
+                {
+                    LuckyCount++;
+                    AddLuckyValue(value);
+                }
+
+                if (!isCrit && !isLucky)
+                {
+                    NormalCount++;
+                    AddNormalValue(value);
+                }
+                else
+                {
+                    CritLuckyCount++;
+                }
+
+                if (isDead)
+                {
+                    KillCount++;
+                }
+
+                HitsCount++;
+
+                ValueCritLuckyTotal = ValueCritTotal + ValueLuckyTotal;
             }
-
-            if (isDead)
-            {
-                KillCount++;
-            }
-
-            HitsCount++;
-
-            ValueCritLuckyTotal = ValueCritTotal + ValueLuckyTotal;
 
             ValueAverage = HitsCount > 0 ? Math.Round(((double)ValueTotal / (double)HitsCount), 0) : 0.0;
             CritRate = HitsCount > 0 ? Math.Round(((double)CritCount / (double)HitsCount) * 100.0, 0) : 0.0;
@@ -1629,6 +1668,11 @@ namespace BPSR_ZDPS
                 snapshot.IsHit = true;
             }
 
+            if (damageType == EDamageType.Immune)
+            {
+                snapshot.IsImmune = true;
+            }
+
             SkillSnapshots.Add(snapshot);
         }
 
@@ -1646,6 +1690,7 @@ namespace BPSR_ZDPS
             ValueCritTotal += newCombatStats.ValueCritTotal;
             ValueLuckyTotal += newCombatStats.ValueLuckyTotal;
             ValueCritLuckyTotal += newCombatStats.ValueCritLuckyTotal;
+            ValueImmuneTotal += newCombatStats.ValueImmuneTotal;
             ValueMax = newCombatStats.ValueMax > ValueMax ? newCombatStats.ValueMax : ValueMax;
             ValueMin = newCombatStats.ValueMin < ValueMin ? newCombatStats.ValueMin : ValueMin;
 
@@ -1657,10 +1702,20 @@ namespace BPSR_ZDPS
             KillCount += newCombatStats.KillCount;
             HitsCount += newCombatStats.HitsCount;
             CastsCount += newCombatStats.CastsCount;
+            ImmuneCount += newCombatStats.ImmuneCount;
 
             ValueAverage = HitsCount > 0 ? Math.Round(((double)ValueTotal / (double)HitsCount), 0) : 0.0;
             CritRate = HitsCount > 0 ? Math.Round(((double)CritCount / (double)HitsCount) * 100.0, 0) : 0.0;
             LuckyRate = HitsCount > 0 ? Math.Round(((double)LuckyCount / (double)HitsCount) * 100.0, 0) : 0.0;
+
+            if (MissCount > 0 && HitsCount == 0)
+            {
+                MissRate = 100.0;
+            }
+            else
+            {
+                MissRate = MissCount > 0 ? Math.Round(((double)MissCount / (double)HitsCount) * 100.0, 0) : 0.0;
+            }
 
             if (newCombatStats.StartTime.HasValue)
             {
@@ -1722,6 +1777,7 @@ namespace BPSR_ZDPS
         public bool IsHit { get; set; }
         public bool IsMiss { get; set; }
         public bool IsKill { get; set; }
+        public bool IsImmune { get; set; }
 
         public DateTime? Timestamp { get; set; } = null;
     }
