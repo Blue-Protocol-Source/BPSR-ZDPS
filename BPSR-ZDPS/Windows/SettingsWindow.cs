@@ -776,58 +776,6 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndTabItem();
                     }
 
-                    if (ImGui.BeginTabItem("Development"))
-                    {
-                        var contentRegionAvail = ImGui.GetContentRegionAvail();
-                        ImGui.BeginChild("##DevelopmentTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
-
-                        ImGui.SeparatorText("Development");
-                        if (ImGui.Button("Reload DataTables"))
-                        {
-                            AppState.LoadDataTables();
-                        }
-                        ImGui.Indent();
-                        ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("Does not update most existing values - mainly works for data set in new Encounters.");
-                        ImGui.EndDisabled();
-                        ImGui.Unindent();
-
-                        if (ImGui.Button("Restart Capture"))
-                        {
-                            MessageManager.StopCapturing();
-                            MessageManager.InitializeCapturing();
-                        }
-                        ImGui.Indent();
-                        ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("Turns the MessageManager off and on to resolve issues of stalled data.");
-                        ImGui.EndDisabled();
-                        ImGui.Unindent();
-
-                        if (ImGui.Button("Reload Module Save"))
-                        {
-                            ModuleSolver.Init();
-                        }
-                        ImGui.Indent();
-                        ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("Reloads your module inventory from the 'ModulesSaveData.json' file.");
-                        ImGui.EndDisabled();
-                        ImGui.Unindent();
-
-                        ShowRestartRequiredNotice(Settings.Instance.LogToFile != logToFile, "Write Debug Log To File");
-                        ImGui.AlignTextToFramePadding();
-                        ImGui.Text("Write Debug Log To File: ");
-                        ImGui.SameLine();
-                        ImGui.Checkbox("##LogToFile", ref logToFile);
-                        ImGui.Indent();
-                        ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("When enabled, writes a debug log for ZDPS (ZDPS_log.txt). Applies after restarting ZDPS.");
-                        ImGui.EndDisabled();
-                        ImGui.Unindent();
-
-                        ImGui.EndChild();
-                        ImGui.EndTabItem();
-                    }
-
                     if (ImGui.BeginTabItem("Integrations"))
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
@@ -1071,7 +1019,7 @@ namespace BPSR_ZDPS.Windows
                             ImGui.TextWrapped("When enabled, your Character UID will be included in the reported data.");
                             ImGui.EndDisabled();
                             ImGui.Unindent();
-                            
+
                             ImGui.AlignTextToFramePadding();
                             ImGui.Text("BPTimer Field Boss HP Reports: ");
                             ImGui.SameLine();
@@ -1089,6 +1037,59 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndChild();
                         ImGui.EndTabItem();
                     }
+
+                    if (ImGui.BeginTabItem("Development"))
+                    {
+                        var contentRegionAvail = ImGui.GetContentRegionAvail();
+                        ImGui.BeginChild("##DevelopmentTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ImGui.SeparatorText("Development");
+                        if (ImGui.Button("Reload DataTables"))
+                        {
+                            AppState.LoadDataTables();
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Does not update most existing values - mainly works for data set in new Encounters.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        if (ImGui.Button("Restart Capture"))
+                        {
+                            MessageManager.StopCapturing();
+                            MessageManager.InitializeCapturing();
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Turns the MessageManager off and on to resolve issues of stalled data.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        if (ImGui.Button("Reload Module Save"))
+                        {
+                            ModuleSolver.Init();
+                        }
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Reloads your module inventory from the 'ModulesSaveData.json' file.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ShowRestartRequiredNotice(Settings.Instance.LogToFile != logToFile, "Write Debug Log To File");
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Write Debug Log To File: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##LogToFile", ref logToFile);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, writes a debug log for ZDPS (ZDPS_log.txt). Applies after restarting ZDPS.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.EndChild();
+                        ImGui.EndTabItem();
+                    }
+                    
                     ImGui.EndTabBar();
                 }
 
