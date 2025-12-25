@@ -534,7 +534,7 @@ namespace BPSR_ZDPS.Windows
                                     totalDamageTakenPct = Math.Round(((double)entity.TotalTakenDamage / (double)encounters[SelectedEncounterIndex].TotalNpcTakenDamage) * 100, 0);
                                 }
                             }
-                            ImGui.TextUnformatted($"{totalDamageTaken} ({totalDamageTakenPct})%");
+                            ImGui.TextUnformatted($"{totalDamageTaken} ({totalDamageTakenPct}%)");
 
                             ImGui.TableNextColumn();
                             ImGui.TextUnformatted($"{entity.TotalDeaths}");

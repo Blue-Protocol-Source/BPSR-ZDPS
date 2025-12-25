@@ -142,12 +142,12 @@ namespace BPSR_ZDPS.Windows
                         }
                     }
 
-                    ImGui.Text($"Name: {LoadedEntity.Name}");
-                    ImGui.Text($"Level: {LoadedEntity.Level}");
-                    ImGui.Text($"Ability Score: {LoadedEntity.AbilityScore}");
-                    ImGui.Text($"Profession: {LoadedEntity.Profession}");
-                    ImGui.Text($"ProfessionSpec: {LoadedEntity.SubProfession}");
-                    ImGui.Text($"EntityType: {LoadedEntity.EntityType.ToString()}");
+                    ImGui.TextUnformatted($"Name: {LoadedEntity.Name}");
+                    ImGui.TextUnformatted($"Level: {LoadedEntity.Level}");
+                    ImGui.TextUnformatted($"Ability Score: {LoadedEntity.AbilityScore}");
+                    ImGui.TextUnformatted($"Profession: {LoadedEntity.Profession}");
+                    ImGui.TextUnformatted($"ProfessionSpec: {LoadedEntity.SubProfession}");
+                    ImGui.TextUnformatted($"EntityType: {LoadedEntity.EntityType.ToString()}");
 
                     ImGui.TableNextColumn();
 
@@ -157,25 +157,25 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("##RightSide", ImGuiTableColumnFlags.WidthStretch | ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize, 1f, 1);
 
                         ImGui.TableNextColumn();
-                        ImGui.Text($"HP: {LoadedEntity.GetAttrKV("AttrHp") ?? "0"}");
-                        ImGui.Text($"Max HP: {LoadedEntity.GetAttrKV("AttrMaxHp") ?? "0"}");
-                        ImGui.Text($"ATK: {LoadedEntity.GetAttrKV("AttrAttack") ?? "0"}");
+                        ImGui.TextUnformatted($"HP: {LoadedEntity.GetAttrKV("AttrHp") ?? "0"}");
+                        ImGui.TextUnformatted($"Max HP: {LoadedEntity.GetAttrKV("AttrMaxHp") ?? "0"}");
+                        ImGui.TextUnformatted($"ATK: {LoadedEntity.GetAttrKV("AttrAttack") ?? "0"}");
                         string MainStat = Professions.GetBaseProfessionMainStatName(LoadedEntity.ProfessionId);
                         if (MainStat == "Strength" || MainStat == "")
                         {
-                            ImGui.Text($"Strength: {LoadedEntity.GetAttrKV("AttrStrength") ?? "0"}");
+                            ImGui.TextUnformatted($"Strength: {LoadedEntity.GetAttrKV("AttrStrength") ?? "0"}");
                         }
                         else if (MainStat == "Agility")
                         {
-                            ImGui.Text($"Agility: {LoadedEntity.GetAttrKV("AttrAgility") ?? "0"}");
+                            ImGui.TextUnformatted($"Agility: {LoadedEntity.GetAttrKV("AttrAgility") ?? "0"}");
                         }
                         else if (MainStat == "Intellect")
                         {
-                            ImGui.Text($"Agility: {LoadedEntity.GetAttrKV("AttrAgility") ?? "0"}");
+                            ImGui.TextUnformatted($"Agility: {LoadedEntity.GetAttrKV("AttrAgility") ?? "0"}");
                         }
 
-                        ImGui.Text($"Endurance: {LoadedEntity.GetAttrKV("AttrVitality") ?? "0"}");
-                        ImGui.Text($"Armor: {LoadedEntity.GetAttrKV("AttrDefense") ?? "0"}");
+                        ImGui.TextUnformatted($"Endurance: {LoadedEntity.GetAttrKV("AttrVitality") ?? "0"}");
+                        ImGui.TextUnformatted($"Armor: {LoadedEntity.GetAttrKV("AttrDefense") ?? "0"}");
 
                         ImGui.TableNextColumn();
                         var Cri = LoadedEntity.GetAttrKV("AttrCri"); // Raw Crit stat value
@@ -190,7 +190,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             CritPctValue = Math.Round((int)CritPct / 100.0, 2);
                         }
-                        ImGui.Text($"Crit: {CritPctValue}%% ({CriValue})");
+                        ImGui.TextUnformatted($"Crit: {CritPctValue}% ({CriValue})");
 
                         var Haste = LoadedEntity.GetAttrKV("AttrHaste");
                         int HasteValue = 0;
@@ -204,7 +204,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             HastePctValue = Math.Round((int)HastePct / 100.0, 2);
                         }
-                        ImGui.Text($"Haste: {HastePctValue}%% ({HasteValue})");
+                        ImGui.TextUnformatted($"Haste: {HastePctValue}% ({HasteValue})");
 
 
                         var Luck = LoadedEntity.GetAttrKV("AttrLuck");
@@ -219,7 +219,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             LuckPctValue = Math.Round((int)LuckPct / 100.0, 2);
                         }
-                        ImGui.Text($"Luck: {LuckPctValue}%% ({LuckValue})");
+                        ImGui.TextUnformatted($"Luck: {LuckPctValue}% ({LuckValue})");
 
                         var Mastery = LoadedEntity.GetAttrKV("AttrMastery");
                         int MasteryValue = 0;
@@ -233,7 +233,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             MasteryPctValue = Math.Round((int)MasteryPct / 100.0, 2);
                         }
-                        ImGui.Text($"Mastery: {MasteryPctValue}%% ({MasteryValue})");
+                        ImGui.TextUnformatted($"Mastery: {MasteryPctValue}% ({MasteryValue})");
 
                         var Versatility = LoadedEntity.GetAttrKV("AttrVersatility");
                         int VersatilityValue = 0;
@@ -247,7 +247,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             VersatilityPctValue = Math.Round((int)VersatilityPct / 100.0, 2);
                         }
-                        ImGui.Text($"Versatility: {VersatilityPctValue} ({VersatilityValue})");
+                        ImGui.TextUnformatted($"Versatility: {VersatilityPctValue} ({VersatilityValue})");
 
                         var BlockPct = LoadedEntity.GetAttrKV("AttrBlockPct");
                         double BlockPctValue = 0.0;
@@ -255,7 +255,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             BlockPctValue = Math.Round((int)BlockPct / 100.0, 2);
                         }
-                        ImGui.Text($"Block: {BlockPctValue}%%");
+                        ImGui.TextUnformatted($"Block: {BlockPctValue}%");
 
                         ImGui.EndTable();
                     }
@@ -306,30 +306,39 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("##ValueTotalsRight", ImGuiTableColumnFlags.WidthStretch | ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize, 1f, 1);
 
                         ImGui.TableNextColumn();
-                        ImGui.Text($"{valueTotalLabel} {Utils.NumberToShorthand(combatStats.ValueTotal)}");
+                        ImGui.TextUnformatted($"{valueTotalLabel} {Utils.NumberToShorthand(combatStats.ValueTotal)}");
                         ImGui.SetItemTooltip($"{combatStats.ValueTotal:N0}");
-                        ImGui.Text($"{valueTotalPerSecondLabel} {Utils.NumberToShorthand(combatStats.ValuePerSecond)}");
+                        ImGui.TextUnformatted($"{valueTotalPerSecondLabel} {Utils.NumberToShorthand(combatStats.ValuePerSecond)}");
                         ImGui.SetItemTooltip($"{combatStats.ValuePerSecond:N0}");
                         if (TableFilterMode == ETableFilterMode.SkillsDamage)
                         {
-                            ImGui.Text($"{valueExtraTotalLabel} {Utils.NumberToShorthand(LoadedEntity.TotalShieldBreak)}");
+                            ImGui.TextUnformatted($"{valueExtraTotalLabel} {Utils.NumberToShorthand(LoadedEntity.TotalShieldBreak)}");
                             ImGui.SetItemTooltip($"{LoadedEntity.TotalShieldBreak:N0}");
                         }
                         else if (TableFilterMode == ETableFilterMode.SkillsHealing)
                         {
-                            ImGui.Text($"{valueExtraTotalLabel} {Utils.NumberToShorthand(LoadedEntity.TotalOverhealing)}");
+                            ImGui.TextUnformatted($"{valueExtraTotalLabel} {Utils.NumberToShorthand(LoadedEntity.TotalOverhealing)}");
                             ImGui.SetItemTooltip($"{LoadedEntity.TotalOverhealing:N0}");
                         }
                         else if (TableFilterMode == ETableFilterMode.SkillsTaken)
                         {
-                            // TODO: Add 'Total Shield' value
+                            ImGui.TextUnformatted($"Total Shield: {Utils.NumberToShorthand(LoadedEntity.TotalShield)}");
+                            ImGui.SetItemTooltip($"{LoadedEntity.TotalShield:N0}");
                         }
-                        ImGui.Text($"Total Hits: {combatStats.HitsCount}");
+                        ImGui.TextUnformatted($"Total Hits: {combatStats.HitsCount}");
 
                         ImGui.TableNextColumn();
-                        ImGui.Text($"Total Crit Rate: {combatStats.CritRate}%%");
-                        ImGui.Text($"Total Lucky Rate: {combatStats.LuckyRate}%%");
-                        ImGui.Text($"Total Crits: {combatStats.CritCount}");
+                        ImGui.TextUnformatted($"Total Crit Rate: {combatStats.CritRate}%");
+                        ImGui.TextUnformatted($"Total Lucky Rate: {combatStats.LuckyRate}%");
+                        ImGui.TextUnformatted($"Total Crits: {combatStats.CritCount}");
+                        if (TableFilterMode == ETableFilterMode.SkillsDamage)
+                        {
+                            ImGui.TextUnformatted($"Total Immunes: {combatStats.ImmuneCount}");
+                        }
+                        else if (TableFilterMode == ETableFilterMode.SkillsTaken)
+                        {
+                            ImGui.TextUnformatted($"Total Immunes: {combatStats.ImmuneCount}");
+                        }
 
                         ImGui.EndTable();
                     }
@@ -503,7 +512,7 @@ namespace BPSR_ZDPS.Windows
                                     }
                                 }
                             }
-                            ImGui.Text(displayName);
+                            ImGui.TextUnformatted(displayName);
                             if (stat.Value.Level > 0)
                             {
                                 ImGui.SetItemTooltip($"Level: {stat.Value.Level}{(stat.Value.TierLevel > 0 ? $"\nTier: {stat.Value.TierLevel}" : "")}");
@@ -526,21 +535,26 @@ namespace BPSR_ZDPS.Windows
                                     }
                                 }
                             }
-                            ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValueTotal)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(stat.Value.ValueTotal)}");
                             ImGui.EndGroup();
-                            ImGui.SetItemTooltip($"Type: {stat.Value.DamageMode}\nElement: {Utils.DamagePropertyToString(stat.Value.DamageElement)}");
+                            ulong immuneDamageTotal = stat.Value.ValueImmuneTotal;
+                            ImGui.SetItemTooltip($"Type: {stat.Value.DamageMode}\nElement: {Utils.DamagePropertyToString(stat.Value.DamageElement)}{(immuneDamageTotal > 0 ? $"\nImmuned Damage: {Utils.NumberToShorthand(immuneDamageTotal)}" : "")}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValuePerSecond)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(stat.Value.ValuePerSecond)}");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{stat.Value.HitsCount}");
+                            ImGui.TextUnformatted($"{stat.Value.HitsCount}");
+                            if (stat.Value.ImmuneCount > 0)
+                            {
+                                ImGui.SetItemTooltip($"Immune Count: {stat.Value.ImmuneCount}");
+                            }
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{stat.Value.CritRate}%%");
+                            ImGui.TextUnformatted($"{stat.Value.CritRate}%");
 
                             ImGui.TableNextColumn();
-                            ImGui.Text($"{Utils.NumberToShorthand(stat.Value.ValueAverage)}");
+                            ImGui.TextUnformatted($"{Utils.NumberToShorthand(stat.Value.ValueAverage)}");
 
                             ImGui.TableNextColumn();
                             double totalDamageContribution = 0.0;
@@ -562,12 +576,12 @@ namespace BPSR_ZDPS.Windows
 
                                 totalDamageContribution = Math.Round(((double)stat.Value.ValueTotal / (double)entityTotalValue) * 100.0, 0);
                             }
-                            ImGui.Text($"{totalDamageContribution}%%");
+                            ImGui.TextUnformatted($"{totalDamageContribution}%");
 
                             if (TableFilterMode == ETableFilterMode.SkillsTaken)
                             {
                                 ImGui.TableNextColumn();
-                                ImGui.Text($"{stat.Value.KillCount}");
+                                ImGui.TextUnformatted($"{stat.Value.KillCount}");
                             }
                         }
 
@@ -578,7 +592,7 @@ namespace BPSR_ZDPS.Windows
                 }
                 else if (TableFilterMode == ETableFilterMode.Attributes)
                 {
-                    ImGui.Text("Attributes:");
+                    ImGui.TextUnformatted("Attributes:");
                     ImGui.SetNextItemWidth(-1);
                     if (ImGui.BeginListBox("##AttrListBox"))
                     {
@@ -589,7 +603,7 @@ namespace BPSR_ZDPS.Windows
                             var attr = attributes.ElementAt(i);
                             if (attr.Key != "$type")
                             {
-                                ImGui.Text($"[{i}] {attr.Key} = {attr.Value.ToString()}");
+                                ImGui.TextUnformatted($"[{i}] {attr.Key} = {attr.Value.ToString()}");
                             }
                         }
 
@@ -716,19 +730,19 @@ namespace BPSR_ZDPS.Windows
                                         }
                                     }
                                 }
-                                ImGui.Text(displayName);
+                                ImGui.TextUnformatted(displayName);
 
                                 ImGui.TableNextColumn();
-                                ImGui.Text($"{buffEvent.SourceConfigId}");
+                                ImGui.TextUnformatted($"{buffEvent.SourceConfigId}");
 
                                 ImGui.TableNextColumn();
-                                ImGui.Text($"{buffEvent.Level}");
+                                ImGui.TextUnformatted($"{buffEvent.Level}");
 
                                 ImGui.TableNextColumn();
-                                ImGui.Text($"{buffEvent.BuffType}");
+                                ImGui.TextUnformatted($"{buffEvent.BuffType}");
 
                                 ImGui.TableNextColumn();
-                                ImGui.Text($"{buffEvent.Layer}");
+                                ImGui.TextUnformatted($"{buffEvent.Layer}");
 
                                 ImGui.TableNextColumn();
                                 string displayDuration = buffEvent.Duration.ToString();
@@ -736,16 +750,16 @@ namespace BPSR_ZDPS.Windows
                                 {
                                     displayDuration = (buffEvent.Duration / 1000.0f).ToString();
                                 }
-                                ImGui.Text($"{displayDuration}s");
+                                ImGui.TextUnformatted($"{displayDuration}s");
 
                                 ImGui.TableNextColumn();
                                 if (!string.IsNullOrEmpty(buffEvent.EntityCasterName))
                                 {
-                                    ImGui.Text($"{buffEvent.EntityCasterName}");
+                                    ImGui.TextUnformatted($"{buffEvent.EntityCasterName}");
                                 }
                                 else
                                 {
-                                    ImGui.Text($"{buffEvent.FireUuid}");
+                                    ImGui.TextUnformatted($"{buffEvent.FireUuid}");
                                 }
 
 
@@ -755,7 +769,7 @@ namespace BPSR_ZDPS.Windows
                                 {
                                     addTime = buffEvent.EventAddTime.ToString("hh\\:mm\\:ss");
                                 }
-                                ImGui.Text($"{addTime}");
+                                ImGui.TextUnformatted($"{addTime}");
 
                                 ImGui.TableNextColumn();
                                 string removeTime = "";
@@ -763,7 +777,7 @@ namespace BPSR_ZDPS.Windows
                                 {
                                     removeTime = buffEvent.EventRemoveTime.ToString("hh\\:mm\\:ss");
                                 }
-                                ImGui.Text($"{removeTime}");
+                                ImGui.TextUnformatted($"{removeTime}");
                             }
                         }
                         clipper.End();
@@ -872,10 +886,10 @@ namespace BPSR_ZDPS.Windows
                 }
                 else if (TableFilterMode == ETableFilterMode.Debug)
                 {
-                    ImGui.Text($"UUID: {LoadedEntity.UUID}");
-                    ImGui.Text($"MonsterType: {LoadedEntity.MonsterType}");
+                    ImGui.TextUnformatted($"UUID: {LoadedEntity.UUID}");
+                    ImGui.TextUnformatted($"MonsterType: {LoadedEntity.MonsterType}");
 
-                    ImGui.Text("Skill Stats:");
+                    ImGui.TextUnformatted("Skill Stats:");
                     ImGui.SetNextItemWidth(-1);
                     if (ImGui.BeginListBox("##SkillStatsListBox"))
                     {
@@ -889,42 +903,12 @@ namespace BPSR_ZDPS.Windows
                             string display = $"[{i}] {skillId}";
                             display = $"{display}\nValueTotal:{stat.Value.ValueTotal}\nSkillType:{stat.Value.SkillType}\nCastsCount:{stat.Value.CastsCount}";
 
-                            ImGui.Text($"{display}");
+                            ImGui.TextUnformatted($"{display}");
                         }
 
                         ImGui.EndListBox();
                     }
                 }
-
-                /*ImGui.Text("Actions Timeline:");
-                ImGui.SetNextItemWidth(-1);
-                if (ImGui.BeginListBox("##ActionsListBox"))
-                {
-                    // Create a ReadOnlyList to try and avoid modification errors
-                    // If this does not work still, may need to make a backing ImmutableList<ActionStat> that is only added to via a specific Add function
-                    // And have reading from it always use a def as: public IReadOnlyList<ActionStat> ActionStats { get { return _actionStats; } }
-                    // Would need to make use of a Set function to replace the entire entry for a value being modified
-                    // Otherwise, perhaps making use of lock calls is the solution
-                    var actionSets = (IReadOnlyList<ActionStat>)LoadedEntity.ActionStats;
-                    for (int i = 0;i < actionSets.Count; i++)
-                    {
-                        var actionStat = actionSets.ElementAt(i);
-
-                        string displayName = "";
-                        if (!string.IsNullOrEmpty(actionStat.ActionName))
-                        {
-                            var strBytes = Encoding.Default.GetBytes(actionStat.ActionName);
-                            string encoded = Encoding.UTF8.GetString(strBytes);
-                            displayName = encoded;
-                        }
-                        if (ImGui.Selectable($"[{i}] {actionStat.ActionId} = {displayName}##ActionSelectable_{i}"))
-                        {
-                            // TODO: Allow inspecting the complete state by probably just storing the entire SyncDamageInfo for the event
-                        }
-                    }
-
-                    ImGui.EndListBox();
-                }*/
 
                 ImGui.End();
             }
