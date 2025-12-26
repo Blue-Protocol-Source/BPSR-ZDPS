@@ -28,6 +28,7 @@ public class Settings
     public bool LimitEncounterBuffTrackingWithoutDatabase { get; set; } = false;
     public bool LogToFile { get; set; } = true;
     public EGameCapturePreference GameCapturePreference { get; set; } = EGameCapturePreference.Auto;
+    public string GameCaptureCustomExeName { get; set; } = "";
     public bool PlayNotificationSoundOnMatchmake { get; set; } = false;
     public string MatchmakeNotificationSoundPath { get; set; } = "";
     public bool LoopNotificationSoundOnMatchmake { get; set; } = false;
@@ -101,7 +102,11 @@ public enum EGameCapturePreference
 {
     Auto,
     Steam,
-    Standalone
+    Standalone,
+    Epic,
+    HaoPlaySea,
+    XDG,
+    Custom = 200
 }
 
 public enum EWebhookReportsMode

@@ -52,6 +52,7 @@ namespace BPSR_ZDPS.Windows
 
         static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
         static EGameCapturePreference GameCapturePreference;
+        static string gameCaptureCustomExeName;
 
         static bool saveEncounterReportToFile;
         static int reportFileRetentionPolicyDays;
@@ -138,7 +139,7 @@ namespace BPSR_ZDPS.Windows
             // Will need to use GLFW to figure out monitors/sizes/positions/etc
 
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSizeConstraints(new Vector2(500, 350), new Vector2(ImGui.GETFLTMAX()));
+            ImGui.SetNextWindowSizeConstraints(new Vector2(550, 350), new Vector2(ImGui.GETFLTMAX()));
             //ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
 
             ImGui.SetNextWindowSize(new Vector2(650, 680), ImGuiCond.FirstUseEver);
@@ -238,6 +239,23 @@ namespace BPSR_ZDPS.Windows
                             {
                                 GameCapturePreference = EGameCapturePreference.Steam;
                             }
+                            else if (ImGui.Selectable("Epic"))
+                            {
+                                GameCapturePreference = EGameCapturePreference.Epic;
+                            }
+                            else if (ImGui.Selectable("HaoPlay SEA"))
+                            {
+                                GameCapturePreference = EGameCapturePreference.HaoPlaySea;
+                            }
+                            else if (ImGui.Selectable("XDG"))
+                            {
+                                GameCapturePreference = EGameCapturePreference.XDG;
+                            }
+                            else if (ImGui.Selectable("Custom"))
+                            {
+                                GameCapturePreference = EGameCapturePreference.Custom;
+                            }
+                            ImGui.SetItemTooltip("Use this if your game version is not listed.\nNote: You will need to enter the name of the game executable for this to work.\nIt is located next to a file named 'GameAssembly.dll'.");
 
                             ImGui.EndCombo();
                         }
@@ -247,6 +265,27 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TextWrapped("Select which game version you want ZDPS to capture from.\nAuto will automatically detect and use the currently running version. Two simultaneous clients will cause data problems while on Auto.\nSteam and Standalone will only listen for data from their respective versions, allowing both to be run simultaneously and only report DPS for one.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
+
+                        if (GameCapturePreference == EGameCapturePreference.Custom)
+                        {
+                            ImGui.Indent();
+                            
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("Custom BPSR Executable Name: ");
+                            ImGui.SameLine();
+                            ImGui.SetNextItemWidth(-1);
+                            if (ImGui.InputText("##GameCaptureCustomExeName", ref gameCaptureCustomExeName, 512))
+                            {
+                                gameCaptureCustomExeName = Path.GetFileNameWithoutExtension(gameCaptureCustomExeName);
+                            }
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("The executable file name of the game to listen to. Ex: BPSR_STEAM");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+
+                            ImGui.Unindent();
+                        }
 
                         ImGui.SeparatorText("Keybinds");
 
@@ -1208,6 +1247,7 @@ namespace BPSR_ZDPS.Windows
             databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
             limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
             GameCapturePreference = Settings.Instance.GameCapturePreference;
+            gameCaptureCustomExeName = Settings.Instance.GameCaptureCustomExeName;
 
             playNotificationSoundOnMatchmake = Settings.Instance.PlayNotificationSoundOnMatchmake;
             matchmakeNotificationSoundPath = Settings.Instance.MatchmakeNotificationSoundPath;
@@ -1253,6 +1293,7 @@ namespace BPSR_ZDPS.Windows
                 MessageManager.NetCaptureDeviceName = NetworkDevices[SelectedNetworkDeviceIdx].Name;
 
                 Settings.Instance.GameCapturePreference = GameCapturePreference;
+                Settings.Instance.GameCaptureCustomExeName = gameCaptureCustomExeName;
 
                 MessageManager.InitializeCapturing();
             }

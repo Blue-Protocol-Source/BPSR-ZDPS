@@ -11,6 +11,7 @@ public class Utils
     {
         List<TcpHelper.TcpRow> tcpConns = [];
 
+        var procs = GetProcessesFromList(filenames);
         var sw = Stopwatch.StartNew();
         List<int> pids = [];
         foreach (var filename in filenames)
@@ -29,7 +30,7 @@ public class Utils
                 }
             }
 
-            var process = Process.GetProcessesByName(filename).FirstOrDefault();
+            var process = procs.TryGetValue(filename, out var tempProcess) ? tempProcess : null;
             if (process != null)
             {
                 ProcessCache.Add(filename, new ProcessCacheEntry()
@@ -52,6 +53,21 @@ public class Utils
         }
 
         return tcpConns;
+    }
+
+    public static Dictionary<string, Process> GetProcessesFromList(string[] filenames)
+    {
+        var processesDict = new Dictionary<string, Process>();
+        var processes = Process.GetProcesses();
+        foreach (var process in processes)
+        {
+            if (filenames.Contains(process.ProcessName))
+            {
+                processesDict.TryAdd(process.ProcessName, process);
+            }
+        }
+
+        return processesDict;
     }
 
     /*
