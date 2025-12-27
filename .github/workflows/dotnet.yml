@@ -1,0 +1,44 @@
+name: .NET
+
+on:
+  push:
+    branches: ["main", "actioons"]
+  pull_request:
+    branches: ["main"]
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        shell: pwsh
+        run: ./publish.bat
+
+      - name: Zip output
+        shell: pwsh
+        run: |
+          Compress-Archive -Path "./publish/*" -DestinationPath "ZDPS - DPS Meter.zip" -Force
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ZDPS - DPS Meter
+          path: ZDPS - DPS Meter.zip
