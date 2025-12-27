@@ -29,6 +29,7 @@ namespace BPSR_ZDPS
             public static ModTable Modules = new ModTable();
             public static ModEffectTable ModEffects = new ModEffectTable();
             public static ModLinkEffectTable ModLinkEffects = new ModLinkEffectTable();
+            public static SkillFightLevelTable SkillFightLevels = new SkillFightLevelTable();
         }
     }
 }

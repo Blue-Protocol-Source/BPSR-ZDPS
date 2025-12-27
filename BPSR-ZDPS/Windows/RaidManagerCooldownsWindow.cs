@@ -31,7 +31,7 @@ namespace BPSR_ZDPS.Windows
 
         static string EntityNameFilter = "";
         static TrackedSkill? SelectedSkill = null;
-        static int SelectedSkillCooldown;
+        static float SelectedSkillCooldown;
         static string SkillCastConditionValue = "";
         static KeyValuePair<long, EntityCacheLine>[]? EntityFilterMatches;
         static KeyValuePair<string, DataTypes.Skill>[]? SkillFilterMatches;
@@ -204,9 +204,41 @@ namespace BPSR_ZDPS.Windows
                                 var remainingTime = trackedSkill.GetTimeRemaining();
                                 if (remainingTime.TotalMilliseconds > 0)
                                 {
+                                    string tierLevel = "";
+                                    if (trackedSkill.SkillTier > 0)
+                                    {
+                                        tierLevel = $" [T{trackedSkill.SkillTier}]";
+                                    }
+                                    else
+                                    {
+                                        // Check once after a delay if the Skill has a tier level set, this typically has to occur after the skill was cast so we have to get it late
+                                        if ((int)remainingTime.TotalSeconds % 5 == 0 && (trackedSkill.TierCheckTime == null || DateTime.Now.Subtract(trackedSkill.TierCheckTime.Value).TotalMinutes >= 5))
+                                        {
+                                            trackedSkill.TierCheckTime = DateTime.Now;
+                                            System.Diagnostics.Debug.WriteLine($"Checking {trackedEntity.Key} for skill {trackedSkill.SkillId} tiers...");
+                                            var ent = EncounterManager.Current.GetOrCreateEntity(trackedEntity.Key);
+                                            if (ent.SkillStats.TryGetValue(trackedSkill.SkillId, out var skillStats))
+                                            {
+                                                trackedSkill.SkillTier = skillStats.TierLevel;
+
+                                                // Only Imagines currently should have their cooldowns reduced based on Tier level
+                                                if (HelperMethods.DataTables.Skills.Data.TryGetValue(trackedSkill.SkillId.ToString(), out var skill))
+                                                {
+                                                    // Slots 7 and 8 are the Imagine slots
+                                                    if (skill.SlotPositionId != null && (skill.SlotPositionId.Contains(7) || skill.SlotPositionId.Contains(8)))
+                                                    {
+                                                        trackedSkill.UpdateEndTimeFromTierLevel(trackedSkill.SkillTier);
+                                                        remainingTime = trackedSkill.GetTimeRemaining();
+                                                    }
+                                                }
+                                                
+                                            }
+                                        }
+                                    }
+
                                     float textAlignment = 0.50f;
                                     var cursorPos = ImGui.GetCursorPos();
-                                    string displayText = $"{trackedSkill.SkillName} ({remainingTime.ToString(@"hh\:mm\:ss\.ff")})";
+                                    string displayText = $"{trackedSkill.SkillName}{tierLevel} ({remainingTime.ToString(@"hh\:mm\:ss\.ff")})";
                                     var textSize = ImGui.CalcTextSize(displayText);
                                     float progressBarWidth = ImGui.GetContentRegionAvail().X - indentOffset;
                                     float labelX = cursorPos.X + (progressBarWidth - textSize.X) * textAlignment;
@@ -364,8 +396,11 @@ namespace BPSR_ZDPS.Windows
                                         // We're using the Key instead of item.Value.Id as overrides could add entirely new entries and may not redefine the Id value
                                         int skillId = int.Parse(item.Key);
 
+                                        bool isTracked = false;
                                         if (TrackedSkills.TryGetValue(skillId, out _))
                                         {
+                                            isTracked = true;
+
                                             ImGui.AlignTextToFramePadding();
                                             ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
                                             ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
@@ -382,6 +417,7 @@ namespace BPSR_ZDPS.Windows
                                             ImGui.SameLine();
                                         }
 
+                                        ImGui.BeginDisabled(isTracked);
                                         bool isSelected = SelectedSkill != null && SelectedSkill.SkillId == skillId;
                                         ImGuiSelectableFlags selectableFlags = isSelected ? ImGuiSelectableFlags.Highlight : ImGuiSelectableFlags.None;
                                         if (ImGui.Selectable($"Skill Id: {item.Key}\nSkill Name: {item.Value.Name}##SkillFilterItem_{skillMatchIdx}", isSelected, selectableFlags))
@@ -391,7 +427,10 @@ namespace BPSR_ZDPS.Windows
                                                 SkillId = skillId,
                                                 SkillName = item.Value.Name
                                             };
+                                            var cooldownTime = item.Value.Get_SkillFightLevel_PVECoolTime();
+                                            SelectedSkillCooldown = cooldownTime;
                                         }
+                                        ImGui.EndDisabled();
 
                                         skillMatchIdx++;
                                     }
@@ -402,17 +441,21 @@ namespace BPSR_ZDPS.Windows
 
                         // Allow manually setting the "cooldown" time for the skill instead of using the real one in case the user needs something different
                         ImGui.AlignTextToFramePadding();
-                        ImGui.Text("Cooldown Time (MS):");
+                        ImGui.Text("Cooldown Time:");
                         ImGui.SameLine();
                         ImGui.SetNextItemWidth(-1);
-                        ImGui.InputInt("##SkillCastConditionSkillCooldownInt", ref SelectedSkillCooldown, 1, 1, ImGuiInputTextFlags.None);
-                        ImGui.SetItemTooltip($"Enter the cooldown time in milliseconds (ms) you want to use for this skill.\nMS = Seconds * 1000. Current entered value in seconds = {Math.Round(SelectedSkillCooldown / 1000.0f, 4)}");
+                        ImGui.InputFloat("##SkillCastConditionSkillCooldownInt", ref SelectedSkillCooldown, 1, 1, ImGuiInputTextFlags.None);
+                        if (SelectedSkillCooldown < 0)
+                        {
+                            SelectedSkillCooldown = 0;
+                        }
+                        ImGui.SetItemTooltip($"This is the Base Cooldown Time (in Seconds) for the selected skill. It should be automatically set when selecting a skill.\nIf the value is '0.0' then you likely have selected the wrong skill.");
 
-                        ImGui.BeginDisabled(SelectedSkill == null);
+                        ImGui.BeginDisabled(SelectedSkill == null || SelectedSkillCooldown <= 0);
                         if (ImGui.Button("Add Skill To Tracker"))
                         {
                             SelectedSkill.SkillCooldownDefined = SelectedSkillCooldown;
-                            TrackedSkills.Add(SelectedSkill.SkillId, SelectedSkill);
+                            TrackedSkills.TryAdd(SelectedSkill.SkillId, SelectedSkill);
                             SelectedSkill = null;
                             SelectedSkillCooldown = 0;
                             BindCurrentEncounterEvents();
@@ -571,14 +614,39 @@ namespace BPSR_ZDPS.Windows
     {
         public int SkillId { get; set; }
         public string SkillName { get; set; }
-        public int SkillCooldownDefined { get; set; }
+        public int SkillTier { get; set; } = 0;
+        public float SkillCooldownDefined { get; set; }
         public DateTime ActivationTime { get; private set; }
         public DateTime? ExpectedEndTime { get; private set; } = null;
+        public DateTime? TierCheckTime { get; set; } = null;
 
         public void SetActivationTime(DateTime activationTime)
         {
             ActivationTime = activationTime;
             ExpectedEndTime = ActivationTime.AddMilliseconds(SkillCooldownDefined);
+        }
+
+        public void UpdateEndTimeFromTierLevel(int tierLevel)
+        {
+            // Imagines with 60 second cooldowns already do not get any reductions
+            if (SkillCooldownDefined >= 60.0f)
+            {
+                if (tierLevel >= 0 && tierLevel <= 2)
+                {
+                    // No reduction
+                }
+                else if (tierLevel > 2 && tierLevel <= 4)
+                {
+                    // Tiers 3 and 4 have the first level of reduction
+                    SkillCooldownDefined = MathF.Ceiling(SkillCooldownDefined * 0.8333f);
+                }
+                else if (tierLevel > 4 && tierLevel <= 6)
+                {
+                    // Tiers 5 (and maybe 6 if it exists) have the second level of reduction
+                    SkillCooldownDefined = MathF.Ceiling(SkillCooldownDefined * 0.6666f);
+                }
+                ExpectedEndTime = ActivationTime.AddMilliseconds(SkillCooldownDefined);
+            }
         }
 
         public void ForceEndCooldown()

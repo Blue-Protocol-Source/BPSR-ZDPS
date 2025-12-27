@@ -120,6 +120,13 @@ namespace BPSR_ZDPS
             }
             // TODO: Map Icon from SkillTable to SkillId lookups and trim path to final part after a '/'
 
+            string skillFightLevelTableFile = Path.Combine(Utils.DATA_DIR_NAME, "SkillFightLevelTable.json");
+            if (File.Exists(skillTableFile))
+            {
+                var skillFightLevels = JsonConvert.DeserializeObject<Dictionary<string, SkillFightLevel>>(File.ReadAllText(skillFightLevelTableFile));
+                HelperMethods.DataTables.SkillFightLevels.Data = skillFightLevels;
+                Log.Information("Loaded SkillFightLevelTable.json");
+            }
 
             string targetTableFile = Path.Combine(Utils.DATA_DIR_NAME, "TargetTable.json");
             if (File.Exists(targetTableFile))

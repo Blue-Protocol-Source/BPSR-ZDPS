@@ -53,7 +53,48 @@ namespace BPSR_ZDPS.DataTypes
         public bool WeaponReturn { get; set; }
         public float SkillRootShift { get; set; }
         public int CoolTimeType { get; set; }
-        // TODO: Finish type
+        public List<int> NecessaryParts { get; set; }
+        public List<int> ExcludeParts { get; set; }
+        public List<string> SkillAreaArray { get; set; }
+        public List<List<float>> SwitchSkillInfo { get; set; }
+        public int EnergyChargeTime { get; set; }
+        public int MaxEnergyChargeNum { get; set; }
+        public float ContinuesSkillDelayTime { get; set; }
+        public int UseAddResValue { get; set; }
+        public bool AtkSpeedSwitch { get; set; }
+        public int SkillLookAtAngle { get; set; }
+        public int DefocusLookAtangle { get; set; }
+        public bool IsFractureSkill { get; set; }
+        public bool IsDangerSkill { get; set; }
+        public bool IsPassiveDesc { get; set; }
+        public bool IsSearchEnemie { get; set; }
+        public string SearchEnemieFilterName { get; set; }
+        public bool ExtendedSightRange { get; set; }
+        public bool DontPlaySelectTargetEffect { get; set; }
+        public bool RockerDir { get; set; }
+        public int SkillUnbreakLevelAdditional { get; set; }
+        public bool IsHideReplaceEffect { get; set; }
+        public bool ChangeWpInSkill { get; set; }
+        public bool IsTanlentContinuedBegin { get; set; }
+        public List<float> UIWarningParam { get; set; }
+        public bool InheritMotionSpeed { get; set; }
+        public List<int> SlotPositionId { get; set; }
+        public List<List<int>> UnlockCondition { get; set; }
+        public string SkillTalk { get; set; }
+        public float SkillTalkTime { get; set; }
+        public int SkillLabel { get; set; }
+        public bool DeathToward { get; set; }
+        public List<List<float>> SingOrGuideTime { get; set; }
+        public int VehicleSkillType { get; set; }
+        public bool SyncStageFlag { get; set; }
+        public bool NotInterruptDashing { get; set; }
+        public int PCBgColour { get; set; }
+        public float CancelLockDis { get; set; }
+        public bool IsInheritMoveSpeed { get; set; }
+        public List<float> IndicatorParam { get; set; }
+        public bool CheckGB { get; set; }
+        public int SkillLogicCheck { get; set; }
+        public bool IsIgnoreDel { get; set; }
 
         public string GetIconName()
         {
@@ -67,6 +108,30 @@ namespace BPSR_ZDPS.DataTypes
             }
 
             return Icon;
+        }
+
+        private float SkillFightLevel_PVECoolTime = -1.0f;
+        public float Get_SkillFightLevel_PVECoolTime()
+        {
+            if (SkillFightLevel_PVECoolTime != -1.0f)
+            {
+                return SkillFightLevel_PVECoolTime;
+            }
+
+            if (EffectIDs != null && EffectIDs.Count > 0)
+            {
+                if (HelperMethods.DataTables.SkillFightLevels.Data.TryGetValue(EffectIDs.First().ToString(), out var skillFightLevel))
+                {
+                    SkillFightLevel_PVECoolTime = skillFightLevel.PVECoolTime;
+                    return skillFightLevel.PVECoolTime;
+                }
+                else
+                {
+                    return 0.0f;
+                }
+            }
+            
+            return 0.0f;
         }
     }
 }
