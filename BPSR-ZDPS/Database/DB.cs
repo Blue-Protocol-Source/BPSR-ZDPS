@@ -9,6 +9,7 @@ using System.Data.Common;
 using System.Diagnostics;
 using System.Text;
 using static BPSR_ZDPS.DBSchema;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BPSR_ZDPS
 {
@@ -203,6 +204,19 @@ namespace BPSR_ZDPS
                         results.EncountersDeleted, results.BattlesDeleted, results.EntitiesCachesDeleted);
 
                 return results;
+            }
+        }
+
+        public static void DeleteEncounter(ulong encounterId)
+        {
+            lock (DBLock)
+            {
+                var tx = DbConn.BeginTransaction();
+                DbConn.Execute(DBSchema.Encounter.RemoveEncounter, new { EncounterId = encounterId }, tx);
+                DbConn.Execute(DBSchema.Entities.RemoveByEncounterId, new { EncounterId = encounterId }, tx);
+                tx.Commit();
+
+                Log.Information("Deleted Encounter: {encounterId}", encounterId);
             }
         }
 

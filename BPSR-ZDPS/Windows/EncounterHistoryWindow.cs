@@ -314,6 +314,20 @@ namespace BPSR_ZDPS.Windows
                     }
                     ImGui.SetItemTooltip("For Debug Purposes Only!\nAllows changing the Wipe status flag for the selected Encounter.\nDoes not write changes to Database.");
 
+                    if (SelectedViewMode == 0)
+                    {
+                        ImGui.BeginDisabled(!ImGui.IsKeyDown(ImGuiKey.LeftCtrl));
+                        if (ImGui.Selectable("Delete Encounter"))
+                        {
+                            DB.DeleteEncounter(encounters[SelectedEncounterIndex].EncounterId);
+                            LoadFromDB();
+                            SelectedEncounterIndex = Math.Min(encounters.Count - 2, 0);
+                            HandleEncounterSelection();
+                        }
+                        ImGui.SetItemTooltip("Delete this encounter from the Database, hold Ctrl to enable this option.");
+                        ImGui.EndDisabled();
+                    }
+
                     ImGui.EndPopup();
                 }
                 ImGui.OpenPopupOnItemClick("##DebugReportPopup", ImGuiPopupFlags.MouseButtonRight);

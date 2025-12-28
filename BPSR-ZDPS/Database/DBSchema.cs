@@ -38,6 +38,9 @@ namespace BPSR_ZDPS
             public const string RemoveEncountersOlderThan = 
                 @"DELETE FROM Encounters WHERE EndTime IS NOT NULL AND datetime(EndTime) < @Date;";
 
+            public const string RemoveEncounter =
+                @"DELETE FROM Encounters WHERE EncounterId = @EncounterId;";
+
             public const string CreateTable = @"
                 CREATE TABLE IF NOT EXISTS Encounters (
                     EncounterId INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -84,6 +87,9 @@ namespace BPSR_ZDPS
 
             public const string DeleteEntitiesCachesWithNoEncounters =
                 @"DELETE FROM Entities WHERE NOT EXISTS (SELECT 1 FROM Encounters WHERE Encounters.EncounterId = Entities.EncounterId);";
+
+            public const string RemoveByEncounterId =
+                @"DELETE FROM Entities WHERE EncounterId = @EncounterId;";
 
             public const string CreateTable = @"
                 CREATE TABLE IF NOT EXISTS Entities (
