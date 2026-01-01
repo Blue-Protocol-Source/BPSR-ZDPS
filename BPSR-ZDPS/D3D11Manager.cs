@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.GLFW;
+using Serilog;
 using Silk.NET.Core.Native;
 using Silk.NET.Direct3D11;
 using Silk.NET.DXGI;
@@ -196,6 +197,8 @@ namespace BPSR_ZDPS
                         continue;
                     }
 
+                    string name = new string(desc.Description);
+                    Log.Information("Bound to GPU: {gpu}", name);
                     return adapter;
                 }
 
@@ -213,6 +216,7 @@ namespace BPSR_ZDPS
                     string name = new(desc.Description);
 
                     Console.WriteLine($"Found Adapter {name}");
+                    Log.Information("Bound to GPU: {gpu}", name);
 
                     if (((AdapterFlag)desc.Flags & AdapterFlag.Software) != AdapterFlag.None)
                     {
