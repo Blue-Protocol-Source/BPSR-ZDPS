@@ -39,6 +39,9 @@ namespace BPSR_ZDPS
         public static char AngleUp = '\uF106'; // F106
         public static char AngleDown = '\uF107'; // F107
         public static char Crop = '\uF125'; // F125
+        public static char ArrowDownAZ = '\uF15D'; // F15D
+        public static char ArrowDown19 = '\uF162'; // F162
+        public static char ArrowDownLong = '\uF175'; // F175
         public static char ArrowRotateLeft = '\u21BA'; // 21BA, F0E2
         public static char Database = '\uF1C0'; // F1C0
         public static char FilePDF = '\uF1C1'; // F1C1

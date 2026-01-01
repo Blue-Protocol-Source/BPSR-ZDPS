@@ -194,48 +194,41 @@ namespace BPSR_ZDPS.Windows
                         RegionName = regions[selectedRegionIndex];
                     }
 
-                    if (ImGui.BeginListBox("##FilterDataListBox", new Vector2(-1, 0)))
+                    ImGui.BeginChild("##FilterDataListBoxChild", new Vector2(0, 150), ImGuiChildFlags.Borders | ImGuiChildFlags.ResizeY);
+                    var mobs = BPTimerManager.MobsDescriptors.AsValueEnumerable();
+                    foreach (var mob in mobs)
                     {
-                        ImGui.PopStyleVar();
-
-                        var mobs = BPTimerManager.MobsDescriptors.AsValueEnumerable();
-                        foreach (var mob in mobs)
+                        if (MonsterFilters.TryGetValue(mob.MobId, out var filterStatus))
                         {
-                            if (MonsterFilters.TryGetValue(mob.MobId, out var filterStatus))
+                            bool? savedStatus = null;
+                            if (windowSettings.TrackedMonsters.TryGetValue(mob.MobId, out var saved))
                             {
-                                bool? savedStatus = null;
-                                if (windowSettings.TrackedMonsters.TryGetValue(mob.MobId, out var saved))
-                                {
-                                    savedStatus = saved;
-                                    MonsterFilters[mob.MobId] = saved;
-                                }
-
-                                bool isEnabled = savedStatus ?? filterStatus;
-                                string name = mob.GameMobName;
-                                if (string.IsNullOrEmpty(name))
-                                {
-                                    name = mob.MobName;
-                                }
-                                int totalLines = 0;
-                                if (mob.MobMapTotalChannels.TryGetValue(RegionName, out var lineCount))
-                                {
-                                    totalLines = lineCount;
-                                }
-                                if (ImGui.Checkbox($"{name} [{mob.MobMapName}] ({totalLines} Lines)##MobCheckBox_{mob.MobId}", ref isEnabled))
-                                {
-                                    MonsterFilters[mob.MobId] = isEnabled;
-                                }
-
-                                windowSettings.TrackedMonsters[mob.MobId] = isEnabled;
+                                savedStatus = saved;
+                                MonsterFilters[mob.MobId] = saved;
                             }
-                        }
 
-                        ImGui.EndListBox();
+                            bool isEnabled = savedStatus ?? filterStatus;
+                            string name = mob.GameMobName;
+                            if (string.IsNullOrEmpty(name))
+                            {
+                                name = mob.MobName;
+                            }
+                            int totalLines = 0;
+                            if (mob.MobMapTotalChannels.TryGetValue(RegionName, out var lineCount))
+                            {
+                                totalLines = lineCount;
+                            }
+                            if (ImGui.Checkbox($"{name} [{mob.MobMapName}] ({totalLines} Lines)##MobCheckBox_{mob.MobId}", ref isEnabled))
+                            {
+                                MonsterFilters[mob.MobId] = isEnabled;
+                            }
+
+                            windowSettings.TrackedMonsters[mob.MobId] = isEnabled;
+                        }
                     }
-                    else
-                    {
-                        ImGui.PopStyleVar();
-                    }
+                    ImGui.EndChild();
+
+                    ImGui.PopStyleVar();
                     ImGui.PopStyleColor();
                     ImGui.PopStyleVar(2);
                     if (ImGui.Button("Select All"))
@@ -255,6 +248,14 @@ namespace BPSR_ZDPS.Windows
                             MonsterFilters[item.Key] = false;
                         }
                     }
+
+                    ImGui.SameLine();
+                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                    if (ImGui.Button($"{(windowSettings.OrderLinesByIndex ? FASIcons.ArrowDownShortWide : FASIcons.ArrowDown19)}##ToggleLineOrderBtn"))
+                    {
+                        windowSettings.OrderLinesByIndex = !windowSettings.OrderLinesByIndex;
+                    }
+                    ImGui.PopFont();
 
                     ImGui.SameLine();
                     ImGui.AlignTextToFramePadding();
@@ -314,25 +315,34 @@ namespace BPSR_ZDPS.Windows
                             ImGui.EndGroup();
                             var groupSize = ImGui.GetItemRectSize();
 
-                            var statusDescriptors = BPTimerManager.StatusDescriptors.AsValueEnumerable().Where(x => x.MobId == mob.MobId && x.Region == RegionName).OrderByDescending(x => x.UpdateTimestamp).OrderBy(x =>
+                            var statusDescriptors = BPTimerManager.StatusDescriptors.Where(x => x.MobId == mob.MobId && x.Region == RegionName);
+
+                            if (windowSettings.OrderLinesByIndex)
                             {
-                                if (x.UpdateTimestamp?.Subtract(DateTime.Now).TotalMinutes < -5 && x.LastHp != 0)
+                                statusDescriptors = statusDescriptors.OrderBy(x => x.ChannelNumber);
+                            }
+                            else
+                            {
+                                statusDescriptors = statusDescriptors.OrderByDescending(x => x.UpdateTimestamp).OrderBy(x =>
                                 {
-                                    // Put "expired" data at the very end
-                                    return 102;
-                                }
-                                if (x.UpdateTimestamp?.Subtract(DateTime.Now).TotalMinutes < -6 && x.LastHp == 0)
-                                {
-                                    // Put old "dead" data behind expired data
-                                    return 103;
-                                }
-                                if (x.LastHp == 0)
-                                {
-                                    // Recently killed enemies should be moved to the end of the line
-                                    return 101;
-                                }
-                                return x.LastHp;
-                            });
+                                    if (x.UpdateTimestamp?.Subtract(DateTime.Now).TotalMinutes < -5 && x.LastHp != 0)
+                                    {
+                                        // Put "expired" data at the very end
+                                        return 102;
+                                    }
+                                    if (x.UpdateTimestamp?.Subtract(DateTime.Now).TotalMinutes < -6 && x.LastHp == 0)
+                                    {
+                                        // Put old "dead" data behind expired data
+                                        return 103;
+                                    }
+                                    if (x.LastHp == 0)
+                                    {
+                                        // Recently killed enemies should be moved to the end of the line
+                                        return 101;
+                                    }
+                                    return x.LastHp;
+                                });
+                            }
 
                             int currentItemCount = 1;
                             bool endedOnSameLine = false;
@@ -580,6 +590,7 @@ namespace BPSR_ZDPS.Windows
         public float LineScale = 1.0f;
         public int DisplayLineCountLimit = 5;
         public int SelectedRegionIndex = 0;
+        public bool OrderLinesByIndex = false;
         public Dictionary<string, bool> TrackedMonsters = new();
     }
 }
