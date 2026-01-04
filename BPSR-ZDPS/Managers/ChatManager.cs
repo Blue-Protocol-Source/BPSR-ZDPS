@@ -63,6 +63,11 @@ namespace BPSR_ZDPS.Managers
                                 if (chanMsgIds.TryDequeue(out var msgId))
                                 {
                                     Messages.Remove(msgId, out var _);
+
+                                    foreach (var tab in ChatTabs)
+                                    {
+                                        tab.MessageIds.Remove(msgId);
+                                    }
                                 }
                             }
                         }
@@ -107,6 +112,11 @@ namespace BPSR_ZDPS.Managers
                         }
                     }
                 }
+            }
+
+            foreach (var tab in ChatTabs)
+            {
+                RefilterChatTab(tab);
             }
         }
 
