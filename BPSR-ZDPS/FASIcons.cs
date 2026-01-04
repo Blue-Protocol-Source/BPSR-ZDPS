@@ -9,6 +9,9 @@ namespace BPSR_ZDPS
     public static class FASIcons
     {
         public static char XMark = '\uF00d'; // F00D
+        public static char Pause = '\uF04C'; // F04C
+        public static char Stop = '\uF04D'; // F04D
+        public static char Ban = '\uF05E'; // F05E
         public static char Folder = '\uF07B'; // F07B, F114, 01F4C1, 01F5BF
         public static char FolderOpen = '\uF07C'; // F07C, F115, 01F4C2, 01F5C1
         public static char File = '\uF016'; // F016, F15B, 01F4C4, 01F5CB
@@ -28,8 +31,10 @@ namespace BPSR_ZDPS
         public static char ChevronDown = '\uF078'; // F078
         public static char Copy = '\uF0C5'; // F0C5
         public static char Upload = '\uF093'; // F093
+        public static char Bullhorn = '\uF0A1'; // F0A1
         public static char FloppyDisk = '\uF0C7'; // F0C7, 01F4BE, 01F5AA
         public static char Sitemap = '\uF0E8'; // F0E8
+        public static char Bell = '\uF0F3'; // F0F3
         public static char AnglesLeft = '\uF100'; // F100
         public static char AnglesRight = '\uF101'; // F101
         public static char AnglesUp = '\uF102'; // F102
@@ -57,12 +62,16 @@ namespace BPSR_ZDPS
         public static char ClockRotateLeft = '\uF1DA'; // F1DA
         public static char Server = '\uF233'; // F233
         public static char Clone = '\uF24D'; // F24D
+        public static char CirclePause = '\uF28B'; // F28B
+        public static char CircleStop = '\uF28D'; // F28D
+        public static char Hand = '\uF256'; // F256
         public static char WindowMaximize = '\uF2D0'; // F2D0, 01F5D6
         public static char WindowMinimize = '\uF2D1'; // F2D1, 01F5D5
         public static char WindowRestore = '\uF2D2'; // F2D2
         public static char SquareXMark = '\uF2D3'; // F2D3
         public static char RotateLeft = '\uF2EA'; // F2EA
         public static char Rotate = '\uF2F1'; // F2F1, 01F504
+        public static char Stopwatch = '\uF2F2'; // F2F2
         public static char Pencil = '\u270F'; // 270F, F040, F303
         public static char Pen = '\uF304'; // F304, 01F58A
         public static char Clipboard = '\uF328'; // F328, 01F4CB
@@ -129,7 +138,7 @@ namespace BPSR_ZDPS
         public static char ShieldBlank = '\uF3ED'; // F3ED
         public static char Microchip = '\uF2DB'; // F2DB
         public static char Snowbreak = '\u2744'; // 2744, 2746, F2DC
-        public static char Stopwatch = '\u23F1'; // 23F1, F2F2
+        public static char Stopwatch2 = '\u23F1'; // 23F1, F2F2
         public static char RightFromBracket = '\uF2F5'; // F2F5
         public static char RightToBracket = '\uF2F6'; // F2F6
         public static char DownLong = '\uF309'; // F309

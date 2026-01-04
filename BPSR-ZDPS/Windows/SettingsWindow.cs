@@ -35,6 +35,7 @@ namespace BPSR_ZDPS.Windows
         static bool useDatabaseForEncounterHistory;
         static int databaseRetentionPolicyDays;
         static bool limitEncounterBuffTrackingWithoutDatabase;
+        static bool allowEncounterSavingPausingInOpenWorld;
 
         static bool playNotificationSoundOnMatchmake;
         static string matchmakeNotificationSoundPath;
@@ -395,6 +396,16 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndDisabled();
                         ImGui.Unindent();
                         ImGui.EndDisabled();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Allow Encounter Saving Pausing In Open World: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##AllowEncounterSavingPausingInOpenWorld", ref allowEncounterSavingPausingInOpenWorld);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, a button is added to the top of the Main Window that allows the current Encounter to not be saved to the Database.\nThis is only available while in the Open World and will automatically disable when map changing. Benchmarking and Manual New Encounter creation will be disabled while Paused.\nNote: At least one map change is required before the button will appear after starting ZDPS.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
 
                         ImGui.EndChild();
                         ImGui.EndTabItem();
@@ -1333,6 +1344,8 @@ namespace BPSR_ZDPS.Windows
             useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
             databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
             limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
+            allowEncounterSavingPausingInOpenWorld = Settings.Instance.AllowEncounterSavingPausingInOpenWorld;
+
             GameCapturePreference = Settings.Instance.GameCapturePreference;
             gameCaptureCustomExeName = Settings.Instance.GameCaptureCustomExeName;
 
@@ -1395,6 +1408,12 @@ namespace BPSR_ZDPS.Windows
             else
             {
                 io.ConfigFlags &= ~ImGuiConfigFlags.NavEnableGamepad;
+            }
+
+            Settings.Instance.AllowEncounterSavingPausingInOpenWorld = allowEncounterSavingPausingInOpenWorld;
+            if (!allowEncounterSavingPausingInOpenWorld)
+            {
+                AppState.IsEncounterSavingPaused = false;
             }
 
             Settings.Instance.NormalizeMeterContributions = normalizeMeterContributions;

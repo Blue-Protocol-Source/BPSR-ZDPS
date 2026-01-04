@@ -21,7 +21,6 @@ namespace BPSR_ZDPS
 
         public static Encounter? Current = null;
 
-        public static int CurrentEncounter = 0;
         public static int CurrentBattleId = 0;
         public static uint LevelMapId { get; private set; }
         public static string SceneName { get; private set; }
@@ -122,9 +121,6 @@ namespace BPSR_ZDPS
                 BattleStateMachine.SetDeferredEncounterEndFinalData(DateTime.Now.Subtract(new TimeSpan(0, 0, 1)), new EncounterEndFinalData() { EncounterId = Current.EncounterId, BattleId = Current.BattleId, Reason = reason, Encounter = Current });
                 BattleStateMachine.CheckDeferredCalls();
             }
-            //Encounters.Add(new Encounter(CurrentBattleId));
-
-            //CurrentEncounter = Encounters.Count - 1;
 
             int currentDifficulty = 0;
             Encounter? priorEncounter = Current;
@@ -132,10 +128,7 @@ namespace BPSR_ZDPS
             if (Current != null)
             {
                 currentDifficulty = Current.ExData.DungeonDifficulty;
-                //if (priorEncounter.HasStatsBeenRecorded(true))
-                {
-                    nextEncounterIdModifier = 1;
-                }
+                nextEncounterIdModifier = 1;
             }
 
             Current = new Encounter(CurrentBattleId);
@@ -204,7 +197,7 @@ namespace BPSR_ZDPS
 
             if (priorEncounter != null)
             {
-                if (nextEncounterIdModifier != 0)
+                if (nextEncounterIdModifier != 0 && !AppState.IsEncounterSavingPaused)
                 {
                     DB.InsertEncounter(priorEncounter);
                 }
@@ -815,7 +808,10 @@ namespace BPSR_ZDPS
             if ((currentHp != null && maxHp != null && maxHp > 0) && (currentHp + damage > maxHp))
             {
                 effectiveHealing = (long)(maxHp - currentHp);
-                overhealing = damage - effectiveHealing;
+                if (damage >= effectiveHealing)
+                {
+                    overhealing = damage - effectiveHealing;
+                }
             }
 
             if (attackerType == EEntityType.EntMonster)

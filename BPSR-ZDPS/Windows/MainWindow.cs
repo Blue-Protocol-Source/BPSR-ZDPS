@@ -73,7 +73,15 @@ namespace BPSR_ZDPS.Windows
 
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSize(DefaultWindowSize, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSizeConstraints(new Vector2(375, 150), new Vector2(ImGui.GETFLTMAX()));
+
+            if (!Settings.Instance.AllowEncounterSavingPausingInOpenWorld)
+            {
+                ImGui.SetNextWindowSizeConstraints(new Vector2(375, 150), new Vector2(ImGui.GETFLTMAX()));
+            }
+            else
+            {
+                ImGui.SetNextWindowSizeConstraints(new Vector2(400, 220), new Vector2(ImGui.GETFLTMAX()));
+            }
 
             var windowSettings = Settings.Instance.WindowSettings.MainWindow;
 
@@ -286,6 +294,23 @@ namespace BPSR_ZDPS.Windows
                 ImGui.EndTable();
             }
 
+            if (AppState.IsEncounterSavingPaused)
+            {
+                ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.DarkRed_Transparent);
+                ImGui.BeginChild("##EncounterSavingPausedChild", ImGuiChildFlags.AutoResizeY);
+                ImGui.TextAligned(0.5f, -1, "Encounter Saving Is Paused");
+                ImGui.TextAligned(0.5f, -1, "Automatically resumes if you change maps.");
+                ImGui.SetCursorPosX((ImGui.GetContentRegionAvail().X - 200) * 0.5f);
+                ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkGreen);
+                if (ImGui.Button("RESUME SAVING NOW##ResumeEncounterSavingBtn", new Vector2(200, 0)))
+                {
+                    AppState.IsEncounterSavingPaused = false;
+                }
+                ImGui.PopStyleColor();
+                ImGui.EndChild();
+                ImGui.PopStyleColor();
+            }
+
             ImGui.BeginChild("MeterChild", new Vector2(0, - ImGui.GetFrameHeightWithSpacing()));
 
             if (SelectedTabIndex > -1)
@@ -316,6 +341,24 @@ namespace BPSR_ZDPS.Windows
                     //ImGui.SetCursorPosX(MainMenuBarSize.X - (35 * 5)); // This pushes it against the previous button instead of having a gap
                     //ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X); // This loosely locks it to right side
                     ImGui.TextDisabled($"v{Utils.AppVersion}");
+                }
+
+                if (Settings.Instance.AllowEncounterSavingPausingInOpenWorld && BattleStateMachine.DungeonStateHistory.Count > 0 && BattleStateMachine.DungeonStateHistory.LastOrDefault().Key == EDungeonState.DungeonStateNull)
+                {
+                    ImGui.BeginDisabled(AppState.IsBenchmarkMode);
+
+                    ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 5));
+                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                    ImGui.PushStyleColor(ImGuiCol.Text, (AppState.IsEncounterSavingPaused ? Colors.Red_Transparent : Colors.White));
+                    if (ImGui.MenuItem($"{FASIcons.Pause}##PauseEncounterSavingBtn"))
+                    {
+                        AppState.IsEncounterSavingPaused = !AppState.IsEncounterSavingPaused;
+                    }
+                    ImGui.PopStyleColor();
+                    ImGui.PopFont();
+                    ImGui.SetItemTooltip("Pause Encounter Saving While In Open World.");
+
+                    ImGui.EndDisabled();
                 }
 
                 ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 4));
@@ -352,6 +395,8 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetItemTooltip("Pin Window As Top Most");
 
                 // Create new Encounter button
+                ImGui.BeginDisabled(AppState.IsEncounterSavingPaused);
+
                 ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 2));
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 if (ImGui.MenuItem($"{FASIcons.Rotate}##StartNewEncounterBtn"))
@@ -360,6 +405,8 @@ namespace BPSR_ZDPS.Windows
                 }
                 ImGui.PopFont();
                 ImGui.SetItemTooltip("Start New Encounter");
+
+                ImGui.EndDisabled();
 
                 ImGui.SetCursorPosX(MainMenuBarSize.X - settingsWidth);
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
@@ -420,7 +467,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndMenu();
                     }
 
-                    if (ImGui.BeginMenu("Benchmark"))
+                    if (ImGui.BeginMenu("Benchmark", !AppState.IsEncounterSavingPaused))
                     {
                         ImGui.TextUnformatted("Enter how many seconds you want to run a Benchmark session for:");
                         ImGui.SetNextItemWidth(-1);
@@ -462,11 +509,17 @@ namespace BPSR_ZDPS.Windows
                         }
                         else
                         {
+                            ImGui.BeginDisabled(AppState.BenchmarkTime < 5);
                             if (ImGui.Button("Start Benchmark", new Vector2(-1, 0)))
                             {
                                 AppState.BenchmarkSingleTargetUUID = 0;
                                 AppState.IsBenchmarkMode = true;
                                 CreateNewEncounter();
+                            }
+                            ImGui.EndDisabled();
+                            if (AppState.BenchmarkTime < 5)
+                            {
+                                ImGui.SetItemTooltip("Benchmark Time must be at least 5 seconds.");
                             }
                         }
                         
@@ -599,6 +652,12 @@ namespace BPSR_ZDPS.Windows
 
         public void CreateNewEncounter()
         {
+            if (AppState.IsEncounterSavingPaused)
+            {
+                Log.Information("Tried to create a new manual Encounter but Encounter Saving is currently Paused.");
+                return;
+            }
+
             EncounterManager.StopEncounter();
             Log.Information($"Starting new manual encounter at {DateTime.Now}");
             EncounterManager.StartEncounter(true);

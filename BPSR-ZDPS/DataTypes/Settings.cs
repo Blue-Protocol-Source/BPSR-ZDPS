@@ -31,6 +31,7 @@ public class Settings
     public bool UseDatabaseForEncounterHistory { get; set; } = true;
     public int DatabaseRetentionPolicyDays { get; set; } = 0;
     public bool LimitEncounterBuffTrackingWithoutDatabase { get; set; } = false;
+    public bool AllowEncounterSavingPausingInOpenWorld { get; set; } = false;
     public bool LogToFile { get; set; } = true;
     public EGameCapturePreference GameCapturePreference { get; set; } = EGameCapturePreference.Auto;
     public string GameCaptureCustomExeName { get; set; } = "";

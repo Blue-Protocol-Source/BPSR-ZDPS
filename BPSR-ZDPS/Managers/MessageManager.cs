@@ -784,6 +784,8 @@ namespace BPSR_ZDPS
                 //System.Diagnostics.Debug.WriteLine($"delta.TempAttrs.Attrs.count = {delta.TempAttrs.Attrs.Count}");
             }
 
+            long buffBasedShieldBreakValue = 0;
+
             List<int> EventHandledBuffs = new();
             if (delta.BuffEffect != null)
             {
@@ -816,6 +818,24 @@ namespace BPSR_ZDPS
 
                         EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, 0, 0, 0, extraData);
                     }
+
+                    if (buffEffect.Type == EBuffEventType.BuffEventRemove)
+                    {
+                        if (EncounterManager.Current.Entities.TryGetValue(targetUuid, out var targetEntity))
+                        {
+                            var attrShieldList = targetEntity.GetAttrKV("AttrShieldList");
+                            if (attrShieldList != null)
+                            {
+                                if (((ShieldInfo)attrShieldList).Uuid == buffEffect.BuffUuid)
+                                {
+                                    // Shield is being removed from this Damage instance, we can consider the previously remaining Value to be how much was mitigated with (Shield Breakthrough)
+                                    // If no damage events occur against the target in this event then the Shield expired instead of being removed via Breakthrough
+                                    
+                                    buffBasedShieldBreakValue = ((ShieldInfo)attrShieldList).Value;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             else
@@ -836,10 +856,6 @@ namespace BPSR_ZDPS
             }
 
             var skillEffect = delta.SkillEffects;
-            if (skillEffect != null)
-            {
-                //System.Diagnostics.Debug.WriteLine($"skillEffect({skillEffect.Damages.Count})={skillEffect}");
-            }
             
             if (skillEffect?.Damages == null || skillEffect.Damages.Count == 0)
             {
@@ -921,6 +937,17 @@ namespace BPSR_ZDPS
                 string damageElement = syncDamageInfo.Property.ToString();
 
                 EDamageSource damageSource = syncDamageInfo.DamageSource;
+
+                // Handle rewriting the event to account for Shield Breakthrough
+                if (buffBasedShieldBreakValue > 0 && targetUuid != attackerUuid)
+                {
+                    syncDamageInfo.Type = EDamageType.Absorbed;
+                    // This will be the only time both HpLessen and Value exist on an Absorbed "event"
+                    hpLessen = hpLessen - buffBasedShieldBreakValue;
+                    damage = buffBasedShieldBreakValue;
+
+                    buffBasedShieldBreakValue = 0;
+                }
 
                 if (AppState.IsBenchmarkMode)
                 {

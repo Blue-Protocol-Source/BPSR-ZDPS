@@ -104,7 +104,7 @@ namespace BPSR_ZDPS.Windows
 
         private static void InnerDraw(ChatWindowSettings windowSettings)
         {
-            if (ImGui.Begin($"Chat###ChatWindow", ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse |
+            if (ImGui.Begin($"Chat##ChatWindow", ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse |
                                     ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoScrollbar))
             {
                 if (RunOnceDelayed == 0)
@@ -286,27 +286,36 @@ namespace BPSR_ZDPS.Windows
 
                 //ImGui.SetCursorPosX(ImGui.GetCursorPosX() - 200);
                 float backgroundOpacity = chatWindowSettings.BackgroundOpacity;
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Background Opacity:");
                 ImGui.SameLine();
+                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(200);
                 if (ImGui.SliderFloat("##BackgroundOpacity", ref backgroundOpacity, 0, 1f, $"{(int)(backgroundOpacity * 100)}%%", ImGuiSliderFlags.ClampOnInput))
                 {
                     chatWindowSettings.BackgroundOpacity = MathF.Round(backgroundOpacity, 2);
                 }
+                ImGui.PopStyleColor(2);
 
                 int opacity = chatWindowSettings.Opacity;
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Window Opacity:");
                 ImGui.SameLine();
                 ImGui.Dummy(new Vector2(17, 0));
                 ImGui.SameLine();
+                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(200);
                 if (ImGui.SliderInt("##Opacity", ref opacity, 10, 100, $"{opacity}%%", ImGuiSliderFlags.ClampOnInput))
                 {
                     chatWindowSettings.Opacity = opacity;
                     Utils.SetWindowOpacity(chatWindowSettings.Opacity * 0.01f, windowViewport);
                 }
+                ImGui.PopStyleColor(2);
 
                 var isTopMost = chatWindowSettings.TopMost;
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Top Most: ");
                 ImGui.SameLine();
                 if (ImGui.Checkbox("##TopMost", ref isTopMost))
@@ -354,9 +363,12 @@ namespace BPSR_ZDPS.Windows
                 ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Max Chat History:");
                 ImGui.SameLine();
+                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(200);
                 var wasMaxChatHistoryChanged = ImGui.SliderInt("##MaxChatHistory", ref maxChatHistory, 1, 500);
                 Settings.Instance.Chat.MaxChatHistory = maxChatHistory;
+                ImGui.PopStyleColor(2);
 
                 if (wasMaxChatHistoryChanged)
                 {
@@ -523,9 +535,28 @@ namespace BPSR_ZDPS.Windows
         private static void DrawChatSenderName(ChatMessage msg)
         {
             ChatManager.Senders.TryGetValue(msg.SenderId, out var sender);
-            ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.40f, 0.70f, 1.00f, 1.00f));
-            ImGui.TextUnformatted($"[{sender.Info.Name}]");
+            ImGui.PushStyleColor(ImGuiCol.TextLink, new Vector4(0.40f, 0.70f, 1.00f, 1.00f));
+            if (ImGui.TextLink($"[{sender.Info.Name}]##ChatMsgName_{msg.GetHashCode().ToString()}"))
+            {
+                
+            }
             ImGui.PopStyleColor();
+            if (ImGui.BeginPopupContextItem(ImGuiPopupFlags.MouseButtonLeft))
+            {
+                if (ImGui.MenuItem("Copy Name"))
+                {
+                    ImGui.SetClipboardText(sender.Info.Name);
+                }
+                ImGui.SetItemTooltip($"Copies [ {sender.Info.Name} ] to the clipboard.");
+
+                if (ImGui.MenuItem("Copy UID"))
+                {
+                    ImGui.SetClipboardText(sender.Info.CharId.ToString());
+                }
+                ImGui.SetItemTooltip($"Copies [ {sender.Info.CharId} ] to the clipboard.");
+
+                ImGui.EndPopup();
+            }
         }
 
         private static void DrawChatTime(ChatMessage msg)

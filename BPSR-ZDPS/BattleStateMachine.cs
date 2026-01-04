@@ -34,12 +34,19 @@ namespace BPSR_ZDPS
 
             EncounterManager.StartNewBattle();
             EncounterManager.StartEncounter(true, EncounterStartReason.Force);
+
+            AppState.IsEncounterSavingPaused = false;
         }
 
         public static void DungeonStateHistoryAdd(EDungeonState dungeonState)
         {
             DungeonStateHistory.Enqueue(new KeyValuePair<EDungeonState, DateTime>(dungeonState, DateTime.Now));
             Log.Information($"{DateTime.Now} - BattleStateMachine.DungeonStateHistoryAdd: {dungeonState}");
+
+            if (dungeonState != EDungeonState.DungeonStateNull)
+            {
+                AppState.IsEncounterSavingPaused = false;
+            }
 
             if (dungeonState == EDungeonState.DungeonStateNull)
             {

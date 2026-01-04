@@ -48,7 +48,7 @@ namespace BPSR_ZDPS.Meters
                 }
                 else
                 {
-                    if (ActiveEncounter?.EncounterId != EncounterManager.Current?.EncounterId)
+                    if (ActiveEncounter?.EncounterId != EncounterManager.Current?.EncounterId || ActiveEncounter?.BattleId != EncounterManager.Current?.BattleId)
                     {
                         ActiveEncounter = EncounterManager.Current;
                     }

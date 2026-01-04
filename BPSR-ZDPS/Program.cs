@@ -231,6 +231,9 @@ namespace BPSR_ZDPS
 
             Log.Information("ZDPS is beginning exit process.");
 
+            // Stop capturing new data to allow our current states to be their final states
+            MessageManager.StopCapturing();
+
             // Save the current encounter to the database before exiting
             if (EncounterManager.Current != null)
             {
@@ -239,7 +242,6 @@ namespace BPSR_ZDPS
 
             DB.CloseAndSave();
             Settings.Save();
-            MessageManager.StopCapturing();
 
             HotKeyManager.UnregisterAllHotKeys();
             //HotKeyManager.UnregisterHookProc();
