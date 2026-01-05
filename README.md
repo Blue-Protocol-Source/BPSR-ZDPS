@@ -1,5 +1,5 @@
 # ZDPS - Damage Meter And Companion Tool
-ZDPS is a Damage Meter and Companion Tool for Blue Protocol: Star Resonance. It's built on modern frameworks, making it fast and efficient at performing the role of a DPS Meter. It however also packs a lot of additional features in it such as complete [Encounter History](#Encounter-History-Browser), [Module Optimizer](#Module-Optimizer), [Log Reporting](#Integrations), [Field Boss/Magical Creature Spawn Tracking](#BPTimer-Integration), [Cooldown Tracking](#Cooldown-Priority-Tracker), and more.
+ZDPS is a Damage Meter and Companion Tool for Blue Protocol: Star Resonance. It's built on modern frameworks, making it fast and efficient at performing the role of a DPS Meter. It however also packs a lot of additional features in it such as complete [Encounter History](#Encounter-History-Browser), [Module Optimizer](#Module-Optimizer), [Log Reporting](#Integrations), [Field Boss/Magical Creature Spawn Tracking](#BPTimer-Integration), [Cooldown Tracking](#Cooldown-Priority-Tracker), [Raid Warnings](#Raid-Warnings), [Chat](#Chat), and more.
 
 ![Example of ZDPS in action on the DPS Meter tab](Screenshots/ZDPS_DPSMeter.png)
 
@@ -39,6 +39,8 @@ If you want to see the metrics of a past Encounter, you can always open up the [
 We also know sometimes you look away or go to another application while sitting in a queue. Or you're waiting on your party leader to enter a raid but it's taking a while and you go into another application. ZDPS supports playing [alert notification sounds](#Matchmaking-Alert-Notification-Sounds) when queues pop and are waiting for you to accept them. You'll never miss a queue again! You can also have a sound play when a Ready Check is performed. Both of these have a default sound effect but you can specify your own custom `MP3` or `WAV` file along with setting if it should loop or not.
 
 Group content is a big part of Blue Protocol, as such, ZDPS supports sending automatic reports of your Encounters to a Discord channel of your choice. All you need to provide is the Webhook URL for the channel and you're good to go. If you're worried about multiple users sending the same report at once, ZDPS supports a Deduplication option to ensure only a single report is sent even when multiple players are running ZDPS in the same group.
+
+If you are a Raider, be sure to also check out the [Raid Manager](#Raid-Manager) feature set, including [Raid Warnings](#Raid-Warnings) and [Countdowns](#Countdowns). Also [Chat](#Chat) can help you avoid missing important messages from your group when you're not looking at the game.
 
 ZDPS also has it's own [Module Optimizer](#Module-Optimizer) that runs incredibly fast without any GPU Hardware Acceleration needed. You can now find the module combination that meets your stat priority preferences within seconds (or even less than a second it's so fast on modern CPUs).
 
@@ -129,6 +131,50 @@ In the actual Entity list at the top, you can freely change the order of Entitie
 ![Example of the Cooldown Priority Tracker being Pinned over the Game, Collapsed To Content, and given Transparency](Screenshots/ZDPS_CooldownPriorityTracker_InGameExample.png)
 > Above is a screenshot showing the window given some transparency via the Settings menu, Pinned on top of the Game, and making use of the Collapse To Content button on the top bar.
 
+#### Raid Warnings
+> Accessed from `Raid Warnings` in the `Raid Manager` on the Features menu.
+
+Getting the attention of raid members can be difficult in the middle of a fight and your callouts may be easily missed, leading to unfortunate results. With ZDPS Raid Warnings, you can now elevate your messages to appearing on the screen in bold orange text. These function very similar to Raid Warnings in other games like World of Warcraft and are customizable by each user.
+
+![Screenshot example of a Raid Warning message in-game](Screenshots/ZDPS_RaidWarning_Example.png)
+
+- When you type a message starting with `/rw` it will automatically be sent at a Raid Warning to ZDPS users.
+   - By default this only works when sent in Group chat. Other chat channels are disabled and must be manually enabled by each user.
+- By default, a sound alert specifc to Raid Warnings will play alongside each Raid Warning message.
+   - This sound alert can be changed in Raid Warnings settings menu, or completely disabled.
+- The size and location of the Raid Warnings, along with the background Opacity can be changed.
+- In order to help prevent abuse, a Raid Warning specific player Blacklist is also supported. This allows a user to completely block receiving any Raid Warnings from other specific users.
+
+![Screenshot of the Raid Warnings Settings menu](Screenshots/ZDPS_RaidWarning_Settings.png)
+
+#### Countdowns
+> Accessed from `Countdowns` in the `Raid Manager` on the Features menu.
+
+As a complement to Raid Warnings, there is also now the ability to display a sync'd Countdown on the screen for ZDPS users. This makes it easier than ever before to coordinate when to start a fight. While this can also be used to help indicate when mechanics needs to be done, it is strongly recommended to avoid using it for that purpose as it may distract users more than help them in the middle of a fight.
+
+![Screenshot example of Countdowns in-game](Screenshots/ZDPS_Countdowns_Example.png)
+
+- This can be started by entering a message starting with `/countdown` and followed by how long it should be (between 3 and 30 seconds).
+   - For example `/countdown 30` will start a 30 second countdown for all ZDPS users.
+   - You can also use `/ct` instead of spelling out `/countdown` as a shortcut. For example `/ct 10` to begin a 10 second countdown.
+   - A Countdown in-progress can also be stopped early with `/countdown cancel`, `/countdown abort`, or `/countdown stop`.
+- Users can pick to use either generic plain text or stylized text for the Countdown time.
+- Just like with Raid Warnings, the location of the Countdown can be controlled by users.
+- Only Countdowns sent via the Group chat are enabled by default. Other chat channels must be manually enabled.
+- A blacklist for preventing Countdowns from specific players is also supported.
+
+![Screenshot of the Countdowns Settings menu](Screenshots/ZDPS_Countdowns_Settings.png)
+
+#### Threat Meter
+> Accessed from `Threat Meter` in the `Raid Manager` on the Features menu.
+
+Having a DPS steal threat from a Tank and cause the entire raid to be hit by a mechanic thankfully isn't too common here in BPSR. However, it can sometimes end up happening. With the Threat Meter you can now watch in realtime the different threat levels of each player against any target.
+
+> [!IMPORTANT]
+> Threat Meter is currently in a Beta state and while it is fully functional and accurate, it may not provide a lot of use to all users at this time. Please provide feedback to help shape the direction of it.
+
+When using the Threat Meter, the current active target of the enemy will be shown at the top of the list, slightly further above everyone else. Their threat number will also typically be far higher than anyone else. Due to their incredibly high value when the main target, all other players threat bars are based on the _second_ highest threat value player.
+
 ### Benchmark
 > Accessed from `Benchmark` on the Features menu.
 
@@ -191,6 +237,22 @@ If you wish to share your Stat Priority list with other users, navigate over to 
 
 ### Matchmaking Alert Notification Sounds
 > Accessed from `Matchmaking` tab in `Settings`.
+
+### Chat
+> Accessed from `Chat` on the Features menu.
+
+ZDPS features the ability to open a Chat window directly inside of it. This allows the game chat to integrate with ZDPS and provide a richer experience. It is worth noting this is just to _view_ chat, you will not be able to _send_ chat messages with this window.
+
+![Screenshot example of the ZDPS Chat window](Screenshots/ZDPS_Chat_Example.png)
+
+- Custom tabs with whatever Channel filters you want.
+- Place the window anywhere on your PC and Pin it as Top Most so you can see it even without the game visible.
+- Set your own Level filter per tab and filter out messages to only hide or show ones with specific keywords.
+- Background and Window opacity can be changed.
+- Clicking on the name of a player opens a context menu allowing you to easily copy their name or UID to the clipboard.
+
+> [!NOTE]
+> Plenty more ZDPS-exclusive features are in the works to help make the Chat experience even better!
 
 ### Settings Menu
 > Accessed from `Settings` on the Features menu.
@@ -287,11 +349,17 @@ ZDPS is capable of checking online for new versions and alerting you if one is f
 `Allow Gamepad Navigation Input In ZDPS`
 - By default only Mouse and Keyboard input is supported in ZDPS. This setting allows you to turn on Gamepad input if you feel the need for it. This can however cause issues with Gamepad input being read by ZDPS even if it's not in focus so use this setting carefully.
 
+`Keep Past Encounter In Meter UI Until Next Damage`
+- Normally when an Encounter ends, _and_ a new one begins, the Meter UI will switch over to the new Encounter right away even before any damage has been recorded. If this setting is enabled, it will instead hold onto the past Encounter until damage is finally dealt. Note that it will still switch over to the new Encounter if you change maps even with this setting enabled.
+
 `Pinned (Top Most) Window Opacities`
 - In here you can set how transparent you want a pinned window to be.
 
 `Window Scales`
 - In here you can change various scales for different windows. Not all windows support being scaled and some may have more options than others. These settings are typically useful for 2K and 4K resolution users.
+
+`Low Performance Mode`
+- In the event ZDPS is using abnormally high CPU usage, this setting will force it to run at a much lower rate. While in this mode you may experience suttering ZDPS windows or sometimes slow to respond actions. This setting should not be needed by the vast majority of users.
 
 #### Matchmaking
 
