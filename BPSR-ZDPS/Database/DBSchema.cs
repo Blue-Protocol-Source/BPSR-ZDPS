@@ -139,7 +139,7 @@ namespace BPSR_ZDPS
                     Version REAL
                 );
 
-                INSERT INTO DbData (Version) SELECT (1.1) WHERE NOT EXISTS (SELECT 1 FROM DbData)";
+                INSERT INTO DbData (Version) SELECT (1.2) WHERE NOT EXISTS (SELECT 1 FROM DbData)";
         }
 
         public static class EntityCache
