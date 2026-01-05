@@ -35,8 +35,8 @@ namespace BPSR_ZDPS.Windows
 
                 ChatManager.AddChatTab(new ChatTabConfig()
                 {
-                    Name = "Guild / Group",
-                    Channels = [ChitChatChannelType.ChannelUnion, ChitChatChannelType.ChannelGroup]
+                    Name = "Guild / Team",
+                    Channels = [ChitChatChannelType.ChannelUnion, ChitChatChannelType.ChannelGroup, ChitChatChannelType.ChannelTeam]
                 });
 
                 ChatManager.AddChatTab(new ChatTabConfig()
@@ -631,6 +631,7 @@ namespace BPSR_ZDPS.Windows
         {
             var channelEnabled = config.Channels.Contains(channel);
             ImGui.TableNextColumn();
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted($"{name}:");
             ImGui.TableNextColumn();
             if (ImGui.Checkbox($"##{name}", ref channelEnabled))
