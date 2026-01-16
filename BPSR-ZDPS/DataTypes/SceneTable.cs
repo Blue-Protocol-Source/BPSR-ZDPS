@@ -41,9 +41,13 @@ namespace BPSR_ZDPS.DataTypes
         public int EPFlowId { get; set; }
         public int ShowMiniMap { get; set; }
         public int MiniMapRatio { get; set; }
-        public string SubScene { get; set; }
+        public List<int> SubScene { get; set; }
         public string AmbEvent { get; set; }
         public string ReverEvent { get; set; }
         public int DefaultSceneArea { get; set; }
+        public int MoveSyncConfigId { get; set; }
+        public bool HaveWater { get; set; }
+        public List<string> FootstepFxOverride { get; set; }
+
     }
 }
