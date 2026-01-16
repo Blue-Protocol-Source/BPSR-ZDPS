@@ -32,6 +32,8 @@ namespace BPSR_ZDPS.Windows
 
         public ETableFilterMode TableFilterMode = ETableFilterMode.SkillsDamage;
 
+        static string AttributeFilter = "";
+
         // Graph storage variables
         static bool HasLoadedGraphsData = false;
         static double[] SkillSnapshotTimestampSeconds = [];
@@ -714,11 +716,26 @@ namespace BPSR_ZDPS.Windows
                 else if (TableFilterMode == ETableFilterMode.Attributes)
                 {
                     ImGui.TextUnformatted("Attributes:");
-                    ImGui.SetNextItemWidth(-1);
-                    if (ImGui.BeginListBox("##AttrListBox"))
+
+                    if (ImGui.BeginListBox("##AttrListBox", new Vector2(-1, -32)))
                     {
+                        var attributes = LoadedEntity.Attributes.AsValueEnumerable();
+                        int idx = 0;
+                        foreach (var attr in attributes)
+                        {
+                            if (attr.Key != "$type")
+                            {
+                                if (attr.Key.Contains(AttributeFilter, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    ImGui.TextUnformatted($"[{idx}] {attr.Key} = {attr.Value.ToString()}");
+                                }
+
+                                idx++;
+                            }
+                        }
+
                         // Create a ReadOnlyList to try and avoid modification errors
-                        var attributes = (IReadOnlyList<KeyValuePair<string, object>>)(LoadedEntity.Attributes.ToList());
+                        /*var attributes = (IReadOnlyList<KeyValuePair<string, object>>)(LoadedEntity.Attributes.ToList());
                         for (int i = 0; i < attributes.Count; i++)
                         {
                             var attr = attributes.ElementAt(i);
@@ -726,10 +743,38 @@ namespace BPSR_ZDPS.Windows
                             {
                                 ImGui.TextUnformatted($"[{i}] {attr.Key} = {attr.Value.ToString()}");
                             }
+                        }*/
+
+                        if (ImGui.BeginPopupContextWindow())
+                        {
+                            if (ImGui.MenuItem("Copy All Attributes"))
+                            {
+                                StringBuilder format = new();
+                                int cidx = 0;
+                                foreach (var attr in attributes)
+                                {
+                                    if (attr.Key != "$type")
+                                    {
+                                        format.AppendLine($"[{cidx}] {attr.Key} = {attr.Value.ToString()}");
+
+                                        cidx++;
+                                    }
+                                }
+                                ImGui.SetClipboardText(format.ToString());
+                            }
+                            ImGui.SetItemTooltip("Copies all attributes (ignoring the active filter) for the entity to the clipboard.");
+
+                            ImGui.EndPopup();
                         }
 
                         ImGui.EndListBox();
                     }
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.TextUnformatted("Filter: ");
+                    ImGui.SameLine();
+                    ImGui.SetNextItemWidth(-1);
+                    ImGui.InputText("##AttributeFilterInpuit", ref AttributeFilter, 128);
                 }
                 else if (TableFilterMode == ETableFilterMode.Buffs)
                 {

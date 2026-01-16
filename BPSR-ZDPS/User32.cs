@@ -66,6 +66,8 @@ public class User32
     public const long WS_EX_TOPMOST = 0x00000008L;
     public const long WS_EX_TRANSPARENT = 0x00000020L;
     public const long WS_EX_WINDOWEDGE = 0x00000100L;
+    public const int LWA_COLORKEY = 0x1;
+    public const int LWA_ALPHA = 0x2;
 
     [StructLayout(LayoutKind.Sequential)]
     public struct RECT
@@ -134,4 +136,7 @@ public class User32
 
     [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr", SetLastError = true)]
     private static extern IntPtr SetWindowLongPtr64(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+
+    [DllImport("user32.dll")]
+    public static extern bool SetLayeredWindowAttributes(IntPtr hwnd, uint crKey, byte bAlpha, uint dwFlags);
 }

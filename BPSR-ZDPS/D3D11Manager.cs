@@ -90,7 +90,8 @@ namespace BPSR_ZDPS
                 SampleDesc = new(1, 0),
                 Scaling = Scaling.Stretch,
                 SwapEffect = SwapEffect.FlipSequential,
-                Flags = (uint)(SwapChainFlag.AllowModeSwitch | SwapChainFlag.AllowTearing)
+                Flags = (uint)(SwapChainFlag.AllowModeSwitch | SwapChainFlag.AllowTearing),
+                //AlphaMode = AlphaMode.Premultiplied
             };
 
             SwapChainFullscreenDesc fullscreenDesc = new()
@@ -102,6 +103,7 @@ namespace BPSR_ZDPS
             };
 
             ComPtr<IDXGISwapChain1> swapChain;
+            //IDXGIFactory.CreateSwapChainForComposition((IUnknown*)Device.Handle, &desc, (IDXGIOutput*)null, &swapChain.Handle);
             IDXGIFactory.CreateSwapChainForHwnd((IUnknown*)Device.Handle, Hwnd, &desc, &fullscreenDesc, (IDXGIOutput*)null, &swapChain.Handle);
             // IDXGIFactory.MakeWindowAssociation(Hwnd, 1 << 0);
 

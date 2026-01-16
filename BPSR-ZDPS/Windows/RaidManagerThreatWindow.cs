@@ -6,6 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using ZLinq;
 
 namespace BPSR_ZDPS.Windows
 {
@@ -141,9 +142,9 @@ namespace BPSR_ZDPS.Windows
 
                     int trackedEntityIdx = 0;
 
-                    foreach (var trackedEntity in TrackedEntities)
+                    foreach (var trackedEntity in TrackedEntities.AsValueEnumerable())
                     {
-                        var threatList = trackedEntity.Value.OrderByDescending(x => x.ThreatValue).Where(x => Utils.UuidToEntityType(x.EntityUuid) == (long)Zproto.EEntityType.EntChar);
+                        var threatList = trackedEntity.Value.AsValueEnumerable().OrderByDescending(x => x.ThreatValue).Where(x => Utils.UuidToEntityType(x.EntityUuid) == (long)Zproto.EEntityType.EntChar);
 
                         // Only show entities with active threat lists
                         int threatListCount = threatList.Count();

@@ -261,7 +261,15 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.TableNextColumn();
                     var dps = playerEntities.Select(x => x.Value.DamageStats.ValuePerSecond);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(dps.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(dps.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling DamageStats.ValuePerSecond");
+                        ImGui.TextUnformatted("ERROR");
+                    }
 
                     ImGui.TableNextColumn();
                     // Shield Break
@@ -275,17 +283,43 @@ namespace BPSR_ZDPS.Windows
                     ImGui.TableNextColumn();
                     // Crit Damage
                     var critDmg = playerEntities.Select(x => x.Value.DamageStats.ValueCritTotal);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(critDmg.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(critDmg.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling DamageStats.ValueCritTotal");
+                        ImGui.TextUnformatted("ERROR");
+                    }
+                    
 
                     ImGui.TableNextColumn();
                     // Lucky Damage
                     var luckyDmg = playerEntities.Select(x => x.Value.DamageStats.ValueLuckyTotal);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(luckyDmg.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(luckyDmg.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling DamageStats.ValueLuckyTotal");
+                        ImGui.TextUnformatted("ERROR");
+                    }
+                    
 
                     ImGui.TableNextColumn();
                     // Crit Lucky Damage
                     var critLuckyDmg = playerEntities.Select(x => x.Value.DamageStats.ValueCritLuckyTotal);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(critLuckyDmg.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(critLuckyDmg.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling DamageStats.ValueCritLuckyTotal");
+                        ImGui.TextUnformatted("ERROR");
+                    }
 
                     ImGui.TableNextColumn();
                     // Max Single Damage
@@ -298,15 +332,39 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.TableNextColumn();
                     var hps = playerEntities.Select(x => x.Value.HealingStats.ValuePerSecond);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(hps.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(hps.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling HealingStats.ValuePerSecond");
+                        ImGui.TextUnformatted("ERROR");
+                    }
 
                     ImGui.TableNextColumn();
                     var effectiveHealing = playerEntities.Select(x => x.Value.TotalHealing - x.Value.TotalOverhealing);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(effectiveHealing.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(effectiveHealing.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling EffectiveHealing");
+                        ImGui.TextUnformatted("ERROR");
+                    }
 
                     ImGui.TableNextColumn();
                     var overhealing = playerEntities.Select(x => x.Value.TotalOverhealing);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(overhealing.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(overhealing.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling TotalOverhealing");
+                        ImGui.TextUnformatted("ERROR");
+                    }
 
                     ImGui.TableNextColumn();
                     // Crit Healing

@@ -32,6 +32,12 @@ public class Settings
     public int DatabaseRetentionPolicyDays { get; set; } = 0;
     public bool LimitEncounterBuffTrackingWithoutDatabase { get; set; } = false;
     public bool AllowEncounterSavingPausingInOpenWorld { get; set; } = false;
+
+    public bool MeterSettingsTankingShowDeaths { get; set; } = false;
+    public bool MeterSettingsNpcTakenShowHpData { get; set; } = false;
+    public bool MeterSettingsNpcTakenHideMaxHp { get; set; } = false;
+    public bool MeterSettingsNpcTakenUseHpMeter { get; set; } = false;
+
     public bool LogToFile { get; set; } = true;
     public EGameCapturePreference GameCapturePreference { get; set; } = EGameCapturePreference.Auto;
     public string GameCaptureCustomExeName { get; set; } = "";

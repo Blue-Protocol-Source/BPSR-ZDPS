@@ -225,7 +225,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     var selectedEncounter = encounters[SelectedEncounterIndex];
                     var selectedTuple = BuildDropdownStringName(selectedEncounter.StartTime, selectedEncounter.EndTime, selectedEncounter.SceneName, SelectedEncounterIndex);
-                    selectedPreviewText = $"[{SelectedEncounterIndex + 1}] {selectedTuple.Item1} ({selectedTuple.Item2}) {selectedTuple.Item3}";
+                    selectedPreviewText = $"[{(SelectedViewMode == 0 ? selectedEncounter.EncounterId : SelectedEncounterIndex + 1)}] {selectedTuple.Item1} ({selectedTuple.Item2}) {selectedTuple.Item3}";
                 }
                 else
                 {
@@ -249,7 +249,7 @@ namespace BPSR_ZDPS.Windows
                     {
                         bool isSelected = SelectedEncounterIndex == i;
 
-                        string encounterIndexText = $"[{i + 1}]";
+                        string encounterIndexText = $"[{(SelectedViewMode == 0 ? encounters[i].EncounterId : i + 1)}]##HistoricalEncounterSelectable_{i+1}";
                         var encounterTuple = BuildDropdownStringName(encounters[i].StartTime, encounters[i].EndTime, encounters[i].SceneName, i);
                         if (ImGui.Selectable(encounterIndexText, isSelected, ImGuiSelectableFlags.SpanAllColumns))
                         {

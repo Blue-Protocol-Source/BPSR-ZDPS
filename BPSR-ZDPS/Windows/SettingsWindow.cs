@@ -37,6 +37,11 @@ namespace BPSR_ZDPS.Windows
         static bool limitEncounterBuffTrackingWithoutDatabase;
         static bool allowEncounterSavingPausingInOpenWorld;
 
+        static bool meterSettingsTankingShowDeaths;
+        static bool meterSettingsNpcTakenShowHpData;
+        static bool meterSettingsNpcTakenHideMaxHp;
+        static bool meterSettingsNpcTakenUseHpMeter;
+
         static bool playNotificationSoundOnMatchmake;
         static string matchmakeNotificationSoundPath;
         static bool loopNotificationSoundOnMatchmake;
@@ -724,6 +729,53 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Unindent();
                         }
 
+                        if(ImGui.CollapsingHeader("Meter Settings"))
+                        {
+                            ImGui.SeparatorText("Tanking");
+
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("Show Deaths: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##MeterSettingsTankingShowDeaths", ref meterSettingsTankingShowDeaths);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, shows a Death counter for each entry in the Tanking Meter.");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+
+                            ImGui.SeparatorText("NPC Taken");
+
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("Show HP Data: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##MeterSettingsNpcTakenShowHpData", ref meterSettingsNpcTakenShowHpData);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, adds Current HP, Max HP, and HP Percent to each entry in the NPC Taken Meter.");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("Hide Max HP: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##MeterSettingsNpcTakenHideMaxHp", ref meterSettingsNpcTakenHideMaxHp);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, removes the Max HP value shown.");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("Show HP Percent Bar: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##MeterSettingsNpcTakenUseHpMeter", ref meterSettingsNpcTakenUseHpMeter);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, shows the current HP Percentage as a Red Bar instead of the Blue Bar that would normally show how much total damage the NPC has taken.");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+                        }
+
                         ImGui.SeparatorText("Window Property Resets");
 
                         if (ImGui.Button("Reset Main Window Position"))
@@ -1346,6 +1398,11 @@ namespace BPSR_ZDPS.Windows
             limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
             allowEncounterSavingPausingInOpenWorld = Settings.Instance.AllowEncounterSavingPausingInOpenWorld;
 
+            meterSettingsTankingShowDeaths = Settings.Instance.MeterSettingsTankingShowDeaths;
+            meterSettingsNpcTakenShowHpData = Settings.Instance.MeterSettingsNpcTakenShowHpData;
+            meterSettingsNpcTakenHideMaxHp = Settings.Instance.MeterSettingsNpcTakenHideMaxHp;
+            meterSettingsNpcTakenUseHpMeter = Settings.Instance.MeterSettingsNpcTakenUseHpMeter;
+
             GameCapturePreference = Settings.Instance.GameCapturePreference;
             gameCaptureCustomExeName = Settings.Instance.GameCaptureCustomExeName;
 
@@ -1435,6 +1492,11 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.UseDatabaseForEncounterHistory = useDatabaseForEncounterHistory;
             Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;
             Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase = limitEncounterBuffTrackingWithoutDatabase;
+
+            Settings.Instance.MeterSettingsTankingShowDeaths = meterSettingsTankingShowDeaths;
+            Settings.Instance.MeterSettingsNpcTakenShowHpData = meterSettingsNpcTakenShowHpData;
+            Settings.Instance.MeterSettingsNpcTakenHideMaxHp = meterSettingsNpcTakenHideMaxHp;
+            Settings.Instance.MeterSettingsNpcTakenUseHpMeter = meterSettingsNpcTakenUseHpMeter;
 
             Settings.Instance.PlayNotificationSoundOnMatchmake = playNotificationSoundOnMatchmake;
             Settings.Instance.MatchmakeNotificationSoundPath = matchmakeNotificationSoundPath;

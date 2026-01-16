@@ -805,9 +805,10 @@ namespace BPSR_ZDPS
             }
 
             var entity = GetOrCreateEntity(attackerUuid);
+            var targetEntity = GetOrCreateEntity(targetUuid);
 
-            long? currentHp = entity.GetAttrKV("AttrHp") as long?;
-            long? maxHp = entity.GetAttrKV("AttrMaxHp") as long?;
+            long? currentHp = targetEntity.GetAttrKV("AttrHp") as long?;
+            long? maxHp = targetEntity.GetAttrKV("AttrMaxHp") as long?;
 
             long overhealing = 0;
             long effectiveHealing = 0;

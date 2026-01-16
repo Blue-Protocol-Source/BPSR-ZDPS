@@ -19,7 +19,7 @@ namespace BPSR_ZDPS.Windows
 
         static int RunOnceDelayed = 0;
         static bool HasInitBindings = false;
-        static ulong RenderClearTime = 0;
+        static int CountdownRunOnceDelayed = 0;
 
         static bool IsEditMode = false;
         static Vector2? NewWarningWindowLocation = null;
@@ -50,7 +50,7 @@ namespace BPSR_ZDPS.Windows
                 HasInitBindings = true;
 
                 NotifyMsgClass.ClassId = ImGuiP.ImHashStr("RaidWarningNotificationsClass");
-                NotifyMsgClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost | ImGuiViewportFlags.NoTaskBarIcon | ImGuiViewportFlags.NoInputs | ImGuiViewportFlags.NoRendererClear;
+                NotifyMsgClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost | ImGuiViewportFlags.NoTaskBarIcon | ImGuiViewportFlags.NoInputs;// | ImGuiViewportFlags.NoRendererClear;
 
                 EditModeClass.ClassId = ImGuiP.ImHashStr("RaidWarningEditorClass");
                 EditModeClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost;
@@ -140,11 +140,6 @@ namespace BPSR_ZDPS.Windows
                 CenterDisplay();
             }
 
-            RenderClearTime++;
-            if (RenderClearTime > 3)
-            {
-                RenderClearTime = 0;
-            }
             if (RaidWarningMessages.Count > 0)
             {
                 ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -166,19 +161,38 @@ namespace BPSR_ZDPS.Windows
                 
                 ImGui.SetNextWindowSizeConstraints(new Vector2(0, 20), new Vector2(maxWindowWidth, ImGui.GETFLTMAX()));
 
-                // This is how we force a renderer clear for this window as there doesn't appear to be another way while we're supporting transparency
-                if (RenderClearTime % 2 == 0)
-                {
-                    ImGui.SetNextWindowSize(new Vector2(maxWindowWidth, RaidWarningMessages.Count * LineHeight));
-                }
-                else
-                {
-                    ImGui.SetNextWindowSize(new Vector2(maxWindowWidth, (RaidWarningMessages.Count * LineHeight) + 1));
-                }
+                ImGui.SetNextWindowSize(new Vector2(maxWindowWidth, RaidWarningMessages.Count * LineHeight));
 
-                if (ImGui.Begin($"RaidWarningMessagesWindow", ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoInputs | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse | ImGuiWindowFlags.NoBackground))
+                ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(17 / 255.0f, 17 / 255.0f, 17 / 255.0f, 0.0f));
+                ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0);
+                if (ImGui.Begin($"RaidWarningMessagesWindow", ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoInputs | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse))
                 {
-                    ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0, 0, 0, windowSettings.MessageBackgroundOpacity));
+                    if (CountdownRunOnceDelayed == 0)
+                    {
+                        CountdownRunOnceDelayed++;
+                    }
+                    else if (CountdownRunOnceDelayed <= 2)
+                    {
+                        CountdownRunOnceDelayed++;
+                        
+                    }
+                    else if (CountdownRunOnceDelayed < 3)
+                    {
+                        CountdownRunOnceDelayed++;
+                    }
+
+                    unsafe
+                    {
+                        // This is how we support transparency effects of just the background and not the text content.
+                        // SetLayeredWindowAttributes will chromakey the given 0xAABBGGRR value anywhere on the window and also set the Alpha of the window between 0-255
+                        // This is needed due to Nvidia drivers incorrectly behaving with performing an ImGui drawlist clear via Window Resize and using cached frames instead of drawing new ones like all other GPU vendors
+                        Hexa.NET.ImGui.Backends.Win32.ImGuiImplWin32.EnableAlphaCompositing(ImGui.GetWindowViewport().PlatformHandleRaw);
+                        Utils.SetWindowLong(User32.GWL_EXSTYLE, User32.GetWindowLong((nint)ImGui.GetWindowViewport().PlatformHandleRaw, User32.GWL_EXSTYLE) | (nint)User32.WS_EX_LAYERED);
+                        User32.SetLayeredWindowAttributes((nint)ImGui.GetWindowViewport().PlatformHandleRaw, 0x00111111, 255, User32.LWA_COLORKEY);
+                    }
+
+                    ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0.5f, 0, 0, 0.5f));
+                    //ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0.2f, 0, 0, windowSettings.MessageBackgroundOpacity));
                     if (ImGui.BeginChild("##WarningsListChild", ImGuiChildFlags.AutoResizeY, ImGuiWindowFlags.NoInputs))
                     {
                         ImGui.PushFont(null, 34.0f * (windowSettings.MessageTextScale * 0.01f));
@@ -227,8 +241,14 @@ namespace BPSR_ZDPS.Windows
                     ImGui.PopStyleColor();
                     ImGui.End();
                 }
+                ImGui.PopStyleVar();
+                ImGui.PopStyleColor();
 
                 ImGui.PopID();
+            }
+            else
+            {
+                CountdownRunOnceDelayed = 0;
             }
 
             if (!IsOpened)

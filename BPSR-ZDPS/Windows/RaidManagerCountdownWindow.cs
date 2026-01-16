@@ -21,7 +21,7 @@ namespace BPSR_ZDPS.Windows
         static bool HasInitBindings = false;
         static bool IsEditMode = false;
         static Vector2? NewCountdownWindowLocation = null;
-        static ulong RenderClearTime = 0;
+        static int CountdownRunOnceDelayed = 0;
 
         static bool HasCountdown = false;
         static DateTime CountdownEnd;
@@ -52,12 +52,12 @@ namespace BPSR_ZDPS.Windows
                 HasInitBindings = true;
 
                 CountdownDisplayClass.ClassId = ImGuiP.ImHashStr("CountdownClass");
-                CountdownDisplayClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost | ImGuiViewportFlags.NoTaskBarIcon | ImGuiViewportFlags.NoInputs | ImGuiViewportFlags.NoRendererClear;
+                CountdownDisplayClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost | ImGuiViewportFlags.NoTaskBarIcon | ImGuiViewportFlags.NoInputs;// | ImGuiViewportFlags.NoRendererClear;
 
                 CountdownEditorClass.ClassId = ImGuiP.ImHashStr("CountdownEditorClass");
                 CountdownEditorClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost;
 
-                ChatManager.OnChatMessage += RaidManager_OnChatMessage; ;
+                ChatManager.OnChatMessage += RaidManager_OnChatMessage;
             }
         }
 
@@ -101,6 +101,7 @@ namespace BPSR_ZDPS.Windows
         static void StartCountdown(int seconds)
         {
             CountdownEnd = DateTime.Now.AddSeconds(seconds);
+            CountdownRunOnceDelayed = 0;
             HasCountdown = true;
         }
 
@@ -120,12 +121,6 @@ namespace BPSR_ZDPS.Windows
                 CenterDisplay();
             }
 
-            RenderClearTime++;
-            if (RenderClearTime > 3)
-            {
-                RenderClearTime = 0;
-            }
-
             if (HasCountdown)
             {
                 ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -135,16 +130,8 @@ namespace BPSR_ZDPS.Windows
                 {
                     ImGui.SetNextWindowClass(CountdownDisplayClass);
 
-                    // This is how we force a renderer clear for this window as there doesn't appear to be another way while we're supporting transparency
-                    if (RenderClearTime % 2 == 0)
-                    {
-                        ImGui.SetNextWindowSize(new Vector2(300, 300), ImGuiCond.Always);
-                    }
-                    else
-                    {
-                        ImGui.SetNextWindowSize(new Vector2(300, 301), ImGuiCond.Always);
-                    }
-                    
+                    ImGui.SetNextWindowSize(new Vector2(300, 300), ImGuiCond.Always);
+
                     if (windowSettings.CountdownPosition != new Vector2())
                     {
                         ImGui.SetNextWindowPos(windowSettings.CountdownPosition, ImGuiCond.Appearing);
@@ -156,10 +143,34 @@ namespace BPSR_ZDPS.Windows
                         NewCountdownWindowLocation = null;
                     }
 
-                    if (ImGui.Begin("Countdown", ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoInputs))
+                    ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(1 / 255.0f, 1 / 255.0f, 1 / 255.0f, 0.0f));
+                    ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0);
+                    if (ImGui.Begin("Countdown", ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoInputs))
                     {
+                        if (CountdownRunOnceDelayed == 0)
+                        {
+                            CountdownRunOnceDelayed++;
+                        }
+                        else if (CountdownRunOnceDelayed <= 2)
+                        {
+                            CountdownRunOnceDelayed++;
+                            unsafe
+                            {
+                                // This is how we support transparency effects of just the background and not the text content.
+                                // SetLayeredWindowAttributes will chromakey the given 0xAABBGGRR value anywhere on the window and also set the Alpha of the window between 0-255
+                                // This is needed due to Nvidia drivers incorrectly behaving with performing an ImGui drawlist clear via Window Resize and using cached frames instead of drawing new ones like all other GPU vendors
+                                Hexa.NET.ImGui.Backends.Win32.ImGuiImplWin32.EnableAlphaCompositing(ImGui.GetWindowViewport().PlatformHandleRaw);
+                                Utils.SetWindowLong(User32.GWL_EXSTYLE, User32.GetWindowLong((nint)ImGui.GetWindowViewport().PlatformHandleRaw, User32.GWL_EXSTYLE) | (nint)User32.WS_EX_LAYERED);
+                                User32.SetLayeredWindowAttributes((nint)ImGui.GetWindowViewport().PlatformHandleRaw, 0x00010101, 255, User32.LWA_COLORKEY | User32.LWA_ALPHA);
+                            }
+                        }
+                        else if (CountdownRunOnceDelayed < 3)
+                        {
+                            CountdownRunOnceDelayed++;
+                        }
+
                         ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0, 0, 0, 0.0f));
-                        if (ImGui.BeginChild("##CountdownChild", new Vector2(0, 0), ImGuiWindowFlags.NoInputs))
+                        if (ImGui.BeginChild("##CountdownChild", new Vector2(0, 0), ImGuiChildFlags.None, ImGuiWindowFlags.NoInputs))
                         {
                             if (windowSettings.UseStylizedNumbers)
                             {
@@ -198,6 +209,8 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.End();
                     }
+                    ImGui.PopStyleVar();
+                    ImGui.PopStyleColor();
                 }
                 else
                 {
@@ -205,6 +218,10 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.PopID();
+            }
+            else
+            {
+                CountdownRunOnceDelayed = 0;
             }
 
             if (!IsOpened)
