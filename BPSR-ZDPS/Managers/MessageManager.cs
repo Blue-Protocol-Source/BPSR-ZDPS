@@ -702,18 +702,6 @@ namespace BPSR_ZDPS
                         }
                         EncounterManager.Current.SetAttrKV(uuid, "AttrHateList", hateList);
                         break;
-                    case EAttrType.AttrSeasonLevel:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrSeasonLevel", reader.ReadInt32());
-                        break;
-                    case EAttrType.AttrSeasonStrength:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrSeasonStrength", reader.ReadInt32());
-                        break;
-                    case EAttrType.AttrSeasonStrengthAdd:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrSeasonStrengthAdd", reader.ReadInt32());
-                        break;
-                    case EAttrType.AttrSeasonStrengthTotal:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrSeasonStrengthTotal", reader.ReadInt32());
-                        break;
                     case EAttrType.AttrSkillLevelIdList:
                         EncounterManager.Current.SetAttrKV(uuid, "AttrSkillLevelIdList", reader.ReadInt32());
                         // TODO: Enable this when we want to track every skill level and tier for players when they appear
@@ -1192,16 +1180,6 @@ namespace BPSR_ZDPS
 
                 EncounterManager.SetSceneId(sceneData.LevelMapId);
                 EncounterManager.Current.SetChannelLineNumber(sceneData.LineId);
-            }
-
-            var seasonRoleLevelData = vData.SeasonRoleLevelData;
-            if (seasonRoleLevelData != null)
-            {
-                var lastSeason = seasonRoleLevelData.SeasonRoleLevelMap.LastOrDefault();
-                if (lastSeason.Value != null)
-                {
-                    EncounterManager.Current.SetAttrKV(playerUuid, "AttrSeasonLevel", lastSeason.Value.Level);
-                }
             }
 
             if (vData.Equip != null)

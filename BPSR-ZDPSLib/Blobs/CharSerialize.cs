@@ -20,7 +20,6 @@ public class CharSerialize(BlobReader blob) : BlobType(ref blob)
     // ...
     public FightPoint? FightPoint;
     // ...
-    public SeasonRoleLevelData? SeasonRoleLevelData;
 
     public override bool ParseField(int index, ref BlobReader blob)
     {
@@ -46,9 +45,6 @@ public class CharSerialize(BlobReader blob) : BlobType(ref blob)
                 return true;
             case Zproto.CharSerialize.FightPointFieldNumber:
                 FightPoint = new(blob);
-                return true;
-            case Zproto.CharSerialize.SeasonRoleLevelDataFieldNumber:
-                SeasonRoleLevelData = new(blob);
                 return true;
             default:
                 return false;
