@@ -4,6 +4,7 @@ using BPSR_ZDPS.Managers;
 using Hexa.NET.ImGui;
 using System.Globalization;
 using System.Numerics;
+using ZLinq;
 using Zproto;
 
 namespace BPSR_ZDPS.Windows
@@ -22,6 +23,9 @@ namespace BPSR_ZDPS.Windows
         static ChatTab SelectedChatTab = null;
         static bool IsEditingNewTab = false;
         static ChatTab EditingTab = null;
+
+        static string EntityNameFilter = "";
+        static KeyValuePair<long, EntityCacheLine>[]? EntityFilterMatches = [];
 
         static ChatWindow()
         {
@@ -401,34 +405,107 @@ namespace BPSR_ZDPS.Windows
                 var height = windowViewport.Size.Y - 100;
                 if (ImGui.BeginChild("BlockedUserArea", new Vector2(500, height), ImGuiChildFlags.None, ImGuiWindowFlags.NoDecoration))
                 {
-                    if (ImGui.BeginTable("BlockedUserTable", 4, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchProp))
+                    if (ImGui.CollapsingHeader("Blocked Users", ImGuiTreeNodeFlags.DefaultOpen))
                     {
-                        ImGui.TableSetupColumn("Blocked At", ImGuiTableColumnFlags.WidthFixed, 100f);
-                        ImGui.TableSetupColumn("UID", ImGuiTableColumnFlags.WidthFixed, 100f);
-                        ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
-                        ImGui.TableSetupColumn("Actions", ImGuiTableColumnFlags.WidthFixed, 80f);
-                        ImGui.TableHeadersRow();
-
-                        foreach (var blockedUser in Settings.Instance.Chat.BlockedUsers.Values)
+                        if (ImGui.BeginTable("BlockedUserTable", 4, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchProp))
                         {
-                            ImGui.TableNextRow();
-                            ImGui.TableNextColumn();
-                            ImGui.TextUnformatted($"{(blockedUser.BlockedAt.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture))}");
+                            ImGui.TableSetupColumn("Blocked At", ImGuiTableColumnFlags.WidthFixed, 100f);
+                            ImGui.TableSetupColumn("UID", ImGuiTableColumnFlags.WidthFixed, 100f);
+                            ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
+                            ImGui.TableSetupColumn("Actions", ImGuiTableColumnFlags.WidthFixed, 80f);
+                            ImGui.TableHeadersRow();
 
-                            ImGui.TableNextColumn();
-                            ImGui.TextUnformatted($"{blockedUser.ID}");
-
-                            ImGui.TableNextColumn();
-                            ImGui.TextUnformatted($"{blockedUser.Name}");
-
-                            ImGui.TableNextColumn();
-                            if (ImGui.Button($"Unblock##{blockedUser.ID}", new Vector2(-1, 0)))
+                            foreach (var blockedUser in Settings.Instance.Chat.BlockedUsers.Values)
                             {
-                                ChatManager.UnblockUser(blockedUser.ID);
+                                ImGui.TableNextRow();
+                                ImGui.TableNextColumn();
+                                ImGui.TextUnformatted($"{(blockedUser.BlockedAt.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture))}");
+
+                                ImGui.TableNextColumn();
+                                ImGui.TextUnformatted($"{blockedUser.ID}");
+
+                                ImGui.TableNextColumn();
+                                ImGui.TextUnformatted($"{blockedUser.Name}");
+
+                                ImGui.TableNextColumn();
+                                if (ImGui.Button($"Unblock##{blockedUser.ID}", new Vector2(-1, 0)))
+                                {
+                                    ChatManager.UnblockUser(blockedUser.ID);
+                                }
+                            }
+
+                            ImGui.EndTable();
+                        }
+                    }
+
+                    if (ImGui.CollapsingHeader("Add Player Search"))
+                    {
+                        ImGui.TextUnformatted("Select Players from the list below to add them to the chat block list.");
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Entity Filter: ");
+                        ImGui.SameLine();
+                        ImGui.PushItemWidth(ImGui.GetContentRegionAvail().X);
+
+                        if (ImGui.InputText("##EntityFilterText", ref EntityNameFilter, 64))
+                        {
+                            if (EntityNameFilter.Length > 0)
+                            {
+                                bool isNum = Char.IsNumber(EntityNameFilter[0]);
+                                EntityFilterMatches = EntityCache.Instance.Cache.Lines.AsValueEnumerable().Where(x => isNum ? x.Value.UID.ToString().Contains(EntityNameFilter) : x.Value.Name != null && x.Value.Name.Contains(EntityNameFilter, StringComparison.OrdinalIgnoreCase)).ToArray();
+                            }
+                            else
+                            {
+                                EntityFilterMatches = null;
                             }
                         }
 
-                        ImGui.EndTable();
+                        if (ImGui.BeginListBox("##PlayerListBox", new Vector2(ImGui.GetContentRegionAvail().X, 120)))
+                        {
+                            if (EntityFilterMatches != null && (EntityFilterMatches.Length < 100 || EntityNameFilter.Length > 2))
+                            {
+                                if (EntityFilterMatches.Any())
+                                {
+                                    long matchIdx = 0;
+                                    foreach (var match in EntityFilterMatches)
+                                    {
+                                        if (!ChatManager.IsUserBlocked(match.Value.UID))
+                                        {
+                                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.Green_Transparent);
+                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                                            if (ImGui.Button($"{FASIcons.Plus}##AddBtn_{matchIdx}", new Vector2(30, 30)))
+                                            {
+                                                var user = new User(new BasicShowInfo()
+                                                {
+                                                    CharId = match.Value.UID,
+                                                    Name = match.Value.Name
+                                                });
+                                                ChatManager.BlockUser(user);
+                                            }
+                                            ImGui.PopFont();
+                                            ImGui.PopStyleColor();
+                                        }
+                                        else
+                                        {
+                                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
+                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                                            if (ImGui.Button($"{FASIcons.Minus}##RemoveBtn_{matchIdx}", new Vector2(30, 30)))
+                                            {
+                                                ChatManager.UnblockUser(match.Value.UID);
+                                            }
+                                            ImGui.PopFont();
+                                            ImGui.PopStyleColor();
+                                        }
+
+                                        ImGui.SameLine();
+                                        ImGui.Text($"{match.Value.Name} [U:{match.Value.UID}] {{UU:{match.Value.UUID}}}");
+
+                                        matchIdx++;
+                                    }
+                                }
+                            }
+                            ImGui.EndListBox();
+                        }
                     }
                 }
                 ImGui.EndChild();
