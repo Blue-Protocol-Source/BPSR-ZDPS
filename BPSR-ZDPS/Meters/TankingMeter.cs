@@ -49,7 +49,7 @@ namespace BPSR_ZDPS.Meters
                     }
                 }
 
-                var playerList = ActiveEncounter?.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == Zproto.EEntityType.EntChar && x.Value.TotalTakenDamage > 0).OrderByDescending(x => x.Value.TotalTakenDamage).ToArray();
+                var playerList = ActiveEncounter?.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == Zproto.EEntityType.EntChar && (x.Value.TotalTakenDamage > 0 || x.Value.TotalDeaths > 0)).OrderByDescending(x => x.Value.TotalTakenDamage).ToArray();
 
                 ulong topTotalValue = 0;
 
@@ -110,7 +110,14 @@ namespace BPSR_ZDPS.Meters
                     }
                     string totalTaken = Utils.NumberToShorthand(entity.TotalTakenDamage);
                     string totalTps = Utils.NumberToShorthand(entity.TakenStats.ValuePerSecond);
-                    string tps_format = $"{totalTaken} {truePerSecond}({totalTps}) {contribution.ToString("F0").PadLeft(3, ' ')}%";
+                    StringBuilder format = new();
+
+                    if (Settings.Instance.MeterSettingsTankingShowDeaths)
+                    {
+                        format.Append($"[ {entity.TotalDeaths} ] ");
+                    }
+
+                    format.Append($"{totalTaken} {truePerSecond}({totalTps}) {contribution.ToString("F0").PadLeft(3, ' ')}%");
                     var startPoint = ImGui.GetCursorPos();
 
                     ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f * Settings.Instance.WindowSettings.MainWindow.MeterBarScale);
@@ -132,7 +139,7 @@ namespace BPSR_ZDPS.Meters
                     }
 
                     ImGui.SetCursorPos(startPoint);
-                    if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{name}{professionStr}{abilityScoreStr}##TpsEntry_{i}", tps_format, entity.ProfessionId))
+                    if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{name}{professionStr}{abilityScoreStr}##TpsEntry_{i}", format.ToString(), entity.ProfessionId))
                     //if (SelectableWithHint($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}. {name}-{profession} ({entity.AbilityScore})##TpsEntry_{i}", tps_format))
                     {
                         mainWindow.entityInspector = new EntityInspector();

@@ -109,11 +109,7 @@ namespace BPSR_ZDPS.Meters
                     ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f * Settings.Instance.WindowSettings.MainWindow.MeterBarScale);
 
                     bool hasHpData = entity.Hp >= 0 && entity.MaxHp > 0;
-                    if (!Settings.Instance.MeterSettingsNpcTakenUseHpMeter || !hasHpData)
-                    {
-                        ImGui.ProgressBar((float)contributionProgressBar / 100.0f, new Vector2(-1, 0), $"##TakenEntryContribution_{i}");
-                    }
-                    else if (hasHpData)
+                    if (hasHpData && (Settings.Instance.MeterSettingsNpcTakenShowHpData || Settings.Instance.MeterSettingsNpcTakenUseHpMeter))
                     {
                         var healthPct = MathF.Round((float)entity.Hp / (float)entity.MaxHp, 4);
 
@@ -142,6 +138,11 @@ namespace BPSR_ZDPS.Meters
                             ImGui.ProgressBar(healthPct, new Vector2(-1, 0), $"##TakenEntryHealth_{i}");
                             ImGui.PopStyleColor();
                         }
+                    }
+
+                    if (!Settings.Instance.MeterSettingsNpcTakenUseHpMeter || !hasHpData)
+                    {
+                        ImGui.ProgressBar((float)contributionProgressBar / 100.0f, new Vector2(-1, 0), $"##TakenEntryContribution_{i}");
                     }
 
                     format.Append($" {totalTaken} {truePerSecond}({totalTps}) {contribution.ToString("F0").PadLeft(3, ' ')}%");

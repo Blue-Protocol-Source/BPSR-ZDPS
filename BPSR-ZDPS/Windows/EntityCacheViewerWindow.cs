@@ -138,9 +138,9 @@ namespace BPSR_ZDPS
                         var sb = new StringBuilder();
                         sb.AppendLine($"Name: {item.Value.Name}");
                         sb.AppendLine($"UID: {item.Value.UID}");
-                        sb.AppendLine($"Ability Score: {item.Value.AbilityScore}");
+                        sb.AppendLine($"Ability Score: {item.Value.AbilityScore} (+ {item.Value.SeasonStrength})");
                         sb.AppendLine($"Profession: {Professions.GetProfessionNameFromId(item.Value.ProfessionId)}{(item.Value.SubProfessionId > 0 ? $" - {Professions.GetSubProfessionNameFromId(item.Value.SubProfessionId)}" : "")}");
-                        sb.AppendLine($"Level: {item.Value.Level}");
+                        sb.AppendLine($"Level: {item.Value.Level} (+ {item.Value.SeasonLevel})");
 
                         ImGui.Selectable($"{sb}");
                         ImGui.EndGroup();

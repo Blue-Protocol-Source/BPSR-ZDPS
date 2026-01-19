@@ -43,6 +43,8 @@ namespace BPSR_ZDPS.Windows
         public Vector2 WindowSize;
         public Vector2 NextWindowSize = new();
 
+        static ImGuiWindowClassPtr ContextMenuClass = ImGui.ImGuiWindowClass();
+
         public void Draw()
         {
             DrawContent();
@@ -170,6 +172,9 @@ namespace BPSR_ZDPS.Windows
                 Meters.Add(new HealingMeter());
                 Meters.Add(new TankingMeter());
                 Meters.Add(new TakenMeter());
+
+                ContextMenuClass.ClassId = ImGuiP.ImHashStr("MainWindowContextMenuClass");
+                ContextMenuClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost;
             }
             if (RunOnceDelayed == 0)
             {
@@ -448,6 +453,10 @@ namespace BPSR_ZDPS.Windows
                     }
                     ImGui.SetItemTooltip("Manage the ZDatabase.db contents.");
 
+                    if (windowSettings.TopMost)
+                    {
+                        ImGui.SetNextWindowClass(ContextMenuClass);
+                    }
                     if (ImGui.BeginMenu("Raid Manager"))
                     {
                         if (ImGui.MenuItem("Cooldown Priority Tracker"))
@@ -473,6 +482,10 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndMenu();
                     }
 
+                    if (windowSettings.TopMost)
+                    {
+                        ImGui.SetNextWindowClass(ContextMenuClass);
+                    }
                     if (ImGui.BeginMenu("Benchmark", !AppState.IsEncounterSavingPaused))
                     {
                         ImGui.TextUnformatted("Enter how many seconds you want to run a Benchmark session for:");
@@ -532,11 +545,23 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndMenu();
                     }
 
+                    if (windowSettings.TopMost)
+                    {
+                        ImGui.SetNextWindowClass(ContextMenuClass);
+                    }
                     if (ImGui.BeginMenu("Integrations"))
                     {
                         bool isBPTimerEnabled = Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled;
+                        if (windowSettings.TopMost)
+                        {
+                            ImGui.SetNextWindowClass(ContextMenuClass);
+                        }
                         if (ImGui.BeginMenu("BPTimer", isBPTimerEnabled))
                         {
+                            if (windowSettings.TopMost)
+                            {
+                                ImGui.SetNextWindowClass(ContextMenuClass);
+                            }
                             if (ImGui.MenuItem("Spawn Tracker"))
                             {
                                 SpawnTrackerWindow.Open();
@@ -568,6 +593,10 @@ namespace BPSR_ZDPS.Windows
                         SettingsWindow.Open();
                     }
                     ImGui.Separator();
+                    if (windowSettings.TopMost)
+                    {
+                        ImGui.SetNextWindowClass(ContextMenuClass);
+                    }
                     if (ImGui.BeginMenu("Debug"))
                     {
                         if (ImGui.MenuItem("Net Debug"))

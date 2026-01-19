@@ -23,7 +23,9 @@ namespace BPSR_ZDPS.Windows
         static bool colorClassIconsByRole;
         static bool showSkillIconsInDetails;
         static bool onlyShowDamageContributorsInMeters;
+        static bool onlyShowPartyMembersInMeters;
         static bool showAbilityScoreInMeters;
+        static bool showSeasonStrengthInMeters;
         static bool showSubProfessionNameInMeters;
         static bool useAutomaticWipeDetection;
         static bool skipTeleportStateCheckInAutomaticWipeDetection;
@@ -546,12 +548,32 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Unindent();
 
                         ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Only Show Party Members In Meters: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##OnlyShowPartyMembersInMeters", ref onlyShowPartyMembersInMeters);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, only players who are in the current party will show in the DPS meter.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
                         ImGui.Text("Show Ability Score In Meters: ");
                         ImGui.SameLine();
                         ImGui.Checkbox("##ShowAbilityScoreInMeters", ref showAbilityScoreInMeters);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
                         ImGui.TextWrapped("When enabled, the Ability Score for players will be shown in the meters.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Show Season Strength In Meters: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##ShowSeasonStrengthInMeters", ref showSeasonStrengthInMeters);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, the Season Strength for players will be shown in the meters.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -1383,7 +1405,9 @@ namespace BPSR_ZDPS.Windows
             colorClassIconsByRole = Settings.Instance.ColorClassIconsByRole;
             showSkillIconsInDetails = Settings.Instance.ShowSkillIconsInDetails;
             onlyShowDamageContributorsInMeters = Settings.Instance.OnlyShowDamageContributorsInMeters;
+            onlyShowPartyMembersInMeters = Settings.Instance.OnlyShowPartyMembersInMeters;
             showAbilityScoreInMeters = Settings.Instance.ShowAbilityScoreInMeters;
+            showSeasonStrengthInMeters = Settings.Instance.ShowSeasonStrengthInMeters;
             showSubProfessionNameInMeters = Settings.Instance.ShowSubProfessionNameInMeters;
             useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
             skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
@@ -1479,7 +1503,9 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.ColorClassIconsByRole = colorClassIconsByRole;
             Settings.Instance.ShowSkillIconsInDetails = showSkillIconsInDetails;
             Settings.Instance.OnlyShowDamageContributorsInMeters = onlyShowDamageContributorsInMeters;
+            Settings.Instance.OnlyShowPartyMembersInMeters = onlyShowPartyMembersInMeters;
             Settings.Instance.ShowAbilityScoreInMeters = showAbilityScoreInMeters;
+            Settings.Instance.ShowSeasonStrengthInMeters = showSeasonStrengthInMeters;
             Settings.Instance.ShowSubProfessionNameInMeters = showSubProfessionNameInMeters;
             Settings.Instance.UseAutomaticWipeDetection = useAutomaticWipeDetection;
             Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection = skipTeleportStateCheckInAutomaticWipeDetection;

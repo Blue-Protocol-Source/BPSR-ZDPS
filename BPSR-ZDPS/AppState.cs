@@ -38,6 +38,8 @@ namespace BPSR_ZDPS
 
         public static bool IsChatEnabled = true;
 
+        public static long PartyTeamId = 0;
+
         public static void LoadDataTables()
         {
             // Load table data for resolving with in the future

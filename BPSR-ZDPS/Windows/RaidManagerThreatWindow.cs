@@ -142,7 +142,7 @@ namespace BPSR_ZDPS.Windows
 
                     int trackedEntityIdx = 0;
 
-                    foreach (var trackedEntity in TrackedEntities.AsValueEnumerable())
+                    foreach (var trackedEntity in (IReadOnlyList<KeyValuePair<long, List<ThreatInfo>>>)TrackedEntities.AsValueEnumerable().ToList())
                     {
                         var threatList = trackedEntity.Value.AsValueEnumerable().OrderByDescending(x => x.ThreatValue).Where(x => Utils.UuidToEntityType(x.EntityUuid) == (long)Zproto.EEntityType.EntChar);
 
@@ -169,7 +169,15 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Indent();
                             float indentOffset = ImGui.GetCursorPosX();
                             ImGui.PushStyleColor(ImGuiCol.PlotHistogram, Colors.DarkRed);
-                            var threatName = EntityCache.Instance.Cache.Lines[threat.EntityUuid]?.Name;
+                            string threatName = "";
+                            if (EntityCache.Instance.Cache.Lines.TryGetValue(threat.EntityUuid, out var cached))
+                            {
+                                threatName = cached.Name;
+                            }
+                            else
+                            {
+                                threatName = $"[UUID: {threat.EntityUuid}]";
+                            }
 
                             float progressPct = 1.0f;
                             if (threatListIdx > 0 && topThreatValue > 0)

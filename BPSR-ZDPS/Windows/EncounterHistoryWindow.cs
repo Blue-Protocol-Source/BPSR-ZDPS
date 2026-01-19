@@ -339,7 +339,7 @@ namespace BPSR_ZDPS.Windows
                 if (SelectedEncounterIndex != -1)
                 {
                     ImGuiTableFlags tableFlags = ImGuiTableFlags.ScrollX;
-                    int columnsCount = 25;
+                    int columnsCount = 26;
                     if (ImGui.BeginTable("##HistoricalEncounterStatsTable", columnsCount, tableFlags, new Vector2(-1, -1)))
                     {
                         ImGui.TableSetupColumn("#");
@@ -347,6 +347,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Name");
                         ImGui.TableSetupColumn("Profession");
                         ImGui.TableSetupColumn("Ability Score");
+                        ImGui.TableSetupColumn("Season Strength");
                         ImGui.TableSetupColumn("Total DMG");
                         ImGui.TableSetupColumn("Total DPS");
                         ImGui.TableSetupColumn("Shield Break");
@@ -468,6 +469,9 @@ namespace BPSR_ZDPS.Windows
 
                             ImGui.TableNextColumn();
                             ImGui.TextUnformatted(entity.AbilityScore.ToString());
+
+                            ImGui.TableNextColumn();
+                            ImGui.TextUnformatted(entity.SeasonStrength.ToString());
 
                             ImGui.TableNextColumn();
                             string totalDamageDealt = Utils.NumberToShorthand(entity.TotalDamage);

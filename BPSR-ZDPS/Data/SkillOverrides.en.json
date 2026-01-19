@@ -287,6 +287,16 @@
     },
     "1560":
     {
+        "Name": "Regen Pulse",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx05"
+    },
+    "1561":
+    {
+        "Name": "Regen Pulse (Pulse Retrospect)",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx05"
+    },
+    "1562":
+    {
         "Name": "Healing Ring (Spreads once, heals once)",
         "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx05"
     },
@@ -882,35 +892,77 @@
     },
     "3210061":
     {
-        "Name": "Stunt! Super Critical - Passive"
+        "Name": "Stunt! Super Critical - Passive",
+        "Desc": "Muku Warrior"
     },
     "391001":
     {
-        "Name": "Stunt! Chaotic Barrage - Missle 01"
+        "Name": "Stunt! Chaotic Barrage - Missile 01",
+        "Desc": "Void Ogre"
     },
     "391002":
     {
-        "Name": "Stunt! Chaotic Barrage - Missle 02"
+        "Name": "Stunt! Chaotic Barrage - Missile 02",
+        "Desc": "Void Ogre"
     },
     "391003":
     {
-        "Name": "Stunt! Chaotic Barrage - Missle 03"
+        "Name": "Stunt! Chaotic Barrage - Missile 03",
+        "Desc": "Void Ogre"
     },
     "391004":
     {
-        "Name": "Stunt! Chaotic Barrage - Missle 04"
+        "Name": "Stunt! Chaotic Barrage - Missile 04",
+        "Desc": "Void Ogre"
     },
     "391005":
     {
-        "Name": "Stunt! Chaotic Barrage - Missle 05"
+        "Name": "Stunt! Chaotic Barrage - Missile 05",
+        "Desc": "Void Ogre"
     },
     "391006":
     {
-        "Name": "Stunt! Chaotic Barrage - Missle 06"
+        "Name": "Stunt! Chaotic Barrage - Missile 06",
+        "Desc": "Void Ogre"
     },
     "3698":
     {
         "Name": "Wind Goblin King (Passive)"
+    },
+    "3920":
+    {
+        "Name": "Arcane! Blessing of Life",
+        "Desc": "Airona"
+    },
+    "3921":
+    {
+        "Name": "Arcane! Time Decree",
+        "Desc": "Tina"
+    },
+    "3922":
+    {
+        "Name": "Arcane! Flash Execution",
+        "Desc": "Olvera"
+    },
+    "3923":
+    {
+        "Name": "Arcane! Furious Hammer",
+        "Desc": "Muku Chief"
+    },
+    "3924":
+    {
+        "Name": "Stunt! Gale of Silence",
+        "Desc": "Goblin Wind Mage"
+    },
+    "3925":
+    {
+        "Name": "Stunt! Invisible Impact",
+        "Desc": "Mighty Colossus"
+    },
+    "3926":
+    {
+        "Name": "Arcane! Meteor Shower",
+        "Desc": "Storm Goblin King"
     },
     "7003":
     {
@@ -927,6 +979,10 @@
     "7051":
     {
         "Name": "Triple Flame Cleave"
+    },
+    "7998":
+    {
+        "Name": "Fantasia Impact"
     },
     "20301":
     {
@@ -954,7 +1010,8 @@
     },
     "21418":
     {
-        "Name": "Deer Rush"
+        "Name": "Stag Charge",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_tg01_01"
     },
     "21423":
     {
@@ -966,19 +1023,19 @@
     },
     "21427":
     {
-        "Name": "Smite Healing Misses A1"
+        "Name": "Smite Healing Missiles A1"
     },
     "21428":
     {
-        "Name": "Smite Healing Misses A2"
+        "Name": "Smite Healing Missiles A2"
     },
     "21429":
     {
-        "Name": "Smite Healing Misses A3"
+        "Name": "Smite Healing Missiles A3"
     },
     "21430":
     {
-        "Name": "Smite Healing Misses A4"
+        "Name": "Smite Healing Missiles A4"
     },
     "27009":
     {
@@ -1039,6 +1096,10 @@
     "50058":
     {
         "Name": "Brave Bastion"
+    },
+    "50067":
+    {
+        "Name": "Block Counterattack - Medium"
     },
     "50068":
     {
@@ -1216,6 +1277,14 @@
     {
         "Name": "Boar Charge"
     },
+    "101004":
+    {
+        "Name": "Caprahorn Kick"
+    },
+    "101101":
+    {
+        "Name": "Eagle Dive"
+    },
     "101112":
     {
         "Name": "Falcon Dive"
@@ -1238,7 +1307,8 @@
     },
     "102640":
     {
-        "Name": "Special Skill! Hog Rush (Mighty Boar)"
+        "Name": "Stunt! Boarrier Rush",
+        "Desc": "Boarrier Tyrant"
     },
     "110412":
     {
@@ -1508,7 +1578,8 @@
     },
     "150101":
     {
-        "Name": "Deer Rush"
+        "Name": "Stag Charge",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_tg01_01"
     },
     "1550":
     {
@@ -1957,6 +2028,10 @@
     {
         "Name": "Void Wave Explosion"
     },
+    "705021":
+    {
+        "Name": "Crimson Foxen - Target Role Strike"
+    },
     "800008":
     {
         "Name": "Arcado's Raijin Dash"
@@ -2049,6 +2124,14 @@
     {
         "Name": "Void Corruption: Mark (Debuff)"
     },
+    "881721":
+    {
+        "Name": "Corrosion"
+    },
+    "881733":
+    {
+        "Name": "Corrosive Rain"
+    },
     "900052":
     {
         "Name": "Dark Mist Fortress - Void Corruption"
@@ -2080,6 +2163,10 @@
     "990603":
     {
         "Name": "Poisoned"
+    },
+    "990821":
+    {
+        "Name": "Petrified"
     },
     "995129":
     {
@@ -2123,7 +2210,8 @@
     },
     "1002440":
     {
-        "Name": "Stunt! Super Critical"
+        "Name": "Stunt! Super Critical",
+        "Desc": "Muku Warrior"
     },
     "1002801":
     {
@@ -2151,7 +2239,8 @@
     },
     "1002830":
     {
-        "Name": "Arcane! Frostquake"
+        "Name": "Arcane! Frostquake",
+        "Desc": "Frost Ogre"
     },
     "1002850":
     {
@@ -2311,7 +2400,8 @@
     },
     "1006940":
     {
-        "Name": "Arcane! Cocoon Tech"
+        "Name": "Arcane! Cocoon Tech",
+        "Desc": "Phantom Arachnocrab"
     },
     "1006999":
     {
@@ -2355,11 +2445,13 @@
     },
     "1007740":
     {
-        "Name": "Arcane! Poison Explosion"
+        "Name": "Arcane! Poison Explosion",
+        "Desc": "Venobzzar Incubator"
     },
     "1007741":
     {
-        "Name": "Arcane! Poison Explosion Avatar"
+        "Name": "Arcane! Poison Explosion Avatar",
+        "Desc": "Venobzzar Incubator"
     },
     "1007798":
     {
@@ -2431,19 +2523,68 @@
     },
     "1008440":
     {
-        "Name": "Arcane! Azure Gale"
+        "Name": "Arcane! Azure Gale",
+        "Desc": "Celestial Flier"
     },
     "1008540":
     {
-        "Name": "Arcane! Silent Tide"
+        "Name": "Arcane! Silent Tide",
+        "Desc": "Lizardman King"
     },
     "1008641":
     {
-        "Name": "Stunt! Whirlwind Strike"
+        "Name": "Stunt! Whirlwind Strike",
+        "Desc": "Storm Goblin Warrior"
     },
     "1010440":
     {
-        "Name": "Stunt! Thunder Suppress"
+        "Name": "Stunt! Thunder Suppress",
+        "Desc": "Lizardman Hunter"
+    },
+    "1011011":
+    {
+        "Name": "Arcane! Blazing Flames",
+        "Desc": "Blackstone Captain"
+    },
+    "1011304":
+    {
+        "Name": "Cabbage Swordsman Swing"
+    },
+    "1011805":
+    {
+        "Name": "Lethal Skill: Hammer Spin"
+    },
+    "1011810":
+    {
+        "Name": "Cabbage Kingpin - Enrage"
+    },
+    "1100102":
+    {
+        "Name": "Rock Spit"
+    },
+    "1100106":
+    {
+        "Name": "Flame Charge"
+    },
+    "1100701":
+    {
+        "Name": "Basilisk Bite"
+    },
+    "1100702":
+    {
+        "Name": "Petrifying Breath"
+    },
+    "1100799":
+    {
+        "Name": "Petrification Spike"
+    },
+    "1101403":
+    {
+        "Name": "Goblin Chief - Light Beams"
+    },
+    "1101405":
+    {
+        "Name": "Goblin Chief - Enrage"
     },
     "1205004":
     {
@@ -2543,7 +2684,20 @@
     },
     "1700440":
     {
-        "Name": "Arcane! Furious Hammer"
+        "Name": "Arcane! Furious Hammer",
+        "Desc": "Muku Chief"
+    },
+    "1700701":
+    {
+        "Name": "Crimson Foxen - Double Claw Strike"
+    },
+    "1700703":
+    {
+        "Name": "Crimson Foxen - Leap Strike"
+    },
+    "1700750":
+    {
+        "Name": "Crimson Foxen - Group Explosion"
     },
     "1700820":
     {
@@ -2564,6 +2718,10 @@
     "1700827":
     {
         "Name": "Wild Wolf - Basic Attack"
+    },
+    "1700852":
+    {
+        "Name": "Crimson Foxen - Enrage"
     },
     "1701103":
     {
@@ -2755,7 +2913,8 @@
     },
     "2002440":
     {
-        "Name": "Arcane! Thunderfall Grasp"
+        "Name": "Arcane! Thunderfall Grasp",
+        "Desc": "Tempest Ogre"
     },
     "2002702":
     {
@@ -2807,7 +2966,8 @@
     },
     "2002853":
     {
-        "Name": "Special Skill! Falling Stars (Fire Brother)"
+        "Name": "Stunt! Falling Star",
+        "Desc": "Inferno Goblin Mage"
     },
     "2002901":
     {
@@ -2831,15 +2991,17 @@
     },
     "2110012":
     {
-        "Name": "Ultimate! Pulse Blessing (Muku King)"
+        "Name": "Arcane! Pulse Blessing"
     },
     "2110062":
     {
-        "Name": "Roaring Command (Goblin King Summons Greataxe Goblins)"
+        "Name": "Arcane! Goblin March (Roar Command)",
+        "Desc": "Goblin King"
     },
     "2110066":
     {
-        "Name": "Special Skill! Earth Shield (Bandit Guard Captain)"
+        "Name": "Stunt! Earth Shield",
+        "Desc": "Brigand Guard Captain"
     },
     "2110071":
     {
@@ -2859,19 +3021,26 @@
     },
     "2110083":
     {
-        "Name": "Fire Healing"
+        "Name": "Arcane! Flame Roar",
+        "Desc": "Inferno Ogre"
     },
     "2110085":
     {
-        "Name": "Thunder Seed (Olvera)"
+        "Name": "Arcane! Flash Execution (Seed of Lightning)",
+        "Desc": "Olvera"
     },
     "2110096":
     {
-        "Name": "Ultimate! Thunder Roar (Gold Fang) (Thunder Strike)"
+        "Name": "Arcane! Thunder Roar (Thunderstrike)",
+        "Desc": "Golden Juggernaut"
     },
     "2110099":
     {
         "Name": "Toxic Hive (Persistent)"
+    },
+    "2110130":
+    {
+        "Name": "Armor Conversion"
     },
     "2201070":
     {
@@ -2909,9 +3078,14 @@
     {
         "Name": "Healing: Heal Link"
     },
+    "2202112":
+    {
+        "Name": "Overhealing Regen"
+    },
     "2202120":
     {
-        "Name": "Eluna's Shield"
+        "Name": "Nature Shield",
+        "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx08"
     },
     "2202211":
     {
@@ -3063,7 +3237,8 @@
     },
     "2900540":
     {
-        "Name": "Ultimate! Instant Slash (Olvera)"
+        "Name": "Arcane! Flash Execution",
+        "Desc": "Olvera"
     },
     "3001031":
     {
@@ -3072,6 +3247,10 @@
     "3001170":
     {
         "Name": "Void Wave Health Recovery"
+    },
+    "3003213":
+    {
+        "Name": "Shattered Illusion"
     },
     "3030909":
     {
@@ -3109,6 +3288,50 @@
     {
         "Name": "Dark Mist Legion Shield Countercrush (Heroic)"
     },
+    "3059050":
+    {
+        "Name": "(Factor) Stasis X5"
+    },
+    "3059060":
+    {
+        "Name": "(Factor) Stasis X6"
+    },
+    "3059070":
+    {
+        "Name": "(Factor) Stasis X7"
+    },
+    "3059080":
+    {
+        "Name": "(Factor) Stasis X8"
+    },
+    "3059180":
+    {
+        "Name": "(Factor) Shield Knight Stasis X1"
+    },
+    "3059181":
+    {
+        "Name": "(Factor) Shield Knight Stasis X1 (Costless Judgment)"
+    },
+    "3059190":
+    {
+        "Name": "(Factor) Shield Knight Stasis X2"
+    },
+    "3059191":
+    {
+        "Name": "(Factor) Shield Knight Stasis X2 (Heal 5 Times)"
+    },
+    "3059210":
+    {
+        "Name": "(Factor) Heavy Guardian Stasis X2"
+    },
+    "3059220":
+    {
+        "Name": "(Factor) Verdant Oracle Stasis X1"
+    },
+    "3059221":
+    {
+        "Name": "(Factor) Verdant Oracle Stasis X1 (Buff)"
+    },
     "3081001":
     {
         "Name": "Heavy Earth Slash - Two Hits"
@@ -3123,7 +3346,8 @@
     },
     "3081023":
     {
-        "Name": "Stunt! Heavy Slash"
+        "Name": "Stunt! Heavy Slash",
+        "Desc": "Shadow Commander"
     },
     "3081031":
     {
@@ -3139,35 +3363,56 @@
     },
     "3210021":
     {
-        "Name": "Ultimate! Meteor Fall (Wind Brother) (Active)"
+        "Name": "Arcane! Meteor Shower",
+        "Desc": "Storm Goblin King"
+    },
+    "3210022":
+    {
+        "Name": "Arcane! Meteor Shower (Passive)",
+        "Desc": "Storm Goblin King"
     },
     "3210031":
     {
-        "Name": "Arcane! Thunderfall Grasp (Passive)"
+        "Name": "Arcane! Thunderfall Grasp (Passive)",
+        "Desc": "Tempest Ogre"
     },
     "3210051":
     {
-        "Name": "Arcane! Blazing Axe (Passive)"
+        "Name": "Arcane! Blazing Axe (Passive)",
+        "Desc": "Brigand Leader"
     },
     "3210081":
     {
-        "Name": "Stunt! Thunder Suppress (Passive)"
+        "Name": "Stunt! Thunder Suppress (Passive)",
+        "Desc": "Lizardman Hunter"
     },
     "3210092":
     {
-        "Name": "Arcane! Silent Tide (Passive)"
+        "Name": "Arcane! Silent Tide (Passive)",
+        "Desc": "Lizardman King"
     },
     "3210101":
     {
-        "Name": "Arcane! Pulse Benediction (Passive Shield)"
+        "Name": "Arcane! Pulse Benediction (Passive Shield)",
+        "Desc": "Muku King"
+    },
+    "3320198":
+    {
+        "Name": "Tailspike (Tankbuster)"
+    },
+    "3350110":
+    {
+        "Name": "Basic Attack Headbutt"
     },
     "3913001":
     {
-        "Name": "Special Skill! Electromagnetic Bomb (Gunner)"
+        "Name": "Stunt! Electro Bomb",
+        "Desc": "Shadow Captain"
     },
     "3936001":
     {
-        "Name": "Special Skill! Silent Water (Lizardman Mage)"
+        "Name": "Stunt! Water of Silence",
+        "Desc": "Lizardman Mage"
     },
     "4000201":
     {
@@ -3353,6 +3598,14 @@
     {
         "Name": "Defensive Type 06 - Scatter Laser"
     },
+    "10110101":
+    {
+        "Name": "Wing Gust Strike"
+    },
+    "10180101":
+    {
+        "Name": "Goblin Priest Blue Meteor Strike"
+    },
     "11040101":
     {
         "Name": "Rifle - Basic Attack"
@@ -3482,6 +3735,10 @@
         "Name": "Void Ball Release"
     },
     "802906":
+    {
+        "Name": "Wind Particle"
+    },
+    "10135001":
     {
         "Name": "Wind Particle"
     },

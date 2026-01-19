@@ -147,7 +147,19 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.TextUnformatted($"Name: {LoadedEntity.Name}");
                     ImGui.TextUnformatted($"Level: {LoadedEntity.Level}");
+                    if (LoadedEntity.SeasonLevel > 0)
+                    {
+                        ImGui.SameLine();
+                        ImGui.TextUnformatted($"(+{LoadedEntity.SeasonLevel})");
+                        ImGui.SetItemTooltip("Season Level");
+                    }
                     ImGui.TextUnformatted($"Ability Score: {LoadedEntity.AbilityScore}");
+                    if (LoadedEntity.SeasonStrength > 0)
+                    {
+                        ImGui.SameLine();
+                        ImGui.TextUnformatted($"(+{LoadedEntity.SeasonStrength})");
+                        ImGui.SetItemTooltip("Season Strength");
+                    }
                     ImGui.TextUnformatted($"Profession: {LoadedEntity.Profession}");
                     ImGui.TextUnformatted($"ProfessionSpec: {LoadedEntity.SubProfession}");
                     ImGui.TextUnformatted($"EntityType: {LoadedEntity.EntityType.ToString()}");
@@ -562,21 +574,26 @@ namespace BPSR_ZDPS.Windows
 
                             ImGui.TableNextColumn();
                             ImGui.TextUnformatted($"{stat.Value.HitsCount}");
-                            if (stat.Value.ImmuneCount > 0 || stat.Value.LuckyCount > 0)
+                            if (stat.Value.ImmuneCount > 0 || stat.Value.LuckyCount > 0 || stat.Value.CastsCount > 0)
                             {
-                                string immuneString = "";
+                                var sb = new StringBuilder();
+
+                                if (stat.Value.CastsCount > 0)
+                                {
+                                    sb.AppendLine($"Casts Count: {stat.Value.CastsCount}");
+                                }
+
                                 if (stat.Value.ImmuneCount > 0)
                                 {
-                                    immuneString = $"Immune Count: {stat.Value.ImmuneCount}";
+                                    sb.AppendLine($"Immune Count: {stat.Value.ImmuneCount}");
                                 }
 
-                                string luckyString = "";
                                 if (stat.Value.LuckyCount > 0)
                                 {
-                                    luckyString = $"{(string.IsNullOrEmpty(immuneString) ? "" : "\n")}Lucky Count: {stat.Value.LuckyCount}";
+                                    sb.AppendLine($"Lucky Count: {stat.Value.LuckyCount}");
                                 }
 
-                                ImGui.SetItemTooltip($"{immuneString}{luckyString}");
+                                ImGui.SetItemTooltip($"{sb}");
                             }
 
                             ImGui.TableNextColumn();
@@ -719,7 +736,7 @@ namespace BPSR_ZDPS.Windows
 
                     if (ImGui.BeginListBox("##AttrListBox", new Vector2(-1, -32)))
                     {
-                        var attributes = LoadedEntity.Attributes.AsValueEnumerable();
+                        var attributes = (IReadOnlyList<KeyValuePair<string, object>>)LoadedEntity.Attributes.AsValueEnumerable().ToList();
                         int idx = 0;
                         foreach (var attr in attributes)
                         {

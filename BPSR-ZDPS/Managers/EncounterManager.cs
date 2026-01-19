@@ -553,6 +553,14 @@ namespace BPSR_ZDPS
             {
                 entity.SetLevel((int)value);
             }
+            else if (key == "AttrSeasonLevel")
+            {
+                entity.SetSeasonLevel((int)value);
+            }
+            else if (key == "AttrSeasonStrength")
+            {
+                entity.SetSeasonStrength((int)value);
+            }
             else if (key == "AttrSkillId")
             {
                 OnSkillActivated(new SkillActivatedEventArgs { CasterUuid = uuid, SkillId = (int)value, ActivationDateTime = DateTime.Now });
@@ -974,11 +982,14 @@ namespace BPSR_ZDPS
         public int Level { get; set; } = 0;
         public Vector3 Position { get; private set; } = new();
 
+        public long SeasonLevel { get; set; } = 0;
+        public long SeasonStrength { get; set; } = 0;
+
         public CombatStats DamageStats { get; set; } = new();
         public CombatStats HealingStats { get; set; } = new();
         public CombatStats TakenStats { get; set; } = new();
 
-        public ConcurrentDictionary<int, CombatStats> SkillStats { get; set; } = new();
+        public ConcurrentDictionary<int, CombatStats> SkillStats { get; set; } = new(); // DO NOT USE - Only for migration purposes
         public ConcurrentDictionary<int, MetricsContainer> SkillMetrics { get; set; } = new();
         public ConcurrentDictionary<long, StatTracker> InteractedEntities { get; set; } = new();
 
@@ -1105,6 +1116,16 @@ namespace BPSR_ZDPS
                 {
                     SetSubProfessionId(cached.SubProfessionId);
                 }
+
+                if (SeasonLevel == 0 && cached.SeasonLevel != 0)
+                {
+                    SetSeasonLevel(cached.SeasonLevel);
+                }
+
+                if (SeasonStrength == 0 && cached.SeasonStrength != 0)
+                {
+                    SetSeasonStrength(cached.SeasonStrength);
+                }
             }
 
             // Ensure cache is updated with latest used name from here
@@ -1213,6 +1234,28 @@ namespace BPSR_ZDPS
             if (cached != null && level != 0)
             {
                 cached.Level = level;
+            }
+        }
+
+        public void SetSeasonLevel(int level)
+        {
+            SeasonLevel = level;
+
+            var cached = EntityCache.Instance.GetOrCreate(UUID);
+            if (cached != null && level != 0)
+            {
+                cached.SeasonLevel = level;
+            }
+        }
+
+        public void SetSeasonStrength(int strength)
+        {
+            SeasonStrength = strength;
+
+            var cached = EntityCache.Instance.GetOrCreate(UUID);
+            if (cached != null && strength != 0)
+            {
+                cached.SeasonStrength = strength;
             }
         }
 

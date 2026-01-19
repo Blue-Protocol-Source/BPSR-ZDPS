@@ -207,6 +207,10 @@ namespace BPSR_ZDPS
         public int ProfessionId { get; set; } = 0;
         [DataMember(Order = 7)]
         public int SubProfessionId { get; set; } = 0;
+        [DataMember(Order = 8)]
+        public int SeasonLevel { get; set; } = 0;
+        [DataMember(Order = 9)]
+        public int SeasonStrength { get; set; } = 0;
     }
 
     [DataContract]

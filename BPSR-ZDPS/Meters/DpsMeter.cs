@@ -60,6 +60,15 @@ namespace BPSR_ZDPS.Meters
                 {
                     var entity = playerList[i].Value;
 
+                    if (Settings.Instance.OnlyShowPartyMembersInMeters && AppState.PartyTeamId != 0 && AppState.PlayerUUID != 0 && AppState.PlayerUUID != entity.UUID)
+                    {
+                        var teamId = entity.GetAttrKV("AttrTeamId") as long?;
+                        if (teamId == null || (teamId != null && AppState.PartyTeamId != teamId))
+                        {
+                            continue;
+                        }
+                    }
+
                     if (i == 0 && Settings.Instance.NormalizeMeterContributions)
                     {
                         topTotalValue = entity.TotalDamage;
@@ -137,20 +146,29 @@ namespace BPSR_ZDPS.Meters
                     ImGui.ProgressBar((float)contributionProgressBar / 100.0f, new Vector2(-1, 0), $"##DpsEntryContribution_{i}");
                     ImGui.PopStyleColor();
 
-                    string professionStr = $"-{profession}";
-                    if (!Settings.Instance.ShowSubProfessionNameInMeters)
+                    StringBuilder nameFormat = new();
+                    nameFormat.Append(name);
+
+                    if (Settings.Instance.ShowSubProfessionNameInMeters)
                     {
-                        professionStr = "";
+                        nameFormat.Append($"-{profession}");
                     }
 
-                    string abilityScoreStr = $" ({entity.AbilityScore})";
-                    if (!Settings.Instance.ShowAbilityScoreInMeters)
+                    if (Settings.Instance.ShowAbilityScoreInMeters && Settings.Instance.ShowSeasonStrengthInMeters)
                     {
-                        abilityScoreStr = "";
+                        nameFormat.Append($" ({entity.AbilityScore}+{entity.SeasonStrength})");
+                    }
+                    else if (Settings.Instance.ShowAbilityScoreInMeters)
+                    {
+                        nameFormat.Append($" ({entity.AbilityScore})");
+                    }
+                    else if (Settings.Instance.ShowSeasonStrengthInMeters)
+                    {
+                        nameFormat.Append($" ({entity.SeasonStrength})");
                     }
 
                     ImGui.SetCursorPos(startPoint);
-                    if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{name}{professionStr}{abilityScoreStr}##DpsEntry_{i}", dps_format, entity.ProfessionId))
+                    if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{nameFormat}##DpsEntry_{i}", dps_format, entity.ProfessionId))
                     //if (SelectableWithHint($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}. {name}-{profession} ({entity.AbilityScore})##DpsEntry_{i}", dps_format))
                     //if (ImGui.Selectable($"{name}-{profession} ({entity.AbilityScore}) [{entity.UID.ToString()}] ({entity.TotalDamage})##DpsEntry_{i}"))
                     {
