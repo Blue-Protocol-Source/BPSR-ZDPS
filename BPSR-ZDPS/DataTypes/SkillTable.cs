@@ -133,25 +133,5 @@ namespace BPSR_ZDPS.DataTypes
             
             return 0.0f;
         }
-
-        public bool IsImagineSlot()
-        {
-            if (SlotPositionId.Contains(7) || SlotPositionId.Contains(8))
-            {
-                return true;
-            }
-            
-            return false;
-        }
-
-        public bool IsRoleSlot()
-        {
-            if (SlotPositionId.Contains(21) || SlotPositionId.Contains(22) || SlotPositionId.Contains(23) || SlotPositionId.Contains(24))
-            {
-                return true;
-            }
-
-            return false;
-        }
     }
 }

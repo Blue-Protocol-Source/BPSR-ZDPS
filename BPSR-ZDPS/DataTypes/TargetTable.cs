@@ -18,14 +18,13 @@ namespace BPSR_ZDPS.DataTypes
         public int Num { get; set; }
         public int SceneId { get; set; }
         public List<int> Param { get; set; }
-        public List<List<int>> TargetPos { get; set; }
+        public string TargetPos { get; set; }
         public bool IsTeamShare { get; set; }
         public string TargetDes { get; set; }
         public bool IsShowProgress { get; set; }
-        public List<List<string>> SpVariable { get; set; }
-        public List<List<string>> SpVariableLimit { get; set; }
+        public List<string> SpVariable { get; set; }
+        public List<string> SpVariableLimit { get; set; }
         public List<string> SpVariableName { get; set; }
         public List<int> IsShowSpVariableProgress { get; set; }
-        public List<string> ShowChange { get; set; }
     }
 }

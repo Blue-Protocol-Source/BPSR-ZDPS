@@ -42,7 +42,6 @@ namespace BPSR_ZDPS.DataTypes
         public int HudSwitch { get; set; }
         public int TimeRefreshType { get; set; }
         public int PlayType { get; set; }
-        public int SkillId { get; set; }
 
         public string GetIconName()
         {
