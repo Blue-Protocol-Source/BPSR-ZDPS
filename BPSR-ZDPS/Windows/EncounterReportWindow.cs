@@ -56,14 +56,13 @@ namespace BPSR_ZDPS.Windows
 
             ImGui.PushFont(HelperMethods.Fonts["Segoe_Offscreen"], 18f);
             // Removed ImGuiTableFlags.ScrollX for the direct SizingFixedFit flag instead to perform same layout be ensure the scroll bar never appears at the bottom
-            if (ImGui.BeginTable("##ReportTable", 26, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit, new Vector2(-1, -1)))
+            if (ImGui.BeginTable("##ReportTable", 25, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit, new Vector2(-1, -1)))
             {
                 ImGui.TableSetupColumn("#");
                 ImGui.TableSetupColumn("UID");
                 ImGui.TableSetupColumn("Name");
                 ImGui.TableSetupColumn("Profession");
                 ImGui.TableSetupColumn("Ability Score");
-                ImGui.TableSetupColumn("Season Strength");
                 ImGui.TableSetupColumn("Total DMG");
                 ImGui.TableSetupColumn("Total DPS");
                 ImGui.TableSetupColumn("Shield Break");
@@ -129,9 +128,6 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.TableNextColumn();
                     ImGui.TextUnformatted(entity.AbilityScore.ToString());
-
-                    ImGui.TableNextColumn();
-                    ImGui.TextUnformatted(entity.SeasonStrength.ToString());
 
                     ImGui.TableNextColumn();
                     string totalDamageDealt = Utils.NumberToShorthand(entity.TotalDamage);

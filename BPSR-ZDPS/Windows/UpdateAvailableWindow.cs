@@ -62,10 +62,14 @@ namespace BPSR_ZDPS
                     RunOnceDelayed++;
                 }
 
-                if (ImGui.BeginChild("##AlertChild", new Vector2(ImGui.GetContentRegionAvail().X, ImGui.GetContentRegionAvail().Y - ImGui.GetItemRectSize().Y * 3)))
+                if (ImGui.BeginChild("##AlertChild", new Vector2(ImGui.GetContentRegionAvail().X, ImGui.GetContentRegionAvail().Y - ImGui.GetItemRectSize().Y * 2)))
                 {
                     ImGui.TextUnformatted("There is a new update available for ZDPS!");
                     ImGui.TextUnformatted("It is strongly recommended to always update to the latest version available.");
+
+                    ImGui.PushStyleColor(ImGuiCol.Text, Colors.OrangeRed);
+                    ImGui.TextUnformatted("Reminder: This is the Season 1 version of ZDPS when downloading updates!");
+                    ImGui.PopStyleColor();
 
                     ImGui.EndChild();
                 }

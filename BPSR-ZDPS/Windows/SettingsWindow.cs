@@ -1284,6 +1284,8 @@ namespace BPSR_ZDPS.Windows
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
                         ImGui.BeginChild("##DevelopmentTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
 
+                        ImGui.TextUnformatted("NOTE: This version of ZDPS is designed only for BPSR Season 1.");
+
                         ImGui.SeparatorText("Development");
                         if (ImGui.Button("Reload DataTables"))
                         {

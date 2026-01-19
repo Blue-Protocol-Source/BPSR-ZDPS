@@ -346,7 +346,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     //ImGui.SetCursorPosX(MainMenuBarSize.X - (35 * 5)); // This pushes it against the previous button instead of having a gap
                     //ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X); // This loosely locks it to right side
-                    ImGui.TextDisabled($"v{Utils.AppVersion}");
+                    ImGui.TextDisabled($"v{Utils.AppVersion} (S1)");
                 }
 
                 if (Settings.Instance.AllowEncounterSavingPausingInOpenWorld && BattleStateMachine.DungeonStateHistory.Count > 0 && BattleStateMachine.DungeonStateHistory.LastOrDefault().Key == EDungeonState.DungeonStateNull)
