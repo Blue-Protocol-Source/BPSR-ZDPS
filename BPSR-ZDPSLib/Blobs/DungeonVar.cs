@@ -4,7 +4,7 @@ namespace BPSR_ZDPSLib.Blobs;
 
 public class DungeonVar : BlobType
 {
-    public List<DungeonVarData>? Data;
+    public List<DungeonVarData> Data;
 
     public DungeonVar()
     {
@@ -24,5 +24,15 @@ public class DungeonVar : BlobType
             default:
                 return false;
         }
+    }
+
+    public static implicit operator Zproto.DungeonVar(DungeonVar var)
+    {
+        var data = new Zproto.DungeonVar();
+        foreach (DungeonVarData varData in var.Data)
+        {
+            data.DungeonVarData.Add(varData);
+        }
+        return data;
     }
 }

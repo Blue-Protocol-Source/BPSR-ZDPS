@@ -126,7 +126,7 @@ namespace BPSR_ZDPS.Windows
 
             encounterReportWindow.Draw();
 
-            ImGui.SetNextWindowSize(new Vector2(740, 675), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(880, 675), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(500, 250), new Vector2(ImGui.GETFLTMAX()));
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -159,7 +159,6 @@ namespace BPSR_ZDPS.Windows
                     SelectedViewMode = 0;
                     SelectedEncounterIndex = -1;
 
-                    //LoadFromDB();
                     HandleDBLoad();
                 }
                 if (viewMode == 0)
@@ -176,10 +175,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     SelectedViewMode = 1;
                     SelectedEncounterIndex = -1;
-                    // TODO: Allow viewing encounters grouped by their BattleId and showing the combined totals for them
 
-                    //GroupEncountersByBattleId();
-                    //LoadFromDB();
                     HandleDBLoad();
                 }
                 if (viewMode == 1)
@@ -197,7 +193,6 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 List<Encounter> encounters = new List<Encounter>();
-                // TODO: Support reading history from an encounter cache file as well
                 ImGui.AlignTextToFramePadding();
                 if (SelectedViewMode == 0)
                 {
@@ -207,7 +202,6 @@ namespace BPSR_ZDPS.Windows
                 else
                 {
                     encounters = GroupedBattles;
-                    // We subtract 2 because the current encounter is also in here
                     ImGui.Text($"Battles: {Battles.Count}");
                 }
 
@@ -253,8 +247,7 @@ namespace BPSR_ZDPS.Windows
                         var encounterTuple = BuildDropdownStringName(encounters[i].StartTime, encounters[i].EndTime, encounters[i].SceneName, i);
                         if (ImGui.Selectable(encounterIndexText, isSelected, ImGuiSelectableFlags.SpanAllColumns))
                         {
-                            // TODO: Load up the historical encounter
-
+                            AppState.OpenedHistoricalEncounter = null;
                             // TODO: This clean up logic won't play nice if the Entity Inspector is open on a Historical
                             if (!isSelected && SelectedEncounterIndex != -1)
                             {
@@ -339,7 +332,7 @@ namespace BPSR_ZDPS.Windows
                 if (SelectedEncounterIndex != -1)
                 {
                     ImGuiTableFlags tableFlags = ImGuiTableFlags.ScrollX;
-                    int columnsCount = 25;
+                    int columnsCount = 27;
                     if (ImGui.BeginTable("##HistoricalEncounterStatsTable", columnsCount, tableFlags, new Vector2(-1, -1)))
                     {
                         ImGui.TableSetupColumn("#");
@@ -347,8 +340,10 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TableSetupColumn("Name");
                         ImGui.TableSetupColumn("Profession");
                         ImGui.TableSetupColumn("Ability Score");
+                        ImGui.TableSetupColumn("Season Strength");
                         ImGui.TableSetupColumn("Total DMG");
-                        ImGui.TableSetupColumn("Total DPS");
+                        ImGui.TableSetupColumn("Active DPS");
+                        ImGui.TableSetupColumn("Encounter DPS");
                         ImGui.TableSetupColumn("Shield Break");
                         ImGui.TableSetupColumn("Crit Rate");
                         ImGui.TableSetupColumn("Lucky Rate");
@@ -470,6 +465,9 @@ namespace BPSR_ZDPS.Windows
                             ImGui.TextUnformatted(entity.AbilityScore.ToString());
 
                             ImGui.TableNextColumn();
+                            ImGui.TextUnformatted(entity.SeasonStrength.ToString());
+
+                            ImGui.TableNextColumn();
                             string totalDamageDealt = Utils.NumberToShorthand(entity.TotalDamage);
                             double totalDamagePct = 0;
                             if (entity.TotalDamage > 0)
@@ -485,6 +483,9 @@ namespace BPSR_ZDPS.Windows
                             }
                             // Since we're using TextUnformatted instead of Text we don't need to escape the % symbol
                             ImGui.TextUnformatted($"{totalDamageDealt} ({totalDamagePct}%)");
+
+                            ImGui.TableNextColumn();
+                            ImGui.TextUnformatted(Utils.NumberToShorthand(entity.DamageStats.ValuePerSecondActive));
 
                             ImGui.TableNextColumn();
                             ImGui.TextUnformatted(Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond));
@@ -590,6 +591,12 @@ namespace BPSR_ZDPS.Windows
                             {
                                 HideEntitiesWithNoDamageDealt = !HideEntitiesWithNoDamageDealt;
                             }
+
+                            if (ImGui.MenuItem("Show In Meters UI"))
+                            {
+                                AppState.OpenedHistoricalEncounter = encounters[SelectedEncounterIndex];
+                            }
+
                             ImGui.EndPopup();
                         }
 
@@ -689,6 +696,7 @@ namespace BPSR_ZDPS.Windows
             {
                 enc.SetStartTime(firstEncounter.StartTime);
                 enc.BattleId = firstEncounter.BattleId;
+                enc.FirstDamageTimeStamp = firstEncounter.FirstDamageTimeStamp;
             }
             if (lastEncounter != null)
             {

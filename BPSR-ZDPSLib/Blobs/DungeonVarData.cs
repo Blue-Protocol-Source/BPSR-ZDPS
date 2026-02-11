@@ -38,4 +38,14 @@ public class DungeonVarData : BlobType
                 return false;
         }
     }
+
+    public static implicit operator Zproto.DungeonVarData(DungeonVarData varData)
+    {
+        var data = new Zproto.DungeonVarData()
+        {
+            Name = varData.Name,
+            Value = varData.Value
+        };
+        return data;
+    }
 }

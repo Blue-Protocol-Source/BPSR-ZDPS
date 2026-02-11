@@ -24,5 +24,17 @@ namespace BPSR_ZDPS
             };
             return vec3;
         }
+
+        public static DataTypes.Skills.SkillLevelInfo ToSkillLevelInfo(this Zproto.SkillLevelInfo skillLevelInfo)
+        {
+            var data = new DataTypes.Skills.SkillLevelInfo()
+            {
+                SkillId = skillLevelInfo.SkillId,
+                CurrentLevel = skillLevelInfo.CurrentLevel,
+                Tier = skillLevelInfo.RemodelLevel
+            };
+
+            return data;
+        }
     }
 }

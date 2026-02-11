@@ -376,6 +376,8 @@ namespace BPSR_ZDPS
                 EGameCapturePreference.Epic => "Epic",
                 EGameCapturePreference.HaoPlaySea => "HaoPlay SEA",
                 EGameCapturePreference.XDG => "XDG",
+                EGameCapturePreference.HaoPlaySeaSteam => "HaoPlay SEA Steam",
+                EGameCapturePreference.XDGSteam => "XDG Steam",
                 EGameCapturePreference.Custom => "Custom"
             };
 
@@ -386,12 +388,14 @@ namespace BPSR_ZDPS
         {
             string[] exeNameToCapture = pref switch
             {
-                EGameCapturePreference.Auto => ["BPSR", "BPSR_STEAM", "BPSR_EPIC", "StarSEA", "StarASIA"],
+                EGameCapturePreference.Auto => ["BPSR", "BPSR_STEAM", "BPSR_EPIC", "StarSEA", "StarASIA", "StarSEA_STEAM", "StarASIA_STEAM"],
                 EGameCapturePreference.Steam => ["BPSR_STEAM"],
                 EGameCapturePreference.Standalone => ["BPSR"],
                 EGameCapturePreference.Epic => ["BPSR_EPIC"],
                 EGameCapturePreference.HaoPlaySea => ["StarSEA"],
                 EGameCapturePreference.XDG => ["StarASIA"],
+                EGameCapturePreference.HaoPlaySeaSteam => ["StarSEA_STEAM"],
+                EGameCapturePreference.XDGSteam => ["StarASIA_STEAM"],
                 EGameCapturePreference.Custom => [Settings.Instance.GameCaptureCustomExeName]
             };
 
@@ -400,16 +404,21 @@ namespace BPSR_ZDPS
 
         public static (string id, string token)? SplitAndValidateDiscordWebhook(string url)
         {
-            const string DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/";
+            const string DISCORD_DOMAIN = "discord.com";
+            const string DISCORD_WEBHOOK = "/api/webhooks/";
 
             try
             {
-                if (url.StartsWith(DISCORD_WEBHOOK_URL, StringComparison.InvariantCultureIgnoreCase))
+                Uri validator = new Uri(url);
+                if (validator.Host.EndsWith(DISCORD_DOMAIN, StringComparison.OrdinalIgnoreCase))
                 {
-                    var pathSegments = url.Substring(DISCORD_WEBHOOK_URL.Length).Split('/');
-                    if (pathSegments.Length == 2)
+                    if (validator.PathAndQuery.StartsWith(DISCORD_WEBHOOK, StringComparison.OrdinalIgnoreCase))
                     {
-                        return (pathSegments[0], pathSegments[1]);
+                        var pathSegments = validator.PathAndQuery.Substring(DISCORD_WEBHOOK.Length).Split('/');
+                        if (pathSegments.Length == 2)
+                        {
+                            return (pathSegments[0], pathSegments[1]);
+                        }
                     }
                 }
 

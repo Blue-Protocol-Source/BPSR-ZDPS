@@ -220,7 +220,14 @@ namespace BPSR_ZDPS
                 // Double of framerate is controlled in the D3D11Manager by the SwapChain's BufferCount
                 //manager.Present((uint)isMouseDragging ? 0 : 1, 0);
 
+                if (!Settings.Instance.LowPerformanceMode)
+                {
+                    manager.Present(Settings.Instance.FixedFramerateScale, 0);
+                }
+                else
+                {
                 manager.Present(1, 0);
+                }
 
                 if (HelperMethods.DeferredImGuiRenderAction != null)
                 {

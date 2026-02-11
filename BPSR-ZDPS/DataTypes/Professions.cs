@@ -79,6 +79,28 @@ namespace BPSR_ZDPS.DataTypes
             _ => ""
         };
 
+        public static int GetProfessionIdFromSubProfessionId(int subProfessionId) => subProfessionId switch
+        {
+            (int)SubProfessionId.SubProfession_Unknown => (int)EProfessionId.Profession_Unknown,
+            (int)SubProfessionId.SubProfession_Iaido => (int)EProfessionId.Profession_Stormblade,
+            (int)SubProfessionId.SubProfession_Moonstrike => (int)EProfessionId.Profession_Stormblade,
+            (int)SubProfessionId.SubProfession_Icicle => (int)EProfessionId.Profession_FrostMage,
+            (int)SubProfessionId.SubProfession_Frostbeam => (int)EProfessionId.Profession_FrostMage,
+            (int)SubProfessionId.SubProfession_Vanguard => (int)EProfessionId.Profession_WindKnight,
+            (int)SubProfessionId.SubProfession_Skyward => (int)EProfessionId.Profession_WindKnight,
+            (int)SubProfessionId.SubProfession_Smite => (int)EProfessionId.Profession_VerdantOracle,
+            (int)SubProfessionId.SubProfession_Lifebind => (int)EProfessionId.Profession_VerdantOracle,
+            (int)SubProfessionId.SubProfession_Earthfort => (int)EProfessionId.Profession_HeavyGuardian,
+            (int)SubProfessionId.SubProfession_Block => (int)EProfessionId.Profession_HeavyGuardian,
+            (int)SubProfessionId.SubProfession_Wildpack => (int)EProfessionId.Profession_Marksman,
+            (int)SubProfessionId.SubProfession_Falconry => (int)EProfessionId.Profession_Marksman,
+            (int)SubProfessionId.SubProfession_Recovery => (int)EProfessionId.Profession_ShieldKnight,
+            (int)SubProfessionId.SubProfession_Shield => (int)EProfessionId.Profession_ShieldKnight,
+            (int)SubProfessionId.SubProfession_Dissonance => (int)EProfessionId.Profession_BeatPerformer,
+            (int)SubProfessionId.SubProfession_Concerto => (int)EProfessionId.Profession_BeatPerformer,
+            _ => (int)EProfessionId.Profession_Unknown
+        };
+
         public static int GetBaseProfessionIdBySkillId(int skillId) => skillId switch
         {
             1701 or 1705 or 1713 or 1714 or 1715 or 1716 or 1717 or 1718 or 1719 or 1720 or 1724 or 1728 or 1730 or 1731 => 1, // Stormblade

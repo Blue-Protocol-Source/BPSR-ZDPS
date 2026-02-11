@@ -29,4 +29,14 @@ public class DungeonVarAll : BlobType
                 return false;
         }
     }
+
+    public static implicit operator Zproto.DungeonVarAll(DungeonVarAll dungeonVarAll)
+    {
+        var varAll = new Zproto.DungeonVarAll();
+        foreach (var item in dungeonVarAll.DungeonVarAllMap)
+        {
+            varAll.DungeonVarAllMap.Add(item.Key, item.Value);
+        }
+        return varAll;
+    }
 }

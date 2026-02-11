@@ -634,7 +634,14 @@ namespace BPSR_ZDPS
             var pos = ImGui.GetCursorPos();
             ImGui.Image(qualityBg, MOD_ICON_SIZE);
             ImGui.SetCursorPos(pos);
-            ImGui.Image(modIcon, MOD_ICON_SIZE);
+            if (modIcon != null)
+            {
+                ImGui.Image(modIcon.Value, MOD_ICON_SIZE);
+            }
+            else
+            {
+                ImGui.Dummy(MOD_ICON_SIZE);
+            }
 
             if (showId)
             {
@@ -772,29 +779,29 @@ namespace BPSR_ZDPS
             }
         }
 
-        private static ImTextureRef GetModuleIcon(int id)
+        private static ImTextureRef? GetModuleIcon(int id)
         {
             var icon = id switch
             {
                 5500101 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_attack2.png")),
                 5500102 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_attack3.png")),
                 5500103 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_attack4.png")),
-                5500104 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_attack4.png")),
+                5500104 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_icons_mod_device_attack5.png")),
 
                 5500201 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_2.png")),
                 5500202 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_3.png")),
                 5500203 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_4.png")),
-                5500204 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_4.png")),
+                5500204 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_icons_mod_device_5.png")),
 
                 5500301 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_protect2.png")),
                 5500302 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_protect3.png")),
                 5500303 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_protect4.png")),
-                5500304 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_mod_device_protect4.png")),
+                5500304 => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "item_icons_device_protect5.png")),
 
                 _ => ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"))
             };
 
-            return icon.Value;
+            return icon;
         }
 
         private static ImTextureRef GetItemQualityBg(int quality)
@@ -853,12 +860,12 @@ namespace BPSR_ZDPS
 
     public struct ModuleSet
     {
-        public ushort Mod1;
-        public ushort Mod2;
-        public ushort Mod3;
-        public ushort Mod4;
+        public int Mod1;
+        public int Mod2;
+        public int Mod3;
+        public int Mod4;
 
-        public ushort[] Mods => [Mod1, Mod2, Mod3, Mod4];
+        public int[] Mods => [Mod1, Mod2, Mod3, Mod4];
     }
 
     public struct ModComboResult

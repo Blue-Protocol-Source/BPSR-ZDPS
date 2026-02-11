@@ -23,7 +23,7 @@ namespace BPSR_ZDPS.DataTypes
         public int SceneResourceId { get; set; }
         public List<string> SceneUI { get; set; }
         public Vector2 MapSize { get; set; }
-        public Vector2  MapOffset { get; set; }
+        public Vector2 MapOffset { get; set; }
         public List<List<int>> MapEntryCondition { get; set; }
         public List<string> AudioBank { get; set; }
         public int BornId { get; set; }
@@ -41,9 +41,12 @@ namespace BPSR_ZDPS.DataTypes
         public int EPFlowId { get; set; }
         public int ShowMiniMap { get; set; }
         public int MiniMapRatio { get; set; }
-        public string SubScene { get; set; }
+        public List<int> SubScene { get; set; }
         public string AmbEvent { get; set; }
         public string ReverEvent { get; set; }
         public int DefaultSceneArea { get; set; }
+        public int MoveSyncConfigId { get; set; }
+        public bool HaveWater { get; set; }
+        public List<string> FootstepFxOverride { get; set; }
     }
 }

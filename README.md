@@ -97,6 +97,7 @@ The details included in this window the following and more:
 - All Attributes of the entity.
 - Complete list of all Buffs that impacted the entity with indicators if they were Buffs, Debuffs, or Shields.
 - Graphs for displaying Total Damage Over Time, Damage Per Second Over Time, and Hits By Source.
+- A Skill Book that shows pretty much every skill an Entity currently has access to (for players and NPCs).
 
 ### Database Manager
 > Accessed from `Database Manager` on then Features menu.
@@ -327,8 +328,8 @@ ZDPS is capable of checking online for new versions and alerting you if one is f
      - Void Dragon contains only 1 Phase, which is the entire fight including going through the Dimension Banishment.
      - Light Dragon contains 3 Phases, the initial fight, the crystal platforms, and returning to finish the fight.
 
-`Display True Per Second Values In Meters`
-- Most DPS Meters, including ZDPS, report the "active" Per Second Values of a fight. However, this means during downtime the DPS number is not actively dropping. For those that wish to see the true realtime DPS values, turning on this setting will display an additional field during combat that contains the actual DPS as it rises and falls every second. Both the "active" and "true" values are accurate but are different measurements of the data.
+`Display Active Per Second Values In Meters`
+- When tracking DPS, there are two main metrics to go by: Encounter and Active. The Encounter DPS (eDPS) begins tracking when the first hit is dealt, and continues until the end of the Encounter. It does not care about downtime, deaths, or anything else except the start and stop times. The Active DPS (aDPS) however, takes into account Entity downtime. This means if a player starts a fight late, the initial time they were not participating in combat is not counted against their DPS metric. If an Entity has extended downtime of at least 10 seconds, the time spent not attacking is not counted against their DPS metric as well. Both the "active" and "encounter" values are accurate but are different measurements of the data. In most cases, the two metrics should be pretty much identical. If deaths or downtime occur, expect to see the values quickly deviate.
 
 #### User Interface
 
@@ -345,8 +346,15 @@ ZDPS is capable of checking online for new versions and alerting you if one is f
 - By default, ZDPS will show all nearby entities in the Meters UI even if they never perform a single attack. If this is enabled, the entities will need to perform an attack to show up.
   - Even if an entity does not appear in the meter because it did not attack, they are still being tracked in the Encounter data.
 
+`Only Show Party Members In Meters`
+- When in a party, only members of your party will appear in the meter.
+  - For this to work correctly, you will need to have ZDPS running before joining a party, otherwise you may need to change between 5 and 20 player size groups or rejoin the party.
+
 `Show Ability Score In Meters`
 - A player's ability score is shown after their name (and profession) in the meters. This setting will allow you to hide that.
+
+`Show Season Strength In Meters`
+- Shows the current Season's Strength metric in the meters. This can be in addition to the Ability Score or be the only value shown.
 
 `Show Sub Profession Name In Meters`
 - By default, the profession for a player will be shown after their name. Once they use a skill, their sub profession will be detected and shown in place of that. By turning off this setting you can completely hide the (sub) profession names from being displayed in the meters.
@@ -357,6 +365,9 @@ ZDPS is capable of checking online for new versions and alerting you if one is f
 `Keep Past Encounter In Meter UI Until Next Damage`
 - Normally when an Encounter ends, _and_ a new one begins, the Meter UI will switch over to the new Encounter right away even before any damage has been recorded. If this setting is enabled, it will instead hold onto the past Encounter until damage is finally dealt. Note that it will still switch over to the new Encounter if you change maps even with this setting enabled.
 
+`Show Channel Line Number In Status`
+- This setting will allow you to see your current Channel Line Number in the bottom Status bar of the meter. This will show whenever you're on an instance that supports channels even if the game's UI does not tell you the number.
+
 `Pinned (Top Most) Window Opacities`
 - In here you can set how transparent you want a pinned window to be.
 
@@ -365,6 +376,9 @@ ZDPS is capable of checking online for new versions and alerting you if one is f
 
 `Low Performance Mode`
 - In the event ZDPS is using abnormally high CPU usage, this setting will force it to run at a much lower rate. While in this mode you may experience suttering ZDPS windows or sometimes slow to respond actions. This setting should not be needed by the vast majority of users.
+
+`ZDPS Refresh Rate (Alternate Performance Tuning`
+- To help ensure ZDPS does not use extra resources, or further restrict what it's using, this setting allows more fine tuning compared to the previous `Low Performance Mode` setting. With this, you can directly impact the Refresh Rate value based on your Primary Monitor's refresh rate. The values here are based on VSync supported values. Setting the slider to a value as close to 60hz as it will allow will provide you with a smooth experience that also uses very little resources. Even if you don't have performance problems, setting it down close to 60hz is a good idea.
 
 #### Matchmaking
 

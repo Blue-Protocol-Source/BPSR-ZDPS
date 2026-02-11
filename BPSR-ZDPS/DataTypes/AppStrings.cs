@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace BPSR_ZDPS.DataTypes
     {
         public static string CurrentLocale { get; set; } = "en";//CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
 
-        public static Dictionary<string, Dictionary<string, string>> Strings = new();
+        public static FrozenDictionary<string, Dictionary<string, string>> Strings = new Dictionary<string, Dictionary<string, string>>().ToFrozenDictionary();
 
         public static string GetLocalized(string key, bool KeyIfEmptyValue = false)
         {

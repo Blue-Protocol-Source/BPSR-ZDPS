@@ -300,12 +300,37 @@ namespace BPSR_ZDPS.Windows
                 ImGui.EndTable();
             }
 
+            if ((AppState.ActiveEncounter != null && Settings.Instance.KeepPastEncounterInMeterUntilNextDamage) || AppState.OpenedHistoricalEncounter != null)
+            {
+                if (AppState.ActiveEncounter.BattleId != EncounterManager.Current?.BattleId || AppState.ActiveEncounter.EncounterId != EncounterManager.Current?.EncounterId || AppState.OpenedHistoricalEncounter != null)
+                {
+                    ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Goldenrod_Transparent);
+                    ImGui.BeginChild("##EncounterNotCurrentChild", ImGuiChildFlags.AutoResizeY);
+                    ImGui.TextAligned(0.5f, -1, "Viewing Historical Encounter Data");
+                    ImGui.SetCursorPosX((ImGui.GetContentRegionAvail().X - 200) * 0.5f);
+                    ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkGreen);
+                    if (ImGui.Button("Go To Current Encounter##GoToCurrentEncounterBtn", new Vector2(200, 0)))
+                    {
+                        AppState.OpenedHistoricalEncounter = null;
+                        AppState.ActiveEncounter = EncounterManager.Current;
+                        // Try and release some stale resources immediately
+                        GC.Collect();
+                    }
+                    ImGui.PopStyleColor();
+                    ImGui.EndChild();
+                    ImGui.PopStyleColor();
+                }
+            }
+
             if (AppState.IsEncounterSavingPaused)
             {
                 ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.DarkRed_Transparent);
                 ImGui.BeginChild("##EncounterSavingPausedChild", ImGuiChildFlags.AutoResizeY);
                 ImGui.TextAligned(0.5f, -1, "Encounter Saving Is Paused");
-                ImGui.TextAligned(0.5f, -1, "Automatically resumes if you change maps.");
+                if (!Settings.Instance.PersistEncounterSavingPauseStateBetweenMaps)
+                {
+                    ImGui.TextAligned(0.5f, -1, "Automatically resumes if you change maps.");
+                }
                 ImGui.SetCursorPosX((ImGui.GetContentRegionAvail().X - 200) * 0.5f);
                 ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkGreen);
                 if (ImGui.Button("RESUME SAVING NOW##ResumeEncounterSavingBtn", new Vector2(200, 0)))
@@ -359,6 +384,7 @@ namespace BPSR_ZDPS.Windows
                     if (ImGui.MenuItem($"{FASIcons.Pause}##PauseEncounterSavingBtn"))
                     {
                         AppState.IsEncounterSavingPaused = !AppState.IsEncounterSavingPaused;
+                        AppState.WasEncounterSavingPaused = AppState.IsEncounterSavingPaused;
                     }
                     ImGui.PopStyleColor();
                     ImGui.PopFont();
@@ -671,6 +697,15 @@ namespace BPSR_ZDPS.Windows
                 ImGui.TextUnformatted($"- {EncounterManager.Current.SceneName}{subName}");
             }
 
+            if (Settings.Instance.ShowChannelLineNumberInStatus)
+            {
+                ImGui.SameLine();
+                if (EncounterManager.Current.ChannelLine > 0)
+                {
+                    ImGui.TextUnformatted($"(L - {EncounterManager.Current.ChannelLine})");
+                }
+            }
+
             if (AppState.IsBenchmarkMode)
             {
                 ImGui.SameLine();
@@ -692,10 +727,17 @@ namespace BPSR_ZDPS.Windows
                 Log.Information("Tried to create a new manual Encounter but Encounter Saving is currently Paused.");
                 return;
             }
+            // TODO: Prevent calling this multiple times in a row without first verifying a new Encounter was created from it
 
-            EncounterManager.StopEncounter();
-            Log.Information($"Starting new manual encounter at {DateTime.Now}");
-            EncounterManager.StartEncounter(true);
+            // Running this in a new thread avoids render freezes (that can result in crashes due to timeouts)
+            Task.Factory.StartNew(() =>
+            {
+                //Log.Information($"Requesting new manual encounter at {DateTime.Now}");
+                //BattleStateMachine.SetDeferredEncounterEndFinalData(DateTime.Now, new EncounterEndFinalData() { BattleId = EncounterManager.CurrentBattleId, Encounter = EncounterManager.Current, EncounterId = EncounterManager.Current.EncounterId, Reason = EncounterStartReason.Force });
+                //EncounterManager.StopEncounter();
+                Log.Information($"Starting new manual encounter at {DateTime.Now}");
+                EncounterManager.StartEncounter(true, EncounterStartReason.Force);
+            });
         }
 
         public void ToggleMouseClickthrough()

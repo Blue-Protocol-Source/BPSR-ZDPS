@@ -471,10 +471,10 @@ namespace BPSR_ZDPS.Managers
 
                 var reslovedModSet = new ModuleSet()
                 {
-                    Mod1 = (ushort)filtered[mods[0]],
-                    Mod2 = (ushort)filtered[mods[1]],
-                    Mod3 = (ushort)filtered[mods[2]],
-                    Mod4 = (ushort)filtered[mods[3]]
+                    Mod1 = (int)filtered[mods[0]],
+                    Mod2 = (int)filtered[mods[1]],
+                    Mod3 = (int)filtered[mods[2]],
+                    Mod4 = (int)filtered[mods[3]]
                 };
                 modSet.CombatScore = CalcCombosCombatScore(playerMods, reslovedModSet);
 

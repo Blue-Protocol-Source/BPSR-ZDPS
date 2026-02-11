@@ -332,7 +332,7 @@ namespace BPSR_ZDPS.Web
             string difficulty = "";
             if (encounter.ExData.DungeonDifficulty > 0)
             {
-                difficulty = $" (Difficulty {encounter.ExData.DungeonDifficulty})";
+                difficulty = $" (Master {encounter.ExData.DungeonDifficulty})";
             }
 
             string clearStatus = "";

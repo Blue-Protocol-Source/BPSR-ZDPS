@@ -34,10 +34,15 @@ namespace BPSR_ZDPS.Windows
         static bool displayTruePerSecondValuesInMeters;
         static bool allowGamepadNavigationInputInZDPS;
         static bool keepPastEncounterInMeterUntilNextDamage;
+        static bool showChannelLineNumberInStatus;
         static bool useDatabaseForEncounterHistory;
         static int databaseRetentionPolicyDays;
-        static bool limitEncounterBuffTrackingWithoutDatabase;
+        static bool skipSavingEncountersWithNoCombatData;
+        static bool limitEncounterBuffTrackingInOpenWorld;
+        static bool skipSkillSnapshotSavingInOpenWorld;
         static bool allowEncounterSavingPausingInOpenWorld;
+        static bool persistEncounterSavingPauseStateBetweenMaps;
+        static bool minimalProcessingWhileEncounterSavingPaused;
 
         static bool meterSettingsTankingShowDeaths;
         static bool meterSettingsNpcTakenShowHpData;
@@ -81,6 +86,7 @@ namespace BPSR_ZDPS.Windows
         static string latestZDPSVersionCheckURL;
 
         static bool lowPerformanceMode;
+        static int fixedFramerate;
 
         // External Settings
         static bool externalBPTimerEnabled;
@@ -94,6 +100,10 @@ namespace BPSR_ZDPS.Windows
         static int RunOnceDelayed = 0;
 
         static bool IsElevated = false;
+
+        static Dictionary<int, float> allowedSyncRates = new();
+        static float fpsUpdateTracker = 0.0f;
+        static double currentFps = 0.0;
 
         public static void Open()
         {
@@ -135,6 +145,8 @@ namespace BPSR_ZDPS.Windows
             // Disable all HotKeys while we're in the Settings menu to prevent unexpected behavior when rebinding
             HotKeyManager.UnregisterAllHotKeys();
 
+            RecalculateRefreshRates();
+
             ImGui.PopID();
         }
 
@@ -150,7 +162,7 @@ namespace BPSR_ZDPS.Windows
             ImGui.SetNextWindowSizeConstraints(new Vector2(550, 350), new Vector2(ImGui.GETFLTMAX()));
             //ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
 
-            ImGui.SetNextWindowSize(new Vector2(650, 680), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(700, 700), ImGuiCond.FirstUseEver);
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
             if (ImGui.BeginPopupModal($"Settings{TITLE_ID}"))
@@ -233,7 +245,7 @@ namespace BPSR_ZDPS.Windows
 
                         var gamePrefName = Utils.GameCapturePreferenceToName(GameCapturePreference);
                         ImGui.SetNextItemWidth(150);
-                        if (ImGui.BeginCombo("##EGameCapturePreference", gamePrefName))
+                        if (ImGui.BeginCombo("##EGameCapturePreference", gamePrefName, ImGuiComboFlags.HeightLarge))
                         {
                             if (ImGui.Selectable("Auto"))
                             {
@@ -258,6 +270,14 @@ namespace BPSR_ZDPS.Windows
                             else if (ImGui.Selectable("XDG"))
                             {
                                 GameCapturePreference = EGameCapturePreference.XDG;
+                            }
+                            else if (ImGui.Selectable("HaoPlay SEA Steam"))
+                            {
+                                GameCapturePreference = EGameCapturePreference.HaoPlaySeaSteam;
+                            }
+                            else if (ImGui.Selectable("XDG Steam"))
+                            {
+                                GameCapturePreference = EGameCapturePreference.XDGSteam;
                             }
                             else if (ImGui.Selectable("Custom"))
                             {
@@ -392,17 +412,35 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Unindent();
                         ImGui.EndDisabled();
 
-                        ImGui.BeginDisabled(useDatabaseForEncounterHistory);
                         ImGui.AlignTextToFramePadding();
-                        ImGui.Text("Limit Encounter Buff Tracking Without Database: ");
+                        ImGui.Text("Skip Saving Encounters With No Combat Data [Experimental]: ");
                         ImGui.SameLine();
-                        ImGui.Checkbox("##LimitEncounterBuffTrackingWithoutDatabase", ref limitEncounterBuffTrackingWithoutDatabase);
+                        ImGui.Checkbox("##SkipSavingEncountersWithNoCombatData", ref skipSavingEncountersWithNoCombatData);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("When enabled, buffs are limited to only the latest 100 per entity instead of being limitless. This only applies if the Database is disabled to allow reduced memory usage. This setting is not retroactive.");
+                        ImGui.TextWrapped("When enabled, Encounters that have no combat data (such as damage events) will not be saved to the database.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Limit Encounter Buff Tracking In Open World: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##LimitEncounterBuffTrackingInOpenWorld", ref limitEncounterBuffTrackingInOpenWorld);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, buffs are limited to only the latest 100 per entity instead of being limitless. This setting is not retroactive.");
                         ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Skip Skill Snapshot Saving In Open World: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##SkipSkillSnapshotSavingInOpenWorld", ref skipSkillSnapshotSavingInOpenWorld);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, Skill Snapshots are no longer stored whenever a Skill Event occurs. Snapshots makes it possible to view Skill Snapshots (Instances) in the Entity Inspector. They also allow Database Migrations to occur without losing data.\nEnabling this setting can help save a lot of memory while in the Open World.\nNote: By default your current 'Map' is considered to be the 'Open World' before your first Map Change just after launching ZDPS even if you're not in the Open World.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
 
                         ImGui.AlignTextToFramePadding();
                         ImGui.Text("Allow Encounter Saving Pausing In Open World: ");
@@ -413,6 +451,30 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TextWrapped("When enabled, a button is added to the top of the Main Window that allows the current Encounter to not be saved to the Database.\nThis is only available while in the Open World and will automatically disable when map changing. Benchmarking and Manual New Encounter creation will be disabled while Paused.\nNote: At least one map change is required before the button will appear after starting ZDPS.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
+
+                        ImGui.BeginDisabled(!allowEncounterSavingPausingInOpenWorld);
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Persist Encounter Saving Pause State Between Maps: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##PersistEncounterSavingPauseStateBetweenMaps", ref persistEncounterSavingPauseStateBetweenMaps);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, the Encounter Saving Pause state will be remembered even after changing maps. However, the state will not persist between ZDPS sessions.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Minimal Processing While Encounter Saving Paused: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##MinimalProcessingWhileEncounterSavingPaused", ref minimalProcessingWhileEncounterSavingPaused);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, while Encounter Saving is Paused, DPS and other metrics will not be calculated. Only the minimum amount of data (Attributes) will be processed.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.EndDisabled();
 
                         ImGui.EndChild();
                         ImGui.EndTabItem();
@@ -488,12 +550,12 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Unindent();
 
                         ImGui.AlignTextToFramePadding();
-                        ImGui.Text("Display True Per Second Values In Meters: ");
+                        ImGui.Text("Display Active Per Second Values In Meters: ");
                         ImGui.SameLine();
                         ImGui.Checkbox("##DisplayTruePerSecondValuesInMeters", ref displayTruePerSecondValuesInMeters);
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
-                        ImGui.TextWrapped("When enabled, the Damage, Healing, and Taken Per Second value shown in the Meters will have the 'true' Per Second value, shown in square brackets, in addition to the normal 'Active Per Second' value. This means it is recalculated every second instead of only using the time the entity was actively participating in combat pressing buttons.\nNote: Both values are accurate, they are just two different metrics.\nThis only works starting from the Next Encounter. It is not retroactive and this value currently only will be shown in the Meters UI.");
+                        ImGui.TextWrapped("When enabled, the Damage, Healing, and Taken Per Second value shown in the Meters will have the 'Active' Per Second value, shown in square brackets, in addition to the normal 'Encounter Per Second' value. This means it is recalculated every second while taking down time and late starts into account instead of ignoring down time and calculating based on when the first damage event in the Encounter was dealt.\nNote: Both values are accurate, they are just two different metrics.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -605,6 +667,16 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
                         ImGui.TextWrapped("When enabled, the previous Encounter will remain in the Meter UI until damage has been dealt in the current Encounter.\nThe Meter UI will still swap to the current Encounter on Battle change events (these are generally Map changes).");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Show Channel Line Number In Status: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##ShowChannelLineNumberInStatus", ref showChannelLineNumberInStatus);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, shows the current Channel Line number in the Status bar of the Main Window.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -754,6 +826,8 @@ namespace BPSR_ZDPS.Windows
 
                         if(ImGui.CollapsingHeader("Meter Settings"))
                         {
+                            ImGui.Indent();
+
                             ImGui.SeparatorText("Tanking");
 
                             ImGui.AlignTextToFramePadding();
@@ -796,6 +870,8 @@ namespace BPSR_ZDPS.Windows
                             ImGui.BeginDisabled(true);
                             ImGui.TextWrapped("When enabled, shows the current HP Percentage as a Red Bar instead of the Blue Bar that would normally show how much total damage the NPC has taken.");
                             ImGui.EndDisabled();
+                            ImGui.Unindent();
+
                             ImGui.Unindent();
                         }
 
@@ -864,6 +940,40 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TextWrapped("When enabled, will force ZDPS to run at a lower rate, potentially causing stuttering UI when moving windows. Only turn this on if you experience Very High CPU usage from ZDPS.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
+
+                        ImGui.BeginDisabled(lowPerformanceMode);
+                        int maxSyncRate = 1;
+                        if (allowedSyncRates.Count > 0)
+                        {
+                            maxSyncRate = allowedSyncRates.Last().Key;
+                        }
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("ZDPS Refresh Rate (Alternate Performance Tuning): ");
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        if (ImGui.SliderInt("##FixedFramerate", ref fixedFramerate, 1, maxSyncRate, $"{fixedFramerate} ({allowedSyncRates[fixedFramerate]}hz)", ImGuiSliderFlags.ClampOnInput))
+                        {
+                            Settings.Instance.FixedFramerateScale = (uint)fixedFramerate;
+                        }
+                        ImGui.PopStyleColor(2);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Set the UI refresh rate of ZDPS. Setting this below 55hz will likely cause UI stuttering. Changes to this setting are applied and saved in real-time.");
+                        ImGui.TextWrapped("Note: Setting this as close to 60hz as possible is recommended for all users.");
+                        if (fpsUpdateTracker >= 0.5)
+                        {
+                            currentFps = Math.Round(1 / io.DeltaTime, 1);
+                            fpsUpdateTracker = 0;
+                        }
+                        else
+                        {
+                            fpsUpdateTracker += io.DeltaTime;
+                        }
+                        ImGui.TextUnformatted($"Estimated Current FPS (from Delta Time): {currentFps}");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+                        ImGui.EndDisabled();
 
                         ImGui.EndChild();
                         ImGui.EndTabItem();
@@ -1419,11 +1529,16 @@ namespace BPSR_ZDPS.Windows
             displayTruePerSecondValuesInMeters = Settings.Instance.DisplayTruePerSecondValuesInMeters;
             allowGamepadNavigationInputInZDPS = Settings.Instance.AllowGamepadNavigationInputInZDPS;
             keepPastEncounterInMeterUntilNextDamage = Settings.Instance.KeepPastEncounterInMeterUntilNextDamage;
+            showChannelLineNumberInStatus = Settings.Instance.ShowChannelLineNumberInStatus;
 
             useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
             databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
-            limitEncounterBuffTrackingWithoutDatabase = Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase;
+            skipSavingEncountersWithNoCombatData = Settings.Instance.SkipSavingEncountersWithNoCombatData;
+            limitEncounterBuffTrackingInOpenWorld = Settings.Instance.LimitEncounterBuffTrackingInOpenWorld;
+            skipSkillSnapshotSavingInOpenWorld = Settings.Instance.SkipSkillSnapshotSavingInOpenWorld;
             allowEncounterSavingPausingInOpenWorld = Settings.Instance.AllowEncounterSavingPausingInOpenWorld;
+            persistEncounterSavingPauseStateBetweenMaps = Settings.Instance.PersistEncounterSavingPauseStateBetweenMaps;
+            minimalProcessingWhileEncounterSavingPaused = Settings.Instance.MinimalProcessingWhileEncounterSavingPaused;
 
             meterSettingsTankingShowDeaths = Settings.Instance.MeterSettingsTankingShowDeaths;
             meterSettingsNpcTakenShowHpData = Settings.Instance.MeterSettingsNpcTakenShowHpData;
@@ -1461,6 +1576,7 @@ namespace BPSR_ZDPS.Windows
             logToFile = Settings.Instance.LogToFile;
 
             lowPerformanceMode = Settings.Instance.LowPerformanceMode;
+            fixedFramerate = (int)Settings.Instance.FixedFramerateScale;
 
             // External
             externalBPTimerEnabled = Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled;
@@ -1498,6 +1614,7 @@ namespace BPSR_ZDPS.Windows
             if (!allowEncounterSavingPausingInOpenWorld)
             {
                 AppState.IsEncounterSavingPaused = false;
+                AppState.WasEncounterSavingPaused = false;
             }
 
             Settings.Instance.NormalizeMeterContributions = normalizeMeterContributions;
@@ -1517,10 +1634,15 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.DisplayTruePerSecondValuesInMeters = displayTruePerSecondValuesInMeters;
             Settings.Instance.AllowGamepadNavigationInputInZDPS = allowGamepadNavigationInputInZDPS;
             Settings.Instance.KeepPastEncounterInMeterUntilNextDamage = keepPastEncounterInMeterUntilNextDamage;
+            Settings.Instance.ShowChannelLineNumberInStatus = showChannelLineNumberInStatus;
 
             Settings.Instance.UseDatabaseForEncounterHistory = useDatabaseForEncounterHistory;
             Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;
-            Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase = limitEncounterBuffTrackingWithoutDatabase;
+            Settings.Instance.SkipSavingEncountersWithNoCombatData = skipSavingEncountersWithNoCombatData;
+            Settings.Instance.LimitEncounterBuffTrackingInOpenWorld = limitEncounterBuffTrackingInOpenWorld;
+            Settings.Instance.SkipSkillSnapshotSavingInOpenWorld = skipSkillSnapshotSavingInOpenWorld;
+            Settings.Instance.PersistEncounterSavingPauseStateBetweenMaps = persistEncounterSavingPauseStateBetweenMaps;
+            Settings.Instance.MinimalProcessingWhileEncounterSavingPaused = minimalProcessingWhileEncounterSavingPaused;
 
             Settings.Instance.MeterSettingsTankingShowDeaths = meterSettingsTankingShowDeaths;
             Settings.Instance.MeterSettingsNpcTakenShowHpData = meterSettingsNpcTakenShowHpData;
@@ -1555,6 +1677,7 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.LogToFile = logToFile;
 
             Settings.Instance.LowPerformanceMode = lowPerformanceMode;
+            Settings.Instance.FixedFramerateScale = (uint)fixedFramerate;
 
             // External
             Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled = externalBPTimerEnabled;
@@ -1710,6 +1833,26 @@ namespace BPSR_ZDPS.Windows
             }
             ImGui.EndDisabled();
             ImGui.SetItemTooltip("Clear Keybinding.");
+        }
+
+        public static void RecalculateRefreshRates()
+        {
+            allowedSyncRates.Clear();
+            var glfwMonitor = Hexa.NET.GLFW.GLFW.GetPrimaryMonitor();
+            var glfwVidMode = Hexa.NET.GLFW.GLFW.GetVideoMode(glfwMonitor);
+            for (int i = 1; i < 5; i++)
+            {
+                float syncRate = (float)glfwVidMode.RefreshRate / (float)i;
+                if (syncRate >= 35.0f)
+                {
+                    allowedSyncRates.Add(i, MathF.Round(syncRate, 2));
+                }
+            }
+
+            if (allowedSyncRates.Count == 0)
+            {
+                allowedSyncRates.Add(1, glfwVidMode.RefreshRate);
+            }
         }
     }
 }

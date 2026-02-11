@@ -14,8 +14,6 @@ namespace BPSR_ZDPS.Meters
     {
         public string Name = "";
 
-        protected Encounter? ActiveEncounter = null;
-
         public virtual void Draw(MainWindow mainWindow) { }
 
         public static bool SelectableWithHintImage(string number, string name, string value, int profession)

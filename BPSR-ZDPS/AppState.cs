@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Serilog;
 using System;
+using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,7 @@ namespace BPSR_ZDPS
         public static long BenchmarkSingleTargetUUID { get; set; }
 
         public static bool IsEncounterSavingPaused { get; set; } = false;
+        public static bool WasEncounterSavingPaused { get; set; } = false; // For restoring Pause state after being in an Active Dungeon State
 
         public static bool MousePassthrough { get; set; } = false;
 
@@ -40,6 +42,9 @@ namespace BPSR_ZDPS
 
         public static long PartyTeamId = 0;
 
+        public static Encounter? ActiveEncounter = null;
+        public static Encounter? OpenedHistoricalEncounter = null;
+
         public static void LoadDataTables()
         {
             // Load table data for resolving with in the future
@@ -47,7 +52,7 @@ namespace BPSR_ZDPS
             if (File.Exists(appStringsFile))
             {
                 var appStrings = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(File.ReadAllText(appStringsFile));
-                AppStrings.Strings = appStrings;
+                AppStrings.Strings = appStrings.ToFrozenDictionary();
                 Log.Information("Loaded AppStrings.json");
             }
 

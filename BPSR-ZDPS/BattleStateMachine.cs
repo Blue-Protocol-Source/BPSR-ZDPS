@@ -14,11 +14,14 @@ namespace BPSR_ZDPS
     {
         public static ConcurrentQueue<KeyValuePair<EDungeonState, DateTime>> DungeonStateHistory { get; private set; } = new();
         public static ConcurrentQueue<KeyValuePair<DungeonTargetData, DateTime>> DungeonTargetDataHistory { get; private set; } = new();
+        public static ConcurrentQueue<KeyValuePair<DungeonVar, DateTime>> DungeonVarHistory { get; private set; } = new();
         public static DateTime? DeferredEncounterStartTime { get; private set; } = null;
         public static EncounterStartReason DeferredEncounterStartReason { get; private set; } = EncounterStartReason.None;
         public static DateTime? DeferredEncounterEndFinalTime { get; private set; } = null;
         public static EncounterEndFinalData? DeferredEncounterEndFinalData { get; private set; } = null;
         static KeyValuePair<DungeonTargetData, DateTime>? PreviousDungeonTargetData = null;
+        static KeyValuePair<DungeonVar, DateTime>? PreviousDungeonVar = null;
+        static bool NewEncounterOnNextEncounterEnd = false;
 
         // Called at the start of a Map Load/Enter event before Objective and State data is set
         public static void StartNewBattle()
@@ -29,13 +32,21 @@ namespace BPSR_ZDPS
             DeferredEncounterStartReason = EncounterStartReason.None;
             DeferredEncounterEndFinalTime = null;
             // We do not null the DeferredEncounterEndFinalData as we use it to ensure we don't send multiple End Final calls
+
+            DungeonVarHistory.Clear();
             DungeonTargetDataHistory.Clear();
             DungeonStateHistory.Clear();
+
+            PreviousDungeonVar = null;
+            NewEncounterOnNextEncounterEnd = false;
 
             EncounterManager.StartNewBattle();
             EncounterManager.StartEncounter(true, EncounterStartReason.Force);
 
-            AppState.IsEncounterSavingPaused = false;
+            if (!Settings.Instance.PersistEncounterSavingPauseStateBetweenMaps)
+            {
+                AppState.IsEncounterSavingPaused = false;
+            }
         }
 
         public static void DungeonStateHistoryAdd(EDungeonState dungeonState)
@@ -54,6 +65,11 @@ namespace BPSR_ZDPS
                 // We can call this safely as it will reuse the current encounter if nothing has happened (which is the most likely case)
                 // Note: While we are in Open World we will want to use different logic for detecting encounters
                 EncounterManager.StartEncounter();
+
+                if (Settings.Instance.PersistEncounterSavingPauseStateBetweenMaps)
+                {
+                    AppState.IsEncounterSavingPaused = AppState.WasEncounterSavingPaused;
+                }
             }
             else if (dungeonState == EDungeonState.DungeonStatePlaying)
             {
@@ -144,8 +160,60 @@ namespace BPSR_ZDPS
 
                     // Note: As long as a new encounter is not made, new data will still be applied to this ended encounter (this is the desired behavior)
                     EncounterManager.StopEncounter();
+
+                    if (NewEncounterOnNextEncounterEnd)
+                    {
+                        NewEncounterOnNextEncounterEnd = false;
+
+                        Log.Debug("DungeonTargetDataHistoryAdd - Objective Complete is requesting an EncounterStart as New Objective");
+
+                        DeferredEncounterStartReason = EncounterStartReason.NewObjective;
+                        DeferredEncounterStartTime = DateTime.Now.AddSeconds(1);
+                    }
                 }
             }
+        }
+
+        public static void DungeonVarHistoryAdd(DungeonVar dungeonVar)
+        {
+            // We'll ensure there's an upper limit just in case something goes very wrong though if it does we're already in trouble
+            if (DungeonVarHistory.Count > 300)
+            {
+                DungeonVarHistory.TryDequeue(out _);
+            }
+
+            var newDungeonVar = new KeyValuePair<DungeonVar, DateTime>(dungeonVar, DateTime.Now);
+
+            DungeonVarHistory.Enqueue(newDungeonVar);
+
+            foreach (var dungeonVarData in dungeonVar.DungeonVarData)
+            {
+                //Log.Information($"{DateTime.Now} - BattleStateMachine.DungeonVarHistoryAdd: Name={dungeonVarData.Name}, Value={dungeonVarData.Value}");
+
+                if (dungeonVarData.Name == "IsFinishTarget" && dungeonVarData.Value == 1)
+                {
+                    bool previousWasFinish = false;
+                    if (PreviousDungeonVar != null)
+                    {
+                        foreach (var item in PreviousDungeonVar.Value.Key.DungeonVarData)
+                        {
+                            if (item.Name == "IsFinishTarget" && item.Value == 1)
+                            {
+                                previousWasFinish = true;
+                            }
+                        }
+                    }
+
+                    if (!previousWasFinish)
+                    {
+                        Log.Debug($"{DateTime.Now} - BattleStateMachine.DungeonVarHistoryAdd: IsFinishTarget == 1 for the first time. Next EncounterEnd will request EncounterStart");
+                        // Mark the next Objective End call as needing to also create a New Objective (Encounter Start) event as this dungeon is not correctly designed
+                        NewEncounterOnNextEncounterEnd = true;
+                    }
+                }
+            }
+
+            PreviousDungeonVar = newDungeonVar;
         }
 
         public static void SetDeferredEncounterEndFinalData(DateTime dateTime, EncounterEndFinalData data)
@@ -209,6 +277,22 @@ namespace BPSR_ZDPS
                 EncounterManager.SignalEncounterEndFinal(DeferredEncounterEndFinalData);
 
                 // We do not null the DeferredEncounterEndFinalData as we use it to ensure we don't send multiple End Final calls
+            }
+        }
+
+        public static bool IsInOpenWorld()
+        {
+            if (DungeonStateHistory.IsEmpty)
+            {
+                return true;
+            }
+            else if (DungeonStateHistory.Last().Key == EDungeonState.DungeonStateNull)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
