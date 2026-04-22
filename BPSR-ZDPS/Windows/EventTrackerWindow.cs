@@ -21,7 +21,7 @@ namespace BPSR_ZDPS.Windows
         public static string SaveDataFileName = "EventTrackerSaveData";
         public static string PresetsContainersSaveDataFileName = "EventTrackerPresetsContainersSaveData";
         public static string PresetsTrackersSaveDataFileName = "EventTrackerPresetsTrackersSaveData";
-        public static int EventTrackerSaveVersion = 1;
+        public static int EventTrackerSaveVersion = 2;
 
         public static bool IsOpened = false;
 
@@ -72,6 +72,7 @@ namespace BPSR_ZDPS.Windows
         static bool IsPresetManagerInContainerMode = false;
         static TrackedEventEntry? SelectedPresetManagerTracker = null;
         static List<TrackedEventEntry> PresetTrackersList = new();
+        static string PresetManagerTrackersFilterText = "";
         static int SelectedPresetManagerContainerIdx = -1;
         static List<TrackerContainer> PresetContainersList = new();
 
@@ -2474,7 +2475,7 @@ namespace BPSR_ZDPS.Windows
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr("EventTrackerPresetManager"));
             ImGui.SetNextWindowSizeConstraints(new Vector2(400, 350), new Vector2(ImGui.GETFLTMAX()));
-            ImGui.SetNextWindowSize(new Vector2(400, 450), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(400, 650), ImGuiCond.FirstUseEver);
             if (ImGui.Begin("Preset Manager###EventTrackerPresetManagerWindow", ref IsPresetManagerOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
             {
                 if (ShouldPresetManagerFocusNext)
@@ -2657,10 +2658,15 @@ namespace BPSR_ZDPS.Windows
         private static void DrawTrackerPresetManager()
         {
             ImGui.TextUnformatted("Tracker Presets:");
-            if (ImGui.BeginListBox("##TrackerPresetsList", new Vector2(ImGui.GetContentRegionAvail().X, -(ImGui.GetItemRectSize().Y * 12))))
+            ImGui.SetNextItemWidth(-1);
+            ImGui.InputTextWithHint("##PresetManagerTrackersFilterText", "Filter Text", ref PresetManagerTrackersFilterText, 128);
+            ImGui.SetItemTooltip("Filter the Preset List by Tracker Name.");
+            var y = ImGui.GetContentRegionAvail().Y;
+            var z = ImGui.GetItemRectSize().Y;
+            if (ImGui.BeginListBox("##TrackerPresetsList", new Vector2(ImGui.GetContentRegionAvail().X, ImGui.GetContentRegionAvail().Y - (ImGui.GetItemRectSize().Y * 8.5f))))//-(ImGui.GetItemRectSize().Y * 12))))
             {
                 int idx = 0;
-                foreach (var tracker in PresetTrackersList)
+                foreach (var tracker in PresetTrackersList.Where(x => x.TrackerName.Contains(PresetManagerTrackersFilterText, StringComparison.OrdinalIgnoreCase)))
                 {
                     bool isSelected = SelectedPresetManagerTracker == tracker;
                     var highlight = isSelected ? ImGuiSelectableFlags.Highlight : ImGuiSelectableFlags.None;
@@ -2944,6 +2950,10 @@ namespace BPSR_ZDPS.Windows
 
                     if (ImGui.BeginListBox("##ContainersListBox", new Vector2(ImGui.GetContentRegionAvail().X, -100)))
                     {
+                        bool queuedReorder = false;
+                        int movingIdx = -1;
+                        int targetIdx = -1;
+                        int containerIdx = 0;
                         foreach (var container in EventTrackerContainers)
                         {
                             bool isSelected = ActiveTrackerContainer == container.Value;
@@ -2967,11 +2977,64 @@ namespace BPSR_ZDPS.Windows
                                     ActiveTrackedEventEntryIdx = -1;
                                 }
                             }
+                            if (ImGui.BeginDragDropSource())
+                            {
+                                unsafe
+                                {
+                                    ImGui.SetDragDropPayload("ContainerReorder", (void*)IntPtr.Zero, 0);
+                                }
+
+                                ActiveTrackerContainer = container.Value;
+
+                                ActiveTrackedEventEntry = null;
+                                ActiveTrackedEventEntryIdx = -1;
+
+                                ImGui.TextUnformatted(container.Value.ContainerName);
+
+                                ImGui.EndDragDropSource();
+                            }
+
                             ImGui.PushStyleColor(ImGuiCol.DragDropTarget, Colors.LightBlue_Transparent);
                             if (ImGui.BeginDragDropTarget())
                             {
                                 var payload = ImGui.AcceptDragDropPayload("TrackedEvent", ImGuiDragDropFlags.AcceptBeforeDelivery);
-                                
+
+                                var reorder_payload = ImGui.AcceptDragDropPayload("ContainerReorder", ImGuiDragDropFlags.AcceptBeforeDelivery | ImGuiDragDropFlags.AcceptNoDrawDefaultRect);
+
+                                if (!reorder_payload.IsNull)
+                                {
+                                    var min = ImGui.GetItemRectMin();// - ImGui.GetStyle().ItemSpacing;
+                                    var max = ImGui.GetItemRectMax();// + ImGui.GetStyle().ItemSpacing;
+                                    float midY = (min.Y + max.Y) * 0.5f;
+                                    float mouseY = ImGui.GetIO().MousePos.Y;
+                                    bool insertBefore = mouseY < midY;
+
+                                    float lineY = insertBefore ? min.Y : max.Y;
+
+                                    ImGui.GetWindowDrawList().AddLine(new Vector2(min.X, lineY), new Vector2(max.X, lineY), ImGui.ColorConvertFloat4ToU32(Colors.LightBlue_Transparent), 2.0f);
+
+                                    if (reorder_payload.IsDelivery())
+                                    {
+                                        var tempList = EventTrackerContainers.ToList();
+
+                                        for (int i = 0; i < tempList.Count; i++)
+                                        {
+                                            if (tempList[i].Key == ActiveTrackerContainer.IdTracker)
+                                            {
+                                                movingIdx = i;
+                                                break;
+                                            }
+                                        }
+
+                                        queuedReorder = true;
+                                        targetIdx = insertBefore ? containerIdx : containerIdx + 1;
+                                        if (movingIdx < containerIdx)
+                                        {
+                                            targetIdx -= 1;
+                                        }
+                                    }
+                                }
+
                                 if (!payload.IsNull)
                                 {
                                     DragDropTargetName = container.Value.ContainerName;
@@ -3059,8 +3122,25 @@ namespace BPSR_ZDPS.Windows
 
                                 ImGui.EndPopup();
                             }
+
+                            containerIdx++;
                         }
                         ImGui.EndListBox();
+                        if (queuedReorder)
+                        {
+                            queuedReorder = false;
+
+                            var tempList = EventTrackerContainers.ToList();
+
+                            var item = tempList[movingIdx];
+                            tempList.RemoveAt(movingIdx);
+                            tempList.Insert(targetIdx, item);
+
+                            EventTrackerContainers = tempList.ToDictionary();
+
+                            movingIdx = -1;
+                            targetIdx = -1;
+                        }
                     }
                     if (duplicateContainer != null)
                     {
@@ -5282,6 +5362,11 @@ namespace BPSR_ZDPS.Windows
                     PlaySound = true,
                 });
                 PresetTrackersList.Add(newBewilderment);
+
+                var newErosionBloomSickness = CreateNewBasicBuffEventEntry("Boss: Erosion Bloom Sickness", 828153);
+                newErosionBloomSickness.TrackedEntityType = ETrackedEntityType.Everyone;
+                newErosionBloomSickness.ShowLayers = true;
+                PresetTrackersList.Add(newErosionBloomSickness);
             }
 
 
@@ -5321,6 +5406,13 @@ namespace BPSR_ZDPS.Windows
                 newWoundTracker.ShowNameInsideProgressBar = true;
                 newWoundTracker.ShowDurationTextInProgressBar = true;
                 groupDebuffsContainer.EventTrackers.Add(2, newWoundTracker);
+                var newExhaustedFlameDevour = CreateNewBasicBuffEventEntry("Tatta Exhausted Flame Devour", 2110055);
+                newExhaustedFlameDevour.TrackedEntityType = ETrackedEntityType.Everyone;
+                newExhaustedFlameDevour.ShowEntityName = true;
+                newExhaustedFlameDevour.DurationProgressBarSameLine = true;
+                newExhaustedFlameDevour.ShowNameInsideProgressBar = true;
+                newExhaustedFlameDevour.ShowDurationTextInProgressBar = true;
+                groupDebuffsContainer.EventTrackers.Add(3, newExhaustedFlameDevour);
 
                 PresetContainersList.Add(groupDebuffsContainer);
             }
