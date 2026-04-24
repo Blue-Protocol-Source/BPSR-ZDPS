@@ -153,6 +153,8 @@ namespace BPSR_ZDPS.Windows
 
                 Settings.Instance.Apply();
 
+                Log.Information($"Detected Npcap Version: {User32.GetNpcapVersionString()}");
+
                 ModuleSolver.Init();
 
                 if (string.IsNullOrEmpty(MessageManager.NetCaptureDeviceName))

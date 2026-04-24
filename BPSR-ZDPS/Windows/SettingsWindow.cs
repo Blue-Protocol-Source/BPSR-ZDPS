@@ -116,6 +116,8 @@ namespace BPSR_ZDPS.Windows
         static float fpsUpdateTracker = 0.0f;
         static double currentFps = 0.0;
 
+        static Version npcapVersion = new();
+
         public static void Open()
         {
             RunOnceDelayed = 0;
@@ -157,6 +159,8 @@ namespace BPSR_ZDPS.Windows
             HotKeyManager.UnregisterAllHotKeys();
 
             RecalculateRefreshRates();
+
+            npcapVersion = User32.GetNpcapVersion();
 
             ImGui.PopID();
         }
@@ -206,6 +210,19 @@ namespace BPSR_ZDPS.Windows
                         ImGui.BeginChild("##GeneralTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
 
                         ImGui.SeparatorText("Network Device");
+
+                        if (npcapVersion < new Version(1, 86))
+                        {
+                            ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Goldenrod_Transparent);
+                            ImGui.BeginChild($"##OutOfDateNpcapVersion", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
+                            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                            ImGui.TextUnformatted("WARNING:");
+                            ImGui.PopFont();
+                            ImGui.TextWrapped($"Npcap version ({npcapVersion}) is below 1.86. It is strongly recommended to update to this version, or higher, to avoid problems.");
+                            ImGui.EndChild();
+                            ImGui.PopStyleColor();
+                        }
+
                         ImGui.Text("Select the network device to read from:");
 
                         ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X);

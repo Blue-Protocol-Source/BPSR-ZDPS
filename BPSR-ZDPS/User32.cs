@@ -186,4 +186,30 @@ public class User32
 
     [DllImport("user32.dll")]
     public static extern int GetWindowThreadProcessId(IntPtr hWnd, out int lpdwProcessId);
+
+    [DllImport("wpcap.dll", CallingConvention = CallingConvention.Cdecl)]
+    private static extern IntPtr pcap_lib_version();
+
+    public static string GetNpcapVersionString()
+    {
+        IntPtr ptr = pcap_lib_version();
+        string versionStr = Marshal.PtrToStringAnsi(ptr);
+        return versionStr;
+    }
+
+    public static Version GetNpcapVersion()
+    {
+        string str = GetNpcapVersionString();
+        if (!string.IsNullOrEmpty(str))
+        {
+            var match = System.Text.RegularExpressions.Regex.Match(str, @"\w+ version (\d+(?:\.\d+)+)", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            if (match.Success)
+            {
+                Version.TryParse(match.Groups[1].Value, out var version);
+                return version;
+            }
+
+        }
+        return new Version();
+    }
 }
