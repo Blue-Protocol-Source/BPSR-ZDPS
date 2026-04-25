@@ -1476,6 +1476,14 @@ namespace BPSR_ZDPS.Windows
                     }
                 }
 
+                if (windowSettings.OnlyShowContainersWhenZDPSMeterPinned && !windowSettings.IsContainerEditMode)
+                {
+                    if (Settings.Instance.WindowSettings.MainWindow.TopMost)
+                    {
+                        return;
+                    }
+                }
+
                 ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
                 foreach (var eventTrackerContainersKVP in EventTrackerContainers)
                 {
@@ -3318,6 +3326,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.Checkbox("Show Edit Mode Placeholders", ref windowSettings.EditModeShowPlaceholders);
                     ImGui.SetItemTooltip("Attempts to add Placeholder entries for Trackers while in Edit Mode to help with visualizing them.");
 
+                    ImGui.BeginDisabled(windowSettings.OnlyShowContainersWhenZDPSMeterPinned);
                     ImGui.Checkbox("Hide Containers When Game Not Focused", ref windowSettings.HideContainersWhenGameNotFocused);
                     ImGui.SetItemTooltip("Automatically hides all Containers when the game isn't in focus regardless of Container and Tracker settings.");
                     ImGui.Indent();
@@ -3326,6 +3335,11 @@ namespace BPSR_ZDPS.Windows
                     ImGui.SetItemTooltip("Having a ZDPS window in focus will prevent the Containers from being automatically hidden due to the game no longer being in focus.");
                     ImGui.EndDisabled();
                     ImGui.Unindent();
+                    ImGui.EndDisabled();
+                    ImGui.BeginDisabled(windowSettings.HideContainersWhenGameNotFocused);
+                    ImGui.Checkbox("Only Show Containers When ZDPS Meter Pinned", ref windowSettings.OnlyShowContainersWhenZDPSMeterPinned);
+                    ImGui.SetItemTooltip("Containers will only be visible when the ZDPS Meter window is actively pinned as top most.\nThis is not compatible with the other Container Hiding settings.\nDoes not apply while in Edit Mode.");
+                    ImGui.EndDisabled();
 
                     ImGui.Checkbox("Containers Always Ignore Input (Excluding Edit Mode)", ref windowSettings.AlwaysIgnoreInputs);
                     ImGui.SetItemTooltip("All input/mouse events will be ignored for Containers unless in Edit Mode.\nOtherwise, 'Pinned Window Clickthrough' (Mouse Passthrough) must be toggled on via Hotkey Keybind in Settings.");
@@ -6322,6 +6336,7 @@ namespace BPSR_ZDPS.Windows
 
         public bool HideContainersWhenGameNotFocused = false;
         public bool KeepContainersWhenZDPSFocused = false;
+        public bool OnlyShowContainersWhenZDPSMeterPinned = false;
 
         public bool AlwaysIgnoreInputs = false;
         public bool ShowForceHideContainersBtnOnMainWindow = false;
