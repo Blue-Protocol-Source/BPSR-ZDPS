@@ -26,6 +26,7 @@ namespace BPSR_ZDPS.Windows
         public static bool HideEntitiesWithNoDamageDealt = false;
         public static bool HidePlayerSummons = false;
         public static bool ShowTotalsRow = false;
+        public static bool ShowMonsterTypeAsProfession = false;
 
         static List<Encounter> Encounters = new();
         static List<Battle> Battles = new();
@@ -497,7 +498,14 @@ namespace BPSR_ZDPS.Windows
                             ImGui.TextUnformatted(entity.Name ?? $"[{entity.UID}]");
 
                             ImGui.TableNextColumn();
-                            ImGui.TextUnformatted(profession);
+                            if (ShowMonsterTypeAsProfession && entity.EntityType == Zproto.EEntityType.EntMonster)
+                            {
+                                ImGui.TextUnformatted(entity.MonsterType.ToString());
+                            }
+                            else
+                            {
+                                ImGui.TextUnformatted(profession);
+                            }
 
                             ImGui.TableNextColumn();
                             ImGui.TextUnformatted(entity.AbilityScore.ToString());
@@ -643,6 +651,12 @@ namespace BPSR_ZDPS.Windows
                             }
 
                             ImGui.Separator();
+
+                            if (ImGui.MenuItem("Show Monster Type As Profession", ShowMonsterTypeAsProfession))
+                            {
+                                ShowMonsterTypeAsProfession = !ShowMonsterTypeAsProfession;
+                            }
+                            ImGui.SetItemTooltip("The Type of Monster (Monster, Elite, Boss) will be displayed in the Profession column for all Monsters.");
 
                             if (ImGui.MenuItem("Toggle Totals Row", ShowTotalsRow))
                             {

@@ -230,6 +230,11 @@ namespace BPSR_ZDPS.Windows
                             GearInspector.Open();
                         }
                     }
+                    else if (LoadedEntity.EntityType == Zproto.EEntityType.EntMonster)
+                    {
+                        ImGui.SameLine();
+                        ImGui.TextUnformatted($"({LoadedEntity.MonsterType})");
+                    }
 
                     ImGui.TableNextColumn();
 
