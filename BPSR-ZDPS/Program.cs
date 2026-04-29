@@ -47,14 +47,18 @@ namespace BPSR_ZDPS
 
                 if (Settings.Instance.AggressiveExceptionDebugLogging)
                 {
-                    Log.Information("Aggressive Exception Debug Logging is Enabled");
                     AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
                 }
             }
 
             Log.Logger = logBuilder.CreateLogger();
 
-            Log.Information($"Starting ZDPS v{Utils.AppVersion}");
+            if (Settings.Instance.AggressiveExceptionDebugLogging)
+            {
+                Log.Information("Aggressive Exception Debug Logging is Enabled");
+            }
+
+            Log.Information($"Starting ZDPS v{Utils.AppVersion} TEST");
 
             DB.Init();
 
