@@ -5955,11 +5955,23 @@ namespace BPSR_ZDPS.Windows
             // If we ever need to perform a clone we are breaking the original source type
             // This can be manually restored in the rare case we didn't want to break it
             cloned.SourceLocationType = ESourceLocationType.Manual;
+
+            cloned.LoadEvents = (LoadEvent)LoadEvents.Clone();
+
+            cloned.BuffEvents = new(BuffEvents);
+
+            cloned.SkillEvents = new(SkillEvents);
+
+            cloned.RaidWarningTrackerDatas = new();
+            foreach (var rw in RaidWarningTrackerDatas)
+            {
+                cloned.RaidWarningTrackerDatas.Add((RaidWarningTrackerData)rw.Clone());
+            }
             return cloned;
         }
     }
 
-    public class RaidWarningTrackerData
+    public class RaidWarningTrackerData : ICloneable
     {
         public bool IsEnabled = false;
         public ERaidWarningActivationType ActivationType = ERaidWarningActivationType.OnGain;
@@ -5969,6 +5981,12 @@ namespace BPSR_ZDPS.Windows
         public string MessageFormat = "";
         public bool PlaySound = false;
         public string CustomSoundPath = "";
+
+        public object Clone()
+        {
+            var cloned = this.MemberwiseClone();
+            return cloned;
+        }
     }
 
     public enum ERaidWarningActivationType
@@ -5988,7 +6006,7 @@ namespace BPSR_ZDPS.Windows
         GreaterThanOrEqualTo = 4
     }
 
-    public class LoadEvent
+    public class LoadEvent : ICloneable
     {
         public bool InCombat = false;
         public bool NotInCombat = false;
@@ -6014,6 +6032,19 @@ namespace BPSR_ZDPS.Windows
 
         [JsonProperty]
         public List<int> SceneIdValues { get; private set; } = new();
+
+        public object Clone()
+        {
+            var cloned = (LoadEvent)this.MemberwiseClone();
+
+            cloned.RoleType = new(RoleType);
+            cloned.Profession = new(Profession);
+            cloned.SubProfession = new(SubProfession);
+
+            cloned.SceneIds = new(SceneIds);
+
+            return cloned;
+        }
 
         public void UpdateSceneIdValuesFromString()
         {
