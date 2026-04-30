@@ -58,7 +58,7 @@ namespace BPSR_ZDPS
                 Log.Information("Aggressive Exception Debug Logging is Enabled");
             }
 
-            Log.Information($"Starting ZDPS v{Utils.AppVersion} TEST");
+            Log.Information($"Starting ZDPS v{Utils.AppVersion}");
 
             DB.Init();
 
