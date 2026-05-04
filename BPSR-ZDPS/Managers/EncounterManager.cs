@@ -403,6 +403,12 @@ namespace BPSR_ZDPS
                 {
                     entity.Value.RecalculateInactiveTime(now, true);
                 }
+                else
+                {
+                    // We have to recalculate the inactive time again in case the entity hasn't had a combat event in a while
+                    // TODO: Find a way to avoid calling this every time, we need to be able to increment inactive time trackers cheaply
+                    entity.Value.RecalculateInactiveTime(now, true);
+                }
                 double inactiveTime = entity.Value.GetInactiveTime();
 
                 entity.Value.DamageStats.InactiveTime = inactiveTime;

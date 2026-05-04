@@ -1029,6 +1029,9 @@ namespace BPSR_ZDPS
                 return;
             }
 
+            // Store the original time in case it gets overwritten during buff processing, we'll restore it afterwards
+            var originalArrivalTime = extraData.ArrivalTime;
+
             long buffBasedShieldBreakValue = 0;
             
             List<int> EventHandledBuffs = new();
@@ -1128,6 +1131,8 @@ namespace BPSR_ZDPS
                     }
                 }
             }
+
+            extraData.ArrivalTime = originalArrivalTime;
 
             var skillEffect = delta.SkillEffects;
             
