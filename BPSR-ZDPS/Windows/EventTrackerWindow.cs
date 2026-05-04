@@ -4834,8 +4834,11 @@ namespace BPSR_ZDPS.Windows
             {
                 // TODO: Show input box for entering Target data
                 ImGui.TextUnformatted("Target UID or Name [Requires UUID Currently - In Debug Tab of Entity Inspector]:");
-                int definedUuid = (int)ActiveTrackedEventEntry.DefinedEntityTargetUuid;
-                ImGui.InputInt("##TargetUUIDInput", ref definedUuid, ImGuiInputTextFlags.CharsDecimal);
+                long definedUuid = ActiveTrackedEventEntry.DefinedEntityTargetUuid;
+                unsafe
+                {
+                    ImGui.InputScalar("##TargetUUIDInput", ImGuiDataType.S64, &definedUuid);
+                }
                 ActiveTrackedEventEntry.DefinedEntityTargetUuid = definedUuid;
             }
             if (ActiveTrackedEventEntry.TrackedEntityType == ETrackedEntityType.Everyone)
