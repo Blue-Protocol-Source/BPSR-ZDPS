@@ -5138,6 +5138,7 @@ namespace BPSR_ZDPS.Windows
                 PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Tatta Heart of Flames", 2110061));
                 PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Tatta Exhausted Flame Devour", 2110055));
                 PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Wound (Heal Blocked)", 510571));
+                PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Wound (Heal Blocked) (DoD)", 883113));
                 PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Boarrier Wound (Heal Blocked)", 2110026));
 
                 PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Life Wave", 2302421));
@@ -5423,13 +5424,20 @@ namespace BPSR_ZDPS.Windows
                 newWoundTracker.ShowNameInsideProgressBar = true;
                 newWoundTracker.ShowDurationTextInProgressBar = true;
                 groupDebuffsContainer.EventTrackers.Add(2, newWoundTracker);
+                var newWoundDoDTracker = CreateNewBasicBuffEventEntry("Wound (Heal Blocked) (DoD)", 883113);
+                newWoundDoDTracker.TrackedEntityType = ETrackedEntityType.Everyone;
+                newWoundDoDTracker.ShowEntityName = true;
+                newWoundDoDTracker.DurationProgressBarSameLine = true;
+                newWoundDoDTracker.ShowNameInsideProgressBar = true;
+                newWoundDoDTracker.ShowDurationTextInProgressBar = true;
+                groupDebuffsContainer.EventTrackers.Add(3, newWoundDoDTracker);
                 var newExhaustedFlameDevour = CreateNewBasicBuffEventEntry("Tatta Exhausted Flame Devour", 2110055);
                 newExhaustedFlameDevour.TrackedEntityType = ETrackedEntityType.Everyone;
                 newExhaustedFlameDevour.ShowEntityName = true;
                 newExhaustedFlameDevour.DurationProgressBarSameLine = true;
                 newExhaustedFlameDevour.ShowNameInsideProgressBar = true;
                 newExhaustedFlameDevour.ShowDurationTextInProgressBar = true;
-                groupDebuffsContainer.EventTrackers.Add(3, newExhaustedFlameDevour);
+                groupDebuffsContainer.EventTrackers.Add(4, newExhaustedFlameDevour);
 
                 PresetContainersList.Add(groupDebuffsContainer);
             }
