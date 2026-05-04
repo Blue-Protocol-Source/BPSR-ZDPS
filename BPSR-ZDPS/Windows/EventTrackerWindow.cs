@@ -624,7 +624,7 @@ namespace BPSR_ZDPS.Windows
 
                                 if (eventTracker.DebugLogTracker)
                                 {
-                                    AddDebugLog($"{DateTime.Now} Buff Event [{e.BuffUuid}]({e.BaseId}) {e.BuffEventType} FromUUID={e.EntityUuid} Name={eventTracker.Name} Layers={e.Layer} Duration={e.Duration} AppliedDur={eventData.Cooldown?.BaseDuration}");
+                                    AddDebugLog($"{DateTime.Now} Buff Event [{e.BuffUuid}]({e.BaseId}) {e.BuffEventType} FromUUID={e.EntityUuid} Name={eventTracker.Name} Layers={e.Layer} Duration={e.Duration} AppliedDur={eventData.Cooldown?.BaseDuration} Consumed={eventData.Cooldown?.cooldownConsumed} Effective={eventData.Cooldown?.effectiveDuration}");
                                 }
 
                                 eventData.Cooldown?.StartOrUpdate(e.UpdateDateTime);
@@ -2136,7 +2136,7 @@ namespace BPSR_ZDPS.Windows
                                             }
                                         }
 
-                                        if (eventTracker.ShowDurationText && !eventTracker.ShowDurationTextInProgressBar)
+                                        if (eventTracker.ShowDurationText && (!eventTracker.ShowDurationTextInProgressBar || !eventTracker.ShowDurationProgessBar))
                                         {
                                             if (eventTracker.DurationTextSameLine)
                                             {
@@ -6196,8 +6196,8 @@ namespace BPSR_ZDPS.Windows
         public int DurationProgressBarCircleThickness = 5;
 
         public bool ShowDurationEnded = false;
-        public bool HideIfNoDuration = false;
-        public EHideTrackerCondition HideTrackerCondition = EHideTrackerCondition.NeverHide;
+        //public bool HideIfNoDuration = false;
+        public EHideTrackerCondition HideTrackerCondition = EHideTrackerCondition.HideOnRemoveEvent;
         public Zproto.EBuffEventType? HideOnSpecificBuffEventValue = null;
 
         public bool OverrideDuration = false;
@@ -6566,8 +6566,8 @@ namespace BPSR_ZDPS.Windows
         public bool IsCooldownStarted { get; private set; } = false;
         public bool IsCooldownEnded { get; private set; } = false;
 
-        private float effectiveDuration = 0;
-        private float cooldownConsumed = 0;
+        public float effectiveDuration { get; private set; } = 0;
+        public float cooldownConsumed { get; private set; } = 0;
         private DateTime updated;
 
         public EventCooldownData(float duration, float percentReduction, float flatReduction)
