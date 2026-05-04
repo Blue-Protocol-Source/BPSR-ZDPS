@@ -5087,15 +5087,15 @@ namespace BPSR_ZDPS.Windows
             ImGui.SeparatorText("Extra Options");
             ImGui.Checkbox("Keep On Scene Change", ref ActiveTrackedEventEntry.LoadEvents.KeepOnSceneChange);
             ImGui.SetItemTooltip("The Tracker will persist through Scene (Map) changes.\nNote: Encounter events like wipes will still remove it.");
-            HandleApplyToOthersContextMenu((tracker) => { tracker.LoadEvents.IsOwnerDead = ActiveTrackedEventEntry.LoadEvents.IsOwnerDead; });
+            HandleApplyToOthersContextMenu((tracker) => { tracker.LoadEvents.KeepOnSceneChange = ActiveTrackedEventEntry.LoadEvents.KeepOnSceneChange; });
 
             ImGui.Checkbox("Keep On Wipe", ref ActiveTrackedEventEntry.LoadEvents.KeepOnWipe);
             ImGui.SetItemTooltip("The Tracker will persist through wipes.");
-            HandleApplyToOthersContextMenu((tracker) => { tracker.LoadEvents.IsOwnerDead = ActiveTrackedEventEntry.LoadEvents.IsOwnerDead; });
+            HandleApplyToOthersContextMenu((tracker) => { tracker.LoadEvents.KeepOnWipe = ActiveTrackedEventEntry.LoadEvents.KeepOnWipe; });
 
             ImGui.Checkbox("Keep On Restart", ref ActiveTrackedEventEntry.LoadEvents.KeepOnRestart);
             ImGui.SetItemTooltip("The Tracker will persist through Restart events. These are typically when a Raid Boss is killed.");
-            HandleApplyToOthersContextMenu((tracker) => { tracker.LoadEvents.IsOwnerDead = ActiveTrackedEventEntry.LoadEvents.IsOwnerDead; });
+            HandleApplyToOthersContextMenu((tracker) => { tracker.LoadEvents.KeepOnRestart = ActiveTrackedEventEntry.LoadEvents.KeepOnRestart; });
         }
 
         public static void ToggleForceHideAllContainers(bool newState)
