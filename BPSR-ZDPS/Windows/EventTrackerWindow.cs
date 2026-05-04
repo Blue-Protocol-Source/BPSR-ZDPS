@@ -1675,6 +1675,7 @@ namespace BPSR_ZDPS.Windows
                             }
 
                             //List<long> expiredEventData = [];
+                            bool hasDisplayedTrackerData = false;
 
                             foreach (var eventDataKVP in eventTracker.EventData.AsValueEnumerable())
                             {
@@ -1781,6 +1782,22 @@ namespace BPSR_ZDPS.Windows
 
                                                 continue;
                                             }
+                                        }
+                                    }
+                                }
+
+                                if (eventTracker.OnlyDisplayOneTrackerInstance)
+                                {
+                                    if (hasDisplayedTrackerData)
+                                    {
+                                        // We already have an instance of this tracker rendered
+                                        continue;
+                                    }
+                                    else
+                                    {
+                                        if (eventData.Cooldown != null && eventData.Cooldown.IsCooldownStarted && !eventData.Cooldown.IsFinished())
+                                        {
+                                            hasDisplayedTrackerData = true;
                                         }
                                     }
                                 }
@@ -4547,6 +4564,9 @@ namespace BPSR_ZDPS.Windows
             ImGui.SetItemTooltip("This will apply all current 'Display Format' settings to all other Trackers in this Container.\nNote: Does NOT include Custom Name, Custom Icon, or Raid Warning values.");
 
             ImGui.Checkbox("Show Entity Name", ref ActiveTrackedEventEntry.ShowEntityName);
+
+            ImGui.SeparatorText("Icon");
+
             ImGui.Checkbox("Show Icon", ref ActiveTrackedEventEntry.ShowIcon);
             if (ActiveTrackedEventEntry.ShowIcon)
             {
@@ -4581,6 +4601,9 @@ namespace BPSR_ZDPS.Windows
                 }
                 ImGui.Unindent();
             }
+
+            ImGui.SeparatorText("Name");
+
             ImGui.Checkbox("Show Name", ref ActiveTrackedEventEntry.ShowName);
             if (ActiveTrackedEventEntry.ShowName)
             {
@@ -4613,6 +4636,8 @@ namespace BPSR_ZDPS.Windows
 
                 ImGui.Unindent();
             }
+
+            ImGui.SeparatorText("Layers");
 
             ImGui.Checkbox("Show Layers", ref ActiveTrackedEventEntry.ShowLayers);
             if (ActiveTrackedEventEntry.ShowLayers)
@@ -4666,6 +4691,8 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Unindent();
             }
 
+            ImGui.SeparatorText("Duration Text");
+
             ImGui.Checkbox("Show Duration Text", ref ActiveTrackedEventEntry.ShowDurationText);
             if (ActiveTrackedEventEntry.ShowDurationText)
             {
@@ -4715,6 +4742,8 @@ namespace BPSR_ZDPS.Windows
 
                 ImGui.Unindent();
             }
+
+            ImGui.SeparatorText("Duration Progress Bar");
 
             ImGui.Checkbox("Show Duration Progress Bar", ref ActiveTrackedEventEntry.ShowDurationProgessBar);
             if (ActiveTrackedEventEntry.ShowDurationProgessBar)
@@ -4904,7 +4933,8 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Unindent();
 
             }
-            // TODO: Give option to place Progress Bar on new line or to side of text/icon - if on side then must also be in fixed-width window layout
+
+            ImGui.SeparatorText("Conditions");
 
             ImGui.Checkbox("Show 'Duration Ended' When No Remaining Duration", ref ActiveTrackedEventEntry.ShowDurationEnded);
             ImGui.SetItemTooltip("Progress Bars are always hidden when there is no remaining duration. This only impacts Text.");
@@ -4959,6 +4989,9 @@ namespace BPSR_ZDPS.Windows
                 }
                 ImGui.Unindent();
             }
+
+            ImGui.Checkbox("Only Display One Tracker Instance", ref ActiveTrackedEventEntry.OnlyDisplayOneTrackerInstance);
+            ImGui.SetItemTooltip("Limits the display of instances for this Tracker to only one at a time.\nIMPORTANT: This may still result in triggers for each instance!");
 
             ImGui.SeparatorText("Raid Warnings");
             ImGui.TextUnformatted("Raid Warning Messages can be displayed during certain events.");
@@ -6113,6 +6146,7 @@ namespace BPSR_ZDPS.Windows
         public string TrackedAttributeName = "";
 
         public bool LimitToOneTrackerInstance = false;
+        public bool OnlyDisplayOneTrackerInstance = false;
 
         public bool ShowIcon = false;
         public string OriginalIconPath = "";
