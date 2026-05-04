@@ -143,8 +143,17 @@ namespace BPSR_ZDPS.Windows
                     ImGui.PopStyleVar();
 
                     int trackedEntityIdx = 0;
-
-                    foreach (var trackedEntity in (IReadOnlyList<KeyValuePair<long, List<ThreatInfo>>>)TrackedEntities.AsValueEnumerable().ToList())
+                    IReadOnlyList<KeyValuePair<long, List<ThreatInfo>>> entityList = [];
+                    try
+                    {
+                        entityList = (IReadOnlyList<KeyValuePair<long, List<ThreatInfo>>>)TrackedEntities.AsValueEnumerable().ToArray();
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error populating ThreatManager EntityList");
+                    }
+                    
+                    foreach (var trackedEntity in entityList)
                     {
                         var threatList = trackedEntity.Value.AsValueEnumerable().OrderByDescending(x => x.ThreatValue).Where(x => Utils.UuidToEntityType(x.EntityUuid) == (long)Zproto.EEntityType.EntChar);
 
