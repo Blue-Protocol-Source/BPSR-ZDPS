@@ -600,14 +600,16 @@ namespace BPSR_ZDPS.Windows
                                     if (eventData.Cooldown != null && eventData.Cooldown.IsCooldownStarted && newDuration != eventData.Cooldown.BaseDuration)
                                     {
                                         eventData.Cooldown.IncreaseBaseDuration(newDuration, true);
+
                                         if (e.BuffEventType == EBuffEventType.BuffEventRemoveLayer)
                                         {
-                                            eventData.Cooldown.StartOrUpdate(e.UpdateDateTime, null, true);
+                                            eventData.Cooldown.StartOrUpdate(e.UpdateDateTime, null, false);
                                         }
                                     }
                                     else
                                     {
                                         eventData.Cooldown = new(newDuration, 0, 0);
+                                        eventData.Cooldown.StartOrUpdate(e.UpdateDateTime, null, true);
                                     }
                                 }
 
@@ -625,7 +627,7 @@ namespace BPSR_ZDPS.Windows
                                     AddDebugLog($"{DateTime.Now} Buff Event [{e.BuffUuid}]({e.BaseId}) {e.BuffEventType} FromUUID={e.EntityUuid} Name={eventTracker.Name} Layers={e.Layer} Duration={e.Duration} AppliedDur={eventData.Cooldown?.BaseDuration}");
                                 }
 
-                                eventData.Cooldown.StartOrUpdate(e.UpdateDateTime);
+                                eventData.Cooldown?.StartOrUpdate(e.UpdateDateTime);
 
                                 if (e.BuffEventType == EBuffEventType.BuffEventAddTo)
                                 {
@@ -691,6 +693,8 @@ namespace BPSR_ZDPS.Windows
                                     {
                                         didRaidWarning = HandleRaidWarnings(rw, eventTracker, eventData, eventData.OwnerEntityUuid, null);
                                     }
+
+                                    eventData.Cooldown?.EndCooldown();
                                 }
                                 //System.Diagnostics.Debug.WriteLine($"{e.BuffEventType} ({eventData.Uuid}) {eventTracker.Name} - Dur={e.Duration}, Upd={e.UpdateDateTime}, Add={eventData.Added}, Rmv={eventData.Removed}");
                             }
@@ -1686,6 +1690,11 @@ namespace BPSR_ZDPS.Windows
                                     continue;
                                 }
 
+                                if (eventTracker.HideTrackerCondition == EHideTrackerCondition.HideOnRemoveEvent && (eventData.Cooldown == null || eventData.Cooldown.IsCooldownEnded) && !windowSettings.IsContainerEditMode)
+                                {
+                                    continue;
+                                }
+
                                 if (eventTracker.IsHidden && !windowSettings.IsContainerEditMode)
                                 {
                                     continue;
@@ -1720,10 +1729,13 @@ namespace BPSR_ZDPS.Windows
                                     maxWindowSize = ImGui.GetContentRegionAvail().X;
                                 }*/
 
-                                bool hasAnyShown = (eventTracker.ShowName && !eventTracker.ShowNameInsideProgressBar) || (eventTracker.ShowIcon && eventTracker.IsIconValid) || (eventTracker.ShowLayers && !eventTracker.ShowLayersInsideProgressBar) || eventTracker.ShowEntityName || (eventTracker.ShowDurationProgessBar && eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedSize);
+                                bool hasAnyShown = (eventTracker.ShowName && !eventTracker.ShowNameInsideProgressBar) || (eventTracker.ShowIcon && eventTracker.IsIconValid) || (eventTracker.ShowLayers && !eventTracker.ShowLayersInsideProgressBar) || eventTracker.ShowEntityName || (eventTracker.ShowDurationProgessBar);// && eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedSize);
                                 if (!hasAnyShown)
                                 {
-                                    continue;
+                                    if (eventTracker.HideTrackerCondition != EHideTrackerCondition.NeverHide)
+                                    {
+                                        continue;
+                                    }
                                 }
 
                                 if (eventTracker.LoadEvents.IsOwnerAlive || eventTracker.LoadEvents.IsOwnerDead)
@@ -1786,8 +1798,10 @@ namespace BPSR_ZDPS.Windows
                                     childFlags = ImGuiChildFlags.Borders;
                                 }
 
-                                ImGui.BeginChild($"{eventData.OwnerEntityUuid}", new Vector2(maxWindowSize, 0), childFlags | ImGuiChildFlags.AutoResizeX | ImGuiChildFlags.AutoResizeY, ImGuiWindowFlags.NoScrollbar);
+                                var containerWindowSize = ImGui.GetWindowSize();
 
+                                ImGui.BeginChild($"{eventData.OwnerEntityUuid}", new Vector2(maxWindowSize, 0), childFlags | ImGuiChildFlags.AutoResizeX | ImGuiChildFlags.AutoResizeY, ImGuiWindowFlags.NoScrollbar);
+                                
                                 ImGui.BeginGroup();
 
                                 SkillEventData? skillEventData = null;
@@ -1795,6 +1809,9 @@ namespace BPSR_ZDPS.Windows
                                 {
                                     skillEventData = eventData as SkillEventData;
                                 }
+
+                                float farthestEndpoint = 0.0f;
+                                float farthestStartpoint = ImGui.GetCursorScreenPos().X;
 
                                 if (eventTracker.ShowEntityName && !hasShownEntityName.Contains(eventData.OwnerEntityUuid))
                                 {
@@ -1808,6 +1825,12 @@ namespace BPSR_ZDPS.Windows
                                     {
                                         ImGui.TextUnformatted($"[{eventData.OwnerEntityUuid}]");
                                     }
+                                    var tempBR = ImGui.GetItemRectMax().X;
+                                    if (tempBR > farthestEndpoint)
+                                    {
+                                        farthestEndpoint = tempBR;
+                                        //farthestStartpoint = ImGui.GetItemRectMin().X;
+                                    }
                                 }
                                 else if (eventTracker.ShowEntityName && eventContainer.ContainerListDirection == EContainerListDirection.Right)
                                 {
@@ -1815,6 +1838,9 @@ namespace BPSR_ZDPS.Windows
                                 }
 
                                 ImGui.BeginGroup();
+
+                                // Name before Icon
+                                var innerGroupStartPos = ImGui.GetCursorPos();
                                 if (eventTracker.ShowNameBeforeIcon && eventTracker.ShowName && !eventTracker.ShowNameInsideProgressBar)
                                 {
                                     ImGui.PushFont(null, eventTracker.NameSize);
@@ -1832,15 +1858,27 @@ namespace BPSR_ZDPS.Windows
                                     {
                                         ImGui.SameLine();
                                     }
+
+                                    var tempBR = ImGui.GetItemRectMax().X;
+                                    if (tempBR > farthestEndpoint)
+                                    {
+                                        farthestEndpoint = tempBR;
+                                        //farthestStartpoint = ImGui.GetItemRectMin().X;
+                                    }
                                 }
 
+                                // Layers before Icon
                                 if (eventTracker.ShowLayersBeforeIcon && eventTracker.ShowLayers && !eventTracker.ShowLayersInsideProgressBar)
                                 {
                                     if (eventTracker.ShowName && !eventTracker.ShowNameInsideProgressBar)
                                     {
                                         ImGui.SameLine();
                                     }
-                                    ImGui.PushStyleColor(ImGuiCol.Text, Colors.Green);
+                                    bool useCustomLayersColor = eventTracker.UseCustomLayersTextColor;
+                                    if (useCustomLayersColor)
+                                    {
+                                        ImGui.PushStyleColor(ImGuiCol.Text, eventTracker.LayersTextColor);
+                                    }
                                     ImGui.PushFont(null, eventTracker.LayerSize);
                                     if (skillEventData != null)
                                     {
@@ -1860,14 +1898,25 @@ namespace BPSR_ZDPS.Windows
                                     }
 
                                     ImGui.PopFont();
-                                    ImGui.PopStyleColor();
+                                    if (useCustomLayersColor)
+                                    {
+                                        ImGui.PopStyleColor();
+                                    }
 
                                     if (!eventTracker.LayersNewLineBeforeIcon)
                                     {
                                         ImGui.SameLine();
                                     }
+
+                                    var tempBR = ImGui.GetItemRectMax().X;
+                                    if (tempBR > farthestEndpoint)
+                                    {
+                                        farthestEndpoint = tempBR;
+                                        //farthestStartpoint = ImGui.GetItemRectMin().X;
+                                    }
                                 }
 
+                                // Icon
                                 if (eventTracker.ShowIcon && eventTracker.IsIconValid && !eventTracker.ShowIconInsideProgressBar)
                                 {
                                     var tex = ImageArchive.LoadImage(eventTracker.IconPath);
@@ -1880,14 +1929,24 @@ namespace BPSR_ZDPS.Windows
                                             ImGui.SameLine();
                                         }
                                     }
+
+                                    var tempBR = ImGui.GetItemRectMax().X;
+                                    if (tempBR > farthestEndpoint)
+                                    {
+                                        farthestEndpoint = tempBR;
+                                        //farthestStartpoint = ImGui.GetItemRectMin().X;
+                                    }
                                 }
                                 else if (eventTracker.ShowIconInsideProgressBar)
                                 {
                                     ImGui.Dummy(new Vector2(0, 0));
                                 }
+
+                                // Name
                                 if (!eventTracker.ShowNameBeforeIcon && eventTracker.ShowName && !eventTracker.ShowNameInsideProgressBar)
                                 {
                                     ImGui.PushFont(null, eventTracker.NameSize);
+
                                     if (eventTracker.UseCustomName && !string.IsNullOrEmpty(eventTracker.CustomName))
                                     {
                                         ImGui.TextUnformatted(eventTracker.CustomName);
@@ -1897,7 +1956,16 @@ namespace BPSR_ZDPS.Windows
                                         ImGui.TextUnformatted(eventTracker.Name);
                                     }
                                     ImGui.PopFont();
+
+                                    var tempBR = ImGui.GetItemRectMax().X;
+                                    if (tempBR > farthestEndpoint)
+                                    {
+                                        farthestEndpoint = tempBR;
+                                        //farthestStartpoint = ImGui.GetItemRectMin().X;
+                                    }
                                 }
+
+                                // Layers
                                 if (!eventTracker.ShowLayersBeforeIcon && eventTracker.ShowLayers && !eventTracker.ShowLayersInsideProgressBar)
                                 {
                                     if (eventTracker.ShowName && !eventTracker.ShowNameInsideProgressBar)
@@ -1925,6 +1993,19 @@ namespace BPSR_ZDPS.Windows
                                     
                                     ImGui.PopFont();
                                     ImGui.PopStyleColor();
+
+                                    var tempBR = ImGui.GetItemRectMax().X;
+                                    if (tempBR > farthestEndpoint)
+                                    {
+                                        farthestEndpoint = tempBR;
+                                        //farthestStartpoint = ImGui.GetItemRectMin().X;
+                                    }
+                                }
+
+                                if (ImGui.GetCursorPos() == innerGroupStartPos)
+                                {
+                                    // Add a Dummy element to prevent the Group from deciding to expand forever when there's no content stored in a Group block
+                                    ImGui.Dummy(new Vector2());
                                 }
                                 ImGui.EndGroup();
                                 bool showTooltip = eventContainer.ShowCasterInTooltip || eventContainer.ShowNameInTooltip || eventContainer.ShowDescriptionInTooltip;
@@ -1933,17 +2014,42 @@ namespace BPSR_ZDPS.Windows
                                     DrawTrackerTooltip(eventContainer, eventTracker, eventData);
                                 }
 
-                                if (eventData.Cooldown != null)
+                                // Convert to endpoint to window-space
+                                if (farthestEndpoint > 0)
+                                {
+                                    var winPos = ImGui.GetWindowPos();
+                                    farthestEndpoint = farthestEndpoint - winPos.X;
+
+                                    farthestStartpoint = farthestStartpoint - winPos.X;
+                                }
+                                else
+                                {
+                                    var curPos = ImGui.GetCursorScreenPos();
+                                    var winPos = ImGui.GetWindowPos();
+                                    // We have to multiply by 3 here to account for multiple layers of offsets
+                                    farthestEndpoint = containerWindowSize.X - ((curPos.X - winPos.X) * 3);
+
+                                    farthestStartpoint = farthestStartpoint - winPos.X;
+                                }
+
+                                bool isNeverHide = eventTracker.HideTrackerCondition == EHideTrackerCondition.NeverHide;
+                                if (eventData.Cooldown != null || isNeverHide)
                                 {
                                     bool usingLayersForDuration = eventTracker.IgnoreCooldownDuration && eventTracker.UseLayersForDuration;
 
-                                    if (!eventData.Cooldown.IsFinished() || usingLayersForDuration)
+                                    if ((eventData.Cooldown != null && !eventData.Cooldown.IsFinished()) || usingLayersForDuration || isNeverHide)
                                     {
                                         // Overall progress metrics
-                                        float remainingSeconds = eventData.Cooldown.GetRemainingSeconds();
-                                        float remainingPct = 1.0f - eventData.Cooldown.GetProgressPercent();
-                                        
-                                        if (skillEventData != null && skillEventData.ChargeTimes.Count > 0)
+                                        float remainingSeconds = 0.0f;
+                                        float remainingPct = 0.0f;
+
+                                        if (eventData.Cooldown != null)
+                                        {
+                                            remainingSeconds = eventData.Cooldown.GetRemainingSeconds();
+                                            remainingPct = 1.0f - eventData.Cooldown.GetProgressPercent();
+                                        }
+
+                                        if (eventData.Cooldown != null && skillEventData != null && skillEventData.ChargeTimes.Count > 0)
                                         {
                                             DateTime? lastFinish = null;
                                             foreach (var chargeTime in skillEventData.ChargeTimes)
@@ -2021,7 +2127,7 @@ namespace BPSR_ZDPS.Windows
                                             }
 
                                             ImGui.PushFont(null, eventTracker.DurationTextSize);
-                                            if(usingLayersForDuration)
+                                            if (usingLayersForDuration)
                                             {
                                                 ImGui.TextUnformatted($"{remainingSeconds}");
                                             }
@@ -2037,6 +2143,20 @@ namespace BPSR_ZDPS.Windows
                                                 }
                                             }
                                             ImGui.PopFont();
+
+                                            var tempBR = ImGui.GetItemRectMax().X;
+                                            var winPos = ImGui.GetWindowPos();
+                                            tempBR = tempBR - winPos.X;// - ImGui.GetStyle().WindowPadding.X;
+                                            if (tempBR > farthestEndpoint)
+                                            {
+                                                farthestEndpoint = tempBR;
+                                                //farthestStartpoint = ImGui.GetItemRectMin().X - winPos.X - ImGui.GetStyle().WindowPadding.X;
+
+                                                if (farthestStartpoint > farthestEndpoint)
+                                                {
+                                                    farthestStartpoint = farthestStartpoint - winPos.X;
+                                                }
+                                            }
                                         }
                                         if (eventTracker.ShowDurationProgessBar)
                                         {
@@ -2052,250 +2172,297 @@ namespace BPSR_ZDPS.Windows
                                             }
 
                                             var itemRectSize = ImGui.GetItemRectSize().Y - ImGui.GetStyle().ItemSpacing.Y;
-                                            if ((eventTracker.ShowName && eventTracker.ShowNameInsideProgressBar) || (eventTracker.ShowLayers && eventTracker.ShowLayersInsideProgressBar) || (eventTracker.ShowDurationText && eventTracker.ShowDurationTextInProgressBar))
+
+                                            Vector4? barColor = null;
+                                            if (eventTracker.ColorDurationProgressBarByType)
                                             {
-                                                string displayText = "";
-                                                if (eventTracker.ShowName && eventTracker.ShowNameInsideProgressBar)
+                                                barColor = eventData.BuffTypeToColor();
+                                            }
+                                            else if (eventTracker.UseCustomColorDurationProgressBar)
+                                            {
+                                                barColor = eventTracker.CustomColorDurationProgressBar;
+                                            }
+
+                                            if (barColor != null)
+                                            {
+                                                ImGui.PushStyleColor(ImGuiCol.PlotHistogram, barColor.Value);
+                                            }
+
+                                            ImGui.PushFont(null, eventTracker.DurationProgressBarTextSize);
+
+                                            if (eventTracker.DurationProgressBarStyle == EDurationProgressBarStyle.Circle)
+                                            {
+                                                var startPos = ImGui.GetCursorPos();
+
+                                                ImGui.PushStyleColor(ImGuiCol.ModalWindowDimBg, eventTracker.DurationProgressBarCircleBackgroundColor);
+                                                if (eventTracker.ShowIcon && eventTracker.IsIconValid && eventTracker.ShowIconInsideProgressBar)
                                                 {
-                                                    if (eventTracker.UseCustomName && !string.IsNullOrEmpty(eventTracker.CustomName))
+                                                    var tex = ImageArchive.LoadImage(eventTracker.IconPath);
+                                                    // If the texture is null it will be skipped during the render process automatically
+                                                    ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, tex, eventTracker.IconStretchLeftValue, eventTracker.IconStretchRightValue, eventTracker.UseDurationProgressBarCircleBackgroundFill);
+                                                    if (showTooltip)
                                                     {
-                                                        displayText = eventTracker.CustomName;
-                                                    }
-                                                    else
-                                                    {
-                                                        displayText = eventTracker.Name;
-                                                    }
-                                                }
-                                                if (eventTracker.ShowLayers && eventTracker.ShowLayersInsideProgressBar)
-                                                {
-                                                    if (displayText.Length > 0)
-                                                    {
-                                                        displayText += " ";
-                                                    }
-                                                    displayText += $"({eventData.Layers})";
-                                                }
-
-                                                if (eventTracker.ShowDurationText && eventTracker.ShowDurationTextInProgressBar)
-                                                {
-                                                    if (displayText.Length > 0)
-                                                    {
-                                                        displayText += " ";
-                                                    }
-                                                    if (usingLayersForDuration)
-                                                    {
-                                                        displayText += $"{remainingSeconds}";
-                                                    }
-                                                    else
-                                                    {
-                                                        if (eventTracker.UseMinutesForLongDuration && remainingSeconds > 60)
-                                                        {
-                                                            displayText += $"{(int)remainingSeconds / 60}m";
-                                                        }
-                                                        else
-                                                        {
-                                                            displayText += $"{remainingSeconds:F2}s";
-                                                        }
-                                                    }
-                                                }
-
-                                                Vector4? barColor = null;
-                                                if (eventTracker.ColorDurationProgressBarByType)
-                                                {
-                                                    barColor = eventData.BuffTypeToColor();
-                                                }
-
-                                                float offsetPct = MathF.Round((float)eventTracker.TextInsideProgressBarOffset / 100.0f, 4);
-                                                if (eventContainer.ContainerListDirection == EContainerListDirection.Right)
-                                                {
-                                                    if (barColor != null)
-                                                    {
-                                                        ImGui.PushStyleColor(ImGuiCol.PlotHistogram, barColor.Value);
-                                                    }
-
-                                                    ImGui.PushFont(null, eventTracker.DurationProgressBarTextSize);
-                                                    if (eventTracker.DurationProgressBarStyle == EDurationProgressBarStyle.Circle)
-                                                    {
-                                                        var startPos = ImGui.GetCursorPos();
-
-                                                        ImGui.PushStyleColor(ImGuiCol.ModalWindowDimBg, eventTracker.DurationProgressBarCircleBackgroundColor);
-                                                        if (eventTracker.ShowIcon && eventTracker.IsIconValid && eventTracker.ShowIconInsideProgressBar)
-                                                        {
-                                                            var tex = ImageArchive.LoadImage(eventTracker.IconPath);
-                                                            // If the texture is null it will be skipped during the render process automatically
-                                                            ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, tex, eventTracker.UseDurationProgressBarCircleBackgroundFill);
-                                                            DrawTrackerTooltip(eventContainer, eventTracker, eventData);
-                                                        }
-                                                        else
-                                                        {
-                                                            ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, null, eventTracker.UseDurationProgressBarCircleBackgroundFill);
-                                                        }
-                                                        ImGui.PopStyleColor();
-
-                                                        var endPos = ImGui.GetCursorPos();
-                                                        var tSize = new Vector2();
-                                                        if (eventTracker.UseMinutesForLongDuration && remainingSeconds > 60)
-                                                        {
-                                                            tSize = ImGui.CalcTextSize($"{(int)remainingSeconds / 60}m");
-                                                        }
-                                                        else
-                                                        {
-                                                            tSize = ImGui.CalcTextSize($"{remainingSeconds:F2}s");
-                                                        }
-                                                        
-                                                        ImGui.SetCursorPosX(startPos.X + (eventTracker.DurationProgressBarSize * 0.5f) - (tSize.X * 0.5f));
-                                                        ImGui.SetCursorPosY((startPos.Y * 0.5f) + (endPos.Y * 0.5f) - (tSize.Y * 0.5f));
-                                                        //ImGui.SetCursorPos((startPos + endPos) * 0.5f);
-                                                        bool customTextColor = eventTracker.UseCustomDurationTextColor;
-                                                        if (customTextColor)
-                                                        {
-                                                            ImGui.PushStyleColor(ImGuiCol.Text, eventTracker.DurationTextColor);
-                                                        }
-                                                        ImGui.TextUnformatted(displayText);
-                                                        if (customTextColor)
-                                                        {
-                                                            ImGui.PopFont();
-                                                        }
-                                                    }
-                                                    else
-                                                    {
-                                                        ImGuiEx.TextAlignedProgressBar(remainingPct, displayText, offsetPct, ImGui.GetItemRectSize().X, eventTracker.DurationProgressBarSize);
-                                                    }
-                                                    ImGui.PopFont();
-
-                                                    if (barColor != null)
-                                                    {
-                                                        ImGui.PopStyleColor();
+                                                        DrawTrackerTooltip(eventContainer, eventTracker, eventData);
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    if (barColor != null)
+                                                    ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, null, 0, 0, eventTracker.UseDurationProgressBarCircleBackgroundFill);
+                                                    if (showTooltip && !eventTracker.ShowIcon)
                                                     {
-                                                        ImGui.PushStyleColor(ImGuiCol.PlotHistogram, barColor.Value);
+                                                        DrawTrackerTooltip(eventContainer, eventTracker, eventData);
                                                     }
+                                                }
+                                                ImGui.PopStyleColor();
 
-                                                    ImGui.PushFont(null, eventTracker.DurationProgressBarTextSize);
-
-                                                    if (eventTracker.DurationProgressBarStyle == EDurationProgressBarStyle.Circle)
+                                                if (eventTracker.ShowDurationText && eventTracker.ShowDurationTextInProgressBar)
+                                                {
+                                                    ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                                                    string durationFormat = "";
+                                                    if (eventTracker.ShowDurationText && eventTracker.ShowDurationTextInProgressBar)
                                                     {
-                                                        var startPos = ImGui.GetCursorPos();
-
-                                                        ImGui.PushStyleColor(ImGuiCol.ModalWindowDimBg, eventTracker.DurationProgressBarCircleBackgroundColor);
-                                                        if (eventTracker.ShowIcon && eventTracker.IsIconValid && eventTracker.ShowIconInsideProgressBar)
+                                                        if (usingLayersForDuration)
                                                         {
-                                                            var tex = ImageArchive.LoadImage(eventTracker.IconPath);
-                                                            // If the texture is null it will be skipped during the render process automatically
-                                                            ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, tex, eventTracker.UseDurationProgressBarCircleBackgroundFill);
-                                                            DrawTrackerTooltip(eventContainer, eventTracker, eventData);
+                                                            durationFormat += $"{Math.Floor(remainingSeconds):F0}";
                                                         }
                                                         else
                                                         {
-                                                            ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, null, eventTracker.UseDurationProgressBarCircleBackgroundFill);
+                                                            if (eventTracker.UseMinutesForLongDuration && remainingSeconds > 60)
+                                                            {
+                                                                durationFormat += $"{(int)remainingSeconds / 60}m";
+                                                            }
+                                                            else
+                                                            {
+                                                                durationFormat += $"{remainingSeconds:F2}s";
+                                                            }
                                                         }
+                                                    }
+
+                                                    var endPos = ImGui.GetCursorPos();
+                                                    var textSize = ImGui.CalcTextSize(durationFormat);
+
+                                                    ImGui.SetCursorPosX(startPos.X + (eventTracker.DurationProgressBarSize * 0.50f) - (textSize.X * 0.50f));
+                                                    ImGui.SetCursorPosY(((startPos.Y + endPos.Y) * 0.50f) - (textSize.Y * 0.50f) - ImGui.GetStyle().FramePadding.Y);
+
+                                                    bool customTextColor = eventTracker.UseCustomDurationTextColor;
+                                                    if (customTextColor)
+                                                    {
+                                                        ImGui.PushStyleColor(ImGuiCol.Text, eventTracker.DurationTextColor);
+                                                    }
+                                                    ImGui.TextUnformatted(durationFormat);
+                                                    if (customTextColor)
+                                                    {
                                                         ImGui.PopStyleColor();
-
-                                                        var endPos = ImGui.GetCursorPos();
-                                                        var tSize = new Vector2();
-                                                        if (eventTracker.UseMinutesForLongDuration && remainingSeconds > 60)
-                                                        {
-                                                            tSize = ImGui.CalcTextSize($"{(int)remainingSeconds / 60}m");
-                                                        }
-                                                        else
-                                                        {
-                                                            tSize = ImGui.CalcTextSize($"{remainingSeconds:F2}s");
-                                                        }
-
-                                                        ImGui.SetCursorPosX(startPos.X + (eventTracker.DurationProgressBarSize * 0.5f) - (tSize.X * 0.5f));
-                                                        ImGui.SetCursorPosY((startPos.Y * 0.5f) + (endPos.Y * 0.5f) - (tSize.Y * 0.5f));
-                                                        //ImGui.SetCursorPos((startPos + endPos) * 0.5f);
-                                                        bool customTextColor = eventTracker.UseCustomDurationTextColor;
-                                                        if (customTextColor)
-                                                        {
-                                                            ImGui.PushStyleColor(ImGuiCol.Text, eventTracker.DurationTextColor);
-                                                        }
-                                                        ImGui.TextUnformatted(displayText);
-                                                        if (customTextColor)
-                                                        {
-                                                            ImGui.PopStyleColor();
-                                                        }
                                                     }
-                                                    else
-                                                    {
-                                                        ImGuiEx.TextAlignedProgressBar(remainingPct, displayText, offsetPct, ImGui.GetContentRegionAvail().X, eventTracker.DurationProgressBarSize);
-                                                    }
-                                                    
                                                     ImGui.PopFont();
-
-                                                    if (barColor != null)
-                                                    {
-                                                        ImGui.PopStyleColor();
-                                                    }
                                                 }
                                             }
                                             else
                                             {
-                                                Vector4? barColor = null;
-                                                if (eventTracker.ColorDurationProgressBarByType)
+                                                // The Progress Bar should never be shorter than this size
+                                                // TODO: It may be worth exposing this as a user setting
+                                                float minWidth = 8.0f;
+
+                                                //var itemRectSize2 = ImGui.GetItemRectSize();
+                                                //var windowSize = ImGui.GetWindowSize();
+                                                var contentAvail = ImGui.GetContentRegionAvail();
+
+                                                var style = ImGui.GetStyle();
+
+                                                float itemSpacingX = style.ItemSpacing.X;
+
+                                                float padding = itemSpacingX + style.WindowPadding.X + style.FramePadding.X;
+                                                float availWidth = containerWindowSize.X - padding;
+
+                                                float sX = availWidth;
+                                                if (contentAvail.X < availWidth)
                                                 {
-                                                    barColor = eventData.BuffTypeToColor();
+                                                    sX = contentAvail.X;
                                                 }
 
-                                                if (barColor != null)
+                                                if (sX < minWidth)
                                                 {
-                                                    ImGui.PushStyleColor(ImGuiCol.PlotHistogram, barColor.Value);
+                                                    sX = minWidth;
                                                 }
 
-                                                if (eventContainer.ContainerListDirection == EContainerListDirection.Right)
+                                                // Get the horizontal mid-point that is reused to realign the elements
+                                                float horizontalOffset = eventTracker.TextInsideProgressBarOffset / 100.0f;
+                                                float calcWidth = 0.0f;
+
+                                                string nameFormat = "";
+                                                string layersFormat = "";
+                                                string durationFormat = "";
+
+                                                if (eventTracker.ShowName && eventTracker.ShowNameInsideProgressBar)
                                                 {
-                                                    ImGui.PushFont(null, eventTracker.DurationProgressBarTextSize);
-                                                    if (eventTracker.DurationProgressBarStyle == EDurationProgressBarStyle.Circle)
+                                                    if (eventTracker.UseCustomName && !string.IsNullOrEmpty(eventTracker.CustomName))
                                                     {
-                                                        if (eventTracker.ShowIcon && eventTracker.IsIconValid && eventTracker.ShowIconInsideProgressBar)
-                                                        {
-                                                            var tex = ImageArchive.LoadImage(eventTracker.IconPath);
-                                                            // If the texture is null it will be skipped during the render process automatically
-                                                            ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, tex);
-                                                            DrawTrackerTooltip(eventContainer, eventTracker, eventData);
-                                                        }
-                                                        else
-                                                        {
-                                                            ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness);
-                                                        }
+                                                        nameFormat = eventTracker.CustomName;
                                                     }
                                                     else
                                                     {
-                                                        ImGui.ProgressBar(remainingPct, new Vector2(ImGui.GetItemRectSize().X, eventTracker.DurationProgressBarSize), "##BuffDurationProgressBar");
+                                                        nameFormat = eventTracker.Name;
                                                     }
-                                                    ImGui.PopFont();
                                                 }
-                                                else
+
+                                                if (eventTracker.ShowLayers && eventTracker.ShowLayersInsideProgressBar)
                                                 {
-                                                    ImGui.PushFont(null, eventTracker.DurationProgressBarTextSize);
-                                                    if (eventTracker.DurationProgressBarStyle == EDurationProgressBarStyle.Circle)
+                                                    if (nameFormat.Length > 0)
                                                     {
-                                                        if (eventTracker.ShowIcon && eventTracker.IsIconValid && eventTracker.ShowIconInsideProgressBar)
-                                                        {
-                                                            var tex = ImageArchive.LoadImage(eventTracker.IconPath);
-                                                            // If the texture is null it will be skipped during the render process automatically
-                                                            ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, tex);
-                                                            DrawTrackerTooltip(eventContainer, eventTracker, eventData);
-                                                        }
-                                                        else
-                                                        {
-                                                            ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness);
-                                                        }
+                                                        layersFormat = " ";
+                                                    }
+                                                    layersFormat += $"({eventData.Layers})";
+                                                }
+
+                                                if (eventTracker.ShowDurationText && eventTracker.ShowDurationTextInProgressBar)
+                                                {
+                                                    if (nameFormat.Length > 0 || layersFormat.Length > 0)
+                                                    {
+                                                        durationFormat += " ";
+                                                    }
+                                                    if (usingLayersForDuration)
+                                                    {
+                                                        durationFormat += $"{Math.Floor(remainingSeconds):F0}";
                                                     }
                                                     else
                                                     {
-                                                        ImGui.ProgressBar(remainingPct, new Vector2(-1, eventTracker.DurationProgressBarSize), "##BuffDurationProgressBar");
+                                                        if (eventTracker.UseMinutesForLongDuration && remainingSeconds > 60)
+                                                        {
+                                                            durationFormat += $"{(int)remainingSeconds / 60}m";
+                                                        }
+                                                        else
+                                                        {
+                                                            durationFormat += $"{remainingSeconds:F2}s";
+                                                        }
                                                     }
-                                                    ImGui.PopFont();
                                                 }
 
-                                                if (barColor != null)
+                                                if (eventTracker.ShowIcon && eventTracker.IsIconValid && eventTracker.ShowIconInsideProgressBar)
                                                 {
-                                                    ImGui.PopStyleColor();
+                                                    calcWidth += eventTracker.IconSize + 0;
                                                 }
+
+                                                if (!string.IsNullOrEmpty(nameFormat))
+                                                {
+                                                    calcWidth += ImGui.CalcTextSize(nameFormat).X + (calcWidth > 0 ? itemSpacingX : 0);
+                                                }
+
+                                                if (!string.IsNullOrEmpty(layersFormat))
+                                                {
+                                                    calcWidth += ImGui.CalcTextSize(layersFormat).X + (calcWidth > 0 ? itemSpacingX : 0);
+                                                }
+
+                                                if (!string.IsNullOrEmpty(durationFormat))
+                                                {
+                                                    calcWidth += ImGui.CalcTextSize(durationFormat).X + (calcWidth > 0 ? itemSpacingX : 0);
+                                                }
+
+                                                float farthestWidth = farthestEndpoint - farthestStartpoint;
+
+                                                if (!eventTracker.DurationProgressBarSameLine)
+                                                {
+                                                    if (farthestWidth > calcWidth)
+                                                    {
+                                                        if (farthestWidth > sX || eventContainer.ContainerListDirection == EContainerListDirection.Right)
+                                                        {
+                                                            sX = farthestWidth;
+                                                        }
+                                                    }
+                                                    else// if (eventContainer.ContainerListDirection == EContainerListDirection.Right)
+                                                    {
+                                                        //sX = calcWidth;
+                                                    }
+                                                }
+                                                else if (eventContainer.ContainerListDirection == EContainerListDirection.Right)
+                                                {
+                                                    sX = calcWidth;
+                                                }
+
+                                                var startProgPos = ImGui.GetCursorPos();
+
+                                                ImGui.ProgressBar(remainingPct, new Vector2(sX, eventTracker.DurationProgressBarSize), "##BuffDurationProgressBar");
+                                                var endProgPos = ImGui.GetCursorPos();
+                                                ImGui.SetCursorPos(startProgPos);
+                                                float verticalOffset = 0.5f;
+                                                float mid = (endProgPos.Y + startProgPos.Y) * verticalOffset;
+
+                                                float hMid = Math.Clamp(startProgPos.X + ((sX - calcWidth) * horizontalOffset), endProgPos.X, float.MaxValue);
+                                                ImGui.SetCursorPosX(hMid);
+
+                                                // Once the mid point is found, need to get the half-height of the elements to draw and subtract it to center them on it
+                                                ImGui.SetCursorPosY(mid);
+
+                                                // Icon
+                                                if (eventTracker.ShowIcon && eventTracker.IsIconValid && eventTracker.ShowIconInsideProgressBar)
+                                                {
+                                                    var tex = ImageArchive.LoadImage(eventTracker.IconPath);
+                                                    if (tex != null)
+                                                    {
+                                                        ImGui.SetCursorPosY(mid - (eventTracker.IconSize * 0.5f));
+                                                        ImGui.Image(tex.Value, new Vector2(eventTracker.IconSize, eventTracker.IconSize), new Vector2(0, 0), new Vector2(1, 1));
+
+                                                        if (showTooltip)
+                                                        {
+                                                            DrawTrackerTooltip(eventContainer, eventTracker, eventData);
+                                                        }
+
+                                                        ImGui.SameLine();
+                                                    }
+                                                }
+
+                                                // Name
+                                                if (!string.IsNullOrEmpty(nameFormat))
+                                                {
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f));
+                                                    ImGui.TextUnformatted(nameFormat);
+
+                                                    ImGui.SameLine();
+                                                }
+
+                                                // Layers
+                                                if (!string.IsNullOrEmpty(layersFormat))
+                                                {
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f));
+                                                    bool layersColor = eventTracker.UseCustomLayersTextColor;
+                                                    if (layersColor)
+                                                    {
+                                                        ImGui.PushStyleColor(ImGuiCol.Text, eventTracker.LayersTextColor);
+                                                    }
+                                                    ImGui.TextUnformatted(layersFormat);
+                                                    if (layersColor)
+                                                    {
+                                                        ImGui.PopStyleColor();
+                                                    }
+
+                                                    ImGui.SameLine();
+                                                }
+
+                                                // Duration
+                                                if (!string.IsNullOrEmpty(durationFormat))
+                                                {
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f));
+                                                    bool durationColor = eventTracker.UseCustomDurationTextColor;
+                                                    if (durationColor)
+                                                    {
+                                                        ImGui.PushStyleColor(ImGuiCol.Text, eventTracker.DurationTextColor);
+                                                    }
+                                                    ImGui.TextUnformatted(durationFormat);
+                                                    if (durationColor)
+                                                    {
+                                                        ImGui.PopStyleColor();
+                                                    }
+                                                }
+
+                                                // Reset cursor position and push a Dummy element to satisfy ImGui requirements when SetCursorPos creates a bounds change
+                                                // This also allows calculations in horizontal mode to function correctly after doing a SetCursorPos call
+                                                ImGui.SetCursorPos(endProgPos);
+                                                ImGui.Dummy(new Vector2(0, 0));
+                                            }
+                                            ImGui.PopFont();
+
+                                            if (barColor != null)
+                                            {
+                                                ImGui.PopStyleColor();
                                             }
                                         }
                                     }
@@ -2318,6 +2485,13 @@ namespace BPSR_ZDPS.Windows
                                             }
 
                                             eventData.Cooldown = null;
+                                        }
+                                        else
+                                        {
+                                            if (eventData.Cooldown != null && eventData.Cooldown.IsCooldownEnded)
+                                            {
+                                                eventData.Cooldown = null;
+                                            }
                                         }
                                     }
                                 }
@@ -4462,6 +4636,33 @@ namespace BPSR_ZDPS.Windows
                     ImGui.Unindent();
                 }
 
+                ImGui.Checkbox("Use Custom Layers Text Color##UseCustomLayersTextColor", ref ActiveTrackedEventEntry.UseCustomLayersTextColor);
+                ImGui.SetItemTooltip("Changes the color of Layers Text.");
+                ImGui.SameLine();
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllCustomLayersTextColorBtn"))
+                {
+                    foreach (var tracker in ActiveTrackerContainer.EventTrackers)
+                    {
+                        if (tracker.Value.IdTracker != ActiveTrackedEventEntry.IdTracker)
+                        {
+                            tracker.Value.UseCustomLayersTextColor = ActiveTrackedEventEntry.UseCustomLayersTextColor;
+                            tracker.Value.LayersTextColor = ActiveTrackedEventEntry.LayersTextColor;
+                        }
+                    }
+                }
+                ImGui.PopFont();
+                ImGui.SetItemTooltip("Apply To All Other Trackers In Container.");
+
+                if (ActiveTrackedEventEntry.UseCustomLayersTextColor)
+                {
+                    ImGui.Indent();
+
+                    ImGui.ColorEdit4("##LayersTextColorPicker", ref ActiveTrackedEventEntry.LayersTextColor);
+
+                    ImGui.Unindent();
+                }
+
                 ImGui.Unindent();
             }
 
@@ -4487,6 +4688,21 @@ namespace BPSR_ZDPS.Windows
 
                 ImGui.Checkbox("Use Custom Duration Text Color##UseCustomDurationTextColor", ref ActiveTrackedEventEntry.UseCustomDurationTextColor);
                 ImGui.SetItemTooltip("Changes the color of Duration Text when NOT combined with other elements.");
+                ImGui.SameLine();
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllCustomDurationTextColorBtn"))
+                {
+                    foreach (var tracker in ActiveTrackerContainer.EventTrackers)
+                    {
+                        if (tracker.Value.IdTracker != ActiveTrackedEventEntry.IdTracker)
+                        {
+                            tracker.Value.UseCustomDurationTextColor = ActiveTrackedEventEntry.UseCustomDurationTextColor;
+                            tracker.Value.DurationTextColor = ActiveTrackedEventEntry.DurationTextColor;
+                        }
+                    }
+                }
+                ImGui.PopFont();
+                ImGui.SetItemTooltip("Apply To All Other Trackers In Container.");
 
                 if (ActiveTrackedEventEntry.UseCustomDurationTextColor)
                 {
@@ -4560,6 +4776,31 @@ namespace BPSR_ZDPS.Windows
                     ImGui.Unindent();
                 }
 
+                ImGui.Checkbox("Use Custom Color Duration Progress Bar##UseCustomColorDurationProgressBar", ref ActiveTrackedEventEntry.UseCustomColorDurationProgressBar);
+
+                ImGui.SameLine();
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllCustomColorDurationProgressBarBtn"))
+                {
+                    foreach (var tracker in ActiveTrackerContainer.EventTrackers)
+                    {
+                        if (tracker.Value.IdTracker != ActiveTrackedEventEntry.IdTracker)
+                        {
+                            tracker.Value.UseCustomColorDurationProgressBar = ActiveTrackedEventEntry.UseCustomColorDurationProgressBar;
+                            tracker.Value.CustomColorDurationProgressBar = ActiveTrackedEventEntry.CustomColorDurationProgressBar;
+                        }
+                    }
+                }
+                ImGui.PopFont();
+                ImGui.SetItemTooltip("Apply To All Other Trackers In Container.");
+
+                if (ActiveTrackedEventEntry.UseCustomColorDurationProgressBar)
+                {
+                    ImGui.Indent();
+                    ImGui.ColorEdit4("##CustomColorDurationProgressBarPicker", ref ActiveTrackedEventEntry.CustomColorDurationProgressBar);
+                    ImGui.Unindent();
+                }
+
                 ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Duration Progress Bar Size:");
                 ImGui.SameLine();
@@ -4596,7 +4837,48 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.Checkbox("Icon Inside Progress Bar##ShowIconInsideProgressBar", ref ActiveTrackedEventEntry.ShowIconInsideProgressBar);
-                ImGui.SetItemTooltip("Note: Only applies if 'Show Icon' is also Enabled.\nRequires Duration Progress Bar Style = Circle.");
+
+                if (ActiveTrackedEventEntry.ShowIconInsideProgressBar && ActiveTrackedEventEntry.DurationProgressBarStyle == EDurationProgressBarStyle.Circle)
+                {
+                    ImGui.SameLine();
+                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                    if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllIconStretchValuesBtn"))
+                    {
+                        foreach (var tracker in ActiveTrackerContainer.EventTrackers)
+                        {
+                            if (tracker.Value.IdTracker != ActiveTrackedEventEntry.IdTracker)
+                            {
+                                tracker.Value.IconStretchLeftValue = ActiveTrackedEventEntry.IconStretchLeftValue;
+                                tracker.Value.IconStretchRightValue = ActiveTrackedEventEntry.IconStretchRightValue;
+                            }
+                        }
+                    }
+                    ImGui.PopFont();
+                    ImGui.SetItemTooltip("Apply Both Stretch Left and Right Values To All Other Trackers In Container.");
+
+                    ImGui.Indent();
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.TextUnformatted("Icon Stretch Left:");
+                    ImGui.SameLine();
+                    ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                    ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                    ImGui.SetNextItemWidth(-1);
+                    ImGui.SliderInt("##IconStretchLeftValue", ref ActiveTrackedEventEntry.IconStretchLeftValue, -10, 20);
+                    ImGui.PopStyleColor(2);
+                    ImGui.SetItemTooltip("Recommended Value 0 when using a Circular Icon. 8 when a Default Game Rectangle Icon.");
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.TextUnformatted("Icon Stretch Right:");
+                    ImGui.SameLine();
+                    ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                    ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                    ImGui.SetNextItemWidth(-1);
+                    ImGui.SliderInt("##IconStretchRightValue", ref ActiveTrackedEventEntry.IconStretchRightValue, -10, 20);
+                    ImGui.PopStyleColor(2);
+                    ImGui.SetItemTooltip("Recommended Value 0 when using a Circular Icon. -6 when a Default Game Rectangle Icon.");
+
+                    ImGui.Unindent();
+                }
 
                 ImGui.Checkbox("Name Inside Progress Bar##ShowNameInsideProgressBar", ref ActiveTrackedEventEntry.ShowNameInsideProgressBar);
                 ImGui.SetItemTooltip("Note: Only applies if 'Show Name' is also Enabled.");
@@ -5845,6 +6127,8 @@ namespace BPSR_ZDPS.Windows
         public bool ShowLayers = false;
         public bool ShowLayersBeforeIcon = false;
         public bool LayersNewLineBeforeIcon = false;
+        public bool UseCustomLayersTextColor = false;
+        public Vector4 LayersTextColor = new Vector4(1, 1, 1, 1);
         public bool ShowDurationText = false;
         public bool DurationTextSameLine = false;
         public bool UseMinutesForLongDuration = false;
@@ -5852,6 +6136,8 @@ namespace BPSR_ZDPS.Windows
         public Vector4 DurationTextColor = new Vector4(1, 1, 1, 1);
         public bool ShowDurationProgessBar = false;
         public bool ShowIconInsideProgressBar = false;
+        public int IconStretchLeftValue = 0;
+        public int IconStretchRightValue = 0;
         public bool ShowNameInsideProgressBar = false;
         public int TextInsideProgressBarOffset = 0;
         public bool ShowLayersInsideProgressBar = false;
@@ -5859,6 +6145,9 @@ namespace BPSR_ZDPS.Windows
         public int DurationProgressBarVerticalOffset = 0;
         public bool ShowDurationTextInProgressBar = false;
         public bool ColorDurationProgressBarByType = false;
+
+        public bool UseCustomColorDurationProgressBar = false;
+        public Vector4 CustomColorDurationProgressBar = ImGui.ColorConvertU32ToFloat4(ImGui.GetColorU32(ImGuiCol.PlotHistogram));
 
         public EDurationProgressBarStyle DurationProgressBarStyle = EDurationProgressBarStyle.Line;
         public bool UseDurationProgressBarCircleBackgroundFill = false;

@@ -26,7 +26,7 @@ namespace BPSR_ZDPS
             ImGui.EndGroup();
         }
 
-        private static void DrawArc(float size, float max_angle_factor, float percentage, float thickness, Vector2 pos, ImTextureRef? imTextureRef = null, bool isFilled = false)
+        private static void DrawArc(float size, float max_angle_factor, float percentage, float thickness, Vector2 pos, ImTextureRef? imTextureRef = null, int texStretchLeft = 0, int texStretchRight = 0, bool isFilled = false)
         {
             var draw_list = ImGui.GetWindowDrawList();
             
@@ -46,7 +46,8 @@ namespace BPSR_ZDPS
 
             if (imTextureRef != null)
             {
-                draw_list.AddImageRounded(imTextureRef.Value, pos + new Vector2(8, 0), pos + new Vector2(size) + new Vector2(-6, 0), new Vector2(0, 0), new Vector2(1, 1), ImGui.GetColorU32(Colors.White), size * 0.5f, ImDrawFlags.RoundCornersAll);
+                //draw_list.AddImageRounded(imTextureRef.Value, pos + new Vector2(8, 0), pos + new Vector2(size) + new Vector2(-6, 0), new Vector2(0, 0), new Vector2(1, 1), ImGui.GetColorU32(Colors.White), size * 0.5f, ImDrawFlags.RoundCornersAll);
+                draw_list.AddImageRounded(imTextureRef.Value, pos + new Vector2(texStretchLeft, 0), pos + new Vector2(size) + new Vector2(texStretchRight, 0), new Vector2(0, 0), new Vector2(1, 1), ImGui.GetColorU32(Colors.White), size * 0.5f, ImDrawFlags.RoundCornersAll);
             }
 
             if (isFilled)
@@ -63,19 +64,19 @@ namespace BPSR_ZDPS
             draw_list.PathStroke(ImGui.GetColorU32(ImGuiCol.PlotHistogram), ImDrawFlags.None, thickness);
         }
 
-        public static void ProgressBarArc(float size, float max_angle_factor, float percentage, Vector2 pos, float thickness, ImTextureRef? imTextureRef = null, bool isFilled = false)
+        public static void ProgressBarArc(float size, float max_angle_factor, float percentage, Vector2 pos, float thickness, ImTextureRef? imTextureRef = null, int texStretchLeft = 0, int texStretchRight = 0, bool isFilled = false)
         {
             var windowPos = ImGui.GetWindowPos();
 
-            DrawArc(size, max_angle_factor, percentage, thickness, new Vector2(pos.X + windowPos.X, pos.Y + windowPos.Y), imTextureRef, isFilled);
+            DrawArc(size, max_angle_factor, percentage, thickness, new Vector2(pos.X + windowPos.X, pos.Y + windowPos.Y), imTextureRef, texStretchLeft, texStretchRight, isFilled);
         }
 
-        public static void ProgressBarArc(float size, float max_angle_factor, float percentage, float thickness = 2.0f, ImTextureRef? imTextureRef = null, bool isFilled = false)
+        public static void ProgressBarArc(float size, float max_angle_factor, float percentage, float thickness = 2.0f, ImTextureRef? imTextureRef = null, int texStretchLeft = 0, int texStretchRight = 0, bool isFilled = false)
         {
             var pos = ImGui.GetCursorScreenPos();
             ImGui.Dummy(new Vector2(size));
 
-            DrawArc(size, max_angle_factor, percentage, thickness, pos, imTextureRef, isFilled);
+            DrawArc(size, max_angle_factor, percentage, thickness, pos, imTextureRef, texStretchLeft, texStretchRight, isFilled);
         }
     }
 }

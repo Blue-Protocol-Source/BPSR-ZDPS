@@ -1056,6 +1056,15 @@ namespace BPSR_ZDPS
                             if (logicEffect.EffectType == EBuffEffectLogicPbType.BuffEffectAddBuff)
                             {
                                 var buffInfo = BuffInfo.Parser.ParseFrom(reader);
+                                if (buffInfo.CreateTime > 0)
+                                {
+                                    DateTimeOffset dto = DateTimeOffset.FromUnixTimeMilliseconds(buffInfo.CreateTime);
+                                    
+                                    if (dto.LocalDateTime < extraData.ArrivalTime.ToLocalTime())
+                                    {
+                                        extraData.ArrivalTime = dto.UtcDateTime;
+                                    }
+                                }
                                 //System.Diagnostics.Debug.WriteLine($"({buffEffect.Type}) buffEffect[{buffIdx}].logicEffect[{logicIdx}] (Type:{logicEffect.EffectType}) = (BuffUUID:{buffEffect.BuffUuid}){buffInfo}");
                                 EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId, extraData);
                             }
@@ -1063,6 +1072,14 @@ namespace BPSR_ZDPS
                             {
                                 // Layer, Duration, CreateTime
                                 var changeInfo = BuffChange.Parser.ParseFrom(reader);
+                                if (changeInfo.CreateTime > 0)
+                                {
+                                    DateTimeOffset dto = DateTimeOffset.FromUnixTimeMilliseconds(changeInfo.CreateTime);
+                                    if (dto.LocalDateTime < extraData.ArrivalTime.ToLocalTime())
+                                    {
+                                        extraData.ArrivalTime = dto.UtcDateTime;
+                                    }
+                                }
                                 //System.Diagnostics.Debug.WriteLine($"({buffEffect.Type}) buffEffect[{buffIdx}].logicEffect[{logicIdx}] (Type:{logicEffect.EffectType}) = (BuffUUID:{buffEffect.BuffUuid}){changeInfo}");
                                 EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, changeInfo.Layer, (int)changeInfo.Duration, 0, extraData);
                             }
