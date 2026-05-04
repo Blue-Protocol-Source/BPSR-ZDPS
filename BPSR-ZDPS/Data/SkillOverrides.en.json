@@ -985,6 +985,12 @@
         "Desc": "",
         "Icon": ""
     },
+    "3504":
+    {
+        "Name": "Wayward Spirit Ball",
+        "Desc": "",
+        "Icon": ""
+    },
     "3506":
     {
         "Name": "Illusory Essence - Basic Attack",
@@ -5033,6 +5039,14 @@
     {
         "Name": "Dreamfall (Tankbuster)"
     },
+    "3350107":
+    {
+        "Name": "Forgotten Spread"
+    },
+    "3350108":
+    {
+        "Name": "Forgotten Stack"
+    },
     "3350109":
     {
         "Name": "Dream Spirit Death Explosion"
@@ -5040,6 +5054,10 @@
     "3350110":
     {
         "Name": "Basic Attack Headbutt"
+    },
+    "3350112":
+    {
+        "Name": "Spreading Calamity Impact"
     },
     "3350115":
     {
@@ -5064,6 +5082,10 @@
     "3350135":
     {
         "Name": "Forgotten Floor (Half Room)"
+    },
+    "3350136":
+    {
+        "Name": "Forgotten Floor (Wide Rectangle)"
     },
     "3350141":
     {
@@ -5551,7 +5573,7 @@
     },
     "10300203":
     {
-        "Name": "Lotus Dance Tankbuster (Phase 3)",
+        "Name": "Judgment of Shared Sin (Tankbuster)",
         "Desc": "Erosion Bloom Afterimage"
     },
     "10300204":
@@ -5566,17 +5588,22 @@
     },
     "10300206":
     {
-        "Name": "Sword Stab Fire Explosion (Phase 3)",
+        "Name": "Lotus Dance",
         "Desc": "Erosion Bloom Afterimage"
     },
     "10300207":
     {
-        "Name": "Lotus Dance Line Stack (Phase 3)",
+        "Name": "Judgment of Shared Sin (Line Stack)",
+        "Desc": "Erosion Bloom Afterimage"
+    },
+    "10300216":
+    {
+        "Name": "Judgment of Shared Sin (Phantom Line Stack)",
         "Desc": "Erosion Bloom Afterimage"
     },
     "10300250":
     {
-        "Name": "Lotus Dance Damage Spread (Phase 3)",
+        "Name": "Judgment of Shared Sin (Explosion)",
         "Desc": "Erosion Bloom Afterimage"
     },
     "10300301":

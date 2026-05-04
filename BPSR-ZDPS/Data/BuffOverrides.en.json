@@ -928,6 +928,11 @@
         "Name": "Spacetime Rift Teleport (Phase 2)",
         "Desc": "During Erosion Bloom Afterimage fight, teleports the player from Phase 2 platform over to Phase 3 platform"
     },
+    "828142":
+    {
+        "Name": "Meteor Rain Marked",
+        "Desc": "Marked with Meteor Rain from sharing Judgment of Shared Sin"
+    },
     "880630":
     {
         "Name": "Darkness Layers",
@@ -1030,6 +1035,61 @@
     {
         "Name": "Nightmare Illusion - Floor Marker",
         "Desc": ""
+    },
+    "883201":
+    {
+        "Name": "Dreamfall (Tankbuster)",
+        "Desc": "Player is marked to be hit with a tankbuster attack"
+    },
+    "883205":
+    {
+        "Name": "Haunting Nightmare Link",
+        "Desc": "Linked to the boss with a nightmare tether.\nGetting too far away will break it"
+    },
+    "883206":
+    {
+        "Name": "Haunting Nightmare Explosion Damage",
+        "Desc": "Player is being dealt damage by the Haunting Nightmare Explosion"
+    },
+    "883209":
+    {
+        "Name": "Forgotten Spread Marker",
+        "Desc": "Player has been assigned the Forgotten Spread"
+    },
+    "883210":
+    {
+        "Name": "Forgotten Stack Marker",
+        "Desc": "Player has been assigned the Forgotten Stack"
+    },
+    "883221":
+    {
+        "Name": "Dream Spirit - Star Rune",
+        "Desc": ""
+    },
+    "883222":
+    {
+        "Name": "Dream Spirit - Moon Rune",
+        "Desc": ""
+    },
+    "883226":
+    {
+        "Name": "Dream Spirit - False Marker",
+        "Desc": "This is a fake Dream Spirit used to trick the player"
+    },
+    "883234":
+    {
+        "Name": "Dream Spirit Target",
+        "Desc": "This is the real Dream Spirit used to break the Shield Rift"
+    },
+    "883236":
+    {
+        "Name": "Teleport - Phase 1",
+        "Desc": "Teleporting for Phase 1 Transition"
+    },
+    "883243":
+    {
+        "Name": "Dream Spirit Connection",
+        "Desc": "Escorting the Dream Spirit"
     },
     "900122":
     {
@@ -1424,6 +1484,16 @@
         "Name": "Imagine - Return To Caster",
         "Desc": "Effect played when the Imagine returns to the summoner",
         "BuffType": 1
+    },
+    "2110098":
+    {
+        "Name": "Venobzzar Incubator - AOE",
+        "Desc": "Hit by the explosion of a Venobzzar Incubator"
+    },
+    "2110099":
+    {
+        "Name": "Venobzzar Incubator - Debuff",
+        "Desc": "Takes damage over time, damage taken is increased during the effect"
     },
     "2110125":
     {
@@ -2191,6 +2261,18 @@
         "Desc": "Throughout the duration of Sandshroud, being attacked reduces the attack speed of enemy targets within a 5 meter radius by 30% for 3s.\nThroughout the duration of Sandshroud, Armor of allies within an 8 meter radius +10%",
         "BuffType": 1
     },
+    "2201451":
+    {
+        "Name": "Stone Domain (Attack Speed Reduction)",
+        "Desc": "Throughout the duration of Sandshroud, being attacked reduces the attack speed of enemy targets within a 5 meter radius by 30% for 3s",
+        "BuffType": 1
+    },
+    "2201452":
+    {
+        "Name": "Stone Domain (Armor Buff)",
+        "Desc": "Throughout the duration of Sandshroud, Armor of allies within an 8 meter radius +10%",
+        "BuffType": 1
+    },
     "2201460":
     {
         "Name": "Amplified Earthfort",
@@ -2270,6 +2352,12 @@
         "BuffType": 1
     },
     "2201560":
+    {
+        "Name": "Bravery in Battle (Talent)",
+        "Desc": "In combat, 50% of overhealing converts into a shield (accumulated shield cannot exceed 50% of Max HP)",
+        "BuffType": 1
+    },
+    "2201561":
     {
         "Name": "Bravery in Battle",
         "Desc": "In combat, 50% of overhealing converts into a shield (accumulated shield cannot exceed 50% of Max HP)",
@@ -3304,9 +3392,19 @@
     },
     "2203620":
     {
-        "Name": "Light Prism",
+        "Name": "Light Prism (Talent)",
         "Desc": "When Lightning Strike hits a target, it triggers Light Prism",
         "BuffType": 1
+    },
+    "2203621":
+    {
+        "Name": "Light Prism (Buff)",
+        "Desc": "When Lightning Strike hits a target, it triggers Light Prism"
+    },
+    "2203624":
+    {
+        "Name": "Light Prism (Explosion)",
+        "Desc": "Deals area damage up to 5 surrounding enemy targets and applies 3 stacks of Steel Beak"
     },
     "2203640":
     {
@@ -3327,6 +3425,12 @@
         "BuffType": 1
     },
     "2203530":
+    {
+        "Name": "Phantom Falcon (Talent)",
+        "Desc": "Triggering Implosion 5 times summons a Phantom Falcon to charge at the target",
+        "BuffType": 1
+    },
+    "2203531":
     {
         "Name": "Phantom Falcon",
         "Desc": "Triggering Implosion 5 times summons a Phantom Falcon to charge at the target",
@@ -5775,6 +5879,11 @@
         "Name": "Oblivion Dream Applied",
         "Desc": "Oblivion Dream takes effect on the target"
     },
+    "3003014":
+    {
+        "Name": "Oblivion Dream - Movement Reduction",
+        "Desc": "Movement Speed Reduced 20%"
+    },
     "3003030":
     {
         "Name": "Oblivion Dream - Illusion Obsession",
@@ -5941,6 +6050,18 @@
     {
         "Name": "Verdant Oracle X8",
         "Desc": "Casting Blossom Charge grants Super Armor.\bBlossom Charge Dream DMG increased and Control Duration increased",
+        "BuffType": 1
+    },
+    "3057060":
+    {
+        "Name": "Beat Performer X6",
+        "Desc": "Encore Dream DMG triggered by yourself or teammates increased",
+        "BuffType": 1
+    },
+    "3057061":
+    {
+        "Name": "Beat Performer X6 (Buff)",
+        "Desc": "Encore Dream DMG increased",
         "BuffType": 1
     },
     "3057110":
