@@ -4361,7 +4361,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(-1);
-                ImGui.SliderInt("##IconSize", ref ActiveTrackedEventEntry.IconSize, 16, 64);
+                ImGui.SliderInt("##IconSize", ref ActiveTrackedEventEntry.IconSize, 16, 96);
                 ImGui.PopStyleColor(2);
                 ImGui.Unindent();
 
@@ -4396,7 +4396,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(-1);
-                ImGui.SliderInt("##NameSize", ref ActiveTrackedEventEntry.NameSize, 16, 64);
+                ImGui.SliderInt("##NameSize", ref ActiveTrackedEventEntry.NameSize, 16, 96);
                 ImGui.PopStyleColor(2);
 
                 ImGui.Checkbox("Use Custom Name", ref ActiveTrackedEventEntry.UseCustomName);
@@ -4429,7 +4429,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(-1);
-                ImGui.SliderInt("##LayersSize", ref ActiveTrackedEventEntry.LayerSize, 16, 64);
+                ImGui.SliderInt("##LayersSize", ref ActiveTrackedEventEntry.LayerSize, 16, 96);
                 ImGui.PopStyleColor(2);
 
                 ImGui.Checkbox("Show Layers Before Icon##ShowLayersBeforeIcon", ref ActiveTrackedEventEntry.ShowLayersBeforeIcon);
@@ -4454,7 +4454,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(-1);
-                ImGui.SliderInt("##DurationTextSize", ref ActiveTrackedEventEntry.DurationTextSize, 16, 64);
+                ImGui.SliderInt("##DurationTextSize", ref ActiveTrackedEventEntry.DurationTextSize, 16, 96);
                 ImGui.PopStyleColor(2);
 
                 ImGui.Checkbox("Same Line##DurationTextSameLine", ref ActiveTrackedEventEntry.DurationTextSameLine);
@@ -4544,7 +4544,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(-1);
-                ImGui.SliderInt("##DurationProgressBarSize", ref ActiveTrackedEventEntry.DurationProgressBarSize, 16, 64);
+                ImGui.SliderInt("##DurationProgressBarSize", ref ActiveTrackedEventEntry.DurationProgressBarSize, 16, 96);
                 ImGui.PopStyleColor(2);
 
                 ImGui.AlignTextToFramePadding();
@@ -4553,7 +4553,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(-1);
-                ImGui.SliderInt("##DurationProgressBarTextSize", ref ActiveTrackedEventEntry.DurationProgressBarTextSize, 16, 64);
+                ImGui.SliderInt("##DurationProgressBarTextSize", ref ActiveTrackedEventEntry.DurationProgressBarTextSize, 16, 96);
                 ImGui.PopStyleColor(2);
 
                 ImGui.Checkbox("Same Line##DurationProgressBarSameLine", ref ActiveTrackedEventEntry.DurationProgressBarSameLine);
