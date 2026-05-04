@@ -301,7 +301,7 @@ namespace BPSR_ZDPS.Windows
 
         private static void EncounterManager_EncounterStart(EncounterStartEventArgs e)
         {
-            if (e.Reason != EncounterStartReason.NewObjective)
+            if (e.Reason != EncounterStartReason.NewObjective && e.Reason != EncounterStartReason.BenchmarkStart && e.Reason != EncounterStartReason.BenchmarkEnd)
             {
                 foreach (var eventContainer in EventTrackerContainers)
                 {
