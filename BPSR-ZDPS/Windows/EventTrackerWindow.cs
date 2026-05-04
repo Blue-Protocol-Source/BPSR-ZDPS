@@ -3626,7 +3626,7 @@ namespace BPSR_ZDPS.Windows
             if (ImGui.BeginListBox("##TrackersListbox", new Vector2(ImGui.GetContentRegionAvail().X, 140)))
             {
                 int idx = 0;
-                foreach (var eventTracker in ActiveTrackerContainer.EventTrackers)
+                foreach (var eventTracker in ActiveTrackerContainer.EventTrackers.AsValueEnumerable())
                 {
                     bool isSelected = ActiveTrackedEventEntryIdx == idx;
                     ImGuiSelectableFlags highlight = isSelected ? ImGuiSelectableFlags.Highlight : ImGuiSelectableFlags.None;
@@ -3972,6 +3972,7 @@ namespace BPSR_ZDPS.Windows
                                     ImGui.TextUnformatted($"[{fmt} ]");
                                 }
                             }
+                            ImGui.TextUnformatted($"RemoveOnSceneChange: {buff.Value.DeleteChangeScene}");
 
                             ImGui.EndTooltip();
                         }
@@ -4042,6 +4043,27 @@ namespace BPSR_ZDPS.Windows
                         {
                             ActiveTrackedEventEntry.BuffEvents.Remove(trackedBuffEvent);
                         }
+                    }
+                    if (ImGui.BeginPopupContextItem())
+                    {
+                        ImGui.BeginDisabled(ActiveTrackedEventEntry.BuffEvents.Count > 1);
+                        if (ImGui.MenuItem("Select All Events"))
+                        {
+                            ActiveTrackedEventEntry.BuffEvents.Clear();
+                            ActiveTrackedEventEntry.BuffEvents.AddRange(eventsList);
+                        }
+                        ImGui.SetItemTooltip($"Selects all listed events.\nWill not select Advanced Mode events if not currently in Advanced ('View All Events') Mode.");
+                        ImGui.EndDisabled();
+
+                        ImGui.BeginDisabled(ActiveTrackedEventEntry.BuffEvents.Count == 0);
+                        if (ImGui.MenuItem("Deselect All Events"))
+                        {
+                            ActiveTrackedEventEntry.BuffEvents.Clear();
+                        }
+                        ImGui.SetItemTooltip($"Deselects all events.\nIf events in Advanced Mode were selected they will be removed even if not in Advanced ('View All Events') Mode.");
+                        ImGui.EndDisabled();
+
+                        ImGui.EndPopup();
                     }
                 }
                 ImGui.EndListBox();
