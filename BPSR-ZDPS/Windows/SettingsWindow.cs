@@ -211,7 +211,18 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.SeparatorText("Network Device");
 
-                        if (npcapVersion < new Version(1, 86))
+                        if (npcapVersion == new Version())
+                        {
+                            ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
+                            ImGui.BeginChild($"##VeryOutOfDateNpcapVersion", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
+                            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                            ImGui.TextUnformatted("ERROR:");
+                            ImGui.PopFont();
+                            ImGui.TextWrapped($"Npcap version is EXTREMELY OUT OF DATE. Please update your Npcap install immediately.");
+                            ImGui.EndChild();
+                            ImGui.PopStyleColor();
+                        }
+                        else if (npcapVersion < new Version(1, 86))
                         {
                             ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Goldenrod_Transparent);
                             ImGui.BeginChild($"##OutOfDateNpcapVersion", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);

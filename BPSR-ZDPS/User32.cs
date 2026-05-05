@@ -192,9 +192,16 @@ public class User32
 
     public static string GetNpcapVersionString()
     {
-        IntPtr ptr = pcap_lib_version();
-        string versionStr = Marshal.PtrToStringAnsi(ptr);
-        return versionStr;
+        try
+        {
+            IntPtr ptr = pcap_lib_version();
+            string versionStr = Marshal.PtrToStringAnsi(ptr);
+            return versionStr;
+        }
+        catch (Exception ex)
+        {
+            return "";
+        }
     }
 
     public static Version GetNpcapVersion()
