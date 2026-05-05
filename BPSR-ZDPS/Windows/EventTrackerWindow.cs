@@ -3440,6 +3440,9 @@ namespace BPSR_ZDPS.Windows
                 SaveContainersToFile();
                 SaveContainerPresetsToFile();
                 SaveTrackerPresetsToFile();
+
+                // Always disable Edit Mode when the window is closed
+                windowSettings.IsContainerEditMode = false;
             }
 
             ImGui.PopID();
