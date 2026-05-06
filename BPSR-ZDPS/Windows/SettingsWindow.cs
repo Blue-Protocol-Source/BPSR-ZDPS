@@ -318,6 +318,10 @@ namespace BPSR_ZDPS.Windows
                             {
                                 GameCapturePreference = EGameCapturePreference.XDGSteam;
                             }
+                            else if (ImGui.Selectable("WeGame"))
+                            {
+                                GameCapturePreference = EGameCapturePreference.WeGame;
+                            }
                             else if (ImGui.Selectable("Custom"))
                             {
                                 GameCapturePreference = EGameCapturePreference.Custom;

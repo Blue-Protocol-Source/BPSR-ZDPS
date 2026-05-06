@@ -153,6 +153,7 @@ public enum EGameCapturePreference
     XDG,
     HaoPlaySeaSteam,
     XDGSteam,
+    WeGame,
     Custom = 200
 }
 
