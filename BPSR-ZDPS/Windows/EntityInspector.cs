@@ -703,6 +703,10 @@ namespace BPSR_ZDPS.Windows
                             if (ImGui.IsItemHovered() && ImGui.BeginTooltip())
                             {
                                 ImGui.TextUnformatted($"{stat.Value.ValueTotal:N0}");
+                                if (stat.Value.ValueCritTotal > 0)
+                                {
+                                    ImGui.TextUnformatted($"Crit: {stat.Value.ValueCritTotal:N0}");
+                                }
                                 if (TableFilterMode == ETableFilterMode.SkillsHealing)
                                 {
                                     ImGui.TextUnformatted($"Overheal: {stat.Value.HpLessenTotal:N0}");
@@ -729,7 +733,7 @@ namespace BPSR_ZDPS.Windows
 
                             ImGui.TableNextColumn();
                             ImGui.TextUnformatted($"{stat.Value.HitsCount}");
-                            if (stat.Value.ImmuneCount > 0 || stat.Value.LuckyCount > 0 || stat.Value.CastsCount > 0)
+                            if (stat.Value.ImmuneCount > 0 || stat.Value.LuckyCount > 0 || stat.Value.CastsCount > 0 || stat.Value.CritCount > 0)
                             {
                                 var sb = new StringBuilder();
 
@@ -741,6 +745,11 @@ namespace BPSR_ZDPS.Windows
                                 if (stat.Value.ImmuneCount > 0)
                                 {
                                     sb.AppendLine($"Immune Count: {stat.Value.ImmuneCount}");
+                                }
+
+                                if (stat.Value.CritCount > 0)
+                                {
+                                    sb.AppendLine($"Crit Count: {stat.Value.CritCount}");
                                 }
 
                                 if (stat.Value.LuckyCount > 0)
