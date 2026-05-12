@@ -3872,6 +3872,13 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.TextUnformatted($"Who To Track: {eventTracker.Value.TrackedEntityType}");
 
+                        if (eventTracker.Value.DebugLogTracker)
+                        {
+                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                            ImGui.TextUnformatted("Debug Tracker: Enabled");
+                            ImGui.PopStyleColor();
+                        }
+
                         ImGui.EndTooltip();
                     }
                     if (ImGui.BeginPopupContextItem())
@@ -4060,6 +4067,20 @@ namespace BPSR_ZDPS.Windows
                     ImGui.Separator();
 
                     ImGui.Checkbox("Debug Tracker", ref ActiveTrackedEventEntry.DebugLogTracker);
+                    if (ImGui.BeginPopupContextItem(ImGuiPopupFlags.MouseButtonRight))
+                    {
+                        if (ImGui.MenuItem("Apply To Other Trackers"))
+                        {
+                            foreach (var tracker in ActiveTrackerContainer.EventTrackers)
+                            {
+                                if (tracker.Value.IdTracker != ActiveTrackedEventEntry.IdTracker)
+                                {
+                                    tracker.Value.DebugLogTracker = ActiveTrackedEventEntry.DebugLogTracker;
+                                }
+                            }
+                        }
+                        ImGui.EndPopup();
+                    }
 
                     ImGui.Separator();
 
