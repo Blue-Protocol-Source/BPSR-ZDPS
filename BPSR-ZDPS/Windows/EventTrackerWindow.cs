@@ -4102,9 +4102,10 @@ namespace BPSR_ZDPS.Windows
             ImGui.TextUnformatted("Filter: ");
             ImGui.SameLine();
             ImGui.Checkbox("(Search Descriptions)", ref BuffFilterIncludeDescriptions);
+            ImGui.SetItemTooltip("Search the Description text of Buffs instead of only their Names.");
             ImGui.SameLine();
             ImGui.SetNextItemWidth(-1);
-            if (ImGui.InputText("##BuffFilterText", ref BuffFilterText, 128))
+            if (ImGui.InputTextWithHint("##BuffFilterText", "Name or ID", ref BuffFilterText, 128))
             {
                 if (BuffFilterText.Length > 0)
                 {
@@ -4118,9 +4119,24 @@ namespace BPSR_ZDPS.Windows
                     BuffFilterMatches = null;
                 }
             }
+
+            if (BuffFilterMatches == null || BuffFilterText.Length == 0)
+            {
+                if (ActiveTrackedEventEntry != null && ActiveTrackedEventEntry.TrackedBuffId > 0)
+                {
+                    string trackedBuffId = ActiveTrackedEventEntry.TrackedBuffId.ToString();
+                    var foundBuff = HelperMethods.DataTables.Buffs.Data.AsValueEnumerable().Where(x => x.Key == trackedBuffId).FirstOrDefault();
+                    // Validate the result before using it for the edge case where it doesn't actually exist in our table for some reason
+                    if (!string.IsNullOrEmpty(foundBuff.Key))
+                    {
+                        BuffFilterMatches = [foundBuff];
+                    }
+                }
+            }
+
             if (ImGui.BeginListBox("##BuffsListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140)))
             {
-                if (BuffFilterText.Length > 0 && BuffFilterMatches != null && BuffFilterMatches.Any())
+                if (BuffFilterMatches != null && BuffFilterMatches.Any())
                 {
                     int buffIdx = 0;
                     foreach (var buff in BuffFilterMatches)
@@ -4327,9 +4343,10 @@ namespace BPSR_ZDPS.Windows
             ImGui.TextUnformatted("Filter: ");
             ImGui.SameLine();
             ImGui.Checkbox("(Search Descriptions)", ref SkillFilterIncludeDescriptions);
+            ImGui.SetItemTooltip("Search the Description text of Skills instead of only their Names.");
             ImGui.SameLine();
             ImGui.SetNextItemWidth(-1);
-            if (ImGui.InputText("##SkillFilterText", ref SkillFilterText, 128))
+            if (ImGui.InputTextWithHint("##SkillFilterText", "Name or ID", ref SkillFilterText, 128))
             {
                 if (SkillFilterText.Length > 0)
                 {
@@ -4343,9 +4360,23 @@ namespace BPSR_ZDPS.Windows
                     SkillFilterMatches = null;
                 }
             }
+
+            if (SkillFilterMatches == null || SkillFilterText.Length == 0)
+            {
+                if (ActiveTrackedEventEntry != null && ActiveTrackedEventEntry.TrackedSkillId > 0)
+                {
+                    string trackedSkillId = ActiveTrackedEventEntry.TrackedSkillId.ToString();
+                    var foundSkill = HelperMethods.DataTables.Skills.Data.AsValueEnumerable().Where(x => x.Key == trackedSkillId).FirstOrDefault();
+                    if (!string.IsNullOrEmpty(foundSkill.Key))
+                    {
+                        SkillFilterMatches = [ foundSkill ];
+                    }
+                }
+            }
+
             if (ImGui.BeginListBox("##SkillsListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140)))
             {
-                if (SkillFilterText.Length > 0 && SkillFilterMatches != null && SkillFilterMatches.Any())
+                if (SkillFilterMatches != null && SkillFilterMatches.Any())
                 {
                     int skillIdx = 0;
                     foreach (var skill in SkillFilterMatches)
