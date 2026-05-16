@@ -9,16 +9,26 @@ namespace BPSR_ZDPS
     public static class FASIcons
     {
         public static char XMark = '\uF00d'; // F00D
+        public static char Signal = '\uF012'; // F012
+        public static char Download = '\uF019'; // F019
+        public static char Inbox = '\uF01C'; // F01C
+        public static char Video = '\uF03D'; // F03D
+        public static char Image = '\uF03E'; // F03E
         public static char Pause = '\uF04C'; // F04C
         public static char Stop = '\uF04D'; // F04D
+        public static char Crosshair = '\uF05B'; // F05B
         public static char Ban = '\uF05E'; // F05E
+        public static char Expand = '\uF065'; // F065
+        public static char Compress = '\uF066'; // F066
         public static char Eye = '\uF06E'; // F06E
         public static char EyeSlash = '\uF070'; // F070
         public static char Folder = '\uF07B'; // F07B, F114, 01F4C1, 01F5BF
         public static char FolderOpen = '\uF07C'; // F07C, F115, 01F4C2, 01F5C1
         public static char File = '\uF016'; // F016, F15B, 01F4C4, 01F5CB
         public static char HardDrive = '\uF0A0'; // F0A0, 01F5B4
+        public static char Link = '\uF0C1'; // F0C1
         public static char Desktop = '\uF108'; // F108, F390, 01F5A5
+        public static char LinkSlash = '\uF127'; // F127
         public static char Documents = '\uF0F6'; // F0F6, F15C, 01F5B9, 01F5CE
         public static char SquarePlus = '\uF0FE'; // F0FE, F196
         public static char Plus = '\u002B'; // 002B, 2795
@@ -50,6 +60,7 @@ namespace BPSR_ZDPS
         public static char ArrowDownAZ = '\uF15D'; // F15D
         public static char ArrowDown19 = '\uF162'; // F162
         public static char ArrowDownLong = '\uF175'; // F175
+        public static char Bug = '\uF188'; // F188
         public static char ArrowRotateLeft = '\u21BA'; // 21BA, F0E2
         public static char Database = '\uF1C0'; // F1C0
         public static char FilePDF = '\uF1C1'; // F1C1
@@ -73,6 +84,7 @@ namespace BPSR_ZDPS
         public static char WindowMinimize = '\uF2D1'; // F2D1, 01F5D5
         public static char WindowRestore = '\uF2D2'; // F2D2
         public static char SquareXMark = '\uF2D3'; // F2D3
+        public static char Microchip = '\uF2DB'; // F2DB
         public static char RotateLeft = '\uF2EA'; // F2EA
         public static char Rotate = '\uF2F1'; // F2F1, 01F504
         public static char Stopwatch = '\uF2F2'; // F2F2
@@ -101,10 +113,12 @@ namespace BPSR_ZDPS
         public static char UserSlash = '\uF506'; // F506
         public static char UserTag = '\uF507'; // F507
         public static char UsersGear = '\uF509'; // F509
+        public static char FileContract = '\uF56C'; // F56C
         public static char FileArrowDown = '\uF56D'; // F56D
         public static char FileExport = '\uF56E'; // F56E
         public static char FileImport = '\uF56F'; // F56F
         public static char FileInvoice = '\uF570'; // F570
+        public static char FileSignature = '\uF573'; // F573
         public static char FileArrowUp = '\uF574'; // F574
         public static char LayerGroup = '\uF5FD'; // F5FD
         public static char LocationCrosshairs = '\uF601'; // F601
@@ -140,8 +154,7 @@ namespace BPSR_ZDPS
         public static char Infinity = '\u221E'; // 221E, 267E, F534
         public static char Divide = '\u00F7'; // 00F7, 2797, F529
         public static char ShieldBlank = '\uF3ED'; // F3ED
-        public static char Microchip = '\uF2DB'; // F2DB
-        public static char Snowbreak = '\u2744'; // 2744, 2746, F2DC
+        public static char Snowflake = '\u2744'; // 2744, 2746, F2DC
         public static char Stopwatch2 = '\u23F1'; // 23F1, F2F2
         public static char RightFromBracket = '\uF2F5'; // F2F5
         public static char RightToBracket = '\uF2F6'; // F2F6

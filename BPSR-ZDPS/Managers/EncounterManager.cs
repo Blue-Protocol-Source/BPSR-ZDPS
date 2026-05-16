@@ -1135,7 +1135,7 @@ namespace BPSR_ZDPS
             //GetOrCreateEntity(entityUuid).AddBuffEventAttribute(shieldBuffUuid, "AttrShieldList", 0);
         }
 
-        public void NotifyBuffEvent(long entityUuid, EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, int layer, int duration, int sourceConfigId, ExtraPacketData extraPacketData)
+        public void NotifyBuffEvent(long entityUuid, EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, int layer, int duration, int sourceConfigId, DateTime? creationTime, ExtraPacketData extraPacketData)
         {
             string entityCasterName = "";
             if (fireUuid > 0)
@@ -1160,8 +1160,9 @@ namespace BPSR_ZDPS
                 SourceConfigId = sourceConfigId,
                 EntityCasterName = entityCasterName,
                 UpdateDateTime = extraPacketData.ArrivalTime,
+                CreationDateTime = creationTime,
             });
-            GetOrCreateEntity(entityUuid).NotifyBuffEvent(buffEventType, buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId, DateTime.Now.Subtract(EncounterManager.Current.StartTime), extraPacketData);
+            GetOrCreateEntity(entityUuid).NotifyBuffEvent(buffEventType, buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId, DateTime.Now.Subtract(EncounterManager.Current.StartTime), creationTime, extraPacketData);
         }
 
         protected virtual void OnSkillActivated(SkillActivatedEventArgs e)
@@ -2086,7 +2087,7 @@ namespace BPSR_ZDPS
             RegisterSkillData(ESkillType.Taken, attackerUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, shieldBreak, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, victimPos, extraPacketData);
         }
 
-        public void NotifyBuffEvent(EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId, TimeSpan encounterTime, ExtraPacketData extraPacketData)
+        public void NotifyBuffEvent(EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId, TimeSpan encounterTime, DateTime? creationTime, ExtraPacketData extraPacketData)
         {
             if (buffEventType == EBuffEventType.BuffEventRemove)
             {
@@ -2115,7 +2116,23 @@ namespace BPSR_ZDPS
                 {
                     buffEvent.SetEvent(buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId);
                 }
-                buffEvent.SetAddTime(encounterTime.Duration(), extraPacketData.ArrivalTime);
+
+                if (creationTime != null)
+                {
+                    var diff = extraPacketData.ArrivalTime.Subtract(creationTime.Value).TotalSeconds;
+                    if (diff < -5 || diff > 0)
+                    {
+                        buffEvent.SetAddTime(encounterTime.Duration(), creationTime.Value);
+                    }
+                    else
+                    {
+                        buffEvent.SetAddTime(encounterTime.Duration(), extraPacketData.ArrivalTime);
+                    }
+                }
+                else
+                {
+                    buffEvent.SetAddTime(encounterTime.Duration(), extraPacketData.ArrivalTime);
+                }
 
                 if (Settings.Instance.LimitEncounterBuffTrackingInOpenWorld && BattleStateMachine.IsInOpenWorld() && BuffEvents.Count > 99)
                 {
@@ -2373,6 +2390,7 @@ namespace BPSR_ZDPS
         public int SourceConfigId { get; set; }
         public string EntityCasterName { get; set; }
         public DateTime UpdateDateTime { get; set; }
+        public DateTime? CreationDateTime { get; set; }
     }
 
     public class AttributeUpdatedEventArgs : EventArgs
