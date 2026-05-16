@@ -2152,7 +2152,8 @@ namespace BPSR_ZDPS.Windows
                                             {
                                                 if (eventTracker.UseMinutesForLongDuration && remainingSeconds > 60)
                                                 {
-                                                    ImGui.TextUnformatted($"{(int)remainingSeconds / 60}m");
+                                                    var ts = TimeSpan.FromSeconds(remainingSeconds);
+                                                    ImGui.TextUnformatted($"{ts.ToString(@"m\m\ s\s")}");
                                                 }
                                                 else
                                                 {
@@ -2246,7 +2247,8 @@ namespace BPSR_ZDPS.Windows
                                                         {
                                                             if (eventTracker.UseMinutesForLongDuration && remainingSeconds > 60)
                                                             {
-                                                                durationFormat += $"{(int)remainingSeconds / 60}m";
+                                                                var ts = TimeSpan.FromSeconds(remainingSeconds);
+                                                                durationFormat += $"{ts.ToString(@"m\m\ s\s")}";
                                                             }
                                                             else
                                                             {
@@ -2345,7 +2347,8 @@ namespace BPSR_ZDPS.Windows
                                                     {
                                                         if (eventTracker.UseMinutesForLongDuration && remainingSeconds > 60)
                                                         {
-                                                            durationFormat += $"{(int)remainingSeconds / 60}m";
+                                                            var ts = TimeSpan.FromSeconds(remainingSeconds);
+                                                            durationFormat += $"{ts.ToString(@"m\m\ s\s")}";
                                                         }
                                                         else
                                                         {
