@@ -5555,7 +5555,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     IsEnabled = true,
                     ActivationType = ERaidWarningActivationType.OnGain,
-                    MessageFormat = "Tankbuster on {OwnerEntityTarget}!",
+                    MessageFormat = "Tankbuster on {OwnerEntityName}!",
                     PlaySound = true,
                 });
                 PresetTrackersList.Add(newShadowbreakStrike);
