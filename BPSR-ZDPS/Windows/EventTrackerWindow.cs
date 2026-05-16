@@ -590,6 +590,17 @@ namespace BPSR_ZDPS.Windows
                                     eventData.BuffType = matched.BuffType;
                                 }
 
+                                DateTime updateTimeStamp = e.UpdateDateTime;
+                                if (e.CreationDateTime != null)
+                                {
+                                    // If the creation time is very recent (low negative) then we can just use arrival time to ensure consistent UI updates
+                                    var diff = updateTimeStamp.Subtract(e.CreationDateTime.Value).TotalSeconds;
+                                    if (diff < -5 || diff > 0)
+                                    {
+                                        updateTimeStamp = e.CreationDateTime.Value;
+                                    }
+                                }
+
                                 if (eventTracker.OverrideDuration)
                                 {
                                     eventData.Cooldown = new(eventTracker.DurationOverrideValue, 0, 0);
@@ -597,19 +608,19 @@ namespace BPSR_ZDPS.Windows
                                 else
                                 {
                                     float newDuration = MathF.Round((float)e.Duration / 1000.0f, 4);
-                                    if (eventData.Cooldown != null && eventData.Cooldown.IsCooldownStarted && newDuration != eventData.Cooldown.BaseDuration)
+                                    if (eventData.Cooldown != null && eventData.Cooldown.IsCooldownStarted)
                                     {
                                         eventData.Cooldown.IncreaseBaseDuration(newDuration, true);
 
                                         if (e.BuffEventType == EBuffEventType.BuffEventRemoveLayer)
                                         {
-                                            eventData.Cooldown.StartOrUpdate(e.UpdateDateTime, null, false);
+                                            eventData.Cooldown.StartOrUpdate(updateTimeStamp, null, true);
                                         }
                                     }
                                     else
                                     {
                                         eventData.Cooldown = new(newDuration, 0, 0);
-                                        eventData.Cooldown.StartOrUpdate(e.UpdateDateTime, null, true);
+                                        eventData.Cooldown.StartOrUpdate(updateTimeStamp, null, true);
                                     }
                                 }
 
@@ -618,16 +629,16 @@ namespace BPSR_ZDPS.Windows
 
                                 if (e.BuffEventType == EBuffEventType.BuffEventAddTo)
                                 {
-                                    eventData.Cooldown.StartOrUpdate(e.UpdateDateTime, null, true);
+                                    eventData.Cooldown.StartOrUpdate(updateTimeStamp, null, true);
                                 }
 
 
                                 if (eventTracker.DebugLogTracker)
                                 {
-                                    AddDebugLog($"{DateTime.Now} Buff Event [{e.BuffUuid}]({e.BaseId}) {e.BuffEventType} FromUUID={e.EntityUuid} Name={eventTracker.Name} Layers={e.Layer} Duration={e.Duration} AppliedDur={eventData.Cooldown?.BaseDuration} Consumed={eventData.Cooldown?.cooldownConsumed} Effective={eventData.Cooldown?.effectiveDuration}");
+                                    AddDebugLog($"{DateTime.Now} Buff Event |{updateTimeStamp} ({Math.Round(e.UpdateDateTime.Subtract(updateTimeStamp).TotalSeconds, 4)})| [{e.BuffUuid}]({e.BaseId}) {e.BuffEventType} FromUUID={e.EntityUuid} Name={eventTracker.Name} Layers={e.Layer} Duration={e.Duration} AppliedDur={eventData.Cooldown?.BaseDuration} Consumed={eventData.Cooldown?.cooldownConsumed} Effective={eventData.Cooldown?.effectiveDuration}");
                                 }
 
-                                eventData.Cooldown?.StartOrUpdate(e.UpdateDateTime);
+                                eventData.Cooldown?.StartOrUpdate(updateTimeStamp);
 
                                 if (e.BuffEventType == EBuffEventType.BuffEventAddTo)
                                 {
