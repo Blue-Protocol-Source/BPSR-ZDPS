@@ -694,6 +694,9 @@ namespace BPSR_ZDPS
                     case EAttrType.AttrName:
                         EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? "" : reader.ReadString().TrimEnd());
                         break;
+                    case EAttrType.AttrHatedName:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? "" : reader.ReadString().TrimEnd());
+                        break;
                     case EAttrType.AttrSkillId:
                         EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
                         break;
@@ -731,6 +734,24 @@ namespace BPSR_ZDPS
                         EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
                         break;
                     case EAttrType.AttrTargetPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrFinalTargetPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrDmgTargetPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrBulletTargetPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrSummonerPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrTargetPartPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrParadeLeaderPos:
                         EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
                         break;
                     case EAttrType.AttrState:
