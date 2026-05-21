@@ -1981,7 +1981,14 @@ namespace BPSR_ZDPS.Windows
                     {
                         if (eventContainer.ContainerFixedSize != Vector2.Zero)
                         {
+                            if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedSize)
+                            {
                             ImGui.SetNextWindowSize(eventContainer.ContainerFixedSize, ImGuiCond.Appearing);
+                        }    
+                            else if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedWidth)
+                            {
+                                ImGui.SetNextWindowSize(new Vector2(eventContainer.ContainerFixedSize.X, 0), windowSettings.IsContainerEditMode ? ImGuiCond.Appearing : ImGuiCond.None);
+                    }
                         }    
                     }
 
@@ -2030,6 +2037,10 @@ namespace BPSR_ZDPS.Windows
                         if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedSize)
                         {
                             eventContainer.ContainerFixedSize = windowBaseSize;
+                        }
+                        else if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedWidth)
+                        {
+                            eventContainer.ContainerFixedSize = new Vector2(windowBaseSize.X, 0);
                         }
 
                         if (eventContainer.ModifiedWindowOpacity && eventContainer.LastSetOpacity != eventContainer.WindowOpacityValue)
@@ -2163,7 +2174,7 @@ namespace BPSR_ZDPS.Windows
 
                                 bool hasSetSize = false;
                                 float maxWindowSize = 0;
-                                if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedSize)
+                                if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedSize || eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedWidth)
                                 {
                                     maxWindowSize = ImGui.GetContentRegionAvail().X;
                                 }
@@ -4253,6 +4264,13 @@ namespace BPSR_ZDPS.Windows
                     }
                     ImGui.SetItemTooltip("User defines width and height and anything outside is clipped");
 
+                    if (ImGui.Selectable($"{EContainerSizeConstraint.FixedWidth.ToString()}"))
+                    {
+                        ActiveTrackerContainer.ContainerSizeConstraint = EContainerSizeConstraint.FixedWidth;
+                        ActiveTrackerContainer.EventWindowSizes = new();
+                    }
+                    ImGui.SetItemTooltip("User defines width anything outside is clipped, while height automatically adjusts");
+
                     ImGui.EndCombo();
                 }
 
@@ -4410,7 +4428,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             dropAction = "Copying";
                         }
-                        ImGui.TextUnformatted($"{dropAction} Tracker '{eventTracker.Value.Name}'{(!string.IsNullOrEmpty(DragDropTargetName) ? $" to '{DragDropTargetName}'" : "")}");
+                        ImGui.TextUnformatted($"{dropAction} Tracker '{eventTracker.Value.TrackerName}'{(!string.IsNullOrEmpty(DragDropTargetName) ? $" to '{DragDropTargetName}'" : "")}");
 
                         ImGui.EndDragDropSource();
                     }
@@ -6701,7 +6719,8 @@ namespace BPSR_ZDPS.Windows
     public enum EContainerSizeConstraint
     {
         AutoSize = 0,
-        FixedSize = 1
+        FixedSize = 1,
+        FixedWidth = 2, // Height is AutoSize
     }
 
     public class TrackerContainer
