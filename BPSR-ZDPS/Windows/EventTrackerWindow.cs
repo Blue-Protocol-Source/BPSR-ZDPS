@@ -889,6 +889,50 @@ namespace BPSR_ZDPS.Windows
                     continue;
                 }
 
+                if (eventContainer.Value.TrackAllSkills && eventContainer.Value.EventTrackers.Count > 0)
+                {
+                    var trackerTemplate = eventContainer.Value.EventTrackers.First();
+                    var hasTracked = eventContainer.Value.EventTrackers.Skip(1).Where(x => x.Value.TrackedSkillId == e.SkillId).Any();
+                    if (!hasTracked)
+                    {
+                        bool shouldHandle = CheckIfShouldHandleEvent(trackerTemplate.Value, e.CasterUuid);
+                        if (shouldHandle)
+                        {
+                            var newTracker = (TrackedEventEntry)trackerTemplate.Value.Clone(++PersistentTrackerCount);
+                            newTracker.SkillEvents = new();
+                            newTracker.SkillEvents.AddRange(trackerTemplate.Value.SkillEvents);
+                            newTracker.EventData = new();
+                            newTracker.TrackedSkillId = e.SkillId;
+
+                            if (HelperMethods.DataTables.Skills.Data.TryGetValue(e.SkillId.ToString(), out var matched))
+                            {
+                                newTracker.TrackerName = $"{matched.Name} AutoTracker";
+                                newTracker.Name = matched.Name;
+                                newTracker.Desc = matched.Desc;
+
+                                string matchedIconName = matched.GetIconName();
+                                string baseDir = "Skills";
+                                if (matched.IsRoleSlot())
+                                {
+                                    baseDir = "Skills_Imagines";
+                                }
+                                string resolvedIconName = Path.Combine(baseDir, matchedIconName);
+                                if (newTracker.IconPath != resolvedIconName)
+                                {
+                                    newTracker.UpdateIconData(matchedIconName, true);
+                                }
+                            }
+                            else
+                            {
+                                newTracker.TrackerName = $"{e.SkillId} AutoTracker";
+                            }
+
+                            eventContainer.Value.EventTrackers.Add(newTracker.IdTracker, newTracker);
+                            eventContainer.Value.RecheckTrackerStates();
+                        }
+                    }
+                }
+
                 foreach (var eventTrackerKVP in eventContainer.Value.EventTrackers)
                 {
                     var eventTracker = eventTrackerKVP.Value;
@@ -1983,12 +2027,12 @@ namespace BPSR_ZDPS.Windows
                         {
                             if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedSize)
                             {
-                            ImGui.SetNextWindowSize(eventContainer.ContainerFixedSize, ImGuiCond.Appearing);
-                        }    
+                                ImGui.SetNextWindowSize(eventContainer.ContainerFixedSize, ImGuiCond.Appearing);
+                            }
                             else if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedWidth)
                             {
                                 ImGui.SetNextWindowSize(new Vector2(eventContainer.ContainerFixedSize.X, 0), windowSettings.IsContainerEditMode ? ImGuiCond.Appearing : ImGuiCond.None);
-                    }
+                            }
                         }    
                     }
 
@@ -4322,29 +4366,69 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetItemTooltip("Descriptions are limited to 120 characters with this is Enabled.");
                 //ImGui.Unindent(); 
 
-                ImGui.SeparatorText("Special");
-                ImGui.BeginDisabled(ActiveTrackerContainer.ContainerLayoutStyle == EContainerLayoutStyle.SingleItem);
-                //ImGui.Indent();
-                if (ImGui.Checkbox("Track All Buffs##ContainerTrackAllBuffs", ref ActiveTrackerContainer.TrackAllBuffs))
+                if (ImGui.CollapsingHeader("Special", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    if (ActiveTrackerContainer.TrackAllBuffs && ActiveTrackerContainer.EventTrackers.Count == 0)
+                    ImGui.Indent();
+
+                    ImGui.BeginDisabled(ActiveTrackerContainer.ContainerLayoutStyle == EContainerLayoutStyle.SingleItem || ActiveTrackerContainer.TrackAllSkills);
+                    if (ImGui.Checkbox("Track All Buffs##ContainerTrackAllBuffs", ref ActiveTrackerContainer.TrackAllBuffs))
                     {
-                        ActiveTrackedEventEntry = new TrackedEventEntry(++PersistentTrackerCount);
-                        ActiveTrackedEventEntry.TrackerName = $"All Buffs Tracker";
-                        ActiveTrackerContainer.EventTrackers.Add(ActiveTrackedEventEntry.IdTracker, ActiveTrackedEventEntry);
-                        ActiveTrackedEventEntryIdx = ActiveTrackerContainer.EventTrackers.Count - 1;
-                        ActiveTrackedEventEntry.IsEnabled = true;
-                        ActiveTrackerContainer.RecheckTrackerStates();
+                        if (ActiveTrackerContainer.TrackAllBuffs && ActiveTrackerContainer.EventTrackers.Count == 0)
+                        {
+                            ActiveTrackedEventEntry = new TrackedEventEntry(++PersistentTrackerCount);
+                            ActiveTrackedEventEntry.TrackerName = $"All Buffs Tracker";
+                            ActiveTrackerContainer.EventTrackers.Add(ActiveTrackedEventEntry.IdTracker, ActiveTrackedEventEntry);
+                            ActiveTrackedEventEntryIdx = ActiveTrackerContainer.EventTrackers.Count - 1;
+                            ActiveTrackedEventEntry.IsEnabled = true;
+                            ActiveTrackerContainer.RecheckTrackerStates();
+                        }
                     }
+                    if (ActiveTrackerContainer.TrackAllSkills)
+                    {
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                        ImGui.TextWrapped("[Track All Skills] is Enabled");
+                        ImGui.PopStyleColor();
+                    }
+                    ImGui.EndDisabled();
+                    ImGui.BeginDisabled();
+                    ImGui.Indent();
+                    ImGui.TextWrapped("If this is Enabled, the First Tracker in this Container will be used for the settings of all Buffs that get automatically tracked.");
+                    ImGui.TextWrapped("Any Buff selected within the Tracker will be ignored. Additionally, the Tracker Type MUST be set to Buff.");
+                    ImGui.Unindent();
+                    ImGui.EndDisabled();
+
+                    ImGui.BeginDisabled(ActiveTrackerContainer.ContainerLayoutStyle == EContainerLayoutStyle.SingleItem || ActiveTrackerContainer.TrackAllBuffs);
+                    if (ImGui.Checkbox("Track All Skills##ContainerTrackAllSkills", ref ActiveTrackerContainer.TrackAllSkills))
+                    {
+                        if (ActiveTrackerContainer.TrackAllSkills && ActiveTrackerContainer.EventTrackers.Count == 0)
+                        {
+                            ActiveTrackedEventEntry = new TrackedEventEntry(++PersistentTrackerCount);
+                            ActiveTrackedEventEntry.TrackerName = $"All Skills Tracker";
+                            ActiveTrackedEventEntry.TrackerType = ETrackerType.Skills;
+                            ActiveTrackerContainer.EventTrackers.Add(ActiveTrackedEventEntry.IdTracker, ActiveTrackedEventEntry);
+                            ActiveTrackedEventEntryIdx = ActiveTrackerContainer.EventTrackers.Count - 1;
+                            ActiveTrackedEventEntry.IsEnabled = true;
+                            ActiveTrackerContainer.RecheckTrackerStates();
+                        }
+                    }
+                    if (ActiveTrackerContainer.TrackAllBuffs)
+                    {
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                        ImGui.TextWrapped("[Track All Buffs] is Enabled");
+                        ImGui.PopStyleColor();
+                    }
+                    ImGui.EndDisabled();
+                    ImGui.BeginDisabled();
+                    ImGui.Indent();
+                    ImGui.TextWrapped("If this is Enabled, the First Tracker in this Container will be used for the settings of all Skills that get automatically tracked.");
+                    ImGui.TextWrapped("Any Skill selected within the Tracker will be ignored. Additionally, the Tracker Type MUST be set to Skill.");
+                    ImGui.Unindent();
+                    ImGui.EndDisabled();
+
+                    ImGui.Unindent();
                 }
-                ImGui.EndDisabled();
-                ImGui.BeginDisabled();
-                ImGui.Indent();
-                ImGui.TextWrapped("If this is Enabled, the First Tracker in this Container will be used for the settings of all Buffs that get automatically tracked.");
-                ImGui.TextWrapped("Any Buff selected within the Tracker will be ignored. Additionally, the Tracker Type MUST be set to Buff.");
-                ImGui.Unindent();
-                ImGui.Unindent();
-                ImGui.EndDisabled();
 
                 if (ImGui.CollapsingHeader("Extra Container Settings"))
                 {
@@ -4474,6 +4558,31 @@ namespace BPSR_ZDPS.Windows
                         ImGui.SetItemTooltip($"Copies Tracker '{eventTracker.Value.Name}' like a Preset to the clipboard.");
 
                         ImGui.EndPopup();
+                    }
+
+                    if (eventTracker.Value.DebugLogTracker)
+                    {
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.DarkGreen);
+                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                        ImGui.TextUnformatted($"{FASIcons.Bug}");
+                        ImGui.PopFont();
+                        ImGui.PopStyleColor();
+                    }
+
+                    if (idx == 0 && ActiveTrackerContainer.TrackAllBuffs && eventTracker.Value.TrackerType != ETrackerType.Buffs)
+                    {
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                        ImGui.TextUnformatted("[Incorrect Tracker Type For 'Track All Buffs']");
+                        ImGui.PopStyleColor();
+                    }
+                    else if (idx == 0 && ActiveTrackerContainer.TrackAllSkills && eventTracker.Value.TrackerType != ETrackerType.Skills)
+                    {
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                        ImGui.TextUnformatted("[Incorrect Tracker Type For 'Track All Skills']");
+                        ImGui.PopStyleColor();
                     }
 
                     idx++;
@@ -6763,6 +6872,7 @@ namespace BPSR_ZDPS.Windows
         public bool TrimLongDescriptionTooltips = true;
 
         public bool TrackAllBuffs = false;
+        public bool TrackAllSkills = false;
 
         [JsonProperty]
         public bool HasEnabledTrackers { get; private set; } = false;
