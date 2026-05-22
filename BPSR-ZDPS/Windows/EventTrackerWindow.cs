@@ -2369,6 +2369,18 @@ namespace BPSR_ZDPS.Windows
                                     ImGui.NewLine();
                                 }
 
+                                if (eventTracker.ShowCasterName && eventTracker.TrackerType == ETrackerType.Buffs)
+                                {
+                                    if (!string.IsNullOrEmpty(eventData.SourceEntityName))
+                                    {
+                                        ImGui.TextUnformatted($"Caster: {eventData.SourceEntityName}");
+                                    }
+                                    else
+                                    {
+                                        ImGui.TextUnformatted($"Caster: [{eventData.SourceEntityUuid}]");
+                                    }
+                                }
+
                                 ImGui.BeginGroup();
 
                                 // Name before Icon
@@ -5294,6 +5306,10 @@ namespace BPSR_ZDPS.Windows
                     if (tracker.Value.IdTracker != ActiveTrackedEventEntry.IdTracker)
                     {
                         tracker.Value.ShowEntityName = ActiveTrackedEventEntry.ShowEntityName;
+                        if (ActiveTrackedEventEntry.TrackerType == ETrackerType.Buffs && tracker.Value.TrackerType == ETrackerType.Buffs)
+                        {
+                            tracker.Value.ShowCasterName = ActiveTrackedEventEntry.ShowCasterName;
+                        }
                         tracker.Value.ShowIcon = ActiveTrackedEventEntry.ShowIcon;
                         tracker.Value.IconSize = ActiveTrackedEventEntry.IconSize;
                         tracker.Value.ShowName = ActiveTrackedEventEntry.ShowName;
@@ -5338,6 +5354,11 @@ namespace BPSR_ZDPS.Windows
             ImGui.SetItemTooltip("This will apply all current 'Display Format' settings to all other Trackers in this Container.\nNote: Does NOT include Custom Name, Custom Icon, or Raid Warning values.");
 
             ImGui.Checkbox("Show Entity Name", ref ActiveTrackedEventEntry.ShowEntityName);
+
+            if (ActiveTrackedEventEntry.TrackerType == ETrackerType.Buffs)
+            {
+                ImGui.Checkbox("Show Caster Name", ref ActiveTrackedEventEntry.ShowCasterName);
+            }
 
             ImGui.SeparatorText("Icon");
 
@@ -7007,6 +7028,7 @@ namespace BPSR_ZDPS.Windows
         public bool UseCustomIcon = false;
         public string CustomIconPath = "";
         public bool ShowEntityName = false;
+        public bool ShowCasterName = false;
         public bool ShowName = false;
         public bool UseCustomName = false;
         public string CustomName = "";
