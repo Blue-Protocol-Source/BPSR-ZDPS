@@ -2321,7 +2321,15 @@ namespace BPSR_ZDPS.Windows
                                 bool hideTrackerBackground = eventContainer.HideTrackerBackground;
                                 if (hideTrackerBackground)
                                 {
-                                    ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0, 0, 0, 0));
+                                    if (eventContainer.TrackerBackgroundOpacityValue == 0)
+                                    {
+                                        ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0, 0, 0, 0));
+                                    }
+                                    else
+                                    {
+                                        var childBgColor = ImGui.GetStyle().Colors[(int)ImGuiCol.ChildBg];
+                                        ImGui.PushStyleColor(ImGuiCol.ChildBg, childBgColor * new Vector4(1, 1, 1, eventContainer.TrackerBackgroundOpacityValue * 0.01f));
+                                    }
                                 }
 
                                 ImGuiChildFlags childFlags = ImGuiChildFlags.None;
@@ -4331,52 +4339,89 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SeparatorText("Layout Visuals");
-                //ImGui.Indent();
-                ImGui.BeginDisabled(ActiveTrackerContainer.ModifiedWindowOpacity);
-                ImGui.Checkbox("Transparent Background ", ref ActiveTrackerContainer.TransparentBackground);
-                ImGui.EndDisabled();
 
-                ImGui.SameLine();
-
-                ImGui.BeginDisabled(ActiveTrackerContainer.TransparentBackground);
-                ImGui.Checkbox("Window Opacity", ref ActiveTrackerContainer.ModifiedWindowOpacity);
-                if (ActiveTrackerContainer.ModifiedWindowOpacity)
+                if (ImGui.BeginTable("##LayoutVisualsTable", 2, ImGuiTableFlags.None))
                 {
-                    ImGui.Indent();
-                    ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
-                    ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                    ImGui.SetNextItemWidth(-1);
-                    ImGui.SameLine();
-                    ImGui.SliderInt("##Opacity", ref ActiveTrackerContainer.WindowOpacityValue, 20, 100, ImGuiSliderFlags.AlwaysClamp);
-                    ImGui.PopStyleColor(2);
-                    ImGui.Unindent();
+                    ImGui.TableSetupColumn("##ColLeft", ImGuiTableColumnFlags.WidthStretch | ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize, 1, 0);
+                    ImGui.TableSetupColumn("##ColRight", ImGuiTableColumnFlags.WidthStretch | ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize, 1, 0);
+
+                    ImGui.TableNextColumn();
+
+                    ImGui.BeginDisabled(ActiveTrackerContainer.ModifiedWindowOpacity);
+                    ImGui.Checkbox("Transparent Background ", ref ActiveTrackerContainer.TransparentBackground);
+                    ImGui.EndDisabled();
+
+                    ImGui.TableNextColumn();
+
+                    ImGui.BeginDisabled(ActiveTrackerContainer.TransparentBackground);
+                    ImGui.Checkbox("Window Opacity", ref ActiveTrackerContainer.ModifiedWindowOpacity);
+                    if (ActiveTrackerContainer.ModifiedWindowOpacity)
+                    {
+                        ImGui.Indent();
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.SameLine();
+                        ImGui.SliderInt("##Opacity", ref ActiveTrackerContainer.WindowOpacityValue, 20, 100, ImGuiSliderFlags.AlwaysClamp);
+                        ImGui.PopStyleColor(2);
+                        ImGui.Unindent();
+                    }
+                    ImGui.EndDisabled();
+
+                    ImGui.TableNextColumn();
+
+                    ImGui.Checkbox("Hide Tracker Background", ref ActiveTrackerContainer.HideTrackerBackground);
+                    ImGui.SetItemTooltip("Removes the background coloring for Trackers.\nWorks well when combined with Transparent Background.");
+                    if (ActiveTrackerContainer.HideTrackerBackground)
+                    {
+                        ImGui.Indent();
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SetNextItemWidth(-1);
+                        ImGui.SameLine();
+                        ImGui.SliderInt("##TrackerBackgroundOpacity", ref ActiveTrackerContainer.TrackerBackgroundOpacityValue, 0, 100, ImGuiSliderFlags.AlwaysClamp);
+                        ImGui.PopStyleColor(2);
+                        ImGui.Unindent();
+                    }
+
+                    ImGui.TableNextColumn();
+
+                    ImGui.Checkbox("Hide Tracker Borders", ref ActiveTrackerContainer.HideTrackerBorders);
+                    ImGui.SetItemTooltip("Removes the borders around Trackers.\nWorks well when combined with Transparent Background.");
+
+                    ImGui.EndTable();
                 }
-                ImGui.EndDisabled();
-
-                ImGui.Checkbox("Hide Tracker Background", ref ActiveTrackerContainer.HideTrackerBackground);
-                ImGui.SetItemTooltip("Removes the background coloring for Trackers.\nWorks well when combined with Transparent Background.");
-
-                ImGui.SameLine();
-
-                ImGui.Checkbox("Hide Tracker Borders", ref ActiveTrackerContainer.HideTrackerBorders);
-                ImGui.SetItemTooltip("Removes the borders around Trackers.\nWorks well when combined with Transparent Background.");
-
-                //ImGui.Unindent();
 
                 ImGui.SeparatorText("Tooltips");
-                //ImGui.Indent();
-                ImGui.Checkbox("Show Caster", ref ActiveTrackerContainer.ShowCasterInTooltip);
-                ImGui.SameLine();
-                ImGui.SetCursorPosX(ImGui.GetCursorPosX() + 32);
-                ImGui.Checkbox("Show Duration               ", ref ActiveTrackerContainer.ShowDurationInTooltip);
-                ImGui.SameLine();
-                ImGui.Checkbox("Show Name     ", ref ActiveTrackerContainer.ShowNameInTooltip);
-                ImGui.Checkbox("Show Description", ref ActiveTrackerContainer.ShowDescriptionInTooltip);
-                ImGui.SameLine();
-                ImGui.SetCursorPosX(ImGui.GetCursorPosX() + 2);
-                ImGui.Checkbox("Trim Long Descriptions", ref ActiveTrackerContainer.TrimLongDescriptionTooltips);
-                ImGui.SetItemTooltip("Descriptions are limited to 120 characters with this is Enabled.");
-                //ImGui.Unindent(); 
+
+                if (ImGui.BeginTable("##TooltipsTable", 3, ImGuiTableFlags.SizingFixedFit))
+                {
+                    ImGui.TableSetupColumn("##ColLeft", ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize);
+                    ImGui.TableSetupColumn("##ColCenter", ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize);
+                    ImGui.TableSetupColumn("##ColRight", ImGuiTableColumnFlags.DefaultHide | ImGuiTableColumnFlags.NoResize);
+
+                    ImGui.TableNextColumn();
+
+                    ImGui.Checkbox("Show Caster", ref ActiveTrackerContainer.ShowCasterInTooltip);
+                    ImGui.TableNextColumn();
+
+                    ImGui.Checkbox("Show Duration", ref ActiveTrackerContainer.ShowDurationInTooltip);
+                    ImGui.TableNextColumn();
+
+                    ImGui.Checkbox("Show Name", ref ActiveTrackerContainer.ShowNameInTooltip);
+                    ImGui.TableNextColumn();
+
+                    ImGui.Checkbox("Show Description", ref ActiveTrackerContainer.ShowDescriptionInTooltip);
+                    ImGui.TableNextColumn();
+
+                    ImGui.Checkbox("Trim Long Descriptions", ref ActiveTrackerContainer.TrimLongDescriptionTooltips);
+                    ImGui.SetItemTooltip("Descriptions are limited to 120 characters with this is Enabled.");
+                    ImGui.TableNextColumn();
+
+                    ImGui.TableNextRow();
+
+                    ImGui.EndTable();
+                }
 
                 if (ImGui.CollapsingHeader("Special", ImGuiTreeNodeFlags.DefaultOpen))
                 {
@@ -6899,6 +6944,7 @@ namespace BPSR_ZDPS.Windows
         public bool HasEnabledTrackers { get; private set; } = false;
 
         public bool HideTrackerBackground = false;
+        public int TrackerBackgroundOpacityValue = 0;
         public bool HideTrackerBorders = false;
 
         public void RecheckTrackerStates()
