@@ -5,9 +5,11 @@
         <RootNamespace>BPSR_DeepsLib</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+		<!-- Disable Control-flow Enforcement Technology, allowing old versions of Windows 10 and LTSC without Shadow Stack support to run this -->
+		<CetCompat>false</CetCompat>
     </PropertyGroup>
 
-    <ItemGroup>
+	<ItemGroup>
       <PackageReference Include="Google.Protobuf" Version="3.33.0" />
       <PackageReference Include="Grpc.Tools" Version="2.72.0">
         <PrivateAssets>all</PrivateAssets>
