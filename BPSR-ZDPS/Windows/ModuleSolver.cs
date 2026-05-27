@@ -21,6 +21,7 @@ namespace BPSR_ZDPS
         private static PlayerModDataSave ResultsPlayerModData = new PlayerModDataSave();
         private static FrozenDictionary<int, ModStatInfo> ModStatInfos;
         private static FrozenDictionary<int, ModuleType> ModTypeMapping;
+        private static List<int> ModStatIds = new List<int>();
         private static string ModuleImgBasePath;
         private static int NumTotalModules = 0;
         private static int NumAttackModules = 0;
@@ -33,7 +34,9 @@ namespace BPSR_ZDPS
         private static List<ModComboResult>? BestModResults = null;
         private static bool ShouldBlockMainUI = false;
         private static bool IsCalculating = false;
+        private static CancellationTokenSource ModuleCalcCancelTokenSource = new();
         private static Task ModuleCalcTask;
+        private static DateTime ModuleCalcStartTime = DateTime.Now;
         private static string CurrentPresetString = "";
         static int RunOnceDelayed = 0;
         private static bool ShouldTrackOpenState;
@@ -58,6 +61,8 @@ namespace BPSR_ZDPS
 
             ModStatInfos = effectStatTypes.ToFrozenDictionary(x => x.StatId, y => y);
             ModTypeMapping = HelperMethods.DataTables.Modules.Data.ToFrozenDictionary(x => x.Value.Id, y => (ModuleType)y.Value.SimilarId);
+
+            ModStatIds = effectStatTypes.Select(x => x.StatId).ToList();
 
             PendingStatToAdd = effectStatTypes.FirstOrDefault();
 
@@ -135,7 +140,23 @@ namespace BPSR_ZDPS
                 var shouldBlock = CheckAndDrawNoModulesBanner();
                 if (ModuleCalcTask?.Status == TaskStatus.Running)
                 {
-                    DrawBanner("Calculating best module combos!\nThis could take a while.", 0xFF005DD9, "Thinking.png", true);
+                    var timeTaken = DateTime.Now - ModuleCalcStartTime;
+                    DrawBanner($"Calculating best module combos!\nThis could take a while.\nElapsed: {timeTaken:mm\\:ss}", 0xFF005DD9, "Thinking.png", true,
+                        (drawList, txtPos, txtSize, bannerHeight) =>
+                        {
+                            var cancelButtonStart = txtPos + new Vector2(0, 100);
+                            var cancelButtonEnd = cancelButtonStart + new Vector2(txtSize.X, 30);
+                            var isHovered = ImGui.IsMouseHoveringRect(cancelButtonStart, cancelButtonEnd);
+                            drawList.AddRectFilled(cancelButtonStart, cancelButtonEnd, ImGui.ColorConvertFloat4ToU32(isHovered ? Colors.Gray : Colors.DimGray));
+                            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], 25.0f);
+                            drawList.AddText(cancelButtonStart + new Vector2((txtSize.X / 2) - 25, 0), ImGui.ColorConvertFloat4ToU32(Colors.White), "Cancel");
+                            ImGui.PopFont();
+
+                            if (isHovered && ImGui.IsMouseClicked(ImGuiMouseButton.Left))
+                            {
+                                ModuleCalcCancelTokenSource.Cancel();
+                            }
+                        });
                 }
 
                 ImGui.BeginDisabled(ShouldBlockMainUI || shouldBlock);
@@ -184,17 +205,18 @@ namespace BPSR_ZDPS
                                 }
                             });
 
-                            if (!(Vector.IsHardwareAccelerated && Avx2.IsSupported))
+                            /*
+                            //if (!(Vector.IsHardwareAccelerated && Avx2.IsSupported))
                             {
                                 AddSettingRow("Solver Mode:", () =>
                                 {
-                                    string[] solverNames = ["Legacy", "Fallback", "Normal"];
+                                    string[] solverNames = ["Legacy", "Fallback", "Normal", "NormalV2"];
                                     int selectedSolver = (int)Settings.Instance.WindowSettings.ModuleWindow.SolverMode;
                                     ImGui.SetNextItemWidth(300);
-                                    ImGui.Combo("##SolverMode", ref selectedSolver, solverNames, 3);
+                                    ImGui.Combo("##SolverMode", ref selectedSolver, solverNames, solverNames.Length);
                                     Settings.Instance.WindowSettings.ModuleWindow.SolverMode = (SolverModes)selectedSolver;
                                 });
-                            }
+                            }*/
 
                             AddSettingRow("Include All Stats In Scoring:", () =>
                             {
@@ -280,6 +302,14 @@ namespace BPSR_ZDPS
 
                         ImGui.EndTabItem();
                     }
+
+#if DEBUG
+                    if (ImGui.BeginTabItem("Debug"))
+                    {
+                        DrawDebug();
+                        ImGui.EndTabItem();
+                    }
+#endif
 
                     ImGui.EndTabBar();
                 }
@@ -472,7 +502,8 @@ namespace BPSR_ZDPS
                                     {
                                         PowerCore stat = modsResult.Stats[i1];
                                         ImGui.SetCursorPos(statPos + new Vector2(i1 * 100, 0));
-                                        DrawModuleStat(stat.Id, stat.Value);
+                                        var isAPrioStat = SolverConfig.StatPriorities.FirstOrDefault(x => x.Id == stat.Id) != null;
+                                        DrawModuleStat(stat.Id, stat.Value, isAPrioStat);
                                     }
 
                                     bool needsToNewLine = false;
@@ -527,12 +558,14 @@ namespace BPSR_ZDPS
             ImGui.SetCursorPosX(leftWidth + 8);
             if (ImGui.Button("Calculate", new Vector2(contentRegion.X - leftWidth, 0)))
             {
+                ModuleCalcCancelTokenSource = new CancellationTokenSource();
                 ModuleCalcTask = Task.Factory.StartNew(() =>
                 {
                     ShouldBlockMainUI = true;
+                    ModuleCalcStartTime = DateTime.Now;
                     CalculateBestModules();
                     ShouldBlockMainUI = false;
-                });
+                }, ModuleCalcCancelTokenSource.Token);
             }
         }
 
@@ -700,7 +733,7 @@ namespace BPSR_ZDPS
             ImGui.Dummy(MOD_DISPLAY_SIZE);
         }
 
-        private static void DrawModuleStat(int partId, int level)
+        private static void DrawModuleStat(int partId, int level, bool underline = false)
         {
             Vector2 iconSize = new Vector2(32, 32);
             Vector2 size = new Vector2(100, 100);
@@ -718,7 +751,26 @@ namespace BPSR_ZDPS
                 ImGui.SetCursorPos(pos + new Vector2((size.X / 2) - 10, 60));
                 ImGui.TextUnformatted($"+{level}");
                 ImGui.PopFont();
+
+                if (underline)
+                {
+                    var textWidth = ImGui.CalcTextSize(statInfo.Name);
+                    var freeSpace = (size.X - textWidth.X) / 2 - 5;
+                    var underlinePos = ImGui.GetWindowPos() - new Vector2(0, ImGui.GetScrollY()) + pos + new Vector2(0, 18);
+                    uint col = ImGui.ColorConvertFloat4ToU32(Colors.LightBlue_Transparent);
+                    ImGui.GetWindowDrawList().AddLine(underlinePos + new Vector2(freeSpace, 0), underlinePos + new Vector2(size.X - freeSpace, 0), col, 2);
+                }
             }
+        }
+
+        public static void DrawBoxOutline(Vector2 position, float width, float height, Vector4 color, float thickness = 1.0f, float rounding = 0.0f)
+        {
+            Vector2 min = ImGui.GetWindowPos() + position;
+            Vector2 max = new(min.X + width, min.Y + height);
+
+            uint col = ImGui.ColorConvertFloat4ToU32(color);
+
+            ImGui.GetWindowDrawList().AddRect(min, max, col, rounding, ImDrawFlags.None, thickness);
         }
 
         private static bool CheckAndDrawNoModulesBanner()
@@ -733,7 +785,7 @@ namespace BPSR_ZDPS
         }
 
         static float BannerImgPulseTimer = 0f;
-        private static void DrawBanner(string msg, uint bgColor, string img = null, bool animate = false)
+        private static void DrawBanner(string msg, uint bgColor, string img = null, bool animate = false, Action<ImDrawListPtr, Vector2, Vector2, float> customDraw = null)
         {
             float bannerheight = 200;
             var pos = ImGui.GetCursorScreenPos();
@@ -752,6 +804,11 @@ namespace BPSR_ZDPS
             var txtStartPos = start + new Vector2(size.X / 2 - txtSize.X / 2, (bannerheight / 2) - (txtSize.Y / 2));
             drawList.AddText(txtStartPos, ImGui.ColorConvertFloat4ToU32(Colors.White), msg);
             ImGui.PopFont();
+
+            if (customDraw != null)
+            {
+                customDraw(drawList, txtStartPos, txtSize, bannerheight);
+            }
 
             var imgRef = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, img));
             if (imgRef.HasValue)
@@ -773,6 +830,178 @@ namespace BPSR_ZDPS
                 drawList.AddImage(imgRef.Value, imgStart, imgStart + imgSize);
             }
         }
+
+#if DEBUG
+        private static void DrawDebug()
+        {
+            if (ImGui.Button("Reload Inventory"))
+            {
+                LoadSavedModData(ModSavePath);
+            }
+
+            if (ImGui.CollapsingHeader("Presets", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                DrawDebugPreset("Dmg Stack 20 E, Crit 15 A",
+                    "ZMO:2104-1-20,1409-0-15|");
+                DrawDebugPreset("Crit 20 A, Atk Spd 15 E",
+                    "ZMO:1409-0-20,1408-1-15|");
+                DrawDebugPreset("Frostbeam",
+                    "ZMO:2104-0-0,2404-0-0,1112-0-0,1409-0-0,1114-0-0,1407-0-0|", true);
+            }
+
+            if (ImGui.CollapsingHeader("Module Inventory", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                if (ImGui.BeginTable("ModuleInventory", 2))
+                {
+                    foreach (var testInv in DebugPlayerModInventories)
+                    {
+                        ImGui.TableNextColumn();
+                        DrawDebugLoadout(testInv.Key, testInv.Value);
+                    }
+
+
+                    ImGui.EndTable();
+                }
+            }
+        }
+
+        private static void DrawDebugPreset(string name, string presetCode, bool newLine = false)
+        {
+            ImGui.PushID(presetCode);
+
+            if (ImGui.Button(name))
+            {
+                var solverConfig = new SolverConfig();
+                solverConfig.FromString(presetCode);
+                if (solverConfig.Verify(ModStatInfos))
+                {
+                    SolverConfig = solverConfig;
+                }
+            }
+
+            ImGui.PopID();
+
+            if (!newLine)
+            {
+                ImGui.SameLine();
+            }
+        }
+
+        private static void DrawDebugLoadout(string name, PlayerModDataSave modInv)
+        {
+            ImGui.PushID(name);
+            ImGui.SeparatorText(name);
+            if (ImGui.CollapsingHeader("Modules"))
+            {
+                foreach (var mod in modInv.ModulesPackage.Items)
+                {
+                    DrawModule(modInv, mod.Key, mod.Value);
+                }
+            }
+
+            var width = ImGui.GetContentRegionAvail().X / 3;
+            if (ImGui.Button("Test Solve", new Vector2(width, 0)))
+            {
+                CalculateBestModules(modInv);
+            }
+
+            ImGui.SameLine();
+
+            if (ImGui.Button("Set As Inventory", new Vector2(width, 0)))
+            {
+                PlayerModData = modInv;
+            }
+
+            ImGui.SameLine();
+
+            if (ImGui.Button("Add To Inventory", new Vector2(width, 0)))
+            {
+                foreach (var mod in modInv.ModulesPackage.Items)
+                {
+                    PlayerModData.ModulesPackage.Items.TryAdd(mod.Key, mod.Value);
+                }
+
+                foreach (var modInfo in modInv.Mod.ModInfos)
+                {
+                    PlayerModData.Mod.ModInfos.TryAdd(modInfo.Key, modInfo.Value);
+                }
+            }
+
+            ImGui.PopID();
+        }
+
+        private static long DebugTestModCurrentUUID = 0;
+        private static (Zproto.Item mod, int[] statLevels) DebugMakeMod(int quality, int configId, int[] statIds, int[] statLevels)
+        {
+            var item = new Zproto.Item();
+            item.Uuid = DebugTestModCurrentUUID++;
+            item.Quality = quality;
+            item.ConfigId = configId;
+            item.ModNewAttr = new ModNewAttr();
+            item.ModNewAttr.ModParts.AddRange(statIds);
+
+            return (item, statLevels);
+        }
+
+        private static PlayerModDataSave DebugMakeModInv((Zproto.Item mod, int[] statLevels)[] mods)
+        {
+            var inv = new PlayerModDataSave();
+            inv.ModulesPackage = new Package();
+            inv.Mod = new Mod();
+
+            foreach (var mod in mods)
+            {
+                inv.ModulesPackage.Items.Add(mod.mod.Uuid, mod.mod);
+
+                var modInfo = new ModInfo();
+                modInfo.InitLinkNums.AddRange(mod.statLevels);
+                inv.Mod.ModInfos.TryAdd(mod.mod.Uuid, modInfo);
+            }
+
+            return inv;
+        }
+
+        private static void DebugDrawModuleScore(byte[][] mods, StatPrio[] prios)
+        {
+            var modVecs = new Vector<byte>[mods.Length];
+            for (int i = 0; i < mods.Length; i++)
+            {
+                var arr = new byte[Vector<byte>.Count];
+                for (int j = 0; j < mods[i].Length; j++)
+                {
+                    arr[j] = mods[i][j];
+                }
+
+                modVecs[i] = new Vector<byte>(arr);
+            }
+
+            for (int i = 0; i < Vector<byte>.Count; i++)
+            {
+                ImGui.Text($"{i:00} ");
+
+                if (i != Vector<byte>.Count - 1)
+                    ImGui.SameLine();
+            }
+
+            ImGui.Separator();
+
+            foreach (var mod in modVecs)
+            {
+                for (int i = 0; i < Vector<byte>.Count; i++)
+                {
+                    ImGui.Text($"{mod[i]:00} ");
+
+                    if (i != Vector<byte>.Count -1)
+                        ImGui.SameLine();
+                }
+            }
+
+            foreach (var prio in prios)
+            {
+                ImGui.Text($"ID: {prio.Id}, M Lvl: {prio.MinLevel}, R Lvl: {prio.ReqLevel}, Stat Mode: {prio.StatMode}");
+            }
+        }
+#endif
 
         public static void LoadSavedModData(string path)
         {
@@ -845,7 +1074,7 @@ namespace BPSR_ZDPS
 
         private static bool IsModuleOfType(int id, ModuleType modType) => ModTypeMapping.TryGetValue(id, out var info) ? info == modType : false;
 
-        private static void CalculateBestModules()
+        private static void CalculateBestModules(PlayerModDataSave invToUse = null)
         {
             FilteredModules = [];
             BestModResults = [];
@@ -853,8 +1082,9 @@ namespace BPSR_ZDPS
 
             var modWindowSettings = Settings.Instance.WindowSettings.ModuleWindow;
             var solver = new ModuleOptimizer();
-            ResultsPlayerModData = PlayerModData;
-            var results = solver.Solve(SolverConfig, ResultsPlayerModData, Settings.Instance.WindowSettings.ModuleWindow.SolverMode);
+            ResultsPlayerModData = invToUse ?? PlayerModData;
+            // Settings.Instance.WindowSettings.ModuleWindow.SolverMode
+            var results = solver.Solve(SolverConfig, ResultsPlayerModData, SolverModes.NormalV2, ModuleCalcCancelTokenSource.Token);
 
             FilteredModules = results.FilteredModules;
             BestModResults = results.BestModResults;
@@ -867,6 +1097,38 @@ namespace BPSR_ZDPS
             if (n < 4) return 0;
             return (long)n * (n - 1) * (n - 2) * (n - 3) / 24;
         }
+
+#if DEBUG
+        private static Dictionary<string, PlayerModDataSave> DebugPlayerModInventories = new Dictionary<string, PlayerModDataSave>
+        {
+            {
+                "Test Mod Set One",
+                DebugMakeModInv([
+                    DebugMakeMod(4, 5500102, [1408, 1409], [4, 10]),
+                    DebugMakeMod(2, 5500102, [1408, 1409], [4, 10]),
+                    DebugMakeMod(4, 5500102, [2105], [5]),
+                    DebugMakeMod(4, 5500102, [1408, 2105], [5, 8]),
+                    DebugMakeMod(4, 5500102, [1408, 1409], [15, 10])
+                ])
+            },
+            {
+                "Test Mod Frostbeam One",
+                DebugMakeModInv([
+                    DebugMakeMod(4, 5500102, [2104, 1409], [4, 10]),
+                    DebugMakeMod(2, 5500102, [2104, 1409], [6, 10]),
+                    DebugMakeMod(4, 5500102, [2104], [10]),
+                    DebugMakeMod(4, 5500102, [2104, 2105], [2, 8]),
+                    DebugMakeMod(4, 5500102, [1408, 1409], [15, 10]),
+
+                    DebugMakeMod(4, 5500102, [1408, 1409], [4, 10]),
+                    DebugMakeMod(2, 5500102, [1408, 1409], [4, 10]),
+                    DebugMakeMod(4, 5500102, [2105], [5]),
+                    DebugMakeMod(4, 5500102, [1408, 2105], [5, 8]),
+                    DebugMakeMod(4, 5500102, [1408, 1409], [15, 10])
+                ])
+            }
+        };
+#endif
     }
 
     public enum ModuleType
@@ -922,6 +1184,19 @@ namespace BPSR_ZDPS
 
     public class StatPrio
     {
+        public StatPrio()
+        {
+
+        }
+
+        public StatPrio(int id, int minLevel, int reqLevel, StatMode statMode)
+        {
+            Id = id;
+            MinLevel = minLevel;
+            ReqLevel = reqLevel;
+            StatMode = statMode;
+        }
+
         public int Id;
         public int MinLevel;
         public int ReqLevel;
@@ -945,7 +1220,8 @@ namespace BPSR_ZDPS
     {
         Legacy,
         Fallback,
-        Normal
+        Normal,
+        NormalV2
     }
 
     public class SolverResult

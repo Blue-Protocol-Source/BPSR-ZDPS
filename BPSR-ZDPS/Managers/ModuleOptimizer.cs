@@ -1,18 +1,15 @@
 ﻿using BPSR_ZDPS.DataTypes.Modules;
 using Serilog;
-using System.Configuration;
 using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using ZLinq;
-using Zproto;
-using ZstdSharp.Unsafe;
 
 namespace BPSR_ZDPS.Managers
 {
-    public class ModuleOptimizer
+    public partial class ModuleOptimizer
     {
-        public SolverResult Solve(SolverConfig config, PlayerModDataSave playerMods, SolverModes mode)
+        public SolverResult Solve(SolverConfig config, PlayerModDataSave playerMods, SolverModes mode, CancellationToken cancelToken)
         {
             var sw = Stopwatch.StartNew();
             var filtered = FilterModulesWithStats(config, playerMods);
@@ -29,6 +26,10 @@ namespace BPSR_ZDPS.Managers
             else if (mode == SolverModes.Normal)
             {
                 result = NewFast(config, playerMods, sw, filtered);
+            }
+            else if (mode == SolverModes.NormalV2)
+            {
+                result = NormalV2(config, playerMods, sw, filtered, cancelToken);
             }
 
             Log.Information($"Combos took: {sw.Elapsed}");
@@ -812,6 +813,39 @@ namespace BPSR_ZDPS.Managers
             var enhancementScore = HelperMethods.DataTables.ModLinkEffects.Data.TryGetValue(enhancementLevels + 1, out var tempScore) ? tempScore?.FightValue ?? 0 : 0;
 
             return cs + enhancementScore;
+        }
+
+        public static PowerCore[] OrderPowerCoresByPriorities(PowerCore[] cores, List<StatPrio> priorities)
+        {
+            var order = priorities.Select(x => x.Id).ToList();
+            var ordered = cores.OrderBy(x => (uint)order.IndexOf(x.Id)).ToArray();
+
+            return ordered;
+        }
+
+        public static ulong GetModuleId(PlayerModDataSave playerMods, long id)
+        {
+            var modItem = playerMods.ModulesPackage.Items[id];
+            var modInfo = playerMods.Mod.ModInfos[id];
+
+            var modIds = new (byte, byte)[3];
+            for (int i = 0; i < modItem.ModNewAttr.ModParts.Count; i++)
+            {
+                var idAndVal = ((byte)modItem.ModNewAttr.ModParts[i], (byte)modInfo.InitLinkNums[i]);
+                modIds[i] = idAndVal;
+            }
+
+            modIds = modIds.OrderBy(x => x.Item1).ToArray();
+
+            ulong moduleId = 0;
+
+            foreach (var (modId, modVal) in modIds)
+            {
+                moduleId = (moduleId << 8) | modId;
+                moduleId = (moduleId << 8) | modVal;
+            }
+
+            return moduleId;
         }
     }
 }
