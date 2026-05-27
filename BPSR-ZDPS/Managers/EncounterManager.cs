@@ -1728,7 +1728,7 @@ namespace BPSR_ZDPS
 
         public void AddRecentBuffEventHistory(int uuid, BuffEvent buffEvent)
         {
-            if (RecentBuffEventHistory.Count > 10)
+            if (RecentBuffEventHistory.Count > 20)
             {
                 RecentBuffEventHistory.Remove(RecentBuffEventHistory.AsValueEnumerable().First().Key);
             }
