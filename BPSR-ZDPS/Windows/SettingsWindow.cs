@@ -15,6 +15,7 @@ namespace BPSR_ZDPS.Windows
         public const string LAYER = "SettingsWindowLayer";
         public static string TITLE_ID = "###SettingsWindow";
 
+        static string Language;
         static int PreviousSelectedNetworkDeviceIdx = -1;
         static int SelectedNetworkDeviceIdx = -1;
         static bool normalizeMeterContributions;
@@ -208,6 +209,30 @@ namespace BPSR_ZDPS.Windows
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
                         ImGui.BeginChild("##GeneralTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ImGui.SeparatorText("Localization");
+
+                        ImGui.TextUnformatted("Language: ");
+                        ImGui.SameLine();
+                        if (ImGui.BeginCombo("##LanguageCombo", Language))
+                        {
+                            if (ImGui.Selectable("English (EN)"))
+                            {
+                                Language = "en";
+                            }
+
+                            if (ImGui.Selectable("Chinese (ZH)"))
+                            {
+                                Language = "zh";
+                            }
+
+                            if (ImGui.Selectable("Japanese (JA)"))
+                            {
+                                Language = "ja";
+                            }
+
+                            ImGui.EndCombo();
+                        }
 
                         ImGui.SeparatorText("Network Device");
 
@@ -1662,6 +1687,8 @@ namespace BPSR_ZDPS.Windows
 
         private static void Load()
         {
+            Language = Settings.Instance.Language;
+
             normalizeMeterContributions = Settings.Instance.NormalizeMeterContributions;
             useShortWidthNumberFormatting = Settings.Instance.UseShortWidthNumberFormatting;
             showClassIconsInMeters = Settings.Instance.ShowClassIconsInMeters;
@@ -1774,6 +1801,14 @@ namespace BPSR_ZDPS.Windows
             {
                 AppState.IsEncounterSavingPaused = false;
                 AppState.WasEncounterSavingPaused = false;
+            }
+
+            if (Settings.Instance.Language != Language)
+            {
+                Settings.Instance.Language = Language;
+                AppState.LoadAppStringsTable();
+                AppState.LoadSkillOverridesTable();
+                AppState.LoadBuffOverridesTable();
             }
 
             Settings.Instance.NormalizeMeterContributions = normalizeMeterContributions;

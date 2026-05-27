@@ -13,8 +13,9 @@ namespace BPSR_ZDPS.DataTypes
         public static string CurrentLocale { get; set; } = "en";//CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
 
         public static FrozenDictionary<string, Dictionary<string, string>> Strings = new Dictionary<string, Dictionary<string, string>>().ToFrozenDictionary();
+        public static FrozenDictionary<string, string> Locs = new Dictionary<string, string>().ToFrozenDictionary();
 
-        public static string GetLocalized(string key, bool KeyIfEmptyValue = false)
+        public static string GetLocalizedOld(string key, bool KeyIfEmptyValue = false)
         {
             Strings.TryGetValue(key, out var value);
             if (value.TryGetValue(CurrentLocale, out var localizedString))
@@ -38,6 +39,19 @@ namespace BPSR_ZDPS.DataTypes
                         return key; // This probably should be an empty string at this point, but we'll use the key for now
                     }
                 }
+            }
+        }
+
+        public static string GetLocalized(string key)
+        {
+            if (Locs.TryGetValue(key, out var value))
+            {
+                //return key;
+                return value.ToString();
+            }
+            else
+            {
+                return key;
             }
         }
     }

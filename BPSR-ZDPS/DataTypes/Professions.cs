@@ -243,6 +243,54 @@ namespace BPSR_ZDPS.DataTypes
             return new Vector4();
         }
 
+        public static Vector4 ProfessionColors(int professionId)
+        {
+            if (professionId == (int)EProfessionId.Profession_Unknown)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#67AEF6"));
+            }
+            else if (professionId == (int)EProfessionId.Profession_Stormblade || professionId == (int)SubProfessionId.SubProfession_Iaido || professionId == (int)SubProfessionId.SubProfession_Moonstrike)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#805AA3"));
+            }
+            else if (professionId == (int)EProfessionId.Profession_FrostMage || professionId == (int)SubProfessionId.SubProfession_Frostbeam || professionId == (int)SubProfessionId.SubProfession_Icicle)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#7788D4"));
+            }
+            else if (professionId == (int)EProfessionId.Profession_TwinStriker || professionId == (int)SubProfessionId.SubProfession_FormlessExpertise || professionId == (int)SubProfessionId.SubProfession_CrimsonExpertise)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#F5A614"));
+            }
+            else if (professionId == (int)EProfessionId.Profession_WindKnight || professionId == (int)SubProfessionId.SubProfession_Skyward || professionId == (int)SubProfessionId.SubProfession_Vanguard)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#799A9C"));
+            }
+            else if (professionId == (int)EProfessionId.Profession_VerdantOracle || professionId == (int)SubProfessionId.SubProfession_Lifebind || professionId == (int)SubProfessionId.SubProfession_Smite)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#639C70"));
+            }
+            else if (professionId == (int)EProfessionId.Profession_HeavyGuardian || professionId == (int)SubProfessionId.SubProfession_Earthfort || professionId == (int)SubProfessionId.SubProfession_Block)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#537758"));
+            }
+            else if (professionId == (int)EProfessionId.Profession_Marksman || professionId == (int)SubProfessionId.SubProfession_Falconry || professionId == (int)SubProfessionId.SubProfession_Wildpack)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#8E8b47"));
+            }
+            else if (professionId == (int)EProfessionId.Profession_ShieldKnight || professionId == (int)SubProfessionId.SubProfession_Recovery || professionId == (int)SubProfessionId.SubProfession_Shield)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#9C9b75"));
+            }
+            else if (professionId == (int)EProfessionId.Profession_BeatPerformer || professionId == (int)SubProfessionId.SubProfession_Concerto || professionId == (int)SubProfessionId.SubProfession_Dissonance)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#9C5353"));
+            }
+
+            // TODO: Add SubProfessions as their own entries to allow further coloring
+
+            return new Vector4();
+        }
+
         public static string GetBaseProfessionMainStatName(int professionId)
         {
             switch (professionId)

@@ -59,6 +59,8 @@ namespace BPSR_ZDPS
                 Log.Information("Loaded AppStrings.json");
             }
 
+            LoadAppStringsTable();
+
             string monsterTableFile = Path.Combine(Utils.DATA_DIR_NAME, "MonsterTable.json");
             if (File.Exists(monsterTableFile))
             {
@@ -111,60 +113,7 @@ namespace BPSR_ZDPS
                 Log.Information("Loaded ModLinkEffectTable.json");
             }
 
-            // TODO: Every language can have its own 'Overrides' file
-            string skillOverridesFile = Path.Combine(Utils.DATA_DIR_NAME, "SkillOverrides.en.json");
-            if (File.Exists(skillOverridesFile))
-            {
-                var overrides = JsonConvert.DeserializeObject<Dictionary<string, Skill>>(File.ReadAllText(skillOverridesFile));
-                foreach (var item in overrides)
-                {
-                    if (HelperMethods.DataTables.Skills.Data.TryGetValue(item.Key, out var skill))
-                    {
-                        skill.Name = string.IsNullOrEmpty(item.Value.Name) ? skill.Name : item.Value.Name;
-                        skill.Desc = string.IsNullOrEmpty(item.Value.Desc) ? skill.Name : item.Value.Desc;
-                        skill.Icon = string.IsNullOrEmpty(item.Value.Icon) ? skill.Icon : item.Value.Icon;
-                        if (item.Value.SkillLevelGroup > 0)
-                        {
-                            skill.SkillLevelGroup = item.Value.SkillLevelGroup;
-                        }
-                        if (item.Value.SlotPositionId != null && item.Value.SlotPositionId.Count > 0)
-                        {
-                            skill.SlotPositionId = new();
-                            skill.SlotPositionId.AddRange(item.Value.SlotPositionId);
-                        }
-                    }
-                    else
-                    {
-                        skill = new Skill();
-                        skill.Name = item.Value.Name;
-                        skill.Desc = item.Value.Desc;
-                        skill.Icon = item.Value.Icon;
-                        if (item.Value.Id != 0)
-                        {
-                            skill.Id = item.Value.Id;
-                        }
-                        else
-                        {
-                            if (int.TryParse(item.Key, out int newId))
-                            {
-                                skill.Id = newId;
-                            }
-                        }
-                        if (item.Value.SkillLevelGroup > 0)
-                        {
-                            skill.SkillLevelGroup = item.Value.SkillLevelGroup;
-                        }
-                        if (item.Value.SlotPositionId != null && item.Value.SlotPositionId.Count > 0)
-                        {
-                            skill.SlotPositionId = new();
-                            skill.SlotPositionId.AddRange(item.Value.SlotPositionId);
-                        }
-                        HelperMethods.DataTables.Skills.Data.Add(item.Key, skill);
-                    }
-                }
-                Log.Information("Loaded SkillOverrides.en.json");
-            }
-            // TODO: Map Icon from SkillTable to SkillId lookups and trim path to final part after a '/'
+            LoadSkillOverridesTable();
 
             string skillFightLevelTableFile = Path.Combine(Utils.DATA_DIR_NAME, "SkillFightLevelTable.json");
             if (File.Exists(skillTableFile))
@@ -218,44 +167,7 @@ namespace BPSR_ZDPS
                 Log.Information("Finished BuffTable post-processing");
             }
 
-            // TODO: Every language can have its own 'Overrides' file
-            string buffOverridesFile = Path.Combine(Utils.DATA_DIR_NAME, "BuffOverrides.en.json");
-            if (File.Exists(buffOverridesFile))
-            {
-                var overrides = JsonConvert.DeserializeObject<Dictionary<string, Buff>>(File.ReadAllText(buffOverridesFile));
-                foreach (var item in overrides)
-                {
-                    if (HelperMethods.DataTables.Buffs.Data.TryGetValue(item.Key, out var buff))
-                    {
-                        buff.Name = string.IsNullOrEmpty(item.Value.Name) ? buff.Name : item.Value.Name;
-                        buff.Desc = string.IsNullOrEmpty(item.Value.Desc) ? buff.Desc : item.Value.Desc;
-                        buff.Icon = string.IsNullOrEmpty(item.Value.Icon) ? buff.Icon : item.Value.Icon;
-                        buff.ShowHUDIcon = string.IsNullOrEmpty(item.Value.ShowHUDIcon) ? buff.ShowHUDIcon : item.Value.ShowHUDIcon;
-
-                        if (item.Value.BuffType.HasValue)
-                        {
-                            buff.BuffType = item.Value.BuffType.Value;
-                        }
-                        if (item.Value.BuffPriority.HasValue)
-                        {
-                            buff.BuffPriority = item.Value.BuffPriority.Value;
-                        }
-                    }
-                    else
-                    {
-                        buff = new Buff();
-                        buff.Name = item.Value.Name;
-                        buff.Desc = item.Value.Desc;
-                        buff.Icon = item.Value.Icon;
-                        buff.ShowHUDIcon = item.Value.ShowHUDIcon;
-                        buff.BuffType = item.Value.BuffType;
-                        buff.BuffPriority = item.Value.BuffPriority;
-                        buff.Id = string.IsNullOrWhiteSpace(item.Value.Id) ? item.Key : item.Value.Id;
-                        HelperMethods.DataTables.Buffs.Data.Add(item.Key, buff);
-                    }
-                }
-                Log.Information("Loaded BuffOverrides.en.json");
-            }
+            LoadBuffOverridesTable();
 
             // Note: The typo in the name is correct, that's how it comes from the devs
             string sceneEventDungeonConfigTableFile = Path.Combine(Utils.DATA_DIR_NAME, "SceneEventDuneonConfigTable.json");
@@ -397,6 +309,168 @@ namespace BPSR_ZDPS
             Serilog.Log.Debug($"Took {Math.Round(loadTime.Elapsed.TotalSeconds - startupTime, 4)}s to load EntityCache.");
 
             loadTime.Stop();
+        }
+
+        public static void LoadAppStringsTable()
+        {
+            // Always load English first as the base since additional configurations (if needed) may exist only in it
+            string appStringsExFile = Path.Combine(Utils.DATA_DIR_NAME, "AppStrings.en.json");
+            if (File.Exists(appStringsExFile))
+            {
+                var appStrings = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(appStringsExFile));
+                AppStrings.Locs = appStrings.ToFrozenDictionary();
+                Log.Information("Loaded AppStrings.en.json");
+            }
+
+            if (!string.IsNullOrEmpty(Settings.Instance.Language) && Settings.Instance.Language != "en")
+            {
+                string appStringsLocFile = Path.Combine(Utils.DATA_DIR_NAME, $"AppStrings.{Settings.Instance.Language}.json");
+                if (File.Exists(appStringsLocFile))
+                {
+                    var appStrings = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(appStringsLocFile));
+                    Dictionary<string, string> combinedLocs = AppStrings.Locs.ToDictionary();
+                    foreach (var loc in appStrings)
+                    {
+                        if (combinedLocs.TryGetValue(loc.Key, out var value))
+                        {
+                            value = loc.Value;
+                        }
+                        else
+                        {
+                            combinedLocs.Add(loc.Key, loc.Value);
+                        }
+                    }
+                    AppStrings.Locs = combinedLocs.ToFrozenDictionary();
+                    Log.Information($"Loaded {$"AppStrings.{Settings.Instance.Language}.json"}");
+                }
+                else
+                {
+                    Log.Error($"Failed to loaded {$"AppStrings.{Settings.Instance.Language}.json"}");
+                }
+            }
+        }
+
+        public static void LoadSkillOverridesTable()
+        {
+            LoadSkillOverrideFile("SkillOverrides.en.json");
+            if (!string.IsNullOrEmpty(Settings.Instance.Language) && Settings.Instance.Language != "en")
+            {
+                LoadSkillOverrideFile($"SkillOverrides.{Settings.Instance.Language}.json");
+            }
+        }
+
+        static void LoadSkillOverrideFile(string fileName)
+        {
+            string skillOverridesFile = Path.Combine(Utils.DATA_DIR_NAME, fileName);
+            if (File.Exists(skillOverridesFile))
+            {
+                var overrides = JsonConvert.DeserializeObject<Dictionary<string, Skill>>(File.ReadAllText(skillOverridesFile));
+                foreach (var item in overrides)
+                {
+                    if (HelperMethods.DataTables.Skills.Data.TryGetValue(item.Key, out var skill))
+                    {
+                        skill.Name = string.IsNullOrEmpty(item.Value.Name) ? skill.Name : item.Value.Name;
+                        skill.Desc = string.IsNullOrEmpty(item.Value.Desc) ? skill.Name : item.Value.Desc;
+                        skill.Icon = string.IsNullOrEmpty(item.Value.Icon) ? skill.Icon : item.Value.Icon;
+                        if (item.Value.SkillLevelGroup > 0)
+                        {
+                            skill.SkillLevelGroup = item.Value.SkillLevelGroup;
+                        }
+                        if (item.Value.SlotPositionId != null && item.Value.SlotPositionId.Count > 0)
+                        {
+                            skill.SlotPositionId = new();
+                            skill.SlotPositionId.AddRange(item.Value.SlotPositionId);
+                        }
+                    }
+                    else
+                    {
+                        skill = new Skill();
+                        skill.Name = item.Value.Name;
+                        skill.Desc = item.Value.Desc;
+                        skill.Icon = item.Value.Icon;
+                        if (item.Value.Id != 0)
+                        {
+                            skill.Id = item.Value.Id;
+                        }
+                        else
+                        {
+                            if (int.TryParse(item.Key, out int newId))
+                            {
+                                skill.Id = newId;
+                            }
+                        }
+                        if (item.Value.SkillLevelGroup > 0)
+                        {
+                            skill.SkillLevelGroup = item.Value.SkillLevelGroup;
+                        }
+                        if (item.Value.SlotPositionId != null && item.Value.SlotPositionId.Count > 0)
+                        {
+                            skill.SlotPositionId = new();
+                            skill.SlotPositionId.AddRange(item.Value.SlotPositionId);
+                        }
+                        HelperMethods.DataTables.Skills.Data.Add(item.Key, skill);
+                    }
+                }
+                Log.Information($"Loaded {fileName}");
+            }
+            else
+            {
+                Log.Error($"Failed to loaded {fileName}");
+            }
+        }
+
+        public static void LoadBuffOverridesTable()
+        {
+            LoadBuffOverrideFile("BuffOverrides.en.json");
+            if (!string.IsNullOrEmpty(Settings.Instance.Language) && Settings.Instance.Language != "en")
+            {
+                LoadSkillOverrideFile($"BuffOverrides.{Settings.Instance.Language}.json");
+            }
+        }
+
+        static void LoadBuffOverrideFile(string fileName)
+        {
+            string buffOverridesFile = Path.Combine(Utils.DATA_DIR_NAME, fileName);
+            if (File.Exists(buffOverridesFile))
+            {
+                var overrides = JsonConvert.DeserializeObject<Dictionary<string, Buff>>(File.ReadAllText(buffOverridesFile));
+                foreach (var item in overrides)
+                {
+                    if (HelperMethods.DataTables.Buffs.Data.TryGetValue(item.Key, out var buff))
+                    {
+                        buff.Name = string.IsNullOrEmpty(item.Value.Name) ? buff.Name : item.Value.Name;
+                        buff.Desc = string.IsNullOrEmpty(item.Value.Desc) ? buff.Desc : item.Value.Desc;
+                        buff.Icon = string.IsNullOrEmpty(item.Value.Icon) ? buff.Icon : item.Value.Icon;
+                        buff.ShowHUDIcon = string.IsNullOrEmpty(item.Value.ShowHUDIcon) ? buff.ShowHUDIcon : item.Value.ShowHUDIcon;
+
+                        if (item.Value.BuffType.HasValue)
+                        {
+                            buff.BuffType = item.Value.BuffType.Value;
+                        }
+                        if (item.Value.BuffPriority.HasValue)
+                        {
+                            buff.BuffPriority = item.Value.BuffPriority.Value;
+                        }
+                    }
+                    else
+                    {
+                        buff = new Buff();
+                        buff.Name = item.Value.Name;
+                        buff.Desc = item.Value.Desc;
+                        buff.Icon = item.Value.Icon;
+                        buff.ShowHUDIcon = item.Value.ShowHUDIcon;
+                        buff.BuffType = item.Value.BuffType;
+                        buff.BuffPriority = item.Value.BuffPriority;
+                        buff.Id = string.IsNullOrWhiteSpace(item.Value.Id) ? item.Key : item.Value.Id;
+                        HelperMethods.DataTables.Buffs.Data.Add(item.Key, buff);
+                    }
+                }
+                Log.Information($"Loaded {fileName}");
+            }
+            else
+            {
+                Log.Error($"Failed to loaded {fileName}");
+            }
         }
     }
 }

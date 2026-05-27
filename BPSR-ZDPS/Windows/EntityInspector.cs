@@ -918,9 +918,14 @@ namespace BPSR_ZDPS.Windows
                             {
                                 profession = Professions.GetProfessionNameFromId(entity.Value.ProfessionId);
                             }
+                            int professionId = entity.Value.SubProfessionId;
+                            if (professionId == 0)
+                            {
+                                professionId = entity.Value.ProfessionId;
+                            }
                             if (!string.IsNullOrEmpty(profession))
                             {
-                                var color = Professions.ProfessionColors(profession);
+                                var color = Professions.ProfessionColors(professionId);
                                 color = color - new Vector4(0, 0, 0, 0.50f);
 
                                 ImGui.PushStyleColor(ImGuiCol.Header, color);

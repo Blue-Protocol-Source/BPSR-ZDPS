@@ -12,6 +12,7 @@ public class Settings
     private static string SETTINGS_FILE_NAME = "Settings.json";
 
     public int Version { get; set; } = 0;
+    public string Language { get; set; } = "en";
     public string NetCaptureDeviceName { get; set; } = "";
     public bool NormalizeMeterContributions { get; set; } = true;
     public bool UseShortWidthNumberFormatting { get; set; } = true;

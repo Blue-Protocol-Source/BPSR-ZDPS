@@ -77,7 +77,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Data\AppStrings.en.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\AppStrings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\AppStrings.zh.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\AttrDescription.json">

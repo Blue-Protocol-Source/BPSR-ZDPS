@@ -130,6 +130,11 @@ namespace BPSR_ZDPS.Meters
                         {
                             profession = entity.Profession;
                         }
+                        int professionId = entity.SubProfessionId;
+                        if (professionId == 0)
+                        {
+                            professionId = entity.ProfessionId;
+                        }
 
                         double contribution = 0.0;
                         double contributionProgressBar = 0.0;
@@ -158,7 +163,7 @@ namespace BPSR_ZDPS.Meters
 
                         ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f * Settings.Instance.WindowSettings.MainWindow.MeterBarScale);
 
-                        ImGui.PushStyleColor(ImGuiCol.PlotHistogram, Professions.ProfessionColors(profession));
+                        ImGui.PushStyleColor(ImGuiCol.PlotHistogram, Professions.ProfessionColors(professionId));
                         ImGui.ProgressBar((float)contributionProgressBar / 100.0f, new Vector2(-1, 0), $"##HpsEntryContribution_{i}");
                         ImGui.PopStyleColor();
 

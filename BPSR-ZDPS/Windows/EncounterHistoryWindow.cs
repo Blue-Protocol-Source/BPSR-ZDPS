@@ -471,7 +471,12 @@ namespace BPSR_ZDPS.Windows
                             string profession = entity.SubProfession ?? entity.Profession ?? "";
                             if (!string.IsNullOrEmpty(profession))
                             {
-                                var color = Professions.ProfessionColors(profession);
+                                int professionId = entity.SubProfessionId;
+                                if (professionId == 0)
+                                {
+                                    professionId = entity.ProfessionId;
+                                }
+                                var color = Professions.ProfessionColors(professionId);
                                 color = color - new Vector4(0, 0, 0, 0.50f); // Make the color extremely muted since we're going to have a lot of them
 
                                 ImGui.PushStyleColor(ImGuiCol.Header, color);
