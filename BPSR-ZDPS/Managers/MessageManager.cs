@@ -1506,7 +1506,8 @@ namespace BPSR_ZDPS
                 }
 
                 var buf = dirty.VData.Buffer.ToByteArray();
-                var ser = new BPSR_ZDPSLib.Blobs.CharSerialize(new BlobReader(buf));
+                bool isStreamSafe = dirty.VData.StreamType == EStreamType.StreamTypeDeltaDirtySafe;
+                var ser = new BPSR_ZDPSLib.Blobs.CharSerialize(new BlobReader(buf, isStreamSafe));
 
                 if (ser.CharBaseInfo != null)
                 {
@@ -1880,7 +1881,8 @@ namespace BPSR_ZDPS
 
             var buf = dirty.VData.Buffer.ToByteArray();
 
-            var dun = new BPSR_ZDPSLib.Blobs.DungeonDirtyData(new BlobReader(buf));
+            bool isStreamSafe = dirty.VData.StreamType == EStreamType.StreamTypeDeltaDirtySafe;
+            var dun = new BPSR_ZDPSLib.Blobs.DungeonDirtyData(new BlobReader(buf, isStreamSafe));
 
             if (dun?.PlayerList != null && dun?.PlayerList.PlayerInfos.Count > 0)
             {
