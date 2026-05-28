@@ -398,15 +398,27 @@ namespace BPSR_ZDPS.Windows
 
                 bool showForcehideContainersBtn = Settings.Instance.WindowSettings.EventTracker.ShowForceHideContainersBtnOnMainWindow;
                 bool showPauseEncounterSavingBtn = Settings.Instance.AllowEncounterSavingPausingInOpenWorld && BattleStateMachine.DungeonStateHistory.Count > 0 && BattleStateMachine.DungeonStateHistory.LastOrDefault().Key == EDungeonState.DungeonStateNull;
+                bool showWipeEncounterBtn = true;
+
+                int btnIdx = 4; // One less than actual default button count to ensure it ends at 0
                 if (showForcehideContainersBtn)
                 {
-                    int btnIdx = 5;
-                    if (showPauseEncounterSavingBtn)
-                    {
-                        btnIdx = 6;
-                    }
+                    btnIdx += 1;
+                }
 
-                    ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx));
+                if (showPauseEncounterSavingBtn)
+                {
+                    btnIdx += 1;
+                }
+
+                if (showWipeEncounterBtn)
+                {
+                    btnIdx += 1;
+                }
+
+                if (showForcehideContainersBtn)
+                {
+                    ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
                     ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                     ImGui.PushStyleColor(ImGuiCol.Text, EventTrackerWindow.ForceHideAllContainers ? Colors.Red * new Vector4(1, 1, 1, 0.75f) : Colors.White);
                     if (ImGui.MenuItem($"{(EventTrackerWindow.ForceHideAllContainers ? FASIcons.EyeSlash : FASIcons.Eye)}##ForceToggleVisibilityBtn"))
@@ -429,7 +441,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     ImGui.BeginDisabled(AppState.IsBenchmarkMode);
 
-                    ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 5));
+                    ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
                     ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                     ImGui.PushStyleColor(ImGuiCol.Text, (AppState.IsEncounterSavingPaused ? Colors.Red_Transparent : Colors.White));
                     if (ImGui.MenuItem($"{FASIcons.Pause}##PauseEncounterSavingBtn"))
@@ -444,7 +456,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.EndDisabled();
                 }
 
-                ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 4));
+                ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 if (ImGui.MenuItem($"{FASIcons.WindowMinimize}##MinimizeBtn"))
                 {
@@ -452,7 +464,7 @@ namespace BPSR_ZDPS.Windows
                 }
                 ImGui.PopFont();
 
-                ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 3));
+                ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, AppState.MousePassthrough ? 0.0f : 1.0f, AppState.MousePassthrough ? 0.0f : 1.0f, windowSettings.TopMost ? 1.0f : 0.5f));
                 if (ImGui.MenuItem($"{FASIcons.Thumbtack}##TopMostBtn"))
@@ -477,10 +489,23 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PopFont();
                 ImGui.SetItemTooltip("Pin Window As Top Most");
 
+                ImGui.BeginDisabled(AppState.IsEncounterSavingPaused || AppState.IsBenchmarkMode);
+
+                ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                if (ImGui.MenuItem($"{FASIcons.Skull}##CallWipeBtn"))
+                {
+                    CallWipeEncounter();
+                }
+                ImGui.PopFont();
+                ImGui.SetItemTooltip("Call Wipe For Current Encounter");
+
+                ImGui.EndDisabled();
+
                 // Create new Encounter button
                 ImGui.BeginDisabled(AppState.IsEncounterSavingPaused);
 
-                ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * 2));
+                ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 if (ImGui.MenuItem($"{FASIcons.Rotate}##StartNewEncounterBtn"))
                 {
@@ -806,6 +831,8 @@ namespace BPSR_ZDPS.Windows
             }
             // TODO: Prevent calling this multiple times in a row without first verifying a new Encounter was created from it
 
+            bool isOpenWorld = BattleStateMachine.IsInOpenWorld();
+
             // Running this in a new thread avoids render freezes (that can result in crashes due to timeouts)
             Task.Factory.StartNew(() =>
             {
@@ -819,9 +846,37 @@ namespace BPSR_ZDPS.Windows
                 }
                 else
                 {
-                    Log.Information($"Starting new manual encounter at {DateTime.Now}");
-                    EncounterManager.StartEncounter(true, EncounterStartReason.Force);
+                    if (isOpenWorld)
+                    {
+                        Log.Information($"Starting new manual encounter at {DateTime.Now}");
+                        EncounterManager.StartEncounter(true, EncounterStartReason.Force);
+                    }
+                    else
+                    {
+                        Log.Information($"Starting new manual phase at {DateTime.Now}");
+                        EncounterManager.StartEncounter(true, EncounterStartReason.NewObjective);
+                    }
                 } 
+            });
+        }
+
+        public void CallWipeEncounter()
+        {
+            if (AppState.IsEncounterSavingPaused)
+            {
+                Log.Information("Tried to call Wipe Encounter but Encounter Saving is currently Paused.");
+                return;
+            }
+
+            // Running this in a new thread avoids render freezes (that can result in crashes due to timeouts)
+            Task.Factory.StartNew(() =>
+            {
+                Log.Information($"Calling manual Wipe Encounter at {DateTime.Now}");
+                if (EncounterManager.Current != null)
+                {
+                    EncounterManager.Current.SetWipeState(true);
+                }
+                EncounterManager.StartEncounter(true, EncounterStartReason.Wipe);
             });
         }
 

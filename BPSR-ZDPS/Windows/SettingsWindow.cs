@@ -39,6 +39,7 @@ namespace BPSR_ZDPS.Windows
         static bool allowGamepadNavigationInputInZDPS;
         static bool keepPastEncounterInMeterUntilNextDamage;
         static bool showChannelLineNumberInStatus;
+        static bool showCallWipeForEncounterOnMainWindow;
         static bool useDatabaseForEncounterHistory;
         static int databaseRetentionPolicyDays;
         static bool skipSavingEncountersWithNoCombatData;
@@ -212,9 +213,11 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.SeparatorText("Localization");
 
+                        ImGui.AlignTextToFramePadding();
                         ImGui.TextUnformatted("Language: ");
                         ImGui.SameLine();
-                        if (ImGui.BeginCombo("##LanguageCombo", Language))
+                        ImGui.SetNextItemWidth(150);
+                        if (ImGui.BeginCombo("##LanguageCombo", System.Globalization.CultureInfo.GetCultureInfo(Language).EnglishName))
                         {
                             if (ImGui.Selectable("English (EN)"))
                             {
@@ -804,6 +807,16 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
                         ImGui.TextWrapped("When enabled, shows the current Channel Line number in the Status bar of the Main Window.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Show 'Call Wipe' For Encounter On Main Window: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##ShowCallWipeForEncounterOnMainWindow", ref showCallWipeForEncounterOnMainWindow);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, adds a button (Skull Icon) to the title bar of the Main Window to 'Call Wipe' for the current Encounter and end it immediately.");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -1710,6 +1723,7 @@ namespace BPSR_ZDPS.Windows
             allowGamepadNavigationInputInZDPS = Settings.Instance.AllowGamepadNavigationInputInZDPS;
             keepPastEncounterInMeterUntilNextDamage = Settings.Instance.KeepPastEncounterInMeterUntilNextDamage;
             showChannelLineNumberInStatus = Settings.Instance.ShowChannelLineNumberInStatus;
+            showCallWipeForEncounterOnMainWindow = Settings.Instance.ShowCallWipeForEncounterOnMainWindow;
 
             useDatabaseForEncounterHistory = Settings.Instance.UseDatabaseForEncounterHistory;
             databaseRetentionPolicyDays = Settings.Instance.DatabaseRetentionPolicyDays;
@@ -1832,6 +1846,7 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.AllowGamepadNavigationInputInZDPS = allowGamepadNavigationInputInZDPS;
             Settings.Instance.KeepPastEncounterInMeterUntilNextDamage = keepPastEncounterInMeterUntilNextDamage;
             Settings.Instance.ShowChannelLineNumberInStatus = showChannelLineNumberInStatus;
+            Settings.Instance.ShowCallWipeForEncounterOnMainWindow = showCallWipeForEncounterOnMainWindow;
 
             Settings.Instance.UseDatabaseForEncounterHistory = useDatabaseForEncounterHistory;
             Settings.Instance.DatabaseRetentionPolicyDays = databaseRetentionPolicyDays;

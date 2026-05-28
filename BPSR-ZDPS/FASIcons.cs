@@ -8,6 +8,8 @@ namespace BPSR_ZDPS
 {
     public static class FASIcons
     {
+        public static char Meteor = '\u2604'; // 2604
+        public static char SkullCrossbones = '\u2620'; // 2620
         public static char XMark = '\uF00d'; // F00D
         public static char Signal = '\uF012'; // F012
         public static char Download = '\uF019'; // F019
@@ -56,6 +58,7 @@ namespace BPSR_ZDPS
         public static char AngleUp = '\uF106'; // F106
         public static char AngleDown = '\uF107'; // F107
         public static char Crop = '\uF125'; // F125
+        public static char Calendar = '\uF133'; // F133
         public static char Bullseye = '\uF140'; // F140
         public static char ArrowDownAZ = '\uF15D'; // F15D
         public static char ArrowDown19 = '\uF162'; // F162
@@ -113,6 +116,7 @@ namespace BPSR_ZDPS
         public static char UserSlash = '\uF506'; // F506
         public static char UserTag = '\uF507'; // F507
         public static char UsersGear = '\uF509'; // F509
+        public static char Skull = '\uF54C'; // F54C
         public static char FileContract = '\uF56C'; // F56C
         public static char FileArrowDown = '\uF56D'; // F56D
         public static char FileExport = '\uF56E'; // F56E
@@ -124,9 +128,14 @@ namespace BPSR_ZDPS
         public static char LocationCrosshairs = '\uF601'; // F601
         public static char FolderMinus = '\uF65D'; // F65D
         public static char FolderPlus = '\uF65E'; // F65E
+        public static char SquarePollVertical = '\uF681'; // F681
+        public static char SquarePollHorizontal = '\uF682'; // F682
+        public static char BookSkull = '\uF6B7'; // F6B7
         public static char FileCSV = '\uF6DD'; // F6DD
         public static char NetworkWired = '\uF6FF'; // F6FF
         public static char CheckToSlot = '\uF772'; // F772
+        public static char CalendarDay = '\uF783'; // F783
+        public static char CalendarWeek = '\uF784'; // F784
         public static char Minimize = '\uF78C'; // F78C
         public static char GripLines = '\uF7A4'; // F7A4
         public static char GripLinesVertical = '\uF7A5'; // F7A5
