@@ -96,6 +96,7 @@ namespace BPSR_ZDPS.Windows
 
         static ImmutableSortedDictionary<string, FAttrValueData> AttrSupported = new SortedDictionary<string, FAttrValueData>(StringComparer.OrdinalIgnoreCase)
         {
+            { Zproto.EAttrType.AttrId.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrHatedName.ToString(), new FAttrValueData(typeof(string)) },
             { Zproto.EAttrType.AttrLevel.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrFightPoint.ToString(), new FAttrValueData(typeof(int)) },
@@ -216,6 +217,8 @@ namespace BPSR_ZDPS.Windows
             { Zproto.EAttrType.AttrCanIntoCombat.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrCantHit.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrUnbreakableLevel.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrCantSilence.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrIsSilence.ToString(), new FAttrValueData(typeof(int)) },
 
             { Zproto.EAttrType.AttrReviveCount.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrReviveCurProgressValue.ToString(), new FAttrValueData(typeof(int)) },
@@ -241,6 +244,25 @@ namespace BPSR_ZDPS.Windows
             
             { Zproto.EAttrType.AttrTeamId.ToString(), new FAttrValueData(typeof(long)) },
             { Zproto.EAttrType.AttrStateTime.ToString(), new FAttrValueData(typeof(long)) },
+
+            { Zproto.EAttrType.AttrCdAcceleratePct.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrRushCd.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrFightResCdSpeedPct.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrSkillCd.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrSkillCdpct.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrSwitchProfessionCd.ToString(), new FAttrValueData(typeof(int)) },
+
+            { Zproto.EAttrType.AttrInspirePct.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrIgnoreDefensePct.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrIgnoreMdefensePct.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrMultipliesDamPct.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrPetAttackSpeedPct.ToString(), new FAttrValueData(typeof(int)) },
+
+            { Zproto.EAttrType.AttrShieldDamagePct.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrShieldGainPct.ToString(), new FAttrValueData(typeof(int)) },
+
+            { Zproto.EAttrType.AttrHealBanPct.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrHealedBanPct.ToString(), new FAttrValueData(typeof(int)) },
 
         }.ToImmutableSortedDictionary();
 
@@ -5154,6 +5176,17 @@ namespace BPSR_ZDPS.Windows
                             ImGui.TextUnformatted($"Icon: {skill.Value.Icon}");
                             ImGui.TextUnformatted($"Charges: {skill.Value.MaxEnergyChargeNum}");
                             ImGui.TextUnformatted($"Charge CD: {skill.Value.EnergyChargeTime}");
+                            ImGui.TextUnformatted($"Can Be Silence: {skill.Value.CanBeSilence}");
+                            ImGui.TextUnformatted($"Cant Stiff: {skill.Value.CantStiff}");
+                            ImGui.TextUnformatted($"Skill Talk: {skill.Value.SkillTalk}");
+                            ImGui.TextUnformatted($"Talk Time: {skill.Value.SkillTalkTime}");
+                            if (skill.Value.SingOrGuideTime != null && skill.Value.SingOrGuideTime.Count > 1)
+                            {
+                                if (skill.Value.SingOrGuideTime[0].Count > 1 && skill.Value.SingOrGuideTime[1].Count > 1)
+                                {
+                                    ImGui.TextUnformatted($"Cast Time: {skill.Value.SingOrGuideTime[1][0]}");
+                                }
+                            }
                             //ImGui.TextUnformatted(JsonConvert.SerializeObject(skill.Value, Formatting.Indented));
                             ImGui.EndTooltip();
                         }
