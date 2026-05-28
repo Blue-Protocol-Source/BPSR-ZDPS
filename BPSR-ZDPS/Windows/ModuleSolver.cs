@@ -195,6 +195,10 @@ namespace BPSR_ZDPS
                                     solverConfig.FromString(CurrentPresetString);
                                     if (solverConfig.Verify(ModStatInfos))
                                     {
+                                        solverConfig.LinkLevelBonus = SolverConfig.LinkLevelBonus;
+                                        solverConfig.QualitiesV2 = SolverConfig.QualitiesV2;
+                                        solverConfig.NumModules = SolverConfig.NumModules;
+                                        solverConfig.ValueAllStats = SolverConfig.ValueAllStats;
                                         SolverConfig = solverConfig;
                                     }
                                 }
