@@ -398,7 +398,7 @@ namespace BPSR_ZDPS.Windows
 
                 bool showForcehideContainersBtn = Settings.Instance.WindowSettings.EventTracker.ShowForceHideContainersBtnOnMainWindow;
                 bool showPauseEncounterSavingBtn = Settings.Instance.AllowEncounterSavingPausingInOpenWorld && BattleStateMachine.DungeonStateHistory.Count > 0 && BattleStateMachine.DungeonStateHistory.LastOrDefault().Key == EDungeonState.DungeonStateNull;
-                bool showWipeEncounterBtn = true;
+                bool showWipeEncounterBtn = Settings.Instance.ShowCallWipeForEncounterOnMainWindow;
 
                 int btnIdx = 4; // One less than actual default button count to ensure it ends at 0
                 if (showForcehideContainersBtn)
@@ -489,18 +489,21 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PopFont();
                 ImGui.SetItemTooltip("Pin Window As Top Most");
 
-                ImGui.BeginDisabled(AppState.IsEncounterSavingPaused || AppState.IsBenchmarkMode);
-
-                ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                if (ImGui.MenuItem($"{FASIcons.Skull}##CallWipeBtn"))
+                if (showWipeEncounterBtn)
                 {
-                    CallWipeEncounter();
-                }
-                ImGui.PopFont();
-                ImGui.SetItemTooltip("Call Wipe For Current Encounter");
+                    ImGui.BeginDisabled(AppState.IsEncounterSavingPaused || AppState.IsBenchmarkMode);
 
-                ImGui.EndDisabled();
+                    ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
+                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                    if (ImGui.MenuItem($"{FASIcons.Skull}##CallWipeBtn"))
+                    {
+                        CallWipeEncounter();
+                    }
+                    ImGui.PopFont();
+                    ImGui.SetItemTooltip("Call Wipe For Current Encounter");
+
+                    ImGui.EndDisabled();
+                }
 
                 // Create new Encounter button
                 ImGui.BeginDisabled(AppState.IsEncounterSavingPaused);

@@ -372,6 +372,11 @@ namespace BPSR_ZDPS
                         skill.Name = string.IsNullOrEmpty(item.Value.Name) ? skill.Name : item.Value.Name;
                         skill.Desc = string.IsNullOrEmpty(item.Value.Desc) ? skill.Name : item.Value.Desc;
                         skill.Icon = string.IsNullOrEmpty(item.Value.Icon) ? skill.Icon : item.Value.Icon;
+
+                        if (item.Value.Icon == "-")
+                        {
+                            skill.Icon = "";
+                        }
                         if (item.Value.SkillLevelGroup > 0)
                         {
                             skill.SkillLevelGroup = item.Value.SkillLevelGroup;
@@ -443,6 +448,10 @@ namespace BPSR_ZDPS
                         buff.Icon = string.IsNullOrEmpty(item.Value.Icon) ? buff.Icon : item.Value.Icon;
                         buff.ShowHUDIcon = string.IsNullOrEmpty(item.Value.ShowHUDIcon) ? buff.ShowHUDIcon : item.Value.ShowHUDIcon;
 
+                        if (item.Value.Icon == "-")
+                        {
+                            buff.Icon = "";
+                        }
                         if (item.Value.BuffType.HasValue)
                         {
                             buff.BuffType = item.Value.BuffType.Value;
