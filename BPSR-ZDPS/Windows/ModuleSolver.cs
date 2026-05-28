@@ -69,6 +69,8 @@ namespace BPSR_ZDPS
             LoadSavedModData(ModSavePath);
 
             SolverConfig = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config;
+
+            CurrentPresetString = SolverConfig.SaveToString();
         }
 
         public static void Open()
@@ -560,7 +562,7 @@ namespace BPSR_ZDPS
 
             ImGui.EndChild();
             ImGui.SetCursorPosX(leftWidth + 8);
-            if (ImGui.Button("Calculate", new Vector2(contentRegion.X - leftWidth, 0)))
+            if (ImGui.Button($"Calculate {SolverConfig.NumModules} module combo sets", new Vector2(contentRegion.X - leftWidth, 0)))
             {
                 ModuleCalcCancelTokenSource = new CancellationTokenSource();
                 ModuleCalcTask = Task.Factory.StartNew(() =>
@@ -571,6 +573,7 @@ namespace BPSR_ZDPS
                     ShouldBlockMainUI = false;
                 }, ModuleCalcCancelTokenSource.Token);
             }
+            ImGui.SetItemTooltip("You can set the number of modules in a combo set.\nClick on the \"Settings\" tab at the top of this window.");
         }
 
         private static (bool, bool) DrawStatFilter(int i)

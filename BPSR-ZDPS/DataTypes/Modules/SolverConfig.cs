@@ -11,7 +11,7 @@ namespace BPSR_ZDPS.DataTypes.Modules
         public List<StatPrio> StatPriorities = [];
         public byte[] LinkLevelBonus = DefaultLinkLevels;
         public bool ValueAllStats = true;
-        public int NumModules = 4;
+        public int NumModules = 5;
 
         public string SaveToString(bool asBase64 = false)
         {
