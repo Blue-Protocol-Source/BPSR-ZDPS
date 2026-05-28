@@ -27695,6 +27695,45 @@
     "PlayType": 0,
     "SkillId": 0
   },
+  "681702": {
+    "Id": 681702,
+    "Level": 2,
+    "NameDesign": "异次元惩戒报名冷却",
+    "Note": "异次元惩戒报名冷却",
+    "Name": "Interdimensional Punishment Registration Cooldown",
+    "Icon": "ui/atlas/hud/debuff/buff_red_cd",
+    "Desc": "150s cooldown after successful Interdimensional Punishment registration",
+    "BuffType": 0,
+    "BuffPriority": 1,
+    "TipsDescription": 0,
+    "Visible": 1,
+    "RepeatAddRule": [
+      0,
+      1
+    ],
+    "DestroyParam": [
+      [
+        0.0,
+        150.0
+      ]
+    ],
+    "DeleteDead": false,
+    "DeleteOffline": false,
+    "DeleteChangeScene": false,
+    "DeleteChangeVisualLayer": false,
+    "DeleteWeaponChange": false,
+    "DeleteSourceDead": false,
+    "Tags": [],
+    "SpecialAttr": [],
+    "BuffAbilityType": 0,
+    "BuffAbilitySubType": 0,
+    "IsClientBuff": false,
+    "ShowHUDIcon": "",
+    "HudSwitch": 0,
+    "TimeRefreshType": 0,
+    "PlayType": 0,
+    "SkillId": 0
+  },
   "681801": {
     "Id": 681801,
     "Level": 1,
@@ -73664,7 +73703,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 1,
     "BuffAbilitySubType": 0,
@@ -73698,7 +73739,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -73732,7 +73775,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       709,
       711,
@@ -73776,7 +73821,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -73810,7 +73857,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       712
     ],
@@ -73846,7 +73895,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 1,
     "BuffAbilitySubType": 0,
@@ -73880,7 +73931,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -73914,7 +73967,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 1,
     "BuffAbilitySubType": 0,
@@ -73948,7 +74003,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       722,
       724,
@@ -73991,7 +74048,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74030,7 +74089,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74064,7 +74125,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74103,7 +74166,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74142,7 +74207,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       708,
       707
@@ -74184,7 +74251,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       709,
       708,
@@ -74229,7 +74298,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74268,7 +74339,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74307,7 +74380,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74346,7 +74421,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74385,7 +74462,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       709,
       711,
@@ -74429,7 +74508,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74468,7 +74549,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       723
     ],
@@ -74509,7 +74592,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74548,7 +74633,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74587,7 +74674,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       723
     ],
@@ -74623,7 +74712,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       708,
       707,
@@ -74666,7 +74757,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74705,7 +74798,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       723,
       722,
@@ -74745,7 +74840,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74784,7 +74881,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       723,
       724,
@@ -74822,7 +74921,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74861,7 +74962,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74895,7 +74998,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -74934,7 +75039,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       709,
       708,
@@ -74976,7 +75083,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75010,7 +75119,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 1,
     "BuffAbilitySubType": 0,
@@ -75044,7 +75155,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75083,7 +75196,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75122,7 +75237,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 304,
     "BuffAbilitySubType": 402,
@@ -75161,7 +75278,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 304,
     "BuffAbilitySubType": 402,
@@ -75195,7 +75314,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75234,7 +75355,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75268,7 +75391,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75307,7 +75432,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75341,7 +75468,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75375,7 +75504,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75414,7 +75545,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       709,
       711,
@@ -75458,7 +75591,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75497,7 +75632,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75536,7 +75673,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75575,7 +75714,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75614,7 +75755,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75653,7 +75796,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75692,7 +75837,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75731,7 +75878,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75770,7 +75919,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75809,7 +75960,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75843,7 +75996,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75877,7 +76032,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75916,7 +76073,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -75950,7 +76109,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       708,
       707,
@@ -75993,7 +76154,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76032,7 +76195,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76071,7 +76236,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76110,7 +76277,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76149,7 +76318,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76188,7 +76359,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76227,7 +76400,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76266,7 +76441,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76305,7 +76482,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76344,7 +76523,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76383,7 +76564,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76422,7 +76605,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76461,7 +76646,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76495,7 +76682,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       708,
       707
@@ -76532,7 +76721,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       708,
       707
@@ -76569,7 +76760,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76608,7 +76801,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76642,7 +76837,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76676,7 +76873,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76715,7 +76914,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76754,7 +76955,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76793,7 +76996,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76832,7 +77037,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76866,7 +77073,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76905,7 +77114,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76939,7 +77150,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -76973,7 +77186,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77007,7 +77222,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77041,7 +77258,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77075,7 +77294,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77109,7 +77330,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77143,7 +77366,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77177,7 +77402,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77211,7 +77438,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77245,7 +77474,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77279,7 +77510,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77313,7 +77546,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77347,7 +77582,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 401,
     "BuffAbilitySubType": 0,
@@ -77381,7 +77618,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 401,
     "BuffAbilitySubType": 0,
@@ -77415,7 +77654,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 401,
     "BuffAbilitySubType": 0,
@@ -77454,7 +77695,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77488,7 +77731,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77522,7 +77767,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77556,7 +77803,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77590,7 +77839,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77624,7 +77875,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77658,7 +77911,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77692,7 +77947,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77726,7 +77983,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77760,7 +78019,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77794,7 +78055,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77828,7 +78091,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77862,7 +78127,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77896,7 +78163,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77930,7 +78199,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77964,7 +78235,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -77998,7 +78271,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78032,7 +78307,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78066,7 +78343,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78100,7 +78379,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78134,7 +78415,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78168,7 +78451,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78202,7 +78487,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78236,7 +78523,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78270,7 +78559,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78304,7 +78595,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78338,7 +78631,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78372,7 +78667,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78406,7 +78703,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78445,7 +78744,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78484,7 +78785,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78523,7 +78826,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78562,7 +78867,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78601,7 +78908,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78640,7 +78949,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78679,7 +78990,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78718,7 +79031,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78752,7 +79067,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78786,7 +79103,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78820,7 +79139,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78854,7 +79175,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78888,7 +79211,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78922,7 +79247,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78956,7 +79283,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -78990,7 +79319,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79024,7 +79355,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79058,7 +79391,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79092,7 +79427,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79126,7 +79463,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79160,7 +79499,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79194,7 +79535,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79228,7 +79571,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79262,7 +79607,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79296,7 +79643,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79330,7 +79679,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79364,7 +79715,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79398,7 +79751,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79432,7 +79787,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79466,7 +79823,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79500,7 +79859,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79534,7 +79895,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79568,7 +79931,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79602,7 +79967,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79636,7 +80003,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79670,7 +80039,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -79709,7 +80080,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       709,
       708,
@@ -79754,7 +80127,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       709,
       708,
@@ -79799,7 +80174,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [
       709,
       708,
@@ -79839,7 +80216,9 @@
     "DeleteChangeVisualLayer": false,
     "DeleteWeaponChange": false,
     "DeleteSourceDead": false,
-    "Tags": [],
+    "Tags": [
+      141
+    ],
     "SpecialAttr": [],
     "BuffAbilityType": 0,
     "BuffAbilitySubType": 0,
@@ -209559,6 +209938,240 @@
     "Name": "Foodie's Grace",
     "Icon": "ui/atlas/buff/buff_food_up",
     "Desc": "When delicious food collides with an aura from another world, it triggers a special effect! Agility +5%!",
+    "BuffType": 1,
+    "BuffPriority": 1,
+    "TipsDescription": 0,
+    "Visible": 2,
+    "RepeatAddRule": [
+      11,
+      43200000
+    ],
+    "DestroyParam": [
+      [
+        0.0,
+        7200.0
+      ]
+    ],
+    "DeleteDead": false,
+    "DeleteOffline": false,
+    "DeleteChangeScene": false,
+    "DeleteChangeVisualLayer": false,
+    "DeleteWeaponChange": false,
+    "DeleteSourceDead": false,
+    "Tags": [],
+    "SpecialAttr": [],
+    "BuffAbilityType": 104,
+    "BuffAbilitySubType": 0,
+    "IsClientBuff": false,
+    "ShowHUDIcon": "",
+    "HudSwitch": 0,
+    "TimeRefreshType": 0,
+    "PlayType": 0,
+    "SkillId": 0
+  },
+  "2010086": {
+    "Id": 2010086,
+    "Level": 86,
+    "NameDesign": "美食的加护",
+    "Note": "",
+    "Name": "Foodie's Grace",
+    "Icon": "ui/atlas/buff/buff_food_up",
+    "Desc": "Adaptive Strength/Intellect/Agility +2%, Versatility +1%！",
+    "BuffType": 1,
+    "BuffPriority": 1,
+    "TipsDescription": 0,
+    "Visible": 2,
+    "RepeatAddRule": [
+      11,
+      43200000
+    ],
+    "DestroyParam": [
+      [
+        0.0,
+        7200.0
+      ]
+    ],
+    "DeleteDead": false,
+    "DeleteOffline": false,
+    "DeleteChangeScene": false,
+    "DeleteChangeVisualLayer": false,
+    "DeleteWeaponChange": false,
+    "DeleteSourceDead": false,
+    "Tags": [],
+    "SpecialAttr": [],
+    "BuffAbilityType": 104,
+    "BuffAbilitySubType": 0,
+    "IsClientBuff": false,
+    "ShowHUDIcon": "",
+    "HudSwitch": 0,
+    "TimeRefreshType": 0,
+    "PlayType": 0,
+    "SkillId": 0
+  },
+  "2010085": {
+    "Id": 2010085,
+    "Level": 85,
+    "NameDesign": "美食的加护",
+    "Note": "",
+    "Name": "Foodie's Grace",
+    "Icon": "ui/atlas/buff/buff_food_up",
+    "Desc": "Adaptive Strength/Intellect/Agility +2%, Mastery +1%!",
+    "BuffType": 1,
+    "BuffPriority": 1,
+    "TipsDescription": 0,
+    "Visible": 2,
+    "RepeatAddRule": [
+      11,
+      43200000
+    ],
+    "DestroyParam": [
+      [
+        0.0,
+        7200.0
+      ]
+    ],
+    "DeleteDead": false,
+    "DeleteOffline": false,
+    "DeleteChangeScene": false,
+    "DeleteChangeVisualLayer": false,
+    "DeleteWeaponChange": false,
+    "DeleteSourceDead": false,
+    "Tags": [],
+    "SpecialAttr": [],
+    "BuffAbilityType": 104,
+    "BuffAbilitySubType": 0,
+    "IsClientBuff": false,
+    "ShowHUDIcon": "",
+    "HudSwitch": 0,
+    "TimeRefreshType": 0,
+    "PlayType": 0,
+    "SkillId": 0
+  },
+  "2010084": {
+    "Id": 2010084,
+    "Level": 84,
+    "NameDesign": "美食的加护",
+    "Note": "",
+    "Name": "Foodie's Grace",
+    "Icon": "ui/atlas/buff/buff_food_up",
+    "Desc": "Adaptive Strength/Intellect/Agility +2%, Haste +1%!",
+    "BuffType": 1,
+    "BuffPriority": 1,
+    "TipsDescription": 0,
+    "Visible": 2,
+    "RepeatAddRule": [
+      11,
+      43200000
+    ],
+    "DestroyParam": [
+      [
+        0.0,
+        7200.0
+      ]
+    ],
+    "DeleteDead": false,
+    "DeleteOffline": false,
+    "DeleteChangeScene": false,
+    "DeleteChangeVisualLayer": false,
+    "DeleteWeaponChange": false,
+    "DeleteSourceDead": false,
+    "Tags": [],
+    "SpecialAttr": [],
+    "BuffAbilityType": 104,
+    "BuffAbilitySubType": 0,
+    "IsClientBuff": false,
+    "ShowHUDIcon": "",
+    "HudSwitch": 0,
+    "TimeRefreshType": 0,
+    "PlayType": 0,
+    "SkillId": 0
+  },
+  "2010083": {
+    "Id": 2010083,
+    "Level": 83,
+    "NameDesign": "美食的加护",
+    "Note": "",
+    "Name": "Foodie's Grace",
+    "Icon": "ui/atlas/buff/buff_food_up",
+    "Desc": "Adaptive Strength/Intellect/Agility +2%, Luck +1%！",
+    "BuffType": 1,
+    "BuffPriority": 1,
+    "TipsDescription": 0,
+    "Visible": 2,
+    "RepeatAddRule": [
+      11,
+      43200000
+    ],
+    "DestroyParam": [
+      [
+        0.0,
+        7200.0
+      ]
+    ],
+    "DeleteDead": false,
+    "DeleteOffline": false,
+    "DeleteChangeScene": false,
+    "DeleteChangeVisualLayer": false,
+    "DeleteWeaponChange": false,
+    "DeleteSourceDead": false,
+    "Tags": [],
+    "SpecialAttr": [],
+    "BuffAbilityType": 104,
+    "BuffAbilitySubType": 0,
+    "IsClientBuff": false,
+    "ShowHUDIcon": "",
+    "HudSwitch": 0,
+    "TimeRefreshType": 0,
+    "PlayType": 0,
+    "SkillId": 0
+  },
+  "2010082": {
+    "Id": 2010082,
+    "Level": 82,
+    "NameDesign": "美食的加护",
+    "Note": "",
+    "Name": "Foodie's Grace",
+    "Icon": "ui/atlas/buff/buff_food_up",
+    "Desc": "Adaptive Strength/Intellect/Agility +2%, Crit +1%!",
+    "BuffType": 1,
+    "BuffPriority": 1,
+    "TipsDescription": 0,
+    "Visible": 2,
+    "RepeatAddRule": [
+      11,
+      43200000
+    ],
+    "DestroyParam": [
+      [
+        0.0,
+        7200.0
+      ]
+    ],
+    "DeleteDead": false,
+    "DeleteOffline": false,
+    "DeleteChangeScene": false,
+    "DeleteChangeVisualLayer": false,
+    "DeleteWeaponChange": false,
+    "DeleteSourceDead": false,
+    "Tags": [],
+    "SpecialAttr": [],
+    "BuffAbilityType": 104,
+    "BuffAbilitySubType": 0,
+    "IsClientBuff": false,
+    "ShowHUDIcon": "",
+    "HudSwitch": 0,
+    "TimeRefreshType": 0,
+    "PlayType": 0,
+    "SkillId": 0
+  },
+  "2010081": {
+    "Id": 2010081,
+    "Level": 81,
+    "NameDesign": "美食的加护-2",
+    "Note": "",
+    "Name": "Foodie's Grace",
+    "Icon": "ui/atlas/buff/buff_food_up",
+    "Desc": "Armor +10%, restore 2% of HP per second!",
     "BuffType": 1,
     "BuffPriority": 1,
     "TipsDescription": 0,

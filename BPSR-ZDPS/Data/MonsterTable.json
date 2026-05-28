@@ -1223,7 +1223,7 @@
   },
   "112": {
     "Id": 112,
-    "Name": "Boss - Goblin King",
+    "Name": "Boss: Goblin King",
     "ModelID": 33014,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -79327,7 +79327,7 @@
   },
   "10043": {
     "Id": 10043,
-    "Name": "Elite - Mutant Yeti",
+    "Name": "Elite: Mutant Yeti",
     "ModelID": 33057,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -80593,7 +80593,7 @@
   },
   "10054": {
     "Id": 10054,
-    "Name": "Elite - Brigand Archer",
+    "Name": "Elite: Brigand Archer",
     "ModelID": 33062,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -91788,7 +91788,7 @@
   },
   "11006": {
     "Id": 11006,
-    "Name": "Elite - Mutant Boarrier",
+    "Name": "Elite: Mutant Boarrier",
     "ModelID": 33049,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -93862,7 +93862,7 @@
   },
   "11024": {
     "Id": 11024,
-    "Name": "Boss - Nightmare Caprahorn",
+    "Name": "Boss: Nightmare Caprahorn",
     "ModelID": 11024,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -94093,7 +94093,7 @@
   },
   "11026": {
     "Id": 11026,
-    "Name": "Elite - Highland Foxen",
+    "Name": "Elite: Highland Foxen",
     "ModelID": 33055,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -94436,7 +94436,7 @@
   },
   "11029": {
     "Id": 11029,
-    "Name": "Elite - Snow Boar",
+    "Name": "Elite: Snow Boar",
     "ModelID": 33019,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -94551,7 +94551,7 @@
   },
   "11030": {
     "Id": 11030,
-    "Name": "Elite - Void Colorful Harrier",
+    "Name": "Elite: Void Colorful Harrier",
     "ModelID": 1023,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -94666,7 +94666,7 @@
   },
   "11031": {
     "Id": 11031,
-    "Name": "Boss - Flame Boarrier",
+    "Name": "Boss: Flame Boarrier",
     "ModelID": 33019,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -94781,7 +94781,7 @@
   },
   "11032": {
     "Id": 11032,
-    "Name": "Boss - Queen Harrier",
+    "Name": "Boss: Queen Harrier",
     "ModelID": 1023,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -95124,7 +95124,7 @@
   },
   "11035": {
     "Id": 11035,
-    "Name": "Elite - Frozen Yeti",
+    "Name": "Elite: Frozen Yeti",
     "ModelID": 33056,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -95239,7 +95239,7 @@
   },
   "11036": {
     "Id": 11036,
-    "Name": "Elite - Crowned Trogon",
+    "Name": "Elite: Crowned Trogon",
     "ModelID": 1023,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -95354,7 +95354,7 @@
   },
   "11037": {
     "Id": 11037,
-    "Name": "Boss - Tyrant Yeti",
+    "Name": "Boss: Tyrant Yeti",
     "ModelID": 33043,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -95472,7 +95472,7 @@
   },
   "11038": {
     "Id": 11038,
-    "Name": "Boss - King Tuo Kong",
+    "Name": "Boss: King Tuo Kong",
     "ModelID": 1023,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -95815,7 +95815,7 @@
   },
   "11041": {
     "Id": 11041,
-    "Name": "Elite - Blue Gem Foxen",
+    "Name": "Elite: Blue Gem Foxen",
     "ModelID": 33057,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -95930,7 +95930,7 @@
   },
   "11042": {
     "Id": 11042,
-    "Name": "Elite - Yellow Rock Dragonfly",
+    "Name": "Elite: Yellow Rock Dragonfly",
     "ModelID": 1023,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -96045,7 +96045,7 @@
   },
   "11043": {
     "Id": 11043,
-    "Name": "Boss - Howling Foxen",
+    "Name": "Boss: Howling Foxen",
     "ModelID": 33057,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -96162,7 +96162,7 @@
   },
   "11044": {
     "Id": 11044,
-    "Name": "Boss - Ground Wing",
+    "Name": "Boss: Ground Wing",
     "ModelID": 1023,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -103244,7 +103244,7 @@
   },
   "12110": {
     "Id": 12110,
-    "Name": "Mutated Foxen",
+    "Name": "Mutant Foxen",
     "ModelID": 33055,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -103476,7 +103476,7 @@
   },
   "17001": {
     "Id": 17001,
-    "Name": "Boss - Boarrier King",
+    "Name": "Boss: Boarrier King",
     "ModelID": 33036,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -103818,7 +103818,7 @@
   },
   "17004": {
     "Id": 17004,
-    "Name": "Boss - Muku Chief",
+    "Name": "Boss: Muku Chief",
     "ModelID": 33039,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -104268,7 +104268,7 @@
   },
   "17008": {
     "Id": 17008,
-    "Name": "Boss - Crimson Foxen",
+    "Name": "Boss: Crimson Foxen",
     "ModelID": 33043,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -104494,7 +104494,7 @@
   },
   "17010": {
     "Id": 17010,
-    "Name": "Boss - Dogorman",
+    "Name": "Boss: Dogorman",
     "ModelID": 33045,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -104721,7 +104721,7 @@
   },
   "17012": {
     "Id": 17012,
-    "Name": "Elite - Mighty Boarrier",
+    "Name": "Elite: Mighty Boarrier",
     "ModelID": 33049,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -104836,7 +104836,7 @@
   },
   "17013": {
     "Id": 17013,
-    "Name": "Elite - Void Arachnocrab",
+    "Name": "Elite: Void Arachnocrab",
     "ModelID": 33053,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -105058,7 +105058,7 @@
   },
   "17015": {
     "Id": 17015,
-    "Name": "Elite - Mutant Foxen",
+    "Name": "Elite: Mutant Foxen",
     "ModelID": 33055,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -105284,7 +105284,7 @@
   },
   "17017": {
     "Id": 17017,
-    "Name": "Elite - Mutant Yeti",
+    "Name": "Elite: Mutant Yeti",
     "ModelID": 33057,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -105399,7 +105399,7 @@
   },
   "17018": {
     "Id": 17018,
-    "Name": "Elite - Muku Scout",
+    "Name": "Elite: Muku Scout",
     "ModelID": 33058,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -105510,7 +105510,7 @@
   },
   "17019": {
     "Id": 17019,
-    "Name": "Elite - Crimson Sprayer",
+    "Name": "Elite: Crimson Sprayer",
     "ModelID": 33059,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -113226,7 +113226,7 @@
   },
   "20088": {
     "Id": 20088,
-    "Name": "Boss - Tempest Ogre",
+    "Name": "Boss: Tempest Ogre",
     "ModelID": 33011,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -146279,7 +146279,7 @@
   },
   "40026": {
     "Id": 40026,
-    "Name": "Boss - Goblin Chief",
+    "Name": "Boss: Goblin Chief",
     "ModelID": 33014,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -166418,7 +166418,7 @@
   },
   "60209": {
     "Id": 60209,
-    "Name": "Elite - Goblin Crossbow",
+    "Name": "Elite: Goblin Crossbow",
     "ModelID": 10070,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -166538,7 +166538,7 @@
   },
   "60210": {
     "Id": 60210,
-    "Name": "Elite - Goblin Sword",
+    "Name": "Elite: Goblin Sword",
     "ModelID": 1130,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -166649,7 +166649,7 @@
   },
   "60211": {
     "Id": 60211,
-    "Name": "Elite - Goblin Axe",
+    "Name": "Elite: Goblin Axe",
     "ModelID": 33016,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -166763,7 +166763,7 @@
   },
   "60213": {
     "Id": 60213,
-    "Name": "Elite - Goblin Fire Mage",
+    "Name": "Elite: Goblin Fire Mage",
     "ModelID": 33017,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -166877,7 +166877,7 @@
   },
   "60215": {
     "Id": 60215,
-    "Name": "Elite - Goblin Wind Mage",
+    "Name": "Elite: Goblin Wind Mage",
     "ModelID": 90002,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -166988,7 +166988,7 @@
   },
   "60216": {
     "Id": 60216,
-    "Name": "Boss - Goblin King",
+    "Name": "Boss: Goblin King",
     "ModelID": 33014,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -171268,7 +171268,7 @@
   },
   "60508": {
     "Id": 60508,
-    "Name": "Elite - Mischief Goblin",
+    "Name": "Elite: Mischief Goblin",
     "ModelID": 10070,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -171388,7 +171388,7 @@
   },
   "60509": {
     "Id": 60509,
-    "Name": "Elite - Mischief Goblin",
+    "Name": "Elite: Mischief Goblin",
     "ModelID": 1130,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -171499,7 +171499,7 @@
   },
   "60510": {
     "Id": 60510,
-    "Name": "Elite - Mischief Goblin",
+    "Name": "Elite: Mischief Goblin",
     "ModelID": 33016,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -175552,7 +175552,7 @@
   },
   "60741": {
     "Id": 60741,
-    "Name": "Elite - Goblin Sword",
+    "Name": "Elite: Goblin Sword",
     "ModelID": 1130,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -175663,7 +175663,7 @@
   },
   "60742": {
     "Id": 60742,
-    "Name": "Boss - Goblin King",
+    "Name": "Boss: Goblin King",
     "ModelID": 33014,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -175893,7 +175893,7 @@
   },
   "60744": {
     "Id": 60744,
-    "Name": "Elite - Goblin Sword",
+    "Name": "Elite: Goblin Sword",
     "ModelID": 1130,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -176004,7 +176004,7 @@
   },
   "60745": {
     "Id": 60745,
-    "Name": "Boss - Goblin King",
+    "Name": "Boss: Goblin King",
     "ModelID": 33014,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -179861,7 +179861,7 @@
   },
   "61005": {
     "Id": 61005,
-    "Name": "Elite - Goblin Sword",
+    "Name": "Elite: Goblin Sword",
     "ModelID": 1130,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -179976,7 +179976,7 @@
   },
   "61006": {
     "Id": 61006,
-    "Name": "Elite - Goblin Fire Mage",
+    "Name": "Elite: Goblin Fire Mage",
     "ModelID": 33017,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -180094,7 +180094,7 @@
   },
   "61007": {
     "Id": 61007,
-    "Name": "Elite - Goblin Axe",
+    "Name": "Elite: Goblin Axe",
     "ModelID": 33016,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -180212,7 +180212,7 @@
   },
   "61008": {
     "Id": 61008,
-    "Name": "Elite - Goblin Wind Mage",
+    "Name": "Elite: Goblin Wind Mage",
     "ModelID": 90002,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -190536,7 +190536,7 @@
   },
   "70043": {
     "Id": 70043,
-    "Name": "Elite Boarrier Tyrant",
+    "Name": "Elite: Boarrier Tyrant",
     "ModelID": 33049,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -190646,7 +190646,7 @@
   },
   "70045": {
     "Id": 70045,
-    "Name": "Elite Mighty Colossus",
+    "Name": "Elite: Mighty Colossus",
     "ModelID": 33045,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -190757,7 +190757,7 @@
   },
   "70047": {
     "Id": 70047,
-    "Name": "Elite Goblin Guard",
+    "Name": "Elite: Goblin Guard",
     "ModelID": 1130,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -190866,7 +190866,7 @@
   },
   "70048": {
     "Id": 70048,
-    "Name": "Elite Goblin Warrior",
+    "Name": "Elite: Goblin Warrior",
     "ModelID": 10070,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -190976,7 +190976,7 @@
   },
   "70049": {
     "Id": 70049,
-    "Name": "Elite Jungle Goblin Warrior",
+    "Name": "Elite: Jungle Goblin Warrior",
     "ModelID": 33061,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -191086,7 +191086,7 @@
   },
   "70051": {
     "Id": 70051,
-    "Name": "Elite Inferno Goblin Mage",
+    "Name": "Elite: Inferno Goblin Mage",
     "ModelID": 33060,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -191195,7 +191195,7 @@
   },
   "70052": {
     "Id": 70052,
-    "Name": "Elite - Void Arachnocrab",
+    "Name": "Elite: Void Arachnocrab",
     "ModelID": 33053,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -191305,7 +191305,7 @@
   },
   "70053": {
     "Id": 70053,
-    "Name": "Elite Brigand Scout Leader",
+    "Name": "Elite: Brigand Scout Leader",
     "ModelID": 33067,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -191413,7 +191413,7 @@
   },
   "70054": {
     "Id": 70054,
-    "Name": "Elite Brigand Guard Captain",
+    "Name": "Elite: Brigand Guard Captain",
     "ModelID": 33063,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -191521,7 +191521,7 @@
   },
   "70057": {
     "Id": 70057,
-    "Name": "Elite - Muku Warrior",
+    "Name": "Elite: Muku Warrior",
     "ModelID": 10058,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -191630,7 +191630,7 @@
   },
   "70058": {
     "Id": 70058,
-    "Name": "Elite Shadow Captain",
+    "Name": "Elite: Shadow Captain",
     "ModelID": 50105,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -191739,7 +191739,7 @@
   },
   "70059": {
     "Id": 70059,
-    "Name": "Elite Shadow Commander",
+    "Name": "Elite: Shadow Commander",
     "ModelID": 50106,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -191850,7 +191850,7 @@
   },
   "70060": {
     "Id": 70060,
-    "Name": "Elite Great Warhog",
+    "Name": "Elite: Great Warhog",
     "ModelID": 33074,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -191959,7 +191959,7 @@
   },
   "70061": {
     "Id": 70061,
-    "Name": "Elite - Storm Goblin Warrior",
+    "Name": "Elite: Storm Goblin Warrior",
     "ModelID": 10052,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -192066,7 +192066,7 @@
   },
   "70062": {
     "Id": 70062,
-    "Name": "Elite - Lizardman Hunter",
+    "Name": "Elite: Lizardman Hunter",
     "ModelID": 33081,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -192176,7 +192176,7 @@
   },
   "70063": {
     "Id": 70063,
-    "Name": "Boss - Golden Juggernaut",
+    "Name": "Boss: Golden Juggernaut",
     "ModelID": 33036,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -192290,7 +192290,7 @@
   },
   "70064": {
     "Id": 70064,
-    "Name": "Boss - Frost Ogre",
+    "Name": "Boss: Frost Ogre",
     "ModelID": 33021,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -192403,7 +192403,7 @@
   },
   "70065": {
     "Id": 70065,
-    "Name": "Boss - Inferno Ogre",
+    "Name": "Boss: Inferno Ogre",
     "ModelID": 1012,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -192523,7 +192523,7 @@
   },
   "70066": {
     "Id": 70066,
-    "Name": "Boss - Brigand Chief",
+    "Name": "Boss: Brigand Chief",
     "ModelID": 33015,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -192633,7 +192633,7 @@
   },
   "70067": {
     "Id": 70067,
-    "Name": "Boss - Muku Chief",
+    "Name": "Boss: Muku Chief",
     "ModelID": 33039,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -192743,7 +192743,7 @@
   },
   "70068": {
     "Id": 70068,
-    "Name": "Boss - Tempest Ogre",
+    "Name": "Boss: Tempest Ogre",
     "ModelID": 33011,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -192857,7 +192857,7 @@
   },
   "70070": {
     "Id": 70070,
-    "Name": "Boss - Iron Fang",
+    "Name": "Boss: Iron Fang",
     "ModelID": 33075,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -192967,7 +192967,7 @@
   },
   "70071": {
     "Id": 70071,
-    "Name": "Boss - Phantom Arachnocrab",
+    "Name": "Boss: Phantom Arachnocrab",
     "ModelID": 33082,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -193079,7 +193079,7 @@
   },
   "70072": {
     "Id": 70072,
-    "Name": "Boss - Storm Goblin King",
+    "Name": "Boss: Storm Goblin King",
     "ModelID": 33052,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -193192,7 +193192,7 @@
   },
   "70073": {
     "Id": 70073,
-    "Name": "Boss - Muku King",
+    "Name": "Boss: Muku King",
     "ModelID": 33013,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -193303,7 +193303,7 @@
   },
   "70163": {
     "Id": 70163,
-    "Name": "Elite - Lizardman Mage",
+    "Name": "Elite: Lizardman Mage",
     "ModelID": 33080,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -193415,7 +193415,7 @@
   },
   "70164": {
     "Id": 70164,
-    "Name": "Elite - Muku Scout",
+    "Name": "Elite: Muku Scout",
     "ModelID": 33058,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -194280,7 +194280,7 @@
   },
   "70172": {
     "Id": 70172,
-    "Name": "Elite - Void Bzzar",
+    "Name": "Elite: Void Bzzar",
     "ModelID": 33107,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -194388,7 +194388,7 @@
   },
   "70173": {
     "Id": 70173,
-    "Name": "Boss - Celestial Flier",
+    "Name": "Boss: Celestial Flier",
     "ModelID": 33078,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -194501,7 +194501,7 @@
   },
   "70174": {
     "Id": 70174,
-    "Name": "Boss - Goblin King",
+    "Name": "Boss: Goblin King",
     "ModelID": 33014,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -194613,7 +194613,7 @@
   },
   "70175": {
     "Id": 70175,
-    "Name": "Boss - Lizardman King",
+    "Name": "Boss: Lizardman King",
     "ModelID": 33109,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -227790,7 +227790,7 @@
   },
   "130112": {
     "Id": 130112,
-    "Name": "Elite - Shadow Blade",
+    "Name": "Elite: Shadow Blade",
     "ModelID": 50106,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -257184,7 +257184,7 @@
   },
   "920005": {
     "Id": 920005,
-    "Name": "Elite Shadow Commander",
+    "Name": "Elite: Shadow Commander",
     "ModelID": 50106,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -257295,7 +257295,7 @@
   },
   "920006": {
     "Id": 920006,
-    "Name": "Elite - Muku Vanguard",
+    "Name": "Elite: Muku Vanguard",
     "ModelID": 33065,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -257406,7 +257406,7 @@
   },
   "920007": {
     "Id": 920007,
-    "Name": "Elite - Storm Goblin Warrior",
+    "Name": "Elite: Storm Goblin Warrior",
     "ModelID": 10052,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -257513,7 +257513,7 @@
   },
   "920008": {
     "Id": 920008,
-    "Name": "Elite - Muku Scout",
+    "Name": "Elite: Muku Scout",
     "ModelID": 33058,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -257839,7 +257839,7 @@
   },
   "920011": {
     "Id": 920011,
-    "Name": "Boss - Muku Chief",
+    "Name": "Boss: Muku Chief",
     "ModelID": 33039,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -257949,7 +257949,7 @@
   },
   "920012": {
     "Id": 920012,
-    "Name": "Boss - Tempest Ogre",
+    "Name": "Boss: Tempest Ogre",
     "ModelID": 33011,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -258063,7 +258063,7 @@
   },
   "920013": {
     "Id": 920013,
-    "Name": "Boss - Muku King",
+    "Name": "Boss: Muku King",
     "ModelID": 33013,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -259388,7 +259388,7 @@
   },
   "920107": {
     "Id": 920107,
-    "Name": "Elite - Void Bzzar",
+    "Name": "Elite: Void Bzzar",
     "ModelID": 33107,
     "MonsterType": 1,
     "MonsterSizeType": 0,
@@ -262577,7 +262577,7 @@
   },
   "920208": {
     "Id": 920208,
-    "Name": "Boss - Dogorman",
+    "Name": "Boss: Dogorman",
     "ModelID": 33045,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -262693,7 +262693,7 @@
   },
   "920209": {
     "Id": 920209,
-    "Name": "Boss - Muku Chief",
+    "Name": "Boss: Muku Chief",
     "ModelID": 33039,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -277114,7 +277114,7 @@
   },
   "2004109": {
     "Id": 2004109,
-    "Name": "Boss - Tempest Ogre",
+    "Name": "Boss: Tempest Ogre",
     "ModelID": 33011,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -279026,7 +279026,7 @@
   },
   "2004126": {
     "Id": 2004126,
-    "Name": "Boss - Tempest Ogre",
+    "Name": "Boss: Tempest Ogre",
     "ModelID": 33011,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -279591,7 +279591,7 @@
   },
   "2004131": {
     "Id": 2004131,
-    "Name": "Boss - Tempest Ogre",
+    "Name": "Boss: Tempest Ogre",
     "ModelID": 33011,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -281942,7 +281942,7 @@
   },
   "2004152": {
     "Id": 2004152,
-    "Name": "Boss - Tempest Ogre",
+    "Name": "Boss: Tempest Ogre",
     "ModelID": 33011,
     "MonsterType": 2,
     "MonsterSizeType": 0,
@@ -286251,7 +286251,7 @@
   },
   "3000017": {
     "Id": 3000017,
-    "Name": "Boss - Muku Chief",
+    "Name": "Boss: Muku Chief",
     "ModelID": 70000003,
     "MonsterType": 0,
     "MonsterSizeType": 0,
@@ -286364,7 +286364,7 @@
   },
   "3000018": {
     "Id": 3000018,
-    "Name": "Boss - Dogorman",
+    "Name": "Boss: Dogorman",
     "ModelID": 70000005,
     "MonsterType": 0,
     "MonsterSizeType": 0,
@@ -291432,7 +291432,7 @@
   },
   "3000059": {
     "Id": 3000059,
-    "Name": "Mutated Foxen - Resonance",
+    "Name": "Mutant Foxen - Resonance",
     "ModelID": 33055,
     "MonsterType": 0,
     "MonsterSizeType": 0,
@@ -291948,7 +291948,7 @@
   },
   "3100000": {
     "Id": 3100000,
-    "Name": "Companion-Bow-Legendary Boarrier",
+    "Name": "Companion-Bow-Legendary Boar",
     "ModelID": 33036,
     "MonsterType": 0,
     "MonsterSizeType": 0,

@@ -19576,7 +19576,7 @@
     "EffectIDs": [
       173001
     ],
-    "SkillType": 1,
+    "SkillType": 5,
     "SlotPassiveType": 0,
     "FaceTarget": true,
     "IsPreview": true,
@@ -19613,8 +19613,8 @@
     "ExcludeParts": [],
     "SkillAreaArray": [],
     "SwitchSkillInfo": [],
-    "EnergyChargeTime": 0,
-    "MaxEnergyChargeNum": 0,
+    "EnergyChargeTime": 45000,
+    "MaxEnergyChargeNum": 1,
     "ContinuesSkillDelayTime": 0.0,
     "UseAddResValue": 0,
     "AtkSpeedSwitch": true,
@@ -37467,7 +37467,7 @@
     "Id": 2350,
     "NameDesign": "传奇野猪-嚎叫",
     "Desc": "场地标记01",
-    "Name": "Legendary Boarrier - Howl",
+    "Name": "Legendary Boar - Howl",
     "SkillLevelGroup": 0,
     "SkillPreloadGroup": [],
     "EffectIDs": [
