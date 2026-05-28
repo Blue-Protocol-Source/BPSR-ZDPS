@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2tpY2tfb3V0X3dhcmVob3VzZV9yZXF1ZXN0LnByb3RvEgZ6cHJv",
-            "dG8iLwoXS2lja091dFdhcmVob3VzZVJlcXVlc3QSFAoMa2lja19jaGFyX2lk",
-            "GAEgASgDYgZwcm90bzM="));
+            "dG8iOQoXS2lja091dFdhcmVob3VzZVJlcXVlc3QSHgoKa2lja0NoYXJJZBgB",
+            "IAEoA1IKa2lja0NoYXJJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new KickOutWarehouseRequest(this);
     }
 
-    /// <summary>Field number for the "kick_char_id" field.</summary>
+    /// <summary>Field number for the "kickCharId" field.</summary>
     public const int KickCharIdFieldNumber = 1;
     private long kickCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

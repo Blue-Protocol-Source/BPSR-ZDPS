@@ -27,15 +27,17 @@ namespace Zproto {
             "ChpzdHJ1X2dhbWVfdGFibGVfZGF0YS5wcm90bxIGenByb3RvGh1lbnVtX2Vf",
             "Z2FtZV90YWJsZV9zdGF0ZS5wcm90bxoZc3RydV9nYW1lX3RhYmxlX2tleS5w",
             "cm90bxofc3RydV9nYW1lX3RhYmxlX3NlYXRfaW5mby5wcm90bxojc3RydV9n",
-            "YW1lX3RhYmxlX3ZvdGVfZW5kX2luZm8ucHJvdG8i3AIKDUdhbWVUYWJsZURh",
-            "dGESLAoOZ2FtZV90YWJsZV9rZXkYASABKAsyFC56cHJvdG8uR2FtZVRhYmxl",
-            "S2V5EhgKEGN1cl9nYW1lX3BsYXlfaWQYAiABKAUSMQoQZ2FtZV90YWJsZV9z",
-            "dGF0ZRgDIAEoDjIXLnpwcm90by5FR2FtZVRhYmxlU3RhdGUSIQoZZ2FtZV90",
-            "YWJsZV9zdGF0ZV9lbmRfdGltZRgEIAEoAxIvCgVzZWF0cxgFIAMoCzIgLnpw",
-            "cm90by5HYW1lVGFibGVEYXRhLlNlYXRzRW50cnkSMwoNdm90ZV9lbmRfaW5m",
-            "bxgGIAEoCzIcLnpwcm90by5HYW1lVGFibGVWb3RlRW5kSW5mbxpHCgpTZWF0",
-            "c0VudHJ5EgsKA2tleRgBIAEoBRIoCgV2YWx1ZRgCIAEoCzIZLnpwcm90by5H",
-            "YW1lVGFibGVTZWF0SW5mbzoCOAFiBnByb3RvMw=="));
+            "YW1lX3RhYmxlX3ZvdGVfZW5kX2luZm8ucHJvdG8ipwMKDUdhbWVUYWJsZURh",
+            "dGESOAoMZ2FtZVRhYmxlS2V5GAEgASgLMhQuenByb3RvLkdhbWVUYWJsZUtl",
+            "eVIMZ2FtZVRhYmxlS2V5EiQKDWN1ckdhbWVQbGF5SWQYAiABKAVSDWN1ckdh",
+            "bWVQbGF5SWQSPwoOZ2FtZVRhYmxlU3RhdGUYAyABKA4yFy56cHJvdG8uRUdh",
+            "bWVUYWJsZVN0YXRlUg5nYW1lVGFibGVTdGF0ZRI0ChVnYW1lVGFibGVTdGF0",
+            "ZUVuZFRpbWUYBCABKANSFWdhbWVUYWJsZVN0YXRlRW5kVGltZRI2CgVzZWF0",
+            "cxgFIAMoCzIgLnpwcm90by5HYW1lVGFibGVEYXRhLlNlYXRzRW50cnlSBXNl",
+            "YXRzEj4KC3ZvdGVFbmRJbmZvGAYgASgLMhwuenByb3RvLkdhbWVUYWJsZVZv",
+            "dGVFbmRJbmZvUgt2b3RlRW5kSW5mbxpHCgpTZWF0c0VudHJ5EgsKA2tleRgB",
+            "IAEoBRIoCgV2YWx1ZRgCIAEoCzIZLnpwcm90by5HYW1lVGFibGVTZWF0SW5m",
+            "bzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEGameTableStateReflection.Descriptor, global::Zproto.StruGameTableKeyReflection.Descriptor, global::Zproto.StruGameTableSeatInfoReflection.Descriptor, global::Zproto.StruGameTableVoteEndInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +98,7 @@ namespace Zproto {
       return new GameTableData(this);
     }
 
-    /// <summary>Field number for the "game_table_key" field.</summary>
+    /// <summary>Field number for the "gameTableKey" field.</summary>
     public const int GameTableKeyFieldNumber = 1;
     private global::Zproto.GameTableKey gameTableKey_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_game_play_id" field.</summary>
+    /// <summary>Field number for the "curGamePlayId" field.</summary>
     public const int CurGamePlayIdFieldNumber = 2;
     private int curGamePlayId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_table_state" field.</summary>
+    /// <summary>Field number for the "gameTableState" field.</summary>
     public const int GameTableStateFieldNumber = 3;
     private global::Zproto.EGameTableState gameTableState_ = global::Zproto.EGameTableState.GameTableStateNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -132,7 +134,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_table_state_end_time" field.</summary>
+    /// <summary>Field number for the "gameTableStateEndTime" field.</summary>
     public const int GameTableStateEndTimeFieldNumber = 4;
     private long gameTableStateEndTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,7 +157,7 @@ namespace Zproto {
       get { return seats_; }
     }
 
-    /// <summary>Field number for the "vote_end_info" field.</summary>
+    /// <summary>Field number for the "voteEndInfo" field.</summary>
     public const int VoteEndInfoFieldNumber = 6;
     private global::Zproto.GameTableVoteEndInfo voteEndInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

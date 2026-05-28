@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CixzdHJ1X2hvbWVsYW5kX2luc2VydF9zdWJfbW9kZWxfcmVxdWVzdC5wcm90",
             "bxIGenByb3RvGiNzdHJ1X3N0cnVjdHVyZV9zdWJfbW9kZWxfaW5mby5wcm90",
-            "byKAAQodSG9tZWxhbmRJbnNlcnRTdWJNb2RlbFJlcXVlc3QSFgoOc3RydWN0",
-            "dXJlX3V1aWQYASABKAMSNQoOc3ViX21vZGVsX2luZm8YAiABKAsyHS56cHJv",
-            "dG8uU3RydWN0dXJlU3ViTW9kZWxJbmZvEhAKCGlzX291dGVyGAMgASgIYgZw",
-            "cm90bzM="));
+            "byKiAQodSG9tZWxhbmRJbnNlcnRTdWJNb2RlbFJlcXVlc3QSJAoNc3RydWN0",
+            "dXJlVXVpZBgBIAEoA1INc3RydWN0dXJlVXVpZBJBCgxzdWJNb2RlbEluZm8Y",
+            "AiABKAsyHS56cHJvdG8uU3RydWN0dXJlU3ViTW9kZWxJbmZvUgxzdWJNb2Rl",
+            "bEluZm8SGAoHaXNPdXRlchgDIAEoCFIHaXNPdXRlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStructureSubModelInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new HomelandInsertSubModelRequest(this);
     }
 
-    /// <summary>Field number for the "structure_uuid" field.</summary>
+    /// <summary>Field number for the "structureUuid" field.</summary>
     public const int StructureUuidFieldNumber = 1;
     private long structureUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sub_model_info" field.</summary>
+    /// <summary>Field number for the "subModelInfo" field.</summary>
     public const int SubModelInfoFieldNumber = 2;
     private global::Zproto.StructureSubModelInfo subModelInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 3;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

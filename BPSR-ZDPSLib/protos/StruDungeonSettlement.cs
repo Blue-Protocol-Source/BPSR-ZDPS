@@ -27,16 +27,18 @@ namespace Zproto {
             "Ch1zdHJ1X2R1bmdlb25fc2V0dGxlbWVudC5wcm90bxIGenByb3RvGhhzdHJ1",
             "X2R1bmdlb25fYXdhcmQucHJvdG8aKHN0cnVfZHVuZ2Vvbl93b3JsZF9ib3Nz",
             "X3NldHRsZW1lbnQucHJvdG8aHnN0cnVfc2V0dGxlbWVudF9wb3NpdGlvbi5w",
-            "cm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIpUDChFEdW5nZW9uU2V0dGxl",
-            "bWVudBIRCglwYXNzX3RpbWUYASABKAUSMwoFYXdhcmQYAiADKAsyJC56cHJv",
-            "dG8uRHVuZ2VvblNldHRsZW1lbnQuQXdhcmRFbnRyeRJECg5zZXR0bGVtZW50",
-            "X3BvcxgDIAMoCzIsLnpwcm90by5EdW5nZW9uU2V0dGxlbWVudC5TZXR0bGVt",
-            "ZW50UG9zRW50cnkSQQoVd29ybGRfYm9zc19zZXR0bGVtZW50GAQgASgLMiIu",
-            "enByb3RvLkR1bmdlb25Xb3JsZEJvc3NTZXR0bGVtZW50EhkKEW1hc3Rlcl9t",
-            "b2RlX3Njb3JlGAUgASgFGkIKCkF3YXJkRW50cnkSCwoDa2V5GAEgASgDEiMK",
-            "BXZhbHVlGAIgASgLMhQuenByb3RvLkR1bmdlb25Bd2FyZDoCOAEaUAoSU2V0",
-            "dGxlbWVudFBvc0VudHJ5EgsKA2tleRgBIAEoDRIpCgV2YWx1ZRgCIAEoCzIa",
-            "Lnpwcm90by5TZXR0bGVtZW50UG9zaXRpb246AjgBYgZwcm90bzM="));
+            "cm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvItUDChFEdW5nZW9uU2V0dGxl",
+            "bWVudBIaCghwYXNzVGltZRgBIAEoBVIIcGFzc1RpbWUSOgoFYXdhcmQYAiAD",
+            "KAsyJC56cHJvdG8uRHVuZ2VvblNldHRsZW1lbnQuQXdhcmRFbnRyeVIFYXdh",
+            "cmQSUgoNc2V0dGxlbWVudFBvcxgDIAMoCzIsLnpwcm90by5EdW5nZW9uU2V0",
+            "dGxlbWVudC5TZXR0bGVtZW50UG9zRW50cnlSDXNldHRsZW1lbnRQb3MSVAoT",
+            "d29ybGRCb3NzU2V0dGxlbWVudBgEIAEoCzIiLnpwcm90by5EdW5nZW9uV29y",
+            "bGRCb3NzU2V0dGxlbWVudFITd29ybGRCb3NzU2V0dGxlbWVudBIoCg9tYXN0",
+            "ZXJNb2RlU2NvcmUYBSABKAVSD21hc3Rlck1vZGVTY29yZRpCCgpBd2FyZEVu",
+            "dHJ5EgsKA2tleRgBIAEoAxIjCgV2YWx1ZRgCIAEoCzIULnpwcm90by5EdW5n",
+            "ZW9uQXdhcmQ6AjgBGlAKElNldHRsZW1lbnRQb3NFbnRyeRILCgNrZXkYASAB",
+            "KA0SKQoFdmFsdWUYAiABKAsyGi56cHJvdG8uU2V0dGxlbWVudFBvc2l0aW9u",
+            "OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonAwardReflection.Descriptor, global::Zproto.StruDungeonWorldBossSettlementReflection.Descriptor, global::Zproto.StruSettlementPositionReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +98,7 @@ namespace Zproto {
       return new DungeonSettlement(this);
     }
 
-    /// <summary>Field number for the "pass_time" field.</summary>
+    /// <summary>Field number for the "passTime" field.</summary>
     public const int PassTimeFieldNumber = 1;
     private int passTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -119,7 +121,7 @@ namespace Zproto {
       get { return award_; }
     }
 
-    /// <summary>Field number for the "settlement_pos" field.</summary>
+    /// <summary>Field number for the "settlementPos" field.</summary>
     public const int SettlementPosFieldNumber = 3;
     private static readonly pbc::MapField<uint, global::Zproto.SettlementPosition>.Codec _map_settlementPos_codec
         = new pbc::MapField<uint, global::Zproto.SettlementPosition>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SettlementPosition.Parser), 26);
@@ -130,7 +132,7 @@ namespace Zproto {
       get { return settlementPos_; }
     }
 
-    /// <summary>Field number for the "world_boss_settlement" field.</summary>
+    /// <summary>Field number for the "worldBossSettlement" field.</summary>
     public const int WorldBossSettlementFieldNumber = 4;
     private global::Zproto.DungeonWorldBossSettlement worldBossSettlement_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -142,7 +144,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "master_mode_score" field.</summary>
+    /// <summary>Field number for the "masterModeScore" field.</summary>
     public const int MasterModeScoreFieldNumber = 5;
     private int masterModeScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

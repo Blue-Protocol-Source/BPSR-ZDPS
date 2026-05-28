@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X2NvbW11bml0eV9hcHBseV9pbmZvLnByb3RvEgZ6cHJvdG8aJHN0",
-            "cnVfY29tbXVuaXR5X2NoYXJfYmFzaWNfZGF0YS5wcm90byKTAQoSQ29tbXVu",
-            "aXR5QXBwbHlJbmZvEgwKBHRpbWUYASABKAMSDwoHY2hhcl9pZBgCIAEoAxIP",
-            "Cgdob21lX2lkGAMgASgDEjcKD2NoYXJfYmFzaWNfZGF0YRgEIAEoCzIeLnpw",
-            "cm90by5Db21tdW5pdHlDaGFyQmFzaWNEYXRhEhQKDGNvbW11bml0eV9pZBgF",
-            "IAEoA2IGcHJvdG8z"));
+            "cnVfY29tbXVuaXR5X2NoYXJfYmFzaWNfZGF0YS5wcm90byLAAQoSQ29tbXVu",
+            "aXR5QXBwbHlJbmZvEhIKBHRpbWUYASABKANSBHRpbWUSFgoGY2hhcklkGAIg",
+            "ASgDUgZjaGFySWQSFgoGaG9tZUlkGAMgASgDUgZob21lSWQSRAoNY2hhckJh",
+            "c2ljRGF0YRgEIAEoCzIeLnpwcm90by5Db21tdW5pdHlDaGFyQmFzaWNEYXRh",
+            "Ug1jaGFyQmFzaWNEYXRhEiAKC2NvbW11bml0eUlkGAUgASgDUgtjb21tdW5p",
+            "dHlJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityCharBasicDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_id" field.</summary>
+    /// <summary>Field number for the "homeId" field.</summary>
     public const int HomeIdFieldNumber = 3;
     private long homeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_basic_data" field.</summary>
+    /// <summary>Field number for the "charBasicData" field.</summary>
     public const int CharBasicDataFieldNumber = 4;
     private global::Zproto.CommunityCharBasicData charBasicData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "community_id" field.</summary>
+    /// <summary>Field number for the "communityId" field.</summary>
     public const int CommunityIdFieldNumber = 5;
     private long communityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

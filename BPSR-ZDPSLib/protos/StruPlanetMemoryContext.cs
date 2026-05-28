@@ -24,8 +24,9 @@ namespace Zproto {
     static StruPlanetMemoryContextReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3BsYW5ldF9tZW1vcnlfY29udGV4dC5wcm90bxIGenByb3RvIiYK",
-            "E1BsYW5ldE1lbW9yeUNvbnRleHQSDwoHcm9vbV9pZBgBIAEoBWIGcHJvdG8z"));
+            "CiBzdHJ1X3BsYW5ldF9tZW1vcnlfY29udGV4dC5wcm90bxIGenByb3RvIi0K",
+            "E1BsYW5ldE1lbW9yeUNvbnRleHQSFgoGcm9vbUlkGAEgASgFUgZyb29tSWRi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new PlanetMemoryContext(this);
     }
 
-    /// <summary>Field number for the "room_id" field.</summary>
+    /// <summary>Field number for the "roomId" field.</summary>
     public const int RoomIdFieldNumber = 1;
     private int roomId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

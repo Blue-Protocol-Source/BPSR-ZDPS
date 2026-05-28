@@ -26,13 +26,15 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X2R1bmdlb25faGVyb19rZXlfaW5mby5wcm90bxIGenByb3RvGh1z",
             "dHJ1X2hlcm9fa2V5X2l0ZW1faW5mby5wcm90bxoPc3RydV9pdGVtLnByb3Rv",
-            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8imQIKEkR1bmdlb25IZXJvS2V5SW5m",
-            "bxIPCgdjaGFyX2lkGAEgASgDEiMKDWhlcm9fa2V5X2l0ZW0YAiADKAsyDC56",
-            "cHJvdG8uSXRlbRI5CghrZXlfaW5mbxgDIAMoCzInLnpwcm90by5EdW5nZW9u",
-            "SGVyb0tleUluZm8uS2V5SW5mb0VudHJ5Eh4KCHVzZV9pdGVtGAQgASgLMgwu",
-            "enByb3RvLkl0ZW0SKQoTaGVyb19rZXlfYXdhcmRfaXRlbRgFIAMoCzIMLnpw",
-            "cm90by5JdGVtGkcKDEtleUluZm9FbnRyeRILCgNrZXkYASABKA0SJgoFdmFs",
-            "dWUYAiABKAsyFy56cHJvdG8uSGVyb0tleUl0ZW1JbmZvOgI4AWIGcHJvdG8z"));
+            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iygIKEkR1bmdlb25IZXJvS2V5SW5m",
+            "bxIWCgZjaGFySWQYASABKANSBmNoYXJJZBIuCgtoZXJvS2V5SXRlbRgCIAMo",
+            "CzIMLnpwcm90by5JdGVtUgtoZXJvS2V5SXRlbRJBCgdrZXlJbmZvGAMgAygL",
+            "MicuenByb3RvLkR1bmdlb25IZXJvS2V5SW5mby5LZXlJbmZvRW50cnlSB2tl",
+            "eUluZm8SJgoHdXNlSXRlbRgEIAEoCzIMLnpwcm90by5JdGVtUgd1c2VJdGVt",
+            "EjgKEGhlcm9LZXlBd2FyZEl0ZW0YBSADKAsyDC56cHJvdG8uSXRlbVIQaGVy",
+            "b0tleUF3YXJkSXRlbRpHCgxLZXlJbmZvRW50cnkSCwoDa2V5GAEgASgNEiYK",
+            "BXZhbHVlGAIgASgLMhcuenByb3RvLkhlcm9LZXlJdGVtSW5mbzoCOAFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHeroKeyItemInfoReflection.Descriptor, global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +94,7 @@ namespace Zproto {
       return new DungeonHeroKeyInfo(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hero_key_item" field.</summary>
+    /// <summary>Field number for the "heroKeyItem" field.</summary>
     public const int HeroKeyItemFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.Item> _repeated_heroKeyItem_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.Item.Parser);
@@ -115,7 +117,7 @@ namespace Zproto {
       get { return heroKeyItem_; }
     }
 
-    /// <summary>Field number for the "key_info" field.</summary>
+    /// <summary>Field number for the "keyInfo" field.</summary>
     public const int KeyInfoFieldNumber = 3;
     private static readonly pbc::MapField<uint, global::Zproto.HeroKeyItemInfo>.Codec _map_keyInfo_codec
         = new pbc::MapField<uint, global::Zproto.HeroKeyItemInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HeroKeyItemInfo.Parser), 26);
@@ -126,7 +128,7 @@ namespace Zproto {
       get { return keyInfo_; }
     }
 
-    /// <summary>Field number for the "use_item" field.</summary>
+    /// <summary>Field number for the "useItem" field.</summary>
     public const int UseItemFieldNumber = 4;
     private global::Zproto.Item useItem_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +140,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hero_key_award_item" field.</summary>
+    /// <summary>Field number for the "heroKeyAwardItem" field.</summary>
     public const int HeroKeyAwardItemFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.Item> _repeated_heroKeyAwardItem_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.Item.Parser);

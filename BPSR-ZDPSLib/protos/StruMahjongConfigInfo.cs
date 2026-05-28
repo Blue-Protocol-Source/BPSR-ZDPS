@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X21haGpvbmdfY29uZmlnX2luZm8ucHJvdG8SBnpwcm90bxoeZW51",
-            "bV9tYWhqb25nX2NvbmZpZ190eXBlLnByb3RvIlIKEU1haGpvbmdDb25maWdJ",
-            "bmZvEi4KC2NvbmZpZ190eXBlGAEgASgOMhkuenByb3RvLk1haGpvbmdDb25m",
-            "aWdUeXBlEg0KBXZhbHVlGAIgASgJYgZwcm90bzM="));
+            "bV9tYWhqb25nX2NvbmZpZ190eXBlLnByb3RvImQKEU1haGpvbmdDb25maWdJ",
+            "bmZvEjkKCmNvbmZpZ1R5cGUYASABKA4yGS56cHJvdG8uTWFoam9uZ0NvbmZp",
+            "Z1R5cGVSCmNvbmZpZ1R5cGUSFAoFdmFsdWUYAiABKAlSBXZhbHVlYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumMahjongConfigTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new MahjongConfigInfo(this);
     }
 
-    /// <summary>Field number for the "config_type" field.</summary>
+    /// <summary>Field number for the "configType" field.</summary>
     public const int ConfigTypeFieldNumber = 1;
     private global::Zproto.MahjongConfigType configType_ = global::Zproto.MahjongConfigType.MahjongConfigNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

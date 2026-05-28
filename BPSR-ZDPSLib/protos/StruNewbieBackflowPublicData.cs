@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiZzdHJ1X25ld2JpZV9iYWNrZmxvd19wdWJsaWNfZGF0YS5wcm90bxIGenBy",
             "b3RvGh9zdHJ1X2JhY2tmbG93X29ubGluZV9kYXRhLnByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8iqAEKGE5ld2JpZUJhY2tmbG93UHVibGljRGF0YRIc",
-            "ChRsZXZlbF9hd2FyZF9yZWNlaXZlZBgBIAEoCBIbChNlbGVjdGl2ZV9wcmVm",
-            "ZXJlbmNlGAIgAygFEi8KC29ubGluZV9kYXRhGAMgAygLMhouenByb3RvLkJh",
-            "Y2tmbG93T25saW5lRGF0YRIgChhib3JkZXJfbG9nb3V0X3RpbWVfc3RhbXAY",
-            "BCABKANiBnByb3RvMw=="));
+            "cnR5X21hc2sucHJvdG8i7AEKGE5ld2JpZUJhY2tmbG93UHVibGljRGF0YRIu",
+            "ChJsZXZlbEF3YXJkUmVjZWl2ZWQYASABKAhSEmxldmVsQXdhcmRSZWNlaXZl",
+            "ZBIuChJlbGVjdGl2ZVByZWZlcmVuY2UYAiADKAVSEmVsZWN0aXZlUHJlZmVy",
+            "ZW5jZRI6CgpvbmxpbmVEYXRhGAMgAygLMhouenByb3RvLkJhY2tmbG93T25s",
+            "aW5lRGF0YVIKb25saW5lRGF0YRI0ChVib3JkZXJMb2dvdXRUaW1lU3RhbXAY",
+            "BCABKANSFWJvcmRlckxvZ291dFRpbWVTdGFtcGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBackflowOnlineDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new NewbieBackflowPublicData(this);
     }
 
-    /// <summary>Field number for the "level_award_received" field.</summary>
+    /// <summary>Field number for the "levelAwardReceived" field.</summary>
     public const int LevelAwardReceivedFieldNumber = 1;
     private bool levelAwardReceived_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "elective_preference" field.</summary>
+    /// <summary>Field number for the "electivePreference" field.</summary>
     public const int ElectivePreferenceFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_electivePreference_codec
         = pb::FieldCodec.ForInt32(18);
@@ -112,7 +113,7 @@ namespace Zproto {
       get { return electivePreference_; }
     }
 
-    /// <summary>Field number for the "online_data" field.</summary>
+    /// <summary>Field number for the "onlineData" field.</summary>
     public const int OnlineDataFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.BackflowOnlineData> _repeated_onlineData_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.BackflowOnlineData.Parser);
@@ -123,7 +124,7 @@ namespace Zproto {
       get { return onlineData_; }
     }
 
-    /// <summary>Field number for the "border_logout_time_stamp" field.</summary>
+    /// <summary>Field number for the "borderLogoutTimeStamp" field.</summary>
     public const int BorderLogoutTimeStampFieldNumber = 4;
     private long borderLogoutTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjBzdHJ1X2NvbW11bml0eV9idWlsZF9saWZlX3Byb2Zlc3Npb25fcmVwbHku",
-            "cHJvdG8SBnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iXQohQ29t",
-            "bXVuaXR5QnVpbGRMaWZlUHJvZmVzc2lvblJlcGx5EiQKCGVycl9jb2RlGAEg",
-            "ASgOMhIuenByb3RvLkVFcnJvckNvZGUSEgoKYnVpbGRfdXVpZBgCIAEoA2IG",
-            "cHJvdG8z"));
+            "cHJvdG8SBnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8ibwohQ29t",
+            "bXVuaXR5QnVpbGRMaWZlUHJvZmVzc2lvblJlcGx5EiwKB2VyckNvZGUYASAB",
+            "KA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZRIcCglidWlsZFV1aWQY",
+            "AiABKANSCWJ1aWxkVXVpZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CommunityBuildLifeProfessionReply(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "build_uuid" field.</summary>
+    /// <summary>Field number for the "buildUuid" field.</summary>
     public const int BuildUuidFieldNumber = 2;
     private long buildUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

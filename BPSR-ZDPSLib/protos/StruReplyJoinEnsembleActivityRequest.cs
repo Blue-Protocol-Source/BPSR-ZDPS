@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci9zdHJ1X3JlcGx5X2pvaW5fZW5zZW1ibGVfYWN0aXZpdHlfcmVxdWVzdC5w",
-            "cm90bxIGenByb3RvIjQKIFJlcGx5Sm9pbkVuc2VtYmxlQWN0aXZpdHlSZXF1",
-            "ZXN0EhAKCGlzX2FncmVlGAEgASgIYgZwcm90bzM="));
+            "cm90bxIGenByb3RvIjwKIFJlcGx5Sm9pbkVuc2VtYmxlQWN0aXZpdHlSZXF1",
+            "ZXN0EhgKB2lzQWdyZWUYASABKAhSB2lzQWdyZWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ReplyJoinEnsembleActivityRequest(this);
     }
 
-    /// <summary>Field number for the "is_agree" field.</summary>
+    /// <summary>Field number for the "isAgree" field.</summary>
     public const int IsAgreeFieldNumber = 1;
     private bool isAgree_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

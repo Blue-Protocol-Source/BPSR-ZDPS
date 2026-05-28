@@ -335,7 +335,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     return true;
                 }
-                if (LoadedEquipList[i].EquipId != equipInfo[i].EquipId)
+                if (LoadedEquipList[i].EquipID != equipInfo[i].EquipID)
                 {
                     return true;
                 }
@@ -364,16 +364,16 @@ namespace BPSR_ZDPS.Windows
                     continue;
                 }
 
-                if (HelperMethods.DataTables.Equips.Data.TryGetValue(equip.EquipId.ToString(), out var equipData))
+                if (HelperMethods.DataTables.Equips.Data.TryGetValue(equip.EquipID.ToString(), out var equipData))
                 {
-                    if (HelperMethods.DataTables.Items.Data.TryGetValue(equip.EquipId.ToString(), out var itemData))
+                    if (HelperMethods.DataTables.Items.Data.TryGetValue(equip.EquipID.ToString(), out var itemData))
                     {
                         
                         ResolveAttrsForEquip(equipData, Attributes[gearSlot.Value]);
                         Attributes[gearSlot.Value].Equip = equipData;
                         Attributes[gearSlot.Value].Item = itemData;
 
-                        var breakthroughs = HelperMethods.DataTables.EquipBreakThroughs.Data.Where(x => x.Value.EquipId == equip.EquipId);
+                        var breakthroughs = HelperMethods.DataTables.EquipBreakThroughs.Data.Where(x => x.Value.EquipId == equip.EquipID);
                         if (breakthroughs != null)
                         {
                             foreach (var breakthrough in breakthroughs)

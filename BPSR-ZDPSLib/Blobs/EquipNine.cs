@@ -26,7 +26,7 @@ public class EquipNine : BlobType
             case Zproto.EquipNine.SlotFieldNumber:
                 Slot = blob.ReadInt();
                 return true;
-            case Zproto.EquipNine.EquipIdFieldNumber:
+            case Zproto.EquipNine.EquipIDFieldNumber:
                 EquipId = blob.ReadInt();
                 return true;
             default:

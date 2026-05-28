@@ -28,20 +28,22 @@ namespace Zproto {
             "d2JpZV9iYWNrZmxvd19lbGVjdGl2ZS5wcm90bxomc3RydV9uZXdiaWVfYmFj",
             "a2Zsb3dfdGFyZ2V0X2RhdGEucHJvdG8aKXN0cnVfbmV3YmllX2JhY2tmbG93",
             "X3RhcmdldF9pZF9saXN0LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i",
-            "0gQKDU5ld2JpZUFjdERhdGESEgoKbG9naW5fZGF5cxgBIAEoBRIaChJyZWZy",
-            "ZXNoX3RpbWVfc3RhbXAYAiABKAMSGQoRcmVmcmVzaF9zZWFzb25faWQYAyAB",
-            "KAUSFgoOYXdhcmRfcmVjZWl2ZWQYBCABKAgSGQoRZ3JhZHVhdGVfcmVjZWl2",
-            "ZWQYBSABKAgSOAoKdGFyZ2V0X21hcBgGIAMoCzIkLnpwcm90by5OZXdiaWVB",
-            "Y3REYXRhLlRhcmdldE1hcEVudHJ5Ej4KDWVsZWN0aXZlX2RhdGEYByADKAsy",
-            "Jy56cHJvdG8uTmV3YmllQWN0RGF0YS5FbGVjdGl2ZURhdGFFbnRyeRJEChBy",
-            "ZXF1aXJlZF90YXJnZXRzGAggAygLMiouenByb3RvLk5ld2JpZUFjdERhdGEu",
-            "UmVxdWlyZWRUYXJnZXRzRW50cnkaUgoOVGFyZ2V0TWFwRW50cnkSCwoDa2V5",
-            "GAEgASgNEi8KBXZhbHVlGAIgASgLMiAuenByb3RvLk5ld2JpZUJhY2tmbG93",
-            "VGFyZ2V0RGF0YToCOAEaUwoRRWxlY3RpdmVEYXRhRW50cnkSCwoDa2V5GAEg",
-            "ASgFEi0KBXZhbHVlGAIgASgLMh4uenByb3RvLk5ld2JpZUJhY2tmbG93RWxl",
-            "Y3RpdmU6AjgBGloKFFJlcXVpcmVkVGFyZ2V0c0VudHJ5EgsKA2tleRgBIAEo",
-            "BRIxCgV2YWx1ZRgCIAEoCzIiLnpwcm90by5OZXdiaWVCYWNrZmxvd1Rhcmdl",
-            "dElkTGlzdDoCOAFiBnByb3RvMw=="));
+            "wQUKDU5ld2JpZUFjdERhdGESHAoJbG9naW5EYXlzGAEgASgFUglsb2dpbkRh",
+            "eXMSKgoQcmVmcmVzaFRpbWVTdGFtcBgCIAEoA1IQcmVmcmVzaFRpbWVTdGFt",
+            "cBIoCg9yZWZyZXNoU2Vhc29uSWQYAyABKAVSD3JlZnJlc2hTZWFzb25JZBIk",
+            "Cg1hd2FyZFJlY2VpdmVkGAQgASgIUg1hd2FyZFJlY2VpdmVkEioKEGdyYWR1",
+            "YXRlUmVjZWl2ZWQYBSABKAhSEGdyYWR1YXRlUmVjZWl2ZWQSQgoJdGFyZ2V0",
+            "TWFwGAYgAygLMiQuenByb3RvLk5ld2JpZUFjdERhdGEuVGFyZ2V0TWFwRW50",
+            "cnlSCXRhcmdldE1hcBJLCgxlbGVjdGl2ZURhdGEYByADKAsyJy56cHJvdG8u",
+            "TmV3YmllQWN0RGF0YS5FbGVjdGl2ZURhdGFFbnRyeVIMZWxlY3RpdmVEYXRh",
+            "ElQKD3JlcXVpcmVkVGFyZ2V0cxgIIAMoCzIqLnpwcm90by5OZXdiaWVBY3RE",
+            "YXRhLlJlcXVpcmVkVGFyZ2V0c0VudHJ5Ug9yZXF1aXJlZFRhcmdldHMaUgoO",
+            "VGFyZ2V0TWFwRW50cnkSCwoDa2V5GAEgASgNEi8KBXZhbHVlGAIgASgLMiAu",
+            "enByb3RvLk5ld2JpZUJhY2tmbG93VGFyZ2V0RGF0YToCOAEaUwoRRWxlY3Rp",
+            "dmVEYXRhRW50cnkSCwoDa2V5GAEgASgFEi0KBXZhbHVlGAIgASgLMh4uenBy",
+            "b3RvLk5ld2JpZUJhY2tmbG93RWxlY3RpdmU6AjgBGloKFFJlcXVpcmVkVGFy",
+            "Z2V0c0VudHJ5EgsKA2tleRgBIAEoBRIxCgV2YWx1ZRgCIAEoCzIiLnpwcm90",
+            "by5OZXdiaWVCYWNrZmxvd1RhcmdldElkTGlzdDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNewbieBackflowElectiveReflection.Descriptor, global::Zproto.StruNewbieBackflowTargetDataReflection.Descriptor, global::Zproto.StruNewbieBackflowTargetIdListReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -104,7 +106,7 @@ namespace Zproto {
       return new NewbieActData(this);
     }
 
-    /// <summary>Field number for the "login_days" field.</summary>
+    /// <summary>Field number for the "loginDays" field.</summary>
     public const int LoginDaysFieldNumber = 1;
     private int loginDays_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refresh_time_stamp" field.</summary>
+    /// <summary>Field number for the "refreshTimeStamp" field.</summary>
     public const int RefreshTimeStampFieldNumber = 2;
     private long refreshTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refresh_season_id" field.</summary>
+    /// <summary>Field number for the "refreshSeasonId" field.</summary>
     public const int RefreshSeasonIdFieldNumber = 3;
     private int refreshSeasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_received" field.</summary>
+    /// <summary>Field number for the "awardReceived" field.</summary>
     public const int AwardReceivedFieldNumber = 4;
     private bool awardReceived_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +154,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "graduate_received" field.</summary>
+    /// <summary>Field number for the "graduateReceived" field.</summary>
     public const int GraduateReceivedFieldNumber = 5;
     private bool graduateReceived_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -164,7 +166,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_map" field.</summary>
+    /// <summary>Field number for the "targetMap" field.</summary>
     public const int TargetMapFieldNumber = 6;
     private static readonly pbc::MapField<uint, global::Zproto.NewbieBackflowTargetData>.Codec _map_targetMap_codec
         = new pbc::MapField<uint, global::Zproto.NewbieBackflowTargetData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.NewbieBackflowTargetData.Parser), 50);
@@ -175,7 +177,7 @@ namespace Zproto {
       get { return targetMap_; }
     }
 
-    /// <summary>Field number for the "elective_data" field.</summary>
+    /// <summary>Field number for the "electiveData" field.</summary>
     public const int ElectiveDataFieldNumber = 7;
     private static readonly pbc::MapField<int, global::Zproto.NewbieBackflowElective>.Codec _map_electiveData_codec
         = new pbc::MapField<int, global::Zproto.NewbieBackflowElective>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.NewbieBackflowElective.Parser), 58);
@@ -186,7 +188,7 @@ namespace Zproto {
       get { return electiveData_; }
     }
 
-    /// <summary>Field number for the "required_targets" field.</summary>
+    /// <summary>Field number for the "requiredTargets" field.</summary>
     public const int RequiredTargetsFieldNumber = 8;
     private static readonly pbc::MapField<int, global::Zproto.NewbieBackflowTargetIdList>.Codec _map_requiredTargets_codec
         = new pbc::MapField<int, global::Zproto.NewbieBackflowTargetIdList>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.NewbieBackflowTargetIdList.Parser), 66);

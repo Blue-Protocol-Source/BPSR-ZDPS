@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2xlYXJuX3JvZ3VlX2VudHJ5X3BhcmFtLnByb3RvEgZ6cHJvdG8i",
-            "SgoUTGVhcm5Sb2d1ZUVudHJ5UGFyYW0SEAoIb2JqX3V1aWQYASABKAMSDQoF",
-            "aW5kZXgYAiABKAUSEQoJaW5fbG9ja2VkGAMgASgIYgZwcm90bzM="));
+            "YgoUTGVhcm5Sb2d1ZUVudHJ5UGFyYW0SGAoHb2JqVXVpZBgBIAEoA1IHb2Jq",
+            "VXVpZBIUCgVpbmRleBgCIAEoBVIFaW5kZXgSGgoIaW5Mb2NrZWQYAyABKAhS",
+            "CGluTG9ja2VkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new LearnRogueEntryParam(this);
     }
 
-    /// <summary>Field number for the "obj_uuid" field.</summary>
+    /// <summary>Field number for the "objUuid" field.</summary>
     public const int ObjUuidFieldNumber = 1;
     private long objUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "in_locked" field.</summary>
+    /// <summary>Field number for the "inLocked" field.</summary>
     public const int InLockedFieldNumber = 3;
     private bool inLocked_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

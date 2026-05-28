@@ -25,12 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2J1YmJsZV9pbmZvLnByb3RvEgZ6cHJvdG8aH3N0cnVfYnViYmxl",
-            "X3RhcmdldF9yZWNvcmQucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byK2",
-            "AQoKQnViYmxlSW5mbxIUCgxidWJibGVfc2NvcmUYASABKA0SGgoSYnViYmxl",
-            "X2F3YXJkX2NvdW50GAIgASgNEiMKG2FkZGl0aW9uYWxfdGFyZ2V0X3V1aWRf",
-            "bGlzdBgDIAMoBBIZChFsYXN0X3JlZnJlc2hfdGltZRgEIAEoAxI2ChJ0YXJn",
-            "ZXRfcmVjb3JkX2xpc3QYBSADKAsyGi56cHJvdG8uQnViYmxlVGFyZ2V0UmVj",
-            "b3JkYgZwcm90bzM="));
+            "X3RhcmdldF9yZWNvcmQucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKI",
+            "AgoKQnViYmxlSW5mbxIgCgtidWJibGVTY29yZRgBIAEoDVILYnViYmxlU2Nv",
+            "cmUSKgoQYnViYmxlQXdhcmRDb3VudBgCIAEoDVIQYnViYmxlQXdhcmRDb3Vu",
+            "dBI6ChhhZGRpdGlvbmFsVGFyZ2V0VXVpZExpc3QYAyADKARSGGFkZGl0aW9u",
+            "YWxUYXJnZXRVdWlkTGlzdBIoCg9sYXN0UmVmcmVzaFRpbWUYBCABKANSD2xh",
+            "c3RSZWZyZXNoVGltZRJGChB0YXJnZXRSZWNvcmRMaXN0GAUgAygLMhouenBy",
+            "b3RvLkJ1YmJsZVRhcmdldFJlY29yZFIQdGFyZ2V0UmVjb3JkTGlzdGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBubbleTargetRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +92,7 @@ namespace Zproto {
       return new BubbleInfo(this);
     }
 
-    /// <summary>Field number for the "bubble_score" field.</summary>
+    /// <summary>Field number for the "bubbleScore" field.</summary>
     public const int BubbleScoreFieldNumber = 1;
     private uint bubbleScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bubble_award_count" field.</summary>
+    /// <summary>Field number for the "bubbleAwardCount" field.</summary>
     public const int BubbleAwardCountFieldNumber = 2;
     private uint bubbleAwardCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "additional_target_uuid_list" field.</summary>
+    /// <summary>Field number for the "additionalTargetUuidList" field.</summary>
     public const int AdditionalTargetUuidListFieldNumber = 3;
     private static readonly pb::FieldCodec<ulong> _repeated_additionalTargetUuidList_codec
         = pb::FieldCodec.ForUInt64(26);
@@ -125,7 +127,7 @@ namespace Zproto {
       get { return additionalTargetUuidList_; }
     }
 
-    /// <summary>Field number for the "last_refresh_time" field.</summary>
+    /// <summary>Field number for the "lastRefreshTime" field.</summary>
     public const int LastRefreshTimeFieldNumber = 4;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_record_list" field.</summary>
+    /// <summary>Field number for the "targetRecordList" field.</summary>
     public const int TargetRecordListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.BubbleTargetRecord> _repeated_targetRecordList_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.BubbleTargetRecord.Parser);

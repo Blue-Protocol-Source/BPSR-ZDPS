@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2dhc2hhX3JlY29yZC5wcm90bxIGenByb3RvGiFzdHJ1X2dhc2hh",
-            "X3JlY29yZF9pdGVtX2luZm8ucHJvdG8ihQEKC0dhc2hhUmVjb3JkEhQKDGNo",
-            "YXJfaWRfcG9vbBgBIAEoCRIPCgdwb29sX2lkGAIgASgNEjYKEWdhc2hhX3Jl",
-            "Y29yZF9pbmZvGAMgAygLMhsuenByb3RvLkdhc2hhUmVjb3JkSXRlbUluZm8S",
-            "FwoPZmlyc3RfdGltZXN0YW1wGAQgASgDYgZwcm90bzM="));
+            "X3JlY29yZF9pdGVtX2luZm8ucHJvdG8itAEKC0dhc2hhUmVjb3JkEh4KCmNo",
+            "YXJJZFBvb2wYASABKAlSCmNoYXJJZFBvb2wSFgoGcG9vbElkGAIgASgNUgZw",
+            "b29sSWQSRQoPZ2FzaGFSZWNvcmRJbmZvGAMgAygLMhsuenByb3RvLkdhc2hh",
+            "UmVjb3JkSXRlbUluZm9SD2dhc2hhUmVjb3JkSW5mbxImCg5maXJzdFRpbWVz",
+            "dGFtcBgEIAEoA1IOZmlyc3RUaW1lc3RhbXBiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruGashaRecordItemInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new GashaRecord(this);
     }
 
-    /// <summary>Field number for the "char_id_pool" field.</summary>
+    /// <summary>Field number for the "charIdPool" field.</summary>
     public const int CharIdPoolFieldNumber = 1;
     private string charIdPool_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pool_id" field.</summary>
+    /// <summary>Field number for the "poolId" field.</summary>
     public const int PoolIdFieldNumber = 2;
     private uint poolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "gasha_record_info" field.</summary>
+    /// <summary>Field number for the "gashaRecordInfo" field.</summary>
     public const int GashaRecordInfoFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.GashaRecordItemInfo> _repeated_gashaRecordInfo_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.GashaRecordItemInfo.Parser);
@@ -122,7 +123,7 @@ namespace Zproto {
       get { return gashaRecordInfo_; }
     }
 
-    /// <summary>Field number for the "first_timestamp" field.</summary>
+    /// <summary>Field number for the "firstTimestamp" field.</summary>
     public const int FirstTimestampFieldNumber = 4;
     private long firstTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

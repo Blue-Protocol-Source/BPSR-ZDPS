@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X2RlbGV0ZV9hY3Rpb25fZ3JvdXBfZGF0YV9yZXF1ZXN0LnByb3Rv",
-            "EgZ6cHJvdG8iNwocRGVsZXRlQWN0aW9uR3JvdXBEYXRhUmVxdWVzdBIXCg9h",
-            "Y3Rpb25fZ3JvdXBfaWQYASABKAViBnByb3RvMw=="));
+            "EgZ6cHJvdG8iRAocRGVsZXRlQWN0aW9uR3JvdXBEYXRhUmVxdWVzdBIkCg1h",
+            "Y3Rpb25Hcm91cElkGAEgASgFUg1hY3Rpb25Hcm91cElkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new DeleteActionGroupDataRequest(this);
     }
 
-    /// <summary>Field number for the "action_group_id" field.</summary>
+    /// <summary>Field number for the "actionGroupId" field.</summary>
     public const int ActionGroupIdFieldNumber = 1;
     private int actionGroupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

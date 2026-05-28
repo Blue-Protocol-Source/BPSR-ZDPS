@@ -27,12 +27,13 @@ namespace Zproto {
             "CjJzdHJ1X2NvbW11bml0eV9nZXRfaG9tZV9sYW5kX2Jhc2VfaW5mb19yZXBs",
             "eS5wcm90bxIGenByb3RvGjBzdHJ1X2NvbW11bml0eV9idWlsZF9saWZlX3By",
             "b2Zlc3Npb25faW5mb3MucHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3Rv",
-            "Gh1zdHJ1X2hvbWVsYW5kX2Jhc2VfaW5mby5wcm90byLJAQohQ29tbXVuaXR5",
-            "R2V0SG9tZUxhbmRCYXNlSW5mb1JlcGx5EjQKEmhvbWVsYW5kX2Jhc2VfaW5m",
-            "bxgBIAEoCzIYLnpwcm90by5Ib21lbGFuZEJhc2VJbmZvEkgKFWxpZmVfcHJv",
-            "ZmVzc2lvbl9pbmZvcxgCIAEoCzIpLnpwcm90by5Db21tdW5pdHlCdWlsZExp",
-            "ZmVQcm9mZXNzaW9uSW5mb3MSJAoIZXJyX2NvZGUYAyABKA4yEi56cHJvdG8u",
-            "RUVycm9yQ29kZWIGcHJvdG8z"));
+            "Gh1zdHJ1X2hvbWVsYW5kX2Jhc2VfaW5mby5wcm90byL0AQohQ29tbXVuaXR5",
+            "R2V0SG9tZUxhbmRCYXNlSW5mb1JlcGx5EkQKEGhvbWVsYW5kQmFzZUluZm8Y",
+            "ASABKAsyGC56cHJvdG8uSG9tZWxhbmRCYXNlSW5mb1IQaG9tZWxhbmRCYXNl",
+            "SW5mbxJbChNsaWZlUHJvZmVzc2lvbkluZm9zGAIgASgLMikuenByb3RvLkNv",
+            "bW11bml0eUJ1aWxkTGlmZVByb2Zlc3Npb25JbmZvc1ITbGlmZVByb2Zlc3Np",
+            "b25JbmZvcxIsCgdlcnJDb2RlGAMgASgOMhIuenByb3RvLkVFcnJvckNvZGVS",
+            "B2VyckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityBuildLifeProfessionInfosReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruHomelandBaseInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new CommunityGetHomeLandBaseInfoReply(this);
     }
 
-    /// <summary>Field number for the "homeland_base_info" field.</summary>
+    /// <summary>Field number for the "homelandBaseInfo" field.</summary>
     public const int HomelandBaseInfoFieldNumber = 1;
     private global::Zproto.HomelandBaseInfo homelandBaseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "life_profession_infos" field.</summary>
+    /// <summary>Field number for the "lifeProfessionInfos" field.</summary>
     public const int LifeProfessionInfosFieldNumber = 2;
     private global::Zproto.CommunityBuildLifeProfessionInfos lifeProfessionInfos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

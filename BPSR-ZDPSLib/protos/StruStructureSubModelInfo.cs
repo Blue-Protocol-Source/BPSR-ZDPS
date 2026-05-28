@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3N0cnVjdHVyZV9zdWJfbW9kZWxfaW5mby5wcm90bxIGenByb3Rv",
-            "GhNzdHJ1X2ludF92ZWMzLnByb3RvGg9zdHJ1X3ZlYzQucHJvdG8ikQEKFVN0",
-            "cnVjdHVyZVN1Yk1vZGVsSW5mbxIMCgRzbG90GAEgASgFEhQKDHN1Yl9tb2Rl",
-            "bF9pZBgCIAEoBRIhCghwb3NpdGlvbhgDIAEoCzIPLnpwcm90by5JbnRWZWMz",
-            "EiAKCnF1YXRlcm5pb24YBCABKAsyDC56cHJvdG8uVmVjNBIPCgdjaGFyX2lk",
-            "GAUgASgDYgZwcm90bzM="));
+            "GhNzdHJ1X2ludF92ZWMzLnByb3RvGg9zdHJ1X3ZlYzQucHJvdG8ivgEKFVN0",
+            "cnVjdHVyZVN1Yk1vZGVsSW5mbxISCgRzbG90GAEgASgFUgRzbG90Eh4KCnN1",
+            "Yk1vZGVsSWQYAiABKAVSCnN1Yk1vZGVsSWQSKwoIcG9zaXRpb24YAyABKAsy",
+            "Dy56cHJvdG8uSW50VmVjM1IIcG9zaXRpb24SLAoKcXVhdGVybmlvbhgEIAEo",
+            "CzIMLnpwcm90by5WZWM0UgpxdWF0ZXJuaW9uEhYKBmNoYXJJZBgFIAEoA1IG",
+            "Y2hhcklkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIntVec3Reflection.Descriptor, global::Zproto.StruVec4Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sub_model_id" field.</summary>
+    /// <summary>Field number for the "subModelId" field.</summary>
     public const int SubModelIdFieldNumber = 2;
     private int subModelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 5;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

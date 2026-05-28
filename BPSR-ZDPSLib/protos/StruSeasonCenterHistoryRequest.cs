@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X3NlYXNvbl9jZW50ZXJfaGlzdG9yeV9yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8iLwoaU2Vhc29uQ2VudGVySGlzdG9yeVJlcXVlc3QSEQoJc2Vhc29u",
-            "X2lkGAEgASgFYgZwcm90bzM="));
+            "cHJvdG8iOAoaU2Vhc29uQ2VudGVySGlzdG9yeVJlcXVlc3QSGgoIc2Vhc29u",
+            "SWQYASABKAVSCHNlYXNvbklkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new SeasonCenterHistoryRequest(this);
     }
 
-    /// <summary>Field number for the "season_id" field.</summary>
+    /// <summary>Field number for the "seasonId" field.</summary>
     public const int SeasonIdFieldNumber = 1;
     private int seasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

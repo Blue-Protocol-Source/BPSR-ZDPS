@@ -27,131 +27,152 @@ namespace Zproto {
             "ChRzZXJ2X3dvcmxkX250Zi5wcm90bxIGenByb3RvGhdlbnVtX2VfZXJyb3Jf",
             "Y29kZS5wcm90bxoZZW51bV9lX3BpY3R1cmVfdHlwZS5wcm90bxoVc3RydV9h",
             "d2FyZF9kYXRhLnByb3RvGhRzdHJ1X2NhcmRfaW5mby5wcm90bxoZc3RydV9j",
-            "aGFyX3NlcmlhbGl6ZS5wcm90bxolc3RydV9jbGllbnRfY3VzdG9tX2V2ZW50",
-            "X3BhcmFtcy5wcm90bxohc3RydV9kZWJ1Z19tZXNzYWdlX3RpcF9pbmZvLnBy",
-            "b3RvGiJzdHJ1X2RyaXZlcl9hcHBseV9yaWRlX3BhcmFtLnByb3RvGh1zdHJ1",
-            "X2R1bmdlb25fcmVhZHlfaW5mby5wcm90bxocc3RydV9kdW5nZW9uX3N5bmNf",
-            "ZGF0YS5wcm90bxopc3RydV9lbnRlcl9tYXRjaF9yZXN1bHRfbnRmX3JlcXVl",
-            "c3QucHJvdG8aInN0cnVfZW50cnlfcmFuZG9tX2RhdGFfcGFyYW0ucHJvdG8a",
-            "InN0cnVfaW52aXRlX2FwcGx5X3JpZGVfcGFyYW0ucHJvdG8aInN0cnVfbWFo",
-            "am9uZ19lbmRfbnRmX3JlcXVlc3QucHJvdG8aJHN0cnVfbWFoam9uZ19zdGFy",
-            "dF9udGZfcmVxdWVzdC5wcm90bxoWc3RydV9ub3RpY2VfaW5mby5wcm90bxol",
-            "c3RydV9ub3RpY2VfbXVsdGlfbGFuZ3VhZ2VfaW5mby5wcm90bxoyc3RydV9u",
-            "b3RpZnlfYWxsX3NvdXJjZV9wcml2aWxlZ2VfZWZmZWN0X2RhdGEucHJvdG8a",
-            "LHN0cnVfbm90aWZ5X2FsbF92YWxpZF9iYXR0bGVfcGFzc19kYXRhLnByb3Rv",
-            "GiVzdHJ1X25vdGlmeV9hd2FyZF9hbGxfaXRlbV9pbmZvLnByb3RvGidzdHJ1",
-            "X25vdGlmeV9idXlfc2hvcF9yZXN1bHRfcGFyYW0ucHJvdG8aIXN0cnVfbm90",
-            "aWZ5X2Z1bmN0aW9uX3BhcmFtcy5wcm90bxo0c3RydV9ub3RpZnlfbGlmZV9w",
-            "cm9mZXNzaW9uX3VubG9ja19yZWNpcGVfaW5mby5wcm90bxo6c3RydV9ub3Rp",
-            "ZnlfbGlmZV9wcm9mZXNzaW9uX3dvcmtfaGlzdG9yeV9jaGFuZ2VfaW5mby5w",
-            "cm90bxobc3RydV9ub3RpZnlfcGF5X3BhcmFtLnByb3RvGiRzdHJ1X25vdGlm",
-            "eV9xdWVzdF9hY2NlcHRfcGFyYW0ucHJvdG8aKXN0cnVfbm90aWZ5X3F1ZXN0",
-            "X2NoYW5nZV9zdGVwX3BhcmFtLnByb3RvGiZzdHJ1X25vdGlmeV9xdWVzdF9j",
-            "b21wbGV0ZV9wYXJhbS5wcm90bxolc3RydV9ub3RpZnlfcXVlc3RfZ2l2ZV91",
-            "cF9wYXJhbS5wcm90bxolc3RydV9ub3RpZnlfcmlkZV9pc19hZ3JlZV9wYXJh",
-            "bS5wcm90bxopc3RydV9ub3RpZnlfc2hvcF9pdGVtX2Nhbl9idXlfcGFyYW0u",
-            "cHJvdG8aGXN0cnVfcGFya291cl9yZWNvcmQucHJvdG8aGXN0cnVfcGF5bWVu",
-            "dF9yZXN1bHQucHJvdG8aGnN0cnVfc2hvd19pdGVtc19pbmZvLnByb3RvGiVz",
-            "dHJ1X3NpZ25fcmV3YXJkX25vdGlmeV9yZXF1ZXN0LnByb3RvGiZzdHJ1X3N0",
-            "YXJ0X3BsYXlpbmdfZHVuZ2Vvbl9wYXJhbS5wcm90bxoWc3RydV9zd2l0Y2hf",
-            "aW5mby5wcm90bxoec3RydV9zeW5jX2ludml0ZV9yZXF1ZXN0LnByb3RvGhRz",
-            "dHJ1X3RpcHNfaW5mby5wcm90bxogc3RydV91bmxvY2tfY29va19ib29rX2lu",
-            "Zm8ucHJvdG8aJXN0cnVfd29ybGRfYm9zc19yYW5rX2luZm9fcGFyYW0ucHJv",
-            "dG8ioyAKCFdvcmxkTnRmGjgKD1N5bmNQaW9uZWVySW5mbxIRCgl0YXJnZXRf",
-            "aWQYASABKA0SEgoKdGFyZ2V0X251bRgCIAEoDRouChBTeW5jU3dpdGNoQ2hh",
-            "bmdlEgoKAmlkGAEgASgNEg4KBm9uX29mZhgCIAEoDRoyCg5TeW5jU3dpdGNo",
-            "SW5mbxIgCgRpbmZvGAEgASgLMhIuenByb3RvLlN3aXRjaEluZm8aOgoRU3lu",
-            "Y0NvbnRhaW5lckRhdGESJQoGdl9kYXRhGAEgASgLMhUuenByb3RvLkNoYXJT",
-            "ZXJpYWxpemUaOgoPU3luY0R1bmdlb25EYXRhEicKBnZfZGF0YRgBIAEoCzIX",
-            "Lnpwcm90by5EdW5nZW9uU3luY0RhdGEaLwoLQXdhcmROb3RpZnkSIAoFYXdh",
-            "cmQYASABKAsyES56cHJvdG8uQXdhcmREYXRhGj4KC0NhcmRJbmZvQWNrEg8K",
-            "B2NoYXJfaWQYASABKAMSHgoEaW5mbxgCIAEoCzIQLnpwcm90by5DYXJkSW5m",
-            "bxoeCgpTeW5jU2Vhc29uEhAKCHZfc2Vhc29uGAEgASgFGjQKClVzZXJBY3Rp",
-            "b24SEQoJdl9jaGFyX2lkGAEgASgDEhMKC3ZfYWN0aW9uX2lkGAIgASgFGi8K",
-            "FU5vdGlmeURpc3BsYXlQbGF5SGVscBIWCg52X3BsYXlfaGVscF9pZBgBIAEo",
-            "BRpGChxOb3RpZnlBcHBsaWNhdGlvbkludGVyYWN0aW9uEhEKCXZfb3JpZ19p",
-            "ZBgBIAEoAxITCgt2X2FjdGlvbl9pZBgCIAEoBRpOCg1Ob3RpZnlJc0FncmVl",
-            "EhQKDHZfaW52aXRlZV9pZBgBIAEoAxITCgt2X2FjdGlvbl9pZBgCIAEoBRIS",
-            "Cgp2X2lzX2FncmVlGAMgASgIGi4KEk5vdGlmeUNhbmNlbEFjdGlvbhIYChB2",
-            "X2NhbmNlbF9jaGFyX2lkGAEgASgDGnwKGU5vdGlmeVVwbG9hZFBpY3R1cmVS",
-            "ZXN1bHQSDwoHc3VjY2VzcxgBIAEoCBIoCgpwaG90b190eXBlGAIgASgOMhQu",
-            "enByb3RvLkVQaWN0dXJlVHlwZRIQCghwaG90b19pZBgDIAEoDRISCgpwaG90",
-            "b19uYW1lGAQgASgJGjoKClN5bmNJbnZpdGUSLAoJdl9yZXF1ZXN0GAEgASgL",
-            "MhkuenByb3RvLlN5bmNJbnZpdGVSZXF1ZXN0GjsKEk5vdGlmeVJlZERvdENo",
-            "YW5nZRIUCgx2X3JlZF9kb3RfaWQYASABKAUSDwoHdl92YWx1ZRgCIAEoBRol",
-            "ChNDaGFuZ2VOYW1lUmVzdWx0TnRmEg4KBnZfY29kZRgBIAEoBRooChBOb3Rp",
-            "ZnlSZXZpdmVVc2VyEhQKDHZfYWN0b3JfdXVpZBgBIAEoAxoqChVOb3RpZnlQ",
-            "YXJrb3VyUmFua0luZm8SEQoJdl9yYW5rX2lkGAEgASgFGlIKF05vdGlmeVBh",
-            "cmtvdXJSZWNvcmRJbmZvEg4KBnJlc3VsdBgBIAEoBRInCgh2X3JlY29yZBgC",
-            "IAEoCzIVLnpwcm90by5QYXJrb3VyUmVjb3JkGjIKDk5vdGlmeVNob3dUaXBz",
-            "EiAKBnZfdGlwcxgBIAEoCzIQLnpwcm90by5UaXBzSW5mbxo2ChBOb3RpZnlO",
-            "b3RpY2VJbmZvEiIKBnZfaW5mbxgBIAEoCzISLnpwcm90by5Ob3RpY2VJbmZv",
-            "GjsKE05vdGlmeUNsaWVudEtpY2tPZmYSJAoIZXJyX2NvZGUYASABKA4yEi56",
-            "cHJvdG8uRUVycm9yQ29kZRo7Cg9QYXltZW50UmVzcG9uc2USKAoJdl9yZXF1",
-            "ZXN0GAEgASgLMhUuenByb3RvLlBheW1lbnRSZXN1bHQaQgoUTm90aWZ5VW5s",
-            "b2NrQ29va0Jvb2sSKgoGdl9pbmZvGAEgASgLMhouenByb3RvLlVubG9ja0Nv",
-            "b2tCb29rSW5mbxpKChFOb3RpZnlDdXN0b21FdmVudBI1CgxldmVudF9wYXJh",
-            "bXMYASABKAsyHy56cHJvdG8uQ2xpZW50Q3VzdG9tRXZlbnRQYXJhbXMaTgoZ",
-            "Tm90aWZ5U3RhcnRQbGF5aW5nRHVuZ2VvbhIxCgd2X3BhcmFtGAEgASgLMiAu",
-            "enByb3RvLlN0YXJ0UGxheWluZ0R1bmdlb25QYXJhbRo9ChVDaGFuZ2VTaG93",
-            "SWRSZXN1bHROdGYSJAoIZXJyX2NvZGUYASABKA4yEi56cHJvdG8uRUVycm9y",
-            "Q29kZRo4Cg9Ob3RpZnlTaG93SXRlbXMSJQoGdl9pbmZvGAEgASgLMhUuenBy",
-            "b3RvLlNob3dJdGVtc0luZm8aSwogTm90aWZ5U2Vhc29uQWN0aXZhdGlvblRh",
-            "cmdldEluZm8SEwoLdl9zZWFzb25faWQYASABKAUSEgoKaXNfcmVmcmVzaBgC",
-            "IAEoCBo9ChVOb3RpZnlUZXh0Q2hlY2tSZXN1bHQSJAoIZXJyX2NvZGUYASAB",
-            "KA4yEi56cHJvdG8uRUVycm9yQ29kZRpEChVOb3RpZnlEZWJ1Z01lc3NhZ2VU",
-            "aXASKwoGdl9pbmZvGAEgASgLMhsuenByb3RvLkRlYnVnTWVzc2FnZVRpcElu",
-            "Zm8aSAoXTm90aWZ5VXNlckNsb3NlRnVuY3Rpb24SLQoHdl9wYXJhbRgBIAEo",
-            "CzIcLnpwcm90by5Ob3RpZnlGdW5jdGlvblBhcmFtcxpKChlOb3RpZnlTZXJ2",
-            "ZXJDbG9zZUZ1bmN0aW9uEi0KB3ZfcGFyYW0YASABKAsyHC56cHJvdG8uTm90",
-            "aWZ5RnVuY3Rpb25QYXJhbXMaSQoTTm90aWZ5QXdhcmRBbGxJdGVtcxIyCgp2",
-            "X2FsbF9pdGVtGAEgASgLMh4uenByb3RvLk5vdGlmeUF3YXJkQWxsSXRlbUlu",
-            "Zm8aLwoUTm90aWZ5QWxsTWVtYmVyUmVhZHkSFwoPdl9vcGVuX29yX2Nsb3Nl",
-            "GAEgASgIGm4KEk5vdGlmeUNhcHRhaW5SZWFkeRIVCg12X21lbWJlcl9uYW1l",
-            "GAEgASgJEhEKCXZfY2hhcl9pZBgCIAEoAxIuCgx2X3JlYWR5X2luZm8YAyAB",
-            "KAsyGC56cHJvdG8uRHVuZ2VvblJlYWR5SW5mbxp1CiZOb3RpZnlVc2VyQWxs",
-            "U291cmNlUHJpdmlsZWdlRWZmZWN0RGF0YRJLChd2X2FsbF9wcml2aWxlZ2Vf",
-            "ZWZmZWN0cxgBIAEoCzIqLnpwcm90by5Ob3RpZnlBbGxTb3VyY2VQcml2aWxl",
-            "Z2VFZmZlY3REYXRhGkQKEU5vdGlmeVF1ZXN0QWNjZXB0Ei8KB3ZfcGFyYW0Y",
-            "ASABKAsyHi56cHJvdG8uTm90aWZ5UXVlc3RBY2NlcHRQYXJhbRpMChVOb3Rp",
-            "ZnlRdWVzdENoYW5nZVN0ZXASMwoHdl9wYXJhbRgBIAEoCzIiLnpwcm90by5O",
-            "b3RpZnlRdWVzdENoYW5nZVN0ZXBQYXJhbRpEChFOb3RpZnlRdWVzdEdpdmVV",
-            "cBIvCgd2X3BhcmFtGAEgASgLMh4uenByb3RvLk5vdGlmeVF1ZXN0R2l2ZVVw",
-            "UGFyYW0aSAoTTm90aWZ5UXVlc3RDb21wbGV0ZRIxCgd2X3BhcmFtGAEgASgL",
-            "MiAuenByb3RvLk5vdGlmeVF1ZXN0Q29tcGxldGVQYXJhbRpoCiBOb3RpZnlV",
-            "c2VyQWxsVmFsaWRCYXR0bGVQYXNzRGF0YRJEChZ2YWxpZF9iYXR0bGVfcGFz",
-            "c19kYXRhGAEgASgLMiQuenByb3RvLk5vdGlmeUFsbFZhbGlkQmF0dGxlUGFz",
-            "c0RhdGEaUAodTm90aWZ5Tm90aWNlTXVsdGlMYW5ndWFnZUluZm8SLwoGdl9p",
-            "bmZvGAEgASgLMh8uenByb3RvLk5vdGljZU11bHRpTGFuZ3VhZ2VJbmZvGhoK",
-            "CFF0ZUJlZ2luEg4KBnF0ZV9pZBgBIAEoDRoeCgpRdWVzdEFib3J0EhAKCHF1",
-            "ZXN0X2lkGAEgASgFGkYKE05vdGlmeUJ1eVNob3BSZXN1bHQSLwoFcGFyYW0Y",
-            "ASABKAsyIC56cHJvdG8uTm90aWZ5QnV5U2hvcFJlc3VsdFBhcmFtGkgKFE5v",
-            "dGlmeVNob3BJdGVtQ2FuQnV5EjAKBXBhcmFtGAEgASgLMiEuenByb3RvLk5v",
-            "dGlmeVNob3BJdGVtQ2FuQnV5UGFyYW0aSQoUV29ybGRCb3NzUmFua0luZm9O",
-            "dGYSMQoJcmFua19pbmZvGAEgASgLMh4uenByb3RvLldvcmxkQm9zc1JhbmtJ",
-            "bmZvUGFyYW0aTAoTRW50ZXJNYXRjaFJlc3VsdE50ZhI1Cgl2X3JlcXVlc3QY",
-            "ASABKAsyIi56cHJvdG8uRW50ZXJNYXRjaFJlc3VsdE50ZlJlcXVlc3QaRAoV",
-            "Tm90aWZ5RHJpdmVyQXBwbHlSaWRlEisKBXBhcmFtGAEgASgLMhwuenByb3Rv",
-            "LkRyaXZlckFwcGx5UmlkZVBhcmFtGkQKFU5vdGlmeUludml0ZUFwcGx5Umlk",
-            "ZRIrCgVwYXJhbRgBIAEoCzIcLnpwcm90by5JbnZpdGVBcHBseVJpZGVQYXJh",
-            "bRpCChFOb3RpZnlSaWRlSXNBZ3JlZRItCgVwYXJhbRgBIAEoCzIeLnpwcm90",
-            "by5Ob3RpZnlSaWRlSXNBZ3JlZVBhcmFtGjYKDU5vdGlmeVBheUluZm8SJQoF",
-            "cGFyYW0YASABKAsyFi56cHJvdG8uTm90aWZ5UGF5UGFyYW0aaAolTm90aWZ5",
-            "TGlmZVByb2Zlc3Npb25Xb3JrSGlzdG9yeUNoYW5nZRI/CgRpbmZvGAEgASgL",
-            "MjEuenByb3RvLk5vdGlmeUxpZmVQcm9mZXNzaW9uV29ya0hpc3RvcnlDaGFu",
-            "Z2VJbmZvGl4KIE5vdGlmeUxpZmVQcm9mZXNzaW9uVW5sb2NrUmVjaXBlEjoK",
-            "BGluZm8YASABKAsyLC56cHJvdG8uTm90aWZ5TGlmZVByb2Zlc3Npb25Vbmxv",
-            "Y2tSZWNpcGVJbmZvGkYKEFNpZ25SZXdhcmROb3RpZnkSMgoJdl9yZXF1ZXN0",
-            "GAEgASgLMh8uenByb3RvLlNpZ25SZXdhcmROb3RpZnlSZXF1ZXN0GkQKD01h",
-            "aGpvbmdTdGFydE50ZhIxCgl2X3JlcXVlc3QYASABKAsyHi56cHJvdG8uTWFo",
-            "am9uZ1N0YXJ0TnRmUmVxdWVzdBpACg1NYWhqb25nRW5kTnRmEi8KCXZfcmVx",
-            "dWVzdBgBIAEoCzIcLnpwcm90by5NYWhqb25nRW5kTnRmUmVxdWVzdBpEChVO",
-            "b3RpZnlFbnRyeVJhbmRvbURhdGESKwoFcGFyYW0YASABKAsyHC56cHJvdG8u",
-            "RW50cnlSYW5kb21EYXRhUGFyYW0aQAoYTm90aWZ5UGxheURhdGFBdHRhY2tJ",
-            "bmZvEhIKCnZfYXR0YWNrZXIYASABKAMSEAoIdl92aWN0aW0YAiABKANiBnBy",
-            "b3RvMw=="));
+            "aGFyX3NlcmlhbGl6ZS5wcm90bxofc3RydV9jbGllbnRfYWN0aW9uX3BhcmFt",
+            "cy5wcm90bxolc3RydV9jbGllbnRfY3VzdG9tX2V2ZW50X3BhcmFtcy5wcm90",
+            "bxohc3RydV9kZWJ1Z19tZXNzYWdlX3RpcF9pbmZvLnByb3RvGiJzdHJ1X2Ry",
+            "aXZlcl9hcHBseV9yaWRlX3BhcmFtLnByb3RvGh1zdHJ1X2R1bmdlb25fcmVh",
+            "ZHlfaW5mby5wcm90bxocc3RydV9kdW5nZW9uX3N5bmNfZGF0YS5wcm90bxop",
+            "c3RydV9lbnRlcl9tYXRjaF9yZXN1bHRfbnRmX3JlcXVlc3QucHJvdG8aInN0",
+            "cnVfZW50cnlfcmFuZG9tX2RhdGFfcGFyYW0ucHJvdG8aI3N0cnVfZW50cnlf",
+            "dXBncmFkZV9kYXRhX3BhcmFtLnByb3RvGiJzdHJ1X2ludml0ZV9hcHBseV9y",
+            "aWRlX3BhcmFtLnByb3RvGhtzdHJ1X2l0ZW1fd2Fybl9ub3RpZnkucHJvdG8a",
+            "InN0cnVfbWFoam9uZ19lbmRfbnRmX3JlcXVlc3QucHJvdG8aJHN0cnVfbWFo",
+            "am9uZ19zdGFydF9udGZfcmVxdWVzdC5wcm90bxoWc3RydV9ub3RpY2VfaW5m",
+            "by5wcm90bxolc3RydV9ub3RpY2VfbXVsdGlfbGFuZ3VhZ2VfaW5mby5wcm90",
+            "bxoyc3RydV9ub3RpZnlfYWxsX3NvdXJjZV9wcml2aWxlZ2VfZWZmZWN0X2Rh",
+            "dGEucHJvdG8aLHN0cnVfbm90aWZ5X2FsbF92YWxpZF9iYXR0bGVfcGFzc19k",
+            "YXRhLnByb3RvGiVzdHJ1X25vdGlmeV9hd2FyZF9hbGxfaXRlbV9pbmZvLnBy",
+            "b3RvGidzdHJ1X25vdGlmeV9idXlfc2hvcF9yZXN1bHRfcGFyYW0ucHJvdG8a",
+            "IXN0cnVfbm90aWZ5X2Z1bmN0aW9uX3BhcmFtcy5wcm90bxo0c3RydV9ub3Rp",
+            "ZnlfbGlmZV9wcm9mZXNzaW9uX3VubG9ja19yZWNpcGVfaW5mby5wcm90bxo6",
+            "c3RydV9ub3RpZnlfbGlmZV9wcm9mZXNzaW9uX3dvcmtfaGlzdG9yeV9jaGFu",
+            "Z2VfaW5mby5wcm90bxobc3RydV9ub3RpZnlfcGF5X3BhcmFtLnByb3RvGiRz",
+            "dHJ1X25vdGlmeV9xdWVzdF9hY2NlcHRfcGFyYW0ucHJvdG8aKXN0cnVfbm90",
+            "aWZ5X3F1ZXN0X2NoYW5nZV9zdGVwX3BhcmFtLnByb3RvGiZzdHJ1X25vdGlm",
+            "eV9xdWVzdF9jb21wbGV0ZV9wYXJhbS5wcm90bxolc3RydV9ub3RpZnlfcXVl",
+            "c3RfZ2l2ZV91cF9wYXJhbS5wcm90bxolc3RydV9ub3RpZnlfcmlkZV9pc19h",
+            "Z3JlZV9wYXJhbS5wcm90bxopc3RydV9ub3RpZnlfc2hvcF9pdGVtX2Nhbl9i",
+            "dXlfcGFyYW0ucHJvdG8aGXN0cnVfcGFya291cl9yZWNvcmQucHJvdG8aGXN0",
+            "cnVfcGF5bWVudF9yZXN1bHQucHJvdG8aGnN0cnVfc2hvd19pdGVtc19pbmZv",
+            "LnByb3RvGiVzdHJ1X3NpZ25fcmV3YXJkX25vdGlmeV9yZXF1ZXN0LnByb3Rv",
+            "GiZzdHJ1X3N0YXJ0X3BsYXlpbmdfZHVuZ2Vvbl9wYXJhbS5wcm90bxoWc3Ry",
+            "dV9zd2l0Y2hfaW5mby5wcm90bxoec3RydV9zeW5jX2ludml0ZV9yZXF1ZXN0",
+            "LnByb3RvGhRzdHJ1X3RpcHNfaW5mby5wcm90bxogc3RydV91bmxvY2tfY29v",
+            "a19ib29rX2luZm8ucHJvdG8aJXN0cnVfd29ybGRfYm9zc19yYW5rX2luZm9f",
+            "cGFyYW0ucHJvdG8i+yYKCFdvcmxkTnRmGksKD1N5bmNQaW9uZWVySW5mbxIa",
+            "Cgh0YXJnZXRJZBgBIAEoDVIIdGFyZ2V0SWQSHAoJdGFyZ2V0TnVtGAIgASgN",
+            "Ugl0YXJnZXROdW0aOAoQU3luY1N3aXRjaENoYW5nZRIOCgJpZBgBIAEoDVIC",
+            "aWQSFAoFb25PZmYYAiABKA1SBW9uT2ZmGjgKDlN5bmNTd2l0Y2hJbmZvEiYK",
+            "BGluZm8YASABKAsyEi56cHJvdG8uU3dpdGNoSW5mb1IEaW5mbxpAChFTeW5j",
+            "Q29udGFpbmVyRGF0YRIrCgV2RGF0YRgBIAEoCzIVLnpwcm90by5DaGFyU2Vy",
+            "aWFsaXplUgV2RGF0YRpACg9TeW5jRHVuZ2VvbkRhdGESLQoFdkRhdGEYASAB",
+            "KAsyFy56cHJvdG8uRHVuZ2VvblN5bmNEYXRhUgV2RGF0YRo2CgtBd2FyZE5v",
+            "dGlmeRInCgVhd2FyZBgBIAEoCzIRLnpwcm90by5Bd2FyZERhdGFSBWF3YXJk",
+            "GksKC0NhcmRJbmZvQWNrEhYKBmNoYXJJZBgBIAEoA1IGY2hhcklkEiQKBGlu",
+            "Zm8YAiABKAsyEC56cHJvdG8uQ2FyZEluZm9SBGluZm8aJgoKU3luY1NlYXNv",
+            "bhIYCgd2U2Vhc29uGAEgASgFUgd2U2Vhc29uGkQKClVzZXJBY3Rpb24SGAoH",
+            "dkNoYXJJZBgBIAEoA1IHdkNoYXJJZBIcCgl2QWN0aW9uSWQYAiABKAVSCXZB",
+            "Y3Rpb25JZBo5ChVOb3RpZnlEaXNwbGF5UGxheUhlbHASIAoLdlBsYXlIZWxw",
+            "SWQYASABKAVSC3ZQbGF5SGVscElkGlYKHE5vdGlmeUFwcGxpY2F0aW9uSW50",
+            "ZXJhY3Rpb24SGAoHdk9yaWdJZBgBIAEoA1IHdk9yaWdJZBIcCgl2QWN0aW9u",
+            "SWQYAiABKAVSCXZBY3Rpb25JZBppCg1Ob3RpZnlJc0FncmVlEh4KCnZJbnZp",
+            "dGVlSWQYASABKANSCnZJbnZpdGVlSWQSHAoJdkFjdGlvbklkGAIgASgFUgl2",
+            "QWN0aW9uSWQSGgoIdklzQWdyZWUYAyABKAhSCHZJc0FncmVlGjoKEk5vdGlm",
+            "eUNhbmNlbEFjdGlvbhIkCg12Q2FuY2VsQ2hhcklkGAEgASgDUg12Q2FuY2Vs",
+            "Q2hhcklkGqEBChlOb3RpZnlVcGxvYWRQaWN0dXJlUmVzdWx0EhgKB3N1Y2Nl",
+            "c3MYASABKAhSB3N1Y2Nlc3MSMgoJcGhvdG9UeXBlGAIgASgOMhQuenByb3Rv",
+            "LkVQaWN0dXJlVHlwZVIJcGhvdG9UeXBlEhgKB3Bob3RvSWQYAyABKA1SB3Bo",
+            "b3RvSWQSHAoJcGhvdG9OYW1lGAQgASgJUglwaG90b05hbWUaQwoKU3luY0lu",
+            "dml0ZRI1Cgh2UmVxdWVzdBgBIAEoCzIZLnpwcm90by5TeW5jSW52aXRlUmVx",
+            "dWVzdFIIdlJlcXVlc3QaSgoSTm90aWZ5UmVkRG90Q2hhbmdlEhwKCXZSZWRE",
+            "b3RJZBgBIAEoBVIJdlJlZERvdElkEhYKBnZWYWx1ZRgCIAEoBVIGdlZhbHVl",
+            "GisKE0NoYW5nZU5hbWVSZXN1bHROdGYSFAoFdkNvZGUYASABKAVSBXZDb2Rl",
+            "GjIKEE5vdGlmeVJldml2ZVVzZXISHgoKdkFjdG9yVXVpZBgBIAEoA1IKdkFj",
+            "dG9yVXVpZBoxChVOb3RpZnlQYXJrb3VyUmFua0luZm8SGAoHdlJhbmtJZBgB",
+            "IAEoBVIHdlJhbmtJZBpiChdOb3RpZnlQYXJrb3VyUmVjb3JkSW5mbxIWCgZy",
+            "ZXN1bHQYASABKAVSBnJlc3VsdBIvCgd2UmVjb3JkGAIgASgLMhUuenByb3Rv",
+            "LlBhcmtvdXJSZWNvcmRSB3ZSZWNvcmQaOAoOTm90aWZ5U2hvd1RpcHMSJgoF",
+            "dlRpcHMYASABKAsyEC56cHJvdG8uVGlwc0luZm9SBXZUaXBzGjwKEE5vdGlm",
+            "eU5vdGljZUluZm8SKAoFdkluZm8YASABKAsyEi56cHJvdG8uTm90aWNlSW5m",
+            "b1IFdkluZm8aQwoTTm90aWZ5Q2xpZW50S2lja09mZhIsCgdlcnJDb2RlGAEg",
+            "ASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGUaRAoPUGF5bWVudFJl",
+            "c3BvbnNlEjEKCHZSZXF1ZXN0GAEgASgLMhUuenByb3RvLlBheW1lbnRSZXN1",
+            "bHRSCHZSZXF1ZXN0GkgKFE5vdGlmeVVubG9ja0Nvb2tCb29rEjAKBXZJbmZv",
+            "GAEgASgLMhouenByb3RvLlVubG9ja0Nvb2tCb29rSW5mb1IFdkluZm8aVgoR",
+            "Tm90aWZ5Q3VzdG9tRXZlbnQSQQoLZXZlbnRQYXJhbXMYASABKAsyHy56cHJv",
+            "dG8uQ2xpZW50Q3VzdG9tRXZlbnRQYXJhbXNSC2V2ZW50UGFyYW1zGlUKGU5v",
+            "dGlmeVN0YXJ0UGxheWluZ0R1bmdlb24SOAoGdlBhcmFtGAEgASgLMiAuenBy",
+            "b3RvLlN0YXJ0UGxheWluZ0R1bmdlb25QYXJhbVIGdlBhcmFtGkUKFUNoYW5n",
+            "ZVNob3dJZFJlc3VsdE50ZhIsCgdlcnJDb2RlGAEgASgOMhIuenByb3RvLkVF",
+            "cnJvckNvZGVSB2VyckNvZGUaPgoPTm90aWZ5U2hvd0l0ZW1zEisKBXZJbmZv",
+            "GAEgASgLMhUuenByb3RvLlNob3dJdGVtc0luZm9SBXZJbmZvGl4KIE5vdGlm",
+            "eVNlYXNvbkFjdGl2YXRpb25UYXJnZXRJbmZvEhwKCXZTZWFzb25JZBgBIAEo",
+            "BVIJdlNlYXNvbklkEhwKCWlzUmVmcmVzaBgCIAEoCFIJaXNSZWZyZXNoGkUK",
+            "FU5vdGlmeVRleHRDaGVja1Jlc3VsdBIsCgdlcnJDb2RlGAEgASgOMhIuenBy",
+            "b3RvLkVFcnJvckNvZGVSB2VyckNvZGUaSgoVTm90aWZ5RGVidWdNZXNzYWdl",
+            "VGlwEjEKBXZJbmZvGAEgASgLMhsuenByb3RvLkRlYnVnTWVzc2FnZVRpcElu",
+            "Zm9SBXZJbmZvGk8KF05vdGlmeVVzZXJDbG9zZUZ1bmN0aW9uEjQKBnZQYXJh",
+            "bRgBIAEoCzIcLnpwcm90by5Ob3RpZnlGdW5jdGlvblBhcmFtc1IGdlBhcmFt",
+            "GlEKGU5vdGlmeVNlcnZlckNsb3NlRnVuY3Rpb24SNAoGdlBhcmFtGAEgASgL",
+            "MhwuenByb3RvLk5vdGlmeUZ1bmN0aW9uUGFyYW1zUgZ2UGFyYW0aUQoTTm90",
+            "aWZ5QXdhcmRBbGxJdGVtcxI6Cgh2QWxsSXRlbRgBIAEoCzIeLnpwcm90by5O",
+            "b3RpZnlBd2FyZEFsbEl0ZW1JbmZvUgh2QWxsSXRlbRo6ChROb3RpZnlBbGxN",
+            "ZW1iZXJSZWFkeRIiCgx2T3Blbk9yQ2xvc2UYASABKAhSDHZPcGVuT3JDbG9z",
+            "ZRqKAQoSTm90aWZ5Q2FwdGFpblJlYWR5EiAKC3ZNZW1iZXJOYW1lGAEgASgJ",
+            "Ugt2TWVtYmVyTmFtZRIYCgd2Q2hhcklkGAIgASgDUgd2Q2hhcklkEjgKCnZS",
+            "ZWFkeUluZm8YAyABKAsyGC56cHJvdG8uRHVuZ2VvblJlYWR5SW5mb1IKdlJl",
+            "YWR5SW5mbxqIAQomTm90aWZ5VXNlckFsbFNvdXJjZVByaXZpbGVnZUVmZmVj",
+            "dERhdGESXgoUdkFsbFByaXZpbGVnZUVmZmVjdHMYASABKAsyKi56cHJvdG8u",
+            "Tm90aWZ5QWxsU291cmNlUHJpdmlsZWdlRWZmZWN0RGF0YVIUdkFsbFByaXZp",
+            "bGVnZUVmZmVjdHMaSwoRTm90aWZ5UXVlc3RBY2NlcHQSNgoGdlBhcmFtGAEg",
+            "ASgLMh4uenByb3RvLk5vdGlmeVF1ZXN0QWNjZXB0UGFyYW1SBnZQYXJhbRpT",
+            "ChVOb3RpZnlRdWVzdENoYW5nZVN0ZXASOgoGdlBhcmFtGAEgASgLMiIuenBy",
+            "b3RvLk5vdGlmeVF1ZXN0Q2hhbmdlU3RlcFBhcmFtUgZ2UGFyYW0aSwoRTm90",
+            "aWZ5UXVlc3RHaXZlVXASNgoGdlBhcmFtGAEgASgLMh4uenByb3RvLk5vdGlm",
+            "eVF1ZXN0R2l2ZVVwUGFyYW1SBnZQYXJhbRpPChNOb3RpZnlRdWVzdENvbXBs",
+            "ZXRlEjgKBnZQYXJhbRgBIAEoCzIgLnpwcm90by5Ob3RpZnlRdWVzdENvbXBs",
+            "ZXRlUGFyYW1SBnZQYXJhbRp6CiBOb3RpZnlVc2VyQWxsVmFsaWRCYXR0bGVQ",
+            "YXNzRGF0YRJWChN2YWxpZEJhdHRsZVBhc3NEYXRhGAEgASgLMiQuenByb3Rv",
+            "Lk5vdGlmeUFsbFZhbGlkQmF0dGxlUGFzc0RhdGFSE3ZhbGlkQmF0dGxlUGFz",
+            "c0RhdGEaVgodTm90aWZ5Tm90aWNlTXVsdGlMYW5ndWFnZUluZm8SNQoFdklu",
+            "Zm8YASABKAsyHy56cHJvdG8uTm90aWNlTXVsdGlMYW5ndWFnZUluZm9SBXZJ",
+            "bmZvGj4KDk5vdGlmeUl0ZW1XYXJuEiwKBXZJbmZvGAEgASgLMhYuenByb3Rv",
+            "Lkl0ZW1XYXJuTm90aWZ5UgV2SW5mbxpRChtOb3RpZnlCcm9hZGNhc3RDbGll",
+            "bnRBY3Rpb24SMgoGdlBhcmFtGAEgASgLMhouenByb3RvLkNsaWVudEFjdGlv",
+            "blBhcmFtc1IGdlBhcmFtGiAKCFF0ZUJlZ2luEhQKBXF0ZUlkGAEgASgNUgVx",
+            "dGVJZBomCgpRdWVzdEFib3J0EhgKB3F1ZXN0SWQYASABKAVSB3F1ZXN0SWQa",
+            "TQoTTm90aWZ5QnV5U2hvcFJlc3VsdBI2CgVwYXJhbRgBIAEoCzIgLnpwcm90",
+            "by5Ob3RpZnlCdXlTaG9wUmVzdWx0UGFyYW1SBXBhcmFtGk8KFE5vdGlmeVNo",
+            "b3BJdGVtQ2FuQnV5EjcKBXBhcmFtGAEgASgLMiEuenByb3RvLk5vdGlmeVNo",
+            "b3BJdGVtQ2FuQnV5UGFyYW1SBXBhcmFtGlIKFFdvcmxkQm9zc1JhbmtJbmZv",
+            "TnRmEjoKCHJhbmtJbmZvGAEgASgLMh4uenByb3RvLldvcmxkQm9zc1JhbmtJ",
+            "bmZvUGFyYW1SCHJhbmtJbmZvGlUKE0VudGVyTWF0Y2hSZXN1bHROdGYSPgoI",
+            "dlJlcXVlc3QYASABKAsyIi56cHJvdG8uRW50ZXJNYXRjaFJlc3VsdE50ZlJl",
+            "cXVlc3RSCHZSZXF1ZXN0GksKFU5vdGlmeURyaXZlckFwcGx5UmlkZRIyCgVw",
+            "YXJhbRgBIAEoCzIcLnpwcm90by5Ecml2ZXJBcHBseVJpZGVQYXJhbVIFcGFy",
+            "YW0aSwoVTm90aWZ5SW52aXRlQXBwbHlSaWRlEjIKBXBhcmFtGAEgASgLMhwu",
+            "enByb3RvLkludml0ZUFwcGx5UmlkZVBhcmFtUgVwYXJhbRpJChFOb3RpZnlS",
+            "aWRlSXNBZ3JlZRI0CgVwYXJhbRgBIAEoCzIeLnpwcm90by5Ob3RpZnlSaWRl",
+            "SXNBZ3JlZVBhcmFtUgVwYXJhbRo9Cg1Ob3RpZnlQYXlJbmZvEiwKBXBhcmFt",
+            "GAEgASgLMhYuenByb3RvLk5vdGlmeVBheVBhcmFtUgVwYXJhbRpuCiVOb3Rp",
+            "ZnlMaWZlUHJvZmVzc2lvbldvcmtIaXN0b3J5Q2hhbmdlEkUKBGluZm8YASAB",
+            "KAsyMS56cHJvdG8uTm90aWZ5TGlmZVByb2Zlc3Npb25Xb3JrSGlzdG9yeUNo",
+            "YW5nZUluZm9SBGluZm8aZAogTm90aWZ5TGlmZVByb2Zlc3Npb25VbmxvY2tS",
+            "ZWNpcGUSQAoEaW5mbxgBIAEoCzIsLnpwcm90by5Ob3RpZnlMaWZlUHJvZmVz",
+            "c2lvblVubG9ja1JlY2lwZUluZm9SBGluZm8aTwoQU2lnblJld2FyZE5vdGlm",
+            "eRI7Cgh2UmVxdWVzdBgBIAEoCzIfLnpwcm90by5TaWduUmV3YXJkTm90aWZ5",
+            "UmVxdWVzdFIIdlJlcXVlc3QaTQoPTWFoam9uZ1N0YXJ0TnRmEjoKCHZSZXF1",
+            "ZXN0GAEgASgLMh4uenByb3RvLk1haGpvbmdTdGFydE50ZlJlcXVlc3RSCHZS",
+            "ZXF1ZXN0GkkKDU1haGpvbmdFbmROdGYSOAoIdlJlcXVlc3QYASABKAsyHC56",
+            "cHJvdG8uTWFoam9uZ0VuZE50ZlJlcXVlc3RSCHZSZXF1ZXN0GksKFU5vdGlm",
+            "eUVudHJ5UmFuZG9tRGF0YRIyCgVwYXJhbRgBIAEoCzIcLnpwcm90by5FbnRy",
+            "eVJhbmRvbURhdGFQYXJhbVIFcGFyYW0aTQoWTm90aWZ5RW50cnlVcGdyYWRl",
+            "RGF0YRIzCgVwYXJhbRgBIAEoCzIdLnpwcm90by5FbnRyeVVwZ3JhZGVEYXRh",
+            "UGFyYW1SBXBhcmFtGlIKGE5vdGlmeVBsYXlEYXRhQXR0YWNrSW5mbxIcCgl2",
+            "QXR0YWNrZXIYASABKANSCXZBdHRhY2tlchIYCgd2VmljdGltGAIgASgDUgd2",
+            "VmljdGltYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.EnumEPictureTypeReflection.Descriptor, global::Zproto.StruAwardDataReflection.Descriptor, global::Zproto.StruCardInfoReflection.Descriptor, global::Zproto.StruCharSerializeReflection.Descriptor, global::Zproto.StruClientCustomEventParamsReflection.Descriptor, global::Zproto.StruDebugMessageTipInfoReflection.Descriptor, global::Zproto.StruDriverApplyRideParamReflection.Descriptor, global::Zproto.StruDungeonReadyInfoReflection.Descriptor, global::Zproto.StruDungeonSyncDataReflection.Descriptor, global::Zproto.StruEnterMatchResultNtfRequestReflection.Descriptor, global::Zproto.StruEntryRandomDataParamReflection.Descriptor, global::Zproto.StruInviteApplyRideParamReflection.Descriptor, global::Zproto.StruMahjongEndNtfRequestReflection.Descriptor, global::Zproto.StruMahjongStartNtfRequestReflection.Descriptor, global::Zproto.StruNoticeInfoReflection.Descriptor, global::Zproto.StruNoticeMultiLanguageInfoReflection.Descriptor, global::Zproto.StruNotifyAllSourcePrivilegeEffectDataReflection.Descriptor, global::Zproto.StruNotifyAllValidBattlePassDataReflection.Descriptor, global::Zproto.StruNotifyAwardAllItemInfoReflection.Descriptor, global::Zproto.StruNotifyBuyShopResultParamReflection.Descriptor, global::Zproto.StruNotifyFunctionParamsReflection.Descriptor, global::Zproto.StruNotifyLifeProfessionUnlockRecipeInfoReflection.Descriptor, global::Zproto.StruNotifyLifeProfessionWorkHistoryChangeInfoReflection.Descriptor, global::Zproto.StruNotifyPayParamReflection.Descriptor, global::Zproto.StruNotifyQuestAcceptParamReflection.Descriptor, global::Zproto.StruNotifyQuestChangeStepParamReflection.Descriptor, global::Zproto.StruNotifyQuestCompleteParamReflection.Descriptor, global::Zproto.StruNotifyQuestGiveUpParamReflection.Descriptor, global::Zproto.StruNotifyRideIsAgreeParamReflection.Descriptor, global::Zproto.StruNotifyShopItemCanBuyParamReflection.Descriptor, global::Zproto.StruParkourRecordReflection.Descriptor, global::Zproto.StruPaymentResultReflection.Descriptor, global::Zproto.StruShowItemsInfoReflection.Descriptor, global::Zproto.StruSignRewardNotifyRequestReflection.Descriptor, global::Zproto.StruStartPlayingDungeonParamReflection.Descriptor, global::Zproto.StruSwitchInfoReflection.Descriptor, global::Zproto.StruSyncInviteRequestReflection.Descriptor, global::Zproto.StruTipsInfoReflection.Descriptor, global::Zproto.StruUnlockCookBookInfoReflection.Descriptor, global::Zproto.StruWorldBossRankInfoParamReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.EnumEPictureTypeReflection.Descriptor, global::Zproto.StruAwardDataReflection.Descriptor, global::Zproto.StruCardInfoReflection.Descriptor, global::Zproto.StruCharSerializeReflection.Descriptor, global::Zproto.StruClientActionParamsReflection.Descriptor, global::Zproto.StruClientCustomEventParamsReflection.Descriptor, global::Zproto.StruDebugMessageTipInfoReflection.Descriptor, global::Zproto.StruDriverApplyRideParamReflection.Descriptor, global::Zproto.StruDungeonReadyInfoReflection.Descriptor, global::Zproto.StruDungeonSyncDataReflection.Descriptor, global::Zproto.StruEnterMatchResultNtfRequestReflection.Descriptor, global::Zproto.StruEntryRandomDataParamReflection.Descriptor, global::Zproto.StruEntryUpgradeDataParamReflection.Descriptor, global::Zproto.StruInviteApplyRideParamReflection.Descriptor, global::Zproto.StruItemWarnNotifyReflection.Descriptor, global::Zproto.StruMahjongEndNtfRequestReflection.Descriptor, global::Zproto.StruMahjongStartNtfRequestReflection.Descriptor, global::Zproto.StruNoticeInfoReflection.Descriptor, global::Zproto.StruNoticeMultiLanguageInfoReflection.Descriptor, global::Zproto.StruNotifyAllSourcePrivilegeEffectDataReflection.Descriptor, global::Zproto.StruNotifyAllValidBattlePassDataReflection.Descriptor, global::Zproto.StruNotifyAwardAllItemInfoReflection.Descriptor, global::Zproto.StruNotifyBuyShopResultParamReflection.Descriptor, global::Zproto.StruNotifyFunctionParamsReflection.Descriptor, global::Zproto.StruNotifyLifeProfessionUnlockRecipeInfoReflection.Descriptor, global::Zproto.StruNotifyLifeProfessionWorkHistoryChangeInfoReflection.Descriptor, global::Zproto.StruNotifyPayParamReflection.Descriptor, global::Zproto.StruNotifyQuestAcceptParamReflection.Descriptor, global::Zproto.StruNotifyQuestChangeStepParamReflection.Descriptor, global::Zproto.StruNotifyQuestCompleteParamReflection.Descriptor, global::Zproto.StruNotifyQuestGiveUpParamReflection.Descriptor, global::Zproto.StruNotifyRideIsAgreeParamReflection.Descriptor, global::Zproto.StruNotifyShopItemCanBuyParamReflection.Descriptor, global::Zproto.StruParkourRecordReflection.Descriptor, global::Zproto.StruPaymentResultReflection.Descriptor, global::Zproto.StruShowItemsInfoReflection.Descriptor, global::Zproto.StruSignRewardNotifyRequestReflection.Descriptor, global::Zproto.StruStartPlayingDungeonParamReflection.Descriptor, global::Zproto.StruSwitchInfoReflection.Descriptor, global::Zproto.StruSyncInviteRequestReflection.Descriptor, global::Zproto.StruTipsInfoReflection.Descriptor, global::Zproto.StruUnlockCookBookInfoReflection.Descriptor, global::Zproto.StruWorldBossRankInfoParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf), global::Zproto.WorldNtf.Parser, null, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.SyncPioneerInfo), global::Zproto.WorldNtf.Types.SyncPioneerInfo.Parser, new[]{ "TargetId", "TargetNum" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.SyncSwitchChange), global::Zproto.WorldNtf.Types.SyncSwitchChange.Parser, new[]{ "Id", "OnOff" }, null, null, null, null),
@@ -197,6 +218,8 @@ namespace Zproto {
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyQuestComplete), global::Zproto.WorldNtf.Types.NotifyQuestComplete.Parser, new[]{ "VParam" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyUserAllValidBattlePassData), global::Zproto.WorldNtf.Types.NotifyUserAllValidBattlePassData.Parser, new[]{ "ValidBattlePassData" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyNoticeMultiLanguageInfo), global::Zproto.WorldNtf.Types.NotifyNoticeMultiLanguageInfo.Parser, new[]{ "VInfo" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyItemWarn), global::Zproto.WorldNtf.Types.NotifyItemWarn.Parser, new[]{ "VInfo" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyBroadcastClientAction), global::Zproto.WorldNtf.Types.NotifyBroadcastClientAction.Parser, new[]{ "VParam" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.QteBegin), global::Zproto.WorldNtf.Types.QteBegin.Parser, new[]{ "QteId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.QuestAbort), global::Zproto.WorldNtf.Types.QuestAbort.Parser, new[]{ "QuestId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyBuyShopResult), global::Zproto.WorldNtf.Types.NotifyBuyShopResult.Parser, new[]{ "Param" }, null, null, null, null),
@@ -213,6 +236,7 @@ namespace Zproto {
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.MahjongStartNtf), global::Zproto.WorldNtf.Types.MahjongStartNtf.Parser, new[]{ "VRequest" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.MahjongEndNtf), global::Zproto.WorldNtf.Types.MahjongEndNtf.Parser, new[]{ "VRequest" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyEntryRandomData), global::Zproto.WorldNtf.Types.NotifyEntryRandomData.Parser, new[]{ "Param" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyEntryUpgradeData), global::Zproto.WorldNtf.Types.NotifyEntryUpgradeData.Parser, new[]{ "Param" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyPlayDataAttackInfo), global::Zproto.WorldNtf.Types.NotifyPlayDataAttackInfo.Parser, new[]{ "VAttacker", "VVictim" }, null, null, null, null)})
           }));
     }
@@ -430,7 +454,7 @@ namespace Zproto {
           return new SyncPioneerInfo(this);
         }
 
-        /// <summary>Field number for the "target_id" field.</summary>
+        /// <summary>Field number for the "targetId" field.</summary>
         public const int TargetIdFieldNumber = 1;
         private uint targetId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -442,7 +466,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "target_num" field.</summary>
+        /// <summary>Field number for the "targetNum" field.</summary>
         public const int TargetNumFieldNumber = 2;
         private uint targetNum_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -677,7 +701,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "on_off" field.</summary>
+        /// <summary>Field number for the "onOff" field.</summary>
         public const int OnOffFieldNumber = 2;
         private uint onOff_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1106,7 +1130,7 @@ namespace Zproto {
           return new SyncContainerData(this);
         }
 
-        /// <summary>Field number for the "v_data" field.</summary>
+        /// <summary>Field number for the "vData" field.</summary>
         public const int VDataFieldNumber = 1;
         private global::Zproto.CharSerialize vData_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1313,7 +1337,7 @@ namespace Zproto {
           return new SyncDungeonData(this);
         }
 
-        /// <summary>Field number for the "v_data" field.</summary>
+        /// <summary>Field number for the "vData" field.</summary>
         public const int VDataFieldNumber = 1;
         private global::Zproto.DungeonSyncData vData_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1728,7 +1752,7 @@ namespace Zproto {
           return new CardInfoAck(this);
         }
 
-        /// <summary>Field number for the "char_id" field.</summary>
+        /// <summary>Field number for the "charId" field.</summary>
         public const int CharIdFieldNumber = 1;
         private long charId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1971,7 +1995,7 @@ namespace Zproto {
           return new SyncSeason(this);
         }
 
-        /// <summary>Field number for the "v_season" field.</summary>
+        /// <summary>Field number for the "vSeason" field.</summary>
         public const int VSeasonFieldNumber = 1;
         private int vSeason_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2170,7 +2194,7 @@ namespace Zproto {
           return new UserAction(this);
         }
 
-        /// <summary>Field number for the "v_char_id" field.</summary>
+        /// <summary>Field number for the "vCharId" field.</summary>
         public const int VCharIdFieldNumber = 1;
         private long vCharId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2182,7 +2206,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "v_action_id" field.</summary>
+        /// <summary>Field number for the "vActionId" field.</summary>
         public const int VActionIdFieldNumber = 2;
         private int vActionId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2404,7 +2428,7 @@ namespace Zproto {
           return new NotifyDisplayPlayHelp(this);
         }
 
-        /// <summary>Field number for the "v_play_help_id" field.</summary>
+        /// <summary>Field number for the "vPlayHelpId" field.</summary>
         public const int VPlayHelpIdFieldNumber = 1;
         private int vPlayHelpId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2603,7 +2627,7 @@ namespace Zproto {
           return new NotifyApplicationInteraction(this);
         }
 
-        /// <summary>Field number for the "v_orig_id" field.</summary>
+        /// <summary>Field number for the "vOrigId" field.</summary>
         public const int VOrigIdFieldNumber = 1;
         private long vOrigId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2615,7 +2639,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "v_action_id" field.</summary>
+        /// <summary>Field number for the "vActionId" field.</summary>
         public const int VActionIdFieldNumber = 2;
         private int vActionId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2839,7 +2863,7 @@ namespace Zproto {
           return new NotifyIsAgree(this);
         }
 
-        /// <summary>Field number for the "v_invitee_id" field.</summary>
+        /// <summary>Field number for the "vInviteeId" field.</summary>
         public const int VInviteeIdFieldNumber = 1;
         private long vInviteeId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2851,7 +2875,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "v_action_id" field.</summary>
+        /// <summary>Field number for the "vActionId" field.</summary>
         public const int VActionIdFieldNumber = 2;
         private int vActionId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2863,7 +2887,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "v_is_agree" field.</summary>
+        /// <summary>Field number for the "vIsAgree" field.</summary>
         public const int VIsAgreeFieldNumber = 3;
         private bool vIsAgree_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3109,7 +3133,7 @@ namespace Zproto {
           return new NotifyCancelAction(this);
         }
 
-        /// <summary>Field number for the "v_cancel_char_id" field.</summary>
+        /// <summary>Field number for the "vCancelCharId" field.</summary>
         public const int VCancelCharIdFieldNumber = 1;
         private long vCancelCharId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3322,7 +3346,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "photo_type" field.</summary>
+        /// <summary>Field number for the "photoType" field.</summary>
         public const int PhotoTypeFieldNumber = 2;
         private global::Zproto.EPictureType photoType_ = global::Zproto.EPictureType.EnormalPicture;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3334,7 +3358,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "photo_id" field.</summary>
+        /// <summary>Field number for the "photoId" field.</summary>
         public const int PhotoIdFieldNumber = 3;
         private uint photoId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3346,7 +3370,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "photo_name" field.</summary>
+        /// <summary>Field number for the "photoName" field.</summary>
         public const int PhotoNameFieldNumber = 4;
         private string photoName_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3616,7 +3640,7 @@ namespace Zproto {
           return new SyncInvite(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.SyncInviteRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3824,7 +3848,7 @@ namespace Zproto {
           return new NotifyRedDotChange(this);
         }
 
-        /// <summary>Field number for the "v_red_dot_id" field.</summary>
+        /// <summary>Field number for the "vRedDotId" field.</summary>
         public const int VRedDotIdFieldNumber = 1;
         private int vRedDotId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3836,7 +3860,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "v_value" field.</summary>
+        /// <summary>Field number for the "vValue" field.</summary>
         public const int VValueFieldNumber = 2;
         private int vValue_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4058,7 +4082,7 @@ namespace Zproto {
           return new ChangeNameResultNtf(this);
         }
 
-        /// <summary>Field number for the "v_code" field.</summary>
+        /// <summary>Field number for the "vCode" field.</summary>
         public const int VCodeFieldNumber = 1;
         private int vCode_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4256,7 +4280,7 @@ namespace Zproto {
           return new NotifyReviveUser(this);
         }
 
-        /// <summary>Field number for the "v_actor_uuid" field.</summary>
+        /// <summary>Field number for the "vActorUuid" field.</summary>
         public const int VActorUuidFieldNumber = 1;
         private long vActorUuid_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4454,7 +4478,7 @@ namespace Zproto {
           return new NotifyParkourRankInfo(this);
         }
 
-        /// <summary>Field number for the "v_rank_id" field.</summary>
+        /// <summary>Field number for the "vRankId" field.</summary>
         public const int VRankIdFieldNumber = 1;
         private int vRankId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4665,7 +4689,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "v_record" field.</summary>
+        /// <summary>Field number for the "vRecord" field.</summary>
         public const int VRecordFieldNumber = 2;
         private global::Zproto.ParkourRecord vRecord_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4896,7 +4920,7 @@ namespace Zproto {
           return new NotifyShowTips(this);
         }
 
-        /// <summary>Field number for the "v_tips" field.</summary>
+        /// <summary>Field number for the "vTips" field.</summary>
         public const int VTipsFieldNumber = 1;
         private global::Zproto.TipsInfo vTips_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5103,7 +5127,7 @@ namespace Zproto {
           return new NotifyNoticeInfo(this);
         }
 
-        /// <summary>Field number for the "v_info" field.</summary>
+        /// <summary>Field number for the "vInfo" field.</summary>
         public const int VInfoFieldNumber = 1;
         private global::Zproto.NoticeInfo vInfo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5310,7 +5334,7 @@ namespace Zproto {
           return new NotifyClientKickOff(this);
         }
 
-        /// <summary>Field number for the "err_code" field.</summary>
+        /// <summary>Field number for the "errCode" field.</summary>
         public const int ErrCodeFieldNumber = 1;
         private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5508,7 +5532,7 @@ namespace Zproto {
           return new PaymentResponse(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.PaymentResult vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5715,7 +5739,7 @@ namespace Zproto {
           return new NotifyUnlockCookBook(this);
         }
 
-        /// <summary>Field number for the "v_info" field.</summary>
+        /// <summary>Field number for the "vInfo" field.</summary>
         public const int VInfoFieldNumber = 1;
         private global::Zproto.UnlockCookBookInfo vInfo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5922,7 +5946,7 @@ namespace Zproto {
           return new NotifyCustomEvent(this);
         }
 
-        /// <summary>Field number for the "event_params" field.</summary>
+        /// <summary>Field number for the "eventParams" field.</summary>
         public const int EventParamsFieldNumber = 1;
         private global::Zproto.ClientCustomEventParams eventParams_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6129,7 +6153,7 @@ namespace Zproto {
           return new NotifyStartPlayingDungeon(this);
         }
 
-        /// <summary>Field number for the "v_param" field.</summary>
+        /// <summary>Field number for the "vParam" field.</summary>
         public const int VParamFieldNumber = 1;
         private global::Zproto.StartPlayingDungeonParam vParam_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6336,7 +6360,7 @@ namespace Zproto {
           return new ChangeShowIdResultNtf(this);
         }
 
-        /// <summary>Field number for the "err_code" field.</summary>
+        /// <summary>Field number for the "errCode" field.</summary>
         public const int ErrCodeFieldNumber = 1;
         private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6534,7 +6558,7 @@ namespace Zproto {
           return new NotifyShowItems(this);
         }
 
-        /// <summary>Field number for the "v_info" field.</summary>
+        /// <summary>Field number for the "vInfo" field.</summary>
         public const int VInfoFieldNumber = 1;
         private global::Zproto.ShowItemsInfo vInfo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6742,7 +6766,7 @@ namespace Zproto {
           return new NotifySeasonActivationTargetInfo(this);
         }
 
-        /// <summary>Field number for the "v_season_id" field.</summary>
+        /// <summary>Field number for the "vSeasonId" field.</summary>
         public const int VSeasonIdFieldNumber = 1;
         private int vSeasonId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6754,7 +6778,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "is_refresh" field.</summary>
+        /// <summary>Field number for the "isRefresh" field.</summary>
         public const int IsRefreshFieldNumber = 2;
         private bool isRefresh_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6976,7 +7000,7 @@ namespace Zproto {
           return new NotifyTextCheckResult(this);
         }
 
-        /// <summary>Field number for the "err_code" field.</summary>
+        /// <summary>Field number for the "errCode" field.</summary>
         public const int ErrCodeFieldNumber = 1;
         private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7174,7 +7198,7 @@ namespace Zproto {
           return new NotifyDebugMessageTip(this);
         }
 
-        /// <summary>Field number for the "v_info" field.</summary>
+        /// <summary>Field number for the "vInfo" field.</summary>
         public const int VInfoFieldNumber = 1;
         private global::Zproto.DebugMessageTipInfo vInfo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7381,7 +7405,7 @@ namespace Zproto {
           return new NotifyUserCloseFunction(this);
         }
 
-        /// <summary>Field number for the "v_param" field.</summary>
+        /// <summary>Field number for the "vParam" field.</summary>
         public const int VParamFieldNumber = 1;
         private global::Zproto.NotifyFunctionParams vParam_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7588,7 +7612,7 @@ namespace Zproto {
           return new NotifyServerCloseFunction(this);
         }
 
-        /// <summary>Field number for the "v_param" field.</summary>
+        /// <summary>Field number for the "vParam" field.</summary>
         public const int VParamFieldNumber = 1;
         private global::Zproto.NotifyFunctionParams vParam_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7795,7 +7819,7 @@ namespace Zproto {
           return new NotifyAwardAllItems(this);
         }
 
-        /// <summary>Field number for the "v_all_item" field.</summary>
+        /// <summary>Field number for the "vAllItem" field.</summary>
         public const int VAllItemFieldNumber = 1;
         private global::Zproto.NotifyAwardAllItemInfo vAllItem_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8002,7 +8026,7 @@ namespace Zproto {
           return new NotifyAllMemberReady(this);
         }
 
-        /// <summary>Field number for the "v_open_or_close" field.</summary>
+        /// <summary>Field number for the "vOpenOrClose" field.</summary>
         public const int VOpenOrCloseFieldNumber = 1;
         private bool vOpenOrClose_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8202,7 +8226,7 @@ namespace Zproto {
           return new NotifyCaptainReady(this);
         }
 
-        /// <summary>Field number for the "v_member_name" field.</summary>
+        /// <summary>Field number for the "vMemberName" field.</summary>
         public const int VMemberNameFieldNumber = 1;
         private string vMemberName_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8214,7 +8238,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "v_char_id" field.</summary>
+        /// <summary>Field number for the "vCharId" field.</summary>
         public const int VCharIdFieldNumber = 2;
         private long vCharId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8226,7 +8250,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "v_ready_info" field.</summary>
+        /// <summary>Field number for the "vReadyInfo" field.</summary>
         public const int VReadyInfoFieldNumber = 3;
         private global::Zproto.DungeonReadyInfo vReadyInfo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8481,7 +8505,7 @@ namespace Zproto {
           return new NotifyUserAllSourcePrivilegeEffectData(this);
         }
 
-        /// <summary>Field number for the "v_all_privilege_effects" field.</summary>
+        /// <summary>Field number for the "vAllPrivilegeEffects" field.</summary>
         public const int VAllPrivilegeEffectsFieldNumber = 1;
         private global::Zproto.NotifyAllSourcePrivilegeEffectData vAllPrivilegeEffects_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8688,7 +8712,7 @@ namespace Zproto {
           return new NotifyQuestAccept(this);
         }
 
-        /// <summary>Field number for the "v_param" field.</summary>
+        /// <summary>Field number for the "vParam" field.</summary>
         public const int VParamFieldNumber = 1;
         private global::Zproto.NotifyQuestAcceptParam vParam_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8895,7 +8919,7 @@ namespace Zproto {
           return new NotifyQuestChangeStep(this);
         }
 
-        /// <summary>Field number for the "v_param" field.</summary>
+        /// <summary>Field number for the "vParam" field.</summary>
         public const int VParamFieldNumber = 1;
         private global::Zproto.NotifyQuestChangeStepParam vParam_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9102,7 +9126,7 @@ namespace Zproto {
           return new NotifyQuestGiveUp(this);
         }
 
-        /// <summary>Field number for the "v_param" field.</summary>
+        /// <summary>Field number for the "vParam" field.</summary>
         public const int VParamFieldNumber = 1;
         private global::Zproto.NotifyQuestGiveUpParam vParam_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9309,7 +9333,7 @@ namespace Zproto {
           return new NotifyQuestComplete(this);
         }
 
-        /// <summary>Field number for the "v_param" field.</summary>
+        /// <summary>Field number for the "vParam" field.</summary>
         public const int VParamFieldNumber = 1;
         private global::Zproto.NotifyQuestCompleteParam vParam_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9516,7 +9540,7 @@ namespace Zproto {
           return new NotifyUserAllValidBattlePassData(this);
         }
 
-        /// <summary>Field number for the "valid_battle_pass_data" field.</summary>
+        /// <summary>Field number for the "validBattlePassData" field.</summary>
         public const int ValidBattlePassDataFieldNumber = 1;
         private global::Zproto.NotifyAllValidBattlePassData validBattlePassData_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9723,7 +9747,7 @@ namespace Zproto {
           return new NotifyNoticeMultiLanguageInfo(this);
         }
 
-        /// <summary>Field number for the "v_info" field.</summary>
+        /// <summary>Field number for the "vInfo" field.</summary>
         public const int VInfoFieldNumber = 1;
         private global::Zproto.NoticeMultiLanguageInfo vInfo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9886,6 +9910,420 @@ namespace Zproto {
       }
 
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class NotifyItemWarn : pb::IMessage<NotifyItemWarn>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<NotifyItemWarn> _parser = new pb::MessageParser<NotifyItemWarn>(() => new NotifyItemWarn());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<NotifyItemWarn> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[44]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyItemWarn() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyItemWarn(NotifyItemWarn other) : this() {
+          vInfo_ = other.vInfo_ != null ? other.vInfo_.Clone() : null;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyItemWarn Clone() {
+          return new NotifyItemWarn(this);
+        }
+
+        /// <summary>Field number for the "vInfo" field.</summary>
+        public const int VInfoFieldNumber = 1;
+        private global::Zproto.ItemWarnNotify vInfo_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Zproto.ItemWarnNotify VInfo {
+          get { return vInfo_; }
+          set {
+            vInfo_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as NotifyItemWarn);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(NotifyItemWarn other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (!object.Equals(VInfo, other.VInfo)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (vInfo_ != null) hash ^= VInfo.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (vInfo_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(VInfo);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (vInfo_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(VInfo);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (vInfo_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(VInfo);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(NotifyItemWarn other) {
+          if (other == null) {
+            return;
+          }
+          if (other.vInfo_ != null) {
+            if (vInfo_ == null) {
+              VInfo = new global::Zproto.ItemWarnNotify();
+            }
+            VInfo.MergeFrom(other.VInfo);
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                if (vInfo_ == null) {
+                  VInfo = new global::Zproto.ItemWarnNotify();
+                }
+                input.ReadMessage(VInfo);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                if (vInfo_ == null) {
+                  VInfo = new global::Zproto.ItemWarnNotify();
+                }
+                input.ReadMessage(VInfo);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class NotifyBroadcastClientAction : pb::IMessage<NotifyBroadcastClientAction>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<NotifyBroadcastClientAction> _parser = new pb::MessageParser<NotifyBroadcastClientAction>(() => new NotifyBroadcastClientAction());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<NotifyBroadcastClientAction> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[45]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyBroadcastClientAction() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyBroadcastClientAction(NotifyBroadcastClientAction other) : this() {
+          vParam_ = other.vParam_ != null ? other.vParam_.Clone() : null;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyBroadcastClientAction Clone() {
+          return new NotifyBroadcastClientAction(this);
+        }
+
+        /// <summary>Field number for the "vParam" field.</summary>
+        public const int VParamFieldNumber = 1;
+        private global::Zproto.ClientActionParams vParam_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Zproto.ClientActionParams VParam {
+          get { return vParam_; }
+          set {
+            vParam_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as NotifyBroadcastClientAction);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(NotifyBroadcastClientAction other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (!object.Equals(VParam, other.VParam)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (vParam_ != null) hash ^= VParam.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (vParam_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(VParam);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (vParam_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(VParam);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (vParam_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(VParam);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(NotifyBroadcastClientAction other) {
+          if (other == null) {
+            return;
+          }
+          if (other.vParam_ != null) {
+            if (vParam_ == null) {
+              VParam = new global::Zproto.ClientActionParams();
+            }
+            VParam.MergeFrom(other.VParam);
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                if (vParam_ == null) {
+                  VParam = new global::Zproto.ClientActionParams();
+                }
+                input.ReadMessage(VParam);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                if (vParam_ == null) {
+                  VParam = new global::Zproto.ClientActionParams();
+                }
+                input.ReadMessage(VParam);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class QteBegin : pb::IMessage<QteBegin>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -9900,7 +10338,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[44]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[46]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9930,7 +10368,7 @@ namespace Zproto {
           return new QteBegin(this);
         }
 
-        /// <summary>Field number for the "qte_id" field.</summary>
+        /// <summary>Field number for the "qteId" field.</summary>
         public const int QteIdFieldNumber = 1;
         private uint qteId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10098,7 +10536,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[45]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[47]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10128,7 +10566,7 @@ namespace Zproto {
           return new QuestAbort(this);
         }
 
-        /// <summary>Field number for the "quest_id" field.</summary>
+        /// <summary>Field number for the "questId" field.</summary>
         public const int QuestIdFieldNumber = 1;
         private int questId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10296,7 +10734,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[46]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[48]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10503,7 +10941,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[47]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[49]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10710,7 +11148,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[48]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[50]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10740,7 +11178,7 @@ namespace Zproto {
           return new WorldBossRankInfoNtf(this);
         }
 
-        /// <summary>Field number for the "rank_info" field.</summary>
+        /// <summary>Field number for the "rankInfo" field.</summary>
         public const int RankInfoFieldNumber = 1;
         private global::Zproto.WorldBossRankInfoParam rankInfo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10917,7 +11355,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[49]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[51]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10947,7 +11385,7 @@ namespace Zproto {
           return new EnterMatchResultNtf(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.EnterMatchResultNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11124,7 +11562,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[50]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[52]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11331,7 +11769,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[51]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[53]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11538,7 +11976,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[52]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[54]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11745,7 +12183,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[53]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[55]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11952,7 +12390,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[54]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[56]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12159,7 +12597,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[55]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[57]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12366,7 +12804,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[56]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[58]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12396,7 +12834,7 @@ namespace Zproto {
           return new SignRewardNotify(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.SignRewardNotifyRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12573,7 +13011,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[57]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[59]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12603,7 +13041,7 @@ namespace Zproto {
           return new MahjongStartNtf(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.MahjongStartNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12780,7 +13218,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[58]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[60]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12810,7 +13248,7 @@ namespace Zproto {
           return new MahjongEndNtf(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.MahjongEndNtfRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12987,7 +13425,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[59]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[61]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13180,6 +13618,213 @@ namespace Zproto {
       }
 
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class NotifyEntryUpgradeData : pb::IMessage<NotifyEntryUpgradeData>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<NotifyEntryUpgradeData> _parser = new pb::MessageParser<NotifyEntryUpgradeData>(() => new NotifyEntryUpgradeData());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<NotifyEntryUpgradeData> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[62]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyEntryUpgradeData() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyEntryUpgradeData(NotifyEntryUpgradeData other) : this() {
+          param_ = other.param_ != null ? other.param_.Clone() : null;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyEntryUpgradeData Clone() {
+          return new NotifyEntryUpgradeData(this);
+        }
+
+        /// <summary>Field number for the "param" field.</summary>
+        public const int ParamFieldNumber = 1;
+        private global::Zproto.EntryUpgradeDataParam param_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Zproto.EntryUpgradeDataParam Param {
+          get { return param_; }
+          set {
+            param_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as NotifyEntryUpgradeData);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(NotifyEntryUpgradeData other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (!object.Equals(Param, other.Param)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (param_ != null) hash ^= Param.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (param_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(Param);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (param_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(Param);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (param_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Param);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(NotifyEntryUpgradeData other) {
+          if (other == null) {
+            return;
+          }
+          if (other.param_ != null) {
+            if (param_ == null) {
+              Param = new global::Zproto.EntryUpgradeDataParam();
+            }
+            Param.MergeFrom(other.Param);
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                if (param_ == null) {
+                  Param = new global::Zproto.EntryUpgradeDataParam();
+                }
+                input.ReadMessage(Param);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                if (param_ == null) {
+                  Param = new global::Zproto.EntryUpgradeDataParam();
+                }
+                input.ReadMessage(Param);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class NotifyPlayDataAttackInfo : pb::IMessage<NotifyPlayDataAttackInfo>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -13194,7 +13839,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[60]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[63]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13225,7 +13870,7 @@ namespace Zproto {
           return new NotifyPlayDataAttackInfo(this);
         }
 
-        /// <summary>Field number for the "v_attacker" field.</summary>
+        /// <summary>Field number for the "vAttacker" field.</summary>
         public const int VAttackerFieldNumber = 1;
         private long vAttacker_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13237,7 +13882,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "v_victim" field.</summary>
+        /// <summary>Field number for the "vVictim" field.</summary>
         public const int VVictimFieldNumber = 2;
         private long vVictim_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

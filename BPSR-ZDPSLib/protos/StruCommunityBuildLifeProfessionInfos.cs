@@ -26,13 +26,13 @@ namespace Zproto {
           string.Concat(
             "CjBzdHJ1X2NvbW11bml0eV9idWlsZF9saWZlX3Byb2Zlc3Npb25faW5mb3Mu",
             "cHJvdG8SBnpwcm90bxo0c3RydV9jb21tdW5pdHlfYnVpbGRfbGlmZV9wcm9m",
-            "ZXNzaW9uX2luZm9fbGlzdC5wcm90byKAAgohQ29tbXVuaXR5QnVpbGRMaWZl",
-            "UHJvZmVzc2lvbkluZm9zEmwKG2J1aWxkX2xpZmVfcHJvZmVzc2lvbl9pbmZv",
-            "cxgBIAMoCzJHLnpwcm90by5Db21tdW5pdHlCdWlsZExpZmVQcm9mZXNzaW9u",
-            "SW5mb3MuQnVpbGRMaWZlUHJvZmVzc2lvbkluZm9zRW50cnkabQodQnVpbGRM",
-            "aWZlUHJvZmVzc2lvbkluZm9zRW50cnkSCwoDa2V5GAEgASgDEjsKBXZhbHVl",
-            "GAIgASgLMiwuenByb3RvLkNvbW11bml0eUJ1aWxkTGlmZVByb2Zlc3Npb25J",
-            "bmZvTGlzdDoCOAFiBnByb3RvMw=="));
+            "ZXNzaW9uX2luZm9fbGlzdC5wcm90byKYAgohQ29tbXVuaXR5QnVpbGRMaWZl",
+            "UHJvZmVzc2lvbkluZm9zEoMBChhidWlsZExpZmVQcm9mZXNzaW9uSW5mb3MY",
+            "ASADKAsyRy56cHJvdG8uQ29tbXVuaXR5QnVpbGRMaWZlUHJvZmVzc2lvbklu",
+            "Zm9zLkJ1aWxkTGlmZVByb2Zlc3Npb25JbmZvc0VudHJ5UhhidWlsZExpZmVQ",
+            "cm9mZXNzaW9uSW5mb3MabQodQnVpbGRMaWZlUHJvZmVzc2lvbkluZm9zRW50",
+            "cnkSCwoDa2V5GAEgASgDEjsKBXZhbHVlGAIgASgLMiwuenByb3RvLkNvbW11",
+            "bml0eUJ1aWxkTGlmZVByb2Zlc3Npb25JbmZvTGlzdDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityBuildLifeProfessionInfoListReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new CommunityBuildLifeProfessionInfos(this);
     }
 
-    /// <summary>Field number for the "build_life_profession_infos" field.</summary>
+    /// <summary>Field number for the "buildLifeProfessionInfos" field.</summary>
     public const int BuildLifeProfessionInfosFieldNumber = 1;
     private static readonly pbc::MapField<long, global::Zproto.CommunityBuildLifeProfessionInfoList>.Codec _map_buildLifeProfessionInfos_codec
         = new pbc::MapField<long, global::Zproto.CommunityBuildLifeProfessionInfoList>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.CommunityBuildLifeProfessionInfoList.Parser), 10);

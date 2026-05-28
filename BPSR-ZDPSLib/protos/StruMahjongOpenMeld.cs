@@ -24,10 +24,10 @@ namespace Zproto {
     static StruMahjongOpenMeldReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X21haGpvbmdfb3Blbl9tZWxkLnByb3RvEgZ6cHJvdG8iXAoPTWFo",
-            "am9uZ09wZW5NZWxkEhEKCW1lbGRfdHlwZRgBIAEoBRINCgVjYXJkcxgCIAMo",
-            "BRIMCgRjYXJkGAMgASgFEhkKEWZyb21fcGxheWVyX2luZGV4GAQgASgFYgZw",
-            "cm90bzM="));
+            "ChxzdHJ1X21haGpvbmdfb3Blbl9tZWxkLnByb3RvEgZ6cHJvdG8igQEKD01h",
+            "aGpvbmdPcGVuTWVsZBIaCghNZWxkVHlwZRgBIAEoBVIITWVsZFR5cGUSFAoF",
+            "Q2FyZHMYAiADKAVSBUNhcmRzEhIKBENhcmQYAyABKAVSBENhcmQSKAoPRnJv",
+            "bVBsYXllckluZGV4GAQgASgFUg9Gcm9tUGxheWVySW5kZXhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new MahjongOpenMeld(this);
     }
 
-    /// <summary>Field number for the "meld_type" field.</summary>
+    /// <summary>Field number for the "MeldType" field.</summary>
     public const int MeldTypeFieldNumber = 1;
     private int meldType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cards" field.</summary>
+    /// <summary>Field number for the "Cards" field.</summary>
     public const int CardsFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_cards_codec
         = pb::FieldCodec.ForInt32(18);
@@ -109,7 +109,7 @@ namespace Zproto {
       get { return cards_; }
     }
 
-    /// <summary>Field number for the "card" field.</summary>
+    /// <summary>Field number for the "Card" field.</summary>
     public const int CardFieldNumber = 3;
     private int card_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +121,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "from_player_index" field.</summary>
+    /// <summary>Field number for the "FromPlayerIndex" field.</summary>
     public const int FromPlayerIndexFieldNumber = 4;
     private int fromPlayerIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2NvbXBlbnNhdGlvbl9yZWNvcmQucHJvdG8SBnpwcm90bxocc3Ry",
             "dV9jb21wZW5zYXRpb25fZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIrQBChJDb21wZW5zYXRpb25SZWNvcmQSSwoRY29tcGVuc2F0aW9uX2Rh",
-            "dGEYASADKAsyMC56cHJvdG8uQ29tcGVuc2F0aW9uUmVjb3JkLkNvbXBlbnNh",
-            "dGlvbkRhdGFFbnRyeRpRChVDb21wZW5zYXRpb25EYXRhRW50cnkSCwoDa2V5",
-            "GAEgASgNEicKBXZhbHVlGAIgASgLMhguenByb3RvLkNvbXBlbnNhdGlvbkRh",
-            "dGE6AjgBYgZwcm90bzM="));
+            "b3RvIsUBChJDb21wZW5zYXRpb25SZWNvcmQSXAoQY29tcGVuc2F0aW9uRGF0",
+            "YRgBIAMoCzIwLnpwcm90by5Db21wZW5zYXRpb25SZWNvcmQuQ29tcGVuc2F0",
+            "aW9uRGF0YUVudHJ5UhBjb21wZW5zYXRpb25EYXRhGlEKFUNvbXBlbnNhdGlv",
+            "bkRhdGFFbnRyeRILCgNrZXkYASABKA0SJwoFdmFsdWUYAiABKAsyGC56cHJv",
+            "dG8uQ29tcGVuc2F0aW9uRGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCompensationDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new CompensationRecord(this);
     }
 
-    /// <summary>Field number for the "compensation_data" field.</summary>
+    /// <summary>Field number for the "compensationData" field.</summary>
     public const int CompensationDataFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.CompensationData>.Codec _map_compensationData_codec
         = new pbc::MapField<uint, global::Zproto.CompensationData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CompensationData.Parser), 10);

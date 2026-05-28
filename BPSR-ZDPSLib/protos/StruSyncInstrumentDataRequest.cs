@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X3N5bmNfaW5zdHJ1bWVudF9kYXRhX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90bxofc3RydV9pbnN0cnVtZW50X3N5bmNfZGF0YS5wcm90byJWChlTeW5j",
-            "SW5zdHJ1bWVudERhdGFSZXF1ZXN0EjkKFWluc3RydW1lbnRfc3luY19kYXRh",
-            "cxgBIAMoCzIaLnpwcm90by5JbnN0cnVtZW50U3luY0RhdGFiBnByb3RvMw=="));
+            "cm90bxofc3RydV9pbnN0cnVtZW50X3N5bmNfZGF0YS5wcm90byJpChlTeW5j",
+            "SW5zdHJ1bWVudERhdGFSZXF1ZXN0EkwKE2luc3RydW1lbnRTeW5jRGF0YXMY",
+            "ASADKAsyGi56cHJvdG8uSW5zdHJ1bWVudFN5bmNEYXRhUhNpbnN0cnVtZW50",
+            "U3luY0RhdGFzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruInstrumentSyncDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new SyncInstrumentDataRequest(this);
     }
 
-    /// <summary>Field number for the "instrument_sync_datas" field.</summary>
+    /// <summary>Field number for the "instrumentSyncDatas" field.</summary>
     public const int InstrumentSyncDatasFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.InstrumentSyncData> _repeated_instrumentSyncDatas_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.InstrumentSyncData.Parser);

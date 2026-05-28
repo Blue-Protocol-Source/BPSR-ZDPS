@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X21haF9qb25nX2hhbmRsZV9tZXNzYWdlLnByb3RvEgZ6cHJvdG8i",
-            "YgoUTWFoSm9uZ0hhbmRsZU1lc3NhZ2USDwoHSGFuZGxlXxgBIAEoBRITCgto",
-            "YW5kbGVfY2FyZBgCIAEoBRINCgVjYXJkcxgDIAMoBRIVCg1kaXNjYXJkX2lu",
-            "ZGV4GAQgASgFYgZwcm90bzM="));
+            "iQEKFE1haEpvbmdIYW5kbGVNZXNzYWdlEhcKB0hhbmRsZV8YASABKAVSBkhh",
+            "bmRsZRIeCgpIYW5kbGVDYXJkGAIgASgFUgpIYW5kbGVDYXJkEhQKBUNhcmRz",
+            "GAMgAygFUgVDYXJkcxIiCgxEaXNjYXJkSW5kZXgYBCABKAVSDERpc2NhcmRJ",
+            "bmRleGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "handle_card" field.</summary>
+    /// <summary>Field number for the "HandleCard" field.</summary>
     public const int HandleCardFieldNumber = 2;
     private int handleCard_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cards" field.</summary>
+    /// <summary>Field number for the "Cards" field.</summary>
     public const int CardsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_cards_codec
         = pb::FieldCodec.ForInt32(26);
@@ -121,7 +122,7 @@ namespace Zproto {
       get { return cards_; }
     }
 
-    /// <summary>Field number for the "discard_index" field.</summary>
+    /// <summary>Field number for the "DiscardIndex" field.</summary>
     public const int DiscardIndexFieldNumber = 4;
     private int discardIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

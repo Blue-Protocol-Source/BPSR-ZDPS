@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "ChhzZXJ2X3dvcmxkX2FjdF9udGYucHJvdG8SBnpwcm90bxoic3RydV93b3Js",
             "ZF9hY3RfYWN0aXZpdHlfZGF0YS5wcm90bxoec3RydV93b3JsZF9hY3RfcmFu",
-            "a19saXN0LnByb3RvIo0BCgtXb3JsZEFjdE50ZhpAChBTeW5jV29ybGRBY3RE",
-            "YXRhEiwKBnZfZGF0YRgBIAEoCzIcLnpwcm90by5Xb3JsZEFjdEFjdGl2aXR5",
-            "RGF0YRo8ChBTeW5jV29ybGRBY3RSYW5rEigKBnZfZGF0YRgBIAEoCzIYLnpw",
-            "cm90by5Xb3JsZEFjdFJhbmtMaXN0YgZwcm90bzM="));
+            "a19saXN0LnByb3RvIpkBCgtXb3JsZEFjdE50ZhpGChBTeW5jV29ybGRBY3RE",
+            "YXRhEjIKBXZEYXRhGAEgASgLMhwuenByb3RvLldvcmxkQWN0QWN0aXZpdHlE",
+            "YXRhUgV2RGF0YRpCChBTeW5jV29ybGRBY3RSYW5rEi4KBXZEYXRhGAEgASgL",
+            "MhguenByb3RvLldvcmxkQWN0UmFua0xpc3RSBXZEYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruWorldActActivityDataReflection.Descriptor, global::Zproto.StruWorldActRankListReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -250,7 +250,7 @@ namespace Zproto {
           return new SyncWorldActData(this);
         }
 
-        /// <summary>Field number for the "v_data" field.</summary>
+        /// <summary>Field number for the "vData" field.</summary>
         public const int VDataFieldNumber = 1;
         private global::Zproto.WorldActActivityData vData_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -457,7 +457,7 @@ namespace Zproto {
           return new SyncWorldActRank(this);
         }
 
-        /// <summary>Field number for the "v_data" field.</summary>
+        /// <summary>Field number for the "vData" field.</summary>
         public const int VDataFieldNumber = 1;
         private global::Zproto.WorldActRankList vData_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

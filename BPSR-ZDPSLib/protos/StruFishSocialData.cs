@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X2Zpc2hfc29jaWFsX2RhdGEucHJvdG8SBnpwcm90bxoWc3RydV9m",
-            "aXNoX3JlY29yZC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIpcBCg5G",
-            "aXNoU29jaWFsRGF0YRI9CgxmaXNoX3JlY29yZHMYASADKAsyJy56cHJvdG8u",
-            "RmlzaFNvY2lhbERhdGEuRmlzaFJlY29yZHNFbnRyeRpGChBGaXNoUmVjb3Jk",
-            "c0VudHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1ZRgCIAEoCzISLnpwcm90by5G",
-            "aXNoUmVjb3JkOgI4AWIGcHJvdG8z"));
+            "aXNoX3JlY29yZC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqMBCg5G",
+            "aXNoU29jaWFsRGF0YRJJCgtmaXNoUmVjb3JkcxgBIAMoCzInLnpwcm90by5G",
+            "aXNoU29jaWFsRGF0YS5GaXNoUmVjb3Jkc0VudHJ5UgtmaXNoUmVjb3JkcxpG",
+            "ChBGaXNoUmVjb3Jkc0VudHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1ZRgCIAEo",
+            "CzISLnpwcm90by5GaXNoUmVjb3JkOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFishRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new FishSocialData(this);
     }
 
-    /// <summary>Field number for the "fish_records" field.</summary>
+    /// <summary>Field number for the "fishRecords" field.</summary>
     public const int FishRecordsFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.FishRecord>.Codec _map_fishRecords_codec
         = new pbc::MapField<int, global::Zproto.FishRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FishRecord.Parser), 10);

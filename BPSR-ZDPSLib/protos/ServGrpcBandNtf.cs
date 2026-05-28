@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzZXJ2X2dycGNfYmFuZF9udGYucHJvdG8SBnpwcm90bxozc3RydV9ub3Rp",
-            "ZnlfdGVhbV9tZW1iZXJfam9pbl9lbnNlbWJsZV9yZXF1ZXN0LnByb3RvImgK",
-            "C0dycGNCYW5kTnRmGlkKHE5vdGlmeVRlYW1NZW1iZXJKb2luRW5zZW1ibGUS",
-            "OQoEaW5mbxgBIAEoCzIrLnpwcm90by5Ob3RpZnlUZWFtTWVtYmVySm9pbkVu",
-            "c2VtYmxlUmVxdWVzdGIGcHJvdG8z"));
+            "ZnlfdGVhbV9tZW1iZXJfam9pbl9lbnNlbWJsZV9yZXF1ZXN0LnByb3RvIm4K",
+            "C0dycGNCYW5kTnRmGl8KHE5vdGlmeVRlYW1NZW1iZXJKb2luRW5zZW1ibGUS",
+            "PwoEaW5mbxgBIAEoCzIrLnpwcm90by5Ob3RpZnlUZWFtTWVtYmVySm9pbkVu",
+            "c2VtYmxlUmVxdWVzdFIEaW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNotifyTeamMemberJoinEnsembleRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

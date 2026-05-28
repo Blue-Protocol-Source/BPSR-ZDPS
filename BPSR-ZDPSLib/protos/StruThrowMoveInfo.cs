@@ -24,10 +24,11 @@ namespace Zproto {
     static StruThrowMoveInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X3Rocm93X21vdmVfaW5mby5wcm90bxIGenByb3RvIm8KDVRocm93",
-            "TW92ZUluZm8SEwoLdGFyZ2V0X3V1aWQYASABKAMSEAoIc2tpbGxfaWQYAiAB",
-            "KAUSEwoLc2tpbGxfbGV2ZWwYAyABKAUSEAoIc3RhZ2VfaWQYBCABKAUSEAoI",
-            "ZXZlbnRfaWQYBSABKAViBnByb3RvMw=="));
+            "ChpzdHJ1X3Rocm93X21vdmVfaW5mby5wcm90bxIGenByb3RvIp0BCg1UaHJv",
+            "d01vdmVJbmZvEh4KClRhcmdldFV1aWQYASABKANSClRhcmdldFV1aWQSGAoH",
+            "U2tpbGxJZBgCIAEoBVIHU2tpbGxJZBIeCgpTa2lsbExldmVsGAMgASgFUgpT",
+            "a2lsbExldmVsEhgKB1N0YWdlSWQYBCABKAVSB1N0YWdlSWQSGAoHRXZlbnRJ",
+            "ZBgFIAEoBVIHRXZlbnRJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new ThrowMoveInfo(this);
     }
 
-    /// <summary>Field number for the "target_uuid" field.</summary>
+    /// <summary>Field number for the "TargetUuid" field.</summary>
     public const int TargetUuidFieldNumber = 1;
     private long targetUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skill_id" field.</summary>
+    /// <summary>Field number for the "SkillId" field.</summary>
     public const int SkillIdFieldNumber = 2;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skill_level" field.</summary>
+    /// <summary>Field number for the "SkillLevel" field.</summary>
     public const int SkillLevelFieldNumber = 3;
     private int skillLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "stage_id" field.</summary>
+    /// <summary>Field number for the "StageId" field.</summary>
     public const int StageIdFieldNumber = 4;
     private int stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +136,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "event_id" field.</summary>
+    /// <summary>Field number for the "EventId" field.</summary>
     public const int EventIdFieldNumber = 5;
     private int eventId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

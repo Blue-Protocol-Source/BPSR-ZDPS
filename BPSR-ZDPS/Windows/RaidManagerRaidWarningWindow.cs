@@ -67,7 +67,7 @@ namespace BPSR_ZDPS.Windows
         {
             if (Settings.Instance.WindowSettings.RaidManagerRaidWarning.AllowRaidWarnings)
             {
-                bool isAllowed = !Settings.Instance.WindowSettings.RaidManagerRaidWarning.PlayerUIDBlacklist.Contains(arg1.Info.CharId);
+                bool isAllowed = !Settings.Instance.WindowSettings.RaidManagerRaidWarning.PlayerUIDBlacklist.Contains(arg1.Info.CharID);
                 if (isAllowed && arg2.Msg.MsgType == Zproto.ChitChatMsgType.ChatMsgTextMessage && arg2.Msg.MsgText.Length > 5)
                 {
                     if (Settings.Instance.WindowSettings.RaidManagerRaidWarning.ChatChannels.Contains(arg2.Channel))

@@ -25,15 +25,18 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X2dhc2hhX2d1YXJhbnRlZV9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0",
-            "cnVfZGlydHlfbWFzay5wcm90byK/AQoSR2FzaGFHdWFyYW50ZWVJbmZvEgoK",
-            "AmlkGAEgASgNEhIKCmd1YXJhbnRlZXgYAiABKA0SEgoKZ3VhcmFudGVleRgD",
-            "IAEoDRIfChdyZXNpZHVlX2d1YXJhbnRlZV90aW1leBgEIAEoBRIfChdyZXNp",
-            "ZHVlX2d1YXJhbnRlZV90aW1leRgFIAEoBRIfChdyZXNpZHVlX2d1YXJhbnRl",
-            "ZV90aW1lehgGIAEoBRISCgpndWFyYW50ZWV6GAcgASgNYgZwcm90bzM="));
+            "cnVfZGlydHlfbWFzay5wcm90byKmAgoSR2FzaGFHdWFyYW50ZWVJbmZvEg4K",
+            "AmlkGAEgASgNUgJpZBIeCgpndWFyYW50ZWVYGAIgASgNUgpndWFyYW50ZWVY",
+            "Eh4KCmd1YXJhbnRlZVkYAyABKA1SCmd1YXJhbnRlZVkSNAoVcmVzaWR1ZUd1",
+            "YXJhbnRlZVRpbWVYGAQgASgFUhVyZXNpZHVlR3VhcmFudGVlVGltZVgSNAoV",
+            "cmVzaWR1ZUd1YXJhbnRlZVRpbWVZGAUgASgFUhVyZXNpZHVlR3VhcmFudGVl",
+            "VGltZVkSNAoVcmVzaWR1ZUd1YXJhbnRlZVRpbWVaGAYgASgFUhVyZXNpZHVl",
+            "R3VhcmFudGVlVGltZVoSHgoKZ3VhcmFudGVlWhgHIAEoDVIKZ3VhcmFudGVl",
+            "WmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.GashaGuaranteeInfo), global::Zproto.GashaGuaranteeInfo.Parser, new[]{ "Id", "Guaranteex", "Guaranteey", "ResidueGuaranteeTimex", "ResidueGuaranteeTimey", "ResidueGuaranteeTimez", "Guaranteez" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.GashaGuaranteeInfo), global::Zproto.GashaGuaranteeInfo.Parser, new[]{ "Id", "GuaranteeX", "GuaranteeY", "ResidueGuaranteeTimeX", "ResidueGuaranteeTimeY", "ResidueGuaranteeTimeZ", "GuaranteeZ" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,12 +79,12 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GashaGuaranteeInfo(GashaGuaranteeInfo other) : this() {
       id_ = other.id_;
-      guaranteex_ = other.guaranteex_;
-      guaranteey_ = other.guaranteey_;
-      residueGuaranteeTimex_ = other.residueGuaranteeTimex_;
-      residueGuaranteeTimey_ = other.residueGuaranteeTimey_;
-      residueGuaranteeTimez_ = other.residueGuaranteeTimez_;
-      guaranteez_ = other.guaranteez_;
+      guaranteeX_ = other.guaranteeX_;
+      guaranteeY_ = other.guaranteeY_;
+      residueGuaranteeTimeX_ = other.residueGuaranteeTimeX_;
+      residueGuaranteeTimeY_ = other.residueGuaranteeTimeY_;
+      residueGuaranteeTimeZ_ = other.residueGuaranteeTimeZ_;
+      guaranteeZ_ = other.guaranteeZ_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -103,75 +106,75 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "guaranteex" field.</summary>
-    public const int GuaranteexFieldNumber = 2;
-    private uint guaranteex_;
+    /// <summary>Field number for the "guaranteeX" field.</summary>
+    public const int GuaranteeXFieldNumber = 2;
+    private uint guaranteeX_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Guaranteex {
-      get { return guaranteex_; }
+    public uint GuaranteeX {
+      get { return guaranteeX_; }
       set {
-        guaranteex_ = value;
+        guaranteeX_ = value;
       }
     }
 
-    /// <summary>Field number for the "guaranteey" field.</summary>
-    public const int GuaranteeyFieldNumber = 3;
-    private uint guaranteey_;
+    /// <summary>Field number for the "guaranteeY" field.</summary>
+    public const int GuaranteeYFieldNumber = 3;
+    private uint guaranteeY_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Guaranteey {
-      get { return guaranteey_; }
+    public uint GuaranteeY {
+      get { return guaranteeY_; }
       set {
-        guaranteey_ = value;
+        guaranteeY_ = value;
       }
     }
 
-    /// <summary>Field number for the "residue_guarantee_timex" field.</summary>
-    public const int ResidueGuaranteeTimexFieldNumber = 4;
-    private int residueGuaranteeTimex_;
+    /// <summary>Field number for the "residueGuaranteeTimeX" field.</summary>
+    public const int ResidueGuaranteeTimeXFieldNumber = 4;
+    private int residueGuaranteeTimeX_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int ResidueGuaranteeTimex {
-      get { return residueGuaranteeTimex_; }
+    public int ResidueGuaranteeTimeX {
+      get { return residueGuaranteeTimeX_; }
       set {
-        residueGuaranteeTimex_ = value;
+        residueGuaranteeTimeX_ = value;
       }
     }
 
-    /// <summary>Field number for the "residue_guarantee_timey" field.</summary>
-    public const int ResidueGuaranteeTimeyFieldNumber = 5;
-    private int residueGuaranteeTimey_;
+    /// <summary>Field number for the "residueGuaranteeTimeY" field.</summary>
+    public const int ResidueGuaranteeTimeYFieldNumber = 5;
+    private int residueGuaranteeTimeY_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int ResidueGuaranteeTimey {
-      get { return residueGuaranteeTimey_; }
+    public int ResidueGuaranteeTimeY {
+      get { return residueGuaranteeTimeY_; }
       set {
-        residueGuaranteeTimey_ = value;
+        residueGuaranteeTimeY_ = value;
       }
     }
 
-    /// <summary>Field number for the "residue_guarantee_timez" field.</summary>
-    public const int ResidueGuaranteeTimezFieldNumber = 6;
-    private int residueGuaranteeTimez_;
+    /// <summary>Field number for the "residueGuaranteeTimeZ" field.</summary>
+    public const int ResidueGuaranteeTimeZFieldNumber = 6;
+    private int residueGuaranteeTimeZ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int ResidueGuaranteeTimez {
-      get { return residueGuaranteeTimez_; }
+    public int ResidueGuaranteeTimeZ {
+      get { return residueGuaranteeTimeZ_; }
       set {
-        residueGuaranteeTimez_ = value;
+        residueGuaranteeTimeZ_ = value;
       }
     }
 
-    /// <summary>Field number for the "guaranteez" field.</summary>
-    public const int GuaranteezFieldNumber = 7;
-    private uint guaranteez_;
+    /// <summary>Field number for the "guaranteeZ" field.</summary>
+    public const int GuaranteeZFieldNumber = 7;
+    private uint guaranteeZ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Guaranteez {
-      get { return guaranteez_; }
+    public uint GuaranteeZ {
+      get { return guaranteeZ_; }
       set {
-        guaranteez_ = value;
+        guaranteeZ_ = value;
       }
     }
 
@@ -191,12 +194,12 @@ namespace Zproto {
         return true;
       }
       if (Id != other.Id) return false;
-      if (Guaranteex != other.Guaranteex) return false;
-      if (Guaranteey != other.Guaranteey) return false;
-      if (ResidueGuaranteeTimex != other.ResidueGuaranteeTimex) return false;
-      if (ResidueGuaranteeTimey != other.ResidueGuaranteeTimey) return false;
-      if (ResidueGuaranteeTimez != other.ResidueGuaranteeTimez) return false;
-      if (Guaranteez != other.Guaranteez) return false;
+      if (GuaranteeX != other.GuaranteeX) return false;
+      if (GuaranteeY != other.GuaranteeY) return false;
+      if (ResidueGuaranteeTimeX != other.ResidueGuaranteeTimeX) return false;
+      if (ResidueGuaranteeTimeY != other.ResidueGuaranteeTimeY) return false;
+      if (ResidueGuaranteeTimeZ != other.ResidueGuaranteeTimeZ) return false;
+      if (GuaranteeZ != other.GuaranteeZ) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -205,12 +208,12 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
-      if (Guaranteex != 0) hash ^= Guaranteex.GetHashCode();
-      if (Guaranteey != 0) hash ^= Guaranteey.GetHashCode();
-      if (ResidueGuaranteeTimex != 0) hash ^= ResidueGuaranteeTimex.GetHashCode();
-      if (ResidueGuaranteeTimey != 0) hash ^= ResidueGuaranteeTimey.GetHashCode();
-      if (ResidueGuaranteeTimez != 0) hash ^= ResidueGuaranteeTimez.GetHashCode();
-      if (Guaranteez != 0) hash ^= Guaranteez.GetHashCode();
+      if (GuaranteeX != 0) hash ^= GuaranteeX.GetHashCode();
+      if (GuaranteeY != 0) hash ^= GuaranteeY.GetHashCode();
+      if (ResidueGuaranteeTimeX != 0) hash ^= ResidueGuaranteeTimeX.GetHashCode();
+      if (ResidueGuaranteeTimeY != 0) hash ^= ResidueGuaranteeTimeY.GetHashCode();
+      if (ResidueGuaranteeTimeZ != 0) hash ^= ResidueGuaranteeTimeZ.GetHashCode();
+      if (GuaranteeZ != 0) hash ^= GuaranteeZ.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -233,29 +236,29 @@ namespace Zproto {
         output.WriteRawTag(8);
         output.WriteUInt32(Id);
       }
-      if (Guaranteex != 0) {
+      if (GuaranteeX != 0) {
         output.WriteRawTag(16);
-        output.WriteUInt32(Guaranteex);
+        output.WriteUInt32(GuaranteeX);
       }
-      if (Guaranteey != 0) {
+      if (GuaranteeY != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(Guaranteey);
+        output.WriteUInt32(GuaranteeY);
       }
-      if (ResidueGuaranteeTimex != 0) {
+      if (ResidueGuaranteeTimeX != 0) {
         output.WriteRawTag(32);
-        output.WriteInt32(ResidueGuaranteeTimex);
+        output.WriteInt32(ResidueGuaranteeTimeX);
       }
-      if (ResidueGuaranteeTimey != 0) {
+      if (ResidueGuaranteeTimeY != 0) {
         output.WriteRawTag(40);
-        output.WriteInt32(ResidueGuaranteeTimey);
+        output.WriteInt32(ResidueGuaranteeTimeY);
       }
-      if (ResidueGuaranteeTimez != 0) {
+      if (ResidueGuaranteeTimeZ != 0) {
         output.WriteRawTag(48);
-        output.WriteInt32(ResidueGuaranteeTimez);
+        output.WriteInt32(ResidueGuaranteeTimeZ);
       }
-      if (Guaranteez != 0) {
+      if (GuaranteeZ != 0) {
         output.WriteRawTag(56);
-        output.WriteUInt32(Guaranteez);
+        output.WriteUInt32(GuaranteeZ);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -271,29 +274,29 @@ namespace Zproto {
         output.WriteRawTag(8);
         output.WriteUInt32(Id);
       }
-      if (Guaranteex != 0) {
+      if (GuaranteeX != 0) {
         output.WriteRawTag(16);
-        output.WriteUInt32(Guaranteex);
+        output.WriteUInt32(GuaranteeX);
       }
-      if (Guaranteey != 0) {
+      if (GuaranteeY != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(Guaranteey);
+        output.WriteUInt32(GuaranteeY);
       }
-      if (ResidueGuaranteeTimex != 0) {
+      if (ResidueGuaranteeTimeX != 0) {
         output.WriteRawTag(32);
-        output.WriteInt32(ResidueGuaranteeTimex);
+        output.WriteInt32(ResidueGuaranteeTimeX);
       }
-      if (ResidueGuaranteeTimey != 0) {
+      if (ResidueGuaranteeTimeY != 0) {
         output.WriteRawTag(40);
-        output.WriteInt32(ResidueGuaranteeTimey);
+        output.WriteInt32(ResidueGuaranteeTimeY);
       }
-      if (ResidueGuaranteeTimez != 0) {
+      if (ResidueGuaranteeTimeZ != 0) {
         output.WriteRawTag(48);
-        output.WriteInt32(ResidueGuaranteeTimez);
+        output.WriteInt32(ResidueGuaranteeTimeZ);
       }
-      if (Guaranteez != 0) {
+      if (GuaranteeZ != 0) {
         output.WriteRawTag(56);
-        output.WriteUInt32(Guaranteez);
+        output.WriteUInt32(GuaranteeZ);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -308,23 +311,23 @@ namespace Zproto {
       if (Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
       }
-      if (Guaranteex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Guaranteex);
+      if (GuaranteeX != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GuaranteeX);
       }
-      if (Guaranteey != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Guaranteey);
+      if (GuaranteeY != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GuaranteeY);
       }
-      if (ResidueGuaranteeTimex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ResidueGuaranteeTimex);
+      if (ResidueGuaranteeTimeX != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ResidueGuaranteeTimeX);
       }
-      if (ResidueGuaranteeTimey != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ResidueGuaranteeTimey);
+      if (ResidueGuaranteeTimeY != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ResidueGuaranteeTimeY);
       }
-      if (ResidueGuaranteeTimez != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ResidueGuaranteeTimez);
+      if (ResidueGuaranteeTimeZ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ResidueGuaranteeTimeZ);
       }
-      if (Guaranteez != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Guaranteez);
+      if (GuaranteeZ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GuaranteeZ);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -341,23 +344,23 @@ namespace Zproto {
       if (other.Id != 0) {
         Id = other.Id;
       }
-      if (other.Guaranteex != 0) {
-        Guaranteex = other.Guaranteex;
+      if (other.GuaranteeX != 0) {
+        GuaranteeX = other.GuaranteeX;
       }
-      if (other.Guaranteey != 0) {
-        Guaranteey = other.Guaranteey;
+      if (other.GuaranteeY != 0) {
+        GuaranteeY = other.GuaranteeY;
       }
-      if (other.ResidueGuaranteeTimex != 0) {
-        ResidueGuaranteeTimex = other.ResidueGuaranteeTimex;
+      if (other.ResidueGuaranteeTimeX != 0) {
+        ResidueGuaranteeTimeX = other.ResidueGuaranteeTimeX;
       }
-      if (other.ResidueGuaranteeTimey != 0) {
-        ResidueGuaranteeTimey = other.ResidueGuaranteeTimey;
+      if (other.ResidueGuaranteeTimeY != 0) {
+        ResidueGuaranteeTimeY = other.ResidueGuaranteeTimeY;
       }
-      if (other.ResidueGuaranteeTimez != 0) {
-        ResidueGuaranteeTimez = other.ResidueGuaranteeTimez;
+      if (other.ResidueGuaranteeTimeZ != 0) {
+        ResidueGuaranteeTimeZ = other.ResidueGuaranteeTimeZ;
       }
-      if (other.Guaranteez != 0) {
-        Guaranteez = other.Guaranteez;
+      if (other.GuaranteeZ != 0) {
+        GuaranteeZ = other.GuaranteeZ;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -383,27 +386,27 @@ namespace Zproto {
             break;
           }
           case 16: {
-            Guaranteex = input.ReadUInt32();
+            GuaranteeX = input.ReadUInt32();
             break;
           }
           case 24: {
-            Guaranteey = input.ReadUInt32();
+            GuaranteeY = input.ReadUInt32();
             break;
           }
           case 32: {
-            ResidueGuaranteeTimex = input.ReadInt32();
+            ResidueGuaranteeTimeX = input.ReadInt32();
             break;
           }
           case 40: {
-            ResidueGuaranteeTimey = input.ReadInt32();
+            ResidueGuaranteeTimeY = input.ReadInt32();
             break;
           }
           case 48: {
-            ResidueGuaranteeTimez = input.ReadInt32();
+            ResidueGuaranteeTimeZ = input.ReadInt32();
             break;
           }
           case 56: {
-            Guaranteez = input.ReadUInt32();
+            GuaranteeZ = input.ReadUInt32();
             break;
           }
         }
@@ -430,27 +433,27 @@ namespace Zproto {
             break;
           }
           case 16: {
-            Guaranteex = input.ReadUInt32();
+            GuaranteeX = input.ReadUInt32();
             break;
           }
           case 24: {
-            Guaranteey = input.ReadUInt32();
+            GuaranteeY = input.ReadUInt32();
             break;
           }
           case 32: {
-            ResidueGuaranteeTimex = input.ReadInt32();
+            ResidueGuaranteeTimeX = input.ReadInt32();
             break;
           }
           case 40: {
-            ResidueGuaranteeTimey = input.ReadInt32();
+            ResidueGuaranteeTimeY = input.ReadInt32();
             break;
           }
           case 48: {
-            ResidueGuaranteeTimez = input.ReadInt32();
+            ResidueGuaranteeTimeZ = input.ReadInt32();
             break;
           }
           case 56: {
-            Guaranteez = input.ReadUInt32();
+            GuaranteeZ = input.ReadUInt32();
             break;
           }
         }

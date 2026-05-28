@@ -42,37 +42,44 @@ namespace Zproto {
             "ZHVuZ2Vvbl90aXRsZS5wcm90bxodc3RydV9kdW5nZW9uX3VuaW9uX2luZm8u",
             "cHJvdG8aFnN0cnVfZHVuZ2Vvbl92YXIucHJvdG8aGnN0cnVfZHVuZ2Vvbl92",
             "YXJfYWxsLnByb3RvGhdzdHJ1X2R1bmdlb25fdm90ZS5wcm90bxoXZW51bV9l",
-            "X2Vycm9yX2NvZGUucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKaCgoP",
-            "RHVuZ2VvblN5bmNEYXRhEhIKCnNjZW5lX3V1aWQYASABKAMSKgoJZmxvd19p",
-            "bmZvGAIgASgLMhcuenByb3RvLkR1bmdlb25GbG93SW5mbxIjCgV0aXRsZRgD",
-            "IAEoCzIULnpwcm90by5EdW5nZW9uVGl0bGUSJQoGdGFyZ2V0GAQgASgLMhUu",
-            "enByb3RvLkR1bmdlb25UYXJnZXQSJQoGZGFtYWdlGAUgASgLMhUuenByb3Rv",
-            "LkR1bmdlb25EYW1hZ2USIQoEdm90ZRgGIAEoCzITLnpwcm90by5EdW5nZW9u",
-            "Vm90ZRItCgpzZXR0bGVtZW50GAcgASgLMhkuenByb3RvLkR1bmdlb25TZXR0",
-            "bGVtZW50Ei8KD2R1bmdlb25fcGlvbmVlchgIIAEoCzIWLnpwcm90by5EdW5n",
-            "ZW9uUGlvbmVlchI5ChBwbGFuZXRfcm9vbV9pbmZvGAkgASgLMh8uenByb3Rv",
-            "LkR1bmdlb25QbGFuZXRNZW1vcnlSb29tEicKC2R1bmdlb25fdmFyGAogASgL",
-            "MhIuenByb3RvLkR1bmdlb25WYXISLQoMZHVuZ2Vvbl9yYW5rGAsgASgLMhcu",
-            "enByb3RvLkR1bmdlb25SYW5rTGlzdBI0ChJkdW5nZW9uX2FmZml4X2RhdGEY",
-            "DCABKAsyGC56cHJvdG8uRHVuZ2VvbkFmZml4RGF0YRIrCg1kdW5nZW9uX2V2",
-            "ZW50GA0gASgLMhQuenByb3RvLkR1bmdlb25FdmVudBIrCg1kdW5nZW9uX3Nj",
-            "b3JlGA4gASgLMhQuenByb3RvLkR1bmdlb25TY29yZRIsCgp0aW1lcl9pbmZv",
-            "GA8gASgLMhguenByb3RvLkR1bmdlb25UaW1lckluZm8SLAoIaGVyb19rZXkY",
-            "ECABKAsyGi56cHJvdG8uRHVuZ2Vvbkhlcm9LZXlJbmZvEjQKEmR1bmdlb25f",
-            "dW5pb25faW5mbxgRIAEoCzIYLnpwcm90by5EdW5nZW9uVW5pb25JbmZvEjYK",
-            "E2R1bmdlb25fcGxheWVyX2xpc3QYEiABKAsyGS56cHJvdG8uRHVuZ2VvblBs",
-            "YXllckxpc3QSLgoLcmV2aXZlX2luZm8YEyABKAsyGS56cHJvdG8uRHVuZ2Vv",
-            "blJldml2ZUluZm8STQoccmFuZG9tX2VudGl0eV9jb25maWdfaWRfaW5mbxgU",
-            "IAEoCzInLnpwcm90by5EdW5nZW9uUmFuZG9tRW50aXR5Q29uZmlnSWRJbmZv",
-            "EjQKEmR1bmdlb25fc2NlbmVfaW5mbxgVIAEoCzIYLnpwcm90by5EdW5nZW9u",
-            "U2NlbmVJbmZvEi4KD2R1bmdlb25fdmFyX2FsbBgWIAEoCzIVLnpwcm90by5E",
-            "dW5nZW9uVmFyQWxsEjIKEWR1bmdlb25fcmFpZF9pbmZvGBcgASgLMhcuenBy",
-            "b3RvLkR1bmdlb25SYWlkSW5mbxIyChFkdW5nZW9uX2FyZWFfaW5mbxgYIAEo",
-            "CzIXLnpwcm90by5EdW5nZW9uQXJlYUluZm8SNAoSZHVuZ2Vvbl9waGFzZV9k",
-            "YXRhGBkgASgLMhguenByb3RvLkR1bmdlb25QaGFzZURhdGESOwoWZHVuZ2Vv",
-            "bl9oaWRlX3NlZWtfZGF0YRgaIAEoCzIbLnpwcm90by5EdW5nZW9uSGlkZVNl",
-            "ZWtEYXRhEiQKCGVycl9jb2RlGBsgASgOMhIuenByb3RvLkVFcnJvckNvZGVi",
-            "BnByb3RvMw=="));
+            "X2Vycm9yX2NvZGUucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLtDAoP",
+            "RHVuZ2VvblN5bmNEYXRhEhwKCXNjZW5lVXVpZBgBIAEoA1IJc2NlbmVVdWlk",
+            "EjMKCGZsb3dJbmZvGAIgASgLMhcuenByb3RvLkR1bmdlb25GbG93SW5mb1II",
+            "Zmxvd0luZm8SKgoFdGl0bGUYAyABKAsyFC56cHJvdG8uRHVuZ2VvblRpdGxl",
+            "UgV0aXRsZRItCgZ0YXJnZXQYBCABKAsyFS56cHJvdG8uRHVuZ2VvblRhcmdl",
+            "dFIGdGFyZ2V0Ei0KBmRhbWFnZRgFIAEoCzIVLnpwcm90by5EdW5nZW9uRGFt",
+            "YWdlUgZkYW1hZ2USJwoEdm90ZRgGIAEoCzITLnpwcm90by5EdW5nZW9uVm90",
+            "ZVIEdm90ZRI5CgpzZXR0bGVtZW50GAcgASgLMhkuenByb3RvLkR1bmdlb25T",
+            "ZXR0bGVtZW50UgpzZXR0bGVtZW50Ej4KDkR1bmdlb25QaW9uZWVyGAggASgL",
+            "MhYuenByb3RvLkR1bmdlb25QaW9uZWVyUg5EdW5nZW9uUGlvbmVlchJHCg5w",
+            "bGFuZXRSb29tSW5mbxgJIAEoCzIfLnpwcm90by5EdW5nZW9uUGxhbmV0TWVt",
+            "b3J5Um9vbVIOcGxhbmV0Um9vbUluZm8SMgoKZHVuZ2VvblZhchgKIAEoCzIS",
+            "Lnpwcm90by5EdW5nZW9uVmFyUgpkdW5nZW9uVmFyEjkKC2R1bmdlb25SYW5r",
+            "GAsgASgLMhcuenByb3RvLkR1bmdlb25SYW5rTGlzdFILZHVuZ2VvblJhbmsS",
+            "RAoQZHVuZ2VvbkFmZml4RGF0YRgMIAEoCzIYLnpwcm90by5EdW5nZW9uQWZm",
+            "aXhEYXRhUhBkdW5nZW9uQWZmaXhEYXRhEjgKDGR1bmdlb25FdmVudBgNIAEo",
+            "CzIULnpwcm90by5EdW5nZW9uRXZlbnRSDGR1bmdlb25FdmVudBI4CgxkdW5n",
+            "ZW9uU2NvcmUYDiABKAsyFC56cHJvdG8uRHVuZ2VvblNjb3JlUgxkdW5nZW9u",
+            "U2NvcmUSNgoJdGltZXJJbmZvGA8gASgLMhguenByb3RvLkR1bmdlb25UaW1l",
+            "ckluZm9SCXRpbWVySW5mbxI0CgdoZXJvS2V5GBAgASgLMhouenByb3RvLkR1",
+            "bmdlb25IZXJvS2V5SW5mb1IHaGVyb0tleRJEChBkdW5nZW9uVW5pb25JbmZv",
+            "GBEgASgLMhguenByb3RvLkR1bmdlb25VbmlvbkluZm9SEGR1bmdlb25Vbmlv",
+            "bkluZm8SRwoRZHVuZ2VvblBsYXllckxpc3QYEiABKAsyGS56cHJvdG8uRHVu",
+            "Z2VvblBsYXllckxpc3RSEWR1bmdlb25QbGF5ZXJMaXN0EjkKCnJldml2ZUlu",
+            "Zm8YEyABKAsyGS56cHJvdG8uRHVuZ2VvblJldml2ZUluZm9SCnJldml2ZUlu",
+            "Zm8SYwoYcmFuZG9tRW50aXR5Q29uZmlnSWRJbmZvGBQgASgLMicuenByb3Rv",
+            "LkR1bmdlb25SYW5kb21FbnRpdHlDb25maWdJZEluZm9SGHJhbmRvbUVudGl0",
+            "eUNvbmZpZ0lkSW5mbxJEChBkdW5nZW9uU2NlbmVJbmZvGBUgASgLMhguenBy",
+            "b3RvLkR1bmdlb25TY2VuZUluZm9SEGR1bmdlb25TY2VuZUluZm8SOwoNZHVu",
+            "Z2VvblZhckFsbBgWIAEoCzIVLnpwcm90by5EdW5nZW9uVmFyQWxsUg1kdW5n",
+            "ZW9uVmFyQWxsEkEKD2R1bmdlb25SYWlkSW5mbxgXIAEoCzIXLnpwcm90by5E",
+            "dW5nZW9uUmFpZEluZm9SD2R1bmdlb25SYWlkSW5mbxJBCg9kdW5nZW9uQXJl",
+            "YUluZm8YGCABKAsyFy56cHJvdG8uRHVuZ2VvbkFyZWFJbmZvUg9kdW5nZW9u",
+            "QXJlYUluZm8SRAoQZHVuZ2VvblBoYXNlRGF0YRgZIAEoCzIYLnpwcm90by5E",
+            "dW5nZW9uUGhhc2VEYXRhUhBkdW5nZW9uUGhhc2VEYXRhEk0KE2R1bmdlb25I",
+            "aWRlU2Vla0RhdGEYGiABKAsyGy56cHJvdG8uRHVuZ2VvbkhpZGVTZWVrRGF0",
+            "YVITZHVuZ2VvbkhpZGVTZWVrRGF0YRIsCgdlcnJDb2RlGBsgASgOMhIuenBy",
+            "b3RvLkVFcnJvckNvZGVSB2VyckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonAffixDataReflection.Descriptor, global::Zproto.StruDungeonAreaInfoReflection.Descriptor, global::Zproto.StruDungeonDamageReflection.Descriptor, global::Zproto.StruDungeonEventReflection.Descriptor, global::Zproto.StruDungeonFlowInfoReflection.Descriptor, global::Zproto.StruDungeonHeroKeyInfoReflection.Descriptor, global::Zproto.StruDungeonHideSeekDataReflection.Descriptor, global::Zproto.StruDungeonPhaseDataReflection.Descriptor, global::Zproto.StruDungeonPioneerReflection.Descriptor, global::Zproto.StruDungeonPlanetMemoryRoomReflection.Descriptor, global::Zproto.StruDungeonPlayerListReflection.Descriptor, global::Zproto.StruDungeonRaidInfoReflection.Descriptor, global::Zproto.StruDungeonRandomEntityConfigIdInfoReflection.Descriptor, global::Zproto.StruDungeonRankListReflection.Descriptor, global::Zproto.StruDungeonReviveInfoReflection.Descriptor, global::Zproto.StruDungeonSceneInfoReflection.Descriptor, global::Zproto.StruDungeonScoreReflection.Descriptor, global::Zproto.StruDungeonSettlementReflection.Descriptor, global::Zproto.StruDungeonTargetReflection.Descriptor, global::Zproto.StruDungeonTimerInfoReflection.Descriptor, global::Zproto.StruDungeonTitleReflection.Descriptor, global::Zproto.StruDungeonUnionInfoReflection.Descriptor, global::Zproto.StruDungeonVarReflection.Descriptor, global::Zproto.StruDungeonVarAllReflection.Descriptor, global::Zproto.StruDungeonVoteReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -154,7 +161,7 @@ namespace Zproto {
       return new DungeonSyncData(this);
     }
 
-    /// <summary>Field number for the "scene_uuid" field.</summary>
+    /// <summary>Field number for the "sceneUuid" field.</summary>
     public const int SceneUuidFieldNumber = 1;
     private long sceneUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -166,7 +173,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "flow_info" field.</summary>
+    /// <summary>Field number for the "flowInfo" field.</summary>
     public const int FlowInfoFieldNumber = 2;
     private global::Zproto.DungeonFlowInfo flowInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -238,7 +245,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_pioneer" field.</summary>
+    /// <summary>Field number for the "DungeonPioneer" field.</summary>
     public const int DungeonPioneerFieldNumber = 8;
     private global::Zproto.DungeonPioneer dungeonPioneer_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -250,7 +257,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "planet_room_info" field.</summary>
+    /// <summary>Field number for the "planetRoomInfo" field.</summary>
     public const int PlanetRoomInfoFieldNumber = 9;
     private global::Zproto.DungeonPlanetMemoryRoom planetRoomInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -262,7 +269,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_var" field.</summary>
+    /// <summary>Field number for the "dungeonVar" field.</summary>
     public const int DungeonVarFieldNumber = 10;
     private global::Zproto.DungeonVar dungeonVar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -274,7 +281,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_rank" field.</summary>
+    /// <summary>Field number for the "dungeonRank" field.</summary>
     public const int DungeonRankFieldNumber = 11;
     private global::Zproto.DungeonRankList dungeonRank_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -286,7 +293,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_affix_data" field.</summary>
+    /// <summary>Field number for the "dungeonAffixData" field.</summary>
     public const int DungeonAffixDataFieldNumber = 12;
     private global::Zproto.DungeonAffixData dungeonAffixData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -298,7 +305,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_event" field.</summary>
+    /// <summary>Field number for the "dungeonEvent" field.</summary>
     public const int DungeonEventFieldNumber = 13;
     private global::Zproto.DungeonEvent dungeonEvent_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -310,7 +317,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_score" field.</summary>
+    /// <summary>Field number for the "dungeonScore" field.</summary>
     public const int DungeonScoreFieldNumber = 14;
     private global::Zproto.DungeonScore dungeonScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -322,7 +329,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "timer_info" field.</summary>
+    /// <summary>Field number for the "timerInfo" field.</summary>
     public const int TimerInfoFieldNumber = 15;
     private global::Zproto.DungeonTimerInfo timerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -334,7 +341,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hero_key" field.</summary>
+    /// <summary>Field number for the "heroKey" field.</summary>
     public const int HeroKeyFieldNumber = 16;
     private global::Zproto.DungeonHeroKeyInfo heroKey_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -346,7 +353,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_union_info" field.</summary>
+    /// <summary>Field number for the "dungeonUnionInfo" field.</summary>
     public const int DungeonUnionInfoFieldNumber = 17;
     private global::Zproto.DungeonUnionInfo dungeonUnionInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -358,7 +365,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_player_list" field.</summary>
+    /// <summary>Field number for the "dungeonPlayerList" field.</summary>
     public const int DungeonPlayerListFieldNumber = 18;
     private global::Zproto.DungeonPlayerList dungeonPlayerList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -370,7 +377,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "revive_info" field.</summary>
+    /// <summary>Field number for the "reviveInfo" field.</summary>
     public const int ReviveInfoFieldNumber = 19;
     private global::Zproto.DungeonReviveInfo reviveInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -382,7 +389,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "random_entity_config_id_info" field.</summary>
+    /// <summary>Field number for the "randomEntityConfigIdInfo" field.</summary>
     public const int RandomEntityConfigIdInfoFieldNumber = 20;
     private global::Zproto.DungeonRandomEntityConfigIdInfo randomEntityConfigIdInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -394,7 +401,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_scene_info" field.</summary>
+    /// <summary>Field number for the "dungeonSceneInfo" field.</summary>
     public const int DungeonSceneInfoFieldNumber = 21;
     private global::Zproto.DungeonSceneInfo dungeonSceneInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -406,7 +413,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_var_all" field.</summary>
+    /// <summary>Field number for the "dungeonVarAll" field.</summary>
     public const int DungeonVarAllFieldNumber = 22;
     private global::Zproto.DungeonVarAll dungeonVarAll_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -418,7 +425,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_raid_info" field.</summary>
+    /// <summary>Field number for the "dungeonRaidInfo" field.</summary>
     public const int DungeonRaidInfoFieldNumber = 23;
     private global::Zproto.DungeonRaidInfo dungeonRaidInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -430,7 +437,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_area_info" field.</summary>
+    /// <summary>Field number for the "dungeonAreaInfo" field.</summary>
     public const int DungeonAreaInfoFieldNumber = 24;
     private global::Zproto.DungeonAreaInfo dungeonAreaInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -442,7 +449,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_phase_data" field.</summary>
+    /// <summary>Field number for the "dungeonPhaseData" field.</summary>
     public const int DungeonPhaseDataFieldNumber = 25;
     private global::Zproto.DungeonPhaseData dungeonPhaseData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -454,7 +461,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_hide_seek_data" field.</summary>
+    /// <summary>Field number for the "dungeonHideSeekData" field.</summary>
     public const int DungeonHideSeekDataFieldNumber = 26;
     private global::Zproto.DungeonHideSeekData dungeonHideSeekData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -466,7 +473,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 27;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

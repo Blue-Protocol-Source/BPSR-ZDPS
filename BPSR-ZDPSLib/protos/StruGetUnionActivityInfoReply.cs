@@ -27,13 +27,14 @@ namespace Zproto {
             "CihzdHJ1X2dldF91bmlvbl9hY3Rpdml0eV9pbmZvX3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGh1zdHJ1X21lbV91bmlv",
             "bl9hY3Rpdml0eS5wcm90bxoZc3RydV91bmlvbl9hY3Rpdml0eS5wcm90bxoc",
-            "c3RydV91bmlvbl90YXJnZXRfaW5mby5wcm90byLyAQoZR2V0VW5pb25BY3Rp",
-            "dml0eUluZm9SZXBseRItCg51bmlvbl9hY3Rpdml0eRgBIAEoCzIVLnpwcm90",
-            "by5VbmlvbkFjdGl2aXR5Ei8KDXNlbGZfYWN0aXZpdHkYAiABKAsyGC56cHJv",
-            "dG8uTWVtVW5pb25BY3Rpdml0eRItCgx1bmlvbl90YXJnZXQYAyADKAsyFy56",
-            "cHJvdG8uVW5pb25UYXJnZXRJbmZvEiAKGHJlY2VpdmVkX3BvaW50X2F3YXJk",
-            "X2lkcxgEIAMoBRIkCghlcnJfY29kZRgFIAEoDjISLnpwcm90by5FRXJyb3JD",
-            "b2RlYgZwcm90bzM="));
+            "c3RydV91bmlvbl90YXJnZXRfaW5mby5wcm90byK1AgoZR2V0VW5pb25BY3Rp",
+            "dml0eUluZm9SZXBseRI7Cg11bmlvbkFjdGl2aXR5GAEgASgLMhUuenByb3Rv",
+            "LlVuaW9uQWN0aXZpdHlSDXVuaW9uQWN0aXZpdHkSPAoMc2VsZkFjdGl2aXR5",
+            "GAIgASgLMhguenByb3RvLk1lbVVuaW9uQWN0aXZpdHlSDHNlbGZBY3Rpdml0",
+            "eRI5Cgt1bmlvblRhcmdldBgDIAMoCzIXLnpwcm90by5VbmlvblRhcmdldElu",
+            "Zm9SC3VuaW9uVGFyZ2V0EjQKFXJlY2VpdmVkUG9pbnRBd2FyZElkcxgEIAMo",
+            "BVIVcmVjZWl2ZWRQb2ludEF3YXJkSWRzEiwKB2VyckNvZGUYBSABKA4yEi56",
+            "cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruMemUnionActivityReflection.Descriptor, global::Zproto.StruUnionActivityReflection.Descriptor, global::Zproto.StruUnionTargetInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +94,7 @@ namespace Zproto {
       return new GetUnionActivityInfoReply(this);
     }
 
-    /// <summary>Field number for the "union_activity" field.</summary>
+    /// <summary>Field number for the "unionActivity" field.</summary>
     public const int UnionActivityFieldNumber = 1;
     private global::Zproto.UnionActivity unionActivity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "self_activity" field.</summary>
+    /// <summary>Field number for the "selfActivity" field.</summary>
     public const int SelfActivityFieldNumber = 2;
     private global::Zproto.MemUnionActivity selfActivity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_target" field.</summary>
+    /// <summary>Field number for the "unionTarget" field.</summary>
     public const int UnionTargetFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.UnionTargetInfo> _repeated_unionTarget_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.UnionTargetInfo.Parser);
@@ -128,7 +129,7 @@ namespace Zproto {
       get { return unionTarget_; }
     }
 
-    /// <summary>Field number for the "received_point_award_ids" field.</summary>
+    /// <summary>Field number for the "receivedPointAwardIds" field.</summary>
     public const int ReceivedPointAwardIdsFieldNumber = 4;
     private static readonly pb::FieldCodec<int> _repeated_receivedPointAwardIds_codec
         = pb::FieldCodec.ForInt32(34);
@@ -139,7 +140,7 @@ namespace Zproto {
       get { return receivedPointAwardIds_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

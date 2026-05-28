@@ -24,8 +24,8 @@ namespace Zproto {
     static StruHomeLandTaskReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X2hvbWVfbGFuZF90YXNrLnByb3RvEgZ6cHJvdG8iIAoMSG9tZUxh",
-            "bmRUYXNrEhAKCGZpbmlzaGVkGAEgASgIYgZwcm90bzM="));
+            "ChlzdHJ1X2hvbWVfbGFuZF90YXNrLnByb3RvEgZ6cHJvdG8iKgoMSG9tZUxh",
+            "bmRUYXNrEhoKCGZpbmlzaGVkGAEgASgIUghmaW5pc2hlZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

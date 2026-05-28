@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2VkaXRfYWxidW1fbmFtZV9yZXBseS5wcm90bxIGenByb3RvGhdl",
-            "bnVtX2VfZXJyb3JfY29kZS5wcm90byJaChJFZGl0QWxidW1OYW1lUmVwbHkS",
-            "EAoIYWxidW1faWQYAyABKA0SDAoEbmFtZRgEIAEoCRIkCghlcnJfY29kZRgF",
-            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "bnVtX2VfZXJyb3JfY29kZS5wcm90byJwChJFZGl0QWxidW1OYW1lUmVwbHkS",
+            "GAoHYWxidW1JZBgDIAEoDVIHYWxidW1JZBISCgRuYW1lGAQgASgJUgRuYW1l",
+            "EiwKB2VyckNvZGUYBSABKA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29k",
+            "ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new EditAlbumNameReply(this);
     }
 
-    /// <summary>Field number for the "album_id" field.</summary>
+    /// <summary>Field number for the "albumId" field.</summary>
     public const int AlbumIdFieldNumber = 3;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

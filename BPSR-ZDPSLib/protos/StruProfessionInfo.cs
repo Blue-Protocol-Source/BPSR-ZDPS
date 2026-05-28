@@ -26,16 +26,18 @@ namespace Zproto {
           string.Concat(
             "ChpzdHJ1X3Byb2Zlc3Npb25faW5mby5wcm90bxIGenByb3RvGiBzdHJ1X3By",
             "b2Zlc3Npb25fc2tpbGxfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIpEDCg5Qcm9mZXNzaW9uSW5mbxIVCg1wcm9mZXNzaW9uX2lkGAEgASgF",
-            "Eg0KBWxldmVsGAIgASgFEhIKCmV4cGVyaWVuY2UYAyABKAMSQAoOc2tpbGxf",
-            "aW5mb19tYXAYBCADKAsyKC56cHJvdG8uUHJvZmVzc2lvbkluZm8uU2tpbGxJ",
-            "bmZvTWFwRW50cnkSGAoQYWN0aXZlX3NraWxsX2lkcxgGIAMoBRJJChNzbG90",
-            "X3NraWxsX2luZm9fbWFwGAcgAygLMiwuenByb3RvLlByb2Zlc3Npb25JbmZv",
-            "LlNsb3RTa2lsbEluZm9NYXBFbnRyeRITCgt1c2Vfc2tpbl9pZBgIIAEoBRpQ",
-            "ChFTa2lsbEluZm9NYXBFbnRyeRILCgNrZXkYASABKAUSKgoFdmFsdWUYAiAB",
-            "KAsyGy56cHJvdG8uUHJvZmVzc2lvblNraWxsSW5mbzoCOAEaNwoVU2xvdFNr",
-            "aWxsSW5mb01hcEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoBToC",
-            "OAFiBnByb3RvMw=="));
+            "b3RvIuMDCg5Qcm9mZXNzaW9uSW5mbxIiCgxwcm9mZXNzaW9uSWQYASABKAVS",
+            "DHByb2Zlc3Npb25JZBIUCgVsZXZlbBgCIAEoBVIFbGV2ZWwSHgoKZXhwZXJp",
+            "ZW5jZRgDIAEoA1IKZXhwZXJpZW5jZRJMCgxza2lsbEluZm9NYXAYBCADKAsy",
+            "KC56cHJvdG8uUHJvZmVzc2lvbkluZm8uU2tpbGxJbmZvTWFwRW50cnlSDHNr",
+            "aWxsSW5mb01hcBImCg5hY3RpdmVTa2lsbElkcxgGIAMoBVIOYWN0aXZlU2tp",
+            "bGxJZHMSWAoQc2xvdFNraWxsSW5mb01hcBgHIAMoCzIsLnpwcm90by5Qcm9m",
+            "ZXNzaW9uSW5mby5TbG90U2tpbGxJbmZvTWFwRW50cnlSEHNsb3RTa2lsbElu",
+            "Zm9NYXASHAoJVXNlU2tpbklkGAggASgFUglVc2VTa2luSWQaUAoRU2tpbGxJ",
+            "bmZvTWFwRW50cnkSCwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgLMhsuenBy",
+            "b3RvLlByb2Zlc3Npb25Ta2lsbEluZm86AjgBGjcKFVNsb3RTa2lsbEluZm9N",
+            "YXBFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruProfessionSkillInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +99,7 @@ namespace Zproto {
       return new ProfessionInfo(this);
     }
 
-    /// <summary>Field number for the "profession_id" field.</summary>
+    /// <summary>Field number for the "professionId" field.</summary>
     public const int ProfessionIdFieldNumber = 1;
     private int professionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skill_info_map" field.</summary>
+    /// <summary>Field number for the "skillInfoMap" field.</summary>
     public const int SkillInfoMapFieldNumber = 4;
     private static readonly pbc::MapField<int, global::Zproto.ProfessionSkillInfo>.Codec _map_skillInfoMap_codec
         = new pbc::MapField<int, global::Zproto.ProfessionSkillInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ProfessionSkillInfo.Parser), 34);
@@ -144,7 +146,7 @@ namespace Zproto {
       get { return skillInfoMap_; }
     }
 
-    /// <summary>Field number for the "active_skill_ids" field.</summary>
+    /// <summary>Field number for the "activeSkillIds" field.</summary>
     public const int ActiveSkillIdsFieldNumber = 6;
     private static readonly pb::FieldCodec<int> _repeated_activeSkillIds_codec
         = pb::FieldCodec.ForInt32(50);
@@ -155,7 +157,7 @@ namespace Zproto {
       get { return activeSkillIds_; }
     }
 
-    /// <summary>Field number for the "slot_skill_info_map" field.</summary>
+    /// <summary>Field number for the "slotSkillInfoMap" field.</summary>
     public const int SlotSkillInfoMapFieldNumber = 7;
     private static readonly pbc::MapField<int, int>.Codec _map_slotSkillInfoMap_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 58);
@@ -166,7 +168,7 @@ namespace Zproto {
       get { return slotSkillInfoMap_; }
     }
 
-    /// <summary>Field number for the "use_skin_id" field.</summary>
+    /// <summary>Field number for the "UseSkinId" field.</summary>
     public const int UseSkinIdFieldNumber = 8;
     private int useSkinId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

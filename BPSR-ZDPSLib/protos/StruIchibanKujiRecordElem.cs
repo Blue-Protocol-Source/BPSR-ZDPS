@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2ljaGliYW5fa3VqaV9yZWNvcmRfZWxlbS5wcm90bxIGenByb3Rv",
-            "ImgKFUljaGliYW5LdWppUmVjb3JkRWxlbRIMCgR0eXBlGAEgASgFEg8KB2dp",
-            "ZnRfaWQYAiABKAUSDQoFY291bnQYAyABKA0SEwoLbHVja19rZXlfaWQYBCAB",
-            "KAUSDAoEdGltZRgFIAEoA2IGcHJvdG8z"));
+            "IosBChVJY2hpYmFuS3VqaVJlY29yZEVsZW0SEgoEdHlwZRgBIAEoBVIEdHlw",
+            "ZRIWCgZnaWZ0SWQYAiABKAVSBmdpZnRJZBIUCgVjb3VudBgDIAEoDVIFY291",
+            "bnQSHAoJbHVja0tleUlkGAQgASgFUglsdWNrS2V5SWQSEgoEdGltZRgFIAEo",
+            "A1IEdGltZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "gift_id" field.</summary>
+    /// <summary>Field number for the "giftId" field.</summary>
     public const int GiftIdFieldNumber = 2;
     private int giftId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "luck_key_id" field.</summary>
+    /// <summary>Field number for the "luckKeyId" field.</summary>
     public const int LuckKeyIdFieldNumber = 4;
     private int luckKeyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

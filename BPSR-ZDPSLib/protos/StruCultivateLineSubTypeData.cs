@@ -26,12 +26,13 @@ namespace Zproto {
           string.Concat(
             "CidzdHJ1X2N1bHRpdmF0ZV9saW5lX3N1Yl90eXBlX2RhdGEucHJvdG8SBnpw",
             "cm90bxoec3RydV9jdWx0aXZhdGVfYXJlYV9kYXRhLnByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8i8QEKGEN1bHRpdmF0ZUxpbmVTdWJUeXBlRGF0YRJb",
-            "ChdjdWx0aXZhdGVfbGluZV9kYXRhX21hcBgBIAMoCzI6Lnpwcm90by5DdWx0",
-            "aXZhdGVMaW5lU3ViVHlwZURhdGEuQ3VsdGl2YXRlTGluZURhdGFNYXBFbnRy",
-            "eRIgChhjdWx0aXZhdGVfbGluZV9hcmVhX2xpc3QYAiADKAUaVgoZQ3VsdGl2",
-            "YXRlTGluZURhdGFNYXBFbnRyeRILCgNrZXkYASABKAUSKAoFdmFsdWUYAiAB",
-            "KAsyGS56cHJvdG8uQ3VsdGl2YXRlQXJlYURhdGE6AjgBYgZwcm90bzM="));
+            "cnR5X21hc2sucHJvdG8imAIKGEN1bHRpdmF0ZUxpbmVTdWJUeXBlRGF0YRJu",
+            "ChRjdWx0aXZhdGVMaW5lRGF0YU1hcBgBIAMoCzI6Lnpwcm90by5DdWx0aXZh",
+            "dGVMaW5lU3ViVHlwZURhdGEuQ3VsdGl2YXRlTGluZURhdGFNYXBFbnRyeVIU",
+            "Y3VsdGl2YXRlTGluZURhdGFNYXASNAoVY3VsdGl2YXRlTGluZUFyZWFMaXN0",
+            "GAIgAygFUhVjdWx0aXZhdGVMaW5lQXJlYUxpc3QaVgoZQ3VsdGl2YXRlTGlu",
+            "ZURhdGFNYXBFbnRyeRILCgNrZXkYASABKAUSKAoFdmFsdWUYAiABKAsyGS56",
+            "cHJvdG8uQ3VsdGl2YXRlQXJlYURhdGE6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCultivateAreaDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new CultivateLineSubTypeData(this);
     }
 
-    /// <summary>Field number for the "cultivate_line_data_map" field.</summary>
+    /// <summary>Field number for the "cultivateLineDataMap" field.</summary>
     public const int CultivateLineDataMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.CultivateAreaData>.Codec _map_cultivateLineDataMap_codec
         = new pbc::MapField<int, global::Zproto.CultivateAreaData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CultivateAreaData.Parser), 10);
@@ -99,7 +100,7 @@ namespace Zproto {
       get { return cultivateLineDataMap_; }
     }
 
-    /// <summary>Field number for the "cultivate_line_area_list" field.</summary>
+    /// <summary>Field number for the "cultivateLineAreaList" field.</summary>
     public const int CultivateLineAreaListFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_cultivateLineAreaList_codec
         = pb::FieldCodec.ForInt32(18);

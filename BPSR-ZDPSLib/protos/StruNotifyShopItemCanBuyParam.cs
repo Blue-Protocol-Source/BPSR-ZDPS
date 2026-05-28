@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X25vdGlmeV9zaG9wX2l0ZW1fY2FuX2J1eV9wYXJhbS5wcm90bxIG",
-            "enByb3RvIpQBChlOb3RpZnlTaG9wSXRlbUNhbkJ1eVBhcmFtEkUKC2lzX3No",
-            "b3dfcmVkGAEgAygLMjAuenByb3RvLk5vdGlmeVNob3BJdGVtQ2FuQnV5UGFy",
-            "YW0uSXNTaG93UmVkRW50cnkaMAoOSXNTaG93UmVkRW50cnkSCwoDa2V5GAEg",
-            "ASgFEg0KBXZhbHVlGAIgASgIOgI4AWIGcHJvdG8z"));
+            "enByb3RvIp0BChlOb3RpZnlTaG9wSXRlbUNhbkJ1eVBhcmFtEk4KCWlzU2hv",
+            "d1JlZBgBIAMoCzIwLnpwcm90by5Ob3RpZnlTaG9wSXRlbUNhbkJ1eVBhcmFt",
+            "LklzU2hvd1JlZEVudHJ5Uglpc1Nob3dSZWQaMAoOSXNTaG93UmVkRW50cnkS",
+            "CwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgIOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new NotifyShopItemCanBuyParam(this);
     }
 
-    /// <summary>Field number for the "is_show_red" field.</summary>
+    /// <summary>Field number for the "isShowRed" field.</summary>
     public const int IsShowRedFieldNumber = 1;
     private static readonly pbc::MapField<int, bool>.Codec _map_isShowRed_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 10);

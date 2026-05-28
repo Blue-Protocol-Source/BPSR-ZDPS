@@ -28,26 +28,30 @@ namespace Zproto {
             "cm90bxIGenByb3RvGiNzdHJ1X2NvbW11bml0eV9idWxsZXRpbl9ib2FyZC5w",
             "cm90bxokc3RydV9jb21tdW5pdHlfaW52aXRhdGlvbl9pbmZvLnByb3RvGiBz",
             "dHJ1X2NvbW11bml0eV9wbGF5ZXJfaW5mby5wcm90bxokc3RydV9jb21tdW5p",
-            "dHlfcXVpdF9jb2hhYml0YW50LnByb3RvIt4GCiBOb3RpZnlDb21tdW5pdHlJ",
-            "bmZvVXBkYXRlUmVxdWVzdBIbChNob3VzZV9vd25lcl9jaGFyX2lkGAEgASgD",
-            "EhMKC2hvbWVsYW5kX2lkGAIgASgDEhUKDXJlbW92ZV9ncm91cHMYAyADKAMS",
-            "XAoTYWRkX2J1bGxldGluX2JvYXJkcxgEIAMoCzI/Lnpwcm90by5Ob3RpZnlD",
-            "b21tdW5pdHlJbmZvVXBkYXRlUmVxdWVzdC5BZGRCdWxsZXRpbkJvYXJkc0Vu",
-            "dHJ5Eh4KFnJlbW92ZV9idWxsZXRpbl9ib2FyZHMYBSADKAMSUwoOYWRkX2Nv",
-            "aGFiaXRhbnQYBiADKAsyOy56cHJvdG8uTm90aWZ5Q29tbXVuaXR5SW5mb1Vw",
-            "ZGF0ZVJlcXVlc3QuQWRkQ29oYWJpdGFudEVudHJ5EhkKEXJlbW92ZV9jb2hh",
-            "Yml0YW50GAcgAygDElwKE2FkZF9pbnZpdGF0aW9uX2xpc3QYCCADKAsyPy56",
-            "cHJvdG8uTm90aWZ5Q29tbXVuaXR5SW5mb1VwZGF0ZVJlcXVlc3QuQWRkSW52",
-            "aXRhdGlvbkxpc3RFbnRyeRIeChZyZW1vdmVfaW52aXRhdGlvbl9saXN0GAkg",
-            "AygDEjwKE2FkZF9xdWl0X2NvaGFiaXRhbnQYCiADKAsyHy56cHJvdG8uQ29t",
-            "bXVuaXR5UXVpdENvaGFiaXRhbnQSPwoWcmVtb3ZlX3F1aXRfY29oYWJpdGFu",
-            "dBgLIAMoCzIfLnpwcm90by5Db21tdW5pdHlRdWl0Q29oYWJpdGFudBpYChZB",
-            "ZGRCdWxsZXRpbkJvYXJkc0VudHJ5EgsKA2tleRgBIAEoAxItCgV2YWx1ZRgC",
-            "IAEoCzIeLnpwcm90by5Db21tdW5pdHlCdWxsZXRpbkJvYXJkOgI4ARpRChJB",
-            "ZGRDb2hhYml0YW50RW50cnkSCwoDa2V5GAEgASgDEioKBXZhbHVlGAIgASgL",
-            "MhsuenByb3RvLkNvbW11bml0eVBsYXllckluZm86AjgBGlkKFkFkZEludml0",
-            "YXRpb25MaXN0RW50cnkSCwoDa2V5GAEgASgDEi4KBXZhbHVlGAIgASgLMh8u",
-            "enByb3RvLkNvbW11bml0eUludml0YXRpb25JbmZvOgI4AWIGcHJvdG8z"));
+            "dHlfcXVpdF9jb2hhYml0YW50LnByb3RvIpMICiBOb3RpZnlDb21tdW5pdHlJ",
+            "bmZvVXBkYXRlUmVxdWVzdBIqChBob3VzZU93bmVyQ2hhcklkGAEgASgDUhBo",
+            "b3VzZU93bmVyQ2hhcklkEh4KCmhvbWVsYW5kSWQYAiABKANSCmhvbWVsYW5k",
+            "SWQSIgoMcmVtb3ZlR3JvdXBzGAMgAygDUgxyZW1vdmVHcm91cHMSbQoRYWRk",
+            "QnVsbGV0aW5Cb2FyZHMYBCADKAsyPy56cHJvdG8uTm90aWZ5Q29tbXVuaXR5",
+            "SW5mb1VwZGF0ZVJlcXVlc3QuQWRkQnVsbGV0aW5Cb2FyZHNFbnRyeVIRYWRk",
+            "QnVsbGV0aW5Cb2FyZHMSMgoUcmVtb3ZlQnVsbGV0aW5Cb2FyZHMYBSADKANS",
+            "FHJlbW92ZUJ1bGxldGluQm9hcmRzEmEKDWFkZENvaGFiaXRhbnQYBiADKAsy",
+            "Oy56cHJvdG8uTm90aWZ5Q29tbXVuaXR5SW5mb1VwZGF0ZVJlcXVlc3QuQWRk",
+            "Q29oYWJpdGFudEVudHJ5Ug1hZGRDb2hhYml0YW50EioKEHJlbW92ZUNvaGFi",
+            "aXRhbnQYByADKANSEHJlbW92ZUNvaGFiaXRhbnQSbQoRYWRkSW52aXRhdGlv",
+            "bkxpc3QYCCADKAsyPy56cHJvdG8uTm90aWZ5Q29tbXVuaXR5SW5mb1VwZGF0",
+            "ZVJlcXVlc3QuQWRkSW52aXRhdGlvbkxpc3RFbnRyeVIRYWRkSW52aXRhdGlv",
+            "bkxpc3QSMgoUcmVtb3ZlSW52aXRhdGlvbkxpc3QYCSADKANSFHJlbW92ZUlu",
+            "dml0YXRpb25MaXN0Ek0KEWFkZFF1aXRDb2hhYml0YW50GAogAygLMh8uenBy",
+            "b3RvLkNvbW11bml0eVF1aXRDb2hhYml0YW50UhFhZGRRdWl0Q29oYWJpdGFu",
+            "dBJTChRyZW1vdmVRdWl0Q29oYWJpdGFudBgLIAMoCzIfLnpwcm90by5Db21t",
+            "dW5pdHlRdWl0Q29oYWJpdGFudFIUcmVtb3ZlUXVpdENvaGFiaXRhbnQaWAoW",
+            "QWRkQnVsbGV0aW5Cb2FyZHNFbnRyeRILCgNrZXkYASABKAMSLQoFdmFsdWUY",
+            "AiABKAsyHi56cHJvdG8uQ29tbXVuaXR5QnVsbGV0aW5Cb2FyZDoCOAEaUQoS",
+            "QWRkQ29oYWJpdGFudEVudHJ5EgsKA2tleRgBIAEoAxIqCgV2YWx1ZRgCIAEo",
+            "CzIbLnpwcm90by5Db21tdW5pdHlQbGF5ZXJJbmZvOgI4ARpZChZBZGRJbnZp",
+            "dGF0aW9uTGlzdEVudHJ5EgsKA2tleRgBIAEoAxIuCgV2YWx1ZRgCIAEoCzIf",
+            "Lnpwcm90by5Db21tdW5pdHlJbnZpdGF0aW9uSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityBulletinBoardReflection.Descriptor, global::Zproto.StruCommunityInvitationInfoReflection.Descriptor, global::Zproto.StruCommunityPlayerInfoReflection.Descriptor, global::Zproto.StruCommunityQuitCohabitantReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -113,7 +117,7 @@ namespace Zproto {
       return new NotifyCommunityInfoUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "house_owner_char_id" field.</summary>
+    /// <summary>Field number for the "houseOwnerCharId" field.</summary>
     public const int HouseOwnerCharIdFieldNumber = 1;
     private long houseOwnerCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 2;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "remove_groups" field.</summary>
+    /// <summary>Field number for the "removeGroups" field.</summary>
     public const int RemoveGroupsFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_removeGroups_codec
         = pb::FieldCodec.ForInt64(26);
@@ -148,7 +152,7 @@ namespace Zproto {
       get { return removeGroups_; }
     }
 
-    /// <summary>Field number for the "add_bulletin_boards" field.</summary>
+    /// <summary>Field number for the "addBulletinBoards" field.</summary>
     public const int AddBulletinBoardsFieldNumber = 4;
     private static readonly pbc::MapField<long, global::Zproto.CommunityBulletinBoard>.Codec _map_addBulletinBoards_codec
         = new pbc::MapField<long, global::Zproto.CommunityBulletinBoard>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.CommunityBulletinBoard.Parser), 34);
@@ -159,7 +163,7 @@ namespace Zproto {
       get { return addBulletinBoards_; }
     }
 
-    /// <summary>Field number for the "remove_bulletin_boards" field.</summary>
+    /// <summary>Field number for the "removeBulletinBoards" field.</summary>
     public const int RemoveBulletinBoardsFieldNumber = 5;
     private static readonly pb::FieldCodec<long> _repeated_removeBulletinBoards_codec
         = pb::FieldCodec.ForInt64(42);
@@ -170,7 +174,7 @@ namespace Zproto {
       get { return removeBulletinBoards_; }
     }
 
-    /// <summary>Field number for the "add_cohabitant" field.</summary>
+    /// <summary>Field number for the "addCohabitant" field.</summary>
     public const int AddCohabitantFieldNumber = 6;
     private static readonly pbc::MapField<long, global::Zproto.CommunityPlayerInfo>.Codec _map_addCohabitant_codec
         = new pbc::MapField<long, global::Zproto.CommunityPlayerInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.CommunityPlayerInfo.Parser), 50);
@@ -181,7 +185,7 @@ namespace Zproto {
       get { return addCohabitant_; }
     }
 
-    /// <summary>Field number for the "remove_cohabitant" field.</summary>
+    /// <summary>Field number for the "removeCohabitant" field.</summary>
     public const int RemoveCohabitantFieldNumber = 7;
     private static readonly pb::FieldCodec<long> _repeated_removeCohabitant_codec
         = pb::FieldCodec.ForInt64(58);
@@ -192,7 +196,7 @@ namespace Zproto {
       get { return removeCohabitant_; }
     }
 
-    /// <summary>Field number for the "add_invitation_list" field.</summary>
+    /// <summary>Field number for the "addInvitationList" field.</summary>
     public const int AddInvitationListFieldNumber = 8;
     private static readonly pbc::MapField<long, global::Zproto.CommunityInvitationInfo>.Codec _map_addInvitationList_codec
         = new pbc::MapField<long, global::Zproto.CommunityInvitationInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.CommunityInvitationInfo.Parser), 66);
@@ -203,7 +207,7 @@ namespace Zproto {
       get { return addInvitationList_; }
     }
 
-    /// <summary>Field number for the "remove_invitation_list" field.</summary>
+    /// <summary>Field number for the "removeInvitationList" field.</summary>
     public const int RemoveInvitationListFieldNumber = 9;
     private static readonly pb::FieldCodec<long> _repeated_removeInvitationList_codec
         = pb::FieldCodec.ForInt64(74);
@@ -214,7 +218,7 @@ namespace Zproto {
       get { return removeInvitationList_; }
     }
 
-    /// <summary>Field number for the "add_quit_cohabitant" field.</summary>
+    /// <summary>Field number for the "addQuitCohabitant" field.</summary>
     public const int AddQuitCohabitantFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Zproto.CommunityQuitCohabitant> _repeated_addQuitCohabitant_codec
         = pb::FieldCodec.ForMessage(82, global::Zproto.CommunityQuitCohabitant.Parser);
@@ -225,7 +229,7 @@ namespace Zproto {
       get { return addQuitCohabitant_; }
     }
 
-    /// <summary>Field number for the "remove_quit_cohabitant" field.</summary>
+    /// <summary>Field number for the "removeQuitCohabitant" field.</summary>
     public const int RemoveQuitCohabitantFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Zproto.CommunityQuitCohabitant> _repeated_removeQuitCohabitant_codec
         = pb::FieldCodec.ForMessage(90, global::Zproto.CommunityQuitCohabitant.Parser);

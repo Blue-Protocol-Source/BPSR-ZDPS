@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3NlYXNvbl9yb2xlX2xldmVsLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byI3Cg9TZWFzb25Sb2xlTGV2ZWwSDQoFbGV2ZWwY",
-            "ASABKAUSFQoNY3VyX2xldmVsX2V4cBgCIAEoA2IGcHJvdG8z"));
+            "ZGlydHlfbWFzay5wcm90byJJCg9TZWFzb25Sb2xlTGV2ZWwSFAoFbGV2ZWwY",
+            "ASABKAVSBWxldmVsEiAKC2N1ckxldmVsRXhwGAIgASgDUgtjdXJMZXZlbEV4",
+            "cGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_level_exp" field.</summary>
+    /// <summary>Field number for the "curLevelExp" field.</summary>
     public const int CurLevelExpFieldNumber = 2;
     private long curLevelExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

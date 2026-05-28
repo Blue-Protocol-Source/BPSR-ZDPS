@@ -24,10 +24,11 @@ namespace Zproto {
     static StruMahjongOperationReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X21haGpvbmdfb3BlcmF0aW9uLnByb3RvEgZ6cHJvdG8iaAoQTWFo",
-            "am9uZ09wZXJhdGlvbhIOCgZoYW5kbGUYASABKAUSDQoFaW5kZXgYAiABKAUS",
-            "DAoEY2FyZBgDIAEoBRISCgpjYXJkX2luZGV4GAQgASgFEhMKC2NvdW50X2lu",
-            "ZGV4GAUgASgFYgZwcm90bzM="));
+            "ChxzdHJ1X21haGpvbmdfb3BlcmF0aW9uLnByb3RvEgZ6cHJvdG8ikgEKEE1h",
+            "aGpvbmdPcGVyYXRpb24SFgoGSGFuZGxlGAEgASgFUgZIYW5kbGUSFAoFSW5k",
+            "ZXgYAiABKAVSBUluZGV4EhIKBENhcmQYAyABKAVSBENhcmQSHAoJQ2FyZElu",
+            "ZGV4GAQgASgFUglDYXJkSW5kZXgSHgoKQ291bnRJbmRleBgFIAEoBVIKQ291",
+            "bnRJbmRleGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new MahjongOperation(this);
     }
 
-    /// <summary>Field number for the "handle" field.</summary>
+    /// <summary>Field number for the "Handle" field.</summary>
     public const int HandleFieldNumber = 1;
     private int handle_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "index" field.</summary>
+    /// <summary>Field number for the "Index" field.</summary>
     public const int IndexFieldNumber = 2;
     private int index_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "card" field.</summary>
+    /// <summary>Field number for the "Card" field.</summary>
     public const int CardFieldNumber = 3;
     private int card_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "card_index" field.</summary>
+    /// <summary>Field number for the "CardIndex" field.</summary>
     public const int CardIndexFieldNumber = 4;
     private int cardIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +136,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "count_index" field.</summary>
+    /// <summary>Field number for the "CountIndex" field.</summary>
     public const int CountIndexFieldNumber = 5;
     private int countIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

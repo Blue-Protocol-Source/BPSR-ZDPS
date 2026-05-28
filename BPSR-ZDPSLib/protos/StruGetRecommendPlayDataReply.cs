@@ -26,12 +26,13 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X2dldF9yZWNvbW1lbmRfcGxheV9kYXRhX3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhVzdHJ1X3RpbWVyX2lu",
-            "Zm8ucHJvdG8i5QEKGUdldFJlY29tbWVuZFBsYXlEYXRhUmVwbHkSVQoTcmVj",
-            "b21tZW5kX3BsYXlfZGF0YRgBIAMoCzI4Lnpwcm90by5HZXRSZWNvbW1lbmRQ",
-            "bGF5RGF0YVJlcGx5LlJlY29tbWVuZFBsYXlEYXRhRW50cnkSJAoIZXJyX2Nv",
-            "ZGUYAiABKA4yEi56cHJvdG8uRUVycm9yQ29kZRpLChZSZWNvbW1lbmRQbGF5",
-            "RGF0YUVudHJ5EgsKA2tleRgBIAEoBRIgCgV2YWx1ZRgCIAEoCzIRLnpwcm90",
-            "by5UaW1lckluZm86AjgBYgZwcm90bzM="));
+            "Zm8ucHJvdG8i/gEKGUdldFJlY29tbWVuZFBsYXlEYXRhUmVwbHkSZgoRcmVj",
+            "b21tZW5kUGxheURhdGEYASADKAsyOC56cHJvdG8uR2V0UmVjb21tZW5kUGxh",
+            "eURhdGFSZXBseS5SZWNvbW1lbmRQbGF5RGF0YUVudHJ5UhFyZWNvbW1lbmRQ",
+            "bGF5RGF0YRIsCgdlcnJDb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGVS",
+            "B2VyckNvZGUaSwoWUmVjb21tZW5kUGxheURhdGFFbnRyeRILCgNrZXkYASAB",
+            "KAUSIAoFdmFsdWUYAiABKAsyES56cHJvdG8uVGltZXJJbmZvOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruTimerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new GetRecommendPlayDataReply(this);
     }
 
-    /// <summary>Field number for the "recommend_play_data" field.</summary>
+    /// <summary>Field number for the "recommendPlayData" field.</summary>
     public const int RecommendPlayDataFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.TimerInfo>.Codec _map_recommendPlayData_codec
         = new pbc::MapField<int, global::Zproto.TimerInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.TimerInfo.Parser), 10);
@@ -99,7 +100,7 @@ namespace Zproto {
       get { return recommendPlayData_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

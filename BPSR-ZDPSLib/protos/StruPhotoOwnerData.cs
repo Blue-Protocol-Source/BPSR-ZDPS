@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3Bob3RvX293bmVyX2RhdGEucHJvdG8SBnpwcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvIlwKDlBob3RvT3duZXJEYXRhEhYKDnVwbG9hZF9j",
-            "aGFyX2lkGAEgASgDEhMKC2V4cGlyZV90aW1lGAIgASgDEg8KB3Nob3dfaWQY",
-            "AyABKAMSDAoEbmFtZRgEIAEoCWIGcHJvdG8z"));
+            "aXJ0eV9tYXNrLnByb3RvIoABCg5QaG90b093bmVyRGF0YRIiCgx1cGxvYWRD",
+            "aGFySWQYASABKANSDHVwbG9hZENoYXJJZBIeCgpleHBpcmVUaW1lGAIgASgD",
+            "UgpleHBpcmVUaW1lEhYKBnNob3dJZBgDIAEoA1IGc2hvd0lkEhIKBG5hbWUY",
+            "BCABKAlSBG5hbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new PhotoOwnerData(this);
     }
 
-    /// <summary>Field number for the "upload_char_id" field.</summary>
+    /// <summary>Field number for the "uploadCharId" field.</summary>
     public const int UploadCharIdFieldNumber = 1;
     private long uploadCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "expire_time" field.</summary>
+    /// <summary>Field number for the "expireTime" field.</summary>
     public const int ExpireTimeFieldNumber = 2;
     private long expireTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "show_id" field.</summary>
+    /// <summary>Field number for the "showId" field.</summary>
     public const int ShowIdFieldNumber = 3;
     private long showId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

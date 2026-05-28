@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2ljaGliYW5fa3VqaV9yZWNvcmRfcmVxdWVzdC5wcm90bxIGenBy",
-            "b3RvIk8KGEljaGliYW5LdWppUmVjb3JkUmVxdWVzdBIPCgdwb29sX2lkGAEg",
-            "ASgFEhMKC3N0YXJ0X2luZGV4GAIgASgNEg0KBWNvdW50GAMgASgNYgZwcm90",
-            "bzM="));
+            "b3RvImgKGEljaGliYW5LdWppUmVjb3JkUmVxdWVzdBIWCgZwb29sSWQYASAB",
+            "KAVSBnBvb2xJZBIeCgpzdGFydEluZGV4GAIgASgNUgpzdGFydEluZGV4EhQK",
+            "BWNvdW50GAMgASgNUgVjb3VudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new IchibanKujiRecordRequest(this);
     }
 
-    /// <summary>Field number for the "pool_id" field.</summary>
+    /// <summary>Field number for the "poolId" field.</summary>
     public const int PoolIdFieldNumber = 1;
     private int poolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "start_index" field.</summary>
+    /// <summary>Field number for the "startIndex" field.</summary>
     public const int StartIndexFieldNumber = 2;
     private uint startIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

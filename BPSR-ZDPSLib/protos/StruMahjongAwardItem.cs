@@ -24,9 +24,10 @@ namespace Zproto {
     static StruMahjongAwardItemReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X21haGpvbmdfYXdhcmRfaXRlbS5wcm90bxIGenByb3RvIlAKEE1h",
-            "aGpvbmdBd2FyZEl0ZW0SDwoHaXRlbV9pZBgBIAEoBRISCgppdGVtX2NvdW50",
-            "GAIgASgFEhcKD2FjdHVhcmlhbF9wb2ludBgDIAEoBWIGcHJvdG8z"));
+            "Ch1zdHJ1X21haGpvbmdfYXdhcmRfaXRlbS5wcm90bxIGenByb3RvInAKEE1h",
+            "aGpvbmdBd2FyZEl0ZW0SFgoGaXRlbUlkGAEgASgFUgZpdGVtSWQSHAoJaXRl",
+            "bUNvdW50GAIgASgFUglpdGVtQ291bnQSJgoOQWN0dWFyaWFsUG9pbnQYAyAB",
+            "KAVSDkFjdHVhcmlhbFBvaW50YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new MahjongAwardItem(this);
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
+    /// <summary>Field number for the "itemId" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_count" field.</summary>
+    /// <summary>Field number for the "itemCount" field.</summary>
     public const int ItemCountFieldNumber = 2;
     private int itemCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "actuarial_point" field.</summary>
+    /// <summary>Field number for the "ActuarialPoint" field.</summary>
     public const int ActuarialPointFieldNumber = 3;
     private int actuarialPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,14 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2VudGVyX2luc3RydW1lbnRfc3RhdGVfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvGiJlbnVtX2VfaW5zdHJ1bWVudF9wbGF5X3JhbmdlLnByb3RvImYK",
-            "G0VudGVySW5zdHJ1bWVudFN0YXRlUmVxdWVzdBIVCg1pbnN0cnVtZW50X2lk",
-            "GAEgASgFEjAKCnBsYXlfcmFuZ2UYAiABKA4yHC56cHJvdG8uRUluc3RydW1l",
-            "bnRQbGF5UmFuZ2ViBnByb3RvMw=="));
+            "enByb3RvGiJlbnVtX2VfaW5zdHJ1bWVudF9wbGF5X3JhbmdlLnByb3RvIsUB",
+            "ChtFbnRlckluc3RydW1lbnRTdGF0ZVJlcXVlc3QSIgoMaW5zdHJ1bWVudElk",
+            "GAEgASgFUgxpbnN0cnVtZW50SWQSOgoJcGxheVJhbmdlGAIgASgOMhwuenBy",
+            "b3RvLkVJbnN0cnVtZW50UGxheVJhbmdlUglwbGF5UmFuZ2USGgoIcGxheU1v",
+            "ZGUYAyABKAVSCHBsYXlNb2RlEioKEHBsYXlNdXNpY1Njb3JlSWQYBCABKAVS",
+            "EHBsYXlNdXNpY1Njb3JlSWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEInstrumentPlayRangeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.EnterInstrumentStateRequest), global::Zproto.EnterInstrumentStateRequest.Parser, new[]{ "InstrumentId", "PlayRange" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.EnterInstrumentStateRequest), global::Zproto.EnterInstrumentStateRequest.Parser, new[]{ "InstrumentId", "PlayRange", "PlayMode", "PlayMusicScoreId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,6 +78,8 @@ namespace Zproto {
     public EnterInstrumentStateRequest(EnterInstrumentStateRequest other) : this() {
       instrumentId_ = other.instrumentId_;
       playRange_ = other.playRange_;
+      playMode_ = other.playMode_;
+      playMusicScoreId_ = other.playMusicScoreId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,7 +89,7 @@ namespace Zproto {
       return new EnterInstrumentStateRequest(this);
     }
 
-    /// <summary>Field number for the "instrument_id" field.</summary>
+    /// <summary>Field number for the "instrumentId" field.</summary>
     public const int InstrumentIdFieldNumber = 1;
     private int instrumentId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "play_range" field.</summary>
+    /// <summary>Field number for the "playRange" field.</summary>
     public const int PlayRangeFieldNumber = 2;
     private global::Zproto.EInstrumentPlayRange playRange_ = global::Zproto.EInstrumentPlayRange.All;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -106,6 +110,30 @@ namespace Zproto {
       get { return playRange_; }
       set {
         playRange_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "playMode" field.</summary>
+    public const int PlayModeFieldNumber = 3;
+    private int playMode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int PlayMode {
+      get { return playMode_; }
+      set {
+        playMode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "playMusicScoreId" field.</summary>
+    public const int PlayMusicScoreIdFieldNumber = 4;
+    private int playMusicScoreId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int PlayMusicScoreId {
+      get { return playMusicScoreId_; }
+      set {
+        playMusicScoreId_ = value;
       }
     }
 
@@ -126,6 +154,8 @@ namespace Zproto {
       }
       if (InstrumentId != other.InstrumentId) return false;
       if (PlayRange != other.PlayRange) return false;
+      if (PlayMode != other.PlayMode) return false;
+      if (PlayMusicScoreId != other.PlayMusicScoreId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,6 +165,8 @@ namespace Zproto {
       int hash = 1;
       if (InstrumentId != 0) hash ^= InstrumentId.GetHashCode();
       if (PlayRange != global::Zproto.EInstrumentPlayRange.All) hash ^= PlayRange.GetHashCode();
+      if (PlayMode != 0) hash ^= PlayMode.GetHashCode();
+      if (PlayMusicScoreId != 0) hash ^= PlayMusicScoreId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -161,6 +193,14 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteEnum((int) PlayRange);
       }
+      if (PlayMode != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(PlayMode);
+      }
+      if (PlayMusicScoreId != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(PlayMusicScoreId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -179,6 +219,14 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteEnum((int) PlayRange);
       }
+      if (PlayMode != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(PlayMode);
+      }
+      if (PlayMusicScoreId != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(PlayMusicScoreId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -194,6 +242,12 @@ namespace Zproto {
       }
       if (PlayRange != global::Zproto.EInstrumentPlayRange.All) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PlayRange);
+      }
+      if (PlayMode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayMode);
+      }
+      if (PlayMusicScoreId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayMusicScoreId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -212,6 +266,12 @@ namespace Zproto {
       }
       if (other.PlayRange != global::Zproto.EInstrumentPlayRange.All) {
         PlayRange = other.PlayRange;
+      }
+      if (other.PlayMode != 0) {
+        PlayMode = other.PlayMode;
+      }
+      if (other.PlayMusicScoreId != 0) {
+        PlayMusicScoreId = other.PlayMusicScoreId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -240,6 +300,14 @@ namespace Zproto {
             PlayRange = (global::Zproto.EInstrumentPlayRange) input.ReadEnum();
             break;
           }
+          case 24: {
+            PlayMode = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            PlayMusicScoreId = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -265,6 +333,14 @@ namespace Zproto {
           }
           case 16: {
             PlayRange = (global::Zproto.EInstrumentPlayRange) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            PlayMode = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            PlayMusicScoreId = input.ReadInt32();
             break;
           }
         }

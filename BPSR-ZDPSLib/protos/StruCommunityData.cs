@@ -25,10 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X2NvbW11bml0eV9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byKZAQoNQ29tbXVuaXR5RGF0YRIUCgxjb21tdW5pdHlf",
-            "aWQYASABKAMSEwoLaG9tZWxhbmRfaWQYAiABKAMSFgoOY29oYWJpdGFudF9p",
-            "ZHMYAyADKAMSIwobbGFzdF9leGl0X2NvaGFiaXRhdGlvbl90aW1lGAQgASgD",
-            "EhEKCWJ1eV9jb3VudBgFIAEoBRINCgVsZXZlbBgGIAEoBWIGcHJvdG8z"));
+            "dHlfbWFzay5wcm90byLlAQoNQ29tbXVuaXR5RGF0YRIgCgtjb21tdW5pdHlJ",
+            "ZBgBIAEoA1ILY29tbXVuaXR5SWQSHgoKaG9tZWxhbmRJZBgCIAEoA1IKaG9t",
+            "ZWxhbmRJZBIkCg1jb2hhYml0YW50SWRzGAMgAygDUg1jb2hhYml0YW50SWRz",
+            "EjoKGGxhc3RFeGl0Q29oYWJpdGF0aW9uVGltZRgEIAEoA1IYbGFzdEV4aXRD",
+            "b2hhYml0YXRpb25UaW1lEhoKCGJ1eUNvdW50GAUgASgFUghidXlDb3VudBIU",
+            "CgVsZXZlbBgGIAEoBVIFbGV2ZWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +91,7 @@ namespace Zproto {
       return new CommunityData(this);
     }
 
-    /// <summary>Field number for the "community_id" field.</summary>
+    /// <summary>Field number for the "communityId" field.</summary>
     public const int CommunityIdFieldNumber = 1;
     private long communityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 2;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cohabitant_ids" field.</summary>
+    /// <summary>Field number for the "cohabitantIds" field.</summary>
     public const int CohabitantIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_cohabitantIds_codec
         = pb::FieldCodec.ForInt64(26);
@@ -124,7 +126,7 @@ namespace Zproto {
       get { return cohabitantIds_; }
     }
 
-    /// <summary>Field number for the "last_exit_cohabitation_time" field.</summary>
+    /// <summary>Field number for the "lastExitCohabitationTime" field.</summary>
     public const int LastExitCohabitationTimeFieldNumber = 4;
     private long lastExitCohabitationTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buy_count" field.</summary>
+    /// <summary>Field number for the "buyCount" field.</summary>
     public const int BuyCountFieldNumber = 5;
     private int buyCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2hvbWVfbGFuZF9pdGVtX2luc3RhbmNlLnByb3RvEgZ6cHJvdG8a",
-            "D3N0cnVfaXRlbS5wcm90byLTAQoUSG9tZUxhbmRJdGVtSW5zdGFuY2USEwoL",
-            "aW5zdGFuY2VfaWQYASABKAMSEQoJY29uZmlnX2lkGAIgASgFEk0KEm93bmVy",
-            "X3RvX3N0YWNrX21hcBgDIAMoCzIxLnpwcm90by5Ib21lTGFuZEl0ZW1JbnN0",
-            "YW5jZS5Pd25lclRvU3RhY2tNYXBFbnRyeRpEChRPd25lclRvU3RhY2tNYXBF",
-            "bnRyeRILCgNrZXkYASABKAMSGwoFdmFsdWUYAiABKAsyDC56cHJvdG8uSXRl",
-            "bToCOAFiBnByb3RvMw=="));
+            "D3N0cnVfaXRlbS5wcm90byL1AQoUSG9tZUxhbmRJdGVtSW5zdGFuY2USHgoK",
+            "SW5zdGFuY2VJZBgBIAEoA1IKSW5zdGFuY2VJZBIaCghDb25maWdJZBgCIAEo",
+            "BVIIQ29uZmlnSWQSWwoPb3duZXJUb1N0YWNrTWFwGAMgAygLMjEuenByb3Rv",
+            "LkhvbWVMYW5kSXRlbUluc3RhbmNlLk93bmVyVG9TdGFja01hcEVudHJ5Ug9v",
+            "d25lclRvU3RhY2tNYXAaRAoUT3duZXJUb1N0YWNrTWFwRW50cnkSCwoDa2V5",
+            "GAEgASgDEhsKBXZhbHVlGAIgASgLMgwuenByb3RvLkl0ZW06AjgBYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new HomeLandItemInstance(this);
     }
 
-    /// <summary>Field number for the "instance_id" field.</summary>
+    /// <summary>Field number for the "InstanceId" field.</summary>
     public const int InstanceIdFieldNumber = 1;
     private long instanceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
+    /// <summary>Field number for the "ConfigId" field.</summary>
     public const int ConfigIdFieldNumber = 2;
     private int configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "owner_to_stack_map" field.</summary>
+    /// <summary>Field number for the "ownerToStackMap" field.</summary>
     public const int OwnerToStackMapFieldNumber = 3;
     private static readonly pbc::MapField<long, global::Zproto.Item>.Codec _map_ownerToStackMap_codec
         = new pbc::MapField<long, global::Zproto.Item>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.Item.Parser), 26);

@@ -483,7 +483,7 @@ namespace BPSR_ZDPS.Windows
                                             {
                                                 var user = new User(new BasicShowInfo()
                                                 {
-                                                    CharId = match.Value.UID,
+                                                    CharID = match.Value.UID,
                                                     Name = match.Value.Name
                                                 });
                                                 ChatManager.BlockUser(user);
@@ -684,9 +684,9 @@ namespace BPSR_ZDPS.Windows
 
                 if (ImGui.MenuItem("Copy UID"))
                 {
-                    ImGui.SetClipboardText(sender.Info.CharId.ToString());
+                    ImGui.SetClipboardText(sender.Info.CharID.ToString());
                 }
-                ImGui.SetItemTooltip($"Copies [ {sender.Info.CharId} ] to the clipboard.");
+                ImGui.SetItemTooltip($"Copies [ {sender.Info.CharID} ] to the clipboard.");
 
                 if (ImGui.MenuItem("Block User"))
                 {

@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "ChhzdHJ1X3N0YXJ0X21lc3NhZ2UucHJvdG8SBnpwcm90bxoec3RydV9tYWhq",
             "b25nX2NvbmZpZ19pbmZvLnByb3RvGiBzdHJ1X21haGpvbmdfc2V0dGxlX3Bh",
-            "cmFtcy5wcm90bxoec3RydV9wbGF5ZXJfbWFoam9uZ19kYXRhLnByb3RvIqEB",
-            "CgxTdGFydE1lc3NhZ2USKgoHcGxheWVycxgBIAMoCzIZLnpwcm90by5QbGF5",
-            "ZXJNYWhqb25nRGF0YRIpCgZjb25maWcYAiADKAsyGS56cHJvdG8uTWFoam9u",
-            "Z0NvbmZpZ0luZm8SOgoVbWFoam9uZ19zZXR0bGVfcGFyYW1zGAMgASgLMhsu",
-            "enByb3RvLk1haGpvbmdTZXR0bGVQYXJhbXNiBnByb3RvMw=="));
+            "cmFtcy5wcm90bxoec3RydV9wbGF5ZXJfbWFoam9uZ19kYXRhLnByb3RvIsUB",
+            "CgxTdGFydE1lc3NhZ2USMwoHcGxheWVycxgBIAMoCzIZLnpwcm90by5QbGF5",
+            "ZXJNYWhqb25nRGF0YVIHcGxheWVycxIxCgZjb25maWcYAiADKAsyGS56cHJv",
+            "dG8uTWFoam9uZ0NvbmZpZ0luZm9SBmNvbmZpZxJNChNtYWhqb25nU2V0dGxl",
+            "UGFyYW1zGAMgASgLMhsuenByb3RvLk1haGpvbmdTZXR0bGVQYXJhbXNSE21h",
+            "aGpvbmdTZXR0bGVQYXJhbXNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMahjongConfigInfoReflection.Descriptor, global::Zproto.StruMahjongSettleParamsReflection.Descriptor, global::Zproto.StruPlayerMahjongDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -110,7 +111,7 @@ namespace Zproto {
       get { return config_; }
     }
 
-    /// <summary>Field number for the "mahjong_settle_params" field.</summary>
+    /// <summary>Field number for the "mahjongSettleParams" field.</summary>
     public const int MahjongSettleParamsFieldNumber = 3;
     private global::Zproto.MahjongSettleParams mahjongSettleParams_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

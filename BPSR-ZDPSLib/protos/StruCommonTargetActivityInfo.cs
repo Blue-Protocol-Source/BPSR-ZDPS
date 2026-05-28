@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2NvbW1vbl90YXJnZXRfYWN0aXZpdHlfaW5mby5wcm90bxIGenBy",
-            "b3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iRAoYQ29tbW9uVGFyZ2V0QWN0",
-            "aXZpdHlJbmZvEhIKCmZpbmlzaF9udW0YASABKA0SFAoMaGFzX3JlY2VpdmVk",
-            "GAIgASgIYgZwcm90bzM="));
+            "b3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iWgoYQ29tbW9uVGFyZ2V0QWN0",
+            "aXZpdHlJbmZvEhwKCWZpbmlzaE51bRgBIAEoDVIJZmluaXNoTnVtEiAKC2hh",
+            "c1JlY2VpdmVkGAIgASgIUgtoYXNSZWNlaXZlZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new CommonTargetActivityInfo(this);
     }
 
-    /// <summary>Field number for the "finish_num" field.</summary>
+    /// <summary>Field number for the "finishNum" field.</summary>
     public const int FinishNumFieldNumber = 1;
     private uint finishNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "has_received" field.</summary>
+    /// <summary>Field number for the "hasReceived" field.</summary>
     public const int HasReceivedFieldNumber = 2;
     private bool hasReceived_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

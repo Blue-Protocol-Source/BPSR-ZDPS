@@ -26,12 +26,13 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X3Byb2Zlc3Npb25fcHJvamVjdF9saXN0LnByb3RvEgZ6cHJvdG8a",
             "LnN0cnVfcHJvZmVzc2lvbl9wcm9qZWN0X2NvbW1vbl9zeW5jX2RhdGEucHJv",
-            "dG8i9QEKFVByb2Zlc3Npb25Qcm9qZWN0TGlzdBJZChdwcm9mZXNzaW9uX3By",
-            "b2plY3RfbGlzdBgBIAMoCzI4Lnpwcm90by5Qcm9mZXNzaW9uUHJvamVjdExp",
-            "c3QuUHJvZmVzc2lvblByb2plY3RMaXN0RW50cnkSGgoSY3VycmVudF9wcm9q",
-            "ZWN0X2lkGAIgASgFGmUKGlByb2Zlc3Npb25Qcm9qZWN0TGlzdEVudHJ5EgsK",
-            "A2tleRgBIAEoBRI2CgV2YWx1ZRgCIAEoCzInLnpwcm90by5Qcm9mZXNzaW9u",
-            "UHJvamVjdENvbW1vblN5bmNEYXRhOgI4AWIGcHJvdG8z"));
+            "dG8imgIKFVByb2Zlc3Npb25Qcm9qZWN0TGlzdBJuChVwcm9mZXNzaW9uUHJv",
+            "amVjdExpc3QYASADKAsyOC56cHJvdG8uUHJvZmVzc2lvblByb2plY3RMaXN0",
+            "LlByb2Zlc3Npb25Qcm9qZWN0TGlzdEVudHJ5UhVwcm9mZXNzaW9uUHJvamVj",
+            "dExpc3QSKgoQY3VycmVudFByb2plY3RJZBgCIAEoBVIQY3VycmVudFByb2pl",
+            "Y3RJZBplChpQcm9mZXNzaW9uUHJvamVjdExpc3RFbnRyeRILCgNrZXkYASAB",
+            "KAUSNgoFdmFsdWUYAiABKAsyJy56cHJvdG8uUHJvZmVzc2lvblByb2plY3RD",
+            "b21tb25TeW5jRGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruProfessionProjectCommonSyncDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new ProfessionProjectList(this);
     }
 
-    /// <summary>Field number for the "profession_project_list" field.</summary>
+    /// <summary>Field number for the "professionProjectList" field.</summary>
     public const int ProfessionProjectList_FieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.ProfessionProjectCommonSyncData>.Codec _map_professionProjectList_codec
         = new pbc::MapField<int, global::Zproto.ProfessionProjectCommonSyncData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ProfessionProjectCommonSyncData.Parser), 10);
@@ -99,7 +100,7 @@ namespace Zproto {
       get { return professionProjectList_; }
     }
 
-    /// <summary>Field number for the "current_project_id" field.</summary>
+    /// <summary>Field number for the "currentProjectId" field.</summary>
     public const int CurrentProjectIdFieldNumber = 2;
     private int currentProjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X2xhdW5jaF9wcml2aWxlZ2VfZGF0YS5wcm90bxIGenByb3RvGhpl",
             "bnVtX2xhdW5jaF9wbGF0Zm9ybS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIqgBChNMYXVuY2hQcml2aWxlZ2VEYXRhEi8KD2xhdW5jaF9wbGF0Zm9y",
-            "bRgBIAEoDjIWLnpwcm90by5MYXVuY2hQbGF0Zm9ybRIUCgxpc19wcml2aWxl",
-            "Z2UYAiABKAgSMwoTYmFrX2xhdW5jaF9wbGF0Zm9ybRgDIAEoDjIWLnpwcm90",
-            "by5MYXVuY2hQbGF0Zm9ybRIVCg1iYWtfcHJpdmlsZWdlGAQgASgIYgZwcm90",
-            "bzM="));
+            "b3RvIuEBChNMYXVuY2hQcml2aWxlZ2VEYXRhEj4KDmxhdW5jaFBsYXRmb3Jt",
+            "GAEgASgOMhYuenByb3RvLkxhdW5jaFBsYXRmb3JtUg5sYXVuY2hQbGF0Zm9y",
+            "bRIgCgtpc1ByaXZpbGVnZRgCIAEoCFILaXNQcml2aWxlZ2USRAoRYmFrTGF1",
+            "bmNoUGxhdGZvcm0YAyABKA4yFi56cHJvdG8uTGF1bmNoUGxhdGZvcm1SEWJh",
+            "a0xhdW5jaFBsYXRmb3JtEiIKDGJha1ByaXZpbGVnZRgEIAEoCFIMYmFrUHJp",
+            "dmlsZWdlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumLaunchPlatformReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new LaunchPrivilegeData(this);
     }
 
-    /// <summary>Field number for the "launch_platform" field.</summary>
+    /// <summary>Field number for the "launchPlatform" field.</summary>
     public const int LaunchPlatformFieldNumber = 1;
     private global::Zproto.LaunchPlatform launchPlatform_ = global::Zproto.LaunchPlatform.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_privilege" field.</summary>
+    /// <summary>Field number for the "isPrivilege" field.</summary>
     public const int IsPrivilegeFieldNumber = 2;
     private bool isPrivilege_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bak_launch_platform" field.</summary>
+    /// <summary>Field number for the "bakLaunchPlatform" field.</summary>
     public const int BakLaunchPlatformFieldNumber = 3;
     private global::Zproto.LaunchPlatform bakLaunchPlatform_ = global::Zproto.LaunchPlatform.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bak_privilege" field.</summary>
+    /// <summary>Field number for the "bakPrivilege" field.</summary>
     public const int BakPrivilegeFieldNumber = 4;
     private bool bakPrivilege_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

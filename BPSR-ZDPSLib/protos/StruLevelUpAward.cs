@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X2xldmVsX3VwX2F3YXJkLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byI6CgxMZXZlbFVwQXdhcmQSEgoKZHJvcF90aW1lcxgB",
-            "IAEoDRIWCg5sYXN0X2Ryb3BfdGltZRgCIAEoA2IGcHJvdG8z"));
+            "dHlfbWFzay5wcm90byJQCgxMZXZlbFVwQXdhcmQSHAoJZHJvcFRpbWVzGAEg",
+            "ASgNUglkcm9wVGltZXMSIgoMbGFzdERyb3BUaW1lGAIgASgDUgxsYXN0RHJv",
+            "cFRpbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new LevelUpAward(this);
     }
 
-    /// <summary>Field number for the "drop_times" field.</summary>
+    /// <summary>Field number for the "dropTimes" field.</summary>
     public const int DropTimesFieldNumber = 1;
     private uint dropTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_drop_time" field.</summary>
+    /// <summary>Field number for the "lastDropTime" field.</summary>
     public const int LastDropTimeFieldNumber = 2;
     private long lastDropTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

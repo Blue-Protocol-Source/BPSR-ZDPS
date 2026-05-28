@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2dldF9zaG9wX2l0ZW1fbGlzdF9yZXF1ZXN0LnByb3RvEgZ6cHJv",
-            "dG8iKQoWR2V0U2hvcEl0ZW1MaXN0UmVxdWVzdBIPCgdzaG9wX2lkGAMgAygF",
-            "YgZwcm90bzM="));
+            "dG8iMAoWR2V0U2hvcEl0ZW1MaXN0UmVxdWVzdBIWCgZzaG9wSWQYAyADKAVS",
+            "BnNob3BJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new GetShopItemListRequest(this);
     }
 
-    /// <summary>Field number for the "shop_id" field.</summary>
+    /// <summary>Field number for the "shopId" field.</summary>
     public const int ShopIdFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_shopId_codec
         = pb::FieldCodec.ForInt32(26);

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruChatMultiLangNoticeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2NoYXRfbXVsdGlfbGFuZ19ub3RpY2UucHJvdG8SBnpwcm90byI2",
-            "ChNDaGF0TXVsdGlMYW5nTm90aWNlEhEKCWNvbmZpZ19pZBgBIAEoDRIMCgRh",
-            "cmdzGAIgAygJYgZwcm90bzM="));
+            "CiFzdHJ1X2NoYXRfbXVsdGlfbGFuZ19ub3RpY2UucHJvdG8SBnpwcm90byJF",
+            "ChNDaGF0TXVsdGlMYW5nTm90aWNlEhoKCGNvbmZpZ0lkGAEgASgNUghjb25m",
+            "aWdJZBISCgRhcmdzGAIgAygJUgRhcmdzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ChatMultiLangNotice(this);
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
+    /// <summary>Field number for the "configId" field.</summary>
     public const int ConfigIdFieldNumber = 1;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

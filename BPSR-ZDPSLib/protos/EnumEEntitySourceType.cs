@@ -24,11 +24,11 @@ namespace Zproto {
     static EnumEEntitySourceTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9lbnVtX2VfZW50aXR5X3NvdXJjZV90eXBlLnByb3RvEgZ6cHJvdG8qiwEK",
+            "Ch9lbnVtX2VfZW50aXR5X3NvdXJjZV90eXBlLnByb3RvEgZ6cHJvdG8qpwEK",
             "EUVFbnRpdHlTb3VyY2VUeXBlEhYKEkVudGl0eVNvdXJjZVNlcnZlchAAEhYK",
             "EkVudGl0eVNvdXJjZUNsaWVudBABEhQKEEVudGl0eVNvdXJjZVVzZXIQAhIV",
             "ChFFbnRpdHlTb3VyY2VTY2VuZRADEhkKFUVudGl0eVNvdXJjZUNvbW11bml0",
-            "eRAEYgZwcm90bzM="));
+            "eRAEEhoKFkVudGl0eVNvdXJjZUNsaWVudFVzZXIQBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EEntitySourceType), }, null, null));
@@ -43,6 +43,7 @@ namespace Zproto {
     [pbr::OriginalName("EntitySourceUser")] EntitySourceUser = 2,
     [pbr::OriginalName("EntitySourceScene")] EntitySourceScene = 3,
     [pbr::OriginalName("EntitySourceCommunity")] EntitySourceCommunity = 4,
+    [pbr::OriginalName("EntitySourceClientUser")] EntitySourceClientUser = 5,
   }
 
   #endregion

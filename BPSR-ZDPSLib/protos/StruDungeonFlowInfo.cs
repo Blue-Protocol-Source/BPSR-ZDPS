@@ -26,11 +26,13 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X2R1bmdlb25fZmxvd19pbmZvLnByb3RvEgZ6cHJvdG8aGmVudW1f",
             "ZV9kdW5nZW9uX3N0YXRlLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i",
-            "xQEKD0R1bmdlb25GbG93SW5mbxIkCgVzdGF0ZRgBIAEoDjIVLnpwcm90by5F",
-            "RHVuZ2VvblN0YXRlEhMKC2FjdGl2ZV90aW1lGAIgASgFEhIKCnJlYWR5X3Rp",
-            "bWUYAyABKAUSEQoJcGxheV90aW1lGAQgASgFEhAKCGVuZF90aW1lGAUgASgF",
-            "EhcKD3NldHRsZW1lbnRfdGltZRgGIAEoBRIVCg1kdW5nZW9uX3RpbWVzGAcg",
-            "ASgFEg4KBnJlc3VsdBgIIAEoBWIGcHJvdG8z"));
+            "lgIKD0R1bmdlb25GbG93SW5mbxIrCgVzdGF0ZRgBIAEoDjIVLnpwcm90by5F",
+            "RHVuZ2VvblN0YXRlUgVzdGF0ZRIeCgphY3RpdmVUaW1lGAIgASgFUgphY3Rp",
+            "dmVUaW1lEhwKCXJlYWR5VGltZRgDIAEoBVIJcmVhZHlUaW1lEhoKCHBsYXlU",
+            "aW1lGAQgASgFUghwbGF5VGltZRIYCgdlbmRUaW1lGAUgASgFUgdlbmRUaW1l",
+            "EiYKDnNldHRsZW1lbnRUaW1lGAYgASgFUg5zZXR0bGVtZW50VGltZRIiCgxk",
+            "dW5nZW9uVGltZXMYByABKAVSDGR1bmdlb25UaW1lcxIWCgZyZXN1bHQYCCAB",
+            "KAVSBnJlc3VsdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEDungeonStateReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -105,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "active_time" field.</summary>
+    /// <summary>Field number for the "activeTime" field.</summary>
     public const int ActiveTimeFieldNumber = 2;
     private int activeTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ready_time" field.</summary>
+    /// <summary>Field number for the "readyTime" field.</summary>
     public const int ReadyTimeFieldNumber = 3;
     private int readyTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "play_time" field.</summary>
+    /// <summary>Field number for the "playTime" field.</summary>
     public const int PlayTimeFieldNumber = 4;
     private int playTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,7 +143,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 5;
     private int endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,7 +155,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "settlement_time" field.</summary>
+    /// <summary>Field number for the "settlementTime" field.</summary>
     public const int SettlementTimeFieldNumber = 6;
     private int settlementTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -165,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_times" field.</summary>
+    /// <summary>Field number for the "dungeonTimes" field.</summary>
     public const int DungeonTimesFieldNumber = 7;
     private int dungeonTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

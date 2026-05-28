@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiVzdHJ1X2pvaW5fdW5pb25fZ3Jvd19mdW5jX3JlcGx5LnByb3RvEgZ6cHJv",
             "dG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhtzdHJ1X3VuaW9uX2Nyb3dk",
-            "X2Z1bmQucHJvdG8iagoWSm9pblVuaW9uR3Jvd0Z1bmNSZXBseRIqCgpjcm93",
-            "ZF9mdW5kGAEgASgLMhYuenByb3RvLlVuaW9uQ3Jvd2RGdW5kEiQKCGVycl9j",
-            "b2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "X2Z1bmQucHJvdG8ifAoWSm9pblVuaW9uR3Jvd0Z1bmNSZXBseRI0Cgljcm93",
+            "ZEZ1bmQYASABKAsyFi56cHJvdG8uVW5pb25Dcm93ZEZ1bmRSCWNyb3dkRnVu",
+            "ZBIsCgdlcnJDb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNv",
+            "ZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionCrowdFundReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new JoinUnionGrowFuncReply(this);
     }
 
-    /// <summary>Field number for the "crowd_fund" field.</summary>
+    /// <summary>Field number for the "crowdFund" field.</summary>
     public const int CrowdFundFieldNumber = 1;
     private global::Zproto.UnionCrowdFund crowdFund_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

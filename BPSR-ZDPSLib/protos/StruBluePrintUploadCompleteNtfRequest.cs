@@ -27,11 +27,12 @@ namespace Zproto {
             "CjFzdHJ1X2JsdWVfcHJpbnRfdXBsb2FkX2NvbXBsZXRlX250Zl9yZXF1ZXN0",
             "LnByb3RvEgZ6cHJvdG8aIHN0cnVfYmx1ZV9wcmludF9zaGFyZV9kYXRhLnBy",
             "b3RvGhplbnVtX2JsdWVfcHJpbnRfdHlwZS5wcm90bxoXZW51bV9lX2Vycm9y",
-            "X2NvZGUucHJvdG8ivAEKIUJsdWVQcmludFVwbG9hZENvbXBsZXRlTnRmUmVx",
-            "dWVzdBIkCghlcnJfY29kZRgBIAEoDjISLnpwcm90by5FRXJyb3JDb2RlEgwK",
-            "BHNsb3QYAiABKAUSLgoPYmx1ZV9wcmludF90eXBlGAMgASgOMhUuenByb3Rv",
-            "LkJsdWVQcmludFR5cGUSMwoPYmx1ZV9wcmludF9kYXRhGAQgASgLMhouenBy",
-            "b3RvLkJsdWVQcmludFNoYXJlRGF0YWIGcHJvdG8z"));
+            "X2NvZGUucHJvdG8i5AEKIUJsdWVQcmludFVwbG9hZENvbXBsZXRlTnRmUmVx",
+            "dWVzdBIsCgdlcnJDb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2Vy",
+            "ckNvZGUSEgoEc2xvdBgCIAEoBVIEc2xvdBI7Cg1ibHVlUHJpbnRUeXBlGAMg",
+            "ASgOMhUuenByb3RvLkJsdWVQcmludFR5cGVSDWJsdWVQcmludFR5cGUSQAoN",
+            "Ymx1ZVByaW50RGF0YRgEIAEoCzIaLnpwcm90by5CbHVlUHJpbnRTaGFyZURh",
+            "dGFSDWJsdWVQcmludERhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBluePrintShareDataReflection.Descriptor, global::Zproto.EnumBluePrintTypeReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new BluePrintUploadCompleteNtfRequest(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "blue_print_type" field.</summary>
+    /// <summary>Field number for the "bluePrintType" field.</summary>
     public const int BluePrintTypeFieldNumber = 3;
     private global::Zproto.BluePrintType bluePrintType_ = global::Zproto.BluePrintType.Outer;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "blue_print_data" field.</summary>
+    /// <summary>Field number for the "bluePrintData" field.</summary>
     public const int BluePrintDataFieldNumber = 4;
     private global::Zproto.BluePrintShareData bluePrintData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2ludml0ZV90b193YXJlaG91c2VfcmVxdWVzdC5wcm90bxIGenBy",
-            "b3RvIjMKGEludml0ZVRvV2FyZWhvdXNlUmVxdWVzdBIXCg9pbnZpdGVlX2No",
-            "YXJfaWQYASABKANiBnByb3RvMw=="));
+            "b3RvIkAKGEludml0ZVRvV2FyZWhvdXNlUmVxdWVzdBIkCg1pbnZpdGVlQ2hh",
+            "cklkGAEgASgDUg1pbnZpdGVlQ2hhcklkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new InviteToWarehouseRequest(this);
     }
 
-    /// <summary>Field number for the "invitee_char_id" field.</summary>
+    /// <summary>Field number for the "inviteeCharId" field.</summary>
     public const int InviteeCharIdFieldNumber = 1;
     private long inviteeCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

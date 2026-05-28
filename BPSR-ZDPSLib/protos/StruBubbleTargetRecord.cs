@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X2J1YmJsZV90YXJnZXRfcmVjb3JkLnByb3RvEgZ6cHJvdG8aFXN0",
-            "cnVfZGlydHlfbWFzay5wcm90byJEChJCdWJibGVUYXJnZXRSZWNvcmQSFAoM",
-            "ZmluaXNoX2NvdW50GAEgASgNEhgKEGxhc3RfZmluaXNoX3RpbWUYAiABKARi",
-            "BnByb3RvMw=="));
+            "cnVfZGlydHlfbWFzay5wcm90byJeChJCdWJibGVUYXJnZXRSZWNvcmQSIAoL",
+            "ZmluaXNoQ291bnQYASABKA1SC2ZpbmlzaENvdW50EiYKDmxhc3RGaW5pc2hU",
+            "aW1lGAIgASgEUg5sYXN0RmluaXNoVGltZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new BubbleTargetRecord(this);
     }
 
-    /// <summary>Field number for the "finish_count" field.</summary>
+    /// <summary>Field number for the "finishCount" field.</summary>
     public const int FinishCountFieldNumber = 1;
     private uint finishCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_finish_time" field.</summary>
+    /// <summary>Field number for the "lastFinishTime" field.</summary>
     public const int LastFinishTimeFieldNumber = 2;
     private ulong lastFinishTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

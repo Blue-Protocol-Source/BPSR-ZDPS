@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2dhbWVfdGFibGVfdm90ZV9lbmRfaW5mby5wcm90bxIGenByb3Rv",
-            "IrwBChRHYW1lVGFibGVWb3RlRW5kSW5mbxIRCglwbGF5ZXJfaWQYASABKAMS",
-            "GwoTdm90ZV9zdGFydF90aW1lX3NlYxgCIAEoBRJBCgt2b3RlX3Jlc3VsdBgD",
-            "IAMoCzIsLnpwcm90by5HYW1lVGFibGVWb3RlRW5kSW5mby5Wb3RlUmVzdWx0",
-            "RW50cnkaMQoPVm90ZVJlc3VsdEVudHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1",
-            "ZRgCIAEoBToCOAFiBnByb3RvMw=="));
+            "It8BChRHYW1lVGFibGVWb3RlRW5kSW5mbxIaCghwbGF5ZXJJZBgBIAEoA1II",
+            "cGxheWVySWQSKgoQdm90ZVN0YXJ0VGltZVNlYxgCIAEoBVIQdm90ZVN0YXJ0",
+            "VGltZVNlYxJMCgp2b3RlUmVzdWx0GAMgAygLMiwuenByb3RvLkdhbWVUYWJs",
+            "ZVZvdGVFbmRJbmZvLlZvdGVSZXN1bHRFbnRyeVIKdm90ZVJlc3VsdBoxCg9W",
+            "b3RlUmVzdWx0RW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgFOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new GameTableVoteEndInfo(this);
     }
 
-    /// <summary>Field number for the "player_id" field.</summary>
+    /// <summary>Field number for the "playerId" field.</summary>
     public const int PlayerIdFieldNumber = 1;
     private long playerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "vote_start_time_sec" field.</summary>
+    /// <summary>Field number for the "voteStartTimeSec" field.</summary>
     public const int VoteStartTimeSecFieldNumber = 2;
     private int voteStartTimeSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "vote_result" field.</summary>
+    /// <summary>Field number for the "voteResult" field.</summary>
     public const int VoteResultFieldNumber = 3;
     private static readonly pbc::MapField<long, int>.Codec _map_voteResult_codec
         = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 26);

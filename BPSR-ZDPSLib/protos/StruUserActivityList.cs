@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X3VzZXJfYWN0aXZpdHlfbGlzdC5wcm90bxIGenByb3RvGh1zdHJ1",
             "X3VzZXJfYWN0aXZpdHlfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIp0BChBVc2VyQWN0aXZpdHlMaXN0EjwKCmFjdGl2aXRpZXMYASADKAsy",
-            "KC56cHJvdG8uVXNlckFjdGl2aXR5TGlzdC5BY3Rpdml0aWVzRW50cnkaSwoP",
-            "QWN0aXZpdGllc0VudHJ5EgsKA2tleRgBIAEoAxInCgV2YWx1ZRgCIAEoCzIY",
-            "Lnpwcm90by5Vc2VyQWN0aXZpdHlJbmZvOgI4AWIGcHJvdG8z"));
+            "b3RvIqkBChBVc2VyQWN0aXZpdHlMaXN0EkgKCmFjdGl2aXRpZXMYASADKAsy",
+            "KC56cHJvdG8uVXNlckFjdGl2aXR5TGlzdC5BY3Rpdml0aWVzRW50cnlSCmFj",
+            "dGl2aXRpZXMaSwoPQWN0aXZpdGllc0VudHJ5EgsKA2tleRgBIAEoAxInCgV2",
+            "YWx1ZRgCIAEoCzIYLnpwcm90by5Vc2VyQWN0aXZpdHlJbmZvOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUserActivityInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

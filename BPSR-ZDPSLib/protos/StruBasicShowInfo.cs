@@ -25,16 +25,19 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X2Jhc2ljX3Nob3dfaW5mby5wcm90bxIGenByb3RvGhZlbnVtX2Vf",
-            "Ym9keV9zaXplLnByb3RvItQBCg1CYXNpY1Nob3dJbmZvEg8KB2NoYXJfaWQY",
-            "ASABKAMSDAoEbmFtZRgCIAEoCRIOCgZnZW5kZXIYAyABKAUSJAoJYm9keV9z",
-            "aXplGAQgASgOMhEuenByb3RvLkVCb2R5U2l6ZRINCgVsZXZlbBgFIAEoBRIa",
-            "ChJjdXJfdGFsZW50X3Bvb2xfaWQYBiABKA0SGwoTdW5pb25faHVudF9yYW5k",
-            "X2lkeBgHIAEoDRIRCglpc19uZXdiaWUYCCABKAgSEwoLaXNfYmFja2Zsb3cY",
-            "CSABKAhiBnByb3RvMw=="));
+            "Ym9keV9zaXplLnByb3RvItICCg1CYXNpY1Nob3dJbmZvEhYKBmNoYXJJRBgB",
+            "IAEoA1IGY2hhcklEEhIKBG5hbWUYAiABKAlSBG5hbWUSFgoGZ2VuZGVyGAMg",
+            "ASgFUgZnZW5kZXISLQoIYm9keVNpemUYBCABKA4yES56cHJvdG8uRUJvZHlT",
+            "aXplUghib2R5U2l6ZRIUCgVsZXZlbBgFIAEoBVIFbGV2ZWwSKAoPY3VyVGFs",
+            "ZW50UG9vbElkGAYgASgNUg9jdXJUYWxlbnRQb29sSWQSKgoQdW5pb25IdW50",
+            "UmFuZElkeBgHIAEoDVIQdW5pb25IdW50UmFuZElkeBIaCghpc05ld2JpZRgI",
+            "IAEoCFIIaXNOZXdiaWUSHgoKaXNCYWNrZmxvdxgJIAEoCFIKaXNCYWNrZmxv",
+            "dxImCg5tZW50b3JTaG93VHlwZRgKIAEoBVIObWVudG9yU2hvd1R5cGViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEBodySizeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.BasicShowInfo), global::Zproto.BasicShowInfo.Parser, new[]{ "CharId", "Name", "Gender", "BodySize", "Level", "CurTalentPoolId", "UnionHuntRandIdx", "IsNewbie", "IsBackflow" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.BasicShowInfo), global::Zproto.BasicShowInfo.Parser, new[]{ "CharID", "Name", "Gender", "BodySize", "Level", "CurTalentPoolId", "UnionHuntRandIdx", "IsNewbie", "IsBackflow", "MentorShowType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,7 +79,7 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BasicShowInfo(BasicShowInfo other) : this() {
-      charId_ = other.charId_;
+      charID_ = other.charID_;
       name_ = other.name_;
       gender_ = other.gender_;
       bodySize_ = other.bodySize_;
@@ -85,6 +88,7 @@ namespace Zproto {
       unionHuntRandIdx_ = other.unionHuntRandIdx_;
       isNewbie_ = other.isNewbie_;
       isBackflow_ = other.isBackflow_;
+      mentorShowType_ = other.mentorShowType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,15 +98,15 @@ namespace Zproto {
       return new BasicShowInfo(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
-    public const int CharIdFieldNumber = 1;
-    private long charId_;
+    /// <summary>Field number for the "charID" field.</summary>
+    public const int CharIDFieldNumber = 1;
+    private long charID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long CharId {
-      get { return charId_; }
+    public long CharID {
+      get { return charID_; }
       set {
-        charId_ = value;
+        charID_ = value;
       }
     }
 
@@ -130,7 +134,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "body_size" field.</summary>
+    /// <summary>Field number for the "bodySize" field.</summary>
     public const int BodySizeFieldNumber = 4;
     private global::Zproto.EBodySize bodySize_ = global::Zproto.EBodySize.BodySizeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -154,7 +158,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_talent_pool_id" field.</summary>
+    /// <summary>Field number for the "curTalentPoolId" field.</summary>
     public const int CurTalentPoolIdFieldNumber = 6;
     private uint curTalentPoolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -166,7 +170,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_hunt_rand_idx" field.</summary>
+    /// <summary>Field number for the "unionHuntRandIdx" field.</summary>
     public const int UnionHuntRandIdxFieldNumber = 7;
     private uint unionHuntRandIdx_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -178,7 +182,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_newbie" field.</summary>
+    /// <summary>Field number for the "isNewbie" field.</summary>
     public const int IsNewbieFieldNumber = 8;
     private bool isNewbie_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -190,7 +194,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_backflow" field.</summary>
+    /// <summary>Field number for the "isBackflow" field.</summary>
     public const int IsBackflowFieldNumber = 9;
     private bool isBackflow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -199,6 +203,18 @@ namespace Zproto {
       get { return isBackflow_; }
       set {
         isBackflow_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mentorShowType" field.</summary>
+    public const int MentorShowTypeFieldNumber = 10;
+    private int mentorShowType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int MentorShowType {
+      get { return mentorShowType_; }
+      set {
+        mentorShowType_ = value;
       }
     }
 
@@ -217,7 +233,7 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CharId != other.CharId) return false;
+      if (CharID != other.CharID) return false;
       if (Name != other.Name) return false;
       if (Gender != other.Gender) return false;
       if (BodySize != other.BodySize) return false;
@@ -226,6 +242,7 @@ namespace Zproto {
       if (UnionHuntRandIdx != other.UnionHuntRandIdx) return false;
       if (IsNewbie != other.IsNewbie) return false;
       if (IsBackflow != other.IsBackflow) return false;
+      if (MentorShowType != other.MentorShowType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -233,7 +250,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CharId != 0L) hash ^= CharId.GetHashCode();
+      if (CharID != 0L) hash ^= CharID.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Gender != 0) hash ^= Gender.GetHashCode();
       if (BodySize != global::Zproto.EBodySize.BodySizeNull) hash ^= BodySize.GetHashCode();
@@ -242,6 +259,7 @@ namespace Zproto {
       if (UnionHuntRandIdx != 0) hash ^= UnionHuntRandIdx.GetHashCode();
       if (IsNewbie != false) hash ^= IsNewbie.GetHashCode();
       if (IsBackflow != false) hash ^= IsBackflow.GetHashCode();
+      if (MentorShowType != 0) hash ^= MentorShowType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -260,9 +278,9 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CharId != 0L) {
+      if (CharID != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt64(CharId);
+        output.WriteInt64(CharID);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(18);
@@ -295,6 +313,10 @@ namespace Zproto {
       if (IsBackflow != false) {
         output.WriteRawTag(72);
         output.WriteBool(IsBackflow);
+      }
+      if (MentorShowType != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(MentorShowType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -306,9 +328,9 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CharId != 0L) {
+      if (CharID != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt64(CharId);
+        output.WriteInt64(CharID);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(18);
@@ -342,6 +364,10 @@ namespace Zproto {
         output.WriteRawTag(72);
         output.WriteBool(IsBackflow);
       }
+      if (MentorShowType != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(MentorShowType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -352,8 +378,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CharId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CharId);
+      if (CharID != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CharID);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
@@ -379,6 +405,9 @@ namespace Zproto {
       if (IsBackflow != false) {
         size += 1 + 1;
       }
+      if (MentorShowType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MentorShowType);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -391,8 +420,8 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      if (other.CharId != 0L) {
-        CharId = other.CharId;
+      if (other.CharID != 0L) {
+        CharID = other.CharID;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -418,6 +447,9 @@ namespace Zproto {
       if (other.IsBackflow != false) {
         IsBackflow = other.IsBackflow;
       }
+      if (other.MentorShowType != 0) {
+        MentorShowType = other.MentorShowType;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -438,7 +470,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            CharId = input.ReadInt64();
+            CharID = input.ReadInt64();
             break;
           }
           case 18: {
@@ -471,6 +503,10 @@ namespace Zproto {
           }
           case 72: {
             IsBackflow = input.ReadBool();
+            break;
+          }
+          case 80: {
+            MentorShowType = input.ReadInt32();
             break;
           }
         }
@@ -493,7 +529,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            CharId = input.ReadInt64();
+            CharID = input.ReadInt64();
             break;
           }
           case 18: {
@@ -526,6 +562,10 @@ namespace Zproto {
           }
           case 72: {
             IsBackflow = input.ReadBool();
+            break;
+          }
+          case 80: {
+            MentorShowType = input.ReadInt32();
             break;
           }
         }

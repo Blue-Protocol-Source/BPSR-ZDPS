@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEItemGetOptSrcReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1lbnVtX2VfaXRlbV9nZXRfb3B0X3NyYy5wcm90bxIGenByb3RvKocsCg5F",
+            "Ch1lbnVtX2VfaXRlbV9nZXRfb3B0X3NyYy5wcm90bxIGenByb3RvKukvCg5F",
             "SXRlbUdldE9wdFNyYxIZChVFSXRlbUdldE9wdFNyY0RlZmF1bHQQABIYChNF",
             "SXRlbUdldE9wdFNyY0F3YXJkEPIHEhsKFkVJdGVtR2V0T3B0U3JjRXhjaGFu",
             "Z2UQ/AcSHAoXRUl0ZW1HZXRPcHRTcmNEZWNvbXBvc2UQhggSGgoVRUl0ZW1H",
@@ -144,13 +144,24 @@ namespace Zproto {
             "IUVJdGVtR2V0T3B0U3JjTmV3YmllR3JhZHVhdGVBd2FyZBDvXRIrCiZFSXRl",
             "bUdldE9wdFNyY05ld2JpZUJhY2tmbG93TGV2ZWxBd2FyZBDwXRIjCh5FSXRl",
             "bUdldE9wdFNyY05ld2JpZUNhbmNlbE1haWwQ8V0SJQogRUl0ZW1HZXRPcHRT",
-            "cmNCYWNrZmxvd0NhbmNlbE1haWwQ8l0SLQooRUl0ZW1HZXRPcHRTcmNCdWls",
+            "cmNCYWNrZmxvd0NhbmNlbE1haWwQ8l0SKwomRUl0ZW1HZXRPcHRTcmNTZWFz",
+            "b25BY3RUYXJnZXRSZXNldE1haWwQ810SLQooRUl0ZW1HZXRPcHRTcmNCdWls",
             "ZExpZmVQcm9mZXNzaW9uU3VjY2VzcxDEXhIsCidFSXRlbUdldE9wdFNyY0J1",
             "aWxkTGlmZVByb2Zlc3Npb25DYW5jZWwQxV4SJgohRUl0ZW1HZXRPcHRTcmNM",
             "aWZlUHJvZmVzc2lvbkJ1aWxkEMZeEjQKL0VJdGVtR2V0T3B0U3JjQnVpbGRM",
             "aWZlUHJvZmVzc2lvblF1aXRDb2hhYml0YW50EMdeEigKI0VJdGVtR2V0T3B0",
-            "U3JjTGlmZVByb2Zlc3Npb25FbnRydXN0EMheEhsKFkVJdGVtR2V0T3B0U3Jj",
-            "V29ybGRBY3QQzl5iBnByb3RvMw=="));
+            "U3JjTGlmZVByb2Zlc3Npb25FbnRydXN0EMheEiUKIEVJdGVtR2V0T3B0U3Jj",
+            "TWVudG9yQ3ljbGljYWxNYWlsEMleEiYKIUVJdGVtR2V0T3B0U3JjTWVudG9y",
+            "UmVndWxhckFzc2VzcxDKXhIkCh9FSXRlbUdldE9wdFNyY01lbnRvclRhcmdl",
+            "dEF3YXJkEMteEi4KKUVJdGVtR2V0T3B0U3JjTWVudG9yQ3ljbGljYWxQcm9n",
+            "cmVzc0F3YXJkEMxeEhsKFkVJdGVtR2V0T3B0U3JjV29ybGRBY3QQzl4SIgod",
+            "RUl0ZW1HZXRPcHRTcmNTdG9yeU5vZGVSZXdhcmQQqV8SIwoeRUl0ZW1HZXRP",
+            "cHRTcmNTdG9yeUZpcnN0UmV3YXJkEKpfEigKI0VJdGVtR2V0T3B0U3JjU3Rv",
+            "cnlQZXJjZW50YWdlUmV3YXJkEKtfEiYKIUVJdGVtR2V0T3B0U3JjTXVzaWNp",
+            "YW5MZXZlbFJld2FyZBCyXxInCiJFSXRlbUdldE9wdFNyY011c2ljaWFuVGFy",
+            "Z2V0UmV3YXJkELNfEiQKH0VJdGVtR2V0T3B0U3JjTXVzaWNSYXRpbmdSZXdh",
+            "cmQQtF8SJAofRUl0ZW1HZXRPcHRTcmNDbGFpbU92ZXJmbG93Q29pbhC9X2IG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EItemGetOptSrc), }, null, null));
@@ -310,12 +321,24 @@ namespace Zproto {
     [pbr::OriginalName("EItemGetOptSrcNewbieBackflowLevelAward")] NewbieBackflowLevelAward = 12016,
     [pbr::OriginalName("EItemGetOptSrcNewbieCancelMail")] NewbieCancelMail = 12017,
     [pbr::OriginalName("EItemGetOptSrcBackflowCancelMail")] BackflowCancelMail = 12018,
+    [pbr::OriginalName("EItemGetOptSrcSeasonActTargetResetMail")] SeasonActTargetResetMail = 12019,
     [pbr::OriginalName("EItemGetOptSrcBuildLifeProfessionSuccess")] BuildLifeProfessionSuccess = 12100,
     [pbr::OriginalName("EItemGetOptSrcBuildLifeProfessionCancel")] BuildLifeProfessionCancel = 12101,
     [pbr::OriginalName("EItemGetOptSrcLifeProfessionBuild")] LifeProfessionBuild = 12102,
     [pbr::OriginalName("EItemGetOptSrcBuildLifeProfessionQuitCohabitant")] BuildLifeProfessionQuitCohabitant = 12103,
     [pbr::OriginalName("EItemGetOptSrcLifeProfessionEntrust")] LifeProfessionEntrust = 12104,
+    [pbr::OriginalName("EItemGetOptSrcMentorCyclicalMail")] MentorCyclicalMail = 12105,
+    [pbr::OriginalName("EItemGetOptSrcMentorRegularAssess")] MentorRegularAssess = 12106,
+    [pbr::OriginalName("EItemGetOptSrcMentorTargetAward")] MentorTargetAward = 12107,
+    [pbr::OriginalName("EItemGetOptSrcMentorCyclicalProgressAward")] MentorCyclicalProgressAward = 12108,
     [pbr::OriginalName("EItemGetOptSrcWorldAct")] WorldAct = 12110,
+    [pbr::OriginalName("EItemGetOptSrcStoryNodeReward")] StoryNodeReward = 12201,
+    [pbr::OriginalName("EItemGetOptSrcStoryFirstReward")] StoryFirstReward = 12202,
+    [pbr::OriginalName("EItemGetOptSrcStoryPercentageReward")] StoryPercentageReward = 12203,
+    [pbr::OriginalName("EItemGetOptSrcMusicianLevelReward")] MusicianLevelReward = 12210,
+    [pbr::OriginalName("EItemGetOptSrcMusicianTargetReward")] MusicianTargetReward = 12211,
+    [pbr::OriginalName("EItemGetOptSrcMusicRatingReward")] MusicRatingReward = 12212,
+    [pbr::OriginalName("EItemGetOptSrcClaimOverflowCoin")] ClaimOverflowCoin = 12221,
   }
 
   #endregion

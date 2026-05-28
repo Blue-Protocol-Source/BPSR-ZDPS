@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X25ld2JpZV9iYWNrZmxvd190YXJnZXRfaWRfbGlzdC5wcm90bxIG",
-            "enByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iNAoaTmV3YmllQmFja2Zs",
-            "b3dUYXJnZXRJZExpc3QSFgoOdGFyZ2V0X2lkX2xpc3QYASADKA1iBnByb3Rv",
-            "Mw=="));
+            "enByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iQAoaTmV3YmllQmFja2Zs",
+            "b3dUYXJnZXRJZExpc3QSIgoMdGFyZ2V0SWRMaXN0GAEgAygNUgx0YXJnZXRJ",
+            "ZExpc3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NewbieBackflowTargetIdList(this);
     }
 
-    /// <summary>Field number for the "target_id_list" field.</summary>
+    /// <summary>Field number for the "targetIdList" field.</summary>
     public const int TargetIdListFieldNumber = 1;
     private static readonly pb::FieldCodec<uint> _repeated_targetIdList_codec
         = pb::FieldCodec.ForUInt32(10);

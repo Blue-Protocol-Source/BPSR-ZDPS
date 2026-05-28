@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2luc3RhbGxfZmFudGFzeV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "QwoVSW5zdGFsbEZhbnRhc3lSZXF1ZXN0Eg8KB25vZGVfaWQYASABKAUSGQoR",
-            "ZmFudGFzeV9jb25maWdfaWQYAiABKAViBnByb3RvMw=="));
+            "WQoVSW5zdGFsbEZhbnRhc3lSZXF1ZXN0EhYKBm5vZGVJZBgBIAEoBVIGbm9k",
+            "ZUlkEigKD2ZhbnRhc3lDb25maWdJZBgCIAEoBVIPZmFudGFzeUNvbmZpZ0lk",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new InstallFantasyRequest(this);
     }
 
-    /// <summary>Field number for the "node_id" field.</summary>
+    /// <summary>Field number for the "nodeId" field.</summary>
     public const int NodeIdFieldNumber = 1;
     private int nodeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fantasy_config_id" field.</summary>
+    /// <summary>Field number for the "fantasyConfigId" field.</summary>
     public const int FantasyConfigIdFieldNumber = 2;
     private int fantasyConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

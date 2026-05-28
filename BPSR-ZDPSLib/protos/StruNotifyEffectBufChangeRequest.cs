@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X25vdGlmeV9lZmZlY3RfYnVmX2NoYW5nZV9yZXF1ZXN0LnByb3Rv",
-            "EgZ6cHJvdG8aHHN0cnVfdW5pb25fZWZmZWN0X2J1ZmYucHJvdG8ihQEKHE5v",
-            "dGlmeUVmZmVjdEJ1ZkNoYW5nZVJlcXVlc3QSMAoPc2V0X2VmZmVjdF9idWZm",
-            "GAIgASgLMhcuenByb3RvLlVuaW9uRWZmZWN0QnVmZhIzChJjYW5jZWxfZWZm",
-            "ZWN0X2J1ZmYYAyABKAsyFy56cHJvdG8uVW5pb25FZmZlY3RCdWZmYgZwcm90",
-            "bzM="));
+            "EgZ6cHJvdG8aHHN0cnVfdW5pb25fZWZmZWN0X2J1ZmYucHJvdG8iogEKHE5v",
+            "dGlmeUVmZmVjdEJ1ZkNoYW5nZVJlcXVlc3QSPQoNc2V0RWZmZWN0QnVmZhgC",
+            "IAEoCzIXLnpwcm90by5VbmlvbkVmZmVjdEJ1ZmZSDXNldEVmZmVjdEJ1ZmYS",
+            "QwoQY2FuY2VsRWZmZWN0QnVmZhgDIAEoCzIXLnpwcm90by5VbmlvbkVmZmVj",
+            "dEJ1ZmZSEGNhbmNlbEVmZmVjdEJ1ZmZiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUnionEffectBuffReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new NotifyEffectBufChangeRequest(this);
     }
 
-    /// <summary>Field number for the "set_effect_buff" field.</summary>
+    /// <summary>Field number for the "setEffectBuff" field.</summary>
     public const int SetEffectBuffFieldNumber = 2;
     private global::Zproto.UnionEffectBuff setEffectBuff_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cancel_effect_buff" field.</summary>
+    /// <summary>Field number for the "cancelEffectBuff" field.</summary>
     public const int CancelEffectBuffFieldNumber = 3;
     private global::Zproto.UnionEffectBuff cancelEffectBuff_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruGetRankInfoRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X2dldF9yYW5rX2luZm9fcmVxdWVzdC5wcm90bxIGenByb3RvIj0K",
-            "EkdldFJhbmtJbmZvUmVxdWVzdBIPCgdmaXNoX2lkGAEgASgFEhYKDmZpc2hf",
-            "cmFua190eXBlGAIgASgFYgZwcm90bzM="));
+            "CiBzdHJ1X2dldF9yYW5rX2luZm9fcmVxdWVzdC5wcm90bxIGenByb3RvIlAK",
+            "EkdldFJhbmtJbmZvUmVxdWVzdBIWCgZmaXNoSWQYASABKAVSBmZpc2hJZBIi",
+            "CgxmaXNoUmFua1R5cGUYAiABKAVSDGZpc2hSYW5rVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new GetRankInfoRequest(this);
     }
 
-    /// <summary>Field number for the "fish_id" field.</summary>
+    /// <summary>Field number for the "fishId" field.</summary>
     public const int FishIdFieldNumber = 1;
     private int fishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fish_rank_type" field.</summary>
+    /// <summary>Field number for the "fishRankType" field.</summary>
     public const int FishRankTypeFieldNumber = 2;
     private int fishRankType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

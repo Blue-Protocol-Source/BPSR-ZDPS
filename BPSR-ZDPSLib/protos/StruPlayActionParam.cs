@@ -24,10 +24,11 @@ namespace Zproto {
     static StruPlayActionParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X3BsYXlfYWN0aW9uX3BhcmFtLnByb3RvEgZ6cHJvdG8idwoPUGxh",
-            "eUFjdGlvblBhcmFtEhEKCWFjdGlvbl9pZBgBIAEoBRIQCghpc191cHBlchgC",
-            "IAEoCBIZChFpc19kYW5jZV90b2dldGhlchgDIAEoCBIQCghtb3VudF9pZBgE",
-            "IAEoBRISCgptb3VudF9zaXplGAUgASgFYgZwcm90bzM="));
+            "ChxzdHJ1X3BsYXlfYWN0aW9uX3BhcmFtLnByb3RvEgZ6cHJvdG8iqQEKD1Bs",
+            "YXlBY3Rpb25QYXJhbRIaCghhY3Rpb25JZBgBIAEoBVIIYWN0aW9uSWQSGAoH",
+            "aXNVcHBlchgCIAEoCFIHaXNVcHBlchIoCg9Jc0RhbmNlVG9nZXRoZXIYAyAB",
+            "KAhSD0lzRGFuY2VUb2dldGhlchIYCgdtb3VudElkGAQgASgFUgdtb3VudElk",
+            "EhwKCW1vdW50U2l6ZRgFIAEoBVIJbW91bnRTaXplYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new PlayActionParam(this);
     }
 
-    /// <summary>Field number for the "action_id" field.</summary>
+    /// <summary>Field number for the "actionId" field.</summary>
     public const int ActionIdFieldNumber = 1;
     private int actionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_upper" field.</summary>
+    /// <summary>Field number for the "isUpper" field.</summary>
     public const int IsUpperFieldNumber = 2;
     private bool isUpper_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_dance_together" field.</summary>
+    /// <summary>Field number for the "IsDanceTogether" field.</summary>
     public const int IsDanceTogetherFieldNumber = 3;
     private bool isDanceTogether_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mount_id" field.</summary>
+    /// <summary>Field number for the "mountId" field.</summary>
     public const int MountIdFieldNumber = 4;
     private int mountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +136,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mount_size" field.</summary>
+    /// <summary>Field number for the "mountSize" field.</summary>
     public const int MountSizeFieldNumber = 5;
     private int mountSize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

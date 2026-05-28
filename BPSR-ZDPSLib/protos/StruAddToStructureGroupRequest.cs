@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2FkZF90b19zdHJ1Y3R1cmVfZ3JvdXBfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvImsKGkFkZFRvU3RydWN0dXJlR3JvdXBSZXF1ZXN0EhAKCGdyb3Vw",
-            "X2lkGAEgASgDEhUKDXN0cnVjdHVyZV9pZHMYAiADKAMSEAoIaXNfb3V0ZXIY",
-            "AyABKAgSEgoKZ3JvdXBfbmFtZRgEIAEoCWIGcHJvdG8z"));
+            "enByb3RvIpIBChpBZGRUb1N0cnVjdHVyZUdyb3VwUmVxdWVzdBIYCgdncm91",
+            "cElkGAEgASgDUgdncm91cElkEiIKDHN0cnVjdHVyZUlkcxgCIAMoA1IMc3Ry",
+            "dWN0dXJlSWRzEhgKB2lzT3V0ZXIYAyABKAhSB2lzT3V0ZXISHAoJZ3JvdXBO",
+            "YW1lGAQgASgJUglncm91cE5hbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new AddToStructureGroupRequest(this);
     }
 
-    /// <summary>Field number for the "group_id" field.</summary>
+    /// <summary>Field number for the "groupId" field.</summary>
     public const int GroupIdFieldNumber = 1;
     private long groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "structure_ids" field.</summary>
+    /// <summary>Field number for the "structureIds" field.</summary>
     public const int StructureIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_structureIds_codec
         = pb::FieldCodec.ForInt64(18);
@@ -109,7 +110,7 @@ namespace Zproto {
       get { return structureIds_; }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 3;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "group_name" field.</summary>
+    /// <summary>Field number for the "groupName" field.</summary>
     public const int GroupNameFieldNumber = 4;
     private string groupName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

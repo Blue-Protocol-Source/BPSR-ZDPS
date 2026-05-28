@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X3NldF91bmlvbl9hdXRvX3Bhc3NfcmVwbHkucHJvdG8SBnpwcm90",
-            "bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iUAoVU2V0VW5pb25BdXRvUGFz",
-            "c1JlcGx5EhEKCWF1dG9fcGFzcxgBIAEoCBIkCghlcnJfY29kZRgCIAEoDjIS",
-            "Lnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iYQoVU2V0VW5pb25BdXRvUGFz",
+            "c1JlcGx5EhoKCGF1dG9QYXNzGAEgASgIUghhdXRvUGFzcxIsCgdlcnJDb2Rl",
+            "GAIgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new SetUnionAutoPassReply(this);
     }
 
-    /// <summary>Field number for the "auto_pass" field.</summary>
+    /// <summary>Field number for the "autoPass" field.</summary>
     public const int AutoPassFieldNumber = 1;
     private bool autoPass_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

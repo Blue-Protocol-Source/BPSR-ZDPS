@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2RlbGV0ZV9ibHVlX3ByaW50X3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "bxoaZW51bV9ibHVlX3ByaW50X3R5cGUucHJvdG8iVgoWRGVsZXRlQmx1ZVBy",
-            "aW50UmVxdWVzdBIMCgRzbG90GAEgASgFEi4KD2JsdWVfcHJpbnRfdHlwZRgC",
-            "IAEoDjIVLnpwcm90by5CbHVlUHJpbnRUeXBlYgZwcm90bzM="));
+            "bxoaZW51bV9ibHVlX3ByaW50X3R5cGUucHJvdG8iaQoWRGVsZXRlQmx1ZVBy",
+            "aW50UmVxdWVzdBISCgRzbG90GAEgASgFUgRzbG90EjsKDWJsdWVQcmludFR5",
+            "cGUYAiABKA4yFS56cHJvdG8uQmx1ZVByaW50VHlwZVINYmx1ZVByaW50VHlw",
+            "ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumBluePrintTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "blue_print_type" field.</summary>
+    /// <summary>Field number for the "bluePrintType" field.</summary>
     public const int BluePrintTypeFieldNumber = 2;
     private global::Zproto.BluePrintType bluePrintType_ = global::Zproto.BluePrintType.Outer;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

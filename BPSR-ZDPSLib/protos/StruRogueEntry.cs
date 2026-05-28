@@ -24,8 +24,9 @@ namespace Zproto {
     static StruRogueEntryReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X3JvZ3VlX2VudHJ5LnByb3RvEgZ6cHJvdG8iJwoKUm9ndWVFbnRy",
-            "eRIKCgJpZBgBIAEoBRINCgVsZXZlbBgCIAEoBWIGcHJvdG8z"));
+            "ChZzdHJ1X3JvZ3VlX2VudHJ5LnByb3RvEgZ6cHJvdG8iMgoKUm9ndWVFbnRy",
+            "eRIOCgJpZBgBIAEoBVICaWQSFAoFbGV2ZWwYAiABKAVSBWxldmVsYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

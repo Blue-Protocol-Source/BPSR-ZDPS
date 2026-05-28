@@ -26,13 +26,15 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X2JhY2tmbG93X2FjdF9kYXRhLnByb3RvEgZ6cHJvdG8aI3N0cnVf",
             "bmV3YmllX2JhY2tmbG93X2VsZWN0aXZlLnByb3RvGhVzdHJ1X2RpcnR5X21h",
-            "c2sucHJvdG8inwIKD0JhY2tmbG93QWN0RGF0YRISCgpsb2dpbl9kYXlzGAEg",
-            "ASgFEhoKEnJlZnJlc2hfdGltZV9zdGFtcBgCIAEoAxIZChFyZWZyZXNoX3Nl",
-            "YXNvbl9pZBgDIAEoBRISCgpzaWduX3N0YXRlGAQgAygFEhYKDmF3YXJkX3Jl",
-            "Y2VpdmVkGAUgASgIEkAKDWVsZWN0aXZlX2RhdGEYBiADKAsyKS56cHJvdG8u",
-            "QmFja2Zsb3dBY3REYXRhLkVsZWN0aXZlRGF0YUVudHJ5GlMKEUVsZWN0aXZl",
-            "RGF0YUVudHJ5EgsKA2tleRgBIAEoBRItCgV2YWx1ZRgCIAEoCzIeLnpwcm90",
-            "by5OZXdiaWVCYWNrZmxvd0VsZWN0aXZlOgI4AWIGcHJvdG8z"));
+            "c2sucHJvdG8i7QIKD0JhY2tmbG93QWN0RGF0YRIcCglsb2dpbkRheXMYASAB",
+            "KAVSCWxvZ2luRGF5cxIqChByZWZyZXNoVGltZVN0YW1wGAIgASgDUhByZWZy",
+            "ZXNoVGltZVN0YW1wEigKD3JlZnJlc2hTZWFzb25JZBgDIAEoBVIPcmVmcmVz",
+            "aFNlYXNvbklkEhwKCXNpZ25TdGF0ZRgEIAMoBVIJc2lnblN0YXRlEiQKDWF3",
+            "YXJkUmVjZWl2ZWQYBSABKAhSDWF3YXJkUmVjZWl2ZWQSTQoMZWxlY3RpdmVE",
+            "YXRhGAYgAygLMikuenByb3RvLkJhY2tmbG93QWN0RGF0YS5FbGVjdGl2ZURh",
+            "dGFFbnRyeVIMZWxlY3RpdmVEYXRhGlMKEUVsZWN0aXZlRGF0YUVudHJ5EgsK",
+            "A2tleRgBIAEoBRItCgV2YWx1ZRgCIAEoCzIeLnpwcm90by5OZXdiaWVCYWNr",
+            "Zmxvd0VsZWN0aXZlOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNewbieBackflowElectiveReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +95,7 @@ namespace Zproto {
       return new BackflowActData(this);
     }
 
-    /// <summary>Field number for the "login_days" field.</summary>
+    /// <summary>Field number for the "loginDays" field.</summary>
     public const int LoginDaysFieldNumber = 1;
     private int loginDays_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refresh_time_stamp" field.</summary>
+    /// <summary>Field number for the "refreshTimeStamp" field.</summary>
     public const int RefreshTimeStampFieldNumber = 2;
     private long refreshTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refresh_season_id" field.</summary>
+    /// <summary>Field number for the "refreshSeasonId" field.</summary>
     public const int RefreshSeasonIdFieldNumber = 3;
     private int refreshSeasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sign_state" field.</summary>
+    /// <summary>Field number for the "signState" field.</summary>
     public const int SignStateFieldNumber = 4;
     private static readonly pb::FieldCodec<int> _repeated_signState_codec
         = pb::FieldCodec.ForInt32(34);
@@ -140,7 +142,7 @@ namespace Zproto {
       get { return signState_; }
     }
 
-    /// <summary>Field number for the "award_received" field.</summary>
+    /// <summary>Field number for the "awardReceived" field.</summary>
     public const int AwardReceivedFieldNumber = 5;
     private bool awardReceived_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +154,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "elective_data" field.</summary>
+    /// <summary>Field number for the "electiveData" field.</summary>
     public const int ElectiveDataFieldNumber = 6;
     private static readonly pbc::MapField<int, global::Zproto.NewbieBackflowElective>.Codec _map_electiveData_codec
         = new pbc::MapField<int, global::Zproto.NewbieBackflowElective>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.NewbieBackflowElective.Parser), 50);

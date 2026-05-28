@@ -26,18 +26,19 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X21vbnN0ZXJfaHVudF9pbmZvLnByb3RvEgZ6cHJvdG8aHnN0cnVf",
             "bW9uc3Rlcl9odW50X3RhcmdldC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIuMDCg9Nb25zdGVySHVudEluZm8SRwoRbW9uc3Rlcl9odW50X2xpc3QY",
-            "ASADKAsyLC56cHJvdG8uTW9uc3Rlckh1bnRJbmZvLk1vbnN0ZXJIdW50TGlz",
-            "dEVudHJ5EhEKCWN1cl9sZXZlbBgCIAEoBRIPCgdjdXJfZXhwGAMgASgFEkUK",
-            "EGxldmVsX2F3YXJkX2ZsYWcYBCADKAsyKy56cHJvdG8uTW9uc3Rlckh1bnRJ",
-            "bmZvLkxldmVsQXdhcmRGbGFnRW50cnkSVAoYbW9uc3Rlcl9odW50X3JlZnJz",
-            "aF90aW1lGAYgAygLMjIuenByb3RvLk1vbnN0ZXJIdW50SW5mby5Nb25zdGVy",
-            "SHVudFJlZnJzaFRpbWVFbnRyeRpRChRNb25zdGVySHVudExpc3RFbnRyeRIL",
-            "CgNrZXkYASABKAUSKAoFdmFsdWUYAiABKAsyGS56cHJvdG8uTW9uc3Rlckh1",
-            "bnRUYXJnZXQ6AjgBGjUKE0xldmVsQXdhcmRGbGFnRW50cnkSCwoDa2V5GAEg",
-            "ASgFEg0KBXZhbHVlGAIgASgFOgI4ARo8ChpNb25zdGVySHVudFJlZnJzaFRp",
-            "bWVFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAM6AjgBYgZwcm90",
-            "bzM="));
+            "b3RvIqQECg9Nb25zdGVySHVudEluZm8SVgoPbW9uc3Rlckh1bnRMaXN0GAEg",
+            "AygLMiwuenByb3RvLk1vbnN0ZXJIdW50SW5mby5Nb25zdGVySHVudExpc3RF",
+            "bnRyeVIPbW9uc3Rlckh1bnRMaXN0EhoKCGN1ckxldmVsGAIgASgFUghjdXJM",
+            "ZXZlbBIWCgZjdXJFeHAYAyABKAVSBmN1ckV4cBJTCg5sZXZlbEF3YXJkRmxh",
+            "ZxgEIAMoCzIrLnpwcm90by5Nb25zdGVySHVudEluZm8uTGV2ZWxBd2FyZEZs",
+            "YWdFbnRyeVIObGV2ZWxBd2FyZEZsYWcSaAoVbW9uc3Rlckh1bnRSZWZyc2hU",
+            "aW1lGAYgAygLMjIuenByb3RvLk1vbnN0ZXJIdW50SW5mby5Nb25zdGVySHVu",
+            "dFJlZnJzaFRpbWVFbnRyeVIVbW9uc3Rlckh1bnRSZWZyc2hUaW1lGlEKFE1v",
+            "bnN0ZXJIdW50TGlzdEVudHJ5EgsKA2tleRgBIAEoBRIoCgV2YWx1ZRgCIAEo",
+            "CzIZLnpwcm90by5Nb25zdGVySHVudFRhcmdldDoCOAEaNQoTTGV2ZWxBd2Fy",
+            "ZEZsYWdFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBGjwK",
+            "Gk1vbnN0ZXJIdW50UmVmcnNoVGltZUVudHJ5EgsKA2tleRgBIAEoBRINCgV2",
+            "YWx1ZRgCIAEoAzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMonsterHuntTargetReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +98,7 @@ namespace Zproto {
       return new MonsterHuntInfo(this);
     }
 
-    /// <summary>Field number for the "monster_hunt_list" field.</summary>
+    /// <summary>Field number for the "monsterHuntList" field.</summary>
     public const int MonsterHuntListFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.MonsterHuntTarget>.Codec _map_monsterHuntList_codec
         = new pbc::MapField<int, global::Zproto.MonsterHuntTarget>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MonsterHuntTarget.Parser), 10);
@@ -108,7 +109,7 @@ namespace Zproto {
       get { return monsterHuntList_; }
     }
 
-    /// <summary>Field number for the "cur_level" field.</summary>
+    /// <summary>Field number for the "curLevel" field.</summary>
     public const int CurLevelFieldNumber = 2;
     private int curLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,7 +121,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_exp" field.</summary>
+    /// <summary>Field number for the "curExp" field.</summary>
     public const int CurExpFieldNumber = 3;
     private int curExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -132,7 +133,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "level_award_flag" field.</summary>
+    /// <summary>Field number for the "levelAwardFlag" field.</summary>
     public const int LevelAwardFlagFieldNumber = 4;
     private static readonly pbc::MapField<int, int>.Codec _map_levelAwardFlag_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 34);
@@ -143,7 +144,7 @@ namespace Zproto {
       get { return levelAwardFlag_; }
     }
 
-    /// <summary>Field number for the "monster_hunt_refrsh_time" field.</summary>
+    /// <summary>Field number for the "monsterHuntRefrshTime" field.</summary>
     public const int MonsterHuntRefrshTimeFieldNumber = 6;
     private static readonly pbc::MapField<int, long>.Codec _map_monsterHuntRefrshTime_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 50);

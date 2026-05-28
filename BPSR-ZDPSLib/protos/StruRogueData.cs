@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X3JvZ3VlX2RhdGEucHJvdG8SBnpwcm90bxoac3RydV9yb2d1ZV9i",
-            "dWZmX2RhdGEucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKOAQoJUm9n",
-            "dWVEYXRhEisKBWJ1ZmZzGAEgAygLMhwuenByb3RvLlJvZ3VlRGF0YS5CdWZm",
-            "c0VudHJ5Eg8KB3NlYXNvbnMYAiADKAUaQwoKQnVmZnNFbnRyeRILCgNrZXkY",
-            "ASABKAUSJAoFdmFsdWUYAiABKAsyFS56cHJvdG8uUm9ndWVCdWZmRGF0YToC",
-            "OAFiBnByb3RvMw=="));
+            "dWZmX2RhdGEucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKeAQoJUm9n",
+            "dWVEYXRhEjIKBWJ1ZmZzGAEgAygLMhwuenByb3RvLlJvZ3VlRGF0YS5CdWZm",
+            "c0VudHJ5UgVidWZmcxIYCgdzZWFzb25zGAIgAygFUgdzZWFzb25zGkMKCkJ1",
+            "ZmZzRW50cnkSCwoDa2V5GAEgASgFEiQKBXZhbHVlGAIgASgLMhUuenByb3Rv",
+            "LlJvZ3VlQnVmZkRhdGE6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruRogueBuffDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

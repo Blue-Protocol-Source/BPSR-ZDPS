@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3VuaW9uX2J1aWxkaW5nLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byJzCg1VbmlvbkJ1aWxkaW5nEhMKC2J1aWxkaW5nX2lk",
-            "GAEgASgFEhYKDmJ1aWxkaW5nX2xldmVsGAIgASgFEhsKE3VwZ3JhZGVfZmlu",
-            "aXNoX3RpbWUYAyABKAMSGAoQaGFzX3NwZWVkX3VwX3NlYxgEIAEoA2IGcHJv",
-            "dG8z"));
+            "dHlfbWFzay5wcm90byKpAQoNVW5pb25CdWlsZGluZxIeCgpidWlsZGluZ0lk",
+            "GAEgASgFUgpidWlsZGluZ0lkEiQKDWJ1aWxkaW5nTGV2ZWwYAiABKAVSDWJ1",
+            "aWxkaW5nTGV2ZWwSLAoRdXBncmFkZUZpbmlzaFRpbWUYAyABKANSEXVwZ3Jh",
+            "ZGVGaW5pc2hUaW1lEiQKDWhhc1NwZWVkVXBTZWMYBCABKANSDWhhc1NwZWVk",
+            "VXBTZWNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new UnionBuilding(this);
     }
 
-    /// <summary>Field number for the "building_id" field.</summary>
+    /// <summary>Field number for the "buildingId" field.</summary>
     public const int BuildingIdFieldNumber = 1;
     private int buildingId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "building_level" field.</summary>
+    /// <summary>Field number for the "buildingLevel" field.</summary>
     public const int BuildingLevelFieldNumber = 2;
     private int buildingLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "upgrade_finish_time" field.</summary>
+    /// <summary>Field number for the "upgradeFinishTime" field.</summary>
     public const int UpgradeFinishTimeFieldNumber = 3;
     private long upgradeFinishTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "has_speed_up_sec" field.</summary>
+    /// <summary>Field number for the "hasSpeedUpSec" field.</summary>
     public const int HasSpeedUpSecFieldNumber = 4;
     private long hasSpeedUpSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

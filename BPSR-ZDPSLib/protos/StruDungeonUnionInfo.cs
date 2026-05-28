@@ -27,11 +27,12 @@ namespace Zproto {
             "Ch1zdHJ1X2R1bmdlb25fdW5pb25faW5mby5wcm90bxIGenByb3RvGhVzdHJ1",
             "X2RhbmNlX2JhbGwucHJvdG8aGXN0cnVfdW5pb25fYnVpbGRpbmcucHJvdG8a",
             "HnN0cnVfdW5pb25fZV9zY3JlZW5faW5mby5wcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIvMCChBEdW5nZW9uVW5pb25JbmZvEhAKCHVuaW9uX2lkGAEg",
-            "ASgDEkUKD3VuaW9uX2J1aWxkaW5ncxgCIAMoCzIsLnpwcm90by5EdW5nZW9u",
-            "VW5pb25JbmZvLlVuaW9uQnVpbGRpbmdzRW50cnkSQgoOZV9zY3JlZW5faW5m",
-            "b3MYAyADKAsyKi56cHJvdG8uRHVuZ2VvblVuaW9uSW5mby5FU2NyZWVuSW5m",
-            "b3NFbnRyeRIlCgpkYW5jZV9iYWxsGAQgASgLMhEuenByb3RvLkRhbmNlQmFs",
+            "YXNrLnByb3RvIqADChBEdW5nZW9uVW5pb25JbmZvEhgKB3VuaW9uSWQYASAB",
+            "KANSB3VuaW9uSWQSVAoOdW5pb25CdWlsZGluZ3MYAiADKAsyLC56cHJvdG8u",
+            "RHVuZ2VvblVuaW9uSW5mby5VbmlvbkJ1aWxkaW5nc0VudHJ5Ug51bmlvbkJ1",
+            "aWxkaW5ncxJOCgxlU2NyZWVuSW5mb3MYAyADKAsyKi56cHJvdG8uRHVuZ2Vv",
+            "blVuaW9uSW5mby5FU2NyZWVuSW5mb3NFbnRyeVIMZVNjcmVlbkluZm9zEi8K",
+            "CWRhbmNlQmFsbBgEIAEoCzIRLnpwcm90by5EYW5jZUJhbGxSCWRhbmNlQmFs",
             "bBpMChNVbmlvbkJ1aWxkaW5nc0VudHJ5EgsKA2tleRgBIAEoBRIkCgV2YWx1",
             "ZRgCIAEoCzIVLnpwcm90by5VbmlvbkJ1aWxkaW5nOgI4ARpNChFFU2NyZWVu",
             "SW5mb3NFbnRyeRILCgNrZXkYASABKAUSJwoFdmFsdWUYAiABKAsyGC56cHJv",
@@ -94,7 +95,7 @@ namespace Zproto {
       return new DungeonUnionInfo(this);
     }
 
-    /// <summary>Field number for the "union_id" field.</summary>
+    /// <summary>Field number for the "unionId" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -106,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_buildings" field.</summary>
+    /// <summary>Field number for the "unionBuildings" field.</summary>
     public const int UnionBuildingsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.UnionBuilding>.Codec _map_unionBuildings_codec
         = new pbc::MapField<int, global::Zproto.UnionBuilding>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionBuilding.Parser), 18);
@@ -117,7 +118,7 @@ namespace Zproto {
       get { return unionBuildings_; }
     }
 
-    /// <summary>Field number for the "e_screen_infos" field.</summary>
+    /// <summary>Field number for the "eScreenInfos" field.</summary>
     public const int EScreenInfosFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.UnionEScreenInfo>.Codec _map_eScreenInfos_codec
         = new pbc::MapField<int, global::Zproto.UnionEScreenInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionEScreenInfo.Parser), 26);
@@ -128,7 +129,7 @@ namespace Zproto {
       get { return eScreenInfos_; }
     }
 
-    /// <summary>Field number for the "dance_ball" field.</summary>
+    /// <summary>Field number for the "danceBall" field.</summary>
     public const int DanceBallFieldNumber = 4;
     private global::Zproto.DanceBall danceBall_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

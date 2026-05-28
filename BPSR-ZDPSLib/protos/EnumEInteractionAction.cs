@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEInteractionActionReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9lbnVtX2VfaW50ZXJhY3Rpb25fYWN0aW9uLnByb3RvEgZ6cHJvdG8q7BwK",
+            "Ch9lbnVtX2VfaW50ZXJhY3Rpb25fYWN0aW9uLnByb3RvEgZ6cHJvdG8qrR0K",
             "EkVJbnRlcmFjdGlvbkFjdGlvbhIaChZFSW50ZXJhY3Rpb25BY3Rpb25Ob25l",
             "EAASHgoaRUludGVyYWN0aW9uQWN0aW9uVG9TZXJ2ZXIQARIdChlFSW50ZXJh",
             "Y3Rpb25BY3Rpb25OcGNUYWxrEAISIgoeRUludGVyYWN0aW9uQWN0aW9uRHVu",
@@ -107,7 +107,8 @@ namespace Zproto {
             "dGVyYWN0aW9uQWN0aW9uT3BlblJvZ3VlVWkQjQgSIwoeRUludGVyYWN0aW9u",
             "QWN0aW9uVGVtcEFmZml4Q3RyEI4IEiQKH0VJbnRlcmFjdGlvbkFjdGlvblRl",
             "bXBBZmZpeEluaXQQjwgSHgoZRUludGVyYWN0aW9uQWN0aW9uTWFoam9uZxCQ",
-            "CGIGcHJvdG8z"));
+            "CBIaChVFSW50ZXJhY3Rpb25QZXRBY3Rpb24QkQgSIwoeRUludGVyYWN0aW9u",
+            "Q2xpZW50RW50ZXJEdW5nZW9uEJIIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EInteractionAction), }, null, null));
@@ -216,6 +217,8 @@ namespace Zproto {
     [pbr::OriginalName("EInteractionActionTempAffixCtr")] TempAffixCtr = 1038,
     [pbr::OriginalName("EInteractionActionTempAffixInit")] TempAffixInit = 1039,
     [pbr::OriginalName("EInteractionActionMahjong")] Mahjong = 1040,
+    [pbr::OriginalName("EInteractionPetAction")] EinteractionPetAction = 1041,
+    [pbr::OriginalName("EInteractionClientEnterDungeon")] EinteractionClientEnterDungeon = 1042,
   }
 
   #endregion

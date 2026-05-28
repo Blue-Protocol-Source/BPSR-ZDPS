@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2VudHJ5X3JhbmRvbV9kYXRhX3BhcmFtLnByb3RvEgZ6cHJvdG8i",
-            "YgoURW50cnlSYW5kb21EYXRhUGFyYW0SEwoLcmVmcmVzaF9jbnQYASABKAUS",
-            "CwoDaWRzGAIgAygFEhAKCG9ial91dWlkGAMgASgDEhYKDmRlYWRfdGltZXN0",
-            "YW1wGAQgASgDYgZwcm90bzM="));
+            "iAEKFEVudHJ5UmFuZG9tRGF0YVBhcmFtEh4KCnJlZnJlc2hDbnQYASABKAVS",
+            "CnJlZnJlc2hDbnQSEAoDaWRzGAIgAygFUgNpZHMSGAoHb2JqVXVpZBgDIAEo",
+            "A1IHb2JqVXVpZBIkCg1kZWFkVGltZXN0YW1wGAQgASgDUg1kZWFkVGltZXN0",
+            "YW1wYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new EntryRandomDataParam(this);
     }
 
-    /// <summary>Field number for the "refresh_cnt" field.</summary>
+    /// <summary>Field number for the "refreshCnt" field.</summary>
     public const int RefreshCntFieldNumber = 1;
     private int refreshCnt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       get { return ids_; }
     }
 
-    /// <summary>Field number for the "obj_uuid" field.</summary>
+    /// <summary>Field number for the "objUuid" field.</summary>
     public const int ObjUuidFieldNumber = 3;
     private long objUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dead_timestamp" field.</summary>
+    /// <summary>Field number for the "deadTimestamp" field.</summary>
     public const int DeadTimestampFieldNumber = 4;
     private long deadTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

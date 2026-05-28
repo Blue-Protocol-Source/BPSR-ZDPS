@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X2JsdWVfcHJpbnRfc2xvdF9kYXRhLnByb3RvEgZ6cHJvdG8aIHN0",
-            "cnVfYmx1ZV9wcmludF9zaGFyZV9kYXRhLnByb3RvIpwBChFCbHVlUHJpbnRT",
-            "bG90RGF0YRI6CglzbG90X2RhdGEYASADKAsyJy56cHJvdG8uQmx1ZVByaW50",
-            "U2xvdERhdGEuU2xvdERhdGFFbnRyeRpLCg1TbG90RGF0YUVudHJ5EgsKA2tl",
-            "eRgBIAEoBRIpCgV2YWx1ZRgCIAEoCzIaLnpwcm90by5CbHVlUHJpbnRTaGFy",
-            "ZURhdGE6AjgBYgZwcm90bzM="));
+            "cnVfYmx1ZV9wcmludF9zaGFyZV9kYXRhLnByb3RvIqUBChFCbHVlUHJpbnRT",
+            "bG90RGF0YRJDCghzbG90RGF0YRgBIAMoCzInLnpwcm90by5CbHVlUHJpbnRT",
+            "bG90RGF0YS5TbG90RGF0YUVudHJ5UghzbG90RGF0YRpLCg1TbG90RGF0YUVu",
+            "dHJ5EgsKA2tleRgBIAEoBRIpCgV2YWx1ZRgCIAEoCzIaLnpwcm90by5CbHVl",
+            "UHJpbnRTaGFyZURhdGE6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBluePrintShareDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new BluePrintSlotData(this);
     }
 
-    /// <summary>Field number for the "slot_data" field.</summary>
+    /// <summary>Field number for the "slotData" field.</summary>
     public const int SlotDataFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.BluePrintShareData>.Codec _map_slotData_codec
         = new pbc::MapField<int, global::Zproto.BluePrintShareData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.BluePrintShareData.Parser), 10);

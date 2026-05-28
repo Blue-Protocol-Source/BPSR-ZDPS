@@ -26,12 +26,13 @@ namespace Zproto {
           string.Concat(
             "CilzdHJ1X2R1bmdlb25fc2luZ2xlX2FpX21vZGVfY29udGV4dC5wcm90bxIG",
             "enByb3RvGiZlbnVtX2VfZHVuZ2Vvbl9lbnRlcl9zZWxlY3RfdHlwZS5wcm90",
-            "byLrAQoaRHVuZ2VvblNpbmdsZUFpTW9kZUNvbnRleHQSEAoIc2NlbmVfaWQY",
-            "ASABKAUSNAoLc2VsZWN0X3R5cGUYAiABKA4yHy56cHJvdG8uRUR1bmdlb25F",
-            "bnRlclNlbGVjdFR5cGUSTwoQYWlfY29uZmlnX2lkX21hcBgDIAMoCzI1Lnpw",
-            "cm90by5EdW5nZW9uU2luZ2xlQWlNb2RlQ29udGV4dC5BaUNvbmZpZ0lkTWFw",
-            "RW50cnkaNAoSQWlDb25maWdJZE1hcEVudHJ5EgsKA2tleRgBIAEoAxINCgV2",
-            "YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
+            "byKKAgoaRHVuZ2VvblNpbmdsZUFpTW9kZUNvbnRleHQSGAoHc2NlbmVJZBgB",
+            "IAEoBVIHc2NlbmVJZBI/CgpzZWxlY3RUeXBlGAIgASgOMh8uenByb3RvLkVE",
+            "dW5nZW9uRW50ZXJTZWxlY3RUeXBlUgpzZWxlY3RUeXBlElsKDWFpQ29uZmln",
+            "SWRNYXAYAyADKAsyNS56cHJvdG8uRHVuZ2VvblNpbmdsZUFpTW9kZUNvbnRl",
+            "eHQuQWlDb25maWdJZE1hcEVudHJ5Ug1haUNvbmZpZ0lkTWFwGjQKEkFpQ29u",
+            "ZmlnSWRNYXBFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiABKA06AjgB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEDungeonEnterSelectTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new DungeonSingleAiModeContext(this);
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
+    /// <summary>Field number for the "sceneId" field.</summary>
     public const int SceneIdFieldNumber = 1;
     private int sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "select_type" field.</summary>
+    /// <summary>Field number for the "selectType" field.</summary>
     public const int SelectTypeFieldNumber = 2;
     private global::Zproto.EDungeonEnterSelectType selectType_ = global::Zproto.EDungeonEnterSelectType.DungeonEnterSelectTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ai_config_id_map" field.</summary>
+    /// <summary>Field number for the "aiConfigIdMap" field.</summary>
     public const int AiConfigIdMapFieldNumber = 3;
     private static readonly pbc::MapField<long, uint>.Codec _map_aiConfigIdMap_codec
         = new pbc::MapField<long, uint>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForUInt32(16, 0), 26);

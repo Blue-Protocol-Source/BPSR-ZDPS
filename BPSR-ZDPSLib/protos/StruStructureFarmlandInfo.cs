@@ -27,26 +27,33 @@ namespace Zproto {
             "CiJzdHJ1X3N0cnVjdHVyZV9mYXJtbGFuZF9pbmZvLnByb3RvEgZ6cHJvdG8a",
             "GXN0cnVfZHJvdWdodF9yZWNvcmQucHJvdG8aG2VudW1fZV9mYXJtbGFuZF9z",
             "dGF0ZS5wcm90bxoic3RydV9ob21lX2xhbmRfaXRlbV9pbnN0YW5jZS5wcm90",
-            "byLNBgoVU3RydWN0dXJlRmFybWxhbmRJbmZvEhgKEG9wZXJhdG9yX2NoYXJf",
-            "aWQYASABKAMSMwoNc2VlZF9pbnN0YW5jZRgCIAEoCzIcLnpwcm90by5Ib21l",
-            "TGFuZEl0ZW1JbnN0YW5jZRISCgpuZWVkX3dhdGVyGAMgASgIEi4KDmZhcm1s",
-            "YW5kX3N0YXRlGAQgASgOMhYuenByb3RvLkVGYXJtbGFuZFN0YXRlEhQKDHNl",
-            "ZWRpbmdfdGltZRgFIAEoAxIVCg1ncm93X2VuZF90aW1lGAYgASgDEhwKFHBv",
-            "bGxpbmF0ZV9iZWdpbl90aW1lGAcgASgDEhoKEnBvbGxpbmF0ZV9lbmRfdGlt",
-            "ZRgIIAEoAxIaChJoYXJ2ZXN0X2JlZ2luX3RpbWUYCSABKAMSGAoQaGFydmVz",
-            "dF9lbmRfdGltZRgKIAEoAxIOCgZpc19lbmQYCyABKAgSNQoPZmxvd2VyX2lu",
-            "c3RhbmNlGAwgASgLMhwuenByb3RvLkhvbWVMYW5kSXRlbUluc3RhbmNlEhoK",
-            "Em5leHRfc2VnbWVudF9pbmRleBgNIAEoBRImCgdyZWNvcmRzGA4gAygLMhUu",
-            "enByb3RvLkRyb3VnaHRSZWNvcmQSEgoKZmVydGlsaXplcxgPIAMoBRI1Cg9w",
-            "b2xsZW5faW5zdGFuY2UYECABKAsyHC56cHJvdG8uSG9tZUxhbmRJdGVtSW5z",
-            "dGFuY2USSQoPcGlja191cF9wbGF5ZXJzGBEgAygLMjAuenByb3RvLlN0cnVj",
-            "dHVyZUZhcm1sYW5kSW5mby5QaWNrVXBQbGF5ZXJzRW50cnkSFwoPbmV3X3Nl",
-            "ZWRpbmdfc2VjGBIgASgDEhgKEG5ld19ncm93X2VuZF9zZWMYEyABKAMSHwoX",
-            "bmV3X3BvbGxpbmF0ZV9iZWdpbl9zZWMYFCABKAMSHQoVbmV3X3BvbGxpbmF0",
-            "ZV9lbmRfc2VjGBUgASgDEh0KFW5ld19oYXJ2ZXN0X2JlZ2luX3NlYxgWIAEo",
-            "AxIbChNuZXdfaGFydmVzdF9lbmRfc2VjGBcgASgDGjQKElBpY2tVcFBsYXll",
-            "cnNFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90",
-            "bzM="));
+            "byKKCQoVU3RydWN0dXJlRmFybWxhbmRJbmZvEiYKDm9wZXJhdG9yQ2hhcklk",
+            "GAEgASgDUg5vcGVyYXRvckNoYXJJZBJACgxzZWVkSW5zdGFuY2UYAiABKAsy",
+            "HC56cHJvdG8uSG9tZUxhbmRJdGVtSW5zdGFuY2VSDHNlZWRJbnN0YW5jZRIc",
+            "CgluZWVkV2F0ZXIYAyABKAhSCW5lZWRXYXRlchI8Cg1mYXJtbGFuZFN0YXRl",
+            "GAQgASgOMhYuenByb3RvLkVGYXJtbGFuZFN0YXRlUg1mYXJtbGFuZFN0YXRl",
+            "EiAKC3NlZWRpbmdUaW1lGAUgASgDUgtzZWVkaW5nVGltZRIgCgtncm93RW5k",
+            "VGltZRgGIAEoA1ILZ3Jvd0VuZFRpbWUSLgoSUG9sbGluYXRlQmVnaW5UaW1l",
+            "GAcgASgDUhJQb2xsaW5hdGVCZWdpblRpbWUSKgoQUG9sbGluYXRlRW5kVGlt",
+            "ZRgIIAEoA1IQUG9sbGluYXRlRW5kVGltZRIqChBIYXJ2ZXN0QmVnaW5UaW1l",
+            "GAkgASgDUhBIYXJ2ZXN0QmVnaW5UaW1lEiYKDkhhcnZlc3RFbmRUaW1lGAog",
+            "ASgDUg5IYXJ2ZXN0RW5kVGltZRIUCgVpc0VuZBgLIAEoCFIFaXNFbmQSRAoO",
+            "Zmxvd2VySW5zdGFuY2UYDCABKAsyHC56cHJvdG8uSG9tZUxhbmRJdGVtSW5z",
+            "dGFuY2VSDmZsb3dlckluc3RhbmNlEioKEG5leHRTZWdtZW50SW5kZXgYDSAB",
+            "KAVSEG5leHRTZWdtZW50SW5kZXgSLwoHcmVjb3JkcxgOIAMoCzIVLnpwcm90",
+            "by5Ecm91Z2h0UmVjb3JkUgdyZWNvcmRzEh4KCmZlcnRpbGl6ZXMYDyADKAVS",
+            "CmZlcnRpbGl6ZXMSRAoOcG9sbGVuSW5zdGFuY2UYECABKAsyHC56cHJvdG8u",
+            "SG9tZUxhbmRJdGVtSW5zdGFuY2VSDnBvbGxlbkluc3RhbmNlElYKDXBpY2tV",
+            "cFBsYXllcnMYESADKAsyMC56cHJvdG8uU3RydWN0dXJlRmFybWxhbmRJbmZv",
+            "LlBpY2tVcFBsYXllcnNFbnRyeVINcGlja1VwUGxheWVycxIkCg1uZXdTZWVk",
+            "aW5nU2VjGBIgASgDUg1uZXdTZWVkaW5nU2VjEiQKDW5ld0dyb3dFbmRTZWMY",
+            "EyABKANSDW5ld0dyb3dFbmRTZWMSMgoUbmV3UG9sbGluYXRlQmVnaW5TZWMY",
+            "FCABKANSFG5ld1BvbGxpbmF0ZUJlZ2luU2VjEi4KEm5ld1BvbGxpbmF0ZUVu",
+            "ZFNlYxgVIAEoA1ISbmV3UG9sbGluYXRlRW5kU2VjEi4KEm5ld0hhcnZlc3RC",
+            "ZWdpblNlYxgWIAEoA1ISbmV3SGFydmVzdEJlZ2luU2VjEioKEG5ld0hhcnZl",
+            "c3RFbmRTZWMYFyABKANSEG5ld0hhcnZlc3RFbmRTZWMaNAoSUGlja1VwUGxh",
+            "eWVyc0VudHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1ZRgCIAEoBToCOAFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDroughtRecordReflection.Descriptor, global::Zproto.EnumEFarmlandStateReflection.Descriptor, global::Zproto.StruHomeLandItemInstanceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -124,7 +131,7 @@ namespace Zproto {
       return new StructureFarmlandInfo(this);
     }
 
-    /// <summary>Field number for the "operator_char_id" field.</summary>
+    /// <summary>Field number for the "operatorCharId" field.</summary>
     public const int OperatorCharIdFieldNumber = 1;
     private long operatorCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +143,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "seed_instance" field.</summary>
+    /// <summary>Field number for the "seedInstance" field.</summary>
     public const int SeedInstanceFieldNumber = 2;
     private global::Zproto.HomeLandItemInstance seedInstance_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,7 +155,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "need_water" field.</summary>
+    /// <summary>Field number for the "needWater" field.</summary>
     public const int NeedWaterFieldNumber = 3;
     private bool needWater_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -160,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "farmland_state" field.</summary>
+    /// <summary>Field number for the "farmlandState" field.</summary>
     public const int FarmlandStateFieldNumber = 4;
     private global::Zproto.EFarmlandState farmlandState_ = global::Zproto.EFarmlandState.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -172,7 +179,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "seeding_time" field.</summary>
+    /// <summary>Field number for the "seedingTime" field.</summary>
     public const int SeedingTimeFieldNumber = 5;
     private long seedingTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -184,7 +191,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "grow_end_time" field.</summary>
+    /// <summary>Field number for the "growEndTime" field.</summary>
     public const int GrowEndTimeFieldNumber = 6;
     private long growEndTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -196,7 +203,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pollinate_begin_time" field.</summary>
+    /// <summary>Field number for the "PollinateBeginTime" field.</summary>
     public const int PollinateBeginTimeFieldNumber = 7;
     private long pollinateBeginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -208,7 +215,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pollinate_end_time" field.</summary>
+    /// <summary>Field number for the "PollinateEndTime" field.</summary>
     public const int PollinateEndTimeFieldNumber = 8;
     private long pollinateEndTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -220,7 +227,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "harvest_begin_time" field.</summary>
+    /// <summary>Field number for the "HarvestBeginTime" field.</summary>
     public const int HarvestBeginTimeFieldNumber = 9;
     private long harvestBeginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -232,7 +239,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "harvest_end_time" field.</summary>
+    /// <summary>Field number for the "HarvestEndTime" field.</summary>
     public const int HarvestEndTimeFieldNumber = 10;
     private long harvestEndTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -244,7 +251,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_end" field.</summary>
+    /// <summary>Field number for the "isEnd" field.</summary>
     public const int IsEndFieldNumber = 11;
     private bool isEnd_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -256,7 +263,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "flower_instance" field.</summary>
+    /// <summary>Field number for the "flowerInstance" field.</summary>
     public const int FlowerInstanceFieldNumber = 12;
     private global::Zproto.HomeLandItemInstance flowerInstance_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -268,7 +275,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "next_segment_index" field.</summary>
+    /// <summary>Field number for the "nextSegmentIndex" field.</summary>
     public const int NextSegmentIndexFieldNumber = 13;
     private int nextSegmentIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -302,7 +309,7 @@ namespace Zproto {
       get { return fertilizes_; }
     }
 
-    /// <summary>Field number for the "pollen_instance" field.</summary>
+    /// <summary>Field number for the "pollenInstance" field.</summary>
     public const int PollenInstanceFieldNumber = 16;
     private global::Zproto.HomeLandItemInstance pollenInstance_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -314,7 +321,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pick_up_players" field.</summary>
+    /// <summary>Field number for the "pickUpPlayers" field.</summary>
     public const int PickUpPlayersFieldNumber = 17;
     private static readonly pbc::MapField<long, int>.Codec _map_pickUpPlayers_codec
         = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 138);
@@ -325,7 +332,7 @@ namespace Zproto {
       get { return pickUpPlayers_; }
     }
 
-    /// <summary>Field number for the "new_seeding_sec" field.</summary>
+    /// <summary>Field number for the "newSeedingSec" field.</summary>
     public const int NewSeedingSecFieldNumber = 18;
     private long newSeedingSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -337,7 +344,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "new_grow_end_sec" field.</summary>
+    /// <summary>Field number for the "newGrowEndSec" field.</summary>
     public const int NewGrowEndSecFieldNumber = 19;
     private long newGrowEndSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -349,7 +356,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "new_pollinate_begin_sec" field.</summary>
+    /// <summary>Field number for the "newPollinateBeginSec" field.</summary>
     public const int NewPollinateBeginSecFieldNumber = 20;
     private long newPollinateBeginSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -361,7 +368,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "new_pollinate_end_sec" field.</summary>
+    /// <summary>Field number for the "newPollinateEndSec" field.</summary>
     public const int NewPollinateEndSecFieldNumber = 21;
     private long newPollinateEndSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -373,7 +380,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "new_harvest_begin_sec" field.</summary>
+    /// <summary>Field number for the "newHarvestBeginSec" field.</summary>
     public const int NewHarvestBeginSecFieldNumber = 22;
     private long newHarvestBeginSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -385,7 +392,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "new_harvest_end_sec" field.</summary>
+    /// <summary>Field number for the "newHarvestEndSec" field.</summary>
     public const int NewHarvestEndSecFieldNumber = 23;
     private long newHarvestEndSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

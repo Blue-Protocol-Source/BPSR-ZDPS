@@ -24,9 +24,10 @@ namespace Zproto {
     static StruHomeLandTaskRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2hvbWVfbGFuZF90YXNrX3JlcXVlc3QucHJvdG8SBnpwcm90byJA",
-            "ChNIb21lTGFuZFRhc2tSZXF1ZXN0EhQKDGNvbW11bml0eV9pZBgBIAEoAxIT",
-            "Cgtob21lbGFuZF9pZBgCIAEoA2IGcHJvdG8z"));
+            "CiFzdHJ1X2hvbWVfbGFuZF90YXNrX3JlcXVlc3QucHJvdG8SBnpwcm90byJX",
+            "ChNIb21lTGFuZFRhc2tSZXF1ZXN0EiAKC2NvbW11bml0eUlkGAEgASgDUgtj",
+            "b21tdW5pdHlJZBIeCgpob21lbGFuZElkGAIgASgDUgpob21lbGFuZElkYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new HomeLandTaskRequest(this);
     }
 
-    /// <summary>Field number for the "community_id" field.</summary>
+    /// <summary>Field number for the "communityId" field.</summary>
     public const int CommunityIdFieldNumber = 1;
     private long communityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 2;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

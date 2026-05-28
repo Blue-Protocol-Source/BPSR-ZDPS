@@ -25,19 +25,21 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3VuaW9uX2FjdGl2aXR5LnByb3RvEgZ6cHJvdG8aIHN0cnVfdW5p",
-            "b25fYWN0aXZpdHlfdGFyZ2V0LnByb3RvIoIECg1VbmlvbkFjdGl2aXR5EhkK",
-            "EWxhc3RfcmVmcmVzaF90aW1lGAEgASgDEj4KDXVuaW9uX3RhcmdldHMYAiAD",
-            "KAsyJy56cHJvdG8uVW5pb25BY3Rpdml0eS5VbmlvblRhcmdldHNFbnRyeRIX",
-            "Cg9uZXh0X2F3YXJkX3RpbWUYAyABKAMSRQoRbmV4dF9yZWZyZXNoX3RpbWUY",
-            "BCADKAsyKi56cHJvdG8uVW5pb25BY3Rpdml0eS5OZXh0UmVmcmVzaFRpbWVF",
-            "bnRyeRJYChtyZXNldF9oaXN0b3J5X2FjdGl2ZV9wb2ludHMYBSADKAsyMy56",
-            "cHJvdG8uVW5pb25BY3Rpdml0eS5SZXNldEhpc3RvcnlBY3RpdmVQb2ludHNF",
-            "bnRyeRIRCgljdXJfcG9pbnQYBiABKAMaUAoRVW5pb25UYXJnZXRzRW50cnkS",
-            "CwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgLMhsuenByb3RvLlVuaW9uQWN0",
-            "aXZpdHlUYXJnZXQ6AjgBGjYKFE5leHRSZWZyZXNoVGltZUVudHJ5EgsKA2tl",
-            "eRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAEaPwodUmVzZXRIaXN0b3J5QWN0",
-            "aXZlUG9pbnRzRW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgDOgI4",
-            "AWIGcHJvdG8z"));
+            "b25fYWN0aXZpdHlfdGFyZ2V0LnByb3RvItoECg1VbmlvbkFjdGl2aXR5EigK",
+            "D2xhc3RSZWZyZXNoVGltZRgBIAEoA1IPbGFzdFJlZnJlc2hUaW1lEksKDHVu",
+            "aW9uVGFyZ2V0cxgCIAMoCzInLnpwcm90by5VbmlvbkFjdGl2aXR5LlVuaW9u",
+            "VGFyZ2V0c0VudHJ5Ugx1bmlvblRhcmdldHMSJAoNbmV4dEF3YXJkVGltZRgD",
+            "IAEoA1INbmV4dEF3YXJkVGltZRJUCg9uZXh0UmVmcmVzaFRpbWUYBCADKAsy",
+            "Ki56cHJvdG8uVW5pb25BY3Rpdml0eS5OZXh0UmVmcmVzaFRpbWVFbnRyeVIP",
+            "bmV4dFJlZnJlc2hUaW1lEm8KGHJlc2V0SGlzdG9yeUFjdGl2ZVBvaW50cxgF",
+            "IAMoCzIzLnpwcm90by5VbmlvbkFjdGl2aXR5LlJlc2V0SGlzdG9yeUFjdGl2",
+            "ZVBvaW50c0VudHJ5UhhyZXNldEhpc3RvcnlBY3RpdmVQb2ludHMSGgoIY3Vy",
+            "UG9pbnQYBiABKANSCGN1clBvaW50GlAKEVVuaW9uVGFyZ2V0c0VudHJ5EgsK",
+            "A2tleRgBIAEoBRIqCgV2YWx1ZRgCIAEoCzIbLnpwcm90by5VbmlvbkFjdGl2",
+            "aXR5VGFyZ2V0OgI4ARo2ChROZXh0UmVmcmVzaFRpbWVFbnRyeRILCgNrZXkY",
+            "ASABKAUSDQoFdmFsdWUYAiABKAM6AjgBGj8KHVJlc2V0SGlzdG9yeUFjdGl2",
+            "ZVBvaW50c0VudHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1ZRgCIAEoAzoCOAFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUnionActivityTargetReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +100,7 @@ namespace Zproto {
       return new UnionActivity(this);
     }
 
-    /// <summary>Field number for the "last_refresh_time" field.</summary>
+    /// <summary>Field number for the "lastRefreshTime" field.</summary>
     public const int LastRefreshTimeFieldNumber = 1;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_targets" field.</summary>
+    /// <summary>Field number for the "unionTargets" field.</summary>
     public const int UnionTargetsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.UnionActivityTarget>.Codec _map_unionTargets_codec
         = new pbc::MapField<int, global::Zproto.UnionActivityTarget>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionActivityTarget.Parser), 18);
@@ -121,7 +123,7 @@ namespace Zproto {
       get { return unionTargets_; }
     }
 
-    /// <summary>Field number for the "next_award_time" field.</summary>
+    /// <summary>Field number for the "nextAwardTime" field.</summary>
     public const int NextAwardTimeFieldNumber = 3;
     private long nextAwardTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "next_refresh_time" field.</summary>
+    /// <summary>Field number for the "nextRefreshTime" field.</summary>
     public const int NextRefreshTimeFieldNumber = 4;
     private static readonly pbc::MapField<int, long>.Codec _map_nextRefreshTime_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 34);
@@ -144,7 +146,7 @@ namespace Zproto {
       get { return nextRefreshTime_; }
     }
 
-    /// <summary>Field number for the "reset_history_active_points" field.</summary>
+    /// <summary>Field number for the "resetHistoryActivePoints" field.</summary>
     public const int ResetHistoryActivePointsFieldNumber = 5;
     private static readonly pbc::MapField<long, long>.Codec _map_resetHistoryActivePoints_codec
         = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 42);
@@ -155,7 +157,7 @@ namespace Zproto {
       get { return resetHistoryActivePoints_; }
     }
 
-    /// <summary>Field number for the "cur_point" field.</summary>
+    /// <summary>Field number for the "curPoint" field.</summary>
     public const int CurPointFieldNumber = 6;
     private long curPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

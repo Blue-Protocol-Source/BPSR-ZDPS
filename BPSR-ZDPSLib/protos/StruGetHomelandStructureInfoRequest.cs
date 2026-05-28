@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X2dldF9ob21lbGFuZF9zdHJ1Y3R1cmVfaW5mb19yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8iNgofR2V0SG9tZWxhbmRTdHJ1Y3R1cmVJbmZvUmVxdWVz",
-            "dBITCgtob21lbGFuZF9pZBgBIAEoA2IGcHJvdG8z"));
+            "b3RvEgZ6cHJvdG8iQQofR2V0SG9tZWxhbmRTdHJ1Y3R1cmVJbmZvUmVxdWVz",
+            "dBIeCgpob21lbGFuZElkGAEgASgDUgpob21lbGFuZElkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new GetHomelandStructureInfoRequest(this);
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 1;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

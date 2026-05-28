@@ -25,10 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2hpZGVfc2Vla19wbGF5X2luZm8ucHJvdG8SBnpwcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIpIBChBIaWRlU2Vla1BsYXlJbmZvEg8KB2No",
-            "YXJfaWQYASABKAMSEQoJcGFzc190aW1lGAIgASgFEhIKCnN0YXJfY291bnQY",
-            "AyABKAUSDQoFc2NvcmUYBCABKAUSDAoEY2FtcBgFIAEoBRITCgtjYXRjaF9j",
-            "b3VudBgGIAEoBRIUCgxhc3Npc3RfY291bnQYByABKAViBnByb3RvMw=="));
+            "dV9kaXJ0eV9tYXNrLnByb3RvItABChBIaWRlU2Vla1BsYXlJbmZvEhYKBmNo",
+            "YXJJZBgBIAEoA1IGY2hhcklkEhoKCHBhc3NUaW1lGAIgASgFUghwYXNzVGlt",
+            "ZRIcCglzdGFyQ291bnQYAyABKAVSCXN0YXJDb3VudBIUCgVzY29yZRgEIAEo",
+            "BVIFc2NvcmUSEgoEY2FtcBgFIAEoBVIEY2FtcBIeCgpjYXRjaENvdW50GAYg",
+            "ASgFUgpjYXRjaENvdW50EiAKC2Fzc2lzdENvdW50GAcgASgFUgthc3Npc3RD",
+            "b3VudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +92,7 @@ namespace Zproto {
       return new HideSeekPlayInfo(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pass_time" field.</summary>
+    /// <summary>Field number for the "passTime" field.</summary>
     public const int PassTimeFieldNumber = 2;
     private int passTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "star_count" field.</summary>
+    /// <summary>Field number for the "starCount" field.</summary>
     public const int StarCountFieldNumber = 3;
     private int starCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "catch_count" field.</summary>
+    /// <summary>Field number for the "catchCount" field.</summary>
     public const int CatchCountFieldNumber = 6;
     private int catchCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,7 +164,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "assist_count" field.</summary>
+    /// <summary>Field number for the "assistCount" field.</summary>
     public const int AssistCountFieldNumber = 7;
     private int assistCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

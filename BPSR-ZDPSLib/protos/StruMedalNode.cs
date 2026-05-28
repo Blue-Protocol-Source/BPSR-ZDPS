@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X21lZGFsX25vZGUucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIk4KCU1lZGFsTm9kZRIPCgdub2RlX2lkGAEgASgNEhIKCm5v",
-            "ZGVfbGV2ZWwYAiABKA0SDgoGY2hvb3NlGAMgASgIEgwKBHNsb3QYBCABKAVi",
-            "BnByb3RvMw=="));
+            "YXNrLnByb3RvIm0KCU1lZGFsTm9kZRIWCgZub2RlSWQYASABKA1SBm5vZGVJ",
+            "ZBIcCglub2RlTGV2ZWwYAiABKA1SCW5vZGVMZXZlbBIWCgZjaG9vc2UYAyAB",
+            "KAhSBmNob29zZRISCgRzbG90GAQgASgFUgRzbG90YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new MedalNode(this);
     }
 
-    /// <summary>Field number for the "node_id" field.</summary>
+    /// <summary>Field number for the "nodeId" field.</summary>
     public const int NodeIdFieldNumber = 1;
     private uint nodeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "node_level" field.</summary>
+    /// <summary>Field number for the "nodeLevel" field.</summary>
     public const int NodeLevelFieldNumber = 2;
     private uint nodeLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

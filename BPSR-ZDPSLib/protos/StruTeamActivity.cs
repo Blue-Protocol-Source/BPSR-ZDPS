@@ -28,18 +28,20 @@ namespace Zproto {
             "Z25fc2NlbmVfcGFyYW1zLnByb3RvGiBlbnVtX2VfdGVhbV9hY3Rpdml0eV9z",
             "dGF0ZS5wcm90bxofZW51bV9lX3RlYW1fYWN0aXZpdHlfdHlwZS5wcm90bxol",
             "c3RydV90ZWFtX2FjdGl2aXR5X2R1bmdlb25faW5mby5wcm90bxogc3RydV90",
-            "ZWFtX2R1bmdlb25fa2V5X2luZm8ucHJvdG8i0QMKDFRlYW1BY3Rpdml0eRIT",
-            "CgthY3Rpdml0eV9pZBgBIAEoDRIpCgVzdGF0ZRgCIAEoDjIaLnpwcm90by5F",
-            "VGVhbUFjdGl2aXR5U3RhdGUSDAoEdGltZRgDIAEoAxI1CgxkdW5nZW9uX2lu",
-            "Zm8YBCABKAsyHy56cHJvdG8uVGVhbUFjdGl2aXR5RHVuZ2VvbkluZm8SEQoJ",
-            "YWdyZWVfbWVtGAUgAygDEhUKDWNoZWNrX21lbWJlcnMYBiADKAMSEQoJcmVm",
-            "dXNlX2lkGAcgASgDEjYKE2Fzc2lnbl9zY2VuZV9wYXJhbXMYCCABKAsyGS56",
-            "cHJvdG8uQXNzaWduU2NlbmVQYXJhbXMSQgoQYXdhcmRfY291bnRfaW5mbxgJ",
-            "IAMoCzIoLnpwcm90by5UZWFtQWN0aXZpdHkuQXdhcmRDb3VudEluZm9FbnRy",
-            "eRIwCg1hY3Rpdml0eV90eXBlGAogASgOMhkuenByb3RvLkVUZWFtQWN0aXZp",
-            "dHlUeXBlGlEKE0F3YXJkQ291bnRJbmZvRW50cnkSCwoDa2V5GAEgASgDEikK",
-            "BXZhbHVlGAIgASgLMhouenByb3RvLlRlYW1EdW5nZW9uS2V5SW5mbzoCOAFi",
-            "BnByb3RvMw=="));
+            "ZWFtX2R1bmdlb25fa2V5X2luZm8ucHJvdG8iwAQKDFRlYW1BY3Rpdml0eRIe",
+            "CgphY3Rpdml0eUlkGAEgASgNUgphY3Rpdml0eUlkEjAKBXN0YXRlGAIgASgO",
+            "MhouenByb3RvLkVUZWFtQWN0aXZpdHlTdGF0ZVIFc3RhdGUSEgoEdGltZRgD",
+            "IAEoA1IEdGltZRJBCgtkdW5nZW9uSW5mbxgEIAEoCzIfLnpwcm90by5UZWFt",
+            "QWN0aXZpdHlEdW5nZW9uSW5mb1ILZHVuZ2VvbkluZm8SGgoIYWdyZWVNZW0Y",
+            "BSADKANSCGFncmVlTWVtEiIKDGNoZWNrTWVtYmVycxgGIAMoA1IMY2hlY2tN",
+            "ZW1iZXJzEhoKCHJlZnVzZUlkGAcgASgDUghyZWZ1c2VJZBJHChFhc3NpZ25T",
+            "Y2VuZVBhcmFtcxgIIAEoCzIZLnpwcm90by5Bc3NpZ25TY2VuZVBhcmFtc1IR",
+            "YXNzaWduU2NlbmVQYXJhbXMSUAoOYXdhcmRDb3VudEluZm8YCSADKAsyKC56",
+            "cHJvdG8uVGVhbUFjdGl2aXR5LkF3YXJkQ291bnRJbmZvRW50cnlSDmF3YXJk",
+            "Q291bnRJbmZvEj0KDGFjdGl2aXR5VHlwZRgKIAEoDjIZLnpwcm90by5FVGVh",
+            "bUFjdGl2aXR5VHlwZVIMYWN0aXZpdHlUeXBlGlEKE0F3YXJkQ291bnRJbmZv",
+            "RW50cnkSCwoDa2V5GAEgASgDEikKBXZhbHVlGAIgASgLMhouenByb3RvLlRl",
+            "YW1EdW5nZW9uS2V5SW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAssignSceneParamsReflection.Descriptor, global::Zproto.EnumETeamActivityStateReflection.Descriptor, global::Zproto.EnumETeamActivityTypeReflection.Descriptor, global::Zproto.StruTeamActivityDungeonInfoReflection.Descriptor, global::Zproto.StruTeamDungeonKeyInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -104,7 +106,7 @@ namespace Zproto {
       return new TeamActivity(this);
     }
 
-    /// <summary>Field number for the "activity_id" field.</summary>
+    /// <summary>Field number for the "activityId" field.</summary>
     public const int ActivityIdFieldNumber = 1;
     private uint activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_info" field.</summary>
+    /// <summary>Field number for the "dungeonInfo" field.</summary>
     public const int DungeonInfoFieldNumber = 4;
     private global::Zproto.TeamActivityDungeonInfo dungeonInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +154,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "agree_mem" field.</summary>
+    /// <summary>Field number for the "agreeMem" field.</summary>
     public const int AgreeMemFieldNumber = 5;
     private static readonly pb::FieldCodec<long> _repeated_agreeMem_codec
         = pb::FieldCodec.ForInt64(42);
@@ -163,7 +165,7 @@ namespace Zproto {
       get { return agreeMem_; }
     }
 
-    /// <summary>Field number for the "check_members" field.</summary>
+    /// <summary>Field number for the "checkMembers" field.</summary>
     public const int CheckMembersFieldNumber = 6;
     private static readonly pb::FieldCodec<long> _repeated_checkMembers_codec
         = pb::FieldCodec.ForInt64(50);
@@ -174,7 +176,7 @@ namespace Zproto {
       get { return checkMembers_; }
     }
 
-    /// <summary>Field number for the "refuse_id" field.</summary>
+    /// <summary>Field number for the "refuseId" field.</summary>
     public const int RefuseIdFieldNumber = 7;
     private long refuseId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -186,7 +188,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "assign_scene_params" field.</summary>
+    /// <summary>Field number for the "assignSceneParams" field.</summary>
     public const int AssignSceneParamsFieldNumber = 8;
     private global::Zproto.AssignSceneParams assignSceneParams_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -198,7 +200,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_count_info" field.</summary>
+    /// <summary>Field number for the "awardCountInfo" field.</summary>
     public const int AwardCountInfoFieldNumber = 9;
     private static readonly pbc::MapField<long, global::Zproto.TeamDungeonKeyInfo>.Codec _map_awardCountInfo_codec
         = new pbc::MapField<long, global::Zproto.TeamDungeonKeyInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.TeamDungeonKeyInfo.Parser), 74);
@@ -209,7 +211,7 @@ namespace Zproto {
       get { return awardCountInfo_; }
     }
 
-    /// <summary>Field number for the "activity_type" field.</summary>
+    /// <summary>Field number for the "activityType" field.</summary>
     public const int ActivityTypeFieldNumber = 10;
     private global::Zproto.ETeamActivityType activityType_ = global::Zproto.ETeamActivityType.Dungeon;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

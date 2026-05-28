@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CjFzdHJ1X3NldF9zZWxmX2luc3RydW1lbnRfcGxheV9yYW5nZV9yZXF1ZXN0",
             "LnByb3RvEgZ6cHJvdG8aImVudW1fZV9pbnN0cnVtZW50X3BsYXlfcmFuZ2Uu",
-            "cHJvdG8iVQohU2V0U2VsZkluc3RydW1lbnRQbGF5UmFuZ2VSZXF1ZXN0EjAK",
-            "CnBsYXlfcmFuZ2UYASABKA4yHC56cHJvdG8uRUluc3RydW1lbnRQbGF5UmFu",
-            "Z2ViBnByb3RvMw=="));
+            "cHJvdG8iXwohU2V0U2VsZkluc3RydW1lbnRQbGF5UmFuZ2VSZXF1ZXN0EjoK",
+            "CXBsYXlSYW5nZRgBIAEoDjIcLnpwcm90by5FSW5zdHJ1bWVudFBsYXlSYW5n",
+            "ZVIJcGxheVJhbmdlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEInstrumentPlayRangeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new SetSelfInstrumentPlayRangeRequest(this);
     }
 
-    /// <summary>Field number for the "play_range" field.</summary>
+    /// <summary>Field number for the "playRange" field.</summary>
     public const int PlayRangeFieldNumber = 1;
     private global::Zproto.EInstrumentPlayRange playRange_ = global::Zproto.EInstrumentPlayRange.All;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

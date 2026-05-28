@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X2dldF9wZXJzb25hbF9pbmZvX3JlcGx5LnByb3RvEgZ6cHJvdG8a",
             "F2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhhzdHJ1X3BlcnNvbmFsX2luZm8u",
-            "cHJvdG8iYAoUR2V0UGVyc29uYWxJbmZvUmVwbHkSIgoEaW5mbxgBIAEoCzIU",
-            "Lnpwcm90by5QZXJzb25hbEluZm8SJAoIZXJyX2NvZGUYAiABKA4yEi56cHJv",
-            "dG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "cHJvdG8ibgoUR2V0UGVyc29uYWxJbmZvUmVwbHkSKAoEaW5mbxgBIAEoCzIU",
+            "Lnpwcm90by5QZXJzb25hbEluZm9SBGluZm8SLAoHZXJyQ29kZRgCIAEoDjIS",
+            "Lnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruPersonalInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

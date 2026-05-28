@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X3VuX2xvY2tfZmFjZV92b2ljZV9pbmZvLnByb3RvEgZ6cHJvdG8i",
-            "JwoTVW5Mb2NrRmFjZVZvaWNlSW5mbxIQCgh2b2ljZV9pZBgBIAEoBWIGcHJv",
-            "dG8z"));
+            "LwoTVW5Mb2NrRmFjZVZvaWNlSW5mbxIYCgd2b2ljZUlkGAEgASgFUgd2b2lj",
+            "ZUlkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new UnLockFaceVoiceInfo(this);
     }
 
-    /// <summary>Field number for the "voice_id" field.</summary>
+    /// <summary>Field number for the "voiceId" field.</summary>
     public const int VoiceIdFieldNumber = 1;
     private int voiceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

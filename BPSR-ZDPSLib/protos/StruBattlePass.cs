@@ -26,14 +26,16 @@ namespace Zproto {
           string.Concat(
             "ChZzdHJ1X2JhdHRsZV9wYXNzLnByb3RvEgZ6cHJvdG8aIXN0cnVfYmF0dGxl",
             "X3Bhc3NfYXdhcmRfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3Rv",
-            "IsYCCgpCYXR0bGVQYXNzEgoKAmlkGAEgASgFEg0KBWxldmVsGAIgASgFEg4K",
-            "BmN1cmV4cBgDIAEoBRIQCgh3ZWVrX2V4cBgEIAEoBRIVCg1leHBfbGFzdF90",
-            "aW1lGAUgASgFEhEKCWlzX3VubG9jaxgGIAEoCBIWCg5idXlfbm9ybWFsX3Bh",
-            "cxgHIAEoCBIWCg5idXlfcHJpbWVfcGFzcxgIIAEoCBIsCgVhd2FyZBgJIAMo",
-            "CzIdLnpwcm90by5CYXR0bGVQYXNzLkF3YXJkRW50cnkSEAoIaXNfdmFsaWQY",
-            "CiABKAgSFgoOaXNfc2VuZGVkX21haWwYCyABKAgaSQoKQXdhcmRFbnRyeRIL",
-            "CgNrZXkYASABKAUSKgoFdmFsdWUYAiABKAsyGy56cHJvdG8uQmF0dGxlUGFz",
-            "c0F3YXJkSW5mbzoCOAFiBnByb3RvMw=="));
+            "IqgDCgpCYXR0bGVQYXNzEg4KAmlkGAEgASgFUgJpZBIUCgVsZXZlbBgCIAEo",
+            "BVIFbGV2ZWwSFgoGY3VyZXhwGAMgASgFUgZjdXJleHASGAoHd2Vla0V4cBgE",
+            "IAEoBVIHd2Vla0V4cBIgCgtleHBMYXN0VGltZRgFIAEoBVILZXhwTGFzdFRp",
+            "bWUSGgoIaXNVbmxvY2sYBiABKAhSCGlzVW5sb2NrEiIKDGJ1eU5vcm1hbFBh",
+            "cxgHIAEoCFIMYnV5Tm9ybWFsUGFzEiIKDGJ1eVByaW1lUGFzcxgIIAEoCFIM",
+            "YnV5UHJpbWVQYXNzEjMKBWF3YXJkGAkgAygLMh0uenByb3RvLkJhdHRsZVBh",
+            "c3MuQXdhcmRFbnRyeVIFYXdhcmQSGAoHaXNWYWxpZBgKIAEoCFIHaXNWYWxp",
+            "ZBIiCgxpc1NlbmRlZE1haWwYCyABKAhSDGlzU2VuZGVkTWFpbBpJCgpBd2Fy",
+            "ZEVudHJ5EgsKA2tleRgBIAEoBRIqCgV2YWx1ZRgCIAEoCzIbLnpwcm90by5C",
+            "YXR0bGVQYXNzQXdhcmRJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBattlePassAwardInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -135,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "week_exp" field.</summary>
+    /// <summary>Field number for the "weekExp" field.</summary>
     public const int WeekExpFieldNumber = 4;
     private int weekExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,7 +149,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "exp_last_time" field.</summary>
+    /// <summary>Field number for the "expLastTime" field.</summary>
     public const int ExpLastTimeFieldNumber = 5;
     private int expLastTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -159,7 +161,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_unlock" field.</summary>
+    /// <summary>Field number for the "isUnlock" field.</summary>
     public const int IsUnlockFieldNumber = 6;
     private bool isUnlock_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -171,7 +173,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buy_normal_pas" field.</summary>
+    /// <summary>Field number for the "buyNormalPas" field.</summary>
     public const int BuyNormalPasFieldNumber = 7;
     private bool buyNormalPas_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -183,7 +185,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buy_prime_pass" field.</summary>
+    /// <summary>Field number for the "buyPrimePass" field.</summary>
     public const int BuyPrimePassFieldNumber = 8;
     private bool buyPrimePass_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -206,7 +208,7 @@ namespace Zproto {
       get { return award_; }
     }
 
-    /// <summary>Field number for the "is_valid" field.</summary>
+    /// <summary>Field number for the "isValid" field.</summary>
     public const int IsValidFieldNumber = 10;
     private bool isValid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -218,7 +220,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_sended_mail" field.</summary>
+    /// <summary>Field number for the "isSendedMail" field.</summary>
     public const int IsSendedMailFieldNumber = 11;
     private bool isSendedMail_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

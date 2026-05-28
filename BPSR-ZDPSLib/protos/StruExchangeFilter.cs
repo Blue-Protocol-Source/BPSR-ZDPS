@@ -24,9 +24,9 @@ namespace Zproto {
     static StruExchangeFilterReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpzdHJ1X2V4Y2hhbmdlX2ZpbHRlci5wcm90bxIGenByb3RvIi0KDkV4Y2hh",
-            "bmdlRmlsdGVyEgwKBHR5cGUYASABKAUSDQoFdmFsdWUYAiABKAViBnByb3Rv",
-            "Mw=="));
+            "ChpzdHJ1X2V4Y2hhbmdlX2ZpbHRlci5wcm90bxIGenByb3RvIjoKDkV4Y2hh",
+            "bmdlRmlsdGVyEhIKBHR5cGUYASABKAVSBHR5cGUSFAoFdmFsdWUYAiABKAVS",
+            "BXZhbHVlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

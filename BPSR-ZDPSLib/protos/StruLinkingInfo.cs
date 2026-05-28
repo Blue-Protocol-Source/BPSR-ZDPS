@@ -24,9 +24,10 @@ namespace Zproto {
     static StruLinkingInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdzdHJ1X2xpbmtpbmdfaW5mby5wcm90bxIGenByb3RvIlsKC0xpbmtpbmdJ",
-            "bmZvEhEKCWlzX2RlbGV0ZRgBIAEoCBIQCghlZmZlY3RpZBgCIAEoBRIRCgli",
-            "dWZmX3V1aWQYAyABKAUSFAoMdGFyZ2V0X3V1aWRzGAQgAygDYgZwcm90bzM="));
+            "ChdzdHJ1X2xpbmtpbmdfaW5mby5wcm90bxIGenByb3RvIoMBCgtMaW5raW5n",
+            "SW5mbxIaCghpc0RlbGV0ZRgBIAEoCFIIaXNEZWxldGUSGgoIZWZmZWN0aWQY",
+            "AiABKAVSCGVmZmVjdGlkEhoKCGJ1ZmZVdWlkGAMgASgFUghidWZmVXVpZBIg",
+            "Cgt0YXJnZXRVdWlkcxgEIAMoA1ILdGFyZ2V0VXVpZHNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new LinkingInfo(this);
     }
 
-    /// <summary>Field number for the "is_delete" field.</summary>
+    /// <summary>Field number for the "isDelete" field.</summary>
     public const int IsDeleteFieldNumber = 1;
     private bool isDelete_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buff_uuid" field.</summary>
+    /// <summary>Field number for the "buffUuid" field.</summary>
     public const int BuffUuidFieldNumber = 3;
     private int buffUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_uuids" field.</summary>
+    /// <summary>Field number for the "targetUuids" field.</summary>
     public const int TargetUuidsFieldNumber = 4;
     private static readonly pb::FieldCodec<long> _repeated_targetUuids_codec
         = pb::FieldCodec.ForInt64(34);

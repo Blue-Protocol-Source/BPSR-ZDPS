@@ -24,9 +24,9 @@ namespace Zproto {
     static StruHomelandMaterialInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2hvbWVsYW5kX21hdGVyaWFsX2luZm8ucHJvdG8SBnpwcm90byI8",
-            "ChRIb21lbGFuZE1hdGVyaWFsSW5mbxITCgttYXRlcmlhbF9pZBgBIAEoBRIP",
-            "CgdjaGFyX2lkGAIgASgDYgZwcm90bzM="));
+            "CiFzdHJ1X2hvbWVsYW5kX21hdGVyaWFsX2luZm8ucHJvdG8SBnpwcm90byJO",
+            "ChRIb21lbGFuZE1hdGVyaWFsSW5mbxIeCgptYXRlcmlhbElkGAEgASgFUgpt",
+            "YXRlcmlhbElkEhYKBmNoYXJJZBgCIAEoA1IGY2hhcklkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new HomelandMaterialInfo(this);
     }
 
-    /// <summary>Field number for the "material_id" field.</summary>
+    /// <summary>Field number for the "materialId" field.</summary>
     public const int MaterialIdFieldNumber = 1;
     private int materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2hvbWVsYW5kX2xhbXBsaWdodF9pbmZvLnByb3RvEgZ6cHJvdG8a",
-            "E3N0cnVfaW50X3ZlYzMucHJvdG8ifgoVSG9tZWxhbmRMYW1wbGlnaHRJbmZv",
-            "EhcKD2xhbXBsaWdodF9sZXZlbBgBIAEoBRIoCg9sYW1wbGlnaHRfY29sb3IY",
-            "AiABKAsyDy56cHJvdG8uSW50VmVjMxIUCgxkYXlfbmlnaHRfaWQYAyABKAUS",
-            "DAoEbW9kZRgEIAEoBWIGcHJvdG8z"));
+            "E3N0cnVfaW50X3ZlYzMucHJvdG8irAEKFUhvbWVsYW5kTGFtcGxpZ2h0SW5m",
+            "bxImCg5sYW1wbGlnaHRMZXZlbBgBIAEoBVIObGFtcGxpZ2h0TGV2ZWwSNwoO",
+            "bGFtcGxpZ2h0Q29sb3IYAiABKAsyDy56cHJvdG8uSW50VmVjM1IObGFtcGxp",
+            "Z2h0Q29sb3ISHgoKZGF5TmlnaHRJZBgDIAEoBVIKZGF5TmlnaHRJZBISCgRt",
+            "b2RlGAQgASgFUgRtb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIntVec3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new HomelandLamplightInfo(this);
     }
 
-    /// <summary>Field number for the "lamplight_level" field.</summary>
+    /// <summary>Field number for the "lamplightLevel" field.</summary>
     public const int LamplightLevelFieldNumber = 1;
     private int lamplightLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lamplight_color" field.</summary>
+    /// <summary>Field number for the "lamplightColor" field.</summary>
     public const int LamplightColorFieldNumber = 2;
     private global::Zproto.IntVec3 lamplightColor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "day_night_id" field.</summary>
+    /// <summary>Field number for the "dayNightId" field.</summary>
     public const int DayNightIdFieldNumber = 3;
     private int dayNightId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

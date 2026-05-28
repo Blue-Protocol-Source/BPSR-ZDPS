@@ -25,15 +25,17 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X3Byb2Zlc3Npb25fcHJvamVjdF9jb21tb25fc3luY19kYXRhLnBy",
-            "b3RvEgZ6cHJvdG8i/QIKH1Byb2Zlc3Npb25Qcm9qZWN0Q29tbW9uU3luY0Rh",
-            "dGESFQoNcHJvZmVzc2lvbl9pZBgBIAEoBRIUCgxwcm9qZWN0X25hbWUYAiAB",
-            "KAkSUQoOZXF1aXBfaW5mb19tYXAYAyADKAsyOS56cHJvdG8uUHJvZmVzc2lv",
-            "blByb2plY3RDb21tb25TeW5jRGF0YS5FcXVpcEluZm9NYXBFbnRyeRJNCgxt",
-            "b2RfaW5mb19tYXAYBCADKAsyNy56cHJvdG8uUHJvZmVzc2lvblByb2plY3RD",
-            "b21tb25TeW5jRGF0YS5Nb2RJbmZvTWFwRW50cnkSIwobY3VycmVudF90YWxl",
-            "bnRfc3RhZ2VfY2ZnX2lkGAUgASgFGjMKEUVxdWlwSW5mb01hcEVudHJ5EgsK",
-            "A2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAEaMQoPTW9kSW5mb01hcEVu",
-            "dHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAFiBnByb3RvMw=="));
+            "b3RvEgZ6cHJvdG8iwQMKH1Byb2Zlc3Npb25Qcm9qZWN0Q29tbW9uU3luY0Rh",
+            "dGESIgoMcHJvZmVzc2lvbklkGAEgASgFUgxwcm9mZXNzaW9uSWQSIAoLcHJv",
+            "amVjdE5hbWUYAiABKAlSC3Byb2plY3ROYW1lEl0KDGVxdWlwSW5mb01hcBgD",
+            "IAMoCzI5Lnpwcm90by5Qcm9mZXNzaW9uUHJvamVjdENvbW1vblN5bmNEYXRh",
+            "LkVxdWlwSW5mb01hcEVudHJ5UgxlcXVpcEluZm9NYXASVwoKbW9kSW5mb01h",
+            "cBgEIAMoCzI3Lnpwcm90by5Qcm9mZXNzaW9uUHJvamVjdENvbW1vblN5bmNE",
+            "YXRhLk1vZEluZm9NYXBFbnRyeVIKbW9kSW5mb01hcBI4ChdjdXJyZW50VGFs",
+            "ZW50U3RhZ2VDZmdJZBgFIAEoBVIXY3VycmVudFRhbGVudFN0YWdlQ2ZnSWQa",
+            "MwoRRXF1aXBJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIg",
+            "ASgDOgI4ARoxCg9Nb2RJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZh",
+            "bHVlGAIgASgDOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +95,7 @@ namespace Zproto {
       return new ProfessionProjectCommonSyncData(this);
     }
 
-    /// <summary>Field number for the "profession_id" field.</summary>
+    /// <summary>Field number for the "professionId" field.</summary>
     public const int ProfessionIdFieldNumber = 1;
     private int professionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "project_name" field.</summary>
+    /// <summary>Field number for the "projectName" field.</summary>
     public const int ProjectNameFieldNumber = 2;
     private string projectName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "equip_info_map" field.</summary>
+    /// <summary>Field number for the "equipInfoMap" field.</summary>
     public const int EquipInfoMapFieldNumber = 3;
     private static readonly pbc::MapField<int, long>.Codec _map_equipInfoMap_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 26);
@@ -128,7 +130,7 @@ namespace Zproto {
       get { return equipInfoMap_; }
     }
 
-    /// <summary>Field number for the "mod_info_map" field.</summary>
+    /// <summary>Field number for the "modInfoMap" field.</summary>
     public const int ModInfoMapFieldNumber = 4;
     private static readonly pbc::MapField<int, long>.Codec _map_modInfoMap_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 34);
@@ -139,7 +141,7 @@ namespace Zproto {
       get { return modInfoMap_; }
     }
 
-    /// <summary>Field number for the "current_talent_stage_cfg_id" field.</summary>
+    /// <summary>Field number for the "currentTalentStageCfgId" field.</summary>
     public const int CurrentTalentStageCfgIdFieldNumber = 5;
     private int currentTalentStageCfgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

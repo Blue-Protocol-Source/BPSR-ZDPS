@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci9zdHJ1X3JlY2VpdmVfdW5pb25fYWN0aXZpdHlfYXdhcmRfcmVxdWVzdC5w",
-            "cm90bxIGenByb3RvImEKIFJlY2VpdmVVbmlvbkFjdGl2aXR5QXdhcmRSZXF1",
-            "ZXN0EhAKCHVuaW9uX2lkGAIgASgDEhAKCGF3YXJkX2lkGAMgASgFEhkKEWxh",
-            "c3RfcmVmcmVzaF90aW1lGAQgASgDYgZwcm90bzM="));
+            "cm90bxIGenByb3RvIoABCiBSZWNlaXZlVW5pb25BY3Rpdml0eUF3YXJkUmVx",
+            "dWVzdBIYCgd1bmlvbklkGAIgASgDUgd1bmlvbklkEhgKB2F3YXJkSWQYAyAB",
+            "KAVSB2F3YXJkSWQSKAoPbGFzdFJlZnJlc2hUaW1lGAQgASgDUg9sYXN0UmVm",
+            "cmVzaFRpbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new ReceiveUnionActivityAwardRequest(this);
     }
 
-    /// <summary>Field number for the "union_id" field.</summary>
+    /// <summary>Field number for the "unionId" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_id" field.</summary>
+    /// <summary>Field number for the "awardId" field.</summary>
     public const int AwardIdFieldNumber = 3;
     private int awardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_refresh_time" field.</summary>
+    /// <summary>Field number for the "lastRefreshTime" field.</summary>
     public const int LastRefreshTimeFieldNumber = 4;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

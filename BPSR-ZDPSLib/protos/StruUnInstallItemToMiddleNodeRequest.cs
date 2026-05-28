@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjFzdHJ1X3VuX2luc3RhbGxfaXRlbV90b19taWRkbGVfbm9kZV9yZXF1ZXN0",
-            "LnByb3RvEgZ6cHJvdG8iMwogVW5JbnN0YWxsSXRlbVRvTWlkZGxlTm9kZVJl",
-            "cXVlc3QSDwoHbm9kZV9pZBgBIAEoBWIGcHJvdG8z"));
+            "LnByb3RvEgZ6cHJvdG8iOgogVW5JbnN0YWxsSXRlbVRvTWlkZGxlTm9kZVJl",
+            "cXVlc3QSFgoGbm9kZUlkGAEgASgFUgZub2RlSWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new UnInstallItemToMiddleNodeRequest(this);
     }
 
-    /// <summary>Field number for the "node_id" field.</summary>
+    /// <summary>Field number for the "nodeId" field.</summary>
     public const int NodeIdFieldNumber = 1;
     private int nodeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

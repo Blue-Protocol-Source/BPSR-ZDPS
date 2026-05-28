@@ -27,11 +27,12 @@ namespace Zproto {
             "Ci5zdHJ1X2JsdWVfcHJpbnRfY292ZXJfdXBkYXRlX250Zl9yZXF1ZXN0LnBy",
             "b3RvEgZ6cHJvdG8aGmVudW1fYmx1ZV9wcmludF90eXBlLnByb3RvGhdlbnVt",
             "X2VfZXJyb3JfY29kZS5wcm90bxogZW51bV9lX3BpY3R1cmVfcmV2aWV3X3R5",
-            "cGUucHJvdG8iyQEKHkJsdWVQcmludENvdmVyVXBkYXRlTnRmUmVxdWVzdBIk",
-            "CghlcnJfY29kZRgBIAEoDjISLnpwcm90by5FRXJyb3JDb2RlEgwKBHNsb3QY",
-            "AiABKAUSLgoPYmx1ZV9wcmludF90eXBlGAMgASgOMhUuenByb3RvLkJsdWVQ",
-            "cmludFR5cGUSEQoJY292ZXJfdXJsGAQgASgJEjAKDHJldmlld19zdGF0ZRgF",
-            "IAEoDjIaLnpwcm90by5FUGljdHVyZVJldmlld1R5cGViBnByb3RvMw=="));
+            "cGUucHJvdG8i+QEKHkJsdWVQcmludENvdmVyVXBkYXRlTnRmUmVxdWVzdBIs",
+            "CgdlcnJDb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGUS",
+            "EgoEc2xvdBgCIAEoBVIEc2xvdBI7Cg1ibHVlUHJpbnRUeXBlGAMgASgOMhUu",
+            "enByb3RvLkJsdWVQcmludFR5cGVSDWJsdWVQcmludFR5cGUSGgoIY292ZXJV",
+            "cmwYBCABKAlSCGNvdmVyVXJsEjwKC3Jldmlld1N0YXRlGAUgASgOMhouenBy",
+            "b3RvLkVQaWN0dXJlUmV2aWV3VHlwZVILcmV2aWV3U3RhdGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumBluePrintTypeReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.EnumEPictureReviewTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +92,7 @@ namespace Zproto {
       return new BluePrintCoverUpdateNtfRequest(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "blue_print_type" field.</summary>
+    /// <summary>Field number for the "bluePrintType" field.</summary>
     public const int BluePrintTypeFieldNumber = 3;
     private global::Zproto.BluePrintType bluePrintType_ = global::Zproto.BluePrintType.Outer;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +128,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cover_url" field.</summary>
+    /// <summary>Field number for the "coverUrl" field.</summary>
     public const int CoverUrlFieldNumber = 4;
     private string coverUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +140,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "review_state" field.</summary>
+    /// <summary>Field number for the "reviewState" field.</summary>
     public const int ReviewStateFieldNumber = 5;
     private global::Zproto.EPictureReviewType reviewState_ = global::Zproto.EPictureReviewType.EpictureReviewNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

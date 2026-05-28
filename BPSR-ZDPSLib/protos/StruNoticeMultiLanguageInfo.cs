@@ -26,11 +26,13 @@ namespace Zproto {
           string.Concat(
             "CiVzdHJ1X25vdGljZV9tdWx0aV9sYW5ndWFnZV9pbmZvLnByb3RvEgZ6cHJv",
             "dG8aK3N0cnVfbXVsdGlfbGFuZ3VhZ2VfY29udGVudF90ZXh0X2luZm8ucHJv",
-            "dG8iwQEKF05vdGljZU11bHRpTGFuZ3VhZ2VJbmZvEhEKCXNlbmRfdGltZRgC",
-            "IAEoBBIPCgdpc19sb29wGAMgASgIEhMKC2xvb3BfbnVtYmVyGAQgASgFEhoK",
-            "Emxvb3BfdGltZV9pbnRlcnZhbBgFIAEoDRIQCghlbmRfdGltZRgGIAEoAxI/",
-            "ChFjb250ZW50X3RleHRfaW5mbxgHIAMoCzIkLnpwcm90by5NdWx0aUxhbmd1",
-            "YWdlQ29udGVudFRleHRJbmZvYgZwcm90bzM="));
+            "dG8igwIKF05vdGljZU11bHRpTGFuZ3VhZ2VJbmZvEhoKCHNlbmRUaW1lGAIg",
+            "ASgEUghzZW5kVGltZRIWCgZpc0xvb3AYAyABKAhSBmlzTG9vcBIeCgpsb29w",
+            "TnVtYmVyGAQgASgFUgpsb29wTnVtYmVyEioKEGxvb3BUaW1lSW50ZXJ2YWwY",
+            "BSABKA1SEGxvb3BUaW1lSW50ZXJ2YWwSGAoHZW5kVGltZRgGIAEoA1IHZW5k",
+            "VGltZRJOCg9jb250ZW50VGV4dEluZm8YByADKAsyJC56cHJvdG8uTXVsdGlM",
+            "YW5ndWFnZUNvbnRlbnRUZXh0SW5mb1IPY29udGVudFRleHRJbmZvYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMultiLanguageContentTextInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +93,7 @@ namespace Zproto {
       return new NoticeMultiLanguageInfo(this);
     }
 
-    /// <summary>Field number for the "send_time" field.</summary>
+    /// <summary>Field number for the "sendTime" field.</summary>
     public const int SendTimeFieldNumber = 2;
     private ulong sendTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_loop" field.</summary>
+    /// <summary>Field number for the "isLoop" field.</summary>
     public const int IsLoopFieldNumber = 3;
     private bool isLoop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "loop_number" field.</summary>
+    /// <summary>Field number for the "loopNumber" field.</summary>
     public const int LoopNumberFieldNumber = 4;
     private int loopNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "loop_time_interval" field.</summary>
+    /// <summary>Field number for the "loopTimeInterval" field.</summary>
     public const int LoopTimeIntervalFieldNumber = 5;
     private uint loopTimeInterval_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 6;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "content_text_info" field.</summary>
+    /// <summary>Field number for the "contentTextInfo" field.</summary>
     public const int ContentTextInfoFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Zproto.MultiLanguageContentTextInfo> _repeated_contentTextInfo_codec
         = pb::FieldCodec.ForMessage(58, global::Zproto.MultiLanguageContentTextInfo.Parser);

@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3VubG9ja19lbW9qaV9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byJ/Cg9VbmxvY2tFbW9qaURhdGESOgoKdW5sb2Nr",
-            "X21hcBgBIAMoCzImLnpwcm90by5VbmxvY2tFbW9qaURhdGEuVW5sb2NrTWFw",
-            "RW50cnkaMAoOVW5sb2NrTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVl",
-            "GAIgASgIOgI4AWIGcHJvdG8z"));
+            "ZGlydHlfbWFzay5wcm90byKJAQoPVW5sb2NrRW1vamlEYXRhEkQKCXVubG9j",
+            "a01hcBgBIAMoCzImLnpwcm90by5VbmxvY2tFbW9qaURhdGEuVW5sb2NrTWFw",
+            "RW50cnlSCXVubG9ja01hcBowCg5VbmxvY2tNYXBFbnRyeRILCgNrZXkYASAB",
+            "KAUSDQoFdmFsdWUYAiABKAg6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new UnlockEmojiData(this);
     }
 
-    /// <summary>Field number for the "unlock_map" field.</summary>
+    /// <summary>Field number for the "unlockMap" field.</summary>
     public const int UnlockMapFieldNumber = 1;
     private static readonly pbc::MapField<int, bool>.Codec _map_unlockMap_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 10);

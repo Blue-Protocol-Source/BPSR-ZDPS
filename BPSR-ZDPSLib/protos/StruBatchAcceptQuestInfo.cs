@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2JhdGNoX2FjY2VwdF9xdWVzdF9pbmZvLnByb3RvEgZ6cHJvdG8i",
-            "KQoUQmF0Y2hBY2NlcHRRdWVzdEluZm8SEQoJcXVlc3RfaWRzGAEgAygFYgZw",
-            "cm90bzM="));
+            "MgoUQmF0Y2hBY2NlcHRRdWVzdEluZm8SGgoIcXVlc3RJZHMYASADKAVSCHF1",
+            "ZXN0SWRzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new BatchAcceptQuestInfo(this);
     }
 
-    /// <summary>Field number for the "quest_ids" field.</summary>
+    /// <summary>Field number for the "questIds" field.</summary>
     public const int QuestIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_questIds_codec
         = pb::FieldCodec.ForInt32(10);

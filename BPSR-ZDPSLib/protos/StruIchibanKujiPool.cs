@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X2ljaGliYW5fa3VqaV9wb29sLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byLXAQoPSWNoaWJhbkt1amlQb29sEg8KB3Bvb2xf",
-            "aWQYASABKAUSEwoLdG90YWxfdGltZXMYAiABKAUSFwoPdXNlZF9mcmVlX3Rp",
-            "bWVzGAMgASgFEhQKDGx1Y2tfcG9vbF9pZBgEIAEoBRI8Cgtwcml6ZV9wb29s",
-            "cxgFIAMoCzInLnpwcm90by5JY2hpYmFuS3VqaVBvb2wuUHJpemVQb29sc0Vu",
-            "dHJ5GjEKD1ByaXplUG9vbHNFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
-            "AiABKAU6AjgBYgZwcm90bzM="));
+            "ZGlydHlfbWFzay5wcm90byKLAgoPSWNoaWJhbkt1amlQb29sEhYKBnBvb2xJ",
+            "ZBgBIAEoBVIGcG9vbElkEh4KCnRvdGFsVGltZXMYAiABKAVSCnRvdGFsVGlt",
+            "ZXMSJAoNdXNlZEZyZWVUaW1lcxgDIAEoBVINdXNlZEZyZWVUaW1lcxIeCgps",
+            "dWNrUG9vbElkGAQgASgFUgpsdWNrUG9vbElkEkcKCnByaXplUG9vbHMYBSAD",
+            "KAsyJy56cHJvdG8uSWNoaWJhbkt1amlQb29sLlByaXplUG9vbHNFbnRyeVIK",
+            "cHJpemVQb29scxoxCg9Qcml6ZVBvb2xzRW50cnkSCwoDa2V5GAEgASgFEg0K",
+            "BXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new IchibanKujiPool(this);
     }
 
-    /// <summary>Field number for the "pool_id" field.</summary>
+    /// <summary>Field number for the "poolId" field.</summary>
     public const int PoolIdFieldNumber = 1;
     private int poolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "total_times" field.</summary>
+    /// <summary>Field number for the "totalTimes" field.</summary>
     public const int TotalTimesFieldNumber = 2;
     private int totalTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "used_free_times" field.</summary>
+    /// <summary>Field number for the "usedFreeTimes" field.</summary>
     public const int UsedFreeTimesFieldNumber = 3;
     private int usedFreeTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "luck_pool_id" field.</summary>
+    /// <summary>Field number for the "luckPoolId" field.</summary>
     public const int LuckPoolIdFieldNumber = 4;
     private int luckPoolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "prize_pools" field.</summary>
+    /// <summary>Field number for the "prizePools" field.</summary>
     public const int PrizePoolsFieldNumber = 5;
     private static readonly pbc::MapField<int, int>.Codec _map_prizePools_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 42);

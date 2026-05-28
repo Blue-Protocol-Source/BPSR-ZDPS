@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChFzdHJ1X2dtX2NtZC5wcm90bxIGenByb3RvGhxlbnVtX2VfZ21fcGFyc2lu",
-            "Z190eXBlLnByb3RvInEKBUdtQ21kEg8KB2NvbW1hbmQYASABKAkSFgoOdGFy",
-            "Z2V0X2NoYXJfaWQYAiABKAMSLAoMcGFyc2luZ190eXBlGAMgASgOMhYuenBy",
-            "b3RvLkVHbVBhcnNpbmdUeXBlEhEKCXBhcmFtZXRlchgEIAEoCWIGcHJvdG8z"));
+            "Z190eXBlLnByb3RvIp0BCgVHbUNtZBIYCgdjb21tYW5kGAEgASgJUgdjb21t",
+            "YW5kEiIKDHRhcmdldENoYXJJZBgCIAEoA1IMdGFyZ2V0Q2hhcklkEjgKC3Bh",
+            "cnNpbmdUeXBlGAMgASgOMhYuenByb3RvLkVHbVBhcnNpbmdUeXBlUgtwYXJz",
+            "aW5nVHlwZRIcCglwYXJhbWV0ZXIYBCABKAlSCXBhcmFtZXRlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEGmParsingTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_char_id" field.</summary>
+    /// <summary>Field number for the "targetCharId" field.</summary>
     public const int TargetCharIdFieldNumber = 2;
     private long targetCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "parsing_type" field.</summary>
+    /// <summary>Field number for the "parsingType" field.</summary>
     public const int ParsingTypeFieldNumber = 3;
     private global::Zproto.EGmParsingType parsingType_ = global::Zproto.EGmParsingType.GmParsingJson;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

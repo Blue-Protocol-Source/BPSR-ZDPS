@@ -26,12 +26,15 @@ namespace Zproto {
           string.Concat(
             "Ci1zdHJ1X3JlY2VpdmVfdW5pb25fYWN0aXZpdHlfYXdhcmRfcmVwbHkucHJv",
             "dG8SBnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aD3N0cnVfaXRl",
-            "bS5wcm90byL1AQoeUmVjZWl2ZVVuaW9uQWN0aXZpdHlBd2FyZFJlcGx5EiAK",
-            "GHJlY2VpdmVkX3BvaW50X2F3YXJkX2lkcxgBIAMoBRIbCgVpdGVtcxgCIAMo",
-            "CzIMLnpwcm90by5JdGVtEh8KF3VuaW9uX2xhc3RfcmVmcmVzaF90aW1lGAMg",
-            "ASgDEiIKGnVuaW9uX2N1cnJlbnRfcmVmcmVzaF90aW1lGAQgASgDEhIKCmxh",
-            "c3RfcG9pbnQYBSABKAMSFQoNY3VycmVudF9wb2ludBgGIAEoAxIkCghlcnJf",
-            "Y29kZRgHIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "bS5wcm90byLYAgoeUmVjZWl2ZVVuaW9uQWN0aXZpdHlBd2FyZFJlcGx5EjQK",
+            "FXJlY2VpdmVkUG9pbnRBd2FyZElkcxgBIAMoBVIVcmVjZWl2ZWRQb2ludEF3",
+            "YXJkSWRzEiIKBWl0ZW1zGAIgAygLMgwuenByb3RvLkl0ZW1SBWl0ZW1zEjIK",
+            "FHVuaW9uTGFzdFJlZnJlc2hUaW1lGAMgASgDUhR1bmlvbkxhc3RSZWZyZXNo",
+            "VGltZRI4Chd1bmlvbkN1cnJlbnRSZWZyZXNoVGltZRgEIAEoA1IXdW5pb25D",
+            "dXJyZW50UmVmcmVzaFRpbWUSHAoJbGFzdFBvaW50GAUgASgDUglsYXN0UG9p",
+            "bnQSIgoMY3VycmVudFBvaW50GAYgASgDUgxjdXJyZW50UG9pbnQSLAoHZXJy",
+            "Q29kZRgHIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2RlYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +96,7 @@ namespace Zproto {
       return new ReceiveUnionActivityAwardReply(this);
     }
 
-    /// <summary>Field number for the "received_point_award_ids" field.</summary>
+    /// <summary>Field number for the "receivedPointAwardIds" field.</summary>
     public const int ReceivedPointAwardIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_receivedPointAwardIds_codec
         = pb::FieldCodec.ForInt32(10);
@@ -115,7 +118,7 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "union_last_refresh_time" field.</summary>
+    /// <summary>Field number for the "unionLastRefreshTime" field.</summary>
     public const int UnionLastRefreshTimeFieldNumber = 3;
     private long unionLastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_current_refresh_time" field.</summary>
+    /// <summary>Field number for the "unionCurrentRefreshTime" field.</summary>
     public const int UnionCurrentRefreshTimeFieldNumber = 4;
     private long unionCurrentRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_point" field.</summary>
+    /// <summary>Field number for the "lastPoint" field.</summary>
     public const int LastPointFieldNumber = 5;
     private long lastPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +154,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "current_point" field.</summary>
+    /// <summary>Field number for the "currentPoint" field.</summary>
     public const int CurrentPointFieldNumber = 6;
     private long currentPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -163,7 +166,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 7;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

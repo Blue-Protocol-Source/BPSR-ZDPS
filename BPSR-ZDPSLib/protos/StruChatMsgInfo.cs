@@ -28,13 +28,15 @@ namespace Zproto {
             "X2h5cGVydGV4dC5wcm90bxohc3RydV9jaGF0X211bHRpX2xhbmdfbm90aWNl",
             "LnByb3RvGh1zdHJ1X2NoYXRfcGljdHVyZV9lbW9qaS5wcm90bxoVc3RydV9j",
             "aGF0X3ZvaWNlLnByb3RvGh1lbnVtX2NoaXRfY2hhdF9tc2dfdHlwZS5wcm90",
-            "byKXAgoLQ2hhdE1zZ0luZm8SKQoIbXNnX3R5cGUYASABKA4yFy56cHJvdG8u",
-            "Q2hpdENoYXRNc2dUeXBlEhEKCXRhcmdldF9pZBgCIAEoAxIQCghtc2dfdGV4",
-            "dBgDIAEoCRI2ChFtdWx0aV9sYW5nX25vdGljZRgEIAEoCzIbLnpwcm90by5D",
-            "aGF0TXVsdGlMYW5nTm90aWNlEi8KDXBpY3R1cmVfZW1vamkYBSABKAsyGC56",
-            "cHJvdG8uQ2hhdFBpY3R1cmVFbW9qaRIgCgV2b2ljZRgGIAEoCzIRLnpwcm90",
-            "by5DaGF0Vm9pY2USLQoOY2hhdF9oeXBlcnRleHQYByABKAsyFS56cHJvdG8u",
-            "Q2hhdEh5cGVydGV4dGIGcHJvdG8z"));
+            "byLhAgoLQ2hhdE1zZ0luZm8SMQoHbXNnVHlwZRgBIAEoDjIXLnpwcm90by5D",
+            "aGl0Q2hhdE1zZ1R5cGVSB21zZ1R5cGUSGgoIdGFyZ2V0SWQYAiABKANSCHRh",
+            "cmdldElkEhgKB21zZ1RleHQYAyABKAlSB21zZ1RleHQSRQoPbXVsdGlMYW5n",
+            "Tm90aWNlGAQgASgLMhsuenByb3RvLkNoYXRNdWx0aUxhbmdOb3RpY2VSD211",
+            "bHRpTGFuZ05vdGljZRI8CgxwaWN0dXJlRW1vamkYBSABKAsyGC56cHJvdG8u",
+            "Q2hhdFBpY3R1cmVFbW9qaVIMcGljdHVyZUVtb2ppEicKBXZvaWNlGAYgASgL",
+            "MhEuenByb3RvLkNoYXRWb2ljZVIFdm9pY2USOwoNY2hhdEh5cGVydGV4dBgH",
+            "IAEoCzIVLnpwcm90by5DaGF0SHlwZXJ0ZXh0Ug1jaGF0SHlwZXJ0ZXh0YgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruChatHypertextReflection.Descriptor, global::Zproto.StruChatMultiLangNoticeReflection.Descriptor, global::Zproto.StruChatPictureEmojiReflection.Descriptor, global::Zproto.StruChatVoiceReflection.Descriptor, global::Zproto.EnumChitChatMsgTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +98,7 @@ namespace Zproto {
       return new ChatMsgInfo(this);
     }
 
-    /// <summary>Field number for the "msg_type" field.</summary>
+    /// <summary>Field number for the "msgType" field.</summary>
     public const int MsgTypeFieldNumber = 1;
     private global::Zproto.ChitChatMsgType msgType_ = global::Zproto.ChitChatMsgType.ChatMsgTextMessage;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 2;
     private long targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "msg_text" field.</summary>
+    /// <summary>Field number for the "msgText" field.</summary>
     public const int MsgTextFieldNumber = 3;
     private string msgText_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -132,7 +134,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "multi_lang_notice" field.</summary>
+    /// <summary>Field number for the "multiLangNotice" field.</summary>
     public const int MultiLangNoticeFieldNumber = 4;
     private global::Zproto.ChatMultiLangNotice multiLangNotice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -144,7 +146,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "picture_emoji" field.</summary>
+    /// <summary>Field number for the "pictureEmoji" field.</summary>
     public const int PictureEmojiFieldNumber = 5;
     private global::Zproto.ChatPictureEmoji pictureEmoji_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,7 +170,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "chat_hypertext" field.</summary>
+    /// <summary>Field number for the "chatHypertext" field.</summary>
     public const int ChatHypertextFieldNumber = 7;
     private global::Zproto.ChatHypertext chatHypertext_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

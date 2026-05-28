@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNzdHJ1X21vZF9pbmZvLnByb3RvEgZ6cHJvdG8aInN0cnVfbW9kX3BhcnRf",
-            "dXBncmFkZV9yZWNvcmQucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKA",
-            "AQoHTW9kSW5mbxIQCghwYXJ0X2lkcxgBIAMoBRI1Cg91cGdyYWRlX3JlY29y",
-            "ZHMYAiADKAsyHC56cHJvdG8uTW9kUGFydFVwZ3JhZGVSZWNvcmQSFAoMc3Vj",
-            "Y2Vzc19yYXRlGAMgASgFEhYKDmluaXRfbGlua19udW1zGAQgAygFYgZwcm90",
-            "bzM="));
+            "dXBncmFkZV9yZWNvcmQucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKv",
+            "AQoHTW9kSW5mbxIYCgdwYXJ0SWRzGAEgAygFUgdwYXJ0SWRzEkQKDnVwZ3Jh",
+            "ZGVSZWNvcmRzGAIgAygLMhwuenByb3RvLk1vZFBhcnRVcGdyYWRlUmVjb3Jk",
+            "Ug51cGdyYWRlUmVjb3JkcxIgCgtzdWNjZXNzUmF0ZRgDIAEoBVILc3VjY2Vz",
+            "c1JhdGUSIgoMaW5pdExpbmtOdW1zGAQgAygFUgxpbml0TGlua051bXNiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruModPartUpgradeRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new ModInfo(this);
     }
 
-    /// <summary>Field number for the "part_ids" field.</summary>
+    /// <summary>Field number for the "partIds" field.</summary>
     public const int PartIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_partIds_codec
         = pb::FieldCodec.ForInt32(10);
@@ -99,7 +100,7 @@ namespace Zproto {
       get { return partIds_; }
     }
 
-    /// <summary>Field number for the "upgrade_records" field.</summary>
+    /// <summary>Field number for the "upgradeRecords" field.</summary>
     public const int UpgradeRecordsFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.ModPartUpgradeRecord> _repeated_upgradeRecords_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.ModPartUpgradeRecord.Parser);
@@ -110,7 +111,7 @@ namespace Zproto {
       get { return upgradeRecords_; }
     }
 
-    /// <summary>Field number for the "success_rate" field.</summary>
+    /// <summary>Field number for the "successRate" field.</summary>
     public const int SuccessRateFieldNumber = 3;
     private int successRate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "init_link_nums" field.</summary>
+    /// <summary>Field number for the "initLinkNums" field.</summary>
     public const int InitLinkNumsFieldNumber = 4;
     private static readonly pb::FieldCodec<int> _repeated_initLinkNums_codec
         = pb::FieldCodec.ForInt32(34);

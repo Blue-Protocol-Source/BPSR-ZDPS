@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2N1bHRpdmF0ZV9iaWdfbm9kZV9kYXRhLnByb3RvEgZ6cHJvdG8a",
-            "FXN0cnVfZGlydHlfbWFzay5wcm90byIqChRDdWx0aXZhdGVCaWdOb2RlRGF0",
-            "YRISCgpmYW50YXN5X2lkGAEgASgFYgZwcm90bzM="));
+            "FXN0cnVfZGlydHlfbWFzay5wcm90byI0ChRDdWx0aXZhdGVCaWdOb2RlRGF0",
+            "YRIcCglmYW50YXN5SWQYASABKAVSCWZhbnRhc3lJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new CultivateBigNodeData(this);
     }
 
-    /// <summary>Field number for the "fantasy_id" field.</summary>
+    /// <summary>Field number for the "fantasyId" field.</summary>
     public const int FantasyIdFieldNumber = 1;
     private int fantasyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

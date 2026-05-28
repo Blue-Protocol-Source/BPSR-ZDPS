@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSyncLanguageRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3N5bmNfbGFuZ3VhZ2VfcmVxdWVzdC5wcm90bxIGenByb3RvIicK",
-            "E1N5bmNMYW5ndWFnZVJlcXVlc3QSEAoIbGFuZ3VhZ2UYASABKAViBnByb3Rv",
-            "Mw=="));
+            "CiBzdHJ1X3N5bmNfbGFuZ3VhZ2VfcmVxdWVzdC5wcm90bxIGenByb3RvIjEK",
+            "E1N5bmNMYW5ndWFnZVJlcXVlc3QSGgoIbGFuZ3VhZ2UYASABKAVSCGxhbmd1",
+            "YWdlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

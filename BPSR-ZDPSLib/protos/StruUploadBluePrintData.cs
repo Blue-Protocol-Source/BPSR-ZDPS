@@ -26,15 +26,17 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X3VwbG9hZF9ibHVlX3ByaW50X2RhdGEucHJvdG8SBnpwcm90bxoa",
             "ZW51bV9ibHVlX3ByaW50X3R5cGUucHJvdG8aI3N0cnVfaG9tZWxhbmRfZGVj",
-            "b3JhdGlvbl9pbmZvLnByb3RvGhRzdHJ1X3N0cnVjdHVyZS5wcm90byLRAgoT",
-            "VXBsb2FkQmx1ZVByaW50RGF0YRITCgtob3VzZV9sZXZlbBgBIAEoBRI/Cgpz",
-            "dHJ1Y3R1cmVzGAIgAygLMisuenByb3RvLlVwbG9hZEJsdWVQcmludERhdGEu",
-            "U3RydWN0dXJlc0VudHJ5EhYKDnVubG9ja2VkX2FyZWFzGAMgAygFEjcKD2Rl",
-            "Y29yYXRpb25faW5mbxgEIAEoCzIeLnpwcm90by5Ib21lbGFuZERlY29yYXRp",
-            "b25JbmZvEg8KB2NoYXJfaWQYBSABKAMSLgoPYmx1ZV9wcmludF90eXBlGAYg",
-            "ASgOMhUuenByb3RvLkJsdWVQcmludFR5cGUSDAoEc2xvdBgHIAEoBRpECg9T",
-            "dHJ1Y3R1cmVzRW50cnkSCwoDa2V5GAEgASgDEiAKBXZhbHVlGAIgASgLMhEu",
-            "enByb3RvLlN0cnVjdHVyZToCOAFiBnByb3RvMw=="));
+            "b3JhdGlvbl9pbmZvLnByb3RvGhRzdHJ1X3N0cnVjdHVyZS5wcm90byKfAwoT",
+            "VXBsb2FkQmx1ZVByaW50RGF0YRIeCgpob3VzZUxldmVsGAEgASgFUgpob3Vz",
+            "ZUxldmVsEksKCnN0cnVjdHVyZXMYAiADKAsyKy56cHJvdG8uVXBsb2FkQmx1",
+            "ZVByaW50RGF0YS5TdHJ1Y3R1cmVzRW50cnlSCnN0cnVjdHVyZXMSJAoNdW5s",
+            "b2NrZWRBcmVhcxgDIAMoBVINdW5sb2NrZWRBcmVhcxJGCg5kZWNvcmF0aW9u",
+            "SW5mbxgEIAEoCzIeLnpwcm90by5Ib21lbGFuZERlY29yYXRpb25JbmZvUg5k",
+            "ZWNvcmF0aW9uSW5mbxIWCgZjaGFySWQYBSABKANSBmNoYXJJZBI7Cg1ibHVl",
+            "UHJpbnRUeXBlGAYgASgOMhUuenByb3RvLkJsdWVQcmludFR5cGVSDWJsdWVQ",
+            "cmludFR5cGUSEgoEc2xvdBgHIAEoBVIEc2xvdBpECg9TdHJ1Y3R1cmVzRW50",
+            "cnkSCwoDa2V5GAEgASgDEiAKBXZhbHVlGAIgASgLMhEuenByb3RvLlN0cnVj",
+            "dHVyZToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumBluePrintTypeReflection.Descriptor, global::Zproto.StruHomelandDecorationInfoReflection.Descriptor, global::Zproto.StruStructureReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +98,7 @@ namespace Zproto {
       return new UploadBluePrintData(this);
     }
 
-    /// <summary>Field number for the "house_level" field.</summary>
+    /// <summary>Field number for the "houseLevel" field.</summary>
     public const int HouseLevelFieldNumber = 1;
     private int houseLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -119,7 +121,7 @@ namespace Zproto {
       get { return structures_; }
     }
 
-    /// <summary>Field number for the "unlocked_areas" field.</summary>
+    /// <summary>Field number for the "unlockedAreas" field.</summary>
     public const int UnlockedAreasFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_unlockedAreas_codec
         = pb::FieldCodec.ForInt32(26);
@@ -130,7 +132,7 @@ namespace Zproto {
       get { return unlockedAreas_; }
     }
 
-    /// <summary>Field number for the "decoration_info" field.</summary>
+    /// <summary>Field number for the "decorationInfo" field.</summary>
     public const int DecorationInfoFieldNumber = 4;
     private global::Zproto.HomelandDecorationInfo decorationInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -142,7 +144,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 5;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -154,7 +156,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "blue_print_type" field.</summary>
+    /// <summary>Field number for the "bluePrintType" field.</summary>
     public const int BluePrintTypeFieldNumber = 6;
     private global::Zproto.BluePrintType bluePrintType_ = global::Zproto.BluePrintType.Outer;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

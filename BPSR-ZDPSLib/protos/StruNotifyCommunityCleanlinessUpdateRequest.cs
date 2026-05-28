@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjZzdHJ1X25vdGlmeV9jb21tdW5pdHlfY2xlYW5saW5lc3NfdXBkYXRlX3Jl",
-            "cXVlc3QucHJvdG8SBnpwcm90byKfAQonTm90aWZ5Q29tbXVuaXR5Q2xlYW5s",
-            "aW5lc3NVcGRhdGVSZXF1ZXN0EhcKD25ld19jbGVhbmxpbmVzcxgBIAEoBRIp",
-            "CiFuZXdfbGFzdF9zdWJ0cmFjdF9jbGVhbmxpbmVzc19zZWMYAiABKAMSFwoP",
-            "b2xkX2NsZWFubGluZXNzGAMgASgFEhcKD2FjdHVhbF9zdWJ0cmFjdBgEIAEo",
-            "BWIGcHJvdG8z"));
+            "cXVlc3QucHJvdG8SBnpwcm90byLnAQonTm90aWZ5Q29tbXVuaXR5Q2xlYW5s",
+            "aW5lc3NVcGRhdGVSZXF1ZXN0EiYKDm5ld0NsZWFubGluZXNzGAEgASgFUg5u",
+            "ZXdDbGVhbmxpbmVzcxJECh1uZXdMYXN0U3VidHJhY3RDbGVhbmxpbmVzc1Nl",
+            "YxgCIAEoA1IdbmV3TGFzdFN1YnRyYWN0Q2xlYW5saW5lc3NTZWMSJgoOb2xk",
+            "Q2xlYW5saW5lc3MYAyABKAVSDm9sZENsZWFubGluZXNzEiYKDmFjdHVhbFN1",
+            "YnRyYWN0GAQgASgFUg5hY3R1YWxTdWJ0cmFjdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new NotifyCommunityCleanlinessUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "new_cleanliness" field.</summary>
+    /// <summary>Field number for the "newCleanliness" field.</summary>
     public const int NewCleanlinessFieldNumber = 1;
     private int newCleanliness_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "new_last_subtract_cleanliness_sec" field.</summary>
+    /// <summary>Field number for the "newLastSubtractCleanlinessSec" field.</summary>
     public const int NewLastSubtractCleanlinessSecFieldNumber = 2;
     private long newLastSubtractCleanlinessSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "old_cleanliness" field.</summary>
+    /// <summary>Field number for the "oldCleanliness" field.</summary>
     public const int OldCleanlinessFieldNumber = 3;
     private int oldCleanliness_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "actual_subtract" field.</summary>
+    /// <summary>Field number for the "actualSubtract" field.</summary>
     public const int ActualSubtractFieldNumber = 4;
     private int actualSubtract_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

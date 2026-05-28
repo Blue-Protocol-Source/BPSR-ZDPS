@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X2FjdGlvbl9ncm91cF9zYXZlX2RhdGEucHJvdG8SBnpwcm90bxoh",
             "c3RydV9hY3Rpb25fZ3JvdXBfc2F2ZV9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5",
-            "X21hc2sucHJvdG8i2AEKE0FjdGlvbkdyb3VwU2F2ZURhdGESVgoXYWN0aW9u",
-            "X2dyb3VwX3NhdmVfaW5mb3MYASADKAsyNS56cHJvdG8uQWN0aW9uR3JvdXBT",
-            "YXZlRGF0YS5BY3Rpb25Hcm91cFNhdmVJbmZvc0VudHJ5Eg8KB2lzX2luaXQY",
-            "AiABKAgaWAoZQWN0aW9uR3JvdXBTYXZlSW5mb3NFbnRyeRILCgNrZXkYASAB",
-            "KAUSKgoFdmFsdWUYAiABKAsyGy56cHJvdG8uQWN0aW9uR3JvdXBTYXZlSW5m",
-            "bzoCOAFiBnByb3RvMw=="));
+            "X21hc2sucHJvdG8i8gEKE0FjdGlvbkdyb3VwU2F2ZURhdGESaQoUYWN0aW9u",
+            "R3JvdXBTYXZlSW5mb3MYASADKAsyNS56cHJvdG8uQWN0aW9uR3JvdXBTYXZl",
+            "RGF0YS5BY3Rpb25Hcm91cFNhdmVJbmZvc0VudHJ5UhRhY3Rpb25Hcm91cFNh",
+            "dmVJbmZvcxIWCgZpc0luaXQYAiABKAhSBmlzSW5pdBpYChlBY3Rpb25Hcm91",
+            "cFNhdmVJbmZvc0VudHJ5EgsKA2tleRgBIAEoBRIqCgV2YWx1ZRgCIAEoCzIb",
+            "Lnpwcm90by5BY3Rpb25Hcm91cFNhdmVJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActionGroupSaveInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new ActionGroupSaveData(this);
     }
 
-    /// <summary>Field number for the "action_group_save_infos" field.</summary>
+    /// <summary>Field number for the "actionGroupSaveInfos" field.</summary>
     public const int ActionGroupSaveInfosFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.ActionGroupSaveInfo>.Codec _map_actionGroupSaveInfos_codec
         = new pbc::MapField<int, global::Zproto.ActionGroupSaveInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ActionGroupSaveInfo.Parser), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return actionGroupSaveInfos_; }
     }
 
-    /// <summary>Field number for the "is_init" field.</summary>
+    /// <summary>Field number for the "isInit" field.</summary>
     public const int IsInitFieldNumber = 2;
     private bool isInit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

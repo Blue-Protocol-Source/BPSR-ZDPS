@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2NoaXRfY2hhdF9tc2cucHJvdG8SBnpwcm90bxoac3RydV9iYXNp",
-            "Y19zaG93X2luZm8ucHJvdG8aGHN0cnVfY2hhdF9tc2dfaW5mby5wcm90byKG",
-            "AQoLQ2hpdENoYXRNc2cSDgoGbXNnX2lkGAEgASgDEi0KDnNlbmRfY2hhcl9p",
-            "bmZvGAIgASgLMhUuenByb3RvLkJhc2ljU2hvd0luZm8SEQoJdGltZXN0YW1w",
-            "GAMgASgDEiUKCG1zZ19pbmZvGAQgASgLMhMuenByb3RvLkNoYXRNc2dJbmZv",
-            "YgZwcm90bzM="));
+            "Y19zaG93X2luZm8ucHJvdG8aGHN0cnVfY2hhdF9tc2dfaW5mby5wcm90byKr",
+            "AQoLQ2hpdENoYXRNc2cSFAoFbXNnSWQYASABKANSBW1zZ0lkEjkKDHNlbmRD",
+            "aGFySW5mbxgCIAEoCzIVLnpwcm90by5CYXNpY1Nob3dJbmZvUgxzZW5kQ2hh",
+            "ckluZm8SHAoJdGltZXN0YW1wGAMgASgDUgl0aW1lc3RhbXASLQoHbXNnSW5m",
+            "bxgEIAEoCzITLnpwcm90by5DaGF0TXNnSW5mb1IHbXNnSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBasicShowInfoReflection.Descriptor, global::Zproto.StruChatMsgInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new ChitChatMsg(this);
     }
 
-    /// <summary>Field number for the "msg_id" field.</summary>
+    /// <summary>Field number for the "msgId" field.</summary>
     public const int MsgIdFieldNumber = 1;
     private long msgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "send_char_info" field.</summary>
+    /// <summary>Field number for the "sendCharInfo" field.</summary>
     public const int SendCharInfoFieldNumber = 2;
     private global::Zproto.BasicShowInfo sendCharInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "msg_info" field.</summary>
+    /// <summary>Field number for the "msgInfo" field.</summary>
     public const int MsgInfoFieldNumber = 4;
     private global::Zproto.ChatMsgInfo msgInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

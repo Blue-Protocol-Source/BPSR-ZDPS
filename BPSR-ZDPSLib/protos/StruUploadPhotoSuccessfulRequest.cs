@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CipzdHJ1X3VwbG9hZF9waG90b19zdWNjZXNzZnVsX3JlcXVlc3QucHJvdG8S",
             "Bnpwcm90bxofZW51bV9lX3BsYXRmb3JtX2Z1bmNfdHlwZS5wcm90bxonc3Ry",
-            "dV91cGxvYWRfcGhvdG9fc3VjY2Vzc2Z1bF9kYXRhLnByb3RvIrQBChxVcGxv",
-            "YWRQaG90b1N1Y2Nlc3NmdWxSZXF1ZXN0Eg8KB2NoYXJfaWQYAiABKAMSEgoK",
-            "cGljdHVyZV9pZBgDIAEoDRIsCglmdW5jX3R5cGUYBCABKA4yGS56cHJvdG8u",
-            "RVBsYXRmb3JtRnVuY1R5cGUSLwoEZGF0YRgFIAMoCzIhLnpwcm90by5VcGxv",
-            "YWRQaG90b1N1Y2Nlc3NmdWxEYXRhEhAKCG93bmVyX2lkGAYgASgDYgZwcm90",
-            "bzM="));
+            "dV91cGxvYWRfcGhvdG9fc3VjY2Vzc2Z1bF9kYXRhLnByb3RvItwBChxVcGxv",
+            "YWRQaG90b1N1Y2Nlc3NmdWxSZXF1ZXN0EhYKBmNoYXJJZBgCIAEoA1IGY2hh",
+            "cklkEhwKCXBpY3R1cmVJZBgDIAEoDVIJcGljdHVyZUlkEjUKCGZ1bmNUeXBl",
+            "GAQgASgOMhkuenByb3RvLkVQbGF0Zm9ybUZ1bmNUeXBlUghmdW5jVHlwZRI1",
+            "CgRkYXRhGAUgAygLMiEuenByb3RvLlVwbG9hZFBob3RvU3VjY2Vzc2Z1bERh",
+            "dGFSBGRhdGESGAoHb3duZXJJZBgGIAEoA1IHb3duZXJJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPlatformFuncTypeReflection.Descriptor, global::Zproto.StruUploadPhotoSuccessfulDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +91,7 @@ namespace Zproto {
       return new UploadPhotoSuccessfulRequest(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "picture_id" field.</summary>
+    /// <summary>Field number for the "pictureId" field.</summary>
     public const int PictureIdFieldNumber = 3;
     private uint pictureId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "func_type" field.</summary>
+    /// <summary>Field number for the "funcType" field.</summary>
     public const int FuncTypeFieldNumber = 4;
     private global::Zproto.EPlatformFuncType funcType_ = global::Zproto.EPlatformFuncType.EfuncTypeDefault;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +138,7 @@ namespace Zproto {
       get { return data_; }
     }
 
-    /// <summary>Field number for the "owner_id" field.</summary>
+    /// <summary>Field number for the "ownerId" field.</summary>
     public const int OwnerIdFieldNumber = 6;
     private long ownerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

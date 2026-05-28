@@ -25,11 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X25vdGlmeV9pbnN0cnVjdGlvbl9pbmZvX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byLBAQocTm90aWZ5SW5zdHJ1Y3Rpb25JbmZvUmVxdWVzdBIMCgR0",
-            "eXBlGAEgASgFEg0KBXRpdGxlGAIgASgJEgsKA21zZxgDIAEoCRILCgN1cmwY",
-            "BCABKAkSDAoEZGF0YRgFIAEoCRITCgtsb2dvdXRfdGltZRgGIAEoBRIRCgly",
-            "dWxlX25hbWUYByABKAkSEAoIdHJhY2VfaWQYCCABKAkSDQoFbW9kYWwYCSAB",
-            "KAUSEwoLbG9nb3V0X3R5cGUYCiABKAViBnByb3RvMw=="));
+            "Bnpwcm90byKMAgocTm90aWZ5SW5zdHJ1Y3Rpb25JbmZvUmVxdWVzdBISCgR0",
+            "eXBlGAEgASgFUgR0eXBlEhQKBXRpdGxlGAIgASgJUgV0aXRsZRIQCgNtc2cY",
+            "AyABKAlSA21zZxIQCgN1cmwYBCABKAlSA3VybBISCgRkYXRhGAUgASgJUgRk",
+            "YXRhEh4KCmxvZ291dFRpbWUYBiABKAVSCmxvZ291dFRpbWUSGgoIcnVsZU5h",
+            "bWUYByABKAlSCHJ1bGVOYW1lEhgKB3RyYWNlSWQYCCABKAlSB3RyYWNlSWQS",
+            "FAoFbW9kYWwYCSABKAVSBW1vZGFsEh4KCmxvZ291dFR5cGUYCiABKAVSCmxv",
+            "Z291dFR5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -154,7 +156,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "logout_time" field.</summary>
+    /// <summary>Field number for the "logoutTime" field.</summary>
     public const int LogoutTimeFieldNumber = 6;
     private int logoutTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -166,7 +168,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rule_name" field.</summary>
+    /// <summary>Field number for the "ruleName" field.</summary>
     public const int RuleNameFieldNumber = 7;
     private string ruleName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -178,7 +180,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "trace_id" field.</summary>
+    /// <summary>Field number for the "traceId" field.</summary>
     public const int TraceIdFieldNumber = 8;
     private string traceId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -202,7 +204,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "logout_type" field.</summary>
+    /// <summary>Field number for the "logoutType" field.</summary>
     public const int LogoutTypeFieldNumber = 10;
     private int logoutType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

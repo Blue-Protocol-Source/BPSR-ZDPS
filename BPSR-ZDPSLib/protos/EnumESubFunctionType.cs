@@ -24,12 +24,12 @@ namespace Zproto {
     static EnumESubFunctionTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5lbnVtX2Vfc3ViX2Z1bmN0aW9uX3R5cGUucHJvdG8SBnpwcm90byqvAQoQ",
+            "Ch5lbnVtX2Vfc3ViX2Z1bmN0aW9uX3R5cGUucHJvdG8SBnpwcm90byrRAQoQ",
             "RVN1YkZ1bmN0aW9uVHlwZRIYChRFU3ViRnVuY3Rpb25UeXBlTm9uZRAAEh8K",
             "GUVTdWJGdW5jdGlvblR5cGVXb3JsZENoYXQQ1p0GEh8KGUVTdWJGdW5jdGlv",
             "blR5cGVTY2VuZUNoYXQQ150GEh4KGEVTdWJGdW5jdGlvblR5cGVUZWFtQ2hh",
-            "dBDYnQYSHwoZRVN1YkZ1bmN0aW9uVHlwZVVuaW9uQ2hhdBDZnQZiBnByb3Rv",
-            "Mw=="));
+            "dBDYnQYSHwoZRVN1YkZ1bmN0aW9uVHlwZVVuaW9uQ2hhdBDZnQYSIAoaRVN1",
+            "YkZ1bmN0aW9uVHlwZU5ld2JpZUNoYXQQ2p0GYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.ESubFunctionType), }, null, null));
@@ -44,6 +44,7 @@ namespace Zproto {
     [pbr::OriginalName("ESubFunctionTypeSceneChat")] SceneChat = 102103,
     [pbr::OriginalName("ESubFunctionTypeTeamChat")] TeamChat = 102104,
     [pbr::OriginalName("ESubFunctionTypeUnionChat")] UnionChat = 102105,
+    [pbr::OriginalName("ESubFunctionTypeNewbieChat")] NewbieChat = 102106,
   }
 
   #endregion

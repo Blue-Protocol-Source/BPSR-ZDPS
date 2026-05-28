@@ -25,15 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X3ByaXZpbGVnZV9lZmZlY3RfZGF0YS5wcm90bxIGenByb3RvGhVz",
-            "dHJ1X2RpcnR5X21hc2sucHJvdG8izQIKE1ByaXZpbGVnZUVmZmVjdERhdGES",
-            "FgoObm9ybWFsX3Bhc3NfaWQYASABKAUSFQoNcHJpbWVfcGFzc19pZBgCIAEo",
-            "BRJMChJub3JtYWxfcGFzc19pZF9tYXAYAyADKAsyMC56cHJvdG8uUHJpdmls",
-            "ZWdlRWZmZWN0RGF0YS5Ob3JtYWxQYXNzSWRNYXBFbnRyeRJKChFwcmltZV9w",
-            "YXNzX2lkX21hcBgEIAMoCzIvLnpwcm90by5Qcml2aWxlZ2VFZmZlY3REYXRh",
-            "LlByaW1lUGFzc0lkTWFwRW50cnkaNgoUTm9ybWFsUGFzc0lkTWFwRW50cnkS",
-            "CwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgIOgI4ARo1ChNQcmltZVBhc3NJ",
-            "ZE1hcEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoCDoCOAFiBnBy",
-            "b3RvMw=="));
+            "dHJ1X2RpcnR5X21hc2sucHJvdG8i/wIKE1ByaXZpbGVnZUVmZmVjdERhdGES",
+            "IgoMbm9ybWFsUGFzc0lkGAEgASgFUgxub3JtYWxQYXNzSWQSIAoLUHJpbWVQ",
+            "YXNzSWQYAiABKAVSC1ByaW1lUGFzc0lkEloKD25vcm1hbFBhc3NJZE1hcBgD",
+            "IAMoCzIwLnpwcm90by5Qcml2aWxlZ2VFZmZlY3REYXRhLk5vcm1hbFBhc3NJ",
+            "ZE1hcEVudHJ5Ug9ub3JtYWxQYXNzSWRNYXASVwoOUHJpbWVQYXNzSWRNYXAY",
+            "BCADKAsyLy56cHJvdG8uUHJpdmlsZWdlRWZmZWN0RGF0YS5QcmltZVBhc3NJ",
+            "ZE1hcEVudHJ5Ug5QcmltZVBhc3NJZE1hcBo2ChROb3JtYWxQYXNzSWRNYXBF",
+            "bnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAg6AjgBGjUKE1ByaW1l",
+            "UGFzc0lkTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgIOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +93,7 @@ namespace Zproto {
       return new PrivilegeEffectData(this);
     }
 
-    /// <summary>Field number for the "normal_pass_id" field.</summary>
+    /// <summary>Field number for the "normalPassId" field.</summary>
     public const int NormalPassIdFieldNumber = 1;
     private int normalPassId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "prime_pass_id" field.</summary>
+    /// <summary>Field number for the "PrimePassId" field.</summary>
     public const int PrimePassIdFieldNumber = 2;
     private int primePassId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "normal_pass_id_map" field.</summary>
+    /// <summary>Field number for the "normalPassIdMap" field.</summary>
     public const int NormalPassIdMapFieldNumber = 3;
     private static readonly pbc::MapField<int, bool>.Codec _map_normalPassIdMap_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 26);
@@ -127,7 +128,7 @@ namespace Zproto {
       get { return normalPassIdMap_; }
     }
 
-    /// <summary>Field number for the "prime_pass_id_map" field.</summary>
+    /// <summary>Field number for the "PrimePassIdMap" field.</summary>
     public const int PrimePassIdMapFieldNumber = 4;
     private static readonly pbc::MapField<int, bool>.Codec _map_primePassIdMap_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 34);

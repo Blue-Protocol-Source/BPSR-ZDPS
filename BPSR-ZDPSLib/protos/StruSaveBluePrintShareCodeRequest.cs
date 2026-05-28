@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci1zdHJ1X3NhdmVfYmx1ZV9wcmludF9zaGFyZV9jb2RlX3JlcXVlc3QucHJv",
-            "dG8SBnpwcm90bxoaZW51bV9ibHVlX3ByaW50X3R5cGUucHJvdG8icQodU2F2",
-            "ZUJsdWVQcmludFNoYXJlQ29kZVJlcXVlc3QSDAoEc2xvdBgBIAEoBRIuCg9i",
-            "bHVlX3ByaW50X3R5cGUYAiABKA4yFS56cHJvdG8uQmx1ZVByaW50VHlwZRIS",
-            "CgpzaGFyZV9jb2RlGAMgASgJYgZwcm90bzM="));
+            "dG8SBnpwcm90bxoaZW51bV9ibHVlX3ByaW50X3R5cGUucHJvdG8ijgEKHVNh",
+            "dmVCbHVlUHJpbnRTaGFyZUNvZGVSZXF1ZXN0EhIKBHNsb3QYASABKAVSBHNs",
+            "b3QSOwoNYmx1ZVByaW50VHlwZRgCIAEoDjIVLnpwcm90by5CbHVlUHJpbnRU",
+            "eXBlUg1ibHVlUHJpbnRUeXBlEhwKCXNoYXJlQ29kZRgDIAEoCVIJc2hhcmVD",
+            "b2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumBluePrintTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "blue_print_type" field.</summary>
+    /// <summary>Field number for the "bluePrintType" field.</summary>
     public const int BluePrintTypeFieldNumber = 2;
     private global::Zproto.BluePrintType bluePrintType_ = global::Zproto.BluePrintType.Outer;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "share_code" field.</summary>
+    /// <summary>Field number for the "shareCode" field.</summary>
     public const int ShareCodeFieldNumber = 3;
     private string shareCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

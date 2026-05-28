@@ -25,11 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X21haGpvbmdfZmluYWxfc2V0dGxlX2luZm8ucHJvdG8SBnpwcm90",
-            "bxodc3RydV9tYWhqb25nX2F3YXJkX2l0ZW0ucHJvdG8itgEKFk1haGpvbmdG",
-            "aW5hbFNldHRsZUluZm8SEQoJcGxheWVyX2lkGAEgASgDEgwKBGNvaW4YAiAB",
-            "KAUSFQoNc2NvcmluZ19wb2ludBgDIAEoBRISCgpyYW5rX3Njb3JlGAQgASgF",
-            "EhMKC2NvaW5fY2hhbmdlGAUgASgFEjsKGWNsaWVudF9tYWhqb25nX2F3YXJk",
-            "X2l0ZW0YBiADKAsyGC56cHJvdG8uTWFoam9uZ0F3YXJkSXRlbWIGcHJvdG8z"));
+            "bxodc3RydV9tYWhqb25nX2F3YXJkX2l0ZW0ucHJvdG8i/AEKFk1haGpvbmdG",
+            "aW5hbFNldHRsZUluZm8SGgoIUGxheWVySWQYASABKANSCFBsYXllcklkEhIK",
+            "BENvaW4YAiABKAVSBENvaW4SIgoMU2NvcmluZ1BvaW50GAMgASgFUgxTY29y",
+            "aW5nUG9pbnQSHAoJUmFua1Njb3JlGAQgASgFUglSYW5rU2NvcmUSHgoKQ29p",
+            "bkNoYW5nZRgFIAEoBVIKQ29pbkNoYW5nZRJQChZjbGllbnRNYWhqb25nQXdh",
+            "cmRJdGVtGAYgAygLMhguenByb3RvLk1haGpvbmdBd2FyZEl0ZW1SFmNsaWVu",
+            "dE1haGpvbmdBd2FyZEl0ZW1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMahjongAwardItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +92,7 @@ namespace Zproto {
       return new MahjongFinalSettleInfo(this);
     }
 
-    /// <summary>Field number for the "player_id" field.</summary>
+    /// <summary>Field number for the "PlayerId" field.</summary>
     public const int PlayerIdFieldNumber = 1;
     private long playerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "coin" field.</summary>
+    /// <summary>Field number for the "Coin" field.</summary>
     public const int CoinFieldNumber = 2;
     private int coin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scoring_point" field.</summary>
+    /// <summary>Field number for the "ScoringPoint" field.</summary>
     public const int ScoringPointFieldNumber = 3;
     private int scoringPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +128,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rank_score" field.</summary>
+    /// <summary>Field number for the "RankScore" field.</summary>
     public const int RankScoreFieldNumber = 4;
     private int rankScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +140,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "coin_change" field.</summary>
+    /// <summary>Field number for the "CoinChange" field.</summary>
     public const int CoinChangeFieldNumber = 5;
     private int coinChange_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "client_mahjong_award_item" field.</summary>
+    /// <summary>Field number for the "clientMahjongAwardItem" field.</summary>
     public const int ClientMahjongAwardItemFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Zproto.MahjongAwardItem> _repeated_clientMahjongAwardItem_codec
         = pb::FieldCodec.ForMessage(50, global::Zproto.MahjongAwardItem.Parser);

@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "ChpzdHJ1X21haGpvbmdfY29udGV4dC5wcm90bxIGenByb3RvGhlzdHJ1X2dh",
             "bWVfdGFibGVfa2V5LnByb3RvGhlzdHJ1X21hdGNoX2tleV9pbmZvLnByb3Rv",
-            "IqoBCg5NYWhqb25nQ29udGV4dBISCgp0YWJsZV9ndWlkGAEgASgJEiwKDm1h",
-            "dGNoX2tleV9pbmZvGAIgASgLMhQuenByb3RvLk1hdGNoS2V5SW5mbxInCgl0",
-            "YWJsZV9rZXkYAyABKAsyFC56cHJvdG8uR2FtZVRhYmxlS2V5EhkKEW1haGpv",
-            "bmdfY29uZmlnX2lkGAQgASgFEhIKCndvcmxkX2d1aWQYBSABKAliBnByb3Rv",
-            "Mw=="));
+            "IuIBCg5NYWhqb25nQ29udGV4dBIcCgl0YWJsZUd1aWQYASABKAlSCXRhYmxl",
+            "R3VpZBI4CgxtYXRjaEtleUluZm8YAiABKAsyFC56cHJvdG8uTWF0Y2hLZXlJ",
+            "bmZvUgxtYXRjaEtleUluZm8SMAoIdGFibGVLZXkYAyABKAsyFC56cHJvdG8u",
+            "R2FtZVRhYmxlS2V5Ugh0YWJsZUtleRIoCg9tYWhqb25nQ29uZmlnSWQYBCAB",
+            "KAVSD21haGpvbmdDb25maWdJZBIcCgl3b3JsZEd1aWQYBSABKAlSCXdvcmxk",
+            "R3VpZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruGameTableKeyReflection.Descriptor, global::Zproto.StruMatchKeyInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new MahjongContext(this);
     }
 
-    /// <summary>Field number for the "table_guid" field.</summary>
+    /// <summary>Field number for the "tableGuid" field.</summary>
     public const int TableGuidFieldNumber = 1;
     private string tableGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_key_info" field.</summary>
+    /// <summary>Field number for the "matchKeyInfo" field.</summary>
     public const int MatchKeyInfoFieldNumber = 2;
     private global::Zproto.MatchKeyInfo matchKeyInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "table_key" field.</summary>
+    /// <summary>Field number for the "tableKey" field.</summary>
     public const int TableKeyFieldNumber = 3;
     private global::Zproto.GameTableKey tableKey_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mahjong_config_id" field.</summary>
+    /// <summary>Field number for the "mahjongConfigId" field.</summary>
     public const int MahjongConfigIdFieldNumber = 4;
     private int mahjongConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "world_guid" field.</summary>
+    /// <summary>Field number for the "worldGuid" field.</summary>
     public const int WorldGuidFieldNumber = 5;
     private string worldGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

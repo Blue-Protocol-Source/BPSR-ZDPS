@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X2xpZmVfcHJvZmVzc2lvbl9hbGNoZW15X2luZm8ucHJvdG8SBnpw",
-            "cm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIl0KGUxpZmVQcm9mZXNzaW9u",
-            "QWxjaGVteUluZm8SFQoNZmFpbHVyZV9jb3VudBgBIAEoDRIQCghyZF9jb3Vu",
-            "dBgCIAEoDRIXCg9sYXN0X3Jlc2V0X3RpbWUYAyABKANiBnByb3RvMw=="));
+            "cm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIn8KGUxpZmVQcm9mZXNzaW9u",
+            "QWxjaGVteUluZm8SIgoMZmFpbHVyZUNvdW50GAEgASgNUgxmYWlsdXJlQ291",
+            "bnQSGAoHcmRDb3VudBgCIAEoDVIHcmRDb3VudBIkCg1sYXN0UmVzZXRUaW1l",
+            "GAMgASgDUg1sYXN0UmVzZXRUaW1lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new LifeProfessionAlchemyInfo(this);
     }
 
-    /// <summary>Field number for the "failure_count" field.</summary>
+    /// <summary>Field number for the "failureCount" field.</summary>
     public const int FailureCountFieldNumber = 1;
     private uint failureCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rd_count" field.</summary>
+    /// <summary>Field number for the "rdCount" field.</summary>
     public const int RdCountFieldNumber = 2;
     private uint rdCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_reset_time" field.</summary>
+    /// <summary>Field number for the "lastResetTime" field.</summary>
     public const int LastResetTimeFieldNumber = 3;
     private long lastResetTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

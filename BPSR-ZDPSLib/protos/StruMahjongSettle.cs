@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X21haGpvbmdfc2V0dGxlLnByb3RvEgZ6cHJvdG8aHmVudW1fbWFo",
-            "am9uZ19zZXR0bGVfdHlwZS5wcm90byKLAQoNTWFoam9uZ1NldHRsZRIuCgtz",
-            "ZXR0bGVfdHlwZRgBIAEoDjIZLnpwcm90by5NYWhqb25nU2V0dGxlVHlwZRIR",
-            "CglwbGF5ZXJfaWQYAiABKAMSCgoCeWkYAyABKAUSCwoDaGFuGAQgASgFEg0K",
-            "BWZ1c2h1GAUgASgFEg8KB3NlY29uZHMYBiABKAViBnByb3RvMw=="));
+            "am9uZ19zZXR0bGVfdHlwZS5wcm90byK4AQoNTWFoam9uZ1NldHRsZRI5CgpT",
+            "ZXR0bGVUeXBlGAEgASgOMhkuenByb3RvLk1haGpvbmdTZXR0bGVUeXBlUgpT",
+            "ZXR0bGVUeXBlEhoKCFBsYXllcklkGAIgASgDUghQbGF5ZXJJZBIOCgJZaRgD",
+            "IAEoBVICWWkSEAoDSGFuGAQgASgFUgNIYW4SFAoFRnVzaHUYBSABKAVSBUZ1",
+            "c2h1EhgKB1NlY29uZHMYBiABKAVSB1NlY29uZHNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumMahjongSettleTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new MahjongSettle(this);
     }
 
-    /// <summary>Field number for the "settle_type" field.</summary>
+    /// <summary>Field number for the "SettleType" field.</summary>
     public const int SettleTypeFieldNumber = 1;
     private global::Zproto.MahjongSettleType settleType_ = global::Zproto.MahjongSettleType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "player_id" field.</summary>
+    /// <summary>Field number for the "PlayerId" field.</summary>
     public const int PlayerIdFieldNumber = 2;
     private long playerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "yi" field.</summary>
+    /// <summary>Field number for the "Yi" field.</summary>
     public const int YiFieldNumber = 3;
     private int yi_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "han" field.</summary>
+    /// <summary>Field number for the "Han" field.</summary>
     public const int HanFieldNumber = 4;
     private int han_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fushu" field.</summary>
+    /// <summary>Field number for the "Fushu" field.</summary>
     public const int FushuFieldNumber = 5;
     private int fushu_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,7 +150,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "seconds" field.</summary>
+    /// <summary>Field number for the "Seconds" field.</summary>
     public const int SecondsFieldNumber = 6;
     private int seconds_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

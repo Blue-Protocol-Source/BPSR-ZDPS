@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X2FjdGlvbl9ncm91cF9pbmZvLnByb3RvEgZ6cHJvdG8aHXN0cnVf",
             "YWN0aW9uX2dyb3VwX3RyYWNrLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJv",
-            "dG8iaQoPQWN0aW9uR3JvdXBJbmZvEhcKD2FjdGlvbl9ncm91cF9pZBgBIAEo",
-            "BRIQCghkdXJhdGlvbhgCIAEoAhIrCglsaW5lX2xpc3QYAyADKAsyGC56cHJv",
-            "dG8uQWN0aW9uR3JvdXBUcmFja2IGcHJvdG8z"));
+            "dG8iiQEKD0FjdGlvbkdyb3VwSW5mbxIkCg1hY3Rpb25Hcm91cElkGAEgASgF",
+            "Ug1hY3Rpb25Hcm91cElkEhoKCGR1cmF0aW9uGAIgASgCUghkdXJhdGlvbhI0",
+            "CghsaW5lTGlzdBgDIAMoCzIYLnpwcm90by5BY3Rpb25Hcm91cFRyYWNrUghs",
+            "aW5lTGlzdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActionGroupTrackReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new ActionGroupInfo(this);
     }
 
-    /// <summary>Field number for the "action_group_id" field.</summary>
+    /// <summary>Field number for the "actionGroupId" field.</summary>
     public const int ActionGroupIdFieldNumber = 1;
     private int actionGroupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "line_list" field.</summary>
+    /// <summary>Field number for the "lineList" field.</summary>
     public const int LineListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.ActionGroupTrack> _repeated_lineList_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.ActionGroupTrack.Parser);

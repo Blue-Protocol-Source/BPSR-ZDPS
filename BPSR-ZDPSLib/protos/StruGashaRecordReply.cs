@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X2dhc2hhX3JlY29yZF9yZXBseS5wcm90bxIGenByb3RvGhdlbnVt",
             "X2VfZXJyb3JfY29kZS5wcm90bxoXc3RydV9nYXNoYV9yZWNvcmQucHJvdG8i",
-            "nwEKEEdhc2hhUmVjb3JkUmVwbHkSLwoSZ2FzaGFfcmVjb3JkX2RhdGFzGAIg",
-            "ASgLMhMuenByb3RvLkdhc2hhUmVjb3JkEhAKCHN0YXJ0X2lkGAMgASgNEg0K",
-            "BWNvdW50GAQgASgNEhMKC3RvdGFsX2NvdW50GAUgASgNEiQKCGVycl9jb2Rl",
-            "GAYgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "0QEKEEdhc2hhUmVjb3JkUmVwbHkSPwoQZ2FzaGFSZWNvcmREYXRhcxgCIAEo",
+            "CzITLnpwcm90by5HYXNoYVJlY29yZFIQZ2FzaGFSZWNvcmREYXRhcxIYCgdz",
+            "dGFydElkGAMgASgNUgdzdGFydElkEhQKBWNvdW50GAQgASgNUgVjb3VudBIe",
+            "Cgp0b3RhbENvdW50GAUgASgNUgp0b3RhbENvdW50EiwKB2VyckNvZGUYBiAB",
+            "KA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruGashaRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new GashaRecordReply(this);
     }
 
-    /// <summary>Field number for the "gasha_record_datas" field.</summary>
+    /// <summary>Field number for the "gashaRecordDatas" field.</summary>
     public const int GashaRecordDatasFieldNumber = 2;
     private global::Zproto.GashaRecord gashaRecordDatas_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "start_id" field.</summary>
+    /// <summary>Field number for the "startId" field.</summary>
     public const int StartIdFieldNumber = 3;
     private uint startId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "total_count" field.</summary>
+    /// <summary>Field number for the "totalCount" field.</summary>
     public const int TotalCountFieldNumber = 5;
     private uint totalCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

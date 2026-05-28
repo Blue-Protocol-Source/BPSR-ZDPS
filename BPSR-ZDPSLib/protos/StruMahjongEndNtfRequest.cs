@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X21haGpvbmdfZW5kX250Zl9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8a",
             "JWVudW1fbGVhdmVfbWFoam9uZ190YWJsZV9yZWFzb24ucHJvdG8aGnN0cnVf",
-            "bWFoam9uZ19jb250ZXh0LnByb3RvIoQBChRNYWhqb25nRW5kTnRmUmVxdWVz",
-            "dBInCgdjb250ZXh0GAEgASgLMhYuenByb3RvLk1haGpvbmdDb250ZXh0EkMK",
-            "GmxlYXZlX21haGpvbmdfdGFibGVfcmVhc29uGAIgASgOMh8uenByb3RvLkxl",
-            "YXZlTWFoam9uZ1RhYmxlUmVhc29uYgZwcm90bzM="));
+            "bWFoam9uZ19jb250ZXh0LnByb3RvIqMBChRNYWhqb25nRW5kTnRmUmVxdWVz",
+            "dBIwCgdjb250ZXh0GAEgASgLMhYuenByb3RvLk1haGpvbmdDb250ZXh0Ugdj",
+            "b250ZXh0ElkKF2xlYXZlTWFoam9uZ1RhYmxlUmVhc29uGAIgASgOMh8uenBy",
+            "b3RvLkxlYXZlTWFoam9uZ1RhYmxlUmVhc29uUhdsZWF2ZU1haGpvbmdUYWJs",
+            "ZVJlYXNvbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumLeaveMahjongTableReasonReflection.Descriptor, global::Zproto.StruMahjongContextReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "leave_mahjong_table_reason" field.</summary>
+    /// <summary>Field number for the "leaveMahjongTableReason" field.</summary>
     public const int LeaveMahjongTableReasonFieldNumber = 2;
     private global::Zproto.LeaveMahjongTableReason leaveMahjongTableReason_ = global::Zproto.LeaveMahjongTableReason.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

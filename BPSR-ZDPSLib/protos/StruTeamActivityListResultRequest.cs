@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CixzdHJ1X3RlYW1fYWN0aXZpdHlfbGlzdF9yZXN1bHRfcmVxdWVzdC5wcm90",
             "bxIGenByb3RvGiRzdHJ1X3RlYW1fZHVuZ2Vvbl9jaGVja19yZXN1bHQucHJv",
-            "dG8iTwodVGVhbUFjdGl2aXR5TGlzdFJlc3VsdFJlcXVlc3QSLgoGcmVzdWx0",
-            "GAEgASgLMh4uenByb3RvLlRlYW1EdW5nZW9uQ2hlY2tSZXN1bHRiBnByb3Rv",
-            "Mw=="));
+            "dG8iVwodVGVhbUFjdGl2aXR5TGlzdFJlc3VsdFJlcXVlc3QSNgoGcmVzdWx0",
+            "GAEgASgLMh4uenByb3RvLlRlYW1EdW5nZW9uQ2hlY2tSZXN1bHRSBnJlc3Vs",
+            "dGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTeamDungeonCheckResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

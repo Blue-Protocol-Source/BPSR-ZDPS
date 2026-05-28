@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X2N1dF9zY2VuZV9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVfZXZl",
-            "bnRfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvImsKDEN1dFNj",
-            "ZW5lSW5mbxIUCgxjdXRfc2NlbmVfaWQYASABKAUSDAoEZmxhZxgCIAEoDRIQ",
-            "CghzY2VuZV9pZBgDIAEoDRIlCgpldmVudF9kYXRhGAQgASgLMhEuenByb3Rv",
-            "LkV2ZW50RGF0YWIGcHJvdG8z"));
+            "bnRfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIo0BCgxDdXRT",
+            "Y2VuZUluZm8SHgoKY3V0U2NlbmVJZBgBIAEoBVIKY3V0U2NlbmVJZBISCgRm",
+            "bGFnGAIgASgNUgRmbGFnEhgKB3NjZW5lSWQYAyABKA1SB3NjZW5lSWQSLwoJ",
+            "ZXZlbnREYXRhGAQgASgLMhEuenByb3RvLkV2ZW50RGF0YVIJZXZlbnREYXRh",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruEventDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new CutSceneInfo(this);
     }
 
-    /// <summary>Field number for the "cut_scene_id" field.</summary>
+    /// <summary>Field number for the "cutSceneId" field.</summary>
     public const int CutSceneIdFieldNumber = 1;
     private int cutSceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
+    /// <summary>Field number for the "sceneId" field.</summary>
     public const int SceneIdFieldNumber = 3;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "event_data" field.</summary>
+    /// <summary>Field number for the "eventData" field.</summary>
     public const int EventDataFieldNumber = 4;
     private global::Zproto.EventData eventData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X2NvbW11bml0eV9raWNrX3BsYXllcl9yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8iawoaQ29tbXVuaXR5S2lja1BsYXllclJlcXVlc3QSFAoMY29tbXVu",
-            "aXR5X2lkGAEgASgDEhMKC2hvbWVsYW5kX2lkGAIgASgDEhAKCGNoYXJfaWRz",
-            "GAMgAygDEhAKCGlzX291dGVyGAQgASgIYgZwcm90bzM="));
+            "cHJvdG8ikgEKGkNvbW11bml0eUtpY2tQbGF5ZXJSZXF1ZXN0EiAKC2NvbW11",
+            "bml0eUlkGAEgASgDUgtjb21tdW5pdHlJZBIeCgpob21lbGFuZElkGAIgASgD",
+            "Ugpob21lbGFuZElkEhgKB2NoYXJJZHMYAyADKANSB2NoYXJJZHMSGAoHaXNP",
+            "dXRlchgEIAEoCFIHaXNPdXRlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new CommunityKickPlayerRequest(this);
     }
 
-    /// <summary>Field number for the "community_id" field.</summary>
+    /// <summary>Field number for the "communityId" field.</summary>
     public const int CommunityIdFieldNumber = 1;
     private long communityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 2;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_ids" field.</summary>
+    /// <summary>Field number for the "charIds" field.</summary>
     public const int CharIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_charIds_codec
         = pb::FieldCodec.ForInt64(26);
@@ -121,7 +122,7 @@ namespace Zproto {
       get { return charIds_; }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 4;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2V4Y2hhbmdlX2luZm8ucHJvdG8SBnpwcm90bxoYc3RydV9leGNo",
-            "YW5nZV9kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ipAEKDEV4",
-            "Y2hhbmdlSW5mbxIKCgJpZBgBIAEoBRI9Cg1leGNoYW5nZV9kYXRhGAIgAygL",
-            "MiYuenByb3RvLkV4Y2hhbmdlSW5mby5FeGNoYW5nZURhdGFFbnRyeRpJChFF",
-            "eGNoYW5nZURhdGFFbnRyeRILCgNrZXkYASABKAUSIwoFdmFsdWUYAiABKAsy",
-            "FC56cHJvdG8uRXhjaGFuZ2VEYXRhOgI4AWIGcHJvdG8z"));
+            "YW5nZV9kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8itQEKDEV4",
+            "Y2hhbmdlSW5mbxIOCgJpZBgBIAEoBVICaWQSSgoMZXhjaGFuZ2VEYXRhGAIg",
+            "AygLMiYuenByb3RvLkV4Y2hhbmdlSW5mby5FeGNoYW5nZURhdGFFbnRyeVIM",
+            "ZXhjaGFuZ2VEYXRhGkkKEUV4Y2hhbmdlRGF0YUVudHJ5EgsKA2tleRgBIAEo",
+            "BRIjCgV2YWx1ZRgCIAEoCzIULnpwcm90by5FeGNoYW5nZURhdGE6AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruExchangeDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "exchange_data" field.</summary>
+    /// <summary>Field number for the "exchangeData" field.</summary>
     public const int ExchangeDataFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.ExchangeData>.Codec _map_exchangeData_codec
         = new pbc::MapField<int, global::Zproto.ExchangeData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ExchangeData.Parser), 18);

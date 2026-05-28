@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci9zdHJ1X2NvbW11bml0eV9idWlsZF9saWZlX3Byb2Zlc3Npb25faW5mby5w",
-            "cm90bxIGenByb3RvGg9zdHJ1X2l0ZW0ucHJvdG8iugEKIENvbW11bml0eUJ1",
-            "aWxkTGlmZVByb2Zlc3Npb25JbmZvEhIKCmJ1aWxkX3V1aWQYASABKAMSDwoH",
-            "Y2hhcl9pZBgCIAEoAxISCgpzdGFydF90aW1lGAMgASgDEg8KB2l0ZW1faWQY",
-            "BCABKAUSEgoKaXRlbV9jb3VudBgFIAEoBRIjCg1jb25zdW1lX2l0ZW1zGAYg",
-            "AygLMgwuenByb3RvLkl0ZW0SEwoLcmVkdWNlX3RpbWUYByABKAViBnByb3Rv",
-            "Mw=="));
+            "cm90bxIGenByb3RvGg9zdHJ1X2l0ZW0ucHJvdG8i/gEKIENvbW11bml0eUJ1",
+            "aWxkTGlmZVByb2Zlc3Npb25JbmZvEhwKCWJ1aWxkVXVpZBgBIAEoA1IJYnVp",
+            "bGRVdWlkEhYKBmNoYXJJZBgCIAEoA1IGY2hhcklkEhwKCXN0YXJ0VGltZRgD",
+            "IAEoA1IJc3RhcnRUaW1lEhYKBml0ZW1JZBgEIAEoBVIGaXRlbUlkEhwKCWl0",
+            "ZW1Db3VudBgFIAEoBVIJaXRlbUNvdW50EjAKDGNvbnN1bWVJdGVtcxgGIAMo",
+            "CzIMLnpwcm90by5JdGVtUgxjb25zdW1lSXRlbXMSHgoKcmVkdWNlVGltZRgH",
+            "IAEoBVIKcmVkdWNlVGltZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +93,7 @@ namespace Zproto {
       return new CommunityBuildLifeProfessionInfo(this);
     }
 
-    /// <summary>Field number for the "build_uuid" field.</summary>
+    /// <summary>Field number for the "buildUuid" field.</summary>
     public const int BuildUuidFieldNumber = 1;
     private long buildUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "start_time" field.</summary>
+    /// <summary>Field number for the "startTime" field.</summary>
     public const int StartTimeFieldNumber = 3;
     private long startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
+    /// <summary>Field number for the "itemId" field.</summary>
     public const int ItemIdFieldNumber = 4;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_count" field.</summary>
+    /// <summary>Field number for the "itemCount" field.</summary>
     public const int ItemCountFieldNumber = 5;
     private int itemCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "consume_items" field.</summary>
+    /// <summary>Field number for the "consumeItems" field.</summary>
     public const int ConsumeItemsFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Zproto.Item> _repeated_consumeItems_codec
         = pb::FieldCodec.ForMessage(50, global::Zproto.Item.Parser);
@@ -163,7 +164,7 @@ namespace Zproto {
       get { return consumeItems_; }
     }
 
-    /// <summary>Field number for the "reduce_time" field.</summary>
+    /// <summary>Field number for the "reduceTime" field.</summary>
     public const int ReduceTimeFieldNumber = 7;
     private int reduceTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X3JlcV9qb2luX3VuaW9uc19yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "OQoUUmVxSm9pblVuaW9uc1JlcXVlc3QSEQoJdW5pb25faWRzGAIgAygDEg4K",
-            "BmlzX2FsbBgDIAEoCGIGcHJvdG8z"));
+            "SAoUUmVxSm9pblVuaW9uc1JlcXVlc3QSGgoIdW5pb25JZHMYAiADKANSCHVu",
+            "aW9uSWRzEhQKBWlzQWxsGAMgASgIUgVpc0FsbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ReqJoinUnionsRequest(this);
     }
 
-    /// <summary>Field number for the "union_ids" field.</summary>
+    /// <summary>Field number for the "unionIds" field.</summary>
     public const int UnionIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_unionIds_codec
         = pb::FieldCodec.ForInt64(18);
@@ -94,7 +94,7 @@ namespace Zproto {
       get { return unionIds_; }
     }
 
-    /// <summary>Field number for the "is_all" field.</summary>
+    /// <summary>Field number for the "isAll" field.</summary>
     public const int IsAllFieldNumber = 3;
     private bool isAll_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

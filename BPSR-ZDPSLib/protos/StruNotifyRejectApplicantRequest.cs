@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X25vdGlmeV9yZWplY3RfYXBwbGljYW50X3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byJGChxOb3RpZnlSZWplY3RBcHBsaWNhbnRSZXF1ZXN0EhMKC2xl",
-            "YWRlcl9uYW1lGAEgASgJEhEKCWxlYWRlcl9pZBgCIAEoA2IGcHJvdG8z"));
+            "Bnpwcm90byJaChxOb3RpZnlSZWplY3RBcHBsaWNhbnRSZXF1ZXN0Eh4KCmxl",
+            "YWRlck5hbWUYASABKAlSCmxlYWRlck5hbWUSGgoIbGVhZGVySWQYAiABKANS",
+            "CGxlYWRlcklkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new NotifyRejectApplicantRequest(this);
     }
 
-    /// <summary>Field number for the "leader_name" field.</summary>
+    /// <summary>Field number for the "leaderName" field.</summary>
     public const int LeaderNameFieldNumber = 1;
     private string leaderName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "leader_id" field.</summary>
+    /// <summary>Field number for the "leaderId" field.</summary>
     public const int LeaderIdFieldNumber = 2;
     private long leaderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

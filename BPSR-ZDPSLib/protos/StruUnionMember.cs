@@ -24,10 +24,12 @@ namespace Zproto {
     static StruUnionMemberReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdzdHJ1X3VuaW9uX21lbWJlci5wcm90bxIGenByb3RvIoABCgtVbmlvbk1l",
-            "bWJlchITCgtvZmZpY2lhbF9pZBgBIAEoBRIOCgZtZW1faWQYAiABKAMSEQoJ",
-            "am9pbl90aW1lGAMgASgDEhoKEndlZWtfYWN0aXZlX3BvaW50cxgEIAEoAxId",
-            "ChVoaXN0b3J5X2FjdGl2ZV9wb2ludHMYBSABKANiBnByb3RvMw=="));
+            "ChdzdHJ1X3VuaW9uX21lbWJlci5wcm90bxIGenByb3RvIr0BCgtVbmlvbk1l",
+            "bWJlchIeCgpvZmZpY2lhbElkGAEgASgFUgpvZmZpY2lhbElkEhQKBW1lbUlk",
+            "GAIgASgDUgVtZW1JZBIaCghqb2luVGltZRgDIAEoA1IIam9pblRpbWUSKgoQ",
+            "d2Vla0FjdGl2ZVBvaW50cxgEIAEoA1IQd2Vla0FjdGl2ZVBvaW50cxIwChNo",
+            "aXN0b3J5QWN0aXZlUG9pbnRzGAUgASgDUhNoaXN0b3J5QWN0aXZlUG9pbnRz",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +89,7 @@ namespace Zproto {
       return new UnionMember(this);
     }
 
-    /// <summary>Field number for the "official_id" field.</summary>
+    /// <summary>Field number for the "officialId" field.</summary>
     public const int OfficialIdFieldNumber = 1;
     private int officialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mem_id" field.</summary>
+    /// <summary>Field number for the "memId" field.</summary>
     public const int MemIdFieldNumber = 2;
     private long memId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "join_time" field.</summary>
+    /// <summary>Field number for the "joinTime" field.</summary>
     public const int JoinTimeFieldNumber = 3;
     private long joinTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "week_active_points" field.</summary>
+    /// <summary>Field number for the "weekActivePoints" field.</summary>
     public const int WeekActivePointsFieldNumber = 4;
     private long weekActivePoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "history_active_points" field.</summary>
+    /// <summary>Field number for the "historyActivePoints" field.</summary>
     public const int HistoryActivePointsFieldNumber = 5;
     private long historyActivePoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

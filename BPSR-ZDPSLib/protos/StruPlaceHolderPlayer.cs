@@ -24,9 +24,9 @@ namespace Zproto {
     static StruPlaceHolderPlayerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X3BsYWNlX2hvbGRlcl9wbGF5ZXIucHJvdG8SBnpwcm90byIyChFQ",
-            "bGFjZUhvbGRlclBsYXllchIPCgdjaGFyX2lkGAEgASgDEgwKBG5hbWUYAiAB",
-            "KAliBnByb3RvMw=="));
+            "Ch5zdHJ1X3BsYWNlX2hvbGRlcl9wbGF5ZXIucHJvdG8SBnpwcm90byI/ChFQ",
+            "bGFjZUhvbGRlclBsYXllchIWCgZjaGFySWQYASABKANSBmNoYXJJZBISCgRu",
+            "YW1lGAIgASgJUgRuYW1lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new PlaceHolderPlayer(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

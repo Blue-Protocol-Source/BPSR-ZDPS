@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X2dldF9mYWNlX3VwX3Rva2VuX250Zl9yZXF1ZXN0LnByb3RvEgZ6",
             "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhtzdHJ1X3RtcF90b2tl",
-            "bl9yZXN1bHQucHJvdG8ifAoYR2V0RmFjZVVwVG9rZW5OdGZSZXF1ZXN0EiQK",
-            "CGVycl9jb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUSJgoGcmVzdWx0",
-            "GAIgASgLMhYuenByb3RvLlRtcFRva2VuUmVzdWx0EhIKCnNob3J0X2d1aWQY",
-            "AyABKAliBnByb3RvMw=="));
+            "bl9yZXN1bHQucHJvdG8ilgEKGEdldEZhY2VVcFRva2VuTnRmUmVxdWVzdBIs",
+            "CgdlcnJDb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGUS",
+            "LgoGcmVzdWx0GAIgASgLMhYuenByb3RvLlRtcFRva2VuUmVzdWx0UgZyZXN1",
+            "bHQSHAoJc2hvcnRHdWlkGAMgASgJUglzaG9ydEd1aWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruTmpTokenResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new GetFaceUpTokenNtfRequest(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "short_guid" field.</summary>
+    /// <summary>Field number for the "shortGuid" field.</summary>
     public const int ShortGuidFieldNumber = 3;
     private string shortGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

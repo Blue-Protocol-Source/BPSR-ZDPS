@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzZXJ2X2FjZV9zZGtfbnRmLnByb3RvEgZ6cHJvdG8aKXN0cnVfbm90aWZ5",
-            "X2xvZ2luX2FudGlfZGF0YV9yZXF1ZXN0LnByb3RvIlkKCUFjZVNka050ZhpM",
-            "ChNOb3RpZnlMb2dpbkFudGlEYXRhEjUKCXZfcmVxdWVzdBgBIAEoCzIiLnpw",
-            "cm90by5Ob3RpZnlMb2dpbkFudGlEYXRhUmVxdWVzdGIGcHJvdG8z"));
+            "X2xvZ2luX2FudGlfZGF0YV9yZXF1ZXN0LnByb3RvImIKCUFjZVNka050ZhpV",
+            "ChNOb3RpZnlMb2dpbkFudGlEYXRhEj4KCHZSZXF1ZXN0GAEgASgLMiIuenBy",
+            "b3RvLk5vdGlmeUxvZ2luQW50aURhdGFSZXF1ZXN0Ugh2UmVxdWVzdGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNotifyLoginAntiDataRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -247,7 +248,7 @@ namespace Zproto {
           return new NotifyLoginAntiData(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyLoginAntiDataRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

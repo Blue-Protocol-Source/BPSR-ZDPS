@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X3VwbG9hZF9waG90b19zdWNjZXNzZnVsX3JlcGx5LnByb3RvEgZ6",
-            "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIlwKGlVwbG9hZFBob3Rv",
-            "U3VjY2Vzc2Z1bFJlcGx5EhgKEGN1cl91cGxvYWRfdGltZXMYAiABKAUSJAoI",
-            "ZXJyX2NvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvInIKGlVwbG9hZFBob3Rv",
+            "U3VjY2Vzc2Z1bFJlcGx5EiYKDmN1clVwbG9hZFRpbWVzGAIgASgFUg5jdXJV",
+            "cGxvYWRUaW1lcxIsCgdlcnJDb2RlGAMgASgOMhIuenByb3RvLkVFcnJvckNv",
+            "ZGVSB2VyckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new UploadPhotoSuccessfulReply(this);
     }
 
-    /// <summary>Field number for the "cur_upload_times" field.</summary>
+    /// <summary>Field number for the "curUploadTimes" field.</summary>
     public const int CurUploadTimesFieldNumber = 2;
     private int curUploadTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

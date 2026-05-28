@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X25vdGlmeV93YXJlaG91c2VfbmV3X2pvaW5lcl9yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8iNwofTm90aWZ5V2FyZWhvdXNlTmV3Sm9pbmVyUmVxdWVz",
-            "dBIUCgxqb2luX2NoYXJfaWQYASABKANiBnByb3RvMw=="));
+            "b3RvEgZ6cHJvdG8iQQofTm90aWZ5V2FyZWhvdXNlTmV3Sm9pbmVyUmVxdWVz",
+            "dBIeCgpqb2luQ2hhcklkGAEgASgDUgpqb2luQ2hhcklkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new NotifyWarehouseNewJoinerRequest(this);
     }
 
-    /// <summary>Field number for the "join_char_id" field.</summary>
+    /// <summary>Field number for the "joinCharId" field.</summary>
     public const int JoinCharIdFieldNumber = 1;
     private long joinCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

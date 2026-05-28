@@ -24,8 +24,9 @@ namespace Zproto {
     static StruDeleteAlbumRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2RlbGV0ZV9hbGJ1bV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iJgoS",
-            "RGVsZXRlQWxidW1SZXF1ZXN0EhAKCGFsYnVtX2lkGAIgASgNYgZwcm90bzM="));
+            "Ch9zdHJ1X2RlbGV0ZV9hbGJ1bV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iLgoS",
+            "RGVsZXRlQWxidW1SZXF1ZXN0EhgKB2FsYnVtSWQYAiABKA1SB2FsYnVtSWRi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new DeleteAlbumRequest(this);
     }
 
-    /// <summary>Field number for the "album_id" field.</summary>
+    /// <summary>Field number for the "albumId" field.</summary>
     public const int AlbumIdFieldNumber = 2;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

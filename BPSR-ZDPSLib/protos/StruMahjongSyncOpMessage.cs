@@ -27,13 +27,14 @@ namespace Zproto {
             "CiJzdHJ1X21haGpvbmdfc3luY19vcF9tZXNzYWdlLnByb3RvEgZ6cHJvdG8a",
             "HHN0cnVfbWFoam9uZ19vcGVyYXRpb24ucHJvdG8aHnN0cnVfbWFoam9uZ19w",
             "bGF5ZXJfc2VsZi5wcm90bxoec3RydV9tYWhqb25nX3BsYXllcl9zaG93LnBy",
-            "b3RvIoUCChRNYWhqb25nU3luY09wTWVzc2FnZRIrCglvcGVyYXRpb24YASAB",
-            "KAsyGC56cHJvdG8uTWFoam9uZ09wZXJhdGlvbhINCgVkb3JhcxgCIAMoBRIV",
-            "Cg1jdXJyZW50X2luZGV4GAMgASgFEhMKC2xpemhpX2NvdW50GAQgASgFEhUK",
-            "DWhvbmJhX2NvdW50ZXIYBSABKAUSEgoKY2FyZF9pbmRleBgGIAEoBRIqCgdw",
-            "bGF5ZXJzGAcgAygLMhkuenByb3RvLk1haGpvbmdQbGF5ZXJTaG93Ei4KC3Bs",
-            "YXllcl9zZWxmGAggASgLMhkuenByb3RvLk1haGpvbmdQbGF5ZXJTZWxmYgZw",
-            "cm90bzM="));
+            "b3RvItoCChRNYWhqb25nU3luY09wTWVzc2FnZRI2CglPcGVyYXRpb24YASAB",
+            "KAsyGC56cHJvdG8uTWFoam9uZ09wZXJhdGlvblIJT3BlcmF0aW9uEhQKBURv",
+            "cmFzGAIgAygFUgVEb3JhcxIiCgxDdXJyZW50SW5kZXgYAyABKAVSDEN1cnJl",
+            "bnRJbmRleBIeCgpMaXpoaUNvdW50GAQgASgFUgpMaXpoaUNvdW50EiIKDEhv",
+            "bmJhQ291bnRlchgFIAEoBVIMSG9uYmFDb3VudGVyEhwKCUNhcmRJbmRleBgG",
+            "IAEoBVIJQ2FyZEluZGV4EjMKB1BsYXllcnMYByADKAsyGS56cHJvdG8uTWFo",
+            "am9uZ1BsYXllclNob3dSB1BsYXllcnMSOQoKUGxheWVyU2VsZhgIIAEoCzIZ",
+            "Lnpwcm90by5NYWhqb25nUGxheWVyU2VsZlIKUGxheWVyU2VsZmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMahjongOperationReflection.Descriptor, global::Zproto.StruMahjongPlayerSelfReflection.Descriptor, global::Zproto.StruMahjongPlayerShowReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +97,7 @@ namespace Zproto {
       return new MahjongSyncOpMessage(this);
     }
 
-    /// <summary>Field number for the "operation" field.</summary>
+    /// <summary>Field number for the "Operation" field.</summary>
     public const int OperationFieldNumber = 1;
     private global::Zproto.MahjongOperation operation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "doras" field.</summary>
+    /// <summary>Field number for the "Doras" field.</summary>
     public const int DorasFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_doras_codec
         = pb::FieldCodec.ForInt32(18);
@@ -119,7 +120,7 @@ namespace Zproto {
       get { return doras_; }
     }
 
-    /// <summary>Field number for the "current_index" field.</summary>
+    /// <summary>Field number for the "CurrentIndex" field.</summary>
     public const int CurrentIndexFieldNumber = 3;
     private int currentIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,7 +132,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lizhi_count" field.</summary>
+    /// <summary>Field number for the "LizhiCount" field.</summary>
     public const int LizhiCountFieldNumber = 4;
     private int lizhiCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,7 +144,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "honba_counter" field.</summary>
+    /// <summary>Field number for the "HonbaCounter" field.</summary>
     public const int HonbaCounterFieldNumber = 5;
     private int honbaCounter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,7 +156,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "card_index" field.</summary>
+    /// <summary>Field number for the "CardIndex" field.</summary>
     public const int CardIndexFieldNumber = 6;
     private int cardIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +168,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "players" field.</summary>
+    /// <summary>Field number for the "Players" field.</summary>
     public const int PlayersFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Zproto.MahjongPlayerShow> _repeated_players_codec
         = pb::FieldCodec.ForMessage(58, global::Zproto.MahjongPlayerShow.Parser);
@@ -178,7 +179,7 @@ namespace Zproto {
       get { return players_; }
     }
 
-    /// <summary>Field number for the "player_self" field.</summary>
+    /// <summary>Field number for the "PlayerSelf" field.</summary>
     public const int PlayerSelfFieldNumber = 8;
     private global::Zproto.MahjongPlayerSelf playerSelf_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

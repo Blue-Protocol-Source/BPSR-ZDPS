@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X3NldF91bmlvbl9lX3NjcmVlbl9waG90b19yZXBseS5wcm90bxIG",
-            "enByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byJvChlTZXRVbmlvbkVT",
-            "Y3JlZW5QaG90b1JlcGx5EhUKDWN1cl9zZXRfdGltZXMYASABKAUSFQoNbWF4",
-            "X3NldF90aW1lcxgCIAEoBRIkCghlcnJfY29kZRgDIAEoDjISLnpwcm90by5F",
-            "RXJyb3JDb2RlYgZwcm90bzM="));
+            "enByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byKNAQoZU2V0VW5pb25F",
+            "U2NyZWVuUGhvdG9SZXBseRIgCgtjdXJTZXRUaW1lcxgBIAEoBVILY3VyU2V0",
+            "VGltZXMSIAoLbWF4U2V0VGltZXMYAiABKAVSC21heFNldFRpbWVzEiwKB2Vy",
+            "ckNvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new SetUnionEScreenPhotoReply(this);
     }
 
-    /// <summary>Field number for the "cur_set_times" field.</summary>
+    /// <summary>Field number for the "curSetTimes" field.</summary>
     public const int CurSetTimesFieldNumber = 1;
     private int curSetTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "max_set_times" field.</summary>
+    /// <summary>Field number for the "maxSetTimes" field.</summary>
     public const int MaxSetTimesFieldNumber = 2;
     private int maxSetTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X25vdGlmeV93YXJlaG91c2VfaW52aXRlX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byJFChxOb3RpZnlXYXJlaG91c2VJbnZpdGVSZXF1ZXN0Eg8KB2No",
-            "YXJfaWQYASABKAMSFAoMd2FyZWhvdXNlX2lkGAIgASgDYgZwcm90bzM="));
+            "Bnpwcm90byJYChxOb3RpZnlXYXJlaG91c2VJbnZpdGVSZXF1ZXN0EhYKBmNo",
+            "YXJJZBgBIAEoA1IGY2hhcklkEiAKC3dhcmVob3VzZUlkGAIgASgDUgt3YXJl",
+            "aG91c2VJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new NotifyWarehouseInviteRequest(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "warehouse_id" field.</summary>
+    /// <summary>Field number for the "warehouseId" field.</summary>
     public const int WarehouseIdFieldNumber = 2;
     private long warehouseId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

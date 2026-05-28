@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "CitzdHJ1X3NlZWRpbmdfdXBkYXRlX3N0cnVjdHVyZV9yZXF1ZXN0LnByb3Rv",
             "EgZ6cHJvdG8aInN0cnVfaG9tZV9sYW5kX2l0ZW1faW5zdGFuY2UucHJvdG8a",
-            "HHN0cnVfc3RydWN0dXJlX2xhbmRfb3AucHJvdG8iigEKHVNlZWRpbmdVcGRh",
-            "dGVTdHJ1Y3R1cmVSZXF1ZXN0Eg8KB2hvbWVfaWQYASABKAMSIwoCb3AYAiAB",
-            "KAsyFy56cHJvdG8uU3RydWN0dXJlTGFuZE9wEjMKDWl0ZW1faW5zdGFuY2UY",
-            "AyABKAsyHC56cHJvdG8uSG9tZUxhbmRJdGVtSW5zdGFuY2ViBnByb3RvMw=="));
+            "HHN0cnVfc3RydWN0dXJlX2xhbmRfb3AucHJvdG8iogEKHVNlZWRpbmdVcGRh",
+            "dGVTdHJ1Y3R1cmVSZXF1ZXN0EhYKBmhvbWVJZBgBIAEoA1IGaG9tZUlkEicK",
+            "Am9wGAIgASgLMhcuenByb3RvLlN0cnVjdHVyZUxhbmRPcFICb3ASQAoMaXRl",
+            "bUluc3RhbmNlGAMgASgLMhwuenByb3RvLkhvbWVMYW5kSXRlbUluc3RhbmNl",
+            "UgxpdGVtSW5zdGFuY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomeLandItemInstanceReflection.Descriptor, global::Zproto.StruStructureLandOpReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new SeedingUpdateStructureRequest(this);
     }
 
-    /// <summary>Field number for the "home_id" field.</summary>
+    /// <summary>Field number for the "homeId" field.</summary>
     public const int HomeIdFieldNumber = 1;
     private long homeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_instance" field.</summary>
+    /// <summary>Field number for the "itemInstance" field.</summary>
     public const int ItemInstanceFieldNumber = 3;
     private global::Zproto.HomeLandItemInstance itemInstance_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

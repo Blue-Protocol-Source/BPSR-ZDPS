@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X3Byb2plY3RfZXh0cmFfc3luY19kYXRhLnByb3RvEgZ6cHJvdG8a",
-            "IXN0cnVfcHJvZmVzc2lvbl90YWxlbnRfaW5mby5wcm90byLkAQoUUHJvamVj",
-            "dEV4dHJhU3luY0RhdGESPAoWY3VycmVudF90YWxlbnRfaWRfbGlzdBgBIAEo",
-            "CzIcLnpwcm90by5Qcm9mZXNzaW9uVGFsZW50SW5mbxJTChVjdXJyZW50X3Nr",
-            "aWxsX2lkX2xpc3QYAiADKAsyNC56cHJvdG8uUHJvamVjdEV4dHJhU3luY0Rh",
-            "dGEuQ3VycmVudFNraWxsSWRMaXN0RW50cnkaOQoXQ3VycmVudFNraWxsSWRM",
-            "aXN0RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJv",
-            "dG8z"));
+            "IXN0cnVfcHJvZmVzc2lvbl90YWxlbnRfaW5mby5wcm90byKHAgoUUHJvamVj",
+            "dEV4dHJhU3luY0RhdGESTgoTY3VycmVudFRhbGVudElkTGlzdBgBIAEoCzIc",
+            "Lnpwcm90by5Qcm9mZXNzaW9uVGFsZW50SW5mb1ITY3VycmVudFRhbGVudElk",
+            "TGlzdBJkChJjdXJyZW50U2tpbGxJZExpc3QYAiADKAsyNC56cHJvdG8uUHJv",
+            "amVjdEV4dHJhU3luY0RhdGEuQ3VycmVudFNraWxsSWRMaXN0RW50cnlSEmN1",
+            "cnJlbnRTa2lsbElkTGlzdBo5ChdDdXJyZW50U2tpbGxJZExpc3RFbnRyeRIL",
+            "CgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruProfessionTalentInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new ProjectExtraSyncData(this);
     }
 
-    /// <summary>Field number for the "current_talent_id_list" field.</summary>
+    /// <summary>Field number for the "currentTalentIdList" field.</summary>
     public const int CurrentTalentIdListFieldNumber = 1;
     private global::Zproto.ProfessionTalentInfo currentTalentIdList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "current_skill_id_list" field.</summary>
+    /// <summary>Field number for the "currentSkillIdList" field.</summary>
     public const int CurrentSkillIdListFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_currentSkillIdList_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);

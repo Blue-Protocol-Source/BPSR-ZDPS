@@ -25,14 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X2R1dHlfaW5mby5wcm90bxIGenByb3RvGiBzdHJ1X3Byb2Zlc3Np",
-            "b25fc2tpbGxfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIrAC",
-            "CghEdXR5SW5mbxJDChNkdXR5X3NraWxsX2luZm9fbWFwGAEgAygLMiYuenBy",
-            "b3RvLkR1dHlJbmZvLkR1dHlTa2lsbEluZm9NYXBFbnRyeRJMChhkdXR5X3Nr",
-            "aWxsX3Nsb3RfaW5mb19tYXAYAiADKAsyKi56cHJvdG8uRHV0eUluZm8uRHV0",
-            "eVNraWxsU2xvdEluZm9NYXBFbnRyeRpUChVEdXR5U2tpbGxJbmZvTWFwRW50",
-            "cnkSCwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgLMhsuenByb3RvLlByb2Zl",
-            "c3Npb25Ta2lsbEluZm86AjgBGjsKGUR1dHlTa2lsbFNsb3RJbmZvTWFwRW50",
-            "cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
+            "b25fc2tpbGxfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvItEC",
+            "CghEdXR5SW5mbxJSChBkdXR5U2tpbGxJbmZvTWFwGAEgAygLMiYuenByb3Rv",
+            "LkR1dHlJbmZvLkR1dHlTa2lsbEluZm9NYXBFbnRyeVIQZHV0eVNraWxsSW5m",
+            "b01hcBJeChRkdXR5U2tpbGxTbG90SW5mb01hcBgCIAMoCzIqLnpwcm90by5E",
+            "dXR5SW5mby5EdXR5U2tpbGxTbG90SW5mb01hcEVudHJ5UhRkdXR5U2tpbGxT",
+            "bG90SW5mb01hcBpUChVEdXR5U2tpbGxJbmZvTWFwRW50cnkSCwoDa2V5GAEg",
+            "ASgFEioKBXZhbHVlGAIgASgLMhsuenByb3RvLlByb2Zlc3Npb25Ta2lsbElu",
+            "Zm86AjgBGjsKGUR1dHlTa2lsbFNsb3RJbmZvTWFwRW50cnkSCwoDa2V5GAEg",
+            "ASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruProfessionSkillInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new DutyInfo(this);
     }
 
-    /// <summary>Field number for the "duty_skill_info_map" field.</summary>
+    /// <summary>Field number for the "dutySkillInfoMap" field.</summary>
     public const int DutySkillInfoMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.ProfessionSkillInfo>.Codec _map_dutySkillInfoMap_codec
         = new pbc::MapField<int, global::Zproto.ProfessionSkillInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ProfessionSkillInfo.Parser), 10);
@@ -100,7 +101,7 @@ namespace Zproto {
       get { return dutySkillInfoMap_; }
     }
 
-    /// <summary>Field number for the "duty_skill_slot_info_map" field.</summary>
+    /// <summary>Field number for the "dutySkillSlotInfoMap" field.</summary>
     public const int DutySkillSlotInfoMapFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_dutySkillSlotInfoMap_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);

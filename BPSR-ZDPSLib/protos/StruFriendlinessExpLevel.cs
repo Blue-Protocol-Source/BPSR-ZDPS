@@ -24,10 +24,11 @@ namespace Zproto {
     static StruFriendlinessExpLevelReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2ZyaWVuZGxpbmVzc19leHBfbGV2ZWwucHJvdG8SBnpwcm90byJh",
-            "ChRGcmllbmRsaW5lc3NFeHBMZXZlbBIRCglmcmllbmRfaWQYASABKAMSDQoF",
-            "bGV2ZWwYAiABKAUSDwoHY3VyX2V4cBgDIAEoBRIWCg50b2RheV9hZGRfZXhw",
-            "cxgEIAEoBWIGcHJvdG8z"));
+            "CiFzdHJ1X2ZyaWVuZGxpbmVzc19leHBfbGV2ZWwucHJvdG8SBnpwcm90byKE",
+            "AQoURnJpZW5kbGluZXNzRXhwTGV2ZWwSGgoIZnJpZW5kSWQYASABKANSCGZy",
+            "aWVuZElkEhQKBWxldmVsGAIgASgFUgVsZXZlbBIWCgZjdXJFeHAYAyABKAVS",
+            "BmN1ckV4cBIiCgx0b2RheUFkZEV4cHMYBCABKAVSDHRvZGF5QWRkRXhwc2IG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new FriendlinessExpLevel(this);
     }
 
-    /// <summary>Field number for the "friend_id" field.</summary>
+    /// <summary>Field number for the "friendId" field.</summary>
     public const int FriendIdFieldNumber = 1;
     private long friendId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_exp" field.</summary>
+    /// <summary>Field number for the "curExp" field.</summary>
     public const int CurExpFieldNumber = 3;
     private int curExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "today_add_exps" field.</summary>
+    /// <summary>Field number for the "todayAddExps" field.</summary>
     public const int TodayAddExpsFieldNumber = 4;
     private int todayAddExps_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

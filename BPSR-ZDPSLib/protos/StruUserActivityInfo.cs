@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X3VzZXJfYWN0aXZpdHlfaW5mby5wcm90bxIGenByb3RvGiRzdHJ1",
             "X3VzZXJfYWN0aXZpdHlfcmV3YXJkX2luZm8ucHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byLAAQoQVXNlckFjdGl2aXR5SW5mbxISCgpzdGFydF90aW1l",
-            "GAIgASgEEhAKCGVuZF90aW1lGAMgASgEEjYKB3Jld2FyZHMYBCADKAsyJS56",
-            "cHJvdG8uVXNlckFjdGl2aXR5SW5mby5SZXdhcmRzRW50cnkaTgoMUmV3YXJk",
-            "c0VudHJ5EgsKA2tleRgBIAEoDRItCgV2YWx1ZRgCIAEoCzIeLnpwcm90by5V",
-            "c2VyQWN0aXZpdHlSZXdhcmRJbmZvOgI4AWIGcHJvdG8z"));
+            "bWFzay5wcm90byLbAQoQVXNlckFjdGl2aXR5SW5mbxIcCglzdGFydFRpbWUY",
+            "AiABKARSCXN0YXJ0VGltZRIYCgdlbmRUaW1lGAMgASgEUgdlbmRUaW1lEj8K",
+            "B3Jld2FyZHMYBCADKAsyJS56cHJvdG8uVXNlckFjdGl2aXR5SW5mby5SZXdh",
+            "cmRzRW50cnlSB3Jld2FyZHMaTgoMUmV3YXJkc0VudHJ5EgsKA2tleRgBIAEo",
+            "DRItCgV2YWx1ZRgCIAEoCzIeLnpwcm90by5Vc2VyQWN0aXZpdHlSZXdhcmRJ",
+            "bmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUserActivityRewardInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new UserActivityInfo(this);
     }
 
-    /// <summary>Field number for the "start_time" field.</summary>
+    /// <summary>Field number for the "startTime" field.</summary>
     public const int StartTimeFieldNumber = 2;
     private ulong startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 3;
     private ulong endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X3NhdmVfYWN0aW9uX2dyb3VwX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "bxohc3RydV9hY3Rpb25fZ3JvdXBfc2F2ZV9pbmZvLnByb3RvIm4KFlNhdmVB",
-            "Y3Rpb25Hcm91cFJlcXVlc3QSFwoPYWN0aW9uX2dyb3VwX2lkGAEgASgFEjsK",
-            "FmFjdGlvbl9ncm91cF9zYXZlX2luZm8YAiABKAsyGy56cHJvdG8uQWN0aW9u",
-            "R3JvdXBTYXZlSW5mb2IGcHJvdG8z"));
+            "bxohc3RydV9hY3Rpb25fZ3JvdXBfc2F2ZV9pbmZvLnByb3RvIo0BChZTYXZl",
+            "QWN0aW9uR3JvdXBSZXF1ZXN0EiQKDWFjdGlvbkdyb3VwSWQYASABKAVSDWFj",
+            "dGlvbkdyb3VwSWQSTQoTYWN0aW9uR3JvdXBTYXZlSW5mbxgCIAEoCzIbLnpw",
+            "cm90by5BY3Rpb25Hcm91cFNhdmVJbmZvUhNhY3Rpb25Hcm91cFNhdmVJbmZv",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActionGroupSaveInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new SaveActionGroupRequest(this);
     }
 
-    /// <summary>Field number for the "action_group_id" field.</summary>
+    /// <summary>Field number for the "actionGroupId" field.</summary>
     public const int ActionGroupIdFieldNumber = 1;
     private int actionGroupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "action_group_save_info" field.</summary>
+    /// <summary>Field number for the "actionGroupSaveInfo" field.</summary>
     public const int ActionGroupSaveInfoFieldNumber = 2;
     private global::Zproto.ActionGroupSaveInfo actionGroupSaveInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X3JlcXVlc3Rfam9pbl9pbmZvLnByb3RvEgZ6cHJvdG8aGnN0cnVf",
             "YXBwbHlfam9pbl9pbmZvLnByb3RvGhxzdHJ1X3VzZXJfc3VtbWFyeV9kYXRh",
-            "LnByb3RvImoKD1JlcXVlc3RKb2luSW5mbxIsCgtzb2NpYWxfZGF0YRgBIAEo",
-            "CzIXLnpwcm90by5Vc2VyU3VtbWFyeURhdGESKQoKYXBwbHlfaW5mbxgCIAEo",
-            "CzIVLnpwcm90by5BcHBseUpvaW5JbmZvYgZwcm90bzM="));
+            "LnByb3RvIn8KD1JlcXVlc3RKb2luSW5mbxI3Cgpzb2NpYWxEYXRhGAEgASgL",
+            "MhcuenByb3RvLlVzZXJTdW1tYXJ5RGF0YVIKc29jaWFsRGF0YRIzCglhcHBs",
+            "eUluZm8YAiABKAsyFS56cHJvdG8uQXBwbHlKb2luSW5mb1IJYXBwbHlJbmZv",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruApplyJoinInfoReflection.Descriptor, global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new RequestJoinInfo(this);
     }
 
-    /// <summary>Field number for the "social_data" field.</summary>
+    /// <summary>Field number for the "socialData" field.</summary>
     public const int SocialDataFieldNumber = 1;
     private global::Zproto.UserSummaryData socialData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "apply_info" field.</summary>
+    /// <summary>Field number for the "applyInfo" field.</summary>
     public const int ApplyInfoFieldNumber = 2;
     private global::Zproto.ApplyJoinInfo applyInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

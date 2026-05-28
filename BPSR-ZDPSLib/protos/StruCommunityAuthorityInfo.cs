@@ -26,14 +26,14 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X2NvbW11bml0eV9hdXRob3JpdHlfaW5mby5wcm90bxIGenByb3Rv",
             "GipzdHJ1X2NvbW11bml0eV9zaW5nbGVfYXV0aG9yaXR5X2luZm8ucHJvdG8i",
-            "swIKFkNvbW11bml0eUF1dGhvcml0eUluZm8SQAoJYXV0aG9yaXR5GAEgAygL",
+            "zAIKFkNvbW11bml0eUF1dGhvcml0eUluZm8SSwoJYXV0aG9yaXR5GAEgAygL",
             "Mi0uenByb3RvLkNvbW11bml0eUF1dGhvcml0eUluZm8uQXV0aG9yaXR5RW50",
-            "cnkSSQoOYXV0aG9yaXR5X2RhdGEYAiADKAsyMS56cHJvdG8uQ29tbXVuaXR5",
-            "QXV0aG9yaXR5SW5mby5BdXRob3JpdHlEYXRhRW50cnkaMAoOQXV0aG9yaXR5",
-            "RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgIOgI4ARpaChJBdXRo",
-            "b3JpdHlEYXRhRW50cnkSCwoDa2V5GAEgASgFEjMKBXZhbHVlGAIgASgLMiQu",
-            "enByb3RvLkNvbW11bml0eVNpbmdsZUF1dGhvcml0eUluZm86AjgBYgZwcm90",
-            "bzM="));
+            "cnlSCWF1dGhvcml0eRJXCg1hdXRob3JpdHlEYXRhGAIgAygLMjEuenByb3Rv",
+            "LkNvbW11bml0eUF1dGhvcml0eUluZm8uQXV0aG9yaXR5RGF0YUVudHJ5Ug1h",
+            "dXRob3JpdHlEYXRhGjAKDkF1dGhvcml0eUVudHJ5EgsKA2tleRgBIAEoBRIN",
+            "CgV2YWx1ZRgCIAEoCDoCOAEaWgoSQXV0aG9yaXR5RGF0YUVudHJ5EgsKA2tl",
+            "eRgBIAEoBRIzCgV2YWx1ZRgCIAEoCzIkLnpwcm90by5Db21tdW5pdHlTaW5n",
+            "bGVBdXRob3JpdHlJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunitySingleAuthorityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +101,7 @@ namespace Zproto {
       get { return authority_; }
     }
 
-    /// <summary>Field number for the "authority_data" field.</summary>
+    /// <summary>Field number for the "authorityData" field.</summary>
     public const int AuthorityDataFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.CommunitySingleAuthorityInfo>.Codec _map_authorityData_codec
         = new pbc::MapField<int, global::Zproto.CommunitySingleAuthorityInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CommunitySingleAuthorityInfo.Parser), 18);

@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ci1zdHJ1X25vdGlmeV9mcmllbmRsaW5lc3NfZXhwX2x2X3JlcXVlc3QucHJv",
             "dG8SBnpwcm90bxohc3RydV9mcmllbmRsaW5lc3NfZXhwX2xldmVsLnByb3Rv",
-            "IrQBCh5Ob3RpZnlGcmllbmRsaW5lc3NFeHBMdlJlcXVlc3QSMQoLY2hhbmdl",
-            "X2xpc3QYASADKAsyHC56cHJvdG8uRnJpZW5kbGluZXNzRXhwTGV2ZWwSEwoL",
-            "dG90YWxfbGV2ZWwYAiABKAUSEQoJdG90YWxfZXhwGAMgASgFEhwKFHRvZGF5",
-            "X3RvdGFsX2FkZF9leHBzGAQgASgFEhkKEXVwZGF0ZV90aW1lX3N0YW1wGAUg",
-            "ASgDYgZwcm90bzM="));
+            "IvIBCh5Ob3RpZnlGcmllbmRsaW5lc3NFeHBMdlJlcXVlc3QSPAoKY2hhbmdl",
+            "TGlzdBgBIAMoCzIcLnpwcm90by5GcmllbmRsaW5lc3NFeHBMZXZlbFIKY2hh",
+            "bmdlTGlzdBIeCgp0b3RhbExldmVsGAIgASgFUgp0b3RhbExldmVsEhoKCHRv",
+            "dGFsRXhwGAMgASgFUgh0b3RhbEV4cBIsChF0b2RheVRvdGFsQWRkRXhwcxgE",
+            "IAEoBVIRdG9kYXlUb3RhbEFkZEV4cHMSKAoPdXBkYXRlVGltZVN0YW1wGAUg",
+            "ASgDUg91cGRhdGVUaW1lU3RhbXBiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFriendlinessExpLevelReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new NotifyFriendlinessExpLvRequest(this);
     }
 
-    /// <summary>Field number for the "change_list" field.</summary>
+    /// <summary>Field number for the "changeList" field.</summary>
     public const int ChangeListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.FriendlinessExpLevel> _repeated_changeList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.FriendlinessExpLevel.Parser);
@@ -101,7 +102,7 @@ namespace Zproto {
       get { return changeList_; }
     }
 
-    /// <summary>Field number for the "total_level" field.</summary>
+    /// <summary>Field number for the "totalLevel" field.</summary>
     public const int TotalLevelFieldNumber = 2;
     private int totalLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "total_exp" field.</summary>
+    /// <summary>Field number for the "totalExp" field.</summary>
     public const int TotalExpFieldNumber = 3;
     private int totalExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "today_total_add_exps" field.</summary>
+    /// <summary>Field number for the "todayTotalAddExps" field.</summary>
     public const int TodayTotalAddExpsFieldNumber = 4;
     private int todayTotalAddExps_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "update_time_stamp" field.</summary>
+    /// <summary>Field number for the "updateTimeStamp" field.</summary>
     public const int UpdateTimeStampFieldNumber = 5;
     private long updateTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

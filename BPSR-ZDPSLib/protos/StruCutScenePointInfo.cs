@@ -24,9 +24,9 @@ namespace Zproto {
     static StruCutScenePointInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2N1dF9zY2VuZV9wb2ludF9pbmZvLnByb3RvEgZ6cHJvdG8iKQoR",
-            "Q3V0U2NlbmVQb2ludEluZm8SFAoMY3V0X3NjZW5lX2lkGAEgASgFYgZwcm90",
-            "bzM="));
+            "Ch9zdHJ1X2N1dF9zY2VuZV9wb2ludF9pbmZvLnByb3RvEgZ6cHJvdG8iMwoR",
+            "Q3V0U2NlbmVQb2ludEluZm8SHgoKY3V0U2NlbmVJZBgBIAEoBVIKY3V0U2Nl",
+            "bmVJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new CutScenePointInfo(this);
     }
 
-    /// <summary>Field number for the "cut_scene_id" field.</summary>
+    /// <summary>Field number for the "cutSceneId" field.</summary>
     public const int CutSceneIdFieldNumber = 1;
     private int cutSceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

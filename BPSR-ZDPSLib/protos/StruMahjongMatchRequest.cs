@@ -24,9 +24,9 @@ namespace Zproto {
     static StruMahjongMatchRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X21haGpvbmdfbWF0Y2hfcmVxdWVzdC5wcm90bxIGenByb3RvIigK",
-            "E01haGpvbmdNYXRjaFJlcXVlc3QSEQoJZ2FtZV90eXBlGAEgASgFYgZwcm90",
-            "bzM="));
+            "CiBzdHJ1X21haGpvbmdfbWF0Y2hfcmVxdWVzdC5wcm90bxIGenByb3RvIjEK",
+            "E01haGpvbmdNYXRjaFJlcXVlc3QSGgoIR2FtZVR5cGUYASABKAVSCEdhbWVU",
+            "eXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new MahjongMatchRequest(this);
     }
 
-    /// <summary>Field number for the "game_type" field.</summary>
+    /// <summary>Field number for the "GameType" field.</summary>
     public const int GameTypeFieldNumber = 1;
     private int gameType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

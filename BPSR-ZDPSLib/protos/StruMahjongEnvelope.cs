@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X21haGpvbmdfZW52ZWxvcGUucHJvdG8SBnpwcm90bxobZW51bV9t",
-            "YWhqb25nX3Byb3RvY29sLnByb3RvInsKD01haGpvbmdFbnZlbG9wZRIpCghw",
-            "cm90b2NvbBgBIAEoDjIXLnpwcm90by5NYWhqb25nUHJvdG9jb2wSEgoKbWVz",
-            "c2FnZV9pZBgCIAEoBRIMCgRkYXRhGAMgASgMEhsKE2ZpbmFsX3N5bmNfdGlt",
-            "ZV9zZWMYBCABKANiBnByb3RvMw=="));
+            "YWhqb25nX3Byb3RvY29sLnByb3RvIqQBCg9NYWhqb25nRW52ZWxvcGUSMwoI",
+            "UHJvdG9jb2wYASABKA4yFy56cHJvdG8uTWFoam9uZ1Byb3RvY29sUghQcm90",
+            "b2NvbBIcCglNZXNzYWdlSWQYAiABKAVSCU1lc3NhZ2VJZBISCgRkYXRhGAMg",
+            "ASgMUgRkYXRhEioKEEZpbmFsU3luY1RpbWVTZWMYBCABKANSEEZpbmFsU3lu",
+            "Y1RpbWVTZWNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumMahjongProtocolReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new MahjongEnvelope(this);
     }
 
-    /// <summary>Field number for the "protocol" field.</summary>
+    /// <summary>Field number for the "Protocol" field.</summary>
     public const int ProtocolFieldNumber = 1;
     private global::Zproto.MahjongProtocol protocol_ = global::Zproto.MahjongProtocol.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "message_id" field.</summary>
+    /// <summary>Field number for the "MessageId" field.</summary>
     public const int MessageIdFieldNumber = 2;
     private int messageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "final_sync_time_sec" field.</summary>
+    /// <summary>Field number for the "FinalSyncTimeSec" field.</summary>
     public const int FinalSyncTimeSecFieldNumber = 4;
     private long finalSyncTimeSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2NoYW5nZV9ncm91cF9uYW1lX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "byI8ChZDaGFuZ2VHcm91cE5hbWVSZXF1ZXN0EhAKCGdyb3VwX2lkGAEgASgF",
-            "EhAKCG5ld19uYW1lGAIgASgJYgZwcm90bzM="));
+            "byJMChZDaGFuZ2VHcm91cE5hbWVSZXF1ZXN0EhgKB2dyb3VwSWQYASABKAVS",
+            "B2dyb3VwSWQSGAoHbmV3TmFtZRgCIAEoCVIHbmV3TmFtZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ChangeGroupNameRequest(this);
     }
 
-    /// <summary>Field number for the "group_id" field.</summary>
+    /// <summary>Field number for the "groupId" field.</summary>
     public const int GroupIdFieldNumber = 1;
     private int groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "new_name" field.</summary>
+    /// <summary>Field number for the "newName" field.</summary>
     public const int NewNameFieldNumber = 2;
     private string newName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

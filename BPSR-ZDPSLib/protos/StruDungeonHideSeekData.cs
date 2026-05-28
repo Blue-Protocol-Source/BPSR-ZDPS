@@ -26,13 +26,13 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X2R1bmdlb25faGlkZV9zZWVrX2RhdGEucHJvdG8SBnpwcm90bxod",
             "ZW51bV9lX2hpZGVfc2Vla19yZXN1bHQucHJvdG8aHnN0cnVfaGlkZV9zZWVr",
-            "X3BsYXlfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIuoBChNE",
-            "dW5nZW9uSGlkZVNlZWtEYXRhElQKFmhpZGVfc2Vla19wbGF5ZXJfaW5mb3MY",
-            "ASADKAsyNC56cHJvdG8uRHVuZ2VvbkhpZGVTZWVrRGF0YS5IaWRlU2Vla1Bs",
-            "YXllckluZm9zRW50cnkSJwoGcmVzdWx0GAIgASgOMhcuenByb3RvLkVIaWRl",
-            "U2Vla1Jlc3VsdBpUChhIaWRlU2Vla1BsYXllckluZm9zRW50cnkSCwoDa2V5",
-            "GAEgASgDEicKBXZhbHVlGAIgASgLMhguenByb3RvLkhpZGVTZWVrUGxheUlu",
-            "Zm86AjgBYgZwcm90bzM="));
+            "X3BsYXlfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIoQCChNE",
+            "dW5nZW9uSGlkZVNlZWtEYXRhEmYKE2hpZGVTZWVrUGxheWVySW5mb3MYASAD",
+            "KAsyNC56cHJvdG8uRHVuZ2VvbkhpZGVTZWVrRGF0YS5IaWRlU2Vla1BsYXll",
+            "ckluZm9zRW50cnlSE2hpZGVTZWVrUGxheWVySW5mb3MSLwoGcmVzdWx0GAIg",
+            "ASgOMhcuenByb3RvLkVIaWRlU2Vla1Jlc3VsdFIGcmVzdWx0GlQKGEhpZGVT",
+            "ZWVrUGxheWVySW5mb3NFbnRyeRILCgNrZXkYASABKAMSJwoFdmFsdWUYAiAB",
+            "KAsyGC56cHJvdG8uSGlkZVNlZWtQbGF5SW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEHideSeekResultReflection.Descriptor, global::Zproto.StruHideSeekPlayInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new DungeonHideSeekData(this);
     }
 
-    /// <summary>Field number for the "hide_seek_player_infos" field.</summary>
+    /// <summary>Field number for the "hideSeekPlayerInfos" field.</summary>
     public const int HideSeekPlayerInfosFieldNumber = 1;
     private static readonly pbc::MapField<long, global::Zproto.HideSeekPlayInfo>.Codec _map_hideSeekPlayerInfos_codec
         = new pbc::MapField<long, global::Zproto.HideSeekPlayInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.HideSeekPlayInfo.Parser), 10);

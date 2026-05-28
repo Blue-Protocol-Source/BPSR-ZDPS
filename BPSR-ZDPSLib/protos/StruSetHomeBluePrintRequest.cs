@@ -27,12 +27,14 @@ namespace Zproto {
             "CiZzdHJ1X3NldF9ob21lX2JsdWVfcHJpbnRfcmVxdWVzdC5wcm90bxIGenBy",
             "b3RvGhplbnVtX2JsdWVfcHJpbnRfdHlwZS5wcm90bxojc3RydV9ob21lbGFu",
             "ZF9kZWNvcmF0aW9uX2luZm8ucHJvdG8aFHN0cnVfc3RydWN0dXJlLnByb3Rv",
-            "IukBChdTZXRIb21lQmx1ZVByaW50UmVxdWVzdBITCgtob21lbGFuZF9pZBgB",
-            "IAEoAxIuCg9ibHVlX3ByaW50X3R5cGUYAiABKA4yFS56cHJvdG8uQmx1ZVBy",
-            "aW50VHlwZRIMCgRzbG90GAMgASgFEi4KE3NhdmVfc3RydWN0dXJlc19pZHMY",
-            "BCADKAsyES56cHJvdG8uU3RydWN0dXJlEjcKD2RlY29yYXRpb25faW5mbxgF",
-            "IAEoCzIeLnpwcm90by5Ib21lbGFuZERlY29yYXRpb25JbmZvEhIKCnNoYXJl",
-            "X2NvZGUYBiABKAliBnByb3RvMw=="));
+            "IrECChdTZXRIb21lQmx1ZVByaW50UmVxdWVzdBIeCgpob21lbGFuZElkGAEg",
+            "ASgDUgpob21lbGFuZElkEjsKDWJsdWVQcmludFR5cGUYAiABKA4yFS56cHJv",
+            "dG8uQmx1ZVByaW50VHlwZVINYmx1ZVByaW50VHlwZRISCgRzbG90GAMgASgF",
+            "UgRzbG90Ej8KEXNhdmVTdHJ1Y3R1cmVzSWRzGAQgAygLMhEuenByb3RvLlN0",
+            "cnVjdHVyZVIRc2F2ZVN0cnVjdHVyZXNJZHMSRgoOZGVjb3JhdGlvbkluZm8Y",
+            "BSABKAsyHi56cHJvdG8uSG9tZWxhbmREZWNvcmF0aW9uSW5mb1IOZGVjb3Jh",
+            "dGlvbkluZm8SHAoJc2hhcmVDb2RlGAYgASgJUglzaGFyZUNvZGViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumBluePrintTypeReflection.Descriptor, global::Zproto.StruHomelandDecorationInfoReflection.Descriptor, global::Zproto.StruStructureReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +95,7 @@ namespace Zproto {
       return new SetHomeBluePrintRequest(this);
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 1;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "blue_print_type" field.</summary>
+    /// <summary>Field number for the "bluePrintType" field.</summary>
     public const int BluePrintTypeFieldNumber = 2;
     private global::Zproto.BluePrintType bluePrintType_ = global::Zproto.BluePrintType.Outer;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "save_structures_ids" field.</summary>
+    /// <summary>Field number for the "saveStructuresIds" field.</summary>
     public const int SaveStructuresIdsFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Zproto.Structure> _repeated_saveStructuresIds_codec
         = pb::FieldCodec.ForMessage(34, global::Zproto.Structure.Parser);
@@ -140,7 +142,7 @@ namespace Zproto {
       get { return saveStructuresIds_; }
     }
 
-    /// <summary>Field number for the "decoration_info" field.</summary>
+    /// <summary>Field number for the "decorationInfo" field.</summary>
     public const int DecorationInfoFieldNumber = 5;
     private global::Zproto.HomelandDecorationInfo decorationInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +154,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "share_code" field.</summary>
+    /// <summary>Field number for the "shareCode" field.</summary>
     public const int ShareCodeFieldNumber = 6;
     private string shareCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,9 +24,10 @@ namespace Zproto {
     static StruPassengerInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X3Bhc3Nlbmdlcl9pbmZvLnByb3RvEgZ6cHJvdG8iSwoNUGFzc2Vu",
-            "Z2VySW5mbxIYChBzZWF0X2dyb3VwX2luZGV4GAEgASgFEhIKCnNlYXRfaW5k",
-            "ZXgYAiABKAUSDAoEdXVpZBgDIAEoA2IGcHJvdG8z"));
+            "ChlzdHJ1X3Bhc3Nlbmdlcl9pbmZvLnByb3RvEgZ6cHJvdG8iaQoNUGFzc2Vu",
+            "Z2VySW5mbxImCg5zZWF0R3JvdXBJbmRleBgBIAEoBVIOc2VhdEdyb3VwSW5k",
+            "ZXgSHAoJc2VhdEluZGV4GAIgASgFUglzZWF0SW5kZXgSEgoEdXVpZBgDIAEo",
+            "A1IEdXVpZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new PassengerInfo(this);
     }
 
-    /// <summary>Field number for the "seat_group_index" field.</summary>
+    /// <summary>Field number for the "seatGroupIndex" field.</summary>
     public const int SeatGroupIndexFieldNumber = 1;
     private int seatGroupIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "seat_index" field.</summary>
+    /// <summary>Field number for the "seatIndex" field.</summary>
     public const int SeatIndexFieldNumber = 2;
     private int seatIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

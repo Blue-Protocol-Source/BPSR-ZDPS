@@ -24,9 +24,10 @@ namespace Zproto {
     static StruStructureGroupInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X3N0cnVjdHVyZV9ncm91cF9pbmZvLnByb3RvEgZ6cHJvdG8iUQoS",
-            "U3RydWN0dXJlR3JvdXBJbmZvEhAKCGdyb3VwX2lkGAEgASgDEhIKCmdyb3Vw",
-            "X25hbWUYAiABKAkSFQoNc3RydWN0dXJlX2lkcxgDIAMoA2IGcHJvdG8z"));
+            "Ch9zdHJ1X3N0cnVjdHVyZV9ncm91cF9pbmZvLnByb3RvEgZ6cHJvdG8icAoS",
+            "U3RydWN0dXJlR3JvdXBJbmZvEhgKB2dyb3VwSWQYASABKANSB2dyb3VwSWQS",
+            "HAoJZ3JvdXBOYW1lGAIgASgJUglncm91cE5hbWUSIgoMc3RydWN0dXJlSWRz",
+            "GAMgAygDUgxzdHJ1Y3R1cmVJZHNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new StructureGroupInfo(this);
     }
 
-    /// <summary>Field number for the "group_id" field.</summary>
+    /// <summary>Field number for the "groupId" field.</summary>
     public const int GroupIdFieldNumber = 1;
     private long groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "group_name" field.</summary>
+    /// <summary>Field number for the "groupName" field.</summary>
     public const int GroupNameFieldNumber = 2;
     private string groupName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "structure_ids" field.</summary>
+    /// <summary>Field number for the "structureIds" field.</summary>
     public const int StructureIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_structureIds_codec
         = pb::FieldCodec.ForInt64(26);

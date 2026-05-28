@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiVzdHJ1X3NlbmRfY2hpdF9jaGF0X21zZ19yZXF1ZXN0LnByb3RvEgZ6cHJv",
             "dG8aGHN0cnVfY2hhdF9tc2dfaW5mby5wcm90bxohZW51bV9jaGl0X2NoYXRf",
-            "Y2hhbm5lbF90eXBlLnByb3RvIpkBChZTZW5kQ2hpdENoYXRNc2dSZXF1ZXN0",
-            "EjEKDGNoYW5uZWxfdHlwZRgCIAEoDjIbLnpwcm90by5DaGl0Q2hhdENoYW5u",
-            "ZWxUeXBlEhEKCXNhbWVfcmF0ZRgDIAEoDRIlCghtc2dfaW5mbxgEIAEoCzIT",
-            "Lnpwcm90by5DaGF0TXNnSW5mbxISCgpzZW5kX3RvX21lGAUgASgIYgZwcm90",
-            "bzM="));
+            "Y2hhbm5lbF90eXBlLnByb3RvIr4BChZTZW5kQ2hpdENoYXRNc2dSZXF1ZXN0",
+            "Ej0KC2NoYW5uZWxUeXBlGAIgASgOMhsuenByb3RvLkNoaXRDaGF0Q2hhbm5l",
+            "bFR5cGVSC2NoYW5uZWxUeXBlEhoKCHNhbWVSYXRlGAMgASgNUghzYW1lUmF0",
+            "ZRItCgdtc2dJbmZvGAQgASgLMhMuenByb3RvLkNoYXRNc2dJbmZvUgdtc2dJ",
+            "bmZvEhoKCHNlbmRUb01lGAUgASgIUghzZW5kVG9NZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruChatMsgInfoReflection.Descriptor, global::Zproto.EnumChitChatChannelTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new SendChitChatMsgRequest(this);
     }
 
-    /// <summary>Field number for the "channel_type" field.</summary>
+    /// <summary>Field number for the "channelType" field.</summary>
     public const int ChannelTypeFieldNumber = 2;
     private global::Zproto.ChitChatChannelType channelType_ = global::Zproto.ChitChatChannelType.ChannelNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "same_rate" field.</summary>
+    /// <summary>Field number for the "sameRate" field.</summary>
     public const int SameRateFieldNumber = 3;
     private uint sameRate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "msg_info" field.</summary>
+    /// <summary>Field number for the "msgInfo" field.</summary>
     public const int MsgInfoFieldNumber = 4;
     private global::Zproto.ChatMsgInfo msgInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "send_to_me" field.</summary>
+    /// <summary>Field number for the "sendToMe" field.</summary>
     public const int SendToMeFieldNumber = 5;
     private bool sendToMe_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

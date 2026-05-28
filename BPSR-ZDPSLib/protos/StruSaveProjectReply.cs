@@ -27,12 +27,13 @@ namespace Zproto {
             "Ch1zdHJ1X3NhdmVfcHJvamVjdF9yZXBseS5wcm90bxIGenByb3RvGhdlbnVt",
             "X2VfZXJyb3JfY29kZS5wcm90bxouc3RydV9wcm9mZXNzaW9uX3Byb2plY3Rf",
             "Y29tbW9uX3N5bmNfZGF0YS5wcm90bxoic3RydV9wcm9qZWN0X2V4dHJhX3N5",
-            "bmNfZGF0YS5wcm90byLPAQoQU2F2ZVByb2plY3RSZXBseRI6CglzeW5jX2Rh",
-            "dGEYASABKAsyJy56cHJvdG8uUHJvZmVzc2lvblByb2plY3RDb21tb25TeW5j",
-            "RGF0YRIYChBzYXZlZF9wcm9qZWN0X2lkGAIgASgFEj8KGWN1cnJlbnRfcHJv",
-            "amVjdF9zeW5jX2RhdGEYAyABKAsyHC56cHJvdG8uUHJvamVjdEV4dHJhU3lu",
-            "Y0RhdGESJAoIZXJyX2NvZGUYBCABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIG",
-            "cHJvdG8z"));
+            "bmNfZGF0YS5wcm90byKDAgoQU2F2ZVByb2plY3RSZXBseRJDCghzeW5jRGF0",
+            "YRgBIAEoCzInLnpwcm90by5Qcm9mZXNzaW9uUHJvamVjdENvbW1vblN5bmNE",
+            "YXRhUghzeW5jRGF0YRImCg5zYXZlZFByb2plY3RJZBgCIAEoBVIOc2F2ZWRQ",
+            "cm9qZWN0SWQSVAoWY3VycmVudFByb2plY3RTeW5jRGF0YRgDIAEoCzIcLnpw",
+            "cm90by5Qcm9qZWN0RXh0cmFTeW5jRGF0YVIWY3VycmVudFByb2plY3RTeW5j",
+            "RGF0YRIsCgdlcnJDb2RlGAQgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2Vy",
+            "ckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruProfessionProjectCommonSyncDataReflection.Descriptor, global::Zproto.StruProjectExtraSyncDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +92,7 @@ namespace Zproto {
       return new SaveProjectReply(this);
     }
 
-    /// <summary>Field number for the "sync_data" field.</summary>
+    /// <summary>Field number for the "syncData" field.</summary>
     public const int SyncDataFieldNumber = 1;
     private global::Zproto.ProfessionProjectCommonSyncData syncData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "saved_project_id" field.</summary>
+    /// <summary>Field number for the "savedProjectId" field.</summary>
     public const int SavedProjectIdFieldNumber = 2;
     private int savedProjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "current_project_sync_data" field.</summary>
+    /// <summary>Field number for the "currentProjectSyncData" field.</summary>
     public const int CurrentProjectSyncDataFieldNumber = 3;
     private global::Zproto.ProjectExtraSyncData currentProjectSyncData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +128,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

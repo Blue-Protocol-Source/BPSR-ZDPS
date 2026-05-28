@@ -24,10 +24,10 @@ namespace Zproto {
     static StruLoginSceneParamsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X2xvZ2luX3NjZW5lX3BhcmFtcy5wcm90bxIGenByb3RvIlkKEExv",
-            "Z2luU2NlbmVQYXJhbXMSFwoPaW50b19zY2VuZV90eXBlGAEgASgFEhUKDWxh",
-            "c3Rfc2NlbmVfaWQYAiABKAUSFQoNYm9ybl9zY2VuZV9pZBgDIAEoBWIGcHJv",
-            "dG8z"));
+            "Ch1zdHJ1X2xvZ2luX3NjZW5lX3BhcmFtcy5wcm90bxIGenByb3RvInwKEExv",
+            "Z2luU2NlbmVQYXJhbXMSJAoNaW50b1NjZW5lVHlwZRgBIAEoBVINaW50b1Nj",
+            "ZW5lVHlwZRIgCgtsYXN0U2NlbmVJZBgCIAEoBVILbGFzdFNjZW5lSWQSIAoL",
+            "Ym9yblNjZW5lSWQYAyABKAVSC2Jvcm5TY2VuZUlkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new LoginSceneParams(this);
     }
 
-    /// <summary>Field number for the "into_scene_type" field.</summary>
+    /// <summary>Field number for the "intoSceneType" field.</summary>
     public const int IntoSceneTypeFieldNumber = 1;
     private int intoSceneType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_scene_id" field.</summary>
+    /// <summary>Field number for the "lastSceneId" field.</summary>
     public const int LastSceneIdFieldNumber = 2;
     private int lastSceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "born_scene_id" field.</summary>
+    /// <summary>Field number for the "bornSceneId" field.</summary>
     public const int BornSceneIdFieldNumber = 3;
     private int bornSceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,8 +24,9 @@ namespace Zproto {
     static StruGiveupQuestInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X2dpdmV1cF9xdWVzdF9pbmZvLnByb3RvEgZ6cHJvdG8iIwoPR2l2",
-            "ZXVwUXVlc3RJbmZvEhAKCHF1ZXN0X2lkGAEgASgFYgZwcm90bzM="));
+            "ChxzdHJ1X2dpdmV1cF9xdWVzdF9pbmZvLnByb3RvEgZ6cHJvdG8iKwoPR2l2",
+            "ZXVwUXVlc3RJbmZvEhgKB3F1ZXN0SWQYASABKAVSB3F1ZXN0SWRiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new GiveupQuestInfo(this);
     }
 
-    /// <summary>Field number for the "quest_id" field.</summary>
+    /// <summary>Field number for the "questId" field.</summary>
     public const int QuestIdFieldNumber = 1;
     private int questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,11 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2JhY2tmbG93X2RhdGEucHJvdG8SBnpwcm90bxocc3RydV9iYWNr",
-            "Zmxvd19hY3RfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqYB",
-            "CgxCYWNrZmxvd0RhdGESEgoKYmVnaW5fdGltZRgBIAEoAxITCgtpc19iYWNr",
-            "ZmxvdxgCIAEoCBIRCglzZWFzb25faWQYAyABKAUSFgoOYWN0aXZhdGVfdGlt",
-            "ZXMYBCABKAUSFwoPaXNfbm90X3Nob3dfdGFnGAUgASgIEikKCGFjdF9kYXRh",
-            "GAYgASgLMhcuenByb3RvLkJhY2tmbG93QWN0RGF0YWIGcHJvdG8z"));
+            "Zmxvd19hY3RfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIuUB",
+            "CgxCYWNrZmxvd0RhdGESHAoJYmVnaW5UaW1lGAEgASgDUgliZWdpblRpbWUS",
+            "HgoKaXNCYWNrZmxvdxgCIAEoCFIKaXNCYWNrZmxvdxIaCghzZWFzb25JZBgD",
+            "IAEoBVIIc2Vhc29uSWQSJAoNYWN0aXZhdGVUaW1lcxgEIAEoBVINYWN0aXZh",
+            "dGVUaW1lcxIiCgxpc05vdFNob3dUYWcYBSABKAhSDGlzTm90U2hvd1RhZxIx",
+            "CgdhY3REYXRhGAYgASgLMhcuenByb3RvLkJhY2tmbG93QWN0RGF0YVIHYWN0",
+            "RGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBackflowActDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +92,7 @@ namespace Zproto {
       return new BackflowData(this);
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
+    /// <summary>Field number for the "beginTime" field.</summary>
     public const int BeginTimeFieldNumber = 1;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_backflow" field.</summary>
+    /// <summary>Field number for the "isBackflow" field.</summary>
     public const int IsBackflowFieldNumber = 2;
     private bool isBackflow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_id" field.</summary>
+    /// <summary>Field number for the "seasonId" field.</summary>
     public const int SeasonIdFieldNumber = 3;
     private int seasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +128,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activate_times" field.</summary>
+    /// <summary>Field number for the "activateTimes" field.</summary>
     public const int ActivateTimesFieldNumber = 4;
     private int activateTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +140,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_not_show_tag" field.</summary>
+    /// <summary>Field number for the "isNotShowTag" field.</summary>
     public const int IsNotShowTagFieldNumber = 5;
     private bool isNotShowTag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "act_data" field.</summary>
+    /// <summary>Field number for the "actData" field.</summary>
     public const int ActDataFieldNumber = 6;
     private global::Zproto.BackflowActData actData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,11 +24,12 @@ namespace Zproto {
     static StruUnionActivityTargetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3VuaW9uX2FjdGl2aXR5X3RhcmdldC5wcm90bxIGenByb3RvIoUB",
-            "ChNVbmlvbkFjdGl2aXR5VGFyZ2V0Eg8KB2N1cl9udW0YASABKAUSFAoMaGFz",
-            "X2ZpbmlzaGVkGAIgASgIEhkKEWxhc3RfcmVmcmVzaF90aW1lGAMgASgDEhkK",
-            "EW5leHRfcmVmcmVzaF90aW1lGAQgASgDEhEKCXRhcmdldF9pZBgFIAEoBWIG",
-            "cHJvdG8z"));
+            "CiBzdHJ1X3VuaW9uX2FjdGl2aXR5X3RhcmdldC5wcm90bxIGenByb3RvIr8B",
+            "ChNVbmlvbkFjdGl2aXR5VGFyZ2V0EhYKBmN1ck51bRgBIAEoBVIGY3VyTnVt",
+            "EiAKC2hhc0ZpbmlzaGVkGAIgASgIUgtoYXNGaW5pc2hlZBIoCg9sYXN0UmVm",
+            "cmVzaFRpbWUYAyABKANSD2xhc3RSZWZyZXNoVGltZRIoCg9uZXh0UmVmcmVz",
+            "aFRpbWUYBCABKANSD25leHRSZWZyZXNoVGltZRIaCgh0YXJnZXRJZBgFIAEo",
+            "BVIIdGFyZ2V0SWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new UnionActivityTarget(this);
     }
 
-    /// <summary>Field number for the "cur_num" field.</summary>
+    /// <summary>Field number for the "curNum" field.</summary>
     public const int CurNumFieldNumber = 1;
     private int curNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "has_finished" field.</summary>
+    /// <summary>Field number for the "hasFinished" field.</summary>
     public const int HasFinishedFieldNumber = 2;
     private bool hasFinished_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_refresh_time" field.</summary>
+    /// <summary>Field number for the "lastRefreshTime" field.</summary>
     public const int LastRefreshTimeFieldNumber = 3;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "next_refresh_time" field.</summary>
+    /// <summary>Field number for the "nextRefreshTime" field.</summary>
     public const int NextRefreshTimeFieldNumber = 4;
     private long nextRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 5;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

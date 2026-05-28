@@ -25,10 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3NlYXNvbl9hY3RpdmF0aW9uX3RhcmdldC5wcm90bxIGenByb3Rv",
-            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ijgEKFlNlYXNvbkFjdGl2YXRpb25U",
-            "YXJnZXQSCgoCaWQYASABKAUSEwoLdGFyZ2V0X3R5cGUYAiABKAUSEwoLdGFy",
-            "Z2V0X3V1aWQYAyABKAUSEwoLcmV3YXJkX3JhdGUYBCABKAUSEAoIcHJvZ3Jl",
-            "c3MYBSABKAUSFwoPY29tcGxldGVkX3RpbWVzGAYgASgFYgZwcm90bzM="));
+            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8izAEKFlNlYXNvbkFjdGl2YXRpb25U",
+            "YXJnZXQSDgoCaWQYASABKAVSAmlkEh4KCnRhcmdldFR5cGUYAiABKAVSCnRh",
+            "cmdldFR5cGUSHgoKdGFyZ2V0VXVpZBgDIAEoBVIKdGFyZ2V0VXVpZBIeCgpy",
+            "ZXdhcmRSYXRlGAQgASgFUgpyZXdhcmRSYXRlEhoKCHByb2dyZXNzGAUgASgF",
+            "Ughwcm9ncmVzcxImCg5jb21wbGV0ZWRUaW1lcxgGIAEoBVIOY29tcGxldGVk",
+            "VGltZXNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_type" field.</summary>
+    /// <summary>Field number for the "targetType" field.</summary>
     public const int TargetTypeFieldNumber = 2;
     private int targetType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_uuid" field.</summary>
+    /// <summary>Field number for the "targetUuid" field.</summary>
     public const int TargetUuidFieldNumber = 3;
     private int targetUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "reward_rate" field.</summary>
+    /// <summary>Field number for the "rewardRate" field.</summary>
     public const int RewardRateFieldNumber = 4;
     private int rewardRate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "completed_times" field.</summary>
+    /// <summary>Field number for the "completedTimes" field.</summary>
     public const int CompletedTimesFieldNumber = 6;
     private int completedTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

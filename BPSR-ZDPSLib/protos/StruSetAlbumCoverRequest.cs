@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X3NldF9hbGJ1bV9jb3Zlcl9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "QAoUU2V0QWxidW1Db3ZlclJlcXVlc3QSEAoIYWxidW1faWQYAiABKA0SFgoO",
-            "Y292ZXJfcGhvdG9faWQYAyABKA1iBnByb3RvMw=="));
+            "VAoUU2V0QWxidW1Db3ZlclJlcXVlc3QSGAoHYWxidW1JZBgCIAEoDVIHYWxi",
+            "dW1JZBIiCgxjb3ZlclBob3RvSWQYAyABKA1SDGNvdmVyUGhvdG9JZGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new SetAlbumCoverRequest(this);
     }
 
-    /// <summary>Field number for the "album_id" field.</summary>
+    /// <summary>Field number for the "albumId" field.</summary>
     public const int AlbumIdFieldNumber = 2;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cover_photo_id" field.</summary>
+    /// <summary>Field number for the "coverPhotoId" field.</summary>
     public const int CoverPhotoIdFieldNumber = 3;
     private uint coverPhotoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

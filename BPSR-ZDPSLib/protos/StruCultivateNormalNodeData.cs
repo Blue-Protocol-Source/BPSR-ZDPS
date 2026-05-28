@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2N1bHRpdmF0ZV9ub3JtYWxfbm9kZV9kYXRhLnByb3RvEgZ6cHJv",
-            "dG8aFXN0cnVfZGlydHlfbWFzay5wcm90byIvChdDdWx0aXZhdGVOb3JtYWxO",
-            "b2RlRGF0YRIUCgxhY3RpdmVfbGV2ZWwYASABKAViBnByb3RvMw=="));
+            "dG8aFXN0cnVfZGlydHlfbWFzay5wcm90byI7ChdDdWx0aXZhdGVOb3JtYWxO",
+            "b2RlRGF0YRIgCgthY3RpdmVMZXZlbBgBIAEoBVILYWN0aXZlTGV2ZWxiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +83,7 @@ namespace Zproto {
       return new CultivateNormalNodeData(this);
     }
 
-    /// <summary>Field number for the "active_level" field.</summary>
+    /// <summary>Field number for the "activeLevel" field.</summary>
     public const int ActiveLevelFieldNumber = 1;
     private int activeLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

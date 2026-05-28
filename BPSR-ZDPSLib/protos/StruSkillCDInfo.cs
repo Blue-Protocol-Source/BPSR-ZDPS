@@ -25,17 +25,20 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3NraWxsX2NfZF9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byKCAgoLU2tpbGxDREluZm8SFgoOc2tpbGxfbGV2ZWxf",
-            "aWQYASABKAUSGAoQc2tpbGxfYmVnaW5fdGltZRgCIAEoAxIQCghkdXJhdGlv",
-            "bhgDIAEoBRIVCg1za2lsbF9jZF90eXBlGAQgASgNEiIKGnByb2Zlc3Npb25f",
-            "aG9sZF9iZWdpbl90aW1lGAYgASgDEhQKDGNoYXJnZV9jb3VudBgHIAEoBRIV",
-            "Cg12YWxpZF9jZF90aW1lGAggASgFEhQKDHN1Yl9jZF9yYXRpbxgJIAEoBRIU",
-            "CgxzdWJfY2RfZml4ZWQYCiABKAMSGwoTYWNjZWxlcmF0ZV9jZF9yYXRpbxgL",
-            "IAEoBWIGcHJvdG8z"));
+            "dHlfbWFzay5wcm90byKDAwoLU2tpbGxDREluZm8SIgoMc2tpbGxMZXZlbElk",
+            "GAEgASgFUgxza2lsbExldmVsSWQSJgoOc2tpbGxCZWdpblRpbWUYAiABKANS",
+            "DnNraWxsQmVnaW5UaW1lEhoKCGR1cmF0aW9uGAMgASgFUghkdXJhdGlvbhIg",
+            "Cgtza2lsbENEVHlwZRgEIAEoDVILc2tpbGxDRFR5cGUSOAoXcHJvZmVzc2lv",
+            "bkhvbGRCZWdpblRpbWUYBiABKANSF3Byb2Zlc3Npb25Ib2xkQmVnaW5UaW1l",
+            "EiAKC2NoYXJnZUNvdW50GAcgASgFUgtjaGFyZ2VDb3VudBIgCgt2YWxpZENE",
+            "VGltZRgIIAEoBVILdmFsaWRDRFRpbWUSHgoKc3ViQ0RSYXRpbxgJIAEoBVIK",
+            "c3ViQ0RSYXRpbxIeCgpzdWJDREZpeGVkGAogASgDUgpzdWJDREZpeGVkEiwK",
+            "EWFjY2VsZXJhdGVDRFJhdGlvGAsgASgFUhFhY2NlbGVyYXRlQ0RSYXRpb2IG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.SkillCDInfo), global::Zproto.SkillCDInfo.Parser, new[]{ "SkillLevelId", "SkillBeginTime", "Duration", "SkillCdType", "ProfessionHoldBeginTime", "ChargeCount", "ValidCdTime", "SubCdRatio", "SubCdFixed", "AccelerateCdRatio" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.SkillCDInfo), global::Zproto.SkillCDInfo.Parser, new[]{ "SkillLevelId", "SkillBeginTime", "Duration", "SkillCDType", "ProfessionHoldBeginTime", "ChargeCount", "ValidCDTime", "SubCDRatio", "SubCDFixed", "AccelerateCDRatio" }, null, null, null, null)
           }));
     }
     #endregion
@@ -80,13 +83,13 @@ namespace Zproto {
       skillLevelId_ = other.skillLevelId_;
       skillBeginTime_ = other.skillBeginTime_;
       duration_ = other.duration_;
-      skillCdType_ = other.skillCdType_;
+      skillCDType_ = other.skillCDType_;
       professionHoldBeginTime_ = other.professionHoldBeginTime_;
       chargeCount_ = other.chargeCount_;
-      validCdTime_ = other.validCdTime_;
-      subCdRatio_ = other.subCdRatio_;
-      subCdFixed_ = other.subCdFixed_;
-      accelerateCdRatio_ = other.accelerateCdRatio_;
+      validCDTime_ = other.validCDTime_;
+      subCDRatio_ = other.subCDRatio_;
+      subCDFixed_ = other.subCDFixed_;
+      accelerateCDRatio_ = other.accelerateCDRatio_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,7 +99,7 @@ namespace Zproto {
       return new SkillCDInfo(this);
     }
 
-    /// <summary>Field number for the "skill_level_id" field.</summary>
+    /// <summary>Field number for the "skillLevelId" field.</summary>
     public const int SkillLevelIdFieldNumber = 1;
     private int skillLevelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skill_begin_time" field.</summary>
+    /// <summary>Field number for the "skillBeginTime" field.</summary>
     public const int SkillBeginTimeFieldNumber = 2;
     private long skillBeginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -132,19 +135,19 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skill_cd_type" field.</summary>
-    public const int SkillCdTypeFieldNumber = 4;
-    private uint skillCdType_;
+    /// <summary>Field number for the "skillCDType" field.</summary>
+    public const int SkillCDTypeFieldNumber = 4;
+    private uint skillCDType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SkillCdType {
-      get { return skillCdType_; }
+    public uint SkillCDType {
+      get { return skillCDType_; }
       set {
-        skillCdType_ = value;
+        skillCDType_ = value;
       }
     }
 
-    /// <summary>Field number for the "profession_hold_begin_time" field.</summary>
+    /// <summary>Field number for the "professionHoldBeginTime" field.</summary>
     public const int ProfessionHoldBeginTimeFieldNumber = 6;
     private long professionHoldBeginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -156,7 +159,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "charge_count" field.</summary>
+    /// <summary>Field number for the "chargeCount" field.</summary>
     public const int ChargeCountFieldNumber = 7;
     private int chargeCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,51 +171,51 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "valid_cd_time" field.</summary>
-    public const int ValidCdTimeFieldNumber = 8;
-    private int validCdTime_;
+    /// <summary>Field number for the "validCDTime" field.</summary>
+    public const int ValidCDTimeFieldNumber = 8;
+    private int validCDTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int ValidCdTime {
-      get { return validCdTime_; }
+    public int ValidCDTime {
+      get { return validCDTime_; }
       set {
-        validCdTime_ = value;
+        validCDTime_ = value;
       }
     }
 
-    /// <summary>Field number for the "sub_cd_ratio" field.</summary>
-    public const int SubCdRatioFieldNumber = 9;
-    private int subCdRatio_;
+    /// <summary>Field number for the "subCDRatio" field.</summary>
+    public const int SubCDRatioFieldNumber = 9;
+    private int subCDRatio_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int SubCdRatio {
-      get { return subCdRatio_; }
+    public int SubCDRatio {
+      get { return subCDRatio_; }
       set {
-        subCdRatio_ = value;
+        subCDRatio_ = value;
       }
     }
 
-    /// <summary>Field number for the "sub_cd_fixed" field.</summary>
-    public const int SubCdFixedFieldNumber = 10;
-    private long subCdFixed_;
+    /// <summary>Field number for the "subCDFixed" field.</summary>
+    public const int SubCDFixedFieldNumber = 10;
+    private long subCDFixed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long SubCdFixed {
-      get { return subCdFixed_; }
+    public long SubCDFixed {
+      get { return subCDFixed_; }
       set {
-        subCdFixed_ = value;
+        subCDFixed_ = value;
       }
     }
 
-    /// <summary>Field number for the "accelerate_cd_ratio" field.</summary>
-    public const int AccelerateCdRatioFieldNumber = 11;
-    private int accelerateCdRatio_;
+    /// <summary>Field number for the "accelerateCDRatio" field.</summary>
+    public const int AccelerateCDRatioFieldNumber = 11;
+    private int accelerateCDRatio_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int AccelerateCdRatio {
-      get { return accelerateCdRatio_; }
+    public int AccelerateCDRatio {
+      get { return accelerateCDRatio_; }
       set {
-        accelerateCdRatio_ = value;
+        accelerateCDRatio_ = value;
       }
     }
 
@@ -234,13 +237,13 @@ namespace Zproto {
       if (SkillLevelId != other.SkillLevelId) return false;
       if (SkillBeginTime != other.SkillBeginTime) return false;
       if (Duration != other.Duration) return false;
-      if (SkillCdType != other.SkillCdType) return false;
+      if (SkillCDType != other.SkillCDType) return false;
       if (ProfessionHoldBeginTime != other.ProfessionHoldBeginTime) return false;
       if (ChargeCount != other.ChargeCount) return false;
-      if (ValidCdTime != other.ValidCdTime) return false;
-      if (SubCdRatio != other.SubCdRatio) return false;
-      if (SubCdFixed != other.SubCdFixed) return false;
-      if (AccelerateCdRatio != other.AccelerateCdRatio) return false;
+      if (ValidCDTime != other.ValidCDTime) return false;
+      if (SubCDRatio != other.SubCDRatio) return false;
+      if (SubCDFixed != other.SubCDFixed) return false;
+      if (AccelerateCDRatio != other.AccelerateCDRatio) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -251,13 +254,13 @@ namespace Zproto {
       if (SkillLevelId != 0) hash ^= SkillLevelId.GetHashCode();
       if (SkillBeginTime != 0L) hash ^= SkillBeginTime.GetHashCode();
       if (Duration != 0) hash ^= Duration.GetHashCode();
-      if (SkillCdType != 0) hash ^= SkillCdType.GetHashCode();
+      if (SkillCDType != 0) hash ^= SkillCDType.GetHashCode();
       if (ProfessionHoldBeginTime != 0L) hash ^= ProfessionHoldBeginTime.GetHashCode();
       if (ChargeCount != 0) hash ^= ChargeCount.GetHashCode();
-      if (ValidCdTime != 0) hash ^= ValidCdTime.GetHashCode();
-      if (SubCdRatio != 0) hash ^= SubCdRatio.GetHashCode();
-      if (SubCdFixed != 0L) hash ^= SubCdFixed.GetHashCode();
-      if (AccelerateCdRatio != 0) hash ^= AccelerateCdRatio.GetHashCode();
+      if (ValidCDTime != 0) hash ^= ValidCDTime.GetHashCode();
+      if (SubCDRatio != 0) hash ^= SubCDRatio.GetHashCode();
+      if (SubCDFixed != 0L) hash ^= SubCDFixed.GetHashCode();
+      if (AccelerateCDRatio != 0) hash ^= AccelerateCDRatio.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -288,9 +291,9 @@ namespace Zproto {
         output.WriteRawTag(24);
         output.WriteInt32(Duration);
       }
-      if (SkillCdType != 0) {
+      if (SkillCDType != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(SkillCdType);
+        output.WriteUInt32(SkillCDType);
       }
       if (ProfessionHoldBeginTime != 0L) {
         output.WriteRawTag(48);
@@ -300,21 +303,21 @@ namespace Zproto {
         output.WriteRawTag(56);
         output.WriteInt32(ChargeCount);
       }
-      if (ValidCdTime != 0) {
+      if (ValidCDTime != 0) {
         output.WriteRawTag(64);
-        output.WriteInt32(ValidCdTime);
+        output.WriteInt32(ValidCDTime);
       }
-      if (SubCdRatio != 0) {
+      if (SubCDRatio != 0) {
         output.WriteRawTag(72);
-        output.WriteInt32(SubCdRatio);
+        output.WriteInt32(SubCDRatio);
       }
-      if (SubCdFixed != 0L) {
+      if (SubCDFixed != 0L) {
         output.WriteRawTag(80);
-        output.WriteInt64(SubCdFixed);
+        output.WriteInt64(SubCDFixed);
       }
-      if (AccelerateCdRatio != 0) {
+      if (AccelerateCDRatio != 0) {
         output.WriteRawTag(88);
-        output.WriteInt32(AccelerateCdRatio);
+        output.WriteInt32(AccelerateCDRatio);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -338,9 +341,9 @@ namespace Zproto {
         output.WriteRawTag(24);
         output.WriteInt32(Duration);
       }
-      if (SkillCdType != 0) {
+      if (SkillCDType != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(SkillCdType);
+        output.WriteUInt32(SkillCDType);
       }
       if (ProfessionHoldBeginTime != 0L) {
         output.WriteRawTag(48);
@@ -350,21 +353,21 @@ namespace Zproto {
         output.WriteRawTag(56);
         output.WriteInt32(ChargeCount);
       }
-      if (ValidCdTime != 0) {
+      if (ValidCDTime != 0) {
         output.WriteRawTag(64);
-        output.WriteInt32(ValidCdTime);
+        output.WriteInt32(ValidCDTime);
       }
-      if (SubCdRatio != 0) {
+      if (SubCDRatio != 0) {
         output.WriteRawTag(72);
-        output.WriteInt32(SubCdRatio);
+        output.WriteInt32(SubCDRatio);
       }
-      if (SubCdFixed != 0L) {
+      if (SubCDFixed != 0L) {
         output.WriteRawTag(80);
-        output.WriteInt64(SubCdFixed);
+        output.WriteInt64(SubCDFixed);
       }
-      if (AccelerateCdRatio != 0) {
+      if (AccelerateCDRatio != 0) {
         output.WriteRawTag(88);
-        output.WriteInt32(AccelerateCdRatio);
+        output.WriteInt32(AccelerateCDRatio);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -385,8 +388,8 @@ namespace Zproto {
       if (Duration != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Duration);
       }
-      if (SkillCdType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillCdType);
+      if (SkillCDType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillCDType);
       }
       if (ProfessionHoldBeginTime != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(ProfessionHoldBeginTime);
@@ -394,17 +397,17 @@ namespace Zproto {
       if (ChargeCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ChargeCount);
       }
-      if (ValidCdTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ValidCdTime);
+      if (ValidCDTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ValidCDTime);
       }
-      if (SubCdRatio != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SubCdRatio);
+      if (SubCDRatio != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SubCDRatio);
       }
-      if (SubCdFixed != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SubCdFixed);
+      if (SubCDFixed != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SubCDFixed);
       }
-      if (AccelerateCdRatio != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AccelerateCdRatio);
+      if (AccelerateCDRatio != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AccelerateCDRatio);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -427,8 +430,8 @@ namespace Zproto {
       if (other.Duration != 0) {
         Duration = other.Duration;
       }
-      if (other.SkillCdType != 0) {
-        SkillCdType = other.SkillCdType;
+      if (other.SkillCDType != 0) {
+        SkillCDType = other.SkillCDType;
       }
       if (other.ProfessionHoldBeginTime != 0L) {
         ProfessionHoldBeginTime = other.ProfessionHoldBeginTime;
@@ -436,17 +439,17 @@ namespace Zproto {
       if (other.ChargeCount != 0) {
         ChargeCount = other.ChargeCount;
       }
-      if (other.ValidCdTime != 0) {
-        ValidCdTime = other.ValidCdTime;
+      if (other.ValidCDTime != 0) {
+        ValidCDTime = other.ValidCDTime;
       }
-      if (other.SubCdRatio != 0) {
-        SubCdRatio = other.SubCdRatio;
+      if (other.SubCDRatio != 0) {
+        SubCDRatio = other.SubCDRatio;
       }
-      if (other.SubCdFixed != 0L) {
-        SubCdFixed = other.SubCdFixed;
+      if (other.SubCDFixed != 0L) {
+        SubCDFixed = other.SubCDFixed;
       }
-      if (other.AccelerateCdRatio != 0) {
-        AccelerateCdRatio = other.AccelerateCdRatio;
+      if (other.AccelerateCDRatio != 0) {
+        AccelerateCDRatio = other.AccelerateCDRatio;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -480,7 +483,7 @@ namespace Zproto {
             break;
           }
           case 32: {
-            SkillCdType = input.ReadUInt32();
+            SkillCDType = input.ReadUInt32();
             break;
           }
           case 48: {
@@ -492,19 +495,19 @@ namespace Zproto {
             break;
           }
           case 64: {
-            ValidCdTime = input.ReadInt32();
+            ValidCDTime = input.ReadInt32();
             break;
           }
           case 72: {
-            SubCdRatio = input.ReadInt32();
+            SubCDRatio = input.ReadInt32();
             break;
           }
           case 80: {
-            SubCdFixed = input.ReadInt64();
+            SubCDFixed = input.ReadInt64();
             break;
           }
           case 88: {
-            AccelerateCdRatio = input.ReadInt32();
+            AccelerateCDRatio = input.ReadInt32();
             break;
           }
         }
@@ -539,7 +542,7 @@ namespace Zproto {
             break;
           }
           case 32: {
-            SkillCdType = input.ReadUInt32();
+            SkillCDType = input.ReadUInt32();
             break;
           }
           case 48: {
@@ -551,19 +554,19 @@ namespace Zproto {
             break;
           }
           case 64: {
-            ValidCdTime = input.ReadInt32();
+            ValidCDTime = input.ReadInt32();
             break;
           }
           case 72: {
-            SubCdRatio = input.ReadInt32();
+            SubCDRatio = input.ReadInt32();
             break;
           }
           case 80: {
-            SubCdFixed = input.ReadInt64();
+            SubCDFixed = input.ReadInt64();
             break;
           }
           case 88: {
-            AccelerateCdRatio = input.ReadInt32();
+            AccelerateCDRatio = input.ReadInt32();
             break;
           }
         }

@@ -26,13 +26,14 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X2dldF9zZWFzb25fZHVuZ2Vvbl9saXN0X3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGh9zdHJ1X3NlYXNvbl9k",
-            "dW5nZW9uX2FmZml4LnByb3RvIv0BChlHZXRTZWFzb25EdW5nZW9uTGlzdFJl",
-            "cGx5EhcKD2R1bmdlb25faWRfbGlzdBgCIAMoDRJOCg9kdW5nZW9uX2FmZml4",
-            "ZXMYAyADKAsyNS56cHJvdG8uR2V0U2Vhc29uRHVuZ2Vvbkxpc3RSZXBseS5E",
-            "dW5nZW9uQWZmaXhlc0VudHJ5EiQKCGVycl9jb2RlGAQgASgOMhIuenByb3Rv",
-            "LkVFcnJvckNvZGUaUQoTRHVuZ2VvbkFmZml4ZXNFbnRyeRILCgNrZXkYASAB",
-            "KA0SKQoFdmFsdWUYAiABKAsyGi56cHJvdG8uU2Vhc29uRHVuZ2VvbkFmZml4",
-            "OgI4AWIGcHJvdG8z"));
+            "dW5nZW9uX2FmZml4LnByb3RvIqECChlHZXRTZWFzb25EdW5nZW9uTGlzdFJl",
+            "cGx5EiQKDWR1bmdlb25JZExpc3QYAiADKA1SDWR1bmdlb25JZExpc3QSXQoO",
+            "ZHVuZ2VvbkFmZml4ZXMYAyADKAsyNS56cHJvdG8uR2V0U2Vhc29uRHVuZ2Vv",
+            "bkxpc3RSZXBseS5EdW5nZW9uQWZmaXhlc0VudHJ5Ug5kdW5nZW9uQWZmaXhl",
+            "cxIsCgdlcnJDb2RlGAQgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNv",
+            "ZGUaUQoTRHVuZ2VvbkFmZml4ZXNFbnRyeRILCgNrZXkYASABKA0SKQoFdmFs",
+            "dWUYAiABKAsyGi56cHJvdG8uU2Vhc29uRHVuZ2VvbkFmZml4OgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruSeasonDungeonAffixReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new GetSeasonDungeonListReply(this);
     }
 
-    /// <summary>Field number for the "dungeon_id_list" field.</summary>
+    /// <summary>Field number for the "dungeonIdList" field.</summary>
     public const int DungeonIdListFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_dungeonIdList_codec
         = pb::FieldCodec.ForUInt32(18);
@@ -101,7 +102,7 @@ namespace Zproto {
       get { return dungeonIdList_; }
     }
 
-    /// <summary>Field number for the "dungeon_affixes" field.</summary>
+    /// <summary>Field number for the "dungeonAffixes" field.</summary>
     public const int DungeonAffixesFieldNumber = 3;
     private static readonly pbc::MapField<uint, global::Zproto.SeasonDungeonAffix>.Codec _map_dungeonAffixes_codec
         = new pbc::MapField<uint, global::Zproto.SeasonDungeonAffix>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonDungeonAffix.Parser), 26);
@@ -112,7 +113,7 @@ namespace Zproto {
       get { return dungeonAffixes_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

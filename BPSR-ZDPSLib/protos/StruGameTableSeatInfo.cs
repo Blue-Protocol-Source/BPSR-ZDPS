@@ -24,9 +24,10 @@ namespace Zproto {
     static StruGameTableSeatInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2dhbWVfdGFibGVfc2VhdF9pbmZvLnByb3RvEgZ6cHJvdG8iUgoR",
-            "R2FtZVRhYmxlU2VhdEluZm8SEgoKc2VhdF9pbmRleBgBIAEoBRIRCglwbGF5",
-            "ZXJfaWQYAiABKAMSFgoOc2VsZWN0X2dhbWVfaWQYAyABKAViBnByb3RvMw=="));
+            "Ch9zdHJ1X2dhbWVfdGFibGVfc2VhdF9pbmZvLnByb3RvEgZ6cHJvdG8icQoR",
+            "R2FtZVRhYmxlU2VhdEluZm8SHAoJc2VhdEluZGV4GAEgASgFUglzZWF0SW5k",
+            "ZXgSGgoIcGxheWVySWQYAiABKANSCHBsYXllcklkEiIKDHNlbGVjdEdhbWVJ",
+            "ZBgDIAEoBVIMc2VsZWN0R2FtZUlkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new GameTableSeatInfo(this);
     }
 
-    /// <summary>Field number for the "seat_index" field.</summary>
+    /// <summary>Field number for the "seatIndex" field.</summary>
     public const int SeatIndexFieldNumber = 1;
     private int seatIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "player_id" field.</summary>
+    /// <summary>Field number for the "playerId" field.</summary>
     public const int PlayerIdFieldNumber = 2;
     private long playerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "select_game_id" field.</summary>
+    /// <summary>Field number for the "selectGameId" field.</summary>
     public const int SelectGameIdFieldNumber = 3;
     private int selectGameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

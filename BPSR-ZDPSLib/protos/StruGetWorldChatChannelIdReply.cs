@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X2dldF93b3JsZF9jaGF0X2NoYW5uZWxfaWRfcmVwbHkucHJvdG8S",
-            "Bnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iiAEKGkdldFdvcmxk",
-            "Q2hhdENoYW5uZWxJZFJlcGx5EhIKCmNoYW5uZWxfaWQYASABKA0SEAoIdXNl",
-            "cl9udW0YAiABKA0SDwoHbWF4X251bRgDIAEoDRINCgVzdGF0ZRgEIAEoDRIk",
-            "CghlcnJfY29kZRgFIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "Bnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8isAEKGkdldFdvcmxk",
+            "Q2hhdENoYW5uZWxJZFJlcGx5EhwKCWNoYW5uZWxJZBgBIAEoDVIJY2hhbm5l",
+            "bElkEhgKB3VzZXJOdW0YAiABKA1SB3VzZXJOdW0SFgoGbWF4TnVtGAMgASgN",
+            "UgZtYXhOdW0SFAoFc3RhdGUYBCABKA1SBXN0YXRlEiwKB2VyckNvZGUYBSAB",
+            "KA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new GetWorldChatChannelIdReply(this);
     }
 
-    /// <summary>Field number for the "channel_id" field.</summary>
+    /// <summary>Field number for the "channelId" field.</summary>
     public const int ChannelIdFieldNumber = 1;
     private uint channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "user_num" field.</summary>
+    /// <summary>Field number for the "userNum" field.</summary>
     public const int UserNumFieldNumber = 2;
     private uint userNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "max_num" field.</summary>
+    /// <summary>Field number for the "maxNum" field.</summary>
     public const int MaxNumFieldNumber = 3;
     private uint maxNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X3VzZV9ibHVlX3ByaW50X3NoYXJlX2NvZGVfcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvIjIKHFVzZUJsdWVQcmludFNoYXJlQ29kZVJlcXVlc3QSEgoK",
-            "c2hhcmVfY29kZRgBIAEoCWIGcHJvdG8z"));
+            "bxIGenByb3RvIjwKHFVzZUJsdWVQcmludFNoYXJlQ29kZVJlcXVlc3QSHAoJ",
+            "c2hhcmVDb2RlGAEgASgJUglzaGFyZUNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new UseBluePrintShareCodeRequest(this);
     }
 
-    /// <summary>Field number for the "share_code" field.</summary>
+    /// <summary>Field number for the "shareCode" field.</summary>
     public const int ShareCodeFieldNumber = 1;
     private string shareCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

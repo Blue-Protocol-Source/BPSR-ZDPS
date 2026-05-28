@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X21haGpvbmdfcGxheWVyX2Vtb2ppX2luZm8ucHJvdG8SBnpwcm90",
-            "byI9ChZNYWhqb25nUGxheWVyRW1vamlJbmZvEhEKCXBsYXllcl9pZBgBIAEo",
-            "AxIQCghlbW9qaV9pZBgCIAEoBWIGcHJvdG8z"));
+            "byJOChZNYWhqb25nUGxheWVyRW1vamlJbmZvEhoKCFBsYXllcklkGAEgASgD",
+            "UghQbGF5ZXJJZBIYCgdlbW9qaUlkGAIgASgFUgdlbW9qaUlkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new MahjongPlayerEmojiInfo(this);
     }
 
-    /// <summary>Field number for the "player_id" field.</summary>
+    /// <summary>Field number for the "PlayerId" field.</summary>
     public const int PlayerIdFieldNumber = 1;
     private long playerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "emoji_id" field.</summary>
+    /// <summary>Field number for the "emojiId" field.</summary>
     public const int EmojiIdFieldNumber = 2;
     private int emojiId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

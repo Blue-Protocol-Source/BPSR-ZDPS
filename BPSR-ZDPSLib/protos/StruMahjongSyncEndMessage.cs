@@ -27,12 +27,14 @@ namespace Zproto {
             "CiNzdHJ1X21haGpvbmdfc3luY19lbmRfbWVzc2FnZS5wcm90bxIGenByb3Rv",
             "GhxzdHJ1X21haGpvbmdfb3BlcmF0aW9uLnByb3RvGh5zdHJ1X21haGpvbmdf",
             "cGxheWVyX3Nob3cucHJvdG8aGXN0cnVfbWFoam9uZ19zZXR0bGUucHJvdG8i",
-            "8QEKFU1haGpvbmdTeW5jRW5kTWVzc2FnZRINCgVkb3JhcxgBIAMoBRIQCghp",
-            "bl9kb3JhcxgCIAMoBRIVCg1jdXJyZW50X2luZGV4GAMgASgFEhIKCmNhcmRf",
-            "aW5kZXgYBCABKAUSMAoNZmluYWxfcGxheWVycxgFIAMoCzIZLnpwcm90by5N",
-            "YWhqb25nUGxheWVyU2hvdxIsCg1maW5hbF9zZXR0bGVzGAYgAygLMhUuenBy",
-            "b3RvLk1haGpvbmdTZXR0bGUSLAoKb3BlcmF0aW9ucxgHIAMoCzIYLnpwcm90",
-            "by5NYWhqb25nT3BlcmF0aW9uYgZwcm90bzM="));
+            "vQIKFU1haGpvbmdTeW5jRW5kTWVzc2FnZRIUCgVEb3JhcxgBIAMoBVIFRG9y",
+            "YXMSGAoHSW5Eb3JhcxgCIAMoBVIHSW5Eb3JhcxIiCgxDdXJyZW50SW5kZXgY",
+            "AyABKAVSDEN1cnJlbnRJbmRleBIcCglDYXJkSW5kZXgYBCABKAVSCUNhcmRJ",
+            "bmRleBI9CgxGaW5hbFBsYXllcnMYBSADKAsyGS56cHJvdG8uTWFoam9uZ1Bs",
+            "YXllclNob3dSDEZpbmFsUGxheWVycxI5CgxGaW5hbFNldHRsZXMYBiADKAsy",
+            "FS56cHJvdG8uTWFoam9uZ1NldHRsZVIMRmluYWxTZXR0bGVzEjgKCk9wZXJh",
+            "dGlvbnMYByADKAsyGC56cHJvdG8uTWFoam9uZ09wZXJhdGlvblIKT3BlcmF0",
+            "aW9uc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMahjongOperationReflection.Descriptor, global::Zproto.StruMahjongPlayerShowReflection.Descriptor, global::Zproto.StruMahjongSettleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +96,7 @@ namespace Zproto {
       return new MahjongSyncEndMessage(this);
     }
 
-    /// <summary>Field number for the "doras" field.</summary>
+    /// <summary>Field number for the "Doras" field.</summary>
     public const int DorasFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_doras_codec
         = pb::FieldCodec.ForInt32(10);
@@ -105,7 +107,7 @@ namespace Zproto {
       get { return doras_; }
     }
 
-    /// <summary>Field number for the "in_doras" field.</summary>
+    /// <summary>Field number for the "InDoras" field.</summary>
     public const int InDorasFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_inDoras_codec
         = pb::FieldCodec.ForInt32(18);
@@ -116,7 +118,7 @@ namespace Zproto {
       get { return inDoras_; }
     }
 
-    /// <summary>Field number for the "current_index" field.</summary>
+    /// <summary>Field number for the "CurrentIndex" field.</summary>
     public const int CurrentIndexFieldNumber = 3;
     private int currentIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "card_index" field.</summary>
+    /// <summary>Field number for the "CardIndex" field.</summary>
     public const int CardIndexFieldNumber = 4;
     private int cardIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "final_players" field.</summary>
+    /// <summary>Field number for the "FinalPlayers" field.</summary>
     public const int FinalPlayersFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.MahjongPlayerShow> _repeated_finalPlayers_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.MahjongPlayerShow.Parser);
@@ -151,7 +153,7 @@ namespace Zproto {
       get { return finalPlayers_; }
     }
 
-    /// <summary>Field number for the "final_settles" field.</summary>
+    /// <summary>Field number for the "FinalSettles" field.</summary>
     public const int FinalSettlesFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Zproto.MahjongSettle> _repeated_finalSettles_codec
         = pb::FieldCodec.ForMessage(50, global::Zproto.MahjongSettle.Parser);
@@ -162,7 +164,7 @@ namespace Zproto {
       get { return finalSettles_; }
     }
 
-    /// <summary>Field number for the "operations" field.</summary>
+    /// <summary>Field number for the "Operations" field.</summary>
     public const int OperationsFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Zproto.MahjongOperation> _repeated_operations_codec
         = pb::FieldCodec.ForMessage(58, global::Zproto.MahjongOperation.Parser);

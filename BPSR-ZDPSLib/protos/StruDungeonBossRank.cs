@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X2R1bmdlb25fYm9zc19yYW5rLnByb3RvEgZ6cHJvdG8aFHN0cnVf",
-            "cmFua19kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ijgEKD0R1",
-            "bmdlb25Cb3NzUmFuaxI4Cglib3NzX3JhbmsYASADKAsyJS56cHJvdG8uRHVu",
-            "Z2VvbkJvc3NSYW5rLkJvc3NSYW5rRW50cnkaQQoNQm9zc1JhbmtFbnRyeRIL",
-            "CgNrZXkYASABKAUSHwoFdmFsdWUYAiABKAsyEC56cHJvdG8uUmFua0RhdGE6",
-            "AjgBYgZwcm90bzM="));
+            "cmFua19kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ilwEKD0R1",
+            "bmdlb25Cb3NzUmFuaxJBCghib3NzUmFuaxgBIAMoCzIlLnpwcm90by5EdW5n",
+            "ZW9uQm9zc1JhbmsuQm9zc1JhbmtFbnRyeVIIYm9zc1JhbmsaQQoNQm9zc1Jh",
+            "bmtFbnRyeRILCgNrZXkYASABKAUSHwoFdmFsdWUYAiABKAsyEC56cHJvdG8u",
+            "UmFua0RhdGE6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruRankDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new DungeonBossRank(this);
     }
 
-    /// <summary>Field number for the "boss_rank" field.</summary>
+    /// <summary>Field number for the "bossRank" field.</summary>
     public const int BossRankFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.RankData>.Codec _map_bossRank_codec
         = new pbc::MapField<int, global::Zproto.RankData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.RankData.Parser), 10);

@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X2FjdGlvbl9ncm91cF9mYWNlX2NsaXAucHJvdG8SBnpwcm90bxoV",
-            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIl8KE0FjdGlvbkdyb3VwRmFjZUNsaXAS",
-            "EgoKYmVnaW5fdGltZRgBIAEoAhIQCghlbmRfdGltZRgCIAEoAhIRCglmYWRl",
-            "X3RpbWUYAyABKAISDwoHZmFjZV9pZBgEIAEoBWIGcHJvdG8z"));
+            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIoEBChNBY3Rpb25Hcm91cEZhY2VDbGlw",
+            "EhwKCWJlZ2luVGltZRgBIAEoAlIJYmVnaW5UaW1lEhgKB2VuZFRpbWUYAiAB",
+            "KAJSB2VuZFRpbWUSGgoIZmFkZVRpbWUYAyABKAJSCGZhZGVUaW1lEhYKBmZh",
+            "Y2VJZBgEIAEoBVIGZmFjZUlkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new ActionGroupFaceClip(this);
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
+    /// <summary>Field number for the "beginTime" field.</summary>
     public const int BeginTimeFieldNumber = 1;
     private float beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 2;
     private float endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fade_time" field.</summary>
+    /// <summary>Field number for the "fadeTime" field.</summary>
     public const int FadeTimeFieldNumber = 3;
     private float fadeTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "face_id" field.</summary>
+    /// <summary>Field number for the "faceId" field.</summary>
     public const int FaceIdFieldNumber = 4;
     private int faceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

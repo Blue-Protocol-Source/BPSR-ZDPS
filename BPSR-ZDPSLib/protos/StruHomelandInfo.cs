@@ -29,27 +29,32 @@ namespace Zproto {
             "ZXJfZ2VuZXJhdGlvbl9yZWNvcmQucHJvdG8aIXN0cnVfaG9tZV9sYW5kX2Ns",
             "dXR0ZXJfaW5mby5wcm90bxojc3RydV9ob21lbGFuZF9kZWNvcmF0aW9uX2lu",
             "Zm8ucHJvdG8aFHN0cnVfc3RydWN0dXJlLnByb3RvGh9zdHJ1X3N0cnVjdHVy",
-            "ZV9ncm91cF9pbmZvLnByb3RvIvEGCgxIb21lbGFuZEluZm8SFQoNb3duZXJf",
-            "Y2hhcl9pZBgBIAEoAxITCgtob21lbGFuZF9pZBgCIAEoAxIQCghmaWVsZF9p",
-            "ZBgDIAEoBRIMCgRuYW1lGAQgASgJEg0KBWxldmVsGAUgASgFEgsKA2V4cBgG",
-            "IAEoAxITCgtjbGVhbmxpbmVzcxgHIAEoBRIjChtsYXN0c3VidHJhY3RjbGVh",
-            "bmxpbmVzc3RpbWUYCCABKAMSNgoRaG9tZV9sYW5kX2NsdXR0ZXIYCSABKAsy",
-            "Gy56cHJvdG8uSG9tZUxhbmRDbHV0dGVySW5mbxJUCiNob21lX2xhbmRfY2x1",
-            "dHRlcl9nZW5lcmF0aW9uX3JlY29yZBgKIAEoCzInLnpwcm90by5Ib21lTGFu",
-            "ZENsdXR0ZXJHZW5lcmF0aW9uUmVjb3JkEjgKCnN0cnVjdHVyZXMYCyADKAsy",
-            "JC56cHJvdG8uSG9tZWxhbmRJbmZvLlN0cnVjdHVyZXNFbnRyeRIwCgZncm91",
-            "cHMYDCADKAsyIC56cHJvdG8uSG9tZWxhbmRJbmZvLkdyb3Vwc0VudHJ5EjgK",
-            "CmNvaGFiaXRhbnQYDSADKAsyJC56cHJvdG8uSG9tZWxhbmRJbmZvLkNvaGFi",
-            "aXRhbnRFbnRyeRI9ChVvdXRlcl9kZWNvcmF0aW9uX2luZm8YDiABKAsyHi56",
-            "cHJvdG8uSG9tZWxhbmREZWNvcmF0aW9uSW5mbxI9ChVpbm5lcl9kZWNvcmF0",
-            "aW9uX2luZm8YDyABKAsyHi56cHJvdG8uSG9tZWxhbmREZWNvcmF0aW9uSW5m",
-            "bxIWCg51bmxvY2tlZF9hcmVhcxgQIAMoBRIUCgxob3VzaW5nX3R5cGUYESAB",
-            "KAUaRAoPU3RydWN0dXJlc0VudHJ5EgsKA2tleRgBIAEoAxIgCgV2YWx1ZRgC",
-            "IAEoCzIRLnpwcm90by5TdHJ1Y3R1cmU6AjgBGkkKC0dyb3Vwc0VudHJ5EgsK",
-            "A2tleRgBIAEoAxIpCgV2YWx1ZRgCIAEoCzIaLnpwcm90by5TdHJ1Y3R1cmVH",
-            "cm91cEluZm86AjgBGk4KD0NvaGFiaXRhbnRFbnRyeRILCgNrZXkYASABKAMS",
-            "KgoFdmFsdWUYAiABKAsyGy56cHJvdG8uQ29tbXVuaXR5UGxheWVySW5mbzoC",
-            "OAFiBnByb3RvMw=="));
+            "ZV9ncm91cF9pbmZvLnByb3RvItcICgxIb21lbGFuZEluZm8SIAoLb3duZXJD",
+            "aGFySWQYASABKANSC293bmVyQ2hhcklkEh4KCmhvbWVsYW5kSWQYAiABKANS",
+            "CmhvbWVsYW5kSWQSGAoHZmllbGRJZBgDIAEoBVIHZmllbGRJZBISCgRuYW1l",
+            "GAQgASgJUgRuYW1lEhQKBWxldmVsGAUgASgFUgVsZXZlbBIQCgNleHAYBiAB",
+            "KANSA2V4cBIgCgtjbGVhbmxpbmVzcxgHIAEoBVILY2xlYW5saW5lc3MSQAob",
+            "bGFzdHN1YnRyYWN0Y2xlYW5saW5lc3N0aW1lGAggASgDUhtsYXN0c3VidHJh",
+            "Y3RjbGVhbmxpbmVzc3RpbWUSRQoPaG9tZUxhbmRDbHV0dGVyGAkgASgLMhsu",
+            "enByb3RvLkhvbWVMYW5kQ2x1dHRlckluZm9SD2hvbWVMYW5kQ2x1dHRlchJx",
+            "Ch9ob21lTGFuZENsdXR0ZXJHZW5lcmF0aW9uUmVjb3JkGAogASgLMicuenBy",
+            "b3RvLkhvbWVMYW5kQ2x1dHRlckdlbmVyYXRpb25SZWNvcmRSH2hvbWVMYW5k",
+            "Q2x1dHRlckdlbmVyYXRpb25SZWNvcmQSRAoKc3RydWN0dXJlcxgLIAMoCzIk",
+            "Lnpwcm90by5Ib21lbGFuZEluZm8uU3RydWN0dXJlc0VudHJ5UgpzdHJ1Y3R1",
+            "cmVzEjgKBmdyb3VwcxgMIAMoCzIgLnpwcm90by5Ib21lbGFuZEluZm8uR3Jv",
+            "dXBzRW50cnlSBmdyb3VwcxJECgpjb2hhYml0YW50GA0gAygLMiQuenByb3Rv",
+            "LkhvbWVsYW5kSW5mby5Db2hhYml0YW50RW50cnlSCmNvaGFiaXRhbnQSUAoT",
+            "b3V0ZXJEZWNvcmF0aW9uSW5mbxgOIAEoCzIeLnpwcm90by5Ib21lbGFuZERl",
+            "Y29yYXRpb25JbmZvUhNvdXRlckRlY29yYXRpb25JbmZvElAKE2lubmVyRGVj",
+            "b3JhdGlvbkluZm8YDyABKAsyHi56cHJvdG8uSG9tZWxhbmREZWNvcmF0aW9u",
+            "SW5mb1ITaW5uZXJEZWNvcmF0aW9uSW5mbxIkCg11bmxvY2tlZEFyZWFzGBAg",
+            "AygFUg11bmxvY2tlZEFyZWFzEiAKC0hvdXNpbmdUeXBlGBEgASgFUgtIb3Vz",
+            "aW5nVHlwZRpECg9TdHJ1Y3R1cmVzRW50cnkSCwoDa2V5GAEgASgDEiAKBXZh",
+            "bHVlGAIgASgLMhEuenByb3RvLlN0cnVjdHVyZToCOAEaSQoLR3JvdXBzRW50",
+            "cnkSCwoDa2V5GAEgASgDEikKBXZhbHVlGAIgASgLMhouenByb3RvLlN0cnVj",
+            "dHVyZUdyb3VwSW5mbzoCOAEaTgoPQ29oYWJpdGFudEVudHJ5EgsKA2tleRgB",
+            "IAEoAxIqCgV2YWx1ZRgCIAEoCzIbLnpwcm90by5Db21tdW5pdHlQbGF5ZXJJ",
+            "bmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityPlayerInfoReflection.Descriptor, global::Zproto.StruHomeLandClutterGenerationRecordReflection.Descriptor, global::Zproto.StruHomeLandClutterInfoReflection.Descriptor, global::Zproto.StruHomelandDecorationInfoReflection.Descriptor, global::Zproto.StruStructureReflection.Descriptor, global::Zproto.StruStructureGroupInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -121,7 +126,7 @@ namespace Zproto {
       return new HomelandInfo(this);
     }
 
-    /// <summary>Field number for the "owner_char_id" field.</summary>
+    /// <summary>Field number for the "ownerCharId" field.</summary>
     public const int OwnerCharIdFieldNumber = 1;
     private long ownerCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 2;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -145,7 +150,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "field_id" field.</summary>
+    /// <summary>Field number for the "fieldId" field.</summary>
     public const int FieldIdFieldNumber = 3;
     private int fieldId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -217,7 +222,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_land_clutter" field.</summary>
+    /// <summary>Field number for the "homeLandClutter" field.</summary>
     public const int HomeLandClutterFieldNumber = 9;
     private global::Zproto.HomeLandClutterInfo homeLandClutter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -229,7 +234,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_land_clutter_generation_record" field.</summary>
+    /// <summary>Field number for the "homeLandClutterGenerationRecord" field.</summary>
     public const int HomeLandClutterGenerationRecordFieldNumber = 10;
     private global::Zproto.HomeLandClutterGenerationRecord homeLandClutterGenerationRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -274,7 +279,7 @@ namespace Zproto {
       get { return cohabitant_; }
     }
 
-    /// <summary>Field number for the "outer_decoration_info" field.</summary>
+    /// <summary>Field number for the "outerDecorationInfo" field.</summary>
     public const int OuterDecorationInfoFieldNumber = 14;
     private global::Zproto.HomelandDecorationInfo outerDecorationInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -286,7 +291,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "inner_decoration_info" field.</summary>
+    /// <summary>Field number for the "innerDecorationInfo" field.</summary>
     public const int InnerDecorationInfoFieldNumber = 15;
     private global::Zproto.HomelandDecorationInfo innerDecorationInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -298,7 +303,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unlocked_areas" field.</summary>
+    /// <summary>Field number for the "unlockedAreas" field.</summary>
     public const int UnlockedAreasFieldNumber = 16;
     private static readonly pb::FieldCodec<int> _repeated_unlockedAreas_codec
         = pb::FieldCodec.ForInt32(130);
@@ -309,7 +314,7 @@ namespace Zproto {
       get { return unlockedAreas_; }
     }
 
-    /// <summary>Field number for the "housing_type" field.</summary>
+    /// <summary>Field number for the "HousingType" field.</summary>
     public const int HousingTypeFieldNumber = 17;
     private int housingType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

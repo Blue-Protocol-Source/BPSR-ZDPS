@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X3dvcmxkX2FjdF9mbG93X2luZm8ucHJvdG8SBnpwcm90bxocZW51",
             "bV9lX3dvcmxkX2FjdF9zdGF0ZS5wcm90bxoec3RydV93b3JsZF9hY3RfdGlt",
-            "ZV9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iZgoQV29ybGRB",
-            "Y3RGbG93SW5mbxIlCgVzdGF0ZRgBIAEoDjIWLnpwcm90by5FV29ybGRBY3RT",
-            "dGF0ZRIrCgl0aW1lX2luZm8YAiABKAsyGC56cHJvdG8uV29ybGRBY3RUaW1l",
-            "SW5mb2IGcHJvdG8z"));
+            "ZV9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8idgoQV29ybGRB",
+            "Y3RGbG93SW5mbxIsCgVzdGF0ZRgBIAEoDjIWLnpwcm90by5FV29ybGRBY3RT",
+            "dGF0ZVIFc3RhdGUSNAoIdGltZUluZm8YAiABKAsyGC56cHJvdG8uV29ybGRB",
+            "Y3RUaW1lSW5mb1IIdGltZUluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEWorldActStateReflection.Descriptor, global::Zproto.StruWorldActTimeInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "time_info" field.</summary>
+    /// <summary>Field number for the "timeInfo" field.</summary>
     public const int TimeInfoFieldNumber = 2;
     private global::Zproto.WorldActTimeInfo timeInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

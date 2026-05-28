@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X3RyaWFsX3JvYWRfdGFyZ2V0X3Byb2dyZXNzLnByb3RvEgZ6cHJv",
-            "dG8aFXN0cnVfZGlydHlfbWFzay5wcm90byJaChdUcmlhbFJvYWRUYXJnZXRQ",
-            "cm9ncmVzcxIRCgl0YXJnZXRfaWQYASABKAUSFwoPdGFyZ2V0X3Byb2dyZXNz",
-            "GAIgASgFEhMKC2F3YXJkX3N0YXRlGAMgASgFYgZwcm90bzM="));
+            "dG8aFXN0cnVfZGlydHlfbWFzay5wcm90byJ9ChdUcmlhbFJvYWRUYXJnZXRQ",
+            "cm9ncmVzcxIaCgh0YXJnZXRJZBgBIAEoBVIIdGFyZ2V0SWQSJgoOdGFyZ2V0",
+            "UHJvZ3Jlc3MYAiABKAVSDnRhcmdldFByb2dyZXNzEh4KCmF3YXJkU3RhdGUY",
+            "AyABKAVSCmF3YXJkU3RhdGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new TrialRoadTargetProgress(this);
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_progress" field.</summary>
+    /// <summary>Field number for the "targetProgress" field.</summary>
     public const int TargetProgressFieldNumber = 2;
     private int targetProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_state" field.</summary>
+    /// <summary>Field number for the "awardState" field.</summary>
     public const int AwardStateFieldNumber = 3;
     private int awardState_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

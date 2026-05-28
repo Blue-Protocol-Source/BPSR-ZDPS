@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci1zdHJ1X2J1aWxkX2xpZmVfcHJvZmVzc2lvbl9pbmZvX3JlcXVlc3QucHJv",
-            "dG8SBnpwcm90byI0Ch5CdWlsZExpZmVQcm9mZXNzaW9uSW5mb1JlcXVlc3QS",
-            "EgoKYnVpbGRfdHlwZRgBIAEoBWIGcHJvdG8z"));
+            "dG8SBnpwcm90byI+Ch5CdWlsZExpZmVQcm9mZXNzaW9uSW5mb1JlcXVlc3QS",
+            "HAoJYnVpbGRUeXBlGAEgASgFUglidWlsZFR5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new BuildLifeProfessionInfoRequest(this);
     }
 
-    /// <summary>Field number for the "build_type" field.</summary>
+    /// <summary>Field number for the "buildType" field.</summary>
     public const int BuildTypeFieldNumber = 1;
     private int buildType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

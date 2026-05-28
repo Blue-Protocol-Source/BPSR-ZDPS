@@ -25,14 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2RhbmNlX2JhbGwucHJvdG8SBnpwcm90bxoWc3RydV9kYW5jZXJf",
-            "aW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIrUCCglEYW5jZUJh",
-            "bGwSEAoIZGFuY2VfaWQYASABKAUSEgoKYmVnaW5fdGltZRgCIAEoAxIQCghl",
-            "bmRfdGltZRgDIAEoAxISCgpyYW5kX2luZGV4GAQgASgFEi8KB2RhbmNlcnMY",
-            "BSADKAsyHi56cHJvdG8uRGFuY2VCYWxsLkRhbmNlcnNFbnRyeRIPCgdidWZm",
-            "X2lkGAYgASgFEg4KBm5wY19pZBgHIAEoBRIVCg1ucGNfcG9zX2luZGV4GAgg",
-            "ASgFEhcKD3N1bV9kYW5jZV9zY29yZRgJIAEoBRIWCg5oYXNfbm90aWZ5X25w",
-            "YxgKIAEoCBpCCgxEYW5jZXJzRW50cnkSCwoDa2V5GAEgASgDEiEKBXZhbHVl",
-            "GAIgASgLMhIuenByb3RvLkRhbmNlckluZm86AjgBYgZwcm90bzM="));
+            "aW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIpMDCglEYW5jZUJh",
+            "bGwSGAoHZGFuY2VJZBgBIAEoBVIHZGFuY2VJZBIcCgliZWdpblRpbWUYAiAB",
+            "KANSCWJlZ2luVGltZRIYCgdlbmRUaW1lGAMgASgDUgdlbmRUaW1lEhwKCXJh",
+            "bmRJbmRleBgEIAEoBVIJcmFuZEluZGV4EjgKB2RhbmNlcnMYBSADKAsyHi56",
+            "cHJvdG8uRGFuY2VCYWxsLkRhbmNlcnNFbnRyeVIHZGFuY2VycxIWCgZidWZm",
+            "SWQYBiABKAVSBmJ1ZmZJZBIUCgVucGNJZBgHIAEoBVIFbnBjSWQSIAoLbnBj",
+            "UG9zSW5kZXgYCCABKAVSC25wY1Bvc0luZGV4EiQKDXN1bURhbmNlU2NvcmUY",
+            "CSABKAVSDXN1bURhbmNlU2NvcmUSIgoMaGFzTm90aWZ5TnBjGAogASgIUgxo",
+            "YXNOb3RpZnlOcGMaQgoMRGFuY2Vyc0VudHJ5EgsKA2tleRgBIAEoAxIhCgV2",
+            "YWx1ZRgCIAEoCzISLnpwcm90by5EYW5jZXJJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDancerInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +99,7 @@ namespace Zproto {
       return new DanceBall(this);
     }
 
-    /// <summary>Field number for the "dance_id" field.</summary>
+    /// <summary>Field number for the "danceId" field.</summary>
     public const int DanceIdFieldNumber = 1;
     private int danceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
+    /// <summary>Field number for the "beginTime" field.</summary>
     public const int BeginTimeFieldNumber = 2;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 3;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rand_index" field.</summary>
+    /// <summary>Field number for the "randIndex" field.</summary>
     public const int RandIndexFieldNumber = 4;
     private int randIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -156,7 +158,7 @@ namespace Zproto {
       get { return dancers_; }
     }
 
-    /// <summary>Field number for the "buff_id" field.</summary>
+    /// <summary>Field number for the "buffId" field.</summary>
     public const int BuffIdFieldNumber = 6;
     private int buffId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,7 +170,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "npc_id" field.</summary>
+    /// <summary>Field number for the "npcId" field.</summary>
     public const int NpcIdFieldNumber = 7;
     private int npcId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -180,7 +182,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "npc_pos_index" field.</summary>
+    /// <summary>Field number for the "npcPosIndex" field.</summary>
     public const int NpcPosIndexFieldNumber = 8;
     private int npcPosIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -192,7 +194,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sum_dance_score" field.</summary>
+    /// <summary>Field number for the "sumDanceScore" field.</summary>
     public const int SumDanceScoreFieldNumber = 9;
     private int sumDanceScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -204,7 +206,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "has_notify_npc" field.</summary>
+    /// <summary>Field number for the "hasNotifyNpc" field.</summary>
     public const int HasNotifyNpcFieldNumber = 10;
     private bool hasNotifyNpc_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

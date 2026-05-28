@@ -33,23 +33,25 @@ namespace Zproto {
             "cmludF9yZXBseS5wcm90bxomc3RydV9zZXRfaG9tZV9ibHVlX3ByaW50X3Jl",
             "cXVlc3QucHJvdG8aKnN0cnVfdXNlX2JsdWVfcHJpbnRfc2hhcmVfY29kZV9y",
             "ZXBseS5wcm90bxosc3RydV91c2VfYmx1ZV9wcmludF9zaGFyZV9jb2RlX3Jl",
-            "cXVlc3QucHJvdG8izwUKCUNvbW11bml0eRo4ChVFZGl0Qmx1ZVByaW50TmFt",
-            "ZV9SZXQSHwoDcmV0GAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUaSAoRRWRp",
-            "dEJsdWVQcmludE5hbWUSMwoJdl9yZXF1ZXN0GAEgASgLMiAuenByb3RvLkVk",
-            "aXRCbHVlUHJpbnROYW1lUmVxdWVzdBpMChlVc2VCbHVlUHJpbnRTaGFyZUNv",
-            "ZGVfUmV0Ei8KA3JldBgBIAEoCzIiLnpwcm90by5Vc2VCbHVlUHJpbnRTaGFy",
-            "ZUNvZGVSZXBseRpQChVVc2VCbHVlUHJpbnRTaGFyZUNvZGUSNwoJdl9yZXF1",
-            "ZXN0GAEgASgLMiQuenByb3RvLlVzZUJsdWVQcmludFNoYXJlQ29kZVJlcXVl",
-            "c3QaQgoUU2V0SG9tZUJsdWVQcmludF9SZXQSKgoDcmV0GAEgASgLMh0uenBy",
-            "b3RvLlNldEhvbWVCbHVlUHJpbnRSZXBseRpGChBTZXRIb21lQmx1ZVByaW50",
-            "EjIKCXZfcmVxdWVzdBgBIAEoCzIfLnpwcm90by5TZXRIb21lQmx1ZVByaW50",
-            "UmVxdWVzdBpAChNEZWxldGVCbHVlUHJpbnRfUmV0EikKA3JldBgBIAEoCzIc",
-            "Lnpwcm90by5EZWxldGVCbHVlUHJpbnRSZXBseRpECg9EZWxldGVCbHVlUHJp",
-            "bnQSMQoJdl9yZXF1ZXN0GAEgASgLMh4uenByb3RvLkRlbGV0ZUJsdWVQcmlu",
-            "dFJlcXVlc3QaQgoUR2V0Qmx1ZVByaW50RGF0YV9SZXQSKgoDcmV0GAEgASgL",
-            "Mh0uenByb3RvLkdldEJsdWVQcmludERhdGFSZXBseRpGChBHZXRCbHVlUHJp",
-            "bnREYXRhEjIKCXZfcmVxdWVzdBgBIAEoCzIfLnpwcm90by5HZXRCbHVlUHJp",
-            "bnREYXRhUmVxdWVzdGIGcHJvdG8z"));
+            "cXVlc3QucHJvdG8ilQYKCUNvbW11bml0eRo9ChVFZGl0Qmx1ZVByaW50TmFt",
+            "ZV9SZXQSJAoDcmV0GAEgASgOMhIuenByb3RvLkVFcnJvckNvZGVSA3JldBpR",
+            "ChFFZGl0Qmx1ZVByaW50TmFtZRI8Cgh2UmVxdWVzdBgBIAEoCzIgLnpwcm90",
+            "by5FZGl0Qmx1ZVByaW50TmFtZVJlcXVlc3RSCHZSZXF1ZXN0GlEKGVVzZUJs",
+            "dWVQcmludFNoYXJlQ29kZV9SZXQSNAoDcmV0GAEgASgLMiIuenByb3RvLlVz",
+            "ZUJsdWVQcmludFNoYXJlQ29kZVJlcGx5UgNyZXQaWQoVVXNlQmx1ZVByaW50",
+            "U2hhcmVDb2RlEkAKCHZSZXF1ZXN0GAEgASgLMiQuenByb3RvLlVzZUJsdWVQ",
+            "cmludFNoYXJlQ29kZVJlcXVlc3RSCHZSZXF1ZXN0GkcKFFNldEhvbWVCbHVl",
+            "UHJpbnRfUmV0Ei8KA3JldBgBIAEoCzIdLnpwcm90by5TZXRIb21lQmx1ZVBy",
+            "aW50UmVwbHlSA3JldBpPChBTZXRIb21lQmx1ZVByaW50EjsKCHZSZXF1ZXN0",
+            "GAEgASgLMh8uenByb3RvLlNldEhvbWVCbHVlUHJpbnRSZXF1ZXN0Ugh2UmVx",
+            "dWVzdBpFChNEZWxldGVCbHVlUHJpbnRfUmV0Ei4KA3JldBgBIAEoCzIcLnpw",
+            "cm90by5EZWxldGVCbHVlUHJpbnRSZXBseVIDcmV0Gk0KD0RlbGV0ZUJsdWVQ",
+            "cmludBI6Cgh2UmVxdWVzdBgBIAEoCzIeLnpwcm90by5EZWxldGVCbHVlUHJp",
+            "bnRSZXF1ZXN0Ugh2UmVxdWVzdBpHChRHZXRCbHVlUHJpbnREYXRhX1JldBIv",
+            "CgNyZXQYASABKAsyHS56cHJvdG8uR2V0Qmx1ZVByaW50RGF0YVJlcGx5UgNy",
+            "ZXQaTwoQR2V0Qmx1ZVByaW50RGF0YRI7Cgh2UmVxdWVzdBgBIAEoCzIfLnpw",
+            "cm90by5HZXRCbHVlUHJpbnREYXRhUmVxdWVzdFIIdlJlcXVlc3RiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruDeleteBluePrintReplyReflection.Descriptor, global::Zproto.StruDeleteBluePrintRequestReflection.Descriptor, global::Zproto.StruEditBluePrintNameRequestReflection.Descriptor, global::Zproto.StruGetBluePrintDataReplyReflection.Descriptor, global::Zproto.StruGetBluePrintDataRequestReflection.Descriptor, global::Zproto.StruSetHomeBluePrintReplyReflection.Descriptor, global::Zproto.StruSetHomeBluePrintRequestReflection.Descriptor, global::Zproto.StruUseBluePrintShareCodeReplyReflection.Descriptor, global::Zproto.StruUseBluePrintShareCodeRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -476,7 +478,7 @@ namespace Zproto {
           return new EditBluePrintName(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.EditBluePrintNameRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -890,7 +892,7 @@ namespace Zproto {
           return new UseBluePrintShareCode(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.UseBluePrintShareCodeRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1304,7 +1306,7 @@ namespace Zproto {
           return new SetHomeBluePrint(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.SetHomeBluePrintRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1718,7 +1720,7 @@ namespace Zproto {
           return new DeleteBluePrint(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.DeleteBluePrintRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2132,7 +2134,7 @@ namespace Zproto {
           return new GetBluePrintData(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.GetBluePrintDataRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

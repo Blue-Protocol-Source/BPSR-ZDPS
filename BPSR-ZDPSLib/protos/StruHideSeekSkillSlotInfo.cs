@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2hpZGVfc2Vla19za2lsbF9zbG90X2luZm8ucHJvdG8SBnpwcm90",
-            "bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIjoKFUhpZGVTZWVrU2tpbGxTbG90",
-            "SW5mbxIPCgdzbG90X2lkGAEgASgFEhAKCHNraWxsX2lkGAIgASgFYgZwcm90",
-            "bzM="));
+            "bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIkkKFUhpZGVTZWVrU2tpbGxTbG90",
+            "SW5mbxIWCgZzbG90SWQYASABKAVSBnNsb3RJZBIYCgdza2lsbElkGAIgASgF",
+            "Ugdza2lsbElkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new HideSeekSkillSlotInfo(this);
     }
 
-    /// <summary>Field number for the "slot_id" field.</summary>
+    /// <summary>Field number for the "slotId" field.</summary>
     public const int SlotIdFieldNumber = 1;
     private int slotId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skill_id" field.</summary>
+    /// <summary>Field number for the "skillId" field.</summary>
     public const int SkillIdFieldNumber = 2;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

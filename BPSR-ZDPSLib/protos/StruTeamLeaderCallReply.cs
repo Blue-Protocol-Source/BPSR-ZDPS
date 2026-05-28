@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X3RlYW1fbGVhZGVyX2NhbGxfcmVwbHkucHJvdG8SBnpwcm90bxoX",
-            "ZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iTQoTVGVhbUxlYWRlckNhbGxSZXBs",
-            "eRIQCghjYWxsX21lbRgBIAMoAxIkCghlcnJfY29kZRgCIAEoDjISLnpwcm90",
-            "by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "ZW51bV9lX2Vycm9yX2NvZGUucHJvdG8iXQoTVGVhbUxlYWRlckNhbGxSZXBs",
+            "eRIYCgdjYWxsTWVtGAEgAygDUgdjYWxsTWVtEiwKB2VyckNvZGUYAiABKA4y",
+            "Ei56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new TeamLeaderCallReply(this);
     }
 
-    /// <summary>Field number for the "call_mem" field.</summary>
+    /// <summary>Field number for the "callMem" field.</summary>
     public const int CallMemFieldNumber = 1;
     private static readonly pb::FieldCodec<long> _repeated_callMem_codec
         = pb::FieldCodec.ForInt64(10);
@@ -95,7 +95,7 @@ namespace Zproto {
       get { return callMem_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

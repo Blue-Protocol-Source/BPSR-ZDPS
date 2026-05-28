@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2NsaWVudF9pbWFnZS5wcm90bxIGenByb3RvGhllbnVtX2VfcGlj",
-            "dHVyZV90eXBlLnByb3RvImEKC0NsaWVudEltYWdlEgwKBG5hbWUYASABKAkS",
-            "IgoEdHlwZRgCIAEoDjIULnpwcm90by5FUGljdHVyZVR5cGUSDAoEc2l6ZRgD",
-            "IAEoDRISCgpleHRyYV9pbmZvGAQgASgJYgZwcm90bzM="));
+            "dHVyZV90eXBlLnByb3RvIn0KC0NsaWVudEltYWdlEhIKBG5hbWUYASABKAlS",
+            "BG5hbWUSKAoEdHlwZRgCIAEoDjIULnpwcm90by5FUGljdHVyZVR5cGVSBHR5",
+            "cGUSEgoEc2l6ZRgDIAEoDVIEc2l6ZRIcCglleHRyYUluZm8YBCABKAlSCWV4",
+            "dHJhSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPictureTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "extra_info" field.</summary>
+    /// <summary>Field number for the "extraInfo" field.</summary>
     public const int ExtraInfoFieldNumber = 4;
     private string extraInfo_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

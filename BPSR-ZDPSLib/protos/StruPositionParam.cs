@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "ChlzdHJ1X3Bvc2l0aW9uX3BhcmFtLnByb3RvEgZ6cHJvdG8aH3N0cnVfY3V0",
             "X3NjZW5lX3BvaW50X2luZm8ucHJvdG8aG3N0cnVfc2NlbmVfcG9pbnRfaW5m",
-            "by5wcm90bxocc3RydV9zY2VuZV9wb3NfaWRfaW5mby5wcm90byKqAQoNUG9z",
-            "aXRpb25QYXJhbRIwChBzY2VuZV9wb2ludF9pbmZvGAIgASgLMhYuenByb3Rv",
-            "LlNjZW5lUG9pbnRJbmZvEi4KDnNjZW5lX3Bvc19pbmZvGAMgASgLMhYuenBy",
-            "b3RvLlNjZW5lUG9zSWRJbmZvEjcKFGN1dF9zY2VuZV9wb2ludF9pbmZvGAQg",
-            "ASgLMhkuenByb3RvLkN1dFNjZW5lUG9pbnRJbmZvYgZwcm90bzM="));
+            "by5wcm90bxocc3RydV9zY2VuZV9wb3NfaWRfaW5mby5wcm90byLUAQoNUG9z",
+            "aXRpb25QYXJhbRI+Cg5zY2VuZVBvaW50SW5mbxgCIAEoCzIWLnpwcm90by5T",
+            "Y2VuZVBvaW50SW5mb1IOc2NlbmVQb2ludEluZm8SOgoMc2NlbmVQb3NJbmZv",
+            "GAMgASgLMhYuenByb3RvLlNjZW5lUG9zSWRJbmZvUgxzY2VuZVBvc0luZm8S",
+            "RwoRY3V0U2NlbmVQb2ludEluZm8YBCABKAsyGS56cHJvdG8uQ3V0U2NlbmVQ",
+            "b2ludEluZm9SEWN1dFNjZW5lUG9pbnRJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCutScenePointInfoReflection.Descriptor, global::Zproto.StruScenePointInfoReflection.Descriptor, global::Zproto.StruScenePosIdInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new PositionParam(this);
     }
 
-    /// <summary>Field number for the "scene_point_info" field.</summary>
+    /// <summary>Field number for the "scenePointInfo" field.</summary>
     public const int ScenePointInfoFieldNumber = 2;
     private global::Zproto.ScenePointInfo scenePointInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_pos_info" field.</summary>
+    /// <summary>Field number for the "scenePosInfo" field.</summary>
     public const int ScenePosInfoFieldNumber = 3;
     private global::Zproto.ScenePosIdInfo scenePosInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cut_scene_point_info" field.</summary>
+    /// <summary>Field number for the "cutScenePointInfo" field.</summary>
     public const int CutScenePointInfoFieldNumber = 4;
     private global::Zproto.CutScenePointInfo cutScenePointInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

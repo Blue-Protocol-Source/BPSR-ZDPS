@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjFzdHJ1X3NldF9wZXJzb25hbF96b25lX2F2YXRhcl9mcmFtZV9yZXF1ZXN0",
-            "LnByb3RvEgZ6cHJvdG8iPAohU2V0UGVyc29uYWxab25lQXZhdGFyRnJhbWVS",
-            "ZXF1ZXN0EhcKD2F2YXRhcl9mcmFtZV9pZBgBIAEoBWIGcHJvdG8z"));
+            "LnByb3RvEgZ6cHJvdG8iSQohU2V0UGVyc29uYWxab25lQXZhdGFyRnJhbWVS",
+            "ZXF1ZXN0EiQKDWF2YXRhckZyYW1lSWQYASABKAVSDWF2YXRhckZyYW1lSWRi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +83,7 @@ namespace Zproto {
       return new SetPersonalZoneAvatarFrameRequest(this);
     }
 
-    /// <summary>Field number for the "avatar_frame_id" field.</summary>
+    /// <summary>Field number for the "avatarFrameId" field.</summary>
     public const int AvatarFrameIdFieldNumber = 1;
     private int avatarFrameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

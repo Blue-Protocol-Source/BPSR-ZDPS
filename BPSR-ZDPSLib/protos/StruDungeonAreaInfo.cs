@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X2R1bmdlb25fYXJlYV9pbmZvLnByb3RvEgZ6cHJvdG8aHHN0cnVf",
             "ZHVuZ2Vvbl9hcmVhX2RhdGEucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90",
-            "byK1AQoPRHVuZ2VvbkFyZWFJbmZvEk4KFWR1bmdlb25fYXJlYV9kYXRhX21h",
-            "cBgBIAMoCzIvLnpwcm90by5EdW5nZW9uQXJlYUluZm8uRHVuZ2VvbkFyZWFE",
-            "YXRhTWFwRW50cnkaUgoXRHVuZ2VvbkFyZWFEYXRhTWFwRW50cnkSCwoDa2V5",
-            "GAEgASgDEiYKBXZhbHVlGAIgASgLMhcuenByb3RvLkR1bmdlb25BcmVhRGF0",
-            "YToCOAFiBnByb3RvMw=="));
+            "byLGAQoPRHVuZ2VvbkFyZWFJbmZvEl8KEmR1bmdlb25BcmVhRGF0YU1hcBgB",
+            "IAMoCzIvLnpwcm90by5EdW5nZW9uQXJlYUluZm8uRHVuZ2VvbkFyZWFEYXRh",
+            "TWFwRW50cnlSEmR1bmdlb25BcmVhRGF0YU1hcBpSChdEdW5nZW9uQXJlYURh",
+            "dGFNYXBFbnRyeRILCgNrZXkYASABKAMSJgoFdmFsdWUYAiABKAsyFy56cHJv",
+            "dG8uRHVuZ2VvbkFyZWFEYXRhOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonAreaDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new DungeonAreaInfo(this);
     }
 
-    /// <summary>Field number for the "dungeon_area_data_map" field.</summary>
+    /// <summary>Field number for the "dungeonAreaDataMap" field.</summary>
     public const int DungeonAreaDataMapFieldNumber = 1;
     private static readonly pbc::MapField<long, global::Zproto.DungeonAreaData>.Codec _map_dungeonAreaDataMap_codec
         = new pbc::MapField<long, global::Zproto.DungeonAreaData>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonAreaData.Parser), 10);

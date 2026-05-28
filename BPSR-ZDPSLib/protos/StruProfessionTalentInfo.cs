@@ -25,12 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X3Byb2Zlc3Npb25fdGFsZW50X2luZm8ucHJvdG8SBnpwcm90bxoV",
-            "c3RydV9kaXJ0eV9tYXNrLnByb3RvItYBChRQcm9mZXNzaW9uVGFsZW50SW5m",
-            "bxIaChJ1c2VkX3RhbGVudF9wb2ludHMYASABKA0SFwoPdGFsZW50X25vZGVf",
-            "aWRzGAIgAygNEhsKE3RhbGVudF9zdGFnZV9jZmdfaWQYBCABKAUSIQoZdGFs",
-            "ZW50X2lsZWdhbF9yZXNldF9jb3VudBgFIAEoBRIYChB1c2VkX2F0dGFja19t",
-            "YXJrGAYgASgFEhcKD3VzZWRfZ3VhcmRfbWFyaxgHIAEoBRIWCg51c2VkX2hl",
-            "YWxfbWFyaxgIIAEoBWIGcHJvdG8z"));
+            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIr4CChRQcm9mZXNzaW9uVGFsZW50SW5m",
+            "bxIqChB1c2VkVGFsZW50UG9pbnRzGAEgASgNUhB1c2VkVGFsZW50UG9pbnRz",
+            "EiQKDXRhbGVudE5vZGVJZHMYAiADKA1SDXRhbGVudE5vZGVJZHMSKgoQdGFs",
+            "ZW50U3RhZ2VDZmdJZBgEIAEoBVIQdGFsZW50U3RhZ2VDZmdJZBI2ChZ0YWxl",
+            "bnRJbGVnYWxSZXNldENvdW50GAUgASgFUhZ0YWxlbnRJbGVnYWxSZXNldENv",
+            "dW50EiYKDnVzZWRBdHRhY2tNYXJrGAYgASgFUg51c2VkQXR0YWNrTWFyaxIk",
+            "Cg11c2VkR3VhcmRNYXJrGAcgASgFUg11c2VkR3VhcmRNYXJrEiIKDHVzZWRI",
+            "ZWFsTWFyaxgIIAEoBVIMdXNlZEhlYWxNYXJrYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +94,7 @@ namespace Zproto {
       return new ProfessionTalentInfo(this);
     }
 
-    /// <summary>Field number for the "used_talent_points" field.</summary>
+    /// <summary>Field number for the "usedTalentPoints" field.</summary>
     public const int UsedTalentPointsFieldNumber = 1;
     private uint usedTalentPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "talent_node_ids" field.</summary>
+    /// <summary>Field number for the "talentNodeIds" field.</summary>
     public const int TalentNodeIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_talentNodeIds_codec
         = pb::FieldCodec.ForUInt32(18);
@@ -115,7 +117,7 @@ namespace Zproto {
       get { return talentNodeIds_; }
     }
 
-    /// <summary>Field number for the "talent_stage_cfg_id" field.</summary>
+    /// <summary>Field number for the "talentStageCfgId" field.</summary>
     public const int TalentStageCfgIdFieldNumber = 4;
     private int talentStageCfgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "talent_ilegal_reset_count" field.</summary>
+    /// <summary>Field number for the "talentIlegalResetCount" field.</summary>
     public const int TalentIlegalResetCountFieldNumber = 5;
     private int talentIlegalResetCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "used_attack_mark" field.</summary>
+    /// <summary>Field number for the "usedAttackMark" field.</summary>
     public const int UsedAttackMarkFieldNumber = 6;
     private int usedAttackMark_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "used_guard_mark" field.</summary>
+    /// <summary>Field number for the "usedGuardMark" field.</summary>
     public const int UsedGuardMarkFieldNumber = 7;
     private int usedGuardMark_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -163,7 +165,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "used_heal_mark" field.</summary>
+    /// <summary>Field number for the "usedHealMark" field.</summary>
     public const int UsedHealMarkFieldNumber = 8;
     private int usedHealMark_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

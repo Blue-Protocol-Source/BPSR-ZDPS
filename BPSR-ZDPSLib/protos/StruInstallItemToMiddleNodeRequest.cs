@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X2luc3RhbGxfaXRlbV90b19taWRkbGVfbm9kZV9yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8iSQoeSW5zdGFsbEl0ZW1Ub01pZGRsZU5vZGVSZXF1ZXN0",
-            "Eg8KB25vZGVfaWQYASABKAUSFgoOaXRlbV9jb25maWdfaWQYAiABKAViBnBy",
-            "b3RvMw=="));
+            "b3RvEgZ6cHJvdG8iXAoeSW5zdGFsbEl0ZW1Ub01pZGRsZU5vZGVSZXF1ZXN0",
+            "EhYKBm5vZGVJZBgBIAEoBVIGbm9kZUlkEiIKDGl0ZW1Db25maWdJZBgCIAEo",
+            "BVIMaXRlbUNvbmZpZ0lkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new InstallItemToMiddleNodeRequest(this);
     }
 
-    /// <summary>Field number for the "node_id" field.</summary>
+    /// <summary>Field number for the "nodeId" field.</summary>
     public const int NodeIdFieldNumber = 1;
     private int nodeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_config_id" field.</summary>
+    /// <summary>Field number for the "itemConfigId" field.</summary>
     public const int ItemConfigIdFieldNumber = 2;
     private int itemConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,14 +25,17 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X3RpbWVyX2luZm8ucHJvdG8SBnpwcm90bxobZW51bV9lX3RpbWVy",
-            "X2V4ZV90eXBlLnByb3RvGhdlbnVtX2VfdGltZXJfdHlwZS5wcm90byKvAgoJ",
-            "VGltZXJJbmZvEg4KBmNmZ19pZBgBIAEoBRImCgp0aW1lcl90eXBlGAIgASgO",
-            "MhIuenByb3RvLkVUaW1lclR5cGUSJwoIY3VyX3R5cGUYAyABKA4yFS56cHJv",
-            "dG8uRVRpbWVyRXhlVHlwZRIXCg9zdGFydF90aW1lc3RhbXAYBCABKAMSFQoN",
-            "ZW5kX3RpbWVzdGFtcBgFIAEoAxIXCg9sYXN0X3RpbWVfc3RhbXAYBiABKAMS",
-            "GwoTbGFzdF9lbmRfdGltZV9zdGFtcBgHIAEoAxIXCg9uZXh0X3RpbWVfc3Rh",
-            "bXAYCCABKAMSGwoTbmV4dF9lbmRfdGltZV9zdGFtcBgJIAEoAxITCgtvZmZz",
-            "ZXRfbGlzdBgKIAMoBRIQCghkdXJhdGlvbhgLIAEoBWIGcHJvdG8z"));
+            "X2V4ZV90eXBlLnByb3RvGhdlbnVtX2VfdGltZXJfdHlwZS5wcm90byKwAwoJ",
+            "VGltZXJJbmZvEhQKBWNmZ0lkGAEgASgFUgVjZmdJZBIwCgl0aW1lclR5cGUY",
+            "AiABKA4yEi56cHJvdG8uRVRpbWVyVHlwZVIJdGltZXJUeXBlEi8KB2N1clR5",
+            "cGUYAyABKA4yFS56cHJvdG8uRVRpbWVyRXhlVHlwZVIHY3VyVHlwZRImCg5z",
+            "dGFydFRpbWVzdGFtcBgEIAEoA1IOc3RhcnRUaW1lc3RhbXASIgoMZW5kVGlt",
+            "ZXN0YW1wGAUgASgDUgxlbmRUaW1lc3RhbXASJAoNbGFzdFRpbWVTdGFtcBgG",
+            "IAEoA1INbGFzdFRpbWVTdGFtcBIqChBsYXN0RW5kVGltZVN0YW1wGAcgASgD",
+            "UhBsYXN0RW5kVGltZVN0YW1wEiQKDW5leHRUaW1lU3RhbXAYCCABKANSDW5l",
+            "eHRUaW1lU3RhbXASKgoQbmV4dEVuZFRpbWVTdGFtcBgJIAEoA1IQbmV4dEVu",
+            "ZFRpbWVTdGFtcBIeCgpvZmZzZXRMaXN0GAogAygFUgpvZmZzZXRMaXN0EhoK",
+            "CGR1cmF0aW9uGAsgASgFUghkdXJhdGlvbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETimerExeTypeReflection.Descriptor, global::Zproto.EnumETimerTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +101,7 @@ namespace Zproto {
       return new TimerInfo(this);
     }
 
-    /// <summary>Field number for the "cfg_id" field.</summary>
+    /// <summary>Field number for the "cfgId" field.</summary>
     public const int CfgIdFieldNumber = 1;
     private int cfgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "timer_type" field.</summary>
+    /// <summary>Field number for the "timerType" field.</summary>
     public const int TimerTypeFieldNumber = 2;
     private global::Zproto.ETimerType timerType_ = global::Zproto.ETimerType.TimerTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_type" field.</summary>
+    /// <summary>Field number for the "curType" field.</summary>
     public const int CurTypeFieldNumber = 3;
     private global::Zproto.ETimerExeType curType_ = global::Zproto.ETimerExeType.TimerExeTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "start_timestamp" field.</summary>
+    /// <summary>Field number for the "startTimestamp" field.</summary>
     public const int StartTimestampFieldNumber = 4;
     private long startTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -146,7 +149,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_timestamp" field.</summary>
+    /// <summary>Field number for the "endTimestamp" field.</summary>
     public const int EndTimestampFieldNumber = 5;
     private long endTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -158,7 +161,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_time_stamp" field.</summary>
+    /// <summary>Field number for the "lastTimeStamp" field.</summary>
     public const int LastTimeStampFieldNumber = 6;
     private long lastTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -170,7 +173,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_end_time_stamp" field.</summary>
+    /// <summary>Field number for the "lastEndTimeStamp" field.</summary>
     public const int LastEndTimeStampFieldNumber = 7;
     private long lastEndTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -182,7 +185,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "next_time_stamp" field.</summary>
+    /// <summary>Field number for the "nextTimeStamp" field.</summary>
     public const int NextTimeStampFieldNumber = 8;
     private long nextTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -194,7 +197,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "next_end_time_stamp" field.</summary>
+    /// <summary>Field number for the "nextEndTimeStamp" field.</summary>
     public const int NextEndTimeStampFieldNumber = 9;
     private long nextEndTimeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -206,7 +209,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "offset_list" field.</summary>
+    /// <summary>Field number for the "offsetList" field.</summary>
     public const int OffsetListFieldNumber = 10;
     private static readonly pb::FieldCodec<int> _repeated_offsetList_codec
         = pb::FieldCodec.ForInt32(82);

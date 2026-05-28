@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X2FjdGlvbl9ncm91cF9zYXZlX2luZm8ucHJvdG8SBnpwcm90bxoc",
             "c3RydV9hY3Rpb25fZ3JvdXBfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNr",
-            "LnByb3RvInsKE0FjdGlvbkdyb3VwU2F2ZUluZm8SMgoRYWN0aW9uX2dyb3Vw",
-            "X2luZm8YASABKAsyFy56cHJvdG8uQWN0aW9uR3JvdXBJbmZvEg8KB2ljb25f",
-            "aWQYAiABKAUSDAoEbmFtZRgDIAEoCRIRCglzYXZlX3RpbWUYBCABKARiBnBy",
-            "b3RvMw=="));
+            "LnByb3RvIqABChNBY3Rpb25Hcm91cFNhdmVJbmZvEkEKD2FjdGlvbkdyb3Vw",
+            "SW5mbxgBIAEoCzIXLnpwcm90by5BY3Rpb25Hcm91cEluZm9SD2FjdGlvbkdy",
+            "b3VwSW5mbxIWCgZpY29uSWQYAiABKAVSBmljb25JZBISCgRuYW1lGAMgASgJ",
+            "UgRuYW1lEhoKCHNhdmVUaW1lGAQgASgEUghzYXZlVGltZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActionGroupInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new ActionGroupSaveInfo(this);
     }
 
-    /// <summary>Field number for the "action_group_info" field.</summary>
+    /// <summary>Field number for the "actionGroupInfo" field.</summary>
     public const int ActionGroupInfoFieldNumber = 1;
     private global::Zproto.ActionGroupInfo actionGroupInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "icon_id" field.</summary>
+    /// <summary>Field number for the "iconId" field.</summary>
     public const int IconIdFieldNumber = 2;
     private int iconId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "save_time" field.</summary>
+    /// <summary>Field number for the "saveTime" field.</summary>
     public const int SaveTimeFieldNumber = 4;
     private ulong saveTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

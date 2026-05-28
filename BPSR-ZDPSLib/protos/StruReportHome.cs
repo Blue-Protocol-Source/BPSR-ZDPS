@@ -24,8 +24,8 @@ namespace Zproto {
     static StruReportHomeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X3JlcG9ydF9ob21lLnByb3RvEgZ6cHJvdG8iHQoKUmVwb3J0SG9t",
-            "ZRIPCgdob21lX2lkGAEgASgDYgZwcm90bzM="));
+            "ChZzdHJ1X3JlcG9ydF9ob21lLnByb3RvEgZ6cHJvdG8iJAoKUmVwb3J0SG9t",
+            "ZRIWCgZob21lSWQYASABKANSBmhvbWVJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new ReportHome(this);
     }
 
-    /// <summary>Field number for the "home_id" field.</summary>
+    /// <summary>Field number for the "homeId" field.</summary>
     public const int HomeIdFieldNumber = 1;
     private long homeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

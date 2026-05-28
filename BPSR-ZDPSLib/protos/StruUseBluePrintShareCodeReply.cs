@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CipzdHJ1X3VzZV9ibHVlX3ByaW50X3NoYXJlX2NvZGVfcmVwbHkucHJvdG8S",
             "Bnpwcm90bxogc3RydV9ibHVlX3ByaW50X3NoYXJlX2RhdGEucHJvdG8aF2Vu",
-            "dW1fZV9lcnJvcl9jb2RlLnByb3RvIncKGlVzZUJsdWVQcmludFNoYXJlQ29k",
-            "ZVJlcGx5EiQKCGVycl9jb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUS",
-            "MwoPYmx1ZV9wcmludF9kYXRhGAIgASgLMhouenByb3RvLkJsdWVQcmludFNo",
-            "YXJlRGF0YWIGcHJvdG8z"));
+            "dW1fZV9lcnJvcl9jb2RlLnByb3RvIowBChpVc2VCbHVlUHJpbnRTaGFyZUNv",
+            "ZGVSZXBseRIsCgdlcnJDb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGVS",
+            "B2VyckNvZGUSQAoNYmx1ZVByaW50RGF0YRgCIAEoCzIaLnpwcm90by5CbHVl",
+            "UHJpbnRTaGFyZURhdGFSDWJsdWVQcmludERhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBluePrintShareDataReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new UseBluePrintShareCodeReply(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "blue_print_data" field.</summary>
+    /// <summary>Field number for the "bluePrintData" field.</summary>
     public const int BluePrintDataFieldNumber = 2;
     private global::Zproto.BluePrintShareData bluePrintData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

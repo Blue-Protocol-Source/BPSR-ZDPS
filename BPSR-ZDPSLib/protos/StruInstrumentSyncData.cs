@@ -25,14 +25,17 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X2luc3RydW1lbnRfc3luY19kYXRhLnByb3RvEgZ6cHJvdG8aIWVu",
-            "dW1fZV9pbnN0cnVtZW50X3BsYXlfdHlwZS5wcm90byJrChJJbnN0cnVtZW50",
-            "U3luY0RhdGESEQoJcGxheV90aW1lGAEgASgDEhIKCnBsYXlfcGFyYW0YAiAB",
-            "KAUSLgoJcGxheV90eXBlGAMgASgOMhsuenByb3RvLkVJbnN0cnVtZW50UGxh",
-            "eVR5cGViBnByb3RvMw=="));
+            "dW1fZV9pbnN0cnVtZW50X3BsYXlfdHlwZS5wcm90bxohZW51bV9lX2luc3Ry",
+            "dW1lbnRfc3luY190eXBlLnByb3RvIuwBChJJbnN0cnVtZW50U3luY0RhdGES",
+            "NwoIc3luY1R5cGUYASABKA4yGy56cHJvdG8uRUluc3RydW1lbnRTeW5jVHlw",
+            "ZVIIc3luY1R5cGUSGgoIcGxheVRpbWUYAiABKANSCHBsYXlUaW1lEhwKCXBs",
+            "YXlQYXJhbRgDIAEoBVIJcGxheVBhcmFtEjcKCHBsYXlUeXBlGAQgASgOMhsu",
+            "enByb3RvLkVJbnN0cnVtZW50UGxheVR5cGVSCHBsYXlUeXBlEioKEGV4cGVj",
+            "dGVkU3luY1RpbWUYBSABKANSEGV4cGVjdGVkU3luY1RpbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.EnumEInstrumentPlayTypeReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.EnumEInstrumentPlayTypeReflection.Descriptor, global::Zproto.EnumEInstrumentSyncTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.InstrumentSyncData), global::Zproto.InstrumentSyncData.Parser, new[]{ "PlayTime", "PlayParam", "PlayType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.InstrumentSyncData), global::Zproto.InstrumentSyncData.Parser, new[]{ "SyncType", "PlayTime", "PlayParam", "PlayType", "ExpectedSyncTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +77,11 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentSyncData(InstrumentSyncData other) : this() {
+      syncType_ = other.syncType_;
       playTime_ = other.playTime_;
       playParam_ = other.playParam_;
       playType_ = other.playType_;
+      expectedSyncTime_ = other.expectedSyncTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,8 +91,20 @@ namespace Zproto {
       return new InstrumentSyncData(this);
     }
 
-    /// <summary>Field number for the "play_time" field.</summary>
-    public const int PlayTimeFieldNumber = 1;
+    /// <summary>Field number for the "syncType" field.</summary>
+    public const int SyncTypeFieldNumber = 1;
+    private global::Zproto.EInstrumentSyncType syncType_ = global::Zproto.EInstrumentSyncType.Note;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.EInstrumentSyncType SyncType {
+      get { return syncType_; }
+      set {
+        syncType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "playTime" field.</summary>
+    public const int PlayTimeFieldNumber = 2;
     private long playTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,8 +115,8 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "play_param" field.</summary>
-    public const int PlayParamFieldNumber = 2;
+    /// <summary>Field number for the "playParam" field.</summary>
+    public const int PlayParamFieldNumber = 3;
     private int playParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,8 +127,8 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "play_type" field.</summary>
-    public const int PlayTypeFieldNumber = 3;
+    /// <summary>Field number for the "playType" field.</summary>
+    public const int PlayTypeFieldNumber = 4;
     private global::Zproto.EInstrumentPlayType playType_ = global::Zproto.EInstrumentPlayType.InstrumentPlayTypeNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -119,6 +136,18 @@ namespace Zproto {
       get { return playType_; }
       set {
         playType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "expectedSyncTime" field.</summary>
+    public const int ExpectedSyncTimeFieldNumber = 5;
+    private long expectedSyncTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long ExpectedSyncTime {
+      get { return expectedSyncTime_; }
+      set {
+        expectedSyncTime_ = value;
       }
     }
 
@@ -137,9 +166,11 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (SyncType != other.SyncType) return false;
       if (PlayTime != other.PlayTime) return false;
       if (PlayParam != other.PlayParam) return false;
       if (PlayType != other.PlayType) return false;
+      if (ExpectedSyncTime != other.ExpectedSyncTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -147,9 +178,11 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (SyncType != global::Zproto.EInstrumentSyncType.Note) hash ^= SyncType.GetHashCode();
       if (PlayTime != 0L) hash ^= PlayTime.GetHashCode();
       if (PlayParam != 0) hash ^= PlayParam.GetHashCode();
       if (PlayType != global::Zproto.EInstrumentPlayType.InstrumentPlayTypeNone) hash ^= PlayType.GetHashCode();
+      if (ExpectedSyncTime != 0L) hash ^= ExpectedSyncTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -168,17 +201,25 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PlayTime != 0L) {
+      if (SyncType != global::Zproto.EInstrumentSyncType.Note) {
         output.WriteRawTag(8);
+        output.WriteEnum((int) SyncType);
+      }
+      if (PlayTime != 0L) {
+        output.WriteRawTag(16);
         output.WriteInt64(PlayTime);
       }
       if (PlayParam != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteInt32(PlayParam);
       }
       if (PlayType != global::Zproto.EInstrumentPlayType.InstrumentPlayTypeNone) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteEnum((int) PlayType);
+      }
+      if (ExpectedSyncTime != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(ExpectedSyncTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -190,17 +231,25 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PlayTime != 0L) {
+      if (SyncType != global::Zproto.EInstrumentSyncType.Note) {
         output.WriteRawTag(8);
+        output.WriteEnum((int) SyncType);
+      }
+      if (PlayTime != 0L) {
+        output.WriteRawTag(16);
         output.WriteInt64(PlayTime);
       }
       if (PlayParam != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteInt32(PlayParam);
       }
       if (PlayType != global::Zproto.EInstrumentPlayType.InstrumentPlayTypeNone) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteEnum((int) PlayType);
+      }
+      if (ExpectedSyncTime != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(ExpectedSyncTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -212,6 +261,9 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (SyncType != global::Zproto.EInstrumentSyncType.Note) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SyncType);
+      }
       if (PlayTime != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(PlayTime);
       }
@@ -220,6 +272,9 @@ namespace Zproto {
       }
       if (PlayType != global::Zproto.EInstrumentPlayType.InstrumentPlayTypeNone) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PlayType);
+      }
+      if (ExpectedSyncTime != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ExpectedSyncTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -233,6 +288,9 @@ namespace Zproto {
       if (other == null) {
         return;
       }
+      if (other.SyncType != global::Zproto.EInstrumentSyncType.Note) {
+        SyncType = other.SyncType;
+      }
       if (other.PlayTime != 0L) {
         PlayTime = other.PlayTime;
       }
@@ -241,6 +299,9 @@ namespace Zproto {
       }
       if (other.PlayType != global::Zproto.EInstrumentPlayType.InstrumentPlayTypeNone) {
         PlayType = other.PlayType;
+      }
+      if (other.ExpectedSyncTime != 0L) {
+        ExpectedSyncTime = other.ExpectedSyncTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -262,15 +323,23 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            PlayTime = input.ReadInt64();
+            SyncType = (global::Zproto.EInstrumentSyncType) input.ReadEnum();
             break;
           }
           case 16: {
-            PlayParam = input.ReadInt32();
+            PlayTime = input.ReadInt64();
             break;
           }
           case 24: {
+            PlayParam = input.ReadInt32();
+            break;
+          }
+          case 32: {
             PlayType = (global::Zproto.EInstrumentPlayType) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            ExpectedSyncTime = input.ReadInt64();
             break;
           }
         }
@@ -293,15 +362,23 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            PlayTime = input.ReadInt64();
+            SyncType = (global::Zproto.EInstrumentSyncType) input.ReadEnum();
             break;
           }
           case 16: {
-            PlayParam = input.ReadInt32();
+            PlayTime = input.ReadInt64();
             break;
           }
           case 24: {
+            PlayParam = input.ReadInt32();
+            break;
+          }
+          case 32: {
             PlayType = (global::Zproto.EInstrumentPlayType) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            ExpectedSyncTime = input.ReadInt64();
             break;
           }
         }

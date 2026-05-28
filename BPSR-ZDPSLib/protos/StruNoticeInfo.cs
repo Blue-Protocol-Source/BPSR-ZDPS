@@ -24,11 +24,13 @@ namespace Zproto {
     static StruNoticeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X25vdGljZV9pbmZvLnByb3RvEgZ6cHJvdG8inAEKCk5vdGljZUlu",
-            "Zm8SEQoJbm90aWNlX2lkGAEgASgNEhEKCXNlbmRfdGltZRgCIAEoBBIPCgdp",
-            "c19sb29wGAMgASgIEhMKC2xvb3BfbnVtYmVyGAQgASgFEhoKEmxvb3BfdGlt",
-            "ZV9pbnRlcnZhbBgFIAEoDRIUCgxjb250ZW50X3RleHQYBiABKAkSEAoIZW5k",
-            "X3RpbWUYByABKANiBnByb3RvMw=="));
+            "ChZzdHJ1X25vdGljZV9pbmZvLnByb3RvEgZ6cHJvdG8i5AEKCk5vdGljZUlu",
+            "Zm8SGgoIbm90aWNlSWQYASABKA1SCG5vdGljZUlkEhoKCHNlbmRUaW1lGAIg",
+            "ASgEUghzZW5kVGltZRIWCgZpc0xvb3AYAyABKAhSBmlzTG9vcBIeCgpsb29w",
+            "TnVtYmVyGAQgASgFUgpsb29wTnVtYmVyEioKEGxvb3BUaW1lSW50ZXJ2YWwY",
+            "BSABKA1SEGxvb3BUaW1lSW50ZXJ2YWwSIAoLY29udGVudFRleHQYBiABKAlS",
+            "C2NvbnRlbnRUZXh0EhgKB2VuZFRpbWUYByABKANSB2VuZFRpbWViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +92,7 @@ namespace Zproto {
       return new NoticeInfo(this);
     }
 
-    /// <summary>Field number for the "notice_id" field.</summary>
+    /// <summary>Field number for the "noticeId" field.</summary>
     public const int NoticeIdFieldNumber = 1;
     private uint noticeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "send_time" field.</summary>
+    /// <summary>Field number for the "sendTime" field.</summary>
     public const int SendTimeFieldNumber = 2;
     private ulong sendTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_loop" field.</summary>
+    /// <summary>Field number for the "isLoop" field.</summary>
     public const int IsLoopFieldNumber = 3;
     private bool isLoop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +128,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "loop_number" field.</summary>
+    /// <summary>Field number for the "loopNumber" field.</summary>
     public const int LoopNumberFieldNumber = 4;
     private int loopNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +140,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "loop_time_interval" field.</summary>
+    /// <summary>Field number for the "loopTimeInterval" field.</summary>
     public const int LoopTimeIntervalFieldNumber = 5;
     private uint loopTimeInterval_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "content_text" field.</summary>
+    /// <summary>Field number for the "contentText" field.</summary>
     public const int ContentTextFieldNumber = 6;
     private string contentText_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,7 +164,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 7;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

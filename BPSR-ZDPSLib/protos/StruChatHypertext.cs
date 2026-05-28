@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X2NoYXRfaHlwZXJ0ZXh0LnByb3RvEgZ6cHJvdG8aF3N0cnVfcGxh",
-            "Y2VfaG9sZGVyLnByb3RvIlMKDUNoYXRIeXBlcnRleHQSEQoJY29uZmlnX2lk",
-            "GAEgASgNEi8KEmh5cGVydGV4dF9jb250ZW50cxgCIAMoCzITLnpwcm90by5Q",
-            "bGFjZUhvbGRlcmIGcHJvdG8z"));
+            "Y2VfaG9sZGVyLnByb3RvIm4KDUNoYXRIeXBlcnRleHQSGgoIY29uZmlnSWQY",
+            "ASABKA1SCGNvbmZpZ0lkEkEKEWh5cGVydGV4dENvbnRlbnRzGAIgAygLMhMu",
+            "enByb3RvLlBsYWNlSG9sZGVyUhFoeXBlcnRleHRDb250ZW50c2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPlaceHolderReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ChatHypertext(this);
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
+    /// <summary>Field number for the "configId" field.</summary>
     public const int ConfigIdFieldNumber = 1;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hypertext_contents" field.</summary>
+    /// <summary>Field number for the "hypertextContents" field.</summary>
     public const int HypertextContentsFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.PlaceHolder> _repeated_hypertextContents_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.PlaceHolder.Parser);

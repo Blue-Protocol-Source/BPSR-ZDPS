@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X21haWxfZXh0cmFfY29uZGl0aW9uLnByb3RvEgZ6cHJvdG8aH3N0",
-            "cnVfbWFpbF9sZXZlbF9jb25kaXRpb24ucHJvdG8ioAEKEk1haWxFeHRyYUNv",
-            "bmRpdGlvbhIpCgVsZXZlbBgBIAEoCzIaLnpwcm90by5NYWlsTGV2ZWxDb25k",
-            "aXRpb24SFgoObG9naW5fY2hhbm5lbHMYAiADKAUSGAoQbGFzdF9hY3RpdmVf",
-            "ZGF5cxgDIAEoBRIQCghhcmVhX2lkcxgEIAMoCRIbChNyZWdpc3Rlcl9hZnRl",
-            "cl90aW1lGAUgASgDYgZwcm90bzM="));
+            "cnVfbWFpbF9sZXZlbF9jb25kaXRpb24ucHJvdG8i3AEKEk1haWxFeHRyYUNv",
+            "bmRpdGlvbhIwCgVsZXZlbBgBIAEoCzIaLnpwcm90by5NYWlsTGV2ZWxDb25k",
+            "aXRpb25SBWxldmVsEiQKDWxvZ2luQ2hhbm5lbHMYAiADKAVSDWxvZ2luQ2hh",
+            "bm5lbHMSJgoObGFzdEFjdGl2ZURheXMYAyABKAVSDmxhc3RBY3RpdmVEYXlz",
+            "EhgKB2FyZWFJZHMYBCADKAlSB2FyZWFJZHMSLAoRcmVnaXN0ZXJBZnRlclRp",
+            "bWUYBSABKANSEXJlZ2lzdGVyQWZ0ZXJUaW1lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMailLevelConditionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "login_channels" field.</summary>
+    /// <summary>Field number for the "loginChannels" field.</summary>
     public const int LoginChannelsFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_loginChannels_codec
         = pb::FieldCodec.ForInt32(18);
@@ -112,7 +113,7 @@ namespace Zproto {
       get { return loginChannels_; }
     }
 
-    /// <summary>Field number for the "last_active_days" field.</summary>
+    /// <summary>Field number for the "lastActiveDays" field.</summary>
     public const int LastActiveDaysFieldNumber = 3;
     private int lastActiveDays_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "area_ids" field.</summary>
+    /// <summary>Field number for the "areaIds" field.</summary>
     public const int AreaIdsFieldNumber = 4;
     private static readonly pb::FieldCodec<string> _repeated_areaIds_codec
         = pb::FieldCodec.ForString(34);
@@ -135,7 +136,7 @@ namespace Zproto {
       get { return areaIds_; }
     }
 
-    /// <summary>Field number for the "register_after_time" field.</summary>
+    /// <summary>Field number for the "registerAfterTime" field.</summary>
     public const int RegisterAfterTimeFieldNumber = 5;
     private long registerAfterTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

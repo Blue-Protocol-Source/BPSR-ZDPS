@@ -26,15 +26,18 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X2JsdWVfcHJpbnRfc2hhcmVfZGF0YS5wcm90bxIGenByb3RvGhpl",
             "bnVtX2JsdWVfcHJpbnRfdHlwZS5wcm90bxogZW51bV9lX3BpY3R1cmVfcmV2",
-            "aWV3X3R5cGUucHJvdG8i5gIKEkJsdWVQcmludFNoYXJlRGF0YRISCgpzaGFy",
-            "ZV9jb2RlGAEgASgJEg8KB3ZlcnNpb24YAiABKAUSDwoHY2hhcl9pZBgDIAEo",
-            "AxIMCgRuYW1lGAQgASgJEi4KD2JsdWVfcHJpbnRfdHlwZRgFIAEoDjIVLnpw",
-            "cm90by5CbHVlUHJpbnRUeXBlEhEKCWlzX2N1c3RvbRgGIAEoCBIRCgljb3Zl",
-            "cl91cmwYByABKAkSMAoMcmV2aWV3X3N0YXRlGAggASgOMhouenByb3RvLkVQ",
-            "aWN0dXJlUmV2aWV3VHlwZRIWCg5zdHJ1Y3R1cmVzX3VybBgJIAEoCRIYChBz",
-            "dHJ1Y3R1cmVzX2NvdW50GAogASgFEhoKEmlubmVyX2ZpbmlzaF90YXNrcxgL",
-            "IAMoBRIaChJvdXRlcl9maW5pc2hfdGFza3MYDCADKAUSGgoSb2ZmaWNpYWxf",
-            "Ymx1ZXByaW50GA0gASgIYgZwcm90bzM="));
+            "aWV3X3R5cGUucHJvdG8igQQKEkJsdWVQcmludFNoYXJlRGF0YRIcCglzaGFy",
+            "ZUNvZGUYASABKAlSCXNoYXJlQ29kZRIYCgd2ZXJzaW9uGAIgASgFUgd2ZXJz",
+            "aW9uEhYKBmNoYXJJZBgDIAEoA1IGY2hhcklkEhIKBG5hbWUYBCABKAlSBG5h",
+            "bWUSOwoNYmx1ZVByaW50VHlwZRgFIAEoDjIVLnpwcm90by5CbHVlUHJpbnRU",
+            "eXBlUg1ibHVlUHJpbnRUeXBlEhoKCGlzQ3VzdG9tGAYgASgIUghpc0N1c3Rv",
+            "bRIaCghjb3ZlclVybBgHIAEoCVIIY292ZXJVcmwSPAoLcmV2aWV3U3RhdGUY",
+            "CCABKA4yGi56cHJvdG8uRVBpY3R1cmVSZXZpZXdUeXBlUgtyZXZpZXdTdGF0",
+            "ZRIkCg1zdHJ1Y3R1cmVzVXJsGAkgASgJUg1zdHJ1Y3R1cmVzVXJsEigKD3N0",
+            "cnVjdHVyZXNDb3VudBgKIAEoBVIPc3RydWN0dXJlc0NvdW50EioKEGlubmVy",
+            "RmluaXNoVGFza3MYCyADKAVSEGlubmVyRmluaXNoVGFza3MSKgoQb3V0ZXJG",
+            "aW5pc2hUYXNrcxgMIAMoBVIQb3V0ZXJGaW5pc2hUYXNrcxIsChFvZmZpY2lh",
+            "bEJsdWVwcmludBgNIAEoCFIRb2ZmaWNpYWxCbHVlcHJpbnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumBluePrintTypeReflection.Descriptor, global::Zproto.EnumEPictureReviewTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +105,7 @@ namespace Zproto {
       return new BluePrintShareData(this);
     }
 
-    /// <summary>Field number for the "share_code" field.</summary>
+    /// <summary>Field number for the "shareCode" field.</summary>
     public const int ShareCodeFieldNumber = 1;
     private string shareCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 3;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "blue_print_type" field.</summary>
+    /// <summary>Field number for the "bluePrintType" field.</summary>
     public const int BluePrintTypeFieldNumber = 5;
     private global::Zproto.BluePrintType bluePrintType_ = global::Zproto.BluePrintType.Outer;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,7 +165,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_custom" field.</summary>
+    /// <summary>Field number for the "isCustom" field.</summary>
     public const int IsCustomFieldNumber = 6;
     private bool isCustom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -174,7 +177,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cover_url" field.</summary>
+    /// <summary>Field number for the "coverUrl" field.</summary>
     public const int CoverUrlFieldNumber = 7;
     private string coverUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -186,7 +189,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "review_state" field.</summary>
+    /// <summary>Field number for the "reviewState" field.</summary>
     public const int ReviewStateFieldNumber = 8;
     private global::Zproto.EPictureReviewType reviewState_ = global::Zproto.EPictureReviewType.EpictureReviewNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -198,7 +201,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "structures_url" field.</summary>
+    /// <summary>Field number for the "structuresUrl" field.</summary>
     public const int StructuresUrlFieldNumber = 9;
     private string structuresUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -210,7 +213,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "structures_count" field.</summary>
+    /// <summary>Field number for the "structuresCount" field.</summary>
     public const int StructuresCountFieldNumber = 10;
     private int structuresCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -222,7 +225,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "inner_finish_tasks" field.</summary>
+    /// <summary>Field number for the "innerFinishTasks" field.</summary>
     public const int InnerFinishTasksFieldNumber = 11;
     private static readonly pb::FieldCodec<int> _repeated_innerFinishTasks_codec
         = pb::FieldCodec.ForInt32(90);
@@ -233,7 +236,7 @@ namespace Zproto {
       get { return innerFinishTasks_; }
     }
 
-    /// <summary>Field number for the "outer_finish_tasks" field.</summary>
+    /// <summary>Field number for the "outerFinishTasks" field.</summary>
     public const int OuterFinishTasksFieldNumber = 12;
     private static readonly pb::FieldCodec<int> _repeated_outerFinishTasks_codec
         = pb::FieldCodec.ForInt32(98);
@@ -244,7 +247,7 @@ namespace Zproto {
       get { return outerFinishTasks_; }
     }
 
-    /// <summary>Field number for the "official_blueprint" field.</summary>
+    /// <summary>Field number for the "officialBlueprint" field.</summary>
     public const int OfficialBlueprintFieldNumber = 13;
     private bool officialBlueprint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

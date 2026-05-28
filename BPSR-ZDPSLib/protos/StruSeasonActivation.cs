@@ -26,16 +26,17 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X3NlYXNvbl9hY3RpdmF0aW9uLnByb3RvEgZ6cHJvdG8aI3N0cnVf",
             "c2Vhc29uX2FjdGl2YXRpb25fdGFyZ2V0LnByb3RvGhVzdHJ1X2RpcnR5X21h",
-            "c2sucHJvdG8ihAMKEFNlYXNvbkFjdGl2YXRpb24SEQoJc2Vhc29uX2lkGAEg",
-            "ASgFEhgKEGFjdGl2YXRpb25fcG9pbnQYAiABKAUSFAoMcmVmcmVzaF90aW1l",
-            "GAMgASgFEksKEmFjdGl2YXRpb25fdGFyZ2V0cxgEIAMoCzIvLnpwcm90by5T",
-            "ZWFzb25BY3RpdmF0aW9uLkFjdGl2YXRpb25UYXJnZXRzRW50cnkSTAoTc3Rh",
-            "Z2VfcmV3YXJkX3N0YXR1cxgFIAMoCzIvLnpwcm90by5TZWFzb25BY3RpdmF0",
-            "aW9uLlN0YWdlUmV3YXJkU3RhdHVzRW50cnkaWAoWQWN0aXZhdGlvblRhcmdl",
-            "dHNFbnRyeRILCgNrZXkYASABKAUSLQoFdmFsdWUYAiABKAsyHi56cHJvdG8u",
-            "U2Vhc29uQWN0aXZhdGlvblRhcmdldDoCOAEaOAoWU3RhZ2VSZXdhcmRTdGF0",
-            "dXNFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90",
-            "bzM="));
+            "c2sucHJvdG8izAMKEFNlYXNvbkFjdGl2YXRpb24SGgoIc2Vhc29uSWQYASAB",
+            "KAVSCHNlYXNvbklkEigKD2FjdGl2YXRpb25Qb2ludBgCIAEoBVIPYWN0aXZh",
+            "dGlvblBvaW50EiAKC3JlZnJlc2hUaW1lGAMgASgFUgtyZWZyZXNoVGltZRJd",
+            "ChFhY3RpdmF0aW9uVGFyZ2V0cxgEIAMoCzIvLnpwcm90by5TZWFzb25BY3Rp",
+            "dmF0aW9uLkFjdGl2YXRpb25UYXJnZXRzRW50cnlSEWFjdGl2YXRpb25UYXJn",
+            "ZXRzEl0KEXN0YWdlUmV3YXJkU3RhdHVzGAUgAygLMi8uenByb3RvLlNlYXNv",
+            "bkFjdGl2YXRpb24uU3RhZ2VSZXdhcmRTdGF0dXNFbnRyeVIRc3RhZ2VSZXdh",
+            "cmRTdGF0dXMaWAoWQWN0aXZhdGlvblRhcmdldHNFbnRyeRILCgNrZXkYASAB",
+            "KAUSLQoFdmFsdWUYAiABKAsyHi56cHJvdG8uU2Vhc29uQWN0aXZhdGlvblRh",
+            "cmdldDoCOAEaOAoWU3RhZ2VSZXdhcmRTdGF0dXNFbnRyeRILCgNrZXkYASAB",
+            "KA0SDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSeasonActivationTargetReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +96,7 @@ namespace Zproto {
       return new SeasonActivation(this);
     }
 
-    /// <summary>Field number for the "season_id" field.</summary>
+    /// <summary>Field number for the "seasonId" field.</summary>
     public const int SeasonIdFieldNumber = 1;
     private int seasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -107,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activation_point" field.</summary>
+    /// <summary>Field number for the "activationPoint" field.</summary>
     public const int ActivationPointFieldNumber = 2;
     private int activationPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -119,7 +120,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refresh_time" field.</summary>
+    /// <summary>Field number for the "refreshTime" field.</summary>
     public const int RefreshTimeFieldNumber = 3;
     private int refreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,7 +132,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activation_targets" field.</summary>
+    /// <summary>Field number for the "activationTargets" field.</summary>
     public const int ActivationTargetsFieldNumber = 4;
     private static readonly pbc::MapField<int, global::Zproto.SeasonActivationTarget>.Codec _map_activationTargets_codec
         = new pbc::MapField<int, global::Zproto.SeasonActivationTarget>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonActivationTarget.Parser), 34);
@@ -142,7 +143,7 @@ namespace Zproto {
       get { return activationTargets_; }
     }
 
-    /// <summary>Field number for the "stage_reward_status" field.</summary>
+    /// <summary>Field number for the "stageRewardStatus" field.</summary>
     public const int StageRewardStatusFieldNumber = 5;
     private static readonly pbc::MapField<uint, int>.Codec _map_stageRewardStatus_codec
         = new pbc::MapField<uint, int>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 42);

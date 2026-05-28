@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEConditionTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtlbnVtX2VfY29uZGl0aW9uX3R5cGUucHJvdG8SBnpwcm90byqXBAoORUNv",
+            "ChtlbnVtX2VfY29uZGl0aW9uX3R5cGUucHJvdG8SBnpwcm90byrLBAoORUNv",
             "bmRpdGlvblR5cGUSGAoUQ29uZGl0aW9uX0Fsd2F5c1RydWUQABIVChFDb25k",
             "aXRpb25fSGFzQnVmZhBlEhcKE0NvbmRpdGlvbl9CdWZmTGF5ZXIQZhIWChJD",
             "b25kaXRpb25fSW5Hcm91bmQQZxIVChFDb25kaXRpb25fQ29sbGlkZRBoEhIK",
@@ -34,9 +34,11 @@ namespace Zproto {
             "cmdldERpc3RhbmNlEG4SFQoRQ29uZGl0aW9uX0lzSW5BaXIQbxIZChVDb25k",
             "aXRpb25fVGFyZ2V0QW5nbGUQcBIcChhDb25kaXRpb25fSW5wdXREaXJlY3Rp",
             "b24QcRIjCh9Db25kaXRpb25fQ2xpZW50QnVsbGV0SGFzVGFyZ2V0EHISFwoT",
-            "Q29uZGl0aW9uX0lzUGFzc2l2ZRBzEhkKFENvbmRpdGlvbl9Jc0J0blByZXNz",
-            "EJFOEhYKEUNvbmRpdGlvbl9Jc0J0blVwEJJOEhkKFENvbmRpdGlvbl9DbGlj",
-            "a0NvdW50EJNOEhgKE0NvbmRpdGlvbl9QcmVzc1RpbWUQlE5iBnByb3RvMw=="));
+            "Q29uZGl0aW9uX0lzUGFzc2l2ZRBzEhYKEkNvbmRpdGlvbl9BdHRyUmF0ZRB0",
+            "EhoKFkNvbmRpdGlvbl9GaWdodFJlc1JhdGUQdRIZChRDb25kaXRpb25fSXNC",
+            "dG5QcmVzcxCRThIWChFDb25kaXRpb25fSXNCdG5VcBCSThIZChRDb25kaXRp",
+            "b25fQ2xpY2tDb3VudBCTThIYChNDb25kaXRpb25fUHJlc3NUaW1lEJROYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EConditionType), }, null, null));
@@ -62,6 +64,8 @@ namespace Zproto {
     [pbr::OriginalName("Condition_InputDirection")] ConditionInputDirection = 113,
     [pbr::OriginalName("Condition_ClientBulletHasTarget")] ConditionClientBulletHasTarget = 114,
     [pbr::OriginalName("Condition_IsPassive")] ConditionIsPassive = 115,
+    [pbr::OriginalName("Condition_AttrRate")] ConditionAttrRate = 116,
+    [pbr::OriginalName("Condition_FightResRate")] ConditionFightResRate = 117,
     [pbr::OriginalName("Condition_IsBtnPress")] ConditionIsBtnPress = 10001,
     [pbr::OriginalName("Condition_IsBtnUp")] ConditionIsBtnUp = 10002,
     [pbr::OriginalName("Condition_ClickCount")] ConditionClickCount = 10003,

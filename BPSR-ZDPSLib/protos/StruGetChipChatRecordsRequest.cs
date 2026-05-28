@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X2dldF9jaGlwX2NoYXRfcmVjb3Jkc19yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8aIWVudW1fY2hpdF9jaGF0X2NoYW5uZWxfdHlwZS5wcm90byKKAQoZ",
-            "R2V0Q2hpcENoYXRSZWNvcmRzUmVxdWVzdBIxCgxjaGFubmVsX3R5cGUYAiAB",
-            "KA4yGy56cHJvdG8uQ2hpdENoYXRDaGFubmVsVHlwZRITCgtkZXNjX21zZ19p",
-            "ZBgDIAEoAxISCgpyZWNvcmRfbnVtGAQgASgNEhEKCXRhcmdldF9pZBgFIAEo",
-            "A2IGcHJvdG8z"));
+            "cHJvdG8aIWVudW1fY2hpdF9jaGF0X2NoYW5uZWxfdHlwZS5wcm90byKyAQoZ",
+            "R2V0Q2hpcENoYXRSZWNvcmRzUmVxdWVzdBI9CgtjaGFubmVsVHlwZRgCIAEo",
+            "DjIbLnpwcm90by5DaGl0Q2hhdENoYW5uZWxUeXBlUgtjaGFubmVsVHlwZRIc",
+            "CglkZXNjTXNnSWQYAyABKANSCWRlc2NNc2dJZBIcCglyZWNvcmROdW0YBCAB",
+            "KA1SCXJlY29yZE51bRIaCgh0YXJnZXRJZBgFIAEoA1IIdGFyZ2V0SWRiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumChitChatChannelTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new GetChipChatRecordsRequest(this);
     }
 
-    /// <summary>Field number for the "channel_type" field.</summary>
+    /// <summary>Field number for the "channelType" field.</summary>
     public const int ChannelTypeFieldNumber = 2;
     private global::Zproto.ChitChatChannelType channelType_ = global::Zproto.ChitChatChannelType.ChannelNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "desc_msg_id" field.</summary>
+    /// <summary>Field number for the "descMsgId" field.</summary>
     public const int DescMsgIdFieldNumber = 3;
     private long descMsgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "record_num" field.</summary>
+    /// <summary>Field number for the "recordNum" field.</summary>
     public const int RecordNumFieldNumber = 4;
     private uint recordNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 5;
     private long targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

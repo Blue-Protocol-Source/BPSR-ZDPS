@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2N1bHRpdmF0ZV9saW5lX2RhdGEucHJvdG8SBnpwcm90bxonc3Ry",
             "dV9jdWx0aXZhdGVfbGluZV9zdWJfdHlwZV9kYXRhLnByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8iuwEKEUN1bHRpdmF0ZUxpbmVEYXRhEksKEmN1bHRp",
-            "dmF0ZV9saW5lX21hcBgBIAMoCzIvLnpwcm90by5DdWx0aXZhdGVMaW5lRGF0",
-            "YS5DdWx0aXZhdGVMaW5lTWFwRW50cnkaWQoVQ3VsdGl2YXRlTGluZU1hcEVu",
-            "dHJ5EgsKA2tleRgBIAEoBRIvCgV2YWx1ZRgCIAEoCzIgLnpwcm90by5DdWx0",
-            "aXZhdGVMaW5lU3ViVHlwZURhdGE6AjgBYgZwcm90bzM="));
+            "cnR5X21hc2sucHJvdG8iywEKEUN1bHRpdmF0ZUxpbmVEYXRhElsKEGN1bHRp",
+            "dmF0ZUxpbmVNYXAYASADKAsyLy56cHJvdG8uQ3VsdGl2YXRlTGluZURhdGEu",
+            "Q3VsdGl2YXRlTGluZU1hcEVudHJ5UhBjdWx0aXZhdGVMaW5lTWFwGlkKFUN1",
+            "bHRpdmF0ZUxpbmVNYXBFbnRyeRILCgNrZXkYASABKAUSLwoFdmFsdWUYAiAB",
+            "KAsyIC56cHJvdG8uQ3VsdGl2YXRlTGluZVN1YlR5cGVEYXRhOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCultivateLineSubTypeDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new CultivateLineData(this);
     }
 
-    /// <summary>Field number for the "cultivate_line_map" field.</summary>
+    /// <summary>Field number for the "cultivateLineMap" field.</summary>
     public const int CultivateLineMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.CultivateLineSubTypeData>.Codec _map_cultivateLineMap_codec
         = new pbc::MapField<int, global::Zproto.CultivateLineSubTypeData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CultivateLineSubTypeData.Parser), 10);

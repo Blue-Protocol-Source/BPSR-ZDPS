@@ -56,65 +56,71 @@ namespace Zproto {
             "dF9yZXF1ZXN0LnByb3RvGidzdHJ1X3RlYW1fYWN0aXZpdHlfcmVzdWx0X3Jl",
             "cXVlc3QucHJvdG8aLHN0cnVfdGVhbV9hY3Rpdml0eV92b3RlX3Jlc3VsdF9y",
             "ZXF1ZXN0LnByb3RvGipzdHJ1X3VwZGF0ZV90ZWFtX21lbV9iZV9jYWxsX3Jl",
-            "cXVlc3QucHJvdG8inRQKC0dycGNUZWFtTnRmGk4KFE5vdGljZVVwZGF0ZVRl",
-            "YW1JbmZvEjYKCXZfcmVxdWVzdBgBIAEoCzIjLnpwcm90by5Ob3RpY2VVcGRh",
-            "dGVUZWFtSW5mb1JlcXVlc3QaWgoaTm90aWNlVXBkYXRlVGVhbU1lbWJlcklu",
-            "Zm8SPAoJdl9yZXF1ZXN0GAEgASgLMikuenByb3RvLk5vdGljZVVwZGF0ZVRl",
-            "YW1NZW1iZXJJbmZvUmVxdWVzdBpCCg5Ob3RpZnlKb2luVGVhbRIwCgl2X3Jl",
-            "cXVlc3QYASABKAsyHS56cHJvdG8uTm90aWZ5Sm9pblRlYW1SZXF1ZXN0GkQK",
-            "D05vdGlmeUxlYXZlVGVhbRIxCgl2X3JlcXVlc3QYASABKAsyHi56cHJvdG8u",
-            "Tm90aWZ5TGVhdmVUZWFtUmVxdWVzdBpECg9Ob3RpZnlBcHBseUpvaW4SMQoJ",
-            "dl9yZXF1ZXN0GAEgASgLMh4uenByb3RvLk5vdGlmeUFwcGx5Sm9pblJlcXVl",
-            "c3QaRgoQTm90aWZ5SW52aXRhdGlvbhIyCgl2X3JlcXVlc3QYASABKAsyHy56",
-            "cHJvdG8uTm90aWZ5SW52aXRhdGlvblJlcXVlc3QaSgoSTm90aWZ5UmVmdXNl",
-            "SW52aXRlEjQKCXZfcmVxdWVzdBgBIAEoCzIhLnpwcm90by5Ob3RpZnlSZWZ1",
-            "c2VJbnZpdGVSZXF1ZXN0GlgKGU5vdGlmeUxlYWRlckFwcGx5TGlzdFNpemUS",
-            "OwoJdl9yZXF1ZXN0GAEgASgLMiguenByb3RvLk5vdGlmeUxlYWRlckFwcGx5",
-            "TGlzdFNpemVSZXF1ZXN0GkwKE05vdGlmeUFwcGx5QmVMZWFkZXISNQoJdl9y",
-            "ZXF1ZXN0GAEgASgLMiIuenByb3RvLk5vdGlmeUFwcGx5QmVMZWFkZXJSZXF1",
-            "ZXN0GlAKFU5vdGlmeVJlamVjdEFwcGxpY2FudBI3Cgl2X3JlcXVlc3QYASAB",
-            "KAsyJC56cHJvdG8uTm90aWZ5UmVqZWN0QXBwbGljYW50UmVxdWVzdBpSChZO",
-            "b3RpZnlCZVRyYW5zZmVyTGVhZGVyEjgKCXZfcmVxdWVzdBgBIAEoCzIlLnpw",
-            "cm90by5Ob3RpZnlCZVRyYW5zZmVyTGVhZGVyUmVxdWVzdBpeChxOb3RpZnlS",
-            "ZWZ1c2VCZVRyYW5zZmVyTGVhZGVyEj4KCXZfcmVxdWVzdBgBIAEoCzIrLnpw",
-            "cm90by5Ob3RpZnlSZWZ1c2VCZVRyYW5zZmVyTGVhZGVyUmVxdWVzdBpKChJO",
-            "b3RpY2VUZWFtRGlzc29sdmUSNAoJdl9yZXF1ZXN0GAEgASgLMiEuenByb3Rv",
-            "Lk5vdGljZVRlYW1EaXNzb2x2ZVJlcXVlc3QaVAoXTm90aWZ5VGVhbUFjdGl2",
-            "aXR5U3RhdGUSOQoJdl9yZXF1ZXN0GAEgASgLMiYuenByb3RvLk5vdGlmeVRl",
-            "YW1BY3Rpdml0eVN0YXRlUmVxdWVzdBpKChJUZWFtQWN0aXZpdHlSZXN1bHQS",
-            "NAoJdl9yZXF1ZXN0GAEgASgLMiEuenByb3RvLlRlYW1BY3Rpdml0eVJlc3Vs",
-            "dFJlcXVlc3QaUgoWVGVhbUFjdGl2aXR5TGlzdFJlc3VsdBI4Cgl2X3JlcXVl",
-            "c3QYASABKAsyJS56cHJvdG8uVGVhbUFjdGl2aXR5TGlzdFJlc3VsdFJlcXVl",
-            "c3QaUgoWVGVhbUFjdGl2aXR5Vm90ZVJlc3VsdBI4Cgl2X3JlcXVlc3QYASAB",
-            "KAsyJS56cHJvdG8uVGVhbUFjdGl2aXR5Vm90ZVJlc3VsdFJlcXVlc3QaUAoV",
-            "Tm90aWZ5Q2hhck1hdGNoUmVzdWx0EjcKCXZfcmVxdWVzdBgBIAEoCzIkLnpw",
-            "cm90by5Ob3RpZnlDaGFyTWF0Y2hSZXN1bHRSZXF1ZXN0GlAKFU5vdGlmeVRl",
-            "YW1NYXRjaFJlc3VsdBI3Cgl2X3JlcXVlc3QYASABKAsyJC56cHJvdG8uTm90",
-            "aWZ5VGVhbU1hdGNoUmVzdWx0UmVxdWVzdBpOChROb3RpZnlDaGFyQWJvcnRN",
-            "YXRjaBI2Cgl2X3JlcXVlc3QYASABKAsyIy56cHJvdG8uTm90aWZ5Q2hhckFi",
-            "b3J0TWF0Y2hSZXF1ZXN0GkwKE1VwZGF0ZVRlYW1NZW1CZUNhbGwSNQoJdl9y",
-            "ZXF1ZXN0GAEgASgLMiIuenByb3RvLlVwZGF0ZVRlYW1NZW1CZUNhbGxSZXF1",
-            "ZXN0GkwKE05vdGlmeVRlYW1NZW1CZUNhbGwSNQoJdl9yZXF1ZXN0GAEgASgL",
-            "MiIuenByb3RvLk5vdGlmeVRlYW1NZW1CZUNhbGxSZXF1ZXN0GlgKGU5vdGlm",
-            "eVRlYW1NZW1CZUNhbGxSZXN1bHQSOwoJdl9yZXF1ZXN0GAEgASgLMiguenBy",
-            "b3RvLk5vdGlmeVRlYW1NZW1CZUNhbGxSZXN1bHRSZXF1ZXN0GkoKEk5vdGlm",
-            "eVRlYW1FbnRlckVychI0Cgl2X3JlcXVlc3QYASABKAsyIS56cHJvdG8uTm90",
-            "aWZ5VGVhbUVudGVyRXJyUmVxdWVzdBpsCiNOb3RpZnlUZWFtTWVtTWljcm9w",
-            "aG9uZVN0YXR1c0NoYW5nZRJFCgl2X3JlcXVlc3QYASABKAsyMi56cHJvdG8u",
-            "Tm90aWZ5VGVhbU1lbU1pY3JvcGhvbmVTdGF0dXNDaGFuZ2VSZXF1ZXN0GmQK",
-            "H05vdGlmeVRlYW1NZW1zU3BlYWtTdGF0dXNDaGFuZ2USQQoJdl9yZXF1ZXN0",
-            "GAEgASgLMi4uenByb3RvLk5vdGlmeVRlYW1NZW1zU3BlYWtTdGF0dXNDaGFu",
-            "Z2VSZXF1ZXN0GloKGk5vdGlmeVRlYW1NZW1Wb2ljZUlkQ2hhbmdlEjwKCXZf",
-            "cmVxdWVzdBgBIAEoCzIpLnpwcm90by5Ob3RpZnlUZWFtTWVtVm9pY2VJZENo",
-            "YW5nZVJlcXVlc3QaWgoaTm90aWZ5VGVhbUNoYW5nZU1lbWJlclR5cGUSPAoJ",
-            "dl9yZXF1ZXN0GAEgASgLMikuenByb3RvLk5vdGlmeVRlYW1DaGFuZ2VNZW1i",
-            "ZXJUeXBlUmVxdWVzdBpQChVOb3RpZnlUZWFtR3JvdXBVcGRhdGUSNwoJdl9y",
-            "ZXF1ZXN0GAEgASgLMiQuenByb3RvLk5vdGlmeVRlYW1Hcm91cFVwZGF0ZVJl",
-            "cXVlc3QaVgoYTm90aWZ5SW52aXRlSm9pbkR1bmdlb25zEjoKCXZfcmVxdWVz",
-            "dBgBIAEoCzInLnpwcm90by5Ob3RpZnlJbnZpdGVKb2luRHVuZ2VvbnNSZXF1",
-            "ZXN0Gk4KFE5vdGlmeUNvdW50RG93blN0YXJ0EjYKCXZfcmVxdWVzdBgBIAEo",
-            "CzIjLnpwcm90by5Ob3RpZnlDb3VudERvd25TdGFydFJlcXVlc3RiBnByb3Rv",
-            "Mw=="));
+            "cXVlc3QucHJvdG8itBYKC0dycGNUZWFtTnRmGlcKFE5vdGljZVVwZGF0ZVRl",
+            "YW1JbmZvEj8KCHZSZXF1ZXN0GAEgASgLMiMuenByb3RvLk5vdGljZVVwZGF0",
+            "ZVRlYW1JbmZvUmVxdWVzdFIIdlJlcXVlc3QaYwoaTm90aWNlVXBkYXRlVGVh",
+            "bU1lbWJlckluZm8SRQoIdlJlcXVlc3QYASABKAsyKS56cHJvdG8uTm90aWNl",
+            "VXBkYXRlVGVhbU1lbWJlckluZm9SZXF1ZXN0Ugh2UmVxdWVzdBpLCg5Ob3Rp",
+            "ZnlKb2luVGVhbRI5Cgh2UmVxdWVzdBgBIAEoCzIdLnpwcm90by5Ob3RpZnlK",
+            "b2luVGVhbVJlcXVlc3RSCHZSZXF1ZXN0Gk0KD05vdGlmeUxlYXZlVGVhbRI6",
+            "Cgh2UmVxdWVzdBgBIAEoCzIeLnpwcm90by5Ob3RpZnlMZWF2ZVRlYW1SZXF1",
+            "ZXN0Ugh2UmVxdWVzdBpNCg9Ob3RpZnlBcHBseUpvaW4SOgoIdlJlcXVlc3QY",
+            "ASABKAsyHi56cHJvdG8uTm90aWZ5QXBwbHlKb2luUmVxdWVzdFIIdlJlcXVl",
+            "c3QaTwoQTm90aWZ5SW52aXRhdGlvbhI7Cgh2UmVxdWVzdBgBIAEoCzIfLnpw",
+            "cm90by5Ob3RpZnlJbnZpdGF0aW9uUmVxdWVzdFIIdlJlcXVlc3QaUwoSTm90",
+            "aWZ5UmVmdXNlSW52aXRlEj0KCHZSZXF1ZXN0GAEgASgLMiEuenByb3RvLk5v",
+            "dGlmeVJlZnVzZUludml0ZVJlcXVlc3RSCHZSZXF1ZXN0GmEKGU5vdGlmeUxl",
+            "YWRlckFwcGx5TGlzdFNpemUSRAoIdlJlcXVlc3QYASABKAsyKC56cHJvdG8u",
+            "Tm90aWZ5TGVhZGVyQXBwbHlMaXN0U2l6ZVJlcXVlc3RSCHZSZXF1ZXN0GlUK",
+            "E05vdGlmeUFwcGx5QmVMZWFkZXISPgoIdlJlcXVlc3QYASABKAsyIi56cHJv",
+            "dG8uTm90aWZ5QXBwbHlCZUxlYWRlclJlcXVlc3RSCHZSZXF1ZXN0GlkKFU5v",
+            "dGlmeVJlamVjdEFwcGxpY2FudBJACgh2UmVxdWVzdBgBIAEoCzIkLnpwcm90",
+            "by5Ob3RpZnlSZWplY3RBcHBsaWNhbnRSZXF1ZXN0Ugh2UmVxdWVzdBpbChZO",
+            "b3RpZnlCZVRyYW5zZmVyTGVhZGVyEkEKCHZSZXF1ZXN0GAEgASgLMiUuenBy",
+            "b3RvLk5vdGlmeUJlVHJhbnNmZXJMZWFkZXJSZXF1ZXN0Ugh2UmVxdWVzdBpn",
+            "ChxOb3RpZnlSZWZ1c2VCZVRyYW5zZmVyTGVhZGVyEkcKCHZSZXF1ZXN0GAEg",
+            "ASgLMisuenByb3RvLk5vdGlmeVJlZnVzZUJlVHJhbnNmZXJMZWFkZXJSZXF1",
+            "ZXN0Ugh2UmVxdWVzdBpTChJOb3RpY2VUZWFtRGlzc29sdmUSPQoIdlJlcXVl",
+            "c3QYASABKAsyIS56cHJvdG8uTm90aWNlVGVhbURpc3NvbHZlUmVxdWVzdFII",
+            "dlJlcXVlc3QaXQoXTm90aWZ5VGVhbUFjdGl2aXR5U3RhdGUSQgoIdlJlcXVl",
+            "c3QYASABKAsyJi56cHJvdG8uTm90aWZ5VGVhbUFjdGl2aXR5U3RhdGVSZXF1",
+            "ZXN0Ugh2UmVxdWVzdBpTChJUZWFtQWN0aXZpdHlSZXN1bHQSPQoIdlJlcXVl",
+            "c3QYASABKAsyIS56cHJvdG8uVGVhbUFjdGl2aXR5UmVzdWx0UmVxdWVzdFII",
+            "dlJlcXVlc3QaWwoWVGVhbUFjdGl2aXR5TGlzdFJlc3VsdBJBCgh2UmVxdWVz",
+            "dBgBIAEoCzIlLnpwcm90by5UZWFtQWN0aXZpdHlMaXN0UmVzdWx0UmVxdWVz",
+            "dFIIdlJlcXVlc3QaWwoWVGVhbUFjdGl2aXR5Vm90ZVJlc3VsdBJBCgh2UmVx",
+            "dWVzdBgBIAEoCzIlLnpwcm90by5UZWFtQWN0aXZpdHlWb3RlUmVzdWx0UmVx",
+            "dWVzdFIIdlJlcXVlc3QaWQoVTm90aWZ5Q2hhck1hdGNoUmVzdWx0EkAKCHZS",
+            "ZXF1ZXN0GAEgASgLMiQuenByb3RvLk5vdGlmeUNoYXJNYXRjaFJlc3VsdFJl",
+            "cXVlc3RSCHZSZXF1ZXN0GlkKFU5vdGlmeVRlYW1NYXRjaFJlc3VsdBJACgh2",
+            "UmVxdWVzdBgBIAEoCzIkLnpwcm90by5Ob3RpZnlUZWFtTWF0Y2hSZXN1bHRS",
+            "ZXF1ZXN0Ugh2UmVxdWVzdBpXChROb3RpZnlDaGFyQWJvcnRNYXRjaBI/Cgh2",
+            "UmVxdWVzdBgBIAEoCzIjLnpwcm90by5Ob3RpZnlDaGFyQWJvcnRNYXRjaFJl",
+            "cXVlc3RSCHZSZXF1ZXN0GlUKE1VwZGF0ZVRlYW1NZW1CZUNhbGwSPgoIdlJl",
+            "cXVlc3QYASABKAsyIi56cHJvdG8uVXBkYXRlVGVhbU1lbUJlQ2FsbFJlcXVl",
+            "c3RSCHZSZXF1ZXN0GlUKE05vdGlmeVRlYW1NZW1CZUNhbGwSPgoIdlJlcXVl",
+            "c3QYASABKAsyIi56cHJvdG8uTm90aWZ5VGVhbU1lbUJlQ2FsbFJlcXVlc3RS",
+            "CHZSZXF1ZXN0GmEKGU5vdGlmeVRlYW1NZW1CZUNhbGxSZXN1bHQSRAoIdlJl",
+            "cXVlc3QYASABKAsyKC56cHJvdG8uTm90aWZ5VGVhbU1lbUJlQ2FsbFJlc3Vs",
+            "dFJlcXVlc3RSCHZSZXF1ZXN0GlMKEk5vdGlmeVRlYW1FbnRlckVychI9Cgh2",
+            "UmVxdWVzdBgBIAEoCzIhLnpwcm90by5Ob3RpZnlUZWFtRW50ZXJFcnJSZXF1",
+            "ZXN0Ugh2UmVxdWVzdBp1CiNOb3RpZnlUZWFtTWVtTWljcm9waG9uZVN0YXR1",
+            "c0NoYW5nZRJOCgh2UmVxdWVzdBgBIAEoCzIyLnpwcm90by5Ob3RpZnlUZWFt",
+            "TWVtTWljcm9waG9uZVN0YXR1c0NoYW5nZVJlcXVlc3RSCHZSZXF1ZXN0Gm0K",
+            "H05vdGlmeVRlYW1NZW1zU3BlYWtTdGF0dXNDaGFuZ2USSgoIdlJlcXVlc3QY",
+            "ASABKAsyLi56cHJvdG8uTm90aWZ5VGVhbU1lbXNTcGVha1N0YXR1c0NoYW5n",
+            "ZVJlcXVlc3RSCHZSZXF1ZXN0GmMKGk5vdGlmeVRlYW1NZW1Wb2ljZUlkQ2hh",
+            "bmdlEkUKCHZSZXF1ZXN0GAEgASgLMikuenByb3RvLk5vdGlmeVRlYW1NZW1W",
+            "b2ljZUlkQ2hhbmdlUmVxdWVzdFIIdlJlcXVlc3QaYwoaTm90aWZ5VGVhbUNo",
+            "YW5nZU1lbWJlclR5cGUSRQoIdlJlcXVlc3QYASABKAsyKS56cHJvdG8uTm90",
+            "aWZ5VGVhbUNoYW5nZU1lbWJlclR5cGVSZXF1ZXN0Ugh2UmVxdWVzdBpZChVO",
+            "b3RpZnlUZWFtR3JvdXBVcGRhdGUSQAoIdlJlcXVlc3QYASABKAsyJC56cHJv",
+            "dG8uTm90aWZ5VGVhbUdyb3VwVXBkYXRlUmVxdWVzdFIIdlJlcXVlc3QaXwoY",
+            "Tm90aWZ5SW52aXRlSm9pbkR1bmdlb25zEkMKCHZSZXF1ZXN0GAEgASgLMicu",
+            "enByb3RvLk5vdGlmeUludml0ZUpvaW5EdW5nZW9uc1JlcXVlc3RSCHZSZXF1",
+            "ZXN0GlcKFE5vdGlmeUNvdW50RG93blN0YXJ0Ej8KCHZSZXF1ZXN0GAEgASgL",
+            "MiMuenByb3RvLk5vdGlmeUNvdW50RG93blN0YXJ0UmVxdWVzdFIIdlJlcXVl",
+            "c3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNoticeTeamDissolveRequestReflection.Descriptor, global::Zproto.StruNoticeUpdateTeamInfoRequestReflection.Descriptor, global::Zproto.StruNoticeUpdateTeamMemberInfoRequestReflection.Descriptor, global::Zproto.StruNotifyApplyBeLeaderRequestReflection.Descriptor, global::Zproto.StruNotifyApplyJoinRequestReflection.Descriptor, global::Zproto.StruNotifyBeTransferLeaderRequestReflection.Descriptor, global::Zproto.StruNotifyCharAbortMatchRequestReflection.Descriptor, global::Zproto.StruNotifyCharMatchResultRequestReflection.Descriptor, global::Zproto.StruNotifyCountDownStartRequestReflection.Descriptor, global::Zproto.StruNotifyInvitationRequestReflection.Descriptor, global::Zproto.StruNotifyInviteJoinDungeonsRequestReflection.Descriptor, global::Zproto.StruNotifyJoinTeamRequestReflection.Descriptor, global::Zproto.StruNotifyLeaderApplyListSizeRequestReflection.Descriptor, global::Zproto.StruNotifyLeaveTeamRequestReflection.Descriptor, global::Zproto.StruNotifyRefuseBeTransferLeaderRequestReflection.Descriptor, global::Zproto.StruNotifyRefuseInviteRequestReflection.Descriptor, global::Zproto.StruNotifyRejectApplicantRequestReflection.Descriptor, global::Zproto.StruNotifyTeamActivityStateRequestReflection.Descriptor, global::Zproto.StruNotifyTeamChangeMemberTypeRequestReflection.Descriptor, global::Zproto.StruNotifyTeamEnterErrRequestReflection.Descriptor, global::Zproto.StruNotifyTeamGroupUpdateRequestReflection.Descriptor, global::Zproto.StruNotifyTeamMatchResultRequestReflection.Descriptor, global::Zproto.StruNotifyTeamMemBeCallRequestReflection.Descriptor, global::Zproto.StruNotifyTeamMemBeCallResultRequestReflection.Descriptor, global::Zproto.StruNotifyTeamMemMicrophoneStatusChangeRequestReflection.Descriptor, global::Zproto.StruNotifyTeamMemVoiceIdChangeRequestReflection.Descriptor, global::Zproto.StruNotifyTeamMemsSpeakStatusChangeRequestReflection.Descriptor, global::Zproto.StruTeamActivityListResultRequestReflection.Descriptor, global::Zproto.StruTeamActivityResultRequestReflection.Descriptor, global::Zproto.StruTeamActivityVoteResultRequestReflection.Descriptor, global::Zproto.StruUpdateTeamMemBeCallRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -364,7 +370,7 @@ namespace Zproto {
           return new NoticeUpdateTeamInfo(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NoticeUpdateTeamInfoRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -571,7 +577,7 @@ namespace Zproto {
           return new NoticeUpdateTeamMemberInfo(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NoticeUpdateTeamMemberInfoRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -778,7 +784,7 @@ namespace Zproto {
           return new NotifyJoinTeam(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyJoinTeamRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -985,7 +991,7 @@ namespace Zproto {
           return new NotifyLeaveTeam(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyLeaveTeamRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1192,7 +1198,7 @@ namespace Zproto {
           return new NotifyApplyJoin(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyApplyJoinRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1399,7 +1405,7 @@ namespace Zproto {
           return new NotifyInvitation(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyInvitationRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1606,7 +1612,7 @@ namespace Zproto {
           return new NotifyRefuseInvite(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyRefuseInviteRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1813,7 +1819,7 @@ namespace Zproto {
           return new NotifyLeaderApplyListSize(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyLeaderApplyListSizeRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2020,7 +2026,7 @@ namespace Zproto {
           return new NotifyApplyBeLeader(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyApplyBeLeaderRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2227,7 +2233,7 @@ namespace Zproto {
           return new NotifyRejectApplicant(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyRejectApplicantRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2434,7 +2440,7 @@ namespace Zproto {
           return new NotifyBeTransferLeader(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyBeTransferLeaderRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2641,7 +2647,7 @@ namespace Zproto {
           return new NotifyRefuseBeTransferLeader(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyRefuseBeTransferLeaderRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2848,7 +2854,7 @@ namespace Zproto {
           return new NoticeTeamDissolve(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NoticeTeamDissolveRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3055,7 +3061,7 @@ namespace Zproto {
           return new NotifyTeamActivityState(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyTeamActivityStateRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3262,7 +3268,7 @@ namespace Zproto {
           return new TeamActivityResult(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.TeamActivityResultRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3469,7 +3475,7 @@ namespace Zproto {
           return new TeamActivityListResult(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.TeamActivityListResultRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3676,7 +3682,7 @@ namespace Zproto {
           return new TeamActivityVoteResult(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.TeamActivityVoteResultRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3883,7 +3889,7 @@ namespace Zproto {
           return new NotifyCharMatchResult(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyCharMatchResultRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4090,7 +4096,7 @@ namespace Zproto {
           return new NotifyTeamMatchResult(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyTeamMatchResultRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4297,7 +4303,7 @@ namespace Zproto {
           return new NotifyCharAbortMatch(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyCharAbortMatchRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4504,7 +4510,7 @@ namespace Zproto {
           return new UpdateTeamMemBeCall(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.UpdateTeamMemBeCallRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4711,7 +4717,7 @@ namespace Zproto {
           return new NotifyTeamMemBeCall(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyTeamMemBeCallRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4918,7 +4924,7 @@ namespace Zproto {
           return new NotifyTeamMemBeCallResult(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyTeamMemBeCallResultRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5125,7 +5131,7 @@ namespace Zproto {
           return new NotifyTeamEnterErr(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyTeamEnterErrRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5332,7 +5338,7 @@ namespace Zproto {
           return new NotifyTeamMemMicrophoneStatusChange(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyTeamMemMicrophoneStatusChangeRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5539,7 +5545,7 @@ namespace Zproto {
           return new NotifyTeamMemsSpeakStatusChange(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyTeamMemsSpeakStatusChangeRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5746,7 +5752,7 @@ namespace Zproto {
           return new NotifyTeamMemVoiceIdChange(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyTeamMemVoiceIdChangeRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5953,7 +5959,7 @@ namespace Zproto {
           return new NotifyTeamChangeMemberType(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyTeamChangeMemberTypeRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6160,7 +6166,7 @@ namespace Zproto {
           return new NotifyTeamGroupUpdate(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyTeamGroupUpdateRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6367,7 +6373,7 @@ namespace Zproto {
           return new NotifyInviteJoinDungeons(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyInviteJoinDungeonsRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6574,7 +6580,7 @@ namespace Zproto {
           return new NotifyCountDownStart(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyCountDownStartRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

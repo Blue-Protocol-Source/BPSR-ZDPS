@@ -27,19 +27,24 @@ namespace Zproto {
             "ChRzdHJ1X21haWxfYmFzZS5wcm90bxIGenByb3RvGg9zdHJ1X2l0ZW0ucHJv",
             "dG8aH3N0cnVfbWFpbF9leHRyYV9jb25kaXRpb24ucHJvdG8aIXN0cnVfbWFp",
             "bF9tdWx0aWxpbmd1YWxfdGV4dC5wcm90bxoVZW51bV9tYWlsX3N0YXRlLnBy",
-            "b3RvGhRlbnVtX21haWxfdHlwZS5wcm90byKSBAoITWFpbEJhc2USEQoJbWFp",
-            "bF91dWlkGAEgASgDEhYKDm1haWxfY29uZmlnX2lkGAIgASgNEhMKC2NyZWF0",
-            "ZV90aW1lGAMgASgDEiMKCW1haWxfdHlwZRgEIAEoDjIQLnpwcm90by5NYWls",
-            "VHlwZRIPCgdzZW5kX2lkGAUgASgDEhEKCXNlbmRfbmFtZRgGIAEoCRISCgpt",
-            "YWlsX3RpdGxlGAcgASgJEhEKCW1haWxfYm9keRgIIAEoCRISCgp0aW1lb3V0",
-            "X21zGAkgASgDEh4KCGFwcGVuZGl4GAogAygLMgwuenByb3RvLkl0ZW0SJQoK",
-            "bWFpbF9zdGF0ZRgLIAEoDjIRLnpwcm90by5NYWlsU3RhdGUSEwoLdGl0bGVf",
-            "cHJhbXMYDCADKAkSEgoKYm9keV9wcmFtcxgNIAMoCRIRCglhY2NlcHRfaWQY",
-            "DiABKAMSEgoKaW1wb3J0YW5jZRgPIAEoDRIRCglhd2FyZF9pZHMYECADKA0S",
-            "HAoUcmVnaXN0ZXJfYmVmb3JlX3RpbWUYESABKAMSLQoJY29uZGl0aW9uGBIg",
-            "ASgLMhouenByb3RvLk1haWxFeHRyYUNvbmRpdGlvbhISCgppc19jb2xsZWN0",
-            "GBMgASgIEjcKEW11bHRpbGluZ3VhbF90ZXh0GBQgAygLMhwuenByb3RvLk1h",
-            "aWxNdWx0aWxpbmd1YWxUZXh0YgZwcm90bzM="));
+            "b3RvGhRlbnVtX21haWxfdHlwZS5wcm90byLnBQoITWFpbEJhc2USGgoIbWFp",
+            "bFV1aWQYASABKANSCG1haWxVdWlkEiIKDG1haWxDb25maWdJZBgCIAEoDVIM",
+            "bWFpbENvbmZpZ0lkEh4KCmNyZWF0ZVRpbWUYAyABKANSCmNyZWF0ZVRpbWUS",
+            "LAoIbWFpbFR5cGUYBCABKA4yEC56cHJvdG8uTWFpbFR5cGVSCG1haWxUeXBl",
+            "EhYKBnNlbmRJZBgFIAEoA1IGc2VuZElkEhoKCHNlbmROYW1lGAYgASgJUghz",
+            "ZW5kTmFtZRIcCgltYWlsVGl0bGUYByABKAlSCW1haWxUaXRsZRIaCghtYWls",
+            "Qm9keRgIIAEoCVIIbWFpbEJvZHkSHAoJdGltZW91dE1zGAkgASgDUgl0aW1l",
+            "b3V0TXMSKAoIYXBwZW5kaXgYCiADKAsyDC56cHJvdG8uSXRlbVIIYXBwZW5k",
+            "aXgSLwoJbWFpbFN0YXRlGAsgASgOMhEuenByb3RvLk1haWxTdGF0ZVIJbWFp",
+            "bFN0YXRlEh4KCnRpdGxlUHJhbXMYDCADKAlSCnRpdGxlUHJhbXMSHAoJYm9k",
+            "eVByYW1zGA0gAygJUglib2R5UHJhbXMSGgoIYWNjZXB0SWQYDiABKANSCGFj",
+            "Y2VwdElkEh4KCmltcG9ydGFuY2UYDyABKA1SCmltcG9ydGFuY2USGgoIYXdh",
+            "cmRJZHMYECADKA1SCGF3YXJkSWRzEi4KElJlZ2lzdGVyQmVmb3JlVGltZRgR",
+            "IAEoA1ISUmVnaXN0ZXJCZWZvcmVUaW1lEjgKCWNvbmRpdGlvbhgSIAEoCzIa",
+            "Lnpwcm90by5NYWlsRXh0cmFDb25kaXRpb25SCWNvbmRpdGlvbhIcCglpc0Nv",
+            "bGxlY3QYEyABKAhSCWlzQ29sbGVjdBJIChBtdWx0aWxpbmd1YWxUZXh0GBQg",
+            "AygLMhwuenByb3RvLk1haWxNdWx0aWxpbmd1YWxUZXh0UhBtdWx0aWxpbmd1",
+            "YWxUZXh0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruMailExtraConditionReflection.Descriptor, global::Zproto.StruMailMultilingualTextReflection.Descriptor, global::Zproto.EnumMailStateReflection.Descriptor, global::Zproto.EnumMailTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -114,7 +119,7 @@ namespace Zproto {
       return new MailBase(this);
     }
 
-    /// <summary>Field number for the "mail_uuid" field.</summary>
+    /// <summary>Field number for the "mailUuid" field.</summary>
     public const int MailUuidFieldNumber = 1;
     private long mailUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_config_id" field.</summary>
+    /// <summary>Field number for the "mailConfigId" field.</summary>
     public const int MailConfigIdFieldNumber = 2;
     private uint mailConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +143,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "create_time" field.</summary>
+    /// <summary>Field number for the "createTime" field.</summary>
     public const int CreateTimeFieldNumber = 3;
     private long createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +155,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_type" field.</summary>
+    /// <summary>Field number for the "mailType" field.</summary>
     public const int MailTypeFieldNumber = 4;
     private global::Zproto.MailType mailType_ = global::Zproto.MailType.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "send_id" field.</summary>
+    /// <summary>Field number for the "sendId" field.</summary>
     public const int SendIdFieldNumber = 5;
     private long sendId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -174,7 +179,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "send_name" field.</summary>
+    /// <summary>Field number for the "sendName" field.</summary>
     public const int SendNameFieldNumber = 6;
     private string sendName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -186,7 +191,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_title" field.</summary>
+    /// <summary>Field number for the "mailTitle" field.</summary>
     public const int MailTitleFieldNumber = 7;
     private string mailTitle_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -198,7 +203,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_body" field.</summary>
+    /// <summary>Field number for the "mailBody" field.</summary>
     public const int MailBodyFieldNumber = 8;
     private string mailBody_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -210,7 +215,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "timeout_ms" field.</summary>
+    /// <summary>Field number for the "timeoutMs" field.</summary>
     public const int TimeoutMsFieldNumber = 9;
     private long timeoutMs_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -233,7 +238,7 @@ namespace Zproto {
       get { return appendix_; }
     }
 
-    /// <summary>Field number for the "mail_state" field.</summary>
+    /// <summary>Field number for the "mailState" field.</summary>
     public const int MailStateFieldNumber = 11;
     private global::Zproto.MailState mailState_ = global::Zproto.MailState.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -245,7 +250,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "title_prams" field.</summary>
+    /// <summary>Field number for the "titlePrams" field.</summary>
     public const int TitlePramsFieldNumber = 12;
     private static readonly pb::FieldCodec<string> _repeated_titlePrams_codec
         = pb::FieldCodec.ForString(98);
@@ -256,7 +261,7 @@ namespace Zproto {
       get { return titlePrams_; }
     }
 
-    /// <summary>Field number for the "body_prams" field.</summary>
+    /// <summary>Field number for the "bodyPrams" field.</summary>
     public const int BodyPramsFieldNumber = 13;
     private static readonly pb::FieldCodec<string> _repeated_bodyPrams_codec
         = pb::FieldCodec.ForString(106);
@@ -267,7 +272,7 @@ namespace Zproto {
       get { return bodyPrams_; }
     }
 
-    /// <summary>Field number for the "accept_id" field.</summary>
+    /// <summary>Field number for the "acceptId" field.</summary>
     public const int AcceptIdFieldNumber = 14;
     private long acceptId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -291,7 +296,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_ids" field.</summary>
+    /// <summary>Field number for the "awardIds" field.</summary>
     public const int AwardIdsFieldNumber = 16;
     private static readonly pb::FieldCodec<uint> _repeated_awardIds_codec
         = pb::FieldCodec.ForUInt32(130);
@@ -302,7 +307,7 @@ namespace Zproto {
       get { return awardIds_; }
     }
 
-    /// <summary>Field number for the "register_before_time" field.</summary>
+    /// <summary>Field number for the "RegisterBeforeTime" field.</summary>
     public const int RegisterBeforeTimeFieldNumber = 17;
     private long registerBeforeTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -326,7 +331,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_collect" field.</summary>
+    /// <summary>Field number for the "isCollect" field.</summary>
     public const int IsCollectFieldNumber = 19;
     private bool isCollect_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -338,7 +343,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "multilingual_text" field.</summary>
+    /// <summary>Field number for the "multilingualText" field.</summary>
     public const int MultilingualTextFieldNumber = 20;
     private static readonly pb::FieldCodec<global::Zproto.MailMultilingualText> _repeated_multilingualText_codec
         = pb::FieldCodec.ForMessage(162, global::Zproto.MailMultilingualText.Parser);

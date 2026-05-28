@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X2l0ZW1fY291bnRlcl9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byJaCg9JdGVtQ291bnRlckluZm8SCgoCaWQYASAB",
-            "KAUSDwoHY291bnRlchgCIAEoAxIYChBhY2N1bXVsYXRlX2xpbWl0GAMgASgD",
-            "EhAKCGVuZF90aW1lGAQgASgDYgZwcm90bzM="));
+            "ZGlydHlfbWFzay5wcm90byJ/Cg9JdGVtQ291bnRlckluZm8SDgoCaWQYASAB",
+            "KAVSAmlkEhgKB2NvdW50ZXIYAiABKANSB2NvdW50ZXISKAoPYWNjdW11bGF0",
+            "ZUxpbWl0GAMgASgDUg9hY2N1bXVsYXRlTGltaXQSGAoHZW5kVGltZRgEIAEo",
+            "A1IHZW5kVGltZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "accumulate_limit" field.</summary>
+    /// <summary>Field number for the "accumulateLimit" field.</summary>
     public const int AccumulateLimitFieldNumber = 3;
     private long accumulateLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 4;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

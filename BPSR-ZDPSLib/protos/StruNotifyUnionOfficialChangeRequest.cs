@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci9zdHJ1X25vdGlmeV91bmlvbl9vZmZpY2lhbF9jaGFuZ2VfcmVxdWVzdC5w",
-            "cm90bxIGenByb3RvGhlzdHJ1X3VuaW9uX29mZmljaWFsLnByb3RvImYKIE5v",
-            "dGlmeVVuaW9uT2ZmaWNpYWxDaGFuZ2VSZXF1ZXN0Ei0KDnVuaW9uX29mZmlj",
-            "aWFsGAEgASgLMhUuenByb3RvLlVuaW9uT2ZmaWNpYWwSEwoLY2hhbmdlX3R5",
-            "cGUYAiABKAViBnByb3RvMw=="));
+            "cm90bxIGenByb3RvGhlzdHJ1X3VuaW9uX29mZmljaWFsLnByb3RvIn8KIE5v",
+            "dGlmeVVuaW9uT2ZmaWNpYWxDaGFuZ2VSZXF1ZXN0EjsKDXVuaW9uT2ZmaWNp",
+            "YWwYASABKAsyFS56cHJvdG8uVW5pb25PZmZpY2lhbFINdW5pb25PZmZpY2lh",
+            "bBIeCgpjaGFuZ2VUeXBlGAIgASgFUgpjaGFuZ2VUeXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUnionOfficialReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new NotifyUnionOfficialChangeRequest(this);
     }
 
-    /// <summary>Field number for the "union_official" field.</summary>
+    /// <summary>Field number for the "unionOfficial" field.</summary>
     public const int UnionOfficialFieldNumber = 1;
     private global::Zproto.UnionOfficial unionOfficial_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "change_type" field.</summary>
+    /// <summary>Field number for the "changeType" field.</summary>
     public const int ChangeTypeFieldNumber = 2;
     private int changeType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

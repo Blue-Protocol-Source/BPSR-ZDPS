@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X2R1dHlfbGlzdC5wcm90bxIGenByb3RvGhRzdHJ1X2R1dHlfaW5m",
-            "by5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqoBCghEdXR5TGlzdBIe",
-            "ChZjdXJfcHJvZmVzc2lvbl9kdXR5X2lkGAEgASgFEjgKDWR1dHlfaW5mb19t",
-            "YXAYAiADKAsyIS56cHJvdG8uRHV0eUxpc3QuRHV0eUluZm9NYXBFbnRyeRpE",
-            "ChBEdXR5SW5mb01hcEVudHJ5EgsKA2tleRgBIAEoBRIfCgV2YWx1ZRgCIAEo",
-            "CzIQLnpwcm90by5EdXR5SW5mbzoCOAFiBnByb3RvMw=="));
+            "by5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIscBCghEdXR5TGlzdBIw",
+            "ChNjdXJQcm9mZXNzaW9uRHV0eUlkGAEgASgFUhNjdXJQcm9mZXNzaW9uRHV0",
+            "eUlkEkMKC2R1dHlJbmZvTWFwGAIgAygLMiEuenByb3RvLkR1dHlMaXN0LkR1",
+            "dHlJbmZvTWFwRW50cnlSC2R1dHlJbmZvTWFwGkQKEER1dHlJbmZvTWFwRW50",
+            "cnkSCwoDa2V5GAEgASgFEh8KBXZhbHVlGAIgASgLMhAuenByb3RvLkR1dHlJ",
+            "bmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDutyInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new DutyList(this);
     }
 
-    /// <summary>Field number for the "cur_profession_duty_id" field.</summary>
+    /// <summary>Field number for the "curProfessionDutyId" field.</summary>
     public const int CurProfessionDutyIdFieldNumber = 1;
     private int curProfessionDutyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "duty_info_map" field.</summary>
+    /// <summary>Field number for the "dutyInfoMap" field.</summary>
     public const int DutyInfoMapFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.DutyInfo>.Codec _map_dutyInfoMap_codec
         = new pbc::MapField<int, global::Zproto.DutyInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DutyInfo.Parser), 18);

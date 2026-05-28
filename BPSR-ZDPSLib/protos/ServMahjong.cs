@@ -27,12 +27,13 @@ namespace Zproto {
             "ChJzZXJ2X21haGpvbmcucHJvdG8SBnpwcm90bxomc3RydV9sZWF2ZV9tYWhq",
             "b25nX3RhYmxlX3JlcXVlc3QucHJvdG8aKHN0cnVfbWFoam9uZ19kaXNiYW5k",
             "X3RhYmxlX3JlcXVlc3QucHJvdG8aIHN0cnVfbWFoam9uZ19zdGFydF9yZXF1",
-            "ZXN0LnByb3RvIuEBCgdNYWhqb25nGkgKEUxlYXZlTWFoam9uZ1RhYmxlEjMK",
-            "CXZfcmVxdWVzdBgBIAEoCzIgLnpwcm90by5MZWF2ZU1haGpvbmdUYWJsZVJl",
-            "cXVlc3QaPgoMTWFoam9uZ1N0YXJ0Ei4KCXZfcmVxdWVzdBgBIAEoCzIbLnpw",
-            "cm90by5NYWhqb25nU3RhcnRSZXF1ZXN0GkwKE01haGpvbmdEaXNiYW5kVGFi",
-            "bGUSNQoJdl9yZXF1ZXN0GAEgASgLMiIuenByb3RvLk1haGpvbmdEaXNiYW5k",
-            "VGFibGVSZXF1ZXN0YgZwcm90bzM="));
+            "ZXN0LnByb3RvIvwBCgdNYWhqb25nGlEKEUxlYXZlTWFoam9uZ1RhYmxlEjwK",
+            "CHZSZXF1ZXN0GAEgASgLMiAuenByb3RvLkxlYXZlTWFoam9uZ1RhYmxlUmVx",
+            "dWVzdFIIdlJlcXVlc3QaRwoMTWFoam9uZ1N0YXJ0EjcKCHZSZXF1ZXN0GAEg",
+            "ASgLMhsuenByb3RvLk1haGpvbmdTdGFydFJlcXVlc3RSCHZSZXF1ZXN0GlUK",
+            "E01haGpvbmdEaXNiYW5kVGFibGUSPgoIdlJlcXVlc3QYASABKAsyIi56cHJv",
+            "dG8uTWFoam9uZ0Rpc2JhbmRUYWJsZVJlcXVlc3RSCHZSZXF1ZXN0YgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLeaveMahjongTableRequestReflection.Descriptor, global::Zproto.StruMahjongDisbandTableRequestReflection.Descriptor, global::Zproto.StruMahjongStartRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -254,7 +255,7 @@ namespace Zproto {
           return new LeaveMahjongTable(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.LeaveMahjongTableRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -461,7 +462,7 @@ namespace Zproto {
           return new MahjongStart(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.MahjongStartRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -668,7 +669,7 @@ namespace Zproto {
           return new MahjongDisbandTable(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.MahjongDisbandTableRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

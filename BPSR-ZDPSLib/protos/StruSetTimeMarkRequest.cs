@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSetTimeMarkRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3NldF90aW1lX21hcmtfcmVxdWVzdC5wcm90bxIGenByb3RvIicK",
-            "ElNldFRpbWVNYXJrUmVxdWVzdBIRCgltYXJrX2xpc3QYAiADKAViBnByb3Rv",
-            "Mw=="));
+            "CiBzdHJ1X3NldF90aW1lX21hcmtfcmVxdWVzdC5wcm90bxIGenByb3RvIjAK",
+            "ElNldFRpbWVNYXJrUmVxdWVzdBIaCghtYXJrTGlzdBgCIAMoBVIIbWFya0xp",
+            "c3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new SetTimeMarkRequest(this);
     }
 
-    /// <summary>Field number for the "mark_list" field.</summary>
+    /// <summary>Field number for the "markList" field.</summary>
     public const int MarkListFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_markList_codec
         = pb::FieldCodec.ForInt32(18);

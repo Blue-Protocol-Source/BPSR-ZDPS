@@ -37,10 +37,10 @@ namespace BPSR_ZDPS.Managers
                 // Override with a session global id as the games ids are only unique to a channel and session
                 msg.VRequest.ChatMsg.MsgId = SessionMsgIdSrc++;
 
-                var chatMsg = new ChatMessage(msg.VRequest.ChatMsg.MsgInfo, msg.VRequest.ChannelType, msg.VRequest.ChatMsg.SendCharInfo.CharId, msg.VRequest.ChatMsg.Timestamp);
+                var chatMsg = new ChatMessage(msg.VRequest.ChatMsg.MsgInfo, msg.VRequest.ChannelType, msg.VRequest.ChatMsg.SendCharInfo.CharID, msg.VRequest.ChatMsg.Timestamp);
                 User chatUser;
 
-                if (Senders.TryGetValue(msg.VRequest.ChatMsg.SendCharInfo.CharId, out var sender))
+                if (Senders.TryGetValue(msg.VRequest.ChatMsg.SendCharInfo.CharID, out var sender))
                 {
                     sender.Info = msg.VRequest.ChatMsg.SendCharInfo;
                     sender.NumSentMessages++;
@@ -49,7 +49,7 @@ namespace BPSR_ZDPS.Managers
                 else
                 {
                     var chatSender = new User(msg.VRequest.ChatMsg.SendCharInfo);
-                    Senders.TryAdd(msg.VRequest.ChatMsg.SendCharInfo.CharId, chatSender);
+                    Senders.TryAdd(msg.VRequest.ChatMsg.SendCharInfo.CharID, chatSender);
                     chatUser = chatSender;
                 }
 
@@ -203,12 +203,12 @@ namespace BPSR_ZDPS.Managers
         {
             var blockedUser = new UserBlock()
             {
-                ID = user.Info.CharId,
+                ID = user.Info.CharID,
                 Name = user.Info.Name,
                 BlockedAt = DateTime.Now
             };
 
-            Settings.Instance.Chat.BlockedUsers.TryAdd(user.Info.CharId, blockedUser);
+            Settings.Instance.Chat.BlockedUsers.TryAdd(user.Info.CharID, blockedUser);
         }
 
         public static void UnblockUser(long userId)

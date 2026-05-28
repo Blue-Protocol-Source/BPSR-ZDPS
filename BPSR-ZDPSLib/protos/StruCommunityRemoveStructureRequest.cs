@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci1zdHJ1X2NvbW11bml0eV9yZW1vdmVfc3RydWN0dXJlX3JlcXVlc3QucHJv",
-            "dG8SBnpwcm90bxocc3RydV9zdHJ1Y3R1cmVfbGFuZF9vcC5wcm90byJXCh9D",
-            "b21tdW5pdHlSZW1vdmVTdHJ1Y3R1cmVSZXF1ZXN0Eg8KB2hvbWVfaWQYASAB",
-            "KAMSIwoCb3AYAiABKAsyFy56cHJvdG8uU3RydWN0dXJlTGFuZE9wYgZwcm90",
-            "bzM="));
+            "dG8SBnpwcm90bxocc3RydV9zdHJ1Y3R1cmVfbGFuZF9vcC5wcm90byJiCh9D",
+            "b21tdW5pdHlSZW1vdmVTdHJ1Y3R1cmVSZXF1ZXN0EhYKBmhvbWVJZBgBIAEo",
+            "A1IGaG9tZUlkEicKAm9wGAIgASgLMhcuenByb3RvLlN0cnVjdHVyZUxhbmRP",
+            "cFICb3BiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStructureLandOpReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CommunityRemoveStructureRequest(this);
     }
 
-    /// <summary>Field number for the "home_id" field.</summary>
+    /// <summary>Field number for the "homeId" field.</summary>
     public const int HomeIdFieldNumber = 1;
     private long homeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

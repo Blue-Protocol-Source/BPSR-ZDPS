@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X3NldHRpbmdfZGF0YS5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5",
-            "X21hc2sucHJvdG8iegoLU2V0dGluZ0RhdGESOAoLc2V0dGluZ19tYXAYASAD",
-            "KAsyIy56cHJvdG8uU2V0dGluZ0RhdGEuU2V0dGluZ01hcEVudHJ5GjEKD1Nl",
-            "dHRpbmdNYXBFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAk6AjgB",
-            "YgZwcm90bzM="));
+            "X21hc2sucHJvdG8ihQEKC1NldHRpbmdEYXRhEkMKCnNldHRpbmdNYXAYASAD",
+            "KAsyIy56cHJvdG8uU2V0dGluZ0RhdGEuU2V0dGluZ01hcEVudHJ5UgpzZXR0",
+            "aW5nTWFwGjEKD1NldHRpbmdNYXBFbnRyeRILCgNrZXkYASABKAUSDQoFdmFs",
+            "dWUYAiABKAk6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new SettingData(this);
     }
 
-    /// <summary>Field number for the "setting_map" field.</summary>
+    /// <summary>Field number for the "settingMap" field.</summary>
     public const int SettingMapFieldNumber = 1;
     private static readonly pbc::MapField<int, string>.Codec _map_settingMap_codec
         = new pbc::MapField<int, string>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForString(18, ""), 10);

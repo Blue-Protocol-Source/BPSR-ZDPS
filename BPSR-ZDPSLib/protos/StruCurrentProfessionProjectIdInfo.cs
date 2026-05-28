@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci1zdHJ1X2N1cnJlbnRfcHJvZmVzc2lvbl9wcm9qZWN0X2lkX2luZm8ucHJv",
-            "dG8SBnpwcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIkcKHkN1cnJlbnRQ",
-            "cm9mZXNzaW9uUHJvamVjdElkSW5mbxIlCh1jdXJyZW50X3Byb2Zlc3Npb25f",
-            "cHJvamVjdF9pZBgBIAEoBWIGcHJvdG8z"));
+            "dG8SBnpwcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvImAKHkN1cnJlbnRQ",
+            "cm9mZXNzaW9uUHJvamVjdElkSW5mbxI+ChpjdXJyZW50UHJvZmVzc2lvblBy",
+            "b2plY3RJZBgBIAEoBVIaY3VycmVudFByb2Zlc3Npb25Qcm9qZWN0SWRiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new CurrentProfessionProjectIdInfo(this);
     }
 
-    /// <summary>Field number for the "current_profession_project_id" field.</summary>
+    /// <summary>Field number for the "currentProfessionProjectId" field.</summary>
     public const int CurrentProfessionProjectIdFieldNumber = 1;
     private int currentProfessionProjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

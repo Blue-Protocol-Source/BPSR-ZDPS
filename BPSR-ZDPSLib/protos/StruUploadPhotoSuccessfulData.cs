@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X3VwbG9hZF9waG90b19zdWNjZXNzZnVsX2RhdGEucHJvdG8SBnpw",
-            "cm90bxoZZW51bV9lX3BpY3R1cmVfdHlwZS5wcm90byKDAQoZVXBsb2FkUGhv",
-            "dG9TdWNjZXNzZnVsRGF0YRIqCgxwaWN0dXJlX3R5cGUYASABKA4yFC56cHJv",
-            "dG8uRVBpY3R1cmVUeXBlEhQKDHBpY3R1cmVfc2l6ZRgCIAEoDRIPCgd2ZXJz",
-            "aW9uGAMgASgNEhMKC3BpY3R1cmVfdXJsGAQgASgJYgZwcm90bzM="));
+            "cm90bxoZZW51bV9lX3BpY3R1cmVfdHlwZS5wcm90byKvAQoZVXBsb2FkUGhv",
+            "dG9TdWNjZXNzZnVsRGF0YRI2CgtwaWN0dXJlVHlwZRgBIAEoDjIULnpwcm90",
+            "by5FUGljdHVyZVR5cGVSC3BpY3R1cmVUeXBlEiAKC3BpY3R1cmVTaXplGAIg",
+            "ASgNUgtwaWN0dXJlU2l6ZRIYCgd2ZXJzaW9uGAMgASgNUgd2ZXJzaW9uEh4K",
+            "CnBpY3R1cmVVcmwYBCABKAlSCnBpY3R1cmVVcmxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPictureTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new UploadPhotoSuccessfulData(this);
     }
 
-    /// <summary>Field number for the "picture_type" field.</summary>
+    /// <summary>Field number for the "pictureType" field.</summary>
     public const int PictureTypeFieldNumber = 1;
     private global::Zproto.EPictureType pictureType_ = global::Zproto.EPictureType.EnormalPicture;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "picture_size" field.</summary>
+    /// <summary>Field number for the "pictureSize" field.</summary>
     public const int PictureSizeFieldNumber = 2;
     private uint pictureSize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "picture_url" field.</summary>
+    /// <summary>Field number for the "pictureUrl" field.</summary>
     public const int PictureUrlFieldNumber = 4;
     private string pictureUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

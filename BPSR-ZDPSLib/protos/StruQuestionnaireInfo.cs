@@ -26,12 +26,13 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X3F1ZXN0aW9ubmFpcmVfaW5mby5wcm90bxIGenByb3RvGiNzdHJ1",
             "X3F1ZXN0aW9ubmFpcmVfYXdhcmRfaXRlbS5wcm90bxofZW51bV9xdWVzdGlv",
-            "bm5haXJlX3N0YXR1cy5wcm90byLUAQoRUXVlc3Rpb25uYWlyZUluZm8SCgoC",
-            "aWQYASABKAUSKwoGc3RhdHVzGAIgASgOMhsuenByb3RvLlF1ZXN0aW9ubmFp",
-            "cmVTdGF0dXMSEgoKY2FuX2Fuc3dlchgDIAEoCBIMCgRuYW1lGAQgASgJEgwK",
-            "BGxpbmsYBSABKAkSEwoLbGV2ZWxfbGltaXQYBiABKAUSEQoJZGF5X2xpbWl0",
-            "GAcgASgFEi4KBmF3YXJkcxgIIAMoCzIeLnpwcm90by5RdWVzdGlvbm5haXJl",
-            "QXdhcmRJdGVtYgZwcm90bzM="));
+            "bm5haXJlX3N0YXR1cy5wcm90byKSAgoRUXVlc3Rpb25uYWlyZUluZm8SDgoC",
+            "aWQYASABKAVSAmlkEjMKBnN0YXR1cxgCIAEoDjIbLnpwcm90by5RdWVzdGlv",
+            "bm5haXJlU3RhdHVzUgZzdGF0dXMSHAoJY2FuQW5zd2VyGAMgASgIUgljYW5B",
+            "bnN3ZXISEgoEbmFtZRgEIAEoCVIEbmFtZRISCgRsaW5rGAUgASgJUgRsaW5r",
+            "Eh4KCmxldmVsTGltaXQYBiABKAVSCmxldmVsTGltaXQSGgoIZGF5TGltaXQY",
+            "ByABKAVSCGRheUxpbWl0EjYKBmF3YXJkcxgIIAMoCzIeLnpwcm90by5RdWVz",
+            "dGlvbm5haXJlQXdhcmRJdGVtUgZhd2FyZHNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruQuestionnaireAwardItemReflection.Descriptor, global::Zproto.EnumQuestionnaireStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -118,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "can_answer" field.</summary>
+    /// <summary>Field number for the "canAnswer" field.</summary>
     public const int CanAnswerFieldNumber = 3;
     private bool canAnswer_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -154,7 +155,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "level_limit" field.</summary>
+    /// <summary>Field number for the "levelLimit" field.</summary>
     public const int LevelLimitFieldNumber = 6;
     private int levelLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -166,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "day_limit" field.</summary>
+    /// <summary>Field number for the "dayLimit" field.</summary>
     public const int DayLimitFieldNumber = 7;
     private int dayLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

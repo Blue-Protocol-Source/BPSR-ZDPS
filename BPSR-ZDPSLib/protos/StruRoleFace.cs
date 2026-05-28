@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X3JvbGVfZmFjZS5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5X21h",
-            "c2sucHJvdG8iswEKCFJvbGVGYWNlEjwKD3VubG9ja19pdGVtX21hcBgBIAMo",
-            "CzIjLnpwcm90by5Sb2xlRmFjZS5VbmxvY2tJdGVtTWFwRW50cnkSGQoRc2F2",
-            "ZV9uZWVkX2NvbnN1bWUYAiABKAgSGAoQdW5sb2NrX3ZvaWNlX2lkcxgDIAMo",
-            "BRo0ChJVbmxvY2tJdGVtTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVl",
-            "GAIgASgIOgI4AWIGcHJvdG8z"));
+            "c2sucHJvdG8i3QEKCFJvbGVGYWNlEkkKDXVubG9ja0l0ZW1NYXAYASADKAsy",
+            "Iy56cHJvdG8uUm9sZUZhY2UuVW5sb2NrSXRlbU1hcEVudHJ5Ug11bmxvY2tJ",
+            "dGVtTWFwEigKD3NhdmVOZWVkQ29uc3VtZRgCIAEoCFIPc2F2ZU5lZWRDb25z",
+            "dW1lEiYKDnVubG9ja1ZvaWNlSWRzGAMgAygFUg51bmxvY2tWb2ljZUlkcxo0",
+            "ChJVbmxvY2tJdGVtTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIg",
+            "ASgIOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new RoleFace(this);
     }
 
-    /// <summary>Field number for the "unlock_item_map" field.</summary>
+    /// <summary>Field number for the "unlockItemMap" field.</summary>
     public const int UnlockItemMapFieldNumber = 1;
     private static readonly pbc::MapField<int, bool>.Codec _map_unlockItemMap_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 10);
@@ -98,7 +99,7 @@ namespace Zproto {
       get { return unlockItemMap_; }
     }
 
-    /// <summary>Field number for the "save_need_consume" field.</summary>
+    /// <summary>Field number for the "saveNeedConsume" field.</summary>
     public const int SaveNeedConsumeFieldNumber = 2;
     private bool saveNeedConsume_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unlock_voice_ids" field.</summary>
+    /// <summary>Field number for the "unlockVoiceIds" field.</summary>
     public const int UnlockVoiceIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_unlockVoiceIds_codec
         = pb::FieldCodec.ForInt32(26);

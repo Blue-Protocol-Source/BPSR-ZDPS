@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X21vZF9wYXJ0X3VwZ3JhZGVfcmVjb3JkLnByb3RvEgZ6cHJvdG8a",
-            "FXN0cnVfZGlydHlfbWFzay5wcm90byI7ChRNb2RQYXJ0VXBncmFkZVJlY29y",
-            "ZBIPCgdwYXJ0X2lkGAEgASgFEhIKCmlzX3N1Y2Nlc3MYAiABKAhiBnByb3Rv",
-            "Mw=="));
+            "FXN0cnVfZGlydHlfbWFzay5wcm90byJMChRNb2RQYXJ0VXBncmFkZVJlY29y",
+            "ZBIWCgZwYXJ0SWQYASABKAVSBnBhcnRJZBIcCglpc1N1Y2Nlc3MYAiABKAhS",
+            "CWlzU3VjY2Vzc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ModPartUpgradeRecord(this);
     }
 
-    /// <summary>Field number for the "part_id" field.</summary>
+    /// <summary>Field number for the "partId" field.</summary>
     public const int PartIdFieldNumber = 1;
     private int partId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_success" field.</summary>
+    /// <summary>Field number for the "isSuccess" field.</summary>
     public const int IsSuccessFieldNumber = 2;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruRogueLockedEntryReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X3JvZ3VlX2xvY2tlZF9lbnRyeS5wcm90bxIGenByb3RvIj8KEFJv",
-            "Z3VlTG9ja2VkRW50cnkSCgoCaWQYASABKAUSEAoIb2JqX3V1aWQYAiABKAMS",
-            "DQoFaW5kZXgYAyABKAViBnByb3RvMw=="));
+            "Ch1zdHJ1X3JvZ3VlX2xvY2tlZF9lbnRyeS5wcm90bxIGenByb3RvIlIKEFJv",
+            "Z3VlTG9ja2VkRW50cnkSDgoCaWQYASABKAVSAmlkEhgKB29ialV1aWQYAiAB",
+            "KANSB29ialV1aWQSFAoFaW5kZXgYAyABKAVSBWluZGV4YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "obj_uuid" field.</summary>
+    /// <summary>Field number for the "objUuid" field.</summary>
     public const int ObjUuidFieldNumber = 2;
     private long objUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

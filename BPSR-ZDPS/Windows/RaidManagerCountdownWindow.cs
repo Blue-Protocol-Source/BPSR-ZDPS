@@ -71,7 +71,7 @@ namespace BPSR_ZDPS.Windows
             {
                 if (Settings.Instance.WindowSettings.RaidManagerCountdown.ChatChannels.Contains(arg2.Channel))
                 {
-                    bool isAllowed = !Settings.Instance.WindowSettings.RaidManagerCountdown.PlayerUIDBlacklist.Contains(arg1.Info.CharId);
+                    bool isAllowed = !Settings.Instance.WindowSettings.RaidManagerCountdown.PlayerUIDBlacklist.Contains(arg1.Info.CharID);
                     if (isAllowed && arg2.Msg.MsgText.StartsWith("/countdown ", StringComparison.OrdinalIgnoreCase) ||
                         arg2.Msg.MsgText.StartsWith("/ct ", StringComparison.OrdinalIgnoreCase))
                     {

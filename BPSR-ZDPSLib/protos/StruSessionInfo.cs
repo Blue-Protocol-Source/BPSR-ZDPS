@@ -24,11 +24,12 @@ namespace Zproto {
     static StruSessionInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdzdHJ1X3Nlc3Npb25faW5mby5wcm90bxIGenByb3RvIo4BCgtTZXNzaW9u",
-            "SW5mbxIPCgdwZWVyX2lkGAEgASgNEg8KB2NoYXJfaWQYAiABKAMSEgoKYWNj",
-            "b3VudF9pZBgDIAEoCRIQCgh0cmFjZV9pZBgEIAEoBBIRCglyZW1vdGVfaXAY",
-            "BSABKAkSEgoKYWdlbnRfZ3VpZBgGIAEoCRIQCghpc19yb2JvdBgHIAEoCGIG",
-            "cHJvdG8z"));
+            "ChdzdHJ1X3Nlc3Npb25faW5mby5wcm90bxIGenByb3RvIskBCgtTZXNzaW9u",
+            "SW5mbxIWCgZwZWVySWQYASABKA1SBnBlZXJJZBIWCgZjaGFySWQYAiABKANS",
+            "BmNoYXJJZBIcCglhY2NvdW50SWQYAyABKAlSCWFjY291bnRJZBIYCgd0cmFj",
+            "ZUlkGAQgASgEUgd0cmFjZUlkEhoKCHJlbW90ZUlwGAUgASgJUghyZW1vdGVJ",
+            "cBIcCglhZ2VudEd1aWQYBiABKAlSCWFnZW50R3VpZBIYCgdpc1JvYm90GAcg",
+            "ASgIUgdpc1JvYm90YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new SessionInfo(this);
     }
 
-    /// <summary>Field number for the "peer_id" field.</summary>
+    /// <summary>Field number for the "peerId" field.</summary>
     public const int PeerIdFieldNumber = 1;
     private uint peerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "account_id" field.</summary>
+    /// <summary>Field number for the "accountId" field.</summary>
     public const int AccountIdFieldNumber = 3;
     private string accountId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "trace_id" field.</summary>
+    /// <summary>Field number for the "traceId" field.</summary>
     public const int TraceIdFieldNumber = 4;
     private ulong traceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "remote_ip" field.</summary>
+    /// <summary>Field number for the "remoteIp" field.</summary>
     public const int RemoteIpFieldNumber = 5;
     private string remoteIp_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "agent_guid" field.</summary>
+    /// <summary>Field number for the "agentGuid" field.</summary>
     public const int AgentGuidFieldNumber = 6;
     private string agentGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,7 +163,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_robot" field.</summary>
+    /// <summary>Field number for the "isRobot" field.</summary>
     public const int IsRobotFieldNumber = 7;
     private bool isRobot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

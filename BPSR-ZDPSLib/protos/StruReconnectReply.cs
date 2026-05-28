@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3JlY29ubmVjdF9yZXBseS5wcm90bxIGenByb3RvGhdlbnVtX2Vf",
-            "ZXJyb3JfY29kZS5wcm90byKMAQoOUmVjb25uZWN0UmVwbHkSEgoKYWNjb3Vu",
-            "dF9pZBgBIAEoCRIPCgdjaGFyX2lkGAIgASgDEhQKDGlzX3ByaXZpbGVnZRgD",
-            "IAEoCBIZChFpc19jaGFuZ2VfYWNjb3VudBgEIAEoCBIkCghlcnJfY29kZRgF",
-            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "ZXJyb3JfY29kZS5wcm90byLAAQoOUmVjb25uZWN0UmVwbHkSHAoJYWNjb3Vu",
+            "dElkGAEgASgJUglhY2NvdW50SWQSFgoGY2hhcklkGAIgASgDUgZjaGFySWQS",
+            "IAoLaXNQcml2aWxlZ2UYAyABKAhSC2lzUHJpdmlsZWdlEigKD2lzQ2hhbmdl",
+            "QWNjb3VudBgEIAEoCFIPaXNDaGFuZ2VBY2NvdW50EiwKB2VyckNvZGUYBSAB",
+            "KA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new ReconnectReply(this);
     }
 
-    /// <summary>Field number for the "account_id" field.</summary>
+    /// <summary>Field number for the "accountId" field.</summary>
     public const int AccountIdFieldNumber = 1;
     private string accountId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_privilege" field.</summary>
+    /// <summary>Field number for the "isPrivilege" field.</summary>
     public const int IsPrivilegeFieldNumber = 3;
     private bool isPrivilege_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_change_account" field.</summary>
+    /// <summary>Field number for the "isChangeAccount" field.</summary>
     public const int IsChangeAccountFieldNumber = 4;
     private bool isChangeAccount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

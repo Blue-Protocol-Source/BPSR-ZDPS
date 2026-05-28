@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSaveProjectRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X3NhdmVfcHJvamVjdF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iKAoS",
-            "U2F2ZVByb2plY3RSZXF1ZXN0EhIKCnByb2plY3RfaWQYASABKAViBnByb3Rv",
-            "Mw=="));
+            "Ch9zdHJ1X3NhdmVfcHJvamVjdF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iMgoS",
+            "U2F2ZVByb2plY3RSZXF1ZXN0EhwKCXByb2plY3RJZBgBIAEoBVIJcHJvamVj",
+            "dElkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new SaveProjectRequest(this);
     }
 
-    /// <summary>Field number for the "project_id" field.</summary>
+    /// <summary>Field number for the "projectId" field.</summary>
     public const int ProjectIdFieldNumber = 1;
     private int projectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

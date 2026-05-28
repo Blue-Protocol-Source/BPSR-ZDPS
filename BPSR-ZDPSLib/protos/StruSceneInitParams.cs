@@ -31,22 +31,26 @@ namespace Zproto {
             "X21hdGNoX2tleV9pbmZvLnByb3RvGiBzdHJ1X3BsYW5ldF9tZW1vcnlfY29u",
             "dGV4dC5wcm90bxoZc3RydV9yaWRlX3NlYXRfaW5mby5wcm90bxocc3RydV93",
             "ZWVrbHlfdG93ZXJfaW5mby5wcm90bxoZZ29vZ2xlL3Byb3RvYnVmL2FueS5w",
-            "cm90byKYBQoPU2NlbmVJbml0UGFyYW1zEg4KBm93bmVycxgBIAMoAxITCgtj",
-            "aGFuZ2VfZmxhZxgEIAEoAxIsCgdjb250ZXh0GAUgASgLMhsuenByb3RvLlBs",
-            "YW5ldE1lbW9yeUNvbnRleHQSDwoHYWZmaXhlcxgGIAMoBRIPCgd0ZWFtX2lk",
-            "GAcgASgFEhQKDGNvbW11bml0eV9pZBgIIAEoAxITCgtob21lbGFuZF9pZBgJ",
-            "IAEoAxIYChBjb21tdW5pdHlfbWFwX2lkGAogASgFEisKDWhvbWVsYW5kX2lu",
-            "Zm8YDCABKAsyFC56cHJvdG8uSG9tZWxhbmRJbmZvEiwKCnVuaW9uX2luZm8Y",
-            "DyABKAsyGC56cHJvdG8uRHVuZ2VvblVuaW9uSW5mbxJCChZzaW5nbGVfYWlf",
-            "bW9kZV9jb250ZXh0GBAgASgLMiIuenByb3RvLkR1bmdlb25TaW5nbGVBaU1v",
-            "ZGVDb250ZXh0Ej0KF2R1bmdlb25faG90X2tleV9jb250ZXh0GBEgASgLMhwu",
-            "enByb3RvLkR1bmdlb25Ib3RLZXlDb250ZXh0EhgKEHNjZW5lX2d1aWRfaW5k",
-            "ZXgYEyABKAkSMgoRd2Vla2x5X3Rvd2VyX2luZm8YFCABKAsyFy56cHJvdG8u",
-            "V2Vla2x5VG93ZXJJbmZvEiwKDnJpZGVfc2VhdF9pbmZvGBUgASgLMhQuenBy",
-            "b3RvLlJpZGVTZWF0SW5mbxIpCgtpbml0X3BhcmFtcxgWIAMoCzIULmdvb2ds",
-            "ZS5wcm90b2J1Zi5BbnkSGAoQbWFzdGVyX21vZGVfZGlmZhgXIAEoBRIsCg5t",
-            "YXRjaF9rZXlfaW5mbxgYIAEoCzIULnpwcm90by5NYXRjaEtleUluZm9iBnBy",
-            "b3RvMw=="));
+            "cm90byLzBgoPU2NlbmVJbml0UGFyYW1zEhYKBm93bmVycxgBIAMoA1IGb3du",
+            "ZXJzEh4KCmNoYW5nZUZsYWcYBCABKANSCmNoYW5nZUZsYWcSNQoHY29udGV4",
+            "dBgFIAEoCzIbLnpwcm90by5QbGFuZXRNZW1vcnlDb250ZXh0Ugdjb250ZXh0",
+            "EhgKB2FmZml4ZXMYBiADKAVSB2FmZml4ZXMSFgoGdGVhbUlkGAcgASgFUgZ0",
+            "ZWFtSWQSIAoLY29tbXVuaXR5SWQYCCABKANSC2NvbW11bml0eUlkEh4KCmhv",
+            "bWVsYW5kSWQYCSABKANSCmhvbWVsYW5kSWQSJgoOY29tbXVuaXR5TWFwSWQY",
+            "CiABKAVSDmNvbW11bml0eU1hcElkEjgKDGhvbWVsYW5kSW5mbxgMIAEoCzIU",
+            "Lnpwcm90by5Ib21lbGFuZEluZm9SDGhvbWVsYW5kSW5mbxI2Cgl1bmlvbklu",
+            "Zm8YDyABKAsyGC56cHJvdG8uRHVuZ2VvblVuaW9uSW5mb1IJdW5pb25JbmZv",
+            "ElQKE3NpbmdsZUFpTW9kZUNvbnRleHQYECABKAsyIi56cHJvdG8uRHVuZ2Vv",
+            "blNpbmdsZUFpTW9kZUNvbnRleHRSE3NpbmdsZUFpTW9kZUNvbnRleHQSUAoU",
+            "ZHVuZ2VvbkhvdEtleUNvbnRleHQYESABKAsyHC56cHJvdG8uRHVuZ2Vvbkhv",
+            "dEtleUNvbnRleHRSFGR1bmdlb25Ib3RLZXlDb250ZXh0EiYKDnNjZW5lR3Vp",
+            "ZEluZGV4GBMgASgJUg5zY2VuZUd1aWRJbmRleBJBCg93ZWVrbHlUb3dlcklu",
+            "Zm8YFCABKAsyFy56cHJvdG8uV2Vla2x5VG93ZXJJbmZvUg93ZWVrbHlUb3dl",
+            "ckluZm8SOAoMcmlkZVNlYXRJbmZvGBUgASgLMhQuenByb3RvLlJpZGVTZWF0",
+            "SW5mb1IMcmlkZVNlYXRJbmZvEjQKCmluaXRQYXJhbXMYFiADKAsyFC5nb29n",
+            "bGUucHJvdG9idWYuQW55Ugppbml0UGFyYW1zEiYKDm1hc3Rlck1vZGVEaWZm",
+            "GBcgASgFUg5tYXN0ZXJNb2RlRGlmZhI4CgxtYXRjaEtleUluZm8YGCABKAsy",
+            "FC56cHJvdG8uTWF0Y2hLZXlJbmZvUgxtYXRjaEtleUluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonHotKeyContextReflection.Descriptor, global::Zproto.StruDungeonSingleAiModeContextReflection.Descriptor, global::Zproto.StruDungeonUnionInfoReflection.Descriptor, global::Zproto.StruHomelandInfoReflection.Descriptor, global::Zproto.StruMatchKeyInfoReflection.Descriptor, global::Zproto.StruPlanetMemoryContextReflection.Descriptor, global::Zproto.StruRideSeatInfoReflection.Descriptor, global::Zproto.StruWeeklyTowerInfoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -130,7 +134,7 @@ namespace Zproto {
       get { return owners_; }
     }
 
-    /// <summary>Field number for the "change_flag" field.</summary>
+    /// <summary>Field number for the "changeFlag" field.</summary>
     public const int ChangeFlagFieldNumber = 4;
     private long changeFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -165,7 +169,7 @@ namespace Zproto {
       get { return affixes_; }
     }
 
-    /// <summary>Field number for the "team_id" field.</summary>
+    /// <summary>Field number for the "teamId" field.</summary>
     public const int TeamIdFieldNumber = 7;
     private int teamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -177,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "community_id" field.</summary>
+    /// <summary>Field number for the "communityId" field.</summary>
     public const int CommunityIdFieldNumber = 8;
     private long communityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -189,7 +193,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 9;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -201,7 +205,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "community_map_id" field.</summary>
+    /// <summary>Field number for the "communityMapId" field.</summary>
     public const int CommunityMapIdFieldNumber = 10;
     private int communityMapId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -213,7 +217,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_info" field.</summary>
+    /// <summary>Field number for the "homelandInfo" field.</summary>
     public const int HomelandInfoFieldNumber = 12;
     private global::Zproto.HomelandInfo homelandInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -225,7 +229,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_info" field.</summary>
+    /// <summary>Field number for the "unionInfo" field.</summary>
     public const int UnionInfoFieldNumber = 15;
     private global::Zproto.DungeonUnionInfo unionInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -237,7 +241,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "single_ai_mode_context" field.</summary>
+    /// <summary>Field number for the "singleAiModeContext" field.</summary>
     public const int SingleAiModeContextFieldNumber = 16;
     private global::Zproto.DungeonSingleAiModeContext singleAiModeContext_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -249,7 +253,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_hot_key_context" field.</summary>
+    /// <summary>Field number for the "dungeonHotKeyContext" field.</summary>
     public const int DungeonHotKeyContextFieldNumber = 17;
     private global::Zproto.DungeonHotKeyContext dungeonHotKeyContext_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -261,7 +265,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_guid_index" field.</summary>
+    /// <summary>Field number for the "sceneGuidIndex" field.</summary>
     public const int SceneGuidIndexFieldNumber = 19;
     private string sceneGuidIndex_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -273,7 +277,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "weekly_tower_info" field.</summary>
+    /// <summary>Field number for the "weeklyTowerInfo" field.</summary>
     public const int WeeklyTowerInfoFieldNumber = 20;
     private global::Zproto.WeeklyTowerInfo weeklyTowerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -285,7 +289,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ride_seat_info" field.</summary>
+    /// <summary>Field number for the "rideSeatInfo" field.</summary>
     public const int RideSeatInfoFieldNumber = 21;
     private global::Zproto.RideSeatInfo rideSeatInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -297,7 +301,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "init_params" field.</summary>
+    /// <summary>Field number for the "initParams" field.</summary>
     public const int InitParamsFieldNumber = 22;
     private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_initParams_codec
         = pb::FieldCodec.ForMessage(178, global::Google.Protobuf.WellKnownTypes.Any.Parser);
@@ -308,7 +312,7 @@ namespace Zproto {
       get { return initParams_; }
     }
 
-    /// <summary>Field number for the "master_mode_diff" field.</summary>
+    /// <summary>Field number for the "masterModeDiff" field.</summary>
     public const int MasterModeDiffFieldNumber = 23;
     private int masterModeDiff_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -320,7 +324,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_key_info" field.</summary>
+    /// <summary>Field number for the "matchKeyInfo" field.</summary>
     public const int MatchKeyInfoFieldNumber = 24;
     private global::Zproto.MatchKeyInfo matchKeyInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

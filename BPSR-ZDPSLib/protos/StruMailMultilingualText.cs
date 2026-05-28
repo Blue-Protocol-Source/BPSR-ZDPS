@@ -24,10 +24,11 @@ namespace Zproto {
     static StruMailMultilingualTextReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X21haWxfbXVsdGlsaW5ndWFsX3RleHQucHJvdG8SBnpwcm90byJl",
-            "ChRNYWlsTXVsdGlsaW5ndWFsVGV4dBIQCghsYW5ndWFnZRgBIAEoBRIRCglz",
-            "ZW5kX25hbWUYAiABKAkSEgoKbWFpbF90aXRsZRgDIAEoCRIUCgxtYWlsX2Nv",
-            "bnRlbnQYBCABKAliBnByb3RvMw=="));
+            "CiFzdHJ1X21haWxfbXVsdGlsaW5ndWFsX3RleHQucHJvdG8SBnpwcm90byKO",
+            "AQoUTWFpbE11bHRpbGluZ3VhbFRleHQSGgoIbGFuZ3VhZ2UYASABKAVSCGxh",
+            "bmd1YWdlEhoKCHNlbmROYW1lGAIgASgJUghzZW5kTmFtZRIcCgltYWlsVGl0",
+            "bGUYAyABKAlSCW1haWxUaXRsZRIgCgttYWlsQ29udGVudBgEIAEoCVILbWFp",
+            "bENvbnRlbnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "send_name" field.</summary>
+    /// <summary>Field number for the "sendName" field.</summary>
     public const int SendNameFieldNumber = 2;
     private string sendName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_title" field.</summary>
+    /// <summary>Field number for the "mailTitle" field.</summary>
     public const int MailTitleFieldNumber = 3;
     private string mailTitle_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_content" field.</summary>
+    /// <summary>Field number for the "mailContent" field.</summary>
     public const int MailContentFieldNumber = 4;
     private string mailContent_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

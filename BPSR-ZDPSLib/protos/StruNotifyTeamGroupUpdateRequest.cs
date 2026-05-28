@@ -26,13 +26,14 @@ namespace Zproto {
           string.Concat(
             "CitzdHJ1X25vdGlmeV90ZWFtX2dyb3VwX3VwZGF0ZV9yZXF1ZXN0LnByb3Rv",
             "EgZ6cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGiFzdHJ1X3RlYW1f",
-            "bWVtYmVyX2dyb3VwX2luZm8ucHJvdG8i/wEKHE5vdGlmeVRlYW1Hcm91cFVw",
-            "ZGF0ZVJlcXVlc3QSJAoIZXJyX2NvZGUYASABKA4yEi56cHJvdG8uRUVycm9y",
-            "Q29kZRJfChd0ZWFtX21lbWJlcl9ncm91cF9pbmZvcxgCIAMoCzI+Lnpwcm90",
-            "by5Ob3RpZnlUZWFtR3JvdXBVcGRhdGVSZXF1ZXN0LlRlYW1NZW1iZXJHcm91",
-            "cEluZm9zRW50cnkaWAoZVGVhbU1lbWJlckdyb3VwSW5mb3NFbnRyeRILCgNr",
-            "ZXkYASABKAUSKgoFdmFsdWUYAiABKAsyGy56cHJvdG8uVGVhbU1lbWJlckdy",
-            "b3VwSW5mbzoCOAFiBnByb3RvMw=="));
+            "bWVtYmVyX2dyb3VwX2luZm8ucHJvdG8imgIKHE5vdGlmeVRlYW1Hcm91cFVw",
+            "ZGF0ZVJlcXVlc3QSLAoHZXJyQ29kZRgBIAEoDjISLnpwcm90by5FRXJyb3JD",
+            "b2RlUgdlcnJDb2RlEnIKFHRlYW1NZW1iZXJHcm91cEluZm9zGAIgAygLMj4u",
+            "enByb3RvLk5vdGlmeVRlYW1Hcm91cFVwZGF0ZVJlcXVlc3QuVGVhbU1lbWJl",
+            "ckdyb3VwSW5mb3NFbnRyeVIUdGVhbU1lbWJlckdyb3VwSW5mb3MaWAoZVGVh",
+            "bU1lbWJlckdyb3VwSW5mb3NFbnRyeRILCgNrZXkYASABKAUSKgoFdmFsdWUY",
+            "AiABKAsyGy56cHJvdG8uVGVhbU1lbWJlckdyb3VwSW5mbzoCOAFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruTeamMemberGroupInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new NotifyTeamGroupUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "team_member_group_infos" field.</summary>
+    /// <summary>Field number for the "teamMemberGroupInfos" field.</summary>
     public const int TeamMemberGroupInfosFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.TeamMemberGroupInfo>.Codec _map_teamMemberGroupInfos_codec
         = new pbc::MapField<int, global::Zproto.TeamMemberGroupInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemberGroupInfo.Parser), 18);

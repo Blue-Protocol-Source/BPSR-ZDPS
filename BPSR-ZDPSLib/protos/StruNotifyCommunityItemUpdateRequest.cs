@@ -26,13 +26,14 @@ namespace Zproto {
           string.Concat(
             "Ci9zdHJ1X25vdGlmeV9jb21tdW5pdHlfaXRlbV91cGRhdGVfcmVxdWVzdC5w",
             "cm90bxIGenByb3RvGiJzdHJ1X2hvbWVfbGFuZF9pdGVtX2luc3RhbmNlLnBy",
-            "b3RvIogECiBOb3RpZnlDb21tdW5pdHlJdGVtVXBkYXRlUmVxdWVzdBJXChBy",
-            "ZW1vdmVfaW5zdGFuY2VzGAEgAygLMj0uenByb3RvLk5vdGlmeUNvbW11bml0",
-            "eUl0ZW1VcGRhdGVSZXF1ZXN0LlJlbW92ZUluc3RhbmNlc0VudHJ5ElEKDWFk",
-            "ZF9pbnN0YW5jZXMYAiADKAsyOi56cHJvdG8uTm90aWZ5Q29tbXVuaXR5SXRl",
-            "bVVwZGF0ZVJlcXVlc3QuQWRkSW5zdGFuY2VzRW50cnkSVwoQdXBkYXRlX2lu",
-            "c3RhbmNlcxgDIAMoCzI9Lnpwcm90by5Ob3RpZnlDb21tdW5pdHlJdGVtVXBk",
-            "YXRlUmVxdWVzdC5VcGRhdGVJbnN0YW5jZXNFbnRyeRo2ChRSZW1vdmVJbnN0",
+            "b3RvIrUECiBOb3RpZnlDb21tdW5pdHlJdGVtVXBkYXRlUmVxdWVzdBJnCg9y",
+            "ZW1vdmVJbnN0YW5jZXMYASADKAsyPS56cHJvdG8uTm90aWZ5Q29tbXVuaXR5",
+            "SXRlbVVwZGF0ZVJlcXVlc3QuUmVtb3ZlSW5zdGFuY2VzRW50cnlSD3JlbW92",
+            "ZUluc3RhbmNlcxJeCgxhZGRJbnN0YW5jZXMYAiADKAsyOi56cHJvdG8uTm90",
+            "aWZ5Q29tbXVuaXR5SXRlbVVwZGF0ZVJlcXVlc3QuQWRkSW5zdGFuY2VzRW50",
+            "cnlSDGFkZEluc3RhbmNlcxJnCg91cGRhdGVJbnN0YW5jZXMYAyADKAsyPS56",
+            "cHJvdG8uTm90aWZ5Q29tbXVuaXR5SXRlbVVwZGF0ZVJlcXVlc3QuVXBkYXRl",
+            "SW5zdGFuY2VzRW50cnlSD3VwZGF0ZUluc3RhbmNlcxo2ChRSZW1vdmVJbnN0",
             "YW5jZXNFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiABKAM6AjgBGlEK",
             "EUFkZEluc3RhbmNlc0VudHJ5EgsKA2tleRgBIAEoAxIrCgV2YWx1ZRgCIAEo",
             "CzIcLnpwcm90by5Ib21lTGFuZEl0ZW1JbnN0YW5jZToCOAEaVAoUVXBkYXRl",
@@ -95,7 +96,7 @@ namespace Zproto {
       return new NotifyCommunityItemUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "remove_instances" field.</summary>
+    /// <summary>Field number for the "removeInstances" field.</summary>
     public const int RemoveInstancesFieldNumber = 1;
     private static readonly pbc::MapField<long, long>.Codec _map_removeInstances_codec
         = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 10);
@@ -106,7 +107,7 @@ namespace Zproto {
       get { return removeInstances_; }
     }
 
-    /// <summary>Field number for the "add_instances" field.</summary>
+    /// <summary>Field number for the "addInstances" field.</summary>
     public const int AddInstancesFieldNumber = 2;
     private static readonly pbc::MapField<long, global::Zproto.HomeLandItemInstance>.Codec _map_addInstances_codec
         = new pbc::MapField<long, global::Zproto.HomeLandItemInstance>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.HomeLandItemInstance.Parser), 18);
@@ -117,7 +118,7 @@ namespace Zproto {
       get { return addInstances_; }
     }
 
-    /// <summary>Field number for the "update_instances" field.</summary>
+    /// <summary>Field number for the "updateInstances" field.</summary>
     public const int UpdateInstancesFieldNumber = 3;
     private static readonly pbc::MapField<long, global::Zproto.HomeLandItemInstance>.Codec _map_updateInstances_codec
         = new pbc::MapField<long, global::Zproto.HomeLandItemInstance>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.HomeLandItemInstance.Parser), 26);

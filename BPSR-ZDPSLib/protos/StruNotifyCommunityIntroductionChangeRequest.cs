@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjdzdHJ1X25vdGlmeV9jb21tdW5pdHlfaW50cm9kdWN0aW9uX2NoYW5nZV9y",
-            "ZXF1ZXN0LnByb3RvEgZ6cHJvdG8iQAooTm90aWZ5Q29tbXVuaXR5SW50cm9k",
-            "dWN0aW9uQ2hhbmdlUmVxdWVzdBIUCgxpbnRyb2R1Y3Rpb24YASABKAliBnBy",
-            "b3RvMw=="));
+            "ZXF1ZXN0LnByb3RvEgZ6cHJvdG8iTgooTm90aWZ5Q29tbXVuaXR5SW50cm9k",
+            "dWN0aW9uQ2hhbmdlUmVxdWVzdBIiCgxpbnRyb2R1Y3Rpb24YASABKAlSDGlu",
+            "dHJvZHVjdGlvbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

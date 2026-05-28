@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2V4Y2hhbmdlX3ByaWNlX2l0ZW1fZGF0YS5wcm90bxIGenByb3Rv",
-            "Gg9zdHJ1X2l0ZW0ucHJvdG8idwoVRXhjaGFuZ2VQcmljZUl0ZW1EYXRhEg0K",
-            "BXByaWNlGAEgASgFEgsKA251bRgCIAEoBRIfCglpdGVtX2luZm8YAyABKAsy",
-            "DC56cHJvdG8uSXRlbRIMCgRndWlkGAQgASgJEhMKC25vdGljZV90aW1lGAUg",
-            "ASgDYgZwcm90bzM="));
+            "Gg9zdHJ1X2l0ZW0ucHJvdG8inQEKFUV4Y2hhbmdlUHJpY2VJdGVtRGF0YRIU",
+            "CgVwcmljZRgBIAEoBVIFcHJpY2USEAoDbnVtGAIgASgFUgNudW0SKAoIaXRl",
+            "bUluZm8YAyABKAsyDC56cHJvdG8uSXRlbVIIaXRlbUluZm8SEgoEZ3VpZBgE",
+            "IAEoCVIEZ3VpZBIeCgpub3RpY2VUaW1lGAUgASgDUgpub3RpY2VUaW1lYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_info" field.</summary>
+    /// <summary>Field number for the "itemInfo" field.</summary>
     public const int ItemInfoFieldNumber = 3;
     private global::Zproto.Item itemInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "notice_time" field.</summary>
+    /// <summary>Field number for the "noticeTime" field.</summary>
     public const int NoticeTimeFieldNumber = 5;
     private long noticeTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

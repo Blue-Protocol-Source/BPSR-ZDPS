@@ -26,13 +26,14 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X2V4Y2hhbmdlX3NlbGxfaXRlbV9yZXBseS5wcm90bxIGenByb3Rv",
             "GhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxoic3RydV9leGNoYW5nZV9zZWxs",
-            "X2l0ZW1fZGF0YS5wcm90byKFAgoVRXhjaGFuZ2VTZWxsSXRlbVJlcGx5EisK",
-            "BWl0ZW1zGAIgAygLMhwuenByb3RvLkV4Y2hhbmdlU2VsbEl0ZW1EYXRhEkcK",
-            "DndpdGhfZHJhd19pdGVtGAMgAygLMi8uenByb3RvLkV4Y2hhbmdlU2VsbEl0",
-            "ZW1SZXBseS5XaXRoRHJhd0l0ZW1FbnRyeRINCgVsaW1pdBgEIAEoBRIMCgRy",
-            "YXRlGAUgASgFEiQKCGVycl9jb2RlGAYgASgOMhIuenByb3RvLkVFcnJvckNv",
-            "ZGUaMwoRV2l0aERyYXdJdGVtRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVl",
-            "GAIgASgNOgI4AWIGcHJvdG8z"));
+            "X2l0ZW1fZGF0YS5wcm90byKtAgoVRXhjaGFuZ2VTZWxsSXRlbVJlcGx5EjIK",
+            "BWl0ZW1zGAIgAygLMhwuenByb3RvLkV4Y2hhbmdlU2VsbEl0ZW1EYXRhUgVp",
+            "dGVtcxJTCgx3aXRoRHJhd0l0ZW0YAyADKAsyLy56cHJvdG8uRXhjaGFuZ2VT",
+            "ZWxsSXRlbVJlcGx5LldpdGhEcmF3SXRlbUVudHJ5Ugx3aXRoRHJhd0l0ZW0S",
+            "FAoFbGltaXQYBCABKAVSBWxpbWl0EhIKBHJhdGUYBSABKAVSBHJhdGUSLAoH",
+            "ZXJyQ29kZRgGIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2RlGjMK",
+            "EVdpdGhEcmF3SXRlbUVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEo",
+            "DToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruExchangeSellItemDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -103,7 +104,7 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "with_draw_item" field.</summary>
+    /// <summary>Field number for the "withDrawItem" field.</summary>
     public const int WithDrawItemFieldNumber = 3;
     private static readonly pbc::MapField<uint, uint>.Codec _map_withDrawItem_codec
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
@@ -138,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

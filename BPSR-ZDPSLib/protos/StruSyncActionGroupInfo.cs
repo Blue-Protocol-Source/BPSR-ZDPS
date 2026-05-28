@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X3N5bmNfYWN0aW9uX2dyb3VwX2luZm8ucHJvdG8SBnpwcm90bxoc",
-            "c3RydV9hY3Rpb25fZ3JvdXBfaW5mby5wcm90byJdChNTeW5jQWN0aW9uR3Jv",
-            "dXBJbmZvEjIKEWFjdGlvbl9ncm91cF9pbmZvGAEgASgLMhcuenByb3RvLkFj",
-            "dGlvbkdyb3VwSW5mbxISCgpiZWdpbl90aW1lGAIgASgDYgZwcm90bzM="));
+            "c3RydV9hY3Rpb25fZ3JvdXBfaW5mby5wcm90byJ2ChNTeW5jQWN0aW9uR3Jv",
+            "dXBJbmZvEkEKD2FjdGlvbkdyb3VwSW5mbxgBIAEoCzIXLnpwcm90by5BY3Rp",
+            "b25Hcm91cEluZm9SD2FjdGlvbkdyb3VwSW5mbxIcCgliZWdpblRpbWUYAiAB",
+            "KANSCWJlZ2luVGltZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActionGroupInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new SyncActionGroupInfo(this);
     }
 
-    /// <summary>Field number for the "action_group_info" field.</summary>
+    /// <summary>Field number for the "actionGroupInfo" field.</summary>
     public const int ActionGroupInfoFieldNumber = 1;
     private global::Zproto.ActionGroupInfo actionGroupInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
+    /// <summary>Field number for the "beginTime" field.</summary>
     public const int BeginTimeFieldNumber = 2;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

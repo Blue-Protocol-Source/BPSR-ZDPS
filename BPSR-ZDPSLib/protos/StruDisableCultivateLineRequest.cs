@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2Rpc2FibGVfY3VsdGl2YXRlX2xpbmVfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvIi4KG0Rpc2FibGVDdWx0aXZhdGVMaW5lUmVxdWVzdBIPCgd6b25l",
-            "X2lkGAEgASgFYgZwcm90bzM="));
+            "enByb3RvIjUKG0Rpc2FibGVDdWx0aXZhdGVMaW5lUmVxdWVzdBIWCgZ6b25l",
+            "SWQYASABKAVSBnpvbmVJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new DisableCultivateLineRequest(this);
     }
 
-    /// <summary>Field number for the "zone_id" field.</summary>
+    /// <summary>Field number for the "zoneId" field.</summary>
     public const int ZoneIdFieldNumber = 1;
     private int zoneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

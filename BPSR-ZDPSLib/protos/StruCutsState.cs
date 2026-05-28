@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2N1dHNfc3RhdGUucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvInMKCUN1dHNTdGF0ZRI0CgpzdGF0ZV9pbmZvGAEgAygLMiAu",
-            "enByb3RvLkN1dHNTdGF0ZS5TdGF0ZUluZm9FbnRyeRowCg5TdGF0ZUluZm9F",
-            "bnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "YXNrLnByb3RvIn0KCUN1dHNTdGF0ZRI+CglzdGF0ZUluZm8YASADKAsyIC56",
+            "cHJvdG8uQ3V0c1N0YXRlLlN0YXRlSW5mb0VudHJ5UglzdGF0ZUluZm8aMAoO",
+            "U3RhdGVJbmZvRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new CutsState(this);
     }
 
-    /// <summary>Field number for the "state_info" field.</summary>
+    /// <summary>Field number for the "stateInfo" field.</summary>
     public const int StateInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_stateInfo_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);

@@ -26,12 +26,13 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X2FjdGlvbl9ncm91cF9hY3Rpb25fY2xpcC5wcm90bxIGenByb3Rv",
             "GiJzdHJ1X2FjdGlvbl9ncm91cF9tb3VudF9pbmZvLnByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8iyQEKFUFjdGlvbkdyb3VwQWN0aW9uQ2xpcBISCgpi",
-            "ZWdpbl90aW1lGAEgASgCEhAKCGVuZF90aW1lGAIgASgCEhEKCWZhZGVfdGlt",
-            "ZRgDIAEoAhIRCglhY3Rpb25faWQYBCABKAUSGQoRYWN0aW9uX2JlZ2luX3Rp",
-            "bWUYBSABKAISFwoPYWN0aW9uX2VuZF90aW1lGAYgASgCEjAKCm1vdW50X2lu",
-            "Zm8YByABKAsyHC56cHJvdG8uQWN0aW9uR3JvdXBNb3VudEluZm9iBnByb3Rv",
-            "Mw=="));
+            "cnR5X21hc2sucHJvdG8ikwIKFUFjdGlvbkdyb3VwQWN0aW9uQ2xpcBIcCgli",
+            "ZWdpblRpbWUYASABKAJSCWJlZ2luVGltZRIYCgdlbmRUaW1lGAIgASgCUgdl",
+            "bmRUaW1lEhoKCGZhZGVUaW1lGAMgASgCUghmYWRlVGltZRIaCghhY3Rpb25J",
+            "ZBgEIAEoBVIIYWN0aW9uSWQSKAoPYWN0aW9uQmVnaW5UaW1lGAUgASgCUg9h",
+            "Y3Rpb25CZWdpblRpbWUSJAoNYWN0aW9uRW5kVGltZRgGIAEoAlINYWN0aW9u",
+            "RW5kVGltZRI6Cgltb3VudEluZm8YByABKAsyHC56cHJvdG8uQWN0aW9uR3Jv",
+            "dXBNb3VudEluZm9SCW1vdW50SW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActionGroupMountInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +94,7 @@ namespace Zproto {
       return new ActionGroupActionClip(this);
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
+    /// <summary>Field number for the "beginTime" field.</summary>
     public const int BeginTimeFieldNumber = 1;
     private float beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 2;
     private float endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fade_time" field.</summary>
+    /// <summary>Field number for the "fadeTime" field.</summary>
     public const int FadeTimeFieldNumber = 3;
     private float fadeTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "action_id" field.</summary>
+    /// <summary>Field number for the "actionId" field.</summary>
     public const int ActionIdFieldNumber = 4;
     private int actionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "action_begin_time" field.</summary>
+    /// <summary>Field number for the "actionBeginTime" field.</summary>
     public const int ActionBeginTimeFieldNumber = 5;
     private float actionBeginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,7 +154,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "action_end_time" field.</summary>
+    /// <summary>Field number for the "actionEndTime" field.</summary>
     public const int ActionEndTimeFieldNumber = 6;
     private float actionEndTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -165,7 +166,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mount_info" field.</summary>
+    /// <summary>Field number for the "mountInfo" field.</summary>
     public const int MountInfoFieldNumber = 7;
     private global::Zproto.ActionGroupMountInfo mountInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

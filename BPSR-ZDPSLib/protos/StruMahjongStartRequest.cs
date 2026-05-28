@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X21haGpvbmdfc3RhcnRfcmVxdWVzdC5wcm90bxIGenByb3RvGhpz",
             "dHJ1X21haGpvbmdfY29udGV4dC5wcm90bxoec3RydV9wbGF5ZXJfbWFoam9u",
-            "Z19kYXRhLnByb3RvInYKE01haGpvbmdTdGFydFJlcXVlc3QSJwoHY29udGV4",
-            "dBgBIAEoCzIWLnpwcm90by5NYWhqb25nQ29udGV4dBI2ChNwbGF5ZXJfbWFo",
-            "am9uZ19kYXRhGAIgAygLMhkuenByb3RvLlBsYXllck1haGpvbmdEYXRhYgZw",
-            "cm90bzM="));
+            "Z19kYXRhLnByb3RvIpABChNNYWhqb25nU3RhcnRSZXF1ZXN0EjAKB2NvbnRl",
+            "eHQYASABKAsyFi56cHJvdG8uTWFoam9uZ0NvbnRleHRSB2NvbnRleHQSRwoR",
+            "cGxheWVyTWFoam9uZ0RhdGEYAiADKAsyGS56cHJvdG8uUGxheWVyTWFoam9u",
+            "Z0RhdGFSEXBsYXllck1haGpvbmdEYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMahjongContextReflection.Descriptor, global::Zproto.StruPlayerMahjongDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "player_mahjong_data" field.</summary>
+    /// <summary>Field number for the "playerMahjongData" field.</summary>
     public const int PlayerMahjongDataFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.PlayerMahjongData> _repeated_playerMahjongData_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.PlayerMahjongData.Parser);

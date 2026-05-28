@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X3dvcmxkX2FjdF90aW1lX2luZm8ucHJvdG8SBnpwcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIj0KEFdvcmxkQWN0VGltZUluZm8SEgoKc3Rh",
-            "cnRfdGltZRgBIAEoAxIVCg1kdXJhdGlvbl90aW1lGAIgASgFYgZwcm90bzM="));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIlQKEFdvcmxkQWN0VGltZUluZm8SHAoJc3Rh",
+            "cnRUaW1lGAEgASgDUglzdGFydFRpbWUSIgoMZHVyYXRpb25UaW1lGAIgASgF",
+            "UgxkdXJhdGlvblRpbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new WorldActTimeInfo(this);
     }
 
-    /// <summary>Field number for the "start_time" field.</summary>
+    /// <summary>Field number for the "startTime" field.</summary>
     public const int StartTimeFieldNumber = 1;
     private long startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "duration_time" field.</summary>
+    /// <summary>Field number for the "durationTime" field.</summary>
     public const int DurationTimeFieldNumber = 2;
     private int durationTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

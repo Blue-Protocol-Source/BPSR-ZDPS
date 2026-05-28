@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X3NldF9pbnN0cnVtZW50X3NldHRpbmdzX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byK0AQocU2V0SW5zdHJ1bWVudFNldHRpbmdzUmVxdWVzdBJZChNp",
-            "bnN0cnVtZW50X3NldHRpbmdzGAEgAygLMjwuenByb3RvLlNldEluc3RydW1l",
-            "bnRTZXR0aW5nc1JlcXVlc3QuSW5zdHJ1bWVudFNldHRpbmdzRW50cnkaOQoX",
-            "SW5zdHJ1bWVudFNldHRpbmdzRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVl",
-            "GAIgASgFOgI4AWIGcHJvdG8z"));
+            "Bnpwcm90byLHAQocU2V0SW5zdHJ1bWVudFNldHRpbmdzUmVxdWVzdBJsChJp",
+            "bnN0cnVtZW50U2V0dGluZ3MYASADKAsyPC56cHJvdG8uU2V0SW5zdHJ1bWVu",
+            "dFNldHRpbmdzUmVxdWVzdC5JbnN0cnVtZW50U2V0dGluZ3NFbnRyeVISaW5z",
+            "dHJ1bWVudFNldHRpbmdzGjkKF0luc3RydW1lbnRTZXR0aW5nc0VudHJ5EgsK",
+            "A2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoBToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new SetInstrumentSettingsRequest(this);
     }
 
-    /// <summary>Field number for the "instrument_settings" field.</summary>
+    /// <summary>Field number for the "instrumentSettings" field.</summary>
     public const int InstrumentSettingsFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_instrumentSettings_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);

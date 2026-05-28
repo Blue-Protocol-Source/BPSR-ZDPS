@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X2hvbWVsYW5kX3JldHJpZXZlX2Zhc2hpb25fcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvIlgKHkhvbWVsYW5kUmV0cmlldmVGYXNoaW9uUmVxdWVzdBIW",
-            "Cg5zdHJ1Y3R1cmVfdXVpZBgBIAEoAxIMCgRzbG90GAIgASgFEhAKCGlzX291",
-            "dGVyGAMgASgIYgZwcm90bzM="));
+            "bxIGenByb3RvInQKHkhvbWVsYW5kUmV0cmlldmVGYXNoaW9uUmVxdWVzdBIk",
+            "Cg1zdHJ1Y3R1cmVVdWlkGAEgASgDUg1zdHJ1Y3R1cmVVdWlkEhIKBHNsb3QY",
+            "AiABKAVSBHNsb3QSGAoHaXNPdXRlchgDIAEoCFIHaXNPdXRlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new HomelandRetrieveFashionRequest(this);
     }
 
-    /// <summary>Field number for the "structure_uuid" field.</summary>
+    /// <summary>Field number for the "structureUuid" field.</summary>
     public const int StructureUuidFieldNumber = 1;
     private long structureUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 3;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X21vZGlmeV9wcm9qZWN0X25hbWVfcmVxdWVzdC5wcm90bxIGenBy",
-            "b3RvIjwKGE1vZGlmeVByb2plY3ROYW1lUmVxdWVzdBISCgpwcm9qZWN0X2lk",
-            "GAEgASgFEgwKBG5hbWUYAiABKAliBnByb3RvMw=="));
+            "b3RvIkwKGE1vZGlmeVByb2plY3ROYW1lUmVxdWVzdBIcCglwcm9qZWN0SWQY",
+            "ASABKAVSCXByb2plY3RJZBISCgRuYW1lGAIgASgJUgRuYW1lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ModifyProjectNameRequest(this);
     }
 
-    /// <summary>Field number for the "project_id" field.</summary>
+    /// <summary>Field number for the "projectId" field.</summary>
     public const int ProjectIdFieldNumber = 1;
     private int projectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

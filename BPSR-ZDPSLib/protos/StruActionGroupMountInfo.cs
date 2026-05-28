@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2FjdGlvbl9ncm91cF9tb3VudF9pbmZvLnByb3RvEgZ6cHJvdG8a",
-            "FXN0cnVfZGlydHlfbWFzay5wcm90byI8ChRBY3Rpb25Hcm91cE1vdW50SW5m",
-            "bxIQCghtb3VudF9pZBgBIAEoBRISCgptb3VudF9zaXplGAIgASgFYgZwcm90",
-            "bzM="));
+            "FXN0cnVfZGlydHlfbWFzay5wcm90byJOChRBY3Rpb25Hcm91cE1vdW50SW5m",
+            "bxIYCgdtb3VudElkGAEgASgFUgdtb3VudElkEhwKCW1vdW50U2l6ZRgCIAEo",
+            "BVIJbW91bnRTaXplYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new ActionGroupMountInfo(this);
     }
 
-    /// <summary>Field number for the "mount_id" field.</summary>
+    /// <summary>Field number for the "mountId" field.</summary>
     public const int MountIdFieldNumber = 1;
     private int mountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mount_size" field.</summary>
+    /// <summary>Field number for the "mountSize" field.</summary>
     public const int MountSizeFieldNumber = 2;
     private int mountSize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

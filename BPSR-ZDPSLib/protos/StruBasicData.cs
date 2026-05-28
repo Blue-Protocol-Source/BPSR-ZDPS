@@ -25,21 +25,29 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2Jhc2ljX2RhdGEucHJvdG8SBnpwcm90bxoWZW51bV9lX2JvZHlf",
-            "c2l6ZS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIrMDCglCYXNpY0Rh",
-            "dGESDwoHY2hhcl9pZBgBIAEoAxIPCgdzaG93X2lkGAIgASgDEgwKBG5hbWUY",
-            "AyABKAkSDgoGZ2VuZGVyGAQgASgFEiQKCWJvZHlfc2l6ZRgFIAEoDjIRLnpw",
-            "cm90by5FQm9keVNpemUSDQoFbGV2ZWwYBiABKAUSEAoIc2NlbmVfaWQYByAB",
-            "KAUSFgoOcGVyc29uYWxfc3RhdGUYCCADKAUSFAoMb2ZmbGluZV90aW1lGAkg",
-            "ASgDEhIKCnNjZW5lX2d1aWQYCiABKAkSEwoLY3JlYXRlX3RpbWUYCyABKAMS",
-            "GgoSY3VyX3RhbGVudF9wb29sX2lkGAwgASgNEhEKCWJvdF9haV9pZBgNIAEo",
-            "DRIYChByZWdpc3Rlcl9jaGFubmVsGA4gASgFEhIKCmNoYXJfc3RhdGUYDyAB",
-            "KAQSEwoLb25saW5lX3RpbWUYECABKAMSGAoQc3VtX3NhdmVfZGlhbW9uZBgR",
-            "IAEoAxIRCglpc19uZXdiaWUYEiABKAgSFAoMc2Vhc29uX2xldmVsGBMgASgF",
-            "EhMKC2lzX2JhY2tmbG93GBQgASgIYgZwcm90bzM="));
+            "c2l6ZS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIpgGCglCYXNpY0Rh",
+            "dGESFgoGY2hhcklEGAEgASgDUgZjaGFySUQSFgoGc2hvd0lkGAIgASgDUgZz",
+            "aG93SWQSEgoEbmFtZRgDIAEoCVIEbmFtZRIWCgZnZW5kZXIYBCABKAVSBmdl",
+            "bmRlchItCghib2R5U2l6ZRgFIAEoDjIRLnpwcm90by5FQm9keVNpemVSCGJv",
+            "ZHlTaXplEhQKBWxldmVsGAYgASgFUgVsZXZlbBIYCgdzY2VuZUlkGAcgASgF",
+            "UgdzY2VuZUlkEiQKDXBlcnNvbmFsU3RhdGUYCCADKAVSDXBlcnNvbmFsU3Rh",
+            "dGUSIAoLb2ZmbGluZVRpbWUYCSABKANSC29mZmxpbmVUaW1lEhwKCXNjZW5l",
+            "R3VpZBgKIAEoCVIJc2NlbmVHdWlkEh4KCmNyZWF0ZVRpbWUYCyABKANSCmNy",
+            "ZWF0ZVRpbWUSKAoPY3VyVGFsZW50UG9vbElkGAwgASgNUg9jdXJUYWxlbnRQ",
+            "b29sSWQSGAoHYm90QWlJZBgNIAEoDVIHYm90QWlJZBIoCg9yZWdpc3RlckNo",
+            "YW5uZWwYDiABKAVSD3JlZ2lzdGVyQ2hhbm5lbBIcCgljaGFyU3RhdGUYDyAB",
+            "KARSCWNoYXJTdGF0ZRIeCgpvbmxpbmVUaW1lGBAgASgDUgpvbmxpbmVUaW1l",
+            "EiYKDnN1bVNhdmVEaWFtb25kGBEgASgDUg5zdW1TYXZlRGlhbW9uZBIaCghp",
+            "c05ld2JpZRgSIAEoCFIIaXNOZXdiaWUSIAoLc2Vhc29uTGV2ZWwYEyABKAVS",
+            "C3NlYXNvbkxldmVsEh4KCmlzQmFja2Zsb3cYFCABKAhSCmlzQmFja2Zsb3cS",
+            "HgoKbWVudG9yVHlwZRgVIAEoBVIKbWVudG9yVHlwZRIkCg1pc1ZhbGlkTmV3",
+            "YmllGBYgASgIUg1pc1ZhbGlkTmV3YmllEigKD2lzVmFsaWRCYWNrZmxvdxgX",
+            "IAEoCFIPaXNWYWxpZEJhY2tmbG93EigKD3ZhbGlkTWVudG9yVHlwZRgYIAEo",
+            "BVIPdmFsaWRNZW50b3JUeXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEBodySizeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.BasicData), global::Zproto.BasicData.Parser, new[]{ "CharId", "ShowId", "Name", "Gender", "BodySize", "Level", "SceneId", "PersonalState", "OfflineTime", "SceneGuid", "CreateTime", "CurTalentPoolId", "BotAiId", "RegisterChannel", "CharState", "OnlineTime", "SumSaveDiamond", "IsNewbie", "SeasonLevel", "IsBackflow" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.BasicData), global::Zproto.BasicData.Parser, new[]{ "CharID", "ShowId", "Name", "Gender", "BodySize", "Level", "SceneId", "PersonalState", "OfflineTime", "SceneGuid", "CreateTime", "CurTalentPoolId", "BotAiId", "RegisterChannel", "CharState", "OnlineTime", "SumSaveDiamond", "IsNewbie", "SeasonLevel", "IsBackflow", "MentorType", "IsValidNewbie", "IsValidBackflow", "ValidMentorType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -81,7 +89,7 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BasicData(BasicData other) : this() {
-      charId_ = other.charId_;
+      charID_ = other.charID_;
       showId_ = other.showId_;
       name_ = other.name_;
       gender_ = other.gender_;
@@ -101,6 +109,10 @@ namespace Zproto {
       isNewbie_ = other.isNewbie_;
       seasonLevel_ = other.seasonLevel_;
       isBackflow_ = other.isBackflow_;
+      mentorType_ = other.mentorType_;
+      isValidNewbie_ = other.isValidNewbie_;
+      isValidBackflow_ = other.isValidBackflow_;
+      validMentorType_ = other.validMentorType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -110,19 +122,19 @@ namespace Zproto {
       return new BasicData(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
-    public const int CharIdFieldNumber = 1;
-    private long charId_;
+    /// <summary>Field number for the "charID" field.</summary>
+    public const int CharIDFieldNumber = 1;
+    private long charID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long CharId {
-      get { return charId_; }
+    public long CharID {
+      get { return charID_; }
       set {
-        charId_ = value;
+        charID_ = value;
       }
     }
 
-    /// <summary>Field number for the "show_id" field.</summary>
+    /// <summary>Field number for the "showId" field.</summary>
     public const int ShowIdFieldNumber = 2;
     private long showId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -158,7 +170,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "body_size" field.</summary>
+    /// <summary>Field number for the "bodySize" field.</summary>
     public const int BodySizeFieldNumber = 5;
     private global::Zproto.EBodySize bodySize_ = global::Zproto.EBodySize.BodySizeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -182,7 +194,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
+    /// <summary>Field number for the "sceneId" field.</summary>
     public const int SceneIdFieldNumber = 7;
     private int sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -194,7 +206,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "personal_state" field.</summary>
+    /// <summary>Field number for the "personalState" field.</summary>
     public const int PersonalStateFieldNumber = 8;
     private static readonly pb::FieldCodec<int> _repeated_personalState_codec
         = pb::FieldCodec.ForInt32(66);
@@ -205,7 +217,7 @@ namespace Zproto {
       get { return personalState_; }
     }
 
-    /// <summary>Field number for the "offline_time" field.</summary>
+    /// <summary>Field number for the "offlineTime" field.</summary>
     public const int OfflineTimeFieldNumber = 9;
     private long offlineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -217,7 +229,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_guid" field.</summary>
+    /// <summary>Field number for the "sceneGuid" field.</summary>
     public const int SceneGuidFieldNumber = 10;
     private string sceneGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -229,7 +241,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "create_time" field.</summary>
+    /// <summary>Field number for the "createTime" field.</summary>
     public const int CreateTimeFieldNumber = 11;
     private long createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -241,7 +253,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_talent_pool_id" field.</summary>
+    /// <summary>Field number for the "curTalentPoolId" field.</summary>
     public const int CurTalentPoolIdFieldNumber = 12;
     private uint curTalentPoolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -253,7 +265,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bot_ai_id" field.</summary>
+    /// <summary>Field number for the "botAiId" field.</summary>
     public const int BotAiIdFieldNumber = 13;
     private uint botAiId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -265,7 +277,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "register_channel" field.</summary>
+    /// <summary>Field number for the "registerChannel" field.</summary>
     public const int RegisterChannelFieldNumber = 14;
     private int registerChannel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -277,7 +289,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_state" field.</summary>
+    /// <summary>Field number for the "charState" field.</summary>
     public const int CharStateFieldNumber = 15;
     private ulong charState_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -289,7 +301,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "online_time" field.</summary>
+    /// <summary>Field number for the "onlineTime" field.</summary>
     public const int OnlineTimeFieldNumber = 16;
     private long onlineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -301,7 +313,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sum_save_diamond" field.</summary>
+    /// <summary>Field number for the "sumSaveDiamond" field.</summary>
     public const int SumSaveDiamondFieldNumber = 17;
     private long sumSaveDiamond_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -313,7 +325,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_newbie" field.</summary>
+    /// <summary>Field number for the "isNewbie" field.</summary>
     public const int IsNewbieFieldNumber = 18;
     private bool isNewbie_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -325,7 +337,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_level" field.</summary>
+    /// <summary>Field number for the "seasonLevel" field.</summary>
     public const int SeasonLevelFieldNumber = 19;
     private int seasonLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -337,7 +349,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_backflow" field.</summary>
+    /// <summary>Field number for the "isBackflow" field.</summary>
     public const int IsBackflowFieldNumber = 20;
     private bool isBackflow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -346,6 +358,54 @@ namespace Zproto {
       get { return isBackflow_; }
       set {
         isBackflow_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mentorType" field.</summary>
+    public const int MentorTypeFieldNumber = 21;
+    private int mentorType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int MentorType {
+      get { return mentorType_; }
+      set {
+        mentorType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "isValidNewbie" field.</summary>
+    public const int IsValidNewbieFieldNumber = 22;
+    private bool isValidNewbie_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsValidNewbie {
+      get { return isValidNewbie_; }
+      set {
+        isValidNewbie_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "isValidBackflow" field.</summary>
+    public const int IsValidBackflowFieldNumber = 23;
+    private bool isValidBackflow_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsValidBackflow {
+      get { return isValidBackflow_; }
+      set {
+        isValidBackflow_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "validMentorType" field.</summary>
+    public const int ValidMentorTypeFieldNumber = 24;
+    private int validMentorType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int ValidMentorType {
+      get { return validMentorType_; }
+      set {
+        validMentorType_ = value;
       }
     }
 
@@ -364,7 +424,7 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CharId != other.CharId) return false;
+      if (CharID != other.CharID) return false;
       if (ShowId != other.ShowId) return false;
       if (Name != other.Name) return false;
       if (Gender != other.Gender) return false;
@@ -384,6 +444,10 @@ namespace Zproto {
       if (IsNewbie != other.IsNewbie) return false;
       if (SeasonLevel != other.SeasonLevel) return false;
       if (IsBackflow != other.IsBackflow) return false;
+      if (MentorType != other.MentorType) return false;
+      if (IsValidNewbie != other.IsValidNewbie) return false;
+      if (IsValidBackflow != other.IsValidBackflow) return false;
+      if (ValidMentorType != other.ValidMentorType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -391,7 +455,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CharId != 0L) hash ^= CharId.GetHashCode();
+      if (CharID != 0L) hash ^= CharID.GetHashCode();
       if (ShowId != 0L) hash ^= ShowId.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Gender != 0) hash ^= Gender.GetHashCode();
@@ -411,6 +475,10 @@ namespace Zproto {
       if (IsNewbie != false) hash ^= IsNewbie.GetHashCode();
       if (SeasonLevel != 0) hash ^= SeasonLevel.GetHashCode();
       if (IsBackflow != false) hash ^= IsBackflow.GetHashCode();
+      if (MentorType != 0) hash ^= MentorType.GetHashCode();
+      if (IsValidNewbie != false) hash ^= IsValidNewbie.GetHashCode();
+      if (IsValidBackflow != false) hash ^= IsValidBackflow.GetHashCode();
+      if (ValidMentorType != 0) hash ^= ValidMentorType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -429,9 +497,9 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CharId != 0L) {
+      if (CharID != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt64(CharId);
+        output.WriteInt64(CharID);
       }
       if (ShowId != 0L) {
         output.WriteRawTag(16);
@@ -506,6 +574,22 @@ namespace Zproto {
         output.WriteRawTag(160, 1);
         output.WriteBool(IsBackflow);
       }
+      if (MentorType != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(MentorType);
+      }
+      if (IsValidNewbie != false) {
+        output.WriteRawTag(176, 1);
+        output.WriteBool(IsValidNewbie);
+      }
+      if (IsValidBackflow != false) {
+        output.WriteRawTag(184, 1);
+        output.WriteBool(IsValidBackflow);
+      }
+      if (ValidMentorType != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(ValidMentorType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -516,9 +600,9 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CharId != 0L) {
+      if (CharID != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt64(CharId);
+        output.WriteInt64(CharID);
       }
       if (ShowId != 0L) {
         output.WriteRawTag(16);
@@ -593,6 +677,22 @@ namespace Zproto {
         output.WriteRawTag(160, 1);
         output.WriteBool(IsBackflow);
       }
+      if (MentorType != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(MentorType);
+      }
+      if (IsValidNewbie != false) {
+        output.WriteRawTag(176, 1);
+        output.WriteBool(IsValidNewbie);
+      }
+      if (IsValidBackflow != false) {
+        output.WriteRawTag(184, 1);
+        output.WriteBool(IsValidBackflow);
+      }
+      if (ValidMentorType != 0) {
+        output.WriteRawTag(192, 1);
+        output.WriteInt32(ValidMentorType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -603,8 +703,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CharId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CharId);
+      if (CharID != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CharID);
       }
       if (ShowId != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(ShowId);
@@ -661,6 +761,18 @@ namespace Zproto {
       if (IsBackflow != false) {
         size += 2 + 1;
       }
+      if (MentorType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(MentorType);
+      }
+      if (IsValidNewbie != false) {
+        size += 2 + 1;
+      }
+      if (IsValidBackflow != false) {
+        size += 2 + 1;
+      }
+      if (ValidMentorType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(ValidMentorType);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -673,8 +785,8 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      if (other.CharId != 0L) {
-        CharId = other.CharId;
+      if (other.CharID != 0L) {
+        CharID = other.CharID;
       }
       if (other.ShowId != 0L) {
         ShowId = other.ShowId;
@@ -731,6 +843,18 @@ namespace Zproto {
       if (other.IsBackflow != false) {
         IsBackflow = other.IsBackflow;
       }
+      if (other.MentorType != 0) {
+        MentorType = other.MentorType;
+      }
+      if (other.IsValidNewbie != false) {
+        IsValidNewbie = other.IsValidNewbie;
+      }
+      if (other.IsValidBackflow != false) {
+        IsValidBackflow = other.IsValidBackflow;
+      }
+      if (other.ValidMentorType != 0) {
+        ValidMentorType = other.ValidMentorType;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -751,7 +875,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            CharId = input.ReadInt64();
+            CharID = input.ReadInt64();
             break;
           }
           case 16: {
@@ -831,6 +955,22 @@ namespace Zproto {
             IsBackflow = input.ReadBool();
             break;
           }
+          case 168: {
+            MentorType = input.ReadInt32();
+            break;
+          }
+          case 176: {
+            IsValidNewbie = input.ReadBool();
+            break;
+          }
+          case 184: {
+            IsValidBackflow = input.ReadBool();
+            break;
+          }
+          case 192: {
+            ValidMentorType = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -851,7 +991,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            CharId = input.ReadInt64();
+            CharID = input.ReadInt64();
             break;
           }
           case 16: {
@@ -929,6 +1069,22 @@ namespace Zproto {
           }
           case 160: {
             IsBackflow = input.ReadBool();
+            break;
+          }
+          case 168: {
+            MentorType = input.ReadInt32();
+            break;
+          }
+          case 176: {
+            IsValidNewbie = input.ReadBool();
+            break;
+          }
+          case 184: {
+            IsValidBackflow = input.ReadBool();
+            break;
+          }
+          case 192: {
+            ValidMentorType = input.ReadInt32();
             break;
           }
         }

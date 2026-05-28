@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CitzdHJ1X2J1aWxkX2xpZmVfcHJvZmVzc2lvbl9pbmZvX3JlcGx5LnByb3Rv",
             "EgZ6cHJvdG8aL3N0cnVfY29tbXVuaXR5X2J1aWxkX2xpZmVfcHJvZmVzc2lv",
-            "bl9pbmZvLnByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byKIAQocQnVp",
-            "bGRMaWZlUHJvZmVzc2lvbkluZm9SZXBseRIkCghlcnJfY29kZRgBIAEoDjIS",
-            "Lnpwcm90by5FRXJyb3JDb2RlEkIKEHByb2Zlc3Npb25faW5mb3MYAiADKAsy",
-            "KC56cHJvdG8uQ29tbXVuaXR5QnVpbGRMaWZlUHJvZmVzc2lvbkluZm9iBnBy",
-            "b3RvMw=="));
+            "bl9pbmZvLnByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byKgAQocQnVp",
+            "bGRMaWZlUHJvZmVzc2lvbkluZm9SZXBseRIsCgdlcnJDb2RlGAEgASgOMhIu",
+            "enByb3RvLkVFcnJvckNvZGVSB2VyckNvZGUSUgoPcHJvZmVzc2lvbkluZm9z",
+            "GAIgAygLMiguenByb3RvLkNvbW11bml0eUJ1aWxkTGlmZVByb2Zlc3Npb25J",
+            "bmZvUg9wcm9mZXNzaW9uSW5mb3NiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityBuildLifeProfessionInfoReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new BuildLifeProfessionInfoReply(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "profession_infos" field.</summary>
+    /// <summary>Field number for the "professionInfos" field.</summary>
     public const int ProfessionInfosFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.CommunityBuildLifeProfessionInfo> _repeated_professionInfos_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.CommunityBuildLifeProfessionInfo.Parser);

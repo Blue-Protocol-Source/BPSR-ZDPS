@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X2FvX3lpX2l0ZW1fZGVjb21wb3NlX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90byKSAQoYQW9ZaUl0ZW1EZWNvbXBvc2VSZXF1ZXN0EkQKC2FvX3lpX2l0",
-            "ZW1zGAIgAygLMi8uenByb3RvLkFvWWlJdGVtRGVjb21wb3NlUmVxdWVzdC5B",
-            "b1lpSXRlbXNFbnRyeRowCg5Bb1lpSXRlbXNFbnRyeRILCgNrZXkYASABKAQS",
-            "DQoFdmFsdWUYAiABKA06AjgBYgZwcm90bzM="));
+            "cm90byKbAQoYQW9ZaUl0ZW1EZWNvbXBvc2VSZXF1ZXN0Ek0KCWFvWWlJdGVt",
+            "cxgCIAMoCzIvLnpwcm90by5Bb1lpSXRlbURlY29tcG9zZVJlcXVlc3QuQW9Z",
+            "aUl0ZW1zRW50cnlSCWFvWWlJdGVtcxowCg5Bb1lpSXRlbXNFbnRyeRILCgNr",
+            "ZXkYASABKAQSDQoFdmFsdWUYAiABKA06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new AoYiItemDecomposeRequest(this);
     }
 
-    /// <summary>Field number for the "ao_yi_items" field.</summary>
+    /// <summary>Field number for the "aoYiItems" field.</summary>
     public const int AoYiItemsFieldNumber = 2;
     private static readonly pbc::MapField<ulong, uint>.Codec _map_aoYiItems_codec
         = new pbc::MapField<ulong, uint>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForUInt32(16, 0), 18);

@@ -24,8 +24,9 @@ namespace Zproto {
     static StruWeekTargetParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X3dlZWtfdGFyZ2V0X3BhcmFtLnByb3RvEgZ6cHJvdG8iJAoPV2Vl",
-            "a1RhcmdldFBhcmFtEhEKCXRhcmdldF9pZBgBIAEoBWIGcHJvdG8z"));
+            "ChxzdHJ1X3dlZWtfdGFyZ2V0X3BhcmFtLnByb3RvEgZ6cHJvdG8iLQoPV2Vl",
+            "a1RhcmdldFBhcmFtEhoKCHRhcmdldElkGAEgASgFUgh0YXJnZXRJZGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new WeekTargetParam(this);
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

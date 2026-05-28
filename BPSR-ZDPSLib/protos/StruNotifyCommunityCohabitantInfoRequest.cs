@@ -26,13 +26,15 @@ namespace Zproto {
           string.Concat(
             "CjNzdHJ1X25vdGlmeV9jb21tdW5pdHlfY29oYWJpdGFudF9pbmZvX3JlcXVl",
             "c3QucHJvdG8SBnpwcm90bxogc3RydV9jb21tdW5pdHlfcGxheWVyX2luZm8u",
-            "cHJvdG8iogIKJE5vdGlmeUNvbW11bml0eUNvaGFiaXRhbnRJbmZvUmVxdWVz",
-            "dBIUCgxjb21tdW5pdHlfaWQYASABKAMSEwoLaG9tZWxhbmRfaWQYAiABKAMS",
-            "UAoKY29oYWJpdGFudBgDIAMoCzI8Lnpwcm90by5Ob3RpZnlDb21tdW5pdHlD",
-            "b2hhYml0YW50SW5mb1JlcXVlc3QuQ29oYWJpdGFudEVudHJ5EhUKDW93bmVy",
-            "X2NoYXJfaWQYBCABKAMSFgoOcmVtb3ZlX2NoYXJfaWQYBSABKAMaTgoPQ29o",
-            "YWJpdGFudEVudHJ5EgsKA2tleRgBIAEoAxIqCgV2YWx1ZRgCIAEoCzIbLnpw",
-            "cm90by5Db21tdW5pdHlQbGF5ZXJJbmZvOgI4AWIGcHJvdG8z"));
+            "cHJvdG8i3AIKJE5vdGlmeUNvbW11bml0eUNvaGFiaXRhbnRJbmZvUmVxdWVz",
+            "dBIgCgtjb21tdW5pdHlJZBgBIAEoA1ILY29tbXVuaXR5SWQSHgoKaG9tZWxh",
+            "bmRJZBgCIAEoA1IKaG9tZWxhbmRJZBJcCgpjb2hhYml0YW50GAMgAygLMjwu",
+            "enByb3RvLk5vdGlmeUNvbW11bml0eUNvaGFiaXRhbnRJbmZvUmVxdWVzdC5D",
+            "b2hhYml0YW50RW50cnlSCmNvaGFiaXRhbnQSIAoLb3duZXJDaGFySWQYBCAB",
+            "KANSC293bmVyQ2hhcklkEiIKDHJlbW92ZUNoYXJJZBgFIAEoA1IMcmVtb3Zl",
+            "Q2hhcklkGk4KD0NvaGFiaXRhbnRFbnRyeRILCgNrZXkYASABKAMSKgoFdmFs",
+            "dWUYAiABKAsyGy56cHJvdG8uQ29tbXVuaXR5UGxheWVySW5mbzoCOAFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityPlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +94,7 @@ namespace Zproto {
       return new NotifyCommunityCohabitantInfoRequest(this);
     }
 
-    /// <summary>Field number for the "community_id" field.</summary>
+    /// <summary>Field number for the "communityId" field.</summary>
     public const int CommunityIdFieldNumber = 1;
     private long communityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 2;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +129,7 @@ namespace Zproto {
       get { return cohabitant_; }
     }
 
-    /// <summary>Field number for the "owner_char_id" field.</summary>
+    /// <summary>Field number for the "ownerCharId" field.</summary>
     public const int OwnerCharIdFieldNumber = 4;
     private long ownerCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "remove_char_id" field.</summary>
+    /// <summary>Field number for the "removeCharId" field.</summary>
     public const int RemoveCharIdFieldNumber = 5;
     private long removeCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

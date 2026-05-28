@@ -25,10 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2Rlc3Ryb3lfY2x1dHRlcl9yZXBseS5wcm90bxIGenByb3RvGhdl",
-            "bnVtX2VfZXJyb3JfY29kZS5wcm90byKLAQoTRGVzdHJveUNsdXR0ZXJSZXBs",
-            "eRIkCghlcnJfY29kZRgBIAEoDjISLnpwcm90by5FRXJyb3JDb2RlEhsKE2Nv",
-            "bnN1bWVfY2xlYW5saW5lc3MYAiABKAUSGAoQZGVzdHJveV9jbHV0dGVycxgD",
-            "IAMoAxIXCg9uZXdfY2xlYW5saW5lc3MYBCABKAViBnByb3RvMw=="));
+            "bnVtX2VfZXJyb3JfY29kZS5wcm90byLFAQoTRGVzdHJveUNsdXR0ZXJSZXBs",
+            "eRIsCgdlcnJDb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNv",
+            "ZGUSLgoSY29uc3VtZUNsZWFubGluZXNzGAIgASgFUhJjb25zdW1lQ2xlYW5s",
+            "aW5lc3MSKAoPZGVzdHJveUNsdXR0ZXJzGAMgAygDUg9kZXN0cm95Q2x1dHRl",
+            "cnMSJgoObmV3Q2xlYW5saW5lc3MYBCABKAVSDm5ld0NsZWFubGluZXNzYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +89,7 @@ namespace Zproto {
       return new DestroyClutterReply(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "consume_cleanliness" field.</summary>
+    /// <summary>Field number for the "consumeCleanliness" field.</summary>
     public const int ConsumeCleanlinessFieldNumber = 2;
     private int consumeCleanliness_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "destroy_clutters" field.</summary>
+    /// <summary>Field number for the "destroyClutters" field.</summary>
     public const int DestroyCluttersFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_destroyClutters_codec
         = pb::FieldCodec.ForInt64(26);
@@ -122,7 +124,7 @@ namespace Zproto {
       get { return destroyClutters_; }
     }
 
-    /// <summary>Field number for the "new_cleanliness" field.</summary>
+    /// <summary>Field number for the "newCleanliness" field.</summary>
     public const int NewCleanlinessFieldNumber = 4;
     private int newCleanliness_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

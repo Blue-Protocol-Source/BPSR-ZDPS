@@ -24,9 +24,10 @@ namespace Zproto {
     static StruBuffChangeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X2J1ZmZfY2hhbmdlLnByb3RvEgZ6cHJvdG8iQgoKQnVmZkNoYW5n",
-            "ZRINCgVsYXllchgBIAEoBRIQCghkdXJhdGlvbhgCIAEoAxITCgtjcmVhdGVf",
-            "dGltZRgDIAEoA2IGcHJvdG8z"));
+            "ChZzdHJ1X2J1ZmZfY2hhbmdlLnByb3RvEgZ6cHJvdG8iXgoKQnVmZkNoYW5n",
+            "ZRIUCgVsYXllchgBIAEoBVIFbGF5ZXISGgoIZHVyYXRpb24YAiABKANSCGR1",
+            "cmF0aW9uEh4KCmNyZWF0ZVRpbWUYAyABKANSCmNyZWF0ZVRpbWViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "create_time" field.</summary>
+    /// <summary>Field number for the "createTime" field.</summary>
     public const int CreateTimeFieldNumber = 3;
     private long createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

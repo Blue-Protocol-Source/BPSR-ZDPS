@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjBzdHJ1X2NvbW11bml0eV9idWlsZF9mdXJuaXR1cmVfc2ltcGxlX2luZm8u",
-            "cHJvdG8SBnpwcm90byJfCiFDb21tdW5pdHlCdWlsZEZ1cm5pdHVyZVNpbXBs",
-            "ZUluZm8SEgoKYnVpbGRfdXVpZBgBIAEoAxIUCgxmdXJuaXR1cmVfaWQYAiAB",
-            "KAUSEAoIZW5kX3RpbWUYAyABKANiBnByb3RvMw=="));
+            "cHJvdG8SBnpwcm90byJ9CiFDb21tdW5pdHlCdWlsZEZ1cm5pdHVyZVNpbXBs",
+            "ZUluZm8SHAoJYnVpbGRVdWlkGAEgASgDUglidWlsZFV1aWQSIAoLZnVybml0",
+            "dXJlSWQYAiABKAVSC2Z1cm5pdHVyZUlkEhgKB2VuZFRpbWUYAyABKANSB2Vu",
+            "ZFRpbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new CommunityBuildFurnitureSimpleInfo(this);
     }
 
-    /// <summary>Field number for the "build_uuid" field.</summary>
+    /// <summary>Field number for the "buildUuid" field.</summary>
     public const int BuildUuidFieldNumber = 1;
     private long buildUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "furniture_id" field.</summary>
+    /// <summary>Field number for the "furnitureId" field.</summary>
     public const int FurnitureIdFieldNumber = 2;
     private int furnitureId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 3;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

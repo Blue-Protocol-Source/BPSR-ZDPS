@@ -26,18 +26,19 @@ namespace Zproto {
           string.Concat(
             "ChlzdHJ1X2hpZGVfc2Vla19pbmZvLnByb3RvEgZ6cHJvdG8aJHN0cnVfaGlk",
             "ZV9zZWVrX3NraWxsX3Nsb3RfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNr",
-            "LnByb3RvIvYDCgxIaWRlU2Vla0luZm8SEQoJd2VhcG9uX2lkGAEgASgFEkYK",
-            "EnB1cnN1ZXJfd2VhcG9uX21hcBgCIAMoCzIqLnpwcm90by5IaWRlU2Vla0lu",
-            "Zm8uUHVyc3VlcldlYXBvbk1hcEVudHJ5Ek8KF3B1cnN1ZXJfc2tpbGxfc2xv",
-            "dF9pbmZvGAMgAygLMi4uenByb3RvLkhpZGVTZWVrSW5mby5QdXJzdWVyU2tp",
-            "bGxTbG90SW5mb0VudHJ5EksKFWhpZGVyX3NraWxsX3Nsb3RfaW5mbxgEIAMo",
-            "CzIsLnpwcm90by5IaWRlU2Vla0luZm8uSGlkZXJTa2lsbFNsb3RJbmZvRW50",
-            "cnkaNwoVUHVyc3VlcldlYXBvbk1hcEVudHJ5EgsKA2tleRgBIAEoBRINCgV2",
-            "YWx1ZRgCIAEoCDoCOAEaWgoZUHVyc3VlclNraWxsU2xvdEluZm9FbnRyeRIL",
-            "CgNrZXkYASABKAUSLAoFdmFsdWUYAiABKAsyHS56cHJvdG8uSGlkZVNlZWtT",
-            "a2lsbFNsb3RJbmZvOgI4ARpYChdIaWRlclNraWxsU2xvdEluZm9FbnRyeRIL",
-            "CgNrZXkYASABKAUSLAoFdmFsdWUYAiABKAsyHS56cHJvdG8uSGlkZVNlZWtT",
-            "a2lsbFNsb3RJbmZvOgI4AWIGcHJvdG8z"));
+            "LnByb3RvIrMECgxIaWRlU2Vla0luZm8SGgoId2VhcG9uSWQYASABKAVSCHdl",
+            "YXBvbklkElYKEHB1cnN1ZXJXZWFwb25NYXAYAiADKAsyKi56cHJvdG8uSGlk",
+            "ZVNlZWtJbmZvLlB1cnN1ZXJXZWFwb25NYXBFbnRyeVIQcHVyc3VlcldlYXBv",
+            "bk1hcBJiChRwdXJzdWVyU2tpbGxTbG90SW5mbxgDIAMoCzIuLnpwcm90by5I",
+            "aWRlU2Vla0luZm8uUHVyc3VlclNraWxsU2xvdEluZm9FbnRyeVIUcHVyc3Vl",
+            "clNraWxsU2xvdEluZm8SXAoSaGlkZXJTa2lsbFNsb3RJbmZvGAQgAygLMiwu",
+            "enByb3RvLkhpZGVTZWVrSW5mby5IaWRlclNraWxsU2xvdEluZm9FbnRyeVIS",
+            "aGlkZXJTa2lsbFNsb3RJbmZvGjcKFVB1cnN1ZXJXZWFwb25NYXBFbnRyeRIL",
+            "CgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAg6AjgBGloKGVB1cnN1ZXJTa2ls",
+            "bFNsb3RJbmZvRW50cnkSCwoDa2V5GAEgASgFEiwKBXZhbHVlGAIgASgLMh0u",
+            "enByb3RvLkhpZGVTZWVrU2tpbGxTbG90SW5mbzoCOAEaWAoXSGlkZXJTa2ls",
+            "bFNsb3RJbmZvRW50cnkSCwoDa2V5GAEgASgFEiwKBXZhbHVlGAIgASgLMh0u",
+            "enByb3RvLkhpZGVTZWVrU2tpbGxTbG90SW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHideSeekSkillSlotInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +97,7 @@ namespace Zproto {
       return new HideSeekInfo(this);
     }
 
-    /// <summary>Field number for the "weapon_id" field.</summary>
+    /// <summary>Field number for the "weaponId" field.</summary>
     public const int WeaponIdFieldNumber = 1;
     private int weaponId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pursuer_weapon_map" field.</summary>
+    /// <summary>Field number for the "pursuerWeaponMap" field.</summary>
     public const int PursuerWeaponMapFieldNumber = 2;
     private static readonly pbc::MapField<int, bool>.Codec _map_pursuerWeaponMap_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 18);
@@ -119,7 +120,7 @@ namespace Zproto {
       get { return pursuerWeaponMap_; }
     }
 
-    /// <summary>Field number for the "pursuer_skill_slot_info" field.</summary>
+    /// <summary>Field number for the "pursuerSkillSlotInfo" field.</summary>
     public const int PursuerSkillSlotInfoFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.HideSeekSkillSlotInfo>.Codec _map_pursuerSkillSlotInfo_codec
         = new pbc::MapField<int, global::Zproto.HideSeekSkillSlotInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HideSeekSkillSlotInfo.Parser), 26);
@@ -130,7 +131,7 @@ namespace Zproto {
       get { return pursuerSkillSlotInfo_; }
     }
 
-    /// <summary>Field number for the "hider_skill_slot_info" field.</summary>
+    /// <summary>Field number for the "hiderSkillSlotInfo" field.</summary>
     public const int HiderSkillSlotInfoFieldNumber = 4;
     private static readonly pbc::MapField<int, global::Zproto.HideSeekSkillSlotInfo>.Codec _map_hiderSkillSlotInfo_codec
         = new pbc::MapField<int, global::Zproto.HideSeekSkillSlotInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HideSeekSkillSlotInfo.Parser), 34);

@@ -26,15 +26,17 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X3VzZXJfdW5pb25fdGFyZ2V0LnByb3RvEgZ6cHJvdG8aIXN0cnVf",
             "dXNlcl91bmlvbl90YXJnZXRfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNr",
-            "LnByb3RvIv0CCg9Vc2VyVW5pb25UYXJnZXQSDwoHaXNfaW5pdBgBIAEoBRJQ",
-            "ChZ1c2VyX3VuaW9uX3RhcmdldF9pbmZvGAIgAygLMjAuenByb3RvLlVzZXJV",
-            "bmlvblRhcmdldC5Vc2VyVW5pb25UYXJnZXRJbmZvRW50cnkSUAoWd2Vla190",
-            "YXJnZXRfcmV3YXJkX2lkcxgDIAMoCzIwLnpwcm90by5Vc2VyVW5pb25UYXJn",
-            "ZXQuV2Vla1RhcmdldFJld2FyZElkc0VudHJ5EiAKGHdlZWtfdGFyZ2V0X3Jl",
-            "ZnJlc2hfdGltZRgEIAEoAxpXChhVc2VyVW5pb25UYXJnZXRJbmZvRW50cnkS",
-            "CwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgLMhsuenByb3RvLlVzZXJVbmlv",
-            "blRhcmdldEluZm86AjgBGjoKGFdlZWtUYXJnZXRSZXdhcmRJZHNFbnRyeRIL",
-            "CgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "LnByb3RvIrwDCg9Vc2VyVW5pb25UYXJnZXQSFgoGaXNJbml0GAEgASgFUgZp",
+            "c0luaXQSYgoTdXNlclVuaW9uVGFyZ2V0SW5mbxgCIAMoCzIwLnpwcm90by5V",
+            "c2VyVW5pb25UYXJnZXQuVXNlclVuaW9uVGFyZ2V0SW5mb0VudHJ5UhN1c2Vy",
+            "VW5pb25UYXJnZXRJbmZvEmIKE3dlZWtUYXJnZXRSZXdhcmRJZHMYAyADKAsy",
+            "MC56cHJvdG8uVXNlclVuaW9uVGFyZ2V0LldlZWtUYXJnZXRSZXdhcmRJZHNF",
+            "bnRyeVITd2Vla1RhcmdldFJld2FyZElkcxI0ChV3ZWVrVGFyZ2V0UmVmcmVz",
+            "aFRpbWUYBCABKANSFXdlZWtUYXJnZXRSZWZyZXNoVGltZRpXChhVc2VyVW5p",
+            "b25UYXJnZXRJbmZvRW50cnkSCwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgL",
+            "MhsuenByb3RvLlVzZXJVbmlvblRhcmdldEluZm86AjgBGjoKGFdlZWtUYXJn",
+            "ZXRSZXdhcmRJZHNFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6",
+            "AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUserUnionTargetInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +95,7 @@ namespace Zproto {
       return new UserUnionTarget(this);
     }
 
-    /// <summary>Field number for the "is_init" field.</summary>
+    /// <summary>Field number for the "isInit" field.</summary>
     public const int IsInitFieldNumber = 1;
     private int isInit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "user_union_target_info" field.</summary>
+    /// <summary>Field number for the "userUnionTargetInfo" field.</summary>
     public const int UserUnionTargetInfoFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.UserUnionTargetInfo>.Codec _map_userUnionTargetInfo_codec
         = new pbc::MapField<int, global::Zproto.UserUnionTargetInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UserUnionTargetInfo.Parser), 18);
@@ -116,7 +118,7 @@ namespace Zproto {
       get { return userUnionTargetInfo_; }
     }
 
-    /// <summary>Field number for the "week_target_reward_ids" field.</summary>
+    /// <summary>Field number for the "weekTargetRewardIds" field.</summary>
     public const int WeekTargetRewardIdsFieldNumber = 3;
     private static readonly pbc::MapField<int, int>.Codec _map_weekTargetRewardIds_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 26);
@@ -127,7 +129,7 @@ namespace Zproto {
       get { return weekTargetRewardIds_; }
     }
 
-    /// <summary>Field number for the "week_target_refresh_time" field.</summary>
+    /// <summary>Field number for the "weekTargetRefreshTime" field.</summary>
     public const int WeekTargetRefreshTimeFieldNumber = 4;
     private long weekTargetRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

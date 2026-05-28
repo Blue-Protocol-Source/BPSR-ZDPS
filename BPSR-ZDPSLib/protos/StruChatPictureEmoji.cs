@@ -24,8 +24,9 @@ namespace Zproto {
     static StruChatPictureEmojiReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X2NoYXRfcGljdHVyZV9lbW9qaS5wcm90bxIGenByb3RvIiUKEENo",
-            "YXRQaWN0dXJlRW1vamkSEQoJY29uZmlnX2lkGAEgASgNYgZwcm90bzM="));
+            "Ch1zdHJ1X2NoYXRfcGljdHVyZV9lbW9qaS5wcm90bxIGenByb3RvIi4KEENo",
+            "YXRQaWN0dXJlRW1vamkSGgoIY29uZmlnSWQYASABKA1SCGNvbmZpZ0lkYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new ChatPictureEmoji(this);
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
+    /// <summary>Field number for the "configId" field.</summary>
     public const int ConfigIdFieldNumber = 1;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

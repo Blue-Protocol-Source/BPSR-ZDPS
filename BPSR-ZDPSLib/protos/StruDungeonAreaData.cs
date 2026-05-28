@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X2R1bmdlb25fYXJlYV9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byImCg9EdW5nZW9uQXJlYURhdGESEwoLdGFyZ2V0",
-            "X2xpc3QYASADKAViBnByb3RvMw=="));
+            "ZGlydHlfbWFzay5wcm90byIxCg9EdW5nZW9uQXJlYURhdGESHgoKdGFyZ2V0",
+            "TGlzdBgBIAMoBVIKdGFyZ2V0TGlzdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new DungeonAreaData(this);
     }
 
-    /// <summary>Field number for the "target_list" field.</summary>
+    /// <summary>Field number for the "targetList" field.</summary>
     public const int TargetListFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_targetList_codec
         = pb::FieldCodec.ForInt32(10);

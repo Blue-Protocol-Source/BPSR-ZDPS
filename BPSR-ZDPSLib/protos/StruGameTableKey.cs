@@ -25,11 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X2dhbWVfdGFibGVfa2V5LnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byLHAQoMR2FtZVRhYmxlS2V5EhcKD2dhbWVfdGFibGVf",
-            "Z3VpZBgBIAEoCRIXCg9nYW1lX3RhYmxlX3V1aWQYAiABKAMSHQoVZ2FtZV90",
-            "YWJsZV9zY2VuZV9ndWlkGAMgASgJEiEKGWdhbWVfdGFibGVfc3ViX3NjZW5l",
-            "X3V1aWQYBCABKAMSDwoHZ2FtZV9pZBgFIAEoBRITCgtzb3VyY2VfdHlwZRgG",
-            "IAEoBRIdChVnYW1lX3RhYmxlX3JvdW5kX2d1aWQYByABKAliBnByb3RvMw=="));
+            "dHlfbWFzay5wcm90byKoAgoMR2FtZVRhYmxlS2V5EiQKDWdhbWVUYWJsZUd1",
+            "aWQYASABKAlSDWdhbWVUYWJsZUd1aWQSJAoNZ2FtZVRhYmxlVXVpZBgCIAEo",
+            "A1INZ2FtZVRhYmxlVXVpZBIuChJnYW1lVGFibGVTY2VuZUd1aWQYAyABKAlS",
+            "EmdhbWVUYWJsZVNjZW5lR3VpZBI0ChVnYW1lVGFibGVTdWJTY2VuZVV1aWQY",
+            "BCABKANSFWdhbWVUYWJsZVN1YlNjZW5lVXVpZBIWCgZnYW1lSWQYBSABKAVS",
+            "BmdhbWVJZBIeCgpzb3VyY2VUeXBlGAYgASgFUgpzb3VyY2VUeXBlEi4KEmdh",
+            "bWVUYWJsZVJvdW5kR3VpZBgHIAEoCVISZ2FtZVRhYmxlUm91bmRHdWlkYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +94,7 @@ namespace Zproto {
       return new GameTableKey(this);
     }
 
-    /// <summary>Field number for the "game_table_guid" field.</summary>
+    /// <summary>Field number for the "gameTableGuid" field.</summary>
     public const int GameTableGuidFieldNumber = 1;
     private string gameTableGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_table_uuid" field.</summary>
+    /// <summary>Field number for the "gameTableUuid" field.</summary>
     public const int GameTableUuidFieldNumber = 2;
     private long gameTableUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_table_scene_guid" field.</summary>
+    /// <summary>Field number for the "gameTableSceneGuid" field.</summary>
     public const int GameTableSceneGuidFieldNumber = 3;
     private string gameTableSceneGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_table_sub_scene_uuid" field.</summary>
+    /// <summary>Field number for the "gameTableSubSceneUuid" field.</summary>
     public const int GameTableSubSceneUuidFieldNumber = 4;
     private long gameTableSubSceneUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_id" field.</summary>
+    /// <summary>Field number for the "gameId" field.</summary>
     public const int GameIdFieldNumber = 5;
     private int gameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +154,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "source_type" field.</summary>
+    /// <summary>Field number for the "sourceType" field.</summary>
     public const int SourceTypeFieldNumber = 6;
     private int sourceType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -163,7 +166,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_table_round_guid" field.</summary>
+    /// <summary>Field number for the "gameTableRoundGuid" field.</summary>
     public const int GameTableRoundGuidFieldNumber = 7;
     private string gameTableRoundGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

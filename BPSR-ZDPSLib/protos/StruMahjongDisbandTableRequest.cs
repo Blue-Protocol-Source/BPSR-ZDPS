@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X21haGpvbmdfZGlzYmFuZF90YWJsZV9yZXF1ZXN0LnByb3RvEgZ6",
             "cHJvdG8aJWVudW1fbGVhdmVfbWFoam9uZ190YWJsZV9yZWFzb24ucHJvdG8i",
-            "YQoaTWFoam9uZ0Rpc2JhbmRUYWJsZVJlcXVlc3QSEgoKdGFibGVfZ3VpZBgB",
-            "IAEoCRIvCgZyZWFzb24YAiABKA4yHy56cHJvdG8uTGVhdmVNYWhqb25nVGFi",
-            "bGVSZWFzb25iBnByb3RvMw=="));
+            "cwoaTWFoam9uZ0Rpc2JhbmRUYWJsZVJlcXVlc3QSHAoJdGFibGVHdWlkGAEg",
+            "ASgJUgl0YWJsZUd1aWQSNwoGcmVhc29uGAIgASgOMh8uenByb3RvLkxlYXZl",
+            "TWFoam9uZ1RhYmxlUmVhc29uUgZyZWFzb25iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumLeaveMahjongTableReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new MahjongDisbandTableRequest(this);
     }
 
-    /// <summary>Field number for the "table_guid" field.</summary>
+    /// <summary>Field number for the "tableGuid" field.</summary>
     public const int TableGuidFieldNumber = 1;
     private string tableGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

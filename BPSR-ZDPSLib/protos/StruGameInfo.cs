@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X2dhbWVfaW5mby5wcm90bxIGenByb3RvGhtlbnVtX2VfZ2FtZV9w",
-            "bGF5X3R5cGUucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byJiCghHYW1l",
-            "SW5mbxItCg5nYW1lX3BsYXlfdHlwZRgBIAEoDjIVLnpwcm90by5FR2FtZVBs",
-            "YXlUeXBlEhQKDGdhbWVfcGxheV9pZBgCIAEoBRIRCglnYW1lX2d1aWQYAyAB",
-            "KAliBnByb3RvMw=="));
+            "bGF5X3R5cGUucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKBAQoIR2Ft",
+            "ZUluZm8SOQoMZ2FtZVBsYXlUeXBlGAEgASgOMhUuenByb3RvLkVHYW1lUGxh",
+            "eVR5cGVSDGdhbWVQbGF5VHlwZRIeCgpnYW1lUGxheUlkGAIgASgFUgpnYW1l",
+            "UGxheUlkEhoKCGdhbWVHdWlkGAMgASgJUghnYW1lR3VpZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEGamePlayTypeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new GameInfo(this);
     }
 
-    /// <summary>Field number for the "game_play_type" field.</summary>
+    /// <summary>Field number for the "gamePlayType" field.</summary>
     public const int GamePlayTypeFieldNumber = 1;
     private global::Zproto.EGamePlayType gamePlayType_ = global::Zproto.EGamePlayType.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_play_id" field.</summary>
+    /// <summary>Field number for the "gamePlayId" field.</summary>
     public const int GamePlayIdFieldNumber = 2;
     private int gamePlayId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_guid" field.</summary>
+    /// <summary>Field number for the "gameGuid" field.</summary>
     public const int GameGuidFieldNumber = 3;
     private string gameGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiVzdHJ1X3NlYXNvbl9jdWx0aXZhdGVfbGluZV9kYXRhLnByb3RvEgZ6cHJv",
             "dG8aHnN0cnVfY3VsdGl2YXRlX2xpbmVfZGF0YS5wcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvItMBChdTZWFzb25DdWx0aXZhdGVMaW5lRGF0YRJeChlz",
-            "ZWFzb25fY3VsdGl2YXRlX2xpbmVfbWFwGAEgAygLMjsuenByb3RvLlNlYXNv",
-            "bkN1bHRpdmF0ZUxpbmVEYXRhLlNlYXNvbkN1bHRpdmF0ZUxpbmVNYXBFbnRy",
-            "eRpYChtTZWFzb25DdWx0aXZhdGVMaW5lTWFwRW50cnkSCwoDa2V5GAEgASgF",
-            "EigKBXZhbHVlGAIgASgLMhkuenByb3RvLkN1bHRpdmF0ZUxpbmVEYXRhOgI4",
-            "AWIGcHJvdG8z"));
+            "eV9tYXNrLnByb3RvIugBChdTZWFzb25DdWx0aXZhdGVMaW5lRGF0YRJzChZz",
+            "ZWFzb25DdWx0aXZhdGVMaW5lTWFwGAEgAygLMjsuenByb3RvLlNlYXNvbkN1",
+            "bHRpdmF0ZUxpbmVEYXRhLlNlYXNvbkN1bHRpdmF0ZUxpbmVNYXBFbnRyeVIW",
+            "c2Vhc29uQ3VsdGl2YXRlTGluZU1hcBpYChtTZWFzb25DdWx0aXZhdGVMaW5l",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgFEigKBXZhbHVlGAIgASgLMhkuenByb3Rv",
+            "LkN1bHRpdmF0ZUxpbmVEYXRhOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCultivateLineDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Zproto {
       return new SeasonCultivateLineData(this);
     }
 
-    /// <summary>Field number for the "season_cultivate_line_map" field.</summary>
+    /// <summary>Field number for the "seasonCultivateLineMap" field.</summary>
     public const int SeasonCultivateLineMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.CultivateLineData>.Codec _map_seasonCultivateLineMap_codec
         = new pbc::MapField<int, global::Zproto.CultivateLineData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CultivateLineData.Parser), 10);

@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X21vbnRoX2NhcmRfaXRlbS5wcm90bxIGenByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8iNQoNTW9udGhDYXJkSXRlbRIPCgdpdGVtX2lkGAEg",
-            "ASgFEhMKC2NyZWF0ZV90aW1lGAIgASgDYgZwcm90bzM="));
+            "cnR5X21hc2sucHJvdG8iRwoNTW9udGhDYXJkSXRlbRIWCgZpdGVtSWQYASAB",
+            "KAVSBml0ZW1JZBIeCgpjcmVhdGVUaW1lGAIgASgDUgpjcmVhdGVUaW1lYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new MonthCardItem(this);
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
+    /// <summary>Field number for the "itemId" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "create_time" field.</summary>
+    /// <summary>Field number for the "createTime" field.</summary>
     public const int CreateTimeFieldNumber = 2;
     private long createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

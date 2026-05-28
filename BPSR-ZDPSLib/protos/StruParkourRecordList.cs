@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X3BhcmtvdXJfcmVjb3JkX2xpc3QucHJvdG8SBnpwcm90bxoZc3Ry",
             "dV9wYXJrb3VyX3JlY29yZC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3Rv",
-            "Ip0BChFQYXJrb3VyUmVjb3JkTGlzdBI+CgtyZWNvcmRfbGlzdBgBIAMoCzIp",
-            "Lnpwcm90by5QYXJrb3VyUmVjb3JkTGlzdC5SZWNvcmRMaXN0RW50cnkaSAoP",
-            "UmVjb3JkTGlzdEVudHJ5EgsKA2tleRgBIAEoDRIkCgV2YWx1ZRgCIAEoCzIV",
-            "Lnpwcm90by5QYXJrb3VyUmVjb3JkOgI4AWIGcHJvdG8z"));
+            "IqgBChFQYXJrb3VyUmVjb3JkTGlzdBJJCgpyZWNvcmRMaXN0GAEgAygLMiku",
+            "enByb3RvLlBhcmtvdXJSZWNvcmRMaXN0LlJlY29yZExpc3RFbnRyeVIKcmVj",
+            "b3JkTGlzdBpICg9SZWNvcmRMaXN0RW50cnkSCwoDa2V5GAEgASgNEiQKBXZh",
+            "bHVlGAIgASgLMhUuenByb3RvLlBhcmtvdXJSZWNvcmQ6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruParkourRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ParkourRecordList(this);
     }
 
-    /// <summary>Field number for the "record_list" field.</summary>
+    /// <summary>Field number for the "recordList" field.</summary>
     public const int RecordListFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.ParkourRecord>.Codec _map_recordList_codec
         = new pbc::MapField<uint, global::Zproto.ParkourRecord>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ParkourRecord.Parser), 10);

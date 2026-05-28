@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2dldF9tYWhqb25nX2luZm9fcmVxdWVzdC5wcm90bxIGenByb3Rv",
-            "IkEKFUdldE1haGpvbmdJbmZvUmVxdWVzdBIUCgxub3RpZnlfd29ybGQYASAB",
-            "KAUSEgoKdGFibGVfZ3VpZBgCIAEoCWIGcHJvdG8z"));
+            "IlcKFUdldE1haGpvbmdJbmZvUmVxdWVzdBIgCgtub3RpZnlXb3JsZBgBIAEo",
+            "BVILbm90aWZ5V29ybGQSHAoJdGFibGVHdWlkGAIgASgJUgl0YWJsZUd1aWRi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new GetMahjongInfoRequest(this);
     }
 
-    /// <summary>Field number for the "notify_world" field.</summary>
+    /// <summary>Field number for the "notifyWorld" field.</summary>
     public const int NotifyWorldFieldNumber = 1;
     private int notifyWorld_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "table_guid" field.</summary>
+    /// <summary>Field number for the "tableGuid" field.</summary>
     public const int TableGuidFieldNumber = 2;
     private string tableGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

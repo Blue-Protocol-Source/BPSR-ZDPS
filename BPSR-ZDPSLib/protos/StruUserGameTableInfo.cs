@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch9zdHJ1X3VzZXJfZ2FtZV90YWJsZV9pbmZvLnByb3RvEgZ6cHJvdG8aGXN0",
             "cnVfZ2FtZV90YWJsZV9rZXkucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90",
-            "byJsChFVc2VyR2FtZVRhYmxlSW5mbxIsCg5nYW1lX3RhYmxlX2tleRgBIAEo",
-            "CzIULnpwcm90by5HYW1lVGFibGVLZXkSEgoKc2VhdF9pbmRleBgCIAEoBRIV",
-            "Cg1leGl0X3RpbWVfc2VjGAMgASgFYgZwcm90bzM="));
+            "byKNAQoRVXNlckdhbWVUYWJsZUluZm8SOAoMZ2FtZVRhYmxlS2V5GAEgASgL",
+            "MhQuenByb3RvLkdhbWVUYWJsZUtleVIMZ2FtZVRhYmxlS2V5EhwKCXNlYXRJ",
+            "bmRleBgCIAEoBVIJc2VhdEluZGV4EiAKC2V4aXRUaW1lU2VjGAMgASgFUgtl",
+            "eGl0VGltZVNlY2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruGameTableKeyReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new UserGameTableInfo(this);
     }
 
-    /// <summary>Field number for the "game_table_key" field.</summary>
+    /// <summary>Field number for the "gameTableKey" field.</summary>
     public const int GameTableKeyFieldNumber = 1;
     private global::Zproto.GameTableKey gameTableKey_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "seat_index" field.</summary>
+    /// <summary>Field number for the "seatIndex" field.</summary>
     public const int SeatIndexFieldNumber = 2;
     private int seatIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "exit_time_sec" field.</summary>
+    /// <summary>Field number for the "exitTimeSec" field.</summary>
     public const int ExitTimeSecFieldNumber = 3;
     private int exitTimeSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

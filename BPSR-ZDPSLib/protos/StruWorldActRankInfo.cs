@@ -24,9 +24,10 @@ namespace Zproto {
     static StruWorldActRankInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X3dvcmxkX2FjdF9yYW5rX2luZm8ucHJvdG8SBnpwcm90byJTChBX",
-            "b3JsZEFjdFJhbmtJbmZvEg8KB2NoYXJfaWQYASABKAMSEQoJY2hhcl9uYW1l",
-            "GAIgASgJEg0KBXNjb3JlGAMgASgDEgwKBHJhbmsYBCABKAViBnByb3RvMw=="));
+            "Ch5zdHJ1X3dvcmxkX2FjdF9yYW5rX2luZm8ucHJvdG8SBnpwcm90byJwChBX",
+            "b3JsZEFjdFJhbmtJbmZvEhYKBmNoYXJJZBgBIAEoA1IGY2hhcklkEhoKCGNo",
+            "YXJOYW1lGAIgASgJUghjaGFyTmFtZRIUCgVzY29yZRgDIAEoA1IFc2NvcmUS",
+            "EgoEcmFuaxgEIAEoBVIEcmFua2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new WorldActRankInfo(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_name" field.</summary>
+    /// <summary>Field number for the "charName" field.</summary>
     public const int CharNameFieldNumber = 2;
     private string charName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

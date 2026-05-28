@@ -1480,7 +1480,7 @@ namespace BPSR_ZDPS
                     {
                         if ((ulong)item.Key == equip.Value.ItemUuid)
                         {
-                            playerEquips.Add(new EquipNine() { EquipId = item.Value.ConfigId, Slot = equip.Value.EquipSlot });
+                            playerEquips.Add(new EquipNine() { EquipID = item.Value.ConfigId, Slot = equip.Value.EquipSlot });
                             break;
                         }
                     }

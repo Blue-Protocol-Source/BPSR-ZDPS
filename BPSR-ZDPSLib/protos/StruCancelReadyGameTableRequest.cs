@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X2NhbmNlbF9yZWFkeV9nYW1lX3RhYmxlX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byIxChtDYW5jZWxSZWFkeUdhbWVUYWJsZVJlcXVlc3QSEgoKdGFi",
-            "bGVfZ3VpZBgBIAEoCWIGcHJvdG8z"));
+            "Bnpwcm90byI7ChtDYW5jZWxSZWFkeUdhbWVUYWJsZVJlcXVlc3QSHAoJdGFi",
+            "bGVHdWlkGAEgASgJUgl0YWJsZUd1aWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new CancelReadyGameTableRequest(this);
     }
 
-    /// <summary>Field number for the "table_guid" field.</summary>
+    /// <summary>Field number for the "tableGuid" field.</summary>
     public const int TableGuidFieldNumber = 1;
     private string tableGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

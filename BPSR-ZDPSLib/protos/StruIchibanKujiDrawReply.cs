@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X2ljaGliYW5fa3VqaV9kcmF3X3JlcGx5LnByb3RvEgZ6cHJvdG8a",
             "F2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGiVzdHJ1X2ljaGliYW5fa3VqaV9v",
-            "bmVfZHJhd19pbmZvLnByb3RvInQKFEljaGliYW5LdWppRHJhd1JlcGx5EjYK",
-            "DmRyYXdfaW5mb19saXN0GAEgAygLMh4uenByb3RvLkljaGliYW5LdWppT25l",
-            "RHJhd0luZm8SJAoIZXJyX2NvZGUYAiABKA4yEi56cHJvdG8uRUVycm9yQ29k",
-            "ZWIGcHJvdG8z"));
+            "bmVfZHJhd19pbmZvLnByb3RvIogBChRJY2hpYmFuS3VqaURyYXdSZXBseRJC",
+            "CgxkcmF3SW5mb0xpc3QYASADKAsyHi56cHJvdG8uSWNoaWJhbkt1amlPbmVE",
+            "cmF3SW5mb1IMZHJhd0luZm9MaXN0EiwKB2VyckNvZGUYAiABKA4yEi56cHJv",
+            "dG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruIchibanKujiOneDrawInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new IchibanKujiDrawReply(this);
     }
 
-    /// <summary>Field number for the "draw_info_list" field.</summary>
+    /// <summary>Field number for the "drawInfoList" field.</summary>
     public const int DrawInfoListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.IchibanKujiOneDrawInfo> _repeated_drawInfoList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.IchibanKujiOneDrawInfo.Parser);
@@ -97,7 +97,7 @@ namespace Zproto {
       get { return drawInfoList_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

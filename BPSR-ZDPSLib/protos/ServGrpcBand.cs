@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "ChRzZXJ2X2dycGNfYmFuZC5wcm90bxIGenByb3RvGhdlbnVtX2VfZXJyb3Jf",
             "Y29kZS5wcm90bxovc3RydV9yZXBseV9qb2luX2Vuc2VtYmxlX2FjdGl2aXR5",
-            "X3JlcXVlc3QucHJvdG8ipgEKCEdycGNCYW5kGkAKHVJlcGx5Sm9pbkVuc2Vt",
-            "YmxlQWN0aXZpdHlfUmV0Eh8KA3JldBgBIAEoDjISLnpwcm90by5FRXJyb3JD",
-            "b2RlGlgKGVJlcGx5Sm9pbkVuc2VtYmxlQWN0aXZpdHkSOwoJdl9yZXF1ZXN0",
-            "GAEgASgLMiguenByb3RvLlJlcGx5Sm9pbkVuc2VtYmxlQWN0aXZpdHlSZXF1",
-            "ZXN0YgZwcm90bzM="));
+            "X3JlcXVlc3QucHJvdG8itAEKCEdycGNCYW5kGkUKHVJlcGx5Sm9pbkVuc2Vt",
+            "YmxlQWN0aXZpdHlfUmV0EiQKA3JldBgBIAEoDjISLnpwcm90by5FRXJyb3JD",
+            "b2RlUgNyZXQaYQoZUmVwbHlKb2luRW5zZW1ibGVBY3Rpdml0eRJECgh2UmVx",
+            "dWVzdBgBIAEoCzIoLnpwcm90by5SZXBseUpvaW5FbnNlbWJsZUFjdGl2aXR5",
+            "UmVxdWVzdFIIdlJlcXVlc3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruReplyJoinEnsembleActivityRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -449,7 +449,7 @@ namespace Zproto {
           return new ReplyJoinEnsembleActivity(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.ReplyJoinEnsembleActivityRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

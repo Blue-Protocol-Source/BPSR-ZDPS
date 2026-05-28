@@ -28,35 +28,41 @@ namespace Zproto {
             "b25faW5mby5wcm90bxoec3RydV9lZGl0b3JfdV9pX3Bvc2l0aW9uLnByb3Rv",
             "GidzdHJ1X2Zhc2hpb25fcXVhbGl0eV9jb2xsZWN0X2luZm8ucHJvdG8aJHN0",
             "cnVfcmlkZV9xdWFsaXR5X2NvbGxlY3RfaW5mby5wcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvItYJCgxQZXJzb25hbFpvbmUSFgoOb25saW5lX3Blcmlv",
-            "ZHMYAiADKAUSDAoEdGFncxgDIAMoBRIwCgZtZWRhbHMYBSADKAsyIC56cHJv",
-            "dG8uUGVyc29uYWxab25lLk1lZGFsc0VudHJ5EhAKCHRoZW1lX2lkGAYgASgF",
-            "Eh4KFmJ1c2luZXNzX2NhcmRfc3R5bGVfaWQYByABKAUSFwoPYXZhdGFyX2Zy",
-            "YW1lX2lkGAggASgFEicKC2FjdGlvbl9pbmZvGAkgASgLMhIuenByb3RvLkFj",
-            "dGlvbkluZm8SLQoLdWlfcG9zaXRpb24YCiADKAsyGC56cHJvdG8uRWRpdG9y",
-            "VUlQb3NpdGlvbhIQCgh0aXRsZV9pZBgLIAEoBRIcChRmYXNoaW9uX3JlZnJl",
-            "c2hfZmxhZxgMIAEoCBIdChVmYXNoaW9uX2NvbGxlY3RfcG9pbnQYDSABKAUS",
-            "WwodZmFzaGlvbl9jb2xsZWN0X3F1YWxpdHlfY291bnQYDiADKAsyNC56cHJv",
-            "dG8uUGVyc29uYWxab25lLkZhc2hpb25Db2xsZWN0UXVhbGl0eUNvdW50RW50",
-            "cnkSDgoGcGhvdG9zGA8gAygFEkoKFHVubG9ja190YXJnZXRfcmVjb3JkGBAg",
-            "AygLMiwuenByb3RvLlBlcnNvbmFsWm9uZS5VbmxvY2tUYXJnZXRSZWNvcmRF",
-            "bnRyeRJRChh1bmxvY2tfZ2V0X3Jld2FyZF9yZWNvcmQYESADKAsyLy56cHJv",
-            "dG8uUGVyc29uYWxab25lLlVubG9ja0dldFJld2FyZFJlY29yZEVudHJ5EhoK",
-            "EnJpZGVfY29sbGVjdF9wb2ludBgSIAEoBRJVChpyaWRlX2NvbGxlY3RfcXVh",
-            "bGl0eV9jb3VudBgTIAMoCzIxLnpwcm90by5QZXJzb25hbFpvbmUuUmlkZUNv",
-            "bGxlY3RRdWFsaXR5Q291bnRFbnRyeRIhChl3ZWFwb25fc2tpbl9jb2xsZWN0",
-            "X3BvaW50GBQgASgFEjkKC3Bob3Rvc193YWxsGBUgAygLMiQuenByb3RvLlBl",
-            "cnNvbmFsWm9uZS5QaG90b3NXYWxsRW50cnkaLQoLTWVkYWxzRW50cnkSCwoD",
-            "a2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4ARpkCh9GYXNoaW9uQ29sbGVj",
-            "dFF1YWxpdHlDb3VudEVudHJ5EgsKA2tleRgBIAEoBRIwCgV2YWx1ZRgCIAEo",
-            "CzIhLnpwcm90by5GYXNoaW9uUXVhbGl0eUNvbGxlY3RJbmZvOgI4ARo5ChdV",
-            "bmxvY2tUYXJnZXRSZWNvcmRFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
-            "AiABKAU6AjgBGjwKGlVubG9ja0dldFJld2FyZFJlY29yZEVudHJ5EgsKA2tl",
-            "eRgBIAEoBRINCgV2YWx1ZRgCIAEoCDoCOAEaXgocUmlkZUNvbGxlY3RRdWFs",
-            "aXR5Q291bnRFbnRyeRILCgNrZXkYASABKAUSLQoFdmFsdWUYAiABKAsyHi56",
-            "cHJvdG8uUmlkZVF1YWxpdHlDb2xsZWN0SW5mbzoCOAEaMQoPUGhvdG9zV2Fs",
-            "bEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoBToCOAFiBnByb3Rv",
-            "Mw=="));
+            "eV9tYXNrLnByb3RvIukLCgxQZXJzb25hbFpvbmUSJAoNb25saW5lUGVyaW9k",
+            "cxgCIAMoBVINb25saW5lUGVyaW9kcxISCgR0YWdzGAMgAygFUgR0YWdzEjgK",
+            "Bm1lZGFscxgFIAMoCzIgLnpwcm90by5QZXJzb25hbFpvbmUuTWVkYWxzRW50",
+            "cnlSBm1lZGFscxIYCgd0aGVtZUlkGAYgASgFUgd0aGVtZUlkEjAKE2J1c2lu",
+            "ZXNzQ2FyZFN0eWxlSWQYByABKAVSE2J1c2luZXNzQ2FyZFN0eWxlSWQSJAoN",
+            "YXZhdGFyRnJhbWVJZBgIIAEoBVINYXZhdGFyRnJhbWVJZBIyCgphY3Rpb25J",
+            "bmZvGAkgASgLMhIuenByb3RvLkFjdGlvbkluZm9SCmFjdGlvbkluZm8SOAoK",
+            "dWlQb3NpdGlvbhgKIAMoCzIYLnpwcm90by5FZGl0b3JVSVBvc2l0aW9uUgp1",
+            "aVBvc2l0aW9uEhgKB3RpdGxlSWQYCyABKAVSB3RpdGxlSWQSLgoSZmFzaGlv",
+            "blJlZnJlc2hGbGFnGAwgASgIUhJmYXNoaW9uUmVmcmVzaEZsYWcSMAoTZmFz",
+            "aGlvbkNvbGxlY3RQb2ludBgNIAEoBVITZmFzaGlvbkNvbGxlY3RQb2ludBJ0",
+            "ChpmYXNoaW9uQ29sbGVjdFF1YWxpdHlDb3VudBgOIAMoCzI0Lnpwcm90by5Q",
+            "ZXJzb25hbFpvbmUuRmFzaGlvbkNvbGxlY3RRdWFsaXR5Q291bnRFbnRyeVIa",
+            "ZmFzaGlvbkNvbGxlY3RRdWFsaXR5Q291bnQSFgoGcGhvdG9zGA8gAygFUgZw",
+            "aG90b3MSXAoSdW5sb2NrVGFyZ2V0UmVjb3JkGBAgAygLMiwuenByb3RvLlBl",
+            "cnNvbmFsWm9uZS5VbmxvY2tUYXJnZXRSZWNvcmRFbnRyeVISdW5sb2NrVGFy",
+            "Z2V0UmVjb3JkEmUKFXVubG9ja0dldFJld2FyZFJlY29yZBgRIAMoCzIvLnpw",
+            "cm90by5QZXJzb25hbFpvbmUuVW5sb2NrR2V0UmV3YXJkUmVjb3JkRW50cnlS",
+            "FXVubG9ja0dldFJld2FyZFJlY29yZBIqChByaWRlQ29sbGVjdFBvaW50GBIg",
+            "ASgFUhByaWRlQ29sbGVjdFBvaW50EmsKF3JpZGVDb2xsZWN0UXVhbGl0eUNv",
+            "dW50GBMgAygLMjEuenByb3RvLlBlcnNvbmFsWm9uZS5SaWRlQ29sbGVjdFF1",
+            "YWxpdHlDb3VudEVudHJ5UhdyaWRlQ29sbGVjdFF1YWxpdHlDb3VudBI2ChZ3",
+            "ZWFwb25Ta2luQ29sbGVjdFBvaW50GBQgASgFUhZ3ZWFwb25Ta2luQ29sbGVj",
+            "dFBvaW50EkQKCnBob3Rvc1dhbGwYFSADKAsyJC56cHJvdG8uUGVyc29uYWxa",
+            "b25lLlBob3Rvc1dhbGxFbnRyeVIKcGhvdG9zV2FsbBotCgtNZWRhbHNFbnRy",
+            "eRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBGmQKH0Zhc2hpb25D",
+            "b2xsZWN0UXVhbGl0eUNvdW50RW50cnkSCwoDa2V5GAEgASgFEjAKBXZhbHVl",
+            "GAIgASgLMiEuenByb3RvLkZhc2hpb25RdWFsaXR5Q29sbGVjdEluZm86AjgB",
+            "GjkKF1VubG9ja1RhcmdldFJlY29yZEVudHJ5EgsKA2tleRgBIAEoBRINCgV2",
+            "YWx1ZRgCIAEoBToCOAEaPAoaVW5sb2NrR2V0UmV3YXJkUmVjb3JkRW50cnkS",
+            "CwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgIOgI4ARpeChxSaWRlQ29sbGVj",
+            "dFF1YWxpdHlDb3VudEVudHJ5EgsKA2tleRgBIAEoBRItCgV2YWx1ZRgCIAEo",
+            "CzIeLnpwcm90by5SaWRlUXVhbGl0eUNvbGxlY3RJbmZvOgI4ARoxCg9QaG90",
+            "b3NXYWxsRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActionInfoReflection.Descriptor, global::Zproto.StruEditorUIPositionReflection.Descriptor, global::Zproto.StruFashionQualityCollectInfoReflection.Descriptor, global::Zproto.StruRideQualityCollectInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -130,7 +136,7 @@ namespace Zproto {
       return new PersonalZone(this);
     }
 
-    /// <summary>Field number for the "online_periods" field.</summary>
+    /// <summary>Field number for the "onlinePeriods" field.</summary>
     public const int OnlinePeriodsFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_onlinePeriods_codec
         = pb::FieldCodec.ForInt32(18);
@@ -163,7 +169,7 @@ namespace Zproto {
       get { return medals_; }
     }
 
-    /// <summary>Field number for the "theme_id" field.</summary>
+    /// <summary>Field number for the "themeId" field.</summary>
     public const int ThemeIdFieldNumber = 6;
     private int themeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -175,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "business_card_style_id" field.</summary>
+    /// <summary>Field number for the "businessCardStyleId" field.</summary>
     public const int BusinessCardStyleIdFieldNumber = 7;
     private int businessCardStyleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -187,7 +193,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "avatar_frame_id" field.</summary>
+    /// <summary>Field number for the "avatarFrameId" field.</summary>
     public const int AvatarFrameIdFieldNumber = 8;
     private int avatarFrameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -199,7 +205,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "action_info" field.</summary>
+    /// <summary>Field number for the "actionInfo" field.</summary>
     public const int ActionInfoFieldNumber = 9;
     private global::Zproto.ActionInfo actionInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -211,7 +217,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ui_position" field.</summary>
+    /// <summary>Field number for the "uiPosition" field.</summary>
     public const int UiPositionFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Zproto.EditorUIPosition> _repeated_uiPosition_codec
         = pb::FieldCodec.ForMessage(82, global::Zproto.EditorUIPosition.Parser);
@@ -222,7 +228,7 @@ namespace Zproto {
       get { return uiPosition_; }
     }
 
-    /// <summary>Field number for the "title_id" field.</summary>
+    /// <summary>Field number for the "titleId" field.</summary>
     public const int TitleIdFieldNumber = 11;
     private int titleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -234,7 +240,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fashion_refresh_flag" field.</summary>
+    /// <summary>Field number for the "fashionRefreshFlag" field.</summary>
     public const int FashionRefreshFlagFieldNumber = 12;
     private bool fashionRefreshFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -246,7 +252,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fashion_collect_point" field.</summary>
+    /// <summary>Field number for the "fashionCollectPoint" field.</summary>
     public const int FashionCollectPointFieldNumber = 13;
     private int fashionCollectPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -258,7 +264,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fashion_collect_quality_count" field.</summary>
+    /// <summary>Field number for the "fashionCollectQualityCount" field.</summary>
     public const int FashionCollectQualityCountFieldNumber = 14;
     private static readonly pbc::MapField<int, global::Zproto.FashionQualityCollectInfo>.Codec _map_fashionCollectQualityCount_codec
         = new pbc::MapField<int, global::Zproto.FashionQualityCollectInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FashionQualityCollectInfo.Parser), 114);
@@ -280,7 +286,7 @@ namespace Zproto {
       get { return photos_; }
     }
 
-    /// <summary>Field number for the "unlock_target_record" field.</summary>
+    /// <summary>Field number for the "unlockTargetRecord" field.</summary>
     public const int UnlockTargetRecordFieldNumber = 16;
     private static readonly pbc::MapField<int, int>.Codec _map_unlockTargetRecord_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 130);
@@ -291,7 +297,7 @@ namespace Zproto {
       get { return unlockTargetRecord_; }
     }
 
-    /// <summary>Field number for the "unlock_get_reward_record" field.</summary>
+    /// <summary>Field number for the "unlockGetRewardRecord" field.</summary>
     public const int UnlockGetRewardRecordFieldNumber = 17;
     private static readonly pbc::MapField<int, bool>.Codec _map_unlockGetRewardRecord_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 138);
@@ -302,7 +308,7 @@ namespace Zproto {
       get { return unlockGetRewardRecord_; }
     }
 
-    /// <summary>Field number for the "ride_collect_point" field.</summary>
+    /// <summary>Field number for the "rideCollectPoint" field.</summary>
     public const int RideCollectPointFieldNumber = 18;
     private int rideCollectPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -314,7 +320,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ride_collect_quality_count" field.</summary>
+    /// <summary>Field number for the "rideCollectQualityCount" field.</summary>
     public const int RideCollectQualityCountFieldNumber = 19;
     private static readonly pbc::MapField<int, global::Zproto.RideQualityCollectInfo>.Codec _map_rideCollectQualityCount_codec
         = new pbc::MapField<int, global::Zproto.RideQualityCollectInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.RideQualityCollectInfo.Parser), 154);
@@ -325,7 +331,7 @@ namespace Zproto {
       get { return rideCollectQualityCount_; }
     }
 
-    /// <summary>Field number for the "weapon_skin_collect_point" field.</summary>
+    /// <summary>Field number for the "weaponSkinCollectPoint" field.</summary>
     public const int WeaponSkinCollectPointFieldNumber = 20;
     private int weaponSkinCollectPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -337,7 +343,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photos_wall" field.</summary>
+    /// <summary>Field number for the "photosWall" field.</summary>
     public const int PhotosWallFieldNumber = 21;
     private static readonly pbc::MapField<int, int>.Codec _map_photosWall_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 170);

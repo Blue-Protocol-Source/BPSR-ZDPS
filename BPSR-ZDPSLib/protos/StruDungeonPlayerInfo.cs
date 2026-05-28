@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2R1bmdlb25fcGxheWVyX2luZm8ucHJvdG8SBnpwcm90bxoWc3Ry",
-            "dV9zb2NpYWxfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIk0K",
-            "EUR1bmdlb25QbGF5ZXJJbmZvEg8KB2NoYXJfaWQYASABKAMSJwoLc29jaWFs",
-            "X2RhdGEYAiABKAsyEi56cHJvdG8uU29jaWFsRGF0YWIGcHJvdG8z"));
+            "dV9zb2NpYWxfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIl8K",
+            "EUR1bmdlb25QbGF5ZXJJbmZvEhYKBmNoYXJJZBgBIAEoA1IGY2hhcklkEjIK",
+            "CnNvY2lhbERhdGEYAiABKAsyEi56cHJvdG8uU29jaWFsRGF0YVIKc29jaWFs",
+            "RGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSocialDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new DungeonPlayerInfo(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "social_data" field.</summary>
+    /// <summary>Field number for the "socialData" field.</summary>
     public const int SocialDataFieldNumber = 2;
     private global::Zproto.SocialData socialData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X21haGpvbmdfcGxheWVyX3NlbGYucHJvdG8SBnpwcm90bxoec3Ry",
-            "dV9tYWhqb25nX3BsYXllcl9zaG93LnByb3RvIocBChFNYWhqb25nUGxheWVy",
-            "U2VsZhIuCgtwbGF5ZXJfc2hvdxgBIAEoCzIZLnpwcm90by5NYWhqb25nUGxh",
-            "eWVyU2hvdxIOCgZjYW5fZG8YAiABKAUSFgoOb3BlcmF0aW9uX3RpbWUYAyAB",
-            "KAMSGgoSbGVmdF90aGlua2luZ190aW1lGAQgASgFYgZwcm90bzM="));
+            "dV9tYWhqb25nX3BsYXllcl9zaG93LnByb3RvIrYBChFNYWhqb25nUGxheWVy",
+            "U2VsZhI5CgpwbGF5ZXJTaG93GAEgASgLMhkuenByb3RvLk1haGpvbmdQbGF5",
+            "ZXJTaG93UgpwbGF5ZXJTaG93EhQKBUNhbkRvGAIgASgFUgVDYW5EbxIkCg1P",
+            "cGVyYXRpb25UaW1lGAMgASgDUg1PcGVyYXRpb25UaW1lEioKEExlZnRUaGlu",
+            "a2luZ1RpbWUYBCABKAVSEExlZnRUaGlua2luZ1RpbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMahjongPlayerShowReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new MahjongPlayerSelf(this);
     }
 
-    /// <summary>Field number for the "player_show" field.</summary>
+    /// <summary>Field number for the "playerShow" field.</summary>
     public const int PlayerShowFieldNumber = 1;
     private global::Zproto.MahjongPlayerShow playerShow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "can_do" field.</summary>
+    /// <summary>Field number for the "CanDo" field.</summary>
     public const int CanDoFieldNumber = 2;
     private int canDo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "operation_time" field.</summary>
+    /// <summary>Field number for the "OperationTime" field.</summary>
     public const int OperationTimeFieldNumber = 3;
     private long operationTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "left_thinking_time" field.</summary>
+    /// <summary>Field number for the "LeftThinkingTime" field.</summary>
     public const int LeftThinkingTimeFieldNumber = 4;
     private int leftThinkingTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

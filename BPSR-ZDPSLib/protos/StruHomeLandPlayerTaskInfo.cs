@@ -25,13 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2hvbWVfbGFuZF9wbGF5ZXJfdGFza19pbmZvLnByb3RvEgZ6cHJv",
-            "dG8aGXN0cnVfaG9tZV9sYW5kX3Rhc2sucHJvdG8iggIKFkhvbWVMYW5kUGxh",
-            "eWVyVGFza0luZm8SHgoWbmV4dF90YXNrX3JlZmx1c2hfdGltZRgBIAEoAxIW",
-            "Cg5jdXJfbGVmdF90aW1lcxgCIAEoBRJECgxjdXJfdGFza19tYXAYAyADKAsy",
-            "Li56cHJvdG8uSG9tZUxhbmRQbGF5ZXJUYXNrSW5mby5DdXJUYXNrTWFwRW50",
-            "cnkSIQoZbmV3X25leHRfdGFza19yZWZsdXNoX3NlYxgEIAEoAxpHCg9DdXJU",
-            "YXNrTWFwRW50cnkSCwoDa2V5GAEgASgFEiMKBXZhbHVlGAIgASgLMhQuenBy",
-            "b3RvLkhvbWVMYW5kVGFzazoCOAFiBnByb3RvMw=="));
+            "dG8aGXN0cnVfaG9tZV9sYW5kX3Rhc2sucHJvdG8ivQIKFkhvbWVMYW5kUGxh",
+            "eWVyVGFza0luZm8SMAoTbmV4dFRhc2tSZWZsdXNoVGltZRgBIAEoA1ITbmV4",
+            "dFRhc2tSZWZsdXNoVGltZRIiCgxjdXJMZWZ0VGltZXMYAiABKAVSDGN1ckxl",
+            "ZnRUaW1lcxJOCgpjdXJUYXNrTWFwGAMgAygLMi4uenByb3RvLkhvbWVMYW5k",
+            "UGxheWVyVGFza0luZm8uQ3VyVGFza01hcEVudHJ5UgpjdXJUYXNrTWFwEjQK",
+            "FW5ld05leHRUYXNrUmVmbHVzaFNlYxgEIAEoA1IVbmV3TmV4dFRhc2tSZWZs",
+            "dXNoU2VjGkcKD0N1clRhc2tNYXBFbnRyeRILCgNrZXkYASABKAUSIwoFdmFs",
+            "dWUYAiABKAsyFC56cHJvdG8uSG9tZUxhbmRUYXNrOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomeLandTaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new HomeLandPlayerTaskInfo(this);
     }
 
-    /// <summary>Field number for the "next_task_reflush_time" field.</summary>
+    /// <summary>Field number for the "nextTaskReflushTime" field.</summary>
     public const int NextTaskReflushTimeFieldNumber = 1;
     private long nextTaskReflushTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_left_times" field.</summary>
+    /// <summary>Field number for the "curLeftTimes" field.</summary>
     public const int CurLeftTimesFieldNumber = 2;
     private int curLeftTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_task_map" field.</summary>
+    /// <summary>Field number for the "curTaskMap" field.</summary>
     public const int CurTaskMapFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.HomeLandTask>.Codec _map_curTaskMap_codec
         = new pbc::MapField<int, global::Zproto.HomeLandTask>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HomeLandTask.Parser), 26);
@@ -125,7 +126,7 @@ namespace Zproto {
       get { return curTaskMap_; }
     }
 
-    /// <summary>Field number for the "new_next_task_reflush_sec" field.</summary>
+    /// <summary>Field number for the "newNextTaskReflushSec" field.</summary>
     public const int NewNextTaskReflushSecFieldNumber = 4;
     private long newNextTaskReflushSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

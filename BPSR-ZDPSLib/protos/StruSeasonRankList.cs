@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "ChtzdHJ1X3NlYXNvbl9yYW5rX2xpc3QucHJvdG8SBnpwcm90bxobc3RydV9z",
             "ZWFzb25fcmFua19pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i",
-            "vgEKDlNlYXNvblJhbmtMaXN0EkQKEHNlYXNvbl9yYW5rX2xpc3QYASADKAsy",
-            "Ki56cHJvdG8uU2Vhc29uUmFua0xpc3QuU2Vhc29uUmFua0xpc3RFbnRyeRIX",
-            "Cg9zaG93X2FybWJhbmRfaWQYAiABKA0aTQoTU2Vhc29uUmFua0xpc3RFbnRy",
-            "eRILCgNrZXkYASABKA0SJQoFdmFsdWUYAiABKAsyFi56cHJvdG8uU2Vhc29u",
-            "UmFua0luZm86AjgBYgZwcm90bzM="));
+            "2QEKDlNlYXNvblJhbmtMaXN0ElIKDnNlYXNvblJhbmtMaXN0GAEgAygLMiou",
+            "enByb3RvLlNlYXNvblJhbmtMaXN0LlNlYXNvblJhbmtMaXN0RW50cnlSDnNl",
+            "YXNvblJhbmtMaXN0EiQKDXNob3dBcm1iYW5kSWQYAiABKA1SDXNob3dBcm1i",
+            "YW5kSWQaTQoTU2Vhc29uUmFua0xpc3RFbnRyeRILCgNrZXkYASABKA0SJQoF",
+            "dmFsdWUYAiABKAsyFi56cHJvdG8uU2Vhc29uUmFua0luZm86AjgBYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSeasonRankInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new SeasonRankList(this);
     }
 
-    /// <summary>Field number for the "season_rank_list" field.</summary>
+    /// <summary>Field number for the "seasonRankList" field.</summary>
     public const int SeasonRankList_FieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.SeasonRankInfo>.Codec _map_seasonRankList_codec
         = new pbc::MapField<uint, global::Zproto.SeasonRankInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonRankInfo.Parser), 10);
@@ -98,7 +99,7 @@ namespace Zproto {
       get { return seasonRankList_; }
     }
 
-    /// <summary>Field number for the "show_armband_id" field.</summary>
+    /// <summary>Field number for the "showArmbandId" field.</summary>
     public const int ShowArmbandIdFieldNumber = 2;
     private uint showArmbandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

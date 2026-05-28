@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzZXJ2X21haGpvbmdfbnRmLnByb3RvEgZ6cHJvdG8aKHN0cnVfbm90aWZ5",
-            "X21haGpvbmdfYWN0aW9uX3JlcXVlc3QucHJvdG8iWgoKTWFoam9uZ050ZhpM",
-            "ChNOb3RpZnlNYWhqb25nQWN0aW9uEjUKCXZfcmVxdWVzdBgBIAEoCzIiLnpw",
-            "cm90by5Ob3RpZnlNYWhqb25nQWN0aW9uUmVxdWVzdGIGcHJvdG8z"));
+            "X21haGpvbmdfYWN0aW9uX3JlcXVlc3QucHJvdG8iYwoKTWFoam9uZ050ZhpV",
+            "ChNOb3RpZnlNYWhqb25nQWN0aW9uEj4KCHZSZXF1ZXN0GAEgASgLMiIuenBy",
+            "b3RvLk5vdGlmeU1haGpvbmdBY3Rpb25SZXF1ZXN0Ugh2UmVxdWVzdGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNotifyMahjongActionRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -247,7 +248,7 @@ namespace Zproto {
           return new NotifyMahjongAction(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyMahjongActionRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

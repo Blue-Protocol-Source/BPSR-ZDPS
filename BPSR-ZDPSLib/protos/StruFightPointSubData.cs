@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X2ZpZ2h0X3BvaW50X3N1Yl9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0",
-            "cnVfZGlydHlfbWFzay5wcm90byJVChFGaWdodFBvaW50U3ViRGF0YRIVCg1m",
-            "dW5jdGlvbl90eXBlGAEgASgFEhoKEnJvb3RfZnVuY3Rpb25fdHlwZRgCIAEo",
-            "BRINCgVwb2ludBgDIAEoBWIGcHJvdG8z"));
+            "cnVfZGlydHlfbWFzay5wcm90byJ5ChFGaWdodFBvaW50U3ViRGF0YRIiCgxm",
+            "dW5jdGlvblR5cGUYASABKAVSDGZ1bmN0aW9uVHlwZRIqChByb290RnVuY3Rp",
+            "b25UeXBlGAIgASgFUhByb290RnVuY3Rpb25UeXBlEhQKBXBvaW50GAMgASgF",
+            "UgVwb2ludGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new FightPointSubData(this);
     }
 
-    /// <summary>Field number for the "function_type" field.</summary>
+    /// <summary>Field number for the "functionType" field.</summary>
     public const int FunctionTypeFieldNumber = 1;
     private int functionType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "root_function_type" field.</summary>
+    /// <summary>Field number for the "rootFunctionType" field.</summary>
     public const int RootFunctionTypeFieldNumber = 2;
     private int rootFunctionType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

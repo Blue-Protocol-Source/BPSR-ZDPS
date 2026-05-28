@@ -24,9 +24,10 @@ namespace Zproto {
     static StruFightSourceInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X2ZpZ2h0X3NvdXJjZV9pbmZvLnByb3RvEgZ6cHJvdG8iRgoPRmln",
-            "aHRTb3VyY2VJbmZvEhkKEWZpZ2h0X3NvdXJjZV90eXBlGAEgASgFEhgKEHNv",
-            "dXJjZV9jb25maWdfaWQYAiABKAViBnByb3RvMw=="));
+            "ChxzdHJ1X2ZpZ2h0X3NvdXJjZV9pbmZvLnByb3RvEgZ6cHJvdG8iYwoPRmln",
+            "aHRTb3VyY2VJbmZvEigKD2ZpZ2h0U291cmNlVHlwZRgBIAEoBVIPZmlnaHRT",
+            "b3VyY2VUeXBlEiYKDnNvdXJjZUNvbmZpZ0lkGAIgASgFUg5zb3VyY2VDb25m",
+            "aWdJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new FightSourceInfo(this);
     }
 
-    /// <summary>Field number for the "fight_source_type" field.</summary>
+    /// <summary>Field number for the "fightSourceType" field.</summary>
     public const int FightSourceTypeFieldNumber = 1;
     private int fightSourceType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "source_config_id" field.</summary>
+    /// <summary>Field number for the "sourceConfigId" field.</summary>
     public const int SourceConfigIdFieldNumber = 2;
     private int sourceConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -30,19 +30,22 @@ namespace Zproto {
             "aGlvbl9kYXRhLnByb3RvGiNzdHJ1X3N0cnVjdHVyZV9sYW1wbGlnaHRfaW5m",
             "by5wcm90bxoic3RydV9zdHJ1Y3R1cmVfbWF0ZXJpYWxfaW5mby5wcm90bxoj",
             "c3RydV9zdHJ1Y3R1cmVfc3ViX21vZGVsX2RhdGEucHJvdG8aD3N0cnVfdmVj",
-            "NC5wcm90byKOBAoJU3RydWN0dXJlEgwKBHV1aWQYASABKAMSEwoLY2xpZW50",
-            "X3V1aWQYAiABKAMSEAoIZ3JvdXBfaWQYAyABKAMSDwoHaXRlbV9pZBgEIAEo",
-            "BRIPCgdjaGFyX2lkGAUgASgDEiEKCHBvc2l0aW9uGAYgASgLMg8uenByb3Rv",
-            "LkludFZlYzMSIAoKcXVhdGVybmlvbhgHIAEoCzIMLnpwcm90by5WZWM0EhgK",
-            "EG9wZXJhdG9yX2NoYXJfaWQYCCABKAMSDAoEbmFtZRgJIAEoCRI0Cg1tYXRl",
-            "cmlhbF9pbmZvGAogASgLMh0uenByb3RvLlN0cnVjdHVyZU1hdGVyaWFsSW5m",
-            "bxI2Cg5sYW1wbGlnaHRfaW5mbxgLIAEoCzIeLnpwcm90by5TdHJ1Y3R1cmVM",
-            "YW1wbGlnaHRJbmZvEjQKDWZhcm1sYW5kX2luZm8YDCABKAsyHS56cHJvdG8u",
-            "U3RydWN0dXJlRmFybWxhbmRJbmZvEjIKDGZhc2hpb25fZGF0YRgNIAEoCzIc",
-            "Lnpwcm90by5TdHJ1Y3R1cmVGYXNoaW9uRGF0YRI1Cg5zdWJfbW9kZWxfZGF0",
-            "YRgOIAEoCzIdLnpwcm90by5TdHJ1Y3R1cmVTdWJNb2RlbERhdGESLgoPZ2Ft",
-            "ZV90YWJsZV9kYXRhGA8gASgLMhUuenByb3RvLkdhbWVUYWJsZURhdGFiBnBy",
-            "b3RvMw=="));
+            "NC5wcm90byKsBQoJU3RydWN0dXJlEhIKBHV1aWQYASABKANSBHV1aWQSHgoK",
+            "Y2xpZW50VXVpZBgCIAEoA1IKY2xpZW50VXVpZBIYCgdncm91cElkGAMgASgD",
+            "Ugdncm91cElkEhYKBml0ZW1JZBgEIAEoBVIGaXRlbUlkEhYKBmNoYXJJZBgF",
+            "IAEoA1IGY2hhcklkEisKCHBvc2l0aW9uGAYgASgLMg8uenByb3RvLkludFZl",
+            "YzNSCHBvc2l0aW9uEiwKCnF1YXRlcm5pb24YByABKAsyDC56cHJvdG8uVmVj",
+            "NFIKcXVhdGVybmlvbhImCg5vcGVyYXRvckNoYXJJZBgIIAEoA1IOb3BlcmF0",
+            "b3JDaGFySWQSEgoEbmFtZRgJIAEoCVIEbmFtZRJBCgxtYXRlcmlhbEluZm8Y",
+            "CiABKAsyHS56cHJvdG8uU3RydWN0dXJlTWF0ZXJpYWxJbmZvUgxtYXRlcmlh",
+            "bEluZm8SRAoNbGFtcGxpZ2h0SW5mbxgLIAEoCzIeLnpwcm90by5TdHJ1Y3R1",
+            "cmVMYW1wbGlnaHRJbmZvUg1sYW1wbGlnaHRJbmZvEkEKDGZhcm1sYW5kSW5m",
+            "bxgMIAEoCzIdLnpwcm90by5TdHJ1Y3R1cmVGYXJtbGFuZEluZm9SDGZhcm1s",
+            "YW5kSW5mbxI+CgtmYXNoaW9uRGF0YRgNIAEoCzIcLnpwcm90by5TdHJ1Y3R1",
+            "cmVGYXNoaW9uRGF0YVILZmFzaGlvbkRhdGESQQoMc3ViTW9kZWxEYXRhGA4g",
+            "ASgLMh0uenByb3RvLlN0cnVjdHVyZVN1Yk1vZGVsRGF0YVIMc3ViTW9kZWxE",
+            "YXRhEjsKDWdhbWVUYWJsZURhdGEYDyABKAsyFS56cHJvdG8uR2FtZVRhYmxl",
+            "RGF0YVINZ2FtZVRhYmxlRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruGameTableDataReflection.Descriptor, global::Zproto.StruIntVec3Reflection.Descriptor, global::Zproto.StruStructureFarmlandInfoReflection.Descriptor, global::Zproto.StruStructureFashionDataReflection.Descriptor, global::Zproto.StruStructureLamplightInfoReflection.Descriptor, global::Zproto.StruStructureMaterialInfoReflection.Descriptor, global::Zproto.StruStructureSubModelDataReflection.Descriptor, global::Zproto.StruVec4Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -124,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "client_uuid" field.</summary>
+    /// <summary>Field number for the "clientUuid" field.</summary>
     public const int ClientUuidFieldNumber = 2;
     private long clientUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "group_id" field.</summary>
+    /// <summary>Field number for the "groupId" field.</summary>
     public const int GroupIdFieldNumber = 3;
     private long groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
+    /// <summary>Field number for the "itemId" field.</summary>
     public const int ItemIdFieldNumber = 4;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -160,7 +163,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 5;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -196,7 +199,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "operator_char_id" field.</summary>
+    /// <summary>Field number for the "operatorCharId" field.</summary>
     public const int OperatorCharIdFieldNumber = 8;
     private long operatorCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -220,7 +223,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "material_info" field.</summary>
+    /// <summary>Field number for the "materialInfo" field.</summary>
     public const int MaterialInfoFieldNumber = 10;
     private global::Zproto.StructureMaterialInfo materialInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -232,7 +235,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lamplight_info" field.</summary>
+    /// <summary>Field number for the "lamplightInfo" field.</summary>
     public const int LamplightInfoFieldNumber = 11;
     private global::Zproto.StructureLamplightInfo lamplightInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -244,7 +247,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "farmland_info" field.</summary>
+    /// <summary>Field number for the "farmlandInfo" field.</summary>
     public const int FarmlandInfoFieldNumber = 12;
     private global::Zproto.StructureFarmlandInfo farmlandInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -256,7 +259,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fashion_data" field.</summary>
+    /// <summary>Field number for the "fashionData" field.</summary>
     public const int FashionDataFieldNumber = 13;
     private global::Zproto.StructureFashionData fashionData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -268,7 +271,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sub_model_data" field.</summary>
+    /// <summary>Field number for the "subModelData" field.</summary>
     public const int SubModelDataFieldNumber = 14;
     private global::Zproto.StructureSubModelData subModelData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -280,7 +283,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_table_data" field.</summary>
+    /// <summary>Field number for the "gameTableData" field.</summary>
     public const int GameTableDataFieldNumber = 15;
     private global::Zproto.GameTableData gameTableData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

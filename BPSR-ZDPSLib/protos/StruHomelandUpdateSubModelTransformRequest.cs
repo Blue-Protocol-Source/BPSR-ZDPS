@@ -26,11 +26,13 @@ namespace Zproto {
           string.Concat(
             "CjZzdHJ1X2hvbWVsYW5kX3VwZGF0ZV9zdWJfbW9kZWxfdHJhbnNmb3JtX3Jl",
             "cXVlc3QucHJvdG8SBnpwcm90bxoTc3RydV9pbnRfdmVjMy5wcm90bxoPc3Ry",
-            "dV92ZWM0LnByb3RvIr4BCiZIb21lbGFuZFVwZGF0ZVN1Yk1vZGVsVHJhbnNm",
-            "b3JtUmVxdWVzdBIWCg5zdHJ1Y3R1cmVfdXVpZBgBIAEoAxIMCgRzbG90GAIg",
-            "ASgFEiEKCHBvc2l0aW9uGAMgASgLMg8uenByb3RvLkludFZlYzMSIAoKcXVh",
-            "dGVybmlvbhgEIAEoCzIMLnpwcm90by5WZWM0EhAKCGlzX291dGVyGAUgASgI",
-            "EhcKD3N1Yl9tb2RlbF9pbmRleBgGIAEoBWIGcHJvdG8z"));
+            "dV92ZWM0LnByb3RvIv0BCiZIb21lbGFuZFVwZGF0ZVN1Yk1vZGVsVHJhbnNm",
+            "b3JtUmVxdWVzdBIkCg1zdHJ1Y3R1cmVVdWlkGAEgASgDUg1zdHJ1Y3R1cmVV",
+            "dWlkEhIKBHNsb3QYAiABKAVSBHNsb3QSKwoIcG9zaXRpb24YAyABKAsyDy56",
+            "cHJvdG8uSW50VmVjM1IIcG9zaXRpb24SLAoKcXVhdGVybmlvbhgEIAEoCzIM",
+            "Lnpwcm90by5WZWM0UgpxdWF0ZXJuaW9uEhgKB2lzT3V0ZXIYBSABKAhSB2lz",
+            "T3V0ZXISJAoNc3ViTW9kZWxJbmRleBgGIAEoBVINc3ViTW9kZWxJbmRleGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIntVec3Reflection.Descriptor, global::Zproto.StruVec4Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +93,7 @@ namespace Zproto {
       return new HomelandUpdateSubModelTransformRequest(this);
     }
 
-    /// <summary>Field number for the "structure_uuid" field.</summary>
+    /// <summary>Field number for the "structureUuid" field.</summary>
     public const int StructureUuidFieldNumber = 1;
     private long structureUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 5;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sub_model_index" field.</summary>
+    /// <summary>Field number for the "subModelIndex" field.</summary>
     public const int SubModelIndexFieldNumber = 6;
     private int subModelIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

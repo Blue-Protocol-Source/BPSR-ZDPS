@@ -25,12 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X25ld2JpZV9kYXRhLnByb3RvEgZ6cHJvdG8aGnN0cnVfbmV3Ymll",
-            "X2FjdF9kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i1QEKCk5l",
-            "d2JpZURhdGESGQoRdG90YWxfb25saW5lX3RpbWUYASABKAMSEQoJaXNfbmV3",
-            "YmllGAIgASgIEhgKEGlzX2NhbmNlbF9uZXdiaWUYAyABKAgSEQoJc2Vhc29u",
-            "X2lkGAQgASgFEhYKDmFjdGl2YXRlX3RpbWVzGAUgASgFEhcKD2lzX25vdF9z",
-            "aG93X3RhZxgGIAEoCBISCgpiZWdpbl90aW1lGAcgASgDEicKCGFjdF9kYXRh",
-            "GAggASgLMhUuenByb3RvLk5ld2JpZUFjdERhdGFiBnByb3RvMw=="));
+            "X2FjdF9kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8irwIKCk5l",
+            "d2JpZURhdGESKAoPdG90YWxPbmxpbmVUaW1lGAEgASgDUg90b3RhbE9ubGlu",
+            "ZVRpbWUSGgoIaXNOZXdiaWUYAiABKAhSCGlzTmV3YmllEiYKDmlzQ2FuY2Vs",
+            "TmV3YmllGAMgASgIUg5pc0NhbmNlbE5ld2JpZRIaCghzZWFzb25JZBgEIAEo",
+            "BVIIc2Vhc29uSWQSJAoNYWN0aXZhdGVUaW1lcxgFIAEoBVINYWN0aXZhdGVU",
+            "aW1lcxIiCgxpc05vdFNob3dUYWcYBiABKAhSDGlzTm90U2hvd1RhZxIcCgli",
+            "ZWdpblRpbWUYByABKANSCWJlZ2luVGltZRIvCgdhY3REYXRhGAggASgLMhUu",
+            "enByb3RvLk5ld2JpZUFjdERhdGFSB2FjdERhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNewbieActDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +95,7 @@ namespace Zproto {
       return new NewbieData(this);
     }
 
-    /// <summary>Field number for the "total_online_time" field.</summary>
+    /// <summary>Field number for the "totalOnlineTime" field.</summary>
     public const int TotalOnlineTimeFieldNumber = 1;
     private long totalOnlineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_newbie" field.</summary>
+    /// <summary>Field number for the "isNewbie" field.</summary>
     public const int IsNewbieFieldNumber = 2;
     private bool isNewbie_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_cancel_newbie" field.</summary>
+    /// <summary>Field number for the "isCancelNewbie" field.</summary>
     public const int IsCancelNewbieFieldNumber = 3;
     private bool isCancelNewbie_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_id" field.</summary>
+    /// <summary>Field number for the "seasonId" field.</summary>
     public const int SeasonIdFieldNumber = 4;
     private int seasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,7 +143,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activate_times" field.</summary>
+    /// <summary>Field number for the "activateTimes" field.</summary>
     public const int ActivateTimesFieldNumber = 5;
     private int activateTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,7 +155,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_not_show_tag" field.</summary>
+    /// <summary>Field number for the "isNotShowTag" field.</summary>
     public const int IsNotShowTagFieldNumber = 6;
     private bool isNotShowTag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -165,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
+    /// <summary>Field number for the "beginTime" field.</summary>
     public const int BeginTimeFieldNumber = 7;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -177,7 +179,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "act_data" field.</summary>
+    /// <summary>Field number for the "actData" field.</summary>
     public const int ActDataFieldNumber = 8;
     private global::Zproto.NewbieActData actData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

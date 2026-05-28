@@ -26,11 +26,13 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X2ljaGliYW5fa3VqaV9yZWNvcmRfcmVwbHkucHJvdG8SBnpwcm90",
             "bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aI3N0cnVfaWNoaWJhbl9rdWpp",
-            "X3JlY29yZF9lbGVtLnByb3RvIrwBChZJY2hpYmFuS3VqaVJlY29yZFJlcGx5",
-            "Eg8KB3Bvb2xfaWQYASABKAUSEwoLc3RhcnRfaW5kZXgYAiABKA0SDQoFY291",
-            "bnQYAyABKA0SEwoLdG90YWxfY291bnQYBCABKA0SMgoLcmVjb3JkX2xpc3QY",
-            "BSADKAsyHS56cHJvdG8uSWNoaWJhbkt1amlSZWNvcmRFbGVtEiQKCGVycl9j",
-            "b2RlGAYgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "X3JlY29yZF9lbGVtLnByb3RvIvMBChZJY2hpYmFuS3VqaVJlY29yZFJlcGx5",
+            "EhYKBnBvb2xJZBgBIAEoBVIGcG9vbElkEh4KCnN0YXJ0SW5kZXgYAiABKA1S",
+            "CnN0YXJ0SW5kZXgSFAoFY291bnQYAyABKA1SBWNvdW50Eh4KCnRvdGFsQ291",
+            "bnQYBCABKA1SCnRvdGFsQ291bnQSPQoKcmVjb3JkTGlzdBgFIAMoCzIdLnpw",
+            "cm90by5JY2hpYmFuS3VqaVJlY29yZEVsZW1SCnJlY29yZExpc3QSLAoHZXJy",
+            "Q29kZRgGIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2RlYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruIchibanKujiRecordElemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +93,7 @@ namespace Zproto {
       return new IchibanKujiRecordReply(this);
     }
 
-    /// <summary>Field number for the "pool_id" field.</summary>
+    /// <summary>Field number for the "poolId" field.</summary>
     public const int PoolIdFieldNumber = 1;
     private int poolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "start_index" field.</summary>
+    /// <summary>Field number for the "startIndex" field.</summary>
     public const int StartIndexFieldNumber = 2;
     private uint startIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "total_count" field.</summary>
+    /// <summary>Field number for the "totalCount" field.</summary>
     public const int TotalCountFieldNumber = 4;
     private uint totalCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "record_list" field.</summary>
+    /// <summary>Field number for the "recordList" field.</summary>
     public const int RecordListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.IchibanKujiRecordElem> _repeated_recordList_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.IchibanKujiRecordElem.Parser);
@@ -150,7 +152,7 @@ namespace Zproto {
       get { return recordList_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -27,11 +27,12 @@ namespace Zproto {
             "ChhzdHJ1X3NlYXNvbl9jZW50ZXIucHJvdG8SBnpwcm90bxoWc3RydV9iYXR0",
             "bGVfcGFzcy5wcm90bxofc3RydV9zZWFzb25fYnBfcXVlc3RfbGlzdC5wcm90",
             "bxogc3RydV9zZWFzb25fY2VudGVyX2hpc3RvcnkucHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byKQAgoMU2Vhc29uQ2VudGVyEhEKCXNlYXNvbl9pZBgB",
-            "IAEoBRInCgtiYXR0bGVfcGFzcxgCIAEoCzISLnpwcm90by5CYXR0bGVQYXNz",
-            "EjAKDWJwX3F1ZXN0X2xpc3QYAyABKAsyGS56cHJvdG8uU2Vhc29uQnBRdWVz",
-            "dExpc3QSPwoOc2Vhc29uX2hpc3RvcnkYBCADKAsyJy56cHJvdG8uU2Vhc29u",
-            "Q2VudGVyLlNlYXNvbkhpc3RvcnlFbnRyeRpRChJTZWFzb25IaXN0b3J5RW50",
+            "dHlfbWFzay5wcm90byK9AgoMU2Vhc29uQ2VudGVyEhoKCHNlYXNvbklkGAEg",
+            "ASgFUghzZWFzb25JZBIyCgpiYXR0bGVQYXNzGAIgASgLMhIuenByb3RvLkJh",
+            "dHRsZVBhc3NSCmJhdHRsZVBhc3MSOwoLYnBRdWVzdExpc3QYAyABKAsyGS56",
+            "cHJvdG8uU2Vhc29uQnBRdWVzdExpc3RSC2JwUXVlc3RMaXN0Ek0KDXNlYXNv",
+            "bkhpc3RvcnkYBCADKAsyJy56cHJvdG8uU2Vhc29uQ2VudGVyLlNlYXNvbkhp",
+            "c3RvcnlFbnRyeVINc2Vhc29uSGlzdG9yeRpRChJTZWFzb25IaXN0b3J5RW50",
             "cnkSCwoDa2V5GAEgASgNEioKBXZhbHVlGAIgASgLMhsuenByb3RvLlNlYXNv",
             "bkNlbnRlckhpc3Rvcnk6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
@@ -92,7 +93,7 @@ namespace Zproto {
       return new SeasonCenter(this);
     }
 
-    /// <summary>Field number for the "season_id" field.</summary>
+    /// <summary>Field number for the "seasonId" field.</summary>
     public const int SeasonIdFieldNumber = 1;
     private int seasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "battle_pass" field.</summary>
+    /// <summary>Field number for the "battlePass" field.</summary>
     public const int BattlePassFieldNumber = 2;
     private global::Zproto.BattlePass battlePass_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bp_quest_list" field.</summary>
+    /// <summary>Field number for the "bpQuestList" field.</summary>
     public const int BpQuestListFieldNumber = 3;
     private global::Zproto.SeasonBpQuestList bpQuestList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_history" field.</summary>
+    /// <summary>Field number for the "seasonHistory" field.</summary>
     public const int SeasonHistoryFieldNumber = 4;
     private static readonly pbc::MapField<uint, global::Zproto.SeasonCenterHistory>.Codec _map_seasonHistory_codec
         = new pbc::MapField<uint, global::Zproto.SeasonCenterHistory>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonCenterHistory.Parser), 34);

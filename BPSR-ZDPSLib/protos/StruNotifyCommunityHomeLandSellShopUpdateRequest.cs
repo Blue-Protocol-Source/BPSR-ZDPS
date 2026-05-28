@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "Cj5zdHJ1X25vdGlmeV9jb21tdW5pdHlfaG9tZV9sYW5kX3NlbGxfc2hvcF91",
             "cGRhdGVfcmVxdWVzdC5wcm90bxIGenByb3RvGiNzdHJ1X2hvbWVfbGFuZF9z",
-            "ZWxsX3Nob3BfaW5mby5wcm90byJuCixOb3RpZnlDb21tdW5pdHlIb21lTGFu",
-            "ZFNlbGxTaG9wVXBkYXRlUmVxdWVzdBI+Chhob21lX2xhbmRfc2VsbF9zaG9w",
-            "X2luZm8YASABKAsyHC56cHJvdG8uSG9tZUxhbmRTZWxsU2hvcEluZm9iBnBy",
-            "b3RvMw=="));
+            "ZWxsX3Nob3BfaW5mby5wcm90byKAAQosTm90aWZ5Q29tbXVuaXR5SG9tZUxh",
+            "bmRTZWxsU2hvcFVwZGF0ZVJlcXVlc3QSUAoUaG9tZUxhbmRTZWxsU2hvcElu",
+            "Zm8YASABKAsyHC56cHJvdG8uSG9tZUxhbmRTZWxsU2hvcEluZm9SFGhvbWVM",
+            "YW5kU2VsbFNob3BJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomeLandSellShopInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new NotifyCommunityHomeLandSellShopUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "home_land_sell_shop_info" field.</summary>
+    /// <summary>Field number for the "homeLandSellShopInfo" field.</summary>
     public const int HomeLandSellShopInfoFieldNumber = 1;
     private global::Zproto.HomeLandSellShopInfo homeLandSellShopInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

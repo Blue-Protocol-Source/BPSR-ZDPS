@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X3dvcmxkX2FjdF9hY3Rpdml0eV9kYXRhLnByb3RvEgZ6cHJvdG8a",
             "HnN0cnVfd29ybGRfYWN0X2Zsb3dfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvInEKFFdvcmxkQWN0QWN0aXZpdHlEYXRhEhMKC2FjdGl2aXR5",
-            "X2lkGAEgASgFEisKCWZsb3dfaW5mbxgCIAEoCzIYLnpwcm90by5Xb3JsZEFj",
-            "dEZsb3dJbmZvEhcKD2N1cnJlbnRfcGxheWVycxgDIAEoBWIGcHJvdG8z"));
+            "YXNrLnByb3RvIpQBChRXb3JsZEFjdEFjdGl2aXR5RGF0YRIeCgphY3Rpdml0",
+            "eUlkGAEgASgFUgphY3Rpdml0eUlkEjQKCGZsb3dJbmZvGAIgASgLMhguenBy",
+            "b3RvLldvcmxkQWN0Rmxvd0luZm9SCGZsb3dJbmZvEiYKDmN1cnJlbnRQbGF5",
+            "ZXJzGAMgASgFUg5jdXJyZW50UGxheWVyc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruWorldActFlowInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new WorldActActivityData(this);
     }
 
-    /// <summary>Field number for the "activity_id" field.</summary>
+    /// <summary>Field number for the "activityId" field.</summary>
     public const int ActivityIdFieldNumber = 1;
     private int activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "flow_info" field.</summary>
+    /// <summary>Field number for the "flowInfo" field.</summary>
     public const int FlowInfoFieldNumber = 2;
     private global::Zproto.WorldActFlowInfo flowInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "current_players" field.</summary>
+    /// <summary>Field number for the "currentPlayers" field.</summary>
     public const int CurrentPlayersFieldNumber = 3;
     private int currentPlayers_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

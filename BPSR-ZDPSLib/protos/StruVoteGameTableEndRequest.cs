@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X3ZvdGVfZ2FtZV90YWJsZV9lbmRfcmVxdWVzdC5wcm90bxIGenBy",
-            "b3RvGhxlbnVtX2VfZ2FtZV90YWJsZV92b3RlLnByb3RvIlMKF1ZvdGVHYW1l",
-            "VGFibGVFbmRSZXF1ZXN0EhIKCnRhYmxlX2d1aWQYASABKAkSJAoEdm90ZRgC",
-            "IAEoDjIWLnpwcm90by5FR2FtZVRhYmxlVm90ZWIGcHJvdG8z"));
+            "b3RvGhxlbnVtX2VfZ2FtZV90YWJsZV92b3RlLnByb3RvImMKF1ZvdGVHYW1l",
+            "VGFibGVFbmRSZXF1ZXN0EhwKCXRhYmxlR3VpZBgBIAEoCVIJdGFibGVHdWlk",
+            "EioKBHZvdGUYAiABKA4yFi56cHJvdG8uRUdhbWVUYWJsZVZvdGVSBHZvdGVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEGameTableVoteReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new VoteGameTableEndRequest(this);
     }
 
-    /// <summary>Field number for the "table_guid" field.</summary>
+    /// <summary>Field number for the "tableGuid" field.</summary>
     public const int TableGuidFieldNumber = 1;
     private string tableGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

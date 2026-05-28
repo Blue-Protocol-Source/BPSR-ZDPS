@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X3RlYW1faW5mby5wcm90bxIGenByb3RvGhlzdHJ1X3RlYW1fYmFz",
-            "ZV9pbmZvLnByb3RvGhhzdHJ1X3RlYW1fbWVtX2RhdGEucHJvdG8iuQEKCFRl",
-            "YW1JbmZvEg8KB3RlYW1faWQYASABKAMSLgoHbWVtYmVycxgCIAMoCzIdLnpw",
-            "cm90by5UZWFtSW5mby5NZW1iZXJzRW50cnkSJwoJYmFzZV9pbmZvGAMgASgL",
-            "MhQuenByb3RvLlRlYW1CYXNlSW5mbxpDCgxNZW1iZXJzRW50cnkSCwoDa2V5",
-            "GAEgASgDEiIKBXZhbHVlGAIgASgLMhMuenByb3RvLlRlYW1NZW1EYXRhOgI4",
-            "AWIGcHJvdG8z"));
+            "ZV9pbmZvLnByb3RvGhhzdHJ1X3RlYW1fbWVtX2RhdGEucHJvdG8i0gEKCFRl",
+            "YW1JbmZvEhYKBnRlYW1JZBgBIAEoA1IGdGVhbUlkEjcKB21lbWJlcnMYAiAD",
+            "KAsyHS56cHJvdG8uVGVhbUluZm8uTWVtYmVyc0VudHJ5UgdtZW1iZXJzEjAK",
+            "CGJhc2VJbmZvGAMgASgLMhQuenByb3RvLlRlYW1CYXNlSW5mb1IIYmFzZUlu",
+            "Zm8aQwoMTWVtYmVyc0VudHJ5EgsKA2tleRgBIAEoAxIiCgV2YWx1ZRgCIAEo",
+            "CzITLnpwcm90by5UZWFtTWVtRGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTeamBaseInfoReflection.Descriptor, global::Zproto.StruTeamMemDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new TeamInfo(this);
     }
 
-    /// <summary>Field number for the "team_id" field.</summary>
+    /// <summary>Field number for the "teamId" field.</summary>
     public const int TeamIdFieldNumber = 1;
     private long teamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +111,7 @@ namespace Zproto {
       get { return members_; }
     }
 
-    /// <summary>Field number for the "base_info" field.</summary>
+    /// <summary>Field number for the "baseInfo" field.</summary>
     public const int BaseInfoFieldNumber = 3;
     private global::Zproto.TeamBaseInfo baseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X2R1bmdlb25fcGhhc2VfZGF0YS5wcm90bxIGenByb3RvGh5lbnVt",
             "X2VfZHVuZ2Vvbl9wbGF5X3R5cGUucHJvdG8aFXN0cnVfZGlydHlfbWFzay5w",
-            "cm90byKGAQoQRHVuZ2VvblBoYXNlRGF0YRImCgR0eXBlGAEgASgOMhguenBy",
-            "b3RvLkVEdW5nZW9uUGxheVR5cGUSEAoIcGhhc2VfaWQYAiABKAUSEgoKYmVn",
-            "aW5fdGltZRgDIAEoAxISCgpwaGFzZV90aW1lGAQgASgDEhAKCGVuZF90aW1l",
-            "GAUgASgDYgZwcm90bzM="));
+            "cm90byKwAQoQRHVuZ2VvblBoYXNlRGF0YRIsCgR0eXBlGAEgASgOMhguenBy",
+            "b3RvLkVEdW5nZW9uUGxheVR5cGVSBHR5cGUSGAoHcGhhc2VJZBgCIAEoBVIH",
+            "cGhhc2VJZBIcCgliZWdpblRpbWUYAyABKANSCWJlZ2luVGltZRIcCglwaGFz",
+            "ZVRpbWUYBCABKANSCXBoYXNlVGltZRIYCgdlbmRUaW1lGAUgASgDUgdlbmRU",
+            "aW1lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEDungeonPlayTypeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "phase_id" field.</summary>
+    /// <summary>Field number for the "phaseId" field.</summary>
     public const int PhaseIdFieldNumber = 2;
     private int phaseId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
+    /// <summary>Field number for the "beginTime" field.</summary>
     public const int BeginTimeFieldNumber = 3;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "phase_time" field.</summary>
+    /// <summary>Field number for the "phaseTime" field.</summary>
     public const int PhaseTimeFieldNumber = 4;
     private long phaseTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 5;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

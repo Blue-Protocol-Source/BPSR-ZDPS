@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3JlcHV0YXRpb25faW5mby5wcm90bxIGenByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8irAEKDlJlcHV0YXRpb25JbmZvEhYKDnJlcHV0YXRp",
-            "b25fZXhwGAEgASgEEhgKEHJlcHV0YXRpb25fbGV2ZWwYAiABKAUSNwoJYXdh",
-            "cmRfbWFwGAMgAygLMiQuenByb3RvLlJlcHV0YXRpb25JbmZvLkF3YXJkTWFw",
-            "RW50cnkaLwoNQXdhcmRNYXBFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
-            "AiABKAg6AjgBYgZwcm90bzM="));
+            "cnR5X21hc2sucHJvdG8i0wEKDlJlcHV0YXRpb25JbmZvEiQKDXJlcHV0YXRp",
+            "b25FeHAYASABKARSDXJlcHV0YXRpb25FeHASKAoPcmVwdXRhdGlvbkxldmVs",
+            "GAIgASgFUg9yZXB1dGF0aW9uTGV2ZWwSQAoIYXdhcmRNYXAYAyADKAsyJC56",
+            "cHJvdG8uUmVwdXRhdGlvbkluZm8uQXdhcmRNYXBFbnRyeVIIYXdhcmRNYXAa",
+            "LwoNQXdhcmRNYXBFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAg6",
+            "AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new ReputationInfo(this);
     }
 
-    /// <summary>Field number for the "reputation_exp" field.</summary>
+    /// <summary>Field number for the "reputationExp" field.</summary>
     public const int ReputationExpFieldNumber = 1;
     private ulong reputationExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "reputation_level" field.</summary>
+    /// <summary>Field number for the "reputationLevel" field.</summary>
     public const int ReputationLevelFieldNumber = 2;
     private int reputationLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_map" field.</summary>
+    /// <summary>Field number for the "awardMap" field.</summary>
     public const int AwardMapFieldNumber = 3;
     private static readonly pbc::MapField<int, bool>.Codec _map_awardMap_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 26);

@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X25vdGlmeV9tYWhqb25nX2FjdGlvbl9yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8iUwoaTm90aWZ5TWFoam9uZ0FjdGlvblJlcXVlc3QSEQoJYWN0aW9u",
-            "X2lkGAEgASgFEhQKDGFjdGlvbl9wYXJhbRgCIAEoBRIMCgRkYXRhGAMgASgM",
-            "YgZwcm90bzM="));
+            "cHJvdG8ibgoaTm90aWZ5TWFoam9uZ0FjdGlvblJlcXVlc3QSGgoIQWN0aW9u",
+            "SWQYASABKAVSCEFjdGlvbklkEiAKC0FjdGlvblBhcmFtGAIgASgFUgtBY3Rp",
+            "b25QYXJhbRISCgREYXRhGAMgASgMUgREYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new NotifyMahjongActionRequest(this);
     }
 
-    /// <summary>Field number for the "action_id" field.</summary>
+    /// <summary>Field number for the "ActionId" field.</summary>
     public const int ActionIdFieldNumber = 1;
     private int actionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "action_param" field.</summary>
+    /// <summary>Field number for the "ActionParam" field.</summary>
     public const int ActionParamFieldNumber = 2;
     private int actionParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "data" field.</summary>
+    /// <summary>Field number for the "Data" field.</summary>
     public const int DataFieldNumber = 3;
     private pb::ByteString data_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

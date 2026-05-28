@@ -25,12 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X2NhcmRfaW5mby5wcm90bxIGenByb3RvGhRzdHJ1X2NoYXJfdGVh",
-            "bS5wcm90byLTAQoIQ2FyZEluZm8SDwoHY2hhcl9pZBgBIAEoAxIMCgRuYW1l",
-            "GAIgASgJEhAKCG1vZGVsX2lkGAMgASgNEiMKCXRlYW1faW5mbxgEIAEoCzIQ",
-            "Lnpwcm90by5DaGFyVGVhbRIRCglpc19mcmllbmQYBSABKAgSEgoKdW5pb25f",
-            "bmFtZRgGIAEoCRIQCgh1bmlvbl9pZBgHIAEoBBISCgpyb2xlX2xldmVsGAgg",
-            "ASgFEg4KBmdlbmRlchgJIAEoBRIUCgxvZmZsaW5lX3RpbWUYCiABKARiBnBy",
-            "b3RvMw=="));
+            "bS5wcm90byKqAgoIQ2FyZEluZm8SFgoGY2hhcklkGAEgASgDUgZjaGFySWQS",
+            "EgoEbmFtZRgCIAEoCVIEbmFtZRIYCgdtb2RlbElkGAMgASgNUgdtb2RlbElk",
+            "EiwKCHRlYW1JbmZvGAQgASgLMhAuenByb3RvLkNoYXJUZWFtUgh0ZWFtSW5m",
+            "bxIaCghpc0ZyaWVuZBgFIAEoCFIIaXNGcmllbmQSHAoJdW5pb25OYW1lGAYg",
+            "ASgJUgl1bmlvbk5hbWUSGAoHdW5pb25JZBgHIAEoBFIHdW5pb25JZBIcCgly",
+            "b2xlTGV2ZWwYCCABKAVSCXJvbGVMZXZlbBIWCgZnZW5kZXIYCSABKAVSBmdl",
+            "bmRlchIgCgtvZmZsaW5lVGltZRgKIAEoBFILb2ZmbGluZVRpbWViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCharTeamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +97,7 @@ namespace Zproto {
       return new CardInfo(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -119,7 +121,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "model_id" field.</summary>
+    /// <summary>Field number for the "modelId" field.</summary>
     public const int ModelIdFieldNumber = 3;
     private uint modelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,7 +133,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "team_info" field.</summary>
+    /// <summary>Field number for the "teamInfo" field.</summary>
     public const int TeamInfoFieldNumber = 4;
     private global::Zproto.CharTeam teamInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,7 +145,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_friend" field.</summary>
+    /// <summary>Field number for the "isFriend" field.</summary>
     public const int IsFriendFieldNumber = 5;
     private bool isFriend_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,7 +157,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_name" field.</summary>
+    /// <summary>Field number for the "unionName" field.</summary>
     public const int UnionNameFieldNumber = 6;
     private string unionName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +169,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_id" field.</summary>
+    /// <summary>Field number for the "unionId" field.</summary>
     public const int UnionIdFieldNumber = 7;
     private ulong unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "role_level" field.</summary>
+    /// <summary>Field number for the "roleLevel" field.</summary>
     public const int RoleLevelFieldNumber = 8;
     private int roleLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -203,7 +205,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "offline_time" field.</summary>
+    /// <summary>Field number for the "offlineTime" field.</summary>
     public const int OfflineTimeFieldNumber = 10;
     private ulong offlineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

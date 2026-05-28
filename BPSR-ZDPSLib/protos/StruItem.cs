@@ -28,22 +28,26 @@ namespace Zproto {
             "b3RvGhtlbnVtX2VfaXRlbV9iaW5kX2ZsYWcucHJvdG8aFXN0cnVfZXF1aXBf",
             "YXR0ci5wcm90bxobc3RydV9pdGVtX2V4dGVuZF9kYXRhLnByb3RvGhNzdHJ1",
             "X21vZF9hdHRyLnByb3RvGhdzdHJ1X21vZF9uZXdfYXR0ci5wcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIpkFCgRJdGVtEgwKBHV1aWQYASABKAMSEQoJ",
-            "Y29uZmlnX2lkGAIgASgFEg0KBWNvdW50GAMgASgDEg8KB2ludmFsaWQYBCAB",
-            "KAUSKAoJYmluZF9mbGFnGAUgASgOMhUuenByb3RvLkVJdGVtQmluZEZsYWcS",
-            "EwoLY3JlYXRlX3RpbWUYBiABKAMSEwoLZXhwaXJlX3RpbWUYByABKAMSDwoH",
-            "b3B0X3NyYxgIIAEoBRIPCgdxdWFsaXR5GAkgASgFEiUKCmVxdWlwX2F0dHIY",
-            "CiABKAsyES56cHJvdG8uRXF1aXBBdHRyEiEKCG1vZF9hdHRyGAsgASgLMg8u",
-            "enByb3RvLk1vZEF0dHISHQoVY29vbF9kb3duX2V4cGlyZV90aW1lGAwgASgD",
-            "EigKDG1vZF9uZXdfYXR0chgNIAEoCzISLnpwcm90by5Nb2ROZXdBdHRyEiUK",
-            "CmFmZml4X2RhdGEYDiABKAsyES56cHJvdG8uQWZmaXhEYXRhEjEKC2V4dGVu",
-            "ZF9hdHRyGA8gAygLMhwuenByb3RvLkl0ZW0uRXh0ZW5kQXR0ckVudHJ5EhEK",
-            "CXJld2FyZF9pZBgQIAEoBRI1Cg1nZW5lX3NlcXVlbmNlGBEgAygLMh4uenBy",
-            "b3RvLkl0ZW0uR2VuZVNlcXVlbmNlRW50cnkSEwoLZ2VuZV9zb3VyY2UYEiAB",
-            "KAUSDgoGbG9ja2VkGBMgASgIGkkKD0V4dGVuZEF0dHJFbnRyeRILCgNrZXkY",
-            "ASABKAUSJQoFdmFsdWUYAiABKAsyFi56cHJvdG8uSXRlbUV4dGVuZERhdGE6",
-            "AjgBGjMKEUdlbmVTZXF1ZW5jZUVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1",
-            "ZRgCIAEoBToCOAFiBnByb3RvMw=="));
+            "dV9kaXJ0eV9tYXNrLnByb3RvItIGCgRJdGVtEhIKBHV1aWQYASABKANSBHV1",
+            "aWQSGgoIY29uZmlnSWQYAiABKAVSCGNvbmZpZ0lkEhQKBWNvdW50GAMgASgD",
+            "UgVjb3VudBIYCgdpbnZhbGlkGAQgASgFUgdpbnZhbGlkEjEKCGJpbmRGbGFn",
+            "GAUgASgOMhUuenByb3RvLkVJdGVtQmluZEZsYWdSCGJpbmRGbGFnEh4KCmNy",
+            "ZWF0ZVRpbWUYBiABKANSCmNyZWF0ZVRpbWUSHgoKZXhwaXJlVGltZRgHIAEo",
+            "A1IKZXhwaXJlVGltZRIWCgZvcHRTcmMYCCABKAVSBm9wdFNyYxIYCgdxdWFs",
+            "aXR5GAkgASgFUgdxdWFsaXR5Ei8KCWVxdWlwQXR0chgKIAEoCzIRLnpwcm90",
+            "by5FcXVpcEF0dHJSCWVxdWlwQXR0chIpCgdtb2RBdHRyGAsgASgLMg8uenBy",
+            "b3RvLk1vZEF0dHJSB21vZEF0dHISLgoSY29vbERvd25FeHBpcmVUaW1lGAwg",
+            "ASgDUhJjb29sRG93bkV4cGlyZVRpbWUSMgoKbW9kTmV3QXR0chgNIAEoCzIS",
+            "Lnpwcm90by5Nb2ROZXdBdHRyUgptb2ROZXdBdHRyEi8KCWFmZml4RGF0YRgO",
+            "IAEoCzIRLnpwcm90by5BZmZpeERhdGFSCWFmZml4RGF0YRI8CgpleHRlbmRB",
+            "dHRyGA8gAygLMhwuenByb3RvLkl0ZW0uRXh0ZW5kQXR0ckVudHJ5UgpleHRl",
+            "bmRBdHRyEhoKCHJld2FyZElkGBAgASgFUghyZXdhcmRJZBJCCgxnZW5lU2Vx",
+            "dWVuY2UYESADKAsyHi56cHJvdG8uSXRlbS5HZW5lU2VxdWVuY2VFbnRyeVIM",
+            "Z2VuZVNlcXVlbmNlEh4KCmdlbmVTb3VyY2UYEiABKAVSCmdlbmVTb3VyY2US",
+            "FgoGbG9ja2VkGBMgASgIUgZsb2NrZWQaSQoPRXh0ZW5kQXR0ckVudHJ5EgsK",
+            "A2tleRgBIAEoBRIlCgV2YWx1ZRgCIAEoCzIWLnpwcm90by5JdGVtRXh0ZW5k",
+            "RGF0YToCOAEaMwoRR2VuZVNlcXVlbmNlRW50cnkSCwoDa2V5GAEgASgFEg0K",
+            "BXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAffixDataReflection.Descriptor, global::Zproto.EnumEItemBindFlagReflection.Descriptor, global::Zproto.StruEquipAttrReflection.Descriptor, global::Zproto.StruItemExtendDataReflection.Descriptor, global::Zproto.StruModAttrReflection.Descriptor, global::Zproto.StruModNewAttrReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -129,7 +133,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
+    /// <summary>Field number for the "configId" field.</summary>
     public const int ConfigIdFieldNumber = 2;
     private int configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -165,7 +169,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bind_flag" field.</summary>
+    /// <summary>Field number for the "bindFlag" field.</summary>
     public const int BindFlagFieldNumber = 5;
     private global::Zproto.EItemBindFlag bindFlag_ = global::Zproto.EItemBindFlag.ItemBindNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -177,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "create_time" field.</summary>
+    /// <summary>Field number for the "createTime" field.</summary>
     public const int CreateTimeFieldNumber = 6;
     private long createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -189,7 +193,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "expire_time" field.</summary>
+    /// <summary>Field number for the "expireTime" field.</summary>
     public const int ExpireTimeFieldNumber = 7;
     private long expireTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -201,7 +205,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "opt_src" field.</summary>
+    /// <summary>Field number for the "optSrc" field.</summary>
     public const int OptSrcFieldNumber = 8;
     private int optSrc_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -225,7 +229,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "equip_attr" field.</summary>
+    /// <summary>Field number for the "equipAttr" field.</summary>
     public const int EquipAttrFieldNumber = 10;
     private global::Zproto.EquipAttr equipAttr_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -237,7 +241,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mod_attr" field.</summary>
+    /// <summary>Field number for the "modAttr" field.</summary>
     public const int ModAttrFieldNumber = 11;
     private global::Zproto.ModAttr modAttr_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -249,7 +253,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cool_down_expire_time" field.</summary>
+    /// <summary>Field number for the "coolDownExpireTime" field.</summary>
     public const int CoolDownExpireTimeFieldNumber = 12;
     private long coolDownExpireTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -261,7 +265,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mod_new_attr" field.</summary>
+    /// <summary>Field number for the "modNewAttr" field.</summary>
     public const int ModNewAttrFieldNumber = 13;
     private global::Zproto.ModNewAttr modNewAttr_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -273,7 +277,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "affix_data" field.</summary>
+    /// <summary>Field number for the "affixData" field.</summary>
     public const int AffixDataFieldNumber = 14;
     private global::Zproto.AffixData affixData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -285,7 +289,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "extend_attr" field.</summary>
+    /// <summary>Field number for the "extendAttr" field.</summary>
     public const int ExtendAttrFieldNumber = 15;
     private static readonly pbc::MapField<int, global::Zproto.ItemExtendData>.Codec _map_extendAttr_codec
         = new pbc::MapField<int, global::Zproto.ItemExtendData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ItemExtendData.Parser), 122);
@@ -296,7 +300,7 @@ namespace Zproto {
       get { return extendAttr_; }
     }
 
-    /// <summary>Field number for the "reward_id" field.</summary>
+    /// <summary>Field number for the "rewardId" field.</summary>
     public const int RewardIdFieldNumber = 16;
     private int rewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -308,7 +312,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "gene_sequence" field.</summary>
+    /// <summary>Field number for the "geneSequence" field.</summary>
     public const int GeneSequenceFieldNumber = 17;
     private static readonly pbc::MapField<int, int>.Codec _map_geneSequence_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 138);
@@ -319,7 +323,7 @@ namespace Zproto {
       get { return geneSequence_; }
     }
 
-    /// <summary>Field number for the "gene_source" field.</summary>
+    /// <summary>Field number for the "geneSource" field.</summary>
     public const int GeneSourceFieldNumber = 18;
     private int geneSource_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,11 +24,12 @@ namespace Zproto {
     static StruUseItemParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X3VzZV9pdGVtX3BhcmFtLnByb3RvEgZ6cHJvdG8iogEKDFVzZUl0",
-            "ZW1QYXJhbRIRCglpdGVtX3V1aWQYASABKAMSDQoFcGFyYW0YAiABKAkSMAoG",
-            "c2VsZWN0GAMgAygLMiAuenByb3RvLlVzZUl0ZW1QYXJhbS5TZWxlY3RFbnRy",
-            "eRIPCgd1c2VfbnVtGAQgASgFGi0KC1NlbGVjdEVudHJ5EgsKA2tleRgBIAEo",
-            "DRINCgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
+            "ChlzdHJ1X3VzZV9pdGVtX3BhcmFtLnByb3RvEgZ6cHJvdG8iwQEKDFVzZUl0",
+            "ZW1QYXJhbRIaCghpdGVtVXVpZBgBIAEoA1IIaXRlbVV1aWQSFAoFcGFyYW0Y",
+            "AiABKAlSBXBhcmFtEjgKBnNlbGVjdBgDIAMoCzIgLnpwcm90by5Vc2VJdGVt",
+            "UGFyYW0uU2VsZWN0RW50cnlSBnNlbGVjdBIWCgZ1c2VOdW0YBCABKAVSBnVz",
+            "ZU51bRotCgtTZWxlY3RFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiAB",
+            "KA06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new UseItemParam(this);
     }
 
-    /// <summary>Field number for the "item_uuid" field.</summary>
+    /// <summary>Field number for the "itemUuid" field.</summary>
     public const int ItemUuidFieldNumber = 1;
     private long itemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       get { return select_; }
     }
 
-    /// <summary>Field number for the "use_num" field.</summary>
+    /// <summary>Field number for the "useNum" field.</summary>
     public const int UseNumFieldNumber = 4;
     private int useNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

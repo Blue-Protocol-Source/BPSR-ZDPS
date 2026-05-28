@@ -27,12 +27,13 @@ namespace Zproto {
             "CihzdHJ1X2dldF9ob21lbGFuZF92aXNpdF9pbmZvX3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aMHN0cnVfY29tbXVuaXR5X2J1aWxkX2xpZmVfcHJvZmVzc2lvbl9p",
             "bmZvcy5wcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aHnN0cnVfaG9t",
-            "ZWxhbmRfdmlzaXRfaW5mby5wcm90byLDAQoZR2V0SG9tZWxhbmRWaXNpdElu",
-            "Zm9SZXBseRIkCghlcnJfY29kZRgBIAEoDjISLnpwcm90by5FRXJyb3JDb2Rl",
-            "EjYKE2hvbWVsYW5kX3Zpc2l0X2luZm8YAiABKAsyGS56cHJvdG8uSG9tZWxh",
-            "bmRWaXNpdEluZm8SSAoVbGlmZV9wcm9mZXNzaW9uX2luZm9zGAMgASgLMiku",
-            "enByb3RvLkNvbW11bml0eUJ1aWxkTGlmZVByb2Zlc3Npb25JbmZvc2IGcHJv",
-            "dG8z"));
+            "ZWxhbmRfdmlzaXRfaW5mby5wcm90byLvAQoZR2V0SG9tZWxhbmRWaXNpdElu",
+            "Zm9SZXBseRIsCgdlcnJDb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGVS",
+            "B2VyckNvZGUSRwoRaG9tZWxhbmRWaXNpdEluZm8YAiABKAsyGS56cHJvdG8u",
+            "SG9tZWxhbmRWaXNpdEluZm9SEWhvbWVsYW5kVmlzaXRJbmZvElsKE2xpZmVQ",
+            "cm9mZXNzaW9uSW5mb3MYAyABKAsyKS56cHJvdG8uQ29tbXVuaXR5QnVpbGRM",
+            "aWZlUHJvZmVzc2lvbkluZm9zUhNsaWZlUHJvZmVzc2lvbkluZm9zYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityBuildLifeProfessionInfosReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruHomelandVisitInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new GetHomelandVisitInfoReply(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_visit_info" field.</summary>
+    /// <summary>Field number for the "homelandVisitInfo" field.</summary>
     public const int HomelandVisitInfoFieldNumber = 2;
     private global::Zproto.HomelandVisitInfo homelandVisitInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "life_profession_infos" field.</summary>
+    /// <summary>Field number for the "lifeProfessionInfos" field.</summary>
     public const int LifeProfessionInfosFieldNumber = 3;
     private global::Zproto.CommunityBuildLifeProfessionInfos lifeProfessionInfos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

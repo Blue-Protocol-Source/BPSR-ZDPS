@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X25vdGlmeV9jb3VudF9kb3duX3N0YXJ0X3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byI8ChtOb3RpZnlDb3VudERvd25TdGFydFJlcXVlc3QSHQoVY291",
-            "bnRfZG93bl9zdGFydF90aW1lGAEgASgFYgZwcm90bzM="));
+            "Bnpwcm90byJNChtOb3RpZnlDb3VudERvd25TdGFydFJlcXVlc3QSLgoSY291",
+            "bnREb3duU3RhcnRUaW1lGAEgASgFUhJjb3VudERvd25TdGFydFRpbWViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +83,7 @@ namespace Zproto {
       return new NotifyCountDownStartRequest(this);
     }
 
-    /// <summary>Field number for the "count_down_start_time" field.</summary>
+    /// <summary>Field number for the "countDownStartTime" field.</summary>
     public const int CountDownStartTimeFieldNumber = 1;
     private int countDownStartTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

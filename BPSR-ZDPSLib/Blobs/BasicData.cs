@@ -39,7 +39,7 @@ public class BasicData : BlobType
     {
         switch (index)
         {
-            case Zproto.BasicData.CharIdFieldNumber:
+            case Zproto.BasicData.CharIDFieldNumber:
                 CharId = blob.ReadLong();
                 return true;
             case Zproto.BasicData.ShowIdFieldNumber:

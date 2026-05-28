@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "ChpzdHJ1X2dldF9waG90b19yZXBseS5wcm90bxIGenByb3RvGhdlbnVtX2Vf",
             "ZXJyb3JfY29kZS5wcm90bxobc3RydV9waG90b19ncmFwaF9zaG93LnByb3Rv",
-            "IoUBCg1HZXRQaG90b1JlcGx5Eg8KB2NoYXJfaWQYAyABKAMSEAoIcGhvdG9f",
-            "aWQYBCABKA0SKwoLcGhvdG9fZ3JhcGgYBSABKAsyFi56cHJvdG8uUGhvdG9H",
-            "cmFwaFNob3cSJAoIZXJyX2NvZGUYBiABKA4yEi56cHJvdG8uRUVycm9yQ29k",
-            "ZWIGcHJvdG8z"));
+            "IqcBCg1HZXRQaG90b1JlcGx5EhYKBmNoYXJJZBgDIAEoA1IGY2hhcklkEhgK",
+            "B3Bob3RvSWQYBCABKA1SB3Bob3RvSWQSNgoKcGhvdG9HcmFwaBgFIAEoCzIW",
+            "Lnpwcm90by5QaG90b0dyYXBoU2hvd1IKcGhvdG9HcmFwaBIsCgdlcnJDb2Rl",
+            "GAYgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruPhotoGraphShowReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new GetPhotoReply(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 3;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photo_id" field.</summary>
+    /// <summary>Field number for the "photoId" field.</summary>
     public const int PhotoIdFieldNumber = 4;
     private uint photoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photo_graph" field.</summary>
+    /// <summary>Field number for the "photoGraph" field.</summary>
     public const int PhotoGraphFieldNumber = 5;
     private global::Zproto.PhotoGraphShow photoGraph_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 6;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

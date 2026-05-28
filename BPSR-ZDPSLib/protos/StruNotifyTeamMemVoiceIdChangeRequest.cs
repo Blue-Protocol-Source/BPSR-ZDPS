@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjJzdHJ1X25vdGlmeV90ZWFtX21lbV92b2ljZV9pZF9jaGFuZ2VfcmVxdWVz",
-            "dC5wcm90bxIGenByb3RvGhdzdHJ1X3Nlc3Npb25faW5mby5wcm90byJuCiFO",
-            "b3RpZnlUZWFtTWVtVm9pY2VJZENoYW5nZVJlcXVlc3QSJAoHc2Vzc2lvbhgB",
-            "IAEoCzITLnpwcm90by5TZXNzaW9uSW5mbxIRCgltZW1iZXJfaWQYAiABKAMS",
-            "EAoIdm9pY2VfaWQYAyABKAViBnByb3RvMw=="));
+            "dC5wcm90bxIGenByb3RvGhdzdHJ1X3Nlc3Npb25faW5mby5wcm90byKIAQoh",
+            "Tm90aWZ5VGVhbU1lbVZvaWNlSWRDaGFuZ2VSZXF1ZXN0Ei0KB3Nlc3Npb24Y",
+            "ASABKAsyEy56cHJvdG8uU2Vzc2lvbkluZm9SB3Nlc3Npb24SGgoIbWVtYmVy",
+            "SWQYAiABKANSCG1lbWJlcklkEhgKB3ZvaWNlSWQYAyABKAVSB3ZvaWNlSWRi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSessionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "member_id" field.</summary>
+    /// <summary>Field number for the "memberId" field.</summary>
     public const int MemberIdFieldNumber = 2;
     private long memberId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "voice_id" field.</summary>
+    /// <summary>Field number for the "voiceId" field.</summary>
     public const int VoiceIdFieldNumber = 3;
     private int voiceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

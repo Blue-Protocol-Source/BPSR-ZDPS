@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X3BsYXllcl9tYWhqb25nX2RhdGEucHJvdG8SBnpwcm90bxohc3Ry",
-            "dV9tYXRjaF9wbGF5ZXJfc2hvd19pbmZvLnByb3RvInUKEVBsYXllck1haGpv",
-            "bmdEYXRhEhEKCXBsYXllcl9pZBgBIAEoAxIQCghpc19yb2JvdBgCIAEoCBI7",
-            "ChZtYXRjaF9wbGF5ZXJfc2hvd19pbmZvGAMgASgLMhsuenByb3RvLk1hdGNo",
-            "UGxheWVyU2hvd0luZm9iBnByb3RvMw=="));
+            "dV9tYXRjaF9wbGF5ZXJfc2hvd19pbmZvLnByb3RvIpgBChFQbGF5ZXJNYWhq",
+            "b25nRGF0YRIaCghQbGF5ZXJJZBgBIAEoA1IIUGxheWVySWQSGAoHSXNSb2Jv",
+            "dBgCIAEoCFIHSXNSb2JvdBJNChNtYXRjaFBsYXllclNob3dJbmZvGAMgASgL",
+            "MhsuenByb3RvLk1hdGNoUGxheWVyU2hvd0luZm9SE21hdGNoUGxheWVyU2hv",
+            "d0luZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMatchPlayerShowInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new PlayerMahjongData(this);
     }
 
-    /// <summary>Field number for the "player_id" field.</summary>
+    /// <summary>Field number for the "PlayerId" field.</summary>
     public const int PlayerIdFieldNumber = 1;
     private long playerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_robot" field.</summary>
+    /// <summary>Field number for the "IsRobot" field.</summary>
     public const int IsRobotFieldNumber = 2;
     private bool isRobot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_player_show_info" field.</summary>
+    /// <summary>Field number for the "matchPlayerShowInfo" field.</summary>
     public const int MatchPlayerShowInfoFieldNumber = 3;
     private global::Zproto.MatchPlayerShowInfo matchPlayerShowInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

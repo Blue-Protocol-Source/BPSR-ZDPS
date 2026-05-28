@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2RlbGF5X2hpdF90YXJnZXRfaW5mby5wcm90bxIGenByb3RvGg9z",
-            "dHJ1X3ZlYzMucHJvdG8iXAoSRGVsYXlIaXRUYXJnZXRJbmZvEhMKC3Rhcmdl",
-            "dF91dWlkGAEgASgDEh0KB2hpdF9wb3MYAiABKAsyDC56cHJvdG8uVmVjMxIS",
-            "CgpkZWxheV90aW1lGAMgASgCYgZwcm90bzM="));
+            "dHJ1X3ZlYzMucHJvdG8ieAoSRGVsYXlIaXRUYXJnZXRJbmZvEh4KCnRhcmdl",
+            "dFV1aWQYASABKANSCnRhcmdldFV1aWQSJAoGaGl0UG9zGAIgASgLMgwuenBy",
+            "b3RvLlZlYzNSBmhpdFBvcxIcCglkZWxheVRpbWUYAyABKAJSCWRlbGF5VGlt",
+            "ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruVec3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new DelayHitTargetInfo(this);
     }
 
-    /// <summary>Field number for the "target_uuid" field.</summary>
+    /// <summary>Field number for the "targetUuid" field.</summary>
     public const int TargetUuidFieldNumber = 1;
     private long targetUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hit_pos" field.</summary>
+    /// <summary>Field number for the "hitPos" field.</summary>
     public const int HitPosFieldNumber = 2;
     private global::Zproto.Vec3 hitPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "delay_time" field.</summary>
+    /// <summary>Field number for the "delayTime" field.</summary>
     public const int DelayTimeFieldNumber = 3;
     private float delayTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

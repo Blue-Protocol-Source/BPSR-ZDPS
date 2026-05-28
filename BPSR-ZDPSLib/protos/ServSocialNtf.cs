@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "ChVzZXJ2X3NvY2lhbF9udGYucHJvdG8SBnpwcm90bxojc3RydV9ub3RpZnlf",
             "c2hvd190aXBzX3JlcXVlc3QucHJvdG8aJXN0cnVfbm90aWZ5X3NvY2lhbF9k",
-            "YXRhX3JlcXVlc3QucHJvdG8ilwEKCVNvY2lhbE50ZhpGChBOb3RpZnlTb2Np",
-            "YWxEYXRhEjIKCXZfcmVxdWVzdBgBIAEoCzIfLnpwcm90by5Ob3RpZnlTb2Np",
-            "YWxEYXRhUmVxdWVzdBpCCg5Ob3RpZnlTaG93VGlwcxIwCgl2X3JlcXVlc3QY",
-            "ASABKAsyHS56cHJvdG8uTm90aWZ5U2hvd1RpcHNSZXF1ZXN0YgZwcm90bzM="));
+            "YXRhX3JlcXVlc3QucHJvdG8iqQEKCVNvY2lhbE50ZhpPChBOb3RpZnlTb2Np",
+            "YWxEYXRhEjsKCHZSZXF1ZXN0GAEgASgLMh8uenByb3RvLk5vdGlmeVNvY2lh",
+            "bERhdGFSZXF1ZXN0Ugh2UmVxdWVzdBpLCg5Ob3RpZnlTaG93VGlwcxI5Cgh2",
+            "UmVxdWVzdBgBIAEoCzIdLnpwcm90by5Ob3RpZnlTaG93VGlwc1JlcXVlc3RS",
+            "CHZSZXF1ZXN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNotifyShowTipsRequestReflection.Descriptor, global::Zproto.StruNotifySocialDataRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -250,7 +251,7 @@ namespace Zproto {
           return new NotifySocialData(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifySocialDataRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -457,7 +458,7 @@ namespace Zproto {
           return new NotifyShowTips(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyShowTipsRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

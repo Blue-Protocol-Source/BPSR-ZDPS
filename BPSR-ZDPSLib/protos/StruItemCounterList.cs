@@ -26,14 +26,19 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X2l0ZW1fY291bnRlcl9saXN0LnByb3RvEgZ6cHJvdG8aHHN0cnVf",
             "aXRlbV9jb3VudGVyX2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90",
-            "byKoAQoPSXRlbUNvdW50ZXJMaXN0EkUKEGl0ZW1fY291bnRlcl9tYXAYASAD",
-            "KAsyKy56cHJvdG8uSXRlbUNvdW50ZXJMaXN0Lkl0ZW1Db3VudGVyTWFwRW50",
-            "cnkaTgoTSXRlbUNvdW50ZXJNYXBFbnRyeRILCgNrZXkYASABKAUSJgoFdmFs",
-            "dWUYAiABKAsyFy56cHJvdG8uSXRlbUNvdW50ZXJJbmZvOgI4AWIGcHJvdG8z"));
+            "byLrAgoPSXRlbUNvdW50ZXJMaXN0ElMKDml0ZW1Db3VudGVyTWFwGAEgAygL",
+            "MisuenByb3RvLkl0ZW1Db3VudGVyTGlzdC5JdGVtQ291bnRlck1hcEVudHJ5",
+            "Ug5pdGVtQ291bnRlck1hcBJfChJpdGVtR2FpbkNvdW50ZXJNYXAYAiADKAsy",
+            "Ly56cHJvdG8uSXRlbUNvdW50ZXJMaXN0Lkl0ZW1HYWluQ291bnRlck1hcEVu",
+            "dHJ5UhJpdGVtR2FpbkNvdW50ZXJNYXAaTgoTSXRlbUNvdW50ZXJNYXBFbnRy",
+            "eRILCgNrZXkYASABKAUSJgoFdmFsdWUYAiABKAsyFy56cHJvdG8uSXRlbUNv",
+            "dW50ZXJJbmZvOgI4ARpSChdJdGVtR2FpbkNvdW50ZXJNYXBFbnRyeRILCgNr",
+            "ZXkYASABKAUSJgoFdmFsdWUYAiABKAsyFy56cHJvdG8uSXRlbUNvdW50ZXJJ",
+            "bmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemCounterInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ItemCounterList), global::Zproto.ItemCounterList.Parser, new[]{ "ItemCounterMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ItemCounterList), global::Zproto.ItemCounterList.Parser, new[]{ "ItemCounterMap", "ItemGainCounterMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -76,6 +81,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ItemCounterList(ItemCounterList other) : this() {
       itemCounterMap_ = other.itemCounterMap_.Clone();
+      itemGainCounterMap_ = other.itemGainCounterMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,7 +91,7 @@ namespace Zproto {
       return new ItemCounterList(this);
     }
 
-    /// <summary>Field number for the "item_counter_map" field.</summary>
+    /// <summary>Field number for the "itemCounterMap" field.</summary>
     public const int ItemCounterMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.ItemCounterInfo>.Codec _map_itemCounterMap_codec
         = new pbc::MapField<int, global::Zproto.ItemCounterInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ItemCounterInfo.Parser), 10);
@@ -94,6 +100,17 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<int, global::Zproto.ItemCounterInfo> ItemCounterMap {
       get { return itemCounterMap_; }
+    }
+
+    /// <summary>Field number for the "itemGainCounterMap" field.</summary>
+    public const int ItemGainCounterMapFieldNumber = 2;
+    private static readonly pbc::MapField<int, global::Zproto.ItemCounterInfo>.Codec _map_itemGainCounterMap_codec
+        = new pbc::MapField<int, global::Zproto.ItemCounterInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ItemCounterInfo.Parser), 18);
+    private readonly pbc::MapField<int, global::Zproto.ItemCounterInfo> itemGainCounterMap_ = new pbc::MapField<int, global::Zproto.ItemCounterInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<int, global::Zproto.ItemCounterInfo> ItemGainCounterMap {
+      get { return itemGainCounterMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,6 +129,7 @@ namespace Zproto {
         return true;
       }
       if (!ItemCounterMap.Equals(other.ItemCounterMap)) return false;
+      if (!ItemGainCounterMap.Equals(other.ItemGainCounterMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -120,6 +138,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= ItemCounterMap.GetHashCode();
+      hash ^= ItemGainCounterMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -139,6 +158,7 @@ namespace Zproto {
       output.WriteRawMessage(this);
     #else
       itemCounterMap_.WriteTo(output, _map_itemCounterMap_codec);
+      itemGainCounterMap_.WriteTo(output, _map_itemGainCounterMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -150,6 +170,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       itemCounterMap_.WriteTo(ref output, _map_itemCounterMap_codec);
+      itemGainCounterMap_.WriteTo(ref output, _map_itemGainCounterMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -161,6 +182,7 @@ namespace Zproto {
     public int CalculateSize() {
       int size = 0;
       size += itemCounterMap_.CalculateSize(_map_itemCounterMap_codec);
+      size += itemGainCounterMap_.CalculateSize(_map_itemGainCounterMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -174,6 +196,7 @@ namespace Zproto {
         return;
       }
       itemCounterMap_.MergeFrom(other.itemCounterMap_);
+      itemGainCounterMap_.MergeFrom(other.itemGainCounterMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -197,6 +220,10 @@ namespace Zproto {
             itemCounterMap_.AddEntriesFrom(input, _map_itemCounterMap_codec);
             break;
           }
+          case 18: {
+            itemGainCounterMap_.AddEntriesFrom(input, _map_itemGainCounterMap_codec);
+            break;
+          }
         }
       }
     #endif
@@ -218,6 +245,10 @@ namespace Zproto {
             break;
           case 10: {
             itemCounterMap_.AddEntriesFrom(ref input, _map_itemCounterMap_codec);
+            break;
+          }
+          case 18: {
+            itemGainCounterMap_.AddEntriesFrom(ref input, _map_itemGainCounterMap_codec);
             break;
           }
         }

@@ -24,9 +24,10 @@ namespace Zproto {
     static StruSwitchProjectRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X3N3aXRjaF9wcm9qZWN0X3JlcXVlc3QucHJvdG8SBnpwcm90byJG",
-            "ChRTd2l0Y2hQcm9qZWN0UmVxdWVzdBIWCg5vbGRfcHJvamVjdF9pZBgBIAEo",
-            "BRIWCg5uZXdfcHJvamVjdF9pZBgCIAEoBWIGcHJvdG8z"));
+            "CiFzdHJ1X3N3aXRjaF9wcm9qZWN0X3JlcXVlc3QucHJvdG8SBnpwcm90byJe",
+            "ChRTd2l0Y2hQcm9qZWN0UmVxdWVzdBIiCgxvbGRQcm9qZWN0SWQYASABKAVS",
+            "DG9sZFByb2plY3RJZBIiCgxuZXdQcm9qZWN0SWQYAiABKAVSDG5ld1Byb2pl",
+            "Y3RJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new SwitchProjectRequest(this);
     }
 
-    /// <summary>Field number for the "old_project_id" field.</summary>
+    /// <summary>Field number for the "oldProjectId" field.</summary>
     public const int OldProjectIdFieldNumber = 1;
     private int oldProjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "new_project_id" field.</summary>
+    /// <summary>Field number for the "newProjectId" field.</summary>
     public const int NewProjectIdFieldNumber = 2;
     private int newProjectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

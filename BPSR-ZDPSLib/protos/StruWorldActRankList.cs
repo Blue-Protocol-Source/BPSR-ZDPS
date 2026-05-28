@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X3dvcmxkX2FjdF9yYW5rX2xpc3QucHJvdG8SBnpwcm90bxoec3Ry",
-            "dV93b3JsZF9hY3RfcmFua19pbmZvLnByb3RvItoBChBXb3JsZEFjdFJhbmtM",
-            "aXN0EhMKC2FjdGl2aXR5X2lkGAEgASgFEjsKCnJhbmtfaW5mb3MYAiADKAsy",
-            "Jy56cHJvdG8uV29ybGRBY3RSYW5rTGlzdC5SYW5rSW5mb3NFbnRyeRIUCgxj",
-            "dXJyZW50X3JhbmsYAyABKAUSEgoKc2VsZl9zY29yZRgEIAEoBRpKCg5SYW5r",
-            "SW5mb3NFbnRyeRILCgNrZXkYASABKAMSJwoFdmFsdWUYAiABKAsyGC56cHJv",
-            "dG8uV29ybGRBY3RSYW5rSW5mbzoCOAFiBnByb3RvMw=="));
+            "dV93b3JsZF9hY3RfcmFua19pbmZvLnByb3RvIoUCChBXb3JsZEFjdFJhbmtM",
+            "aXN0Eh4KCmFjdGl2aXR5SWQYASABKAVSCmFjdGl2aXR5SWQSRQoJcmFua0lu",
+            "Zm9zGAIgAygLMicuenByb3RvLldvcmxkQWN0UmFua0xpc3QuUmFua0luZm9z",
+            "RW50cnlSCXJhbmtJbmZvcxIgCgtjdXJyZW50UmFuaxgDIAEoBVILY3VycmVu",
+            "dFJhbmsSHAoJc2VsZlNjb3JlGAQgASgFUglzZWxmU2NvcmUaSgoOUmFua0lu",
+            "Zm9zRW50cnkSCwoDa2V5GAEgASgDEicKBXZhbHVlGAIgASgLMhguenByb3Rv",
+            "LldvcmxkQWN0UmFua0luZm86AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruWorldActRankInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new WorldActRankList(this);
     }
 
-    /// <summary>Field number for the "activity_id" field.</summary>
+    /// <summary>Field number for the "activityId" field.</summary>
     public const int ActivityIdFieldNumber = 1;
     private int activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rank_infos" field.</summary>
+    /// <summary>Field number for the "rankInfos" field.</summary>
     public const int RankInfosFieldNumber = 2;
     private static readonly pbc::MapField<long, global::Zproto.WorldActRankInfo>.Codec _map_rankInfos_codec
         = new pbc::MapField<long, global::Zproto.WorldActRankInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.WorldActRankInfo.Parser), 18);
@@ -112,7 +113,7 @@ namespace Zproto {
       get { return rankInfos_; }
     }
 
-    /// <summary>Field number for the "current_rank" field.</summary>
+    /// <summary>Field number for the "currentRank" field.</summary>
     public const int CurrentRankFieldNumber = 3;
     private int currentRank_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "self_score" field.</summary>
+    /// <summary>Field number for the "selfScore" field.</summary>
     public const int SelfScoreFieldNumber = 4;
     private int selfScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

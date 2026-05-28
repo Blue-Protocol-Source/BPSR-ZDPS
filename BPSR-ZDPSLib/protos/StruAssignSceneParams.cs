@@ -28,14 +28,16 @@ namespace Zproto {
             "bV9lX2Fzc2lnbl9zY2VuZV9zb3VyY2VfdHlwZS5wcm90bxodc3RydV9lbnRl",
             "cl9zY2VuZV9wYXJhbXMucHJvdG8aHmVudW1fZV9zY2VuZV9hc3NpZ25fdHlw",
             "ZS5wcm90bxodc3RydV9sb2dpbl9zY2VuZV9wYXJhbXMucHJvdG8aHHN0cnVf",
-            "c2NlbmVfaW5pdF9wYXJhbXMucHJvdG8irQIKEUFzc2lnblNjZW5lUGFyYW1z",
-            "EhAKCHNjZW5lX2lkGAEgASgFEhcKD2NyZWF0b3JfY2hhcl9pZBgCIAEoAxIt",
-            "Cgthc3NpZ25fdHlwZRgDIAEoDjIYLnpwcm90by5FU2NlbmVBc3NpZ25UeXBl",
-            "EisKCmluaXRfcGFyYW0YBCABKAsyFy56cHJvdG8uU2NlbmVJbml0UGFyYW1z",
-            "Ei0KC2VudGVyX3BhcmFtGAUgASgLMhguenByb3RvLkVudGVyU2NlbmVQYXJh",
-            "bXMSLQoLbG9naW5fcGFyYW0YBiABKAsyGC56cHJvdG8uTG9naW5TY2VuZVBh",
-            "cmFtcxIzCgtzb3VyY2VfdHlwZRgHIAEoDjIeLnpwcm90by5FQXNzaWduU2Nl",
-            "bmVTb3VyY2VUeXBlYgZwcm90bzM="));
+            "c2NlbmVfaW5pdF9wYXJhbXMucHJvdG8i+AIKEUFzc2lnblNjZW5lUGFyYW1z",
+            "EhgKB3NjZW5lSWQYASABKAVSB3NjZW5lSWQSJAoNY3JlYXRvckNoYXJJZBgC",
+            "IAEoA1INY3JlYXRvckNoYXJJZBI4Cgphc3NpZ25UeXBlGAMgASgOMhguenBy",
+            "b3RvLkVTY2VuZUFzc2lnblR5cGVSCmFzc2lnblR5cGUSNQoJaW5pdFBhcmFt",
+            "GAQgASgLMhcuenByb3RvLlNjZW5lSW5pdFBhcmFtc1IJaW5pdFBhcmFtEjgK",
+            "CmVudGVyUGFyYW0YBSABKAsyGC56cHJvdG8uRW50ZXJTY2VuZVBhcmFtc1IK",
+            "ZW50ZXJQYXJhbRI4Cgpsb2dpblBhcmFtGAYgASgLMhguenByb3RvLkxvZ2lu",
+            "U2NlbmVQYXJhbXNSCmxvZ2luUGFyYW0SPgoKc291cmNlVHlwZRgHIAEoDjIe",
+            "Lnpwcm90by5FQXNzaWduU2NlbmVTb3VyY2VUeXBlUgpzb3VyY2VUeXBlYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEAssignSceneSourceTypeReflection.Descriptor, global::Zproto.StruEnterSceneParamsReflection.Descriptor, global::Zproto.EnumESceneAssignTypeReflection.Descriptor, global::Zproto.StruLoginSceneParamsReflection.Descriptor, global::Zproto.StruSceneInitParamsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +99,7 @@ namespace Zproto {
       return new AssignSceneParams(this);
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
+    /// <summary>Field number for the "sceneId" field.</summary>
     public const int SceneIdFieldNumber = 1;
     private int sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "creator_char_id" field.</summary>
+    /// <summary>Field number for the "creatorCharId" field.</summary>
     public const int CreatorCharIdFieldNumber = 2;
     private long creatorCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "assign_type" field.</summary>
+    /// <summary>Field number for the "assignType" field.</summary>
     public const int AssignTypeFieldNumber = 3;
     private global::Zproto.ESceneAssignType assignType_ = global::Zproto.ESceneAssignType.SceneAssignTypeNormal;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "init_param" field.</summary>
+    /// <summary>Field number for the "initParam" field.</summary>
     public const int InitParamFieldNumber = 4;
     private global::Zproto.SceneInitParams initParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -145,7 +147,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "enter_param" field.</summary>
+    /// <summary>Field number for the "enterParam" field.</summary>
     public const int EnterParamFieldNumber = 5;
     private global::Zproto.EnterSceneParams enterParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -157,7 +159,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "login_param" field.</summary>
+    /// <summary>Field number for the "loginParam" field.</summary>
     public const int LoginParamFieldNumber = 6;
     private global::Zproto.LoginSceneParams loginParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,7 +171,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "source_type" field.</summary>
+    /// <summary>Field number for the "sourceType" field.</summary>
     public const int SourceTypeFieldNumber = 7;
     private global::Zproto.EAssignSceneSourceType sourceType_ = global::Zproto.EAssignSceneSourceType.AssignSceneSourceTypeSilo;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

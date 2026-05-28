@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X3VwZGF0ZV90ZWFtX21lbV9iZV9jYWxsX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byKVAQoaVXBkYXRlVGVhbU1lbUJlQ2FsbFJlcXVlc3QSRQoKY2Fs",
-            "bF9zdGF0ZRgBIAMoCzIxLnpwcm90by5VcGRhdGVUZWFtTWVtQmVDYWxsUmVx",
-            "dWVzdC5DYWxsU3RhdGVFbnRyeRowCg5DYWxsU3RhdGVFbnRyeRILCgNrZXkY",
-            "ASABKAMSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "Bnpwcm90byKfAQoaVXBkYXRlVGVhbU1lbUJlQ2FsbFJlcXVlc3QSTwoJY2Fs",
+            "bFN0YXRlGAEgAygLMjEuenByb3RvLlVwZGF0ZVRlYW1NZW1CZUNhbGxSZXF1",
+            "ZXN0LkNhbGxTdGF0ZUVudHJ5UgljYWxsU3RhdGUaMAoOQ2FsbFN0YXRlRW50",
+            "cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new UpdateTeamMemBeCallRequest(this);
     }
 
-    /// <summary>Field number for the "call_state" field.</summary>
+    /// <summary>Field number for the "callState" field.</summary>
     public const int CallStateFieldNumber = 1;
     private static readonly pbc::MapField<long, int>.Codec _map_callState_codec
         = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 10);

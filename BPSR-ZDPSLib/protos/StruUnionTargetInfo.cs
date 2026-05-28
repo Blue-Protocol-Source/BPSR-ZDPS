@@ -24,9 +24,10 @@ namespace Zproto {
     static StruUnionTargetInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X3VuaW9uX3RhcmdldF9pbmZvLnByb3RvEgZ6cHJvdG8iTgoPVW5p",
-            "b25UYXJnZXRJbmZvEhEKCXRhcmdldF9pZBgBIAEoBRISCgp0YXJnZXRfbnVt",
-            "GAIgASgFEhQKDGhhc19maW5pc2hlZBgDIAEoCGIGcHJvdG8z"));
+            "ChxzdHJ1X3VuaW9uX3RhcmdldF9pbmZvLnByb3RvEgZ6cHJvdG8ibQoPVW5p",
+            "b25UYXJnZXRJbmZvEhoKCHRhcmdldElkGAEgASgFUgh0YXJnZXRJZBIcCgl0",
+            "YXJnZXROdW0YAiABKAVSCXRhcmdldE51bRIgCgtoYXNGaW5pc2hlZBgDIAEo",
+            "CFILaGFzRmluaXNoZWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new UnionTargetInfo(this);
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_num" field.</summary>
+    /// <summary>Field number for the "targetNum" field.</summary>
     public const int TargetNumFieldNumber = 2;
     private int targetNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "has_finished" field.</summary>
+    /// <summary>Field number for the "hasFinished" field.</summary>
     public const int HasFinishedFieldNumber = 3;
     private bool hasFinished_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X21haGpvbmdfc2V0dGxlX3BhcmFtcy5wcm90bxIGenByb3RvGh5z",
-            "dHJ1X21haGpvbmdfc2V0dGxlX2l0ZW0ucHJvdG8ivgEKE01haGpvbmdTZXR0",
-            "bGVQYXJhbXMSUQoUbWFoam9uZ19zZXR0bGVfaXRlbXMYASADKAsyMy56cHJv",
-            "dG8uTWFoam9uZ1NldHRsZVBhcmFtcy5NYWhqb25nU2V0dGxlSXRlbXNFbnRy",
-            "eRpUChdNYWhqb25nU2V0dGxlSXRlbXNFbnRyeRILCgNrZXkYASABKAUSKAoF",
-            "dmFsdWUYAiABKAsyGS56cHJvdG8uTWFoam9uZ1NldHRsZUl0ZW06AjgBYgZw",
-            "cm90bzM="));
+            "dHJ1X21haGpvbmdfc2V0dGxlX2l0ZW0ucHJvdG8i0AEKE01haGpvbmdTZXR0",
+            "bGVQYXJhbXMSYwoSbWFoam9uZ1NldHRsZUl0ZW1zGAEgAygLMjMuenByb3Rv",
+            "Lk1haGpvbmdTZXR0bGVQYXJhbXMuTWFoam9uZ1NldHRsZUl0ZW1zRW50cnlS",
+            "Em1haGpvbmdTZXR0bGVJdGVtcxpUChdNYWhqb25nU2V0dGxlSXRlbXNFbnRy",
+            "eRILCgNrZXkYASABKAUSKAoFdmFsdWUYAiABKAsyGS56cHJvdG8uTWFoam9u",
+            "Z1NldHRsZUl0ZW06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMahjongSettleItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new MahjongSettleParams(this);
     }
 
-    /// <summary>Field number for the "mahjong_settle_items" field.</summary>
+    /// <summary>Field number for the "mahjongSettleItems" field.</summary>
     public const int MahjongSettleItemsFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.MahjongSettleItem>.Codec _map_mahjongSettleItems_codec
         = new pbc::MapField<int, global::Zproto.MahjongSettleItem>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MahjongSettleItem.Parser), 10);

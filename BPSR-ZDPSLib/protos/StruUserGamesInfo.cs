@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "ChpzdHJ1X3VzZXJfZ2FtZXNfaW5mby5wcm90bxIGenByb3RvGhRzdHJ1X2dh",
             "bWVfaW5mby5wcm90bxofc3RydV91c2VyX2dhbWVfdGFibGVfaW5mby5wcm90",
-            "bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIsYBCg1Vc2VyR2FtZXNJbmZvEjgK",
-            "CmdhbWVzX2RhdGEYASADKAsyJC56cHJvdG8uVXNlckdhbWVzSW5mby5HYW1l",
-            "c0RhdGFFbnRyeRI3ChR1c2VyX2dhbWVfdGFibGVfaW5mbxgCIAEoCzIZLnpw",
-            "cm90by5Vc2VyR2FtZVRhYmxlSW5mbxpCCg5HYW1lc0RhdGFFbnRyeRILCgNr",
-            "ZXkYASABKAUSHwoFdmFsdWUYAiABKAsyEC56cHJvdG8uR2FtZUluZm86AjgB",
-            "YgZwcm90bzM="));
+            "bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIuABCg1Vc2VyR2FtZXNJbmZvEkIK",
+            "CWdhbWVzRGF0YRgBIAMoCzIkLnpwcm90by5Vc2VyR2FtZXNJbmZvLkdhbWVz",
+            "RGF0YUVudHJ5UglnYW1lc0RhdGESRwoRdXNlckdhbWVUYWJsZUluZm8YAiAB",
+            "KAsyGS56cHJvdG8uVXNlckdhbWVUYWJsZUluZm9SEXVzZXJHYW1lVGFibGVJ",
+            "bmZvGkIKDkdhbWVzRGF0YUVudHJ5EgsKA2tleRgBIAEoBRIfCgV2YWx1ZRgC",
+            "IAEoCzIQLnpwcm90by5HYW1lSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruGameInfoReflection.Descriptor, global::Zproto.StruUserGameTableInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new UserGamesInfo(this);
     }
 
-    /// <summary>Field number for the "games_data" field.</summary>
+    /// <summary>Field number for the "gamesData" field.</summary>
     public const int GamesDataFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.GameInfo>.Codec _map_gamesData_codec
         = new pbc::MapField<int, global::Zproto.GameInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.GameInfo.Parser), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return gamesData_; }
     }
 
-    /// <summary>Field number for the "user_game_table_info" field.</summary>
+    /// <summary>Field number for the "userGameTableInfo" field.</summary>
     public const int UserGameTableInfoFieldNumber = 2;
     private global::Zproto.UserGameTableInfo userGameTableInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

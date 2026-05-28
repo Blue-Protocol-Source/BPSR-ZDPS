@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "Ch9zdHJ1X2hvbWVfbGFuZF90YXNrX3JlcGx5LnByb3RvEgZ6cHJvdG8aF2Vu",
             "dW1fZV9lcnJvcl9jb2RlLnByb3RvGiVzdHJ1X2hvbWVfbGFuZF9wbGF5ZXJf",
-            "dGFza19pbmZvLnByb3RvImwKEUhvbWVMYW5kVGFza1JlcGx5EiQKCGVycl9j",
-            "b2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGUSMQoJdGFza19pbmZvGAIg",
-            "ASgLMh4uenByb3RvLkhvbWVMYW5kUGxheWVyVGFza0luZm9iBnByb3RvMw=="));
+            "dGFza19pbmZvLnByb3RvIn0KEUhvbWVMYW5kVGFza1JlcGx5EiwKB2VyckNv",
+            "ZGUYASABKA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZRI6Cgh0YXNr",
+            "SW5mbxgCIAEoCzIeLnpwcm90by5Ib21lTGFuZFBsYXllclRhc2tJbmZvUgh0",
+            "YXNrSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruHomeLandPlayerTaskInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new HomeLandTaskReply(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "task_info" field.</summary>
+    /// <summary>Field number for the "taskInfo" field.</summary>
     public const int TaskInfoFieldNumber = 2;
     private global::Zproto.HomeLandPlayerTaskInfo taskInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

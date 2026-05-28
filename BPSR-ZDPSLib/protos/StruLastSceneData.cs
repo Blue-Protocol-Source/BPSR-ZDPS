@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X2xhc3Rfc2NlbmVfZGF0YS5wcm90bxIGenByb3RvGhNzdHJ1X3Bv",
-            "c2l0aW9uLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iVwoNTGFzdFNj",
-            "ZW5lRGF0YRIQCghzY2VuZV9pZBgBIAEoDRIdCgNwb3MYAiABKAsyEC56cHJv",
-            "dG8uUG9zaXRpb24SFQoNc2NlbmVfYXJlYV9pZBgDIAEoBWIGcHJvdG8z"));
+            "c2l0aW9uLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ibwoNTGFzdFNj",
+            "ZW5lRGF0YRIYCgdzY2VuZUlkGAEgASgNUgdzY2VuZUlkEiIKA3BvcxgCIAEo",
+            "CzIQLnpwcm90by5Qb3NpdGlvblIDcG9zEiAKC3NjZW5lQXJlYUlkGAMgASgF",
+            "UgtzY2VuZUFyZWFJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPositionReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new LastSceneData(this);
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
+    /// <summary>Field number for the "sceneId" field.</summary>
     public const int SceneIdFieldNumber = 1;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_area_id" field.</summary>
+    /// <summary>Field number for the "sceneAreaId" field.</summary>
     public const int SceneAreaIdFieldNumber = 3;
     private int sceneAreaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

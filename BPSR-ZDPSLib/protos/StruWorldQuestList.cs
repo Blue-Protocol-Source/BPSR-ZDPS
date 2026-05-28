@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3dvcmxkX3F1ZXN0X2xpc3QucHJvdG8SBnpwcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvIiQKDndvcmxkUXVlc3RMaXN0EhIKCnF1ZXN0X2xp",
-            "c3QYASADKAViBnByb3RvMw=="));
+            "aXJ0eV9tYXNrLnByb3RvIi4KDndvcmxkUXVlc3RMaXN0EhwKCXF1ZXN0TGlz",
+            "dBgBIAMoBVIJcXVlc3RMaXN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new worldQuestList(this);
     }
 
-    /// <summary>Field number for the "quest_list" field.</summary>
+    /// <summary>Field number for the "questList" field.</summary>
     public const int QuestListFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_questList_codec
         = pb::FieldCodec.ForInt32(10);

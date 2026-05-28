@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X2hvbWVsYW5kX2hhbmdfZmFzaGlvbl9yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8aIHN0cnVfaG9tZWxhbmRfc2xvdF9mYXNoaW9uLnByb3RvInkKGkhv",
-            "bWVsYW5kSGFuZ0Zhc2hpb25SZXF1ZXN0EhYKDnN0cnVjdHVyZV91dWlkGAEg",
-            "ASgDEhAKCGlzX291dGVyGAIgASgIEjEKDGZhc2hpb25fZGF0YRgDIAMoCzIb",
-            "Lnpwcm90by5Ib21lbGFuZFNsb3RGYXNoaW9uYgZwcm90bzM="));
+            "cHJvdG8aIHN0cnVfaG9tZWxhbmRfc2xvdF9mYXNoaW9uLnByb3RvIpsBChpI",
+            "b21lbGFuZEhhbmdGYXNoaW9uUmVxdWVzdBIkCg1zdHJ1Y3R1cmVVdWlkGAEg",
+            "ASgDUg1zdHJ1Y3R1cmVVdWlkEhgKB2lzT3V0ZXIYAiABKAhSB2lzT3V0ZXIS",
+            "PQoLZmFzaGlvbkRhdGEYAyADKAsyGy56cHJvdG8uSG9tZWxhbmRTbG90RmFz",
+            "aGlvblILZmFzaGlvbkRhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomelandSlotFashionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new HomelandHangFashionRequest(this);
     }
 
-    /// <summary>Field number for the "structure_uuid" field.</summary>
+    /// <summary>Field number for the "structureUuid" field.</summary>
     public const int StructureUuidFieldNumber = 1;
     private long structureUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 2;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fashion_data" field.</summary>
+    /// <summary>Field number for the "fashionData" field.</summary>
     public const int FashionDataFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.HomelandSlotFashion> _repeated_fashionData_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.HomelandSlotFashion.Parser);

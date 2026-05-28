@@ -24,8 +24,9 @@ namespace Zproto {
     static StruStartRideParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X3N0YXJ0X3JpZGVfcGFyYW0ucHJvdG8SBnpwcm90byIjCg5TdGFy",
-            "dFJpZGVQYXJhbRIRCglyaWRlX3R5cGUYASABKAViBnByb3RvMw=="));
+            "ChtzdHJ1X3N0YXJ0X3JpZGVfcGFyYW0ucHJvdG8SBnpwcm90byIsCg5TdGFy",
+            "dFJpZGVQYXJhbRIaCghSaWRlVHlwZRgBIAEoBVIIUmlkZVR5cGViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new StartRideParam(this);
     }
 
-    /// <summary>Field number for the "ride_type" field.</summary>
+    /// <summary>Field number for the "RideType" field.</summary>
     public const int RideTypeFieldNumber = 1;
     private int rideType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,8 +24,9 @@ namespace Zproto {
     static StruReadMailRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X3JlYWRfbWFpbF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iIwoPUmVh",
-            "ZE1haWxSZXF1ZXN0EhAKCG1haWxfaWRzGAIgAygDYgZwcm90bzM="));
+            "ChxzdHJ1X3JlYWRfbWFpbF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iKwoPUmVh",
+            "ZE1haWxSZXF1ZXN0EhgKB21haWxJZHMYAiADKANSB21haWxJZHNiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new ReadMailRequest(this);
     }
 
-    /// <summary>Field number for the "mail_ids" field.</summary>
+    /// <summary>Field number for the "mailIds" field.</summary>
     public const int MailIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<long> _repeated_mailIds_codec
         = pb::FieldCodec.ForInt64(18);

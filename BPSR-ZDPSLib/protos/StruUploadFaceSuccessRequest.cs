@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X3VwbG9hZF9mYWNlX3N1Y2Nlc3NfcmVxdWVzdC5wcm90bxIGenBy",
-            "b3RvIjAKGFVwbG9hZEZhY2VTdWNjZXNzUmVxdWVzdBIUCgxmYWNlX2Nvc191",
-            "cmwYASABKAliBnByb3RvMw=="));
+            "b3RvIjoKGFVwbG9hZEZhY2VTdWNjZXNzUmVxdWVzdBIeCgpmYWNlQ29zVXJs",
+            "GAEgASgJUgpmYWNlQ29zVXJsYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new UploadFaceSuccessRequest(this);
     }
 
-    /// <summary>Field number for the "face_cos_url" field.</summary>
+    /// <summary>Field number for the "faceCosUrl" field.</summary>
     public const int FaceCosUrlFieldNumber = 1;
     private string faceCosUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

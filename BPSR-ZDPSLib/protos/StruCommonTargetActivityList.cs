@@ -26,16 +26,17 @@ namespace Zproto {
           string.Concat(
             "CiZzdHJ1X2NvbW1vbl90YXJnZXRfYWN0aXZpdHlfbGlzdC5wcm90bxIGenBy",
             "b3RvGiFzdHJ1X2NvbW1vbl90YXJnZXRfYWN0aXZpdHkucHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byKGAwoYQ29tbW9uVGFyZ2V0QWN0aXZpdHlMaXN0",
-            "EmEKGmNvbW1vbl90YXJnZXRfYWN0aXZpdHlfbWFwGAEgAygLMj0uenByb3Rv",
-            "LkNvbW1vblRhcmdldEFjdGl2aXR5TGlzdC5Db21tb25UYXJnZXRBY3Rpdml0",
-            "eU1hcEVudHJ5Eg8KB3ZlcnNpb24YAiABKAQSWwoXcGVyaW9kX3JlZnJlc2hf",
-            "dGltZV9tYXAYAyADKAsyOi56cHJvdG8uQ29tbW9uVGFyZ2V0QWN0aXZpdHlM",
-            "aXN0LlBlcmlvZFJlZnJlc2hUaW1lTWFwRW50cnkaXAocQ29tbW9uVGFyZ2V0",
-            "QWN0aXZpdHlNYXBFbnRyeRILCgNrZXkYASABKA0SKwoFdmFsdWUYAiABKAsy",
-            "HC56cHJvdG8uQ29tbW9uVGFyZ2V0QWN0aXZpdHk6AjgBGjsKGVBlcmlvZFJl",
-            "ZnJlc2hUaW1lTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgD",
-            "OgI4AWIGcHJvdG8z"));
+            "ZGlydHlfbWFzay5wcm90byK4AwoYQ29tbW9uVGFyZ2V0QWN0aXZpdHlMaXN0",
+            "EncKF2NvbW1vblRhcmdldEFjdGl2aXR5TWFwGAEgAygLMj0uenByb3RvLkNv",
+            "bW1vblRhcmdldEFjdGl2aXR5TGlzdC5Db21tb25UYXJnZXRBY3Rpdml0eU1h",
+            "cEVudHJ5Uhdjb21tb25UYXJnZXRBY3Rpdml0eU1hcBIYCgd2ZXJzaW9uGAIg",
+            "ASgEUgd2ZXJzaW9uEm4KFHBlcmlvZFJlZnJlc2hUaW1lTWFwGAMgAygLMjou",
+            "enByb3RvLkNvbW1vblRhcmdldEFjdGl2aXR5TGlzdC5QZXJpb2RSZWZyZXNo",
+            "VGltZU1hcEVudHJ5UhRwZXJpb2RSZWZyZXNoVGltZU1hcBpcChxDb21tb25U",
+            "YXJnZXRBY3Rpdml0eU1hcEVudHJ5EgsKA2tleRgBIAEoDRIrCgV2YWx1ZRgC",
+            "IAEoCzIcLnpwcm90by5Db21tb25UYXJnZXRBY3Rpdml0eToCOAEaOwoZUGVy",
+            "aW9kUmVmcmVzaFRpbWVNYXBFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
+            "AiABKAM6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommonTargetActivityReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +94,7 @@ namespace Zproto {
       return new CommonTargetActivityList(this);
     }
 
-    /// <summary>Field number for the "common_target_activity_map" field.</summary>
+    /// <summary>Field number for the "commonTargetActivityMap" field.</summary>
     public const int CommonTargetActivityMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.CommonTargetActivity>.Codec _map_commonTargetActivityMap_codec
         = new pbc::MapField<uint, global::Zproto.CommonTargetActivity>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CommonTargetActivity.Parser), 10);
@@ -116,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "period_refresh_time_map" field.</summary>
+    /// <summary>Field number for the "periodRefreshTimeMap" field.</summary>
     public const int PeriodRefreshTimeMapFieldNumber = 3;
     private static readonly pbc::MapField<int, long>.Codec _map_periodRefreshTimeMap_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 26);

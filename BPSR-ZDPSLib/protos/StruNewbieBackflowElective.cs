@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X25ld2JpZV9iYWNrZmxvd19lbGVjdGl2ZS5wcm90bxIGenByb3Rv",
             "GiZzdHJ1X25ld2JpZV9iYWNrZmxvd190YXJnZXRfZGF0YS5wcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIs0BChZOZXdiaWVCYWNrZmxvd0VsZWN0aXZl",
-            "EkEKCnRhcmdldF9tYXAYASADKAsyLS56cHJvdG8uTmV3YmllQmFja2Zsb3dF",
-            "bGVjdGl2ZS5UYXJnZXRNYXBFbnRyeRIcChRwcm9ncmVzc19hd2FyZF9zdGF0",
-            "ZRgCIAMoBRpSCg5UYXJnZXRNYXBFbnRyeRILCgNrZXkYASABKA0SLwoFdmFs",
-            "dWUYAiABKAsyIC56cHJvdG8uTmV3YmllQmFja2Zsb3dUYXJnZXREYXRhOgI4",
-            "AWIGcHJvdG8z"));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIukBChZOZXdiaWVCYWNrZmxvd0VsZWN0aXZl",
+            "EksKCXRhcmdldE1hcBgBIAMoCzItLnpwcm90by5OZXdiaWVCYWNrZmxvd0Vs",
+            "ZWN0aXZlLlRhcmdldE1hcEVudHJ5Ugl0YXJnZXRNYXASLgoScHJvZ3Jlc3NB",
+            "d2FyZFN0YXRlGAIgAygFUhJwcm9ncmVzc0F3YXJkU3RhdGUaUgoOVGFyZ2V0",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgNEi8KBXZhbHVlGAIgASgLMiAuenByb3Rv",
+            "Lk5ld2JpZUJhY2tmbG93VGFyZ2V0RGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNewbieBackflowTargetDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new NewbieBackflowElective(this);
     }
 
-    /// <summary>Field number for the "target_map" field.</summary>
+    /// <summary>Field number for the "targetMap" field.</summary>
     public const int TargetMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.NewbieBackflowTargetData>.Codec _map_targetMap_codec
         = new pbc::MapField<uint, global::Zproto.NewbieBackflowTargetData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.NewbieBackflowTargetData.Parser), 10);
@@ -99,7 +99,7 @@ namespace Zproto {
       get { return targetMap_; }
     }
 
-    /// <summary>Field number for the "progress_award_state" field.</summary>
+    /// <summary>Field number for the "progressAwardState" field.</summary>
     public const int ProgressAwardStateFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_progressAwardState_codec
         = pb::FieldCodec.ForInt32(18);

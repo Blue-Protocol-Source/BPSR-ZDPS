@@ -24,9 +24,9 @@ namespace Zproto {
     static StruGetAllAlbumsRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2dldF9hbGxfYWxidW1zX3JlcXVlc3QucHJvdG8SBnpwcm90byIm",
-            "ChNHZXRBbGxBbGJ1bXNSZXF1ZXN0Eg8KB2NoYXJfaWQYAiABKANiBnByb3Rv",
-            "Mw=="));
+            "CiFzdHJ1X2dldF9hbGxfYWxidW1zX3JlcXVlc3QucHJvdG8SBnpwcm90byIt",
+            "ChNHZXRBbGxBbGJ1bXNSZXF1ZXN0EhYKBmNoYXJJZBgCIAEoA1IGY2hhcklk",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new GetAllAlbumsRequest(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

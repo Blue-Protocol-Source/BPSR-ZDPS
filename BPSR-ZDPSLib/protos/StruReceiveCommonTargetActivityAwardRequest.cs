@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjdzdHJ1X3JlY2VpdmVfY29tbW9uX3RhcmdldF9hY3Rpdml0eV9hd2FyZF9y",
-            "ZXF1ZXN0LnByb3RvEgZ6cHJvdG8iPQonUmVjZWl2ZUNvbW1vblRhcmdldEFj",
-            "dGl2aXR5QXdhcmRSZXF1ZXN0EhIKCnRhcmdldF9pZHMYAiADKA1iBnByb3Rv",
-            "Mw=="));
+            "ZXF1ZXN0LnByb3RvEgZ6cHJvdG8iRwonUmVjZWl2ZUNvbW1vblRhcmdldEFj",
+            "dGl2aXR5QXdhcmRSZXF1ZXN0EhwKCXRhcmdldElkcxgCIAMoDVIJdGFyZ2V0",
+            "SWRzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ReceiveCommonTargetActivityAwardRequest(this);
     }
 
-    /// <summary>Field number for the "target_ids" field.</summary>
+    /// <summary>Field number for the "targetIds" field.</summary>
     public const int TargetIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_targetIds_codec
         = pb::FieldCodec.ForUInt32(18);

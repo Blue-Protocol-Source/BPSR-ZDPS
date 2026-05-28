@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X3N5bmNfbmV3X21haWxfcmVxdWVzdC5wcm90bxIGenByb3RvGhpl",
-            "bnVtX21haWxfaW1wb3J0YW5jZS5wcm90byJTChJTeW5jTmV3TWFpbFJlcXVl",
-            "c3QSEQoJbWFpbF91dWlkGAEgASgDEioKCmltcG9ydGFuY2UYAiABKA4yFi56",
-            "cHJvdG8uTWFpbEltcG9ydGFuY2ViBnByb3RvMw=="));
+            "bnVtX21haWxfaW1wb3J0YW5jZS5wcm90byJoChJTeW5jTmV3TWFpbFJlcXVl",
+            "c3QSGgoIbWFpbFV1aWQYASABKANSCG1haWxVdWlkEjYKCmltcG9ydGFuY2UY",
+            "AiABKA4yFi56cHJvdG8uTWFpbEltcG9ydGFuY2VSCmltcG9ydGFuY2ViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumMailImportanceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new SyncNewMailRequest(this);
     }
 
-    /// <summary>Field number for the "mail_uuid" field.</summary>
+    /// <summary>Field number for the "mailUuid" field.</summary>
     public const int MailUuidFieldNumber = 1;
     private long mailUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

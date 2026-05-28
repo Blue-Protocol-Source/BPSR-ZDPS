@@ -25,12 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3RtcF90b2tlbl9yZXN1bHQucHJvdG8SBnpwcm90bxoXZW51bV9l",
-            "X2Vycm9yX2NvZGUucHJvdG8i5wEKDlRtcFRva2VuUmVzdWx0EhUKDXRtcF9z",
-            "ZWNyZXRfaWQYASABKAkSFgoOdG1wX3NlY3JldF9rZXkYAiABKAkSEQoJdG1w",
-            "X3Rva2VuGAMgASgJEhQKDGV4cGlyZWRfdGltZRgEIAEoAxIOCgZyZWdpb24Y",
-            "BSABKAkSDgoGYnVja2V0GAYgASgJEhIKCm9iamVjdF9rZXkYByABKAkSEgoK",
-            "cGljdHVyZV9pZBgIIAEoDRIPCgd2ZXJzaW9uGAkgASgFEiQKCGVycl9jb2Rl",
-            "GAogASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "X2Vycm9yX2NvZGUucHJvdG8iyAIKDlRtcFRva2VuUmVzdWx0EiAKC3RtcFNl",
+            "Y3JldElkGAEgASgJUgt0bXBTZWNyZXRJZBIiCgx0bXBTZWNyZXRLZXkYAiAB",
+            "KAlSDHRtcFNlY3JldEtleRIaCgh0bXBUb2tlbhgDIAEoCVIIdG1wVG9rZW4S",
+            "IAoLZXhwaXJlZFRpbWUYBCABKANSC2V4cGlyZWRUaW1lEhYKBnJlZ2lvbhgF",
+            "IAEoCVIGcmVnaW9uEhYKBmJ1Y2tldBgGIAEoCVIGYnVja2V0EhwKCW9iamVj",
+            "dEtleRgHIAEoCVIJb2JqZWN0S2V5EhwKCXBpY3R1cmVJZBgIIAEoDVIJcGlj",
+            "dHVyZUlkEhgKB3ZlcnNpb24YCSABKAVSB3ZlcnNpb24SLAoHZXJyQ29kZRgK",
+            "IAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +97,7 @@ namespace Zproto {
       return new TmpTokenResult(this);
     }
 
-    /// <summary>Field number for the "tmp_secret_id" field.</summary>
+    /// <summary>Field number for the "tmpSecretId" field.</summary>
     public const int TmpSecretIdFieldNumber = 1;
     private string tmpSecretId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -107,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "tmp_secret_key" field.</summary>
+    /// <summary>Field number for the "tmpSecretKey" field.</summary>
     public const int TmpSecretKeyFieldNumber = 2;
     private string tmpSecretKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -119,7 +121,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "tmp_token" field.</summary>
+    /// <summary>Field number for the "tmpToken" field.</summary>
     public const int TmpTokenFieldNumber = 3;
     private string tmpToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,7 +133,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "expired_time" field.</summary>
+    /// <summary>Field number for the "expiredTime" field.</summary>
     public const int ExpiredTimeFieldNumber = 4;
     private long expiredTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +169,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "object_key" field.</summary>
+    /// <summary>Field number for the "objectKey" field.</summary>
     public const int ObjectKeyFieldNumber = 7;
     private string objectKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "picture_id" field.</summary>
+    /// <summary>Field number for the "pictureId" field.</summary>
     public const int PictureIdFieldNumber = 8;
     private uint pictureId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -203,7 +205,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 10;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -29,27 +29,32 @@ namespace Zproto {
             "dHRlcl9nZW5lcmF0aW9uX3JlY29yZC5wcm90bxohc3RydV9ob21lX2xhbmRf",
             "Y2x1dHRlcl9pbmZvLnByb3RvGiJzdHJ1X2hvbWVfbGFuZF9pdGVtX2luc3Rh",
             "bmNlLnByb3RvGiNzdHJ1X2hvbWVfbGFuZF9zZWxsX3Nob3BfaW5mby5wcm90",
-            "bxoec3RydV9ob21lbGFuZF92aXNpdF9pbmZvLnByb3RvItwGChBIb21lbGFu",
-            "ZEJhc2VJbmZvEi0KCnZpc2l0X2luZm8YASABKAsyGS56cHJvdG8uSG9tZWxh",
-            "bmRWaXNpdEluZm8SCwoDZXhwGAIgASgDEhUKDWhvbWVfcmVzb3VyY2UYAyAB",
-            "KAMSIwobbGFzdHN1YnRyYWN0Y2xlYW5saW5lc3N0aW1lGAQgASgDEjYKEWhv",
-            "bWVfbGFuZF9jbHV0dGVyGAUgASgLMhsuenByb3RvLkhvbWVMYW5kQ2x1dHRl",
-            "ckluZm8SVAojaG9tZV9sYW5kX2NsdXR0ZXJfZ2VuZXJhdGlvbl9yZWNvcmQY",
-            "BiABKAsyJy56cHJvdG8uSG9tZUxhbmRDbHV0dGVyR2VuZXJhdGlvblJlY29y",
-            "ZBI+Chhob21lX2xhbmRfc2VsbF9zaG9wX2luZm8YByABKAsyHC56cHJvdG8u",
-            "SG9tZUxhbmRTZWxsU2hvcEluZm8SMgoFaXRlbXMYCCADKAsyIy56cHJvdG8u",
-            "SG9tZWxhbmRCYXNlSW5mby5JdGVtc0VudHJ5EjIKBXNsb3RzGAkgAygLMiMu",
-            "enByb3RvLkhvbWVsYW5kQmFzZUluZm8uU2xvdHNFbnRyeRI+CgxpdGVtX3Rv",
-            "X3Nsb3QYCiADKAsyKC56cHJvdG8uSG9tZWxhbmRCYXNlSW5mby5JdGVtVG9T",
-            "bG90RW50cnkSEAoIY2FwYWNpdHkYCyABKAMSEgoKdXNlZF9zbG90cxgMIAEo",
-            "AxIYChBjaGVja19pbl9jb250ZW50GA0gASgJEjUKEnRyYW5zZmVyX2NvbW11",
-            "bml0eRgOIAEoCzIZLnpwcm90by5Db21tdW5pdHlUcmFuc2ZlchIaChJpbm5l",
-            "cl9maW5pc2hfdGFza3MYDyADKAUSGgoSb3V0ZXJfZmluaXNoX3Rhc2tzGBAg",
-            "AygFGkoKCkl0ZW1zRW50cnkSCwoDa2V5GAEgASgDEisKBXZhbHVlGAIgASgL",
-            "MhwuenByb3RvLkhvbWVMYW5kSXRlbUluc3RhbmNlOgI4ARosCgpTbG90c0Vu",
-            "dHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1ZRgCIAEoAzoCOAEaMQoPSXRlbVRv",
-            "U2xvdEVudHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1ZRgCIAEoAzoCOAFiBnBy",
-            "b3RvMw=="));
+            "bxoec3RydV9ob21lbGFuZF92aXNpdF9pbmZvLnByb3RvIr8IChBIb21lbGFu",
+            "ZEJhc2VJbmZvEjcKCXZpc2l0SW5mbxgBIAEoCzIZLnpwcm90by5Ib21lbGFu",
+            "ZFZpc2l0SW5mb1IJdmlzaXRJbmZvEhAKA2V4cBgCIAEoA1IDZXhwEiIKDGhv",
+            "bWVSZXNvdXJjZRgDIAEoA1IMaG9tZVJlc291cmNlEkAKG2xhc3RzdWJ0cmFj",
+            "dGNsZWFubGluZXNzdGltZRgEIAEoA1IbbGFzdHN1YnRyYWN0Y2xlYW5saW5l",
+            "c3N0aW1lEkUKD2hvbWVMYW5kQ2x1dHRlchgFIAEoCzIbLnpwcm90by5Ib21l",
+            "TGFuZENsdXR0ZXJJbmZvUg9ob21lTGFuZENsdXR0ZXIScQofaG9tZUxhbmRD",
+            "bHV0dGVyR2VuZXJhdGlvblJlY29yZBgGIAEoCzInLnpwcm90by5Ib21lTGFu",
+            "ZENsdXR0ZXJHZW5lcmF0aW9uUmVjb3JkUh9ob21lTGFuZENsdXR0ZXJHZW5l",
+            "cmF0aW9uUmVjb3JkElAKFGhvbWVMYW5kU2VsbFNob3BJbmZvGAcgASgLMhwu",
+            "enByb3RvLkhvbWVMYW5kU2VsbFNob3BJbmZvUhRob21lTGFuZFNlbGxTaG9w",
+            "SW5mbxI5CgVpdGVtcxgIIAMoCzIjLnpwcm90by5Ib21lbGFuZEJhc2VJbmZv",
+            "Lkl0ZW1zRW50cnlSBWl0ZW1zEjkKBXNsb3RzGAkgAygLMiMuenByb3RvLkhv",
+            "bWVsYW5kQmFzZUluZm8uU2xvdHNFbnRyeVIFc2xvdHMSSAoKaXRlbVRvU2xv",
+            "dBgKIAMoCzIoLnpwcm90by5Ib21lbGFuZEJhc2VJbmZvLkl0ZW1Ub1Nsb3RF",
+            "bnRyeVIKaXRlbVRvU2xvdBIaCghDYXBhY2l0eRgLIAEoA1IIQ2FwYWNpdHkS",
+            "HAoJVXNlZFNsb3RzGAwgASgDUglVc2VkU2xvdHMSJgoOY2hlY2tJbkNvbnRl",
+            "bnQYDSABKAlSDmNoZWNrSW5Db250ZW50EkcKEXRyYW5zZmVyQ29tbXVuaXR5",
+            "GA4gASgLMhkuenByb3RvLkNvbW11bml0eVRyYW5zZmVyUhF0cmFuc2ZlckNv",
+            "bW11bml0eRIqChBpbm5lckZpbmlzaFRhc2tzGA8gAygFUhBpbm5lckZpbmlz",
+            "aFRhc2tzEioKEG91dGVyRmluaXNoVGFza3MYECADKAVSEG91dGVyRmluaXNo",
+            "VGFza3MaSgoKSXRlbXNFbnRyeRILCgNrZXkYASABKAMSKwoFdmFsdWUYAiAB",
+            "KAsyHC56cHJvdG8uSG9tZUxhbmRJdGVtSW5zdGFuY2U6AjgBGiwKClNsb3Rz",
+            "RW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgDOgI4ARoxCg9JdGVt",
+            "VG9TbG90RW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgDOgI4AWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityTransferReflection.Descriptor, global::Zproto.StruHomeLandClutterGenerationRecordReflection.Descriptor, global::Zproto.StruHomeLandClutterInfoReflection.Descriptor, global::Zproto.StruHomeLandItemInstanceReflection.Descriptor, global::Zproto.StruHomeLandSellShopInfoReflection.Descriptor, global::Zproto.StruHomelandVisitInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -120,7 +125,7 @@ namespace Zproto {
       return new HomelandBaseInfo(this);
     }
 
-    /// <summary>Field number for the "visit_info" field.</summary>
+    /// <summary>Field number for the "visitInfo" field.</summary>
     public const int VisitInfoFieldNumber = 1;
     private global::Zproto.HomelandVisitInfo visitInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -144,7 +149,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_resource" field.</summary>
+    /// <summary>Field number for the "homeResource" field.</summary>
     public const int HomeResourceFieldNumber = 3;
     private long homeResource_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,7 +173,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_land_clutter" field.</summary>
+    /// <summary>Field number for the "homeLandClutter" field.</summary>
     public const int HomeLandClutterFieldNumber = 5;
     private global::Zproto.HomeLandClutterInfo homeLandClutter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -180,7 +185,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_land_clutter_generation_record" field.</summary>
+    /// <summary>Field number for the "homeLandClutterGenerationRecord" field.</summary>
     public const int HomeLandClutterGenerationRecordFieldNumber = 6;
     private global::Zproto.HomeLandClutterGenerationRecord homeLandClutterGenerationRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -192,7 +197,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_land_sell_shop_info" field.</summary>
+    /// <summary>Field number for the "homeLandSellShopInfo" field.</summary>
     public const int HomeLandSellShopInfoFieldNumber = 7;
     private global::Zproto.HomeLandSellShopInfo homeLandSellShopInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -226,7 +231,7 @@ namespace Zproto {
       get { return slots_; }
     }
 
-    /// <summary>Field number for the "item_to_slot" field.</summary>
+    /// <summary>Field number for the "itemToSlot" field.</summary>
     public const int ItemToSlotFieldNumber = 10;
     private static readonly pbc::MapField<long, long>.Codec _map_itemToSlot_codec
         = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 82);
@@ -237,7 +242,7 @@ namespace Zproto {
       get { return itemToSlot_; }
     }
 
-    /// <summary>Field number for the "capacity" field.</summary>
+    /// <summary>Field number for the "Capacity" field.</summary>
     public const int CapacityFieldNumber = 11;
     private long capacity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -249,7 +254,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "used_slots" field.</summary>
+    /// <summary>Field number for the "UsedSlots" field.</summary>
     public const int UsedSlotsFieldNumber = 12;
     private long usedSlots_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -261,7 +266,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "check_in_content" field.</summary>
+    /// <summary>Field number for the "checkInContent" field.</summary>
     public const int CheckInContentFieldNumber = 13;
     private string checkInContent_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -273,7 +278,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "transfer_community" field.</summary>
+    /// <summary>Field number for the "transferCommunity" field.</summary>
     public const int TransferCommunityFieldNumber = 14;
     private global::Zproto.CommunityTransfer transferCommunity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -285,7 +290,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "inner_finish_tasks" field.</summary>
+    /// <summary>Field number for the "innerFinishTasks" field.</summary>
     public const int InnerFinishTasksFieldNumber = 15;
     private static readonly pb::FieldCodec<int> _repeated_innerFinishTasks_codec
         = pb::FieldCodec.ForInt32(122);
@@ -296,7 +301,7 @@ namespace Zproto {
       get { return innerFinishTasks_; }
     }
 
-    /// <summary>Field number for the "outer_finish_tasks" field.</summary>
+    /// <summary>Field number for the "outerFinishTasks" field.</summary>
     public const int OuterFinishTasksFieldNumber = 16;
     private static readonly pb::FieldCodec<int> _repeated_outerFinishTasks_codec
         = pb::FieldCodec.ForInt32(130);

@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X2ljaGliYW5fa3VqaV9kYXRhLnByb3RvEgZ6cHJvdG8aHHN0cnVf",
             "aWNoaWJhbl9rdWppX3Bvb2wucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90",
-            "byKLAQoPSWNoaWJhbkt1amlEYXRhEjEKBXBvb2xzGAEgAygLMiIuenByb3Rv",
-            "LkljaGliYW5LdWppRGF0YS5Qb29sc0VudHJ5GkUKClBvb2xzRW50cnkSCwoD",
-            "a2V5GAEgASgFEiYKBXZhbHVlGAIgASgLMhcuenByb3RvLkljaGliYW5LdWpp",
-            "UG9vbDoCOAFiBnByb3RvMw=="));
+            "byKSAQoPSWNoaWJhbkt1amlEYXRhEjgKBXBvb2xzGAEgAygLMiIuenByb3Rv",
+            "LkljaGliYW5LdWppRGF0YS5Qb29sc0VudHJ5UgVwb29scxpFCgpQb29sc0Vu",
+            "dHJ5EgsKA2tleRgBIAEoBRImCgV2YWx1ZRgCIAEoCzIXLnpwcm90by5JY2hp",
+            "YmFuS3VqaVBvb2w6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIchibanKujiPoolReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

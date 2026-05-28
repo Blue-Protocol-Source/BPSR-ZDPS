@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3JlYWR5X2dhbWVfdGFibGVfcmVxdWVzdC5wcm90bxIGenByb3Rv",
-            "IkEKFVJlYWR5R2FtZVRhYmxlUmVxdWVzdBISCgp0YWJsZV9ndWlkGAEgASgJ",
-            "EhQKDGdhbWVfcGxheV9pZBgCIAEoBWIGcHJvdG8z"));
+            "IlUKFVJlYWR5R2FtZVRhYmxlUmVxdWVzdBIcCgl0YWJsZUd1aWQYASABKAlS",
+            "CXRhYmxlR3VpZBIeCgpnYW1lUGxheUlkGAIgASgFUgpnYW1lUGxheUlkYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new ReadyGameTableRequest(this);
     }
 
-    /// <summary>Field number for the "table_guid" field.</summary>
+    /// <summary>Field number for the "tableGuid" field.</summary>
     public const int TableGuidFieldNumber = 1;
     private string tableGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "game_play_id" field.</summary>
+    /// <summary>Field number for the "gamePlayId" field.</summary>
     public const int GamePlayIdFieldNumber = 2;
     private int gamePlayId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

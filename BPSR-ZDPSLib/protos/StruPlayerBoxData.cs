@@ -25,14 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3BsYXllcl9ib3hfZGF0YS5wcm90bxIGenByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8ifwoNUGxheWVyQm94RGF0YRISCgpzY2VuZV91dWlk",
-            "GAEgASgEEi0KBGJveHMYAiADKAsyHy56cHJvdG8uUGxheWVyQm94RGF0YS5C",
-            "b3hzRW50cnkaKwoJQm94c0VudHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1ZRgC",
-            "IAEoAzoCOAFiBnByb3RvMw=="));
+            "cnR5X21hc2sucHJvdG8ijwEKDVBsYXllckJveERhdGESHAoJc2NlbmVVVUlE",
+            "GAEgASgEUglzY2VuZVVVSUQSMwoEYm94cxgCIAMoCzIfLnpwcm90by5QbGF5",
+            "ZXJCb3hEYXRhLkJveHNFbnRyeVIEYm94cxorCglCb3hzRW50cnkSCwoDa2V5",
+            "GAEgASgDEg0KBXZhbHVlGAIgASgDOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PlayerBoxData), global::Zproto.PlayerBoxData.Parser, new[]{ "SceneUuid", "Boxs" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PlayerBoxData), global::Zproto.PlayerBoxData.Parser, new[]{ "SceneUUID", "Boxs" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -74,7 +74,7 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerBoxData(PlayerBoxData other) : this() {
-      sceneUuid_ = other.sceneUuid_;
+      sceneUUID_ = other.sceneUUID_;
       boxs_ = other.boxs_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -85,15 +85,15 @@ namespace Zproto {
       return new PlayerBoxData(this);
     }
 
-    /// <summary>Field number for the "scene_uuid" field.</summary>
-    public const int SceneUuidFieldNumber = 1;
-    private ulong sceneUuid_;
+    /// <summary>Field number for the "sceneUUID" field.</summary>
+    public const int SceneUUIDFieldNumber = 1;
+    private ulong sceneUUID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong SceneUuid {
-      get { return sceneUuid_; }
+    public ulong SceneUUID {
+      get { return sceneUUID_; }
       set {
-        sceneUuid_ = value;
+        sceneUUID_ = value;
       }
     }
 
@@ -123,7 +123,7 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SceneUuid != other.SceneUuid) return false;
+      if (SceneUUID != other.SceneUUID) return false;
       if (!Boxs.Equals(other.Boxs)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -132,7 +132,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SceneUuid != 0UL) hash ^= SceneUuid.GetHashCode();
+      if (SceneUUID != 0UL) hash ^= SceneUUID.GetHashCode();
       hash ^= Boxs.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -152,9 +152,9 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (SceneUuid != 0UL) {
+      if (SceneUUID != 0UL) {
         output.WriteRawTag(8);
-        output.WriteUInt64(SceneUuid);
+        output.WriteUInt64(SceneUUID);
       }
       boxs_.WriteTo(output, _map_boxs_codec);
       if (_unknownFields != null) {
@@ -167,9 +167,9 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (SceneUuid != 0UL) {
+      if (SceneUUID != 0UL) {
         output.WriteRawTag(8);
-        output.WriteUInt64(SceneUuid);
+        output.WriteUInt64(SceneUUID);
       }
       boxs_.WriteTo(ref output, _map_boxs_codec);
       if (_unknownFields != null) {
@@ -182,8 +182,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SceneUuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SceneUuid);
+      if (SceneUUID != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SceneUUID);
       }
       size += boxs_.CalculateSize(_map_boxs_codec);
       if (_unknownFields != null) {
@@ -198,8 +198,8 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      if (other.SceneUuid != 0UL) {
-        SceneUuid = other.SceneUuid;
+      if (other.SceneUUID != 0UL) {
+        SceneUUID = other.SceneUUID;
       }
       boxs_.MergeFrom(other.boxs_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -222,7 +222,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            SceneUuid = input.ReadUInt64();
+            SceneUUID = input.ReadUInt64();
             break;
           }
           case 18: {
@@ -249,7 +249,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            SceneUuid = input.ReadUInt64();
+            SceneUUID = input.ReadUInt64();
             break;
           }
           case 18: {

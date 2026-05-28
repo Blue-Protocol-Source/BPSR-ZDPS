@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2R1bmdlb25fc2NvcmUucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIjYKDER1bmdlb25TY29yZRITCgt0b3RhbF9zY29yZRgB",
-            "IAEoBRIRCgljdXJfcmF0aW8YAiABKAViBnByb3RvMw=="));
+            "eV9tYXNrLnByb3RvIkoKDER1bmdlb25TY29yZRIeCgp0b3RhbFNjb3JlGAEg",
+            "ASgFUgp0b3RhbFNjb3JlEhoKCGN1clJhdGlvGAIgASgFUghjdXJSYXRpb2IG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new DungeonScore(this);
     }
 
-    /// <summary>Field number for the "total_score" field.</summary>
+    /// <summary>Field number for the "totalScore" field.</summary>
     public const int TotalScoreFieldNumber = 1;
     private int totalScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_ratio" field.</summary>
+    /// <summary>Field number for the "curRatio" field.</summary>
     public const int CurRatioFieldNumber = 2;
     private int curRatio_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

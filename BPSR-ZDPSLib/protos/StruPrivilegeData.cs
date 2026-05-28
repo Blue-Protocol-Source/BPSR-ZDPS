@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3ByaXZpbGVnZV9kYXRhLnByb3RvEgZ6cHJvdG8aGmVudW1fbGF1",
-            "bmNoX3BsYXRmb3JtLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8icAoN",
-            "UHJpdmlsZWdlRGF0YRIvCg9sYXVuY2hfcGxhdGZvcm0YASABKA4yFi56cHJv",
-            "dG8uTGF1bmNoUGxhdGZvcm0SFAoMaXNfcHJpdmlsZWdlGAIgASgIEhgKEGxh",
-            "c3RfdXBkYXRlX3RpbWUYAyABKANiBnByb3RvMw=="));
+            "bmNoX3BsYXRmb3JtLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8imQEK",
+            "DVByaXZpbGVnZURhdGESPgoObGF1bmNoUGxhdGZvcm0YASABKA4yFi56cHJv",
+            "dG8uTGF1bmNoUGxhdGZvcm1SDmxhdW5jaFBsYXRmb3JtEiAKC2lzUHJpdmls",
+            "ZWdlGAIgASgIUgtpc1ByaXZpbGVnZRImCg5sYXN0VXBkYXRlVGltZRgDIAEo",
+            "A1IObGFzdFVwZGF0ZVRpbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumLaunchPlatformReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new PrivilegeData(this);
     }
 
-    /// <summary>Field number for the "launch_platform" field.</summary>
+    /// <summary>Field number for the "launchPlatform" field.</summary>
     public const int LaunchPlatformFieldNumber = 1;
     private global::Zproto.LaunchPlatform launchPlatform_ = global::Zproto.LaunchPlatform.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_privilege" field.</summary>
+    /// <summary>Field number for the "isPrivilege" field.</summary>
     public const int IsPrivilegeFieldNumber = 2;
     private bool isPrivilege_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_update_time" field.</summary>
+    /// <summary>Field number for the "lastUpdateTime" field.</summary>
     public const int LastUpdateTimeFieldNumber = 3;
     private long lastUpdateTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

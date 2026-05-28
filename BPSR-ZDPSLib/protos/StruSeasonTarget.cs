@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X3NlYXNvbl90YXJnZXQucHJvdG8SBnpwcm90bxodc3RydV9zZWFz",
-            "b25fdGFyZ2V0X2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKW",
-            "AQoMU2Vhc29uVGFyZ2V0EjkKC3RhcmdldF9pbmZvGAEgAygLMiQuenByb3Rv",
-            "LlNlYXNvblRhcmdldC5UYXJnZXRJbmZvRW50cnkaSwoPVGFyZ2V0SW5mb0Vu",
-            "dHJ5EgsKA2tleRgBIAEoBRInCgV2YWx1ZRgCIAEoCzIYLnpwcm90by5TZWFz",
-            "b25UYXJnZXRJbmZvOgI4AWIGcHJvdG8z"));
+            "b25fdGFyZ2V0X2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKh",
+            "AQoMU2Vhc29uVGFyZ2V0EkQKCnRhcmdldEluZm8YASADKAsyJC56cHJvdG8u",
+            "U2Vhc29uVGFyZ2V0LlRhcmdldEluZm9FbnRyeVIKdGFyZ2V0SW5mbxpLCg9U",
+            "YXJnZXRJbmZvRW50cnkSCwoDa2V5GAEgASgFEicKBXZhbHVlGAIgASgLMhgu",
+            "enByb3RvLlNlYXNvblRhcmdldEluZm86AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSeasonTargetInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new SeasonTarget(this);
     }
 
-    /// <summary>Field number for the "target_info" field.</summary>
+    /// <summary>Field number for the "targetInfo" field.</summary>
     public const int TargetInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.SeasonTargetInfo>.Codec _map_targetInfo_codec
         = new pbc::MapField<int, global::Zproto.SeasonTargetInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonTargetInfo.Parser), 10);

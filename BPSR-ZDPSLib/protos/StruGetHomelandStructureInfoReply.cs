@@ -25,16 +25,17 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X2dldF9ob21lbGFuZF9zdHJ1Y3R1cmVfaW5mb19yZXBseS5wcm90",
-            "bxIGenByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byL7AgodR2V0SG9t",
-            "ZWxhbmRTdHJ1Y3R1cmVJbmZvUmVwbHkSJAoIZXJyX2NvZGUYASABKA4yEi56",
-            "cHJvdG8uRUVycm9yQ29kZRJdChVpbm5lcl9zdHJ1Y3R1cmVfaW5mb3MYAiAD",
-            "KAsyPi56cHJvdG8uR2V0SG9tZWxhbmRTdHJ1Y3R1cmVJbmZvUmVwbHkuSW5u",
-            "ZXJTdHJ1Y3R1cmVJbmZvc0VudHJ5El0KFW91dGVyX3N0cnVjdHVyZV9pbmZv",
-            "cxgDIAMoCzI+Lnpwcm90by5HZXRIb21lbGFuZFN0cnVjdHVyZUluZm9SZXBs",
-            "eS5PdXRlclN0cnVjdHVyZUluZm9zRW50cnkaOgoYSW5uZXJTdHJ1Y3R1cmVJ",
-            "bmZvc0VudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoBToCOAEaOgoY",
-            "T3V0ZXJTdHJ1Y3R1cmVJbmZvc0VudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1",
-            "ZRgCIAEoBToCOAFiBnByb3RvMw=="));
+            "bxIGenByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byKpAwodR2V0SG9t",
+            "ZWxhbmRTdHJ1Y3R1cmVJbmZvUmVwbHkSLAoHZXJyQ29kZRgBIAEoDjISLnpw",
+            "cm90by5FRXJyb3JDb2RlUgdlcnJDb2RlEnAKE2lubmVyU3RydWN0dXJlSW5m",
+            "b3MYAiADKAsyPi56cHJvdG8uR2V0SG9tZWxhbmRTdHJ1Y3R1cmVJbmZvUmVw",
+            "bHkuSW5uZXJTdHJ1Y3R1cmVJbmZvc0VudHJ5UhNpbm5lclN0cnVjdHVyZUlu",
+            "Zm9zEnAKE291dGVyU3RydWN0dXJlSW5mb3MYAyADKAsyPi56cHJvdG8uR2V0",
+            "SG9tZWxhbmRTdHJ1Y3R1cmVJbmZvUmVwbHkuT3V0ZXJTdHJ1Y3R1cmVJbmZv",
+            "c0VudHJ5UhNvdXRlclN0cnVjdHVyZUluZm9zGjoKGElubmVyU3RydWN0dXJl",
+            "SW5mb3NFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBGjoK",
+            "GE91dGVyU3RydWN0dXJlSW5mb3NFbnRyeRILCgNrZXkYASABKAUSDQoFdmFs",
+            "dWUYAiABKAU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +93,7 @@ namespace Zproto {
       return new GetHomelandStructureInfoReply(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "inner_structure_infos" field.</summary>
+    /// <summary>Field number for the "innerStructureInfos" field.</summary>
     public const int InnerStructureInfosFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_innerStructureInfos_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);
@@ -115,7 +116,7 @@ namespace Zproto {
       get { return innerStructureInfos_; }
     }
 
-    /// <summary>Field number for the "outer_structure_infos" field.</summary>
+    /// <summary>Field number for the "outerStructureInfos" field.</summary>
     public const int OuterStructureInfosFieldNumber = 3;
     private static readonly pbc::MapField<int, int>.Codec _map_outerStructureInfos_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 26);

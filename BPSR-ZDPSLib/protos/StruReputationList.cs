@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3JlcHV0YXRpb25fbGlzdC5wcm90bxIGenByb3RvGhpzdHJ1X3Jl",
-            "cHV0YXRpb25faW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIqEB",
-            "Cg5SZXB1dGF0aW9uTGlzdBJBCg5yZXB1dGF0aW9uX21hcBgBIAMoCzIpLnpw",
-            "cm90by5SZXB1dGF0aW9uTGlzdC5SZXB1dGF0aW9uTWFwRW50cnkaTAoSUmVw",
-            "dXRhdGlvbk1hcEVudHJ5EgsKA2tleRgBIAEoDRIlCgV2YWx1ZRgCIAEoCzIW",
-            "Lnpwcm90by5SZXB1dGF0aW9uSW5mbzoCOAFiBnByb3RvMw=="));
+            "cHV0YXRpb25faW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIq8B",
+            "Cg5SZXB1dGF0aW9uTGlzdBJPCg1yZXB1dGF0aW9uTWFwGAEgAygLMikuenBy",
+            "b3RvLlJlcHV0YXRpb25MaXN0LlJlcHV0YXRpb25NYXBFbnRyeVINcmVwdXRh",
+            "dGlvbk1hcBpMChJSZXB1dGF0aW9uTWFwRW50cnkSCwoDa2V5GAEgASgNEiUK",
+            "BXZhbHVlGAIgASgLMhYuenByb3RvLlJlcHV0YXRpb25JbmZvOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruReputationInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new ReputationList(this);
     }
 
-    /// <summary>Field number for the "reputation_map" field.</summary>
+    /// <summary>Field number for the "reputationMap" field.</summary>
     public const int ReputationMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.ReputationInfo>.Codec _map_reputationMap_codec
         = new pbc::MapField<uint, global::Zproto.ReputationInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ReputationInfo.Parser), 10);

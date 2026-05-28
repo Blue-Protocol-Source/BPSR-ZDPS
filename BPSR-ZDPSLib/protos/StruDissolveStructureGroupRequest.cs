@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X2Rpc3NvbHZlX3N0cnVjdHVyZV9ncm91cF9yZXF1ZXN0LnByb3Rv",
-            "EgZ6cHJvdG8iRAodRGlzc29sdmVTdHJ1Y3R1cmVHcm91cFJlcXVlc3QSEQoJ",
-            "Z3JvdXBfaWRzGAEgAygDEhAKCGlzX291dGVyGAIgASgIYgZwcm90bzM="));
+            "EgZ6cHJvdG8iVQodRGlzc29sdmVTdHJ1Y3R1cmVHcm91cFJlcXVlc3QSGgoI",
+            "Z3JvdXBJZHMYASADKANSCGdyb3VwSWRzEhgKB2lzT3V0ZXIYAiABKAhSB2lz",
+            "T3V0ZXJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new DissolveStructureGroupRequest(this);
     }
 
-    /// <summary>Field number for the "group_ids" field.</summary>
+    /// <summary>Field number for the "groupIds" field.</summary>
     public const int GroupIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<long> _repeated_groupIds_codec
         = pb::FieldCodec.ForInt64(10);
@@ -94,7 +95,7 @@ namespace Zproto {
       get { return groupIds_; }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 2;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

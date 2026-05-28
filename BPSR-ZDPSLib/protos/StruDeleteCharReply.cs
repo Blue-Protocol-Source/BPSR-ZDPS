@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X2RlbGV0ZV9jaGFyX3JlcGx5LnByb3RvEgZ6cHJvdG8aF2VudW1f",
-            "ZV9lcnJvcl9jb2RlLnByb3RvImIKD0RlbGV0ZUNoYXJSZXBseRIPCgdjaGFy",
-            "X2lkGAEgASgDEhgKEGRlbGV0ZV9sZWZ0X3RpbWUYAiABKAMSJAoIZXJyX2Nv",
-            "ZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "ZV9lcnJvcl9jb2RlLnByb3RvIn8KD0RlbGV0ZUNoYXJSZXBseRIWCgZjaGFy",
+            "SWQYASABKANSBmNoYXJJZBImCg5kZWxldGVMZWZ0VGltZRgCIAEoA1IOZGVs",
+            "ZXRlTGVmdFRpbWUSLAoHZXJyQ29kZRgDIAEoDjISLnpwcm90by5FRXJyb3JD",
+            "b2RlUgdlcnJDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new DeleteCharReply(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "delete_left_time" field.</summary>
+    /// <summary>Field number for the "deleteLeftTime" field.</summary>
     public const int DeleteLeftTimeFieldNumber = 2;
     private long deleteLeftTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

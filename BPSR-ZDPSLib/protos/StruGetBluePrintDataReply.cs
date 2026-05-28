@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X2dldF9ibHVlX3ByaW50X2RhdGFfcmVwbHkucHJvdG8SBnpwcm90",
             "bxofc3RydV9ibHVlX3ByaW50X3Nsb3RfZGF0YS5wcm90bxoXZW51bV9lX2Vy",
-            "cm9yX2NvZGUucHJvdG8i1gEKFUdldEJsdWVQcmludERhdGFSZXBseRIkCghl",
-            "cnJfY29kZRgBIAEoDjISLnpwcm90by5FRXJyb3JDb2RlEkcKDnR5cGVfc2xv",
-            "dF9kYXRhGAIgAygLMi8uenByb3RvLkdldEJsdWVQcmludERhdGFSZXBseS5U",
-            "eXBlU2xvdERhdGFFbnRyeRpOChFUeXBlU2xvdERhdGFFbnRyeRILCgNrZXkY",
-            "ASABKAUSKAoFdmFsdWUYAiABKAsyGS56cHJvdG8uQmx1ZVByaW50U2xvdERh",
-            "dGE6AjgBYgZwcm90bzM="));
+            "cm9yX2NvZGUucHJvdG8i6gEKFUdldEJsdWVQcmludERhdGFSZXBseRIsCgdl",
+            "cnJDb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGUSUwoM",
+            "dHlwZVNsb3REYXRhGAIgAygLMi8uenByb3RvLkdldEJsdWVQcmludERhdGFS",
+            "ZXBseS5UeXBlU2xvdERhdGFFbnRyeVIMdHlwZVNsb3REYXRhGk4KEVR5cGVT",
+            "bG90RGF0YUVudHJ5EgsKA2tleRgBIAEoBRIoCgV2YWx1ZRgCIAEoCzIZLnpw",
+            "cm90by5CbHVlUHJpbnRTbG90RGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBluePrintSlotDataReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new GetBluePrintDataReply(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "type_slot_data" field.</summary>
+    /// <summary>Field number for the "typeSlotData" field.</summary>
     public const int TypeSlotDataFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.BluePrintSlotData>.Codec _map_typeSlotData_codec
         = new pbc::MapField<int, global::Zproto.BluePrintSlotData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.BluePrintSlotData.Parser), 18);

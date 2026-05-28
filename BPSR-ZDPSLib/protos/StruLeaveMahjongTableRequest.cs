@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2xlYXZlX21haGpvbmdfdGFibGVfcmVxdWVzdC5wcm90bxIGenBy",
-            "b3RvGiVlbnVtX2xlYXZlX21haGpvbmdfdGFibGVfcmVhc29uLnByb3RvIl8K",
-            "GExlYXZlTWFoam9uZ1RhYmxlUmVxdWVzdBISCgp0YWJsZV9ndWlkGAEgASgJ",
-            "Ei8KBnJlYXNvbhgCIAEoDjIfLnpwcm90by5MZWF2ZU1haGpvbmdUYWJsZVJl",
-            "YXNvbmIGcHJvdG8z"));
+            "b3RvGiVlbnVtX2xlYXZlX21haGpvbmdfdGFibGVfcmVhc29uLnByb3RvInEK",
+            "GExlYXZlTWFoam9uZ1RhYmxlUmVxdWVzdBIcCgl0YWJsZUd1aWQYASABKAlS",
+            "CXRhYmxlR3VpZBI3CgZyZWFzb24YAiABKA4yHy56cHJvdG8uTGVhdmVNYWhq",
+            "b25nVGFibGVSZWFzb25SBnJlYXNvbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumLeaveMahjongTableReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new LeaveMahjongTableRequest(this);
     }
 
-    /// <summary>Field number for the "table_guid" field.</summary>
+    /// <summary>Field number for the "tableGuid" field.</summary>
     public const int TableGuidFieldNumber = 1;
     private string tableGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3NlYXNvbl9xdWVzdF9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byJACg9TZWFzb25RdWVzdERhdGESCgoCaWQYASAB",
-            "KA0SEgoKdGFyZ2V0X251bRgCIAEoBRINCgVhd2FyZBgDIAEoBWIGcHJvdG8z"));
+            "ZGlydHlfbWFzay5wcm90byJVCg9TZWFzb25RdWVzdERhdGESDgoCaWQYASAB",
+            "KA1SAmlkEhwKCXRhcmdldE51bRgCIAEoBVIJdGFyZ2V0TnVtEhQKBWF3YXJk",
+            "GAMgASgFUgVhd2FyZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_num" field.</summary>
+    /// <summary>Field number for the "targetNum" field.</summary>
     public const int TargetNumFieldNumber = 2;
     private int targetNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

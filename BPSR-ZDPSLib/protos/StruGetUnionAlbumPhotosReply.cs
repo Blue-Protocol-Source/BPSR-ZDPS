@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CidzdHJ1X2dldF91bmlvbl9hbGJ1bV9waG90b3NfcmVwbHkucHJvdG8SBnpw",
             "cm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aG3N0cnVfcGhvdG9fZ3Jh",
-            "cGhfc2hvdy5wcm90byJuChhHZXRVbmlvbkFsYnVtUGhvdG9zUmVwbHkSLAoM",
-            "cGhvdG9fZ3JhcGhzGAEgAygLMhYuenByb3RvLlBob3RvR3JhcGhTaG93EiQK",
-            "CGVycl9jb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "cGhfc2hvdy5wcm90byKCAQoYR2V0VW5pb25BbGJ1bVBob3Rvc1JlcGx5EjgK",
+            "C3Bob3RvR3JhcGhzGAEgAygLMhYuenByb3RvLlBob3RvR3JhcGhTaG93Ugtw",
+            "aG90b0dyYXBocxIsCgdlcnJDb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNv",
+            "ZGVSB2VyckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruPhotoGraphShowReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new GetUnionAlbumPhotosReply(this);
     }
 
-    /// <summary>Field number for the "photo_graphs" field.</summary>
+    /// <summary>Field number for the "photoGraphs" field.</summary>
     public const int PhotoGraphsFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.PhotoGraphShow> _repeated_photoGraphs_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.PhotoGraphShow.Parser);
@@ -96,7 +97,7 @@ namespace Zproto {
       get { return photoGraphs_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

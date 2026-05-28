@@ -25,19 +25,22 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X3JvbGVfbGV2ZWwucHJvdG8SBnpwcm90bxocc3RydV9sZXZlbF9w",
-            "cm9maWNpZW5jeS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIvQDCglS",
-            "b2xlTGV2ZWwSDQoFbGV2ZWwYASABKAUSFQoNY3VyX2xldmVsX2V4cBgCIAEo",
-            "AxJFChNyZWNlaXZlZF9sZXZlbF9saXN0GAMgAygLMiguenByb3RvLlJvbGVM",
-            "ZXZlbC5SZWNlaXZlZExldmVsTGlzdEVudHJ5EjIKEHByb2ZpY2llbmN5X2lu",
-            "Zm8YBCABKAsyGC56cHJvdG8uTGV2ZWxQcm9maWNpZW5jeRI7Cg5hY3RpdmVf",
-            "ZXhwX21hcBgFIAMoCzIjLnpwcm90by5Sb2xlTGV2ZWwuQWN0aXZlRXhwTWFw",
-            "RW50cnkSFwoPbGFzdF9zZWFzb25fZGF5GAYgASgFEhYKDmJsZXNzX2V4cF9w",
-            "b29sGAcgASgDEhcKD2dyYW50X2JsZXNzX2V4cBgIIAEoAxIcChRhY2N1bXVs",
-            "YXRlX2JsZXNzX2V4cBgJIAEoAxIWCg5hY2N1bXVsYXRlX2V4cBgKIAEoAxIa",
-            "ChJwcmV2X3NlYXNvbl9tYXhfbHYYCyABKAUaOAoWUmVjZWl2ZWRMZXZlbExp",
-            "c3RFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAg6AjgBGjMKEUFj",
-            "dGl2ZUV4cE1hcEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoC",
-            "OAFiBnByb3RvMw=="));
+            "cm9maWNpZW5jeS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIocFCglS",
+            "b2xlTGV2ZWwSFAoFbGV2ZWwYASABKAVSBWxldmVsEiAKC2N1ckxldmVsRXhw",
+            "GAIgASgDUgtjdXJMZXZlbEV4cBJWChFSZWNlaXZlZExldmVsTGlzdBgDIAMo",
+            "CzIoLnpwcm90by5Sb2xlTGV2ZWwuUmVjZWl2ZWRMZXZlbExpc3RFbnRyeVIR",
+            "UmVjZWl2ZWRMZXZlbExpc3QSQgoPcHJvZmljaWVuY3lJbmZvGAQgASgLMhgu",
+            "enByb3RvLkxldmVsUHJvZmljaWVuY3lSD3Byb2ZpY2llbmN5SW5mbxJHCgxh",
+            "Y3RpdmVFeHBNYXAYBSADKAsyIy56cHJvdG8uUm9sZUxldmVsLkFjdGl2ZUV4",
+            "cE1hcEVudHJ5UgxhY3RpdmVFeHBNYXASJAoNbGFzdFNlYXNvbkRheRgGIAEo",
+            "BVINbGFzdFNlYXNvbkRheRIiCgxibGVzc0V4cFBvb2wYByABKANSDGJsZXNz",
+            "RXhwUG9vbBIkCg1ncmFudEJsZXNzRXhwGAggASgDUg1ncmFudEJsZXNzRXhw",
+            "Ei4KEmFjY3VtdWxhdGVCbGVzc0V4cBgJIAEoA1ISYWNjdW11bGF0ZUJsZXNz",
+            "RXhwEiQKDWFjY3VtdWxhdGVFeHAYCiABKANSDWFjY3VtdWxhdGVFeHASKAoP",
+            "cHJldlNlYXNvbk1heEx2GAsgASgFUg9wcmV2U2Vhc29uTWF4THYaOAoWUmVj",
+            "ZWl2ZWRMZXZlbExpc3RFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiAB",
+            "KAg6AjgBGjMKEUFjdGl2ZUV4cE1hcEVudHJ5EgsKA2tleRgBIAEoBRINCgV2",
+            "YWx1ZRgCIAEoAzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLevelProficiencyReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -115,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_level_exp" field.</summary>
+    /// <summary>Field number for the "curLevelExp" field.</summary>
     public const int CurLevelExpFieldNumber = 2;
     private long curLevelExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "received_level_list" field.</summary>
+    /// <summary>Field number for the "ReceivedLevelList" field.</summary>
     public const int ReceivedLevelListFieldNumber = 3;
     private static readonly pbc::MapField<int, bool>.Codec _map_receivedLevelList_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 26);
@@ -138,7 +141,7 @@ namespace Zproto {
       get { return receivedLevelList_; }
     }
 
-    /// <summary>Field number for the "proficiency_info" field.</summary>
+    /// <summary>Field number for the "proficiencyInfo" field.</summary>
     public const int ProficiencyInfoFieldNumber = 4;
     private global::Zproto.LevelProficiency proficiencyInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "active_exp_map" field.</summary>
+    /// <summary>Field number for the "activeExpMap" field.</summary>
     public const int ActiveExpMapFieldNumber = 5;
     private static readonly pbc::MapField<int, long>.Codec _map_activeExpMap_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 42);
@@ -161,7 +164,7 @@ namespace Zproto {
       get { return activeExpMap_; }
     }
 
-    /// <summary>Field number for the "last_season_day" field.</summary>
+    /// <summary>Field number for the "lastSeasonDay" field.</summary>
     public const int LastSeasonDayFieldNumber = 6;
     private int lastSeasonDay_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -173,7 +176,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bless_exp_pool" field.</summary>
+    /// <summary>Field number for the "blessExpPool" field.</summary>
     public const int BlessExpPoolFieldNumber = 7;
     private long blessExpPool_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -185,7 +188,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "grant_bless_exp" field.</summary>
+    /// <summary>Field number for the "grantBlessExp" field.</summary>
     public const int GrantBlessExpFieldNumber = 8;
     private long grantBlessExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -197,7 +200,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "accumulate_bless_exp" field.</summary>
+    /// <summary>Field number for the "accumulateBlessExp" field.</summary>
     public const int AccumulateBlessExpFieldNumber = 9;
     private long accumulateBlessExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -209,7 +212,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "accumulate_exp" field.</summary>
+    /// <summary>Field number for the "accumulateExp" field.</summary>
     public const int AccumulateExpFieldNumber = 10;
     private long accumulateExp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -221,7 +224,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "prev_season_max_lv" field.</summary>
+    /// <summary>Field number for the "prevSeasonMaxLv" field.</summary>
     public const int PrevSeasonMaxLvFieldNumber = 11;
     private int prevSeasonMaxLv_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

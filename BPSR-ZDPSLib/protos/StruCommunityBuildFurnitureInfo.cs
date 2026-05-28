@@ -25,15 +25,17 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2NvbW11bml0eV9idWlsZF9mdXJuaXR1cmVfaW5mby5wcm90bxIG",
-            "enByb3RvGg9zdHJ1X2l0ZW0ucHJvdG8i4gIKG0NvbW11bml0eUJ1aWxkRnVy",
-            "bml0dXJlSW5mbxISCgpidWlsZF91dWlkGAEgASgDEhQKDGZ1cm5pdHVyZV9p",
-            "ZBgCIAEoBRIXCg9mdXJuaXR1cmVfY291bnQYAyABKAUSDwoHY2hhcl9pZBgE",
-            "IAEoAxISCgpzdGFydF90aW1lGAUgASgDEhAKCGVuZF90aW1lGAYgASgDEhgK",
-            "EGFjY2VsZXJhdGVfY291bnQYByABKAUSUgoQYWNjZWxlcmF0ZV9pdGVtcxgI",
-            "IAMoCzI4Lnpwcm90by5Db21tdW5pdHlCdWlsZEZ1cm5pdHVyZUluZm8uQWNj",
-            "ZWxlcmF0ZUl0ZW1zRW50cnkSIwoNY29uc3VtZV9pdGVtcxgJIAMoCzIMLnpw",
-            "cm90by5JdGVtGjYKFEFjY2VsZXJhdGVJdGVtc0VudHJ5EgsKA2tleRgBIAEo",
-            "BRINCgV2YWx1ZRgCIAEoBToCOAFiBnByb3RvMw=="));
+            "enByb3RvGg9zdHJ1X2l0ZW0ucHJvdG8izQMKG0NvbW11bml0eUJ1aWxkRnVy",
+            "bml0dXJlSW5mbxIcCglidWlsZFV1aWQYASABKANSCWJ1aWxkVXVpZBIgCgtm",
+            "dXJuaXR1cmVJZBgCIAEoBVILZnVybml0dXJlSWQSJgoOZnVybml0dXJlQ291",
+            "bnQYAyABKAVSDmZ1cm5pdHVyZUNvdW50EhYKBmNoYXJJZBgEIAEoA1IGY2hh",
+            "cklkEhwKCXN0YXJ0VGltZRgFIAEoA1IJc3RhcnRUaW1lEhgKB2VuZFRpbWUY",
+            "BiABKANSB2VuZFRpbWUSKAoPYWNjZWxlcmF0ZUNvdW50GAcgASgFUg9hY2Nl",
+            "bGVyYXRlQ291bnQSYgoPYWNjZWxlcmF0ZUl0ZW1zGAggAygLMjguenByb3Rv",
+            "LkNvbW11bml0eUJ1aWxkRnVybml0dXJlSW5mby5BY2NlbGVyYXRlSXRlbXNF",
+            "bnRyeVIPYWNjZWxlcmF0ZUl0ZW1zEjAKDGNvbnN1bWVJdGVtcxgJIAMoCzIM",
+            "Lnpwcm90by5JdGVtUgxjb25zdW1lSXRlbXMaNgoUQWNjZWxlcmF0ZUl0ZW1z",
+            "RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +99,7 @@ namespace Zproto {
       return new CommunityBuildFurnitureInfo(this);
     }
 
-    /// <summary>Field number for the "build_uuid" field.</summary>
+    /// <summary>Field number for the "buildUuid" field.</summary>
     public const int BuildUuidFieldNumber = 1;
     private long buildUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "furniture_id" field.</summary>
+    /// <summary>Field number for the "furnitureId" field.</summary>
     public const int FurnitureIdFieldNumber = 2;
     private int furnitureId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "furniture_count" field.</summary>
+    /// <summary>Field number for the "furnitureCount" field.</summary>
     public const int FurnitureCountFieldNumber = 3;
     private int furnitureCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 4;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -145,7 +147,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "start_time" field.</summary>
+    /// <summary>Field number for the "startTime" field.</summary>
     public const int StartTimeFieldNumber = 5;
     private long startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -157,7 +159,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 6;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,7 +171,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "accelerate_count" field.</summary>
+    /// <summary>Field number for the "accelerateCount" field.</summary>
     public const int AccelerateCountFieldNumber = 7;
     private int accelerateCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -181,7 +183,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "accelerate_items" field.</summary>
+    /// <summary>Field number for the "accelerateItems" field.</summary>
     public const int AccelerateItemsFieldNumber = 8;
     private static readonly pbc::MapField<int, int>.Codec _map_accelerateItems_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 66);
@@ -192,7 +194,7 @@ namespace Zproto {
       get { return accelerateItems_; }
     }
 
-    /// <summary>Field number for the "consume_items" field.</summary>
+    /// <summary>Field number for the "consumeItems" field.</summary>
     public const int ConsumeItemsFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Zproto.Item> _repeated_consumeItems_codec
         = pb::FieldCodec.ForMessage(74, global::Zproto.Item.Parser);

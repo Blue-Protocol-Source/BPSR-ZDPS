@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X25vdGlmeV9mbG93ZXJfdGltZV91cGRhdGVfcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvGhxlbnVtX3N0cnVjdHVyZV9vcF90eXBlLnByb3RvIkkKHU5v",
-            "dGlmeUZsb3dlclRpbWVVcGRhdGVSZXF1ZXN0EigKB29wX3R5cGUYASABKA4y",
-            "Fy56cHJvdG8uU3RydWN0dXJlT3BUeXBlYgZwcm90bzM="));
+            "bxIGenByb3RvGhxlbnVtX3N0cnVjdHVyZV9vcF90eXBlLnByb3RvIlAKHU5v",
+            "dGlmeUZsb3dlclRpbWVVcGRhdGVSZXF1ZXN0Ei8KBm9wVHlwZRgBIAEoDjIX",
+            "Lnpwcm90by5TdHJ1Y3R1cmVPcFR5cGVSBm9wVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumStructureOpTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyFlowerTimeUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "op_type" field.</summary>
+    /// <summary>Field number for the "opType" field.</summary>
     public const int OpTypeFieldNumber = 1;
     private global::Zproto.StructureOpType opType_ = global::Zproto.StructureOpType.Add;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

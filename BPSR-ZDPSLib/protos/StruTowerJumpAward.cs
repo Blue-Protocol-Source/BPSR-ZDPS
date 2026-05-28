@@ -24,8 +24,9 @@ namespace Zproto {
     static StruTowerJumpAwardReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X3Rvd2VyX2p1bXBfYXdhcmQucHJvdG8SBnpwcm90byIlCg5Ub3dl",
-            "ckp1bXBBd2FyZBITCgtjbGltYl91cF9pZBgBIAEoBWIGcHJvdG8z"));
+            "ChtzdHJ1X3Rvd2VyX2p1bXBfYXdhcmQucHJvdG8SBnpwcm90byIuCg5Ub3dl",
+            "ckp1bXBBd2FyZBIcCgljbGltYlVwSWQYASABKAVSCWNsaW1iVXBJZGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new TowerJumpAward(this);
     }
 
-    /// <summary>Field number for the "climb_up_id" field.</summary>
+    /// <summary>Field number for the "climbUpId" field.</summary>
     public const int ClimbUpIdFieldNumber = 1;
     private int climbUpId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

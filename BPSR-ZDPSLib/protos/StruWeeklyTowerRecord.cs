@@ -25,11 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X3dlZWtseV90b3dlcl9yZWNvcmQucHJvdG8SBnpwcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIq8BChFXZWVrbHlUb3dlclJlY29yZBISCgpi",
-            "ZWdpbl90aW1lGAEgASgDEhcKD21heF9jbGltYl91cF9pZBgCIAEoBRIaChJh",
-            "d2FyZF9jbGltYl91cF9pZHMYAyADKAUSDwoHcnVsZV9pZBgEIAEoBRIiChpt",
-            "YXhfanVtcF9hd2FyZF9jbGltYl91cF9pZBgFIAEoBRIcChRsYXN0X21heF9j",
-            "bGltYl91cF9pZBgGIAEoBWIGcHJvdG8z"));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIvkBChFXZWVrbHlUb3dlclJlY29yZBIcCgli",
+            "ZWdpblRpbWUYASABKANSCWJlZ2luVGltZRIiCgxtYXhDbGltYlVwSWQYAiAB",
+            "KAVSDG1heENsaW1iVXBJZBIoCg9hd2FyZENsaW1iVXBJZHMYAyADKAVSD2F3",
+            "YXJkQ2xpbWJVcElkcxIWCgZydWxlSWQYBCABKAVSBnJ1bGVJZBI0ChVtYXhK",
+            "dW1wQXdhcmRDbGltYlVwSWQYBSABKAVSFW1heEp1bXBBd2FyZENsaW1iVXBJ",
+            "ZBIqChBsYXN0TWF4Q2xpbWJVcElkGAYgASgFUhBsYXN0TWF4Q2xpbWJVcElk",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +92,7 @@ namespace Zproto {
       return new WeeklyTowerRecord(this);
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
+    /// <summary>Field number for the "beginTime" field.</summary>
     public const int BeginTimeFieldNumber = 1;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "max_climb_up_id" field.</summary>
+    /// <summary>Field number for the "maxClimbUpId" field.</summary>
     public const int MaxClimbUpIdFieldNumber = 2;
     private int maxClimbUpId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_climb_up_ids" field.</summary>
+    /// <summary>Field number for the "awardClimbUpIds" field.</summary>
     public const int AwardClimbUpIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_awardClimbUpIds_codec
         = pb::FieldCodec.ForInt32(26);
@@ -125,7 +127,7 @@ namespace Zproto {
       get { return awardClimbUpIds_; }
     }
 
-    /// <summary>Field number for the "rule_id" field.</summary>
+    /// <summary>Field number for the "ruleId" field.</summary>
     public const int RuleIdFieldNumber = 4;
     private int ruleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "max_jump_award_climb_up_id" field.</summary>
+    /// <summary>Field number for the "maxJumpAwardClimbUpId" field.</summary>
     public const int MaxJumpAwardClimbUpIdFieldNumber = 5;
     private int maxJumpAwardClimbUpId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_max_climb_up_id" field.</summary>
+    /// <summary>Field number for the "lastMaxClimbUpId" field.</summary>
     public const int LastMaxClimbUpIdFieldNumber = 6;
     private int lastMaxClimbUpId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

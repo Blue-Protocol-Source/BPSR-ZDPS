@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X3VuaW9uX2RhdGEucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIkMKCVVuaW9uRGF0YRIPCgd1bmlvbmlkGAEgASgDEgwKBG5h",
-            "bWUYAiABKAkSFwoPdW5pb25faHVudF9yYW5rGAMgASgFYgZwcm90bzM="));
+            "YXNrLnByb3RvIl8KCVVuaW9uRGF0YRIYCgd1bmlvbmlkGAEgASgDUgd1bmlv",
+            "bmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSJAoNdW5pb25IdW50UmFuaxgDIAEo",
+            "BVINdW5pb25IdW50UmFua2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_hunt_rank" field.</summary>
+    /// <summary>Field number for the "unionHuntRank" field.</summary>
     public const int UnionHuntRankFieldNumber = 3;
     private int unionHuntRank_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

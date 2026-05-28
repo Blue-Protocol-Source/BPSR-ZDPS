@@ -27,12 +27,12 @@ namespace Zproto {
             "Ch1zdHJ1X2FjdGlvbl9ncm91cF90cmFjay5wcm90bxIGenByb3RvGiNzdHJ1",
             "X2FjdGlvbl9ncm91cF9hY3Rpb25fY2xpcC5wcm90bxohc3RydV9hY3Rpb25f",
             "Z3JvdXBfZmFjZV9jbGlwLnByb3RvGiRlbnVtX2VfYWN0aW9uX2dyb3VwX3Ry",
-            "YWNrX3R5cGUucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKzAQoQQWN0",
-            "aW9uR3JvdXBUcmFjaxIxCgp0cmFja190eXBlGAEgASgOMh0uenByb3RvLkVB",
-            "Y3Rpb25Hcm91cFRyYWNrVHlwZRI3ChBhY3Rpb25fY2xpcF9saXN0GAIgAygL",
-            "Mh0uenByb3RvLkFjdGlvbkdyb3VwQWN0aW9uQ2xpcBIzCg5mYWNlX2NsaXBf",
-            "bGlzdBgDIAMoCzIbLnpwcm90by5BY3Rpb25Hcm91cEZhY2VDbGlwYgZwcm90",
-            "bzM="));
+            "YWNrX3R5cGUucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLXAQoQQWN0",
+            "aW9uR3JvdXBUcmFjaxI7Cgl0cmFja1R5cGUYASABKA4yHS56cHJvdG8uRUFj",
+            "dGlvbkdyb3VwVHJhY2tUeXBlUgl0cmFja1R5cGUSRQoOYWN0aW9uQ2xpcExp",
+            "c3QYAiADKAsyHS56cHJvdG8uQWN0aW9uR3JvdXBBY3Rpb25DbGlwUg5hY3Rp",
+            "b25DbGlwTGlzdBI/CgxmYWNlQ2xpcExpc3QYAyADKAsyGy56cHJvdG8uQWN0",
+            "aW9uR3JvdXBGYWNlQ2xpcFIMZmFjZUNsaXBMaXN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActionGroupActionClipReflection.Descriptor, global::Zproto.StruActionGroupFaceClipReflection.Descriptor, global::Zproto.EnumEActionGroupTrackTypeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new ActionGroupTrack(this);
     }
 
-    /// <summary>Field number for the "track_type" field.</summary>
+    /// <summary>Field number for the "trackType" field.</summary>
     public const int TrackTypeFieldNumber = 1;
     private global::Zproto.EActionGroupTrackType trackType_ = global::Zproto.EActionGroupTrackType.EactionTrack;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "action_clip_list" field.</summary>
+    /// <summary>Field number for the "actionClipList" field.</summary>
     public const int ActionClipListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.ActionGroupActionClip> _repeated_actionClipList_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.ActionGroupActionClip.Parser);
@@ -113,7 +113,7 @@ namespace Zproto {
       get { return actionClipList_; }
     }
 
-    /// <summary>Field number for the "face_clip_list" field.</summary>
+    /// <summary>Field number for the "faceClipList" field.</summary>
     public const int FaceClipListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.ActionGroupFaceClip> _repeated_faceClipList_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.ActionGroupFaceClip.Parser);

@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2VuZXJneV9pdGVtLnByb3RvEgZ6cHJvdG8aFnN0cnVfZW5lcmd5",
-            "X2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byK+AQoKRW5lcmd5",
-            "SXRlbRIUCgxlbmVyZ3lfbGltaXQYASABKA0SGgoSZXh0cmFfZW5lcmd5X2xp",
-            "bWl0GAIgASgNEjcKC2VuZXJneV9pbmZvGAMgAygLMiIuenByb3RvLkVuZXJn",
-            "eUl0ZW0uRW5lcmd5SW5mb0VudHJ5GkUKD0VuZXJneUluZm9FbnRyeRILCgNr",
-            "ZXkYASABKA0SIQoFdmFsdWUYAiABKAsyEi56cHJvdG8uRW5lcmd5SW5mbzoC",
-            "OAFiBnByb3RvMw=="));
+            "X2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLlAQoKRW5lcmd5",
+            "SXRlbRIgCgtlbmVyZ3lMaW1pdBgBIAEoDVILZW5lcmd5TGltaXQSKgoQZXh0",
+            "cmFFbmVyZ3lMaW1pdBgCIAEoDVIQZXh0cmFFbmVyZ3lMaW1pdBJCCgplbmVy",
+            "Z3lJbmZvGAMgAygLMiIuenByb3RvLkVuZXJneUl0ZW0uRW5lcmd5SW5mb0Vu",
+            "dHJ5UgplbmVyZ3lJbmZvGkUKD0VuZXJneUluZm9FbnRyeRILCgNrZXkYASAB",
+            "KA0SIQoFdmFsdWUYAiABKAsyEi56cHJvdG8uRW5lcmd5SW5mbzoCOAFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruEnergyInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new EnergyItem(this);
     }
 
-    /// <summary>Field number for the "energy_limit" field.</summary>
+    /// <summary>Field number for the "energyLimit" field.</summary>
     public const int EnergyLimitFieldNumber = 1;
     private uint energyLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "extra_energy_limit" field.</summary>
+    /// <summary>Field number for the "extraEnergyLimit" field.</summary>
     public const int ExtraEnergyLimitFieldNumber = 2;
     private uint extraEnergyLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "energy_info" field.</summary>
+    /// <summary>Field number for the "energyInfo" field.</summary>
     public const int EnergyInfoFieldNumber = 3;
     private static readonly pbc::MapField<uint, global::Zproto.EnergyInfo>.Codec _map_energyInfo_codec
         = new pbc::MapField<uint, global::Zproto.EnergyInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.EnergyInfo.Parser), 26);

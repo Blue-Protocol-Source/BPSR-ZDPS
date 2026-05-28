@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X3F1ZXN0X2hpc3RvcnkucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIn8KDFF1ZXN0SGlzdG9yeRI7CgxzdGVwX2hpc3RvcnkY",
-            "ASADKAsyJS56cHJvdG8uUXVlc3RIaXN0b3J5LlN0ZXBIaXN0b3J5RW50cnka",
-            "MgoQU3RlcEhpc3RvcnlFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiAB",
-            "KA06AjgBYgZwcm90bzM="));
+            "eV9tYXNrLnByb3RvIosBCgxRdWVzdEhpc3RvcnkSRwoLc3RlcEhpc3RvcnkY",
+            "ASADKAsyJS56cHJvdG8uUXVlc3RIaXN0b3J5LlN0ZXBIaXN0b3J5RW50cnlS",
+            "C3N0ZXBIaXN0b3J5GjIKEFN0ZXBIaXN0b3J5RW50cnkSCwoDa2V5GAEgASgN",
+            "Eg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new QuestHistory(this);
     }
 
-    /// <summary>Field number for the "step_history" field.</summary>
+    /// <summary>Field number for the "stepHistory" field.</summary>
     public const int StepHistoryFieldNumber = 1;
     private static readonly pbc::MapField<uint, uint>.Codec _map_stepHistory_codec
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 10);

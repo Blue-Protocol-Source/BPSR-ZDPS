@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X3VwZ3JhZGVfcm9ndWVfZW50cnlfcGFyYW0ucHJvdG8SBnpwcm90",
-            "byI2ChZVcGdyYWRlUm9ndWVFbnRyeVBhcmFtEhAKCG9ial91dWlkGAEgASgD",
-            "EgoKAmlkGAIgASgFYgZwcm90bzM="));
+            "byJCChZVcGdyYWRlUm9ndWVFbnRyeVBhcmFtEhgKB29ialV1aWQYASABKANS",
+            "B29ialV1aWQSDgoCaWQYAiABKAVSAmlkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new UpgradeRogueEntryParam(this);
     }
 
-    /// <summary>Field number for the "obj_uuid" field.</summary>
+    /// <summary>Field number for the "objUuid" field.</summary>
     public const int ObjUuidFieldNumber = 1;
     private long objUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X2hvbWVsYW5kX3JldHJpZXZlX3N1Yl9tb2RlbF9yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8icgofSG9tZWxhbmRSZXRyaWV2ZVN1Yk1vZGVsUmVxdWVz",
-            "dBIWCg5zdHJ1Y3R1cmVfdXVpZBgBIAEoAxIMCgRzbG90GAIgASgFEhcKD3N1",
-            "Yl9tb2RlbF9pbmRleBgDIAEoBRIQCghpc19vdXRlchgEIAEoCGIGcHJvdG8z"));
+            "b3RvEgZ6cHJvdG8imwEKH0hvbWVsYW5kUmV0cmlldmVTdWJNb2RlbFJlcXVl",
+            "c3QSJAoNc3RydWN0dXJlVXVpZBgBIAEoA1INc3RydWN0dXJlVXVpZBISCgRz",
+            "bG90GAIgASgFUgRzbG90EiQKDXN1Yk1vZGVsSW5kZXgYAyABKAVSDXN1Yk1v",
+            "ZGVsSW5kZXgSGAoHaXNPdXRlchgEIAEoCFIHaXNPdXRlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new HomelandRetrieveSubModelRequest(this);
     }
 
-    /// <summary>Field number for the "structure_uuid" field.</summary>
+    /// <summary>Field number for the "structureUuid" field.</summary>
     public const int StructureUuidFieldNumber = 1;
     private long structureUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sub_model_index" field.</summary>
+    /// <summary>Field number for the "subModelIndex" field.</summary>
     public const int SubModelIndexFieldNumber = 3;
     private int subModelIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 4;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

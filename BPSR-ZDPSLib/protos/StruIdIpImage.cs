@@ -24,9 +24,10 @@ namespace Zproto {
     static StruIdIpImageReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X2lkX2lwX2ltYWdlLnByb3RvEgZ6cHJvdG8iVgoJSWRJcEltYWdl",
-            "EhIKCmltYWdlX3R5cGUYASABKAUSEwoLcmV2aWV3X3R5cGUYAiABKAUSDwoH",
-            "Y29zX3VybBgDIAEoCRIPCgdkbnNfdXJsGAQgASgJYgZwcm90bzM="));
+            "ChZzdHJ1X2lkX2lwX2ltYWdlLnByb3RvEgZ6cHJvdG8ieQoJSWRJcEltYWdl",
+            "EhwKCWltYWdlVHlwZRgBIAEoBVIJaW1hZ2VUeXBlEh4KCnJldmlld1R5cGUY",
+            "AiABKAVSCnJldmlld1R5cGUSFgoGY29zVXJsGAMgASgJUgZjb3NVcmwSFgoG",
+            "ZG5zVXJsGAQgASgJUgZkbnNVcmxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new IdIpImage(this);
     }
 
-    /// <summary>Field number for the "image_type" field.</summary>
+    /// <summary>Field number for the "imageType" field.</summary>
     public const int ImageTypeFieldNumber = 1;
     private int imageType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "review_type" field.</summary>
+    /// <summary>Field number for the "reviewType" field.</summary>
     public const int ReviewTypeFieldNumber = 2;
     private int reviewType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cos_url" field.</summary>
+    /// <summary>Field number for the "cosUrl" field.</summary>
     public const int CosUrlFieldNumber = 3;
     private string cosUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dns_url" field.</summary>
+    /// <summary>Field number for the "dnsUrl" field.</summary>
     public const int DnsUrlFieldNumber = 4;
     private string dnsUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

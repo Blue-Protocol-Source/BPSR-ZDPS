@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CidzdHJ1X2dldF9yZXZpZXdfYXZhdGFyX2luZm9fcmVwbHkucHJvdG8SBnpw",
             "cm90bxoWc3RydV9hdmF0YXJfaW5mby5wcm90bxoXZW51bV9lX2Vycm9yX2Nv",
-            "ZGUucHJvdG8iaQoYR2V0UmV2aWV3QXZhdGFySW5mb1JlcGx5EicKC2F2YXRh",
-            "cl9pbmZvGAMgASgLMhIuenByb3RvLkF2YXRhckluZm8SJAoIZXJyX2NvZGUY",
-            "BCABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "ZGUucHJvdG8ifAoYR2V0UmV2aWV3QXZhdGFySW5mb1JlcGx5EjIKCmF2YXRh",
+            "ckluZm8YAyABKAsyEi56cHJvdG8uQXZhdGFySW5mb1IKYXZhdGFySW5mbxIs",
+            "CgdlcnJDb2RlGAQgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAvatarInfoReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new GetReviewAvatarInfoReply(this);
     }
 
-    /// <summary>Field number for the "avatar_info" field.</summary>
+    /// <summary>Field number for the "avatarInfo" field.</summary>
     public const int AvatarInfoFieldNumber = 3;
     private global::Zproto.AvatarInfo avatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

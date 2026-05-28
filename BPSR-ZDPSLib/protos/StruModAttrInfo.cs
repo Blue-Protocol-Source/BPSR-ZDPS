@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X21vZF9hdHRyX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIrIBCgtNb2RBdHRySW5mbxIMCgR0eXBlGAEgASgFEgoK",
-            "AmlkGAIgASgFEg0KBXZhbHVlGAMgASgFEkIKEGVmZmVjdF9wYXJhbWV0ZXIY",
-            "BCADKAsyKC56cHJvdG8uTW9kQXR0ckluZm8uRWZmZWN0UGFyYW1ldGVyRW50",
-            "cnkaNgoURWZmZWN0UGFyYW1ldGVyRW50cnkSCwoDa2V5GAEgASgNEg0KBXZh",
-            "bHVlGAIgASgJOgI4AWIGcHJvdG8z"));
+            "eV9tYXNrLnByb3RvItMBCgtNb2RBdHRySW5mbxISCgR0eXBlGAEgASgFUgR0",
+            "eXBlEg4KAmlkGAIgASgFUgJpZBIUCgV2YWx1ZRgDIAEoBVIFdmFsdWUSUgoP",
+            "ZWZmZWN0UGFyYW1ldGVyGAQgAygLMiguenByb3RvLk1vZEF0dHJJbmZvLkVm",
+            "ZmVjdFBhcmFtZXRlckVudHJ5Ug9lZmZlY3RQYXJhbWV0ZXIaNgoURWZmZWN0",
+            "UGFyYW1ldGVyRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgJOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "effect_parameter" field.</summary>
+    /// <summary>Field number for the "effectParameter" field.</summary>
     public const int EffectParameterFieldNumber = 4;
     private static readonly pbc::MapField<uint, string>.Codec _map_effectParameter_codec
         = new pbc::MapField<uint, string>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForString(18, ""), 34);

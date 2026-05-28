@@ -30,17 +30,19 @@ namespace Zproto {
             "bxoXc3RydV9mYXNoaW9uX2RhdGEucHJvdG8aHXN0cnVfcGVyc29uYWxfem9u",
             "ZV9zaG93LnByb3RvGhpzdHJ1X3Byb2Zlc3Npb25fZGF0YS5wcm90bxoZc3Ry",
             "dV91c2VyX2F0dHJfZGF0YS5wcm90bxoac3RydV91c2VyX3NjZW5lX2luZm8u",
-            "cHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKdAwoUVGVhbU1lbWJlclNv",
-            "Y2lhbERhdGESJQoKYmFzaWNfZGF0YRgBIAEoCzIRLnpwcm90by5CYXNpY0Rh",
-            "dGESJwoLYXZhdGFyX2luZm8YAiABKAsyEi56cHJvdG8uQXZhdGFySW5mbxIj",
-            "CglmYWNlX2RhdGEYAyABKAsyEC56cHJvdG8uRmFjZURhdGESLwoPcHJvZmVz",
-            "c2lvbl9kYXRhGAQgASgLMhYuenByb3RvLlByb2Zlc3Npb25EYXRhEiUKCmVx",
-            "dWlwX2RhdGEYBSABKAsyES56cHJvdG8uRXF1aXBEYXRhEikKDGZhc2hpb25f",
-            "ZGF0YRgGIAEoCzITLnpwcm90by5GYXNoaW9uRGF0YRIuCg91c2VyX3NjZW5l",
-            "X2luZm8YByABKAsyFS56cHJvdG8uVXNlclNjZW5lSW5mbxIsCg51c2VyX2F0",
-            "dHJfZGF0YRgIIAEoCzIULnpwcm90by5Vc2VyQXR0ckRhdGESLwoNcGVyc29u",
-            "YWxfem9uZRgJIAEoCzIYLnpwcm90by5QZXJzb25hbFpvbmVTaG93YgZwcm90",
-            "bzM="));
+            "cHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKGBAoUVGVhbU1lbWJlclNv",
+            "Y2lhbERhdGESLwoJYmFzaWNEYXRhGAEgASgLMhEuenByb3RvLkJhc2ljRGF0",
+            "YVIJYmFzaWNEYXRhEjIKCmF2YXRhckluZm8YAiABKAsyEi56cHJvdG8uQXZh",
+            "dGFySW5mb1IKYXZhdGFySW5mbxIsCghmYWNlRGF0YRgDIAEoCzIQLnpwcm90",
+            "by5GYWNlRGF0YVIIZmFjZURhdGESPgoOcHJvZmVzc2lvbkRhdGEYBCABKAsy",
+            "Fi56cHJvdG8uUHJvZmVzc2lvbkRhdGFSDnByb2Zlc3Npb25EYXRhEi8KCWVx",
+            "dWlwRGF0YRgFIAEoCzIRLnpwcm90by5FcXVpcERhdGFSCWVxdWlwRGF0YRI1",
+            "CgtmYXNoaW9uRGF0YRgGIAEoCzITLnpwcm90by5GYXNoaW9uRGF0YVILZmFz",
+            "aGlvbkRhdGESOwoNdXNlclNjZW5lSW5mbxgHIAEoCzIVLnpwcm90by5Vc2Vy",
+            "U2NlbmVJbmZvUg11c2VyU2NlbmVJbmZvEjgKDHVzZXJBdHRyRGF0YRgIIAEo",
+            "CzIULnpwcm90by5Vc2VyQXR0ckRhdGFSDHVzZXJBdHRyRGF0YRI8CgxwZXJz",
+            "b25hbFpvbmUYCSABKAsyGC56cHJvdG8uUGVyc29uYWxab25lU2hvd1IMcGVy",
+            "c29uYWxab25lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAvatarInfoReflection.Descriptor, global::Zproto.StruBasicDataReflection.Descriptor, global::Zproto.StruEquipDataReflection.Descriptor, global::Zproto.StruFaceDataReflection.Descriptor, global::Zproto.StruFashionDataReflection.Descriptor, global::Zproto.StruPersonalZoneShowReflection.Descriptor, global::Zproto.StruProfessionDataReflection.Descriptor, global::Zproto.StruUserAttrDataReflection.Descriptor, global::Zproto.StruUserSceneInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -104,7 +106,7 @@ namespace Zproto {
       return new TeamMemberSocialData(this);
     }
 
-    /// <summary>Field number for the "basic_data" field.</summary>
+    /// <summary>Field number for the "basicData" field.</summary>
     public const int BasicDataFieldNumber = 1;
     private global::Zproto.BasicData basicData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "avatar_info" field.</summary>
+    /// <summary>Field number for the "avatarInfo" field.</summary>
     public const int AvatarInfoFieldNumber = 2;
     private global::Zproto.AvatarInfo avatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "face_data" field.</summary>
+    /// <summary>Field number for the "faceData" field.</summary>
     public const int FaceDataFieldNumber = 3;
     private global::Zproto.FaceData faceData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "profession_data" field.</summary>
+    /// <summary>Field number for the "professionData" field.</summary>
     public const int ProfessionDataFieldNumber = 4;
     private global::Zproto.ProfessionData professionData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +154,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "equip_data" field.</summary>
+    /// <summary>Field number for the "equipData" field.</summary>
     public const int EquipDataFieldNumber = 5;
     private global::Zproto.EquipData equipData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -164,7 +166,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fashion_data" field.</summary>
+    /// <summary>Field number for the "fashionData" field.</summary>
     public const int FashionDataFieldNumber = 6;
     private global::Zproto.FashionData fashionData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -176,7 +178,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "user_scene_info" field.</summary>
+    /// <summary>Field number for the "userSceneInfo" field.</summary>
     public const int UserSceneInfoFieldNumber = 7;
     private global::Zproto.UserSceneInfo userSceneInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -188,7 +190,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "user_attr_data" field.</summary>
+    /// <summary>Field number for the "userAttrData" field.</summary>
     public const int UserAttrDataFieldNumber = 8;
     private global::Zproto.UserAttrData userAttrData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -200,7 +202,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "personal_zone" field.</summary>
+    /// <summary>Field number for the "personalZone" field.</summary>
     public const int PersonalZoneFieldNumber = 9;
     private global::Zproto.PersonalZoneShow personalZone_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

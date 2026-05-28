@@ -26,11 +26,13 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2NyZWF0ZV9jaGFyX3JlcXVlc3QucHJvdG8SBnpwcm90bxoWc3Ry",
             "dV9kZXZpY2VfaW5mby5wcm90bxoXc3RydV9mYWNlX2RhdGFfZGIucHJvdG8i",
-            "0gEKEUNyZWF0ZUNoYXJSZXF1ZXN0Eg0KBXRva2VuGAQgASgJEgwKBG5hbWUY",
-            "BSABKAkSDgoGZ2VuZGVyGAYgASgFEhMKC3ZfYm9keV9zaXplGAcgASgFEiUK",
-            "CWZhY2VfZGF0YRgJIAEoCzISLnpwcm90by5GYWNlRGF0YURiEicKC2Rldmlj",
-            "ZV9pbmZvGAsgASgLMhIuenByb3RvLkRldmljZUluZm8SGgoSaW5pdF9wcm9m",
-            "ZXNzaW9uX2lkGA0gASgFEg8KB2FyZWFfaWQYDiABKAViBnByb3RvMw=="));
+            "mwIKEUNyZWF0ZUNoYXJSZXF1ZXN0EhQKBXRva2VuGAQgASgJUgV0b2tlbhIS",
+            "CgRuYW1lGAUgASgJUgRuYW1lEhYKBmdlbmRlchgGIAEoBVIGZ2VuZGVyEhwK",
+            "CXZCb2R5U2l6ZRgHIAEoBVIJdkJvZHlTaXplEi4KCGZhY2VEYXRhGAkgASgL",
+            "MhIuenByb3RvLkZhY2VEYXRhRGJSCGZhY2VEYXRhEjIKCmRldmljZUluZm8Y",
+            "CyABKAsyEi56cHJvdG8uRGV2aWNlSW5mb1IKZGV2aWNlSW5mbxIqChBpbml0",
+            "UHJvZmVzc2lvbklkGA0gASgFUhBpbml0UHJvZmVzc2lvbklkEhYKBmFyZWFJ",
+            "ZBgOIAEoBVIGYXJlYUlkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDeviceInfoReflection.Descriptor, global::Zproto.StruFaceDataDbReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -129,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "v_body_size" field.</summary>
+    /// <summary>Field number for the "vBodySize" field.</summary>
     public const int VBodySizeFieldNumber = 7;
     private int vBodySize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,7 +143,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "face_data" field.</summary>
+    /// <summary>Field number for the "faceData" field.</summary>
     public const int FaceDataFieldNumber = 9;
     private global::Zproto.FaceDataDb faceData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,7 +155,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "device_info" field.</summary>
+    /// <summary>Field number for the "deviceInfo" field.</summary>
     public const int DeviceInfoFieldNumber = 11;
     private global::Zproto.DeviceInfo deviceInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -165,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "init_profession_id" field.</summary>
+    /// <summary>Field number for the "initProfessionId" field.</summary>
     public const int InitProfessionIdFieldNumber = 13;
     private int initProfessionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -177,7 +179,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "area_id" field.</summary>
+    /// <summary>Field number for the "areaId" field.</summary>
     public const int AreaIdFieldNumber = 14;
     private int areaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

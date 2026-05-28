@@ -27,15 +27,17 @@ namespace Zproto {
             "ChVzdHJ1X21hdGNoX2luZm8ucHJvdG8SBnpwcm90bxoXZW51bV9lX2Vycm9y",
             "X2NvZGUucHJvdG8aGWVudW1fZV9tYXRjaF9zdGF0dXMucHJvdG8aGXN0cnVf",
             "bWF0Y2hfa2V5X2luZm8ucHJvdG8aHHN0cnVfbWF0Y2hfcGxheWVyX2luZm8u",
-            "cHJvdG8i+wIKCU1hdGNoSW5mbxIqCgxtYXRjaF9zdGF0dXMYAiABKA4yFC56",
-            "cHJvdG8uRU1hdGNoU3RhdHVzEhIKCm1hdGNoX3RpbWUYAyABKAMSQQoRbWF0",
-            "Y2hfcGxheWVyX2luZm8YBSADKAsyJi56cHJvdG8uTWF0Y2hJbmZvLk1hdGNo",
-            "UGxheWVySW5mb0VudHJ5EhMKC21hdGNoX3Rva2VuGAYgASgJEhgKEG1hdGNo",
-            "X3JlYWR5X3RpbWUYByABKAMSLAoObWF0Y2hfa2V5X2luZm8YCCABKAsyFC56",
-            "cHJvdG8uTWF0Y2hLZXlJbmZvEhcKD21hdGNoX2dyYWluX2tleRgJIAEoCRIk",
-            "CghlcnJfY29kZRgKIAEoDjISLnpwcm90by5FRXJyb3JDb2RlGk8KFE1hdGNo",
-            "UGxheWVySW5mb0VudHJ5EgsKA2tleRgBIAEoAxImCgV2YWx1ZRgCIAEoCzIX",
-            "Lnpwcm90by5NYXRjaFBsYXllckluZm86AjgBYgZwcm90bzM="));
+            "cHJvdG8i2gMKCU1hdGNoSW5mbxI2CgttYXRjaFN0YXR1cxgCIAEoDjIULnpw",
+            "cm90by5FTWF0Y2hTdGF0dXNSC21hdGNoU3RhdHVzEhwKCW1hdGNoVGltZRgD",
+            "IAEoA1IJbWF0Y2hUaW1lElAKD21hdGNoUGxheWVySW5mbxgFIAMoCzImLnpw",
+            "cm90by5NYXRjaEluZm8uTWF0Y2hQbGF5ZXJJbmZvRW50cnlSD21hdGNoUGxh",
+            "eWVySW5mbxIeCgptYXRjaFRva2VuGAYgASgJUgptYXRjaFRva2VuEiYKDm1h",
+            "dGNoUmVhZHlUaW1lGAcgASgDUg5tYXRjaFJlYWR5VGltZRI4CgxtYXRjaEtl",
+            "eUluZm8YCCABKAsyFC56cHJvdG8uTWF0Y2hLZXlJbmZvUgxtYXRjaEtleUlu",
+            "Zm8SJAoNbWF0Y2hHcmFpbktleRgJIAEoCVINbWF0Y2hHcmFpbktleRIsCgdl",
+            "cnJDb2RlGAogASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGUaTwoU",
+            "TWF0Y2hQbGF5ZXJJbmZvRW50cnkSCwoDa2V5GAEgASgDEiYKBXZhbHVlGAIg",
+            "ASgLMhcuenByb3RvLk1hdGNoUGxheWVySW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.EnumEMatchStatusReflection.Descriptor, global::Zproto.StruMatchKeyInfoReflection.Descriptor, global::Zproto.StruMatchPlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +100,7 @@ namespace Zproto {
       return new MatchInfo(this);
     }
 
-    /// <summary>Field number for the "match_status" field.</summary>
+    /// <summary>Field number for the "matchStatus" field.</summary>
     public const int MatchStatusFieldNumber = 2;
     private global::Zproto.EMatchStatus matchStatus_ = global::Zproto.EMatchStatus.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_time" field.</summary>
+    /// <summary>Field number for the "matchTime" field.</summary>
     public const int MatchTimeFieldNumber = 3;
     private long matchTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_player_info" field.</summary>
+    /// <summary>Field number for the "matchPlayerInfo" field.</summary>
     public const int MatchPlayerInfoFieldNumber = 5;
     private static readonly pbc::MapField<long, global::Zproto.MatchPlayerInfo>.Codec _map_matchPlayerInfo_codec
         = new pbc::MapField<long, global::Zproto.MatchPlayerInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.MatchPlayerInfo.Parser), 42);
@@ -133,7 +135,7 @@ namespace Zproto {
       get { return matchPlayerInfo_; }
     }
 
-    /// <summary>Field number for the "match_token" field.</summary>
+    /// <summary>Field number for the "matchToken" field.</summary>
     public const int MatchTokenFieldNumber = 6;
     private string matchToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -145,7 +147,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_ready_time" field.</summary>
+    /// <summary>Field number for the "matchReadyTime" field.</summary>
     public const int MatchReadyTimeFieldNumber = 7;
     private long matchReadyTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -157,7 +159,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_key_info" field.</summary>
+    /// <summary>Field number for the "matchKeyInfo" field.</summary>
     public const int MatchKeyInfoFieldNumber = 8;
     private global::Zproto.MatchKeyInfo matchKeyInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,7 +171,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_grain_key" field.</summary>
+    /// <summary>Field number for the "matchGrainKey" field.</summary>
     public const int MatchGrainKeyFieldNumber = 9;
     private string matchGrainKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -181,7 +183,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 10;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

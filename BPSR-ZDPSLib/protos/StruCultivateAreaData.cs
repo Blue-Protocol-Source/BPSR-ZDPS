@@ -27,21 +27,23 @@ namespace Zproto {
             "Ch5zdHJ1X2N1bHRpdmF0ZV9hcmVhX2RhdGEucHJvdG8SBnpwcm90bxoic3Ry",
             "dV9jdWx0aXZhdGVfYmlnX25vZGVfZGF0YS5wcm90bxolc3RydV9jdWx0aXZh",
             "dGVfbWlkZGxlX25vZGVfZGF0YS5wcm90bxolc3RydV9jdWx0aXZhdGVfbm9y",
-            "bWFsX25vZGVfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIucE",
-            "ChFDdWx0aXZhdGVBcmVhRGF0YRJYChljdWx0aXZhdGVfbm9ybWFsX25vZGVf",
-            "bWFwGAEgAygLMjUuenByb3RvLkN1bHRpdmF0ZUFyZWFEYXRhLkN1bHRpdmF0",
-            "ZU5vcm1hbE5vZGVNYXBFbnRyeRJYChljdWx0aXZhdGVfbWlkZGxlX25vZGVf",
-            "bWFwGAIgAygLMjUuenByb3RvLkN1bHRpdmF0ZUFyZWFEYXRhLkN1bHRpdmF0",
-            "ZU1pZGRsZU5vZGVNYXBFbnRyeRJSChZjdWx0aXZhdGVfYmlnX25vZGVfbWFw",
-            "GAMgAygLMjIuenByb3RvLkN1bHRpdmF0ZUFyZWFEYXRhLkN1bHRpdmF0ZUJp",
-            "Z05vZGVNYXBFbnRyeRIdChVhY3RpdmF0ZV9lZmZlY3Rfc2NvcmUYBCABKAUS",
-            "EQoJaXNfYWN0aXZlGAUgASgIGl4KG0N1bHRpdmF0ZU5vcm1hbE5vZGVNYXBF",
-            "bnRyeRILCgNrZXkYASABKAUSLgoFdmFsdWUYAiABKAsyHy56cHJvdG8uQ3Vs",
-            "dGl2YXRlTm9ybWFsTm9kZURhdGE6AjgBGl4KG0N1bHRpdmF0ZU1pZGRsZU5v",
-            "ZGVNYXBFbnRyeRILCgNrZXkYASABKAUSLgoFdmFsdWUYAiABKAsyHy56cHJv",
-            "dG8uQ3VsdGl2YXRlTWlkZGxlTm9kZURhdGE6AjgBGlgKGEN1bHRpdmF0ZUJp",
-            "Z05vZGVNYXBFbnRyeRILCgNrZXkYASABKAUSKwoFdmFsdWUYAiABKAsyHC56",
-            "cHJvdG8uQ3VsdGl2YXRlQmlnTm9kZURhdGE6AjgBYgZwcm90bzM="));
+            "bWFsX25vZGVfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIr8F",
+            "ChFDdWx0aXZhdGVBcmVhRGF0YRJtChZjdWx0aXZhdGVOb3JtYWxOb2RlTWFw",
+            "GAEgAygLMjUuenByb3RvLkN1bHRpdmF0ZUFyZWFEYXRhLkN1bHRpdmF0ZU5v",
+            "cm1hbE5vZGVNYXBFbnRyeVIWY3VsdGl2YXRlTm9ybWFsTm9kZU1hcBJtChZj",
+            "dWx0aXZhdGVNaWRkbGVOb2RlTWFwGAIgAygLMjUuenByb3RvLkN1bHRpdmF0",
+            "ZUFyZWFEYXRhLkN1bHRpdmF0ZU1pZGRsZU5vZGVNYXBFbnRyeVIWY3VsdGl2",
+            "YXRlTWlkZGxlTm9kZU1hcBJkChNjdWx0aXZhdGVCaWdOb2RlTWFwGAMgAygL",
+            "MjIuenByb3RvLkN1bHRpdmF0ZUFyZWFEYXRhLkN1bHRpdmF0ZUJpZ05vZGVN",
+            "YXBFbnRyeVITY3VsdGl2YXRlQmlnTm9kZU1hcBIwChNhY3RpdmF0ZUVmZmVj",
+            "dFNjb3JlGAQgASgFUhNhY3RpdmF0ZUVmZmVjdFNjb3JlEhoKCGlzQWN0aXZl",
+            "GAUgASgIUghpc0FjdGl2ZRpeChtDdWx0aXZhdGVOb3JtYWxOb2RlTWFwRW50",
+            "cnkSCwoDa2V5GAEgASgFEi4KBXZhbHVlGAIgASgLMh8uenByb3RvLkN1bHRp",
+            "dmF0ZU5vcm1hbE5vZGVEYXRhOgI4ARpeChtDdWx0aXZhdGVNaWRkbGVOb2Rl",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgFEi4KBXZhbHVlGAIgASgLMh8uenByb3Rv",
+            "LkN1bHRpdmF0ZU1pZGRsZU5vZGVEYXRhOgI4ARpYChhDdWx0aXZhdGVCaWdO",
+            "b2RlTWFwRW50cnkSCwoDa2V5GAEgASgFEisKBXZhbHVlGAIgASgLMhwuenBy",
+            "b3RvLkN1bHRpdmF0ZUJpZ05vZGVEYXRhOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCultivateBigNodeDataReflection.Descriptor, global::Zproto.StruCultivateMiddleNodeDataReflection.Descriptor, global::Zproto.StruCultivateNormalNodeDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +103,7 @@ namespace Zproto {
       return new CultivateAreaData(this);
     }
 
-    /// <summary>Field number for the "cultivate_normal_node_map" field.</summary>
+    /// <summary>Field number for the "cultivateNormalNodeMap" field.</summary>
     public const int CultivateNormalNodeMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.CultivateNormalNodeData>.Codec _map_cultivateNormalNodeMap_codec
         = new pbc::MapField<int, global::Zproto.CultivateNormalNodeData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CultivateNormalNodeData.Parser), 10);
@@ -112,7 +114,7 @@ namespace Zproto {
       get { return cultivateNormalNodeMap_; }
     }
 
-    /// <summary>Field number for the "cultivate_middle_node_map" field.</summary>
+    /// <summary>Field number for the "cultivateMiddleNodeMap" field.</summary>
     public const int CultivateMiddleNodeMapFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.CultivateMiddleNodeData>.Codec _map_cultivateMiddleNodeMap_codec
         = new pbc::MapField<int, global::Zproto.CultivateMiddleNodeData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CultivateMiddleNodeData.Parser), 18);
@@ -123,7 +125,7 @@ namespace Zproto {
       get { return cultivateMiddleNodeMap_; }
     }
 
-    /// <summary>Field number for the "cultivate_big_node_map" field.</summary>
+    /// <summary>Field number for the "cultivateBigNodeMap" field.</summary>
     public const int CultivateBigNodeMapFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.CultivateBigNodeData>.Codec _map_cultivateBigNodeMap_codec
         = new pbc::MapField<int, global::Zproto.CultivateBigNodeData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CultivateBigNodeData.Parser), 26);
@@ -134,7 +136,7 @@ namespace Zproto {
       get { return cultivateBigNodeMap_; }
     }
 
-    /// <summary>Field number for the "activate_effect_score" field.</summary>
+    /// <summary>Field number for the "activateEffectScore" field.</summary>
     public const int ActivateEffectScoreFieldNumber = 4;
     private int activateEffectScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -146,7 +148,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_active" field.</summary>
+    /// <summary>Field number for the "isActive" field.</summary>
     public const int IsActiveFieldNumber = 5;
     private bool isActive_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

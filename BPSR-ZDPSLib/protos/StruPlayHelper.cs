@@ -25,13 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X3BsYXlfaGVscGVyLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byKMAgoKUGxheUhlbHBlchJKChVkaXNwbGF5ZWRfaGVscGVy",
-            "X2xpc3QYASADKAsyKy56cHJvdG8uUGxheUhlbHBlci5EaXNwbGF5ZWRIZWxw",
-            "ZXJMaXN0RW50cnkSPwoPY29tcGxldGVkX2d1aWRlGAIgAygLMiYuenByb3Rv",
-            "LlBsYXlIZWxwZXIuQ29tcGxldGVkR3VpZGVFbnRyeRo6ChhEaXNwbGF5ZWRI",
-            "ZWxwZXJMaXN0RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgIOgI4",
-            "ARo1ChNDb21wbGV0ZWRHdWlkZUVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1",
-            "ZRgCIAEoCDoCOAFiBnByb3RvMw=="));
+            "bWFzay5wcm90byKuAgoKUGxheUhlbHBlchJdChNkaXNwbGF5ZWRIZWxwZXJM",
+            "aXN0GAEgAygLMisuenByb3RvLlBsYXlIZWxwZXIuRGlzcGxheWVkSGVscGVy",
+            "TGlzdEVudHJ5UhNkaXNwbGF5ZWRIZWxwZXJMaXN0Ek4KDmNvbXBsZXRlZEd1",
+            "aWRlGAIgAygLMiYuenByb3RvLlBsYXlIZWxwZXIuQ29tcGxldGVkR3VpZGVF",
+            "bnRyeVIOY29tcGxldGVkR3VpZGUaOgoYRGlzcGxheWVkSGVscGVyTGlzdEVu",
+            "dHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoCDoCOAEaNQoTQ29tcGxl",
+            "dGVkR3VpZGVFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAg6AjgB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new PlayHelper(this);
     }
 
-    /// <summary>Field number for the "displayed_helper_list" field.</summary>
+    /// <summary>Field number for the "displayedHelperList" field.</summary>
     public const int DisplayedHelperListFieldNumber = 1;
     private static readonly pbc::MapField<int, bool>.Codec _map_displayedHelperList_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 10);
@@ -99,7 +100,7 @@ namespace Zproto {
       get { return displayedHelperList_; }
     }
 
-    /// <summary>Field number for the "completed_guide" field.</summary>
+    /// <summary>Field number for the "completedGuide" field.</summary>
     public const int CompletedGuideFieldNumber = 2;
     private static readonly pbc::MapField<int, bool>.Codec _map_completedGuide_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 18);

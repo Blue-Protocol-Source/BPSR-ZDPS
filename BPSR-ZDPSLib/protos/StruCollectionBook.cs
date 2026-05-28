@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X2NvbGxlY3Rpb25fYm9vay5wcm90bxIGenByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8igQEKDkNvbGxlY3Rpb25Cb29rEjwKDG1vZF9ib29r",
-            "X21hcBgBIAMoCzImLnpwcm90by5Db2xsZWN0aW9uQm9vay5Nb2RCb29rTWFw",
-            "RW50cnkaMQoPTW9kQm9va01hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1",
-            "ZRgCIAEoCDoCOAFiBnByb3RvMw=="));
+            "cnR5X21hc2sucHJvdG8iiwEKDkNvbGxlY3Rpb25Cb29rEkYKCm1vZEJvb2tN",
+            "YXAYASADKAsyJi56cHJvdG8uQ29sbGVjdGlvbkJvb2suTW9kQm9va01hcEVu",
+            "dHJ5Ugptb2RCb29rTWFwGjEKD01vZEJvb2tNYXBFbnRyeRILCgNrZXkYASAB",
+            "KA0SDQoFdmFsdWUYAiABKAg6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new CollectionBook(this);
     }
 
-    /// <summary>Field number for the "mod_book_map" field.</summary>
+    /// <summary>Field number for the "modBookMap" field.</summary>
     public const int ModBookMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, bool>.Codec _map_modBookMap_codec
         = new pbc::MapField<uint, bool>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForBool(16, false), 10);

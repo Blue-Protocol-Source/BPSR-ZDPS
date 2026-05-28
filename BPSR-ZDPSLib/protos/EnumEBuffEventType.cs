@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEBuffEventTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxlbnVtX2VfYnVmZl9ldmVudF90eXBlLnByb3RvEgZ6cHJvdG8qsRUKDkVC",
+            "ChxlbnVtX2VfYnVmZl9ldmVudF90eXBlLnByb3RvEgZ6cHJvdG8q1BUKDkVC",
             "dWZmRXZlbnRUeXBlEhQKEEJ1ZmZFdmVudFVua25vd24QABISCg5CdWZmRXZl",
             "bnRBZGRUbxABEhMKD0J1ZmZFdmVudFJlbW92ZRACEhQKEEJ1ZmZFdmVudFJl",
             "cGxhY2UQAxISCg5CdWZmRXZlbnRUaW1lchAEEhcKE0J1ZmZFdmVudFN0YWNr",
@@ -81,11 +81,12 @@ namespace Zproto {
             "FwoTQnVmZkV2ZW50UGxheUFjdGlvbhBcEhYKEkJ1ZmZFdmVudFBsYXlFbW90",
             "ZRBdEiEKHUJ1ZmZFdmVudFplcm9IcFN0b3BTaGFwZXNoaWZ0EF4SGwoXQnVm",
             "ZkV2ZW50UG9zaXRpb25DaGFuZ2UQXxIdChlCdWZmRXZlbnRSb2d1ZVJhbmRv",
-            "bUVudHJ5EGASHgoaQnVmZkV2ZW50UGFyYWRlSW5kZXhDaGFuZ2UQYRITCg5C",
-            "dWZmRXZlbnRDaGVjaxDpBxIXChJCdWZmRXZlbnRDdXN0b21pemUQ6gcSIAob",
-            "QnVmZkV2ZW50U2hhcGVzaGlmdEVuZEV2ZW50EOsHEhkKFEJ1ZmZFdmVudEF0",
-            "dHJSZWZyZXNoEOwHEiIKHUJ1ZmZFdmVudE1vbml0b3JUZWFtS2lsbEFjdG9y",
-            "EO0HEhwKF0J1ZmZFdmVudFNwZWNpYWxFZmZlY3RzEJFOYgZwcm90bzM="));
+            "bUVudHJ5EGASHgoaQnVmZkV2ZW50UGFyYWRlSW5kZXhDaGFuZ2UQYRIhCh1C",
+            "dWZmRXZlbnRWYW5pdHlQZXRTdGF0ZUNoYW5nZRBiEhMKDkJ1ZmZFdmVudENo",
+            "ZWNrEOkHEhcKEkJ1ZmZFdmVudEN1c3RvbWl6ZRDqBxIgChtCdWZmRXZlbnRT",
+            "aGFwZXNoaWZ0RW5kRXZlbnQQ6wcSGQoUQnVmZkV2ZW50QXR0clJlZnJlc2gQ",
+            "7AcSIgodQnVmZkV2ZW50TW9uaXRvclRlYW1LaWxsQWN0b3IQ7QcSHAoXQnVm",
+            "ZkV2ZW50U3BlY2lhbEVmZmVjdHMQkU5iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EBuffEventType), }, null, null));
@@ -184,6 +185,7 @@ namespace Zproto {
     [pbr::OriginalName("BuffEventPositionChange")] BuffEventPositionChange = 95,
     [pbr::OriginalName("BuffEventRogueRandomEntry")] BuffEventRogueRandomEntry = 96,
     [pbr::OriginalName("BuffEventParadeIndexChange")] BuffEventParadeIndexChange = 97,
+    [pbr::OriginalName("BuffEventVanityPetStateChange")] BuffEventVanityPetStateChange = 98,
     [pbr::OriginalName("BuffEventCheck")] BuffEventCheck = 1001,
     [pbr::OriginalName("BuffEventCustomize")] BuffEventCustomize = 1002,
     [pbr::OriginalName("BuffEventShapeshiftEndEvent")] BuffEventShapeshiftEndEvent = 1003,

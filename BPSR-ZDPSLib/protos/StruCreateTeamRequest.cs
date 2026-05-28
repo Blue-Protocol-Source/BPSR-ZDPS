@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2NyZWF0ZV90ZWFtX3JlcXVlc3QucHJvdG8SBnpwcm90bxodZW51",
-            "bV9lX3RlYW1fbWVtYmVyX3R5cGUucHJvdG8imgEKEUNyZWF0ZVRlYW1SZXF1",
-            "ZXN0Eg8KB2NoYXJfaWQYAiABKAMSEQoJdGFyZ2V0X2lkGAMgASgNEhUKDWlz",
-            "X2F1dG9fbWF0Y2gYBCABKAgSFwoPaXNfc2hvd19pbl9oYWxsGAUgASgIEjEK",
-            "EHRlYW1fbWVtYmVyX3R5cGUYBiABKA4yFy56cHJvdG8uRVRlYW1NZW1iZXJU",
-            "eXBlYgZwcm90bzM="));
+            "bV9lX3RlYW1fbWVtYmVyX3R5cGUucHJvdG8izgEKEUNyZWF0ZVRlYW1SZXF1",
+            "ZXN0EhYKBmNoYXJJZBgCIAEoA1IGY2hhcklkEhoKCHRhcmdldElkGAMgASgN",
+            "Ugh0YXJnZXRJZBIgCgtpc0F1dG9NYXRjaBgEIAEoCFILaXNBdXRvTWF0Y2gS",
+            "IgoMaXNTaG93SW5IYWxsGAUgASgIUgxpc1Nob3dJbkhhbGwSPwoOdGVhbU1l",
+            "bWJlclR5cGUYBiABKA4yFy56cHJvdG8uRVRlYW1NZW1iZXJUeXBlUg50ZWFt",
+            "TWVtYmVyVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETeamMemberTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new CreateTeamRequest(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 2;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 3;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_auto_match" field.</summary>
+    /// <summary>Field number for the "isAutoMatch" field.</summary>
     public const int IsAutoMatchFieldNumber = 4;
     private bool isAutoMatch_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_show_in_hall" field.</summary>
+    /// <summary>Field number for the "isShowInHall" field.</summary>
     public const int IsShowInHallFieldNumber = 5;
     private bool isShowInHall_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "team_member_type" field.</summary>
+    /// <summary>Field number for the "teamMemberType" field.</summary>
     public const int TeamMemberTypeFieldNumber = 6;
     private global::Zproto.ETeamMemberType teamMemberType_ = global::Zproto.ETeamMemberType.Five;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

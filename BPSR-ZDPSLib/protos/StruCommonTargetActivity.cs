@@ -26,16 +26,17 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X2NvbW1vbl90YXJnZXRfYWN0aXZpdHkucHJvdG8SBnpwcm90bxom",
             "c3RydV9jb21tb25fdGFyZ2V0X2FjdGl2aXR5X2luZm8ucHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byLaAQoUQ29tbW9uVGFyZ2V0QWN0aXZpdHkSXwob",
-            "Y29tbW9uX3RhcmdldF9hY3Rpdml0eV9saXN0GAEgAygLMjouenByb3RvLkNv",
-            "bW1vblRhcmdldEFjdGl2aXR5LkNvbW1vblRhcmdldEFjdGl2aXR5TGlzdEVu",
-            "dHJ5GmEKHUNvbW1vblRhcmdldEFjdGl2aXR5TGlzdEVudHJ5EgsKA2tleRgB",
+            "ZGlydHlfbWFzay5wcm90byKHAgoUQ29tbW9uVGFyZ2V0QWN0aXZpdHkSdgoY",
+            "Y29tbW9uVGFyZ2V0QWN0aXZpdHlMaXN0GAEgAygLMjouenByb3RvLkNvbW1v",
+            "blRhcmdldEFjdGl2aXR5LkNvbW1vblRhcmdldEFjdGl2aXR5TGlzdEVudHJ5",
+            "Uhhjb21tb25UYXJnZXRBY3Rpdml0eUxpc3QSFAoFaXNFbmQYAiABKAhSBWlz",
+            "RW5kGmEKHUNvbW1vblRhcmdldEFjdGl2aXR5TGlzdEVudHJ5EgsKA2tleRgB",
             "IAEoDRIvCgV2YWx1ZRgCIAEoCzIgLnpwcm90by5Db21tb25UYXJnZXRBY3Rp",
             "dml0eUluZm86AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommonTargetActivityInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CommonTargetActivity), global::Zproto.CommonTargetActivity.Parser, new[]{ "CommonTargetActivityList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CommonTargetActivity), global::Zproto.CommonTargetActivity.Parser, new[]{ "CommonTargetActivityList", "IsEnd" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -78,6 +79,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommonTargetActivity(CommonTargetActivity other) : this() {
       commonTargetActivityList_ = other.commonTargetActivityList_.Clone();
+      isEnd_ = other.isEnd_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,7 +89,7 @@ namespace Zproto {
       return new CommonTargetActivity(this);
     }
 
-    /// <summary>Field number for the "common_target_activity_list" field.</summary>
+    /// <summary>Field number for the "commonTargetActivityList" field.</summary>
     public const int CommonTargetActivityListFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.CommonTargetActivityInfo>.Codec _map_commonTargetActivityList_codec
         = new pbc::MapField<uint, global::Zproto.CommonTargetActivityInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CommonTargetActivityInfo.Parser), 10);
@@ -96,6 +98,18 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<uint, global::Zproto.CommonTargetActivityInfo> CommonTargetActivityList {
       get { return commonTargetActivityList_; }
+    }
+
+    /// <summary>Field number for the "isEnd" field.</summary>
+    public const int IsEndFieldNumber = 2;
+    private bool isEnd_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsEnd {
+      get { return isEnd_; }
+      set {
+        isEnd_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,6 +128,7 @@ namespace Zproto {
         return true;
       }
       if (!CommonTargetActivityList.Equals(other.CommonTargetActivityList)) return false;
+      if (IsEnd != other.IsEnd) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -122,6 +137,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= CommonTargetActivityList.GetHashCode();
+      if (IsEnd != false) hash ^= IsEnd.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -141,6 +157,10 @@ namespace Zproto {
       output.WriteRawMessage(this);
     #else
       commonTargetActivityList_.WriteTo(output, _map_commonTargetActivityList_codec);
+      if (IsEnd != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsEnd);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -152,6 +172,10 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       commonTargetActivityList_.WriteTo(ref output, _map_commonTargetActivityList_codec);
+      if (IsEnd != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsEnd);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -163,6 +187,9 @@ namespace Zproto {
     public int CalculateSize() {
       int size = 0;
       size += commonTargetActivityList_.CalculateSize(_map_commonTargetActivityList_codec);
+      if (IsEnd != false) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -176,6 +203,9 @@ namespace Zproto {
         return;
       }
       commonTargetActivityList_.MergeFrom(other.commonTargetActivityList_);
+      if (other.IsEnd != false) {
+        IsEnd = other.IsEnd;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -199,6 +229,10 @@ namespace Zproto {
             commonTargetActivityList_.AddEntriesFrom(input, _map_commonTargetActivityList_codec);
             break;
           }
+          case 16: {
+            IsEnd = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -220,6 +254,10 @@ namespace Zproto {
             break;
           case 10: {
             commonTargetActivityList_.AddEntriesFrom(ref input, _map_commonTargetActivityList_codec);
+            break;
+          }
+          case 16: {
+            IsEnd = input.ReadBool();
             break;
           }
         }

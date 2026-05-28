@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3N0cnVjdHVyZV9zdWJfbW9kZWxfZGF0YS5wcm90bxIGenByb3Rv",
-            "GiNzdHJ1X3N0cnVjdHVyZV9zdWJfbW9kZWxfaW5mby5wcm90byJPChVTdHJ1",
-            "Y3R1cmVTdWJNb2RlbERhdGESNgoPc3ViX21vZGVsX2luZm9zGAEgAygLMh0u",
-            "enByb3RvLlN0cnVjdHVyZVN1Yk1vZGVsSW5mb2IGcHJvdG8z"));
+            "GiNzdHJ1X3N0cnVjdHVyZV9zdWJfbW9kZWxfaW5mby5wcm90byJcChVTdHJ1",
+            "Y3R1cmVTdWJNb2RlbERhdGESQwoNc3ViTW9kZWxJbmZvcxgBIAMoCzIdLnpw",
+            "cm90by5TdHJ1Y3R1cmVTdWJNb2RlbEluZm9SDXN1Yk1vZGVsSW5mb3NiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStructureSubModelInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new StructureSubModelData(this);
     }
 
-    /// <summary>Field number for the "sub_model_infos" field.</summary>
+    /// <summary>Field number for the "subModelInfos" field.</summary>
     public const int SubModelInfosFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.StructureSubModelInfo> _repeated_subModelInfos_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.StructureSubModelInfo.Parser);

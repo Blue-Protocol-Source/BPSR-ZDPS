@@ -24,9 +24,10 @@ namespace Zproto {
     static StruMahjongSettleMessageReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X21haGpvbmdfc2V0dGxlX21lc3NhZ2UucHJvdG8SBnpwcm90byJD",
-            "ChRNYWhqb25nU2V0dGxlTWVzc2FnZRIVCg1jb25maXJtX2luZGV4GAEgASgF",
-            "EhQKDGNvbmZpcm1fdGltZRgCIAEoA2IGcHJvdG8z"));
+            "CiFzdHJ1X21haGpvbmdfc2V0dGxlX21lc3NhZ2UucHJvdG8SBnpwcm90byJc",
+            "ChRNYWhqb25nU2V0dGxlTWVzc2FnZRIiCgxDb25maXJtSW5kZXgYASABKAVS",
+            "DENvbmZpcm1JbmRleBIgCgtDb25maXJtVGltZRgCIAEoA1ILQ29uZmlybVRp",
+            "bWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new MahjongSettleMessage(this);
     }
 
-    /// <summary>Field number for the "confirm_index" field.</summary>
+    /// <summary>Field number for the "ConfirmIndex" field.</summary>
     public const int ConfirmIndexFieldNumber = 1;
     private int confirmIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "confirm_time" field.</summary>
+    /// <summary>Field number for the "ConfirmTime" field.</summary>
     public const int ConfirmTimeFieldNumber = 2;
     private long confirmTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

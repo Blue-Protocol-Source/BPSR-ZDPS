@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X3VzZXJfdW5pb25fdGFyZ2V0X2luZm8ucHJvdG8SBnpwcm90bxoV",
-            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIlIKE1VzZXJVbmlvblRhcmdldEluZm8S",
-            "EQoJdGFyZ2V0X2lkGAEgASgFEhIKCnRhcmdldF9udW0YAiABKAUSFAoMcmVm",
-            "cmVzaF90aW1lGAMgASgDYgZwcm90bzM="));
+            "c3RydV9kaXJ0eV9tYXNrLnByb3RvInEKE1VzZXJVbmlvblRhcmdldEluZm8S",
+            "GgoIdGFyZ2V0SWQYASABKAVSCHRhcmdldElkEhwKCXRhcmdldE51bRgCIAEo",
+            "BVIJdGFyZ2V0TnVtEiAKC3JlZnJlc2hUaW1lGAMgASgDUgtyZWZyZXNoVGlt",
+            "ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new UserUnionTargetInfo(this);
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_num" field.</summary>
+    /// <summary>Field number for the "targetNum" field.</summary>
     public const int TargetNumFieldNumber = 2;
     private int targetNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refresh_time" field.</summary>
+    /// <summary>Field number for the "refreshTime" field.</summary>
     public const int RefreshTimeFieldNumber = 3;
     private long refreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

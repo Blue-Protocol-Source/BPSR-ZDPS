@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2R1bmdlb25fcmVhZHlfaXRlbV9pbmZvLnByb3RvEgZ6cHJvdG8i",
-            "OQoURHVuZ2VvblJlYWR5SXRlbUluZm8SDwoHaXRlbV9pZBgBIAEoBRIQCghp",
-            "dGVtX251bRgCIAEoBWIGcHJvdG8z"));
+            "SAoURHVuZ2VvblJlYWR5SXRlbUluZm8SFgoGaXRlbUlkGAEgASgFUgZpdGVt",
+            "SWQSGAoHaXRlbU51bRgCIAEoBVIHaXRlbU51bWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DungeonReadyItemInfo(this);
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
+    /// <summary>Field number for the "itemId" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_num" field.</summary>
+    /// <summary>Field number for the "itemNum" field.</summary>
     public const int ItemNumFieldNumber = 2;
     private int itemNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

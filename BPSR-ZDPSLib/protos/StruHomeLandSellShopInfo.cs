@@ -25,13 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2hvbWVfbGFuZF9zZWxsX3Nob3BfaW5mby5wcm90bxIGenByb3Rv",
-            "GhpzdHJ1X2NvbGxlY3RpbmdfaXRlbS5wcm90byL9AQoUSG9tZUxhbmRTZWxs",
-            "U2hvcEluZm8SDwoHaXNfaW5pdBgBIAEoCBIZChFuZXh0X3JlZmx1c2hfdGlt",
-            "ZRgCIAEoAxJLChBjb2xsZWN0aW5nX2l0ZW1zGAMgAygLMjEuenByb3RvLkhv",
-            "bWVMYW5kU2VsbFNob3BJbmZvLkNvbGxlY3RpbmdJdGVtc0VudHJ5EhwKFG5l",
-            "d19uZXh0X3JlZmx1c2hfc2VjGAQgASgDGk4KFENvbGxlY3RpbmdJdGVtc0Vu",
-            "dHJ5EgsKA2tleRgBIAEoBRIlCgV2YWx1ZRgCIAEoCzIWLnpwcm90by5Db2xs",
-            "ZWN0aW5nSXRlbToCOAFiBnByb3RvMw=="));
+            "GhpzdHJ1X2NvbGxlY3RpbmdfaXRlbS5wcm90byKzAgoUSG9tZUxhbmRTZWxs",
+            "U2hvcEluZm8SFgoGaXNJbml0GAEgASgIUgZpc0luaXQSKAoPbmV4dFJlZmx1",
+            "c2hUaW1lGAIgASgDUg9uZXh0UmVmbHVzaFRpbWUSWwoPY29sbGVjdGluZ0l0",
+            "ZW1zGAMgAygLMjEuenByb3RvLkhvbWVMYW5kU2VsbFNob3BJbmZvLkNvbGxl",
+            "Y3RpbmdJdGVtc0VudHJ5Ug9jb2xsZWN0aW5nSXRlbXMSLAoRbmV3TmV4dFJl",
+            "Zmx1c2hTZWMYBCABKANSEW5ld05leHRSZWZsdXNoU2VjGk4KFENvbGxlY3Rp",
+            "bmdJdGVtc0VudHJ5EgsKA2tleRgBIAEoBRIlCgV2YWx1ZRgCIAEoCzIWLnpw",
+            "cm90by5Db2xsZWN0aW5nSXRlbToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCollectingItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new HomeLandSellShopInfo(this);
     }
 
-    /// <summary>Field number for the "is_init" field.</summary>
+    /// <summary>Field number for the "isInit" field.</summary>
     public const int IsInitFieldNumber = 1;
     private bool isInit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "next_reflush_time" field.</summary>
+    /// <summary>Field number for the "nextReflushTime" field.</summary>
     public const int NextReflushTimeFieldNumber = 2;
     private long nextReflushTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "collecting_items" field.</summary>
+    /// <summary>Field number for the "collectingItems" field.</summary>
     public const int CollectingItemsFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.CollectingItem>.Codec _map_collectingItems_codec
         = new pbc::MapField<int, global::Zproto.CollectingItem>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CollectingItem.Parser), 26);
@@ -125,7 +126,7 @@ namespace Zproto {
       get { return collectingItems_; }
     }
 
-    /// <summary>Field number for the "new_next_reflush_sec" field.</summary>
+    /// <summary>Field number for the "newNextReflushSec" field.</summary>
     public const int NewNextReflushSecFieldNumber = 4;
     private long newNextReflushSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

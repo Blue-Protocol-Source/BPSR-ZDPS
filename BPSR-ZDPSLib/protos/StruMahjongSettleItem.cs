@@ -24,10 +24,12 @@ namespace Zproto {
     static StruMahjongSettleItemReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X21haGpvbmdfc2V0dGxlX2l0ZW0ucHJvdG8SBnpwcm90byJ8ChFN",
-            "YWhqb25nU2V0dGxlSXRlbRIPCgdpdGVtX2lkGAEgASgFEg4KBndlaWdodBgC",
-            "IAMoBRIWCg5pdGVtX21pbl9jb3VudBgDIAEoBRIXCg9pdGVtX2Nvc3RfY291",
-            "bnQYBCABKAUSFQoNc2NvcmluZ19wb2ludBgFIAMoBWIGcHJvdG8z"));
+            "Ch5zdHJ1X21haGpvbmdfc2V0dGxlX2l0ZW0ucHJvdG8SBnpwcm90byKxAQoR",
+            "TWFoam9uZ1NldHRsZUl0ZW0SFgoGaXRlbUlkGAEgASgFUgZpdGVtSWQSFgoG",
+            "d2VpZ2h0GAIgAygFUgZ3ZWlnaHQSIgoMaXRlbU1pbkNvdW50GAMgASgFUgxp",
+            "dGVtTWluQ291bnQSJAoNaXRlbUNvc3RDb3VudBgEIAEoBVINaXRlbUNvc3RD",
+            "b3VudBIiCgxzY29yaW5nUG9pbnQYBSADKAVSDHNjb3JpbmdQb2ludGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +89,7 @@ namespace Zproto {
       return new MahjongSettleItem(this);
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
+    /// <summary>Field number for the "itemId" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +112,7 @@ namespace Zproto {
       get { return weight_; }
     }
 
-    /// <summary>Field number for the "item_min_count" field.</summary>
+    /// <summary>Field number for the "itemMinCount" field.</summary>
     public const int ItemMinCountFieldNumber = 3;
     private int itemMinCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_cost_count" field.</summary>
+    /// <summary>Field number for the "itemCostCount" field.</summary>
     public const int ItemCostCountFieldNumber = 4;
     private int itemCostCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,7 +136,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scoring_point" field.</summary>
+    /// <summary>Field number for the "scoringPoint" field.</summary>
     public const int ScoringPointFieldNumber = 5;
     private static readonly pb::FieldCodec<int> _repeated_scoringPoint_codec
         = pb::FieldCodec.ForInt32(42);

@@ -25,15 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3N0YXRpc3RpY3NfZGF0YS5wcm90bxIGenByb3RvGhZzdHJ1X3N0",
-            "YXRfcmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ivwIKDlN0",
-            "YXRpc3RpY3NEYXRhEkIKD3N0YXRfcmVjb3JkX21hcBgBIAMoCzIpLnpwcm90",
-            "by5TdGF0aXN0aWNzRGF0YS5TdGF0UmVjb3JkTWFwRW50cnkSTwoWc2Vhc29u",
-            "X3N0YXRfcmVjb3JkX21hcBgCIAMoCzIvLnpwcm90by5TdGF0aXN0aWNzRGF0",
-            "YS5TZWFzb25TdGF0UmVjb3JkTWFwRW50cnkaSAoSU3RhdFJlY29yZE1hcEVu",
-            "dHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1ZRgCIAEoCzISLnpwcm90by5TdGF0",
-            "UmVjb3JkOgI4ARpOChhTZWFzb25TdGF0UmVjb3JkTWFwRW50cnkSCwoDa2V5",
-            "GAEgASgFEiEKBXZhbHVlGAIgASgLMhIuenByb3RvLlN0YXRSZWNvcmQ6AjgB",
-            "YgZwcm90bzM="));
+            "YXRfcmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i3gIKDlN0",
+            "YXRpc3RpY3NEYXRhEk8KDXN0YXRSZWNvcmRNYXAYASADKAsyKS56cHJvdG8u",
+            "U3RhdGlzdGljc0RhdGEuU3RhdFJlY29yZE1hcEVudHJ5Ug1zdGF0UmVjb3Jk",
+            "TWFwEmEKE3NlYXNvblN0YXRSZWNvcmRNYXAYAiADKAsyLy56cHJvdG8uU3Rh",
+            "dGlzdGljc0RhdGEuU2Vhc29uU3RhdFJlY29yZE1hcEVudHJ5UhNzZWFzb25T",
+            "dGF0UmVjb3JkTWFwGkgKElN0YXRSZWNvcmRNYXBFbnRyeRILCgNrZXkYASAB",
+            "KAUSIQoFdmFsdWUYAiABKAsyEi56cHJvdG8uU3RhdFJlY29yZDoCOAEaTgoY",
+            "U2Vhc29uU3RhdFJlY29yZE1hcEVudHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1",
+            "ZRgCIAEoCzISLnpwcm90by5TdGF0UmVjb3JkOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStatRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +90,7 @@ namespace Zproto {
       return new StatisticsData(this);
     }
 
-    /// <summary>Field number for the "stat_record_map" field.</summary>
+    /// <summary>Field number for the "statRecordMap" field.</summary>
     public const int StatRecordMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.StatRecord>.Codec _map_statRecordMap_codec
         = new pbc::MapField<int, global::Zproto.StatRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.StatRecord.Parser), 10);
@@ -101,7 +101,7 @@ namespace Zproto {
       get { return statRecordMap_; }
     }
 
-    /// <summary>Field number for the "season_stat_record_map" field.</summary>
+    /// <summary>Field number for the "seasonStatRecordMap" field.</summary>
     public const int SeasonStatRecordMapFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.StatRecord>.Codec _map_seasonStatRecordMap_codec
         = new pbc::MapField<int, global::Zproto.StatRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.StatRecord.Parser), 18);

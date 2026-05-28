@@ -24,8 +24,9 @@ namespace Zproto {
     static StruGoodsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBzdHJ1X2dvb2RzLnByb3RvEgZ6cHJvdG8iLAoFR29vZHMSEAoIZ29vZHNf",
-            "aWQYASABKAUSEQoJZ29vZHNfbnVtGAIgASgFYgZwcm90bzM="));
+            "ChBzdHJ1X2dvb2RzLnByb3RvEgZ6cHJvdG8iPQoFR29vZHMSGAoHZ29vZHNJ",
+            "ZBgBIAEoBVIHZ29vZHNJZBIaCghnb29kc051bRgCIAEoBVIIZ29vZHNOdW1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +83,7 @@ namespace Zproto {
       return new Goods(this);
     }
 
-    /// <summary>Field number for the "goods_id" field.</summary>
+    /// <summary>Field number for the "goodsId" field.</summary>
     public const int GoodsIdFieldNumber = 1;
     private int goodsId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -94,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "goods_num" field.</summary>
+    /// <summary>Field number for the "goodsNum" field.</summary>
     public const int GoodsNumFieldNumber = 2;
     private int goodsNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,16 +26,17 @@ namespace Zproto {
           string.Concat(
             "ChlzdHJ1X3BheV9vcmRlcl9saXN0LnByb3RvEgZ6cHJvdG8aE3N0cnVfcGF5",
             "X2RhdGEucHJvdG8aG3N0cnVfcmVmdW5kX2l0ZW1faW5mby5wcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIoQDCgxQYXlPcmRlckxpc3QSFgoOcGF5X29y",
-            "ZGVyX2xpc3QYASADKAkSFwoPcGF5X3JlZnVuZF9saXN0GAIgAygJEiIKCWZp",
-            "cnN0X3BheRgDIAEoCzIPLnpwcm90by5QYXlEYXRhEkIKEG9yZGVyX2luZGV4",
-            "X2xpc3QYBSADKAsyKC56cHJvdG8uUGF5T3JkZXJMaXN0Lk9yZGVySW5kZXhM",
-            "aXN0RW50cnkSTwoXb3JkZXJfaW5kZXhfcmVmdW5kX2xpc3QYBiADKAsyLi56",
-            "cHJvdG8uUGF5T3JkZXJMaXN0Lk9yZGVySW5kZXhSZWZ1bmRMaXN0RW50cnka",
-            "NQoTT3JkZXJJbmRleExpc3RFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUY",
-            "AiABKAU6AjgBGlMKGU9yZGVySW5kZXhSZWZ1bmRMaXN0RW50cnkSCwoDa2V5",
-            "GAEgASgDEiUKBXZhbHVlGAIgASgLMhYuenByb3RvLlJlZnVuZEl0ZW1JbmZv",
-            "OgI4AWIGcHJvdG8z"));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIscDCgxQYXlPcmRlckxpc3QSIgoMcGF5T3Jk",
+            "ZXJMaXN0GAEgAygJUgxwYXlPcmRlckxpc3QSJAoNcGF5UmVmdW5kTGlzdBgC",
+            "IAMoCVINcGF5UmVmdW5kTGlzdBIrCghmaXJzdFBheRgDIAEoCzIPLnpwcm90",
+            "by5QYXlEYXRhUghmaXJzdFBheRJQCg5vcmRlckluZGV4TGlzdBgFIAMoCzIo",
+            "Lnpwcm90by5QYXlPcmRlckxpc3QuT3JkZXJJbmRleExpc3RFbnRyeVIOb3Jk",
+            "ZXJJbmRleExpc3QSYgoUb3JkZXJJbmRleFJlZnVuZExpc3QYBiADKAsyLi56",
+            "cHJvdG8uUGF5T3JkZXJMaXN0Lk9yZGVySW5kZXhSZWZ1bmRMaXN0RW50cnlS",
+            "FG9yZGVySW5kZXhSZWZ1bmRMaXN0GjUKE09yZGVySW5kZXhMaXN0RW50cnkS",
+            "CwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgFOgI4ARpTChlPcmRlckluZGV4",
+            "UmVmdW5kTGlzdEVudHJ5EgsKA2tleRgBIAEoAxIlCgV2YWx1ZRgCIAEoCzIW",
+            "Lnpwcm90by5SZWZ1bmRJdGVtSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPayDataReflection.Descriptor, global::Zproto.StruRefundItemInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +96,7 @@ namespace Zproto {
       return new PayOrderList(this);
     }
 
-    /// <summary>Field number for the "pay_order_list" field.</summary>
+    /// <summary>Field number for the "payOrderList" field.</summary>
     public const int PayOrderList_FieldNumber = 1;
     private static readonly pb::FieldCodec<string> _repeated_payOrderList_codec
         = pb::FieldCodec.ForString(10);
@@ -106,7 +107,7 @@ namespace Zproto {
       get { return payOrderList_; }
     }
 
-    /// <summary>Field number for the "pay_refund_list" field.</summary>
+    /// <summary>Field number for the "payRefundList" field.</summary>
     public const int PayRefundListFieldNumber = 2;
     private static readonly pb::FieldCodec<string> _repeated_payRefundList_codec
         = pb::FieldCodec.ForString(18);
@@ -117,7 +118,7 @@ namespace Zproto {
       get { return payRefundList_; }
     }
 
-    /// <summary>Field number for the "first_pay" field.</summary>
+    /// <summary>Field number for the "firstPay" field.</summary>
     public const int FirstPayFieldNumber = 3;
     private global::Zproto.PayData firstPay_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "order_index_list" field.</summary>
+    /// <summary>Field number for the "orderIndexList" field.</summary>
     public const int OrderIndexListFieldNumber = 5;
     private static readonly pbc::MapField<long, int>.Codec _map_orderIndexList_codec
         = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 42);
@@ -140,7 +141,7 @@ namespace Zproto {
       get { return orderIndexList_; }
     }
 
-    /// <summary>Field number for the "order_index_refund_list" field.</summary>
+    /// <summary>Field number for the "orderIndexRefundList" field.</summary>
     public const int OrderIndexRefundListFieldNumber = 6;
     private static readonly pbc::MapField<long, global::Zproto.RefundItemInfo>.Codec _map_orderIndexRefundList_codec
         = new pbc::MapField<long, global::Zproto.RefundItemInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.RefundItemInfo.Parser), 50);

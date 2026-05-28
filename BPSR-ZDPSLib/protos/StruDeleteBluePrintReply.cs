@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2RlbGV0ZV9ibHVlX3ByaW50X3JlcGx5LnByb3RvEgZ6cHJvdG8a",
-            "F2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIjwKFERlbGV0ZUJsdWVQcmludFJl",
-            "cGx5EiQKCGVycl9jb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnBy",
-            "b3RvMw=="));
+            "F2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIkQKFERlbGV0ZUJsdWVQcmludFJl",
+            "cGx5EiwKB2VyckNvZGUYASABKA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJy",
+            "Q29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new DeleteBluePrintReply(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

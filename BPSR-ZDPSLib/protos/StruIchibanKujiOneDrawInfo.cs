@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2ljaGliYW5fa3VqaV9vbmVfZHJhd19pbmZvLnByb3RvEgZ6cHJv",
-            "dG8aD3N0cnVfaXRlbS5wcm90byJ2ChZJY2hpYmFuS3VqaU9uZURyYXdJbmZv",
-            "EhoKBGl0ZW0YASABKAsyDC56cHJvdG8uSXRlbRIUCgxsdWNrX3Bvb2xfaWQY",
-            "AiABKAUSFAoMcHJpemVfcmV0dXJuGAMgASgFEhQKDHByaXplX2tleV9pZBgE",
-            "IAEoBWIGcHJvdG8z"));
+            "dG8aD3N0cnVfaXRlbS5wcm90byKcAQoWSWNoaWJhbkt1amlPbmVEcmF3SW5m",
+            "bxIgCgRpdGVtGAEgASgLMgwuenByb3RvLkl0ZW1SBGl0ZW0SHgoKbHVja1Bv",
+            "b2xJZBgCIAEoBVIKbHVja1Bvb2xJZBIgCgtwcml6ZVJldHVybhgDIAEoBVIL",
+            "cHJpemVSZXR1cm4SHgoKcHJpemVLZXlJZBgEIAEoBVIKcHJpemVLZXlJZGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "luck_pool_id" field.</summary>
+    /// <summary>Field number for the "luckPoolId" field.</summary>
     public const int LuckPoolIdFieldNumber = 2;
     private int luckPoolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "prize_return" field.</summary>
+    /// <summary>Field number for the "prizeReturn" field.</summary>
     public const int PrizeReturnFieldNumber = 3;
     private int prizeReturn_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "prize_key_id" field.</summary>
+    /// <summary>Field number for the "prizeKeyId" field.</summary>
     public const int PrizeKeyIdFieldNumber = 4;
     private int prizeKeyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X2VudGVyX2FjdF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8aHnN0cnVf",
-            "bWF0Y2hfcGFyYW1fY29udGV4dC5wcm90byJZCg9FbnRlckFjdFJlcXVlc3QS",
-            "DgoGYWN0X2lkGAEgASgFEjYKE21hdGNoX3BhcmFtX2NvbnRleHQYAiABKAsy",
-            "GS56cHJvdG8uTWF0Y2hQYXJhbUNvbnRleHRiBnByb3RvMw=="));
+            "bWF0Y2hfcGFyYW1fY29udGV4dC5wcm90byJwCg9FbnRlckFjdFJlcXVlc3QS",
+            "FAoFYWN0SWQYASABKAVSBWFjdElkEkcKEW1hdGNoUGFyYW1Db250ZXh0GAIg",
+            "ASgLMhkuenByb3RvLk1hdGNoUGFyYW1Db250ZXh0UhFtYXRjaFBhcmFtQ29u",
+            "dGV4dGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMatchParamContextReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new EnterActRequest(this);
     }
 
-    /// <summary>Field number for the "act_id" field.</summary>
+    /// <summary>Field number for the "actId" field.</summary>
     public const int ActIdFieldNumber = 1;
     private int actId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_param_context" field.</summary>
+    /// <summary>Field number for the "matchParamContext" field.</summary>
     public const int MatchParamContextFieldNumber = 2;
     private global::Zproto.MatchParamContext matchParamContext_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

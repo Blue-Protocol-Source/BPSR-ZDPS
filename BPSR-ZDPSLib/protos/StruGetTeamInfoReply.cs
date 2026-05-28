@@ -29,21 +29,23 @@ namespace Zproto {
             "bxoZc3RydV90ZWFtX2Jhc2VfaW5mby5wcm90bxolc3RydV90ZWFtX21lbWJl",
             "cl9mYXN0X3N5bmNfZGF0YS5wcm90bxoYc3RydV90ZWFtX21lbV9kYXRhLnBy",
             "b3RvGihzdHJ1X3RlYW1fbWVtX3JlYWxfdGltZV92b2ljZV9pbmZvLnByb3Rv",
-            "Io8FChBHZXRUZWFtSW5mb1JlcGx5EicKCWJhc2VfaW5mbxgBIAEoCzIULnpw",
-            "cm90by5UZWFtQmFzZUluZm8SKAoLbWVtYmVyX2RhdGEYAiADKAsyEy56cHJv",
-            "dG8uVGVhbU1lbURhdGESKwoNdGVhbV9hY3Rpdml0eRgDIAEoCzIULnpwcm90",
-            "by5UZWFtQWN0aXZpdHkSVgoZbWVtX3JlYWxfdGltZV92b2ljZV9pbmZvcxgE",
-            "IAMoCzIzLnpwcm90by5HZXRUZWFtSW5mb1JlcGx5Lk1lbVJlYWxUaW1lVm9p",
-            "Y2VJbmZvc0VudHJ5Ej4KDG1lbV92b2ljZV9pZBgGIAMoCzIoLnpwcm90by5H",
-            "ZXRUZWFtSW5mb1JlcGx5Lk1lbVZvaWNlSWRFbnRyeRJPChVtZW1iZXJfZmFz",
-            "dF9zeW5jX2RhdGEYByADKAsyMC56cHJvdG8uR2V0VGVhbUluZm9SZXBseS5N",
-            "ZW1iZXJGYXN0U3luY0RhdGFFbnRyeRIkCghlcnJfY29kZRgIIAEoDjISLnpw",
-            "cm90by5FRXJyb3JDb2RlGl4KGk1lbVJlYWxUaW1lVm9pY2VJbmZvc0VudHJ5",
-            "EgsKA2tleRgBIAEoAxIvCgV2YWx1ZRgCIAEoCzIgLnpwcm90by5UZWFtTWVt",
-            "UmVhbFRpbWVWb2ljZUluZm86AjgBGjEKD01lbVZvaWNlSWRFbnRyeRILCgNr",
-            "ZXkYASABKAMSDQoFdmFsdWUYAiABKAU6AjgBGlkKF01lbWJlckZhc3RTeW5j",
-            "RGF0YUVudHJ5EgsKA2tleRgBIAEoAxItCgV2YWx1ZRgCIAEoCzIeLnpwcm90",
-            "by5UZWFtTWVtYmVyRmFzdFN5bmNEYXRhOgI4AWIGcHJvdG8z"));
+            "IuYFChBHZXRUZWFtSW5mb1JlcGx5EjAKCGJhc2VJbmZvGAEgASgLMhQuenBy",
+            "b3RvLlRlYW1CYXNlSW5mb1IIYmFzZUluZm8SMwoKbWVtYmVyRGF0YRgCIAMo",
+            "CzITLnpwcm90by5UZWFtTWVtRGF0YVIKbWVtYmVyRGF0YRI4Cgx0ZWFtQWN0",
+            "aXZpdHkYAyABKAsyFC56cHJvdG8uVGVhbUFjdGl2aXR5Ugx0ZWFtQWN0aXZp",
+            "dHkSaQoVbWVtUmVhbFRpbWVWb2ljZUluZm9zGAQgAygLMjMuenByb3RvLkdl",
+            "dFRlYW1JbmZvUmVwbHkuTWVtUmVhbFRpbWVWb2ljZUluZm9zRW50cnlSFW1l",
+            "bVJlYWxUaW1lVm9pY2VJbmZvcxJICgptZW1Wb2ljZUlkGAYgAygLMiguenBy",
+            "b3RvLkdldFRlYW1JbmZvUmVwbHkuTWVtVm9pY2VJZEVudHJ5UgptZW1Wb2lj",
+            "ZUlkEmAKEm1lbWJlckZhc3RTeW5jRGF0YRgHIAMoCzIwLnpwcm90by5HZXRU",
+            "ZWFtSW5mb1JlcGx5Lk1lbWJlckZhc3RTeW5jRGF0YUVudHJ5UhJtZW1iZXJG",
+            "YXN0U3luY0RhdGESLAoHZXJyQ29kZRgIIAEoDjISLnpwcm90by5FRXJyb3JD",
+            "b2RlUgdlcnJDb2RlGl4KGk1lbVJlYWxUaW1lVm9pY2VJbmZvc0VudHJ5EgsK",
+            "A2tleRgBIAEoAxIvCgV2YWx1ZRgCIAEoCzIgLnpwcm90by5UZWFtTWVtUmVh",
+            "bFRpbWVWb2ljZUluZm86AjgBGjEKD01lbVZvaWNlSWRFbnRyeRILCgNrZXkY",
+            "ASABKAMSDQoFdmFsdWUYAiABKAU6AjgBGlkKF01lbWJlckZhc3RTeW5jRGF0",
+            "YUVudHJ5EgsKA2tleRgBIAEoAxItCgV2YWx1ZRgCIAEoCzIeLnpwcm90by5U",
+            "ZWFtTWVtYmVyRmFzdFN5bmNEYXRhOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruTeamActivityReflection.Descriptor, global::Zproto.StruTeamBaseInfoReflection.Descriptor, global::Zproto.StruTeamMemberFastSyncDataReflection.Descriptor, global::Zproto.StruTeamMemDataReflection.Descriptor, global::Zproto.StruTeamMemRealTimeVoiceInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -105,7 +107,7 @@ namespace Zproto {
       return new GetTeamInfoReply(this);
     }
 
-    /// <summary>Field number for the "base_info" field.</summary>
+    /// <summary>Field number for the "baseInfo" field.</summary>
     public const int BaseInfoFieldNumber = 1;
     private global::Zproto.TeamBaseInfo baseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "member_data" field.</summary>
+    /// <summary>Field number for the "memberData" field.</summary>
     public const int MemberDataFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.TeamMemData> _repeated_memberData_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemData.Parser);
@@ -128,7 +130,7 @@ namespace Zproto {
       get { return memberData_; }
     }
 
-    /// <summary>Field number for the "team_activity" field.</summary>
+    /// <summary>Field number for the "teamActivity" field.</summary>
     public const int TeamActivityFieldNumber = 3;
     private global::Zproto.TeamActivity teamActivity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mem_real_time_voice_infos" field.</summary>
+    /// <summary>Field number for the "memRealTimeVoiceInfos" field.</summary>
     public const int MemRealTimeVoiceInfosFieldNumber = 4;
     private static readonly pbc::MapField<long, global::Zproto.TeamMemRealTimeVoiceInfo>.Codec _map_memRealTimeVoiceInfos_codec
         = new pbc::MapField<long, global::Zproto.TeamMemRealTimeVoiceInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemRealTimeVoiceInfo.Parser), 34);
@@ -151,7 +153,7 @@ namespace Zproto {
       get { return memRealTimeVoiceInfos_; }
     }
 
-    /// <summary>Field number for the "mem_voice_id" field.</summary>
+    /// <summary>Field number for the "memVoiceId" field.</summary>
     public const int MemVoiceIdFieldNumber = 6;
     private static readonly pbc::MapField<long, int>.Codec _map_memVoiceId_codec
         = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 50);
@@ -162,7 +164,7 @@ namespace Zproto {
       get { return memVoiceId_; }
     }
 
-    /// <summary>Field number for the "member_fast_sync_data" field.</summary>
+    /// <summary>Field number for the "memberFastSyncData" field.</summary>
     public const int MemberFastSyncDataFieldNumber = 7;
     private static readonly pbc::MapField<long, global::Zproto.TeamMemberFastSyncData>.Codec _map_memberFastSyncData_codec
         = new pbc::MapField<long, global::Zproto.TeamMemberFastSyncData>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemberFastSyncData.Parser), 58);
@@ -173,7 +175,7 @@ namespace Zproto {
       get { return memberFastSyncData_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 8;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

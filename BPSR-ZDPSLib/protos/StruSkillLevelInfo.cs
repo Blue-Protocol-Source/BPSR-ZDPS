@@ -24,9 +24,10 @@ namespace Zproto {
     static StruSkillLevelInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X3NraWxsX2xldmVsX2luZm8ucHJvdG8SBnpwcm90byJQCg5Ta2ls",
-            "bExldmVsSW5mbxIQCghza2lsbF9pZBgBIAEoBRIVCg1jdXJyZW50X2xldmVs",
-            "GAIgASgFEhUKDXJlbW9kZWxfbGV2ZWwYAyABKAViBnByb3RvMw=="));
+            "ChtzdHJ1X3NraWxsX2xldmVsX2luZm8ucHJvdG8SBnpwcm90byJyCg5Ta2ls",
+            "bExldmVsSW5mbxIYCgdza2lsbElkGAEgASgFUgdza2lsbElkEiIKDGN1cnJl",
+            "bnRMZXZlbBgCIAEoBVIMY3VycmVudExldmVsEiIKDHJlbW9kZWxMZXZlbBgD",
+            "IAEoBVIMcmVtb2RlbExldmVsYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new SkillLevelInfo(this);
     }
 
-    /// <summary>Field number for the "skill_id" field.</summary>
+    /// <summary>Field number for the "skillId" field.</summary>
     public const int SkillIdFieldNumber = 1;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "current_level" field.</summary>
+    /// <summary>Field number for the "currentLevel" field.</summary>
     public const int CurrentLevelFieldNumber = 2;
     private int currentLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "remodel_level" field.</summary>
+    /// <summary>Field number for the "remodelLevel" field.</summary>
     public const int RemodelLevelFieldNumber = 3;
     private int remodelLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

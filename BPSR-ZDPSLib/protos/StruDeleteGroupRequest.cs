@@ -24,8 +24,9 @@ namespace Zproto {
     static StruDeleteGroupRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2RlbGV0ZV9ncm91cF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iJgoS",
-            "RGVsZXRlR3JvdXBSZXF1ZXN0EhAKCGdyb3VwX2lkGAEgASgFYgZwcm90bzM="));
+            "Ch9zdHJ1X2RlbGV0ZV9ncm91cF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iLgoS",
+            "RGVsZXRlR3JvdXBSZXF1ZXN0EhgKB2dyb3VwSWQYASABKAVSB2dyb3VwSWRi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new DeleteGroupRequest(this);
     }
 
-    /// <summary>Field number for the "group_id" field.</summary>
+    /// <summary>Field number for the "groupId" field.</summary>
     public const int GroupIdFieldNumber = 1;
     private int groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

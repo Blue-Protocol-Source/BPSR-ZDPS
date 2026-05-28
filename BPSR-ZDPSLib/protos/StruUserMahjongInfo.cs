@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X3VzZXJfbWFoam9uZ19pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byI8Cg9Vc2VyTWFoam9uZ0luZm8SEgoKdGFibGVf",
-            "Z3VpZBgBIAEoCRIVCg1leGl0X3RpbWVfc2VjGAIgASgDYgZwcm90bzM="));
+            "ZGlydHlfbWFzay5wcm90byJRCg9Vc2VyTWFoam9uZ0luZm8SHAoJdGFibGVH",
+            "dWlkGAEgASgJUgl0YWJsZUd1aWQSIAoLZXhpdFRpbWVTZWMYAiABKANSC2V4",
+            "aXRUaW1lU2VjYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new UserMahjongInfo(this);
     }
 
-    /// <summary>Field number for the "table_guid" field.</summary>
+    /// <summary>Field number for the "tableGuid" field.</summary>
     public const int TableGuidFieldNumber = 1;
     private string tableGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "exit_time_sec" field.</summary>
+    /// <summary>Field number for the "exitTimeSec" field.</summary>
     public const int ExitTimeSecFieldNumber = 2;
     private long exitTimeSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

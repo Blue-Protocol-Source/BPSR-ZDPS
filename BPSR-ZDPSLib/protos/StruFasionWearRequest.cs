@@ -24,12 +24,12 @@ namespace Zproto {
     static StruFasionWearRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X2Zhc2lvbl93ZWFyX3JlcXVlc3QucHJvdG8SBnpwcm90byKxAQoR",
-            "RmFzaW9uV2VhclJlcXVlc3QSXAocZmFzaW9uX3R5cGVfdG9fZmFzaW9uX2lk",
-            "X21hcBgBIAMoCzI2Lnpwcm90by5GYXNpb25XZWFyUmVxdWVzdC5GYXNpb25U",
-            "eXBlVG9GYXNpb25JZE1hcEVudHJ5Gj4KHEZhc2lvblR5cGVUb0Zhc2lvbklk",
-            "TWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJv",
-            "dG8z"));
+            "Ch5zdHJ1X2Zhc2lvbl93ZWFyX3JlcXVlc3QucHJvdG8SBnpwcm90byLFAQoR",
+            "RmFzaW9uV2VhclJlcXVlc3QScAoXZmFzaW9uVHlwZVRvRmFzaW9uSWRNYXAY",
+            "ASADKAsyNi56cHJvdG8uRmFzaW9uV2VhclJlcXVlc3QuRmFzaW9uVHlwZVRv",
+            "RmFzaW9uSWRNYXBFbnRyeVIXZmFzaW9uVHlwZVRvRmFzaW9uSWRNYXAaPgoc",
+            "RmFzaW9uVHlwZVRvRmFzaW9uSWRNYXBFbnRyeRILCgNrZXkYASABKAUSDQoF",
+            "dmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new FasionWearRequest(this);
     }
 
-    /// <summary>Field number for the "fasion_type_to_fasion_id_map" field.</summary>
+    /// <summary>Field number for the "fasionTypeToFasionIdMap" field.</summary>
     public const int FasionTypeToFasionIdMapFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_fasionTypeToFasionIdMap_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);

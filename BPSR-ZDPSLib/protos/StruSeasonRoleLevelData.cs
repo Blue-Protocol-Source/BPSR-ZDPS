@@ -26,11 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiFzdHJ1X3NlYXNvbl9yb2xlX2xldmVsX2RhdGEucHJvdG8SBnpwcm90bxoc",
             "c3RydV9zZWFzb25fcm9sZV9sZXZlbC5wcm90bxoVc3RydV9kaXJ0eV9tYXNr",
-            "LnByb3RvIr0BChNTZWFzb25Sb2xlTGV2ZWxEYXRhElIKFXNlYXNvbl9yb2xl",
-            "X2xldmVsX21hcBgBIAMoCzIzLnpwcm90by5TZWFzb25Sb2xlTGV2ZWxEYXRh",
-            "LlNlYXNvblJvbGVMZXZlbE1hcEVudHJ5GlIKF1NlYXNvblJvbGVMZXZlbE1h",
-            "cEVudHJ5EgsKA2tleRgBIAEoBRImCgV2YWx1ZRgCIAEoCzIXLnpwcm90by5T",
-            "ZWFzb25Sb2xlTGV2ZWw6AjgBYgZwcm90bzM="));
+            "LnByb3RvIs4BChNTZWFzb25Sb2xlTGV2ZWxEYXRhEmMKEnNlYXNvblJvbGVM",
+            "ZXZlbE1hcBgBIAMoCzIzLnpwcm90by5TZWFzb25Sb2xlTGV2ZWxEYXRhLlNl",
+            "YXNvblJvbGVMZXZlbE1hcEVudHJ5UhJzZWFzb25Sb2xlTGV2ZWxNYXAaUgoX",
+            "U2Vhc29uUm9sZUxldmVsTWFwRW50cnkSCwoDa2V5GAEgASgFEiYKBXZhbHVl",
+            "GAIgASgLMhcuenByb3RvLlNlYXNvblJvbGVMZXZlbDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSeasonRoleLevelReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new SeasonRoleLevelData(this);
     }
 
-    /// <summary>Field number for the "season_role_level_map" field.</summary>
+    /// <summary>Field number for the "seasonRoleLevelMap" field.</summary>
     public const int SeasonRoleLevelMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.SeasonRoleLevel>.Codec _map_seasonRoleLevelMap_codec
         = new pbc::MapField<int, global::Zproto.SeasonRoleLevel>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SeasonRoleLevel.Parser), 10);

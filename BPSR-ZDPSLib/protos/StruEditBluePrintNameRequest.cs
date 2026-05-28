@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X2VkaXRfYmx1ZV9wcmludF9uYW1lX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90bxoaZW51bV9ibHVlX3ByaW50X3R5cGUucHJvdG8icQoYRWRpdEJsdWVQ",
-            "cmludE5hbWVSZXF1ZXN0Ei4KD2JsdWVfcHJpbnRfdHlwZRgBIAEoDjIVLnpw",
-            "cm90by5CbHVlUHJpbnRUeXBlEgwKBHNsb3QYAiABKAUSFwoPYmx1ZV9wcmlu",
-            "dF9uYW1lGAMgASgJYgZwcm90bzM="));
+            "cm90bxoaZW51bV9ibHVlX3ByaW50X3R5cGUucHJvdG8ikQEKGEVkaXRCbHVl",
+            "UHJpbnROYW1lUmVxdWVzdBI7Cg1ibHVlUHJpbnRUeXBlGAEgASgOMhUuenBy",
+            "b3RvLkJsdWVQcmludFR5cGVSDWJsdWVQcmludFR5cGUSEgoEc2xvdBgCIAEo",
+            "BVIEc2xvdBIkCg1ibHVlUHJpbnROYW1lGAMgASgJUg1ibHVlUHJpbnROYW1l",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumBluePrintTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new EditBluePrintNameRequest(this);
     }
 
-    /// <summary>Field number for the "blue_print_type" field.</summary>
+    /// <summary>Field number for the "bluePrintType" field.</summary>
     public const int BluePrintTypeFieldNumber = 1;
     private global::Zproto.BluePrintType bluePrintType_ = global::Zproto.BluePrintType.Outer;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "blue_print_name" field.</summary>
+    /// <summary>Field number for the "bluePrintName" field.</summary>
     public const int BluePrintNameFieldNumber = 3;
     private string bluePrintName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

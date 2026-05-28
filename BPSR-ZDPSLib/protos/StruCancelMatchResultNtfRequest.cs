@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CipzdHJ1X2NhbmNlbF9tYXRjaF9yZXN1bHRfbnRmX3JlcXVlc3QucHJvdG8S",
             "Bnpwcm90bxoeZW51bV9lX21hdGNoX2NhbmNlbF90eXBlLnByb3RvGhVzdHJ1",
-            "X21hdGNoX2luZm8ucHJvdG8icwobQ2FuY2VsTWF0Y2hSZXN1bHROdGZSZXF1",
-            "ZXN0Ei0KC2NhbmNlbF90eXBlGAEgASgOMhguenByb3RvLkVNYXRjaENhbmNl",
-            "bFR5cGUSJQoKbWF0Y2hfaW5mbxgCIAEoCzIRLnpwcm90by5NYXRjaEluZm9i",
-            "BnByb3RvMw=="));
+            "X21hdGNoX2luZm8ucHJvdG8iiAEKG0NhbmNlbE1hdGNoUmVzdWx0TnRmUmVx",
+            "dWVzdBI4CgpjYW5jZWxUeXBlGAEgASgOMhguenByb3RvLkVNYXRjaENhbmNl",
+            "bFR5cGVSCmNhbmNlbFR5cGUSLwoJbWF0Y2hJbmZvGAIgASgLMhEuenByb3Rv",
+            "Lk1hdGNoSW5mb1IJbWF0Y2hJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEMatchCancelTypeReflection.Descriptor, global::Zproto.StruMatchInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new CancelMatchResultNtfRequest(this);
     }
 
-    /// <summary>Field number for the "cancel_type" field.</summary>
+    /// <summary>Field number for the "cancelType" field.</summary>
     public const int CancelTypeFieldNumber = 1;
     private global::Zproto.EMatchCancelType cancelType_ = global::Zproto.EMatchCancelType.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_info" field.</summary>
+    /// <summary>Field number for the "matchInfo" field.</summary>
     public const int MatchInfoFieldNumber = 2;
     private global::Zproto.MatchInfo matchInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

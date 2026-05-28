@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X3N0YXJ0X2Vuc2VtYmxlX2FjdGl2aXR5X3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90bxoiZW51bV9lX2luc3RydW1lbnRfcGxheV9yYW5nZS5wcm90byJr",
-            "ChxTdGFydEVuc2VtYmxlQWN0aXZpdHlSZXF1ZXN0EgsKA2JwbRgBIAEoBRIM",
-            "CgRiZWF0GAIgASgFEjAKCnBsYXlfcmFuZ2UYAyABKA4yHC56cHJvdG8uRUlu",
-            "c3RydW1lbnRQbGF5UmFuZ2ViBnByb3RvMw=="));
+            "Bnpwcm90bxoiZW51bV9lX2luc3RydW1lbnRfcGxheV9yYW5nZS5wcm90byKA",
+            "AQocU3RhcnRFbnNlbWJsZUFjdGl2aXR5UmVxdWVzdBIQCgNicG0YASABKAVS",
+            "A2JwbRISCgRiZWF0GAIgASgFUgRiZWF0EjoKCXBsYXlSYW5nZRgDIAEoDjIc",
+            "Lnpwcm90by5FSW5zdHJ1bWVudFBsYXlSYW5nZVIJcGxheVJhbmdlYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEInstrumentPlayRangeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "play_range" field.</summary>
+    /// <summary>Field number for the "playRange" field.</summary>
     public const int PlayRangeFieldNumber = 3;
     private global::Zproto.EInstrumentPlayRange playRange_ = global::Zproto.EInstrumentPlayRange.All;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

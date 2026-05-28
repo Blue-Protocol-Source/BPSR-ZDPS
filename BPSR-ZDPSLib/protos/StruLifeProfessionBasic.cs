@@ -26,13 +26,14 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X2xpZmVfcHJvZmVzc2lvbl9iYXNpYy5wcm90bxIGenByb3RvGilz",
             "dHJ1X2xpZnRfcHJvZmVzc2lvbl9zcGVjaWFsaXphdGlvbi5wcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIokCChNMaWZlUHJvZmVzc2lvbkJhc2ljEgoK",
-            "AmlkGAEgASgFEg0KBWxldmVsGAIgASgFEgsKA2V4cBgDIAEoBRJHCg5zcGVj",
-            "aWFsaXphdGlvbhgFIAMoCzIvLnpwcm90by5MaWZlUHJvZmVzc2lvbkJhc2lj",
-            "LlNwZWNpYWxpemF0aW9uRW50cnkSJAocY3VycmVudF9zcGVjaWFsaXphdGlv",
-            "bl9wb2ludBgGIAEoBRpbChNTcGVjaWFsaXphdGlvbkVudHJ5EgsKA2tleRgB",
-            "IAEoBRIzCgV2YWx1ZRgCIAEoCzIkLnpwcm90by5MaWZ0UHJvZmVzc2lvblNw",
-            "ZWNpYWxpemF0aW9uOgI4AWIGcHJvdG8z"));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIsMCChNMaWZlUHJvZmVzc2lvbkJhc2ljEg4K",
+            "AmlkGAEgASgFUgJpZBIUCgVsZXZlbBgCIAEoBVIFbGV2ZWwSEAoDZXhwGAMg",
+            "ASgFUgNleHASVwoOc3BlY2lhbGl6YXRpb24YBSADKAsyLy56cHJvdG8uTGlm",
+            "ZVByb2Zlc3Npb25CYXNpYy5TcGVjaWFsaXphdGlvbkVudHJ5Ug5zcGVjaWFs",
+            "aXphdGlvbhI+ChpjdXJyZW50U3BlY2lhbGl6YXRpb25Qb2ludBgGIAEoBVIa",
+            "Y3VycmVudFNwZWNpYWxpemF0aW9uUG9pbnQaWwoTU3BlY2lhbGl6YXRpb25F",
+            "bnRyeRILCgNrZXkYASABKAUSMwoFdmFsdWUYAiABKAsyJC56cHJvdG8uTGlm",
+            "dFByb2Zlc3Npb25TcGVjaWFsaXphdGlvbjoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLiftProfessionSpecializationReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -139,7 +140,7 @@ namespace Zproto {
       get { return specialization_; }
     }
 
-    /// <summary>Field number for the "current_specialization_point" field.</summary>
+    /// <summary>Field number for the "currentSpecializationPoint" field.</summary>
     public const int CurrentSpecializationPointFieldNumber = 6;
     private int currentSpecializationPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
