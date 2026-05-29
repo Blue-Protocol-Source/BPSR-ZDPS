@@ -342,6 +342,112 @@
         "Icon": "ui/atlas/skill_weapon_fh/weapon_fh-01_kx05",
         "SkillLevelGroup": 1523
     },
+    "1601":
+    {
+        "Name": "Blazing Swing - Stage 1",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_atk"
+    },
+    "1602":
+    {
+        "Name": "Blazing Swing - Stage 2",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_atk"
+    },
+    "1603":
+    {
+        "Name": "Blazing Swing - Stage 3",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_atk"
+    },
+    "1604":
+    {
+        "Name": "Blazing Swing - Stage 4",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_atk"
+    },
+    "1605":
+    {
+        "Name": "Blazing Ascension",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_tg01_1"
+    },
+    "1606":
+    {
+        "Name": "Frenzied Slash",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_tg02"
+    },
+    "1607":
+    {
+        "Name": "Blazing Assault",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx01"
+    },
+    "1608":
+    {
+        "Name": "Rage Cleave - Stage 1",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx02_1"
+    },
+    "1609":
+    {
+        "Name": "Rage Cleave - Stage 2",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx02_2"
+    },
+    "1610":
+    {
+        "Name": "Rage Cleave - Stage 3",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx02_3"
+    },
+    "1611":
+    {
+        "Name": "Rage Cleave - Stage 4",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx02_4"
+    },
+    "1612":
+    {
+        "Name": "Axe Wind",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx03"
+    },
+    "1613":
+    {
+        "Name": "Wildfire Dance",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx04"
+    },
+    "1614":
+    {
+        "Name": "Unbound Meteor",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx05"
+    },
+    "1615":
+    {
+        "Name": "Wasteland's End",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx06"
+    },
+    "1616":
+    {
+        "Name": "Flowing Splendor Slash",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx07"
+    },
+    "1617":
+    {
+        "Name": "Endless Hellfire",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx08"
+    },
+    "1618":
+    {
+        "Name": "Cinderfall! Hellfire Shiranui",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_ult_01"
+    },
+    "1621":
+    {
+        "Name": "Falling Hellfire",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx05"
+    },
+    "1622":
+    {
+        "Name": "Wildfire Dance - Final Form",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx04"
+    },
+    "1623":
+    {
+        "Name": "Great Crimson Lotus",
+        "Desc": "Triggered by Arcane Wildfire Bloodline talent",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_atk"
+    },
     "1701":
     {
         "Name": "Judgment Cut - Stage 1",
@@ -1041,6 +1147,10 @@
     {
         "Name": "Lucky Strike (Staff)"
     },
+    "2031103":
+    {
+        "Name": "Lucky Strike (Battle Axe)"
+    },
     "2031104":
     {
         "Name": "Lucky Strike (Lance)"
@@ -1297,6 +1407,37 @@
     {
         "Name": "Valor Cyclone",
         "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_kx07"
+    },
+    "35104":
+    {
+        "Name": "Frenzied Slash",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_tg02"
+    },
+    "35105":
+    {
+        "Name": "Flowing Splendor Slash",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx07"
+    },
+    "35106":
+    {
+        "Name": "Life Steal",
+        "Desc": "Life Steal is granted by Flowing Splendor Slash",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx07"
+    },
+    "35107":
+    {
+        "Name": "Formless Flame Slash - Stage 1",
+        "Desc": "Triggered by Formless Flame Slash Attack Break talent"
+    },
+    "35108":
+    {
+        "Name": "Formless Flame Slash - Stage 2",
+        "Desc": "Triggered by Formless Flame Slash Attack Break talent"
+    },
+    "35109":
+    {
+        "Name": "Formless Flame Slash - Stage 3",
+        "Desc": "Triggered by Formless Flame Slash Attack Break talent"
     },
     "43201":
     {
@@ -1989,6 +2130,17 @@
     {
         "Name": "Thunder Cut - Final Attack",
         "Icon": "ui/atlas/skill_weapon_tdl/weapon_tdl-01_tf05"
+    },
+    "160101":
+    {
+        "Name": "Unbound Meteor - Crimson Earth",
+        "Icon": "ui/textures/skill_weapon_sf/weapon_sf-01_kx05"
+    },
+    "160102":
+    {
+        "Name": "Hellfire Meteor",
+        "Desc": "Triggered by Hellfire Meteor talent",
+        "BuffType": 1
     },
     "170101":
     {
@@ -3637,6 +3789,18 @@
             8
         ]
     },
+    "1121102":
+    {
+        "Name": "Ridge Horn - Enrage"
+    },
+    "1121103":
+    {
+        "Name": "Ridge Horn - Basic Attack"
+    },
+    "1121104":
+    {
+        "Name": "Ridge Horn - Shield Bomb"
+    },
     "1205004":
     {
         "Name": "Pursuit of the Golem"
@@ -4161,7 +4325,14 @@
     },
     "2110012":
     {
-        "Name": "Arcane! Pulse Blessing"
+        "Name": "Arcane! Pulse Blessing",
+        "Desc": "Muku King",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_012",
+        "SkillLevelGroup": 3908,
+        "SlotPositionId": [
+            7,
+            8
+        ]
     },
     "2110035":
     {
@@ -4518,6 +4689,11 @@
     {
         "Name": "Sonic Surge",
         "Desc": "From Spiral Flame talent, restores HP equal to 20% ATK for allies every 0.5s for 5s"
+    },
+    "2208172":
+    {
+        "Name": "Explosion",
+        "Desc": "Triggered by Wildfire reaching max stacks"
     },
     "2300070":
     {
@@ -5163,6 +5339,26 @@
     {
         "Name": "Illusory Tracking Explosion",
         "Desc": "Slumbering Scholar"
+    },
+    "3390105":
+    {
+        "Name": "Cluster Bomb (Basic Attack)",
+        "Desc": "Divine Punisher"
+    },
+    "3390107":
+    {
+        "Name": "Cluster Bomb (Cleave)",
+        "Desc": "Divine Punisher"
+    },
+    "3390108":
+    {
+        "Name": "Piercing Beam (Tankbuster)",
+        "Desc": "Divine Punisher"
+    },
+    "3390170":
+    {
+        "Name": "Disintegration Beam",
+        "Desc": "Divine Punisher"
     },
     "3913001":
     {

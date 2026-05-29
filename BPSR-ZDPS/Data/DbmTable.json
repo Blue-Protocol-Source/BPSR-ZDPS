@@ -388,5 +388,135 @@
     "Id": 10300214,
     "CountCDTime": 15,
     "Content": "Corroding Seed"
+  },
+  "6920003": {
+    "Id": 6920003,
+    "CountCDTime": 15,
+    "Content": "Malice Spreading"
+  },
+  "339010101": {
+    "Id": 339010101,
+    "CountCDTime": 10,
+    "Content": "Disintegration Beam"
+  },
+  "6920007": {
+    "Id": 6920007,
+    "CountCDTime": 15,
+    "Content": "Blight Seed"
+  },
+  "3340224": {
+    "Id": 3340224,
+    "CountCDTime": 10,
+    "Content": "Brilliant Performance"
+  },
+  "6920010": {
+    "Id": 6920010,
+    "CountCDTime": 15,
+    "Content": "Wicked Dive"
+  },
+  "11110301": {
+    "Id": 11110301,
+    "CountCDTime": 15,
+    "Content": "Superconductor Surge - Illusion"
+  },
+  "11110501": {
+    "Id": 11110501,
+    "CountCDTime": 10,
+    "Content": "Sticky Bomb - Illusion"
+  },
+  "338011001": {
+    "Id": 338011001,
+    "CountCDTime": 20,
+    "Content": "Opportunistic Pounce"
+  },
+  "338010401": {
+    "Id": 338010401,
+    "CountCDTime": 20,
+    "Content": "Hunting"
+  },
+  "338010101": {
+    "Id": 338010101,
+    "CountCDTime": 10,
+    "Content": "Shatterwind"
+  },
+  "338010201": {
+    "Id": 338010201,
+    "CountCDTime": 10,
+    "Content": "Mighty Bite"
+  },
+  "338010501": {
+    "Id": 338010501,
+    "CountCDTime": 10,
+    "Content": "Hybrid Combo"
+  },
+  "338010601": {
+    "Id": 338010601,
+    "CountCDTime": 10,
+    "Content": "Tornado Expanse"
+  },
+  "338010801": {
+    "Id": 338010801,
+    "CountCDTime": 10,
+    "Content": "Wind Blade Cry"
+  },
+  "338010901": {
+    "Id": 338010901,
+    "CountCDTime": 10,
+    "Content": "Crush Cyclone"
+  },
+  "10310010": {
+    "Id": 10310010,
+    "CountCDTime": 15,
+    "Content": "Illusion - Terminus Singularity"
+  },
+  "10310011": {
+    "Id": 10310011,
+    "CountCDTime": 15,
+    "Content": "Annihilation Beam"
+  },
+  "10310012": {
+    "Id": 10310012,
+    "CountCDTime": 15,
+    "Content": "Illusory Sync"
+  },
+  "10320001": {
+    "Id": 10320001,
+    "CountCDTime": 15,
+    "Content": "Illusion - Obliteration Railgun"
+  },
+  "10320005": {
+    "Id": 10320005,
+    "CountCDTime": 15,
+    "Content": "Disintegration Shockwave"
+  },
+  "10330009": {
+    "Id": 10330009,
+    "CountCDTime": 10,
+    "Content": "Preset Return"
+  },
+  "10330010": {
+    "Id": 10330010,
+    "CountCDTime": 10,
+    "Content": "Causality Warp"
+  },
+  "10330011": {
+    "Id": 10330011,
+    "CountCDTime": 15,
+    "Content": "Final Symphony"
+  },
+  "10330012": {
+    "Id": 10330012,
+    "CountCDTime": 15,
+    "Content": "Divine Banishment"
+  },
+  "10330013": {
+    "Id": 10330013,
+    "CountCDTime": 10,
+    "Content": "Cumulative Sentence"
+  },
+  "10330014": {
+    "Id": 10330014,
+    "CountCDTime": 10,
+    "Content": "Trial of Bonds"
   }
 }

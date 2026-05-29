@@ -141,7 +141,7 @@ namespace BPSR_ZDPS.DataTypes
         {
             1701 or 1705 or 1713 or 1714 or 1715 or 1716 or 1717 or 1718 or 1719 or 1720 or 1724 or 1728 or 1730 or 1731 => 1, // Stormblade
             1201 or 1210 or 1211 or 1239 or 1240 or 1241 or 1242 or 1243 or 1244 or 1245 or 1246 or 1248 => 2, // FrostMage
-            1601 or 1602 or 1603 or 1604 or 1605 or 1606 or 1607 or 1608 or 1609 or 1610 or 1611 or 1612 or 1613 or 1614 => 3, // Twin Striker
+            1601 or 1605 or 1606 or 1607 or 1608 or 1609 or 1610 or 1611 or 1612 or 1613 or 1614 or 1615 or 1616 or 1617 or 1618 or 1621 => 3, // Twin Striker
             1401 or 1410 or 1418 or 1419 or 1420 or 1421 or 1422 or 1423 or 1424 or 1425 or 1426 or 1430 or 1431 => 4, // WindKnight
             1501 or 1507 or 1509 or 1518 or 1519 or 1520 or 1521 or 1522 or 1523 or 1524 or 1527 or 1528 or 1529 or 1531 => 5, // VerdantOracle
             1901 or 1907 or 1917 or 1922 or 1923 or 1924 or 1925 or 1926 or 1927 or 1930 or 1932 or 1936 or 1937 or 1938 or 1940 => 9, // HeavyGuardian
@@ -158,6 +158,8 @@ namespace BPSR_ZDPS.DataTypes
             1715 or 1740 or 1741 or 179906 => SubProfessionId.SubProfession_Moonstrike, // 44701 = Core Skill: Moon Blade
             120901 or 120902 => SubProfessionId.SubProfession_Icicle,
             1241 => SubProfessionId.SubProfession_Frostbeam,
+            35107 or 35108 or 35109 or 160102 => SubProfessionId.SubProfession_FormlessExpertise,
+            1606 or 1621 or 1622 or 1623 => SubProfessionId.SubProfession_CrimsonExpertise,
             1405 or 1418 => SubProfessionId.SubProfession_Vanguard,
             1419 => SubProfessionId.SubProfession_Skyward,
             1518 or 1541 or 21402 => SubProfessionId.SubProfession_Smite,
@@ -180,6 +182,8 @@ namespace BPSR_ZDPS.DataTypes
             1715 or 1740 or 1741 or 179906 => AppStrings.GetLocalized("SubProfession_Moonstrike"),
             120901 or 120902 => AppStrings.GetLocalized("SubProfession_Icicle"),
             1241 => AppStrings.GetLocalized("SubProfession_Frostbeam"),
+            35107 or 35108 or 35109 or 160102 => AppStrings.GetLocalized("SubProfession_FormlessExpertise"),
+            1606 or 1621 or 1622 or 1623 => AppStrings.GetLocalized("SubProfession_CrimsonExpertise"),
             1405 or 1418 => AppStrings.GetLocalized("SubProfession_Vanguard"),
             1419 => AppStrings.GetLocalized("SubProfession_Skyward"),
             1518 or 1541 or 21402 => AppStrings.GetLocalized("SubProfession_Smite"),

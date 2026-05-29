@@ -381,7 +381,10 @@
     "TipTemplate": "Movement Speed {*attr.value*}",
     "AttrDes": "Increases Movement Speed while running",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_movespeed",
+      "ui/atlas/hud/debuff/buff_red_movespeed"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon21",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -581,7 +584,10 @@
     "TipTemplate": "Mount Speed {*attr.value*}",
     "AttrDes": "Increases movement speed of your Mount while running",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_movespeed",
+      "ui/atlas/hud/debuff/buff_red_movespeed"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon21",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -661,7 +667,10 @@
     "TipTemplate": "Strength {*attr.value*}",
     "AttrDes": "Increases the ATK of Wind Knight, Heavy Guardian, and Shield Knight. Increases Armor for all Classes",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon05",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -694,7 +703,10 @@
     "TipTemplate": "Intellect {*attr.value*}",
     "AttrDes": "Increases the ATK of Frost Mage, Verdant Oracle, and Beat Performer: Increases the Resistance of all Classes",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon06",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -726,7 +738,10 @@
     "TipTemplate": "Agility {*attr.value*}",
     "AttrDes": "Increases the ATK of Stormblade and Marksman. Increases Haste for all Classes",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrdexterity",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -759,7 +774,10 @@
     "TipTemplate": "Endurance {*attr.value*}",
     "AttrDes": "Increases the Max HP for all Classes",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_hp",
+      "ui/atlas/hud/buff/buff_red_hp"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon08",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -799,7 +817,10 @@
     "TipTemplate": "Crit {*attr.value*}",
     "AttrDes": "Increases Crit Rate.<br>When dealing damage, there is a chance to land a Crit, causing that instance of damage to be increased by your Crit DMG.<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon12",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -839,7 +860,10 @@
     "TipTemplate": "Haste {*attr.value*}",
     "AttrDes": "Increases Attack SPD and Casting SPD<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_cd",
+      "ui/atlas/hud/debuff/buff_red_cd"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrhaste",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -879,7 +903,10 @@
     "TipTemplate": "Luck {*attr.value*}",
     "AttrDes": "Increases the chance to trigger Luck effects.<br>When dealing non-persistent DMG or healing with Class Skills, there is a chance to trigger all Luck effects you possess. <br>Basic Lucky Strike Effect: Triggers an additional instance of DMG or healing at a fixed multiplier, which increases as the Luck chance increases. <br>Luck Boost: Every 1% of Luck increases \"Luck effect\" damage and healing by 1%.<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_lucky",
+      "ui/atlas/hud/debuff/buff_red_lucky"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrluck",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -917,9 +944,12 @@
     "AttrNumType": 0,
     "OfficialName": "Mastery",
     "TipTemplate": "Mastery {*attr.value*}",
-    "AttrDes": "Increases the damage of Stormblade's Iaido Slash and Phantom Scythe. <br>Increases Wind Knight's Wind DMG. <br>Increases Heavy Guardian's Block Rate and Shield Strength. <br>Increases Shield Knight's Armor and healing received. <br>Increases Frost Mage's Ice DMG. <br>Increases Verdant Oracle's healing strength. <br>Increases Marksman's Companion damage.<br>",
+    "AttrDes": "Grants different attribute bonuses based on class specialization.<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrmastery",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -959,7 +989,10 @@
     "TipTemplate": "Versatility {*attr.value*}",
     "AttrDes": "Each 1% of Versatility increases the percentage bonus for DMG dealt, healing, and Shield granted by 0.35%, and DMG Reduction by 0.15%.<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrversatility",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1039,7 +1072,10 @@
     "TipTemplate": "Block {*attr.value*}",
     "AttrDes": "Increases chance to block enemy attacks.<br>When taking damage, there is a chance to trigger a Block, reducing that instance of DMG by an amount equal to your Block DMG Reduction.",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrblock",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1119,7 +1155,10 @@
     "TipTemplate": "Max HP {*attr.value*}",
     "AttrDes": "When the character is attacked, HP will decrease, and when it reaches 0, the character is defeated",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_hp",
+      "ui/atlas/hud/buff/buff_red_hp"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrmaxhp",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1159,7 +1198,10 @@
     "TipTemplate": "ATK {*attr.value*}",
     "AttrDes": "The base value for the skill's Attack DMG and healing amount, which is affected by the target's Armor",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrattack",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1196,7 +1238,10 @@
     "TipTemplate": "MATK {*attr.value*}",
     "AttrDes": "The base value for the skill's Magic DMG and healing amount, which is affected by the target's Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrmattack",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1228,7 +1273,10 @@
     "TipTemplate": "Armor {*attr.value*}",
     "AttrDes": "Reduces damage taken from Attack DMG",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrdefense",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1268,7 +1316,10 @@
     "TipTemplate": "Resistance {*attr.value*}",
     "AttrDes": "Reduces damage taken from MATK",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrmdefense",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1308,7 +1359,10 @@
     "TipTemplate": "Armor Penetration {*attr.value*}",
     "AttrDes": "Ignores a portion of target's Armor",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrhit",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1348,7 +1402,10 @@
     "TipTemplate": "Magic Penetration {*attr.value*}",
     "AttrDes": "Ignores a portion of target's Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrhit",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1388,7 +1445,10 @@
     "TipTemplate": "Armor Penetration {*attr.value*}",
     "AttrDes": "Can ignore a certain percentage of the target's Armor",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrhit",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1428,7 +1488,10 @@
     "TipTemplate": "Magic Penetration {*attr.value*}",
     "AttrDes": "Can ignore a certain percentage of the target's Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrhit",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1468,7 +1531,10 @@
     "TipTemplate": "Refined ATK {*attr.value*}",
     "AttrDes": "The base value for the skill's Attack DMG and healing amount, which is not affected by the target's Armor or Resistance",
     "BuffShowAttrHUD": 0,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrattack",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1508,7 +1574,10 @@
     "TipTemplate": "Refined Armor {*attr.value*}",
     "AttrDes": "Reduces PHY and Magic DMG taken",
     "BuffShowAttrHUD": 0,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1548,7 +1617,10 @@
     "TipTemplate": "Refined MATK {*attr.value*}",
     "AttrDes": "The baseline value of Magic DMG and Healing that skills produce at a specific ratio, ignoring the target's physical defense and Resistance.",
     "BuffShowAttrHUD": 0,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrmattack",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1584,9 +1656,9 @@
     "AttrPer": 11444,
     "AttrExPer": 11445,
     "AttrNumType": 0,
-    "OfficialName": "Illusion Strength",
-    "TipTemplate": "Illusion Strength {*attr.value*}",
-    "AttrDes": "Against Dreambloom Season monsters: <br>When your Illusion Strength exceeds the enemy's, every 100 points of advantage increases the DMG you deal by 5% (up to 20%) and healing done by 2% (up to 8%, active only in Dungeons and near Field Elites/Bosses).<br>When your Illusion Strength is lower than the enemy's, the DMG and healing you deal are greatly reduced, and the DMG you take is greatly increased.<br><br>Against wild monsters from previous seasons: <br>Increases your DMG dealt by 100%<br><br>You can judge threat level by the color of the icon above monsters. Monster strength can also be viewed in the Monster Manual and Dungeon Info.<br>",
+    "OfficialName": "Illusion-Breaking Strength",
+    "TipTemplate": "Illusion-Breaking Strength {*attr.value*}",
+    "AttrDes": "Against Ember season monsters:<br>When own Illusion-Breaking Strength exceeds the enemy's, for every 150 points of advantage, DMG dealt is increased by 5% (up to 20%) and healing done is increased by 2% (up to 8%, active only in Dungeons and near Field Elites and Bosses).<br>When own Illusion-Breaking Strength is lower than the enemy's, DMG dealt and healing are greatly reduced, and DMG taken is greatly increased.<br><br>Against wild monsters from previous seasons:<br>DMG dealt is increased by 100%.<br><br>The threat level can be judged by the color of the icon above monsters. Monster strength can also be viewed in the Monster Manual and Dungeon Info.<br>",
     "BuffShowAttrHUD": 0,
     "AttrIcon": [],
     "Icon": "ui/atlas/weaponhero/new/common_icon01",
@@ -1668,7 +1740,10 @@
     "TipTemplate": "All Element Attack {*attr.value*}",
     "AttrDes": "Additional ATK applied when dealing all types of DMG and healing, not affected by the target's Armor or Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1708,7 +1783,10 @@
     "TipTemplate": "Fire Attack {*attr.value*}",
     "AttrDes": "Additional ATK applied when dealing Fire DMG and healing, not affected by the target's Armor or Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1739,7 +1817,10 @@
     "TipTemplate": "Ice Attack {*attr.value*}",
     "AttrDes": "Additional ATK applied when dealing Ice DMG and healing, not affected by the target's Armor or Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1769,7 +1850,10 @@
     "TipTemplate": "Forest Attack {*attr.value*}",
     "AttrDes": "Additional ATK applied when dealing Forest DMG and healing, not affected by the target's Armor or Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1799,7 +1883,10 @@
     "TipTemplate": "Thunder Attack {*attr.value*}",
     "AttrDes": "Additional ATK applied when dealing Thunder DMG and healing, not affected by the target's Armor or Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1830,7 +1917,10 @@
     "TipTemplate": "Wind Attack {*attr.value*}",
     "AttrDes": "Additional ATK applied when dealing Wind DMG and healing, not affected by the target's Armor or Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1860,7 +1950,10 @@
     "TipTemplate": "Rock Attack {*attr.value*}",
     "AttrDes": "Additional ATK applied when dealing Earth element DMG and healing, not affected by the target's Armor or Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1890,7 +1983,10 @@
     "TipTemplate": "Light Attack {*attr.value*}",
     "AttrDes": "Additional ATK applied when dealing Light DMG and healing, not affected by the target's Armor or Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1921,7 +2017,10 @@
     "TipTemplate": "Dark Attack {*attr.value*}",
     "AttrDes": "Additional ATK applied when dealing Dark DMG and healing, not affected by the target's Armor or Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -1951,7 +2050,10 @@
     "TipTemplate": "Crit {*attr.value*}",
     "AttrDes": "Increases Crit Rate.<br>When dealing damage, there is a chance to land a Crit, causing that instance of damage to be increased by your Crit DMG.<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon12",
     "BaseAttr": 500,
     "RecomProfessionId": [
@@ -1991,7 +2093,10 @@
     "TipTemplate": "Attack Speed {*attr.value*}",
     "AttrDes": "Increase Basic Attack and Skill Release Speed",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon13",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2031,7 +2136,10 @@
     "TipTemplate": "Cast Speed {*attr.value*}",
     "AttrDes": "Increases the casting speed and channeling speed of skills",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon13",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2111,7 +2219,10 @@
     "TipTemplate": "Skill CD Reduction {*attr.value*}",
     "AttrDes": "Can reduce skill CD",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_cd",
+      "ui/atlas/hud/debuff/buff_red_cd"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon13",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2151,7 +2262,10 @@
     "TipTemplate": "Skill CD Reduction {*attr.value*}",
     "AttrDes": "Can reduce skill CD",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_cd",
+      "ui/atlas/hud/debuff/buff_red_cd"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon13",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2191,7 +2305,10 @@
     "TipTemplate": "Trigger Interval Reduction {*attr.value*}",
     "AttrDes": "Reduces the Interval Time of Duration Skills and Healing",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon13",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2231,7 +2348,10 @@
     "TipTemplate": "Luck {*attr.value*}",
     "AttrDes": "Increases the chance to trigger Luck effects.<br>When dealing non-persistent DMG or healing with Class Skills, there is a chance to trigger all Luck effects you possess. <br>Basic Lucky Strike Effect: Triggers an additional instance of DMG or healing at a fixed multiplier, which increases as the Luck chance increases. <br>Luck Boost: Every 1% of Luck increases \"Luck effect\" damage and healing by 1%.<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_lucky",
+      "ui/atlas/hud/debuff/buff_red_lucky"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrluck",
     "BaseAttr": 500,
     "RecomProfessionId": [
@@ -2271,7 +2391,10 @@
     "TipTemplate": "Healing Output {*attr.value*}",
     "AttrDes": "Increases the Amount of Healing Done",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_heal",
+      "ui/atlas/hud/debuff/buff_red_heal"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon19",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2311,7 +2434,10 @@
     "TipTemplate": "Healing Received {*attr.value*}",
     "AttrDes": "Increases the Amount of Healing Received",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_heal",
+      "ui/atlas/hud/debuff/buff_red_heal"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon19",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2351,7 +2477,10 @@
     "TipTemplate": "Shield {*attr.value*}",
     "AttrDes": "Increases the Amount of Shield Applied",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon14",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2391,7 +2520,10 @@
     "TipTemplate": "Shield Receive {*attr.value*}",
     "AttrDes": "Increases the Amount of Shield Received",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon14",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2431,7 +2563,10 @@
     "TipTemplate": "Resilience Break Efficiency {*attr.value*}",
     "AttrDes": "Increases the efficiency of breaking an enemy's Resilience",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrhit",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2471,7 +2606,10 @@
     "TipTemplate": "Versatility Enhancement {*attr.value*}",
     "AttrDes": "Increases the amount of DMG dealt, healing done, and Shield granted",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2511,7 +2649,10 @@
     "TipTemplate": "Versatility Resistance {*attr.value*}",
     "AttrDes": "Reduce damage taken when taking damage",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2831,7 +2972,10 @@
     "TipTemplate": "Haste {*attr.value*}",
     "AttrDes": "Increases Attack SPD and Casting SPD<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrhaste",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2869,9 +3013,12 @@
     "AttrNumType": 1,
     "OfficialName": "Mastery",
     "TipTemplate": "Mastery {*attr.value*}",
-    "AttrDes": "Increases the damage of Stormblade's Iaido Slash and Phantom Scythe. <br>Increases Wind Knight's Wind DMG. <br>Increases Heavy Guardian's Block Rate and Shield Strength. <br>Increases Shield Knight's Armor and healing received. <br>Increases Frost Mage's Ice DMG. <br>Increases Verdant Oracle's healing strength. <br>Increases Marksman's Companion damage.<br>",
+    "AttrDes": "Grants different attribute bonuses based on class specialization.<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrmastery",
     "BaseAttr": 600,
     "RecomProfessionId": [
@@ -2911,7 +3058,10 @@
     "TipTemplate": "Versatility {*attr.value*}",
     "AttrDes": "Each 1% of Versatility increases the percentage bonus for DMG dealt, healing, and Shield granted by 0.35%, and DMG Reduction by 0.15%.<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrversatility",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2951,7 +3101,10 @@
     "TipTemplate": "CD Boost {*attr.value*}",
     "AttrDes": "Increases the speed of skill CD",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_cd",
+      "ui/atlas/hud/debuff/buff_red_cd"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon13",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -2991,7 +3144,10 @@
     "TipTemplate": "Block {*attr.value*}",
     "AttrDes": "Increases chance to block enemy attacks.<br>When taking DMG, there is a chance to trigger a block, reducing that instance of DMG. The DMG Reduction amount is equal to your Block DMG Resistance.<br>",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrblock",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3071,7 +3227,10 @@
     "TipTemplate": "Companion's Attack Speed {*attr.value*}",
     "AttrDes": "Increases the Companion's Basic Attack and Skill Casting speed",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon13",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3111,7 +3270,10 @@
     "TipTemplate": "Crit DMG {*attr.value*}",
     "AttrDes": "Increases the damage amount when a Crit is triggered",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon12",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3172,7 +3334,7 @@
   "12530": {
     "Id": 12530,
     "EnumName": "AttrLuckDamInc",
-    "Name": "幸运一击伤害万分比",
+    "Name": "幸运一击伤害倍率",
     "Type": "int32",
     "IsClass": true,
     "IsSyncMe": true,
@@ -3231,7 +3393,10 @@
     "TipTemplate": "Block DMG Reduction {*attr.value*}",
     "AttrDes": "Defense ratio when a block is triggered",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrblock",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3252,7 +3417,7 @@
   "12550": {
     "Id": 12550,
     "EnumName": "AttrDamInc",
-    "Name": "物理伤害加成万分比",
+    "Name": "物理增效万分比",
     "Type": "int32",
     "IsClass": true,
     "IsSyncMe": true,
@@ -3271,7 +3436,10 @@
     "TipTemplate": "PHY Boost {*attr.value*}",
     "AttrDes": "Can increase the amount of Attack DMG and healing caused",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3289,7 +3457,7 @@
   "12560": {
     "Id": 12560,
     "EnumName": "AttrDamRes",
-    "Name": "物理伤害减免万分比",
+    "Name": "物理削减万分比",
     "Type": "int32",
     "IsClass": true,
     "IsSyncMe": true,
@@ -3308,7 +3476,10 @@
     "TipTemplate": "ATK Reduction {*attr.value*}",
     "AttrDes": "Reduces the amount of Attack DMG received",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3329,7 +3500,7 @@
   "12570": {
     "Id": 12570,
     "EnumName": "AttrMdamInc",
-    "Name": "魔法伤害加成万分比",
+    "Name": "魔法增效万分比",
     "Type": "int32",
     "IsClass": true,
     "IsSyncMe": true,
@@ -3348,7 +3519,10 @@
     "TipTemplate": "MAG Boost {*attr.value*}",
     "AttrDes": "Can increase the amount of magical damage and healing caused",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3361,7 +3535,7 @@
   "12580": {
     "Id": 12580,
     "EnumName": "AttrMdamRes",
-    "Name": "魔法伤害减免万分比",
+    "Name": "魔法削减万分比",
     "Type": "int32",
     "IsClass": true,
     "IsSyncMe": true,
@@ -3380,7 +3554,10 @@
     "TipTemplate": "MATK Reduction {*attr.value*}",
     "AttrDes": "Reduces the amount of Magic DMG received",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3420,7 +3597,10 @@
     "TipTemplate": "Melee Damage Bonus {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3460,7 +3640,10 @@
     "TipTemplate": "Melee DMG Reduction {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3500,7 +3683,10 @@
     "TipTemplate": "Ranged Damage Bonus {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3540,7 +3726,10 @@
     "TipTemplate": "Ranged DMG Reduction {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3580,7 +3769,10 @@
     "TipTemplate": "DMG Bonus vs. Bosses {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3620,7 +3812,10 @@
     "TipTemplate": "DMG Reduction vs. Bosses {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3660,7 +3855,10 @@
     "TipTemplate": "Shield Damage Bonus {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3700,7 +3898,10 @@
     "TipTemplate": "Shield DMG Reduction {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3721,7 +3922,7 @@
   "12670": {
     "Id": 12670,
     "EnumName": "AttrOtherDamInc",
-    "Name": "其他增伤万分比",
+    "Name": "通用增伤万分比",
     "Type": "int32",
     "IsClass": true,
     "IsSyncMe": true,
@@ -3740,7 +3941,10 @@
     "TipTemplate": "Damage bonus {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3761,7 +3965,7 @@
   "12680": {
     "Id": 12680,
     "EnumName": "AttrOtherDamRes",
-    "Name": "其他减免万分比",
+    "Name": "通用减免万分比",
     "Type": "int32",
     "IsClass": true,
     "IsSyncMe": true,
@@ -3780,7 +3984,10 @@
     "TipTemplate": "DMG Reduction {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3820,7 +4027,10 @@
     "TipTemplate": "Damage bonus {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3860,7 +4070,10 @@
     "TipTemplate": "DMG Reduction {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3921,7 +4134,7 @@
   "12720": {
     "Id": 12720,
     "EnumName": "AttrLuckHealInc",
-    "Name": "幸运一击治疗万分比",
+    "Name": "幸运一击治疗倍率",
     "Type": "int32",
     "IsClass": true,
     "IsSyncMe": true,
@@ -3940,7 +4153,10 @@
     "TipTemplate": "Lucky Strike Healing {*attr.value*}",
     "AttrDes": "Healing multiplier when triggering a Lucky Strike",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_heal",
+      "ui/atlas/hud/debuff/buff_red_heal"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_attrluck",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -3961,7 +4177,7 @@
   "12730": {
     "Id": 12730,
     "EnumName": "AttrPetDamInc",
-    "Name": "宠物伤害",
+    "Name": "宠物伤害加成万分比",
     "Type": "int32",
     "IsClass": true,
     "IsSyncMe": true,
@@ -3980,7 +4196,10 @@
     "TipTemplate": "Companion's Damage {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4020,7 +4239,10 @@
     "TipTemplate": "Crit Healing {*attr.value*}",
     "AttrDes": "Increased Healing on Crit",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_heal",
+      "ui/atlas/hud/debuff/buff_red_heal"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon11",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4060,7 +4282,10 @@
     "TipTemplate": "Damage bonus {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4100,7 +4325,10 @@
     "TipTemplate": "DMG Reduction {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4220,7 +4448,10 @@
     "TipTemplate": "PHY Boost {*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4257,7 +4488,10 @@
     "TipTemplate": "MAG Boost{*attr.value*}",
     "AttrDes": "AttrLevel",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4289,7 +4523,10 @@
     "TipTemplate": "All Element {*attr.value*}",
     "AttrDes": "Converts to All Element Bonus",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4329,7 +4566,10 @@
     "TipTemplate": "Fire {*attr.value*}",
     "AttrDes": "Converts to Fire Bonus",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4360,7 +4600,10 @@
     "TipTemplate": "Ice {*attr.value*}",
     "AttrDes": "Converts to Ice Bonus",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4390,7 +4633,10 @@
     "TipTemplate": "Forest {*attr.value*}",
     "AttrDes": "Converts to Forest Bonus",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4420,7 +4666,10 @@
     "TipTemplate": "Thunder {*attr.value*}",
     "AttrDes": "Converts to Thunder Bonus",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4451,7 +4700,10 @@
     "TipTemplate": "Wind {*attr.value*}",
     "AttrDes": "Converts to Wind Bonus",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4481,7 +4733,10 @@
     "TipTemplate": "Rock {*attr.value*}",
     "AttrDes": "Converts to Rock Bonus",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4511,7 +4766,10 @@
     "TipTemplate": "Light {*attr.value*}",
     "AttrDes": "Converts to Light Bonus",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4542,7 +4800,10 @@
     "TipTemplate": "Dark {*attr.value*}",
     "AttrDes": "Converts to Dark Bonus",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4572,7 +4833,10 @@
     "TipTemplate": "All-Element Bonus {*attr.value*}",
     "AttrDes": "Additional bonus applied when dealing all types of DMG and healing. DMG is affected by the target's Element Resistance.",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4612,7 +4876,10 @@
     "TipTemplate": "Fire Bonus {*attr.value*}",
     "AttrDes": "Additional bonus applied when dealing Fire DMG and healing. DMG is affected by the target's Fire Resistance.",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4643,7 +4910,10 @@
     "TipTemplate": "Ice Bonus {*attr.value*}",
     "AttrDes": "Additional bonus applied when dealing Ice DMG and healing. DMG is affected by the target's Ice Resistance.",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4673,7 +4943,10 @@
     "TipTemplate": "Forest Bonus {*attr.value*}",
     "AttrDes": "Additional bonus applied when dealing Forest DMG and healing. DMG is affected by the target's Forest Resistance.",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4703,7 +4976,10 @@
     "TipTemplate": "Thunder Bonus {*attr.value*}",
     "AttrDes": "Additional bonus applied when dealing Thunder DMG and healing. DMG is affected by the target's Thunder Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4734,7 +5010,10 @@
     "TipTemplate": "Wind Bonus {*attr.value*}",
     "AttrDes": "Additional bonus applied when dealing Wind DMG and healing. DMG is affected by the target's Wind Resistance.",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4764,7 +5043,10 @@
     "TipTemplate": "Rock Bonus {*attr.value*}",
     "AttrDes": "Additional bonus applied when dealing Rock DMG and healing. DMG is affected by the target's Rock Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4794,7 +5076,10 @@
     "TipTemplate": "Light Bonus {*attr.value*}",
     "AttrDes": "Additional bonus applied when dealing Light DMG and healing. DMG is affected by the target's Light Resistance.",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4825,7 +5110,10 @@
     "TipTemplate": "Dark Bonus {*attr.value*}",
     "AttrDes": "Additional bonus applied when dealing Dark DMG and healing. DMG is affected by the target's Dark Resistance.",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_atk",
+      "ui/atlas/hud/debuff/buff_red_atk"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon03",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4855,7 +5143,10 @@
     "TipTemplate": "All Element Resistance {*attr.value*}",
     "AttrDes": "Converts to All Element Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4895,7 +5186,10 @@
     "TipTemplate": "Fire Resistance {*attr.value*}",
     "AttrDes": "Converts to Fire Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4935,7 +5229,10 @@
     "TipTemplate": "Ice Resistance {*attr.value*}",
     "AttrDes": "Converts to Ice Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -4975,7 +5272,10 @@
     "TipTemplate": "Forest Resistance {*attr.value*}",
     "AttrDes": "Converts to Forest Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5015,7 +5315,10 @@
     "TipTemplate": "Thunder Resistance {*attr.value*}",
     "AttrDes": "Converts to Thunder Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5055,7 +5358,10 @@
     "TipTemplate": "Wind Resistance {*attr.value*}",
     "AttrDes": "Converts to Wind Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5095,7 +5401,10 @@
     "TipTemplate": "Rock Resistance {*attr.value*}",
     "AttrDes": "Converts to Rock Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5135,7 +5444,10 @@
     "TipTemplate": "Light Resistance {*attr.value*}",
     "AttrDes": "Converts to Light Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5175,7 +5487,10 @@
     "TipTemplate": "Dark Resistance {*attr.value*}",
     "AttrDes": "Converts to Dark Resistance",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5215,7 +5530,10 @@
     "TipTemplate": "All Element Resistance {*attr.value*}",
     "AttrDes": "Reduces DMG taken from all elements",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5255,7 +5573,10 @@
     "TipTemplate": "Fire Resistance {*attr.value*}",
     "AttrDes": "Reduces damage taken from Fire",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5295,7 +5616,10 @@
     "TipTemplate": "Ice Resistance {*attr.value*}",
     "AttrDes": "Reduces damage taken from Ice",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5335,7 +5659,10 @@
     "TipTemplate": "Forest Resistance {*attr.value*}",
     "AttrDes": "Reduces damage taken from Forest",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5375,7 +5702,10 @@
     "TipTemplate": "Thunder Resistance {*attr.value*}",
     "AttrDes": "Reduces damage taken from Thunder",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5415,7 +5745,10 @@
     "TipTemplate": "Wind Resistance {*attr.value*}",
     "AttrDes": "Reduces damage taken from Wind",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5455,7 +5788,10 @@
     "TipTemplate": "Rock Resistance {*attr.value*}",
     "AttrDes": "Reduces damage taken from Rock",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5495,7 +5831,10 @@
     "TipTemplate": "Light Resistance {*attr.value*}",
     "AttrDes": "Reduces damage taken from Light",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5535,7 +5874,10 @@
     "TipTemplate": "Dark Resistance {*attr.value*}",
     "AttrDes": "Reduces damage taken from Dark",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_def",
+      "ui/atlas/hud/debuff/buff_red_def"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon07",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -5555,9 +5897,37 @@
   },
   "13400": {
     "Id": 13400,
-    "EnumName": "AttrMaxHpLimit",
+    "EnumName": "AttrPlayMaxHp",
     "Name": "玩法生命最大值限制",
     "Type": "int64",
+    "IsClass": true,
+    "IsSyncMe": true,
+    "IsSyncAoi": true,
+    "AttrLowerLimit": 0,
+    "AttrUpperLimit": -1,
+    "Level": 4,
+    "AttrFinal": 0,
+    "AttrTotal": 0,
+    "AttrAdd": 0,
+    "AttrExAdd": 0,
+    "AttrPer": 0,
+    "AttrExPer": 0,
+    "AttrNumType": 0,
+    "OfficialName": "AttrLevel",
+    "TipTemplate": "AttrLevel",
+    "AttrDes": "AttrLevel",
+    "BuffShowAttrHUD": 0,
+    "AttrIcon": [],
+    "Icon": "",
+    "BaseAttr": 0,
+    "RecomProfessionId": [],
+    "IsAssess": false
+  },
+  "13410": {
+    "Id": 13410,
+    "EnumName": "AttrPlayDefense",
+    "Name": "玩法防御",
+    "Type": "int32",
     "IsClass": true,
     "IsSyncMe": true,
     "IsSyncAoi": true,
@@ -5723,7 +6093,10 @@
     "TipTemplate": "Stamina Recovery: {*attr.value*}",
     "AttrDes": "Stamina Recovery in standby state",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_movespeed",
+      "ui/atlas/hud/debuff/buff_red_movespeed"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon21",
     "BaseAttr": 0,
     "RecomProfessionId": [
@@ -6043,7 +6416,10 @@
     "TipTemplate": "Stamina Recovery: {*attr.value*}",
     "AttrDes": "Stamina Recovery in parkour standby state (in combat)",
     "BuffShowAttrHUD": 1,
-    "AttrIcon": [],
+    "AttrIcon": [
+      "ui/atlas/hud/buff/buff_blue_movespeed",
+      "ui/atlas/hud/debuff/buff_red_movespeed"
+    ],
     "Icon": "ui/atlas/weaponhero/new/common_icon21",
     "BaseAttr": 0,
     "RecomProfessionId": [

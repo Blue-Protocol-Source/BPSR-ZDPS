@@ -3518,6 +3518,21 @@
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
   },
+  "90242": {
+    "Id": 90242,
+    "Name": "【狂野呼唤】层数",
+    "Desc": "【狂野呼唤】层数",
+    "AttrType": 352,
+    "LogicType": 1,
+    "AttrParams": [
+      2237
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 2,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
   "90300": {
     "Id": 90300,
     "Name": "【光明决心】充能上限变化",
@@ -3740,12 +3755,12 @@
   },
   "90314": {
     "Id": 90314,
-    "Name": "血槽积攒效率",
-    "Desc": "血槽积攒效率",
+    "Name": "炎魂积攒效率",
+    "Desc": "炎魂积攒效率",
     "AttrType": 301,
     "LogicType": 2,
     "AttrParams": [
-      13021
+      13011
     ],
     "LowerLimit": -99999,
     "UpperLimit": 99999,
@@ -3791,6 +3806,116 @@
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
   },
+  "90323": {
+    "Id": 90323,
+    "Name": "纳兹技能冷却加速",
+    "Desc": "纳兹技能冷却加速",
+    "AttrType": 103,
+    "LogicType": 1,
+    "AttrParams": [
+      2604,
+      2605,
+      2606
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90317": {
+    "Id": 90317,
+    "Name": "炽焰突袭/暴怒劈斩/旋风斩CD",
+    "Desc": "炽焰突袭/暴怒劈斩/旋风斩CD",
+    "AttrType": 103,
+    "LogicType": 1,
+    "AttrParams": [
+      1607,
+      1608,
+      1609,
+      1610,
+      1611,
+      1612
+    ],
+    "LowerLimit": -99999,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90318": {
+    "Id": 90318,
+    "Name": "血槽消耗减少",
+    "Desc": "血槽消耗减少",
+    "AttrType": 302,
+    "LogicType": 2,
+    "AttrParams": [
+      13021
+    ],
+    "LowerLimit": -99999,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90319": {
+    "Id": 90319,
+    "Name": "如川流华斩充能层数",
+    "Desc": "如川流华斩充能层数、",
+    "AttrType": 352,
+    "LogicType": 1,
+    "AttrParams": [
+      1616
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 2,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90320": {
+    "Id": 90320,
+    "Name": "血槽积攒效率",
+    "Desc": "血槽积攒效率",
+    "AttrType": 301,
+    "LogicType": 2,
+    "AttrParams": [
+      13021
+    ],
+    "LowerLimit": -99999,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90321": {
+    "Id": 90321,
+    "Name": "无穷雷霆之力充能层数",
+    "Desc": "无穷雷霆之力充能层数",
+    "AttrType": 352,
+    "LogicType": 1,
+    "AttrParams": [
+      1730
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 2,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90332": {
+    "Id": 90332,
+    "Name": "如川流华斩因子属性管理",
+    "Desc": "如川流华斩因子属性管理",
+    "AttrType": 0,
+    "LogicType": 0,
+    "AttrParams": [],
+    "LowerLimit": 0,
+    "UpperLimit": 2,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
   "92000": {
     "Id": 92000,
     "Name": "全移动速度加值",
@@ -3805,8 +3930,8 @@
     "LowerLimit": -99999,
     "UpperLimit": 99999,
     "IsSyncClient": true,
-    "AttrDesc": "全子弹大小",
-    "AttrIcon": ""
+    "AttrDesc": "Movement Speed +{*tempAttr.un*}",
+    "AttrIcon": "ui/atlas/weaponhero/new/common_icon21"
   },
   "92001": {
     "Id": 92001,
@@ -3861,6 +3986,21 @@
     "LogicType": 3,
     "AttrParams": [
       3
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "92005": {
+    "Id": 92005,
+    "Name": "职业技能冷却加速",
+    "Desc": "职业技能冷却加速",
+    "AttrType": 103,
+    "LogicType": 3,
+    "AttrParams": [
+      1010
     ],
     "LowerLimit": 0,
     "UpperLimit": 99999,
@@ -4213,6 +4353,66 @@
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
   },
+  "92043": {
+    "Id": 92043,
+    "Name": "无相流词条刷新概率提高",
+    "Desc": "无相流词条刷新概率提高",
+    "AttrType": 851,
+    "LogicType": 9,
+    "AttrParams": [
+      36
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 9999999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "92044": {
+    "Id": 92044,
+    "Name": "赤红流词条刷新概率提高",
+    "Desc": "赤红流词条刷新概率提高",
+    "AttrType": 851,
+    "LogicType": 9,
+    "AttrParams": [
+      37
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 9999999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "92045": {
+    "Id": 92045,
+    "Name": "脉冲刷新概率提高",
+    "Desc": "脉冲刷新概率提高",
+    "AttrType": 851,
+    "LogicType": 9,
+    "AttrParams": [
+      12
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "92046": {
+    "Id": 92046,
+    "Name": "精通刷新概率提高",
+    "Desc": "精通刷新概率提高",
+    "AttrType": 851,
+    "LogicType": 9,
+    "AttrParams": [
+      13
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
   "92101": {
     "Id": 92101,
     "Name": "【载具】耐力跑系加速冷却",
@@ -4324,6 +4524,22 @@
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
   },
+  "92108": {
+    "Id": 92108,
+    "Name": "【载具】吸血鬼加速冷却",
+    "Desc": "【载具】吸血鬼加速冷却",
+    "AttrType": 103,
+    "LogicType": 1,
+    "AttrParams": [
+      4721,
+      4723
+    ],
+    "LowerLimit": -99999,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
   "93000": {
     "Id": 93000,
     "Name": "【黯影堡垒】限制虚蚀层数",
@@ -4335,6 +4551,21 @@
     ],
     "LowerLimit": -99999,
     "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "93001": {
+    "Id": 93001,
+    "Name": "【隐雾猎场】禁止释放治疗技能",
+    "Desc": "【隐雾猎场】禁止释放治疗技能",
+    "AttrType": 509,
+    "LogicType": 3,
+    "AttrParams": [
+      1003
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 1,
     "IsSyncClient": true,
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
@@ -4676,6 +4907,138 @@
     "IsSyncClient": true,
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
+  },
+  "98009": {
+    "Id": 98009,
+    "Name": "精神凝聚冷却加速",
+    "Desc": "精神凝聚冷却加速",
+    "AttrType": 103,
+    "LogicType": 1,
+    "AttrParams": [
+      2231
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "98981": {
+    "Id": 98981,
+    "Name": "S1赛季强度",
+    "Desc": "",
+    "AttrType": 0,
+    "LogicType": 0,
+    "AttrParams": [],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "98982": {
+    "Id": 98982,
+    "Name": "S2赛季强度-幻梦强度",
+    "Desc": "",
+    "AttrType": 0,
+    "LogicType": 0,
+    "AttrParams": [],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "Illusion Strength (Expired) {*tempAttr.un*}",
+    "AttrIcon": "ui/atlas/weaponhero/new/common_icon01"
+  },
+  "98983": {
+    "Id": 98983,
+    "Name": "S3赛季强度",
+    "Desc": "",
+    "AttrType": 3,
+    "LogicType": 5,
+    "AttrParams": [],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "Season 3 Strength {*tempAttr.un*}",
+    "AttrIcon": "ui/atlas/weaponhero/new/common_icon01"
+  },
+  "98984": {
+    "Id": 98984,
+    "Name": "S4赛季强度",
+    "Desc": "",
+    "AttrType": 3,
+    "LogicType": 5,
+    "AttrParams": [],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "Season 4 Strength {*tempAttr.un*}",
+    "AttrIcon": "ui/atlas/weaponhero/new/common_icon01"
+  },
+  "98985": {
+    "Id": 98985,
+    "Name": "S5赛季强度",
+    "Desc": "",
+    "AttrType": 3,
+    "LogicType": 5,
+    "AttrParams": [],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "Season 5 Strength {*tempAttr.un*}",
+    "AttrIcon": "ui/atlas/weaponhero/new/common_icon01"
+  },
+  "98986": {
+    "Id": 98986,
+    "Name": "S6赛季强度",
+    "Desc": "",
+    "AttrType": 3,
+    "LogicType": 5,
+    "AttrParams": [],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "Season 6 Strength {*tempAttr.un*}",
+    "AttrIcon": "ui/atlas/weaponhero/new/common_icon01"
+  },
+  "98987": {
+    "Id": 98987,
+    "Name": "S7赛季强度",
+    "Desc": "",
+    "AttrType": 3,
+    "LogicType": 5,
+    "AttrParams": [],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "Season 7 Strength {*tempAttr.un*}",
+    "AttrIcon": "ui/atlas/weaponhero/new/common_icon01"
+  },
+  "98988": {
+    "Id": 98988,
+    "Name": "S8赛季强度",
+    "Desc": "",
+    "AttrType": 3,
+    "LogicType": 5,
+    "AttrParams": [],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "Season 8 Strength {*tempAttr.un*}",
+    "AttrIcon": "ui/atlas/weaponhero/new/common_icon01"
+  },
+  "98989": {
+    "Id": 98989,
+    "Name": "S9赛季强度",
+    "Desc": "",
+    "AttrType": 3,
+    "LogicType": 5,
+    "AttrParams": [],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "Season 9 Strength {*tempAttr.un*}",
+    "AttrIcon": "ui/atlas/weaponhero/new/common_icon01"
   },
   "98991": {
     "Id": 98991,
@@ -5255,6 +5618,21 @@
       2235
     ],
     "LowerLimit": -99999,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "99045": {
+    "Id": 99045,
+    "Name": "急速精通牛逼层数",
+    "Desc": "急速精通牛逼层数",
+    "AttrType": 503,
+    "LogicType": 4,
+    "AttrParams": [
+      3210191
+    ],
+    "LowerLimit": -2,
     "UpperLimit": 99999,
     "IsSyncClient": true,
     "AttrDesc": "全子弹大小",

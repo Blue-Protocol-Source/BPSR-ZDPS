@@ -187,6 +187,61 @@
         "Desc": "Tracker for Breach Pursuit recast timer",
         "BuffType": 1
     },
+    "35102":
+    {
+        "Name": "Wasteland's End",
+        "Desc": "Class Skills CD Boost and Haste Increased",
+        "BuffType": 1
+    },
+    "35103":
+    {
+        "Name": "Endless Hellfire",
+        "Desc": "Increase Flame Soul generation and increase Crit",
+        "BuffType": 1
+    },
+    "35104":
+    {
+        "Name": "Frenzied Slash Life Steal",
+        "Desc": "Damage dealt by Frenzied Slash heals the caster",
+        "BuffType": 1
+    },
+    "35105":
+    {
+        "Name": "Flowing Splendor Slash Healing",
+        "Desc": "Damage dealt by Flowing Splendor Slash heals the caster",
+        "BuffType": 1
+    },
+    "35106":
+    {
+        "Name": "Life Steal",
+        "Desc": "While active, restores 50% of damage dealt as HP upon hitting a target.",
+        "Icon": "ui/atlas/buff/buff_icon67",
+        "BuffType": 1
+    },
+    "35107":
+    {
+        "Name": "Formless Flame Slash - Stage 1",
+        "Desc": "Triggered Formless Flame Slash - Stage 1",
+        "BuffType": 0
+    },
+    "35108":
+    {
+        "Name": "Formless Flame Slash - Stage 2",
+        "Desc": "Triggered Formless Flame Slash - Stage 2",
+        "BuffType": 0
+    },
+    "35109":
+    {
+        "Name": "Formless Flame Slash - Stage 2",
+        "Desc": "Triggered Formless Flame Slash - Stage 3",
+        "BuffType": 0
+    },
+    "35111":
+    {
+        "Name": "Axe Wind Block Stamina Regen",
+        "Desc": "Axe Wind is actively blocking Stamina regeneration",
+        "BuffType": 0
+    },
     "40001":
     {
         "Name": "Thundercut Recast Buff",
@@ -761,6 +816,24 @@
     {
         "Name": "Automatic Health Regen In City"
     },
+    "683107":
+    {
+        "Name": "Role - Tank",
+        "Desc": "Player is a Tank",
+        "BuffType": 1
+    },
+    "683108":
+    {
+        "Name": "Role - Healer",
+        "Desc": "Player is a Healer",
+        "BuffType": 1
+    },
+    "683109":
+    {
+        "Name": "Role - Damage",
+        "Desc": "Player is a Damage Dealer",
+        "BuffType": 1
+    },
     "683114":
     {
         "Name": "Power of Unity (Detection)",
@@ -769,6 +842,12 @@
     "683116":
     {
         "Name": "Power of Unity (Detection)",
+        "BuffType": 1
+    },
+    "683119":
+    {
+        "Name": "Request Role",
+        "Desc": "Determine what role the player is",
         "BuffType": 1
     },
     "701008":
@@ -949,6 +1028,11 @@
         "Name": "Darkness DMG Reduction",
         "Desc": "ATK significantly reduced"
     },
+    "881563":
+    {
+        "Name": "Tankbuster Lock-On",
+        "Desc": "Divine Punisher"
+    },
     "881803":
     {
         "Name": "Learn Throw Bomb",
@@ -1091,6 +1175,11 @@
         "Name": "Dream Spirit Connection",
         "Desc": "Escorting the Dream Spirit"
     },
+    "884105":
+    {
+        "Name": "Disintegration Beam Lock-On",
+        "Desc": "Divine Punisher"
+    },
     "900122":
     {
         "Name": "Reset CDs and Full Heal",
@@ -1106,6 +1195,12 @@
         "Name": "Dragon Claw Valley - Wall Running Boost",
         "Desc": "Boosts the character for enhanced wall running",
         "BuffType": 1
+    },
+    "996401":
+    {
+        "Name": "Ridge Fang - Spike Lock-On",
+        "Desc": "",
+        "BuffType": 0
     },
     "997200":
     {
@@ -1336,6 +1431,11 @@
         "Name": "Staff - Intellect",
         "BuffType": 1
     },
+    "2031003":
+    {
+        "Name": "Battle Axe - Agility",
+        "BuffType": 1
+    },
     "2031004":
     {
         "Name": "Lance - Strength",
@@ -1374,6 +1474,11 @@
     "2031102":
     {
         "Name": "Staff - Luck",
+        "BuffType": 1
+    },
+    "2031103":
+    {
+        "Name": "Battle Axe - Luck",
         "BuffType": 1
     },
     "2031104":
@@ -5343,6 +5448,555 @@
     {
         "Name": "Sonic Surge (Spiral Flame)",
         "Desc": "After casting Center Stage, summon a wave of Sonic Surge, restoring HP over time",
+        "BuffType": 1
+    },
+    "2208030":
+    {
+        "Name": "Infernal Combo (Talent)",
+        "Desc": "When Special Attack or Basic Attacks deal damage, grants Infernal Combo",
+        "BuffType": 1
+    },
+    "2208031":
+    {
+        "Name": "Infernal Combo",
+        "BuffType": 1
+    },
+    "2208032":
+    {
+        "Name": "Infernal Combo (Ultimate Hellfire)",
+        "Desc": "Stacks granted by Endless Hellfire are not consumed",
+        "BuffType": 1
+    },
+    "2208040":
+    {
+        "Name": "Crimson Lotus",
+        "Desc": "Gain adaptive effects when Infernal Combo reaches max stacks",
+        "BuffType": 1
+    },
+    "2208050":
+    {
+        "Name": "Crimson Flame Pursuit (Talent)",
+        "Desc": "Special Attack hits cause the target to take increased DMG for a period of time, stacking multiple times",
+        "BuffType": 1
+    },
+    "2208051":
+    {
+        "Name": "Crimson Flame Pursuit",
+        "Desc": "Taking increased DMG for a period of time, stacking multiple times",
+        "BuffType": 0
+    },
+    "2208060":
+    {
+        "Name": "Wild Soul - Break",
+        "Desc": "When Strength reaches 500 points, Expertise Skill damage increases",
+        "BuffType": 1
+    },
+    "2208070":
+    {
+        "Name": "Crimson Lotus Duality",
+        "Desc": "Each stack of Infernal Combo grants effects based on the relationship between Luck Chance and Crit Chance",
+        "BuffType": 1
+    },
+    "2208080":
+    {
+        "Name": "Flame Soul Seal",
+        "Desc": "Flame Soul cap +50.\nEvery 50 Flame Soul gained triggers Infernal Combo",
+        "BuffType": 1
+    },
+    "2208090":
+    {
+        "Name": "Wild Soul - Swift",
+        "Desc": "When Strength reaches 300 points, the effect of the talent Infernal Combo is increased",
+        "BuffType": 1
+    },
+    "2208100":
+    {
+        "Name": "Ember Epiphany",
+        "Desc": "Grants the Flame Suppression specialization effect",
+        "BuffType": 1
+    },
+    "2208110":
+    {
+        "Name": "Crimson Lotus Ember Epiphany",
+        "Desc": "While in the Infernal Combo state, the Flame Suppresion effect is increased",
+        "BuffType": 1
+    },
+    "2208120":
+    {
+        "Name": "Soaring Crimson Flame Pursuit",
+        "Desc": "Enhances Crimson Flame Pursuit based on the target's lost HP",
+        "BuffType": 1
+    },
+    "2208130":
+    {
+        "Name": "Formless Expertise Spec",
+        "Desc": "By using different Special Attacks and Expertise Skills, the Formless level can be raised from E to S.\nEach level grants Blazing Assault, Rage Cleave, and Axe Wind a CD Speed increase",
+        "BuffType": 1
+    },
+    "2208131":
+    {
+        "Name": "Formless Level",
+        "Desc": "Formless Level",
+        "BuffType": 1
+    },
+    "2208140":
+    {
+        "Name": "Blazing Pact (Talent)",
+        "Desc": "After casting Blazing Assault, the next Expertise Skill deals +20% Final DMG, but its Crit Chance is halved",
+        "BuffType": 1
+    },
+    "2208141":
+    {
+        "Name": "Blazing Pact",
+        "Desc": "Next Expertise Skill deals +20% Final DMG, but its Crit Chance is halved",
+        "BuffType": 1
+    },
+    "2208150":
+    {
+        "Name": "Soaring Flame (Talent)",
+        "Desc": "After gaining Formless 6 times or activating Wasteland's End, Blazing Ascension evolves into Soaring Flame.\nGains Blaze after casting Soaring Flame",
+        "BuffType": 1
+    },
+    "2208151":
+    {
+        "Name": "Soaring Flame",
+        "Desc": "Blazing Ascension evolved into Soaring Flame",
+        "BuffType": 1
+    },
+    "2208152":
+    {
+        "Name": "Blaze",
+        "BuffType": 1
+    },
+    "2208153":
+    {
+        "Name": "Removing Soaring Flame",
+        "Desc": "Removing Soaring Flame at the end of the timer",
+        "BuffType": 0
+    },
+    "2208160":
+    {
+        "Name": "Time Wheel Rewind",
+        "Desc": "When Formless is obtained, the remaining CD of the skill with the longest current CD among Blazing Assult, Rage Cleave, and Axe Wind is reduced",
+        "BuffType": 1
+    },
+    "2208170":
+    {
+        "Name": "Inferno (Talent)",
+        "Desc": "In Blaze state, Expertise Skills inflict Burn",
+        "BuffType": 1
+    },
+    "2208171":
+    {
+        "Name": "Inferno",
+        "Desc": "Expertise Skills inflict Burn",
+        "BuffType": 1
+    },
+    "2208172":
+    {
+        "Name": "Wildfire",
+        "Desc": "Gaining stacks of Wilfire. Will trigger Explosion at 12 stacks",
+        "BuffType": 1
+    },
+    "2208180":
+    {
+        "Name": "Inferno Explosion",
+        "Desc": "When a target is inflicted with Burn, there is a chance to gain 1 stack of Wildfire that lasts for 10s.\nWhen Wildfire reaches 12 stacks, it triggers Explosion and clears Wildfire stacks",
+        "BuffType": 1
+    },
+    "2208182":
+    {
+        "Name": "Wildfire (Inferno Explosion)",
+        "Desc": "Gaining stacks of Wilfire from Inferno Explosion talent. Will trigger Explosion at 12 stacks",
+        "BuffType": 1
+    },
+    "2208190":
+    {
+        "Name": "Lucky Explosion",
+        "Desc": "Burn can trigger Lucky Strike.\nBased on Burn stacks, increase Explosion DMG",
+        "BuffType": 1
+    },
+    "2208200":
+    {
+        "Name": "Wasteland Raid",
+        "Desc": "During Wasteland's End, triggering a Lucky Strike with Rage Cleave or Axe Wind reduces the charge time by Blazing Assault",
+        "BuffType": 1
+    },
+    "2208210":
+    {
+        "Name": "Time Wheel Lucky Soul",
+        "Desc": "Each level of the Formless effect increases Lucky Strike DMG",
+        "BuffType": 1
+    },
+    "2208220":
+    {
+        "Name": "Time Wheel Agile Soul",
+        "Desc": "Each level of Formless grants increased Strength",
+        "BuffType": 1
+    },
+    "2208230":
+    {
+        "Name": "Returning Soul",
+        "Desc": "Blazing Assault restores a percent of lost Flame Soul. When Formless is at S level, enhances effect",
+        "BuffType": 1
+    },
+    "2208240":
+    {
+        "Name": "Double Inferno",
+        "Desc": "Axe Wind applies 3 stacks of Burn to hit targets.\nAs S Formless level, targets hit by Axe Wind gain 1 stack of Wildfire",
+        "BuffType": 1
+    },
+    "2208250":
+    {
+        "Name": "Hellfire Meteor",
+        "Desc": "In Formless S-Rank state, each cast of Rage Cleave summons 1 Hellfire Meteor at the primary target's location",
+        "BuffType": 1
+    },
+    "2208260":
+    {
+        "Name": "Supreme Battlefield",
+        "Desc": "Every 1% Mastery grants Fire Bonus",
+        "BuffType": 1
+    },
+    "2208270":
+    {
+        "Name": "Wasteland Finale (Talent)",
+        "Desc": "Gain 25% Fire Bonus after casting Ultimate",
+        "BuffType": 1
+    },
+    "2208271":
+    {
+        "Name": "Wasteland Finale",
+        "Desc": "25% Fire Bonus",
+        "BuffType": 1
+    },
+    "2208280":
+    {
+        "Name": "Expertise Formless Flame Slash (Talent)",
+        "Desc": "Rage Cleave, Blazing Assault, and Axe Wind can trigger Formless Flame Slash",
+        "BuffType": 1
+    },
+    "2208281":
+    {
+        "Name": "Expertise Formless Flame Slash",
+        "Desc": "Rage Cleave, Blazing Assault, and Axe Wind can trigger Formless Flame Slash",
+        "BuffType": 0
+    },
+    "2208290":
+    {
+        "Name": "Formless Flame Slash Luck",
+        "Desc": "Luck increases the trigger chance of Formless Flame Slash but Crit Rate is halved",
+        "BuffType": 1
+    },
+    "2208300":
+    {
+        "Name": "Formless Combo (Talent)",
+        "Desc": "Every 5 hits an Expertise Skill deals to main target, it grants a buff increasing Lucky Strike Multiplier and reduces Lucky Strike Crit Rate",
+        "BuffType": 1
+    },
+    "2208301":
+    {
+        "Name": "Formless Combo",
+        "Desc": "Increased Lucky Strike Multiplier and Reduced Lucky Strike Crit Rate",
+        "BuffType": 1
+    },
+    "2208310":
+    {
+        "Name": "Formless Flame Slash - Break",
+        "Desc": "Formless Flame Slash can trigger Lucky Strike",
+        "BuffType": 1
+    },
+    "2208320":
+    {
+        "Name": "Formless Flame Slash - Luck",
+        "Desc": "Formless Flame Slash Luck Chance increased",
+        "BuffType": 1
+    },
+    "2208330":
+    {
+        "Name": "Formless Flame Slash - Blaze",
+        "Desc": "Formless Flame Slash grants Fire Bonus",
+        "BuffType": 1
+    },
+    "2208340":
+    {
+        "Name": "Fromless Flame Slash Attack Break",
+        "Desc": "Basic Attacks, Blazing Ascension, and Soaring Flame can trigger Formless Flame Slash",
+        "BuffType": 1
+    },
+    "2208350":
+    {
+        "Name": "Lucky Blade Combo",
+        "Desc": "Expertise Skills ignore 35% of the target's armor",
+        "BuffType": 1
+    },
+    "2208360":
+    {
+        "Name": "Formless Flame Slash Combo",
+        "Desc": "Each level of Formless provides increased Formless Flame Slash DMG",
+        "BuffType": 1
+    },
+    "2208370":
+    {
+        "Name": "Oblivion Inferno (Talent)",
+        "Desc": "During Wasteland's End, Expertise Skill DMG increases",
+        "BuffType": 1
+    },
+    "2208371":
+    {
+        "Name": "Oblivion Inferno",
+        "Desc": "Expertise Skill DMG increased",
+        "BuffType": 1
+    },
+    "2208380":
+    {
+        "Name": "Instant Wasteland",
+        "Desc": "When Formless is obtained, the remaining CD of Wasteland's End is reduced or duration extended",
+        "BuffType": 1
+    },
+    "2208390":
+    {
+        "Name": "Burning Attack",
+        "Desc": "Fire Bonus increased when attacking Elite or higher targets",
+        "BuffType": 1
+    },
+    "2208400":
+    {
+        "Name": "Varied Strikes",
+        "Desc": "For each additional target hit by an Expertise Skill, DMG dealt increases",
+        "BuffType": 1
+    },
+    "2208410":
+    {
+        "Name": "Flame Soul Attack Spirit",
+        "Desc": "When killing a target, Flame Soul +5",
+        "BuffType": 1
+    },
+    "2208420":
+    {
+        "Name": "Stellar Spark (Talent)",
+        "Desc": "Expertise Skill DMG increases Fire ATK, stacking a number of times",
+        "BuffType": 1
+    },
+    "2208421":
+    {
+        "Name": "Stellar Spark",
+        "Desc": "Fire ATK Increased",
+        "BuffType": 1
+    },
+    "2208430":
+    {
+        "Name": "Crimson Expertise Spec",
+        "Desc": "Gains the Crimson Recovery effect.\nWhen hitting the main target (excluding Wildfire Dance), 20% of the DMG dealt is converted into Crimson Soul Gauge",
+        "BuffType": 1
+    },
+    "2208440":
+    {
+        "Name": "Soul Flame (Talent)",
+        "Desc": "For every 10% Crimson Soul Gauge charged, increases ATK bonuses from all sources by 2% for 5s.\nThis effect can stack up to 3 times",
+        "BuffType": 1
+    },
+    "2208441":
+    {
+        "Name": "Soul Flame",
+        "Desc": "Increases ATK bonuses from all sources by 2%",
+        "BuffType": 1
+    },
+    "2208450":
+    {
+        "Name": "Raging Flame Sharpness I (Talent)",
+        "Desc": "For every 10% Max HP or Crimson Soul Gauge lost, Crit Chance from all sources is increased by 2.5% for 5s.\nThis effect can stack up to 3 times",
+        "BuffType": 1
+    },
+    "2208451":
+    {
+        "Name": "Raging Flame Sharpness I",
+        "Desc": "Crit Chance from all sources is increased by 2.5%",
+        "BuffType": 1
+    },
+    "2208460":
+    {
+        "Name": "Crimson Earth - Flame Soul",
+        "Desc": "While within Crimson Earth, Flame Soul recovery efficiency +30%.\nWhile within Crimson Earth, Wildfire Dance DMG +50%",
+        "BuffType": 1
+    },
+    "2208470":
+    {
+        "Name": "Crimson Earth - Swift",
+        "Desc": "Every 1% Attack SPD increases the Crimson Recovery effect by 1% while within Crimson Earth",
+        "BuffType": 1
+    },
+    "2208480":
+    {
+        "Name": "Crimson Earth Meteor I",
+        "Desc": "Every 2 casts of Unbound Meteor cause Unbound Meteor to evolve into Falling Hellfire",
+        "BuffType": 1
+    },
+    "2208482":
+    {
+        "Name": "Crimson Earth Region",
+        "Desc": "Restoring Flame Soul",
+        "BuffType": 1
+    },
+    "2208483":
+    {
+        "Name": "Unbound Meteor Evolved",
+        "Desc": "Unbound Meteor evolved into Falling Hellfire",
+        "BuffType": 1
+    },
+    "2208490":
+    {
+        "Name": "Raging Flame Sharpness II",
+        "Desc": "Every 1% Haste grants 0.5% Expertise Skill CD Boost",
+        "BuffType": 1
+    },
+    "2208500":
+    {
+        "Name": "Crimson Earth Meteor II",
+        "Desc": "Unbound Meteor and Falling Hellfire gain 15% Fire Bonus.\nThis is increase by an additional 15% within Crimson Earth",
+        "BuffType": 1
+    },
+    "2208510":
+    {
+        "Name": "Destined Meteor",
+        "Desc": "Casting Flowing Splendor Slash, Unbound Meteor, or Falling Hellfire consumes up to 2 stacks of Infernal Combo.\nEach stack grants that skill a 10% Fire Bonus",
+        "BuffType": 1
+    },
+    "2208520":
+    {
+        "Name": "Crimson Break Slash",
+        "Desc": "Crit DMG +8%",
+        "BuffType": 1
+    },
+    "2208530":
+    {
+        "Name": "Hellfire Manifestation (Talent)",
+        "Desc": "While Endless Hellfire is active, the Crimson Recovery effect is doubled and the final consumption of Crimson Soul Gauge is reduced by half",
+        "BuffType": 1
+    },
+    "2208531":
+    {
+        "Name": "Hellfire Manifestation",
+        "Desc": "Crimson Recovery effect is doubled and final consumption of Crimson Soul Gauge is reduced by half",
+        "BuffType": 1
+    },
+    "2208540":
+    {
+        "Name": "Crimson Focus",
+        "Desc": "For every 1% Attack SPD exceeding 30%, 0.2% Expertise Skill is provided",
+        "BuffType": 1
+    },
+    "2208550":
+    {
+        "Name": "Flowing Splendor Rotation (Talent)",
+        "Desc": "After casting Flowing Splendor Slash, Wildfire Dance DMG is increased by 50% for 5s.\nFlowing Splendor Slash charge count +1",
+        "BuffType": 1
+    },
+    "2208551":
+    {
+        "Name": "Flowing Splendor Rotation",
+        "Desc": "Wildfire Dance DMG is increased by 50%",
+        "BuffType": 1
+    },
+    "2208560":
+    {
+        "Name": "Instant Flowing Splendor (Talent)",
+        "Desc": "When Frenzied Slash deals DMG, there is a chance to grant Flowing Splendor Slash 1 charge and cause its next cast to consume no Flame Soul",
+        "BuffType": 1
+    },
+    "2208561":
+    {
+        "Name": "Instant Flowing Splendor",
+        "Desc": "Grant Flowing Splendor Slash 1 charge and cause its next cast to consume no Flame Soul",
+        "BuffType": 1
+    },
+    "2208570":
+    {
+        "Name": "Ultimate Hellfire",
+        "Desc": "Activating Endless Hellfire immediately grants 5 stacks of Infernal Combo, which are not consumed while it is active.\nWhile Endless Hellfire is active, Strength is increased",
+        "BuffType": 1
+    },
+    "2208580":
+    {
+        "Name": "Crimson Crit",
+        "Desc": "When Crimson Soul Gauge is charged above 50%, Fire ATK +50%",
+        "BuffType": 1
+    },
+    "2208590":
+    {
+        "Name": "Crimson Pierce",
+        "Desc": "When dealing Crit DMG, ignore 22% of the target's Armor",
+        "BuffType": 1
+    },
+    "2208600":
+    {
+        "Name": "Unbound Meteor Combo",
+        "Desc": "Falling Hellfire is enhanced into a continuous three-hit strike form.\nEvery 1% Crimson Soul Gauge increases Falling Hellfire DMG by 1%",
+        "BuffType": 1
+    },
+    "2208610":
+    {
+        "Name": "Crimson Epiphany",
+        "Desc": "Every 1% Mastery grants 2% Crimson Recovery final effect",
+        "BuffType": 1
+    },
+    "2208620":
+    {
+        "Name": "Wildfire Dance Final Slash (Talent)",
+        "Desc": "After Wildfire Dance deals Crit DMG 10 times, it triggers a Final Slash that deals 500% ATK as Attack DMG",
+        "BuffType": 1
+    },
+    "2208622":
+    {
+        "Name": "Wildfire Dance Final Slash",
+        "Desc": "After Wildfire Dance deals Crit DMG 10 times, it triggers a Final Slash that deals 500% ATK as Attack DMG",
+        "BuffType": 1
+    },
+    "2208630":
+    {
+        "Name": "Wildfire Formless Flame Slash",
+        "Desc": "Wildfire Dance can trigger Formless Flame Slash but can no longer trigger Lucky Strikes",
+        "BuffType": 1
+    },
+    "2208640":
+    {
+        "Name": "Wild Slash Combo (Talent)",
+        "Desc": "Each time Wildfire Dance deals DMG, it grants the next Unbound Meteor, Falling Hellfire, or Flowing Splendor Slash a 2.5% Final DMG Bonus",
+        "BuffType": 1
+    },
+    "2208641":
+    {
+        "Name": "Wild Slash Combo",
+        "Desc": "The next Unbound Meteor, Falling Hellfire, or Flowing Splendor Slash has Final DMG Bonus",
+        "BuffType": 1
+    },
+    "2208650":
+    {
+        "Name": "Arcane Wildfire Bloodline (Talent)",
+        "Desc": "When Wildfire Dance deals DMG, there is a chance to gain a stack of Crimson Bloodline.\nWhen Crimson Bloodline reaches 7 stacks, it triggers Great Crimson Lotus and clears all stacks",
+        "BuffType": 1
+    },
+    "2208651":
+    {
+        "Name": "Crimson Bloodline",
+        "BuffType": 1
+    },
+    "2208652":
+    {
+        "Name": "Arcane Wildfire Bloodline",
+        "Desc": "Crimson Bloodline triggers Great Crimson Lotus",
+        "BuffType": 1
+    },
+    "2208660":
+    {
+        "Name": "Arcane Wildfire Haste",
+        "Desc": "Wildfire Dance Attack SPD +20%",
+        "BuffType": 1
+    },
+    "2208670":
+    {
+        "Name": "Arcane Raging Flame",
+        "Desc": "Every 15% Crimson Soul Gauge charged reduces the remaining CD of Endless Hellfire by 0.5s.\nEvery 10% of Haste reduces it by an additional 0.1s up to 1s",
         "BuffType": 1
     },
     "2300070":

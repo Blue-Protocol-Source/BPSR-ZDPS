@@ -145,7 +145,14 @@ namespace BPSR_ZDPS.Windows
 
                             if (entry.Value.Item == null)
                             {
-                                ImGui.TextUnformatted($"Item: <UNKNOWN>");
+                                if (entry.Value.Equip?.Id > 0)
+                                {
+                                    ImGui.TextUnformatted($"Item ({entry.Value.Equip.Id}): <UNKNOWN>");
+                                }
+                                else
+                                {
+                                    ImGui.TextUnformatted($"Item: <UNKNOWN>");
+                                }
                                 ImGui.EndChild();
                                 continue;
                             }
@@ -401,6 +408,15 @@ namespace BPSR_ZDPS.Windows
                             }
                         }
                     }
+                }
+                else
+                {
+                    var unknownEquipData = new Equip()
+                    {
+                        Id = equip.EquipID,
+                        EquipPart = equip.Slot
+                    };
+                    Attributes[gearSlot.Value].Equip = unknownEquipData;
                 }
             }
         }

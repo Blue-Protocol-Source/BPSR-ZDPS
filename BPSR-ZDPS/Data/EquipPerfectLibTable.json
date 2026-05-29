@@ -397,5 +397,122 @@
       0,
       0
     ]
+  },
+  "28": {
+    "Id": 28,
+    "PerfectLibId": 1220,
+    "PartLevel": 0,
+    "PerfectPart": [
+      1,
+      3
+    ],
+    "Probability": [
+      [
+        0,
+        100
+      ]
+    ],
+    "MinimumGuarantee": 0,
+    "PerfectType": []
+  },
+  "29": {
+    "Id": 29,
+    "PerfectLibId": 1220,
+    "PartLevel": 1,
+    "PerfectPart": [
+      4,
+      100
+    ],
+    "Probability": [
+      [
+        1,
+        100
+      ]
+    ],
+    "MinimumGuarantee": 24,
+    "PerfectType": [
+      2,
+      1,
+      4,
+      4
+    ]
+  },
+  "30": {
+    "Id": 30,
+    "PerfectLibId": 1240,
+    "PartLevel": 0,
+    "PerfectPart": [
+      1,
+      2
+    ],
+    "Probability": [
+      [
+        0,
+        100
+      ]
+    ],
+    "MinimumGuarantee": 0,
+    "PerfectType": []
+  },
+  "31": {
+    "Id": 31,
+    "PerfectLibId": 1240,
+    "PartLevel": 1,
+    "PerfectPart": [
+      3,
+      100
+    ],
+    "Probability": [
+      [
+        1,
+        100
+      ]
+    ],
+    "MinimumGuarantee": 33,
+    "PerfectType": [
+      2,
+      1,
+      3,
+      3
+    ]
+  },
+  "32": {
+    "Id": 32,
+    "PerfectLibId": 1260,
+    "PartLevel": 0,
+    "PerfectPart": [
+      1,
+      2
+    ],
+    "Probability": [
+      [
+        0,
+        100
+      ]
+    ],
+    "MinimumGuarantee": 0,
+    "PerfectType": []
+  },
+  "33": {
+    "Id": 33,
+    "PerfectLibId": 1260,
+    "PartLevel": 1,
+    "PerfectPart": [
+      3,
+      100
+    ],
+    "Probability": [
+      [
+        1,
+        100
+      ]
+    ],
+    "MinimumGuarantee": 33,
+    "PerfectType": [
+      2,
+      1,
+      3,
+      3
+    ]
   }
 }

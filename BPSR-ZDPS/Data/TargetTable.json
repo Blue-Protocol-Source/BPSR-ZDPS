@@ -13,7 +13,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2": {
     "Id": 2,
@@ -29,7 +30,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3": {
     "Id": 3,
@@ -45,7 +47,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "4": {
     "Id": 4,
@@ -61,7 +64,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "5": {
     "Id": 5,
@@ -80,7 +84,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6": {
     "Id": 6,
@@ -99,7 +104,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "7": {
     "Id": 7,
@@ -118,7 +124,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "8": {
     "Id": 8,
@@ -134,7 +141,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1008": {
     "Id": 1008,
@@ -150,7 +158,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "9": {
     "Id": 9,
@@ -182,7 +191,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "10": {
     "Id": 10,
@@ -198,7 +208,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "11": {
     "Id": 11,
@@ -214,7 +225,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "12": {
     "Id": 12,
@@ -232,7 +244,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "13": {
     "Id": 13,
@@ -251,7 +264,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "20": {
     "Id": 20,
@@ -269,7 +283,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "21": {
     "Id": 21,
@@ -287,7 +302,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "22": {
     "Id": 22,
@@ -311,7 +327,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "24": {
     "Id": 24,
@@ -334,7 +351,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "25": {
     "Id": 25,
@@ -355,7 +373,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "107": {
     "Id": 107,
@@ -376,7 +395,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "109": {
     "Id": 109,
@@ -396,7 +416,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110": {
     "Id": 110,
@@ -415,7 +436,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111": {
     "Id": 111,
@@ -433,7 +455,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "116": {
     "Id": 116,
@@ -449,7 +472,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "117": {
     "Id": 117,
@@ -465,7 +489,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "118": {
     "Id": 118,
@@ -481,7 +506,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "119": {
     "Id": 119,
@@ -497,7 +523,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120": {
     "Id": 120,
@@ -513,7 +540,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "200": {
     "Id": 200,
@@ -531,7 +559,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "206": {
     "Id": 206,
@@ -550,7 +579,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "207": {
     "Id": 207,
@@ -569,7 +599,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "208": {
     "Id": 208,
@@ -587,7 +618,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "210": {
     "Id": 210,
@@ -603,7 +635,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "310": {
     "Id": 310,
@@ -622,7 +655,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "320": {
     "Id": 320,
@@ -638,7 +672,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "400": {
     "Id": 400,
@@ -656,7 +691,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "401": {
     "Id": 401,
@@ -675,7 +711,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "402": {
     "Id": 402,
@@ -694,7 +731,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "405": {
     "Id": 405,
@@ -712,7 +750,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "409": {
     "Id": 409,
@@ -730,7 +769,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1001": {
     "Id": 1001,
@@ -748,7 +788,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1002": {
     "Id": 1002,
@@ -764,7 +805,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1003": {
     "Id": 1003,
@@ -780,7 +822,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1004": {
     "Id": 1004,
@@ -812,7 +855,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1005": {
     "Id": 1005,
@@ -844,7 +888,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1006": {
     "Id": 1006,
@@ -876,7 +921,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1030": {
     "Id": 1030,
@@ -899,7 +945,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1031": {
     "Id": 1031,
@@ -922,7 +969,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1032": {
     "Id": 1032,
@@ -945,7 +993,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1033": {
     "Id": 1033,
@@ -968,7 +1017,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1050": {
     "Id": 1050,
@@ -986,7 +1036,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1051": {
     "Id": 1051,
@@ -1002,7 +1053,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1052": {
     "Id": 1052,
@@ -1021,7 +1073,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1053": {
     "Id": 1053,
@@ -1040,7 +1093,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1054": {
     "Id": 1054,
@@ -1056,7 +1110,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1055": {
     "Id": 1055,
@@ -1072,7 +1127,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1056": {
     "Id": 1056,
@@ -1088,7 +1144,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1057": {
     "Id": 1057,
@@ -1104,7 +1161,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1058": {
     "Id": 1058,
@@ -1120,7 +1178,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1059": {
     "Id": 1059,
@@ -1136,7 +1195,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1060": {
     "Id": 1060,
@@ -1152,7 +1212,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1061": {
     "Id": 1061,
@@ -1168,7 +1229,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1062": {
     "Id": 1062,
@@ -1184,7 +1246,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1063": {
     "Id": 1063,
@@ -1200,7 +1263,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1064": {
     "Id": 1064,
@@ -1216,7 +1280,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1065": {
     "Id": 1065,
@@ -1232,7 +1297,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1080": {
     "Id": 1080,
@@ -1255,7 +1321,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1081": {
     "Id": 1081,
@@ -1278,7 +1345,35 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1083": {
+    "Id": 1083,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1150,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": true,
+    "TargetDes": "Kartgriff Corruption Level",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "cur_qinshi"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "max_qinshi"
+      ]
+    ],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2010": {
     "Id": 2010,
@@ -1301,7 +1396,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2011": {
     "Id": 2011,
@@ -1324,7 +1420,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "7601": {
     "Id": 7601,
@@ -1352,7 +1449,8 @@
       "Current Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "7602": {
     "Id": 7602,
@@ -1380,7 +1478,8 @@
       "Remaining Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "7603": {
     "Id": 7603,
@@ -1408,7 +1507,8 @@
       "Waiting Time"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "7604": {
     "Id": 7604,
@@ -1436,7 +1536,8 @@
       "Countdown"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "7605": {
     "Id": 7605,
@@ -1454,7 +1555,8 @@
       "Countdown"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "8901": {
     "Id": 8901,
@@ -1470,7 +1572,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "8902": {
     "Id": 8902,
@@ -1490,7 +1593,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "8903": {
     "Id": 8903,
@@ -1506,7 +1610,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "8904": {
     "Id": 8904,
@@ -1522,7 +1627,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "8905": {
     "Id": 8905,
@@ -1538,7 +1644,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "8906": {
     "Id": 8906,
@@ -1554,7 +1661,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100101": {
     "Id": 100101,
@@ -1570,7 +1678,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100102": {
     "Id": 100102,
@@ -1586,7 +1695,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100103": {
     "Id": 100103,
@@ -1602,7 +1712,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100104": {
     "Id": 100104,
@@ -1623,7 +1734,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100105": {
     "Id": 100105,
@@ -1644,7 +1756,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100106": {
     "Id": 100106,
@@ -1665,7 +1778,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100107": {
     "Id": 100107,
@@ -1686,7 +1800,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100108": {
     "Id": 100108,
@@ -1707,7 +1822,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100109": {
     "Id": 100109,
@@ -1728,7 +1844,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100110": {
     "Id": 100110,
@@ -1749,7 +1866,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100111": {
     "Id": 100111,
@@ -1770,7 +1888,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100112": {
     "Id": 100112,
@@ -1791,7 +1910,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100113": {
     "Id": 100113,
@@ -1812,7 +1932,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100114": {
     "Id": 100114,
@@ -1828,7 +1949,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100115": {
     "Id": 100115,
@@ -1849,7 +1971,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100116": {
     "Id": 100116,
@@ -1882,7 +2005,8 @@
       "Tina's sanity"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100117": {
     "Id": 100117,
@@ -1903,7 +2027,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100118": {
     "Id": 100118,
@@ -1924,7 +2049,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100119": {
     "Id": 100119,
@@ -1945,7 +2071,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100120": {
     "Id": 100120,
@@ -1966,7 +2093,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100121": {
     "Id": 100121,
@@ -1987,7 +2115,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100122": {
     "Id": 100122,
@@ -2003,7 +2132,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100123": {
     "Id": 100123,
@@ -2024,7 +2154,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100124": {
     "Id": 100124,
@@ -2040,7 +2171,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100151": {
     "Id": 100151,
@@ -2056,7 +2188,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100152": {
     "Id": 100152,
@@ -2072,7 +2205,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100153": {
     "Id": 100153,
@@ -2088,7 +2222,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100154": {
     "Id": 100154,
@@ -2104,7 +2239,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100155": {
     "Id": 100155,
@@ -2122,7 +2258,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100156": {
     "Id": 100156,
@@ -2138,7 +2275,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100157": {
     "Id": 100157,
@@ -2154,7 +2292,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100158": {
     "Id": 100158,
@@ -2170,7 +2309,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100159": {
     "Id": 100159,
@@ -2186,7 +2326,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100160": {
     "Id": 100160,
@@ -2202,7 +2343,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100161": {
     "Id": 100161,
@@ -2218,7 +2360,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100162": {
     "Id": 100162,
@@ -2246,7 +2389,8 @@
       "Tina's sanity"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100163": {
     "Id": 100163,
@@ -2262,7 +2406,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100164": {
     "Id": 100164,
@@ -2278,7 +2423,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100165": {
     "Id": 100165,
@@ -2294,7 +2440,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100166": {
     "Id": 100166,
@@ -2310,7 +2457,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100167": {
     "Id": 100167,
@@ -2326,7 +2474,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100168": {
     "Id": 100168,
@@ -2342,7 +2491,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100169": {
     "Id": 100169,
@@ -2358,7 +2508,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100170": {
     "Id": 100170,
@@ -2374,7 +2525,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100171": {
     "Id": 100171,
@@ -2390,7 +2542,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100172": {
     "Id": 100172,
@@ -2418,7 +2571,8 @@
       "Number of Star Core Hubs"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100173": {
     "Id": 100173,
@@ -2434,7 +2588,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100174": {
     "Id": 100174,
@@ -2450,7 +2605,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100175": {
     "Id": 100175,
@@ -2466,7 +2622,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100176": {
     "Id": 100176,
@@ -2482,7 +2639,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100177": {
     "Id": 100177,
@@ -2498,7 +2656,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100178": {
     "Id": 100178,
@@ -2514,7 +2673,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100179": {
     "Id": 100179,
@@ -2530,7 +2690,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100180": {
     "Id": 100180,
@@ -2546,7 +2707,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100181": {
     "Id": 100181,
@@ -2562,7 +2724,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100182": {
     "Id": 100182,
@@ -2578,7 +2741,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100183": {
     "Id": 100183,
@@ -2594,7 +2758,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100184": {
     "Id": 100184,
@@ -2610,7 +2775,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100185": {
     "Id": 100185,
@@ -2626,7 +2792,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100186": {
     "Id": 100186,
@@ -2642,7 +2809,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100187": {
     "Id": 100187,
@@ -2658,7 +2826,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100190": {
     "Id": 100190,
@@ -2674,7 +2843,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100188": {
     "Id": 100188,
@@ -2690,7 +2860,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100191": {
     "Id": 100191,
@@ -2706,7 +2877,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100201": {
     "Id": 100201,
@@ -2722,7 +2894,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100202": {
     "Id": 100202,
@@ -2738,7 +2911,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100203": {
     "Id": 100203,
@@ -2759,7 +2933,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100204": {
     "Id": 100204,
@@ -2780,7 +2955,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100205": {
     "Id": 100205,
@@ -2801,7 +2977,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100206": {
     "Id": 100206,
@@ -2822,7 +2999,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100207": {
     "Id": 100207,
@@ -2843,7 +3021,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100208": {
     "Id": 100208,
@@ -2864,7 +3043,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100209": {
     "Id": 100209,
@@ -2885,7 +3065,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100210": {
     "Id": 100210,
@@ -2906,7 +3087,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100211": {
     "Id": 100211,
@@ -2927,7 +3109,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100212": {
     "Id": 100212,
@@ -2960,7 +3143,8 @@
       "Sanity"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100213": {
     "Id": 100213,
@@ -2981,7 +3165,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "100214": {
     "Id": 100214,
@@ -2997,7 +3182,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "101101": {
     "Id": 101101,
@@ -3031,7 +3217,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "101102": {
     "Id": 101102,
@@ -3052,7 +3239,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "102211": {
     "Id": 102211,
@@ -3068,7 +3256,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "102212": {
     "Id": 102212,
@@ -3084,7 +3273,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110101": {
     "Id": 110101,
@@ -3105,7 +3295,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110102": {
     "Id": 110102,
@@ -3126,7 +3317,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110103": {
     "Id": 110103,
@@ -3147,7 +3339,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110104": {
     "Id": 110104,
@@ -3168,7 +3361,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110105": {
     "Id": 110105,
@@ -3189,7 +3383,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110106": {
     "Id": 110106,
@@ -3210,7 +3405,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110107": {
     "Id": 110107,
@@ -3231,7 +3427,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110108": {
     "Id": 110108,
@@ -3252,7 +3449,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110109": {
     "Id": 110109,
@@ -3268,7 +3466,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110110": {
     "Id": 110110,
@@ -3289,7 +3488,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110111": {
     "Id": 110111,
@@ -3310,7 +3510,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110112": {
     "Id": 110112,
@@ -3331,7 +3532,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110113": {
     "Id": 110113,
@@ -3352,7 +3554,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110114": {
     "Id": 110114,
@@ -3373,7 +3576,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110115": {
     "Id": 110115,
@@ -3414,7 +3618,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110116": {
     "Id": 110116,
@@ -3435,7 +3640,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110117": {
     "Id": 110117,
@@ -3456,7 +3662,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110118": {
     "Id": 110118,
@@ -3477,7 +3684,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110119": {
     "Id": 110119,
@@ -3498,7 +3706,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110120": {
     "Id": 110120,
@@ -3519,7 +3728,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110121": {
     "Id": 110121,
@@ -3540,7 +3750,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110122": {
     "Id": 110122,
@@ -3568,7 +3779,8 @@
       "Dimensional Rift Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110123": {
     "Id": 110123,
@@ -3589,7 +3801,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110124": {
     "Id": 110124,
@@ -3605,7 +3818,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110201": {
     "Id": 110201,
@@ -3626,7 +3840,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110202": {
     "Id": 110202,
@@ -3647,7 +3862,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110203": {
     "Id": 110203,
@@ -3668,7 +3884,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110204": {
     "Id": 110204,
@@ -3689,7 +3906,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110205": {
     "Id": 110205,
@@ -3710,7 +3928,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110206": {
     "Id": 110206,
@@ -3731,7 +3950,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110207": {
     "Id": 110207,
@@ -3752,7 +3972,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110208": {
     "Id": 110208,
@@ -3773,7 +3994,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110209": {
     "Id": 110209,
@@ -3789,7 +4011,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110210": {
     "Id": 110210,
@@ -3810,7 +4033,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110211": {
     "Id": 110211,
@@ -3831,7 +4055,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110212": {
     "Id": 110212,
@@ -3852,7 +4077,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110213": {
     "Id": 110213,
@@ -3873,7 +4099,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110214": {
     "Id": 110214,
@@ -3894,7 +4121,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110215": {
     "Id": 110215,
@@ -3915,7 +4143,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110216": {
     "Id": 110216,
@@ -3936,7 +4165,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110217": {
     "Id": 110217,
@@ -3957,7 +4187,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110218": {
     "Id": 110218,
@@ -3978,7 +4209,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110219": {
     "Id": 110219,
@@ -4006,7 +4238,8 @@
       "Dimensional Rift Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "110220": {
     "Id": 110220,
@@ -4027,7 +4260,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111101": {
     "Id": 111101,
@@ -4048,7 +4282,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111102": {
     "Id": 111102,
@@ -4076,7 +4311,8 @@
       "Dimensional Rift Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111103": {
     "Id": 111103,
@@ -4092,7 +4328,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111104": {
     "Id": 111104,
@@ -4108,7 +4345,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111105": {
     "Id": 111105,
@@ -4124,7 +4362,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111106": {
     "Id": 111106,
@@ -4152,7 +4391,8 @@
       "Engram"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111107": {
     "Id": 111107,
@@ -4168,7 +4408,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111108": {
     "Id": 111108,
@@ -4202,7 +4443,8 @@
       1,
       1
     ],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111109": {
     "Id": 111109,
@@ -4218,7 +4460,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111110": {
     "Id": 111110,
@@ -4234,7 +4477,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111111": {
     "Id": 111111,
@@ -4250,7 +4494,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111112": {
     "Id": 111112,
@@ -4278,7 +4523,8 @@
       "Energy Particles"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111113": {
     "Id": 111113,
@@ -4294,7 +4540,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111114": {
     "Id": 111114,
@@ -4310,7 +4557,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111115": {
     "Id": 111115,
@@ -4326,7 +4574,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111116": {
     "Id": 111116,
@@ -4342,7 +4591,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111117": {
     "Id": 111117,
@@ -4358,7 +4608,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111118": {
     "Id": 111118,
@@ -4374,7 +4625,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111119": {
     "Id": 111119,
@@ -4390,7 +4642,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111120": {
     "Id": 111120,
@@ -4406,7 +4659,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111121": {
     "Id": 111121,
@@ -4422,7 +4676,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111122": {
     "Id": 111122,
@@ -4438,7 +4693,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111123": {
     "Id": 111123,
@@ -4454,7 +4710,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "111124": {
     "Id": 111124,
@@ -4482,7 +4739,8 @@
       "Charging Progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "112101": {
     "Id": 112101,
@@ -4516,7 +4774,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "112102": {
     "Id": 112102,
@@ -4537,7 +4796,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "112201": {
     "Id": 112201,
@@ -4571,7 +4831,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "112202": {
     "Id": 112202,
@@ -4592,7 +4853,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "112221": {
     "Id": 112221,
@@ -4610,7 +4872,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "112222": {
     "Id": 112222,
@@ -4628,7 +4891,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "112301": {
     "Id": 112301,
@@ -4662,7 +4926,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "112302": {
     "Id": 112302,
@@ -4683,7 +4948,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121101": {
     "Id": 121101,
@@ -4699,7 +4965,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121102": {
     "Id": 121102,
@@ -4732,7 +4999,8 @@
       "Current HP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121103": {
     "Id": 121103,
@@ -4748,7 +5016,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121104": {
     "Id": 121104,
@@ -4776,7 +5045,8 @@
       "Wind Energy Particle"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121105": {
     "Id": 121105,
@@ -4792,7 +5062,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121106": {
     "Id": 121106,
@@ -4808,7 +5079,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121107": {
     "Id": 121107,
@@ -4824,7 +5096,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121108": {
     "Id": 121108,
@@ -4840,7 +5113,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121109": {
     "Id": 121109,
@@ -4856,7 +5130,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121110": {
     "Id": 121110,
@@ -4872,7 +5147,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121111": {
     "Id": 121111,
@@ -4888,7 +5164,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121112": {
     "Id": 121112,
@@ -4909,7 +5186,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121113": {
     "Id": 121113,
@@ -4925,7 +5203,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "121211": {
     "Id": 121211,
@@ -4941,7 +5220,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "122111": {
     "Id": 122111,
@@ -4957,7 +5237,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "122210": {
     "Id": 122210,
@@ -4973,7 +5254,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "122310": {
     "Id": 122310,
@@ -4989,7 +5271,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "150011": {
     "Id": 150011,
@@ -5005,7 +5288,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "150021": {
     "Id": 150021,
@@ -5021,7 +5305,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "155011": {
     "Id": 155011,
@@ -5037,7 +5322,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120118": {
     "Id": 120118,
@@ -5058,7 +5344,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120119": {
     "Id": 120119,
@@ -5079,7 +5366,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120120": {
     "Id": 120120,
@@ -5100,7 +5388,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120121": {
     "Id": 120121,
@@ -5118,7 +5407,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120122": {
     "Id": 120122,
@@ -5134,7 +5424,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120123": {
     "Id": 120123,
@@ -5155,7 +5446,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120124": {
     "Id": 120124,
@@ -5171,7 +5463,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "155021": {
     "Id": 155021,
@@ -5187,7 +5480,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "160011": {
     "Id": 160011,
@@ -5203,7 +5497,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "160021": {
     "Id": 160021,
@@ -5219,7 +5514,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "165011": {
     "Id": 165011,
@@ -5235,7 +5531,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "165021": {
     "Id": 165021,
@@ -5251,7 +5548,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "170011": {
     "Id": 170011,
@@ -5267,7 +5565,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "170012": {
     "Id": 170012,
@@ -5283,7 +5582,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "170013": {
     "Id": 170013,
@@ -5299,7 +5599,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "170014": {
     "Id": 170014,
@@ -5315,7 +5616,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "175011": {
     "Id": 175011,
@@ -5364,7 +5666,8 @@
       1,
       1
     ],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "175012": {
     "Id": 175012,
@@ -5427,7 +5730,8 @@
       1,
       1
     ],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "180011": {
     "Id": 180011,
@@ -5443,7 +5747,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "185011": {
     "Id": 185011,
@@ -5459,7 +5764,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "190010": {
     "Id": 190010,
@@ -5475,7 +5781,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "190011": {
     "Id": 190011,
@@ -5491,7 +5798,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "190051": {
     "Id": 190051,
@@ -5507,7 +5815,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501301": {
     "Id": 501301,
@@ -5528,7 +5837,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501302": {
     "Id": 501302,
@@ -5549,7 +5859,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501303": {
     "Id": 501303,
@@ -5565,7 +5876,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501304": {
     "Id": 501304,
@@ -5586,7 +5898,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501305": {
     "Id": 501305,
@@ -5602,7 +5915,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501306": {
     "Id": 501306,
@@ -5623,7 +5937,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501307": {
     "Id": 501307,
@@ -5639,7 +5954,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501308": {
     "Id": 501308,
@@ -5660,7 +5976,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501309": {
     "Id": 501309,
@@ -5676,7 +5993,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501310": {
     "Id": 501310,
@@ -5692,7 +6010,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501311": {
     "Id": 501311,
@@ -5713,7 +6032,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501701": {
     "Id": 501701,
@@ -5734,7 +6054,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501702": {
     "Id": 501702,
@@ -5755,7 +6076,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501703": {
     "Id": 501703,
@@ -5776,7 +6098,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501704": {
     "Id": 501704,
@@ -5797,7 +6120,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "501705": {
     "Id": 501705,
@@ -5818,7 +6142,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "511101": {
     "Id": 511101,
@@ -5846,7 +6171,8 @@
       "Strike Score"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600101": {
     "Id": 600101,
@@ -5862,7 +6188,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600102": {
     "Id": 600102,
@@ -5878,7 +6205,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600103": {
     "Id": 600103,
@@ -5894,7 +6222,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600104": {
     "Id": 600104,
@@ -5922,7 +6251,8 @@
       "Villagers' HP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600105": {
     "Id": 600105,
@@ -5950,7 +6280,8 @@
       "Number of Star Core Hubs"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600106": {
     "Id": 600106,
@@ -5966,7 +6297,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600107": {
     "Id": 600107,
@@ -5982,7 +6314,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600108": {
     "Id": 600108,
@@ -5998,7 +6331,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600109": {
     "Id": 600109,
@@ -6014,7 +6348,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600110": {
     "Id": 600110,
@@ -6030,7 +6365,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600111": {
     "Id": 600111,
@@ -6046,7 +6382,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600112": {
     "Id": 600112,
@@ -6067,7 +6404,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600113": {
     "Id": 600113,
@@ -6083,7 +6421,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600114": {
     "Id": 600114,
@@ -6099,7 +6438,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600115": {
     "Id": 600115,
@@ -6115,7 +6455,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600116": {
     "Id": 600116,
@@ -6131,7 +6472,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600117": {
     "Id": 600117,
@@ -6147,7 +6489,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600118": {
     "Id": 600118,
@@ -6163,7 +6506,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600119": {
     "Id": 600119,
@@ -6179,7 +6523,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600120": {
     "Id": 600120,
@@ -6195,7 +6540,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600121": {
     "Id": 600121,
@@ -6211,7 +6557,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600122": {
     "Id": 600122,
@@ -6227,7 +6574,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "600123": {
     "Id": 600123,
@@ -6255,7 +6603,8 @@
       "Goblin Mage's Blessing"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120101": {
     "Id": 120101,
@@ -6276,7 +6625,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120102": {
     "Id": 120102,
@@ -6292,7 +6642,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120103": {
     "Id": 120103,
@@ -6308,7 +6659,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120107": {
     "Id": 120107,
@@ -6341,7 +6693,8 @@
       "Storm Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120108": {
     "Id": 120108,
@@ -6362,7 +6715,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120114": {
     "Id": 120114,
@@ -6383,7 +6737,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120117": {
     "Id": 120117,
@@ -6404,7 +6759,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120201": {
     "Id": 120201,
@@ -6425,7 +6781,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120202": {
     "Id": 120202,
@@ -6441,7 +6798,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120203": {
     "Id": 120203,
@@ -6457,7 +6815,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120204": {
     "Id": 120204,
@@ -6490,7 +6849,8 @@
       "Storm Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120205": {
     "Id": 120205,
@@ -6518,7 +6878,8 @@
       "Storm Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120206": {
     "Id": 120206,
@@ -6539,7 +6900,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120207": {
     "Id": 120207,
@@ -6560,7 +6922,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120208": {
     "Id": 120208,
@@ -6576,7 +6939,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120209": {
     "Id": 120209,
@@ -6597,7 +6961,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120210": {
     "Id": 120210,
@@ -6618,7 +6983,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120211": {
     "Id": 120211,
@@ -6634,7 +7000,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120212": {
     "Id": 120212,
@@ -6655,7 +7022,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120213": {
     "Id": 120213,
@@ -6671,7 +7039,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120214": {
     "Id": 120214,
@@ -6692,7 +7061,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120215": {
     "Id": 120215,
@@ -6708,7 +7078,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120216": {
     "Id": 120216,
@@ -6724,7 +7095,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120217": {
     "Id": 120217,
@@ -6740,7 +7112,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120218": {
     "Id": 120218,
@@ -6756,7 +7129,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120219": {
     "Id": 120219,
@@ -6772,7 +7146,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120220": {
     "Id": 120220,
@@ -6788,7 +7163,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120251": {
     "Id": 120251,
@@ -6804,7 +7180,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120252": {
     "Id": 120252,
@@ -6820,7 +7197,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120253": {
     "Id": 120253,
@@ -6836,7 +7214,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120254": {
     "Id": 120254,
@@ -6852,7 +7231,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120255": {
     "Id": 120255,
@@ -6868,7 +7248,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120256": {
     "Id": 120256,
@@ -6894,7 +7275,8 @@
     ],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120257": {
     "Id": 120257,
@@ -6920,7 +7302,8 @@
     ],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120258": {
     "Id": 120258,
@@ -6946,7 +7329,8 @@
     ],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120259": {
     "Id": 120259,
@@ -6962,7 +7346,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "120260": {
     "Id": 120260,
@@ -6978,7 +7363,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140101": {
     "Id": 140101,
@@ -6999,7 +7385,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140102": {
     "Id": 140102,
@@ -7020,7 +7407,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140103": {
     "Id": 140103,
@@ -7041,7 +7429,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140104": {
     "Id": 140104,
@@ -7062,7 +7451,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140105": {
     "Id": 140105,
@@ -7078,7 +7468,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140106": {
     "Id": 140106,
@@ -7099,7 +7490,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140107": {
     "Id": 140107,
@@ -7115,7 +7507,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140108": {
     "Id": 140108,
@@ -7131,7 +7524,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140109": {
     "Id": 140109,
@@ -7147,7 +7541,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140110": {
     "Id": 140110,
@@ -7168,7 +7563,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140111": {
     "Id": 140111,
@@ -7189,7 +7585,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140112": {
     "Id": 140112,
@@ -7210,7 +7607,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140113": {
     "Id": 140113,
@@ -7243,7 +7641,8 @@
       "Preparation Progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140114": {
     "Id": 140114,
@@ -7259,7 +7658,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140115": {
     "Id": 140115,
@@ -7280,7 +7680,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140116": {
     "Id": 140116,
@@ -7301,7 +7702,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140117": {
     "Id": 140117,
@@ -7317,7 +7719,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140201": {
     "Id": 140201,
@@ -7333,7 +7736,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140202": {
     "Id": 140202,
@@ -7349,7 +7753,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140203": {
     "Id": 140203,
@@ -7377,7 +7782,8 @@
       "Supplies"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140204": {
     "Id": 140204,
@@ -7393,7 +7799,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140205": {
     "Id": 140205,
@@ -7421,7 +7828,8 @@
       "Supplies"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140206": {
     "Id": 140206,
@@ -7449,7 +7857,8 @@
       "Ingredients"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140207": {
     "Id": 140207,
@@ -7477,7 +7886,8 @@
       "Hunger"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140208": {
     "Id": 140208,
@@ -7493,7 +7903,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140209": {
     "Id": 140209,
@@ -7521,7 +7932,8 @@
       "Supplies"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140210": {
     "Id": 140210,
@@ -7549,7 +7961,8 @@
       "Ingredients"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140211": {
     "Id": 140211,
@@ -7577,7 +7990,8 @@
       "Hunger"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140212": {
     "Id": 140212,
@@ -7605,7 +8019,8 @@
       "Dreamflood Value"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "140213": {
     "Id": 140213,
@@ -7633,7 +8048,8 @@
       "Days"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "141101": {
     "Id": 141101,
@@ -7649,7 +8065,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142101": {
     "Id": 142101,
@@ -7665,7 +8082,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142102": {
     "Id": 142102,
@@ -7681,7 +8099,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142103": {
     "Id": 142103,
@@ -7697,7 +8116,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142104": {
     "Id": 142104,
@@ -7713,7 +8133,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142111": {
     "Id": 142111,
@@ -7729,7 +8150,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142112": {
     "Id": 142112,
@@ -7745,7 +8167,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142113": {
     "Id": 142113,
@@ -7761,7 +8184,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142114": {
     "Id": 142114,
@@ -7777,7 +8201,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142115": {
     "Id": 142115,
@@ -7793,7 +8218,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142116": {
     "Id": 142116,
@@ -7809,7 +8235,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142117": {
     "Id": 142117,
@@ -7825,7 +8252,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "142118": {
     "Id": 142118,
@@ -7841,7 +8269,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581101": {
     "Id": 581101,
@@ -7869,7 +8298,8 @@
       "Crimson Marrow"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581102": {
     "Id": 581102,
@@ -7902,7 +8332,8 @@
       "Crimson Marrow"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581201": {
     "Id": 581201,
@@ -7923,7 +8354,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581202": {
     "Id": 581202,
@@ -7944,7 +8376,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581203": {
     "Id": 581203,
@@ -7960,7 +8393,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581204": {
     "Id": 581204,
@@ -7981,7 +8415,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581205": {
     "Id": 581205,
@@ -8002,7 +8437,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581206": {
     "Id": 581206,
@@ -8023,7 +8459,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581207": {
     "Id": 581207,
@@ -8044,7 +8481,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581208": {
     "Id": 581208,
@@ -8065,7 +8503,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "581209": {
     "Id": 581209,
@@ -8081,7 +8520,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "560101": {
     "Id": 560101,
@@ -8097,7 +8537,93 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "651101": {
+    "Id": 651101,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6513,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Enter the Divine Punisher's secret chamber",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "651102": {
+    "Id": 651102,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6513,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat the Divine Punisher",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "651103": {
+    "Id": 651103,
+    "TargetType": 27,
+    "Num": 400,
+    "SceneId": 6513,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "651104": {
+    "Id": 651104,
+    "TargetType": 27,
+    "Num": 500,
+    "SceneId": 6514,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "651105": {
+    "Id": 651105,
+    "TargetType": 27,
+    "Num": 750,
+    "SceneId": 6515,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete spatial investigation within 9 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700101": {
     "Id": 700101,
@@ -8118,7 +8644,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700102": {
     "Id": 700102,
@@ -8139,7 +8666,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700103": {
     "Id": 700103,
@@ -8160,7 +8688,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700104": {
     "Id": 700104,
@@ -8181,7 +8710,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700105": {
     "Id": 700105,
@@ -8202,7 +8732,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700106": {
     "Id": 700106,
@@ -8223,7 +8754,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700107": {
     "Id": 700107,
@@ -8244,7 +8776,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700201": {
     "Id": 700201,
@@ -8265,7 +8798,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700202": {
     "Id": 700202,
@@ -8286,7 +8820,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700203": {
     "Id": 700203,
@@ -8307,7 +8842,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700204": {
     "Id": 700204,
@@ -8328,7 +8864,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700205": {
     "Id": 700205,
@@ -8349,7 +8886,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700206": {
     "Id": 700206,
@@ -8370,7 +8908,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700207": {
     "Id": 700207,
@@ -8391,7 +8930,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700301": {
     "Id": 700301,
@@ -8407,7 +8947,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700401": {
     "Id": 700401,
@@ -8423,7 +8964,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705001": {
     "Id": 705001,
@@ -8444,7 +8986,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705002": {
     "Id": 705002,
@@ -8477,7 +9020,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705003": {
     "Id": 705003,
@@ -8510,7 +9054,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705004": {
     "Id": 705004,
@@ -8528,7 +9073,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705101": {
     "Id": 705101,
@@ -8549,7 +9095,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705102": {
     "Id": 705102,
@@ -8582,7 +9129,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705103": {
     "Id": 705103,
@@ -8615,7 +9163,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705104": {
     "Id": 705104,
@@ -8633,7 +9182,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705201": {
     "Id": 705201,
@@ -8654,7 +9204,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705202": {
     "Id": 705202,
@@ -8687,7 +9238,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705203": {
     "Id": 705203,
@@ -8720,7 +9272,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705204": {
     "Id": 705204,
@@ -8738,7 +9291,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705301": {
     "Id": 705301,
@@ -8759,7 +9313,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705302": {
     "Id": 705302,
@@ -8792,7 +9347,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705303": {
     "Id": 705303,
@@ -8825,7 +9381,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705304": {
     "Id": 705304,
@@ -8843,7 +9400,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705401": {
     "Id": 705401,
@@ -8864,7 +9422,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705402": {
     "Id": 705402,
@@ -8897,7 +9456,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705403": {
     "Id": 705403,
@@ -8930,7 +9490,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705404": {
     "Id": 705404,
@@ -8948,7 +9509,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705501": {
     "Id": 705501,
@@ -8969,7 +9531,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705502": {
     "Id": 705502,
@@ -8987,7 +9550,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "705503": {
     "Id": 705503,
@@ -9003,7 +9567,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "706001": {
     "Id": 706001,
@@ -9038,7 +9603,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "706002": {
     "Id": 706002,
@@ -9073,7 +9639,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "706003": {
     "Id": 706003,
@@ -9108,7 +9675,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "706101": {
     "Id": 706101,
@@ -9129,7 +9697,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "706102": {
     "Id": 706102,
@@ -9162,7 +9731,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "706103": {
     "Id": 706103,
@@ -9183,7 +9753,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "706104": {
     "Id": 706104,
@@ -9211,7 +9782,8 @@
       "Enter the number of machines in Andra"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "706501": {
     "Id": 706501,
@@ -9232,7 +9804,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "706502": {
     "Id": 706502,
@@ -9253,7 +9826,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707001": {
     "Id": 707001,
@@ -9274,7 +9848,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707002": {
     "Id": 707002,
@@ -9295,7 +9870,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707003": {
     "Id": 707003,
@@ -9316,7 +9892,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707004": {
     "Id": 707004,
@@ -9337,7 +9914,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707005": {
     "Id": 707005,
@@ -9358,7 +9936,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707101": {
     "Id": 707101,
@@ -9379,7 +9958,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707102": {
     "Id": 707102,
@@ -9400,7 +9980,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707103": {
     "Id": 707103,
@@ -9421,7 +10002,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707104": {
     "Id": 707104,
@@ -9442,7 +10024,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707105": {
     "Id": 707105,
@@ -9463,7 +10046,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707106": {
     "Id": 707106,
@@ -9484,7 +10068,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707107": {
     "Id": 707107,
@@ -9505,7 +10090,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707201": {
     "Id": 707201,
@@ -9526,7 +10112,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707202": {
     "Id": 707202,
@@ -9547,7 +10134,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707203": {
     "Id": 707203,
@@ -9568,7 +10156,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707204": {
     "Id": 707204,
@@ -9589,7 +10178,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707205": {
     "Id": 707205,
@@ -9610,7 +10200,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707206": {
     "Id": 707206,
@@ -9631,7 +10222,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707207": {
     "Id": 707207,
@@ -9652,7 +10244,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707208": {
     "Id": 707208,
@@ -9673,7 +10266,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707301": {
     "Id": 707301,
@@ -9694,7 +10288,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707302": {
     "Id": 707302,
@@ -9710,7 +10305,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707303": {
     "Id": 707303,
@@ -9731,7 +10327,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707304": {
     "Id": 707304,
@@ -9747,7 +10344,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707305": {
     "Id": 707305,
@@ -9768,7 +10366,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707306": {
     "Id": 707306,
@@ -9784,7 +10383,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707307": {
     "Id": 707307,
@@ -9805,7 +10405,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707308": {
     "Id": 707308,
@@ -9821,7 +10422,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707309": {
     "Id": 707309,
@@ -9842,7 +10444,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707501": {
     "Id": 707501,
@@ -9863,7 +10466,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707502": {
     "Id": 707502,
@@ -9879,7 +10483,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707503": {
     "Id": 707503,
@@ -9895,7 +10500,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707601": {
     "Id": 707601,
@@ -9916,7 +10522,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707602": {
     "Id": 707602,
@@ -9932,7 +10539,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707603": {
     "Id": 707603,
@@ -9948,7 +10556,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707701": {
     "Id": 707701,
@@ -9969,7 +10578,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707702": {
     "Id": 707702,
@@ -9985,7 +10595,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "707703": {
     "Id": 707703,
@@ -10001,7 +10612,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "708501": {
     "Id": 708501,
@@ -10022,7 +10634,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "708502": {
     "Id": 708502,
@@ -10038,7 +10651,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "709001": {
     "Id": 709001,
@@ -10059,7 +10673,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "709002": {
     "Id": 709002,
@@ -10080,7 +10695,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "709501": {
     "Id": 709501,
@@ -10101,7 +10717,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "709502": {
     "Id": 709502,
@@ -10117,7 +10734,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "709511": {
     "Id": 709511,
@@ -10138,7 +10756,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "709512": {
     "Id": 709512,
@@ -10154,7 +10773,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "709513": {
     "Id": 709513,
@@ -10170,7 +10790,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "709514": {
     "Id": 709514,
@@ -10186,7 +10807,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710101": {
     "Id": 710101,
@@ -10207,7 +10829,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710103": {
     "Id": 710103,
@@ -10228,7 +10851,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710104": {
     "Id": 710104,
@@ -10249,7 +10873,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710105": {
     "Id": 710105,
@@ -10270,7 +10895,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710106": {
     "Id": 710106,
@@ -10291,7 +10917,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710107": {
     "Id": 710107,
@@ -10312,7 +10939,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710108": {
     "Id": 710108,
@@ -10333,7 +10961,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710109": {
     "Id": 710109,
@@ -10354,7 +10983,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710110": {
     "Id": 710110,
@@ -10375,7 +11005,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710111": {
     "Id": 710111,
@@ -10396,7 +11027,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710201": {
     "Id": 710201,
@@ -10417,7 +11049,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710203": {
     "Id": 710203,
@@ -10438,7 +11071,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710204": {
     "Id": 710204,
@@ -10459,7 +11093,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710205": {
     "Id": 710205,
@@ -10480,7 +11115,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710206": {
     "Id": 710206,
@@ -10501,7 +11137,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710207": {
     "Id": 710207,
@@ -10522,7 +11159,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710208": {
     "Id": 710208,
@@ -10543,7 +11181,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710209": {
     "Id": 710209,
@@ -10564,7 +11203,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710211": {
     "Id": 710211,
@@ -10585,7 +11225,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710301": {
     "Id": 710301,
@@ -10606,7 +11247,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710303": {
     "Id": 710303,
@@ -10627,7 +11269,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710304": {
     "Id": 710304,
@@ -10648,7 +11291,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710305": {
     "Id": 710305,
@@ -10669,7 +11313,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710306": {
     "Id": 710306,
@@ -10690,7 +11335,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710307": {
     "Id": 710307,
@@ -10711,7 +11357,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710308": {
     "Id": 710308,
@@ -10732,7 +11379,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710309": {
     "Id": 710309,
@@ -10753,7 +11401,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710310": {
     "Id": 710310,
@@ -10774,7 +11423,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "710311": {
     "Id": 710311,
@@ -10795,7 +11445,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "715001": {
     "Id": 715001,
@@ -10813,7 +11464,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800101": {
     "Id": 800101,
@@ -10834,7 +11486,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800102": {
     "Id": 800102,
@@ -10855,7 +11508,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800103": {
     "Id": 800103,
@@ -10871,7 +11525,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800104": {
     "Id": 800104,
@@ -10899,7 +11554,8 @@
       "The number of machines entering Andra"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800201": {
     "Id": 800201,
@@ -10920,7 +11576,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800202": {
     "Id": 800202,
@@ -10941,7 +11598,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800203": {
     "Id": 800203,
@@ -10957,7 +11615,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800501": {
     "Id": 800501,
@@ -10978,7 +11637,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "802001": {
     "Id": 802001,
@@ -10999,7 +11659,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800502": {
     "Id": 800502,
@@ -11020,7 +11681,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "802002": {
     "Id": 802002,
@@ -11045,7 +11707,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800601": {
     "Id": 800601,
@@ -11066,7 +11729,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "802003": {
     "Id": 802003,
@@ -11082,7 +11746,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "800602": {
     "Id": 800602,
@@ -11103,7 +11768,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "802101": {
     "Id": 802101,
@@ -11124,7 +11790,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "802102": {
     "Id": 802102,
@@ -11149,7 +11816,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "802103": {
     "Id": 802103,
@@ -11165,7 +11833,88 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "805101": {
+    "Id": 805101,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 8051,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat the monsters before they are corrupted by the Blight.",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "erodeNum"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "erodeNumMax"
+      ]
+    ],
+    "SpVariableName": [
+      "Corruption"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "805201": {
+    "Id": 805201,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 8052,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        17
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Touch the Engram before they are corrupted by the Blight.",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "erodeNum"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "erodeNumMax"
+      ]
+    ],
+    "SpVariableName": [
+      "Corruption"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "805301": {
+    "Id": 805301,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 8053,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat Malice Scales",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
   },
   "900101": {
     "Id": 900101,
@@ -11181,7 +11930,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "900102": {
     "Id": 900102,
@@ -11209,7 +11959,8 @@
       "The number of balloon(s) captured"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "900201": {
     "Id": 900201,
@@ -11230,7 +11981,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "900202": {
     "Id": 900202,
@@ -11246,7 +11998,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920001": {
     "Id": 920001,
@@ -11274,7 +12027,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920002": {
     "Id": 920002,
@@ -11302,7 +12056,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920003": {
     "Id": 920003,
@@ -11330,7 +12085,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920004": {
     "Id": 920004,
@@ -11358,7 +12114,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920005": {
     "Id": 920005,
@@ -11386,7 +12143,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920006": {
     "Id": 920006,
@@ -11414,7 +12172,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920007": {
     "Id": 920007,
@@ -11442,7 +12201,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920008": {
     "Id": 920008,
@@ -11470,7 +12230,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920009": {
     "Id": 920009,
@@ -11498,7 +12259,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920010": {
     "Id": 920010,
@@ -11526,7 +12288,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920011": {
     "Id": 920011,
@@ -11554,7 +12317,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920012": {
     "Id": 920012,
@@ -11582,7 +12346,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920013": {
     "Id": 920013,
@@ -11610,7 +12375,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920014": {
     "Id": 920014,
@@ -11638,7 +12404,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920015": {
     "Id": 920015,
@@ -11666,7 +12433,8 @@
       "EXP"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920200": {
     "Id": 920200,
@@ -11694,7 +12462,8 @@
       "Equipped"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920201": {
     "Id": 920201,
@@ -11722,7 +12491,8 @@
       "Slumberdream Remnant"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920202": {
     "Id": 920202,
@@ -11755,7 +12525,8 @@
       "Defense Progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920203": {
     "Id": 920203,
@@ -11788,7 +12559,8 @@
       "Repair Progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920204": {
     "Id": 920204,
@@ -11821,7 +12593,8 @@
       "Investigation Progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920205": {
     "Id": 920205,
@@ -11866,7 +12639,8 @@
       1,
       0
     ],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920206": {
     "Id": 920206,
@@ -11899,7 +12673,8 @@
       "Fog Dispersal Progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920207": {
     "Id": 920207,
@@ -11932,7 +12707,8 @@
       "Suppression Progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920208": {
     "Id": 920208,
@@ -11965,7 +12741,8 @@
       "Charging Progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920209": {
     "Id": 920209,
@@ -11998,7 +12775,8 @@
       "Connection Progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920210": {
     "Id": 920210,
@@ -12026,7 +12804,8 @@
       "Slumberdream Remnant"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "920211": {
     "Id": 920211,
@@ -12059,7 +12838,369 @@
       "Charging Progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "920500": {
+    "Id": 920500,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 9205,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Equip different Illusion-Shroud Masks on the Nappo statue",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "mianju"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "mianju_max"
+      ]
+    ],
+    "SpVariableName": [
+      "Equipped"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": [
+      "#ff7c7c"
+    ]
+  },
+  "920501": {
+    "Id": 920501,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 9205,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Collect Illusion-Shroud Ash and successfully clear the challenge.",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "DMpoint"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "DMpointMax"
+      ]
+    ],
+    "SpVariableName": [
+      "Illusion-Shroud Ash"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": [
+      "#ff7c7c"
+    ]
+  },
+  "920502": {
+    "Id": 920502,
+    "TargetType": 23,
+    "Num": 1,
+    "SceneId": 9205,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        106949
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Lv.1 Area - Lost Escort",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "event1_point"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "event1_point_max"
+      ]
+    ],
+    "SpVariableName": [
+      "Escort Target"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "920503": {
+    "Id": 920503,
+    "TargetType": 23,
+    "Num": 1,
+    "SceneId": 9205,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        127
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Lv.2 Area - Connect the Power Supply",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "event2_time"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "event2_time_max"
+      ]
+    ],
+    "SpVariableName": [
+      "Time"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": [
+      "#ffffff"
+    ]
+  },
+  "920504": {
+    "Id": 920504,
+    "TargetType": 23,
+    "Num": 1,
+    "SceneId": 9205,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        109323
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Lv.3 Area - Charged Bombardment",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "event3_point"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "event3_point_max"
+      ]
+    ],
+    "SpVariableName": [
+      "Charging Progress"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": [
+      "#55cdff"
+    ]
+  },
+  "920505": {
+    "Id": 920505,
+    "TargetType": 23,
+    "Num": 1,
+    "SceneId": 9205,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        137
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Lv.4 Area - Floral Traces",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "event4_point"
+      ],
+      [
+        "1",
+        "event4_time"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "event4_point_max"
+      ],
+      [
+        "1",
+        "event4_time_max"
+      ]
+    ],
+    "SpVariableName": [
+      "Clearing Progress",
+      "Time"
+    ],
+    "IsShowSpVariableProgress": [
+      1,
+      1
+    ],
+    "ShowChange": [
+      1,
+      1
+    ],
+    "ShowColor": [
+      "#ff2e7d",
+      "#ffffff"
+    ]
+  },
+  "920506": {
+    "Id": 920506,
+    "TargetType": 23,
+    "Num": 1,
+    "SceneId": 9205,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        176
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Lv.5 Area - Shadows of Frost and Fire",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "event5_point"
+      ],
+      [
+        "1",
+        "event5_time"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "event5_point_max"
+      ],
+      [
+        "1",
+        "event5_time_max"
+      ]
+    ],
+    "SpVariableName": [
+      "Collect Energy",
+      "Time"
+    ],
+    "IsShowSpVariableProgress": [
+      1,
+      1
+    ],
+    "ShowChange": [
+      1,
+      1
+    ],
+    "ShowColor": [
+      "#55cdff",
+      "#ffffff"
+    ]
+  },
+  "920507": {
+    "Id": 920507,
+    "TargetType": 23,
+    "Num": 1,
+    "SceneId": 9205,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        106949
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Hidden Event - Phantom Frenzy",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "event7_hp_1"
+      ],
+      [
+        "1",
+        "event7_hp_2"
+      ],
+      [
+        "1",
+        "event7_hp_3"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "event7_hpmax"
+      ],
+      [
+        "1",
+        "event7_hpmax"
+      ],
+      [
+        "1",
+        "event7_hpmax"
+      ]
+    ],
+    "SpVariableName": [
+      "Jim's HP",
+      "Jimmy's HP",
+      "Giddy's HP"
+    ],
+    "IsShowSpVariableProgress": [
+      1,
+      1,
+      1
+    ],
+    "ShowChange": [
+      1,
+      1,
+      1
+    ],
+    "ShowColor": []
+  },
+  "920510": {
+    "Id": 920510,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 9205,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat the boss and clear the stage",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "DMpoint"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "DMpointMax"
+      ]
+    ],
+    "SpVariableName": [
+      "Illusion-Shroud Ash"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1201101": {
     "Id": 1201101,
@@ -12075,7 +13216,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1201102": {
     "Id": 1201102,
@@ -12091,7 +13233,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1201103": {
     "Id": 1201103,
@@ -12107,7 +13250,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1201104": {
     "Id": 1201104,
@@ -12123,7 +13267,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1201105": {
     "Id": 1201105,
@@ -12139,7 +13284,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1201106": {
     "Id": 1201106,
@@ -12155,7 +13301,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1201107": {
     "Id": 1201107,
@@ -12171,7 +13318,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1201108": {
     "Id": 1201108,
@@ -12199,7 +13347,8 @@
       "Illuminator Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1201109": {
     "Id": 1201109,
@@ -12215,7 +13364,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1205001": {
     "Id": 1205001,
@@ -12231,7 +13381,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1201110": {
     "Id": 1201110,
@@ -12247,7 +13398,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1204001": {
     "Id": 1204001,
@@ -12263,7 +13415,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1204002": {
     "Id": 1204002,
@@ -12279,7 +13432,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1204003": {
     "Id": 1204003,
@@ -12295,7 +13449,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1205002": {
     "Id": 1205002,
@@ -12323,7 +13478,8 @@
       "Disrupt progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1205003": {
     "Id": 1205003,
@@ -12351,7 +13507,8 @@
       "Disrupt progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1205004": {
     "Id": 1205004,
@@ -12379,7 +13536,8 @@
       "Disrupt progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1205005": {
     "Id": 1205005,
@@ -12407,7 +13565,8 @@
       "Disrupt progress"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1205006": {
     "Id": 1205006,
@@ -12423,7 +13582,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1205007": {
     "Id": 1205007,
@@ -12439,7 +13599,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203001": {
     "Id": 1203001,
@@ -12460,7 +13621,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203002": {
     "Id": 1203002,
@@ -12493,7 +13655,8 @@
       "Ee-chan's Satisfaction"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203003": {
     "Id": 1203003,
@@ -12509,7 +13672,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203004": {
     "Id": 1203004,
@@ -12542,7 +13706,8 @@
       "Ee-chan's Satisfaction"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203005": {
     "Id": 1203005,
@@ -12558,7 +13723,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203006": {
     "Id": 1203006,
@@ -12586,7 +13752,8 @@
       "Ee-chan's Satisfaction"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203007": {
     "Id": 1203007,
@@ -12602,7 +13769,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203008": {
     "Id": 1203008,
@@ -12630,7 +13798,8 @@
       "Ee-chan's Satisfaction"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203009": {
     "Id": 1203009,
@@ -12646,7 +13815,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203010": {
     "Id": 1203010,
@@ -12679,7 +13849,8 @@
       "Ee-chan's Satisfaction"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203011": {
     "Id": 1203011,
@@ -12695,7 +13866,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1203012": {
     "Id": 1203012,
@@ -12723,7 +13895,8 @@
       "Ee-chan's Satisfaction"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1210001": {
     "Id": 1210001,
@@ -12739,7 +13912,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1300101": {
     "Id": 1300101,
@@ -12755,7 +13929,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1300102": {
     "Id": 1300102,
@@ -12771,7 +13946,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1300103": {
     "Id": 1300103,
@@ -12811,7 +13987,8 @@
       1,
       1
     ],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1300104": {
     "Id": 1300104,
@@ -12861,7 +14038,8 @@
       1,
       1
     ],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1300105": {
     "Id": 1300105,
@@ -12877,7 +14055,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1300106": {
     "Id": 1300106,
@@ -12893,7 +14072,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1300107": {
     "Id": 1300107,
@@ -12909,7 +14089,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1300108": {
     "Id": 1300108,
@@ -12949,7 +14130,8 @@
       1,
       1
     ],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1301101": {
     "Id": 1301101,
@@ -12965,7 +14147,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1301102": {
     "Id": 1301102,
@@ -12981,7 +14164,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1301103": {
     "Id": 1301103,
@@ -12997,7 +14181,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1301104": {
     "Id": 1301104,
@@ -13013,7 +14198,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1301105": {
     "Id": 1301105,
@@ -13029,7 +14215,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1301106": {
     "Id": 1301106,
@@ -13057,7 +14244,120 @@
       "End of All Things"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1302101": {
+    "Id": 1302101,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 0,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Paradox-Calamity Remnant - Origin",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "a_area_cur"
+      ],
+      [
+        "1",
+        "b_area_cur"
+      ],
+      [
+        "1",
+        "c_area_cur"
+      ],
+      [
+        "1",
+        "d_area_cur"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "a_area_max"
+      ],
+      [
+        "1",
+        "b_area_max"
+      ],
+      [
+        "1",
+        "c_area_max"
+      ],
+      [
+        "1",
+        "d_area_max"
+      ]
+    ],
+    "SpVariableName": [
+      "Room 1 Energy",
+      "Room 2 Energy",
+      "Room 3 Energy",
+      "Room 4 Energy"
+    ],
+    "IsShowSpVariableProgress": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1302102": {
+    "Id": 1302102,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 0,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Paradox-Calamity Remnant - Origin",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1302103": {
+    "Id": 1302103,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 0,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Paradox-Calamity Remnant - Continuation",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1302104": {
+    "Id": 1302104,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 0,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Paradox-Calamity Remnant - Final",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501001": {
     "Id": 1501001,
@@ -13078,7 +14378,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501002": {
     "Id": 1501002,
@@ -13099,7 +14400,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501003": {
     "Id": 1501003,
@@ -13115,7 +14417,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501004": {
     "Id": 1501004,
@@ -13131,7 +14434,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501005": {
     "Id": 1501005,
@@ -13152,7 +14456,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501006": {
     "Id": 1501006,
@@ -13173,7 +14478,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501007": {
     "Id": 1501007,
@@ -13189,7 +14495,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501008": {
     "Id": 1501008,
@@ -13205,7 +14512,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501011": {
     "Id": 1501011,
@@ -13221,7 +14529,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501012": {
     "Id": 1501012,
@@ -13237,7 +14546,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501013": {
     "Id": 1501013,
@@ -13253,7 +14563,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501014": {
     "Id": 1501014,
@@ -13274,7 +14585,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501015": {
     "Id": 1501015,
@@ -13290,7 +14602,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501016": {
     "Id": 1501016,
@@ -13318,7 +14631,8 @@
       "Rock Serpent Hits"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1501017": {
     "Id": 1501017,
@@ -13339,7 +14653,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011001": {
     "Id": 6011001,
@@ -13355,7 +14670,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011002": {
     "Id": 6011002,
@@ -13371,7 +14687,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011003": {
     "Id": 6011003,
@@ -13387,7 +14704,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011004": {
     "Id": 6011004,
@@ -13403,7 +14721,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011005": {
     "Id": 6011005,
@@ -13419,7 +14738,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011006": {
     "Id": 6011006,
@@ -13435,7 +14755,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011007": {
     "Id": 6011007,
@@ -13451,7 +14772,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011008": {
     "Id": 6011008,
@@ -13467,7 +14789,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011009": {
     "Id": 6011009,
@@ -13483,7 +14806,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011010": {
     "Id": 6011010,
@@ -13499,7 +14823,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011011": {
     "Id": 6011011,
@@ -13515,7 +14840,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011012": {
     "Id": 6011012,
@@ -13543,7 +14869,8 @@
       "Engram"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011050": {
     "Id": 6011050,
@@ -13559,7 +14886,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011051": {
     "Id": 6011051,
@@ -13575,7 +14903,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011052": {
     "Id": 6011052,
@@ -13591,7 +14920,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011053": {
     "Id": 6011053,
@@ -13607,7 +14937,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011054": {
     "Id": 6011054,
@@ -13623,7 +14954,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011055": {
     "Id": 6011055,
@@ -13639,7 +14971,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011056": {
     "Id": 6011056,
@@ -13655,7 +14988,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011057": {
     "Id": 6011057,
@@ -13671,7 +15005,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011058": {
     "Id": 6011058,
@@ -13687,7 +15022,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011059": {
     "Id": 6011059,
@@ -13703,7 +15039,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011060": {
     "Id": 6011060,
@@ -13719,7 +15056,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6211001": {
     "Id": 6211001,
@@ -13735,7 +15073,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6211002": {
     "Id": 6211002,
@@ -13751,7 +15090,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6211003": {
     "Id": 6211003,
@@ -13767,7 +15107,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6211011": {
     "Id": 6211011,
@@ -13783,7 +15124,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6211012": {
     "Id": 6211012,
@@ -13799,7 +15141,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6211021": {
     "Id": 6211021,
@@ -13815,7 +15158,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6211022": {
     "Id": 6211022,
@@ -13843,7 +15187,8 @@
       "Erosion Hits"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6311001": {
     "Id": 6311001,
@@ -13871,7 +15216,8 @@
       "Illuminator Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6311002": {
     "Id": 6311002,
@@ -13899,7 +15245,8 @@
       "Illuminator Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6311003": {
     "Id": 6311003,
@@ -13927,7 +15274,8 @@
       "Illuminator Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6311004": {
     "Id": 6311004,
@@ -13955,7 +15303,8 @@
       "Illuminator Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6311005": {
     "Id": 6311005,
@@ -13983,7 +15332,8 @@
       "Illuminator Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6311006": {
     "Id": 6311006,
@@ -13999,7 +15349,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6311007": {
     "Id": 6311007,
@@ -14027,7 +15378,8 @@
       "Illuminator Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6311008": {
     "Id": 6311008,
@@ -14055,7 +15407,8 @@
       "Illuminator Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6311009": {
     "Id": 6311009,
@@ -14083,7 +15436,8 @@
       "Illuminator Energy"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6425001": {
     "Id": 6425001,
@@ -14099,7 +15453,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6425002": {
     "Id": 6425002,
@@ -14115,7 +15470,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6425003": {
     "Id": 6425003,
@@ -14131,7 +15487,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6425004": {
     "Id": 6425004,
@@ -14147,7 +15504,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6425005": {
     "Id": 6425005,
@@ -14163,7 +15521,326 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6561001": {
+    "Id": 6561001,
+    "TargetType": 27,
+    "Num": 450,
+    "SceneId": 6563,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6541001": {
+    "Id": 6541001,
+    "TargetType": 27,
+    "Num": 400,
+    "SceneId": 6543,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6541002": {
+    "Id": 6541002,
+    "TargetType": 27,
+    "Num": 600,
+    "SceneId": 6544,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6541003": {
+    "Id": 6541003,
+    "TargetType": 27,
+    "Num": 760,
+    "SceneId": 6545,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete spatial investigation within 9 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6561002": {
+    "Id": 6561002,
+    "TargetType": 27,
+    "Num": 750,
+    "SceneId": 6564,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6541004": {
+    "Id": 6541004,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6541,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat the Mist-Piercing Fang",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6541005": {
+    "Id": 6541005,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6542,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat the Mist-Piercing Fang",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6521001": {
+    "Id": 6521001,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6521,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat Thanatos - Final Form",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6561003": {
+    "Id": 6561003,
+    "TargetType": 27,
+    "Num": 1050,
+    "SceneId": 6565,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete spatial investigation within 9 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6521002": {
+    "Id": 6521002,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6521,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat Thanatos - Final Form",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "xulijindutiao"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "xulijindutiaoMax"
+      ]
+    ],
+    "SpVariableName": [
+      "Thanatos - Final Form Charge Progress"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6521003": {
+    "Id": 6521003,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6521,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat Thanatos - Final Form",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6561011": {
+    "Id": 6561011,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6561,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Proceed to the depths of the underwater ruins",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6521004": {
+    "Id": 6521004,
+    "TargetType": 27,
+    "Num": 510,
+    "SceneId": 6523,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6561012": {
+    "Id": 6561012,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6561,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat Abyssal Nappo",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6521005": {
+    "Id": 6521005,
+    "TargetType": 27,
+    "Num": 650,
+    "SceneId": 6524,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete spatial investigation within 9 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6521006": {
+    "Id": 6521006,
+    "TargetType": 27,
+    "Num": 930,
+    "SceneId": 6525,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete spatial investigation within 9 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6561021": {
+    "Id": 6561021,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6561,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Solve the matrix puzzle within 90s.",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6561022": {
+    "Id": 6561022,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6561,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete in under 60s.",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000101": {
     "Id": 2000101,
@@ -14179,7 +15856,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000102": {
     "Id": 2000102,
@@ -14195,7 +15873,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000103": {
     "Id": 2000103,
@@ -14211,7 +15890,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000104": {
     "Id": 2000104,
@@ -14227,7 +15907,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000105": {
     "Id": 2000105,
@@ -14243,7 +15924,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000106": {
     "Id": 2000106,
@@ -14259,7 +15941,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000107": {
     "Id": 2000107,
@@ -14275,7 +15958,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000108": {
     "Id": 2000108,
@@ -14291,7 +15975,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000109": {
     "Id": 2000109,
@@ -14307,7 +15992,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000110": {
     "Id": 2000110,
@@ -14325,7 +16011,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000111": {
     "Id": 2000111,
@@ -14343,7 +16030,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000112": {
     "Id": 2000112,
@@ -14359,7 +16047,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000113": {
     "Id": 2000113,
@@ -14375,7 +16064,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000114": {
     "Id": 2000114,
@@ -14391,7 +16081,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2000115": {
     "Id": 2000115,
@@ -14407,7 +16098,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011013": {
     "Id": 6011013,
@@ -14423,7 +16115,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "6011014": {
     "Id": 6011014,
@@ -14451,7 +16144,8 @@
       "Caught: "
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2004101": {
     "Id": 2004101,
@@ -14467,7 +16161,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2004102": {
     "Id": 2004102,
@@ -14483,7 +16178,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3003001": {
     "Id": 3003001,
@@ -14503,7 +16199,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2004104": {
     "Id": 2004104,
@@ -14519,7 +16216,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2004105": {
     "Id": 2004105,
@@ -14535,7 +16233,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2004103": {
     "Id": 2004103,
@@ -14551,7 +16250,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "2004106": {
     "Id": 2004106,
@@ -14567,7 +16267,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3003002": {
     "Id": 3003002,
@@ -14587,7 +16288,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3003003": {
     "Id": 3003003,
@@ -14607,7 +16309,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3003004": {
     "Id": 3003004,
@@ -14627,7 +16330,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3003005": {
     "Id": 3003005,
@@ -14647,7 +16351,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3003006": {
     "Id": 3003006,
@@ -14667,7 +16372,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3003007": {
     "Id": 3003007,
@@ -14687,7 +16393,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3003008": {
     "Id": 3003008,
@@ -14707,7 +16414,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3003009": {
     "Id": 3003009,
@@ -14727,7 +16435,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3003010": {
     "Id": 3003010,
@@ -14747,7 +16456,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "112211": {
     "Id": 112211,
@@ -14763,7 +16473,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "112212": {
     "Id": 112212,
@@ -14779,7 +16490,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "103211": {
     "Id": 103211,
@@ -14795,7 +16507,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "103212": {
     "Id": 103212,
@@ -14811,7 +16524,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "122211": {
     "Id": 122211,
@@ -14827,7 +16541,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "122212": {
     "Id": 122212,
@@ -14843,7 +16558,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "602211": {
     "Id": 602211,
@@ -14859,7 +16575,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "602212": {
     "Id": 602212,
@@ -14875,7 +16592,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3010101": {
     "Id": 3010101,
@@ -14891,7 +16609,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3010102": {
     "Id": 3010102,
@@ -14907,7 +16626,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "3010103": {
     "Id": 3010103,
@@ -14923,7 +16643,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1331001": {
     "Id": 1331001,
@@ -14939,7 +16660,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1331002": {
     "Id": 1331002,
@@ -14967,7 +16689,8 @@
       "Number of shards"
     ],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1331011": {
     "Id": 1331011,
@@ -14983,7 +16706,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "1331012": {
     "Id": 1331012,
@@ -14999,7 +16723,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700001": {
     "Id": 700001,
@@ -15017,7 +16742,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "700002": {
     "Id": 700002,
@@ -15035,7 +16761,27 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "700003": {
+    "Id": 700003,
+    "TargetType": 9,
+    "Num": 1,
+    "SceneId": 0,
+    "Param": [
+      700101
+    ],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat the Squeaky Boarlet within 45s",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
   },
   "612101": {
     "Id": 612101,
@@ -15051,7 +16797,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "612201": {
     "Id": 612201,
@@ -15067,7 +16814,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "612301": {
     "Id": 612301,
@@ -15083,7 +16831,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "611101": {
     "Id": 611101,
@@ -15099,7 +16848,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "611102": {
     "Id": 611102,
@@ -15115,7 +16865,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "611103": {
     "Id": 611103,
@@ -15133,7 +16884,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "611104": {
     "Id": 611104,
@@ -15151,7 +16903,8 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   },
   "611105": {
     "Id": 611105,
@@ -15170,6 +16923,7 @@
     "SpVariableLimit": [],
     "SpVariableName": [],
     "IsShowSpVariableProgress": [],
-    "ShowChange": []
+    "ShowChange": [],
+    "ShowColor": []
   }
 }

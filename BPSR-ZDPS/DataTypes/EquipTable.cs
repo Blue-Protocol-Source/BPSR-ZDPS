@@ -36,6 +36,7 @@ namespace BPSR_ZDPS.DataTypes
         public List<int> QualityChildAttrLibId { get; set; }
         public List<int> RecastType { get; set; }
         public int SuitId { get; set; }
-        public int SeasonId { get; set; }
+        public List<int> SeasonId { get; set; }
+        public int TransformId { get; set; }
     }
 }
