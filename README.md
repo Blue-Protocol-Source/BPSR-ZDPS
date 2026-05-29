@@ -46,7 +46,7 @@ ZDPS also has it's own [Module Optimizer](#Module-Optimizer) that runs incredibl
 
 There is also [integration support](#Integrations-Support) for third-party services to help provide a more complete experience. The current one supported at launch is [BPTimer](#BPTimer-Integration). You have the option to enable support in the Settings menu to allow viewing Field Boss and Magical Creatures spawns directly inside ZDPS. There is also the option to allow reporting data for those monsters back to [BPTimer.com](https://bptimer.com/) to help in the crowd sourced data efforts.
 
-Additionally, an [Event Tracker](#Event-Tracker) feature exists to allow user-controlled custom Buff and Skill tracking. This is an advanced system packed with features to allow you to see as much information as you'd like, in a variety of formats. Trackers can be used on Yourself, Allies, and Enemies (including Bosses). There also are Presets built into ZDPS to help get you started and that also serve as a method for easily sharing your Containers and Trackers with other players.
+Additionally, an [Event Tracker](#Event-Tracker) feature exists to allow user-controlled custom Buff, Skill, and Attribute tracking. This is an advanced system packed with features to allow you to see as much information as you'd like, in a variety of formats. Trackers can be used on Yourself, Allies, and Enemies (including Bosses). There also are Presets built into ZDPS to help get you started and that also serve as a method for easily sharing your Containers and Trackers with other players.
 
 Many windows feature a number of buttons in the top right on their title bar. While some are unique to the window, the most common ones you will find are a `Thumbtack` for `Pin Window As Top Most` to make sure it remains above any other application/window, and `Two Arrows` for `Collapse To Content` which hides most of the "options" related elements of the window and leaves just the meaningful content visible. If you're ever unsure of what one of the buttons does, mouse over it and there is likely a tooltip telling you what it does.
 
@@ -264,7 +264,7 @@ ZDPS features the ability to open a Chat window directly inside of it. This allo
 ### Event Tracker
 > Accessed from `Raid Manager` on the Features menu.
 
-To provide an enhanced gameplay experience, ZDPS features an Event Tracker. This allows you to select any Buff or Skill event in the game and watch it for changes. With this. you can always be aware of any Buff on yourself, an ally, or enemy at all times and know exactly how long it has left on it. Additionally, you can know when a Tankbuster attack is being performed by a Boss and on which player. Or you can have it identify where a mechanic may be occurring to more clearly inform your Raid group what they need to be doing. This system also hooks into the Raid Warning feature so you can connect tracked events to warning messages, improving the ability to notice them.
+To provide an enhanced gameplay experience, ZDPS features an Event Tracker. This allows you to select any Buff, Skill, or Attribute event in the game and watch it for changes. With this. you can always be aware of any Buff on yourself, an ally, or enemy at all times and know exactly how long it has left on it. Additionally, you can know when a Tankbuster attack is being performed by a Boss and on which player. Or you can have it identify where a mechanic may be occurring to more clearly inform your Raid group what they need to be doing. This system also hooks into the Raid Warning feature so you can connect tracked events to warning messages, improving the ability to notice them.
 
 Containers and Trackers can also have Presets created from them and then shared with other users.
 
@@ -492,6 +492,9 @@ ZDPS is capable of checking online for new versions and alerting you if one is f
 
 `Show Channel Line Number In Status`
 - This setting will allow you to see your current Channel Line Number in the bottom Status bar of the meter. This will show whenever you're on an instance that supports channels even if the game's UI does not tell you the number.
+
+`Show Call Wipe For Encounter On Main Window`
+- This adds a button to the Main Window, next to the New Encounter button, that has a Skull Icon. Clicking this will force the current Encounter to be marked as a Wipe and end.
 
 `Pinned (Top Most) Window Opacities`
 - In here you can set how transparent you want a pinned window to be.
