@@ -20,7 +20,7 @@ namespace BPSR_ZDPS.Managers.External
         static BPTimerHpReport? LastSentRequest = null;
 
         static int[] SupportedEntityReportList =
-            [ 10007, 10009, 10010, 10018, 10029, 10032, 10056, 10059, 10069, 10077, 10081, 10084, 10085, 10086, 10900, 10901, 10902, 10903, 10904 ];
+            [ 10007, 10009, 10010, 10018, 10029, 10032, 10056, 10059, 10069, 10077, 10081, 10084, 10085, 10086, 10900, 10901, 10902, 10903, 10904, 11203, 11207, 11211, 11215, 11219 ];
 
         static bool IsEncounterBound = false;
 
@@ -121,6 +121,15 @@ namespace BPSR_ZDPS.Managers.External
             {
                 // We'll assume (0, 0, 0) means no position has been set yet
                 bool hasPositionData = entity.Position.Length() != 0.0f;
+                System.Numerics.Vector3 playerPos = new();
+                if (!hasPositionData && EncounterManager.Current != null)
+                {
+                    Log.Error("Entity Position is missing! BPTimer SendHpReport will attempt to use local Player position instead");
+                    if (EncounterManager.Current.Entities.TryGetValue(AppState.PlayerUUID, out var playerEnt))
+                    {
+                        playerPos = playerEnt.Position;
+                    }
+                }
 
                 long? uid = (Settings.Instance.External.BPTimerSettings.ExternalBPTimerIncludeCharacterId ? AppState.PlayerUID : null);
 
@@ -129,9 +138,9 @@ namespace BPSR_ZDPS.Managers.External
                     MonsterId = entity.UID,
                     HpPct = hpPct,
                     Line = line,
-                    PosX = hasPositionData ? entity.Position.X : null,
-                    PosY = hasPositionData ? entity.Position.Y : null,
-                    PosZ = hasPositionData ? entity.Position.Z : null,
+                    PosX = hasPositionData ? entity.Position.X : playerPos.X,
+                    PosY = hasPositionData ? entity.Position.Y : playerPos.Y,
+                    PosZ = hasPositionData ? entity.Position.Z : playerPos.Z,
                     AccountId = AppState.AccountId,
                     UID = uid
                 };

@@ -211,8 +211,9 @@ namespace BPSR_ZDPS.Windows
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
                         ImGui.BeginChild("##GeneralTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
 
-                        ImGui.SeparatorText("Localization");
+                        ImGui.SeparatorText("Localization (Coming Soon)");
 
+                        ImGui.BeginDisabled();
                         ImGui.AlignTextToFramePadding();
                         ImGui.TextUnformatted("Language: ");
                         ImGui.SameLine();
@@ -236,6 +237,8 @@ namespace BPSR_ZDPS.Windows
 
                             ImGui.EndCombo();
                         }
+
+                        ImGui.EndDisabled();
 
                         ImGui.SeparatorText("Network Device");
 
