@@ -7687,7 +7687,8 @@ namespace BPSR_ZDPS.Windows
 
     public class EventTrackerWindowSettings : WindowSettingsBase
     {
-        public bool IsContainerEditMode = true;
+        [JsonIgnore]
+        public bool IsContainerEditMode = false;
         public bool EditModeShowPlaceholders = false;
 
         public bool HideContainersWhenGameNotFocused = false;
