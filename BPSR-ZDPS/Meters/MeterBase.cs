@@ -34,8 +34,10 @@ namespace BPSR_ZDPS.Meters
             }
 
             ImGui.SetCursorPosX(offset);
-            
+
+            ImGui.PushStyleColor(ImGuiCol.NavCursor, Colors.Transparent);
             bool ret = ImGui.Selectable(name, false, ImGuiSelectableFlags.SpanAllColumns);
+            ImGui.PopStyleColor();
             ImGui.SameLine();
 
             ImGui.SetCursorPos(startPoint);
