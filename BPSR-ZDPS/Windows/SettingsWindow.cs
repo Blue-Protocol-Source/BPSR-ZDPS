@@ -36,6 +36,7 @@ namespace BPSR_ZDPS.Windows
         static bool useLegacyWipeDetection;
         static bool splitEncountersOnNewPhases;
         static bool displayTruePerSecondValuesInMeters;
+        static bool hideEncounterPerSecondValuesInMeters;
         static bool allowGamepadNavigationInputInZDPS;
         static bool keepPastEncounterInMeterUntilNextDamage;
         static bool showChannelLineNumberInStatus;
@@ -659,6 +660,20 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
                         ImGui.TextWrapped("When enabled, the Damage, Healing, and Taken Per Second value shown in the Meters will have the 'Active' Per Second value, shown in square brackets, in addition to the normal 'Encounter Per Second' value. This means it is recalculated every second while taking down time and late starts into account instead of ignoring down time and calculating based on when the first damage event in the Encounter was dealt.\nNote: Both values are accurate, they are just two different metrics.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(!displayTruePerSecondValuesInMeters);
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Hide Encounter Per Second Values In Meters: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##HideEncounterPerSecondValuesInMeters", ref hideEncounterPerSecondValuesInMeters);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, the normal Encounter Per Second value will not be shown in the meters. Only Active Per Second will be shown.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -1723,6 +1738,7 @@ namespace BPSR_ZDPS.Windows
             useLegacyWipeDetection = Settings.Instance.UseLegacyWipeDetection;
             splitEncountersOnNewPhases = Settings.Instance.SplitEncountersOnNewPhases;
             displayTruePerSecondValuesInMeters = Settings.Instance.DisplayTruePerSecondValuesInMeters;
+            hideEncounterPerSecondValuesInMeters = Settings.Instance.HideEncounterPerSecondValuesInMeters;
             allowGamepadNavigationInputInZDPS = Settings.Instance.AllowGamepadNavigationInputInZDPS;
             keepPastEncounterInMeterUntilNextDamage = Settings.Instance.KeepPastEncounterInMeterUntilNextDamage;
             showChannelLineNumberInStatus = Settings.Instance.ShowChannelLineNumberInStatus;
@@ -1846,6 +1862,7 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.UseLegacyWipeDetection = useLegacyWipeDetection;
             Settings.Instance.SplitEncountersOnNewPhases = splitEncountersOnNewPhases;
             Settings.Instance.DisplayTruePerSecondValuesInMeters = displayTruePerSecondValuesInMeters;
+            Settings.Instance.HideEncounterPerSecondValuesInMeters = hideEncounterPerSecondValuesInMeters;
             Settings.Instance.AllowGamepadNavigationInputInZDPS = allowGamepadNavigationInputInZDPS;
             Settings.Instance.KeepPastEncounterInMeterUntilNextDamage = keepPastEncounterInMeterUntilNextDamage;
             Settings.Instance.ShowChannelLineNumberInStatus = showChannelLineNumberInStatus;

@@ -156,9 +156,13 @@ namespace BPSR_ZDPS.Meters
                         {
                             activePerSecond = $"[{Utils.NumberToShorthand(entity.HealingStats.ValuePerSecondActive)}] ";
                         }
+                        string encounterPerSecond = "";
+                        if (!Settings.Instance.HideEncounterPerSecondValuesInMeters || !Settings.Instance.DisplayTruePerSecondValuesInMeters)
+                        {
+                            encounterPerSecond = $"({Utils.NumberToShorthand(entity.HealingStats.ValuePerSecond)}) ";
+                        }
                         string totalHealing = Utils.NumberToShorthand(entity.TotalHealing);
-                        string totalHps = Utils.NumberToShorthand(entity.HealingStats.ValuePerSecond);
-                        string hps_format = $"{totalHealing} {activePerSecond}({totalHps}) {contribution.ToString("F0").PadLeft(3, ' ')}%";
+                        string hps_format = $"{totalHealing} {activePerSecond}{encounterPerSecond}{contribution.ToString("F0").PadLeft(3, ' ')}%";
                         var startPoint = ImGui.GetCursorPos();
 
                         ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f * Settings.Instance.WindowSettings.MainWindow.MeterBarScale);

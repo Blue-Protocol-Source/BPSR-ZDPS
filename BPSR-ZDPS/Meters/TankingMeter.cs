@@ -144,8 +144,12 @@ namespace BPSR_ZDPS.Meters
                         {
                             activePerSecond = $"[{Utils.NumberToShorthand(entity.TakenStats.ValuePerSecondActive)}] ";
                         }
+                        string encounterPerSecond = "";
+                        if (!Settings.Instance.HideEncounterPerSecondValuesInMeters || !Settings.Instance.DisplayTruePerSecondValuesInMeters)
+                        {
+                            encounterPerSecond = $"({Utils.NumberToShorthand(entity.TakenStats.ValuePerSecond)}) ";
+                        }
                         string totalTaken = Utils.NumberToShorthand(entity.TotalTakenDamage);
-                        string totalTps = Utils.NumberToShorthand(entity.TakenStats.ValuePerSecond);
                         StringBuilder format = new();
 
                         if (Settings.Instance.MeterSettingsTankingShowDeaths)
@@ -153,7 +157,7 @@ namespace BPSR_ZDPS.Meters
                             format.Append($"[ {entity.TotalDeaths} ] ");
                         }
 
-                        format.Append($"{totalTaken} {activePerSecond}({totalTps}) {contribution.ToString("F0").PadLeft(3, ' ')}%");
+                        format.Append($"{totalTaken} {activePerSecond}{encounterPerSecond}{contribution.ToString("F0").PadLeft(3, ' ')}%");
                         var startPoint = ImGui.GetCursorPos();
 
                         ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 14.0f * Settings.Instance.WindowSettings.MainWindow.MeterBarScale);

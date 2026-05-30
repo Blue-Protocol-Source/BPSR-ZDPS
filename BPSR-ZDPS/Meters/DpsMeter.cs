@@ -175,7 +175,12 @@ namespace BPSR_ZDPS.Meters
                         {
                             activePerSecond = $"[{Utils.NumberToShorthand(entity.DamageStats.ValuePerSecondActive)}] ";
                         }
-                        string dps_format = $"{Utils.NumberToShorthand(entity.TotalDamage)} {activePerSecond}({Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond)}) {contribution.ToString("F0").PadLeft(3, ' ')}%"; // Format: TotalDamage (DPS) Contribution%
+                        string encounterPerSecond = "";
+                        if (!Settings.Instance.HideEncounterPerSecondValuesInMeters || !Settings.Instance.DisplayTruePerSecondValuesInMeters)
+                        {
+                            encounterPerSecond = $"({Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond)}) ";
+                        }
+                        string dps_format = $"{Utils.NumberToShorthand(entity.TotalDamage)} {activePerSecond}{encounterPerSecond}{contribution.ToString("F0").PadLeft(3, ' ')}%"; // Format: TotalDamage (DPS) Contribution%
                         var startPoint = ImGui.GetCursorPos();
                         // ImGui.GetTextLineHeightWithSpacing();
 
