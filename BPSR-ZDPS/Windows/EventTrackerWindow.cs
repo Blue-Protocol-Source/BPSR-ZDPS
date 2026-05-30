@@ -7395,6 +7395,8 @@ namespace BPSR_ZDPS.Windows
             bool isInCombat = false;
             EActorState? actorState = null;
             DataTypes.Enums.Professions.ERoleType roleType = DataTypes.Enums.Professions.ERoleType.None;
+            DataTypes.Enums.Professions.EProfessionId profession = DataTypes.Enums.Professions.EProfessionId.Profession_Unknown;
+            DataTypes.Enums.Professions.SubProfessionId subProfession = DataTypes.Enums.Professions.SubProfessionId.SubProfession_Unknown;
             if (EncounterManager.Current.Entities.TryGetValue(AppState.PlayerUUID, out var playerEntity))
             {
                 var attrCombatState = playerEntity.GetAttrKV("AttrCombatState") as int?;
@@ -7404,6 +7406,16 @@ namespace BPSR_ZDPS.Windows
                 actorState = attrState;
 
                 roleType = DataTypes.Professions.GetRoleFromBaseProfessionId(playerEntity.ProfessionId);
+
+                if (System.Enum.IsDefined(typeof(DataTypes.Enums.Professions.EProfessionId), playerEntity.ProfessionId))
+                {
+                    profession = (DataTypes.Enums.Professions.EProfessionId)playerEntity.ProfessionId;
+                }
+
+                if (System.Enum.IsDefined(typeof(DataTypes.Enums.Professions.SubProfessionId), playerEntity.SubProfessionId))
+                {
+                    subProfession = (DataTypes.Enums.Professions.SubProfessionId)playerEntity.SubProfessionId;
+                }
             }
 
             if (InCombat)
@@ -7449,6 +7461,22 @@ namespace BPSR_ZDPS.Windows
             if (UseRoleTypes)
             {
                 if (!RoleType.Contains(roleType))
+                {
+                    return false;
+                }
+            }
+
+            if (UseProfession)
+            {
+                if (!Profession.Contains(profession))
+                {
+                    return false;
+                }
+            }
+
+            if (UseSubProfession)
+            {
+                if (!SubProfession.Contains(subProfession))
                 {
                     return false;
                 }
