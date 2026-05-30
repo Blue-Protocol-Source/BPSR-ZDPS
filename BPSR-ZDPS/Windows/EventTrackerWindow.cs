@@ -3042,9 +3042,13 @@ namespace BPSR_ZDPS.Windows
 
                                                 ImGui.ProgressBar(remainingPct, new Vector2(sX, eventTracker.DurationProgressBarSize), "##BuffDurationProgressBar");
                                                 var endProgPos = ImGui.GetCursorPos();
+                                                var endPointY = startProgPos.Y + ImGui.GetItemRectSize().Y;
                                                 ImGui.SetCursorPos(startProgPos);
                                                 float verticalOffset = 0.5f;
-                                                float mid = (endProgPos.Y + startProgPos.Y) * verticalOffset;
+                                                float mid = (endPointY + startProgPos.Y) * verticalOffset;
+                                                // Switch to this Lerp if we allow user defined text offset instead of forced mid point
+                                                //float mid = startProgPos.Y + verticalOffset * (endPointY - startProgPos.Y);
+                                                float itemSpacingY = style.ItemSpacing.Y;
 
                                                 float hMid = Math.Clamp(startProgPos.X + ((sX - calcWidth) * horizontalOffset), endProgPos.X, float.MaxValue);
                                                 ImGui.SetCursorPosX(hMid);
@@ -3073,7 +3077,7 @@ namespace BPSR_ZDPS.Windows
                                                 // Entity Name
                                                 if (!string.IsNullOrEmpty(entityNameFormat))
                                                 {
-                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f));
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f) - itemSpacingY);
                                                     ImGui.TextUnformatted(entityNameFormat);
 
                                                     ImGui.SameLine();
@@ -3082,7 +3086,7 @@ namespace BPSR_ZDPS.Windows
                                                 // Name
                                                 if (!string.IsNullOrEmpty(nameFormat))
                                                 {
-                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f));
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f) - itemSpacingY);
                                                     bool nameColor = eventTracker.UseCustomNameTextColor;
                                                     if (nameColor)
                                                     {
@@ -3100,7 +3104,7 @@ namespace BPSR_ZDPS.Windows
                                                 // Layers
                                                 if (!string.IsNullOrEmpty(layersFormat))
                                                 {
-                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f));
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f) - itemSpacingY);
                                                     bool layersColor = eventTracker.UseCustomLayersTextColor;
                                                     if (layersColor)
                                                     {
@@ -3118,7 +3122,7 @@ namespace BPSR_ZDPS.Windows
                                                 // Duration
                                                 if (!string.IsNullOrEmpty(durationFormat))
                                                 {
-                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f));
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f) - itemSpacingY);
                                                     bool durationColor = eventTracker.UseCustomDurationTextColor;
                                                     if (durationColor)
                                                     {
