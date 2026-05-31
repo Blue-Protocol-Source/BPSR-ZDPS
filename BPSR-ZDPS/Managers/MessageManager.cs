@@ -43,6 +43,8 @@ namespace BPSR_ZDPS
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncContainerData, ProcessSyncContainerData);
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncContainerDirtyData, ProcessSyncContainerDirtyData);
 
+            netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncServerTime, ProcessSyncServerTime);
+
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncNearDeltaInfo, ProcessSyncNearDeltaInfo);
 
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncToMeDeltaInfo, ProcessSyncToMeDeltaInfo);
@@ -138,6 +140,42 @@ namespace BPSR_ZDPS
             if (payloadBuffer.Length == 0)
             {
                 return;
+            }
+        }
+
+        static DateTime LastSyncTimeLog = DateTime.MinValue;
+        public static void ProcessSyncServerTime(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = SyncServerTime.Parser.ParseFrom(payloadBuffer);
+
+            long delta = vData.ClientMilliseconds - vData.ServerMilliseconds;
+            if (vData.ClientMilliseconds > 0 && vData.ServerMilliseconds > 0)
+            {
+                AppState.ClientServerTimeSyncDelta = delta;
+            }
+
+            // Only log to file once every few minutes to avoid excess logging spam
+            if (DateTime.Now >= LastSyncTimeLog.AddMinutes(5))
+            {
+                if (vData.ClientMilliseconds != 0)
+                {
+                    LastSyncTimeLog = DateTime.Now;
+                }
+                string status = "Parity";
+                if (delta < 0)
+                {
+                    status = "Behind";
+                }
+                else if (delta > 0)
+                {
+                    status = "Ahead";
+                }
+                Serilog.Log.Debug($"SyncServerTime: Client={vData.ClientMilliseconds} | Server={vData.ServerMilliseconds} | Delta={delta}ms;{status}");
             }
         }
 

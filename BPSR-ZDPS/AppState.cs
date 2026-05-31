@@ -45,6 +45,8 @@ namespace BPSR_ZDPS
         public static Encounter? ActiveEncounter = null;
         public static Encounter? OpenedHistoricalEncounter = null;
 
+        public static long ClientServerTimeSyncDelta = 0;
+
         public static void LoadDataTables()
         {
             System.Diagnostics.Stopwatch loadTime = new();
