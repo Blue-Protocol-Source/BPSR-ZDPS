@@ -2832,7 +2832,7 @@ namespace BPSR_ZDPS.Windows
                                                 {
                                                     var tex = ImageArchive.LoadImage(eventTracker.IconPath);
                                                     // If the texture is null it will be skipped during the render process automatically
-                                                    ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, tex, eventTracker.IconStretchLeftValue, eventTracker.IconStretchRightValue, eventTracker.UseDurationProgressBarCircleBackgroundFill);
+                                                    ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, tex, eventTracker.DurationProgressBarTextureScale, eventTracker.IconStretchLeftValue, eventTracker.IconStretchRightValue, eventTracker.UseDurationProgressBarCircleBackgroundFill);
                                                     if (showTooltip)
                                                     {
                                                         DrawTrackerTooltip(eventContainer, eventTracker, eventData);
@@ -2840,7 +2840,7 @@ namespace BPSR_ZDPS.Windows
                                                 }
                                                 else
                                                 {
-                                                    ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, null, 0, 0, eventTracker.UseDurationProgressBarCircleBackgroundFill);
+                                                    ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, null, 1.0f, 0, 0, eventTracker.UseDurationProgressBarCircleBackgroundFill);
                                                     if (showTooltip && !eventTracker.ShowIcon)
                                                     {
                                                         DrawTrackerTooltip(eventContainer, eventTracker, eventData);
@@ -5681,7 +5681,7 @@ namespace BPSR_ZDPS.Windows
                         }
                         ImGui.EndCombo();
                     }
-                    ImGui.SetItemTooltip("Note: Circle Style does not support placing anything Inside it other than the Icon.");
+                    ImGui.SetItemTooltip("Note: Circle Style does not support placing anything Inside it other than the Icon and Duration Text.");
 
                     if (ActiveTrackedEventEntry.DurationProgressBarStyle == EDurationProgressBarStyle.Circle)
                     {
@@ -5775,6 +5775,38 @@ namespace BPSR_ZDPS.Windows
 
                     if (ActiveTrackedEventEntry.ShowIconInsideProgressBar && ActiveTrackedEventEntry.DurationProgressBarStyle == EDurationProgressBarStyle.Circle)
                     {
+                        ImGui.Indent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.TextUnformatted("Duration Progress Bar Icon Scale:");
+
+                        ImGui.SameLine();
+                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                        if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyIconScaleValueBtn"))
+                        {
+                            foreach (var tracker in ActiveTrackerContainer.EventTrackers)
+                            {
+                                if (tracker.Value.IdTracker != ActiveTrackedEventEntry.IdTracker)
+                                {
+                                    tracker.Value.DurationProgressBarTextureScale = ActiveTrackedEventEntry.DurationProgressBarTextureScale;
+                                }
+                            }
+                        }
+                        ImGui.PopFont();
+                        ImGui.SetItemTooltip("Apply Icon Scale to all other Trackers in Container.");
+
+                        ImGui.SameLine();
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                        ImGui.SetNextItemWidth(-1);
+                        if (ImGui.SliderFloat("##DurationProgressBarTextureScale", ref ActiveTrackedEventEntry.DurationProgressBarTextureScale, 0.5f, 1.2f, $"{MathF.Round(ActiveTrackedEventEntry.DurationProgressBarTextureScale * 100, 2)}%%"))
+                        {
+                            ActiveTrackedEventEntry.DurationProgressBarTextureScale = MathF.Round(ActiveTrackedEventEntry.DurationProgressBarTextureScale, 2);
+                        }
+                        ImGui.PopStyleColor(2);
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.TextUnformatted("Icon Stretch");
                         ImGui.SameLine();
                         ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                         if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllIconStretchValuesBtn"))
@@ -5789,9 +5821,10 @@ namespace BPSR_ZDPS.Windows
                             }
                         }
                         ImGui.PopFont();
-                        ImGui.SetItemTooltip("Apply Both Stretch Left and Right Values To All Other Trackers In Container.");
+                        ImGui.SetItemTooltip("Apply both Stretch Left and Right Values to all other Trackers in Container.");
 
                         ImGui.Indent();
+
                         ImGui.AlignTextToFramePadding();
                         ImGui.TextUnformatted("Icon Stretch Left:");
                         ImGui.SameLine();
@@ -5811,6 +5844,8 @@ namespace BPSR_ZDPS.Windows
                         ImGui.SliderInt("##IconStretchRightValue", ref ActiveTrackedEventEntry.IconStretchRightValue, -10, 20);
                         ImGui.PopStyleColor(2);
                         ImGui.SetItemTooltip("Recommended Value 0 when using a Circular Icon. -6 when a Default Game Rectangle Icon.");
+
+                        ImGui.Unindent();
 
                         ImGui.Unindent();
                     }
@@ -6151,6 +6186,7 @@ namespace BPSR_ZDPS.Windows
         {
             ImGui.TextUnformatted("Configure when the Tracker is allowed to run.");
             ImGui.TextUnformatted("Note: The Tracker itself must also be Enabled.\nIf nothing below is Enabled, the Tracker will always be running.");
+            ImGui.TextUnformatted("You can right click any option to apply it to other Trackers.");
 
             bool inCombat = false;
             DataTypes.Enums.Professions.ERoleType roleType = DataTypes.Enums.Professions.ERoleType.None;
@@ -7159,6 +7195,7 @@ namespace BPSR_ZDPS.Windows
         public int DurationProgressBarSize = 18;
         public int DurationProgressBarTextSize = 18;
         public int DurationProgressBarCircleThickness = 5;
+        public float DurationProgressBarTextureScale = 1.0f;
         public int AttributeValueSize = 18;
 
         public bool ShowDurationEnded = false;
