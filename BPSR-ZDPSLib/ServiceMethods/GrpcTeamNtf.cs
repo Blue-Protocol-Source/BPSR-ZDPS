@@ -31,5 +31,6 @@ public enum GrpcTeamNtf
     NotifyTeamMemVoiceIdChange = 0x1B,
     NotifyTeamChangeMemberType = 0x1C,
     NotifyTeamGroupUpdate = 0x1D,
-    NotifyInviteJoinDungeons = 0x1E
+    NotifyInviteJoinDungeons = 0x1E,
+    NotifyCountDownStart = 0x1F,
 }

@@ -94,5 +94,10 @@ public enum WorldNtf
     NotifyPayInfo = 0x51001, // 331777
     NotifyLifeProfessionWorkHistoryChange = 0x52001, // 335873
     NotifyLifeProfessionUnlockRecipe = 0x52002, // 335874
-    SignRewardNotify = 0x5E001 // 385025
+    SignRewardNotify = 0x5E001, // 385025
+    MahjongStartNtf = 0x60001, // 393217
+    MahjongEndNtf = 0x60002, // 393218
+    NotifyEntryRandomData = 0x6B001, // 438273
+    NotifyEntryUpgradeData = 0x6B002, // 438274
+    NotifyPlayDataAttackInfo = 0x6C001, // 442369
 }
