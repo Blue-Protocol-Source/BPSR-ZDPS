@@ -20,7 +20,6 @@ namespace BPSR_ZDPS.Managers
 
             var numCombos = CountCombinations(modStatVecs.Length, config.NumModules);
             Log.Information("Searching {NumCombos:N0} combos...", numCombos);
-            int numModuleCombosProcessed = 0;
 
             var items = new List<Module>();
             for (int itemIdx = 0; itemIdx < modStatVecs.Length; itemIdx++)
@@ -54,8 +53,6 @@ namespace BPSR_ZDPS.Managers
             optimizer.LinkLevelBonus = config.LinkLevelBonus;
             optimizer.NumModules = config.NumModules;
             var bests = optimizer.FindBestSet(items, statPrios, cancelToken);
-
-            Log.Information("Num Module Combos Processed: {NumCombos:N0}", numModuleCombosProcessed);
 
             var results = new List<ModComboResult>();
             foreach (var best in bests)
@@ -162,9 +159,17 @@ namespace BPSR_ZDPS.Managers
                 {
                     var newStatPrio = new StatPrio();
                     newStatPrio.Id = possibleStats[statPrio.Id];
-                    newStatPrio.ReqLevel = statPrio.ReqLevel;
+                    if (config.IntelligentMode)
+                    {
+                        newStatPrio.StatMode = StatMode.Intelligent;
+                        newStatPrio.ReqLevel = 0;
+                    }
+                    else
+                    {
+                        newStatPrio.StatMode = statPrio.StatMode;
+                        newStatPrio.ReqLevel = statPrio.ReqLevel;
+                    }
                     newStatPrio.MinLevel = statPrio.MinLevel;
-                    newStatPrio.StatMode = statPrio.StatMode;
                     statPrios.Add(newStatPrio);
                 }
             }
@@ -324,7 +329,7 @@ namespace BPSR_ZDPS.Managers
             public List<ModuleSetResult> FindBestSet(List<Module> items, List<StatPrio> priorities, CancellationToken cancelToken)
             {
                 TopResults = new();
-                BestScore = new int[priorities.Count];
+                BestScore = new int[priorities.Count + 2];
 
                 items = items.OrderBy(i => EstimateItemScore(i, priorities), ScoreComparer).ToList();
                 Search(items, priorities, 0, new List<Module>(), new int[MAX_NUM_STATS], cancelToken);
@@ -351,101 +356,134 @@ namespace BPSR_ZDPS.Managers
                     return;
                 }
 
-                /*
-                for (int i = start; i < items.Count; i++)
+                // Update real-time progress percentage on the top level (first chosen module)
+                if (currentSet.Count == 0)
                 {
-                    var item = items[i];
-
-                    foreach (var stat in item.Stats)
-                    {
-                        totals[stat.Key] += stat.Value;
-                    }
-
-                    currentSet.Add(item);
-
-                    // Branch-and-bound prune
-                    if (CanStillBeatBest(items, priorities, i + 1, currentSet.Count, totals))
-                    {
-                        Search(items, priorities, i + 1, currentSet, totals, cancelToken);
-                    }
-
-                    currentSet.RemoveAt(currentSet.Count - 1);
-
-                    foreach (var stat in item.Stats)
-                    {
-                        totals[stat.Key] -= stat.Value;
-                    }
-                }*/
-
-                var candidates = new List<(int Index, int[] Score)>();
-
-                for (int i = start; i < items.Count; i++)
-                {
-                    Module item = items[i];
-
-                    var projected = new int[MAX_NUM_STATS];
-                    Array.Copy(totals, projected, MAX_NUM_STATS);
-
-                    foreach (var stat in item.Stats)
-                    {
-                        projected[stat.Key] += stat.Value;
-                    }
-
-                    var projectedScore = ScoreTotals(projected, priorities);
-
-                    candidates.Add((i, projectedScore));
+                    int pct = (int)((double)start / items.Count * 100.0);
+                    BPSR_ZDPS.ModuleSolver.ProgressStatus = $"({pct})";
                 }
 
-                var topCandidates = candidates.OrderBy(x => x.Score, ScoreComparer).Take(MaxCanadates);
-
-                foreach (var candidate in topCandidates)
+                // To eliminate massive recursive overhead, only dynamically order candidates at the very top level (where currentSet.Count == 0).
+                // For deeper levels, directly perform fast and clean Branch and Bound DFS.
+                if (currentSet.Count == 0)
                 {
-                    var i = candidate.Index;
+                    var candidates = new List<(int Index, int[] Score)>();
 
-                    Module item = items[i];
-
-                    foreach (var stat in item.Stats)
+                    for (int i = start; i < items.Count; i++)
                     {
-                        totals[stat.Key] += stat.Value;
+                        Module item = items[i];
+
+                        var projected = new int[MAX_NUM_STATS];
+                        Array.Copy(totals, projected, MAX_NUM_STATS);
+
+                        foreach (var stat in item.Stats)
+                        {
+                            projected[stat.Key] += stat.Value;
+                        }
+
+                        var projectedScore = ScoreTotals(projected, priorities, true);
+
+                        candidates.Add((i, projectedScore));
                     }
 
-                    currentSet.Add(item);
+                    var topCandidates = candidates.OrderBy(x => x.Score, ScoreComparer).Take(MaxCanadates);
 
-                    if (CanStillBeatBest(items, priorities, i + 1, currentSet.Count, totals))
+                    foreach (var candidate in topCandidates)
                     {
-                        Search(items, priorities, i + 1, currentSet, totals, cancelToken);
+                        var i = candidate.Index;
+
+                        Module item = items[i];
+
+                        foreach (var stat in item.Stats)
+                        {
+                            totals[stat.Key] += stat.Value;
+                        }
+
+                        currentSet.Add(item);
+
+                        if (CanStillBeatBest(items, priorities, i + 1, currentSet.Count, totals))
+                        {
+                            Search(items, priorities, i + 1, currentSet, totals, cancelToken);
+                        }
+
+                        currentSet.RemoveAt(currentSet.Count - 1);
+
+                        foreach (var stat in item.Stats)
+                        {
+                            totals[stat.Key] -= stat.Value;
+                        }
                     }
-
-                    currentSet.RemoveAt(currentSet.Count - 1);
-
-                    foreach (var stat in item.Stats)
+                }
+                else
+                {
+                    // Clean and ultra-fast direct Branch and Bound DFS
+                    for (int i = start; i < items.Count; i++)
                     {
-                        totals[stat.Key] -= stat.Value;
+                        var item = items[i];
+
+                        foreach (var stat in item.Stats)
+                        {
+                            totals[stat.Key] += stat.Value;
+                        }
+
+                        currentSet.Add(item);
+
+                        if (CanStillBeatBest(items, priorities, i + 1, currentSet.Count, totals))
+                        {
+                            Search(items, priorities, i + 1, currentSet, totals, cancelToken);
+                        }
+
+                        currentSet.RemoveAt(currentSet.Count - 1);
+
+                        foreach (var stat in item.Stats)
+                        {
+                            totals[stat.Key] -= stat.Value;
+                        }
                     }
                 }
             }
 
             int[] ScoreTotals(int[] totals, List<StatPrio> priorities, bool noPenalty = false)
             {
-                var scores = new int[priorities.Count];
+                var scores = new int[priorities.Count + 2];
+                var isPriority = new bool[MAX_NUM_STATS];
+                bool hasIntelligentMode = false;
 
                 for (int i = 0; i < priorities.Count; i++)
                 {
-                    var p = priorities[i];
+                    isPriority[priorities[i].Id] = true;
+                }
 
-                    int target = Math.Max(1, p.ReqLevel);
+                int priorityScore = 0;
+                int presenceBonus = 0;
+                for (int i = 0; i < priorities.Count; i++)
+                {
+                    var p = priorities[i];
                     int val = Math.Min(totals[p.Id], MAX_STAT_VALUE);
 
                     if (!noPenalty && (val < p.ReqLevel || (p.StatMode == StatMode.Exactly && p.ReqLevel != val )))
                     {
-                        var minValue = new int[priorities.Count];
-                        for (int x = 0; x < minValue.Length; x++)
-                        {
-                            minValue[x] = int.MinValue;
-                        }
+                        return new int[priorities.Count + 2];
+                    }
 
-                        return new int[priorities.Count];
-                        //scores[i] = int.MinValue;
+                    if (p.StatMode == StatMode.Intelligent)
+                    {
+                        hasIntelligentMode = true;
+                        var intelligentBonus = val switch
+                        {
+                            >= 20 => 5000,
+                            >= 16 => 2000,
+                            >= 12 => 500,
+                            >= 8 => 100,
+                            >= 4 => 50,
+                            >= 1 => 10,
+                            _ => 0
+                        };
+                        if (val >= 1)
+                        {
+                            presenceBonus += 100;
+                        }
+                        priorityScore += intelligentBonus;
                     }
                     else
                     {
@@ -461,10 +499,63 @@ namespace BPSR_ZDPS.Managers
                         };
 
                         var breakPointBonus = (byte)LinkLevelBonus[bonusIdx];
-
-                        scores[i] = val + breakPointBonus;
+                        priorityScore += val + breakPointBonus;
                     }
                 }
+
+                int thresholdScore = 0;
+                int totalSum = 0;
+                for (int statId = 0; statId < MAX_NUM_STATS; statId++)
+                {
+                    int statValue = Math.Min(totals[statId], MAX_STAT_VALUE);
+                    totalSum += statValue;
+                    thresholdScore += statValue switch
+                    {
+                        >= 20 => 1000 + (statValue - 20) * 20,
+                        >= 16 => 500 + (statValue - 16) * 15,
+                        >= 12 => 100 + (statValue - 12) * 5,
+                        _ => 0
+                    };
+                }
+
+                if (hasIntelligentMode)
+                {
+                    int nonPriorityTotal = 0;
+                    for (int statId = 0; statId < MAX_NUM_STATS; statId++)
+                    {
+                        if (!isPriority[statId])
+                        {
+                            nonPriorityTotal += totals[statId];
+                        }
+                    }
+
+                    int totalScore = priorityScore + presenceBonus + thresholdScore - (nonPriorityTotal * 5);
+                    scores[0] = totalScore;
+                    scores[1] = thresholdScore;
+                    scores[2] = -(nonPriorityTotal * 5);
+                    return scores;
+                }
+
+                for (int i = 0; i < priorities.Count; i++)
+                {
+                    var p = priorities[i];
+                    int val = Math.Min(totals[p.Id], MAX_STAT_VALUE);
+                    var bonusIdx = val switch
+                    {
+                        >= 20 => 5,
+                        >= 16 => 4,
+                        >= 12 => 3,
+                        >= 8 => 2,
+                        >= 4 => 1,
+                        >= 1 => 0,
+                        _ => 0
+                    };
+                    var breakPointBonus = (byte)LinkLevelBonus[bonusIdx];
+                    scores[i] = val + breakPointBonus;
+                }
+
+                scores[priorities.Count] = thresholdScore + totalSum;
+                scores[priorities.Count + 1] = 0;
 
                 return scores;
             }
@@ -506,7 +597,7 @@ namespace BPSR_ZDPS.Managers
 
                     var breakPointBonus = (byte)LinkLevelBonus[bonusIdx];
 
-                    optimistic[p.Id] = added + breakPointBonus;
+                    optimistic[p.Id] += added + breakPointBonus;
                 }
 
                 int[] upperBound = ScoreTotals(optimistic, priorities, true);
@@ -516,22 +607,70 @@ namespace BPSR_ZDPS.Managers
 
             int[] EstimateItemScore(Module item, List<StatPrio> priorities)
             {
-                var scores = new int[priorities.Count];
+                var scores = new int[priorities.Count + 2];
+
+                int totalSum = 0;
+                int presenceBonus = 0;
+                bool hasIntelligentMode = priorities.Any(p => p.StatMode == StatMode.Intelligent);
+                int priorityScore = 0;
 
                 for (int i = 0; i < priorities.Count; i++)
                 {
                     var p = priorities[i];
+                    int val = 0;
 
-                    if (item.Stats.TryGetValue(p.Id, out int val))
+                    if (item.Stats.TryGetValue(p.Id, out int itemVal))
                     {
-                        scores[i] = Math.Min(val, MAX_STAT_VALUE);
+                        val = Math.Min(itemVal, MAX_STAT_VALUE);
+                    }
+
+                    if (p.StatMode == StatMode.Intelligent)
+                    {
+                        var intelligentBonus = val switch
+                        {
+                            >= 20 => 5000,
+                            >= 16 => 2000,
+                            >= 12 => 500,
+                            >= 8 => 100,
+                            >= 4 => 50,
+                            >= 1 => 10,
+                            _ => 0
+                        };
+                        if (val >= 1)
+                        {
+                            presenceBonus += 100;
+                        }
+                        priorityScore += intelligentBonus;
                     }
                     else
                     {
-                        scores[i] = 0;
+                        priorityScore += val;
                     }
+
+                    totalSum += val;
                 }
 
+                if (hasIntelligentMode)
+                {
+                    scores[0] = priorityScore + presenceBonus + totalSum;
+                    scores[1] = totalSum;
+                    scores[2] = 0;
+                    return scores;
+                }
+
+                for (int i = 0; i < priorities.Count; i++)
+                {
+                    var p = priorities[i];
+                    int val = 0;
+                    if (item.Stats.TryGetValue(p.Id, out int itemVal))
+                    {
+                        val = Math.Min(itemVal, MAX_STAT_VALUE);
+                    }
+                    scores[i] = val;
+                }
+
+                scores[priorities.Count] = totalSum;
+                scores[priorities.Count + 1] = 0;
                 return scores;
             }
 

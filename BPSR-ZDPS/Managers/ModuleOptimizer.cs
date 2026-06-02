@@ -1,6 +1,7 @@
 ﻿using BPSR_ZDPS.DataTypes.Modules;
 using Serilog;
 using System.Diagnostics;
+using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using ZLinq;
@@ -9,6 +10,8 @@ namespace BPSR_ZDPS.Managers
 {
     public partial class ModuleOptimizer
     {
+        private const int PrefilterTopNPerAttribute = 60;
+        private const int PrefilterTopNTotalValue = 100;
         public SolverResult Solve(SolverConfig config, PlayerModDataSave playerMods, SolverModes mode, CancellationToken cancelToken)
         {
             var sw = Stopwatch.StartNew();
@@ -690,24 +693,109 @@ namespace BPSR_ZDPS.Managers
 
         private List<long> FilterModulesWithStats(SolverConfig config, PlayerModDataSave playerMods)
         {
-            var modules = new List<long>();
-            foreach (var item in playerMods.ModulesPackage.Items)
+            if (playerMods?.ModulesPackage?.Items == null || playerMods.Mod == null)
             {
-                var qualityValue = Math.Clamp(item.Value.Quality, 0, 4);
-                if (config.QualitiesV2.TryGetValue(qualityValue, out var quality) ? quality : false)
+                return new List<long>();
+            }
+
+            if (!config.IntelligentMode)
+            {
+                var modules = new List<long>();
+                foreach (var item in playerMods.ModulesPackage.Items)
                 {
-                    if (item.Value.ModNewAttr.ModParts.Any(x => config.StatPriorities.Any(y => y.Id == x)))
+                    var qualityValue = Math.Clamp(item.Value.Quality, 0, 4);
+                    if (config.QualitiesV2.TryGetValue(qualityValue, out var quality) ? quality : false)
                     {
-                        modules.Add(item.Key);
+                        if (item.Value.ModNewAttr.ModParts.Any(x => config.StatPriorities.Any(y => y.Id == x)))
+                        {
+                            modules.Add(item.Key);
+                        }
                     }
+                }
+                return modules.ToList();
+            }
+
+            var candidateModules = new HashSet<long>();
+            var modulesByQuality = playerMods.ModulesPackage.Items
+                .Where(item => config.QualitiesV2.TryGetValue(Math.Clamp(item.Value.Quality, 0, 4), out var quality) ? quality : false)
+                .ToList();
+
+            if (!config.StatPriorities.Any())
+            {
+                candidateModules.UnionWith(modulesByQuality.Select(item => item.Key));
+                return candidateModules.ToList();
+            }
+
+            // High-Synergy Filter: If at least 2 priority stats are chosen, require candidates to have at least 2 prioritized stats if possible
+            var prioIds = config.StatPriorities.Select(x => x.Id).ToHashSet();
+            if (prioIds.Count >= 2)
+            {
+                var highSynergyModules = modulesByQuality.Where(item => 
+                    item.Value.ModNewAttr.ModParts.Count(partId => prioIds.Contains(partId)) >= 2
+                ).ToList();
+
+                // Only restrict the pool if there are enough high-synergy modules to form a valid combination
+                if (highSynergyModules.Count >= config.NumModules)
+                {
+                    Log.Information("Applying high-synergy filter: restricted candidate pool from {OriginalCount} to {SynergyCount} modules with >= 2 prioritized stats.", modulesByQuality.Count, highSynergyModules.Count);
+                    modulesByQuality = highSynergyModules;
                 }
             }
 
-            return modules.ToList();
+            int GetModuleTotalValue(KeyValuePair<long, Zproto.Item> item)
+            {
+                var modInfo = playerMods.Mod.ModInfos[item.Key];
+                var total = 0;
+                for (int i = 0; i < item.Value.ModNewAttr.ModParts.Count; i++)
+                {
+                    total += modInfo.InitLinkNums[i];
+                }
+                return total;
+            }
+
+            int GetPriorityStatValue(KeyValuePair<long, Zproto.Item> item, int statId)
+            {
+                var modInfo = playerMods.Mod.ModInfos[item.Key];
+                var total = 0;
+                for (int i = 0; i < item.Value.ModNewAttr.ModParts.Count; i++)
+                {
+                    if (item.Value.ModNewAttr.ModParts[i] == statId)
+                    {
+                        total += modInfo.InitLinkNums[i];
+                    }
+                }
+                return total;
+            }
+
+            candidateModules.UnionWith(modulesByQuality
+                .OrderByDescending(GetModuleTotalValue)
+                .Take(PrefilterTopNTotalValue)
+                .Select(item => item.Key));
+
+            foreach (var statPrio in config.StatPriorities)
+            {
+                candidateModules.UnionWith(modulesByQuality
+                    .Select(item => new { item.Key, Value = GetPriorityStatValue(item, statPrio.Id) })
+                    .Where(x => x.Value > 0)
+                    .OrderByDescending(x => x.Value)
+                    .Take(PrefilterTopNPerAttribute)
+                    .Select(x => x.Key));
+            }
+
+            var moduleTotalValues = modulesByQuality.ToDictionary(item => item.Key, item => GetModuleTotalValue(item));
+            return candidateModules
+                .OrderByDescending(id => moduleTotalValues.TryGetValue(id, out var total) ? total : 0)
+                .ThenBy(id => id)
+                .ToList();
         }
 
         private ushort GetStatMultiplier(SolverConfig config, int statId)
         {
+            if (!config.StatPriorities.Any())
+            {
+                return (ushort)(config.ValueAllStats ? 1 : 0);
+            }
+
             for (int i = 0; i < config.StatPriorities.Count; i++)
             {
                 if (config.StatPriorities[i].Id == statId)
@@ -766,10 +854,10 @@ namespace BPSR_ZDPS.Managers
 
         public int CalcCombosCombatScore(PlayerModDataSave playerMods, ModuleSet modSet)
         {
-            Dictionary<int, PowerCore> coresDict = [];
+            Dictionary<int, PowerCore> coresDict = new Dictionary<int, PowerCore>();
             foreach (var mod in modSet.Mods)
             {
-                if (mod != 0)
+                if (mod != -1)
                 {
                     var modCores = GetModPowerCores(playerMods, mod);
                     foreach (var modCore in modCores)
@@ -792,7 +880,7 @@ namespace BPSR_ZDPS.Managers
             foreach (var core in coresDict.Values)
             {
                 var enhanceLevel = 0;
-                int[] enhanceLevels = [1, 4, 8, 12, 16, 20];
+                int[] enhanceLevels = new int[] { 1, 4, 8, 12, 16, 20 };
                 for (int i = 0; i < 6; i++)
                 {
                     if (core.Value >= enhanceLevels[i])

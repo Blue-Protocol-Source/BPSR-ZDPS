@@ -12,11 +12,13 @@ namespace BPSR_ZDPS.DataTypes.Modules
         public byte[] LinkLevelBonus = DefaultLinkLevels;
         public bool ValueAllStats = true;
         public int NumModules = 5;
+        public bool IntelligentMode = false;
 
         public string SaveToString(bool asBase64 = false)
         {
             var sb = new StringBuilder();
             sb.Append("ZMO:");
+            sb.Append(IntelligentMode ? "1;" : "0;");
             for (int i = 0; i < StatPriorities.Count; i++)
             {
                 var stat = $"{StatPriorities[i].Id}-{(byte)StatPriorities[i].StatMode}-{StatPriorities[i].ReqLevel}";
@@ -50,15 +52,28 @@ namespace BPSR_ZDPS.DataTypes.Modules
                     var configParts = str.Substring(4).Split('|');
                     if (configParts.Length > 1)
                     {
-                        var statPriorites = configParts[0].Split(",");
+                        var statsPart = configParts[0];
+                        if (statsPart.Contains(";"))
+                        {
+                            var semiParts = statsPart.Split(';');
+                            IntelligentMode = semiParts[0] == "1";
+                            statsPart = semiParts[1];
+                        }
+                        else
+                        {
+                            IntelligentMode = false;
+                        }
+
+                        var statPriorites = statsPart.Split(",");
                         foreach (var stat in statPriorites)
                         {
+                            if (string.IsNullOrWhiteSpace(stat)) continue;
                             var statParts = stat.Split("-");
                             var prio = new StatPrio()
                             {
                                 Id = int.Parse(statParts[0]),
                                 MinLevel = 0, //Math.Clamp(int.Parse(statParts[1]), 0, 20),
-                                StatMode = (StatMode)Math.Clamp(int.Parse(statParts[1]), 0, 1),
+                                StatMode = (StatMode)Math.Clamp(int.Parse(statParts[1]), 0, 2),
                                 ReqLevel = Math.Clamp(int.Parse(statParts[2]), 0, 20),
                             };
 

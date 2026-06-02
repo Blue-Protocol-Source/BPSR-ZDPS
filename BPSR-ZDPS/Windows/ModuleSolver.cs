@@ -5,6 +5,7 @@ using Hexa.NET.ImGui;
 using Newtonsoft.Json;
 using Serilog;
 using System.Collections.Frozen;
+using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.Intrinsics.X86;
 using ZLinq;
@@ -38,6 +39,7 @@ namespace BPSR_ZDPS
         private static Task ModuleCalcTask;
         private static DateTime ModuleCalcStartTime = DateTime.Now;
         private static string CurrentPresetString = "";
+        public static string ProgressStatus = "";
         static int RunOnceDelayed = 0;
         private static bool ShouldTrackOpenState;
 
@@ -83,9 +85,22 @@ namespace BPSR_ZDPS
         {
             lock (PlayerModData)
             {
+                var modulePackage = data.ItemPackage?.Packages[5];
+                if (data.ItemPackage?.Packages != null)
+                {
+                    foreach (var kvp in data.ItemPackage.Packages)
+                    {
+                        if (kvp.Value?.Items != null && kvp.Value.Items.Any(item => item.Value?.ModNewAttr != null && item.Value.ModNewAttr.ModParts.Count > 0))
+                        {
+                            modulePackage = kvp.Value;
+                            break;
+                        }
+                    }
+                }
+
                 PlayerModData = new PlayerModDataSave()
                 {
-                    ModulesPackage = data.ItemPackage?.Packages[5] ?? null,
+                    ModulesPackage = modulePackage,
                     Mod = data?.Mod ?? null
                 };
 
@@ -143,7 +158,7 @@ namespace BPSR_ZDPS
                 if (ModuleCalcTask?.Status == TaskStatus.Running)
                 {
                     var timeTaken = DateTime.Now - ModuleCalcStartTime;
-                    DrawBanner($"Calculating best module combos!\nThis could take a while.\nElapsed: {timeTaken:mm\\:ss}", 0xFF005DD9, "Thinking.png", true,
+                    DrawBanner($"Calculating best module combos! {ProgressStatus}\nThis could take a while.\nElapsed: {timeTaken:mm\\:ss}", 0xFF005DD9, "Thinking.png", true,
                         (drawList, txtPos, txtSize, bannerHeight) =>
                         {
                             var cancelButtonStart = txtPos + new Vector2(0, 100);
@@ -403,6 +418,15 @@ namespace BPSR_ZDPS
             }
             ImGui.Spacing();
 
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted("Intelligent Mode"u8);
+            ImGui.SameLine();
+            if (ImGui.Checkbox("##IntelligentMode", ref SolverConfig.IntelligentMode))
+            {
+                configChanged = true;
+            }
+            ImGui.Spacing();
+
             ImGui.SeparatorText("Stat Priority");
             ImGui.Spacing();
 
@@ -629,24 +653,64 @@ namespace BPSR_ZDPS
             ImGui.SetItemTooltip("The minimum Link value needed for this stat to be considered.\nLeave 0 to use any Link.");
             */
 
+            var currentStatMode = SolverConfig.StatPriorities[i].StatMode;
+            if (currentStatMode == StatMode.Intelligent)
+            {
+                currentStatMode = StatMode.Atleast;
+                SolverConfig.StatPriorities[i].StatMode = StatMode.Atleast;
+                wasChanged = true;
+            }
+
+            ImGui.BeginDisabled(SolverConfig.IntelligentMode);
             if (ImGui.InputInt($"##ReqLevel{i}", ref SolverConfig.StatPriorities[i].ReqLevel, 0, ImGuiInputTextFlags.CharsDecimal))
             {
                 wasChanged = true;
             }
+            ImGui.EndDisabled();
             ImGui.SetItemTooltip("The required Link value needed for this stat to have for the combination to be considered.\nLeave 0 to use any Link.");
 
             ImGui.SetCursorPos(pos + new Vector2(availSize.X - 50, 5));
             ImGui.Dummy(new Vector2(-4, 0));
             ImGui.SameLine();
-            bool isAtleastMode = SolverConfig.StatPriorities[i].StatMode == StatMode.Atleast;
-            if (ImGui.Button($"{(isAtleastMode ? "A" : "E")}##StatMode{i}"))
+            
+            string statModeLabel;
+            if (SolverConfig.IntelligentMode)
             {
-                SolverConfig.StatPriorities[i].StatMode = isAtleastMode ? StatMode.Exactly : StatMode.Atleast;
+                statModeLabel = "I";
+            }
+            else
+            {
+                statModeLabel = currentStatMode switch
+                {
+                    StatMode.Atleast => "A",
+                    StatMode.Exactly => "E",
+                    _ => "A"
+                };
+            }
+
+            ImGui.BeginDisabled(SolverConfig.IntelligentMode);
+            if (ImGui.Button($"{statModeLabel}##StatMode{i}"))
+            {
+                if (currentStatMode == StatMode.Exactly)
+                {
+                    SolverConfig.StatPriorities[i].StatMode = StatMode.Atleast;
+                }
+                else
+                {
+                    SolverConfig.StatPriorities[i].StatMode = StatMode.Exactly;
+                }
                 wasChanged = true;
             }
-            ImGui.SetItemTooltip(isAtleastMode ?
-                "In this mode the combo must have ATLEAST this link value." :
-                "In this mode the combo must have EXACTLY this link value.");
+            ImGui.EndDisabled();
+
+            ImGui.SetItemTooltip(SolverConfig.IntelligentMode ? 
+                "Intelligent mode is globally enabled." : 
+                (currentStatMode switch
+                {
+                    StatMode.Atleast => "In this mode the combo must have ATLEAST this link value.",
+                    StatMode.Exactly => "In this mode the combo must have EXACTLY this link value.",
+                    _ => "Stat mode."
+                }));
 
             ImGui.SetCursorPos(pos + new Vector2(availSize.X - 25, 0));
             ImGui.PushFont(HelperMethods.Fonts["FASIcons"], 13.0f);
@@ -1240,6 +1304,7 @@ namespace BPSR_ZDPS
     public enum StatMode
     {
         Atleast,
-        Exactly
+        Exactly,
+        Intelligent
     }
 }
