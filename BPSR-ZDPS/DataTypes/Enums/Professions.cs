@@ -32,6 +32,8 @@ namespace BPSR_ZDPS.DataTypes.Enums
             Profession_Marksman = 11,
             Profession_ShieldKnight = 12,
             Profession_BeatPerformer = 13,
+            Profession_Lucy = 14,
+            Profession_Natsu = 15,
         }
 
         public enum SubProfessionId : int

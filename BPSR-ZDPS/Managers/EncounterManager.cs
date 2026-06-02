@@ -1577,8 +1577,21 @@ namespace BPSR_ZDPS
 
         public void SetProfessionId(int id)
         {
+            if (id == (int)DataTypes.Enums.Professions.EProfessionId.Profession_Lucy || id == (int)DataTypes.Enums.Professions.EProfessionId.Profession_Natsu)
+            {
+                // Don't allow setting the Profession to a temporary transform
+                return;
+            }
+
             ProfessionId = id;
             Profession = Professions.GetProfessionNameFromId(id);
+
+            int profId = Professions.GetProfessionIdFromSubProfessionId(SubProfessionId);
+            if (profId != ProfessionId)
+            {
+                SubProfessionId = (int)DataTypes.Enums.Professions.SubProfessionId.SubProfession_Unknown;
+                SubProfession = "";
+            }
 
             var cached = EntityCache.Instance.GetOrCreate(UUID);
             if (cached != null && id != 0)

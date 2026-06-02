@@ -33,6 +33,10 @@ namespace BPSR_ZDPS.DataTypes
                     return Path.Combine("Professions", "Profession_12");
                 case EProfessionId.Profession_BeatPerformer:
                     return Path.Combine("Professions", "Profession_13");
+                case EProfessionId.Profession_Lucy:
+                    return Path.Combine("Professions", "Profession_14");
+                case EProfessionId.Profession_Natsu:
+                    return Path.Combine("Professions", "Profession_15");
                 default:
                     return "";
             }
@@ -52,6 +56,8 @@ namespace BPSR_ZDPS.DataTypes
             11 => AppStrings.GetLocalized("Profession_Marksman"),
             12 => AppStrings.GetLocalized("Profession_ShieldKnight"),
             13 => AppStrings.GetLocalized("Profession_BeatPerformer"),
+            14 => AppStrings.GetLocalized("Profession_Lucy"),
+            15 => AppStrings.GetLocalized("Profession_Natsu"),
             _ => ""
         };
 
@@ -148,6 +154,8 @@ namespace BPSR_ZDPS.DataTypes
             2201 or 2209 or 2220 or 2222 or 2230 or 2231 or 2232 or 2233 or 2234 or 2235 or 2237 or 2238 => 11, // Marksman
             2401 or 2405 or 2406 or 2407 or 2408 or 2409 or 2410 or 2412 or 2414 or 2415 or 2419 or 2420 or 2421 => 12, // ShieldKnight
             2301 or 2306 or 2307 or 2308 or 2309 or 2310 or 2311 or 2312 or 2313 or 2314 or 2315 or 2316 or 2321 or 2335 or 2336 => 13, // BeatPerformer
+            2501 or 250101 or 2502 or 2503 or 2504 => 14, // Lucy
+            2601 or 2602 or 2603 or 2604 => 14, // Natsu
             _ => 0
         };
 
@@ -289,6 +297,10 @@ namespace BPSR_ZDPS.DataTypes
             {
                 return Colors.FromColor(ColorTranslator.FromHtml("#9C5353"));
             }
+            else if (professionId == (int)EProfessionId.Profession_Lucy || professionId == (int)EProfessionId.Profession_Natsu)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#DB8787"));
+            }
 
             // TODO: Add SubProfessions as their own entries to allow further coloring
 
@@ -301,6 +313,8 @@ namespace BPSR_ZDPS.DataTypes
             {
                 case (int)EProfessionId.Profession_Stormblade:
                 case (int)EProfessionId.Profession_Marksman:
+                case (int)EProfessionId.Profession_Lucy:
+                case (int)EProfessionId.Profession_Natsu:
                     {
                         return "Agility";
                     }
@@ -333,6 +347,8 @@ namespace BPSR_ZDPS.DataTypes
                 case (int)EProfessionId.Profession_TwinStriker:
                 case (int)EProfessionId.Profession_WindKnight:
                 case (int)EProfessionId.Profession_Marksman:
+                case (int)EProfessionId.Profession_Lucy:
+                case (int)EProfessionId.Profession_Natsu:
                     return ERoleType.DPS;
                 case (int)EProfessionId.Profession_HeavyGuardian:
                 case (int)EProfessionId.Profession_ShieldKnight:
