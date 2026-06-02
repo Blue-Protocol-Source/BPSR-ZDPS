@@ -108,7 +108,11 @@ namespace BPSR_ZDPS.Windows
 
                     var entity = entityObj.Value;
 
-                    string profession = entity.SubProfession ?? entity.Profession ?? "";
+                    string profession = entity.SubProfession;
+                    if (string.IsNullOrEmpty(profession))
+                    {
+                        profession = entity.Profession;
+                    }
                     if (!string.IsNullOrEmpty(profession))
                     {
                         int professionId = entity.SubProfessionId;
