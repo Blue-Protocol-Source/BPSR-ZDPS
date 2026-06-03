@@ -24,13 +24,14 @@ namespace Zproto {
     static EnumEMatchCancelTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5lbnVtX2VfbWF0Y2hfY2FuY2VsX3R5cGUucHJvdG8SBnpwcm90byruAQoQ",
+            "Ch5lbnVtX2VfbWF0Y2hfY2FuY2VsX3R5cGUucHJvdG8SBnpwcm90byqOAgoQ",
             "RU1hdGNoQ2FuY2VsVHlwZRIYChRFTWF0Y2hDYW5jZWxUeXBlTnVsbBAAEhsK",
             "F0VNYXRjaENhbmNlbFR5cGVSZXF1ZXN0EAESGwoXRU1hdGNoQ2FuY2VsVHlw",
             "ZVRpbWVvdXQQAhIbChdFTWF0Y2hDYW5jZWxUeXBlVW5SZWFkeRADEiIKHkVN",
             "YXRjaENhbmNlbFR5cGVUZWFtTWVtYmVySm9pbhAEEiMKH0VNYXRjaENhbmNl",
             "bFR5cGVUZWFtTWVtYmVyTGVhdmUQBRIgChxFTWF0Y2hDYW5jZWxUeXBlRW50",
-            "ZXJEdW5nZW9uEAZiBnByb3RvMw=="));
+            "ZXJEdW5nZW9uEAYSHgoaRU1hdGNoQ2FuY2VsVHlwZUVudGVyVGFibGUQB2IG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EMatchCancelType), }, null, null));
@@ -47,6 +48,7 @@ namespace Zproto {
     [pbr::OriginalName("EMatchCancelTypeTeamMemberJoin")] TeamMemberJoin = 4,
     [pbr::OriginalName("EMatchCancelTypeTeamMemberLeave")] TeamMemberLeave = 5,
     [pbr::OriginalName("EMatchCancelTypeEnterDungeon")] EnterDungeon = 6,
+    [pbr::OriginalName("EMatchCancelTypeEnterTable")] EnterTable = 7,
   }
 
   #endregion

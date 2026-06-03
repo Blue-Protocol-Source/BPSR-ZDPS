@@ -24,6 +24,8 @@ namespace BPSR_ZDPSLib
         WorldActivityNtf = 936649811,
         WorldLoginNtf = 78136601,
         QuestionnaireNtf = 194476713,
-        PhotographNtf = 829259716
+        PhotographNtf = 829259716,
+        GrpcCharactor = 1232729813,
+        WorldActNtf = 548813240,
     }
 }

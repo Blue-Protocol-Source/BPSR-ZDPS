@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X25vdGlmeV9idXlfc2hvcF9pdGVtX2luZm8ucHJvdG8SBnpwcm90",
-            "byJcChVOb3RpZnlCdXlTaG9wSXRlbUluZm8SDwoHc2hvcF9pZBgBIAEoBRIP",
-            "CgdpdGVtX2lkGAIgASgFEg8KB2J1eV9udW0YAyABKAUSEAoIZXJyX2NvZGUY",
-            "BCABKAViBnByb3RvMw=="));
+            "byJ5ChVOb3RpZnlCdXlTaG9wSXRlbUluZm8SFgoGc2hvcElkGAEgASgFUgZz",
+            "aG9wSWQSFgoGaXRlbUlkGAIgASgFUgZpdGVtSWQSFgoGYnV5TnVtGAMgASgF",
+            "UgZidXlOdW0SGAoHZXJyQ29kZRgEIAEoBVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new NotifyBuyShopItemInfo(this);
     }
 
-    /// <summary>Field number for the "shop_id" field.</summary>
+    /// <summary>Field number for the "shopId" field.</summary>
     public const int ShopIdFieldNumber = 1;
     private int shopId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
+    /// <summary>Field number for the "itemId" field.</summary>
     public const int ItemIdFieldNumber = 2;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buy_num" field.</summary>
+    /// <summary>Field number for the "buyNum" field.</summary>
     public const int BuyNumFieldNumber = 3;
     private int buyNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private int errCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X3JlcV9jaGFuZ2Vfb2ZmaWNpYWxzX3JlcXVlc3QucHJvdG8SBnpw",
-            "cm90bxoZc3RydV91bmlvbl9vZmZpY2lhbC5wcm90byJzChlSZXFDaGFuZ2VP",
-            "ZmZpY2lhbHNSZXF1ZXN0EhAKCHVuaW9uX2lkGAIgASgDEi8KEGNoYW5nZV9v",
-            "ZmZpY2lhbHMYAyADKAsyFS56cHJvdG8uVW5pb25PZmZpY2lhbBITCgtjaGFu",
-            "Z2VfdHlwZRgEIAEoBWIGcHJvdG8z"));
+            "cm90bxoZc3RydV91bmlvbl9vZmZpY2lhbC5wcm90byKWAQoZUmVxQ2hhbmdl",
+            "T2ZmaWNpYWxzUmVxdWVzdBIYCgd1bmlvbklkGAIgASgDUgd1bmlvbklkEj8K",
+            "D2NoYW5nZU9mZmljaWFscxgDIAMoCzIVLnpwcm90by5Vbmlvbk9mZmljaWFs",
+            "Ug9jaGFuZ2VPZmZpY2lhbHMSHgoKY2hhbmdlVHlwZRgEIAEoBVIKY2hhbmdl",
+            "VHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUnionOfficialReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new ReqChangeOfficialsRequest(this);
     }
 
-    /// <summary>Field number for the "union_id" field.</summary>
+    /// <summary>Field number for the "unionId" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "change_officials" field.</summary>
+    /// <summary>Field number for the "changeOfficials" field.</summary>
     public const int ChangeOfficialsFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.UnionOfficial> _repeated_changeOfficials_codec
         = pb::FieldCodec.ForMessage(26, global::Zproto.UnionOfficial.Parser);
@@ -109,7 +110,7 @@ namespace Zproto {
       get { return changeOfficials_; }
     }
 
-    /// <summary>Field number for the "change_type" field.</summary>
+    /// <summary>Field number for the "changeType" field.</summary>
     public const int ChangeTypeFieldNumber = 4;
     private int changeType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

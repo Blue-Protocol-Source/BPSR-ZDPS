@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2J1eV9naWZ0X2luZm8ucHJvdG8SBnpwcm90bxomc3RydV9hY3Rp",
-            "dml0eV9yZXdhcmRfbGltaXRfdGltZXMucHJvdG8iXAoLQnV5R2lmdEluZm8S",
-            "FgoOcGF5X3Byb2R1Y3RfaWQYASABKA0SNQoLbGltaXRfdGltZXMYAiADKAsy",
-            "IC56cHJvdG8uQWN0aXZpdHlSZXdhcmRMaW1pdFRpbWVzYgZwcm90bzM="));
+            "dml0eV9yZXdhcmRfbGltaXRfdGltZXMucHJvdG8icwoLQnV5R2lmdEluZm8S",
+            "IgoMcGF5UHJvZHVjdElkGAEgASgNUgxwYXlQcm9kdWN0SWQSQAoKbGltaXRU",
+            "aW1lcxgCIAMoCzIgLnpwcm90by5BY3Rpdml0eVJld2FyZExpbWl0VGltZXNS",
+            "CmxpbWl0VGltZXNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActivityRewardLimitTimesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new BuyGiftInfo(this);
     }
 
-    /// <summary>Field number for the "pay_product_id" field.</summary>
+    /// <summary>Field number for the "payProductId" field.</summary>
     public const int PayProductIdFieldNumber = 1;
     private uint payProductId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "limit_times" field.</summary>
+    /// <summary>Field number for the "limitTimes" field.</summary>
     public const int LimitTimesFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.ActivityRewardLimitTimes> _repeated_limitTimes_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.ActivityRewardLimitTimes.Parser);

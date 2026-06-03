@@ -28,23 +28,25 @@ namespace Zproto {
             "ZmVfcHJvZmVzc2lvbl9hbGNoZW15X2luZm8ucHJvdG8aIHN0cnVfbGlmZV9w",
             "cm9mZXNzaW9uX2Jhc2ljLnByb3RvGiFzdHJ1X2xpZmVfcHJvZmVzc2lvbl9y",
             "ZWNpcGUucHJvdG8aJnN0cnVfbGlmZV9wcm9mZXNzaW9uX3RhcmdldF9pbmZv",
-            "LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iwAUKDkxpZmVQcm9mZXNz",
-            "aW9uEkMKD3Byb2Zlc3Npb25faW5mbxgBIAMoCzIqLnpwcm90by5MaWZlUHJv",
-            "ZmVzc2lvbi5Qcm9mZXNzaW9uSW5mb0VudHJ5EkQKEGxpZmVfdGFyZ2V0X2lu",
-            "Zm8YAiADKAsyKi56cHJvdG8uTGlmZVByb2Zlc3Npb24uTGlmZVRhcmdldElu",
-            "Zm9FbnRyeRJQChZsaWZlX3Byb2Zlc3Npb25fcmVjaXBlGAMgAygLMjAuenBy",
-            "b3RvLkxpZmVQcm9mZXNzaW9uLkxpZmVQcm9mZXNzaW9uUmVjaXBlRW50cnkS",
-            "RwocbGlmZV9wcm9mZXNzaW9uX2FsY2hlbXlfaW5mbxgEIAEoCzIhLnpwcm90",
-            "by5MaWZlUHJvZmVzc2lvbkFsY2hlbXlJbmZvEj0KDHNwYXJlX2VuZXJneRgF",
-            "IAMoCzInLnpwcm90by5MaWZlUHJvZmVzc2lvbi5TcGFyZUVuZXJneUVudHJ5",
-            "Eg0KBXBvaW50GAYgASgFGlIKE1Byb2Zlc3Npb25JbmZvRW50cnkSCwoDa2V5",
-            "GAEgASgFEioKBXZhbHVlGAIgASgLMhsuenByb3RvLkxpZmVQcm9mZXNzaW9u",
-            "QmFzaWM6AjgBGlcKE0xpZmVUYXJnZXRJbmZvRW50cnkSCwoDa2V5GAEgASgF",
-            "Ei8KBXZhbHVlGAIgASgLMiAuenByb3RvLkxpZmVQcm9mZXNzaW9uVGFyZ2V0",
-            "SW5mbzoCOAEaWQoZTGlmZVByb2Zlc3Npb25SZWNpcGVFbnRyeRILCgNrZXkY",
-            "ASABKAUSKwoFdmFsdWUYAiABKAsyHC56cHJvdG8uTGlmZVByb2Zlc3Npb25S",
-            "ZWNpcGU6AjgBGjIKEFNwYXJlRW5lcmd5RW50cnkSCwoDa2V5GAEgASgFEg0K",
-            "BXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
+            "LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8inAYKDkxpZmVQcm9mZXNz",
+            "aW9uElIKDnByb2Zlc3Npb25JbmZvGAEgAygLMiouenByb3RvLkxpZmVQcm9m",
+            "ZXNzaW9uLlByb2Zlc3Npb25JbmZvRW50cnlSDnByb2Zlc3Npb25JbmZvElIK",
+            "DmxpZmVUYXJnZXRJbmZvGAIgAygLMiouenByb3RvLkxpZmVQcm9mZXNzaW9u",
+            "LkxpZmVUYXJnZXRJbmZvRW50cnlSDmxpZmVUYXJnZXRJbmZvEmQKFGxpZmVQ",
+            "cm9mZXNzaW9uUmVjaXBlGAMgAygLMjAuenByb3RvLkxpZmVQcm9mZXNzaW9u",
+            "LkxpZmVQcm9mZXNzaW9uUmVjaXBlRW50cnlSFGxpZmVQcm9mZXNzaW9uUmVj",
+            "aXBlEl8KGWxpZmVQcm9mZXNzaW9uQWxjaGVteUluZm8YBCABKAsyIS56cHJv",
+            "dG8uTGlmZVByb2Zlc3Npb25BbGNoZW15SW5mb1IZbGlmZVByb2Zlc3Npb25B",
+            "bGNoZW15SW5mbxJJCgtzcGFyZUVuZXJneRgFIAMoCzInLnpwcm90by5MaWZl",
+            "UHJvZmVzc2lvbi5TcGFyZUVuZXJneUVudHJ5UgtzcGFyZUVuZXJneRIUCgVw",
+            "b2ludBgGIAEoBVIFcG9pbnQaUgoTUHJvZmVzc2lvbkluZm9FbnRyeRILCgNr",
+            "ZXkYASABKAUSKgoFdmFsdWUYAiABKAsyGy56cHJvdG8uTGlmZVByb2Zlc3Np",
+            "b25CYXNpYzoCOAEaVwoTTGlmZVRhcmdldEluZm9FbnRyeRILCgNrZXkYASAB",
+            "KAUSLwoFdmFsdWUYAiABKAsyIC56cHJvdG8uTGlmZVByb2Zlc3Npb25UYXJn",
+            "ZXRJbmZvOgI4ARpZChlMaWZlUHJvZmVzc2lvblJlY2lwZUVudHJ5EgsKA2tl",
+            "eRgBIAEoBRIrCgV2YWx1ZRgCIAEoCzIcLnpwcm90by5MaWZlUHJvZmVzc2lv",
+            "blJlY2lwZToCOAEaMgoQU3BhcmVFbmVyZ3lFbnRyeRILCgNrZXkYASABKAUS",
+            "DQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLifeProfessionAlchemyInfoReflection.Descriptor, global::Zproto.StruLifeProfessionBasicReflection.Descriptor, global::Zproto.StruLifeProfessionRecipeReflection.Descriptor, global::Zproto.StruLifeProfessionTargetInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -105,7 +107,7 @@ namespace Zproto {
       return new LifeProfession(this);
     }
 
-    /// <summary>Field number for the "profession_info" field.</summary>
+    /// <summary>Field number for the "professionInfo" field.</summary>
     public const int ProfessionInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.LifeProfessionBasic>.Codec _map_professionInfo_codec
         = new pbc::MapField<int, global::Zproto.LifeProfessionBasic>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.LifeProfessionBasic.Parser), 10);
@@ -116,7 +118,7 @@ namespace Zproto {
       get { return professionInfo_; }
     }
 
-    /// <summary>Field number for the "life_target_info" field.</summary>
+    /// <summary>Field number for the "lifeTargetInfo" field.</summary>
     public const int LifeTargetInfoFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.LifeProfessionTargetInfo>.Codec _map_lifeTargetInfo_codec
         = new pbc::MapField<int, global::Zproto.LifeProfessionTargetInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.LifeProfessionTargetInfo.Parser), 18);
@@ -127,7 +129,7 @@ namespace Zproto {
       get { return lifeTargetInfo_; }
     }
 
-    /// <summary>Field number for the "life_profession_recipe" field.</summary>
+    /// <summary>Field number for the "lifeProfessionRecipe" field.</summary>
     public const int LifeProfessionRecipeFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.LifeProfessionRecipe>.Codec _map_lifeProfessionRecipe_codec
         = new pbc::MapField<int, global::Zproto.LifeProfessionRecipe>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.LifeProfessionRecipe.Parser), 26);
@@ -138,7 +140,7 @@ namespace Zproto {
       get { return lifeProfessionRecipe_; }
     }
 
-    /// <summary>Field number for the "life_profession_alchemy_info" field.</summary>
+    /// <summary>Field number for the "lifeProfessionAlchemyInfo" field.</summary>
     public const int LifeProfessionAlchemyInfoFieldNumber = 4;
     private global::Zproto.LifeProfessionAlchemyInfo lifeProfessionAlchemyInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "spare_energy" field.</summary>
+    /// <summary>Field number for the "spareEnergy" field.</summary>
     public const int SpareEnergyFieldNumber = 5;
     private static readonly pbc::MapField<int, int>.Codec _map_spareEnergy_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 42);

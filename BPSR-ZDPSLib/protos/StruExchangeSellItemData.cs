@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X2V4Y2hhbmdlX3NlbGxfaXRlbV9kYXRhLnByb3RvEgZ6cHJvdG8a",
             "IGVudW1fZV9leGNoYW5nZV9pdGVtX3N0YXRlLnByb3RvGg9zdHJ1X2l0ZW0u",
-            "cHJvdG8ivAEKFEV4Y2hhbmdlU2VsbEl0ZW1EYXRhEh8KCWl0ZW1faW5mbxgB",
-            "IAEoCzIMLnpwcm90by5JdGVtEhUKDXdpdGhkcmF3X3R5cGUYAiABKAUSEgoK",
-            "ZGVsYXlfdGltZRgDIAEoAxIMCgR1dWlkGAQgASgJEhAKCGVuZF90aW1lGAUg",
-            "ASgDEg0KBXByaWNlGAYgASgFEikKBXN0YXRlGAcgASgOMhouenByb3RvLkVF",
-            "eGNoYW5nZUl0ZW1TdGF0ZWIGcHJvdG8z"));
+            "cHJvdG8i+AEKFEV4Y2hhbmdlU2VsbEl0ZW1EYXRhEigKCGl0ZW1JbmZvGAEg",
+            "ASgLMgwuenByb3RvLkl0ZW1SCGl0ZW1JbmZvEiIKDFdpdGhkcmF3VHlwZRgC",
+            "IAEoBVIMV2l0aGRyYXdUeXBlEhwKCWRlbGF5VGltZRgDIAEoA1IJZGVsYXlU",
+            "aW1lEhIKBHV1aWQYBCABKAlSBHV1aWQSGAoHZW5kVGltZRgFIAEoA1IHZW5k",
+            "VGltZRIUCgVwcmljZRgGIAEoBVIFcHJpY2USMAoFc3RhdGUYByABKA4yGi56",
+            "cHJvdG8uRUV4Y2hhbmdlSXRlbVN0YXRlUgVzdGF0ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEExchangeItemStateReflection.Descriptor, global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +93,7 @@ namespace Zproto {
       return new ExchangeSellItemData(this);
     }
 
-    /// <summary>Field number for the "item_info" field.</summary>
+    /// <summary>Field number for the "itemInfo" field.</summary>
     public const int ItemInfoFieldNumber = 1;
     private global::Zproto.Item itemInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "withdraw_type" field.</summary>
+    /// <summary>Field number for the "WithdrawType" field.</summary>
     public const int WithdrawTypeFieldNumber = 2;
     private int withdrawType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "delay_time" field.</summary>
+    /// <summary>Field number for the "delayTime" field.</summary>
     public const int DelayTimeFieldNumber = 3;
     private long delayTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 5;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

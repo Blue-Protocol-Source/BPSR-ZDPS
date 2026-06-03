@@ -332,7 +332,7 @@ namespace BPSR_ZDPS.Web
             string difficulty = "";
             if (encounter.ExData.DungeonDifficulty > 0)
             {
-                difficulty = $" (Difficulty {encounter.ExData.DungeonDifficulty})";
+                difficulty = $" (Master {encounter.ExData.DungeonDifficulty})";
             }
 
             string clearStatus = "";
@@ -353,6 +353,7 @@ namespace BPSR_ZDPS.Web
 
             string encounterName = $"**Encounter**:{clearStatus} {encounter.SceneName}{sceneSubName}{difficulty}";
             string bossDetails = $"{(!string.IsNullOrEmpty(encounter.BossName) ? $"**Boss**: {encounter.BossName}{(encounter.BossHpPct > 0 ? $" ({Math.Round(encounter.BossHpPct / 1000.0f, 2)}%)" : "")}" : "")}";
+            string encounterDuration = (encounter.EndTime - encounter.StartTime).ToString(@"hh\:mm\:ss");
 
             var msgContentBuilder = new StringBuilder();
             msgContentBuilder.AppendLine("**ZDPS Report**");
@@ -361,9 +362,13 @@ namespace BPSR_ZDPS.Web
             if (!string.IsNullOrEmpty(bossDetails))
             {
                 msgContentBuilder.AppendLine(bossDetails);
+                if (encounter.ExData.FirstDamageTimeStamp != null)
+                {
+                    encounterDuration = encounter.GetDuration(true).ToString(@"hh\:mm\:ss");
+                }
             }
             msgContentBuilder.AppendLine($"**Started At**: <t:{unixStartTime}:F> <t:{unixStartTime}:R>");
-            msgContentBuilder.AppendLine($"**Duration**: `{(encounter.EndTime - encounter.StartTime).ToString(@"hh\:mm\:ss")}`{gameTimeStatus}");
+            msgContentBuilder.AppendLine($"**Duration**: `{encounterDuration}`{gameTimeStatus}");
             msgContentBuilder.AppendLine($"**ZTeamID**: ``{teamId}``");
 
             var msg = new DiscordWebhookPayload("ZDPS", msgContentBuilder.ToString())

@@ -36,7 +36,10 @@ namespace BPSR_ZDPS
             public const string SelectById = @"SELECT * FROM Encounters WHERE EncounterId = @EncounterId";
             public const string SelectByBattleId = 
                 @"SELECT * FROM Encounters WHERE BattleId = @BattleId ORDER BY StartTime";
-            
+
+            public const string SelectOneByBattleId =
+                @"SELECT * FROM Encounters WHERE BattleId = @BattleId ORDER BY StartTime LIMIT 1";
+
             public const string RemoveEncountersOlderThan = 
                 @"DELETE FROM Encounters WHERE EndTime IS NOT NULL AND datetime(EndTime) < @Date;";
 
@@ -139,7 +142,7 @@ namespace BPSR_ZDPS
                     Version REAL
                 );
 
-                INSERT INTO DbData (Version) SELECT (1.1) WHERE NOT EXISTS (SELECT 1 FROM DbData)";
+                INSERT INTO DbData (Version) SELECT (1.2) WHERE NOT EXISTS (SELECT 1 FROM DbData)";
         }
 
         public static class EntityCache

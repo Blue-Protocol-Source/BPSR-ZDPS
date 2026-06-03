@@ -26,18 +26,19 @@ namespace Zproto {
           string.Concat(
             "ChpzdHJ1X3Nob3dfcGllY2VfZGF0YS5wcm90bxIGenByb3RvGh1zdHJ1X3No",
             "b3dfcGllY2VfaWRfbGlzdC5wcm90bxoac3RydV9zaG93X3BpZWNlX3BhaXIu",
-            "cHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLmAwoNU2hvd1BpZWNlRGF0",
-            "YRJIChNvZnRlbl91c2VfdHlwZV9saXN0GAEgAygLMisuenByb3RvLlNob3dQ",
-            "aWVjZURhdGEuT2Z0ZW5Vc2VUeXBlTGlzdEVudHJ5EkMKEHVubG9ja190eXBl",
-            "X2xpc3QYAiADKAsyKS56cHJvdG8uU2hvd1BpZWNlRGF0YS5VbmxvY2tUeXBl",
-            "TGlzdEVudHJ5ElAKF3JvdWxldHRlX3Bvc19waWVjZV9pbmZvGAMgAygLMi8u",
-            "enByb3RvLlNob3dQaWVjZURhdGEuUm91bGV0dGVQb3NQaWVjZUluZm9FbnRy",
-            "eRpQChVPZnRlblVzZVR5cGVMaXN0RW50cnkSCwoDa2V5GAEgASgFEiYKBXZh",
-            "bHVlGAIgASgLMhcuenByb3RvLlNob3dQaWVjZUlkTGlzdDoCOAEaTgoTVW5s",
-            "b2NrVHlwZUxpc3RFbnRyeRILCgNrZXkYASABKAUSJgoFdmFsdWUYAiABKAsy",
-            "Fy56cHJvdG8uU2hvd1BpZWNlSWRMaXN0OgI4ARpSChlSb3VsZXR0ZVBvc1Bp",
-            "ZWNlSW5mb0VudHJ5EgsKA2tleRgBIAEoBRIkCgV2YWx1ZRgCIAEoCzIVLnpw",
-            "cm90by5TaG93UGllY2VQYWlyOgI4AWIGcHJvdG8z"));
+            "cHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKWBAoNU2hvd1BpZWNlRGF0",
+            "YRJXChBPZnRlblVzZVR5cGVMaXN0GAEgAygLMisuenByb3RvLlNob3dQaWVj",
+            "ZURhdGEuT2Z0ZW5Vc2VUeXBlTGlzdEVudHJ5UhBPZnRlblVzZVR5cGVMaXN0",
+            "ElEKDnVubG9ja1R5cGVMaXN0GAIgAygLMikuenByb3RvLlNob3dQaWVjZURh",
+            "dGEuVW5sb2NrVHlwZUxpc3RFbnRyeVIOdW5sb2NrVHlwZUxpc3QSYwoUcm91",
+            "bGV0dGVQb3NQaWVjZUluZm8YAyADKAsyLy56cHJvdG8uU2hvd1BpZWNlRGF0",
+            "YS5Sb3VsZXR0ZVBvc1BpZWNlSW5mb0VudHJ5UhRyb3VsZXR0ZVBvc1BpZWNl",
+            "SW5mbxpQChVPZnRlblVzZVR5cGVMaXN0RW50cnkSCwoDa2V5GAEgASgFEiYK",
+            "BXZhbHVlGAIgASgLMhcuenByb3RvLlNob3dQaWVjZUlkTGlzdDoCOAEaTgoT",
+            "VW5sb2NrVHlwZUxpc3RFbnRyeRILCgNrZXkYASABKAUSJgoFdmFsdWUYAiAB",
+            "KAsyFy56cHJvdG8uU2hvd1BpZWNlSWRMaXN0OgI4ARpSChlSb3VsZXR0ZVBv",
+            "c1BpZWNlSW5mb0VudHJ5EgsKA2tleRgBIAEoBRIkCgV2YWx1ZRgCIAEoCzIV",
+            "Lnpwcm90by5TaG93UGllY2VQYWlyOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruShowPieceIdListReflection.Descriptor, global::Zproto.StruShowPiecePairReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +96,7 @@ namespace Zproto {
       return new ShowPieceData(this);
     }
 
-    /// <summary>Field number for the "often_use_type_list" field.</summary>
+    /// <summary>Field number for the "OftenUseTypeList" field.</summary>
     public const int OftenUseTypeListFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.ShowPieceIdList>.Codec _map_oftenUseTypeList_codec
         = new pbc::MapField<int, global::Zproto.ShowPieceIdList>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ShowPieceIdList.Parser), 10);
@@ -106,7 +107,7 @@ namespace Zproto {
       get { return oftenUseTypeList_; }
     }
 
-    /// <summary>Field number for the "unlock_type_list" field.</summary>
+    /// <summary>Field number for the "unlockTypeList" field.</summary>
     public const int UnlockTypeListFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.ShowPieceIdList>.Codec _map_unlockTypeList_codec
         = new pbc::MapField<int, global::Zproto.ShowPieceIdList>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ShowPieceIdList.Parser), 18);
@@ -117,7 +118,7 @@ namespace Zproto {
       get { return unlockTypeList_; }
     }
 
-    /// <summary>Field number for the "roulette_pos_piece_info" field.</summary>
+    /// <summary>Field number for the "roulettePosPieceInfo" field.</summary>
     public const int RoulettePosPieceInfoFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.ShowPiecePair>.Codec _map_roulettePosPieceInfo_codec
         = new pbc::MapField<int, global::Zproto.ShowPiecePair>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ShowPiecePair.Parser), 26);

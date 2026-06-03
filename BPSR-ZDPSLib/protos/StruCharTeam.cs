@@ -26,15 +26,17 @@ namespace Zproto {
           string.Concat(
             "ChRzdHJ1X2NoYXJfdGVhbS5wcm90bxIGenByb3RvGh1lbnVtX2VfdGVhbV9t",
             "ZW1iZXJfdHlwZS5wcm90bxoYc3RydV90ZWFtX21lbV9kYXRhLnByb3RvGhVz",
-            "dHJ1X2RpcnR5X21hc2sucHJvdG8i2QIKCENoYXJUZWFtEg8KB3RlYW1faWQY",
-            "ASABKAMSEQoJbGVhZGVyX2lkGAIgASgDEhYKDnRlYW1fdGFyZ2V0X2lkGAMg",
-            "ASgNEhAKCHRlYW1fbnVtGAQgASgNEhAKCGNoYXJfaWRzGAUgAygDEhMKC2lz",
-            "X21hdGNoaW5nGAYgASgIEhkKEWNoYXJfdGVhbV92ZXJzaW9uGAcgASgFEj4K",
-            "EHRlYW1fbWVtYmVyX2RhdGEYCCADKAsyJC56cHJvdG8uQ2hhclRlYW0uVGVh",
-            "bU1lbWJlckRhdGFFbnRyeRIxChB0ZWFtX21lbWJlcl90eXBlGAkgASgOMhcu",
-            "enByb3RvLkVUZWFtTWVtYmVyVHlwZRpKChNUZWFtTWVtYmVyRGF0YUVudHJ5",
-            "EgsKA2tleRgBIAEoAxIiCgV2YWx1ZRgCIAEoCzITLnpwcm90by5UZWFtTWVt",
-            "RGF0YToCOAFiBnByb3RvMw=="));
+            "dHJ1X2RpcnR5X21hc2sucHJvdG8iuwMKCENoYXJUZWFtEhYKBnRlYW1JZBgB",
+            "IAEoA1IGdGVhbUlkEhoKCGxlYWRlcklkGAIgASgDUghsZWFkZXJJZBIiCgx0",
+            "ZWFtVGFyZ2V0SWQYAyABKA1SDHRlYW1UYXJnZXRJZBIYCgd0ZWFtTnVtGAQg",
+            "ASgNUgd0ZWFtTnVtEhgKB2NoYXJJZHMYBSADKANSB2NoYXJJZHMSHgoKaXNN",
+            "YXRjaGluZxgGIAEoCFIKaXNNYXRjaGluZxIoCg9jaGFyVGVhbVZlcnNpb24Y",
+            "ByABKAVSD2NoYXJUZWFtVmVyc2lvbhJMCg50ZWFtTWVtYmVyRGF0YRgIIAMo",
+            "CzIkLnpwcm90by5DaGFyVGVhbS5UZWFtTWVtYmVyRGF0YUVudHJ5Ug50ZWFt",
+            "TWVtYmVyRGF0YRI/Cg50ZWFtTWVtYmVyVHlwZRgJIAEoDjIXLnpwcm90by5F",
+            "VGVhbU1lbWJlclR5cGVSDnRlYW1NZW1iZXJUeXBlGkoKE1RlYW1NZW1iZXJE",
+            "YXRhRW50cnkSCwoDa2V5GAEgASgDEiIKBXZhbHVlGAIgASgLMhMuenByb3Rv",
+            "LlRlYW1NZW1EYXRhOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETeamMemberTypeReflection.Descriptor, global::Zproto.StruTeamMemDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +100,7 @@ namespace Zproto {
       return new CharTeam(this);
     }
 
-    /// <summary>Field number for the "team_id" field.</summary>
+    /// <summary>Field number for the "teamId" field.</summary>
     public const int TeamIdFieldNumber = 1;
     private long teamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "leader_id" field.</summary>
+    /// <summary>Field number for the "leaderId" field.</summary>
     public const int LeaderIdFieldNumber = 2;
     private long leaderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "team_target_id" field.</summary>
+    /// <summary>Field number for the "teamTargetId" field.</summary>
     public const int TeamTargetIdFieldNumber = 3;
     private uint teamTargetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,7 +136,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "team_num" field.</summary>
+    /// <summary>Field number for the "teamNum" field.</summary>
     public const int TeamNumFieldNumber = 4;
     private uint teamNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -146,7 +148,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_ids" field.</summary>
+    /// <summary>Field number for the "charIds" field.</summary>
     public const int CharIdsFieldNumber = 5;
     private static readonly pb::FieldCodec<long> _repeated_charIds_codec
         = pb::FieldCodec.ForInt64(42);
@@ -157,7 +159,7 @@ namespace Zproto {
       get { return charIds_; }
     }
 
-    /// <summary>Field number for the "is_matching" field.</summary>
+    /// <summary>Field number for the "isMatching" field.</summary>
     public const int IsMatchingFieldNumber = 6;
     private bool isMatching_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,7 +171,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_team_version" field.</summary>
+    /// <summary>Field number for the "charTeamVersion" field.</summary>
     public const int CharTeamVersionFieldNumber = 7;
     private int charTeamVersion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -181,7 +183,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "team_member_data" field.</summary>
+    /// <summary>Field number for the "teamMemberData" field.</summary>
     public const int TeamMemberDataFieldNumber = 8;
     private static readonly pbc::MapField<long, global::Zproto.TeamMemData>.Codec _map_teamMemberData_codec
         = new pbc::MapField<long, global::Zproto.TeamMemData>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemData.Parser), 66);
@@ -192,7 +194,7 @@ namespace Zproto {
       get { return teamMemberData_; }
     }
 
-    /// <summary>Field number for the "team_member_type" field.</summary>
+    /// <summary>Field number for the "teamMemberType" field.</summary>
     public const int TeamMemberTypeFieldNumber = 9;
     private global::Zproto.ETeamMemberType teamMemberType_ = global::Zproto.ETeamMemberType.Five;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

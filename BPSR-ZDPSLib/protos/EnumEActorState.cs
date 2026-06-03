@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEActorStateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhlbnVtX2VfYWN0b3Jfc3RhdGUucHJvdG8SBnpwcm90byq+BgoLRUFjdG9y",
+            "ChhlbnVtX2VfYWN0b3Jfc3RhdGUucHJvdG8SBnpwcm90byrtBgoLRUFjdG9y",
             "U3RhdGUSFQoRQWN0b3JTdGF0ZURlZmF1bHQQABIVChFBY3RvclN0YXRlU2lu",
             "Z2luZxABEhMKD0FjdG9yU3RhdGVTa2lsbBACEhIKDkFjdG9yU3RhdGVKdW1w",
             "EAMSEgoOQWN0b3JTdGF0ZVJ1c2gQBBITCg9BY3RvclN0YXRlQ2xpbWIQBRIS",
@@ -42,8 +42,9 @@ namespace Zproto {
             "dGVJbnRlcmFjdGlvbhAcEh4KGkFjdG9yU3RhdGVTY2VuZUludGVyYWN0aW9u",
             "EB0SFwoTQWN0b3JTdGF0ZVR1bm5lbEZseRAeEhgKFEFjdG9yU3RhdGVMZXZp",
             "dGF0aW9uEB8SGgoWQWN0b3JTdGF0ZUhvbWVsYW5kRWRpdBAgEhIKDkFjdG9y",
-            "U3RhdGVSaWRlECESGQoVQWN0b3JTdGF0ZVJpZGVDb250cm9sECISEQoNQWN0",
-            "b3JTdGF0ZUFsbBAjYgZwcm90bzM="));
+            "U3RhdGVSaWRlECESGQoVQWN0b3JTdGF0ZVJpZGVDb250cm9sECISGAoUQWN0",
+            "b3JTdGF0ZUluc3RydW1lbnQQIxITCg9BY3RvclN0YXRlRml4ZWQQJBIRCg1B",
+            "Y3RvclN0YXRlQWxsECViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EActorState), }, null, null));
@@ -87,7 +88,9 @@ namespace Zproto {
     [pbr::OriginalName("ActorStateHomelandEdit")] ActorStateHomelandEdit = 32,
     [pbr::OriginalName("ActorStateRide")] ActorStateRide = 33,
     [pbr::OriginalName("ActorStateRideControl")] ActorStateRideControl = 34,
-    [pbr::OriginalName("ActorStateAll")] ActorStateAll = 35,
+    [pbr::OriginalName("ActorStateInstrument")] ActorStateInstrument = 35,
+    [pbr::OriginalName("ActorStateFixed")] ActorStateFixed = 36,
+    [pbr::OriginalName("ActorStateAll")] ActorStateAll = 37,
   }
 
   #endregion

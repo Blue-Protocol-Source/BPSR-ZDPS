@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2dldF9zb2NpYWxfZGF0YV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "NQoUR2V0U29jaWFsRGF0YVJlcXVlc3QSDwoHY2hhcl9pZBgBIAEoAxIMCgRt",
-            "YXNrGAIgASgDYgZwcm90bzM="));
+            "QgoUR2V0U29jaWFsRGF0YVJlcXVlc3QSFgoGY2hhcklkGAEgASgDUgZjaGFy",
+            "SWQSEgoEbWFzaxgCIAEoA1IEbWFza2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new GetSocialDataRequest(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

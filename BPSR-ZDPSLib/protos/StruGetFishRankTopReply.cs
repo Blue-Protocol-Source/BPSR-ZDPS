@@ -26,12 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X2dldF9maXNoX3JhbmtfdG9wX3JlcGx5LnByb3RvEgZ6cHJvdG8a",
             "F2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhlzdHJ1X2Zpc2hfcmFua19pbmZv",
-            "LnByb3RvItYBChNHZXRGaXNoUmFua1RvcFJlcGx5EhQKDGZpc2hfYXJlYV9p",
-            "ZBgBIAEoBRI8CglyYW5rX2xpc3QYAiADKAsyKS56cHJvdG8uR2V0RmlzaFJh",
-            "bmtUb3BSZXBseS5SYW5rTGlzdEVudHJ5EiQKCGVycl9jb2RlGAMgASgOMhIu",
-            "enByb3RvLkVFcnJvckNvZGUaRQoNUmFua0xpc3RFbnRyeRILCgNrZXkYASAB",
-            "KAUSIwoFdmFsdWUYAiABKAsyFC56cHJvdG8uRmlzaFJhbmtJbmZvOgI4AWIG",
-            "cHJvdG8z"));
+            "LnByb3RvIvEBChNHZXRGaXNoUmFua1RvcFJlcGx5Eh4KCmZpc2hBcmVhSWQY",
+            "ASABKAVSCmZpc2hBcmVhSWQSRQoIcmFua0xpc3QYAiADKAsyKS56cHJvdG8u",
+            "R2V0RmlzaFJhbmtUb3BSZXBseS5SYW5rTGlzdEVudHJ5UghyYW5rTGlzdBIs",
+            "CgdlcnJDb2RlGAMgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGUa",
+            "RQoNUmFua0xpc3RFbnRyeRILCgNrZXkYASABKAUSIwoFdmFsdWUYAiABKAsy",
+            "FC56cHJvdG8uRmlzaFJhbmtJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruFishRankInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +89,7 @@ namespace Zproto {
       return new GetFishRankTopReply(this);
     }
 
-    /// <summary>Field number for the "fish_area_id" field.</summary>
+    /// <summary>Field number for the "fishAreaId" field.</summary>
     public const int FishAreaIdFieldNumber = 1;
     private int fishAreaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -101,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rank_list" field.</summary>
+    /// <summary>Field number for the "rankList" field.</summary>
     public const int RankListFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.FishRankInfo>.Codec _map_rankList_codec
         = new pbc::MapField<int, global::Zproto.FishRankInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FishRankInfo.Parser), 18);
@@ -112,7 +112,7 @@ namespace Zproto {
       get { return rankList_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

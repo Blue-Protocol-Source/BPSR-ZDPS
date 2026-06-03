@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2V4Y2hhbmdlX2RhdGEucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIoIBCgxFeGNoYW5nZURhdGESFgoOaXRlbV9jb25maWdf",
-            "aWQYASABKAUSDgoGdW5sb2NrGAIgASgFEhoKEmN1cl9leGNoYW5nZV9jb3Vu",
-            "dBgDIAEoBRITCgtleHBpcmVfdGltZRgEIAEoAxIZChFsYXN0X3JlZnJlc2hf",
-            "dGltZRgFIAEoA2IGcHJvdG8z"));
+            "eV9tYXNrLnByb3RvIsABCgxFeGNoYW5nZURhdGESIgoMaXRlbUNvbmZpZ0lk",
+            "GAEgASgFUgxpdGVtQ29uZmlnSWQSFgoGVW5sb2NrGAIgASgFUgZVbmxvY2sS",
+            "KgoQY3VyRXhjaGFuZ2VDb3VudBgDIAEoBVIQY3VyRXhjaGFuZ2VDb3VudBIe",
+            "CgpleHBpcmVUaW1lGAQgASgDUgpleHBpcmVUaW1lEigKD2xhc3RSZWZyZXNo",
+            "VGltZRgFIAEoA1IPbGFzdFJlZnJlc2hUaW1lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new ExchangeData(this);
     }
 
-    /// <summary>Field number for the "item_config_id" field.</summary>
+    /// <summary>Field number for the "itemConfigId" field.</summary>
     public const int ItemConfigIdFieldNumber = 1;
     private int itemConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unlock" field.</summary>
+    /// <summary>Field number for the "Unlock" field.</summary>
     public const int UnlockFieldNumber = 2;
     private int unlock_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_exchange_count" field.</summary>
+    /// <summary>Field number for the "curExchangeCount" field.</summary>
     public const int CurExchangeCountFieldNumber = 3;
     private int curExchangeCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "expire_time" field.</summary>
+    /// <summary>Field number for the "expireTime" field.</summary>
     public const int ExpireTimeFieldNumber = 4;
     private long expireTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_refresh_time" field.</summary>
+    /// <summary>Field number for the "lastRefreshTime" field.</summary>
     public const int LastRefreshTimeFieldNumber = 5;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

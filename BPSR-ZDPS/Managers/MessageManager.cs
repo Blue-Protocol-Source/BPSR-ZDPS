@@ -38,6 +38,8 @@ namespace BPSR_ZDPS
                 ExeNames = Utils.GameCapturePreferenceToExeNames(Settings.Instance.GameCapturePreference)
             });
 
+            netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.EnterScene, ProcessEnterScene);
+
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncContainerData, ProcessSyncContainerData);
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncContainerDirtyData, ProcessSyncContainerDirtyData);
 
@@ -46,6 +48,8 @@ namespace BPSR_ZDPS
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncToMeDeltaInfo, ProcessSyncToMeDeltaInfo);
 
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncNearEntities, ProcessSyncNearEntities);
+
+            netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncSceneEvents, ProcessSyncSceneEvents);
 
             netCap.RegisterNotifyHandler(936649811, (uint)BPSR_ZDPSLib.ServiceMethods.WorldActivityNtf.SyncHitInfo, ProcessSyncHitInfo);
 
@@ -63,7 +67,10 @@ namespace BPSR_ZDPS
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_ZDPSLib.ServiceMethods.GrpcTeamNtf.NoticeUpdateTeamInfo, ProcessNoticeUpdateTeamInfo);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_ZDPSLib.ServiceMethods.GrpcTeamNtf.NoticeUpdateTeamMemberInfo, ProcessNoticeUpdateTeamMemberInfo);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_ZDPSLib.ServiceMethods.GrpcTeamNtf.NotifyJoinTeam, ProcessNotifyJoinTeam);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_ZDPSLib.ServiceMethods.GrpcTeamNtf.NotifyLeaveTeam, ProcessNotifyLeaveTeam);
             //
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_ZDPSLib.ServiceMethods.GrpcTeamNtf.NotifyBeTransferLeader, ProcessNotifyBeTransferLeader);
+            netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_ZDPSLib.ServiceMethods.GrpcTeamNtf.NoticeTeamDissolve, ProcessNoticeTeamDissolve);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_ZDPSLib.ServiceMethods.GrpcTeamNtf.NotifyTeamActivityState, ProcessNotifyTeamActivityState);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_ZDPSLib.ServiceMethods.GrpcTeamNtf.TeamActivityResult, ProcessTeamActivityResult);
             netCap.RegisterNotifyHandler((ulong)EServiceId.GrpcTeamNtf, (uint)BPSR_ZDPSLib.ServiceMethods.GrpcTeamNtf.TeamActivityListResult, ProcessTeamActivityListResult);
@@ -78,6 +85,10 @@ namespace BPSR_ZDPS
 
             netCap.RegisterNotifyHandler((ulong)EServiceId.ChitChatNtf, (uint)BPSR_ZDPSLib.ServiceMethods.ChitChatNtf.NotifyNewestChitChatMsgs, Managers.ChatManager.ProcessChatMessage);
 
+            netCap.RegisterNotifyHandler((ulong)EServiceId.WorldActNtf, (uint)BPSR_ZDPSLib.ServiceMethods.WorldActNtf.SyncWorldActData, ProcessSyncWorldActData);
+
+            netCap.RegisterNotifyHandler((ulong)EServiceId.SocialNtf, (uint)BPSR_ZDPSLib.ServiceMethods.SocialNtf.NotifySocialData, ProcessNotifySocialData);
+            
             // Uncomment to debug print unhandled events
             //netCap.RegisterUnhandledHandler(ProcessUnhandled);
 
@@ -127,6 +138,111 @@ namespace BPSR_ZDPS
             if (payloadBuffer.Length == 0)
             {
                 return;
+            }
+        }
+
+        public static void ProcessEnterScene(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = EnterScene.Parser.ParseFrom(payloadBuffer);
+
+            if (vData.EnterSceneInfo != null)
+            {
+                if (vData.EnterSceneInfo.PlayerEnt != null)
+                {
+                    if (vData.EnterSceneInfo.PlayerEnt.Attrs != null)
+                    {
+                        ProcessAttrs(vData.EnterSceneInfo.PlayerEnt.Uuid, vData.EnterSceneInfo.PlayerEnt.Attrs.Attrs);
+                    }
+
+                    if (vData.EnterSceneInfo.PlayerEnt.TempAttrs != null)
+                    {
+                        ProcessTempAttrs(vData.EnterSceneInfo.PlayerEnt.Uuid, vData.EnterSceneInfo.PlayerEnt.TempAttrs.Attrs);
+                    }
+                }
+
+                if (vData.EnterSceneInfo.SceneAttrs != null)
+                {
+                    Log.Debug("ProcessEnterScene");
+
+                    foreach (var attr in vData.EnterSceneInfo.SceneAttrs.Attrs)
+                    {
+                        var reader = new Google.Protobuf.CodedInputStream(attr.RawData.ToByteArray());
+
+                        EAttrType attrId = (EAttrType)attr.Id;
+                        string attrIdName = attrId.ToString();
+                        bool isNoValue = attr.RawData.Length == 0;
+                        switch (attrId)
+                        {
+                            case EAttrType.AttrSceneUuid:
+                                Log.Debug($"\t{attrIdName} = {(isNoValue ? 0 : reader.ReadInt64())}");
+                                break;
+                            case EAttrType.AttrSceneBasicId:
+                                Log.Debug($"\t{attrIdName} = {(isNoValue ? 0 : reader.ReadUInt32())}");
+                                break;
+                            case EAttrType.AttrSceneChannel:
+                                Log.Debug($"\t{attrIdName} = {(isNoValue ? 0 : reader.ReadUInt32())}");
+                                break;
+                            default:
+                                var val = isNoValue ? 0 : reader.ReadInt32();
+                                Log.Debug($"\t{attrIdName} = {val}");
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void ProcessSyncWorldActData(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = WorldActActivityData.Parser.ParseFrom(payloadBuffer);
+
+            System.Diagnostics.Debug.WriteLine("ProcessSyncWorldActData");
+        }
+
+        public static void ProcessSyncSceneEvents(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = SyncSceneEvents.Parser.ParseFrom(payloadBuffer);
+
+            foreach (var evt in vData.Evt.Events)
+            {
+                EncounterManager.Current.AddSceneEvent(evt);
+            }
+        }
+
+        public static void ProcessNotifySocialData(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNotifySocialData");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = SocialNtf.Types.NotifySocialData.Parser.ParseFrom(payloadBuffer);
+
+            // This event occurs the moment a map change request is made, before the actual change event occurs, so we have to lock it out of modifying the prior Encounter
+            if (EncounterManager.AllowSceneUpdate)
+            {
+                if (vData?.VRequest?.Data?.SceneData != null)
+                {
+                    EncounterManager.SetSceneId(vData.VRequest.Data.SceneData.LevelMapId);
+                    EncounterManager.Current.SetChannelLineNumber(vData.VRequest.Data.SceneData.LineId);
+                    EncounterManager.AllowSceneUpdate = false;
+                }
             }
         }
 
@@ -231,6 +347,60 @@ namespace BPSR_ZDPS
             }
 
             GrpcTeamManager.ProcessNotifyJoinTeam(vData, extraData);
+        }
+
+        public static void ProcessNotifyLeaveTeam(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNotifyLeaveTeam");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyLeaveTeam.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            GrpcTeamManager.ProcessNotifyLeaveTeam(vData, extraData);
+        }
+
+        public static void ProcessNotifyBeTransferLeader(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNotifyBeTransferLeader");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NotifyBeTransferLeader.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            GrpcTeamManager.ProcessNotifyBeTransferLeader(vData, extraData);
+        }
+
+        public static void ProcessNoticeTeamDissolve(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //System.Diagnostics.Debug.WriteLine("ProcessNoticeTeamDissolve");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var vData = GrpcTeamNtf.Types.NoticeTeamDissolve.Parser.ParseFrom(payloadBuffer);
+
+            if (vData == null)
+            {
+                return;
+            }
+
+            GrpcTeamManager.ProcessNoticeTeamDissolve(vData, extraData);
         }
 
         public static void ProcessNotifyTeamActivityState(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
@@ -505,173 +675,248 @@ namespace BPSR_ZDPS
         {
             System.Diagnostics.Debug.WriteLine($"ProcessSyncHitInfo");
         }
-
+        public static bool IsWipeCheckQueued = false;
         public static void ProcessAttrs(long uuid, RepeatedField<Attr> attrs)
         {
             foreach (var attr in attrs)
             {
-                if (attr.Id == 0 || attr.RawData == null || attr.RawData.Length == 0)
+                if (attr.Id == 0 || attr.RawData == null)
                 {
                     continue;
                 }
                 var reader = new Google.Protobuf.CodedInputStream(attr.RawData.ToByteArray());
 
-                switch ((EAttrType)attr.Id)
+                EAttrType attrId = (EAttrType)attr.Id;
+                string attrIdName = attrId.ToString();
+                bool isNoValue = attr.RawData.Length == 0;
+                switch (attrId)
                 {
                     case EAttrType.AttrName:
-                        string name = reader.ReadString();
-                        EncounterManager.Current.SetName(uuid, name);
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrName", name);
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? "" : reader.ReadString().TrimEnd());
+                        break;
+                    case EAttrType.AttrHatedName:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? "" : reader.ReadString().TrimEnd());
                         break;
                     case EAttrType.AttrSkillId:
-                        {
-                            string attr_name_id = ((EAttrType)attr.Id).ToString();
-                            int skillId = reader.ReadInt32();
-
-                            EncounterManager.Current.SetAttrKV(uuid, attr_name_id, skillId);
-                            break;
-                        }
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
+                        break;
                     case EAttrType.AttrProfessionId:
-                        int professionId = reader.ReadInt32();
-                        EncounterManager.Current.SetProfessionId(uuid, professionId);
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrProfessionId", professionId);
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
                         break;
                     case EAttrType.AttrFightPoint:
-                        int fightPoint = reader.ReadInt32();
-                        EncounterManager.Current.SetAbilityScore(uuid, fightPoint);
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrFightPoint", fightPoint);
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
                         break;
                     case EAttrType.AttrLevel:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrLevel", reader.ReadInt32());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
                         break;
                     case EAttrType.AttrRankLevel:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrRankLevel", reader.ReadInt32());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
                         break;
                     case EAttrType.AttrCri:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrCri", reader.ReadInt32());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
                         break;
                     case EAttrType.AttrLuck:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrLuck", reader.ReadInt32());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
                         break;
                     case EAttrType.AttrHp:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrHp", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrMaxHp:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrMaxHp", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrAttack:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrAttack", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrDefense:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrDefense", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrPos:
-                        var pos = Vec3.Parser.ParseFrom(reader);
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrPos", pos);
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
                         break;
                     case EAttrType.AttrTargetPos:
-                        var target_pos = Vec3.Parser.ParseFrom(reader);
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrTargetPos", target_pos);
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrFinalTargetPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrDmgTargetPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrBulletTargetPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrSummonerPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrTargetPartPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
+                        break;
+                    case EAttrType.AttrParadeLeaderPos:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? new Vec3() : Vec3.Parser.ParseFrom(reader));
                         break;
                     case EAttrType.AttrState:
-                        var entityState = reader.ReadInt32();
-                        EActorState state = (EActorState)entityState;
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrState", state);
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrState", isNoValue ? (EActorState)0 : (EActorState)reader.ReadInt32());
 
                         if (uuid == currentUserUuid)
                         {
-                            CheckForWipe();
+                            IsWipeCheckQueued = true;
                         }
                         
                         break;
-                    /*case EAttrType.AttrCombatState:
-                    case EAttrType.AttrInBattleShow:
-                        if (uuid == 285140 && attr.Id == 104 || attr.Id == 186)
-                        {
-                            System.Diagnostics.Debug.WriteLine($"[YOU] had {(EAttrType)attr.Id} = {reader.ReadInt32()}");
-                        }
-                        break;*/
                     case EAttrType.AttrShieldList:
                         {
-                            while (!reader.IsAtEnd)
+                            if (isNoValue)
                             {
-                                uint tag = reader.ReadTag();
-                                int fieldNumber = Google.Protobuf.WireFormat.GetTagFieldNumber(tag);
-                                Google.Protobuf.WireFormat.WireType wireType = Google.Protobuf.WireFormat.GetTagWireType(tag);
-
-                                if (wireType != Google.Protobuf.WireFormat.WireType.LengthDelimited)
-                                {
-                                    reader.SkipLastField();
-                                    continue;
-                                }
-
-                                int len = reader.ReadLength();
-
-                                var inf = ShieldInfo.Parser.ParseFrom(reader);
-
-                                EncounterManager.Current.SetAttrKV(uuid, "AttrShieldList", inf);
+                                EncounterManager.Current.SetAttrKV(uuid, attrIdName, new List<ShieldInfo>());
+                                break;
                             }
 
+                            List<ShieldInfo> shieldList = new();
+                            while (!reader.IsAtEnd)
+                            {
+                                int len = reader.ReadLength();
+
+                                ShieldInfo shield = new();
+
+                                reader.ReadMessage(shield);
+                                shieldList.Add(shield);
+                            }
+                            EncounterManager.Current.SetAttrKV(uuid, "AttrShieldList", shieldList);
                             break;
                         }
                     case EAttrType.AttrActionTime:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrActionTime", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrActionUpperTime:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrActionUpperTime", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrStiffTarget:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrStiffTarget", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrStiffStageTime:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrStiffStageTime", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrSkillBeginTime:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrSkillBeginTime", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrFirstAttack:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrFirstAttack", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrCombatStateTime:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrCombatStateTime", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrTargetUuid:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrTargetUuid", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrTargetId:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrTargetId", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrSummonerId:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrSummonerId", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrTopSummonerId:
-                        EncounterManager.Current.SetAttrKV(uuid, "AttrTopSummonerId", reader.ReadInt64());
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
                         break;
                     case EAttrType.AttrHateList:
-                        // This is called a "List" but it is not a list at all. It's a single item of just a UUID and Threat Value for the current target
+                        if (isNoValue)
+                        {
+                            EncounterManager.Current.SetAttrKV(uuid, attrIdName, new List<HateInfo>());
+                            break;
+                        }
+
+                        List<HateInfo> hateList = new();
                         while (!reader.IsAtEnd)
                         {
-                            uint tag = reader.ReadTag();
-                            int fieldNumber = Google.Protobuf.WireFormat.GetTagFieldNumber(tag);
-                            Google.Protobuf.WireFormat.WireType wireType = Google.Protobuf.WireFormat.GetTagWireType(tag);
+                            int len = reader.ReadLength();
 
-                            if (wireType != Google.Protobuf.WireFormat.WireType.LengthDelimited)
-                            {
-                                reader.SkipLastField();
-                                continue;
-                            }
+                            HateInfo hate = new();
 
-                            var len = reader.ReadLength();
-
-                            var info = HateInfo.Parser.ParseFrom(reader);
-                            EncounterManager.Current.SetAttrKV(uuid, "AttrHateList", info);
+                            reader.ReadMessage(hate);
+                            hateList.Add(hate);
                         }
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrHateList", hateList);
+                        break;
+                    case EAttrType.AttrSeasonLevel:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
+                        break;
+                    case EAttrType.AttrSeasonStrength:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
+                        break;
+                    case EAttrType.AttrSeasonStrengthAdd:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
+                        break;
+                    case EAttrType.AttrSeasonStrengthTotal:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
+                        break;
+                    case EAttrType.AttrSkillLevelIdList:
+                        if (isNoValue)
+                        {
+                            EncounterManager.Current.SetAttrKV(uuid, attrIdName, new List<DataTypes.Skills.SkillLevelInfo>());
+                            break;
+                        }
+
+                        List<DataTypes.Skills.SkillLevelInfo> skillLevelInfoList = new();
+                        while (!reader.IsAtEnd)
+                        {
+                            int len = reader.ReadLength();
+
+                            SkillLevelInfo info = new();
+
+                            reader.ReadMessage(info);
+                            skillLevelInfoList.Add(new DataTypes.Skills.SkillLevelInfo(info));
+                        }
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrSkillLevelIdList", skillLevelInfoList);
+                        break;
+                    case EAttrType.AttrTeamId:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrStateTime:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrRideUuid:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrDeadTime:
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0L : reader.ReadInt64());
+                        break;
+                    case EAttrType.AttrEquipData:
+                        if (isNoValue)
+                        {
+                            EncounterManager.Current.SetAttrKV(uuid, attrIdName, new List<Zproto.EquipNine>());
+                            break;
+                        }
+
+                        List<Zproto.EquipNine> equipNineList = new();
+                        while (!reader.IsAtEnd)
+                        {
+                            int len = reader.ReadLength();
+
+                            Zproto.EquipNine info = new();
+
+                            reader.ReadMessage(info);
+                            equipNineList.Add(info);
+                        }
+                        EncounterManager.Current.SetAttrKV(uuid, "AttrEquipData", equipNineList);
                         break;
                     default:
-                        string attr_name = ((EAttrType)attr.Id).ToString();
-                        EncounterManager.Current.SetAttrKV(uuid, attr_name, reader.ReadInt32());
-                        //System.Diagnostics.Debug.WriteLine($"{attr_name} was hit");
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
+                        //System.Diagnostics.Debug.WriteLine($"{attrIdName} was hit");
                         break;
+                }
+            }
+        }
+
+        public static void ProcessTempAttrs(long uuid, RepeatedField<Zproto.TempAttr> tempAttrs)
+        {
+            foreach (var tempAttr in tempAttrs)
+            {
+                if (HelperMethods.DataTables.TempAttrs.Data.TryGetValue(tempAttr.Id.ToString(), out var matchedTempAttr))
+                {
+                    EncounterManager.Current.SetTempAttrKV(uuid, tempAttr.Id, new TempAttributesContainer() { Id = tempAttr.Id, Value = tempAttr.Value, TempAttr = matchedTempAttr });
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"WARN: Unmatched TempAttr: UUID={uuid} Id={tempAttr.Id} Value={tempAttr.Value}");
                 }
             }
         }
@@ -696,6 +941,11 @@ namespace BPSR_ZDPS
                 }
 
                 EncounterManager.Current.SetEntityType(entity.Uuid, entity.EntType);
+
+                if (entity.TempAttrs != null && entity.TempAttrs.Attrs.Any())
+                {
+                    ProcessTempAttrs(entity.Uuid, entity.TempAttrs.Attrs);
+                }
 
                 var attrCollection = entity.Attrs;
                 if (attrCollection?.Attrs == null)
@@ -726,6 +976,12 @@ namespace BPSR_ZDPS
                 }*/
             }
 
+            if (IsWipeCheckQueued)
+            {
+                IsWipeCheckQueued = false;
+                CheckForWipe();
+            }
+
             // We do this at the end in case we need to capture an entity Attr before a potential Start/End call happens
             BattleStateMachine.CheckDeferredCalls();
         }
@@ -742,6 +998,12 @@ namespace BPSR_ZDPS
             foreach (var aoiSyncDelta in syncNearDeltaInfo.DeltaInfos)
             {
                 ProcessAoiSyncDelta(aoiSyncDelta, extraData);
+            }
+
+            if (IsWipeCheckQueued)
+            {
+                IsWipeCheckQueued = false;
+                CheckForWipe();
             }
 
             // We do this at the end in case we need to capture an entity Attr before a potential Start/End call happens
@@ -767,28 +1029,37 @@ namespace BPSR_ZDPS
 
             if (attrCollection?.Attrs != null && attrCollection.Attrs.Any())
             {
-                if (isTargetPlayer)
-                {
-                    //EncounterManager.Current.SetEntityType(targetUuid, EEntityType.EntChar);
-                    ProcessAttrs(targetUuid, attrCollection.Attrs);
-                }
-                else
-                {
-                    //System.Diagnostics.Debug.WriteLine($"ProcessAoiSyncDelta Uuid={targetUuidRaw},Res={targetUuid}");
-                    ProcessAttrs(targetUuid, attrCollection.Attrs);
-                }
+                ProcessAttrs(targetUuid, attrCollection.Attrs);
             }
 
             if (delta.TempAttrs != null && delta.TempAttrs.Attrs.Any())
             {
-                //System.Diagnostics.Debug.WriteLine($"delta.TempAttrs.Attrs.count = {delta.TempAttrs.Attrs.Count}");
+                ProcessTempAttrs(targetUuid, delta.TempAttrs.Attrs);
             }
 
+            if (AppState.IsEncounterSavingPaused && Settings.Instance.MinimalProcessingWhileEncounterSavingPaused)
+            {
+                BattleStateMachine.CheckDeferredCalls();
+                return;
+            }
+
+            var lastDungeonState = BattleStateMachine.DungeonStateHistory.LastOrDefault();
+            if (lastDungeonState.Key == EDungeonState.DungeonStateSettlement || lastDungeonState.Key == EDungeonState.DungeonStateVote)
+            {
+                // The dungeon is over, any events coming in at this point are going to likely be invalid for what we care about
+                return;
+            }
+
+            // Store the original time in case it gets overwritten during buff processing, we'll restore it afterwards
+            var originalArrivalTime = extraData.ArrivalTime;
+
+            long buffBasedShieldBreakValue = 0;
+            
             List<int> EventHandledBuffs = new();
+            List<int> LogicHandledBuffs = new();
             if (delta.BuffEffect != null)
             {
                 //System.Diagnostics.Debug.WriteLine($"delta.BuffEffect={delta.BuffEffect.BuffEffects.Count}");
-
                 for (int buffIdx = 0; buffIdx < delta.BuffEffect.BuffEffects.Count; buffIdx++)
                 {
                     // Shield buffs appear to use Type == BuffEventAddTo and BuffEventRemove
@@ -798,48 +1069,90 @@ namespace BPSR_ZDPS
                     //System.Diagnostics.Debug.WriteLine($"BuffEffect: {buffEffect}");
                     // When a buff effect event occurs, a specific buff is being modified by the BuffUuid indicator.
                     // However, the same payload can contain other buffs which are being updated at the same time, such as Layer modifications without their own event.
-
-                    if (delta.BuffInfos != null)
+                    if (buffEffect.LogicEffect != null && buffEffect.LogicEffect.Count > 0)
                     {
-                        //System.Diagnostics.Debug.WriteLine($"BuffInfos: {delta.BuffInfos}");
-
-                        var matchInfo = delta.BuffInfos.BuffInfos.AsValueEnumerable().Where(x => x.BuffUuid == buffEffect.BuffUuid);
-                        if (matchInfo.Any())
+                        for (int logicIdx = 0; logicIdx < buffEffect.LogicEffect.Count; logicIdx++)
                         {
-                            var buffInfo = matchInfo.First();
-                            EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId, extraData);
+                            LogicHandledBuffs.Add(buffEffect.BuffUuid);
+
+                            var logicEffect = buffEffect.LogicEffect[logicIdx];
+                            var reader = new Google.Protobuf.CodedInputStream(logicEffect.RawData.ToByteArray());
+                            if (logicEffect.EffectType == EBuffEffectLogicPbType.BuffEffectAddBuff)
+                            {
+                                var buffInfo = BuffInfo.Parser.ParseFrom(reader);
+                                DateTime? creationTime = null;
+                                if (buffInfo.CreateTime > 0)
+                                {
+                                    DateTimeOffset dto = DateTimeOffset.FromUnixTimeMilliseconds(buffInfo.CreateTime);
+                                    
+                                    creationTime = dto.UtcDateTime;
+                                }
+                                //System.Diagnostics.Debug.WriteLine($"({buffEffect.Type}) buffEffect[{buffIdx}].logicEffect[{logicIdx}] (Type:{logicEffect.EffectType}) = (BuffUUID:{buffEffect.BuffUuid}){buffInfo}");
+                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId, creationTime, extraData);
+                            }
+                            else if (logicEffect.EffectType == EBuffEffectLogicPbType.BuffEffectBuffChange)
+                            {
+                                // Layer, Duration, CreateTime
+                                var changeInfo = BuffChange.Parser.ParseFrom(reader);
+                                DateTime? creationTime = null;
+                                if (changeInfo.CreateTime > 0)
+                                {
+                                    DateTimeOffset dto = DateTimeOffset.FromUnixTimeMilliseconds(changeInfo.CreateTime);
+
+                                    creationTime = dto.UtcDateTime;
+                                }
+                                //System.Diagnostics.Debug.WriteLine($"({buffEffect.Type}) buffEffect[{buffIdx}].logicEffect[{logicIdx}] (Type:{logicEffect.EffectType}) = (BuffUUID:{buffEffect.BuffUuid}){changeInfo}");
+                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, changeInfo.Layer, (int)changeInfo.Duration, 0, creationTime, extraData);
+                            }
+                            else if (logicEffect.EffectType == null)
+                            {
+                                //System.Diagnostics.Debug.WriteLine($"Unhandled Logic Effect {buffEffect}");
+                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, 0, 0, 0, null, extraData);
+                            }
                         }
                     }
                     else
                     {
                         // Most commonly appears to include EBuffEventType.BuffEventRemove, EBuffEventType.BuffEventAddTo, EBuffEventType.BuffEventRemoveLayer
-
-                        EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, 0, 0, 0, extraData);
-                    }
-                }
-            }
-            else
-            {
-                if (delta.BuffInfos != null && delta.BuffInfos.BuffInfos != null)
-                {
-                    //System.Diagnostics.Debug.WriteLine($"Updating {delta.BuffInfos.BuffInfos.Count} Unhandled Buffs!");
-                    //System.Diagnostics.Debug.WriteLine($"BuffInfos: {delta.BuffInfos}");
-                    foreach (var buffInfo in delta.BuffInfos.BuffInfos)
-                    {
-                        if (!EventHandledBuffs.Contains(buffInfo.BuffUuid))
+                        //System.Diagnostics.Debug.WriteLine($"No Logic Effect {buffEffect}");
+                        if (!LogicHandledBuffs.Contains(buffEffect.BuffUuid))
                         {
-                            // There was a potential modification to this buff but it was not part of the actual event sent
-                            EncounterManager.Current.NotifyBuffEvent(targetUuid, EBuffEventType.BuffEventUnknown, buffInfo.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId, extraData);
+                            EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, 0, 0, 0, null, extraData);
+                        }
+                    }
+
+                    if (buffEffect.Type == EBuffEventType.BuffEventRemove)
+                    {
+                        if (EncounterManager.Current.Entities.TryGetValue(targetUuid, out var targetEntity))
+                        {
+                            List<ShieldInfo>? attrShieldList = targetEntity.GetAttrKV("AttrShieldList") as List<ShieldInfo>;
+
+                            if (attrShieldList != null)
+                            {
+                                var matches = attrShieldList.Where(x => x.Uuid == buffEffect.BuffUuid);
+                                if (matches.Any())
+                                {
+                                    // Shield is being removed from this Damage instance, we can consider the previously remaining Value to be how much was mitigated with (Shield Breakthrough)
+                                    // If no damage events occur against the target in this event then the Shield expired instead of being removed via Breakthrough
+
+                                    var match = matches.First();
+
+                                    buffBasedShieldBreakValue = match.Value;
+
+                                    attrShieldList.Remove(match);
+
+                                    // Remove the old shields now that the buff containing it is gone
+                                    targetEntity.SetAttrKV("AttrShieldList", attrShieldList);
+                                }
+                            }
                         }
                     }
                 }
             }
 
+            extraData.ArrivalTime = originalArrivalTime;
+
             var skillEffect = delta.SkillEffects;
-            if (skillEffect != null)
-            {
-                //System.Diagnostics.Debug.WriteLine($"skillEffect({skillEffect.Damages.Count})={skillEffect}");
-            }
             
             if (skillEffect?.Damages == null || skillEffect.Damages.Count == 0)
             {
@@ -902,9 +1215,24 @@ namespace BPSR_ZDPS
                 {
                     damage = syncDamageInfo.LuckyValue;
                 }
+
                 // If damage is 0, the target was likely Immune and the DamageType value will reflect that
                 // We will still pass it on so it can be properly registered in the encounter/entity
                 // Note: There are some rare cases where an Immune event occurs but the damage is not 0, HpLessen however will be null
+
+                // If Damage was negative, the hit entity had their HP limits increase within the same frame of damage, causing a game bug where the damage is just "-"
+                // This will workaround that problem by deferring the requested damage to the hp lessen (actual damage) or negating it entirely
+                if (damage < 0)
+                {
+                    if (syncDamageInfo.HpLessenValue > 0)
+                    {
+                        damage = syncDamageInfo.HpLessenValue;
+                    }
+                    else
+                    {
+                        damage = 0;
+                    }
+                }
 
                 bool isCrit = syncDamageInfo.TypeFlag != null && ((syncDamageInfo.TypeFlag & 1) == 1);
                 bool isHeal = syncDamageInfo.Type == EDamageType.Heal;
@@ -921,6 +1249,33 @@ namespace BPSR_ZDPS
                 string damageElement = syncDamageInfo.Property.ToString();
 
                 EDamageSource damageSource = syncDamageInfo.DamageSource;
+
+                // Handle rewriting the event to account for Shield Breakthrough
+                long shieldBreak = 0;
+                if (syncDamageInfo.Type == EDamageType.Absorbed)
+                {
+                    shieldBreak = damage;
+                }
+                else if (buffBasedShieldBreakValue > 0 && targetUuid != attackerUuid)
+                {
+                    if (hpLessen >= buffBasedShieldBreakValue)
+                    {
+                        // This will be the only time both HpLessen and Value exist on an Absorbed "event"
+                        syncDamageInfo.Type = EDamageType.Absorbed;
+
+                        // Lower the HP modified to being the true HP change rather than keeping the Shield Damage in it like the game normally does
+                        hpLessen = hpLessen - buffBasedShieldBreakValue;
+                        shieldBreak = buffBasedShieldBreakValue;
+                    }
+                    else
+                    {
+                        // This should not be possible
+                        //Log.Warning($"TargetUid {targetUid} (UUID:{targetUuid}) hit by Skill Id ({skillId}) had greater Shield Breakthrough than HP modified! Damage: {damage}, HpLessen: {hpLessen}, Breakthrough: {buffBasedShieldBreakValue}");
+                        shieldBreak = 0;
+                    }
+
+                    buffBasedShieldBreakValue = 0;
+                }
 
                 if (AppState.IsBenchmarkMode)
                 {
@@ -957,14 +1312,19 @@ namespace BPSR_ZDPS
 
                 if (isHeal)
                 {
-                    EncounterManager.Current.AddHealing((isAttackerPlayer ? attackerUuid : 0), targetUuid, skillId, syncDamageInfo.OwnerLevel, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, syncDamageInfo.DamagePos, extraData);
+                    EncounterManager.Current.AddHealing((isAttackerPlayer ? attackerUuid : 0), targetUuid, skillId, syncDamageInfo.OwnerLevel, damage, hpLessen, shieldBreak, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, syncDamageInfo.DamagePos, extraData);
                 }
                 else
                 {
-                    EncounterManager.Current.AddDamage(attackerUuid, targetUuid, skillId, syncDamageInfo.OwnerLevel, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, syncDamageInfo.DamagePos, extraData);
+                    if (attackerUuid != targetUuid)
+                    {
+                        EncounterManager.Current.AddDamage(attackerUuid, targetUuid, skillId, syncDamageInfo.OwnerLevel, damage, hpLessen, shieldBreak, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, syncDamageInfo.DamagePos, extraData);
+                    }
 
-                    EncounterManager.Current.AddTakenDamage(attackerUuid, targetUuid, skillId, syncDamageInfo.OwnerLevel, damage, hpLessen, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, syncDamageInfo.DamagePos, extraData);
+                    EncounterManager.Current.AddTakenDamage(attackerUuid, targetUuid, skillId, syncDamageInfo.OwnerLevel, damage, hpLessen, shieldBreak, syncDamageInfo.Property, syncDamageInfo.Type, syncDamageInfo.DamageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, syncDamageInfo.DamagePos, extraData);
                 }
+
+                buffBasedShieldBreakValue = 0;
             }
 
             // We do this at the end in case we need to capture an entity Attr before a potential Start/End call happens
@@ -990,6 +1350,12 @@ namespace BPSR_ZDPS
                 return;
             }
             ProcessAoiSyncDelta(aoiSyncDelta, extraData);
+
+            if (IsWipeCheckQueued)
+            {
+                IsWipeCheckQueued = false;
+                CheckForWipe();
+            }
 
             // We do this at the end in case we need to capture an entity Attr before a potential Start/End call happens
             BattleStateMachine.CheckDeferredCalls();
@@ -1029,7 +1395,10 @@ namespace BPSR_ZDPS
             long playerUuid = Utils.EntityIdToUuid(vData.CharId, (long)EEntityType.EntChar, false, false);
 
             AppState.PlayerUID = vData.CharId;
-            AppState.AccountId = vData.CharBase.AccountId;
+            if (!string.IsNullOrEmpty(vData.CharBase.AccountId))
+            {
+                AppState.AccountId = vData.CharBase.AccountId;
+            }
             long playerUid = vData.CharId;
 
             if (vData.RoleLevel?.Level != 0)
@@ -1059,6 +1428,14 @@ namespace BPSR_ZDPS
                 {
                     EncounterManager.Current.SetAbilityScore(playerUuid, vData.CharBase.FightPoint);
                 }
+
+                /*if (vData.CharBase.TeamInfo != null)
+                {
+                    if (vData.CharBase.TeamInfo.TeamId != 0)
+                    {
+                        System.Diagnostics.Debug.WriteLine("vData.CharBase.TeamInfo.TeamId != 0");
+                    }
+                }*/
             }
 
             var professionList = vData.ProfessionList;
@@ -1079,12 +1456,36 @@ namespace BPSR_ZDPS
                 EncounterManager.Current.SetChannelLineNumber(sceneData.LineId);
             }
 
+            var seasonRoleLevelData = vData.SeasonRoleLevelData;
+            if (seasonRoleLevelData != null)
+            {
+                var lastSeason = seasonRoleLevelData.SeasonRoleLevelMap.LastOrDefault();
+                if (lastSeason.Value != null)
+                {
+                    EncounterManager.Current.SetAttrKV(playerUuid, "AttrSeasonLevel", lastSeason.Value.Level);
+                }
+            }
+
             if (vData.Equip != null)
             {
+                List<Zproto.EquipNine> playerEquips = new();
                 foreach (var equip in vData.Equip.EquipList_)
                 {
                     System.Diagnostics.Debug.WriteLine($"{playerUid} :: equip::slot={equip.Value.EquipSlot},refinelvl={equip.Value.EquipSlotRefineLevel}");
+                    // 1 = Items
+                    // 2 = Gear
+                    // 5 = Modules
+                    // 6 = Battle Imagines
+                    foreach (var item in vData.ItemPackage.Packages[2].Items)
+                    {
+                        if ((ulong)item.Key == equip.Value.ItemUuid)
+                        {
+                            playerEquips.Add(new EquipNine() { EquipID = item.Value.ConfigId, Slot = equip.Value.EquipSlot });
+                            break;
+                        }
+                    }
                 }
+                EncounterManager.Current.SetAttrKV(playerUuid, "AttrEquipData", playerEquips);
             }
         }
 
@@ -1105,7 +1506,8 @@ namespace BPSR_ZDPS
                 }
 
                 var buf = dirty.VData.Buffer.ToByteArray();
-                var ser = new BPSR_ZDPSLib.Blobs.CharSerialize(new BlobReader(buf));
+                bool isStreamSafe = dirty.VData.StreamType == EStreamType.StreamTypeDeltaDirtySafe;
+                var ser = new BPSR_ZDPSLib.Blobs.CharSerialize(new BlobReader(buf, isStreamSafe));
 
                 if (ser.CharBaseInfo != null)
                 {
@@ -1246,10 +1648,27 @@ namespace BPSR_ZDPS
 
             if (currentUserUuid != 0)
             {
+                if (!EncounterManager.Current.HasStatsBeenRecorded())
+                {
+                    return;
+                }
+
                 if (EncounterManager.Current.IsWipe)
                 {
+                    // TODO: This is a workaround for some encounters instantly running the wipe detection while still in a dead state
+                    if (EncounterManager.Current.GetDuration().TotalSeconds < 2)
+                    {
+                        System.Diagnostics.Debug.WriteLine("EncounterManager.Current Duration was under 2 seconds, correcting the Wipe State to false");
+                        EncounterManager.Current.SetWipeState(false);
+                    }
+
+                    if (!EncounterManager.Current.HasStatsBeenRecorded())
+                    {
+                        EncounterManager.Current.SetWipeState(false);
+                    }
                     // This Encounter already has been reported as a wipe and should be in the processing of ending already
-                    return;
+                    System.Diagnostics.Debug.WriteLine("EncounterManager.Current.IsWipe already true");
+                    //return;
                 }
 
                 var playerEntity = EncounterManager.Current.GetOrCreateEntity(currentUserUuid);
@@ -1279,6 +1698,38 @@ namespace BPSR_ZDPS
                 }
                 else
                 {
+                    return;
+                }
+
+                if (!Settings.Instance.UseLegacyWipeDetection)
+                {
+                    var currentEncounterDuration = EncounterManager.Current.GetDuration();
+                    var characterList = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == EEntityType.EntChar);
+                    foreach (var character in characterList)
+                    {
+                        if (character.Value.RecentBuffEventHistory.Count > 0)
+                        {
+                            foreach (var recentBuff in character.Value.RecentBuffEventHistory)
+                            {
+                                if (recentBuff.Value.BaseId == 510072)
+                                {
+                                    // Mark the Encounter as being in a Wipe State before forcing the end of it
+                                    // This allows us to handle cases of a New Objective being sent at the same time as the Wipe Buff (such as Season 2 Raids)
+                                    EncounterManager.Current.SetWipeState(true);
+
+                                    // This buff indicates a wipe is actively occurring.
+                                    // There are a few events that will occur over the next several seconds so we delay to let them register into the current event
+                                    if (recentBuff.Value.EventAddTime.Add(TimeSpan.FromSeconds(1.0)).TotalSeconds <= currentEncounterDuration.TotalSeconds)
+                                    {
+                                        Log.Debug($"Encounter Wipe Reset buff was found and duration was hit, creating a new Encounter now");
+                                        EncounterManager.Current.SetWipeState(true);
+                                        EncounterManager.StartEncounter(false, EncounterStartReason.Wipe);
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                    }
                     return;
                 }
 
@@ -1325,14 +1776,41 @@ namespace BPSR_ZDPS
                         var charState = character.Value.GetAttrKV("AttrState");
                         if (charState != null)
                         {
-                            if ((EActorState)charState != EActorState.ActorStateDead && character.Value.Hp > 0)
+                            EActorState actorState = (EActorState)charState;
+                            if (actorState != EActorState.ActorStateDead && actorState != EActorState.ActorStateResurrection && character.Value.Hp > 0)
                             {
+                                // Sometimes characters go directly from their last state into TelePort (skipping Dead and Resurrection) when a wipe happens
+                                // Since all characters also go into the TelePort state for regular group teleport events, like entering a raid boss room, we need special handling
+                                // Unfortunately we cannot rely on current HP values as they are often times already reset to max when this state happens
+                                if (actorState == EActorState.ActorStateTelePort && character.Value.RecentHpHistory.Count > 0)
+                                {
+                                    long lowestHp = character.Value.MaxHp;
+
+                                    int stackSize = character.Value.RecentHpHistory.Count > 3 ? 3 : character.Value.RecentHpHistory.Count;
+                                    for (int i = 0; i < stackSize; i++)
+                                    {
+                                        long historicalHp = character.Value.RecentHpHistory.ElementAt(i);
+                                        if (historicalHp < lowestHp)
+                                        {
+                                            lowestHp = historicalHp;
+                                        }
+                                    }
+
+                                    if (lowestHp == 0)
+                                    {
+                                        // Character is actually dead
+                                        continue;
+                                    }
+                                }
+
                                 areAllCharactersDead = false;
+                                //Log.Debug($"Character {character.Value.Name} AttrState={charState} HP={character.Value.Hp}, MaxHP={character.Value.MaxHp}; areAllCharactersDead = false");
                             }
                         }
                         else if (character.Value.Hp > 0 || character.Value.MaxHp == 0)
                         {
                             areAllCharactersDead = false;
+                            //Log.Debug($"Character {character.Value.Name} HP={character.Value.Hp}, MaxHP={character.Value.MaxHp}; areAllCharactersDead = false");
                         }
                     }
                     if (areAllCharactersDead && !isStateWipePattern)
@@ -1340,10 +1818,19 @@ namespace BPSR_ZDPS
                         Log.Debug($"All characters were reported as actively dead in current Encounter. Overriding isStateWipePattern to true.");
                         isStateWipePattern = true;
                     }
-                    if (Settings.Instance.AllowWipeRecalculationOverwriting && !areAllCharactersDead && isStateWipePattern)
+                    if (!Settings.Instance.DisableWipeRecalculationOverwriting && !areAllCharactersDead && isStateWipePattern)
                     {
                         Log.Debug($"Not all characters were reported as actively dead in current Encounter. Overriding isStateWipePattern to false.");
                         isStateWipePattern = false;
+                    }
+                }
+                else
+                {
+                    // There's no combat data recorded for the Encounter, we don't need to worry about wipe logic yet
+                    isStateWipePattern = false;
+                    if (EncounterManager.Current.IsWipe)
+                    {
+                        EncounterManager.Current.SetWipeState(false);
                     }
                 }
 
@@ -1364,16 +1851,17 @@ namespace BPSR_ZDPS
                             // If all bosses are full HP, then let's call it a wipe
                             long? hp = boss.Value.GetAttrKV("AttrHp") as long?;
                             long? maxHp = boss.Value.GetAttrKV("AttrMaxHp") as long?;
+                            var bossState = boss.Value.GetAttrKV("AttrState");
                             // Might need to use MaxHpTotal?
-                            if (hp != null && maxHp != null && hp > 0 && maxHp > 0 && hp >= maxHp)
+                            if ((bossState != null && (EActorState)bossState == EActorState.ActorStateBorn) || (boss.Value.RecentHpHistory.Count > 1 && (hp != null && maxHp != null && hp > 0 && maxHp > 0 && hp >= maxHp)))
                             {
                                 EncounterManager.Current.SetWipeState(true);
-                                //System.Diagnostics.Debug.WriteLine($"We've hit a wipe (bossesAtMaxHp = {bossesAtMaxHp})! Start up a new encounter");
+                                System.Diagnostics.Debug.WriteLine($"We've hit a wipe (bossesAtMaxHp = {bossesAtMaxHp})! Start up a new encounter");
                                 EncounterManager.StartEncounter(false, EncounterStartReason.Wipe);
                             }
                             else
                             {
-                                //System.Diagnostics.Debug.WriteLine($"We didn't hit a wipe yet {boss.UUID} - {boss.Name} {hp} / {maxHp}");
+                                System.Diagnostics.Debug.WriteLine($"We didn't hit a wipe yet {boss.Value.UUID} - {boss.Value.Name} {hp} / {maxHp}");
                             }
                         }
                     }
@@ -1393,7 +1881,8 @@ namespace BPSR_ZDPS
 
             var buf = dirty.VData.Buffer.ToByteArray();
 
-            var dun = new BPSR_ZDPSLib.Blobs.DungeonDirtyData(new BlobReader(buf));
+            bool isStreamSafe = dirty.VData.StreamType == EStreamType.StreamTypeDeltaDirtySafe;
+            var dun = new BPSR_ZDPSLib.Blobs.DungeonDirtyData(new BlobReader(buf, isStreamSafe));
 
             if (dun?.PlayerList != null && dun?.PlayerList.PlayerInfos.Count > 0)
             {
@@ -1434,15 +1923,19 @@ namespace BPSR_ZDPS
 
             if (dun?.DungeonVar?.Data != null)
             {
+                BattleStateMachine.DungeonVarHistoryAdd(dun.DungeonVar);
+
                 if (dun?.DungeonVar?.Data.Count > 1)
                 {
-                    System.Diagnostics.Debug.WriteLine("DungeonVar.Data.Count > 1!!");
+                    //System.Diagnostics.Debug.WriteLine("DungeonVar.Data.Count > 1!!");
                 }
-
+                // Season 2 dungeons (once again) do not all follow a common design practice such as some are missing the Kill Boss objective
+                // TODO: Send this over to the BattleStateMachine
+                // TODO: If Encounter has an End time, and DungeonVarData.IsFinishTarget == 1, and at least 1 enemy is alive, trigger EncounterStart for New Objective
                 int dungeonVarDataIdx = 0;
                 foreach (var dungeonVarData in dun.DungeonVar.Data)
                 {
-                    System.Diagnostics.Debug.WriteLine($"dun.DungeonVar.Data.dungeonVarData[{dungeonVarDataIdx}] = {dungeonVarData.Name}, {dungeonVarData.Value}");
+                    //System.Diagnostics.Debug.WriteLine($"dun.DungeonVar.Data.dungeonVarData[{dungeonVarDataIdx}] = {dungeonVarData.Name}, {dungeonVarData.Value}");
 
                     dungeonVarDataIdx++;
                 }

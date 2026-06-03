@@ -25,15 +25,19 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3N0YXRpc3RpY3NfZGF0YS5wcm90bxIGenByb3RvGhZzdHJ1X3N0",
-            "YXRfcmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ingEKDlN0",
-            "YXRpc3RpY3NEYXRhEkIKD3N0YXRfcmVjb3JkX21hcBgBIAMoCzIpLnpwcm90",
-            "by5TdGF0aXN0aWNzRGF0YS5TdGF0UmVjb3JkTWFwRW50cnkaSAoSU3RhdFJl",
-            "Y29yZE1hcEVudHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1ZRgCIAEoCzISLnpw",
-            "cm90by5TdGF0UmVjb3JkOgI4AWIGcHJvdG8z"));
+            "YXRfcmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i3gIKDlN0",
+            "YXRpc3RpY3NEYXRhEk8KDXN0YXRSZWNvcmRNYXAYASADKAsyKS56cHJvdG8u",
+            "U3RhdGlzdGljc0RhdGEuU3RhdFJlY29yZE1hcEVudHJ5Ug1zdGF0UmVjb3Jk",
+            "TWFwEmEKE3NlYXNvblN0YXRSZWNvcmRNYXAYAiADKAsyLy56cHJvdG8uU3Rh",
+            "dGlzdGljc0RhdGEuU2Vhc29uU3RhdFJlY29yZE1hcEVudHJ5UhNzZWFzb25T",
+            "dGF0UmVjb3JkTWFwGkgKElN0YXRSZWNvcmRNYXBFbnRyeRILCgNrZXkYASAB",
+            "KAUSIQoFdmFsdWUYAiABKAsyEi56cHJvdG8uU3RhdFJlY29yZDoCOAEaTgoY",
+            "U2Vhc29uU3RhdFJlY29yZE1hcEVudHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1",
+            "ZRgCIAEoCzISLnpwcm90by5TdGF0UmVjb3JkOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStatRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.StatisticsData), global::Zproto.StatisticsData.Parser, new[]{ "StatRecordMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.StatisticsData), global::Zproto.StatisticsData.Parser, new[]{ "StatRecordMap", "SeasonStatRecordMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -76,6 +80,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StatisticsData(StatisticsData other) : this() {
       statRecordMap_ = other.statRecordMap_.Clone();
+      seasonStatRecordMap_ = other.seasonStatRecordMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,7 +90,7 @@ namespace Zproto {
       return new StatisticsData(this);
     }
 
-    /// <summary>Field number for the "stat_record_map" field.</summary>
+    /// <summary>Field number for the "statRecordMap" field.</summary>
     public const int StatRecordMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.StatRecord>.Codec _map_statRecordMap_codec
         = new pbc::MapField<int, global::Zproto.StatRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.StatRecord.Parser), 10);
@@ -94,6 +99,17 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<int, global::Zproto.StatRecord> StatRecordMap {
       get { return statRecordMap_; }
+    }
+
+    /// <summary>Field number for the "seasonStatRecordMap" field.</summary>
+    public const int SeasonStatRecordMapFieldNumber = 2;
+    private static readonly pbc::MapField<int, global::Zproto.StatRecord>.Codec _map_seasonStatRecordMap_codec
+        = new pbc::MapField<int, global::Zproto.StatRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.StatRecord.Parser), 18);
+    private readonly pbc::MapField<int, global::Zproto.StatRecord> seasonStatRecordMap_ = new pbc::MapField<int, global::Zproto.StatRecord>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<int, global::Zproto.StatRecord> SeasonStatRecordMap {
+      get { return seasonStatRecordMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,6 +128,7 @@ namespace Zproto {
         return true;
       }
       if (!StatRecordMap.Equals(other.StatRecordMap)) return false;
+      if (!SeasonStatRecordMap.Equals(other.SeasonStatRecordMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -120,6 +137,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= StatRecordMap.GetHashCode();
+      hash ^= SeasonStatRecordMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -139,6 +157,7 @@ namespace Zproto {
       output.WriteRawMessage(this);
     #else
       statRecordMap_.WriteTo(output, _map_statRecordMap_codec);
+      seasonStatRecordMap_.WriteTo(output, _map_seasonStatRecordMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -150,6 +169,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       statRecordMap_.WriteTo(ref output, _map_statRecordMap_codec);
+      seasonStatRecordMap_.WriteTo(ref output, _map_seasonStatRecordMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -161,6 +181,7 @@ namespace Zproto {
     public int CalculateSize() {
       int size = 0;
       size += statRecordMap_.CalculateSize(_map_statRecordMap_codec);
+      size += seasonStatRecordMap_.CalculateSize(_map_seasonStatRecordMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -174,6 +195,7 @@ namespace Zproto {
         return;
       }
       statRecordMap_.MergeFrom(other.statRecordMap_);
+      seasonStatRecordMap_.MergeFrom(other.seasonStatRecordMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -197,6 +219,10 @@ namespace Zproto {
             statRecordMap_.AddEntriesFrom(input, _map_statRecordMap_codec);
             break;
           }
+          case 18: {
+            seasonStatRecordMap_.AddEntriesFrom(input, _map_seasonStatRecordMap_codec);
+            break;
+          }
         }
       }
     #endif
@@ -218,6 +244,10 @@ namespace Zproto {
             break;
           case 10: {
             statRecordMap_.AddEntriesFrom(ref input, _map_statRecordMap_codec);
+            break;
+          }
+          case 18: {
+            seasonStatRecordMap_.AddEntriesFrom(ref input, _map_seasonStatRecordMap_codec);
             break;
           }
         }

@@ -25,13 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X3JlZF9kb3RfZGF0YS5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5",
-            "X21hc2sucHJvdG8iiwIKClJlZERvdERhdGESTwoYcGVybWFuZW50X2Nsb3Nl",
-            "ZF9yZWRfZG90GAEgAygLMi0uenByb3RvLlJlZERvdERhdGEuUGVybWFuZW50",
-            "Q2xvc2VkUmVkRG90RW50cnkSOgoNcmVkX2RvdF9jb3VudBgCIAMoCzIjLnpw",
-            "cm90by5SZWREb3REYXRhLlJlZERvdENvdW50RW50cnkaPAoaUGVybWFuZW50",
-            "Q2xvc2VkUmVkRG90RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgI",
-            "OgI4ARoyChBSZWREb3RDb3VudEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1",
-            "ZRgCIAEoBToCOAFiBnByb3RvMw=="));
+            "X21hc2sucHJvdG8iqgIKClJlZERvdERhdGESYwoVcGVybWFuZW50Q2xvc2Vk",
+            "UmVkRG90GAEgAygLMi0uenByb3RvLlJlZERvdERhdGEuUGVybWFuZW50Q2xv",
+            "c2VkUmVkRG90RW50cnlSFXBlcm1hbmVudENsb3NlZFJlZERvdBJFCgtyZWRE",
+            "b3RDb3VudBgCIAMoCzIjLnpwcm90by5SZWREb3REYXRhLlJlZERvdENvdW50",
+            "RW50cnlSC3JlZERvdENvdW50GjwKGlBlcm1hbmVudENsb3NlZFJlZERvdEVu",
+            "dHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoCDoCOAEaMgoQUmVkRG90",
+            "Q291bnRFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new RedDotData(this);
     }
 
-    /// <summary>Field number for the "permanent_closed_red_dot" field.</summary>
+    /// <summary>Field number for the "permanentClosedRedDot" field.</summary>
     public const int PermanentClosedRedDotFieldNumber = 1;
     private static readonly pbc::MapField<int, bool>.Codec _map_permanentClosedRedDot_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 10);
@@ -99,7 +100,7 @@ namespace Zproto {
       get { return permanentClosedRedDot_; }
     }
 
-    /// <summary>Field number for the "red_dot_count" field.</summary>
+    /// <summary>Field number for the "redDotCount" field.</summary>
     public const int RedDotCountFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_redDotCount_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);

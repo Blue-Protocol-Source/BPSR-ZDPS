@@ -1,5 +1,5 @@
 # ZDPS - Damage Meter And Companion Tool
-ZDPS is a Damage Meter and Companion Tool for Blue Protocol: Star Resonance. It's built on modern frameworks, making it fast and efficient at performing the role of a DPS Meter. It however also packs a lot of additional features in it such as complete [Encounter History](#Encounter-History-Browser), [Module Optimizer](#Module-Optimizer), [Log Reporting](#Integrations), [Field Boss/Magical Creature Spawn Tracking](#BPTimer-Integration), [Cooldown Tracking](#Cooldown-Priority-Tracker), and more.
+ZDPS is a Damage Meter and Companion Tool for Blue Protocol: Star Resonance. It's built on modern frameworks, making it fast and efficient at performing the role of a DPS Meter. It however also packs a lot of additional features in it such as complete [Encounter History](#Encounter-History-Browser), [Module Optimizer](#Module-Optimizer), [Log Reporting](#Integrations), [Field Boss/Magical Creature Spawn Tracking](#BPTimer-Integration), [Cooldown Tracking](#Cooldown-Priority-Tracker), [Raid Warnings](#Raid-Warnings), [Chat](#Chat), and more.
 
 ![Example of ZDPS in action on the DPS Meter tab](Screenshots/ZDPS_DPSMeter.png)
 
@@ -40,9 +40,13 @@ We also know sometimes you look away or go to another application while sitting 
 
 Group content is a big part of Blue Protocol, as such, ZDPS supports sending automatic reports of your Encounters to a Discord channel of your choice. All you need to provide is the Webhook URL for the channel and you're good to go. If you're worried about multiple users sending the same report at once, ZDPS supports a Deduplication option to ensure only a single report is sent even when multiple players are running ZDPS in the same group.
 
+If you are a Raider, be sure to also check out the [Raid Manager](#Raid-Manager) feature set, including [Raid Warnings](#Raid-Warnings) and [Countdowns](#Countdowns). Also [Chat](#Chat) can help you avoid missing important messages from your group when you're not looking at the game.
+
 ZDPS also has it's own [Module Optimizer](#Module-Optimizer) that runs incredibly fast without any GPU Hardware Acceleration needed. You can now find the module combination that meets your stat priority preferences within seconds (or even less than a second it's so fast on modern CPUs).
 
 There is also [integration support](#Integrations-Support) for third-party services to help provide a more complete experience. The current one supported at launch is [BPTimer](#BPTimer-Integration). You have the option to enable support in the Settings menu to allow viewing Field Boss and Magical Creatures spawns directly inside ZDPS. There is also the option to allow reporting data for those monsters back to [BPTimer.com](https://bptimer.com/) to help in the crowd sourced data efforts.
+
+Additionally, an [Event Tracker](#Event-Tracker) feature exists to allow user-controlled custom Buff, Skill, and Attribute tracking. This is an advanced system packed with features to allow you to see as much information as you'd like, in a variety of formats. Trackers can be used on Yourself, Allies, and Enemies (including Bosses). There also are Presets built into ZDPS to help get you started and that also serve as a method for easily sharing your Containers and Trackers with other players.
 
 Many windows feature a number of buttons in the top right on their title bar. While some are unique to the window, the most common ones you will find are a `Thumbtack` for `Pin Window As Top Most` to make sure it remains above any other application/window, and `Two Arrows` for `Collapse To Content` which hides most of the "options" related elements of the window and leaves just the meaningful content visible. If you're ever unsure of what one of the buttons does, mouse over it and there is likely a tooltip telling you what it does.
 
@@ -90,6 +94,11 @@ The details included in this window the following and more:
 - All Attributes of the entity.
 - Complete list of all Buffs that impacted the entity with indicators if they were Buffs, Debuffs, or Shields.
 - Graphs for displaying Total Damage Over Time, Damage Per Second Over Time, and Hits By Source.
+- A Skill Book that shows pretty much every skill an Entity currently has access to (for players and NPCs).
+
+When viewing a Player Entity, there will also be a `View Gear` button present next to the `Entity Type` line. This allows you to view all of their currently equipped gear. However, the game does not send all of the actual stats for gear so some fields such as Reforge or Break Through information will not be present.
+
+![Example of the Gear Inspector](Screenshots/ZDPS_EntityInspector_GearInspector.png)
 
 ### Database Manager
 > Accessed from `Database Manager` on then Features menu.
@@ -128,6 +137,50 @@ In the actual Entity list at the top, you can freely change the order of Entitie
 
 ![Example of the Cooldown Priority Tracker being Pinned over the Game, Collapsed To Content, and given Transparency](Screenshots/ZDPS_CooldownPriorityTracker_InGameExample.png)
 > Above is a screenshot showing the window given some transparency via the Settings menu, Pinned on top of the Game, and making use of the Collapse To Content button on the top bar.
+
+#### Raid Warnings
+> Accessed from `Raid Warnings` in the `Raid Manager` on the Features menu.
+
+Getting the attention of raid members can be difficult in the middle of a fight and your callouts may be easily missed, leading to unfortunate results. With ZDPS Raid Warnings, you can now elevate your messages to appearing on the screen in bold orange text. These function very similar to Raid Warnings in other games like World of Warcraft and are customizable by each user.
+
+![Screenshot example of a Raid Warning message in-game](Screenshots/ZDPS_RaidWarning_Example.png)
+
+- When you type a message starting with `/rw` it will automatically be sent at a Raid Warning to ZDPS users.
+   - By default this only works when sent in Group chat. Other chat channels are disabled and must be manually enabled by each user.
+- By default, a sound alert specifc to Raid Warnings will play alongside each Raid Warning message.
+   - This sound alert can be changed in Raid Warnings settings menu, or completely disabled.
+- The size and location of the Raid Warnings, along with the background Opacity can be changed.
+- In order to help prevent abuse, a Raid Warning specific player Blacklist is also supported. This allows a user to completely block receiving any Raid Warnings from other specific users.
+
+![Screenshot of the Raid Warnings Settings menu](Screenshots/ZDPS_RaidWarning_Settings.png)
+
+#### Countdowns
+> Accessed from `Countdowns` in the `Raid Manager` on the Features menu.
+
+As a complement to Raid Warnings, there is also now the ability to display a sync'd Countdown on the screen for ZDPS users. This makes it easier than ever before to coordinate when to start a fight. While this can also be used to help indicate when mechanics needs to be done, it is strongly recommended to avoid using it for that purpose as it may distract users more than help them in the middle of a fight.
+
+![Screenshot example of Countdowns in-game](Screenshots/ZDPS_Countdowns_Example.png)
+
+- This can be started by entering a message starting with `/countdown` and followed by how long it should be (between 3 and 30 seconds).
+   - For example `/countdown 30` will start a 30 second countdown for all ZDPS users.
+   - You can also use `/ct` instead of spelling out `/countdown` as a shortcut. For example `/ct 10` to begin a 10 second countdown.
+   - A Countdown in-progress can also be stopped early with `/countdown cancel`, `/countdown abort`, or `/countdown stop`.
+- Users can pick to use either generic plain text or stylized text for the Countdown time.
+- Just like with Raid Warnings, the location of the Countdown can be controlled by users.
+- Only Countdowns sent via the Group chat are enabled by default. Other chat channels must be manually enabled.
+- A blacklist for preventing Countdowns from specific players is also supported.
+
+![Screenshot of the Countdowns Settings menu](Screenshots/ZDPS_Countdowns_Settings.png)
+
+#### Threat Meter
+> Accessed from `Threat Meter` in the `Raid Manager` on the Features menu.
+
+Having a DPS steal threat from a Tank and cause the entire raid to be hit by a mechanic thankfully isn't too common here in BPSR. However, it can sometimes end up happening. With the Threat Meter you can now watch in realtime the different threat levels of each player against any target.
+
+> [!IMPORTANT]
+> Threat Meter is currently in a Beta state and while it is fully functional and accurate, it may not provide a lot of use to all users at this time. Please provide feedback to help shape the direction of it.
+
+When using the Threat Meter, the current active target of the enemy will be shown at the top of the list, slightly further above everyone else. Their threat number will also typically be far higher than anyone else. Due to their incredibly high value when the main target, all other players threat bars are based on the _second_ highest threat value player.
 
 ### Benchmark
 > Accessed from `Benchmark` on the Features menu.
@@ -192,6 +245,128 @@ If you wish to share your Stat Priority list with other users, navigate over to 
 ### Matchmaking Alert Notification Sounds
 > Accessed from `Matchmaking` tab in `Settings`.
 
+### Chat
+> Accessed from `Chat` on the Features menu.
+
+ZDPS features the ability to open a Chat window directly inside of it. This allows the game chat to integrate with ZDPS and provide a richer experience. It is worth noting this is just to _view_ chat, you will not be able to _send_ chat messages with this window.
+
+![Screenshot example of the ZDPS Chat window](Screenshots/ZDPS_Chat_Example.png)
+
+- Custom tabs with whatever Channel filters you want.
+- Place the window anywhere on your PC and Pin it as Top Most so you can see it even without the game visible.
+- Set your own Level filter per tab and filter out messages to only hide or show ones with specific keywords.
+- Background and Window opacity can be changed.
+- Clicking on the name of a player opens a context menu allowing you to easily copy their name or UID to the clipboard.
+
+> [!NOTE]
+> Plenty more ZDPS-exclusive features are in the works to help make the Chat experience even better!
+
+### Event Tracker
+> Accessed from `Raid Manager` on the Features menu.
+
+To provide an enhanced gameplay experience, ZDPS features an Event Tracker. This allows you to select any Buff, Skill, or Attribute event in the game and watch it for changes. With this. you can always be aware of any Buff on yourself, an ally, or enemy at all times and know exactly how long it has left on it. Additionally, you can know when a Tankbuster attack is being performed by a Boss and on which player. Or you can have it identify where a mechanic may be occurring to more clearly inform your Raid group what they need to be doing. This system also hooks into the Raid Warning feature so you can connect tracked events to warning messages, improving the ability to notice them.
+
+Containers and Trackers can also have Presets created from them and then shared with other users.
+
+![Screenshot example of the Event Tracker configuration window](Screenshots/ZDPS_EventTracker_Example.png)
+
+> Along the top bar of the Event Tracker window, there are buttons to Toggle Edit Mode, Forcefully Hide All Containers, open the Event Tracker Settings Menu, and Close the Window.
+
+In the Event Tracker Settings menu the following options exist:
+- Container Edit Mode
+   - Another way to toggle the Edit Mode on and off.
+- Show Edit Mode Placeholders
+   - While in Edit Mode, placeholder data is added to help visualize the Tracker you are building.
+- Hide Containers When Game Not Focused
+   - Automatically hides all of the Containers whenever the game is not in focus, such as switching between windows.
+- Containers Always Ignore Input (Excluding Edit Mode)
+   - By default Containers will captures some mouse input to allow you to mouse over a Tracker and view details about it. If you have turned on Pinned  Window Clickthrough (Mouse Passthrough) via a Hotkey Keybinding your input will be ignored for them. This setting however allows ignoring input for them without needing to turn on the clickthrough setting.
+- Show 'Force Hide Containers' Button On Main Window.
+   - Adds the 'Force Hide Containers' "Eye" button to the top of the ZDPS Main Window, giving quick access to it.
+- Reload Internal Presets
+   - This will re-add all of the ZDPS built-in Container and Tracker presets to their respective Preset Managers. However, it will not delete any existing ones. This is best used after a ZDPS update that adds new Presets which you want added to your lists.
+- Show Debug Log
+   - This will create a new Debug Log window for the Event Tracker. Any Tracker which has the `Debug Tracker` option enabled in it's `Load Events` tab will have information logged here. Additionally, another checkbox inside of this window allows showing debug information for Scene Events - which may be used in advanced Skill Trackers.
+
+The Event Tracker system works in a few components. First, you have to create a Container that will serve as your window for whatever you wish to track. These are great for creating distinct groups for all of your trackers. Next, within a Container, you create each of your Trackers that will belong to it. At both the Container and Tracker level you have a variety of settings to configure to make them function exactly how you want.
+
+The easiest way to explain how this system works now is to walk through an example creating a complete Event Tracker. Note that both Containers and Trackers have a few Presets you can use as a quick start.
+
+> [!NOTE]
+> There will be a lot of steps listed below to ensure each step is clearly broken out. It is a lot easier than this huge list of steps will may make it appear!
+>
+> For a video overview instead, please see this guide created by `yocuppajoe`: https://www.youtube.com/watch?v=SY1bPxSXGZE
+
+1. With the Event Tracker window open, go into `Edit Mode` by clicking the Pencil icon in the top bar or clicking the Settings icon and Enabling it.
+    - The Pencil icon will be Red while in `Edit Mode`.
+    - This is not required to make a Tracker but it is always good to be in the mode so you can quickly and easily see and adjust your Container.
+    - The `Show Edit Mode Placeholders` option (Enabled by default) in the Settings menu will help with visualizing your Container while you add Trackers to it.
+1. With the Event Tracker window open, click the Green `Create New Tracker Container` button in the bottom left of the window.
+    - This will automatically select the newly created Container so you can begin working within it.
+    - Newly created Containers also start Enabled and with their Container Name shown by default.
+2. Edit the Name of the Container to be `Group Debuffs`
+    - This is done at the top of the right-side panel.
+3. Next, look at the `Event Trackers` section at the bottom of the panel.
+    - We are going to ignore all the other Container settings for now.
+    - If `Layout List Direction` was changed to `Right` instead of `Down` it would create a horizontal expanding Container.
+4. Click the Green `Create New Tracker` button.
+    - This will add a new Tracker to the Container and be selected automatically.
+5. Exit the `Tracker Name` to be `Weakened Tracker`
+    - We will be using this to track the Airona/Role Action Revive Weakness debuff
+6. In the Tracker tab, enter `Weakened` into the Filter textbox.
+    - This will find any Buff (since this is a Buff Tracker) with the text "Weakened" in it.
+    - If we checked the `Search Descriptions` checkbox, it would be looking at Buff Description text for our Filter.
+7. Leave the `Who To Track` dropdown set to `Everyone` so any entity will be tracked.
+8. Since we want to know if we also are being impacted by this Debuff, leave the `Exclude Self From Everyone Filter` Unchecked.
+9. In the `What Events To Track` list, select all of the 5 basic events.
+    - There is no need to go through the complete events list, but in the future if you are trying to build a more complex tracker, it may be worth exploring that section.
+![Screenshot of the current progress with making the example Tracker](Screenshots/ZDPS_EventTracker_Example_CreateTracker01.png)
+10. Next, go to the `Display Format` tab for the Tracker.
+11. Check the `Show Entity Name` setting so we know what player is being impacted by this Debuff.
+12. Check the `Show Icon` setting so we can see the icon of the debuff.
+13. Check the `Show Name` setting so if we have additional Trackers, we know exactly what one this is by the name of the Debuff.
+14. Check the `Show Duration Text` setting so the exact time remaining of the Debuff is known.
+15. Check the `Show Duration Progress Bar` setting to give an easier visual aid for how much time is left.
+16. Within the `Duration Progress Bar` section, Check the `Same Line` setting so that it moves up to the same line as the Duration Text.
+17. Check the `Name Inside Progress Bar` and `Duration Text Inside Progress Bar` settings so both values are placed inside of the Progress Bar, saving space and making it look nicer.
+18. Next, check the `Color Bar By Type` setting to make the bar turn Red as this is a Debuff.
+19. Lastly, in the `Hide Tracker Condition` dropdown, set it to be `HideWhenNoDuration`.
+![Screenshot of the Display Format progress with making the example Tracker](Screenshots/ZDPS_EventTracker_Example_CreateTracker02.png)
+20. Next, go to the `Load Events` tab.
+21. Check the `Is Tracker Enabled` setting so this Tracker is actually going to be loaded.
+    - Depending on your ZDPS version this may be Enabled by Default after adding the Tracker.
+22. Optionally, you can check the `Is Owner Dead` setting so this Tracker is only shown if the Entity it's tracking is currently Dead.
+    - This can be useful for hiding Trackers that are only relevant if the target is currently Dead to avoid bloating your UI since you don't need to know if an Alive player is currently locked from being revived.
+![Screenshot of the Load Events progress with making the example Tracker](Screenshots/ZDPS_EventTracker_Example_CreateTracker03.png)
+23. Feel free to move the Container around your screen now into a nice location and eventually turn off `Edit Mode` so it's ready for use without getting in your way.
+
+#### Event Tracker Presets
+
+As mentioned above, Presets can be created for both Containers and Trackers. This allows easily creating new Event Trackers based on existing ones, or sharing yours with other users.
+
+![Screenshot of the Event Tracker Container Preset Manager window](Screenshots/ZDPS_EventTracker_ContainerPresets.png)
+
+The Container Presets window can be opened from the `Container Preset Manager` button located at the bottom of the Containers Panel (left-side panel).
+
+The Tracker Presets window can be opened from the `Tracker Preset Manager` button located under the `Event Trackers` (right-side panel) section within any Container.
+
+When the `Copy Preset To Clipboard` option is used, a large single line of JSON data will be placed on your clipboard, ready to send to another user.
+
+If you happened to copy the data from another user, you can then click the `Import Preset From Clipboard` button to send it all into the Preset Manager and then begin using it within the ZDPS Event Tracker.
+
+### Skill Cast Timeline
+> Accessed from `Raid Manager` on the Features menu.
+
+To help visualize what skills are being casted during combat, the Skill Cast Timeline exists. This is a simple real-time timeline of your skills as they are being activated.
+
+![Screenshot example of the Skill Cast Timeline](Screenshots/ZDPS_SkillCastTimeline_Example.png)
+
+There are a handful of settings present to let you adjust how the timeline is presented.
+
+Additionally, the `Hide Timeline In Task Bar` option exists to control if the window for the Timeline appears in your Task Bar or not. This is mainly important when using screen recording software such as OBS. Normally, screen recorders do not see windows which are not present in your Task Bar. If you want to perform a Window Capture of just the Timeline, you will want to disable hiding it.
+
+![Screenshot of the Skill Cast Timeline Settings menu](Screenshots/ZDPS_SkillCastTimeline_Settings.png)
+
 ### Settings Menu
 > Accessed from `Settings` on the Features menu.
 
@@ -209,6 +384,13 @@ Below will be descriptions for some, but not all, of the settings contained with
 `Network Device`
 
 ZDPS will attempt to select the most likely network device on your machine as the default selection to capture game data from. However, if you find no data appears in ZDPS, you may need to come here and change the selection.
+
+> [!NOTE]
+> If you use a VPN you will likely want to select `Loopback` as your Network Device.
+> 
+> If you use ExitLag, you may need to enable NDIS Legacy mode within the ExitLag Settings Menu.
+> 
+> There are sometimes issues specific to using a VPN so if you do not need one to actually play it is strongly suggested you disable it.
 
 `Game Capture Preference`
 
@@ -260,8 +442,12 @@ ZDPS is capable of checking online for new versions and alerting you if one is f
      - Void Dragon contains only 1 Phase, which is the entire fight including going through the Dimension Banishment.
      - Light Dragon contains 3 Phases, the initial fight, the crystal platforms, and returning to finish the fight.
 
-`Display True Per Second Values In Meters`
-- Most DPS Meters, including ZDPS, report the "active" Per Second Values of a fight. However, this means during downtime the DPS number is not actively dropping. For those that wish to see the true realtime DPS values, turning on this setting will display an additional field during combat that contains the actual DPS as it rises and falls every second. Both the "active" and "true" values are accurate but are different measurements of the data.
+`Display Active Per Second Values In Meters`
+- When tracking DPS, there are two main metrics to go by: Encounter and Active. The Encounter DPS (eDPS) begins tracking when the first hit is dealt, and continues until the end of the Encounter. It does not care about downtime, deaths, or anything else except the start and stop times. The Active DPS (aDPS) however, takes into account Entity downtime. This means if a player starts a fight late, the initial time they were not participating in combat is not counted against their DPS metric. If an Entity has extended downtime of at least 10 seconds, the time spent not attacking is not counted against their DPS metric as well. Both the "active" and "encounter" values are accurate but are different measurements of the data. In most cases, the two metrics should be pretty much identical. If deaths or downtime occur, expect to see the values quickly deviate.
+
+`Include Heal Events Outside Of Combat`
+- When enabled, Healing events that occur outside of an Active Encounter Combat section will still be included in the calculations.
+    - This means if a player performs healing before a boss is pulled, the Encounter will be considered started before attacks began in the fight.
 
 #### User Interface
 
@@ -278,20 +464,66 @@ ZDPS is capable of checking online for new versions and alerting you if one is f
 - By default, ZDPS will show all nearby entities in the Meters UI even if they never perform a single attack. If this is enabled, the entities will need to perform an attack to show up.
   - Even if an entity does not appear in the meter because it did not attack, they are still being tracked in the Encounter data.
 
+`Only Show Party Members In Meters`
+- When in a party, only members of your party will appear in the meter.
+  - For this to work correctly, you will need to have ZDPS running before joining a party, otherwise you may need to change between 5 and 20 player size groups or rejoin the party.
+
 `Show Ability Score In Meters`
 - A player's ability score is shown after their name (and profession) in the meters. This setting will allow you to hide that.
+
+`Show Season Strength In Meters`
+- Shows the current Season's Strength metric in the meters. This can be in addition to the Ability Score or be the only value shown.
 
 `Show Sub Profession Name In Meters`
 - By default, the profession for a player will be shown after their name. Once they use a skill, their sub profession will be detected and shown in place of that. By turning off this setting you can completely hide the (sub) profession names from being displayed in the meters.
 
+`Show Player Summons in 'NPC Taken' Meter`
+- When enabled, Summons (such as Battle Imagines entities or specific skill entities) will be shown in the NPC Taken Meter.
+
+`Show Player Imagines In Meters`
+- Shows the currently equipped imagines for players in the DPS Meter UI.
+    - Note: If a player does not have 2 imagines equipped, a placeholder gap will be shown to maintain consistent padding of entries.
+
 `Allow Gamepad Navigation Input In ZDPS`
 - By default only Mouse and Keyboard input is supported in ZDPS. This setting allows you to turn on Gamepad input if you feel the need for it. This can however cause issues with Gamepad input being read by ZDPS even if it's not in focus so use this setting carefully.
+
+`Keep Past Encounter In Meter UI Until Next Damage`
+- Normally when an Encounter ends, _and_ a new one begins, the Meter UI will switch over to the new Encounter right away even before any damage has been recorded. If this setting is enabled, it will instead hold onto the past Encounter until damage is finally dealt. Note that it will still switch over to the new Encounter if you change maps even with this setting enabled.
+
+`Show Channel Line Number In Status`
+- This setting will allow you to see your current Channel Line Number in the bottom Status bar of the meter. This will show whenever you're on an instance that supports channels even if the game's UI does not tell you the number.
+
+`Show Call Wipe For Encounter On Main Window`
+- This adds a button to the Main Window, next to the New Encounter button, that has a Skull Icon. Clicking this will force the current Encounter to be marked as a Wipe and end.
 
 `Pinned (Top Most) Window Opacities`
 - In here you can set how transparent you want a pinned window to be.
 
 `Window Scales`
 - In here you can change various scales for different windows. Not all windows support being scaled and some may have more options than others. These settings are typically useful for 2K and 4K resolution users.
+
+`Meter Settings`
+- Tanking
+    - Show Deaths
+        - When enabled, shows a Death counter for each player in the Tanking Meter.
+- NPC Taken
+    - Show HP Data
+        - Adds Current HP, Max HP, and HP Percent to each enemy in the NPC Taken Meter.
+    - Hide Max HP
+        - Hides the Max HP value from the previous setting.
+    - Show HP Percent Bar
+        - Shows the current HP Percentage as a Red Bar instead of the Blue Bar that would normally show how much total damage the NPC has taken.
+
+`Low Performance Mode`
+- In the event ZDPS is using abnormally high CPU usage, this setting will force it to run at a much lower rate. While in this mode you may experience suttering ZDPS windows or sometimes slow to respond actions. This setting should not be needed by the vast majority of users.
+
+`ZDPS Refresh Rate (Alternate Performance Tuning)`
+- To help ensure ZDPS does not use extra resources, or further restrict what it's using, this setting allows more fine tuning compared to the previous `Low Performance Mode` setting. With this, you can directly impact the Refresh Rate value based on your Primary Monitor's refresh rate. The values here are based on VSync supported values. Setting the slider to a value as close to 60hz as it will allow will provide you with a smooth experience that also uses very little resources. Even if you don't have performance problems, setting it down close to 60hz is a good idea.
+
+`Enable GDI Back Buffer Copy Compatibility`
+- (OBS BitBlt Capture Compatibility Mode)
+- When enabled, Screen Recording programs like OBS, can perform `Window Captures` on ZDPS using the (Default) BitBlt Capture Method.
+- Note: This uses more GPU resources to perform. If this is disabled, `Desktop Capture` and the `Window Capture Method` labeled `Windows 10/11` will still function without issue. BitBlt is the capture method originally used on Windows 7/8 and is typically what OBS tries to default to when performing a capture.
 
 #### Matchmaking
 
@@ -355,6 +587,11 @@ Most of the settings in this menu should be ignored by regular users. However, t
 `Write Debug Log To File`
 - Having this enabled (default), allows ZDPS to write a log file named `ZDPS_Log.txt` to the directory of ZDPS. This is important to supply when submitting bug reports or requesting help with an issue.
   - Running ZDPS while a `ZDPS_Log.txt` already exists will rename the last one to being `ZDPS_log_last_run.txt`. This can be useful for ensuring you provide the correct log, and gives a chance to avoid losing a potentially important debug log file.
+
+`Aggressive Exception Debug Logging`
+- When enabled, captures more exception data for when systems break or ZDPS crashes. Applies after restarting ZDPS.
+    - Note: this has a chance to make ZDPS run slower on systems with lower resources/older CPUs.
+    - Only turn this on when you encounter broken systems or crashes. Reproduce the issue to have a more useful ZDPS_log.txt and then turn off this setting.
 
 ## Additional Notes
 ZDPS was internally developed for the Harmony guild before growing into a large scale project and public release. Special thanks to all of the Harmony members who helped with testing and providing feedback during the ZDPS initial development.

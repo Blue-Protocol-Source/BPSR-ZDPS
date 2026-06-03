@@ -19,6 +19,7 @@ namespace BPSR_ZDPS.DataTypes
         public string Name { get; set; }
         public int ModelId { get; set; }
         public int MonsterType { get; set; }
+        public int MonsterSizeType { get; set; }
         public int BloodTubeCount { get; set; }
         public string MonsterRank { get; set; }
         public List<int> SkillIds { get; set; }
@@ -78,5 +79,6 @@ namespace BPSR_ZDPS.DataTypes
         public bool IsNotGround { get; set; }
         public int BornSkillId { get; set; }
         public bool BkCanBeHit { get; set; }
+        public List<int> DoubleBloodBar { get; set; }
     }
 }

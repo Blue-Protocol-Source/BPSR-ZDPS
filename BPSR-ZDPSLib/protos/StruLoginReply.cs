@@ -25,21 +25,24 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2xvZ2luX3JlcGx5LnByb3RvEgZ6cHJvdG8aF3N0cnVfYWNjb3Vu",
-            "dF9pbmZvLnByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byKVAwoKTG9n",
-            "aW5SZXBseRIpCgxhY2NvdW50X2luZm8YAiABKAsyEy56cHJvdG8uQWNjb3Vu",
-            "dEluZm8SEgoKYmVnaW5fdGltZRgDIAEoAxIYChBwcm90b2NvbF92ZXJzaW9u",
-            "GAQgASgJEhYKDmNvbmZpZ192ZXJzaW9uGAUgASgJEhEKCXRpbWVfem9uZRgG",
-            "IAEoCRIUCgxpc19wcml2aWxlZ2UYByABKAgSPwoPcGxhdGZvcm1fY29uZmln",
-            "GAggAygLMiYuenByb3RvLkxvZ2luUmVwbHkuUGxhdGZvcm1Db25maWdFbnRy",
-            "eRIZChFpc19jaGFuZ2VfYWNjb3VudBgJIAEoCBIbChNpbnN0YWxsX2NoYW5u",
-            "ZWxfZGlzGAogASgFEhcKD3JlZ19jaGFubmVsX2RpcxgLIAEoBRIkCghlcnJf",
-            "Y29kZRgMIAEoDjISLnpwcm90by5FRXJyb3JDb2RlGjUKE1BsYXRmb3JtQ29u",
-            "ZmlnRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgJOgI4AWIGcHJv",
-            "dG8z"));
+            "dF9pbmZvLnByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byLGBAoKTG9n",
+            "aW5SZXBseRIsCgdlcnJDb2RlGAEgASgOMhIuenByb3RvLkVFcnJvckNvZGVS",
+            "B2VyckNvZGUSNQoLYWNjb3VudEluZm8YAiABKAsyEy56cHJvdG8uQWNjb3Vu",
+            "dEluZm9SC2FjY291bnRJbmZvEhwKCWJlZ2luVGltZRgDIAEoA1IJYmVnaW5U",
+            "aW1lEigKD3Byb3RvY29sVmVyc2lvbhgEIAEoCVIPcHJvdG9jb2xWZXJzaW9u",
+            "EiQKDWNvbmZpZ1ZlcnNpb24YBSABKAlSDWNvbmZpZ1ZlcnNpb24SGgoIdGlt",
+            "ZVpvbmUYBiABKAlSCHRpbWVab25lEiAKC2lzUHJpdmlsZWdlGAcgASgIUgtp",
+            "c1ByaXZpbGVnZRJOCg5wbGF0Zm9ybUNvbmZpZxgIIAMoCzImLnpwcm90by5M",
+            "b2dpblJlcGx5LlBsYXRmb3JtQ29uZmlnRW50cnlSDnBsYXRmb3JtQ29uZmln",
+            "EigKD2lzQ2hhbmdlQWNjb3VudBgJIAEoCFIPaXNDaGFuZ2VBY2NvdW50EiwK",
+            "EWluc3RhbGxDaGFubmVsRGlzGAogASgFUhFpbnN0YWxsQ2hhbm5lbERpcxIk",
+            "Cg1SZWdDaGFubmVsRGlzGAsgASgFUg1SZWdDaGFubmVsRGlzEiIKDG9wZW5B",
+            "Y2VDaGVjaxgMIAEoCFIMb3BlbkFjZUNoZWNrGjUKE1BsYXRmb3JtQ29uZmln",
+            "RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgJOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAccountInfoReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.LoginReply), global::Zproto.LoginReply.Parser, new[]{ "AccountInfo", "BeginTime", "ProtocolVersion", "ConfigVersion", "TimeZone", "IsPrivilege", "PlatformConfig", "IsChangeAccount", "InstallChannelDis", "RegChannelDis", "ErrCode" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.LoginReply), global::Zproto.LoginReply.Parser, new[]{ "ErrCode", "AccountInfo", "BeginTime", "ProtocolVersion", "ConfigVersion", "TimeZone", "IsPrivilege", "PlatformConfig", "IsChangeAccount", "InstallChannelDis", "RegChannelDis", "OpenAceCheck" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -81,6 +84,7 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LoginReply(LoginReply other) : this() {
+      errCode_ = other.errCode_;
       accountInfo_ = other.accountInfo_ != null ? other.accountInfo_.Clone() : null;
       beginTime_ = other.beginTime_;
       protocolVersion_ = other.protocolVersion_;
@@ -91,7 +95,7 @@ namespace Zproto {
       isChangeAccount_ = other.isChangeAccount_;
       installChannelDis_ = other.installChannelDis_;
       regChannelDis_ = other.regChannelDis_;
-      errCode_ = other.errCode_;
+      openAceCheck_ = other.openAceCheck_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -101,7 +105,19 @@ namespace Zproto {
       return new LoginReply(this);
     }
 
-    /// <summary>Field number for the "account_info" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
+    public const int ErrCodeFieldNumber = 1;
+    private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.EErrorCode ErrCode {
+      get { return errCode_; }
+      set {
+        errCode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "accountInfo" field.</summary>
     public const int AccountInfoFieldNumber = 2;
     private global::Zproto.AccountInfo accountInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
+    /// <summary>Field number for the "beginTime" field.</summary>
     public const int BeginTimeFieldNumber = 3;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "protocol_version" field.</summary>
+    /// <summary>Field number for the "protocolVersion" field.</summary>
     public const int ProtocolVersionFieldNumber = 4;
     private string protocolVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "config_version" field.</summary>
+    /// <summary>Field number for the "configVersion" field.</summary>
     public const int ConfigVersionFieldNumber = 5;
     private string configVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,7 +165,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "time_zone" field.</summary>
+    /// <summary>Field number for the "timeZone" field.</summary>
     public const int TimeZoneFieldNumber = 6;
     private string timeZone_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -161,7 +177,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_privilege" field.</summary>
+    /// <summary>Field number for the "isPrivilege" field.</summary>
     public const int IsPrivilegeFieldNumber = 7;
     private bool isPrivilege_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -173,7 +189,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "platform_config" field.</summary>
+    /// <summary>Field number for the "platformConfig" field.</summary>
     public const int PlatformConfigFieldNumber = 8;
     private static readonly pbc::MapField<int, string>.Codec _map_platformConfig_codec
         = new pbc::MapField<int, string>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForString(18, ""), 66);
@@ -184,7 +200,7 @@ namespace Zproto {
       get { return platformConfig_; }
     }
 
-    /// <summary>Field number for the "is_change_account" field.</summary>
+    /// <summary>Field number for the "isChangeAccount" field.</summary>
     public const int IsChangeAccountFieldNumber = 9;
     private bool isChangeAccount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -196,7 +212,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "install_channel_dis" field.</summary>
+    /// <summary>Field number for the "installChannelDis" field.</summary>
     public const int InstallChannelDisFieldNumber = 10;
     private int installChannelDis_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -208,7 +224,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "reg_channel_dis" field.</summary>
+    /// <summary>Field number for the "RegChannelDis" field.</summary>
     public const int RegChannelDisFieldNumber = 11;
     private int regChannelDis_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -220,15 +236,15 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
-    public const int ErrCodeFieldNumber = 12;
-    private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
+    /// <summary>Field number for the "openAceCheck" field.</summary>
+    public const int OpenAceCheckFieldNumber = 12;
+    private bool openAceCheck_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Zproto.EErrorCode ErrCode {
-      get { return errCode_; }
+    public bool OpenAceCheck {
+      get { return openAceCheck_; }
       set {
-        errCode_ = value;
+        openAceCheck_ = value;
       }
     }
 
@@ -247,6 +263,7 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ErrCode != other.ErrCode) return false;
       if (!object.Equals(AccountInfo, other.AccountInfo)) return false;
       if (BeginTime != other.BeginTime) return false;
       if (ProtocolVersion != other.ProtocolVersion) return false;
@@ -257,7 +274,7 @@ namespace Zproto {
       if (IsChangeAccount != other.IsChangeAccount) return false;
       if (InstallChannelDis != other.InstallChannelDis) return false;
       if (RegChannelDis != other.RegChannelDis) return false;
-      if (ErrCode != other.ErrCode) return false;
+      if (OpenAceCheck != other.OpenAceCheck) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -265,6 +282,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) hash ^= ErrCode.GetHashCode();
       if (accountInfo_ != null) hash ^= AccountInfo.GetHashCode();
       if (BeginTime != 0L) hash ^= BeginTime.GetHashCode();
       if (ProtocolVersion.Length != 0) hash ^= ProtocolVersion.GetHashCode();
@@ -275,7 +293,7 @@ namespace Zproto {
       if (IsChangeAccount != false) hash ^= IsChangeAccount.GetHashCode();
       if (InstallChannelDis != 0) hash ^= InstallChannelDis.GetHashCode();
       if (RegChannelDis != 0) hash ^= RegChannelDis.GetHashCode();
-      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) hash ^= ErrCode.GetHashCode();
+      if (OpenAceCheck != false) hash ^= OpenAceCheck.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -294,6 +312,10 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ErrCode);
+      }
       if (accountInfo_ != null) {
         output.WriteRawTag(18);
         output.WriteMessage(AccountInfo);
@@ -331,9 +353,9 @@ namespace Zproto {
         output.WriteRawTag(88);
         output.WriteInt32(RegChannelDis);
       }
-      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
+      if (OpenAceCheck != false) {
         output.WriteRawTag(96);
-        output.WriteEnum((int) ErrCode);
+        output.WriteBool(OpenAceCheck);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -345,6 +367,10 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ErrCode);
+      }
       if (accountInfo_ != null) {
         output.WriteRawTag(18);
         output.WriteMessage(AccountInfo);
@@ -382,9 +408,9 @@ namespace Zproto {
         output.WriteRawTag(88);
         output.WriteInt32(RegChannelDis);
       }
-      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
+      if (OpenAceCheck != false) {
         output.WriteRawTag(96);
-        output.WriteEnum((int) ErrCode);
+        output.WriteBool(OpenAceCheck);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -396,6 +422,9 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ErrCode);
+      }
       if (accountInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AccountInfo);
       }
@@ -424,8 +453,8 @@ namespace Zproto {
       if (RegChannelDis != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(RegChannelDis);
       }
-      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ErrCode);
+      if (OpenAceCheck != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -438,6 +467,9 @@ namespace Zproto {
     public void MergeFrom(LoginReply other) {
       if (other == null) {
         return;
+      }
+      if (other.ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
+        ErrCode = other.ErrCode;
       }
       if (other.accountInfo_ != null) {
         if (accountInfo_ == null) {
@@ -470,8 +502,8 @@ namespace Zproto {
       if (other.RegChannelDis != 0) {
         RegChannelDis = other.RegChannelDis;
       }
-      if (other.ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        ErrCode = other.ErrCode;
+      if (other.OpenAceCheck != false) {
+        OpenAceCheck = other.OpenAceCheck;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -492,6 +524,10 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
+            break;
+          }
           case 18: {
             if (accountInfo_ == null) {
               AccountInfo = new global::Zproto.AccountInfo();
@@ -536,7 +572,7 @@ namespace Zproto {
             break;
           }
           case 96: {
-            ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
+            OpenAceCheck = input.ReadBool();
             break;
           }
         }
@@ -558,6 +594,10 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
+            break;
+          }
           case 18: {
             if (accountInfo_ == null) {
               AccountInfo = new global::Zproto.AccountInfo();
@@ -602,7 +642,7 @@ namespace Zproto {
             break;
           }
           case 96: {
-            ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
+            OpenAceCheck = input.ReadBool();
             break;
           }
         }

@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjJzdHJ1X2hvbWVsYW5kX3NldF9mdXJuaXR1cmVfbWF0ZXJpYWxfcmVxdWVz",
-            "dC5wcm90bxIGenByb3RvImQKI0hvbWVsYW5kU2V0RnVybml0dXJlTWF0ZXJp",
-            "YWxSZXF1ZXN0EhYKDnN0cnVjdHVyZV91dWlkGAEgASgDEhMKC21hdGVyaWFs",
-            "X2lkGAIgASgFEhAKCGlzX291dGVyGAMgASgIYgZwcm90bzM="));
+            "dC5wcm90bxIGenByb3RvIoUBCiNIb21lbGFuZFNldEZ1cm5pdHVyZU1hdGVy",
+            "aWFsUmVxdWVzdBIkCg1zdHJ1Y3R1cmVVdWlkGAEgASgDUg1zdHJ1Y3R1cmVV",
+            "dWlkEh4KCm1hdGVyaWFsSWQYAiABKAVSCm1hdGVyaWFsSWQSGAoHaXNPdXRl",
+            "chgDIAEoCFIHaXNPdXRlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new HomelandSetFurnitureMaterialRequest(this);
     }
 
-    /// <summary>Field number for the "structure_uuid" field.</summary>
+    /// <summary>Field number for the "structureUuid" field.</summary>
     public const int StructureUuidFieldNumber = 1;
     private long structureUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "material_id" field.</summary>
+    /// <summary>Field number for the "materialId" field.</summary>
     public const int MaterialIdFieldNumber = 2;
     private int materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 3;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

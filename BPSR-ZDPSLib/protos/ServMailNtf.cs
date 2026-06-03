@@ -27,11 +27,12 @@ namespace Zproto {
             "ChNzZXJ2X21haWxfbnRmLnByb3RvEgZ6cHJvdG8aIXN0cnVfc3luY19tYWls",
             "X2luZm9fcmVxdWVzdC5wcm90bxolc3RydV9zeW5jX21haWxfbGlzdF9udW1f",
             "cmVxdWVzdC5wcm90bxogc3RydV9zeW5jX25ld19tYWlsX3JlcXVlc3QucHJv",
-            "dG8ixwEKB01haWxOdGYaPAoMU3luY01haWxJbmZvEiwKB3JlcXVlc3QYASAB",
-            "KAsyGy56cHJvdG8uU3luY01haWxJbmZvUmVxdWVzdBpCCg9TeW5jTWFpbExp",
-            "c3ROdW0SLwoHcmVxdWVzdBgBIAEoCzIeLnpwcm90by5TeW5jTWFpbExpc3RO",
-            "dW1SZXF1ZXN0GjoKC1N5bmNOZXdNYWlsEisKB3JlcXVlc3QYASABKAsyGi56",
-            "cHJvdG8uU3luY05ld01haWxSZXF1ZXN0YgZwcm90bzM="));
+            "dG8i4gEKB01haWxOdGYaRQoMU3luY01haWxJbmZvEjUKB3JlcXVlc3QYASAB",
+            "KAsyGy56cHJvdG8uU3luY01haWxJbmZvUmVxdWVzdFIHcmVxdWVzdBpLCg9T",
+            "eW5jTWFpbExpc3ROdW0SOAoHcmVxdWVzdBgBIAEoCzIeLnpwcm90by5TeW5j",
+            "TWFpbExpc3ROdW1SZXF1ZXN0UgdyZXF1ZXN0GkMKC1N5bmNOZXdNYWlsEjQK",
+            "B3JlcXVlc3QYASABKAsyGi56cHJvdG8uU3luY05ld01haWxSZXF1ZXN0Ugdy",
+            "ZXF1ZXN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSyncMailInfoRequestReflection.Descriptor, global::Zproto.StruSyncMailListNumRequestReflection.Descriptor, global::Zproto.StruSyncNewMailRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

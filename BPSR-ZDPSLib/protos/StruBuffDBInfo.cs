@@ -25,15 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2J1ZmZfZF9iX2luZm8ucHJvdG8SBnpwcm90bxoYc3RydV9idWZm",
-            "X2RfYl9kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ipwEKCkJ1",
-            "ZmZEQkluZm8SDgoGbWF4X2lkGAEgASgNEj8KEGFsbF9idWZmX2RiX2RhdGEY",
-            "AiADKAsyJS56cHJvdG8uQnVmZkRCSW5mby5BbGxCdWZmRGJEYXRhRW50cnka",
-            "SAoSQWxsQnVmZkRiRGF0YUVudHJ5EgsKA2tleRgBIAEoDRIhCgV2YWx1ZRgC",
-            "IAEoCzISLnpwcm90by5CdWZmREJEYXRhOgI4AWIGcHJvdG8z"));
+            "X2RfYl9kYXRhLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iuQEKCkJ1",
+            "ZmZEQkluZm8SFAoFbWF4SUQYASABKA1SBW1heElEEksKDWFsbEJ1ZmZEYkRh",
+            "dGEYAiADKAsyJS56cHJvdG8uQnVmZkRCSW5mby5BbGxCdWZmRGJEYXRhRW50",
+            "cnlSDWFsbEJ1ZmZEYkRhdGEaSAoSQWxsQnVmZkRiRGF0YUVudHJ5EgsKA2tl",
+            "eRgBIAEoDRIhCgV2YWx1ZRgCIAEoCzISLnpwcm90by5CdWZmREJEYXRhOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruBuffDBDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.BuffDBInfo), global::Zproto.BuffDBInfo.Parser, new[]{ "MaxId", "AllBuffDbData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.BuffDBInfo), global::Zproto.BuffDBInfo.Parser, new[]{ "MaxID", "AllBuffDbData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -75,7 +76,7 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BuffDBInfo(BuffDBInfo other) : this() {
-      maxId_ = other.maxId_;
+      maxID_ = other.maxID_;
       allBuffDbData_ = other.allBuffDbData_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,19 +87,19 @@ namespace Zproto {
       return new BuffDBInfo(this);
     }
 
-    /// <summary>Field number for the "max_id" field.</summary>
-    public const int MaxIdFieldNumber = 1;
-    private uint maxId_;
+    /// <summary>Field number for the "maxID" field.</summary>
+    public const int MaxIDFieldNumber = 1;
+    private uint maxID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxId {
-      get { return maxId_; }
+    public uint MaxID {
+      get { return maxID_; }
       set {
-        maxId_ = value;
+        maxID_ = value;
       }
     }
 
-    /// <summary>Field number for the "all_buff_db_data" field.</summary>
+    /// <summary>Field number for the "allBuffDbData" field.</summary>
     public const int AllBuffDbDataFieldNumber = 2;
     private static readonly pbc::MapField<uint, global::Zproto.BuffDBData>.Codec _map_allBuffDbData_codec
         = new pbc::MapField<uint, global::Zproto.BuffDBData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.BuffDBData.Parser), 18);
@@ -124,7 +125,7 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MaxId != other.MaxId) return false;
+      if (MaxID != other.MaxID) return false;
       if (!AllBuffDbData.Equals(other.AllBuffDbData)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -133,7 +134,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MaxId != 0) hash ^= MaxId.GetHashCode();
+      if (MaxID != 0) hash ^= MaxID.GetHashCode();
       hash ^= AllBuffDbData.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -153,9 +154,9 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MaxId != 0) {
+      if (MaxID != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(MaxId);
+        output.WriteUInt32(MaxID);
       }
       allBuffDbData_.WriteTo(output, _map_allBuffDbData_codec);
       if (_unknownFields != null) {
@@ -168,9 +169,9 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MaxId != 0) {
+      if (MaxID != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(MaxId);
+        output.WriteUInt32(MaxID);
       }
       allBuffDbData_.WriteTo(ref output, _map_allBuffDbData_codec);
       if (_unknownFields != null) {
@@ -183,8 +184,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MaxId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxId);
+      if (MaxID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxID);
       }
       size += allBuffDbData_.CalculateSize(_map_allBuffDbData_codec);
       if (_unknownFields != null) {
@@ -199,8 +200,8 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      if (other.MaxId != 0) {
-        MaxId = other.MaxId;
+      if (other.MaxID != 0) {
+        MaxID = other.MaxID;
       }
       allBuffDbData_.MergeFrom(other.allBuffDbData_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -223,7 +224,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            MaxId = input.ReadUInt32();
+            MaxID = input.ReadUInt32();
             break;
           }
           case 18: {
@@ -250,7 +251,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            MaxId = input.ReadUInt32();
+            MaxID = input.ReadUInt32();
             break;
           }
           case 18: {

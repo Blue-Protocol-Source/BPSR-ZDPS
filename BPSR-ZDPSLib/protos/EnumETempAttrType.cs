@@ -24,12 +24,12 @@ namespace Zproto {
     static EnumETempAttrTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtlbnVtX2VfdGVtcF9hdHRyX3R5cGUucHJvdG8SBnpwcm90byrGAQoNRVRl",
+            "ChtlbnVtX2VfdGVtcF9hdHRyX3R5cGUucHJvdG8SBnpwcm90byreAQoNRVRl",
             "bXBBdHRyVHlwZRISCg5UZW1wQXR0ckdsb2JhbBAAEhEKDVRlbXBBdHRyU2tp",
             "bGwQARIUChBUZW1wQXR0ckZpZ2h0UmVzEAISDwoLVGVtcEF0dHJUYWcQAxIQ",
             "CgxUZW1wQXR0ckJ1ZmYQBBIVChFUZW1wQXR0ckZpZ2h0QXR0chAFEg8KC1Rl",
             "bXBBdHRySm9iEAYSEQoNVGVtcEF0dHJEdW1teRAHEhoKFlRlbXBBdHRyTGlm",
-            "ZVByb2Zlc3Npb24QCGIGcHJvdG8z"));
+            "ZVByb2Zlc3Npb24QCBIWChJUZW1wQXR0clJvZ3VlRW50cnkQCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.ETempAttrType), }, null, null));
@@ -48,6 +48,7 @@ namespace Zproto {
     [pbr::OriginalName("TempAttrJob")] TempAttrJob = 6,
     [pbr::OriginalName("TempAttrDummy")] TempAttrDummy = 7,
     [pbr::OriginalName("TempAttrLifeProfession")] TempAttrLifeProfession = 8,
+    [pbr::OriginalName("TempAttrRogueEntry")] TempAttrRogueEntry = 9,
   }
 
   #endregion

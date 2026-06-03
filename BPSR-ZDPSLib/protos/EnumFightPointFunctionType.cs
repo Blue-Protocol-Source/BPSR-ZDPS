@@ -25,7 +25,7 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRlbnVtX2ZpZ2h0X3BvaW50X2Z1bmN0aW9uX3R5cGUucHJvdG8SBnpwcm90",
-            "byrIAwoWRmlnaHRQb2ludEZ1bmN0aW9uVHlwZRIeChpGaWdodFBvaW50RnVu",
+            "byryAwoWRmlnaHRQb2ludEZ1bmN0aW9uVHlwZRIeChpGaWdodFBvaW50RnVu",
             "Y3Rpb25UeXBlTm9uZRAAEiQKIEZpZ2h0UG9pbnRGdW5jdGlvblR5cGVfUm9s",
             "ZUJhc2ljEGQSJAogRmlnaHRQb2ludEZ1bmN0aW9uVHlwZV9Sb2xlTGV2ZWwQ",
             "ZRIhChxGaWdodFBvaW50RnVuY3Rpb25UeXBlX0VxdWlwEMgBEiIKHUZJZ2h0",
@@ -35,7 +35,8 @@ namespace Zproto {
             "AxIgChtGaWdodFBvaW50RnVuY3Rpb25UeXBlX0FveWkQkQMSJQogRmlnaHRQ",
             "b2ludEZ1bmN0aW9uVHlwZV9TbG90U2tpbGwQkgMSIQocRmlnaHRQb2ludEZ1",
             "bmN0aW9uVHlwZV9NZWRhbBD0AxIiCh1GaWdodFBvaW50RnVuY3Rpb25UeXBl",
-            "X1RhbGVudBDYBGIGcHJvdG8z"));
+            "X1RhbGVudBDYBBIoCiNGaWdodFBvaW50RnVuY3Rpb25UeXBlX1NlYXNvblRh",
+            "bGVudBC8BWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.FightPointFunctionType), }, null, null));
@@ -57,6 +58,7 @@ namespace Zproto {
     [pbr::OriginalName("FightPointFunctionType_SlotSkill")] SlotSkill = 402,
     [pbr::OriginalName("FightPointFunctionType_Medal")] Medal = 500,
     [pbr::OriginalName("FightPointFunctionType_Talent")] Talent = 600,
+    [pbr::OriginalName("FightPointFunctionType_SeasonTalent")] SeasonTalent = 700,
   }
 
   #endregion

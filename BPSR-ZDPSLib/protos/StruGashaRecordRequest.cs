@@ -24,9 +24,10 @@ namespace Zproto {
     static StruGashaRecordRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2dhc2hhX3JlY29yZF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iRgoS",
-            "R2FzaGFSZWNvcmRSZXF1ZXN0Eg8KB3Bvb2xfaWQYASABKA0SEAoIc3RhcnRf",
-            "aWQYAiABKA0SDQoFY291bnQYAyABKA1iBnByb3RvMw=="));
+            "Ch9zdHJ1X2dhc2hhX3JlY29yZF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iXAoS",
+            "R2FzaGFSZWNvcmRSZXF1ZXN0EhYKBnBvb2xJZBgBIAEoDVIGcG9vbElkEhgK",
+            "B3N0YXJ0SWQYAiABKA1SB3N0YXJ0SWQSFAoFY291bnQYAyABKA1SBWNvdW50",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new GashaRecordRequest(this);
     }
 
-    /// <summary>Field number for the "pool_id" field.</summary>
+    /// <summary>Field number for the "poolId" field.</summary>
     public const int PoolIdFieldNumber = 1;
     private uint poolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "start_id" field.</summary>
+    /// <summary>Field number for the "startId" field.</summary>
     public const int StartIdFieldNumber = 2;
     private uint startId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

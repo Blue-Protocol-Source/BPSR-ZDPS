@@ -24,9 +24,10 @@ namespace Zproto {
     static StruGetMailInfoRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X2dldF9tYWlsX2luZm9fcmVxdWVzdC5wcm90bxIGenByb3RvIj8K",
-            "EkdldE1haWxJbmZvUmVxdWVzdBIRCgltYWlsX3V1aWQYAiABKAMSFgoObWFp",
-            "bF91dWlkX2xpc3QYAyADKANiBnByb3RvMw=="));
+            "CiBzdHJ1X2dldF9tYWlsX2luZm9fcmVxdWVzdC5wcm90bxIGenByb3RvIlQK",
+            "EkdldE1haWxJbmZvUmVxdWVzdBIaCghtYWlsVXVpZBgCIAEoA1IIbWFpbFV1",
+            "aWQSIgoMbWFpbFV1aWRMaXN0GAMgAygDUgxtYWlsVXVpZExpc3RiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new GetMailInfoRequest(this);
     }
 
-    /// <summary>Field number for the "mail_uuid" field.</summary>
+    /// <summary>Field number for the "mailUuid" field.</summary>
     public const int MailUuidFieldNumber = 2;
     private long mailUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_uuid_list" field.</summary>
+    /// <summary>Field number for the "mailUuidList" field.</summary>
     public const int MailUuidListFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_mailUuidList_codec
         = pb::FieldCodec.ForInt64(26);

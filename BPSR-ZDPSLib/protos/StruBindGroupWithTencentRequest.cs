@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X2JpbmRfZ3JvdXBfd2l0aF90ZW5jZW50X3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byJVChtCaW5kR3JvdXBXaXRoVGVuY2VudFJlcXVlc3QSEAoIdW5p",
-            "b25faWQYASABKAMSEgoKZ3JvdXBfdHlwZRgCIAEoBRIQCghncm91cF9pZBgD",
-            "IAEoCWIGcHJvdG8z"));
+            "Bnpwcm90byJvChtCaW5kR3JvdXBXaXRoVGVuY2VudFJlcXVlc3QSGAoHdW5p",
+            "b25JZBgBIAEoA1IHdW5pb25JZBIcCglncm91cFR5cGUYAiABKAVSCWdyb3Vw",
+            "VHlwZRIYCgdncm91cElkGAMgASgJUgdncm91cElkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new BindGroupWithTencentRequest(this);
     }
 
-    /// <summary>Field number for the "union_id" field.</summary>
+    /// <summary>Field number for the "unionId" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "group_type" field.</summary>
+    /// <summary>Field number for the "groupType" field.</summary>
     public const int GroupTypeFieldNumber = 2;
     private int groupType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "group_id" field.</summary>
+    /// <summary>Field number for the "groupId" field.</summary>
     public const int GroupIdFieldNumber = 3;
     private string groupId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -76,7 +76,7 @@ namespace BPSR_ZDPS
             colors[ImGuiCol.PlotHistogram] = panelActiveColor;
             colors[ImGuiCol.PlotHistogramHovered] = panelHoverColor;
 
-            colors[ImGuiCol.ModalWindowDimBg] = lightBgColor_fade;
+            colors[ImGuiCol.ModalWindowDimBg] = new Vector4(0, 0, 0, 0);
             colors[ImGuiCol.DragDropTarget] = bgColor;
             colors[ImGuiCol.NavCursor] = bgColor;
             colors[ImGuiCol.NavWindowingHighlight] = new Vector4(1.00f, 1.00f, 1.00f, 0.70f);

@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2J1ZmZfcHJvZmVzc2lvbl9lZmZlY3RfZGF0YS5wcm90bxIGenBy",
-            "b3RvImgKGEJ1ZmZQcm9mZXNzaW9uRWZmZWN0RGF0YRIXCg9wcm9mZXNzaW9u",
-            "X3R5cGUYASABKAUSGAoQcHJvZmVzc2lvbl9wb2ludBgCIAMoBRIZChFwcm9m",
-            "ZXNzaW9uX3N3aXRjaBgDIAMoCGIGcHJvdG8z"));
+            "b3RvIpgBChhCdWZmUHJvZmVzc2lvbkVmZmVjdERhdGESJgoOcHJvZmVzc2lv",
+            "blR5cGUYASABKAVSDnByb2Zlc3Npb25UeXBlEigKD3Byb2Zlc3Npb25Qb2lu",
+            "dBgCIAMoBVIPcHJvZmVzc2lvblBvaW50EioKEHByb2Zlc3Npb25Td2l0Y2gY",
+            "AyADKAhSEHByb2Zlc3Npb25Td2l0Y2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new BuffProfessionEffectData(this);
     }
 
-    /// <summary>Field number for the "profession_type" field.</summary>
+    /// <summary>Field number for the "professionType" field.</summary>
     public const int ProfessionTypeFieldNumber = 1;
     private int professionType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "profession_point" field.</summary>
+    /// <summary>Field number for the "professionPoint" field.</summary>
     public const int ProfessionPointFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_professionPoint_codec
         = pb::FieldCodec.ForInt32(18);
@@ -108,7 +109,7 @@ namespace Zproto {
       get { return professionPoint_; }
     }
 
-    /// <summary>Field number for the "profession_switch" field.</summary>
+    /// <summary>Field number for the "professionSwitch" field.</summary>
     public const int ProfessionSwitchFieldNumber = 3;
     private static readonly pb::FieldCodec<bool> _repeated_professionSwitch_codec
         = pb::FieldCodec.ForBool(26);

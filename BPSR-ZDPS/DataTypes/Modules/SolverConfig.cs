@@ -11,6 +11,7 @@ namespace BPSR_ZDPS.DataTypes.Modules
         public List<StatPrio> StatPriorities = [];
         public byte[] LinkLevelBonus = DefaultLinkLevels;
         public bool ValueAllStats = true;
+        public int NumModules = 5;
 
         public string SaveToString(bool asBase64 = false)
         {
@@ -18,7 +19,7 @@ namespace BPSR_ZDPS.DataTypes.Modules
             sb.Append("ZMO:");
             for (int i = 0; i < StatPriorities.Count; i++)
             {
-                var stat = $"{StatPriorities[i].Id}-{StatPriorities[i].MinLevel}-{StatPriorities[i].ReqLevel}";
+                var stat = $"{StatPriorities[i].Id}-{(byte)StatPriorities[i].StatMode}-{StatPriorities[i].ReqLevel}";
                 sb.Append($"{stat}{(StatPriorities.Count - 1 == i ? "" : ",")}");
             }
 
@@ -57,6 +58,7 @@ namespace BPSR_ZDPS.DataTypes.Modules
                             {
                                 Id = int.Parse(statParts[0]),
                                 MinLevel = 0, //Math.Clamp(int.Parse(statParts[1]), 0, 20),
+                                StatMode = (StatMode)Math.Clamp(int.Parse(statParts[1]), 0, 1),
                                 ReqLevel = Math.Clamp(int.Parse(statParts[2]), 0, 20),
                             };
 

@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ch1zdHJ1X2VudGVyX3NjZW5lX3BhcmFtcy5wcm90bxIGenByb3RvGhlzdHJ1",
             "X3RyYW5zZmVyX3BhcmFtLnByb3RvGhlnb29nbGUvcHJvdG9idWYvYW55LnBy",
-            "b3RvIrQBChBFbnRlclNjZW5lUGFyYW1zEhkKEWNoYW5nZV9zY2VuZV90eXBl",
-            "GAEgASgFEhAKCHNjZW5lX2lkGAIgASgFEhIKCnNjZW5lX2d1aWQYAyABKAkS",
-            "LQoOdHJhbnNmZXJfcGFyYW0YBCABKAsyFS56cHJvdG8uVHJhbnNmZXJQYXJh",
-            "bRIwChJlbnRlcl9zY2VuZV9wYXJhbXMYBSADKAsyFC5nb29nbGUucHJvdG9i",
-            "dWYuQW55YgZwcm90bzM="));
+            "b3RvIvMBChBFbnRlclNjZW5lUGFyYW1zEigKD2NoYW5nZVNjZW5lVHlwZRgB",
+            "IAEoBVIPY2hhbmdlU2NlbmVUeXBlEhgKB3NjZW5lSWQYAiABKAVSB3NjZW5l",
+            "SWQSHAoJc2NlbmVHdWlkGAMgASgJUglzY2VuZUd1aWQSOwoNdHJhbnNmZXJQ",
+            "YXJhbRgEIAEoCzIVLnpwcm90by5UcmFuc2ZlclBhcmFtUg10cmFuc2ZlclBh",
+            "cmFtEkAKEGVudGVyU2NlbmVQYXJhbXMYBSADKAsyFC5nb29nbGUucHJvdG9i",
+            "dWYuQW55UhBlbnRlclNjZW5lUGFyYW1zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTransferParamReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new EnterSceneParams(this);
     }
 
-    /// <summary>Field number for the "change_scene_type" field.</summary>
+    /// <summary>Field number for the "changeSceneType" field.</summary>
     public const int ChangeSceneTypeFieldNumber = 1;
     private int changeSceneType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
+    /// <summary>Field number for the "sceneId" field.</summary>
     public const int SceneIdFieldNumber = 2;
     private int sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_guid" field.</summary>
+    /// <summary>Field number for the "sceneGuid" field.</summary>
     public const int SceneGuidFieldNumber = 3;
     private string sceneGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "transfer_param" field.</summary>
+    /// <summary>Field number for the "transferParam" field.</summary>
     public const int TransferParamFieldNumber = 4;
     private global::Zproto.TransferParam transferParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "enter_scene_params" field.</summary>
+    /// <summary>Field number for the "enterSceneParams" field.</summary>
     public const int EnterSceneParams_FieldNumber = 5;
     private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_enterSceneParams_codec
         = pb::FieldCodec.ForMessage(42, global::Google.Protobuf.WellKnownTypes.Any.Parser);

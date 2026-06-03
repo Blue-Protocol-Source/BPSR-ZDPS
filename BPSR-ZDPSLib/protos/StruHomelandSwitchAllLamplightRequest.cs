@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CjBzdHJ1X2hvbWVsYW5kX3N3aXRjaF9hbGxfbGFtcGxpZ2h0X3JlcXVlc3Qu",
             "cHJvdG8SBnpwcm90bxolZW51bV9lX2hvbWVsYW5kX2xhbXBsaWdodF9zdGF0",
-            "ZS5wcm90byJvCiFIb21lbGFuZFN3aXRjaEFsbExhbXBsaWdodFJlcXVlc3QS",
-            "OAoPbGFtcGxpZ2h0X3N0YXRlGAEgASgOMh8uenByb3RvLkVIb21lbGFuZExh",
-            "bXBsaWdodFN0YXRlEhAKCGlzX291dGVyGAIgASgIYgZwcm90bzM="));
+            "ZS5wcm90byKGAQohSG9tZWxhbmRTd2l0Y2hBbGxMYW1wbGlnaHRSZXF1ZXN0",
+            "EkcKDmxhbXBsaWdodFN0YXRlGAEgASgOMh8uenByb3RvLkVIb21lbGFuZExh",
+            "bXBsaWdodFN0YXRlUg5sYW1wbGlnaHRTdGF0ZRIYCgdpc091dGVyGAIgASgI",
+            "Ugdpc091dGVyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEHomelandLamplightStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new HomelandSwitchAllLamplightRequest(this);
     }
 
-    /// <summary>Field number for the "lamplight_state" field.</summary>
+    /// <summary>Field number for the "lamplightState" field.</summary>
     public const int LamplightStateFieldNumber = 1;
     private global::Zproto.EHomelandLamplightState lamplightState_ = global::Zproto.EHomelandLamplightState.HomelandLamplightStateDefault;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 2;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

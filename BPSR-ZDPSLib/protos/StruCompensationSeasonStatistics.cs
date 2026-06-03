@@ -26,18 +26,20 @@ namespace Zproto {
           string.Concat(
             "CilzdHJ1X2NvbXBlbnNhdGlvbl9zZWFzb25fc3RhdGlzdGljcy5wcm90bxIG",
             "enByb3RvGh5zdHJ1X2NvbXBlbnNhdGlvbl9yZWNvcmQucHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byL9AwocQ29tcGVuc2F0aW9uU2Vhc29uU3RhdGlz",
-            "dGljcxJFCgl3ZWVrX2RhdGEYASADKAsyMi56cHJvdG8uQ29tcGVuc2F0aW9u",
-            "U2Vhc29uU3RhdGlzdGljcy5XZWVrRGF0YUVudHJ5EkwKDGNvbXBlbnNhdGlv",
-            "bhgCIAMoCzI2Lnpwcm90by5Db21wZW5zYXRpb25TZWFzb25TdGF0aXN0aWNz",
-            "LkNvbXBlbnNhdGlvbkVudHJ5Eh0KFW1heF9jbGltYl91cF9sYXllcl9pZBgD",
-            "IAEoBRIVCg1yYWlkX2Jvc3NfaWRzGAQgAygDElcKE3JhaWRfYm9zc19raWxs",
-            "X3RpbWUYBSADKAsyOi56cHJvdG8uQ29tcGVuc2F0aW9uU2Vhc29uU3RhdGlz",
-            "dGljcy5SYWlkQm9zc0tpbGxUaW1lRW50cnkaSwoNV2Vla0RhdGFFbnRyeRIL",
-            "CgNrZXkYASABKA0SKQoFdmFsdWUYAiABKAsyGi56cHJvdG8uQ29tcGVuc2F0",
-            "aW9uUmVjb3JkOgI4ARozChFDb21wZW5zYXRpb25FbnRyeRILCgNrZXkYASAB",
-            "KA0SDQoFdmFsdWUYAiABKAU6AjgBGjcKFVJhaWRCb3NzS2lsbFRpbWVFbnRy",
-            "eRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiABKAM6AjgBYgZwcm90bzM="));
+            "ZGlydHlfbWFzay5wcm90byK9BAocQ29tcGVuc2F0aW9uU2Vhc29uU3RhdGlz",
+            "dGljcxJOCgh3ZWVrRGF0YRgBIAMoCzIyLnpwcm90by5Db21wZW5zYXRpb25T",
+            "ZWFzb25TdGF0aXN0aWNzLldlZWtEYXRhRW50cnlSCHdlZWtEYXRhEloKDGNv",
+            "bXBlbnNhdGlvbhgCIAMoCzI2Lnpwcm90by5Db21wZW5zYXRpb25TZWFzb25T",
+            "dGF0aXN0aWNzLkNvbXBlbnNhdGlvbkVudHJ5Ugxjb21wZW5zYXRpb24SLAoR",
+            "bWF4Q2xpbWJVcExheWVySWQYAyABKAVSEW1heENsaW1iVXBMYXllcklkEiAK",
+            "C3JhaWRCb3NzSWRzGAQgAygDUgtyYWlkQm9zc0lkcxJmChByYWlkQm9zc0tp",
+            "bGxUaW1lGAUgAygLMjouenByb3RvLkNvbXBlbnNhdGlvblNlYXNvblN0YXRp",
+            "c3RpY3MuUmFpZEJvc3NLaWxsVGltZUVudHJ5UhByYWlkQm9zc0tpbGxUaW1l",
+            "GksKDVdlZWtEYXRhRW50cnkSCwoDa2V5GAEgASgNEikKBXZhbHVlGAIgASgL",
+            "MhouenByb3RvLkNvbXBlbnNhdGlvblJlY29yZDoCOAEaMwoRQ29tcGVuc2F0",
+            "aW9uRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgFOgI4ARo3ChVS",
+            "YWlkQm9zc0tpbGxUaW1lRW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIg",
+            "ASgDOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCompensationRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +99,7 @@ namespace Zproto {
       return new CompensationSeasonStatistics(this);
     }
 
-    /// <summary>Field number for the "week_data" field.</summary>
+    /// <summary>Field number for the "weekData" field.</summary>
     public const int WeekDataFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.CompensationRecord>.Codec _map_weekData_codec
         = new pbc::MapField<uint, global::Zproto.CompensationRecord>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CompensationRecord.Parser), 10);
@@ -119,7 +121,7 @@ namespace Zproto {
       get { return compensation_; }
     }
 
-    /// <summary>Field number for the "max_climb_up_layer_id" field.</summary>
+    /// <summary>Field number for the "maxClimbUpLayerId" field.</summary>
     public const int MaxClimbUpLayerIdFieldNumber = 3;
     private int maxClimbUpLayerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,7 +133,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "raid_boss_ids" field.</summary>
+    /// <summary>Field number for the "raidBossIds" field.</summary>
     public const int RaidBossIdsFieldNumber = 4;
     private static readonly pb::FieldCodec<long> _repeated_raidBossIds_codec
         = pb::FieldCodec.ForInt64(34);
@@ -142,7 +144,7 @@ namespace Zproto {
       get { return raidBossIds_; }
     }
 
-    /// <summary>Field number for the "raid_boss_kill_time" field.</summary>
+    /// <summary>Field number for the "raidBossKillTime" field.</summary>
     public const int RaidBossKillTimeFieldNumber = 5;
     private static readonly pbc::MapField<long, long>.Codec _map_raidBossKillTime_codec
         = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 42);

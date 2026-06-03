@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2J1ZmZfZWZmZWN0X3RlbGVwb3J0X2JlbHQucHJvdG8SBnpwcm90",
-            "byJuChZCdWZmRWZmZWN0VGVsZXBvcnRCZWx0EgsKA2RpchgBIAEoAhIQCghz",
-            "dHJlbmd0aBgCIAEoAhIXCg9pc19pbXBhY3RfaG92ZXIYAyABKAgSHAoUaXNf",
-            "dXNlX3dlaWdodF9mYWN0b3IYBCABKAhiBnByb3RvMw=="));
+            "byKaAQoWQnVmZkVmZmVjdFRlbGVwb3J0QmVsdBIQCgNkaXIYASABKAJSA2Rp",
+            "chIaCghzdHJlbmd0aBgCIAEoAlIIc3RyZW5ndGgSJAoNaXNJbXBhY3RIb3Zl",
+            "chgDIAEoCFINaXNJbXBhY3RIb3ZlchIsChFpc1VzZVdlaWdodEZhY3RvchgE",
+            "IAEoCFIRaXNVc2VXZWlnaHRGYWN0b3JiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_impact_hover" field.</summary>
+    /// <summary>Field number for the "isImpactHover" field.</summary>
     public const int IsImpactHoverFieldNumber = 3;
     private bool isImpactHover_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_use_weight_factor" field.</summary>
+    /// <summary>Field number for the "isUseWeightFactor" field.</summary>
     public const int IsUseWeightFactorFieldNumber = 4;
     private bool isUseWeightFactor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

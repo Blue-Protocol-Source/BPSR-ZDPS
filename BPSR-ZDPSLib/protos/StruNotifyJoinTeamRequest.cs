@@ -26,20 +26,26 @@ namespace Zproto {
           string.Concat(
             "CiNzdHJ1X25vdGlmeV9qb2luX3RlYW1fcmVxdWVzdC5wcm90bxIGenByb3Rv",
             "GhtlbnVtX2VfdGVhbV9qb2luX3R5cGUucHJvdG8aGXN0cnVfdGVhbV9iYXNl",
-            "X2luZm8ucHJvdG8aGHN0cnVfdGVhbV9tZW1fZGF0YS5wcm90bxooc3RydV90",
-            "ZWFtX21lbV9yZWFsX3RpbWVfdm9pY2VfaW5mby5wcm90byLWAgoVTm90aWZ5",
-            "Sm9pblRlYW1SZXF1ZXN0EicKCWJhc2VfaW5mbxgBIAEoCzIULnpwcm90by5U",
-            "ZWFtQmFzZUluZm8SKAoLbWVtYmVyX2RhdGEYAiADKAsyEy56cHJvdG8uVGVh",
-            "bU1lbURhdGESWwoZbWVtX3JlYWxfdGltZV92b2ljZV9pbmZvcxgEIAMoCzI4",
-            "Lnpwcm90by5Ob3RpZnlKb2luVGVhbVJlcXVlc3QuTWVtUmVhbFRpbWVWb2lj",
-            "ZUluZm9zRW50cnkSLQoOdGVhbV9qb2luX3R5cGUYBSABKA4yFS56cHJvdG8u",
-            "RVRlYW1Kb2luVHlwZRpeChpNZW1SZWFsVGltZVZvaWNlSW5mb3NFbnRyeRIL",
-            "CgNrZXkYASABKAMSLwoFdmFsdWUYAiABKAsyIC56cHJvdG8uVGVhbU1lbVJl",
-            "YWxUaW1lVm9pY2VJbmZvOgI4AWIGcHJvdG8z"));
+            "X2luZm8ucHJvdG8aJXN0cnVfdGVhbV9tZW1iZXJfZmFzdF9zeW5jX2RhdGEu",
+            "cHJvdG8aGHN0cnVfdGVhbV9tZW1fZGF0YS5wcm90bxooc3RydV90ZWFtX21l",
+            "bV9yZWFsX3RpbWVfdm9pY2VfaW5mby5wcm90byK/BAoVTm90aWZ5Sm9pblRl",
+            "YW1SZXF1ZXN0EjAKCGJhc2VJbmZvGAEgASgLMhQuenByb3RvLlRlYW1CYXNl",
+            "SW5mb1IIYmFzZUluZm8SMwoKbWVtYmVyRGF0YRgCIAMoCzITLnpwcm90by5U",
+            "ZWFtTWVtRGF0YVIKbWVtYmVyRGF0YRJuChVtZW1SZWFsVGltZVZvaWNlSW5m",
+            "b3MYBCADKAsyOC56cHJvdG8uTm90aWZ5Sm9pblRlYW1SZXF1ZXN0Lk1lbVJl",
+            "YWxUaW1lVm9pY2VJbmZvc0VudHJ5UhVtZW1SZWFsVGltZVZvaWNlSW5mb3MS",
+            "OQoMdGVhbUpvaW5UeXBlGAUgASgOMhUuenByb3RvLkVUZWFtSm9pblR5cGVS",
+            "DHRlYW1Kb2luVHlwZRJcCg9tZW1iZXJTeW5jRGF0YXMYBiADKAsyMi56cHJv",
+            "dG8uTm90aWZ5Sm9pblRlYW1SZXF1ZXN0Lk1lbWJlclN5bmNEYXRhc0VudHJ5",
+            "Ug9tZW1iZXJTeW5jRGF0YXMaXgoaTWVtUmVhbFRpbWVWb2ljZUluZm9zRW50",
+            "cnkSCwoDa2V5GAEgASgDEi8KBXZhbHVlGAIgASgLMiAuenByb3RvLlRlYW1N",
+            "ZW1SZWFsVGltZVZvaWNlSW5mbzoCOAEaVgoUTWVtYmVyU3luY0RhdGFzRW50",
+            "cnkSCwoDa2V5GAEgASgDEi0KBXZhbHVlGAIgASgLMh4uenByb3RvLlRlYW1N",
+            "ZW1iZXJGYXN0U3luY0RhdGE6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.EnumETeamJoinTypeReflection.Descriptor, global::Zproto.StruTeamBaseInfoReflection.Descriptor, global::Zproto.StruTeamMemDataReflection.Descriptor, global::Zproto.StruTeamMemRealTimeVoiceInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.EnumETeamJoinTypeReflection.Descriptor, global::Zproto.StruTeamBaseInfoReflection.Descriptor, global::Zproto.StruTeamMemberFastSyncDataReflection.Descriptor, global::Zproto.StruTeamMemDataReflection.Descriptor, global::Zproto.StruTeamMemRealTimeVoiceInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.NotifyJoinTeamRequest), global::Zproto.NotifyJoinTeamRequest.Parser, new[]{ "BaseInfo", "MemberData", "MemRealTimeVoiceInfos", "TeamJoinType" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.NotifyJoinTeamRequest), global::Zproto.NotifyJoinTeamRequest.Parser, new[]{ "BaseInfo", "MemberData", "MemRealTimeVoiceInfos", "TeamJoinType", "MemberSyncDatas" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -85,6 +91,7 @@ namespace Zproto {
       memberData_ = other.memberData_.Clone();
       memRealTimeVoiceInfos_ = other.memRealTimeVoiceInfos_.Clone();
       teamJoinType_ = other.teamJoinType_;
+      memberSyncDatas_ = other.memberSyncDatas_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,7 +101,7 @@ namespace Zproto {
       return new NotifyJoinTeamRequest(this);
     }
 
-    /// <summary>Field number for the "base_info" field.</summary>
+    /// <summary>Field number for the "baseInfo" field.</summary>
     public const int BaseInfoFieldNumber = 1;
     private global::Zproto.TeamBaseInfo baseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -106,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "member_data" field.</summary>
+    /// <summary>Field number for the "memberData" field.</summary>
     public const int MemberDataFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.TeamMemData> _repeated_memberData_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemData.Parser);
@@ -117,7 +124,7 @@ namespace Zproto {
       get { return memberData_; }
     }
 
-    /// <summary>Field number for the "mem_real_time_voice_infos" field.</summary>
+    /// <summary>Field number for the "memRealTimeVoiceInfos" field.</summary>
     public const int MemRealTimeVoiceInfosFieldNumber = 4;
     private static readonly pbc::MapField<long, global::Zproto.TeamMemRealTimeVoiceInfo>.Codec _map_memRealTimeVoiceInfos_codec
         = new pbc::MapField<long, global::Zproto.TeamMemRealTimeVoiceInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemRealTimeVoiceInfo.Parser), 34);
@@ -128,7 +135,7 @@ namespace Zproto {
       get { return memRealTimeVoiceInfos_; }
     }
 
-    /// <summary>Field number for the "team_join_type" field.</summary>
+    /// <summary>Field number for the "teamJoinType" field.</summary>
     public const int TeamJoinTypeFieldNumber = 5;
     private global::Zproto.ETeamJoinType teamJoinType_ = global::Zproto.ETeamJoinType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,6 +145,17 @@ namespace Zproto {
       set {
         teamJoinType_ = value;
       }
+    }
+
+    /// <summary>Field number for the "memberSyncDatas" field.</summary>
+    public const int MemberSyncDatasFieldNumber = 6;
+    private static readonly pbc::MapField<long, global::Zproto.TeamMemberFastSyncData>.Codec _map_memberSyncDatas_codec
+        = new pbc::MapField<long, global::Zproto.TeamMemberFastSyncData>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemberFastSyncData.Parser), 50);
+    private readonly pbc::MapField<long, global::Zproto.TeamMemberFastSyncData> memberSyncDatas_ = new pbc::MapField<long, global::Zproto.TeamMemberFastSyncData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<long, global::Zproto.TeamMemberFastSyncData> MemberSyncDatas {
+      get { return memberSyncDatas_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -159,6 +177,7 @@ namespace Zproto {
       if(!memberData_.Equals(other.memberData_)) return false;
       if (!MemRealTimeVoiceInfos.Equals(other.MemRealTimeVoiceInfos)) return false;
       if (TeamJoinType != other.TeamJoinType) return false;
+      if (!MemberSyncDatas.Equals(other.MemberSyncDatas)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -170,6 +189,7 @@ namespace Zproto {
       hash ^= memberData_.GetHashCode();
       hash ^= MemRealTimeVoiceInfos.GetHashCode();
       if (TeamJoinType != global::Zproto.ETeamJoinType.None) hash ^= TeamJoinType.GetHashCode();
+      hash ^= MemberSyncDatas.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -198,6 +218,7 @@ namespace Zproto {
         output.WriteRawTag(40);
         output.WriteEnum((int) TeamJoinType);
       }
+      memberSyncDatas_.WriteTo(output, _map_memberSyncDatas_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -218,6 +239,7 @@ namespace Zproto {
         output.WriteRawTag(40);
         output.WriteEnum((int) TeamJoinType);
       }
+      memberSyncDatas_.WriteTo(ref output, _map_memberSyncDatas_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -236,6 +258,7 @@ namespace Zproto {
       if (TeamJoinType != global::Zproto.ETeamJoinType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TeamJoinType);
       }
+      size += memberSyncDatas_.CalculateSize(_map_memberSyncDatas_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -259,6 +282,7 @@ namespace Zproto {
       if (other.TeamJoinType != global::Zproto.ETeamJoinType.None) {
         TeamJoinType = other.TeamJoinType;
       }
+      memberSyncDatas_.MergeFrom(other.memberSyncDatas_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -297,6 +321,10 @@ namespace Zproto {
             TeamJoinType = (global::Zproto.ETeamJoinType) input.ReadEnum();
             break;
           }
+          case 50: {
+            memberSyncDatas_.AddEntriesFrom(input, _map_memberSyncDatas_codec);
+            break;
+          }
         }
       }
     #endif
@@ -333,6 +361,10 @@ namespace Zproto {
           }
           case 40: {
             TeamJoinType = (global::Zproto.ETeamJoinType) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            memberSyncDatas_.AddEntriesFrom(ref input, _map_memberSyncDatas_codec);
             break;
           }
         }

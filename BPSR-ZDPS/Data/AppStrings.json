@@ -132,5 +132,15 @@
     {
         "en": "Wildpack",
         "zh": "狼弓"
+    },
+    "SubProfession_FormlessExpertise":
+    {
+        "en": "Formless",
+        "zh": "无相"
+    },
+    "SubProfession_CrimsonExpertise":
+    {
+        "en": "Crimson",
+        "zh": "赤红"
     }
 }

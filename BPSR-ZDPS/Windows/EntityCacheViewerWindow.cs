@@ -138,11 +138,30 @@ namespace BPSR_ZDPS
                         var sb = new StringBuilder();
                         sb.AppendLine($"Name: {item.Value.Name}");
                         sb.AppendLine($"UID: {item.Value.UID}");
-                        sb.AppendLine($"Ability Score: {item.Value.AbilityScore}");
+                        sb.AppendLine($"Ability Score: {item.Value.AbilityScore} (+ {item.Value.SeasonStrength})");
                         sb.AppendLine($"Profession: {Professions.GetProfessionNameFromId(item.Value.ProfessionId)}{(item.Value.SubProfessionId > 0 ? $" - {Professions.GetSubProfessionNameFromId(item.Value.SubProfessionId)}" : "")}");
-                        sb.AppendLine($"Level: {item.Value.Level}");
+                        sb.AppendLine($"Level: {item.Value.Level} (+ {item.Value.SeasonLevel})");
 
-                        ImGui.Selectable($"{sb}");
+                        ImGui.Selectable($"{sb}##{item.Value.UUID}");
+                        if (ImGui.BeginPopupContextItem())
+                        {
+                            if (ImGui.MenuItem("Copy Name"))
+                            {
+                                ImGui.SetClipboardText(item.Value.Name);
+                            }
+                            ImGui.SetItemTooltip($"Copy '{item.Value.Name}' to the clipboard");
+                            if (ImGui.MenuItem("Copy UID"))
+                            {
+                                ImGui.SetClipboardText(item.Value.UID.ToString());
+                            }
+                            ImGui.SetItemTooltip($"Copy '{item.Value.UID}' to the clipboard");
+                            if (ImGui.MenuItem("Copy UUID"))
+                            {
+                                ImGui.SetClipboardText(item.Value.UUID.ToString());
+                            }
+                            ImGui.SetItemTooltip($"Copy '{item.Value.UUID}' to the clipboard");
+                            ImGui.EndPopup();
+                        }
                         ImGui.EndGroup();
                     }
 

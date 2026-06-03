@@ -16,6 +16,9 @@ using System.Reflection;
 using System.Security.Policy;
 using System.IO.Hashing;
 using ZLinq;
+using System.Text.RegularExpressions;
+using System.Numerics;
+using static BPSR_ZDPS.RendererImpl;
 
 namespace BPSR_ZDPS
 {
@@ -284,9 +287,34 @@ namespace BPSR_ZDPS
             return false;
         }
 
+        public static IntPtr GetMonitorForWindow(ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            return User32.MonitorFromWindow((IntPtr)viewport.Value.PlatformHandleRaw, User32.MONITOR_DEFAULTTONEAREST);
+        }
+
         public static void SetCurrentPlatformWindowVisible()
         {
             GLFW.SetWindowAttrib((GLFWwindowPtr)ImGui.GetWindowViewport().PlatformHandle, GLFW.GLFW_VISIBLE, 1);
+        }
+
+        public static bool CheckIfViewportValid(ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            unsafe
+            {
+                if (viewport != null && !viewport.Value.IsNull && viewport.Value.PlatformHandle != null && viewport.Value.PlatformHandleRaw != null)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static void SetWindowTitle(string title, ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            GLFW.SetWindowTitle((GLFWwindowPtr)viewport.Value.PlatformHandle, title);
         }
 
         /// <summary>
@@ -323,17 +351,49 @@ namespace BPSR_ZDPS
             viewport = viewport ?? ImGui.GetWindowViewport();
             User32.SetForegroundWindow((IntPtr)viewport.Value.PlatformHandleRaw);
         }
-        
+
+        public static void BringWindowToFront(IntPtr platformHandleRaw)
+        {
+            User32.SetForegroundWindow(platformHandleRaw);
+        }
+
+        public static bool IsWindowMinimized_GLFW(ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            return GLFW.GetWindowAttrib((GLFWwindowPtr)viewport.Value.PlatformHandle, GLFW.GLFW_ICONIFIED) > 0 ? true : false;
+        }
+
+        public static bool IsWindowMinimized(ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            return User32.IsIconic((IntPtr)viewport.Value.PlatformHandleRaw);
+        }
+
+        public static bool IsWindowMinimized(IntPtr platformHandleRaw)
+        {
+            return User32.IsIconic(platformHandleRaw);
+        }
+
         public static void MinimizeWindow(ImGuiViewportPtr? viewport = null)
         {
             viewport = viewport ?? ImGui.GetWindowViewport();
             User32.ShowWindow((IntPtr)viewport.Value.PlatformHandleRaw, User32.SW_MINIMIZE);
         }
 
+        public static void MinimizeWindow(IntPtr platformHandleRaw)
+        {
+            User32.ShowWindow(platformHandleRaw, User32.SW_MINIMIZE);
+        }
+
         public static void RestoreWindow(ImGuiViewportPtr? viewport = null)
         {
             viewport = viewport ?? ImGui.GetWindowViewport();
             User32.ShowWindow((IntPtr)viewport.Value.PlatformHandleRaw, User32.SW_RESTORE);
+        }
+
+        public static void RestoreWindow(IntPtr platformHandleRaw)
+        {
+            User32.ShowWindow(platformHandleRaw, User32.SW_RESTORE);
         }
 
         public static void SetWindowTopmost(IntPtr hWnd)
@@ -350,6 +410,90 @@ namespace BPSR_ZDPS
         {
             viewport = viewport ?? ImGui.GetWindowViewport();
             User32.SetWindowLong((IntPtr)viewport.Value.PlatformHandleRaw, nIndex, dwNewLong);
+        }
+
+        public static bool IsApplicationFocused()
+        {
+            IntPtr foregroundWindow = User32.GetForegroundWindow();
+
+            if (foregroundWindow == IntPtr.Zero)
+            {
+                return false;
+            }
+
+            User32.GetWindowThreadProcessId(foregroundWindow, out int activeProcessId);
+            return activeProcessId == System.Diagnostics.Process.GetCurrentProcess().Id;
+        }
+
+        public static void SetWindowClearColor(Vector4 clearColor, ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            var rdata = (ViewportRendererData*)viewport.Value.RendererUserData;
+            if (rdata != null)
+            {
+                clearColor.X *= clearColor.W;
+                clearColor.Y *= clearColor.W;
+                clearColor.Z *= clearColor.W;
+
+                rdata->ClearColor = clearColor;
+            }
+        }
+
+        public static void SetWindowDesiredRenderFPS(int fps, ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            var rdata = (ViewportRendererData*)viewport.Value.RendererUserData;
+            if (rdata != null)
+            {
+                rdata->DesiredRenderFPS = fps;
+            }
+        }
+
+        public static void SetWindowSyncInterval(uint syncInterval, ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            var rdata = (ViewportRendererData*)viewport.Value.RendererUserData;
+            if (rdata != null)
+            {
+                rdata->SyncInterval = syncInterval;
+            }
+        }
+
+        public static void SetWindowLimitFPS(bool limitFps, ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            var rdata = (ViewportRendererData*)viewport.Value.RendererUserData;
+            if (rdata != null)
+            {
+                rdata->LimitFPS = limitFps;
+            }
+        }
+
+        public static void SetWindowCopyToGDIEveryNthFrame(int frameNum, ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            var rdata = (ViewportRendererData*)viewport.Value.RendererUserData;
+            if (rdata != null)
+            {
+                rdata->CopyToGDIEveryNthFrame = frameNum;
+            }
+        }
+
+        public static ViewportRendererData* GetViewportRenderData(ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            var rdata = (ViewportRendererData*)viewport.Value.RendererUserData;
+            return rdata;
+        }
+
+        public static void SetViewportRenderData(Func<ViewportRendererData, ViewportRendererData> func, ImGuiViewportPtr? viewport = null)
+        {
+            viewport = viewport ?? ImGui.GetWindowViewport();
+            var rdata = (ViewportRendererData*)viewport.Value.RendererUserData;
+            if (rdata != null)
+            {
+                *rdata = func(*rdata);
+            }
         }
 
         public static unsafe void SetCurrentWindowIcon()
@@ -375,6 +519,9 @@ namespace BPSR_ZDPS
                 EGameCapturePreference.Epic => "Epic",
                 EGameCapturePreference.HaoPlaySea => "HaoPlay SEA",
                 EGameCapturePreference.XDG => "XDG",
+                EGameCapturePreference.HaoPlaySeaSteam => "HaoPlay SEA Steam",
+                EGameCapturePreference.XDGSteam => "XDG Steam",
+                EGameCapturePreference.WeGame => "WeGame",
                 EGameCapturePreference.Custom => "Custom"
             };
 
@@ -385,12 +532,15 @@ namespace BPSR_ZDPS
         {
             string[] exeNameToCapture = pref switch
             {
-                EGameCapturePreference.Auto => ["BPSR", "BPSR_STEAM", "BPSR_EPIC", "StarSEA", "StarASIA"],
+                EGameCapturePreference.Auto => ["BPSR", "BPSR_STEAM", "BPSR_EPIC", "StarSEA", "StarASIA", "StarSEA_STEAM", "StarASIA_STEAM", "Star"],
                 EGameCapturePreference.Steam => ["BPSR_STEAM"],
                 EGameCapturePreference.Standalone => ["BPSR"],
                 EGameCapturePreference.Epic => ["BPSR_EPIC"],
                 EGameCapturePreference.HaoPlaySea => ["StarSEA"],
                 EGameCapturePreference.XDG => ["StarASIA"],
+                EGameCapturePreference.HaoPlaySeaSteam => ["StarSEA_STEAM"],
+                EGameCapturePreference.XDGSteam => ["StarASIA_STEAM"],
+                EGameCapturePreference.WeGame => ["Star"],
                 EGameCapturePreference.Custom => [Settings.Instance.GameCaptureCustomExeName]
             };
 
@@ -399,16 +549,21 @@ namespace BPSR_ZDPS
 
         public static (string id, string token)? SplitAndValidateDiscordWebhook(string url)
         {
-            const string DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/";
+            const string DISCORD_DOMAIN = "discord.com";
+            const string DISCORD_WEBHOOK = "/api/webhooks/";
 
             try
             {
-                if (url.StartsWith(DISCORD_WEBHOOK_URL, StringComparison.InvariantCultureIgnoreCase))
+                Uri validator = new Uri(url);
+                if (validator.Host.EndsWith(DISCORD_DOMAIN, StringComparison.OrdinalIgnoreCase))
                 {
-                    var pathSegments = url.Substring(DISCORD_WEBHOOK_URL.Length).Split('/');
-                    if (pathSegments.Length == 2)
+                    if (validator.PathAndQuery.StartsWith(DISCORD_WEBHOOK, StringComparison.OrdinalIgnoreCase))
                     {
-                        return (pathSegments[0], pathSegments[1]);
+                        var pathSegments = validator.PathAndQuery.Substring(DISCORD_WEBHOOK.Length).Split('/');
+                        if (pathSegments.Length == 2)
+                        {
+                            return (pathSegments[0], pathSegments[1]);
+                        }
                     }
                 }
 
@@ -417,6 +572,20 @@ namespace BPSR_ZDPS
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+
+        // Wraps Regex.IsMatch in a try catch, and returns false if it throws
+        public static bool SafeRegexIsMatch(string text, string pattern)
+        {
+            try
+            {
+                var isMatch = Regex.IsMatch(text, pattern);
+                return isMatch;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 

@@ -25,19 +25,25 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3VuaW9uX2FjdGl2aXR5LnByb3RvEgZ6cHJvdG8aIHN0cnVfdW5p",
-            "b25fYWN0aXZpdHlfdGFyZ2V0LnByb3RvItQCCg1VbmlvbkFjdGl2aXR5EhkK",
-            "EWxhc3RfcmVmcmVzaF90aW1lGAEgASgDEj4KDXVuaW9uX3RhcmdldHMYAiAD",
-            "KAsyJy56cHJvdG8uVW5pb25BY3Rpdml0eS5VbmlvblRhcmdldHNFbnRyeRIX",
-            "Cg9uZXh0X2F3YXJkX3RpbWUYAyABKAMSRQoRbmV4dF9yZWZyZXNoX3RpbWUY",
-            "BCADKAsyKi56cHJvdG8uVW5pb25BY3Rpdml0eS5OZXh0UmVmcmVzaFRpbWVF",
-            "bnRyeRpQChFVbmlvblRhcmdldHNFbnRyeRILCgNrZXkYASABKAUSKgoFdmFs",
-            "dWUYAiABKAsyGy56cHJvdG8uVW5pb25BY3Rpdml0eVRhcmdldDoCOAEaNgoU",
-            "TmV4dFJlZnJlc2hUaW1lRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIg",
-            "ASgDOgI4AWIGcHJvdG8z"));
+            "b25fYWN0aXZpdHlfdGFyZ2V0LnByb3RvItoECg1VbmlvbkFjdGl2aXR5EigK",
+            "D2xhc3RSZWZyZXNoVGltZRgBIAEoA1IPbGFzdFJlZnJlc2hUaW1lEksKDHVu",
+            "aW9uVGFyZ2V0cxgCIAMoCzInLnpwcm90by5VbmlvbkFjdGl2aXR5LlVuaW9u",
+            "VGFyZ2V0c0VudHJ5Ugx1bmlvblRhcmdldHMSJAoNbmV4dEF3YXJkVGltZRgD",
+            "IAEoA1INbmV4dEF3YXJkVGltZRJUCg9uZXh0UmVmcmVzaFRpbWUYBCADKAsy",
+            "Ki56cHJvdG8uVW5pb25BY3Rpdml0eS5OZXh0UmVmcmVzaFRpbWVFbnRyeVIP",
+            "bmV4dFJlZnJlc2hUaW1lEm8KGHJlc2V0SGlzdG9yeUFjdGl2ZVBvaW50cxgF",
+            "IAMoCzIzLnpwcm90by5VbmlvbkFjdGl2aXR5LlJlc2V0SGlzdG9yeUFjdGl2",
+            "ZVBvaW50c0VudHJ5UhhyZXNldEhpc3RvcnlBY3RpdmVQb2ludHMSGgoIY3Vy",
+            "UG9pbnQYBiABKANSCGN1clBvaW50GlAKEVVuaW9uVGFyZ2V0c0VudHJ5EgsK",
+            "A2tleRgBIAEoBRIqCgV2YWx1ZRgCIAEoCzIbLnpwcm90by5VbmlvbkFjdGl2",
+            "aXR5VGFyZ2V0OgI4ARo2ChROZXh0UmVmcmVzaFRpbWVFbnRyeRILCgNrZXkY",
+            "ASABKAUSDQoFdmFsdWUYAiABKAM6AjgBGj8KHVJlc2V0SGlzdG9yeUFjdGl2",
+            "ZVBvaW50c0VudHJ5EgsKA2tleRgBIAEoAxINCgV2YWx1ZRgCIAEoAzoCOAFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUnionActivityTargetReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UnionActivity), global::Zproto.UnionActivity.Parser, new[]{ "LastRefreshTime", "UnionTargets", "NextAwardTime", "NextRefreshTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UnionActivity), global::Zproto.UnionActivity.Parser, new[]{ "LastRefreshTime", "UnionTargets", "NextAwardTime", "NextRefreshTime", "ResetHistoryActivePoints", "CurPoint" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
           }));
     }
     #endregion
@@ -83,6 +89,8 @@ namespace Zproto {
       unionTargets_ = other.unionTargets_.Clone();
       nextAwardTime_ = other.nextAwardTime_;
       nextRefreshTime_ = other.nextRefreshTime_.Clone();
+      resetHistoryActivePoints_ = other.resetHistoryActivePoints_.Clone();
+      curPoint_ = other.curPoint_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,7 +100,7 @@ namespace Zproto {
       return new UnionActivity(this);
     }
 
-    /// <summary>Field number for the "last_refresh_time" field.</summary>
+    /// <summary>Field number for the "lastRefreshTime" field.</summary>
     public const int LastRefreshTimeFieldNumber = 1;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_targets" field.</summary>
+    /// <summary>Field number for the "unionTargets" field.</summary>
     public const int UnionTargetsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.UnionActivityTarget>.Codec _map_unionTargets_codec
         = new pbc::MapField<int, global::Zproto.UnionActivityTarget>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnionActivityTarget.Parser), 18);
@@ -115,7 +123,7 @@ namespace Zproto {
       get { return unionTargets_; }
     }
 
-    /// <summary>Field number for the "next_award_time" field.</summary>
+    /// <summary>Field number for the "nextAwardTime" field.</summary>
     public const int NextAwardTimeFieldNumber = 3;
     private long nextAwardTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +135,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "next_refresh_time" field.</summary>
+    /// <summary>Field number for the "nextRefreshTime" field.</summary>
     public const int NextRefreshTimeFieldNumber = 4;
     private static readonly pbc::MapField<int, long>.Codec _map_nextRefreshTime_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 34);
@@ -136,6 +144,29 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<int, long> NextRefreshTime {
       get { return nextRefreshTime_; }
+    }
+
+    /// <summary>Field number for the "resetHistoryActivePoints" field.</summary>
+    public const int ResetHistoryActivePointsFieldNumber = 5;
+    private static readonly pbc::MapField<long, long>.Codec _map_resetHistoryActivePoints_codec
+        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 42);
+    private readonly pbc::MapField<long, long> resetHistoryActivePoints_ = new pbc::MapField<long, long>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<long, long> ResetHistoryActivePoints {
+      get { return resetHistoryActivePoints_; }
+    }
+
+    /// <summary>Field number for the "curPoint" field.</summary>
+    public const int CurPointFieldNumber = 6;
+    private long curPoint_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long CurPoint {
+      get { return curPoint_; }
+      set {
+        curPoint_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -157,6 +188,8 @@ namespace Zproto {
       if (!UnionTargets.Equals(other.UnionTargets)) return false;
       if (NextAwardTime != other.NextAwardTime) return false;
       if (!NextRefreshTime.Equals(other.NextRefreshTime)) return false;
+      if (!ResetHistoryActivePoints.Equals(other.ResetHistoryActivePoints)) return false;
+      if (CurPoint != other.CurPoint) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -168,6 +201,8 @@ namespace Zproto {
       hash ^= UnionTargets.GetHashCode();
       if (NextAwardTime != 0L) hash ^= NextAwardTime.GetHashCode();
       hash ^= NextRefreshTime.GetHashCode();
+      hash ^= ResetHistoryActivePoints.GetHashCode();
+      if (CurPoint != 0L) hash ^= CurPoint.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -196,6 +231,11 @@ namespace Zproto {
         output.WriteInt64(NextAwardTime);
       }
       nextRefreshTime_.WriteTo(output, _map_nextRefreshTime_codec);
+      resetHistoryActivePoints_.WriteTo(output, _map_resetHistoryActivePoints_codec);
+      if (CurPoint != 0L) {
+        output.WriteRawTag(48);
+        output.WriteInt64(CurPoint);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -216,6 +256,11 @@ namespace Zproto {
         output.WriteInt64(NextAwardTime);
       }
       nextRefreshTime_.WriteTo(ref output, _map_nextRefreshTime_codec);
+      resetHistoryActivePoints_.WriteTo(ref output, _map_resetHistoryActivePoints_codec);
+      if (CurPoint != 0L) {
+        output.WriteRawTag(48);
+        output.WriteInt64(CurPoint);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -234,6 +279,10 @@ namespace Zproto {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(NextAwardTime);
       }
       size += nextRefreshTime_.CalculateSize(_map_nextRefreshTime_codec);
+      size += resetHistoryActivePoints_.CalculateSize(_map_resetHistoryActivePoints_codec);
+      if (CurPoint != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CurPoint);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -254,6 +303,10 @@ namespace Zproto {
         NextAwardTime = other.NextAwardTime;
       }
       nextRefreshTime_.MergeFrom(other.nextRefreshTime_);
+      resetHistoryActivePoints_.MergeFrom(other.resetHistoryActivePoints_);
+      if (other.CurPoint != 0L) {
+        CurPoint = other.CurPoint;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -289,6 +342,14 @@ namespace Zproto {
             nextRefreshTime_.AddEntriesFrom(input, _map_nextRefreshTime_codec);
             break;
           }
+          case 42: {
+            resetHistoryActivePoints_.AddEntriesFrom(input, _map_resetHistoryActivePoints_codec);
+            break;
+          }
+          case 48: {
+            CurPoint = input.ReadInt64();
+            break;
+          }
         }
       }
     #endif
@@ -322,6 +383,14 @@ namespace Zproto {
           }
           case 34: {
             nextRefreshTime_.AddEntriesFrom(ref input, _map_nextRefreshTime_codec);
+            break;
+          }
+          case 42: {
+            resetHistoryActivePoints_.AddEntriesFrom(ref input, _map_resetHistoryActivePoints_codec);
+            break;
+          }
+          case 48: {
+            CurPoint = input.ReadInt64();
             break;
           }
         }

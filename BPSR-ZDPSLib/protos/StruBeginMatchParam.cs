@@ -24,9 +24,9 @@ namespace Zproto {
     static StruBeginMatchParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X2JlZ2luX21hdGNoX3BhcmFtLnByb3RvEgZ6cHJvdG8iOQoPQmVn",
-            "aW5NYXRjaFBhcmFtEhEKCXRhcmdldF9pZBgDIAEoBRITCgt3YW50X2xlYWRl",
-            "chgEIAEoBWIGcHJvdG8z"));
+            "ChxzdHJ1X2JlZ2luX21hdGNoX3BhcmFtLnByb3RvEgZ6cHJvdG8iTQoPQmVn",
+            "aW5NYXRjaFBhcmFtEhoKCHRhcmdldElkGAMgASgFUgh0YXJnZXRJZBIeCgp3",
+            "YW50TGVhZGVyGAQgASgFUgp3YW50TGVhZGVyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new BeginMatchParam(this);
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 3;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "want_leader" field.</summary>
+    /// <summary>Field number for the "wantLeader" field.</summary>
     public const int WantLeaderFieldNumber = 4;
     private int wantLeader_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

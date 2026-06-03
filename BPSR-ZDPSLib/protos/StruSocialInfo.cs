@@ -25,10 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X3NvY2lhbF9pbmZvLnByb3RvEgZ6cHJvdG8aHHN0cnVfdXNlcl9z",
-            "dW1tYXJ5X2RhdGEucHJvdG8ilAEKClNvY2lhbEluZm8SDgoGcmVtYXJrGAEg",
-            "ASgJEg4KBnJlbWluZBgCIAEoCBILCgN0b3AYAyABKAgSEAoIZ3JvdXBfaWQY",
-            "BCABKAUSLAoLc29jaWFsX2RhdGEYBSABKAsyFy56cHJvdG8uVXNlclN1bW1h",
-            "cnlEYXRhEhkKEWxhc3RfcmVmcmVzaF90aW1lGAYgASgDYgZwcm90bzM="));
+            "dW1tYXJ5X2RhdGEucHJvdG8iywEKClNvY2lhbEluZm8SFgoGcmVtYXJrGAEg",
+            "ASgJUgZyZW1hcmsSFgoGcmVtaW5kGAIgASgIUgZyZW1pbmQSEAoDdG9wGAMg",
+            "ASgIUgN0b3ASGAoHZ3JvdXBJZBgEIAEoBVIHZ3JvdXBJZBI3Cgpzb2NpYWxE",
+            "YXRhGAUgASgLMhcuenByb3RvLlVzZXJTdW1tYXJ5RGF0YVIKc29jaWFsRGF0",
+            "YRIoCg9sYXN0UmVmcmVzaFRpbWUYBiABKANSD2xhc3RSZWZyZXNoVGltZWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -125,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "group_id" field.</summary>
+    /// <summary>Field number for the "groupId" field.</summary>
     public const int GroupIdFieldNumber = 4;
     private int groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "social_data" field.</summary>
+    /// <summary>Field number for the "socialData" field.</summary>
     public const int SocialDataFieldNumber = 5;
     private global::Zproto.UserSummaryData socialData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_refresh_time" field.</summary>
+    /// <summary>Field number for the "lastRefreshTime" field.</summary>
     public const int LastRefreshTimeFieldNumber = 6;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

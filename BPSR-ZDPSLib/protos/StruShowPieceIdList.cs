@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X3Nob3dfcGllY2VfaWRfbGlzdC5wcm90bxIGenByb3RvGhVzdHJ1",
-            "X2RpcnR5X21hc2sucHJvdG8iJAoPU2hvd1BpZWNlSWRMaXN0EhEKCXBpZWNl",
-            "X2lkcxgBIAMoBWIGcHJvdG8z"));
+            "X2RpcnR5X21hc2sucHJvdG8iLQoPU2hvd1BpZWNlSWRMaXN0EhoKCHBpZWNl",
+            "SWRzGAEgAygFUghwaWVjZUlkc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new ShowPieceIdList(this);
     }
 
-    /// <summary>Field number for the "piece_ids" field.</summary>
+    /// <summary>Field number for the "pieceIds" field.</summary>
     public const int PieceIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_pieceIds_codec
         = pb::FieldCodec.ForInt32(10);

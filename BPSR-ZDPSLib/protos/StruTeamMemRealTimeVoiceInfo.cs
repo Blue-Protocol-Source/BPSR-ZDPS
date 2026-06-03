@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X3RlYW1fbWVtX3JlYWxfdGltZV92b2ljZV9pbmZvLnByb3RvEgZ6",
             "cHJvdG8aHmVudW1fZV9taWNyb3Bob25lX3N0YXR1cy5wcm90bxoZZW51bV9l",
-            "X3NwZWFrX3N0YXR1cy5wcm90byJ8ChhUZWFtTWVtUmVhbFRpbWVWb2ljZUlu",
-            "Zm8SNAoRbWljcm9waG9uZV9zdGF0dXMYASABKA4yGS56cHJvdG8uRU1pY3Jv",
-            "cGhvbmVTdGF0dXMSKgoMc3BlYWtfc3RhdHVzGAIgASgOMhQuenByb3RvLkVT",
-            "cGVha1N0YXR1c2IGcHJvdG8z"));
+            "X3NwZWFrX3N0YXR1cy5wcm90byKZAQoYVGVhbU1lbVJlYWxUaW1lVm9pY2VJ",
+            "bmZvEkUKEG1pY3JvcGhvbmVTdGF0dXMYASABKA4yGS56cHJvdG8uRU1pY3Jv",
+            "cGhvbmVTdGF0dXNSEG1pY3JvcGhvbmVTdGF0dXMSNgoLc3BlYWtTdGF0dXMY",
+            "AiABKA4yFC56cHJvdG8uRVNwZWFrU3RhdHVzUgtzcGVha1N0YXR1c2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEMicrophoneStatusReflection.Descriptor, global::Zproto.EnumESpeakStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new TeamMemRealTimeVoiceInfo(this);
     }
 
-    /// <summary>Field number for the "microphone_status" field.</summary>
+    /// <summary>Field number for the "microphoneStatus" field.</summary>
     public const int MicrophoneStatusFieldNumber = 1;
     private global::Zproto.EMicrophoneStatus microphoneStatus_ = global::Zproto.EMicrophoneStatus.Opened;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "speak_status" field.</summary>
+    /// <summary>Field number for the "speakStatus" field.</summary>
     public const int SpeakStatusFieldNumber = 2;
     private global::Zproto.ESpeakStatus speakStatus_ = global::Zproto.ESpeakStatus.Default;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

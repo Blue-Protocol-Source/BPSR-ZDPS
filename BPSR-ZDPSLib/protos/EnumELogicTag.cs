@@ -24,14 +24,15 @@ namespace Zproto {
     static EnumELogicTagReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZlbnVtX2VfbG9naWNfdGFnLnByb3RvEgZ6cHJvdG8qlwIKCUVMb2dpY1Rh",
+            "ChZlbnVtX2VfbG9naWNfdGFnLnByb3RvEgZ6cHJvdG8q4AIKCUVMb2dpY1Rh",
             "ZxIQCgxMb2dpY1RhZ05vbmUQABIVChFMb2dpY1RhZ0NvcmVTa2lsbBADEhUK",
             "EUxvZ2ljVGFnQmFzZVNraWxsEAQSFgoSTG9naWNUYWdGaW5hbFNraWxsEAUS",
-            "DgoKTG9naWNUYWdVUBAPEhIKDkxvZ2ljVGFnU2hpZWxkEBoSHAoYTG9naWNU",
-            "YWdIYXJkQ3Jvd2RDb250cm9sEEASGgoWTG9naWNUYWdEYW1hZ2VQaHlzaWNh",
-            "bBBCEhkKFUxvZ2ljVGFnRGFtYWdlTWFnaWNhbBBDEhEKDExvZ2ljVGFnSGVh",
-            "bBDrBxIRCgxMb2dpY1RhZ0J1ZmYQ7AcSEwoOTG9naWNUYWdEZWJ1ZmYQ7Qdi",
-            "BnByb3RvMw=="));
+            "FQoRTG9naWNUYWdBb3lpU2tpbGwQCBIOCgpMb2dpY1RhZ1VQEA8SEgoOTG9n",
+            "aWNUYWdTaGllbGQQGhIcChhMb2dpY1RhZ0hhcmRDcm93ZENvbnRyb2wQQBIa",
+            "ChZMb2dpY1RhZ0RhbWFnZVBoeXNpY2FsEEISGQoVTG9naWNUYWdEYW1hZ2VN",
+            "YWdpY2FsEEMSFwoTTG9naWNUYWdEdXRpZXNTa2lsbBBnEhcKE0xvZ2ljVGFn",
+            "UHVyaWZ5U2tpbGwQaBIRCgxMb2dpY1RhZ0hlYWwQ6wcSEQoMTG9naWNUYWdC",
+            "dWZmEOwHEhMKDkxvZ2ljVGFnRGVidWZmEO0HYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.ELogicTag), }, null, null));
@@ -45,11 +46,14 @@ namespace Zproto {
     [pbr::OriginalName("LogicTagCoreSkill")] LogicTagCoreSkill = 3,
     [pbr::OriginalName("LogicTagBaseSkill")] LogicTagBaseSkill = 4,
     [pbr::OriginalName("LogicTagFinalSkill")] LogicTagFinalSkill = 5,
+    [pbr::OriginalName("LogicTagAoyiSkill")] LogicTagAoyiSkill = 8,
     [pbr::OriginalName("LogicTagUP")] LogicTagUp = 15,
     [pbr::OriginalName("LogicTagShield")] LogicTagShield = 26,
     [pbr::OriginalName("LogicTagHardCrowdControl")] LogicTagHardCrowdControl = 64,
     [pbr::OriginalName("LogicTagDamagePhysical")] LogicTagDamagePhysical = 66,
     [pbr::OriginalName("LogicTagDamageMagical")] LogicTagDamageMagical = 67,
+    [pbr::OriginalName("LogicTagDutiesSkill")] LogicTagDutiesSkill = 103,
+    [pbr::OriginalName("LogicTagPurifySkill")] LogicTagPurifySkill = 104,
     [pbr::OriginalName("LogicTagHeal")] LogicTagHeal = 1003,
     [pbr::OriginalName("LogicTagBuff")] LogicTagBuff = 1004,
     [pbr::OriginalName("LogicTagDebuff")] LogicTagDebuff = 1005,

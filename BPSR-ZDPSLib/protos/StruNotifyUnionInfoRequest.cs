@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X25vdGlmeV91bmlvbl9pbmZvX3JlcXVlc3QucHJvdG8SBnpwcm90",
             "bxohZW51bV9lbnVtX3VuaW9uX25vdGlmeV90eXBlLnByb3RvGhVzdHJ1X3Vu",
-            "aW9uX2luZm8ucHJvdG8iZAoWTm90aWZ5VW5pb25JbmZvUmVxdWVzdBIfCgRp",
-            "bmZvGAIgASgLMhEuenByb3RvLlVuaW9uSW5mbxIpCgR0eXBlGAMgASgOMhsu",
-            "enByb3RvLkVudW1Vbmlvbk5vdGlmeVR5cGViBnByb3RvMw=="));
+            "aW9uX2luZm8ucHJvdG8icAoWTm90aWZ5VW5pb25JbmZvUmVxdWVzdBIlCgRp",
+            "bmZvGAIgASgLMhEuenByb3RvLlVuaW9uSW5mb1IEaW5mbxIvCgR0eXBlGAMg",
+            "ASgOMhsuenByb3RvLkVudW1Vbmlvbk5vdGlmeVR5cGVSBHR5cGViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEnumUnionNotifyTypeReflection.Descriptor, global::Zproto.StruUnionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2xpZl9wcm9mZXNzaW9uX3BvaW50X3RpcHNfaW5mby5wcm90bxIG",
-            "enByb3RvGh1lbnVtX2VfaXRlbV9nZXRfb3B0X3NyYy5wcm90byKCAQoaTGlm",
-            "UHJvZmVzc2lvblBvaW50VGlwc0luZm8SMwoTZ2V0X2xpZmVfcG9pbnRfdHlw",
-            "ZRgBIAEoDjIWLnpwcm90by5FSXRlbUdldE9wdFNyYxIaChJsaWZlX3Byb2Zl",
-            "c3Npb25faWQYAiABKA0SEwoLcG9pbnRfY291bnQYAyABKA1iBnByb3RvMw=="));
+            "enByb3RvGh1lbnVtX2VfaXRlbV9nZXRfb3B0X3NyYy5wcm90byKsAQoaTGlm",
+            "UHJvZmVzc2lvblBvaW50VGlwc0luZm8SQgoQZ2V0TGlmZVBvaW50VHlwZRgB",
+            "IAEoDjIWLnpwcm90by5FSXRlbUdldE9wdFNyY1IQZ2V0TGlmZVBvaW50VHlw",
+            "ZRIqChBsaWZlUHJvZmVzc2lvbklkGAIgASgNUhBsaWZlUHJvZmVzc2lvbklk",
+            "Eh4KCnBvaW50Q291bnQYAyABKA1SCnBvaW50Q291bnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEItemGetOptSrcReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new LifProfessionPointTipsInfo(this);
     }
 
-    /// <summary>Field number for the "get_life_point_type" field.</summary>
+    /// <summary>Field number for the "getLifePointType" field.</summary>
     public const int GetLifePointTypeFieldNumber = 1;
     private global::Zproto.EItemGetOptSrc getLifePointType_ = global::Zproto.EItemGetOptSrc.Default;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "life_profession_id" field.</summary>
+    /// <summary>Field number for the "lifeProfessionId" field.</summary>
     public const int LifeProfessionIdFieldNumber = 2;
     private uint lifeProfessionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "point_count" field.</summary>
+    /// <summary>Field number for the "pointCount" field.</summary>
     public const int PointCountFieldNumber = 3;
     private uint pointCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

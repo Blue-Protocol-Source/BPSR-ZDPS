@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X3VzZV9wcm9mZXNzaW9uX3NraWxsX3NraW5fcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvIlkKHVVzZVByb2Zlc3Npb25Ta2lsbFNraW5SZXF1ZXN0EhUK",
-            "DXByb2Zlc3Npb25faWQYASABKAUSEAoIc2tpbGxfaWQYAiABKAUSDwoHc2tp",
-            "bl9pZBgDIAEoBWIGcHJvdG8z"));
+            "bxIGenByb3RvInUKHVVzZVByb2Zlc3Npb25Ta2lsbFNraW5SZXF1ZXN0EiIK",
+            "DHByb2Zlc3Npb25JZBgBIAEoBVIMcHJvZmVzc2lvbklkEhgKB3NraWxsSWQY",
+            "AiABKAVSB3NraWxsSWQSFgoGc2tpbklkGAMgASgFUgZza2luSWRiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new UseProfessionSkillSkinRequest(this);
     }
 
-    /// <summary>Field number for the "profession_id" field.</summary>
+    /// <summary>Field number for the "professionId" field.</summary>
     public const int ProfessionIdFieldNumber = 1;
     private int professionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skill_id" field.</summary>
+    /// <summary>Field number for the "skillId" field.</summary>
     public const int SkillIdFieldNumber = 2;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skin_id" field.</summary>
+    /// <summary>Field number for the "skinId" field.</summary>
     public const int SkinIdFieldNumber = 3;
     private int skinId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

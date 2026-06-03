@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiZzdHJ1X2NvbW11bml0eV9wZXJzb25fZGF0YV9yZXBseS5wcm90bxIGenBy",
             "b3RvGh9zdHJ1X2NvbW11bml0eV9hcHBseV9pbmZvLnByb3RvGhdlbnVtX2Vf",
-            "ZXJyb3JfY29kZS5wcm90byKQAQoYQ29tbXVuaXR5UGVyc29uRGF0YVJlcGx5",
-            "EikKBWl0ZW1zGAEgAygLMhouenByb3RvLkNvbW11bml0eUFwcGx5SW5mbxIj",
-            "ChtsYXN0X2V4aXRfY29oYWJpdGF0aW9uX3RpbWUYAiABKAMSJAoIZXJyX2Nv",
-            "ZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "ZXJyb3JfY29kZS5wcm90byK2AQoYQ29tbXVuaXR5UGVyc29uRGF0YVJlcGx5",
+            "EjAKBWl0ZW1zGAEgAygLMhouenByb3RvLkNvbW11bml0eUFwcGx5SW5mb1IF",
+            "aXRlbXMSOgoYTGFzdEV4aXRDb2hhYml0YXRpb25UaW1lGAIgASgDUhhMYXN0",
+            "RXhpdENvaGFiaXRhdGlvblRpbWUSLAoHZXJyQ29kZRgDIAEoDjISLnpwcm90",
+            "by5FRXJyb3JDb2RlUgdlcnJDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityApplyInfoReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -98,7 +99,7 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "last_exit_cohabitation_time" field.</summary>
+    /// <summary>Field number for the "LastExitCohabitationTime" field.</summary>
     public const int LastExitCohabitationTimeFieldNumber = 2;
     private long lastExitCohabitationTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

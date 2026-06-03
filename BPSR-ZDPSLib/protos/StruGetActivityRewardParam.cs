@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2dldF9hY3Rpdml0eV9yZXdhcmRfcGFyYW0ucHJvdG8SBnpwcm90",
-            "byJCChZHZXRBY3Rpdml0eVJld2FyZFBhcmFtEhUKDWFjdGl2aXR5X3V1aWQY",
-            "ASABKAMSEQoJcmV3YXJkX2lkGAIgASgFYgZwcm90bzM="));
+            "byJYChZHZXRBY3Rpdml0eVJld2FyZFBhcmFtEiIKDGFjdGl2aXR5VXVpZBgB",
+            "IAEoA1IMYWN0aXZpdHlVdWlkEhoKCHJld2FyZElkGAIgASgFUghyZXdhcmRJ",
+            "ZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new GetActivityRewardParam(this);
     }
 
-    /// <summary>Field number for the "activity_uuid" field.</summary>
+    /// <summary>Field number for the "activityUuid" field.</summary>
     public const int ActivityUuidFieldNumber = 1;
     private long activityUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "reward_id" field.</summary>
+    /// <summary>Field number for the "rewardId" field.</summary>
     public const int RewardIdFieldNumber = 2;
     private int rewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2VuZXJneV9pbmZvLnByb3RvEgZ6cHJvdG8aG3N0cnVfZW5lcmd5",
-            "X2l0ZW1faW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIscBCgpF",
-            "bmVyZ3lJbmZvEhQKDGVuZXJneV92YWx1ZRgBIAEoDRISCgp1bmxvY2tfbnVt",
-            "GAIgASgNEkAKEGVuZXJneV9pdGVtX2luZm8YAyADKAsyJi56cHJvdG8uRW5l",
-            "cmd5SW5mby5FbmVyZ3lJdGVtSW5mb0VudHJ5Gk0KE0VuZXJneUl0ZW1JbmZv",
-            "RW50cnkSCwoDa2V5GAEgASgNEiUKBXZhbHVlGAIgASgLMhYuenByb3RvLkVu",
-            "ZXJneUl0ZW1JbmZvOgI4AWIGcHJvdG8z"));
+            "X2l0ZW1faW5mby5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIusBCgpF",
+            "bmVyZ3lJbmZvEiAKC2VuZXJneVZhbHVlGAEgASgNUgtlbmVyZ3lWYWx1ZRIc",
+            "Cgl1bmxvY2tOdW0YAiABKA1SCXVubG9ja051bRJOCg5lbmVyZ3lJdGVtSW5m",
+            "bxgDIAMoCzImLnpwcm90by5FbmVyZ3lJbmZvLkVuZXJneUl0ZW1JbmZvRW50",
+            "cnlSDmVuZXJneUl0ZW1JbmZvGk0KE0VuZXJneUl0ZW1JbmZvRW50cnkSCwoD",
+            "a2V5GAEgASgNEiUKBXZhbHVlGAIgASgLMhYuenByb3RvLkVuZXJneUl0ZW1J",
+            "bmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruEnergyItemInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new EnergyInfo(this);
     }
 
-    /// <summary>Field number for the "energy_value" field.</summary>
+    /// <summary>Field number for the "energyValue" field.</summary>
     public const int EnergyValueFieldNumber = 1;
     private uint energyValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unlock_num" field.</summary>
+    /// <summary>Field number for the "unlockNum" field.</summary>
     public const int UnlockNumFieldNumber = 2;
     private uint unlockNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "energy_item_info" field.</summary>
+    /// <summary>Field number for the "energyItemInfo" field.</summary>
     public const int EnergyItemInfoFieldNumber = 3;
     private static readonly pbc::MapField<uint, global::Zproto.EnergyItemInfo>.Codec _map_energyItemInfo_codec
         = new pbc::MapField<uint, global::Zproto.EnergyItemInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.EnergyItemInfo.Parser), 26);

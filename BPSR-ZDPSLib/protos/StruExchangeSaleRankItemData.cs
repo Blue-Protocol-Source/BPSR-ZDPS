@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CidzdHJ1X2V4Y2hhbmdlX3NhbGVfcmFua19pdGVtX2RhdGEucHJvdG8SBnpw",
-            "cm90byI6ChhFeGNoYW5nZVNhbGVSYW5rSXRlbURhdGESEAoIcmFua19pZHgY",
-            "ASABKAUSDAoEcmF0ZRgCIAEoBWIGcHJvdG8z"));
+            "cm90byJIChhFeGNoYW5nZVNhbGVSYW5rSXRlbURhdGESGAoHcmFua0lkeBgB",
+            "IAEoBVIHcmFua0lkeBISCgRyYXRlGAIgASgFUgRyYXRlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new ExchangeSaleRankItemData(this);
     }
 
-    /// <summary>Field number for the "rank_idx" field.</summary>
+    /// <summary>Field number for the "rankIdx" field.</summary>
     public const int RankIdxFieldNumber = 1;
     private int rankIdx_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

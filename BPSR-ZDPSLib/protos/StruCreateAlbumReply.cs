@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X2NyZWF0ZV9hbGJ1bV9yZXBseS5wcm90bxIGenByb3RvGhVzdHJ1",
-            "X2FsYnVtX3Nob3cucHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIl8K",
-            "EENyZWF0ZUFsYnVtUmVwbHkSJQoKYWxidW1faW5mbxgDIAEoCzIRLnpwcm90",
-            "by5BbGJ1bVNob3cSJAoIZXJyX2NvZGUYBCABKA4yEi56cHJvdG8uRUVycm9y",
-            "Q29kZWIGcHJvdG8z"));
+            "X2FsYnVtX3Nob3cucHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvInEK",
+            "EENyZWF0ZUFsYnVtUmVwbHkSLwoJYWxidW1JbmZvGAMgASgLMhEuenByb3Rv",
+            "LkFsYnVtU2hvd1IJYWxidW1JbmZvEiwKB2VyckNvZGUYBCABKA4yEi56cHJv",
+            "dG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAlbumShowReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new CreateAlbumReply(this);
     }
 
-    /// <summary>Field number for the "album_info" field.</summary>
+    /// <summary>Field number for the "albumInfo" field.</summary>
     public const int AlbumInfoFieldNumber = 3;
     private global::Zproto.AlbumShow albumInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

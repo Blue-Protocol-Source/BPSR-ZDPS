@@ -22,7 +22,15 @@ public static unsafe class ImageHelper
 
     public static ImTextureRef? LoadTexture(string filePath, string? key = null)
     {
-        return LoadTexture(_manager.Device, _manager.DeviceContext, filePath, key);
+        try
+        {
+            return LoadTexture(_manager.Device, _manager.DeviceContext, filePath, key);
+        }
+        catch (Exception ex)
+        {
+            Serilog.Log.Error(ex, "Error encountered during ImageHelper.LoadTexture. Attempting a null return to save the process...");
+            return null;
+        }
     }
 
     public static ImTextureRef? LoadTexture(ID3D11Device1* device, ID3D11DeviceContext1* context, string filePath, string? key = null)

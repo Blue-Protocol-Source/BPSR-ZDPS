@@ -2,7 +2,6 @@
 using BPSR_ZDPS.DataTypes.Chat;
 using BPSR_ZDPSLib;
 using System.Collections.Concurrent;
-using System.IO.Enumeration;
 using Zproto;
 using static Zproto.ChitChatNtf.Types;
 
@@ -13,6 +12,7 @@ namespace BPSR_ZDPS.Managers
         public static ConcurrentDictionary<long, ChatMessage> Messages = [];
         public static ConcurrentDictionary<long, User> Senders = [];
         public static List<ChatTab> ChatTabs = [];
+        private static long SessionMsgIdSrc = 0;
 
         public static event Action<User, ChatMessage, NotifyNewestChitChatMsgs> OnChatMessage;
 
@@ -34,10 +34,13 @@ namespace BPSR_ZDPS.Managers
             var msg = NotifyNewestChitChatMsgs.Parser.ParseFrom(span);
             if (msg != null)
             {
-                var chatMsg = new ChatMessage(msg.VRequest.ChatMsg.MsgInfo, msg.VRequest.ChannelType, msg.VRequest.ChatMsg.SendCharInfo.CharId, msg.VRequest.ChatMsg.Timestamp);
+                // Override with a session global id as the games ids are only unique to a channel and session
+                msg.VRequest.ChatMsg.MsgId = SessionMsgIdSrc++;
+
+                var chatMsg = new ChatMessage(msg.VRequest.ChatMsg.MsgInfo, msg.VRequest.ChannelType, msg.VRequest.ChatMsg.SendCharInfo.CharID, msg.VRequest.ChatMsg.Timestamp);
                 User chatUser;
 
-                if (Senders.TryGetValue(msg.VRequest.ChatMsg.SendCharInfo.CharId, out var sender))
+                if (Senders.TryGetValue(msg.VRequest.ChatMsg.SendCharInfo.CharID, out var sender))
                 {
                     sender.Info = msg.VRequest.ChatMsg.SendCharInfo;
                     sender.NumSentMessages++;
@@ -46,7 +49,7 @@ namespace BPSR_ZDPS.Managers
                 else
                 {
                     var chatSender = new User(msg.VRequest.ChatMsg.SendCharInfo);
-                    Senders.TryAdd(msg.VRequest.ChatMsg.SendCharInfo.CharId, chatSender);
+                    Senders.TryAdd(msg.VRequest.ChatMsg.SendCharInfo.CharID, chatSender);
                     chatUser = chatSender;
                 }
 
@@ -63,6 +66,14 @@ namespace BPSR_ZDPS.Managers
                                 if (chanMsgIds.TryDequeue(out var msgId))
                                 {
                                     Messages.Remove(msgId, out var _);
+
+                                    foreach (var tab in ChatTabs)
+                                    {
+                                        lock (tab.MessageIds)
+                                        {
+                                            tab.MessageIds.Remove(msgId);
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -108,6 +119,11 @@ namespace BPSR_ZDPS.Managers
                     }
                 }
             }
+
+            foreach (var tab in ChatTabs)
+            {
+                RefilterChatTab(tab);
+            }
         }
 
         public static void AddChatTab(ChatTabConfig config)
@@ -131,17 +147,28 @@ namespace BPSR_ZDPS.Managers
         {
             if (Senders.TryGetValue(msg.SenderId, out var sender))
             {
+                bool isBlocked = IsUserBlocked(msg.SenderId);
+                if (isBlocked)
+                {
+                    return false;
+                }
+
                 bool isTextMsg = msg.Msg.MsgType == ChitChatMsgType.ChatMsgTextMessage;
                 bool isFromChannel = tab.Config.Channels.Contains(msg.Channel);
                 bool isOverLevel = sender.Info.Level >= tab.Config.OverLevel;
 
                 if (!isTextMsg)
                 {
+                    if (msg.Msg.MsgType == ChitChatMsgType.ChatMsgPictureEmoji && Settings.Instance.WindowSettings.ChatWindow.HideStickers)
+                    {
+                        return false;
+                    }
+
                     return isFromChannel && isOverLevel;
                 }
 
-                bool matchesContains = string.IsNullOrWhiteSpace(tab.Config.Contains) || FileSystemName.MatchesSimpleExpression(tab.Config.Contains, msg.Msg.MsgText);
-                bool matchesDoesNotContain = string.IsNullOrWhiteSpace(tab.Config.DoesNotContain) || !FileSystemName.MatchesSimpleExpression(tab.Config.DoesNotContain, msg.Msg.MsgText);
+                bool matchesContains = string.IsNullOrWhiteSpace(tab.Config.Contains) || Utils.SafeRegexIsMatch(msg.Msg.MsgText, tab.Config.Contains);
+                bool matchesDoesNotContain = string.IsNullOrWhiteSpace(tab.Config.DoesNotContain) || !Utils.SafeRegexIsMatch(msg.Msg.MsgText, tab.Config.DoesNotContain);
 
                 return isFromChannel && isOverLevel && matchesContains && matchesDoesNotContain;
             }
@@ -154,7 +181,7 @@ namespace BPSR_ZDPS.Managers
             lock (tab.MessageIds)
             {
                 tab.MessageIds.Clear();
-                foreach (var msg in Messages)
+                foreach (var msg in Messages.OrderBy(x => x.Value.TimeStamp))
                 {
                     if (IsFilteredForChatTab(tab, msg.Value))
                     {
@@ -162,6 +189,37 @@ namespace BPSR_ZDPS.Managers
                     }
                 }
             }
+        }
+
+        public static void RefilterAllTabs()
+        {
+            foreach (var tab in ChatTabs)
+            {
+                RefilterChatTab(tab);
+            }
+        }
+
+        public static void BlockUser(User user)
+        {
+            var blockedUser = new UserBlock()
+            {
+                ID = user.Info.CharID,
+                Name = user.Info.Name,
+                BlockedAt = DateTime.Now
+            };
+
+            Settings.Instance.Chat.BlockedUsers.TryAdd(user.Info.CharID, blockedUser);
+        }
+
+        public static void UnblockUser(long userId)
+        {
+            Settings.Instance.Chat.BlockedUsers.TryRemove(userId, out var blockedUser);
+        }
+
+        public static bool IsUserBlocked(long userId)
+        {
+            bool isBlocked = Settings.Instance.Chat.BlockedUsers.ContainsKey(userId);
+            return isBlocked;
         }
     }
 }

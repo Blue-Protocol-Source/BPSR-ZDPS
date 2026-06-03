@@ -26,12 +26,14 @@ namespace Zproto {
           string.Concat(
             "ChhzdHJ1X3RlYW1fbWVtX2RhdGEucHJvdG8SBnpwcm90bxoic3RydV90ZWFt",
             "X21lbWJlcl9zb2NpYWxfZGF0YS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnBy",
-            "b3RvIt8BCgtUZWFtTWVtRGF0YRIPCgdjaGFyX2lkGAEgASgDEhIKCmVudGVy",
-            "X3RpbWUYAiABKA0SEwoLY2FsbF9zdGF0dXMYAyABKAUSEQoJdGFsZW50X2lk",
-            "GAQgASgFEhUKDW9ubGluZV9zdGF0dXMYBSABKAUSEAoIc2NlbmVfaWQYBiAB",
-            "KAUSFQoNdm9pY2VfaXNfb3BlbhgHIAEoCBIQCghncm91cF9pZBgIIAEoBRIx",
-            "Cgtzb2NpYWxfZGF0YRgJIAEoCzIcLnpwcm90by5UZWFtTWVtYmVyU29jaWFs",
-            "RGF0YWIGcHJvdG8z"));
+            "b3RvIrcCCgtUZWFtTWVtRGF0YRIWCgZjaGFySWQYASABKANSBmNoYXJJZBIc",
+            "CgllbnRlclRpbWUYAiABKA1SCWVudGVyVGltZRIeCgpjYWxsU3RhdHVzGAMg",
+            "ASgFUgpjYWxsU3RhdHVzEhoKCHRhbGVudElkGAQgASgFUgh0YWxlbnRJZBIi",
+            "CgxvbmxpbmVTdGF0dXMYBSABKAVSDG9ubGluZVN0YXR1cxIYCgdzY2VuZUlk",
+            "GAYgASgFUgdzY2VuZUlkEiAKC3ZvaWNlSXNPcGVuGAcgASgIUgt2b2ljZUlz",
+            "T3BlbhIYCgdncm91cElkGAggASgFUgdncm91cElkEjwKCnNvY2lhbERhdGEY",
+            "CSABKAsyHC56cHJvdG8uVGVhbU1lbWJlclNvY2lhbERhdGFSCnNvY2lhbERh",
+            "dGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTeamMemberSocialDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +97,7 @@ namespace Zproto {
       return new TeamMemData(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -107,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "enter_time" field.</summary>
+    /// <summary>Field number for the "enterTime" field.</summary>
     public const int EnterTimeFieldNumber = 2;
     private uint enterTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -119,7 +121,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "call_status" field.</summary>
+    /// <summary>Field number for the "callStatus" field.</summary>
     public const int CallStatusFieldNumber = 3;
     private int callStatus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,7 +133,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "talent_id" field.</summary>
+    /// <summary>Field number for the "talentId" field.</summary>
     public const int TalentIdFieldNumber = 4;
     private int talentId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,7 +145,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "online_status" field.</summary>
+    /// <summary>Field number for the "onlineStatus" field.</summary>
     public const int OnlineStatusFieldNumber = 5;
     private int onlineStatus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,7 +157,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
+    /// <summary>Field number for the "sceneId" field.</summary>
     public const int SceneIdFieldNumber = 6;
     private int sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +169,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "voice_is_open" field.</summary>
+    /// <summary>Field number for the "voiceIsOpen" field.</summary>
     public const int VoiceIsOpenFieldNumber = 7;
     private bool voiceIsOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "group_id" field.</summary>
+    /// <summary>Field number for the "groupId" field.</summary>
     public const int GroupIdFieldNumber = 8;
     private int groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -191,7 +193,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "social_data" field.</summary>
+    /// <summary>Field number for the "socialData" field.</summary>
     public const int SocialDataFieldNumber = 9;
     private global::Zproto.TeamMemberSocialData socialData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

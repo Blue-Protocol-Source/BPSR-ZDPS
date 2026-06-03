@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2V4Y2hhbmdlX2xvd2VzdF9wcmljZV9yZXBseS5wcm90bxIGenBy",
-            "b3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byJpChhFeGNoYW5nZUxvd2Vz",
-            "dFByaWNlUmVwbHkSEQoJY29uZmlnX2lkGAEgASgFEhQKDGxvd2VzdF9wcmlj",
-            "ZRgCIAEoAxIkCghlcnJfY29kZRgDIAEoDjISLnpwcm90by5FRXJyb3JDb2Rl",
-            "YgZwcm90bzM="));
+            "b3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90byKGAQoYRXhjaGFuZ2VMb3dl",
+            "c3RQcmljZVJlcGx5EhoKCGNvbmZpZ0lkGAEgASgFUghjb25maWdJZBIgCgts",
+            "b3dlc3RQcmljZRgCIAEoA1ILbG93ZXN0UHJpY2USLAoHZXJyQ29kZRgDIAEo",
+            "DjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new ExchangeLowestPriceReply(this);
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
+    /// <summary>Field number for the "configId" field.</summary>
     public const int ConfigIdFieldNumber = 1;
     private int configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lowest_price" field.</summary>
+    /// <summary>Field number for the "lowestPrice" field.</summary>
     public const int LowestPriceFieldNumber = 2;
     private long lowestPrice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

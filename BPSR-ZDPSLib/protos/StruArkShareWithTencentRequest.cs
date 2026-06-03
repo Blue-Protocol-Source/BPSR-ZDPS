@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2Fya19zaGFyZV93aXRoX3RlbmNlbnRfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvImAKGkFya1NoYXJlV2l0aFRlbmNlbnRSZXF1ZXN0EhYKDnRhcmdl",
-            "dF9jaGFyX2lkGAEgASgEEhUKDXNlbGVmX29wZW5faWQYAiABKAkSEwoLc2Vs",
-            "ZWZfdG9rZW4YAyABKAliBnByb3RvMw=="));
+            "enByb3RvIoIBChpBcmtTaGFyZVdpdGhUZW5jZW50UmVxdWVzdBIiCgx0YXJn",
+            "ZXRDaGFySWQYASABKARSDHRhcmdldENoYXJJZBIgCgtzZWxlZk9wZW5JZBgC",
+            "IAEoCVILc2VsZWZPcGVuSWQSHgoKc2VsZWZUb2tlbhgDIAEoCVIKc2VsZWZU",
+            "b2tlbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new ArkShareWithTencentRequest(this);
     }
 
-    /// <summary>Field number for the "target_char_id" field.</summary>
+    /// <summary>Field number for the "targetCharId" field.</summary>
     public const int TargetCharIdFieldNumber = 1;
     private ulong targetCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "selef_open_id" field.</summary>
+    /// <summary>Field number for the "selefOpenId" field.</summary>
     public const int SelefOpenIdFieldNumber = 2;
     private string selefOpenId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "selef_token" field.</summary>
+    /// <summary>Field number for the "selefToken" field.</summary>
     public const int SelefTokenFieldNumber = 3;
     private string selefToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

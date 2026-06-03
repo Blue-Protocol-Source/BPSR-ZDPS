@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X3N5bmNfbWFpbF9pbmZvX3JlcXVlc3QucHJvdG8SBnpwcm90bxoa",
-            "c3RydV9tYWlsX3N0YXRlX2luZm8ucHJvdG8ikQEKE1N5bmNNYWlsSW5mb1Jl",
-            "cXVlc3QSNQoFbWFpbHMYASADKAsyJi56cHJvdG8uU3luY01haWxJbmZvUmVx",
-            "dWVzdC5NYWlsc0VudHJ5GkMKCk1haWxzRW50cnkSCwoDa2V5GAEgASgDEiQK",
-            "BXZhbHVlGAIgASgLMhUuenByb3RvLk1haWxTdGF0ZUluZm86AjgBYgZwcm90",
-            "bzM="));
+            "c3RydV9tYWlsX3N0YXRlX2luZm8ucHJvdG8imAEKE1N5bmNNYWlsSW5mb1Jl",
+            "cXVlc3QSPAoFbWFpbHMYASADKAsyJi56cHJvdG8uU3luY01haWxJbmZvUmVx",
+            "dWVzdC5NYWlsc0VudHJ5UgVtYWlscxpDCgpNYWlsc0VudHJ5EgsKA2tleRgB",
+            "IAEoAxIkCgV2YWx1ZRgCIAEoCzIVLnpwcm90by5NYWlsU3RhdGVJbmZvOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMailStateInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

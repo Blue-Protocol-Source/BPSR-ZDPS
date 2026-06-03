@@ -25,14 +25,17 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X3dlZWtseV90b3dlcl9yZWNvcmQucHJvdG8SBnpwcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIm0KEVdlZWtseVRvd2VyUmVjb3JkEhIKCmJl",
-            "Z2luX3RpbWUYASABKAMSFwoPbWF4X2NsaW1iX3VwX2lkGAIgASgFEhoKEmF3",
-            "YXJkX2NsaW1iX3VwX2lkcxgDIAMoBRIPCgdydWxlX2lkGAQgASgFYgZwcm90",
-            "bzM="));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIvkBChFXZWVrbHlUb3dlclJlY29yZBIcCgli",
+            "ZWdpblRpbWUYASABKANSCWJlZ2luVGltZRIiCgxtYXhDbGltYlVwSWQYAiAB",
+            "KAVSDG1heENsaW1iVXBJZBIoCg9hd2FyZENsaW1iVXBJZHMYAyADKAVSD2F3",
+            "YXJkQ2xpbWJVcElkcxIWCgZydWxlSWQYBCABKAVSBnJ1bGVJZBI0ChVtYXhK",
+            "dW1wQXdhcmRDbGltYlVwSWQYBSABKAVSFW1heEp1bXBBd2FyZENsaW1iVXBJ",
+            "ZBIqChBsYXN0TWF4Q2xpbWJVcElkGAYgASgFUhBsYXN0TWF4Q2xpbWJVcElk",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WeeklyTowerRecord), global::Zproto.WeeklyTowerRecord.Parser, new[]{ "BeginTime", "MaxClimbUpId", "AwardClimbUpIds", "RuleId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WeeklyTowerRecord), global::Zproto.WeeklyTowerRecord.Parser, new[]{ "BeginTime", "MaxClimbUpId", "AwardClimbUpIds", "RuleId", "MaxJumpAwardClimbUpId", "LastMaxClimbUpId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -78,6 +81,8 @@ namespace Zproto {
       maxClimbUpId_ = other.maxClimbUpId_;
       awardClimbUpIds_ = other.awardClimbUpIds_.Clone();
       ruleId_ = other.ruleId_;
+      maxJumpAwardClimbUpId_ = other.maxJumpAwardClimbUpId_;
+      lastMaxClimbUpId_ = other.lastMaxClimbUpId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,7 +92,7 @@ namespace Zproto {
       return new WeeklyTowerRecord(this);
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
+    /// <summary>Field number for the "beginTime" field.</summary>
     public const int BeginTimeFieldNumber = 1;
     private long beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "max_climb_up_id" field.</summary>
+    /// <summary>Field number for the "maxClimbUpId" field.</summary>
     public const int MaxClimbUpIdFieldNumber = 2;
     private int maxClimbUpId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_climb_up_ids" field.</summary>
+    /// <summary>Field number for the "awardClimbUpIds" field.</summary>
     public const int AwardClimbUpIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_awardClimbUpIds_codec
         = pb::FieldCodec.ForInt32(26);
@@ -122,7 +127,7 @@ namespace Zproto {
       get { return awardClimbUpIds_; }
     }
 
-    /// <summary>Field number for the "rule_id" field.</summary>
+    /// <summary>Field number for the "ruleId" field.</summary>
     public const int RuleIdFieldNumber = 4;
     private int ruleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,6 +136,30 @@ namespace Zproto {
       get { return ruleId_; }
       set {
         ruleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "maxJumpAwardClimbUpId" field.</summary>
+    public const int MaxJumpAwardClimbUpIdFieldNumber = 5;
+    private int maxJumpAwardClimbUpId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int MaxJumpAwardClimbUpId {
+      get { return maxJumpAwardClimbUpId_; }
+      set {
+        maxJumpAwardClimbUpId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "lastMaxClimbUpId" field.</summary>
+    public const int LastMaxClimbUpIdFieldNumber = 6;
+    private int lastMaxClimbUpId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LastMaxClimbUpId {
+      get { return lastMaxClimbUpId_; }
+      set {
+        lastMaxClimbUpId_ = value;
       }
     }
 
@@ -153,6 +182,8 @@ namespace Zproto {
       if (MaxClimbUpId != other.MaxClimbUpId) return false;
       if(!awardClimbUpIds_.Equals(other.awardClimbUpIds_)) return false;
       if (RuleId != other.RuleId) return false;
+      if (MaxJumpAwardClimbUpId != other.MaxJumpAwardClimbUpId) return false;
+      if (LastMaxClimbUpId != other.LastMaxClimbUpId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,6 +195,8 @@ namespace Zproto {
       if (MaxClimbUpId != 0) hash ^= MaxClimbUpId.GetHashCode();
       hash ^= awardClimbUpIds_.GetHashCode();
       if (RuleId != 0) hash ^= RuleId.GetHashCode();
+      if (MaxJumpAwardClimbUpId != 0) hash ^= MaxJumpAwardClimbUpId.GetHashCode();
+      if (LastMaxClimbUpId != 0) hash ^= LastMaxClimbUpId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -195,6 +228,14 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt32(RuleId);
       }
+      if (MaxJumpAwardClimbUpId != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(MaxJumpAwardClimbUpId);
+      }
+      if (LastMaxClimbUpId != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(LastMaxClimbUpId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -218,6 +259,14 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt32(RuleId);
       }
+      if (MaxJumpAwardClimbUpId != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(MaxJumpAwardClimbUpId);
+      }
+      if (LastMaxClimbUpId != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(LastMaxClimbUpId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -237,6 +286,12 @@ namespace Zproto {
       size += awardClimbUpIds_.CalculateSize(_repeated_awardClimbUpIds_codec);
       if (RuleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(RuleId);
+      }
+      if (MaxJumpAwardClimbUpId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxJumpAwardClimbUpId);
+      }
+      if (LastMaxClimbUpId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LastMaxClimbUpId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -259,6 +314,12 @@ namespace Zproto {
       awardClimbUpIds_.Add(other.awardClimbUpIds_);
       if (other.RuleId != 0) {
         RuleId = other.RuleId;
+      }
+      if (other.MaxJumpAwardClimbUpId != 0) {
+        MaxJumpAwardClimbUpId = other.MaxJumpAwardClimbUpId;
+      }
+      if (other.LastMaxClimbUpId != 0) {
+        LastMaxClimbUpId = other.LastMaxClimbUpId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -296,6 +357,14 @@ namespace Zproto {
             RuleId = input.ReadInt32();
             break;
           }
+          case 40: {
+            MaxJumpAwardClimbUpId = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            LastMaxClimbUpId = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -330,6 +399,14 @@ namespace Zproto {
           }
           case 32: {
             RuleId = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            MaxJumpAwardClimbUpId = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            LastMaxClimbUpId = input.ReadInt32();
             break;
           }
         }

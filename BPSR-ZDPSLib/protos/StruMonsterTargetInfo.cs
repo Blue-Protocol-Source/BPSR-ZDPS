@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X21vbnN0ZXJfdGFyZ2V0X2luZm8ucHJvdG8SBnpwcm90bxofZW51",
             "bV9tb25zdGVyX3RhcmdldF9hd2FyZC5wcm90bxoVc3RydV9kaXJ0eV9tYXNr",
-            "LnByb3RvIo0BChFNb25zdGVyVGFyZ2V0SW5mbxIKCgJpZBgBIAEoBRITCgt0",
-            "YXJnZXRfdXVpZBgCIAEoBRITCgt0YXJnZXRfdHlwZRgDIAEoBRISCgp0YXJn",
-            "ZXRfbnVtGAQgASgFEi4KCmF3YXJkX2ZsYWcYBSABKA4yGi56cHJvdG8uTW9u",
-            "c3RlclRhcmdldEF3YXJkYgZwcm90bzM="));
+            "LnByb3RvIrsBChFNb25zdGVyVGFyZ2V0SW5mbxIOCgJpZBgBIAEoBVICaWQS",
+            "HgoKdGFyZ2V0VXVpZBgCIAEoBVIKdGFyZ2V0VXVpZBIeCgp0YXJnZXRUeXBl",
+            "GAMgASgFUgp0YXJnZXRUeXBlEhwKCXRhcmdldE51bRgEIAEoBVIJdGFyZ2V0",
+            "TnVtEjgKCWF3YXJkRmxhZxgFIAEoDjIaLnpwcm90by5Nb25zdGVyVGFyZ2V0",
+            "QXdhcmRSCWF3YXJkRmxhZ2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumMonsterTargetAwardReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_uuid" field.</summary>
+    /// <summary>Field number for the "targetUuid" field.</summary>
     public const int TargetUuidFieldNumber = 2;
     private int targetUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_type" field.</summary>
+    /// <summary>Field number for the "targetType" field.</summary>
     public const int TargetTypeFieldNumber = 3;
     private int targetType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_num" field.</summary>
+    /// <summary>Field number for the "targetNum" field.</summary>
     public const int TargetNumFieldNumber = 4;
     private int targetNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_flag" field.</summary>
+    /// <summary>Field number for the "awardFlag" field.</summary>
     public const int AwardFlagFieldNumber = 5;
     private global::Zproto.MonsterTargetAward awardFlag_ = global::Zproto.MonsterTargetAward.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

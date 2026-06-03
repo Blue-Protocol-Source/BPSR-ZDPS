@@ -26,24 +26,30 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2dldF90ZWFtX2luZm9fcmVwbHkucHJvdG8SBnpwcm90bxoXZW51",
             "bV9lX2Vycm9yX2NvZGUucHJvdG8aGHN0cnVfdGVhbV9hY3Rpdml0eS5wcm90",
-            "bxoZc3RydV90ZWFtX2Jhc2VfaW5mby5wcm90bxoYc3RydV90ZWFtX21lbV9k",
-            "YXRhLnByb3RvGihzdHJ1X3RlYW1fbWVtX3JlYWxfdGltZV92b2ljZV9pbmZv",
-            "LnByb3RvIuMDChBHZXRUZWFtSW5mb1JlcGx5EicKCWJhc2VfaW5mbxgBIAEo",
-            "CzIULnpwcm90by5UZWFtQmFzZUluZm8SKAoLbWVtYmVyX2RhdGEYAiADKAsy",
-            "Ey56cHJvdG8uVGVhbU1lbURhdGESKwoNdGVhbV9hY3Rpdml0eRgDIAEoCzIU",
-            "Lnpwcm90by5UZWFtQWN0aXZpdHkSVgoZbWVtX3JlYWxfdGltZV92b2ljZV9p",
-            "bmZvcxgEIAMoCzIzLnpwcm90by5HZXRUZWFtSW5mb1JlcGx5Lk1lbVJlYWxU",
-            "aW1lVm9pY2VJbmZvc0VudHJ5Ej4KDG1lbV92b2ljZV9pZBgGIAMoCzIoLnpw",
-            "cm90by5HZXRUZWFtSW5mb1JlcGx5Lk1lbVZvaWNlSWRFbnRyeRIkCghlcnJf",
-            "Y29kZRgHIAEoDjISLnpwcm90by5FRXJyb3JDb2RlGl4KGk1lbVJlYWxUaW1l",
-            "Vm9pY2VJbmZvc0VudHJ5EgsKA2tleRgBIAEoAxIvCgV2YWx1ZRgCIAEoCzIg",
-            "Lnpwcm90by5UZWFtTWVtUmVhbFRpbWVWb2ljZUluZm86AjgBGjEKD01lbVZv",
-            "aWNlSWRFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiABKAU6AjgBYgZw",
-            "cm90bzM="));
+            "bxoZc3RydV90ZWFtX2Jhc2VfaW5mby5wcm90bxolc3RydV90ZWFtX21lbWJl",
+            "cl9mYXN0X3N5bmNfZGF0YS5wcm90bxoYc3RydV90ZWFtX21lbV9kYXRhLnBy",
+            "b3RvGihzdHJ1X3RlYW1fbWVtX3JlYWxfdGltZV92b2ljZV9pbmZvLnByb3Rv",
+            "IuYFChBHZXRUZWFtSW5mb1JlcGx5EjAKCGJhc2VJbmZvGAEgASgLMhQuenBy",
+            "b3RvLlRlYW1CYXNlSW5mb1IIYmFzZUluZm8SMwoKbWVtYmVyRGF0YRgCIAMo",
+            "CzITLnpwcm90by5UZWFtTWVtRGF0YVIKbWVtYmVyRGF0YRI4Cgx0ZWFtQWN0",
+            "aXZpdHkYAyABKAsyFC56cHJvdG8uVGVhbUFjdGl2aXR5Ugx0ZWFtQWN0aXZp",
+            "dHkSaQoVbWVtUmVhbFRpbWVWb2ljZUluZm9zGAQgAygLMjMuenByb3RvLkdl",
+            "dFRlYW1JbmZvUmVwbHkuTWVtUmVhbFRpbWVWb2ljZUluZm9zRW50cnlSFW1l",
+            "bVJlYWxUaW1lVm9pY2VJbmZvcxJICgptZW1Wb2ljZUlkGAYgAygLMiguenBy",
+            "b3RvLkdldFRlYW1JbmZvUmVwbHkuTWVtVm9pY2VJZEVudHJ5UgptZW1Wb2lj",
+            "ZUlkEmAKEm1lbWJlckZhc3RTeW5jRGF0YRgHIAMoCzIwLnpwcm90by5HZXRU",
+            "ZWFtSW5mb1JlcGx5Lk1lbWJlckZhc3RTeW5jRGF0YUVudHJ5UhJtZW1iZXJG",
+            "YXN0U3luY0RhdGESLAoHZXJyQ29kZRgIIAEoDjISLnpwcm90by5FRXJyb3JD",
+            "b2RlUgdlcnJDb2RlGl4KGk1lbVJlYWxUaW1lVm9pY2VJbmZvc0VudHJ5EgsK",
+            "A2tleRgBIAEoAxIvCgV2YWx1ZRgCIAEoCzIgLnpwcm90by5UZWFtTWVtUmVh",
+            "bFRpbWVWb2ljZUluZm86AjgBGjEKD01lbVZvaWNlSWRFbnRyeRILCgNrZXkY",
+            "ASABKAMSDQoFdmFsdWUYAiABKAU6AjgBGlkKF01lbWJlckZhc3RTeW5jRGF0",
+            "YUVudHJ5EgsKA2tleRgBIAEoAxItCgV2YWx1ZRgCIAEoCzIeLnpwcm90by5U",
+            "ZWFtTWVtYmVyRmFzdFN5bmNEYXRhOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruTeamActivityReflection.Descriptor, global::Zproto.StruTeamBaseInfoReflection.Descriptor, global::Zproto.StruTeamMemDataReflection.Descriptor, global::Zproto.StruTeamMemRealTimeVoiceInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruTeamActivityReflection.Descriptor, global::Zproto.StruTeamBaseInfoReflection.Descriptor, global::Zproto.StruTeamMemberFastSyncDataReflection.Descriptor, global::Zproto.StruTeamMemDataReflection.Descriptor, global::Zproto.StruTeamMemRealTimeVoiceInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.GetTeamInfoReply), global::Zproto.GetTeamInfoReply.Parser, new[]{ "BaseInfo", "MemberData", "TeamActivity", "MemRealTimeVoiceInfos", "MemVoiceId", "ErrCode" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.GetTeamInfoReply), global::Zproto.GetTeamInfoReply.Parser, new[]{ "BaseInfo", "MemberData", "TeamActivity", "MemRealTimeVoiceInfos", "MemVoiceId", "MemberFastSyncData", "ErrCode" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
           }));
     }
     #endregion
@@ -90,6 +96,7 @@ namespace Zproto {
       teamActivity_ = other.teamActivity_ != null ? other.teamActivity_.Clone() : null;
       memRealTimeVoiceInfos_ = other.memRealTimeVoiceInfos_.Clone();
       memVoiceId_ = other.memVoiceId_.Clone();
+      memberFastSyncData_ = other.memberFastSyncData_.Clone();
       errCode_ = other.errCode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -100,7 +107,7 @@ namespace Zproto {
       return new GetTeamInfoReply(this);
     }
 
-    /// <summary>Field number for the "base_info" field.</summary>
+    /// <summary>Field number for the "baseInfo" field.</summary>
     public const int BaseInfoFieldNumber = 1;
     private global::Zproto.TeamBaseInfo baseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "member_data" field.</summary>
+    /// <summary>Field number for the "memberData" field.</summary>
     public const int MemberDataFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.TeamMemData> _repeated_memberData_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemData.Parser);
@@ -123,7 +130,7 @@ namespace Zproto {
       get { return memberData_; }
     }
 
-    /// <summary>Field number for the "team_activity" field.</summary>
+    /// <summary>Field number for the "teamActivity" field.</summary>
     public const int TeamActivityFieldNumber = 3;
     private global::Zproto.TeamActivity teamActivity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mem_real_time_voice_infos" field.</summary>
+    /// <summary>Field number for the "memRealTimeVoiceInfos" field.</summary>
     public const int MemRealTimeVoiceInfosFieldNumber = 4;
     private static readonly pbc::MapField<long, global::Zproto.TeamMemRealTimeVoiceInfo>.Codec _map_memRealTimeVoiceInfos_codec
         = new pbc::MapField<long, global::Zproto.TeamMemRealTimeVoiceInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemRealTimeVoiceInfo.Parser), 34);
@@ -146,7 +153,7 @@ namespace Zproto {
       get { return memRealTimeVoiceInfos_; }
     }
 
-    /// <summary>Field number for the "mem_voice_id" field.</summary>
+    /// <summary>Field number for the "memVoiceId" field.</summary>
     public const int MemVoiceIdFieldNumber = 6;
     private static readonly pbc::MapField<long, int>.Codec _map_memVoiceId_codec
         = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 50);
@@ -157,8 +164,19 @@ namespace Zproto {
       get { return memVoiceId_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
-    public const int ErrCodeFieldNumber = 7;
+    /// <summary>Field number for the "memberFastSyncData" field.</summary>
+    public const int MemberFastSyncDataFieldNumber = 7;
+    private static readonly pbc::MapField<long, global::Zproto.TeamMemberFastSyncData>.Codec _map_memberFastSyncData_codec
+        = new pbc::MapField<long, global::Zproto.TeamMemberFastSyncData>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.TeamMemberFastSyncData.Parser), 58);
+    private readonly pbc::MapField<long, global::Zproto.TeamMemberFastSyncData> memberFastSyncData_ = new pbc::MapField<long, global::Zproto.TeamMemberFastSyncData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<long, global::Zproto.TeamMemberFastSyncData> MemberFastSyncData {
+      get { return memberFastSyncData_; }
+    }
+
+    /// <summary>Field number for the "errCode" field.</summary>
+    public const int ErrCodeFieldNumber = 8;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -189,6 +207,7 @@ namespace Zproto {
       if (!object.Equals(TeamActivity, other.TeamActivity)) return false;
       if (!MemRealTimeVoiceInfos.Equals(other.MemRealTimeVoiceInfos)) return false;
       if (!MemVoiceId.Equals(other.MemVoiceId)) return false;
+      if (!MemberFastSyncData.Equals(other.MemberFastSyncData)) return false;
       if (ErrCode != other.ErrCode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -202,6 +221,7 @@ namespace Zproto {
       if (teamActivity_ != null) hash ^= TeamActivity.GetHashCode();
       hash ^= MemRealTimeVoiceInfos.GetHashCode();
       hash ^= MemVoiceId.GetHashCode();
+      hash ^= MemberFastSyncData.GetHashCode();
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) hash ^= ErrCode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -232,8 +252,9 @@ namespace Zproto {
       }
       memRealTimeVoiceInfos_.WriteTo(output, _map_memRealTimeVoiceInfos_codec);
       memVoiceId_.WriteTo(output, _map_memVoiceId_codec);
+      memberFastSyncData_.WriteTo(output, _map_memberFastSyncData_codec);
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -257,8 +278,9 @@ namespace Zproto {
       }
       memRealTimeVoiceInfos_.WriteTo(ref output, _map_memRealTimeVoiceInfos_codec);
       memVoiceId_.WriteTo(ref output, _map_memVoiceId_codec);
+      memberFastSyncData_.WriteTo(ref output, _map_memberFastSyncData_codec);
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -280,6 +302,7 @@ namespace Zproto {
       }
       size += memRealTimeVoiceInfos_.CalculateSize(_map_memRealTimeVoiceInfos_codec);
       size += memVoiceId_.CalculateSize(_map_memVoiceId_codec);
+      size += memberFastSyncData_.CalculateSize(_map_memberFastSyncData_codec);
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ErrCode);
       }
@@ -310,6 +333,7 @@ namespace Zproto {
       }
       memRealTimeVoiceInfos_.MergeFrom(other.memRealTimeVoiceInfos_);
       memVoiceId_.MergeFrom(other.memVoiceId_);
+      memberFastSyncData_.MergeFrom(other.memberFastSyncData_);
       if (other.ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         ErrCode = other.ErrCode;
       }
@@ -358,7 +382,11 @@ namespace Zproto {
             memVoiceId_.AddEntriesFrom(input, _map_memVoiceId_codec);
             break;
           }
-          case 56: {
+          case 58: {
+            memberFastSyncData_.AddEntriesFrom(input, _map_memberFastSyncData_codec);
+            break;
+          }
+          case 64: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }
@@ -407,7 +435,11 @@ namespace Zproto {
             memVoiceId_.AddEntriesFrom(ref input, _map_memVoiceId_codec);
             break;
           }
-          case 56: {
+          case 58: {
+            memberFastSyncData_.AddEntriesFrom(ref input, _map_memberFastSyncData_codec);
+            break;
+          }
+          case 64: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }

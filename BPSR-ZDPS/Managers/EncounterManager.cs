@@ -21,13 +21,14 @@ namespace BPSR_ZDPS
 
         public static Encounter? Current = null;
 
-        public static int CurrentEncounter = 0;
         public static int CurrentBattleId = 0;
         public static uint LevelMapId { get; private set; }
+        public static bool AllowSceneUpdate = true;
+
         public static string SceneName { get; private set; }
         public delegate void BattleStartEventHandler(EventArgs e);
         public static event BattleStartEventHandler BattleStart;
-        public delegate void EncounterStartEventHandler(EventArgs e);
+        public delegate void EncounterStartEventHandler(EncounterStartEventArgs e);
         public static event EncounterStartEventHandler EncounterStart;
         public delegate void EncounterEndEventHandler(EventArgs e);
         public static event EncounterEndEventHandler EncounterEnd;
@@ -64,7 +65,7 @@ namespace BPSR_ZDPS
                     Current.SetEndTime(DateTime.MinValue);
                     if (LevelMapId > 0)
                     {
-                        SetSceneId(LevelMapId);
+                        SetSceneId(LevelMapId, true);
                     }
                     return;
                 }
@@ -95,36 +96,31 @@ namespace BPSR_ZDPS
                     // We're likely entering a new phase (either raid boss phase or dungeon phase going into boss)
                     priorBossName = Current.BossName;
 
-                    if (!string.IsNullOrEmpty(Current.SceneSubName))
+                    if (Current.ExData.EncounterPhase > 0)
                     {
-                        // Break the current sub name into parts to try and figure out what our current phase number is to increment for upcoming encounter
-                        var subNameParts = Current.SceneSubName.Split(' ', StringSplitOptions.TrimEntries);
-                        if (subNameParts.Length > 1)
-                        {
-                            if (int.TryParse(subNameParts.Last(), out var phaseNumber))
-                            {
-                                // For now we trust this is a string ending with out Phase number
-                                priorEncounterPhase = phaseNumber;
-                            }
-                        }
+                        priorEncounterPhase = Current.ExData.EncounterPhase;
                     }
                     else
                     {
                         // This is our first split
                         Current.SceneSubName = "Phase 1";
+                        Current.ExData.EncounterPhase = 1;
                         priorEncounterPhase = 1;
                     }
                 }
 
                 CheckTimeOutStatus(reason);
 
+                if (Current.TotalDamage > 0)
+                {
+                    // Perform final PerSecond calculations
+                    RecalculateEncounterPerValues(Current.EndTime.ToUniversalTime());
+                }
+
                 // This is safe to call to ensure we're sending a proper End Final before a new Encounter is made no matter what
                 BattleStateMachine.SetDeferredEncounterEndFinalData(DateTime.Now.Subtract(new TimeSpan(0, 0, 1)), new EncounterEndFinalData() { EncounterId = Current.EncounterId, BattleId = Current.BattleId, Reason = reason, Encounter = Current });
                 BattleStateMachine.CheckDeferredCalls();
             }
-            //Encounters.Add(new Encounter(CurrentBattleId));
-
-            //CurrentEncounter = Encounters.Count - 1;
 
             int currentDifficulty = 0;
             Encounter? priorEncounter = Current;
@@ -132,7 +128,11 @@ namespace BPSR_ZDPS
             if (Current != null)
             {
                 currentDifficulty = Current.ExData.DungeonDifficulty;
-                //if (priorEncounter.HasStatsBeenRecorded(true))
+                if (Settings.Instance.SkipSavingEncountersWithNoCombatData && !Current.HasStatsBeenRecorded())
+                {
+                    nextEncounterIdModifier = 0;
+                }
+                else
                 {
                     nextEncounterIdModifier = 1;
                 }
@@ -141,7 +141,7 @@ namespace BPSR_ZDPS
             Current = new Encounter(CurrentBattleId);
             Current.EncounterId = DB.GetNextEncounterId() + nextEncounterIdModifier;
             System.Diagnostics.Debug.WriteLine($"Created new encounter for EncounterId {Current.EncounterId} + ({nextEncounterIdModifier})");
-            if (priorEncounter != null && (reason == EncounterStartReason.NewObjective || reason == EncounterStartReason.Wipe || reason == EncounterStartReason.Restart))
+            if (priorEncounter != null && (reason != EncounterStartReason.None && reason != EncounterStartReason.Force))
             {
                 // Bring over basic data and attributes for the characters of the previous phase into the new one
                 var priorCharacters = priorEncounter.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == EEntityType.EntChar);
@@ -151,7 +151,7 @@ namespace BPSR_ZDPS
                     newChar.SetHpValuesNoUpdate(priorChar.Value.Hp, priorChar.Value.MaxHp);
                     newChar.Attributes = priorChar.Value.Attributes.ToDictionary();
                 }
-                
+
                 if (reason == EncounterStartReason.NewObjective)
                 {
                     // Only pull through Bosses if it's a New Objective as that's where data for them can actually get lost when creating a new Encounter
@@ -172,6 +172,22 @@ namespace BPSR_ZDPS
                         }
                     }
                 }
+                else if (reason == EncounterStartReason.Wipe)
+                {
+                    var priorBosses = priorEncounter.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == EEntityType.EntMonster && x.Value.MonsterType == EMonsterType.Boss);
+                    foreach (var priorBoss in priorBosses)
+                    {
+                        var bossCache = new EncounterBossDataCache()
+                        {
+                            UUID = priorBoss.Key,
+                            Name = priorBoss.Value.Name,
+                            Hp = priorBoss.Value.Hp,
+                            MaxHp = priorBoss.Value.MaxHp,
+                            Attrs = priorBoss.Value.Attributes.ToDictionary()
+                        };
+                        Current.PreviousBossCache[priorBoss.Key] = bossCache;
+                    }
+                }
             }
             if (reason == EncounterStartReason.NewObjective)
             {
@@ -182,18 +198,26 @@ namespace BPSR_ZDPS
                 if (priorEncounterPhase > 0)
                 {
                     Current.SceneSubName = $"Phase {priorEncounterPhase + 1}";
+                    Current.ExData.EncounterPhase = priorEncounterPhase + 1;
                 }
             }
+            Current.SetWipeState(false);
 
             // Reuse last sceneId as our current one (it may not always be right but hopefully is right enough)
             if (LevelMapId > 0)
             {
-                SetSceneId(LevelMapId);
+                SetSceneId(LevelMapId, true);
                 Current.SetDungeonDifficulty(currentDifficulty);
             }
 
+            if (AppState.IsBenchmarkMode)
+            {
+                //Current.SceneSubName = $"BENCHMARK ({AppState.BenchmarkTime}s)";
+                Current.ExData.BenchmarkTime = AppState.BenchmarkTime;
+            }
+
             UpdateTruePerValuesCTS = new();
-            if (Settings.Instance.DisplayTruePerSecondValuesInMeters)
+            //if (Settings.Instance.DisplayTruePerSecondValuesInMeters)
             {
                 // Only allow calculating the True Per Second if it was enabled since there is a performance cost to doing so
                 Task.Run(() =>
@@ -204,13 +228,16 @@ namespace BPSR_ZDPS
 
             if (priorEncounter != null)
             {
-                if (nextEncounterIdModifier != 0)
+                if (nextEncounterIdModifier != 0 && !AppState.IsEncounterSavingPaused)
                 {
                     DB.InsertEncounter(priorEncounter);
+                    GC.Collect();
                 }
             }
 
-            OnEncounterStart(new EventArgs());
+            AllowSceneUpdate = true;
+            Serilog.Log.Debug("EncounterManager sending OnEncounterStart event");
+            OnEncounterStart(new EncounterStartEventArgs() { Reason = reason });
         }
 
         public static void StopEncounter(bool isKnownFinal = false, EncounterStartReason reason = EncounterStartReason.None)
@@ -315,18 +342,32 @@ namespace BPSR_ZDPS
         }
 
         // While we technically use the 'LevelMapId' and not the 'SceneId' field, it's just another type of SceneId ultimately
-        public static void SetSceneId(uint levelMapId)
+        public static void SetSceneId(uint levelMapId, bool force = false)
         {
+            if (!AllowSceneUpdate && !force)
+            {
+                return;
+            }
+
             LevelMapId = levelMapId;
             if (levelMapId > 0)
             {
-                if (HelperMethods.DataTables.Scenes.Data.TryGetValue(levelMapId.ToString(), out var scene))
+                HelperMethods.DataTables.Dungeons.Data.TryGetValue(LevelMapId.ToString(), out var dungeon);
+
+                if (dungeon != null && dungeon.PlayType == 17)
                 {
-                    SceneName = scene.Name;
+                    SceneName = dungeon.Name;
                 }
                 else
                 {
-                    SceneName = "";
+                    if (HelperMethods.DataTables.Scenes.Data.TryGetValue(levelMapId.ToString(), out var scene))
+                    {
+                        SceneName = scene.Name;
+                    }
+                    else
+                    {
+                        SceneName = "";
+                    }
                 }
             }
             else
@@ -345,19 +386,67 @@ namespace BPSR_ZDPS
 
             while (!cancellationTokenSource.IsCancellationRequested && await timer.WaitForNextTickAsync())
             {
-                var duration_rep = 1 / Current.GetDuration().TotalSeconds;
-                if (Current.TotalDamage > 0)
+                if (Current != null && Current.TotalDamage > 0)
                 {
-                    var entities = Current.Entities.AsValueEnumerable();
-                    foreach (var entity in entities)
-                    {
-                        var trueDamagePerSecond = entity.Value.TotalDamage * duration_rep;
-                        var trueHealingPerSecond = entity.Value.TotalHealing * duration_rep;
-                        var trueTakenPerSecond = entity.Value.TotalTakenDamage * duration_rep;
+                    RecalculateEncounterPerValues();
+                }
+            }
+        }
 
-                        entity.Value.DamageStats.TrueValuePerSecond = trueDamagePerSecond;
-                        entity.Value.HealingStats.TrueValuePerSecond = trueHealingPerSecond;
-                        entity.Value.TakenStats.TrueValuePerSecond = trueTakenPerSecond;
+        public static void RecalculateEncounterPerValues(DateTime? nowTime = null)
+        {
+            DateTime now = nowTime ?? DateTime.UtcNow;
+            var entities = Current.Entities.AsValueEnumerable();
+            foreach (var entity in entities)
+            {
+                if (nowTime != null)
+                {
+                    entity.Value.RecalculateInactiveTime(now, true);
+                }
+                else
+                {
+                    // We have to recalculate the inactive time again in case the entity hasn't had a combat event in a while
+                    // TODO: Find a way to avoid calling this every time, we need to be able to increment inactive time trackers cheaply
+                    entity.Value.RecalculateInactiveTime(now, true);
+                }
+                double inactiveTime = entity.Value.GetInactiveTime();
+
+                entity.Value.DamageStats.InactiveTime = inactiveTime;
+                if (entity.Value.DamageStats.ValueTotal > 0)
+                {
+                    entity.Value.DamageStats.RecalculatePerSecond(now);
+                }
+
+                entity.Value.HealingStats.InactiveTime = inactiveTime;
+                if (entity.Value.HealingStats.ValueTotal > 0)
+                {
+                    entity.Value.HealingStats.RecalculatePerSecond(now);
+                }
+
+                entity.Value.TakenStats.InactiveTime = inactiveTime;
+                if (entity.Value.TakenStats.ValueTotal > 0)
+                {
+                    entity.Value.TakenStats.RecalculatePerSecond(now);
+                }
+
+                foreach (var skill in entity.Value.SkillMetrics)
+                {
+                    skill.Value.Damage.InactiveTime = inactiveTime;
+                    if (skill.Value.Damage.ValueTotal > 0)
+                    {
+                        skill.Value.Damage.RecalculatePerSecond(now);
+                    }
+
+                    skill.Value.Healing.InactiveTime = inactiveTime;
+                    if (skill.Value.Healing.ValueTotal > 0)
+                    {
+                        skill.Value.Healing.RecalculatePerSecond(now);
+                    }
+
+                    skill.Value.Taken.InactiveTime = inactiveTime;
+                    if (skill.Value.Taken.ValueTotal > 0)
+                    {
+                        skill.Value.Taken.RecalculatePerSecond(now);
                     }
                 }
             }
@@ -368,7 +457,7 @@ namespace BPSR_ZDPS
             BattleStart?.Invoke(e);
         }
 
-        static void OnEncounterStart(EventArgs e)
+        static void OnEncounterStart(EncounterStartEventArgs e)
         {
             EncounterStart?.Invoke(e);
         }
@@ -395,6 +484,11 @@ namespace BPSR_ZDPS
         BenchmarkStart = 6,
         BenchmarkEnd = 7,
         DungeonStateEnd = 8,
+    }
+
+    public class EncounterStartEventArgs : EventArgs
+    {
+        public EncounterStartReason Reason;
     }
 
     public class Encounter
@@ -437,6 +531,12 @@ namespace BPSR_ZDPS
         public event HpUpdatedEventHandler EntityHpUpdated; // Used for all Entities
         public delegate void ThreatListUpdatedEventHandler(object sender, ThreatListUpdatedEventArgs e);
         public event ThreatListUpdatedEventHandler EntityThreatListUpdated; // This is not a real list, just the current target and their threat value
+        public delegate void BuffUpdatedEventHandler(object sender, BuffUpdatedEventArgs e);
+        public event BuffUpdatedEventHandler BuffUpdated;
+        public delegate void AttributeUpdatedEventHandler(object sender, AttributeUpdatedEventArgs e);
+        public event AttributeUpdatedEventHandler AttributeUpdated;
+        public delegate void SceneEventEventHandler(object sender, SceneEventEventArgs e);
+        public event SceneEventEventHandler SceneEvent;
 
         public EncounterExData ExData { get; set; } = new();
         public byte[] ExDataBlob { get; set; }
@@ -445,6 +545,7 @@ namespace BPSR_ZDPS
         public List<long> BossUUIDs { get; set; } = new();
         public EDungeonState DungeonState { get; set; } = EDungeonState.DungeonStateNull;
         public uint ChannelLine { get; set; } = 0;
+        public Dictionary<long, EncounterBossDataCache> PreviousBossCache = new();
 
         public Encounter()
         {
@@ -477,14 +578,22 @@ namespace BPSR_ZDPS
             Duration = EndTime.Subtract(StartTime);
         }
 
-        public TimeSpan GetDuration()
+        public TimeSpan GetDuration(bool startAdjusted = false)
         {
             if (EndTime == DateTime.MinValue || Duration == null)
             {
+                if (startAdjusted && ExData.FirstDamageTimeStamp != null)
+                {
+                    return DateTime.UtcNow.Subtract((DateTime)ExData.FirstDamageTimeStamp).Duration();
+                }
                 return DateTime.Now.Subtract(StartTime).Duration();
             }
             else
             {
+                if (startAdjusted && ExData.FirstDamageTimeStamp != null)
+                {
+                    return EndTime.ToUniversalTime().Subtract((DateTime)ExData.FirstDamageTimeStamp);
+                }
                 return (TimeSpan)Duration;
             }
         }
@@ -497,7 +606,7 @@ namespace BPSR_ZDPS
             }
             else
             {
-                entity = new Entity(uuid);
+                entity = new Entity(uuid, null, this);
                 Entities.TryAdd(uuid, entity);
                 return entity;
             }
@@ -524,18 +633,29 @@ namespace BPSR_ZDPS
             entity.SetEntityType(etype);
 
             var attr_id = entity.GetAttrKV("AttrId");
-            if (attr_id != null && etype == EEntityType.EntMonster)
+            if (attr_id != null && etype != EEntityType.EntChar)
             {
                 // Only players tend to come with a valid UID that's already unique to them
                 // The field that claims to normally be the UID for non-players is actually their non-unique ID
                 // Only the Attribute named Id (AttrId) is their real type UID which can be resolved into a name
                 // Also can be used to get all of their setup information from the Monsters table
                 entity.UpdateUID((int)attr_id);
-                if (HelperMethods.DataTables.Monsters.Data.TryGetValue(attr_id.ToString(), out var monsterEntry))
+
+                if (etype == EEntityType.EntMonster)
                 {
-                    entity.SetName(monsterEntry.Name);
-                    entity.SetMonsterType(monsterEntry.MonsterType);
-                    UpdateEncounterBossData(entity, (int)attr_id);
+                    if (HelperMethods.DataTables.Monsters.Data.TryGetValue(attr_id.ToString(), out var monsterEntry))
+                    {
+                        entity.SetName(monsterEntry.Name);
+                        entity.SetMonsterType(monsterEntry.MonsterType);
+                        UpdateEncounterBossData(entity, (int)attr_id);
+                    }
+                }
+                else if (entity.EntityType == EEntityType.EntDummy)
+                {
+                    if (HelperMethods.DataTables.Dummys.Data.TryGetValue(attr_id.ToString(), out var dummyEntry))
+                    {
+                        entity.SetName(dummyEntry.Name);
+                    }
                 }
             }
         }
@@ -546,19 +666,50 @@ namespace BPSR_ZDPS
             entity.SetAttrKV(key, value);
 
             // We used to care if the entity already had a name, but there were strange incorrect name issues, so now we don't
-            if (key == "AttrId" && entity.EntityType == EEntityType.EntMonster)
+            if (key == "AttrId" && entity.EntityType != EEntityType.EntChar)
             {
                 entity.UpdateUID((int)value);
-                if (HelperMethods.DataTables.Monsters.Data.TryGetValue(value.ToString(), out var monsterEntry))
+
+                if (entity.EntityType == EEntityType.EntMonster)
                 {
-                    entity.SetName(monsterEntry.Name);
-                    entity.SetMonsterType(monsterEntry.MonsterType);
-                    UpdateEncounterBossData(entity, (int)value);
+                    if (HelperMethods.DataTables.Monsters.Data.TryGetValue(value.ToString(), out var monsterEntry))
+                    {
+                        entity.SetName(monsterEntry.Name);
+                        entity.SetMonsterType(monsterEntry.MonsterType);
+                        UpdateEncounterBossData(entity, (int)value);
+                    }
                 }
+                else if (entity.EntityType == EEntityType.EntDummy)
+                {
+                    if (HelperMethods.DataTables.Dummys.Data.TryGetValue(value.ToString(), out var dummyEntry))
+                    {
+                        entity.SetName(dummyEntry.Name);
+                    }
+                }
+            }
+            else if (key == "AttrName")
+            {
+                entity.SetName((string)value);
+            }
+            else if (key == "AttrProfessionId")
+            {
+                entity.SetProfessionId((int)value);
+            }
+            else if (key == "AttrFightPoint")
+            {
+                entity.SetAbilityScore((int)value);
             }
             else if (key == "AttrLevel")
             {
                 entity.SetLevel((int)value);
+            }
+            else if (key == "AttrSeasonLevel")
+            {
+                entity.SetSeasonLevel((int)value);
+            }
+            else if (key == "AttrSeasonStrength")
+            {
+                entity.SetSeasonStrength((int)value);
             }
             else if (key == "AttrSkillId")
             {
@@ -569,10 +720,6 @@ namespace BPSR_ZDPS
             {
                 if ((EActorState)value == EActorState.ActorStateDead)
                 {
-                    // The server does not send a final HP value update when the State also changes, so we'll fake one
-                    // We do this before fully processing the State change
-                    SetAttrKV(uuid, "AttrHp", 0L);
-
                     entity.IncrementDeaths();
                     if (entity.EntityType == EEntityType.EntChar)
                     {
@@ -582,13 +729,19 @@ namespace BPSR_ZDPS
                     {
                         IncrementNpcDeaths();
                     }
+
+                    // The server does not send a final HP value update when the State also changes, so we'll fake one
+                    // We do this before fully processing the State change
+                    SetAttrKV(uuid, "AttrHp", 0L);
                 }
             }
             else if (key == "AttrShieldList")
             {
-                var shieldInfo = (ShieldInfo)value;
-                //System.Diagnostics.Debug.WriteLine($"SetAttrKV({uuid})::AttrShieldList.ShieldInfo = {shieldInfo}");
-                entity.AddBuffEventAttribute((int)shieldInfo.Uuid, "AttrShieldList", shieldInfo);
+                var shieldList = (List<ShieldInfo>)value;
+                foreach (var shield in shieldList)
+                {
+                    entity.AddBuffEventAttribute((int)shield.Uuid, "AttrShieldList", shield);
+                }
                 //AddShieldGained(uuid, shieldInfo.Uuid, shieldInfo.Value, shieldInfo.InitialValue, shieldInfo.MaxValue);
             }
             else if (key == "AttrHp")
@@ -628,10 +781,116 @@ namespace BPSR_ZDPS
                     entity.ThreatListUpdated += OnEntityThreatListUpdated;
                 }
 
-                // This is called a "List" but it is not a list at all. It's a single item of just a UUID and Threat Value for the current target
-                var hateInfo = (HateInfo)value;
-                ThreatInfo threatInfo = new() { EntityUuid = hateInfo.Uuid, ThreatValue = hateInfo.HateVal };
-                entity.SetThreatList(threatInfo);
+                var hateInfoList = (List<HateInfo>)value;
+                var threatInfoList = new List<ThreatInfo>();
+                foreach (var hateInfo in hateInfoList)
+                {
+                    ThreatInfo threatInfo = new() { EntityUuid = hateInfo.Uuid, ThreatValue = hateInfo.HateVal };
+                    threatInfoList.Add(threatInfo);
+                }
+                
+                entity.SetThreatList(threatInfoList);
+            }
+            else if (key == "AttrTopSummonerId")
+            {
+                if (entity.EntityType != EEntityType.EntChar)
+                {
+                    var summoner = GetOrCreateEntity((long)value);
+                    entity.SummonerEntityType = summoner.EntityType;
+                }
+            }
+
+            OnAttributeUpdated(this, new AttributeUpdatedEventArgs() { EntityUuid = uuid, Entity = entity, AttributeName = key, AttributeValue = value });
+        }
+
+        public void SetTempAttrKV(long uuid, int key, TempAttributesContainer value)
+        {
+            var entity = GetOrCreateEntity(uuid);
+            entity.SetTempAttrKV(key, value);
+        }
+
+        public void AddSceneEvent(Zproto.EventData sceneEvent)
+        {
+            if (sceneEvent.EventType == (int)WorldEventType.BossDbm)
+            {
+                // Occurs when a boss cast preview timer appears
+
+                // { "Evt": { "Events": [ { "eventType": 29, "intParams": [ 405000601, 6, 1 ], "longParams": [ "1772338107311" ] } ] } }
+
+                // Formated: [ SkillEffectId, Time, StartTimePosition? ]
+                int skillId = 0;
+                int duration = 0;
+                int insertion = 0;
+                if (sceneEvent.IntParams != null)
+                {
+                    for (int i = 0; i < sceneEvent.IntParams.Count; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                skillId = sceneEvent.IntParams[i];
+                                break;
+                            case 1:
+                                duration = sceneEvent.IntParams[i];
+                                break;
+                            case 2:
+                                insertion = sceneEvent.IntParams[i];
+                                break;
+                            default:
+                                Serilog.Log.Debug($"Unexpected item({i}) in SceneEvent[BossDbm] IntParams = {sceneEvent.IntParams[i]}");
+                                break;
+                        }
+                    }
+                }
+
+                long timestamp = 0;
+                if (sceneEvent.LongParams != null)
+                {
+                    for (int i = 0; i < sceneEvent.LongParams.Count; ++i)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                timestamp = sceneEvent.LongParams[i];
+                                break;
+                            default:
+                                Serilog.Log.Debug($"Unexpected item({i}) in SceneEvent[BossDbm] LongParams = {sceneEvent.LongParams[i]}");
+                                break;
+                        }
+                    }
+                }
+
+                OnSceneEvent(this, new SceneEventBossDbmEventArgs() { EventType = WorldEventType.BossDbm, SkillId = skillId, Duration = duration, Insertion = insertion, Timestamp = timestamp });
+            }
+            else if (sceneEvent.EventType == (int)WorldEventType.NoticeTip)
+            {
+                // Occurs when on-screen text for how to do a mechanic appears
+
+                // { "Evt": { "Events": [ { "eventType": 1, "strParams": [ "4050010", "" ] } ] } }
+
+                // Fromated: [ "StrId in MessageTable.json" ]
+                string messageId = "";
+                string extraId = "";
+                if (sceneEvent.StrParams != null)
+                {
+                    for (int i = 0; i < sceneEvent.StrParams.Count; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                messageId = sceneEvent.StrParams[i];
+                                break;
+                            case 1:
+                                extraId = sceneEvent.StrParams[i];
+                                break;
+                            default:
+                                Serilog.Log.Debug($"Unexpected item({i}) in SceneEvent[NoticeTip] StrParams = {sceneEvent.StrParams[i]}");
+                                break;
+                        }
+                    }
+                }
+
+                OnSceneEvent(this, new SceneEventNoticeTipEventArgs() { EventType = WorldEventType.NoticeTip, MessageId = messageId, ExtraId = extraId });
             }
         }
 
@@ -751,11 +1010,13 @@ namespace BPSR_ZDPS
         }
 
         public void AddDamage(
-            long attackerUuid, long targetUuid, int skillId, int skillLevel, long damage, long hpLessen,
+            long attackerUuid, long targetUuid, int skillId, int skillLevel, long damage, long hpLessen, long shieldBreak,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
             bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, Vec3 damagePos, ExtraPacketData extraPacketData)
         {
             LastUpdate = extraPacketData.ArrivalTime;
+
+            ExData.FirstDamageTimeStamp ??= LastUpdate;
 
             var attackerType = (EEntityType)Utils.UuidToEntityType(attackerUuid);
             var targetType = (EEntityType)Utils.UuidToEntityType(targetUuid);
@@ -767,7 +1028,7 @@ namespace BPSR_ZDPS
                     TotalNpcDamage += (ulong)damage;
                     if (damageType == EDamageType.Absorbed)
                     {
-                        TotalNpcShieldBreak += (ulong)damage;
+                        TotalNpcShieldBreak += (ulong)shieldBreak;
                     }
                 }
             }
@@ -778,20 +1039,28 @@ namespace BPSR_ZDPS
                     TotalDamage += (ulong)damage;
                     if (damageType == EDamageType.Absorbed)
                     {
-                        TotalShieldBreak += (ulong)damage;
+                        TotalShieldBreak += (ulong)shieldBreak;
                     }
                 }
             }
 
-            GetOrCreateEntity(attackerUuid).AddDamage(targetUuid, skillId, skillLevel, damage, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, damagePos, extraPacketData);
+            GetOrCreateEntity(attackerUuid).AddDamage(targetUuid, skillId, skillLevel, damage, hpLessen, shieldBreak, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, damagePos, extraPacketData);
         }
 
         public void AddHealing(
-            long attackerUuid, long targetUuid, int skillId, int skillLevel, long damage, long hpLessen,
+            long attackerUuid, long targetUuid, int skillId, int skillLevel, long damage, long hpLessen, long shieldBreak,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
             bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, Vec3 damagePos, ExtraPacketData extraPacketData)
         {
+            if (!AppState.IsBenchmarkMode && ExData.FirstDamageTimeStamp == null && !Settings.Instance.IncludeHealEventsOutsideOfCombat)
+            {
+                return;
+            }
+
             LastUpdate = extraPacketData.ArrivalTime;
+
+            // TODO: Should potentially exclude specific skills from setting this (like Symbiotic Mark)
+            ExData.FirstDamageTimeStamp ??= LastUpdate;
 
             var attackerType = (EEntityType)Utils.UuidToEntityType(attackerUuid);
 
@@ -805,17 +1074,21 @@ namespace BPSR_ZDPS
             }
 
             var entity = GetOrCreateEntity(attackerUuid);
+            var targetEntity = GetOrCreateEntity(targetUuid);
 
-            long? currentHp = entity.GetAttrKV("AttrHp") as long?;
-            long? maxHp = entity.GetAttrKV("AttrMaxHp") as long?;
+            long? currentHp = targetEntity.GetAttrKV("AttrHp") as long?;
+            long? maxHp = targetEntity.GetAttrKV("AttrMaxHp") as long?;
 
             long overhealing = 0;
             long effectiveHealing = 0;
 
-            if ((currentHp != null && maxHp != null && maxHp > 0) && (currentHp + damage > maxHp))
+            if ((currentHp != null && maxHp != null && maxHp > 0 && currentHp >= 0 && currentHp <= maxHp) && (currentHp + damage > maxHp))
             {
                 effectiveHealing = (long)(maxHp - currentHp);
-                overhealing = damage - effectiveHealing;
+                if (damage >= effectiveHealing)
+                {
+                    overhealing = damage - effectiveHealing;
+                }
             }
 
             if (attackerType == EEntityType.EntMonster)
@@ -827,11 +1100,11 @@ namespace BPSR_ZDPS
                 TotalOverhealing += (ulong)overhealing;
             }
             
-            entity.AddHealing(targetUuid, skillId, skillLevel, damage, overhealing, effectiveHealing, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, damagePos, extraPacketData);
+            entity.AddHealing(targetUuid, skillId, skillLevel, damage, overhealing, effectiveHealing, hpLessen, shieldBreak, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, damagePos, extraPacketData);
         }
 
         public void AddTakenDamage(
-            long attackerUuid, long targetUuid, int skillId, int skillLevel, long damage, long hpLessen,
+            long attackerUuid, long targetUuid, int skillId, int skillLevel, long damage, long hpLessen, long shieldBreak,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
             bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, Vec3 damagePos, ExtraPacketData extraPacketData)
         {
@@ -853,7 +1126,7 @@ namespace BPSR_ZDPS
                 } 
             }
 
-            GetOrCreateEntity(targetUuid).AddTakenDamage(attackerUuid, skillId, skillLevel, damage, hpLessen, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, damagePos, extraPacketData);
+            GetOrCreateEntity(targetUuid).AddTakenDamage(attackerUuid, skillId, skillLevel, damage, hpLessen, shieldBreak, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, damagePos, extraPacketData);
         }
 
         public void AddShieldGained(long entityUuid, long shieldBuffUuid, long value, long initialValue, long maxValue = 0)
@@ -862,7 +1135,7 @@ namespace BPSR_ZDPS
             //GetOrCreateEntity(entityUuid).AddBuffEventAttribute(shieldBuffUuid, "AttrShieldList", 0);
         }
 
-        public void NotifyBuffEvent(long entityUuid, EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, int layer, int duration, int sourceConfigId, ExtraPacketData extraPacketData)
+        public void NotifyBuffEvent(long entityUuid, EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, int layer, int duration, int sourceConfigId, DateTime? creationTime, ExtraPacketData extraPacketData)
         {
             string entityCasterName = "";
             if (fireUuid > 0)
@@ -873,7 +1146,23 @@ namespace BPSR_ZDPS
                     entityCasterName = caster.Name;
                 }
             }
-            GetOrCreateEntity(entityUuid).NotifyBuffEvent(buffEventType, buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId, DateTime.Now.Subtract(EncounterManager.Current.StartTime));
+
+            OnBuffUpdated(this, new BuffUpdatedEventArgs()
+            {
+                EntityUuid = entityUuid,
+                BuffEventType = buffEventType,
+                BuffUuid = buffUuid,
+                BaseId = baseId,
+                Level = level,
+                FireUuid = fireUuid,
+                Layer = layer,
+                Duration = duration,
+                SourceConfigId = sourceConfigId,
+                EntityCasterName = entityCasterName,
+                UpdateDateTime = extraPacketData.ArrivalTime,
+                CreationDateTime = creationTime,
+            });
+            GetOrCreateEntity(entityUuid).NotifyBuffEvent(buffEventType, buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId, DateTime.Now.Subtract(EncounterManager.Current.StartTime), creationTime, extraPacketData);
         }
 
         protected virtual void OnSkillActivated(SkillActivatedEventArgs e)
@@ -925,6 +1214,21 @@ namespace BPSR_ZDPS
             EntityThreatListUpdated?.Invoke(sender, e);
         }
 
+        protected virtual void OnBuffUpdated(object sender, BuffUpdatedEventArgs e)
+        {
+            BuffUpdated?.Invoke(sender, e);
+        }
+
+        protected virtual void OnAttributeUpdated(object sender, AttributeUpdatedEventArgs e)
+        {
+            AttributeUpdated?.Invoke(sender, e);
+        }
+
+        protected virtual void OnSceneEvent(object sender, SceneEventEventArgs e)
+        {
+            SceneEvent?.Invoke(sender, e);
+        }
+
         public void RemoveEntityHandlers()
         {
             foreach (var entity in Entities)
@@ -938,6 +1242,9 @@ namespace BPSR_ZDPS
             SkillActivated = null;
             BossHpUpdated = null;
             EntityHpUpdated = null;
+            BuffUpdated = null;
+            AttributeUpdated = null;
+            SceneEvent = null;
 
             RemoveEntityHandlers();
         }
@@ -952,8 +1259,49 @@ namespace BPSR_ZDPS
         public bool IsTimedOut { get; set; } = false;
         [ProtoMember(4)]
         public int DungeonTimeDeathChange { get; set; } = 0;
+        [ProtoMember(5)]
+        public int EncounterPhase { get; set; } = 0;
+        [ProtoMember(6)]
+        public int BenchmarkTime { get; set; } = 0;
+        [ProtoMember(7)]
+        public DateTime? FirstDamageTimeStamp { get; set; } = null;
 
         public EncounterExData() { }
+    }
+
+    public class EncounterBossDataCache
+    {
+        public long UUID;
+        public string Name;
+        public long Hp;
+        public long MaxHp;
+        public Dictionary<string, object> Attrs;
+    }
+
+    public class TempAttributesContainer
+    {
+        public int Id;
+        public int Value;
+        public DataTypes.TempAttr TempAttr;
+    }
+
+    public class SceneEventEventArgs : EventArgs
+    {
+        public Zproto.WorldEventType EventType;
+    }
+
+    public class SceneEventBossDbmEventArgs : SceneEventEventArgs
+    {
+        public int SkillId;
+        public int Duration;
+        public int Insertion;
+        public long Timestamp;
+    }
+
+    public class SceneEventNoticeTipEventArgs : SceneEventEventArgs
+    {
+        public string MessageId;
+        public string ExtraId;
     }
 
     public class Entity : System.ICloneable
@@ -970,11 +1318,14 @@ namespace BPSR_ZDPS
         public int Level { get; set; } = 0;
         public Vector3 Position { get; private set; } = new();
 
+        public long SeasonLevel { get; set; } = 0;
+        public long SeasonStrength { get; set; } = 0;
+
         public CombatStats DamageStats { get; set; } = new();
         public CombatStats HealingStats { get; set; } = new();
         public CombatStats TakenStats { get; set; } = new();
 
-        public ConcurrentDictionary<int, CombatStats> SkillStats { get; set; } = new();
+        public ConcurrentDictionary<int, CombatStats> SkillStats { get; set; } = new(); // DO NOT USE - Only for migration purposes
         public ConcurrentDictionary<int, MetricsContainer> SkillMetrics { get; set; } = new();
         public ConcurrentDictionary<long, StatTracker> InteractedEntities { get; set; } = new();
 
@@ -986,11 +1337,18 @@ namespace BPSR_ZDPS
         public ulong TotalShield { get; set; } = 0;
         public ulong TotalCasts { get; set; } = 0;
         public ulong TotalDeaths { get; set; } = 0;
+        public double TotalInactiveTime { get; set; } = 0.0;
+        public double InactiveTime { get; set; } = 0.0;
+
+        public DateTime? FirstCombatActionTime { get; set; } = null;
+        public DateTime? LastCombatActionTime { get; set; } = null;
 
         // The key is the BuffUuid, however it is specifically a ulong here to enable key-based and index-based lookups
         // An OrderedDictionary automatically uses an int32 as the index lookup and using an int32 as the key overrides that
         // Whenever we want to perform a key-based (BuffUuid) lookup on this, cast to a ulong to make it work
         public ThreadSafeOrderedDictionary<ulong, BuffEvent> BuffEvents { get; set; } = new();
+        [JsonIgnore]
+        public ThreadSafeOrderedDictionary<ulong, BuffEvent> RecentBuffEventHistory { get; private set; } = new(6);
 
         // Monster specific variables
         // When -1, this is unset (non-Monsters will be at -1), when 1 this is Elite, when 2 it is a boss
@@ -1000,10 +1358,15 @@ namespace BPSR_ZDPS
         public long MaxHp { get; private set; } = 0;
         public ConcurrentQueue<long> RecentHpHistory { get; private set; } = new();
 
-        public ThreatInfo ThreatInfo { get; private set; } = new();
-        public ConcurrentQueue<ThreatInfo> RecentThreatInfoHistory { get; private set; } = new();
+        public List<ThreatInfo> ThreatInfoList { get; private set; } = new();
+        public ConcurrentQueue<List<ThreatInfo>> RecentThreatInfoListHistory { get; private set; } = new();
 
         public Dictionary<string, object> Attributes { get; set; } = new();
+
+        [JsonIgnore]
+        public Dictionary<int, TempAttributesContainer> TempAttributes { get; set; } = new();
+
+        public EEntityType SummonerEntityType { get; set; } = EEntityType.EntErrType;
 
         public delegate void SkillActivatedEventHandler(object sender, SkillActivatedEventArgs e);
         public event SkillActivatedEventHandler SkillActivated;
@@ -1060,11 +1423,24 @@ namespace BPSR_ZDPS
         }
 
         [JsonConstructor]
-        public Entity(long uuid, string name = null)
+        public Entity(long uuid, string name = null, Encounter encounter = null)
         {
             UUID = uuid;
             UID = Utils.UuidToEntityId(uuid);
             Name = name;
+
+            if (encounter != null)
+            {
+                // Restore boss data from the previous attempt if it exists
+                // This is done before anything else to ensure required Attributes exist and are overriden by new data
+                if (encounter.PreviousBossCache.Count > 0 && encounter.PreviousBossCache.TryGetValue(uuid, out var foundEnt))
+                {
+                    SetHpValuesNoUpdate(foundEnt.Hp, foundEnt.MaxHp);
+                    Attributes = foundEnt.Attrs.ToDictionary();
+
+                    encounter.PreviousBossCache.Remove(uuid);
+                }
+            }
 
             SetEntityType((EEntityType)Utils.UuidToEntityType(uuid));
 
@@ -1100,6 +1476,16 @@ namespace BPSR_ZDPS
                 if (SubProfessionId == 0 && cached.SubProfessionId != 0)
                 {
                     SetSubProfessionId(cached.SubProfessionId);
+                }
+
+                if (SeasonLevel == 0 && cached.SeasonLevel != 0)
+                {
+                    SetSeasonLevel(cached.SeasonLevel);
+                }
+
+                if (SeasonStrength == 0 && cached.SeasonStrength != 0)
+                {
+                    SetSeasonStrength(cached.SeasonStrength);
                 }
             }
 
@@ -1164,6 +1550,18 @@ namespace BPSR_ZDPS
                     }
                 }
             }
+            else if (type == EEntityType.EntDummy)
+            {
+                var attr_id = GetAttrKV("AttrId");
+                if (attr_id != null)
+                {
+                    UID = (int)attr_id;
+                    if (HelperMethods.DataTables.Dummys.Data.TryGetValue(attr_id.ToString(), out var dummyEntry))
+                    {
+                        SetName(dummyEntry.Name);
+                    }
+                }
+            }
         }
 
         public void SetAbilityScore(int abilityScore)
@@ -1194,10 +1592,21 @@ namespace BPSR_ZDPS
             SubProfessionId = id;
             SubProfession = Professions.GetSubProfessionNameFromId(id);
 
+            int profId = Professions.GetProfessionIdFromSubProfessionId(id);
+            if (ProfessionId != profId)
+            {
+                ProfessionId = profId;
+                Profession = Professions.GetProfessionNameFromId(profId);
+            }
+
             var cached = EntityCache.Instance.GetOrCreate(UUID);
             if (cached != null && id != 0)
             {
                 cached.SubProfessionId = id;
+                if (cached.ProfessionId != profId)
+                {
+                    cached.ProfessionId = profId;
+                }
             }
         }
 
@@ -1209,6 +1618,28 @@ namespace BPSR_ZDPS
             if (cached != null && level != 0)
             {
                 cached.Level = level;
+            }
+        }
+
+        public void SetSeasonLevel(int level)
+        {
+            SeasonLevel = level;
+
+            var cached = EntityCache.Instance.GetOrCreate(UUID);
+            if (cached != null && level != 0)
+            {
+                cached.SeasonLevel = level;
+            }
+        }
+
+        public void SetSeasonStrength(int strength)
+        {
+            SeasonStrength = strength;
+
+            var cached = EntityCache.Instance.GetOrCreate(UUID);
+            if (cached != null && strength != 0)
+            {
+                cached.SeasonStrength = strength;
             }
         }
 
@@ -1229,7 +1660,7 @@ namespace BPSR_ZDPS
         public void SetHpValuesNoUpdate(long hp, long maxHp)
         {
             Hp = hp;
-            MaxHp = MaxHp;
+            MaxHp = maxHp;
         }
 
         public void SetHpValues(long hp = -1, long maxHp = -1)
@@ -1262,17 +1693,17 @@ namespace BPSR_ZDPS
             HpUpdated?.Invoke(this, e);
         }
 
-        public void SetThreatList(ThreatInfo threatInfo)
+        public void SetThreatList(List<ThreatInfo> threatInfoList)
         {
-            if (RecentThreatInfoHistory.Count > 5)
+            if (RecentThreatInfoListHistory.Count > 5)
             {
-                RecentThreatInfoHistory.TryDequeue(out _);
+                RecentThreatInfoListHistory.TryDequeue(out _);
             }
-            RecentThreatInfoHistory.Enqueue(threatInfo);
+            RecentThreatInfoListHistory.Enqueue(threatInfoList);
 
-            ThreatInfo = threatInfo;
+            ThreatInfoList = threatInfoList;
 
-            OnThreatListUpdated(new ThreatListUpdatedEventArgs() { EntityUuid = UUID, ThreatInfo = ThreatInfo });
+            OnThreatListUpdated(new ThreatListUpdatedEventArgs() { EntityUuid = UUID, ThreatInfoList = ThreatInfoList });
         }
 
         protected virtual void OnThreatListUpdated(ThreatListUpdatedEventArgs e)
@@ -1293,6 +1724,15 @@ namespace BPSR_ZDPS
         public void SetMonsterType(int type)
         {
             MonsterType = (EMonsterType)type;
+        }
+
+        public void AddRecentBuffEventHistory(int uuid, BuffEvent buffEvent)
+        {
+            if (RecentBuffEventHistory.Count > 20)
+            {
+                RecentBuffEventHistory.Remove(RecentBuffEventHistory.AsValueEnumerable().First().Key);
+            }
+            RecentBuffEventHistory[(ulong)uuid] = buffEvent;
         }
 
         public void RegisterSkillActivation(int skillId)
@@ -1325,7 +1765,7 @@ namespace BPSR_ZDPS
             SkillActivated?.Invoke(this, e);
         }
 
-        public void RegisterSkillData(ESkillType skillType, long otherUuid, int skillId, int skillLevel, long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, Vec3 damagePos, Vector3? instigatorPos, Vector3? targetPos, ExtraPacketData extraPacketData)
+        public void RegisterSkillData(ESkillType skillType, long otherUuid, int skillId, int skillLevel, long value, bool isCrit, bool isLucky, long hpLessenValue, long shieldBreak, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, Vec3 damagePos, Vector3? instigatorPos, Vector3? targetPos, ExtraPacketData extraPacketData)
         {
             if(!SkillMetrics.TryGetValue(skillId, out var container))
             {
@@ -1336,9 +1776,31 @@ namespace BPSR_ZDPS
                 if (HelperMethods.DataTables.Skills.Data.TryGetValue(skillId.ToString(), out var skill))
                 {
                     combatStats.SetName(skill.Name);
+
+                    // Try to use the AttrSkillLevelIdList to determine skill tier information right away
+                    var attrSkillLevelIdList = GetAttrKV("AttrSkillLevelIdList");
+                    if (attrSkillLevelIdList != null)
+                    {
+                        if (attrSkillLevelIdList is List<DataTypes.Skills.SkillLevelInfo>)
+                        {
+                            var list = (List<DataTypes.Skills.SkillLevelInfo>)attrSkillLevelIdList;
+
+                            int skillLevelGroup = skillId;
+                            if (skill.SkillLevelGroup != 0)
+                            {
+                                skillLevelGroup = skill.SkillLevelGroup;
+                            }
+
+                            var knownSkill = list.Where(x => x.SkillId == skillLevelGroup).FirstOrDefault();
+                            if (knownSkill != null && knownSkill != default)
+                            {
+                                combatStats.SetSummonData(combatStats.SummonUUID, knownSkill.Tier);
+                            }
+                        }
+                    }
                 }
 
-                combatStats.AddData(otherUuid, skillId, skillLevel, value, isCrit, isLucky, hpLessenValue, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData);
+                combatStats.AddData(otherUuid, skillId, skillLevel, value, isCrit, isLucky, hpLessenValue, shieldBreak, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData, GetInactiveTime(), FirstCombatActionTime);
 
                 container = new();
                 if (skillType == ESkillType.Damage)
@@ -1384,9 +1846,31 @@ namespace BPSR_ZDPS
                 if (string.IsNullOrEmpty(combatStats.Name) && HelperMethods.DataTables.Skills.Data.TryGetValue(skillId.ToString(), out var skill))
                 {
                     combatStats.SetName(skill.Name);
+
+                    // Try to use the AttrSkillLevelIdList to determine skill tier information right away
+                    var attrSkillLevelIdList = GetAttrKV("AttrSkillLevelIdList");
+                    if (attrSkillLevelIdList != null)
+                    {
+                        if (attrSkillLevelIdList is List<DataTypes.Skills.SkillLevelInfo>)
+                        {
+                            var list = (List<DataTypes.Skills.SkillLevelInfo>)attrSkillLevelIdList;
+
+                            int skillLevelGroup = skillId;
+                            if (skill.SkillLevelGroup != 0)
+                            {
+                                skillLevelGroup = skill.SkillLevelGroup;
+                            }
+
+                            var knownSkill = list.Where(x => x.SkillId == skillLevelGroup).FirstOrDefault();
+                            if (knownSkill != null && knownSkill != default)
+                            {
+                                combatStats.SetSummonData(combatStats.SummonUUID, knownSkill.Tier);
+                            }
+                        }
+                    }
                 }
 
-                combatStats.AddData(otherUuid, skillId, skillLevel, value, isCrit, isLucky, hpLessenValue, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData);
+                combatStats.AddData(otherUuid, skillId, skillLevel, value, isCrit, isLucky, hpLessenValue, shieldBreak, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData, GetInactiveTime(), FirstCombatActionTime);
             }
 
             if (!InteractedEntities.TryGetValue(otherUuid, out var statTracker))
@@ -1472,10 +1956,52 @@ namespace BPSR_ZDPS
             InteractedEntities[otherUuid] = statTracker;
         }
 
-        public void AddDamage(long targetUuid, int skillId, int skillLevel, long damage, long hpLessen,
+        public void RecalculateInactiveTime(DateTime now, bool skipSave = false)
+        {
+            if (!skipSave)
+            {
+                FirstCombatActionTime ??= now;
+            }
+
+            DateTime? lastCombatAction = FirstCombatActionTime;
+
+            if (LastCombatActionTime != null)
+            {
+                lastCombatAction = LastCombatActionTime.Value;
+            }
+
+            if (lastCombatAction == null)
+            {
+                //Serilog.Log.Warning("RecalculateInactiveTime did not have a valid FirstCombatActionTime or LastCombatActionTime set, skipping the recalculation request");
+                return;
+            }
+
+            double inactiveSeconds = now.Subtract(lastCombatAction.Value).TotalSeconds;
+            if (inactiveSeconds > 10.0)
+            {
+                InactiveTime = inactiveSeconds - 10.0;
+            }
+
+            if (!skipSave)
+            {
+                TotalInactiveTime += InactiveTime;
+                InactiveTime = 0.0;
+                LastCombatActionTime = now;
+                FirstCombatActionTime ??= now;
+            }
+        }
+
+        public double GetInactiveTime()
+        {
+            return TotalInactiveTime + InactiveTime;
+        }
+
+        public void AddDamage(long targetUuid, int skillId, int skillLevel, long damage, long hpLessen, long shieldBreak,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
             bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, Vec3 damagePos, ExtraPacketData extraPacketData)
         {
+            RecalculateInactiveTime(extraPacketData.ArrivalTime);
+
             if (damageType != EDamageType.Immune)
             {
                 TotalDamage += (ulong)damage;
@@ -1483,7 +2009,7 @@ namespace BPSR_ZDPS
 
             if (damageType == EDamageType.Absorbed)
             {
-                TotalShieldBreak += (ulong)damage;
+                TotalShieldBreak += (ulong)shieldBreak;
             }
 
             Vector3? instigatorPos = Position;
@@ -1494,9 +2020,9 @@ namespace BPSR_ZDPS
                 targetPos = targetEntity.Position;
             }
 
-            DamageStats.AddData(targetUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData);
+            DamageStats.AddData(targetUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, shieldBreak, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData, GetInactiveTime(), FirstCombatActionTime);
 
-            RegisterSkillData(ESkillType.Damage, targetUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData);
+            RegisterSkillData(ESkillType.Damage, targetUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, shieldBreak, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData);
 
             // Always attempt to update the sub profession data as they may have changed classes or not been detected properly yet
             var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
@@ -1507,10 +2033,12 @@ namespace BPSR_ZDPS
         }
 
         public void AddHealing(
-            long targetUuid, int skillId, int skillLevel, long damage, long overhealing, long effectiveHealing, long hpLessen,
+            long targetUuid, int skillId, int skillLevel, long damage, long overhealing, long effectiveHealing, long hpLessen, long shieldBreak,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
             bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, Vec3 damagePos, ExtraPacketData extraPacketData)
         {
+            RecalculateInactiveTime(extraPacketData.ArrivalTime);
+
             TotalHealing += (ulong)damage;
             TotalOverhealing += (ulong)overhealing;
 
@@ -1522,9 +2050,10 @@ namespace BPSR_ZDPS
                 targetPos = targetEntity.Position;
             }
 
-            HealingStats.AddData(targetUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData);
+            HealingStats.AddData(targetUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, shieldBreak, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData, GetInactiveTime(), FirstCombatActionTime);
 
-            RegisterSkillData(ESkillType.Healing, targetUuid, skillId, skillLevel, damage, isCrit, isLucky, overhealing, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData);
+            // We pass in overhealing in place of hpLessen due to hpLessen and damage (requested healing) being the same value
+            RegisterSkillData(ESkillType.Healing, targetUuid, skillId, skillLevel, damage, isCrit, isLucky, overhealing, shieldBreak, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, extraPacketData);
 
             // Always attempt to update the sub profession data as they may have changed classes or not been detected properly yet
             var subProfessionId = Professions.GetSubProfessionIdBySkillId(skillId);
@@ -1535,10 +2064,12 @@ namespace BPSR_ZDPS
         }
 
         public void AddTakenDamage(
-            long attackerUuid, int skillId, int skillLevel, long damage, long hpLessen,
+            long attackerUuid, int skillId, int skillLevel, long damage, long hpLessen, long shieldBreak,
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
             bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, Vec3 damagePos, ExtraPacketData extraPacketData)
         {
+            RecalculateInactiveTime(extraPacketData.ArrivalTime);
+
             if (damageType != EDamageType.Immune)
             {
                 TotalTakenDamage += (ulong)damage;
@@ -1552,13 +2083,30 @@ namespace BPSR_ZDPS
                 instigatorPos = instigatorEntity.Position;
             }
 
-            TakenStats.AddData(attackerUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, victimPos, extraPacketData);
-            RegisterSkillData(ESkillType.Taken, attackerUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, victimPos, extraPacketData);
+            TakenStats.AddData(attackerUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, shieldBreak,isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, victimPos, extraPacketData, GetInactiveTime(), FirstCombatActionTime);
+            RegisterSkillData(ESkillType.Taken, attackerUuid, skillId, skillLevel, damage, isCrit, isLucky, hpLessen, shieldBreak, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, victimPos, extraPacketData);
         }
 
-        public void NotifyBuffEvent(EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId, TimeSpan encounterTime)
+        public void NotifyBuffEvent(EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId, TimeSpan encounterTime, DateTime? creationTime, ExtraPacketData extraPacketData)
         {
-            if (baseId > 0)
+            if (buffEventType == EBuffEventType.BuffEventRemove)
+            {
+                if (!BuffEvents.TryGetValue((ulong)buffUuid, out var buffEvent))
+                {
+                    // A remove event would only be coming with the uuid and type
+                    buffEvent = new BuffEvent(buffUuid);
+                }
+                buffEvent.SetRemoveTime(encounterTime.Duration(), extraPacketData.ArrivalTime);
+
+                if (Settings.Instance.LimitEncounterBuffTrackingInOpenWorld && BattleStateMachine.IsInOpenWorld() && BuffEvents.Count > 99)
+                {
+                    BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
+                }
+
+                BuffEvents[(ulong)buffUuid] = buffEvent;
+                AddRecentBuffEventHistory(buffUuid, buffEvent);
+            }
+            else
             {
                 if (!BuffEvents.TryGetValue((ulong)buffUuid, out var buffEvent))
                 {
@@ -1566,40 +2114,33 @@ namespace BPSR_ZDPS
                 }
                 else
                 {
-                    // TODO: For now allow all updates to pass through into the Buff Event system. This needs to be refined for better accuracy of what is actually going on though
-                    //if (buffEvent.BaseId <= 0)
+                    buffEvent.SetEvent(buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId);
+                }
+
+                if (creationTime != null)
+                {
+                    var diff = extraPacketData.ArrivalTime.Subtract(creationTime.Value).TotalSeconds;
+                    if (diff < -5 || diff > 0)
                     {
-                        buffEvent.SetEvent(buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId);
+                        buffEvent.SetAddTime(encounterTime.Duration(), creationTime.Value);
+                    }
+                    else
+                    {
+                        buffEvent.SetAddTime(encounterTime.Duration(), extraPacketData.ArrivalTime);
                     }
                 }
-                buffEvent.SetAddTime(encounterTime.Duration());
+                else
+                {
+                    buffEvent.SetAddTime(encounterTime.Duration(), extraPacketData.ArrivalTime);
+                }
 
-                if (!Settings.Instance.UseDatabaseForEncounterHistory && Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase && BuffEvents.Count > 99)
+                if (Settings.Instance.LimitEncounterBuffTrackingInOpenWorld && BattleStateMachine.IsInOpenWorld() && BuffEvents.Count > 99)
                 {
                     BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
                 }
 
                 BuffEvents[(ulong)buffUuid] = buffEvent;
-            }
-            else
-            {
-                if (!BuffEvents.TryGetValue((ulong)buffUuid, out var buffEvent))
-                {
-                    // A remove event would only be coming with the uuid and type
-                    buffEvent = new BuffEvent(buffUuid);
-                }
-                buffEvent.SetRemoveTime(encounterTime.Duration());
-
-                if (!Settings.Instance.UseDatabaseForEncounterHistory && Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase && BuffEvents.Count > 99)
-                {
-                    BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
-                }
-
-                BuffEvents[(ulong)buffUuid] = buffEvent;
-            }
-            //else
-            {
-                //System.Diagnostics.Debug.WriteLine($"NotifyBuffEvent Unhandled BuffEventType: {buffEventType}");
+                AddRecentBuffEventHistory(buffUuid, buffEvent);
             }
         }
 
@@ -1617,7 +2158,7 @@ namespace BPSR_ZDPS
             }
             buffEvent.AddData(attributeName, attributeValue);
 
-            if (!Settings.Instance.UseDatabaseForEncounterHistory && Settings.Instance.LimitEncounterBuffTrackingWithoutDatabase && BuffEvents.Count > 99)
+            if (Settings.Instance.LimitEncounterBuffTrackingInOpenWorld && BattleStateMachine.IsInOpenWorld() && BuffEvents.Count > 99)
             {
                 BuffEvents.Remove(BuffEvents.AsValueEnumerable().First().Key);
             }
@@ -1633,6 +2174,17 @@ namespace BPSR_ZDPS
         public object? GetAttrKV(string key)
         {
             var value = Attributes.TryGetValue(key, out var val) ? val : null;
+            return value;
+        }
+
+        public void SetTempAttrKV(int key, TempAttributesContainer value)
+        {
+            TempAttributes[key] = value;
+        }
+
+        public TempAttributesContainer? GetTempAttrKV(int key)
+        {
+            var value = TempAttributes.TryGetValue(key, out var val) ? val : null;
             return value;
         }
 
@@ -1674,6 +2226,38 @@ namespace BPSR_ZDPS
             TotalShield += newEntity.TotalShield;
             TotalCasts += newEntity.TotalCasts;
             TotalDeaths += newEntity.TotalDeaths;
+            TotalInactiveTime += newEntity.TotalInactiveTime;
+            InactiveTime += newEntity.InactiveTime;
+
+            if (newEntity.FirstCombatActionTime.HasValue)
+            {
+                if (FirstCombatActionTime.HasValue)
+                {
+                    if (newEntity.FirstCombatActionTime.Value < FirstCombatActionTime.Value)
+                    {
+                        FirstCombatActionTime = newEntity.FirstCombatActionTime.Value;
+                    }
+                }
+                else
+                {
+                    FirstCombatActionTime = newEntity.FirstCombatActionTime.Value;
+                }
+            }
+
+            if (newEntity.LastCombatActionTime.HasValue)
+            {
+                if (LastCombatActionTime.HasValue)
+                {
+                    if (newEntity.LastCombatActionTime.Value > LastCombatActionTime.Value)
+                    {
+                        LastCombatActionTime = newEntity.LastCombatActionTime.Value;
+                    }
+                }
+                else
+                {
+                    LastCombatActionTime = newEntity.LastCombatActionTime.Value;
+                }
+            }
 
             DamageStats.MergeCombatStats(newEntity.DamageStats);
             HealingStats.MergeCombatStats(newEntity.HealingStats);
@@ -1790,7 +2374,31 @@ namespace BPSR_ZDPS
     public class ThreatListUpdatedEventArgs : EventArgs
     {
         public long EntityUuid { get; set; }
-        public ThreatInfo ThreatInfo { get; set; } = new();
+        public List<ThreatInfo> ThreatInfoList { get; set; } = new();
+    }
+
+    public class BuffUpdatedEventArgs : EventArgs
+    {
+        public long EntityUuid { get; set; }
+        public EBuffEventType BuffEventType { get; set; }
+        public int BuffUuid { get; set; }
+        public int BaseId { get; set; }
+        public int Level { get; set; }
+        public long FireUuid { get; set; }
+        public int Layer { get; set; }
+        public int Duration { get; set; }
+        public int SourceConfigId { get; set; }
+        public string EntityCasterName { get; set; }
+        public DateTime UpdateDateTime { get; set; }
+        public DateTime? CreationDateTime { get; set; }
+    }
+
+    public class AttributeUpdatedEventArgs : EventArgs
+    {
+        public long EntityUuid { get; set; }
+        public Entity? Entity { get; set; }
+        public string AttributeName { get; set; }
+        public object AttributeValue { get; set; }
     }
 
     public enum ESkillType : int
@@ -1887,8 +2495,12 @@ namespace BPSR_ZDPS
         public long ValueMax { get; private set; }
         public long ValueMin { get; private set; }
         public double ValueAverage { get; private set; }
-        public double ValuePerSecond { get; private set; }
+        public double ValuePerSecond { get; set; }
+        public double ValuePerSecondActive { get; set; }
         public double TrueValuePerSecond { get; set; }
+
+        public ulong HpLessenTotal { get; private set; }
+        public ulong ShieldBreakTotal { get; private set; }
 
         public uint MissCount { get; private set; }
         public double MissRate { get; private set; }
@@ -1897,6 +2509,7 @@ namespace BPSR_ZDPS
         public double CritRate { get; private set; }
         
         public uint LuckyCount { get; private set; }
+        public uint LuckyHitCount { get; private set; }
         public double LuckyRate { get; private set; }
 
         public uint CritLuckyCount { get; private set; }
@@ -1909,6 +2522,8 @@ namespace BPSR_ZDPS
 
         public DateTime? StartTime = null;
         public DateTime? EndTime = null;
+        public DateTime? EntityStartTime = null;
+        public double InactiveTime = 0.0;
 
         public List<SkillSnapshot> SkillSnapshots { get; private set; } = new();
 
@@ -1969,10 +2584,47 @@ namespace BPSR_ZDPS
             ValueImmuneTotal += (ulong)value;
         }
 
-        public void AddData(long otherUuid, int skillId, int level, long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, Vec3 damagePos, Vector3? instigatorPos, Vector3? targetPos, ExtraPacketData extraPacketData)
+        public void RecalculatePerSecond(DateTime? endTime)
+        {
+            DateTime? end = EndTime;
+            if (endTime != null)
+            {
+                end = endTime;
+            }
+
+            if (StartTime != null && end != null && StartTime <= end)
+            {
+                var seconds = (end.Value - StartTime.Value).TotalSeconds;
+                if (seconds >= 1.0)
+                {
+                    ValuePerSecond = seconds > 0 ? Math.Round((double)ValueTotal / seconds, 0) : 0;
+                }
+                else
+                {
+                    ValuePerSecond = ValueTotal;
+                }
+            }
+
+            if (EntityStartTime != null && end != null && EntityStartTime <= end)
+            {
+                var seconds = (end.Value - EntityStartTime.Value).TotalSeconds - InactiveTime;
+                if (seconds >= 1.0)
+                {
+                    ValuePerSecondActive = seconds > 0 ? Math.Round((double)ValueTotal / seconds, 0) : 0;
+                }
+                else
+                {
+                    ValuePerSecondActive = ValueTotal;
+                }
+            }
+        }
+
+        public void AddData(long otherUuid, int skillId, int level, long value, bool isCrit, bool isLucky, long hpLessenValue, long shieldBreak, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, Vec3 damagePos, Vector3? instigatorPos, Vector3? targetPos, ExtraPacketData extraPacketData, double inactiveTime, DateTime? startTime)
         {
             DateTime now = extraPacketData.ArrivalTime;
-            StartTime ??= now;
+            InactiveTime = inactiveTime;
+            StartTime ??= EncounterManager.Current.ExData.FirstDamageTimeStamp;// now;
+            EntityStartTime ??= startTime;
             EndTime = now;
 
             Id = skillId;
@@ -2002,6 +2654,9 @@ namespace BPSR_ZDPS
             {
                 AddValue(value);
 
+                HpLessenTotal += (ulong)hpLessenValue;
+                ShieldBreakTotal += (ulong)shieldBreak;
+
                 if (isCrit)
                 {
                     CritCount++;
@@ -2016,6 +2671,7 @@ namespace BPSR_ZDPS
                 }
                 if (isLucky)
                 {
+                    LuckyHitCount++;
                     AddLuckyValue(value);
                 }
 
@@ -2040,9 +2696,9 @@ namespace BPSR_ZDPS
 
             ValueAverage = HitsCount > 0 ? Math.Round(((double)ValueTotal / (double)HitsCount), 0) : 0.0;
             CritRate = HitsCount > 0 ? Math.Round(((double)CritCount / (double)HitsCount) * 100.0, 0) : 0.0;
-            LuckyRate = HitsCount > 0 ? Math.Round(((double)LuckyCount / (double)HitsCount) * 100.0, 0) : 0.0;
+            LuckyRate = HitsCount > 0 && HitsCount >= LuckyHitCount ? Math.Round(((double)LuckyHitCount / Math.Clamp((double)(HitsCount - LuckyHitCount), 1, double.MaxValue)) * 100.0, 0) : 0.0;
 
-            if (StartTime != null && EndTime != null && StartTime < EndTime)
+            if (StartTime != null && EndTime != null && StartTime <= EndTime)
             {
                 var seconds = (EndTime.Value - StartTime.Value).TotalSeconds;
                 if (seconds >= 1.0)
@@ -2055,7 +2711,25 @@ namespace BPSR_ZDPS
                 }
             }
 
-            AddSnapshot(otherUuid, skillId, level, value, isCrit, isLucky, hpLessenValue, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, now);
+            if (EntityStartTime != null && EndTime != null && EntityStartTime <= EndTime)
+            {
+                var seconds = (EndTime.Value - EntityStartTime.Value).TotalSeconds - InactiveTime;
+                if (seconds >= 1.0)
+                {
+                    ValuePerSecondActive = seconds > 0 ? Math.Round((double)ValueTotal / seconds, 0) : 0;
+                }
+                else
+                {
+                    ValuePerSecondActive = ValueTotal;
+                }
+            }
+
+            if (Settings.Instance.SkipSkillSnapshotSavingInOpenWorld && BattleStateMachine.IsInOpenWorld())
+            {
+                return;
+            }
+
+            AddSnapshot(otherUuid, skillId, level, value, isCrit, isLucky, hpLessenValue, shieldBreak, isCauseLucky, damageElement, damageType, damageMode, isDead, damagePos, instigatorPos, targetPos, now);
         }
 
         public void SetSummonData(long uuid, int level)
@@ -2064,7 +2738,7 @@ namespace BPSR_ZDPS
             TierLevel = level;
         }
 
-        public void AddSnapshot(long otherUuid, int id, int level, long value, bool isCrit, bool isLucky, long hpLessenValue, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, Vec3 damagePos, Vector3? instigatorPos, Vector3? targetPos, DateTime timestamp)
+        public void AddSnapshot(long otherUuid, int id, int level, long value, bool isCrit, bool isLucky, long hpLessenValue, long shieldBreak, bool isCauseLucky, EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode, bool isDead, Vec3 damagePos, Vector3? instigatorPos, Vector3? targetPos, DateTime timestamp)
         {
             var snapshot = new SkillSnapshot()
             {
@@ -2072,6 +2746,8 @@ namespace BPSR_ZDPS
                 Id = id,
                 Level = level,
                 Value = value,
+                HpLessen = hpLessenValue,
+                ShieldBreak = shieldBreak,
                 IsCrit = isCrit,
                 IsLucky = isLucky,
                 IsCritLucky = isCrit && isLucky,
@@ -2122,9 +2798,13 @@ namespace BPSR_ZDPS
             ValueMax = newCombatStats.ValueMax > ValueMax ? newCombatStats.ValueMax : ValueMax;
             ValueMin = newCombatStats.ValueMin < ValueMin ? newCombatStats.ValueMin : ValueMin;
 
+            HpLessenTotal += newCombatStats.HpLessenTotal;
+            ShieldBreakTotal += newCombatStats.ShieldBreakTotal;
+
             MissCount += newCombatStats.MissCount;
             CritCount += newCombatStats.CritCount;
             LuckyCount += newCombatStats.LuckyCount;
+            LuckyHitCount += newCombatStats.LuckyHitCount;
             CritLuckyCount += newCombatStats.CritLuckyCount;
             NormalCount += newCombatStats.NormalCount;
             KillCount += newCombatStats.KillCount;
@@ -2134,7 +2814,7 @@ namespace BPSR_ZDPS
 
             ValueAverage = HitsCount > 0 ? Math.Round(((double)ValueTotal / (double)HitsCount), 0) : 0.0;
             CritRate = HitsCount > 0 ? Math.Round(((double)CritCount / (double)HitsCount) * 100.0, 0) : 0.0;
-            LuckyRate = HitsCount > 0 ? Math.Round(((double)LuckyCount / (double)HitsCount) * 100.0, 0) : 0.0;
+            LuckyRate = HitsCount > 0 && HitsCount >= LuckyHitCount ? Math.Round(((double)LuckyHitCount / Math.Clamp((double)(HitsCount - LuckyHitCount), 1, double.MaxValue)) * 100.0, 0) : 0.0;
 
             if (MissCount > 0 && HitsCount == 0)
             {
@@ -2175,6 +2855,23 @@ namespace BPSR_ZDPS
                 }
             }
 
+            if (newCombatStats.EntityStartTime.HasValue)
+            {
+                if (EntityStartTime.HasValue)
+                {
+                    if (newCombatStats.EntityStartTime.Value < EntityStartTime.Value)
+                    {
+                        EntityStartTime = newCombatStats.EntityStartTime.Value;
+                    }
+                }
+                else
+                {
+                    EntityStartTime = newCombatStats.EntityStartTime.Value;
+                }
+            }
+
+            InactiveTime += newCombatStats.InactiveTime;
+
             if (StartTime != null && EndTime != null && StartTime < EndTime)
             {
                 var seconds = (EndTime.Value - StartTime.Value).TotalSeconds;
@@ -2185,6 +2882,19 @@ namespace BPSR_ZDPS
                 else
                 {
                     ValuePerSecond = ValueTotal;
+                }
+            }
+
+            if (EntityStartTime != null && EndTime != null && EntityStartTime <= EndTime)
+            {
+                var seconds = (EndTime.Value - EntityStartTime.Value).TotalSeconds - InactiveTime;
+                if (seconds >= 1.0)
+                {
+                    ValuePerSecondActive = seconds > 0 ? Math.Round((double)ValueTotal / seconds, 0) : 0;
+                }
+                else
+                {
+                    ValuePerSecondActive = ValueTotal;
                 }
             }
 
@@ -2204,6 +2914,8 @@ namespace BPSR_ZDPS
         public int Level { get; set; }
 
         public long Value { get; set; }
+        public long HpLessen { get; set; }
+        public long ShieldBreak { get; set; }
 
         public EDamageProperty DamageElement { get; set; }
         public EDamageType DamageType { get; set; }
@@ -2246,7 +2958,8 @@ namespace BPSR_ZDPS
         public int Duration { get; private set; }
         public int SourceConfigId { get; private set; } // Original Skill Id
         public string Name { get; private set; }
-        public string Description { get; private set; }
+        [JsonIgnore]
+        public string Description { get; private set; } = "";
         public string Icon { get; private set; }
         public int BuffAbilityType { get; private set; }
         public int BuffAbilitySubType { get; private set; }
@@ -2254,6 +2967,8 @@ namespace BPSR_ZDPS
         public TimeSpan EventRemoveTime { get; private set; }
         public string AttributeName { get; private set; }
         public object? Data { get; private set; }
+        public DateTime AddDateTime { get; private set; }
+        public DateTime RemoveDateTime { get; private set; }
 
         public BuffEvent(long uuid)
         {
@@ -2277,7 +2992,6 @@ namespace BPSR_ZDPS
                 if (HelperMethods.DataTables.Buffs.Data.TryGetValue(baseId.ToString(), out var buffTableData))
                 {
                     Name = buffTableData.Name;
-                    Description = buffTableData.Desc;
                     Icon = buffTableData.GetIconName();
                     BuffType = buffTableData.BuffType.Value;
                     BuffPriority = buffTableData.BuffPriority.Value;
@@ -2307,14 +3021,16 @@ namespace BPSR_ZDPS
             Data = data;
         }
 
-        public void SetAddTime(TimeSpan time)
+        public void SetAddTime(TimeSpan time, DateTime dateTime)
         {
             EventAddTime = time;
+            AddDateTime = dateTime;
         }
 
-        public void SetRemoveTime(TimeSpan time)
+        public void SetRemoveTime(TimeSpan time, DateTime dateTime)
         {
             EventRemoveTime = time;
+            RemoveDateTime = dateTime;
         }
 
         public void SetEntitySourceNameFromUuid(string name)
@@ -2322,23 +3038,42 @@ namespace BPSR_ZDPS
 
         }
 
+        public void SetDescription(string value)
+        {
+            Description = value;
+        }
+
         public void SetEvent(int uuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId)
         {
             Uuid = uuid;
-            BaseId = baseId;
-            Level = level;
-            FireUuid = fireUuid;
-            EntityCasterName = entityCasterName;
+            if (baseId > 0)
+            {
+                BaseId = baseId;
+            }
+            if (level > 0)
+            {
+                Level = level;
+            }
+            if (fireUuid > 0)
+            {
+                FireUuid = fireUuid;
+            }
+            if (!string.IsNullOrEmpty(entityCasterName))
+            {
+                EntityCasterName = entityCasterName;
+            }
             Layer = layer;
             Duration = duration;
-            SourceConfigId = sourceConfigId;
+            if (sourceConfigId > 0)
+            {
+                SourceConfigId = sourceConfigId;
+            }
 
             if (BaseId > 0)
             {
                 if (HelperMethods.DataTables.Buffs.Data.TryGetValue(baseId.ToString(), out var buffTableData))
                 {
                     Name = buffTableData.Name;
-                    Description = buffTableData.Desc;
                     Icon = buffTableData.GetIconName();
 
                     // These should have already existed from the constructor

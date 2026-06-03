@@ -25,11 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3JlYWRfbWFpbF9yZXBseS5wcm90bxIGenByb3RvGhdlbnVtX2Vf",
-            "ZXJyb3JfY29kZS5wcm90byKbAQoNUmVhZE1haWxSZXBseRI0CghtYWlsX3Jl",
-            "dBgDIAMoCzIiLnpwcm90by5SZWFkTWFpbFJlcGx5Lk1haWxSZXRFbnRyeRIk",
-            "CghlcnJfY29kZRgEIAEoDjISLnpwcm90by5FRXJyb3JDb2RlGi4KDE1haWxS",
-            "ZXRFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90",
-            "bzM="));
+            "ZXJyb3JfY29kZS5wcm90byKrAQoNUmVhZE1haWxSZXBseRI8CgdtYWlsUmV0",
+            "GAMgAygLMiIuenByb3RvLlJlYWRNYWlsUmVwbHkuTWFpbFJldEVudHJ5Ugdt",
+            "YWlsUmV0EiwKB2VyckNvZGUYBCABKA4yEi56cHJvdG8uRUVycm9yQ29kZVIH",
+            "ZXJyQ29kZRouCgxNYWlsUmV0RW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVl",
+            "GAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new ReadMailReply(this);
     }
 
-    /// <summary>Field number for the "mail_ret" field.</summary>
+    /// <summary>Field number for the "mailRet" field.</summary>
     public const int MailRetFieldNumber = 3;
     private static readonly pbc::MapField<long, int>.Codec _map_mailRet_codec
         = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 26);
@@ -97,7 +97,7 @@ namespace Zproto {
       get { return mailRet_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

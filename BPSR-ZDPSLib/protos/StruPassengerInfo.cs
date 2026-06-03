@@ -24,13 +24,14 @@ namespace Zproto {
     static StruPassengerInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X3Bhc3Nlbmdlcl9pbmZvLnByb3RvEgZ6cHJvdG8iLwoNUGFzc2Vu",
-            "Z2VySW5mbxIQCghzZWF0X251bRgBIAEoBRIMCgR1dWlkGAIgASgDYgZwcm90",
-            "bzM="));
+            "ChlzdHJ1X3Bhc3Nlbmdlcl9pbmZvLnByb3RvEgZ6cHJvdG8iaQoNUGFzc2Vu",
+            "Z2VySW5mbxImCg5zZWF0R3JvdXBJbmRleBgBIAEoBVIOc2VhdEdyb3VwSW5k",
+            "ZXgSHAoJc2VhdEluZGV4GAIgASgFUglzZWF0SW5kZXgSEgoEdXVpZBgDIAEo",
+            "A1IEdXVpZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PassengerInfo), global::Zproto.PassengerInfo.Parser, new[]{ "SeatNum", "Uuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PassengerInfo), global::Zproto.PassengerInfo.Parser, new[]{ "SeatGroupIndex", "SeatIndex", "Uuid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,7 +73,8 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PassengerInfo(PassengerInfo other) : this() {
-      seatNum_ = other.seatNum_;
+      seatGroupIndex_ = other.seatGroupIndex_;
+      seatIndex_ = other.seatIndex_;
       uuid_ = other.uuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -83,20 +85,32 @@ namespace Zproto {
       return new PassengerInfo(this);
     }
 
-    /// <summary>Field number for the "seat_num" field.</summary>
-    public const int SeatNumFieldNumber = 1;
-    private int seatNum_;
+    /// <summary>Field number for the "seatGroupIndex" field.</summary>
+    public const int SeatGroupIndexFieldNumber = 1;
+    private int seatGroupIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int SeatNum {
-      get { return seatNum_; }
+    public int SeatGroupIndex {
+      get { return seatGroupIndex_; }
       set {
-        seatNum_ = value;
+        seatGroupIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "seatIndex" field.</summary>
+    public const int SeatIndexFieldNumber = 2;
+    private int seatIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int SeatIndex {
+      get { return seatIndex_; }
+      set {
+        seatIndex_ = value;
       }
     }
 
     /// <summary>Field number for the "uuid" field.</summary>
-    public const int UuidFieldNumber = 2;
+    public const int UuidFieldNumber = 3;
     private long uuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,7 +136,8 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SeatNum != other.SeatNum) return false;
+      if (SeatGroupIndex != other.SeatGroupIndex) return false;
+      if (SeatIndex != other.SeatIndex) return false;
       if (Uuid != other.Uuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -131,7 +146,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SeatNum != 0) hash ^= SeatNum.GetHashCode();
+      if (SeatGroupIndex != 0) hash ^= SeatGroupIndex.GetHashCode();
+      if (SeatIndex != 0) hash ^= SeatIndex.GetHashCode();
       if (Uuid != 0L) hash ^= Uuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -151,12 +167,16 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (SeatNum != 0) {
+      if (SeatGroupIndex != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(SeatNum);
+        output.WriteInt32(SeatGroupIndex);
+      }
+      if (SeatIndex != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(SeatIndex);
       }
       if (Uuid != 0L) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteInt64(Uuid);
       }
       if (_unknownFields != null) {
@@ -169,12 +189,16 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (SeatNum != 0) {
+      if (SeatGroupIndex != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(SeatNum);
+        output.WriteInt32(SeatGroupIndex);
+      }
+      if (SeatIndex != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(SeatIndex);
       }
       if (Uuid != 0L) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteInt64(Uuid);
       }
       if (_unknownFields != null) {
@@ -187,8 +211,11 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SeatNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SeatNum);
+      if (SeatGroupIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SeatGroupIndex);
+      }
+      if (SeatIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SeatIndex);
       }
       if (Uuid != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Uuid);
@@ -205,8 +232,11 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      if (other.SeatNum != 0) {
-        SeatNum = other.SeatNum;
+      if (other.SeatGroupIndex != 0) {
+        SeatGroupIndex = other.SeatGroupIndex;
+      }
+      if (other.SeatIndex != 0) {
+        SeatIndex = other.SeatIndex;
       }
       if (other.Uuid != 0L) {
         Uuid = other.Uuid;
@@ -231,10 +261,14 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            SeatNum = input.ReadInt32();
+            SeatGroupIndex = input.ReadInt32();
             break;
           }
           case 16: {
+            SeatIndex = input.ReadInt32();
+            break;
+          }
+          case 24: {
             Uuid = input.ReadInt64();
             break;
           }
@@ -258,10 +292,14 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            SeatNum = input.ReadInt32();
+            SeatGroupIndex = input.ReadInt32();
             break;
           }
           case 16: {
+            SeatIndex = input.ReadInt32();
+            break;
+          }
+          case 24: {
             Uuid = input.ReadInt64();
             break;
           }

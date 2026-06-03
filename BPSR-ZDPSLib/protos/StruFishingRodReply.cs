@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X2Zpc2hpbmdfcm9kX3JlcGx5LnByb3RvEgZ6cHJvdG8aF2VudW1f",
-            "ZV9lcnJvcl9jb2RlLnByb3RvIlwKD0Zpc2hpbmdSb2RSZXBseRIPCgdmaXNo",
-            "X2lkGAEgASgFEhIKCndhaXRfbWlsbHMYAiABKAUSJAoIZXJyX2NvZGUYAyAB",
-            "KA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "ZV9lcnJvcl9jb2RlLnByb3RvInUKD0Zpc2hpbmdSb2RSZXBseRIWCgZmaXNo",
+            "SWQYASABKAVSBmZpc2hJZBIcCgl3YWl0TWlsbHMYAiABKAVSCXdhaXRNaWxs",
+            "cxIsCgdlcnJDb2RlGAMgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNv",
+            "ZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new FishingRodReply(this);
     }
 
-    /// <summary>Field number for the "fish_id" field.</summary>
+    /// <summary>Field number for the "fishId" field.</summary>
     public const int FishIdFieldNumber = 1;
     private int fishId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "wait_mills" field.</summary>
+    /// <summary>Field number for the "waitMills" field.</summary>
     public const int WaitMillsFieldNumber = 2;
     private int waitMills_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

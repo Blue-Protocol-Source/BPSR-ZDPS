@@ -24,9 +24,10 @@ namespace Zproto {
     static EnumERideTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZlbnVtX2VfcmlkZV90eXBlLnByb3RvEgZ6cHJvdG8qXQoJRVJpZGVUeXBl",
+            "ChZlbnVtX2VfcmlkZV90eXBlLnByb3RvEgZ6cHJvdG8qeAoJRVJpZGVUeXBl",
             "EhIKDlJpZGVUeXBlTm9ybWFsEAASEQoNUmlkZVR5cGVSaWRlchABEhMKD1Jp",
-            "ZGVUeXBlVmVoaWNsZRACEhQKEFJpZGVUeXBlUGxhdGZvcm0QA2IGcHJvdG8z"));
+            "ZGVUeXBlVmVoaWNsZRACEhQKEFJpZGVUeXBlUGxhdGZvcm0QAxIZChVSaWRl",
+            "VHlwZVB1YmxpY1ZlaGljbGUQBGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.ERideType), }, null, null));
@@ -40,6 +41,7 @@ namespace Zproto {
     [pbr::OriginalName("RideTypeRider")] RideTypeRider = 1,
     [pbr::OriginalName("RideTypeVehicle")] RideTypeVehicle = 2,
     [pbr::OriginalName("RideTypePlatform")] RideTypePlatform = 3,
+    [pbr::OriginalName("RideTypePublicVehicle")] RideTypePublicVehicle = 4,
   }
 
   #endregion

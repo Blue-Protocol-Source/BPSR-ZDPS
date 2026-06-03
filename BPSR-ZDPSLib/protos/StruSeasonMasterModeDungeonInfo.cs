@@ -26,16 +26,17 @@ namespace Zproto {
           string.Concat(
             "CipzdHJ1X3NlYXNvbl9tYXN0ZXJfbW9kZV9kdW5nZW9uX2luZm8ucHJvdG8S",
             "Bnpwcm90bxooc3RydV9tYXN0ZXJfbW9kZV9kaWZmX2R1bmdlb25faW5mby5w",
-            "cm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIvwCChtTZWFzb25NYXN0ZXJN",
-            "b2RlRHVuZ2VvbkluZm8SWgoVbWFzdGVyX21vZGVfZGlmZl9pbmZvGAEgAygL",
-            "MjsuenByb3RvLlNlYXNvbk1hc3Rlck1vZGVEdW5nZW9uSW5mby5NYXN0ZXJN",
-            "b2RlRGlmZkluZm9FbnRyeRIgChhkdW5nZW9uX2luZm9fdXBkYXRlX3RpbWUY",
-            "AiABKAMSTAoNc2Vhc29uX2F3YXJkcxgDIAMoCzI1Lnpwcm90by5TZWFzb25N",
-            "YXN0ZXJNb2RlRHVuZ2VvbkluZm8uU2Vhc29uQXdhcmRzRW50cnkaXAoXTWFz",
-            "dGVyTW9kZURpZmZJbmZvRW50cnkSCwoDa2V5GAEgASgFEjAKBXZhbHVlGAIg",
-            "ASgLMiEuenByb3RvLk1hc3Rlck1vZGVEaWZmRHVuZ2VvbkluZm86AjgBGjMK",
-            "EVNlYXNvbkF3YXJkc0VudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEo",
-            "BToCOAFiBnByb3RvMw=="));
+            "cm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIq4DChtTZWFzb25NYXN0ZXJN",
+            "b2RlRHVuZ2VvbkluZm8SawoSbWFzdGVyTW9kZURpZmZJbmZvGAEgAygLMjsu",
+            "enByb3RvLlNlYXNvbk1hc3Rlck1vZGVEdW5nZW9uSW5mby5NYXN0ZXJNb2Rl",
+            "RGlmZkluZm9FbnRyeVISbWFzdGVyTW9kZURpZmZJbmZvEjQKFWR1bmdlb25J",
+            "bmZvVXBkYXRlVGltZRgCIAEoA1IVZHVuZ2VvbkluZm9VcGRhdGVUaW1lElkK",
+            "DHNlYXNvbkF3YXJkcxgDIAMoCzI1Lnpwcm90by5TZWFzb25NYXN0ZXJNb2Rl",
+            "RHVuZ2VvbkluZm8uU2Vhc29uQXdhcmRzRW50cnlSDHNlYXNvbkF3YXJkcxpc",
+            "ChdNYXN0ZXJNb2RlRGlmZkluZm9FbnRyeRILCgNrZXkYASABKAUSMAoFdmFs",
+            "dWUYAiABKAsyIS56cHJvdG8uTWFzdGVyTW9kZURpZmZEdW5nZW9uSW5mbzoC",
+            "OAEaMwoRU2Vhc29uQXdhcmRzRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVl",
+            "GAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruMasterModeDiffDungeonInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +94,7 @@ namespace Zproto {
       return new SeasonMasterModeDungeonInfo(this);
     }
 
-    /// <summary>Field number for the "master_mode_diff_info" field.</summary>
+    /// <summary>Field number for the "masterModeDiffInfo" field.</summary>
     public const int MasterModeDiffInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.MasterModeDiffDungeonInfo>.Codec _map_masterModeDiffInfo_codec
         = new pbc::MapField<int, global::Zproto.MasterModeDiffDungeonInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.MasterModeDiffDungeonInfo.Parser), 10);
@@ -104,7 +105,7 @@ namespace Zproto {
       get { return masterModeDiffInfo_; }
     }
 
-    /// <summary>Field number for the "dungeon_info_update_time" field.</summary>
+    /// <summary>Field number for the "dungeonInfoUpdateTime" field.</summary>
     public const int DungeonInfoUpdateTimeFieldNumber = 2;
     private long dungeonInfoUpdateTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_awards" field.</summary>
+    /// <summary>Field number for the "seasonAwards" field.</summary>
     public const int SeasonAwardsFieldNumber = 3;
     private static readonly pbc::MapField<int, int>.Codec _map_seasonAwards_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 26);

@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X2RlbGV0ZV9waG90b19yZXBseS5wcm90bxIGenByb3RvGhdlbnVt",
-            "X2VfZXJyb3JfY29kZS5wcm90byJcChBEZWxldGVQaG90b1JlcGx5EhAKCHBo",
-            "b3RvX2lkGAMgASgNEhAKCGFsYnVtX2lkGAQgASgNEiQKCGVycl9jb2RlGAUg",
-            "ASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "X2VfZXJyb3JfY29kZS5wcm90byJ0ChBEZWxldGVQaG90b1JlcGx5EhgKB3Bo",
+            "b3RvSWQYAyABKA1SB3Bob3RvSWQSGAoHYWxidW1JZBgEIAEoDVIHYWxidW1J",
+            "ZBIsCgdlcnJDb2RlGAUgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNv",
+            "ZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new DeletePhotoReply(this);
     }
 
-    /// <summary>Field number for the "photo_id" field.</summary>
+    /// <summary>Field number for the "photoId" field.</summary>
     public const int PhotoIdFieldNumber = 3;
     private uint photoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "album_id" field.</summary>
+    /// <summary>Field number for the "albumId" field.</summary>
     public const int AlbumIdFieldNumber = 4;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

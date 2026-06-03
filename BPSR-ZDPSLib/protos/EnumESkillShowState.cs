@@ -24,10 +24,11 @@ namespace Zproto {
     static EnumESkillShowStateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1lbnVtX2Vfc2tpbGxfc2hvd19zdGF0ZS5wcm90bxIGenByb3RvKoEBCg9F",
+            "Ch1lbnVtX2Vfc2tpbGxfc2hvd19zdGF0ZS5wcm90bxIGenByb3RvKpoBCg9F",
             "U2tpbGxTaG93U3RhdGUSEgoORVNraWxsU2hvd05vbmUQABIZChVFU2tpbGxF",
             "bmFibGVJbnB1dE1vdmUQARISCg5FU2tpbGxBaW1TdGF0ZRACEhYKEkVTa2ls",
-            "bEFpbUNhbWVyYURpchADEhMKD0VTa2lsbEFpbVRhcmdldBAEYgZwcm90bzM="));
+            "bEFpbUNhbWVyYURpchADEhMKD0VTa2lsbEFpbVRhcmdldBAEEhcKE0VTa2ls",
+            "bFNhbWVTa2lsbE5vQ2QQBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.ESkillShowState), }, null, null));
@@ -42,6 +43,7 @@ namespace Zproto {
     [pbr::OriginalName("ESkillAimState")] EskillAimState = 2,
     [pbr::OriginalName("ESkillAimCameraDir")] EskillAimCameraDir = 3,
     [pbr::OriginalName("ESkillAimTarget")] EskillAimTarget = 4,
+    [pbr::OriginalName("ESkillSameSkillNoCd")] EskillSameSkillNoCd = 5,
   }
 
   #endregion

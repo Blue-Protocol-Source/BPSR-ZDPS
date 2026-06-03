@@ -26,15 +26,19 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X2dldF91bmlvbl9hY3Rpdml0eV9pbmZvX3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGh1zdHJ1X21lbV91bmlv",
-            "bl9hY3Rpdml0eS5wcm90bxoZc3RydV91bmlvbl9hY3Rpdml0eS5wcm90byKh",
-            "AQoZR2V0VW5pb25BY3Rpdml0eUluZm9SZXBseRItCg51bmlvbl9hY3Rpdml0",
-            "eRgBIAEoCzIVLnpwcm90by5VbmlvbkFjdGl2aXR5Ei8KDXNlbGZfYWN0aXZp",
-            "dHkYAiABKAsyGC56cHJvdG8uTWVtVW5pb25BY3Rpdml0eRIkCghlcnJfY29k",
-            "ZRgDIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "bl9hY3Rpdml0eS5wcm90bxoZc3RydV91bmlvbl9hY3Rpdml0eS5wcm90bxoc",
+            "c3RydV91bmlvbl90YXJnZXRfaW5mby5wcm90byK1AgoZR2V0VW5pb25BY3Rp",
+            "dml0eUluZm9SZXBseRI7Cg11bmlvbkFjdGl2aXR5GAEgASgLMhUuenByb3Rv",
+            "LlVuaW9uQWN0aXZpdHlSDXVuaW9uQWN0aXZpdHkSPAoMc2VsZkFjdGl2aXR5",
+            "GAIgASgLMhguenByb3RvLk1lbVVuaW9uQWN0aXZpdHlSDHNlbGZBY3Rpdml0",
+            "eRI5Cgt1bmlvblRhcmdldBgDIAMoCzIXLnpwcm90by5VbmlvblRhcmdldElu",
+            "Zm9SC3VuaW9uVGFyZ2V0EjQKFXJlY2VpdmVkUG9pbnRBd2FyZElkcxgEIAMo",
+            "BVIVcmVjZWl2ZWRQb2ludEF3YXJkSWRzEiwKB2VyckNvZGUYBSABKA4yEi56",
+            "cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruMemUnionActivityReflection.Descriptor, global::Zproto.StruUnionActivityReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruMemUnionActivityReflection.Descriptor, global::Zproto.StruUnionActivityReflection.Descriptor, global::Zproto.StruUnionTargetInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.GetUnionActivityInfoReply), global::Zproto.GetUnionActivityInfoReply.Parser, new[]{ "UnionActivity", "SelfActivity", "ErrCode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.GetUnionActivityInfoReply), global::Zproto.GetUnionActivityInfoReply.Parser, new[]{ "UnionActivity", "SelfActivity", "UnionTarget", "ReceivedPointAwardIds", "ErrCode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -78,6 +82,8 @@ namespace Zproto {
     public GetUnionActivityInfoReply(GetUnionActivityInfoReply other) : this() {
       unionActivity_ = other.unionActivity_ != null ? other.unionActivity_.Clone() : null;
       selfActivity_ = other.selfActivity_ != null ? other.selfActivity_.Clone() : null;
+      unionTarget_ = other.unionTarget_.Clone();
+      receivedPointAwardIds_ = other.receivedPointAwardIds_.Clone();
       errCode_ = other.errCode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -88,7 +94,7 @@ namespace Zproto {
       return new GetUnionActivityInfoReply(this);
     }
 
-    /// <summary>Field number for the "union_activity" field.</summary>
+    /// <summary>Field number for the "unionActivity" field.</summary>
     public const int UnionActivityFieldNumber = 1;
     private global::Zproto.UnionActivity unionActivity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "self_activity" field.</summary>
+    /// <summary>Field number for the "selfActivity" field.</summary>
     public const int SelfActivityFieldNumber = 2;
     private global::Zproto.MemUnionActivity selfActivity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,8 +118,30 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
-    public const int ErrCodeFieldNumber = 3;
+    /// <summary>Field number for the "unionTarget" field.</summary>
+    public const int UnionTargetFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Zproto.UnionTargetInfo> _repeated_unionTarget_codec
+        = pb::FieldCodec.ForMessage(26, global::Zproto.UnionTargetInfo.Parser);
+    private readonly pbc::RepeatedField<global::Zproto.UnionTargetInfo> unionTarget_ = new pbc::RepeatedField<global::Zproto.UnionTargetInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Zproto.UnionTargetInfo> UnionTarget {
+      get { return unionTarget_; }
+    }
+
+    /// <summary>Field number for the "receivedPointAwardIds" field.</summary>
+    public const int ReceivedPointAwardIdsFieldNumber = 4;
+    private static readonly pb::FieldCodec<int> _repeated_receivedPointAwardIds_codec
+        = pb::FieldCodec.ForInt32(34);
+    private readonly pbc::RepeatedField<int> receivedPointAwardIds_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> ReceivedPointAwardIds {
+      get { return receivedPointAwardIds_; }
+    }
+
+    /// <summary>Field number for the "errCode" field.</summary>
+    public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,6 +169,8 @@ namespace Zproto {
       }
       if (!object.Equals(UnionActivity, other.UnionActivity)) return false;
       if (!object.Equals(SelfActivity, other.SelfActivity)) return false;
+      if(!unionTarget_.Equals(other.unionTarget_)) return false;
+      if(!receivedPointAwardIds_.Equals(other.receivedPointAwardIds_)) return false;
       if (ErrCode != other.ErrCode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -151,6 +181,8 @@ namespace Zproto {
       int hash = 1;
       if (unionActivity_ != null) hash ^= UnionActivity.GetHashCode();
       if (selfActivity_ != null) hash ^= SelfActivity.GetHashCode();
+      hash ^= unionTarget_.GetHashCode();
+      hash ^= receivedPointAwardIds_.GetHashCode();
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) hash ^= ErrCode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -178,8 +210,10 @@ namespace Zproto {
         output.WriteRawTag(18);
         output.WriteMessage(SelfActivity);
       }
+      unionTarget_.WriteTo(output, _repeated_unionTarget_codec);
+      receivedPointAwardIds_.WriteTo(output, _repeated_receivedPointAwardIds_codec);
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -200,8 +234,10 @@ namespace Zproto {
         output.WriteRawTag(18);
         output.WriteMessage(SelfActivity);
       }
+      unionTarget_.WriteTo(ref output, _repeated_unionTarget_codec);
+      receivedPointAwardIds_.WriteTo(ref output, _repeated_receivedPointAwardIds_codec);
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -220,6 +256,8 @@ namespace Zproto {
       if (selfActivity_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SelfActivity);
       }
+      size += unionTarget_.CalculateSize(_repeated_unionTarget_codec);
+      size += receivedPointAwardIds_.CalculateSize(_repeated_receivedPointAwardIds_codec);
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ErrCode);
       }
@@ -247,6 +285,8 @@ namespace Zproto {
         }
         SelfActivity.MergeFrom(other.SelfActivity);
       }
+      unionTarget_.Add(other.unionTarget_);
+      receivedPointAwardIds_.Add(other.receivedPointAwardIds_);
       if (other.ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         ErrCode = other.ErrCode;
       }
@@ -283,7 +323,16 @@ namespace Zproto {
             input.ReadMessage(SelfActivity);
             break;
           }
-          case 24: {
+          case 26: {
+            unionTarget_.AddEntriesFrom(input, _repeated_unionTarget_codec);
+            break;
+          }
+          case 34:
+          case 32: {
+            receivedPointAwardIds_.AddEntriesFrom(input, _repeated_receivedPointAwardIds_codec);
+            break;
+          }
+          case 40: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }
@@ -320,7 +369,16 @@ namespace Zproto {
             input.ReadMessage(SelfActivity);
             break;
           }
-          case 24: {
+          case 26: {
+            unionTarget_.AddEntriesFrom(ref input, _repeated_unionTarget_codec);
+            break;
+          }
+          case 34:
+          case 32: {
+            receivedPointAwardIds_.AddEntriesFrom(ref input, _repeated_receivedPointAwardIds_codec);
+            break;
+          }
+          case 40: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }

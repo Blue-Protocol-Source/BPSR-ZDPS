@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiVzdHJ1X2FkZF9jb2xsZWN0X3VuaW9uX2lkX3JlcGx5LnByb3RvEgZ6cHJv",
             "dG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhpzdHJ1X3VuaW9uX2xpc3Rf",
-            "ZGF0YS5wcm90byJuChZBZGRDb2xsZWN0VW5pb25JZFJlcGx5Ei4KD2JyaWVm",
-            "X3VuaW9uX2lmbxgBIAEoCzIVLnpwcm90by5Vbmlvbkxpc3REYXRhEiQKCGVy",
-            "cl9jb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "ZGF0YS5wcm90byKDAQoWQWRkQ29sbGVjdFVuaW9uSWRSZXBseRI7Cg1icmll",
+            "ZlVuaW9uSWZvGAEgASgLMhUuenByb3RvLlVuaW9uTGlzdERhdGFSDWJyaWVm",
+            "VW5pb25JZm8SLAoHZXJyQ29kZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2Rl",
+            "UgdlcnJDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionListDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new AddCollectUnionIdReply(this);
     }
 
-    /// <summary>Field number for the "brief_union_ifo" field.</summary>
+    /// <summary>Field number for the "briefUnionIfo" field.</summary>
     public const int BriefUnionIfoFieldNumber = 1;
     private global::Zproto.UnionListData briefUnionIfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

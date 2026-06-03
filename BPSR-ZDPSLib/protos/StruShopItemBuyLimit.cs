@@ -24,10 +24,10 @@ namespace Zproto {
     static StruShopItemBuyLimitReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X3Nob3BfaXRlbV9idXlfbGltaXQucHJvdG8SBnpwcm90byJZChBT",
-            "aG9wSXRlbUJ1eUxpbWl0EhcKD3B1cmNoYXNlZF9jb3VudBgBIAEoBRIVCg1j",
-            "YW5fYnV5X2NvdW50GAIgASgFEhUKDW1heF9idXlfY291bnQYAyABKAViBnBy",
-            "b3RvMw=="));
+            "Ch5zdHJ1X3Nob3BfaXRlbV9idXlfbGltaXQucHJvdG8SBnpwcm90byJ+ChBT",
+            "aG9wSXRlbUJ1eUxpbWl0EiYKDnB1cmNoYXNlZENvdW50GAEgASgFUg5wdXJj",
+            "aGFzZWRDb3VudBIgCgtjYW5CdXlDb3VudBgCIAEoBVILY2FuQnV5Q291bnQS",
+            "IAoLbWF4QnV5Q291bnQYAyABKAVSC21heEJ1eUNvdW50YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ShopItemBuyLimit(this);
     }
 
-    /// <summary>Field number for the "purchased_count" field.</summary>
+    /// <summary>Field number for the "purchasedCount" field.</summary>
     public const int PurchasedCountFieldNumber = 1;
     private int purchasedCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "can_buy_count" field.</summary>
+    /// <summary>Field number for the "canBuyCount" field.</summary>
     public const int CanBuyCountFieldNumber = 2;
     private int canBuyCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "max_buy_count" field.</summary>
+    /// <summary>Field number for the "maxBuyCount" field.</summary>
     public const int MaxBuyCountFieldNumber = 3;
     private int maxBuyCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

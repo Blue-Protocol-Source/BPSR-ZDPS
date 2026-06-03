@@ -24,14 +24,15 @@ namespace Zproto {
     static EnumEAccessTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhlbnVtX2VfYWNjZXNzX3R5cGUucHJvdG8SBnpwcm90byr8AgoLRUFjY2Vz",
+            "ChhlbnVtX2VfYWNjZXNzX3R5cGUucHJvdG8SBnpwcm90byqpAwoLRUFjY2Vz",
             "c1R5cGUSFQoRQWNjZXNzRmluaXNoUXVlc3QQABIRCg1BY2Nlc3NMZXZlbFVw",
             "EAESHQoZQWNjZXNzRXF1aXBQcm9mZXNzaW9uVHlwZRACEhMKD0FjY2Vzc0l0",
             "ZW1Db3VudBALEhEKDUFjY2Vzc0luU2NlbmUQDBIUChBBY2Nlc3NOb3RJblNj",
             "ZW5lEA0SFwoTQWNjZXNzSW5WaXN1YWxMYXllchAPEhoKFkFjY2Vzc05vdElu",
             "VmlzdWFsTGF5ZXIQEBITCg9BY2Nlc3NFbnRlclpvbmUQERIPCgtBY2Nlc3NU",
             "aW1lchASEhAKDEFjY2Vzc0luWm9uZRATEhMKD0FjY2Vzc05vdEluWm9uZRAU",
-            "EhkKFUFjY2Vzc0ZpbmlzaFF1ZXN0U3RlcBAVEhMKD0FjY2Vzc1RpbWVMaW1p",
+            "EhkKFUFjY2Vzc0ZpbmlzaFF1ZXN0U3RlcBAVEhUKEUFjY2Vzc1F1ZXN0Rmlu",
+            "aXNoECgSFAoQQWNjZXNzTm90SW5UaW1lchAqEhMKD0FjY2Vzc1RpbWVMaW1p",
             "dBBQEhEKDUFjY2Vzc01hc3RlcnkQUhIOCglBY2Nlc3NTZXgQ6AcSEQoMQWNj",
             "ZXNzU2Vhc29uEOkHYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
@@ -56,6 +57,8 @@ namespace Zproto {
     [pbr::OriginalName("AccessInZone")] AccessInZone = 19,
     [pbr::OriginalName("AccessNotInZone")] AccessNotInZone = 20,
     [pbr::OriginalName("AccessFinishQuestStep")] AccessFinishQuestStep = 21,
+    [pbr::OriginalName("AccessQuestFinish")] AccessQuestFinish = 40,
+    [pbr::OriginalName("AccessNotInTimer")] AccessNotInTimer = 42,
     [pbr::OriginalName("AccessTimeLimit")] AccessTimeLimit = 80,
     [pbr::OriginalName("AccessMastery")] AccessMastery = 82,
     [pbr::OriginalName("AccessSex")] AccessSex = 1000,

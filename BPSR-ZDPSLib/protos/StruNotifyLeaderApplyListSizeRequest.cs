@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjBzdHJ1X25vdGlmeV9sZWFkZXJfYXBwbHlfbGlzdF9zaXplX3JlcXVlc3Qu",
-            "cHJvdG8SBnpwcm90byIyCiBOb3RpZnlMZWFkZXJBcHBseUxpc3RTaXplUmVx",
-            "dWVzdBIOCgZ2X3NpemUYASABKAViBnByb3RvMw=="));
+            "cHJvdG8SBnpwcm90byI4CiBOb3RpZnlMZWFkZXJBcHBseUxpc3RTaXplUmVx",
+            "dWVzdBIUCgV2U2l6ZRgBIAEoBVIFdlNpemViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new NotifyLeaderApplyListSizeRequest(this);
     }
 
-    /// <summary>Field number for the "v_size" field.</summary>
+    /// <summary>Field number for the "vSize" field.</summary>
     public const int VSizeFieldNumber = 1;
     private int vSize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

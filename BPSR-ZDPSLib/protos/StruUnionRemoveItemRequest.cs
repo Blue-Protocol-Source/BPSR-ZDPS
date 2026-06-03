@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X3VuaW9uX3JlbW92ZV9pdGVtX3JlcXVlc3QucHJvdG8SBnpwcm90",
             "bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aFXN0cnVfdW5pb25faW5mby5w",
-            "cm90byKJAQoWVW5pb25SZW1vdmVJdGVtUmVxdWVzdBIlCgp1bmlvbl9pbmZv",
-            "GAEgASgLMhEuenByb3RvLlVuaW9uSW5mbxIkCghlcnJfY29kZRgCIAEoDjIS",
-            "Lnpwcm90by5FRXJyb3JDb2RlEhAKCGl0ZW1faWRzGAMgAygFEhAKCGl0ZW1f",
-            "bnVtGAQgAygFYgZwcm90bzM="));
+            "cm90byKrAQoWVW5pb25SZW1vdmVJdGVtUmVxdWVzdBIvCgl1bmlvbkluZm8Y",
+            "ASABKAsyES56cHJvdG8uVW5pb25JbmZvUgl1bmlvbkluZm8SLAoHZXJyQ29k",
+            "ZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2RlEhgKB2l0ZW1J",
+            "ZHMYAyADKAVSB2l0ZW1JZHMSGAoHaXRlbU51bRgEIAMoBVIHaXRlbU51bWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new UnionRemoveItemRequest(this);
     }
 
-    /// <summary>Field number for the "union_info" field.</summary>
+    /// <summary>Field number for the "unionInfo" field.</summary>
     public const int UnionInfoFieldNumber = 1;
     private global::Zproto.UnionInfo unionInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_ids" field.</summary>
+    /// <summary>Field number for the "itemIds" field.</summary>
     public const int ItemIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_itemIds_codec
         = pb::FieldCodec.ForInt32(26);
@@ -123,7 +124,7 @@ namespace Zproto {
       get { return itemIds_; }
     }
 
-    /// <summary>Field number for the "item_num" field.</summary>
+    /// <summary>Field number for the "itemNum" field.</summary>
     public const int ItemNumFieldNumber = 4;
     private static readonly pb::FieldCodec<int> _repeated_itemNum_codec
         = pb::FieldCodec.ForInt32(34);

@@ -24,13 +24,14 @@ namespace Zproto {
     static EnumEEnumStructureTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBlbnVtX2VfZW51bV9zdHJ1Y3R1cmVfdHlwZS5wcm90bxIGenByb3RvKvcB",
+            "CiBlbnVtX2VfZW51bV9zdHJ1Y3R1cmVfdHlwZS5wcm90bxIGenByb3RvKpoC",
             "ChJFRW51bVN0cnVjdHVyZVR5cGUSGQoVRW51bVN0cnVjdHVyZVR5cGVOb25l",
             "EAASHwobRW51bVN0cnVjdHVyZVR5cGVEZWNvcmF0aW9uEAESIgoeRW51bVN0",
             "cnVjdHVyZVR5cGVQYXJ0aXRpb25XYWxsEAISJQohRW51bVN0cnVjdHVyZVR5",
             "cGVQYXJ0aXRpb25XYWxsTWF0EAMSHQoZRW51bVN0cnVjdHVyZVR5cGVGYXJt",
             "bGFuZBAEEh4KGkVudW1TdHJ1Y3R1cmVUeXBlTGFtcGxpZ2h0EAUSGwoXRW51",
-            "bVN0cnVjdHVyZVR5cGVGbG93ZXIQCWIGcHJvdG8z"));
+            "bVN0cnVjdHVyZVR5cGVGbG93ZXIQCRIhCh1FbnVtU3RydWN0dXJlVHlwZUZh",
+            "c2hpb25Nb2RlbBAQYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EEnumStructureType), }, null, null));
@@ -47,6 +48,7 @@ namespace Zproto {
     [pbr::OriginalName("EnumStructureTypeFarmland")] EnumStructureTypeFarmland = 4,
     [pbr::OriginalName("EnumStructureTypeLamplight")] EnumStructureTypeLamplight = 5,
     [pbr::OriginalName("EnumStructureTypeFlower")] EnumStructureTypeFlower = 9,
+    [pbr::OriginalName("EnumStructureTypeFashionModel")] EnumStructureTypeFashionModel = 16,
   }
 
   #endregion

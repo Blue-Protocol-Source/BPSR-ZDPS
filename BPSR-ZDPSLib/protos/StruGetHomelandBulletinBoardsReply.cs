@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ci1zdHJ1X2dldF9ob21lbGFuZF9idWxsZXRpbl9ib2FyZHNfcmVwbHkucHJv",
             "dG8SBnpwcm90bxojc3RydV9jb21tdW5pdHlfYnVsbGV0aW5fYm9hcmQucHJv",
-            "dG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIn8KHkdldEhvbWVsYW5kQnVs",
-            "bGV0aW5Cb2FyZHNSZXBseRI3Cg9idWxsZXRpbl9ib2FyZHMYASADKAsyHi56",
-            "cHJvdG8uQ29tbXVuaXR5QnVsbGV0aW5Cb2FyZBIkCghlcnJfY29kZRgCIAEo",
-            "DjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "dG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvIpYBCh5HZXRIb21lbGFuZEJ1",
+            "bGxldGluQm9hcmRzUmVwbHkSRgoOYnVsbGV0aW5Cb2FyZHMYASADKAsyHi56",
+            "cHJvdG8uQ29tbXVuaXR5QnVsbGV0aW5Cb2FyZFIOYnVsbGV0aW5Cb2FyZHMS",
+            "LAoHZXJyQ29kZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2Rl",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityBulletinBoardReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new GetHomelandBulletinBoardsReply(this);
     }
 
-    /// <summary>Field number for the "bulletin_boards" field.</summary>
+    /// <summary>Field number for the "bulletinBoards" field.</summary>
     public const int BulletinBoardsFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.CommunityBulletinBoard> _repeated_bulletinBoards_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.CommunityBulletinBoard.Parser);
@@ -97,7 +98,7 @@ namespace Zproto {
       get { return bulletinBoards_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

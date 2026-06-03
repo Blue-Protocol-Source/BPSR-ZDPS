@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X2V4Y2hhbmdlX25vdGljZV9idXlfaXRlbV9yZXF1ZXN0LnByb3Rv",
-            "EgZ6cHJvdG8iPwocRXhjaGFuZ2VOb3RpY2VCdXlJdGVtUmVxdWVzdBIMCgR1",
-            "dWlkGAIgASgJEhEKCWNvbmZpZ19pZBgDIAEoBWIGcHJvdG8z"));
+            "EgZ6cHJvdG8iTgocRXhjaGFuZ2VOb3RpY2VCdXlJdGVtUmVxdWVzdBISCgR1",
+            "dWlkGAIgASgJUgR1dWlkEhoKCGNvbmZpZ0lkGAMgASgFUghjb25maWdJZGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
+    /// <summary>Field number for the "configId" field.</summary>
     public const int ConfigIdFieldNumber = 3;
     private int configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

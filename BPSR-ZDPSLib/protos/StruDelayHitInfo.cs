@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X2RlbGF5X2hpdF9pbmZvLnByb3RvEgZ6cHJvdG8aIHN0cnVfZGVs",
-            "YXlfaGl0X3RhcmdldF9pbmZvLnByb3RvIosBCgxEZWxheUhpdEluZm8SEQoJ",
-            "ZWZmZWN0X2lkGAEgASgFEhEKCWJ1ZmZfdXVpZBgCIAEoBRIQCghldmVudF9p",
-            "ZBgDIAEoBRIRCglwbGF5X3RpbWUYBCABKAISMAoMdGFyZ2V0X2luZm9zGAUg",
-            "AygLMhouenByb3RvLkRlbGF5SGl0VGFyZ2V0SW5mb2IGcHJvdG8z"));
+            "YXlfaGl0X3RhcmdldF9pbmZvLnByb3RvIroBCgxEZWxheUhpdEluZm8SGgoI",
+            "ZWZmZWN0SWQYASABKAVSCGVmZmVjdElkEhoKCGJ1ZmZVdWlkGAIgASgFUghi",
+            "dWZmVXVpZBIYCgdldmVudElkGAMgASgFUgdldmVudElkEhoKCHBsYXlUaW1l",
+            "GAQgASgCUghwbGF5VGltZRI8Cgt0YXJnZXRJbmZvcxgFIAMoCzIaLnpwcm90",
+            "by5EZWxheUhpdFRhcmdldEluZm9SC3RhcmdldEluZm9zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDelayHitTargetInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new DelayHitInfo(this);
     }
 
-    /// <summary>Field number for the "effect_id" field.</summary>
+    /// <summary>Field number for the "effectId" field.</summary>
     public const int EffectIdFieldNumber = 1;
     private int effectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buff_uuid" field.</summary>
+    /// <summary>Field number for the "buffUuid" field.</summary>
     public const int BuffUuidFieldNumber = 2;
     private int buffUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "event_id" field.</summary>
+    /// <summary>Field number for the "eventId" field.</summary>
     public const int EventIdFieldNumber = 3;
     private int eventId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "play_time" field.</summary>
+    /// <summary>Field number for the "playTime" field.</summary>
     public const int PlayTimeFieldNumber = 4;
     private float playTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_infos" field.</summary>
+    /// <summary>Field number for the "targetInfos" field.</summary>
     public const int TargetInfosFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.DelayHitTargetInfo> _repeated_targetInfos_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.DelayHitTargetInfo.Parser);

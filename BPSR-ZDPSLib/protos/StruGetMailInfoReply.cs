@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2dldF9tYWlsX2luZm9fcmVwbHkucHJvdG8SBnpwcm90bxoXZW51",
-            "bV9lX2Vycm9yX2NvZGUucHJvdG8aFHN0cnVfbWFpbF9iYXNlLnByb3RvInkK",
-            "EEdldE1haWxJbmZvUmVwbHkSHgoEbWFpbBgDIAEoCzIQLnpwcm90by5NYWls",
-            "QmFzZRIfCgVtYWlscxgEIAMoCzIQLnpwcm90by5NYWlsQmFzZRIkCghlcnJf",
-            "Y29kZRgFIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "bV9lX2Vycm9yX2NvZGUucHJvdG8aFHN0cnVfbWFpbF9iYXNlLnByb3RvIo4B",
+            "ChBHZXRNYWlsSW5mb1JlcGx5EiQKBG1haWwYAyABKAsyEC56cHJvdG8uTWFp",
+            "bEJhc2VSBG1haWwSJgoFbWFpbHMYBCADKAsyEC56cHJvdG8uTWFpbEJhc2VS",
+            "BW1haWxzEiwKB2VyckNvZGUYBSABKA4yEi56cHJvdG8uRUVycm9yQ29kZVIH",
+            "ZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruMailBaseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -109,7 +110,7 @@ namespace Zproto {
       get { return mails_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 5;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

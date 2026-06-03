@@ -2,7 +2,9 @@
 using BPSR_ZDPS.DataTypes.Chat;
 using BPSR_ZDPS.Managers;
 using Hexa.NET.ImGui;
+using System.Globalization;
 using System.Numerics;
+using ZLinq;
 using Zproto;
 
 namespace BPSR_ZDPS.Windows
@@ -14,7 +16,6 @@ namespace BPSR_ZDPS.Windows
         public static bool IsOpened = false;
 
         static int RunOnceDelayed = 0;
-        static ulong RenderClearTime = 0;
         public static Vector2 DefaultWindowSize = new Vector2(700, 600);
         public static bool ResetWindowSize = false;
 
@@ -22,6 +23,11 @@ namespace BPSR_ZDPS.Windows
         static ChatTab SelectedChatTab = null;
         static bool IsEditingNewTab = false;
         static ChatTab EditingTab = null;
+
+        static string EntityNameFilter = "";
+        static KeyValuePair<long, EntityCacheLine>[]? EntityFilterMatches = [];
+
+        static int LastSetOpacity = 100;
 
         static ChatWindow()
         {
@@ -35,8 +41,8 @@ namespace BPSR_ZDPS.Windows
 
                 ChatManager.AddChatTab(new ChatTabConfig()
                 {
-                    Name = "Guild / Group",
-                    Channels = [ChitChatChannelType.ChannelUnion, ChitChatChannelType.ChannelGroup]
+                    Name = "Guild / Team",
+                    Channels = [ChitChatChannelType.ChannelUnion, ChitChatChannelType.ChannelGroup, ChitChatChannelType.ChannelTeam]
                 });
 
                 ChatManager.AddChatTab(new ChatTabConfig()
@@ -78,10 +84,9 @@ namespace BPSR_ZDPS.Windows
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
             ImGui.OpenPopup(TITLE_ID);
             IsOpened = true;
-            //IsPinned = false;
 
             ChatWindowClass.ClassId = ImGuiP.ImHashStr("ChatWindowClass");
-            ChatWindowClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.NoRendererClear;
+            ChatWindowClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.None;
 
             SelectedChatTab = ChatManager.ChatTabs.FirstOrDefault(x => x.Config.Id == Settings.Instance.WindowSettings.ChatWindow.LastSelectedTabId);
 
@@ -104,8 +109,10 @@ namespace BPSR_ZDPS.Windows
 
         private static void InnerDraw(ChatWindowSettings windowSettings)
         {
-            if (ImGui.Begin($"Chat###ChatWindow", ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse |
-                                    ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoScrollbar))
+            ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(17 / 255.0f, 17 / 255.0f, 17 / 255.0f, 0.0f));
+            ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0);
+            if (ImGui.Begin($"Chat##ChatWindow", ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse |
+                                    ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoBackground))
             {
                 if (RunOnceDelayed == 0)
                 {
@@ -125,6 +132,12 @@ namespace BPSR_ZDPS.Windows
                     {
                         Utils.SetWindowTopmost();
                     }
+
+                    if (windowSettings.Opacity != LastSetOpacity)
+                    {
+                        Utils.SetWindowOpacity(windowSettings.Opacity * 0.01f);
+                        LastSetOpacity = windowSettings.Opacity;
+                    }
                 }
 
                 ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0, 0, 0, windowSettings.BackgroundOpacity));
@@ -143,23 +156,14 @@ namespace BPSR_ZDPS.Windows
                 windowSettings.WindowPosition = ImGui.GetWindowPos();
                 windowSettings.WindowSize = ImGui.GetWindowSize();
 
-                if (RenderClearTime % 2 != 0)
-                {
-                    windowSettings.WindowSize = new Vector2(windowSettings.WindowSize.X, windowSettings.WindowSize.Y - 1);
-                }
-
                 ImGui.End();
             }
+            ImGui.PopStyleVar();
+            ImGui.PopStyleColor();
         }
 
         private static void PreDraw(ChatWindowSettings windowSettings)
         {
-            RenderClearTime++;
-            if (RenderClearTime > 3)
-            {
-                RenderClearTime = 0;
-            }
-
             ImGui.SetNextWindowSize(DefaultWindowSize, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(450, 360), new Vector2(ImGui.GETFLTMAX()));
 
@@ -182,16 +186,6 @@ namespace BPSR_ZDPS.Windows
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
             ImGui.SetNextWindowClass(ChatWindowClass);
-
-            // This is how we force a renderer clear for this window as there doesn't appear to be another way while we're supporting transparency
-            if (RenderClearTime % 2 == 0)
-            {
-                ImGui.SetNextWindowSize(windowSettings.WindowSize);
-            }
-            else
-            {
-                ImGui.SetNextWindowSize(new Vector2(windowSettings.WindowSize.X, windowSettings.WindowSize.Y + 1));
-            }
         }
 
         private static void DrawChatTabs()
@@ -267,8 +261,9 @@ namespace BPSR_ZDPS.Windows
         {
             var chatWindowSettings = Settings.Instance.WindowSettings.ChatWindow;
             var windowViewport = ImGui.GetWindowViewport();
+            bool openBlockedUsersPopup = false;
 
-            ImGui.SetCursorPosX(ImGui.GetWindowSize().X - (25));
+            ImGui.SetCursorPosX(ImGui.GetWindowSize().X - (ImGui.GetFontSize() + ImGui.GetStyle().FramePadding.X));
             ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
             if (ImGui.Button($"{FASIcons.Gear}##OptionsMenu"))
             {
@@ -284,29 +279,39 @@ namespace BPSR_ZDPS.Windows
                 ImGui.TextUnformatted("Chat Settings");
                 ImGui.Separator();
 
+                
                 //ImGui.SetCursorPosX(ImGui.GetCursorPosX() - 200);
                 float backgroundOpacity = chatWindowSettings.BackgroundOpacity;
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Background Opacity:");
                 ImGui.SameLine();
+                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(200);
-                if (ImGui.SliderFloat("##BackgroundOpacity", ref backgroundOpacity, 0, 1f, $"{(int)(backgroundOpacity * 100)}%%", ImGuiSliderFlags.ClampOnInput))
+                if (ImGui.SliderFloat("##BackgroundOpacity", ref backgroundOpacity, 0.03f, 1f, $"{(int)(backgroundOpacity * 100)}%%", ImGuiSliderFlags.ClampOnInput))
                 {
                     chatWindowSettings.BackgroundOpacity = MathF.Round(backgroundOpacity, 2);
                 }
-
+                ImGui.PopStyleColor(2);
+                
                 int opacity = chatWindowSettings.Opacity;
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Window Opacity:");
                 ImGui.SameLine();
                 ImGui.Dummy(new Vector2(17, 0));
                 ImGui.SameLine();
+                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(200);
                 if (ImGui.SliderInt("##Opacity", ref opacity, 10, 100, $"{opacity}%%", ImGuiSliderFlags.ClampOnInput))
                 {
                     chatWindowSettings.Opacity = opacity;
                     Utils.SetWindowOpacity(chatWindowSettings.Opacity * 0.01f, windowViewport);
                 }
+                ImGui.PopStyleColor(2);
 
                 var isTopMost = chatWindowSettings.TopMost;
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Top Most: ");
                 ImGui.SameLine();
                 if (ImGui.Checkbox("##TopMost", ref isTopMost))
@@ -350,17 +355,35 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Checkbox("##ShowTimeAsXAgo", ref showTimeAsXAgo);
                 chatWindowSettings.ShowTimeAsXAgo = showTimeAsXAgo;
 
+                var hideStickers = chatWindowSettings.HideStickers;
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted("Hide stickers in chat:");
+                ImGui.SameLine();
+                ImGui.Checkbox("##HideStickers", ref hideStickers);
+                ImGui.SetItemTooltip("With this enabled stickers Ex. [Image(2001)] won't show in chat.");
+                chatWindowSettings.HideStickers = hideStickers;
+
                 var maxChatHistory = Settings.Instance.Chat.MaxChatHistory;
                 ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Max Chat History:");
                 ImGui.SameLine();
+                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                 ImGui.SetNextItemWidth(200);
                 var wasMaxChatHistoryChanged = ImGui.SliderInt("##MaxChatHistory", ref maxChatHistory, 1, 500);
                 Settings.Instance.Chat.MaxChatHistory = maxChatHistory;
+                ImGui.PopStyleColor(2);
 
                 if (wasMaxChatHistoryChanged)
                 {
                     ChatManager.RemoveMessagesOverCap(Settings.Instance.Chat.MaxChatHistory);
+                }
+
+                ImGui.Dummy(new Vector2(0, 5));
+                ImGui.Separator();
+                if (ImGui.Button("Manage Blocked Users", new Vector2(-1, 0)))
+                {
+                    openBlockedUsersPopup = true;
                 }
 
                 ImGui.Separator();
@@ -370,6 +393,128 @@ namespace BPSR_ZDPS.Windows
                     chatWindowSettings.WindowSize = ImGui.GetWindowSize();
                     IsOpened = false;
                 }
+
+                ImGui.EndPopup();
+            }
+
+            if (openBlockedUsersPopup)
+            {
+                ImGui.OpenPopup("BlockedUsersPopup");
+            }
+
+            ImGui.SetNextWindowPos(ImGui.GetWindowPos() + new Vector2(ImGui.GetWindowSize().X - 550, 30f));
+            if (ImGui.BeginPopup("BlockedUsersPopup"))
+            {
+                ImGui.TextUnformatted("Blocked Users");
+                ImGui.Separator();
+
+                var height = windowViewport.Size.Y - 100;
+                if (ImGui.BeginChild("BlockedUserArea", new Vector2(500, height), ImGuiChildFlags.None, ImGuiWindowFlags.NoDecoration))
+                {
+                    if (ImGui.CollapsingHeader("Blocked Users", ImGuiTreeNodeFlags.DefaultOpen))
+                    {
+                        if (ImGui.BeginTable("BlockedUserTable", 4, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchProp))
+                        {
+                            ImGui.TableSetupColumn("Blocked At", ImGuiTableColumnFlags.WidthFixed, 100f);
+                            ImGui.TableSetupColumn("UID", ImGuiTableColumnFlags.WidthFixed, 100f);
+                            ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
+                            ImGui.TableSetupColumn("Actions", ImGuiTableColumnFlags.WidthFixed, 80f);
+                            ImGui.TableHeadersRow();
+
+                            foreach (var blockedUser in Settings.Instance.Chat.BlockedUsers.Values)
+                            {
+                                ImGui.TableNextRow();
+                                ImGui.TableNextColumn();
+                                ImGui.TextUnformatted($"{(blockedUser.BlockedAt.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture))}");
+
+                                ImGui.TableNextColumn();
+                                ImGui.TextUnformatted($"{blockedUser.ID}");
+
+                                ImGui.TableNextColumn();
+                                ImGui.TextUnformatted($"{blockedUser.Name}");
+
+                                ImGui.TableNextColumn();
+                                if (ImGui.Button($"Unblock##{blockedUser.ID}", new Vector2(-1, 0)))
+                                {
+                                    ChatManager.UnblockUser(blockedUser.ID);
+                                }
+                            }
+
+                            ImGui.EndTable();
+                        }
+                    }
+
+                    if (ImGui.CollapsingHeader("Add Player Search"))
+                    {
+                        ImGui.TextUnformatted("Select Players from the list below to add them to the chat block list.");
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("Entity Filter: ");
+                        ImGui.SameLine();
+                        ImGui.PushItemWidth(ImGui.GetContentRegionAvail().X);
+
+                        if (ImGui.InputText("##EntityFilterText", ref EntityNameFilter, 64))
+                        {
+                            if (EntityNameFilter.Length > 0)
+                            {
+                                bool isNum = Char.IsNumber(EntityNameFilter[0]);
+                                EntityFilterMatches = EntityCache.Instance.Cache.Lines.AsValueEnumerable().Where(x => isNum ? x.Value.UID.ToString().Contains(EntityNameFilter) : x.Value.Name != null && x.Value.Name.Contains(EntityNameFilter, StringComparison.OrdinalIgnoreCase)).ToArray();
+                            }
+                            else
+                            {
+                                EntityFilterMatches = null;
+                            }
+                        }
+
+                        if (ImGui.BeginListBox("##PlayerListBox", new Vector2(ImGui.GetContentRegionAvail().X, 120)))
+                        {
+                            if (EntityFilterMatches != null && (EntityFilterMatches.Length < 100 || EntityNameFilter.Length > 2))
+                            {
+                                if (EntityFilterMatches.Any())
+                                {
+                                    long matchIdx = 0;
+                                    foreach (var match in EntityFilterMatches)
+                                    {
+                                        if (!ChatManager.IsUserBlocked(match.Value.UID))
+                                        {
+                                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.Green_Transparent);
+                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                                            if (ImGui.Button($"{FASIcons.Plus}##AddBtn_{matchIdx}", new Vector2(30, 30)))
+                                            {
+                                                var user = new User(new BasicShowInfo()
+                                                {
+                                                    CharID = match.Value.UID,
+                                                    Name = match.Value.Name
+                                                });
+                                                ChatManager.BlockUser(user);
+                                            }
+                                            ImGui.PopFont();
+                                            ImGui.PopStyleColor();
+                                        }
+                                        else
+                                        {
+                                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
+                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                                            if (ImGui.Button($"{FASIcons.Minus}##RemoveBtn_{matchIdx}", new Vector2(30, 30)))
+                                            {
+                                                ChatManager.UnblockUser(match.Value.UID);
+                                            }
+                                            ImGui.PopFont();
+                                            ImGui.PopStyleColor();
+                                        }
+
+                                        ImGui.SameLine();
+                                        ImGui.Text($"{match.Value.Name} [U:{match.Value.UID}] {{UU:{match.Value.UUID}}}");
+
+                                        matchIdx++;
+                                    }
+                                }
+                            }
+                            ImGui.EndListBox();
+                        }
+                    }
+                }
+                ImGui.EndChild();
 
                 ImGui.EndPopup();
             }
@@ -523,9 +668,34 @@ namespace BPSR_ZDPS.Windows
         private static void DrawChatSenderName(ChatMessage msg)
         {
             ChatManager.Senders.TryGetValue(msg.SenderId, out var sender);
-            ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.40f, 0.70f, 1.00f, 1.00f));
-            ImGui.TextUnformatted($"[{sender.Info.Name}]");
+            ImGui.PushStyleColor(ImGuiCol.TextLink, new Vector4(0.40f, 0.70f, 1.00f, 1.00f));
+            if (ImGui.TextLink($"[{sender.Info.Name}]##ChatMsgName_{msg.GetHashCode().ToString()}"))
+            {
+                
+            }
             ImGui.PopStyleColor();
+            if (ImGui.BeginPopupContextItem(ImGuiPopupFlags.MouseButtonLeft))
+            {
+                if (ImGui.MenuItem("Copy Name"))
+                {
+                    ImGui.SetClipboardText(sender.Info.Name);
+                }
+                ImGui.SetItemTooltip($"Copies [ {sender.Info.Name} ] to the clipboard.");
+
+                if (ImGui.MenuItem("Copy UID"))
+                {
+                    ImGui.SetClipboardText(sender.Info.CharID.ToString());
+                }
+                ImGui.SetItemTooltip($"Copies [ {sender.Info.CharID} ] to the clipboard.");
+
+                if (ImGui.MenuItem("Block User"))
+                {
+                    ChatManager.BlockUser(sender);
+                }
+                ImGui.SetItemTooltip($"Blocks this user's ({sender.Info.Name}) messages from showing in your ZDPS chat.");
+
+                ImGui.EndPopup();
+            }
         }
 
         private static void DrawChatTime(ChatMessage msg)
@@ -600,6 +770,7 @@ namespace BPSR_ZDPS.Windows
         {
             var channelEnabled = config.Channels.Contains(channel);
             ImGui.TableNextColumn();
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted($"{name}:");
             ImGui.TableNextColumn();
             if (ImGui.Checkbox($"##{name}", ref channelEnabled))
@@ -665,6 +836,7 @@ namespace BPSR_ZDPS.Windows
         public bool CompactMode { get; set; } = true;
         public bool ShowTime { get; set; } = true;
         public bool ShowTimeAsXAgo { get; set; } = true;
+        public bool HideStickers { get; set; } = false;
         public List<ChatTabConfig> ChatTabs { get; set; } = [];
     }
 }

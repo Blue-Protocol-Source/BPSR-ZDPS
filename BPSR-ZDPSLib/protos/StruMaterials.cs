@@ -24,10 +24,10 @@ namespace Zproto {
     static StruMaterialsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRzdHJ1X21hdGVyaWFscy5wcm90bxIGenByb3RvInwKCU1hdGVyaWFscxI6",
-            "Cg1tYXRlcmlhbHNfbWFwGAEgAygLMiMuenByb3RvLk1hdGVyaWFscy5NYXRl",
-            "cmlhbHNNYXBFbnRyeRozChFNYXRlcmlhbHNNYXBFbnRyeRILCgNrZXkYASAB",
-            "KAUSDQoFdmFsdWUYAiABKAM6AjgBYgZwcm90bzM="));
+            "ChRzdHJ1X21hdGVyaWFscy5wcm90bxIGenByb3RvIokBCglNYXRlcmlhbHMS",
+            "RwoMbWF0ZXJpYWxzTWFwGAEgAygLMiMuenByb3RvLk1hdGVyaWFscy5NYXRl",
+            "cmlhbHNNYXBFbnRyeVIMbWF0ZXJpYWxzTWFwGjMKEU1hdGVyaWFsc01hcEVu",
+            "dHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new Materials(this);
     }
 
-    /// <summary>Field number for the "materials_map" field.</summary>
+    /// <summary>Field number for the "materialsMap" field.</summary>
     public const int MaterialsMapFieldNumber = 1;
     private static readonly pbc::MapField<int, long>.Codec _map_materialsMap_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 10);

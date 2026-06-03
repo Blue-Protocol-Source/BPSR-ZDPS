@@ -19,7 +19,7 @@ namespace BPSR_ZDPS.Windows
 
         static int RunOnceDelayed = 0;
         static bool HasInitBindings = false;
-        static ulong RenderClearTime = 0;
+        static int CountdownRunOnceDelayed = 0;
 
         static bool IsEditMode = false;
         static Vector2? NewWarningWindowLocation = null;
@@ -50,7 +50,11 @@ namespace BPSR_ZDPS.Windows
                 HasInitBindings = true;
 
                 NotifyMsgClass.ClassId = ImGuiP.ImHashStr("RaidWarningNotificationsClass");
-                NotifyMsgClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost | ImGuiViewportFlags.NoTaskBarIcon | ImGuiViewportFlags.NoInputs | ImGuiViewportFlags.NoRendererClear;
+                NotifyMsgClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost | ImGuiViewportFlags.NoInputs;// | ImGuiViewportFlags.NoRendererClear;
+                if (!Settings.Instance.WindowSettings.RaidManagerRaidWarning.ShowInTaskBar)
+                {
+                    NotifyMsgClass.ViewportFlagsOverrideSet |= ImGuiViewportFlags.NoTaskBarIcon;
+                }
 
                 EditModeClass.ClassId = ImGuiP.ImHashStr("RaidWarningEditorClass");
                 EditModeClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost;
@@ -63,7 +67,7 @@ namespace BPSR_ZDPS.Windows
         {
             if (Settings.Instance.WindowSettings.RaidManagerRaidWarning.AllowRaidWarnings)
             {
-                bool isAllowed = !Settings.Instance.WindowSettings.RaidManagerRaidWarning.PlayerUIDBlacklist.Contains(arg1.Info.CharId);
+                bool isAllowed = !Settings.Instance.WindowSettings.RaidManagerRaidWarning.PlayerUIDBlacklist.Contains(arg1.Info.CharID);
                 if (isAllowed && arg2.Msg.MsgType == Zproto.ChitChatMsgType.ChatMsgTextMessage && arg2.Msg.MsgText.Length > 5)
                 {
                     if (Settings.Instance.WindowSettings.RaidManagerRaidWarning.ChatChannels.Contains(arg2.Channel))
@@ -85,7 +89,24 @@ namespace BPSR_ZDPS.Windows
             }
         }
 
-        static void AddRaidWarning(string text)
+        public static void AddRaidWarningMessage(string text, bool playSound, string customSoundPath = "")
+        {
+            if (playSound)
+            {
+                AddRaidWarning(text, true, customSoundPath);
+            }
+            else
+            {
+                ulong nextWarningId = LastWarningId++;
+                RaidWarningMessages.TryAdd(LastWarningId, new RaidWarningMessage()
+                {
+                    WarningId = nextWarningId,
+                    MessageText = text
+                });
+            }
+        }
+
+        static void AddRaidWarning(string text, bool forceSound = false, string overrideSoundPath = "")
         {
             ulong nextWarningId = LastWarningId++;
             RaidWarningMessages.TryAdd(LastWarningId, new RaidWarningMessage()
@@ -93,7 +114,7 @@ namespace BPSR_ZDPS.Windows
                 WarningId = nextWarningId,
                 MessageText = text
             });
-            if (Settings.Instance.WindowSettings.RaidManagerRaidWarning.PlayAlertSoundOnWarning)
+            if (Settings.Instance.WindowSettings.RaidManagerRaidWarning.PlayAlertSoundOnWarning || forceSound)
             {
                 Task.Run(() =>
                 {
@@ -102,6 +123,16 @@ namespace BPSR_ZDPS.Windows
                         using (var output = new NAudio.Wave.WaveOutEvent())
                         {
                             string filepath = Settings.Instance.WindowSettings.RaidManagerRaidWarning.WarningNotificationSoundPath;
+
+                            if (!string.IsNullOrEmpty(overrideSoundPath))
+                            {
+                                string customPath = Path.Combine(Utils.DATA_DIR_NAME, "Audio", overrideSoundPath);
+                                if (File.Exists(customPath))
+                                {
+                                    filepath = customPath;
+                                }
+                            }
+                            
                             if (string.IsNullOrEmpty(filepath) || !File.Exists(filepath))
                             {
                                 filepath = Path.Combine(Utils.DATA_DIR_NAME, "Audio", "RaidWarning_Woosh.wav");
@@ -110,6 +141,7 @@ namespace BPSR_ZDPS.Windows
                             {
                                 output.Init(player);
                                 var duration = player.TotalTime;
+                                output.Volume = Settings.Instance.WindowSettings.RaidManagerRaidWarning.AlertSoundVolume * 0.01f;
                                 output.Play();
                                 Thread.Sleep(duration);
                             }
@@ -140,11 +172,6 @@ namespace BPSR_ZDPS.Windows
                 CenterDisplay();
             }
 
-            RenderClearTime++;
-            if (RenderClearTime > 3)
-            {
-                RenderClearTime = 0;
-            }
             if (RaidWarningMessages.Count > 0)
             {
                 ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -166,23 +193,32 @@ namespace BPSR_ZDPS.Windows
                 
                 ImGui.SetNextWindowSizeConstraints(new Vector2(0, 20), new Vector2(maxWindowWidth, ImGui.GETFLTMAX()));
 
-                // This is how we force a renderer clear for this window as there doesn't appear to be another way while we're supporting transparency
-                if (RenderClearTime % 2 == 0)
-                {
-                    ImGui.SetNextWindowSize(new Vector2(maxWindowWidth, RaidWarningMessages.Count * LineHeight));
-                }
-                else
-                {
-                    ImGui.SetNextWindowSize(new Vector2(maxWindowWidth, (RaidWarningMessages.Count * LineHeight) + 1));
-                }
+                ImGui.SetNextWindowSize(new Vector2(maxWindowWidth, (RaidWarningMessages.Count * LineHeight) + ImGui.GetStyle().FramePadding.Y + ImGui.GetStyle().ItemSpacing.Y));
 
-                if (ImGui.Begin($"RaidWarningMessagesWindow", ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoInputs | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse | ImGuiWindowFlags.NoBackground))
+                //ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(17 / 255.0f, 17 / 255.0f, 17 / 255.0f, 0.0f));
+                ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(5 / 255.0f, 5 / 255.0f, 5 / 255.0f, 0.0f));
+                ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0);
+                if (ImGui.Begin($"RaidWarningMessagesWindow", ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoInputs | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse | ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoFocusOnAppearing))
                 {
+                    if (CountdownRunOnceDelayed == 0)
+                    {
+                        CountdownRunOnceDelayed++;
+                    }
+                    else if (CountdownRunOnceDelayed <= 2)
+                    {
+                        CountdownRunOnceDelayed++;
+                        
+                    }
+                    else if (CountdownRunOnceDelayed < 3)
+                    {
+                        CountdownRunOnceDelayed++;
+                    }
+
                     ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0, 0, 0, windowSettings.MessageBackgroundOpacity));
                     if (ImGui.BeginChild("##WarningsListChild", ImGuiChildFlags.AutoResizeY, ImGuiWindowFlags.NoInputs))
                     {
                         ImGui.PushFont(null, 34.0f * (windowSettings.MessageTextScale * 0.01f));
-                        LineHeight = ImGui.CalcTextSize("0WM0").Y + ImGui.GetStyle().ItemSpacing.Y + ImGui.GetStyle().FramePadding.Y;
+                        LineHeight = ImGui.CalcTextSize("0WM0").Y + ImGui.GetStyle().ItemSpacing.Y;
                         ImGui.PushStyleColor(ImGuiCol.Text, Colors.OrangeRed);
 
                         float width = ImGui.GetContentRegionAvail().X;
@@ -227,8 +263,14 @@ namespace BPSR_ZDPS.Windows
                     ImGui.PopStyleColor();
                     ImGui.End();
                 }
+                ImGui.PopStyleVar();
+                ImGui.PopStyleColor();
 
                 ImGui.PopID();
+            }
+            else
+            {
+                CountdownRunOnceDelayed = 0;
             }
 
             if (!IsOpened)
@@ -274,6 +316,41 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Indent();
                 ImGui.BeginDisabled(true);
                 ImGui.TextWrapped("When enabled, a sound alert will be played each time a new Raid Warning appears.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted("Show In Task Bar: ");
+                ImGui.SameLine();
+                if (ImGui.Checkbox("##ShowInTaskBar", ref windowSettings.ShowInTaskBar))
+                {
+                    if (windowSettings.ShowInTaskBar)
+                    {
+                        NotifyMsgClass.ViewportFlagsOverrideSet &= ~ImGuiViewportFlags.NoTaskBarIcon;
+                    }
+                    else
+                    {
+                        NotifyMsgClass.ViewportFlagsOverrideSet |= ImGuiViewportFlags.NoTaskBarIcon;
+                    }
+                }
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("Hiding from the Task Bar may prevent screen recording software like OBS from seeing the Raid Warning Messages window to capture.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
+                ImGui.Text("Alert Sound Volume Level: ");
+                ImGui.SetNextItemWidth(-1);
+                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                if (ImGui.SliderInt("##AlertSoundVolume", ref windowSettings.AlertSoundVolume, 2, 100, $"{windowSettings.AlertSoundVolume}%%", ImGuiSliderFlags.ClampOnInput))
+                {
+                    windowSettings.AlertSoundVolume = windowSettings.AlertSoundVolume;
+                }
+                ImGui.PopStyleColor(2);
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("Volume scale of the played back alert sound. 100%% is the normal sound level of the audio file.");
                 ImGui.EndDisabled();
                 ImGui.Unindent();
 
@@ -581,12 +658,14 @@ namespace BPSR_ZDPS.Windows
     public class RaidManagerRaidWarningWindowSettings : WindowSettingsBase
     {
         public bool AllowRaidWarnings = true;
+        public bool ShowInTaskBar = false;
         public Vector2 RaidWarningMessagePosition = new();
         public Vector2 RaidWarningMessageSize = new();
         public int MessageTextScale = 100;
         public float MessageBackgroundOpacity = 0.0f;
         public bool PlayAlertSoundOnWarning = true;
         public string WarningNotificationSoundPath = "";
+        public int AlertSoundVolume = 100;
         public HashSet<Zproto.ChitChatChannelType> ChatChannels = new() { Zproto.ChitChatChannelType.ChannelTeam };
         public List<long> PlayerUIDBlacklist = new();
     }

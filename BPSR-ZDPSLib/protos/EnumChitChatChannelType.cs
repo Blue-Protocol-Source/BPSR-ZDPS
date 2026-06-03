@@ -24,12 +24,13 @@ namespace Zproto {
     static EnumChitChatChannelTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFlbnVtX2NoaXRfY2hhdF9jaGFubmVsX3R5cGUucHJvdG8SBnpwcm90byq8",
+            "CiFlbnVtX2NoaXRfY2hhdF9jaGFubmVsX3R5cGUucHJvdG8SBnpwcm90byrg",
             "AQoTQ2hpdENoYXRDaGFubmVsVHlwZRIPCgtDaGFubmVsTnVsbBAAEhAKDENo",
             "YW5uZWxXb3JsZBABEhAKDENoYW5uZWxTY2VuZRACEg8KC0NoYW5uZWxUZWFt",
             "EAMSEAoMQ2hhbm5lbFVuaW9uEAQSEgoOQ2hhbm5lbFByaXZhdGUQBRIQCgxD",
-            "aGFubmVsR3JvdXAQBhIUChBDaGFubmVsVG9wTm90aWNlEAcSEQoNQ2hhbm5l",
-            "bFN5c3RlbRBjYgZwcm90bzM="));
+            "aGFubmVsR3JvdXAQBhIUChBDaGFubmVsVG9wTm90aWNlEAcSDwoLQ2hhbm5l",
+            "bFBsYXkQCBIRCg1DaGFubmVsTmV3YmllEAkSEQoNQ2hhbm5lbFN5c3RlbRBj",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.ChitChatChannelType), }, null, null));
@@ -47,6 +48,8 @@ namespace Zproto {
     [pbr::OriginalName("ChannelPrivate")] ChannelPrivate = 5,
     [pbr::OriginalName("ChannelGroup")] ChannelGroup = 6,
     [pbr::OriginalName("ChannelTopNotice")] ChannelTopNotice = 7,
+    [pbr::OriginalName("ChannelPlay")] ChannelPlay = 8,
+    [pbr::OriginalName("ChannelNewbie")] ChannelNewbie = 9,
     [pbr::OriginalName("ChannelSystem")] ChannelSystem = 99,
   }
 

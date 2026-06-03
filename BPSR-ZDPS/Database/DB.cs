@@ -211,7 +211,32 @@ namespace BPSR_ZDPS
         public static List<Encounter> LoadEncounterSummaries()
         {
             var encounters = DbConn.Query<Encounter>(DBSchema.Encounter.SelectAll).ToList();
+            foreach (var encounter in encounters)
+            {
+                var decompressedEncEx = Decompressor.Unwrap(encounter.ExDataBlob);
+                ProtoBuf.Serializer.Deserialize<EncounterExData>(decompressedEncEx, encounter.ExData);
+                encounter.ExDataBlob = null;
+            }
             return encounters;
+        }
+
+        public static EncounterExData GetEncounterExDataForBattle(int battleId)
+        {
+            try
+            {
+                var encounter = DB.DbConn.QueryFirst<Encounter>(DBSchema.Encounter.SelectOneByBattleId, new { BattleId = battleId });
+                var decompressedEncEx = Decompressor.Unwrap(encounter.ExDataBlob);
+                ProtoBuf.Serializer.Deserialize<EncounterExData>(decompressedEncEx, encounter.ExData);
+                encounter.ExDataBlob = null;
+
+                return encounter.ExData;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error getting GetEncounterExDataForBattle by {battleId}", battleId);
+            }
+
+            return null;
         }
 
         public static DBCleanUpResults ClearOldEncounters(int olderThanDays)

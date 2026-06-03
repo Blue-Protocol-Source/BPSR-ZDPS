@@ -25,11 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2ZyZWlnaHRfZGF0YS5wcm90bxIGenByb3RvGhVzdHJ1X2RpcnR5",
-            "X21hc2sucHJvdG8iwAEKC0ZyZWlnaHREYXRhEhQKDHJlZnJlc2hfdGltZRgB",
-            "IAEoAxITCgtnb29kc192YWx1ZRgCIAEoBRIPCgdzZXRfb2ZmGAMgASgIEhMK",
-            "C2Nhbl9yZWNlaXZlGAQgASgIEhUKDXVwX2dvb2RzX2xpc3QYBSADKAUSFwoP",
-            "a2VlcF9nb29kc19saXN0GAYgAygFEhcKD2Rvd25fZ29vZHNfbGlzdBgHIAMo",
-            "BRIXCg9jYW5fcmV3YXJkX3RpbWUYCCABKANiBnByb3RvMw=="));
+            "X21hc2sucHJvdG8imwIKC0ZyZWlnaHREYXRhEiAKC3JlZnJlc2hUaW1lGAEg",
+            "ASgDUgtyZWZyZXNoVGltZRIeCgpnb29kc1ZhbHVlGAIgASgFUgpnb29kc1Zh",
+            "bHVlEhYKBnNldE9mZhgDIAEoCFIGc2V0T2ZmEh4KCmNhblJlY2VpdmUYBCAB",
+            "KAhSCmNhblJlY2VpdmUSIAoLdXBHb29kc0xpc3QYBSADKAVSC3VwR29vZHNM",
+            "aXN0EiQKDWtlZXBHb29kc0xpc3QYBiADKAVSDWtlZXBHb29kc0xpc3QSJAoN",
+            "ZG93bkdvb2RzTGlzdBgHIAMoBVINZG93bkdvb2RzTGlzdBIkCg1jYW5SZXdh",
+            "cmRUaW1lGAggASgDUg1jYW5SZXdhcmRUaW1lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +94,7 @@ namespace Zproto {
       return new FreightData(this);
     }
 
-    /// <summary>Field number for the "refresh_time" field.</summary>
+    /// <summary>Field number for the "refreshTime" field.</summary>
     public const int RefreshTimeFieldNumber = 1;
     private long refreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "goods_value" field.</summary>
+    /// <summary>Field number for the "goodsValue" field.</summary>
     public const int GoodsValueFieldNumber = 2;
     private int goodsValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "set_off" field.</summary>
+    /// <summary>Field number for the "setOff" field.</summary>
     public const int SetOffFieldNumber = 3;
     private bool setOff_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "can_receive" field.</summary>
+    /// <summary>Field number for the "canReceive" field.</summary>
     public const int CanReceiveFieldNumber = 4;
     private bool canReceive_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "up_goods_list" field.</summary>
+    /// <summary>Field number for the "upGoodsList" field.</summary>
     public const int UpGoodsListFieldNumber = 5;
     private static readonly pb::FieldCodec<int> _repeated_upGoodsList_codec
         = pb::FieldCodec.ForInt32(42);
@@ -151,7 +153,7 @@ namespace Zproto {
       get { return upGoodsList_; }
     }
 
-    /// <summary>Field number for the "keep_goods_list" field.</summary>
+    /// <summary>Field number for the "keepGoodsList" field.</summary>
     public const int KeepGoodsListFieldNumber = 6;
     private static readonly pb::FieldCodec<int> _repeated_keepGoodsList_codec
         = pb::FieldCodec.ForInt32(50);
@@ -162,7 +164,7 @@ namespace Zproto {
       get { return keepGoodsList_; }
     }
 
-    /// <summary>Field number for the "down_goods_list" field.</summary>
+    /// <summary>Field number for the "downGoodsList" field.</summary>
     public const int DownGoodsListFieldNumber = 7;
     private static readonly pb::FieldCodec<int> _repeated_downGoodsList_codec
         = pb::FieldCodec.ForInt32(58);
@@ -173,7 +175,7 @@ namespace Zproto {
       get { return downGoodsList_; }
     }
 
-    /// <summary>Field number for the "can_reward_time" field.</summary>
+    /// <summary>Field number for the "canRewardTime" field.</summary>
     public const int CanRewardTimeFieldNumber = 8;
     private long canRewardTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

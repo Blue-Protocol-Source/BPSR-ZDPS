@@ -24,11 +24,13 @@ namespace Zproto {
     static StruDungeonEnterParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X2R1bmdlb25fZW50ZXJfcGFyYW0ucHJvdG8SBnpwcm90byKlAQoR",
-            "RHVuZ2VvbkVudGVyUGFyYW0SEQoJcGxheV90eXBlGAEgASgNEhIKCmR1bmdl",
-            "b25faWQYAiABKA0SDwoHcm9vbV9pZBgDIAEoDRINCgVhZmZpeBgEIAMoBRIT",
-            "CgtzZWxlY3RfdHlwZRgFIAEoDRIaChJoZXJvX2tleV9pdGVtX3V1aWQYBiAB",
-            "KAMSGAoQbWFzdGVyX21vZGVfZGlmZhgHIAEoBWIGcHJvdG8z"));
+            "Ch5zdHJ1X2R1bmdlb25fZW50ZXJfcGFyYW0ucHJvdG8SBnpwcm90byLtAQoR",
+            "RHVuZ2VvbkVudGVyUGFyYW0SGgoIcGxheVR5cGUYASABKA1SCHBsYXlUeXBl",
+            "EhwKCWR1bmdlb25JZBgCIAEoDVIJZHVuZ2VvbklkEhYKBnJvb21JZBgDIAEo",
+            "DVIGcm9vbUlkEhQKBWFmZml4GAQgAygFUgVhZmZpeBIeCgpzZWxlY3RUeXBl",
+            "GAUgASgNUgpzZWxlY3RUeXBlEigKD2hlcm9LZXlJdGVtVXVpZBgGIAEoA1IP",
+            "aGVyb0tleUl0ZW1VdWlkEiYKDm1hc3Rlck1vZGVEaWZmGAcgASgFUg5tYXN0",
+            "ZXJNb2RlRGlmZmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +92,7 @@ namespace Zproto {
       return new DungeonEnterParam(this);
     }
 
-    /// <summary>Field number for the "play_type" field.</summary>
+    /// <summary>Field number for the "playType" field.</summary>
     public const int PlayTypeFieldNumber = 1;
     private uint playType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_id" field.</summary>
+    /// <summary>Field number for the "dungeonId" field.</summary>
     public const int DungeonIdFieldNumber = 2;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "room_id" field.</summary>
+    /// <summary>Field number for the "roomId" field.</summary>
     public const int RoomIdFieldNumber = 3;
     private uint roomId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +139,7 @@ namespace Zproto {
       get { return affix_; }
     }
 
-    /// <summary>Field number for the "select_type" field.</summary>
+    /// <summary>Field number for the "selectType" field.</summary>
     public const int SelectTypeFieldNumber = 5;
     private uint selectType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hero_key_item_uuid" field.</summary>
+    /// <summary>Field number for the "heroKeyItemUuid" field.</summary>
     public const int HeroKeyItemUuidFieldNumber = 6;
     private long heroKeyItemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -161,7 +163,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "master_mode_diff" field.</summary>
+    /// <summary>Field number for the "masterModeDiff" field.</summary>
     public const int MasterModeDiffFieldNumber = 7;
     private int masterModeDiff_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

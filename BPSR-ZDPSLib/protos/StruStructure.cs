@@ -24,23 +24,32 @@ namespace Zproto {
     static StruStructureReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRzdHJ1X3N0cnVjdHVyZS5wcm90bxIGenByb3RvGhNzdHJ1X2ludF92ZWMz",
-            "LnByb3RvGiJzdHJ1X3N0cnVjdHVyZV9mYXJtbGFuZF9pbmZvLnByb3RvGiNz",
-            "dHJ1X3N0cnVjdHVyZV9sYW1wbGlnaHRfaW5mby5wcm90bxoic3RydV9zdHJ1",
-            "Y3R1cmVfbWF0ZXJpYWxfaW5mby5wcm90bxoPc3RydV92ZWM0LnByb3RvIvMC",
-            "CglTdHJ1Y3R1cmUSDAoEdXVpZBgBIAEoAxITCgtjbGllbnRfdXVpZBgCIAEo",
-            "AxIQCghncm91cF9pZBgDIAEoAxIPCgdpdGVtX2lkGAQgASgFEg8KB2NoYXJf",
-            "aWQYBSABKAMSIQoIcG9zaXRpb24YBiABKAsyDy56cHJvdG8uSW50VmVjMxIg",
-            "CgpxdWF0ZXJuaW9uGAcgASgLMgwuenByb3RvLlZlYzQSGAoQb3BlcmF0b3Jf",
-            "Y2hhcl9pZBgIIAEoAxIMCgRuYW1lGAkgASgJEjQKDW1hdGVyaWFsX2luZm8Y",
-            "CiABKAsyHS56cHJvdG8uU3RydWN0dXJlTWF0ZXJpYWxJbmZvEjYKDmxhbXBs",
-            "aWdodF9pbmZvGAsgASgLMh4uenByb3RvLlN0cnVjdHVyZUxhbXBsaWdodElu",
-            "Zm8SNAoNZmFybWxhbmRfaW5mbxgMIAEoCzIdLnpwcm90by5TdHJ1Y3R1cmVG",
-            "YXJtbGFuZEluZm9iBnByb3RvMw=="));
+            "ChRzdHJ1X3N0cnVjdHVyZS5wcm90bxIGenByb3RvGhpzdHJ1X2dhbWVfdGFi",
+            "bGVfZGF0YS5wcm90bxoTc3RydV9pbnRfdmVjMy5wcm90bxoic3RydV9zdHJ1",
+            "Y3R1cmVfZmFybWxhbmRfaW5mby5wcm90bxohc3RydV9zdHJ1Y3R1cmVfZmFz",
+            "aGlvbl9kYXRhLnByb3RvGiNzdHJ1X3N0cnVjdHVyZV9sYW1wbGlnaHRfaW5m",
+            "by5wcm90bxoic3RydV9zdHJ1Y3R1cmVfbWF0ZXJpYWxfaW5mby5wcm90bxoj",
+            "c3RydV9zdHJ1Y3R1cmVfc3ViX21vZGVsX2RhdGEucHJvdG8aD3N0cnVfdmVj",
+            "NC5wcm90byKsBQoJU3RydWN0dXJlEhIKBHV1aWQYASABKANSBHV1aWQSHgoK",
+            "Y2xpZW50VXVpZBgCIAEoA1IKY2xpZW50VXVpZBIYCgdncm91cElkGAMgASgD",
+            "Ugdncm91cElkEhYKBml0ZW1JZBgEIAEoBVIGaXRlbUlkEhYKBmNoYXJJZBgF",
+            "IAEoA1IGY2hhcklkEisKCHBvc2l0aW9uGAYgASgLMg8uenByb3RvLkludFZl",
+            "YzNSCHBvc2l0aW9uEiwKCnF1YXRlcm5pb24YByABKAsyDC56cHJvdG8uVmVj",
+            "NFIKcXVhdGVybmlvbhImCg5vcGVyYXRvckNoYXJJZBgIIAEoA1IOb3BlcmF0",
+            "b3JDaGFySWQSEgoEbmFtZRgJIAEoCVIEbmFtZRJBCgxtYXRlcmlhbEluZm8Y",
+            "CiABKAsyHS56cHJvdG8uU3RydWN0dXJlTWF0ZXJpYWxJbmZvUgxtYXRlcmlh",
+            "bEluZm8SRAoNbGFtcGxpZ2h0SW5mbxgLIAEoCzIeLnpwcm90by5TdHJ1Y3R1",
+            "cmVMYW1wbGlnaHRJbmZvUg1sYW1wbGlnaHRJbmZvEkEKDGZhcm1sYW5kSW5m",
+            "bxgMIAEoCzIdLnpwcm90by5TdHJ1Y3R1cmVGYXJtbGFuZEluZm9SDGZhcm1s",
+            "YW5kSW5mbxI+CgtmYXNoaW9uRGF0YRgNIAEoCzIcLnpwcm90by5TdHJ1Y3R1",
+            "cmVGYXNoaW9uRGF0YVILZmFzaGlvbkRhdGESQQoMc3ViTW9kZWxEYXRhGA4g",
+            "ASgLMh0uenByb3RvLlN0cnVjdHVyZVN1Yk1vZGVsRGF0YVIMc3ViTW9kZWxE",
+            "YXRhEjsKDWdhbWVUYWJsZURhdGEYDyABKAsyFS56cHJvdG8uR2FtZVRhYmxl",
+            "RGF0YVINZ2FtZVRhYmxlRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruIntVec3Reflection.Descriptor, global::Zproto.StruStructureFarmlandInfoReflection.Descriptor, global::Zproto.StruStructureLamplightInfoReflection.Descriptor, global::Zproto.StruStructureMaterialInfoReflection.Descriptor, global::Zproto.StruVec4Reflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruGameTableDataReflection.Descriptor, global::Zproto.StruIntVec3Reflection.Descriptor, global::Zproto.StruStructureFarmlandInfoReflection.Descriptor, global::Zproto.StruStructureFashionDataReflection.Descriptor, global::Zproto.StruStructureLamplightInfoReflection.Descriptor, global::Zproto.StruStructureMaterialInfoReflection.Descriptor, global::Zproto.StruStructureSubModelDataReflection.Descriptor, global::Zproto.StruVec4Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.Structure), global::Zproto.Structure.Parser, new[]{ "Uuid", "ClientUuid", "GroupId", "ItemId", "CharId", "Position", "Quaternion", "OperatorCharId", "Name", "MaterialInfo", "LamplightInfo", "FarmlandInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.Structure), global::Zproto.Structure.Parser, new[]{ "Uuid", "ClientUuid", "GroupId", "ItemId", "CharId", "Position", "Quaternion", "OperatorCharId", "Name", "MaterialInfo", "LamplightInfo", "FarmlandInfo", "FashionData", "SubModelData", "GameTableData" }, null, null, null, null)
           }));
     }
     #endregion
@@ -94,6 +103,9 @@ namespace Zproto {
       materialInfo_ = other.materialInfo_ != null ? other.materialInfo_.Clone() : null;
       lamplightInfo_ = other.lamplightInfo_ != null ? other.lamplightInfo_.Clone() : null;
       farmlandInfo_ = other.farmlandInfo_ != null ? other.farmlandInfo_.Clone() : null;
+      fashionData_ = other.fashionData_ != null ? other.fashionData_.Clone() : null;
+      subModelData_ = other.subModelData_ != null ? other.subModelData_.Clone() : null;
+      gameTableData_ = other.gameTableData_ != null ? other.gameTableData_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -115,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "client_uuid" field.</summary>
+    /// <summary>Field number for the "clientUuid" field.</summary>
     public const int ClientUuidFieldNumber = 2;
     private long clientUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "group_id" field.</summary>
+    /// <summary>Field number for the "groupId" field.</summary>
     public const int GroupIdFieldNumber = 3;
     private long groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +151,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
+    /// <summary>Field number for the "itemId" field.</summary>
     public const int ItemIdFieldNumber = 4;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +163,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 5;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -187,7 +199,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "operator_char_id" field.</summary>
+    /// <summary>Field number for the "operatorCharId" field.</summary>
     public const int OperatorCharIdFieldNumber = 8;
     private long operatorCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -211,7 +223,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "material_info" field.</summary>
+    /// <summary>Field number for the "materialInfo" field.</summary>
     public const int MaterialInfoFieldNumber = 10;
     private global::Zproto.StructureMaterialInfo materialInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -223,7 +235,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lamplight_info" field.</summary>
+    /// <summary>Field number for the "lamplightInfo" field.</summary>
     public const int LamplightInfoFieldNumber = 11;
     private global::Zproto.StructureLamplightInfo lamplightInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -235,7 +247,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "farmland_info" field.</summary>
+    /// <summary>Field number for the "farmlandInfo" field.</summary>
     public const int FarmlandInfoFieldNumber = 12;
     private global::Zproto.StructureFarmlandInfo farmlandInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -244,6 +256,42 @@ namespace Zproto {
       get { return farmlandInfo_; }
       set {
         farmlandInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fashionData" field.</summary>
+    public const int FashionDataFieldNumber = 13;
+    private global::Zproto.StructureFashionData fashionData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.StructureFashionData FashionData {
+      get { return fashionData_; }
+      set {
+        fashionData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "subModelData" field.</summary>
+    public const int SubModelDataFieldNumber = 14;
+    private global::Zproto.StructureSubModelData subModelData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.StructureSubModelData SubModelData {
+      get { return subModelData_; }
+      set {
+        subModelData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gameTableData" field.</summary>
+    public const int GameTableDataFieldNumber = 15;
+    private global::Zproto.GameTableData gameTableData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.GameTableData GameTableData {
+      get { return gameTableData_; }
+      set {
+        gameTableData_ = value;
       }
     }
 
@@ -274,6 +322,9 @@ namespace Zproto {
       if (!object.Equals(MaterialInfo, other.MaterialInfo)) return false;
       if (!object.Equals(LamplightInfo, other.LamplightInfo)) return false;
       if (!object.Equals(FarmlandInfo, other.FarmlandInfo)) return false;
+      if (!object.Equals(FashionData, other.FashionData)) return false;
+      if (!object.Equals(SubModelData, other.SubModelData)) return false;
+      if (!object.Equals(GameTableData, other.GameTableData)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -293,6 +344,9 @@ namespace Zproto {
       if (materialInfo_ != null) hash ^= MaterialInfo.GetHashCode();
       if (lamplightInfo_ != null) hash ^= LamplightInfo.GetHashCode();
       if (farmlandInfo_ != null) hash ^= FarmlandInfo.GetHashCode();
+      if (fashionData_ != null) hash ^= FashionData.GetHashCode();
+      if (subModelData_ != null) hash ^= SubModelData.GetHashCode();
+      if (gameTableData_ != null) hash ^= GameTableData.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -359,6 +413,18 @@ namespace Zproto {
         output.WriteRawTag(98);
         output.WriteMessage(FarmlandInfo);
       }
+      if (fashionData_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(FashionData);
+      }
+      if (subModelData_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(SubModelData);
+      }
+      if (gameTableData_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(GameTableData);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -417,6 +483,18 @@ namespace Zproto {
         output.WriteRawTag(98);
         output.WriteMessage(FarmlandInfo);
       }
+      if (fashionData_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(FashionData);
+      }
+      if (subModelData_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(SubModelData);
+      }
+      if (gameTableData_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(GameTableData);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -462,6 +540,15 @@ namespace Zproto {
       }
       if (farmlandInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FarmlandInfo);
+      }
+      if (fashionData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FashionData);
+      }
+      if (subModelData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SubModelData);
+      }
+      if (gameTableData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GameTableData);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -525,6 +612,24 @@ namespace Zproto {
           FarmlandInfo = new global::Zproto.StructureFarmlandInfo();
         }
         FarmlandInfo.MergeFrom(other.FarmlandInfo);
+      }
+      if (other.fashionData_ != null) {
+        if (fashionData_ == null) {
+          FashionData = new global::Zproto.StructureFashionData();
+        }
+        FashionData.MergeFrom(other.FashionData);
+      }
+      if (other.subModelData_ != null) {
+        if (subModelData_ == null) {
+          SubModelData = new global::Zproto.StructureSubModelData();
+        }
+        SubModelData.MergeFrom(other.SubModelData);
+      }
+      if (other.gameTableData_ != null) {
+        if (gameTableData_ == null) {
+          GameTableData = new global::Zproto.GameTableData();
+        }
+        GameTableData.MergeFrom(other.GameTableData);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -608,6 +713,27 @@ namespace Zproto {
             input.ReadMessage(FarmlandInfo);
             break;
           }
+          case 106: {
+            if (fashionData_ == null) {
+              FashionData = new global::Zproto.StructureFashionData();
+            }
+            input.ReadMessage(FashionData);
+            break;
+          }
+          case 114: {
+            if (subModelData_ == null) {
+              SubModelData = new global::Zproto.StructureSubModelData();
+            }
+            input.ReadMessage(SubModelData);
+            break;
+          }
+          case 122: {
+            if (gameTableData_ == null) {
+              GameTableData = new global::Zproto.GameTableData();
+            }
+            input.ReadMessage(GameTableData);
+            break;
+          }
         }
       }
     #endif
@@ -688,6 +814,27 @@ namespace Zproto {
               FarmlandInfo = new global::Zproto.StructureFarmlandInfo();
             }
             input.ReadMessage(FarmlandInfo);
+            break;
+          }
+          case 106: {
+            if (fashionData_ == null) {
+              FashionData = new global::Zproto.StructureFashionData();
+            }
+            input.ReadMessage(FashionData);
+            break;
+          }
+          case 114: {
+            if (subModelData_ == null) {
+              SubModelData = new global::Zproto.StructureSubModelData();
+            }
+            input.ReadMessage(SubModelData);
+            break;
+          }
+          case 122: {
+            if (gameTableData_ == null) {
+              GameTableData = new global::Zproto.GameTableData();
+            }
+            input.ReadMessage(GameTableData);
             break;
           }
         }

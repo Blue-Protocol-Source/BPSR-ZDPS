@@ -25,14 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJzdHJ1X3BhY2thZ2UucHJvdG8SBnpwcm90bxoPc3RydV9pdGVtLnByb3Rv",
-            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8inAIKB1BhY2thZ2USDAoEdHlwZRgB",
-            "IAEoBRIUCgxtYXhfY2FwYWNpdHkYAiABKAUSLAoHaXRlbV9jZBgDIAMoCzIb",
-            "Lnpwcm90by5QYWNrYWdlLkl0ZW1DZEVudHJ5EikKBWl0ZW1zGAQgAygLMhou",
-            "enByb3RvLlBhY2thZ2UuSXRlbXNFbnRyeRIRCglwdWJsaWNfY2QYBSABKAMS",
-            "FgoOY2hhbmdlX3ZlcnNpb24YBiABKAUaLQoLSXRlbUNkRW50cnkSCwoDa2V5",
-            "GAEgASgFEg0KBXZhbHVlGAIgASgDOgI4ARo6CgpJdGVtc0VudHJ5EgsKA2tl",
-            "eRgBIAEoAxIbCgV2YWx1ZRgCIAEoCzIMLnpwcm90by5JdGVtOgI4AWIGcHJv",
-            "dG8z"));
+            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i0wIKB1BhY2thZ2USEgoEdHlwZRgB",
+            "IAEoBVIEdHlwZRIgCgttYXhDYXBhY2l0eRgCIAEoBVILbWF4Q2FwYWNpdHkS",
+            "MwoGaXRlbUNkGAMgAygLMhsuenByb3RvLlBhY2thZ2UuSXRlbUNkRW50cnlS",
+            "Bml0ZW1DZBIwCgVpdGVtcxgEIAMoCzIaLnpwcm90by5QYWNrYWdlLkl0ZW1z",
+            "RW50cnlSBWl0ZW1zEhoKCHB1YmxpY0NkGAUgASgDUghwdWJsaWNDZBIkCg1j",
+            "aGFuZ2VWZXJzaW9uGAYgASgFUg1jaGFuZ2VWZXJzaW9uGi0KC0l0ZW1DZEVu",
+            "dHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAEaOgoKSXRlbXNF",
+            "bnRyeRILCgNrZXkYASABKAMSGwoFdmFsdWUYAiABKAsyDC56cHJvdG8uSXRl",
+            "bToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -105,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "max_capacity" field.</summary>
+    /// <summary>Field number for the "maxCapacity" field.</summary>
     public const int MaxCapacityFieldNumber = 2;
     private int maxCapacity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_cd" field.</summary>
+    /// <summary>Field number for the "itemCd" field.</summary>
     public const int ItemCdFieldNumber = 3;
     private static readonly pbc::MapField<int, long>.Codec _map_itemCd_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 26);
@@ -139,7 +140,7 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "public_cd" field.</summary>
+    /// <summary>Field number for the "publicCd" field.</summary>
     public const int PublicCdFieldNumber = 5;
     private long publicCd_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "change_version" field.</summary>
+    /// <summary>Field number for the "changeVersion" field.</summary>
     public const int ChangeVersionFieldNumber = 6;
     private int changeVersion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

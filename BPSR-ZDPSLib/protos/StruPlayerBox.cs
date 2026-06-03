@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X3BsYXllcl9ib3gucHJvdG8SBnpwcm90bxoac3RydV9wbGF5ZXJf",
-            "Ym94X2RhdGEucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKAAQoJUGxh",
-            "eWVyQm94Ei0KBnNjZW5lcxgBIAMoCzIdLnpwcm90by5QbGF5ZXJCb3guU2Nl",
-            "bmVzRW50cnkaRAoLU2NlbmVzRW50cnkSCwoDa2V5GAEgASgEEiQKBXZhbHVl",
-            "GAIgASgLMhUuenByb3RvLlBsYXllckJveERhdGE6AjgBYgZwcm90bzM="));
+            "Ym94X2RhdGEucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKIAQoJUGxh",
+            "eWVyQm94EjUKBnNjZW5lcxgBIAMoCzIdLnpwcm90by5QbGF5ZXJCb3guU2Nl",
+            "bmVzRW50cnlSBnNjZW5lcxpECgtTY2VuZXNFbnRyeRILCgNrZXkYASABKAQS",
+            "JAoFdmFsdWUYAiABKAsyFS56cHJvdG8uUGxheWVyQm94RGF0YToCOAFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPlayerBoxDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

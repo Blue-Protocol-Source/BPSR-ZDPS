@@ -24,9 +24,10 @@ namespace Zproto {
     static StruUnionEffectBuffReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X3VuaW9uX2VmZmVjdF9idWZmLnByb3RvEgZ6cHJvdG8iTQoPVW5p",
-            "b25FZmZlY3RCdWZmEhAKCGJ1ZmZfcG9zGAEgASgFEhYKDmVmZmVjdF9idWZm",
-            "X2lkGAIgASgFEhAKCGVuZF90aW1lGAMgASgDYgZwcm90bzM="));
+            "ChxzdHJ1X3VuaW9uX2VmZmVjdF9idWZmLnByb3RvEgZ6cHJvdG8iaQoPVW5p",
+            "b25FZmZlY3RCdWZmEhgKB2J1ZmZQb3MYASABKAVSB2J1ZmZQb3MSIgoMZWZm",
+            "ZWN0QnVmZklkGAIgASgFUgxlZmZlY3RCdWZmSWQSGAoHZW5kVGltZRgDIAEo",
+            "A1IHZW5kVGltZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new UnionEffectBuff(this);
     }
 
-    /// <summary>Field number for the "buff_pos" field.</summary>
+    /// <summary>Field number for the "buffPos" field.</summary>
     public const int BuffPosFieldNumber = 1;
     private int buffPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "effect_buff_id" field.</summary>
+    /// <summary>Field number for the "effectBuffId" field.</summary>
     public const int EffectBuffIdFieldNumber = 2;
     private int effectBuffId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 3;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

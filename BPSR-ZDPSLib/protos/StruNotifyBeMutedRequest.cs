@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X25vdGlmeV9iZV9tdXRlZF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "PQoUTm90aWZ5QmVNdXRlZFJlcXVlc3QSDgoGaXNfYmFuGAEgASgIEhUKDWVu",
-            "ZF90aW1lc3RhbXAYAiABKANiBnByb3RvMw=="));
+            "bgoUTm90aWZ5QmVNdXRlZFJlcXVlc3QSFAoFaXNCYW4YASABKAhSBWlzQmFu",
+            "EiIKDGVuZFRpbWVzdGFtcBgCIAEoA1IMZW5kVGltZXN0YW1wEhwKCWJhblJl",
+            "YXNvbhgDIAEoBVIJYmFuUmVhc29uYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.NotifyBeMutedRequest), global::Zproto.NotifyBeMutedRequest.Parser, new[]{ "IsBan", "EndTimestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.NotifyBeMutedRequest), global::Zproto.NotifyBeMutedRequest.Parser, new[]{ "IsBan", "EndTimestamp", "BanReason" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,6 +75,7 @@ namespace Zproto {
     public NotifyBeMutedRequest(NotifyBeMutedRequest other) : this() {
       isBan_ = other.isBan_;
       endTimestamp_ = other.endTimestamp_;
+      banReason_ = other.banReason_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,7 +85,7 @@ namespace Zproto {
       return new NotifyBeMutedRequest(this);
     }
 
-    /// <summary>Field number for the "is_ban" field.</summary>
+    /// <summary>Field number for the "isBan" field.</summary>
     public const int IsBanFieldNumber = 1;
     private bool isBan_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_timestamp" field.</summary>
+    /// <summary>Field number for the "endTimestamp" field.</summary>
     public const int EndTimestampFieldNumber = 2;
     private long endTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -104,6 +106,18 @@ namespace Zproto {
       get { return endTimestamp_; }
       set {
         endTimestamp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "banReason" field.</summary>
+    public const int BanReasonFieldNumber = 3;
+    private int banReason_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int BanReason {
+      get { return banReason_; }
+      set {
+        banReason_ = value;
       }
     }
 
@@ -124,6 +138,7 @@ namespace Zproto {
       }
       if (IsBan != other.IsBan) return false;
       if (EndTimestamp != other.EndTimestamp) return false;
+      if (BanReason != other.BanReason) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -133,6 +148,7 @@ namespace Zproto {
       int hash = 1;
       if (IsBan != false) hash ^= IsBan.GetHashCode();
       if (EndTimestamp != 0L) hash ^= EndTimestamp.GetHashCode();
+      if (BanReason != 0) hash ^= BanReason.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -159,6 +175,10 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt64(EndTimestamp);
       }
+      if (BanReason != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(BanReason);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -177,6 +197,10 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt64(EndTimestamp);
       }
+      if (BanReason != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(BanReason);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -192,6 +216,9 @@ namespace Zproto {
       }
       if (EndTimestamp != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(EndTimestamp);
+      }
+      if (BanReason != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BanReason);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,6 +237,9 @@ namespace Zproto {
       }
       if (other.EndTimestamp != 0L) {
         EndTimestamp = other.EndTimestamp;
+      }
+      if (other.BanReason != 0) {
+        BanReason = other.BanReason;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -238,6 +268,10 @@ namespace Zproto {
             EndTimestamp = input.ReadInt64();
             break;
           }
+          case 24: {
+            BanReason = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -263,6 +297,10 @@ namespace Zproto {
           }
           case 16: {
             EndTimestamp = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            BanReason = input.ReadInt32();
             break;
           }
         }

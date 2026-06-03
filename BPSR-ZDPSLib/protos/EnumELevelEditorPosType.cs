@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJlbnVtX2VfbGV2ZWxfZWRpdG9yX3Bvc190eXBlLnByb3RvEgZ6cHJvdG8q",
-            "rAEKE0VMZXZlbEVkaXRvclBvc1R5cGUSGwoXTGV2ZWxFZGl0b3JQb3NUeXBl",
+            "9AEKE0VMZXZlbEVkaXRvclBvc1R5cGUSGwoXTGV2ZWxFZGl0b3JQb3NUeXBl",
             "QmFzaWMQABIdChlMZXZlbEVkaXRvclBvc1R5cGVQb2ludElkEAESHAoYTGV2",
             "ZWxFZGl0b3JQb3NUeXBlRW50aXR5EAISGQoVTGV2ZWxFZGl0b3JQb3NUeXBl",
-            "UG9zEAMSIAocTGV2ZWxFZGl0b3JQb3NUeXBlUG9pbnRHcm91cBAEYgZwcm90",
-            "bzM="));
+            "UG9zEAMSIAocTGV2ZWxFZGl0b3JQb3NUeXBlUG9pbnRHcm91cBAEEigKJExl",
+            "dmVsRWRpdG9yUG9zVHlwZVBvaW50R3JvdXBOb25SZXBldBAFEhwKGExldmVs",
+            "RWRpdG9yUG9zVHlwZVJhbmRvbRAGYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.ELevelEditorPosType), }, null, null));
@@ -44,6 +45,8 @@ namespace Zproto {
     [pbr::OriginalName("LevelEditorPosTypeEntity")] LevelEditorPosTypeEntity = 2,
     [pbr::OriginalName("LevelEditorPosTypePos")] LevelEditorPosTypePos = 3,
     [pbr::OriginalName("LevelEditorPosTypePointGroup")] LevelEditorPosTypePointGroup = 4,
+    [pbr::OriginalName("LevelEditorPosTypePointGroupNonRepet")] LevelEditorPosTypePointGroupNonRepet = 5,
+    [pbr::OriginalName("LevelEditorPosTypeRandom")] LevelEditorPosTypeRandom = 6,
   }
 
   #endregion

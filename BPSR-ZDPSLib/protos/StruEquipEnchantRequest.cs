@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2VxdWlwX2VuY2hhbnRfcmVxdWVzdC5wcm90bxIGenByb3RvGh9l",
-            "bnVtX2VfZXF1aXBfZW5jaGFudF90eXBlLnByb3RvInoKE0VxdWlwRW5jaGFu",
-            "dFJlcXVlc3QSEgoKZXF1aXBfdXVpZBgBIAEoAxIeChZlbmNoYW50X2l0ZW1f",
-            "Y29uZmlnX2lkGAIgASgDEi8KDGVuY2hhbnRfdHlwZRgDIAEoDjIZLnpwcm90",
-            "by5FRXF1aXBFbmNoYW50VHlwZWIGcHJvdG8z"));
+            "bnVtX2VfZXF1aXBfZW5jaGFudF90eXBlLnByb3RvIqIBChNFcXVpcEVuY2hh",
+            "bnRSZXF1ZXN0EhwKCWVxdWlwVXVpZBgBIAEoA1IJZXF1aXBVdWlkEjAKE2Vu",
+            "Y2hhbnRJdGVtQ29uZmlnSWQYAiABKANSE2VuY2hhbnRJdGVtQ29uZmlnSWQS",
+            "OwoLZW5jaGFudFR5cGUYAyABKA4yGS56cHJvdG8uRUVxdWlwRW5jaGFudFR5",
+            "cGVSC2VuY2hhbnRUeXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEEquipEnchantTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new EquipEnchantRequest(this);
     }
 
-    /// <summary>Field number for the "equip_uuid" field.</summary>
+    /// <summary>Field number for the "equipUuid" field.</summary>
     public const int EquipUuidFieldNumber = 1;
     private long equipUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "enchant_item_config_id" field.</summary>
+    /// <summary>Field number for the "enchantItemConfigId" field.</summary>
     public const int EnchantItemConfigIdFieldNumber = 2;
     private long enchantItemConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "enchant_type" field.</summary>
+    /// <summary>Field number for the "enchantType" field.</summary>
     public const int EnchantTypeFieldNumber = 3;
     private global::Zproto.EEquipEnchantType enchantType_ = global::Zproto.EEquipEnchantType.EequipEnchantNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

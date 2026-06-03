@@ -26,14 +26,19 @@ namespace Zproto {
           string.Concat(
             "Ci1zdHJ1X3JlY2VpdmVfdW5pb25fYWN0aXZpdHlfYXdhcmRfcmVwbHkucHJv",
             "dG8SBnpwcm90bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aD3N0cnVfaXRl",
-            "bS5wcm90byKFAQoeUmVjZWl2ZVVuaW9uQWN0aXZpdHlBd2FyZFJlcGx5EiAK",
-            "GHJlY2VpdmVkX3BvaW50X2F3YXJkX2lkcxgBIAMoBRIbCgVpdGVtcxgCIAMo",
-            "CzIMLnpwcm90by5JdGVtEiQKCGVycl9jb2RlGAMgASgOMhIuenByb3RvLkVF",
-            "cnJvckNvZGViBnByb3RvMw=="));
+            "bS5wcm90byLYAgoeUmVjZWl2ZVVuaW9uQWN0aXZpdHlBd2FyZFJlcGx5EjQK",
+            "FXJlY2VpdmVkUG9pbnRBd2FyZElkcxgBIAMoBVIVcmVjZWl2ZWRQb2ludEF3",
+            "YXJkSWRzEiIKBWl0ZW1zGAIgAygLMgwuenByb3RvLkl0ZW1SBWl0ZW1zEjIK",
+            "FHVuaW9uTGFzdFJlZnJlc2hUaW1lGAMgASgDUhR1bmlvbkxhc3RSZWZyZXNo",
+            "VGltZRI4Chd1bmlvbkN1cnJlbnRSZWZyZXNoVGltZRgEIAEoA1IXdW5pb25D",
+            "dXJyZW50UmVmcmVzaFRpbWUSHAoJbGFzdFBvaW50GAUgASgDUglsYXN0UG9p",
+            "bnQSIgoMY3VycmVudFBvaW50GAYgASgDUgxjdXJyZW50UG9pbnQSLAoHZXJy",
+            "Q29kZRgHIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2RlYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ReceiveUnionActivityAwardReply), global::Zproto.ReceiveUnionActivityAwardReply.Parser, new[]{ "ReceivedPointAwardIds", "Items", "ErrCode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ReceiveUnionActivityAwardReply), global::Zproto.ReceiveUnionActivityAwardReply.Parser, new[]{ "ReceivedPointAwardIds", "Items", "UnionLastRefreshTime", "UnionCurrentRefreshTime", "LastPoint", "CurrentPoint", "ErrCode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,6 +82,10 @@ namespace Zproto {
     public ReceiveUnionActivityAwardReply(ReceiveUnionActivityAwardReply other) : this() {
       receivedPointAwardIds_ = other.receivedPointAwardIds_.Clone();
       items_ = other.items_.Clone();
+      unionLastRefreshTime_ = other.unionLastRefreshTime_;
+      unionCurrentRefreshTime_ = other.unionCurrentRefreshTime_;
+      lastPoint_ = other.lastPoint_;
+      currentPoint_ = other.currentPoint_;
       errCode_ = other.errCode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,7 +96,7 @@ namespace Zproto {
       return new ReceiveUnionActivityAwardReply(this);
     }
 
-    /// <summary>Field number for the "received_point_award_ids" field.</summary>
+    /// <summary>Field number for the "receivedPointAwardIds" field.</summary>
     public const int ReceivedPointAwardIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<int> _repeated_receivedPointAwardIds_codec
         = pb::FieldCodec.ForInt32(10);
@@ -109,8 +118,56 @@ namespace Zproto {
       get { return items_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
-    public const int ErrCodeFieldNumber = 3;
+    /// <summary>Field number for the "unionLastRefreshTime" field.</summary>
+    public const int UnionLastRefreshTimeFieldNumber = 3;
+    private long unionLastRefreshTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long UnionLastRefreshTime {
+      get { return unionLastRefreshTime_; }
+      set {
+        unionLastRefreshTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "unionCurrentRefreshTime" field.</summary>
+    public const int UnionCurrentRefreshTimeFieldNumber = 4;
+    private long unionCurrentRefreshTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long UnionCurrentRefreshTime {
+      get { return unionCurrentRefreshTime_; }
+      set {
+        unionCurrentRefreshTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "lastPoint" field.</summary>
+    public const int LastPointFieldNumber = 5;
+    private long lastPoint_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long LastPoint {
+      get { return lastPoint_; }
+      set {
+        lastPoint_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "currentPoint" field.</summary>
+    public const int CurrentPointFieldNumber = 6;
+    private long currentPoint_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long CurrentPoint {
+      get { return currentPoint_; }
+      set {
+        currentPoint_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "errCode" field.</summary>
+    public const int ErrCodeFieldNumber = 7;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,6 +195,10 @@ namespace Zproto {
       }
       if(!receivedPointAwardIds_.Equals(other.receivedPointAwardIds_)) return false;
       if(!items_.Equals(other.items_)) return false;
+      if (UnionLastRefreshTime != other.UnionLastRefreshTime) return false;
+      if (UnionCurrentRefreshTime != other.UnionCurrentRefreshTime) return false;
+      if (LastPoint != other.LastPoint) return false;
+      if (CurrentPoint != other.CurrentPoint) return false;
       if (ErrCode != other.ErrCode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -148,6 +209,10 @@ namespace Zproto {
       int hash = 1;
       hash ^= receivedPointAwardIds_.GetHashCode();
       hash ^= items_.GetHashCode();
+      if (UnionLastRefreshTime != 0L) hash ^= UnionLastRefreshTime.GetHashCode();
+      if (UnionCurrentRefreshTime != 0L) hash ^= UnionCurrentRefreshTime.GetHashCode();
+      if (LastPoint != 0L) hash ^= LastPoint.GetHashCode();
+      if (CurrentPoint != 0L) hash ^= CurrentPoint.GetHashCode();
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) hash ^= ErrCode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -169,8 +234,24 @@ namespace Zproto {
     #else
       receivedPointAwardIds_.WriteTo(output, _repeated_receivedPointAwardIds_codec);
       items_.WriteTo(output, _repeated_items_codec);
-      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
+      if (UnionLastRefreshTime != 0L) {
         output.WriteRawTag(24);
+        output.WriteInt64(UnionLastRefreshTime);
+      }
+      if (UnionCurrentRefreshTime != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(UnionCurrentRefreshTime);
+      }
+      if (LastPoint != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(LastPoint);
+      }
+      if (CurrentPoint != 0L) {
+        output.WriteRawTag(48);
+        output.WriteInt64(CurrentPoint);
+      }
+      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
+        output.WriteRawTag(56);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -185,8 +266,24 @@ namespace Zproto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       receivedPointAwardIds_.WriteTo(ref output, _repeated_receivedPointAwardIds_codec);
       items_.WriteTo(ref output, _repeated_items_codec);
-      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
+      if (UnionLastRefreshTime != 0L) {
         output.WriteRawTag(24);
+        output.WriteInt64(UnionLastRefreshTime);
+      }
+      if (UnionCurrentRefreshTime != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(UnionCurrentRefreshTime);
+      }
+      if (LastPoint != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(LastPoint);
+      }
+      if (CurrentPoint != 0L) {
+        output.WriteRawTag(48);
+        output.WriteInt64(CurrentPoint);
+      }
+      if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
+        output.WriteRawTag(56);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -201,6 +298,18 @@ namespace Zproto {
       int size = 0;
       size += receivedPointAwardIds_.CalculateSize(_repeated_receivedPointAwardIds_codec);
       size += items_.CalculateSize(_repeated_items_codec);
+      if (UnionLastRefreshTime != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(UnionLastRefreshTime);
+      }
+      if (UnionCurrentRefreshTime != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(UnionCurrentRefreshTime);
+      }
+      if (LastPoint != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(LastPoint);
+      }
+      if (CurrentPoint != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CurrentPoint);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ErrCode);
       }
@@ -218,6 +327,18 @@ namespace Zproto {
       }
       receivedPointAwardIds_.Add(other.receivedPointAwardIds_);
       items_.Add(other.items_);
+      if (other.UnionLastRefreshTime != 0L) {
+        UnionLastRefreshTime = other.UnionLastRefreshTime;
+      }
+      if (other.UnionCurrentRefreshTime != 0L) {
+        UnionCurrentRefreshTime = other.UnionCurrentRefreshTime;
+      }
+      if (other.LastPoint != 0L) {
+        LastPoint = other.LastPoint;
+      }
+      if (other.CurrentPoint != 0L) {
+        CurrentPoint = other.CurrentPoint;
+      }
       if (other.ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         ErrCode = other.ErrCode;
       }
@@ -250,6 +371,22 @@ namespace Zproto {
             break;
           }
           case 24: {
+            UnionLastRefreshTime = input.ReadInt64();
+            break;
+          }
+          case 32: {
+            UnionCurrentRefreshTime = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            LastPoint = input.ReadInt64();
+            break;
+          }
+          case 48: {
+            CurrentPoint = input.ReadInt64();
+            break;
+          }
+          case 56: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }
@@ -282,6 +419,22 @@ namespace Zproto {
             break;
           }
           case 24: {
+            UnionLastRefreshTime = input.ReadInt64();
+            break;
+          }
+          case 32: {
+            UnionCurrentRefreshTime = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            LastPoint = input.ReadInt64();
+            break;
+          }
+          case 48: {
+            CurrentPoint = input.ReadInt64();
+            break;
+          }
+          case 56: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }

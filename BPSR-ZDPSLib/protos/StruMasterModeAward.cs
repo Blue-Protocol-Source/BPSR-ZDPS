@@ -24,8 +24,8 @@ namespace Zproto {
     static StruMasterModeAwardReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxzdHJ1X21hc3Rlcl9tb2RlX2F3YXJkLnByb3RvEgZ6cHJvdG8iIAoPTWFz",
-            "dGVyTW9kZUF3YXJkEg0KBWluZGV4GAEgASgFYgZwcm90bzM="));
+            "ChxzdHJ1X21hc3Rlcl9tb2RlX2F3YXJkLnByb3RvEgZ6cHJvdG8iJwoPTWFz",
+            "dGVyTW9kZUF3YXJkEhQKBWluZGV4GAEgASgFUgVpbmRleGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

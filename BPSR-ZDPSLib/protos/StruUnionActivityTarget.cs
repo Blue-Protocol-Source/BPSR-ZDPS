@@ -24,14 +24,16 @@ namespace Zproto {
     static StruUnionActivityTargetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3VuaW9uX2FjdGl2aXR5X3RhcmdldC5wcm90bxIGenByb3RvInIK",
-            "E1VuaW9uQWN0aXZpdHlUYXJnZXQSDwoHY3VyX251bRgBIAEoBRIUCgxoYXNf",
-            "ZmluaXNoZWQYAiABKAgSGQoRbGFzdF9yZWZyZXNoX3RpbWUYAyABKAMSGQoR",
-            "bmV4dF9yZWZyZXNoX3RpbWUYBCABKANiBnByb3RvMw=="));
+            "CiBzdHJ1X3VuaW9uX2FjdGl2aXR5X3RhcmdldC5wcm90bxIGenByb3RvIr8B",
+            "ChNVbmlvbkFjdGl2aXR5VGFyZ2V0EhYKBmN1ck51bRgBIAEoBVIGY3VyTnVt",
+            "EiAKC2hhc0ZpbmlzaGVkGAIgASgIUgtoYXNGaW5pc2hlZBIoCg9sYXN0UmVm",
+            "cmVzaFRpbWUYAyABKANSD2xhc3RSZWZyZXNoVGltZRIoCg9uZXh0UmVmcmVz",
+            "aFRpbWUYBCABKANSD25leHRSZWZyZXNoVGltZRIaCgh0YXJnZXRJZBgFIAEo",
+            "BVIIdGFyZ2V0SWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UnionActivityTarget), global::Zproto.UnionActivityTarget.Parser, new[]{ "CurNum", "HasFinished", "LastRefreshTime", "NextRefreshTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UnionActivityTarget), global::Zproto.UnionActivityTarget.Parser, new[]{ "CurNum", "HasFinished", "LastRefreshTime", "NextRefreshTime", "TargetId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,6 +79,7 @@ namespace Zproto {
       hasFinished_ = other.hasFinished_;
       lastRefreshTime_ = other.lastRefreshTime_;
       nextRefreshTime_ = other.nextRefreshTime_;
+      targetId_ = other.targetId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,7 +89,7 @@ namespace Zproto {
       return new UnionActivityTarget(this);
     }
 
-    /// <summary>Field number for the "cur_num" field.</summary>
+    /// <summary>Field number for the "curNum" field.</summary>
     public const int CurNumFieldNumber = 1;
     private int curNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "has_finished" field.</summary>
+    /// <summary>Field number for the "hasFinished" field.</summary>
     public const int HasFinishedFieldNumber = 2;
     private bool hasFinished_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_refresh_time" field.</summary>
+    /// <summary>Field number for the "lastRefreshTime" field.</summary>
     public const int LastRefreshTimeFieldNumber = 3;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "next_refresh_time" field.</summary>
+    /// <summary>Field number for the "nextRefreshTime" field.</summary>
     public const int NextRefreshTimeFieldNumber = 4;
     private long nextRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,6 +134,18 @@ namespace Zproto {
       get { return nextRefreshTime_; }
       set {
         nextRefreshTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "targetId" field.</summary>
+    public const int TargetIdFieldNumber = 5;
+    private int targetId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int TargetId {
+      get { return targetId_; }
+      set {
+        targetId_ = value;
       }
     }
 
@@ -153,6 +168,7 @@ namespace Zproto {
       if (HasFinished != other.HasFinished) return false;
       if (LastRefreshTime != other.LastRefreshTime) return false;
       if (NextRefreshTime != other.NextRefreshTime) return false;
+      if (TargetId != other.TargetId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,6 +180,7 @@ namespace Zproto {
       if (HasFinished != false) hash ^= HasFinished.GetHashCode();
       if (LastRefreshTime != 0L) hash ^= LastRefreshTime.GetHashCode();
       if (NextRefreshTime != 0L) hash ^= NextRefreshTime.GetHashCode();
+      if (TargetId != 0) hash ^= TargetId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -198,6 +215,10 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt64(NextRefreshTime);
       }
+      if (TargetId != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(TargetId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -224,6 +245,10 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt64(NextRefreshTime);
       }
+      if (TargetId != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(TargetId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -245,6 +270,9 @@ namespace Zproto {
       }
       if (NextRefreshTime != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(NextRefreshTime);
+      }
+      if (TargetId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TargetId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -269,6 +297,9 @@ namespace Zproto {
       }
       if (other.NextRefreshTime != 0L) {
         NextRefreshTime = other.NextRefreshTime;
+      }
+      if (other.TargetId != 0) {
+        TargetId = other.TargetId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -305,6 +336,10 @@ namespace Zproto {
             NextRefreshTime = input.ReadInt64();
             break;
           }
+          case 40: {
+            TargetId = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -338,6 +373,10 @@ namespace Zproto {
           }
           case 32: {
             NextRefreshTime = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            TargetId = input.ReadInt32();
             break;
           }
         }

@@ -24,15 +24,19 @@ namespace Zproto {
     static StruBubbleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZzdHJ1X2J1YmJsZV9pbmZvLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byJ+CgpCdWJibGVJbmZvEhQKDGJ1YmJsZV9zY29yZRgBIAEo",
-            "DRIaChJidWJibGVfYXdhcmRfY291bnQYAiABKA0SIwobYWRkaXRpb25hbF90",
-            "YXJnZXRfdXVpZF9saXN0GAMgAygEEhkKEWxhc3RfcmVmcmVzaF90aW1lGAQg",
-            "ASgDYgZwcm90bzM="));
+            "ChZzdHJ1X2J1YmJsZV9pbmZvLnByb3RvEgZ6cHJvdG8aH3N0cnVfYnViYmxl",
+            "X3RhcmdldF9yZWNvcmQucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKI",
+            "AgoKQnViYmxlSW5mbxIgCgtidWJibGVTY29yZRgBIAEoDVILYnViYmxlU2Nv",
+            "cmUSKgoQYnViYmxlQXdhcmRDb3VudBgCIAEoDVIQYnViYmxlQXdhcmRDb3Vu",
+            "dBI6ChhhZGRpdGlvbmFsVGFyZ2V0VXVpZExpc3QYAyADKARSGGFkZGl0aW9u",
+            "YWxUYXJnZXRVdWlkTGlzdBIoCg9sYXN0UmVmcmVzaFRpbWUYBCABKANSD2xh",
+            "c3RSZWZyZXNoVGltZRJGChB0YXJnZXRSZWNvcmRMaXN0GAUgAygLMhouenBy",
+            "b3RvLkJ1YmJsZVRhcmdldFJlY29yZFIQdGFyZ2V0UmVjb3JkTGlzdGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruBubbleTargetRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.BubbleInfo), global::Zproto.BubbleInfo.Parser, new[]{ "BubbleScore", "BubbleAwardCount", "AdditionalTargetUuidList", "LastRefreshTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.BubbleInfo), global::Zproto.BubbleInfo.Parser, new[]{ "BubbleScore", "BubbleAwardCount", "AdditionalTargetUuidList", "LastRefreshTime", "TargetRecordList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -78,6 +82,7 @@ namespace Zproto {
       bubbleAwardCount_ = other.bubbleAwardCount_;
       additionalTargetUuidList_ = other.additionalTargetUuidList_.Clone();
       lastRefreshTime_ = other.lastRefreshTime_;
+      targetRecordList_ = other.targetRecordList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,7 +92,7 @@ namespace Zproto {
       return new BubbleInfo(this);
     }
 
-    /// <summary>Field number for the "bubble_score" field.</summary>
+    /// <summary>Field number for the "bubbleScore" field.</summary>
     public const int BubbleScoreFieldNumber = 1;
     private uint bubbleScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bubble_award_count" field.</summary>
+    /// <summary>Field number for the "bubbleAwardCount" field.</summary>
     public const int BubbleAwardCountFieldNumber = 2;
     private uint bubbleAwardCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "additional_target_uuid_list" field.</summary>
+    /// <summary>Field number for the "additionalTargetUuidList" field.</summary>
     public const int AdditionalTargetUuidListFieldNumber = 3;
     private static readonly pb::FieldCodec<ulong> _repeated_additionalTargetUuidList_codec
         = pb::FieldCodec.ForUInt64(26);
@@ -122,7 +127,7 @@ namespace Zproto {
       get { return additionalTargetUuidList_; }
     }
 
-    /// <summary>Field number for the "last_refresh_time" field.</summary>
+    /// <summary>Field number for the "lastRefreshTime" field.</summary>
     public const int LastRefreshTimeFieldNumber = 4;
     private long lastRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -132,6 +137,17 @@ namespace Zproto {
       set {
         lastRefreshTime_ = value;
       }
+    }
+
+    /// <summary>Field number for the "targetRecordList" field.</summary>
+    public const int TargetRecordListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Zproto.BubbleTargetRecord> _repeated_targetRecordList_codec
+        = pb::FieldCodec.ForMessage(42, global::Zproto.BubbleTargetRecord.Parser);
+    private readonly pbc::RepeatedField<global::Zproto.BubbleTargetRecord> targetRecordList_ = new pbc::RepeatedField<global::Zproto.BubbleTargetRecord>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Zproto.BubbleTargetRecord> TargetRecordList {
+      get { return targetRecordList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,6 +169,7 @@ namespace Zproto {
       if (BubbleAwardCount != other.BubbleAwardCount) return false;
       if(!additionalTargetUuidList_.Equals(other.additionalTargetUuidList_)) return false;
       if (LastRefreshTime != other.LastRefreshTime) return false;
+      if(!targetRecordList_.Equals(other.targetRecordList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,6 +181,7 @@ namespace Zproto {
       if (BubbleAwardCount != 0) hash ^= BubbleAwardCount.GetHashCode();
       hash ^= additionalTargetUuidList_.GetHashCode();
       if (LastRefreshTime != 0L) hash ^= LastRefreshTime.GetHashCode();
+      hash ^= targetRecordList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -195,6 +213,7 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt64(LastRefreshTime);
       }
+      targetRecordList_.WriteTo(output, _repeated_targetRecordList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -218,6 +237,7 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt64(LastRefreshTime);
       }
+      targetRecordList_.WriteTo(ref output, _repeated_targetRecordList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -238,6 +258,7 @@ namespace Zproto {
       if (LastRefreshTime != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(LastRefreshTime);
       }
+      size += targetRecordList_.CalculateSize(_repeated_targetRecordList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -260,6 +281,7 @@ namespace Zproto {
       if (other.LastRefreshTime != 0L) {
         LastRefreshTime = other.LastRefreshTime;
       }
+      targetRecordList_.Add(other.targetRecordList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -296,6 +318,10 @@ namespace Zproto {
             LastRefreshTime = input.ReadInt64();
             break;
           }
+          case 42: {
+            targetRecordList_.AddEntriesFrom(input, _repeated_targetRecordList_codec);
+            break;
+          }
         }
       }
     #endif
@@ -330,6 +356,10 @@ namespace Zproto {
           }
           case 32: {
             LastRefreshTime = input.ReadInt64();
+            break;
+          }
+          case 42: {
+            targetRecordList_.AddEntriesFrom(ref input, _repeated_targetRecordList_codec);
             break;
           }
         }

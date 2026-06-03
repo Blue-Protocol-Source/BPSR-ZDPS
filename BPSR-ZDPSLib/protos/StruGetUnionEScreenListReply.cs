@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X2dldF91bmlvbl9lX3NjcmVlbl9saXN0X3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGh5zdHJ1X3VuaW9uX2Vf",
-            "c2NyZWVuX2luZm8ucHJvdG8inwEKGEdldFVuaW9uRVNjcmVlbkxpc3RSZXBs",
-            "eRIvCg1lX3NjcmVlbl9saXN0GAEgAygLMhguenByb3RvLlVuaW9uRVNjcmVl",
-            "bkluZm8SFQoNY3VyX3NldF90aW1lcxgCIAEoBRIVCg1tYXhfc2V0X3RpbWVz",
-            "GAMgASgFEiQKCGVycl9jb2RlGAQgASgOMhIuenByb3RvLkVFcnJvckNvZGVi",
-            "BnByb3RvMw=="));
+            "c2NyZWVuX2luZm8ucHJvdG8iyAEKGEdldFVuaW9uRVNjcmVlbkxpc3RSZXBs",
+            "eRI6CgtlU2NyZWVuTGlzdBgBIAMoCzIYLnpwcm90by5VbmlvbkVTY3JlZW5J",
+            "bmZvUgtlU2NyZWVuTGlzdBIgCgtjdXJTZXRUaW1lcxgCIAEoBVILY3VyU2V0",
+            "VGltZXMSIAoLbWF4U2V0VGltZXMYAyABKAVSC21heFNldFRpbWVzEiwKB2Vy",
+            "ckNvZGUYBCABKA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionEScreenInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new GetUnionEScreenListReply(this);
     }
 
-    /// <summary>Field number for the "e_screen_list" field.</summary>
+    /// <summary>Field number for the "eScreenList" field.</summary>
     public const int EScreenListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.UnionEScreenInfo> _repeated_eScreenList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.UnionEScreenInfo.Parser);
@@ -100,7 +101,7 @@ namespace Zproto {
       get { return eScreenList_; }
     }
 
-    /// <summary>Field number for the "cur_set_times" field.</summary>
+    /// <summary>Field number for the "curSetTimes" field.</summary>
     public const int CurSetTimesFieldNumber = 2;
     private int curSetTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "max_set_times" field.</summary>
+    /// <summary>Field number for the "maxSetTimes" field.</summary>
     public const int MaxSetTimesFieldNumber = 3;
     private int maxSetTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

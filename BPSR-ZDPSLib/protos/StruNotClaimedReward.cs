@@ -24,9 +24,9 @@ namespace Zproto {
     static StruNotClaimedRewardReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X25vdF9jbGFpbWVkX3Jld2FyZC5wcm90bxIGenByb3RvIj0KEE5v",
-            "dENsYWltZWRSZXdhcmQSEgoKYXdhcmRfdGltZRgBIAEoAxIVCg1hd2FyZF9p",
-            "ZF9saXN0GAIgAygFYgZwcm90bzM="));
+            "Ch1zdHJ1X25vdF9jbGFpbWVkX3Jld2FyZC5wcm90bxIGenByb3RvIlIKEE5v",
+            "dENsYWltZWRSZXdhcmQSHAoJYXdhcmRUaW1lGAEgASgDUglhd2FyZFRpbWUS",
+            "IAoLYXdhcmRJZExpc3QYAiADKAVSC2F3YXJkSWRMaXN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotClaimedReward(this);
     }
 
-    /// <summary>Field number for the "award_time" field.</summary>
+    /// <summary>Field number for the "awardTime" field.</summary>
     public const int AwardTimeFieldNumber = 1;
     private long awardTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_id_list" field.</summary>
+    /// <summary>Field number for the "awardIdList" field.</summary>
     public const int AwardIdListFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_awardIdList_codec
         = pb::FieldCodec.ForInt32(18);

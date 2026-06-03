@@ -25,13 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2J1ZmZfZWZmZWN0X2xvZ2ljX2dyYXZpdHkucHJvdG8SBnpwcm90",
-            "bxofZW51bV9lX2dyYXZpdGF0aW9uYWxfdHlwZS5wcm90byKCAgoWQnVmZkVm",
-            "ZmVjdExvZ2ljR3Jhdml0eRIoCgR0eXBlGAEgASgOMhouenByb3RvLkVHcmF2",
-            "aXRhdGlvbmFsVHlwZRIQCghzdHJlbmd0aBgCIAEoAhIUCgxzdHJlbmd0aF9s",
-            "b3cYAyABKAISFwoPaW50ZXJuYWxfcmFkaXVzGAQgASgCEhcKD2V4dGVybmFs",
-            "X3JhZGl1cxgFIAEoAhITCgtlbnRpdHlfdHlwZRgGIAEoBRIYChBjYW1wX3Rh",
-            "cmdldF90eXBlGAcgASgFEhcKD2lzX2ltcGFjdF9ob3ZlchgIIAEoCBIcChRp",
-            "c191c2Vfd2VpZ2h0X2ZhY3RvchgJIAEoCGIGcHJvdG8z"));
+            "bxofZW51bV9lX2dyYXZpdGF0aW9uYWxfdHlwZS5wcm90byLyAgoWQnVmZkVm",
+            "ZmVjdExvZ2ljR3Jhdml0eRIuCgR0eXBlGAEgASgOMhouenByb3RvLkVHcmF2",
+            "aXRhdGlvbmFsVHlwZVIEdHlwZRIaCghzdHJlbmd0aBgCIAEoAlIIc3RyZW5n",
+            "dGgSIAoLc3RyZW5ndGhMb3cYAyABKAJSC3N0cmVuZ3RoTG93EiYKDmludGVy",
+            "bmFsUmFkaXVzGAQgASgCUg5pbnRlcm5hbFJhZGl1cxImCg5leHRlcm5hbFJh",
+            "ZGl1cxgFIAEoAlIOZXh0ZXJuYWxSYWRpdXMSHgoKZW50aXR5VHlwZRgGIAEo",
+            "BVIKZW50aXR5VHlwZRImCg5jYW1wVGFyZ2V0VHlwZRgHIAEoBVIOY2FtcFRh",
+            "cmdldFR5cGUSJAoNaXNJbXBhY3RIb3ZlchgIIAEoCFINaXNJbXBhY3RIb3Zl",
+            "chIsChFpc1VzZVdlaWdodEZhY3RvchgJIAEoCFIRaXNVc2VXZWlnaHRGYWN0",
+            "b3JiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEGravitationalTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -119,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "strength_low" field.</summary>
+    /// <summary>Field number for the "strengthLow" field.</summary>
     public const int StrengthLowFieldNumber = 3;
     private float strengthLow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,7 +134,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "internal_radius" field.</summary>
+    /// <summary>Field number for the "internalRadius" field.</summary>
     public const int InternalRadiusFieldNumber = 4;
     private float internalRadius_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,7 +146,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "external_radius" field.</summary>
+    /// <summary>Field number for the "externalRadius" field.</summary>
     public const int ExternalRadiusFieldNumber = 5;
     private float externalRadius_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,7 +158,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "entity_type" field.</summary>
+    /// <summary>Field number for the "entityType" field.</summary>
     public const int EntityTypeFieldNumber = 6;
     private int entityType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +170,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "camp_target_type" field.</summary>
+    /// <summary>Field number for the "campTargetType" field.</summary>
     public const int CampTargetTypeFieldNumber = 7;
     private int campTargetType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,7 +182,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_impact_hover" field.</summary>
+    /// <summary>Field number for the "isImpactHover" field.</summary>
     public const int IsImpactHoverFieldNumber = 8;
     private bool isImpactHover_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -191,7 +194,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_use_weight_factor" field.</summary>
+    /// <summary>Field number for the "isUseWeightFactor" field.</summary>
     public const int IsUseWeightFactorFieldNumber = 9;
     private bool isUseWeightFactor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,29 +25,36 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2VxdWlwX2F0dHIucHJvdG8SBnpwcm90bxoZc3RydV9lcXVpcF9h",
-            "dHRyX3NldC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIv0FCglFcXVp",
-            "cEF0dHISNAoKYmFzZV9hdHRycxgEIAMoCzIgLnpwcm90by5FcXVpcEF0dHIu",
-            "QmFzZUF0dHJzRW50cnkSGAoQcGVyZmVjdGlvbl92YWx1ZRgHIAEoBRIUCgxy",
-            "ZWNhc3RfY291bnQYCCABKAUSGgoSdG90YWxfcmVjYXN0X2NvdW50GAkgASgF",
-            "EjQKCmJhc2ljX2F0dHIYCiADKAsyIC56cHJvdG8uRXF1aXBBdHRyLkJhc2lj",
-            "QXR0ckVudHJ5EjgKDGFkdmFuY2VfYXR0chgLIAMoCzIiLnpwcm90by5FcXVp",
-            "cEF0dHIuQWR2YW5jZUF0dHJFbnRyeRI2CgtyZWNhc3RfYXR0chgMIAMoCzIh",
-            "Lnpwcm90by5FcXVpcEF0dHIuUmVjYXN0QXR0ckVudHJ5EhgKEHBlcmZlY3Rp",
-            "b25fbGV2ZWwYDSABKAUSQQoRcmFyZV9xdWFsaXR5X2F0dHIYDiADKAsyJi56",
-            "cHJvdG8uRXF1aXBBdHRyLlJhcmVRdWFsaXR5QXR0ckVudHJ5EhwKFG1heF9w",
-            "ZXJmZWN0aW9uX3ZhbHVlGA8gASgFEiwKDmVxdWlwX2F0dHJfc2V0GBEgASgL",
-            "MhQuenByb3RvLkVxdWlwQXR0clNldBIaChJicmVha190aHJvdWdoX3RpbWUY",
-            "EiABKAUaMAoOQmFzZUF0dHJzRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVl",
-            "GAIgASgNOgI4ARowCg5CYXNpY0F0dHJFbnRyeRILCgNrZXkYASABKAUSDQoF",
-            "dmFsdWUYAiABKAU6AjgBGjIKEEFkdmFuY2VBdHRyRW50cnkSCwoDa2V5GAEg",
-            "ASgFEg0KBXZhbHVlGAIgASgFOgI4ARoxCg9SZWNhc3RBdHRyRW50cnkSCwoD",
-            "a2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4ARo2ChRSYXJlUXVhbGl0eUF0",
-            "dHJFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90",
-            "bzM="));
+            "dHRyX3NldC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvItEICglFcXVp",
+            "cEF0dHISPgoJYmFzZUF0dHJzGAQgAygLMiAuenByb3RvLkVxdWlwQXR0ci5C",
+            "YXNlQXR0cnNFbnRyeVIJYmFzZUF0dHJzEigKD3BlcmZlY3Rpb25WYWx1ZRgH",
+            "IAEoBVIPcGVyZmVjdGlvblZhbHVlEiAKC3JlY2FzdENvdW50GAggASgFUgty",
+            "ZWNhc3RDb3VudBIqChB0b3RhbFJlY2FzdENvdW50GAkgASgFUhB0b3RhbFJl",
+            "Y2FzdENvdW50Ej4KCWJhc2ljQXR0chgKIAMoCzIgLnpwcm90by5FcXVpcEF0",
+            "dHIuQmFzaWNBdHRyRW50cnlSCWJhc2ljQXR0chJECgthZHZhbmNlQXR0chgL",
+            "IAMoCzIiLnpwcm90by5FcXVpcEF0dHIuQWR2YW5jZUF0dHJFbnRyeVILYWR2",
+            "YW5jZUF0dHISQQoKcmVjYXN0QXR0chgMIAMoCzIhLnpwcm90by5FcXVpcEF0",
+            "dHIuUmVjYXN0QXR0ckVudHJ5UgpyZWNhc3RBdHRyEigKD3BlcmZlY3Rpb25M",
+            "ZXZlbBgNIAEoBVIPcGVyZmVjdGlvbkxldmVsElAKD3JhcmVRdWFsaXR5QXR0",
+            "chgOIAMoCzImLnpwcm90by5FcXVpcEF0dHIuUmFyZVF1YWxpdHlBdHRyRW50",
+            "cnlSD3JhcmVRdWFsaXR5QXR0chIuChJtYXhQZXJmZWN0aW9uVmFsdWUYDyAB",
+            "KAVSEm1heFBlcmZlY3Rpb25WYWx1ZRI4CgxlcXVpcEF0dHJTZXQYESABKAsy",
+            "FC56cHJvdG8uRXF1aXBBdHRyU2V0UgxlcXVpcEF0dHJTZXQSKgoQYnJlYWtU",
+            "aHJvdWdoVGltZRgSIAEoBVIQYnJlYWtUaHJvdWdoVGltZRJcChNjdXN0b21U",
+            "cmFuc2Zvcm1BdHRyGBMgAygLMiouenByb3RvLkVxdWlwQXR0ci5DdXN0b21U",
+            "cmFuc2Zvcm1BdHRyRW50cnlSE2N1c3RvbVRyYW5zZm9ybUF0dHIaMAoOQmFz",
+            "ZUF0dHJzRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4ARow",
+            "Cg5CYXNpY0F0dHJFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6",
+            "AjgBGjIKEEFkdmFuY2VBdHRyRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVl",
+            "GAIgASgFOgI4ARoxCg9SZWNhc3RBdHRyRW50cnkSCwoDa2V5GAEgASgFEg0K",
+            "BXZhbHVlGAIgASgFOgI4ARo2ChRSYXJlUXVhbGl0eUF0dHJFbnRyeRILCgNr",
+            "ZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBGlAKGEN1c3RvbVRyYW5zZm9y",
+            "bUF0dHJFbnRyeRILCgNrZXkYASABKAUSIwoFdmFsdWUYAiABKAsyFC56cHJv",
+            "dG8uRXF1aXBBdHRyU2V0OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruEquipAttrSetReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.EquipAttr), global::Zproto.EquipAttr.Parser, new[]{ "BaseAttrs", "PerfectionValue", "RecastCount", "TotalRecastCount", "BasicAttr", "AdvanceAttr", "RecastAttr", "PerfectionLevel", "RareQualityAttr", "MaxPerfectionValue", "EquipAttrSet", "BreakThroughTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.EquipAttr), global::Zproto.EquipAttr.Parser, new[]{ "BaseAttrs", "PerfectionValue", "RecastCount", "TotalRecastCount", "BasicAttr", "AdvanceAttr", "RecastAttr", "PerfectionLevel", "RareQualityAttr", "MaxPerfectionValue", "EquipAttrSet", "BreakThroughTime", "CustomTransformAttr" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, })
           }));
     }
     #endregion
@@ -101,6 +108,7 @@ namespace Zproto {
       maxPerfectionValue_ = other.maxPerfectionValue_;
       equipAttrSet_ = other.equipAttrSet_ != null ? other.equipAttrSet_.Clone() : null;
       breakThroughTime_ = other.breakThroughTime_;
+      customTransformAttr_ = other.customTransformAttr_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -110,7 +118,7 @@ namespace Zproto {
       return new EquipAttr(this);
     }
 
-    /// <summary>Field number for the "base_attrs" field.</summary>
+    /// <summary>Field number for the "baseAttrs" field.</summary>
     public const int BaseAttrsFieldNumber = 4;
     private static readonly pbc::MapField<uint, uint>.Codec _map_baseAttrs_codec
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 34);
@@ -121,7 +129,7 @@ namespace Zproto {
       get { return baseAttrs_; }
     }
 
-    /// <summary>Field number for the "perfection_value" field.</summary>
+    /// <summary>Field number for the "perfectionValue" field.</summary>
     public const int PerfectionValueFieldNumber = 7;
     private int perfectionValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "recast_count" field.</summary>
+    /// <summary>Field number for the "recastCount" field.</summary>
     public const int RecastCountFieldNumber = 8;
     private int recastCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -145,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "total_recast_count" field.</summary>
+    /// <summary>Field number for the "totalRecastCount" field.</summary>
     public const int TotalRecastCountFieldNumber = 9;
     private int totalRecastCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -157,7 +165,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "basic_attr" field.</summary>
+    /// <summary>Field number for the "basicAttr" field.</summary>
     public const int BasicAttrFieldNumber = 10;
     private static readonly pbc::MapField<int, int>.Codec _map_basicAttr_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 82);
@@ -168,7 +176,7 @@ namespace Zproto {
       get { return basicAttr_; }
     }
 
-    /// <summary>Field number for the "advance_attr" field.</summary>
+    /// <summary>Field number for the "advanceAttr" field.</summary>
     public const int AdvanceAttrFieldNumber = 11;
     private static readonly pbc::MapField<int, int>.Codec _map_advanceAttr_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 90);
@@ -179,7 +187,7 @@ namespace Zproto {
       get { return advanceAttr_; }
     }
 
-    /// <summary>Field number for the "recast_attr" field.</summary>
+    /// <summary>Field number for the "recastAttr" field.</summary>
     public const int RecastAttrFieldNumber = 12;
     private static readonly pbc::MapField<int, int>.Codec _map_recastAttr_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 98);
@@ -190,7 +198,7 @@ namespace Zproto {
       get { return recastAttr_; }
     }
 
-    /// <summary>Field number for the "perfection_level" field.</summary>
+    /// <summary>Field number for the "perfectionLevel" field.</summary>
     public const int PerfectionLevelFieldNumber = 13;
     private int perfectionLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -202,7 +210,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rare_quality_attr" field.</summary>
+    /// <summary>Field number for the "rareQualityAttr" field.</summary>
     public const int RareQualityAttrFieldNumber = 14;
     private static readonly pbc::MapField<int, int>.Codec _map_rareQualityAttr_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 114);
@@ -213,7 +221,7 @@ namespace Zproto {
       get { return rareQualityAttr_; }
     }
 
-    /// <summary>Field number for the "max_perfection_value" field.</summary>
+    /// <summary>Field number for the "maxPerfectionValue" field.</summary>
     public const int MaxPerfectionValueFieldNumber = 15;
     private int maxPerfectionValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -225,7 +233,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "equip_attr_set" field.</summary>
+    /// <summary>Field number for the "equipAttrSet" field.</summary>
     public const int EquipAttrSetFieldNumber = 17;
     private global::Zproto.EquipAttrSet equipAttrSet_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -237,7 +245,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "break_through_time" field.</summary>
+    /// <summary>Field number for the "breakThroughTime" field.</summary>
     public const int BreakThroughTimeFieldNumber = 18;
     private int breakThroughTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -247,6 +255,17 @@ namespace Zproto {
       set {
         breakThroughTime_ = value;
       }
+    }
+
+    /// <summary>Field number for the "customTransformAttr" field.</summary>
+    public const int CustomTransformAttrFieldNumber = 19;
+    private static readonly pbc::MapField<int, global::Zproto.EquipAttrSet>.Codec _map_customTransformAttr_codec
+        = new pbc::MapField<int, global::Zproto.EquipAttrSet>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.EquipAttrSet.Parser), 154);
+    private readonly pbc::MapField<int, global::Zproto.EquipAttrSet> customTransformAttr_ = new pbc::MapField<int, global::Zproto.EquipAttrSet>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<int, global::Zproto.EquipAttrSet> CustomTransformAttr {
+      get { return customTransformAttr_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -276,6 +295,7 @@ namespace Zproto {
       if (MaxPerfectionValue != other.MaxPerfectionValue) return false;
       if (!object.Equals(EquipAttrSet, other.EquipAttrSet)) return false;
       if (BreakThroughTime != other.BreakThroughTime) return false;
+      if (!CustomTransformAttr.Equals(other.CustomTransformAttr)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -295,6 +315,7 @@ namespace Zproto {
       if (MaxPerfectionValue != 0) hash ^= MaxPerfectionValue.GetHashCode();
       if (equipAttrSet_ != null) hash ^= EquipAttrSet.GetHashCode();
       if (BreakThroughTime != 0) hash ^= BreakThroughTime.GetHashCode();
+      hash ^= CustomTransformAttr.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -346,6 +367,7 @@ namespace Zproto {
         output.WriteRawTag(144, 1);
         output.WriteInt32(BreakThroughTime);
       }
+      customTransformAttr_.WriteTo(output, _map_customTransformAttr_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -389,6 +411,7 @@ namespace Zproto {
         output.WriteRawTag(144, 1);
         output.WriteInt32(BreakThroughTime);
       }
+      customTransformAttr_.WriteTo(ref output, _map_customTransformAttr_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -425,6 +448,7 @@ namespace Zproto {
       if (BreakThroughTime != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(BreakThroughTime);
       }
+      size += customTransformAttr_.CalculateSize(_map_customTransformAttr_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -466,6 +490,7 @@ namespace Zproto {
       if (other.BreakThroughTime != 0) {
         BreakThroughTime = other.BreakThroughTime;
       }
+      customTransformAttr_.MergeFrom(other.customTransformAttr_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -536,6 +561,10 @@ namespace Zproto {
             BreakThroughTime = input.ReadInt32();
             break;
           }
+          case 154: {
+            customTransformAttr_.AddEntriesFrom(input, _map_customTransformAttr_codec);
+            break;
+          }
         }
       }
     #endif
@@ -604,6 +633,10 @@ namespace Zproto {
           }
           case 144: {
             BreakThroughTime = input.ReadInt32();
+            break;
+          }
+          case 154: {
+            customTransformAttr_.AddEntriesFrom(ref input, _map_customTransformAttr_codec);
             break;
           }
         }

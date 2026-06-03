@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3VuaW9uX2FjdGl2aXR5X3JhbmtfaW5mby5wcm90bxIGenByb3Rv",
-            "GhZzdHJ1X2F2YXRhcl9pbmZvLnByb3RvIoUBChVVbmlvbkFjdGl2aXR5UmFu",
-            "a0luZm8SDwoHY2hhcl9pZBgBIAEoAxIRCgljaGFyX25hbWUYAiABKAkSJwoL",
-            "YXZhdGFyX2luZm8YAyABKAsyEi56cHJvdG8uQXZhdGFySW5mbxIQCghyYW5r",
-            "X2lkeBgEIAEoBRINCgV2YWx1ZRgFIAEoBWIGcHJvdG8z"));
+            "GhZzdHJ1X2F2YXRhcl9pbmZvLnByb3RvIq8BChVVbmlvbkFjdGl2aXR5UmFu",
+            "a0luZm8SFgoGY2hhcklkGAEgASgDUgZjaGFySWQSGgoIY2hhck5hbWUYAiAB",
+            "KAlSCGNoYXJOYW1lEjIKCmF2YXRhckluZm8YAyABKAsyEi56cHJvdG8uQXZh",
+            "dGFySW5mb1IKYXZhdGFySW5mbxIYCgdyYW5rSWR4GAQgASgFUgdyYW5rSWR4",
+            "EhQKBXZhbHVlGAUgASgFUgV2YWx1ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new UnionActivityRankInfo(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_name" field.</summary>
+    /// <summary>Field number for the "charName" field.</summary>
     public const int CharNameFieldNumber = 2;
     private string charName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "avatar_info" field.</summary>
+    /// <summary>Field number for the "avatarInfo" field.</summary>
     public const int AvatarInfoFieldNumber = 3;
     private global::Zproto.AvatarInfo avatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rank_idx" field.</summary>
+    /// <summary>Field number for the "rankIdx" field.</summary>
     public const int RankIdxFieldNumber = 4;
     private int rankIdx_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

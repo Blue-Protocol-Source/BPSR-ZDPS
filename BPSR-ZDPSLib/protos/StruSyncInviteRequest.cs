@@ -24,10 +24,11 @@ namespace Zproto {
     static StruSyncInviteRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X3N5bmNfaW52aXRlX3JlcXVlc3QucHJvdG8SBnpwcm90byJhChFT",
-            "eW5jSW52aXRlUmVxdWVzdBIRCglpbnZpdGVfaWQYASABKAMSEwoLaW52aXRl",
-            "X25hbWUYAiABKAkSEgoKdW5pb25fbmFtZRgDIAEoCRIQCgh1bmlvbl9pZBgE",
-            "IAEoBGIGcHJvdG8z"));
+            "Ch5zdHJ1X3N5bmNfaW52aXRlX3JlcXVlc3QucHJvdG8SBnpwcm90byKHAQoR",
+            "U3luY0ludml0ZVJlcXVlc3QSGgoISW52aXRlSWQYASABKANSCEludml0ZUlk",
+            "Eh4KCmludml0ZU5hbWUYAiABKAlSCmludml0ZU5hbWUSHAoJdW5pb25OYW1l",
+            "GAMgASgJUgl1bmlvbk5hbWUSGAoHdW5pb25JZBgEIAEoBFIHdW5pb25JZGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new SyncInviteRequest(this);
     }
 
-    /// <summary>Field number for the "invite_id" field.</summary>
+    /// <summary>Field number for the "InviteId" field.</summary>
     public const int InviteIdFieldNumber = 1;
     private long inviteId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "invite_name" field.</summary>
+    /// <summary>Field number for the "inviteName" field.</summary>
     public const int InviteNameFieldNumber = 2;
     private string inviteName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_name" field.</summary>
+    /// <summary>Field number for the "unionName" field.</summary>
     public const int UnionNameFieldNumber = 3;
     private string unionName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_id" field.</summary>
+    /// <summary>Field number for the "unionId" field.</summary>
     public const int UnionIdFieldNumber = 4;
     private ulong unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

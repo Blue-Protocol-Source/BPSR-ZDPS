@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "Ch9zdHJ1X2xpZmVfcHJvZmVzc2lvbl93b3JrLnByb3RvEgZ6cHJvdG8aJHN0",
             "cnVfbGlmZV9wcm9mZXNzaW9uX3dvcmtfaW5mby5wcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIqIBChJMaWZlUHJvZmVzc2lvbldvcmsSQQoZbGlmZV9w",
-            "cm9mZXNzaW9uX3dvcmtfaW5mbxgBIAEoCzIeLnpwcm90by5MaWZlUHJvZmVz",
-            "c2lvbldvcmtJbmZvEkkKIWxpZmVfcHJvZmVzc2lvbl93b3JrX2hpc3Rvcnlf",
-            "aW5mbxgCIAMoCzIeLnpwcm90by5MaWZlUHJvZmVzc2lvbldvcmtJbmZvYgZw",
-            "cm90bzM="));
+            "eV9tYXNrLnByb3RvItIBChJMaWZlUHJvZmVzc2lvbldvcmsSVgoWbGlmZVBy",
+            "b2Zlc3Npb25Xb3JrSW5mbxgBIAEoCzIeLnpwcm90by5MaWZlUHJvZmVzc2lv",
+            "bldvcmtJbmZvUhZsaWZlUHJvZmVzc2lvbldvcmtJbmZvEmQKHUxpZmVQcm9m",
+            "ZXNzaW9uV29ya0hpc3RvcnlJbmZvGAIgAygLMh4uenByb3RvLkxpZmVQcm9m",
+            "ZXNzaW9uV29ya0luZm9SHUxpZmVQcm9mZXNzaW9uV29ya0hpc3RvcnlJbmZv",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLifeProfessionWorkInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new LifeProfessionWork(this);
     }
 
-    /// <summary>Field number for the "life_profession_work_info" field.</summary>
+    /// <summary>Field number for the "lifeProfessionWorkInfo" field.</summary>
     public const int LifeProfessionWorkInfoFieldNumber = 1;
     private global::Zproto.LifeProfessionWorkInfo lifeProfessionWorkInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "life_profession_work_history_info" field.</summary>
+    /// <summary>Field number for the "LifeProfessionWorkHistoryInfo" field.</summary>
     public const int LifeProfessionWorkHistoryInfoFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.LifeProfessionWorkInfo> _repeated_lifeProfessionWorkHistoryInfo_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.LifeProfessionWorkInfo.Parser);

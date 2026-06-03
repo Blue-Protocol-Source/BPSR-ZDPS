@@ -25,15 +25,19 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjJzdHJ1X2NvbW11bml0eV9nZXRfaG9tZV9sYW5kX2Jhc2VfaW5mb19yZXBs",
-            "eS5wcm90bxIGenByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxodc3Ry",
-            "dV9ob21lbGFuZF9iYXNlX2luZm8ucHJvdG8ifwohQ29tbXVuaXR5R2V0SG9t",
-            "ZUxhbmRCYXNlSW5mb1JlcGx5EjQKEmhvbWVsYW5kX2Jhc2VfaW5mbxgBIAEo",
-            "CzIYLnpwcm90by5Ib21lbGFuZEJhc2VJbmZvEiQKCGVycl9jb2RlGAIgASgO",
-            "MhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "eS5wcm90bxIGenByb3RvGjBzdHJ1X2NvbW11bml0eV9idWlsZF9saWZlX3By",
+            "b2Zlc3Npb25faW5mb3MucHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3Rv",
+            "Gh1zdHJ1X2hvbWVsYW5kX2Jhc2VfaW5mby5wcm90byL0AQohQ29tbXVuaXR5",
+            "R2V0SG9tZUxhbmRCYXNlSW5mb1JlcGx5EkQKEGhvbWVsYW5kQmFzZUluZm8Y",
+            "ASABKAsyGC56cHJvdG8uSG9tZWxhbmRCYXNlSW5mb1IQaG9tZWxhbmRCYXNl",
+            "SW5mbxJbChNsaWZlUHJvZmVzc2lvbkluZm9zGAIgASgLMikuenByb3RvLkNv",
+            "bW11bml0eUJ1aWxkTGlmZVByb2Zlc3Npb25JbmZvc1ITbGlmZVByb2Zlc3Np",
+            "b25JbmZvcxIsCgdlcnJDb2RlGAMgASgOMhIuenByb3RvLkVFcnJvckNvZGVS",
+            "B2VyckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruHomelandBaseInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruCommunityBuildLifeProfessionInfosReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruHomelandBaseInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CommunityGetHomeLandBaseInfoReply), global::Zproto.CommunityGetHomeLandBaseInfoReply.Parser, new[]{ "HomelandBaseInfo", "ErrCode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CommunityGetHomeLandBaseInfoReply), global::Zproto.CommunityGetHomeLandBaseInfoReply.Parser, new[]{ "HomelandBaseInfo", "LifeProfessionInfos", "ErrCode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,6 +80,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommunityGetHomeLandBaseInfoReply(CommunityGetHomeLandBaseInfoReply other) : this() {
       homelandBaseInfo_ = other.homelandBaseInfo_ != null ? other.homelandBaseInfo_.Clone() : null;
+      lifeProfessionInfos_ = other.lifeProfessionInfos_ != null ? other.lifeProfessionInfos_.Clone() : null;
       errCode_ = other.errCode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,7 +91,7 @@ namespace Zproto {
       return new CommunityGetHomeLandBaseInfoReply(this);
     }
 
-    /// <summary>Field number for the "homeland_base_info" field.</summary>
+    /// <summary>Field number for the "homelandBaseInfo" field.</summary>
     public const int HomelandBaseInfoFieldNumber = 1;
     private global::Zproto.HomelandBaseInfo homelandBaseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,8 +103,20 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
-    public const int ErrCodeFieldNumber = 2;
+    /// <summary>Field number for the "lifeProfessionInfos" field.</summary>
+    public const int LifeProfessionInfosFieldNumber = 2;
+    private global::Zproto.CommunityBuildLifeProfessionInfos lifeProfessionInfos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.CommunityBuildLifeProfessionInfos LifeProfessionInfos {
+      get { return lifeProfessionInfos_; }
+      set {
+        lifeProfessionInfos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "errCode" field.</summary>
+    public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,6 +143,7 @@ namespace Zproto {
         return true;
       }
       if (!object.Equals(HomelandBaseInfo, other.HomelandBaseInfo)) return false;
+      if (!object.Equals(LifeProfessionInfos, other.LifeProfessionInfos)) return false;
       if (ErrCode != other.ErrCode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -135,6 +153,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       if (homelandBaseInfo_ != null) hash ^= HomelandBaseInfo.GetHashCode();
+      if (lifeProfessionInfos_ != null) hash ^= LifeProfessionInfos.GetHashCode();
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) hash ^= ErrCode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -158,8 +177,12 @@ namespace Zproto {
         output.WriteRawTag(10);
         output.WriteMessage(HomelandBaseInfo);
       }
+      if (lifeProfessionInfos_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(LifeProfessionInfos);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -176,8 +199,12 @@ namespace Zproto {
         output.WriteRawTag(10);
         output.WriteMessage(HomelandBaseInfo);
       }
+      if (lifeProfessionInfos_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(LifeProfessionInfos);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -192,6 +219,9 @@ namespace Zproto {
       int size = 0;
       if (homelandBaseInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(HomelandBaseInfo);
+      }
+      if (lifeProfessionInfos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LifeProfessionInfos);
       }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ErrCode);
@@ -213,6 +243,12 @@ namespace Zproto {
           HomelandBaseInfo = new global::Zproto.HomelandBaseInfo();
         }
         HomelandBaseInfo.MergeFrom(other.HomelandBaseInfo);
+      }
+      if (other.lifeProfessionInfos_ != null) {
+        if (lifeProfessionInfos_ == null) {
+          LifeProfessionInfos = new global::Zproto.CommunityBuildLifeProfessionInfos();
+        }
+        LifeProfessionInfos.MergeFrom(other.LifeProfessionInfos);
       }
       if (other.ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         ErrCode = other.ErrCode;
@@ -243,7 +279,14 @@ namespace Zproto {
             input.ReadMessage(HomelandBaseInfo);
             break;
           }
-          case 16: {
+          case 18: {
+            if (lifeProfessionInfos_ == null) {
+              LifeProfessionInfos = new global::Zproto.CommunityBuildLifeProfessionInfos();
+            }
+            input.ReadMessage(LifeProfessionInfos);
+            break;
+          }
+          case 24: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }
@@ -273,7 +316,14 @@ namespace Zproto {
             input.ReadMessage(HomelandBaseInfo);
             break;
           }
-          case 16: {
+          case 18: {
+            if (lifeProfessionInfos_ == null) {
+              LifeProfessionInfos = new global::Zproto.CommunityBuildLifeProfessionInfos();
+            }
+            input.ReadMessage(LifeProfessionInfos);
+            break;
+          }
+          case 24: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }

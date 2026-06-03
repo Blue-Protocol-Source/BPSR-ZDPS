@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X25vdGlmeV9sb2dpbl9hbnRpX2RhdGFfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvGiFzdHJ1X3Rzc19hY2NvdW50X2luZm9fcHJvdG8ucHJvdG8iSwoa",
-            "Tm90aWZ5TG9naW5BbnRpRGF0YVJlcXVlc3QSLQoIdHNzX2luZm8YASABKAsy",
-            "Gy56cHJvdG8uVHNzQWNjb3VudEluZm9Qcm90b2IGcHJvdG8z"));
+            "enByb3RvGiFzdHJ1X3Rzc19hY2NvdW50X2luZm9fcHJvdG8ucHJvdG8iUwoa",
+            "Tm90aWZ5TG9naW5BbnRpRGF0YVJlcXVlc3QSNQoHdHNzSW5mbxgBIAEoCzIb",
+            "Lnpwcm90by5Uc3NBY2NvdW50SW5mb1Byb3RvUgd0c3NJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTssAccountInfoProtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new NotifyLoginAntiDataRequest(this);
     }
 
-    /// <summary>Field number for the "tss_info" field.</summary>
+    /// <summary>Field number for the "tssInfo" field.</summary>
     public const int TssInfoFieldNumber = 1;
     private global::Zproto.TssAccountInfoProto tssInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

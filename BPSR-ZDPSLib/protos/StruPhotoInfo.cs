@@ -24,8 +24,8 @@ namespace Zproto {
     static StruPhotoInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVzdHJ1X3Bob3RvX2luZm8ucHJvdG8SBnpwcm90byIkCglwaG90b0luZm8S",
-            "FwoPdGVtcF9waG90b19rZXlzGAEgAygJYgZwcm90bzM="));
+            "ChVzdHJ1X3Bob3RvX2luZm8ucHJvdG8SBnpwcm90byIxCglwaG90b0luZm8S",
+            "JAoNdGVtcFBob3RvS2V5cxgBIAMoCVINdGVtcFBob3RvS2V5c2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace Zproto {
       return new photoInfo(this);
     }
 
-    /// <summary>Field number for the "temp_photo_keys" field.</summary>
+    /// <summary>Field number for the "tempPhotoKeys" field.</summary>
     public const int TempPhotoKeysFieldNumber = 1;
     private static readonly pb::FieldCodec<string> _repeated_tempPhotoKeys_codec
         = pb::FieldCodec.ForString(10);

@@ -19,6 +19,12 @@ namespace BPSR_ZDPS
             _readerWriterLock = new ReaderWriterLockSlim();
         }
 
+        public ThreadSafeOrderedDictionary(int capacity)
+        {
+            _innerDictionary = new OrderedDictionary(capacity);
+            _readerWriterLock = new ReaderWriterLockSlim();
+        }
+
         public void Add(TKey key, TValue value)
         {
             _readerWriterLock.EnterWriteLock();

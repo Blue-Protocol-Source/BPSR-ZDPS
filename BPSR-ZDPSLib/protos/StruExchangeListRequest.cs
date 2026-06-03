@@ -24,9 +24,9 @@ namespace Zproto {
     static StruExchangeListRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X2V4Y2hhbmdlX2xpc3RfcmVxdWVzdC5wcm90bxIGenByb3RvIjUK",
-            "E0V4Y2hhbmdlTGlzdFJlcXVlc3QSDAoEdHlwZRgCIAEoBRIQCghzdWJfdHlw",
-            "ZRgDIAEoBWIGcHJvdG8z"));
+            "CiBzdHJ1X2V4Y2hhbmdlX2xpc3RfcmVxdWVzdC5wcm90bxIGenByb3RvIkMK",
+            "E0V4Y2hhbmdlTGlzdFJlcXVlc3QSEgoEdHlwZRgCIAEoBVIEdHlwZRIYCgdz",
+            "dWJUeXBlGAMgASgFUgdzdWJUeXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sub_type" field.</summary>
+    /// <summary>Field number for the "subType" field.</summary>
     public const int SubTypeFieldNumber = 3;
     private int subType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

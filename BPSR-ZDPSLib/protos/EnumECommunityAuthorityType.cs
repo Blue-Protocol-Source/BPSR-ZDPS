@@ -25,10 +25,20 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVlbnVtX2VfY29tbXVuaXR5X2F1dGhvcml0eV90eXBlLnByb3RvEgZ6cHJv",
-            "dG8qfgoXRUNvbW11bml0eUF1dGhvcml0eVR5cGUSGgoWQ29tbXVuaXR5QXV0",
-            "aG9yaXR5VHlwZRAAEiMKH0NvbW11bml0eUF1dGhvcml0eVR5cGVXYXJlSG91",
-            "c2UQARIiCh5Db21tdW5pdHlBdXRob3JpdHlUeXBlU2VsbEl0ZW0QAmIGcHJv",
-            "dG8z"));
+            "dG8qxAQKF0VDb21tdW5pdHlBdXRob3JpdHlUeXBlEhoKFkNvbW11bml0eUF1",
+            "dGhvcml0eVR5cGUQABIjCh9Db21tdW5pdHlBdXRob3JpdHlUeXBlV2FyZUhv",
+            "dXNlEAESIgoeQ29tbXVuaXR5QXV0aG9yaXR5VHlwZVNlbGxJdGVtEAISJwoj",
+            "Q29tbXVuaXR5QXV0aG9yaXR5VHlwZUZ1cm5pdHVyZU1ha2UQAxIjCh9Db21t",
+            "dW5pdHlBdXRob3JpdHlUeXBlRW50ZXJIb21lEAQSIQodQ29tbXVuaXR5QXV0",
+            "aG9yaXR5VHlwZUhhcnZlc3QQBRIqCiZDb21tdW5pdHlBdXRob3JpdHlUeXBl",
+            "SW52aXRlQ29oYWJpdGFudBAGEiUKIUNvbW11bml0eUF1dGhvcml0eVR5cGVV",
+            "cGdyYWRlSG9tZRAIEioKJkNvbW11bml0eUF1dGhvcml0eVR5cGVDb2xsZWN0",
+            "RnVybml0dXJlEAkSHwobQ29tbXVuaXR5QXV0aG9yaXR5VHlwZVBsYW50EAoS",
+            "HwobQ29tbXVuaXR5QXV0aG9yaXR5VHlwZVdhdGVyEAsSIwofQ29tbXVuaXR5",
+            "QXV0aG9yaXR5VHlwZUZlcnRpbGl6ZRAMEiMKH0NvbW11bml0eUF1dGhvcml0",
+            "eVR5cGVQb2xsaW5hdGUQDRImCiJDb21tdW5pdHlBdXRob3JpdHlUeXBlRmFy",
+            "bWxhbmRFZGl0EA4SIAocQ29tbXVuaXR5QXV0aG9yaXR5VHlwZVBvbGxlbhAP",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.ECommunityAuthorityType), }, null, null));
@@ -41,6 +51,18 @@ namespace Zproto {
     [pbr::OriginalName("CommunityAuthorityType")] CommunityAuthorityType = 0,
     [pbr::OriginalName("CommunityAuthorityTypeWareHouse")] CommunityAuthorityTypeWareHouse = 1,
     [pbr::OriginalName("CommunityAuthorityTypeSellItem")] CommunityAuthorityTypeSellItem = 2,
+    [pbr::OriginalName("CommunityAuthorityTypeFurnitureMake")] CommunityAuthorityTypeFurnitureMake = 3,
+    [pbr::OriginalName("CommunityAuthorityTypeEnterHome")] CommunityAuthorityTypeEnterHome = 4,
+    [pbr::OriginalName("CommunityAuthorityTypeHarvest")] CommunityAuthorityTypeHarvest = 5,
+    [pbr::OriginalName("CommunityAuthorityTypeInviteCohabitant")] CommunityAuthorityTypeInviteCohabitant = 6,
+    [pbr::OriginalName("CommunityAuthorityTypeUpgradeHome")] CommunityAuthorityTypeUpgradeHome = 8,
+    [pbr::OriginalName("CommunityAuthorityTypeCollectFurniture")] CommunityAuthorityTypeCollectFurniture = 9,
+    [pbr::OriginalName("CommunityAuthorityTypePlant")] CommunityAuthorityTypePlant = 10,
+    [pbr::OriginalName("CommunityAuthorityTypeWater")] CommunityAuthorityTypeWater = 11,
+    [pbr::OriginalName("CommunityAuthorityTypeFertilize")] CommunityAuthorityTypeFertilize = 12,
+    [pbr::OriginalName("CommunityAuthorityTypePollinate")] CommunityAuthorityTypePollinate = 13,
+    [pbr::OriginalName("CommunityAuthorityTypeFarmlandEdit")] CommunityAuthorityTypeFarmlandEdit = 14,
+    [pbr::OriginalName("CommunityAuthorityTypePollen")] CommunityAuthorityTypePollen = 15,
   }
 
   #endregion

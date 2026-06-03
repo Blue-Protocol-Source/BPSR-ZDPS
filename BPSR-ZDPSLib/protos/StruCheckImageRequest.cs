@@ -24,8 +24,8 @@ namespace Zproto {
     static StruCheckImageRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5zdHJ1X2NoZWNrX2ltYWdlX3JlcXVlc3QucHJvdG8SBnpwcm90byIhChFD",
-            "aGVja0ltYWdlUmVxdWVzdBIMCgR1cmxzGAEgAygJYgZwcm90bzM="));
+            "Ch5zdHJ1X2NoZWNrX2ltYWdlX3JlcXVlc3QucHJvdG8SBnpwcm90byInChFD",
+            "aGVja0ltYWdlUmVxdWVzdBISCgR1cmxzGAEgAygJUgR1cmxzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X2dldF9mdW5jX3Bob3RvX2xpc3RfcmVwbHkucHJvdG8SBnpwcm90",
             "bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aFnN0cnVfaWRfaXBfcGhvdG8u",
-            "cHJvdG8iZAoVR2V0RnVuY1Bob3RvTGlzdFJlcGx5EiUKCnBob3RvX2xpc3QY",
-            "AiADKAsyES56cHJvdG8uSWRJcFBob3RvEiQKCGVycl9jb2RlGAMgASgOMhIu",
-            "enByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "cHJvdG8idgoVR2V0RnVuY1Bob3RvTGlzdFJlcGx5Ei8KCVBob3RvTGlzdBgC",
+            "IAMoCzIRLnpwcm90by5JZElwUGhvdG9SCVBob3RvTGlzdBIsCgdlcnJDb2Rl",
+            "GAMgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruIdIpPhotoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new GetFuncPhotoListReply(this);
     }
 
-    /// <summary>Field number for the "photo_list" field.</summary>
+    /// <summary>Field number for the "PhotoList" field.</summary>
     public const int PhotoListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.IdIpPhoto> _repeated_photoList_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.IdIpPhoto.Parser);
@@ -96,7 +96,7 @@ namespace Zproto {
       get { return photoList_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

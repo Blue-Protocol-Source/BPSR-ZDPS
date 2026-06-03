@@ -26,8 +26,9 @@ namespace Zproto {
           string.Concat(
             "ChpzdHJ1X3Nob3dfcGllY2VfcGFpci5wcm90bxIGenByb3RvGhxlbnVtX2Vf",
             "c2hvd19waWVjZV90eXBlLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i",
-            "TQoNU2hvd1BpZWNlUGFpchIqCgpwaWVjZV90eXBlGAEgASgOMhYuenByb3Rv",
-            "LkVTaG93UGllY2VUeXBlEhAKCHBpZWNlX2lkGAIgASgFYgZwcm90bzM="));
+            "XwoNU2hvd1BpZWNlUGFpchI0CglwaWVjZVR5cGUYASABKA4yFi56cHJvdG8u",
+            "RVNob3dQaWVjZVR5cGVSCXBpZWNlVHlwZRIYCgdwaWVjZUlkGAIgASgFUgdw",
+            "aWVjZUlkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEShowPieceTypeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new ShowPiecePair(this);
     }
 
-    /// <summary>Field number for the "piece_type" field.</summary>
+    /// <summary>Field number for the "pieceType" field.</summary>
     public const int PieceTypeFieldNumber = 1;
     private global::Zproto.EShowPieceType pieceType_ = global::Zproto.EShowPieceType.ShowPieceNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "piece_id" field.</summary>
+    /// <summary>Field number for the "pieceId" field.</summary>
     public const int PieceIdFieldNumber = 2;
     private int pieceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

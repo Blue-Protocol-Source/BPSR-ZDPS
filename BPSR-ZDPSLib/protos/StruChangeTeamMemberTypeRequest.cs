@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X2NoYW5nZV90ZWFtX21lbWJlcl90eXBlX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90bxodZW51bV9lX3RlYW1fbWVtYmVyX3R5cGUucHJvdG8iYwobQ2hh",
-            "bmdlVGVhbU1lbWJlclR5cGVSZXF1ZXN0EjEKEHRlYW1fbWVtYmVyX3R5cGUY",
-            "ASABKA4yFy56cHJvdG8uRVRlYW1NZW1iZXJUeXBlEhEKCXRhcmdldF9pZBgC",
-            "IAEoBWIGcHJvdG8z"));
+            "Bnpwcm90bxodZW51bV9lX3RlYW1fbWVtYmVyX3R5cGUucHJvdG8iegobQ2hh",
+            "bmdlVGVhbU1lbWJlclR5cGVSZXF1ZXN0Ej8KDnRlYW1NZW1iZXJUeXBlGAEg",
+            "ASgOMhcuenByb3RvLkVUZWFtTWVtYmVyVHlwZVIOdGVhbU1lbWJlclR5cGUS",
+            "GgoIdGFyZ2V0SWQYAiABKAVSCHRhcmdldElkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETeamMemberTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Zproto {
       return new ChangeTeamMemberTypeRequest(this);
     }
 
-    /// <summary>Field number for the "team_member_type" field.</summary>
+    /// <summary>Field number for the "teamMemberType" field.</summary>
     public const int TeamMemberTypeFieldNumber = 1;
     private global::Zproto.ETeamMemberType teamMemberType_ = global::Zproto.ETeamMemberType.Five;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 2;
     private int targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X2FsYnVtX3Nob3cucHJvdG8SBnpwcm90bxoYZW51bV9lX2FsYnVt",
-            "X3JpZ2h0LnByb3RvGhVzdHJ1X2ltYWdlX2luZm8ucHJvdG8iwAEKCUFsYnVt",
-            "U2hvdxIQCghhbGJ1bV9pZBgBIAEoDRIMCgRuYW1lGAIgASgJEhIKCmNhbl9h",
-            "Y2Nlc3MYAyABKAgSIwoGYWNjZXNzGAQgASgOMhMuenByb3RvLkVBbGJ1bVJp",
-            "Z2h0EhYKDmNvdmVyX3Bob3RvX2lkGAUgASgNEi8KFGNvdmVyX3RodW1ibmFp",
-            "bF9pbmZvGAYgASgLMhEuenByb3RvLkltYWdlSW5mbxIRCglwaG90b19pZHMY",
-            "ByADKA1iBnByb3RvMw=="));
+            "X3JpZ2h0LnByb3RvGhVzdHJ1X2ltYWdlX2luZm8ucHJvdG8ihwIKCUFsYnVt",
+            "U2hvdxIYCgdhbGJ1bUlkGAEgASgNUgdhbGJ1bUlkEhIKBG5hbWUYAiABKAlS",
+            "BG5hbWUSHAoJY2FuQWNjZXNzGAMgASgIUgljYW5BY2Nlc3MSKwoGYWNjZXNz",
+            "GAQgASgOMhMuenByb3RvLkVBbGJ1bVJpZ2h0UgZhY2Nlc3MSIgoMY292ZXJQ",
+            "aG90b0lkGAUgASgNUgxjb3ZlclBob3RvSWQSQQoSY292ZXJUaHVtYm5haWxJ",
+            "bmZvGAYgASgLMhEuenByb3RvLkltYWdlSW5mb1ISY292ZXJUaHVtYm5haWxJ",
+            "bmZvEhoKCHBob3RvSWRzGAcgAygNUghwaG90b0lkc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEAlbumRightReflection.Descriptor, global::Zproto.StruImageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +93,7 @@ namespace Zproto {
       return new AlbumShow(this);
     }
 
-    /// <summary>Field number for the "album_id" field.</summary>
+    /// <summary>Field number for the "albumId" field.</summary>
     public const int AlbumIdFieldNumber = 1;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "can_access" field.</summary>
+    /// <summary>Field number for the "canAccess" field.</summary>
     public const int CanAccessFieldNumber = 3;
     private bool canAccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cover_photo_id" field.</summary>
+    /// <summary>Field number for the "coverPhotoId" field.</summary>
     public const int CoverPhotoIdFieldNumber = 5;
     private uint coverPhotoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cover_thumbnail_info" field.</summary>
+    /// <summary>Field number for the "coverThumbnailInfo" field.</summary>
     public const int CoverThumbnailInfoFieldNumber = 6;
     private global::Zproto.ImageInfo coverThumbnailInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -164,7 +165,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "photo_ids" field.</summary>
+    /// <summary>Field number for the "photoIds" field.</summary>
     public const int PhotoIdsFieldNumber = 7;
     private static readonly pb::FieldCodec<uint> _repeated_photoIds_codec
         = pb::FieldCodec.ForUInt32(58);

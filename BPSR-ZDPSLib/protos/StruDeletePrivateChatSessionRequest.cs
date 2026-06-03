@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X2RlbGV0ZV9wcml2YXRlX2NoYXRfc2Vzc2lvbl9yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8iNAofRGVsZXRlUHJpdmF0ZUNoYXRTZXNzaW9uUmVxdWVz",
-            "dBIRCgl0YXJnZXRfaWQYASABKA1iBnByb3RvMw=="));
+            "b3RvEgZ6cHJvdG8iPQofRGVsZXRlUHJpdmF0ZUNoYXRTZXNzaW9uUmVxdWVz",
+            "dBIaCgh0YXJnZXRJZBgBIAEoDVIIdGFyZ2V0SWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new DeletePrivateChatSessionRequest(this);
     }
 
-    /// <summary>Field number for the "target_id" field.</summary>
+    /// <summary>Field number for the "targetId" field.</summary>
     public const int TargetIdFieldNumber = 1;
     private uint targetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

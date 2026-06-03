@@ -49,22 +49,28 @@ namespace BPSR_ZDPS.Windows
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
             ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono_Offscreen"], 18f);
-
-            string TitleText = $"ZDPS Report (v{Utils.AppVersion}) - Encounter: {encounter.SceneName} ({(encounter.EndTime - encounter.StartTime).ToString("hh\\:mm\\:ss")}) [ZTeamId: {Utils.CreateZTeamId(encounter)}]";
+            string difficultyText = "";
+            if (encounter.ExData.DungeonDifficulty > 0)
+            {
+                difficultyText = $" (Master {encounter.ExData.DungeonDifficulty})";
+            }
+            string TitleText = $"ZDPS Report (v{Utils.AppVersion}) - Encounter: {encounter.SceneName}{difficultyText} ({(encounter.GetDuration(true)).ToString("hh\\:mm\\:ss")}) [ZTeamId: {Utils.CreateZTeamId(encounter)}]";
             ImGui.SetNextWindowSize(new Vector2(-1, -1), ImGuiCond.Always);
             ImGui.Begin($"{TitleText}###EncounterReportWindow", ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoResize);
 
             ImGui.PushFont(HelperMethods.Fonts["Segoe_Offscreen"], 18f);
             // Removed ImGuiTableFlags.ScrollX for the direct SizingFixedFit flag instead to perform same layout be ensure the scroll bar never appears at the bottom
-            if (ImGui.BeginTable("##ReportTable", 25, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit, new Vector2(-1, -1)))
+            if (ImGui.BeginTable("##ReportTable", 27, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit, new Vector2(-1, -1)))
             {
                 ImGui.TableSetupColumn("#");
                 ImGui.TableSetupColumn("UID");
                 ImGui.TableSetupColumn("Name");
                 ImGui.TableSetupColumn("Profession");
                 ImGui.TableSetupColumn("Ability Score");
+                ImGui.TableSetupColumn("Season Strength");
                 ImGui.TableSetupColumn("Total DMG");
-                ImGui.TableSetupColumn("Total DPS");
+                ImGui.TableSetupColumn("Active DPS");
+                ImGui.TableSetupColumn("Encounter DPS");
                 ImGui.TableSetupColumn("Shield Break");
                 ImGui.TableSetupColumn("Crit Rate");
                 ImGui.TableSetupColumn("Lucky Rate");
@@ -105,7 +111,12 @@ namespace BPSR_ZDPS.Windows
                     string profession = entity.SubProfession ?? entity.Profession ?? "";
                     if (!string.IsNullOrEmpty(profession))
                     {
-                        var color = Professions.ProfessionColors(profession);
+                        int professionId = entity.SubProfessionId;
+                        if (professionId == 0)
+                        {
+                            professionId = entity.ProfessionId;
+                        }
+                        var color = Professions.ProfessionColors(professionId);
                         color = color - new Vector4(0, 0, 0, 0.50f);
                         ImGui.PushStyleColor(ImGuiCol.Header, color);
                     }
@@ -130,6 +141,9 @@ namespace BPSR_ZDPS.Windows
                     ImGui.TextUnformatted(entity.AbilityScore.ToString());
 
                     ImGui.TableNextColumn();
+                    ImGui.TextUnformatted(entity.SeasonStrength.ToString());
+
+                    ImGui.TableNextColumn();
                     string totalDamageDealt = Utils.NumberToShorthand(entity.TotalDamage);
                     double totalDamagePct = 0;
                     if (entity.TotalDamage > 0)
@@ -145,6 +159,9 @@ namespace BPSR_ZDPS.Windows
                     }
                     ImGui.TextUnformatted($"{totalDamageDealt} ({totalDamagePct}%)");
                     //ImGui.TextUnformatted($"999.99M (100%)"); // Placeholder max value width
+
+                    ImGui.TableNextColumn();
+                    ImGui.TextUnformatted(Utils.NumberToShorthand(entity.DamageStats.ValuePerSecondActive));
 
                     ImGui.TableNextColumn();
                     ImGui.TextUnformatted(Utils.NumberToShorthand(entity.DamageStats.ValuePerSecond));
@@ -257,11 +274,34 @@ namespace BPSR_ZDPS.Windows
                     // Ability Score
 
                     ImGui.TableNextColumn();
+                    // Season Strength
+
+                    ImGui.TableNextColumn();
                     ImGui.TextUnformatted(Utils.NumberToShorthand(encounter.TotalDamage));
 
                     ImGui.TableNextColumn();
-                    var dps = playerEntities.Select(x => x.Value.DamageStats.ValuePerSecond);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(dps.Sum()));
+                    var adps = playerEntities.Select(x => x.Value.DamageStats.ValuePerSecondActive);
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(adps.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling DamageStats.ValuePerSecondActive");
+                        ImGui.TextUnformatted("ERROR");
+                    }
+
+                    ImGui.TableNextColumn();
+                    var edps = playerEntities.Select(x => x.Value.DamageStats.ValuePerSecond);
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(edps.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling DamageStats.ValuePerSecond");
+                        ImGui.TextUnformatted("ERROR");
+                    }
 
                     ImGui.TableNextColumn();
                     // Shield Break
@@ -275,17 +315,43 @@ namespace BPSR_ZDPS.Windows
                     ImGui.TableNextColumn();
                     // Crit Damage
                     var critDmg = playerEntities.Select(x => x.Value.DamageStats.ValueCritTotal);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(critDmg.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(critDmg.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling DamageStats.ValueCritTotal");
+                        ImGui.TextUnformatted("ERROR");
+                    }
+                    
 
                     ImGui.TableNextColumn();
                     // Lucky Damage
                     var luckyDmg = playerEntities.Select(x => x.Value.DamageStats.ValueLuckyTotal);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(luckyDmg.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(luckyDmg.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling DamageStats.ValueLuckyTotal");
+                        ImGui.TextUnformatted("ERROR");
+                    }
+                    
 
                     ImGui.TableNextColumn();
                     // Crit Lucky Damage
                     var critLuckyDmg = playerEntities.Select(x => x.Value.DamageStats.ValueCritLuckyTotal);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(critLuckyDmg.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(critLuckyDmg.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling DamageStats.ValueCritLuckyTotal");
+                        ImGui.TextUnformatted("ERROR");
+                    }
 
                     ImGui.TableNextColumn();
                     // Max Single Damage
@@ -298,15 +364,39 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.TableNextColumn();
                     var hps = playerEntities.Select(x => x.Value.HealingStats.ValuePerSecond);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(hps.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(hps.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling HealingStats.ValuePerSecond");
+                        ImGui.TextUnformatted("ERROR");
+                    }
 
                     ImGui.TableNextColumn();
                     var effectiveHealing = playerEntities.Select(x => x.Value.TotalHealing - x.Value.TotalOverhealing);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(effectiveHealing.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(effectiveHealing.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling EffectiveHealing");
+                        ImGui.TextUnformatted("ERROR");
+                    }
 
                     ImGui.TableNextColumn();
                     var overhealing = playerEntities.Select(x => x.Value.TotalOverhealing);
-                    ImGui.TextUnformatted(Utils.NumberToShorthand(overhealing.Sum()));
+                    try
+                    {
+                        ImGui.TextUnformatted(Utils.NumberToShorthand(overhealing.Sum()));
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error totaling TotalOverhealing");
+                        ImGui.TextUnformatted("ERROR");
+                    }
 
                     ImGui.TableNextColumn();
                     // Crit Healing

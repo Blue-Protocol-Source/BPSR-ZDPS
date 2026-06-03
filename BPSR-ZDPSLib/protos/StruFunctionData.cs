@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2Z1bmN0aW9uX2RhdGEucHJvdG8SBnpwcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIpsBCgxGdW5jdGlvbkRhdGESOwoMdW5sb2NrZWRfbWFw",
-            "GAEgAygLMiUuenByb3RvLkZ1bmN0aW9uRGF0YS5VbmxvY2tlZE1hcEVudHJ5",
-            "EhoKEmRyYXduX2Z1bmN0aW9uX2lkcxgCIAMoBRoyChBVbmxvY2tlZE1hcEVu",
-            "dHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoCDoCOAFiBnByb3RvMw=="));
+            "eV9tYXNrLnByb3RvIrcBCgxGdW5jdGlvbkRhdGESRwoLdW5sb2NrZWRNYXAY",
+            "ASADKAsyJS56cHJvdG8uRnVuY3Rpb25EYXRhLlVubG9ja2VkTWFwRW50cnlS",
+            "C3VubG9ja2VkTWFwEioKEGRyYXduRnVuY3Rpb25JZHMYAiADKAVSEGRyYXdu",
+            "RnVuY3Rpb25JZHMaMgoQVW5sb2NrZWRNYXBFbnRyeRILCgNrZXkYASABKAUS",
+            "DQoFdmFsdWUYAiABKAg6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new FunctionData(this);
     }
 
-    /// <summary>Field number for the "unlocked_map" field.</summary>
+    /// <summary>Field number for the "unlockedMap" field.</summary>
     public const int UnlockedMapFieldNumber = 1;
     private static readonly pbc::MapField<int, bool>.Codec _map_unlockedMap_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 10);
@@ -96,7 +97,7 @@ namespace Zproto {
       get { return unlockedMap_; }
     }
 
-    /// <summary>Field number for the "drawn_function_ids" field.</summary>
+    /// <summary>Field number for the "drawnFunctionIds" field.</summary>
     public const int DrawnFunctionIdsFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_drawnFunctionIds_codec
         = pb::FieldCodec.ForInt32(18);

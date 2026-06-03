@@ -26,25 +26,30 @@ namespace Zproto {
           string.Concat(
             "ChVzdHJ1X3NjZW5lX2RhdGEucHJvdG8SBnpwcm90bxoac3RydV9sYXN0X3Nj",
             "ZW5lX2RhdGEucHJvdG8aE3N0cnVfcG9zaXRpb24ucHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byLjBAoJU2NlbmVEYXRhEg4KBm1hcF9pZBgBIAEoDRIS",
-            "CgpjaGFubmVsX2lkGAIgASgNEh0KA3BvcxgDIAEoCzIQLnpwcm90by5Qb3Np",
-            "dGlvbhISCgpsZXZlbF91dWlkGAQgASgDEiMKCWxldmVsX3BvcxgFIAEoCzIQ",
-            "Lnpwcm90by5Qb3NpdGlvbhIUCgxsZXZlbF9tYXBfaWQYBiABKA0SFwoPbGV2",
-            "ZWxfcmV2aXZlX2lkGAcgASgNEjIKCXJlY29yZF9pZBgIIAMoCzIfLnpwcm90",
-            "by5TY2VuZURhdGEuUmVjb3JkSWRFbnRyeRIQCghwbGFuZV9pZBgJIAEoDRIT",
-            "CgtzY2VuZV9sYXllchgKIAEoDRIYChBjYW5fc3dpdGNoX2xheWVyGAsgASgI",
-            "EikKD2JlZm9yZV9mYWxsX3BvcxgMIAEoCzIQLnpwcm90by5Qb3NpdGlvbhIS",
-            "CgpzY2VuZV9ndWlkGA0gASgJEhQKDGR1bmdlb25fZ3VpZBgOIAEoCRIPCgds",
-            "aW5lX2lkGA8gASgNEh4KFnZpc3VhbF9sYXllcl9jb25maWdfaWQYECABKA0S",
-            "LgoPbGFzdF9zY2VuZV9kYXRhGBEgASgLMhUuenByb3RvLkxhc3RTY2VuZURh",
-            "dGESFQoNc2NlbmVfYXJlYV9pZBgSIAEoBRIVCg1sZXZlbF9hcmVhX2lkGBMg",
-            "ASgFEiEKGWJlZm9yZV9mYWxsX3NjZW5lX2FyZWFfaWQYFCABKAUaLwoNUmVj",
-            "b3JkSWRFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBYgZw",
-            "cm90bzM="));
+            "dHlfbWFzay5wcm90byLsBgoJU2NlbmVEYXRhEhQKBW1hcElkGAEgASgNUgVt",
+            "YXBJZBIcCgljaGFubmVsSWQYAiABKA1SCWNoYW5uZWxJZBIiCgNwb3MYAyAB",
+            "KAsyEC56cHJvdG8uUG9zaXRpb25SA3BvcxIcCglsZXZlbFV1aWQYBCABKANS",
+            "CWxldmVsVXVpZBIsCghsZXZlbFBvcxgFIAEoCzIQLnpwcm90by5Qb3NpdGlv",
+            "blIIbGV2ZWxQb3MSHgoKbGV2ZWxNYXBJZBgGIAEoDVIKbGV2ZWxNYXBJZBIk",
+            "Cg1sZXZlbFJldml2ZUlkGAcgASgNUg1sZXZlbFJldml2ZUlkEjsKCHJlY29y",
+            "ZElkGAggAygLMh8uenByb3RvLlNjZW5lRGF0YS5SZWNvcmRJZEVudHJ5Ughy",
+            "ZWNvcmRJZBIYCgdwbGFuZUlkGAkgASgNUgdwbGFuZUlkEh4KCnNjZW5lTGF5",
+            "ZXIYCiABKA1SCnNjZW5lTGF5ZXISJgoOY2FuU3dpdGNoTGF5ZXIYCyABKAhS",
+            "DmNhblN3aXRjaExheWVyEjYKDWJlZm9yZUZhbGxQb3MYDCABKAsyEC56cHJv",
+            "dG8uUG9zaXRpb25SDWJlZm9yZUZhbGxQb3MSHAoJc2NlbmVHdWlkGA0gASgJ",
+            "UglzY2VuZUd1aWQSIAoLZHVuZ2Vvbkd1aWQYDiABKAlSC2R1bmdlb25HdWlk",
+            "EhYKBmxpbmVJZBgPIAEoDVIGbGluZUlkEjAKE3Zpc3VhbExheWVyQ29uZmln",
+            "SWQYECABKA1SE3Zpc3VhbExheWVyQ29uZmlnSWQSOwoNbGFzdFNjZW5lRGF0",
+            "YRgRIAEoCzIVLnpwcm90by5MYXN0U2NlbmVEYXRhUg1sYXN0U2NlbmVEYXRh",
+            "EiAKC3NjZW5lQXJlYUlkGBIgASgFUgtzY2VuZUFyZWFJZBIgCgtsZXZlbEFy",
+            "ZWFJZBgTIAEoBVILbGV2ZWxBcmVhSWQSNAoVYmVmb3JlRmFsbFNjZW5lQXJl",
+            "YUlkGBQgASgFUhViZWZvcmVGYWxsU2NlbmVBcmVhSWQSLAoRc3RhdGljU2Nl",
+            "bmVBY3RWZXIYFSABKAVSEXN0YXRpY1NjZW5lQWN0VmVyGi8KDVJlY29yZElk",
+            "RW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruLastSceneDataReflection.Descriptor, global::Zproto.StruPositionReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.SceneData), global::Zproto.SceneData.Parser, new[]{ "MapId", "ChannelId", "Pos", "LevelUuid", "LevelPos", "LevelMapId", "LevelReviveId", "RecordId", "PlaneId", "SceneLayer", "CanSwitchLayer", "BeforeFallPos", "SceneGuid", "DungeonGuid", "LineId", "VisualLayerConfigId", "LastSceneData", "SceneAreaId", "LevelAreaId", "BeforeFallSceneAreaId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.SceneData), global::Zproto.SceneData.Parser, new[]{ "MapId", "ChannelId", "Pos", "LevelUuid", "LevelPos", "LevelMapId", "LevelReviveId", "RecordId", "PlaneId", "SceneLayer", "CanSwitchLayer", "BeforeFallPos", "SceneGuid", "DungeonGuid", "LineId", "VisualLayerConfigId", "LastSceneData", "SceneAreaId", "LevelAreaId", "BeforeFallSceneAreaId", "StaticSceneActVer" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -106,6 +111,7 @@ namespace Zproto {
       sceneAreaId_ = other.sceneAreaId_;
       levelAreaId_ = other.levelAreaId_;
       beforeFallSceneAreaId_ = other.beforeFallSceneAreaId_;
+      staticSceneActVer_ = other.staticSceneActVer_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -115,7 +121,7 @@ namespace Zproto {
       return new SceneData(this);
     }
 
-    /// <summary>Field number for the "map_id" field.</summary>
+    /// <summary>Field number for the "mapId" field.</summary>
     public const int MapIdFieldNumber = 1;
     private uint mapId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +133,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "channel_id" field.</summary>
+    /// <summary>Field number for the "channelId" field.</summary>
     public const int ChannelIdFieldNumber = 2;
     private uint channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +157,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "level_uuid" field.</summary>
+    /// <summary>Field number for the "levelUuid" field.</summary>
     public const int LevelUuidFieldNumber = 4;
     private long levelUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -163,7 +169,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "level_pos" field.</summary>
+    /// <summary>Field number for the "levelPos" field.</summary>
     public const int LevelPosFieldNumber = 5;
     private global::Zproto.Position levelPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -175,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "level_map_id" field.</summary>
+    /// <summary>Field number for the "levelMapId" field.</summary>
     public const int LevelMapIdFieldNumber = 6;
     private uint levelMapId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -187,7 +193,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "level_revive_id" field.</summary>
+    /// <summary>Field number for the "levelReviveId" field.</summary>
     public const int LevelReviveIdFieldNumber = 7;
     private uint levelReviveId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -199,7 +205,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "record_id" field.</summary>
+    /// <summary>Field number for the "recordId" field.</summary>
     public const int RecordIdFieldNumber = 8;
     private static readonly pbc::MapField<uint, uint>.Codec _map_recordId_codec
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 66);
@@ -210,7 +216,7 @@ namespace Zproto {
       get { return recordId_; }
     }
 
-    /// <summary>Field number for the "plane_id" field.</summary>
+    /// <summary>Field number for the "planeId" field.</summary>
     public const int PlaneIdFieldNumber = 9;
     private uint planeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -222,7 +228,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_layer" field.</summary>
+    /// <summary>Field number for the "sceneLayer" field.</summary>
     public const int SceneLayerFieldNumber = 10;
     private uint sceneLayer_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -234,7 +240,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "can_switch_layer" field.</summary>
+    /// <summary>Field number for the "canSwitchLayer" field.</summary>
     public const int CanSwitchLayerFieldNumber = 11;
     private bool canSwitchLayer_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -246,7 +252,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "before_fall_pos" field.</summary>
+    /// <summary>Field number for the "beforeFallPos" field.</summary>
     public const int BeforeFallPosFieldNumber = 12;
     private global::Zproto.Position beforeFallPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -258,7 +264,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_guid" field.</summary>
+    /// <summary>Field number for the "sceneGuid" field.</summary>
     public const int SceneGuidFieldNumber = 13;
     private string sceneGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -270,7 +276,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_guid" field.</summary>
+    /// <summary>Field number for the "dungeonGuid" field.</summary>
     public const int DungeonGuidFieldNumber = 14;
     private string dungeonGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -282,7 +288,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "line_id" field.</summary>
+    /// <summary>Field number for the "lineId" field.</summary>
     public const int LineIdFieldNumber = 15;
     private uint lineId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -294,7 +300,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "visual_layer_config_id" field.</summary>
+    /// <summary>Field number for the "visualLayerConfigId" field.</summary>
     public const int VisualLayerConfigIdFieldNumber = 16;
     private uint visualLayerConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -306,7 +312,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_scene_data" field.</summary>
+    /// <summary>Field number for the "lastSceneData" field.</summary>
     public const int LastSceneDataFieldNumber = 17;
     private global::Zproto.LastSceneData lastSceneData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -318,7 +324,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_area_id" field.</summary>
+    /// <summary>Field number for the "sceneAreaId" field.</summary>
     public const int SceneAreaIdFieldNumber = 18;
     private int sceneAreaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -330,7 +336,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "level_area_id" field.</summary>
+    /// <summary>Field number for the "levelAreaId" field.</summary>
     public const int LevelAreaIdFieldNumber = 19;
     private int levelAreaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -342,7 +348,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "before_fall_scene_area_id" field.</summary>
+    /// <summary>Field number for the "beforeFallSceneAreaId" field.</summary>
     public const int BeforeFallSceneAreaIdFieldNumber = 20;
     private int beforeFallSceneAreaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -351,6 +357,18 @@ namespace Zproto {
       get { return beforeFallSceneAreaId_; }
       set {
         beforeFallSceneAreaId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "staticSceneActVer" field.</summary>
+    public const int StaticSceneActVerFieldNumber = 21;
+    private int staticSceneActVer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int StaticSceneActVer {
+      get { return staticSceneActVer_; }
+      set {
+        staticSceneActVer_ = value;
       }
     }
 
@@ -389,6 +407,7 @@ namespace Zproto {
       if (SceneAreaId != other.SceneAreaId) return false;
       if (LevelAreaId != other.LevelAreaId) return false;
       if (BeforeFallSceneAreaId != other.BeforeFallSceneAreaId) return false;
+      if (StaticSceneActVer != other.StaticSceneActVer) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -416,6 +435,7 @@ namespace Zproto {
       if (SceneAreaId != 0) hash ^= SceneAreaId.GetHashCode();
       if (LevelAreaId != 0) hash ^= LevelAreaId.GetHashCode();
       if (BeforeFallSceneAreaId != 0) hash ^= BeforeFallSceneAreaId.GetHashCode();
+      if (StaticSceneActVer != 0) hash ^= StaticSceneActVer.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -511,6 +531,10 @@ namespace Zproto {
         output.WriteRawTag(160, 1);
         output.WriteInt32(BeforeFallSceneAreaId);
       }
+      if (StaticSceneActVer != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(StaticSceneActVer);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -598,6 +622,10 @@ namespace Zproto {
         output.WriteRawTag(160, 1);
         output.WriteInt32(BeforeFallSceneAreaId);
       }
+      if (StaticSceneActVer != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(StaticSceneActVer);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -665,6 +693,9 @@ namespace Zproto {
       }
       if (BeforeFallSceneAreaId != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(BeforeFallSceneAreaId);
+      }
+      if (StaticSceneActVer != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(StaticSceneActVer);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -747,6 +778,9 @@ namespace Zproto {
       }
       if (other.BeforeFallSceneAreaId != 0) {
         BeforeFallSceneAreaId = other.BeforeFallSceneAreaId;
+      }
+      if (other.StaticSceneActVer != 0) {
+        StaticSceneActVer = other.StaticSceneActVer;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -859,6 +893,10 @@ namespace Zproto {
             BeforeFallSceneAreaId = input.ReadInt32();
             break;
           }
+          case 168: {
+            StaticSceneActVer = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -968,6 +1006,10 @@ namespace Zproto {
           }
           case 160: {
             BeforeFallSceneAreaId = input.ReadInt32();
+            break;
+          }
+          case 168: {
+            StaticSceneActVer = input.ReadInt32();
             break;
           }
         }

@@ -24,51 +24,41 @@ namespace Zproto {
     static StruHomelandBaseInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zdHJ1X2hvbWVsYW5kX2Jhc2VfaW5mby5wcm90bxIGenByb3RvGiNzdHJ1",
-            "X2NvbW11bml0eV9hdXRob3JpdHlfaW5mby5wcm90bxogc3RydV9jb21tdW5p",
-            "dHlfcGxheWVyX2luZm8ucHJvdG8aHXN0cnVfY29tbXVuaXR5X3RyYW5zZmVy",
-            "LnByb3RvGi5zdHJ1X2hvbWVfbGFuZF9jbHV0dGVyX2dlbmVyYXRpb25fcmVj",
-            "b3JkLnByb3RvGiFzdHJ1X2hvbWVfbGFuZF9jbHV0dGVyX2luZm8ucHJvdG8a",
-            "I3N0cnVfaG9tZWxhbmRfZGVjb3JhdGlvbl9pbmZvLnByb3RvGiJzdHJ1X2hv",
-            "bWVfbGFuZF9pdGVtX2luc3RhbmNlLnByb3RvGiNzdHJ1X2hvbWVfbGFuZF9z",
-            "ZWxsX3Nob3BfaW5mby5wcm90byK6CwoQSG9tZWxhbmRCYXNlSW5mbxITCgto",
-            "b21lbGFuZF9pZBgBIAEoAxINCgVsZXZlbBgCIAEoBRILCgNleHAYAyABKAMS",
-            "FQoNaG9tZV9yZXNvdXJjZRgEIAEoAxITCgtjbGVhbmxpbmVzcxgFIAEoBRIj",
-            "ChtsYXN0c3VidHJhY3RjbGVhbmxpbmVzc3RpbWUYBiABKAMSNgoRaG9tZV9s",
-            "YW5kX2NsdXR0ZXIYByABKAsyGy56cHJvdG8uSG9tZUxhbmRDbHV0dGVySW5m",
-            "bxJUCiNob21lX2xhbmRfY2x1dHRlcl9nZW5lcmF0aW9uX3JlY29yZBgIIAEo",
-            "CzInLnpwcm90by5Ib21lTGFuZENsdXR0ZXJHZW5lcmF0aW9uUmVjb3JkEj4K",
-            "GGhvbWVfbGFuZF9zZWxsX3Nob3BfaW5mbxgJIAEoCzIcLnpwcm90by5Ib21l",
-            "TGFuZFNlbGxTaG9wSW5mbxIyCgVpdGVtcxgKIAMoCzIjLnpwcm90by5Ib21l",
-            "bGFuZEJhc2VJbmZvLkl0ZW1zRW50cnkSMgoFc2xvdHMYCyADKAsyIy56cHJv",
-            "dG8uSG9tZWxhbmRCYXNlSW5mby5TbG90c0VudHJ5Ej4KDGl0ZW1fdG9fc2xv",
-            "dBgMIAMoCzIoLnpwcm90by5Ib21lbGFuZEJhc2VJbmZvLkl0ZW1Ub1Nsb3RF",
-            "bnRyeRIQCghjYXBhY2l0eRgNIAEoAxISCgp1c2VkX3Nsb3RzGA4gASgDEhsK",
-            "E2hvdXNlX293bmVyX2NoYXJfaWQYDyABKAMSDAoEbmFtZRgQIAEoCRIYChBj",
-            "aGVja19pbl9jb250ZW50GBEgASgJEhQKDGludHJvZHVjdGlvbhgSIAEoCRI1",
-            "ChJ0cmFuc2Zlcl9jb21tdW5pdHkYEyABKAsyGS56cHJvdG8uQ29tbXVuaXR5",
-            "VHJhbnNmZXISPAoKY29oYWJpdGFudBgUIAMoCzIoLnpwcm90by5Ib21lbGFu",
-            "ZEJhc2VJbmZvLkNvaGFiaXRhbnRFbnRyeRJFCg9mdXJuaXR1cmVfc3RhdGUY",
-            "FSADKAsyLC56cHJvdG8uSG9tZWxhbmRCYXNlSW5mby5GdXJuaXR1cmVTdGF0",
-            "ZUVudHJ5EjYKDmF1dGhvcml0eV9pbmZvGBYgASgLMh4uenByb3RvLkNvbW11",
-            "bml0eUF1dGhvcml0eUluZm8SEAoIZmllbGRfaWQYFyABKAUSPQoVb3V0ZXJf",
-            "ZGVjb3JhdGlvbl9pbmZvGBggASgLMh4uenByb3RvLkhvbWVsYW5kRGVjb3Jh",
-            "dGlvbkluZm8SPQoVaW5uZXJfZGVjb3JhdGlvbl9pbmZvGBkgASgLMh4uenBy",
-            "b3RvLkhvbWVsYW5kRGVjb3JhdGlvbkluZm8SFgoOdW5sb2NrZWRfYXJlYXMY",
-            "GiADKAUSFAoMaG91c2luZ190eXBlGBsgASgFEhgKEG91dGVyX2VtcHR5X2xh",
-            "bmQYHCABKAUSGAoQaW5uZXJfZW1wdHlfbGFuZBgdIAEoBRITCgtmbG93ZXJz",
-            "X251bRgeIAEoBRpKCgpJdGVtc0VudHJ5EgsKA2tleRgBIAEoAxIrCgV2YWx1",
-            "ZRgCIAEoCzIcLnpwcm90by5Ib21lTGFuZEl0ZW1JbnN0YW5jZToCOAEaLAoK",
-            "U2xvdHNFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiABKAM6AjgBGjEK",
-            "D0l0ZW1Ub1Nsb3RFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiABKAM6",
-            "AjgBGk4KD0NvaGFiaXRhbnRFbnRyeRILCgNrZXkYASABKAMSKgoFdmFsdWUY",
-            "AiABKAsyGy56cHJvdG8uQ29tbXVuaXR5UGxheWVySW5mbzoCOAEaNQoTRnVy",
-            "bml0dXJlU3RhdGVFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6",
-            "AjgBYgZwcm90bzM="));
+            "Ch1zdHJ1X2hvbWVsYW5kX2Jhc2VfaW5mby5wcm90bxIGenByb3RvGh1zdHJ1",
+            "X2NvbW11bml0eV90cmFuc2Zlci5wcm90bxouc3RydV9ob21lX2xhbmRfY2x1",
+            "dHRlcl9nZW5lcmF0aW9uX3JlY29yZC5wcm90bxohc3RydV9ob21lX2xhbmRf",
+            "Y2x1dHRlcl9pbmZvLnByb3RvGiJzdHJ1X2hvbWVfbGFuZF9pdGVtX2luc3Rh",
+            "bmNlLnByb3RvGiNzdHJ1X2hvbWVfbGFuZF9zZWxsX3Nob3BfaW5mby5wcm90",
+            "bxoec3RydV9ob21lbGFuZF92aXNpdF9pbmZvLnByb3RvIr8IChBIb21lbGFu",
+            "ZEJhc2VJbmZvEjcKCXZpc2l0SW5mbxgBIAEoCzIZLnpwcm90by5Ib21lbGFu",
+            "ZFZpc2l0SW5mb1IJdmlzaXRJbmZvEhAKA2V4cBgCIAEoA1IDZXhwEiIKDGhv",
+            "bWVSZXNvdXJjZRgDIAEoA1IMaG9tZVJlc291cmNlEkAKG2xhc3RzdWJ0cmFj",
+            "dGNsZWFubGluZXNzdGltZRgEIAEoA1IbbGFzdHN1YnRyYWN0Y2xlYW5saW5l",
+            "c3N0aW1lEkUKD2hvbWVMYW5kQ2x1dHRlchgFIAEoCzIbLnpwcm90by5Ib21l",
+            "TGFuZENsdXR0ZXJJbmZvUg9ob21lTGFuZENsdXR0ZXIScQofaG9tZUxhbmRD",
+            "bHV0dGVyR2VuZXJhdGlvblJlY29yZBgGIAEoCzInLnpwcm90by5Ib21lTGFu",
+            "ZENsdXR0ZXJHZW5lcmF0aW9uUmVjb3JkUh9ob21lTGFuZENsdXR0ZXJHZW5l",
+            "cmF0aW9uUmVjb3JkElAKFGhvbWVMYW5kU2VsbFNob3BJbmZvGAcgASgLMhwu",
+            "enByb3RvLkhvbWVMYW5kU2VsbFNob3BJbmZvUhRob21lTGFuZFNlbGxTaG9w",
+            "SW5mbxI5CgVpdGVtcxgIIAMoCzIjLnpwcm90by5Ib21lbGFuZEJhc2VJbmZv",
+            "Lkl0ZW1zRW50cnlSBWl0ZW1zEjkKBXNsb3RzGAkgAygLMiMuenByb3RvLkhv",
+            "bWVsYW5kQmFzZUluZm8uU2xvdHNFbnRyeVIFc2xvdHMSSAoKaXRlbVRvU2xv",
+            "dBgKIAMoCzIoLnpwcm90by5Ib21lbGFuZEJhc2VJbmZvLkl0ZW1Ub1Nsb3RF",
+            "bnRyeVIKaXRlbVRvU2xvdBIaCghDYXBhY2l0eRgLIAEoA1IIQ2FwYWNpdHkS",
+            "HAoJVXNlZFNsb3RzGAwgASgDUglVc2VkU2xvdHMSJgoOY2hlY2tJbkNvbnRl",
+            "bnQYDSABKAlSDmNoZWNrSW5Db250ZW50EkcKEXRyYW5zZmVyQ29tbXVuaXR5",
+            "GA4gASgLMhkuenByb3RvLkNvbW11bml0eVRyYW5zZmVyUhF0cmFuc2ZlckNv",
+            "bW11bml0eRIqChBpbm5lckZpbmlzaFRhc2tzGA8gAygFUhBpbm5lckZpbmlz",
+            "aFRhc2tzEioKEG91dGVyRmluaXNoVGFza3MYECADKAVSEG91dGVyRmluaXNo",
+            "VGFza3MaSgoKSXRlbXNFbnRyeRILCgNrZXkYASABKAMSKwoFdmFsdWUYAiAB",
+            "KAsyHC56cHJvdG8uSG9tZUxhbmRJdGVtSW5zdGFuY2U6AjgBGiwKClNsb3Rz",
+            "RW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgDOgI4ARoxCg9JdGVt",
+            "VG9TbG90RW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgDOgI4AWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruCommunityAuthorityInfoReflection.Descriptor, global::Zproto.StruCommunityPlayerInfoReflection.Descriptor, global::Zproto.StruCommunityTransferReflection.Descriptor, global::Zproto.StruHomeLandClutterGenerationRecordReflection.Descriptor, global::Zproto.StruHomeLandClutterInfoReflection.Descriptor, global::Zproto.StruHomelandDecorationInfoReflection.Descriptor, global::Zproto.StruHomeLandItemInstanceReflection.Descriptor, global::Zproto.StruHomeLandSellShopInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruCommunityTransferReflection.Descriptor, global::Zproto.StruHomeLandClutterGenerationRecordReflection.Descriptor, global::Zproto.StruHomeLandClutterInfoReflection.Descriptor, global::Zproto.StruHomeLandItemInstanceReflection.Descriptor, global::Zproto.StruHomeLandSellShopInfoReflection.Descriptor, global::Zproto.StruHomelandVisitInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.HomelandBaseInfo), global::Zproto.HomelandBaseInfo.Parser, new[]{ "HomelandId", "Level", "Exp", "HomeResource", "Cleanliness", "Lastsubtractcleanlinesstime", "HomeLandClutter", "HomeLandClutterGenerationRecord", "HomeLandSellShopInfo", "Items", "Slots", "ItemToSlot", "Capacity", "UsedSlots", "HouseOwnerCharId", "Name", "CheckInContent", "Introduction", "TransferCommunity", "Cohabitant", "FurnitureState", "AuthorityInfo", "FieldId", "OuterDecorationInfo", "InnerDecorationInfo", "UnlockedAreas", "HousingType", "OuterEmptyLand", "InnerEmptyLand", "FlowersNum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.HomelandBaseInfo), global::Zproto.HomelandBaseInfo.Parser, new[]{ "VisitInfo", "Exp", "HomeResource", "Lastsubtractcleanlinesstime", "HomeLandClutter", "HomeLandClutterGenerationRecord", "HomeLandSellShopInfo", "Items", "Slots", "ItemToSlot", "Capacity", "UsedSlots", "CheckInContent", "TransferCommunity", "InnerFinishTasks", "OuterFinishTasks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
           }));
     }
     #endregion
@@ -110,11 +100,9 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomelandBaseInfo(HomelandBaseInfo other) : this() {
-      homelandId_ = other.homelandId_;
-      level_ = other.level_;
+      visitInfo_ = other.visitInfo_ != null ? other.visitInfo_.Clone() : null;
       exp_ = other.exp_;
       homeResource_ = other.homeResource_;
-      cleanliness_ = other.cleanliness_;
       lastsubtractcleanlinesstime_ = other.lastsubtractcleanlinesstime_;
       homeLandClutter_ = other.homeLandClutter_ != null ? other.homeLandClutter_.Clone() : null;
       homeLandClutterGenerationRecord_ = other.homeLandClutterGenerationRecord_ != null ? other.homeLandClutterGenerationRecord_.Clone() : null;
@@ -124,22 +112,10 @@ namespace Zproto {
       itemToSlot_ = other.itemToSlot_.Clone();
       capacity_ = other.capacity_;
       usedSlots_ = other.usedSlots_;
-      houseOwnerCharId_ = other.houseOwnerCharId_;
-      name_ = other.name_;
       checkInContent_ = other.checkInContent_;
-      introduction_ = other.introduction_;
       transferCommunity_ = other.transferCommunity_ != null ? other.transferCommunity_.Clone() : null;
-      cohabitant_ = other.cohabitant_.Clone();
-      furnitureState_ = other.furnitureState_.Clone();
-      authorityInfo_ = other.authorityInfo_ != null ? other.authorityInfo_.Clone() : null;
-      fieldId_ = other.fieldId_;
-      outerDecorationInfo_ = other.outerDecorationInfo_ != null ? other.outerDecorationInfo_.Clone() : null;
-      innerDecorationInfo_ = other.innerDecorationInfo_ != null ? other.innerDecorationInfo_.Clone() : null;
-      unlockedAreas_ = other.unlockedAreas_.Clone();
-      housingType_ = other.housingType_;
-      outerEmptyLand_ = other.outerEmptyLand_;
-      innerEmptyLand_ = other.innerEmptyLand_;
-      flowersNum_ = other.flowersNum_;
+      innerFinishTasks_ = other.innerFinishTasks_.Clone();
+      outerFinishTasks_ = other.outerFinishTasks_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -149,32 +125,20 @@ namespace Zproto {
       return new HomelandBaseInfo(this);
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
-    public const int HomelandIdFieldNumber = 1;
-    private long homelandId_;
+    /// <summary>Field number for the "visitInfo" field.</summary>
+    public const int VisitInfoFieldNumber = 1;
+    private global::Zproto.HomelandVisitInfo visitInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long HomelandId {
-      get { return homelandId_; }
+    public global::Zproto.HomelandVisitInfo VisitInfo {
+      get { return visitInfo_; }
       set {
-        homelandId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 2;
-    private int level_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Level {
-      get { return level_; }
-      set {
-        level_ = value;
+        visitInfo_ = value;
       }
     }
 
     /// <summary>Field number for the "exp" field.</summary>
-    public const int ExpFieldNumber = 3;
+    public const int ExpFieldNumber = 2;
     private long exp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -185,8 +149,8 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_resource" field.</summary>
-    public const int HomeResourceFieldNumber = 4;
+    /// <summary>Field number for the "homeResource" field.</summary>
+    public const int HomeResourceFieldNumber = 3;
     private long homeResource_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -197,20 +161,8 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cleanliness" field.</summary>
-    public const int CleanlinessFieldNumber = 5;
-    private int cleanliness_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Cleanliness {
-      get { return cleanliness_; }
-      set {
-        cleanliness_ = value;
-      }
-    }
-
     /// <summary>Field number for the "lastsubtractcleanlinesstime" field.</summary>
-    public const int LastsubtractcleanlinesstimeFieldNumber = 6;
+    public const int LastsubtractcleanlinesstimeFieldNumber = 4;
     private long lastsubtractcleanlinesstime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -221,8 +173,8 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_land_clutter" field.</summary>
-    public const int HomeLandClutterFieldNumber = 7;
+    /// <summary>Field number for the "homeLandClutter" field.</summary>
+    public const int HomeLandClutterFieldNumber = 5;
     private global::Zproto.HomeLandClutterInfo homeLandClutter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -233,8 +185,8 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_land_clutter_generation_record" field.</summary>
-    public const int HomeLandClutterGenerationRecordFieldNumber = 8;
+    /// <summary>Field number for the "homeLandClutterGenerationRecord" field.</summary>
+    public const int HomeLandClutterGenerationRecordFieldNumber = 6;
     private global::Zproto.HomeLandClutterGenerationRecord homeLandClutterGenerationRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -245,8 +197,8 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "home_land_sell_shop_info" field.</summary>
-    public const int HomeLandSellShopInfoFieldNumber = 9;
+    /// <summary>Field number for the "homeLandSellShopInfo" field.</summary>
+    public const int HomeLandSellShopInfoFieldNumber = 7;
     private global::Zproto.HomeLandSellShopInfo homeLandSellShopInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -258,9 +210,9 @@ namespace Zproto {
     }
 
     /// <summary>Field number for the "items" field.</summary>
-    public const int ItemsFieldNumber = 10;
+    public const int ItemsFieldNumber = 8;
     private static readonly pbc::MapField<long, global::Zproto.HomeLandItemInstance>.Codec _map_items_codec
-        = new pbc::MapField<long, global::Zproto.HomeLandItemInstance>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.HomeLandItemInstance.Parser), 82);
+        = new pbc::MapField<long, global::Zproto.HomeLandItemInstance>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.HomeLandItemInstance.Parser), 66);
     private readonly pbc::MapField<long, global::Zproto.HomeLandItemInstance> items_ = new pbc::MapField<long, global::Zproto.HomeLandItemInstance>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -269,9 +221,9 @@ namespace Zproto {
     }
 
     /// <summary>Field number for the "slots" field.</summary>
-    public const int SlotsFieldNumber = 11;
+    public const int SlotsFieldNumber = 9;
     private static readonly pbc::MapField<long, long>.Codec _map_slots_codec
-        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 90);
+        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 74);
     private readonly pbc::MapField<long, long> slots_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -279,10 +231,10 @@ namespace Zproto {
       get { return slots_; }
     }
 
-    /// <summary>Field number for the "item_to_slot" field.</summary>
-    public const int ItemToSlotFieldNumber = 12;
+    /// <summary>Field number for the "itemToSlot" field.</summary>
+    public const int ItemToSlotFieldNumber = 10;
     private static readonly pbc::MapField<long, long>.Codec _map_itemToSlot_codec
-        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 98);
+        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 82);
     private readonly pbc::MapField<long, long> itemToSlot_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -290,8 +242,8 @@ namespace Zproto {
       get { return itemToSlot_; }
     }
 
-    /// <summary>Field number for the "capacity" field.</summary>
-    public const int CapacityFieldNumber = 13;
+    /// <summary>Field number for the "Capacity" field.</summary>
+    public const int CapacityFieldNumber = 11;
     private long capacity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -302,8 +254,8 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "used_slots" field.</summary>
-    public const int UsedSlotsFieldNumber = 14;
+    /// <summary>Field number for the "UsedSlots" field.</summary>
+    public const int UsedSlotsFieldNumber = 12;
     private long usedSlots_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -314,32 +266,8 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "house_owner_char_id" field.</summary>
-    public const int HouseOwnerCharIdFieldNumber = 15;
-    private long houseOwnerCharId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long HouseOwnerCharId {
-      get { return houseOwnerCharId_; }
-      set {
-        houseOwnerCharId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 16;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "check_in_content" field.</summary>
-    public const int CheckInContentFieldNumber = 17;
+    /// <summary>Field number for the "checkInContent" field.</summary>
+    public const int CheckInContentFieldNumber = 13;
     private string checkInContent_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -350,20 +278,8 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "introduction" field.</summary>
-    public const int IntroductionFieldNumber = 18;
-    private string introduction_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Introduction {
-      get { return introduction_; }
-      set {
-        introduction_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "transfer_community" field.</summary>
-    public const int TransferCommunityFieldNumber = 19;
+    /// <summary>Field number for the "transferCommunity" field.</summary>
+    public const int TransferCommunityFieldNumber = 14;
     private global::Zproto.CommunityTransfer transferCommunity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -374,133 +290,26 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cohabitant" field.</summary>
-    public const int CohabitantFieldNumber = 20;
-    private static readonly pbc::MapField<long, global::Zproto.CommunityPlayerInfo>.Codec _map_cohabitant_codec
-        = new pbc::MapField<long, global::Zproto.CommunityPlayerInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.CommunityPlayerInfo.Parser), 162);
-    private readonly pbc::MapField<long, global::Zproto.CommunityPlayerInfo> cohabitant_ = new pbc::MapField<long, global::Zproto.CommunityPlayerInfo>();
+    /// <summary>Field number for the "innerFinishTasks" field.</summary>
+    public const int InnerFinishTasksFieldNumber = 15;
+    private static readonly pb::FieldCodec<int> _repeated_innerFinishTasks_codec
+        = pb::FieldCodec.ForInt32(122);
+    private readonly pbc::RepeatedField<int> innerFinishTasks_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<long, global::Zproto.CommunityPlayerInfo> Cohabitant {
-      get { return cohabitant_; }
+    public pbc::RepeatedField<int> InnerFinishTasks {
+      get { return innerFinishTasks_; }
     }
 
-    /// <summary>Field number for the "furniture_state" field.</summary>
-    public const int FurnitureStateFieldNumber = 21;
-    private static readonly pbc::MapField<int, int>.Codec _map_furnitureState_codec
-        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 170);
-    private readonly pbc::MapField<int, int> furnitureState_ = new pbc::MapField<int, int>();
+    /// <summary>Field number for the "outerFinishTasks" field.</summary>
+    public const int OuterFinishTasksFieldNumber = 16;
+    private static readonly pb::FieldCodec<int> _repeated_outerFinishTasks_codec
+        = pb::FieldCodec.ForInt32(130);
+    private readonly pbc::RepeatedField<int> outerFinishTasks_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<int, int> FurnitureState {
-      get { return furnitureState_; }
-    }
-
-    /// <summary>Field number for the "authority_info" field.</summary>
-    public const int AuthorityInfoFieldNumber = 22;
-    private global::Zproto.CommunityAuthorityInfo authorityInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Zproto.CommunityAuthorityInfo AuthorityInfo {
-      get { return authorityInfo_; }
-      set {
-        authorityInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "field_id" field.</summary>
-    public const int FieldIdFieldNumber = 23;
-    private int fieldId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int FieldId {
-      get { return fieldId_; }
-      set {
-        fieldId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "outer_decoration_info" field.</summary>
-    public const int OuterDecorationInfoFieldNumber = 24;
-    private global::Zproto.HomelandDecorationInfo outerDecorationInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Zproto.HomelandDecorationInfo OuterDecorationInfo {
-      get { return outerDecorationInfo_; }
-      set {
-        outerDecorationInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "inner_decoration_info" field.</summary>
-    public const int InnerDecorationInfoFieldNumber = 25;
-    private global::Zproto.HomelandDecorationInfo innerDecorationInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Zproto.HomelandDecorationInfo InnerDecorationInfo {
-      get { return innerDecorationInfo_; }
-      set {
-        innerDecorationInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "unlocked_areas" field.</summary>
-    public const int UnlockedAreasFieldNumber = 26;
-    private static readonly pb::FieldCodec<int> _repeated_unlockedAreas_codec
-        = pb::FieldCodec.ForInt32(210);
-    private readonly pbc::RepeatedField<int> unlockedAreas_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<int> UnlockedAreas {
-      get { return unlockedAreas_; }
-    }
-
-    /// <summary>Field number for the "housing_type" field.</summary>
-    public const int HousingTypeFieldNumber = 27;
-    private int housingType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int HousingType {
-      get { return housingType_; }
-      set {
-        housingType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "outer_empty_land" field.</summary>
-    public const int OuterEmptyLandFieldNumber = 28;
-    private int outerEmptyLand_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int OuterEmptyLand {
-      get { return outerEmptyLand_; }
-      set {
-        outerEmptyLand_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "inner_empty_land" field.</summary>
-    public const int InnerEmptyLandFieldNumber = 29;
-    private int innerEmptyLand_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int InnerEmptyLand {
-      get { return innerEmptyLand_; }
-      set {
-        innerEmptyLand_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "flowers_num" field.</summary>
-    public const int FlowersNumFieldNumber = 30;
-    private int flowersNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int FlowersNum {
-      get { return flowersNum_; }
-      set {
-        flowersNum_ = value;
-      }
+    public pbc::RepeatedField<int> OuterFinishTasks {
+      get { return outerFinishTasks_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -518,11 +327,9 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (HomelandId != other.HomelandId) return false;
-      if (Level != other.Level) return false;
+      if (!object.Equals(VisitInfo, other.VisitInfo)) return false;
       if (Exp != other.Exp) return false;
       if (HomeResource != other.HomeResource) return false;
-      if (Cleanliness != other.Cleanliness) return false;
       if (Lastsubtractcleanlinesstime != other.Lastsubtractcleanlinesstime) return false;
       if (!object.Equals(HomeLandClutter, other.HomeLandClutter)) return false;
       if (!object.Equals(HomeLandClutterGenerationRecord, other.HomeLandClutterGenerationRecord)) return false;
@@ -532,22 +339,10 @@ namespace Zproto {
       if (!ItemToSlot.Equals(other.ItemToSlot)) return false;
       if (Capacity != other.Capacity) return false;
       if (UsedSlots != other.UsedSlots) return false;
-      if (HouseOwnerCharId != other.HouseOwnerCharId) return false;
-      if (Name != other.Name) return false;
       if (CheckInContent != other.CheckInContent) return false;
-      if (Introduction != other.Introduction) return false;
       if (!object.Equals(TransferCommunity, other.TransferCommunity)) return false;
-      if (!Cohabitant.Equals(other.Cohabitant)) return false;
-      if (!FurnitureState.Equals(other.FurnitureState)) return false;
-      if (!object.Equals(AuthorityInfo, other.AuthorityInfo)) return false;
-      if (FieldId != other.FieldId) return false;
-      if (!object.Equals(OuterDecorationInfo, other.OuterDecorationInfo)) return false;
-      if (!object.Equals(InnerDecorationInfo, other.InnerDecorationInfo)) return false;
-      if(!unlockedAreas_.Equals(other.unlockedAreas_)) return false;
-      if (HousingType != other.HousingType) return false;
-      if (OuterEmptyLand != other.OuterEmptyLand) return false;
-      if (InnerEmptyLand != other.InnerEmptyLand) return false;
-      if (FlowersNum != other.FlowersNum) return false;
+      if(!innerFinishTasks_.Equals(other.innerFinishTasks_)) return false;
+      if(!outerFinishTasks_.Equals(other.outerFinishTasks_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -555,11 +350,9 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (HomelandId != 0L) hash ^= HomelandId.GetHashCode();
-      if (Level != 0) hash ^= Level.GetHashCode();
+      if (visitInfo_ != null) hash ^= VisitInfo.GetHashCode();
       if (Exp != 0L) hash ^= Exp.GetHashCode();
       if (HomeResource != 0L) hash ^= HomeResource.GetHashCode();
-      if (Cleanliness != 0) hash ^= Cleanliness.GetHashCode();
       if (Lastsubtractcleanlinesstime != 0L) hash ^= Lastsubtractcleanlinesstime.GetHashCode();
       if (homeLandClutter_ != null) hash ^= HomeLandClutter.GetHashCode();
       if (homeLandClutterGenerationRecord_ != null) hash ^= HomeLandClutterGenerationRecord.GetHashCode();
@@ -569,22 +362,10 @@ namespace Zproto {
       hash ^= ItemToSlot.GetHashCode();
       if (Capacity != 0L) hash ^= Capacity.GetHashCode();
       if (UsedSlots != 0L) hash ^= UsedSlots.GetHashCode();
-      if (HouseOwnerCharId != 0L) hash ^= HouseOwnerCharId.GetHashCode();
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (CheckInContent.Length != 0) hash ^= CheckInContent.GetHashCode();
-      if (Introduction.Length != 0) hash ^= Introduction.GetHashCode();
       if (transferCommunity_ != null) hash ^= TransferCommunity.GetHashCode();
-      hash ^= Cohabitant.GetHashCode();
-      hash ^= FurnitureState.GetHashCode();
-      if (authorityInfo_ != null) hash ^= AuthorityInfo.GetHashCode();
-      if (FieldId != 0) hash ^= FieldId.GetHashCode();
-      if (outerDecorationInfo_ != null) hash ^= OuterDecorationInfo.GetHashCode();
-      if (innerDecorationInfo_ != null) hash ^= InnerDecorationInfo.GetHashCode();
-      hash ^= unlockedAreas_.GetHashCode();
-      if (HousingType != 0) hash ^= HousingType.GetHashCode();
-      if (OuterEmptyLand != 0) hash ^= OuterEmptyLand.GetHashCode();
-      if (InnerEmptyLand != 0) hash ^= InnerEmptyLand.GetHashCode();
-      if (FlowersNum != 0) hash ^= FlowersNum.GetHashCode();
+      hash ^= innerFinishTasks_.GetHashCode();
+      hash ^= outerFinishTasks_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -603,108 +384,55 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HomelandId != 0L) {
-        output.WriteRawTag(8);
-        output.WriteInt64(HomelandId);
-      }
-      if (Level != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Level);
+      if (visitInfo_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(VisitInfo);
       }
       if (Exp != 0L) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteInt64(Exp);
       }
       if (HomeResource != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteInt64(HomeResource);
       }
-      if (Cleanliness != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Cleanliness);
-      }
       if (Lastsubtractcleanlinesstime != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteInt64(Lastsubtractcleanlinesstime);
       }
       if (homeLandClutter_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(42);
         output.WriteMessage(HomeLandClutter);
       }
       if (homeLandClutterGenerationRecord_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(50);
         output.WriteMessage(HomeLandClutterGenerationRecord);
       }
       if (homeLandSellShopInfo_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(58);
         output.WriteMessage(HomeLandSellShopInfo);
       }
       items_.WriteTo(output, _map_items_codec);
       slots_.WriteTo(output, _map_slots_codec);
       itemToSlot_.WriteTo(output, _map_itemToSlot_codec);
       if (Capacity != 0L) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteInt64(Capacity);
       }
       if (UsedSlots != 0L) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteInt64(UsedSlots);
       }
-      if (HouseOwnerCharId != 0L) {
-        output.WriteRawTag(120);
-        output.WriteInt64(HouseOwnerCharId);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(130, 1);
-        output.WriteString(Name);
-      }
       if (CheckInContent.Length != 0) {
-        output.WriteRawTag(138, 1);
+        output.WriteRawTag(106);
         output.WriteString(CheckInContent);
       }
-      if (Introduction.Length != 0) {
-        output.WriteRawTag(146, 1);
-        output.WriteString(Introduction);
-      }
       if (transferCommunity_ != null) {
-        output.WriteRawTag(154, 1);
+        output.WriteRawTag(114);
         output.WriteMessage(TransferCommunity);
       }
-      cohabitant_.WriteTo(output, _map_cohabitant_codec);
-      furnitureState_.WriteTo(output, _map_furnitureState_codec);
-      if (authorityInfo_ != null) {
-        output.WriteRawTag(178, 1);
-        output.WriteMessage(AuthorityInfo);
-      }
-      if (FieldId != 0) {
-        output.WriteRawTag(184, 1);
-        output.WriteInt32(FieldId);
-      }
-      if (outerDecorationInfo_ != null) {
-        output.WriteRawTag(194, 1);
-        output.WriteMessage(OuterDecorationInfo);
-      }
-      if (innerDecorationInfo_ != null) {
-        output.WriteRawTag(202, 1);
-        output.WriteMessage(InnerDecorationInfo);
-      }
-      unlockedAreas_.WriteTo(output, _repeated_unlockedAreas_codec);
-      if (HousingType != 0) {
-        output.WriteRawTag(216, 1);
-        output.WriteInt32(HousingType);
-      }
-      if (OuterEmptyLand != 0) {
-        output.WriteRawTag(224, 1);
-        output.WriteInt32(OuterEmptyLand);
-      }
-      if (InnerEmptyLand != 0) {
-        output.WriteRawTag(232, 1);
-        output.WriteInt32(InnerEmptyLand);
-      }
-      if (FlowersNum != 0) {
-        output.WriteRawTag(240, 1);
-        output.WriteInt32(FlowersNum);
-      }
+      innerFinishTasks_.WriteTo(output, _repeated_innerFinishTasks_codec);
+      outerFinishTasks_.WriteTo(output, _repeated_outerFinishTasks_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -715,108 +443,55 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HomelandId != 0L) {
-        output.WriteRawTag(8);
-        output.WriteInt64(HomelandId);
-      }
-      if (Level != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Level);
+      if (visitInfo_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(VisitInfo);
       }
       if (Exp != 0L) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteInt64(Exp);
       }
       if (HomeResource != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteInt64(HomeResource);
       }
-      if (Cleanliness != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Cleanliness);
-      }
       if (Lastsubtractcleanlinesstime != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteInt64(Lastsubtractcleanlinesstime);
       }
       if (homeLandClutter_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(42);
         output.WriteMessage(HomeLandClutter);
       }
       if (homeLandClutterGenerationRecord_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(50);
         output.WriteMessage(HomeLandClutterGenerationRecord);
       }
       if (homeLandSellShopInfo_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(58);
         output.WriteMessage(HomeLandSellShopInfo);
       }
       items_.WriteTo(ref output, _map_items_codec);
       slots_.WriteTo(ref output, _map_slots_codec);
       itemToSlot_.WriteTo(ref output, _map_itemToSlot_codec);
       if (Capacity != 0L) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteInt64(Capacity);
       }
       if (UsedSlots != 0L) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteInt64(UsedSlots);
       }
-      if (HouseOwnerCharId != 0L) {
-        output.WriteRawTag(120);
-        output.WriteInt64(HouseOwnerCharId);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(130, 1);
-        output.WriteString(Name);
-      }
       if (CheckInContent.Length != 0) {
-        output.WriteRawTag(138, 1);
+        output.WriteRawTag(106);
         output.WriteString(CheckInContent);
       }
-      if (Introduction.Length != 0) {
-        output.WriteRawTag(146, 1);
-        output.WriteString(Introduction);
-      }
       if (transferCommunity_ != null) {
-        output.WriteRawTag(154, 1);
+        output.WriteRawTag(114);
         output.WriteMessage(TransferCommunity);
       }
-      cohabitant_.WriteTo(ref output, _map_cohabitant_codec);
-      furnitureState_.WriteTo(ref output, _map_furnitureState_codec);
-      if (authorityInfo_ != null) {
-        output.WriteRawTag(178, 1);
-        output.WriteMessage(AuthorityInfo);
-      }
-      if (FieldId != 0) {
-        output.WriteRawTag(184, 1);
-        output.WriteInt32(FieldId);
-      }
-      if (outerDecorationInfo_ != null) {
-        output.WriteRawTag(194, 1);
-        output.WriteMessage(OuterDecorationInfo);
-      }
-      if (innerDecorationInfo_ != null) {
-        output.WriteRawTag(202, 1);
-        output.WriteMessage(InnerDecorationInfo);
-      }
-      unlockedAreas_.WriteTo(ref output, _repeated_unlockedAreas_codec);
-      if (HousingType != 0) {
-        output.WriteRawTag(216, 1);
-        output.WriteInt32(HousingType);
-      }
-      if (OuterEmptyLand != 0) {
-        output.WriteRawTag(224, 1);
-        output.WriteInt32(OuterEmptyLand);
-      }
-      if (InnerEmptyLand != 0) {
-        output.WriteRawTag(232, 1);
-        output.WriteInt32(InnerEmptyLand);
-      }
-      if (FlowersNum != 0) {
-        output.WriteRawTag(240, 1);
-        output.WriteInt32(FlowersNum);
-      }
+      innerFinishTasks_.WriteTo(ref output, _repeated_innerFinishTasks_codec);
+      outerFinishTasks_.WriteTo(ref output, _repeated_outerFinishTasks_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -827,20 +502,14 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (HomelandId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(HomelandId);
-      }
-      if (Level != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      if (visitInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(VisitInfo);
       }
       if (Exp != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Exp);
       }
       if (HomeResource != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(HomeResource);
-      }
-      if (Cleanliness != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Cleanliness);
       }
       if (Lastsubtractcleanlinesstime != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Lastsubtractcleanlinesstime);
@@ -863,48 +532,14 @@ namespace Zproto {
       if (UsedSlots != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(UsedSlots);
       }
-      if (HouseOwnerCharId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(HouseOwnerCharId);
-      }
-      if (Name.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
       if (CheckInContent.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(CheckInContent);
-      }
-      if (Introduction.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(Introduction);
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CheckInContent);
       }
       if (transferCommunity_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TransferCommunity);
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TransferCommunity);
       }
-      size += cohabitant_.CalculateSize(_map_cohabitant_codec);
-      size += furnitureState_.CalculateSize(_map_furnitureState_codec);
-      if (authorityInfo_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(AuthorityInfo);
-      }
-      if (FieldId != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldId);
-      }
-      if (outerDecorationInfo_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(OuterDecorationInfo);
-      }
-      if (innerDecorationInfo_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(InnerDecorationInfo);
-      }
-      size += unlockedAreas_.CalculateSize(_repeated_unlockedAreas_codec);
-      if (HousingType != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(HousingType);
-      }
-      if (OuterEmptyLand != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(OuterEmptyLand);
-      }
-      if (InnerEmptyLand != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(InnerEmptyLand);
-      }
-      if (FlowersNum != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeInt32Size(FlowersNum);
-      }
+      size += innerFinishTasks_.CalculateSize(_repeated_innerFinishTasks_codec);
+      size += outerFinishTasks_.CalculateSize(_repeated_outerFinishTasks_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -917,20 +552,17 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      if (other.HomelandId != 0L) {
-        HomelandId = other.HomelandId;
-      }
-      if (other.Level != 0) {
-        Level = other.Level;
+      if (other.visitInfo_ != null) {
+        if (visitInfo_ == null) {
+          VisitInfo = new global::Zproto.HomelandVisitInfo();
+        }
+        VisitInfo.MergeFrom(other.VisitInfo);
       }
       if (other.Exp != 0L) {
         Exp = other.Exp;
       }
       if (other.HomeResource != 0L) {
         HomeResource = other.HomeResource;
-      }
-      if (other.Cleanliness != 0) {
-        Cleanliness = other.Cleanliness;
       }
       if (other.Lastsubtractcleanlinesstime != 0L) {
         Lastsubtractcleanlinesstime = other.Lastsubtractcleanlinesstime;
@@ -962,17 +594,8 @@ namespace Zproto {
       if (other.UsedSlots != 0L) {
         UsedSlots = other.UsedSlots;
       }
-      if (other.HouseOwnerCharId != 0L) {
-        HouseOwnerCharId = other.HouseOwnerCharId;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
       if (other.CheckInContent.Length != 0) {
         CheckInContent = other.CheckInContent;
-      }
-      if (other.Introduction.Length != 0) {
-        Introduction = other.Introduction;
       }
       if (other.transferCommunity_ != null) {
         if (transferCommunity_ == null) {
@@ -980,42 +603,8 @@ namespace Zproto {
         }
         TransferCommunity.MergeFrom(other.TransferCommunity);
       }
-      cohabitant_.MergeFrom(other.cohabitant_);
-      furnitureState_.MergeFrom(other.furnitureState_);
-      if (other.authorityInfo_ != null) {
-        if (authorityInfo_ == null) {
-          AuthorityInfo = new global::Zproto.CommunityAuthorityInfo();
-        }
-        AuthorityInfo.MergeFrom(other.AuthorityInfo);
-      }
-      if (other.FieldId != 0) {
-        FieldId = other.FieldId;
-      }
-      if (other.outerDecorationInfo_ != null) {
-        if (outerDecorationInfo_ == null) {
-          OuterDecorationInfo = new global::Zproto.HomelandDecorationInfo();
-        }
-        OuterDecorationInfo.MergeFrom(other.OuterDecorationInfo);
-      }
-      if (other.innerDecorationInfo_ != null) {
-        if (innerDecorationInfo_ == null) {
-          InnerDecorationInfo = new global::Zproto.HomelandDecorationInfo();
-        }
-        InnerDecorationInfo.MergeFrom(other.InnerDecorationInfo);
-      }
-      unlockedAreas_.Add(other.unlockedAreas_);
-      if (other.HousingType != 0) {
-        HousingType = other.HousingType;
-      }
-      if (other.OuterEmptyLand != 0) {
-        OuterEmptyLand = other.OuterEmptyLand;
-      }
-      if (other.InnerEmptyLand != 0) {
-        InnerEmptyLand = other.InnerEmptyLand;
-      }
-      if (other.FlowersNum != 0) {
-        FlowersNum = other.FlowersNum;
-      }
+      innerFinishTasks_.Add(other.innerFinishTasks_);
+      outerFinishTasks_.Add(other.outerFinishTasks_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1035,146 +624,85 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            HomelandId = input.ReadInt64();
+          case 10: {
+            if (visitInfo_ == null) {
+              VisitInfo = new global::Zproto.HomelandVisitInfo();
+            }
+            input.ReadMessage(VisitInfo);
             break;
           }
           case 16: {
-            Level = input.ReadInt32();
-            break;
-          }
-          case 24: {
             Exp = input.ReadInt64();
             break;
           }
-          case 32: {
+          case 24: {
             HomeResource = input.ReadInt64();
             break;
           }
-          case 40: {
-            Cleanliness = input.ReadInt32();
-            break;
-          }
-          case 48: {
+          case 32: {
             Lastsubtractcleanlinesstime = input.ReadInt64();
             break;
           }
-          case 58: {
+          case 42: {
             if (homeLandClutter_ == null) {
               HomeLandClutter = new global::Zproto.HomeLandClutterInfo();
             }
             input.ReadMessage(HomeLandClutter);
             break;
           }
-          case 66: {
+          case 50: {
             if (homeLandClutterGenerationRecord_ == null) {
               HomeLandClutterGenerationRecord = new global::Zproto.HomeLandClutterGenerationRecord();
             }
             input.ReadMessage(HomeLandClutterGenerationRecord);
             break;
           }
-          case 74: {
+          case 58: {
             if (homeLandSellShopInfo_ == null) {
               HomeLandSellShopInfo = new global::Zproto.HomeLandSellShopInfo();
             }
             input.ReadMessage(HomeLandSellShopInfo);
             break;
           }
-          case 82: {
+          case 66: {
             items_.AddEntriesFrom(input, _map_items_codec);
             break;
           }
-          case 90: {
+          case 74: {
             slots_.AddEntriesFrom(input, _map_slots_codec);
             break;
           }
-          case 98: {
+          case 82: {
             itemToSlot_.AddEntriesFrom(input, _map_itemToSlot_codec);
             break;
           }
-          case 104: {
+          case 88: {
             Capacity = input.ReadInt64();
             break;
           }
-          case 112: {
+          case 96: {
             UsedSlots = input.ReadInt64();
             break;
           }
-          case 120: {
-            HouseOwnerCharId = input.ReadInt64();
-            break;
-          }
-          case 130: {
-            Name = input.ReadString();
-            break;
-          }
-          case 138: {
+          case 106: {
             CheckInContent = input.ReadString();
             break;
           }
-          case 146: {
-            Introduction = input.ReadString();
-            break;
-          }
-          case 154: {
+          case 114: {
             if (transferCommunity_ == null) {
               TransferCommunity = new global::Zproto.CommunityTransfer();
             }
             input.ReadMessage(TransferCommunity);
             break;
           }
-          case 162: {
-            cohabitant_.AddEntriesFrom(input, _map_cohabitant_codec);
+          case 122:
+          case 120: {
+            innerFinishTasks_.AddEntriesFrom(input, _repeated_innerFinishTasks_codec);
             break;
           }
-          case 170: {
-            furnitureState_.AddEntriesFrom(input, _map_furnitureState_codec);
-            break;
-          }
-          case 178: {
-            if (authorityInfo_ == null) {
-              AuthorityInfo = new global::Zproto.CommunityAuthorityInfo();
-            }
-            input.ReadMessage(AuthorityInfo);
-            break;
-          }
-          case 184: {
-            FieldId = input.ReadInt32();
-            break;
-          }
-          case 194: {
-            if (outerDecorationInfo_ == null) {
-              OuterDecorationInfo = new global::Zproto.HomelandDecorationInfo();
-            }
-            input.ReadMessage(OuterDecorationInfo);
-            break;
-          }
-          case 202: {
-            if (innerDecorationInfo_ == null) {
-              InnerDecorationInfo = new global::Zproto.HomelandDecorationInfo();
-            }
-            input.ReadMessage(InnerDecorationInfo);
-            break;
-          }
-          case 210:
-          case 208: {
-            unlockedAreas_.AddEntriesFrom(input, _repeated_unlockedAreas_codec);
-            break;
-          }
-          case 216: {
-            HousingType = input.ReadInt32();
-            break;
-          }
-          case 224: {
-            OuterEmptyLand = input.ReadInt32();
-            break;
-          }
-          case 232: {
-            InnerEmptyLand = input.ReadInt32();
-            break;
-          }
-          case 240: {
-            FlowersNum = input.ReadInt32();
+          case 130:
+          case 128: {
+            outerFinishTasks_.AddEntriesFrom(input, _repeated_outerFinishTasks_codec);
             break;
           }
         }
@@ -1196,146 +724,85 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            HomelandId = input.ReadInt64();
+          case 10: {
+            if (visitInfo_ == null) {
+              VisitInfo = new global::Zproto.HomelandVisitInfo();
+            }
+            input.ReadMessage(VisitInfo);
             break;
           }
           case 16: {
-            Level = input.ReadInt32();
-            break;
-          }
-          case 24: {
             Exp = input.ReadInt64();
             break;
           }
-          case 32: {
+          case 24: {
             HomeResource = input.ReadInt64();
             break;
           }
-          case 40: {
-            Cleanliness = input.ReadInt32();
-            break;
-          }
-          case 48: {
+          case 32: {
             Lastsubtractcleanlinesstime = input.ReadInt64();
             break;
           }
-          case 58: {
+          case 42: {
             if (homeLandClutter_ == null) {
               HomeLandClutter = new global::Zproto.HomeLandClutterInfo();
             }
             input.ReadMessage(HomeLandClutter);
             break;
           }
-          case 66: {
+          case 50: {
             if (homeLandClutterGenerationRecord_ == null) {
               HomeLandClutterGenerationRecord = new global::Zproto.HomeLandClutterGenerationRecord();
             }
             input.ReadMessage(HomeLandClutterGenerationRecord);
             break;
           }
-          case 74: {
+          case 58: {
             if (homeLandSellShopInfo_ == null) {
               HomeLandSellShopInfo = new global::Zproto.HomeLandSellShopInfo();
             }
             input.ReadMessage(HomeLandSellShopInfo);
             break;
           }
-          case 82: {
+          case 66: {
             items_.AddEntriesFrom(ref input, _map_items_codec);
             break;
           }
-          case 90: {
+          case 74: {
             slots_.AddEntriesFrom(ref input, _map_slots_codec);
             break;
           }
-          case 98: {
+          case 82: {
             itemToSlot_.AddEntriesFrom(ref input, _map_itemToSlot_codec);
             break;
           }
-          case 104: {
+          case 88: {
             Capacity = input.ReadInt64();
             break;
           }
-          case 112: {
+          case 96: {
             UsedSlots = input.ReadInt64();
             break;
           }
-          case 120: {
-            HouseOwnerCharId = input.ReadInt64();
-            break;
-          }
-          case 130: {
-            Name = input.ReadString();
-            break;
-          }
-          case 138: {
+          case 106: {
             CheckInContent = input.ReadString();
             break;
           }
-          case 146: {
-            Introduction = input.ReadString();
-            break;
-          }
-          case 154: {
+          case 114: {
             if (transferCommunity_ == null) {
               TransferCommunity = new global::Zproto.CommunityTransfer();
             }
             input.ReadMessage(TransferCommunity);
             break;
           }
-          case 162: {
-            cohabitant_.AddEntriesFrom(ref input, _map_cohabitant_codec);
+          case 122:
+          case 120: {
+            innerFinishTasks_.AddEntriesFrom(ref input, _repeated_innerFinishTasks_codec);
             break;
           }
-          case 170: {
-            furnitureState_.AddEntriesFrom(ref input, _map_furnitureState_codec);
-            break;
-          }
-          case 178: {
-            if (authorityInfo_ == null) {
-              AuthorityInfo = new global::Zproto.CommunityAuthorityInfo();
-            }
-            input.ReadMessage(AuthorityInfo);
-            break;
-          }
-          case 184: {
-            FieldId = input.ReadInt32();
-            break;
-          }
-          case 194: {
-            if (outerDecorationInfo_ == null) {
-              OuterDecorationInfo = new global::Zproto.HomelandDecorationInfo();
-            }
-            input.ReadMessage(OuterDecorationInfo);
-            break;
-          }
-          case 202: {
-            if (innerDecorationInfo_ == null) {
-              InnerDecorationInfo = new global::Zproto.HomelandDecorationInfo();
-            }
-            input.ReadMessage(InnerDecorationInfo);
-            break;
-          }
-          case 210:
-          case 208: {
-            unlockedAreas_.AddEntriesFrom(ref input, _repeated_unlockedAreas_codec);
-            break;
-          }
-          case 216: {
-            HousingType = input.ReadInt32();
-            break;
-          }
-          case 224: {
-            OuterEmptyLand = input.ReadInt32();
-            break;
-          }
-          case 232: {
-            InnerEmptyLand = input.ReadInt32();
-            break;
-          }
-          case 240: {
-            FlowersNum = input.ReadInt32();
+          case 130:
+          case 128: {
+            outerFinishTasks_.AddEntriesFrom(ref input, _repeated_outerFinishTasks_codec);
             break;
           }
         }

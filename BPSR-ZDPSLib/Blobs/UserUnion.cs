@@ -10,7 +10,7 @@ public class UserUnion : BlobType
 {
     public long? UnionId;
     public ulong? NextJoinTime;
-    public Dictionary<long, long>? ReqUnionTimes;
+    public Dictionary<long, ulong>? ReqUnionTimes;
     public bool? JoinFlag;
     public List<long>? CollectedIds;
     public long? ActiveAwardResetTime;
@@ -36,7 +36,7 @@ public class UserUnion : BlobType
                 NextJoinTime = blob.ReadULong();
                 return true;
             case Zproto.UserUnion.ReqUnionTimesFieldNumber:
-                ReqUnionTimes = blob.ReadHashMap<long, long>();
+                ReqUnionTimes = blob.ReadHashMap<long, ulong>();
                 return true;
             case Zproto.UserUnion.CollectedIdsFieldNumber:
                 CollectedIds = blob.ReadList<long>();

@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "CjdzdHJ1X25vdGlmeV90ZWFtX21lbXNfc3BlYWtfc3RhdHVzX2NoYW5nZV9y",
             "ZXF1ZXN0LnByb3RvEgZ6cHJvdG8aGWVudW1fZV9zcGVha19zdGF0dXMucHJv",
-            "dG8i0wEKJk5vdGlmeVRlYW1NZW1zU3BlYWtTdGF0dXNDaGFuZ2VSZXF1ZXN0",
-            "ElwKEG1lbV9zcGVha19zdGF0dXMYASADKAsyQi56cHJvdG8uTm90aWZ5VGVh",
-            "bU1lbXNTcGVha1N0YXR1c0NoYW5nZVJlcXVlc3QuTWVtU3BlYWtTdGF0dXNF",
-            "bnRyeRpLChNNZW1TcGVha1N0YXR1c0VudHJ5EgsKA2tleRgBIAEoAxIjCgV2",
-            "YWx1ZRgCIAEoDjIULnpwcm90by5FU3BlYWtTdGF0dXM6AjgBYgZwcm90bzM="));
+            "dG8i4QEKJk5vdGlmeVRlYW1NZW1zU3BlYWtTdGF0dXNDaGFuZ2VSZXF1ZXN0",
+            "EmoKDm1lbVNwZWFrU3RhdHVzGAEgAygLMkIuenByb3RvLk5vdGlmeVRlYW1N",
+            "ZW1zU3BlYWtTdGF0dXNDaGFuZ2VSZXF1ZXN0Lk1lbVNwZWFrU3RhdHVzRW50",
+            "cnlSDm1lbVNwZWFrU3RhdHVzGksKE01lbVNwZWFrU3RhdHVzRW50cnkSCwoD",
+            "a2V5GAEgASgDEiMKBXZhbHVlGAIgASgOMhQuenByb3RvLkVTcGVha1N0YXR1",
+            "czoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumESpeakStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new NotifyTeamMemsSpeakStatusChangeRequest(this);
     }
 
-    /// <summary>Field number for the "mem_speak_status" field.</summary>
+    /// <summary>Field number for the "memSpeakStatus" field.</summary>
     public const int MemSpeakStatusFieldNumber = 1;
     private static readonly pbc::MapField<long, global::Zproto.ESpeakStatus>.Codec _map_memSpeakStatus_codec
         = new pbc::MapField<long, global::Zproto.ESpeakStatus>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::Zproto.ESpeakStatus) x, global::Zproto.ESpeakStatus.Default), 10);

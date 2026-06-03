@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEStageBehaveTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5lbnVtX2Vfc3RhZ2VfYmVoYXZlX3R5cGUucHJvdG8SBnpwcm90byqbBwoQ",
+            "Ch5lbnVtX2Vfc3RhZ2VfYmVoYXZlX3R5cGUucHJvdG8SBnpwcm90byrBBwoQ",
             "RVN0YWdlQmVoYXZlVHlwZRIjCh9FU3RhZ2VCZWhhdmVUeXBlX1NldE5leHRT",
             "dGFnZUlkEAASHgoaRVN0YWdlQmVoYXZlVHlwZV9TdG9wU3RhZ2UQARIiCh5F",
             "U3RhZ2VCZWhhdmVUeXBlX1NldFNraWxsU3RhdGUQAhIkCiBFU3RhZ2VCZWhh",
@@ -42,10 +42,11 @@ namespace Zproto {
             "YWdlQmVoYXZlVHlwZV9Td2l0Y2hTdGFnZRAREiUKIUVTdGFnZUJlaGF2ZVR5",
             "cGVfU3RvcENsaWVudEVmZmVjdBASEioKJkVTdGFnZUJlaGF2ZVR5cGVfTm9U",
             "YXJnZXRGaW5kTmV3VGFyZ2V0EBMSKgomRVN0YWdlQmVoYXZlVHlwZV9TZXRT",
-            "aW5nR3VpZGVJbml0VmFsdWUQFBIhCh1FU3RhZ2VCZWhhdmVUeXBlX0NoYW5n",
-            "ZUVmZmVjdBBkEiEKHUVTdGFnZUJlaGF2ZVR5cGVfU3VtbW9uQnVsbGV0EGUS",
-            "GwoXRVN0YWdlQmVoYXZlVHlwZV9LaWxsTWUQZhIkCiBFU3RhZ2VCZWhhdmVU",
-            "eXBlX1JlZnJlc2hEdXJhdGlvbhBnYgZwcm90bzM="));
+            "aW5nR3VpZGVJbml0VmFsdWUQFBIkCiBFU3RhZ2VCZWhhdmVUeXBlX0VudGVy",
+            "Rml4ZWRTdGFnZRAVEiEKHUVTdGFnZUJlaGF2ZVR5cGVfQ2hhbmdlRWZmZWN0",
+            "EGQSIQodRVN0YWdlQmVoYXZlVHlwZV9TdW1tb25CdWxsZXQQZRIbChdFU3Rh",
+            "Z2VCZWhhdmVUeXBlX0tpbGxNZRBmEiQKIEVTdGFnZUJlaGF2ZVR5cGVfUmVm",
+            "cmVzaER1cmF0aW9uEGdiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EStageBehaveType), }, null, null));
@@ -76,6 +77,7 @@ namespace Zproto {
     [pbr::OriginalName("EStageBehaveType_StopClientEffect")] StopClientEffect = 18,
     [pbr::OriginalName("EStageBehaveType_NoTargetFindNewTarget")] NoTargetFindNewTarget = 19,
     [pbr::OriginalName("EStageBehaveType_SetSingGuideInitValue")] SetSingGuideInitValue = 20,
+    [pbr::OriginalName("EStageBehaveType_EnterFixedStage")] EnterFixedStage = 21,
     [pbr::OriginalName("EStageBehaveType_ChangeEffect")] ChangeEffect = 100,
     [pbr::OriginalName("EStageBehaveType_SummonBullet")] SummonBullet = 101,
     [pbr::OriginalName("EStageBehaveType_KillMe")] KillMe = 102,

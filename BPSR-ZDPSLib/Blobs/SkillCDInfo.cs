@@ -40,7 +40,7 @@ public class SkillCDInfo : BlobType
             case Zproto.SkillCDInfo.DurationFieldNumber:
                 Duration = blob.ReadInt();
                 return true;
-            case Zproto.SkillCDInfo.SkillCdTypeFieldNumber:
+            case Zproto.SkillCDInfo.SkillCDTypeFieldNumber:
                 SkillCdType = blob.ReadUInt();
                 return true;
             case Zproto.SkillCDInfo.ProfessionHoldBeginTimeFieldNumber:
@@ -49,16 +49,16 @@ public class SkillCDInfo : BlobType
             case Zproto.SkillCDInfo.ChargeCountFieldNumber:
                 ChargeCount = blob.ReadInt();
                 return true;
-            case Zproto.SkillCDInfo.ValidCdTimeFieldNumber:
+            case Zproto.SkillCDInfo.ValidCDTimeFieldNumber:
                 ValidCdTime = blob.ReadInt();
                 return true;
-            case Zproto.SkillCDInfo.SubCdRatioFieldNumber:
+            case Zproto.SkillCDInfo.SubCDRatioFieldNumber:
                 SubCdRatio = blob.ReadInt();
                 return true;
-            case Zproto.SkillCDInfo.SubCdFixedFieldNumber:
+            case Zproto.SkillCDInfo.SubCDFixedFieldNumber:
                 SubCdFixed = blob.ReadLong();
                 return true;
-            case Zproto.SkillCDInfo.AccelerateCdRatioFieldNumber:
+            case Zproto.SkillCDInfo.AccelerateCDRatioFieldNumber:
                 AccelerateCdRatio = blob.ReadInt();
                 return true;
             default:

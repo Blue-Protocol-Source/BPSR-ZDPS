@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X2Zpc2hfcmFua19saXN0LnByb3RvEgZ6cHJvdG8aGXN0cnVfZmlz",
-            "aF9yYW5rX2luZm8ucHJvdG8iYAoMRmlzaFJhbmtMaXN0EicKCXNlbGZfaW5m",
-            "bxgBIAEoCzIULnpwcm90by5GaXNoUmFua0luZm8SJwoJcmFua19saXN0GAIg",
-            "AygLMhQuenByb3RvLkZpc2hSYW5rSW5mb2IGcHJvdG8z"));
+            "aF9yYW5rX2luZm8ucHJvdG8icgoMRmlzaFJhbmtMaXN0EjAKCHNlbGZJbmZv",
+            "GAEgASgLMhQuenByb3RvLkZpc2hSYW5rSW5mb1IIc2VsZkluZm8SMAoIcmFu",
+            "a0xpc3QYAiADKAsyFC56cHJvdG8uRmlzaFJhbmtJbmZvUghyYW5rTGlzdGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFishRankInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new FishRankList(this);
     }
 
-    /// <summary>Field number for the "self_info" field.</summary>
+    /// <summary>Field number for the "selfInfo" field.</summary>
     public const int SelfInfoFieldNumber = 1;
     private global::Zproto.FishRankInfo selfInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rank_list" field.</summary>
+    /// <summary>Field number for the "rankList" field.</summary>
     public const int RankListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.FishRankInfo> _repeated_rankList_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.FishRankInfo.Parser);

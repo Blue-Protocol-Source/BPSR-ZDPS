@@ -27,11 +27,12 @@ namespace Zproto {
             "CiZzdHJ1X2dldF9waG90b190b2tlbl9udGZfcmVxdWVzdC5wcm90bxIGenBy",
             "b3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxofZW51bV9lX3BsYXRmb3Jt",
             "X2Z1bmNfdHlwZS5wcm90bxoYc3RydV9pbWFnZV9jb3Nfa2V5LnByb3RvGhtz",
-            "dHJ1X3RtcF90b2tlbl9yZXN1bHQucHJvdG8ivAEKF0dldFBob3RvVG9rZW5O",
-            "dGZSZXF1ZXN0EiQKCGVycl9jb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNv",
-            "ZGUSJgoGcmVzdWx0GAMgASgLMhYuenByb3RvLlRtcFRva2VuUmVzdWx0EiUK",
-            "CGNvc19rZXlzGAQgAygLMhMuenByb3RvLkltYWdlQ29zS2V5EiwKCWZ1bmNf",
-            "dHlwZRgFIAEoDjIZLnpwcm90by5FUGxhdGZvcm1GdW5jVHlwZWIGcHJvdG8z"));
+            "dHJ1X3RtcF90b2tlbl9yZXN1bHQucHJvdG8i3QEKF0dldFBob3RvVG9rZW5O",
+            "dGZSZXF1ZXN0EiwKB2VyckNvZGUYAiABKA4yEi56cHJvdG8uRUVycm9yQ29k",
+            "ZVIHZXJyQ29kZRIuCgZyZXN1bHQYAyABKAsyFi56cHJvdG8uVG1wVG9rZW5S",
+            "ZXN1bHRSBnJlc3VsdBItCgdjb3NLZXlzGAQgAygLMhMuenByb3RvLkltYWdl",
+            "Q29zS2V5Ugdjb3NLZXlzEjUKCGZ1bmNUeXBlGAUgASgOMhkuenByb3RvLkVQ",
+            "bGF0Zm9ybUZ1bmNUeXBlUghmdW5jVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.EnumEPlatformFuncTypeReflection.Descriptor, global::Zproto.StruImageCosKeyReflection.Descriptor, global::Zproto.StruTmpTokenResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new GetPhotoTokenNtfRequest(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cos_keys" field.</summary>
+    /// <summary>Field number for the "cosKeys" field.</summary>
     public const int CosKeysFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Zproto.ImageCosKey> _repeated_cosKeys_codec
         = pb::FieldCodec.ForMessage(34, global::Zproto.ImageCosKey.Parser);
@@ -125,7 +126,7 @@ namespace Zproto {
       get { return cosKeys_; }
     }
 
-    /// <summary>Field number for the "func_type" field.</summary>
+    /// <summary>Field number for the "funcType" field.</summary>
     public const int FuncTypeFieldNumber = 5;
     private global::Zproto.EPlatformFuncType funcType_ = global::Zproto.EPlatformFuncType.EfuncTypeDefault;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

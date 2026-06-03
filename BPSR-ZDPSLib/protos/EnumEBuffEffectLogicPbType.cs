@@ -25,15 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZlbnVtX2VfYnVmZl9lZmZlY3RfbG9naWNfcGJfdHlwZS5wcm90bxIGenBy",
-            "b3RvKtwCChZFQnVmZkVmZmVjdExvZ2ljUGJUeXBlEg4KClBsYXlFZmZlY3QQ",
+            "b3RvKosDChZFQnVmZkVmZmVjdExvZ2ljUGJUeXBlEg4KClBsYXlFZmZlY3QQ",
             "ABILCgdHcmF2aXR5EAESEgoOUGFyYWJvbGFFZmZlY3QQAhILCgdMaW5raW5n",
             "EAMSEwoPQ29uZnVzaW9uRWZmZWN0EAQSDQoJWm9vbVNjYWxlEAUSGAoUQnVm",
             "ZlByb2Zlc3Npb25FZmZlY3QQBxIQCgxUZWxlcG9ydEJlbHQQCBIVChFCdWZm",
             "RWZmZWN0UmFpbmJvdxAJEhUKEUJ1ZmZFZmZlY3RBdHRySFVEEAsSEgoOQnVm",
             "ZkVmZmVjdFN0b3AQDBIWChJCdWZmRWZmZWN0UHJvZ3Jlc3MQDRIbChdCdWZm",
             "RWZmZWN0RW5lcmd5RGlzcGxheRAOEhUKEUJ1ZmZFZmZlY3RTdG9wQWxsEA8S",
-            "GQoVQnVmZkVmZmVjdExheWVyQ2hhbmdlEBASCwoHVGVuc2lvbhARYgZwcm90",
-            "bzM="));
+            "CwoHVGVuc2lvbhAREhUKEUJ1ZmZFZmZlY3RBZGRCdWZmEBISGAoUQnVmZkVm",
+            "ZmVjdEJ1ZmZDaGFuZ2UQExIXChNCdWZmRWZmZWN0UGV0QWN0aW9uEBRiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EBuffEffectLogicPbType), }, null, null));
@@ -57,8 +58,10 @@ namespace Zproto {
     [pbr::OriginalName("BuffEffectProgress")] BuffEffectProgress = 13,
     [pbr::OriginalName("BuffEffectEnergyDisplay")] BuffEffectEnergyDisplay = 14,
     [pbr::OriginalName("BuffEffectStopAll")] BuffEffectStopAll = 15,
-    [pbr::OriginalName("BuffEffectLayerChange")] BuffEffectLayerChange = 16,
     [pbr::OriginalName("Tension")] Tension = 17,
+    [pbr::OriginalName("BuffEffectAddBuff")] BuffEffectAddBuff = 18,
+    [pbr::OriginalName("BuffEffectBuffChange")] BuffEffectBuffChange = 19,
+    [pbr::OriginalName("BuffEffectPetAction")] BuffEffectPetAction = 20,
   }
 
   #endregion

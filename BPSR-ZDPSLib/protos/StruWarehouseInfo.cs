@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3dhcmVob3VzZV9pbmZvLnByb3RvEgZ6cHJvdG8aGXN0cnVfd2Fy",
-            "ZWhvdXNlX2dyaWQucHJvdG8igAEKDVdhcmVob3VzZUluZm8SFAoMd2FyZWhv",
-            "dXNlX2lkGAEgASgDEhQKDHByZXNpZGVudF9pZBgCIAEoAxITCgttZW1faWRf",
-            "bGlzdBgDIAMoAxIuCg93YXJlaG91c2VfZ3JpZHMYBCADKAsyFS56cHJvdG8u",
-            "V2FyZWhvdXNlR3JpZGIGcHJvdG8z"));
+            "ZWhvdXNlX2dyaWQucHJvdG8isAEKDVdhcmVob3VzZUluZm8SIAoLV2FyZWhv",
+            "dXNlSWQYASABKANSC1dhcmVob3VzZUlkEiAKC3ByZXNpZGVudElkGAIgASgD",
+            "UgtwcmVzaWRlbnRJZBIcCgltZW1JZExpc3QYAyADKANSCW1lbUlkTGlzdBI9",
+            "Cg53YXJlaG91c2VHcmlkcxgEIAMoCzIVLnpwcm90by5XYXJlaG91c2VHcmlk",
+            "Ug53YXJlaG91c2VHcmlkc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruWarehouseGridReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new WarehouseInfo(this);
     }
 
-    /// <summary>Field number for the "warehouse_id" field.</summary>
+    /// <summary>Field number for the "WarehouseId" field.</summary>
     public const int WarehouseIdFieldNumber = 1;
     private long warehouseId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "president_id" field.</summary>
+    /// <summary>Field number for the "presidentId" field.</summary>
     public const int PresidentIdFieldNumber = 2;
     private long presidentId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mem_id_list" field.</summary>
+    /// <summary>Field number for the "memIdList" field.</summary>
     public const int MemIdListFieldNumber = 3;
     private static readonly pb::FieldCodec<long> _repeated_memIdList_codec
         = pb::FieldCodec.ForInt64(26);
@@ -122,7 +123,7 @@ namespace Zproto {
       get { return memIdList_; }
     }
 
-    /// <summary>Field number for the "warehouse_grids" field.</summary>
+    /// <summary>Field number for the "warehouseGrids" field.</summary>
     public const int WarehouseGridsFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Zproto.WarehouseGrid> _repeated_warehouseGrids_codec
         = pb::FieldCodec.ForMessage(34, global::Zproto.WarehouseGrid.Parser);

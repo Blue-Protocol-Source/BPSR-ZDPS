@@ -27,18 +27,21 @@ namespace Zproto {
             "ChdzdHJ1X2R1bmdlb25fbGlzdC5wcm90bxIGenByb3RvGh5zdHJ1X2R1bmdl",
             "b25fZW50ZXJfbGltaXQucHJvdG8aF3N0cnVfZHVuZ2Vvbl9pbmZvLnByb3Rv",
             "GiNzdHJ1X2R1bmdlb25fd2Vla190YXJnZXRfbGlzdC5wcm90bxoWc3RydV9y",
-            "YWlkX3JlY29yZC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIuUDCgtE",
-            "dW5nZW9uTGlzdBJCChBjb21wbGV0ZV9kdW5nZW9uGAEgAygLMiguenByb3Rv",
-            "LkR1bmdlb25MaXN0LkNvbXBsZXRlRHVuZ2VvbkVudHJ5EhIKCnJlc2V0X3Rp",
-            "bWUYAiABKA0SIQoZbm9ybWFsX2R1bmdlb25fcGFzc19jb3VudBgDIAEoDRI2",
-            "ChNkdW5nZW9uX2VudGVyX2xpbWl0GAQgASgLMhkuenByb3RvLkR1bmdlb25F",
-            "bnRlckxpbWl0EjIKC3dlZWtfdGFyZ2V0GAUgASgLMh0uenByb3RvLkR1bmdl",
-            "b25XZWVrVGFyZ2V0TGlzdBIRCglpc19hc3Npc3QYBiABKAgSQwoRcmFpZF9y",
-            "ZWNvcmRfdGFibGUYByADKAsyKC56cHJvdG8uRHVuZ2Vvbkxpc3QuUmFpZFJl",
-            "Y29yZFRhYmxlRW50cnkaSwoUQ29tcGxldGVEdW5nZW9uRW50cnkSCwoDa2V5",
-            "GAEgASgFEiIKBXZhbHVlGAIgASgLMhMuenByb3RvLkR1bmdlb25JbmZvOgI4",
-            "ARpKChRSYWlkUmVjb3JkVGFibGVFbnRyeRILCgNrZXkYASABKAUSIQoFdmFs",
-            "dWUYAiABKAsyEi56cHJvdG8uUmFpZFJlY29yZDoCOAFiBnByb3RvMw=="));
+            "YWlkX3JlY29yZC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIsgECgtE",
+            "dW5nZW9uTGlzdBJSCg9jb21wbGV0ZUR1bmdlb24YASADKAsyKC56cHJvdG8u",
+            "RHVuZ2Vvbkxpc3QuQ29tcGxldGVEdW5nZW9uRW50cnlSD2NvbXBsZXRlRHVu",
+            "Z2VvbhIcCglyZXNldFRpbWUYAiABKA1SCXJlc2V0VGltZRI2ChZub3JtYWxE",
+            "dW5nZW9uUGFzc0NvdW50GAMgASgNUhZub3JtYWxEdW5nZW9uUGFzc0NvdW50",
+            "EkcKEWR1bmdlb25FbnRlckxpbWl0GAQgASgLMhkuenByb3RvLkR1bmdlb25F",
+            "bnRlckxpbWl0UhFkdW5nZW9uRW50ZXJMaW1pdBI9Cgp3ZWVrVGFyZ2V0GAUg",
+            "ASgLMh0uenByb3RvLkR1bmdlb25XZWVrVGFyZ2V0TGlzdFIKd2Vla1Rhcmdl",
+            "dBIaCghpc0Fzc2lzdBgGIAEoCFIIaXNBc3Npc3QSUgoPcmFpZFJlY29yZFRh",
+            "YmxlGAcgAygLMiguenByb3RvLkR1bmdlb25MaXN0LlJhaWRSZWNvcmRUYWJs",
+            "ZUVudHJ5Ug9yYWlkUmVjb3JkVGFibGUaSwoUQ29tcGxldGVEdW5nZW9uRW50",
+            "cnkSCwoDa2V5GAEgASgFEiIKBXZhbHVlGAIgASgLMhMuenByb3RvLkR1bmdl",
+            "b25JbmZvOgI4ARpKChRSYWlkUmVjb3JkVGFibGVFbnRyeRILCgNrZXkYASAB",
+            "KAUSIQoFdmFsdWUYAiABKAsyEi56cHJvdG8uUmFpZFJlY29yZDoCOAFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonEnterLimitReflection.Descriptor, global::Zproto.StruDungeonInfoReflection.Descriptor, global::Zproto.StruDungeonWeekTargetListReflection.Descriptor, global::Zproto.StruRaidRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -100,7 +103,7 @@ namespace Zproto {
       return new DungeonList(this);
     }
 
-    /// <summary>Field number for the "complete_dungeon" field.</summary>
+    /// <summary>Field number for the "completeDungeon" field.</summary>
     public const int CompleteDungeonFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.DungeonInfo>.Codec _map_completeDungeon_codec
         = new pbc::MapField<int, global::Zproto.DungeonInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonInfo.Parser), 10);
@@ -111,7 +114,7 @@ namespace Zproto {
       get { return completeDungeon_; }
     }
 
-    /// <summary>Field number for the "reset_time" field.</summary>
+    /// <summary>Field number for the "resetTime" field.</summary>
     public const int ResetTimeFieldNumber = 2;
     private uint resetTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "normal_dungeon_pass_count" field.</summary>
+    /// <summary>Field number for the "normalDungeonPassCount" field.</summary>
     public const int NormalDungeonPassCountFieldNumber = 3;
     private uint normalDungeonPassCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_enter_limit" field.</summary>
+    /// <summary>Field number for the "dungeonEnterLimit" field.</summary>
     public const int DungeonEnterLimitFieldNumber = 4;
     private global::Zproto.DungeonEnterLimit dungeonEnterLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,7 +150,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "week_target" field.</summary>
+    /// <summary>Field number for the "weekTarget" field.</summary>
     public const int WeekTargetFieldNumber = 5;
     private global::Zproto.DungeonWeekTargetList weekTarget_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -159,7 +162,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_assist" field.</summary>
+    /// <summary>Field number for the "isAssist" field.</summary>
     public const int IsAssistFieldNumber = 6;
     private bool isAssist_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -171,7 +174,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "raid_record_table" field.</summary>
+    /// <summary>Field number for the "raidRecordTable" field.</summary>
     public const int RaidRecordTableFieldNumber = 7;
     private static readonly pbc::MapField<int, global::Zproto.RaidRecord>.Codec _map_raidRecordTable_codec
         = new pbc::MapField<int, global::Zproto.RaidRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.RaidRecord.Parser), 58);

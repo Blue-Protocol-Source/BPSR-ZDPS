@@ -24,8 +24,9 @@ namespace Zproto {
     static StruSeasonDungeonAffixReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X3NlYXNvbl9kdW5nZW9uX2FmZml4LnByb3RvEgZ6cHJvdG8iJQoS",
-            "U2Vhc29uRHVuZ2VvbkFmZml4Eg8KB2FmZml4ZXMYASADKAViBnByb3RvMw=="));
+            "Ch9zdHJ1X3NlYXNvbl9kdW5nZW9uX2FmZml4LnByb3RvEgZ6cHJvdG8iLgoS",
+            "U2Vhc29uRHVuZ2VvbkFmZml4EhgKB2FmZml4ZXMYASADKAVSB2FmZml4ZXNi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

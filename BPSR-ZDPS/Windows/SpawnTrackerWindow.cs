@@ -31,6 +31,10 @@ namespace BPSR_ZDPS.Windows
         static Dictionary<string, bool> MonsterFilters = new();
         static CancellationTokenSource? RealtimeCancellationTokenSource = null;
         static string RegionName = "";
+        static bool showDeadLines = true;
+        static bool showExpiredLines = true;
+
+        static ImGuiWindowClassPtr ContextMenuClass = ImGui.ImGuiWindowClass();
 
         public static void Open()
         {
@@ -60,6 +64,9 @@ namespace BPSR_ZDPS.Windows
             if (HasInitBindings == false)
             {
                 HasInitBindings = true;
+
+                ContextMenuClass.ClassId = ImGuiP.ImHashStr("SpawnTrackerContextMenuClass");
+                ContextMenuClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost;
             }
         }
 
@@ -264,6 +271,7 @@ namespace BPSR_ZDPS.Windows
                         windowSettings.OrderLinesByIndex = !windowSettings.OrderLinesByIndex;
                     }
                     ImGui.PopFont();
+                    ImGui.SetItemTooltip("Toggle Line Ordering.");
 
                     ImGui.SameLine();
                     ImGui.AlignTextToFramePadding();
@@ -385,6 +393,11 @@ namespace BPSR_ZDPS.Windows
                                     continue;
                                 }
 
+                                if ((!showDeadLines && isDead) || (!showExpiredLines && isUnknown))
+                                {
+                                    continue;
+                                }
+
                                 bool isCriticalHp = pct < 0.20 && !isDead && !isUnknown;
 
                                 if (isCriticalHp)
@@ -408,12 +421,24 @@ namespace BPSR_ZDPS.Windows
                                 }
                                 ImGui.PushFont(HelperMethods.Fonts["Segoe"], lineHeight);
                                 ImGuiEx.TextAlignedProgressBar(pct, $"{status.ChannelNumber}", 0.5f, lineWidth, lineHeight);
+                                if (windowSettings.TopMost)
+                                {
+                                    ImGui.SetNextWindowClass(ContextMenuClass);
+                                }
                                 if (ImGui.BeginPopupContextItem($"##LineContextMenu_{mob.MobId}_{status.ChannelNumber}_{status.Region}"))
                                 {
                                     if (ImGui.MenuItem($"Report Line {status.ChannelNumber} As Dead"))
                                     {
                                         Serilog.Log.Information("User sending manual dead monster report.");
                                         BPTimerManager.SendForceDeadReport(mob.MonsterId, (uint)status.ChannelNumber);
+                                    }
+                                    if (ImGui.MenuItem("Toggle Dead Line Visibility", showDeadLines))
+                                    {
+                                        showDeadLines = !showDeadLines;
+                                    }
+                                    if (ImGui.MenuItem("Toggle Expired Line Visibility", showExpiredLines))
+                                    {
+                                        showExpiredLines = !showExpiredLines;
                                     }
                                     ImGui.EndPopup();
                                 }

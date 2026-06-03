@@ -24,169 +24,243 @@ namespace Zproto {
     static StruCharSerializeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X2NoYXJfc2VyaWFsaXplLnByb3RvEgZ6cHJvdG8aHnN0cnVfYW50",
-            "aV9hZGRpY3Rpb25faW5mby5wcm90bxobc3RydV9iYXR0bGVfcGFzc19kYXRh",
-            "LnByb3RvGhpzdHJ1X2J1YmJsZV9hY3RfZGF0YS5wcm90bxoYc3RydV9idWZm",
-            "X2RfYl9pbmZvLnByb3RvGiFzdHJ1X2NoYWxsZW5nZV9kdW5nZW9uX2luZm8u",
-            "cHJvdG8aGXN0cnVfY2hhcl9iYXNlX2luZm8ucHJvdG8aH3N0cnVfY2hhcl9z",
-            "dGF0aXN0aWNzX2RhdGEucHJvdG8aGnN0cnVfY29sbGVjdGlvbl9ib29rLnBy",
-            "b3RvGh5zdHJ1X2NvbW11bml0eV9ob21lX2RhdGEucHJvdG8aInN0cnVfY29t",
-            "cGVuc2F0aW9uX3N0YXRpc3RpY3MucHJvdG8aFHN0cnVfY29va19saXN0LnBy",
-            "b3RvGhdzdHJ1X2NvdW50ZXJfbGlzdC5wcm90bxoec3RydV9jcmFmdF9lbmVy",
-            "Z3lfcmVjb3JkLnByb3RvGhpzdHJ1X2N1dF9zY2VuZV9pbmZvcy5wcm90bxoV",
-            "c3RydV9jdXRzX3N0YXRlLnByb3RvGh5zdHJ1X2Ryb3BfY29udGFpbmVyX2lu",
-            "Zm8ucHJvdG8aF3N0cnVfZHVuZ2Vvbl9saXN0LnByb3RvGhZzdHJ1X2VuZXJn",
-            "eV9pdGVtLnByb3RvGhVzdHJ1X2VxdWlwX2xpc3QucHJvdG8aGHN0cnVfZXhj",
-            "aGFuZ2VfaXRlbS5wcm90bxoac3RydV9mYXNoaW9uX2JlbmVmaXQucHJvdG8a",
-            "FnN0cnVfZmFzaGlvbl9tZ3IucHJvdG8aFnN0cnVfZmlnaHRfcG9pbnQucHJv",
-            "dG8aF3N0cnVfZmlzaF9zZXR0aW5nLnByb3RvGhdzdHJ1X2ZyZWlnaHRfZGF0",
-            "YS5wcm90bxoYc3RydV9mdW5jdGlvbl9kYXRhLnByb3RvGhVzdHJ1X2dhc2hh",
-            "X2RhdGEucHJvdG8aGHN0cnVfaGFuZGJvb2tfZGF0YS5wcm90bxobc3RydV9p",
-            "bnRlcmFjdGlvbl9pbmZvLnByb3RvGhtzdHJ1X2ludmVzdGlnYXRlX2xpc3Qu",
-            "cHJvdG8aGHN0cnVfaXRlbV9jdXJyZW5jeS5wcm90bxoXc3RydV9pdGVtX3Bh",
-            "Y2thZ2UucHJvdG8aIHN0cnVfbGF1bmNoX3ByaXZpbGVnZV9kYXRhLnByb3Rv",
-            "GhpzdHJ1X2xpZmVfcHJvZmVzc2lvbi5wcm90bxofc3RydV9saWZlX3Byb2Zl",
-            "c3Npb25fd29yay5wcm90bxoac3RydV9sdWNreV92YWx1ZV9tZ3IucHJvdG8a",
-            "HHN0cnVfbWFpbF9jbGFpbWVkX2luZm8ucHJvdG8aHXN0cnVfbWFwX2Jvb2tf",
-            "aW5mb19saXN0LnByb3RvGhNzdHJ1X21hcF9kYXRhLnByb3RvGiNzdHJ1X21h",
-            "c3Rlcl9tb2RlX2R1bmdlb25faW5mby5wcm90bxoUc3RydV9taXNjX2luZm8u",
-            "cHJvdG8aDnN0cnVfbW9kLnByb3RvGh9zdHJ1X21vbnN0ZXJfZXhwbG9yZV9s",
-            "aXN0LnByb3RvGhxzdHJ1X21vbnN0ZXJfaHVudF9pbmZvLnByb3RvGhdzdHJ1",
-            "X21vbnRobHlfY2FyZC5wcm90bxoWc3RydV9uZXdiaWVfZGF0YS5wcm90bxol",
-            "c3RydV9ub3RfZ2V0X3Byb2NlZWRfYXdhcmRfaW5mby5wcm90bxoec3RydV9w",
-            "YXJrb3VyX3JlY29yZF9saXN0LnByb3RvGhlzdHJ1X3BheV9vcmRlcl9saXN0",
-            "LnByb3RvGhpzdHJ1X3BlcnNvbmFsX29iamVjdC5wcm90bxojc3RydV9wZXJz",
-            "b25hbF93b3JsZF9ib3NzX2luZm8ucHJvdG8aGHN0cnVfcGVyc29uYWxfem9u",
-            "ZS5wcm90bxoXc3RydV9waW9uZWVyX2RhdGEucHJvdG8aEHN0cnVfcGl2b3Qu",
-            "cHJvdG8aGHN0cnVfcGxhbmV0X21lbW9yeS5wcm90bxoVc3RydV9wbGF5ZXJf",
-            "Ym94LnByb3RvGiZzdHJ1X3BsYXllcl9vcmRlcl9jb210YWluZXJfaW5mby5w",
-            "cm90bxoYc3RydV9wbGF5ZXJfcmVjb3JkLnByb3RvGhZzdHJ1X3BsYXlfaGVs",
-            "cGVyLnByb3RvGiBzdHJ1X3ByaXZpbGVnZV9lZmZlY3RfZGF0YS5wcm90bxoa",
-            "c3RydV9wcm9mZXNzaW9uX2xpc3QucHJvdG8aF3N0cnVfcHJvZmlsZV9saXN0",
-            "LnByb3RvGhpzdHJ1X3F1ZXN0X2RhdGFfbGlzdC5wcm90bxoYc3RydV9yZWNo",
-            "YXJnZV9kYXRhLnByb3RvGhdzdHJ1X3JlZF9kb3RfZGF0YS5wcm90bxoUc3Ry",
-            "dV9yZXNvbmFuY2UucHJvdG8aFHN0cnVfcmlkZV9saXN0LnByb3RvGhRzdHJ1",
-            "X3JvbGVfZmFjZS5wcm90bxoVc3RydV9yb2xlX2xldmVsLnByb3RvGhVzdHJ1",
-            "X3NjZW5lX2RhdGEucHJvdG8aGXN0cnVfc2NlbmVfbHVhX2RhdGEucHJvdG8a",
-            "InN0cnVfc2Vhc29uX2FjaGlldmVtZW50X2xpc3QucHJvdG8aHHN0cnVfc2Vh",
-            "c29uX2FjdGl2YXRpb24ucHJvdG8aGHN0cnVfc2Vhc29uX2NlbnRlci5wcm90",
-            "bxocc3RydV9zZWFzb25fbWVkYWxfaW5mby5wcm90bxocc3RydV9zZWFzb25f",
-            "cXVlc3RfbGlzdC5wcm90bxobc3RydV9zZWFzb25fcmFua19saXN0LnByb3Rv",
-            "GhhzdHJ1X3NlYXNvbl90YXJnZXQucHJvdG8aF3N0cnVfc2V0dGluZ19kYXRh",
-            "LnByb3RvGhRzdHJ1X3Nob3BfZGF0YS5wcm90bxoac3RydV9zaG93X3BpZWNl",
-            "X2RhdGEucHJvdG8aFHN0cnVfc2lnbl9pbmZvLnByb3RvGg9zdHJ1X3Nsb3Qu",
-            "cHJvdG8aGnN0cnVfc3RhdGlzdGljc19kYXRhLnByb3RvGhpzdHJ1X3N5bmNf",
-            "YXdhcmRfZGF0YS5wcm90bxoic3RydV90aW1lcl9yZWZyZXNoX2RhdGFfbGlz",
-            "dC5wcm90bxoZc3RydV90cmFuc2Zlcl9wb2ludC5wcm90bxoTc3RydV90cmVh",
-            "c3VyZS5wcm90bxoVc3RydV90cmlhbF9yb2FkLnByb3RvGhxzdHJ1X3VubG9j",
-            "a19lbW9qaV9kYXRhLnByb3RvGh1zdHJ1X3VzZXJfYWN0aXZpdHlfbGlzdC5w",
-            "cm90bxoac3RydV91c2VyX2ZpZ2h0X2F0dHIucHJvdG8aI3N0cnVfdXNlcl9y",
-            "ZWNvbW1lbmRfcGxheV9kYXRhLnByb3RvGh5zdHJ1X3dlZWtseV90b3dlcl9y",
-            "ZWNvcmQucHJvdG8aGnN0cnVfd29ybGRfZXZlbnRfbWFwLnByb3RvGhVzdHJ1",
-            "X2RpcnR5X21hc2sucHJvdG8i2yIKDUNoYXJTZXJpYWxpemUSDwoHY2hhcl9p",
-            "ZBgBIAEoAxInCgljaGFyX2Jhc2UYAiABKAsyFC56cHJvdG8uQ2hhckJhc2VJ",
-            "bmZvEiUKCnNjZW5lX2RhdGEYAyABKAsyES56cHJvdG8uU2NlbmVEYXRhEiwK",
-            "DnNjZW5lX2x1YV9kYXRhGAQgASgLMhQuenByb3RvLlNjZW5lTHVhRGF0YRIp",
-            "CgxwaW9uZWVyX2RhdGEYBSABKAsyEy56cHJvdG8uUGlvbmVlckRhdGESJQoJ",
-            "YnVmZl9pbmZvGAYgASgLMhIuenByb3RvLkJ1ZmZEQkluZm8SKQoMaXRlbV9w",
-            "YWNrYWdlGAcgASgLMhMuenByb3RvLkl0ZW1QYWNrYWdlEikKCnF1ZXN0X2xp",
-            "c3QYCCABKAsyFS56cHJvdG8uUXVlc3REYXRhTGlzdBIpCgxzZXR0aW5nX2Rh",
-            "dGEYCSABKAsyEy56cHJvdG8uU2V0dGluZ0RhdGESIwoJbWlzY19pbmZvGAog",
-            "ASgLMhAuenByb3RvLk1pc2NJbmZvEiwKDmV4Y2hhbmdlX2l0ZW1zGAsgASgL",
-            "MhQuenByb3RvLkV4Y2hhbmdlSXRlbRIgCgVlcXVpcBgMIAEoCzIRLnpwcm90",
-            "by5FcXVpcExpc3QSJwoLZW5lcmd5X2l0ZW0YDSABKAsyEi56cHJvdG8uRW5l",
-            "cmd5SXRlbRIhCghtYXBfZGF0YRgOIAEoCzIPLnpwcm90by5NYXBEYXRhEikK",
-            "DGR1bmdlb25fbGlzdBgPIAEoCzITLnpwcm90by5EdW5nZW9uTGlzdBIjCgRh",
-            "dHRyGBAgASgLMhUuenByb3RvLlVzZXJGaWdodEF0dHISIwoHZmFzaGlvbhgR",
-            "IAEoCzISLnpwcm90by5GYXNoaW9uTWdyEikKDHByb2ZpbGVfbGlzdBgSIAEo",
-            "CzITLnpwcm90by5Qcm9maWxlTGlzdBIgCgRoZWxwGBMgASgLMhIuenByb3Rv",
-            "LlBsYXlIZWxwZXISKQoMY291bnRlcl9saXN0GBQgASgLMhMuenByb3RvLkNv",
-            "dW50ZXJMaXN0EiwKDHBlcnNvbmFsX29iahgVIAEoCzIWLnpwcm90by5QZXJz",
-            "b25hbE9iamVjdBIlCgpyb2xlX2xldmVsGBYgASgLMhEuenByb3RvLlJvbGVM",
-            "ZXZlbBIcCgVwaXZvdBgXIAEoCzINLnpwcm90by5QaXZvdBItCg50cmFuc2Zl",
-            "cl9wb2ludBgYIAEoCzIVLnpwcm90by5UcmFuc2ZlclBvaW50EisKDXBsYW5l",
-            "dF9tZW1vcnkYGSABKAsyFC56cHJvdG8uUGxhbmV0TWVtb3J5EjIKFHBsYW5l",
-            "dF9tZW1vcnlfdGFyZ2V0GBogASgLMhQuenByb3RvLlNlYXNvblRhcmdldBIj",
-            "CgdyZWRfZG90GBsgASgLMhIuenByb3RvLlJlZERvdERhdGESJAoJcmVzb25h",
-            "bmNlGBwgASgLMhEuenByb3RvLlJlc29uYW5jZRIlCgpjdXRzX3N0YXRlGB0g",
-            "ASgLMhEuenByb3RvLkN1dHNTdGF0ZRIxChBpbnZlc3RpZ2F0ZV9saXN0GB4g",
-            "ASgLMhcuenByb3RvLkludmVzdGlnYXRlTGlzdBIqCgdyZWNvcmRzGB8gASgL",
-            "MhkuenByb3RvLlBhcmtvdXJSZWNvcmRMaXN0EiwKC2ludGVyYWN0aW9uGCAg",
-            "ASgLMhcuenByb3RvLkludGVyYWN0aW9uSW5mbxIyChFzZWFzb25fcXVlc3Rf",
-            "bGlzdBghIAEoCzIXLnpwcm90by5TZWFzb25RdWVzdExpc3QSIwoJcm9sZV9m",
-            "YWNlGCIgASgLMhAuenByb3RvLlJvbGVGYWNlEi4KDW1hcF9ib29rX2xpc3QY",
-            "IyABKAsyFy56cHJvdG8uTWFwQm9va0luZm9MaXN0EisKDWZ1bmN0aW9uX2Rh",
-            "dGEYJCABKAsyFC56cHJvdG8uRnVuY3Rpb25EYXRhEiwKCWFudGlfaW5mbxgl",
-            "IAEoCzIZLnpwcm90by5BbnRpQWRkaWN0aW9uSW5mbxI4ChRtb25zdGVyX2V4",
-            "cGxvcmVfbGlzdBgmIAEoCzIaLnpwcm90by5Nb25zdGVyRXhwbG9yZUxpc3QS",
-            "LgoPc2hvd19waWVjZV9kYXRhGCcgASgLMhUuenByb3RvLlNob3dQaWVjZURh",
-            "dGESLwoPY29sbGVjdGlvbl9ib29rGCogASgLMhYuenByb3RvLkNvbGxlY3Rp",
-            "b25Cb29rEkMKG25vdF9nZXRfcHJvY2VlZF9hd2FyZF90aW1lcxgrIAEoCzIe",
-            "Lnpwcm90by5Ob3RHZXRQcm9jZWVkQXdhcmRJbmZvEiMKCWNvb2tfbGlzdBgs",
-            "IAEoCzIQLnpwcm90by5Db29rTGlzdBI3ChFyZWZyZXNoX2RhdGFfbGlzdBgt",
-            "IAEoCzIcLnpwcm90by5UaW1lclJlZnJlc2hEYXRhTGlzdBI8ChZjaGFsbGVu",
-            "Z2VfZHVuZ2Vvbl9pbmZvGC4gASgLMhwuenByb3RvLkNoYWxsZW5nZUR1bmdl",
-            "b25JbmZvEi4KD3N5bmNfYXdhcmRfZGF0YRgvIAEoCzIVLnpwcm90by5TeW5j",
-            "QXdhcmREYXRhEj4KF3NlYXNvbl9hY2hpZXZlbWVudF9saXN0GDAgASgLMh0u",
-            "enByb3RvLlNlYXNvbkFjaGlldmVtZW50TGlzdBIwChBzZWFzb25fcmFua19s",
-            "aXN0GDEgASgLMhYuenByb3RvLlNlYXNvblJhbmtMaXN0EisKDXNlYXNvbl9j",
-            "ZW50ZXIYMiABKAsyFC56cHJvdG8uU2Vhc29uQ2VudGVyEisKDXBlcnNvbmFs",
-            "X3pvbmUYMyABKAsyFC56cHJvdG8uUGVyc29uYWxab25lEjIKEXNlYXNvbl9t",
-            "ZWRhbF9pbmZvGDQgASgLMhcuenByb3RvLlNlYXNvbk1lZGFsSW5mbxI2ChNj",
-            "b21tdW5pdHlfaG9tZV9pbmZvGDUgASgLMhkuenByb3RvLkNvbW11bml0eUhv",
-            "bWVEYXRhEjMKEXNlYXNvbl9hY3RpdmF0aW9uGDYgASgLMhguenByb3RvLlNl",
-            "YXNvbkFjdGl2YXRpb24SGwoFc2xvdHMYNyABKAsyDC56cHJvdG8uU2xvdBIy",
-            "ChFtb25zdGVyX2h1bnRfaW5mbxg4IAEoCzIXLnpwcm90by5Nb25zdGVySHVu",
-            "dEluZm8SGAoDbW9kGDkgASgLMgsuenByb3RvLk1vZBIuCg93b3JsZF9ldmVu",
-            "dF9tYXAYOiABKAsyFS56cHJvdG8uV29ybGRFdmVudE1hcBIpCgxmaXNoX3Nl",
-            "dHRpbmcYOyABKAsyEy56cHJvdG8uRmlzaFNldHRpbmcSKQoMZnJlaWdodF9k",
-            "YXRhGDwgASgLMhMuenByb3RvLkZyZWlnaHREYXRhEi8KD3Byb2Zlc3Npb25f",
-            "bGlzdBg9IAEoCzIWLnpwcm90by5Qcm9mZXNzaW9uTGlzdBIlCgp0cmlhbF9y",
-            "b2FkGD4gASgLMhEuenByb3RvLlRyaWFsUm9hZBIlCgpnYXNoYV9kYXRhGD8g",
-            "ASgLMhEuenByb3RvLkdhc2hhRGF0YRIjCglzaG9wX2RhdGEYQCABKAsyEC56",
-            "cHJvdG8uU2hvcERhdGESPwoYcGVyc29uYWxfd29ybGRfYm9zc19pbmZvGEEg",
-            "ASgLMh0uenByb3RvLlBlcnNvbmFsV29ybGRCb3NzSW5mbxIvCgxjcmFmdF9l",
-            "bmVyZ3kYQiABKAsyGS56cHJvdG8uQ3JhZnRFbmVyZ3lSZWNvcmQSLwoMd2Vl",
-            "a2x5X3Rvd2VyGEMgASgLMhkuenByb3RvLldlZWtseVRvd2VyUmVjb3JkEi4K",
-            "D2N1dF9zY2VuZV9pbmZvcxhEIAEoCzIVLnpwcm90by5DdXRTY2VuZUluZm9z",
-            "EjoKE3JlY29tbWVuZF9wbGF5X2RhdGEYRSABKAsyHS56cHJvdG8uVXNlclJl",
-            "Y29tbWVuZFBsYXlEYXRhEiMKCXJpZGVfbGlzdBhGIAEoCzIQLnpwcm90by5S",
-            "aWRlTGlzdBIsCg5wYXlfb3JkZXJfbGlzdBhHIAEoCzIULnpwcm90by5QYXlP",
-            "cmRlckxpc3QSLwoPbGlmZV9wcm9mZXNzaW9uGEggASgLMhYuenByb3RvLkxp",
-            "ZmVQcm9mZXNzaW9uEjgKFGxpZmVfcHJvZmVzc2lvbl93b3JrGEkgASgLMhou",
-            "enByb3RvLkxpZmVQcm9mZXNzaW9uV29yaxI0ChJ1c2VyX2FjdGl2aXR5X2xp",
-            "c3QYSiABKAsyGC56cHJvdG8uVXNlckFjdGl2aXR5TGlzdBIrCg1wbGF5ZXJf",
-            "cmVjb3JkGEsgASgLMhQuenByb3RvLlBsYXllclJlY29yZBIxCg5kcm9wX2Nv",
-            "bnRhaW5lchhMIAEoCzIZLnpwcm90by5Ecm9wQ29udGFpbmVySW5mbxIpCgxt",
-            "b250aGx5X2NhcmQYTSABKAsyEy56cHJvdG8uTW9udGhseUNhcmQSLwoPZmFz",
-            "aGlvbl9iZW5lZml0GE4gASgLMhYuenByb3RvLkZhc2hpb25CZW5lZml0EisK",
-            "DWl0ZW1fY3VycmVuY3kYTyABKAsyFC56cHJvdG8uSXRlbUN1cnJlbmN5EjoK",
-            "FXByaXZpbGVnZV9lZmZlY3RfZGF0YRhQIAEoCzIbLnpwcm90by5Qcml2aWxl",
-            "Z2VFZmZlY3REYXRhEiIKCHRyZWFzdXJlGFEgASgLMhAuenByb3RvLlRyZWFz",
-            "dXJlEjIKEXVubG9ja19lbW9qaV9kYXRhGFIgASgLMhcuenByb3RvLlVubG9j",
-            "a0Vtb2ppRGF0YRJFChtwbGF5ZXJfb3JkZXJfY29tdGFpbmVyX2luZm8YUyAB",
-            "KAsyIC56cHJvdG8uUGxheWVyT3JkZXJDb210YWluZXJJbmZvEiUKCnBsYXll",
-            "cl9ib3gYVCABKAsyES56cHJvdG8uUGxheWVyQm94EjoKFWxhdW5jaF9wcml2",
-            "aWxlZ2VfZGF0YRhVIAEoCzIbLnpwcm90by5MYXVuY2hQcml2aWxlZ2VEYXRh",
-            "EjAKEGJhdHRsZV9wYXNzX2RhdGEYViABKAsyFi56cHJvdG8uQmF0dGxlUGFz",
-            "c0RhdGESKwoNcmVjaGFyZ2VfZGF0YRhXIAEoCzIULnpwcm90by5SZWNoYXJn",
-            "ZURhdGESLgoPbHVja3lfdmFsdWVfbWdyGFggASgLMhUuenByb3RvLkx1Y2t5",
-            "VmFsdWVNZ3ISKwoNaGFuZGJvb2tfZGF0YRhZIAEoCzIULnpwcm90by5IYW5k",
-            "Ym9va0RhdGESPwoYbWFzdGVyX21vZGVfZHVuZ2Vvbl9pbmZvGFogASgLMh0u",
-            "enByb3RvLk1hc3Rlck1vZGVEdW5nZW9uSW5mbxIvCg9zdGF0aXN0aWNzX2Rh",
-            "dGEYWyABKAsyFi56cHJvdG8uU3RhdGlzdGljc0RhdGESPgoWY29tcGVuc3Rp",
-            "b25fc3RhdGlzdGljcxhcIAEoCzIeLnpwcm90by5Db21wZW5zYXRpb25TdGF0",
-            "aXN0aWNzEi4KD2J1YmJsZV9hY3RfZGF0YRhdIAEoCzIVLnpwcm90by5CdWJi",
-            "bGVBY3REYXRhEjIKEW1haWxfY2xhaW1lZF9pbmZvGF4gASgLMhcuenByb3Rv",
-            "Lk1haWxDbGFpbWVkSW5mbxInCgtuZXdiaWVfZGF0YRhfIAEoCzISLnpwcm90",
-            "by5OZXdiaWVEYXRhEicKC2ZpZ2h0X3BvaW50GGAgASgLMhIuenByb3RvLkZp",
-            "Z2h0UG9pbnQSHgoEc2lnbhhhIAEoCzIQLnpwcm90by5TaWduSW5mbxI4ChRj",
-            "aGFyX3N0YXRpc3RpY3NfZGF0YRhiIAEoCzIaLnpwcm90by5DaGFyU3RhdGlz",
-            "dGljc0RhdGFiBnByb3RvMw=="));
+            "ChlzdHJ1X2NoYXJfc2VyaWFsaXplLnByb3RvEgZ6cHJvdG8aIXN0cnVfYWN0",
+            "aW9uX2dyb3VwX3NhdmVfZGF0YS5wcm90bxoec3RydV9hbnRpX2FkZGljdGlv",
+            "bl9pbmZvLnByb3RvGhhzdHJ1X2JhY2tmbG93X2RhdGEucHJvdG8aG3N0cnVf",
+            "YmF0dGxlX3Bhc3NfZGF0YS5wcm90bxoac3RydV9idWJibGVfYWN0X2RhdGEu",
+            "cHJvdG8aGHN0cnVfYnVmZl9kX2JfaW5mby5wcm90bxohc3RydV9jaGFsbGVu",
+            "Z2VfZHVuZ2Vvbl9pbmZvLnByb3RvGhlzdHJ1X2NoYXJfYmFzZV9pbmZvLnBy",
+            "b3RvGh9zdHJ1X2NoYXJfc3RhdGlzdGljc19kYXRhLnByb3RvGhpzdHJ1X2Nv",
+            "bGxlY3Rpb25fYm9vay5wcm90bxomc3RydV9jb21tb25fdGFyZ2V0X2FjdGl2",
+            "aXR5X2xpc3QucHJvdG8aHnN0cnVfY29tbXVuaXR5X2hvbWVfZGF0YS5wcm90",
+            "bxoic3RydV9jb21wZW5zYXRpb25fc3RhdGlzdGljcy5wcm90bxoUc3RydV9j",
+            "b29rX2xpc3QucHJvdG8aF3N0cnVfY291bnRlcl9saXN0LnByb3RvGh5zdHJ1",
+            "X2NyYWZ0X2VuZXJneV9yZWNvcmQucHJvdG8aLXN0cnVfY3VycmVudF9wcm9m",
+            "ZXNzaW9uX3Byb2plY3RfaWRfaW5mby5wcm90bxoac3RydV9jdXRfc2NlbmVf",
+            "aW5mb3MucHJvdG8aFXN0cnVfY3V0c19zdGF0ZS5wcm90bxoec3RydV9kcm9w",
+            "X2NvbnRhaW5lcl9pbmZvLnByb3RvGhdzdHJ1X2R1bmdlb25fbGlzdC5wcm90",
+            "bxoUc3RydV9kdXR5X2xpc3QucHJvdG8aFnN0cnVfZW5lcmd5X2l0ZW0ucHJv",
+            "dG8aFXN0cnVfZXF1aXBfbGlzdC5wcm90bxoYc3RydV9leGNoYW5nZV9pdGVt",
+            "LnByb3RvGhpzdHJ1X2Zhc2hpb25fYmVuZWZpdC5wcm90bxoWc3RydV9mYXNo",
+            "aW9uX21nci5wcm90bxoWc3RydV9maWdodF9wb2ludC5wcm90bxoXc3RydV9m",
+            "aXNoX3NldHRpbmcucHJvdG8aF3N0cnVfZnJlaWdodF9kYXRhLnByb3RvGhhz",
+            "dHJ1X2Z1bmN0aW9uX2RhdGEucHJvdG8aFXN0cnVfZ2FzaGFfZGF0YS5wcm90",
+            "bxoYc3RydV9oYW5kYm9va19kYXRhLnByb3RvGhlzdHJ1X2hpZGVfc2Vla19p",
+            "bmZvLnByb3RvGhVzdHJ1X2hvYmJ5X2RhdGEucHJvdG8aHHN0cnVfaWNoaWJh",
+            "bl9rdWppX2RhdGEucHJvdG8aG3N0cnVfaW50ZXJhY3Rpb25faW5mby5wcm90",
+            "bxobc3RydV9pbnZlc3RpZ2F0ZV9saXN0LnByb3RvGhxzdHJ1X2l0ZW1fY291",
+            "bnRlcl9saXN0LnByb3RvGhhzdHJ1X2l0ZW1fY3VycmVuY3kucHJvdG8aF3N0",
+            "cnVfaXRlbV9wYWNrYWdlLnByb3RvGiBzdHJ1X2xhdW5jaF9wcml2aWxlZ2Vf",
+            "ZGF0YS5wcm90bxoac3RydV9saWZlX3Byb2Zlc3Npb24ucHJvdG8aJ3N0cnVf",
+            "bGlmZV9wcm9mZXNzaW9uX2VudHJ1c3RfaW5mby5wcm90bxofc3RydV9saWZl",
+            "X3Byb2Zlc3Npb25fd29yay5wcm90bxoac3RydV9sdWNreV92YWx1ZV9tZ3Iu",
+            "cHJvdG8aHHN0cnVfbWFpbF9jbGFpbWVkX2luZm8ucHJvdG8aHXN0cnVfbWFw",
+            "X2Jvb2tfaW5mb19saXN0LnByb3RvGhNzdHJ1X21hcF9kYXRhLnByb3RvGiNz",
+            "dHJ1X21hc3Rlcl9tb2RlX2R1bmdlb25faW5mby5wcm90bxoWc3RydV9tZW50",
+            "b3JfZGF0YS5wcm90bxoUc3RydV9taXNjX2luZm8ucHJvdG8aDnN0cnVfbW9k",
+            "LnByb3RvGh9zdHJ1X21vbnN0ZXJfZXhwbG9yZV9saXN0LnByb3RvGhxzdHJ1",
+            "X21vbnN0ZXJfaHVudF9pbmZvLnByb3RvGhdzdHJ1X21vbnRobHlfY2FyZC5w",
+            "cm90bxomc3RydV9uZXdiaWVfYmFja2Zsb3dfcHVibGljX2RhdGEucHJvdG8a",
+            "FnN0cnVfbmV3YmllX2RhdGEucHJvdG8aJXN0cnVfbm90X2dldF9wcm9jZWVk",
+            "X2F3YXJkX2luZm8ucHJvdG8aHnN0cnVfcGFya291cl9yZWNvcmRfbGlzdC5w",
+            "cm90bxoZc3RydV9wYXlfb3JkZXJfbGlzdC5wcm90bxoac3RydV9wZXJzb25h",
+            "bF9vYmplY3QucHJvdG8aI3N0cnVfcGVyc29uYWxfd29ybGRfYm9zc19pbmZv",
+            "LnByb3RvGhhzdHJ1X3BlcnNvbmFsX3pvbmUucHJvdG8aF3N0cnVfcGlvbmVl",
+            "cl9kYXRhLnByb3RvGhBzdHJ1X3Bpdm90LnByb3RvGhhzdHJ1X3BsYW5ldF9t",
+            "ZW1vcnkucHJvdG8aFXN0cnVfcGxheWVyX2JveC5wcm90bxomc3RydV9wbGF5",
+            "ZXJfb3JkZXJfY29tdGFpbmVyX2luZm8ucHJvdG8aGHN0cnVfcGxheWVyX3Jl",
+            "Y29yZC5wcm90bxoWc3RydV9wbGF5X2hlbHBlci5wcm90bxogc3RydV9wcml2",
+            "aWxlZ2VfZWZmZWN0X2RhdGEucHJvdG8aGnN0cnVfcHJvZmVzc2lvbl9saXN0",
+            "LnByb3RvGhdzdHJ1X3Byb2ZpbGVfbGlzdC5wcm90bxoac3RydV9xdWVzdF9k",
+            "YXRhX2xpc3QucHJvdG8aGHN0cnVfcmVjaGFyZ2VfZGF0YS5wcm90bxoXc3Ry",
+            "dV9yZWRfZG90X2RhdGEucHJvdG8aGnN0cnVfcmVwdXRhdGlvbl9saXN0LnBy",
+            "b3RvGhRzdHJ1X3Jlc29uYW5jZS5wcm90bxoUc3RydV9yaWRlX2xpc3QucHJv",
+            "dG8aFXN0cnVfcm9ndWVfZGF0YS5wcm90bxoUc3RydV9yb2xlX2ZhY2UucHJv",
+            "dG8aFXN0cnVfcm9sZV9sZXZlbC5wcm90bxoVc3RydV9zY2VuZV9kYXRhLnBy",
+            "b3RvGhlzdHJ1X3NjZW5lX2x1YV9kYXRhLnByb3RvGiJzdHJ1X3NlYXNvbl9h",
+            "Y2hpZXZlbWVudF9saXN0LnByb3RvGhxzdHJ1X3NlYXNvbl9hY3RpdmF0aW9u",
+            "LnByb3RvGhhzdHJ1X3NlYXNvbl9jZW50ZXIucHJvdG8aJXN0cnVfc2Vhc29u",
+            "X2N1bHRpdmF0ZV9saW5lX2RhdGEucHJvdG8aHHN0cnVfc2Vhc29uX21lZGFs",
+            "X2luZm8ucHJvdG8aHHN0cnVfc2Vhc29uX3F1ZXN0X2xpc3QucHJvdG8aG3N0",
+            "cnVfc2Vhc29uX3JhbmtfbGlzdC5wcm90bxohc3RydV9zZWFzb25fcm9sZV9s",
+            "ZXZlbF9kYXRhLnByb3RvGhhzdHJ1X3NlYXNvbl90YXJnZXQucHJvdG8aF3N0",
+            "cnVfc2V0dGluZ19kYXRhLnByb3RvGhRzdHJ1X3Nob3BfZGF0YS5wcm90bxoa",
+            "c3RydV9zaG93X3BpZWNlX2RhdGEucHJvdG8aFHN0cnVfc2lnbl9pbmZvLnBy",
+            "b3RvGg9zdHJ1X3Nsb3QucHJvdG8aGnN0cnVfc3RhdGlzdGljc19kYXRhLnBy",
+            "b3RvGhpzdHJ1X3N0b3J5X2RhdGFfbGlzdC5wcm90bxoac3RydV9zeW5jX2F3",
+            "YXJkX2RhdGEucHJvdG8aInN0cnVfdGltZXJfcmVmcmVzaF9kYXRhX2xpc3Qu",
+            "cHJvdG8aGXN0cnVfdHJhbnNmZXJfcG9pbnQucHJvdG8aE3N0cnVfdHJlYXN1",
+            "cmUucHJvdG8aFXN0cnVfdHJpYWxfcm9hZC5wcm90bxocc3RydV91bmxvY2tf",
+            "ZW1vamlfZGF0YS5wcm90bxodc3RydV91c2VyX2FjdGl2aXR5X2xpc3QucHJv",
+            "dG8aGnN0cnVfdXNlcl9maWdodF9hdHRyLnByb3RvGhpzdHJ1X3VzZXJfZ2Ft",
+            "ZXNfaW5mby5wcm90bxocc3RydV91c2VyX21haGpvbmdfaW5mby5wcm90bxoj",
+            "c3RydV91c2VyX3JlY29tbWVuZF9wbGF5X2RhdGEucHJvdG8aHHN0cnVfdXNl",
+            "cl91bmlvbl90YXJnZXQucHJvdG8aGXN0cnVfdmFuaXR5X3BldF9tZ3IucHJv",
+            "dG8aHnN0cnVfd2Vla2x5X3Rvd2VyX3JlY29yZC5wcm90bxoac3RydV93b3Js",
+            "ZF9ldmVudF9tYXAucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLENwoN",
+            "Q2hhclNlcmlhbGl6ZRIWCgZjaGFySWQYASABKANSBmNoYXJJZBIwCghjaGFy",
+            "QmFzZRgCIAEoCzIULnpwcm90by5DaGFyQmFzZUluZm9SCGNoYXJCYXNlEi8K",
+            "CXNjZW5lRGF0YRgDIAEoCzIRLnpwcm90by5TY2VuZURhdGFSCXNjZW5lRGF0",
+            "YRI4CgxzY2VuZUx1YURhdGEYBCABKAsyFC56cHJvdG8uU2NlbmVMdWFEYXRh",
+            "UgxzY2VuZUx1YURhdGESNQoLcGlvbmVlckRhdGEYBSABKAsyEy56cHJvdG8u",
+            "UGlvbmVlckRhdGFSC3Bpb25lZXJEYXRhEi4KCGJ1ZmZJbmZvGAYgASgLMhIu",
+            "enByb3RvLkJ1ZmZEQkluZm9SCGJ1ZmZJbmZvEjUKC2l0ZW1QYWNrYWdlGAcg",
+            "ASgLMhMuenByb3RvLkl0ZW1QYWNrYWdlUgtpdGVtUGFja2FnZRIzCglxdWVz",
+            "dExpc3QYCCABKAsyFS56cHJvdG8uUXVlc3REYXRhTGlzdFIJcXVlc3RMaXN0",
+            "EjUKC3NldHRpbmdEYXRhGAkgASgLMhMuenByb3RvLlNldHRpbmdEYXRhUgtz",
+            "ZXR0aW5nRGF0YRIsCghtaXNjSW5mbxgKIAEoCzIQLnpwcm90by5NaXNjSW5m",
+            "b1IIbWlzY0luZm8SOgoNZXhjaGFuZ2VJdGVtcxgLIAEoCzIULnpwcm90by5F",
+            "eGNoYW5nZUl0ZW1SDWV4Y2hhbmdlSXRlbXMSJwoFZXF1aXAYDCABKAsyES56",
+            "cHJvdG8uRXF1aXBMaXN0UgVlcXVpcBIyCgplbmVyZ3lJdGVtGA0gASgLMhIu",
+            "enByb3RvLkVuZXJneUl0ZW1SCmVuZXJneUl0ZW0SKQoHbWFwRGF0YRgOIAEo",
+            "CzIPLnpwcm90by5NYXBEYXRhUgdtYXBEYXRhEjUKC2R1bmdlb25MaXN0GA8g",
+            "ASgLMhMuenByb3RvLkR1bmdlb25MaXN0UgtkdW5nZW9uTGlzdBIpCgRhdHRy",
+            "GBAgASgLMhUuenByb3RvLlVzZXJGaWdodEF0dHJSBGF0dHISLAoHZmFzaGlv",
+            "bhgRIAEoCzISLnpwcm90by5GYXNoaW9uTWdyUgdmYXNoaW9uEjUKC3Byb2Zp",
+            "bGVMaXN0GBIgASgLMhMuenByb3RvLlByb2ZpbGVMaXN0Ugtwcm9maWxlTGlz",
+            "dBImCgRoZWxwGBMgASgLMhIuenByb3RvLlBsYXlIZWxwZXJSBGhlbHASNQoL",
+            "Y291bnRlckxpc3QYFCABKAsyEy56cHJvdG8uQ291bnRlckxpc3RSC2NvdW50",
+            "ZXJMaXN0EjgKC3BlcnNvbmFsT2JqGBUgASgLMhYuenByb3RvLlBlcnNvbmFs",
+            "T2JqZWN0UgtwZXJzb25hbE9iahIvCglyb2xlTGV2ZWwYFiABKAsyES56cHJv",
+            "dG8uUm9sZUxldmVsUglyb2xlTGV2ZWwSIwoFcGl2b3QYFyABKAsyDS56cHJv",
+            "dG8uUGl2b3RSBXBpdm90EjsKDXRyYW5zZmVyUG9pbnQYGCABKAsyFS56cHJv",
+            "dG8uVHJhbnNmZXJQb2ludFINdHJhbnNmZXJQb2ludBI4CgxwbGFuZXRNZW1v",
+            "cnkYGSABKAsyFC56cHJvdG8uUGxhbmV0TWVtb3J5UgxwbGFuZXRNZW1vcnkS",
+            "RAoScGxhbmV0TWVtb3J5VGFyZ2V0GBogASgLMhQuenByb3RvLlNlYXNvblRh",
+            "cmdldFIScGxhbmV0TWVtb3J5VGFyZ2V0EioKBnJlZERvdBgbIAEoCzISLnpw",
+            "cm90by5SZWREb3REYXRhUgZyZWREb3QSLwoJcmVzb25hbmNlGBwgASgLMhEu",
+            "enByb3RvLlJlc29uYW5jZVIJcmVzb25hbmNlEi8KCWN1dHNTdGF0ZRgdIAEo",
+            "CzIRLnpwcm90by5DdXRzU3RhdGVSCWN1dHNTdGF0ZRJBCg9pbnZlc3RpZ2F0",
+            "ZUxpc3QYHiABKAsyFy56cHJvdG8uSW52ZXN0aWdhdGVMaXN0Ug9pbnZlc3Rp",
+            "Z2F0ZUxpc3QSMwoHcmVjb3JkcxgfIAEoCzIZLnpwcm90by5QYXJrb3VyUmVj",
+            "b3JkTGlzdFIHcmVjb3JkcxI5CgtpbnRlcmFjdGlvbhggIAEoCzIXLnpwcm90",
+            "by5JbnRlcmFjdGlvbkluZm9SC2ludGVyYWN0aW9uEkEKD3NlYXNvblF1ZXN0",
+            "TGlzdBghIAEoCzIXLnpwcm90by5TZWFzb25RdWVzdExpc3RSD3NlYXNvblF1",
+            "ZXN0TGlzdBIsCghyb2xlRmFjZRgiIAEoCzIQLnpwcm90by5Sb2xlRmFjZVII",
+            "cm9sZUZhY2USOQoLbWFwQm9va0xpc3QYIyABKAsyFy56cHJvdG8uTWFwQm9v",
+            "a0luZm9MaXN0UgttYXBCb29rTGlzdBI4CgxGdW5jdGlvbkRhdGEYJCABKAsy",
+            "FC56cHJvdG8uRnVuY3Rpb25EYXRhUgxGdW5jdGlvbkRhdGESNQoIYW50aUlu",
+            "Zm8YJSABKAsyGS56cHJvdG8uQW50aUFkZGljdGlvbkluZm9SCGFudGlJbmZv",
+            "EkoKEm1vbnN0ZXJFeHBsb3JlTGlzdBgmIAEoCzIaLnpwcm90by5Nb25zdGVy",
+            "RXhwbG9yZUxpc3RSEm1vbnN0ZXJFeHBsb3JlTGlzdBI7Cg1zaG93UGllY2VE",
+            "YXRhGCcgASgLMhUuenByb3RvLlNob3dQaWVjZURhdGFSDXNob3dQaWVjZURh",
+            "dGESPgoOY29sbGVjdGlvbkJvb2sYKiABKAsyFi56cHJvdG8uQ29sbGVjdGlv",
+            "bkJvb2tSDmNvbGxlY3Rpb25Cb29rElgKF25vdEdldFByb2NlZWRBd2FyZFRp",
+            "bWVzGCsgASgLMh4uenByb3RvLk5vdEdldFByb2NlZWRBd2FyZEluZm9SF25v",
+            "dEdldFByb2NlZWRBd2FyZFRpbWVzEiwKCGNvb2tMaXN0GCwgASgLMhAuenBy",
+            "b3RvLkNvb2tMaXN0Ughjb29rTGlzdBJGCg9yZWZyZXNoRGF0YUxpc3QYLSAB",
+            "KAsyHC56cHJvdG8uVGltZXJSZWZyZXNoRGF0YUxpc3RSD3JlZnJlc2hEYXRh",
+            "TGlzdBJQChRjaGFsbGVuZ2VEdW5nZW9uSW5mbxguIAEoCzIcLnpwcm90by5D",
+            "aGFsbGVuZ2VEdW5nZW9uSW5mb1IUY2hhbGxlbmdlRHVuZ2VvbkluZm8SOwoN",
+            "c3luY0F3YXJkRGF0YRgvIAEoCzIVLnpwcm90by5TeW5jQXdhcmREYXRhUg1z",
+            "eW5jQXdhcmREYXRhElMKFXNlYXNvbkFjaGlldmVtZW50TGlzdBgwIAEoCzId",
+            "Lnpwcm90by5TZWFzb25BY2hpZXZlbWVudExpc3RSFXNlYXNvbkFjaGlldmVt",
+            "ZW50TGlzdBI+Cg5zZWFzb25SYW5rTGlzdBgxIAEoCzIWLnpwcm90by5TZWFz",
+            "b25SYW5rTGlzdFIOc2Vhc29uUmFua0xpc3QSOAoMc2Vhc29uQ2VudGVyGDIg",
+            "ASgLMhQuenByb3RvLlNlYXNvbkNlbnRlclIMc2Vhc29uQ2VudGVyEjgKDHBl",
+            "cnNvbmFsWm9uZRgzIAEoCzIULnpwcm90by5QZXJzb25hbFpvbmVSDHBlcnNv",
+            "bmFsWm9uZRJBCg9zZWFzb25NZWRhbEluZm8YNCABKAsyFy56cHJvdG8uU2Vh",
+            "c29uTWVkYWxJbmZvUg9zZWFzb25NZWRhbEluZm8SRwoRY29tbXVuaXR5SG9t",
+            "ZUluZm8YNSABKAsyGS56cHJvdG8uQ29tbXVuaXR5SG9tZURhdGFSEWNvbW11",
+            "bml0eUhvbWVJbmZvEkQKEHNlYXNvbkFjdGl2YXRpb24YNiABKAsyGC56cHJv",
+            "dG8uU2Vhc29uQWN0aXZhdGlvblIQc2Vhc29uQWN0aXZhdGlvbhIiCgVzbG90",
+            "cxg3IAEoCzIMLnpwcm90by5TbG90UgVzbG90cxJBCg9tb25zdGVySHVudElu",
+            "Zm8YOCABKAsyFy56cHJvdG8uTW9uc3Rlckh1bnRJbmZvUg9tb25zdGVySHVu",
+            "dEluZm8SHQoDbW9kGDkgASgLMgsuenByb3RvLk1vZFIDbW9kEjsKDXdvcmxk",
+            "RXZlbnRNYXAYOiABKAsyFS56cHJvdG8uV29ybGRFdmVudE1hcFINd29ybGRF",
+            "dmVudE1hcBI1CgtmaXNoU2V0dGluZxg7IAEoCzITLnpwcm90by5GaXNoU2V0",
+            "dGluZ1ILZmlzaFNldHRpbmcSNQoLZnJlaWdodERhdGEYPCABKAsyEy56cHJv",
+            "dG8uRnJlaWdodERhdGFSC2ZyZWlnaHREYXRhEj4KDnByb2Zlc3Npb25MaXN0",
+            "GD0gASgLMhYuenByb3RvLlByb2Zlc3Npb25MaXN0Ug5wcm9mZXNzaW9uTGlz",
+            "dBIvCgl0cmlhbFJvYWQYPiABKAsyES56cHJvdG8uVHJpYWxSb2FkUgl0cmlh",
+            "bFJvYWQSLwoJZ2FzaGFEYXRhGD8gASgLMhEuenByb3RvLkdhc2hhRGF0YVIJ",
+            "Z2FzaGFEYXRhEiwKCHNob3BEYXRhGEAgASgLMhAuenByb3RvLlNob3BEYXRh",
+            "UghzaG9wRGF0YRJTChVwZXJzb25hbFdvcmxkQm9zc0luZm8YQSABKAsyHS56",
+            "cHJvdG8uUGVyc29uYWxXb3JsZEJvc3NJbmZvUhVwZXJzb25hbFdvcmxkQm9z",
+            "c0luZm8SOwoLY3JhZnRFbmVyZ3kYQiABKAsyGS56cHJvdG8uQ3JhZnRFbmVy",
+            "Z3lSZWNvcmRSC2NyYWZ0RW5lcmd5EjsKC3dlZWtseVRvd2VyGEMgASgLMhku",
+            "enByb3RvLldlZWtseVRvd2VyUmVjb3JkUgt3ZWVrbHlUb3dlchI7Cg1jdXRT",
+            "Y2VuZUluZm9zGEQgASgLMhUuenByb3RvLkN1dFNjZW5lSW5mb3NSDWN1dFNj",
+            "ZW5lSW5mb3MSSwoRcmVjb21tZW5kUGxheURhdGEYRSABKAsyHS56cHJvdG8u",
+            "VXNlclJlY29tbWVuZFBsYXlEYXRhUhFyZWNvbW1lbmRQbGF5RGF0YRIsCghy",
+            "aWRlTGlzdBhGIAEoCzIQLnpwcm90by5SaWRlTGlzdFIIcmlkZUxpc3QSOAoM",
+            "cGF5T3JkZXJMaXN0GEcgASgLMhQuenByb3RvLlBheU9yZGVyTGlzdFIMcGF5",
+            "T3JkZXJMaXN0Ej4KDmxpZmVQcm9mZXNzaW9uGEggASgLMhYuenByb3RvLkxp",
+            "ZmVQcm9mZXNzaW9uUg5saWZlUHJvZmVzc2lvbhJKChJsaWZlUHJvZmVzc2lv",
+            "bldvcmsYSSABKAsyGi56cHJvdG8uTGlmZVByb2Zlc3Npb25Xb3JrUhJsaWZl",
+            "UHJvZmVzc2lvbldvcmsSRAoQdXNlckFjdGl2aXR5TGlzdBhKIAEoCzIYLnpw",
+            "cm90by5Vc2VyQWN0aXZpdHlMaXN0UhB1c2VyQWN0aXZpdHlMaXN0EjgKDHBs",
+            "YXllclJlY29yZBhLIAEoCzIULnpwcm90by5QbGF5ZXJSZWNvcmRSDHBsYXll",
+            "clJlY29yZBI/Cg1kcm9wQ29udGFpbmVyGEwgASgLMhkuenByb3RvLkRyb3BD",
+            "b250YWluZXJJbmZvUg1kcm9wQ29udGFpbmVyEjUKC21vbnRobHlDYXJkGE0g",
+            "ASgLMhMuenByb3RvLk1vbnRobHlDYXJkUgttb250aGx5Q2FyZBI+Cg5mYXNo",
+            "aW9uQmVuZWZpdBhOIAEoCzIWLnpwcm90by5GYXNoaW9uQmVuZWZpdFIOZmFz",
+            "aGlvbkJlbmVmaXQSOAoMaXRlbUN1cnJlbmN5GE8gASgLMhQuenByb3RvLkl0",
+            "ZW1DdXJyZW5jeVIMaXRlbUN1cnJlbmN5Ek0KE3ByaXZpbGVnZUVmZmVjdERh",
+            "dGEYUCABKAsyGy56cHJvdG8uUHJpdmlsZWdlRWZmZWN0RGF0YVITcHJpdmls",
+            "ZWdlRWZmZWN0RGF0YRIsCgh0cmVhc3VyZRhRIAEoCzIQLnpwcm90by5UcmVh",
+            "c3VyZVIIdHJlYXN1cmUSQQoPdW5sb2NrRW1vamlEYXRhGFIgASgLMhcuenBy",
+            "b3RvLlVubG9ja0Vtb2ppRGF0YVIPdW5sb2NrRW1vamlEYXRhElwKGHBsYXll",
+            "ck9yZGVyQ29tdGFpbmVySW5mbxhTIAEoCzIgLnpwcm90by5QbGF5ZXJPcmRl",
+            "ckNvbXRhaW5lckluZm9SGHBsYXllck9yZGVyQ29tdGFpbmVySW5mbxIvCglw",
+            "bGF5ZXJCb3gYVCABKAsyES56cHJvdG8uUGxheWVyQm94UglwbGF5ZXJCb3gS",
+            "TQoTbGF1bmNoUHJpdmlsZWdlRGF0YRhVIAEoCzIbLnpwcm90by5MYXVuY2hQ",
+            "cml2aWxlZ2VEYXRhUhNsYXVuY2hQcml2aWxlZ2VEYXRhEj4KDmJhdHRsZVBh",
+            "c3NEYXRhGFYgASgLMhYuenByb3RvLkJhdHRsZVBhc3NEYXRhUg5iYXR0bGVQ",
+            "YXNzRGF0YRI4CgxyZWNoYXJnZURhdGEYVyABKAsyFC56cHJvdG8uUmVjaGFy",
+            "Z2VEYXRhUgxyZWNoYXJnZURhdGESOwoNbHVja3lWYWx1ZU1nchhYIAEoCzIV",
+            "Lnpwcm90by5MdWNreVZhbHVlTWdyUg1sdWNreVZhbHVlTWdyEjgKDGhhbmRi",
+            "b29rRGF0YRhZIAEoCzIULnpwcm90by5IYW5kYm9va0RhdGFSDGhhbmRib29r",
+            "RGF0YRJTChVtYXN0ZXJNb2RlRHVuZ2VvbkluZm8YWiABKAsyHS56cHJvdG8u",
+            "TWFzdGVyTW9kZUR1bmdlb25JbmZvUhVtYXN0ZXJNb2RlRHVuZ2VvbkluZm8S",
+            "PgoOc3RhdGlzdGljc0RhdGEYWyABKAsyFi56cHJvdG8uU3RhdGlzdGljc0Rh",
+            "dGFSDnN0YXRpc3RpY3NEYXRhElQKFWNvbXBlbnN0aW9uU3RhdGlzdGljcxhc",
+            "IAEoCzIeLnpwcm90by5Db21wZW5zYXRpb25TdGF0aXN0aWNzUhVjb21wZW5z",
+            "dGlvblN0YXRpc3RpY3MSOwoNYnViYmxlQWN0RGF0YRhdIAEoCzIVLnpwcm90",
+            "by5CdWJibGVBY3REYXRhUg1idWJibGVBY3REYXRhEkEKD21haWxDbGFpbWVk",
+            "SW5mbxheIAEoCzIXLnpwcm90by5NYWlsQ2xhaW1lZEluZm9SD21haWxDbGFp",
+            "bWVkSW5mbxIyCgpuZXdiaWVEYXRhGF8gASgLMhIuenByb3RvLk5ld2JpZURh",
+            "dGFSCm5ld2JpZURhdGESMgoKZmlnaHRQb2ludBhgIAEoCzISLnpwcm90by5G",
+            "aWdodFBvaW50UgpmaWdodFBvaW50EiQKBHNpZ24YYSABKAsyEC56cHJvdG8u",
+            "U2lnbkluZm9SBHNpZ24SSgoSY2hhclN0YXRpc3RpY3NEYXRhGGIgASgLMhou",
+            "enByb3RvLkNoYXJTdGF0aXN0aWNzRGF0YVISY2hhclN0YXRpc3RpY3NEYXRh",
+            "ElwKGGNvbW1vblRhcmdldEFjdGl2aXR5TGlzdBhjIAEoCzIgLnpwcm90by5D",
+            "b21tb25UYXJnZXRBY3Rpdml0eUxpc3RSGGNvbW1vblRhcmdldEFjdGl2aXR5",
+            "TGlzdBJBCg9pdGVtQ291bnRlckxpc3QYZCABKAsyFy56cHJvdG8uSXRlbUNv",
+            "dW50ZXJMaXN0Ug9pdGVtQ291bnRlckxpc3QSWQoXc2Vhc29uQ3VsdGl2YXRl",
+            "TGluZURhdGEYZSABKAsyHy56cHJvdG8uU2Vhc29uQ3VsdGl2YXRlTGluZURh",
+            "dGFSF3NlYXNvbkN1bHRpdmF0ZUxpbmVEYXRhEk0KE3NlYXNvblJvbGVMZXZl",
+            "bERhdGEYZiABKAsyGy56cHJvdG8uU2Vhc29uUm9sZUxldmVsRGF0YVITc2Vh",
+            "c29uUm9sZUxldmVsRGF0YRI+Cg5yZXB1dGF0aW9uTGlzdBhnIAEoCzIWLnpw",
+            "cm90by5SZXB1dGF0aW9uTGlzdFIOcmVwdXRhdGlvbkxpc3QSHgoKc2F2ZVNl",
+            "cmlhbBhoIAEoA1IKc2F2ZVNlcmlhbBJBCg91c2VyVW5pb25UYXJnZXQYaSAB",
+            "KAsyFy56cHJvdG8uVXNlclVuaW9uVGFyZ2V0Ug91c2VyVW5pb25UYXJnZXQS",
+            "UgoQY3VyUHJvamVjdElkSW5mbxhqIAEoCzImLnpwcm90by5DdXJyZW50UHJv",
+            "ZmVzc2lvblByb2plY3RJZEluZm9SEGN1clByb2plY3RJZEluZm8SLAoIZHV0",
+            "eUxpc3QYayABKAsyEC56cHJvdG8uRHV0eUxpc3RSCGR1dHlMaXN0EkUKD2Fj",
+            "dGlvbkdyb3VwRGF0YRhsIAEoCzIbLnpwcm90by5BY3Rpb25Hcm91cFNhdmVE",
+            "YXRhUg9hY3Rpb25Hcm91cERhdGESLwoJcm9ndWVEYXRhGG0gASgLMhEuenBy",
+            "b3RvLlJvZ3VlRGF0YVIJcm9ndWVEYXRhElcKFUxpZmVQcm9mZXNzaW9uRW50",
+            "cnVzdBhuIAEoCzIhLnpwcm90by5MaWZlUHJvZmVzc2lvbkVudHJ1c3RJbmZv",
+            "UhVMaWZlUHJvZmVzc2lvbkVudHJ1c3QSOAoMYmFja2Zsb3dEYXRhGG8gASgL",
+            "MhQuenByb3RvLkJhY2tmbG93RGF0YVIMYmFja2Zsb3dEYXRhEk4KEW5ld0Jh",
+            "Y2tQdWJsaWNEYXRhGHAgASgLMiAuenByb3RvLk5ld2JpZUJhY2tmbG93UHVi",
+            "bGljRGF0YVIRbmV3QmFja1B1YmxpY0RhdGESQQoPdXNlck1haGpvbmdJbmZv",
+            "GHEgASgLMhcuenByb3RvLlVzZXJNYWhqb25nSW5mb1IPdXNlck1haGpvbmdJ",
+            "bmZvEkEKD2ljaGliYW5LdWppRGF0YRhyIAEoCzIXLnpwcm90by5JY2hpYmFu",
+            "S3VqaURhdGFSD2ljaGliYW5LdWppRGF0YRI7Cg11c2VyR2FtZXNJbmZvGHMg",
+            "ASgLMhUuenByb3RvLlVzZXJHYW1lc0luZm9SDXVzZXJHYW1lc0luZm8SOwoN",
+            "c3RvcnlEYXRhTGlzdBh0IAEoCzIVLnpwcm90by5TdG9yeURhdGFMaXN0Ug1z",
+            "dG9yeURhdGFMaXN0EicKBWhvYmJ5GHUgASgLMhEuenByb3RvLkhvYmJ5RGF0",
+            "YVIFaG9iYnkSOAoMaGlkZVNlZWtJbmZvGHYgASgLMhQuenByb3RvLkhpZGVT",
+            "ZWVrSW5mb1IMaGlkZVNlZWtJbmZvEjIKCm1lbnRvckRhdGEYdyABKAsyEi56",
+            "cHJvdG8uTWVudG9yRGF0YVIKbWVudG9yRGF0YRI4Cgx2YW5pdHlQZXRNZ3IY",
+            "eCABKAsyFC56cHJvdG8uVmFuaXR5UGV0TWdyUgx2YW5pdHlQZXRNZ3JiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruAntiAddictionInfoReflection.Descriptor, global::Zproto.StruBattlePassDataReflection.Descriptor, global::Zproto.StruBubbleActDataReflection.Descriptor, global::Zproto.StruBuffDBInfoReflection.Descriptor, global::Zproto.StruChallengeDungeonInfoReflection.Descriptor, global::Zproto.StruCharBaseInfoReflection.Descriptor, global::Zproto.StruCharStatisticsDataReflection.Descriptor, global::Zproto.StruCollectionBookReflection.Descriptor, global::Zproto.StruCommunityHomeDataReflection.Descriptor, global::Zproto.StruCompensationStatisticsReflection.Descriptor, global::Zproto.StruCookListReflection.Descriptor, global::Zproto.StruCounterListReflection.Descriptor, global::Zproto.StruCraftEnergyRecordReflection.Descriptor, global::Zproto.StruCutSceneInfosReflection.Descriptor, global::Zproto.StruCutsStateReflection.Descriptor, global::Zproto.StruDropContainerInfoReflection.Descriptor, global::Zproto.StruDungeonListReflection.Descriptor, global::Zproto.StruEnergyItemReflection.Descriptor, global::Zproto.StruEquipListReflection.Descriptor, global::Zproto.StruExchangeItemReflection.Descriptor, global::Zproto.StruFashionBenefitReflection.Descriptor, global::Zproto.StruFashionMgrReflection.Descriptor, global::Zproto.StruFightPointReflection.Descriptor, global::Zproto.StruFishSettingReflection.Descriptor, global::Zproto.StruFreightDataReflection.Descriptor, global::Zproto.StruFunctionDataReflection.Descriptor, global::Zproto.StruGashaDataReflection.Descriptor, global::Zproto.StruHandbookDataReflection.Descriptor, global::Zproto.StruInteractionInfoReflection.Descriptor, global::Zproto.StruInvestigateListReflection.Descriptor, global::Zproto.StruItemCurrencyReflection.Descriptor, global::Zproto.StruItemPackageReflection.Descriptor, global::Zproto.StruLaunchPrivilegeDataReflection.Descriptor, global::Zproto.StruLifeProfessionReflection.Descriptor, global::Zproto.StruLifeProfessionWorkReflection.Descriptor, global::Zproto.StruLuckyValueMgrReflection.Descriptor, global::Zproto.StruMailClaimedInfoReflection.Descriptor, global::Zproto.StruMapBookInfoListReflection.Descriptor, global::Zproto.StruMapDataReflection.Descriptor, global::Zproto.StruMasterModeDungeonInfoReflection.Descriptor, global::Zproto.StruMiscInfoReflection.Descriptor, global::Zproto.StruModReflection.Descriptor, global::Zproto.StruMonsterExploreListReflection.Descriptor, global::Zproto.StruMonsterHuntInfoReflection.Descriptor, global::Zproto.StruMonthlyCardReflection.Descriptor, global::Zproto.StruNewbieDataReflection.Descriptor, global::Zproto.StruNotGetProceedAwardInfoReflection.Descriptor, global::Zproto.StruParkourRecordListReflection.Descriptor, global::Zproto.StruPayOrderListReflection.Descriptor, global::Zproto.StruPersonalObjectReflection.Descriptor, global::Zproto.StruPersonalWorldBossInfoReflection.Descriptor, global::Zproto.StruPersonalZoneReflection.Descriptor, global::Zproto.StruPioneerDataReflection.Descriptor, global::Zproto.StruPivotReflection.Descriptor, global::Zproto.StruPlanetMemoryReflection.Descriptor, global::Zproto.StruPlayerBoxReflection.Descriptor, global::Zproto.StruPlayerOrderComtainerInfoReflection.Descriptor, global::Zproto.StruPlayerRecordReflection.Descriptor, global::Zproto.StruPlayHelperReflection.Descriptor, global::Zproto.StruPrivilegeEffectDataReflection.Descriptor, global::Zproto.StruProfessionListReflection.Descriptor, global::Zproto.StruProfileListReflection.Descriptor, global::Zproto.StruQuestDataListReflection.Descriptor, global::Zproto.StruRechargeDataReflection.Descriptor, global::Zproto.StruRedDotDataReflection.Descriptor, global::Zproto.StruResonanceReflection.Descriptor, global::Zproto.StruRideListReflection.Descriptor, global::Zproto.StruRoleFaceReflection.Descriptor, global::Zproto.StruRoleLevelReflection.Descriptor, global::Zproto.StruSceneDataReflection.Descriptor, global::Zproto.StruSceneLuaDataReflection.Descriptor, global::Zproto.StruSeasonAchievementListReflection.Descriptor, global::Zproto.StruSeasonActivationReflection.Descriptor, global::Zproto.StruSeasonCenterReflection.Descriptor, global::Zproto.StruSeasonMedalInfoReflection.Descriptor, global::Zproto.StruSeasonQuestListReflection.Descriptor, global::Zproto.StruSeasonRankListReflection.Descriptor, global::Zproto.StruSeasonTargetReflection.Descriptor, global::Zproto.StruSettingDataReflection.Descriptor, global::Zproto.StruShopDataReflection.Descriptor, global::Zproto.StruShowPieceDataReflection.Descriptor, global::Zproto.StruSignInfoReflection.Descriptor, global::Zproto.StruSlotReflection.Descriptor, global::Zproto.StruStatisticsDataReflection.Descriptor, global::Zproto.StruSyncAwardDataReflection.Descriptor, global::Zproto.StruTimerRefreshDataListReflection.Descriptor, global::Zproto.StruTransferPointReflection.Descriptor, global::Zproto.StruTreasureReflection.Descriptor, global::Zproto.StruTrialRoadReflection.Descriptor, global::Zproto.StruUnlockEmojiDataReflection.Descriptor, global::Zproto.StruUserActivityListReflection.Descriptor, global::Zproto.StruUserFightAttrReflection.Descriptor, global::Zproto.StruUserRecommendPlayDataReflection.Descriptor, global::Zproto.StruWeeklyTowerRecordReflection.Descriptor, global::Zproto.StruWorldEventMapReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruActionGroupSaveDataReflection.Descriptor, global::Zproto.StruAntiAddictionInfoReflection.Descriptor, global::Zproto.StruBackflowDataReflection.Descriptor, global::Zproto.StruBattlePassDataReflection.Descriptor, global::Zproto.StruBubbleActDataReflection.Descriptor, global::Zproto.StruBuffDBInfoReflection.Descriptor, global::Zproto.StruChallengeDungeonInfoReflection.Descriptor, global::Zproto.StruCharBaseInfoReflection.Descriptor, global::Zproto.StruCharStatisticsDataReflection.Descriptor, global::Zproto.StruCollectionBookReflection.Descriptor, global::Zproto.StruCommonTargetActivityListReflection.Descriptor, global::Zproto.StruCommunityHomeDataReflection.Descriptor, global::Zproto.StruCompensationStatisticsReflection.Descriptor, global::Zproto.StruCookListReflection.Descriptor, global::Zproto.StruCounterListReflection.Descriptor, global::Zproto.StruCraftEnergyRecordReflection.Descriptor, global::Zproto.StruCurrentProfessionProjectIdInfoReflection.Descriptor, global::Zproto.StruCutSceneInfosReflection.Descriptor, global::Zproto.StruCutsStateReflection.Descriptor, global::Zproto.StruDropContainerInfoReflection.Descriptor, global::Zproto.StruDungeonListReflection.Descriptor, global::Zproto.StruDutyListReflection.Descriptor, global::Zproto.StruEnergyItemReflection.Descriptor, global::Zproto.StruEquipListReflection.Descriptor, global::Zproto.StruExchangeItemReflection.Descriptor, global::Zproto.StruFashionBenefitReflection.Descriptor, global::Zproto.StruFashionMgrReflection.Descriptor, global::Zproto.StruFightPointReflection.Descriptor, global::Zproto.StruFishSettingReflection.Descriptor, global::Zproto.StruFreightDataReflection.Descriptor, global::Zproto.StruFunctionDataReflection.Descriptor, global::Zproto.StruGashaDataReflection.Descriptor, global::Zproto.StruHandbookDataReflection.Descriptor, global::Zproto.StruHideSeekInfoReflection.Descriptor, global::Zproto.StruHobbyDataReflection.Descriptor, global::Zproto.StruIchibanKujiDataReflection.Descriptor, global::Zproto.StruInteractionInfoReflection.Descriptor, global::Zproto.StruInvestigateListReflection.Descriptor, global::Zproto.StruItemCounterListReflection.Descriptor, global::Zproto.StruItemCurrencyReflection.Descriptor, global::Zproto.StruItemPackageReflection.Descriptor, global::Zproto.StruLaunchPrivilegeDataReflection.Descriptor, global::Zproto.StruLifeProfessionReflection.Descriptor, global::Zproto.StruLifeProfessionEntrustInfoReflection.Descriptor, global::Zproto.StruLifeProfessionWorkReflection.Descriptor, global::Zproto.StruLuckyValueMgrReflection.Descriptor, global::Zproto.StruMailClaimedInfoReflection.Descriptor, global::Zproto.StruMapBookInfoListReflection.Descriptor, global::Zproto.StruMapDataReflection.Descriptor, global::Zproto.StruMasterModeDungeonInfoReflection.Descriptor, global::Zproto.StruMentorDataReflection.Descriptor, global::Zproto.StruMiscInfoReflection.Descriptor, global::Zproto.StruModReflection.Descriptor, global::Zproto.StruMonsterExploreListReflection.Descriptor, global::Zproto.StruMonsterHuntInfoReflection.Descriptor, global::Zproto.StruMonthlyCardReflection.Descriptor, global::Zproto.StruNewbieBackflowPublicDataReflection.Descriptor, global::Zproto.StruNewbieDataReflection.Descriptor, global::Zproto.StruNotGetProceedAwardInfoReflection.Descriptor, global::Zproto.StruParkourRecordListReflection.Descriptor, global::Zproto.StruPayOrderListReflection.Descriptor, global::Zproto.StruPersonalObjectReflection.Descriptor, global::Zproto.StruPersonalWorldBossInfoReflection.Descriptor, global::Zproto.StruPersonalZoneReflection.Descriptor, global::Zproto.StruPioneerDataReflection.Descriptor, global::Zproto.StruPivotReflection.Descriptor, global::Zproto.StruPlanetMemoryReflection.Descriptor, global::Zproto.StruPlayerBoxReflection.Descriptor, global::Zproto.StruPlayerOrderComtainerInfoReflection.Descriptor, global::Zproto.StruPlayerRecordReflection.Descriptor, global::Zproto.StruPlayHelperReflection.Descriptor, global::Zproto.StruPrivilegeEffectDataReflection.Descriptor, global::Zproto.StruProfessionListReflection.Descriptor, global::Zproto.StruProfileListReflection.Descriptor, global::Zproto.StruQuestDataListReflection.Descriptor, global::Zproto.StruRechargeDataReflection.Descriptor, global::Zproto.StruRedDotDataReflection.Descriptor, global::Zproto.StruReputationListReflection.Descriptor, global::Zproto.StruResonanceReflection.Descriptor, global::Zproto.StruRideListReflection.Descriptor, global::Zproto.StruRogueDataReflection.Descriptor, global::Zproto.StruRoleFaceReflection.Descriptor, global::Zproto.StruRoleLevelReflection.Descriptor, global::Zproto.StruSceneDataReflection.Descriptor, global::Zproto.StruSceneLuaDataReflection.Descriptor, global::Zproto.StruSeasonAchievementListReflection.Descriptor, global::Zproto.StruSeasonActivationReflection.Descriptor, global::Zproto.StruSeasonCenterReflection.Descriptor, global::Zproto.StruSeasonCultivateLineDataReflection.Descriptor, global::Zproto.StruSeasonMedalInfoReflection.Descriptor, global::Zproto.StruSeasonQuestListReflection.Descriptor, global::Zproto.StruSeasonRankListReflection.Descriptor, global::Zproto.StruSeasonRoleLevelDataReflection.Descriptor, global::Zproto.StruSeasonTargetReflection.Descriptor, global::Zproto.StruSettingDataReflection.Descriptor, global::Zproto.StruShopDataReflection.Descriptor, global::Zproto.StruShowPieceDataReflection.Descriptor, global::Zproto.StruSignInfoReflection.Descriptor, global::Zproto.StruSlotReflection.Descriptor, global::Zproto.StruStatisticsDataReflection.Descriptor, global::Zproto.StruStoryDataListReflection.Descriptor, global::Zproto.StruSyncAwardDataReflection.Descriptor, global::Zproto.StruTimerRefreshDataListReflection.Descriptor, global::Zproto.StruTransferPointReflection.Descriptor, global::Zproto.StruTreasureReflection.Descriptor, global::Zproto.StruTrialRoadReflection.Descriptor, global::Zproto.StruUnlockEmojiDataReflection.Descriptor, global::Zproto.StruUserActivityListReflection.Descriptor, global::Zproto.StruUserFightAttrReflection.Descriptor, global::Zproto.StruUserGamesInfoReflection.Descriptor, global::Zproto.StruUserMahjongInfoReflection.Descriptor, global::Zproto.StruUserRecommendPlayDataReflection.Descriptor, global::Zproto.StruUserUnionTargetReflection.Descriptor, global::Zproto.StruVanityPetMgrReflection.Descriptor, global::Zproto.StruWeeklyTowerRecordReflection.Descriptor, global::Zproto.StruWorldEventMapReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CharSerialize), global::Zproto.CharSerialize.Parser, new[]{ "CharId", "CharBase", "SceneData", "SceneLuaData", "PioneerData", "BuffInfo", "ItemPackage", "QuestList", "SettingData", "MiscInfo", "ExchangeItems", "Equip", "EnergyItem", "MapData", "DungeonList", "Attr", "Fashion", "ProfileList", "Help", "CounterList", "PersonalObj", "RoleLevel", "Pivot", "TransferPoint", "PlanetMemory", "PlanetMemoryTarget", "RedDot", "Resonance", "CutsState", "InvestigateList", "Records", "Interaction", "SeasonQuestList", "RoleFace", "MapBookList", "FunctionData", "AntiInfo", "MonsterExploreList", "ShowPieceData", "CollectionBook", "NotGetProceedAwardTimes", "CookList", "RefreshDataList", "ChallengeDungeonInfo", "SyncAwardData", "SeasonAchievementList", "SeasonRankList", "SeasonCenter", "PersonalZone", "SeasonMedalInfo", "CommunityHomeInfo", "SeasonActivation", "Slots", "MonsterHuntInfo", "Mod", "WorldEventMap", "FishSetting", "FreightData", "ProfessionList", "TrialRoad", "GashaData", "ShopData", "PersonalWorldBossInfo", "CraftEnergy", "WeeklyTower", "CutSceneInfos", "RecommendPlayData", "RideList", "PayOrderList", "LifeProfession", "LifeProfessionWork", "UserActivityList", "PlayerRecord", "DropContainer", "MonthlyCard", "FashionBenefit", "ItemCurrency", "PrivilegeEffectData", "Treasure", "UnlockEmojiData", "PlayerOrderComtainerInfo", "PlayerBox", "LaunchPrivilegeData", "BattlePassData", "RechargeData", "LuckyValueMgr", "HandbookData", "MasterModeDungeonInfo", "StatisticsData", "CompenstionStatistics", "BubbleActData", "MailClaimedInfo", "NewbieData", "FightPoint", "Sign", "CharStatisticsData" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CharSerialize), global::Zproto.CharSerialize.Parser, new[]{ "CharId", "CharBase", "SceneData", "SceneLuaData", "PioneerData", "BuffInfo", "ItemPackage", "QuestList", "SettingData", "MiscInfo", "ExchangeItems", "Equip", "EnergyItem", "MapData", "DungeonList", "Attr", "Fashion", "ProfileList", "Help", "CounterList", "PersonalObj", "RoleLevel", "Pivot", "TransferPoint", "PlanetMemory", "PlanetMemoryTarget", "RedDot", "Resonance", "CutsState", "InvestigateList", "Records", "Interaction", "SeasonQuestList", "RoleFace", "MapBookList", "FunctionData", "AntiInfo", "MonsterExploreList", "ShowPieceData", "CollectionBook", "NotGetProceedAwardTimes", "CookList", "RefreshDataList", "ChallengeDungeonInfo", "SyncAwardData", "SeasonAchievementList", "SeasonRankList", "SeasonCenter", "PersonalZone", "SeasonMedalInfo", "CommunityHomeInfo", "SeasonActivation", "Slots", "MonsterHuntInfo", "Mod", "WorldEventMap", "FishSetting", "FreightData", "ProfessionList", "TrialRoad", "GashaData", "ShopData", "PersonalWorldBossInfo", "CraftEnergy", "WeeklyTower", "CutSceneInfos", "RecommendPlayData", "RideList", "PayOrderList", "LifeProfession", "LifeProfessionWork", "UserActivityList", "PlayerRecord", "DropContainer", "MonthlyCard", "FashionBenefit", "ItemCurrency", "PrivilegeEffectData", "Treasure", "UnlockEmojiData", "PlayerOrderComtainerInfo", "PlayerBox", "LaunchPrivilegeData", "BattlePassData", "RechargeData", "LuckyValueMgr", "HandbookData", "MasterModeDungeonInfo", "StatisticsData", "CompenstionStatistics", "BubbleActData", "MailClaimedInfo", "NewbieData", "FightPoint", "Sign", "CharStatisticsData", "CommonTargetActivityList", "ItemCounterList", "SeasonCultivateLineData", "SeasonRoleLevelData", "ReputationList", "SaveSerial", "UserUnionTarget", "CurProjectIdInfo", "DutyList", "ActionGroupData", "RogueData", "LifeProfessionEntrust", "BackflowData", "NewBackPublicData", "UserMahjongInfo", "IchibanKujiData", "UserGamesInfo", "StoryDataList", "Hobby", "HideSeekInfo", "MentorData", "VanityPetMgr" }, null, null, null, null)
           }));
     }
     #endregion
@@ -324,6 +398,28 @@ namespace Zproto {
       fightPoint_ = other.fightPoint_ != null ? other.fightPoint_.Clone() : null;
       sign_ = other.sign_ != null ? other.sign_.Clone() : null;
       charStatisticsData_ = other.charStatisticsData_ != null ? other.charStatisticsData_.Clone() : null;
+      commonTargetActivityList_ = other.commonTargetActivityList_ != null ? other.commonTargetActivityList_.Clone() : null;
+      itemCounterList_ = other.itemCounterList_ != null ? other.itemCounterList_.Clone() : null;
+      seasonCultivateLineData_ = other.seasonCultivateLineData_ != null ? other.seasonCultivateLineData_.Clone() : null;
+      seasonRoleLevelData_ = other.seasonRoleLevelData_ != null ? other.seasonRoleLevelData_.Clone() : null;
+      reputationList_ = other.reputationList_ != null ? other.reputationList_.Clone() : null;
+      saveSerial_ = other.saveSerial_;
+      userUnionTarget_ = other.userUnionTarget_ != null ? other.userUnionTarget_.Clone() : null;
+      curProjectIdInfo_ = other.curProjectIdInfo_ != null ? other.curProjectIdInfo_.Clone() : null;
+      dutyList_ = other.dutyList_ != null ? other.dutyList_.Clone() : null;
+      actionGroupData_ = other.actionGroupData_ != null ? other.actionGroupData_.Clone() : null;
+      rogueData_ = other.rogueData_ != null ? other.rogueData_.Clone() : null;
+      lifeProfessionEntrust_ = other.lifeProfessionEntrust_ != null ? other.lifeProfessionEntrust_.Clone() : null;
+      backflowData_ = other.backflowData_ != null ? other.backflowData_.Clone() : null;
+      newBackPublicData_ = other.newBackPublicData_ != null ? other.newBackPublicData_.Clone() : null;
+      userMahjongInfo_ = other.userMahjongInfo_ != null ? other.userMahjongInfo_.Clone() : null;
+      ichibanKujiData_ = other.ichibanKujiData_ != null ? other.ichibanKujiData_.Clone() : null;
+      userGamesInfo_ = other.userGamesInfo_ != null ? other.userGamesInfo_.Clone() : null;
+      storyDataList_ = other.storyDataList_ != null ? other.storyDataList_.Clone() : null;
+      hobby_ = other.hobby_ != null ? other.hobby_.Clone() : null;
+      hideSeekInfo_ = other.hideSeekInfo_ != null ? other.hideSeekInfo_.Clone() : null;
+      mentorData_ = other.mentorData_ != null ? other.mentorData_.Clone() : null;
+      vanityPetMgr_ = other.vanityPetMgr_ != null ? other.vanityPetMgr_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -333,7 +429,7 @@ namespace Zproto {
       return new CharSerialize(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -345,7 +441,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_base" field.</summary>
+    /// <summary>Field number for the "charBase" field.</summary>
     public const int CharBaseFieldNumber = 2;
     private global::Zproto.CharBaseInfo charBase_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -357,7 +453,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_data" field.</summary>
+    /// <summary>Field number for the "sceneData" field.</summary>
     public const int SceneDataFieldNumber = 3;
     private global::Zproto.SceneData sceneData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -369,7 +465,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_lua_data" field.</summary>
+    /// <summary>Field number for the "sceneLuaData" field.</summary>
     public const int SceneLuaDataFieldNumber = 4;
     private global::Zproto.SceneLuaData sceneLuaData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -381,7 +477,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pioneer_data" field.</summary>
+    /// <summary>Field number for the "pioneerData" field.</summary>
     public const int PioneerDataFieldNumber = 5;
     private global::Zproto.PioneerData pioneerData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -393,7 +489,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buff_info" field.</summary>
+    /// <summary>Field number for the "buffInfo" field.</summary>
     public const int BuffInfoFieldNumber = 6;
     private global::Zproto.BuffDBInfo buffInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -405,7 +501,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_package" field.</summary>
+    /// <summary>Field number for the "itemPackage" field.</summary>
     public const int ItemPackageFieldNumber = 7;
     private global::Zproto.ItemPackage itemPackage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -417,7 +513,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "quest_list" field.</summary>
+    /// <summary>Field number for the "questList" field.</summary>
     public const int QuestListFieldNumber = 8;
     private global::Zproto.QuestDataList questList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -429,7 +525,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "setting_data" field.</summary>
+    /// <summary>Field number for the "settingData" field.</summary>
     public const int SettingDataFieldNumber = 9;
     private global::Zproto.SettingData settingData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -441,7 +537,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "misc_info" field.</summary>
+    /// <summary>Field number for the "miscInfo" field.</summary>
     public const int MiscInfoFieldNumber = 10;
     private global::Zproto.MiscInfo miscInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -453,7 +549,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "exchange_items" field.</summary>
+    /// <summary>Field number for the "exchangeItems" field.</summary>
     public const int ExchangeItemsFieldNumber = 11;
     private global::Zproto.ExchangeItem exchangeItems_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -477,7 +573,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "energy_item" field.</summary>
+    /// <summary>Field number for the "energyItem" field.</summary>
     public const int EnergyItemFieldNumber = 13;
     private global::Zproto.EnergyItem energyItem_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -489,7 +585,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "map_data" field.</summary>
+    /// <summary>Field number for the "mapData" field.</summary>
     public const int MapDataFieldNumber = 14;
     private global::Zproto.MapData mapData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -501,7 +597,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_list" field.</summary>
+    /// <summary>Field number for the "dungeonList" field.</summary>
     public const int DungeonListFieldNumber = 15;
     private global::Zproto.DungeonList dungeonList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -537,7 +633,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "profile_list" field.</summary>
+    /// <summary>Field number for the "profileList" field.</summary>
     public const int ProfileListFieldNumber = 18;
     private global::Zproto.ProfileList profileList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -561,7 +657,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "counter_list" field.</summary>
+    /// <summary>Field number for the "counterList" field.</summary>
     public const int CounterListFieldNumber = 20;
     private global::Zproto.CounterList counterList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -573,7 +669,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "personal_obj" field.</summary>
+    /// <summary>Field number for the "personalObj" field.</summary>
     public const int PersonalObjFieldNumber = 21;
     private global::Zproto.PersonalObject personalObj_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -585,7 +681,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "role_level" field.</summary>
+    /// <summary>Field number for the "roleLevel" field.</summary>
     public const int RoleLevelFieldNumber = 22;
     private global::Zproto.RoleLevel roleLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -609,7 +705,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "transfer_point" field.</summary>
+    /// <summary>Field number for the "transferPoint" field.</summary>
     public const int TransferPointFieldNumber = 24;
     private global::Zproto.TransferPoint transferPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -621,7 +717,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "planet_memory" field.</summary>
+    /// <summary>Field number for the "planetMemory" field.</summary>
     public const int PlanetMemoryFieldNumber = 25;
     private global::Zproto.PlanetMemory planetMemory_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -633,7 +729,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "planet_memory_target" field.</summary>
+    /// <summary>Field number for the "planetMemoryTarget" field.</summary>
     public const int PlanetMemoryTargetFieldNumber = 26;
     private global::Zproto.SeasonTarget planetMemoryTarget_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -645,7 +741,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "red_dot" field.</summary>
+    /// <summary>Field number for the "redDot" field.</summary>
     public const int RedDotFieldNumber = 27;
     private global::Zproto.RedDotData redDot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -669,7 +765,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cuts_state" field.</summary>
+    /// <summary>Field number for the "cutsState" field.</summary>
     public const int CutsStateFieldNumber = 29;
     private global::Zproto.CutsState cutsState_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -681,7 +777,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "investigate_list" field.</summary>
+    /// <summary>Field number for the "investigateList" field.</summary>
     public const int InvestigateListFieldNumber = 30;
     private global::Zproto.InvestigateList investigateList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -717,7 +813,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_quest_list" field.</summary>
+    /// <summary>Field number for the "seasonQuestList" field.</summary>
     public const int SeasonQuestListFieldNumber = 33;
     private global::Zproto.SeasonQuestList seasonQuestList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -729,7 +825,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "role_face" field.</summary>
+    /// <summary>Field number for the "roleFace" field.</summary>
     public const int RoleFaceFieldNumber = 34;
     private global::Zproto.RoleFace roleFace_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -741,7 +837,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "map_book_list" field.</summary>
+    /// <summary>Field number for the "mapBookList" field.</summary>
     public const int MapBookListFieldNumber = 35;
     private global::Zproto.MapBookInfoList mapBookList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -753,7 +849,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "function_data" field.</summary>
+    /// <summary>Field number for the "FunctionData" field.</summary>
     public const int FunctionDataFieldNumber = 36;
     private global::Zproto.FunctionData functionData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -765,7 +861,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "anti_info" field.</summary>
+    /// <summary>Field number for the "antiInfo" field.</summary>
     public const int AntiInfoFieldNumber = 37;
     private global::Zproto.AntiAddictionInfo antiInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -777,7 +873,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "monster_explore_list" field.</summary>
+    /// <summary>Field number for the "monsterExploreList" field.</summary>
     public const int MonsterExploreListFieldNumber = 38;
     private global::Zproto.MonsterExploreList monsterExploreList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -789,7 +885,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "show_piece_data" field.</summary>
+    /// <summary>Field number for the "showPieceData" field.</summary>
     public const int ShowPieceDataFieldNumber = 39;
     private global::Zproto.ShowPieceData showPieceData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -801,7 +897,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "collection_book" field.</summary>
+    /// <summary>Field number for the "collectionBook" field.</summary>
     public const int CollectionBookFieldNumber = 42;
     private global::Zproto.CollectionBook collectionBook_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -813,7 +909,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "not_get_proceed_award_times" field.</summary>
+    /// <summary>Field number for the "notGetProceedAwardTimes" field.</summary>
     public const int NotGetProceedAwardTimesFieldNumber = 43;
     private global::Zproto.NotGetProceedAwardInfo notGetProceedAwardTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -825,7 +921,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cook_list" field.</summary>
+    /// <summary>Field number for the "cookList" field.</summary>
     public const int CookListFieldNumber = 44;
     private global::Zproto.CookList cookList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -837,7 +933,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "refresh_data_list" field.</summary>
+    /// <summary>Field number for the "refreshDataList" field.</summary>
     public const int RefreshDataListFieldNumber = 45;
     private global::Zproto.TimerRefreshDataList refreshDataList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -849,7 +945,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "challenge_dungeon_info" field.</summary>
+    /// <summary>Field number for the "challengeDungeonInfo" field.</summary>
     public const int ChallengeDungeonInfoFieldNumber = 46;
     private global::Zproto.ChallengeDungeonInfo challengeDungeonInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -861,7 +957,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sync_award_data" field.</summary>
+    /// <summary>Field number for the "syncAwardData" field.</summary>
     public const int SyncAwardDataFieldNumber = 47;
     private global::Zproto.SyncAwardData syncAwardData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -873,7 +969,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_achievement_list" field.</summary>
+    /// <summary>Field number for the "seasonAchievementList" field.</summary>
     public const int SeasonAchievementListFieldNumber = 48;
     private global::Zproto.SeasonAchievementList seasonAchievementList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -885,7 +981,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_rank_list" field.</summary>
+    /// <summary>Field number for the "seasonRankList" field.</summary>
     public const int SeasonRankListFieldNumber = 49;
     private global::Zproto.SeasonRankList seasonRankList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -897,7 +993,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_center" field.</summary>
+    /// <summary>Field number for the "seasonCenter" field.</summary>
     public const int SeasonCenterFieldNumber = 50;
     private global::Zproto.SeasonCenter seasonCenter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -909,7 +1005,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "personal_zone" field.</summary>
+    /// <summary>Field number for the "personalZone" field.</summary>
     public const int PersonalZoneFieldNumber = 51;
     private global::Zproto.PersonalZone personalZone_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -921,7 +1017,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_medal_info" field.</summary>
+    /// <summary>Field number for the "seasonMedalInfo" field.</summary>
     public const int SeasonMedalInfoFieldNumber = 52;
     private global::Zproto.SeasonMedalInfo seasonMedalInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -933,7 +1029,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "community_home_info" field.</summary>
+    /// <summary>Field number for the "communityHomeInfo" field.</summary>
     public const int CommunityHomeInfoFieldNumber = 53;
     private global::Zproto.CommunityHomeData communityHomeInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -945,7 +1041,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "season_activation" field.</summary>
+    /// <summary>Field number for the "seasonActivation" field.</summary>
     public const int SeasonActivationFieldNumber = 54;
     private global::Zproto.SeasonActivation seasonActivation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -969,7 +1065,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "monster_hunt_info" field.</summary>
+    /// <summary>Field number for the "monsterHuntInfo" field.</summary>
     public const int MonsterHuntInfoFieldNumber = 56;
     private global::Zproto.MonsterHuntInfo monsterHuntInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -993,7 +1089,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "world_event_map" field.</summary>
+    /// <summary>Field number for the "worldEventMap" field.</summary>
     public const int WorldEventMapFieldNumber = 58;
     private global::Zproto.WorldEventMap worldEventMap_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1005,7 +1101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fish_setting" field.</summary>
+    /// <summary>Field number for the "fishSetting" field.</summary>
     public const int FishSettingFieldNumber = 59;
     private global::Zproto.FishSetting fishSetting_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1017,7 +1113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "freight_data" field.</summary>
+    /// <summary>Field number for the "freightData" field.</summary>
     public const int FreightDataFieldNumber = 60;
     private global::Zproto.FreightData freightData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1029,7 +1125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "profession_list" field.</summary>
+    /// <summary>Field number for the "professionList" field.</summary>
     public const int ProfessionListFieldNumber = 61;
     private global::Zproto.ProfessionList professionList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1041,7 +1137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "trial_road" field.</summary>
+    /// <summary>Field number for the "trialRoad" field.</summary>
     public const int TrialRoadFieldNumber = 62;
     private global::Zproto.TrialRoad trialRoad_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1053,7 +1149,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "gasha_data" field.</summary>
+    /// <summary>Field number for the "gashaData" field.</summary>
     public const int GashaDataFieldNumber = 63;
     private global::Zproto.GashaData gashaData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1065,7 +1161,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "shop_data" field.</summary>
+    /// <summary>Field number for the "shopData" field.</summary>
     public const int ShopDataFieldNumber = 64;
     private global::Zproto.ShopData shopData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1077,7 +1173,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "personal_world_boss_info" field.</summary>
+    /// <summary>Field number for the "personalWorldBossInfo" field.</summary>
     public const int PersonalWorldBossInfoFieldNumber = 65;
     private global::Zproto.PersonalWorldBossInfo personalWorldBossInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1089,7 +1185,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "craft_energy" field.</summary>
+    /// <summary>Field number for the "craftEnergy" field.</summary>
     public const int CraftEnergyFieldNumber = 66;
     private global::Zproto.CraftEnergyRecord craftEnergy_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1101,7 +1197,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "weekly_tower" field.</summary>
+    /// <summary>Field number for the "weeklyTower" field.</summary>
     public const int WeeklyTowerFieldNumber = 67;
     private global::Zproto.WeeklyTowerRecord weeklyTower_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1113,7 +1209,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cut_scene_infos" field.</summary>
+    /// <summary>Field number for the "cutSceneInfos" field.</summary>
     public const int CutSceneInfosFieldNumber = 68;
     private global::Zproto.CutSceneInfos cutSceneInfos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1125,7 +1221,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "recommend_play_data" field.</summary>
+    /// <summary>Field number for the "recommendPlayData" field.</summary>
     public const int RecommendPlayDataFieldNumber = 69;
     private global::Zproto.UserRecommendPlayData recommendPlayData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1137,7 +1233,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ride_list" field.</summary>
+    /// <summary>Field number for the "rideList" field.</summary>
     public const int RideListFieldNumber = 70;
     private global::Zproto.RideList rideList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1149,7 +1245,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pay_order_list" field.</summary>
+    /// <summary>Field number for the "payOrderList" field.</summary>
     public const int PayOrderListFieldNumber = 71;
     private global::Zproto.PayOrderList payOrderList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1161,7 +1257,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "life_profession" field.</summary>
+    /// <summary>Field number for the "lifeProfession" field.</summary>
     public const int LifeProfessionFieldNumber = 72;
     private global::Zproto.LifeProfession lifeProfession_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1173,7 +1269,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "life_profession_work" field.</summary>
+    /// <summary>Field number for the "lifeProfessionWork" field.</summary>
     public const int LifeProfessionWorkFieldNumber = 73;
     private global::Zproto.LifeProfessionWork lifeProfessionWork_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1185,7 +1281,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "user_activity_list" field.</summary>
+    /// <summary>Field number for the "userActivityList" field.</summary>
     public const int UserActivityListFieldNumber = 74;
     private global::Zproto.UserActivityList userActivityList_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1197,7 +1293,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "player_record" field.</summary>
+    /// <summary>Field number for the "playerRecord" field.</summary>
     public const int PlayerRecordFieldNumber = 75;
     private global::Zproto.PlayerRecord playerRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1209,7 +1305,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "drop_container" field.</summary>
+    /// <summary>Field number for the "dropContainer" field.</summary>
     public const int DropContainerFieldNumber = 76;
     private global::Zproto.DropContainerInfo dropContainer_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1221,7 +1317,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "monthly_card" field.</summary>
+    /// <summary>Field number for the "monthlyCard" field.</summary>
     public const int MonthlyCardFieldNumber = 77;
     private global::Zproto.MonthlyCard monthlyCard_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1233,7 +1329,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fashion_benefit" field.</summary>
+    /// <summary>Field number for the "fashionBenefit" field.</summary>
     public const int FashionBenefitFieldNumber = 78;
     private global::Zproto.FashionBenefit fashionBenefit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1245,7 +1341,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_currency" field.</summary>
+    /// <summary>Field number for the "itemCurrency" field.</summary>
     public const int ItemCurrencyFieldNumber = 79;
     private global::Zproto.ItemCurrency itemCurrency_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1257,7 +1353,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "privilege_effect_data" field.</summary>
+    /// <summary>Field number for the "privilegeEffectData" field.</summary>
     public const int PrivilegeEffectDataFieldNumber = 80;
     private global::Zproto.PrivilegeEffectData privilegeEffectData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1281,7 +1377,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unlock_emoji_data" field.</summary>
+    /// <summary>Field number for the "unlockEmojiData" field.</summary>
     public const int UnlockEmojiDataFieldNumber = 82;
     private global::Zproto.UnlockEmojiData unlockEmojiData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1293,7 +1389,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "player_order_comtainer_info" field.</summary>
+    /// <summary>Field number for the "playerOrderComtainerInfo" field.</summary>
     public const int PlayerOrderComtainerInfoFieldNumber = 83;
     private global::Zproto.PlayerOrderComtainerInfo playerOrderComtainerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1305,7 +1401,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "player_box" field.</summary>
+    /// <summary>Field number for the "playerBox" field.</summary>
     public const int PlayerBoxFieldNumber = 84;
     private global::Zproto.PlayerBox playerBox_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1317,7 +1413,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "launch_privilege_data" field.</summary>
+    /// <summary>Field number for the "launchPrivilegeData" field.</summary>
     public const int LaunchPrivilegeDataFieldNumber = 85;
     private global::Zproto.LaunchPrivilegeData launchPrivilegeData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1329,7 +1425,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "battle_pass_data" field.</summary>
+    /// <summary>Field number for the "battlePassData" field.</summary>
     public const int BattlePassDataFieldNumber = 86;
     private global::Zproto.BattlePassData battlePassData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1341,7 +1437,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "recharge_data" field.</summary>
+    /// <summary>Field number for the "rechargeData" field.</summary>
     public const int RechargeDataFieldNumber = 87;
     private global::Zproto.RechargeData rechargeData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1353,7 +1449,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "lucky_value_mgr" field.</summary>
+    /// <summary>Field number for the "luckyValueMgr" field.</summary>
     public const int LuckyValueMgrFieldNumber = 88;
     private global::Zproto.LuckyValueMgr luckyValueMgr_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1365,7 +1461,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "handbook_data" field.</summary>
+    /// <summary>Field number for the "handbookData" field.</summary>
     public const int HandbookDataFieldNumber = 89;
     private global::Zproto.HandbookData handbookData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1377,7 +1473,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "master_mode_dungeon_info" field.</summary>
+    /// <summary>Field number for the "masterModeDungeonInfo" field.</summary>
     public const int MasterModeDungeonInfoFieldNumber = 90;
     private global::Zproto.MasterModeDungeonInfo masterModeDungeonInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1389,7 +1485,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "statistics_data" field.</summary>
+    /// <summary>Field number for the "statisticsData" field.</summary>
     public const int StatisticsDataFieldNumber = 91;
     private global::Zproto.StatisticsData statisticsData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1401,7 +1497,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "compenstion_statistics" field.</summary>
+    /// <summary>Field number for the "compenstionStatistics" field.</summary>
     public const int CompenstionStatisticsFieldNumber = 92;
     private global::Zproto.CompensationStatistics compenstionStatistics_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1413,7 +1509,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bubble_act_data" field.</summary>
+    /// <summary>Field number for the "bubbleActData" field.</summary>
     public const int BubbleActDataFieldNumber = 93;
     private global::Zproto.BubbleActData bubbleActData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1425,7 +1521,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_claimed_info" field.</summary>
+    /// <summary>Field number for the "mailClaimedInfo" field.</summary>
     public const int MailClaimedInfoFieldNumber = 94;
     private global::Zproto.MailClaimedInfo mailClaimedInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1437,7 +1533,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "newbie_data" field.</summary>
+    /// <summary>Field number for the "newbieData" field.</summary>
     public const int NewbieDataFieldNumber = 95;
     private global::Zproto.NewbieData newbieData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1449,7 +1545,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fight_point" field.</summary>
+    /// <summary>Field number for the "fightPoint" field.</summary>
     public const int FightPointFieldNumber = 96;
     private global::Zproto.FightPoint fightPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1473,7 +1569,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "char_statistics_data" field.</summary>
+    /// <summary>Field number for the "charStatisticsData" field.</summary>
     public const int CharStatisticsDataFieldNumber = 98;
     private global::Zproto.CharStatisticsData charStatisticsData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1482,6 +1578,270 @@ namespace Zproto {
       get { return charStatisticsData_; }
       set {
         charStatisticsData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "commonTargetActivityList" field.</summary>
+    public const int CommonTargetActivityListFieldNumber = 99;
+    private global::Zproto.CommonTargetActivityList commonTargetActivityList_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.CommonTargetActivityList CommonTargetActivityList {
+      get { return commonTargetActivityList_; }
+      set {
+        commonTargetActivityList_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "itemCounterList" field.</summary>
+    public const int ItemCounterListFieldNumber = 100;
+    private global::Zproto.ItemCounterList itemCounterList_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.ItemCounterList ItemCounterList {
+      get { return itemCounterList_; }
+      set {
+        itemCounterList_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "seasonCultivateLineData" field.</summary>
+    public const int SeasonCultivateLineDataFieldNumber = 101;
+    private global::Zproto.SeasonCultivateLineData seasonCultivateLineData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.SeasonCultivateLineData SeasonCultivateLineData {
+      get { return seasonCultivateLineData_; }
+      set {
+        seasonCultivateLineData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "seasonRoleLevelData" field.</summary>
+    public const int SeasonRoleLevelDataFieldNumber = 102;
+    private global::Zproto.SeasonRoleLevelData seasonRoleLevelData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.SeasonRoleLevelData SeasonRoleLevelData {
+      get { return seasonRoleLevelData_; }
+      set {
+        seasonRoleLevelData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reputationList" field.</summary>
+    public const int ReputationListFieldNumber = 103;
+    private global::Zproto.ReputationList reputationList_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.ReputationList ReputationList {
+      get { return reputationList_; }
+      set {
+        reputationList_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "saveSerial" field.</summary>
+    public const int SaveSerialFieldNumber = 104;
+    private long saveSerial_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long SaveSerial {
+      get { return saveSerial_; }
+      set {
+        saveSerial_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "userUnionTarget" field.</summary>
+    public const int UserUnionTargetFieldNumber = 105;
+    private global::Zproto.UserUnionTarget userUnionTarget_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.UserUnionTarget UserUnionTarget {
+      get { return userUnionTarget_; }
+      set {
+        userUnionTarget_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "curProjectIdInfo" field.</summary>
+    public const int CurProjectIdInfoFieldNumber = 106;
+    private global::Zproto.CurrentProfessionProjectIdInfo curProjectIdInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.CurrentProfessionProjectIdInfo CurProjectIdInfo {
+      get { return curProjectIdInfo_; }
+      set {
+        curProjectIdInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dutyList" field.</summary>
+    public const int DutyListFieldNumber = 107;
+    private global::Zproto.DutyList dutyList_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.DutyList DutyList {
+      get { return dutyList_; }
+      set {
+        dutyList_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "actionGroupData" field.</summary>
+    public const int ActionGroupDataFieldNumber = 108;
+    private global::Zproto.ActionGroupSaveData actionGroupData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.ActionGroupSaveData ActionGroupData {
+      get { return actionGroupData_; }
+      set {
+        actionGroupData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rogueData" field.</summary>
+    public const int RogueDataFieldNumber = 109;
+    private global::Zproto.RogueData rogueData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.RogueData RogueData {
+      get { return rogueData_; }
+      set {
+        rogueData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "LifeProfessionEntrust" field.</summary>
+    public const int LifeProfessionEntrustFieldNumber = 110;
+    private global::Zproto.LifeProfessionEntrustInfo lifeProfessionEntrust_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.LifeProfessionEntrustInfo LifeProfessionEntrust {
+      get { return lifeProfessionEntrust_; }
+      set {
+        lifeProfessionEntrust_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "backflowData" field.</summary>
+    public const int BackflowDataFieldNumber = 111;
+    private global::Zproto.BackflowData backflowData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.BackflowData BackflowData {
+      get { return backflowData_; }
+      set {
+        backflowData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "newBackPublicData" field.</summary>
+    public const int NewBackPublicDataFieldNumber = 112;
+    private global::Zproto.NewbieBackflowPublicData newBackPublicData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.NewbieBackflowPublicData NewBackPublicData {
+      get { return newBackPublicData_; }
+      set {
+        newBackPublicData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "userMahjongInfo" field.</summary>
+    public const int UserMahjongInfoFieldNumber = 113;
+    private global::Zproto.UserMahjongInfo userMahjongInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.UserMahjongInfo UserMahjongInfo {
+      get { return userMahjongInfo_; }
+      set {
+        userMahjongInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ichibanKujiData" field.</summary>
+    public const int IchibanKujiDataFieldNumber = 114;
+    private global::Zproto.IchibanKujiData ichibanKujiData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.IchibanKujiData IchibanKujiData {
+      get { return ichibanKujiData_; }
+      set {
+        ichibanKujiData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "userGamesInfo" field.</summary>
+    public const int UserGamesInfoFieldNumber = 115;
+    private global::Zproto.UserGamesInfo userGamesInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.UserGamesInfo UserGamesInfo {
+      get { return userGamesInfo_; }
+      set {
+        userGamesInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "storyDataList" field.</summary>
+    public const int StoryDataListFieldNumber = 116;
+    private global::Zproto.StoryDataList storyDataList_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.StoryDataList StoryDataList {
+      get { return storyDataList_; }
+      set {
+        storyDataList_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hobby" field.</summary>
+    public const int HobbyFieldNumber = 117;
+    private global::Zproto.HobbyData hobby_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.HobbyData Hobby {
+      get { return hobby_; }
+      set {
+        hobby_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hideSeekInfo" field.</summary>
+    public const int HideSeekInfoFieldNumber = 118;
+    private global::Zproto.HideSeekInfo hideSeekInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.HideSeekInfo HideSeekInfo {
+      get { return hideSeekInfo_; }
+      set {
+        hideSeekInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mentorData" field.</summary>
+    public const int MentorDataFieldNumber = 119;
+    private global::Zproto.MentorData mentorData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.MentorData MentorData {
+      get { return mentorData_; }
+      set {
+        mentorData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "vanityPetMgr" field.</summary>
+    public const int VanityPetMgrFieldNumber = 120;
+    private global::Zproto.VanityPetMgr vanityPetMgr_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.VanityPetMgr VanityPetMgr {
+      get { return vanityPetMgr_; }
+      set {
+        vanityPetMgr_ = value;
       }
     }
 
@@ -1596,6 +1956,28 @@ namespace Zproto {
       if (!object.Equals(FightPoint, other.FightPoint)) return false;
       if (!object.Equals(Sign, other.Sign)) return false;
       if (!object.Equals(CharStatisticsData, other.CharStatisticsData)) return false;
+      if (!object.Equals(CommonTargetActivityList, other.CommonTargetActivityList)) return false;
+      if (!object.Equals(ItemCounterList, other.ItemCounterList)) return false;
+      if (!object.Equals(SeasonCultivateLineData, other.SeasonCultivateLineData)) return false;
+      if (!object.Equals(SeasonRoleLevelData, other.SeasonRoleLevelData)) return false;
+      if (!object.Equals(ReputationList, other.ReputationList)) return false;
+      if (SaveSerial != other.SaveSerial) return false;
+      if (!object.Equals(UserUnionTarget, other.UserUnionTarget)) return false;
+      if (!object.Equals(CurProjectIdInfo, other.CurProjectIdInfo)) return false;
+      if (!object.Equals(DutyList, other.DutyList)) return false;
+      if (!object.Equals(ActionGroupData, other.ActionGroupData)) return false;
+      if (!object.Equals(RogueData, other.RogueData)) return false;
+      if (!object.Equals(LifeProfessionEntrust, other.LifeProfessionEntrust)) return false;
+      if (!object.Equals(BackflowData, other.BackflowData)) return false;
+      if (!object.Equals(NewBackPublicData, other.NewBackPublicData)) return false;
+      if (!object.Equals(UserMahjongInfo, other.UserMahjongInfo)) return false;
+      if (!object.Equals(IchibanKujiData, other.IchibanKujiData)) return false;
+      if (!object.Equals(UserGamesInfo, other.UserGamesInfo)) return false;
+      if (!object.Equals(StoryDataList, other.StoryDataList)) return false;
+      if (!object.Equals(Hobby, other.Hobby)) return false;
+      if (!object.Equals(HideSeekInfo, other.HideSeekInfo)) return false;
+      if (!object.Equals(MentorData, other.MentorData)) return false;
+      if (!object.Equals(VanityPetMgr, other.VanityPetMgr)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1699,6 +2081,28 @@ namespace Zproto {
       if (fightPoint_ != null) hash ^= FightPoint.GetHashCode();
       if (sign_ != null) hash ^= Sign.GetHashCode();
       if (charStatisticsData_ != null) hash ^= CharStatisticsData.GetHashCode();
+      if (commonTargetActivityList_ != null) hash ^= CommonTargetActivityList.GetHashCode();
+      if (itemCounterList_ != null) hash ^= ItemCounterList.GetHashCode();
+      if (seasonCultivateLineData_ != null) hash ^= SeasonCultivateLineData.GetHashCode();
+      if (seasonRoleLevelData_ != null) hash ^= SeasonRoleLevelData.GetHashCode();
+      if (reputationList_ != null) hash ^= ReputationList.GetHashCode();
+      if (SaveSerial != 0L) hash ^= SaveSerial.GetHashCode();
+      if (userUnionTarget_ != null) hash ^= UserUnionTarget.GetHashCode();
+      if (curProjectIdInfo_ != null) hash ^= CurProjectIdInfo.GetHashCode();
+      if (dutyList_ != null) hash ^= DutyList.GetHashCode();
+      if (actionGroupData_ != null) hash ^= ActionGroupData.GetHashCode();
+      if (rogueData_ != null) hash ^= RogueData.GetHashCode();
+      if (lifeProfessionEntrust_ != null) hash ^= LifeProfessionEntrust.GetHashCode();
+      if (backflowData_ != null) hash ^= BackflowData.GetHashCode();
+      if (newBackPublicData_ != null) hash ^= NewBackPublicData.GetHashCode();
+      if (userMahjongInfo_ != null) hash ^= UserMahjongInfo.GetHashCode();
+      if (ichibanKujiData_ != null) hash ^= IchibanKujiData.GetHashCode();
+      if (userGamesInfo_ != null) hash ^= UserGamesInfo.GetHashCode();
+      if (storyDataList_ != null) hash ^= StoryDataList.GetHashCode();
+      if (hobby_ != null) hash ^= Hobby.GetHashCode();
+      if (hideSeekInfo_ != null) hash ^= HideSeekInfo.GetHashCode();
+      if (mentorData_ != null) hash ^= MentorData.GetHashCode();
+      if (vanityPetMgr_ != null) hash ^= VanityPetMgr.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2101,6 +2505,94 @@ namespace Zproto {
         output.WriteRawTag(146, 6);
         output.WriteMessage(CharStatisticsData);
       }
+      if (commonTargetActivityList_ != null) {
+        output.WriteRawTag(154, 6);
+        output.WriteMessage(CommonTargetActivityList);
+      }
+      if (itemCounterList_ != null) {
+        output.WriteRawTag(162, 6);
+        output.WriteMessage(ItemCounterList);
+      }
+      if (seasonCultivateLineData_ != null) {
+        output.WriteRawTag(170, 6);
+        output.WriteMessage(SeasonCultivateLineData);
+      }
+      if (seasonRoleLevelData_ != null) {
+        output.WriteRawTag(178, 6);
+        output.WriteMessage(SeasonRoleLevelData);
+      }
+      if (reputationList_ != null) {
+        output.WriteRawTag(186, 6);
+        output.WriteMessage(ReputationList);
+      }
+      if (SaveSerial != 0L) {
+        output.WriteRawTag(192, 6);
+        output.WriteInt64(SaveSerial);
+      }
+      if (userUnionTarget_ != null) {
+        output.WriteRawTag(202, 6);
+        output.WriteMessage(UserUnionTarget);
+      }
+      if (curProjectIdInfo_ != null) {
+        output.WriteRawTag(210, 6);
+        output.WriteMessage(CurProjectIdInfo);
+      }
+      if (dutyList_ != null) {
+        output.WriteRawTag(218, 6);
+        output.WriteMessage(DutyList);
+      }
+      if (actionGroupData_ != null) {
+        output.WriteRawTag(226, 6);
+        output.WriteMessage(ActionGroupData);
+      }
+      if (rogueData_ != null) {
+        output.WriteRawTag(234, 6);
+        output.WriteMessage(RogueData);
+      }
+      if (lifeProfessionEntrust_ != null) {
+        output.WriteRawTag(242, 6);
+        output.WriteMessage(LifeProfessionEntrust);
+      }
+      if (backflowData_ != null) {
+        output.WriteRawTag(250, 6);
+        output.WriteMessage(BackflowData);
+      }
+      if (newBackPublicData_ != null) {
+        output.WriteRawTag(130, 7);
+        output.WriteMessage(NewBackPublicData);
+      }
+      if (userMahjongInfo_ != null) {
+        output.WriteRawTag(138, 7);
+        output.WriteMessage(UserMahjongInfo);
+      }
+      if (ichibanKujiData_ != null) {
+        output.WriteRawTag(146, 7);
+        output.WriteMessage(IchibanKujiData);
+      }
+      if (userGamesInfo_ != null) {
+        output.WriteRawTag(154, 7);
+        output.WriteMessage(UserGamesInfo);
+      }
+      if (storyDataList_ != null) {
+        output.WriteRawTag(162, 7);
+        output.WriteMessage(StoryDataList);
+      }
+      if (hobby_ != null) {
+        output.WriteRawTag(170, 7);
+        output.WriteMessage(Hobby);
+      }
+      if (hideSeekInfo_ != null) {
+        output.WriteRawTag(178, 7);
+        output.WriteMessage(HideSeekInfo);
+      }
+      if (mentorData_ != null) {
+        output.WriteRawTag(186, 7);
+        output.WriteMessage(MentorData);
+      }
+      if (vanityPetMgr_ != null) {
+        output.WriteRawTag(194, 7);
+        output.WriteMessage(VanityPetMgr);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2495,6 +2987,94 @@ namespace Zproto {
         output.WriteRawTag(146, 6);
         output.WriteMessage(CharStatisticsData);
       }
+      if (commonTargetActivityList_ != null) {
+        output.WriteRawTag(154, 6);
+        output.WriteMessage(CommonTargetActivityList);
+      }
+      if (itemCounterList_ != null) {
+        output.WriteRawTag(162, 6);
+        output.WriteMessage(ItemCounterList);
+      }
+      if (seasonCultivateLineData_ != null) {
+        output.WriteRawTag(170, 6);
+        output.WriteMessage(SeasonCultivateLineData);
+      }
+      if (seasonRoleLevelData_ != null) {
+        output.WriteRawTag(178, 6);
+        output.WriteMessage(SeasonRoleLevelData);
+      }
+      if (reputationList_ != null) {
+        output.WriteRawTag(186, 6);
+        output.WriteMessage(ReputationList);
+      }
+      if (SaveSerial != 0L) {
+        output.WriteRawTag(192, 6);
+        output.WriteInt64(SaveSerial);
+      }
+      if (userUnionTarget_ != null) {
+        output.WriteRawTag(202, 6);
+        output.WriteMessage(UserUnionTarget);
+      }
+      if (curProjectIdInfo_ != null) {
+        output.WriteRawTag(210, 6);
+        output.WriteMessage(CurProjectIdInfo);
+      }
+      if (dutyList_ != null) {
+        output.WriteRawTag(218, 6);
+        output.WriteMessage(DutyList);
+      }
+      if (actionGroupData_ != null) {
+        output.WriteRawTag(226, 6);
+        output.WriteMessage(ActionGroupData);
+      }
+      if (rogueData_ != null) {
+        output.WriteRawTag(234, 6);
+        output.WriteMessage(RogueData);
+      }
+      if (lifeProfessionEntrust_ != null) {
+        output.WriteRawTag(242, 6);
+        output.WriteMessage(LifeProfessionEntrust);
+      }
+      if (backflowData_ != null) {
+        output.WriteRawTag(250, 6);
+        output.WriteMessage(BackflowData);
+      }
+      if (newBackPublicData_ != null) {
+        output.WriteRawTag(130, 7);
+        output.WriteMessage(NewBackPublicData);
+      }
+      if (userMahjongInfo_ != null) {
+        output.WriteRawTag(138, 7);
+        output.WriteMessage(UserMahjongInfo);
+      }
+      if (ichibanKujiData_ != null) {
+        output.WriteRawTag(146, 7);
+        output.WriteMessage(IchibanKujiData);
+      }
+      if (userGamesInfo_ != null) {
+        output.WriteRawTag(154, 7);
+        output.WriteMessage(UserGamesInfo);
+      }
+      if (storyDataList_ != null) {
+        output.WriteRawTag(162, 7);
+        output.WriteMessage(StoryDataList);
+      }
+      if (hobby_ != null) {
+        output.WriteRawTag(170, 7);
+        output.WriteMessage(Hobby);
+      }
+      if (hideSeekInfo_ != null) {
+        output.WriteRawTag(178, 7);
+        output.WriteMessage(HideSeekInfo);
+      }
+      if (mentorData_ != null) {
+        output.WriteRawTag(186, 7);
+        output.WriteMessage(MentorData);
+      }
+      if (vanityPetMgr_ != null) {
+        output.WriteRawTag(194, 7);
+        output.WriteMessage(VanityPetMgr);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2792,6 +3372,72 @@ namespace Zproto {
       }
       if (charStatisticsData_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(CharStatisticsData);
+      }
+      if (commonTargetActivityList_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CommonTargetActivityList);
+      }
+      if (itemCounterList_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ItemCounterList);
+      }
+      if (seasonCultivateLineData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SeasonCultivateLineData);
+      }
+      if (seasonRoleLevelData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SeasonRoleLevelData);
+      }
+      if (reputationList_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ReputationList);
+      }
+      if (SaveSerial != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeInt64Size(SaveSerial);
+      }
+      if (userUnionTarget_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(UserUnionTarget);
+      }
+      if (curProjectIdInfo_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CurProjectIdInfo);
+      }
+      if (dutyList_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DutyList);
+      }
+      if (actionGroupData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ActionGroupData);
+      }
+      if (rogueData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(RogueData);
+      }
+      if (lifeProfessionEntrust_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(LifeProfessionEntrust);
+      }
+      if (backflowData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BackflowData);
+      }
+      if (newBackPublicData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(NewBackPublicData);
+      }
+      if (userMahjongInfo_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(UserMahjongInfo);
+      }
+      if (ichibanKujiData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(IchibanKujiData);
+      }
+      if (userGamesInfo_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(UserGamesInfo);
+      }
+      if (storyDataList_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(StoryDataList);
+      }
+      if (hobby_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Hobby);
+      }
+      if (hideSeekInfo_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(HideSeekInfo);
+      }
+      if (mentorData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(MentorData);
+      }
+      if (vanityPetMgr_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(VanityPetMgr);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3377,6 +4023,135 @@ namespace Zproto {
           CharStatisticsData = new global::Zproto.CharStatisticsData();
         }
         CharStatisticsData.MergeFrom(other.CharStatisticsData);
+      }
+      if (other.commonTargetActivityList_ != null) {
+        if (commonTargetActivityList_ == null) {
+          CommonTargetActivityList = new global::Zproto.CommonTargetActivityList();
+        }
+        CommonTargetActivityList.MergeFrom(other.CommonTargetActivityList);
+      }
+      if (other.itemCounterList_ != null) {
+        if (itemCounterList_ == null) {
+          ItemCounterList = new global::Zproto.ItemCounterList();
+        }
+        ItemCounterList.MergeFrom(other.ItemCounterList);
+      }
+      if (other.seasonCultivateLineData_ != null) {
+        if (seasonCultivateLineData_ == null) {
+          SeasonCultivateLineData = new global::Zproto.SeasonCultivateLineData();
+        }
+        SeasonCultivateLineData.MergeFrom(other.SeasonCultivateLineData);
+      }
+      if (other.seasonRoleLevelData_ != null) {
+        if (seasonRoleLevelData_ == null) {
+          SeasonRoleLevelData = new global::Zproto.SeasonRoleLevelData();
+        }
+        SeasonRoleLevelData.MergeFrom(other.SeasonRoleLevelData);
+      }
+      if (other.reputationList_ != null) {
+        if (reputationList_ == null) {
+          ReputationList = new global::Zproto.ReputationList();
+        }
+        ReputationList.MergeFrom(other.ReputationList);
+      }
+      if (other.SaveSerial != 0L) {
+        SaveSerial = other.SaveSerial;
+      }
+      if (other.userUnionTarget_ != null) {
+        if (userUnionTarget_ == null) {
+          UserUnionTarget = new global::Zproto.UserUnionTarget();
+        }
+        UserUnionTarget.MergeFrom(other.UserUnionTarget);
+      }
+      if (other.curProjectIdInfo_ != null) {
+        if (curProjectIdInfo_ == null) {
+          CurProjectIdInfo = new global::Zproto.CurrentProfessionProjectIdInfo();
+        }
+        CurProjectIdInfo.MergeFrom(other.CurProjectIdInfo);
+      }
+      if (other.dutyList_ != null) {
+        if (dutyList_ == null) {
+          DutyList = new global::Zproto.DutyList();
+        }
+        DutyList.MergeFrom(other.DutyList);
+      }
+      if (other.actionGroupData_ != null) {
+        if (actionGroupData_ == null) {
+          ActionGroupData = new global::Zproto.ActionGroupSaveData();
+        }
+        ActionGroupData.MergeFrom(other.ActionGroupData);
+      }
+      if (other.rogueData_ != null) {
+        if (rogueData_ == null) {
+          RogueData = new global::Zproto.RogueData();
+        }
+        RogueData.MergeFrom(other.RogueData);
+      }
+      if (other.lifeProfessionEntrust_ != null) {
+        if (lifeProfessionEntrust_ == null) {
+          LifeProfessionEntrust = new global::Zproto.LifeProfessionEntrustInfo();
+        }
+        LifeProfessionEntrust.MergeFrom(other.LifeProfessionEntrust);
+      }
+      if (other.backflowData_ != null) {
+        if (backflowData_ == null) {
+          BackflowData = new global::Zproto.BackflowData();
+        }
+        BackflowData.MergeFrom(other.BackflowData);
+      }
+      if (other.newBackPublicData_ != null) {
+        if (newBackPublicData_ == null) {
+          NewBackPublicData = new global::Zproto.NewbieBackflowPublicData();
+        }
+        NewBackPublicData.MergeFrom(other.NewBackPublicData);
+      }
+      if (other.userMahjongInfo_ != null) {
+        if (userMahjongInfo_ == null) {
+          UserMahjongInfo = new global::Zproto.UserMahjongInfo();
+        }
+        UserMahjongInfo.MergeFrom(other.UserMahjongInfo);
+      }
+      if (other.ichibanKujiData_ != null) {
+        if (ichibanKujiData_ == null) {
+          IchibanKujiData = new global::Zproto.IchibanKujiData();
+        }
+        IchibanKujiData.MergeFrom(other.IchibanKujiData);
+      }
+      if (other.userGamesInfo_ != null) {
+        if (userGamesInfo_ == null) {
+          UserGamesInfo = new global::Zproto.UserGamesInfo();
+        }
+        UserGamesInfo.MergeFrom(other.UserGamesInfo);
+      }
+      if (other.storyDataList_ != null) {
+        if (storyDataList_ == null) {
+          StoryDataList = new global::Zproto.StoryDataList();
+        }
+        StoryDataList.MergeFrom(other.StoryDataList);
+      }
+      if (other.hobby_ != null) {
+        if (hobby_ == null) {
+          Hobby = new global::Zproto.HobbyData();
+        }
+        Hobby.MergeFrom(other.Hobby);
+      }
+      if (other.hideSeekInfo_ != null) {
+        if (hideSeekInfo_ == null) {
+          HideSeekInfo = new global::Zproto.HideSeekInfo();
+        }
+        HideSeekInfo.MergeFrom(other.HideSeekInfo);
+      }
+      if (other.mentorData_ != null) {
+        if (mentorData_ == null) {
+          MentorData = new global::Zproto.MentorData();
+        }
+        MentorData.MergeFrom(other.MentorData);
+      }
+      if (other.vanityPetMgr_ != null) {
+        if (vanityPetMgr_ == null) {
+          VanityPetMgr = new global::Zproto.VanityPetMgr();
+        }
+        VanityPetMgr.MergeFrom(other.VanityPetMgr);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4066,6 +4841,157 @@ namespace Zproto {
             input.ReadMessage(CharStatisticsData);
             break;
           }
+          case 794: {
+            if (commonTargetActivityList_ == null) {
+              CommonTargetActivityList = new global::Zproto.CommonTargetActivityList();
+            }
+            input.ReadMessage(CommonTargetActivityList);
+            break;
+          }
+          case 802: {
+            if (itemCounterList_ == null) {
+              ItemCounterList = new global::Zproto.ItemCounterList();
+            }
+            input.ReadMessage(ItemCounterList);
+            break;
+          }
+          case 810: {
+            if (seasonCultivateLineData_ == null) {
+              SeasonCultivateLineData = new global::Zproto.SeasonCultivateLineData();
+            }
+            input.ReadMessage(SeasonCultivateLineData);
+            break;
+          }
+          case 818: {
+            if (seasonRoleLevelData_ == null) {
+              SeasonRoleLevelData = new global::Zproto.SeasonRoleLevelData();
+            }
+            input.ReadMessage(SeasonRoleLevelData);
+            break;
+          }
+          case 826: {
+            if (reputationList_ == null) {
+              ReputationList = new global::Zproto.ReputationList();
+            }
+            input.ReadMessage(ReputationList);
+            break;
+          }
+          case 832: {
+            SaveSerial = input.ReadInt64();
+            break;
+          }
+          case 842: {
+            if (userUnionTarget_ == null) {
+              UserUnionTarget = new global::Zproto.UserUnionTarget();
+            }
+            input.ReadMessage(UserUnionTarget);
+            break;
+          }
+          case 850: {
+            if (curProjectIdInfo_ == null) {
+              CurProjectIdInfo = new global::Zproto.CurrentProfessionProjectIdInfo();
+            }
+            input.ReadMessage(CurProjectIdInfo);
+            break;
+          }
+          case 858: {
+            if (dutyList_ == null) {
+              DutyList = new global::Zproto.DutyList();
+            }
+            input.ReadMessage(DutyList);
+            break;
+          }
+          case 866: {
+            if (actionGroupData_ == null) {
+              ActionGroupData = new global::Zproto.ActionGroupSaveData();
+            }
+            input.ReadMessage(ActionGroupData);
+            break;
+          }
+          case 874: {
+            if (rogueData_ == null) {
+              RogueData = new global::Zproto.RogueData();
+            }
+            input.ReadMessage(RogueData);
+            break;
+          }
+          case 882: {
+            if (lifeProfessionEntrust_ == null) {
+              LifeProfessionEntrust = new global::Zproto.LifeProfessionEntrustInfo();
+            }
+            input.ReadMessage(LifeProfessionEntrust);
+            break;
+          }
+          case 890: {
+            if (backflowData_ == null) {
+              BackflowData = new global::Zproto.BackflowData();
+            }
+            input.ReadMessage(BackflowData);
+            break;
+          }
+          case 898: {
+            if (newBackPublicData_ == null) {
+              NewBackPublicData = new global::Zproto.NewbieBackflowPublicData();
+            }
+            input.ReadMessage(NewBackPublicData);
+            break;
+          }
+          case 906: {
+            if (userMahjongInfo_ == null) {
+              UserMahjongInfo = new global::Zproto.UserMahjongInfo();
+            }
+            input.ReadMessage(UserMahjongInfo);
+            break;
+          }
+          case 914: {
+            if (ichibanKujiData_ == null) {
+              IchibanKujiData = new global::Zproto.IchibanKujiData();
+            }
+            input.ReadMessage(IchibanKujiData);
+            break;
+          }
+          case 922: {
+            if (userGamesInfo_ == null) {
+              UserGamesInfo = new global::Zproto.UserGamesInfo();
+            }
+            input.ReadMessage(UserGamesInfo);
+            break;
+          }
+          case 930: {
+            if (storyDataList_ == null) {
+              StoryDataList = new global::Zproto.StoryDataList();
+            }
+            input.ReadMessage(StoryDataList);
+            break;
+          }
+          case 938: {
+            if (hobby_ == null) {
+              Hobby = new global::Zproto.HobbyData();
+            }
+            input.ReadMessage(Hobby);
+            break;
+          }
+          case 946: {
+            if (hideSeekInfo_ == null) {
+              HideSeekInfo = new global::Zproto.HideSeekInfo();
+            }
+            input.ReadMessage(HideSeekInfo);
+            break;
+          }
+          case 954: {
+            if (mentorData_ == null) {
+              MentorData = new global::Zproto.MentorData();
+            }
+            input.ReadMessage(MentorData);
+            break;
+          }
+          case 962: {
+            if (vanityPetMgr_ == null) {
+              VanityPetMgr = new global::Zproto.VanityPetMgr();
+            }
+            input.ReadMessage(VanityPetMgr);
+            break;
+          }
         }
       }
     #endif
@@ -4752,6 +5678,157 @@ namespace Zproto {
               CharStatisticsData = new global::Zproto.CharStatisticsData();
             }
             input.ReadMessage(CharStatisticsData);
+            break;
+          }
+          case 794: {
+            if (commonTargetActivityList_ == null) {
+              CommonTargetActivityList = new global::Zproto.CommonTargetActivityList();
+            }
+            input.ReadMessage(CommonTargetActivityList);
+            break;
+          }
+          case 802: {
+            if (itemCounterList_ == null) {
+              ItemCounterList = new global::Zproto.ItemCounterList();
+            }
+            input.ReadMessage(ItemCounterList);
+            break;
+          }
+          case 810: {
+            if (seasonCultivateLineData_ == null) {
+              SeasonCultivateLineData = new global::Zproto.SeasonCultivateLineData();
+            }
+            input.ReadMessage(SeasonCultivateLineData);
+            break;
+          }
+          case 818: {
+            if (seasonRoleLevelData_ == null) {
+              SeasonRoleLevelData = new global::Zproto.SeasonRoleLevelData();
+            }
+            input.ReadMessage(SeasonRoleLevelData);
+            break;
+          }
+          case 826: {
+            if (reputationList_ == null) {
+              ReputationList = new global::Zproto.ReputationList();
+            }
+            input.ReadMessage(ReputationList);
+            break;
+          }
+          case 832: {
+            SaveSerial = input.ReadInt64();
+            break;
+          }
+          case 842: {
+            if (userUnionTarget_ == null) {
+              UserUnionTarget = new global::Zproto.UserUnionTarget();
+            }
+            input.ReadMessage(UserUnionTarget);
+            break;
+          }
+          case 850: {
+            if (curProjectIdInfo_ == null) {
+              CurProjectIdInfo = new global::Zproto.CurrentProfessionProjectIdInfo();
+            }
+            input.ReadMessage(CurProjectIdInfo);
+            break;
+          }
+          case 858: {
+            if (dutyList_ == null) {
+              DutyList = new global::Zproto.DutyList();
+            }
+            input.ReadMessage(DutyList);
+            break;
+          }
+          case 866: {
+            if (actionGroupData_ == null) {
+              ActionGroupData = new global::Zproto.ActionGroupSaveData();
+            }
+            input.ReadMessage(ActionGroupData);
+            break;
+          }
+          case 874: {
+            if (rogueData_ == null) {
+              RogueData = new global::Zproto.RogueData();
+            }
+            input.ReadMessage(RogueData);
+            break;
+          }
+          case 882: {
+            if (lifeProfessionEntrust_ == null) {
+              LifeProfessionEntrust = new global::Zproto.LifeProfessionEntrustInfo();
+            }
+            input.ReadMessage(LifeProfessionEntrust);
+            break;
+          }
+          case 890: {
+            if (backflowData_ == null) {
+              BackflowData = new global::Zproto.BackflowData();
+            }
+            input.ReadMessage(BackflowData);
+            break;
+          }
+          case 898: {
+            if (newBackPublicData_ == null) {
+              NewBackPublicData = new global::Zproto.NewbieBackflowPublicData();
+            }
+            input.ReadMessage(NewBackPublicData);
+            break;
+          }
+          case 906: {
+            if (userMahjongInfo_ == null) {
+              UserMahjongInfo = new global::Zproto.UserMahjongInfo();
+            }
+            input.ReadMessage(UserMahjongInfo);
+            break;
+          }
+          case 914: {
+            if (ichibanKujiData_ == null) {
+              IchibanKujiData = new global::Zproto.IchibanKujiData();
+            }
+            input.ReadMessage(IchibanKujiData);
+            break;
+          }
+          case 922: {
+            if (userGamesInfo_ == null) {
+              UserGamesInfo = new global::Zproto.UserGamesInfo();
+            }
+            input.ReadMessage(UserGamesInfo);
+            break;
+          }
+          case 930: {
+            if (storyDataList_ == null) {
+              StoryDataList = new global::Zproto.StoryDataList();
+            }
+            input.ReadMessage(StoryDataList);
+            break;
+          }
+          case 938: {
+            if (hobby_ == null) {
+              Hobby = new global::Zproto.HobbyData();
+            }
+            input.ReadMessage(Hobby);
+            break;
+          }
+          case 946: {
+            if (hideSeekInfo_ == null) {
+              HideSeekInfo = new global::Zproto.HideSeekInfo();
+            }
+            input.ReadMessage(HideSeekInfo);
+            break;
+          }
+          case 954: {
+            if (mentorData_ == null) {
+              MentorData = new global::Zproto.MentorData();
+            }
+            input.ReadMessage(MentorData);
+            break;
+          }
+          case 962: {
+            if (vanityPetMgr_ == null) {
+              VanityPetMgr = new global::Zproto.VanityPetMgr();
+            }
+            input.ReadMessage(VanityPetMgr);
             break;
           }
         }

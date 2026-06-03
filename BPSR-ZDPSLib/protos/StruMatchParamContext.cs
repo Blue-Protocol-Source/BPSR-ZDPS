@@ -27,15 +27,18 @@ namespace Zproto {
             "Ch5zdHJ1X21hdGNoX3BhcmFtX2NvbnRleHQucHJvdG8SBnpwcm90bxoXZW51",
             "bV9lX21hdGNoX21vZGUucHJvdG8aG2VudW1fZV9tYXRjaF9zdHJhdGVneS5w",
             "cm90bxoZc3RydV9tYXRjaF9rZXlfaW5mby5wcm90bxocc3RydV9tYXRjaF9w",
-            "bGF5ZXJfaW5mby5wcm90bxoZZ29vZ2xlL3Byb3RvYnVmL2FueS5wcm90byLU",
-            "AgoRTWF0Y2hQYXJhbUNvbnRleHQSJgoKbWF0Y2hfbW9kZRgBIAEoDjISLnpw",
-            "cm90by5FTWF0Y2hNb2RlEhMKC21hdGNoX3Rva2VuGAQgASgJEg8KB3RlYW1f",
-            "aWQYBSABKAMSLgoObWF0Y2hfc3RyYXRlZ3kYBiABKA4yFi56cHJvdG8uRU1h",
-            "dGNoU3RyYXRlZ3kSMgoUbWF0Y2hfc3RyYXRlZ3lfcGFyYW0YByABKAsyFC5n",
-            "b29nbGUucHJvdG9idWYuQW55EiwKDm1hdGNoX2tleV9pbmZvGAggASgLMhQu",
-            "enByb3RvLk1hdGNoS2V5SW5mbxIXCg9tYXRjaF9ncmFpbl9rZXkYCSABKAkS",
-            "MgoRbWF0Y2hfcGxheWVyX2luZm8YCiABKAsyFy56cHJvdG8uTWF0Y2hQbGF5",
-            "ZXJJbmZvEhIKCmR1bmdlb25faWQYCyABKAViBnByb3RvMw=="));
+            "bGF5ZXJfaW5mby5wcm90bxoZZ29vZ2xlL3Byb3RvYnVmL2FueS5wcm90byLC",
+            "AwoRTWF0Y2hQYXJhbUNvbnRleHQSMAoJbWF0Y2hNb2RlGAEgASgOMhIuenBy",
+            "b3RvLkVNYXRjaE1vZGVSCW1hdGNoTW9kZRIeCgptYXRjaFRva2VuGAQgASgJ",
+            "UgptYXRjaFRva2VuEhYKBnRlYW1JZBgFIAEoA1IGdGVhbUlkEjwKDW1hdGNo",
+            "U3RyYXRlZ3kYBiABKA4yFi56cHJvdG8uRU1hdGNoU3RyYXRlZ3lSDW1hdGNo",
+            "U3RyYXRlZ3kSRAoSbWF0Y2hTdHJhdGVneVBhcmFtGAcgASgLMhQuZ29vZ2xl",
+            "LnByb3RvYnVmLkFueVISbWF0Y2hTdHJhdGVneVBhcmFtEjgKDG1hdGNoS2V5",
+            "SW5mbxgIIAEoCzIULnpwcm90by5NYXRjaEtleUluZm9SDG1hdGNoS2V5SW5m",
+            "bxIkCg1tYXRjaEdyYWluS2V5GAkgASgJUg1tYXRjaEdyYWluS2V5EkEKD21h",
+            "dGNoUGxheWVySW5mbxgKIAEoCzIXLnpwcm90by5NYXRjaFBsYXllckluZm9S",
+            "D21hdGNoUGxheWVySW5mbxIcCglkdW5nZW9uSWQYCyABKAVSCWR1bmdlb25J",
+            "ZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEMatchModeReflection.Descriptor, global::Zproto.EnumEMatchStrategyReflection.Descriptor, global::Zproto.StruMatchKeyInfoReflection.Descriptor, global::Zproto.StruMatchPlayerInfoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +102,7 @@ namespace Zproto {
       return new MatchParamContext(this);
     }
 
-    /// <summary>Field number for the "match_mode" field.</summary>
+    /// <summary>Field number for the "matchMode" field.</summary>
     public const int MatchModeFieldNumber = 1;
     private global::Zproto.EMatchMode matchMode_ = global::Zproto.EMatchMode.Single;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_token" field.</summary>
+    /// <summary>Field number for the "matchToken" field.</summary>
     public const int MatchTokenFieldNumber = 4;
     private string matchToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "team_id" field.</summary>
+    /// <summary>Field number for the "teamId" field.</summary>
     public const int TeamIdFieldNumber = 5;
     private long teamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_strategy" field.</summary>
+    /// <summary>Field number for the "matchStrategy" field.</summary>
     public const int MatchStrategyFieldNumber = 6;
     private global::Zproto.EMatchStrategy matchStrategy_ = global::Zproto.EMatchStrategy.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,7 +150,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_strategy_param" field.</summary>
+    /// <summary>Field number for the "matchStrategyParam" field.</summary>
     public const int MatchStrategyParamFieldNumber = 7;
     private global::Google.Protobuf.WellKnownTypes.Any matchStrategyParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -159,7 +162,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_key_info" field.</summary>
+    /// <summary>Field number for the "matchKeyInfo" field.</summary>
     public const int MatchKeyInfoFieldNumber = 8;
     private global::Zproto.MatchKeyInfo matchKeyInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -171,7 +174,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_grain_key" field.</summary>
+    /// <summary>Field number for the "matchGrainKey" field.</summary>
     public const int MatchGrainKeyFieldNumber = 9;
     private string matchGrainKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -183,7 +186,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_player_info" field.</summary>
+    /// <summary>Field number for the "matchPlayerInfo" field.</summary>
     public const int MatchPlayerInfoFieldNumber = 10;
     private global::Zproto.MatchPlayerInfo matchPlayerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -195,7 +198,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_id" field.</summary>
+    /// <summary>Field number for the "dungeonId" field.</summary>
     public const int DungeonIdFieldNumber = 11;
     private int dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

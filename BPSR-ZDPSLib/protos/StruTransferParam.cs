@@ -26,13 +26,16 @@ namespace Zproto {
           string.Concat(
             "ChlzdHJ1X3RyYW5zZmVyX3BhcmFtLnByb3RvEgZ6cHJvdG8aH2VudW1fZV91",
             "c2VyX3RyYW5zZmVyX3R5cGUucHJvdG8aGXN0cnVfcG9zaXRpb25fcGFyYW0u",
-            "cHJvdG8ipgIKDVRyYW5zZmVyUGFyYW0SEAoIc2NlbmVfaWQYASABKAUSMAoN",
-            "dHJhbnNmZXJfdHlwZRgCIAEoDjIZLnpwcm90by5FVXNlclRyYW5zZmVyVHlw",
-            "ZRItCg5wb3NpdGlvbl9wYXJhbRgDIAEoCzIVLnpwcm90by5Qb3NpdGlvblBh",
-            "cmFtEhMKC2NoYW5nZV9mbGFnGAQgASgDEhgKEGlzX3NlcnZlcl9zd2l0Y2gY",
-            "BSABKAgSHgoWdmlzdWFsX2xheWVyX2NvbmZpZ19pZBgGIAEoBRISCgpzY2Vu",
-            "ZV9ndWlkGAcgASgJEhQKDGNvbm5lY3RfZ3VpZBgIIAEoCRIWCg5zdWJfc2Nl",
-            "bmVfdXVpZBgJIAEoAxIRCglpc19yZXZpdmUYCiABKAhiBnByb3RvMw=="));
+            "cHJvdG8inwMKDVRyYW5zZmVyUGFyYW0SGAoHc2NlbmVJZBgBIAEoBVIHc2Nl",
+            "bmVJZBI9Cgx0cmFuc2ZlclR5cGUYAiABKA4yGS56cHJvdG8uRVVzZXJUcmFu",
+            "c2ZlclR5cGVSDHRyYW5zZmVyVHlwZRI7Cg1wb3NpdGlvblBhcmFtGAMgASgL",
+            "MhUuenByb3RvLlBvc2l0aW9uUGFyYW1SDXBvc2l0aW9uUGFyYW0SHgoKY2hh",
+            "bmdlRmxhZxgEIAEoA1IKY2hhbmdlRmxhZxImCg5pc1NlcnZlclN3aXRjaBgF",
+            "IAEoCFIOaXNTZXJ2ZXJTd2l0Y2gSMAoTdmlzdWFsTGF5ZXJDb25maWdJZBgG",
+            "IAEoBVITdmlzdWFsTGF5ZXJDb25maWdJZBIcCglzY2VuZUd1aWQYByABKAlS",
+            "CXNjZW5lR3VpZBIgCgtjb25uZWN0R3VpZBgIIAEoCVILY29ubmVjdEd1aWQS",
+            "IgoMc3ViU2NlbmVVdWlkGAkgASgDUgxzdWJTY2VuZVV1aWQSGgoIaXNSZXZp",
+            "dmUYCiABKAhSCGlzUmV2aXZlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEUserTransferTypeReflection.Descriptor, global::Zproto.StruPositionParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +100,7 @@ namespace Zproto {
       return new TransferParam(this);
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
+    /// <summary>Field number for the "sceneId" field.</summary>
     public const int SceneIdFieldNumber = 1;
     private int sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "transfer_type" field.</summary>
+    /// <summary>Field number for the "transferType" field.</summary>
     public const int TransferTypeFieldNumber = 2;
     private global::Zproto.EUserTransferType transferType_ = global::Zproto.EUserTransferType.Default;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "position_param" field.</summary>
+    /// <summary>Field number for the "positionParam" field.</summary>
     public const int PositionParamFieldNumber = 3;
     private global::Zproto.PositionParam positionParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -133,7 +136,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "change_flag" field.</summary>
+    /// <summary>Field number for the "changeFlag" field.</summary>
     public const int ChangeFlagFieldNumber = 4;
     private long changeFlag_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -145,7 +148,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_server_switch" field.</summary>
+    /// <summary>Field number for the "isServerSwitch" field.</summary>
     public const int IsServerSwitchFieldNumber = 5;
     private bool isServerSwitch_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -157,7 +160,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "visual_layer_config_id" field.</summary>
+    /// <summary>Field number for the "visualLayerConfigId" field.</summary>
     public const int VisualLayerConfigIdFieldNumber = 6;
     private int visualLayerConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,7 +172,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_guid" field.</summary>
+    /// <summary>Field number for the "sceneGuid" field.</summary>
     public const int SceneGuidFieldNumber = 7;
     private string sceneGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -181,7 +184,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "connect_guid" field.</summary>
+    /// <summary>Field number for the "connectGuid" field.</summary>
     public const int ConnectGuidFieldNumber = 8;
     private string connectGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -193,7 +196,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sub_scene_uuid" field.</summary>
+    /// <summary>Field number for the "subSceneUuid" field.</summary>
     public const int SubSceneUuidFieldNumber = 9;
     private long subSceneUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -205,7 +208,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_revive" field.</summary>
+    /// <summary>Field number for the "isRevive" field.</summary>
     public const int IsReviveFieldNumber = 10;
     private bool isRevive_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

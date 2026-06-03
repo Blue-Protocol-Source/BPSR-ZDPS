@@ -24,11 +24,11 @@ namespace Zproto {
     static EnumSystemTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZlbnVtX3N5c3RlbV90eXBlLnByb3RvEgZ6cHJvdG8qjwEKClN5c3RlbVR5",
+            "ChZlbnVtX3N5c3RlbV90eXBlLnByb3RvEgZ6cHJvdG8qqgEKClN5c3RlbVR5",
             "cGUSEwoPU3lzdGVtVHlwZV9OdWxsEAASFgoSU3lzdGVtVHlwZV9BbmRyb2lk",
             "EAESEgoOU3lzdGVtVHlwZV9Jb3MQAhISCg5TeXN0ZW1UeXBlX1dlYhADEhQK",
-            "EFN5c3RlbVR5cGVfTGludXgQBBIWChJTeXN0ZW1UeXBlX1dpbmRvd3MQBWIG",
-            "cHJvdG8z"));
+            "EFN5c3RlbVR5cGVfTGludXgQBBIWChJTeXN0ZW1UeXBlX1dpbmRvd3MQBRIZ",
+            "ChRTeXN0ZW1UeXBlX0hhcm1vbnlPUxCRTmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.SystemType), }, null, null));
@@ -44,6 +44,7 @@ namespace Zproto {
     [pbr::OriginalName("SystemType_Web")] Web = 3,
     [pbr::OriginalName("SystemType_Linux")] Linux = 4,
     [pbr::OriginalName("SystemType_Windows")] Windows = 5,
+    [pbr::OriginalName("SystemType_HarmonyOS")] HarmonyOs = 10001,
   }
 
   #endregion

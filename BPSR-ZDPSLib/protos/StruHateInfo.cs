@@ -24,8 +24,9 @@ namespace Zproto {
     static StruHateInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRzdHJ1X2hhdGVfaW5mby5wcm90bxIGenByb3RvIioKCEhhdGVJbmZvEgwK",
-            "BHV1aWQYASABKAMSEAoIaGF0ZV92YWwYAiABKA1iBnByb3RvMw=="));
+            "ChRzdHJ1X2hhdGVfaW5mby5wcm90bxIGenByb3RvIjgKCEhhdGVJbmZvEhIK",
+            "BHV1aWQYASABKANSBHV1aWQSGAoHaGF0ZVZhbBgCIAEoDVIHaGF0ZVZhbGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hate_val" field.</summary>
+    /// <summary>Field number for the "hateVal" field.</summary>
     public const int HateValFieldNumber = 2;
     private uint hateVal_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

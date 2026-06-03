@@ -8,80 +8,94 @@ public class BlobReader
 {
     public int Offset;
     public byte[] Buff;
+    public bool StreamSafe = false;
 
-    public BlobReader(byte[] buff)
+    public BlobReader(byte[] buff, bool streamSafe)
     {
         Buff = buff;
         Offset = 0;
+        StreamSafe = streamSafe;
+    }
+
+    public void AddOffset(int realOffset)
+    {
+        if (StreamSafe)
+        {
+            Offset += realOffset + 4;
+        }
+        else
+        {
+            Offset += realOffset;
+        }
     }
 
     public int ReadByte()
     {
         var val = Buff.AsSpan()[Offset];
-        Offset += 5;
+        AddOffset(1);
         return val;
     }
     
     public byte[] ReadBytes(int length)
     {
         var val = Buff.AsSpan()[Offset..(Offset + length)].ToArray();
-        Offset += length + 4;
+        AddOffset(length);
         return val;
     }
 
     public int ReadShort()
     {
         var val = BinaryPrimitives.ReadInt16LittleEndian(Buff.AsSpan()[Offset..]);
-        Offset += 6;
+        AddOffset(2);
         return val;
     }
     
     public int ReadUShort()
     {
         var val = BinaryPrimitives.ReadUInt16LittleEndian(Buff.AsSpan()[Offset..]);
-        Offset += 6;
+        AddOffset(2);
         return val;
     }
     
     public int ReadInt()
     {
         var val = BinaryPrimitives.ReadInt32LittleEndian(Buff.AsSpan()[Offset..]);
-        Offset += 8;
+        AddOffset(4);
         return val;
     }
     
     public uint ReadUInt()
     {
         var val = BinaryPrimitives.ReadUInt32LittleEndian(Buff.AsSpan()[Offset..]);
-        Offset += 8;
+        AddOffset(4);
         return val;
     }
     
     public long ReadLong()
     {
         var val = BinaryPrimitives.ReadInt64LittleEndian(Buff.AsSpan()[Offset..]);
-        Offset += 12;
+        AddOffset(8);
         return val;
     }
     
     public ulong ReadULong()
     {
         var val = BinaryPrimitives.ReadUInt64LittleEndian(Buff.AsSpan()[Offset..]);
-        Offset += 12;
+        AddOffset(8);
         return val;
     }
     
     public float ReadFloat()
     {
         var val = BinaryPrimitives.ReadSingleLittleEndian(Buff.AsSpan()[Offset..]);
-        Offset += 8;
+        AddOffset(4);
         return val;
     }
     
     public double ReadDouble()
     {
         var val = BinaryPrimitives.ReadDoubleLittleEndian(Buff.AsSpan()[Offset..]);
-        Offset += 12;
+        AddOffset(8);
         return val;
     }
 
@@ -91,7 +105,7 @@ public class BlobReader
 
         var bytes = Buff.AsSpan()[Offset..(Offset + (int)length)];
 
-        Offset += ((int)length + 4);
+        AddOffset((int)length);
 
         return bytes.Length == 0 ? string.Empty : System.Text.Encoding.UTF8.GetString(bytes);
     }

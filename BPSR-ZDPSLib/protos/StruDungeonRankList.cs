@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X2R1bmdlb25fcmFua19saXN0LnByb3RvEgZ6cHJvdG8aHHN0cnVf",
             "ZHVuZ2Vvbl9yYW5rX2luZm8ucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90",
-            "byKoAQoPRHVuZ2VvblJhbmtMaXN0EkUKEGR1bmdlb25fcmFua19tYXAYASAD",
-            "KAsyKy56cHJvdG8uRHVuZ2VvblJhbmtMaXN0LkR1bmdlb25SYW5rTWFwRW50",
-            "cnkaTgoTRHVuZ2VvblJhbmtNYXBFbnRyeRILCgNrZXkYASABKAUSJgoFdmFs",
-            "dWUYAiABKAsyFy56cHJvdG8uRHVuZ2VvblJhbmtJbmZvOgI4AWIGcHJvdG8z"));
+            "byK2AQoPRHVuZ2VvblJhbmtMaXN0ElMKDmR1bmdlb25SYW5rTWFwGAEgAygL",
+            "MisuenByb3RvLkR1bmdlb25SYW5rTGlzdC5EdW5nZW9uUmFua01hcEVudHJ5",
+            "Ug5kdW5nZW9uUmFua01hcBpOChNEdW5nZW9uUmFua01hcEVudHJ5EgsKA2tl",
+            "eRgBIAEoBRImCgV2YWx1ZRgCIAEoCzIXLnpwcm90by5EdW5nZW9uUmFua0lu",
+            "Zm86AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDungeonRankInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new DungeonRankList(this);
     }
 
-    /// <summary>Field number for the "dungeon_rank_map" field.</summary>
+    /// <summary>Field number for the "dungeonRankMap" field.</summary>
     public const int DungeonRankMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.DungeonRankInfo>.Codec _map_dungeonRankMap_codec
         = new pbc::MapField<int, global::Zproto.DungeonRankInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.DungeonRankInfo.Parser), 10);

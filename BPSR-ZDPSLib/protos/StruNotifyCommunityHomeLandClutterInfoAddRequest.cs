@@ -26,13 +26,14 @@ namespace Zproto {
           string.Concat(
             "Cj5zdHJ1X25vdGlmeV9jb21tdW5pdHlfaG9tZV9sYW5kX2NsdXR0ZXJfaW5m",
             "b19hZGRfcmVxdWVzdC5wcm90bxIGenByb3RvGhJzdHJ1X2NsdXR0ZXIucHJv",
-            "dG8ikgIKLE5vdGlmeUNvbW11bml0eUhvbWVMYW5kQ2x1dHRlckluZm9BZGRS",
-            "ZXF1ZXN0EhQKDGNvbW11bml0eV9pZBgBIAEoAxITCgtob21lbGFuZF9pZBgC",
-            "IAEoAxJrChVhZGRfaG9tZV9sYW5kX2NsdXR0ZXIYAyADKAsyTC56cHJvdG8u",
-            "Tm90aWZ5Q29tbXVuaXR5SG9tZUxhbmRDbHV0dGVySW5mb0FkZFJlcXVlc3Qu",
-            "QWRkSG9tZUxhbmRDbHV0dGVyRW50cnkaSgoXQWRkSG9tZUxhbmRDbHV0dGVy",
-            "RW50cnkSCwoDa2V5GAEgASgDEh4KBXZhbHVlGAIgASgLMg8uenByb3RvLkNs",
-            "dXR0ZXI6AjgBYgZwcm90bzM="));
+            "dG8iugIKLE5vdGlmeUNvbW11bml0eUhvbWVMYW5kQ2x1dHRlckluZm9BZGRS",
+            "ZXF1ZXN0EiAKC2NvbW11bml0eUlkGAEgASgDUgtjb21tdW5pdHlJZBIeCgpo",
+            "b21lbGFuZElkGAIgASgDUgpob21lbGFuZElkEnwKEmFkZEhvbWVMYW5kQ2x1",
+            "dHRlchgDIAMoCzJMLnpwcm90by5Ob3RpZnlDb21tdW5pdHlIb21lTGFuZENs",
+            "dXR0ZXJJbmZvQWRkUmVxdWVzdC5BZGRIb21lTGFuZENsdXR0ZXJFbnRyeVIS",
+            "YWRkSG9tZUxhbmRDbHV0dGVyGkoKF0FkZEhvbWVMYW5kQ2x1dHRlckVudHJ5",
+            "EgsKA2tleRgBIAEoAxIeCgV2YWx1ZRgCIAEoCzIPLnpwcm90by5DbHV0dGVy",
+            "OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruClutterReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new NotifyCommunityHomeLandClutterInfoAddRequest(this);
     }
 
-    /// <summary>Field number for the "community_id" field.</summary>
+    /// <summary>Field number for the "communityId" field.</summary>
     public const int CommunityIdFieldNumber = 1;
     private long communityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 2;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "add_home_land_clutter" field.</summary>
+    /// <summary>Field number for the "addHomeLandClutter" field.</summary>
     public const int AddHomeLandClutterFieldNumber = 3;
     private static readonly pbc::MapField<long, global::Zproto.Clutter>.Codec _map_addHomeLandClutter_codec
         = new pbc::MapField<long, global::Zproto.Clutter>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.Clutter.Parser), 26);

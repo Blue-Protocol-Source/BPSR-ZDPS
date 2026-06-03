@@ -25,13 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChVzdHJ1X3NjZW5lX2luZm8ucHJvdG8SBnpwcm90bxoVc3RydV9zY2VuZV9k",
-            "YXRhLnByb3RvGhhzdHJ1X3RyYW5zZmVyX2luZm8ucHJvdG8i6QEKCVNjZW5l",
-            "SW5mbxIfCgRkYXRhGAEgASgLMhEuenByb3RvLlNjZW5lRGF0YRIRCglzZXJ2",
-            "ZXJfaWQYAiABKA0SEAoIc2NlbmVfaWQYAyABKAMSDAoEaG9zdBgEIAEoCRIR",
-            "CgljaGFuZ2VtYXAYBSABKAgSFAoMb2xkX3NjZW5lX2lkGAYgASgNEhoKEm9s",
-            "ZF9zY2VuZV9zdWJfdHlwZRgHIAEoDRIWCg5zY2VuZV9zdWJfdHlwZRgIIAEo",
-            "DRIrCg10cmFuc2Zlcl9pbmZvGAkgASgLMhQuenByb3RvLlRyYW5zZmVySW5m",
-            "b2IGcHJvdG8z"));
+            "YXRhLnByb3RvGhhzdHJ1X3RyYW5zZmVyX2luZm8ucHJvdG8iwgIKCVNjZW5l",
+            "SW5mbxIlCgRkYXRhGAEgASgLMhEuenByb3RvLlNjZW5lRGF0YVIEZGF0YRIa",
+            "CghzZXJ2ZXJJZBgCIAEoDVIIc2VydmVySWQSGAoHc2NlbmVJZBgDIAEoA1IH",
+            "c2NlbmVJZBISCgRob3N0GAQgASgJUgRob3N0EhwKCWNoYW5nZW1hcBgFIAEo",
+            "CFIJY2hhbmdlbWFwEh4KCm9sZFNjZW5lSWQYBiABKA1SCm9sZFNjZW5lSWQS",
+            "KAoPb2xkU2NlbmVTdWJUeXBlGAcgASgNUg9vbGRTY2VuZVN1YlR5cGUSIgoM",
+            "c2NlbmVTdWJUeXBlGAggASgNUgxzY2VuZVN1YlR5cGUSOAoMdHJhbnNmZXJJ",
+            "bmZvGAkgASgLMhQuenByb3RvLlRyYW5zZmVySW5mb1IMdHJhbnNmZXJJbmZv",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSceneDataReflection.Descriptor, global::Zproto.StruTransferInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -107,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "server_id" field.</summary>
+    /// <summary>Field number for the "serverId" field.</summary>
     public const int ServerIdFieldNumber = 2;
     private uint serverId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -119,7 +121,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
+    /// <summary>Field number for the "sceneId" field.</summary>
     public const int SceneIdFieldNumber = 3;
     private long sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,7 +157,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "old_scene_id" field.</summary>
+    /// <summary>Field number for the "oldSceneId" field.</summary>
     public const int OldSceneIdFieldNumber = 6;
     private uint oldSceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +169,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "old_scene_sub_type" field.</summary>
+    /// <summary>Field number for the "oldSceneSubType" field.</summary>
     public const int OldSceneSubTypeFieldNumber = 7;
     private uint oldSceneSubType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_sub_type" field.</summary>
+    /// <summary>Field number for the "sceneSubType" field.</summary>
     public const int SceneSubTypeFieldNumber = 8;
     private uint sceneSubType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -191,7 +193,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "transfer_info" field.</summary>
+    /// <summary>Field number for the "transferInfo" field.</summary>
     public const int TransferInfoFieldNumber = 9;
     private global::Zproto.TransferInfo transferInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

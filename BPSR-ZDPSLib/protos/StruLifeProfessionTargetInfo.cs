@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2xpZmVfcHJvZmVzc2lvbl90YXJnZXRfaW5mby5wcm90bxIGenBy",
-            "b3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iZwoYTGlmZVByb2Zlc3Npb25U",
-            "YXJnZXRJbmZvEgoKAmlkGAEgASgFEg0KBXZhbHVlGAIgASgFEg0KBWxldmVs",
-            "GAMgASgFEiEKGWxpZmVfdGFyZ2V0X3Jld2FyZF9zdGF0ZXMYBCADKA1iBnBy",
-            "b3RvMw=="));
+            "b3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ijgEKGExpZmVQcm9mZXNzaW9u",
+            "VGFyZ2V0SW5mbxIOCgJpZBgBIAEoBVICaWQSFAoFdmFsdWUYAiABKAVSBXZh",
+            "bHVlEhQKBWxldmVsGAMgASgFUgVsZXZlbBI2ChZsaWZlVGFyZ2V0UmV3YXJk",
+            "U3RhdGVzGAQgAygNUhZsaWZlVGFyZ2V0UmV3YXJkU3RhdGVzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -123,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "life_target_reward_states" field.</summary>
+    /// <summary>Field number for the "lifeTargetRewardStates" field.</summary>
     public const int LifeTargetRewardStatesFieldNumber = 4;
     private static readonly pb::FieldCodec<uint> _repeated_lifeTargetRewardStates_codec
         = pb::FieldCodec.ForUInt32(34);

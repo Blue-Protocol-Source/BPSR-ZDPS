@@ -26,12 +26,14 @@ namespace Zproto {
           string.Concat(
             "CiVzdHJ1X2dldF9waG90b191cF90b2tlbl9yZXF1ZXN0LnByb3RvEgZ6cHJv",
             "dG8aF3N0cnVfY2xpZW50X2ltYWdlLnByb3RvGh9lbnVtX2VfcGxhdGZvcm1f",
-            "ZnVuY190eXBlLnByb3RvIt0BChZHZXRQaG90b1VwVG9rZW5SZXF1ZXN0EhAK",
-            "CHBob3RvX2lkGAIgASgNEhMKC3JlbmRlcl9pbmZvGAMgASgJEhAKCGFsYnVt",
-            "X2lkGAQgASgNEigKC2ltYWdlc19pbmZvGAUgAygLMhMuenByb3RvLkNsaWVu",
-            "dEltYWdlEhIKCnBob3RvX2Rlc2MYBiABKAkSLAoJZnVuY190eXBlGAcgASgO",
-            "MhkuenByb3RvLkVQbGF0Zm9ybUZ1bmNUeXBlEhAKCG93bmVyX2lkGAggASgD",
-            "EgwKBHRleHQYCSABKAliBnByb3RvMw=="));
+            "ZnVuY190eXBlLnByb3RvIqQCChZHZXRQaG90b1VwVG9rZW5SZXF1ZXN0EhgK",
+            "B3Bob3RvSWQYAiABKA1SB3Bob3RvSWQSHgoKcmVuZGVySW5mbxgDIAEoCVIK",
+            "cmVuZGVySW5mbxIYCgdhbGJ1bUlkGAQgASgNUgdhbGJ1bUlkEjMKCmltYWdl",
+            "c0luZm8YBSADKAsyEy56cHJvdG8uQ2xpZW50SW1hZ2VSCmltYWdlc0luZm8S",
+            "HAoJcGhvdG9EZXNjGAYgASgJUglwaG90b0Rlc2MSNQoIZnVuY1R5cGUYByAB",
+            "KA4yGS56cHJvdG8uRVBsYXRmb3JtRnVuY1R5cGVSCGZ1bmNUeXBlEhgKB293",
+            "bmVySWQYCCABKANSB293bmVySWQSEgoEdGV4dBgJIAEoCVIEdGV4dGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruClientImageReflection.Descriptor, global::Zproto.EnumEPlatformFuncTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +96,7 @@ namespace Zproto {
       return new GetPhotoUpTokenRequest(this);
     }
 
-    /// <summary>Field number for the "photo_id" field.</summary>
+    /// <summary>Field number for the "photoId" field.</summary>
     public const int PhotoIdFieldNumber = 2;
     private uint photoId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -106,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "render_info" field.</summary>
+    /// <summary>Field number for the "renderInfo" field.</summary>
     public const int RenderInfoFieldNumber = 3;
     private string renderInfo_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -118,7 +120,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "album_id" field.</summary>
+    /// <summary>Field number for the "albumId" field.</summary>
     public const int AlbumIdFieldNumber = 4;
     private uint albumId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -130,7 +132,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "images_info" field.</summary>
+    /// <summary>Field number for the "imagesInfo" field.</summary>
     public const int ImagesInfoFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.ClientImage> _repeated_imagesInfo_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.ClientImage.Parser);
@@ -141,7 +143,7 @@ namespace Zproto {
       get { return imagesInfo_; }
     }
 
-    /// <summary>Field number for the "photo_desc" field.</summary>
+    /// <summary>Field number for the "photoDesc" field.</summary>
     public const int PhotoDescFieldNumber = 6;
     private string photoDesc_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,7 +155,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "func_type" field.</summary>
+    /// <summary>Field number for the "funcType" field.</summary>
     public const int FuncTypeFieldNumber = 7;
     private global::Zproto.EPlatformFuncType funcType_ = global::Zproto.EPlatformFuncType.EfuncTypeDefault;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -165,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "owner_id" field.</summary>
+    /// <summary>Field number for the "ownerId" field.</summary>
     public const int OwnerIdFieldNumber = 8;
     private long ownerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEUserControlTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5lbnVtX2VfdXNlcl9jb250cm9sX3R5cGUucHJvdG8SBnpwcm90byqIBAoQ",
+            "Ch5lbnVtX2VfdXNlcl9jb250cm9sX3R5cGUucHJvdG8SBnpwcm90byqeBAoQ",
             "RVVzZXJDb250cm9sVHlwZRIWChJFVXNlckNvbnRyb2xNb3ZlVG8QABIUChBF",
             "VXNlckNvbnRyb2xSdXNoEAESFAoQRVVzZXJDb250cm9sSnVtcBACEhgKFEVV",
             "c2VyQ29udHJvbEp1bXBTeW5jEAMSFAoQRVVzZXJDb250cm9sRmFsbBAEEhgK",
@@ -36,7 +36,8 @@ namespace Zproto {
             "ZVRvEA0SGwoXRVVzZXJDb250cm9sVmVoaWNsZU1vdmUQDhIbChdFVXNlckNv",
             "bnRyb2xWZWhpY2xlSnVtcBAPEh8KG0VVc2VyQ29udHJvbFZlaGljbGVKdW1w",
             "U3luYxAQEhsKF0VVc2VyQ29udHJvbFZlaGljbGVGYWxsEBESHwobRVVzZXJD",
-            "b250cm9sVmVoaWNsZUZhbGxTeW5jEBJiBnByb3RvMw=="));
+            "b250cm9sVmVoaWNsZUZhbGxTeW5jEBISFAoQRVVzZUNvbnRyb2xGaXhlZBAT",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EUserControlType), }, null, null));
@@ -65,6 +66,7 @@ namespace Zproto {
     [pbr::OriginalName("EUserControlVehicleJumpSync")] EuserControlVehicleJumpSync = 16,
     [pbr::OriginalName("EUserControlVehicleFall")] EuserControlVehicleFall = 17,
     [pbr::OriginalName("EUserControlVehicleFallSync")] EuserControlVehicleFallSync = 18,
+    [pbr::OriginalName("EUseControlFixed")] EuseControlFixed = 19,
   }
 
   #endregion

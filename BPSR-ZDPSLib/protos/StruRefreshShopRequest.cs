@@ -24,8 +24,9 @@ namespace Zproto {
     static StruRefreshShopRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X3JlZnJlc2hfc2hvcF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iJQoS",
-            "UmVmcmVzaFNob3BSZXF1ZXN0Eg8KB3Nob3BfaWQYAiABKAViBnByb3RvMw=="));
+            "Ch9zdHJ1X3JlZnJlc2hfc2hvcF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iLAoS",
+            "UmVmcmVzaFNob3BSZXF1ZXN0EhYKBnNob3BJZBgCIAEoBVIGc2hvcElkYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +82,7 @@ namespace Zproto {
       return new RefreshShopRequest(this);
     }
 
-    /// <summary>Field number for the "shop_id" field.</summary>
+    /// <summary>Field number for the "shopId" field.</summary>
     public const int ShopIdFieldNumber = 2;
     private int shopId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

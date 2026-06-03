@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjFzdHJ1X2NvbW11bml0eV9zZXRfY2hlY2tfaW5fY29udGVudF9yZXF1ZXN0",
-            "LnByb3RvEgZ6cHJvdG8iPQohQ29tbXVuaXR5U2V0Q2hlY2tJbkNvbnRlbnRS",
-            "ZXF1ZXN0EhgKEGNoZWNrX2luX2NvbnRlbnQYASABKAliBnByb3RvMw=="));
+            "LnByb3RvEgZ6cHJvdG8iSwohQ29tbXVuaXR5U2V0Q2hlY2tJbkNvbnRlbnRS",
+            "ZXF1ZXN0EiYKDmNoZWNrSW5Db250ZW50GAEgASgJUg5jaGVja0luQ29udGVu",
+            "dGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +83,7 @@ namespace Zproto {
       return new CommunitySetCheckInContentRequest(this);
     }
 
-    /// <summary>Field number for the "check_in_content" field.</summary>
+    /// <summary>Field number for the "checkInContent" field.</summary>
     public const int CheckInContentFieldNumber = 1;
     private string checkInContent_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

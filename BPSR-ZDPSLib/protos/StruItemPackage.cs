@@ -25,16 +25,17 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2l0ZW1fcGFja2FnZS5wcm90bxIGenByb3RvGhJzdHJ1X3BhY2th",
-            "Z2UucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byKIAwoLSXRlbVBhY2th",
-            "Z2USMwoIcGFja2FnZXMYASADKAsyIS56cHJvdG8uSXRlbVBhY2thZ2UuUGFj",
-            "a2FnZXNFbnRyeRI6Cgx1bmxvY2tfaXRlbXMYAiADKAsyJC56cHJvdG8uSXRl",
-            "bVBhY2thZ2UuVW5sb2NrSXRlbXNFbnRyeRIRCglxdWlja19iYXIYAyABKAUS",
-            "EQoJaXRlbV91dWlkGAQgASgFEjkKDHVzZV9ncm91cF9jZBgFIAMoCzIjLnpw",
-            "cm90by5JdGVtUGFja2FnZS5Vc2VHcm91cENkRW50cnkaQAoNUGFja2FnZXNF",
-            "bnRyeRILCgNrZXkYASABKAUSHgoFdmFsdWUYAiABKAsyDy56cHJvdG8uUGFj",
-            "a2FnZToCOAEaMgoQVW5sb2NrSXRlbXNFbnRyeRILCgNrZXkYASABKAUSDQoF",
-            "dmFsdWUYAiABKAU6AjgBGjEKD1VzZUdyb3VwQ2RFbnRyeRILCgNrZXkYASAB",
-            "KAUSDQoFdmFsdWUYAiABKAM6AjgBYgZwcm90bzM="));
+            "Z2UucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byK6AwoLSXRlbVBhY2th",
+            "Z2USPQoIcGFja2FnZXMYASADKAsyIS56cHJvdG8uSXRlbVBhY2thZ2UuUGFj",
+            "a2FnZXNFbnRyeVIIcGFja2FnZXMSRgoLdW5sb2NrSXRlbXMYAiADKAsyJC56",
+            "cHJvdG8uSXRlbVBhY2thZ2UuVW5sb2NrSXRlbXNFbnRyeVILdW5sb2NrSXRl",
+            "bXMSGgoIcXVpY2tCYXIYAyABKAVSCHF1aWNrQmFyEhoKCGl0ZW1VdWlkGAQg",
+            "ASgFUghpdGVtVXVpZBJDCgp1c2VHcm91cENkGAUgAygLMiMuenByb3RvLkl0",
+            "ZW1QYWNrYWdlLlVzZUdyb3VwQ2RFbnRyeVIKdXNlR3JvdXBDZBpACg1QYWNr",
+            "YWdlc0VudHJ5EgsKA2tleRgBIAEoBRIeCgV2YWx1ZRgCIAEoCzIPLnpwcm90",
+            "by5QYWNrYWdlOgI4ARoyChBVbmxvY2tJdGVtc0VudHJ5EgsKA2tleRgBIAEo",
+            "BRINCgV2YWx1ZRgCIAEoBToCOAEaMQoPVXNlR3JvdXBDZEVudHJ5EgsKA2tl",
+            "eRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPackageReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -105,7 +106,7 @@ namespace Zproto {
       get { return packages_; }
     }
 
-    /// <summary>Field number for the "unlock_items" field.</summary>
+    /// <summary>Field number for the "unlockItems" field.</summary>
     public const int UnlockItemsFieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_unlockItems_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);
@@ -116,7 +117,7 @@ namespace Zproto {
       get { return unlockItems_; }
     }
 
-    /// <summary>Field number for the "quick_bar" field.</summary>
+    /// <summary>Field number for the "quickBar" field.</summary>
     public const int QuickBarFieldNumber = 3;
     private int quickBar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_uuid" field.</summary>
+    /// <summary>Field number for the "itemUuid" field.</summary>
     public const int ItemUuidFieldNumber = 4;
     private int itemUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "use_group_cd" field.</summary>
+    /// <summary>Field number for the "useGroupCd" field.</summary>
     public const int UseGroupCdFieldNumber = 5;
     private static readonly pbc::MapField<int, long>.Codec _map_useGroupCd_codec
         = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 42);

@@ -1,16 +1,15 @@
 ﻿using BPSR_ZDPS.DataTypes.Modules;
 using Serilog;
-using System.Configuration;
 using System.Diagnostics;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using ZLinq;
-using Zproto;
 
 namespace BPSR_ZDPS.Managers
 {
-    public class ModuleOptimizer
+    public partial class ModuleOptimizer
     {
-        public SolverResult Solve(SolverConfig config, PlayerModDataSave playerMods, SolverModes mode)
+        public SolverResult Solve(SolverConfig config, PlayerModDataSave playerMods, SolverModes mode, CancellationToken cancelToken)
         {
             var sw = Stopwatch.StartNew();
             var filtered = FilterModulesWithStats(config, playerMods);
@@ -27,6 +26,10 @@ namespace BPSR_ZDPS.Managers
             else if (mode == SolverModes.Normal)
             {
                 result = NewFast(config, playerMods, sw, filtered);
+            }
+            else if (mode == SolverModes.NormalV2)
+            {
+                result = NormalV2(config, playerMods, sw, filtered, cancelToken);
             }
 
             Log.Information($"Combos took: {sw.Elapsed}");
@@ -338,13 +341,19 @@ namespace BPSR_ZDPS.Managers
             var statMins = new byte[vecCount];
             var statReqs = new byte[vecCount];
             var statMask = new byte[vecCount];
+            bool hasExactStatMode = false;
             foreach (var statPrio in config.StatPriorities)
             {
                 if (possableStats.TryGetValue(statPrio.Id, out var idx))
                 {
                     statMins[idx] = (byte)statPrio.MinLevel;
                     statReqs[idx] = (byte)statPrio.ReqLevel;
-                    statMask[idx] = 1;
+                    statMask[idx] = (byte)statPrio.StatMode;
+
+                    if (statPrio.StatMode == StatMode.Exactly)
+                    {
+                        hasExactStatMode = true;
+                    }
                 }
             }
             Vector<byte> statMinsVec = new Vector<byte>(statMins);
@@ -369,71 +378,31 @@ namespace BPSR_ZDPS.Managers
             }
 
             var numMods = filtered.Count;
+            var numLoops = Math.Min(numMods, config.NumModules);
             var bestMods = new List<ModComboResult>();
-            Parallel.For(0, numMods - 3, i =>
+            Parallel.For(0, numMods - (numLoops - 1), i =>
             {
                 ModComboResult[] topBest = new ModComboResult[10];
 
-                for (int j = i + 1; j < numMods - 2; j++)
+                if (numLoops == 5)
                 {
-                    for (int k = j + 1; k < numMods - 1; k++)
-                    {
-                        for (int l = k + 1; l < numMods; l++)
-                        {
-                            var combo = new ModuleSet()
-                            {
-                                Mod1 = (ushort)i,
-                                Mod2 = (ushort)j,
-                                Mod3 = (ushort)k,
-                                Mod4 = (ushort)l
-                            };
-
-                            var sums = (modStatValues[(int)i] +
-                                modStatValues[j] +
-                                modStatValues[k] +
-                                modStatValues[l]);
-
-                            var sumsMined = Vector.Min(sums, statCap);
-
-                            var statIsGreaterThanReq = Vector.LessThan<byte>(sumsMined, statReqsVec);
-                            var statIsGreaterThanReqSumed = Vector.Sum(Vector.AsVectorUInt16(statIsGreaterThanReq));
-                            if (statIsGreaterThanReqSumed > 0)
-                            {
-                                continue;
-                            }
-
-                            var statIsGreaterThan = Vector.GreaterThan<byte>(sumsMined, statMinsVec);
-                            var passedMinValues = Vector.ConditionalSelect(statIsGreaterThan, sumsMined, new Vector<byte>(0));
-                            //var multied = passedMinValues * modStatMultplier;
-
-                            int breakPointBonus = 0;
-                            var breakPointValues = passedMinValues;
-                            for (int idx = 0; idx < Vector<byte>.Count; idx++)
-                            {
-                                var val = (breakPointBoosts[breakPointValues[idx]] * modStatMultplier[idx]);
-                                breakPointBonus += val;
-                            }
-
-                            int score = Vector.Sum(sums) + breakPointBonus;
-
-                            for (int bestIdx = 0; bestIdx < topBest.Length; bestIdx++)
-                            {
-                                var best = topBest[bestIdx];
-                                if (score > best.Score)
-                                {
-                                    topBest[bestIdx].ModuleSet = combo;
-                                    topBest[bestIdx].Score = score;
-                                    break;
-                                }
-                            }
-
-                            /*topBest[0] = new ModComboResult()
-                            {
-                                ModuleSet = combo,
-                                Score = score,
-                            };*/
-                        }
-                    }
+                    FiveModulesLoop(i, modStatValues, modStatMultplier, statCap, statMinsVec, statReqsVec, breakPointBoosts, numMods, statMaskVec, hasExactStatMode, ref topBest);
+                }
+                else if (numLoops == 4)
+                {
+                    FourModulesLoop(i, modStatValues, modStatMultplier, statCap, statMinsVec, statReqsVec, breakPointBoosts, numMods, statMaskVec, hasExactStatMode, ref topBest);
+                }
+                else if (numLoops == 3)
+                {
+                    ThreeModulesLoop(i, modStatValues, modStatMultplier, statCap, statMinsVec, statReqsVec, breakPointBoosts, numMods, statMaskVec, hasExactStatMode, ref topBest);
+                }
+                else if (numLoops == 2)
+                {
+                    TwoModulesLoop(i, modStatValues, modStatMultplier, statCap, statMinsVec, statReqsVec, breakPointBoosts, numMods, statMaskVec, hasExactStatMode, ref topBest);
+                }
+                else if (numLoops == 1)
+                {
+                    OneModule(i, modStatValues, modStatMultplier, statCap, statMinsVec, statReqsVec, breakPointBoosts, numMods, statMaskVec, hasExactStatMode, ref topBest);
                 }
 
                 lock (bestMods)
@@ -451,6 +420,11 @@ namespace BPSR_ZDPS.Managers
                 var mods = modSet.ModuleSet.Mods;
                 for (int i = 0; i < mods.Length; i++)
                 {
+                    if (mods[i] == -1)
+                    {
+                        break;
+                    }
+
                     var modId = filtered[mods[i]];
                     var powerCores = GetModPowerCores(playerMods, modId);
                     foreach (var powerCore in powerCores)
@@ -469,13 +443,50 @@ namespace BPSR_ZDPS.Managers
 
                 modSet.Stats = coreStats.Values.OrderByDescending(x => x.Value).ToArray();
 
-                var reslovedModSet = new ModuleSet()
+                var reslovedModSet = numLoops switch
                 {
-                    Mod1 = (ushort)filtered[mods[0]],
-                    Mod2 = (ushort)filtered[mods[1]],
-                    Mod3 = (ushort)filtered[mods[2]],
-                    Mod4 = (ushort)filtered[mods[3]]
+                    5 => new ModuleSet()
+                    {
+                        Mod1 = (int)filtered[mods[0]],
+                        Mod2 = (int)filtered[mods[1]],
+                        Mod3 = (int)filtered[mods[2]],
+                        Mod4 = (int)filtered[mods[3]],
+                        Mod5 = (int)filtered[mods[4]]
+                    },
+
+                    4 => new ModuleSet()
+                    {
+                        Mod1 = (int)filtered[mods[0]],
+                        Mod2 = (int)filtered[mods[1]],
+                        Mod3 = (int)filtered[mods[2]],
+                        Mod4 = (int)filtered[mods[3]]
+                    },
+
+                    3 => new ModuleSet()
+                    {
+                        Mod1 = (int)filtered[mods[0]],
+                        Mod2 = (int)filtered[mods[1]],
+                        Mod3 = (int)filtered[mods[2]],
+                        Mod4 = -1
+                    },
+
+                    2 => new ModuleSet()
+                    {
+                        Mod1 = (int)filtered[mods[0]],
+                        Mod2 = (int)filtered[mods[1]],
+                        Mod3 = -1,
+                        Mod4 = -1
+                    },
+
+                    1 => new ModuleSet()
+                    {
+                        Mod1 = (int)filtered[mods[0]],
+                        Mod2 = -1,
+                        Mod3 = -1,
+                        Mod4 = -1
+                    }
                 };
+
                 modSet.CombatScore = CalcCombosCombatScore(playerMods, reslovedModSet);
 
                 top10[i1] = modSet;
@@ -488,6 +499,193 @@ namespace BPSR_ZDPS.Managers
             };
 
             return result;
+        }
+
+        private static void FiveModulesLoop(int i, List<Vector<byte>> modStatValues, in Vector<byte> modStatMultplier, in Vector<byte> statCap, in Vector<byte> statMinsVec, in Vector<byte> statReqsVec, in byte[] breakPointBoosts, int numMods, in Vector<byte> statsMask, bool hasExactStatMode, ref ModComboResult[] topBest)
+        {
+            for (int j = i + 1; j < numMods - 3; j++)
+            {
+                for (int k = j + 1; k < numMods - 2; k++)
+                {
+                    for (int l = k + 1; l < numMods - 1; l++)
+                    {
+                        for (int a = l + 1; a < numMods; a++)
+                        {
+                            var combo = new ModuleSet()
+                            {
+                                Mod1 = (ushort)i,
+                                Mod2 = (ushort)j,
+                                Mod3 = (ushort)k,
+                                Mod4 = (ushort)l,
+                                Mod5 = (ushort)a,
+                            };
+
+                            var sums = (modStatValues[(int)i] +
+                                modStatValues[j] +
+                                modStatValues[k] +
+                                modStatValues[l] +
+                                modStatValues[1]);
+
+                            bool keepGoing = InnerStatsWeightCalcs(modStatMultplier, statCap, statMinsVec, statReqsVec, breakPointBoosts, ref topBest, ref combo, statsMask, hasExactStatMode, sums);
+                            if (!keepGoing)
+                            {
+                                continue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void FourModulesLoop(int i, List<Vector<byte>> modStatValues, in Vector<byte> modStatMultplier, in Vector<byte> statCap, in Vector<byte> statMinsVec, in Vector<byte> statReqsVec, in byte[] breakPointBoosts, int numMods, in Vector<byte> statsMask, bool hasExactStatMode, ref ModComboResult[] topBest)
+        {
+            for (int j = i + 1; j < numMods - 2; j++)
+            {
+                for (int k = j + 1; k < numMods - 1; k++)
+                {
+                    for (int l = k + 1; l < numMods; l++)
+                    {
+                        var combo = new ModuleSet()
+                        {
+                            Mod1 = (ushort)i,
+                            Mod2 = (ushort)j,
+                            Mod3 = (ushort)k,
+                            Mod4 = (ushort)l
+                        };
+
+                        var sums = (modStatValues[(int)i] +
+                            modStatValues[j] +
+                            modStatValues[k] +
+                            modStatValues[l]);
+
+                        bool keepGoing = InnerStatsWeightCalcs(modStatMultplier, statCap, statMinsVec, statReqsVec, breakPointBoosts, ref topBest, ref combo, statsMask, hasExactStatMode, sums);
+                        if (!keepGoing)
+                        {
+                            continue;
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void ThreeModulesLoop(int i, List<Vector<byte>> modStatValues, in Vector<byte> modStatMultplier, in Vector<byte> statCap, in Vector<byte> statMinsVec, in Vector<byte> statReqsVec, in byte[] breakPointBoosts, int numMods, in Vector<byte> statsMask, bool hasExactStatMode, ref ModComboResult[] topBest)
+        {
+            for (int j = i + 1; j < numMods - 1; j++)
+            {
+                for (int k = j + 1; k < numMods; k++)
+                {
+                    var combo = new ModuleSet()
+                    {
+                        Mod1 = (ushort)i,
+                        Mod2 = (ushort)j,
+                        Mod3 = (ushort)k,
+                        Mod4 = -1
+                    };
+
+                    var sums = (modStatValues[(int)i] +
+                        modStatValues[j] +
+                        modStatValues[k]);
+
+                    bool keepGoing = InnerStatsWeightCalcs(modStatMultplier, statCap, statMinsVec, statReqsVec, breakPointBoosts, ref topBest, ref combo, statsMask, hasExactStatMode, sums);
+                    if (!keepGoing)
+                    {
+                        continue;
+                    }
+                }
+            }
+        }
+
+        private static void TwoModulesLoop(int i, List<Vector<byte>> modStatValues, in Vector<byte> modStatMultplier, in Vector<byte> statCap, in Vector<byte> statMinsVec, in Vector<byte> statReqsVec, in byte[] breakPointBoosts, int numMods, in Vector<byte> statsMask, bool hasExactStatMode, ref ModComboResult[] topBest)
+        {
+            for (int j = i + 1; j < numMods; j++)
+            {
+                var combo = new ModuleSet()
+                {
+                    Mod1 = (ushort)i,
+                    Mod2 = (ushort)j,
+                    Mod3 = -1,
+                    Mod4 = -1
+                };
+
+                var sums = modStatValues[(int)i] +
+                    modStatValues[j];
+
+                bool keepGoing = InnerStatsWeightCalcs(modStatMultplier, statCap, statMinsVec, statReqsVec, breakPointBoosts, ref topBest, ref combo, statsMask, hasExactStatMode, sums);
+                if (!keepGoing)
+                {
+                    continue;
+                }
+            }
+        }
+
+        private static void OneModule(int i, List<Vector<byte>> modStatValues, in Vector<byte> modStatMultplier, in Vector<byte> statCap, in Vector<byte> statMinsVec, in Vector<byte> statReqsVec, in byte[] breakPointBoosts, int numMods, in Vector<byte> statsMask, bool hasExactStatMode, ref ModComboResult[] topBest)
+        {
+            var combo = new ModuleSet()
+            {
+                Mod1 = (ushort)i,
+                Mod2 = -1,
+                Mod3 = -1,
+                Mod4 = -1
+            };
+
+            var sums = modStatValues[i];
+
+            InnerStatsWeightCalcs(modStatMultplier, statCap, statMinsVec, statReqsVec, breakPointBoosts, ref topBest, ref combo, statsMask, hasExactStatMode, sums);
+        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static bool InnerStatsWeightCalcs(in Vector<byte> modStatMultplier,
+            in Vector<byte> statCap, in Vector<byte> statMinsVec,
+            in Vector<byte> statReqsVec, in byte[] breakPointBoosts,
+            ref ModComboResult[] topBest, ref ModuleSet combo,
+            in Vector<byte> statsMask, bool hasExactStatMode, in Vector<byte> sums)
+        {
+            if (hasExactStatMode)
+            {
+                var equalsReq = Vector.Equals(sums, statReqsVec);
+                var equalsAfterMask = Vector.Multiply(equalsReq, statsMask);
+                var equalsSum = Vector.Sum(equalsAfterMask);
+                if (equalsSum == 0)
+                {
+                    return false;
+                }
+            }
+
+            var sumsMined = Vector.Min(sums, statCap);
+
+            var statIsGreaterThanReq = Vector.LessThan<byte>(sumsMined, statReqsVec);
+            var statIsGreaterThanReqSumed = Vector.Sum(Vector.AsVectorUInt16(statIsGreaterThanReq));
+            if (statIsGreaterThanReqSumed > 0)
+            {
+                return false;
+            }
+
+            var statIsGreaterThan = Vector.GreaterThan<byte>(sumsMined, statMinsVec);
+            //var statCondition = Vector.ConditionalSelect(statsMask, equalsReq, statIsGreaterThan);
+            var passedMinValues = Vector.ConditionalSelect(statIsGreaterThan, sumsMined, new Vector<byte>(0));
+            var multied = passedMinValues * modStatMultplier;
+
+            int breakPointBonus = 0;
+            var breakPointValues = passedMinValues;
+            for (int idx = 0; idx < Vector<byte>.Count; idx++)
+            {
+                var val = (breakPointBoosts[breakPointValues[idx]] * modStatMultplier[idx]);
+                breakPointBonus += val;
+            }
+
+            int score = Vector.Sum(multied) + breakPointBonus;
+
+            for (int bestIdx = 0; bestIdx < topBest.Length; bestIdx++)
+            {
+                var best = topBest[bestIdx];
+                if (score > best.Score)
+                {
+                    topBest[bestIdx].ModuleSet = combo;
+                    topBest[bestIdx].Score = score;
+                    break;
+                }
+            }
+
+            return true;
         }
 
         private List<long> FilterModulesWithStats(SolverConfig config, PlayerModDataSave playerMods)
@@ -514,7 +712,8 @@ namespace BPSR_ZDPS.Managers
             {
                 if (config.StatPriorities[i].Id == statId)
                 {
-                    return (ushort)((config.StatPriorities.Count - i) + 1);
+                    var idx = config.StatPriorities.Count - i;
+                    return (ushort)(idx + 1);
                 }
             }
 
@@ -540,6 +739,11 @@ namespace BPSR_ZDPS.Managers
         private List<PowerCore> GetModPowerCores(PlayerModDataSave playerMods, long id)
         {
             var powerCores = new List<PowerCore>();
+
+            if (id == -1)
+            {
+                return powerCores;
+            }
 
             var modItem = playerMods.ModulesPackage.Items[id];
             var modInfo = playerMods.Mod.ModInfos[id];
@@ -609,6 +813,39 @@ namespace BPSR_ZDPS.Managers
             var enhancementScore = HelperMethods.DataTables.ModLinkEffects.Data.TryGetValue(enhancementLevels + 1, out var tempScore) ? tempScore?.FightValue ?? 0 : 0;
 
             return cs + enhancementScore;
+        }
+
+        public static PowerCore[] OrderPowerCoresByPriorities(PowerCore[] cores, List<StatPrio> priorities)
+        {
+            var order = priorities.Select(x => x.Id).ToList();
+            var ordered = cores.OrderBy(x => (uint)order.IndexOf(x.Id)).ToArray();
+
+            return ordered;
+        }
+
+        public static ulong GetModuleId(PlayerModDataSave playerMods, long id)
+        {
+            var modItem = playerMods.ModulesPackage.Items[id];
+            var modInfo = playerMods.Mod.ModInfos[id];
+
+            var modIds = new (byte, byte)[3];
+            for (int i = 0; i < modItem.ModNewAttr.ModParts.Count; i++)
+            {
+                var idAndVal = ((byte)modItem.ModNewAttr.ModParts[i], (byte)modInfo.InitLinkNums[i]);
+                modIds[i] = idAndVal;
+            }
+
+            modIds = modIds.OrderBy(x => x.Item1).ToArray();
+
+            ulong moduleId = 0;
+
+            foreach (var (modId, modVal) in modIds)
+            {
+                moduleId = (moduleId << 8) | modId;
+                moduleId = (moduleId << 8) | modVal;
+            }
+
+            return moduleId;
         }
     }
 }

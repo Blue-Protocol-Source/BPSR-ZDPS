@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X3VwZ3JhZGVfdW5pb25fYnVpbGRpbmdfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvIkQKG1VwZ3JhZGVVbmlvbkJ1aWxkaW5nUmVxdWVzdBIQCgh1bmlv",
-            "bl9pZBgCIAEoAxITCgtidWlsZGluZ19pZBgDIAEoBWIGcHJvdG8z"));
+            "enByb3RvIlcKG1VwZ3JhZGVVbmlvbkJ1aWxkaW5nUmVxdWVzdBIYCgd1bmlv",
+            "bklkGAIgASgDUgd1bmlvbklkEh4KCmJ1aWxkaW5nSWQYAyABKAVSCmJ1aWxk",
+            "aW5nSWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new UpgradeUnionBuildingRequest(this);
     }
 
-    /// <summary>Field number for the "union_id" field.</summary>
+    /// <summary>Field number for the "unionId" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "building_id" field.</summary>
+    /// <summary>Field number for the "buildingId" field.</summary>
     public const int BuildingIdFieldNumber = 3;
     private int buildingId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

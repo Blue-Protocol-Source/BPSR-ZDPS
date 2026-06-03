@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X2NvbW1vbl9hd2FyZF9pbmZvLnByb3RvEgZ6cHJvdG8aImVudW1f",
             "ZV9yZWNlaXZlX3Jld2FyZF9zdGF0dXMucHJvdG8aFXN0cnVfZGlydHlfbWFz",
-            "ay5wcm90byJRCg9Db21tb25Bd2FyZEluZm8SCgoCaWQYASABKAUSMgoMYXdh",
-            "cmRfc3RhdHVzGAIgASgOMhwuenByb3RvLkVSZWNlaXZlUmV3YXJkU3RhdHVz",
-            "YgZwcm90bzM="));
+            "ay5wcm90byJhCg9Db21tb25Bd2FyZEluZm8SDgoCaWQYASABKAVSAmlkEj4K",
+            "C2F3YXJkU3RhdHVzGAIgASgOMhwuenByb3RvLkVSZWNlaXZlUmV3YXJkU3Rh",
+            "dHVzUgthd2FyZFN0YXR1c2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEReceiveRewardStatusReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_status" field.</summary>
+    /// <summary>Field number for the "awardStatus" field.</summary>
     public const int AwardStatusFieldNumber = 2;
     private global::Zproto.EReceiveRewardStatus awardStatus_ = global::Zproto.EReceiveRewardStatus.NotReceive;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

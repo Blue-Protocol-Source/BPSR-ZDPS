@@ -25,14 +25,19 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X2NvbW11bml0eV9hdXRob3JpdHlfaW5mby5wcm90bxIGenByb3Rv",
-            "IowBChZDb21tdW5pdHlBdXRob3JpdHlJbmZvEkAKCWF1dGhvcml0eRgBIAMo",
-            "CzItLnpwcm90by5Db21tdW5pdHlBdXRob3JpdHlJbmZvLkF1dGhvcml0eUVu",
-            "dHJ5GjAKDkF1dGhvcml0eUVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgC",
-            "IAEoCDoCOAFiBnByb3RvMw=="));
+            "GipzdHJ1X2NvbW11bml0eV9zaW5nbGVfYXV0aG9yaXR5X2luZm8ucHJvdG8i",
+            "zAIKFkNvbW11bml0eUF1dGhvcml0eUluZm8SSwoJYXV0aG9yaXR5GAEgAygL",
+            "Mi0uenByb3RvLkNvbW11bml0eUF1dGhvcml0eUluZm8uQXV0aG9yaXR5RW50",
+            "cnlSCWF1dGhvcml0eRJXCg1hdXRob3JpdHlEYXRhGAIgAygLMjEuenByb3Rv",
+            "LkNvbW11bml0eUF1dGhvcml0eUluZm8uQXV0aG9yaXR5RGF0YUVudHJ5Ug1h",
+            "dXRob3JpdHlEYXRhGjAKDkF1dGhvcml0eUVudHJ5EgsKA2tleRgBIAEoBRIN",
+            "CgV2YWx1ZRgCIAEoCDoCOAEaWgoSQXV0aG9yaXR5RGF0YUVudHJ5EgsKA2tl",
+            "eRgBIAEoBRIzCgV2YWx1ZRgCIAEoCzIkLnpwcm90by5Db21tdW5pdHlTaW5n",
+            "bGVBdXRob3JpdHlJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Zproto.StruCommunitySingleAuthorityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CommunityAuthorityInfo), global::Zproto.CommunityAuthorityInfo.Parser, new[]{ "Authority" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CommunityAuthorityInfo), global::Zproto.CommunityAuthorityInfo.Parser, new[]{ "Authority", "AuthorityData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -75,6 +80,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommunityAuthorityInfo(CommunityAuthorityInfo other) : this() {
       authority_ = other.authority_.Clone();
+      authorityData_ = other.authorityData_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,6 +101,17 @@ namespace Zproto {
       get { return authority_; }
     }
 
+    /// <summary>Field number for the "authorityData" field.</summary>
+    public const int AuthorityDataFieldNumber = 2;
+    private static readonly pbc::MapField<int, global::Zproto.CommunitySingleAuthorityInfo>.Codec _map_authorityData_codec
+        = new pbc::MapField<int, global::Zproto.CommunitySingleAuthorityInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CommunitySingleAuthorityInfo.Parser), 18);
+    private readonly pbc::MapField<int, global::Zproto.CommunitySingleAuthorityInfo> authorityData_ = new pbc::MapField<int, global::Zproto.CommunitySingleAuthorityInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<int, global::Zproto.CommunitySingleAuthorityInfo> AuthorityData {
+      get { return authorityData_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -111,6 +128,7 @@ namespace Zproto {
         return true;
       }
       if (!Authority.Equals(other.Authority)) return false;
+      if (!AuthorityData.Equals(other.AuthorityData)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -119,6 +137,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= Authority.GetHashCode();
+      hash ^= AuthorityData.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -138,6 +157,7 @@ namespace Zproto {
       output.WriteRawMessage(this);
     #else
       authority_.WriteTo(output, _map_authority_codec);
+      authorityData_.WriteTo(output, _map_authorityData_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -149,6 +169,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       authority_.WriteTo(ref output, _map_authority_codec);
+      authorityData_.WriteTo(ref output, _map_authorityData_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -160,6 +181,7 @@ namespace Zproto {
     public int CalculateSize() {
       int size = 0;
       size += authority_.CalculateSize(_map_authority_codec);
+      size += authorityData_.CalculateSize(_map_authorityData_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -173,6 +195,7 @@ namespace Zproto {
         return;
       }
       authority_.MergeFrom(other.authority_);
+      authorityData_.MergeFrom(other.authorityData_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -196,6 +219,10 @@ namespace Zproto {
             authority_.AddEntriesFrom(input, _map_authority_codec);
             break;
           }
+          case 18: {
+            authorityData_.AddEntriesFrom(input, _map_authorityData_codec);
+            break;
+          }
         }
       }
     #endif
@@ -217,6 +244,10 @@ namespace Zproto {
             break;
           case 10: {
             authority_.AddEntriesFrom(ref input, _map_authority_codec);
+            break;
+          }
+          case 18: {
+            authorityData_.AddEntriesFrom(ref input, _map_authorityData_codec);
             break;
           }
         }

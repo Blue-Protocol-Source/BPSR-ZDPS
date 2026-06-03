@@ -6,6 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using ZLinq;
 
 namespace BPSR_ZDPS.Windows
 {
@@ -15,14 +16,15 @@ namespace BPSR_ZDPS.Windows
         public static string TITLE_ID = "###RaidManagerThreatTrackerWindow";
         public static string TITLE = "Threat Tracker";
         public static bool IsOpened = false;
-        public static bool IsTopMost = false;
         public static bool CollapseToContentOnly = false;
 
         static int RunOnceDelayed = 0;
         static Vector2 MenuBarSize;
         static bool HasInitBindings = false;
+        static int LastPinnedOpacity = 100;
+        static bool IsPinned = false;
 
-        static Dictionary<long, ThreatInfo> TrackedEntities = new();
+        static Dictionary<long, List<ThreatInfo>> TrackedEntities = new();
 
         public static void Open()
         {
@@ -41,6 +43,8 @@ namespace BPSR_ZDPS.Windows
                 HasInitBindings = true;
                 EncounterManager.EncounterStart += ThreatTracker_EncounterStart;
                 EncounterManager.EncounterEndFinal += ThreatTracker_EncounterEndFinal;
+
+                BindCurrentEncounterEvents();
             }
         }
 
@@ -52,7 +56,7 @@ namespace BPSR_ZDPS.Windows
 
         private static void ThreatTracker_Entity_ThreatListUpdated(object sender, ThreatListUpdatedEventArgs e)
         {
-            TrackedEntities[e.EntityUuid] = e.ThreatInfo;
+            TrackedEntities[e.EntityUuid] = e.ThreatInfoList;
         }
 
         private static void ThreatTracker_EncounterStart(EventArgs e)
@@ -62,6 +66,8 @@ namespace BPSR_ZDPS.Windows
 
         private static void BindCurrentEncounterEvents()
         {
+            TrackedEntities.Clear();
+
             EncounterManager.Current.EntityThreatListUpdated -= ThreatTracker_Entity_ThreatListUpdated;
             EncounterManager.Current.EntityThreatListUpdated += ThreatTracker_Entity_ThreatListUpdated;
             System.Diagnostics.Debug.WriteLine("BindCurrentEncounterEvents");
@@ -74,12 +80,30 @@ namespace BPSR_ZDPS.Windows
                 return;
             }
 
+            var windowSettings = Settings.Instance.WindowSettings.RaidManagerThreat;
+
             ImGui.SetNextWindowSize(new Vector2(700, 600), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(300, 240), new Vector2(ImGui.GETFLTMAX()));
 
+            if (windowSettings.WindowPosition != new Vector2())
+            {
+                ImGui.SetNextWindowPos(windowSettings.WindowPosition, ImGuiCond.FirstUseEver);
+            }
+
+            if (windowSettings.WindowSize != new Vector2())
+            {
+                ImGui.SetNextWindowSize(windowSettings.WindowSize, ImGuiCond.FirstUseEver);
+            }
+
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
-            if (ImGui.Begin($"{TITLE}{TITLE_ID}", ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoDocking))
+            ImGuiWindowFlags exWindowFlags = ImGuiWindowFlags.None;
+            if (AppState.MousePassthrough && windowSettings.TopMost)
+            {
+                exWindowFlags |= ImGuiWindowFlags.NoInputs;
+            }
+
+            if (ImGui.Begin($"{TITLE}{TITLE_ID}", ref IsOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoDocking | exWindowFlags))
             {
                 if (RunOnceDelayed == 0)
                 {
@@ -90,6 +114,22 @@ namespace BPSR_ZDPS.Windows
                     RunOnceDelayed++;
                     Utils.SetCurrentWindowIcon();
                     Utils.BringWindowToFront();
+
+                    if (windowSettings.TopMost && !IsPinned)
+                    {
+                        IsPinned = true;
+                        Utils.SetWindowTopmost();
+                        Utils.SetWindowOpacity(windowSettings.Opacity * 0.01f);
+                        LastPinnedOpacity = windowSettings.Opacity;
+                    }
+                }
+                else if (RunOnceDelayed >= 2)
+                {
+                    if (windowSettings.TopMost && LastPinnedOpacity != windowSettings.Opacity)
+                    {
+                        Utils.SetWindowOpacity(windowSettings.Opacity * 0.01f);
+                        LastPinnedOpacity = windowSettings.Opacity;
+                    }
                 }
 
                 DrawMenuBar();
@@ -103,19 +143,70 @@ namespace BPSR_ZDPS.Windows
                     ImGui.PopStyleVar();
 
                     int trackedEntityIdx = 0;
-
-                    foreach (var trackedEntity in TrackedEntities)
+                    IReadOnlyList<KeyValuePair<long, List<ThreatInfo>>> entityList = [];
+                    try
                     {
+                        entityList = (IReadOnlyList<KeyValuePair<long, List<ThreatInfo>>>)TrackedEntities.AsValueEnumerable().ToArray();
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error populating ThreatManager EntityList");
+                    }
+                    
+                    foreach (var trackedEntity in entityList)
+                    {
+                        var threatList = trackedEntity.Value.AsValueEnumerable().OrderByDescending(x => x.ThreatValue).Where(x => Utils.UuidToEntityType(x.EntityUuid) == (long)Zproto.EEntityType.EntChar);
+
+                        // Only show entities with active threat lists
+                        int threatListCount = threatList.Count();
+                        if (threatListCount == 0)
+                        {
+                            continue;
+                        }
+
                         var trackedName = EntityCache.Instance.Cache.Lines[trackedEntity.Key]?.Name;
                         ImGui.TextUnformatted($"{(!string.IsNullOrEmpty(trackedName) ? trackedName: trackedEntity.Key)}");
+                        
+                        // This is the second highest threat as main target will be at a threat level far too high above others to matter for this
+                        long topThreatValue = 0;
+                        if (threatListCount > 1)
+                        {
+                            topThreatValue = threatList.ElementAt(1).ThreatValue;
+                        }
 
-                        ImGui.Indent();
-                        float indentOffset = ImGui.GetCursorPosX();
-                        ImGui.PushStyleColor(ImGuiCol.PlotHistogram, Colors.DarkRed);
-                        var threatName = EntityCache.Instance.Cache.Lines[trackedEntity.Value.EntityUuid]?.Name;
-                        ImGui.ProgressBar(1, new Vector2(-1, 18), $"{(!string.IsNullOrEmpty(threatName) ? threatName : trackedEntity.Value.EntityUuid)} :: {trackedEntity.Value.ThreatValue}");
-                        ImGui.PopStyleColor();
-                        ImGui.Unindent();
+                        int threatListIdx = 0;
+                        foreach (var threat in threatList)
+                        {
+                            ImGui.Indent();
+                            float indentOffset = ImGui.GetCursorPosX();
+                            ImGui.PushStyleColor(ImGuiCol.PlotHistogram, Colors.DarkRed);
+                            string threatName = "";
+                            if (EntityCache.Instance.Cache.Lines.TryGetValue(threat.EntityUuid, out var cached))
+                            {
+                                threatName = cached.Name;
+                            }
+                            else
+                            {
+                                threatName = $"[UUID: {threat.EntityUuid}]";
+                            }
+
+                            float progressPct = 1.0f;
+                            if (threatListIdx > 0 && topThreatValue > 0)
+                            {
+                                progressPct = (float)Math.Round((double)threat.ThreatValue / (double)topThreatValue, 4);
+                            }
+
+                            ImGui.ProgressBar(progressPct, new Vector2(-1, 18), $"{(!string.IsNullOrEmpty(threatName) ? threatName : threat.EntityUuid)} :: {threat.ThreatValue}");
+                            ImGui.PopStyleColor();
+                            ImGui.Unindent();
+
+                            if (threatListIdx == 0 && threatListCount > 1)
+                            {
+                                ImGui.Dummy(new Vector2(1, 5));
+                            }
+
+                            threatListIdx++;
+                        }
 
                         ImGui.PushStyleColor(ImGuiCol.Separator, new Vector4(78 / 255f, 78 / 255f, 78 / 255f, 1.0f));
                         ImGui.Separator();
@@ -144,26 +235,40 @@ namespace BPSR_ZDPS.Windows
         {
             if (ImGui.BeginMenuBar())
             {
+                var windowSettings = Settings.Instance.WindowSettings.RaidManagerThreat;
+
                 MenuBarSize = ImGui.GetWindowSize();
 
-                ImGui.Text($"Raid Manager - {TITLE}");
+                ImGui.Text($"Raid Manager - {TITLE} (ZDPS BETA)");
+
+                ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 4));
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                if (ImGui.MenuItem($"{FASIcons.Question}"))
+                {
+
+                }
+                ImGui.PopFont();
+                ImGui.SetItemTooltip($"This feature is in Beta Testing. Please provide feedback to help improve it.");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 3));
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 1.0f, 1.0f, IsTopMost ? 1.0f : 0.5f));
+                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 1.0f, 1.0f, windowSettings.TopMost ? 1.0f : 0.5f));
                 if (ImGui.MenuItem($"{FASIcons.Thumbtack}"))
                 {
-                    if (!IsTopMost)
+                    if (!windowSettings.TopMost)
                     {
                         Utils.SetWindowTopmost();
-                        Utils.SetWindowOpacity(Settings.Instance.WindowSettings.RaidManagerCooldowns.Opacity);
-                        IsTopMost = true;
+                        Utils.SetWindowOpacity(windowSettings.Opacity * 0.01f);
+                        LastPinnedOpacity = windowSettings.Opacity;
+                        windowSettings.TopMost = true;
+                        IsPinned = true;
                     }
                     else
                     {
                         Utils.UnsetWindowTopmost();
                         Utils.SetWindowOpacity(1.0f);
-                        IsTopMost = false;
+                        windowSettings.TopMost = false;
+                        IsPinned = false;
                     }
                 }
                 ImGui.PopStyleColor();
@@ -193,6 +298,8 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
                 if (ImGui.MenuItem($"X"))
                 {
+                    windowSettings.WindowPosition = ImGui.GetWindowPos();
+                    windowSettings.WindowSize = ImGui.GetWindowSize();
                     IsOpened = false;
                 }
                 ImGui.PopFont();
@@ -202,5 +309,10 @@ namespace BPSR_ZDPS.Windows
                 ImGui.EndMenuBar();
             }
         }
+    }
+
+    public class RaidManagerThreatWindowSettings : WindowSettingsBase
+    {
+
     }
 }

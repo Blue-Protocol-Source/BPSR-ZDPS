@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjBzdHJ1X3NldF9wZXJzb25hbF96b25lX2FjdGlvbl9pbmZvX3JlcXVlc3Qu",
-            "cHJvdG8SBnpwcm90bxoWc3RydV9hY3Rpb25faW5mby5wcm90byJLCiBTZXRQ",
-            "ZXJzb25hbFpvbmVBY3Rpb25JbmZvUmVxdWVzdBInCgthY3Rpb25faW5mbxgB",
-            "IAEoCzISLnpwcm90by5BY3Rpb25JbmZvYgZwcm90bzM="));
+            "cHJvdG8SBnpwcm90bxoWc3RydV9hY3Rpb25faW5mby5wcm90byJWCiBTZXRQ",
+            "ZXJzb25hbFpvbmVBY3Rpb25JbmZvUmVxdWVzdBIyCgphY3Rpb25JbmZvGAEg",
+            "ASgLMhIuenByb3RvLkFjdGlvbkluZm9SCmFjdGlvbkluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new SetPersonalZoneActionInfoRequest(this);
     }
 
-    /// <summary>Field number for the "action_info" field.</summary>
+    /// <summary>Field number for the "actionInfo" field.</summary>
     public const int ActionInfoFieldNumber = 1;
     private global::Zproto.ActionInfo actionInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

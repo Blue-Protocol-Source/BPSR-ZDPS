@@ -270,7 +270,10 @@ public class NetCap
         if (isCompressed)
         {
             var decompressed = Decompress(data[4..]);
-            ParsePacket(decompressed, lastPacketTime);
+            if (!decompressed.IsEmpty)
+            {
+                ParsePacket(decompressed, lastPacketTime);
+            }
         }
         else
         {
@@ -288,6 +291,12 @@ public class NetCap
         if (isCompressed)
         {
             msgData = Decompress(msgData);
+
+            if (msgData.IsEmpty)
+            {
+                Log.Logger.Warning("Error decompressing data for {serviceUuid}, {stubId}, {methodId}", serviceUuid, stubId, methodId);
+                return;
+            }
         }
 
         if (!Enum.IsDefined(typeof(EServiceId), serviceUuid))
@@ -312,8 +321,16 @@ public class NetCap
     
     private ReadOnlySpan<byte> Decompress(ReadOnlySpan<byte> data)
     {
-        var decompressedLen = _decompressor.Unwrap(data, DecompressionScratchBuffer);
-        return DecompressionScratchBuffer.AsSpan()[..decompressedLen];
+        try
+        {
+            var decompressedLen = _decompressor.Unwrap(data, DecompressionScratchBuffer.AsSpan());
+            return DecompressionScratchBuffer.AsSpan()[..decompressedLen];
+        }
+        catch (Exception ex)
+        {
+            Log.Logger.Error(ex, "Error decompressing data of Len: {Len}, DecompressionScratchBuffer Size: {ScratchSize}", data.Length, DecompressionScratchBuffer.Length);
+            return [];
+        }
     }
 
     private bool IsFromGame(IPv4Packet ip, TcpPacket tcp)

@@ -26,12 +26,13 @@ namespace Zproto {
           string.Concat(
             "ChlzdHJ1X3Nob3BfaXRlbV9pbmZvLnByb3RvEgZ6cHJvdG8aHnN0cnVfc2hv",
             "cF9pdGVtX2J1eV9saW1pdC5wcm90bxoeZW51bV9zaG9wX2xpbWl0X2J1eV90",
-            "eXBlLnByb3RvIvkBCgxTaG9wSXRlbUluZm8SDwoHaXRlbV9pZBgBIAEoBRIS",
-            "CgpzdGFydF90aW1lGAIgASgDEhAKCGVuZF90aW1lGAMgASgDEjAKDmxpbWl0",
-            "X2J1eV90eXBlGAQgASgOMhguenByb3RvLlNob3BMaW1pdEJ1eVR5cGUSNQoJ",
-            "YnV5X2NvdW50GAUgAygLMiIuenByb3RvLlNob3BJdGVtSW5mby5CdXlDb3Vu",
-            "dEVudHJ5GkkKDUJ1eUNvdW50RW50cnkSCwoDa2V5GAEgASgFEicKBXZhbHVl",
-            "GAIgASgLMhguenByb3RvLlNob3BJdGVtQnV5TGltaXQ6AjgBYgZwcm90bzM="));
+            "eXBlLnByb3RvIqcCCgxTaG9wSXRlbUluZm8SFgoGaXRlbUlkGAEgASgFUgZp",
+            "dGVtSWQSHAoJc3RhcnRUaW1lGAIgASgDUglzdGFydFRpbWUSGAoHZW5kVGlt",
+            "ZRgDIAEoA1IHZW5kVGltZRI8CgxsaW1pdEJ1eVR5cGUYBCABKA4yGC56cHJv",
+            "dG8uU2hvcExpbWl0QnV5VHlwZVIMbGltaXRCdXlUeXBlEj4KCGJ1eUNvdW50",
+            "GAUgAygLMiIuenByb3RvLlNob3BJdGVtSW5mby5CdXlDb3VudEVudHJ5Ughi",
+            "dXlDb3VudBpJCg1CdXlDb3VudEVudHJ5EgsKA2tleRgBIAEoBRInCgV2YWx1",
+            "ZRgCIAEoCzIYLnpwcm90by5TaG9wSXRlbUJ1eUxpbWl0OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruShopItemBuyLimitReflection.Descriptor, global::Zproto.EnumShopLimitBuyTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +92,7 @@ namespace Zproto {
       return new ShopItemInfo(this);
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
+    /// <summary>Field number for the "itemId" field.</summary>
     public const int ItemIdFieldNumber = 1;
     private int itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "start_time" field.</summary>
+    /// <summary>Field number for the "startTime" field.</summary>
     public const int StartTimeFieldNumber = 2;
     private long startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +116,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 3;
     private long endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +128,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "limit_buy_type" field.</summary>
+    /// <summary>Field number for the "limitBuyType" field.</summary>
     public const int LimitBuyTypeFieldNumber = 4;
     private global::Zproto.ShopLimitBuyType limitBuyType_ = global::Zproto.ShopLimitBuyType.ShopLimitBuyNormal;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +140,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "buy_count" field.</summary>
+    /// <summary>Field number for the "buyCount" field.</summary>
     public const int BuyCountFieldNumber = 5;
     private static readonly pbc::MapField<int, global::Zproto.ShopItemBuyLimit>.Codec _map_buyCount_codec
         = new pbc::MapField<int, global::Zproto.ShopItemBuyLimit>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ShopItemBuyLimit.Parser), 42);

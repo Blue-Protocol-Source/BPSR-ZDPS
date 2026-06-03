@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3ByaXZhdGVfY2hhdF90YXJnZXRfaW5mby5wcm90bxIGenByb3Rv",
-            "GhhzdHJ1X2NoaXRfY2hhdF9tc2cucHJvdG8iegoVUHJpdmF0ZUNoYXRUYXJn",
-            "ZXRJbmZvEg8KB2NoYXJfaWQYASABKAMSFwoPbWF4X3JlYWRfbXNnX2lkGAIg",
-            "ASgDEg4KBmlzX3RvcBgDIAEoCBInCgpsYXRlc3RfbXNnGAQgASgLMhMuenBy",
-            "b3RvLkNoaXRDaGF0TXNnYgZwcm90bzM="));
+            "GhhzdHJ1X2NoaXRfY2hhdF9tc2cucHJvdG8inAEKFVByaXZhdGVDaGF0VGFy",
+            "Z2V0SW5mbxIWCgZjaGFySWQYASABKANSBmNoYXJJZBIiCgxtYXhSZWFkTXNn",
+            "SWQYAiABKANSDG1heFJlYWRNc2dJZBIUCgVpc1RvcBgDIAEoCFIFaXNUb3AS",
+            "MQoJbGF0ZXN0TXNnGAQgASgLMhMuenByb3RvLkNoaXRDaGF0TXNnUglsYXRl",
+            "c3RNc2diBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruChitChatMsgReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Zproto {
       return new PrivateChatTargetInfo(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "max_read_msg_id" field.</summary>
+    /// <summary>Field number for the "maxReadMsgId" field.</summary>
     public const int MaxReadMsgIdFieldNumber = 2;
     private long maxReadMsgId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_top" field.</summary>
+    /// <summary>Field number for the "isTop" field.</summary>
     public const int IsTopFieldNumber = 3;
     private bool isTop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "latest_msg" field.</summary>
+    /// <summary>Field number for the "latestMsg" field.</summary>
     public const int LatestMsgFieldNumber = 4;
     private global::Zproto.ChitChatMsg latestMsg_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

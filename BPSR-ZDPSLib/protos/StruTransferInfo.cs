@@ -24,9 +24,9 @@ namespace Zproto {
     static StruTransferInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhzdHJ1X3RyYW5zZmVyX2luZm8ucHJvdG8SBnpwcm90byI+CgxUcmFuc2Zl",
-            "ckluZm8SFwoPdGFyZ2V0X3NjZW5lX2lkGAEgASgNEhUKDXRhcmdldF9wb3Nf",
-            "aWQYAiABKA1iBnByb3RvMw=="));
+            "ChhzdHJ1X3RyYW5zZmVyX2luZm8ucHJvdG8SBnpwcm90byJWCgxUcmFuc2Zl",
+            "ckluZm8SJAoNdGFyZ2V0U2NlbmVJZBgBIAEoDVINdGFyZ2V0U2NlbmVJZBIg",
+            "Cgt0YXJnZXRQb3NJZBgCIAEoDVILdGFyZ2V0UG9zSWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Zproto {
       return new TransferInfo(this);
     }
 
-    /// <summary>Field number for the "target_scene_id" field.</summary>
+    /// <summary>Field number for the "targetSceneId" field.</summary>
     public const int TargetSceneIdFieldNumber = 1;
     private uint targetSceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "target_pos_id" field.</summary>
+    /// <summary>Field number for the "targetPosId" field.</summary>
     public const int TargetPosIdFieldNumber = 2;
     private uint targetPosId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

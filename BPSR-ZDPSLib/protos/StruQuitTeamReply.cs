@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3F1aXRfdGVhbV9yZXBseS5wcm90bxIGenByb3RvGhdlbnVtX2Vf",
-            "ZXJyb3JfY29kZS5wcm90byJKCg1RdWl0VGVhbVJlcGx5EhMKC2lzX2tpY2tf",
-            "b3V0GAEgASgIEiQKCGVycl9jb2RlGAIgASgOMhIuenByb3RvLkVFcnJvckNv",
-            "ZGViBnByb3RvMw=="));
+            "ZXJyb3JfY29kZS5wcm90byJbCg1RdWl0VGVhbVJlcGx5EhwKCWlzS2lja091",
+            "dBgBIAEoCFIJaXNLaWNrT3V0EiwKB2VyckNvZGUYAiABKA4yEi56cHJvdG8u",
+            "RUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new QuitTeamReply(this);
     }
 
-    /// <summary>Field number for the "is_kick_out" field.</summary>
+    /// <summary>Field number for the "isKickOut" field.</summary>
     public const int IsKickOutFieldNumber = 1;
     private bool isKickOut_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

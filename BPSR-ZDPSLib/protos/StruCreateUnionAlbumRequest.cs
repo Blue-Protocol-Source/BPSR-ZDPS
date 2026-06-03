@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2NyZWF0ZV91bmlvbl9hbGJ1bV9yZXF1ZXN0LnByb3RvEgZ6cHJv",
-            "dG8aGGVudW1fZV9hbGJ1bV9yaWdodC5wcm90byJeChdDcmVhdGVVbmlvbkFs",
-            "YnVtUmVxdWVzdBIQCgh1bmlvbl9pZBgBIAEoAxIMCgRuYW1lGAIgASgJEiMK",
-            "BmFjY2VzcxgDIAEoDjITLnpwcm90by5FQWxidW1SaWdodGIGcHJvdG8z"));
+            "dG8aGGVudW1fZV9hbGJ1bV9yaWdodC5wcm90byJ0ChdDcmVhdGVVbmlvbkFs",
+            "YnVtUmVxdWVzdBIYCgd1bmlvbklkGAEgASgDUgd1bmlvbklkEhIKBG5hbWUY",
+            "AiABKAlSBG5hbWUSKwoGYWNjZXNzGAMgASgOMhMuenByb3RvLkVBbGJ1bVJp",
+            "Z2h0UgZhY2Nlc3NiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEAlbumRightReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new CreateUnionAlbumRequest(this);
     }
 
-    /// <summary>Field number for the "union_id" field.</summary>
+    /// <summary>Field number for the "unionId" field.</summary>
     public const int UnionIdFieldNumber = 1;
     private long unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,13 +24,14 @@ namespace Zproto {
     static EnumEPayTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVlbnVtX2VfcGF5X3R5cGUucHJvdG8SBnpwcm90byqEAgoIRVBheVR5cGUS",
+            "ChVlbnVtX2VfcGF5X3R5cGUucHJvdG8SBnpwcm90byqeAgoIRVBheVR5cGUS",
             "DwoLUGF5VHlwZU51bGwQABIPCgtQYXlUeXBlU2VsZhABEhIKDlBheVR5cGVI",
             "YW9QbGF5EAISDwoLUGF5VHlwZU1QYXkQAxIVChFQYXlUeXBlSGFvUGxheVdl",
             "YhAEEhIKDlBheVR5cGVFeHBsb3JlEAUSEQoNUGF5VHlwZUFwaklvcxAGEhUK",
             "EVBheVR5cGVBcGpBbmRyb2lkEAcSEAoMUGF5VHlwZUFwalBjEAgSEQoNUGF5",
             "VHlwZUFwaldlYhAJEhQKEFBheVR5cGVBcGpTdHJlYW0QChISCg5QYXlUeXBl",
-            "QXBqRXBpYxALEg0KCVBheVR5cGVYZBAMYgZwcm90bzM="));
+            "QXBqRXBpYxALEg0KCVBheVR5cGVYZBAMEhgKFFBheVR5cGVTb3V0aGVhc3RB",
+            "c2lhEA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EPayType), }, null, null));
@@ -53,6 +54,7 @@ namespace Zproto {
     [pbr::OriginalName("PayTypeApjStream")] PayTypeApjStream = 10,
     [pbr::OriginalName("PayTypeApjEpic")] PayTypeApjEpic = 11,
     [pbr::OriginalName("PayTypeXd")] PayTypeXd = 12,
+    [pbr::OriginalName("PayTypeSoutheastAsia")] PayTypeSoutheastAsia = 13,
   }
 
   #endregion

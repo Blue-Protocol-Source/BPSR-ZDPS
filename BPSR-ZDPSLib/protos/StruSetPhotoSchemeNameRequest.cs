@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X3NldF9waG90b19zY2hlbWVfbmFtZV9yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8iQwoZU2V0UGhvdG9TY2hlbWVOYW1lUmVxdWVzdBIRCglzY2hlbWVf",
-            "aWQYASABKAQSEwoLc2NoZW1lX25hbWUYAiABKAliBnByb3RvMw=="));
+            "cHJvdG8iVwoZU2V0UGhvdG9TY2hlbWVOYW1lUmVxdWVzdBIaCghzY2hlbWVJ",
+            "ZBgBIAEoBFIIc2NoZW1lSWQSHgoKc2NoZW1lTmFtZRgCIAEoCVIKc2NoZW1l",
+            "TmFtZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new SetPhotoSchemeNameRequest(this);
     }
 
-    /// <summary>Field number for the "scheme_id" field.</summary>
+    /// <summary>Field number for the "schemeId" field.</summary>
     public const int SchemeIdFieldNumber = 1;
     private ulong schemeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scheme_name" field.</summary>
+    /// <summary>Field number for the "schemeName" field.</summary>
     public const int SchemeNameFieldNumber = 2;
     private string schemeName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

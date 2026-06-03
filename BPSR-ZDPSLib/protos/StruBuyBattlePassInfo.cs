@@ -24,9 +24,9 @@ namespace Zproto {
     static StruBuyBattlePassInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X2J1eV9iYXR0bGVfcGFzc19pbmZvLnByb3RvEgZ6cHJvdG8iLgoR",
-            "QnV5QmF0dGxlUGFzc0luZm8SDQoFbGV2ZWwYASABKAUSCgoCaWQYAiABKAVi",
-            "BnByb3RvMw=="));
+            "Ch9zdHJ1X2J1eV9iYXR0bGVfcGFzc19pbmZvLnByb3RvEgZ6cHJvdG8iOQoR",
+            "QnV5QmF0dGxlUGFzc0luZm8SFAoFbGV2ZWwYASABKAVSBWxldmVsEg4KAmlk",
+            "GAIgASgFUgJpZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

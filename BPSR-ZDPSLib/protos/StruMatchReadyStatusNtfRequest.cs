@@ -26,12 +26,14 @@ namespace Zproto {
           string.Concat(
             "CilzdHJ1X21hdGNoX3JlYWR5X3N0YXR1c19udGZfcmVxdWVzdC5wcm90bxIG",
             "enByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxoZc3RydV9tYXRjaF9r",
-            "ZXlfaW5mby5wcm90bxocc3RydV9tYXRjaF9wbGF5ZXJfaW5mby5wcm90byLR",
-            "AQoaTWF0Y2hSZWFkeVN0YXR1c050ZlJlcXVlc3QSJAoIZXJyX2NvZGUYASAB",
-            "KA4yEi56cHJvdG8uRUVycm9yQ29kZRIWCg5sZWFkZXJfY2hhcl9pZBgCIAEo",
-            "AxITCgttYXRjaF90b2tlbhgDIAEoCRIsCg5tYXRjaF9rZXlfaW5mbxgEIAEo",
-            "CzIULnpwcm90by5NYXRjaEtleUluZm8SMgoRbWF0Y2hfcGxheWVyX2luZm8Y",
-            "BSADKAsyFy56cHJvdG8uTWF0Y2hQbGF5ZXJJbmZvYgZwcm90bzM="));
+            "ZXlfaW5mby5wcm90bxocc3RydV9tYXRjaF9wbGF5ZXJfaW5mby5wcm90byKL",
+            "AgoaTWF0Y2hSZWFkeVN0YXR1c050ZlJlcXVlc3QSLAoHZXJyQ29kZRgBIAEo",
+            "DjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2RlEiIKDGxlYWRlckNoYXJJ",
+            "ZBgCIAEoA1IMbGVhZGVyQ2hhcklkEh4KCm1hdGNoVG9rZW4YAyABKAlSCm1h",
+            "dGNoVG9rZW4SOAoMbWF0Y2hLZXlJbmZvGAQgASgLMhQuenByb3RvLk1hdGNo",
+            "S2V5SW5mb1IMbWF0Y2hLZXlJbmZvEkEKD21hdGNoUGxheWVySW5mbxgFIAMo",
+            "CzIXLnpwcm90by5NYXRjaFBsYXllckluZm9SD21hdGNoUGxheWVySW5mb2IG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruMatchKeyInfoReflection.Descriptor, global::Zproto.StruMatchPlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +93,7 @@ namespace Zproto {
       return new MatchReadyStatusNtfRequest(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,7 +105,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "leader_char_id" field.</summary>
+    /// <summary>Field number for the "leaderCharId" field.</summary>
     public const int LeaderCharIdFieldNumber = 2;
     private long leaderCharId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_token" field.</summary>
+    /// <summary>Field number for the "matchToken" field.</summary>
     public const int MatchTokenFieldNumber = 3;
     private string matchToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_key_info" field.</summary>
+    /// <summary>Field number for the "matchKeyInfo" field.</summary>
     public const int MatchKeyInfoFieldNumber = 4;
     private global::Zproto.MatchKeyInfo matchKeyInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_player_info" field.</summary>
+    /// <summary>Field number for the "matchPlayerInfo" field.</summary>
     public const int MatchPlayerInfoFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.MatchPlayerInfo> _repeated_matchPlayerInfo_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.MatchPlayerInfo.Parser);

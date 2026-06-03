@@ -25,16 +25,19 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2ludGVyYWN0aW9uX3RlbXBsYXRlX2RhdGEucHJvdG8SBnpwcm90",
-            "bxooZW51bV9lX2ludGVyYWN0aW9uX3RlbXBsYXRlX2FjdGlvbi5wcm90byKx",
-            "AQoXSW50ZXJhY3Rpb25UZW1wbGF0ZURhdGESMAoEdHlwZRgBIAEoDjIiLnpw",
-            "cm90by5FSW50ZXJhY3Rpb25UZW1wbGF0ZUFjdGlvbhIRCglvYmplY3RfaWQY",
-            "AiABKAQSEwoLdGVtcGxhdGVfaWQYAyABKAUSEwoLaG9tZWxhbmRfaWQYBCAB",
-            "KAMSDgoGcG9zX2lkGAUgASgFEhcKD3N1Yl90ZW1wbGF0ZV9pZBgGIAEoBWIG",
-            "cHJvdG8z"));
+            "bxooZW51bV9lX2ludGVyYWN0aW9uX3RlbXBsYXRlX2FjdGlvbi5wcm90bxog",
+            "c3RydV9pbnRlcmFjdGlvbl9wZXRfcGFyYW0ucHJvdG8itAIKF0ludGVyYWN0",
+            "aW9uVGVtcGxhdGVEYXRhEjYKBHR5cGUYASABKA4yIi56cHJvdG8uRUludGVy",
+            "YWN0aW9uVGVtcGxhdGVBY3Rpb25SBHR5cGUSGgoIb2JqZWN0SWQYAiABKARS",
+            "CG9iamVjdElkEh4KCnRlbXBsYXRlSWQYAyABKAVSCnRlbXBsYXRlSWQSHgoK",
+            "aG9tZWxhbmRJZBgEIAEoA1IKaG9tZWxhbmRJZBImCg5zZWF0R3JvdXBJbmRl",
+            "eBgFIAEoBVIOc2VhdEdyb3VwSW5kZXgSJAoNc3ViVGVtcGxhdGVJZBgGIAEo",
+            "BVINc3ViVGVtcGxhdGVJZBI3CghwZXRQYXJhbRgHIAEoCzIbLnpwcm90by5J",
+            "bnRlcmFjdGlvblBldFBhcmFtUghwZXRQYXJhbWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.EnumEInteractionTemplateActionReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.EnumEInteractionTemplateActionReflection.Descriptor, global::Zproto.StruInteractionPetParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.InteractionTemplateData), global::Zproto.InteractionTemplateData.Parser, new[]{ "Type", "ObjectId", "TemplateId", "HomelandId", "PosId", "SubTemplateId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.InteractionTemplateData), global::Zproto.InteractionTemplateData.Parser, new[]{ "Type", "ObjectId", "TemplateId", "HomelandId", "SeatGroupIndex", "SubTemplateId", "PetParam" }, null, null, null, null)
           }));
     }
     #endregion
@@ -80,8 +83,9 @@ namespace Zproto {
       objectId_ = other.objectId_;
       templateId_ = other.templateId_;
       homelandId_ = other.homelandId_;
-      posId_ = other.posId_;
+      seatGroupIndex_ = other.seatGroupIndex_;
       subTemplateId_ = other.subTemplateId_;
+      petParam_ = other.petParam_ != null ? other.petParam_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -103,7 +107,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "object_id" field.</summary>
+    /// <summary>Field number for the "objectId" field.</summary>
     public const int ObjectIdFieldNumber = 2;
     private ulong objectId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +119,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "template_id" field.</summary>
+    /// <summary>Field number for the "templateId" field.</summary>
     public const int TemplateIdFieldNumber = 3;
     private int templateId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 4;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,19 +143,19 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "pos_id" field.</summary>
-    public const int PosIdFieldNumber = 5;
-    private int posId_;
+    /// <summary>Field number for the "seatGroupIndex" field.</summary>
+    public const int SeatGroupIndexFieldNumber = 5;
+    private int seatGroupIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int PosId {
-      get { return posId_; }
+    public int SeatGroupIndex {
+      get { return seatGroupIndex_; }
       set {
-        posId_ = value;
+        seatGroupIndex_ = value;
       }
     }
 
-    /// <summary>Field number for the "sub_template_id" field.</summary>
+    /// <summary>Field number for the "subTemplateId" field.</summary>
     public const int SubTemplateIdFieldNumber = 6;
     private int subTemplateId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -160,6 +164,18 @@ namespace Zproto {
       get { return subTemplateId_; }
       set {
         subTemplateId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "petParam" field.</summary>
+    public const int PetParamFieldNumber = 7;
+    private global::Zproto.InteractionPetParam petParam_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.InteractionPetParam PetParam {
+      get { return petParam_; }
+      set {
+        petParam_ = value;
       }
     }
 
@@ -182,8 +198,9 @@ namespace Zproto {
       if (ObjectId != other.ObjectId) return false;
       if (TemplateId != other.TemplateId) return false;
       if (HomelandId != other.HomelandId) return false;
-      if (PosId != other.PosId) return false;
+      if (SeatGroupIndex != other.SeatGroupIndex) return false;
       if (SubTemplateId != other.SubTemplateId) return false;
+      if (!object.Equals(PetParam, other.PetParam)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -195,8 +212,9 @@ namespace Zproto {
       if (ObjectId != 0UL) hash ^= ObjectId.GetHashCode();
       if (TemplateId != 0) hash ^= TemplateId.GetHashCode();
       if (HomelandId != 0L) hash ^= HomelandId.GetHashCode();
-      if (PosId != 0) hash ^= PosId.GetHashCode();
+      if (SeatGroupIndex != 0) hash ^= SeatGroupIndex.GetHashCode();
       if (SubTemplateId != 0) hash ^= SubTemplateId.GetHashCode();
+      if (petParam_ != null) hash ^= PetParam.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -231,13 +249,17 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt64(HomelandId);
       }
-      if (PosId != 0) {
+      if (SeatGroupIndex != 0) {
         output.WriteRawTag(40);
-        output.WriteInt32(PosId);
+        output.WriteInt32(SeatGroupIndex);
       }
       if (SubTemplateId != 0) {
         output.WriteRawTag(48);
         output.WriteInt32(SubTemplateId);
+      }
+      if (petParam_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(PetParam);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -265,13 +287,17 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt64(HomelandId);
       }
-      if (PosId != 0) {
+      if (SeatGroupIndex != 0) {
         output.WriteRawTag(40);
-        output.WriteInt32(PosId);
+        output.WriteInt32(SeatGroupIndex);
       }
       if (SubTemplateId != 0) {
         output.WriteRawTag(48);
         output.WriteInt32(SubTemplateId);
+      }
+      if (petParam_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(PetParam);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -295,11 +321,14 @@ namespace Zproto {
       if (HomelandId != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(HomelandId);
       }
-      if (PosId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PosId);
+      if (SeatGroupIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SeatGroupIndex);
       }
       if (SubTemplateId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(SubTemplateId);
+      }
+      if (petParam_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PetParam);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -325,11 +354,17 @@ namespace Zproto {
       if (other.HomelandId != 0L) {
         HomelandId = other.HomelandId;
       }
-      if (other.PosId != 0) {
-        PosId = other.PosId;
+      if (other.SeatGroupIndex != 0) {
+        SeatGroupIndex = other.SeatGroupIndex;
       }
       if (other.SubTemplateId != 0) {
         SubTemplateId = other.SubTemplateId;
+      }
+      if (other.petParam_ != null) {
+        if (petParam_ == null) {
+          PetParam = new global::Zproto.InteractionPetParam();
+        }
+        PetParam.MergeFrom(other.PetParam);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -367,11 +402,18 @@ namespace Zproto {
             break;
           }
           case 40: {
-            PosId = input.ReadInt32();
+            SeatGroupIndex = input.ReadInt32();
             break;
           }
           case 48: {
             SubTemplateId = input.ReadInt32();
+            break;
+          }
+          case 58: {
+            if (petParam_ == null) {
+              PetParam = new global::Zproto.InteractionPetParam();
+            }
+            input.ReadMessage(PetParam);
             break;
           }
         }
@@ -410,11 +452,18 @@ namespace Zproto {
             break;
           }
           case 40: {
-            PosId = input.ReadInt32();
+            SeatGroupIndex = input.ReadInt32();
             break;
           }
           case 48: {
             SubTemplateId = input.ReadInt32();
+            break;
+          }
+          case 58: {
+            if (petParam_ == null) {
+              PetParam = new global::Zproto.InteractionPetParam();
+            }
+            input.ReadMessage(PetParam);
             break;
           }
         }

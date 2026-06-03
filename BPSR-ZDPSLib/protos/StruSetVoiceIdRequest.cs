@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9zdHJ1X3NldF92b2ljZV9pZF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8aF3N0",
-            "cnVfc2Vzc2lvbl9pbmZvLnByb3RvIksKEVNldFZvaWNlSWRSZXF1ZXN0EiQK",
-            "B3Nlc3Npb24YASABKAsyEy56cHJvdG8uU2Vzc2lvbkluZm8SEAoIdm9pY2Vf",
-            "aWQYAiABKAViBnByb3RvMw=="));
+            "cnVfc2Vzc2lvbl9pbmZvLnByb3RvIlwKEVNldFZvaWNlSWRSZXF1ZXN0Ei0K",
+            "B3Nlc3Npb24YASABKAsyEy56cHJvdG8uU2Vzc2lvbkluZm9SB3Nlc3Npb24S",
+            "GAoHdm9pY2VJZBgCIAEoBVIHdm9pY2VJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSessionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "voice_id" field.</summary>
+    /// <summary>Field number for the "voiceId" field.</summary>
     public const int VoiceIdFieldNumber = 2;
     private int voiceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

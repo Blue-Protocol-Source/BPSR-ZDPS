@@ -24,12 +24,12 @@ namespace Zproto {
     static EnumLoginPlatFormTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9lbnVtX2xvZ2luX3BsYXRfZm9ybV90eXBlLnByb3RvEgZ6cHJvdG8qrgEK",
+            "Ch9lbnVtX2xvZ2luX3BsYXRfZm9ybV90eXBlLnByb3RvEgZ6cHJvdG8qyQEK",
             "EUxvZ2luUGxhdEZvcm1UeXBlEhEKDUlubmVyUGxhdEZvcm0QABITCg9UZW5j",
             "ZW50UGxhdEZvcm0QARIQCgxJbnRsUGxhdEZvcm0QAhITCg9IYW9QbGF5UGxh",
-            "dEZvcm0QAxIPCgtBcGpQbGF0Rm9ybRAEEg4KClhkUGxhdEZvcm0QBRIVChBM",
-            "b2dpblBsYXRGb3JtTWF4EOcHEhIKDUFpQm90UGxhdEZvcm0Qj05iBnByb3Rv",
-            "Mw=="));
+            "dEZvcm0QAxIPCgtBcGpQbGF0Rm9ybRAEEg4KClhkUGxhdEZvcm0QBRIZChVT",
+            "b3V0aGVhc3RBc2lhUGxhdEZvcm0QBhIVChBMb2dpblBsYXRGb3JtTWF4EOcH",
+            "EhIKDUFpQm90UGxhdEZvcm0Qj05iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.LoginPlatFormType), }, null, null));
@@ -45,6 +45,7 @@ namespace Zproto {
     [pbr::OriginalName("HaoPlayPlatForm")] HaoPlayPlatForm = 3,
     [pbr::OriginalName("ApjPlatForm")] ApjPlatForm = 4,
     [pbr::OriginalName("XdPlatForm")] XdPlatForm = 5,
+    [pbr::OriginalName("SoutheastAsiaPlatForm")] SoutheastAsiaPlatForm = 6,
     [pbr::OriginalName("LoginPlatFormMax")] LoginPlatFormMax = 999,
     [pbr::OriginalName("AiBotPlatForm")] AiBotPlatForm = 9999,
   }

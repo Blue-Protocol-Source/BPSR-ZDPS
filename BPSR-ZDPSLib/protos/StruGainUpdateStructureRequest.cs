@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CihzdHJ1X2dhaW5fdXBkYXRlX3N0cnVjdHVyZV9yZXF1ZXN0LnByb3RvEgZ6",
-            "cHJvdG8aHHN0cnVfc3RydWN0dXJlX2xhbmRfb3AucHJvdG8iUgoaR2FpblVw",
-            "ZGF0ZVN0cnVjdHVyZVJlcXVlc3QSDwoHaG9tZV9pZBgBIAEoAxIjCgJvcBgC",
-            "IAEoCzIXLnpwcm90by5TdHJ1Y3R1cmVMYW5kT3BiBnByb3RvMw=="));
+            "cHJvdG8aHHN0cnVfc3RydWN0dXJlX2xhbmRfb3AucHJvdG8iXQoaR2FpblVw",
+            "ZGF0ZVN0cnVjdHVyZVJlcXVlc3QSFgoGaG9tZUlkGAEgASgDUgZob21lSWQS",
+            "JwoCb3AYAiABKAsyFy56cHJvdG8uU3RydWN0dXJlTGFuZE9wUgJvcGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStructureLandOpReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new GainUpdateStructureRequest(this);
     }
 
-    /// <summary>Field number for the "home_id" field.</summary>
+    /// <summary>Field number for the "homeId" field.</summary>
     public const int HomeIdFieldNumber = 1;
     private long homeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

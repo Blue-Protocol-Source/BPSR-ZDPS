@@ -26,10 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiVzdHJ1X2NvbW11bml0eV9pbnZpdGF0aW9uX3JlcGx5LnByb3RvEgZ6cHJv",
             "dG8aJHN0cnVfY29tbXVuaXR5X2ludml0YXRpb25faW5mby5wcm90bxoXZW51",
-            "bV9lX2Vycm9yX2NvZGUucHJvdG8ieQoYQ29tbXVuaXR5SW52aXRhdGlvblJl",
-            "cGx5EjcKDmludml0YXRpb25faWRzGAEgAygLMh8uenByb3RvLkNvbW11bml0",
-            "eUludml0YXRpb25JbmZvEiQKCGVycl9jb2RlGAIgASgOMhIuenByb3RvLkVF",
-            "cnJvckNvZGViBnByb3RvMw=="));
+            "bV9lX2Vycm9yX2NvZGUucHJvdG8ijwEKGENvbW11bml0eUludml0YXRpb25S",
+            "ZXBseRJFCg1pbnZpdGF0aW9uSWRzGAEgAygLMh8uenByb3RvLkNvbW11bml0",
+            "eUludml0YXRpb25JbmZvUg1pbnZpdGF0aW9uSWRzEiwKB2VyckNvZGUYAiAB",
+            "KA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityInvitationInfoReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new CommunityInvitationReply(this);
     }
 
-    /// <summary>Field number for the "invitation_ids" field.</summary>
+    /// <summary>Field number for the "invitationIds" field.</summary>
     public const int InvitationIdsFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.CommunityInvitationInfo> _repeated_invitationIds_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.CommunityInvitationInfo.Parser);
@@ -97,7 +97,7 @@ namespace Zproto {
       get { return invitationIds_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

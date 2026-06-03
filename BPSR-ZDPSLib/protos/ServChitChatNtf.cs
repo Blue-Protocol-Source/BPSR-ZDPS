@@ -27,23 +27,28 @@ namespace Zproto {
             "ChhzZXJ2X2NoaXRfY2hhdF9udGYucHJvdG8SBnpwcm90bxoyc3RydV9ub3Rp",
             "ZnlfYWRkX3ByaXZhdGVfY2hhdF9zZXNzaW9uX3JlcXVlc3QucHJvdG8aInN0",
             "cnVfbm90aWZ5X2JlX211dGVkX3JlcXVlc3QucHJvdG8aLHN0cnVfbm90aWZ5",
-            "X2NsZWFyX2NoYXRfaGlzdG9yeV9yZXF1ZXN0LnByb3RvGi9zdHJ1X25vdGlm",
-            "eV9uZXdlc3RfY2hpdF9jaGF0X21zZ3NfcmVxdWVzdC5wcm90byLZAgoLQ2hp",
-            "dENoYXROdGYaVgoYTm90aWZ5TmV3ZXN0Q2hpdENoYXRNc2dzEjoKCXZfcmVx",
-            "dWVzdBgBIAEoCzInLnpwcm90by5Ob3RpZnlOZXdlc3RDaGl0Q2hhdE1zZ3NS",
-            "ZXF1ZXN0GkAKDU5vdGlmeUJlTXV0ZWQSLwoJdl9yZXF1ZXN0GAEgASgLMhwu",
-            "enByb3RvLk5vdGlmeUJlTXV0ZWRSZXF1ZXN0GlwKG05vdGlmeUFkZFByaXZh",
-            "dGVDaGF0U2Vzc2lvbhI9Cgl2X3JlcXVlc3QYASABKAsyKi56cHJvdG8uTm90",
-            "aWZ5QWRkUHJpdmF0ZUNoYXRTZXNzaW9uUmVxdWVzdBpSChZOb3RpZnlDbGVh",
-            "ckNoYXRIaXN0b3J5EjgKCXZfcmVxdWVzdBgBIAEoCzIlLnpwcm90by5Ob3Rp",
-            "ZnlDbGVhckNoYXRIaXN0b3J5UmVxdWVzdGIGcHJvdG8z"));
+            "X2NsZWFyX2NoYXRfaGlzdG9yeV9yZXF1ZXN0LnByb3RvGjBzdHJ1X25vdGlm",
+            "eV9uZXdiaWVfY2hhdF9jaGFubmVsX2lkX3JlcXVlc3QucHJvdG8aL3N0cnVf",
+            "bm90aWZ5X25ld2VzdF9jaGl0X2NoYXRfbXNnc19yZXF1ZXN0LnByb3RvIuAD",
+            "CgtDaGl0Q2hhdE50ZhpfChhOb3RpZnlOZXdlc3RDaGl0Q2hhdE1zZ3MSQwoI",
+            "dlJlcXVlc3QYASABKAsyJy56cHJvdG8uTm90aWZ5TmV3ZXN0Q2hpdENoYXRN",
+            "c2dzUmVxdWVzdFIIdlJlcXVlc3QaSQoNTm90aWZ5QmVNdXRlZBI4Cgh2UmVx",
+            "dWVzdBgBIAEoCzIcLnpwcm90by5Ob3RpZnlCZU11dGVkUmVxdWVzdFIIdlJl",
+            "cXVlc3QaZQobTm90aWZ5QWRkUHJpdmF0ZUNoYXRTZXNzaW9uEkYKCHZSZXF1",
+            "ZXN0GAEgASgLMiouenByb3RvLk5vdGlmeUFkZFByaXZhdGVDaGF0U2Vzc2lv",
+            "blJlcXVlc3RSCHZSZXF1ZXN0GlsKFk5vdGlmeUNsZWFyQ2hhdEhpc3RvcnkS",
+            "QQoIdlJlcXVlc3QYASABKAsyJS56cHJvdG8uTm90aWZ5Q2xlYXJDaGF0SGlz",
+            "dG9yeVJlcXVlc3RSCHZSZXF1ZXN0GmEKGU5vdGlmeU5ld2JpZUNoYXRDaGFu",
+            "bmVsSWQSRAoIdlJlcXVlc3QYASABKAsyKC56cHJvdG8uTm90aWZ5TmV3Ymll",
+            "Q2hhdENoYW5uZWxJZFJlcXVlc3RSCHZSZXF1ZXN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruNotifyAddPrivateChatSessionRequestReflection.Descriptor, global::Zproto.StruNotifyBeMutedRequestReflection.Descriptor, global::Zproto.StruNotifyClearChatHistoryRequestReflection.Descriptor, global::Zproto.StruNotifyNewestChitChatMsgsRequestReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruNotifyAddPrivateChatSessionRequestReflection.Descriptor, global::Zproto.StruNotifyBeMutedRequestReflection.Descriptor, global::Zproto.StruNotifyClearChatHistoryRequestReflection.Descriptor, global::Zproto.StruNotifyNewbieChatChannelIdRequestReflection.Descriptor, global::Zproto.StruNotifyNewestChitChatMsgsRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ChitChatNtf), global::Zproto.ChitChatNtf.Parser, null, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ChitChatNtf.Types.NotifyNewestChitChatMsgs), global::Zproto.ChitChatNtf.Types.NotifyNewestChitChatMsgs.Parser, new[]{ "VRequest" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ChitChatNtf.Types.NotifyBeMuted), global::Zproto.ChitChatNtf.Types.NotifyBeMuted.Parser, new[]{ "VRequest" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ChitChatNtf.Types.NotifyAddPrivateChatSession), global::Zproto.ChitChatNtf.Types.NotifyAddPrivateChatSession.Parser, new[]{ "VRequest" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ChitChatNtf.Types.NotifyClearChatHistory), global::Zproto.ChitChatNtf.Types.NotifyClearChatHistory.Parser, new[]{ "VRequest" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ChitChatNtf.Types.NotifyClearChatHistory), global::Zproto.ChitChatNtf.Types.NotifyClearChatHistory.Parser, new[]{ "VRequest" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ChitChatNtf.Types.NotifyNewbieChatChannelId), global::Zproto.ChitChatNtf.Types.NotifyNewbieChatChannelId.Parser, new[]{ "VRequest" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -259,7 +264,7 @@ namespace Zproto {
           return new NotifyNewestChitChatMsgs(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyNewestChitChatMsgsRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -466,7 +471,7 @@ namespace Zproto {
           return new NotifyBeMuted(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyBeMutedRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -673,7 +678,7 @@ namespace Zproto {
           return new NotifyAddPrivateChatSession(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyAddPrivateChatSessionRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -880,7 +885,7 @@ namespace Zproto {
           return new NotifyClearChatHistory(this);
         }
 
-        /// <summary>Field number for the "v_request" field.</summary>
+        /// <summary>Field number for the "vRequest" field.</summary>
         public const int VRequestFieldNumber = 1;
         private global::Zproto.NotifyClearChatHistoryRequest vRequest_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1031,6 +1036,213 @@ namespace Zproto {
               case 10: {
                 if (vRequest_ == null) {
                   VRequest = new global::Zproto.NotifyClearChatHistoryRequest();
+                }
+                input.ReadMessage(VRequest);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class NotifyNewbieChatChannelId : pb::IMessage<NotifyNewbieChatChannelId>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<NotifyNewbieChatChannelId> _parser = new pb::MessageParser<NotifyNewbieChatChannelId>(() => new NotifyNewbieChatChannelId());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<NotifyNewbieChatChannelId> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Zproto.ChitChatNtf.Descriptor.NestedTypes[4]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyNewbieChatChannelId() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyNewbieChatChannelId(NotifyNewbieChatChannelId other) : this() {
+          vRequest_ = other.vRequest_ != null ? other.vRequest_.Clone() : null;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyNewbieChatChannelId Clone() {
+          return new NotifyNewbieChatChannelId(this);
+        }
+
+        /// <summary>Field number for the "vRequest" field.</summary>
+        public const int VRequestFieldNumber = 1;
+        private global::Zproto.NotifyNewbieChatChannelIdRequest vRequest_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Zproto.NotifyNewbieChatChannelIdRequest VRequest {
+          get { return vRequest_; }
+          set {
+            vRequest_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as NotifyNewbieChatChannelId);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(NotifyNewbieChatChannelId other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (!object.Equals(VRequest, other.VRequest)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (vRequest_ != null) hash ^= VRequest.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (vRequest_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(VRequest);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (vRequest_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(VRequest);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (vRequest_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(VRequest);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(NotifyNewbieChatChannelId other) {
+          if (other == null) {
+            return;
+          }
+          if (other.vRequest_ != null) {
+            if (vRequest_ == null) {
+              VRequest = new global::Zproto.NotifyNewbieChatChannelIdRequest();
+            }
+            VRequest.MergeFrom(other.VRequest);
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                if (vRequest_ == null) {
+                  VRequest = new global::Zproto.NotifyNewbieChatChannelIdRequest();
+                }
+                input.ReadMessage(VRequest);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                if (vRequest_ == null) {
+                  VRequest = new global::Zproto.NotifyNewbieChatChannelIdRequest();
                 }
                 input.ReadMessage(VRequest);
                 break;

@@ -27,14 +27,15 @@ namespace Zproto {
             "CiVzdHJ1X2dldF9mcmllbmRfYmFzZV9pbmZvX3JlcGx5LnByb3RvEgZ6cHJv",
             "dG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhtzdHJ1X2ZyaWVuZF9iYXNl",
             "X2luZm8ucHJvdG8aF3N0cnVfZnJpZW5kbGluZXNzLnByb3RvGh1zdHJ1X3Rv",
-            "dGFsX2ZyaWVuZGxpbmVzcy5wcm90byLAAgoWR2V0RnJpZW5kQmFzZUluZm9S",
-            "ZXBseRIpCgliYXNlX2luZm8YAyABKAsyFi56cHJvdG8uRnJpZW5kQmFzZUlu",
-            "Zm8STwoRZnJpZW5kbGluZXNzX2xpc3QYBSADKAsyNC56cHJvdG8uR2V0RnJp",
-            "ZW5kQmFzZUluZm9SZXBseS5GcmllbmRsaW5lc3NMaXN0RW50cnkSNQoSdG90",
-            "YWxfZnJpZW5kbGluZXNzGAYgASgLMhkuenByb3RvLlRvdGFsRnJpZW5kbGlu",
-            "ZXNzEiQKCGVycl9jb2RlGAcgASgOMhIuenByb3RvLkVFcnJvckNvZGUaTQoV",
-            "RnJpZW5kbGluZXNzTGlzdEVudHJ5EgsKA2tleRgBIAEoAxIjCgV2YWx1ZRgC",
-            "IAEoCzIULnpwcm90by5GcmllbmRsaW5lc3M6AjgBYgZwcm90bzM="));
+            "dGFsX2ZyaWVuZGxpbmVzcy5wcm90byL0AgoWR2V0RnJpZW5kQmFzZUluZm9S",
+            "ZXBseRIyCghiYXNlSW5mbxgDIAEoCzIWLnpwcm90by5GcmllbmRCYXNlSW5m",
+            "b1IIYmFzZUluZm8SYAoQZnJpZW5kbGluZXNzTGlzdBgFIAMoCzI0Lnpwcm90",
+            "by5HZXRGcmllbmRCYXNlSW5mb1JlcGx5LkZyaWVuZGxpbmVzc0xpc3RFbnRy",
+            "eVIQZnJpZW5kbGluZXNzTGlzdBJHChF0b3RhbEZyaWVuZGxpbmVzcxgGIAEo",
+            "CzIZLnpwcm90by5Ub3RhbEZyaWVuZGxpbmVzc1IRdG90YWxGcmllbmRsaW5l",
+            "c3MSLAoHZXJyQ29kZRgHIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJD",
+            "b2RlGk0KFUZyaWVuZGxpbmVzc0xpc3RFbnRyeRILCgNrZXkYASABKAMSIwoF",
+            "dmFsdWUYAiABKAsyFC56cHJvdG8uRnJpZW5kbGluZXNzOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruFriendBaseInfoReflection.Descriptor, global::Zproto.StruFriendlinessReflection.Descriptor, global::Zproto.StruTotalFriendlinessReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +94,7 @@ namespace Zproto {
       return new GetFriendBaseInfoReply(this);
     }
 
-    /// <summary>Field number for the "base_info" field.</summary>
+    /// <summary>Field number for the "baseInfo" field.</summary>
     public const int BaseInfoFieldNumber = 3;
     private global::Zproto.FriendBaseInfo baseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,7 +106,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "friendliness_list" field.</summary>
+    /// <summary>Field number for the "friendlinessList" field.</summary>
     public const int FriendlinessListFieldNumber = 5;
     private static readonly pbc::MapField<long, global::Zproto.Friendliness>.Codec _map_friendlinessList_codec
         = new pbc::MapField<long, global::Zproto.Friendliness>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.Friendliness.Parser), 42);
@@ -116,7 +117,7 @@ namespace Zproto {
       get { return friendlinessList_; }
     }
 
-    /// <summary>Field number for the "total_friendliness" field.</summary>
+    /// <summary>Field number for the "totalFriendliness" field.</summary>
     public const int TotalFriendlinessFieldNumber = 6;
     private global::Zproto.TotalFriendliness totalFriendliness_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 7;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

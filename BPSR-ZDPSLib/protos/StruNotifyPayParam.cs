@@ -24,8 +24,8 @@ namespace Zproto {
     static StruNotifyPayParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X25vdGlmeV9wYXlfcGFyYW0ucHJvdG8SBnpwcm90byIhCg5Ob3Rp",
-            "ZnlQYXlQYXJhbRIPCgdiYWxhbmNlGAEgASgDYgZwcm90bzM="));
+            "ChtzdHJ1X25vdGlmeV9wYXlfcGFyYW0ucHJvdG8SBnpwcm90byIqCg5Ob3Rp",
+            "ZnlQYXlQYXJhbRIYCgdiYWxhbmNlGAEgASgDUgdiYWxhbmNlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

@@ -27,44 +27,57 @@ namespace Zproto {
             "ChZzdHJ1X2Zhc2hpb25fbWdyLnByb3RvEgZ6cHJvdG8aH3N0cnVfZmFzaGlv",
             "bl9hZHZhbmNlX2luZm8ucHJvdG8aHXN0cnVfZmFzaGlvbl9jb2xvcl9pbmZv",
             "LnByb3RvGhxzdHJ1X3VubG9ja19jb2xvcl9pbmZvLnByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8i4QsKCkZhc2hpb25NZ3ISMwoJd2Vhcl9pbmZvGAEg",
-            "AygLMiAuenByb3RvLkZhc2hpb25NZ3IuV2VhckluZm9FbnRyeRI7Cg1mYXNo",
-            "aW9uX2RhdGFzGAIgAygLMiQuenByb3RvLkZhc2hpb25NZ3IuRmFzaGlvbkRh",
-            "dGFzRW50cnkSOQoMdW5sb2NrX2NvbG9yGAMgAygLMiMuenByb3RvLkZhc2hp",
-            "b25NZ3IuVW5sb2NrQ29sb3JFbnRyeRI9Cg5mYXNoaW9uX3Jld2FyZBgEIAMo",
-            "CzIlLnpwcm90by5GYXNoaW9uTWdyLkZhc2hpb25SZXdhcmRFbnRyeRI3Cgth",
-            "bGxfZmFzaGlvbhgFIAMoCzIiLnpwcm90by5GYXNoaW9uTWdyLkFsbEZhc2hp",
-            "b25FbnRyeRIxCghhbGxfcmlkZRgGIAMoCzIfLnpwcm90by5GYXNoaW9uTWdy",
-            "LkFsbFJpZGVFbnRyeRI+Cg9hbGxfd2VhcG9uX3NraW4YByADKAsyJS56cHJv",
-            "dG8uRmFzaGlvbk1nci5BbGxXZWFwb25Ta2luRW50cnkSPwoPZmFzaGlvbl9h",
-            "ZHZhbmNlGAggAygLMiYuenByb3RvLkZhc2hpb25NZ3IuRmFzaGlvbkFkdmFu",
-            "Y2VFbnRyeRIdChVmYXNoaW9uX2NvbGxlY3RfcG9pbnQYCSABKAUSGgoScmlk",
-            "ZV9jb2xsZWN0X3BvaW50GAogASgFEiEKGXdlYXBvbl9za2luX2NvbGxlY3Rf",
-            "cG9pbnQYCyABKAUSPgoPYWxsX2Zhc2hpb25fbnVtGAwgAygLMiUuenByb3Rv",
-            "LkZhc2hpb25NZ3IuQWxsRmFzaGlvbk51bUVudHJ5EjgKDGFsbF9yaWRlX251",
-            "bRgNIAMoCzIiLnpwcm90by5GYXNoaW9uTWdyLkFsbFJpZGVOdW1FbnRyeRJF",
-            "ChNhbGxfd2VhcG9uX3NraW5fbnVtGA4gAygLMiguenByb3RvLkZhc2hpb25N",
-            "Z3IuQWxsV2VhcG9uU2tpbk51bUVudHJ5EhcKD2lzX2Zhc2hpb25faW5pdBgP",
-            "IAEoCBIUCgxpc19yaWRlX2luaXQYECABKAgSGwoTaXNfd2VhcG9uX3NraW5f",
-            "aW5pdBgRIAEoCBovCg1XZWFySW5mb0VudHJ5EgsKA2tleRgBIAEoBRINCgV2",
-            "YWx1ZRgCIAEoBToCOAEaTQoRRmFzaGlvbkRhdGFzRW50cnkSCwoDa2V5GAEg",
-            "ASgFEicKBXZhbHVlGAIgASgLMhguenByb3RvLkZhc2hpb25Db2xvckluZm86",
-            "AjgBGksKEFVubG9ja0NvbG9yRW50cnkSCwoDa2V5GAEgASgFEiYKBXZhbHVl",
-            "GAIgASgLMhcuenByb3RvLlVubG9ja0NvbG9ySW5mbzoCOAEaNAoSRmFzaGlv",
-            "blJld2FyZEVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoCDoCOAEa",
-            "MQoPQWxsRmFzaGlvbkVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEo",
-            "CDoCOAEaLgoMQWxsUmlkZUVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgC",
-            "IAEoCDoCOAEaNAoSQWxsV2VhcG9uU2tpbkVudHJ5EgsKA2tleRgBIAEoBRIN",
-            "CgV2YWx1ZRgCIAEoCDoCOAEaUQoTRmFzaGlvbkFkdmFuY2VFbnRyeRILCgNr",
-            "ZXkYASABKAUSKQoFdmFsdWUYAiABKAsyGi56cHJvdG8uRmFzaGlvbkFkdmFu",
-            "Y2VJbmZvOgI4ARo0ChJBbGxGYXNoaW9uTnVtRW50cnkSCwoDa2V5GAEgASgF",
-            "Eg0KBXZhbHVlGAIgASgFOgI4ARoxCg9BbGxSaWRlTnVtRW50cnkSCwoDa2V5",
-            "GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4ARo3ChVBbGxXZWFwb25Ta2luTnVt",
-            "RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
+            "cnR5X21hc2sucHJvdG8ikhAKCkZhc2hpb25NZ3ISPAoId2VhckluZm8YASAD",
+            "KAsyIC56cHJvdG8uRmFzaGlvbk1nci5XZWFySW5mb0VudHJ5Ugh3ZWFySW5m",
+            "bxJICgxmYXNoaW9uRGF0YXMYAiADKAsyJC56cHJvdG8uRmFzaGlvbk1nci5G",
+            "YXNoaW9uRGF0YXNFbnRyeVIMZmFzaGlvbkRhdGFzEkUKC1VubG9ja0NvbG9y",
+            "GAMgAygLMiMuenByb3RvLkZhc2hpb25NZ3IuVW5sb2NrQ29sb3JFbnRyeVIL",
+            "VW5sb2NrQ29sb3ISSwoNZmFzaGlvblJld2FyZBgEIAMoCzIlLnpwcm90by5G",
+            "YXNoaW9uTWdyLkZhc2hpb25SZXdhcmRFbnRyeVINZmFzaGlvblJld2FyZBJC",
+            "CgphbGxGYXNoaW9uGAUgAygLMiIuenByb3RvLkZhc2hpb25NZ3IuQWxsRmFz",
+            "aGlvbkVudHJ5UgphbGxGYXNoaW9uEjkKB2FsbFJpZGUYBiADKAsyHy56cHJv",
+            "dG8uRmFzaGlvbk1nci5BbGxSaWRlRW50cnlSB2FsbFJpZGUSSwoNYWxsV2Vh",
+            "cG9uU2tpbhgHIAMoCzIlLnpwcm90by5GYXNoaW9uTWdyLkFsbFdlYXBvblNr",
+            "aW5FbnRyeVINYWxsV2VhcG9uU2tpbhJOCg5mYXNoaW9uQWR2YW5jZRgIIAMo",
+            "CzImLnpwcm90by5GYXNoaW9uTWdyLkZhc2hpb25BZHZhbmNlRW50cnlSDmZh",
+            "c2hpb25BZHZhbmNlEjAKE2Zhc2hpb25Db2xsZWN0UG9pbnQYCSABKAVSE2Zh",
+            "c2hpb25Db2xsZWN0UG9pbnQSKgoQcmlkZUNvbGxlY3RQb2ludBgKIAEoBVIQ",
+            "cmlkZUNvbGxlY3RQb2ludBI2ChZ3ZWFwb25Ta2luQ29sbGVjdFBvaW50GAsg",
+            "ASgFUhZ3ZWFwb25Ta2luQ29sbGVjdFBvaW50EksKDWFsbEZhc2hpb25OdW0Y",
+            "DCADKAsyJS56cHJvdG8uRmFzaGlvbk1nci5BbGxGYXNoaW9uTnVtRW50cnlS",
+            "DWFsbEZhc2hpb25OdW0SQgoKYWxsUmlkZU51bRgNIAMoCzIiLnpwcm90by5G",
+            "YXNoaW9uTWdyLkFsbFJpZGVOdW1FbnRyeVIKYWxsUmlkZU51bRJUChBhbGxX",
+            "ZWFwb25Ta2luTnVtGA4gAygLMiguenByb3RvLkZhc2hpb25NZ3IuQWxsV2Vh",
+            "cG9uU2tpbk51bUVudHJ5UhBhbGxXZWFwb25Ta2luTnVtEiQKDWlzRmFzaGlv",
+            "bkluaXQYDyABKAhSDWlzRmFzaGlvbkluaXQSHgoKaXNSaWRlSW5pdBgQIAEo",
+            "CFIKaXNSaWRlSW5pdBIqChBpc1dlYXBvblNraW5Jbml0GBEgASgIUhBpc1dl",
+            "YXBvblNraW5Jbml0EjIKFGZhc2hpb25VbmxvY2tGaXhGbGFnGBIgASgFUhRm",
+            "YXNoaW9uVW5sb2NrRml4RmxhZxJOCg5keWVpbmdVbmxvY2tlZBgTIAMoCzIm",
+            "Lnpwcm90by5GYXNoaW9uTWdyLkR5ZWluZ1VubG9ja2VkRW50cnlSDmR5ZWlu",
+            "Z1VubG9ja2VkElcKEWR5ZWluZ1VubG9ja1Njb3JlGBQgAygLMikuenByb3Rv",
+            "LkZhc2hpb25NZ3IuRHllaW5nVW5sb2NrU2NvcmVFbnRyeVIRZHllaW5nVW5s",
+            "b2NrU2NvcmUaLwoNV2VhckluZm9FbnRyeRILCgNrZXkYASABKAUSDQoFdmFs",
+            "dWUYAiABKAU6AjgBGk0KEUZhc2hpb25EYXRhc0VudHJ5EgsKA2tleRgBIAEo",
+            "BRInCgV2YWx1ZRgCIAEoCzIYLnpwcm90by5GYXNoaW9uQ29sb3JJbmZvOgI4",
+            "ARpLChBVbmxvY2tDb2xvckVudHJ5EgsKA2tleRgBIAEoBRImCgV2YWx1ZRgC",
+            "IAEoCzIXLnpwcm90by5VbmxvY2tDb2xvckluZm86AjgBGjQKEkZhc2hpb25S",
+            "ZXdhcmRFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAg6AjgBGjEK",
+            "D0FsbEZhc2hpb25FbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAg6",
+            "AjgBGi4KDEFsbFJpZGVFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiAB",
+            "KAg6AjgBGjQKEkFsbFdlYXBvblNraW5FbnRyeRILCgNrZXkYASABKAUSDQoF",
+            "dmFsdWUYAiABKAg6AjgBGlEKE0Zhc2hpb25BZHZhbmNlRW50cnkSCwoDa2V5",
+            "GAEgASgFEikKBXZhbHVlGAIgASgLMhouenByb3RvLkZhc2hpb25BZHZhbmNl",
+            "SW5mbzoCOAEaNAoSQWxsRmFzaGlvbk51bUVudHJ5EgsKA2tleRgBIAEoBRIN",
+            "CgV2YWx1ZRgCIAEoBToCOAEaMQoPQWxsUmlkZU51bUVudHJ5EgsKA2tleRgB",
+            "IAEoBRINCgV2YWx1ZRgCIAEoBToCOAEaNwoVQWxsV2VhcG9uU2tpbk51bUVu",
+            "dHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoBToCOAEaNQoTRHllaW5n",
+            "VW5sb2NrZWRFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAg6AjgB",
+            "GjgKFkR5ZWluZ1VubG9ja1Njb3JlRW50cnkSCwoDa2V5GAEgASgFEg0KBXZh",
+            "bHVlGAIgASgFOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFashionAdvanceInfoReflection.Descriptor, global::Zproto.StruFashionColorInfoReflection.Descriptor, global::Zproto.StruUnlockColorInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.FashionMgr), global::Zproto.FashionMgr.Parser, new[]{ "WearInfo", "FashionDatas", "UnlockColor", "FashionReward", "AllFashion", "AllRide", "AllWeaponSkin", "FashionAdvance", "FashionCollectPoint", "RideCollectPoint", "WeaponSkinCollectPoint", "AllFashionNum", "AllRideNum", "AllWeaponSkinNum", "IsFashionInit", "IsRideInit", "IsWeaponSkinInit" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, null, null, null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.FashionMgr), global::Zproto.FashionMgr.Parser, new[]{ "WearInfo", "FashionDatas", "UnlockColor", "FashionReward", "AllFashion", "AllRide", "AllWeaponSkin", "FashionAdvance", "FashionCollectPoint", "RideCollectPoint", "WeaponSkinCollectPoint", "AllFashionNum", "AllRideNum", "AllWeaponSkinNum", "IsFashionInit", "IsRideInit", "IsWeaponSkinInit", "FashionUnlockFixFlag", "DyeingUnlocked", "DyeingUnlockScore" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, null, null, null, null, null, null, null, })
           }));
     }
     #endregion
@@ -123,6 +136,9 @@ namespace Zproto {
       isFashionInit_ = other.isFashionInit_;
       isRideInit_ = other.isRideInit_;
       isWeaponSkinInit_ = other.isWeaponSkinInit_;
+      fashionUnlockFixFlag_ = other.fashionUnlockFixFlag_;
+      dyeingUnlocked_ = other.dyeingUnlocked_.Clone();
+      dyeingUnlockScore_ = other.dyeingUnlockScore_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -132,7 +148,7 @@ namespace Zproto {
       return new FashionMgr(this);
     }
 
-    /// <summary>Field number for the "wear_info" field.</summary>
+    /// <summary>Field number for the "wearInfo" field.</summary>
     public const int WearInfoFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_wearInfo_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);
@@ -143,7 +159,7 @@ namespace Zproto {
       get { return wearInfo_; }
     }
 
-    /// <summary>Field number for the "fashion_datas" field.</summary>
+    /// <summary>Field number for the "fashionDatas" field.</summary>
     public const int FashionDatasFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.FashionColorInfo>.Codec _map_fashionDatas_codec
         = new pbc::MapField<int, global::Zproto.FashionColorInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FashionColorInfo.Parser), 18);
@@ -154,7 +170,7 @@ namespace Zproto {
       get { return fashionDatas_; }
     }
 
-    /// <summary>Field number for the "unlock_color" field.</summary>
+    /// <summary>Field number for the "UnlockColor" field.</summary>
     public const int UnlockColorFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.UnlockColorInfo>.Codec _map_unlockColor_codec
         = new pbc::MapField<int, global::Zproto.UnlockColorInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.UnlockColorInfo.Parser), 26);
@@ -165,7 +181,7 @@ namespace Zproto {
       get { return unlockColor_; }
     }
 
-    /// <summary>Field number for the "fashion_reward" field.</summary>
+    /// <summary>Field number for the "fashionReward" field.</summary>
     public const int FashionRewardFieldNumber = 4;
     private static readonly pbc::MapField<int, bool>.Codec _map_fashionReward_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 34);
@@ -176,7 +192,7 @@ namespace Zproto {
       get { return fashionReward_; }
     }
 
-    /// <summary>Field number for the "all_fashion" field.</summary>
+    /// <summary>Field number for the "allFashion" field.</summary>
     public const int AllFashionFieldNumber = 5;
     private static readonly pbc::MapField<int, bool>.Codec _map_allFashion_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 42);
@@ -187,7 +203,7 @@ namespace Zproto {
       get { return allFashion_; }
     }
 
-    /// <summary>Field number for the "all_ride" field.</summary>
+    /// <summary>Field number for the "allRide" field.</summary>
     public const int AllRideFieldNumber = 6;
     private static readonly pbc::MapField<int, bool>.Codec _map_allRide_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 50);
@@ -198,7 +214,7 @@ namespace Zproto {
       get { return allRide_; }
     }
 
-    /// <summary>Field number for the "all_weapon_skin" field.</summary>
+    /// <summary>Field number for the "allWeaponSkin" field.</summary>
     public const int AllWeaponSkinFieldNumber = 7;
     private static readonly pbc::MapField<int, bool>.Codec _map_allWeaponSkin_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 58);
@@ -209,7 +225,7 @@ namespace Zproto {
       get { return allWeaponSkin_; }
     }
 
-    /// <summary>Field number for the "fashion_advance" field.</summary>
+    /// <summary>Field number for the "fashionAdvance" field.</summary>
     public const int FashionAdvanceFieldNumber = 8;
     private static readonly pbc::MapField<int, global::Zproto.FashionAdvanceInfo>.Codec _map_fashionAdvance_codec
         = new pbc::MapField<int, global::Zproto.FashionAdvanceInfo>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.FashionAdvanceInfo.Parser), 66);
@@ -220,7 +236,7 @@ namespace Zproto {
       get { return fashionAdvance_; }
     }
 
-    /// <summary>Field number for the "fashion_collect_point" field.</summary>
+    /// <summary>Field number for the "fashionCollectPoint" field.</summary>
     public const int FashionCollectPointFieldNumber = 9;
     private int fashionCollectPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -232,7 +248,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ride_collect_point" field.</summary>
+    /// <summary>Field number for the "rideCollectPoint" field.</summary>
     public const int RideCollectPointFieldNumber = 10;
     private int rideCollectPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -244,7 +260,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "weapon_skin_collect_point" field.</summary>
+    /// <summary>Field number for the "weaponSkinCollectPoint" field.</summary>
     public const int WeaponSkinCollectPointFieldNumber = 11;
     private int weaponSkinCollectPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -256,7 +272,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "all_fashion_num" field.</summary>
+    /// <summary>Field number for the "allFashionNum" field.</summary>
     public const int AllFashionNumFieldNumber = 12;
     private static readonly pbc::MapField<int, int>.Codec _map_allFashionNum_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 98);
@@ -267,7 +283,7 @@ namespace Zproto {
       get { return allFashionNum_; }
     }
 
-    /// <summary>Field number for the "all_ride_num" field.</summary>
+    /// <summary>Field number for the "allRideNum" field.</summary>
     public const int AllRideNumFieldNumber = 13;
     private static readonly pbc::MapField<int, int>.Codec _map_allRideNum_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 106);
@@ -278,7 +294,7 @@ namespace Zproto {
       get { return allRideNum_; }
     }
 
-    /// <summary>Field number for the "all_weapon_skin_num" field.</summary>
+    /// <summary>Field number for the "allWeaponSkinNum" field.</summary>
     public const int AllWeaponSkinNumFieldNumber = 14;
     private static readonly pbc::MapField<int, int>.Codec _map_allWeaponSkinNum_codec
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 114);
@@ -289,7 +305,7 @@ namespace Zproto {
       get { return allWeaponSkinNum_; }
     }
 
-    /// <summary>Field number for the "is_fashion_init" field.</summary>
+    /// <summary>Field number for the "isFashionInit" field.</summary>
     public const int IsFashionInitFieldNumber = 15;
     private bool isFashionInit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -301,7 +317,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_ride_init" field.</summary>
+    /// <summary>Field number for the "isRideInit" field.</summary>
     public const int IsRideInitFieldNumber = 16;
     private bool isRideInit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -313,7 +329,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_weapon_skin_init" field.</summary>
+    /// <summary>Field number for the "isWeaponSkinInit" field.</summary>
     public const int IsWeaponSkinInitFieldNumber = 17;
     private bool isWeaponSkinInit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -323,6 +339,40 @@ namespace Zproto {
       set {
         isWeaponSkinInit_ = value;
       }
+    }
+
+    /// <summary>Field number for the "fashionUnlockFixFlag" field.</summary>
+    public const int FashionUnlockFixFlagFieldNumber = 18;
+    private int fashionUnlockFixFlag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int FashionUnlockFixFlag {
+      get { return fashionUnlockFixFlag_; }
+      set {
+        fashionUnlockFixFlag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dyeingUnlocked" field.</summary>
+    public const int DyeingUnlockedFieldNumber = 19;
+    private static readonly pbc::MapField<int, bool>.Codec _map_dyeingUnlocked_codec
+        = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 154);
+    private readonly pbc::MapField<int, bool> dyeingUnlocked_ = new pbc::MapField<int, bool>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<int, bool> DyeingUnlocked {
+      get { return dyeingUnlocked_; }
+    }
+
+    /// <summary>Field number for the "dyeingUnlockScore" field.</summary>
+    public const int DyeingUnlockScoreFieldNumber = 20;
+    private static readonly pbc::MapField<int, int>.Codec _map_dyeingUnlockScore_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 162);
+    private readonly pbc::MapField<int, int> dyeingUnlockScore_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<int, int> DyeingUnlockScore {
+      get { return dyeingUnlockScore_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -357,6 +407,9 @@ namespace Zproto {
       if (IsFashionInit != other.IsFashionInit) return false;
       if (IsRideInit != other.IsRideInit) return false;
       if (IsWeaponSkinInit != other.IsWeaponSkinInit) return false;
+      if (FashionUnlockFixFlag != other.FashionUnlockFixFlag) return false;
+      if (!DyeingUnlocked.Equals(other.DyeingUnlocked)) return false;
+      if (!DyeingUnlockScore.Equals(other.DyeingUnlockScore)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -381,6 +434,9 @@ namespace Zproto {
       if (IsFashionInit != false) hash ^= IsFashionInit.GetHashCode();
       if (IsRideInit != false) hash ^= IsRideInit.GetHashCode();
       if (IsWeaponSkinInit != false) hash ^= IsWeaponSkinInit.GetHashCode();
+      if (FashionUnlockFixFlag != 0) hash ^= FashionUnlockFixFlag.GetHashCode();
+      hash ^= DyeingUnlocked.GetHashCode();
+      hash ^= DyeingUnlockScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -434,6 +490,12 @@ namespace Zproto {
         output.WriteRawTag(136, 1);
         output.WriteBool(IsWeaponSkinInit);
       }
+      if (FashionUnlockFixFlag != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(FashionUnlockFixFlag);
+      }
+      dyeingUnlocked_.WriteTo(output, _map_dyeingUnlocked_codec);
+      dyeingUnlockScore_.WriteTo(output, _map_dyeingUnlockScore_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -479,6 +541,12 @@ namespace Zproto {
         output.WriteRawTag(136, 1);
         output.WriteBool(IsWeaponSkinInit);
       }
+      if (FashionUnlockFixFlag != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteInt32(FashionUnlockFixFlag);
+      }
+      dyeingUnlocked_.WriteTo(ref output, _map_dyeingUnlocked_codec);
+      dyeingUnlockScore_.WriteTo(ref output, _map_dyeingUnlockScore_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -518,6 +586,11 @@ namespace Zproto {
       if (IsWeaponSkinInit != false) {
         size += 2 + 1;
       }
+      if (FashionUnlockFixFlag != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(FashionUnlockFixFlag);
+      }
+      size += dyeingUnlocked_.CalculateSize(_map_dyeingUnlocked_codec);
+      size += dyeingUnlockScore_.CalculateSize(_map_dyeingUnlockScore_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -559,6 +632,11 @@ namespace Zproto {
       if (other.IsWeaponSkinInit != false) {
         IsWeaponSkinInit = other.IsWeaponSkinInit;
       }
+      if (other.FashionUnlockFixFlag != 0) {
+        FashionUnlockFixFlag = other.FashionUnlockFixFlag;
+      }
+      dyeingUnlocked_.MergeFrom(other.dyeingUnlocked_);
+      dyeingUnlockScore_.MergeFrom(other.dyeingUnlockScore_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -646,6 +724,18 @@ namespace Zproto {
             IsWeaponSkinInit = input.ReadBool();
             break;
           }
+          case 144: {
+            FashionUnlockFixFlag = input.ReadInt32();
+            break;
+          }
+          case 154: {
+            dyeingUnlocked_.AddEntriesFrom(input, _map_dyeingUnlocked_codec);
+            break;
+          }
+          case 162: {
+            dyeingUnlockScore_.AddEntriesFrom(input, _map_dyeingUnlockScore_codec);
+            break;
+          }
         }
       }
     #endif
@@ -731,6 +821,18 @@ namespace Zproto {
           }
           case 136: {
             IsWeaponSkinInit = input.ReadBool();
+            break;
+          }
+          case 144: {
+            FashionUnlockFixFlag = input.ReadInt32();
+            break;
+          }
+          case 154: {
+            dyeingUnlocked_.AddEntriesFrom(ref input, _map_dyeingUnlocked_codec);
+            break;
+          }
+          case 162: {
+            dyeingUnlockScore_.AddEntriesFrom(ref input, _map_dyeingUnlockScore_codec);
             break;
           }
         }

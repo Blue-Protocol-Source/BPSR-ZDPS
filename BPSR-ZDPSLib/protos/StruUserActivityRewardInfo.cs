@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X3VzZXJfYWN0aXZpdHlfcmV3YXJkX2luZm8ucHJvdG8SBnpwcm90",
             "bxodc3RydV9nYW1lX2Z1bmN0aW9uX2RhdGEucHJvdG8aFXN0cnVfZGlydHlf",
-            "bWFzay5wcm90byLCAQoWVXNlckFjdGl2aXR5UmV3YXJkSW5mbxIKCgJpZBgB",
-            "IAEoDRIOCgZzdGF0dXMYAiABKA0SQAoJZnVuY3Rpb25zGAMgAygLMi0uenBy",
-            "b3RvLlVzZXJBY3Rpdml0eVJld2FyZEluZm8uRnVuY3Rpb25zRW50cnkaSgoO",
-            "RnVuY3Rpb25zRW50cnkSCwoDa2V5GAEgASgNEicKBXZhbHVlGAIgASgLMhgu",
-            "enByb3RvLkdhbWVGdW5jdGlvbkRhdGE6AjgBYgZwcm90bzM="));
+            "bWFzay5wcm90byLZAQoWVXNlckFjdGl2aXR5UmV3YXJkSW5mbxIOCgJJZBgB",
+            "IAEoDVICSWQSFgoGc3RhdHVzGAIgASgNUgZzdGF0dXMSSwoJZnVuY3Rpb25z",
+            "GAMgAygLMi0uenByb3RvLlVzZXJBY3Rpdml0eVJld2FyZEluZm8uRnVuY3Rp",
+            "b25zRW50cnlSCWZ1bmN0aW9ucxpKCg5GdW5jdGlvbnNFbnRyeRILCgNrZXkY",
+            "ASABKA0SJwoFdmFsdWUYAiABKAsyGC56cHJvdG8uR2FtZUZ1bmN0aW9uRGF0",
+            "YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruGameFunctionDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new UserActivityRewardInfo(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
+    /// <summary>Field number for the "Id" field.</summary>
     public const int IdFieldNumber = 1;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

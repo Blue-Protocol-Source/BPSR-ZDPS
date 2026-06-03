@@ -25,28 +25,30 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2hhbmRib29rX2RhdGEucHJvdG8SBnpwcm90bxobc3RydV9oYW5k",
-            "X2Jvb2tfc3RydWN0LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8igAcK",
-            "DEhhbmRib29rRGF0YRJcCh51bmxvY2tfbm90ZV9pbXBvcnRhbnRfcm9sZV9t",
-            "YXAYASADKAsyNC56cHJvdG8uSGFuZGJvb2tEYXRhLlVubG9ja05vdGVJbXBv",
-            "cnRhbnRSb2xlTWFwRW50cnkSWAocdW5sb2NrX25vdGVfcmVhZGluZ19ib29r",
-            "X21hcBgCIAMoCzIyLnpwcm90by5IYW5kYm9va0RhdGEuVW5sb2NrTm90ZVJl",
-            "YWRpbmdCb29rTWFwRW50cnkSVQoadW5sb2NrX25vdGVfZGljdGlvbmFyeV9t",
-            "YXAYAyADKAsyMS56cHJvdG8uSGFuZGJvb2tEYXRhLlVubG9ja05vdGVEaWN0",
-            "aW9uYXJ5TWFwRW50cnkSUgoZdW5sb2NrX25vdGVfcG9zdF9jYXJkX21hcBgE",
-            "IAMoCzIvLnpwcm90by5IYW5kYm9va0RhdGEuVW5sb2NrTm90ZVBvc3RDYXJk",
-            "TWFwRW50cnkSVAoadW5sb2NrX25vdGVfbW9udGhfY2FyZF9tYXAYBSADKAsy",
-            "MC56cHJvdG8uSGFuZGJvb2tEYXRhLlVubG9ja05vdGVNb250aENhcmRNYXBF",
-            "bnRyeRpZCh9VbmxvY2tOb3RlSW1wb3J0YW50Um9sZU1hcEVudHJ5EgsKA2tl",
-            "eRgBIAEoBRIlCgV2YWx1ZRgCIAEoCzIWLnpwcm90by5IYW5kQm9va1N0cnVj",
-            "dDoCOAEaVwodVW5sb2NrTm90ZVJlYWRpbmdCb29rTWFwRW50cnkSCwoDa2V5",
-            "GAEgASgFEiUKBXZhbHVlGAIgASgLMhYuenByb3RvLkhhbmRCb29rU3RydWN0",
-            "OgI4ARpWChxVbmxvY2tOb3RlRGljdGlvbmFyeU1hcEVudHJ5EgsKA2tleRgB",
-            "IAEoBRIlCgV2YWx1ZRgCIAEoCzIWLnpwcm90by5IYW5kQm9va1N0cnVjdDoC",
-            "OAEaVAoaVW5sb2NrTm90ZVBvc3RDYXJkTWFwRW50cnkSCwoDa2V5GAEgASgF",
-            "EiUKBXZhbHVlGAIgASgLMhYuenByb3RvLkhhbmRCb29rU3RydWN0OgI4ARpV",
-            "ChtVbmxvY2tOb3RlTW9udGhDYXJkTWFwRW50cnkSCwoDa2V5GAEgASgFEiUK",
-            "BXZhbHVlGAIgASgLMhYuenByb3RvLkhhbmRCb29rU3RydWN0OgI4AWIGcHJv",
-            "dG8z"));
+            "X2Jvb2tfc3RydWN0LnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i6wcK",
+            "DEhhbmRib29rRGF0YRJ0Chp1bmxvY2tOb3RlSW1wb3J0YW50Um9sZU1hcBgB",
+            "IAMoCzI0Lnpwcm90by5IYW5kYm9va0RhdGEuVW5sb2NrTm90ZUltcG9ydGFu",
+            "dFJvbGVNYXBFbnRyeVIadW5sb2NrTm90ZUltcG9ydGFudFJvbGVNYXASbgoY",
+            "dW5sb2NrTm90ZVJlYWRpbmdCb29rTWFwGAIgAygLMjIuenByb3RvLkhhbmRi",
+            "b29rRGF0YS5VbmxvY2tOb3RlUmVhZGluZ0Jvb2tNYXBFbnRyeVIYdW5sb2Nr",
+            "Tm90ZVJlYWRpbmdCb29rTWFwEmsKF3VubG9ja05vdGVEaWN0aW9uYXJ5TWFw",
+            "GAMgAygLMjEuenByb3RvLkhhbmRib29rRGF0YS5VbmxvY2tOb3RlRGljdGlv",
+            "bmFyeU1hcEVudHJ5Uhd1bmxvY2tOb3RlRGljdGlvbmFyeU1hcBJlChV1bmxv",
+            "Y2tOb3RlUG9zdENhcmRNYXAYBCADKAsyLy56cHJvdG8uSGFuZGJvb2tEYXRh",
+            "LlVubG9ja05vdGVQb3N0Q2FyZE1hcEVudHJ5UhV1bmxvY2tOb3RlUG9zdENh",
+            "cmRNYXASaAoWdW5sb2NrTm90ZU1vbnRoQ2FyZE1hcBgFIAMoCzIwLnpwcm90",
+            "by5IYW5kYm9va0RhdGEuVW5sb2NrTm90ZU1vbnRoQ2FyZE1hcEVudHJ5UhZ1",
+            "bmxvY2tOb3RlTW9udGhDYXJkTWFwGlkKH1VubG9ja05vdGVJbXBvcnRhbnRS",
+            "b2xlTWFwRW50cnkSCwoDa2V5GAEgASgFEiUKBXZhbHVlGAIgASgLMhYuenBy",
+            "b3RvLkhhbmRCb29rU3RydWN0OgI4ARpXCh1VbmxvY2tOb3RlUmVhZGluZ0Jv",
+            "b2tNYXBFbnRyeRILCgNrZXkYASABKAUSJQoFdmFsdWUYAiABKAsyFi56cHJv",
+            "dG8uSGFuZEJvb2tTdHJ1Y3Q6AjgBGlYKHFVubG9ja05vdGVEaWN0aW9uYXJ5",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgFEiUKBXZhbHVlGAIgASgLMhYuenByb3Rv",
+            "LkhhbmRCb29rU3RydWN0OgI4ARpUChpVbmxvY2tOb3RlUG9zdENhcmRNYXBF",
+            "bnRyeRILCgNrZXkYASABKAUSJQoFdmFsdWUYAiABKAsyFi56cHJvdG8uSGFu",
+            "ZEJvb2tTdHJ1Y3Q6AjgBGlUKG1VubG9ja05vdGVNb250aENhcmRNYXBFbnRy",
+            "eRILCgNrZXkYASABKAUSJQoFdmFsdWUYAiABKAsyFi56cHJvdG8uSGFuZEJv",
+            "b2tTdHJ1Y3Q6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHandBookStructReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -106,7 +108,7 @@ namespace Zproto {
       return new HandbookData(this);
     }
 
-    /// <summary>Field number for the "unlock_note_important_role_map" field.</summary>
+    /// <summary>Field number for the "unlockNoteImportantRoleMap" field.</summary>
     public const int UnlockNoteImportantRoleMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.HandBookStruct>.Codec _map_unlockNoteImportantRoleMap_codec
         = new pbc::MapField<int, global::Zproto.HandBookStruct>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HandBookStruct.Parser), 10);
@@ -117,7 +119,7 @@ namespace Zproto {
       get { return unlockNoteImportantRoleMap_; }
     }
 
-    /// <summary>Field number for the "unlock_note_reading_book_map" field.</summary>
+    /// <summary>Field number for the "unlockNoteReadingBookMap" field.</summary>
     public const int UnlockNoteReadingBookMapFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.HandBookStruct>.Codec _map_unlockNoteReadingBookMap_codec
         = new pbc::MapField<int, global::Zproto.HandBookStruct>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HandBookStruct.Parser), 18);
@@ -128,7 +130,7 @@ namespace Zproto {
       get { return unlockNoteReadingBookMap_; }
     }
 
-    /// <summary>Field number for the "unlock_note_dictionary_map" field.</summary>
+    /// <summary>Field number for the "unlockNoteDictionaryMap" field.</summary>
     public const int UnlockNoteDictionaryMapFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.HandBookStruct>.Codec _map_unlockNoteDictionaryMap_codec
         = new pbc::MapField<int, global::Zproto.HandBookStruct>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HandBookStruct.Parser), 26);
@@ -139,7 +141,7 @@ namespace Zproto {
       get { return unlockNoteDictionaryMap_; }
     }
 
-    /// <summary>Field number for the "unlock_note_post_card_map" field.</summary>
+    /// <summary>Field number for the "unlockNotePostCardMap" field.</summary>
     public const int UnlockNotePostCardMapFieldNumber = 4;
     private static readonly pbc::MapField<int, global::Zproto.HandBookStruct>.Codec _map_unlockNotePostCardMap_codec
         = new pbc::MapField<int, global::Zproto.HandBookStruct>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HandBookStruct.Parser), 34);
@@ -150,7 +152,7 @@ namespace Zproto {
       get { return unlockNotePostCardMap_; }
     }
 
-    /// <summary>Field number for the "unlock_note_month_card_map" field.</summary>
+    /// <summary>Field number for the "unlockNoteMonthCardMap" field.</summary>
     public const int UnlockNoteMonthCardMapFieldNumber = 5;
     private static readonly pbc::MapField<int, global::Zproto.HandBookStruct>.Codec _map_unlockNoteMonthCardMap_codec
         = new pbc::MapField<int, global::Zproto.HandBookStruct>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.HandBookStruct.Parser), 42);

@@ -26,12 +26,13 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2luaXRfaG9tZV9sYW5kX2luZm8ucHJvdG8SBnpwcm90bxojc3Ry",
             "dV9ob21lbGFuZF9kZWNvcmF0aW9uX2luZm8ucHJvdG8aFHN0cnVfc3RydWN0",
-            "dXJlLnByb3RvIuEBChBJbml0SG9tZUxhbmRJbmZvEhAKCGlzX291dGVyGAEg",
-            "ASgIEjwKCnN0cnVjdHVyZXMYAiADKAsyKC56cHJvdG8uSW5pdEhvbWVMYW5k",
-            "SW5mby5TdHJ1Y3R1cmVzRW50cnkSNwoPZGVjb3JhdGlvbl9pbmZvGAMgASgL",
-            "Mh4uenByb3RvLkhvbWVsYW5kRGVjb3JhdGlvbkluZm8aRAoPU3RydWN0dXJl",
-            "c0VudHJ5EgsKA2tleRgBIAEoAxIgCgV2YWx1ZRgCIAEoCzIRLnpwcm90by5T",
-            "dHJ1Y3R1cmU6AjgBYgZwcm90bzM="));
+            "dXJlLnByb3RvIoQCChBJbml0SG9tZUxhbmRJbmZvEhgKB2lzT3V0ZXIYASAB",
+            "KAhSB2lzT3V0ZXISSAoKc3RydWN0dXJlcxgCIAMoCzIoLnpwcm90by5Jbml0",
+            "SG9tZUxhbmRJbmZvLlN0cnVjdHVyZXNFbnRyeVIKc3RydWN0dXJlcxJGCg5k",
+            "ZWNvcmF0aW9uSW5mbxgDIAEoCzIeLnpwcm90by5Ib21lbGFuZERlY29yYXRp",
+            "b25JbmZvUg5kZWNvcmF0aW9uSW5mbxpECg9TdHJ1Y3R1cmVzRW50cnkSCwoD",
+            "a2V5GAEgASgDEiAKBXZhbHVlGAIgASgLMhEuenByb3RvLlN0cnVjdHVyZToC",
+            "OAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruHomelandDecorationInfoReflection.Descriptor, global::Zproto.StruStructureReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new InitHomeLandInfo(this);
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 1;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       get { return structures_; }
     }
 
-    /// <summary>Field number for the "decoration_info" field.</summary>
+    /// <summary>Field number for the "decorationInfo" field.</summary>
     public const int DecorationInfoFieldNumber = 3;
     private global::Zproto.HomelandDecorationInfo decorationInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

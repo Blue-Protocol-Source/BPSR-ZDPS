@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X25vdGlmeV9xdWVzdGlvbm5haXJlX2ZpbmlzaF9yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8iPAogTm90aWZ5UXVlc3Rpb25uYWlyZUZpbmlzaFJlcXVl",
-            "c3QSGAoQcXVlc3Rpb25uYWlyZV9pZBgCIAEoBWIGcHJvdG8z"));
+            "b3RvEgZ6cHJvdG8iTAogTm90aWZ5UXVlc3Rpb25uYWlyZUZpbmlzaFJlcXVl",
+            "c3QSKAoPcXVlc3Rpb25uYWlyZUlkGAIgASgFUg9xdWVzdGlvbm5haXJlSWRi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +83,7 @@ namespace Zproto {
       return new NotifyQuestionnaireFinishRequest(this);
     }
 
-    /// <summary>Field number for the "questionnaire_id" field.</summary>
+    /// <summary>Field number for the "questionnaireId" field.</summary>
     public const int QuestionnaireIdFieldNumber = 2;
     private int questionnaireId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

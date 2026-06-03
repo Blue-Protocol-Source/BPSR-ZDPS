@@ -24,15 +24,15 @@ namespace Zproto {
     static EnumEEntityTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhlbnVtX2VfZW50aXR5X3R5cGUucHJvdG8SBnpwcm90byrIAgoLRUVudGl0",
+            "ChhlbnVtX2VfZW50aXR5X3R5cGUucHJvdG8SBnpwcm90byraAgoLRUVudGl0",
             "eVR5cGUSDgoKRW50RXJyVHlwZRAAEg4KCkVudE1vbnN0ZXIQARIKCgZFbnRO",
             "cGMQAhISCg5FbnRTY2VuZU9iamVjdBADEgsKB0VudFpvbmUQBRINCglFbnRC",
             "dWxsZXQQBhITCg9FbnRDbGllbnRCdWxsZXQQBxIKCgZFbnRQZXQQCBILCgdF",
             "bnRDaGFyEAoSDAoIRW50RHVtbXkQCxILCgdFbnREcm9wEAwSDAoIRW50Rmll",
             "bGQQDhILCgdFbnRUcmFwEA8SEQoNRW50Q29sbGVjdGlvbhAQEhMKD0VudFN0",
             "YXRpY09iamVjdBASEg4KCkVudFZlaGljbGUQExIKCgZFbnRUb3kQFBIVChFF",
-            "bnRDb21tdW5pdHlIb3VzZRAVEhAKDEVudEhvdXNlSXRlbRAWEgwKCEVudENv",
-            "dW50EBdiBnByb3RvMw=="));
+            "bnRDb21tdW5pdHlIb3VzZRAVEhAKDEVudEhvdXNlSXRlbRAWEhAKDEVudFZh",
+            "bml0eVBldBAXEgwKCEVudENvdW50EBhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EEntityType), }, null, null));
@@ -61,7 +61,8 @@ namespace Zproto {
     [pbr::OriginalName("EntToy")] EntToy = 20,
     [pbr::OriginalName("EntCommunityHouse")] EntCommunityHouse = 21,
     [pbr::OriginalName("EntHouseItem")] EntHouseItem = 22,
-    [pbr::OriginalName("EntCount")] EntCount = 23,
+    [pbr::OriginalName("EntVanityPet")] EntVanityPet = 23,
+    [pbr::OriginalName("EntCount")] EntCount = 24,
   }
 
   #endregion

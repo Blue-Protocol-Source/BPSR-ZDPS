@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CillbnVtX2VfcHJpdmlsZWdlX2VmZmVjdF9zb3VyY2VfdHlwZS5wcm90bxIG",
-            "enByb3RvKpkBChpFUHJpdmlsZWdlRWZmZWN0U291cmNlVHlwZRIiCh5FUHJp",
+            "enByb3RvKscBChpFUHJpdmlsZWdlRWZmZWN0U291cmNlVHlwZRIiCh5FUHJp",
             "dmlsZWdlRWZmZWN0U291cmNlVHlwZU5vbmUQABIoCiRFUHJpdmlsZWdlRWZm",
             "ZWN0U291cmNlVHlwZUJhdHRsZVBhc3MQARItCilFUHJpdmlsZWdlRWZmZWN0",
-            "U291cmNlVHlwZUxhdW5jaFByaXZpbGVnZRACYgZwcm90bzM="));
+            "U291cmNlVHlwZUxhdW5jaFByaXZpbGVnZRACEiwKKEVQcml2aWxlZ2VFZmZl",
+            "Y3RTb3VyY2VUeXBlTmV3YmllQmFja2Zsb3cQA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EPrivilegeEffectSourceType), }, null, null));
@@ -41,6 +42,7 @@ namespace Zproto {
     [pbr::OriginalName("EPrivilegeEffectSourceTypeNone")] None = 0,
     [pbr::OriginalName("EPrivilegeEffectSourceTypeBattlePass")] BattlePass = 1,
     [pbr::OriginalName("EPrivilegeEffectSourceTypeLaunchPrivilege")] LaunchPrivilege = 2,
+    [pbr::OriginalName("EPrivilegeEffectSourceTypeNewbieBackflow")] NewbieBackflow = 3,
   }
 
   #endregion

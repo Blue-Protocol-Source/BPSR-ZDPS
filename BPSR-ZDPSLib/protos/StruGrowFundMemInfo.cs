@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X2dyb3dfZnVuZF9tZW1faW5mby5wcm90bxIGenByb3RvGhxzdHJ1",
-            "X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIlcKD0dyb3dGdW5kTWVtSW5mbxIQ",
-            "CghmdW5kX3BvcxgBIAEoBRIyChFiYXNpY19hdmF0YXJfZGF0YRgCIAEoCzIX",
-            "Lnpwcm90by5Vc2VyU3VtbWFyeURhdGFiBnByb3RvMw=="));
+            "X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIm4KD0dyb3dGdW5kTWVtSW5mbxIY",
+            "CgdmdW5kUG9zGAEgASgFUgdmdW5kUG9zEkEKD2Jhc2ljQXZhdGFyRGF0YRgC",
+            "IAEoCzIXLnpwcm90by5Vc2VyU3VtbWFyeURhdGFSD2Jhc2ljQXZhdGFyRGF0",
+            "YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Zproto {
       return new GrowFundMemInfo(this);
     }
 
-    /// <summary>Field number for the "fund_pos" field.</summary>
+    /// <summary>Field number for the "fundPos" field.</summary>
     public const int FundPosFieldNumber = 1;
     private int fundPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "basic_avatar_data" field.</summary>
+    /// <summary>Field number for the "basicAvatarData" field.</summary>
     public const int BasicAvatarDataFieldNumber = 2;
     private global::Zproto.UserSummaryData basicAvatarData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

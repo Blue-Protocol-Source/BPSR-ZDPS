@@ -12,6 +12,7 @@ public class Settings
     private static string SETTINGS_FILE_NAME = "Settings.json";
 
     public int Version { get; set; } = 0;
+    public string Language { get; set; } = "en";
     public string NetCaptureDeviceName { get; set; } = "";
     public bool NormalizeMeterContributions { get; set; } = true;
     public bool UseShortWidthNumberFormatting { get; set; } = true;
@@ -19,18 +20,37 @@ public class Settings
     public bool ColorClassIconsByRole { get; set; } = true;
     public bool ShowSkillIconsInDetails { get; set; } = true;
     public bool OnlyShowDamageContributorsInMeters { get; set; } = false;
+    public bool OnlyShowPartyMembersInMeters { get; set; } = false;
     public bool ShowAbilityScoreInMeters { get; set; } = true;
+    public bool ShowSeasonStrengthInMeters { get; set; } = false;
     public bool ShowSubProfessionNameInMeters { get; set; } = true;
+    public bool ShowPlayerSummonsInMeters { get; set; } = false;
+    public bool ShowPlayerImaginesInMeters { get; set; } = false;
     public bool UseAutomaticWipeDetection { get; set; } = true;
     public bool SkipTeleportStateCheckInAutomaticWipeDetection { get; set; } = false;
-    public bool AllowWipeRecalculationOverwriting { get; set; } = false;
+    public bool DisableWipeRecalculationOverwriting { get; set; } = false;
+    public bool UseLegacyWipeDetection { get; set; } = false;
     public bool SplitEncountersOnNewPhases { get; set; } = true;
+    public bool SkipSkillSnapshotSavingInOpenWorld { get; set; } = false;
     public bool DisplayTruePerSecondValuesInMeters { get; set; } = false;
     public bool AllowGamepadNavigationInputInZDPS { get; set; } = false;
     public bool KeepPastEncounterInMeterUntilNextDamage { get; set; } = false;
+    public bool ShowChannelLineNumberInStatus { get; set; } = false;
+    public bool ShowCallWipeForEncounterOnMainWindow { get; set; } = false;
     public bool UseDatabaseForEncounterHistory { get; set; } = true;
     public int DatabaseRetentionPolicyDays { get; set; } = 0;
-    public bool LimitEncounterBuffTrackingWithoutDatabase { get; set; } = false;
+    public bool SkipSavingEncountersWithNoCombatData { get; set; } = false;
+    public bool LimitEncounterBuffTrackingInOpenWorld { get; set; } = false;
+    public bool AllowEncounterSavingPausingInOpenWorld { get; set; } = false;
+    public bool PersistEncounterSavingPauseStateBetweenMaps { get; set; } = false;
+    public bool MinimalProcessingWhileEncounterSavingPaused { get; set; } = false;
+    public bool IncludeHealEventsOutsideOfCombat { get; set; } = false;
+
+    public bool MeterSettingsTankingShowDeaths { get; set; } = false;
+    public bool MeterSettingsNpcTakenShowHpData { get; set; } = false;
+    public bool MeterSettingsNpcTakenHideMaxHp { get; set; } = false;
+    public bool MeterSettingsNpcTakenUseHpMeter { get; set; } = false;
+
     public bool LogToFile { get; set; } = true;
     public EGameCapturePreference GameCapturePreference { get; set; } = EGameCapturePreference.Auto;
     public string GameCaptureCustomExeName { get; set; } = "";
@@ -69,6 +89,13 @@ public class Settings
 
     public uint HotkeysEncounterReset { get; set; }
     public uint HotkeysPinnedWindowClickthrough { get; set; }
+    public uint HotkeysToggleWindowMinimize { get; set; }
+
+    public uint FixedFramerateScale { get; set; } = 1;
+
+    public bool EnableGDIBackBufferCopyCompatibility { get; set; } = false;
+
+    public bool AggressiveExceptionDebugLogging = false;
 
     public ChatSettings Chat { get; set; } = new();
 
@@ -89,6 +116,11 @@ public class Settings
         if (HotkeysPinnedWindowClickthrough > 0)
         {
             HotKeyManager.RegisterKey("PinnedWindowClickthrough", mainWindow.ToggleMouseClickthrough, HotkeysPinnedWindowClickthrough);
+        }
+
+        if (HotkeysToggleWindowMinimize > 0)
+        {
+            HotKeyManager.RegisterKey("ToggleWindowMinimize", mainWindow.ToggleWindowMinimize, HotkeysToggleWindowMinimize);
         }
     }
 
@@ -121,6 +153,9 @@ public enum EGameCapturePreference
     Epic,
     HaoPlaySea,
     XDG,
+    HaoPlaySeaSteam,
+    XDGSteam,
+    WeGame,
     Custom = 200
 }
 
@@ -153,22 +188,29 @@ public class WindowSettingsBase : ICloneable
 public class WindowSettings : ICloneable
 {
     public MainWindowWindowSettings MainWindow { get; set; } = new();
+    public EntityInspectorWindowSettings EntityInspector { get; set; } = new();
     public RaidManagerCooldownsWindowSettings RaidManagerCooldowns { get; set; } = new();
     public EntityCacheViewerWindowSettings EntityCacheViewer { get; set; } = new();
     public SpawnTrackerWindowSettings SpawnTracker { get; set; } = new();
     public ModuleWindowSettings ModuleWindow { get; set; } = new();
     public RaidManagerRaidWarningWindowSettings RaidManagerRaidWarning { get; set; } = new();
     public RaidManagerCountdownWindowSettings RaidManagerCountdown { get; set; } = new();
+    public RaidManagerThreatWindowSettings RaidManagerThreat { get; set; } = new();
     public ChatWindowSettings ChatWindow { get; set; } = new();
+    public EventTrackerWindowSettings EventTracker { get; set; } = new();
+    public SkillCastTimelineWindowSettings SkillCastTimeline { get; set; } = new();
 
     public object Clone()
     {
         var cloned = (WindowSettings)this.MemberwiseClone();
         cloned.MainWindow = (MainWindowWindowSettings)this.MainWindow.Clone();
+        cloned.EntityInspector = (EntityInspectorWindowSettings)this.EntityInspector.Clone();
         cloned.RaidManagerCooldowns = (RaidManagerCooldownsWindowSettings)this.RaidManagerCooldowns.Clone();
         cloned.EntityCacheViewer = (EntityCacheViewerWindowSettings)this.EntityCacheViewer.Clone();
         cloned.SpawnTracker = (SpawnTrackerWindowSettings)this.SpawnTracker.Clone();
         cloned.ChatWindow = (ChatWindowSettings)this.ChatWindow.Clone();
+        cloned.EventTracker = (EventTrackerWindowSettings)this.EventTracker.Clone();
+        cloned.SkillCastTimeline = (SkillCastTimelineWindowSettings)this.SkillCastTimeline.Clone();
         return cloned;
     }
 }

@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "CiRzdHJ1X3JlcV91bmlvbl9tZW1zX2xpc3RfcmVwbHkucHJvdG8SBnpwcm90",
             "bxoXZW51bV9lX2Vycm9yX2NvZGUucHJvdG8aF3N0cnVfdW5pb25fbWVtYmVy",
-            "LnByb3RvGhxzdHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIpYBChVSZXFV",
-            "bmlvbk1lbXNMaXN0UmVwbHkSJQoIbWVtX2xpc3QYASADKAsyEy56cHJvdG8u",
-            "VW5pb25NZW1iZXISMAoPbWVtX3NvY2lhbF9saXN0GAIgAygLMhcuenByb3Rv",
-            "LlVzZXJTdW1tYXJ5RGF0YRIkCghlcnJfY29kZRgDIAEoDjISLnpwcm90by5F",
-            "RXJyb3JDb2RlYgZwcm90bzM="));
+            "LnByb3RvGhxzdHJ1X3VzZXJfc3VtbWFyeV9kYXRhLnByb3RvIrMBChVSZXFV",
+            "bmlvbk1lbXNMaXN0UmVwbHkSLQoHbWVtTGlzdBgBIAMoCzITLnpwcm90by5V",
+            "bmlvbk1lbWJlclIHbWVtTGlzdBI9Cg1tZW1Tb2NpYWxMaXN0GAIgAygLMhcu",
+            "enByb3RvLlVzZXJTdW1tYXJ5RGF0YVINbWVtU29jaWFsTGlzdBIsCgdlcnJD",
+            "b2RlGAMgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionMemberReflection.Descriptor, global::Zproto.StruUserSummaryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new ReqUnionMemsListReply(this);
     }
 
-    /// <summary>Field number for the "mem_list" field.</summary>
+    /// <summary>Field number for the "memList" field.</summary>
     public const int MemListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.UnionMember> _repeated_memList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.UnionMember.Parser);
@@ -99,7 +100,7 @@ namespace Zproto {
       get { return memList_; }
     }
 
-    /// <summary>Field number for the "mem_social_list" field.</summary>
+    /// <summary>Field number for the "memSocialList" field.</summary>
     public const int MemSocialListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.UserSummaryData> _repeated_memSocialList_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.UserSummaryData.Parser);
@@ -110,7 +111,7 @@ namespace Zproto {
       get { return memSocialList_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

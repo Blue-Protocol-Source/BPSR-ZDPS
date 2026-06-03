@@ -24,9 +24,10 @@ namespace Zproto {
     static StruBuffEffectZoomScaleReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2J1ZmZfZWZmZWN0X3pvb21fc2NhbGUucHJvdG8SBnpwcm90byJF",
-            "ChNCdWZmRWZmZWN0Wm9vbVNjYWxlEhYKDnpvb21fcmF0aW9fYWRkGAEgASgC",
-            "EhYKDnpvb21fcmF0aW9fbWF4GAIgASgCYgZwcm90bzM="));
+            "CiFzdHJ1X2J1ZmZfZWZmZWN0X3pvb21fc2NhbGUucHJvdG8SBnpwcm90byJd",
+            "ChNCdWZmRWZmZWN0Wm9vbVNjYWxlEiIKDHpvb21SYXRpb0FkZBgBIAEoAlIM",
+            "em9vbVJhdGlvQWRkEiIKDHpvb21SYXRpb01heBgCIAEoAlIMem9vbVJhdGlv",
+            "TWF4YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Zproto {
       return new BuffEffectZoomScale(this);
     }
 
-    /// <summary>Field number for the "zoom_ratio_add" field.</summary>
+    /// <summary>Field number for the "zoomRatioAdd" field.</summary>
     public const int ZoomRatioAddFieldNumber = 1;
     private float zoomRatioAdd_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "zoom_ratio_max" field.</summary>
+    /// <summary>Field number for the "zoomRatioMax" field.</summary>
     public const int ZoomRatioMaxFieldNumber = 2;
     private float zoomRatioMax_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

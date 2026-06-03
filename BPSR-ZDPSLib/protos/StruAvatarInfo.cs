@@ -25,11 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZzdHJ1X2F2YXRhcl9pbmZvLnByb3RvEgZ6cHJvdG8aF3N0cnVfcGljdHVy",
-            "ZV9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ipgEKCkF2YXRh",
-            "ckluZm8SEQoJYXZhdGFyX2lkGAEgASgFEiQKB3Byb2ZpbGUYAiABKAsyEy56",
-            "cHJvdG8uUGljdHVyZUluZm8SJgoJaGFsZl9ib2R5GAMgASgLMhMuenByb3Rv",
-            "LlBpY3R1cmVJbmZvEh4KFmJ1c2luZXNzX2NhcmRfc3R5bGVfaWQYBCABKAUS",
-            "FwoPYXZhdGFyX2ZyYW1lX2lkGAUgASgFYgZwcm90bzM="));
+            "ZV9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i4AEKCkF2YXRh",
+            "ckluZm8SGgoIYXZhdGFySWQYASABKAVSCGF2YXRhcklkEi0KB3Byb2ZpbGUY",
+            "AiABKAsyEy56cHJvdG8uUGljdHVyZUluZm9SB3Byb2ZpbGUSLwoIaGFsZkJv",
+            "ZHkYAyABKAsyEy56cHJvdG8uUGljdHVyZUluZm9SCGhhbGZCb2R5EjAKE2J1",
+            "c2luZXNzQ2FyZFN0eWxlSWQYBCABKAVSE2J1c2luZXNzQ2FyZFN0eWxlSWQS",
+            "JAoNYXZhdGFyRnJhbWVJZBgFIAEoBVINYXZhdGFyRnJhbWVJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPictureInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace Zproto {
       return new AvatarInfo(this);
     }
 
-    /// <summary>Field number for the "avatar_id" field.</summary>
+    /// <summary>Field number for the "avatarId" field.</summary>
     public const int AvatarIdFieldNumber = 1;
     private int avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -113,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "half_body" field.</summary>
+    /// <summary>Field number for the "halfBody" field.</summary>
     public const int HalfBodyFieldNumber = 3;
     private global::Zproto.PictureInfo halfBody_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "business_card_style_id" field.</summary>
+    /// <summary>Field number for the "businessCardStyleId" field.</summary>
     public const int BusinessCardStyleIdFieldNumber = 4;
     private int businessCardStyleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +138,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "avatar_frame_id" field.</summary>
+    /// <summary>Field number for the "avatarFrameId" field.</summary>
     public const int AvatarFrameIdFieldNumber = 5;
     private int avatarFrameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

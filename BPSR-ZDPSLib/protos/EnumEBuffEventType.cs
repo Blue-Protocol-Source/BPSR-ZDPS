@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEBuffEventTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxlbnVtX2VfYnVmZl9ldmVudF90eXBlLnByb3RvEgZ6cHJvdG8qshQKDkVC",
+            "ChxlbnVtX2VfYnVmZl9ldmVudF90eXBlLnByb3RvEgZ6cHJvdG8q1BUKDkVC",
             "dWZmRXZlbnRUeXBlEhQKEEJ1ZmZFdmVudFVua25vd24QABISCg5CdWZmRXZl",
             "bnRBZGRUbxABEhMKD0J1ZmZFdmVudFJlbW92ZRACEhQKEEJ1ZmZFdmVudFJl",
             "cGxhY2UQAxISCg5CdWZmRXZlbnRUaW1lchAEEhcKE0J1ZmZFdmVudFN0YWNr",
@@ -79,11 +79,14 @@ namespace Zproto {
             "cmFjdHVyZVN0YXRlEFgSFwoTQnVmZkV2ZW50VGFrZU9uUmlkZRBZEhgKFEJ1",
             "ZmZFdmVudFRha2VPZmZSaWRlEFoSFgoSQnVmZkV2ZW50U3RhcnRKdW1wEFsS",
             "FwoTQnVmZkV2ZW50UGxheUFjdGlvbhBcEhYKEkJ1ZmZFdmVudFBsYXlFbW90",
-            "ZRBdEhMKDkJ1ZmZFdmVudENoZWNrEOkHEhcKEkJ1ZmZFdmVudEN1c3RvbWl6",
-            "ZRDqBxIgChtCdWZmRXZlbnRTaGFwZXNoaWZ0RW5kRXZlbnQQ6wcSGQoUQnVm",
-            "ZkV2ZW50QXR0clJlZnJlc2gQ7AcSIgodQnVmZkV2ZW50TW9uaXRvclRlYW1L",
-            "aWxsQWN0b3IQ7QcSHAoXQnVmZkV2ZW50U3BlY2lhbEVmZmVjdHMQkU5iBnBy",
-            "b3RvMw=="));
+            "ZRBdEiEKHUJ1ZmZFdmVudFplcm9IcFN0b3BTaGFwZXNoaWZ0EF4SGwoXQnVm",
+            "ZkV2ZW50UG9zaXRpb25DaGFuZ2UQXxIdChlCdWZmRXZlbnRSb2d1ZVJhbmRv",
+            "bUVudHJ5EGASHgoaQnVmZkV2ZW50UGFyYWRlSW5kZXhDaGFuZ2UQYRIhCh1C",
+            "dWZmRXZlbnRWYW5pdHlQZXRTdGF0ZUNoYW5nZRBiEhMKDkJ1ZmZFdmVudENo",
+            "ZWNrEOkHEhcKEkJ1ZmZFdmVudEN1c3RvbWl6ZRDqBxIgChtCdWZmRXZlbnRT",
+            "aGFwZXNoaWZ0RW5kRXZlbnQQ6wcSGQoUQnVmZkV2ZW50QXR0clJlZnJlc2gQ",
+            "7AcSIgodQnVmZkV2ZW50TW9uaXRvclRlYW1LaWxsQWN0b3IQ7QcSHAoXQnVm",
+            "ZkV2ZW50U3BlY2lhbEVmZmVjdHMQkU5iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EBuffEventType), }, null, null));
@@ -178,6 +181,11 @@ namespace Zproto {
     [pbr::OriginalName("BuffEventStartJump")] BuffEventStartJump = 91,
     [pbr::OriginalName("BuffEventPlayAction")] BuffEventPlayAction = 92,
     [pbr::OriginalName("BuffEventPlayEmote")] BuffEventPlayEmote = 93,
+    [pbr::OriginalName("BuffEventZeroHpStopShapeshift")] BuffEventZeroHpStopShapeshift = 94,
+    [pbr::OriginalName("BuffEventPositionChange")] BuffEventPositionChange = 95,
+    [pbr::OriginalName("BuffEventRogueRandomEntry")] BuffEventRogueRandomEntry = 96,
+    [pbr::OriginalName("BuffEventParadeIndexChange")] BuffEventParadeIndexChange = 97,
+    [pbr::OriginalName("BuffEventVanityPetStateChange")] BuffEventVanityPetStateChange = 98,
     [pbr::OriginalName("BuffEventCheck")] BuffEventCheck = 1001,
     [pbr::OriginalName("BuffEventCustomize")] BuffEventCustomize = 1002,
     [pbr::OriginalName("BuffEventShapeshiftEndEvent")] BuffEventShapeshiftEndEvent = 1003,

@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "CixzdHJ1X3VwbG9hZF9waWN0dXJlX3Jlc3VsdF9udGZfcmVxdWVzdC5wcm90",
             "bxIGenByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxoZZW51bV9lX3Bp",
-            "Y3R1cmVfdHlwZS5wcm90bxoXc3RydV9waWN0dXJlX2luZm8ucHJvdG8inAEK",
-            "HVVwbG9hZFBpY3R1cmVSZXN1bHROdGZSZXF1ZXN0EiQKCGVycl9jb2RlGAIg",
-            "ASgOMhIuenByb3RvLkVFcnJvckNvZGUSKgoMcGljdHVyZV90eXBlGAMgASgO",
-            "MhQuenByb3RvLkVQaWN0dXJlVHlwZRIpCgxwaWN0dXJlX2luZm8YBCABKAsy",
-            "Ey56cHJvdG8uUGljdHVyZUluZm9iBnByb3RvMw=="));
+            "Y3R1cmVfdHlwZS5wcm90bxoXc3RydV9waWN0dXJlX2luZm8ucHJvdG8ivAEK",
+            "HVVwbG9hZFBpY3R1cmVSZXN1bHROdGZSZXF1ZXN0EiwKB2VyckNvZGUYAiAB",
+            "KA4yEi56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZRI2CgtwaWN0dXJlVHlw",
+            "ZRgDIAEoDjIULnpwcm90by5FUGljdHVyZVR5cGVSC3BpY3R1cmVUeXBlEjUK",
+            "C3BpY3R1cmVJbmZvGAQgASgLMhMuenByb3RvLlBpY3R1cmVJbmZvUgtwaWN0",
+            "dXJlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.EnumEPictureTypeReflection.Descriptor, global::Zproto.StruPictureInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new UploadPictureResultNtfRequest(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "picture_type" field.</summary>
+    /// <summary>Field number for the "pictureType" field.</summary>
     public const int PictureTypeFieldNumber = 3;
     private global::Zproto.EPictureType pictureType_ = global::Zproto.EPictureType.EnormalPicture;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "picture_info" field.</summary>
+    /// <summary>Field number for the "pictureInfo" field.</summary>
     public const int PictureInfoFieldNumber = 4;
     private global::Zproto.PictureInfo pictureInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

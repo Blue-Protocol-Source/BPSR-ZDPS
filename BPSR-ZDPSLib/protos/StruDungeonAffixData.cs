@@ -25,8 +25,8 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1zdHJ1X2R1bmdlb25fYWZmaXhfZGF0YS5wcm90bxIGenByb3RvGhVzdHJ1",
-            "X2RpcnR5X21hc2sucHJvdG8iJgoQRHVuZ2VvbkFmZml4RGF0YRISCgphZmZp",
-            "eF9kYXRhGAEgAygNYgZwcm90bzM="));
+            "X2RpcnR5X21hc2sucHJvdG8iMAoQRHVuZ2VvbkFmZml4RGF0YRIcCglhZmZp",
+            "eERhdGEYASADKA1SCWFmZml4RGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Zproto {
       return new DungeonAffixData(this);
     }
 
-    /// <summary>Field number for the "affix_data" field.</summary>
+    /// <summary>Field number for the "affixData" field.</summary>
     public const int AffixDataFieldNumber = 1;
     private static readonly pb::FieldCodec<uint> _repeated_affixData_codec
         = pb::FieldCodec.ForUInt32(10);

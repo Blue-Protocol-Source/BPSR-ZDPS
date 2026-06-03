@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3BheW1lbnRfcmVzdWx0LnByb3RvEgZ6cHJvdG8aF2VudW1fZV9l",
-            "cnJvcl9jb2RlLnByb3RvIl0KDVBheW1lbnRSZXN1bHQSEgoKb3JkZXJfZ3Vp",
-            "ZBgBIAEoCRISCgpwYXltZW50X2lkGAIgASgFEiQKCGVycl9jb2RlGAMgASgO",
-            "MhIuenByb3RvLkVFcnJvckNvZGViBnByb3RvMw=="));
+            "cnJvcl9jb2RlLnByb3RvInkKDVBheW1lbnRSZXN1bHQSHAoJb3JkZXJHdWlk",
+            "GAEgASgJUglvcmRlckd1aWQSHAoJcGF5bWVudElkGAIgASgFUglwYXltZW50",
+            "SWQSLAoHZXJyQ29kZRgDIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJD",
+            "b2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new PaymentResult(this);
     }
 
-    /// <summary>Field number for the "order_guid" field.</summary>
+    /// <summary>Field number for the "orderGuid" field.</summary>
     public const int OrderGuidFieldNumber = 1;
     private string orderGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "payment_id" field.</summary>
+    /// <summary>Field number for the "paymentId" field.</summary>
     public const int PaymentIdFieldNumber = 2;
     private int paymentId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "CidzdHJ1X3RyaWFsX3JvYWRfcm9vbV90YXJnZXRfYXdhcmQucHJvdG8SBnpw",
             "cm90bxolc3RydV90cmlhbF9yb2FkX3RhcmdldF9wcm9ncmVzcy5wcm90bxoV",
-            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIsEBChhUcmlhbFJvYWRSb29tVGFyZ2V0",
-            "QXdhcmQSTQoPdGFyZ2V0X3Byb2dyZXNzGAEgAygLMjQuenByb3RvLlRyaWFs",
-            "Um9hZFJvb21UYXJnZXRBd2FyZC5UYXJnZXRQcm9ncmVzc0VudHJ5GlYKE1Rh",
-            "cmdldFByb2dyZXNzRW50cnkSCwoDa2V5GAEgASgFEi4KBXZhbHVlGAIgASgL",
-            "Mh8uenByb3RvLlRyaWFsUm9hZFRhcmdldFByb2dyZXNzOgI4AWIGcHJvdG8z"));
+            "c3RydV9kaXJ0eV9tYXNrLnByb3RvItABChhUcmlhbFJvYWRSb29tVGFyZ2V0",
+            "QXdhcmQSXAoOdGFyZ2V0UHJvZ3Jlc3MYASADKAsyNC56cHJvdG8uVHJpYWxS",
+            "b2FkUm9vbVRhcmdldEF3YXJkLlRhcmdldFByb2dyZXNzRW50cnlSDnRhcmdl",
+            "dFByb2dyZXNzGlYKE1RhcmdldFByb2dyZXNzRW50cnkSCwoDa2V5GAEgASgF",
+            "Ei4KBXZhbHVlGAIgASgLMh8uenByb3RvLlRyaWFsUm9hZFRhcmdldFByb2dy",
+            "ZXNzOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTrialRoadTargetProgressReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new TrialRoadRoomTargetAward(this);
     }
 
-    /// <summary>Field number for the "target_progress" field.</summary>
+    /// <summary>Field number for the "targetProgress" field.</summary>
     public const int TargetProgressFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.TrialRoadTargetProgress>.Codec _map_targetProgress_codec
         = new pbc::MapField<int, global::Zproto.TrialRoadTargetProgress>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.TrialRoadTargetProgress.Parser), 10);

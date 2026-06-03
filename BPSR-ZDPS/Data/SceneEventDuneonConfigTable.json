@@ -176,6 +176,36 @@
     "LimitTime": 500,
     "ScoreRank": []
   },
+  "1511": {
+    "DungeonId": 1511,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "1521": {
+    "DungeonId": 1521,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "1531": {
+    "DungeonId": 1531,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "1532": {
+    "DungeonId": 1532,
+    "BaseRatio": 100,
+    "LimitTime": 900,
+    "ScoreRank": []
+  },
+  "1533": {
+    "DungeonId": 1533,
+    "BaseRatio": 100,
+    "LimitTime": 540,
+    "ScoreRank": []
+  },
   "1311": {
     "DungeonId": 1311,
     "BaseRatio": 100,
@@ -233,7 +263,334 @@
   "6333": {
     "DungeonId": 6333,
     "BaseRatio": 100,
-    "LimitTime": 360,
+    "LimitTime": 420,
+    "ScoreRank": []
+  },
+  "6111": {
+    "DungeonId": 6111,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6112": {
+    "DungeonId": 6112,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6121": {
+    "DungeonId": 6121,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6122": {
+    "DungeonId": 6122,
+    "BaseRatio": 100,
+    "LimitTime": 900,
+    "ScoreRank": []
+  },
+  "6123": {
+    "DungeonId": 6123,
+    "BaseRatio": 100,
+    "LimitTime": 480,
+    "ScoreRank": []
+  },
+  "1411": {
+    "DungeonId": 1411,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "1412": {
+    "DungeonId": 1412,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "1421": {
+    "DungeonId": 1421,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "1422": {
+    "DungeonId": 1422,
+    "BaseRatio": 100,
+    "LimitTime": 600,
+    "ScoreRank": []
+  },
+  "1423": {
+    "DungeonId": 1423,
+    "BaseRatio": 100,
+    "LimitTime": 510,
+    "ScoreRank": []
+  },
+  "6211": {
+    "DungeonId": 6211,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6212": {
+    "DungeonId": 6212,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6221": {
+    "DungeonId": 6221,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6222": {
+    "DungeonId": 6222,
+    "BaseRatio": 100,
+    "LimitTime": 900,
+    "ScoreRank": []
+  },
+  "6223": {
+    "DungeonId": 6223,
+    "BaseRatio": 100,
+    "LimitTime": 540,
+    "ScoreRank": []
+  },
+  "6411": {
+    "DungeonId": 6411,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6412": {
+    "DungeonId": 6412,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6421": {
+    "DungeonId": 6421,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6422": {
+    "DungeonId": 6422,
+    "BaseRatio": 100,
+    "LimitTime": 900,
+    "ScoreRank": []
+  },
+  "6423": {
+    "DungeonId": 6423,
+    "BaseRatio": 100,
+    "LimitTime": 540,
+    "ScoreRank": []
+  },
+  "1611": {
+    "DungeonId": 1611,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": [
+      [
+        2,
+        1000
+      ],
+      [
+        3,
+        3000
+      ]
+    ]
+  },
+  "1621": {
+    "DungeonId": 1621,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": [
+      [
+        2,
+        2500
+      ],
+      [
+        3,
+        3500
+      ]
+    ]
+  },
+  "1631": {
+    "DungeonId": 1631,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": [
+      [
+        2,
+        2500
+      ],
+      [
+        3,
+        3500
+      ]
+    ]
+  },
+  "1632": {
+    "DungeonId": 1632,
+    "BaseRatio": 100,
+    "LimitTime": 900,
+    "ScoreRank": []
+  },
+  "1633": {
+    "DungeonId": 1633,
+    "BaseRatio": 100,
+    "LimitTime": 600,
+    "ScoreRank": []
+  },
+  "6511": {
+    "DungeonId": 6511,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6512": {
+    "DungeonId": 6512,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6513": {
+    "DungeonId": 6513,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6514": {
+    "DungeonId": 6514,
+    "BaseRatio": 100,
+    "LimitTime": 900,
+    "ScoreRank": []
+  },
+  "6515": {
+    "DungeonId": 6515,
+    "BaseRatio": 100,
+    "LimitTime": 540,
+    "ScoreRank": []
+  },
+  "6521": {
+    "DungeonId": 6521,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6522": {
+    "DungeonId": 6522,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6523": {
+    "DungeonId": 6523,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6524": {
+    "DungeonId": 6524,
+    "BaseRatio": 100,
+    "LimitTime": 900,
+    "ScoreRank": []
+  },
+  "6525": {
+    "DungeonId": 6525,
+    "BaseRatio": 100,
+    "LimitTime": 540,
+    "ScoreRank": []
+  },
+  "6541": {
+    "DungeonId": 6541,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6542": {
+    "DungeonId": 6542,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6543": {
+    "DungeonId": 6543,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6544": {
+    "DungeonId": 6544,
+    "BaseRatio": 100,
+    "LimitTime": 900,
+    "ScoreRank": []
+  },
+  "6545": {
+    "DungeonId": 6545,
+    "BaseRatio": 100,
+    "LimitTime": 540,
+    "ScoreRank": []
+  },
+  "1154": {
+    "DungeonId": 1154,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "1153": {
+    "DungeonId": 1153,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "1152": {
+    "DungeonId": 1152,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "1151": {
+    "DungeonId": 1151,
+    "BaseRatio": 100,
+    "LimitTime": 900,
+    "ScoreRank": []
+  },
+  "1150": {
+    "DungeonId": 1150,
+    "BaseRatio": 100,
+    "LimitTime": 600,
+    "ScoreRank": []
+  },
+  "6561": {
+    "DungeonId": 6561,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6562": {
+    "DungeonId": 6562,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6563": {
+    "DungeonId": 6563,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "6564": {
+    "DungeonId": 6564,
+    "BaseRatio": 100,
+    "LimitTime": 900,
+    "ScoreRank": []
+  },
+  "6565": {
+    "DungeonId": 6565,
+    "BaseRatio": 100,
+    "LimitTime": 600,
     "ScoreRank": []
   }
 }

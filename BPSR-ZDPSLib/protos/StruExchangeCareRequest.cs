@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2V4Y2hhbmdlX2NhcmVfcmVxdWVzdC5wcm90bxIGenByb3RvGh9l",
-            "bnVtX2VfZXhjaGFuZ2VfaXRlbV90eXBlLnByb3RvIlYKE0V4Y2hhbmdlQ2Fy",
-            "ZVJlcXVlc3QSJwoEdHlwZRgBIAEoDjIZLnpwcm90by5FRXhjaGFuZ2VJdGVt",
-            "VHlwZRIWCg5pdGVtX2NvbmZpZ19pZBgCIAEoBWIGcHJvdG8z"));
+            "bnVtX2VfZXhjaGFuZ2VfaXRlbV90eXBlLnByb3RvImgKE0V4Y2hhbmdlQ2Fy",
+            "ZVJlcXVlc3QSLQoEdHlwZRgBIAEoDjIZLnpwcm90by5FRXhjaGFuZ2VJdGVt",
+            "VHlwZVIEdHlwZRIiCgxpdGVtQ29uZmlnSWQYAiABKAVSDGl0ZW1Db25maWdJ",
+            "ZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEExchangeItemTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_config_id" field.</summary>
+    /// <summary>Field number for the "itemConfigId" field.</summary>
     public const int ItemConfigIdFieldNumber = 2;
     private int itemConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

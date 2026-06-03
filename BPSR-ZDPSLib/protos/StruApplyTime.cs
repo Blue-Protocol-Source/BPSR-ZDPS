@@ -24,8 +24,9 @@ namespace Zproto {
     static StruApplyTimeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVzdHJ1X2FwcGx5X3RpbWUucHJvdG8SBnpwcm90byIwCglBcHBseVRpbWUS",
-            "DwoHY2hhcl9pZBgBIAEoAxISCgphcHBseV90aW1lGAIgASgDYgZwcm90bzM="));
+            "ChVzdHJ1X2FwcGx5X3RpbWUucHJvdG8SBnpwcm90byJBCglBcHBseVRpbWUS",
+            "FgoGY2hhcklkGAEgASgDUgZjaGFySWQSHAoJYXBwbHlUaW1lGAIgASgDUglh",
+            "cHBseVRpbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +83,7 @@ namespace Zproto {
       return new ApplyTime(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -94,7 +95,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "apply_time" field.</summary>
+    /// <summary>Field number for the "applyTime" field.</summary>
     public const int ApplyTime_FieldNumber = 2;
     private long applyTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

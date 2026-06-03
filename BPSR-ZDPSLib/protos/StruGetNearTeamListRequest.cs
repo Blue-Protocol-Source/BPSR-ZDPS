@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVzdHJ1X2dldF9uZWFyX3RlYW1fbGlzdF9yZXF1ZXN0LnByb3RvEgZ6cHJv",
-            "dG8ibgoWR2V0TmVhclRlYW1MaXN0UmVxdWVzdBIOCgZtYXBfaWQYAiABKAMS",
-            "EgoKaXNfcmVmcmVzaBgDIAEoCBIUCgxtZW1iZXJfY291bnQYBCABKAUSGgoS",
-            "aWdub3JlX3NlbGZfdGFsZW50GAUgASgIYgZwcm90bzM="));
+            "dG8imgEKFkdldE5lYXJUZWFtTGlzdFJlcXVlc3QSFAoFbWFwSWQYAiABKANS",
+            "BW1hcElkEhwKCWlzUmVmcmVzaBgDIAEoCFIJaXNSZWZyZXNoEiAKC21lbWJl",
+            "ckNvdW50GAQgASgFUgttZW1iZXJDb3VudBIqChBJZ25vcmVTZWxmVGFsZW50",
+            "GAUgASgIUhBJZ25vcmVTZWxmVGFsZW50YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new GetNearTeamListRequest(this);
     }
 
-    /// <summary>Field number for the "map_id" field.</summary>
+    /// <summary>Field number for the "mapId" field.</summary>
     public const int MapIdFieldNumber = 2;
     private long mapId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_refresh" field.</summary>
+    /// <summary>Field number for the "isRefresh" field.</summary>
     public const int IsRefreshFieldNumber = 3;
     private bool isRefresh_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "member_count" field.</summary>
+    /// <summary>Field number for the "memberCount" field.</summary>
     public const int MemberCountFieldNumber = 4;
     private int memberCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +123,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ignore_self_talent" field.</summary>
+    /// <summary>Field number for the "IgnoreSelfTalent" field.</summary>
     public const int IgnoreSelfTalentFieldNumber = 5;
     private bool ignoreSelfTalent_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

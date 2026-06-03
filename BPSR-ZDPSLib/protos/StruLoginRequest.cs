@@ -25,22 +25,29 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhzdHJ1X2xvZ2luX3JlcXVlc3QucHJvdG8SBnpwcm90bxoWc3RydV9kZXZp",
-            "Y2VfaW5mby5wcm90bxoXc3RydV9sYXVuY2hfcGFyYW0ucHJvdG8i2AMKDExv",
-            "Z2luUmVxdWVzdBIPCgdvcGVuX2lkGAIgASgJEg0KBXRva2VuGAMgASgJEhAK",
-            "CHNka190eXBlGAQgASgFEhIKCmNoYW5uZWxfaWQYBSABKAUSCgoCb3MYBiAB",
-            "KAUSFQoNcGxhdGZvcm1fdHlwZRgHIAEoBRInCgtkZXZpY2VfaW5mbxgIIAEo",
-            "CzISLnpwcm90by5EZXZpY2VJbmZvEhYKDmNsaWVudF92ZXJzaW9uGAkgASgJ",
-            "EhgKEHByb3RvY29sX3ZlcnNpb24YCiABKAkSFgoOY29uZmlnX3ZlcnNpb24Y",
-            "CyABKAkSDwoHYXJlYV9pZBgMIAEoBRIdChVpX29zX2FkX3NlcnZpY2VfdG9r",
-            "ZW4YDSABKAkSFAoMcGF5X2V4dF9kYXRhGA4gASgJEh8KF2NsaWVudF9yZXNv",
-            "dXJjZV92ZXJzaW9uGA8gASgJEikKDGxhdW5jaF9wYXJhbRgSIAEoCzITLnpw",
-            "cm90by5MYXVuY2hQYXJhbRIVCg1hcmVhX2lkX3Rva2VuGBMgASgJEhUKDWlz",
-            "X2Nsb3VkX2dhbWUYFCABKAgSEwoLZGlzdGluY3RfaWQYFSABKAkSFwoPYm91",
-            "bmRfcHJvdmlkZXJzGBYgAygJYgZwcm90bzM="));
+            "Y2VfaW5mby5wcm90bxoXc3RydV9sYXVuY2hfcGFyYW0ucHJvdG8inQYKDExv",
+            "Z2luUmVxdWVzdBIWCgZvcGVuSWQYAiABKAlSBm9wZW5JZBIUCgV0b2tlbhgD",
+            "IAEoCVIFdG9rZW4SGAoHc2RrVHlwZRgEIAEoBVIHc2RrVHlwZRIcCgljaGFu",
+            "bmVsSWQYBSABKAVSCWNoYW5uZWxJZBIOCgJvcxgGIAEoBVICb3MSIgoMcGxh",
+            "dGZvcm1UeXBlGAcgASgFUgxwbGF0Zm9ybVR5cGUSMgoKZGV2aWNlSW5mbxgI",
+            "IAEoCzISLnpwcm90by5EZXZpY2VJbmZvUgpkZXZpY2VJbmZvEiQKDWNsaWVu",
+            "dFZlcnNpb24YCSABKAlSDWNsaWVudFZlcnNpb24SKAoPcHJvdG9jb2xWZXJz",
+            "aW9uGAogASgJUg9wcm90b2NvbFZlcnNpb24SJAoNY29uZmlnVmVyc2lvbhgL",
+            "IAEoCVINY29uZmlnVmVyc2lvbhIWCgZhcmVhSWQYDCABKAVSBmFyZWFJZBIs",
+            "ChFpT1NBZFNlcnZpY2VUb2tlbhgNIAEoCVIRaU9TQWRTZXJ2aWNlVG9rZW4S",
+            "HgoKcGF5RXh0RGF0YRgOIAEoCVIKcGF5RXh0RGF0YRI0ChVjbGllbnRSZXNv",
+            "dXJjZVZlcnNpb24YDyABKAlSFWNsaWVudFJlc291cmNlVmVyc2lvbhI1Cgts",
+            "YXVuY2hQYXJhbRgSIAEoCzITLnpwcm90by5MYXVuY2hQYXJhbVILbGF1bmNo",
+            "UGFyYW0SIAoLYXJlYUlkVG9rZW4YEyABKAlSC2FyZWFJZFRva2VuEiAKC2lz",
+            "Q2xvdWRHYW1lGBQgASgIUgtpc0Nsb3VkR2FtZRIeCgpkaXN0aW5jdElEGBUg",
+            "ASgJUgpkaXN0aW5jdElEEiYKDmJvdW5kUHJvdmlkZXJzGBYgAygJUg5ib3Vu",
+            "ZFByb3ZpZGVycxIaCghsYW5ndWFnZRgXIAEoBVIIbGFuZ3VhZ2USFAoFZ2Ns",
+            "aWQYGCABKAlSBWdjbGlkEjgKF3Vuc2FmZUNvbnRhaW5lclN5bmNNb2RlGBkg",
+            "ASgIUhd1bnNhZmVDb250YWluZXJTeW5jTW9kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDeviceInfoReflection.Descriptor, global::Zproto.StruLaunchParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.LoginRequest), global::Zproto.LoginRequest.Parser, new[]{ "OpenId", "Token", "SdkType", "ChannelId", "Os", "PlatformType", "DeviceInfo", "ClientVersion", "ProtocolVersion", "ConfigVersion", "AreaId", "IOsAdServiceToken", "PayExtData", "ClientResourceVersion", "LaunchParam", "AreaIdToken", "IsCloudGame", "DistinctId", "BoundProviders" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.LoginRequest), global::Zproto.LoginRequest.Parser, new[]{ "OpenId", "Token", "SdkType", "ChannelId", "Os", "PlatformType", "DeviceInfo", "ClientVersion", "ProtocolVersion", "ConfigVersion", "AreaId", "IOSAdServiceToken", "PayExtData", "ClientResourceVersion", "LaunchParam", "AreaIdToken", "IsCloudGame", "DistinctID", "BoundProviders", "Language", "Gclid", "UnsafeContainerSyncMode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -93,14 +100,17 @@ namespace Zproto {
       protocolVersion_ = other.protocolVersion_;
       configVersion_ = other.configVersion_;
       areaId_ = other.areaId_;
-      iOsAdServiceToken_ = other.iOsAdServiceToken_;
+      iOSAdServiceToken_ = other.iOSAdServiceToken_;
       payExtData_ = other.payExtData_;
       clientResourceVersion_ = other.clientResourceVersion_;
       launchParam_ = other.launchParam_ != null ? other.launchParam_.Clone() : null;
       areaIdToken_ = other.areaIdToken_;
       isCloudGame_ = other.isCloudGame_;
-      distinctId_ = other.distinctId_;
+      distinctID_ = other.distinctID_;
       boundProviders_ = other.boundProviders_.Clone();
+      language_ = other.language_;
+      gclid_ = other.gclid_;
+      unsafeContainerSyncMode_ = other.unsafeContainerSyncMode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -110,7 +120,7 @@ namespace Zproto {
       return new LoginRequest(this);
     }
 
-    /// <summary>Field number for the "open_id" field.</summary>
+    /// <summary>Field number for the "openId" field.</summary>
     public const int OpenIdFieldNumber = 2;
     private string openId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,7 +144,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "sdk_type" field.</summary>
+    /// <summary>Field number for the "sdkType" field.</summary>
     public const int SdkTypeFieldNumber = 4;
     private int sdkType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -146,7 +156,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "channel_id" field.</summary>
+    /// <summary>Field number for the "channelId" field.</summary>
     public const int ChannelIdFieldNumber = 5;
     private int channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -170,7 +180,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "platform_type" field.</summary>
+    /// <summary>Field number for the "platformType" field.</summary>
     public const int PlatformTypeFieldNumber = 7;
     private int platformType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -182,7 +192,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "device_info" field.</summary>
+    /// <summary>Field number for the "deviceInfo" field.</summary>
     public const int DeviceInfoFieldNumber = 8;
     private global::Zproto.DeviceInfo deviceInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -194,7 +204,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "client_version" field.</summary>
+    /// <summary>Field number for the "clientVersion" field.</summary>
     public const int ClientVersionFieldNumber = 9;
     private string clientVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -206,7 +216,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "protocol_version" field.</summary>
+    /// <summary>Field number for the "protocolVersion" field.</summary>
     public const int ProtocolVersionFieldNumber = 10;
     private string protocolVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -218,7 +228,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "config_version" field.</summary>
+    /// <summary>Field number for the "configVersion" field.</summary>
     public const int ConfigVersionFieldNumber = 11;
     private string configVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -230,7 +240,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "area_id" field.</summary>
+    /// <summary>Field number for the "areaId" field.</summary>
     public const int AreaIdFieldNumber = 12;
     private int areaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -242,19 +252,19 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "i_os_ad_service_token" field.</summary>
-    public const int IOsAdServiceTokenFieldNumber = 13;
-    private string iOsAdServiceToken_ = "";
+    /// <summary>Field number for the "iOSAdServiceToken" field.</summary>
+    public const int IOSAdServiceTokenFieldNumber = 13;
+    private string iOSAdServiceToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string IOsAdServiceToken {
-      get { return iOsAdServiceToken_; }
+    public string IOSAdServiceToken {
+      get { return iOSAdServiceToken_; }
       set {
-        iOsAdServiceToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        iOSAdServiceToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "pay_ext_data" field.</summary>
+    /// <summary>Field number for the "payExtData" field.</summary>
     public const int PayExtDataFieldNumber = 14;
     private string payExtData_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -266,7 +276,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "client_resource_version" field.</summary>
+    /// <summary>Field number for the "clientResourceVersion" field.</summary>
     public const int ClientResourceVersionFieldNumber = 15;
     private string clientResourceVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -278,7 +288,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "launch_param" field.</summary>
+    /// <summary>Field number for the "launchParam" field.</summary>
     public const int LaunchParamFieldNumber = 18;
     private global::Zproto.LaunchParam launchParam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -290,7 +300,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "area_id_token" field.</summary>
+    /// <summary>Field number for the "areaIdToken" field.</summary>
     public const int AreaIdTokenFieldNumber = 19;
     private string areaIdToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -302,7 +312,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_cloud_game" field.</summary>
+    /// <summary>Field number for the "isCloudGame" field.</summary>
     public const int IsCloudGameFieldNumber = 20;
     private bool isCloudGame_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -314,19 +324,19 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "distinct_id" field.</summary>
-    public const int DistinctIdFieldNumber = 21;
-    private string distinctId_ = "";
+    /// <summary>Field number for the "distinctID" field.</summary>
+    public const int DistinctIDFieldNumber = 21;
+    private string distinctID_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DistinctId {
-      get { return distinctId_; }
+    public string DistinctID {
+      get { return distinctID_; }
       set {
-        distinctId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        distinctID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "bound_providers" field.</summary>
+    /// <summary>Field number for the "boundProviders" field.</summary>
     public const int BoundProvidersFieldNumber = 22;
     private static readonly pb::FieldCodec<string> _repeated_boundProviders_codec
         = pb::FieldCodec.ForString(178);
@@ -335,6 +345,42 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> BoundProviders {
       get { return boundProviders_; }
+    }
+
+    /// <summary>Field number for the "language" field.</summary>
+    public const int LanguageFieldNumber = 23;
+    private int language_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Language {
+      get { return language_; }
+      set {
+        language_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gclid" field.</summary>
+    public const int GclidFieldNumber = 24;
+    private string gclid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Gclid {
+      get { return gclid_; }
+      set {
+        gclid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "unsafeContainerSyncMode" field.</summary>
+    public const int UnsafeContainerSyncModeFieldNumber = 25;
+    private bool unsafeContainerSyncMode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool UnsafeContainerSyncMode {
+      get { return unsafeContainerSyncMode_; }
+      set {
+        unsafeContainerSyncMode_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -363,14 +409,17 @@ namespace Zproto {
       if (ProtocolVersion != other.ProtocolVersion) return false;
       if (ConfigVersion != other.ConfigVersion) return false;
       if (AreaId != other.AreaId) return false;
-      if (IOsAdServiceToken != other.IOsAdServiceToken) return false;
+      if (IOSAdServiceToken != other.IOSAdServiceToken) return false;
       if (PayExtData != other.PayExtData) return false;
       if (ClientResourceVersion != other.ClientResourceVersion) return false;
       if (!object.Equals(LaunchParam, other.LaunchParam)) return false;
       if (AreaIdToken != other.AreaIdToken) return false;
       if (IsCloudGame != other.IsCloudGame) return false;
-      if (DistinctId != other.DistinctId) return false;
+      if (DistinctID != other.DistinctID) return false;
       if(!boundProviders_.Equals(other.boundProviders_)) return false;
+      if (Language != other.Language) return false;
+      if (Gclid != other.Gclid) return false;
+      if (UnsafeContainerSyncMode != other.UnsafeContainerSyncMode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -389,14 +438,17 @@ namespace Zproto {
       if (ProtocolVersion.Length != 0) hash ^= ProtocolVersion.GetHashCode();
       if (ConfigVersion.Length != 0) hash ^= ConfigVersion.GetHashCode();
       if (AreaId != 0) hash ^= AreaId.GetHashCode();
-      if (IOsAdServiceToken.Length != 0) hash ^= IOsAdServiceToken.GetHashCode();
+      if (IOSAdServiceToken.Length != 0) hash ^= IOSAdServiceToken.GetHashCode();
       if (PayExtData.Length != 0) hash ^= PayExtData.GetHashCode();
       if (ClientResourceVersion.Length != 0) hash ^= ClientResourceVersion.GetHashCode();
       if (launchParam_ != null) hash ^= LaunchParam.GetHashCode();
       if (AreaIdToken.Length != 0) hash ^= AreaIdToken.GetHashCode();
       if (IsCloudGame != false) hash ^= IsCloudGame.GetHashCode();
-      if (DistinctId.Length != 0) hash ^= DistinctId.GetHashCode();
+      if (DistinctID.Length != 0) hash ^= DistinctID.GetHashCode();
       hash ^= boundProviders_.GetHashCode();
+      if (Language != 0) hash ^= Language.GetHashCode();
+      if (Gclid.Length != 0) hash ^= Gclid.GetHashCode();
+      if (UnsafeContainerSyncMode != false) hash ^= UnsafeContainerSyncMode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -459,9 +511,9 @@ namespace Zproto {
         output.WriteRawTag(96);
         output.WriteInt32(AreaId);
       }
-      if (IOsAdServiceToken.Length != 0) {
+      if (IOSAdServiceToken.Length != 0) {
         output.WriteRawTag(106);
-        output.WriteString(IOsAdServiceToken);
+        output.WriteString(IOSAdServiceToken);
       }
       if (PayExtData.Length != 0) {
         output.WriteRawTag(114);
@@ -483,11 +535,23 @@ namespace Zproto {
         output.WriteRawTag(160, 1);
         output.WriteBool(IsCloudGame);
       }
-      if (DistinctId.Length != 0) {
+      if (DistinctID.Length != 0) {
         output.WriteRawTag(170, 1);
-        output.WriteString(DistinctId);
+        output.WriteString(DistinctID);
       }
       boundProviders_.WriteTo(output, _repeated_boundProviders_codec);
+      if (Language != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(Language);
+      }
+      if (Gclid.Length != 0) {
+        output.WriteRawTag(194, 1);
+        output.WriteString(Gclid);
+      }
+      if (UnsafeContainerSyncMode != false) {
+        output.WriteRawTag(200, 1);
+        output.WriteBool(UnsafeContainerSyncMode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -542,9 +606,9 @@ namespace Zproto {
         output.WriteRawTag(96);
         output.WriteInt32(AreaId);
       }
-      if (IOsAdServiceToken.Length != 0) {
+      if (IOSAdServiceToken.Length != 0) {
         output.WriteRawTag(106);
-        output.WriteString(IOsAdServiceToken);
+        output.WriteString(IOSAdServiceToken);
       }
       if (PayExtData.Length != 0) {
         output.WriteRawTag(114);
@@ -566,11 +630,23 @@ namespace Zproto {
         output.WriteRawTag(160, 1);
         output.WriteBool(IsCloudGame);
       }
-      if (DistinctId.Length != 0) {
+      if (DistinctID.Length != 0) {
         output.WriteRawTag(170, 1);
-        output.WriteString(DistinctId);
+        output.WriteString(DistinctID);
       }
       boundProviders_.WriteTo(ref output, _repeated_boundProviders_codec);
+      if (Language != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteInt32(Language);
+      }
+      if (Gclid.Length != 0) {
+        output.WriteRawTag(194, 1);
+        output.WriteString(Gclid);
+      }
+      if (UnsafeContainerSyncMode != false) {
+        output.WriteRawTag(200, 1);
+        output.WriteBool(UnsafeContainerSyncMode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -614,8 +690,8 @@ namespace Zproto {
       if (AreaId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AreaId);
       }
-      if (IOsAdServiceToken.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(IOsAdServiceToken);
+      if (IOSAdServiceToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IOSAdServiceToken);
       }
       if (PayExtData.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PayExtData);
@@ -632,10 +708,19 @@ namespace Zproto {
       if (IsCloudGame != false) {
         size += 2 + 1;
       }
-      if (DistinctId.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(DistinctId);
+      if (DistinctID.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(DistinctID);
       }
       size += boundProviders_.CalculateSize(_repeated_boundProviders_codec);
+      if (Language != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Language);
+      }
+      if (Gclid.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Gclid);
+      }
+      if (UnsafeContainerSyncMode != false) {
+        size += 2 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -684,8 +769,8 @@ namespace Zproto {
       if (other.AreaId != 0) {
         AreaId = other.AreaId;
       }
-      if (other.IOsAdServiceToken.Length != 0) {
-        IOsAdServiceToken = other.IOsAdServiceToken;
+      if (other.IOSAdServiceToken.Length != 0) {
+        IOSAdServiceToken = other.IOSAdServiceToken;
       }
       if (other.PayExtData.Length != 0) {
         PayExtData = other.PayExtData;
@@ -705,10 +790,19 @@ namespace Zproto {
       if (other.IsCloudGame != false) {
         IsCloudGame = other.IsCloudGame;
       }
-      if (other.DistinctId.Length != 0) {
-        DistinctId = other.DistinctId;
+      if (other.DistinctID.Length != 0) {
+        DistinctID = other.DistinctID;
       }
       boundProviders_.Add(other.boundProviders_);
+      if (other.Language != 0) {
+        Language = other.Language;
+      }
+      if (other.Gclid.Length != 0) {
+        Gclid = other.Gclid;
+      }
+      if (other.UnsafeContainerSyncMode != false) {
+        UnsafeContainerSyncMode = other.UnsafeContainerSyncMode;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -776,7 +870,7 @@ namespace Zproto {
             break;
           }
           case 106: {
-            IOsAdServiceToken = input.ReadString();
+            IOSAdServiceToken = input.ReadString();
             break;
           }
           case 114: {
@@ -803,11 +897,23 @@ namespace Zproto {
             break;
           }
           case 170: {
-            DistinctId = input.ReadString();
+            DistinctID = input.ReadString();
             break;
           }
           case 178: {
             boundProviders_.AddEntriesFrom(input, _repeated_boundProviders_codec);
+            break;
+          }
+          case 184: {
+            Language = input.ReadInt32();
+            break;
+          }
+          case 194: {
+            Gclid = input.ReadString();
+            break;
+          }
+          case 200: {
+            UnsafeContainerSyncMode = input.ReadBool();
             break;
           }
         }
@@ -877,7 +983,7 @@ namespace Zproto {
             break;
           }
           case 106: {
-            IOsAdServiceToken = input.ReadString();
+            IOSAdServiceToken = input.ReadString();
             break;
           }
           case 114: {
@@ -904,11 +1010,23 @@ namespace Zproto {
             break;
           }
           case 170: {
-            DistinctId = input.ReadString();
+            DistinctID = input.ReadString();
             break;
           }
           case 178: {
             boundProviders_.AddEntriesFrom(ref input, _repeated_boundProviders_codec);
+            break;
+          }
+          case 184: {
+            Language = input.ReadInt32();
+            break;
+          }
+          case 194: {
+            Gclid = input.ReadString();
+            break;
+          }
+          case 200: {
+            UnsafeContainerSyncMode = input.ReadBool();
             break;
           }
         }

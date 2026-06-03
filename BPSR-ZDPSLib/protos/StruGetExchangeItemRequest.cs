@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X2dldF9leGNoYW5nZV9pdGVtX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "bxoac3RydV9leGNoYW5nZV9maWx0ZXIucHJvdG8iYQoWR2V0RXhjaGFuZ2VJ",
-            "dGVtUmVxdWVzdBIRCgljb25maWdfaWQYAiABKAUSJgoGZmlsdGVyGAMgAygL",
-            "MhYuenByb3RvLkV4Y2hhbmdlRmlsdGVyEgwKBHBhZ2UYBSABKAViBnByb3Rv",
-            "Mw=="));
+            "bxoac3RydV9leGNoYW5nZV9maWx0ZXIucHJvdG8ieAoWR2V0RXhjaGFuZ2VJ",
+            "dGVtUmVxdWVzdBIaCghjb25maWdJZBgCIAEoBVIIY29uZmlnSWQSLgoGZmls",
+            "dGVyGAMgAygLMhYuenByb3RvLkV4Y2hhbmdlRmlsdGVyUgZmaWx0ZXISEgoE",
+            "cGFnZRgFIAEoBVIEcGFnZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruExchangeFilterReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Zproto {
       return new GetExchangeItemRequest(this);
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
+    /// <summary>Field number for the "configId" field.</summary>
     public const int ConfigIdFieldNumber = 2;
     private int configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

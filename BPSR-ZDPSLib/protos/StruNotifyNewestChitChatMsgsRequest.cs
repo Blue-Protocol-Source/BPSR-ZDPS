@@ -26,10 +26,11 @@ namespace Zproto {
           string.Concat(
             "Ci9zdHJ1X25vdGlmeV9uZXdlc3RfY2hpdF9jaGF0X21zZ3NfcmVxdWVzdC5w",
             "cm90bxIGenByb3RvGiFlbnVtX2NoaXRfY2hhdF9jaGFubmVsX3R5cGUucHJv",
-            "dG8aGHN0cnVfY2hpdF9jaGF0X21zZy5wcm90byJ7Ch9Ob3RpZnlOZXdlc3RD",
-            "aGl0Q2hhdE1zZ3NSZXF1ZXN0EjEKDGNoYW5uZWxfdHlwZRgBIAEoDjIbLnpw",
-            "cm90by5DaGl0Q2hhdENoYW5uZWxUeXBlEiUKCGNoYXRfbXNnGAIgASgLMhMu",
-            "enByb3RvLkNoaXRDaGF0TXNnYgZwcm90bzM="));
+            "dG8aGHN0cnVfY2hpdF9jaGF0X21zZy5wcm90byKPAQofTm90aWZ5TmV3ZXN0",
+            "Q2hpdENoYXRNc2dzUmVxdWVzdBI9CgtjaGFubmVsVHlwZRgBIAEoDjIbLnpw",
+            "cm90by5DaGl0Q2hhdENoYW5uZWxUeXBlUgtjaGFubmVsVHlwZRItCgdjaGF0",
+            "TXNnGAIgASgLMhMuenByb3RvLkNoaXRDaGF0TXNnUgdjaGF0TXNnYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumChitChatChannelTypeReflection.Descriptor, global::Zproto.StruChitChatMsgReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new NotifyNewestChitChatMsgsRequest(this);
     }
 
-    /// <summary>Field number for the "channel_type" field.</summary>
+    /// <summary>Field number for the "channelType" field.</summary>
     public const int ChannelTypeFieldNumber = 1;
     private global::Zproto.ChitChatChannelType channelType_ = global::Zproto.ChitChatChannelType.ChannelNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "chat_msg" field.</summary>
+    /// <summary>Field number for the "chatMsg" field.</summary>
     public const int ChatMsgFieldNumber = 2;
     private global::Zproto.ChitChatMsg chatMsg_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

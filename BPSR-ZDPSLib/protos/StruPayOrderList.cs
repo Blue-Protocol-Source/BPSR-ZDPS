@@ -26,22 +26,21 @@ namespace Zproto {
           string.Concat(
             "ChlzdHJ1X3BheV9vcmRlcl9saXN0LnByb3RvEgZ6cHJvdG8aE3N0cnVfcGF5",
             "X2RhdGEucHJvdG8aG3N0cnVfcmVmdW5kX2l0ZW1faW5mby5wcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvIu8DCgxQYXlPcmRlckxpc3QSFgoOcGF5X29y",
-            "ZGVyX2xpc3QYASADKAkSFwoPcGF5X3JlZnVuZF9saXN0GAIgAygJEiIKCWZp",
-            "cnN0X3BheRgDIAEoCzIPLnpwcm90by5QYXlEYXRhEjcKCm9yZGVyX2xpc3QY",
-            "BCADKAsyIy56cHJvdG8uUGF5T3JkZXJMaXN0Lk9yZGVyTGlzdEVudHJ5EkIK",
-            "EG9yZGVyX2luZGV4X2xpc3QYBSADKAsyKC56cHJvdG8uUGF5T3JkZXJMaXN0",
-            "Lk9yZGVySW5kZXhMaXN0RW50cnkSTwoXb3JkZXJfaW5kZXhfcmVmdW5kX2xp",
-            "c3QYBiADKAsyLi56cHJvdG8uUGF5T3JkZXJMaXN0Lk9yZGVySW5kZXhSZWZ1",
-            "bmRMaXN0RW50cnkaMAoOT3JkZXJMaXN0RW50cnkSCwoDa2V5GAEgASgJEg0K",
-            "BXZhbHVlGAIgASgFOgI4ARo1ChNPcmRlckluZGV4TGlzdEVudHJ5EgsKA2tl",
-            "eRgBIAEoAxINCgV2YWx1ZRgCIAEoBToCOAEaUwoZT3JkZXJJbmRleFJlZnVu",
-            "ZExpc3RFbnRyeRILCgNrZXkYASABKAMSJQoFdmFsdWUYAiABKAsyFi56cHJv",
-            "dG8uUmVmdW5kSXRlbUluZm86AjgBYgZwcm90bzM="));
+            "dV9kaXJ0eV9tYXNrLnByb3RvIscDCgxQYXlPcmRlckxpc3QSIgoMcGF5T3Jk",
+            "ZXJMaXN0GAEgAygJUgxwYXlPcmRlckxpc3QSJAoNcGF5UmVmdW5kTGlzdBgC",
+            "IAMoCVINcGF5UmVmdW5kTGlzdBIrCghmaXJzdFBheRgDIAEoCzIPLnpwcm90",
+            "by5QYXlEYXRhUghmaXJzdFBheRJQCg5vcmRlckluZGV4TGlzdBgFIAMoCzIo",
+            "Lnpwcm90by5QYXlPcmRlckxpc3QuT3JkZXJJbmRleExpc3RFbnRyeVIOb3Jk",
+            "ZXJJbmRleExpc3QSYgoUb3JkZXJJbmRleFJlZnVuZExpc3QYBiADKAsyLi56",
+            "cHJvdG8uUGF5T3JkZXJMaXN0Lk9yZGVySW5kZXhSZWZ1bmRMaXN0RW50cnlS",
+            "FG9yZGVySW5kZXhSZWZ1bmRMaXN0GjUKE09yZGVySW5kZXhMaXN0RW50cnkS",
+            "CwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgFOgI4ARpTChlPcmRlckluZGV4",
+            "UmVmdW5kTGlzdEVudHJ5EgsKA2tleRgBIAEoAxIlCgV2YWx1ZRgCIAEoCzIW",
+            "Lnpwcm90by5SZWZ1bmRJdGVtSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPayDataReflection.Descriptor, global::Zproto.StruRefundItemInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PayOrderList), global::Zproto.PayOrderList.Parser, new[]{ "PayOrderList_", "PayRefundList", "FirstPay", "OrderList", "OrderIndexList", "OrderIndexRefundList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PayOrderList), global::Zproto.PayOrderList.Parser, new[]{ "PayOrderList_", "PayRefundList", "FirstPay", "OrderIndexList", "OrderIndexRefundList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -86,7 +85,6 @@ namespace Zproto {
       payOrderList_ = other.payOrderList_.Clone();
       payRefundList_ = other.payRefundList_.Clone();
       firstPay_ = other.firstPay_ != null ? other.firstPay_.Clone() : null;
-      orderList_ = other.orderList_.Clone();
       orderIndexList_ = other.orderIndexList_.Clone();
       orderIndexRefundList_ = other.orderIndexRefundList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -98,7 +96,7 @@ namespace Zproto {
       return new PayOrderList(this);
     }
 
-    /// <summary>Field number for the "pay_order_list" field.</summary>
+    /// <summary>Field number for the "payOrderList" field.</summary>
     public const int PayOrderList_FieldNumber = 1;
     private static readonly pb::FieldCodec<string> _repeated_payOrderList_codec
         = pb::FieldCodec.ForString(10);
@@ -109,7 +107,7 @@ namespace Zproto {
       get { return payOrderList_; }
     }
 
-    /// <summary>Field number for the "pay_refund_list" field.</summary>
+    /// <summary>Field number for the "payRefundList" field.</summary>
     public const int PayRefundListFieldNumber = 2;
     private static readonly pb::FieldCodec<string> _repeated_payRefundList_codec
         = pb::FieldCodec.ForString(18);
@@ -120,7 +118,7 @@ namespace Zproto {
       get { return payRefundList_; }
     }
 
-    /// <summary>Field number for the "first_pay" field.</summary>
+    /// <summary>Field number for the "firstPay" field.</summary>
     public const int FirstPayFieldNumber = 3;
     private global::Zproto.PayData firstPay_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -132,18 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "order_list" field.</summary>
-    public const int OrderListFieldNumber = 4;
-    private static readonly pbc::MapField<string, int>.Codec _map_orderList_codec
-        = new pbc::MapField<string, int>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForInt32(16, 0), 34);
-    private readonly pbc::MapField<string, int> orderList_ = new pbc::MapField<string, int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<string, int> OrderList {
-      get { return orderList_; }
-    }
-
-    /// <summary>Field number for the "order_index_list" field.</summary>
+    /// <summary>Field number for the "orderIndexList" field.</summary>
     public const int OrderIndexListFieldNumber = 5;
     private static readonly pbc::MapField<long, int>.Codec _map_orderIndexList_codec
         = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 42);
@@ -154,7 +141,7 @@ namespace Zproto {
       get { return orderIndexList_; }
     }
 
-    /// <summary>Field number for the "order_index_refund_list" field.</summary>
+    /// <summary>Field number for the "orderIndexRefundList" field.</summary>
     public const int OrderIndexRefundListFieldNumber = 6;
     private static readonly pbc::MapField<long, global::Zproto.RefundItemInfo>.Codec _map_orderIndexRefundList_codec
         = new pbc::MapField<long, global::Zproto.RefundItemInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.RefundItemInfo.Parser), 50);
@@ -183,7 +170,6 @@ namespace Zproto {
       if(!payOrderList_.Equals(other.payOrderList_)) return false;
       if(!payRefundList_.Equals(other.payRefundList_)) return false;
       if (!object.Equals(FirstPay, other.FirstPay)) return false;
-      if (!OrderList.Equals(other.OrderList)) return false;
       if (!OrderIndexList.Equals(other.OrderIndexList)) return false;
       if (!OrderIndexRefundList.Equals(other.OrderIndexRefundList)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -196,7 +182,6 @@ namespace Zproto {
       hash ^= payOrderList_.GetHashCode();
       hash ^= payRefundList_.GetHashCode();
       if (firstPay_ != null) hash ^= FirstPay.GetHashCode();
-      hash ^= OrderList.GetHashCode();
       hash ^= OrderIndexList.GetHashCode();
       hash ^= OrderIndexRefundList.GetHashCode();
       if (_unknownFields != null) {
@@ -223,7 +208,6 @@ namespace Zproto {
         output.WriteRawTag(26);
         output.WriteMessage(FirstPay);
       }
-      orderList_.WriteTo(output, _map_orderList_codec);
       orderIndexList_.WriteTo(output, _map_orderIndexList_codec);
       orderIndexRefundList_.WriteTo(output, _map_orderIndexRefundList_codec);
       if (_unknownFields != null) {
@@ -242,7 +226,6 @@ namespace Zproto {
         output.WriteRawTag(26);
         output.WriteMessage(FirstPay);
       }
-      orderList_.WriteTo(ref output, _map_orderList_codec);
       orderIndexList_.WriteTo(ref output, _map_orderIndexList_codec);
       orderIndexRefundList_.WriteTo(ref output, _map_orderIndexRefundList_codec);
       if (_unknownFields != null) {
@@ -260,7 +243,6 @@ namespace Zproto {
       if (firstPay_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FirstPay);
       }
-      size += orderList_.CalculateSize(_map_orderList_codec);
       size += orderIndexList_.CalculateSize(_map_orderIndexList_codec);
       size += orderIndexRefundList_.CalculateSize(_map_orderIndexRefundList_codec);
       if (_unknownFields != null) {
@@ -283,7 +265,6 @@ namespace Zproto {
         }
         FirstPay.MergeFrom(other.FirstPay);
       }
-      orderList_.MergeFrom(other.orderList_);
       orderIndexList_.MergeFrom(other.orderIndexList_);
       orderIndexRefundList_.MergeFrom(other.orderIndexRefundList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -318,10 +299,6 @@ namespace Zproto {
               FirstPay = new global::Zproto.PayData();
             }
             input.ReadMessage(FirstPay);
-            break;
-          }
-          case 34: {
-            orderList_.AddEntriesFrom(input, _map_orderList_codec);
             break;
           }
           case 42: {
@@ -364,10 +341,6 @@ namespace Zproto {
               FirstPay = new global::Zproto.PayData();
             }
             input.ReadMessage(FirstPay);
-            break;
-          }
-          case 34: {
-            orderList_.AddEntriesFrom(ref input, _map_orderList_codec);
             break;
           }
           case 42: {

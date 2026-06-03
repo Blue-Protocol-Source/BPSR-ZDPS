@@ -25,13 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X3BsYWNlX2hvbGRlcl9zY2VuZV9wb3NpdGlvbi5wcm90bxIGenBy",
-            "b3RvInYKGFBsYWNlSG9sZGVyU2NlbmVQb3NpdGlvbhIQCghzY2VuZV9pZBgB",
-            "IAEoBRIPCgdsaW5lX2lkGAIgASgFEhEKCXBvc2l0aW9ueBgDIAEoBRIRCglw",
-            "b3NpdGlvbnkYBCABKAUSEQoJcG9zaXRpb256GAUgASgFYgZwcm90bzM="));
+            "b3RvIsYBChhQbGFjZUhvbGRlclNjZW5lUG9zaXRpb24SGAoHU2NlbmVJZBgB",
+            "IAEoBVIHU2NlbmVJZBIWCgZMaW5lSWQYAiABKAVSBkxpbmVJZBIcCglQb3Np",
+            "dGlvblgYAyABKAVSCVBvc2l0aW9uWBIcCglQb3NpdGlvblkYBCABKAVSCVBv",
+            "c2l0aW9uWRIcCglQb3NpdGlvbloYBSABKAVSCVBvc2l0aW9uWhIeCgpNYXBM",
+            "YXllcklkGAYgASgFUgpNYXBMYXllcklkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PlaceHolderScenePosition), global::Zproto.PlaceHolderScenePosition.Parser, new[]{ "SceneId", "LineId", "Positionx", "Positiony", "Positionz" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PlaceHolderScenePosition), global::Zproto.PlaceHolderScenePosition.Parser, new[]{ "SceneId", "LineId", "PositionX", "PositionY", "PositionZ", "MapLayerId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,9 +77,10 @@ namespace Zproto {
     public PlaceHolderScenePosition(PlaceHolderScenePosition other) : this() {
       sceneId_ = other.sceneId_;
       lineId_ = other.lineId_;
-      positionx_ = other.positionx_;
-      positiony_ = other.positiony_;
-      positionz_ = other.positionz_;
+      positionX_ = other.positionX_;
+      positionY_ = other.positionY_;
+      positionZ_ = other.positionZ_;
+      mapLayerId_ = other.mapLayerId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,7 +90,7 @@ namespace Zproto {
       return new PlaceHolderScenePosition(this);
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
+    /// <summary>Field number for the "SceneId" field.</summary>
     public const int SceneIdFieldNumber = 1;
     private int sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -99,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "line_id" field.</summary>
+    /// <summary>Field number for the "LineId" field.</summary>
     public const int LineIdFieldNumber = 2;
     private int lineId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,39 +114,51 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "positionx" field.</summary>
-    public const int PositionxFieldNumber = 3;
-    private int positionx_;
+    /// <summary>Field number for the "PositionX" field.</summary>
+    public const int PositionXFieldNumber = 3;
+    private int positionX_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Positionx {
-      get { return positionx_; }
+    public int PositionX {
+      get { return positionX_; }
       set {
-        positionx_ = value;
+        positionX_ = value;
       }
     }
 
-    /// <summary>Field number for the "positiony" field.</summary>
-    public const int PositionyFieldNumber = 4;
-    private int positiony_;
+    /// <summary>Field number for the "PositionY" field.</summary>
+    public const int PositionYFieldNumber = 4;
+    private int positionY_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Positiony {
-      get { return positiony_; }
+    public int PositionY {
+      get { return positionY_; }
       set {
-        positiony_ = value;
+        positionY_ = value;
       }
     }
 
-    /// <summary>Field number for the "positionz" field.</summary>
-    public const int PositionzFieldNumber = 5;
-    private int positionz_;
+    /// <summary>Field number for the "PositionZ" field.</summary>
+    public const int PositionZFieldNumber = 5;
+    private int positionZ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Positionz {
-      get { return positionz_; }
+    public int PositionZ {
+      get { return positionZ_; }
       set {
-        positionz_ = value;
+        positionZ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "MapLayerId" field.</summary>
+    public const int MapLayerIdFieldNumber = 6;
+    private int mapLayerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int MapLayerId {
+      get { return mapLayerId_; }
+      set {
+        mapLayerId_ = value;
       }
     }
 
@@ -164,9 +179,10 @@ namespace Zproto {
       }
       if (SceneId != other.SceneId) return false;
       if (LineId != other.LineId) return false;
-      if (Positionx != other.Positionx) return false;
-      if (Positiony != other.Positiony) return false;
-      if (Positionz != other.Positionz) return false;
+      if (PositionX != other.PositionX) return false;
+      if (PositionY != other.PositionY) return false;
+      if (PositionZ != other.PositionZ) return false;
+      if (MapLayerId != other.MapLayerId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -176,9 +192,10 @@ namespace Zproto {
       int hash = 1;
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (LineId != 0) hash ^= LineId.GetHashCode();
-      if (Positionx != 0) hash ^= Positionx.GetHashCode();
-      if (Positiony != 0) hash ^= Positiony.GetHashCode();
-      if (Positionz != 0) hash ^= Positionz.GetHashCode();
+      if (PositionX != 0) hash ^= PositionX.GetHashCode();
+      if (PositionY != 0) hash ^= PositionY.GetHashCode();
+      if (PositionZ != 0) hash ^= PositionZ.GetHashCode();
+      if (MapLayerId != 0) hash ^= MapLayerId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -205,17 +222,21 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt32(LineId);
       }
-      if (Positionx != 0) {
+      if (PositionX != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(Positionx);
+        output.WriteInt32(PositionX);
       }
-      if (Positiony != 0) {
+      if (PositionY != 0) {
         output.WriteRawTag(32);
-        output.WriteInt32(Positiony);
+        output.WriteInt32(PositionY);
       }
-      if (Positionz != 0) {
+      if (PositionZ != 0) {
         output.WriteRawTag(40);
-        output.WriteInt32(Positionz);
+        output.WriteInt32(PositionZ);
+      }
+      if (MapLayerId != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(MapLayerId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -235,17 +256,21 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt32(LineId);
       }
-      if (Positionx != 0) {
+      if (PositionX != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(Positionx);
+        output.WriteInt32(PositionX);
       }
-      if (Positiony != 0) {
+      if (PositionY != 0) {
         output.WriteRawTag(32);
-        output.WriteInt32(Positiony);
+        output.WriteInt32(PositionY);
       }
-      if (Positionz != 0) {
+      if (PositionZ != 0) {
         output.WriteRawTag(40);
-        output.WriteInt32(Positionz);
+        output.WriteInt32(PositionZ);
+      }
+      if (MapLayerId != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(MapLayerId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -263,14 +288,17 @@ namespace Zproto {
       if (LineId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(LineId);
       }
-      if (Positionx != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Positionx);
+      if (PositionX != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PositionX);
       }
-      if (Positiony != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Positiony);
+      if (PositionY != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PositionY);
       }
-      if (Positionz != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Positionz);
+      if (PositionZ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PositionZ);
+      }
+      if (MapLayerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MapLayerId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -290,14 +318,17 @@ namespace Zproto {
       if (other.LineId != 0) {
         LineId = other.LineId;
       }
-      if (other.Positionx != 0) {
-        Positionx = other.Positionx;
+      if (other.PositionX != 0) {
+        PositionX = other.PositionX;
       }
-      if (other.Positiony != 0) {
-        Positiony = other.Positiony;
+      if (other.PositionY != 0) {
+        PositionY = other.PositionY;
       }
-      if (other.Positionz != 0) {
-        Positionz = other.Positionz;
+      if (other.PositionZ != 0) {
+        PositionZ = other.PositionZ;
+      }
+      if (other.MapLayerId != 0) {
+        MapLayerId = other.MapLayerId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -327,15 +358,19 @@ namespace Zproto {
             break;
           }
           case 24: {
-            Positionx = input.ReadInt32();
+            PositionX = input.ReadInt32();
             break;
           }
           case 32: {
-            Positiony = input.ReadInt32();
+            PositionY = input.ReadInt32();
             break;
           }
           case 40: {
-            Positionz = input.ReadInt32();
+            PositionZ = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            MapLayerId = input.ReadInt32();
             break;
           }
         }
@@ -366,15 +401,19 @@ namespace Zproto {
             break;
           }
           case 24: {
-            Positionx = input.ReadInt32();
+            PositionX = input.ReadInt32();
             break;
           }
           case 32: {
-            Positiony = input.ReadInt32();
+            PositionY = input.ReadInt32();
             break;
           }
           case 40: {
-            Positionz = input.ReadInt32();
+            PositionZ = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            MapLayerId = input.ReadInt32();
             break;
           }
         }

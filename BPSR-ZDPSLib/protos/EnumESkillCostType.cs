@@ -24,10 +24,11 @@ namespace Zproto {
     static EnumESkillCostTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxlbnVtX2Vfc2tpbGxfY29zdF90eXBlLnByb3RvEgZ6cHJvdG8qdAoORVNr",
-            "aWxsQ29zdFR5cGUSEAoMU2tpbGxDb3N0UmVzEAASEQoNU2tpbGxDb3N0QXR0",
-            "chABEhEKDVNraWxsQ29zdEJ1ZmYQAhIRCg1Ta2lsbENvc3RQcm9wEAMSFwoT",
-            "U2tpbGxDb3N0UmVzUGVyY2VudBAEYgZwcm90bzM="));
+            "ChxlbnVtX2Vfc2tpbGxfY29zdF90eXBlLnByb3RvEgZ6cHJvdG8qjgEKDkVT",
+            "a2lsbENvc3RUeXBlEhAKDFNraWxsQ29zdFJlcxAAEhEKDVNraWxsQ29zdEF0",
+            "dHIQARIRCg1Ta2lsbENvc3RCdWZmEAISEQoNU2tpbGxDb3N0UHJvcBADEhcK",
+            "E1NraWxsQ29zdFJlc1BlcmNlbnQQBBIYChRTa2lsbENvc3RBdHRyUGVyY2Vu",
+            "dBAFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.ESkillCostType), }, null, null));
@@ -42,6 +43,7 @@ namespace Zproto {
     [pbr::OriginalName("SkillCostBuff")] SkillCostBuff = 2,
     [pbr::OriginalName("SkillCostProp")] SkillCostProp = 3,
     [pbr::OriginalName("SkillCostResPercent")] SkillCostResPercent = 4,
+    [pbr::OriginalName("SkillCostAttrPercent")] SkillCostAttrPercent = 5,
   }
 
   #endregion

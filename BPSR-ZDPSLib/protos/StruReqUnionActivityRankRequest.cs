@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CipzdHJ1X3JlcV91bmlvbl9hY3Rpdml0eV9yYW5rX3JlcXVlc3QucHJvdG8S",
             "Bnpwcm90bxolZW51bV9lX3VuaW9uX2FjdGl2aXR5X3JhbmtfdHlwZS5wcm90",
-            "byJ3ChtSZXFVbmlvbkFjdGl2aXR5UmFua1JlcXVlc3QSEAoIdW5pb25faWQY",
-            "AiABKAUSEwoLYWN0aXZpdHlfaWQYAyABKAUSMQoJcmFua190eXBlGAQgASgO",
-            "Mh4uenByb3RvLkVVbmlvbkFjdGl2aXR5UmFua1R5cGViBnByb3RvMw=="));
+            "byKTAQobUmVxVW5pb25BY3Rpdml0eVJhbmtSZXF1ZXN0EhgKB3VuaW9uSWQY",
+            "AiABKAVSB3VuaW9uSWQSHgoKYWN0aXZpdHlJZBgDIAEoBVIKYWN0aXZpdHlJ",
+            "ZBI6CghyYW5rVHlwZRgEIAEoDjIeLnpwcm90by5FVW5pb25BY3Rpdml0eVJh",
+            "bmtUeXBlUghyYW5rVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEUnionActivityRankTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new ReqUnionActivityRankRequest(this);
     }
 
-    /// <summary>Field number for the "union_id" field.</summary>
+    /// <summary>Field number for the "unionId" field.</summary>
     public const int UnionIdFieldNumber = 2;
     private int unionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +99,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activity_id" field.</summary>
+    /// <summary>Field number for the "activityId" field.</summary>
     public const int ActivityIdFieldNumber = 3;
     private int activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "rank_type" field.</summary>
+    /// <summary>Field number for the "rankType" field.</summary>
     public const int RankTypeFieldNumber = 4;
     private global::Zproto.EUnionActivityRankType rankType_ = global::Zproto.EUnionActivityRankType.UnionActivityRankTypeNull;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

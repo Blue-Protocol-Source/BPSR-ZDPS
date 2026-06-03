@@ -26,19 +26,22 @@ namespace Zproto {
           string.Concat(
             "ChNzdHJ1X2FjdGl2aXR5LnByb3RvEgZ6cHJvdG8aGXN0cnVfYWN0aXZpdHlf",
             "YXdhcmQucHJvdG8aHGVudW1fZV9hY3Rpdml0eV9zdGF0dXMucHJvdG8aGmVu",
-            "dW1fZV9hY3Rpdml0eV90eXBlLnByb3RvIpcECghBY3Rpdml0eRIVCg1hY3Rp",
-            "dml0eV91dWlkGAEgASgDEhoKEmFjdGl2aXR5X2NvbmZpZ19pZBgCIAEoDRI5",
-            "Cg1hY3Rpdml0eV9uYW1lGAMgAygLMiIuenByb3RvLkFjdGl2aXR5LkFjdGl2",
-            "aXR5TmFtZUVudHJ5EiwKDWFjdGl2aXR5X3R5cGUYBCABKA4yFS56cHJvdG8u",
-            "RUFjdGl2aXR5VHlwZRISCgpzdGFydF90aW1lGAUgASgEEhAKCGVuZF90aW1l",
-            "GAYgASgEEiwKBm5vdGljZRgIIAMoCzIcLnpwcm90by5BY3Rpdml0eS5Ob3Rp",
-            "Y2VFbnRyeRIQCghvcmRlcl9pZBgJIAEoBRInCgZzdGF0dXMYCiABKA4yFy56",
-            "cHJvdG8uRUFjdGl2aXR5U3RhdHVzEjMKCmF3YXJkX2xpc3QYCyADKAsyHy56",
-            "cHJvdG8uQWN0aXZpdHkuQXdhcmRMaXN0RW50cnkaMwoRQWN0aXZpdHlOYW1l",
-            "RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgJOgI4ARotCgtOb3Rp",
-            "Y2VFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAk6AjgBGkcKDkF3",
-            "YXJkTGlzdEVudHJ5EgsKA2tleRgBIAEoBRIkCgV2YWx1ZRgCIAEoCzIVLnpw",
-            "cm90by5BY3Rpdml0eUF3YXJkOgI4AWIGcHJvdG8z"));
+            "dW1fZV9hY3Rpdml0eV90eXBlLnByb3RvIoIFCghBY3Rpdml0eRIiCgxhY3Rp",
+            "dml0eVV1aWQYASABKANSDGFjdGl2aXR5VXVpZBIqChBhY3Rpdml0eUNvbmZp",
+            "Z0lkGAIgASgNUhBhY3Rpdml0eUNvbmZpZ0lkEkYKDGFjdGl2aXR5TmFtZRgD",
+            "IAMoCzIiLnpwcm90by5BY3Rpdml0eS5BY3Rpdml0eU5hbWVFbnRyeVIMYWN0",
+            "aXZpdHlOYW1lEjkKDGFjdGl2aXR5VHlwZRgEIAEoDjIVLnpwcm90by5FQWN0",
+            "aXZpdHlUeXBlUgxhY3Rpdml0eVR5cGUSHAoJc3RhcnRUaW1lGAUgASgEUglz",
+            "dGFydFRpbWUSGAoHZW5kVGltZRgGIAEoBFIHZW5kVGltZRI0CgZub3RpY2UY",
+            "CCADKAsyHC56cHJvdG8uQWN0aXZpdHkuTm90aWNlRW50cnlSBm5vdGljZRIY",
+            "CgdvcmRlcklkGAkgASgFUgdvcmRlcklkEi8KBnN0YXR1cxgKIAEoDjIXLnpw",
+            "cm90by5FQWN0aXZpdHlTdGF0dXNSBnN0YXR1cxI9Cglhd2FyZExpc3QYCyAD",
+            "KAsyHy56cHJvdG8uQWN0aXZpdHkuQXdhcmRMaXN0RW50cnlSCWF3YXJkTGlz",
+            "dBozChFBY3Rpdml0eU5hbWVFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUY",
+            "AiABKAk6AjgBGi0KC05vdGljZUVudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1",
+            "ZRgCIAEoCToCOAEaRwoOQXdhcmRMaXN0RW50cnkSCwoDa2V5GAEgASgFEiQK",
+            "BXZhbHVlGAIgASgLMhUuenByb3RvLkFjdGl2aXR5QXdhcmQ6AjgBYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruActivityAwardReflection.Descriptor, global::Zproto.EnumEActivityStatusReflection.Descriptor, global::Zproto.EnumEActivityTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -103,7 +106,7 @@ namespace Zproto {
       return new Activity(this);
     }
 
-    /// <summary>Field number for the "activity_uuid" field.</summary>
+    /// <summary>Field number for the "activityUuid" field.</summary>
     public const int ActivityUuidFieldNumber = 1;
     private long activityUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activity_config_id" field.</summary>
+    /// <summary>Field number for the "activityConfigId" field.</summary>
     public const int ActivityConfigIdFieldNumber = 2;
     private uint activityConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "activity_name" field.</summary>
+    /// <summary>Field number for the "activityName" field.</summary>
     public const int ActivityNameFieldNumber = 3;
     private static readonly pbc::MapField<int, string>.Codec _map_activityName_codec
         = new pbc::MapField<int, string>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForString(18, ""), 26);
@@ -138,7 +141,7 @@ namespace Zproto {
       get { return activityName_; }
     }
 
-    /// <summary>Field number for the "activity_type" field.</summary>
+    /// <summary>Field number for the "activityType" field.</summary>
     public const int ActivityTypeFieldNumber = 4;
     private global::Zproto.EActivityType activityType_ = global::Zproto.EActivityType.ActivityTypeNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "start_time" field.</summary>
+    /// <summary>Field number for the "startTime" field.</summary>
     public const int StartTimeFieldNumber = 5;
     private ulong startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,7 +165,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
+    /// <summary>Field number for the "endTime" field.</summary>
     public const int EndTimeFieldNumber = 6;
     private ulong endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -185,7 +188,7 @@ namespace Zproto {
       get { return notice_; }
     }
 
-    /// <summary>Field number for the "order_id" field.</summary>
+    /// <summary>Field number for the "orderId" field.</summary>
     public const int OrderIdFieldNumber = 9;
     private int orderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -209,7 +212,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_list" field.</summary>
+    /// <summary>Field number for the "awardList" field.</summary>
     public const int AwardListFieldNumber = 11;
     private static readonly pbc::MapField<int, global::Zproto.ActivityAward>.Codec _map_awardList_codec
         = new pbc::MapField<int, global::Zproto.ActivityAward>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ActivityAward.Parser), 90);

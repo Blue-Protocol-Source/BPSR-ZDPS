@@ -21,7 +21,7 @@ namespace BPSR_ZDPS.Windows
         static bool HasInitBindings = false;
         static bool IsEditMode = false;
         static Vector2? NewCountdownWindowLocation = null;
-        static ulong RenderClearTime = 0;
+        static int CountdownRunOnceDelayed = 0;
 
         static bool HasCountdown = false;
         static DateTime CountdownEnd;
@@ -52,12 +52,16 @@ namespace BPSR_ZDPS.Windows
                 HasInitBindings = true;
 
                 CountdownDisplayClass.ClassId = ImGuiP.ImHashStr("CountdownClass");
-                CountdownDisplayClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost | ImGuiViewportFlags.NoTaskBarIcon | ImGuiViewportFlags.NoInputs | ImGuiViewportFlags.NoRendererClear;
+                CountdownDisplayClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost | ImGuiViewportFlags.NoInputs;// | ImGuiViewportFlags.NoRendererClear;
+                if (!Settings.Instance.WindowSettings.RaidManagerRaidWarning.ShowInTaskBar)
+                {
+                    CountdownDisplayClass.ViewportFlagsOverrideSet |= ImGuiViewportFlags.NoTaskBarIcon;
+                }
 
                 CountdownEditorClass.ClassId = ImGuiP.ImHashStr("CountdownEditorClass");
                 CountdownEditorClass.ViewportFlagsOverrideSet = ImGuiViewportFlags.TopMost;
 
-                ChatManager.OnChatMessage += RaidManager_OnChatMessage; ;
+                ChatManager.OnChatMessage += RaidManager_OnChatMessage;
             }
         }
 
@@ -67,7 +71,7 @@ namespace BPSR_ZDPS.Windows
             {
                 if (Settings.Instance.WindowSettings.RaidManagerCountdown.ChatChannels.Contains(arg2.Channel))
                 {
-                    bool isAllowed = !Settings.Instance.WindowSettings.RaidManagerCountdown.PlayerUIDBlacklist.Contains(arg1.Info.CharId);
+                    bool isAllowed = !Settings.Instance.WindowSettings.RaidManagerCountdown.PlayerUIDBlacklist.Contains(arg1.Info.CharID);
                     if (isAllowed && arg2.Msg.MsgText.StartsWith("/countdown ", StringComparison.OrdinalIgnoreCase) ||
                         arg2.Msg.MsgText.StartsWith("/ct ", StringComparison.OrdinalIgnoreCase))
                     {
@@ -101,6 +105,7 @@ namespace BPSR_ZDPS.Windows
         static void StartCountdown(int seconds)
         {
             CountdownEnd = DateTime.Now.AddSeconds(seconds);
+            CountdownRunOnceDelayed = 0;
             HasCountdown = true;
         }
 
@@ -120,12 +125,6 @@ namespace BPSR_ZDPS.Windows
                 CenterDisplay();
             }
 
-            RenderClearTime++;
-            if (RenderClearTime > 3)
-            {
-                RenderClearTime = 0;
-            }
-
             if (HasCountdown)
             {
                 ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -135,16 +134,8 @@ namespace BPSR_ZDPS.Windows
                 {
                     ImGui.SetNextWindowClass(CountdownDisplayClass);
 
-                    // This is how we force a renderer clear for this window as there doesn't appear to be another way while we're supporting transparency
-                    if (RenderClearTime % 2 == 0)
-                    {
-                        ImGui.SetNextWindowSize(new Vector2(300, 300), ImGuiCond.Always);
-                    }
-                    else
-                    {
-                        ImGui.SetNextWindowSize(new Vector2(300, 301), ImGuiCond.Always);
-                    }
-                    
+                    ImGui.SetNextWindowSize(new Vector2(300, 300), ImGuiCond.Always);
+
                     if (windowSettings.CountdownPosition != new Vector2())
                     {
                         ImGui.SetNextWindowPos(windowSettings.CountdownPosition, ImGuiCond.Appearing);
@@ -156,10 +147,25 @@ namespace BPSR_ZDPS.Windows
                         NewCountdownWindowLocation = null;
                     }
 
-                    if (ImGui.Begin("Countdown", ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoInputs))
+                    ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(1 / 255.0f, 1 / 255.0f, 1 / 255.0f, 0.0f));
+                    ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0);
+                    if (ImGui.Begin("Countdown", ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoInputs | ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoFocusOnAppearing))
                     {
+                        if (CountdownRunOnceDelayed == 0)
+                        {
+                            CountdownRunOnceDelayed++;
+                        }
+                        else if (CountdownRunOnceDelayed <= 2)
+                        {
+                            CountdownRunOnceDelayed++;
+                        }
+                        else if (CountdownRunOnceDelayed < 3)
+                        {
+                            CountdownRunOnceDelayed++;
+                        }
+
                         ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0, 0, 0, 0.0f));
-                        if (ImGui.BeginChild("##CountdownChild", new Vector2(0, 0), ImGuiWindowFlags.NoInputs))
+                        if (ImGui.BeginChild("##CountdownChild", new Vector2(0, 0), ImGuiChildFlags.None, ImGuiWindowFlags.NoInputs))
                         {
                             if (windowSettings.UseStylizedNumbers)
                             {
@@ -198,6 +204,8 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.End();
                     }
+                    ImGui.PopStyleVar();
+                    ImGui.PopStyleColor();
                 }
                 else
                 {
@@ -205,6 +213,10 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.PopID();
+            }
+            else
+            {
+                CountdownRunOnceDelayed = 0;
             }
 
             if (!IsOpened)
@@ -245,6 +257,26 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Indent();
                 ImGui.BeginDisabled(true);
                 ImGui.TextWrapped("When enabled, allows Countdowns to be processed and displayed.");
+                ImGui.EndDisabled();
+                ImGui.Unindent();
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted("Show In Task Bar: ");
+                ImGui.SameLine();
+                if (ImGui.Checkbox("##ShowInTaskBar", ref windowSettings.ShowInTaskBar))
+                {
+                    if (windowSettings.ShowInTaskBar)
+                    {
+                        CountdownDisplayClass.ViewportFlagsOverrideSet &= ~ImGuiViewportFlags.NoTaskBarIcon;
+                    }
+                    else
+                    {
+                        CountdownDisplayClass.ViewportFlagsOverrideSet |= ImGuiViewportFlags.NoTaskBarIcon;
+                    }
+                }
+                ImGui.Indent();
+                ImGui.BeginDisabled(true);
+                ImGui.TextWrapped("Hiding from the Task Bar may prevent screen recording software like OBS from seeing the Countdown window to capture.");
                 ImGui.EndDisabled();
                 ImGui.Unindent();
 
@@ -485,6 +517,7 @@ namespace BPSR_ZDPS.Windows
     public class RaidManagerCountdownWindowSettings : WindowSettingsBase
     {
         public bool AllowCountdowns = true;
+        public bool ShowInTaskBar = false;
         public Vector2 CountdownPosition = new();
         public bool UseStylizedNumbers = true;
         public HashSet<Zproto.ChitChatChannelType> ChatChannels = new() { Zproto.ChitChatChannelType.ChannelTeam };

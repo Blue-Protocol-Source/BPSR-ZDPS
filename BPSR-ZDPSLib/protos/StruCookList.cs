@@ -25,10 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X2Nvb2tfbGlzdC5wcm90bxIGenByb3RvGhRzdHJ1X2Nvb2tfYm9v",
-            "ay5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIoABCghDb29rTGlzdBIx",
-            "Cglib29rX2RhdGEYASADKAsyHi56cHJvdG8uQ29va0xpc3QuQm9va0RhdGFF",
-            "bnRyeRpBCg1Cb29rRGF0YUVudHJ5EgsKA2tleRgBIAEoDRIfCgV2YWx1ZRgC",
-            "IAEoCzIQLnpwcm90by5Db29rQm9vazoCOAFiBnByb3RvMw=="));
+            "ay5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIokBCghDb29rTGlzdBI6",
+            "Cghib29rRGF0YRgBIAMoCzIeLnpwcm90by5Db29rTGlzdC5Cb29rRGF0YUVu",
+            "dHJ5Ughib29rRGF0YRpBCg1Cb29rRGF0YUVudHJ5EgsKA2tleRgBIAEoDRIf",
+            "CgV2YWx1ZRgCIAEoCzIQLnpwcm90by5Db29rQm9vazoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCookBookReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new CookList(this);
     }
 
-    /// <summary>Field number for the "book_data" field.</summary>
+    /// <summary>Field number for the "bookData" field.</summary>
     public const int BookDataFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.CookBook>.Codec _map_bookData_codec
         = new pbc::MapField<uint, global::Zproto.CookBook>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CookBook.Parser), 10);

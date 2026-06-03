@@ -235,26 +235,28 @@ namespace BPSR_ZDPS.Windows
                                         {
                                             trackedSkill.TierCheckTime = DateTime.Now;
                                             System.Diagnostics.Debug.WriteLine($"Checking {trackedEntity.Key} for skill {trackedSkill.SkillId} tiers...");
-                                            var ent = EncounterManager.Current.GetOrCreateEntity(trackedEntity.Key);
-                                            if (ent.SkillMetrics.TryGetValue(trackedSkill.SkillId, out var container))
+                                            if (EncounterManager.Current.Entities.TryGetValue(trackedEntity.Key, out var ent))
                                             {
-                                                int damageTierLevel = container.Damage.TierLevel;
-                                                int healingTierLevel = container.Healing.TierLevel;
-
-                                                trackedSkill.SkillTier = damageTierLevel;
-                                                if (healingTierLevel > damageTierLevel)
+                                                if (ent.SkillMetrics.TryGetValue(trackedSkill.SkillId, out var container))
                                                 {
-                                                    trackedSkill.SkillTier = healingTierLevel;
-                                                }
+                                                    int damageTierLevel = container.Damage.TierLevel;
+                                                    int healingTierLevel = container.Healing.TierLevel;
 
-                                                // Only Imagines currently should have their cooldowns reduced based on Tier level
-                                                if (HelperMethods.DataTables.Skills.Data.TryGetValue(trackedSkill.SkillId.ToString(), out var skill))
-                                                {
-                                                    // Slots 7 and 8 are the Imagine slots
-                                                    if (skill.SlotPositionId != null && (skill.SlotPositionId.Contains(7) || skill.SlotPositionId.Contains(8)))
+                                                    trackedSkill.SkillTier = damageTierLevel;
+                                                    if (healingTierLevel > damageTierLevel)
                                                     {
-                                                        trackedSkill.UpdateEndTimeFromTierLevel(trackedSkill.SkillTier);
-                                                        remainingTime = trackedSkill.GetTimeRemaining();
+                                                        trackedSkill.SkillTier = healingTierLevel;
+                                                    }
+
+                                                    // Only Imagines currently should have their cooldowns reduced based on Tier level
+                                                    if (HelperMethods.DataTables.Skills.Data.TryGetValue(trackedSkill.SkillId.ToString(), out var skill))
+                                                    {
+                                                        // Slots 7 and 8 are the Imagine slots
+                                                        if (skill.SlotPositionId != null && (skill.SlotPositionId.Contains(7) || skill.SlotPositionId.Contains(8)))
+                                                        {
+                                                            trackedSkill.UpdateEndTimeFromTierLevel(trackedSkill.SkillTier);
+                                                            remainingTime = trackedSkill.GetTimeRemaining();
+                                                        }
                                                     }
                                                 }
                                             }

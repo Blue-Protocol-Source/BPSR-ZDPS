@@ -24,10 +24,12 @@ namespace Zproto {
     static StruCommunitySummaryDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFzdHJ1X2NvbW11bml0eV9zdW1tYXJ5X2RhdGEucHJvdG8SBnpwcm90byJ5",
-            "ChRDb21tdW5pdHlTdW1tYXJ5RGF0YRIUCgxjb21tdW5pdHlfaWQYASABKAMS",
-            "EwoLaG9tZWxhbmRfaWQYAiABKAMSEQoJaXNfc2luZ2xlGAMgASgIEiMKG2xh",
-            "c3RfZXhpdF9jb2hhYml0YXRpb25fdGltZRgEIAEoA2IGcHJvdG8z"));
+            "CiFzdHJ1X2NvbW11bml0eV9zdW1tYXJ5X2RhdGEucHJvdG8SBnpwcm90byKw",
+            "AQoUQ29tbXVuaXR5U3VtbWFyeURhdGESIAoLY29tbXVuaXR5SWQYASABKANS",
+            "C2NvbW11bml0eUlkEh4KCmhvbWVsYW5kSWQYAiABKANSCmhvbWVsYW5kSWQS",
+            "GgoIaXNTaW5nbGUYAyABKAhSCGlzU2luZ2xlEjoKGGxhc3RFeGl0Q29oYWJp",
+            "dGF0aW9uVGltZRgEIAEoA1IYbGFzdEV4aXRDb2hhYml0YXRpb25UaW1lYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +88,7 @@ namespace Zproto {
       return new CommunitySummaryData(this);
     }
 
-    /// <summary>Field number for the "community_id" field.</summary>
+    /// <summary>Field number for the "communityId" field.</summary>
     public const int CommunityIdFieldNumber = 1;
     private long communityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +100,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 2;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +112,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_single" field.</summary>
+    /// <summary>Field number for the "isSingle" field.</summary>
     public const int IsSingleFieldNumber = 3;
     private bool isSingle_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,7 +124,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_exit_cohabitation_time" field.</summary>
+    /// <summary>Field number for the "lastExitCohabitationTime" field.</summary>
     public const int LastExitCohabitationTimeFieldNumber = 4;
     private long lastExitCohabitationTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,13 +24,15 @@ namespace Zproto {
     static StruTempPhotoCacheInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3RlbXBfcGhvdG9fY2FjaGVfaW5mby5wcm90bxIGenByb3RvItoB",
-            "ChJ0ZW1wUGhvdG9DYWNoZUluZm8SCgoCaWQYASABKAkSEgoKdGVtcF9waG90",
-            "bxgCIAEoCRIWCg50ZW1wX29yaV9waG90bxgDIAEoCRIYChB0ZW1wX3RodW1i",
-            "X3Bob3RvGAQgASgJEhEKCXNob3RfdGltZRgFIAEoBBIVCg1zaG90X3RpbWVf",
-            "c3RyGAYgASgJEhIKCnNob3RfcGxhY2UYByABKAkSFQoNZGVjb3JhdGVfZGF0",
-            "YRgIIAEoCRIOCgZoZWlnaHQYCSABKA0SDQoFd2lkdGgYCiABKA1iBnByb3Rv",
-            "Mw=="));
+            "CiBzdHJ1X3RlbXBfcGhvdG9fY2FjaGVfaW5mby5wcm90bxIGenByb3RvIrwC",
+            "ChJ0ZW1wUGhvdG9DYWNoZUluZm8SDgoCaWQYASABKAlSAmlkEhwKCXRlbXBQ",
+            "aG90bxgCIAEoCVIJdGVtcFBob3RvEiIKDHRlbXBPcmlQaG90bxgDIAEoCVIM",
+            "dGVtcE9yaVBob3RvEiYKDnRlbXBUaHVtYlBob3RvGAQgASgJUg50ZW1wVGh1",
+            "bWJQaG90bxIaCghzaG90VGltZRgFIAEoBFIIc2hvdFRpbWUSIAoLc2hvdFRp",
+            "bWVTdHIYBiABKAlSC3Nob3RUaW1lU3RyEhwKCXNob3RQbGFjZRgHIAEoCVIJ",
+            "c2hvdFBsYWNlEiIKDGRlY29yYXRlRGF0YRgIIAEoCVIMZGVjb3JhdGVEYXRh",
+            "EhYKBmhlaWdodBgJIAEoDVIGaGVpZ2h0EhQKBXdpZHRoGAogASgNUgV3aWR0",
+            "aGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -107,7 +109,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "temp_photo" field.</summary>
+    /// <summary>Field number for the "tempPhoto" field.</summary>
     public const int TempPhotoFieldNumber = 2;
     private string tempPhoto_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -119,7 +121,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "temp_ori_photo" field.</summary>
+    /// <summary>Field number for the "tempOriPhoto" field.</summary>
     public const int TempOriPhotoFieldNumber = 3;
     private string tempOriPhoto_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,7 +133,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "temp_thumb_photo" field.</summary>
+    /// <summary>Field number for the "tempThumbPhoto" field.</summary>
     public const int TempThumbPhotoFieldNumber = 4;
     private string tempThumbPhoto_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,7 +145,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "shot_time" field.</summary>
+    /// <summary>Field number for the "shotTime" field.</summary>
     public const int ShotTimeFieldNumber = 5;
     private ulong shotTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,7 +157,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "shot_time_str" field.</summary>
+    /// <summary>Field number for the "shotTimeStr" field.</summary>
     public const int ShotTimeStrFieldNumber = 6;
     private string shotTimeStr_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,7 +169,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "shot_place" field.</summary>
+    /// <summary>Field number for the "shotPlace" field.</summary>
     public const int ShotPlaceFieldNumber = 7;
     private string shotPlace_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,7 +181,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "decorate_data" field.</summary>
+    /// <summary>Field number for the "decorateData" field.</summary>
     public const int DecorateDataFieldNumber = 8;
     private string decorateData_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

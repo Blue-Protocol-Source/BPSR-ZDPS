@@ -25,15 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjZzdHJ1X25vdGlmeV9jb21tdW5pdHlfY2xlYW5saW5lc3NfdXBkYXRlX3Jl",
-            "cXVlc3QucHJvdG8SBnpwcm90byKgAQonTm90aWZ5Q29tbXVuaXR5Q2xlYW5s",
-            "aW5lc3NVcGRhdGVSZXF1ZXN0EhcKD25ld19jbGVhbmxpbmVzcxgBIAEoBRIq",
-            "CiJuZXdfbGFzdF9zdWJ0cmFjdF9jbGVhbmxpbmVzc190aW1lGAIgASgDEhcK",
-            "D29sZF9jbGVhbmxpbmVzcxgDIAEoBRIXCg9hY3R1YWxfc3VidHJhY3QYBCAB",
-            "KAViBnByb3RvMw=="));
+            "cXVlc3QucHJvdG8SBnpwcm90byLnAQonTm90aWZ5Q29tbXVuaXR5Q2xlYW5s",
+            "aW5lc3NVcGRhdGVSZXF1ZXN0EiYKDm5ld0NsZWFubGluZXNzGAEgASgFUg5u",
+            "ZXdDbGVhbmxpbmVzcxJECh1uZXdMYXN0U3VidHJhY3RDbGVhbmxpbmVzc1Nl",
+            "YxgCIAEoA1IdbmV3TGFzdFN1YnRyYWN0Q2xlYW5saW5lc3NTZWMSJgoOb2xk",
+            "Q2xlYW5saW5lc3MYAyABKAVSDm9sZENsZWFubGluZXNzEiYKDmFjdHVhbFN1",
+            "YnRyYWN0GAQgASgFUg5hY3R1YWxTdWJ0cmFjdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.NotifyCommunityCleanlinessUpdateRequest), global::Zproto.NotifyCommunityCleanlinessUpdateRequest.Parser, new[]{ "NewCleanliness", "NewLastSubtractCleanlinessTime", "OldCleanliness", "ActualSubtract" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.NotifyCommunityCleanlinessUpdateRequest), global::Zproto.NotifyCommunityCleanlinessUpdateRequest.Parser, new[]{ "NewCleanliness", "NewLastSubtractCleanlinessSec", "OldCleanliness", "ActualSubtract" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,7 +77,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NotifyCommunityCleanlinessUpdateRequest(NotifyCommunityCleanlinessUpdateRequest other) : this() {
       newCleanliness_ = other.newCleanliness_;
-      newLastSubtractCleanlinessTime_ = other.newLastSubtractCleanlinessTime_;
+      newLastSubtractCleanlinessSec_ = other.newLastSubtractCleanlinessSec_;
       oldCleanliness_ = other.oldCleanliness_;
       actualSubtract_ = other.actualSubtract_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -88,7 +89,7 @@ namespace Zproto {
       return new NotifyCommunityCleanlinessUpdateRequest(this);
     }
 
-    /// <summary>Field number for the "new_cleanliness" field.</summary>
+    /// <summary>Field number for the "newCleanliness" field.</summary>
     public const int NewCleanlinessFieldNumber = 1;
     private int newCleanliness_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,19 +101,19 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "new_last_subtract_cleanliness_time" field.</summary>
-    public const int NewLastSubtractCleanlinessTimeFieldNumber = 2;
-    private long newLastSubtractCleanlinessTime_;
+    /// <summary>Field number for the "newLastSubtractCleanlinessSec" field.</summary>
+    public const int NewLastSubtractCleanlinessSecFieldNumber = 2;
+    private long newLastSubtractCleanlinessSec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long NewLastSubtractCleanlinessTime {
-      get { return newLastSubtractCleanlinessTime_; }
+    public long NewLastSubtractCleanlinessSec {
+      get { return newLastSubtractCleanlinessSec_; }
       set {
-        newLastSubtractCleanlinessTime_ = value;
+        newLastSubtractCleanlinessSec_ = value;
       }
     }
 
-    /// <summary>Field number for the "old_cleanliness" field.</summary>
+    /// <summary>Field number for the "oldCleanliness" field.</summary>
     public const int OldCleanlinessFieldNumber = 3;
     private int oldCleanliness_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "actual_subtract" field.</summary>
+    /// <summary>Field number for the "actualSubtract" field.</summary>
     public const int ActualSubtractFieldNumber = 4;
     private int actualSubtract_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,7 +153,7 @@ namespace Zproto {
         return true;
       }
       if (NewCleanliness != other.NewCleanliness) return false;
-      if (NewLastSubtractCleanlinessTime != other.NewLastSubtractCleanlinessTime) return false;
+      if (NewLastSubtractCleanlinessSec != other.NewLastSubtractCleanlinessSec) return false;
       if (OldCleanliness != other.OldCleanliness) return false;
       if (ActualSubtract != other.ActualSubtract) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -163,7 +164,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       if (NewCleanliness != 0) hash ^= NewCleanliness.GetHashCode();
-      if (NewLastSubtractCleanlinessTime != 0L) hash ^= NewLastSubtractCleanlinessTime.GetHashCode();
+      if (NewLastSubtractCleanlinessSec != 0L) hash ^= NewLastSubtractCleanlinessSec.GetHashCode();
       if (OldCleanliness != 0) hash ^= OldCleanliness.GetHashCode();
       if (ActualSubtract != 0) hash ^= ActualSubtract.GetHashCode();
       if (_unknownFields != null) {
@@ -188,9 +189,9 @@ namespace Zproto {
         output.WriteRawTag(8);
         output.WriteInt32(NewCleanliness);
       }
-      if (NewLastSubtractCleanlinessTime != 0L) {
+      if (NewLastSubtractCleanlinessSec != 0L) {
         output.WriteRawTag(16);
-        output.WriteInt64(NewLastSubtractCleanlinessTime);
+        output.WriteInt64(NewLastSubtractCleanlinessSec);
       }
       if (OldCleanliness != 0) {
         output.WriteRawTag(24);
@@ -214,9 +215,9 @@ namespace Zproto {
         output.WriteRawTag(8);
         output.WriteInt32(NewCleanliness);
       }
-      if (NewLastSubtractCleanlinessTime != 0L) {
+      if (NewLastSubtractCleanlinessSec != 0L) {
         output.WriteRawTag(16);
-        output.WriteInt64(NewLastSubtractCleanlinessTime);
+        output.WriteInt64(NewLastSubtractCleanlinessSec);
       }
       if (OldCleanliness != 0) {
         output.WriteRawTag(24);
@@ -239,8 +240,8 @@ namespace Zproto {
       if (NewCleanliness != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(NewCleanliness);
       }
-      if (NewLastSubtractCleanlinessTime != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(NewLastSubtractCleanlinessTime);
+      if (NewLastSubtractCleanlinessSec != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(NewLastSubtractCleanlinessSec);
       }
       if (OldCleanliness != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(OldCleanliness);
@@ -263,8 +264,8 @@ namespace Zproto {
       if (other.NewCleanliness != 0) {
         NewCleanliness = other.NewCleanliness;
       }
-      if (other.NewLastSubtractCleanlinessTime != 0L) {
-        NewLastSubtractCleanlinessTime = other.NewLastSubtractCleanlinessTime;
+      if (other.NewLastSubtractCleanlinessSec != 0L) {
+        NewLastSubtractCleanlinessSec = other.NewLastSubtractCleanlinessSec;
       }
       if (other.OldCleanliness != 0) {
         OldCleanliness = other.OldCleanliness;
@@ -296,7 +297,7 @@ namespace Zproto {
             break;
           }
           case 16: {
-            NewLastSubtractCleanlinessTime = input.ReadInt64();
+            NewLastSubtractCleanlinessSec = input.ReadInt64();
             break;
           }
           case 24: {
@@ -331,7 +332,7 @@ namespace Zproto {
             break;
           }
           case 16: {
-            NewLastSubtractCleanlinessTime = input.ReadInt64();
+            NewLastSubtractCleanlinessSec = input.ReadInt64();
             break;
           }
           case 24: {

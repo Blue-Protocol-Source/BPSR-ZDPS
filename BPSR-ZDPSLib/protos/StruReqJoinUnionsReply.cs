@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CiBzdHJ1X3JlcV9qb2luX3VuaW9uc19yZXBseS5wcm90bxIGenByb3RvGhdl",
             "bnVtX2VfZXJyb3JfY29kZS5wcm90bxoUc3RydV91bmlvbl9yZXQucHJvdG8i",
-            "eAoSUmVxSm9pblVuaW9uc1JlcGx5EiQKCnVuaW9uc19yZXQYASADKAsyEC56",
-            "cHJvdG8uVW5pb25SZXQSFgoObmV4dF9qb2luX3RpbWUYAiABKAMSJAoIZXJy",
-            "X2NvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "lgEKElJlcUpvaW5VbmlvbnNSZXBseRIuCgl1bmlvbnNSZXQYASADKAsyEC56",
+            "cHJvdG8uVW5pb25SZXRSCXVuaW9uc1JldBIiCgxuZXh0Sm9pblRpbWUYAiAB",
+            "KANSDG5leHRKb2luVGltZRIsCgdlcnJDb2RlGAMgASgOMhIuenByb3RvLkVF",
+            "cnJvckNvZGVSB2VyckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionRetReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new ReqJoinUnionsReply(this);
     }
 
-    /// <summary>Field number for the "unions_ret" field.</summary>
+    /// <summary>Field number for the "unionsRet" field.</summary>
     public const int UnionsRetFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.UnionRet> _repeated_unionsRet_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.UnionRet.Parser);
@@ -97,7 +98,7 @@ namespace Zproto {
       get { return unionsRet_; }
     }
 
-    /// <summary>Field number for the "next_join_time" field.</summary>
+    /// <summary>Field number for the "nextJoinTime" field.</summary>
     public const int NextJoinTimeFieldNumber = 2;
     private long nextJoinTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

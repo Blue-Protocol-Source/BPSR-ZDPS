@@ -44,7 +44,8 @@ public class CharBaseInfo : BlobType
     public long? LastOfflineTime;
     public int? DayAccDurTime;
     public long? LastAccDurTimestamp;
-    public long? SaveSerial;
+    //public long? SaveSerial; // Removed
+    public long? LastOnlineTime;
 
     public CharBaseInfo()
     {
@@ -175,8 +176,8 @@ public class CharBaseInfo : BlobType
             case Zproto.CharBaseInfo.LastAccDurTimestampFieldNumber:
                 LastAccDurTimestamp = blob.ReadLong();
                 return true;
-            case Zproto.CharBaseInfo.SaveSerialFieldNumber:
-                SaveSerial = blob.ReadLong();
+            case Zproto.CharBaseInfo.LastOnlineTimeFieldNumber:
+                LastOnlineTime = blob.ReadLong();
                 return true;
             default:
                 return false;

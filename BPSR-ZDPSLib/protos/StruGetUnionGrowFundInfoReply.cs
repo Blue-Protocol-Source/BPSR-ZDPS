@@ -27,10 +27,11 @@ namespace Zproto {
             "CilzdHJ1X2dldF91bmlvbl9ncm93X2Z1bmRfaW5mb19yZXBseS5wcm90bxIG",
             "enByb3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxodc3RydV9ncm93X2Z1",
             "bmRfbWVtX2luZm8ucHJvdG8aG3N0cnVfdW5pb25fY3Jvd2RfZnVuZC5wcm90",
-            "byKiAQoZR2V0VW5pb25Hcm93RnVuZEluZm9SZXBseRIqCgpjcm93ZF9mdW5k",
-            "GAEgASgLMhYuenByb3RvLlVuaW9uQ3Jvd2RGdW5kEjMKEmNyb3dfZnVuY19t",
-            "ZW1fbGlzdBgCIAMoCzIXLnpwcm90by5Hcm93RnVuZE1lbUluZm8SJAoIZXJy",
-            "X2NvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZWIGcHJvdG8z"));
+            "byLCAQoZR2V0VW5pb25Hcm93RnVuZEluZm9SZXBseRI0Cgljcm93ZEZ1bmQY",
+            "ASABKAsyFi56cHJvdG8uVW5pb25Dcm93ZEZ1bmRSCWNyb3dkRnVuZBJBCg9j",
+            "cm93RnVuY01lbUxpc3QYAiADKAsyFy56cHJvdG8uR3Jvd0Z1bmRNZW1JbmZv",
+            "Ug9jcm93RnVuY01lbUxpc3QSLAoHZXJyQ29kZRgDIAEoDjISLnpwcm90by5F",
+            "RXJyb3JDb2RlUgdlcnJDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruGrowFundMemInfoReflection.Descriptor, global::Zproto.StruUnionCrowdFundReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new GetUnionGrowFundInfoReply(this);
     }
 
-    /// <summary>Field number for the "crowd_fund" field.</summary>
+    /// <summary>Field number for the "crowdFund" field.</summary>
     public const int CrowdFundFieldNumber = 1;
     private global::Zproto.UnionCrowdFund crowdFund_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "crow_func_mem_list" field.</summary>
+    /// <summary>Field number for the "crowFuncMemList" field.</summary>
     public const int CrowFuncMemListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Zproto.GrowFundMemInfo> _repeated_crowFuncMemList_codec
         = pb::FieldCodec.ForMessage(18, global::Zproto.GrowFundMemInfo.Parser);
@@ -111,7 +112,7 @@ namespace Zproto {
       get { return crowFuncMemList_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

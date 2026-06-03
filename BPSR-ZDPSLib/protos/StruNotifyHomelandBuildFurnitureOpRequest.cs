@@ -26,11 +26,12 @@ namespace Zproto {
           string.Concat(
             "CjVzdHJ1X25vdGlmeV9ob21lbGFuZF9idWlsZF9mdXJuaXR1cmVfb3BfcmVx",
             "dWVzdC5wcm90bxIGenByb3RvGiRzdHJ1X25vdGlmeV9idWlsZF9mdXJuaXR1",
-            "cmVfb3AucHJvdG8itwEKJU5vdGlmeUhvbWVsYW5kQnVpbGRGdXJuaXR1cmVP",
-            "cFJlcXVlc3QSFAoMY29tbXVuaXR5X2lkGAEgASgDEhMKC2hvbWVsYW5kX2lk",
-            "GAIgASgDEhAKCGlzX291dGVyGAMgASgIEhIKCnNjZW5lX2d1aWQYBCABKAkS",
-            "PQoVYnVpbGRfZnVybml0dXJlX2luZm9zGAUgAygLMh4uenByb3RvLk5vdGlm",
-            "eUJ1aWxkRnVybml0dXJlT3BiBnByb3RvMw=="));
+            "cmVfb3AucHJvdG8i8wEKJU5vdGlmeUhvbWVsYW5kQnVpbGRGdXJuaXR1cmVP",
+            "cFJlcXVlc3QSIAoLY29tbXVuaXR5SWQYASABKANSC2NvbW11bml0eUlkEh4K",
+            "CmhvbWVsYW5kSWQYAiABKANSCmhvbWVsYW5kSWQSGAoHaXNPdXRlchgDIAEo",
+            "CFIHaXNPdXRlchIcCglzY2VuZUd1aWQYBCABKAlSCXNjZW5lR3VpZBJQChNi",
+            "dWlsZEZ1cm5pdHVyZUluZm9zGAUgAygLMh4uenByb3RvLk5vdGlmeUJ1aWxk",
+            "RnVybml0dXJlT3BSE2J1aWxkRnVybml0dXJlSW5mb3NiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruNotifyBuildFurnitureOpReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,7 +91,7 @@ namespace Zproto {
       return new NotifyHomelandBuildFurnitureOpRequest(this);
     }
 
-    /// <summary>Field number for the "community_id" field.</summary>
+    /// <summary>Field number for the "communityId" field.</summary>
     public const int CommunityIdFieldNumber = 1;
     private long communityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -102,7 +103,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "homeland_id" field.</summary>
+    /// <summary>Field number for the "homelandId" field.</summary>
     public const int HomelandIdFieldNumber = 2;
     private long homelandId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_outer" field.</summary>
+    /// <summary>Field number for the "isOuter" field.</summary>
     public const int IsOuterFieldNumber = 3;
     private bool isOuter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,7 +127,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "scene_guid" field.</summary>
+    /// <summary>Field number for the "sceneGuid" field.</summary>
     public const int SceneGuidFieldNumber = 4;
     private string sceneGuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,7 +139,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "build_furniture_infos" field.</summary>
+    /// <summary>Field number for the "buildFurnitureInfos" field.</summary>
     public const int BuildFurnitureInfosFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Zproto.NotifyBuildFurnitureOp> _repeated_buildFurnitureInfos_codec
         = pb::FieldCodec.ForMessage(42, global::Zproto.NotifyBuildFurnitureOp.Parser);

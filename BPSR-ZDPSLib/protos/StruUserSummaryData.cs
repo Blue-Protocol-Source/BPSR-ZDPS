@@ -28,15 +28,17 @@ namespace Zproto {
             "YXZhdGFyX2luZm8ucHJvdG8aFXN0cnVfYmFzaWNfZGF0YS5wcm90bxoUc3Ry",
             "dV9jaGFyX3RlYW0ucHJvdG8aIXN0cnVfY29tbXVuaXR5X3N1bW1hcnlfZGF0",
             "YS5wcm90bxoZc3RydV9wcml2aWxlZ2VfZGF0YS5wcm90bxoac3RydV9wcm9m",
-            "ZXNzaW9uX2RhdGEucHJvdG8aFXN0cnVfdW5pb25fZGF0YS5wcm90byLYAgoP",
-            "VXNlclN1bW1hcnlEYXRhEiUKCmJhc2ljX2RhdGEYASABKAsyES56cHJvdG8u",
-            "QmFzaWNEYXRhEicKC2F2YXRhcl9pbmZvGAIgASgLMhIuenByb3RvLkF2YXRh",
-            "ckluZm8SLwoPcHJvZmVzc2lvbl9kYXRhGAQgASgLMhYuenByb3RvLlByb2Zl",
-            "c3Npb25EYXRhEhMKC2ZpZ2h0X3BvaW50GAUgASgDEiMKCXRlYW1fZGF0YRgG",
-            "IAEoCzIQLnpwcm90by5DaGFyVGVhbRIlCgp1bmlvbl9kYXRhGAcgASgLMhEu",
-            "enByb3RvLlVuaW9uRGF0YRI0Cg5jb21tdW5pdHlfZGF0YRgIIAEoCzIcLnpw",
-            "cm90by5Db21tdW5pdHlTdW1tYXJ5RGF0YRItCg5wcml2aWxlZ2VfZGF0YRgJ",
-            "IAEoCzIVLnpwcm90by5Qcml2aWxlZ2VEYXRhYgZwcm90bzM="));
+            "ZXNzaW9uX2RhdGEucHJvdG8aFXN0cnVfdW5pb25fZGF0YS5wcm90byK2AwoP",
+            "VXNlclN1bW1hcnlEYXRhEi8KCWJhc2ljRGF0YRgBIAEoCzIRLnpwcm90by5C",
+            "YXNpY0RhdGFSCWJhc2ljRGF0YRIyCgphdmF0YXJJbmZvGAIgASgLMhIuenBy",
+            "b3RvLkF2YXRhckluZm9SCmF2YXRhckluZm8SPgoOcHJvZmVzc2lvbkRhdGEY",
+            "BCABKAsyFi56cHJvdG8uUHJvZmVzc2lvbkRhdGFSDnByb2Zlc3Npb25EYXRh",
+            "Eh4KCmZpZ2h0UG9pbnQYBSABKANSCmZpZ2h0UG9pbnQSLAoIdGVhbURhdGEY",
+            "BiABKAsyEC56cHJvdG8uQ2hhclRlYW1SCHRlYW1EYXRhEi8KCXVuaW9uRGF0",
+            "YRgHIAEoCzIRLnpwcm90by5VbmlvbkRhdGFSCXVuaW9uRGF0YRJCCg1jb21t",
+            "dW5pdHlEYXRhGAggASgLMhwuenByb3RvLkNvbW11bml0eVN1bW1hcnlEYXRh",
+            "Ug1jb21tdW5pdHlEYXRhEjsKDXByaXZpbGVnZURhdGEYCSABKAsyFS56cHJv",
+            "dG8uUHJpdmlsZWdlRGF0YVINcHJpdmlsZWdlRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAvatarInfoReflection.Descriptor, global::Zproto.StruBasicDataReflection.Descriptor, global::Zproto.StruCharTeamReflection.Descriptor, global::Zproto.StruCommunitySummaryDataReflection.Descriptor, global::Zproto.StruPrivilegeDataReflection.Descriptor, global::Zproto.StruProfessionDataReflection.Descriptor, global::Zproto.StruUnionDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +101,7 @@ namespace Zproto {
       return new UserSummaryData(this);
     }
 
-    /// <summary>Field number for the "basic_data" field.</summary>
+    /// <summary>Field number for the "basicData" field.</summary>
     public const int BasicDataFieldNumber = 1;
     private global::Zproto.BasicData basicData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -111,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "avatar_info" field.</summary>
+    /// <summary>Field number for the "avatarInfo" field.</summary>
     public const int AvatarInfoFieldNumber = 2;
     private global::Zproto.AvatarInfo avatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "profession_data" field.</summary>
+    /// <summary>Field number for the "professionData" field.</summary>
     public const int ProfessionDataFieldNumber = 4;
     private global::Zproto.ProfessionData professionData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "fight_point" field.</summary>
+    /// <summary>Field number for the "fightPoint" field.</summary>
     public const int FightPointFieldNumber = 5;
     private long fightPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,7 +149,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "team_data" field.</summary>
+    /// <summary>Field number for the "teamData" field.</summary>
     public const int TeamDataFieldNumber = 6;
     private global::Zproto.CharTeam teamData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -159,7 +161,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "union_data" field.</summary>
+    /// <summary>Field number for the "unionData" field.</summary>
     public const int UnionDataFieldNumber = 7;
     private global::Zproto.UnionData unionData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -171,7 +173,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "community_data" field.</summary>
+    /// <summary>Field number for the "communityData" field.</summary>
     public const int CommunityDataFieldNumber = 8;
     private global::Zproto.CommunitySummaryData communityData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -183,7 +185,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "privilege_data" field.</summary>
+    /// <summary>Field number for the "privilegeData" field.</summary>
     public const int PrivilegeDataFieldNumber = 9;
     private global::Zproto.PrivilegeData privilegeData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -21,7 +21,7 @@ namespace BPSR_ZDPS
     {
         private static MainWindow mainWindow;
         private static GLFWwindowPtr window;
-        private static D3D11Manager manager;
+        public static D3D11Manager manager;
 
         static void Main(string[] args)
         {            
@@ -44,9 +44,19 @@ namespace BPSR_ZDPS
 
                 logBuilder = logBuilder.WriteTo.File("ZDPS_log.txt");
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+                if (Settings.Instance.AggressiveExceptionDebugLogging)
+                {
+                    AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
+                }
             }
 
             Log.Logger = logBuilder.CreateLogger();
+
+            if (Settings.Instance.AggressiveExceptionDebugLogging)
+            {
+                Log.Information("Aggressive Exception Debug Logging is Enabled");
+            }
 
             Log.Information($"Starting ZDPS v{Utils.AppVersion}");
 
@@ -97,6 +107,8 @@ namespace BPSR_ZDPS
             // TODO: Do we even actually need this if we use only imgui windows?
             //GLFW.ShowWindow(window);
 
+            RendererImpl.EnableGDIBackBufferCopyCompatibility = Settings.Instance.EnableGDIBackBufferCopyCompatibility;
+
             manager = new(window, false);
 
             HelperMethods.GLFWwindow = window;
@@ -144,6 +156,8 @@ namespace BPSR_ZDPS
                 GLFW.Terminate();
                 return;
             }
+
+            RendererImpl.Init(guiContext);
 
             // Setup resizing.
             unsafe
@@ -220,7 +234,14 @@ namespace BPSR_ZDPS
                 // Double of framerate is controlled in the D3D11Manager by the SwapChain's BufferCount
                 //manager.Present((uint)isMouseDragging ? 0 : 1, 0);
 
+                if (!Settings.Instance.LowPerformanceMode)
+                {
+                    manager.Present(Settings.Instance.FixedFramerateScale, 0);
+                }
+                else
+                {
                 manager.Present(1, 0);
+                }
 
                 if (HelperMethods.DeferredImGuiRenderAction != null)
                 {
@@ -231,6 +252,9 @@ namespace BPSR_ZDPS
 
             Log.Information("ZDPS is beginning exit process.");
 
+            // Stop capturing new data to allow our current states to be their final states
+            MessageManager.StopCapturing();
+
             // Save the current encounter to the database before exiting
             if (EncounterManager.Current != null)
             {
@@ -239,7 +263,6 @@ namespace BPSR_ZDPS
 
             DB.CloseAndSave();
             Settings.Save();
-            MessageManager.StopCapturing();
 
             HotKeyManager.UnregisterAllHotKeys();
             //HotKeyManager.UnregisterHookProc();
@@ -327,6 +350,11 @@ namespace BPSR_ZDPS
             }
 
             Log.Information("ZDPS has cleanly exited.");
+        }
+
+        private static void CurrentDomain_FirstChanceException(object? sender, System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs e)
+        {
+            Log.Error($"First Chance Exception:\n{e.Exception.Message}\nStack Trace:\n{e.Exception.StackTrace}");
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)

@@ -27,12 +27,14 @@ namespace Zproto {
             "ChxzdHJ1X21hdGNoX3BsYXllcl9pbmZvLnByb3RvEgZ6cHJvdG8aH2VudW1f",
             "ZV9tYXRjaF9yZWFkeV9zdGF0dXMucHJvdG8aHGVudW1fZV90YWxlbnRfam9i",
             "X3R5cGUucHJvdG8aIXN0cnVfbWF0Y2hfcGxheWVyX3Nob3dfaW5mby5wcm90",
-            "byLuAQoPTWF0Y2hQbGF5ZXJJbmZvEg8KB2NoYXJfaWQYASABKAMSLwoMcmVh",
-            "ZHlfc3RhdHVzGAIgASgOMhkuenByb3RvLkVNYXRjaFJlYWR5U3RhdHVzEhUK",
-            "DXByb2Zlc3Npb25faWQYAyABKAUSKQoJdGFsZW50X2lkGAQgASgOMhYuenBy",
-            "b3RvLkVUYWxlbnRKb2JUeXBlEhEKCWlzX2Fzc2lzdBgFIAEoCBIOCgZpc19i",
-            "b3QYBiABKAgSNAoPbWF0Y2hfc2hvd19pbmZvGAcgASgLMhsuenByb3RvLk1h",
-            "dGNoUGxheWVyU2hvd0luZm9iBnByb3RvMw=="));
+            "byKzAgoPTWF0Y2hQbGF5ZXJJbmZvEhYKBmNoYXJJZBgBIAEoA1IGY2hhcklk",
+            "EjsKC3JlYWR5U3RhdHVzGAIgASgOMhkuenByb3RvLkVNYXRjaFJlYWR5U3Rh",
+            "dHVzUgtyZWFkeVN0YXR1cxIiCgxwcm9mZXNzaW9uSWQYAyABKAVSDHByb2Zl",
+            "c3Npb25JZBIyCgh0YWxlbnRJZBgEIAEoDjIWLnpwcm90by5FVGFsZW50Sm9i",
+            "VHlwZVIIdGFsZW50SWQSGgoIaXNBc3Npc3QYBSABKAhSCGlzQXNzaXN0EhQK",
+            "BWlzQm90GAYgASgIUgVpc0JvdBJBCg1tYXRjaFNob3dJbmZvGAcgASgLMhsu",
+            "enByb3RvLk1hdGNoUGxheWVyU2hvd0luZm9SDW1hdGNoU2hvd0luZm9iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEMatchReadyStatusReflection.Descriptor, global::Zproto.EnumETalentJobTypeReflection.Descriptor, global::Zproto.StruMatchPlayerShowInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +96,7 @@ namespace Zproto {
       return new MatchPlayerInfo(this);
     }
 
-    /// <summary>Field number for the "char_id" field.</summary>
+    /// <summary>Field number for the "charId" field.</summary>
     public const int CharIdFieldNumber = 1;
     private long charId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -106,7 +108,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "ready_status" field.</summary>
+    /// <summary>Field number for the "readyStatus" field.</summary>
     public const int ReadyStatusFieldNumber = 2;
     private global::Zproto.EMatchReadyStatus readyStatus_ = global::Zproto.EMatchReadyStatus.Wait;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -118,7 +120,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "profession_id" field.</summary>
+    /// <summary>Field number for the "professionId" field.</summary>
     public const int ProfessionIdFieldNumber = 3;
     private int professionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -130,7 +132,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "talent_id" field.</summary>
+    /// <summary>Field number for the "talentId" field.</summary>
     public const int TalentIdFieldNumber = 4;
     private global::Zproto.ETalentJobType talentId_ = global::Zproto.ETalentJobType.TalentJobTypeNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -142,7 +144,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_assist" field.</summary>
+    /// <summary>Field number for the "isAssist" field.</summary>
     public const int IsAssistFieldNumber = 5;
     private bool isAssist_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -154,7 +156,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_bot" field.</summary>
+    /// <summary>Field number for the "isBot" field.</summary>
     public const int IsBotFieldNumber = 6;
     private bool isBot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -166,7 +168,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "match_show_info" field.</summary>
+    /// <summary>Field number for the "matchShowInfo" field.</summary>
     public const int MatchShowInfoFieldNumber = 7;
     private global::Zproto.MatchPlayerShowInfo matchShowInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

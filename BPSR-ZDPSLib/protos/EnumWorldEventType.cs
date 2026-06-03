@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumWorldEventTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtlbnVtX3dvcmxkX2V2ZW50X3R5cGUucHJvdG8SBnpwcm90byrhBAoOV29y",
+            "ChtlbnVtX3dvcmxkX2V2ZW50X3R5cGUucHJvdG8SBnpwcm90byr7BAoOV29y",
             "bGRFdmVudFR5cGUSDQoJQ2hhbmdlQmdtEAASDQoJTm90aWNlVGlwEAESEAoM",
             "Qm9zc0ZpZ2h0Q2FtEAISFAoQRXhpdEJvc3NGaWdodENhbRADEhAKDFBsYXlD",
             "dXRTY2VuZRAEEhAKDFNjcmVlbkVmZmVjdBAFEhEKDU5wY0J1YmJsZUNoYXQQ",
@@ -38,7 +38,8 @@ namespace Zproto {
             "ZRAXEh8KG0NyZWF0ZUNsaWVudEVudGl0aWVzQnlHcm91cBAYEh8KG0RlbGV0",
             "ZUNsaWVudEVudGl0aWVzQnlHcm91cBAZEhcKE1NldEVudGl0eVNoYWRvd0Rh",
             "cmsQGhITCg9QbGF5TGV2ZWxFZmZlY3QQGxIYChROZXh0RHVuZ2VvbkNvdW50",
-            "RG93bhAcEgsKB0Jvc3NEQk0QHWIGcHJvdG8z"));
+            "RG93bhAcEgsKB0Jvc3NEQk0QHRIYChRJbnZva2VDYW1lcmFUZW1wbGF0ZRAe",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.WorldEventType), }, null, null));
@@ -77,6 +78,7 @@ namespace Zproto {
     [pbr::OriginalName("PlayLevelEffect")] PlayLevelEffect = 27,
     [pbr::OriginalName("NextDungeonCountDown")] NextDungeonCountDown = 28,
     [pbr::OriginalName("BossDBM")] BossDbm = 29,
+    [pbr::OriginalName("InvokeCameraTemplate")] InvokeCameraTemplate = 30,
   }
 
   #endregion

@@ -25,24 +25,31 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X3Nob3BfZGF0YS5wcm90bxIGenByb3RvGhxzdHJ1X3BsYXllcl9i",
-            "dXlfcmVjb3JkLnByb3RvGiFzdHJ1X3Nob3BfY29tcGVuc2F0aW9uX2RhdGEu",
-            "cHJvdG8aHnN0cnVfc2hvcF9yZWZyZXNoX3JlY29yZC5wcm90bxoVc3RydV9k",
-            "aXJ0eV9tYXNrLnByb3RvIoIECghTaG9wRGF0YRI3CgxyZWZyZXNoX2xpc3QY",
-            "ASADKAsyIS56cHJvdG8uU2hvcERhdGEuUmVmcmVzaExpc3RFbnRyeRJEChNu",
-            "b3JtYWxfc2hvcF9yZWNvcmRzGAIgAygLMicuenByb3RvLlNob3BEYXRhLk5v",
-            "cm1hbFNob3BSZWNvcmRzRW50cnkSRAoTc2Vhc29uX3Nob3BfcmVjb3JkcxgD",
-            "IAMoCzInLnpwcm90by5TaG9wRGF0YS5TZWFzb25TaG9wUmVjb3Jkc0VudHJ5",
-            "EjwKFmNvbXBlbnNhdGlvbl9pdGVtX2RhdGEYBCABKAsyHC56cHJvdG8uU2hv",
-            "cENvbXBlbnNhdGlvbkRhdGEaTQoQUmVmcmVzaExpc3RFbnRyeRILCgNrZXkY",
-            "ASABKAUSKAoFdmFsdWUYAiABKAsyGS56cHJvdG8uU2hvcFJlZnJlc2hSZWNv",
-            "cmQ6AjgBGlEKFk5vcm1hbFNob3BSZWNvcmRzRW50cnkSCwoDa2V5GAEgASgF",
-            "EiYKBXZhbHVlGAIgASgLMhcuenByb3RvLlBsYXllckJ1eVJlY29yZDoCOAEa",
-            "UQoWU2Vhc29uU2hvcFJlY29yZHNFbnRyeRILCgNrZXkYASABKAUSJgoFdmFs",
-            "dWUYAiABKAsyFy56cHJvdG8uUGxheWVyQnV5UmVjb3JkOgI4AWIGcHJvdG8z"));
+            "dXlfcmVjb3JkLnByb3RvGiNzdHJ1X3Nob3BfYWRkX3VwX2JvdW5kX3JlY29y",
+            "ZC5wcm90bxohc3RydV9zaG9wX2NvbXBlbnNhdGlvbl9kYXRhLnByb3RvGh5z",
+            "dHJ1X3Nob3BfcmVmcmVzaF9yZWNvcmQucHJvdG8aFXN0cnVfZGlydHlfbWFz",
+            "ay5wcm90byLzBQoIU2hvcERhdGESQwoLcmVmcmVzaExpc3QYASADKAsyIS56",
+            "cHJvdG8uU2hvcERhdGEuUmVmcmVzaExpc3RFbnRyeVILcmVmcmVzaExpc3QS",
+            "VQoRbm9ybWFsU2hvcFJlY29yZHMYAiADKAsyJy56cHJvdG8uU2hvcERhdGEu",
+            "Tm9ybWFsU2hvcFJlY29yZHNFbnRyeVIRbm9ybWFsU2hvcFJlY29yZHMSVQoR",
+            "c2Vhc29uU2hvcFJlY29yZHMYAyADKAsyJy56cHJvdG8uU2hvcERhdGEuU2Vh",
+            "c29uU2hvcFJlY29yZHNFbnRyeVIRc2Vhc29uU2hvcFJlY29yZHMSUAoUY29t",
+            "cGVuc2F0aW9uSXRlbURhdGEYBCABKAsyHC56cHJvdG8uU2hvcENvbXBlbnNh",
+            "dGlvbkRhdGFSFGNvbXBlbnNhdGlvbkl0ZW1EYXRhElUKEWFkZFVwQm91bmRS",
+            "ZWNvcmRzGAUgAygLMicuenByb3RvLlNob3BEYXRhLkFkZFVwQm91bmRSZWNv",
+            "cmRzRW50cnlSEWFkZFVwQm91bmRSZWNvcmRzGk0KEFJlZnJlc2hMaXN0RW50",
+            "cnkSCwoDa2V5GAEgASgFEigKBXZhbHVlGAIgASgLMhkuenByb3RvLlNob3BS",
+            "ZWZyZXNoUmVjb3JkOgI4ARpRChZOb3JtYWxTaG9wUmVjb3Jkc0VudHJ5EgsK",
+            "A2tleRgBIAEoBRImCgV2YWx1ZRgCIAEoCzIXLnpwcm90by5QbGF5ZXJCdXlS",
+            "ZWNvcmQ6AjgBGlEKFlNlYXNvblNob3BSZWNvcmRzRW50cnkSCwoDa2V5GAEg",
+            "ASgFEiYKBXZhbHVlGAIgASgLMhcuenByb3RvLlBsYXllckJ1eVJlY29yZDoC",
+            "OAEaVgoWQWRkVXBCb3VuZFJlY29yZHNFbnRyeRILCgNrZXkYASABKAUSKwoF",
+            "dmFsdWUYAiABKAsyHC56cHJvdG8uU2hvcEFkZFVwQm91bmRSZWNvcmQ6AjgB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruPlayerBuyRecordReflection.Descriptor, global::Zproto.StruShopCompensationDataReflection.Descriptor, global::Zproto.StruShopRefreshRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruPlayerBuyRecordReflection.Descriptor, global::Zproto.StruShopAddUpBoundRecordReflection.Descriptor, global::Zproto.StruShopCompensationDataReflection.Descriptor, global::Zproto.StruShopRefreshRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ShopData), global::Zproto.ShopData.Parser, new[]{ "RefreshList", "NormalShopRecords", "SeasonShopRecords", "CompensationItemData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ShopData), global::Zproto.ShopData.Parser, new[]{ "RefreshList", "NormalShopRecords", "SeasonShopRecords", "CompensationItemData", "AddUpBoundRecords" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, })
           }));
     }
     #endregion
@@ -88,6 +95,7 @@ namespace Zproto {
       normalShopRecords_ = other.normalShopRecords_.Clone();
       seasonShopRecords_ = other.seasonShopRecords_.Clone();
       compensationItemData_ = other.compensationItemData_ != null ? other.compensationItemData_.Clone() : null;
+      addUpBoundRecords_ = other.addUpBoundRecords_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,7 +105,7 @@ namespace Zproto {
       return new ShopData(this);
     }
 
-    /// <summary>Field number for the "refresh_list" field.</summary>
+    /// <summary>Field number for the "refreshList" field.</summary>
     public const int RefreshListFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.ShopRefreshRecord>.Codec _map_refreshList_codec
         = new pbc::MapField<int, global::Zproto.ShopRefreshRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ShopRefreshRecord.Parser), 10);
@@ -108,7 +116,7 @@ namespace Zproto {
       get { return refreshList_; }
     }
 
-    /// <summary>Field number for the "normal_shop_records" field.</summary>
+    /// <summary>Field number for the "normalShopRecords" field.</summary>
     public const int NormalShopRecordsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.PlayerBuyRecord>.Codec _map_normalShopRecords_codec
         = new pbc::MapField<int, global::Zproto.PlayerBuyRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.PlayerBuyRecord.Parser), 18);
@@ -119,7 +127,7 @@ namespace Zproto {
       get { return normalShopRecords_; }
     }
 
-    /// <summary>Field number for the "season_shop_records" field.</summary>
+    /// <summary>Field number for the "seasonShopRecords" field.</summary>
     public const int SeasonShopRecordsFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.PlayerBuyRecord>.Codec _map_seasonShopRecords_codec
         = new pbc::MapField<int, global::Zproto.PlayerBuyRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.PlayerBuyRecord.Parser), 26);
@@ -130,7 +138,7 @@ namespace Zproto {
       get { return seasonShopRecords_; }
     }
 
-    /// <summary>Field number for the "compensation_item_data" field.</summary>
+    /// <summary>Field number for the "compensationItemData" field.</summary>
     public const int CompensationItemDataFieldNumber = 4;
     private global::Zproto.ShopCompensationData compensationItemData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,6 +148,17 @@ namespace Zproto {
       set {
         compensationItemData_ = value;
       }
+    }
+
+    /// <summary>Field number for the "addUpBoundRecords" field.</summary>
+    public const int AddUpBoundRecordsFieldNumber = 5;
+    private static readonly pbc::MapField<int, global::Zproto.ShopAddUpBoundRecord>.Codec _map_addUpBoundRecords_codec
+        = new pbc::MapField<int, global::Zproto.ShopAddUpBoundRecord>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.ShopAddUpBoundRecord.Parser), 42);
+    private readonly pbc::MapField<int, global::Zproto.ShopAddUpBoundRecord> addUpBoundRecords_ = new pbc::MapField<int, global::Zproto.ShopAddUpBoundRecord>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<int, global::Zproto.ShopAddUpBoundRecord> AddUpBoundRecords {
+      get { return addUpBoundRecords_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -161,6 +180,7 @@ namespace Zproto {
       if (!NormalShopRecords.Equals(other.NormalShopRecords)) return false;
       if (!SeasonShopRecords.Equals(other.SeasonShopRecords)) return false;
       if (!object.Equals(CompensationItemData, other.CompensationItemData)) return false;
+      if (!AddUpBoundRecords.Equals(other.AddUpBoundRecords)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -172,6 +192,7 @@ namespace Zproto {
       hash ^= NormalShopRecords.GetHashCode();
       hash ^= SeasonShopRecords.GetHashCode();
       if (compensationItemData_ != null) hash ^= CompensationItemData.GetHashCode();
+      hash ^= AddUpBoundRecords.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,6 +218,7 @@ namespace Zproto {
         output.WriteRawTag(34);
         output.WriteMessage(CompensationItemData);
       }
+      addUpBoundRecords_.WriteTo(output, _map_addUpBoundRecords_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -214,6 +236,7 @@ namespace Zproto {
         output.WriteRawTag(34);
         output.WriteMessage(CompensationItemData);
       }
+      addUpBoundRecords_.WriteTo(ref output, _map_addUpBoundRecords_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -230,6 +253,7 @@ namespace Zproto {
       if (compensationItemData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CompensationItemData);
       }
+      size += addUpBoundRecords_.CalculateSize(_map_addUpBoundRecords_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -251,6 +275,7 @@ namespace Zproto {
         }
         CompensationItemData.MergeFrom(other.CompensationItemData);
       }
+      addUpBoundRecords_.MergeFrom(other.addUpBoundRecords_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -289,6 +314,10 @@ namespace Zproto {
             input.ReadMessage(CompensationItemData);
             break;
           }
+          case 42: {
+            addUpBoundRecords_.AddEntriesFrom(input, _map_addUpBoundRecords_codec);
+            break;
+          }
         }
       }
     #endif
@@ -325,6 +354,10 @@ namespace Zproto {
               CompensationItemData = new global::Zproto.ShopCompensationData();
             }
             input.ReadMessage(CompensationItemData);
+            break;
+          }
+          case 42: {
+            addUpBoundRecords_.AddEntriesFrom(ref input, _map_addUpBoundRecords_codec);
             break;
           }
         }

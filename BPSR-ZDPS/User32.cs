@@ -66,6 +66,12 @@ public class User32
     public const long WS_EX_TOPMOST = 0x00000008L;
     public const long WS_EX_TRANSPARENT = 0x00000020L;
     public const long WS_EX_WINDOWEDGE = 0x00000100L;
+    public const int LWA_COLORKEY = 0x1;
+    public const int LWA_ALPHA = 0x2;
+    public const int MONITOR_DEFAULTTONULL = 0;
+    public const int MONITOR_DEFAULTTOPRIMARY = 1;
+    public const int MONITOR_DEFAULTTONEAREST = 2;
+    public const int MONITORINFOF_PRIMARY = 0x00000001;
 
     [StructLayout(LayoutKind.Sequential)]
     public struct RECT
@@ -76,6 +82,29 @@ public class User32
         public int bottom;
     }
 
+    [StructLayout(LayoutKind.Sequential)]
+    public struct MONITORINFO
+    {
+        public int cbSize;
+        public RECT rcMonitor;
+        public RECT rcWork;
+        public uint dwFlags;
+    }
+
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+    public struct MONITORINFOEX
+    {
+        public int cbSize;
+        public RECT rcMonitor;
+        public RECT rcWork;
+        public uint dwFlags;
+
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string szDevice;
+    }
+
+    public static uint COLORREF(byte r, byte g, byte b) => (uint)(r | (g << 8) | (b << 16));
+
     public delegate IntPtr HookProc(int nCode, IntPtr wParam, IntPtr lParam);
 
     [DllImport("user32.dll", SetLastError = true)]
@@ -83,7 +112,10 @@ public class User32
     
     [DllImport("user32.dll")]
     public static extern bool SetForegroundWindow(IntPtr hWnd);
-    
+
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetForegroundWindow();
+
     [DllImport("user32.dll")]
     public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
@@ -134,4 +166,57 @@ public class User32
 
     [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr", SetLastError = true)]
     private static extern IntPtr SetWindowLongPtr64(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+
+    [DllImport("user32.dll")]
+    public static extern bool SetLayeredWindowAttributes(IntPtr hwnd, uint crKey, byte bAlpha, uint dwFlags);
+
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetDC(IntPtr hWnd);
+
+    [DllImport("user32.dll")]
+    public static extern int ReleaseDC(IntPtr hWnd, IntPtr hDC);
+
+    [DllImport("user32.dll")]
+    public static extern IntPtr MonitorFromWindow(IntPtr hwnd, uint dwFlags);
+
+    [DllImport("user32.dll", CharSet = CharSet.Auto)]
+    public static extern bool GetMonitorInfo(IntPtr hMonitor, ref MONITORINFOEX lpmi);
+    [DllImport("user32.dll")]
+    public static extern bool GetMonitorInfo(IntPtr hMonitor, ref MONITORINFO lpmi);
+
+    [DllImport("user32.dll")]
+    public static extern int GetWindowThreadProcessId(IntPtr hWnd, out int lpdwProcessId);
+
+    [DllImport("wpcap.dll", CallingConvention = CallingConvention.Cdecl)]
+    private static extern IntPtr pcap_lib_version();
+
+    public static string GetNpcapVersionString()
+    {
+        try
+        {
+            IntPtr ptr = pcap_lib_version();
+            string versionStr = Marshal.PtrToStringAnsi(ptr);
+            return versionStr;
+        }
+        catch (Exception ex)
+        {
+            return "";
+        }
+    }
+
+    public static Version GetNpcapVersion()
+    {
+        string str = GetNpcapVersionString();
+        if (!string.IsNullOrEmpty(str))
+        {
+            var match = System.Text.RegularExpressions.Regex.Match(str, @"\w+ version (\d+(?:\.\d+)+)", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            if (match.Success)
+            {
+                Version.TryParse(match.Groups[1].Value, out var version);
+                return version;
+            }
+
+        }
+        return new Version();
+    }
 }

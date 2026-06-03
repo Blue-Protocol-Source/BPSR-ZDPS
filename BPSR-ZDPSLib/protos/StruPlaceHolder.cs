@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X3BsYWNlX2hvbGRlci5wcm90bxIGenByb3RvGhxlbnVtX3BsYWNl",
-            "X2hvbGRlcl90eXBlLnByb3RvIksKC1BsYWNlSG9sZGVyEiUKBHR5cGUYASAB",
-            "KA4yFy56cHJvdG8uUGxhY2VIb2xkZXJUeXBlEhUKDWJ5dGVzX2NvbnRlbnQY",
-            "AiABKAxiBnByb3RvMw=="));
+            "X2hvbGRlcl90eXBlLnByb3RvIl4KC1BsYWNlSG9sZGVyEisKBHR5cGUYASAB",
+            "KA4yFy56cHJvdG8uUGxhY2VIb2xkZXJUeXBlUgR0eXBlEiIKDGJ5dGVzQ29u",
+            "dGVudBgCIAEoDFIMYnl0ZXNDb250ZW50YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumPlaceHolderTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "bytes_content" field.</summary>
+    /// <summary>Field number for the "bytesContent" field.</summary>
     public const int BytesContentFieldNumber = 2;
     private pb::ByteString bytesContent_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

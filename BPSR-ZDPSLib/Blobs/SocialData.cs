@@ -15,6 +15,7 @@ public class SocialData : BlobType
     public EquipData? EquipData;
     public SceneData? SceneData;
     public CharTeam? TeamData;
+    public SeasonRankData? SeasonRank;
 
     public SocialData()
     {
@@ -48,6 +49,9 @@ public class SocialData : BlobType
                 return true;
             case Zproto.SocialData.TeamDataFieldNumber:
                 TeamData = new(blob);
+                return true;
+            case Zproto.SocialData.SeasonRankFieldNumber:
+                SeasonRank = new(blob);
                 return true;
             default:
                 return false;

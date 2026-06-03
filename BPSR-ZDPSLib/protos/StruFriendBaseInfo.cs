@@ -26,14 +26,15 @@ namespace Zproto {
           string.Concat(
             "ChtzdHJ1X2ZyaWVuZF9iYXNlX2luZm8ucHJvdG8SBnpwcm90bxobc3RydV9h",
             "cHBsaWNhdGlvbl9pbmZvLnByb3RvGhZzdHJ1X3NvY2lhbF9pbmZvLnByb3Rv",
-            "Is8CCg5GcmllbmRCYXNlSW5mbxI7CgtmcmllbmRfbGlzdBgBIAMoCzImLnpw",
-            "cm90by5GcmllbmRCYXNlSW5mby5GcmllbmRMaXN0RW50cnkSPgoNZ3JvdXBf",
-            "aWRfbGlzdBgDIAMoCzInLnpwcm90by5GcmllbmRCYXNlSW5mby5Hcm91cElk",
-            "TGlzdEVudHJ5EjEKEGFwcGxpY2F0aW9uX2xpc3QYBCADKAsyFy56cHJvdG8u",
-            "QXBwbGljYXRpb25JbmZvEhIKCmdyb3VwX3NvcnQYBSADKAUaRQoPRnJpZW5k",
-            "TGlzdEVudHJ5EgsKA2tleRgBIAEoAxIhCgV2YWx1ZRgCIAEoCzISLnpwcm90",
-            "by5Tb2NpYWxJbmZvOgI4ARoyChBHcm91cElkTGlzdEVudHJ5EgsKA2tleRgB",
-            "IAEoBRINCgV2YWx1ZRgCIAEoCToCOAFiBnByb3RvMw=="));
+            "Iv8CCg5GcmllbmRCYXNlSW5mbxJGCgpmcmllbmRMaXN0GAEgAygLMiYuenBy",
+            "b3RvLkZyaWVuZEJhc2VJbmZvLkZyaWVuZExpc3RFbnRyeVIKZnJpZW5kTGlz",
+            "dBJJCgtncm91cElkTGlzdBgDIAMoCzInLnpwcm90by5GcmllbmRCYXNlSW5m",
+            "by5Hcm91cElkTGlzdEVudHJ5Ugtncm91cElkTGlzdBJBCg9hcHBsaWNhdGlv",
+            "bkxpc3QYBCADKAsyFy56cHJvdG8uQXBwbGljYXRpb25JbmZvUg9hcHBsaWNh",
+            "dGlvbkxpc3QSHAoJZ3JvdXBTb3J0GAUgAygFUglncm91cFNvcnQaRQoPRnJp",
+            "ZW5kTGlzdEVudHJ5EgsKA2tleRgBIAEoAxIhCgV2YWx1ZRgCIAEoCzISLnpw",
+            "cm90by5Tb2NpYWxJbmZvOgI4ARoyChBHcm91cElkTGlzdEVudHJ5EgsKA2tl",
+            "eRgBIAEoBRINCgV2YWx1ZRgCIAEoCToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruApplicationInfoReflection.Descriptor, global::Zproto.StruSocialInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +93,7 @@ namespace Zproto {
       return new FriendBaseInfo(this);
     }
 
-    /// <summary>Field number for the "friend_list" field.</summary>
+    /// <summary>Field number for the "friendList" field.</summary>
     public const int FriendListFieldNumber = 1;
     private static readonly pbc::MapField<long, global::Zproto.SocialInfo>.Codec _map_friendList_codec
         = new pbc::MapField<long, global::Zproto.SocialInfo>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForMessage(18, global::Zproto.SocialInfo.Parser), 10);
@@ -103,7 +104,7 @@ namespace Zproto {
       get { return friendList_; }
     }
 
-    /// <summary>Field number for the "group_id_list" field.</summary>
+    /// <summary>Field number for the "groupIdList" field.</summary>
     public const int GroupIdListFieldNumber = 3;
     private static readonly pbc::MapField<int, string>.Codec _map_groupIdList_codec
         = new pbc::MapField<int, string>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForString(18, ""), 26);
@@ -114,7 +115,7 @@ namespace Zproto {
       get { return groupIdList_; }
     }
 
-    /// <summary>Field number for the "application_list" field.</summary>
+    /// <summary>Field number for the "applicationList" field.</summary>
     public const int ApplicationListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Zproto.ApplicationInfo> _repeated_applicationList_codec
         = pb::FieldCodec.ForMessage(34, global::Zproto.ApplicationInfo.Parser);
@@ -125,7 +126,7 @@ namespace Zproto {
       get { return applicationList_; }
     }
 
-    /// <summary>Field number for the "group_sort" field.</summary>
+    /// <summary>Field number for the "groupSort" field.</summary>
     public const int GroupSortFieldNumber = 5;
     private static readonly pb::FieldCodec<int> _repeated_groupSort_codec
         = pb::FieldCodec.ForInt32(42);

@@ -25,13 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X3RleHRfY2hlY2tfaXRlbV9yZXN1bHQucHJvdG8SBnpwcm90bxoX",
-            "ZW51bV9lX2Vycm9yX2NvZGUucHJvdG8i8wEKE1RleHRDaGVja0l0ZW1SZXN1",
-            "bHQSJAoIZXJyX2NvZGUYASABKA4yEi56cHJvdG8uRUVycm9yQ29kZRIPCgdl",
-            "cnJfbXNnGAIgASgJEhUKDWl0ZW1fZXJyX2NvZGUYAyABKAUSFAoMaXRlbV9l",
-            "cnJfbXNnGAQgASgJEg8KB2NvbnRleHQYBSABKAkSEgoKcmVxdWVzdF9pZBgG",
-            "IAEoCRIZChF0ZXh0X2NoZWNrX3Jlc3VsdBgHIAEoBRIVCg1maWx0ZXJlZF90",
-            "ZXh0GAggASgJEg0KBWxhYmxlGAkgASgFEhIKCmNoZWNrX2Rlc2MYCiABKAli",
-            "BnByb3RvMw=="));
+            "ZW51bV9lX2Vycm9yX2NvZGUucHJvdG8i1wIKE1RleHRDaGVja0l0ZW1SZXN1",
+            "bHQSLAoHZXJyQ29kZRgBIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJD",
+            "b2RlEhYKBmVyck1zZxgCIAEoCVIGZXJyTXNnEiAKC2l0ZW1FcnJDb2RlGAMg",
+            "ASgFUgtpdGVtRXJyQ29kZRIeCgppdGVtRXJyTXNnGAQgASgJUgppdGVtRXJy",
+            "TXNnEhgKB2NvbnRleHQYBSABKAlSB2NvbnRleHQSHAoJcmVxdWVzdElkGAYg",
+            "ASgJUglyZXF1ZXN0SWQSKAoPdGV4dENoZWNrUmVzdWx0GAcgASgFUg90ZXh0",
+            "Q2hlY2tSZXN1bHQSIgoMZmlsdGVyZWRUZXh0GAggASgJUgxmaWx0ZXJlZFRl",
+            "eHQSFAoFbGFibGUYCSABKAVSBWxhYmxlEhwKCWNoZWNrRGVzYxgKIAEoCVIJ",
+            "Y2hlY2tEZXNjYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +98,7 @@ namespace Zproto {
       return new TextCheckItemResult(this);
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 1;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "err_msg" field.</summary>
+    /// <summary>Field number for the "errMsg" field.</summary>
     public const int ErrMsgFieldNumber = 2;
     private string errMsg_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,7 +122,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_err_code" field.</summary>
+    /// <summary>Field number for the "itemErrCode" field.</summary>
     public const int ItemErrCodeFieldNumber = 3;
     private int itemErrCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -132,7 +134,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "item_err_msg" field.</summary>
+    /// <summary>Field number for the "itemErrMsg" field.</summary>
     public const int ItemErrMsgFieldNumber = 4;
     private string itemErrMsg_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -156,7 +158,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "request_id" field.</summary>
+    /// <summary>Field number for the "requestId" field.</summary>
     public const int RequestIdFieldNumber = 6;
     private string requestId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,7 +170,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "text_check_result" field.</summary>
+    /// <summary>Field number for the "textCheckResult" field.</summary>
     public const int TextCheckResultFieldNumber = 7;
     private int textCheckResult_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -180,7 +182,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "filtered_text" field.</summary>
+    /// <summary>Field number for the "filteredText" field.</summary>
     public const int FilteredTextFieldNumber = 8;
     private string filteredText_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -204,7 +206,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "check_desc" field.</summary>
+    /// <summary>Field number for the "checkDesc" field.</summary>
     public const int CheckDescFieldNumber = 10;
     private string checkDesc_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

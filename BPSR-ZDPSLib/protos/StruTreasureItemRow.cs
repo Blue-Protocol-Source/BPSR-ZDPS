@@ -26,14 +26,15 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X3RyZWFzdXJlX2l0ZW1fcm93LnByb3RvEgZ6cHJvdG8aH3N0cnVf",
             "dHJlYXN1cmVfaXRlbV90YXJnZXQucHJvdG8aFXN0cnVfZGlydHlfbWFzay5w",
-            "cm90byLBAgoPVHJlYXN1cmVJdGVtUm93EhEKCWNvbmZpZ19pZBgBIAEoBRI+",
-            "CgxtYWluX3RhcmdldHMYAiADKAsyKC56cHJvdG8uVHJlYXN1cmVJdGVtUm93",
-            "Lk1haW5UYXJnZXRzRW50cnkSPAoLc3ViX3RhcmdldHMYAyADKAsyJy56cHJv",
-            "dG8uVHJlYXN1cmVJdGVtUm93LlN1YlRhcmdldHNFbnRyeRpOChBNYWluVGFy",
-            "Z2V0c0VudHJ5EgsKA2tleRgBIAEoBRIpCgV2YWx1ZRgCIAEoCzIaLnpwcm90",
-            "by5UcmVhc3VyZUl0ZW1UYXJnZXQ6AjgBGk0KD1N1YlRhcmdldHNFbnRyeRIL",
-            "CgNrZXkYASABKAUSKQoFdmFsdWUYAiABKAsyGi56cHJvdG8uVHJlYXN1cmVJ",
-            "dGVtVGFyZ2V0OgI4AWIGcHJvdG8z"));
+            "cm90byLhAgoPVHJlYXN1cmVJdGVtUm93EhoKCGNvbmZpZ0lkGAEgASgFUghj",
+            "b25maWdJZBJKCgttYWluVGFyZ2V0cxgCIAMoCzIoLnpwcm90by5UcmVhc3Vy",
+            "ZUl0ZW1Sb3cuTWFpblRhcmdldHNFbnRyeVILbWFpblRhcmdldHMSRwoKc3Vi",
+            "VGFyZ2V0cxgDIAMoCzInLnpwcm90by5UcmVhc3VyZUl0ZW1Sb3cuU3ViVGFy",
+            "Z2V0c0VudHJ5UgpzdWJUYXJnZXRzGk4KEE1haW5UYXJnZXRzRW50cnkSCwoD",
+            "a2V5GAEgASgFEikKBXZhbHVlGAIgASgLMhouenByb3RvLlRyZWFzdXJlSXRl",
+            "bVRhcmdldDoCOAEaTQoPU3ViVGFyZ2V0c0VudHJ5EgsKA2tleRgBIAEoBRIp",
+            "CgV2YWx1ZRgCIAEoCzIaLnpwcm90by5UcmVhc3VyZUl0ZW1UYXJnZXQ6AjgB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruTreasureItemTargetReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -91,7 +92,7 @@ namespace Zproto {
       return new TreasureItemRow(this);
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
+    /// <summary>Field number for the "configId" field.</summary>
     public const int ConfigIdFieldNumber = 1;
     private int configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -103,7 +104,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "main_targets" field.</summary>
+    /// <summary>Field number for the "mainTargets" field.</summary>
     public const int MainTargetsFieldNumber = 2;
     private static readonly pbc::MapField<int, global::Zproto.TreasureItemTarget>.Codec _map_mainTargets_codec
         = new pbc::MapField<int, global::Zproto.TreasureItemTarget>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.TreasureItemTarget.Parser), 18);
@@ -114,7 +115,7 @@ namespace Zproto {
       get { return mainTargets_; }
     }
 
-    /// <summary>Field number for the "sub_targets" field.</summary>
+    /// <summary>Field number for the "subTargets" field.</summary>
     public const int SubTargetsFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.TreasureItemTarget>.Codec _map_subTargets_codec
         = new pbc::MapField<int, global::Zproto.TreasureItemTarget>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.TreasureItemTarget.Parser), 26);

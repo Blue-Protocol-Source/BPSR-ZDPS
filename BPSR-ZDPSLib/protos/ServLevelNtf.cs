@@ -24,10 +24,11 @@ namespace Zproto {
     static ServLevelNtfReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRzZXJ2X2xldmVsX250Zi5wcm90bxIGenByb3RvIoABCghMZXZlbE50Zho0",
-            "Cg1EaXNwbGF5Qm9zc1VJEhAKCGlzX2VudGVyGAEgASgIEhEKCWJvc3NfdXVp",
-            "ZBgCIAEoAxo+ChlEaXNwbGF5Qm9zc091dE92ZXJkcml2ZVVJEhAKCGlzX2Jy",
-            "ZWFrGAEgASgIEg8KB2lzX3dlYWsYAiABKAhiBnByb3RvMw=="));
+            "ChRzZXJ2X2xldmVsX250Zi5wcm90bxIGenByb3RvIqABCghMZXZlbE50ZhpF",
+            "Cg1EaXNwbGF5Qm9zc1VJEhgKB2lzRW50ZXIYASABKAhSB2lzRW50ZXISGgoI",
+            "Ym9zc1V1aWQYAiABKANSCGJvc3NVdWlkGk0KGURpc3BsYXlCb3NzT3V0T3Zl",
+            "cmRyaXZlVUkSGAoHaXNCcmVhaxgBIAEoCFIHaXNCcmVhaxIWCgZpc1dlYWsY",
+            "AiABKAhSBmlzV2Vha2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -249,7 +250,7 @@ namespace Zproto {
           return new DisplayBossUI(this);
         }
 
-        /// <summary>Field number for the "is_enter" field.</summary>
+        /// <summary>Field number for the "isEnter" field.</summary>
         public const int IsEnterFieldNumber = 1;
         private bool isEnter_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -261,7 +262,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "boss_uuid" field.</summary>
+        /// <summary>Field number for the "bossUuid" field.</summary>
         public const int BossUuidFieldNumber = 2;
         private long bossUuid_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -484,7 +485,7 @@ namespace Zproto {
           return new DisplayBossOutOverdriveUI(this);
         }
 
-        /// <summary>Field number for the "is_break" field.</summary>
+        /// <summary>Field number for the "isBreak" field.</summary>
         public const int IsBreakFieldNumber = 1;
         private bool isBreak_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -496,7 +497,7 @@ namespace Zproto {
           }
         }
 
-        /// <summary>Field number for the "is_weak" field.</summary>
+        /// <summary>Field number for the "isWeak" field.</summary>
         public const int IsWeakFieldNumber = 2;
         private bool isWeak_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

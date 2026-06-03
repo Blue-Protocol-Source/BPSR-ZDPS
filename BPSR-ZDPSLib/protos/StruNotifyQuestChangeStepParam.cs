@@ -25,10 +25,11 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X25vdGlmeV9xdWVzdF9jaGFuZ2Vfc3RlcF9wYXJhbS5wcm90bxIG",
-            "enByb3RvIokBChpOb3RpZnlRdWVzdENoYW5nZVN0ZXBQYXJhbRIQCghxdWVz",
-            "dF9pZBgBIAEoBRIRCglsYXN0X3N0ZXAYAiABKAUSGAoQbGFzdF9zdGVwX3N0",
-            "YXR1cxgDIAEoBRIRCgljdXJyX3NldHAYBCABKAUSGQoRbGFzdF9xdWVzdF9z",
-            "dGF0dXMYBSABKAViBnByb3RvMw=="));
+            "enByb3RvIsABChpOb3RpZnlRdWVzdENoYW5nZVN0ZXBQYXJhbRIYCgdxdWVz",
+            "dElkGAEgASgFUgdxdWVzdElkEhoKCGxhc3RTdGVwGAIgASgFUghsYXN0U3Rl",
+            "cBImCg5sYXN0U3RlcFN0YXR1cxgDIAEoBVIObGFzdFN0ZXBTdGF0dXMSGgoI",
+            "Y3VyclNldHAYBCABKAVSCGN1cnJTZXRwEigKD2xhc3RRdWVzdFN0YXR1cxgF",
+            "IAEoBVIPbGFzdFF1ZXN0U3RhdHVzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new NotifyQuestChangeStepParam(this);
     }
 
-    /// <summary>Field number for the "quest_id" field.</summary>
+    /// <summary>Field number for the "questId" field.</summary>
     public const int QuestIdFieldNumber = 1;
     private int questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_step" field.</summary>
+    /// <summary>Field number for the "lastStep" field.</summary>
     public const int LastStepFieldNumber = 2;
     private int lastStep_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +113,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_step_status" field.</summary>
+    /// <summary>Field number for the "lastStepStatus" field.</summary>
     public const int LastStepStatusFieldNumber = 3;
     private int lastStepStatus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +125,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "curr_setp" field.</summary>
+    /// <summary>Field number for the "currSetp" field.</summary>
     public const int CurrSetpFieldNumber = 4;
     private int currSetp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,7 +137,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_quest_status" field.</summary>
+    /// <summary>Field number for the "lastQuestStatus" field.</summary>
     public const int LastQuestStatusFieldNumber = 5;
     private int lastQuestStatus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

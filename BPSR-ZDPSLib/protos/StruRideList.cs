@@ -27,13 +27,14 @@ namespace Zproto {
             "ChRzdHJ1X3JpZGVfbGlzdC5wcm90bxIGenByb3RvGh9lbnVtX2VfcmlkZV9w",
             "cm9wZXJ0eV90eXBlLnByb3RvGhRzdHJ1X3JpZGVfZGF0YS5wcm90bxoec3Ry",
             "dV9yaWRlX3NraW5fY29udGFpbmVyLnByb3RvGhVzdHJ1X2RpcnR5X21hc2su",
-            "cHJvdG8ingIKCFJpZGVMaXN0EioKBXJpZGVzGAEgAygLMhsuenByb3RvLlJp",
-            "ZGVMaXN0LlJpZGVzRW50cnkSJwoEdHlwZRgCIAEoDjIZLnpwcm90by5FUmlk",
-            "ZVByb3BlcnR5VHlwZRIxCglza2luX2RhdGEYAyADKAsyHi56cHJvdG8uUmlk",
-            "ZUxpc3QuU2tpbkRhdGFFbnRyeRo+CgpSaWRlc0VudHJ5EgsKA2tleRgBIAEo",
-            "BRIfCgV2YWx1ZRgCIAEoCzIQLnpwcm90by5SaWRlRGF0YToCOAEaSgoNU2tp",
-            "bkRhdGFFbnRyeRILCgNrZXkYASABKAUSKAoFdmFsdWUYAiABKAsyGS56cHJv",
-            "dG8uUmlkZVNraW5Db250YWluZXI6AjgBYgZwcm90bzM="));
+            "cHJvdG8itAIKCFJpZGVMaXN0EjEKBXJpZGVzGAEgAygLMhsuenByb3RvLlJp",
+            "ZGVMaXN0LlJpZGVzRW50cnlSBXJpZGVzEi0KBHR5cGUYAiABKA4yGS56cHJv",
+            "dG8uRVJpZGVQcm9wZXJ0eVR5cGVSBHR5cGUSOgoIc2tpbkRhdGEYAyADKAsy",
+            "Hi56cHJvdG8uUmlkZUxpc3QuU2tpbkRhdGFFbnRyeVIIc2tpbkRhdGEaPgoK",
+            "UmlkZXNFbnRyeRILCgNrZXkYASABKAUSHwoFdmFsdWUYAiABKAsyEC56cHJv",
+            "dG8uUmlkZURhdGE6AjgBGkoKDVNraW5EYXRhRW50cnkSCwoDa2V5GAEgASgF",
+            "EigKBXZhbHVlGAIgASgLMhkuenByb3RvLlJpZGVTa2luQ29udGFpbmVyOgI4",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumERidePropertyTypeReflection.Descriptor, global::Zproto.StruRideDataReflection.Descriptor, global::Zproto.StruRideSkinContainerReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -114,7 +115,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skin_data" field.</summary>
+    /// <summary>Field number for the "skinData" field.</summary>
     public const int SkinDataFieldNumber = 3;
     private static readonly pbc::MapField<int, global::Zproto.RideSkinContainer>.Codec _map_skinData_codec
         = new pbc::MapField<int, global::Zproto.RideSkinContainer>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.RideSkinContainer.Parser), 26);

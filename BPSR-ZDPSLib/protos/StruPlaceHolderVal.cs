@@ -24,8 +24,8 @@ namespace Zproto {
     static StruPlaceHolderValReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtzdHJ1X3BsYWNlX2hvbGRlcl92YWwucHJvdG8SBnpwcm90byIfCg5QbGFj",
-            "ZUhvbGRlclZhbBINCgV2YWx1ZRgBIAEoDWIGcHJvdG8z"));
+            "ChtzdHJ1X3BsYWNlX2hvbGRlcl92YWwucHJvdG8SBnpwcm90byImCg5QbGFj",
+            "ZUhvbGRlclZhbBIUCgV2YWx1ZRgBIAEoDVIFdmFsdWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

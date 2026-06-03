@@ -25,9 +25,10 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxzdHJ1X2NvbXBlbnNhdGlvbl9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0cnVf",
-            "ZGlydHlfbWFzay5wcm90byJcChBDb21wZW5zYXRpb25EYXRhEhcKD292ZXJm",
-            "bG93X2VuZXJneRgBIAEoAxIUCgxmaW5pc2hfdGltZXMYAiABKAUSGQoRY2xp",
-            "bWJfdXBfbGF5ZXJfaWQYAyABKAViBnByb3RvMw=="));
+            "ZGlydHlfbWFzay5wcm90byKEAQoQQ29tcGVuc2F0aW9uRGF0YRImCg5vdmVy",
+            "Zmxvd0VuZXJneRgBIAEoA1IOb3ZlcmZsb3dFbmVyZ3kSIAoLZmluaXNoVGlt",
+            "ZXMYAiABKAVSC2ZpbmlzaFRpbWVzEiYKDmNsaW1iVXBMYXllcklkGAMgASgF",
+            "Ug5jbGltYlVwTGF5ZXJJZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new CompensationData(this);
     }
 
-    /// <summary>Field number for the "overflow_energy" field.</summary>
+    /// <summary>Field number for the "overflowEnergy" field.</summary>
     public const int OverflowEnergyFieldNumber = 1;
     private long overflowEnergy_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +98,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "finish_times" field.</summary>
+    /// <summary>Field number for the "finishTimes" field.</summary>
     public const int FinishTimesFieldNumber = 2;
     private int finishTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -109,7 +110,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "climb_up_layer_id" field.</summary>
+    /// <summary>Field number for the "climbUpLayerId" field.</summary>
     public const int ClimbUpLayerIdFieldNumber = 3;
     private int climbUpLayerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

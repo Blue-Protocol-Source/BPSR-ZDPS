@@ -26,13 +26,13 @@ namespace Zproto {
           string.Concat(
             "CjJzdHJ1X25vdGlmeV9hbGxfc291cmNlX3ByaXZpbGVnZV9lZmZlY3RfZGF0",
             "YS5wcm90bxIGenByb3RvGidzdHJ1X3NvdXJjZV9wcml2aWxlZ2VfZWZmZWN0",
-            "X2RhdGEucHJvdG8ihAIKIk5vdGlmeUFsbFNvdXJjZVByaXZpbGVnZUVmZmVj",
-            "dERhdGESdgogYWxsX3NvdXJjZV9wcml2aWxlZ2VfZWZmZWN0c19tYXAYASAD",
-            "KAsyTC56cHJvdG8uTm90aWZ5QWxsU291cmNlUHJpdmlsZWdlRWZmZWN0RGF0",
-            "YS5BbGxTb3VyY2VQcml2aWxlZ2VFZmZlY3RzTWFwRW50cnkaZgohQWxsU291",
-            "cmNlUHJpdmlsZWdlRWZmZWN0c01hcEVudHJ5EgsKA2tleRgBIAEoBRIwCgV2",
-            "YWx1ZRgCIAEoCzIhLnpwcm90by5Tb3VyY2VQcml2aWxlZ2VFZmZlY3REYXRh",
-            "OgI4AWIGcHJvdG8z"));
+            "X2RhdGEucHJvdG8inwIKIk5vdGlmeUFsbFNvdXJjZVByaXZpbGVnZUVmZmVj",
+            "dERhdGESkAEKHGFsbFNvdXJjZVByaXZpbGVnZUVmZmVjdHNNYXAYASADKAsy",
+            "TC56cHJvdG8uTm90aWZ5QWxsU291cmNlUHJpdmlsZWdlRWZmZWN0RGF0YS5B",
+            "bGxTb3VyY2VQcml2aWxlZ2VFZmZlY3RzTWFwRW50cnlSHGFsbFNvdXJjZVBy",
+            "aXZpbGVnZUVmZmVjdHNNYXAaZgohQWxsU291cmNlUHJpdmlsZWdlRWZmZWN0",
+            "c01hcEVudHJ5EgsKA2tleRgBIAEoBRIwCgV2YWx1ZRgCIAEoCzIhLnpwcm90",
+            "by5Tb3VyY2VQcml2aWxlZ2VFZmZlY3REYXRhOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruSourcePrivilegeEffectDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +88,7 @@ namespace Zproto {
       return new NotifyAllSourcePrivilegeEffectData(this);
     }
 
-    /// <summary>Field number for the "all_source_privilege_effects_map" field.</summary>
+    /// <summary>Field number for the "allSourcePrivilegeEffectsMap" field.</summary>
     public const int AllSourcePrivilegeEffectsMapFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Zproto.SourcePrivilegeEffectData>.Codec _map_allSourcePrivilegeEffectsMap_codec
         = new pbc::MapField<int, global::Zproto.SourcePrivilegeEffectData>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.SourcePrivilegeEffectData.Parser), 10);

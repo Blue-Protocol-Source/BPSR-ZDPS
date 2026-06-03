@@ -25,23 +25,30 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRzdHJ1X21haWxfYmFzZS5wcm90bxIGenByb3RvGg9zdHJ1X2l0ZW0ucHJv",
-            "dG8aH3N0cnVfbWFpbF9leHRyYV9jb25kaXRpb24ucHJvdG8aFWVudW1fbWFp",
-            "bF9zdGF0ZS5wcm90bxoUZW51bV9tYWlsX3R5cGUucHJvdG8i2QMKCE1haWxC",
-            "YXNlEhEKCW1haWxfdXVpZBgBIAEoAxIWCg5tYWlsX2NvbmZpZ19pZBgCIAEo",
-            "DRITCgtjcmVhdGVfdGltZRgDIAEoAxIjCgltYWlsX3R5cGUYBCABKA4yEC56",
-            "cHJvdG8uTWFpbFR5cGUSDwoHc2VuZF9pZBgFIAEoAxIRCglzZW5kX25hbWUY",
-            "BiABKAkSEgoKbWFpbF90aXRsZRgHIAEoCRIRCgltYWlsX2JvZHkYCCABKAkS",
-            "EgoKdGltZW91dF9tcxgJIAEoAxIeCghhcHBlbmRpeBgKIAMoCzIMLnpwcm90",
-            "by5JdGVtEiUKCm1haWxfc3RhdGUYCyABKA4yES56cHJvdG8uTWFpbFN0YXRl",
-            "EhMKC3RpdGxlX3ByYW1zGAwgAygJEhIKCmJvZHlfcHJhbXMYDSADKAkSEQoJ",
-            "YWNjZXB0X2lkGA4gASgDEhIKCmltcG9ydGFuY2UYDyABKA0SEQoJYXdhcmRf",
-            "aWRzGBAgAygNEhwKFHJlZ2lzdGVyX2JlZm9yZV90aW1lGBEgASgDEi0KCWNv",
-            "bmRpdGlvbhgSIAEoCzIaLnpwcm90by5NYWlsRXh0cmFDb25kaXRpb24SEgoK",
-            "aXNfY29sbGVjdBgTIAEoCGIGcHJvdG8z"));
+            "dG8aH3N0cnVfbWFpbF9leHRyYV9jb25kaXRpb24ucHJvdG8aIXN0cnVfbWFp",
+            "bF9tdWx0aWxpbmd1YWxfdGV4dC5wcm90bxoVZW51bV9tYWlsX3N0YXRlLnBy",
+            "b3RvGhRlbnVtX21haWxfdHlwZS5wcm90byLnBQoITWFpbEJhc2USGgoIbWFp",
+            "bFV1aWQYASABKANSCG1haWxVdWlkEiIKDG1haWxDb25maWdJZBgCIAEoDVIM",
+            "bWFpbENvbmZpZ0lkEh4KCmNyZWF0ZVRpbWUYAyABKANSCmNyZWF0ZVRpbWUS",
+            "LAoIbWFpbFR5cGUYBCABKA4yEC56cHJvdG8uTWFpbFR5cGVSCG1haWxUeXBl",
+            "EhYKBnNlbmRJZBgFIAEoA1IGc2VuZElkEhoKCHNlbmROYW1lGAYgASgJUghz",
+            "ZW5kTmFtZRIcCgltYWlsVGl0bGUYByABKAlSCW1haWxUaXRsZRIaCghtYWls",
+            "Qm9keRgIIAEoCVIIbWFpbEJvZHkSHAoJdGltZW91dE1zGAkgASgDUgl0aW1l",
+            "b3V0TXMSKAoIYXBwZW5kaXgYCiADKAsyDC56cHJvdG8uSXRlbVIIYXBwZW5k",
+            "aXgSLwoJbWFpbFN0YXRlGAsgASgOMhEuenByb3RvLk1haWxTdGF0ZVIJbWFp",
+            "bFN0YXRlEh4KCnRpdGxlUHJhbXMYDCADKAlSCnRpdGxlUHJhbXMSHAoJYm9k",
+            "eVByYW1zGA0gAygJUglib2R5UHJhbXMSGgoIYWNjZXB0SWQYDiABKANSCGFj",
+            "Y2VwdElkEh4KCmltcG9ydGFuY2UYDyABKA1SCmltcG9ydGFuY2USGgoIYXdh",
+            "cmRJZHMYECADKA1SCGF3YXJkSWRzEi4KElJlZ2lzdGVyQmVmb3JlVGltZRgR",
+            "IAEoA1ISUmVnaXN0ZXJCZWZvcmVUaW1lEjgKCWNvbmRpdGlvbhgSIAEoCzIa",
+            "Lnpwcm90by5NYWlsRXh0cmFDb25kaXRpb25SCWNvbmRpdGlvbhIcCglpc0Nv",
+            "bGxlY3QYEyABKAhSCWlzQ29sbGVjdBJIChBtdWx0aWxpbmd1YWxUZXh0GBQg",
+            "AygLMhwuenByb3RvLk1haWxNdWx0aWxpbmd1YWxUZXh0UhBtdWx0aWxpbmd1",
+            "YWxUZXh0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruMailExtraConditionReflection.Descriptor, global::Zproto.EnumMailStateReflection.Descriptor, global::Zproto.EnumMailTypeReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruItemReflection.Descriptor, global::Zproto.StruMailExtraConditionReflection.Descriptor, global::Zproto.StruMailMultilingualTextReflection.Descriptor, global::Zproto.EnumMailStateReflection.Descriptor, global::Zproto.EnumMailTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.MailBase), global::Zproto.MailBase.Parser, new[]{ "MailUuid", "MailConfigId", "CreateTime", "MailType", "SendId", "SendName", "MailTitle", "MailBody", "TimeoutMs", "Appendix", "MailState", "TitlePrams", "BodyPrams", "AcceptId", "Importance", "AwardIds", "RegisterBeforeTime", "Condition", "IsCollect" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.MailBase), global::Zproto.MailBase.Parser, new[]{ "MailUuid", "MailConfigId", "CreateTime", "MailType", "SendId", "SendName", "MailTitle", "MailBody", "TimeoutMs", "Appendix", "MailState", "TitlePrams", "BodyPrams", "AcceptId", "Importance", "AwardIds", "RegisterBeforeTime", "Condition", "IsCollect", "MultilingualText" }, null, null, null, null)
           }));
     }
     #endregion
@@ -102,6 +109,7 @@ namespace Zproto {
       registerBeforeTime_ = other.registerBeforeTime_;
       condition_ = other.condition_ != null ? other.condition_.Clone() : null;
       isCollect_ = other.isCollect_;
+      multilingualText_ = other.multilingualText_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -111,7 +119,7 @@ namespace Zproto {
       return new MailBase(this);
     }
 
-    /// <summary>Field number for the "mail_uuid" field.</summary>
+    /// <summary>Field number for the "mailUuid" field.</summary>
     public const int MailUuidFieldNumber = 1;
     private long mailUuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +131,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_config_id" field.</summary>
+    /// <summary>Field number for the "mailConfigId" field.</summary>
     public const int MailConfigIdFieldNumber = 2;
     private uint mailConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,7 +143,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "create_time" field.</summary>
+    /// <summary>Field number for the "createTime" field.</summary>
     public const int CreateTimeFieldNumber = 3;
     private long createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,7 +155,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_type" field.</summary>
+    /// <summary>Field number for the "mailType" field.</summary>
     public const int MailTypeFieldNumber = 4;
     private global::Zproto.MailType mailType_ = global::Zproto.MailType.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -159,7 +167,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "send_id" field.</summary>
+    /// <summary>Field number for the "sendId" field.</summary>
     public const int SendIdFieldNumber = 5;
     private long sendId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -171,7 +179,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "send_name" field.</summary>
+    /// <summary>Field number for the "sendName" field.</summary>
     public const int SendNameFieldNumber = 6;
     private string sendName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -183,7 +191,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_title" field.</summary>
+    /// <summary>Field number for the "mailTitle" field.</summary>
     public const int MailTitleFieldNumber = 7;
     private string mailTitle_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -195,7 +203,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mail_body" field.</summary>
+    /// <summary>Field number for the "mailBody" field.</summary>
     public const int MailBodyFieldNumber = 8;
     private string mailBody_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -207,7 +215,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "timeout_ms" field.</summary>
+    /// <summary>Field number for the "timeoutMs" field.</summary>
     public const int TimeoutMsFieldNumber = 9;
     private long timeoutMs_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -230,7 +238,7 @@ namespace Zproto {
       get { return appendix_; }
     }
 
-    /// <summary>Field number for the "mail_state" field.</summary>
+    /// <summary>Field number for the "mailState" field.</summary>
     public const int MailStateFieldNumber = 11;
     private global::Zproto.MailState mailState_ = global::Zproto.MailState.Null;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -242,7 +250,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "title_prams" field.</summary>
+    /// <summary>Field number for the "titlePrams" field.</summary>
     public const int TitlePramsFieldNumber = 12;
     private static readonly pb::FieldCodec<string> _repeated_titlePrams_codec
         = pb::FieldCodec.ForString(98);
@@ -253,7 +261,7 @@ namespace Zproto {
       get { return titlePrams_; }
     }
 
-    /// <summary>Field number for the "body_prams" field.</summary>
+    /// <summary>Field number for the "bodyPrams" field.</summary>
     public const int BodyPramsFieldNumber = 13;
     private static readonly pb::FieldCodec<string> _repeated_bodyPrams_codec
         = pb::FieldCodec.ForString(106);
@@ -264,7 +272,7 @@ namespace Zproto {
       get { return bodyPrams_; }
     }
 
-    /// <summary>Field number for the "accept_id" field.</summary>
+    /// <summary>Field number for the "acceptId" field.</summary>
     public const int AcceptIdFieldNumber = 14;
     private long acceptId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -288,7 +296,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "award_ids" field.</summary>
+    /// <summary>Field number for the "awardIds" field.</summary>
     public const int AwardIdsFieldNumber = 16;
     private static readonly pb::FieldCodec<uint> _repeated_awardIds_codec
         = pb::FieldCodec.ForUInt32(130);
@@ -299,7 +307,7 @@ namespace Zproto {
       get { return awardIds_; }
     }
 
-    /// <summary>Field number for the "register_before_time" field.</summary>
+    /// <summary>Field number for the "RegisterBeforeTime" field.</summary>
     public const int RegisterBeforeTimeFieldNumber = 17;
     private long registerBeforeTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -323,7 +331,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_collect" field.</summary>
+    /// <summary>Field number for the "isCollect" field.</summary>
     public const int IsCollectFieldNumber = 19;
     private bool isCollect_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -333,6 +341,17 @@ namespace Zproto {
       set {
         isCollect_ = value;
       }
+    }
+
+    /// <summary>Field number for the "multilingualText" field.</summary>
+    public const int MultilingualTextFieldNumber = 20;
+    private static readonly pb::FieldCodec<global::Zproto.MailMultilingualText> _repeated_multilingualText_codec
+        = pb::FieldCodec.ForMessage(162, global::Zproto.MailMultilingualText.Parser);
+    private readonly pbc::RepeatedField<global::Zproto.MailMultilingualText> multilingualText_ = new pbc::RepeatedField<global::Zproto.MailMultilingualText>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Zproto.MailMultilingualText> MultilingualText {
+      get { return multilingualText_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -369,6 +388,7 @@ namespace Zproto {
       if (RegisterBeforeTime != other.RegisterBeforeTime) return false;
       if (!object.Equals(Condition, other.Condition)) return false;
       if (IsCollect != other.IsCollect) return false;
+      if(!multilingualText_.Equals(other.multilingualText_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -395,6 +415,7 @@ namespace Zproto {
       if (RegisterBeforeTime != 0L) hash ^= RegisterBeforeTime.GetHashCode();
       if (condition_ != null) hash ^= Condition.GetHashCode();
       if (IsCollect != false) hash ^= IsCollect.GetHashCode();
+      hash ^= multilingualText_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -477,6 +498,7 @@ namespace Zproto {
         output.WriteRawTag(152, 1);
         output.WriteBool(IsCollect);
       }
+      multilingualText_.WriteTo(output, _repeated_multilingualText_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -551,6 +573,7 @@ namespace Zproto {
         output.WriteRawTag(152, 1);
         output.WriteBool(IsCollect);
       }
+      multilingualText_.WriteTo(ref output, _repeated_multilingualText_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -610,6 +633,7 @@ namespace Zproto {
       if (IsCollect != false) {
         size += 2 + 1;
       }
+      size += multilingualText_.CalculateSize(_repeated_multilingualText_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -674,6 +698,7 @@ namespace Zproto {
       if (other.IsCollect != false) {
         IsCollect = other.IsCollect;
       }
+      multilingualText_.Add(other.multilingualText_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -773,6 +798,10 @@ namespace Zproto {
             IsCollect = input.ReadBool();
             break;
           }
+          case 162: {
+            multilingualText_.AddEntriesFrom(input, _repeated_multilingualText_codec);
+            break;
+          }
         }
       }
     #endif
@@ -870,6 +899,10 @@ namespace Zproto {
           }
           case 152: {
             IsCollect = input.ReadBool();
+            break;
+          }
+          case 162: {
+            multilingualText_.AddEntriesFrom(ref input, _repeated_multilingualText_codec);
             break;
           }
         }

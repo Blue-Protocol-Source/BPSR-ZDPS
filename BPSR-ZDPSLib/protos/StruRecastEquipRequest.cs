@@ -24,9 +24,10 @@ namespace Zproto {
     static StruRecastEquipRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9zdHJ1X3JlY2FzdF9lcXVpcF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8iUAoS",
-            "UmVjYXN0RXF1aXBSZXF1ZXN0EgwKBHV1aWQYASABKAQSFAoMY29uc3VtZV91",
-            "dWlkGAIgAygEEhYKDml0ZW1fY29uZmlnX2lkGAMgASgFYgZwcm90bzM="));
+            "Ch9zdHJ1X3JlY2FzdF9lcXVpcF9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8ibgoS",
+            "UmVjYXN0RXF1aXBSZXF1ZXN0EhIKBHV1aWQYASABKARSBHV1aWQSIAoLY29u",
+            "c3VtZVV1aWQYAiADKARSC2NvbnN1bWVVdWlkEiIKDGl0ZW1Db25maWdJZBgD",
+            "IAEoBVIMaXRlbUNvbmZpZ0lkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +97,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "consume_uuid" field.</summary>
+    /// <summary>Field number for the "consumeUuid" field.</summary>
     public const int ConsumeUuidFieldNumber = 2;
     private static readonly pb::FieldCodec<ulong> _repeated_consumeUuid_codec
         = pb::FieldCodec.ForUInt64(18);
@@ -107,7 +108,7 @@ namespace Zproto {
       get { return consumeUuid_; }
     }
 
-    /// <summary>Field number for the "item_config_id" field.</summary>
+    /// <summary>Field number for the "itemConfigId" field.</summary>
     public const int ItemConfigIdFieldNumber = 3;
     private int itemConfigId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

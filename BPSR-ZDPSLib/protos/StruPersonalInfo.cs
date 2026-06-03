@@ -24,10 +24,11 @@ namespace Zproto {
     static StruPersonalInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhzdHJ1X3BlcnNvbmFsX2luZm8ucHJvdG8SBnpwcm90byJhCgxQZXJzb25h",
-            "bEluZm8SFwoPc2hvd2luZ19waWN0dXJlGAEgASgJEhEKCXNpZ25hdHVyZRgC",
-            "IAEoCRISCgpob2JieV9tYXJrGAMgAygFEhEKCXRpbWVfbWFyaxgEIAMoBWIG",
-            "cHJvdG8z"));
+            "ChhzdHJ1X3BlcnNvbmFsX2luZm8ucHJvdG8SBnpwcm90byKOAQoMUGVyc29u",
+            "YWxJbmZvEiYKDnNob3dpbmdQaWN0dXJlGAEgASgJUg5zaG93aW5nUGljdHVy",
+            "ZRIcCglzaWduYXR1cmUYAiABKAlSCXNpZ25hdHVyZRIcCglob2JieU1hcmsY",
+            "AyADKAVSCWhvYmJ5TWFyaxIaCgh0aW1lTWFyaxgEIAMoBVIIdGltZU1hcmti",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Zproto {
       return new PersonalInfo(this);
     }
 
-    /// <summary>Field number for the "showing_picture" field.</summary>
+    /// <summary>Field number for the "showingPicture" field.</summary>
     public const int ShowingPictureFieldNumber = 1;
     private string showingPicture_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -110,7 +111,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "hobby_mark" field.</summary>
+    /// <summary>Field number for the "hobbyMark" field.</summary>
     public const int HobbyMarkFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_hobbyMark_codec
         = pb::FieldCodec.ForInt32(26);
@@ -121,7 +122,7 @@ namespace Zproto {
       get { return hobbyMark_; }
     }
 
-    /// <summary>Field number for the "time_mark" field.</summary>
+    /// <summary>Field number for the "timeMark" field.</summary>
     public const int TimeMarkFieldNumber = 4;
     private static readonly pb::FieldCodec<int> _repeated_timeMark_codec
         = pb::FieldCodec.ForInt32(34);

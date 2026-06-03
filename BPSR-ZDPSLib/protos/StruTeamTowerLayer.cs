@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3RlYW1fdG93ZXJfbGF5ZXIucHJvdG8SBnpwcm90bxoXZW51bV9l",
-            "X2Vycm9yX2NvZGUucHJvdG8i0wEKDlRlYW1Ub3dlckxheWVyEhkKEWVudGVy",
-            "X2NsaW1iX3VwX2lkGAEgASgFEkgKE21lbV9pZF9tYXhfY2xpbWJfaWQYAiAD",
-            "KAsyKy56cHJvdG8uVGVhbVRvd2VyTGF5ZXIuTWVtSWRNYXhDbGltYklkRW50",
-            "cnkSJAoIZXJyX2NvZGUYAyABKA4yEi56cHJvdG8uRUVycm9yQ29kZRo2ChRN",
-            "ZW1JZE1heENsaW1iSWRFbnRyeRILCgNrZXkYASABKAMSDQoFdmFsdWUYAiAB",
-            "KAU6AjgBYgZwcm90bzM="));
+            "X2Vycm9yX2NvZGUucHJvdG8i9QEKDlRlYW1Ub3dlckxheWVyEiYKDmVudGVy",
+            "Q2xpbWJVcElkGAEgASgFUg5lbnRlckNsaW1iVXBJZBJVCg9tZW1JZE1heENs",
+            "aW1iSWQYAiADKAsyKy56cHJvdG8uVGVhbVRvd2VyTGF5ZXIuTWVtSWRNYXhD",
+            "bGltYklkRW50cnlSD21lbUlkTWF4Q2xpbWJJZBIsCgdlcnJDb2RlGAMgASgO",
+            "MhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNvZGUaNgoUTWVtSWRNYXhDbGlt",
+            "YklkRW50cnkSCwoDa2V5GAEgASgDEg0KBXZhbHVlGAIgASgFOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,7 +89,7 @@ namespace Zproto {
       return new TeamTowerLayer(this);
     }
 
-    /// <summary>Field number for the "enter_climb_up_id" field.</summary>
+    /// <summary>Field number for the "enterClimbUpId" field.</summary>
     public const int EnterClimbUpIdFieldNumber = 1;
     private int enterClimbUpId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,7 +101,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "mem_id_max_climb_id" field.</summary>
+    /// <summary>Field number for the "memIdMaxClimbId" field.</summary>
     public const int MemIdMaxClimbIdFieldNumber = 2;
     private static readonly pbc::MapField<long, int>.Codec _map_memIdMaxClimbId_codec
         = new pbc::MapField<long, int>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt32(16, 0), 18);
@@ -111,7 +112,7 @@ namespace Zproto {
       get { return memIdMaxClimbId_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 3;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

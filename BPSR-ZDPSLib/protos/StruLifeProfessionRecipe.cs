@@ -25,8 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X2xpZmVfcHJvZmVzc2lvbl9yZWNpcGUucHJvdG8SBnpwcm90bxoV",
-            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIjcKFExpZmVQcm9mZXNzaW9uUmVjaXBl",
-            "EgoKAmlkGAEgASgFEhMKC3VubG9ja190aW1lGAIgASgDYgZwcm90bzM="));
+            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIkYKFExpZmVQcm9mZXNzaW9uUmVjaXBl",
+            "Eg4KAmlkGAEgASgFUgJpZBIeCgp1bmxvY2tUaW1lGAIgASgDUgp1bmxvY2tU",
+            "aW1lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -95,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "unlock_time" field.</summary>
+    /// <summary>Field number for the "unlockTime" field.</summary>
     public const int UnlockTimeFieldNumber = 2;
     private long unlockTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

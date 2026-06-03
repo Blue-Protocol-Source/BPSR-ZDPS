@@ -26,15 +26,16 @@ namespace Zproto {
           string.Concat(
             "CiJzdHJ1X2NvbXBlbnNhdGlvbl9zdGF0aXN0aWNzLnByb3RvEgZ6cHJvdG8a",
             "KXN0cnVfY29tcGVuc2F0aW9uX3NlYXNvbl9zdGF0aXN0aWNzLnByb3RvGhVz",
-            "dHJ1X2RpcnR5X21hc2sucHJvdG8i5gIKFkNvbXBlbnNhdGlvblN0YXRpc3Rp",
-            "Y3MSQwoLc2Vhc29uX2RhdGEYASADKAsyLi56cHJvdG8uQ29tcGVuc2F0aW9u",
-            "U3RhdGlzdGljcy5TZWFzb25EYXRhRW50cnkSFgoObGFzdF9zZWFzb25faWQY",
-            "AiABKA0SEQoJY3VyX3BvaW50GAMgASgDEhEKCW1heF9wb2ludBgEIAEoAxI/",
-            "CglsYXN0X3dlZWsYBSADKAsyLC56cHJvdG8uQ29tcGVuc2F0aW9uU3RhdGlz",
-            "dGljcy5MYXN0V2Vla0VudHJ5GlcKD1NlYXNvbkRhdGFFbnRyeRILCgNrZXkY",
-            "ASABKA0SMwoFdmFsdWUYAiABKAsyJC56cHJvdG8uQ29tcGVuc2F0aW9uU2Vh",
-            "c29uU3RhdGlzdGljczoCOAEaLwoNTGFzdFdlZWtFbnRyeRILCgNrZXkYASAB",
-            "KA0SDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
+            "dHJ1X2RpcnR5X21hc2sucHJvdG8imAMKFkNvbXBlbnNhdGlvblN0YXRpc3Rp",
+            "Y3MSTgoKc2Vhc29uRGF0YRgBIAMoCzIuLnpwcm90by5Db21wZW5zYXRpb25T",
+            "dGF0aXN0aWNzLlNlYXNvbkRhdGFFbnRyeVIKc2Vhc29uRGF0YRIiCgxsYXN0",
+            "U2Vhc29uSWQYAiABKA1SDGxhc3RTZWFzb25JZBIaCghjdXJQb2ludBgDIAEo",
+            "A1IIY3VyUG9pbnQSGgoIbWF4UG9pbnQYBCABKANSCG1heFBvaW50EkgKCGxh",
+            "c3RXZWVrGAUgAygLMiwuenByb3RvLkNvbXBlbnNhdGlvblN0YXRpc3RpY3Mu",
+            "TGFzdFdlZWtFbnRyeVIIbGFzdFdlZWsaVwoPU2Vhc29uRGF0YUVudHJ5EgsK",
+            "A2tleRgBIAEoDRIzCgV2YWx1ZRgCIAEoCzIkLnpwcm90by5Db21wZW5zYXRp",
+            "b25TZWFzb25TdGF0aXN0aWNzOgI4ARovCg1MYXN0V2Vla0VudHJ5EgsKA2tl",
+            "eRgBIAEoDRINCgV2YWx1ZRgCIAEoBToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCompensationSeasonStatisticsReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +95,7 @@ namespace Zproto {
       return new CompensationStatistics(this);
     }
 
-    /// <summary>Field number for the "season_data" field.</summary>
+    /// <summary>Field number for the "seasonData" field.</summary>
     public const int SeasonDataFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Zproto.CompensationSeasonStatistics>.Codec _map_seasonData_codec
         = new pbc::MapField<uint, global::Zproto.CompensationSeasonStatistics>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Zproto.CompensationSeasonStatistics.Parser), 10);
@@ -105,7 +106,7 @@ namespace Zproto {
       get { return seasonData_; }
     }
 
-    /// <summary>Field number for the "last_season_id" field.</summary>
+    /// <summary>Field number for the "lastSeasonId" field.</summary>
     public const int LastSeasonIdFieldNumber = 2;
     private uint lastSeasonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -117,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_point" field.</summary>
+    /// <summary>Field number for the "curPoint" field.</summary>
     public const int CurPointFieldNumber = 3;
     private long curPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +130,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "max_point" field.</summary>
+    /// <summary>Field number for the "maxPoint" field.</summary>
     public const int MaxPointFieldNumber = 4;
     private long maxPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,7 +142,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "last_week" field.</summary>
+    /// <summary>Field number for the "lastWeek" field.</summary>
     public const int LastWeekFieldNumber = 5;
     private static readonly pbc::MapField<uint, int>.Codec _map_lastWeek_codec
         = new pbc::MapField<uint, int>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 42);

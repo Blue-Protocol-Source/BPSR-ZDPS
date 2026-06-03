@@ -24,10 +24,12 @@ namespace Zproto {
     static StruSlotInfoDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlzdHJ1X3Nsb3RfaW5mb19kYXRhLnByb3RvEgZ6cHJvdG8ifwoMU2xvdElu",
-            "Zm9EYXRhEgoKAmlkGAEgASgFEhAKCHNraWxsX2lkGAIgASgFEhIKCmlzX3Jl",
-            "cGxhY2UYAyABKAgSEwoLc2hvd19lZmZlY3QYBCABKAgSCgoCY2QYBSABKAMS",
-            "HAoUaXNfYXV0b19iYXR0bGVfY2xvc2UYBiABKAhiBnByb3RvMw=="));
+            "ChlzdHJ1X3Nsb3RfaW5mb19kYXRhLnByb3RvEgZ6cHJvdG8itAEKDFNsb3RJ",
+            "bmZvRGF0YRIOCgJpZBgBIAEoBVICaWQSGAoHc2tpbGxJZBgCIAEoBVIHc2tp",
+            "bGxJZBIcCglpc1JlcGxhY2UYAyABKAhSCWlzUmVwbGFjZRIeCgpzaG93RWZm",
+            "ZWN0GAQgASgIUgpzaG93RWZmZWN0Eg4KAmNkGAUgASgDUgJjZBIsChFpc0F1",
+            "dG9CYXR0bGVDbG9zZRgGIAEoCFIRaXNBdXRvQmF0dGxlQ2xvc2ViBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -100,7 +102,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "skill_id" field.</summary>
+    /// <summary>Field number for the "skillId" field.</summary>
     public const int SkillIdFieldNumber = 2;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -112,7 +114,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_replace" field.</summary>
+    /// <summary>Field number for the "isReplace" field.</summary>
     public const int IsReplaceFieldNumber = 3;
     private bool isReplace_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,7 +126,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "show_effect" field.</summary>
+    /// <summary>Field number for the "showEffect" field.</summary>
     public const int ShowEffectFieldNumber = 4;
     private bool showEffect_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,7 +150,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "is_auto_battle_close" field.</summary>
+    /// <summary>Field number for the "isAutoBattleClose" field.</summary>
     public const int IsAutoBattleCloseFieldNumber = 6;
     private bool isAutoBattleClose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -24,9 +24,9 @@ namespace Zproto {
     static StruSetSignatureRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3NldF9zaWduYXR1cmVfcmVxdWVzdC5wcm90bxIGenByb3RvIigK",
-            "E1NldFNpZ25hdHVyZVJlcXVlc3QSEQoJc2lnbmF0dXJlGAIgASgJYgZwcm90",
-            "bzM="));
+            "CiBzdHJ1X3NldF9zaWduYXR1cmVfcmVxdWVzdC5wcm90bxIGenByb3RvIjMK",
+            "E1NldFNpZ25hdHVyZVJlcXVlc3QSHAoJc2lnbmF0dXJlGAIgASgJUglzaWdu",
+            "YXR1cmViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

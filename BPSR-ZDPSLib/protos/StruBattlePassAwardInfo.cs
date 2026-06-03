@@ -25,9 +25,9 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiFzdHJ1X2JhdHRsZV9wYXNzX2F3YXJkX2luZm8ucHJvdG8SBnpwcm90bxoV",
-            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIj0KE0JhdHRsZVBhc3NBd2FyZEluZm8S",
-            "EgoKZnJlZV9hd2FyZBgBIAEoCBISCgpwYWlkX2F3YXJkGAIgASgIYgZwcm90",
-            "bzM="));
+            "c3RydV9kaXJ0eV9tYXNrLnByb3RvIlEKE0JhdHRsZVBhc3NBd2FyZEluZm8S",
+            "HAoJZnJlZUF3YXJkGAEgASgIUglmcmVlQXdhcmQSHAoJcGFpZEF3YXJkGAIg",
+            "ASgIUglwYWlkQXdhcmRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Zproto {
       return new BattlePassAwardInfo(this);
     }
 
-    /// <summary>Field number for the "free_award" field.</summary>
+    /// <summary>Field number for the "freeAward" field.</summary>
     public const int FreeAwardFieldNumber = 1;
     private bool freeAward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -96,7 +96,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "paid_award" field.</summary>
+    /// <summary>Field number for the "paidAward" field.</summary>
     public const int PaidAwardFieldNumber = 2;
     private bool paidAward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -26,9 +26,10 @@ namespace Zproto {
           string.Concat(
             "CihzdHJ1X2JhdGNoX3NlYXJjaF91bmlvbl9saXN0X3JlcGx5LnByb3RvEgZ6",
             "cHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhpzdHJ1X3VuaW9uX2xp",
-            "c3RfZGF0YS5wcm90byJsChlCYXRjaFNlYXJjaFVuaW9uTGlzdFJlcGx5EikK",
-            "CnVuaW9uX2xpc3QYASADKAsyFS56cHJvdG8uVW5pb25MaXN0RGF0YRIkCghl",
-            "cnJfY29kZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2RlYgZwcm90bzM="));
+            "c3RfZGF0YS5wcm90byJ+ChlCYXRjaFNlYXJjaFVuaW9uTGlzdFJlcGx5EjMK",
+            "CXVuaW9uTGlzdBgBIAMoCzIVLnpwcm90by5Vbmlvbkxpc3REYXRhUgl1bmlv",
+            "bkxpc3QSLAoHZXJyQ29kZRgCIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdl",
+            "cnJDb2RlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruUnionListDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Zproto {
       return new BatchSearchUnionListReply(this);
     }
 
-    /// <summary>Field number for the "union_list" field.</summary>
+    /// <summary>Field number for the "unionList" field.</summary>
     public const int UnionListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Zproto.UnionListData> _repeated_unionList_codec
         = pb::FieldCodec.ForMessage(10, global::Zproto.UnionListData.Parser);
@@ -96,7 +97,7 @@ namespace Zproto {
       get { return unionList_; }
     }
 
-    /// <summary>Field number for the "err_code" field.</summary>
+    /// <summary>Field number for the "errCode" field.</summary>
     public const int ErrCodeFieldNumber = 2;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

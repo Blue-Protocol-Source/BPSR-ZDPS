@@ -25,13 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X3Byb2Zlc3Npb25fc2tpbGxfaW5mby5wcm90bxIGenByb3RvGhVz",
-            "dHJ1X2RpcnR5X21hc2sucHJvdG8iiAIKE1Byb2Zlc3Npb25Ta2lsbEluZm8S",
-            "EAoIc2tpbGxfaWQYASABKAUSDQoFbGV2ZWwYAiABKAUSGQoRcmVwbGFjZV9z",
-            "a2lsbF9pZHMYAyADKAUSFQoNcmVtb2RlbF9sZXZlbBgEIAEoBRIWCg5jdXJf",
-            "c2tpbGxfc2tpbhgFIAEoBRJNChJhY3RpdmVfc2tpbGxfc2tpbnMYBiADKAsy",
-            "MS56cHJvdG8uUHJvZmVzc2lvblNraWxsSW5mby5BY3RpdmVTa2lsbFNraW5z",
-            "RW50cnkaNwoVQWN0aXZlU2tpbGxTa2luc0VudHJ5EgsKA2tleRgBIAEoBRIN",
-            "CgV2YWx1ZRgCIAEoCDoCOAFiBnByb3RvMw=="));
+            "dHJ1X2RpcnR5X21hc2sucHJvdG8izwIKE1Byb2Zlc3Npb25Ta2lsbEluZm8S",
+            "GAoHc2tpbGxJZBgBIAEoBVIHc2tpbGxJZBIUCgVsZXZlbBgCIAEoBVIFbGV2",
+            "ZWwSKAoPcmVwbGFjZVNraWxsSWRzGAMgAygFUg9yZXBsYWNlU2tpbGxJZHMS",
+            "IgoMcmVtb2RlbExldmVsGAQgASgFUgxyZW1vZGVsTGV2ZWwSIgoMY3VyU2tp",
+            "bGxTa2luGAUgASgFUgxjdXJTa2lsbFNraW4SXQoQYWN0aXZlU2tpbGxTa2lu",
+            "cxgGIAMoCzIxLnpwcm90by5Qcm9mZXNzaW9uU2tpbGxJbmZvLkFjdGl2ZVNr",
+            "aWxsU2tpbnNFbnRyeVIQYWN0aXZlU2tpbGxTa2lucxo3ChVBY3RpdmVTa2ls",
+            "bFNraW5zRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgIOgI4AWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -92,7 +94,7 @@ namespace Zproto {
       return new ProfessionSkillInfo(this);
     }
 
-    /// <summary>Field number for the "skill_id" field.</summary>
+    /// <summary>Field number for the "skillId" field.</summary>
     public const int SkillIdFieldNumber = 1;
     private int skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -116,7 +118,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "replace_skill_ids" field.</summary>
+    /// <summary>Field number for the "replaceSkillIds" field.</summary>
     public const int ReplaceSkillIdsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_replaceSkillIds_codec
         = pb::FieldCodec.ForInt32(26);
@@ -127,7 +129,7 @@ namespace Zproto {
       get { return replaceSkillIds_; }
     }
 
-    /// <summary>Field number for the "remodel_level" field.</summary>
+    /// <summary>Field number for the "remodelLevel" field.</summary>
     public const int RemodelLevelFieldNumber = 4;
     private int remodelLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +141,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "cur_skill_skin" field.</summary>
+    /// <summary>Field number for the "curSkillSkin" field.</summary>
     public const int CurSkillSkinFieldNumber = 5;
     private int curSkillSkin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +153,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "active_skill_skins" field.</summary>
+    /// <summary>Field number for the "activeSkillSkins" field.</summary>
     public const int ActiveSkillSkinsFieldNumber = 6;
     private static readonly pbc::MapField<int, bool>.Codec _map_activeSkillSkins_codec
         = new pbc::MapField<int, bool>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBool(16, false), 50);

@@ -26,9 +26,9 @@ namespace Zproto {
           string.Concat(
             "CjJzdHJ1X2NvbW11bml0eV9xdWl0X2NvaGFiaXRhbnRfYWdyZWVfcmVxdWVz",
             "dC5wcm90bxIGenByb3RvGilzdHJ1X2NvbW11bml0eV9xdWl0X2NvaGFiaXRh",
-            "bnRfaW5mby5wcm90byJYCiNDb21tdW5pdHlRdWl0Q29oYWJpdGFudEFncmVl",
-            "UmVxdWVzdBIxCgRpbmZvGAEgASgLMiMuenByb3RvLkNvbW11bml0eVF1aXRD",
-            "b2hhYml0YW50SW5mb2IGcHJvdG8z"));
+            "bnRfaW5mby5wcm90byJeCiNDb21tdW5pdHlRdWl0Q29oYWJpdGFudEFncmVl",
+            "UmVxdWVzdBI3CgRpbmZvGAEgASgLMiMuenByb3RvLkNvbW11bml0eVF1aXRD",
+            "b2hhYml0YW50SW5mb1IEaW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityQuitCohabitantInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

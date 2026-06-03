@@ -30,16 +30,18 @@ namespace Zproto {
             "ZS5wcm90bxobc3RydV9yZXBvcnRfYmFzZV9pbmZvLnByb3RvGhZzdHJ1X3Jl",
             "cG9ydF9jaGF0LnByb3RvGhZzdHJ1X3JlcG9ydF9ob21lLnByb3RvGhlzdHJ1",
             "X3JlcG9ydF9waWN0dXJlLnByb3RvGhdzdHJ1X3JlcG9ydF91bmlvbi5wcm90",
-            "byKaAwoTUmVwb3J0VXBsb2FkUmVxdWVzdBIsCgpzY2VuZV90eXBlGAEgASgO",
-            "MhguenByb3RvLkVSZXBvcnRTY2VuZVR5cGUSMgoNY2F0ZWdvcnlfdHlwZRgC",
-            "IAEoDjIbLnpwcm90by5FUmVwb3J0Q2F0ZWdvcnlUeXBlEi4KC3JlYXNvbl90",
-            "eXBlGAMgAygOMhkuenByb3RvLkVSZXBvcnRSZWFzb25UeXBlEhMKC3JlcG9y",
-            "dF9kZXNjGAQgASgJEjAKEHJlcG9ydF9iYXNlX2luZm8YBSABKAsyFi56cHJv",
-            "dG8uUmVwb3J0QmFzZUluZm8SJwoLcmVwb3J0X2NoYXQYBiABKAsyEi56cHJv",
-            "dG8uUmVwb3J0Q2hhdBItCg5yZXBvcnRfcGljdHVyZRgHIAEoCzIVLnpwcm90",
-            "by5SZXBvcnRQaWN0dXJlEikKDHJlcG9ydF91bmlvbhgIIAEoCzITLnpwcm90",
-            "by5SZXBvcnRVbmlvbhInCgtyZXBvcnRfaG9tZRgJIAEoCzISLnpwcm90by5S",
-            "ZXBvcnRIb21lYgZwcm90bzM="));
+            "byKFBAoTUmVwb3J0VXBsb2FkUmVxdWVzdBI2CglzY2VuZVR5cGUYASABKA4y",
+            "GC56cHJvdG8uRVJlcG9ydFNjZW5lVHlwZVIJc2NlbmVUeXBlEj8KDGNhdGVn",
+            "b3J5VHlwZRgCIAEoDjIbLnpwcm90by5FUmVwb3J0Q2F0ZWdvcnlUeXBlUgxj",
+            "YXRlZ29yeVR5cGUSOQoKcmVhc29uVHlwZRgDIAMoDjIZLnpwcm90by5FUmVw",
+            "b3J0UmVhc29uVHlwZVIKcmVhc29uVHlwZRIeCgpyZXBvcnREZXNjGAQgASgJ",
+            "UgpyZXBvcnREZXNjEj4KDnJlcG9ydEJhc2VJbmZvGAUgASgLMhYuenByb3Rv",
+            "LlJlcG9ydEJhc2VJbmZvUg5yZXBvcnRCYXNlSW5mbxIyCgpyZXBvcnRDaGF0",
+            "GAYgASgLMhIuenByb3RvLlJlcG9ydENoYXRSCnJlcG9ydENoYXQSOwoNcmVw",
+            "b3J0UGljdHVyZRgHIAEoCzIVLnpwcm90by5SZXBvcnRQaWN0dXJlUg1yZXBv",
+            "cnRQaWN0dXJlEjUKC3JlcG9ydFVuaW9uGAggASgLMhMuenByb3RvLlJlcG9y",
+            "dFVuaW9uUgtyZXBvcnRVbmlvbhIyCgpyZXBvcnRIb21lGAkgASgLMhIuenBy",
+            "b3RvLlJlcG9ydEhvbWVSCnJlcG9ydEhvbWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEReportCategoryTypeReflection.Descriptor, global::Zproto.EnumEReportReasonTypeReflection.Descriptor, global::Zproto.EnumEReportSceneTypeReflection.Descriptor, global::Zproto.StruReportBaseInfoReflection.Descriptor, global::Zproto.StruReportChatReflection.Descriptor, global::Zproto.StruReportHomeReflection.Descriptor, global::Zproto.StruReportPictureReflection.Descriptor, global::Zproto.StruReportUnionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -103,7 +105,7 @@ namespace Zproto {
       return new ReportUploadRequest(this);
     }
 
-    /// <summary>Field number for the "scene_type" field.</summary>
+    /// <summary>Field number for the "sceneType" field.</summary>
     public const int SceneTypeFieldNumber = 1;
     private global::Zproto.EReportSceneType sceneType_ = global::Zproto.EReportSceneType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +117,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "category_type" field.</summary>
+    /// <summary>Field number for the "categoryType" field.</summary>
     public const int CategoryTypeFieldNumber = 2;
     private global::Zproto.EReportCategoryType categoryType_ = global::Zproto.EReportCategoryType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +129,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "reason_type" field.</summary>
+    /// <summary>Field number for the "reasonType" field.</summary>
     public const int ReasonTypeFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Zproto.EReportReasonType> _repeated_reasonType_codec
         = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::Zproto.EReportReasonType) x);
@@ -138,7 +140,7 @@ namespace Zproto {
       get { return reasonType_; }
     }
 
-    /// <summary>Field number for the "report_desc" field.</summary>
+    /// <summary>Field number for the "reportDesc" field.</summary>
     public const int ReportDescFieldNumber = 4;
     private string reportDesc_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,7 +152,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "report_base_info" field.</summary>
+    /// <summary>Field number for the "reportBaseInfo" field.</summary>
     public const int ReportBaseInfoFieldNumber = 5;
     private global::Zproto.ReportBaseInfo reportBaseInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,7 +164,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "report_chat" field.</summary>
+    /// <summary>Field number for the "reportChat" field.</summary>
     public const int ReportChatFieldNumber = 6;
     private global::Zproto.ReportChat reportChat_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -174,7 +176,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "report_picture" field.</summary>
+    /// <summary>Field number for the "reportPicture" field.</summary>
     public const int ReportPictureFieldNumber = 7;
     private global::Zproto.ReportPicture reportPicture_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -186,7 +188,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "report_union" field.</summary>
+    /// <summary>Field number for the "reportUnion" field.</summary>
     public const int ReportUnionFieldNumber = 8;
     private global::Zproto.ReportUnion reportUnion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -198,7 +200,7 @@ namespace Zproto {
       }
     }
 
-    /// <summary>Field number for the "report_home" field.</summary>
+    /// <summary>Field number for the "reportHome" field.</summary>
     public const int ReportHomeFieldNumber = 9;
     private global::Zproto.ReportHome reportHome_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
