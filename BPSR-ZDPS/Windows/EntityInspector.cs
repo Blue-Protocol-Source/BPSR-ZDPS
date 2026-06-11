@@ -796,7 +796,7 @@ namespace BPSR_ZDPS.Windows
 
                             if (ShowAllInstancesSkillIds.Contains(skillId))
                             {
-                                var startTime = LoadedEncounterStartTime?.ToUniversalTime() ?? LoadedEntity.DamageStats.StartTime;
+                                var startTime = LoadedEncounterFirstDamageTimeStamp ?? LoadedEncounterStartTime?.ToUniversalTime() ?? LoadedEntity.DamageStats.StartTime;
 
                                 int snapshotIdx = 0;
                                 foreach (var snapshot in stat.Value.SkillSnapshots.AsValueEnumerable())
@@ -1249,7 +1249,7 @@ namespace BPSR_ZDPS.Windows
                                 {
                                     if (buffEvent.AddDateTime != DateTime.MinValue)
                                     {
-                                        if (buffEvent.AddDateTime.CompareTo(LoadedEncounterFirstDamageTimeStamp) < 0)
+                                        //if (buffEvent.AddDateTime.CompareTo(LoadedEncounterFirstDamageTimeStamp) < 0)
                                         {
                                             // Added before the first damage event, display time as negative offset
                                             var diff = buffEvent.AddDateTime.Subtract((DateTime)LoadedEncounterFirstDamageTimeStamp);
@@ -1269,7 +1269,7 @@ namespace BPSR_ZDPS.Windows
                                 {
                                     if (buffEvent.RemoveDateTime != DateTime.MinValue)
                                     {
-                                        if (buffEvent.RemoveDateTime.CompareTo(LoadedEncounterFirstDamageTimeStamp) < 0)
+                                        //if (buffEvent.RemoveDateTime.CompareTo(LoadedEncounterFirstDamageTimeStamp) < 0)
                                         {
                                             // Removed before the first damage event, display time as negative offset
                                             var diff = buffEvent.RemoveDateTime.Subtract((DateTime)LoadedEncounterFirstDamageTimeStamp);
