@@ -1,13 +1,13 @@
 ﻿namespace BPSR_ZDPSLib;
 
-public class NotifyId(ulong serviceId, uint methodId)
+public class ProxyId(uint serviceId, uint methodId)
 {
-    public ulong ServiceId { get; set; } = serviceId;
+    public uint ServiceId { get; set; } = serviceId;
     public uint MethodId { get; set; } = methodId;
 
     public override bool Equals(object? obj)
     {
-        return ServiceId == ((NotifyId)obj).ServiceId && MethodId == ((NotifyId)obj).MethodId;
+        return ServiceId == ((ProxyId)obj).ServiceId && MethodId == ((ProxyId)obj).MethodId;
     }
 
     public override int GetHashCode()
