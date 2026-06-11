@@ -310,7 +310,7 @@ public class NetCap
 
     private void ParseNotify(ReadOnlySpan<byte> data, bool isCompressed, DateTime lastPacketTime)
     {
-        byte[] debugHeaders = data.ToArray();
+        //byte[] debugHeaders = data.ToArray();
 
         var serviceUuid = BinaryPrimitives.ReadUInt64BigEndian(data);
         var stubId = BinaryPrimitives.ReadUInt32BigEndian(data[8..]);
@@ -334,7 +334,7 @@ public class NetCap
         }
         else
         {
-            Log.Logger.Information($"ParseNotify: S:{serviceUuid}({(EServiceId)serviceUuid}) Stub:{stubId} M:{methodId} MsgDataLen:{msgData.Length} Len={data.Length}");
+            //Log.Logger.Information($"ParseNotify: S:{serviceUuid}({(EServiceId)serviceUuid}) Stub:{stubId} M:{methodId} MsgDataLen:{msgData.Length} Len={data.Length}");
         }
 
         var id = new NotifyId(serviceUuid, methodId);
@@ -354,7 +354,7 @@ public class NetCap
 
     private void ParseCall(ReadOnlySpan<byte> data, bool isCompressed, DateTime lastPacketTime)
     {
-        byte[] debugHeaders = data.ToArray();
+        //byte[] debugHeaders = data.ToArray();
 
         var proxyServiceId = BinaryPrimitives.ReadUInt64BigEndian(data);
         var subId = BinaryPrimitives.ReadUInt32BigEndian(data[8..]);
@@ -377,7 +377,7 @@ public class NetCap
             }
         }
 
-        Log.Logger.Information($"ParseCall: I:{proxyServiceId} S:{subId} R:{returnUid} M:{proxyMethodId} Len={data.Length} IsCompressed={isCompressed}{(loggedMsg.Length > 0 ? $"\nData: [{loggedMsg}]" : "")}");
+        //Log.Logger.Information($"ParseCall: I:{proxyServiceId} S:{subId} R:{returnUid} M:{proxyMethodId} Len={data.Length} IsCompressed={isCompressed}{(loggedMsg.Length > 0 ? $"\nData: [{loggedMsg}]" : "")}");
 
         var id = new ProxyId((uint)proxyServiceId, proxyMethodId);
         if (ProxyHandlers.TryGetValue(id, out var handler))
@@ -394,11 +394,12 @@ public class NetCap
 
     private void ParseFrameUp(ReadOnlySpan<byte> data, bool isCompressed, DateTime lastPacketTime)
     {
-        byte[] debugHeaders = data.ToArray();
+        //byte[] debugHeaders = data.ToArray();
 
-        if (data.Length < 30)
+        if (data.Length < 26)
         {
             // FrameUp is unexpectedly too small
+            byte[] debugHeaders = data.ToArray();
             Log.Logger.Information($"ParseFrameUp: [{Convert.ToHexString(debugHeaders)}] Len={data.Length}");
             return;
         }
@@ -432,7 +433,7 @@ public class NetCap
                 byte[] debugMsg = msgData.ToArray();
                 // We don't store the returnUid in our dictionary because there's not going to be an actual returner for it
 
-                Log.Logger.Information($"ParseFrameUp: U:{uuid} L:{length} F:{flags} P0:{padding0} I:{proxyServiceId} R:{returnUid} M:{proxyMethodId} MsgDataLen={msgData.Length} Len={data.Length} IsCompressed={isCompressed}");
+                //Log.Logger.Information($"ParseFrameUp: U:{uuid} L:{length} F:{flags} P0:{padding0} I:{proxyServiceId} R:{returnUid} M:{proxyMethodId} MsgDataLen={msgData.Length} Len={data.Length} IsCompressed={isCompressed}");
 
                 var id = new ProxyId(proxyServiceId, proxyMethodId);
                 if (ProxyHandlers.TryGetValue(id, out var handler))
@@ -448,6 +449,14 @@ public class NetCap
             }
             else
             {
+                if (data.Length < 30)
+                {
+                    // FrameUp is too small for this type, log it and drop rest of packet as it's no longer safe to continue
+                    byte[] debugHeaders = data.ToArray();
+                    Log.Logger.Information($"ParseFrameUp: [{Convert.ToHexString(debugHeaders)}] Len={data.Length}; Dropping Packet");
+                    return;
+                }
+
                 var padding1 = BinaryPrimitives.ReadUInt32BigEndian(data[offset..]);
                 offset += 4;
                 var returnUid = BinaryPrimitives.ReadUInt32BigEndian(data[offset..]);
@@ -461,7 +470,7 @@ public class NetCap
 
                 ProxyReturnsDictionary.AddOrUpdate(returnUid, new ProxyId(proxyServiceId, proxyMethodId), (key, value) => new ProxyId(proxyServiceId, proxyMethodId));
 
-                Log.Logger.Information($"ParseFrameUp: U:{uuid} L:{length} F:{flags} P0:{padding0} I:{proxyServiceId} P1:{padding1} R:{returnUid} M:{proxyMethodId} Len={data.Length} IsCompressed={isCompressed}");
+                //Log.Logger.Information($"ParseFrameUp: U:{uuid} L:{length} F:{flags} P0:{padding0} I:{proxyServiceId} P1:{padding1} R:{returnUid} M:{proxyMethodId} Len={data.Length} IsCompressed={isCompressed}");
 
                 var id = new ProxyId(proxyServiceId, proxyMethodId);
                 if (ProxyHandlers.TryGetValue(id, out var handler))
@@ -482,10 +491,11 @@ public class NetCap
 
     private void ParseReturn(ReadOnlySpan<byte> data, bool isCompressed, DateTime lastPacketTime)
     {
-        byte[] debugHeaders = data.ToArray();
+        //byte[] debugHeaders = data.ToArray();
 
         if (data.Length < 12)
         {
+            byte[] debugHeaders = data.ToArray();
             Log.Logger.Information($"ParseReturn: [{Convert.ToHexString(debugHeaders)}] Len={data.Length}");
             return;
         }
@@ -518,7 +528,7 @@ public class NetCap
             }
         }
 
-        Log.Logger.Information($"ParseReturn: S:{subId} R:{returnUid} T:{thirdId} Start={protoStart} Len={data.Length} IsCompressed={isCompressed}");
+        //Log.Logger.Information($"ParseReturn: S:{subId} R:{returnUid} T:{thirdId} Start={protoStart} Len={data.Length} IsCompressed={isCompressed}");
 
         if (ProxyReturnsDictionary.TryRemove(returnUid, out var frameUp))
         {
