@@ -4644,6 +4644,37 @@ namespace BPSR_ZDPS.Windows
                         }
                         ImGui.SetItemTooltip($"Copies Tracker '{eventTracker.Value.Name}' like a Preset to the clipboard.");
 
+                        ImGui.Separator();
+
+                        // TODO: Surface errors up to the UI so the user is aware why nothing happened
+                        if (ImGui.MenuItem("Import Tracker From Clipboard"))
+                        {
+                            try
+                            {
+                                var newTrackerSrc = JsonConvert.DeserializeObject<TrackedEventEntry>(ImGui.GetClipboardTextS());
+                                if (newTrackerSrc != null)
+                                {
+                                    if (string.IsNullOrEmpty(newTrackerSrc.TrackerName))
+                                    {
+                                        throw new FormatException("Imported Tracker was missing required data (TrackerName is null).");
+                                    }
+
+                                    var newTracker = (TrackedEventEntry)newTrackerSrc.Clone(++PersistentTrackerCount);
+                                    newTracker.SourceLocationType = ESourceLocationType.Manual;
+                                    ActiveTrackerContainer.EventTrackers.Add(newTracker.IdTracker, newTracker);
+
+                                    ActiveTrackedEventEntry = ActiveTrackerContainer.EventTrackers[newTracker.IdTracker];
+                                    ActiveTrackedEventEntryIdx = ActiveTrackerContainer.EventTrackers.Count - 1;
+                                    ActiveTrackedEventEntry.UpdateIconData(ActiveTrackedEventEntry.OriginalIconPath, false);
+                                    ActiveTrackerContainer.RecheckTrackerStates();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Serilog.Log.Error(ex, "Error attempting to import an Event Tracker from clipboard.");
+                            }
+                        }
+
                         ImGui.EndPopup();
                     }
 
