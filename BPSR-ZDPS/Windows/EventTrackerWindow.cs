@@ -2835,7 +2835,9 @@ namespace BPSR_ZDPS.Windows
                                                     ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, tex, eventTracker.DurationProgressBarTextureScale, eventTracker.IconStretchLeftValue, eventTracker.IconStretchRightValue, eventTracker.UseDurationProgressBarCircleBackgroundFill);
                                                     if (showTooltip)
                                                     {
+                                                        ImGui.PopFont(); // Undo font size adjustment for tooltips
                                                         DrawTrackerTooltip(eventContainer, eventTracker, eventData);
+                                                        ImGui.PushFont(null, eventTracker.DurationProgressBarTextSize);
                                                     }
                                                 }
                                                 else
@@ -2843,7 +2845,9 @@ namespace BPSR_ZDPS.Windows
                                                     ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, null, 1.0f, 0, 0, eventTracker.UseDurationProgressBarCircleBackgroundFill);
                                                     if (showTooltip && !eventTracker.ShowIcon)
                                                     {
+                                                        ImGui.PopFont(); // Undo font size adjustment for tooltips
                                                         DrawTrackerTooltip(eventContainer, eventTracker, eventData);
+                                                        ImGui.PushFont(null, eventTracker.DurationProgressBarTextSize);
                                                     }
                                                 }
                                                 ImGui.PopStyleColor();
