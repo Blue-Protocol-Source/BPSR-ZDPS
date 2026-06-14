@@ -1,4 +1,4 @@
-using BPSR_ZDPSLib;
+﻿using BPSR_ZDPSLib;
 using BPSR_ZDPS.Meters;
 using Hexa.NET.ImGui;
 using Serilog;
@@ -310,7 +310,29 @@ namespace BPSR_ZDPS.Windows
 
                 ImGui.EndTable();
             }
-
+/*
+            if ((AppState.ActiveEncounter != null && Settings.Instance.KeepPastEncounterInMeterUntilNextDamage) || AppState.OpenedHistoricalEncounter != null)
+            {
+                if (AppState.ActiveEncounter.BattleId != EncounterManager.Current?.BattleId || AppState.ActiveEncounter.EncounterId != EncounterManager.Current?.EncounterId || AppState.OpenedHistoricalEncounter != null)
+                {
+                    ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Goldenrod_Transparent);
+                    ImGui.BeginChild("##EncounterNotCurrentChild", ImGuiChildFlags.AutoResizeY);
+                    ImGui.TextAligned(0.5f, -1, "Viewing Historical Encounter Data");
+                    ImGui.SetCursorPosX((ImGui.GetContentRegionAvail().X - 200) * 0.5f);
+                    ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkGreen);
+                    if (ImGui.Button("Go To Current Encounter##GoToCurrentEncounterBtn", new Vector2(200, 0)))
+                    {
+                        AppState.OpenedHistoricalEncounter = null;
+                        AppState.ActiveEncounter = EncounterManager.Current;
+                        // Try and release some stale resources immediately
+                        GC.Collect();
+                    }
+                    ImGui.PopStyleColor();
+                    ImGui.EndChild();
+                    ImGui.PopStyleColor();
+                }
+            }
+*/
             if (AppState.IsEncounterSavingPaused)
             {
                 ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.DarkRed_Transparent);
@@ -375,7 +397,7 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 bool showForcehideContainersBtn = Settings.Instance.WindowSettings.EventTracker.ShowForceHideContainersBtnOnMainWindow;
-                bool showPauseEncounterSavingBtn = Settings.Instance.AllowEncounterSavingPausingInOpenWorld && BattleStateMachine.DungeonStateHistory.Count > 0 && BattleStateMachine.DungeonStateH[...]
+                bool showPauseEncounterSavingBtn = Settings.Instance.AllowEncounterSavingPausingInOpenWorld && BattleStateMachine.DungeonStateHistory.Count > 0 && BattleStateMachine.DungeonStateHistory.LastOrDefault().Key == EDungeonState.DungeonStateNull;
                 bool showWipeEncounterBtn = Settings.Instance.ShowCallWipeForEncounterOnMainWindow;
 
                 int btnIdx = 4; // One less than actual default button count to ensure it ends at 0
@@ -818,7 +840,7 @@ namespace BPSR_ZDPS.Windows
             Task.Factory.StartNew(() =>
             {
                 //Log.Information($"Requesting new manual encounter at {DateTime.Now}");
-                //BattleStateMachine.SetDeferredEncounterEndFinalData(DateTime.Now, new EncounterEndFinalData() { BattleId = EncounterManager.CurrentBattleId, Encounter = EncounterManager.Current[...]
+                //BattleStateMachine.SetDeferredEncounterEndFinalData(DateTime.Now, new EncounterEndFinalData() { BattleId = EncounterManager.CurrentBattleId, Encounter = EncounterManager.Current, EncounterId = EncounterManager.Current.EncounterId, Reason = EncounterStartReason.Force });
                 //EncounterManager.StopEncounter();
                 if (AppState.IsBenchmarkMode)
                 {
