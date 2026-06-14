@@ -1,21 +1,17 @@
-﻿using BPSR_ZDPSLib;
+﻿using BPSR_ZDPS.DataTypes;
+using BPSR_ZDPSLib;
+using Google.Protobuf.Collections;
 using Serilog;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using static Zproto.WorldNtfCsharp.Types;
-using Zproto;
-using Google.Protobuf.Collections;
-using System.Numerics;
-using Silk.NET.Core.Native;
-using BPSR_ZDPS.DataTypes;
-using static HexaGen.Runtime.MemoryPool;
-using System.Collections.Concurrent;
 using ZLinq;
-using BPSR_ZDPS.Windows;
+using Zproto;
+using static Zproto.WorldNtfCsharp.Types;
 
 namespace BPSR_ZDPS
 {
@@ -53,8 +49,6 @@ namespace BPSR_ZDPS
 
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncSceneEvents, ProcessSyncSceneEvents);
 
-            netCap.RegisterNotifyHandler(936649811, (uint)BPSR_ZDPSLib.ServiceMethods.WorldActivityNtf.SyncHitInfo, ProcessSyncHitInfo);
-
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncDungeonData, ProcessSyncDungeonData);
 
             netCap.RegisterWorldNotifyHandler(BPSR_ZDPSLib.ServiceMethods.WorldNtf.SyncDungeonDirtyData, ProcessSyncDungeonDirtyData);
@@ -91,8 +85,11 @@ namespace BPSR_ZDPS
 
             netCap.RegisterNotifyHandler((ulong)EServiceId.SocialNtf, (uint)BPSR_ZDPSLib.ServiceMethods.SocialNtf.NotifySocialData, ProcessNotifySocialData);
             
+            netCap.RegisterNotifyHandler((ulong)EServiceId.WorldLoginNtf, (uint)BPSR_ZDPSLib.ServiceMethods.WorldLoginNtf.NotifyEnterWorld, ProcessNotifyEnterWorld);
+
             // Uncomment to debug print unhandled events
             //netCap.RegisterUnhandledHandler(ProcessUnhandled);
+            //netCap.RegisterUnhandledProxyHandler(ProcessProxyUnhandled);
 
             netCap.Start();
             System.Diagnostics.Debug.WriteLine("MessageManager.InitializeCapturing : Capturing Started...");
@@ -141,6 +138,91 @@ namespace BPSR_ZDPS
             {
                 return;
             }
+        }
+
+        public static void ProcessProxyUnhandled(ProxyId proxyId, ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            Type foundType = null;
+            switch ((EProxyServiceId)proxyId.ServiceId)
+            {
+                case EProxyServiceId.Ace:
+                    foundType = typeof(BPSR_ZDPSLib.ServiceMethods.AceProxy);
+                    break;
+                case EProxyServiceId.ChitChat:
+                    foundType = typeof(BPSR_ZDPSLib.ServiceMethods.ChitChatProxy);
+                    break;
+                case EProxyServiceId.Community:
+                    foundType = typeof(BPSR_ZDPSLib.ServiceMethods.CommunityProxy);
+                    break;
+                case EProxyServiceId.GrpcBand:
+                    foundType = typeof(BPSR_ZDPSLib.ServiceMethods.GrpcBandProxy);
+                    break;
+                case EProxyServiceId.GrpcCharactor:
+                    foundType = typeof(BPSR_ZDPSLib.ServiceMethods.GrpcCharactorProxy);
+                    break;
+                case EProxyServiceId.HttpPlatform:
+                    foundType = typeof(BPSR_ZDPSLib.ServiceMethods.HttpPlatformProxy);
+                    break;
+                case EProxyServiceId.Mahjong:
+                    foundType = typeof(BPSR_ZDPSLib.ServiceMethods.MahjongProxy);
+                    break;
+                case EProxyServiceId.Mail:
+                    foundType = typeof(BPSR_ZDPSLib.ServiceMethods.MailProxy);
+                    break;
+                case EProxyServiceId.Photograph:
+                    break;
+                case EProxyServiceId.Report:
+                    break;
+                case EProxyServiceId.Social:
+                    foundType = typeof(BPSR_ZDPSLib.ServiceMethods.SocialProxy);
+                    break;
+                case EProxyServiceId.World:
+                    foundType = typeof(BPSR_ZDPSLib.ServiceMethods.WorldProxy);
+                    break;
+                default:
+                    break;
+            }
+
+            string methodId = proxyId.MethodId.ToString();
+            if (foundType != null)
+            {
+                if (System.Enum.IsDefined(foundType, (int)proxyId.MethodId))
+                {
+                    methodId = $"{System.Enum.ToObject(foundType, (int)proxyId.MethodId)} ({proxyId.MethodId})";
+                }
+            }
+
+            System.Diagnostics.Debug.WriteLine($"ProcessProxyUnhandled ServiceId:{(EProxyServiceId)proxyId.ServiceId} MethodId:{methodId} Payload.Length:{payloadBuffer.Length}");
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+        }
+
+        public static void ProcessNotifyEnterWorld(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
+        {
+            //Serilog.Log.Debug($"ProcessNotifyEnterWorld");
+
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+            byte[] raw = payloadBuffer.ToArray();
+
+            var data = WorldLoginNtfCsharp.Types.NotifyEnterWorld.Parser.ParseFrom(payloadBuffer);
+
+            if (data.VRequest != null)
+            {
+                if (!string.IsNullOrEmpty(data.VRequest.SceneIp))
+                {
+                    if (AppState.SceneIp != data.VRequest.SceneIp)
+                    {
+                        Serilog.Log.Information($"Detected Game Server Address: {data.VRequest.SceneIp}");
+                    }
+                    AppState.SceneIp = data.VRequest.SceneIp;
+                }
+            }
+            //Serilog.Log.Debug($"ProcessNotifyEnterWorld data = {data}");
         }
 
         static DateTime LastSyncTimeLog = DateTime.MinValue;
@@ -232,6 +314,9 @@ namespace BPSR_ZDPS
                         }
                     }
                 }
+
+                Log.Debug($"\t ConnectGuid = {vData.EnterSceneInfo.ConnectGuid}");
+                Log.Debug($"\t SceneGuid = {vData.EnterSceneInfo.SceneGuid}");
             }
         }
 
@@ -709,10 +794,6 @@ namespace BPSR_ZDPS
             MatchManager.ProcessMatchReadyStatus(vData, extraData);
         }
 
-        public static void ProcessSyncHitInfo(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)
-        {
-            System.Diagnostics.Debug.WriteLine($"ProcessSyncHitInfo");
-        }
         public static bool IsWipeCheckQueued = false;
         public static void ProcessAttrs(long uuid, RepeatedField<Attr> attrs)
         {
@@ -1466,14 +1547,6 @@ namespace BPSR_ZDPS
                 {
                     EncounterManager.Current.SetAbilityScore(playerUuid, vData.CharBase.FightPoint);
                 }
-
-                /*if (vData.CharBase.TeamInfo != null)
-                {
-                    if (vData.CharBase.TeamInfo.TeamId != 0)
-                    {
-                        System.Diagnostics.Debug.WriteLine("vData.CharBase.TeamInfo.TeamId != 0");
-                    }
-                }*/
             }
 
             var professionList = vData.ProfessionList;

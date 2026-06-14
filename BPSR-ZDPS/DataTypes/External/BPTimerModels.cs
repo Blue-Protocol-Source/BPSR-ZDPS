@@ -86,6 +86,10 @@ namespace BPSR_ZDPS.DataTypes.External
         public string? AccountId;
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
         public long? UID;
+        [JsonProperty("player_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string? PlayerName;
+        [JsonProperty("scene_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string? SceneIp;
     }
 
     public class BPTimerSubscribe

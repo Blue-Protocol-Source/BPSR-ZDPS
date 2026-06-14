@@ -131,6 +131,11 @@ namespace BPSR_ZDPS.Managers.External
                     }
                 }
 
+                if (string.IsNullOrEmpty(AppState.SceneIp))
+                {
+                    Log.Error("Scene IP is missing! BPTimer SendHpReport will likely fail");
+                }
+
                 long? uid = (Settings.Instance.External.BPTimerSettings.ExternalBPTimerIncludeCharacterId ? AppState.PlayerUID : null);
 
                 var report = new BPTimerHpReport()
@@ -142,7 +147,9 @@ namespace BPSR_ZDPS.Managers.External
                     PosY = hasPositionData ? entity.Position.Y : playerPos.Y,
                     PosZ = hasPositionData ? entity.Position.Z : playerPos.Z,
                     AccountId = AppState.AccountId,
-                    UID = uid
+                    UID = uid,
+                    PlayerName = AppState.PlayerName,
+                    SceneIp = AppState.SceneIp
                 };
 
                 LastSentRequest = report;

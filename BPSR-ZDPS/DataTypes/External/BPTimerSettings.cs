@@ -10,6 +10,6 @@ namespace BPSR_ZDPS.DataTypes.External
     {
         public bool ExternalBPTimerEnabled { get; set; } = false;
         public bool ExternalBPTimerIncludeCharacterId { get; set; } = false;
-        public bool ExternalBPTimerFieldBossHpReportsEnabled { get; set; } = false;
+        public bool ExternalBPTimerFieldBossHpReportsEnabled { get; set; } = true;
     }
 }

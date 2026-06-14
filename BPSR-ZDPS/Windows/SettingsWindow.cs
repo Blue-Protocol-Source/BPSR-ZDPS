@@ -1526,7 +1526,7 @@ namespace BPSR_ZDPS.Windows
                             {
                                 ImGui.PushStyleColor(ImGuiCol.Text, Colors.Green);
                             }
-                            ImGui.TextWrapped("Note: This setting alone does not enable reports. They must be enabled individually below.");
+                            ImGui.TextWrapped("Note: This setting alone may not enable reports. They must be enabled individually below.");
                             ImGui.PopStyleColor();
 
                             ImGui.EndDisabled();
@@ -1538,7 +1538,9 @@ namespace BPSR_ZDPS.Windows
                                 ImGui.BulletText("Character Line Number");
                                 ImGui.BulletText("Account ID");
                                 ImGui.SetItemTooltip("This is being used to determine what game region is being played on.");
+                                ImGui.BulletText("Server Domain Name or IP Address");
                                 ImGui.BulletText("Character UID (if you opt-in below)");
+                                ImGui.BulletText("Character Name (if you opt-in below)");
                                 ImGui.BulletText("Your IP Address");
                                 ImGui.Unindent();
                             }
@@ -1553,7 +1555,7 @@ namespace BPSR_ZDPS.Windows
                             ImGui.Checkbox("##ExternalBPTimerIncludeCharacterId", ref externalBPTimerIncludeCharacterId);
                             ImGui.Indent();
                             ImGui.BeginDisabled(true);
-                            ImGui.TextWrapped("When enabled, your Character UID will be included in the reported data.");
+                            ImGui.TextWrapped("When enabled, your Character UID and Name will be included in the reported data.");
                             ImGui.EndDisabled();
                             ImGui.Unindent();
 
