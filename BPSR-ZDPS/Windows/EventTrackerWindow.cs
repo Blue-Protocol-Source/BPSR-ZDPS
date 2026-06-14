@@ -248,6 +248,11 @@ namespace BPSR_ZDPS.Windows
             { Zproto.EAttrType.AttrCdAcceleratePct.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrRushCd.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrFightResCdSpeedPct.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrSkillId.ToString(), new FAttrValueData(typeof(int)) },
+            { "AttrSkillName", new FAttrValueData(typeof(int), "AttrSkillId") },
+            { Zproto.EAttrType.AttrSkillUuid.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrSkillStage.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrSkillStageNum.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrSkillCd.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrSkillCdpct.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrSwitchProfessionCd.ToString(), new FAttrValueData(typeof(int)) },
@@ -784,7 +789,27 @@ namespace BPSR_ZDPS.Windows
                                     var diff = updateTimeStamp.Subtract(e.CreationDateTime.Value).TotalSeconds;
                                     if (diff < -5 || diff > 0)
                                     {
+                                        if (eventTracker.DebugLogTracker)
+                                        {
+                                            AddDebugLog($"{DateTime.Now} Buff Event | Using Creation Time");
+                                        }
                                         updateTimeStamp = e.CreationDateTime.Value;
+                                        //if (diff < 0)
+                                        {
+                                            // Force correct time desyncs
+                                            if (eventTracker.DebugLogTracker)
+                                            {
+                                                AddDebugLog($"{DateTime.Now} Buff Event | Correcting Creation Time {e.CreationDateTime.Value} to local desync offset of {AppState.ClientServerTimeSyncDelta}ms");
+                                    }
+                                            updateTimeStamp = updateTimeStamp.AddMilliseconds(AppState.ClientServerTimeSyncDelta);// * -1);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (eventTracker.DebugLogTracker)
+                                        {
+                                            AddDebugLog($"{DateTime.Now} Buff Event | Using Packet Time");
+                                        }
                                     }
                                 }
 
@@ -1409,6 +1434,20 @@ namespace BPSR_ZDPS.Windows
                                                         resolvedValue = targetEntity.Name;
                                                     }
                                                 }
+                                            }
+                                            else if (eventTracker.TrackedAttributeName == "AttrSkillName" && attrType == typeof(int))
+                                            {
+                                                if (resolvedValue != "0")
+                                                {
+                                                    if (HelperMethods.DataTables.Skills.Data.TryGetValue(resolvedValue, out var foundSkill))
+                                                    {
+                                                        resolvedValue = foundSkill.Name;
+                                                    }
+                                                    else
+                                                    {
+                                                        resolvedValue = $"[{resolvedValue}]";
+                                                }
+                                            }
                                             }
                                             else if (attrType == typeof(List<ShieldInfo>))
                                             {
