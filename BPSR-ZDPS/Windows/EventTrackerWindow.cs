@@ -3727,6 +3727,63 @@ namespace BPSR_ZDPS.Windows
                 if (ImGui.Begin("Event Tracker Debug Log", ref ShowDebugLogWindow, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
                 {
                     ImGui.Checkbox("Debug Log Scene Events", ref DebugAllSceneEvents);
+                    ImGui.SameLine();
+                    ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X);
+
+                    bool colorDeltaTime = false;
+                    string deltaWarningMessage = "";
+                    string deltaDiffDirection = "";
+                    if (AppState.ClientServerTimeSyncDelta < 0)
+                    {
+                        deltaDiffDirection = "behind";
+                    }
+                    else if (AppState.ClientServerTimeSyncDelta < 0)
+                    {
+                        deltaDiffDirection = "ahead";
+                    }
+
+                    if (AppState.ClientServerTimeSyncDelta < -3000 || AppState.ClientServerTimeSyncDelta > 3000)
+                    {
+                        colorDeltaTime = true;
+                        deltaWarningMessage = $"Warning: Client Time is more than 3 seconds {deltaDiffDirection} the Server Time!\nIt is strongly recommended to exit the game and resync your Windows Clock Time.\nIf the issue still persists then the servers may have severely degraded performance.";
+                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
+                    }
+                    else if (AppState.ClientServerTimeSyncDelta < -2000 || AppState.ClientServerTimeSyncDelta > 2000)
+                    {
+                        colorDeltaTime = true;
+                        deltaWarningMessage = $"Warning: Client Time is more than 2 seconds {deltaDiffDirection} the Server Time.\nIt is recommended to exit the game and resync your Windows Clock Time.";
+                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.OrangeRed_Transparent);
+                    }
+                    else if (AppState.ClientServerTimeSyncDelta < -1500 || AppState.ClientServerTimeSyncDelta > 1500)
+                    {
+                        colorDeltaTime = true;
+                        deltaWarningMessage = $"Warning: Client Time is more than 1.5 seconds {deltaDiffDirection} the Server Time.";
+                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.Yellow_Transparent);
+                    }
+                    else if (AppState.ClientServerTimeSyncDelta < -1000 || AppState.ClientServerTimeSyncDelta > 1000)
+                    {
+                        colorDeltaTime = true;
+                        deltaWarningMessage = $"Warning: Client Time is more than 1 second {deltaDiffDirection} the Server Time.";
+                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.LightYellow_Transparent);
+                    }
+                    else if (AppState.ClientServerTimeSyncDelta < -500 || AppState.ClientServerTimeSyncDelta > 500)
+                    {
+                        colorDeltaTime = true;
+                        deltaWarningMessage = $"Warning: Client Time is more than half a second {deltaDiffDirection} the Server Time.";
+                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.LightYellow_Transparent);
+                    }
+
+                    ImGui.TextUnformatted($"Time Sync Delta: {AppState.ClientServerTimeSyncDelta}ms");
+
+                    if (colorDeltaTime)
+                    {
+                        ImGui.PopStyleColor();
+                    }
+
+                    if (!string.IsNullOrEmpty(deltaWarningMessage))
+                    {
+                        ImGui.SetItemTooltip(deltaWarningMessage);
+                    }
                     ImGui.Separator();
                     ImGui.BeginChild("##DebugLogList", ImGui.GetContentRegionAvail(), ImGuiWindowFlags.HorizontalScrollbar);
                     foreach (var logItem in DebugEventTrackerLog)
