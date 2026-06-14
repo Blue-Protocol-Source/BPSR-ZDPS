@@ -167,25 +167,76 @@ namespace BPSR_ZDPS.Meters
                         ImGui.ProgressBar((float)contributionProgressBar / 100.0f, new Vector2(-1, 0), $"##HpsEntryContribution_{i}");
                         ImGui.PopStyleColor();
 
-                        string professionStr = $"-{profession}";
-                        if (!Settings.Instance.ShowSubProfessionNameInMeters)
+                        StringBuilder nameFormat = new();
+                        nameFormat.Append(name);
+
+                        if (Settings.Instance.ShowSubProfessionNameInMeters)
                         {
-                            professionStr = "";
+                            nameFormat.Append($"-{profession}");
                         }
 
-                        string abilityScoreStr = $" ({entity.AbilityScore})";
-                        if (!Settings.Instance.ShowAbilityScoreInMeters)
+                        if (Settings.Instance.ShowAbilityScoreInMeters && Settings.Instance.ShowSeasonStrengthInMeters)
                         {
-                            abilityScoreStr = "";
+                            nameFormat.Append($" ({entity.AbilityScore}+{entity.SeasonStrength})");
+                        }
+                        else if (Settings.Instance.ShowAbilityScoreInMeters)
+                        {
+                            nameFormat.Append($" ({entity.AbilityScore})");
+                        }
+                        else if (Settings.Instance.ShowSeasonStrengthInMeters)
+                        {
+                            nameFormat.Append($" ({entity.SeasonStrength})");
                         }
 
-                        ImGui.SetCursorPos(startPoint);
-                        if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{name}{professionStr}{abilityScoreStr}##HpsEntry_{i}", hps_format, entity.ProfessionId))
-                        //if (SelectableWithHint($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}. {name}-{profession} ({entity.AbilityScore})##HpsEntry_{i}", hps_format))
+                        List<MeterImagine> imagines = new();
+                        if (Settings.Instance.ShowPlayerImaginesInMeters)
                         {
-                            mainWindow.entityInspector = new EntityInspector();
-                            mainWindow.entityInspector.LoadEntity(entity, activeEncounter.StartTime, activeEncounter.ExData.FirstDamageTimeStamp);
-                            mainWindow.entityInspector.Open();
+                            var skillLevelIdList = entity.GetAttrKV("AttrSkillLevelIdList");
+                            if (skillLevelIdList != null)
+                            {
+                                if (skillLevelIdList is Newtonsoft.Json.Linq.JArray)
+                                {
+                                    // This is a Historical Entity, need to restore the original object type
+                                    skillLevelIdList = ((Newtonsoft.Json.Linq.JArray)skillLevelIdList).ToObject<List<DataTypes.Skills.SkillLevelInfo>>();
+                                }
+
+                                if (skillLevelIdList is List<DataTypes.Skills.SkillLevelInfo>)
+                                {
+                                    var list = (List<DataTypes.Skills.SkillLevelInfo>)skillLevelIdList;
+                                    foreach (var item in list)
+                                    {
+                                        if (item.IsImagineSlot())
+                                        {
+                                            var skillIconName = item.GetIconName();
+                                            int tier = item.Tier;
+                                            imagines.Add(new MeterImagine()
+                                            {
+                                                Name = item.Name,
+                                                Tier = tier,
+                                                IconPath = skillIconName,
+                                            });
+                                        }
+                                    }
+                                }
+                            }
+
+                            ImGui.SetCursorPos(startPoint);
+                            if (SelectableWithHintImageImagines($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{nameFormat}##HpsEntry_{i}", hps_format, professionId, imagines))
+                            {
+                                mainWindow.entityInspector = new EntityInspector();
+                                mainWindow.entityInspector.LoadEntity(entity, activeEncounter.StartTime, activeEncounter.ExData.FirstDamageTimeStamp);
+                                mainWindow.entityInspector.Open();
+                            }
+                        }
+                        else
+                        {
+                            ImGui.SetCursorPos(startPoint);
+                            if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{nameFormat}##HpsEntry_{i}", hps_format, professionId))
+                            {
+                                mainWindow.entityInspector = new EntityInspector();
+                                mainWindow.entityInspector.LoadEntity(entity, activeEncounter.StartTime, activeEncounter.ExData.FirstDamageTimeStamp);
+                                mainWindow.entityInspector.Open();
+                            }
                         }
 
                         ImGui.PopFont();
