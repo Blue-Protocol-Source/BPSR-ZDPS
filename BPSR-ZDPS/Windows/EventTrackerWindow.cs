@@ -2272,10 +2272,10 @@ namespace BPSR_ZDPS.Windows
                                     }
                                 }
 
-                                if (eventTracker.IsHidden && !windowSettings.IsContainerEditMode)
+                                /*if (eventTracker.IsHidden && !windowSettings.IsContainerEditMode)
                                 {
                                     continue;
-                                }
+                                }*/
 
                                 bool hasSetSize = false;
                                 float maxWindowSize = 0;
