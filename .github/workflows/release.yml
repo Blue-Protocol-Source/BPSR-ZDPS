@@ -45,6 +45,24 @@ jobs:
           "DOTNET_VERSION=$dateDotnet.$run" >> $env:GITHUB_ENV
 
       # -------------------------------------------------
+      # Get commit information
+      # -------------------------------------------------
+      - name: Get commit information
+        shell: pwsh
+        run: |
+          $commitHash = git rev-parse --short HEAD
+          $commitMessage = git log -1 --pretty=%B
+          $commitAuthor = git log -1 --pretty=%an
+          $commitDate = git log -1 --pretty=%ai
+          $totalCommits = git rev-list --count HEAD
+
+          "COMMIT_HASH=$commitHash" >> $env:GITHUB_ENV
+          "COMMIT_MESSAGE=$commitMessage" >> $env:GITHUB_ENV
+          "COMMIT_AUTHOR=$commitAuthor" >> $env:GITHUB_ENV
+          "COMMIT_DATE=$commitDate" >> $env:GITHUB_ENV
+          "TOTAL_COMMITS=$totalCommits" >> $env:GITHUB_ENV
+
+      # -------------------------------------------------
       # Restore
       # -------------------------------------------------
       - name: Restore
@@ -124,14 +142,44 @@ jobs:
             **Version:** `${{ env.RELEASE_VERSION }}`
             **Dotnet Version:** `${{ env.DOTNET_VERSION }}`
 
+            ### Release Information
+            **Release Date:** `${{ env.COMMIT_DATE }}`
+            **Total Commits:** `${{ env.TOTAL_COMMITS }}`
+
+            ### Latest Commit
+            - **Hash:** `${{ env.COMMIT_HASH }}`
+            - **Author:** `${{ env.COMMIT_AUTHOR }}`
+            - **Message:** `${{ env.COMMIT_MESSAGE }}`
+
+            ### Build Details
+            - **Platform:** Windows (x64, x86)
+            - **Build Type:** Single-file executables
+            - **Optimization:** Release configuration
+            - **Debug Symbols:** Removed for smaller file size
+
             ### Included Builds
             - Windows x64 / x86
             - Self-contained & Framework-dependent
             - Single-file publish
 
+            ### Build Variants Explained
+            | Variant | Description | Size | Requirements |
+            |---------|-------------|------|---------------|
+            | Self-contained x64 | Includes .NET 8 runtime | ~150MB | Windows x64 only |
+            | Framework-dependent x64 | Requires .NET 8+ installed | ~20MB | .NET 8 Runtime |
+            | Self-contained x86 | Includes .NET 8 runtime | ~140MB | Windows x86 only |
+            | Framework-dependent x86 | Requires .NET 8+ installed | ~15MB | .NET 8 Runtime |
+
+            ### System Requirements
+            **Self-contained:** Windows 7 SP1 or later (x64 or x86)
+            **Framework-dependent:** Windows 7 SP1 or later with .NET 8 Runtime installed
+
             ### Notes
-            - Self-contained builds include .NET runtime
-            - Framework-dependent builds require .NET 8+
+            - Self-contained builds include .NET runtime and work standalone
+            - Framework-dependent builds require .NET 8+ to be installed
+            - All executables are single-file for easier distribution
+            - Debug symbols have been removed to reduce file size
+            - Choose x64 for 64-bit systems, x86 for 32-bit systems
           files: |
             ZDPS-${{ env.RELEASE_VERSION }}-win-x64-self-contained.zip
             ZDPS-${{ env.RELEASE_VERSION }}-win-x64-framework-dependent.zip
