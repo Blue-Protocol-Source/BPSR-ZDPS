@@ -163,7 +163,7 @@ namespace BPSR_ZDPS.DataTypes
         {
             0 => SubProfessionId.SubProfession_Unknown,
             1714 or 1734 => SubProfessionId.SubProfession_Iaido, // 1714 = Core Skill: Iaido Slash, 179908 = spec skill?, 1724 = spec skill Thunder Cut?
-            1715 or 1740 or 1741 or 179906 => SubProfessionId.SubProfession_Moonstrike, // 44701 = Core Skill: Moon Blade
+            1715 or 1738 or 179906 => SubProfessionId.SubProfession_Moonstrike, // 44701 = Core Skill: Moon Blade, 1740 and 1741 can be accessed from Factors
             120901 or 120902 => SubProfessionId.SubProfession_Icicle,
             1241 => SubProfessionId.SubProfession_Frostbeam,
             160102 or 2208181 or 2208172 => SubProfessionId.SubProfession_FormlessExpertise, // 35107, 35108, 35109 can be accessed from Factors
@@ -172,12 +172,12 @@ namespace BPSR_ZDPS.DataTypes
             1419 => SubProfessionId.SubProfession_Skyward,
             1518 or 1541 or 21402 => SubProfessionId.SubProfession_Smite,
             20301 => SubProfessionId.SubProfession_Lifebind,
-            1941 or 199902 or 2201240 => SubProfessionId.SubProfession_Earthfort,
+            1941 or 2201240 => SubProfessionId.SubProfession_Earthfort, // 199902 can be accessed from Factors
             1930 or 1931 or 1934 or 1935 => SubProfessionId.SubProfession_Block,
             2292 or 1700820 or 1700825 or 1700827 => SubProfessionId.SubProfession_Wildpack,
             220112 or 2203622 or 220106 => SubProfessionId.SubProfession_Falconry,
-            2405 => SubProfessionId.SubProfession_Recovery,
-            2406 => SubProfessionId.SubProfession_Shield,
+            2405 or 2411 or 2206401 => SubProfessionId.SubProfession_Recovery,
+            2406 or 55412 or 55417 => SubProfessionId.SubProfession_Shield,
             2321 or 2335 => SubProfessionId.SubProfession_Dissonance, // 2306 = Core Skill: Amplified Beat, 2362 maybe works?
             2301 or 2336 or 2361 or 55302 => SubProfessionId.SubProfession_Concerto, // 2307 = Core Skill: Healing Beat
             _ => SubProfessionId.SubProfession_Unknown
@@ -186,8 +186,8 @@ namespace BPSR_ZDPS.DataTypes
         public static string GetSubProfessionNameBySkillId(int skillId) => skillId switch
         {
             0 => AppStrings.GetLocalized("SubProfession_Unknown"),
-            1714 or 1734 or 1739 or 179908 => AppStrings.GetLocalized("SubProfession_Iaido"),
-            1715 or 1740 or 1741 or 179906 => AppStrings.GetLocalized("SubProfession_Moonstrike"),
+            1714 or 1734 => AppStrings.GetLocalized("SubProfession_Iaido"),
+            1715 or 1738 or 179906 => AppStrings.GetLocalized("SubProfession_Moonstrike"),
             120901 or 120902 => AppStrings.GetLocalized("SubProfession_Icicle"),
             1241 => AppStrings.GetLocalized("SubProfession_Frostbeam"),
             160102 or 2208181 or 2208172 => AppStrings.GetLocalized("SubProfession_FormlessExpertise"),
@@ -196,14 +196,14 @@ namespace BPSR_ZDPS.DataTypes
             1419 => AppStrings.GetLocalized("SubProfession_Skyward"),
             1518 or 1541 or 21402 => AppStrings.GetLocalized("SubProfession_Smite"),
             20301 => AppStrings.GetLocalized("SubProfession_Lifebind"),
-            1941 or 199902 or 2201240 => AppStrings.GetLocalized("SubProfession_Earthfort"),
+            1941 or 2201240 => AppStrings.GetLocalized("SubProfession_Earthfort"),
             1930 or 1931 or 1934 or 1935 => AppStrings.GetLocalized("SubProfession_Block"),
             2292 or 1700820 or 1700825 or 1700827 => AppStrings.GetLocalized("SubProfession_Wildpack"),
             220112 or 2203622 or 220106 => AppStrings.GetLocalized("SubProfession_Falconry"),
-            2405 => AppStrings.GetLocalized("SubProfession_Recovery"),
-            2406 => AppStrings.GetLocalized("SubProfession_Shield"),
-            2306 => AppStrings.GetLocalized("SubProfession_Dissonance"),
-            2307 or 2361 or 55302 => AppStrings.GetLocalized("SubProfession_Concerto"),
+            2405 or 2411 or 2206401 => AppStrings.GetLocalized("SubProfession_Recovery"),
+            2406 or 55412 or 55417 => AppStrings.GetLocalized("SubProfession_Shield"),
+            2321 or 2335 => AppStrings.GetLocalized("SubProfession_Dissonance"),
+            2301 or 2336 or 2361 or 55302 => AppStrings.GetLocalized("SubProfession_Concerto"),
             _ => ""
         };
 
