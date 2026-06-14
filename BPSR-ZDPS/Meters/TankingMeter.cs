@@ -216,7 +216,7 @@ namespace BPSR_ZDPS.Meters
                             }
 
                             ImGui.SetCursorPos(startPoint);
-                            if (SelectableWithHintImageImagines($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{nameFormat}##TpsEntry_{i}", format.ToString(), professionId, imagines))
+                            if (SelectableWithHintImageImagines($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{nameFormat}##TpsEntry_{i}", format.ToString(), entity.ProfessionId, imagines))
                             {
                                 mainWindow.entityInspector = new EntityInspector();
                                 mainWindow.entityInspector.LoadEntity(entity, activeEncounter.StartTime, activeEncounter.ExData.FirstDamageTimeStamp);
@@ -226,7 +226,7 @@ namespace BPSR_ZDPS.Meters
                         else
                         {
                             ImGui.SetCursorPos(startPoint);
-                            if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{nameFormat}##TpsEntry_{i}", format.ToString(), professionId))
+                            if (SelectableWithHintImage($" {(i + 1).ToString().PadLeft((playerList.Count() < 101 ? 2 : 3), '0')}.", $"{nameFormat}##TpsEntry_{i}", format.ToString(), entity.ProfessionId))
                             {
                                 mainWindow.entityInspector = new EntityInspector();
                                 mainWindow.entityInspector.LoadEntity(entity, activeEncounter.StartTime, activeEncounter.ExData.FirstDamageTimeStamp);
