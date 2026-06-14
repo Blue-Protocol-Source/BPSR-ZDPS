@@ -22,21 +22,21 @@ public class Settings
     public bool OnlyShowDamageContributorsInMeters { get; set; } = false;
     public bool OnlyShowPartyMembersInMeters { get; set; } = false;
     public bool ShowAbilityScoreInMeters { get; set; } = true;
-    public bool ShowSeasonStrengthInMeters { get; set; } = false;
+    public bool ShowSeasonStrengthInMeters { get; set; } = true;
     public bool ShowSubProfessionNameInMeters { get; set; } = true;
     public bool ShowPlayerSummonsInMeters { get; set; } = false;
-    public bool ShowPlayerImaginesInMeters { get; set; } = false;
+    public bool ShowPlayerImaginesInMeters { get; set; } = true;
     public bool UseAutomaticWipeDetection { get; set; } = true;
     public bool SkipTeleportStateCheckInAutomaticWipeDetection { get; set; } = false;
     public bool DisableWipeRecalculationOverwriting { get; set; } = false;
     public bool UseLegacyWipeDetection { get; set; } = false;
     public bool SplitEncountersOnNewPhases { get; set; } = true;
     public bool SkipSkillSnapshotSavingInOpenWorld { get; set; } = false;
-    public bool DisplayTruePerSecondValuesInMeters { get; set; } = false;
+    public bool DisplayTruePerSecondValuesInMeters { get; set; } = true;
     public bool AllowGamepadNavigationInputInZDPS { get; set; } = false;
-    public bool KeepPastEncounterInMeterUntilNextDamage { get; set; } = false;
-    public bool ShowChannelLineNumberInStatus { get; set; } = false;
-    public bool ShowCallWipeForEncounterOnMainWindow { get; set; } = false;
+    public bool KeepPastEncounterInMeterUntilNextDamage { get; set; } = true;
+    public bool ShowChannelLineNumberInStatus { get; set; } = true;
+    public bool ShowCallWipeForEncounterOnMainWindow { get; set; } = true;
     public bool UseDatabaseForEncounterHistory { get; set; } = true;
     public int DatabaseRetentionPolicyDays { get; set; } = 0;
     public bool SkipSavingEncountersWithNoCombatData { get; set; } = false;
@@ -46,7 +46,7 @@ public class Settings
     public bool MinimalProcessingWhileEncounterSavingPaused { get; set; } = false;
     public bool IncludeHealEventsOutsideOfCombat { get; set; } = false;
 
-    public bool MeterSettingsTankingShowDeaths { get; set; } = false;
+    public bool MeterSettingsTankingShowDeaths { get; set; } = true;
     public bool MeterSettingsNpcTakenShowHpData { get; set; } = false;
     public bool MeterSettingsNpcTakenHideMaxHp { get; set; } = false;
     public bool MeterSettingsNpcTakenUseHpMeter { get; set; } = false;

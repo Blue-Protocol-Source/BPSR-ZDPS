@@ -8,8 +8,8 @@ namespace BPSR_ZDPS.DataTypes.External
 {
     public class BPTimerSettings
     {
-        public bool ExternalBPTimerEnabled { get; set; } = false;
+        public bool ExternalBPTimerEnabled { get; set; } = true;
         public bool ExternalBPTimerIncludeCharacterId { get; set; } = false;
-        public bool ExternalBPTimerFieldBossHpReportsEnabled { get; set; } = false;
+        public bool ExternalBPTimerFieldBossHpReportsEnabled { get; set; } = true;
     }
 }
