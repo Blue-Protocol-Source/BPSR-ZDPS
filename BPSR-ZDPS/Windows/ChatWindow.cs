@@ -111,8 +111,13 @@ namespace BPSR_ZDPS.Windows
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(17 / 255.0f, 17 / 255.0f, 17 / 255.0f, 0.0f));
             ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0);
-            if (ImGui.Begin($"Chat##ChatWindow", ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse |
-                                    ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoBackground))
+            ImGuiWindowFlags exWindowFlags = ImGuiWindowFlags.None;
+            if (windowSettings.SupportClickthrough && AppState.MousePassthrough && windowSettings.TopMost)
+            {
+                exWindowFlags |= ImGuiWindowFlags.NoInputs;
+            }
+            ImGuiWindowFlags windowFlags = ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoBackground | exWindowFlags;
+            if (ImGui.Begin($"Chat##ChatWindow", windowFlags))
             {
                 if (RunOnceDelayed == 0)
                 {
@@ -262,7 +267,12 @@ namespace BPSR_ZDPS.Windows
             var chatWindowSettings = Settings.Instance.WindowSettings.ChatWindow;
             var windowViewport = ImGui.GetWindowViewport();
             bool openBlockedUsersPopup = false;
+            bool isClickthroughActive = chatWindowSettings.SupportClickthrough && AppState.MousePassthrough && chatWindowSettings.TopMost;
 
+            if (isClickthroughActive)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+            }
             ImGui.SetCursorPosX(ImGui.GetWindowSize().X - (ImGui.GetFontSize() + ImGui.GetStyle().FramePadding.X));
             ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
             if (ImGui.Button($"{FASIcons.Gear}##OptionsMenu"))
@@ -270,6 +280,10 @@ namespace BPSR_ZDPS.Windows
                 ImGui.OpenPopup("SettingsPopup");
             }
             ImGui.PopFont();
+            if (isClickthroughActive)
+            {
+                ImGui.PopStyleColor();
+            }
             ImGui.SameLine();
 
             //ImGui.SetCursorPosX(ImGui.GetCursorPosX() - 200);
@@ -362,6 +376,16 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Checkbox("##HideStickers", ref hideStickers);
                 ImGui.SetItemTooltip("With this enabled stickers Ex. [Image(2001)] won't show in chat.");
                 chatWindowSettings.HideStickers = hideStickers;
+
+                ImGui.SameLine();
+
+                var supportClickthrough = chatWindowSettings.SupportClickthrough;
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted("Support Clickthrough:");
+                ImGui.SameLine();
+                ImGui.Checkbox("##SupportClickthrough", ref supportClickthrough);
+                ImGui.SetItemTooltip("Allows mouse to passthrough the Chat window while Top Most and in Clickthrough Mode.");
+                chatWindowSettings.SupportClickthrough = supportClickthrough;
 
                 var maxChatHistory = Settings.Instance.Chat.MaxChatHistory;
                 ImGui.AlignTextToFramePadding();
@@ -838,5 +862,6 @@ namespace BPSR_ZDPS.Windows
         public bool ShowTimeAsXAgo { get; set; } = true;
         public bool HideStickers { get; set; } = false;
         public List<ChatTabConfig> ChatTabs { get; set; } = [];
+        public bool SupportClickthrough {  get; set; } = false;
     }
 }
