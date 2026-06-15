@@ -224,17 +224,21 @@ namespace BPSR_ZDPS
                                 });
                             }*/
 
+                            /*
                             AddSettingRow("Include All Stats In Scoring:", () =>
                             {
                                 var val = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ValueAllStats;
                                 ImGui.Checkbox("##ValueAllStats", ref val);
                                 Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ValueAllStats = val;
-                            });
+                            });*/
 
                             AddSettingRow("Num Modules in a Set:", () =>
                             {
                                 ImGui.SetNextItemWidth(300);
+                                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                                 ImGui.SliderInt("##NumModules", ref SolverConfig.NumModules, 1, 5);
+                                ImGui.PopStyleColor(2);
                             });
 
                             ImGui.EndTable();
@@ -500,18 +504,21 @@ namespace BPSR_ZDPS
                                 resultsOpenStates[i] = i <= 1;
 
                                 ModComboResult modsResult = BestModResults[i];
-                                if (ImGui.CollapsingHeader($"Result: {i + 1} (Ability Score: {modsResult.CombatScore:#,##}) [ZScore: {modsResult.Score:#,##}]", (resultsOpenStates[i] ? ImGuiTreeNodeFlags.DefaultOpen : ImGuiTreeNodeFlags.None)))
+                                ImGui.SeparatorText($"Result: {i + 1} (Ability Score: {modsResult.CombatScore:#,##}) [ZScore: {modsResult.Score:#,##}]");
+                                
+                                var perLine = 3;
+                                var statPos = ImGui.GetCursorPos();
+                                for (int i1 = 0; i1 < modsResult.Stats.Length; i1++)
                                 {
-                                    var perLine = 3;
-                                    var statPos = ImGui.GetCursorPos();
-                                    for (int i1 = 0; i1 < modsResult.Stats.Length; i1++)
-                                    {
-                                        PowerCore stat = modsResult.Stats[i1];
-                                        ImGui.SetCursorPos(statPos + new Vector2(i1 * 100, 0));
-                                        var isAPrioStat = SolverConfig.StatPriorities.FirstOrDefault(x => x.Id == stat.Id) != null;
-                                        DrawModuleStat(stat.Id, stat.Value, isAPrioStat);
-                                    }
+                                    PowerCore stat = modsResult.Stats[i1];
+                                    ImGui.SetCursorPos(statPos + new Vector2(i1 * 100, 0));
+                                    var isAPrioStat = SolverConfig.StatPriorities.FirstOrDefault(x => x.Id == stat.Id) != null;
+                                    DrawModuleStat(stat.Id, stat.Value, isAPrioStat);
+                                }
 
+                                ImGui.Indent();
+                                if (ImGui.CollapsingHeader($"Show Modules###Modules_{i}"))
+                                {
                                     bool needsToNewLine = false;
                                     bool isCtrlPressed = ImGui.IsKeyDown(ImGuiKey.LeftCtrl);
                                     var mods = modsResult.ModuleSet.Mods;
@@ -540,6 +547,7 @@ namespace BPSR_ZDPS
                                         ImGui.NewLine();
                                     }
                                 }
+                                ImGui.Unindent();
                             }
                         }
                     }
@@ -1105,6 +1113,11 @@ namespace BPSR_ZDPS
             return (long)n * (n - 1) * (n - 2) * (n - 3) / 24;
         }
 
+        public static ModStatInfo GetModInfo(int id)
+        {
+            return ModStatInfos[id];
+        }
+
 #if DEBUG
         private static Dictionary<string, PlayerModDataSave> DebugPlayerModInventories = new Dictionary<string, PlayerModDataSave>
         {
@@ -1178,7 +1191,7 @@ namespace BPSR_ZDPS
     public struct ModComboResult
     {
         public ModuleSet ModuleSet;
-        public int Score;
+        public double Score;
         public PowerCore[] Stats;
         public int CombatScore;
     }

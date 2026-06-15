@@ -29,7 +29,10 @@ namespace BPSR_ZDPS.Managers
             }
             else if (mode == SolverModes.NormalV2)
             {
-                result = NormalV2(config, playerMods, sw, filtered, cancelToken);
+                //result = NormalV2(config, playerMods, sw, filtered, cancelToken);
+
+                var beamSearch = new ModuleOptimizerBeam(config, playerMods, sw, filtered, cancelToken);
+                result = beamSearch.Solve();
             }
 
             Log.Information($"Combos took: {sw.Elapsed}");
