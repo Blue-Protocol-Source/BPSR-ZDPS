@@ -800,7 +800,7 @@ namespace BPSR_ZDPS.Windows
                                             if (eventTracker.DebugLogTracker)
                                             {
                                                 AddDebugLog($"{DateTime.Now} Buff Event | Correcting Creation Time {e.CreationDateTime.Value} to local desync offset of {AppState.ClientServerTimeSyncDelta}ms");
-                                    }
+                                            }
                                             updateTimeStamp = updateTimeStamp.AddMilliseconds(AppState.ClientServerTimeSyncDelta);// * -1);
                                         }
                                     }
@@ -920,6 +920,36 @@ namespace BPSR_ZDPS.Windows
                                     eventData.Cooldown?.EndCooldown();
                                 }
                                 //System.Diagnostics.Debug.WriteLine($"{e.BuffEventType} ({eventData.Uuid}) {eventTracker.Name} - Dur={e.Duration}, Upd={e.UpdateDateTime}, Add={eventData.Added}, Rmv={eventData.Removed}");
+                            }
+                        }
+                        else if (eventTracker.HideTrackerCondition == EHideTrackerCondition.HideOnOtherBuffEvent && eventTracker.HideOnOtherBuffId == e.BaseId
+                            || eventData != null && e.BuffUuid != 0 && eventData.HideOnOtherBuffUuid == e.BuffUuid)
+                        {
+                            if (e.BuffEventType == EBuffEventType.BuffEventAddTo)
+                            {
+                                eventTracker.IsHidden = true;
+
+                                if (eventData != null)
+                                {
+                                    eventData.HideOnOtherBuffUuid = e.BuffUuid;
+                                }
+
+                                if (eventTracker.IgnoreCooldownDuration && eventData != null && eventData.Cooldown != null && !eventData.Cooldown.IsCooldownEnded)
+                                {
+                                    // There won't be a Remove event coming from regular Cooldown Finished events so we'll simulate one here
+                                    var rw = GetEnabledRaidWarning(eventTracker, ERaidWarningActivationType.OnRemove);
+
+                                    if (rw != null)
+                                    {
+                                        var didRaidWarning = HandleRaidWarnings(rw, eventTracker, eventData, eventData.OwnerEntityUuid, null);
+                                    }
+
+                                    eventData.Cooldown?.EndCooldown();
+                                }
+                            }
+                            else
+                            {
+                                eventTracker.IsHidden = false;
                             }
                         }
                     }
@@ -1446,8 +1476,8 @@ namespace BPSR_ZDPS.Windows
                                                     else
                                                     {
                                                         resolvedValue = $"[{resolvedValue}]";
+                                                    }
                                                 }
-                                            }
                                             }
                                             else if (attrType == typeof(List<ShieldInfo>))
                                             {
@@ -2703,7 +2733,7 @@ namespace BPSR_ZDPS.Windows
                                     farthestStartpoint = farthestStartpoint - winPos.X;
                                 }
 
-                                bool isNeverHide = eventTracker.HideTrackerCondition == EHideTrackerCondition.NeverHide;
+                                bool isNeverHide = eventTracker.HideTrackerCondition == EHideTrackerCondition.NeverHide || eventTracker.HideTrackerCondition == EHideTrackerCondition.HideOnOtherBuffEvent;
                                 if (eventData.Cooldown != null || isNeverHide)
                                 {
                                     bool usingLayersForDuration = eventTracker.IgnoreCooldownDuration && eventTracker.UseLayersForDuration;
@@ -6131,6 +6161,15 @@ namespace BPSR_ZDPS.Windows
                 }
                 ImGui.Unindent();
             }
+            if (ActiveTrackedEventEntry.HideTrackerCondition == EHideTrackerCondition.HideOnOtherBuffEvent)
+            {
+                ImGui.TextUnformatted("Other Buff ID (Hides current Tracker when other Gains):");
+                int hideOnOtherBuffId = ActiveTrackedEventEntry.HideOnOtherBuffId;
+                if (ImGui.InputInt("##HideOnOtherBuffId", ref hideOnOtherBuffId, ImGuiInputTextFlags.CharsDecimal))
+                {
+                    ActiveTrackedEventEntry.HideOnOtherBuffId = hideOnOtherBuffId;
+                }
+            }
 
             ImGui.Checkbox("Only Display One Tracker Instance", ref ActiveTrackedEventEntry.OnlyDisplayOneTrackerInstance);
             ImGui.SetItemTooltip("Limits the display of instances for this Tracker to only one at a time.\nIMPORTANT: This may still result in triggers for each instance!");
@@ -6620,6 +6659,8 @@ namespace BPSR_ZDPS.Windows
                 PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Wound (Heal Blocked)", 510571));
                 PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Wound (Heal Blocked) (DoD)", 883113));
                 PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Boarrier Wound (Heal Blocked)", 2110026));
+                PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Kartgriff Mechanical Failure", 2110049));
+                PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Tetanus", 2110069));
 
                 PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Life Wave", 2302421));
 
@@ -6918,6 +6959,13 @@ namespace BPSR_ZDPS.Windows
                 newExhaustedFlameDevour.ShowNameInsideProgressBar = true;
                 newExhaustedFlameDevour.ShowDurationTextInProgressBar = true;
                 groupDebuffsContainer.EventTrackers.Add(4, newExhaustedFlameDevour);
+                var newMechanicalFailure = CreateNewBasicBuffEventEntry("Kartgriff Mechanical Failure", 2110049);
+                newMechanicalFailure.TrackedEntityType = ETrackedEntityType.Everyone;
+                newMechanicalFailure.ShowEntityName = true;
+                newMechanicalFailure.DurationProgressBarSameLine = true;
+                newMechanicalFailure.ShowNameInsideProgressBar = true;
+                newMechanicalFailure.ShowDurationTextInProgressBar = true;
+                groupDebuffsContainer.EventTrackers.Add(5, newMechanicalFailure);
 
                 PresetContainersList.Add(groupDebuffsContainer);
             }
@@ -7224,7 +7272,8 @@ namespace BPSR_ZDPS.Windows
         NeverHide = 0,
         HideWhenNoDuration = 1,
         HideOnRemoveEvent = 2,
-        HideOnSpecificEvent = 3
+        HideOnSpecificEvent = 3,
+        HideOnOtherBuffEvent = 4,
     }
 
     public enum ESkillEventTrackingType
@@ -7356,6 +7405,7 @@ namespace BPSR_ZDPS.Windows
         //public bool HideIfNoDuration = false;
         public EHideTrackerCondition HideTrackerCondition = EHideTrackerCondition.HideOnRemoveEvent;
         public Zproto.EBuffEventType? HideOnSpecificBuffEventValue = null;
+        public int HideOnOtherBuffId = 0;
 
         public bool OverrideDuration = false;
         public int DurationOverrideValue = 0;
@@ -7693,6 +7743,7 @@ namespace BPSR_ZDPS.Windows
         public string SourceEntityName = "";
         public long OwnerEntityUuid = 0;
         public DataTypes.Enum.EBuffType? BuffType = null;
+        public int HideOnOtherBuffUuid = 0;
 
         [JsonIgnore]
         public EventCooldownData? Cooldown;
