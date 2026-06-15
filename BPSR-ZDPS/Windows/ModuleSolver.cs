@@ -1105,6 +1105,11 @@ namespace BPSR_ZDPS
             return (long)n * (n - 1) * (n - 2) * (n - 3) / 24;
         }
 
+        public static ModStatInfo GetModInfo(int id)
+        {
+            return ModStatInfos[id];
+        }
+
 #if DEBUG
         private static Dictionary<string, PlayerModDataSave> DebugPlayerModInventories = new Dictionary<string, PlayerModDataSave>
         {
@@ -1178,7 +1183,7 @@ namespace BPSR_ZDPS
     public struct ModComboResult
     {
         public ModuleSet ModuleSet;
-        public int Score;
+        public double Score;
         public PowerCore[] Stats;
         public int CombatScore;
     }
