@@ -32,7 +32,7 @@ public class Settings
     public bool UseLegacyWipeDetection { get; set; } = false;
     public bool SplitEncountersOnNewPhases { get; set; } = true;
     public bool SkipSkillSnapshotSavingInOpenWorld { get; set; } = false;
-    public bool DisplayTruePerSecondValuesInMeters { get; set; } = true;
+    public bool DisplayTruePerSecondValuesInMeters { get; set; } = false;
     public bool AllowGamepadNavigationInputInZDPS { get; set; } = false;
     public bool KeepPastEncounterInMeterUntilNextDamage { get; set; } = true;
     public bool ShowChannelLineNumberInStatus { get; set; } = true;
@@ -48,8 +48,8 @@ public class Settings
 
     public bool MeterSettingsTankingShowDeaths { get; set; } = true;
     public bool MeterSettingsNpcTakenShowHpData { get; set; } = false;
-    public bool MeterSettingsNpcTakenHideMaxHp { get; set; } = false;
-    public bool MeterSettingsNpcTakenUseHpMeter { get; set; } = false;
+    public bool MeterSettingsNpcTakenHideMaxHp { get; set; } = true;
+    public bool MeterSettingsNpcTakenUseHpMeter { get; set; } = true;
 
     public bool LogToFile { get; set; } = true;
     public EGameCapturePreference GameCapturePreference { get; set; } = EGameCapturePreference.Auto;
