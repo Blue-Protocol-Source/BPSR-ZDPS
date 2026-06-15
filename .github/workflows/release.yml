@@ -163,12 +163,12 @@ jobs:
             - Single-file publish
 
             ### Build Variants Explained
-            | Variant | Description | Size | Requirements |
-            |---------|-------------|------|---------------|
-            | Self-contained x64 | Includes .NET 8 runtime | ~150MB | Windows x64 only |
-            | Framework-dependent x64 | Requires .NET 8+ installed | ~20MB | .NET 8 Runtime |
-            | Self-contained x86 | Includes .NET 8 runtime | ~140MB | Windows x86 only |
-            | Framework-dependent x86 | Requires .NET 8+ installed | ~15MB | .NET 8 Runtime |
+            | Variant | Description | Requirements |
+            |---------|-------------|---------------|
+            | Self-contained x64 | Includes .NET 8 runtime | Windows x64 only |
+            | Framework-dependent x64 | Requires .NET 8+ installed | .NET 8 Runtime |
+            | Self-contained x86 | Includes .NET 8 runtime | Windows x86 only |
+            | Framework-dependent x86 | Requires .NET 8+ installed | .NET 8 Runtime |
 
             ### System Requirements
             **Self-contained:** Windows 7 SP1 or later (x64 or x86)
