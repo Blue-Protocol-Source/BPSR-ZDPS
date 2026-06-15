@@ -2933,6 +2933,29 @@ namespace BPSR_ZDPS.Windows
                                                     }
                                                     ImGui.PopFont();
                                                 }
+                                                else if (eventTracker.ShowLayers && eventTracker.ShowLayersInsideProgressBar)
+                                                {
+                                                    ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                                                    string layersFormat = $"{eventData.Layers}";
+
+                                                    var endPos = ImGui.GetCursorPos();
+                                                    var textSize = ImGui.CalcTextSize(layersFormat);
+
+                                                    ImGui.SetCursorPosX(startPos.X + (eventTracker.DurationProgressBarSize * 0.50f) - (textSize.X * 0.50f));
+                                                    ImGui.SetCursorPosY(((startPos.Y + endPos.Y) * 0.50f) - (textSize.Y * 0.50f) - ImGui.GetStyle().FramePadding.Y);
+
+                                                    bool customTextColor = eventTracker.UseCustomLayersTextColor;
+                                                    if (customTextColor)
+                                                    {
+                                                        ImGui.PushStyleColor(ImGuiCol.Text, eventTracker.LayersTextColor);
+                                                    }
+                                                    ImGui.TextUnformatted(layersFormat);
+                                                    if (customTextColor)
+                                                    {
+                                                        ImGui.PopStyleColor();
+                                                    }
+                                                    ImGui.PopFont();
+                                                }
                                             }
                                             else
                                             {
