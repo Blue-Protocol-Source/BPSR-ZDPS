@@ -84,7 +84,7 @@ namespace BPSR_ZDPS
             netCap.RegisterNotifyHandler((ulong)EServiceId.WorldActNtf, (uint)BPSR_ZDPSLib.ServiceMethods.WorldActNtf.SyncWorldActData, ProcessSyncWorldActData);
 
             netCap.RegisterNotifyHandler((ulong)EServiceId.SocialNtf, (uint)BPSR_ZDPSLib.ServiceMethods.SocialNtf.NotifySocialData, ProcessNotifySocialData);
-            
+
             netCap.RegisterNotifyHandler((ulong)EServiceId.WorldLoginNtf, (uint)BPSR_ZDPSLib.ServiceMethods.WorldLoginNtf.NotifyEnterWorld, ProcessNotifyEnterWorld);
 
             // Uncomment to debug print unhandled events
@@ -1004,7 +1004,7 @@ namespace BPSR_ZDPS
                             EncounterManager.Current.SetAttrKV(uuid, attrIdName, new List<Zproto.EquipNine>());
                             break;
                         }
-
+                        
                         List<Zproto.EquipNine> equipNineList = new();
                         while (!reader.IsAtEnd)
                         {
@@ -1017,6 +1017,38 @@ namespace BPSR_ZDPS
                         }
                         EncounterManager.Current.SetAttrKV(uuid, "AttrEquipData", equipNineList);
                         break;
+                    /*case EAttrType.AttrFightResourceIds:
+                        if (isNoValue)
+                        {
+                            EncounterManager.Current.SetAttrKV(uuid, attrIdName, new List<int>());
+                            break;
+                        }
+
+                        List<int> fightResIds = new();
+                        while (!reader.IsAtEnd)
+                        {
+                            int len = reader.ReadLength();
+
+                            fightResIds.Add(len);
+                        }
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, fightResIds);
+                        break;
+                    case EAttrType.AttrFightResources:
+                        if (isNoValue)
+                        {
+                            EncounterManager.Current.SetAttrKV(uuid, attrIdName, new List<int>());
+                            break;
+                        }
+
+                        List<int> fightRes = new();
+                        while (!reader.IsAtEnd)
+                        {
+                            int len = reader.ReadLength();
+
+                            fightRes.Add(len);
+                        }
+                        EncounterManager.Current.SetAttrKV(uuid, attrIdName, fightRes);
+                        break;*/
                     default:
                         EncounterManager.Current.SetAttrKV(uuid, attrIdName, isNoValue ? 0 : reader.ReadInt32());
                         //System.Diagnostics.Debug.WriteLine($"{attrIdName} was hit");
@@ -1031,6 +1063,7 @@ namespace BPSR_ZDPS
             {
                 if (HelperMethods.DataTables.TempAttrs.Data.TryGetValue(tempAttr.Id.ToString(), out var matchedTempAttr))
                 {
+                    //System.Diagnostics.Debug.WriteLine($"TempAttr: UUID={uuid} Id={tempAttr.Id} Value={tempAttr.Value} TempAttr.Name={matchedTempAttr.Name},Params={string.Join(",", matchedTempAttr.AttrParams)}; PAT={matchedTempAttr.GetProtoAttrType()}, PLT={matchedTempAttr.GetProtoLogicType()}");
                     EncounterManager.Current.SetTempAttrKV(uuid, tempAttr.Id, new TempAttributesContainer() { Id = tempAttr.Id, Value = tempAttr.Value, TempAttr = matchedTempAttr });
                 }
                 else
@@ -1463,6 +1496,17 @@ namespace BPSR_ZDPS
                 AppState.PlayerUUID = uuid;
                 AppState.PlayerUID = Utils.UuidToEntityId(uuid);
             }
+            if (aoiSyncToMeDelta.SyncSkillCDs != null && aoiSyncToMeDelta.SyncSkillCDs.Count > 0)
+            {
+                //System.Diagnostics.Debug.WriteLine($"aoiSyncToMeDelta.SyncSkillCDs:\n{aoiSyncToMeDelta.SyncSkillCDs}");
+                foreach (var skillCd in aoiSyncToMeDelta.SyncSkillCDs)
+                {
+                    if (skillCd.Duration > 0)
+                    {
+                        // TODO: Handle reported skill cooldown data
+                    }
+                }
+            }
             var aoiSyncDelta = aoiSyncToMeDelta.BaseDelta;
             if (aoiSyncDelta == null)
             {
@@ -1816,28 +1860,72 @@ namespace BPSR_ZDPS
                 {
                     var currentEncounterDuration = EncounterManager.Current.GetDuration();
                     var characterList = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.Value.EntityType == EEntityType.EntChar);
+                    
                     foreach (var character in characterList)
                     {
+                        long foundDeathMarkerUUID = 0;
+                        long foundReviveMarkerUUID = 0;
+                        long foundWipeMarkerUUID = 0;
+                        BuffEvent? foundWipeMarker = null;
+
                         if (character.Value.RecentBuffEventHistory.Count > 0)
                         {
+                            // This list is ordered by when an event occurs regardless of UUID order
                             foreach (var recentBuff in character.Value.RecentBuffEventHistory)
                             {
-                                if (recentBuff.Value.BaseId == 510072)
-                                {
-                                    // Mark the Encounter as being in a Wipe State before forcing the end of it
-                                    // This allows us to handle cases of a New Objective being sent at the same time as the Wipe Buff (such as Season 2 Raids)
-                                    EncounterManager.Current.SetWipeState(true);
+                                // If BaseId 500111, the player has died
+                                // If BaseId 500112, the player has been revived
+                                // If BaseID 500111 then 510072, the player has died and a wipe followed
+                                // Every 500111 should have a matching 500112 unless this is a wipe
 
-                                    // This buff indicates a wipe is actively occurring.
-                                    // There are a few events that will occur over the next several seconds so we delay to let them register into the current event
-                                    if (recentBuff.Value.EventAddTime.Add(TimeSpan.FromSeconds(1.0)).TotalSeconds <= currentEncounterDuration.TotalSeconds)
+                                if (recentBuff.Value.BaseId == 500111)
+                                {
+                                    // Valid wipes will have a death marker present, we'll use it to verify if the wipe buff was incorrectly sent by the game or not
+                                    // 900122 is the BaseId that _should_ be used to reset HP and CDs when not dealing with a wipe, however the wipe version is incorrectly used sometimes
+                                    if (recentBuff.Value.Uuid > foundDeathMarkerUUID)
                                     {
-                                        Log.Debug($"Encounter Wipe Reset buff was found and duration was hit, creating a new Encounter now");
-                                        EncounterManager.Current.SetWipeState(true);
-                                        EncounterManager.StartEncounter(false, EncounterStartReason.Wipe);
-                                        return;
+                                        foundDeathMarkerUUID = recentBuff.Value.Uuid;
                                     }
                                 }
+                                else if (recentBuff.Value.BaseId == 500112)
+                                {
+                                    if (recentBuff.Value.Uuid > foundReviveMarkerUUID)
+                                    {
+                                        foundReviveMarkerUUID = recentBuff.Value.BaseId;
+                                    }
+                                }
+                                else if (recentBuff.Value.BaseId == 510072)
+                                {
+                                    if (recentBuff.Value.Uuid > foundWipeMarkerUUID)
+                                    {
+                                        foundWipeMarker = recentBuff.Value;
+                                        foundWipeMarkerUUID = recentBuff.Value.Uuid;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (foundDeathMarkerUUID > 0 && foundWipeMarkerUUID > 0 && foundDeathMarkerUUID < foundWipeMarkerUUID && foundWipeMarker != null)
+                        {
+                            if (foundWipeMarker.EventAddTime.TotalSeconds < 2 || EncounterManager.Current.StartTime.AddSeconds(1) > foundWipeMarker.AddDateTime)
+                            {
+                                // Some dungeons incorrectly send this buff on Start, this should let us ignore it
+                                EncounterManager.Current.SetWipeState(false);
+                                continue;
+                            }
+
+                            // Mark the Encounter as being in a Wipe State before forcing the end of it
+                            // This allows us to handle cases of a New Objective being sent at the same time as the Wipe Buff (such as Season 2 Raids)
+                            EncounterManager.Current.SetWipeState(true);
+
+                            // This buff indicates a wipe is actively occurring.
+                            // There are a few events that will occur over the next several seconds so we delay to let them register into the current event
+                            if (foundWipeMarker.EventAddTime.Add(TimeSpan.FromSeconds(1.0)).TotalSeconds <= currentEncounterDuration.TotalSeconds)
+                            {
+                                Log.Debug($"Encounter Wipe Reset buff was found and duration was hit, creating a new Encounter now");
+                                EncounterManager.Current.SetWipeState(true);
+                                EncounterManager.StartEncounter(false, EncounterStartReason.Wipe);
+                                return;
                             }
                         }
                     }
