@@ -7,15 +7,37 @@ ZDPS is a Damage Meter and Companion Tool for Blue Protocol: Star Resonance. It'
 
 > If you encounter issues, or have questions/feedback, the [BPSR Devs Discord](https://discord.gg/3UTC4pfCyC) is available to join.
 
+> [!IMPORTANT]
+> **ZDPS will not start or capture game data unless Npcap is installed.**
+>
+> Before launching ZDPS for the first time, install **Npcap** from https://npcap.com/#download.
+>
+> If you see ZDPS not detecting packets, not showing combat data, or failing to start correctly, verify that Npcap is installed first.
+
 ### Prerequisites
-Before ZDPS will run, you first must have Npcap installed. It can be found at [https://npcap.com](https://npcap.com/#download).
-- Download and run the `Npcap 1.85 installer for Windows` file. If a newer version is available it will work as well.
 
-If the game was already running when Npcap was installed, you will need to restart it.
+#### 1. Install Npcap (Required)
 
-ZDPS is built on `.NET 9` and requires it to be installed. If you do not have it installed already, head over to the Microsoft website [here](https://dotnet.microsoft.com/en-us/download/dotnet/9.0). Download and install the `.NET Desktop Runtime 9.X.X` for `x64`.
-- Note: This not the SDK, or other "Runtime" versions on the site.
-- If you fail to install this before running ZDPS you will receive a popup on launch prompting you to download it before it can be run.
+ZDPS depends on **Npcap** to capture network traffic.
+
+* Download Npcap from: https://npcap.com/#download
+* Run the **Npcap 1.85 installer for Windows** (or any newer version).
+* If the game was already running when Npcap was installed, restart the game.
+
+> [!WARNING]
+> **Most startup issues are caused by Npcap not being installed.**
+
+#### 2. Install .NET 9 Desktop Runtime (Required)
+
+ZDPS is built on **.NET 9** and requires the **.NET Desktop Runtime**.
+
+* Download from: https://dotnet.microsoft.com/en-us/download/dotnet/9.0
+* Install **.NET Desktop Runtime 9.x.x (x64)**
+
+> [!NOTE]
+> Install the **Desktop Runtime**, not the SDK and not any other Runtime variant.
+
+If .NET 9 Desktop Runtime is missing, ZDPS will display a download prompt when launched.
 
 ### Installing ZDPS
 1. Download the latest release of ZDPS by heading over to the [Releases](https://github.com/Blue-Protocol-Source/BPSR-Deeps/releases) section and downloading the latest `ZDPS - Damage Meter.zip`
