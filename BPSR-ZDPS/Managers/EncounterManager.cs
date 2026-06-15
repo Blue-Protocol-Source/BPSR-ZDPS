@@ -3051,9 +3051,19 @@ namespace BPSR_ZDPS
 
         }
 
+        public void SetName(string value)
+        {
+            Name = value;
+        }
+
         public void SetDescription(string value)
         {
             Description = value;
+        }
+
+        public void SetBuffType(DataTypes.Enum.EBuffType value)
+        {
+            BuffType = value;
         }
 
         public void SetEvent(int uuid, int baseId, int level, long fireUuid, string entityCasterName, int layer, int duration, int sourceConfigId)
