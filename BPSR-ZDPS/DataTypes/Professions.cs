@@ -202,117 +202,131 @@ namespace BPSR_ZDPS.DataTypes
         // NEW COLORS
         public static Vector4 ProfessionColors(string professionName)
         {
+            // Unknown (BUG: There is a bug with Profession_Unknown progress bar not being visible in Malice raid)
             if (professionName == AppStrings.GetLocalized("Profession_Unknown"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#6c757d")); // Profession_Unknown
+                return Colors.FromColor(ColorTranslator.FromHtml("#6c757d")); // Muted Slate Gray
             }
+            else if (professionName == AppStrings.GetLocalized("SubProfession_Unknown"))
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#626A71")); // Dim Gray
+            }
+            // Stormblade - dark purple
             else if (professionName == AppStrings.GetLocalized("Profession_Stormblade"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#805AA3")); // Profession_Stormblade
+                return Colors.FromColor(ColorTranslator.FromHtml("#805AA3")); // Muted Amethyst Purple
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Iaido"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#6A4A87")); // SubProfession_Iaido
+                return Colors.FromColor(ColorTranslator.FromHtml("#6A4A87")); // Deep Amethyst
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Moonstrike"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#523A69")); // SubProfession_Moonstrike
+                return Colors.FromColor(ColorTranslator.FromHtml("#523A69")); // Dark Plum
             }
+            // FrostMage - dark blue
             else if (professionName == AppStrings.GetLocalized("Profession_FrostMage"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#3D56C2")); // Profession_FrostMage
+                return Colors.FromColor(ColorTranslator.FromHtml("#3D56C2")); // Royal Indigo Blue
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Frostbeam"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#32469F")); // SubProfession_Frostbeam
+                return Colors.FromColor(ColorTranslator.FromHtml("#32469F")); // Deep Sapphire Blue
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Icicle"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#27377C")); // SubProfession_Icicle
+                return Colors.FromColor(ColorTranslator.FromHtml("#27377C")); // Midnight Indigo Blue
             }
+            // TwinStriker - amber
             else if (professionName == AppStrings.GetLocalized("Profession_TwinStriker"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#DC9617")); // Profession_TwinStriker
+                return Colors.FromColor(ColorTranslator.FromHtml("#DC9617")); // Golden Burnished Amber
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_FormlessExpertise"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#C48618")); // SubProfession_FormlessExpertise
+                return Colors.FromColor(ColorTranslator.FromHtml("#C48618")); // Dark Amber
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_CrimsonExpertise"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#AC7619")); // SubProfession_CrimsonExpertise
+                return Colors.FromColor(ColorTranslator.FromHtml("#AC7619")); // Antique Bronze Gold
             }
+            // WindKnight - teal
             else if (professionName == AppStrings.GetLocalized("Profession_WindKnight"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#6D8B8D")); // Profession_WindKnight
+                return Colors.FromColor(ColorTranslator.FromHtml("#6D8B8D")); // Muted Storm Teal
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Skyward"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#627C7E")); // SubProfession_Skyward
+                return Colors.FromColor(ColorTranslator.FromHtml("#627C7E")); // Dusty Teal
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Vanguard"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#576E6F")); // SubProfession_Vanguard
+                return Colors.FromColor(ColorTranslator.FromHtml("#576E6F")); // Dark Slate Teal
             }
+            // VerdantOracle - green
             else if (professionName == AppStrings.GetLocalized("Profession_VerdantOracle"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#5A8D65")); // Profession_VerdantOracle
+                return Colors.FromColor(ColorTranslator.FromHtml("#5A8D65")); // Sage Forest Green
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Lifebind"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#517E5B")); // SubProfession_Lifebind
+                return Colors.FromColor(ColorTranslator.FromHtml("#517E5B")); // Moss Green
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Smite"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#486F51")); // SubProfession_Smite
+                return Colors.FromColor(ColorTranslator.FromHtml("#486F51")); // Deep Forest Green Evergreen
             }
+            // HeavyGuardian - gold
             else if (professionName == AppStrings.GetLocalized("Profession_HeavyGuardian"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#BE9B1C")); // Profession_HeavyGuardian
+                return Colors.FromColor(ColorTranslator.FromHtml("#BE9B1C")); // Antique Gold
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Earthfort"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#AB8C1C")); // SubProfession_Earthfort
+                return Colors.FromColor(ColorTranslator.FromHtml("#AB8C1C")); // Dark Old Gold
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Block"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#997D1C")); // SubProfession_Block
+                return Colors.FromColor(ColorTranslator.FromHtml("#997D1C")); // Burnished Gold Brass
             }
+            // Marksman - pink
             else if (professionName == AppStrings.GetLocalized("Profession_Marksman"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#D1218C")); // Profession_Marksman
+                return Colors.FromColor(ColorTranslator.FromHtml("#C37DF8")); // Orchid Violet
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Falconry"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#BA227D")); // SubProfession_Falconry
+                return Colors.FromColor(ColorTranslator.FromHtml("#C46DF7")); // Bright Orchid
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Wildpack"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#A4226E")); // SubProfession_Wildpack
+                return Colors.FromColor(ColorTranslator.FromHtml("#C55DF6")); // Vibrant Violet
             }
+            // ShieldKnight - lime
             else if (professionName == AppStrings.GetLocalized("Profession_ShieldKnight"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#CFD212")); // Profession_ShieldKnight
+                return Colors.FromColor(ColorTranslator.FromHtml("#CFD212")); // Citron Lime Gold
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Recovery"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#BABD17")); // SubProfession_Recovery
+                return Colors.FromColor(ColorTranslator.FromHtml("#BABD17")); // Olive Lime
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Shield"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#A6A819")); // SubProfession_Shield
+                return Colors.FromColor(ColorTranslator.FromHtml("#A6A819")); // Dark Olive
             }
+            // BeatPerformer - dark red
             else if (professionName == AppStrings.GetLocalized("Profession_BeatPerformer"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#9C5353")); // Profession_BeatPerformer
+                return Colors.FromColor(ColorTranslator.FromHtml("#9C5353")); // Dusty Red Crimson
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Concerto"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#894848")); // SubProfession_Concerto
+                return Colors.FromColor(ColorTranslator.FromHtml("#7E4444")); // Redwood Brown
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Dissonance"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#6B3838")); // SubProfession_Dissonance
+                return Colors.FromColor(ColorTranslator.FromHtml("#613636")); // Dark Mahogany
             }
 
             return new Vector4();
@@ -368,117 +382,131 @@ namespace BPSR_ZDPS.DataTypes
 */
         public static Vector4 ProfessionColors(int professionId)
         {
+            // Unknown (BUG: There is a bug with Profession_Unknown progress bar not being visible in Malice raid)
             if (professionId == (int)EProfessionId.Profession_Unknown)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#6c757d")); // Profession_Unknown
+                return Colors.FromColor(ColorTranslator.FromHtml("#6c757d")); // Muted Slate Gray
             }
+            else if (professionId == (int)SubProfessionId.SubProfession_Unknown)
+            {
+                return Colors.FromColor(ColorTranslator.FromHtml("#626A71")); // Dim Gray
+            }
+            // Stormblade - dark purple
             else if (professionId == (int)EProfessionId.Profession_Stormblade)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#805AA3")); // Profession_Stormblade
+                return Colors.FromColor(ColorTranslator.FromHtml("#805AA3")); // Muted Amethyst Purple
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Iaido)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#6A4A87")); // SubProfession_Iaido
+                return Colors.FromColor(ColorTranslator.FromHtml("#6A4A87")); // Deep Amethyst
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Moonstrike)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#523A69")); // SubProfession_Moonstrike
+                return Colors.FromColor(ColorTranslator.FromHtml("#523A69")); // Dark Plum
             }
+            // FrostMage - dark blue
             else if (professionId == (int)EProfessionId.Profession_FrostMage)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#3D56C2")); // Profession_FrostMage
+                return Colors.FromColor(ColorTranslator.FromHtml("#3D56C2")); // Royal Indigo Blue
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Frostbeam)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#32469F")); // SubProfession_Frostbeam
+                return Colors.FromColor(ColorTranslator.FromHtml("#32469F")); // Deep Sapphire Blue
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Icicle)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#27377C")); // SubProfession_Icicle
+                return Colors.FromColor(ColorTranslator.FromHtml("#27377C")); // Midnight Indigo Blue
             }
+            // TwinStriker - amber
             else if (professionId == (int)EProfessionId.Profession_TwinStriker)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#DC9617")); // Profession_TwinStriker
+                return Colors.FromColor(ColorTranslator.FromHtml("#DC9617")); // Golden Burnished Amber
             }
             else if (professionId == (int)SubProfessionId.SubProfession_FormlessExpertise)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#C48618")); // SubProfession_FormlessExpertise
+                return Colors.FromColor(ColorTranslator.FromHtml("#C48618")); // Dark Amber
             }
             else if (professionId == (int)SubProfessionId.SubProfession_CrimsonExpertise)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#AC7619")); // SubProfession_CrimsonExpertise
+                return Colors.FromColor(ColorTranslator.FromHtml("#AC7619")); // Antique Bronze Gold
             }
+            // WindKnight - teal
             else if (professionId == (int)EProfessionId.Profession_WindKnight)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#6D8B8D")); // Profession_WindKnight
+                return Colors.FromColor(ColorTranslator.FromHtml("#6D8B8D")); // Muted Storm Teal
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Skyward)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#627C7E")); // SubProfession_Skyward
+                return Colors.FromColor(ColorTranslator.FromHtml("#627C7E")); // Dusty Teal
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Vanguard)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#576E6F")); // SubProfession_Vanguard
+                return Colors.FromColor(ColorTranslator.FromHtml("#576E6F")); // Dark Slate Teal
             }
+            // VerdantOracle - green
             else if (professionId == (int)EProfessionId.Profession_VerdantOracle)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#5A8D65")); // Profession_VerdantOracle
+                return Colors.FromColor(ColorTranslator.FromHtml("#5A8D65")); // Sage Forest Green
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Lifebind)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#517E5B")); // SubProfession_Lifebind
+                return Colors.FromColor(ColorTranslator.FromHtml("#517E5B")); // Moss Green
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Smite)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#486F51")); // SubProfession_Smite
+                return Colors.FromColor(ColorTranslator.FromHtml("#486F51")); // Deep Forest Green Evergreen
             }
+            // HeavyGuardian - gold
             else if (professionId == (int)EProfessionId.Profession_HeavyGuardian)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#BE9B1C")); // Profession_HeavyGuardian
+                return Colors.FromColor(ColorTranslator.FromHtml("#BE9B1C")); // Antique Gold
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Earthfort)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#AB8C1C")); // SubProfession_Earthfort
+                return Colors.FromColor(ColorTranslator.FromHtml("#AB8C1C")); // Dark Old Gold
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Block)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#997D1C")); // SubProfession_Block
+                return Colors.FromColor(ColorTranslator.FromHtml("#997D1C")); // Burnished Gold Brass
             }
+            // Marksman - pink
             else if (professionId == (int)EProfessionId.Profession_Marksman)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#D1218C")); // Profession_Marksman
+                return Colors.FromColor(ColorTranslator.FromHtml("#C37DF8")); // Orchid Violet
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Falconry)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#BA227D")); // SubProfession_Falconry
+                return Colors.FromColor(ColorTranslator.FromHtml("#C46DF7")); // Bright Orchid
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Wildpack)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#A4226E")); // SubProfession_Wildpack
+                return Colors.FromColor(ColorTranslator.FromHtml("#C55DF6")); // Vibrant Violet
             }
+            // ShieldKnight - lime
             else if (professionId == (int)EProfessionId.Profession_ShieldKnight)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#CFD212")); // Profession_ShieldKnight
+                return Colors.FromColor(ColorTranslator.FromHtml("#CFD212")); // Citron Lime Gold
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Recovery)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#BABD17")); // SubProfession_Recovery
+                return Colors.FromColor(ColorTranslator.FromHtml("#BABD17")); // Olive Lime
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Shield)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#A6A819")); // SubProfession_Shield
+                return Colors.FromColor(ColorTranslator.FromHtml("#A6A819")); // Dark Olive
             }
+            // BeatPerformer - dark red
             else if (professionId == (int)EProfessionId.Profession_BeatPerformer)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#9C5353")); // Profession_BeatPerformer
+                return Colors.FromColor(ColorTranslator.FromHtml("#9C5353")); // Dusty Red Crimson
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Concerto)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#894848")); // SubProfession_Concerto
+                return Colors.FromColor(ColorTranslator.FromHtml("#7E4444")); // Redwood Brown
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Dissonance)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#6B3838")); // SubProfession_Dissonance
+                return Colors.FromColor(ColorTranslator.FromHtml("#613636")); // Dark Mahogany
             }
 
             return new Vector4();
