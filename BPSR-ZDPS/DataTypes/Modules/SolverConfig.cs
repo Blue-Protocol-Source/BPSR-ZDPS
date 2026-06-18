@@ -12,6 +12,9 @@ namespace BPSR_ZDPS.DataTypes.Modules
         public byte[] LinkLevelBonus = DefaultLinkLevels;
         public bool ValueAllStats = true;
         public int NumModules = 5;
+        public ScoringMode ScoreMode = ScoringMode.Stat_Boost_Add_Order;
+        public float OrderBoostStrength = 1f;
+        public float LegendaryStatMultiplier = 2f;
 
         public string SaveToString(bool asBase64 = false)
         {
@@ -86,6 +89,12 @@ namespace BPSR_ZDPS.DataTypes.Modules
             }
 
             return true;
+        }
+
+        public enum ScoringMode
+        {
+            Stat_Order_Boost_Mul,
+            Stat_Boost_Add_Order
         }
     }
 }

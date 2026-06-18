@@ -119,19 +119,17 @@ namespace BPSR_ZDPS.Managers
                 {
                     var idx = i * (MAX_STAT_VALUE + 1) + x;
                     var statPrio = statPrios.FirstOrDefault(stat => stat.Id == i);
-                    var statOrder = statPrios.IndexOf(statPrio);
-
-                    //StatScoreLookup[idx] = -99999;
+                    var statIdx = statPrios.IndexOf(statPrio);
 
                     if (statPrio != null)
                     {
-                        var breakPointBonus = GetLinkLevelBoost(x);
+                        var realStatId = Config.StatPriorities[statIdx];
+                        var isLegendary = ModuleSolver.LegendaryStats.Contains(realStatId.Id);
                         var reqLevel = Math.Max((byte)0, statPrio.ReqLevel);
-                        var boost = (statPrios.Count - (statOrder)) * breakPointBonus;
 
                         if (statPrio.StatMode == StatMode.Exactly)
                         {
-                            var score = MAX_STAT_VALUE * boost;
+                            var score = CalcScore(MAX_STAT_VALUE, statIdx, NormalizedStatPrios.Count, isLegendary);
 
                             if (x == statPrio.ReqLevel)
                             {
@@ -141,7 +139,7 @@ namespace BPSR_ZDPS.Managers
                                 var pct = statPrio.ReqLevel > 0 ? Math.Min(x, statPrio.ReqLevel) * 100 / statPrio.ReqLevel : 100;
                                 StatProgressLookup[idx] = (ushort)pct;
 
-                                Debug.WriteLine($"Set idx: {idx} to {score}, stat: {(ModuleSolver.GetModInfo(Config.StatPriorities[statOrder].Id)).Name}");
+                                Debug.WriteLine($"Set idx: {idx} to {score}, stat: {(ModuleSolver.GetModInfo(Config.StatPriorities[statIdx].Id)).Name}");
                             }
                             else
                             {
@@ -151,17 +149,16 @@ namespace BPSR_ZDPS.Managers
                         }
                         else
                         {
-                            var score = Math.Min(x, MAX_STAT_VALUE) * boost;
+                            var score = CalcScore(x, statIdx, NormalizedStatPrios.Count, isLegendary);
 
                             if (x >= reqLevel)
                             {
                                 StatScoreLookup[idx] = score;
                                 RequirementMetLookup[idx] = 1;
-                                Debug.WriteLine($"Set idx: {idx} to {score} (base value: {x}) with boost: {boost}, stat: {(ModuleSolver.GetModInfo(Config.StatPriorities[statOrder].Id).Name)}");
+                                Debug.WriteLine($"Set idx: {idx} to {score} (base value: {x}), stat: {(ModuleSolver.GetModInfo(Config.StatPriorities[statIdx].Id).Name)}");
                             }
                             else
                             {
-                                //StatScoreLookup[idx] = -1000000;
                                 var progress = x / (double)reqLevel;
                                 StatScoreLookup[idx] = (int)(score * progress);
                             }
@@ -170,8 +167,50 @@ namespace BPSR_ZDPS.Managers
                             StatProgressLookup[idx] = (ushort)pct;
                         }
                     }
+                    else if (Config.ValueAllStats)
+                    {
+                        var score = (int)(CalcScore(x, NormalizedStatPrios.Count + 1, NormalizedStatPrios.Count + 1) * 0.95);
+                        StatScoreLookup[idx] = score;
+                        RequirementMetLookup[idx] = 1;
+                        StatProgressLookup[idx] = (ushort)100;
+                    }
                 }
             }
+        }
+
+        public static float GetOrderBoost(float strength, int itemPos, int numItems)
+        {
+            // var weight = Math.Exp(-strength * itemPos);
+            var weight = 1.0 / Math.Pow(itemPos + 1, strength);
+            var boost = (numItems) * weight;
+
+            return (float)Math.Max(1, boost);
+        }
+
+        protected int CalcScore(int statValue, int statIdx, int numStats, bool isLegendary = false)
+        {
+            var breakPointBonus = GetLinkLevelBoost(statValue);
+            float stat = Math.Min(statValue, MAX_STAT_VALUE);
+            var statOrder = (NormalizedStatPrios.Count - (statIdx));
+            var orderBoost = GetOrderBoost(Config.OrderBoostStrength, statIdx, numStats);
+
+            if (isLegendary)
+            {
+                stat = stat * Config.LegendaryStatMultiplier;
+            }
+
+            int score = 0;
+
+            if (Config.ScoreMode == SolverConfig.ScoringMode.Stat_Order_Boost_Mul)
+            {
+                score = (int)(stat * orderBoost * breakPointBonus);
+            }
+            else if (Config.ScoreMode == SolverConfig.ScoringMode.Stat_Boost_Add_Order)
+            {
+                score = (int)(stat * breakPointBonus) + (int)orderBoost;
+            }
+
+            return score;
         }
 
         protected void ScoreBeamNode(ref BeamNode beamNode)
