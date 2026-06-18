@@ -1,6 +1,7 @@
 ﻿using BPSR_ZDPS.DataTypes;
 using BPSR_ZDPS.DataTypes.Modules;
 using BPSR_ZDPS.Managers;
+using BPSR_ZDPS.Managers.Modules;
 using Hexa.NET.ImGui;
 using Newtonsoft.Json;
 using Serilog;
@@ -9,6 +10,7 @@ using System.Numerics;
 using System.Runtime.Intrinsics.X86;
 using ZLinq;
 using Zproto;
+using static BPSR_ZDPS.DataTypes.Modules.SolverConfig;
 
 namespace BPSR_ZDPS
 {
@@ -40,6 +42,7 @@ namespace BPSR_ZDPS
         private static string CurrentPresetString = "";
         static int RunOnceDelayed = 0;
         private static bool ShouldTrackOpenState;
+        public static int[] LegendaryStats = [2104, 2105, 2204, 2205, 2404, 2405, 2406, 2304];
 
         public static List<long> FilteredModules = [];
 
@@ -224,13 +227,14 @@ namespace BPSR_ZDPS
                                 });
                             }*/
 
-                            /*
                             AddSettingRow("Include All Stats In Scoring:", () =>
                             {
                                 var val = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ValueAllStats;
                                 ImGui.Checkbox("##ValueAllStats", ref val);
                                 Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ValueAllStats = val;
-                            });*/
+
+                                SolverConfig.ValueAllStats = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ValueAllStats;
+                            });
 
                             AddSettingRow("Num Modules in a Set:", () =>
                             {
@@ -239,6 +243,53 @@ namespace BPSR_ZDPS
                                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
                                 ImGui.SliderInt("##NumModules", ref SolverConfig.NumModules, 1, 5);
                                 ImGui.PopStyleColor(2);
+
+                                Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.NumModules = SolverConfig.NumModules;
+                            });
+
+                            AddSettingRow("Stat Scoring Mode:", () =>
+                            {
+                                var val = (int)Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ScoreMode;
+                                string[] names =
+                                [
+                                    "(Stat * Order * BreakPointBoost)",
+                                    "((Stat * BreakPointBoost) + Order)"
+                                ];
+
+                                ImGui.SetNextItemWidth(300);
+                                ImGui.Combo("##StatScoreMode", ref val, names, names.Length);
+                                Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ScoreMode = (ScoringMode)val;
+                                SolverConfig.ScoreMode = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ScoreMode;
+                            });
+
+                            AddSettingRow("Stat Order Priority Scaling Factor:", () =>
+                            {
+                                ImGui.SetNextItemWidth(300);
+                                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                                ImGui.SliderFloat("##PriorityScaling", ref SolverConfig.OrderBoostStrength, 0, 2);
+                                ImGui.PopStyleColor(2);
+
+                                int[] statExamples = [0, 1, 2, 3, 4, 5];
+                                for (int i = 0; i < statExamples.Length; i++)
+                                {
+                                    var val = statExamples[i];
+                                    var orderBoost = ModuleOptimizerBeam.GetOrderBoost(SolverConfig.OrderBoostStrength, val, 6);
+
+                                    ImGui.SameLine();
+                                    ImGui.Text($"Ex. Stat {val + 1} = {orderBoost},");
+                                }
+                            });
+
+                            AddSettingRow("Legendary Stat Multiplier:", () =>
+                            {
+                                ImGui.SetNextItemWidth(300);
+                                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                                ImGui.SliderFloat("##LegendaryStatMultiplier", ref SolverConfig.LegendaryStatMultiplier, 1, 5);
+                                ImGui.PopStyleColor(2);
+
+                                Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.LegendaryStatMultiplier = SolverConfig.LegendaryStatMultiplier;
                             });
 
                             ImGui.EndTable();
@@ -294,6 +345,30 @@ namespace BPSR_ZDPS
                             //ImGui.PopClipRect();
                         }
 
+                        if (ImGui.Button("Use \"Prefer Stat Priorities\" Profile"))
+                        {
+                            ApplyConfigProfile(new SolverConfig()
+                            {
+                                ScoreMode = ScoringMode.Stat_Order_Boost_Mul,
+                                ValueAllStats = true,
+                                OrderBoostStrength = 1.0f,
+                                LegendaryStatMultiplier = 1.0f
+                            });
+                        }
+                        ImGui.SameLine();
+
+                        if (ImGui.Button("Use \"Prefer Breakpoints\" Profile"))
+                        {
+                            ApplyConfigProfile(new SolverConfig()
+                            {
+                                ScoreMode = ScoringMode.Stat_Boost_Add_Order,
+                                ValueAllStats = true,
+                                OrderBoostStrength = 1.0f,
+                                LegendaryStatMultiplier = 2.0f
+                            });
+                        }
+                        ImGui.SameLine();
+
                         ImGui.SetCursorPos(ImGui.GetWindowSize() - new Vector2(300, 62));
                         //ImGui.SeparatorText("Debug Info");
                         ImGui.TextUnformatted($"HW Accel: {Vector.IsHardwareAccelerated}");
@@ -341,6 +416,14 @@ namespace BPSR_ZDPS
             }
 
             ImGui.End();
+        }
+
+        private static void ApplyConfigProfile(SolverConfig config)
+        {
+            config.StatPriorities = SolverConfig.StatPriorities;
+            config.NumModules = SolverConfig.NumModules;
+            SolverConfig = config;
+            Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config = SolverConfig;
         }
 
         private static void AddSettingRow(string label, Action valueWidget)
@@ -639,6 +722,7 @@ namespace BPSR_ZDPS
 
             if (ImGui.InputInt($"##ReqLevel{i}", ref SolverConfig.StatPriorities[i].ReqLevel, 0, ImGuiInputTextFlags.CharsDecimal))
             {
+                SolverConfig.StatPriorities[i].ReqLevel = Math.Clamp(SolverConfig.StatPriorities[i].ReqLevel, 0, ModuleOptimizerBase.MAX_STAT_VALUE);
                 wasChanged = true;
             }
             ImGui.SetItemTooltip("The required Link value needed for this stat to have for the combination to be considered.\nLeave 0 to use any Link.");
