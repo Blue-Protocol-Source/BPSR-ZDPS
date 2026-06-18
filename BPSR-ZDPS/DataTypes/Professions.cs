@@ -261,7 +261,7 @@ namespace BPSR_ZDPS.DataTypes
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Vanguard"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#576E6F")); // Dark Slate Teal
+                return Colors.FromColor(ColorTranslator.FromHtml("#4F6365")); // Dark Slate Teal
             }
             // VerdantOracle - green
             else if (professionName == AppStrings.GetLocalized("Profession_VerdantOracle"))
@@ -274,7 +274,7 @@ namespace BPSR_ZDPS.DataTypes
             }
             else if (professionName == AppStrings.GetLocalized("SubProfession_Smite"))
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#486F51")); // Deep Forest Green Evergreen
+                return Colors.FromColor(ColorTranslator.FromHtml("#42654A")); // Deep Forest Green Evergreen
             }
             // HeavyGuardian - gold
             else if (professionName == AppStrings.GetLocalized("Profession_HeavyGuardian"))
@@ -441,7 +441,7 @@ namespace BPSR_ZDPS.DataTypes
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Vanguard)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#576E6F")); // Dark Slate Teal
+                return Colors.FromColor(ColorTranslator.FromHtml("#4F6365")); // Dark Slate Teal
             }
             // VerdantOracle - green
             else if (professionId == (int)EProfessionId.Profession_VerdantOracle)
@@ -454,7 +454,7 @@ namespace BPSR_ZDPS.DataTypes
             }
             else if (professionId == (int)SubProfessionId.SubProfession_Smite)
             {
-                return Colors.FromColor(ColorTranslator.FromHtml("#486F51")); // Deep Forest Green Evergreen
+                return Colors.FromColor(ColorTranslator.FromHtml("#42654A")); // Deep Forest Green Evergreen
             }
             // HeavyGuardian - gold
             else if (professionId == (int)EProfessionId.Profession_HeavyGuardian)
