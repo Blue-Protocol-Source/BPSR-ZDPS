@@ -17,7 +17,7 @@ namespace BPSR_ZDPS.Managers
 
         public ModuleOptimizerBeam(SolverConfig config, PlayerModDataSave playerMods, Stopwatch sw, List<long> filtered, CancellationToken cancelToken) : base(config, playerMods, sw, filtered, cancelToken)
         {
-            var numElements = Vector<byte>.Count * (MAX_STAT_VALUE + 1);
+            var numElements = Vector<byte>.Count * (MAX_STAT_VALUE_TOTAL + 1);
             StatScoreLookup = new int[numElements];
             RequirementMetLookup = new byte[numElements];
             StatProgressLookup = new ushort[numElements];
@@ -115,21 +115,21 @@ namespace BPSR_ZDPS.Managers
         {
             for (int i = 0; i < Vector<byte>.Count; i++)
             {
-                for (int x = 0; x <= MAX_STAT_VALUE; x++)
+                for (int x = 0; x <= MAX_STAT_VALUE_TOTAL; x++)
                 {
-                    var idx = i * (MAX_STAT_VALUE + 1) + x;
+                    var idx = i * (MAX_STAT_VALUE_TOTAL + 1) + x;
                     var statPrio = statPrios.FirstOrDefault(stat => stat.Id == i);
                     var statIdx = statPrios.IndexOf(statPrio);
 
                     if (statPrio != null)
                     {
                         var realStatId = Config.StatPriorities[statIdx];
-                        var isLegendary = ModuleSolver.LegendaryStats.Contains(realStatId.Id);
                         var reqLevel = Math.Max((byte)0, statPrio.ReqLevel);
+                        var statMul = GetStatMul(realStatId.Id);
 
                         if (statPrio.StatMode == StatMode.Exactly)
                         {
-                            var score = CalcScore(MAX_STAT_VALUE, statIdx, NormalizedStatPrios.Count, isLegendary);
+                            var score = CalcScore(MAX_STAT_VALUE, statIdx, NormalizedStatPrios.Count, statMul);
 
                             if (x == statPrio.ReqLevel)
                             {
@@ -149,7 +149,7 @@ namespace BPSR_ZDPS.Managers
                         }
                         else
                         {
-                            var score = CalcScore(x, statIdx, NormalizedStatPrios.Count, isLegendary);
+                            var score = CalcScore(x, statIdx, NormalizedStatPrios.Count, statMul);
 
                             if (x >= reqLevel)
                             {
@@ -169,7 +169,8 @@ namespace BPSR_ZDPS.Managers
                     }
                     else if (Config.ValueAllStats)
                     {
-                        var score = (int)(CalcScore(x, NormalizedStatPrios.Count + 1, NormalizedStatPrios.Count + 1) * 0.95);
+                        var statMul = GetStatMul(-1);
+                        var score = CalcScore(x, -1, -1, statMul);
                         StatScoreLookup[idx] = score;
                         RequirementMetLookup[idx] = 1;
                         StatProgressLookup[idx] = (ushort)100;
@@ -187,27 +188,28 @@ namespace BPSR_ZDPS.Managers
             return (float)Math.Max(1, boost);
         }
 
-        protected int CalcScore(int statValue, int statIdx, int numStats, bool isLegendary = false)
+        protected int CalcScore(int statValue, int statIdx, int numStats, float statMul)
         {
             var breakPointBonus = GetLinkLevelBoost(statValue);
             float stat = Math.Min(statValue, MAX_STAT_VALUE);
             var statOrder = (NormalizedStatPrios.Count - (statIdx));
-            var orderBoost = GetOrderBoost(Config.OrderBoostStrength, statIdx, numStats);
-
-            if (isLegendary)
-            {
-                stat = stat * Config.LegendaryStatMultiplier;
-            }
+            var orderBoost = statIdx > 0 ? GetOrderBoost(Config.OrderBoostStrength, statIdx, numStats) : 1;
+            var bpLevel = SnapToBreakPointLevel(statValue);
+            var leftOverPoints = statValue - bpLevel;
 
             int score = 0;
 
             if (Config.ScoreMode == SolverConfig.ScoringMode.Stat_Order_Boost_Mul)
             {
-                score = (int)(stat * orderBoost * breakPointBonus);
+                score = (int)((stat * statMul) * orderBoost * breakPointBonus);
             }
             else if (Config.ScoreMode == SolverConfig.ScoringMode.Stat_Boost_Add_Order)
             {
-                score = (int)(stat * breakPointBonus) + (int)orderBoost;
+                score = (int)((stat * statMul) * breakPointBonus) + (int)orderBoost;
+            }
+            else if (Config.ScoreMode == SolverConfig.ScoringMode.Stat_Mul_Breakpoint_Mul_StatMod_Add_OverCap_Add_Order)
+            {
+                score = (int)(((bpLevel * breakPointBonus) * statMul) + leftOverPoints + orderBoost);
             }
 
             return score;
@@ -222,8 +224,8 @@ namespace BPSR_ZDPS.Managers
             for (int i = 0; i < StatIndexes.Length; i++)
             {
                 var statIdx = StatIndexes[i];
-                var totalVal = Math.Min((byte)MAX_STAT_VALUE, beamNode.Totals[statIdx]);
-                var lookupIdx = statIdx * (MAX_STAT_VALUE + 1) + totalVal;
+                var totalVal = Math.Min((byte)MAX_STAT_VALUE_TOTAL, beamNode.Totals[statIdx]);
+                var lookupIdx = statIdx * (MAX_STAT_VALUE_TOTAL + 1) + totalVal;
                 var statScore = StatScoreLookup[lookupIdx];
                 beamNode.Score += statScore;
                 beamNode.RequirementsMet += RequirementMetLookup[lookupIdx];
@@ -331,8 +333,8 @@ namespace BPSR_ZDPS.Managers
 
             foreach (var statIdx in statIndexes)
             {
-                var statA = Math.Min(a.Totals[statIdx], (byte)MAX_STAT_VALUE);
-                var statB = Math.Min(b.Totals[statIdx], (byte)MAX_STAT_VALUE);
+                var statA = Math.Min(a.Totals[statIdx], (byte)MAX_STAT_VALUE_TOTAL);
+                var statB = Math.Min(b.Totals[statIdx], (byte)MAX_STAT_VALUE_TOTAL);
                 diff += Math.Abs(statA = statB);
             }
 
