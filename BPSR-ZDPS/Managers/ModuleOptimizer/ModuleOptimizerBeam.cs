@@ -172,8 +172,8 @@ namespace BPSR_ZDPS.Managers
                         var statMul = GetStatMul(-1);
                         var score = CalcScore(x, -1, -1, statMul);
                         StatScoreLookup[idx] = score;
-                        RequirementMetLookup[idx] = 1;
-                        StatProgressLookup[idx] = (ushort)100;
+                        RequirementMetLookup[idx] = 0;
+                        StatProgressLookup[idx] = 0;
                     }
                 }
             }
@@ -192,7 +192,7 @@ namespace BPSR_ZDPS.Managers
         {
             var breakPointBonus = GetLinkLevelBoost(statValue);
             float stat = Math.Min(statValue, MAX_STAT_VALUE);
-            var statOrder = (NormalizedStatPrios.Count - (statIdx));
+            var statOrder = statIdx > 0 ? (NormalizedStatPrios.Count - (statIdx)) : 1;
             var orderBoost = statIdx > 0 ? GetOrderBoost(Config.OrderBoostStrength, statIdx, numStats) : 1;
             var bpLevel = SnapToBreakPointLevel(statValue);
             var leftOverPoints = statValue - bpLevel;
@@ -211,6 +211,10 @@ namespace BPSR_ZDPS.Managers
             {
                 score = (int)(((bpLevel * breakPointBonus) * statMul) + leftOverPoints + orderBoost);
             }
+            else if (Config.ScoreMode == SolverConfig.ScoringMode.Stat_Mul_Breakpoint_Mul_StatMod_Order_Add_OverCap)
+            {
+                score = (int)((((bpLevel * breakPointBonus) * statMul) * orderBoost) + leftOverPoints);
+            }
 
             return score;
         }
@@ -221,9 +225,9 @@ namespace BPSR_ZDPS.Managers
             beamNode.RequirementsMet = 0;
             beamNode.RequirementProgress = 0;
 
-            for (int i = 0; i < StatIndexes.Length; i++)
+            for (int statIdx = 0; statIdx < Vector<byte>.Count; statIdx++)
             {
-                var statIdx = StatIndexes[i];
+                //var statIdx = StatIndexes[i];
                 var totalVal = Math.Min((byte)MAX_STAT_VALUE_TOTAL, beamNode.Totals[statIdx]);
                 var lookupIdx = statIdx * (MAX_STAT_VALUE_TOTAL + 1) + totalVal;
                 var statScore = StatScoreLookup[lookupIdx];
@@ -349,15 +353,43 @@ namespace BPSR_ZDPS.Managers
             if (a.RequirementProgress != b.RequirementProgress)
                 return b.RequirementProgress.CompareTo(a.RequirementProgress);
 
-            /*foreach (var stat in NormalizedStatPrios)
+            if (a.Score != b.Score)
+                return b.Score.CompareTo(a.Score);
+
+            var numBetterStatsA = 0;
+            var numBetterStatsB = 0;
+            foreach (var stat in NormalizedStatPrios)
             {
-                int comparison = b.Totals[stat.Id].CompareTo(a.Totals[stat.Id]);
+                var statTotalA = Math.Min((byte)MAX_STAT_VALUE, a.Totals[stat.Id]);
+                var statTotalB = Math.Min((byte)MAX_STAT_VALUE, b.Totals[stat.Id]);
+                if (statTotalA > statTotalB)
+                    numBetterStatsA++;
+                else if (statTotalA < statTotalB)
+                    numBetterStatsB++;
+            }
 
-                if (comparison != 0)
-                    return comparison;
-            }*/
+            if (numBetterStatsA < numBetterStatsB)
+                return -1;
+            else if (numBetterStatsA > numBetterStatsB)
+                return 1;
 
-            return b.Score.CompareTo(a.Score);
+            var combatScoreA = ResloveResults([BeamToResult(a)])[0].CombatScore;
+            var combatScoreB = ResloveResults([BeamToResult(b)])[0].CombatScore;
+
+            if (combatScoreA < combatScoreB)
+                return -1;
+            else if (combatScoreA > combatScoreB)
+                return 1;
+
+            var aTotalStats = Vector.Sum(a.Totals);
+            var bTotalStats = Vector.Sum(b.Totals);
+
+            if (aTotalStats < bTotalStats)
+                return -1;
+            else if (aTotalStats > bTotalStats)
+                return 1;
+
+            return 0;
         }
 
         public sealed class TopK
