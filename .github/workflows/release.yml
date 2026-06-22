@@ -174,18 +174,20 @@ jobs:
             **Self-contained:** Windows 7 SP1 or later (x64 or x86)
             **Framework-dependent:** Windows 7 SP1 or later with .NET 8 Runtime installed
 
-            
-            ## ⚠️ Important Prerequisites
-            ## ⚠️ Before Running ZDPS
+            > [!CAUTION]
+            >  ⚠️ Important Prerequisites
+            >  ⚠️ Before Running ZDPS
+            >
+            > **Npcap is REQUIRED.**
+            > Download and install Npcap: https://npcap.com/#download
+            >
+            > If the game was already running, restart it after installing Npcap.
+            >
+            > **Framework-dependent builds also require .NET Desktop Runtime 9 (x64).**
+            > Self-contained builds include the runtime.
 
-            **Npcap is REQUIRED.**
-            Download and install Npcap: https://npcap.com/#download
-
-            If the game was already running, restart it after installing Npcap.
-
-            **Framework-dependent builds also require .NET Desktop Runtime 9 (x64).**
-            Self-contained builds include the runtime.
-            
+            > [!TIP]
+            > **VPN Users:** If you are using a VPN, make sure the VPN is connected **before** launching ZDPS. ZDPS automatically detects the correct Network Capture Device during startup; however, if the VPN is enabled after ZDPS has already started, it may continue using the wrong device instead of the VPN's virtual adapter or a loopback adapter. In this case, restart ZDPS or manually select the correct **Network Capture Device** in **Settings**. Reconnecting your VPN or any change to the active Network Capture Device may also cause packet detection to stop until the device is reselected or ZDPS is restarted.
 
             ### Notes
             - Self-contained builds include .NET runtime and work standalone
