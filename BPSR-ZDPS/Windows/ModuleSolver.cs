@@ -43,6 +43,64 @@ namespace BPSR_ZDPS
         static int RunOnceDelayed = 0;
         private static bool ShouldTrackOpenState;
         public static int[] LegendaryStats = [2104, 2105, 2204, 2205, 2404, 2405, 2406, 2304];
+        public static readonly Preset[] DefaultPresets = [
+            new Preset()
+            {
+                Name = "Prefer Breakpoints",
+                Desc = "Prefer combos that give you more breakpoints despite your order",
+                IsBuiltIn = true,
+                Config = new SolverConfig()
+                {
+                    LinkLevelBonus = [2, 2, 4, 8, 20, 32],
+                    ValueAllStats = true,
+                    ScoreMode = ScoringMode.Stat_Mul_Breakpoint_Mul_StatMod_Add_OverCap_Add_Order,
+                    OrderBoostStrength = 1f,
+                    LegendaryStatMultiplier = 2f
+                }
+            },
+            new Preset()
+            {
+                Name = "Prefer Breakpoints By Priority",
+                Desc = "Prefer combos that give you more breakpoints with your order and boosting",
+                IsBuiltIn = true,
+                Config = new SolverConfig()
+                {
+                    LinkLevelBonus = [2, 2, 4, 8, 20, 32],
+                    ValueAllStats = true,
+                    ScoreMode = ScoringMode.Stat_Mul_Breakpoint_Mul_StatMod_Order_Add_OverCap,
+                    OrderBoostStrength = 1f,
+                    LegendaryStatMultiplier = 1f
+                }
+            },
+            new Preset()
+            {
+                Name = "Prefer Breakpoints Priority Legendary (Default)",
+                Desc = "Prefer combos that give you more breakpoints with your order and boosting Legendary",
+                IsBuiltIn = true,
+                Config = new SolverConfig()
+                {
+                    LinkLevelBonus = [2, 2, 4, 8, 20, 32],
+                    ValueAllStats = true,
+                    ScoreMode = ScoringMode.Stat_Mul_Breakpoint_Mul_StatMod_Order_Add_OverCap,
+                    OrderBoostStrength = 1f,
+                    LegendaryStatMultiplier = 2f
+                }
+            },
+            new Preset()
+            {
+                Name = "Legacy",
+                Desc = "Older logic, heavily favors stat priority",
+                IsBuiltIn = true,
+                Config = new SolverConfig()
+                {
+                    LinkLevelBonus = [2, 2, 4, 8, 16, 32],
+                    ValueAllStats = true,
+                    ScoreMode = ScoringMode.Stat_Order_Boost_Mul,
+                    OrderBoostStrength = 1f,
+                    LegendaryStatMultiplier = 1f
+                }
+            }
+            ];
 
         public static List<long> FilteredModules = [];
 
@@ -74,6 +132,11 @@ namespace BPSR_ZDPS
             SolverConfig = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config;
 
             CurrentPresetString = SolverConfig.SaveToString();
+
+            if (Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset?.Name is null or "")
+            {
+                Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset = DefaultPresets[2];
+            }
         }
 
         public static void Open()
@@ -182,6 +245,8 @@ namespace BPSR_ZDPS
 
                     if (ImGui.BeginTabItem("Settings"))
                     {
+                        var presetChanged = false;
+
                         if (ImGui.BeginTable("settings_table", 2, ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.PadOuterX | ImGuiTableFlags.BordersInnerH))
                         {
                             ImGui.TableSetupColumn("Label", ImGuiTableColumnFlags.WidthFixed, 200f);
@@ -229,11 +294,12 @@ namespace BPSR_ZDPS
 
                             AddSettingRow("Include All Stats In Scoring:", () =>
                             {
-                                var val = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ValueAllStats;
-                                ImGui.Checkbox("##ValueAllStats", ref val);
-                                Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ValueAllStats = val;
-
-                                SolverConfig.ValueAllStats = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ValueAllStats;
+                                var val = SolverConfig.ValueAllStats;
+                                if (ImGui.Checkbox("##ValueAllStats", ref val))
+                                {
+                                    presetChanged = true;
+                                }
+                                SolverConfig.ValueAllStats = val;
                             });
 
                             AddSettingRow("Num Modules in a Set:", () =>
@@ -241,15 +307,16 @@ namespace BPSR_ZDPS
                                 ImGui.SetNextItemWidth(300);
                                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                                ImGui.SliderInt("##NumModules", ref SolverConfig.NumModules, 1, 5);
+                                if (ImGui.SliderInt("##NumModules", ref SolverConfig.NumModules, 1, 5))
+                                {
+                                    presetChanged = true;
+                                }
                                 ImGui.PopStyleColor(2);
-
-                                Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.NumModules = SolverConfig.NumModules;
                             });
 
                             AddSettingRow("Stat Scoring Mode:", () =>
                             {
-                                var val = (int)Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ScoreMode;
+                                var val = (int)SolverConfig.ScoreMode;
                                 string[] names =
                                 [
                                     "((Stat * StatMul) * Order * BreakPointBoost) [Prefer Stat Order]",
@@ -259,9 +326,11 @@ namespace BPSR_ZDPS
                                 ];
 
                                 ImGui.SetNextItemWidth(400);
-                                ImGui.Combo("##StatScoreMode", ref val, names, names.Length);
-                                Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ScoreMode = (ScoringMode)val;
-                                SolverConfig.ScoreMode = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ScoreMode;
+                                if (ImGui.Combo("##StatScoreMode", ref val, names, names.Length))
+                                {
+                                    presetChanged = true;
+                                }
+                                SolverConfig.ScoreMode = (ScoringMode)val;
 
                                 ImGui.SameLine();
 
@@ -288,7 +357,10 @@ namespace BPSR_ZDPS
                                 ImGui.SetNextItemWidth(300);
                                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                                ImGui.SliderFloat("##PriorityScaling", ref SolverConfig.OrderBoostStrength, 0, 2);
+                                if (ImGui.SliderFloat("##PriorityScaling", ref SolverConfig.OrderBoostStrength, 0, 2))
+                                {
+                                    presetChanged = true;
+                                }
                                 ImGui.PopStyleColor(2);
 
                                 int[] statExamples = [0, 1, 2, 3, 4, 5];
@@ -307,10 +379,11 @@ namespace BPSR_ZDPS
                                 ImGui.SetNextItemWidth(300);
                                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                                ImGui.SliderFloat("##LegendaryStatMultiplier", ref SolverConfig.LegendaryStatMultiplier, 1, 5);
+                                if (ImGui.SliderFloat("##LegendaryStatMultiplier", ref SolverConfig.LegendaryStatMultiplier, 1, 5))
+                                {
+                                    presetChanged = true;
+                                }
                                 ImGui.PopStyleColor(2);
-
-                                Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.LegendaryStatMultiplier = SolverConfig.LegendaryStatMultiplier;
                             });
 
                             ImGui.EndTable();
@@ -344,7 +417,10 @@ namespace BPSR_ZDPS
                                         ImGui.TableNextColumn();
                                         int val = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.LinkLevelBonus[i];
                                         //ImGui.SetNextItemWidth(100);
-                                        ImGui.InputInt($"##LinkLevelBoost{i}", ref val, 0);
+                                        if (ImGui.InputInt($"##LinkLevelBoost{i}", ref val, 0))
+                                        {
+                                            presetChanged = true;
+                                        }
                                         val = Math.Clamp(val, 0, 250);
                                         Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.LinkLevelBonus[i] = (byte)val;
                                     }
@@ -366,7 +442,7 @@ namespace BPSR_ZDPS
                             //ImGui.PopClipRect();
                         }
 
-                        if (ImGui.Button("Use \"Prefer Stat Priorities\" Profile (Default)"))
+                        /*if (ImGui.Button("Use \"Prefer Stat Priorities\" Profile (Default)"))
                         {
                             ApplyConfigProfile(new SolverConfig()
                             {
@@ -388,7 +464,18 @@ namespace BPSR_ZDPS
                                 LegendaryStatMultiplier = 2.0f
                             });
                         }
-                        ImGui.SameLine();
+                        ImGui.SameLine();*/
+
+                        if (presetChanged)
+                        {
+                            Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset = new Preset()
+                            {
+                                Name = "Custom",
+                                Desc = "",
+                                IsBuiltIn = false,
+                                Config = SolverConfig.Clone()
+                            };
+                        }
 
                         ImGui.SetCursorPos(ImGui.GetWindowSize() - new Vector2(300, 62));
                         //ImGui.SeparatorText("Debug Info");
@@ -443,8 +530,7 @@ namespace BPSR_ZDPS
         {
             config.StatPriorities = SolverConfig.StatPriorities;
             config.NumModules = SolverConfig.NumModules;
-            SolverConfig = config;
-            Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config = SolverConfig;
+            SolverConfig = config.Clone();
         }
 
         private static void AddSettingRow(string label, Action valueWidget)
@@ -465,12 +551,29 @@ namespace BPSR_ZDPS
 
             var clipStart = ImGui.GetCursorScreenPos();
             ImGui.PushClipRect(clipStart, clipStart + new Vector2(leftWidth, 20), true);
-            ImGui.SeparatorText($"Config");
+            ImGui.SeparatorText($"Preset");
             ImGui.PopClipRect();
             ImGui.SetCursorPosY(85);
 
+            ImGui.SetNextItemWidth(leftWidth);
+            if (ImGui.BeginCombo("##Presets", Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Name))
+            {
+                foreach (var preset in DefaultPresets)
+                {
+                    var isSelected = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Name == preset.Name;
+                    if (ImGui.Selectable(preset.Name, isSelected))
+                    {
+                        ApplyConfigProfile(preset.Config);
+                        Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset = preset;
+                    }
+                    ImGui.SetItemTooltip(preset.Desc);
+                }
+                ImGui.EndCombo();
+            }
+            ImGui.SetItemTooltip("Presets are quick sets of settings you can choose from to change how the Module Optimizer behaves.\nTo edit these settings in more depth go to the \"Settings\" tab to edit them separately.\nYou can always reselect a preset here to restore defaults.");
+
             var configChanged = false;
-            ImGui.BeginChild("LeftSection", new Vector2(leftWidth, contentRegion.Y - 55), ImGuiChildFlags.Borders);
+            ImGui.BeginChild("LeftSection", new Vector2(leftWidth, contentRegion.Y - 83), ImGuiChildFlags.Borders);
             ImGui.SeparatorText("Quality");
 
             bool basicQuality = SolverConfig.QualitiesV2.TryGetValue(2, out var temp) ? temp : false;
@@ -561,7 +664,7 @@ namespace BPSR_ZDPS
 
             ImGui.SetCursorPos(pos + new Vector2(leftWidth - 50, 0));
             var isAlreadyAdded = SolverConfig.StatPriorities.Any(x => x.Id == PendingStatToAdd.StatId);
-            ImGui.BeginDisabled(isAlreadyAdded || SolverConfig.StatPriorities.Count >= 12);
+            ImGui.BeginDisabled(isAlreadyAdded);
             if (ImGui.Button("Add", new Vector2(50, 0)))
             {
                 SolverConfig.StatPriorities.Add(new StatPrio()
@@ -1330,7 +1433,9 @@ namespace BPSR_ZDPS
 
     public class Preset
     {
-        public string Name;
+        public string Name = "";
+        public string Desc = "";
+        public bool IsBuiltIn = true;
         public SolverConfig Config = new SolverConfig();
     }
 

@@ -91,6 +91,23 @@ namespace BPSR_ZDPS.DataTypes.Modules
             return true;
         }
 
+        public SolverConfig Clone()
+        {
+            var copy = new SolverConfig()
+            {
+                QualitiesV2 = QualitiesV2,
+                StatPriorities = StatPriorities,
+                LinkLevelBonus = LinkLevelBonus,
+                ValueAllStats = ValueAllStats,
+                NumModules = NumModules,
+                ScoreMode = ScoreMode,
+                OrderBoostStrength = OrderBoostStrength,
+                LegendaryStatMultiplier = LegendaryStatMultiplier
+            };
+
+            return copy;
+        }
+
         public enum ScoringMode
         {
             Stat_Order_Boost_Mul,
