@@ -14,7 +14,8 @@ ZDPS is a Damage Meter and Companion Tool for Blue Protocol: Star Resonance. It'
 >
 > If you see ZDPS not detecting packets, not showing combat data, or failing to start correctly, verify that Npcap is installed first, or change Network Capture Device in the dropdown in the Settings menu.
 
-> **VPN Users:** If you are using a VPN, make sure the VPN is connected **before** launching ZDPS. ZDPS automatically detects the correct Network Capture Device during startup; however, if the VPN is enabled after ZDPS has already started, it may continue using the wrong device (such as the VPN's virtual adapter or a loopback adapter). In this case, restart ZDPS or manually select the correct **Network Capture Device** in **Settings**. Reconnecting your VPN or any change to the active Network Capture Device may also cause packet detection to stop until the device is reselected or ZDPS is restarted.
+> [!TIP]
+> **VPN Users:** If you are using a VPN, make sure the VPN is connected **before** launching ZDPS. ZDPS automatically detects the correct Network Capture Device during startup; however, if the VPN is enabled after ZDPS has already started, it may continue using the wrong device instead of the VPN's virtual adapter or a loopback adapter. In this case, restart ZDPS or manually select the correct **Network Capture Device** in **Settings**. Reconnecting your VPN or any change to the active Network Capture Device may also cause packet detection to stop until the device is reselected or ZDPS is restarted.
 
 ### Prerequisites
 
