@@ -6,13 +6,13 @@ namespace BPSR_ZDPS.DataTypes.Modules
 {
     public class SolverConfig
     {
-        public static byte[] DefaultLinkLevels = [1, 2, 4, 8, 16, 32];
+        public static byte[] DefaultLinkLevels = [2, 2, 4, 8, 20, 32];
         public Dictionary<int, bool> QualitiesV2 = new Dictionary<int, bool>() { { 2, false }, { 3, true }, { 4, true } };
         public List<StatPrio> StatPriorities = [];
         public byte[] LinkLevelBonus = DefaultLinkLevels;
         public bool ValueAllStats = true;
         public int NumModules = 5;
-        public ScoringMode ScoreMode = ScoringMode.Stat_Boost_Add_Order;
+        public ScoringMode ScoreMode = ScoringMode.Stat_Mul_Breakpoint_Mul_StatMod_Add_OverCap_Add_Order;
         public float OrderBoostStrength = 1f;
         public float LegendaryStatMultiplier = 2f;
 
@@ -94,7 +94,8 @@ namespace BPSR_ZDPS.DataTypes.Modules
         public enum ScoringMode
         {
             Stat_Order_Boost_Mul,
-            Stat_Boost_Add_Order
+            Stat_Boost_Add_Order,
+            Stat_Mul_Breakpoint_Mul_StatMod_Add_OverCap_Add_Order
         }
     }
 }

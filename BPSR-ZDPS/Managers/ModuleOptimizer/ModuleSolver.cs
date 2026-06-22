@@ -9,6 +9,7 @@ namespace BPSR_ZDPS.Managers.Modules
     public class ModuleOptimizerBase
     {
         public const int MAX_STAT_VALUE = 20;
+        public const int MAX_STAT_VALUE_TOTAL = 50;
         public const int MAX_SUPPORTED_STATS = 32;
         protected SolverConfig Config;
         protected PlayerModDataSave PlayerModInv;
@@ -418,6 +419,40 @@ namespace BPSR_ZDPS.Managers.Modules
             var breakPointBonus = (byte)Config.LinkLevelBonus[bonusIdx];
 
             return breakPointBonus;
+        }
+
+        protected int SnapToBreakPointLevel(int statLevel)
+        {
+            var level = statLevel switch
+            {
+                >= 20 => 20,
+                >= 16 => 16,
+                >= 12 => 12,
+                >= 8 => 8,
+                >= 4 => 4,
+                >= 1 => 1,
+                _ => 0
+            };
+
+            return level;
+        }
+
+        protected float GetStatMul(int statId)
+        {
+            if (statId > 0)
+            {
+                var isLegendary = ModuleSolver.LegendaryStats.Contains(statId);
+                if (isLegendary)
+                {
+                    return Config.LegendaryStatMultiplier;
+                }
+
+                return 1;
+            }
+            else
+            {
+                return 0.95f;
+            }
         }
 
         #region Classes / Structs

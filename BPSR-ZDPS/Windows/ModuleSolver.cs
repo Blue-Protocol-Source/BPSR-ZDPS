@@ -252,14 +252,34 @@ namespace BPSR_ZDPS
                                 var val = (int)Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ScoreMode;
                                 string[] names =
                                 [
-                                    "(Stat * Order * BreakPointBoost)",
-                                    "((Stat * BreakPointBoost) + Order)"
+                                    "((Stat * StatMul) * Order * BreakPointBoost) [Prefer Stat Order]",
+                                    "(((Stat * StatMul) * BreakPointBoost) + Order) [Prefer Breakpoints]",
+                                    "((BPLevel * BreakPointBonus) * StatMul) + LeftOverPoints + Order [Prefer Breakpoints with overflow]"
                                 ];
 
-                                ImGui.SetNextItemWidth(300);
+                                ImGui.SetNextItemWidth(400);
                                 ImGui.Combo("##StatScoreMode", ref val, names, names.Length);
                                 Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ScoreMode = (ScoringMode)val;
                                 SolverConfig.ScoreMode = Settings.Instance.WindowSettings.ModuleWindow.LastUsedPreset.Config.ScoreMode;
+
+                                ImGui.SameLine();
+
+                                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], 18f);
+                                ImGui.BeginDisabled();
+                                ImGui.Button("?");
+                                ImGui.PopFont();
+                                ImGui.SetItemTooltip("Legend\n" +
+                                    "-----------------------\n" +
+                                    "Stat: The stat value capped at 20.\n" +
+                                    "TotalStat: The stat value capped at 50.\n" +
+                                    "Order: The order value for this stat based on your stat list. See \"Stat Order Priority Scaling Factor\"\n" +
+                                    "BreakPointBoost: The Boost value set in the \"Link Level Boosts\" Table.\n" +
+                                    $"StatMul: The multiplier for this stat, ex. if Legendary then it is {SolverConfig.LegendaryStatMultiplier}, normal 1, and not in list 0.95\n" +
+                                    "BPLevel: The Stat value snapped to a breakpoint level. ex. 18 is snapped to 16 or 25 to 20\n" +
+                                    "LeftOverPoints: The Stat value left over the breakpoint level. (TotalStat - BPLevel), ex. 25 - 20 = 5\n" +
+                                    "-----------------------\n\n" +
+                                    "\"((BPLevel * BreakPointBonus) * StatMul) + LeftOverPoints + Order\" is the default");
+                                ImGui.EndDisabled();
                             });
 
                             AddSettingRow("Stat Order Priority Scaling Factor:", () =>
@@ -361,7 +381,7 @@ namespace BPSR_ZDPS
                         {
                             ApplyConfigProfile(new SolverConfig()
                             {
-                                ScoreMode = ScoringMode.Stat_Boost_Add_Order,
+                                ScoreMode = ScoringMode.Stat_Mul_Breakpoint_Mul_StatMod_Add_OverCap_Add_Order,
                                 ValueAllStats = true,
                                 OrderBoostStrength = 1.0f,
                                 LegendaryStatMultiplier = 2.0f
