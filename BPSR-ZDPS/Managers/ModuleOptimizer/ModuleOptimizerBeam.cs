@@ -192,7 +192,7 @@ namespace BPSR_ZDPS.Managers
         {
             var breakPointBonus = GetLinkLevelBoost(statValue);
             float stat = Math.Min(statValue, MAX_STAT_VALUE);
-            var statOrder = (NormalizedStatPrios.Count - (statIdx));
+            var statOrder = statIdx > 0 ? (NormalizedStatPrios.Count - (statIdx)) : 1;
             var orderBoost = statIdx > 0 ? GetOrderBoost(Config.OrderBoostStrength, statIdx, numStats) : 1;
             var bpLevel = SnapToBreakPointLevel(statValue);
             var leftOverPoints = statValue - bpLevel;
@@ -210,6 +210,10 @@ namespace BPSR_ZDPS.Managers
             else if (Config.ScoreMode == SolverConfig.ScoringMode.Stat_Mul_Breakpoint_Mul_StatMod_Add_OverCap_Add_Order)
             {
                 score = (int)(((bpLevel * breakPointBonus) * statMul) + leftOverPoints + orderBoost);
+            }
+            else if (Config.ScoreMode == SolverConfig.ScoringMode.Stat_Mul_Breakpoint_Mul_StatMod_Order_Add_OverCap)
+            {
+                score = (int)((((bpLevel * breakPointBonus) * statMul) * orderBoost) + leftOverPoints);
             }
 
             return score;

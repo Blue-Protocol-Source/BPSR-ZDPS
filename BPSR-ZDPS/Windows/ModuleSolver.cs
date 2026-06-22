@@ -254,7 +254,8 @@ namespace BPSR_ZDPS
                                 [
                                     "((Stat * StatMul) * Order * BreakPointBoost) [Prefer Stat Order]",
                                     "(((Stat * StatMul) * BreakPointBoost) + Order) [Prefer Breakpoints]",
-                                    "((BPLevel * BreakPointBonus) * StatMul) + LeftOverPoints + Order [Prefer Breakpoints with overflow]"
+                                    "((BPLevel * BreakPointBonus) * StatMul) + LeftOverPoints + Order [Prefer Breakpoints with overflow]",
+                                    "((BPLevel * BreakPointBonus) * StatMul) * Order + LeftOverPoints [Prefer Breakpoints with overflow and order]"
                                 ];
 
                                 ImGui.SetNextItemWidth(400);
@@ -365,14 +366,14 @@ namespace BPSR_ZDPS
                             //ImGui.PopClipRect();
                         }
 
-                        if (ImGui.Button("Use \"Prefer Stat Priorities\" Profile"))
+                        if (ImGui.Button("Use \"Prefer Stat Priorities\" Profile (Default)"))
                         {
                             ApplyConfigProfile(new SolverConfig()
                             {
-                                ScoreMode = ScoringMode.Stat_Order_Boost_Mul,
+                                ScoreMode = ScoringMode.Stat_Mul_Breakpoint_Mul_StatMod_Order_Add_OverCap,
                                 ValueAllStats = true,
                                 OrderBoostStrength = 1.0f,
-                                LegendaryStatMultiplier = 1.0f
+                                LegendaryStatMultiplier = 2.0f
                             });
                         }
                         ImGui.SameLine();
