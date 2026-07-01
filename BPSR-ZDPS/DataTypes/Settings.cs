@@ -47,7 +47,7 @@ public class Settings
     public bool IncludeHealEventsOutsideOfCombat { get; set; } = false;
 
     public bool MeterSettingsTankingShowDeaths { get; set; } = true;
-    public bool MeterSettingsNpcTakenShowHpData { get; set; } = false;
+    public bool MeterSettingsNpcTakenShowHpData { get; set; } = true;
     public bool MeterSettingsNpcTakenHideMaxHp { get; set; } = true;
     public bool MeterSettingsNpcTakenUseHpMeter { get; set; } = true;
 
