@@ -176,6 +176,12 @@ namespace BPSR_ZDPS.Windows
             { Zproto.EAttrType.AttrRockDefense.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrRockPower.ToString(), new FAttrValueData(typeof(int)) },
 
+            { Zproto.EAttrType.AttrElectricityAtk.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrElectricityDamage.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrElectricityDamageReduction.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrElectricityDefense.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrElectricityPower.ToString(), new FAttrValueData(typeof(int)) },
+
             { Zproto.EAttrType.AttrLightAtk.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrLightDamage.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrLightDamageReduction.ToString(), new FAttrValueData(typeof(int)) },
@@ -6385,6 +6391,7 @@ namespace BPSR_ZDPS.Windows
             DataTypes.Enums.Professions.ERoleType roleType = DataTypes.Enums.Professions.ERoleType.None;
             DataTypes.Enums.Professions.EProfessionId profession = DataTypes.Enums.Professions.EProfessionId.Profession_Unknown;
             DataTypes.Enums.Professions.SubProfessionId subProfession = DataTypes.Enums.Professions.SubProfessionId.SubProfession_Unknown;
+            DataTypes.Enums.Professions.EProfessionId shapeshiftProfession = DataTypes.Enums.Professions.EProfessionId.Profession_Unknown;
             if (EncounterManager.Current.Entities.TryGetValue(AppState.PlayerUUID, out var playerEntity))
             {
                 var attrCombatState = playerEntity.GetAttrKV("AttrCombatState") as int?;
@@ -6392,6 +6399,9 @@ namespace BPSR_ZDPS.Windows
                 roleType = DataTypes.Professions.GetRoleFromBaseProfessionId(playerEntity.ProfessionId);
                 profession = (DataTypes.Enums.Professions.EProfessionId)playerEntity.ProfessionId;
                 subProfession = (DataTypes.Enums.Professions.SubProfessionId)playerEntity.SubProfessionId;
+                var attrShapeshiftProfessionId = playerEntity.GetAttrKV("AttrShapeshiftProfessionId") as int?;
+                attrShapeshiftProfessionId = attrShapeshiftProfessionId ?? (int)DataTypes.Enums.Professions.EProfessionId.Profession_Unknown;
+                shapeshiftProfession = (DataTypes.Enums.Professions.EProfessionId)attrShapeshiftProfessionId;
             }
 
             void HandleApplyToOthersContextMenu(Action<TrackedEventEntry> func)
@@ -6534,6 +6544,42 @@ namespace BPSR_ZDPS.Windows
                         else
                         {
                             ActiveTrackedEventEntry.LoadEvents.SubProfession.Add(item);
+                        }
+                    }
+                }
+                ImGui.EndCombo();
+            }
+            ImGui.EndDisabled();
+
+            ImGui.Checkbox("Is Shapeshift Profession", ref ActiveTrackedEventEntry.LoadEvents.UseShapeshiftProfession);
+            ImGui.SetItemTooltip($"Tracker is only Enabled while you are the selected Shapeshift Profession(s).\nCurrent Shapeshift Profession: {shapeshiftProfession}");
+            HandleApplyToOthersContextMenu((tracker) =>
+            {
+                tracker.LoadEvents.UseShapeshiftProfession = ActiveTrackedEventEntry.LoadEvents.UseShapeshiftProfession;
+                tracker.LoadEvents.ShapeshiftProfession.Clear();
+                tracker.LoadEvents.ShapeshiftProfession.AddRange(ActiveTrackedEventEntry.LoadEvents.ShapeshiftProfession);
+            });
+            ImGui.SameLine();
+            ImGui.BeginDisabled(!ActiveTrackedEventEntry.LoadEvents.UseShapeshiftProfession);
+            string shapeshiftProfessionPreview = String.Join(", ", ActiveTrackedEventEntry.LoadEvents.ShapeshiftProfession);
+            if (ImGui.BeginCombo("##IsShapeshiftProfessionCombo", shapeshiftProfessionPreview, ImGuiComboFlags.None))
+            {
+                foreach (var item in System.Enum.GetValues<DataTypes.Enums.Professions.EProfessionId>())
+                {
+                    bool isSelected = ActiveTrackedEventEntry.LoadEvents.ShapeshiftProfession.Contains(item);
+                    ImGui.BeginDisabled();
+                    ImGui.Checkbox($"##{item}", ref isSelected);
+                    ImGui.EndDisabled();
+                    ImGui.SameLine();
+                    if (ImGui.Selectable($"{item}", isSelected))
+                    {
+                        if (isSelected)
+                        {
+                            ActiveTrackedEventEntry.LoadEvents.ShapeshiftProfession.Remove(item);
+                        }
+                        else
+                        {
+                            ActiveTrackedEventEntry.LoadEvents.ShapeshiftProfession.Add(item);
                         }
                     }
                 }
@@ -7582,6 +7628,8 @@ namespace BPSR_ZDPS.Windows
         public List<DataTypes.Enums.Professions.EProfessionId> Profession = [];
         public bool UseSubProfession = false;
         public List<DataTypes.Enums.Professions.SubProfessionId> SubProfession = [];
+        public bool UseShapeshiftProfession = false;
+        public List<DataTypes.Enums.Professions.EProfessionId> ShapeshiftProfession = [];
         public bool UseSceneIds = false;
         public string SceneIds = "";
 
@@ -7603,6 +7651,7 @@ namespace BPSR_ZDPS.Windows
             cloned.RoleType = new(RoleType);
             cloned.Profession = new(Profession);
             cloned.SubProfession = new(SubProfession);
+            cloned.ShapeshiftProfession = new(ShapeshiftProfession);
 
             cloned.SceneIds = new(SceneIds);
 
@@ -7638,6 +7687,7 @@ namespace BPSR_ZDPS.Windows
             DataTypes.Enums.Professions.ERoleType roleType = DataTypes.Enums.Professions.ERoleType.None;
             DataTypes.Enums.Professions.EProfessionId profession = DataTypes.Enums.Professions.EProfessionId.Profession_Unknown;
             DataTypes.Enums.Professions.SubProfessionId subProfession = DataTypes.Enums.Professions.SubProfessionId.SubProfession_Unknown;
+            DataTypes.Enums.Professions.EProfessionId shapeshiftProfession = DataTypes.Enums.Professions.EProfessionId.Profession_Unknown;
             if (EncounterManager.Current.Entities.TryGetValue(AppState.PlayerUUID, out var playerEntity))
             {
                 var attrCombatState = playerEntity.GetAttrKV("AttrCombatState") as int?;
@@ -7656,6 +7706,13 @@ namespace BPSR_ZDPS.Windows
                 if (System.Enum.IsDefined(typeof(DataTypes.Enums.Professions.SubProfessionId), playerEntity.SubProfessionId))
                 {
                     subProfession = (DataTypes.Enums.Professions.SubProfessionId)playerEntity.SubProfessionId;
+                }
+
+                var attrShapeshiftProfessionId = playerEntity.GetAttrKV("AttrShapeshiftProfessionId") as int?;
+                attrShapeshiftProfessionId = attrShapeshiftProfessionId ?? (int)DataTypes.Enums.Professions.EProfessionId.Profession_Unknown;
+                if (System.Enum.IsDefined(typeof(DataTypes.Enums.Professions.EProfessionId), attrShapeshiftProfessionId))
+                {
+                    shapeshiftProfession = (DataTypes.Enums.Professions.EProfessionId)attrShapeshiftProfessionId;
                 }
             }
 
@@ -7718,6 +7775,14 @@ namespace BPSR_ZDPS.Windows
             if (UseSubProfession)
             {
                 if (!SubProfession.Contains(subProfession))
+                {
+                    return false;
+                }
+            }
+
+            if (UseShapeshiftProfession)
+            {
+                if (!ShapeshiftProfession.Contains(shapeshiftProfession))
                 {
                     return false;
                 }
