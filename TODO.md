@@ -182,7 +182,7 @@ The goal is allowing players to disable in-game HUD elements while relying on ZD
 - [ ] Layer ordering
 - [ ] Multi-monitor support
 - [ ] Import/export layouts
-- [x] Layout presets
+- 🔧 Layout presets
 
 ## Additional Trackers
 
@@ -198,9 +198,9 @@ Add optional widgets for:
 
 ### Combat
 
-- [x] Cooldowns
-- [x] Buffs
-- [x] Debuffs
+- ⚡ Cooldowns
+- ✅ Buffs
+- ✅ Debuffs
 - [ ] Cast bar
 - [ ] Target cast bar
 - [ ] Boss cast bar
@@ -211,7 +211,7 @@ Add optional widgets for:
 
 - [ ] HP
 - [ ] Resources
-- [x] Important buffs
+- ✅ Important buffs
 - [ ] Death status
 - [ ] Distance
 - [ ] Mechanic markers
@@ -264,7 +264,7 @@ Allow users to choose what is displayed in the bottom summary bar instead of alw
 
 ### Personal
 
-- [x] My statistics
+- ✅ My statistics
 
 ### Group Subtotal
 
@@ -315,9 +315,31 @@ Possible uses:
 - [ ] Phase analysis
 - [ ] Death recap
 - [ ] Performance comparison against previous pulls
-- [x] Historical encounter database
+- ✅ Historical encounter database
 - [ ] Shareable combat reports
-- [x] Plugin/API system
+- ✅ Plugin/API system
 - [ ] Advanced overlay themes
 - [ ] Profile sync/import/export
 
+---
+
+## Status Guide
+
+- 💡 Idea — Under consideration
+- 📝 Draft — Planned, but details are still being designed
+- 🚧 In Progress — Currently being developed
+- 🧪 Testing — Feature is implemented and being tested
+- 🔧 Needs Improvement — Works, but still needs more work
+- ⚡ Optimization — Functional, but performance or code quality can be improved
+- ⏳ Waiting — Blocked by another task, dependency, or game update
+- 🔄 Rework — Being redesigned or rewritten
+- ❌ Cancelled — No longer planned
+- ✅ Complete — Finished and released
+
+## Priority Guide
+
+- 🔥 Critical — Must be done as soon as possible
+- 🔴 High — Important and planned soon
+- 🟡 Medium — Normal priority
+- 🟢 Low — Nice to have
+- ❄️ Very Low — Someday / whenever there's time
