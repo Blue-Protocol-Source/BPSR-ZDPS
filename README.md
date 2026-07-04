@@ -50,6 +50,10 @@ If .NET 9 Desktop Runtime is missing, ZDPS will display a download prompt when l
 3. Once everything is extracted, run `BPSR-ZDPS.exe`
    - There is no actual installer for ZDPS, this is the entire application itself. It is entirely portable.
 
+## 🚧 TODO
+
+Planned features, improvements, and known tasks are tracked in [TODO.md](TODO.md).
+
 ## Features
 ZDPS has a very rich feature set which goes beyond what typical DPS Meters support but remains incredibly fast and memory efficient the entire time.
 > [!NOTE]
