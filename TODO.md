@@ -1,5 +1,8 @@
 # bpsr-zdps TODO
 
+## High Priority
+- [ ] Add a indicator that shows which enemy skill caused the player's death.
+
 ### Monster Monitor: Boss DBM (Boss Mechanic Timer Bars)
 
 Add a dedicated **Boss DBM** system inside **Containers** that displays boss mechanic countdown bars similar to Deadly Boss Mods (WOW addon).
