@@ -1,7 +1,7 @@
 # bpsr-zdps TODO
 
 ## High Priority
-- [ ] Add a indicator that shows which enemy skill caused the player's death.
+- [ ] Add an indicator that shows which enemy skill caused the player's death.
 
 ### Monster Monitor: Boss DBM (Boss Mechanic Timer Bars)
 
@@ -182,7 +182,7 @@ The goal is allowing players to disable in-game HUD elements while relying on ZD
 - [ ] Layer ordering
 - [ ] Multi-monitor support
 - [ ] Import/export layouts
-- [ ] Layout presets
+- [x] Layout presets
 
 ## Additional Trackers
 
@@ -198,9 +198,9 @@ Add optional widgets for:
 
 ### Combat
 
-- [ ] Cooldowns
-- [ ] Buffs
-- [ ] Debuffs
+- [x] Cooldowns
+- [x] Buffs
+- [x] Debuffs
 - [ ] Cast bar
 - [ ] Target cast bar
 - [ ] Boss cast bar
@@ -211,7 +211,7 @@ Add optional widgets for:
 
 - [ ] HP
 - [ ] Resources
-- [ ] Important buffs
+- [x] Important buffs
 - [ ] Death status
 - [ ] Distance
 - [ ] Mechanic markers
@@ -264,7 +264,7 @@ Allow users to choose what is displayed in the bottom summary bar instead of alw
 
 ### Personal
 
-- [ ] My statistics
+- [x] My statistics
 
 ### Group Subtotal
 
@@ -315,9 +315,9 @@ Possible uses:
 - [ ] Phase analysis
 - [ ] Death recap
 - [ ] Performance comparison against previous pulls
-- [ ] Historical encounter database
+- [x] Historical encounter database
 - [ ] Shareable combat reports
-- [ ] Plugin/API system
+- [x] Plugin/API system
 - [ ] Advanced overlay themes
 - [ ] Profile sync/import/export
 
