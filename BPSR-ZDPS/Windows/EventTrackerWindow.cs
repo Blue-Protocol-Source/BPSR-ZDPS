@@ -754,7 +754,10 @@ namespace BPSR_ZDPS.Windows
                                     eventTracker.EventData.TryAdd(e.EntityUuid, eventData);
                                 }
 
-                                eventTracker.IsHidden = false;
+                                if (e.BuffEventType != EBuffEventType.BuffEventRemove)
+                                {
+                                    eventData.IsHidden = false;
+                                }
 
                                 eventData.Uuid = e.BuffUuid;
                                 if (e.BaseId != 0)
@@ -906,11 +909,13 @@ namespace BPSR_ZDPS.Windows
 
                                 if (eventTracker.HideTrackerCondition == EHideTrackerCondition.HideOnSpecificEvent && e.BuffEventType == eventTracker.HideOnSpecificBuffEventValue)
                                 {
-                                    eventTracker.IsHidden = true;
+                                    //eventData.IsHidden = true;
+                                    eventData.Cooldown?.EndCooldown();
                                 }
                                 else if (eventTracker.HideTrackerCondition == EHideTrackerCondition.HideOnRemoveEvent && e.BuffEventType == EBuffEventType.BuffEventRemove)
                                 {
-                                    eventTracker.IsHidden = true;
+                                    //eventData.IsHidden = true;
+                                    eventData.Cooldown?.EndCooldown();
                                 }
 
                                 if (eventTracker.IgnoreCooldownDuration && e.BuffEventType == EBuffEventType.BuffEventRemove)
@@ -933,7 +938,14 @@ namespace BPSR_ZDPS.Windows
                         {
                             if (e.BuffEventType == EBuffEventType.BuffEventAddTo)
                             {
-                                eventTracker.IsHidden = true;
+                                if (eventTracker.OnOtherBuffGain == EOtherBuffEventAction.Show)
+                                {
+                                    eventData.IsHidden = false;
+                                }
+                                else if (eventTracker.OnOtherBuffGain == EOtherBuffEventAction.Hide)
+                                {
+                                    eventData.IsHidden = true;
+                                }
 
                                 if (eventData != null)
                                 {
@@ -955,11 +967,18 @@ namespace BPSR_ZDPS.Windows
                             }
                             else
                             {
-                                eventTracker.IsHidden = false;
+                                if (eventTracker.OnOtherBuffRemove == EOtherBuffEventAction.Show)
+                                {
+                                    eventData.IsHidden = false;
                             }
+                                else if (eventTracker.OnOtherBuffRemove == EOtherBuffEventAction.Hide)
+                                {
+                                    eventData.IsHidden = true;
                         }
                     }
                 }
+            }
+        }
             }
         }
 
@@ -1046,7 +1065,7 @@ namespace BPSR_ZDPS.Windows
 
                             SkillEventData skillEventData = eventData as SkillEventData;
 
-                            eventTracker.IsHidden = false;
+                            eventData.IsHidden = false;
 
                             eventData.OwnerEntityUuid = e.CasterUuid;
 
@@ -1644,7 +1663,7 @@ namespace BPSR_ZDPS.Windows
                                 eventTracker.EventData.TryAdd(bossUuid, eventData);
                             }
 
-                            eventTracker.IsHidden = false;
+                            eventData.IsHidden = false;
 
                             eventData.OwnerEntityUuid = bossUuid;
 
@@ -1725,7 +1744,7 @@ namespace BPSR_ZDPS.Windows
                                 eventTracker.EventData.TryAdd(bossUuid, eventData);
                             }
 
-                            eventTracker.IsHidden = false;
+                            eventData.IsHidden = false;
 
                             eventData.OwnerEntityUuid = bossUuid;
 
@@ -2298,6 +2317,11 @@ namespace BPSR_ZDPS.Windows
                                     {
                                         continue;
                                     }
+
+                                    if (eventData.IsHidden && !windowSettings.IsContainerEditMode)
+                                    {
+                                        continue;
+                                }
                                 }
                                 else
                                 {
@@ -6175,6 +6199,47 @@ namespace BPSR_ZDPS.Windows
                 {
                     ActiveTrackedEventEntry.HideOnOtherBuffId = hideOnOtherBuffId;
                 }
+
+                ImGui.TextUnformatted("OnOtherBuffGain:");
+                ImGui.SameLine();
+                if (ImGui.BeginCombo("##OnOtherBuffGainCombo", ActiveTrackedEventEntry.OnOtherBuffGain.ToString()))
+                {
+                    foreach (var condition in System.Enum.GetValues<EOtherBuffEventAction>())
+                    {
+                        bool isSelected = ActiveTrackedEventEntry.OnOtherBuffGain == condition;
+
+                        if (ImGui.Selectable(condition.ToString(), isSelected, ImGuiSelectableFlags.SpanAllColumns))
+                        {
+                            ActiveTrackedEventEntry.OnOtherBuffGain = condition;
+                        }
+
+                        if (isSelected)
+                        {
+                            ImGui.SetItemDefaultFocus();
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+                ImGui.TextUnformatted("OnOtherBuffRemove:");
+                ImGui.SameLine();
+                if (ImGui.BeginCombo("##OnOtherBuffRemoveCombo", ActiveTrackedEventEntry.OnOtherBuffRemove.ToString()))
+                {
+                    foreach (var condition in System.Enum.GetValues<EOtherBuffEventAction>())
+                    {
+                        bool isSelected = ActiveTrackedEventEntry.OnOtherBuffRemove == condition;
+
+                        if (ImGui.Selectable(condition.ToString(), isSelected, ImGuiSelectableFlags.SpanAllColumns))
+                        {
+                            ActiveTrackedEventEntry.OnOtherBuffRemove = condition;
+                        }
+
+                        if (isSelected)
+                        {
+                            ImGui.SetItemDefaultFocus();
+            }
+                    }
+                    ImGui.EndCombo();
+                }
             }
 
             ImGui.Checkbox("Only Display One Tracker Instance", ref ActiveTrackedEventEntry.OnlyDisplayOneTrackerInstance);
@@ -7219,6 +7284,13 @@ namespace BPSR_ZDPS.Windows
         FixedWidth = 2, // Height is AutoSize
     }
 
+    public enum EOtherBuffEventAction
+    {
+        None = 0,
+        Show = 1,
+        Hide = 2,
+    }
+
     public class TrackerContainer
     {
         [JsonProperty]
@@ -7356,7 +7428,7 @@ namespace BPSR_ZDPS.Windows
 
         public string TrackerName = "";
         public bool IsEnabled = false;
-        public bool IsHidden = false;
+        //public bool IsHidden = false;
 
         public ESourceLocationType SourceLocationType = ESourceLocationType.Manual;
         //public string SourceLocationPath = ""; // Where the Source is located
@@ -7452,6 +7524,8 @@ namespace BPSR_ZDPS.Windows
         public EHideTrackerCondition HideTrackerCondition = EHideTrackerCondition.HideOnRemoveEvent;
         public Zproto.EBuffEventType? HideOnSpecificBuffEventValue = null;
         public int HideOnOtherBuffId = 0;
+        public EOtherBuffEventAction OnOtherBuffGain = EOtherBuffEventAction.None;
+        public EOtherBuffEventAction OnOtherBuffRemove = EOtherBuffEventAction.None;
 
         public bool OverrideDuration = false;
         public int DurationOverrideValue = 0;
@@ -7812,6 +7886,9 @@ namespace BPSR_ZDPS.Windows
 
         [JsonIgnore]
         public EventCooldownData? Cooldown;
+
+        [JsonIgnore]
+        public bool IsHidden = false;
 
         public Vector4? BuffTypeToColor()
         {
