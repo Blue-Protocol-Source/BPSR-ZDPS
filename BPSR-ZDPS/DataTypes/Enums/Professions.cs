@@ -26,7 +26,7 @@ namespace BPSR_ZDPS.DataTypes.Enums
             Profession_VerdantOracle = 5,
             // UNK
             // UNK
-            // ThunderHandCannon
+            Profession_Dorothy = 8,
             Profession_HeavyGuardian = 9,
             // DarkSpiritDance
             Profession_Marksman = 11,
@@ -82,6 +82,10 @@ namespace BPSR_ZDPS.DataTypes.Enums
             Profession_VerdantOracle = 109,
             SubProfession_Smite = 110,
             SubProfession_Lifebind = 111,
+
+            //Profession_Dorothy = 000,
+            //SubProfession_Dorothy1 = 125,
+            //SubProfession_Dorothy2 = 126,
 
             Profession_HeavyGuardian = 112,
             SubProfession_Earthfort = 113,

@@ -25,6 +25,8 @@ namespace BPSR_ZDPS.DataTypes
                     return Path.Combine("Professions", "Profession_4");
                 case EProfessionId.Profession_VerdantOracle:
                     return Path.Combine("Professions", "Profession_5");
+                case EProfessionId.Profession_Dorothy:
+                    return Path.Combine("Professions", "Profession_8");
                 case EProfessionId.Profession_HeavyGuardian:
                     return Path.Combine("Professions", "Profession_9");
                 case EProfessionId.Profession_Marksman:
@@ -50,7 +52,7 @@ namespace BPSR_ZDPS.DataTypes
             3 => AppStrings.GetLocalized("Profession_TwinStriker"),
             4 => AppStrings.GetLocalized("Profession_WindKnight"),
             5 => AppStrings.GetLocalized("Profession_VerdantOracle"),
-            8 => "Thunder Flash Hand Cannon", // ThunderHandCannon
+            8 => AppStrings.GetLocalized("Profession_Dorothy"), // Hand Cannon
             9 => AppStrings.GetLocalized("Profession_HeavyGuardian"),
             10 => "Dark Spirit Dance Ritual Blade", // DarkSpiritDance
             11 => AppStrings.GetLocalized("Profession_Marksman"),
@@ -150,6 +152,7 @@ namespace BPSR_ZDPS.DataTypes
             1601 or 1605 or 1606 or 1607 or 1608 or 1609 or 1610 or 1611 or 1612 or 1613 or 1614 or 1615 or 1616 or 1617 or 1618 or 1621 => 3, // Twin Striker
             1401 or 1410 or 1418 or 1419 or 1420 or 1421 or 1422 or 1423 or 1424 or 1425 or 1426 or 1430 or 1431 => 4, // WindKnight
             1501 or 1507 or 1509 or 1518 or 1519 or 1520 or 1521 or 1522 or 1523 or 1524 or 1527 or 1528 or 1529 or 1531 => 5, // VerdantOracle
+            2900441 or 1850 or 45300 => 8, // Dorothy
             1901 or 1907 or 1917 or 1922 or 1923 or 1924 or 1925 or 1926 or 1927 or 1930 or 1932 or 1936 or 1937 or 1938 or 1940 => 9, // HeavyGuardian
             2201 or 2209 or 2220 or 2222 or 2230 or 2231 or 2232 or 2233 or 2234 or 2235 or 2237 or 2238 => 11, // Marksman
             2401 or 2405 or 2406 or 2407 or 2408 or 2409 or 2410 or 2412 or 2414 or 2415 or 2419 or 2420 or 2421 => 12, // ShieldKnight
@@ -312,6 +315,7 @@ namespace BPSR_ZDPS.DataTypes
             switch (professionId)
             {
                 case (int)EProfessionId.Profession_Stormblade:
+                case (int)EProfessionId.Profession_Dorothy:
                 case (int)EProfessionId.Profession_Marksman:
                 case (int)EProfessionId.Profession_Lucy:
                 case (int)EProfessionId.Profession_Natsu:
@@ -336,8 +340,6 @@ namespace BPSR_ZDPS.DataTypes
             }
         }
 
-
-
         public static ERoleType GetRoleFromBaseProfessionId(int professionId)
         {
             switch (professionId)
@@ -346,6 +348,7 @@ namespace BPSR_ZDPS.DataTypes
                 case (int)EProfessionId.Profession_FrostMage:
                 case (int)EProfessionId.Profession_TwinStriker:
                 case (int)EProfessionId.Profession_WindKnight:
+                case (int)EProfessionId.Profession_Dorothy:
                 case (int)EProfessionId.Profession_Marksman:
                 case (int)EProfessionId.Profession_Lucy:
                 case (int)EProfessionId.Profession_Natsu:

@@ -1577,7 +1577,7 @@ namespace BPSR_ZDPS
 
         public void SetProfessionId(int id)
         {
-            if (id == (int)DataTypes.Enums.Professions.EProfessionId.Profession_Lucy || id == (int)DataTypes.Enums.Professions.EProfessionId.Profession_Natsu)
+            if (id == (int)DataTypes.Enums.Professions.EProfessionId.Profession_Dorothy || id == (int)DataTypes.Enums.Professions.EProfessionId.Profession_Lucy || id == (int)DataTypes.Enums.Professions.EProfessionId.Profession_Natsu)
             {
                 // Don't allow setting the Profession to a temporary transform
                 return;
@@ -1608,8 +1608,15 @@ namespace BPSR_ZDPS
             int profId = Professions.GetProfessionIdFromSubProfessionId(id);
             if (ProfessionId != profId)
             {
-                ProfessionId = profId;
-                Profession = Professions.GetProfessionNameFromId(profId);
+                if (id == (int)DataTypes.Enums.Professions.EProfessionId.Profession_Dorothy || id == (int)DataTypes.Enums.Professions.EProfessionId.Profession_Lucy || id == (int)DataTypes.Enums.Professions.EProfessionId.Profession_Natsu)
+                {
+                    // 
+                }
+                else
+                {
+                    ProfessionId = profId;
+                    Profession = Professions.GetProfessionNameFromId(profId);
+                }
             }
 
             var cached = EntityCache.Instance.GetOrCreate(UUID);
@@ -2043,6 +2050,14 @@ namespace BPSR_ZDPS
             {
                 SetSubProfessionId((int)subProfessionId);
             }
+            else
+            {
+                var professionId = Professions.GetBaseProfessionIdBySkillId(skillId);
+                if (professionId != 0)
+                {
+                    SetProfessionId(professionId);
+                }
+            }
         }
 
         public void AddHealing(
@@ -2073,6 +2088,14 @@ namespace BPSR_ZDPS
             if (subProfessionId != 0)
             {
                 SetSubProfessionId((int)subProfessionId);
+            }
+            else
+            {
+                var professionId = Professions.GetBaseProfessionIdBySkillId(skillId);
+                if (professionId != 0)
+                {
+                    SetProfessionId(professionId);
+                }
             }
         }
 
