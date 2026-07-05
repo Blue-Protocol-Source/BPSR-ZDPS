@@ -46,6 +46,7 @@ namespace BPSR_ZDPS.Windows
         static List<int> LoadedSkillIdData = new();
         static List<long> LoadedBuffUuidData = new();
         static List<int> LoadedSkillBookData = new();
+        static bool ReloadCachedListData = false;
 
         // Graph storage variables
         static bool HasLoadedGraphsData = false;
@@ -508,18 +509,22 @@ namespace BPSR_ZDPS.Windows
 
                 string[] FilterButtons = { "Damage", "Healing", "Taken", "Taken By Entity", "Attributes", "Buffs", "Graphs", "Skill Book", "Debug" };
 
-                for (int filerBtnIdx = 0; filerBtnIdx < FilterButtons.Length; filerBtnIdx++)
+                for (int filterBtnIdx = 0; filterBtnIdx < FilterButtons.Length; filterBtnIdx++)
                 {
-                    bool isSelected = TableFilterMode == (ETableFilterMode)filerBtnIdx;
+                    bool isSelected = TableFilterMode == (ETableFilterMode)filterBtnIdx;
 
                     if (isSelected)
                     {
                         ImGui.PushStyleColor(ImGuiCol.Button, Colors.DimGray);
                     }
 
-                    if (ImGui.Button($"{FilterButtons[filerBtnIdx]}##SkillStats_FilterBtn_{filerBtnIdx}"))
+                    if (ImGui.Button($"{FilterButtons[filterBtnIdx]}##SkillStats_FilterBtn_{filterBtnIdx}"))
                     {
-                        TableFilterMode = (ETableFilterMode)filerBtnIdx;
+                        if (TableFilterMode != (ETableFilterMode)filterBtnIdx)
+                        {
+                            ReloadCachedListData = true;
+                        }
+                        TableFilterMode = (ETableFilterMode)filterBtnIdx;
                     }
 
                     if (isSelected)
@@ -527,7 +532,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.PopStyleColor();
                     }
 
-                    if (filerBtnIdx < FilterButtons.Length - 1)
+                    if (filterBtnIdx < FilterButtons.Length - 1)
                     {
                         ImGui.SameLine();
                     }
@@ -609,6 +614,12 @@ namespace BPSR_ZDPS.Windows
                         }
 
                         ImGui.TableHeadersRow();
+
+                        if (ReloadCachedListData)
+                        {
+                            ReloadCachedListData = false;
+                            LoadedSkillIdData.Clear();
+                        }
 
                         for (int i = 0; i < skillStats.Count; i++)
                         {
@@ -1662,6 +1673,7 @@ namespace BPSR_ZDPS.Windows
             LoadedSkillIdData = new();
             LoadedBuffUuidData = new();
             LoadedSkillBookData = new();
+            ReloadCachedListData = false;
         }
     }
 
