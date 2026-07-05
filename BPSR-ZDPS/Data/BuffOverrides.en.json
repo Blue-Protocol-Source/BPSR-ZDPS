@@ -1,4 +1,16 @@
 {
+    "9901":
+    {
+        "Name": "Shield Knight Reality X4 (Illusion Boost)",
+        "Desc": "Illusion Energy threshold reached, increasing Illusion stats",
+        "BuffType": 1
+    },
+    "9903":
+    {
+        "Name": "Marksman Reality X6 (Summon Celestial Eagle)",
+        "Desc": "Illusion Energy threshold reached, summoning Celestial Eagle at next damage instance",
+        "BuffType": 1
+    },
     "20301":
     {
         "Name": "Life Bloom (Heal)",
@@ -335,7 +347,13 @@
     "50036":
     {
         "Name": "Weakness Strike Triggered",
-        "Desc": "Deals Attack Damage equasl to 50% ATK to an enemy and grants 1 Sand Crystal",
+        "Desc": "Deals Attack Damage equal to 50% ATK to an enemy and grants 1 Sand Crystal",
+        "BuffType": 1
+    },
+    "50037":
+    {
+        "Name": "Countercrush Triggered",
+        "Desc": "Deals Attack DMG to surrounding enemies and enters the Countercrush state.\nDuring this time, Block Chance +100%, Attack DMG taken from blocks -30%",
         "BuffType": 1
     },
     "50047":
@@ -590,6 +608,12 @@
         "Desc": "If you deal no DMG to enemies for 5s, each hit of your Basic Attack will heal up to 10 allies",
         "BuffType": 1
     },
+    "55361":
+    {
+        "Name": "Tenacity Chord",
+        "Desc": "Each stack increases Max HP",
+        "BuffType": 1
+    },
     "55395":
     {
         "Name": "Heroic Melody Conversion Boost",
@@ -641,28 +665,6 @@
         "Desc": "Zeal Crusade is boosting Bold Fearless effect from Wide Raid talent",
         "BuffType": 1
     },
-    "500105":
-    {
-        "Name": "Parkour Disabled"
-    },
-    "510701":
-    {
-        "Name": "Float",
-        "BuffType": 1
-    },
-    "510801":
-    {
-        "Name": "Glide",
-        "BuffType": 1
-    },
-    "521001":
-    {
-        "Name": "Invincible"
-    },
-    "521003":
-    {
-        "Name": "Invincible"
-    },
     "55405":
     {
         "Name": "Aegis Ward",
@@ -682,6 +684,10 @@
     {
         "Name": "Condemn Boost",
         "BuffType": 1
+    },
+    "500105":
+    {
+        "Name": "Parkour Disabled"
     },
     "500111":
     {
@@ -722,7 +728,7 @@
     "501712":
     {
         "Name": "Power Sealed",
-        "Desc": "Unleah all power when the time runs out (480s)",
+        "Desc": "Unleash all power when the time runs out (480s)",
         "BuffType": 1
     },
     "501714":
@@ -736,6 +742,38 @@
         "Name": "Wipe Restores HP And Resets CDs",
         "Desc": "Occurs after player's wipe. Their HP is fully restored and all of their Cooldowns are reset",
         "BuffType": 0
+    },
+    "510091":
+    {
+        "Name": "Target Selection - Lock-On",
+        "Desc": "Player is locked onto for a mechanic to focus",
+        "BuffType": 0
+    },
+    "510701":
+    {
+        "Name": "Float",
+        "BuffType": 1
+    },
+    "510801":
+    {
+        "Name": "Glide",
+        "BuffType": 1
+    },
+    "510902":
+    {
+        "Name": "Status Effect Immunity",
+        "Desc": "Immune to Stun, Frozen, Petrified, Paralyzed, Dazzle, and Fear",
+        "BuffType": 1
+    },
+    "521001":
+    {
+        "Name": "Invincible",
+        "BuffType": 1
+    },
+    "521003":
+    {
+        "Name": "Invincible",
+        "BuffType": 1
     },
     "522001":
     {
@@ -844,10 +882,21 @@
         "Name": "Power of Unity (Detection)",
         "BuffType": 1
     },
+    "683117":
+    {
+        "Name": "Power of Unity (Raids - Detection)",
+        "BuffType": 1
+    },
     "683119":
     {
         "Name": "Request Role",
         "Desc": "Determine what role the player is",
+        "BuffType": 1
+    },
+    "683602":
+    {
+        "Name": "Bot Automatic Healing",
+        "Desc": "Bots in Solo/Duo mode automatically heal targets",
         "BuffType": 1
     },
     "701008":
@@ -864,6 +913,17 @@
     {
         "Name": "Dungeon Mode Marker - M",
         "Desc": "Main Mode"
+    },
+    "702009":
+    {
+        "Name": "S3 Dungeon Started",
+        "Desc": "A Season 3 Dungeon has begun"
+    },
+    "802907":
+    {
+        "Name": "Wind Particle Feedback",
+        "Desc": "",
+        "BuffType": 1
     },
     "823238":
     {
@@ -1012,6 +1072,186 @@
         "Name": "Meteor Rain Marked",
         "Desc": "Marked with Meteor Rain from sharing Judgment of Shared Sin"
     },
+    "829104":
+    {
+        "Name": "Annihilation Beam (A) (Placement)",
+        "Desc": "Player is placing the Annihilation Beam tether.\nFirst player in the tether",
+        "BuffType": 0
+    },
+    "829105":
+    {
+        "Name": "Annihilation Beam (B) (Placement)",
+        "Desc": "Player is placing the Annihilation Beam tether.\nSecond player in the tether",
+        "BuffType": 0
+    },
+    "829106":
+    {
+        "Name": "Annihilation Beam (C) (Placement)",
+        "Desc": "Player is placing the Annihilation Beam tether.\nThird player in the tether",
+        "BuffType": 0
+    },
+    "829110":
+    {
+        "Name": "Area A (Tracker)",
+        "Desc": "Player is in Area A (Room 1)",
+        "BuffType": 1
+    },
+    "829111":
+    {
+        "Name": "Area B (Tracker)",
+        "Desc": "Player is in Area B (Room 2)",
+        "BuffType": 1
+    },
+    "829112":
+    {
+        "Name": "Area C (Tracker)",
+        "Desc": "Player is in Area C (Room 3)",
+        "BuffType": 1
+    },
+    "829113":
+    {
+        "Name": "Area D (Tracker)",
+        "Desc": "Player is in Area D (Room 4)",
+        "BuffType": 1
+    },
+    "829115":
+    {
+        "Name": "Allocation",
+        "Desc": "Player will explode at end of duration",
+        "BuffType": 0
+    },
+    "829116":
+    {
+        "Name": "Allocation (Phantom)",
+        "Desc": "Player will explode at end of duration",
+        "BuffType": 0
+    },
+    "829122":
+    {
+        "Name": "Micro Rockets Spread Marker",
+        "Desc": "Player is marked with a Spread indicator to be hit by Micro Rockets attack",
+        "BuffType": 0
+    },
+    "829125":
+    {
+        "Name": "Boss Area A (Tracker)",
+        "Desc": "Boss is in Area A (Room 1)",
+        "BuffType": 1
+    },
+    "829126":
+    {
+        "Name": "Boss Area B (Tracker)",
+        "Desc": "Boss is in Area B (Room 2)",
+        "BuffType": 1
+    },
+    "829127":
+    {
+        "Name": "Boss Area C (Tracker)",
+        "Desc": "Boss is in Area C (Room 3)",
+        "BuffType": 1
+    },
+    "829128":
+    {
+        "Name": "Boss Area D (Tracker)",
+        "Desc": "Boss is in Area D (Room 4)",
+        "BuffType": 1
+    },
+    "829201":
+    {
+        "Name": "Delayed Railgun",
+        "Desc": "Places a railgun when the countdown ends.",
+        "Icon": "ui/atlas/hud/buff/buff_blue_cd"
+    },
+    "829210":
+    {
+        "Name": "Mega Delayed Railgun",
+        "Desc": "Places a railgun when the countdown ends.",
+        "Icon": "ui/atlas/hud/buff/buff_blue_cd"
+    },
+    "829211":
+    {
+        "Name": "Tile Break (Fall Detection)",
+        "Desc": "Check if a player on a tile that is broken should fall through it"
+    },
+    "829221":
+    {
+        "Name": "Summon Mech Sentinel",
+        "Desc": "Paradox-Calamity Remnant - Continuation summons a Mech - Sentinel at the marked player location"
+    },
+    "829223":
+    {
+        "Name": "Mech Sentinel Self-Destruct",
+        "Desc": "The Mech Sentinel releases the charged up energy to explode the tiles within range"
+    },
+    "829226":
+    {
+        "Name": "Railgun Strike Order (1)",
+        "Desc": "This Railgun Strike will land first"
+    },
+    "829227":
+    {
+        "Name": "Railgun Strike Order (2)",
+        "Desc": "This Railgun Strike will land second"
+    },
+    "829228":
+    {
+        "Name": "Railgun Strike Order (3)",
+        "Desc": "This Railgun Strike will land third"
+    },
+    "829229":
+    {
+        "Name": "Mech Sentinel Shield Explosion",
+        "Desc": "Mech Sentinels explode their shield, dealing damage to enemies around them",
+        "BuffType": 1
+    },
+    "829230":
+    {
+        "Name": "Disintegration Shockwave Effect",
+        "Desc": "Paradox-Calamity Remnant - Continuation shatters all cracked platforms"
+    },
+    "829231":
+    {
+        "Name": "Marked by Railgun",
+        "Desc": "Player is being marked by the Railgun to be shot at"
+    },
+    "829232":
+    {
+        "Name": "Core Conversion Complete",
+        "Desc": "Paradox-Calamity Remnant - Continuation enters a flying combat mode after hitting 0 HP",
+        "BuffType": 1
+    },
+    "829233":
+    {
+        "Name": "Boss Resets All Damaged Platforms",
+        "Desc": "Paradox-Calamity Remnant - Continuation Resets All Arena Platforms",
+        "BuffType": 1
+    },
+    "829237":
+    {
+        "Name": "Boss Phase Transition - Invulnerable",
+        "Desc": "Paradox-Calamity Remnant - Continuation becomes Invulnerable during phase transition",
+        "BuffType": 1
+    },
+    "829242":
+    {
+        "Name": "Mech Sentinel Phase: Enable Shield Explosion",
+        "Desc": "At the end of the duration, Mech Sentinels are allowed to explode their shields to deal damage"
+    },
+    "840007":
+    {
+        "Name": "Tina's Party Stack Marker",
+        "Desc": "Player is marked with a party stack indicator. At the end of the timer, Tina will land on them"
+    },
+    "841508":
+    {
+        "Name": "Void Corruption (Holding)",
+        "Desc": "Player is holding the Void Corruption from Tina to move where it will land"
+    },
+    "841509":
+    {
+        "Name": "Void Corruption Strike",
+        "Desc": "Tina - Void Reverie marks players with a number and strikes them in order after a delay"
+    },
     "880630":
     {
         "Name": "Darkness Layers",
@@ -1030,7 +1270,7 @@
     },
     "881563":
     {
-        "Name": "Tankbuster Lock-On",
+        "Name": "Piercing Beam (Tankbuster) Lock-On",
         "Desc": "Divine Punisher"
     },
     "881803":
@@ -1175,10 +1415,238 @@
         "Name": "Dream Spirit Connection",
         "Desc": "Escorting the Dream Spirit"
     },
+    "883328":
+    {
+        "Name": "Phase Transition Invincibility",
+        "Desc": "Thanatos - Final Form"
+    },
+    "883335":
+    {
+        "Name": "Predation: Donut (Marker)",
+        "Desc": "Thanatos - Final Form"
+    },
+    "883377":
+    {
+        "Name": "Phase Transition - Overdrive Bombardment",
+        "Desc": "Thanatos - Final Form"
+    },
+    "883381":
+    {
+        "Name": "Overheat Lock",
+        "Desc": "Thanatos - Final Form"
+    },
+    "883601":
+    {
+        "Name": "Diver's Breath (Tankbuster)",
+        "Desc": "Player is marked to be hit with a tankbuster attack"
+    },
+    "883607":
+    {
+        "Name": "Brilliant Performance (Protection)",
+        "Desc": "Protected from Brilliant Performance's instant kill",
+        "BuffType": 1
+    },
+    "883615":
+    {
+        "Name": "Nappo's Prank",
+        "Desc": "Each stack reduces DMG dealt by 10%"
+    },
+    "883621":
+    {
+        "Name": "Water Spread Marker",
+        "Desc": "Player is marked to spread away from other players, exploding at duration end"
+    },
+    "883628":
+    {
+        "Name": "Brilliant Performance (Protection Check)",
+        "Desc": "If player is not protected by a Bubble at the end of the duration, they are instantly killed"
+    },
+    "883629":
+    {
+        "Name": "Brilliant Performance (Phase Transition Effects)",
+        "Desc": "Effects for the phase transition"
+    },
+    "883635":
+    {
+        "Name": "Orange Shield (Brilliant Performance)",
+        "Desc": "",
+        "BuffType": 1
+    },
+    "883636":
+    {
+        "Name": "Purple Shield (Brilliant Performance)",
+        "Desc": "",
+        "BuffType": 1
+    },
+    "883646":
+    {
+        "Name": "Water Spread Marker (Brilliant Performance)",
+        "Desc": "Player is marked to spread away from other players, exploding at duration end"
+    },
+    "883801":
+    {
+        "Name": "Hunt Screen Effects",
+        "Desc": "Black and White Flash from boss casting Hunt on a target"
+    },
+    "883802":
+    {
+        "Name": "Scar Management Buff",
+        "Desc": "Handles logic for dealing with the Scar system"
+    },
+    "883803":
+    {
+        "Name": "Wound Rend",
+        "Desc": "HP is steadily drained.\nRed Scar"
+    },
+    "883804":
+    {
+        "Name": "Rib Fracture",
+        "Desc": "Armor has been reduced.\nBlue Scar"
+    },
+    "883805":
+    {
+        "Name": "Disrupted Breath",
+        "Desc": "Healing skills are disabled.\nGreen Scar"
+    },
+    "883806":
+    {
+        "Name": "Wound Rend (Applying)",
+        "Desc": "UI element indicating the boss is applying Wound Rend (Red Scar) with it's attacks"
+    },
+    "883807":
+    {
+        "Name": "Rib Fracture (Applying)",
+        "Desc": "UI element indicating the boss is applying Rib Fracture (Blue Scar) with it's attacks"
+    },
+    "883808":
+    {
+        "Name": "Disrupted Breath (Applying)",
+        "Desc": "UI element indicating the boss is applying Disrupted Breath (Green Scar) with it's attacks"
+    },
+    "883809":
+    {
+        "Name": "All Scars (Applying)",
+        "Desc": "UI element indicating the boss is applying all 3 Scars (Debuffs) with it's attacks"
+    },
+    "883816":
+    {
+        "Name": "Tree of Healing - Cleanse",
+        "Desc": "Tree of Healing interacted with, cleansing all Scars and actively healing the player",
+        "BuffType": 1
+    },
+    "883820":
+    {
+        "Name": "Mighty Bite",
+        "Desc": "Boss roots current aggro target and prepares to Armor-Break them and apply Blue Scar (Rib Fracture)"
+    },
+    "883821":
+    {
+        "Name": "Bearing Scars",
+        "Desc": "The player has at least one Scar actively applied to them"
+    },
+    "883825":
+    {
+        "Name": "Near Tree of Healing",
+        "Desc": "The player is near a Tree of Healing",
+        "BuffType": 1
+    },
+    "883827":
+    {
+        "Name": "Target Near Tree of Healing",
+        "Desc": "Boss is informed their Hunt target is within range of a Tree of Healing"
+    },
+    "883828":
+    {
+        "Name": "Marked For Hunt",
+        "Desc": "The player is marked by the boss for hunting and will be leaped on at end of duration"
+    },
+    "883832":
+    {
+        "Name": "Tree of Healing - Counter",
+        "Desc": "The Tree of Healing counters the Hunt attack and interrupts the boss",
+        "BuffType": 1
+    },
+    "883835":
+    {
+        "Name": "Summon Crush Cyclone",
+        "Desc": "Boss roars and begins summoning a Crush Cyclone attack on a target",
+        "BuffType": 1
+    },
+    "883836":
+    {
+        "Name": "Boss Immune to Attacks",
+        "Desc": "The boss becomes immune to all attacks, locking their HP and preventing death",
+        "BuffType": 1
+    },
+    "884102":
+    {
+        "Name": "Blue Tower Activated",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "884103":
+    {
+        "Name": "Gold Tower Activated",
+        "Desc": "Cursed Radiant Tomb"
+    },
     "884105":
     {
         "Name": "Disintegration Beam Lock-On",
-        "Desc": "Divine Punisher"
+        "Desc": "Party Stack and drop the AOE on Matrix Towers to convert them"
+    },
+    "884108":
+    {
+        "Name": "Divine Retribution Protocol Activated (Self)",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "884111":
+    {
+        "Name": "Divine Retribution Protocol",
+        "Desc": "Matrix Towers completed charging in a connected line, triggering a wipe"
+    },
+    "884122":
+    {
+        "Name": "Matrix Tower Summon",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "884137":
+    {
+        "Name": "Display Gold Square",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "884138":
+    {
+        "Name": "Display Blue Square",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "884141":
+    {
+        "Name": "Energy Pillar Marker",
+        "Desc": "An Energy Pillar will spawn at the player location when timer ends"
+    },
+    "884144":
+    {
+        "Name": "Boss summons Hovering Cannon lines",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "884166":
+    {
+        "Name": "Matrix Tower Progress Complete",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "884167":
+    {
+        "Name": "Divine Retribution Protocol (Boss Cast)",
+        "Desc": "Boss is charging up the Divine Retribution wipe attack in Cursed Radiant Tomb"
+    },
+    "884176":
+    {
+        "Name": "Piercing Laser (Instant Kill)",
+        "Desc": "Not enough players shared the Piercing Laser, player marked will be force killed"
+    },
+    "884177":
+    {
+        "Name": "Piercing Laser (Marked)",
+        "Desc": "Player is marked to shared damage from the Piercing Laser attack"
     },
     "900122":
     {
@@ -1189,6 +1657,61 @@
     {
         "Name": "End of Dungeon (Invincibility)",
         "BuffType": 1
+    },
+    "974005":
+    {
+        "Name": "Disable Parkour In Open World Location"
+    },
+    "974320":
+    {
+        "Name": "Malice Spreading Small Marker",
+        "Desc": "Player is marked with a 7.5m spread AOE from Malice Scales. At the end of the duration they will explode with poison",
+        "BuffType": 0
+    },
+    "974321":
+    {
+        "Name": "Add Malice Stack",
+        "Desc": "The amount of stacks of Malice on the target is being incremented if not already at max stacks",
+        "BuffType": 0
+    },
+    "974340":
+    {
+        "Name": "Malice Spreading Large Marker",
+        "Desc": "Player is marked with a 15m spread AOE from Malice Scales. At the end of the duration they will explode with poison",
+        "BuffType": 0
+    },
+    "974345":
+    {
+        "Name": "Malice",
+        "Desc": "Each stack reduces healing by 10%. Dispel as soon as possible!",
+        "Icon": "ui/atlas/buff/buff_icon73",
+        "BuffType": 0
+    },
+    "974346":
+    {
+        "Name": "Malice",
+        "Desc": "Each stack deals 3% Max HP DMG per second and reduces healing by 20%. Dispel as soon as possible!",
+        "Icon": "ui/atlas/buff/buff_icon73",
+        "BuffType": 0
+    },
+    "974343":
+    {
+        "Name": "Dragon Slayer Power",
+        "Desc": "Increases damage dealt to Malice Scales",
+        "Icon": "ui/atlas/buff/buff_fairytail_icon001",
+        "BuffType": 1
+    },
+    "990514":
+    {
+        "Name": "Predator Arachnocrab - Bound",
+        "Desc": "Player is bound in place",
+        "BuffType": 0
+    },
+    "990516":
+    {
+        "Name": "Predator Arachnocrab - Binding AOE Marker",
+        "Desc": "Player is marked and will be struck with an AOE that binds them if hit",
+        "BuffType": 0
     },
     "995022":
     {
@@ -1456,6 +1979,11 @@
         "Name": "Guardblade - Strength",
         "BuffType": 1
     },
+    "2031009":
+    {
+        "Name": "Bow - Agility",
+        "BuffType": 1
+    },
     "2031010":
     {
         "Name": "Sword and Shield - Strength",
@@ -1494,6 +2022,11 @@
     "2031107":
     {
         "Name": "Guardblade - Luck",
+        "BuffType": 1
+    },
+    "2031109":
+    {
+        "Name": "Bow - Luck",
         "BuffType": 1
     },
     "2031110":
@@ -1568,6 +2101,12 @@
         "Desc": "Resurrected by Airona",
         "BuffType": 1
     },
+    "2110049":
+    {
+        "Name": "Mechanical Failure",
+        "Desc": "During this period, \"Arcane! Superconductor Surge\" cannot be applied again.",
+        "BuffType": 0
+    },
     "2110057":
     {
         "Name": "Weakened: Wish Sealed",
@@ -1578,6 +2117,12 @@
     {
         "Name": "Wildcall - Summon Red Wolf",
         "BuffType": 1
+    },
+    "2110085":
+    {
+        "Name": "Seed of Lightning",
+        "Desc": "Inflicted with a Seed of Lightning from \"Arcane! Flash Execution\"",
+        "BuffType": 0
     },
     "2110091":
     {
@@ -1611,9 +2156,55 @@
         "Name": "Stunt! Lightning Smite (Armor Conversion)",
         "BuffType": 1
     },
+    "2110135":
+    {
+        "Name": "Arcane! Divine Reliance (Time Tracking)"
+    },
     "2110136":
     {
         "Name": "Arcane! Divine Reliance (Player Tracking)",
+        "BuffType": 1
+    },
+    "2110154":
+    {
+        "Name": "Arcane! Rift Recoil (Crit Boost)",
+        "Desc": "After casting Arcane! Rift Recoil, Crit is temporarily increased",
+        "BuffType": 1
+    },
+    "2110157":
+    {
+        "Name": "Restore Fight Resources After Transform Ends",
+        "Desc": "Fight Resources are restored to the Caster after ending their Imagine Transformation",
+        "BuffType": 1
+    },
+    "2110163":
+    {
+        "Name": "Dragon Flame",
+        "Desc": "Casting skills other than Ultimate grants a stack of Dragon Flame.\nEvery 10 stacks convert into 1 stack of Dragon Force",
+        "BuffType": 1
+    },
+    "2110166":
+    {
+        "Name": "Celestial Guardian (Target Scan)",
+        "Desc": "Lucy targets up to 5 enemies to apply debuffs to",
+        "BuffType": 1
+    },
+    "2110167":
+    {
+        "Name": "Morale Reduction",
+        "Desc": "ATK Reduced and DMG Taken Increased, applied from Lucy's Celestial Guardian",
+        "BuffType": 0
+    },
+    "2110168":
+    {
+        "Name": "Celestial Guardian (Shield)",
+        "Desc": "Harness the power of Celestial Spirits to grant a shield lasting 20s to up to 10 allies",
+        "BuffType": 1
+    },
+    "2110169":
+    {
+        "Name": "Blue Flames for Tier 0-4",
+        "Desc": "Applies Blue Flames on the Caster while actively transformed in Imagine Tier 0-4",
         "BuffType": 1
     },
     "2200020":
@@ -2086,8 +2677,8 @@
     },
     "2201010":
     {
-        "Name": "Sandgrip (Talent)",
-        "Desc": "After casting Sandgrip, gains 10% Versatility for 10s",
+        "Name": "Rock Heal (Talent)",
+        "Desc": "Stone Fist restores 5% Max HP.\nFor every 1 extra enemy hit, restores an additional 2% Max HP up to 15%.\nExcess healing is converted into Shield",
         "BuffType": 1
     },
     "2201020":
@@ -2296,8 +2887,14 @@
     },
     "2201350":
     {
+        "Name": "Sandstone Rewind (Talent)",
+        "Desc": "When Rageblow deals DMG, it reduces the CD of Brave Bastion by 3s.\nCasting Brave Bastion immediately restores 50% Max HP. Excess healing is turned into a Shield",
+        "BuffType": 1
+    },
+    "2201351":
+    {
         "Name": "Sandstone Rewind",
-        "Desc": "When Rageblow deals DMG, it reduces the CD of Brave Bastion by 3s",
+        "Desc": "Excess healing from recasting Brave Bastion is turned into a Shield",
         "BuffType": 1
     },
     "2201360":
@@ -2414,6 +3011,12 @@
         "Desc": "Star Shatter evolves into Starfall",
         "BuffType": 1
     },
+    "2201502":
+    {
+        "Name": "Consumed Sand Crystals",
+        "Desc": "Counter for how many Sand Crystals have been consumed",
+        "BuffType": 1
+    },
     "2201510":
     {
         "Name": "Rock Master",
@@ -2446,8 +3049,8 @@
     },
     "2201540":
     {
-        "Name": "Star Shatter Pursuit",
-        "Desc": "Star Shatter and Starfall deals additionally 200% DMG to targets with current HP less than or equal to 35%",
+        "Name": "Bash Pursuit",
+        "Desc": "Every 50 times damage is taken, the next Shield Bash deals additional damage based on HP and current Shield",
         "BuffType": 1
     },
     "2201550":
@@ -2476,8 +3079,14 @@
     },
     "2201580":
     {
-        "Name": "Rampart Fury",
+        "Name": "Rampart Fury (Talent)",
         "Desc": "When you take DMG, Lucky Block reduces DMG taken by 2%, lasting for 8s, stacking up to 3 times",
+        "BuffType": 1
+    },
+    "2201581":
+    {
+        "Name": "Lucky Block",
+        "Desc": "Lucky Block reduces DMG taken",
         "BuffType": 1
     },
     "2201590":
@@ -2524,8 +3133,8 @@
     },
     "2201640":
     {
-        "Name": "Rock Heal (Talent)",
-        "Desc": "Stone Fist restores 5% Max HP.\nFor every 1 extra enemy hit, restores an additional 2% Max HP up to 15%. Excess healing is converted into Shield",
+        "Name": "Granite Fury Pursuit (Talent)",
+        "Desc": "Every 50 times damage is taken, the next Granite Fury deals additional fixed damage equal to 7000% of Armor.\nCan trigger at most once every 20s.\nEvery 2% Mastery reduces the required times of damage taken by 1.\nEvery 1% Luck reduces the trigger interval by 1%",
         "BuffType": 1
     },
     "2201641":
@@ -2644,8 +3253,14 @@
     },
     "2202080":
     {
-        "Name": "Arcane of Green",
+        "Name": "Arcane of Green (Talent)",
         "Desc": "When Feral Seed deal DMG, it increases the DMG dealt by Infusion, Wild Bloom, Stag Charge in the next 10s by 20%",
+        "BuffType": 1
+    },
+    "2202081":
+    {
+        "Name": "Arcane of Green",
+        "Desc": "DMG dealt by Infusion, Wild Bloom, Stag Charge increased",
         "BuffType": 1
     },
     "2202090":
@@ -2961,6 +3576,12 @@
     },
     "2202540":
     {
+        "Name": "Breath of Symbiosis (Talent)",
+        "Desc": "Symbiotic Mark enhances Healing by 2%. Each 5% Mastery enhances Healing by 1%",
+        "BuffType": 1
+    },
+    "2202541":
+    {
         "Name": "Breath of Symbiosis",
         "Desc": "Symbiotic Mark enhances Healing by 2%. Each 5% Mastery enhances Healing by 1%",
         "BuffType": 1
@@ -2985,8 +3606,14 @@
     },
     "2202580":
     {
-        "Name": "Verdant Impact",
+        "Name": "Verdant Impact (Talent)",
         "Desc": "For every 20 stacks of Pulse Echo gained, the next actively cast Regen Pulse triggers a Blossom Charge at both the nearest enemy and the Ally with lowest HP",
+        "BuffType": 1
+    },
+    "2202581":
+    {
+        "Name": "Verdant Impact",
+        "Desc": "Regen Pulse is triggering a Blossom Charge at both the nearest enemy and the Ally with lowest HP",
         "BuffType": 1
     },
     "2202590":
@@ -3323,6 +3950,11 @@
         "Name": "Wolf Dancer",
         "Desc": "After you use Arrow Rain, the Wild Wolf performs Tail Sweep until Arrow Rain ends. Tail Sweep is bound to deal Crit DMG and inflict Bleed",
         "BuffType": 1
+    },
+    "2203302":
+    {
+        "Name": "Wolf Dancer Bleed",
+        "Desc": "Bleed inflicted from Wolf Dancer talent"
     },
     "2203310":
     {
@@ -4694,8 +5326,8 @@
     },
     "2206290":
     {
-        "Name": "Judgment of All Beings",
-        "Desc": "When Judgment hits only 1 enemy target, its damage +25%",
+        "Name": "Judgment Pursuit",
+        "Desc": "Every 50 times damage is taken, the next Judgment deals additional damage equal to 200% Max HP.\nCan trigger at most once every 20s",
         "BuffType": 1
     },
     "2206300":
@@ -4820,8 +5452,8 @@
     },
     "2206490":
     {
-        "Name": "Shield Strike Enhancement",
-        "Desc": "Increases Valor Bash DMG by 10%",
+        "Name": "Magic Guard",
+        "Desc": "While Aegis Ward is active, each 1% Mastery grants 0.5% MATK Reduction up to 30%",
         "BuffType": 1
     },
     "2206500":
@@ -4950,6 +5582,12 @@
         "Desc": "Divine Circle now has a halo effect, stunning enemy targets for 3s the first time it deals DMG",
         "BuffType": 1
     },
+    "2206680":
+    {
+        "Name": "Judgment Pursuit",
+        "Desc": "Every 50 times damage is taken, the next Judgment deals additional damage equal to 5000% Armor.\nCan trigger at most once every 20s",
+        "BuffType": 1
+    },
     "2207010":
     {
         "Name": "Passion Surge",
@@ -5074,6 +5712,18 @@
     {
         "Name": "Note (Healing Note)",
         "Desc": "Restores HP equal to 3% ATK in total within 10s. When a Note is granted again, it immediately triggers the remaining healing of the previous Note",
+        "BuffType": 1
+    },
+    "2207160":
+    {
+        "Name": "Concerto (Talent)",
+        "Desc": "During Rhapsody of Flame, Amplified Beat gains an additional attack.\nAmplified Beat's DMG reduced",
+        "BuffType": 1
+    },
+    "2207161":
+    {
+        "Name": "Concerto",
+        "Desc": "During Rhapsody of Flame, Amplified Beat gains an additional attack.\nAmplified Beat's DMG reduced",
         "BuffType": 1
     },
     "2207150":
@@ -5300,10 +5950,22 @@
         "Desc": "When Heroic Melody is active, Rhapsody of Flame will erupt, dealing Magic Damage equal to 50% ATK every 3s to targets it touches.",
         "BuffType": 1
     },
+    "2207440":
+    {
+        "Name": "Flame Note",
+        "Desc": "When you use an Expertise Skill, Rhapsody of Flame will erupt with Rhythem, dealing Magic DMG and granting Note to allies it touches",
+        "BuffType": 1
+    },
     "2207450":
     {
-        "Name": "Finale Command",
+        "Name": "Finale Command (Talent)",
         "Desc": "Within 10s of casting Encore, each use of Rhapsody of Flame causes targets affected by Encore to trigger Encore Strings",
+        "BuffType": 1
+    },
+    "2207451":
+    {
+        "Name": "Finale Command",
+        "Desc": "Each use of Rhapsody of Flame causes targets affected by Encore to trigger Encore Strings",
         "BuffType": 1
     },
     "2207460":
@@ -5418,6 +6080,12 @@
     {
         "Name": "Encore Chain (2)",
         "Desc": "Within 10s after you cast Encore, each use of Expertise Skill triggers Encore Strings for targets affected by Encore",
+        "BuffType": 1
+    },
+    "2207631":
+    {
+        "Name": "Encore Strings Timer",
+        "Desc": "Caster may trigger Encore Strings from their Encore Chain (2) talent",
         "BuffType": 1
     },
     "2207640":
@@ -5594,8 +6262,8 @@
     },
     "2208172":
     {
-        "Name": "Wildfire",
-        "Desc": "Gaining stacks of Wilfire. Will trigger Explosion at 12 stacks",
+        "Name": "Burn",
+        "Desc": "Taking periodic Attack DMG.\nAt max stacks, new stacks deal immediate DMG",
         "BuffType": 1
     },
     "2208180":
@@ -5606,8 +6274,8 @@
     },
     "2208182":
     {
-        "Name": "Wildfire (Inferno Explosion)",
-        "Desc": "Gaining stacks of Wilfire from Inferno Explosion talent. Will trigger Explosion at 12 stacks",
+        "Name": "Wildfire",
+        "Desc": "Gaining stacks of Wilfire from Inferno Explosion talent.\nWill trigger Explosion at 12 stacks",
         "BuffType": 1
     },
     "2208190":
@@ -5648,9 +6316,15 @@
     },
     "2208250":
     {
-        "Name": "Hellfire Meteor",
+        "Name": "Hellfire Meteor (Talent)",
         "Desc": "In Formless S-Rank state, each cast of Rage Cleave summons 1 Hellfire Meteor at the primary target's location",
         "BuffType": 1
+    },
+    "2208251":
+    {
+        "Name": "Hellfire Meteor",
+        "Desc": "Rage Cleave summons 1 Hellfire Meteor at the target's location",
+        "BuffType": 0
     },
     "2208260":
     {
@@ -6320,6 +6994,18 @@
         "Desc": "Melee DMG Bonus +8%",
         "BuffType": 1
     },
+    "2407260":
+    {
+        "Name": "Mythic Weapon 2 (Recovery Spec)",
+        "Desc": "Crit DMG Bonus\nWhen Valor Bash is active, PHY Boost",
+        "BuffType": 1
+    },
+    "2407270":
+    {
+        "Name": "Mythic Weapon 3 (Shield Spec)",
+        "Desc": "Melee DMG Bonus\nWhen Lightforged Barrier is active, PHY Boost",
+        "BuffType": 1
+    },
     "2407280":
     {
         "Name": "S2 Set - 2 Piece (Shield Spec)",
@@ -6379,9 +7065,27 @@
         "Desc": "Within 8s after casting Fivefold Crescendo, the final healing of Heroic Melody is increased by 16%",
         "BuffType": 1
     },
+    "3002010":
+    {
+        "Name": "Fantasia Impact",
+        "Desc": "Every 20 Lucky Strikes trigger Fantasia Impact",
+        "BuffType": 1
+    },
     "3002011":
     {
         "Name": "Fantasia Impact CD",
+        "BuffType": 1
+    },
+    "3002030":
+    {
+        "Name": "Fantasia Impact - Reconstruct",
+        "Desc": "Lucky Strike Multiplier Increased",
+        "BuffType": 1
+    },
+    "3002040":
+    {
+        "Name": "Fantasia Impact - Time-Step",
+        "Desc": "Internal CD of Fantasia Impact Increased; Illusion-Breaking DMG of Fantasia Impact Increased",
         "BuffType": 1
     },
     "3002080":
@@ -6407,6 +7111,12 @@
         "Name": "Phantom Execution CD",
         "Desc": "Within 15s, after 10 instances of casting non-Basic Attack Class Skills, your next Class Skill will trigger Phantom Execution (15s CD)",
         "BuffType": 1
+    },
+    "3002212":
+    {
+        "Name": "Phantom Execution Apply Damage",
+        "Desc": "Phantom Execution is set to apply at end of duration",
+        "BuffType": 0
     },
     "3002215":
     {
@@ -6651,6 +7361,42 @@
         "Desc": "When current HP is no less than 90%, every time Shattered Illusion is triggered or cast, main stats increase up to 5 stacks.\nLoses this effect when HP drops below 40%",
         "BuffType": 1
     },
+    "3003410":
+    {
+        "Name": "Endless Mind",
+        "Desc": "When dealing damage or providing healing, gains Endless Mind for 10s",
+        "BuffType": 1
+    },
+    "3003420":
+    {
+        "Name": "Endless Mind - Aegis of the Soul",
+        "Desc": "Each stack of Endless Mind grants 1% main stats",
+        "BuffType": 1
+    },
+    "3003440":
+    {
+        "Name": "Endless Mind - Swiftflow",
+        "Desc": "Each stack of Endless Mind grants your Expertise Skills a CD Boost",
+        "BuffType": 1
+    },
+    "3003460":
+    {
+        "Name": "Endless Mind - Still-Continuum",
+        "Desc": "Increases the max stack count of Endless Mind by 1.\nWhile standing still, Endless Mind duration does not decrease",
+        "BuffType": 1
+    },
+    "3003480":
+    {
+        "Name": "Endless Mind - Finale Chant",
+        "Desc": "After casting Ultimate, immediately gains 1 stack of Endless Mind.\nFor the next 10s, all stat bonuses from Endless Mind are doubled",
+        "BuffType": 1
+    },
+    "3003481":
+    {
+        "Name": "Endless Mind - Finale Chant (Buff)",
+        "Desc": "Immediately gains 1 stack of Endless Mind.\nFor the next 10s, all stat bonuses from Endless Mind are doubled",
+        "BuffType": 1
+    },
     "3003610":
     {
         "Name": "Illusion Bond 1",
@@ -6676,10 +7422,430 @@
         "Name": "Illusion Bond 5",
         "BuffType": 1
     },
+    "3003710":
+    {
+        "Name": "Oblivion Dream - Exclusive",
+        "Desc": "Your attacks against targets affected by Oblivion Dream gain increased Crit Chance and Luck Chance",
+        "BuffType": 1
+    },
+    "3003720":
+    {
+        "Name": "Shattered Illusion - Exclusive",
+        "Desc": "Every 75 Armor grants 1 ATK",
+        "BuffType": 1
+    },
     "3004410":
     {
         "Name": "Overload Crit",
         "Desc": "Crit +30%. For any permanent Crit above 50%, every 2% is converted to 1% Crit DMG up to 50%",
+        "BuffType": 1
+    },
+    "3051010":
+    {
+        "Name": "Wind Knight X1",
+        "Desc": "Valor Cyclone Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051020":
+    {
+        "Name": "Wind Knight X2",
+        "Desc": "Spiral Thrust, Breach Pursuit Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051030":
+    {
+        "Name": "Wind Knight X3",
+        "Desc": "Trigger Vortex Strike upon entering battle state.\nVortex Strike Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051040":
+    {
+        "Name": "Wind Knight X4",
+        "Desc": "Drake Cannon Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051050":
+    {
+        "Name": "Wind Knight X5",
+        "Desc": "Valor Cyclone can Lucky Strike.\nValor Cyclone Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051060":
+    {
+        "Name": "Wind Knight X6",
+        "Desc": "Galeform duration increased",
+        "BuffType": 1
+    },
+    "3051070":
+    {
+        "Name": "Wind Knight X7",
+        "Desc": "Instant Edge Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051080":
+    {
+        "Name": "Wind Knight X8",
+        "Desc": "Falcon Toss, Instant Edge Combo Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051090":
+    {
+        "Name": "Wind Knight X9",
+        "Desc": "Tornado can trigger Lucky Strike.\nTornado Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051100":
+    {
+        "Name": "Wind Knight X10",
+        "Desc": "Azure Sever always triggers Crit.\nAzure Sever Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051110":
+    {
+        "Name": "Wind Knight X11",
+        "Desc": "Every few seconds, Sharp Impact gains charge.\nSharp Impact, Typhoon: Sharp Impact Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051400":
+    {
+        "Name": "Wind Knight Reality X1",
+        "Desc": "When Illusion Energy reaches enough points, reduces the remaining CD of Galeform",
+        "BuffType": 1
+    },
+    "3051410":
+    {
+        "Name": "Wind Knight Reality X2",
+        "Desc": "When Illusion Energy reaches enough points, triggers Drake Cannon",
+        "BuffType": 1
+    },
+    "3051411":
+    {
+        "Name": "Wind Knight Reality X2 (Drake Cannon)",
+        "Desc": "Triggers Drake Cannon",
+        "BuffType": 1
+    },
+    "3051420":
+    {
+        "Name": "Wind Knight Reality X3",
+        "Desc": "When Illusion Energy reaches enough points, trigger Great Cyclone if Valor Cyclone is active, dealing ATK DMG to enemies within 5 meters",
+        "BuffType": 1
+    },
+    "3051430":
+    {
+        "Name": "Wind Knight Reality X4",
+        "Desc": "When Illusion Energy reaches enough points, Special Attack Crit increases for 15s",
+        "BuffType": 1
+    },
+    "3051431":
+    {
+        "Name": "Enhanced Special Attack",
+        "Desc": "Increases Special Attack Crit Rate for the duration.\nWind Knight Reality X4",
+        "BuffType": 1
+    },
+    "3051440":
+    {
+        "Name": "Wind Knight Reality X5",
+        "Desc": "When Illusion Energy reaches enough points, next Instant Edge or Sharp Impact during Chasing Step has its Luck Chance increased",
+        "BuffType": 1
+    },
+    "3051441":
+    {
+        "Name": "Wind Knight Reality X5 (Buff)",
+        "Desc": "Next Instant Edge or Sharp Impact during Chasing Step has its Luck Chance increased",
+        "BuffType": 1
+    },
+    "3051450":
+    {
+        "Name": "Wind Knight Reality X6",
+        "Desc": "When Illusion Energy reaches enough points, Sharp Impact gains charge",
+        "BuffType": 1
+    },
+    "3050010":
+    {
+        "Name": "Stormblade X1",
+        "Desc": "Iaido Slash Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3050020":
+    {
+        "Name": "Stormblade X2",
+        "Desc": "Flash Strike, Raijin Dash Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3050030":
+    {
+        "Name": "Stormblade X3",
+        "Desc": "Dracoflash, Phantom Slash Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3050040":
+    {
+        "Name": "Stormblade X4",
+        "Desc": "Thunder Cut Illusion-Breaking DMG increased.\nIncreases the Casting SPD of Thunder Cut",
+        "BuffType": 1
+    },
+    "3050050":
+    {
+        "Name": "Stormblade X5",
+        "Desc": "Volt Surge charge count +1.\nUltimate Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3050060":
+    {
+        "Name": "Stormblade X6",
+        "Desc": "Thundercut, Thundercleave Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3050070":
+    {
+        "Name": "Stormblade X7",
+        "Desc": "Storm Scythe, Divine Sickle Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3050080":
+    {
+        "Name": "Stormblade X8",
+        "Desc": "Moonblades Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3050090":
+    {
+        "Name": "Stormblade X9",
+        "Desc": "Moonstrike attack count +1.\nMoonstrike Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3050100":
+    {
+        "Name": "Stormblade X10",
+        "Desc": "Stormflash duration increased.\nMoonstrike and Luck effect Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3050110":
+    {
+        "Name": "Stormblade X11",
+        "Desc": "Every 9s while Volt Surge is not active, gains 1 Thunder Sigil and when Iaido Slash deals damage, there is a chance to trigger Piercing Slash",
+        "BuffType": 1
+    },
+    "3050111":
+    {
+        "Name": "Stormblade X11 (Buff)",
+        "Desc": "Every 9s while Volt Surge is not active, gains 1 Thunder Sigil and when Iaido Slash deals damage, there is a chance to trigger Piercing Slash",
+        "BuffType": 1
+    },
+    "3050400":
+    {
+        "Name": "Stormblade Reality X1",
+        "Desc": "When Illusion Energy reaches enough points, casting Iaido Slash adds 1 Thunder Cut blade wave",
+        "BuffType": 1
+    },
+    "3050410":
+    {
+        "Name": "Stormblade Reality X2",
+        "Desc": "When Illusion Energy reaches enough points, grants 1 additional Thunder Sigil (up to a maximum of 5)",
+        "BuffType": 1
+    },
+    "3050411":
+    {
+        "Name": "Stormblade Reality X2 (Buff)",
+        "Desc": "Grants 1 additional Thunder Sigil (up to a maximum of 5)",
+        "BuffType": 1
+    },
+    "3050420":
+    {
+        "Name": "Stormblade Reality X3",
+        "Desc": "When Illusion Energy reaches enough points, next Ultimate is guaranteed to Crit",
+        "BuffType": 1
+    },
+    "3050430":
+    {
+        "Name": "Stormblade Reality X4",
+        "Desc": "When Illusion Energy reaches enough points, grants 10 Blade Intent and 1 Charge Seed",
+        "BuffType": 1
+    },
+    "3050440":
+    {
+        "Name": "Stormblade Reality X5",
+        "Desc": "When Illusion Energy reaches enough points, Lucky Strike Multiplier increased for 10s",
+        "BuffType": 1
+    },
+    "3050441":
+    {
+        "Name": "Lucky Moonblade",
+        "Desc": "Increases Moonblade Lucky Strike chance for the duration\nStormblade Reality X5",
+        "BuffType": 1
+    },
+    "3050450":
+    {
+        "Name": "Stormblade Reality X6",
+        "Desc": "When Illusion Energy reaches enough points, triggers Storm Scythe",
+        "BuffType": 1
+    },
+    "3053010":
+    {
+        "Name": "Marksman X1",
+        "Desc": "Storm Arrow Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3053020":
+    {
+        "Name": "Marksman X2",
+        "Desc": "Wild Wolf - Tail Sweep Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3053030":
+    {
+        "Name": "Marksman X3",
+        "Desc": "Wild Wolf - Bite Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3053040":
+    {
+        "Name": "Marksman X4",
+        "Desc": "Lightseeker Arrow Illusion-Breaking DMG increased.\nCrit DMG of Lightseeker Arrow is calculated at specific percentage",
+        "BuffType": 1
+    },
+    "3053050":
+    {
+        "Name": "Marksman X5",
+        "Desc": "Double Arrow, Quadraflare Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3053060":
+    {
+        "Name": "Marksman X6",
+        "Desc": "Falcon Strike Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3053070":
+    {
+        "Name": "Marksman X7",
+        "Desc": "Lightning Strike Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3053080":
+    {
+        "Name": "Marksman X8",
+        "Desc": "During Torrent Volley, Focus duration is paused",
+        "BuffType": 1
+    },
+    "3053081":
+    {
+        "Name": "Marksman X8 (Focus Paused)",
+        "Desc": "Focus duration is paused",
+        "BuffType": 1
+    },
+    "3053090":
+    {
+        "Name": "Marksman X9",
+        "Desc": "Each percent Haste increases Radiance Barrage hit count.\nRadiance Barrage Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3053100":
+    {
+        "Name": "Marksman X10",
+        "Desc": "For the next few seconds after Blast Shot is cast, Falcon (Strike, Lightning Strike, Phantom Falcon) Illusion-Breaking DMG Increased",
+        "BuffType": 1
+    },
+    "3053101":
+    {
+        "Name": "Marksman X10 (Buff)",
+        "Desc": "Falcon (Strike, Lightning Strike, Phantom Falcon) Illusion-Breaking DMG Increased",
+        "BuffType": 1
+    },
+    "3053110":
+    {
+        "Name": "Marksman X11",
+        "Desc": "Powerdraw hit count increased.\nPowerdraw Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3053400":
+    {
+        "Name": "Marksman Reality X1",
+        "Desc": "When Illusion Energy reaches enough points, summons a Wild Wolf for a few seconds",
+        "BuffType": 1
+    },
+    "3053401":
+    {
+        "Name": "Marksman Reality X1 (Wolf Spirit Summon)",
+        "Desc": "Summons a Wild Wolf for a few seconds",
+        "BuffType": 1
+    },
+    "3053410":
+    {
+        "Name": "Marksman Reality X2",
+        "Desc": "When Illusion Energy reaches enough points, next cast of Arrow Rain restores all Photon Energy and increases Max Photon Energy",
+        "BuffType": 1
+    },
+    "3053411":
+    {
+        "Name": "Photon Energy Enhancement",
+        "Desc": "The next Arrow Rain restores all Photon Energy and significantly increases Max Photon Energy.\nMarksman Reality X2 (Buff)",
+        "BuffType": 1
+    },
+    "3053420":
+    {
+        "Name": "Marksman Reality X3",
+        "Desc": "When Illusion Energy reaches enough points, Storm Arrow is guaranteed to Crit for 10s",
+        "BuffType": 1
+    },
+    "3053421":
+    {
+        "Name": "Marksman Reality X3 (Storm Arrow Buff)",
+        "Desc": "Storm Arrow is guaranteed to Crit for 10s",
+        "BuffType": 1
+    },
+    "3053430":
+    {
+        "Name": "Marksman Reality X4",
+        "Desc": "When Illusion Energy reaches enough points, triggers Powerdraw.\nIf Powerdraw is on CD, reduces its remaining CD",
+        "BuffType": 1
+    },
+    "3053440":
+    {
+        "Name": "Marksman Reality X5",
+        "Desc": "When Illusion Energy reaches enough points, summons a Falcon to fight for a few seconds",
+        "BuffType": 1
+    },
+    "3053450":
+    {
+        "Name": "Marksman Reality X6",
+        "Desc": "When Illusion Energy reaches enough points, dealing damage summons Celestial Eagle at the target's location",
+        "BuffType": 1
+    },
+    "3053451":
+    {
+        "Name": "Marksman Reality X6 (Celestial Eagle Buff)",
+        "Desc": "Summons Celestial Eagle at the target's location with increased damage",
+        "BuffType": 1
+    },
+    "3054010":
+    {
+        "Name": "Shield Knight X1",
+        "Desc": "Valor Bash Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3054020":
+    {
+        "Name": "Shield Knight X2",
+        "Desc": "Reckoning, Inferno Reckoning Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3054030":
+    {
+        "Name": "Shield Knight X3",
+        "Desc": "Judgment, Scorching Judgment Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3054040":
+    {
+        "Name": "Shield Knight X4",
+        "Desc": "When in Divine Circle, All-Element DMG increased",
+        "BuffType": 1
+    },
+    "3054050":
+    {
+        "Name": "Shield Knight X5",
+        "Desc": "Aegis Ward duration increased.\nBasic Attack, Condemn Illusion-Breaking DMG increased",
         "BuffType": 1
     },
     "3054060":
@@ -6688,22 +7854,322 @@
         "Desc": "Mastery grants ATK",
         "BuffType": 1
     },
+    "3054070":
+    {
+        "Name": "Shield Knight X7",
+        "Desc": "Vanguard Strike, Vanguard Hunt Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3054080":
+    {
+        "Name": "Shield Knight X8",
+        "Desc": "Sacred Blade Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3054090":
+    {
+        "Name": "Shield Knight X9",
+        "Desc": "Zeal Crusade Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3054091":
+    {
+        "Name": "Shield Knight X9 (Buff)",
+        "Desc": "Zeal Crusade Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
     "3054100":
     {
         "Name": "Shield Knight X10",
         "Desc": "Radiance charge count increased; Radiance Dream DMG increased",
         "BuffType": 1
     },
-    "3056071":
+    "3054110":
+    {
+        "Name": "Shield Knight X11",
+        "Desc": "When in Divine Circle, ATK increased",
+        "BuffType": 1
+    },
+    "3054400":
+    {
+        "Name": "Shield Knight Reality X1",
+        "Desc": "When Illusion Energy reaches enough points, triggers Inferno Reckon",
+        "BuffType": 1
+    },
+    "3054410":
+    {
+        "Name": "Shield Knight Reality X2",
+        "Desc": "When Illusion Energy reaches enough points, the next Divine Circle's AOE is increased by 100% and its healing restores more based on target's Max HP",
+        "BuffType": 1
+    },
+    "3054411":
+    {
+        "Name": "Shield Knight Reality X2 (AOE Boost)",
+        "Desc": "The next Divine Circle AOE is increased by 100%",
+        "BuffType": 1
+    },
+    "3054412":
+    {
+        "Name": "Shield Knight Reality X2 (Healing)",
+        "Desc": "Divine Circle healing restores more based on target's Max HP",
+        "BuffType": 1
+    },
+    "3054420":
+    {
+        "Name": "Shield Knight Reality X3",
+        "Desc": "When Illusion Energy reaches enough points, gains a Radiant Shield equal to a percentage of ATK",
+        "BuffType": 1
+    },
+    "3054430":
+    {
+        "Name": "Shield Knight Reality X4",
+        "Desc": "When Illusion Energy reaches enough points, Illusion DMG Reduction increased and Illusion DMG increased for 10s",
+        "BuffType": 1
+    },
+    "3054431":
+    {
+        "Name": "Shield Knight Reality X4 (Buff)",
+        "Desc": "Illusion DMG Reduction increased and Illusion DMG increased for 10s",
+        "BuffType": 1
+    },
+    "3054440":
+    {
+        "Name": "Shield Knight Reality X5",
+        "Desc": "When Illusion Energy reaches enough points, dealing damage to a target triggers Sacred Blade and it deals damage based on current HP",
+        "BuffType": 1
+    },
+    "3054441":
+    {
+        "Name": "Shield Knight Reality X5 (Sacred Blade)",
+        "Desc": "Dealing damage to a target triggers Sacred Blade and it deals damage based on current HP",
+        "BuffType": 1
+    },
+    "3054450":
+    {
+        "Name": "Shield Knight Reality X6",
+        "Desc": "When Illusion Energy reaches enough points, remaining CD of Ultimate is reduced by 1s",
+        "BuffType": 1
+    },
+    "3055010":
+    {
+        "Name": "Heavy Guardian X1",
+        "Desc": "While in Shield Bash state, All-Element DMG increased",
+        "BuffType": 1
+    },
+    "3055020":
+    {
+        "Name": "Heavy Guardian X2",
+        "Desc": "Shield Bash Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3055030":
+    {
+        "Name": "Heavy Guardian X3",
+        "Desc": "Rage Burst, Terra Sunder Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3055040":
+    {
+        "Name": "Heavy Guardian X4",
+        "Desc": "Sandgrip charge count +1.\nBasic Attack Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3055050":
+    {
+        "Name": "Heavy Guardian X5",
+        "Desc": "Mastery grants ATK",
+        "BuffType": 1
+    },
+    "3055060":
+    {
+        "Name": "Heavy Guardian X6",
+        "Desc": "While in Countercrush state, All-Element DMG increased",
+        "BuffType": 1
+    },
+    "3055070":
+    {
+        "Name": "Heavy Guardian X7",
+        "Desc": "Granite Fury, Stone Fist Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3055080":
+    {
+        "Name": "Heavy Guardian X8",
+        "Desc": "For 15s after each successful Block, ATK increased",
+        "BuffType": 1
+    },
+    "3055090":
+    {
+        "Name": "Heavy Guardian X9",
+        "Desc": "For 10s after each successful Block, Max HP increased",
+        "BuffType": 1
+    },
+    "3055100":
+    {
+        "Name": "Heavy Guardian X10",
+        "Desc": "Countercrush can trigger Lucky Strike.\nCountercrush Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3055110":
+    {
+        "Name": "Heavy Guardian X11",
+        "Desc": "When Stone Fist hits only one target, its damage and healing are doubled.\nStone Fist Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3055360":
+    {
+        "Name": "Heavy Guardian Reality X1",
+        "Desc": "When Illusion Energy reaches enough points, the final shield value of the next shield applied is increased",
+        "BuffType": 1
+    },
+    "3055361":
+    {
+        "Name": "Heavy Guardian Reality X1 (Buff)",
+        "Desc": "Final shield value of the next shield applied is increased",
+        "BuffType": 1
+    },
+    "3055370":
+    {
+        "Name": "Heavy Guardian Reality X2",
+        "Desc": "When Illusion Energy reaches enough points, triggers Terra Sunder",
+        "BuffType": 1
+    },
+    "3055371":
+    {
+        "Name": "Heavy Guardian Reality X2 (Buff)",
+        "Desc": "Triggers Terra Sunder",
+        "BuffType": 1
+    },
+    "3055380":
+    {
+        "Name": "Heavy Guardian Reality X3",
+        "Desc": "When Illusion Energy reaches enough points, remaining CDs of Stoneform and Brave Bastion reduced",
+        "BuffType": 1
+    },
+    "3055390":
+    {
+        "Name": "Heavy Guardian Reality X4",
+        "Desc": "When Illusion Energy reaches enough points, Max HP increased for 10s",
+        "BuffType": 1
+    },
+    "3055391":
+    {
+        "Name": "Heavy Guardian Reality X4 (Max HP)",
+        "Desc": "Max HP increased",
+        "BuffType": 1
+    },
+    "3055400":
+    {
+        "Name": "Heavy Guardian Reality X5",
+        "Desc": "When Illusion Energy reaches enough points, triggers Countercrush",
+        "BuffType": 1
+    },
+    "3055401":
+    {
+        "Name": "Heavy Guardian Reality X5 (Buff)",
+        "Desc": "Triggers Countercrush",
+        "BuffType": 1
+    },
+    "3055410":
+    {
+        "Name": "Heavy Guardian Reality X6",
+        "Desc": "When Illusion Energy reaches enough points, Block DMG Reduction is decreased and Class Skill Final DMG is increased",
+        "BuffType": 1
+    },
+    "3055411":
+    {
+        "Name": "Heavy Guardian Reality X6 (Buff)",
+        "Desc": "Block DMG Reduction is decreased and Class Skill Final DMG is increased",
+        "BuffType": 1
+    },
+    "3056010":
+    {
+        "Name": "Verdant Oracle X1",
+        "Desc": "Wild Blood, Stag Charge Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3056020":
+    {
+        "Name": "Verdant Oracle X2",
+        "Desc": "Gains Super Armor when casting Infusion.\nInfusion Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3056021":
+    {
+        "Name": "Infusion Super Armor",
+        "Desc": "Gains Super Armor when casting Infusion.\nVerdant Oracle X2",
+        "BuffType": 1
+    },
+    "3056030":
+    {
+        "Name": "Verdant Oracle X3",
+        "Desc": "Regen Pulse becomes instant cast.\nRegen Pulse Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3056040":
+    {
+        "Name": "Verdant Oracle X4",
+        "Desc": "When affected by Symbiotic Mark, MATK increased",
+        "BuffType": 1
+    },
+    "3056050":
+    {
+        "Name": "Verdant Oracle X5",
+        "Desc": "Feral Seed drops one additional seed.\nFeral Seed Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3056060":
+    {
+        "Name": "Verdant Oracle X6",
+        "Desc": "Nature Ward Shield Amount increased.\nFor every percent Luck or Crit, it gains an additional amount.\nNature Ward grants additional All Element Resistance",
+        "BuffType": 1
+    },
+    "3056061":
+    {
+        "Name": "Verdant Oracle X6 (Buff)",
+        "Desc": "Nature Ward grants additional All Element Resistance",
+        "BuffType": 1
+    },
+    "3056070":
     {
         "Name": "Verdant Oracle X7",
+        "Desc": "Within seconds after casting Fast Growth or Nature Ward, MATK increased",
+        "BuffType": 1
+    },
+    "3056071":
+    {
+        "Name": "Verdant Oracle X7 (Buff)",
         "Desc": "Within 10s after casting Fast Growth or Nature Ward, increase MATK",
+        "BuffType": 1
+    },
+    "3056080":
+    {
+        "Name": "Verdant Oracle X8",
+        "Desc": "Casting Blossom Charge grants Super Armor.\nBlossom Charge Illusion-Breaking DMG increased and Control duration increased",
         "BuffType": 1
     },
     "3056081":
     {
-        "Name": "Verdant Oracle X8",
+        "Name": "Verdant Oracle X8 (Buff)",
         "Desc": "Casting Blossom Charge grants Super Armor.\bBlossom Charge Dream DMG increased and Control Duration increased",
+        "BuffType": 1
+    },
+    "3056090":
+    {
+        "Name": "Verdant Oracle X9",
+        "Desc": "Wild Seed Illusion-Breaking DMG increased.\nNourishing Seed Healing Strength increased",
+        "BuffType": 1
+    },
+    "3056100":
+    {
+        "Name": "Verdant Oracle X10",
+        "Desc": "Grove Wish deals Magic DMG",
+        "BuffType": 1
+    },
+    "3056110":
+    {
+        "Name": "Verdant Oracle X11",
+        "Desc": "Lucky Strike Illusion-Breaking DMG increased, but Symbiotic Mark converted healing is reduced",
         "BuffType": 1
     },
     "3057060":
@@ -6718,6 +8184,18 @@
         "Desc": "Encore Dream DMG increased",
         "BuffType": 1
     },
+    "3057100":
+    {
+        "Name": "Beat Performer X10",
+        "Desc": "When HP is above a threshold, increases Intellect. Effect lost when below threshold",
+        "BuffType": 1
+    },
+    "3057101":
+    {
+        "Name": "Beat Performer X10 (Buff)",
+        "Desc": "When HP is above a threshold, increases Intellect. Effect lost when below threshold",
+        "BuffType": 1
+    },
     "3057110":
     {
         "Name": "Beat Performer X11",
@@ -6726,8 +8204,32 @@
     },
     "3057111":
     {
-        "Name": "Beat Performer X11",
+        "Name": "Beat Performer X11 (Buff)",
         "Desc": "When you cast Fivefold Crescendo, a percent of the overhealing will continously recover over time",
+        "BuffType": 1
+    },
+    "3057420":
+    {
+        "Name": "Beat Performer Reality X3",
+        "Desc": "When Illusion Energy reaches enough points, triggers Rhapsody of Flame once",
+        "BuffType": 1
+    },
+    "3057421":
+    {
+        "Name": "Beat Performer Reality X3 (Activated)",
+        "Desc": "Triggers Rhapsody of Flame once",
+        "BuffType": 1
+    },
+    "3057430":
+    {
+        "Name": "Beat Performer Reality X4",
+        "Desc": "When Illusion Energy reaches enough points, triggers Surge Healing once, restoring HP equal to a portion of ATK to nearby allies",
+        "BuffType": 1
+    },
+    "3057431":
+    {
+        "Name": "Beat Performer Reality X4 (Activated)",
+        "Desc": "The Caster triggers Surge Healing once, restoring HP equal to a portion of ATK to nearby allies",
         "BuffType": 1
     },
     "3058110":
@@ -6738,7 +8240,7 @@
     },
     "3058111":
     {
-        "Name": "Polarity X11",
+        "Name": "Polarity X11 (Buff)",
         "Desc": "For a few seconds after casting an Expertise Skill, Versatility increases with a stacking buff",
         "BuffType": 1
     },
@@ -6746,6 +8248,12 @@
     {
         "Name": "Polarity X7",
         "Desc": "Mastery gained in any way increased, but Luck gained in any way decreased",
+        "BuffType": 1
+    },
+    "3058090":
+    {
+        "Name": "Polarity X9",
+        "Desc": "Special Attack Illusion-Breaking DMG increased",
         "BuffType": 1
     },
     "3059050":
@@ -6772,10 +8280,190 @@
         "Desc": "During Volt Surge and Stormflash, restores Max HP per second",
         "BuffType": 1
     },
+    "3059180":
+    {
+        "Name": "Shield Knight Stasis X1",
+        "Desc": "Aegis Ward and Radiance CD reduced.\nAfter casting Aegis Ward or Radiance, next Judgment costs no Holy Energy",
+        "BuffType": 1
+    },
+    "3059181":
+    {
+        "Name": "Costless Judgment",
+        "Desc": "Next Judgment costs no Holy Energy\nShield Knight Stasis X1",
+        "BuffType": 1
+    },
+    "3059190":
+    {
+        "Name": "Shield Knight Stasis X2",
+        "Desc": "After casting Ultimate, the next few hits restore HP",
+        "BuffType": 1
+    },
+    "3059210":
+    {
+        "Name": "Heavy Guardian Stasis X2",
+        "Desc": "Max HP increased.\nFor every 50 Rage consumed, restores Max HP",
+        "BuffType": 1
+    },
     "3059221":
     {
         "Name": "Verdant Oracle Stasis X1",
         "Desc": "Excess healing received is converted into a Shield",
+        "BuffType": 1
+    },
+    "3059270":
+    {
+        "Name": "Flame Vanguard Stasis X2",
+        "Desc": "While casting Wildfire Dance, grants Super Armor and increases Illusion-Breaking DMG Reduction",
+        "BuffType": 1
+    },
+    "3059271":
+    {
+        "Name": "Flame Vanguard Stasis X2 (Buff)",
+        "Desc": "While casting Wildfire Dance, grants Super Armor and increases Illusion-Breaking DMG Reduction",
+        "BuffType": 1
+    },
+    "3060010":
+    {
+        "Name": "Flame Vanguard X1",
+        "Desc": "Formless Flame Slash Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3060020":
+    {
+        "Name": "Flame Vanguard X2",
+        "Desc": "Rage Cleave Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3060030":
+    {
+        "Name": "Flame Vanguard X3",
+        "Desc": "Axe Wind Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3060040":
+    {
+        "Name": "Flame Vanguard X4",
+        "Desc": "While Wasteland's End is active, Formless Flame Slash chance increased",
+        "BuffType": 1
+    },
+    "3060050":
+    {
+        "Name": "Flame Vanguard X5",
+        "Desc": "Hellfire Meteor can trigger Lucky Strike.\nHellfire Meteor Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3060060":
+    {
+        "Name": "Flame Vanguard X6",
+        "Desc": "Wildfire Dance ignores a percent of target's Armor",
+        "BuffType": 1
+    },
+    "3060070":
+    {
+        "Name": "Flame Vanguard X7",
+        "Desc": "Flowing Splendor Slash Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3060080":
+    {
+        "Name": "Flame Vanguard X8",
+        "Desc": "Unbound Meteor and Falling Hellfire Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3060090":
+    {
+        "Name": "Flame Vanguard X9",
+        "Desc": "Casting Unbound Meteor, Falling Hellfire, or Flowing Splendor Slash has a chance to trigger Great Crimson Lotus",
+        "BuffType": 1
+    },
+    "3060100":
+    {
+        "Name": "Flame Vanguard X10",
+        "Desc": "Wildfire Dance restores Crimson Soul Gauge upon dealing damage to the main target.\nThe gauge is restored after the skill ends",
+        "BuffType": 1
+    },
+    "3060110":
+    {
+        "Name": "Flame Vanguard X11",
+        "Desc": "Expertise Skills ignore additional Armor of the target",
+        "BuffType": 1
+    },
+    "3060400":
+    {
+        "Name": "Flame Vanguard Reality X1",
+        "Desc": "When Illusion Energy reaches enough points, Formless Flame Slash is guaranteed to Crit for 10s",
+        "BuffType": 1
+    },
+    "3060410":
+    {
+        "Name": "Flame Vanguard Reality X2",
+        "Desc": "When Illusion Energy reaches enough points, next Axe Wind has its resource consumption reduced by 50%, range increased by 2m, and Illusion DMG increased",
+        "BuffType": 1
+    },
+    "3060411":
+    {
+        "Name": "Axe Wind Hunt",
+        "Desc": "Reduces the Stamina Consumption of the next Axe Wind by 50% and increases its range by 2 meters.\nFlame Vanguard Reality X2",
+        "BuffType": 1
+    },
+    "3060420":
+    {
+        "Name": "Flame Vanguard Reality X3",
+        "Desc": "When Illusion Energy reaches enough points, Formless Flame Slash Final DMG increased for 10s",
+        "BuffType": 1
+    },
+    "3060421":
+    {
+        "Name": "Formless Illusion",
+        "Desc": "Increases the Final DMG of Formless Flame Slash for the duration.\nFlame Vanguard Reality X3",
+        "BuffType": 1
+    },
+    "3060430":
+    {
+        "Name": "Flame Vanguard Reality X4",
+        "Desc": "When Illusion Energy reaches enough points, triggers Great Crimson Lotus.\nGreat Crimson Lotus's Illusion DMG is increased",
+        "BuffType": 1
+    },
+    "3060431":
+    {
+        "Name": "Flame Vanguard Reality X4 (Activated)",
+        "Desc": "Trigger Great Crimson Lotus",
+        "BuffType": 1
+    },
+    "3060440":
+    {
+        "Name": "Flame Vanguard Reality X5",
+        "Desc": "When Illusion Energy reaches enough points, Wildfire Dance Final DMG increased",
+        "BuffType": 1
+    },
+    "3060441":
+    {
+        "Name": "Peerless Flame Dance",
+        "Desc": "Increases the Final DMG of Wildfire Dance for the duration.\nFlame Vanguard Reality X5",
+        "BuffType": 1
+    },
+    "3060450":
+    {
+        "Name": "Flame Vanguard Reality X6",
+        "Desc": "When Illusion Energy reaches enough points, remaining CD of Ultimate is reduced by 0.5s",
+        "BuffType": 1
+    },
+    "3200009":
+    {
+        "Name": "Stunt! Frenzied Shot - Passive",
+        "Desc": "Fires an arrow at the target",
+        "BuffType": 1
+    },
+    "3200025":
+    {
+        "Name": "Stunt! Transform into Bee - Passive",
+        "Desc": "Fires a poisoned string at the target",
+        "BuffType": 1
+    },
+    "3200036":
+    {
+        "Name": "Arcane! Void Corruption Blade - Passive",
+        "Desc": "DMG increased, Final DMG Reduction increased",
         "BuffType": 1
     },
     "3210030":
@@ -6793,10 +8481,34 @@
         "Name": "Arcane! Thunderfall Grasp - Passive Damage Reduction To Player",
         "Desc": "Reduces damage dealt to player that applied this debuff"
     },
+    "3210036":
+    {
+        "Name": "Arcane! Void Corruption Blade - Passive",
+        "Desc": "DMG increased, Final DMG Reduction increased",
+        "BuffType": 1
+    },
+    "3210050":
+    {
+        "Name": "Arcane! Blazing Axe - Passive",
+        "Desc": "Applies a burn effect to the target",
+        "BuffType": 1
+    },
     "3210060":
     {
         "Name": "Stunt! Super Critical - Passive",
         "BuffType": 1
+    },
+    "3210080":
+    {
+        "Name": "Stunt! Thunder Suppress - Passive",
+        "Desc": "Performing a Thunderstrike on the target",
+        "BuffType": 1
+    },
+    "3210081":
+    {
+        "Name": "Stunt! Thunder Suppress - Passive (Triggered)",
+        "Desc": "Performing a Thunderstrike on the target",
+        "BuffType": 0
     },
     "3210131":
     {
@@ -6826,6 +8538,51 @@
     {
         "Name": "Arcane! Cabbage Hammer Passive - All-Element DMG",
         "Desc": "All-Element DMG increased",
+        "BuffType": 1
+    },
+    "3210181":
+    {
+        "Name": "Wind Thunder Combo",
+        "Desc": "Each stack increases Crit DMG\nArcane! Rift Recoil",
+        "BuffType": 1
+    },
+    "3210210":
+    {
+        "Name": "Arcane! Precision Burst Passive",
+        "Desc": "Casting a healing skill deals Magic DMG to nearby enemies",
+        "BuffType": 1
+    },
+    "3210211":
+    {
+        "Name": "Eye Power",
+        "Desc": "Each stack increases the damage of Arcane! Precision Burst's passive effect",
+        "BuffType": 1
+    },
+    "3210220":
+    {
+        "Name": "Arcane! Piercing Roar Passive",
+        "BuffType": 1
+    },
+    "3210221":
+    {
+        "Name": "Invigorated",
+        "Desc": "Grants Super Armor and immunity to status effects.\nArcane! Piercing Roar Passive",
+        "BuffType": 1
+    },
+    "3210223":
+    {
+        "Name": "Arcane! Piercing Roar Passive (Survival Instinct)",
+        "BuffType": 1
+    },
+    "3210230":
+    {
+        "Name": "Arcane! Swift Devour Passive",
+        "BuffType": 1
+    },
+    "3210231":
+    {
+        "Name": "Arcane! Swift Devour Passive - AOE",
+        "Desc": "For every 10 instance of DMG from Class Skills, next DMG instance deals AOE Adaptive Attack/Magic DMG",
         "BuffType": 1
     }
 }

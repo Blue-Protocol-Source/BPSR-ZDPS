@@ -336,7 +336,7 @@ namespace BPSR_ZDPS
                     {
                         if (combinedLocs.TryGetValue(loc.Key, out var value))
                         {
-                            value = loc.Value;
+                            combinedLocs[loc.Key] = loc.Value;
                         }
                         else
                         {

@@ -1073,6 +1073,72 @@
         "Name": "Radiant Impact",
         "Icon": "ui/atlas/skill_weapon_jd/weapon_jd-01_tg01"
     },
+    "2501":
+    {
+        "Name": "Lucy - Basic - Stage 1",
+        "SkillLevelGroup": 3982
+    },
+    "2502":
+    {
+        "Name": "Lucy - Basic - Stage 2",
+        "SkillLevelGroup": 3982
+    },
+    "2503":
+    {
+        "Name": "Lucy - Basic - Stage 3",
+        "SkillLevelGroup": 3982
+    },
+    "2504":
+    {
+        "Name": "Lucy - Fleuve d'Etoiles",
+        "SkillLevelGroup": 3982
+    },
+    "2505":
+    {
+        "Name": "Lucy - Celestial Guardian",
+        "SkillLevelGroup": 3982
+    },
+    "2506":
+    {
+        "Name": "Lucy - Aqua Metria",
+        "SkillLevelGroup": 3982
+    },
+    "250101":
+    {
+        "Name": "Lucy - Aqua Metria",
+        "Icon": "ui/textures/skill_ip004x02/ip004x02_skill_03",
+        "SkillLevelGroup": 3982
+    },
+    "2601":
+    {
+        "Name": "Natsu - Basic - Stage 1",
+        "SkillLevelGroup": 3983
+    },
+    "2602":
+    {
+        "Name": "Natsu - Basic - Stage 2",
+        "SkillLevelGroup": 3983
+    },
+    "2603":
+    {
+        "Name": "Natsu - Basic - Stage 3",
+        "SkillLevelGroup": 3983
+    },
+    "2604":
+    {
+        "Name": "Natsu - Fire Dragon's Iron Fist",
+        "SkillLevelGroup": 3983
+    },
+    "2605":
+    {
+        "Name": "Natsu - Fire Dragon's Wing Attack",
+        "SkillLevelGroup": 3983
+    },
+    "2606":
+    {
+        "Name": "Natsu - Fire Dragon's Roar",
+        "SkillLevelGroup": 3983
+    },
     "3200":
     {
         "Name": "Piercing Arrow (AOE)",
@@ -1109,6 +1175,24 @@
         "Desc": "",
         "Icon": ""
     },
+    "3521":
+    {
+        "Name": "Tidecaller - Water Orb",
+        "Desc": "",
+        "Icon": ""
+    },
+    "3522":
+    {
+        "Name": "Abyssal Gazer - Basic Attack",
+        "Desc": "",
+        "Icon": ""
+    },
+    "3523":
+    {
+        "Name": "Lizardman Soldier - Trident Toss",
+        "Desc": "",
+        "Icon": ""
+    },
     "3603":
     {
         "Name": "Binding Shot",
@@ -1118,6 +1202,12 @@
     "3604":
     {
         "Name": "Lightning Ball",
+        "Desc": "",
+        "Icon": ""
+    },
+    "3609":
+    {
+        "Name": "Eagle - Piercing Wind Blade",
         "Desc": "",
         "Icon": ""
     },
@@ -1138,6 +1228,17 @@
         "Name": "Shatterstone Shock",
         "Desc": "",
         "Icon": ""
+    },
+    "45300":
+    {
+        "Name": "Arcane! Illusion Resonance: Chain Lightning",
+        "Desc": "Dorothy",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_053",
+        "SkillLevelGroup": 3949,
+        "SlotPositionId": [
+            7,
+            8
+        ]
     },
     "2031101":
     {
@@ -1614,6 +1715,10 @@
     {
         "Name": "Goblin Cudgel - Smash"
     },
+    "100206":
+    {
+        "Name": "Heavy Suppressor - Triple Attack"
+    },
     "100301":
     {
         "Name": "Goblin Slash"
@@ -1633,6 +1738,10 @@
     "100324":
     {
         "Name": "Goblin Cudgel - Charge"
+    },
+    "100330":
+    {
+        "Name": "Cyborg Hound - Jump Attack"
     },
     "100412":
     {
@@ -1665,6 +1774,10 @@
     "100435":
     {
         "Name": "Shield Goblin - Double Strike"
+    },
+    "100440":
+    {
+        "Name": "Cyborg Hound - Swipe"
     },
     "100503":
     {
@@ -1737,6 +1850,10 @@
     {
         "Name": "Goblin Axe's Double Slash"
     },
+    "100866":
+    {
+        "Name": "Siegebreaker - Spin Attack"
+    },
     "100870":
     {
         "Name": "Goblin Axe's Wind Sweep"
@@ -1756,6 +1873,10 @@
     "101112":
     {
         "Name": "Falcon Dive"
+    },
+    "101125":
+    {
+        "Name": "Eagle - Piercing Wind Blade"
     },
     "101203":
     {
@@ -1840,9 +1961,26 @@
     {
         "Name": "Battle Mech 03 - Downward Slam - Void Dragon"
     },
+    "110654":
+    {
+        "Name": "Mech - Sentinel - Triple Strike",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
     "110701":
     {
         "Name": "Super Mech - Punch"
+    },
+    "110703":
+    {
+        "Name": "Super Mech - Triple Punch"
+    },
+    "110704":
+    {
+        "Name": "Super Mech - Energy Pulse"
+    },
+    "110712":
+    {
+        "Name": "Super Mech - Slam"
     },
     "110713":
     {
@@ -1891,6 +2029,17 @@
     "111061":
     {
         "Name": "Sky Shatter"
+    },
+    "111069":
+    {
+        "Name": "Arcane! Superconductor Surge",
+        "Desc": "Kartgriff",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_074",
+        "SkillLevelGroup": 3971,
+        "SlotPositionId": [
+            7,
+            8
+        ]
     },
     "111070":
     {
@@ -2014,6 +2163,17 @@
     "140143":
     {
         "Name": "Lethal Skill: Jump Strike"
+    },
+    "140145":
+    {
+        "Name": "Arcane! Rift Recoil",
+        "Desc": "Igoreus",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_072",
+        "SkillLevelGroup": 3969,
+        "SlotPositionId": [
+            7,
+            8
+        ]
     },
     "140158":
     {
@@ -2139,8 +2299,12 @@
     "160102":
     {
         "Name": "Hellfire Meteor",
-        "Desc": "Triggered by Hellfire Meteor talent",
-        "BuffType": 1
+        "Desc": "Triggered by Hellfire Meteor talent"
+    },
+    "160103":
+    {
+        "Name": "Falling Hellfire - Crimson Earth",
+        "Desc": "Triggered by Crimson Earth Meteor I talent"
     },
     "170101":
     {
@@ -2173,6 +2337,17 @@
     "170110":
     {
         "Name": "SLASH!"
+    },
+    "170112":
+    {
+        "Name": "Arcane! Void Corruption Blade (Active)",
+        "Desc": "Denvel",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_071",
+        "SkillLevelGroup": 3968,
+        "SlotPositionId": [
+            7,
+            8
+          ]
     },
     "170201":
     {
@@ -2371,59 +2546,123 @@
     },
     "300000":
     {
-        "Name": "Lethal Skill: Two Phase Jump Smash"
+        "Name": "Lethal Skill: Two Phase Jump Smash",
+        "Desc": "Tina - Void Reverie"
     },
     "300001":
     {
-        "Name": "Sweep Right"
+        "Name": "Sweep Right",
+        "Desc": "Tina - Void Reverie"
     },
     "300005":
     {
-        "Name": "Triple Attack"
+        "Name": "Triple Attack",
+        "Desc": "Tina - Void Reverie"
+    },
+    "300006":
+    {
+        "Name": "Cartwheel Slash",
+        "Desc": "Tina - Void Reverie"
+    },
+    "300008":
+    {
+        "Name": "Back Step, Forward Charge",
+        "Desc": "Tina - Void Reverie"
     },
     "300011":
     {
-        "Name": "Forward Charge Strike"
+        "Name": "Forward Charge Strike",
+        "Desc": "Tina - Void Reverie"
     },
     "300013":
     {
-        "Name": "Void Erosion Strike"
+        "Name": "Void Erosion Strike",
+        "Desc": "Tina - Void Reverie"
     },
     "300026":
     {
-        "Name": "Fan Blade Impact"
+        "Name": "Fan Blade Impact",
+        "Desc": "Tina - Void Reverie"
     },
     "300027":
     {
-        "Name": "Clone Death Explosion"
+        "Name": "Clone Death Explosion",
+        "Desc": "Tina - Void Reverie"
     },
     "300028":
     {
-        "Name": "Lock-On Role Call Stack"
+        "Name": "Tina's Party Stack",
+        "Desc": "Tina - Void Reverie"
+    },
+    "300033":
+    {
+        "Name": "Illusory Erosion Enrage",
+        "Desc": "Tina - Void Reverie"
+    },
+    "300036":
+    {
+        "Name": "Void Corruption Strike",
+        "Desc": "Tina - Void Reverie"
+    },
+    "300038":
+    {
+        "Name": "Void Corruption - Curse",
+        "Desc": "Tina - Void Reverie"
     },
     "300054":
     {
-        "Name": "Void Reverie (Hero)"
+        "Name": "Void Reverie (Hero)",
+        "Desc": "Tina - Void Reverie"
     },
     "300079":
     {
-        "Name": "Void Reverie Phantom - Rapid Erosion Attack"
+        "Name": "Void Reverie Phantom - Rapid Erosion Attack",
+        "Desc": "Tina - Void Reverie"
     },
     "300088":
     {
-        "Name": "Ground Void Traps"
+        "Name": "Ground Void Traps",
+        "Desc": "Tina - Void Reverie"
+    },
+    "300086":
+    {
+        "Name": "Void Corruption Cleave (6 Slices)",
+        "Desc": "Tina - Void Reverie"
     },
     "300089":
     {
-        "Name": "Wild Spear Blade - Rapid Void Slash (6 Damage Slices)"
+        "Name": "Wild Spear Blade - Rapid Void Slash (6 Slices)",
+        "Desc": "Tina - Void Reverie"
     },
     "300090":
     {
-        "Name": "Void Entanglement - Body Erosion"
+        "Name": "Void Entanglement - Body Erosion",
+        "Desc": "Tina - Void Reverie"
+    },
+    "300201":
+    {
+        "Name": "Void Arc",
+        "Desc": "Tina - Void Reverie"
     },
     "300301":
     {
-        "Name": "Dragging Void Spear"
+        "Name": "Dragging Void Spear",
+        "Desc": "Tina - Void Reverie"
+    },
+    "300302":
+    {
+        "Name": "Void Corruption Wave",
+        "Desc": "Tina - Void Reverie"
+    },
+    "300303":
+    {
+        "Name": "Byrnhald Rifleman Shot",
+        "Desc": "Tina - Void Reverie"
+    },
+    "300304":
+    {
+        "Name": "Byrnhald Execution Wall",
+        "Desc": "Tina - Void Reverie"
     },
     "300401":
     {
@@ -2524,6 +2763,11 @@
     "302521":
     {
         "Name": "Charge Strike - Heroic"
+    },
+    "304801":
+    {
+        "Name": "Engram Orb Impact",
+        "Desc": "Cursed Radiant Tomb"
     },
     "391007":
     {
@@ -2778,6 +3022,16 @@
         "Name": "Lotus Dance - Meteor Rain",
         "Desc": ""
     },
+    "829116":
+    {
+        "Name": "Phantom Allocation",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "829242":
+    {
+        "Name": "Mech - Sentinel - Shield Explosion",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
     "833018":
     {
         "Name": "Nappo Bomb Self Destruct"
@@ -2914,6 +3168,26 @@
     {
         "Name": "Haunting Nightmare - Explosion"
     },
+    "883628":
+    {
+        "Name": "Abyssal Nappo - Brilliant Performance",
+        "Desc": "Abyssal Nappo"
+    },
+    "884106":
+    {
+        "Name": "Matrix Tower Charged Pulse",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "884122":
+    {
+        "Name": "Matrix Tower Summon",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "884140":
+    {
+        "Name": "Chaotic Brand",
+        "Desc": "Cursed Radiant Tomb"
+    },
     "900052":
     {
         "Name": "Dark Mist Fortress - Void Corruption"
@@ -2958,6 +3232,16 @@
     {
         "Name": "Lightning Strike (Paralyzed)"
     },
+    "974320":
+    {
+        "Name": "Malice Spreading (7.5m)",
+        "Desc": "Malice Scales"
+    },
+    "974340":
+    {
+        "Name": "Malice Spreading (15m)",
+        "Desc": "Malice Scales"
+    },
     "990103":
     {
         "Name": "Golden Juggernaut - Earth Corruption Impact"
@@ -2965,6 +3249,10 @@
     "990110":
     {
         "Name": "Golden Juggernaut - Lightning Ball Explosion"
+    },
+    "990113":
+    {
+        "Name": "Rebel King - Scattered Fireball Imapct"
     },
     "990603":
     {
@@ -3036,6 +3324,31 @@
     {
         "Name": "Chain Lightning",
         "Desc": "Landing a Lucky Strike triggers Lightning Chain, dealing DMG equal to 1% Max HP (CD: 1s)"
+    },
+    "1000011":
+    {
+        "Name": "Rebel King - Flame Spheres",
+        "Desc": "Rebel King"
+    },
+    "1000013":
+    {
+        "Name": "Rebel King - Fireballs",
+        "Desc": "Rebel King"
+    },
+    "1000014":
+    {
+        "Name": "Predator Arachnocrab - Bullet Barrage",
+        "Desc": "Predator Arachnocrab"
+    },
+    "1000017":
+    {
+        "Name": "Predator Arachnocrab - Line Strike",
+        "Desc": "Predator Arachnocrab"
+    },
+    "1000018":
+    {
+        "Name": "Predator Arachnocrab - Binding Strikes",
+        "Desc": "Predator Arachnocrab"
     },
     "1000106":
     {
@@ -3403,6 +3716,10 @@
     {
         "Name": "Wind Dagger Goblin - Powerful Spin"
     },
+    "1007810":
+    {
+        "Name": "Flame Axe Reaper - Whirlwind"
+    },
     "1008001":
     {
         "Name": "Great Warhog - Normal Attack"
@@ -3439,6 +3756,18 @@
     {
         "Name": "Stunt! Thunder Ball"
     },
+    "1008051":
+    {
+        "Name": "Boar - Hurricane Charge"
+    },
+    "1008052":
+    {
+        "Name": "Boar - Charge"
+    },
+    "1008053":
+    {
+        "Name": "Boar - Basic Attack"
+    },
     "1008060":
     {
         "Name": "Blazing Boar - Flaming Mire"
@@ -3474,6 +3803,22 @@
     "1008140":
     {
         "Name": "Ultimate - Hell Stab"
+    },
+    "1008220":
+    {
+        "Name": "Skyfish - Basic Tail Whip"
+    },
+    "1008222":
+    {
+        "Name": "Skyfish - Water Rain"
+    },
+    "1008223":
+    {
+        "Name": "Skyfish - Water Rain Small"
+    },
+    "1008224":
+    {
+        "Name": "Lizardman Mage - Water AOE"
     },
     "1008440":
     {
@@ -3512,6 +3857,68 @@
             8
         ]
     },
+    "1009702":
+    {
+        "Name": "Arcane! Precision Burst (Laser)",
+        "Desc": "Void Watcher",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_077",
+        "SkillLevelGroup": 3974,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1009703":
+    {
+        "Name": "Arcane! Precision Burst (Occupy)",
+        "Desc": "Void Watcher",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_077",
+        "SkillLevelGroup": 3974,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1009705":
+    {
+        "Name": "Electromagnetic Cleave",
+        "Desc": "Void Watcher cleaves in a cone while creating ring AOEs"
+    },
+    "1009751":
+    {
+        "Name": "Electromagnetic Lasers",
+        "Desc": "Void Watcher creates walls of laser beams"
+    },
+    "1009803":
+    {
+        "Name": "Abyssal Gazer - Basic Attack"
+    },
+    "1009810":
+    {
+        "Name": "Floating Cannon Laser (Line)",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "1009811":
+    {
+        "Name": "Floating Cannon Laser (Line)",
+        "Desc": "Photonic Eye"
+    },
+    "1010004":
+    {
+        "Name": "Lizardman Soldier - Basic Attack"
+    },
+    "1010005":
+    {
+        "Name": "Lizardman Soldier - Trident Toss"
+    },
+    "1010408":
+    {
+        "Name": "Lizardman Raider - Basic Attack"
+    },
+    "1010409":
+    {
+        "Name": "Lizardman Raider - Whirlwind"
+    },
     "1010440":
     {
         "Name": "Stunt! Thunder Suppress",
@@ -3523,9 +3930,25 @@
             8
         ]
     },
+    "1010507":
+    {
+        "Name": "Lizardman Tidecaller - Summon Water Orb"
+    },
+    "1010508":
+    {
+        "Name": "Lizardman Tidecaller - Bash"
+    },
+    "1010509":
+    {
+        "Name": "Lizardman Tidecaller - Tidal Surge"
+    },
     "1010705":
     {
         "Name": "Guard - Cleave Attack"
+    },
+    "1010715":
+    {
+        "Name": "Guard - Slash"
     },
     "1010801":
     {
@@ -3789,6 +4212,47 @@
             8
         ]
     },
+    "1120302":
+    {
+        "Name": "Predator Arachnocrab - Leap",
+        "Desc": "Predator Arachnocrab"
+    },
+    "1120303":
+    {
+        "Name": "Predator Arachnocrab - Charge",
+        "Desc": "Predator Arachnocrab"
+    },
+    "1120307":
+    {
+        "Name": "Predator Arachnocrab - Strike",
+        "Desc": "Predator Arachnocrab"
+    },
+    "1120308":
+    {
+        "Name": "Predator Arachnocrab - Enrage",
+        "Desc": "Predator Arachnocrab"
+    },
+    "1120309":
+    {
+        "Name": "Predator Arachnocrab - Spin",
+        "Desc": "Predator Arachnocrab"
+    },
+    "1120310":
+    {
+        "Name": "Arcane! Shuttle Fang (Active)",
+        "Desc": "Predator Spider",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_075",
+        "SkillLevelGroup": 3972,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1120311":
+    {
+        "Name": "Predator Arachnocrab - Binding AOE",
+        "Desc": "Predator Arachnocrab"
+    },
     "1121102":
     {
         "Name": "Ridge Horn - Enrage"
@@ -3800,6 +4264,58 @@
     "1121104":
     {
         "Name": "Ridge Horn - Shield Bomb"
+    },
+    "1121105":
+    {
+        "Name": "Arcane! Piercing Roar (Active)",
+        "Desc": "Ridge Fang",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_078",
+        "SkillLevelGroup": 3975,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1121501":
+    {
+        "Name": "Bloodthirsty Furball - Bloodthirsty Feast",
+        "Desc": "Bloodthirsty Furball"
+    },
+    "1121502":
+    {
+        "Name": "Bloodthirsty Furball - Piercing Bite",
+        "Desc": "Bloodthirsty Furball"
+    },
+    "1121503":
+    {
+        "Name": "Bloodthirsty Furball - Flame Breath",
+        "Desc": "Bloodthirsty Furball"
+    },
+    "1121504":
+    {
+        "Name": "Bloodthirsty Furball - Deterring Roar",
+        "Desc": "Bloodthirsty Furball"
+    },
+    "1121506":
+    {
+        "Name": "Bloodthirsty Furball - Enrage",
+        "Desc": "Bloodthirsty Furball"
+    },
+    "1121507":
+    {
+        "Name": "Bloodthirsty Furball - Basic Attack",
+        "Desc": "Bloodthirsty Furball"
+    },
+    "1121508":
+    {
+        "Name": "Arcane! Swift Devour (Active)",
+        "Desc": "Bloodthirsy Furball",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_079",
+        "SkillLevelGroup": 3976,
+        "SlotPositionId": [
+            7,
+            8
+        ]
     },
     "1205004":
     {
@@ -3877,6 +4393,18 @@
     {
         "Name": "Spider - Right Strike - Heroic"
     },
+    "1700354":
+    {
+        "Name": "Spider - Left Strike"
+    },
+    "1700355":
+    {
+        "Name": "Spider - Corruption Puddle"
+    },
+    "1700356":
+    {
+        "Name": "Small Spider - Left Strike"
+    },
     "1700380":
     {
         "Name": "Hardshell Spider - Leap Smash (Master)"
@@ -3947,6 +4475,10 @@
             8
         ]
     },
+    "1700721":
+    {
+        "Name": "Foxen - Normal Finisher"
+    },
     "1700750":
     {
         "Name": "Crimson Foxen - Group Explosion"
@@ -4001,6 +4533,62 @@
     "1700861":
     {
         "Name": "Nocturne Foxen - Detonate Soul Ember"
+    },
+    "1701030":
+    {
+        "Name": "Rebel King - Ground Punch",
+        "Desc": "Rebel King"
+    },
+    "1701031":
+    {
+        "Name": "Rebel King - Basic Combo",
+        "Desc": "Rebel King"
+    },
+    "1701032":
+    {
+        "Name": "Rebel King - Flame Breath",
+        "Desc": "Rebel King"
+    },
+    "1701035":
+    {
+        "Name": "Rebel King - Flaming Impact",
+        "Desc": "Rebel King"
+    },
+    "1701036":
+    {
+        "Name": "Rebel King - Cone Cleave",
+        "Desc": "Rebel King"
+    },
+    "1701037":
+    {
+        "Name": "Rebel King - Fireball Charge Wave",
+        "Desc": "Rebel King"
+    },
+    "1701038":
+    {
+        "Name": "Rebel King - Charge",
+        "Desc": "Rebel King"
+    },
+    "1701040":
+    {
+        "Name": "Arcane! Flash Stomp",
+        "Desc": "Rebel King",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_076",
+        "SkillLevelGroup": 3973,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1701050":
+    {
+        "Name": "Rebel King - Flame Puddle AOE",
+        "Desc": "Rebel King"
+    },
+    "1701052":
+    {
+        "Name": "Rebel King - Scattered Fire Puddles",
+        "Desc": "Rebel King"
     },
     "1701103":
     {
@@ -4482,6 +5070,12 @@
             8
         ]
     },
+    "2110161":
+    {
+        "Name": "Celestial Spirit Mage - Lucy",
+        "Desc": "Dealing damage converts part of it into healing",
+        "SkillLevelGroup": 3982
+    },
     "2201070":
     {
         "Name": "Block Damage Reduction"
@@ -4498,6 +5092,10 @@
     {
         "Name": "Shield Echo"
     },
+    "2201350":
+    {
+        "Name": "Sandstone Rewind"
+    },
     "2201362":
     {
         "Name": "Sand Crystal Shock"
@@ -4510,9 +5108,20 @@
     {
         "Name": "Recovery (Rock Shield)"
     },
+    "2201540":
+    {
+        "Name": "Bash Pursuit",
+        "Desc": "Triggered by Bash Pursuit talent"
+    },
     "2201570":
     {
         "Name": "Rock Shield"
+    },
+    "2201640":
+    {
+        "Name": "Granite Fury Pursuit",
+        "Desc": "From Granite Fury Pursuit talent",
+        "Icon": "ui/textures/skill_weapon_wr/weapon_wr-01_kx07"
     },
     "2201641":
     {
@@ -4555,11 +5164,13 @@
     },
     "2202581":
     {
-        "Name": "Collapse! Boom~"
+        "Name": "Blossom Charge (Verdant Impact: Ally)",
+        "Desc": "Triggered by Verdant Impact talent, targets an Ally for the location"
     },
     "2202582":
     {
-        "Name": "Collapse! Boom~"
+        "Name": "Blossom Charge (Verdant Impact: Enemy)",
+        "Desc": "Triggered by Verdant Impact talent, targets an Enemy for the location"
     },
     "2203091":
     {
@@ -4654,6 +5265,12 @@
     {
         "Name": "Holy Mark Damage"
     },
+    "2206290":
+    {
+        "Name": "Judgment Pursuit",
+        "Desc": "Judgment triggered by Judgment Pursuit talent (Shield Spec)",
+        "SkillLevelGroup": 2410
+    },
     "2206460":
     {
         "Name": "Shield Ward"
@@ -4661,6 +5278,12 @@
     "2206552":
     {
         "Name": "Radiant Core"
+    },
+    "2206680":
+    {
+        "Name": "Judgment Pursuit",
+        "Desc": "Judgment triggered by Judgment Pursuit talent (Recovery Spec)",
+        "SkillLevelGroup": 2410
     },
     "2207141":
     {
@@ -4692,8 +5315,13 @@
     },
     "2208172":
     {
+        "Name": "Burn",
+        "Desc": "Triggered by Inferno talent"
+    },
+    "2208181":
+    {
         "Name": "Explosion",
-        "Desc": "Triggered by Wildfire reaching max stacks"
+        "Desc": "Triggered by Wildfire reaching max stacks from Inferno Explosion talent"
     },
     "2300070":
     {
@@ -4867,6 +5495,12 @@
         "Desc": "Season 2 Skill",
         "Icon": "ui/atlas/skill/season/s2talent07_01sel"
     },
+    "3003250":
+    {
+        "Name": "Shattered Illusion (Stasis Recovery)",
+        "Desc": "Season 2 Skill",
+        "Icon": "ui/atlas/skill/season/s2talent07_01sel"
+    },
     "3003260":
     {
         "Name": "Shattered Illusion (Heal)",
@@ -4909,9 +5543,23 @@
     {
         "Name": "Dark Mist Legion Shield Countercrush (Heroic)"
     },
+    "3054412":
+    {
+        "Name": "Shield Knight Reality X2",
+        "Desc": "Divine Circle healing boost triggered from Shield Knight Reality X2"
+    },
+    "3054440":
+    {
+        "Name": "Shield Knight Reality X5",
+        "Desc": "Sacred Blade triggered from Shield Knight Reality X5"
+    },
     "3057111":
     {
         "Name": "(Factor) Beat Performer X11"
+    },
+    "3057431":
+    {
+        "Name": "(Factor) Beat Performer Reality X4"
     },
     "3059050":
     {
@@ -5084,6 +5732,28 @@
             8
         ]
     },
+    "3210210":
+    {
+        "Name": "Arcane! Precision Burst (Passive)",
+        "Desc": "Void Watcher",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_077",
+        "SkillLevelGroup": 3974,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3210231":
+    {
+        "Name": "Arcane! Swift Devour (AOE)",
+        "Desc": "Bloodthirsy Furball",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_079",
+        "SkillLevelGroup": 3976,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
     "3320109":
     {
         "Name": "Lethal Skill: Tail Sweep Vertical Chop"
@@ -5172,6 +5842,50 @@
     {
         "Name": "Clone Nappo - Basic Punches"
     },
+    "3340113":
+    {
+        "Name": "Arcane! Command Quadrant (Stormblade)",
+        "Desc": "Plague Nappo",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_073",
+        "SkillLevelGroup": 3970,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3340114":
+    {
+        "Name": "Arcane! Command Quadrant (Marksman)",
+        "Desc": "Plague Nappo",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_073",
+        "SkillLevelGroup": 3970,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3340115":
+    {
+        "Name": "Arcane! Command Quadrant (Wind Knight)",
+        "Desc": "Plague Nappo",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_073",
+        "SkillLevelGroup": 3970,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3340116":
+    {
+        "Name": "Arcane! Command Quadrant (Beat Performer)",
+        "Desc": "Plague Nappo",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_073",
+        "SkillLevelGroup": 3970,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
     "3340130":
     {
         "Name": "Hide and Seek",
@@ -5210,6 +5924,141 @@
     {
         "Name": "Blade Rift",
         "Desc": "Plague Nappo"
+    },
+    "3340205":
+    {
+        "Name": "Abyssal Nappo - Basic Attack",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340206":
+    {
+        "Name": "Abyssal Nappo - Basic Headbutt",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340207":
+    {
+        "Name": "Jumping Ground Pound",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340209":
+    {
+        "Name": "Diver's Breath (Tankbuster)",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340210":
+    {
+        "Name": "Brilliant Performance (Water AOE)",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340211":
+    {
+        "Name": "Ice Sphere AOE",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340212":
+    {
+        "Name": "Water Bubble AOE",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340213":
+    {
+        "Name": "Cold Wave Symphony (Ice)",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340214":
+    {
+        "Name": "Cold Wave Symphony (Water)",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340216":
+    {
+        "Name": "Ice Beam",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340217":
+    {
+        "Name": "Water Beam",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340225":
+    {
+        "Name": "Destroy Speaker",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340227":
+    {
+        "Name": "Ice Circle AOE",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340228":
+    {
+        "Name": "Water Circle AOE",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340235":
+    {
+        "Name": "Super Dance - Orange Quad Cleave",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340236":
+    {
+        "Name": "Super Dance - Purple Quad Cleave",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340239":
+    {
+        "Name": "Far Water Cleave",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340243":
+    {
+        "Name": "Torrent Duet (Ice)",
+        "Desc": "Abyssal Nappo"
+    },
+    "3340244":
+    {
+        "Name": "Torrent Duet (Water)",
+        "Desc": "Abyssal Nappo"
+    },
+    "3350051":
+    {
+        "Name": "Fire Missile",
+        "Desc": "Thanatos - Final Form"
+    },
+    "3350052":
+    {
+        "Name": "Fire Missile (Tracking)",
+        "Desc": "Thanatos - Final Form"
+    },
+    "3350053":
+    {
+        "Name": "Steam Leak (1)",
+        "Desc": "Thanatos - Final Form"
+    },
+    "3350054":
+    {
+        "Name": "Steam Leak (2)",
+        "Desc": "Thanatos - Final Form"
+    },
+    "3350055":
+    {
+        "Name": "Steam Leak (3)",
+        "Desc": "Thanatos - Final Form"
+    },
+    "3350057":
+    {
+        "Name": "Steam Heatwave",
+        "Desc": "Thanatos - Final Form"
+    },
+    "3350062":
+    {
+        "Name": "Predation: Donut",
+        "Desc": "Thanatos - Final Form"
+    },
+    "3350082":
+    {
+        "Name": "Artillery Strike (Transition End)",
+        "Desc": "Thanatos - Final Form"
     },
     "3350105":
     {
@@ -5340,10 +6189,75 @@
         "Name": "Illusory Tracking Explosion",
         "Desc": "Slumbering Scholar"
     },
+    "3370302":
+    {
+        "Name": "Charged Void Beam Cone",
+        "Desc": "Tina - Void Reverie"
+    },
+    "3380101":
+    {
+        "Name": "Shatterwind",
+        "Desc": "Mist-Piercing Fang"
+    },
+    "3380102":
+    {
+        "Name": "Mighty Bite",
+        "Desc": "Mist-Piercing Fang"
+    },
+    "3380104":
+    {
+        "Name": "Hunt",
+        "Desc": "Mist-Piercing Fang"
+    },
+    "3380105":
+    {
+        "Name": "Multi-strike Leap",
+        "Desc": "Mist-Piercing Fang"
+    },
+    "3380107":
+    {
+        "Name": "Basic Attack (Cone)",
+        "Desc": "Mist-Piercing Fang"
+    },
+    "3380110":
+    {
+        "Name": "Opportunistic Pounce",
+        "Desc": "Mist-Piercing Fang"
+    },
+    "3380151":
+    {
+        "Name": "Tornado Expanse",
+        "Desc": "Mist-Piercing Fang"
+    },
+    "3380153":
+    {
+        "Name": "Crush Cyclone",
+        "Desc": "Mist-Piercing Fang"
+    },
+    "3380155":
+    {
+        "Name": "Basic Attack (Cone Telegraph)",
+        "Desc": "Mist-Piercing Fang"
+    },
+    "3391001":
+    {
+        "Name": "Cluster Bomb (Basic Attack)",
+        "Desc": "Tripod Oculopod"
+    },
+    "3391004":
+    {
+        "Name": "Pursuit Cluster Bomb",
+        "Desc": "Tripod Heavy Oculopod"
+    },
     "3390105":
     {
         "Name": "Cluster Bomb (Basic Attack)",
         "Desc": "Divine Punisher"
+    },
+    "3390106":
+    {
+        "Name": "Ion Blade",
+        "Desc": "Tripod Heavy Oculopod"
     },
     "3390107":
     {
@@ -5355,10 +6269,40 @@
         "Name": "Piercing Beam (Tankbuster)",
         "Desc": "Divine Punisher"
     },
+    "3390120":
+    {
+        "Name": "Blink to Target",
+        "Desc": "Divine Punisher"
+    },
+    "3390123":
+    {
+        "Name": "Charging Clone (Left Ion Blade)",
+        "Desc": "Divine Punisher"
+    },
+    "3390124":
+    {
+        "Name": "Charging Clone (Right Ion Blade)",
+        "Desc": "Divine Punisher"
+    },
     "3390170":
     {
         "Name": "Disintegration Beam",
         "Desc": "Divine Punisher"
+    },
+    "3390171":
+    {
+        "Name": "Energy Pillar",
+        "Desc": "Divine Punisher"
+    },
+    "3390172":
+    {
+        "Name": "Matrix Tower Pulse",
+        "Desc": "Cursed Radiant Tomb"
+    },
+    "3390174":
+    {
+        "Name": "Engram Orb Repulse",
+        "Desc": "Cursed Radiant Tomb"
     },
     "3913001":
     {
@@ -5570,6 +6514,51 @@
     "6910210":
     {
         "Name": "Flame Breath (Continuous)"
+    },
+    "6920001":
+    {
+        "Name": "Basic Double Swipe",
+        "Desc": "Malice Scales"
+    },
+    "6920002":
+    {
+        "Name": "Lethal Skill: Tail Spin",
+        "Desc": "Malice Scales"
+    },
+    "6920005":
+    {
+        "Name": "Leap Attack",
+        "Desc": "Malice Scales"
+    },
+    "6920010":
+    {
+        "Name": "Wicked Dive",
+        "Desc": "Malice Scales"
+    },
+    "6920012":
+    {
+        "Name": "Poison Breath",
+        "Desc": "Malice Scales"
+    },
+    "6920092":
+    {
+        "Name": "Falling Rocks (AOE)",
+        "Desc": "Malice Scales"
+    },
+    "6920094":
+    {
+        "Name": "Poison Blade (AOE)",
+        "Desc": "Malice Scales"
+    },
+    "6920098":
+    {
+        "Name": "Seed of Malice",
+        "Desc": "Malice Scales"
+    },
+    "6920099":
+    {
+        "Name": "Poison Blades (8 Lines)",
+        "Desc": "Malice Scales"
     },
     "8035624":
     {
@@ -5852,6 +6841,151 @@
         "Name": "Phase 2 Floor Damage",
         "Desc": "Erosion Bloom Afterimage"
     },
+    "10310001":
+    {
+        "Name": "Basic Attack Punch",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310002":
+    {
+        "Name": "Sweep Attack",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310003":
+    {
+        "Name": "Downward Strike Cleave (Cone)",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310004":
+    {
+        "Name": "Tankbuster",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310010":
+    {
+        "Name": "Illusion - Terminus Singularity",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310011":
+    {
+        "Name": "Annihilation Beam",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310012":
+    {
+        "Name": "Illusory Sync",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310016":
+    {
+        "Name": "Illusory Sync (Phantom)",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310050":
+    {
+        "Name": "Purge Room",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310051":
+    {
+        "Name": "Boundary Breach",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310052":
+    {
+        "Name": "Illusion - Terminus Singularity (Core Explosion)",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310053":
+    {
+        "Name": "Annihilation Beam (Line A)",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310054":
+    {
+        "Name": "Annihilation Beam (Line B)",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310055":
+    {
+        "Name": "Annihilation Beam (Line C)",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310056":
+    {
+        "Name": "Tankbuster (Failed)",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10310061":
+    {
+        "Name": "Micro Rockets (Spread AOE)",
+        "Desc": "Paradox-Calamity Remnant - Origin"
+    },
+    "10320005":
+    {
+        "Name": "Disintegration Shockwave",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320008":
+    {
+        "Name": "Charge Preparation",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320014":
+    {
+        "Name": "Mech - Sentinel - Self-Destruct",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320015":
+    {
+        "Name": "Destruction Ray",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320016":
+    {
+        "Name": "Beam Cannon",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320018":
+    {
+        "Name": "Piercing Laser (Line Stack)",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320026":
+    {
+        "Name": "Mech - Sentinel - Teleport Strike",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320051":
+    {
+        "Name": "Illusion - Obliteration Railgun",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320053":
+    {
+        "Name": "Illusion - Obliteration Mega Railgun",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320054":
+    {
+        "Name": "Energy Cube",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320055":
+    {
+        "Name": "Railgun (Spread AOE)",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320056":
+    {
+        "Name": "Charge (Short Duration)",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10320058":
+    {
+        "Name": "Lightning Strike Line",
+        "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
     "11010101":
     {
         "Name": "Defensive Type 06 - Scatter Laser"
@@ -5943,6 +7077,16 @@
     "882158":
     {
         "Name": "Burning Impact"
+    },
+    "883803":
+    {
+        "Name": "Wound Rend",
+        "Desc": "60 Seconds"
+    },
+    "883831":
+    {
+        "Name": "Wound Rend",
+        "Desc": "30 Seconds"
     },
     "1002403":
     {

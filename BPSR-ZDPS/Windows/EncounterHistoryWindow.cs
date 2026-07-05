@@ -179,7 +179,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     ImGui.PushStyleColor(ImGuiCol.Button, Colors.DimGray);
                 }
-                if (ImGui.Button("View By Each Individual Encounter", new Vector2(tabButtonHalfWidth, 0)))
+                if (ImGui.Button(AppStrings.GetLocalized("EncounterHistory_ViewByEachEncounter"), new Vector2(tabButtonHalfWidth, 0)))
                 {
                     SelectedViewMode = 0;
                     SelectedEncounterIndex = -1;
@@ -196,7 +196,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     ImGui.PushStyleColor(ImGuiCol.Button, Colors.DimGray);
                 }
-                if (ImGui.Button("View By Each Grouped Battle", new Vector2(tabButtonHalfWidth, 0)))
+                if (ImGui.Button(AppStrings.GetLocalized("EncounterHistory_ViewByEachGroupedBattle"), new Vector2(tabButtonHalfWidth, 0)))
                 {
                     SelectedViewMode = 1;
                     SelectedEncounterIndex = -1;
@@ -250,7 +250,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     if (SelectedViewMode == 0)
                     {
-                        selectedPreviewText = "Select an encounter...";
+                        selectedPreviewText = AppStrings.GetLocalized("EncounterHistory_SelectAnEncounter");
                     }
                     else
                     {
@@ -630,58 +630,58 @@ namespace BPSR_ZDPS.Windows
 
                         if (SelectedEncounterIndex > -1 && ImGui.BeginPopupContextWindow("##ReportContextMenu"))
                         {
-                            if (ImGui.BeginMenu("Entity Filter"))
+                            if (ImGui.BeginMenu(AppStrings.GetLocalized("EncounterHistory_TableContext_EntityFilter")))
                             {
-                                if (ImGui.MenuItem("All", EntityFilterMode == EEntityFilterMode.All))
+                                if (ImGui.MenuItem(AppStrings.GetLocalized("EncounterHistory_TableContext_EntityFilter_All"), EntityFilterMode == EEntityFilterMode.All))
                                 {
                                     EntityFilterMode = EEntityFilterMode.All;
                                 }
-                                if (ImGui.MenuItem("Players Only", EntityFilterMode == EEntityFilterMode.PlayersOnly))
+                                if (ImGui.MenuItem(AppStrings.GetLocalized("EncounterHistory_TableContext_EntityFilter_PlayersOnly"), EntityFilterMode == EEntityFilterMode.PlayersOnly))
                                 {
                                     EntityFilterMode = EEntityFilterMode.PlayersOnly;
                                 }
-                                if (ImGui.MenuItem("Monsters Only", EntityFilterMode == EEntityFilterMode.MonstersOnly))
+                                if (ImGui.MenuItem(AppStrings.GetLocalized("EncounterHistory_TableContext_EntityFilter_MonstersOnly"), EntityFilterMode == EEntityFilterMode.MonstersOnly))
                                 {
                                     EntityFilterMode = EEntityFilterMode.MonstersOnly;
                                 }
-                                if (ImGui.MenuItem("Bosses Only", EntityFilterMode == EEntityFilterMode.BossesOnly))
+                                if (ImGui.MenuItem(AppStrings.GetLocalized("EncounterHistory_TableContext_EntityFilter_BossesOnly"), EntityFilterMode == EEntityFilterMode.BossesOnly))
                                 {
                                     EntityFilterMode = EEntityFilterMode.BossesOnly;
                                 }
                                 ImGui.EndMenu();
                             }
-                            if (ImGui.MenuItem("Hide Entities With No Damage", HideEntitiesWithNoDamageDealt))
+                            if (ImGui.MenuItem(AppStrings.GetLocalized("EncounterHistory_TableContext_HideEntitiesWithNoDamage"), HideEntitiesWithNoDamageDealt))
                             {
                                 HideEntitiesWithNoDamageDealt = !HideEntitiesWithNoDamageDealt;
                             }
-                            if (ImGui.MenuItem("Hide Player Summons", HidePlayerSummons))
+                            if (ImGui.MenuItem(AppStrings.GetLocalized("EncounterHistory_TableContext_HidePlayerSummons"), HidePlayerSummons))
                             {
                                 HidePlayerSummons = !HidePlayerSummons;
                             }
 
                             ImGui.Separator();
 
-                            if (ImGui.MenuItem("Show Monster Type As Profession", ShowMonsterTypeAsProfession))
+                            if (ImGui.MenuItem(AppStrings.GetLocalized("EncounterHistory_TableContext_ShowMonsterTypeAsProfession"), ShowMonsterTypeAsProfession))
                             {
                                 ShowMonsterTypeAsProfession = !ShowMonsterTypeAsProfession;
                             }
-                            ImGui.SetItemTooltip("The Type of Monster (Monster, Elite, Boss) will be displayed in the Profession column for all Monsters.");
+                            ImGui.SetItemTooltip(AppStrings.GetLocalized("EncounterHistory_TableContext_ShowMonsterTypeAsProfession_Tooltip"));
 
-                            if (ImGui.MenuItem("Toggle Totals Row", ShowTotalsRow))
+                            if (ImGui.MenuItem(AppStrings.GetLocalized("EncounterHistory_TableContext_ToggleTotalsRow"), ShowTotalsRow))
                             {
                                 ShowTotalsRow = !ShowTotalsRow;
                             }
-                            ImGui.SetItemTooltip("Totals Row will disappear when selecting a different Encounter.");
+                            ImGui.SetItemTooltip(AppStrings.GetLocalized("EncounterHistory_TableContext_ToggleTotalsRow_Tooltip"));
 
                             ImGui.Separator();
 
-                            if (ImGui.MenuItem("Show In Meters UI"))
+                            if (ImGui.MenuItem(AppStrings.GetLocalized("EncounterHistory_TableContext_ShowInMetersUI")))
                             {
                                 AppState.OpenedHistoricalEncounter = encounters[SelectedEncounterIndex];
                             }
 
                             ImGui.Separator();
-                            if (ImGui.MenuItem("Fullscreen Window", IsFullScreen))
+                            if (ImGui.MenuItem(AppStrings.GetLocalized("EncounterHistory_TableContext_FullscreenWindow"), IsFullScreen))
                             {
                                 IsFullScreen = !IsFullScreen;
                                 if (IsFullScreen)

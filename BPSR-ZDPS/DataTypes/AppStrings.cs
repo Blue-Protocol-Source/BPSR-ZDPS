@@ -42,8 +42,13 @@ namespace BPSR_ZDPS.DataTypes
             }
         }
 
-        public static string GetLocalized(string key)
+        public static string GetLocalized(string key, string? forcedString = null)
         {
+            if (forcedString != null)
+            {
+                return forcedString;
+            }
+
             if (Locs.TryGetValue(key, out var value))
             {
                 //return key;
