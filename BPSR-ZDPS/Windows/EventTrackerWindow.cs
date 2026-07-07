@@ -7017,6 +7017,212 @@ namespace BPSR_ZDPS.Windows
                 newErosionBloomSickness.TrackedEntityType = ETrackedEntityType.Everyone;
                 newErosionBloomSickness.ShowLayers = true;
                 PresetTrackersList.Add(newErosionBloomSickness);
+
+                // Paradox-Calamity Remnant - Origin Raid
+                var newParadoxOriginAnnihilationBeamA = CreateNewBossWarningBuffEventEntry("Paradox-Origin Annihilation Beam A", 829104);
+                newParadoxOriginAnnihilationBeamA.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxOriginAnnihilationBeamA.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxOriginAnnihilationBeamA);
+
+                var newParadoxOriginAnnihilationBeamB = CreateNewBossWarningBuffEventEntry("Paradox-Origin Annihilation Beam B", 829105);
+                newParadoxOriginAnnihilationBeamB.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxOriginAnnihilationBeamB.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxOriginAnnihilationBeamB);
+
+                var newParadoxOriginAnnihilationBeamC = CreateNewBossWarningBuffEventEntry("Paradox-Origin Annihilation Beam C", 829106);
+                newParadoxOriginAnnihilationBeamC.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxOriginAnnihilationBeamC.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxOriginAnnihilationBeamC);
+
+                // Paradox-Calamity Remnant - Continuation Raid
+                var newParadoxContinuationDelayedRailgun = CreateNewBossWarningBuffEventEntry("Paradox-Continuation Delayed Railgun", 829201);
+                newParadoxContinuationDelayedRailgun.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxContinuationDelayedRailgun.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxContinuationDelayedRailgun);
+
+                var newParadoxContinuationMegaDelayedRailgun = CreateNewBossWarningBuffEventEntry("Paradox-Continuation Mega Delayed Railgun", 829210);
+                newParadoxContinuationMegaDelayedRailgun.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxContinuationMegaDelayedRailgun.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxContinuationMegaDelayedRailgun);
+
+                var newParadoxContinuationRailgunStrike1 = CreateNewBossWarningBuffEventEntry("Paradox-Continuation Railgun Strike 1", 829226);
+                newParadoxContinuationRailgunStrike1.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxContinuationRailgunStrike1.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxContinuationRailgunStrike1);
+
+                var newParadoxContinuationRailgunStrike2 = CreateNewBossWarningBuffEventEntry("Paradox-Continuation Railgun Strike 2", 829227);
+                newParadoxContinuationRailgunStrike2.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxContinuationRailgunStrike2.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxContinuationRailgunStrike2);
+
+                var newParadoxContinuationRailgunStrike3 = CreateNewBossWarningBuffEventEntry("Paradox-Continuation Railgun Strike 3", 829228);
+                newParadoxContinuationRailgunStrike3.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxContinuationRailgunStrike3.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxContinuationRailgunStrike3);
+
+                var newParadoxContinuationRailgunMarked = CreateNewBossWarningBuffEventEntry("Paradox-Continuation Railgun Marked", 829231);
+                newParadoxContinuationRailgunMarked.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxContinuationRailgunMarked.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxContinuationRailgunMarked);
+
+                // Paradox-Calamity Remnant - Final Raid
+                var newParadoxFinalSpreadAOE = CreateNewBossWarningBuffEventEntry("Paradox-Final Spread AOE", 829304);
+                newParadoxFinalSpreadAOE.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxFinalSpreadAOE.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxFinalSpreadAOE);
+
+                var newParadoxFinalPhantomStack = CreateNewBossWarningBuffEventEntry("Paradox-Final Phantom Stack", 829305);
+                newParadoxFinalPhantomStack.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxFinalPhantomStack.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxFinalPhantomStack);
+
+                var newParadoxFinalElectricalSpreadFlare = CreateNewBossWarningBuffEventEntry("Paradox-Final Electrical Spread Flare", 829306);
+                newParadoxFinalElectricalSpreadFlare.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxFinalElectricalSpreadFlare.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxFinalElectricalSpreadFlare);
+
+                var newParadoxFinalPhantomSpreadFlare = CreateNewBossWarningBuffEventEntry("Paradox-Final Phantom Spread Flare", 829307);
+                newParadoxFinalPhantomSpreadFlare.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxFinalPhantomSpreadFlare.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxFinalPhantomSpreadFlare);
+
+                var newParadoxFinalElectricalExplosion = CreateNewBossWarningBuffEventEntry("Paradox-Final Electrical Explosion", 829308);
+                newParadoxFinalElectricalExplosion.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxFinalElectricalExplosion.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxFinalElectricalExplosion);
+
+                var newParadoxFinalPhantomSpreadAOE = CreateNewBossWarningBuffEventEntry("Paradox-Final Phantom Spread AOE", 829309);
+                newParadoxFinalPhantomSpreadAOE.TrackedEntityType = ETrackedEntityType.Self;
+                newParadoxFinalPhantomSpreadAOE.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newParadoxFinalPhantomSpreadAOE);
+
+                // Cursed Radiant Tomb Dungeon
+                var newEnergyPillarMarkerDebuff = CreateNewBossWarningBuffEventEntry("Boss: Energy Pillar Marker (Debuff)", 884141);
+                newEnergyPillarMarkerDebuff.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{OwnerEntityName} has {Name}",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newEnergyPillarMarkerDebuff);
+                var newPiercingLaserMarkedDebuff = CreateNewBossWarningBuffEventEntry("Boss: Piercing Laser Marked (Debuff)", 884177);
+                newPiercingLaserMarkedDebuff.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{OwnerEntityName} has {Name}",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newPiercingLaserMarkedDebuff);
+
+                // Mistveil Hunting Ground Dungeon
+                PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Boss: Wound Rend", 883803));
+                PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Boss: Rib Fracture", 883804));
+                PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Boss: Disrupted Breath", 883805));
+                PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Boss: Wound Rend (Applying)", 883806));
+                PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Boss: Rib Fracture (Applying)", 883807));
+                PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Boss: Disrupted Breath (Applying)", 883808));
+                PresetTrackersList.Add(CreateNewBasicBuffEventEntry("Boss: All Scars (Applying)", 883809));
+                var newMarkedForHuntDebuff = CreateNewBossWarningBuffEventEntry("Boss: Marked For Hunt (Debuff)", 883828);
+                newMarkedForHuntDebuff.RaidWarningTrackerDatas.Add(new RaidWarningTrackerData()
+                {
+                    IsEnabled = true,
+                    ActivationType = ERaidWarningActivationType.OnGain,
+                    MessageFormat = "{Name} targets {OwnerEntityName}!",
+                    PlaySound = true,
+                });
+                PresetTrackersList.Add(newMarkedForHuntDebuff);
             }
 
 
