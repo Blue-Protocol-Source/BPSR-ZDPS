@@ -17,6 +17,7 @@ namespace BPSR_ZDPSLib.Blobs
         public uint? LevelReviveId;
         public Dictionary<uint, uint>? RecordId;
         public uint? PlaneId;
+        public uint? SceneLayer;
         public bool? CanSwitchLayer; // Unsupported
         public Position? BeforeFallPos;
         public string SceneGUID; // Unsupported
@@ -27,6 +28,7 @@ namespace BPSR_ZDPSLib.Blobs
         public int? SceneAreaId;
         public int? LevelAreaId;
         public int? BeforeFallSceneAreaId;
+        public int? StaticSceneActVer;
 
         public override bool ParseField(int index, ref BlobReader blob)
         {
@@ -59,6 +61,9 @@ namespace BPSR_ZDPSLib.Blobs
                 case Zproto.SceneData.PlaneIdFieldNumber:
                     PlaneId = blob.ReadUInt();
                     return true;
+                case Zproto.SceneData.SceneLayerFieldNumber:
+                    SceneLayer = blob.ReadUInt();
+                    return true;
                 case Zproto.SceneData.CanSwitchLayerFieldNumber:
                     // TODO: Implement blob.ReadBool()
                     return false;
@@ -79,6 +84,9 @@ namespace BPSR_ZDPSLib.Blobs
                     return true;
                 case Zproto.SceneData.BeforeFallSceneAreaIdFieldNumber:
                     BeforeFallSceneAreaId = blob.ReadInt();
+                    return true;
+                case Zproto.SceneData.StaticSceneActVerFieldNumber:
+                    StaticSceneActVer = blob.ReadInt();
                     return true;
                 default:
                     return false;

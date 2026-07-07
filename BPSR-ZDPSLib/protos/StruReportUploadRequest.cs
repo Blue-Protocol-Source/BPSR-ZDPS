@@ -28,24 +28,27 @@ namespace Zproto {
             "bnVtX2VfcmVwb3J0X2NhdGVnb3J5X3R5cGUucHJvdG8aH2VudW1fZV9yZXBv",
             "cnRfcmVhc29uX3R5cGUucHJvdG8aHmVudW1fZV9yZXBvcnRfc2NlbmVfdHlw",
             "ZS5wcm90bxobc3RydV9yZXBvcnRfYmFzZV9pbmZvLnByb3RvGhZzdHJ1X3Jl",
-            "cG9ydF9jaGF0LnByb3RvGhZzdHJ1X3JlcG9ydF9ob21lLnByb3RvGhlzdHJ1",
-            "X3JlcG9ydF9waWN0dXJlLnByb3RvGhdzdHJ1X3JlcG9ydF91bmlvbi5wcm90",
-            "byKFBAoTUmVwb3J0VXBsb2FkUmVxdWVzdBI2CglzY2VuZVR5cGUYASABKA4y",
-            "GC56cHJvdG8uRVJlcG9ydFNjZW5lVHlwZVIJc2NlbmVUeXBlEj8KDGNhdGVn",
-            "b3J5VHlwZRgCIAEoDjIbLnpwcm90by5FUmVwb3J0Q2F0ZWdvcnlUeXBlUgxj",
-            "YXRlZ29yeVR5cGUSOQoKcmVhc29uVHlwZRgDIAMoDjIZLnpwcm90by5FUmVw",
-            "b3J0UmVhc29uVHlwZVIKcmVhc29uVHlwZRIeCgpyZXBvcnREZXNjGAQgASgJ",
-            "UgpyZXBvcnREZXNjEj4KDnJlcG9ydEJhc2VJbmZvGAUgASgLMhYuenByb3Rv",
-            "LlJlcG9ydEJhc2VJbmZvUg5yZXBvcnRCYXNlSW5mbxIyCgpyZXBvcnRDaGF0",
-            "GAYgASgLMhIuenByb3RvLlJlcG9ydENoYXRSCnJlcG9ydENoYXQSOwoNcmVw",
-            "b3J0UGljdHVyZRgHIAEoCzIVLnpwcm90by5SZXBvcnRQaWN0dXJlUg1yZXBv",
-            "cnRQaWN0dXJlEjUKC3JlcG9ydFVuaW9uGAggASgLMhMuenByb3RvLlJlcG9y",
-            "dFVuaW9uUgtyZXBvcnRVbmlvbhIyCgpyZXBvcnRIb21lGAkgASgLMhIuenBy",
-            "b3RvLlJlcG9ydEhvbWVSCnJlcG9ydEhvbWViBnByb3RvMw=="));
+            "cG9ydF9jaGF0LnByb3RvGhZzdHJ1X3JlcG9ydF9ob21lLnByb3RvGh5zdHJ1",
+            "X3JlcG9ydF9sZWFkZXJfYm9hcmQucHJvdG8aGXN0cnVfcmVwb3J0X3BpY3R1",
+            "cmUucHJvdG8aF3N0cnVfcmVwb3J0X3VuaW9uLnByb3RvIs4EChNSZXBvcnRV",
+            "cGxvYWRSZXF1ZXN0EjYKCXNjZW5lVHlwZRgBIAEoDjIYLnpwcm90by5FUmVw",
+            "b3J0U2NlbmVUeXBlUglzY2VuZVR5cGUSPwoMY2F0ZWdvcnlUeXBlGAIgASgO",
+            "MhsuenByb3RvLkVSZXBvcnRDYXRlZ29yeVR5cGVSDGNhdGVnb3J5VHlwZRI5",
+            "CgpyZWFzb25UeXBlGAMgAygOMhkuenByb3RvLkVSZXBvcnRSZWFzb25UeXBl",
+            "UgpyZWFzb25UeXBlEh4KCnJlcG9ydERlc2MYBCABKAlSCnJlcG9ydERlc2MS",
+            "PgoOcmVwb3J0QmFzZUluZm8YBSABKAsyFi56cHJvdG8uUmVwb3J0QmFzZUlu",
+            "Zm9SDnJlcG9ydEJhc2VJbmZvEjIKCnJlcG9ydENoYXQYBiABKAsyEi56cHJv",
+            "dG8uUmVwb3J0Q2hhdFIKcmVwb3J0Q2hhdBI7Cg1yZXBvcnRQaWN0dXJlGAcg",
+            "ASgLMhUuenByb3RvLlJlcG9ydFBpY3R1cmVSDXJlcG9ydFBpY3R1cmUSNQoL",
+            "cmVwb3J0VW5pb24YCCABKAsyEy56cHJvdG8uUmVwb3J0VW5pb25SC3JlcG9y",
+            "dFVuaW9uEjIKCnJlcG9ydEhvbWUYCSABKAsyEi56cHJvdG8uUmVwb3J0SG9t",
+            "ZVIKcmVwb3J0SG9tZRJHChFyZXBvcnRMZWFkZXJCb2FyZBgKIAEoCzIZLnpw",
+            "cm90by5SZXBvcnRMZWFkZXJCb2FyZFIRcmVwb3J0TGVhZGVyQm9hcmRiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.EnumEReportCategoryTypeReflection.Descriptor, global::Zproto.EnumEReportReasonTypeReflection.Descriptor, global::Zproto.EnumEReportSceneTypeReflection.Descriptor, global::Zproto.StruReportBaseInfoReflection.Descriptor, global::Zproto.StruReportChatReflection.Descriptor, global::Zproto.StruReportHomeReflection.Descriptor, global::Zproto.StruReportPictureReflection.Descriptor, global::Zproto.StruReportUnionReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.EnumEReportCategoryTypeReflection.Descriptor, global::Zproto.EnumEReportReasonTypeReflection.Descriptor, global::Zproto.EnumEReportSceneTypeReflection.Descriptor, global::Zproto.StruReportBaseInfoReflection.Descriptor, global::Zproto.StruReportChatReflection.Descriptor, global::Zproto.StruReportHomeReflection.Descriptor, global::Zproto.StruReportLeaderBoardReflection.Descriptor, global::Zproto.StruReportPictureReflection.Descriptor, global::Zproto.StruReportUnionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ReportUploadRequest), global::Zproto.ReportUploadRequest.Parser, new[]{ "SceneType", "CategoryType", "ReasonType", "ReportDesc", "ReportBaseInfo", "ReportChat", "ReportPicture", "ReportUnion", "ReportHome" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ReportUploadRequest), global::Zproto.ReportUploadRequest.Parser, new[]{ "SceneType", "CategoryType", "ReasonType", "ReportDesc", "ReportBaseInfo", "ReportChat", "ReportPicture", "ReportUnion", "ReportHome", "ReportLeaderBoard" }, null, null, null, null)
           }));
     }
     #endregion
@@ -96,6 +99,7 @@ namespace Zproto {
       reportPicture_ = other.reportPicture_ != null ? other.reportPicture_.Clone() : null;
       reportUnion_ = other.reportUnion_ != null ? other.reportUnion_.Clone() : null;
       reportHome_ = other.reportHome_ != null ? other.reportHome_.Clone() : null;
+      reportLeaderBoard_ = other.reportLeaderBoard_ != null ? other.reportLeaderBoard_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -212,6 +216,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "reportLeaderBoard" field.</summary>
+    public const int ReportLeaderBoardFieldNumber = 10;
+    private global::Zproto.ReportLeaderBoard reportLeaderBoard_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.ReportLeaderBoard ReportLeaderBoard {
+      get { return reportLeaderBoard_; }
+      set {
+        reportLeaderBoard_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -236,6 +252,7 @@ namespace Zproto {
       if (!object.Equals(ReportPicture, other.ReportPicture)) return false;
       if (!object.Equals(ReportUnion, other.ReportUnion)) return false;
       if (!object.Equals(ReportHome, other.ReportHome)) return false;
+      if (!object.Equals(ReportLeaderBoard, other.ReportLeaderBoard)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -252,6 +269,7 @@ namespace Zproto {
       if (reportPicture_ != null) hash ^= ReportPicture.GetHashCode();
       if (reportUnion_ != null) hash ^= ReportUnion.GetHashCode();
       if (reportHome_ != null) hash ^= ReportHome.GetHashCode();
+      if (reportLeaderBoard_ != null) hash ^= ReportLeaderBoard.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -303,6 +321,10 @@ namespace Zproto {
         output.WriteRawTag(74);
         output.WriteMessage(ReportHome);
       }
+      if (reportLeaderBoard_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(ReportLeaderBoard);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -346,6 +368,10 @@ namespace Zproto {
         output.WriteRawTag(74);
         output.WriteMessage(ReportHome);
       }
+      if (reportLeaderBoard_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(ReportLeaderBoard);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -380,6 +406,9 @@ namespace Zproto {
       }
       if (reportHome_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ReportHome);
+      }
+      if (reportLeaderBoard_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ReportLeaderBoard);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -432,6 +461,12 @@ namespace Zproto {
           ReportHome = new global::Zproto.ReportHome();
         }
         ReportHome.MergeFrom(other.ReportHome);
+      }
+      if (other.reportLeaderBoard_ != null) {
+        if (reportLeaderBoard_ == null) {
+          ReportLeaderBoard = new global::Zproto.ReportLeaderBoard();
+        }
+        ReportLeaderBoard.MergeFrom(other.ReportLeaderBoard);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -504,6 +539,13 @@ namespace Zproto {
             input.ReadMessage(ReportHome);
             break;
           }
+          case 82: {
+            if (reportLeaderBoard_ == null) {
+              ReportLeaderBoard = new global::Zproto.ReportLeaderBoard();
+            }
+            input.ReadMessage(ReportLeaderBoard);
+            break;
+          }
         }
       }
     #endif
@@ -573,6 +615,13 @@ namespace Zproto {
               ReportHome = new global::Zproto.ReportHome();
             }
             input.ReadMessage(ReportHome);
+            break;
+          }
+          case 82: {
+            if (reportLeaderBoard_ == null) {
+              ReportLeaderBoard = new global::Zproto.ReportLeaderBoard();
+            }
+            input.ReadMessage(ReportLeaderBoard);
             break;
           }
         }

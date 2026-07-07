@@ -28,7 +28,7 @@ namespace Zproto {
             "YXZhdGFyX2luZm8ucHJvdG8aFXN0cnVfYmFzaWNfZGF0YS5wcm90bxoUc3Ry",
             "dV9jaGFyX3RlYW0ucHJvdG8aIXN0cnVfY29tbXVuaXR5X3N1bW1hcnlfZGF0",
             "YS5wcm90bxoZc3RydV9wcml2aWxlZ2VfZGF0YS5wcm90bxoac3RydV9wcm9m",
-            "ZXNzaW9uX2RhdGEucHJvdG8aFXN0cnVfdW5pb25fZGF0YS5wcm90byK2AwoP",
+            "ZXNzaW9uX2RhdGEucHJvdG8aFXN0cnVfdW5pb25fZGF0YS5wcm90byLeAwoP",
             "VXNlclN1bW1hcnlEYXRhEi8KCWJhc2ljRGF0YRgBIAEoCzIRLnpwcm90by5C",
             "YXNpY0RhdGFSCWJhc2ljRGF0YRIyCgphdmF0YXJJbmZvGAIgASgLMhIuenBy",
             "b3RvLkF2YXRhckluZm9SCmF2YXRhckluZm8SPgoOcHJvZmVzc2lvbkRhdGEY",
@@ -38,11 +38,12 @@ namespace Zproto {
             "YRgHIAEoCzIRLnpwcm90by5VbmlvbkRhdGFSCXVuaW9uRGF0YRJCCg1jb21t",
             "dW5pdHlEYXRhGAggASgLMhwuenByb3RvLkNvbW11bml0eVN1bW1hcnlEYXRh",
             "Ug1jb21tdW5pdHlEYXRhEjsKDXByaXZpbGVnZURhdGEYCSABKAsyFS56cHJv",
-            "dG8uUHJpdmlsZWdlRGF0YVINcHJpdmlsZWdlRGF0YWIGcHJvdG8z"));
+            "dG8uUHJpdmlsZWdlRGF0YVINcHJpdmlsZWdlRGF0YRImCg5zZWFzb25TdHJl",
+            "bmd0aBgKIAEoBVIOc2Vhc29uU3RyZW5ndGhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruAvatarInfoReflection.Descriptor, global::Zproto.StruBasicDataReflection.Descriptor, global::Zproto.StruCharTeamReflection.Descriptor, global::Zproto.StruCommunitySummaryDataReflection.Descriptor, global::Zproto.StruPrivilegeDataReflection.Descriptor, global::Zproto.StruProfessionDataReflection.Descriptor, global::Zproto.StruUnionDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UserSummaryData), global::Zproto.UserSummaryData.Parser, new[]{ "BasicData", "AvatarInfo", "ProfessionData", "FightPoint", "TeamData", "UnionData", "CommunityData", "PrivilegeData" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UserSummaryData), global::Zproto.UserSummaryData.Parser, new[]{ "BasicData", "AvatarInfo", "ProfessionData", "FightPoint", "TeamData", "UnionData", "CommunityData", "PrivilegeData", "SeasonStrength" }, null, null, null, null)
           }));
     }
     #endregion
@@ -92,6 +93,7 @@ namespace Zproto {
       unionData_ = other.unionData_ != null ? other.unionData_.Clone() : null;
       communityData_ = other.communityData_ != null ? other.communityData_.Clone() : null;
       privilegeData_ = other.privilegeData_ != null ? other.privilegeData_.Clone() : null;
+      seasonStrength_ = other.seasonStrength_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -197,6 +199,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "seasonStrength" field.</summary>
+    public const int SeasonStrengthFieldNumber = 10;
+    private int seasonStrength_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int SeasonStrength {
+      get { return seasonStrength_; }
+      set {
+        seasonStrength_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -220,6 +234,7 @@ namespace Zproto {
       if (!object.Equals(UnionData, other.UnionData)) return false;
       if (!object.Equals(CommunityData, other.CommunityData)) return false;
       if (!object.Equals(PrivilegeData, other.PrivilegeData)) return false;
+      if (SeasonStrength != other.SeasonStrength) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -235,6 +250,7 @@ namespace Zproto {
       if (unionData_ != null) hash ^= UnionData.GetHashCode();
       if (communityData_ != null) hash ^= CommunityData.GetHashCode();
       if (privilegeData_ != null) hash ^= PrivilegeData.GetHashCode();
+      if (SeasonStrength != 0) hash ^= SeasonStrength.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -285,6 +301,10 @@ namespace Zproto {
         output.WriteRawTag(74);
         output.WriteMessage(PrivilegeData);
       }
+      if (SeasonStrength != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(SeasonStrength);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -327,6 +347,10 @@ namespace Zproto {
         output.WriteRawTag(74);
         output.WriteMessage(PrivilegeData);
       }
+      if (SeasonStrength != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(SeasonStrength);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -360,6 +384,9 @@ namespace Zproto {
       }
       if (privilegeData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PrivilegeData);
+      }
+      if (SeasonStrength != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SeasonStrength);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -417,6 +444,9 @@ namespace Zproto {
           PrivilegeData = new global::Zproto.PrivilegeData();
         }
         PrivilegeData.MergeFrom(other.PrivilegeData);
+      }
+      if (other.SeasonStrength != 0) {
+        SeasonStrength = other.SeasonStrength;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -490,6 +520,10 @@ namespace Zproto {
             input.ReadMessage(PrivilegeData);
             break;
           }
+          case 80: {
+            SeasonStrength = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -560,6 +594,10 @@ namespace Zproto {
               PrivilegeData = new global::Zproto.PrivilegeData();
             }
             input.ReadMessage(PrivilegeData);
+            break;
+          }
+          case 80: {
+            SeasonStrength = input.ReadInt32();
             break;
           }
         }

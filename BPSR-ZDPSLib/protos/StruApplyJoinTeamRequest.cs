@@ -24,13 +24,16 @@ namespace Zproto {
     static StruApplyJoinTeamRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJzdHJ1X2FwcGx5X2pvaW5fdGVhbV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "LgoUQXBwbHlKb2luVGVhbVJlcXVlc3QSFgoGdGVhbUlkGAIgAygDUgZ0ZWFt",
-            "SWRiBnByb3RvMw=="));
+            "CiJzdHJ1X2FwcGx5X2pvaW5fdGVhbV9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8a",
+            "IWVudW1fZV90ZWFtX2pvaW5fYXBwbHlfdHlwZS5wcm90byKUAQoUQXBwbHlK",
+            "b2luVGVhbVJlcXVlc3QSIgoMdGFyZ2V0VGVhbUlkGAMgASgDUgx0YXJnZXRU",
+            "ZWFtSWQSOAoJYXBwbHlUeXBlGAQgASgOMhouenByb3RvLkVUZWFtSm9pbkFw",
+            "cGx5VHlwZVIJYXBwbHlUeXBlEh4KCnNlbGZUZWFtSWQYBSABKANSCnNlbGZU",
+            "ZWFtSWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Zproto.EnumETeamJoinApplyTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ApplyJoinTeamRequest), global::Zproto.ApplyJoinTeamRequest.Parser, new[]{ "TeamId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ApplyJoinTeamRequest), global::Zproto.ApplyJoinTeamRequest.Parser, new[]{ "TargetTeamId", "ApplyType", "SelfTeamId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,7 +75,9 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyJoinTeamRequest(ApplyJoinTeamRequest other) : this() {
-      teamId_ = other.teamId_.Clone();
+      targetTeamId_ = other.targetTeamId_;
+      applyType_ = other.applyType_;
+      selfTeamId_ = other.selfTeamId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,15 +87,40 @@ namespace Zproto {
       return new ApplyJoinTeamRequest(this);
     }
 
-    /// <summary>Field number for the "teamId" field.</summary>
-    public const int TeamIdFieldNumber = 2;
-    private static readonly pb::FieldCodec<long> _repeated_teamId_codec
-        = pb::FieldCodec.ForInt64(18);
-    private readonly pbc::RepeatedField<long> teamId_ = new pbc::RepeatedField<long>();
+    /// <summary>Field number for the "targetTeamId" field.</summary>
+    public const int TargetTeamIdFieldNumber = 3;
+    private long targetTeamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<long> TeamId {
-      get { return teamId_; }
+    public long TargetTeamId {
+      get { return targetTeamId_; }
+      set {
+        targetTeamId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "applyType" field.</summary>
+    public const int ApplyTypeFieldNumber = 4;
+    private global::Zproto.ETeamJoinApplyType applyType_ = global::Zproto.ETeamJoinApplyType.Personal;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.ETeamJoinApplyType ApplyType {
+      get { return applyType_; }
+      set {
+        applyType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "selfTeamId" field.</summary>
+    public const int SelfTeamIdFieldNumber = 5;
+    private long selfTeamId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long SelfTeamId {
+      get { return selfTeamId_; }
+      set {
+        selfTeamId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -108,7 +138,9 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!teamId_.Equals(other.teamId_)) return false;
+      if (TargetTeamId != other.TargetTeamId) return false;
+      if (ApplyType != other.ApplyType) return false;
+      if (SelfTeamId != other.SelfTeamId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -116,7 +148,9 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= teamId_.GetHashCode();
+      if (TargetTeamId != 0L) hash ^= TargetTeamId.GetHashCode();
+      if (ApplyType != global::Zproto.ETeamJoinApplyType.Personal) hash ^= ApplyType.GetHashCode();
+      if (SelfTeamId != 0L) hash ^= SelfTeamId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -135,7 +169,18 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      teamId_.WriteTo(output, _repeated_teamId_codec);
+      if (TargetTeamId != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(TargetTeamId);
+      }
+      if (ApplyType != global::Zproto.ETeamJoinApplyType.Personal) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) ApplyType);
+      }
+      if (SelfTeamId != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(SelfTeamId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -146,7 +191,18 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      teamId_.WriteTo(ref output, _repeated_teamId_codec);
+      if (TargetTeamId != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(TargetTeamId);
+      }
+      if (ApplyType != global::Zproto.ETeamJoinApplyType.Personal) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) ApplyType);
+      }
+      if (SelfTeamId != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(SelfTeamId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -157,7 +213,15 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += teamId_.CalculateSize(_repeated_teamId_codec);
+      if (TargetTeamId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TargetTeamId);
+      }
+      if (ApplyType != global::Zproto.ETeamJoinApplyType.Personal) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ApplyType);
+      }
+      if (SelfTeamId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SelfTeamId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -170,7 +234,15 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      teamId_.Add(other.teamId_);
+      if (other.TargetTeamId != 0L) {
+        TargetTeamId = other.TargetTeamId;
+      }
+      if (other.ApplyType != global::Zproto.ETeamJoinApplyType.Personal) {
+        ApplyType = other.ApplyType;
+      }
+      if (other.SelfTeamId != 0L) {
+        SelfTeamId = other.SelfTeamId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -190,9 +262,16 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            teamId_.AddEntriesFrom(input, _repeated_teamId_codec);
+          case 24: {
+            TargetTeamId = input.ReadInt64();
+            break;
+          }
+          case 32: {
+            ApplyType = (global::Zproto.ETeamJoinApplyType) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            SelfTeamId = input.ReadInt64();
             break;
           }
         }
@@ -214,9 +293,16 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            teamId_.AddEntriesFrom(ref input, _repeated_teamId_codec);
+          case 24: {
+            TargetTeamId = input.ReadInt64();
+            break;
+          }
+          case 32: {
+            ApplyType = (global::Zproto.ETeamJoinApplyType) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            SelfTeamId = input.ReadInt64();
             break;
           }
         }

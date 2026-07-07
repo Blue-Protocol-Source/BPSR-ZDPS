@@ -532,5 +532,8 @@
         SummonPet = 0x70001, // 458753
         UnsummonPet = 0x70002, // 458754
         FeedPet = 0x70003, // 458755
+        GetLeaderBoardHistoryList = 0x71001, // 462849
+        GetLeaderBoardData = 0x71002, // 462850
+        GetMyRank = 0x71003, // 462851
     }
 }

@@ -25,14 +25,16 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2xlYWRlcl9nZXRfYXBwbHlfbGlzdF9yZXBseS5wcm90bxIGenBy",
-            "b3RvGhVzdHJ1X2FwcGx5X2luZm8ucHJvdG8aF2VudW1fZV9lcnJvcl9jb2Rl",
-            "LnByb3RvInAKF0xlYWRlckdldEFwcGx5TGlzdFJlcGx5EicKBWFwcGx5GAEg",
-            "AygLMhEuenByb3RvLkFwcGx5SW5mb1IFYXBwbHkSLAoHZXJyQ29kZRgCIAEo",
-            "DjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2RlYgZwcm90bzM="));
+            "b3RvGhdlbnVtX2VfZXJyb3JfY29kZS5wcm90bxokc3RydV90ZWFtX2pvaW5f",
+            "YXBwbHlfbGlzdF9pdGVtLnByb3RvIp4BChdMZWFkZXJHZXRBcHBseUxpc3RS",
+            "ZXBseRIzCgVpdGVtcxgCIAMoCzIdLnpwcm90by5UZWFtSm9pbkFwcGx5TGlz",
+            "dEl0ZW1SBWl0ZW1zEiAKC2xpc3RWZXJzaW9uGAMgASgDUgtsaXN0VmVyc2lv",
+            "bhIsCgdlcnJDb2RlGAQgASgOMhIuenByb3RvLkVFcnJvckNvZGVSB2VyckNv",
+            "ZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruApplyInfoReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruTeamJoinApplyListItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.LeaderGetApplyListReply), global::Zproto.LeaderGetApplyListReply.Parser, new[]{ "Apply", "ErrCode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.LeaderGetApplyListReply), global::Zproto.LeaderGetApplyListReply.Parser, new[]{ "Items", "ListVersion", "ErrCode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,7 +76,8 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LeaderGetApplyListReply(LeaderGetApplyListReply other) : this() {
-      apply_ = other.apply_.Clone();
+      items_ = other.items_.Clone();
+      listVersion_ = other.listVersion_;
       errCode_ = other.errCode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -85,19 +88,31 @@ namespace Zproto {
       return new LeaderGetApplyListReply(this);
     }
 
-    /// <summary>Field number for the "apply" field.</summary>
-    public const int ApplyFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Zproto.ApplyInfo> _repeated_apply_codec
-        = pb::FieldCodec.ForMessage(10, global::Zproto.ApplyInfo.Parser);
-    private readonly pbc::RepeatedField<global::Zproto.ApplyInfo> apply_ = new pbc::RepeatedField<global::Zproto.ApplyInfo>();
+    /// <summary>Field number for the "items" field.</summary>
+    public const int ItemsFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Zproto.TeamJoinApplyListItem> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Zproto.TeamJoinApplyListItem.Parser);
+    private readonly pbc::RepeatedField<global::Zproto.TeamJoinApplyListItem> items_ = new pbc::RepeatedField<global::Zproto.TeamJoinApplyListItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Zproto.ApplyInfo> Apply {
-      get { return apply_; }
+    public pbc::RepeatedField<global::Zproto.TeamJoinApplyListItem> Items {
+      get { return items_; }
+    }
+
+    /// <summary>Field number for the "listVersion" field.</summary>
+    public const int ListVersionFieldNumber = 3;
+    private long listVersion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long ListVersion {
+      get { return listVersion_; }
+      set {
+        listVersion_ = value;
+      }
     }
 
     /// <summary>Field number for the "errCode" field.</summary>
-    public const int ErrCodeFieldNumber = 2;
+    public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,7 +138,8 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!apply_.Equals(other.apply_)) return false;
+      if(!items_.Equals(other.items_)) return false;
+      if (ListVersion != other.ListVersion) return false;
       if (ErrCode != other.ErrCode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -132,7 +148,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= apply_.GetHashCode();
+      hash ^= items_.GetHashCode();
+      if (ListVersion != 0L) hash ^= ListVersion.GetHashCode();
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) hash ^= ErrCode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -152,9 +169,13 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      apply_.WriteTo(output, _repeated_apply_codec);
+      items_.WriteTo(output, _repeated_items_codec);
+      if (ListVersion != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(ListVersion);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -167,9 +188,13 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      apply_.WriteTo(ref output, _repeated_apply_codec);
+      items_.WriteTo(ref output, _repeated_items_codec);
+      if (ListVersion != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(ListVersion);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -182,7 +207,10 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += apply_.CalculateSize(_repeated_apply_codec);
+      size += items_.CalculateSize(_repeated_items_codec);
+      if (ListVersion != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ListVersion);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ErrCode);
       }
@@ -198,7 +226,10 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      apply_.Add(other.apply_);
+      items_.Add(other.items_);
+      if (other.ListVersion != 0L) {
+        ListVersion = other.ListVersion;
+      }
       if (other.ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         ErrCode = other.ErrCode;
       }
@@ -221,11 +252,15 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            apply_.AddEntriesFrom(input, _repeated_apply_codec);
+          case 18: {
+            items_.AddEntriesFrom(input, _repeated_items_codec);
             break;
           }
-          case 16: {
+          case 24: {
+            ListVersion = input.ReadInt64();
+            break;
+          }
+          case 32: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }
@@ -248,11 +283,15 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            apply_.AddEntriesFrom(ref input, _repeated_apply_codec);
+          case 18: {
+            items_.AddEntriesFrom(ref input, _repeated_items_codec);
             break;
           }
-          case 16: {
+          case 24: {
+            ListVersion = input.ReadInt64();
+            break;
+          }
+          case 32: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }

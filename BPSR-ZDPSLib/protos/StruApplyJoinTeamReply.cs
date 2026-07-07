@@ -25,13 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBzdHJ1X2FwcGx5X2pvaW5fdGVhbV9yZXBseS5wcm90bxIGenByb3RvGhdl",
-            "bnVtX2VfZXJyb3JfY29kZS5wcm90byJaChJBcHBseUpvaW5UZWFtUmVwbHkS",
-            "FgoGdGVhbUlkGAEgAygDUgZ0ZWFtSWQSLAoHZXJyQ29kZRgCIAEoDjISLnpw",
-            "cm90by5FRXJyb3JDb2RlUgdlcnJDb2RlYgZwcm90bzM="));
+            "bnVtX2VfZXJyb3JfY29kZS5wcm90bxokc3RydV90ZWFtX2pvaW5fYXBwbHlf",
+            "bGlzdF9pdGVtLnByb3RvIpEBChJBcHBseUpvaW5UZWFtUmVwbHkSGAoHYXBw",
+            "bHlJZBgCIAEoCVIHYXBwbHlJZBIzCgVhcHBseRgDIAEoCzIdLnpwcm90by5U",
+            "ZWFtSm9pbkFwcGx5TGlzdEl0ZW1SBWFwcGx5EiwKB2VyckNvZGUYBCABKA4y",
+            "Ei56cHJvdG8uRUVycm9yQ29kZVIHZXJyQ29kZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruTeamJoinApplyListItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ApplyJoinTeamReply), global::Zproto.ApplyJoinTeamReply.Parser, new[]{ "TeamId", "ErrCode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ApplyJoinTeamReply), global::Zproto.ApplyJoinTeamReply.Parser, new[]{ "ApplyId", "Apply", "ErrCode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,7 +75,8 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ApplyJoinTeamReply(ApplyJoinTeamReply other) : this() {
-      teamId_ = other.teamId_.Clone();
+      applyId_ = other.applyId_;
+      apply_ = other.apply_ != null ? other.apply_.Clone() : null;
       errCode_ = other.errCode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -84,19 +87,32 @@ namespace Zproto {
       return new ApplyJoinTeamReply(this);
     }
 
-    /// <summary>Field number for the "teamId" field.</summary>
-    public const int TeamIdFieldNumber = 1;
-    private static readonly pb::FieldCodec<long> _repeated_teamId_codec
-        = pb::FieldCodec.ForInt64(10);
-    private readonly pbc::RepeatedField<long> teamId_ = new pbc::RepeatedField<long>();
+    /// <summary>Field number for the "applyId" field.</summary>
+    public const int ApplyIdFieldNumber = 2;
+    private string applyId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<long> TeamId {
-      get { return teamId_; }
+    public string ApplyId {
+      get { return applyId_; }
+      set {
+        applyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "apply" field.</summary>
+    public const int ApplyFieldNumber = 3;
+    private global::Zproto.TeamJoinApplyListItem apply_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.TeamJoinApplyListItem Apply {
+      get { return apply_; }
+      set {
+        apply_ = value;
+      }
     }
 
     /// <summary>Field number for the "errCode" field.</summary>
-    public const int ErrCodeFieldNumber = 2;
+    public const int ErrCodeFieldNumber = 4;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,7 +138,8 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!teamId_.Equals(other.teamId_)) return false;
+      if (ApplyId != other.ApplyId) return false;
+      if (!object.Equals(Apply, other.Apply)) return false;
       if (ErrCode != other.ErrCode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -131,7 +148,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= teamId_.GetHashCode();
+      if (ApplyId.Length != 0) hash ^= ApplyId.GetHashCode();
+      if (apply_ != null) hash ^= Apply.GetHashCode();
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) hash ^= ErrCode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -151,9 +169,16 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      teamId_.WriteTo(output, _repeated_teamId_codec);
+      if (ApplyId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ApplyId);
+      }
+      if (apply_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Apply);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -166,9 +191,16 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      teamId_.WriteTo(ref output, _repeated_teamId_codec);
+      if (ApplyId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ApplyId);
+      }
+      if (apply_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Apply);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -181,7 +213,12 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += teamId_.CalculateSize(_repeated_teamId_codec);
+      if (ApplyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ApplyId);
+      }
+      if (apply_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Apply);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ErrCode);
       }
@@ -197,7 +234,15 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      teamId_.Add(other.teamId_);
+      if (other.ApplyId.Length != 0) {
+        ApplyId = other.ApplyId;
+      }
+      if (other.apply_ != null) {
+        if (apply_ == null) {
+          Apply = new global::Zproto.TeamJoinApplyListItem();
+        }
+        Apply.MergeFrom(other.Apply);
+      }
       if (other.ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         ErrCode = other.ErrCode;
       }
@@ -220,12 +265,18 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            teamId_.AddEntriesFrom(input, _repeated_teamId_codec);
+          case 18: {
+            ApplyId = input.ReadString();
             break;
           }
-          case 16: {
+          case 26: {
+            if (apply_ == null) {
+              Apply = new global::Zproto.TeamJoinApplyListItem();
+            }
+            input.ReadMessage(Apply);
+            break;
+          }
+          case 32: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }
@@ -248,12 +299,18 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            teamId_.AddEntriesFrom(ref input, _repeated_teamId_codec);
+          case 18: {
+            ApplyId = input.ReadString();
             break;
           }
-          case 16: {
+          case 26: {
+            if (apply_ == null) {
+              Apply = new global::Zproto.TeamJoinApplyListItem();
+            }
+            input.ReadMessage(Apply);
+            break;
+          }
+          case 32: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }

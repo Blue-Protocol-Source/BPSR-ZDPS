@@ -25,11 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiZzdHJ1X2RlbnlfYWxsX2FwcGx5X2pvaW5fcmVxdWVzdC5wcm90bxIGenBy",
-            "b3RvIhkKF0RlbnlBbGxBcHBseUpvaW5SZXF1ZXN0YgZwcm90bzM="));
+            "b3RvGiFlbnVtX2VfdGVhbV9qb2luX2FwcGx5X3R5cGUucHJvdG8iUwoXRGVu",
+            "eUFsbEFwcGx5Sm9pblJlcXVlc3QSOAoJYXBwbHlUeXBlGAEgASgOMhouenBy",
+            "b3RvLkVUZWFtSm9pbkFwcGx5VHlwZVIJYXBwbHlUeXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Zproto.EnumETeamJoinApplyTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.DenyAllApplyJoinRequest), global::Zproto.DenyAllApplyJoinRequest.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.DenyAllApplyJoinRequest), global::Zproto.DenyAllApplyJoinRequest.Parser, new[]{ "ApplyType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,6 +73,7 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DenyAllApplyJoinRequest(DenyAllApplyJoinRequest other) : this() {
+      applyType_ = other.applyType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -78,6 +81,18 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DenyAllApplyJoinRequest Clone() {
       return new DenyAllApplyJoinRequest(this);
+    }
+
+    /// <summary>Field number for the "applyType" field.</summary>
+    public const int ApplyTypeFieldNumber = 1;
+    private global::Zproto.ETeamJoinApplyType applyType_ = global::Zproto.ETeamJoinApplyType.Personal;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.ETeamJoinApplyType ApplyType {
+      get { return applyType_; }
+      set {
+        applyType_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -95,6 +110,7 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ApplyType != other.ApplyType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -102,6 +118,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (ApplyType != global::Zproto.ETeamJoinApplyType.Personal) hash ^= ApplyType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -120,6 +137,10 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ApplyType != global::Zproto.ETeamJoinApplyType.Personal) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ApplyType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -130,6 +151,10 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ApplyType != global::Zproto.ETeamJoinApplyType.Personal) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ApplyType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -140,6 +165,9 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ApplyType != global::Zproto.ETeamJoinApplyType.Personal) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ApplyType);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -151,6 +179,9 @@ namespace Zproto {
     public void MergeFrom(DenyAllApplyJoinRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.ApplyType != global::Zproto.ETeamJoinApplyType.Personal) {
+        ApplyType = other.ApplyType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -171,6 +202,10 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            ApplyType = (global::Zproto.ETeamJoinApplyType) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -190,6 +225,10 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            ApplyType = (global::Zproto.ETeamJoinApplyType) input.ReadEnum();
+            break;
+          }
         }
       }
     }

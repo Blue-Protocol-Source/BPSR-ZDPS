@@ -24,14 +24,15 @@ namespace Zproto {
     static EnumEReportSceneTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5lbnVtX2VfcmVwb3J0X3NjZW5lX3R5cGUucHJvdG8SBnpwcm90byqcAgoQ",
+            "Ch5lbnVtX2VfcmVwb3J0X3NjZW5lX3R5cGUucHJvdG8SBnpwcm90byq9AgoQ",
             "RVJlcG9ydFNjZW5lVHlwZRIYChRFUmVwb3J0U2NlbmVUeXBlTm9uZRAAEhgK",
             "FEVSZXBvcnRTY2VuZVR5cGVDaGF0EAESHAoYRVJlcG9ydFNjZW5lVHlwZUJh",
             "c2VJbmZvEAISHQoZRVJlcG9ydFNjZW5lVHlwZUdhbWVTY2VuZRADEhsKF0VS",
             "ZXBvcnRTY2VuZVR5cGVBcnRpY2xlEAQSGwoXRVJlcG9ydFNjZW5lVHlwZUNv",
             "bW1lbnQQBRIgChxFUmVwb3J0U2NlbmVUeXBlQnJlYWtUaHJvdWdoEAYSHQoZ",
             "RVJlcG9ydFNjZW5lVHlwZVVuaW9uSW5mbxAHEhwKGEVSZXBvcnRTY2VuZVR5",
-            "cGVIb21lSW5mbxAIYgZwcm90bzM="));
+            "cGVIb21lSW5mbxAIEh8KG0VSZXBvcnRTY2VuZVR5cGVMZWFkZXJCb2FyZBAJ",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EReportSceneType), }, null, null));
@@ -50,6 +51,7 @@ namespace Zproto {
     [pbr::OriginalName("EReportSceneTypeBreakThrough")] BreakThrough = 6,
     [pbr::OriginalName("EReportSceneTypeUnionInfo")] UnionInfo = 7,
     [pbr::OriginalName("EReportSceneTypeHomeInfo")] HomeInfo = 8,
+    [pbr::OriginalName("EReportSceneTypeLeaderBoard")] LeaderBoard = 9,
   }
 
   #endregion

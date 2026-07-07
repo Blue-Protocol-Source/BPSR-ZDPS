@@ -25,12 +25,12 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2RlYWxfYXBwbHlfam9pbl9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8i",
-            "TgoURGVhbEFwcGx5Sm9pblJlcXVlc3QSIAoLYXBwbGljYW50SWQYAiABKANS",
-            "C2FwcGxpY2FudElkEhQKBWFncmVlGAMgASgIUgVhZ3JlZWIGcHJvdG8z"));
+            "RgoURGVhbEFwcGx5Sm9pblJlcXVlc3QSGAoHYXBwbHlJZBgDIAEoCVIHYXBw",
+            "bHlJZBIUCgVhZ3JlZRgEIAEoCFIFYWdyZWViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.DealApplyJoinRequest), global::Zproto.DealApplyJoinRequest.Parser, new[]{ "ApplicantId", "Agree" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.DealApplyJoinRequest), global::Zproto.DealApplyJoinRequest.Parser, new[]{ "ApplyId", "Agree" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,7 +72,7 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DealApplyJoinRequest(DealApplyJoinRequest other) : this() {
-      applicantId_ = other.applicantId_;
+      applyId_ = other.applyId_;
       agree_ = other.agree_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -83,20 +83,20 @@ namespace Zproto {
       return new DealApplyJoinRequest(this);
     }
 
-    /// <summary>Field number for the "applicantId" field.</summary>
-    public const int ApplicantIdFieldNumber = 2;
-    private long applicantId_;
+    /// <summary>Field number for the "applyId" field.</summary>
+    public const int ApplyIdFieldNumber = 3;
+    private string applyId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long ApplicantId {
-      get { return applicantId_; }
+    public string ApplyId {
+      get { return applyId_; }
       set {
-        applicantId_ = value;
+        applyId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "agree" field.</summary>
-    public const int AgreeFieldNumber = 3;
+    public const int AgreeFieldNumber = 4;
     private bool agree_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,7 +122,7 @@ namespace Zproto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ApplicantId != other.ApplicantId) return false;
+      if (ApplyId != other.ApplyId) return false;
       if (Agree != other.Agree) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -131,7 +131,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ApplicantId != 0L) hash ^= ApplicantId.GetHashCode();
+      if (ApplyId.Length != 0) hash ^= ApplyId.GetHashCode();
       if (Agree != false) hash ^= Agree.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -151,12 +151,12 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ApplicantId != 0L) {
-        output.WriteRawTag(16);
-        output.WriteInt64(ApplicantId);
+      if (ApplyId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ApplyId);
       }
       if (Agree != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteBool(Agree);
       }
       if (_unknownFields != null) {
@@ -169,12 +169,12 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ApplicantId != 0L) {
-        output.WriteRawTag(16);
-        output.WriteInt64(ApplicantId);
+      if (ApplyId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ApplyId);
       }
       if (Agree != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteBool(Agree);
       }
       if (_unknownFields != null) {
@@ -187,8 +187,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ApplicantId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ApplicantId);
+      if (ApplyId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ApplyId);
       }
       if (Agree != false) {
         size += 1 + 1;
@@ -205,8 +205,8 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      if (other.ApplicantId != 0L) {
-        ApplicantId = other.ApplicantId;
+      if (other.ApplyId.Length != 0) {
+        ApplyId = other.ApplyId;
       }
       if (other.Agree != false) {
         Agree = other.Agree;
@@ -230,11 +230,11 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            ApplicantId = input.ReadInt64();
+          case 26: {
+            ApplyId = input.ReadString();
             break;
           }
-          case 24: {
+          case 32: {
             Agree = input.ReadBool();
             break;
           }
@@ -257,11 +257,11 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            ApplicantId = input.ReadInt64();
+          case 26: {
+            ApplyId = input.ReadString();
             break;
           }
-          case 24: {
+          case 32: {
             Agree = input.ReadBool();
             break;
           }

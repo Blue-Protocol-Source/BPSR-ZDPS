@@ -25,7 +25,7 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJlbnVtX2VfZ2xvYmFsX2NvbmRpdGlvbl90eXBlLnByb3RvEgZ6cHJvdG8q",
-            "2iEKFEVHbG9iYWxDb25kaXRpb25UeXBlEhsKF0dsb2JhbENvbmRpdGlvblR5",
+            "hSIKFEVHbG9iYWxDb25kaXRpb25UeXBlEhsKF0dsb2JhbENvbmRpdGlvblR5",
             "cGVOb25lEAASIAocR2xvYmFsQ29uZGl0aW9uVHlwZVVzZXJMZXZlbBABEiIK",
             "Hkdsb2JhbENvbmRpdGlvblR5cGVGaW5pc2hRdWVzdBACEisKJ0dsb2JhbENv",
             "bmRpdGlvblR5cGVQbGFuQ29zdFRhbGVudFBvaW50cxADEhkKFUdsb2JhbENv",
@@ -120,8 +120,9 @@ namespace Zproto {
             "UG9vbEVtcHR5EIEBEi4KKUdsb2JhbENvbmRpdGlvblR5cGVBZHZhbmNlRmFz",
             "aGlvblVubG9ja2VkEIIBEiYKIUdsb2JhbENvbmRpdGlvblR5cGVQZXRFbmVy",
             "Z3lMaW1pdBCDARIkCh9HbG9iYWxDb25kaXRpb25UeXBlU2NlbmVTdWJUeXBl",
-            "EIQBEiQKH0dsb2JhbENvbmRpdGlvblR5cGVIYXNBbnlCdWZmSWQQhQFiBnBy",
-            "b3RvMw=="));
+            "EIQBEiQKH0dsb2JhbENvbmRpdGlvblR5cGVIYXNBbnlCdWZmSWQQhQESKQok",
+            "R2xvYmFsQ29uZGl0aW9uVHlwZUZhbnRhc3lBdGxhc1N0YWdlEIYBYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EGlobalConditionType), }, null, null));
@@ -245,6 +246,7 @@ namespace Zproto {
     [pbr::OriginalName("GlobalConditionTypePetEnergyLimit")] GlobalConditionTypePetEnergyLimit = 131,
     [pbr::OriginalName("GlobalConditionTypeSceneSubType")] GlobalConditionTypeSceneSubType = 132,
     [pbr::OriginalName("GlobalConditionTypeHasAnyBuffId")] GlobalConditionTypeHasAnyBuffId = 133,
+    [pbr::OriginalName("GlobalConditionTypeFantasyAtlasStage")] GlobalConditionTypeFantasyAtlasStage = 134,
   }
 
   #endregion

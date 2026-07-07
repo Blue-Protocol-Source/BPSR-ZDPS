@@ -24,17 +24,18 @@ namespace Zproto {
     static EnumEFightSourceReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChllbnVtX2VfZmlnaHRfc291cmNlLnByb3RvEgZ6cHJvdG8qpAMKDEVGaWdo",
+            "ChllbnVtX2VfZmlnaHRfc291cmNlLnByb3RvEgZ6cHJvdG8qwgMKDEVGaWdo",
             "dFNvdXJjZRIVChFFRmlnaHRTb3VyY2VTa2lsbBAAEhQKEEVGaWdodFNvdXJj",
             "ZUJ1ZmYQARIWChJFRmlnaHRTb3VyY2VCdWxsZXQQAhIUChBFRmlnaHRTb3Vy",
             "Y2VUYXNrEAQSFgoSRUZpZ2h0U291cmNlVGFsZW50EAYSGwoXRUZpZ2h0U291",
             "cmNlU2Vhc29uTWVkYWwQBxIbChdFRmlnaHRTb3VyY2VVbmlvbkVmZmVjdBAI",
             "EhMKD0VGaWdodFNvdXJjZU1vZBAJEhUKEUVGaWdodFNvdXJjZUVxdWlwEAoS",
             "HwobRUZpZ2h0U291cmNlRXF1aXBTbG90UmVmaW5lEAsSFwoTRUZpZ2h0U291",
-            "cmNlVmVoaWNsZRAMEhwKGEVGaWdodFNvdXJjZVNlYXNvblRhbGVudBANEhsK",
-            "FkVGaWdodFNvdXJjZVNjZW5lQmVnaW4Q6AcSFgoRRUZpZ2h0U291cmNlU2Nl",
-            "bmUQ6QcSFgoRRUZpZ2h0U291cmNlQWZmaXgQ6gcSFgoRRUZpZ2h0U291cmNl",
-            "T3RoZXIQkE5iBnByb3RvMw=="));
+            "cmNlVmVoaWNsZRAMEhwKGEVGaWdodFNvdXJjZVNlYXNvblRhbGVudBANEhwK",
+            "GEVGaWdodFNvdXJjZUZhbnRhc3lBdGxhcxAOEhsKFkVGaWdodFNvdXJjZVNj",
+            "ZW5lQmVnaW4Q6AcSFgoRRUZpZ2h0U291cmNlU2NlbmUQ6QcSFgoRRUZpZ2h0",
+            "U291cmNlQWZmaXgQ6gcSFgoRRUZpZ2h0U291cmNlT3RoZXIQkE5iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EFightSource), }, null, null));
@@ -56,6 +57,7 @@ namespace Zproto {
     [pbr::OriginalName("EFightSourceEquipSlotRefine")] EquipSlotRefine = 11,
     [pbr::OriginalName("EFightSourceVehicle")] Vehicle = 12,
     [pbr::OriginalName("EFightSourceSeasonTalent")] SeasonTalent = 13,
+    [pbr::OriginalName("EFightSourceFantasyAtlas")] FantasyAtlas = 14,
     [pbr::OriginalName("EFightSourceSceneBegin")] SceneBegin = 1000,
     [pbr::OriginalName("EFightSourceScene")] Scene = 1001,
     [pbr::OriginalName("EFightSourceAffix")] Affix = 1002,

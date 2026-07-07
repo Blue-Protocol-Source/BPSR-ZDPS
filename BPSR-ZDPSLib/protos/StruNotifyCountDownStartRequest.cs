@@ -26,7 +26,7 @@ namespace Zproto {
           string.Concat(
             "CipzdHJ1X25vdGlmeV9jb3VudF9kb3duX3N0YXJ0X3JlcXVlc3QucHJvdG8S",
             "Bnpwcm90byJNChtOb3RpZnlDb3VudERvd25TdGFydFJlcXVlc3QSLgoSY291",
-            "bnREb3duU3RhcnRUaW1lGAEgASgFUhJjb3VudERvd25TdGFydFRpbWViBnBy",
+            "bnREb3duU3RhcnRUaW1lGAEgASgDUhJjb3VudERvd25TdGFydFRpbWViBnBy",
             "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
@@ -85,10 +85,10 @@ namespace Zproto {
 
     /// <summary>Field number for the "countDownStartTime" field.</summary>
     public const int CountDownStartTimeFieldNumber = 1;
-    private int countDownStartTime_;
+    private long countDownStartTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CountDownStartTime {
+    public long CountDownStartTime {
       get { return countDownStartTime_; }
       set {
         countDownStartTime_ = value;
@@ -118,7 +118,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CountDownStartTime != 0) hash ^= CountDownStartTime.GetHashCode();
+      if (CountDownStartTime != 0L) hash ^= CountDownStartTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -137,9 +137,9 @@ namespace Zproto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CountDownStartTime != 0) {
+      if (CountDownStartTime != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt32(CountDownStartTime);
+        output.WriteInt64(CountDownStartTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -151,9 +151,9 @@ namespace Zproto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CountDownStartTime != 0) {
+      if (CountDownStartTime != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt32(CountDownStartTime);
+        output.WriteInt64(CountDownStartTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -165,8 +165,8 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CountDownStartTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CountDownStartTime);
+      if (CountDownStartTime != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CountDownStartTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -180,7 +180,7 @@ namespace Zproto {
       if (other == null) {
         return;
       }
-      if (other.CountDownStartTime != 0) {
+      if (other.CountDownStartTime != 0L) {
         CountDownStartTime = other.CountDownStartTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -203,7 +203,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            CountDownStartTime = input.ReadInt32();
+            CountDownStartTime = input.ReadInt64();
             break;
           }
         }
@@ -226,7 +226,7 @@ namespace Zproto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            CountDownStartTime = input.ReadInt32();
+            CountDownStartTime = input.ReadInt64();
             break;
           }
         }

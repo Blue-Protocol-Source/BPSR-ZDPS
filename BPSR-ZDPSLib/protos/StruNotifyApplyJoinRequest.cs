@@ -25,13 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiRzdHJ1X25vdGlmeV9hcHBseV9qb2luX3JlcXVlc3QucHJvdG8SBnpwcm90",
-            "bxoVc3RydV9hcHBseV9pbmZvLnByb3RvIkEKFk5vdGlmeUFwcGx5Sm9pblJl",
-            "cXVlc3QSJwoFYXBwbHkYASABKAsyES56cHJvdG8uQXBwbHlJbmZvUgVhcHBs",
-            "eWIGcHJvdG8z"));
+            "bxokc3RydV90ZWFtX2pvaW5fYXBwbHlfbGlzdF9pdGVtLnByb3RvIm8KFk5v",
+            "dGlmeUFwcGx5Sm9pblJlcXVlc3QSMwoFYXBwbHkYAiABKAsyHS56cHJvdG8u",
+            "VGVhbUpvaW5BcHBseUxpc3RJdGVtUgVhcHBseRIgCgtsaXN0VmVyc2lvbhgD",
+            "IAEoA1ILbGlzdFZlcnNpb25iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruApplyInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruTeamJoinApplyListItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.NotifyApplyJoinRequest), global::Zproto.NotifyApplyJoinRequest.Parser, new[]{ "Apply" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.NotifyApplyJoinRequest), global::Zproto.NotifyApplyJoinRequest.Parser, new[]{ "Apply", "ListVersion" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,6 +75,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NotifyApplyJoinRequest(NotifyApplyJoinRequest other) : this() {
       apply_ = other.apply_ != null ? other.apply_.Clone() : null;
+      listVersion_ = other.listVersion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,14 +86,26 @@ namespace Zproto {
     }
 
     /// <summary>Field number for the "apply" field.</summary>
-    public const int ApplyFieldNumber = 1;
-    private global::Zproto.ApplyInfo apply_;
+    public const int ApplyFieldNumber = 2;
+    private global::Zproto.TeamJoinApplyListItem apply_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Zproto.ApplyInfo Apply {
+    public global::Zproto.TeamJoinApplyListItem Apply {
       get { return apply_; }
       set {
         apply_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "listVersion" field.</summary>
+    public const int ListVersionFieldNumber = 3;
+    private long listVersion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long ListVersion {
+      get { return listVersion_; }
+      set {
+        listVersion_ = value;
       }
     }
 
@@ -111,6 +125,7 @@ namespace Zproto {
         return true;
       }
       if (!object.Equals(Apply, other.Apply)) return false;
+      if (ListVersion != other.ListVersion) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -119,6 +134,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       if (apply_ != null) hash ^= Apply.GetHashCode();
+      if (ListVersion != 0L) hash ^= ListVersion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -138,8 +154,12 @@ namespace Zproto {
       output.WriteRawMessage(this);
     #else
       if (apply_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(18);
         output.WriteMessage(Apply);
+      }
+      if (ListVersion != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(ListVersion);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -152,8 +172,12 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (apply_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(18);
         output.WriteMessage(Apply);
+      }
+      if (ListVersion != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(ListVersion);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -167,6 +191,9 @@ namespace Zproto {
       int size = 0;
       if (apply_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Apply);
+      }
+      if (ListVersion != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ListVersion);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -182,9 +209,12 @@ namespace Zproto {
       }
       if (other.apply_ != null) {
         if (apply_ == null) {
-          Apply = new global::Zproto.ApplyInfo();
+          Apply = new global::Zproto.TeamJoinApplyListItem();
         }
         Apply.MergeFrom(other.Apply);
+      }
+      if (other.ListVersion != 0L) {
+        ListVersion = other.ListVersion;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -205,11 +235,15 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 18: {
             if (apply_ == null) {
-              Apply = new global::Zproto.ApplyInfo();
+              Apply = new global::Zproto.TeamJoinApplyListItem();
             }
             input.ReadMessage(Apply);
+            break;
+          }
+          case 24: {
+            ListVersion = input.ReadInt64();
             break;
           }
         }
@@ -231,11 +265,15 @@ namespace Zproto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 18: {
             if (apply_ == null) {
-              Apply = new global::Zproto.ApplyInfo();
+              Apply = new global::Zproto.TeamJoinApplyListItem();
             }
             input.ReadMessage(Apply);
+            break;
+          }
+          case 24: {
+            ListVersion = input.ReadInt64();
             break;
           }
         }

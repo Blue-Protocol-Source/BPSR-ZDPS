@@ -25,13 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlzdHJ1X3VzZXJfYXR0cl9kYXRhLnByb3RvEgZ6cHJvdG8aFXN0cnVfZGly",
-            "dHlfbWFzay5wcm90byJECgxVc2VyQXR0ckRhdGESFAoFc3RhdGUYAyABKAVS",
-            "BXN0YXRlEh4KCmZpZ2h0UG9pbnQYBCABKANSCmZpZ2h0UG9pbnRiBnByb3Rv",
-            "Mw=="));
+            "dHlfbWFzay5wcm90byJsCgxVc2VyQXR0ckRhdGESFAoFc3RhdGUYAyABKAVS",
+            "BXN0YXRlEh4KCmZpZ2h0UG9pbnQYBCABKANSCmZpZ2h0UG9pbnQSJgoOc2Vh",
+            "c29uU3RyZW5ndGgYBSABKAVSDnNlYXNvblN0cmVuZ3RoYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UserAttrData), global::Zproto.UserAttrData.Parser, new[]{ "State", "FightPoint" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UserAttrData), global::Zproto.UserAttrData.Parser, new[]{ "State", "FightPoint", "SeasonStrength" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,6 +75,7 @@ namespace Zproto {
     public UserAttrData(UserAttrData other) : this() {
       state_ = other.state_;
       fightPoint_ = other.fightPoint_;
+      seasonStrength_ = other.seasonStrength_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -108,6 +109,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "seasonStrength" field.</summary>
+    public const int SeasonStrengthFieldNumber = 5;
+    private int seasonStrength_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int SeasonStrength {
+      get { return seasonStrength_; }
+      set {
+        seasonStrength_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -125,6 +138,7 @@ namespace Zproto {
       }
       if (State != other.State) return false;
       if (FightPoint != other.FightPoint) return false;
+      if (SeasonStrength != other.SeasonStrength) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -134,6 +148,7 @@ namespace Zproto {
       int hash = 1;
       if (State != 0) hash ^= State.GetHashCode();
       if (FightPoint != 0L) hash ^= FightPoint.GetHashCode();
+      if (SeasonStrength != 0) hash ^= SeasonStrength.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -160,6 +175,10 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt64(FightPoint);
       }
+      if (SeasonStrength != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(SeasonStrength);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -178,6 +197,10 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt64(FightPoint);
       }
+      if (SeasonStrength != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(SeasonStrength);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -193,6 +216,9 @@ namespace Zproto {
       }
       if (FightPoint != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(FightPoint);
+      }
+      if (SeasonStrength != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SeasonStrength);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,6 +237,9 @@ namespace Zproto {
       }
       if (other.FightPoint != 0L) {
         FightPoint = other.FightPoint;
+      }
+      if (other.SeasonStrength != 0) {
+        SeasonStrength = other.SeasonStrength;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -239,6 +268,10 @@ namespace Zproto {
             FightPoint = input.ReadInt64();
             break;
           }
+          case 40: {
+            SeasonStrength = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -264,6 +297,10 @@ namespace Zproto {
           }
           case 32: {
             FightPoint = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            SeasonStrength = input.ReadInt32();
             break;
           }
         }

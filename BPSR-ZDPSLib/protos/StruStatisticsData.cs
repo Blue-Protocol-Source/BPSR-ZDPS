@@ -25,19 +25,20 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChpzdHJ1X3N0YXRpc3RpY3NfZGF0YS5wcm90bxIGenByb3RvGhZzdHJ1X3N0",
-            "YXRfcmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i3gIKDlN0",
+            "YXRfcmVjb3JkLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8ijAMKDlN0",
             "YXRpc3RpY3NEYXRhEk8KDXN0YXRSZWNvcmRNYXAYASADKAsyKS56cHJvdG8u",
             "U3RhdGlzdGljc0RhdGEuU3RhdFJlY29yZE1hcEVudHJ5Ug1zdGF0UmVjb3Jk",
             "TWFwEmEKE3NlYXNvblN0YXRSZWNvcmRNYXAYAiADKAsyLy56cHJvdG8uU3Rh",
             "dGlzdGljc0RhdGEuU2Vhc29uU3RhdFJlY29yZE1hcEVudHJ5UhNzZWFzb25T",
-            "dGF0UmVjb3JkTWFwGkgKElN0YXRSZWNvcmRNYXBFbnRyeRILCgNrZXkYASAB",
-            "KAUSIQoFdmFsdWUYAiABKAsyEi56cHJvdG8uU3RhdFJlY29yZDoCOAEaTgoY",
-            "U2Vhc29uU3RhdFJlY29yZE1hcEVudHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1",
-            "ZRgCIAEoCzISLnpwcm90by5TdGF0UmVjb3JkOgI4AWIGcHJvdG8z"));
+            "dGF0UmVjb3JkTWFwEiwKEWxhc3RNb2RpZnlUaW1lU2VjGAMgASgDUhFsYXN0",
+            "TW9kaWZ5VGltZVNlYxpIChJTdGF0UmVjb3JkTWFwRW50cnkSCwoDa2V5GAEg",
+            "ASgFEiEKBXZhbHVlGAIgASgLMhIuenByb3RvLlN0YXRSZWNvcmQ6AjgBGk4K",
+            "GFNlYXNvblN0YXRSZWNvcmRNYXBFbnRyeRILCgNrZXkYASABKAUSIQoFdmFs",
+            "dWUYAiABKAsyEi56cHJvdG8uU3RhdFJlY29yZDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruStatRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.StatisticsData), global::Zproto.StatisticsData.Parser, new[]{ "StatRecordMap", "SeasonStatRecordMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.StatisticsData), global::Zproto.StatisticsData.Parser, new[]{ "StatRecordMap", "SeasonStatRecordMap", "LastModifyTimeSec" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -81,6 +82,7 @@ namespace Zproto {
     public StatisticsData(StatisticsData other) : this() {
       statRecordMap_ = other.statRecordMap_.Clone();
       seasonStatRecordMap_ = other.seasonStatRecordMap_.Clone();
+      lastModifyTimeSec_ = other.lastModifyTimeSec_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -112,6 +114,18 @@ namespace Zproto {
       get { return seasonStatRecordMap_; }
     }
 
+    /// <summary>Field number for the "lastModifyTimeSec" field.</summary>
+    public const int LastModifyTimeSecFieldNumber = 3;
+    private long lastModifyTimeSec_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long LastModifyTimeSec {
+      get { return lastModifyTimeSec_; }
+      set {
+        lastModifyTimeSec_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -129,6 +143,7 @@ namespace Zproto {
       }
       if (!StatRecordMap.Equals(other.StatRecordMap)) return false;
       if (!SeasonStatRecordMap.Equals(other.SeasonStatRecordMap)) return false;
+      if (LastModifyTimeSec != other.LastModifyTimeSec) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,6 +153,7 @@ namespace Zproto {
       int hash = 1;
       hash ^= StatRecordMap.GetHashCode();
       hash ^= SeasonStatRecordMap.GetHashCode();
+      if (LastModifyTimeSec != 0L) hash ^= LastModifyTimeSec.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,6 +174,10 @@ namespace Zproto {
     #else
       statRecordMap_.WriteTo(output, _map_statRecordMap_codec);
       seasonStatRecordMap_.WriteTo(output, _map_seasonStatRecordMap_codec);
+      if (LastModifyTimeSec != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(LastModifyTimeSec);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,6 +190,10 @@ namespace Zproto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       statRecordMap_.WriteTo(ref output, _map_statRecordMap_codec);
       seasonStatRecordMap_.WriteTo(ref output, _map_seasonStatRecordMap_codec);
+      if (LastModifyTimeSec != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(LastModifyTimeSec);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -182,6 +206,9 @@ namespace Zproto {
       int size = 0;
       size += statRecordMap_.CalculateSize(_map_statRecordMap_codec);
       size += seasonStatRecordMap_.CalculateSize(_map_seasonStatRecordMap_codec);
+      if (LastModifyTimeSec != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(LastModifyTimeSec);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -196,6 +223,9 @@ namespace Zproto {
       }
       statRecordMap_.MergeFrom(other.statRecordMap_);
       seasonStatRecordMap_.MergeFrom(other.seasonStatRecordMap_);
+      if (other.LastModifyTimeSec != 0L) {
+        LastModifyTimeSec = other.LastModifyTimeSec;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -223,6 +253,10 @@ namespace Zproto {
             seasonStatRecordMap_.AddEntriesFrom(input, _map_seasonStatRecordMap_codec);
             break;
           }
+          case 24: {
+            LastModifyTimeSec = input.ReadInt64();
+            break;
+          }
         }
       }
     #endif
@@ -248,6 +282,10 @@ namespace Zproto {
           }
           case 18: {
             seasonStatRecordMap_.AddEntriesFrom(ref input, _map_seasonStatRecordMap_codec);
+            break;
+          }
+          case 24: {
+            LastModifyTimeSec = input.ReadInt64();
             break;
           }
         }

@@ -25,16 +25,19 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5zdHJ1X2NyZWF0ZV90ZWFtX3JlcXVlc3QucHJvdG8SBnpwcm90bxodZW51",
-            "bV9lX3RlYW1fbWVtYmVyX3R5cGUucHJvdG8izgEKEUNyZWF0ZVRlYW1SZXF1",
+            "bV9lX3RlYW1fbWVtYmVyX3R5cGUucHJvdG8i7AIKEUNyZWF0ZVRlYW1SZXF1",
             "ZXN0EhYKBmNoYXJJZBgCIAEoA1IGY2hhcklkEhoKCHRhcmdldElkGAMgASgN",
             "Ugh0YXJnZXRJZBIgCgtpc0F1dG9NYXRjaBgEIAEoCFILaXNBdXRvTWF0Y2gS",
             "IgoMaXNTaG93SW5IYWxsGAUgASgIUgxpc1Nob3dJbkhhbGwSPwoOdGVhbU1l",
             "bWJlclR5cGUYBiABKA4yFy56cHJvdG8uRVRlYW1NZW1iZXJUeXBlUg50ZWFt",
-            "TWVtYmVyVHlwZWIGcHJvdG8z"));
+            "TWVtYmVyVHlwZRJSCg1qb2luQ29uZGl0aW9uGAcgAygLMiwuenByb3RvLkNy",
+            "ZWF0ZVRlYW1SZXF1ZXN0LkpvaW5Db25kaXRpb25FbnRyeVINam9pbkNvbmRp",
+            "dGlvbhISCgRkZXNjGAggASgJUgRkZXNjGjQKEkpvaW5Db25kaXRpb25FbnRy",
+            "eRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAM6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETeamMemberTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CreateTeamRequest), global::Zproto.CreateTeamRequest.Parser, new[]{ "CharId", "TargetId", "IsAutoMatch", "IsShowInHall", "TeamMemberType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CreateTeamRequest), global::Zproto.CreateTeamRequest.Parser, new[]{ "CharId", "TargetId", "IsAutoMatch", "IsShowInHall", "TeamMemberType", "JoinCondition", "Desc" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -81,6 +84,8 @@ namespace Zproto {
       isAutoMatch_ = other.isAutoMatch_;
       isShowInHall_ = other.isShowInHall_;
       teamMemberType_ = other.teamMemberType_;
+      joinCondition_ = other.joinCondition_.Clone();
+      desc_ = other.desc_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -150,6 +155,29 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "joinCondition" field.</summary>
+    public const int JoinConditionFieldNumber = 7;
+    private static readonly pbc::MapField<int, long>.Codec _map_joinCondition_codec
+        = new pbc::MapField<int, long>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 58);
+    private readonly pbc::MapField<int, long> joinCondition_ = new pbc::MapField<int, long>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<int, long> JoinCondition {
+      get { return joinCondition_; }
+    }
+
+    /// <summary>Field number for the "desc" field.</summary>
+    public const int DescFieldNumber = 8;
+    private string desc_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Desc {
+      get { return desc_; }
+      set {
+        desc_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -170,6 +198,8 @@ namespace Zproto {
       if (IsAutoMatch != other.IsAutoMatch) return false;
       if (IsShowInHall != other.IsShowInHall) return false;
       if (TeamMemberType != other.TeamMemberType) return false;
+      if (!JoinCondition.Equals(other.JoinCondition)) return false;
+      if (Desc != other.Desc) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -182,6 +212,8 @@ namespace Zproto {
       if (IsAutoMatch != false) hash ^= IsAutoMatch.GetHashCode();
       if (IsShowInHall != false) hash ^= IsShowInHall.GetHashCode();
       if (TeamMemberType != global::Zproto.ETeamMemberType.Five) hash ^= TeamMemberType.GetHashCode();
+      hash ^= JoinCondition.GetHashCode();
+      if (Desc.Length != 0) hash ^= Desc.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -220,6 +252,11 @@ namespace Zproto {
         output.WriteRawTag(48);
         output.WriteEnum((int) TeamMemberType);
       }
+      joinCondition_.WriteTo(output, _map_joinCondition_codec);
+      if (Desc.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Desc);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -250,6 +287,11 @@ namespace Zproto {
         output.WriteRawTag(48);
         output.WriteEnum((int) TeamMemberType);
       }
+      joinCondition_.WriteTo(ref output, _map_joinCondition_codec);
+      if (Desc.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Desc);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -274,6 +316,10 @@ namespace Zproto {
       }
       if (TeamMemberType != global::Zproto.ETeamMemberType.Five) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TeamMemberType);
+      }
+      size += joinCondition_.CalculateSize(_map_joinCondition_codec);
+      if (Desc.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Desc);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -301,6 +347,10 @@ namespace Zproto {
       }
       if (other.TeamMemberType != global::Zproto.ETeamMemberType.Five) {
         TeamMemberType = other.TeamMemberType;
+      }
+      joinCondition_.MergeFrom(other.joinCondition_);
+      if (other.Desc.Length != 0) {
+        Desc = other.Desc;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -341,6 +391,14 @@ namespace Zproto {
             TeamMemberType = (global::Zproto.ETeamMemberType) input.ReadEnum();
             break;
           }
+          case 58: {
+            joinCondition_.AddEntriesFrom(input, _map_joinCondition_codec);
+            break;
+          }
+          case 66: {
+            Desc = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -378,6 +436,14 @@ namespace Zproto {
           }
           case 48: {
             TeamMemberType = (global::Zproto.ETeamMemberType) input.ReadEnum();
+            break;
+          }
+          case 58: {
+            joinCondition_.AddEntriesFrom(ref input, _map_joinCondition_codec);
+            break;
+          }
+          case 66: {
+            Desc = input.ReadString();
             break;
           }
         }

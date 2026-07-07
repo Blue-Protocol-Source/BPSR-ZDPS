@@ -26,7 +26,7 @@ namespace Zproto {
           string.Concat(
             "ChlzdHJ1X3RlYW1fYmFzZV9pbmZvLnByb3RvEgZ6cHJvdG8aHWVudW1fZV90",
             "ZWFtX21lbWJlcl90eXBlLnByb3RvGiFzdHJ1X3RlYW1fbWVtYmVyX2dyb3Vw",
-            "X2luZm8ucHJvdG8i5wMKDFRlYW1CYXNlSW5mbxIWCgZ0ZWFtSWQYASABKANS",
+            "X2luZm8ucHJvdG8irwQKDFRlYW1CYXNlSW5mbxIWCgZ0ZWFtSWQYASABKANS",
             "BnRlYW1JZBIaCgh0YXJnZXRJZBgCIAEoDVIIdGFyZ2V0SWQSGgoIbGVhZGVy",
             "SWQYAyABKANSCGxlYWRlcklkEhIKBGRlc2MYBCABKAlSBGRlc2MSHAoJYXV0",
             "b01hdGNoGAUgASgIUglhdXRvTWF0Y2gSGgoIaGFsbFNob3cYBiABKAhSCGhh",
@@ -35,13 +35,14 @@ namespace Zproto {
             "ZW1iZXJUeXBlEmIKFHRlYW1NZW1iZXJHcm91cEluZm9zGAkgAygLMi4uenBy",
             "b3RvLlRlYW1CYXNlSW5mby5UZWFtTWVtYmVyR3JvdXBJbmZvc0VudHJ5UhR0",
             "ZWFtTWVtYmVyR3JvdXBJbmZvcxIeCgpjcmVhdGVUaW1lGAogASgDUgpjcmVh",
-            "dGVUaW1lGlgKGVRlYW1NZW1iZXJHcm91cEluZm9zRW50cnkSCwoDa2V5GAEg",
-            "ASgFEioKBXZhbHVlGAIgASgLMhsuenByb3RvLlRlYW1NZW1iZXJHcm91cElu",
-            "Zm86AjgBYgZwcm90bzM="));
+            "dGVUaW1lEh4KCmZpZ2h0UG9pbnQYCyABKANSCmZpZ2h0UG9pbnQSJgoOc2Vh",
+            "c29uU3RyZW5ndGgYDCABKAVSDnNlYXNvblN0cmVuZ3RoGlgKGVRlYW1NZW1i",
+            "ZXJHcm91cEluZm9zRW50cnkSCwoDa2V5GAEgASgFEioKBXZhbHVlGAIgASgL",
+            "MhsuenByb3RvLlRlYW1NZW1iZXJHcm91cEluZm86AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumETeamMemberTypeReflection.Descriptor, global::Zproto.StruTeamMemberGroupInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.TeamBaseInfo), global::Zproto.TeamBaseInfo.Parser, new[]{ "TeamId", "TargetId", "LeaderId", "Desc", "AutoMatch", "HallShow", "Matching", "TeamMemberType", "TeamMemberGroupInfos", "CreateTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.TeamBaseInfo), global::Zproto.TeamBaseInfo.Parser, new[]{ "TeamId", "TargetId", "LeaderId", "Desc", "AutoMatch", "HallShow", "Matching", "TeamMemberType", "TeamMemberGroupInfos", "CreateTime", "FightPoint", "SeasonStrength" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -93,6 +94,8 @@ namespace Zproto {
       teamMemberType_ = other.teamMemberType_;
       teamMemberGroupInfos_ = other.teamMemberGroupInfos_.Clone();
       createTime_ = other.createTime_;
+      fightPoint_ = other.fightPoint_;
+      seasonStrength_ = other.seasonStrength_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -221,6 +224,30 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "fightPoint" field.</summary>
+    public const int FightPointFieldNumber = 11;
+    private long fightPoint_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long FightPoint {
+      get { return fightPoint_; }
+      set {
+        fightPoint_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "seasonStrength" field.</summary>
+    public const int SeasonStrengthFieldNumber = 12;
+    private int seasonStrength_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int SeasonStrength {
+      get { return seasonStrength_; }
+      set {
+        seasonStrength_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -246,6 +273,8 @@ namespace Zproto {
       if (TeamMemberType != other.TeamMemberType) return false;
       if (!TeamMemberGroupInfos.Equals(other.TeamMemberGroupInfos)) return false;
       if (CreateTime != other.CreateTime) return false;
+      if (FightPoint != other.FightPoint) return false;
+      if (SeasonStrength != other.SeasonStrength) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -263,6 +292,8 @@ namespace Zproto {
       if (TeamMemberType != global::Zproto.ETeamMemberType.Five) hash ^= TeamMemberType.GetHashCode();
       hash ^= TeamMemberGroupInfos.GetHashCode();
       if (CreateTime != 0L) hash ^= CreateTime.GetHashCode();
+      if (FightPoint != 0L) hash ^= FightPoint.GetHashCode();
+      if (SeasonStrength != 0) hash ^= SeasonStrength.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -318,6 +349,14 @@ namespace Zproto {
         output.WriteRawTag(80);
         output.WriteInt64(CreateTime);
       }
+      if (FightPoint != 0L) {
+        output.WriteRawTag(88);
+        output.WriteInt64(FightPoint);
+      }
+      if (SeasonStrength != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(SeasonStrength);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -365,6 +404,14 @@ namespace Zproto {
         output.WriteRawTag(80);
         output.WriteInt64(CreateTime);
       }
+      if (FightPoint != 0L) {
+        output.WriteRawTag(88);
+        output.WriteInt64(FightPoint);
+      }
+      if (SeasonStrength != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(SeasonStrength);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -402,6 +449,12 @@ namespace Zproto {
       size += teamMemberGroupInfos_.CalculateSize(_map_teamMemberGroupInfos_codec);
       if (CreateTime != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(CreateTime);
+      }
+      if (FightPoint != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(FightPoint);
+      }
+      if (SeasonStrength != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SeasonStrength);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -442,6 +495,12 @@ namespace Zproto {
       teamMemberGroupInfos_.MergeFrom(other.teamMemberGroupInfos_);
       if (other.CreateTime != 0L) {
         CreateTime = other.CreateTime;
+      }
+      if (other.FightPoint != 0L) {
+        FightPoint = other.FightPoint;
+      }
+      if (other.SeasonStrength != 0) {
+        SeasonStrength = other.SeasonStrength;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -502,6 +561,14 @@ namespace Zproto {
             CreateTime = input.ReadInt64();
             break;
           }
+          case 88: {
+            FightPoint = input.ReadInt64();
+            break;
+          }
+          case 96: {
+            SeasonStrength = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -559,6 +626,14 @@ namespace Zproto {
           }
           case 80: {
             CreateTime = input.ReadInt64();
+            break;
+          }
+          case 88: {
+            FightPoint = input.ReadInt64();
+            break;
+          }
+          case 96: {
+            SeasonStrength = input.ReadInt32();
             break;
           }
         }

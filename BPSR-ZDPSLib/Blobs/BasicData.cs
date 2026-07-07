@@ -26,6 +26,12 @@ public class BasicData : BlobType
     public long? OnlineTime;
     public long? SumSaveDiamond;
     public bool? IsNewbie;
+    public int? SeasonLevel;
+    public bool? IsBackflow;
+    public int? MentorType;
+    public bool? IsValidNewbie;
+    public bool? IsValidBackflow;
+    public int? ValidMentorType;
 
     public BasicData()
     {
@@ -89,6 +95,15 @@ public class BasicData : BlobType
                 return true;
             case Zproto.BasicData.SumSaveDiamondFieldNumber:
                 SumSaveDiamond = blob.ReadLong();
+                return true;
+            case Zproto.BasicData.SeasonLevelFieldNumber:
+                SeasonLevel = blob.ReadInt();
+                return true;
+            case Zproto.BasicData.MentorTypeFieldNumber:
+                MentorType = blob.ReadInt();
+                return true;
+            case Zproto.BasicData.ValidMentorTypeFieldNumber:
+                ValidMentorType = blob.ReadInt();
                 return true;
             default:
                 return false;

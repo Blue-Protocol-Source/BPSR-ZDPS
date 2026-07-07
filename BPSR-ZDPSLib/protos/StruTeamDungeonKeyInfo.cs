@@ -24,15 +24,18 @@ namespace Zproto {
     static StruTeamDungeonKeyInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBzdHJ1X3RlYW1fZHVuZ2Vvbl9rZXlfaW5mby5wcm90bxIGenByb3RvIpYB",
-            "ChJUZWFtRHVuZ2VvbktleUluZm8SFgoGY2hhcklkGAEgASgDUgZjaGFySWQS",
-            "JgoOcm9sbEF3YXJkQ291bnQYAiABKAVSDnJvbGxBd2FyZENvdW50EiQKDWtl",
-            "eUF3YXJkQ291bnQYAyABKAVSDWtleUF3YXJkQ291bnQSGgoIaXNBc3Npc3QY",
-            "BCABKAhSCGlzQXNzaXN0YgZwcm90bzM="));
+            "CiBzdHJ1X3RlYW1fZHVuZ2Vvbl9rZXlfaW5mby5wcm90bxIGenByb3RvGi5z",
+            "dHJ1X3RlYW1fZHVuZ2Vvbl9sZWFkZXJfYm9hcmRfdm90ZV9pbmZvLnByb3Rv",
+            "IvABChJUZWFtRHVuZ2VvbktleUluZm8SFgoGY2hhcklkGAEgASgDUgZjaGFy",
+            "SWQSJgoOcm9sbEF3YXJkQ291bnQYAiABKAVSDnJvbGxBd2FyZENvdW50EiQK",
+            "DWtleUF3YXJkQ291bnQYAyABKAVSDWtleUF3YXJkQ291bnQSGgoIaXNBc3Np",
+            "c3QYBCABKAhSCGlzQXNzaXN0ElgKE2xlYWRlckJvYXJkVm90ZUluZm8YBSAB",
+            "KAsyJi56cHJvdG8uVGVhbUR1bmdlb25MZWFkZXJCb2FyZFZvdGVJbmZvUhNs",
+            "ZWFkZXJCb2FyZFZvdGVJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Zproto.StruTeamDungeonLeaderBoardVoteInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.TeamDungeonKeyInfo), global::Zproto.TeamDungeonKeyInfo.Parser, new[]{ "CharId", "RollAwardCount", "KeyAwardCount", "IsAssist" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.TeamDungeonKeyInfo), global::Zproto.TeamDungeonKeyInfo.Parser, new[]{ "CharId", "RollAwardCount", "KeyAwardCount", "IsAssist", "LeaderBoardVoteInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -78,6 +81,7 @@ namespace Zproto {
       rollAwardCount_ = other.rollAwardCount_;
       keyAwardCount_ = other.keyAwardCount_;
       isAssist_ = other.isAssist_;
+      leaderBoardVoteInfo_ = other.leaderBoardVoteInfo_ != null ? other.leaderBoardVoteInfo_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -135,6 +139,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "leaderBoardVoteInfo" field.</summary>
+    public const int LeaderBoardVoteInfoFieldNumber = 5;
+    private global::Zproto.TeamDungeonLeaderBoardVoteInfo leaderBoardVoteInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.TeamDungeonLeaderBoardVoteInfo LeaderBoardVoteInfo {
+      get { return leaderBoardVoteInfo_; }
+      set {
+        leaderBoardVoteInfo_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -154,6 +170,7 @@ namespace Zproto {
       if (RollAwardCount != other.RollAwardCount) return false;
       if (KeyAwardCount != other.KeyAwardCount) return false;
       if (IsAssist != other.IsAssist) return false;
+      if (!object.Equals(LeaderBoardVoteInfo, other.LeaderBoardVoteInfo)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,6 +182,7 @@ namespace Zproto {
       if (RollAwardCount != 0) hash ^= RollAwardCount.GetHashCode();
       if (KeyAwardCount != 0) hash ^= KeyAwardCount.GetHashCode();
       if (IsAssist != false) hash ^= IsAssist.GetHashCode();
+      if (leaderBoardVoteInfo_ != null) hash ^= LeaderBoardVoteInfo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -199,6 +217,10 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteBool(IsAssist);
       }
+      if (leaderBoardVoteInfo_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(LeaderBoardVoteInfo);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -225,6 +247,10 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteBool(IsAssist);
       }
+      if (leaderBoardVoteInfo_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(LeaderBoardVoteInfo);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -246,6 +272,9 @@ namespace Zproto {
       }
       if (IsAssist != false) {
         size += 1 + 1;
+      }
+      if (leaderBoardVoteInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LeaderBoardVoteInfo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -270,6 +299,12 @@ namespace Zproto {
       }
       if (other.IsAssist != false) {
         IsAssist = other.IsAssist;
+      }
+      if (other.leaderBoardVoteInfo_ != null) {
+        if (leaderBoardVoteInfo_ == null) {
+          LeaderBoardVoteInfo = new global::Zproto.TeamDungeonLeaderBoardVoteInfo();
+        }
+        LeaderBoardVoteInfo.MergeFrom(other.LeaderBoardVoteInfo);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -306,6 +341,13 @@ namespace Zproto {
             IsAssist = input.ReadBool();
             break;
           }
+          case 42: {
+            if (leaderBoardVoteInfo_ == null) {
+              LeaderBoardVoteInfo = new global::Zproto.TeamDungeonLeaderBoardVoteInfo();
+            }
+            input.ReadMessage(LeaderBoardVoteInfo);
+            break;
+          }
         }
       }
     #endif
@@ -339,6 +381,13 @@ namespace Zproto {
           }
           case 32: {
             IsAssist = input.ReadBool();
+            break;
+          }
+          case 42: {
+            if (leaderBoardVoteInfo_ == null) {
+              LeaderBoardVoteInfo = new global::Zproto.TeamDungeonLeaderBoardVoteInfo();
+            }
+            input.ReadMessage(LeaderBoardVoteInfo);
             break;
           }
         }
