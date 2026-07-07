@@ -243,7 +243,7 @@
     ],
     "Bgm": [
       "BGM_FlowPath_Scene",
-      "BGM_Fld003_Main"
+      "BGM_Fld002_Main"
     ],
     "LoadingBgm": "",
     "FallDis": 1.0,
@@ -2253,6 +2253,266 @@
   },
   "1223": {
     "Id": 1223,
+    "Name": "Chaotic - Dragon Claw Valley",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 26,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_Dng1201_Dragon"
+    ],
+    "BornId": 305,
+    "ReviveTableId": [
+      110,
+      201
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1201"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1231": {
+    "Id": 1231,
+    "Name": "Unstable - Dragon Claw Valley",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 26,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_Dng1201_Dragon"
+    ],
+    "BornId": 104050,
+    "ReviveTableId": [
+      103,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1201"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1232": {
+    "Id": 1232,
+    "Name": "Unstable - Dragon Claw Valley",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 26,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_Dng1201_Dragon"
+    ],
+    "BornId": 104050,
+    "ReviveTableId": [
+      103,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1201"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1233": {
+    "Id": 1233,
+    "Name": "Chaotic - Dragon Claw Valley",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 26,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_Dng1201_Dragon"
+    ],
+    "BornId": 305,
+    "ReviveTableId": [
+      103,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1201"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1234": {
+    "Id": 1234,
+    "Name": "Chaotic - Dragon Claw Valley",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 26,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_Dng1201_Dragon"
+    ],
+    "BornId": 305,
+    "ReviveTableId": [
+      110,
+      201
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1201"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1235": {
+    "Id": 1235,
     "Name": "Chaotic - Dragon Claw Valley",
     "SceneType": 2,
     "SceneSubType": 5,

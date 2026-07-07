@@ -5274,6 +5274,37 @@
     "ShowChange": [],
     "ShowColor": []
   },
+  "123100": {
+    "Id": 123100,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1231,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "The Boss releases all of its power upon going berserk.",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "BossTime"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "BossTimeMax"
+      ]
+    ],
+    "SpVariableName": [
+      "Berserk"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": [
+      "#ff2e7d"
+    ]
+  },
   "150011": {
     "Id": 150011,
     "TargetType": 10,

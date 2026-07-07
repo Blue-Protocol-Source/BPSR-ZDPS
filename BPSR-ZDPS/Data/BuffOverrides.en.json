@@ -1232,10 +1232,60 @@
         "Desc": "Paradox-Calamity Remnant - Continuation becomes Invulnerable during phase transition",
         "BuffType": 1
     },
+    "829238":
+    {
+        "Name": "Raid Death Teleport To Team",
+        "Desc": "Player fell off the map and died. Teleporting their corpse to team location"
+    },
     "829242":
     {
         "Name": "Mech Sentinel Phase: Enable Shield Explosion",
         "Desc": "At the end of the duration, Mech Sentinels are allowed to explode their shields to deal damage"
+    },
+    "829304":
+    {
+        "Name": "Spread AOE",
+        "Desc": "Player will explode at the end of the duration"
+    },
+    "829305":
+    {
+        "Name": "Phantom Stack",
+        "Desc": "Player is marked with an illusory stack marker"
+    },
+    "829306":
+    {
+        "Name": "Electrical Spread Flare",
+        "Desc": "Player has an electrical AOE release from their location at end of duration"
+    },
+    "829307":
+    {
+        "Name": "Phantom Spread Flare",
+        "Desc": "Player is marked with an illusory spread away flare marker"
+    },
+    "829308":
+    {
+        "Name": "Electrical Explosion Marker",
+        "Desc": "Player explodes at end of duration"
+    },
+    "829309":
+    {
+        "Name": "Phantom Spread AOE",
+        "Desc": "Player is marked to explode at end of duration with an illusory spread marker"
+    },
+    "829315":
+    {
+        "Name": "Teleport Player (Divine Scale - Preset Return)",
+        "Desc": "Player has been teleported to the spacetime rift location"
+    },
+    "829316":
+    {
+        "Name": "Divine Scale - Causality Warp",
+        "Desc": "Player has been launched by an electrical sphere explosion"
+    },
+    "829320":
+    {
+        "Name": "Final Symphony (Locked)",
+        "Desc": "Player is locked in place and unable to take actions for the duration"
     },
     "840007":
     {

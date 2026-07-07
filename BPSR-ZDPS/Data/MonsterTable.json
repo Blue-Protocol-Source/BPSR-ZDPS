@@ -17592,6 +17592,370 @@
     "BkCanBeHit": true,
     "DoubleBloodBar": []
   },
+  "1397": {
+    "Id": 1397,
+    "Name": "Thunder Core",
+    "ModelID": 1398,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        360,
+        0,
+        1,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 1501,
+    "WalkSpeed": 3.0,
+    "RunSpeed": 3.0,
+    "FRunSpeed": 3.0,
+    "AlertSpeed": 3.0,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 51,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "1398": {
+    "Id": 1398,
+    "Name": "Wind Core",
+    "ModelID": 1398,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        360,
+        0,
+        1,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 920552,
+    "WalkSpeed": 3.0,
+    "RunSpeed": 3.0,
+    "FRunSpeed": 3.0,
+    "AlertSpeed": 3.0,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 51,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "1399": {
+    "Id": 1399,
+    "Name": "Igoreus",
+    "ModelID": 1401,
+    "MonsterType": 2,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      140192,
+      140193,
+      140194,
+      140195,
+      140196,
+      140197,
+      140198,
+      140199,
+      140101,
+      140102,
+      140103,
+      140104,
+      140105,
+      140106,
+      140107,
+      140108,
+      140109,
+      140110,
+      140111,
+      140112,
+      140113,
+      140114,
+      140115,
+      140116,
+      140117,
+      140118,
+      140119,
+      140120,
+      140121,
+      140122,
+      140123,
+      140124,
+      140125,
+      140126,
+      101318,
+      101319,
+      101320,
+      101321,
+      101337,
+      101341,
+      140127,
+      140128,
+      140129,
+      140130,
+      140131,
+      140132,
+      140133,
+      140134,
+      140135,
+      140136,
+      140137,
+      140138,
+      140139,
+      140140,
+      140141,
+      140142,
+      140143,
+      140144
+    ],
+    "HatredBuildType": [
+      0,
+      1
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        360,
+        0,
+        10,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      2,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 1401,
+    "WalkSpeed": 7.0,
+    "RunSpeed": 8.0,
+    "FRunSpeed": 8.0,
+    "AlertSpeed": 7.0,
+    "MinAlertDis": 5.0,
+    "MaxAlertDis": 50.0,
+    "BodyDuration": 3000,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 1401,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 15.0,
+    "WeeknessDuration": 1.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 100.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
   "1400": {
     "Id": 1400,
     "Name": "Goblin King - Void",
@@ -108606,7 +108970,7 @@
   "11221": {
     "Id": 11221,
     "Name": "Venomous Shrimpshroom",
-    "ModelID": 33010,
+    "ModelID": 33317,
     "MonsterType": 0,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -108714,7 +109078,7 @@
   "11222": {
     "Id": 11222,
     "Name": "Paralyzing Shrimpshroom",
-    "ModelID": 33010,
+    "ModelID": 33318,
     "MonsterType": 1,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -108822,7 +109186,7 @@
   "11223": {
     "Id": 11223,
     "Name": "Dream Manifestor",
-    "ModelID": 33010,
+    "ModelID": 33319,
     "MonsterType": 2,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -108930,14 +109294,14 @@
   "11224": {
     "Id": 11224,
     "Name": "Valley Muku",
-    "ModelID": 33041,
+    "ModelID": 33320,
     "MonsterType": 0,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
     "MonsterRank": "",
     "SkillIds": [
-      100702,
-      120102
+      1002103,
+      1002101
     ],
     "HatredBuildType": [
       1,
@@ -109041,14 +109405,14 @@
   "11225": {
     "Id": 11225,
     "Name": "Valley Muku",
-    "ModelID": 33041,
+    "ModelID": 33321,
     "MonsterType": 0,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
     "MonsterRank": "",
     "SkillIds": [
-      100702,
-      120102
+      1002104,
+      1002101
     ],
     "HatredBuildType": [
       1,
@@ -109152,17 +109516,15 @@
   "11226": {
     "Id": 11226,
     "Name": "Valley Brawler",
-    "ModelID": 33058,
+    "ModelID": 33322,
     "MonsterType": 1,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
     "MonsterRank": "",
     "SkillIds": [
-      1005205,
-      1005203,
-      1005201,
-      1005202,
-      1005204
+      1002206,
+      1002207,
+      1002203
     ],
     "HatredBuildType": [
       1,
@@ -109266,17 +109628,21 @@
   "11227": {
     "Id": 11227,
     "Name": "Valley Vanguard",
-    "ModelID": 33058,
+    "ModelID": 33323,
     "MonsterType": 2,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
     "MonsterRank": "",
     "SkillIds": [
-      1005205,
-      1005203,
-      1005201,
-      1005202,
-      1005204
+      1122707,
+      1122706,
+      1122705,
+      1122704,
+      1122703,
+      1122708,
+      1122709,
+      1122702,
+      1122701
     ],
     "HatredBuildType": [
       1,
@@ -109380,7 +109746,7 @@
   "11228": {
     "Id": 11228,
     "Name": "Green Foam Goblin",
-    "ModelID": 33046,
+    "ModelID": 33324,
     "MonsterType": 0,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -109490,8 +109856,8 @@
   },
   "11229": {
     "Id": 11229,
-    "Name": "Thunder Foam Goblin",
-    "ModelID": 33046,
+    "Name": "Purple Foam Goblin",
+    "ModelID": 33325,
     "MonsterType": 0,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -109602,7 +109968,7 @@
   "11230": {
     "Id": 11230,
     "Name": "Goblin Sage",
-    "ModelID": 33125,
+    "ModelID": 33326,
     "MonsterType": 1,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -109714,7 +110080,7 @@
   "11231": {
     "Id": 11231,
     "Name": "Shell-Gathering Cultist",
-    "ModelID": 33014,
+    "ModelID": 33327,
     "MonsterType": 2,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -109831,7 +110197,7 @@
   "11232": {
     "Id": 11232,
     "Name": "Valley Scout",
-    "ModelID": 33041,
+    "ModelID": 33328,
     "MonsterType": 0,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -109942,7 +110308,7 @@
   "11233": {
     "Id": 11233,
     "Name": "Valley Crossbowman",
-    "ModelID": 33041,
+    "ModelID": 33329,
     "MonsterType": 0,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -110053,7 +110419,7 @@
   "11234": {
     "Id": 11234,
     "Name": "Valley Ranger",
-    "ModelID": 33058,
+    "ModelID": 33330,
     "MonsterType": 1,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -110167,7 +110533,7 @@
   "11235": {
     "Id": 11235,
     "Name": "Wandering Traveler",
-    "ModelID": 33058,
+    "ModelID": 33331,
     "MonsterType": 2,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -110281,7 +110647,7 @@
   "11236": {
     "Id": 11236,
     "Name": "Sharkman 1",
-    "ModelID": 33165,
+    "ModelID": 33332,
     "MonsterType": 0,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -110393,7 +110759,7 @@
   "11237": {
     "Id": 11237,
     "Name": "Sharkman 2",
-    "ModelID": 33166,
+    "ModelID": 33333,
     "MonsterType": 0,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -110505,7 +110871,7 @@
   "11238": {
     "Id": 11238,
     "Name": "Sharkman Elite",
-    "ModelID": 33167,
+    "ModelID": 33334,
     "MonsterType": 1,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -110619,7 +110985,7 @@
   "11239": {
     "Id": 11239,
     "Name": "Sharkman Boss",
-    "ModelID": 33168,
+    "ModelID": 33335,
     "MonsterType": 2,
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
@@ -125640,6 +126006,630 @@
     "IsNotGround": false,
     "BornSkillId": 0,
     "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "21001": {
+    "Id": 21001,
+    "Name": "Suicidal Soldier 03",
+    "ModelID": 1105,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      110514
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        50,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 11,
+    "WalkSpeed": 2.5,
+    "RunSpeed": 10.0,
+    "FRunSpeed": 10.0,
+    "AlertSpeed": 2.5,
+    "MinAlertDis": 3.5,
+    "MaxAlertDis": 3.5,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 3,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      28
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 100514,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "21002": {
+    "Id": 21002,
+    "Name": "Prank Bomb",
+    "ModelID": 21002,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      702204
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        50,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 1960,
+    "WalkSpeed": 2.4,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 2.0,
+    "MaxAlertDis": 5.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      32
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "21003": {
+    "Id": 21003,
+    "Name": "Void Corruption Soulshard",
+    "ModelID": 700001,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      110324
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        50,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 100001,
+    "WalkSpeed": 2.2,
+    "RunSpeed": 8.0,
+    "FRunSpeed": 10.0,
+    "AlertSpeed": 8.0,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 122,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 110324,
+    "BkCanBeHit": true,
+    "DoubleBloodBar": []
+  },
+  "21004": {
+    "Id": 21004,
+    "Name": "Defensive Type 05",
+    "ModelID": 1101,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      110121
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        50,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 21004,
+    "WalkSpeed": 2.5,
+    "RunSpeed": 8.0,
+    "FRunSpeed": 8.0,
+    "AlertSpeed": 2.5,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      31
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": true,
+    "DoubleBloodBar": []
+  },
+  "21005": {
+    "Id": 21005,
+    "Name": "Mysterious Phantom",
+    "ModelID": 700003,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      400430
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        50,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 21005,
+    "WalkSpeed": 0.0,
+    "RunSpeed": 0.0,
+    "FRunSpeed": 0.0,
+    "AlertSpeed": 0.0,
+    "MinAlertDis": 0.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 122,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 10.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": true,
+    "DoubleBloodBar": []
+  },
+  "21006": {
+    "Id": 21006,
+    "Name": "Crystal of Darkness",
+    "ModelID": 4,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      702208
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        50,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 700006,
+    "WalkSpeed": 0.0,
+    "RunSpeed": 0.0,
+    "FRunSpeed": 0.0,
+    "AlertSpeed": 0.0,
+    "MinAlertDis": 0.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 122,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 10.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 702209,
+    "BkCanBeHit": true,
     "DoubleBloodBar": []
   },
   "28001": {
@@ -253073,7 +254063,7 @@
       10310013
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -253492,7 +254482,9 @@
     "MonsterSizeType": 0,
     "BloodTubeCount": 1,
     "MonsterRank": "",
-    "SkillIds": [],
+    "SkillIds": [
+      10310016
+    ],
     "HatredBuildType": [
       1,
       0
@@ -253710,7 +254702,7 @@
       10310013
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -253825,7 +254817,7 @@
       10310013
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -254023,6 +255015,212 @@
     "IsNotGround": false,
     "BornSkillId": 0,
     "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "103110": {
+    "Id": 103110,
+    "Name": "Dragonbane Golem - Right Cannon",
+    "ModelID": 103101,
+    "MonsterType": 2,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      10330106
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        360,
+        0,
+        2,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 13,
+    "WalkSpeed": 1.4,
+    "RunSpeed": 8.0,
+    "FRunSpeed": 8.0,
+    "AlertSpeed": 4.0,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 15.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 61,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      28
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 8.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": true,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": true,
+    "DoubleBloodBar": []
+  },
+  "103111": {
+    "Id": 103111,
+    "Name": "Dragonbane Golem - Left Cannon",
+    "ModelID": 103102,
+    "MonsterType": 2,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      10330106
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        360,
+        0,
+        2,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 13,
+    "WalkSpeed": 1.4,
+    "RunSpeed": 8.0,
+    "FRunSpeed": 8.0,
+    "AlertSpeed": 4.0,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 15.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 61,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      28
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 8.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": true,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": true,
     "DoubleBloodBar": []
   },
   "103201": {
@@ -254232,9 +255430,7 @@
     "BloodTubeCount": 1,
     "MonsterRank": "",
     "SkillIds": [
-      10320006,
-      10320007,
-      10320010
+      10320029
     ],
     "HatredBuildType": [
       1,
@@ -254259,16 +255455,16 @@
     "IsAccurateSight": false,
     "IsShowAlertOutCamera": false,
     "HatredAway": [
-      1,
-      1
+      0,
+      0
     ],
     "Score": 0,
     "HatredAwayType": [
       0,
-      40,
+      0,
       0
     ],
-    "AttributeId": 13,
+    "AttributeId": 103207,
     "WalkSpeed": 1.4,
     "RunSpeed": 8.0,
     "FRunSpeed": 8.0,
@@ -254324,7 +255520,7 @@
     "LifeInfo": [],
     "UIHiddenDis": 0.0,
     "IsNotGround": false,
-    "BornSkillId": 10320010,
+    "BornSkillId": 0,
     "BkCanBeHit": true,
     "DoubleBloodBar": []
   },
@@ -254385,6 +255581,217 @@
     ],
     "EntityTurnVelocity": [],
     "AITableReference": 57,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "103210": {
+    "Id": 103210,
+    "Name": "Patrol Sentinel",
+    "ModelID": 33912,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      10320503,
+      10320504,
+      10320505
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        100,
+        360,
+        0,
+        16,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 103205,
+    "WalkSpeed": 2.0,
+    "RunSpeed": 2.0,
+    "FRunSpeed": 2.0,
+    "AlertSpeed": 0.0,
+    "MinAlertDis": 0.0,
+    "MaxAlertDis": 0.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 200,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": true,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "103211": {
+    "Id": 103211,
+    "Name": "Patrol Oculopod",
+    "ModelID": 33907,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      3391010,
+      3391011,
+      3391012,
+      3391013
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        360,
+        0,
+        8,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 103211,
+    "WalkSpeed": 2.0,
+    "RunSpeed": 2.0,
+    "FRunSpeed": 2.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 0.0,
+    "MaxAlertDis": 0.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 200,
     "AttackHeight": 0.0,
     "DropHeight": 0.0,
     "DashSpeed": 0.0,
@@ -254532,6 +255939,112 @@
     "BkCanBeHit": false,
     "DoubleBloodBar": []
   },
+  "103212": {
+    "Id": 103212,
+    "Name": "Patrol Oculopod",
+    "ModelID": 33907,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      3391010,
+      3391011,
+      3391012,
+      3391013
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        360,
+        0,
+        8,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 103205,
+    "WalkSpeed": 2.0,
+    "RunSpeed": 2.0,
+    "FRunSpeed": 2.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 0.0,
+    "MaxAlertDis": 0.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 200,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
   "103206": {
     "Id": 103206,
     "Name": "Mechanical Oculopod",
@@ -254610,6 +256123,211 @@
       214,
       221
     ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "103213": {
+    "Id": 103213,
+    "Name": "Patrol Oculopod",
+    "ModelID": 33907,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      3391010,
+      3391011,
+      3391012,
+      3391013
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        360,
+        0,
+        8,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 103205,
+    "WalkSpeed": 2.0,
+    "RunSpeed": 2.0,
+    "FRunSpeed": 2.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 0.0,
+    "MaxAlertDis": 0.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 200,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "10314": {
+    "Id": 10314,
+    "Name": "Invisible Monster (for Mech Sentinel 180-degree turn)",
+    "ModelID": 4,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        360,
+        0,
+        1,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      20000,
+      0,
+      0
+    ],
+    "AttributeId": 11,
+    "WalkSpeed": 0.0,
+    "RunSpeed": 0.0,
+    "FRunSpeed": 0.0,
+    "AlertSpeed": 0.0,
+    "MinAlertDis": 0.0,
+    "MaxAlertDis": 0.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 57,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
     "TargetSelectWeight": 1.0,
     "BornDissolutionTime": 1000,
     "BornDuration": 1000,
@@ -254856,7 +256574,7 @@
       10330105
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -254978,7 +256696,7 @@
       10320024
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -255097,10 +256815,12 @@
       10320022,
       10320008,
       10320023,
-      10320024
+      10320024,
+      10320027,
+      10320028
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -255185,7 +256905,7 @@
     "AppearDisAppearCfg": [],
     "DissolutionCfg": [],
     "LifeInfo": [],
-    "UIHiddenDis": 0.0,
+    "UIHiddenDis": 100.0,
     "IsNotGround": false,
     "BornSkillId": 0,
     "BkCanBeHit": true,
@@ -255206,7 +256926,7 @@
       10330105
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -255835,7 +257555,7 @@
       10320024
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -255949,7 +257669,7 @@
       10330012
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -256065,7 +257785,7 @@
       10330014
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -256176,10 +257896,12 @@
       10330009,
       10330010,
       10330011,
-      10330012
+      10330012,
+      10330013,
+      10330014
     ],
     "HatredBuildType": [
-      1,
+      0,
       0
     ],
     "IsFlying": false,
@@ -256267,6 +257989,212 @@
     "UIHiddenDis": 100.0,
     "IsNotGround": false,
     "BornSkillId": 0,
+    "BkCanBeHit": true,
+    "DoubleBloodBar": []
+  },
+  "103310": {
+    "Id": 103310,
+    "Name": "Paradox-Calamity Remnant - Final Phantom",
+    "ModelID": 103300,
+    "MonsterType": 2,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      10330015
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        360,
+        0,
+        2,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 103309,
+    "WalkSpeed": 1.4,
+    "RunSpeed": 8.0,
+    "FRunSpeed": 8.0,
+    "AlertSpeed": 4.0,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 15.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 61,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      28
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 8.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": true,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 10330015,
+    "BkCanBeHit": true,
+    "DoubleBloodBar": []
+  },
+  "103311": {
+    "Id": 103311,
+    "Name": "Paradox-Calamity Remnant - Final Phantom",
+    "ModelID": 103200,
+    "MonsterType": 2,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      10330016
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        360,
+        0,
+        2,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 103309,
+    "WalkSpeed": 1.4,
+    "RunSpeed": 8.0,
+    "FRunSpeed": 8.0,
+    "AlertSpeed": 4.0,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 15.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 61,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      28
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 8.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": true,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 10330016,
     "BkCanBeHit": true,
     "DoubleBloodBar": []
   },
@@ -277247,6 +279175,1367 @@
     "BkCanBeHit": false,
     "DoubleBloodBar": []
   },
+  "511031": {
+    "Id": 511031,
+    "Name": "Elite Illusory Plague Goblin",
+    "ModelID": 1077,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      100437
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        360,
+        0,
+        3,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      100,
+      50
+    ],
+    "AttributeId": 24,
+    "WalkSpeed": 3.0,
+    "RunSpeed": 3.0,
+    "FRunSpeed": 8.0,
+    "AlertSpeed": 1.2,
+    "MinAlertDis": 1.0,
+    "MaxAlertDis": 50.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 122,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      203,
+      204,
+      207,
+      212,
+      222
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": true,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "512011": {
+    "Id": 512011,
+    "Name": "Goblin Warrior",
+    "ModelID": 33121,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      1002102,
+      100101
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 2.4,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 2.0,
+    "MaxAlertDis": 5.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 12,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 15,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "512012": {
+    "Id": 512012,
+    "Name": "Goblin Priest",
+    "ModelID": 33123,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      101805,
+      100501
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 1.2,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 12.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 12,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 15,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "512013": {
+    "Id": 512013,
+    "Name": "Goblin Shaman",
+    "ModelID": 33126,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      1101303,
+      1101301,
+      1101302
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      20000,
+      50,
+      50
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 1.2,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 12.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 12,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 16,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 6.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": true,
+    "DoubleBloodBar": []
+  },
+  "512014": {
+    "Id": 512014,
+    "Name": "Airona",
+    "ModelID": 1000108,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      2900203,
+      2900202,
+      2900204,
+      2900201
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        25,
+        360,
+        0,
+        10,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      60,
+      0
+    ],
+    "AttributeId": 530303,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 4.0,
+    "FRunSpeed": 4.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 7.0,
+    "MaxAlertDis": 18.0,
+    "BodyDuration": 0,
+    "ExportVoxel": true,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 300,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 10.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [
+      5000
+    ],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 60.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "512015": {
+    "Id": 512015,
+    "Name": "Fafala",
+    "ModelID": 1000113,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      2900905,
+      2900902,
+      2900901
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        25,
+        360,
+        0,
+        10,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      60,
+      0
+    ],
+    "AttributeId": 29009,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 4.0,
+    "FRunSpeed": 4.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 3.0,
+    "MaxAlertDis": 6.0,
+    "BodyDuration": 0,
+    "ExportVoxel": true,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 300,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 10.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [
+      5000
+    ],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 60.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "512021": {
+    "Id": 512021,
+    "Name": "Boarrier Tyrant",
+    "ModelID": 33035,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      102603,
+      102631,
+      102632
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 1.2,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 12.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 21,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62,
+      82
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "512022": {
+    "Id": 512022,
+    "Name": "Boarrier Storm",
+    "ModelID": 33073,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      1008021,
+      1008020
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 1.2,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 12.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 21,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62,
+      82
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "512023": {
+    "Id": 512023,
+    "Name": "Airona",
+    "ModelID": 1000108,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      2900203,
+      2900202,
+      2900204,
+      2900201
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        25,
+        360,
+        0,
+        10,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      60,
+      0
+    ],
+    "AttributeId": 530303,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 4.0,
+    "FRunSpeed": 4.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 7.0,
+    "MaxAlertDis": 18.0,
+    "BodyDuration": 0,
+    "ExportVoxel": true,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 300,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 10.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [
+      5000
+    ],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 60.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "512031": {
+    "Id": 512031,
+    "Name": "Foxen",
+    "ModelID": 33042,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      1700715
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 2.4,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 2.0,
+    "MaxAlertDis": 5.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 14,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "512032": {
+    "Id": 512032,
+    "Name": "Wasteland Foxen",
+    "ModelID": 33139,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      1700716
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 2.4,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 2.0,
+    "MaxAlertDis": 5.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 12,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      32
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "512033": {
+    "Id": 512033,
+    "Name": "Airona",
+    "ModelID": 1000108,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      2900203,
+      2900202,
+      2900204,
+      2900201
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        25,
+        360,
+        0,
+        10,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      60,
+      0
+    ],
+    "AttributeId": 530303,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 4.0,
+    "FRunSpeed": 4.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 7.0,
+    "MaxAlertDis": 18.0,
+    "BodyDuration": 0,
+    "ExportVoxel": true,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 300,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 10.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [
+      5000
+    ],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 60.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
   "604001": {
     "Id": 604001,
     "Name": "Cabbage Warrior",
@@ -283723,6 +287012,1027 @@
     "IsNotGround": false,
     "BornSkillId": 0,
     "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "660304": {
+    "Id": 660304,
+    "Name": "Airona",
+    "ModelID": 1000008,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      4010002,
+      4010003,
+      4010001
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        20,
+        360,
+        0,
+        20,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      5000,
+      0,
+      0
+    ],
+    "AttributeId": 530105,
+    "WalkSpeed": 2.2,
+    "RunSpeed": 6.5,
+    "FRunSpeed": 6.5,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 3000,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 2,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "660305": {
+    "Id": 660305,
+    "Name": "Sleht",
+    "ModelID": 50005,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      300406,
+      300419,
+      300420,
+      300421
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        12,
+        360,
+        0,
+        12,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      5000,
+      0,
+      0
+    ],
+    "AttributeId": 530106,
+    "WalkSpeed": 2.2,
+    "RunSpeed": 3.4,
+    "FRunSpeed": 5.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 3000,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [
+      60.0,
+      120.0
+    ],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "660306": {
+    "Id": 660306,
+    "Name": "Triban",
+    "ModelID": 50006,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      300401,
+      300402,
+      300403,
+      300404,
+      300405,
+      300412,
+      300413,
+      300414
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        12,
+        360,
+        0,
+        12,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      5000,
+      0,
+      0
+    ],
+    "AttributeId": 530106,
+    "WalkSpeed": 2.2,
+    "RunSpeed": 3.4,
+    "FRunSpeed": 5.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 3000,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [
+      60.0,
+      120.0
+    ],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "660307": {
+    "Id": 660307,
+    "Name": "Lerahha",
+    "ModelID": 10059,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      300413,
+      300415,
+      300417
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        12,
+        360,
+        0,
+        12,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      5000,
+      0,
+      0
+    ],
+    "AttributeId": 530106,
+    "WalkSpeed": 2.2,
+    "RunSpeed": 3.4,
+    "FRunSpeed": 5.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 3000,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [
+      60.0,
+      120.0
+    ],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "660308": {
+    "Id": 660308,
+    "Name": "Asterleeds Trooper",
+    "ModelID": 465013,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      300408,
+      300409,
+      300410
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        12,
+        360,
+        0,
+        12,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      5000,
+      0,
+      0
+    ],
+    "AttributeId": 530106,
+    "WalkSpeed": 2.2,
+    "RunSpeed": 3.4,
+    "FRunSpeed": 5.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 3000,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [
+      60.0,
+      120.0
+    ],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "660309": {
+    "Id": 660309,
+    "Name": "Green Foam Goblin",
+    "ModelID": 33046,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      1005301,
+      1701101
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 10051,
+    "WalkSpeed": 1.2,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 12.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 15,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      53
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "660310": {
+    "Id": 660310,
+    "Name": "Thunder Foam Goblin",
+    "ModelID": 33046,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      1005301,
+      1701101
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 10051,
+    "WalkSpeed": 1.2,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 12.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 15,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      53
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "660311": {
+    "Id": 660311,
+    "Name": "Goblin Sage",
+    "ModelID": 33125,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      1101203,
+      1101202,
+      1101201
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      20000,
+      50,
+      50
+    ],
+    "AttributeId": 11012,
+    "WalkSpeed": 1.2,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 12.0,
+    "BodyDuration": 3000,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 18,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      54
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 6.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": true,
+    "DoubleBloodBar": []
+  },
+  "660312": {
+    "Id": 660312,
+    "Name": "Illusory Bloom",
+    "ModelID": 9202015,
+    "MonsterType": 1,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        360,
+        0,
+        10,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      1
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 920554,
+    "WalkSpeed": 7.0,
+    "RunSpeed": 8.0,
+    "FRunSpeed": 8.0,
+    "AlertSpeed": 7.0,
+    "MinAlertDis": 5.0,
+    "MaxAlertDis": 50.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      0,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 15.0,
+    "WeeknessDuration": 1.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": true,
     "DoubleBloodBar": []
   },
   "660401": {
@@ -331615,6 +335925,949 @@
     "BkCanBeHit": false,
     "DoubleBloodBar": []
   },
+  "3110001": {
+    "Id": 3110001,
+    "Name": "Tempest Ogre - Role",
+    "ModelID": 33011,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 0,
+    "MonsterRank": "",
+    "SkillIds": [
+      2002441
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      200000,
+      100,
+      118
+    ],
+    "AttributeId": 13,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 7.0,
+    "FRunSpeed": 7.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 3.0,
+    "MaxAlertDis": 6.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 0,
+    "BornDuration": 0,
+    "InvincibleTimeWithBorn": 0,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 0.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [
+      {
+        "x": 0.0,
+        "y": 0.0
+      },
+      {
+        "x": 0.0,
+        "y": 0.0
+      }
+    ],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 2002441,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "3110002": {
+    "Id": 3110002,
+    "Name": "Flame Orc - Role",
+    "ModelID": 70000000,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 0,
+    "MonsterRank": "",
+    "SkillIds": [
+      101227
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      200000,
+      100,
+      118
+    ],
+    "AttributeId": 13,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 7.0,
+    "FRunSpeed": 7.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 3.0,
+    "MaxAlertDis": 6.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 0,
+    "BornDuration": 0,
+    "InvincibleTimeWithBorn": 0,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 0.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [
+      {
+        "x": 0.0,
+        "y": 0.0
+      },
+      {
+        "x": 0.0,
+        "y": 0.0
+      }
+    ],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 101227,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "3110003": {
+    "Id": 3110003,
+    "Name": "Muku King - Role",
+    "ModelID": 70000004,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 0,
+    "MonsterRank": "",
+    "SkillIds": [
+      2002731
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      200000,
+      100,
+      118
+    ],
+    "AttributeId": 13,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 7.0,
+    "FRunSpeed": 7.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 3.0,
+    "MaxAlertDis": 6.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 0,
+    "BornDuration": 0,
+    "InvincibleTimeWithBorn": 0,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 0.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 2002731,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "3110004": {
+    "Id": 3110004,
+    "Name": "Iron Fang - Role",
+    "ModelID": 33075,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 0,
+    "MonsterRank": "",
+    "SkillIds": [
+      1008141
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      200000,
+      100,
+      118
+    ],
+    "AttributeId": 13,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 7.0,
+    "FRunSpeed": 7.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 3.0,
+    "MaxAlertDis": 6.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 0,
+    "BornDuration": 0,
+    "InvincibleTimeWithBorn": 0,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 0.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [
+      {
+        "x": 0.0,
+        "y": 0.0
+      },
+      {
+        "x": 0.0,
+        "y": 0.0
+      }
+    ],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 1008141,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "3110005": {
+    "Id": 3110005,
+    "Name": "Golden Juggernaut - Role",
+    "ModelID": 33036,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 0,
+    "MonsterRank": "",
+    "SkillIds": [
+      1700199
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      200000,
+      100,
+      118
+    ],
+    "AttributeId": 13,
+    "WalkSpeed": 1.2,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 12.0,
+    "BodyDuration": 3000,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 0,
+    "BornDuration": 0,
+    "InvincibleTimeWithBorn": 0,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 60.0,
+    "IsNotGround": false,
+    "BornSkillId": 1700199,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "3110006": {
+    "Id": 3110006,
+    "Name": "Lizardman King - Role",
+    "ModelID": 33109,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 0,
+    "MonsterRank": "",
+    "SkillIds": [
+      1008541
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      200000,
+      100,
+      118
+    ],
+    "AttributeId": 13,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 7.0,
+    "FRunSpeed": 7.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 3.0,
+    "MaxAlertDis": 6.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 0,
+    "BornDuration": 0,
+    "InvincibleTimeWithBorn": 0,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 0.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [
+      {
+        "x": 0.0,
+        "y": 0.0
+      },
+      {
+        "x": 0.0,
+        "y": 0.0
+      }
+    ],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 1008541,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "3110007": {
+    "Id": 3110007,
+    "Name": "Airona - Role",
+    "ModelID": 500001,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 0,
+    "MonsterRank": "",
+    "SkillIds": [
+      2900241
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      200000,
+      100,
+      118
+    ],
+    "AttributeId": 13,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 7.0,
+    "FRunSpeed": 7.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 3.0,
+    "MaxAlertDis": 6.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 0,
+    "BornDuration": 0,
+    "InvincibleTimeWithBorn": 0,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 0.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [
+      {
+        "x": 0.0,
+        "y": 0.0
+      },
+      {
+        "x": 0.0,
+        "y": 0.0
+      }
+    ],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 2900241,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "3110008": {
+    "Id": 3110008,
+    "Name": "Fafala - Role",
+    "ModelID": 500007,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 0,
+    "MonsterRank": "",
+    "SkillIds": [
+      2900942
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        360,
+        0,
+        5,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      200000,
+      100,
+      118
+    ],
+    "AttributeId": 13,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 7.0,
+    "FRunSpeed": 7.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 3.0,
+    "MaxAlertDis": 6.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 0,
+    "BornDuration": 0,
+    "InvincibleTimeWithBorn": 0,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 0.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [
+      {
+        "x": 0.0,
+        "y": 0.0
+      },
+      {
+        "x": 0.0,
+        "y": 0.0
+      }
+    ],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 2900942,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
   "3100000": {
     "Id": 3100000,
     "Name": "Companion-Bow-Legendary Boar",
@@ -333424,6 +338677,1005 @@
     "IsNotGround": false,
     "BornSkillId": 0,
     "BkCanBeHit": true,
+    "DoubleBloodBar": []
+  },
+  "5100301": {
+    "Id": 5100301,
+    "Name": "Fafala",
+    "ModelID": 1000113,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      2900905,
+      2900902,
+      2900901
+    ],
+    "HatredBuildType": [
+      0,
+      1
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        25,
+        360,
+        0,
+        10,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 8310,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 15.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 10.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 60.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "5100302": {
+    "Id": 5100302,
+    "Name": "Boyce",
+    "ModelID": 1000103,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      2900702,
+      2900701
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        25,
+        360,
+        0,
+        10,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      60,
+      0
+    ],
+    "AttributeId": 530303,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 4.0,
+    "FRunSpeed": 4.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 15.0,
+    "BodyDuration": 0,
+    "ExportVoxel": true,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 300,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 10.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [
+      5000
+    ],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 60.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "5100303": {
+    "Id": 5100303,
+    "Name": "Corroded Great Eagle",
+    "ModelID": 33140,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      101101,
+      101102,
+      101103
+    ],
+    "HatredBuildType": [
+      0,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 11045,
+    "WalkSpeed": 3.0,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 7.0,
+    "AlertSpeed": 4.0,
+    "MinAlertDis": 5.0,
+    "MaxAlertDis": 15.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1,
+      0,
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 78,
+    "AttackHeight": 2.0,
+    "DropHeight": 2.5,
+    "DashSpeed": 12.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62,
+      53
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "5100304": {
+    "Id": 5100304,
+    "Name": "Fafala",
+    "ModelID": 2100031,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      2900905,
+      2900902,
+      2900901
+    ],
+    "HatredBuildType": [
+      0,
+      1
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        25,
+        360,
+        0,
+        10,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 8310,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 2.0,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 15.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 999,
+    "HudShowParam": [
+      0
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 10.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": true,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [
+      {
+        "x": 7000112.0,
+        "y": 1.0
+      },
+      {
+        "x": 7000111.0,
+        "y": 1.0
+      }
+    ],
+    "LifeInfo": [],
+    "UIHiddenDis": 60.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "5100501": {
+    "Id": 5100501,
+    "Name": "Lost Villager",
+    "ModelID": 230179,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      300460,
+      300403
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        20,
+        360,
+        0,
+        20,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 3.0,
+    "FRunSpeed": 5.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [
+      60.0,
+      120.0
+    ],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": true,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "5100502": {
+    "Id": 5100502,
+    "Name": "Lost Villager",
+    "ModelID": 220073,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      300415,
+      300410,
+      300402
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        20,
+        360,
+        0,
+        20,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 3.0,
+    "FRunSpeed": 5.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [
+      60.0,
+      120.0
+    ],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": true,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "5100503": {
+    "Id": 5100503,
+    "Name": "Lost Villager",
+    "ModelID": 220006,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      3080104
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        20,
+        360,
+        0,
+        20,
+        1
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      0,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      0,
+      0,
+      0
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 1.8,
+    "RunSpeed": 3.0,
+    "FRunSpeed": 5.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 8.0,
+    "MaxAlertDis": 16.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 1,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [
+      60.0,
+      120.0
+    ],
+    "AITableReference": 1,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      62
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": true,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "5100601": {
+    "Id": 5100601,
+    "Name": "Green Foam Goblin",
+    "ModelID": 33046,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      1005301,
+      1701101
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 1.2,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 12.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 12,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 15,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      53
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
+    "DoubleBloodBar": []
+  },
+  "5100602": {
+    "Id": 5100602,
+    "Name": "Thunder Foam Goblin",
+    "ModelID": 33046,
+    "MonsterType": 0,
+    "MonsterSizeType": 0,
+    "BloodTubeCount": 1,
+    "MonsterRank": "",
+    "SkillIds": [
+      1005301,
+      1701101
+    ],
+    "HatredBuildType": [
+      1,
+      0
+    ],
+    "IsFlying": false,
+    "SightConfig": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        360,
+        0,
+        5,
+        1
+      ],
+      [
+        15,
+        360,
+        0,
+        5,
+        0
+      ]
+    ],
+    "IsAccurateSight": false,
+    "IsShowAlertOutCamera": false,
+    "HatredAway": [
+      1,
+      0
+    ],
+    "Score": 0,
+    "HatredAwayType": [
+      10000,
+      50,
+      50
+    ],
+    "AttributeId": 23,
+    "WalkSpeed": 1.2,
+    "RunSpeed": 6.0,
+    "FRunSpeed": 6.0,
+    "AlertSpeed": 1.5,
+    "MinAlertDis": 6.0,
+    "MaxAlertDis": 12.0,
+    "BodyDuration": 0,
+    "ExportVoxel": false,
+    "VoxelPath": "",
+    "DefaultCamp": 12,
+    "HudShowParam": [
+      1
+    ],
+    "EntityTurnVelocity": [],
+    "AITableReference": 15,
+    "AttackHeight": 0.0,
+    "DropHeight": 0.0,
+    "DashSpeed": 0.0,
+    "MonsterFightArea": 0,
+    "HatredAwayShow": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Tags": [
+      53
+    ],
+    "TargetSelectWeight": 1.0,
+    "BornDissolutionTime": 1000,
+    "BornDuration": 1000,
+    "InvincibleTimeWithBorn": 1000,
+    "BreakingContinueTime": 6.0,
+    "WeeknessDuration": 0.0,
+    "FractureDuration": 5.0,
+    "BehitLightIsOpen": false,
+    "BornClientBuffs": [],
+    "DeadClientBuffs": [],
+    "HudInScreen": false,
+    "BloodMark": [],
+    "HudPosParam": 0.0,
+    "MonsterLogicLevel": 0,
+    "DropPackageID": 0,
+    "DropPackageRange": [],
+    "StatusInfo": [],
+    "StatusTransition": [],
+    "InteractionTemplate": [],
+    "InteractionMount": [],
+    "ShowStatusInfo": [],
+    "ShowStatusTransition": [],
+    "AppearDisAppearCfg": [],
+    "DissolutionCfg": [],
+    "LifeInfo": [],
+    "UIHiddenDis": 0.0,
+    "IsNotGround": false,
+    "BornSkillId": 0,
+    "BkCanBeHit": false,
     "DoubleBloodBar": []
   }
 }

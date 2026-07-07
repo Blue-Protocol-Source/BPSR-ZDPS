@@ -1428,6 +1428,11 @@
     {
         "Name": "Triple Flame Cleave"
     },
+    "7200":
+    {
+        "Name": "Cannon Shot",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
     "7997":
     {
         "Name": "Phantom Arrow",
@@ -3031,6 +3036,41 @@
     {
         "Name": "Mech - Sentinel - Shield Explosion",
         "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "829304":
+    {
+        "Name": "Spread AOE",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "829305":
+    {
+        "Name": "Phantom Stack",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "829306":
+    {
+        "Name": "Electrical Spread Flare",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "829307":
+    {
+        "Name": "Phantom Spread Flare",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "829308":
+    {
+        "Name": "Electrical Explosion Marker",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "829309":
+    {
+        "Name": "Phantom Spread AOE",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "829316":
+    {
+        "Name": "Divine Scale - Causality Warp",
+        "Desc": "Paradox-Calamity Remnant - Final"
     },
     "833018":
     {
@@ -6985,6 +7025,46 @@
     {
         "Name": "Lightning Strike Line",
         "Desc": "Paradox-Calamity Remnant - Continuation"
+    },
+    "10330004":
+    {
+        "Name": "Half Room Beam - Left",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "10330005":
+    {
+        "Name": "Electrical Raidwide AOE",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "10330006":
+    {
+        "Name": "Apply Electrical Spread Marker",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "10330007":
+    {
+        "Name": "Half Room Beam - Right",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "10330051":
+    {
+        "Name": "Divine Scale - Causality Warp (Cast)",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "10330052":
+    {
+        "Name": "Divine Scale - Preset Return (Beam)",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "10330055":
+    {
+        "Name": "Divine Banishment - Electric AOE",
+        "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "10330101":
+    {
+        "Name": "Annihilation Cannon - 60° Cone",
+        "Desc": "Paradox-Calamity Remnant - Final"
     },
     "11010101":
     {
