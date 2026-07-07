@@ -14,6 +14,7 @@ namespace BPSR_ZDPS.DataTypes.Skills
         public int CurrentLevel = 0;
         public int Tier = 0;
         public string Icon = "";
+        public List<int> SlotPositionId = new();
 
         public SkillLevelInfo()
         {
@@ -30,6 +31,7 @@ namespace BPSR_ZDPS.DataTypes.Skills
             {
                 Name = skill.Name;
                 Icon = skill.Icon;
+                SlotPositionId = skill.SlotPositionId;
             }
         }
 
@@ -49,7 +51,21 @@ namespace BPSR_ZDPS.DataTypes.Skills
 
         public bool IsImagineSlot()
         {
-            // TODO: Store SlotPositionId so it can be used later for this check, making it much cheaper
+            if (SlotPositionId == null)
+            {
+                return false;
+            }
+
+            if (SlotPositionId.Contains(7) || SlotPositionId.Contains(8))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool IsImagineSlotByIconPath()
+        {
             if (Icon != null && Icon.Length > 0)
             {
                 if (Icon.Contains("skill_aoyi"))
