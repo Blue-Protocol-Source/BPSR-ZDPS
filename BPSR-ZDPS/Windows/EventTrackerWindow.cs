@@ -938,18 +938,18 @@ namespace BPSR_ZDPS.Windows
                         {
                             if (e.BuffEventType == EBuffEventType.BuffEventAddTo)
                             {
-                                if (eventTracker.OnOtherBuffGain == EOtherBuffEventAction.Show)
-                                {
-                                    eventData.IsHidden = false;
-                                }
-                                else if (eventTracker.OnOtherBuffGain == EOtherBuffEventAction.Hide)
-                                {
-                                    eventData.IsHidden = true;
-                                }
-
                                 if (eventData != null)
                                 {
                                     eventData.HideOnOtherBuffUuid = e.BuffUuid;
+
+                                    if (eventTracker.OnOtherBuffGain == EOtherBuffEventAction.Show)
+                                    {
+                                        eventData.IsHidden = false;
+                                    }
+                                    else if (eventTracker.OnOtherBuffGain == EOtherBuffEventAction.Hide)
+                                    {
+                                        eventData.IsHidden = true;
+                                    }
                                 }
 
                                 if (eventTracker.IgnoreCooldownDuration && eventData != null && eventData.Cooldown != null && !eventData.Cooldown.IsCooldownEnded)
@@ -967,13 +967,16 @@ namespace BPSR_ZDPS.Windows
                             }
                             else
                             {
-                                if (eventTracker.OnOtherBuffRemove == EOtherBuffEventAction.Show)
+                                if (eventData != null)
                                 {
-                                    eventData.IsHidden = false;
-                                }
-                                else if (eventTracker.OnOtherBuffRemove == EOtherBuffEventAction.Hide)
-                                {
-                                    eventData.IsHidden = true;
+                                    if (eventTracker.OnOtherBuffRemove == EOtherBuffEventAction.Show)
+                                    {
+                                        eventData.IsHidden = false;
+                                    }
+                                    else if (eventTracker.OnOtherBuffRemove == EOtherBuffEventAction.Hide)
+                                    {
+                                        eventData.IsHidden = true;
+                                    }
                                 }
                             }
                         }
