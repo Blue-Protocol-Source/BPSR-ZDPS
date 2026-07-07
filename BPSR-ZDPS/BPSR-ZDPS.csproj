@@ -20,6 +20,7 @@
     <None Remove="Fonts\CascadiaNextJP.wght.ttf" />
     <None Remove="Fonts\CascadiaNextSC.wght.ttf" />
     <None Remove="Fonts\CascadiaNextTC.wght.ttf" />
+    <None Remove="Fonts\D2Coding.ttf" />
     <None Remove="Fonts\FAS.ttf" />
     <None Remove="Fonts\fot-seuratpron-m.otf" />
     <None Remove="Fonts\NanumGothicCoding.ttf" />
@@ -37,6 +38,7 @@
     <EmbeddedResource Include="Fonts\CascadiaNextJP.wght.ttf" />
     <EmbeddedResource Include="Fonts\CascadiaNextSC.wght.ttf" />
     <EmbeddedResource Include="Fonts\CascadiaNextTC.wght.ttf" />
+    <EmbeddedResource Include="Fonts\D2Coding.ttf" />
     <EmbeddedResource Include="Fonts\FAS.ttf" />
     <EmbeddedResource Include="Fonts\fot-seuratpron-m.otf" />
     <EmbeddedResource Include="Fonts\NanumGothicCoding.ttf">

@@ -291,7 +291,7 @@ namespace BPSR_ZDPS
             ff.Dispose();
 
             // Korean character supporting monospace font
-            ff = new FontFile("BPSR_ZDPS.Fonts.NanumGothicCoding.ttf");
+            ff = new FontFile("BPSR_ZDPS.Fonts.D2Coding.ttf");
             res = ff.BindToImGui(18.0f, true);
             ff.Dispose();
         }
