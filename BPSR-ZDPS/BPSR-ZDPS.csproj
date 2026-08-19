@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType Condition="'$(Configuration)' == 'Debug'">Exe</OutputType>
@@ -16,6 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\BIZUDPGothic-Regular.ttf" />
     <None Remove="Fonts\CascadiaMono.ttf" />
     <None Remove="Fonts\CascadiaNextJP.wght.ttf" />
     <None Remove="Fonts\CascadiaNextSC.wght.ttf" />
@@ -34,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Fonts\BIZUDPGothic-Regular.ttf" />
     <EmbeddedResource Include="Fonts\CascadiaMono.ttf" />
     <EmbeddedResource Include="Fonts\CascadiaNextJP.wght.ttf" />
     <EmbeddedResource Include="Fonts\CascadiaNextSC.wght.ttf" />

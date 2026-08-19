@@ -1,4 +1,4 @@
-﻿using BPSR_ZDPS.Windows;
+using BPSR_ZDPS.Windows;
 using Hexa.NET.GLFW;
 using Hexa.NET.ImGui;
 using Hexa.NET.ImGui.Backends.D3D11;
@@ -375,21 +375,40 @@ namespace BPSR_ZDPS
             HelperMethods.Fonts.Add("Segoe", segoe);
 
             // Merging additional fonts into Segoe for multi-language support
+            // Font merge order determines which regional glyph variant is shown for shared CJK codepoints:
+            // Japanese glyphs take priority only when the language is "ja"; Chinese (Simplified) takes priority otherwise.
+            bool isJapanese = Settings.Instance.Language == "ja";
 
-            // Japanese character supporting font (this is a bit heavy to load into memory - 5MB)
-            //ff = new FontFile("BPSR_ZDPS.Fonts.fot-seuratpron-m.otf");
-            var ff = new FontFile("BPSR_ZDPS.Fonts.fot-seuratpron-m.otf", new GlyphRange(0x3000, 0x303F));
-            var res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+            FontFile ff;
 
-            // Chinese character supporting font (this is very heavy to load into memory - 16MB)
-            ff = new FontFile("BPSR_ZDPS.Fonts.SourceHanSansSC-Regular.otf", new GlyphRange(0x4E00, 0x9FFF));
-            res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+            if (isJapanese)
+            {
+                // BIZ UDP Gothic: Japanese glyphs take priority (covers hiragana, katakana, and CJK)
+                ff = new FontFile("BPSR_ZDPS.Fonts.BIZUDPGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
+                ff.BindToImGui(13.5f, true);
+                ff.Dispose();
+
+                // Source Han Sans SC: fallback for glyphs not covered by BIZ UDP Gothic (e.g. simplified Chinese variants)
+                ff = new FontFile("BPSR_ZDPS.Fonts.SourceHanSansSC-Regular.otf", new GlyphRange(0x4E00, 0x9FFF));
+                ff.BindToImGui(18.0f, true);
+                ff.Dispose();
+            }
+            else
+            {
+                // Source Han Sans SC: Chinese (Simplified) glyphs take priority (default for zh, en, and all other languages)
+                ff = new FontFile("BPSR_ZDPS.Fonts.SourceHanSansSC-Regular.otf", new GlyphRange(0x4E00, 0x9FFF));
+                ff.BindToImGui(18.0f, true);
+                ff.Dispose();
+
+                // BIZ UDP Gothic: fallback for hiragana, katakana, and remaining CJK glyphs
+                ff = new FontFile("BPSR_ZDPS.Fonts.BIZUDPGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
+                ff.BindToImGui(13.5f, true);
+                ff.Dispose();
+            }
 
             // Korean character supporting font
             ff = new FontFile("BPSR_ZDPS.Fonts.NotoSansKR-Regular.ttf", new GlyphRange(0x4E00, 0x9FFF));
-            res = ff.BindToImGui(18.0f, true);
+            ff.BindToImGui(18.0f, true);
             ff.Dispose();
 
             // Setting Segoe to be the default application font (though the other fonts will be used if their glyphs are required)
@@ -399,37 +418,53 @@ namespace BPSR_ZDPS
             HelperMethods.Fonts.Add("Segoe-Bold", io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\segoeuib.ttf", 18.0f));
 
             ff = new FontFile("BPSR_ZDPS.Fonts.FAS.ttf", new GlyphRange(0x0021, 0xF8FF));
-            res = ff.BindToImGui(18.0f);
+            var res = ff.BindToImGui(18.0f);
             HelperMethods.Fonts.Add("FASIcons", res);
             ff.Dispose();
 
             // Windows 11 doesn't actually have this anymore so we can't rely on the system, we have to embed it
             //HelperMethods.Fonts.Add("Cascadia-Mono", io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\CascadiaMono.ttf", 18.0f));
             ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaMono.ttf");
-            res = ff.BindToImGui(18.0f);
-            HelperMethods.Fonts.Add("Cascadia-Mono", res);
+            var resCascadia = ff.BindToImGui(18.0f);
+            HelperMethods.Fonts.Add("Cascadia-Mono", resCascadia);
             ff.Dispose();
 
             // The below fonts are being merged into Cascadia-Mono
+            // Same language-sensitive priority as above for correct CJK glyph rendering
 
-            // Japanese character supporting monospace font
-            ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextJP.wght.ttf");
-            res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+            if (isJapanese)
+            {
+                // BIZ UDP Gothic: Japanese glyphs take priority in meter font
+                ff = new FontFile("BPSR_ZDPS.Fonts.BIZUDPGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
+                ff.BindToImGui(13.5f, true);
+                ff.Dispose();
 
-            // Chinese Simplified character supporting monospace font
-            ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextSC.wght.ttf");
-            res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+                // Cascadia Next SC: fallback for Chinese Simplified glyphs in meter font
+                ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextSC.wght.ttf");
+                ff.BindToImGui(18.0f, true);
+                ff.Dispose();
+            }
+            else
+            {
+                // Cascadia Next SC: Chinese (Simplified) glyphs take priority in meter font (default for zh, en, and all other languages)
+                ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextSC.wght.ttf");
+                ff.BindToImGui(18.0f, true);
+                ff.Dispose();
+
+                // BIZ UDP Gothic: fallback for hiragana, katakana, and remaining CJK glyphs in meter font
+                ff = new FontFile("BPSR_ZDPS.Fonts.BIZUDPGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
+                ff.BindToImGui(13.5f, true);
+                ff.Dispose();
+            }
 
             // Chinese Traditional character supporting monospace font
             ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextTC.wght.ttf");
-            res = ff.BindToImGui(18.0f, true);
+            ff.BindToImGui(18.0f, true);
             ff.Dispose();
 
             // Korean character supporting monospace font
             ff = new FontFile("BPSR_ZDPS.Fonts.D2Coding.ttf");
-            res = ff.BindToImGui(18.0f, true);
+            ff.BindToImGui(18.0f, true);
             ff.Dispose();
         }
 
