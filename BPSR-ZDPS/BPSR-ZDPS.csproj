@@ -16,6 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\BIZUDGothic-Regular.ttf" />
     <None Remove="Fonts\BIZUDPGothic-Regular.ttf" />
     <None Remove="Fonts\CascadiaMono.ttf" />
     <None Remove="Fonts\CascadiaNextJP.wght.ttf" />
@@ -35,6 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Fonts\BIZUDGothic-Regular.ttf" />
     <EmbeddedResource Include="Fonts\BIZUDPGothic-Regular.ttf" />
     <EmbeddedResource Include="Fonts\CascadiaMono.ttf" />
     <EmbeddedResource Include="Fonts\CascadiaNextJP.wght.ttf" />

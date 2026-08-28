@@ -434,8 +434,8 @@ namespace BPSR_ZDPS
 
             if (isJapanese)
             {
-                // BIZ UDP Gothic: Japanese glyphs take priority in meter font
-                ff = new FontFile("BPSR_ZDPS.Fonts.BIZUDPGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
+                // BIZ UD Gothic (monospace): Japanese glyphs take priority in meter font
+                ff = new FontFile("BPSR_ZDPS.Fonts.BIZUDGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
                 ff.BindToImGui(13.5f, true);
                 ff.Dispose();
 
@@ -451,8 +451,8 @@ namespace BPSR_ZDPS
                 ff.BindToImGui(18.0f, true);
                 ff.Dispose();
 
-                // BIZ UDP Gothic: fallback for hiragana, katakana, and remaining CJK glyphs in meter font
-                ff = new FontFile("BPSR_ZDPS.Fonts.BIZUDPGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
+                // BIZ UD Gothic (monospace): fallback for hiragana, katakana, and remaining CJK glyphs in meter font
+                ff = new FontFile("BPSR_ZDPS.Fonts.BIZUDGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
                 ff.BindToImGui(13.5f, true);
                 ff.Dispose();
             }
