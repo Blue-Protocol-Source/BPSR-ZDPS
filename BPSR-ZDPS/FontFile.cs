@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,6 +73,7 @@ namespace BPSR_ZDPS
             ImFontConfig* fontConfig = ImGui.ImFontConfig();
             fontConfig->FontDataOwnedByAtlas = 0;
             fontConfig->MergeMode = Convert.ToByte(mergeMode);
+            fontConfig->GlyphOffset = GlyphOffset;
 
             ushort[] ranges = GetGlyphRanges();
             if (ranges == null || ranges.Length == 0)
