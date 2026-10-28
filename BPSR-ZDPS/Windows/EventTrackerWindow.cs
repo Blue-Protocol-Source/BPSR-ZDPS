@@ -5395,7 +5395,7 @@ namespace BPSR_ZDPS.Windows
                             }
                             ImGui.TextUnformatted($"Icon: {buff.Value.Icon}");
                             ImGui.TextUnformatted($"BuffType: {buff.Value.BuffType}");
-                            if (buff.Value.RepeatAddRule.Count > 0)
+                            if (buff.Value.RepeatAddRule != null && buff.Value.RepeatAddRule.Count > 0)
                             {
                                 ImGui.TextUnformatted($"RepeatAddRule:");
                                 foreach (var param in buff.Value.RepeatAddRule)
@@ -5404,7 +5404,7 @@ namespace BPSR_ZDPS.Windows
                                     ImGui.TextUnformatted($" {param},");
                                 }
                             }
-                            if (buff.Value.DestroyParam.Count > 0)
+                            if (buff.Value.DestroyParam != null && buff.Value.DestroyParam.Count > 0)
                             {
                                 ImGui.TextUnformatted($"DestroyParam:");
                                 foreach (var paramList in buff.Value.DestroyParam)
