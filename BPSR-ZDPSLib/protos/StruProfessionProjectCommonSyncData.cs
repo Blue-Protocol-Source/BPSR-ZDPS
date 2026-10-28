@@ -25,21 +25,22 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X3Byb2Zlc3Npb25fcHJvamVjdF9jb21tb25fc3luY19kYXRhLnBy",
-            "b3RvEgZ6cHJvdG8iwQMKH1Byb2Zlc3Npb25Qcm9qZWN0Q29tbW9uU3luY0Rh",
+            "b3RvEgZ6cHJvdG8ihQQKH1Byb2Zlc3Npb25Qcm9qZWN0Q29tbW9uU3luY0Rh",
             "dGESIgoMcHJvZmVzc2lvbklkGAEgASgFUgxwcm9mZXNzaW9uSWQSIAoLcHJv",
             "amVjdE5hbWUYAiABKAlSC3Byb2plY3ROYW1lEl0KDGVxdWlwSW5mb01hcBgD",
             "IAMoCzI5Lnpwcm90by5Qcm9mZXNzaW9uUHJvamVjdENvbW1vblN5bmNEYXRh",
             "LkVxdWlwSW5mb01hcEVudHJ5UgxlcXVpcEluZm9NYXASVwoKbW9kSW5mb01h",
             "cBgEIAMoCzI3Lnpwcm90by5Qcm9mZXNzaW9uUHJvamVjdENvbW1vblN5bmNE",
             "YXRhLk1vZEluZm9NYXBFbnRyeVIKbW9kSW5mb01hcBI4ChdjdXJyZW50VGFs",
-            "ZW50U3RhZ2VDZmdJZBgFIAEoBVIXY3VycmVudFRhbGVudFN0YWdlQ2ZnSWQa",
-            "MwoRRXF1aXBJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIg",
-            "ASgDOgI4ARoxCg9Nb2RJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgFEg0KBXZh",
-            "bHVlGAIgASgDOgI4AWIGcHJvdG8z"));
+            "ZW50U3RhZ2VDZmdJZBgFIAEoBVIXY3VycmVudFRhbGVudFN0YWdlQ2ZnSWQS",
+            "QgocY3VycmVudEN1bHRpdmF0ZUxpbmVTY2hlbWVJZBgGIAEoBVIcY3VycmVu",
+            "dEN1bHRpdmF0ZUxpbmVTY2hlbWVJZBozChFFcXVpcEluZm9NYXBFbnRyeRIL",
+            "CgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAM6AjgBGjEKD01vZEluZm9NYXBF",
+            "bnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAM6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ProfessionProjectCommonSyncData), global::Zproto.ProfessionProjectCommonSyncData.Parser, new[]{ "ProfessionId", "ProjectName", "EquipInfoMap", "ModInfoMap", "CurrentTalentStageCfgId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ProfessionProjectCommonSyncData), global::Zproto.ProfessionProjectCommonSyncData.Parser, new[]{ "ProfessionId", "ProjectName", "EquipInfoMap", "ModInfoMap", "CurrentTalentStageCfgId", "CurrentCultivateLineSchemeId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -86,6 +87,7 @@ namespace Zproto {
       equipInfoMap_ = other.equipInfoMap_.Clone();
       modInfoMap_ = other.modInfoMap_.Clone();
       currentTalentStageCfgId_ = other.currentTalentStageCfgId_;
+      currentCultivateLineSchemeId_ = other.currentCultivateLineSchemeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -153,6 +155,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "currentCultivateLineSchemeId" field.</summary>
+    public const int CurrentCultivateLineSchemeIdFieldNumber = 6;
+    private int currentCultivateLineSchemeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CurrentCultivateLineSchemeId {
+      get { return currentCultivateLineSchemeId_; }
+      set {
+        currentCultivateLineSchemeId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -173,6 +187,7 @@ namespace Zproto {
       if (!EquipInfoMap.Equals(other.EquipInfoMap)) return false;
       if (!ModInfoMap.Equals(other.ModInfoMap)) return false;
       if (CurrentTalentStageCfgId != other.CurrentTalentStageCfgId) return false;
+      if (CurrentCultivateLineSchemeId != other.CurrentCultivateLineSchemeId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -185,6 +200,7 @@ namespace Zproto {
       hash ^= EquipInfoMap.GetHashCode();
       hash ^= ModInfoMap.GetHashCode();
       if (CurrentTalentStageCfgId != 0) hash ^= CurrentTalentStageCfgId.GetHashCode();
+      if (CurrentCultivateLineSchemeId != 0) hash ^= CurrentCultivateLineSchemeId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -217,6 +233,10 @@ namespace Zproto {
         output.WriteRawTag(40);
         output.WriteInt32(CurrentTalentStageCfgId);
       }
+      if (CurrentCultivateLineSchemeId != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(CurrentCultivateLineSchemeId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -241,6 +261,10 @@ namespace Zproto {
         output.WriteRawTag(40);
         output.WriteInt32(CurrentTalentStageCfgId);
       }
+      if (CurrentCultivateLineSchemeId != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(CurrentCultivateLineSchemeId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -261,6 +285,9 @@ namespace Zproto {
       size += modInfoMap_.CalculateSize(_map_modInfoMap_codec);
       if (CurrentTalentStageCfgId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(CurrentTalentStageCfgId);
+      }
+      if (CurrentCultivateLineSchemeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CurrentCultivateLineSchemeId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -284,6 +311,9 @@ namespace Zproto {
       modInfoMap_.MergeFrom(other.modInfoMap_);
       if (other.CurrentTalentStageCfgId != 0) {
         CurrentTalentStageCfgId = other.CurrentTalentStageCfgId;
+      }
+      if (other.CurrentCultivateLineSchemeId != 0) {
+        CurrentCultivateLineSchemeId = other.CurrentCultivateLineSchemeId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -324,6 +354,10 @@ namespace Zproto {
             CurrentTalentStageCfgId = input.ReadInt32();
             break;
           }
+          case 48: {
+            CurrentCultivateLineSchemeId = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -361,6 +395,10 @@ namespace Zproto {
           }
           case 40: {
             CurrentTalentStageCfgId = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            CurrentCultivateLineSchemeId = input.ReadInt32();
             break;
           }
         }

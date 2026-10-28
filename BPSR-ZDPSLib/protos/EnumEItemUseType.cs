@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEItemUseTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChplbnVtX2VfaXRlbV91c2VfdHlwZS5wcm90bxIGenByb3RvKowDCgxFSXRl",
+            "ChplbnVtX2VfaXRlbV91c2VfdHlwZS5wcm90bxIGenByb3RvKrsDCgxFSXRl",
             "bVVzZVR5cGUSDwoLSXRlbVVzZU5vbmUQABIPCgtJdGVtVXNlQnVmZhABEhAK",
             "DEl0ZW1Vc2VBd2FyZBACEhsKF0l0ZW1Vc2VVbmxvY2tQcm9mZXNzaW9uEAMS",
             "FgoSSXRlbVVzZVRhbGVudFBvaW50EAQSHQoZSXRlbVVzZUNyYWZ0RW5lcmd5",
@@ -33,7 +33,8 @@ namespace Zproto {
             "CBIfChtJdGVtVXNlTGlmZVByb2Zlc3Npb25SZWNpcGUQCRIWChJJdGVtVXNl",
             "TW9udGhseUNhcmQQChIWChJJdGVtVXNlVW5sb2NrRW1vamkQCxITCg9JdGVt",
             "VXNlQnV5SG91c2UQDBISCg5JdGVtVXNlTW9udGhseRANEhUKEUl0ZW1Vc2VC",
-            "YXR0bGVQYXNzEA4SEQoNSXRlbVVzZU9wZW5VSRBlYgZwcm90bzM="));
+            "YXR0bGVQYXNzEA4SFQoRSXRlbVVzZUFkZENvdW50ZXIQDxIWChJJdGVtVXNl",
+            "QmluZ29OdW1iZXIQEBIRCg1JdGVtVXNlT3BlblVJEGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EItemUseType), }, null, null));
@@ -58,6 +59,8 @@ namespace Zproto {
     [pbr::OriginalName("ItemUseBuyHouse")] ItemUseBuyHouse = 12,
     [pbr::OriginalName("ItemUseMonthly")] ItemUseMonthly = 13,
     [pbr::OriginalName("ItemUseBattlePass")] ItemUseBattlePass = 14,
+    [pbr::OriginalName("ItemUseAddCounter")] ItemUseAddCounter = 15,
+    [pbr::OriginalName("ItemUseBingoNumber")] ItemUseBingoNumber = 16,
     [pbr::OriginalName("ItemUseOpenUI")] ItemUseOpenUi = 101,
   }
 

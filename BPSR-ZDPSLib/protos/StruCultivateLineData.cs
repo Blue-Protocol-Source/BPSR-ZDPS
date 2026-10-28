@@ -26,16 +26,17 @@ namespace Zproto {
           string.Concat(
             "Ch5zdHJ1X2N1bHRpdmF0ZV9saW5lX2RhdGEucHJvdG8SBnpwcm90bxonc3Ry",
             "dV9jdWx0aXZhdGVfbGluZV9zdWJfdHlwZV9kYXRhLnByb3RvGhVzdHJ1X2Rp",
-            "cnR5X21hc2sucHJvdG8iywEKEUN1bHRpdmF0ZUxpbmVEYXRhElsKEGN1bHRp",
+            "cnR5X21hc2sucHJvdG8ijwIKEUN1bHRpdmF0ZUxpbmVEYXRhElsKEGN1bHRp",
             "dmF0ZUxpbmVNYXAYASADKAsyLy56cHJvdG8uQ3VsdGl2YXRlTGluZURhdGEu",
-            "Q3VsdGl2YXRlTGluZU1hcEVudHJ5UhBjdWx0aXZhdGVMaW5lTWFwGlkKFUN1",
-            "bHRpdmF0ZUxpbmVNYXBFbnRyeRILCgNrZXkYASABKAUSLwoFdmFsdWUYAiAB",
-            "KAsyIC56cHJvdG8uQ3VsdGl2YXRlTGluZVN1YlR5cGVEYXRhOgI4AWIGcHJv",
-            "dG8z"));
+            "Q3VsdGl2YXRlTGluZU1hcEVudHJ5UhBjdWx0aXZhdGVMaW5lTWFwEkIKHGN1",
+            "cnJlbnRDdWx0aXZhdGVMaW5lU2NoZW1lSWQYAiABKAVSHGN1cnJlbnRDdWx0",
+            "aXZhdGVMaW5lU2NoZW1lSWQaWQoVQ3VsdGl2YXRlTGluZU1hcEVudHJ5EgsK",
+            "A2tleRgBIAEoBRIvCgV2YWx1ZRgCIAEoCzIgLnpwcm90by5DdWx0aXZhdGVM",
+            "aW5lU3ViVHlwZURhdGE6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCultivateLineSubTypeDataReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CultivateLineData), global::Zproto.CultivateLineData.Parser, new[]{ "CultivateLineMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CultivateLineData), global::Zproto.CultivateLineData.Parser, new[]{ "CultivateLineMap", "CurrentCultivateLineSchemeId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -78,6 +79,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CultivateLineData(CultivateLineData other) : this() {
       cultivateLineMap_ = other.cultivateLineMap_.Clone();
+      currentCultivateLineSchemeId_ = other.currentCultivateLineSchemeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -98,6 +100,18 @@ namespace Zproto {
       get { return cultivateLineMap_; }
     }
 
+    /// <summary>Field number for the "currentCultivateLineSchemeId" field.</summary>
+    public const int CurrentCultivateLineSchemeIdFieldNumber = 2;
+    private int currentCultivateLineSchemeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CurrentCultivateLineSchemeId {
+      get { return currentCultivateLineSchemeId_; }
+      set {
+        currentCultivateLineSchemeId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -114,6 +128,7 @@ namespace Zproto {
         return true;
       }
       if (!CultivateLineMap.Equals(other.CultivateLineMap)) return false;
+      if (CurrentCultivateLineSchemeId != other.CurrentCultivateLineSchemeId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -122,6 +137,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= CultivateLineMap.GetHashCode();
+      if (CurrentCultivateLineSchemeId != 0) hash ^= CurrentCultivateLineSchemeId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -141,6 +157,10 @@ namespace Zproto {
       output.WriteRawMessage(this);
     #else
       cultivateLineMap_.WriteTo(output, _map_cultivateLineMap_codec);
+      if (CurrentCultivateLineSchemeId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CurrentCultivateLineSchemeId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -152,6 +172,10 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       cultivateLineMap_.WriteTo(ref output, _map_cultivateLineMap_codec);
+      if (CurrentCultivateLineSchemeId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CurrentCultivateLineSchemeId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -163,6 +187,9 @@ namespace Zproto {
     public int CalculateSize() {
       int size = 0;
       size += cultivateLineMap_.CalculateSize(_map_cultivateLineMap_codec);
+      if (CurrentCultivateLineSchemeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CurrentCultivateLineSchemeId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -176,6 +203,9 @@ namespace Zproto {
         return;
       }
       cultivateLineMap_.MergeFrom(other.cultivateLineMap_);
+      if (other.CurrentCultivateLineSchemeId != 0) {
+        CurrentCultivateLineSchemeId = other.CurrentCultivateLineSchemeId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -199,6 +229,10 @@ namespace Zproto {
             cultivateLineMap_.AddEntriesFrom(input, _map_cultivateLineMap_codec);
             break;
           }
+          case 16: {
+            CurrentCultivateLineSchemeId = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -220,6 +254,10 @@ namespace Zproto {
             break;
           case 10: {
             cultivateLineMap_.AddEntriesFrom(ref input, _map_cultivateLineMap_codec);
+            break;
+          }
+          case 16: {
+            CurrentCultivateLineSchemeId = input.ReadInt32();
             break;
           }
         }

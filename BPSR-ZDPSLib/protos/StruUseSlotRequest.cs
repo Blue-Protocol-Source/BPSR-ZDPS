@@ -25,14 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtzdHJ1X3VzZV9zbG90X3JlcXVlc3QucHJvdG8SBnpwcm90bxoaZW51bV9l",
-            "X3VzZV9zbG90X3R5cGUucHJvdG8idgoOVXNlU2xvdFJlcXVlc3QSFgoGc2xv",
-            "dElkGAEgASgFUgZzbG90SWQSLgoHdXNlVHlwZRgCIAEoDjIULnpwcm90by5F",
-            "VXNlU2xvdFR5cGVSB3VzZVR5cGUSHAoJZXh0cmFEYXRhGAMgASgMUglleHRy",
-            "YURhdGFiBnByb3RvMw=="));
+            "X3VzZV9zbG90X3R5cGUucHJvdG8ivAEKDlVzZVNsb3RSZXF1ZXN0EhYKBnNs",
+            "b3RJZBgBIAEoBVIGc2xvdElkEi4KB3VzZVR5cGUYAiABKA4yFC56cHJvdG8u",
+            "RVVzZVNsb3RUeXBlUgd1c2VUeXBlEhwKCWV4dHJhRGF0YRgDIAEoDFIJZXh0",
+            "cmFEYXRhEhoKCGF0dHJEYXRhGAQgASgMUghhdHRyRGF0YRIoCg9zZXNzaW9u",
+            "U2VxdWVuY2UYBSABKA1SD3Nlc3Npb25TZXF1ZW5jZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEUseSlotTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UseSlotRequest), global::Zproto.UseSlotRequest.Parser, new[]{ "SlotId", "UseType", "ExtraData" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UseSlotRequest), global::Zproto.UseSlotRequest.Parser, new[]{ "SlotId", "UseType", "ExtraData", "AttrData", "SessionSequence" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,6 +78,8 @@ namespace Zproto {
       slotId_ = other.slotId_;
       useType_ = other.useType_;
       extraData_ = other.extraData_;
+      attrData_ = other.attrData_;
+      sessionSequence_ = other.sessionSequence_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -122,6 +125,30 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "attrData" field.</summary>
+    public const int AttrDataFieldNumber = 4;
+    private pb::ByteString attrData_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString AttrData {
+      get { return attrData_; }
+      set {
+        attrData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "sessionSequence" field.</summary>
+    public const int SessionSequenceFieldNumber = 5;
+    private uint sessionSequence_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SessionSequence {
+      get { return sessionSequence_; }
+      set {
+        sessionSequence_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -140,6 +167,8 @@ namespace Zproto {
       if (SlotId != other.SlotId) return false;
       if (UseType != other.UseType) return false;
       if (ExtraData != other.ExtraData) return false;
+      if (AttrData != other.AttrData) return false;
+      if (SessionSequence != other.SessionSequence) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,6 +179,8 @@ namespace Zproto {
       if (SlotId != 0) hash ^= SlotId.GetHashCode();
       if (UseType != global::Zproto.EUseSlotType.UseSlotTypeOther) hash ^= UseType.GetHashCode();
       if (ExtraData.Length != 0) hash ^= ExtraData.GetHashCode();
+      if (AttrData.Length != 0) hash ^= AttrData.GetHashCode();
+      if (SessionSequence != 0) hash ^= SessionSequence.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -180,6 +211,14 @@ namespace Zproto {
         output.WriteRawTag(26);
         output.WriteBytes(ExtraData);
       }
+      if (AttrData.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteBytes(AttrData);
+      }
+      if (SessionSequence != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(SessionSequence);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -202,6 +241,14 @@ namespace Zproto {
         output.WriteRawTag(26);
         output.WriteBytes(ExtraData);
       }
+      if (AttrData.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteBytes(AttrData);
+      }
+      if (SessionSequence != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(SessionSequence);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,6 +267,12 @@ namespace Zproto {
       }
       if (ExtraData.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(ExtraData);
+      }
+      if (AttrData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(AttrData);
+      }
+      if (SessionSequence != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SessionSequence);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -241,6 +294,12 @@ namespace Zproto {
       }
       if (other.ExtraData.Length != 0) {
         ExtraData = other.ExtraData;
+      }
+      if (other.AttrData.Length != 0) {
+        AttrData = other.AttrData;
+      }
+      if (other.SessionSequence != 0) {
+        SessionSequence = other.SessionSequence;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -273,6 +332,14 @@ namespace Zproto {
             ExtraData = input.ReadBytes();
             break;
           }
+          case 34: {
+            AttrData = input.ReadBytes();
+            break;
+          }
+          case 40: {
+            SessionSequence = input.ReadUInt32();
+            break;
+          }
         }
       }
     #endif
@@ -302,6 +369,14 @@ namespace Zproto {
           }
           case 26: {
             ExtraData = input.ReadBytes();
+            break;
+          }
+          case 34: {
+            AttrData = input.ReadBytes();
+            break;
+          }
+          case 40: {
+            SessionSequence = input.ReadUInt32();
             break;
           }
         }

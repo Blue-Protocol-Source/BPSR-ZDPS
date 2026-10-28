@@ -26,67 +26,75 @@ namespace Zproto {
           string.Concat(
             "ChxzdHJ1X2R1bmdlb25fc3luY19kYXRhLnByb3RvEgZ6cHJvdG8aHXN0cnVf",
             "ZHVuZ2Vvbl9hZmZpeF9kYXRhLnByb3RvGhxzdHJ1X2R1bmdlb25fYXJlYV9p",
-            "bmZvLnByb3RvGhlzdHJ1X2R1bmdlb25fZGFtYWdlLnByb3RvGhhzdHJ1X2R1",
-            "bmdlb25fZXZlbnQucHJvdG8aHHN0cnVfZHVuZ2Vvbl9mbG93X2luZm8ucHJv",
-            "dG8aIHN0cnVfZHVuZ2Vvbl9oZXJvX2tleV9pbmZvLnByb3RvGiFzdHJ1X2R1",
-            "bmdlb25faGlkZV9zZWVrX2RhdGEucHJvdG8aJHN0cnVfZHVuZ2Vvbl9sZWFk",
-            "ZXJfYm9hcmRfdm90ZS5wcm90bxodc3RydV9kdW5nZW9uX3BoYXNlX2RhdGEu",
-            "cHJvdG8aGnN0cnVfZHVuZ2Vvbl9waW9uZWVyLnByb3RvGiVzdHJ1X2R1bmdl",
-            "b25fcGxhbmV0X21lbW9yeV9yb29tLnByb3RvGh5zdHJ1X2R1bmdlb25fcGxh",
-            "eWVyX2xpc3QucHJvdG8aHHN0cnVfZHVuZ2Vvbl9yYWlkX2luZm8ucHJvdG8a",
-            "L3N0cnVfZHVuZ2Vvbl9yYW5kb21fZW50aXR5X2NvbmZpZ19pZF9pbmZvLnBy",
-            "b3RvGhxzdHJ1X2R1bmdlb25fcmFua19saXN0LnByb3RvGh5zdHJ1X2R1bmdl",
-            "b25fcmV2aXZlX2luZm8ucHJvdG8aHXN0cnVfZHVuZ2Vvbl9zY2VuZV9pbmZv",
-            "LnByb3RvGhhzdHJ1X2R1bmdlb25fc2NvcmUucHJvdG8aHXN0cnVfZHVuZ2Vv",
-            "bl9zZXR0bGVtZW50LnByb3RvGhlzdHJ1X2R1bmdlb25fdGFyZ2V0LnByb3Rv",
-            "Gh1zdHJ1X2R1bmdlb25fdGltZXJfaW5mby5wcm90bxoYc3RydV9kdW5nZW9u",
-            "X3RpdGxlLnByb3RvGh1zdHJ1X2R1bmdlb25fdW5pb25faW5mby5wcm90bxoW",
-            "c3RydV9kdW5nZW9uX3Zhci5wcm90bxoac3RydV9kdW5nZW9uX3Zhcl9hbGwu",
-            "cHJvdG8aF3N0cnVfZHVuZ2Vvbl92b3RlLnByb3RvGhdlbnVtX2VfZXJyb3Jf",
-            "Y29kZS5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3RvIrcNCg9EdW5nZW9u",
-            "U3luY0RhdGESHAoJc2NlbmVVdWlkGAEgASgDUglzY2VuZVV1aWQSMwoIZmxv",
-            "d0luZm8YAiABKAsyFy56cHJvdG8uRHVuZ2VvbkZsb3dJbmZvUghmbG93SW5m",
-            "bxIqCgV0aXRsZRgDIAEoCzIULnpwcm90by5EdW5nZW9uVGl0bGVSBXRpdGxl",
-            "Ei0KBnRhcmdldBgEIAEoCzIVLnpwcm90by5EdW5nZW9uVGFyZ2V0UgZ0YXJn",
-            "ZXQSLQoGZGFtYWdlGAUgASgLMhUuenByb3RvLkR1bmdlb25EYW1hZ2VSBmRh",
-            "bWFnZRInCgR2b3RlGAYgASgLMhMuenByb3RvLkR1bmdlb25Wb3RlUgR2b3Rl",
-            "EjkKCnNldHRsZW1lbnQYByABKAsyGS56cHJvdG8uRHVuZ2VvblNldHRsZW1l",
-            "bnRSCnNldHRsZW1lbnQSPgoORHVuZ2VvblBpb25lZXIYCCABKAsyFi56cHJv",
-            "dG8uRHVuZ2VvblBpb25lZXJSDkR1bmdlb25QaW9uZWVyEkcKDnBsYW5ldFJv",
-            "b21JbmZvGAkgASgLMh8uenByb3RvLkR1bmdlb25QbGFuZXRNZW1vcnlSb29t",
-            "Ug5wbGFuZXRSb29tSW5mbxIyCgpkdW5nZW9uVmFyGAogASgLMhIuenByb3Rv",
-            "LkR1bmdlb25WYXJSCmR1bmdlb25WYXISOQoLZHVuZ2VvblJhbmsYCyABKAsy",
-            "Fy56cHJvdG8uRHVuZ2VvblJhbmtMaXN0UgtkdW5nZW9uUmFuaxJEChBkdW5n",
-            "ZW9uQWZmaXhEYXRhGAwgASgLMhguenByb3RvLkR1bmdlb25BZmZpeERhdGFS",
-            "EGR1bmdlb25BZmZpeERhdGESOAoMZHVuZ2VvbkV2ZW50GA0gASgLMhQuenBy",
-            "b3RvLkR1bmdlb25FdmVudFIMZHVuZ2VvbkV2ZW50EjgKDGR1bmdlb25TY29y",
-            "ZRgOIAEoCzIULnpwcm90by5EdW5nZW9uU2NvcmVSDGR1bmdlb25TY29yZRI2",
-            "Cgl0aW1lckluZm8YDyABKAsyGC56cHJvdG8uRHVuZ2VvblRpbWVySW5mb1IJ",
-            "dGltZXJJbmZvEjQKB2hlcm9LZXkYECABKAsyGi56cHJvdG8uRHVuZ2Vvbkhl",
-            "cm9LZXlJbmZvUgdoZXJvS2V5EkQKEGR1bmdlb25VbmlvbkluZm8YESABKAsy",
-            "GC56cHJvdG8uRHVuZ2VvblVuaW9uSW5mb1IQZHVuZ2VvblVuaW9uSW5mbxJH",
-            "ChFkdW5nZW9uUGxheWVyTGlzdBgSIAEoCzIZLnpwcm90by5EdW5nZW9uUGxh",
-            "eWVyTGlzdFIRZHVuZ2VvblBsYXllckxpc3QSOQoKcmV2aXZlSW5mbxgTIAEo",
-            "CzIZLnpwcm90by5EdW5nZW9uUmV2aXZlSW5mb1IKcmV2aXZlSW5mbxJjChhy",
-            "YW5kb21FbnRpdHlDb25maWdJZEluZm8YFCABKAsyJy56cHJvdG8uRHVuZ2Vv",
-            "blJhbmRvbUVudGl0eUNvbmZpZ0lkSW5mb1IYcmFuZG9tRW50aXR5Q29uZmln",
-            "SWRJbmZvEkQKEGR1bmdlb25TY2VuZUluZm8YFSABKAsyGC56cHJvdG8uRHVu",
-            "Z2VvblNjZW5lSW5mb1IQZHVuZ2VvblNjZW5lSW5mbxI7Cg1kdW5nZW9uVmFy",
-            "QWxsGBYgASgLMhUuenByb3RvLkR1bmdlb25WYXJBbGxSDWR1bmdlb25WYXJB",
-            "bGwSQQoPZHVuZ2VvblJhaWRJbmZvGBcgASgLMhcuenByb3RvLkR1bmdlb25S",
-            "YWlkSW5mb1IPZHVuZ2VvblJhaWRJbmZvEkEKD2R1bmdlb25BcmVhSW5mbxgY",
-            "IAEoCzIXLnpwcm90by5EdW5nZW9uQXJlYUluZm9SD2R1bmdlb25BcmVhSW5m",
-            "bxJEChBkdW5nZW9uUGhhc2VEYXRhGBkgASgLMhguenByb3RvLkR1bmdlb25Q",
-            "aGFzZURhdGFSEGR1bmdlb25QaGFzZURhdGESSAoPbGVhZGVyQm9hcmRWb3Rl",
-            "GBogASgLMh4uenByb3RvLkR1bmdlb25MZWFkZXJCb2FyZFZvdGVSD2xlYWRl",
-            "ckJvYXJkVm90ZRJNChNkdW5nZW9uSGlkZVNlZWtEYXRhGBsgASgLMhsuenBy",
-            "b3RvLkR1bmdlb25IaWRlU2Vla0RhdGFSE2R1bmdlb25IaWRlU2Vla0RhdGES",
-            "LAoHZXJyQ29kZRgcIAEoDjISLnpwcm90by5FRXJyb3JDb2RlUgdlcnJDb2Rl",
-            "YgZwcm90bzM="));
+            "bmZvLnByb3RvGiVzdHJ1X2R1bmdlb25fYmFja3BhY2tfc3luY19kYXRhLnBy",
+            "b3RvGhlzdHJ1X2R1bmdlb25fZGFtYWdlLnByb3RvGhhzdHJ1X2R1bmdlb25f",
+            "ZXZlbnQucHJvdG8aHHN0cnVfZHVuZ2Vvbl9mbG93X2luZm8ucHJvdG8aIHN0",
+            "cnVfZHVuZ2Vvbl9oZXJvX2tleV9pbmZvLnByb3RvGiFzdHJ1X2R1bmdlb25f",
+            "aGlkZV9zZWVrX2RhdGEucHJvdG8aJHN0cnVfZHVuZ2Vvbl9sZWFkZXJfYm9h",
+            "cmRfdm90ZS5wcm90bxodc3RydV9kdW5nZW9uX3BoYXNlX2RhdGEucHJvdG8a",
+            "GnN0cnVfZHVuZ2Vvbl9waW9uZWVyLnByb3RvGiVzdHJ1X2R1bmdlb25fcGxh",
+            "bmV0X21lbW9yeV9yb29tLnByb3RvGh5zdHJ1X2R1bmdlb25fcGxheWVyX2xp",
+            "c3QucHJvdG8aHHN0cnVfZHVuZ2Vvbl9yYWlkX2luZm8ucHJvdG8aL3N0cnVf",
+            "ZHVuZ2Vvbl9yYW5kb21fZW50aXR5X2NvbmZpZ19pZF9pbmZvLnByb3RvGhxz",
+            "dHJ1X2R1bmdlb25fcmFua19saXN0LnByb3RvGh5zdHJ1X2R1bmdlb25fcmV2",
+            "aXZlX2luZm8ucHJvdG8aHXN0cnVfZHVuZ2Vvbl9zY2VuZV9pbmZvLnByb3Rv",
+            "GhhzdHJ1X2R1bmdlb25fc2NvcmUucHJvdG8aHXN0cnVfZHVuZ2Vvbl9zZXR0",
+            "bGVtZW50LnByb3RvGiFzdHJ1X2R1bmdlb25fc2hvcF9zeW5jX2RhdGEucHJv",
+            "dG8aGXN0cnVfZHVuZ2Vvbl90YXJnZXQucHJvdG8aHXN0cnVfZHVuZ2Vvbl90",
+            "aW1lcl9pbmZvLnByb3RvGhhzdHJ1X2R1bmdlb25fdGl0bGUucHJvdG8aJXN0",
+            "cnVfZHVuZ2Vvbl90b3dlcl9kZWZlbnNlX2RhdGEucHJvdG8aHXN0cnVfZHVu",
+            "Z2Vvbl91bmlvbl9pbmZvLnByb3RvGhZzdHJ1X2R1bmdlb25fdmFyLnByb3Rv",
+            "GhpzdHJ1X2R1bmdlb25fdmFyX2FsbC5wcm90bxoXc3RydV9kdW5nZW9uX3Zv",
+            "dGUucHJvdG8aF2VudW1fZV9lcnJvcl9jb2RlLnByb3RvGhVzdHJ1X2RpcnR5",
+            "X21hc2sucHJvdG8ivA8KD0R1bmdlb25TeW5jRGF0YRIcCglzY2VuZVV1aWQY",
+            "ASABKANSCXNjZW5lVXVpZBIzCghmbG93SW5mbxgCIAEoCzIXLnpwcm90by5E",
+            "dW5nZW9uRmxvd0luZm9SCGZsb3dJbmZvEioKBXRpdGxlGAMgASgLMhQuenBy",
+            "b3RvLkR1bmdlb25UaXRsZVIFdGl0bGUSLQoGdGFyZ2V0GAQgASgLMhUuenBy",
+            "b3RvLkR1bmdlb25UYXJnZXRSBnRhcmdldBItCgZkYW1hZ2UYBSABKAsyFS56",
+            "cHJvdG8uRHVuZ2VvbkRhbWFnZVIGZGFtYWdlEicKBHZvdGUYBiABKAsyEy56",
+            "cHJvdG8uRHVuZ2VvblZvdGVSBHZvdGUSOQoKc2V0dGxlbWVudBgHIAEoCzIZ",
+            "Lnpwcm90by5EdW5nZW9uU2V0dGxlbWVudFIKc2V0dGxlbWVudBI+Cg5EdW5n",
+            "ZW9uUGlvbmVlchgIIAEoCzIWLnpwcm90by5EdW5nZW9uUGlvbmVlclIORHVu",
+            "Z2VvblBpb25lZXISRwoOcGxhbmV0Um9vbUluZm8YCSABKAsyHy56cHJvdG8u",
+            "RHVuZ2VvblBsYW5ldE1lbW9yeVJvb21SDnBsYW5ldFJvb21JbmZvEjIKCmR1",
+            "bmdlb25WYXIYCiABKAsyEi56cHJvdG8uRHVuZ2VvblZhclIKZHVuZ2VvblZh",
+            "chI5CgtkdW5nZW9uUmFuaxgLIAEoCzIXLnpwcm90by5EdW5nZW9uUmFua0xp",
+            "c3RSC2R1bmdlb25SYW5rEkQKEGR1bmdlb25BZmZpeERhdGEYDCABKAsyGC56",
+            "cHJvdG8uRHVuZ2VvbkFmZml4RGF0YVIQZHVuZ2VvbkFmZml4RGF0YRI4Cgxk",
+            "dW5nZW9uRXZlbnQYDSABKAsyFC56cHJvdG8uRHVuZ2VvbkV2ZW50UgxkdW5n",
+            "ZW9uRXZlbnQSOAoMZHVuZ2VvblNjb3JlGA4gASgLMhQuenByb3RvLkR1bmdl",
+            "b25TY29yZVIMZHVuZ2VvblNjb3JlEjYKCXRpbWVySW5mbxgPIAEoCzIYLnpw",
+            "cm90by5EdW5nZW9uVGltZXJJbmZvUgl0aW1lckluZm8SNAoHaGVyb0tleRgQ",
+            "IAEoCzIaLnpwcm90by5EdW5nZW9uSGVyb0tleUluZm9SB2hlcm9LZXkSRAoQ",
+            "ZHVuZ2VvblVuaW9uSW5mbxgRIAEoCzIYLnpwcm90by5EdW5nZW9uVW5pb25J",
+            "bmZvUhBkdW5nZW9uVW5pb25JbmZvEkcKEWR1bmdlb25QbGF5ZXJMaXN0GBIg",
+            "ASgLMhkuenByb3RvLkR1bmdlb25QbGF5ZXJMaXN0UhFkdW5nZW9uUGxheWVy",
+            "TGlzdBI5CgpyZXZpdmVJbmZvGBMgASgLMhkuenByb3RvLkR1bmdlb25SZXZp",
+            "dmVJbmZvUgpyZXZpdmVJbmZvEmMKGHJhbmRvbUVudGl0eUNvbmZpZ0lkSW5m",
+            "bxgUIAEoCzInLnpwcm90by5EdW5nZW9uUmFuZG9tRW50aXR5Q29uZmlnSWRJ",
+            "bmZvUhhyYW5kb21FbnRpdHlDb25maWdJZEluZm8SRAoQZHVuZ2VvblNjZW5l",
+            "SW5mbxgVIAEoCzIYLnpwcm90by5EdW5nZW9uU2NlbmVJbmZvUhBkdW5nZW9u",
+            "U2NlbmVJbmZvEjsKDWR1bmdlb25WYXJBbGwYFiABKAsyFS56cHJvdG8uRHVu",
+            "Z2VvblZhckFsbFINZHVuZ2VvblZhckFsbBJBCg9kdW5nZW9uUmFpZEluZm8Y",
+            "FyABKAsyFy56cHJvdG8uRHVuZ2VvblJhaWRJbmZvUg9kdW5nZW9uUmFpZElu",
+            "Zm8SQQoPZHVuZ2VvbkFyZWFJbmZvGBggASgLMhcuenByb3RvLkR1bmdlb25B",
+            "cmVhSW5mb1IPZHVuZ2VvbkFyZWFJbmZvEkQKEGR1bmdlb25QaGFzZURhdGEY",
+            "GSABKAsyGC56cHJvdG8uRHVuZ2VvblBoYXNlRGF0YVIQZHVuZ2VvblBoYXNl",
+            "RGF0YRJICg9sZWFkZXJCb2FyZFZvdGUYGiABKAsyHi56cHJvdG8uRHVuZ2Vv",
+            "bkxlYWRlckJvYXJkVm90ZVIPbGVhZGVyQm9hcmRWb3RlEk0KE2R1bmdlb25I",
+            "aWRlU2Vla0RhdGEYGyABKAsyGy56cHJvdG8uRHVuZ2VvbkhpZGVTZWVrRGF0",
+            "YVITZHVuZ2VvbkhpZGVTZWVrRGF0YRJZChdkdW5nZW9uQmFja3BhY2tTeW5j",
+            "RGF0YRgcIAEoCzIfLnpwcm90by5EdW5nZW9uQmFja3BhY2tTeW5jRGF0YVIX",
+            "ZHVuZ2VvbkJhY2twYWNrU3luY0RhdGESWQoXZHVuZ2VvblRvd2VyRGVmZW5z",
+            "ZURhdGEYHSABKAsyHy56cHJvdG8uRHVuZ2VvblRvd2VyRGVmZW5zZURhdGFS",
+            "F2R1bmdlb25Ub3dlckRlZmVuc2VEYXRhEk0KE2R1bmdlb25TaG9wU3luY0Rh",
+            "dGEYHiABKAsyGy56cHJvdG8uRHVuZ2VvblNob3BTeW5jRGF0YVITZHVuZ2Vv",
+            "blNob3BTeW5jRGF0YRIsCgdlcnJDb2RlGB8gASgOMhIuenByb3RvLkVFcnJv",
+            "ckNvZGVSB2VyckNvZGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruDungeonAffixDataReflection.Descriptor, global::Zproto.StruDungeonAreaInfoReflection.Descriptor, global::Zproto.StruDungeonDamageReflection.Descriptor, global::Zproto.StruDungeonEventReflection.Descriptor, global::Zproto.StruDungeonFlowInfoReflection.Descriptor, global::Zproto.StruDungeonHeroKeyInfoReflection.Descriptor, global::Zproto.StruDungeonHideSeekDataReflection.Descriptor, global::Zproto.StruDungeonLeaderBoardVoteReflection.Descriptor, global::Zproto.StruDungeonPhaseDataReflection.Descriptor, global::Zproto.StruDungeonPioneerReflection.Descriptor, global::Zproto.StruDungeonPlanetMemoryRoomReflection.Descriptor, global::Zproto.StruDungeonPlayerListReflection.Descriptor, global::Zproto.StruDungeonRaidInfoReflection.Descriptor, global::Zproto.StruDungeonRandomEntityConfigIdInfoReflection.Descriptor, global::Zproto.StruDungeonRankListReflection.Descriptor, global::Zproto.StruDungeonReviveInfoReflection.Descriptor, global::Zproto.StruDungeonSceneInfoReflection.Descriptor, global::Zproto.StruDungeonScoreReflection.Descriptor, global::Zproto.StruDungeonSettlementReflection.Descriptor, global::Zproto.StruDungeonTargetReflection.Descriptor, global::Zproto.StruDungeonTimerInfoReflection.Descriptor, global::Zproto.StruDungeonTitleReflection.Descriptor, global::Zproto.StruDungeonUnionInfoReflection.Descriptor, global::Zproto.StruDungeonVarReflection.Descriptor, global::Zproto.StruDungeonVarAllReflection.Descriptor, global::Zproto.StruDungeonVoteReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruDungeonAffixDataReflection.Descriptor, global::Zproto.StruDungeonAreaInfoReflection.Descriptor, global::Zproto.StruDungeonBackpackSyncDataReflection.Descriptor, global::Zproto.StruDungeonDamageReflection.Descriptor, global::Zproto.StruDungeonEventReflection.Descriptor, global::Zproto.StruDungeonFlowInfoReflection.Descriptor, global::Zproto.StruDungeonHeroKeyInfoReflection.Descriptor, global::Zproto.StruDungeonHideSeekDataReflection.Descriptor, global::Zproto.StruDungeonLeaderBoardVoteReflection.Descriptor, global::Zproto.StruDungeonPhaseDataReflection.Descriptor, global::Zproto.StruDungeonPioneerReflection.Descriptor, global::Zproto.StruDungeonPlanetMemoryRoomReflection.Descriptor, global::Zproto.StruDungeonPlayerListReflection.Descriptor, global::Zproto.StruDungeonRaidInfoReflection.Descriptor, global::Zproto.StruDungeonRandomEntityConfigIdInfoReflection.Descriptor, global::Zproto.StruDungeonRankListReflection.Descriptor, global::Zproto.StruDungeonReviveInfoReflection.Descriptor, global::Zproto.StruDungeonSceneInfoReflection.Descriptor, global::Zproto.StruDungeonScoreReflection.Descriptor, global::Zproto.StruDungeonSettlementReflection.Descriptor, global::Zproto.StruDungeonShopSyncDataReflection.Descriptor, global::Zproto.StruDungeonTargetReflection.Descriptor, global::Zproto.StruDungeonTimerInfoReflection.Descriptor, global::Zproto.StruDungeonTitleReflection.Descriptor, global::Zproto.StruDungeonTowerDefenseDataReflection.Descriptor, global::Zproto.StruDungeonUnionInfoReflection.Descriptor, global::Zproto.StruDungeonVarReflection.Descriptor, global::Zproto.StruDungeonVarAllReflection.Descriptor, global::Zproto.StruDungeonVoteReflection.Descriptor, global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.DungeonSyncData), global::Zproto.DungeonSyncData.Parser, new[]{ "SceneUuid", "FlowInfo", "Title", "Target", "Damage", "Vote", "Settlement", "DungeonPioneer", "PlanetRoomInfo", "DungeonVar", "DungeonRank", "DungeonAffixData", "DungeonEvent", "DungeonScore", "TimerInfo", "HeroKey", "DungeonUnionInfo", "DungeonPlayerList", "ReviveInfo", "RandomEntityConfigIdInfo", "DungeonSceneInfo", "DungeonVarAll", "DungeonRaidInfo", "DungeonAreaInfo", "DungeonPhaseData", "LeaderBoardVote", "DungeonHideSeekData", "ErrCode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.DungeonSyncData), global::Zproto.DungeonSyncData.Parser, new[]{ "SceneUuid", "FlowInfo", "Title", "Target", "Damage", "Vote", "Settlement", "DungeonPioneer", "PlanetRoomInfo", "DungeonVar", "DungeonRank", "DungeonAffixData", "DungeonEvent", "DungeonScore", "TimerInfo", "HeroKey", "DungeonUnionInfo", "DungeonPlayerList", "ReviveInfo", "RandomEntityConfigIdInfo", "DungeonSceneInfo", "DungeonVarAll", "DungeonRaidInfo", "DungeonAreaInfo", "DungeonPhaseData", "LeaderBoardVote", "DungeonHideSeekData", "DungeonBackpackSyncData", "DungeonTowerDefenseData", "DungeonShopSyncData", "ErrCode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -155,6 +163,9 @@ namespace Zproto {
       dungeonPhaseData_ = other.dungeonPhaseData_ != null ? other.dungeonPhaseData_.Clone() : null;
       leaderBoardVote_ = other.leaderBoardVote_ != null ? other.leaderBoardVote_.Clone() : null;
       dungeonHideSeekData_ = other.dungeonHideSeekData_ != null ? other.dungeonHideSeekData_.Clone() : null;
+      dungeonBackpackSyncData_ = other.dungeonBackpackSyncData_ != null ? other.dungeonBackpackSyncData_.Clone() : null;
+      dungeonTowerDefenseData_ = other.dungeonTowerDefenseData_ != null ? other.dungeonTowerDefenseData_.Clone() : null;
+      dungeonShopSyncData_ = other.dungeonShopSyncData_ != null ? other.dungeonShopSyncData_.Clone() : null;
       errCode_ = other.errCode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -489,8 +500,44 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "dungeonBackpackSyncData" field.</summary>
+    public const int DungeonBackpackSyncDataFieldNumber = 28;
+    private global::Zproto.DungeonBackpackSyncData dungeonBackpackSyncData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.DungeonBackpackSyncData DungeonBackpackSyncData {
+      get { return dungeonBackpackSyncData_; }
+      set {
+        dungeonBackpackSyncData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeonTowerDefenseData" field.</summary>
+    public const int DungeonTowerDefenseDataFieldNumber = 29;
+    private global::Zproto.DungeonTowerDefenseData dungeonTowerDefenseData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.DungeonTowerDefenseData DungeonTowerDefenseData {
+      get { return dungeonTowerDefenseData_; }
+      set {
+        dungeonTowerDefenseData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeonShopSyncData" field.</summary>
+    public const int DungeonShopSyncDataFieldNumber = 30;
+    private global::Zproto.DungeonShopSyncData dungeonShopSyncData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.DungeonShopSyncData DungeonShopSyncData {
+      get { return dungeonShopSyncData_; }
+      set {
+        dungeonShopSyncData_ = value;
+      }
+    }
+
     /// <summary>Field number for the "errCode" field.</summary>
-    public const int ErrCodeFieldNumber = 28;
+    public const int ErrCodeFieldNumber = 31;
     private global::Zproto.EErrorCode errCode_ = global::Zproto.EErrorCode.ErrSuccess;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -543,6 +590,9 @@ namespace Zproto {
       if (!object.Equals(DungeonPhaseData, other.DungeonPhaseData)) return false;
       if (!object.Equals(LeaderBoardVote, other.LeaderBoardVote)) return false;
       if (!object.Equals(DungeonHideSeekData, other.DungeonHideSeekData)) return false;
+      if (!object.Equals(DungeonBackpackSyncData, other.DungeonBackpackSyncData)) return false;
+      if (!object.Equals(DungeonTowerDefenseData, other.DungeonTowerDefenseData)) return false;
+      if (!object.Equals(DungeonShopSyncData, other.DungeonShopSyncData)) return false;
       if (ErrCode != other.ErrCode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -578,6 +628,9 @@ namespace Zproto {
       if (dungeonPhaseData_ != null) hash ^= DungeonPhaseData.GetHashCode();
       if (leaderBoardVote_ != null) hash ^= LeaderBoardVote.GetHashCode();
       if (dungeonHideSeekData_ != null) hash ^= DungeonHideSeekData.GetHashCode();
+      if (dungeonBackpackSyncData_ != null) hash ^= DungeonBackpackSyncData.GetHashCode();
+      if (dungeonTowerDefenseData_ != null) hash ^= DungeonTowerDefenseData.GetHashCode();
+      if (dungeonShopSyncData_ != null) hash ^= DungeonShopSyncData.GetHashCode();
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) hash ^= ErrCode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -705,8 +758,20 @@ namespace Zproto {
         output.WriteRawTag(218, 1);
         output.WriteMessage(DungeonHideSeekData);
       }
+      if (dungeonBackpackSyncData_ != null) {
+        output.WriteRawTag(226, 1);
+        output.WriteMessage(DungeonBackpackSyncData);
+      }
+      if (dungeonTowerDefenseData_ != null) {
+        output.WriteRawTag(234, 1);
+        output.WriteMessage(DungeonTowerDefenseData);
+      }
+      if (dungeonShopSyncData_ != null) {
+        output.WriteRawTag(242, 1);
+        output.WriteMessage(DungeonShopSyncData);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(224, 1);
+        output.WriteRawTag(248, 1);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -827,8 +892,20 @@ namespace Zproto {
         output.WriteRawTag(218, 1);
         output.WriteMessage(DungeonHideSeekData);
       }
+      if (dungeonBackpackSyncData_ != null) {
+        output.WriteRawTag(226, 1);
+        output.WriteMessage(DungeonBackpackSyncData);
+      }
+      if (dungeonTowerDefenseData_ != null) {
+        output.WriteRawTag(234, 1);
+        output.WriteMessage(DungeonTowerDefenseData);
+      }
+      if (dungeonShopSyncData_ != null) {
+        output.WriteRawTag(242, 1);
+        output.WriteMessage(DungeonShopSyncData);
+      }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
-        output.WriteRawTag(224, 1);
+        output.WriteRawTag(248, 1);
         output.WriteEnum((int) ErrCode);
       }
       if (_unknownFields != null) {
@@ -921,6 +998,15 @@ namespace Zproto {
       }
       if (dungeonHideSeekData_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(DungeonHideSeekData);
+      }
+      if (dungeonBackpackSyncData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DungeonBackpackSyncData);
+      }
+      if (dungeonTowerDefenseData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DungeonTowerDefenseData);
+      }
+      if (dungeonShopSyncData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DungeonShopSyncData);
       }
       if (ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) ErrCode);
@@ -1095,6 +1181,24 @@ namespace Zproto {
           DungeonHideSeekData = new global::Zproto.DungeonHideSeekData();
         }
         DungeonHideSeekData.MergeFrom(other.DungeonHideSeekData);
+      }
+      if (other.dungeonBackpackSyncData_ != null) {
+        if (dungeonBackpackSyncData_ == null) {
+          DungeonBackpackSyncData = new global::Zproto.DungeonBackpackSyncData();
+        }
+        DungeonBackpackSyncData.MergeFrom(other.DungeonBackpackSyncData);
+      }
+      if (other.dungeonTowerDefenseData_ != null) {
+        if (dungeonTowerDefenseData_ == null) {
+          DungeonTowerDefenseData = new global::Zproto.DungeonTowerDefenseData();
+        }
+        DungeonTowerDefenseData.MergeFrom(other.DungeonTowerDefenseData);
+      }
+      if (other.dungeonShopSyncData_ != null) {
+        if (dungeonShopSyncData_ == null) {
+          DungeonShopSyncData = new global::Zproto.DungeonShopSyncData();
+        }
+        DungeonShopSyncData.MergeFrom(other.DungeonShopSyncData);
       }
       if (other.ErrCode != global::Zproto.EErrorCode.ErrSuccess) {
         ErrCode = other.ErrCode;
@@ -1304,7 +1408,28 @@ namespace Zproto {
             input.ReadMessage(DungeonHideSeekData);
             break;
           }
-          case 224: {
+          case 226: {
+            if (dungeonBackpackSyncData_ == null) {
+              DungeonBackpackSyncData = new global::Zproto.DungeonBackpackSyncData();
+            }
+            input.ReadMessage(DungeonBackpackSyncData);
+            break;
+          }
+          case 234: {
+            if (dungeonTowerDefenseData_ == null) {
+              DungeonTowerDefenseData = new global::Zproto.DungeonTowerDefenseData();
+            }
+            input.ReadMessage(DungeonTowerDefenseData);
+            break;
+          }
+          case 242: {
+            if (dungeonShopSyncData_ == null) {
+              DungeonShopSyncData = new global::Zproto.DungeonShopSyncData();
+            }
+            input.ReadMessage(DungeonShopSyncData);
+            break;
+          }
+          case 248: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }
@@ -1513,7 +1638,28 @@ namespace Zproto {
             input.ReadMessage(DungeonHideSeekData);
             break;
           }
-          case 224: {
+          case 226: {
+            if (dungeonBackpackSyncData_ == null) {
+              DungeonBackpackSyncData = new global::Zproto.DungeonBackpackSyncData();
+            }
+            input.ReadMessage(DungeonBackpackSyncData);
+            break;
+          }
+          case 234: {
+            if (dungeonTowerDefenseData_ == null) {
+              DungeonTowerDefenseData = new global::Zproto.DungeonTowerDefenseData();
+            }
+            input.ReadMessage(DungeonTowerDefenseData);
+            break;
+          }
+          case 242: {
+            if (dungeonShopSyncData_ == null) {
+              DungeonShopSyncData = new global::Zproto.DungeonShopSyncData();
+            }
+            input.ReadMessage(DungeonShopSyncData);
+            break;
+          }
+          case 248: {
             ErrCode = (global::Zproto.EErrorCode) input.ReadEnum();
             break;
           }

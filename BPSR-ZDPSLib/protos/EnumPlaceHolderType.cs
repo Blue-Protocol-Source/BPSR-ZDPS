@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumPlaceHolderTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxlbnVtX3BsYWNlX2hvbGRlcl90eXBlLnByb3RvEgZ6cHJvdG8qogMKD1Bs",
+            "ChxlbnVtX3BsYWNlX2hvbGRlcl90eXBlLnByb3RvEgZ6cHJvdG8q3QMKD1Bs",
             "YWNlSG9sZGVyVHlwZRIXChNQbGFjZUhvbGRlclR5cGVOb25lEAASFgoSUGxh",
             "Y2VIb2xkZXJUeXBlVmFsEAESGQoVUGxhY2VIb2xkZXJUeXBlUGxheWVyEAIS",
             "FwoTUGxhY2VIb2xkZXJUeXBlSXRlbRADEhgKFFBsYWNlSG9sZGVyVHlwZVVu",
@@ -34,7 +34,8 @@ namespace Zproto {
             "b2xkZXJUeXBlRmlzaEl0ZW0QCRIbChdQbGFjZUhvbGRlclR5cGVGaXNoUmFu",
             "axAKEh0KGVBsYWNlSG9sZGVyVHlwZVVuaW9uR3JvdXAQCxIdChlQbGFjZUhv",
             "bGRlclR5cGVNYXN0ZXJNb2RlEAwSIAocUGxhY2VIb2xkZXJUeXBlU2NlbmVQ",
-            "b3NpdGlvbhANYgZwcm90bzM="));
+            "b3NpdGlvbhANEhsKF1BsYWNlSG9sZGVyVHlwZUhvbWVsYW5kEA4SHAoYUGxh",
+            "Y2VIb2xkZXJUeXBlQmx1ZXByaW50EA9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.PlaceHolderType), }, null, null));
@@ -58,6 +59,8 @@ namespace Zproto {
     [pbr::OriginalName("PlaceHolderTypeUnionGroup")] UnionGroup = 11,
     [pbr::OriginalName("PlaceHolderTypeMasterMode")] MasterMode = 12,
     [pbr::OriginalName("PlaceHolderTypeScenePosition")] ScenePosition = 13,
+    [pbr::OriginalName("PlaceHolderTypeHomeland")] Homeland = 14,
+    [pbr::OriginalName("PlaceHolderTypeBlueprint")] Blueprint = 15,
   }
 
   #endregion

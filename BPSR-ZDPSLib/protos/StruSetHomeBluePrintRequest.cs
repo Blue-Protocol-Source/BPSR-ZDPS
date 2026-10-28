@@ -26,19 +26,21 @@ namespace Zproto {
           string.Concat(
             "CiZzdHJ1X3NldF9ob21lX2JsdWVfcHJpbnRfcmVxdWVzdC5wcm90bxIGenBy",
             "b3RvGhplbnVtX2JsdWVfcHJpbnRfdHlwZS5wcm90bxojc3RydV9ob21lbGFu",
-            "ZF9kZWNvcmF0aW9uX2luZm8ucHJvdG8aFHN0cnVfc3RydWN0dXJlLnByb3Rv",
-            "IrECChdTZXRIb21lQmx1ZVByaW50UmVxdWVzdBIeCgpob21lbGFuZElkGAEg",
-            "ASgDUgpob21lbGFuZElkEjsKDWJsdWVQcmludFR5cGUYAiABKA4yFS56cHJv",
-            "dG8uQmx1ZVByaW50VHlwZVINYmx1ZVByaW50VHlwZRISCgRzbG90GAMgASgF",
-            "UgRzbG90Ej8KEXNhdmVTdHJ1Y3R1cmVzSWRzGAQgAygLMhEuenByb3RvLlN0",
-            "cnVjdHVyZVIRc2F2ZVN0cnVjdHVyZXNJZHMSRgoOZGVjb3JhdGlvbkluZm8Y",
-            "BSABKAsyHi56cHJvdG8uSG9tZWxhbmREZWNvcmF0aW9uSW5mb1IOZGVjb3Jh",
-            "dGlvbkluZm8SHAoJc2hhcmVDb2RlGAYgASgJUglzaGFyZUNvZGViBnByb3Rv",
-            "Mw=="));
+            "ZF9kZWNvcmF0aW9uX2luZm8ucHJvdG8aIGVudW1fc2hhcmVfcmF0ZV9saW1p",
+            "dF90eXBlLnByb3RvGhRzdHJ1X3N0cnVjdHVyZS5wcm90byLzAgoXU2V0SG9t",
+            "ZUJsdWVQcmludFJlcXVlc3QSHgoKaG9tZWxhbmRJZBgBIAEoA1IKaG9tZWxh",
+            "bmRJZBI7Cg1ibHVlUHJpbnRUeXBlGAIgASgOMhUuenByb3RvLkJsdWVQcmlu",
+            "dFR5cGVSDWJsdWVQcmludFR5cGUSEgoEc2xvdBgDIAEoBVIEc2xvdBI/ChFz",
+            "YXZlU3RydWN0dXJlc0lkcxgEIAMoCzIRLnpwcm90by5TdHJ1Y3R1cmVSEXNh",
+            "dmVTdHJ1Y3R1cmVzSWRzEkYKDmRlY29yYXRpb25JbmZvGAUgASgLMh4uenBy",
+            "b3RvLkhvbWVsYW5kRGVjb3JhdGlvbkluZm9SDmRlY29yYXRpb25JbmZvEhwK",
+            "CXNoYXJlQ29kZRgGIAEoCVIJc2hhcmVDb2RlEkAKDXJhdGVMaW1pdFR5cGUY",
+            "ByABKA4yGi56cHJvdG8uU2hhcmVSYXRlTGltaXRUeXBlUg1yYXRlTGltaXRU",
+            "eXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.EnumBluePrintTypeReflection.Descriptor, global::Zproto.StruHomelandDecorationInfoReflection.Descriptor, global::Zproto.StruStructureReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.EnumBluePrintTypeReflection.Descriptor, global::Zproto.StruHomelandDecorationInfoReflection.Descriptor, global::Zproto.EnumShareRateLimitTypeReflection.Descriptor, global::Zproto.StruStructureReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.SetHomeBluePrintRequest), global::Zproto.SetHomeBluePrintRequest.Parser, new[]{ "HomelandId", "BluePrintType", "Slot", "SaveStructuresIds", "DecorationInfo", "ShareCode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.SetHomeBluePrintRequest), global::Zproto.SetHomeBluePrintRequest.Parser, new[]{ "HomelandId", "BluePrintType", "Slot", "SaveStructuresIds", "DecorationInfo", "ShareCode", "RateLimitType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -86,6 +88,7 @@ namespace Zproto {
       saveStructuresIds_ = other.saveStructuresIds_.Clone();
       decorationInfo_ = other.decorationInfo_ != null ? other.decorationInfo_.Clone() : null;
       shareCode_ = other.shareCode_;
+      rateLimitType_ = other.rateLimitType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -166,6 +169,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "rateLimitType" field.</summary>
+    public const int RateLimitTypeFieldNumber = 7;
+    private global::Zproto.ShareRateLimitType rateLimitType_ = global::Zproto.ShareRateLimitType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.ShareRateLimitType RateLimitType {
+      get { return rateLimitType_; }
+      set {
+        rateLimitType_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -187,6 +202,7 @@ namespace Zproto {
       if(!saveStructuresIds_.Equals(other.saveStructuresIds_)) return false;
       if (!object.Equals(DecorationInfo, other.DecorationInfo)) return false;
       if (ShareCode != other.ShareCode) return false;
+      if (RateLimitType != other.RateLimitType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -200,6 +216,7 @@ namespace Zproto {
       hash ^= saveStructuresIds_.GetHashCode();
       if (decorationInfo_ != null) hash ^= DecorationInfo.GetHashCode();
       if (ShareCode.Length != 0) hash ^= ShareCode.GetHashCode();
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) hash ^= RateLimitType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -239,6 +256,10 @@ namespace Zproto {
         output.WriteRawTag(50);
         output.WriteString(ShareCode);
       }
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) RateLimitType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -270,6 +291,10 @@ namespace Zproto {
         output.WriteRawTag(50);
         output.WriteString(ShareCode);
       }
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) RateLimitType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -295,6 +320,9 @@ namespace Zproto {
       }
       if (ShareCode.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ShareCode);
+      }
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RateLimitType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -326,6 +354,9 @@ namespace Zproto {
       }
       if (other.ShareCode.Length != 0) {
         ShareCode = other.ShareCode;
+      }
+      if (other.RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        RateLimitType = other.RateLimitType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -373,6 +404,10 @@ namespace Zproto {
             ShareCode = input.ReadString();
             break;
           }
+          case 56: {
+            RateLimitType = (global::Zproto.ShareRateLimitType) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -417,6 +452,10 @@ namespace Zproto {
           }
           case 50: {
             ShareCode = input.ReadString();
+            break;
+          }
+          case 56: {
+            RateLimitType = (global::Zproto.ShareRateLimitType) input.ReadEnum();
             break;
           }
         }

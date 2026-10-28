@@ -25,14 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2VudHJ5X3JhbmRvbV9kYXRhX3BhcmFtLnByb3RvEgZ6cHJvdG8i",
-            "iAEKFEVudHJ5UmFuZG9tRGF0YVBhcmFtEh4KCnJlZnJlc2hDbnQYASABKAVS",
+            "1AEKFEVudHJ5UmFuZG9tRGF0YVBhcmFtEh4KCnJlZnJlc2hDbnQYASABKAVS",
             "CnJlZnJlc2hDbnQSEAoDaWRzGAIgAygFUgNpZHMSGAoHb2JqVXVpZBgDIAEo",
             "A1IHb2JqVXVpZBIkCg1kZWFkVGltZXN0YW1wGAQgASgDUg1kZWFkVGltZXN0",
-            "YW1wYgZwcm90bzM="));
+            "YW1wEigKD2xlYXJuUmVwZWF0ZWRseRgFIAEoCFIPbGVhcm5SZXBlYXRlZGx5",
+            "EiAKC2hpZGVSZWZyZXNoGAYgASgIUgtoaWRlUmVmcmVzaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.EntryRandomDataParam), global::Zproto.EntryRandomDataParam.Parser, new[]{ "RefreshCnt", "Ids", "ObjUuid", "DeadTimestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.EntryRandomDataParam), global::Zproto.EntryRandomDataParam.Parser, new[]{ "RefreshCnt", "Ids", "ObjUuid", "DeadTimestamp", "LearnRepeatedly", "HideRefresh" }, null, null, null, null)
           }));
     }
     #endregion
@@ -78,6 +79,8 @@ namespace Zproto {
       ids_ = other.ids_.Clone();
       objUuid_ = other.objUuid_;
       deadTimestamp_ = other.deadTimestamp_;
+      learnRepeatedly_ = other.learnRepeatedly_;
+      hideRefresh_ = other.hideRefresh_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -134,6 +137,30 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "learnRepeatedly" field.</summary>
+    public const int LearnRepeatedlyFieldNumber = 5;
+    private bool learnRepeatedly_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool LearnRepeatedly {
+      get { return learnRepeatedly_; }
+      set {
+        learnRepeatedly_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hideRefresh" field.</summary>
+    public const int HideRefreshFieldNumber = 6;
+    private bool hideRefresh_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HideRefresh {
+      get { return hideRefresh_; }
+      set {
+        hideRefresh_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -153,6 +180,8 @@ namespace Zproto {
       if(!ids_.Equals(other.ids_)) return false;
       if (ObjUuid != other.ObjUuid) return false;
       if (DeadTimestamp != other.DeadTimestamp) return false;
+      if (LearnRepeatedly != other.LearnRepeatedly) return false;
+      if (HideRefresh != other.HideRefresh) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,6 +193,8 @@ namespace Zproto {
       hash ^= ids_.GetHashCode();
       if (ObjUuid != 0L) hash ^= ObjUuid.GetHashCode();
       if (DeadTimestamp != 0L) hash ^= DeadTimestamp.GetHashCode();
+      if (LearnRepeatedly != false) hash ^= LearnRepeatedly.GetHashCode();
+      if (HideRefresh != false) hash ^= HideRefresh.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -195,6 +226,14 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt64(DeadTimestamp);
       }
+      if (LearnRepeatedly != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(LearnRepeatedly);
+      }
+      if (HideRefresh != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(HideRefresh);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -218,6 +257,14 @@ namespace Zproto {
         output.WriteRawTag(32);
         output.WriteInt64(DeadTimestamp);
       }
+      if (LearnRepeatedly != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(LearnRepeatedly);
+      }
+      if (HideRefresh != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(HideRefresh);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -237,6 +284,12 @@ namespace Zproto {
       }
       if (DeadTimestamp != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(DeadTimestamp);
+      }
+      if (LearnRepeatedly != false) {
+        size += 1 + 1;
+      }
+      if (HideRefresh != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -259,6 +312,12 @@ namespace Zproto {
       }
       if (other.DeadTimestamp != 0L) {
         DeadTimestamp = other.DeadTimestamp;
+      }
+      if (other.LearnRepeatedly != false) {
+        LearnRepeatedly = other.LearnRepeatedly;
+      }
+      if (other.HideRefresh != false) {
+        HideRefresh = other.HideRefresh;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -296,6 +355,14 @@ namespace Zproto {
             DeadTimestamp = input.ReadInt64();
             break;
           }
+          case 40: {
+            LearnRepeatedly = input.ReadBool();
+            break;
+          }
+          case 48: {
+            HideRefresh = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -330,6 +397,14 @@ namespace Zproto {
           }
           case 32: {
             DeadTimestamp = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            LearnRepeatedly = input.ReadBool();
+            break;
+          }
+          case 48: {
+            HideRefresh = input.ReadBool();
             break;
           }
         }

@@ -27,7 +27,7 @@ namespace Zproto {
             "Ch5zdHJ1X2hvbWVsYW5kX3Zpc2l0X2luZm8ucHJvdG8SBnpwcm90bxojc3Ry",
             "dV9jb21tdW5pdHlfYXV0aG9yaXR5X2luZm8ucHJvdG8aIHN0cnVfY29tbXVu",
             "aXR5X3BsYXllcl9pbmZvLnByb3RvGiNzdHJ1X2hvbWVsYW5kX2RlY29yYXRp",
-            "b25faW5mby5wcm90byLgBwoRSG9tZWxhbmRWaXNpdEluZm8SHgoKaG9tZWxh",
+            "b25faW5mby5wcm90byLcCAoRSG9tZWxhbmRWaXNpdEluZm8SHgoKaG9tZWxh",
             "bmRJZBgBIAEoA1IKaG9tZWxhbmRJZBIUCgVsZXZlbBgCIAEoBVIFbGV2ZWwS",
             "IAoLY2xlYW5saW5lc3MYAyABKAVSC2NsZWFubGluZXNzEioKEGhvdXNlT3du",
             "ZXJDaGFySWQYBCABKANSEGhvdXNlT3duZXJDaGFySWQSEgoEbmFtZRgFIAEo",
@@ -46,14 +46,17 @@ namespace Zproto {
             "b3JhdGlvbkluZm8SJAoNdW5sb2NrZWRBcmVhcxgPIAMoBVINdW5sb2NrZWRB",
             "cmVhcxIgCgtIb3VzaW5nVHlwZRgQIAEoBVILSG91c2luZ1R5cGUSGAoHZmll",
             "bGRJZBgRIAEoBVIHZmllbGRJZBIqChBpc0hvbWVsYW5kRnJpZW5kGBIgASgI",
-            "UhBpc0hvbWVsYW5kRnJpZW5kGjUKE0Z1cm5pdHVyZVN0YXRlRW50cnkSCwoD",
-            "a2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4ARpOCg9Db2hhYml0YW50RW50",
-            "cnkSCwoDa2V5GAEgASgDEioKBXZhbHVlGAIgASgLMhsuenByb3RvLkNvbW11",
-            "bml0eVBsYXllckluZm86AjgBYgZwcm90bzM="));
+            "UhBpc0hvbWVsYW5kRnJpZW5kEjwKGW91dGVyUGxhY2VkRnVybml0dXJlQ291",
+            "bnQYEyABKAVSGW91dGVyUGxhY2VkRnVybml0dXJlQ291bnQSPAoZaW5uZXJQ",
+            "bGFjZWRGdXJuaXR1cmVDb3VudBgVIAEoBVIZaW5uZXJQbGFjZWRGdXJuaXR1",
+            "cmVDb3VudBo1ChNGdXJuaXR1cmVTdGF0ZUVudHJ5EgsKA2tleRgBIAEoBRIN",
+            "CgV2YWx1ZRgCIAEoBToCOAEaTgoPQ29oYWJpdGFudEVudHJ5EgsKA2tleRgB",
+            "IAEoAxIqCgV2YWx1ZRgCIAEoCzIbLnpwcm90by5Db21tdW5pdHlQbGF5ZXJJ",
+            "bmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruCommunityAuthorityInfoReflection.Descriptor, global::Zproto.StruCommunityPlayerInfoReflection.Descriptor, global::Zproto.StruHomelandDecorationInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.HomelandVisitInfo), global::Zproto.HomelandVisitInfo.Parser, new[]{ "HomelandId", "Level", "Cleanliness", "HouseOwnerCharId", "Name", "Introduction", "OuterEmptyLand", "InnerEmptyLand", "FlowersNum", "FurnitureState", "Cohabitant", "AuthorityInfo", "OuterDecorationInfo", "InnerDecorationInfo", "UnlockedAreas", "HousingType", "FieldId", "IsHomelandFriend" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.HomelandVisitInfo), global::Zproto.HomelandVisitInfo.Parser, new[]{ "HomelandId", "Level", "Cleanliness", "HouseOwnerCharId", "Name", "Introduction", "OuterEmptyLand", "InnerEmptyLand", "FlowersNum", "FurnitureState", "Cohabitant", "AuthorityInfo", "OuterDecorationInfo", "InnerDecorationInfo", "UnlockedAreas", "HousingType", "FieldId", "IsHomelandFriend", "OuterPlacedFurnitureCount", "InnerPlacedFurnitureCount" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -113,6 +116,8 @@ namespace Zproto {
       housingType_ = other.housingType_;
       fieldId_ = other.fieldId_;
       isHomelandFriend_ = other.isHomelandFriend_;
+      outerPlacedFurnitureCount_ = other.outerPlacedFurnitureCount_;
+      innerPlacedFurnitureCount_ = other.innerPlacedFurnitureCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -335,6 +340,30 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "outerPlacedFurnitureCount" field.</summary>
+    public const int OuterPlacedFurnitureCountFieldNumber = 19;
+    private int outerPlacedFurnitureCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int OuterPlacedFurnitureCount {
+      get { return outerPlacedFurnitureCount_; }
+      set {
+        outerPlacedFurnitureCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "innerPlacedFurnitureCount" field.</summary>
+    public const int InnerPlacedFurnitureCountFieldNumber = 21;
+    private int innerPlacedFurnitureCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int InnerPlacedFurnitureCount {
+      get { return innerPlacedFurnitureCount_; }
+      set {
+        innerPlacedFurnitureCount_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -368,6 +397,8 @@ namespace Zproto {
       if (HousingType != other.HousingType) return false;
       if (FieldId != other.FieldId) return false;
       if (IsHomelandFriend != other.IsHomelandFriend) return false;
+      if (OuterPlacedFurnitureCount != other.OuterPlacedFurnitureCount) return false;
+      if (InnerPlacedFurnitureCount != other.InnerPlacedFurnitureCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -393,6 +424,8 @@ namespace Zproto {
       if (HousingType != 0) hash ^= HousingType.GetHashCode();
       if (FieldId != 0) hash ^= FieldId.GetHashCode();
       if (IsHomelandFriend != false) hash ^= IsHomelandFriend.GetHashCode();
+      if (OuterPlacedFurnitureCount != 0) hash ^= OuterPlacedFurnitureCount.GetHashCode();
+      if (InnerPlacedFurnitureCount != 0) hash ^= InnerPlacedFurnitureCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -474,6 +507,14 @@ namespace Zproto {
         output.WriteRawTag(144, 1);
         output.WriteBool(IsHomelandFriend);
       }
+      if (OuterPlacedFurnitureCount != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(OuterPlacedFurnitureCount);
+      }
+      if (InnerPlacedFurnitureCount != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(InnerPlacedFurnitureCount);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -547,6 +588,14 @@ namespace Zproto {
         output.WriteRawTag(144, 1);
         output.WriteBool(IsHomelandFriend);
       }
+      if (OuterPlacedFurnitureCount != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt32(OuterPlacedFurnitureCount);
+      }
+      if (InnerPlacedFurnitureCount != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteInt32(InnerPlacedFurnitureCount);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -604,6 +653,12 @@ namespace Zproto {
       }
       if (IsHomelandFriend != false) {
         size += 2 + 1;
+      }
+      if (OuterPlacedFurnitureCount != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(OuterPlacedFurnitureCount);
+      }
+      if (InnerPlacedFurnitureCount != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(InnerPlacedFurnitureCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -673,6 +728,12 @@ namespace Zproto {
       }
       if (other.IsHomelandFriend != false) {
         IsHomelandFriend = other.IsHomelandFriend;
+      }
+      if (other.OuterPlacedFurnitureCount != 0) {
+        OuterPlacedFurnitureCount = other.OuterPlacedFurnitureCount;
+      }
+      if (other.InnerPlacedFurnitureCount != 0) {
+        InnerPlacedFurnitureCount = other.InnerPlacedFurnitureCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -775,6 +836,14 @@ namespace Zproto {
             IsHomelandFriend = input.ReadBool();
             break;
           }
+          case 152: {
+            OuterPlacedFurnitureCount = input.ReadInt32();
+            break;
+          }
+          case 168: {
+            InnerPlacedFurnitureCount = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -874,6 +943,14 @@ namespace Zproto {
           }
           case 144: {
             IsHomelandFriend = input.ReadBool();
+            break;
+          }
+          case 152: {
+            OuterPlacedFurnitureCount = input.ReadInt32();
+            break;
+          }
+          case 168: {
+            InnerPlacedFurnitureCount = input.ReadInt32();
             break;
           }
         }

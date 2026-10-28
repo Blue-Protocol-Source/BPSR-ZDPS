@@ -25,16 +25,18 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CilzdHJ1X2hvbWVsYW5kX3NldF9sYW1wbGlnaHRfcmVxdWVzdC5wcm90bxIG",
-            "enByb3RvGhNzdHJ1X2ludF92ZWMzLnByb3RvIswBChtIb21lbGFuZFNldExh",
+            "enByb3RvGhNzdHJ1X2ludF92ZWMzLnByb3RvIqICChtIb21lbGFuZFNldExh",
             "bXBsaWdodFJlcXVlc3QSJgoObGFtcGxpZ2h0TGV2ZWwYASABKAVSDmxhbXBs",
             "aWdodExldmVsEjcKDmxhbXBsaWdodENvbG9yGAIgASgLMg8uenByb3RvLklu",
             "dFZlYzNSDmxhbXBsaWdodENvbG9yEh4KCmRheU5pZ2h0SWQYAyABKAVSCmRh",
             "eU5pZ2h0SWQSEgoEbW9kZRgEIAEoBVIEbW9kZRIYCgdpc091dGVyGAUgASgI",
-            "Ugdpc091dGVyYgZwcm90bzM="));
+            "Ugdpc091dGVyEioKEGZpeGVkVGltZUVuYWJsZWQYBiABKAhSEGZpeGVkVGlt",
+            "ZUVuYWJsZWQSKAoPZml4ZWRUaW1lTWludXRlGAcgASgFUg9maXhlZFRpbWVN",
+            "aW51dGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruIntVec3Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.HomelandSetLamplightRequest), global::Zproto.HomelandSetLamplightRequest.Parser, new[]{ "LamplightLevel", "LamplightColor", "DayNightId", "Mode", "IsOuter" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.HomelandSetLamplightRequest), global::Zproto.HomelandSetLamplightRequest.Parser, new[]{ "LamplightLevel", "LamplightColor", "DayNightId", "Mode", "IsOuter", "FixedTimeEnabled", "FixedTimeMinute" }, null, null, null, null)
           }));
     }
     #endregion
@@ -81,6 +83,8 @@ namespace Zproto {
       dayNightId_ = other.dayNightId_;
       mode_ = other.mode_;
       isOuter_ = other.isOuter_;
+      fixedTimeEnabled_ = other.fixedTimeEnabled_;
+      fixedTimeMinute_ = other.fixedTimeMinute_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -150,6 +154,30 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "fixedTimeEnabled" field.</summary>
+    public const int FixedTimeEnabledFieldNumber = 6;
+    private bool fixedTimeEnabled_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool FixedTimeEnabled {
+      get { return fixedTimeEnabled_; }
+      set {
+        fixedTimeEnabled_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fixedTimeMinute" field.</summary>
+    public const int FixedTimeMinuteFieldNumber = 7;
+    private int fixedTimeMinute_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int FixedTimeMinute {
+      get { return fixedTimeMinute_; }
+      set {
+        fixedTimeMinute_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -170,6 +198,8 @@ namespace Zproto {
       if (DayNightId != other.DayNightId) return false;
       if (Mode != other.Mode) return false;
       if (IsOuter != other.IsOuter) return false;
+      if (FixedTimeEnabled != other.FixedTimeEnabled) return false;
+      if (FixedTimeMinute != other.FixedTimeMinute) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -182,6 +212,8 @@ namespace Zproto {
       if (DayNightId != 0) hash ^= DayNightId.GetHashCode();
       if (Mode != 0) hash ^= Mode.GetHashCode();
       if (IsOuter != false) hash ^= IsOuter.GetHashCode();
+      if (FixedTimeEnabled != false) hash ^= FixedTimeEnabled.GetHashCode();
+      if (FixedTimeMinute != 0) hash ^= FixedTimeMinute.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -220,6 +252,14 @@ namespace Zproto {
         output.WriteRawTag(40);
         output.WriteBool(IsOuter);
       }
+      if (FixedTimeEnabled != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(FixedTimeEnabled);
+      }
+      if (FixedTimeMinute != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(FixedTimeMinute);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -250,6 +290,14 @@ namespace Zproto {
         output.WriteRawTag(40);
         output.WriteBool(IsOuter);
       }
+      if (FixedTimeEnabled != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(FixedTimeEnabled);
+      }
+      if (FixedTimeMinute != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(FixedTimeMinute);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -274,6 +322,12 @@ namespace Zproto {
       }
       if (IsOuter != false) {
         size += 1 + 1;
+      }
+      if (FixedTimeEnabled != false) {
+        size += 1 + 1;
+      }
+      if (FixedTimeMinute != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FixedTimeMinute);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -304,6 +358,12 @@ namespace Zproto {
       }
       if (other.IsOuter != false) {
         IsOuter = other.IsOuter;
+      }
+      if (other.FixedTimeEnabled != false) {
+        FixedTimeEnabled = other.FixedTimeEnabled;
+      }
+      if (other.FixedTimeMinute != 0) {
+        FixedTimeMinute = other.FixedTimeMinute;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -347,6 +407,14 @@ namespace Zproto {
             IsOuter = input.ReadBool();
             break;
           }
+          case 48: {
+            FixedTimeEnabled = input.ReadBool();
+            break;
+          }
+          case 56: {
+            FixedTimeMinute = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -387,6 +455,14 @@ namespace Zproto {
           }
           case 40: {
             IsOuter = input.ReadBool();
+            break;
+          }
+          case 48: {
+            FixedTimeEnabled = input.ReadBool();
+            break;
+          }
+          case 56: {
+            FixedTimeMinute = input.ReadInt32();
             break;
           }
         }

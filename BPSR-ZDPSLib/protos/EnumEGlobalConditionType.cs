@@ -25,7 +25,7 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJlbnVtX2VfZ2xvYmFsX2NvbmRpdGlvbl90eXBlLnByb3RvEgZ6cHJvdG8q",
-            "hSIKFEVHbG9iYWxDb25kaXRpb25UeXBlEhsKF0dsb2JhbENvbmRpdGlvblR5",
+            "3CMKFEVHbG9iYWxDb25kaXRpb25UeXBlEhsKF0dsb2JhbENvbmRpdGlvblR5",
             "cGVOb25lEAASIAocR2xvYmFsQ29uZGl0aW9uVHlwZVVzZXJMZXZlbBABEiIK",
             "Hkdsb2JhbENvbmRpdGlvblR5cGVGaW5pc2hRdWVzdBACEisKJ0dsb2JhbENv",
             "bmRpdGlvblR5cGVQbGFuQ29zdFRhbGVudFBvaW50cxADEhkKFUdsb2JhbENv",
@@ -121,8 +121,12 @@ namespace Zproto {
             "aGlvblVubG9ja2VkEIIBEiYKIUdsb2JhbENvbmRpdGlvblR5cGVQZXRFbmVy",
             "Z3lMaW1pdBCDARIkCh9HbG9iYWxDb25kaXRpb25UeXBlU2NlbmVTdWJUeXBl",
             "EIQBEiQKH0dsb2JhbENvbmRpdGlvblR5cGVIYXNBbnlCdWZmSWQQhQESKQok",
-            "R2xvYmFsQ29uZGl0aW9uVHlwZUZhbnRhc3lBdGxhc1N0YWdlEIYBYgZwcm90",
-            "bzM="));
+            "R2xvYmFsQ29uZGl0aW9uVHlwZUZhbnRhc3lBdGxhc1N0YWdlEIYBEjQKL0ds",
+            "b2JhbENvbmRpdGlvblR5cGVTZWFzb25UYWxlbnRSZWZvcmdlUG9vbExldmVs",
+            "EIcBEiYKIUdsb2JhbENvbmRpdGlvblR5cGVBb3lpU2tpbGxMZXZlbBCIARIl",
+            "CiBHbG9iYWxDb25kaXRpb25UeXBlVGVtcEl0ZW1Db3VudBCJARIsCidHbG9i",
+            "YWxDb25kaXRpb25UeXBlT3duRmFzaGlvbkJ5RW1vdGVUYWcQigESIgodR2xv",
+            "YmFsQ29uZGl0aW9uVHlwZUluVG95U3RhdGUQiwFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EGlobalConditionType), }, null, null));
@@ -247,6 +251,11 @@ namespace Zproto {
     [pbr::OriginalName("GlobalConditionTypeSceneSubType")] GlobalConditionTypeSceneSubType = 132,
     [pbr::OriginalName("GlobalConditionTypeHasAnyBuffId")] GlobalConditionTypeHasAnyBuffId = 133,
     [pbr::OriginalName("GlobalConditionTypeFantasyAtlasStage")] GlobalConditionTypeFantasyAtlasStage = 134,
+    [pbr::OriginalName("GlobalConditionTypeSeasonTalentReforgePoolLevel")] GlobalConditionTypeSeasonTalentReforgePoolLevel = 135,
+    [pbr::OriginalName("GlobalConditionTypeAoyiSkillLevel")] GlobalConditionTypeAoyiSkillLevel = 136,
+    [pbr::OriginalName("GlobalConditionTypeTempItemCount")] GlobalConditionTypeTempItemCount = 137,
+    [pbr::OriginalName("GlobalConditionTypeOwnFashionByEmoteTag")] GlobalConditionTypeOwnFashionByEmoteTag = 138,
+    [pbr::OriginalName("GlobalConditionTypeInToyState")] GlobalConditionTypeInToyState = 139,
   }
 
   #endregion

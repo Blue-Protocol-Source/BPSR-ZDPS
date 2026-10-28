@@ -28,7 +28,7 @@ namespace Zproto {
             "dXlfcmVjb3JkLnByb3RvGiNzdHJ1X3Nob3BfYWRkX3VwX2JvdW5kX3JlY29y",
             "ZC5wcm90bxohc3RydV9zaG9wX2NvbXBlbnNhdGlvbl9kYXRhLnByb3RvGh5z",
             "dHJ1X3Nob3BfcmVmcmVzaF9yZWNvcmQucHJvdG8aFXN0cnVfZGlydHlfbWFz",
-            "ay5wcm90byLzBQoIU2hvcERhdGESQwoLcmVmcmVzaExpc3QYASADKAsyIS56",
+            "ay5wcm90byKbBgoIU2hvcERhdGESQwoLcmVmcmVzaExpc3QYASADKAsyIS56",
             "cHJvdG8uU2hvcERhdGEuUmVmcmVzaExpc3RFbnRyeVILcmVmcmVzaExpc3QS",
             "VQoRbm9ybWFsU2hvcFJlY29yZHMYAiADKAsyJy56cHJvdG8uU2hvcERhdGEu",
             "Tm9ybWFsU2hvcFJlY29yZHNFbnRyeVIRbm9ybWFsU2hvcFJlY29yZHMSVQoR",
@@ -37,19 +37,20 @@ namespace Zproto {
             "cGVuc2F0aW9uSXRlbURhdGEYBCABKAsyHC56cHJvdG8uU2hvcENvbXBlbnNh",
             "dGlvbkRhdGFSFGNvbXBlbnNhdGlvbkl0ZW1EYXRhElUKEWFkZFVwQm91bmRS",
             "ZWNvcmRzGAUgAygLMicuenByb3RvLlNob3BEYXRhLkFkZFVwQm91bmRSZWNv",
-            "cmRzRW50cnlSEWFkZFVwQm91bmRSZWNvcmRzGk0KEFJlZnJlc2hMaXN0RW50",
-            "cnkSCwoDa2V5GAEgASgFEigKBXZhbHVlGAIgASgLMhkuenByb3RvLlNob3BS",
-            "ZWZyZXNoUmVjb3JkOgI4ARpRChZOb3JtYWxTaG9wUmVjb3Jkc0VudHJ5EgsK",
-            "A2tleRgBIAEoBRImCgV2YWx1ZRgCIAEoCzIXLnpwcm90by5QbGF5ZXJCdXlS",
-            "ZWNvcmQ6AjgBGlEKFlNlYXNvblNob3BSZWNvcmRzRW50cnkSCwoDa2V5GAEg",
-            "ASgFEiYKBXZhbHVlGAIgASgLMhcuenByb3RvLlBsYXllckJ1eVJlY29yZDoC",
-            "OAEaVgoWQWRkVXBCb3VuZFJlY29yZHNFbnRyeRILCgNrZXkYASABKAUSKwoF",
-            "dmFsdWUYAiABKAsyHC56cHJvdG8uU2hvcEFkZFVwQm91bmRSZWNvcmQ6AjgB",
-            "YgZwcm90bzM="));
+            "cmRzRW50cnlSEWFkZFVwQm91bmRSZWNvcmRzEiYKDmJ1eU1hbGxJdGVtSWRz",
+            "GAYgAygFUg5idXlNYWxsSXRlbUlkcxpNChBSZWZyZXNoTGlzdEVudHJ5EgsK",
+            "A2tleRgBIAEoBRIoCgV2YWx1ZRgCIAEoCzIZLnpwcm90by5TaG9wUmVmcmVz",
+            "aFJlY29yZDoCOAEaUQoWTm9ybWFsU2hvcFJlY29yZHNFbnRyeRILCgNrZXkY",
+            "ASABKAUSJgoFdmFsdWUYAiABKAsyFy56cHJvdG8uUGxheWVyQnV5UmVjb3Jk",
+            "OgI4ARpRChZTZWFzb25TaG9wUmVjb3Jkc0VudHJ5EgsKA2tleRgBIAEoBRIm",
+            "CgV2YWx1ZRgCIAEoCzIXLnpwcm90by5QbGF5ZXJCdXlSZWNvcmQ6AjgBGlYK",
+            "FkFkZFVwQm91bmRSZWNvcmRzRW50cnkSCwoDa2V5GAEgASgFEisKBXZhbHVl",
+            "GAIgASgLMhwuenByb3RvLlNob3BBZGRVcEJvdW5kUmVjb3JkOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPlayerBuyRecordReflection.Descriptor, global::Zproto.StruShopAddUpBoundRecordReflection.Descriptor, global::Zproto.StruShopCompensationDataReflection.Descriptor, global::Zproto.StruShopRefreshRecordReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ShopData), global::Zproto.ShopData.Parser, new[]{ "RefreshList", "NormalShopRecords", "SeasonShopRecords", "CompensationItemData", "AddUpBoundRecords" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ShopData), global::Zproto.ShopData.Parser, new[]{ "RefreshList", "NormalShopRecords", "SeasonShopRecords", "CompensationItemData", "AddUpBoundRecords", "BuyMallItemIds" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, })
           }));
     }
     #endregion
@@ -96,6 +97,7 @@ namespace Zproto {
       seasonShopRecords_ = other.seasonShopRecords_.Clone();
       compensationItemData_ = other.compensationItemData_ != null ? other.compensationItemData_.Clone() : null;
       addUpBoundRecords_ = other.addUpBoundRecords_.Clone();
+      buyMallItemIds_ = other.buyMallItemIds_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -161,6 +163,17 @@ namespace Zproto {
       get { return addUpBoundRecords_; }
     }
 
+    /// <summary>Field number for the "buyMallItemIds" field.</summary>
+    public const int BuyMallItemIdsFieldNumber = 6;
+    private static readonly pb::FieldCodec<int> _repeated_buyMallItemIds_codec
+        = pb::FieldCodec.ForInt32(50);
+    private readonly pbc::RepeatedField<int> buyMallItemIds_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> BuyMallItemIds {
+      get { return buyMallItemIds_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -181,6 +194,7 @@ namespace Zproto {
       if (!SeasonShopRecords.Equals(other.SeasonShopRecords)) return false;
       if (!object.Equals(CompensationItemData, other.CompensationItemData)) return false;
       if (!AddUpBoundRecords.Equals(other.AddUpBoundRecords)) return false;
+      if(!buyMallItemIds_.Equals(other.buyMallItemIds_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -193,6 +207,7 @@ namespace Zproto {
       hash ^= SeasonShopRecords.GetHashCode();
       if (compensationItemData_ != null) hash ^= CompensationItemData.GetHashCode();
       hash ^= AddUpBoundRecords.GetHashCode();
+      hash ^= buyMallItemIds_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -219,6 +234,7 @@ namespace Zproto {
         output.WriteMessage(CompensationItemData);
       }
       addUpBoundRecords_.WriteTo(output, _map_addUpBoundRecords_codec);
+      buyMallItemIds_.WriteTo(output, _repeated_buyMallItemIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -237,6 +253,7 @@ namespace Zproto {
         output.WriteMessage(CompensationItemData);
       }
       addUpBoundRecords_.WriteTo(ref output, _map_addUpBoundRecords_codec);
+      buyMallItemIds_.WriteTo(ref output, _repeated_buyMallItemIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -254,6 +271,7 @@ namespace Zproto {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CompensationItemData);
       }
       size += addUpBoundRecords_.CalculateSize(_map_addUpBoundRecords_codec);
+      size += buyMallItemIds_.CalculateSize(_repeated_buyMallItemIds_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -276,6 +294,7 @@ namespace Zproto {
         CompensationItemData.MergeFrom(other.CompensationItemData);
       }
       addUpBoundRecords_.MergeFrom(other.addUpBoundRecords_);
+      buyMallItemIds_.Add(other.buyMallItemIds_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -318,6 +337,11 @@ namespace Zproto {
             addUpBoundRecords_.AddEntriesFrom(input, _map_addUpBoundRecords_codec);
             break;
           }
+          case 50:
+          case 48: {
+            buyMallItemIds_.AddEntriesFrom(input, _repeated_buyMallItemIds_codec);
+            break;
+          }
         }
       }
     #endif
@@ -358,6 +382,11 @@ namespace Zproto {
           }
           case 42: {
             addUpBoundRecords_.AddEntriesFrom(ref input, _map_addUpBoundRecords_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            buyMallItemIds_.AddEntriesFrom(ref input, _repeated_buyMallItemIds_codec);
             break;
           }
         }

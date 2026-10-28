@@ -25,12 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixzdHJ1X3VzZV9ibHVlX3ByaW50X3NoYXJlX2NvZGVfcmVxdWVzdC5wcm90",
-            "bxIGenByb3RvIjwKHFVzZUJsdWVQcmludFNoYXJlQ29kZVJlcXVlc3QSHAoJ",
-            "c2hhcmVDb2RlGAEgASgJUglzaGFyZUNvZGViBnByb3RvMw=="));
+            "bxIGenByb3RvGiBlbnVtX3NoYXJlX3JhdGVfbGltaXRfdHlwZS5wcm90byJ+",
+            "ChxVc2VCbHVlUHJpbnRTaGFyZUNvZGVSZXF1ZXN0EhwKCXNoYXJlQ29kZRgB",
+            "IAEoCVIJc2hhcmVDb2RlEkAKDXJhdGVMaW1pdFR5cGUYAiABKA4yGi56cHJv",
+            "dG8uU2hhcmVSYXRlTGltaXRUeXBlUg1yYXRlTGltaXRUeXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Zproto.EnumShareRateLimitTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UseBluePrintShareCodeRequest), global::Zproto.UseBluePrintShareCodeRequest.Parser, new[]{ "ShareCode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.UseBluePrintShareCodeRequest), global::Zproto.UseBluePrintShareCodeRequest.Parser, new[]{ "ShareCode", "RateLimitType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,6 +75,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UseBluePrintShareCodeRequest(UseBluePrintShareCodeRequest other) : this() {
       shareCode_ = other.shareCode_;
+      rateLimitType_ = other.rateLimitType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,6 +97,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "rateLimitType" field.</summary>
+    public const int RateLimitTypeFieldNumber = 2;
+    private global::Zproto.ShareRateLimitType rateLimitType_ = global::Zproto.ShareRateLimitType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.ShareRateLimitType RateLimitType {
+      get { return rateLimitType_; }
+      set {
+        rateLimitType_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -110,6 +125,7 @@ namespace Zproto {
         return true;
       }
       if (ShareCode != other.ShareCode) return false;
+      if (RateLimitType != other.RateLimitType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -118,6 +134,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       if (ShareCode.Length != 0) hash ^= ShareCode.GetHashCode();
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) hash ^= RateLimitType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -140,6 +157,10 @@ namespace Zproto {
         output.WriteRawTag(10);
         output.WriteString(ShareCode);
       }
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) RateLimitType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -154,6 +175,10 @@ namespace Zproto {
         output.WriteRawTag(10);
         output.WriteString(ShareCode);
       }
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) RateLimitType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -166,6 +191,9 @@ namespace Zproto {
       int size = 0;
       if (ShareCode.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ShareCode);
+      }
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RateLimitType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -181,6 +209,9 @@ namespace Zproto {
       }
       if (other.ShareCode.Length != 0) {
         ShareCode = other.ShareCode;
+      }
+      if (other.RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        RateLimitType = other.RateLimitType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -205,6 +236,10 @@ namespace Zproto {
             ShareCode = input.ReadString();
             break;
           }
+          case 16: {
+            RateLimitType = (global::Zproto.ShareRateLimitType) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -226,6 +261,10 @@ namespace Zproto {
             break;
           case 10: {
             ShareCode = input.ReadString();
+            break;
+          }
+          case 16: {
+            RateLimitType = (global::Zproto.ShareRateLimitType) input.ReadEnum();
             break;
           }
         }

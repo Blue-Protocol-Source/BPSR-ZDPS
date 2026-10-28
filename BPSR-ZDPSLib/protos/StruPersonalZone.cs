@@ -26,47 +26,51 @@ namespace Zproto {
           string.Concat(
             "ChhzdHJ1X3BlcnNvbmFsX3pvbmUucHJvdG8SBnpwcm90bxoWc3RydV9hY3Rp",
             "b25faW5mby5wcm90bxoec3RydV9lZGl0b3JfdV9pX3Bvc2l0aW9uLnByb3Rv",
-            "GidzdHJ1X2Zhc2hpb25fcXVhbGl0eV9jb2xsZWN0X2luZm8ucHJvdG8aJHN0",
-            "cnVfcmlkZV9xdWFsaXR5X2NvbGxlY3RfaW5mby5wcm90bxoVc3RydV9kaXJ0",
-            "eV9tYXNrLnByb3RvIukLCgxQZXJzb25hbFpvbmUSJAoNb25saW5lUGVyaW9k",
-            "cxgCIAMoBVINb25saW5lUGVyaW9kcxISCgR0YWdzGAMgAygFUgR0YWdzEjgK",
-            "Bm1lZGFscxgFIAMoCzIgLnpwcm90by5QZXJzb25hbFpvbmUuTWVkYWxzRW50",
-            "cnlSBm1lZGFscxIYCgd0aGVtZUlkGAYgASgFUgd0aGVtZUlkEjAKE2J1c2lu",
-            "ZXNzQ2FyZFN0eWxlSWQYByABKAVSE2J1c2luZXNzQ2FyZFN0eWxlSWQSJAoN",
-            "YXZhdGFyRnJhbWVJZBgIIAEoBVINYXZhdGFyRnJhbWVJZBIyCgphY3Rpb25J",
-            "bmZvGAkgASgLMhIuenByb3RvLkFjdGlvbkluZm9SCmFjdGlvbkluZm8SOAoK",
-            "dWlQb3NpdGlvbhgKIAMoCzIYLnpwcm90by5FZGl0b3JVSVBvc2l0aW9uUgp1",
-            "aVBvc2l0aW9uEhgKB3RpdGxlSWQYCyABKAVSB3RpdGxlSWQSLgoSZmFzaGlv",
-            "blJlZnJlc2hGbGFnGAwgASgIUhJmYXNoaW9uUmVmcmVzaEZsYWcSMAoTZmFz",
-            "aGlvbkNvbGxlY3RQb2ludBgNIAEoBVITZmFzaGlvbkNvbGxlY3RQb2ludBJ0",
-            "ChpmYXNoaW9uQ29sbGVjdFF1YWxpdHlDb3VudBgOIAMoCzI0Lnpwcm90by5Q",
-            "ZXJzb25hbFpvbmUuRmFzaGlvbkNvbGxlY3RRdWFsaXR5Q291bnRFbnRyeVIa",
-            "ZmFzaGlvbkNvbGxlY3RRdWFsaXR5Q291bnQSFgoGcGhvdG9zGA8gAygFUgZw",
-            "aG90b3MSXAoSdW5sb2NrVGFyZ2V0UmVjb3JkGBAgAygLMiwuenByb3RvLlBl",
-            "cnNvbmFsWm9uZS5VbmxvY2tUYXJnZXRSZWNvcmRFbnRyeVISdW5sb2NrVGFy",
-            "Z2V0UmVjb3JkEmUKFXVubG9ja0dldFJld2FyZFJlY29yZBgRIAMoCzIvLnpw",
-            "cm90by5QZXJzb25hbFpvbmUuVW5sb2NrR2V0UmV3YXJkUmVjb3JkRW50cnlS",
-            "FXVubG9ja0dldFJld2FyZFJlY29yZBIqChByaWRlQ29sbGVjdFBvaW50GBIg",
-            "ASgFUhByaWRlQ29sbGVjdFBvaW50EmsKF3JpZGVDb2xsZWN0UXVhbGl0eUNv",
-            "dW50GBMgAygLMjEuenByb3RvLlBlcnNvbmFsWm9uZS5SaWRlQ29sbGVjdFF1",
-            "YWxpdHlDb3VudEVudHJ5UhdyaWRlQ29sbGVjdFF1YWxpdHlDb3VudBI2ChZ3",
-            "ZWFwb25Ta2luQ29sbGVjdFBvaW50GBQgASgFUhZ3ZWFwb25Ta2luQ29sbGVj",
-            "dFBvaW50EkQKCnBob3Rvc1dhbGwYFSADKAsyJC56cHJvdG8uUGVyc29uYWxa",
-            "b25lLlBob3Rvc1dhbGxFbnRyeVIKcGhvdG9zV2FsbBotCgtNZWRhbHNFbnRy",
-            "eRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBGmQKH0Zhc2hpb25D",
-            "b2xsZWN0UXVhbGl0eUNvdW50RW50cnkSCwoDa2V5GAEgASgFEjAKBXZhbHVl",
-            "GAIgASgLMiEuenByb3RvLkZhc2hpb25RdWFsaXR5Q29sbGVjdEluZm86AjgB",
-            "GjkKF1VubG9ja1RhcmdldFJlY29yZEVudHJ5EgsKA2tleRgBIAEoBRINCgV2",
-            "YWx1ZRgCIAEoBToCOAEaPAoaVW5sb2NrR2V0UmV3YXJkUmVjb3JkRW50cnkS",
-            "CwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgIOgI4ARpeChxSaWRlQ29sbGVj",
-            "dFF1YWxpdHlDb3VudEVudHJ5EgsKA2tleRgBIAEoBRItCgV2YWx1ZRgCIAEo",
-            "CzIeLnpwcm90by5SaWRlUXVhbGl0eUNvbGxlY3RJbmZvOgI4ARoxCg9QaG90",
-            "b3NXYWxsRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4AWIG",
-            "cHJvdG8z"));
+            "GidzdHJ1X2Zhc2hpb25fcXVhbGl0eV9jb2xsZWN0X2luZm8ucHJvdG8aI3N0",
+            "cnVfcGVyc29uYWxfem9uZV90aXRsZV9kYXRhLnByb3RvGiZzdHJ1X3BlcnNv",
+            "bmFsX3pvbmVfdGl0bGVfaGlzdG9yeS5wcm90bxokc3RydV9yaWRlX3F1YWxp",
+            "dHlfY29sbGVjdF9pbmZvLnByb3RvGhVzdHJ1X2RpcnR5X21hc2sucHJvdG8i",
+            "7AwKDFBlcnNvbmFsWm9uZRIkCg1vbmxpbmVQZXJpb2RzGAIgAygFUg1vbmxp",
+            "bmVQZXJpb2RzEhIKBHRhZ3MYAyADKAVSBHRhZ3MSOAoGbWVkYWxzGAUgAygL",
+            "MiAuenByb3RvLlBlcnNvbmFsWm9uZS5NZWRhbHNFbnRyeVIGbWVkYWxzEhgK",
+            "B3RoZW1lSWQYBiABKAVSB3RoZW1lSWQSMAoTYnVzaW5lc3NDYXJkU3R5bGVJ",
+            "ZBgHIAEoBVITYnVzaW5lc3NDYXJkU3R5bGVJZBIkCg1hdmF0YXJGcmFtZUlk",
+            "GAggASgFUg1hdmF0YXJGcmFtZUlkEjIKCmFjdGlvbkluZm8YCSABKAsyEi56",
+            "cHJvdG8uQWN0aW9uSW5mb1IKYWN0aW9uSW5mbxI4Cgp1aVBvc2l0aW9uGAog",
+            "AygLMhguenByb3RvLkVkaXRvclVJUG9zaXRpb25SCnVpUG9zaXRpb24SGAoH",
+            "dGl0bGVJZBgLIAEoBVIHdGl0bGVJZBIuChJmYXNoaW9uUmVmcmVzaEZsYWcY",
+            "DCABKAhSEmZhc2hpb25SZWZyZXNoRmxhZxIwChNmYXNoaW9uQ29sbGVjdFBv",
+            "aW50GA0gASgFUhNmYXNoaW9uQ29sbGVjdFBvaW50EnQKGmZhc2hpb25Db2xs",
+            "ZWN0UXVhbGl0eUNvdW50GA4gAygLMjQuenByb3RvLlBlcnNvbmFsWm9uZS5G",
+            "YXNoaW9uQ29sbGVjdFF1YWxpdHlDb3VudEVudHJ5UhpmYXNoaW9uQ29sbGVj",
+            "dFF1YWxpdHlDb3VudBIWCgZwaG90b3MYDyADKAVSBnBob3RvcxJcChJ1bmxv",
+            "Y2tUYXJnZXRSZWNvcmQYECADKAsyLC56cHJvdG8uUGVyc29uYWxab25lLlVu",
+            "bG9ja1RhcmdldFJlY29yZEVudHJ5UhJ1bmxvY2tUYXJnZXRSZWNvcmQSZQoV",
+            "dW5sb2NrR2V0UmV3YXJkUmVjb3JkGBEgAygLMi8uenByb3RvLlBlcnNvbmFs",
+            "Wm9uZS5VbmxvY2tHZXRSZXdhcmRSZWNvcmRFbnRyeVIVdW5sb2NrR2V0UmV3",
+            "YXJkUmVjb3JkEioKEHJpZGVDb2xsZWN0UG9pbnQYEiABKAVSEHJpZGVDb2xs",
+            "ZWN0UG9pbnQSawoXcmlkZUNvbGxlY3RRdWFsaXR5Q291bnQYEyADKAsyMS56",
+            "cHJvdG8uUGVyc29uYWxab25lLlJpZGVDb2xsZWN0UXVhbGl0eUNvdW50RW50",
+            "cnlSF3JpZGVDb2xsZWN0UXVhbGl0eUNvdW50EjYKFndlYXBvblNraW5Db2xs",
+            "ZWN0UG9pbnQYFCABKAVSFndlYXBvblNraW5Db2xsZWN0UG9pbnQSRAoKcGhv",
+            "dG9zV2FsbBgVIAMoCzIkLnpwcm90by5QZXJzb25hbFpvbmUuUGhvdG9zV2Fs",
+            "bEVudHJ5UgpwaG90b3NXYWxsEjsKCXRpdGxlRGF0YRgWIAEoCzIdLnpwcm90",
+            "by5QZXJzb25hbFpvbmVUaXRsZURhdGFSCXRpdGxlRGF0YRJECgx0aXRsZUhp",
+            "c3RvcnkYFyADKAsyIC56cHJvdG8uUGVyc29uYWxab25lVGl0bGVIaXN0b3J5",
+            "Ugx0aXRsZUhpc3RvcnkaLQoLTWVkYWxzRW50cnkSCwoDa2V5GAEgASgFEg0K",
+            "BXZhbHVlGAIgASgFOgI4ARpkCh9GYXNoaW9uQ29sbGVjdFF1YWxpdHlDb3Vu",
+            "dEVudHJ5EgsKA2tleRgBIAEoBRIwCgV2YWx1ZRgCIAEoCzIhLnpwcm90by5G",
+            "YXNoaW9uUXVhbGl0eUNvbGxlY3RJbmZvOgI4ARo5ChdVbmxvY2tUYXJnZXRS",
+            "ZWNvcmRFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAU6AjgBGjwK",
+            "GlVubG9ja0dldFJld2FyZFJlY29yZEVudHJ5EgsKA2tleRgBIAEoBRINCgV2",
+            "YWx1ZRgCIAEoCDoCOAEaXgocUmlkZUNvbGxlY3RRdWFsaXR5Q291bnRFbnRy",
+            "eRILCgNrZXkYASABKAUSLQoFdmFsdWUYAiABKAsyHi56cHJvdG8uUmlkZVF1",
+            "YWxpdHlDb2xsZWN0SW5mbzoCOAEaMQoPUGhvdG9zV2FsbEVudHJ5EgsKA2tl",
+            "eRgBIAEoBRINCgV2YWx1ZRgCIAEoBToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruActionInfoReflection.Descriptor, global::Zproto.StruEditorUIPositionReflection.Descriptor, global::Zproto.StruFashionQualityCollectInfoReflection.Descriptor, global::Zproto.StruRideQualityCollectInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruActionInfoReflection.Descriptor, global::Zproto.StruEditorUIPositionReflection.Descriptor, global::Zproto.StruFashionQualityCollectInfoReflection.Descriptor, global::Zproto.StruPersonalZoneTitleDataReflection.Descriptor, global::Zproto.StruPersonalZoneTitleHistoryReflection.Descriptor, global::Zproto.StruRideQualityCollectInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PersonalZone), global::Zproto.PersonalZone.Parser, new[]{ "OnlinePeriods", "Tags", "Medals", "ThemeId", "BusinessCardStyleId", "AvatarFrameId", "ActionInfo", "UiPosition", "TitleId", "FashionRefreshFlag", "FashionCollectPoint", "FashionCollectQualityCount", "Photos", "UnlockTargetRecord", "UnlockGetRewardRecord", "RideCollectPoint", "RideCollectQualityCount", "WeaponSkinCollectPoint", "PhotosWall" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PersonalZone), global::Zproto.PersonalZone.Parser, new[]{ "OnlinePeriods", "Tags", "Medals", "ThemeId", "BusinessCardStyleId", "AvatarFrameId", "ActionInfo", "UiPosition", "TitleId", "FashionRefreshFlag", "FashionCollectPoint", "FashionCollectQualityCount", "Photos", "UnlockTargetRecord", "UnlockGetRewardRecord", "RideCollectPoint", "RideCollectQualityCount", "WeaponSkinCollectPoint", "PhotosWall", "TitleData", "TitleHistory" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, })
           }));
     }
     #endregion
@@ -127,6 +131,8 @@ namespace Zproto {
       rideCollectQualityCount_ = other.rideCollectQualityCount_.Clone();
       weaponSkinCollectPoint_ = other.weaponSkinCollectPoint_;
       photosWall_ = other.photosWall_.Clone();
+      titleData_ = other.titleData_ != null ? other.titleData_.Clone() : null;
+      titleHistory_ = other.titleHistory_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -354,6 +360,29 @@ namespace Zproto {
       get { return photosWall_; }
     }
 
+    /// <summary>Field number for the "titleData" field.</summary>
+    public const int TitleDataFieldNumber = 22;
+    private global::Zproto.PersonalZoneTitleData titleData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.PersonalZoneTitleData TitleData {
+      get { return titleData_; }
+      set {
+        titleData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "titleHistory" field.</summary>
+    public const int TitleHistoryFieldNumber = 23;
+    private static readonly pb::FieldCodec<global::Zproto.PersonalZoneTitleHistory> _repeated_titleHistory_codec
+        = pb::FieldCodec.ForMessage(186, global::Zproto.PersonalZoneTitleHistory.Parser);
+    private readonly pbc::RepeatedField<global::Zproto.PersonalZoneTitleHistory> titleHistory_ = new pbc::RepeatedField<global::Zproto.PersonalZoneTitleHistory>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Zproto.PersonalZoneTitleHistory> TitleHistory {
+      get { return titleHistory_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -388,6 +417,8 @@ namespace Zproto {
       if (!RideCollectQualityCount.Equals(other.RideCollectQualityCount)) return false;
       if (WeaponSkinCollectPoint != other.WeaponSkinCollectPoint) return false;
       if (!PhotosWall.Equals(other.PhotosWall)) return false;
+      if (!object.Equals(TitleData, other.TitleData)) return false;
+      if(!titleHistory_.Equals(other.titleHistory_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -414,6 +445,8 @@ namespace Zproto {
       hash ^= RideCollectQualityCount.GetHashCode();
       if (WeaponSkinCollectPoint != 0) hash ^= WeaponSkinCollectPoint.GetHashCode();
       hash ^= PhotosWall.GetHashCode();
+      if (titleData_ != null) hash ^= TitleData.GetHashCode();
+      hash ^= titleHistory_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -478,6 +511,11 @@ namespace Zproto {
         output.WriteInt32(WeaponSkinCollectPoint);
       }
       photosWall_.WriteTo(output, _map_photosWall_codec);
+      if (titleData_ != null) {
+        output.WriteRawTag(178, 1);
+        output.WriteMessage(TitleData);
+      }
+      titleHistory_.WriteTo(output, _repeated_titleHistory_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -534,6 +572,11 @@ namespace Zproto {
         output.WriteInt32(WeaponSkinCollectPoint);
       }
       photosWall_.WriteTo(ref output, _map_photosWall_codec);
+      if (titleData_ != null) {
+        output.WriteRawTag(178, 1);
+        output.WriteMessage(TitleData);
+      }
+      titleHistory_.WriteTo(ref output, _repeated_titleHistory_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -581,6 +624,10 @@ namespace Zproto {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(WeaponSkinCollectPoint);
       }
       size += photosWall_.CalculateSize(_map_photosWall_codec);
+      if (titleData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TitleData);
+      }
+      size += titleHistory_.CalculateSize(_repeated_titleHistory_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -633,6 +680,13 @@ namespace Zproto {
         WeaponSkinCollectPoint = other.WeaponSkinCollectPoint;
       }
       photosWall_.MergeFrom(other.photosWall_);
+      if (other.titleData_ != null) {
+        if (titleData_ == null) {
+          TitleData = new global::Zproto.PersonalZoneTitleData();
+        }
+        TitleData.MergeFrom(other.TitleData);
+      }
+      titleHistory_.Add(other.titleHistory_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -734,6 +788,17 @@ namespace Zproto {
             photosWall_.AddEntriesFrom(input, _map_photosWall_codec);
             break;
           }
+          case 178: {
+            if (titleData_ == null) {
+              TitleData = new global::Zproto.PersonalZoneTitleData();
+            }
+            input.ReadMessage(TitleData);
+            break;
+          }
+          case 186: {
+            titleHistory_.AddEntriesFrom(input, _repeated_titleHistory_codec);
+            break;
+          }
         }
       }
     #endif
@@ -833,6 +898,17 @@ namespace Zproto {
           }
           case 170: {
             photosWall_.AddEntriesFrom(ref input, _map_photosWall_codec);
+            break;
+          }
+          case 178: {
+            if (titleData_ == null) {
+              TitleData = new global::Zproto.PersonalZoneTitleData();
+            }
+            input.ReadMessage(TitleData);
+            break;
+          }
+          case 186: {
+            titleHistory_.AddEntriesFrom(ref input, _repeated_titleHistory_codec);
             break;
           }
         }

@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEMoveTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZlbnVtX2VfbW92ZV90eXBlLnByb3RvEgZ6cHJvdG8qlwMKCUVNb3ZlVHlw",
+            "ChZlbnVtX2VfbW92ZV90eXBlLnByb3RvEgZ6cHJvdG8qqQMKCUVNb3ZlVHlw",
             "ZRIMCghNb3ZlSWRsZRAAEgwKCE1vdmVXYWxrEAESCwoHTW92ZVJ1bhACEgwK",
             "CE1vdmVEYXNoEAMSDwoLTW92ZURhc2hFbmQQBBINCglNb3ZlQWxlcnQQBRIL",
             "CgdNb3ZlRmx5EAYSDgoKTW92ZVBhdHJvbBAHEhEKDU1vdmVQYXRyb2xSdW4Q",
@@ -33,7 +33,8 @@ namespace Zproto {
             "EAoMTW92ZURhc2hUdXJuEA4SDwoLTW92ZVdhbGtFbmQQDxIOCgpNb3ZlUnVu",
             "RW5kEBASFQoRTW92ZVdhbGtFbmRUb0lkbGUQERIUChBNb3ZlUnVuRW5kVG9J",
             "ZGxlEBISEAoMTW92ZUVpZ2h0RGlyEBMSDwoLTW92ZUJ5Rm9yY2UQFBIRCg1N",
-            "b3ZlU2l0Um90YXRlEBUSFQoRTW92ZUp1bXBFbmRUb0lkbGUQFmIGcHJvdG8z"));
+            "b3ZlU2l0Um90YXRlEBUSFQoRTW92ZUp1bXBFbmRUb0lkbGUQFhIQCgxNb3Zl",
+            "Q2lyY3VsYXIQF2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EMoveType), }, null, null));
@@ -66,6 +67,7 @@ namespace Zproto {
     [pbr::OriginalName("MoveByForce")] MoveByForce = 20,
     [pbr::OriginalName("MoveSitRotate")] MoveSitRotate = 21,
     [pbr::OriginalName("MoveJumpEndToIdle")] MoveJumpEndToIdle = 22,
+    [pbr::OriginalName("MoveCircular")] MoveCircular = 23,
   }
 
   #endregion

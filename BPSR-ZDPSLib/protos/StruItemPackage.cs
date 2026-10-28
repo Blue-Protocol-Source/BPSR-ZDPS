@@ -25,21 +25,22 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdzdHJ1X2l0ZW1fcGFja2FnZS5wcm90bxIGenByb3RvGhJzdHJ1X3BhY2th",
-            "Z2UucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byK6AwoLSXRlbVBhY2th",
+            "Z2UucHJvdG8aFXN0cnVfZGlydHlfbWFzay5wcm90byLUAwoLSXRlbVBhY2th",
             "Z2USPQoIcGFja2FnZXMYASADKAsyIS56cHJvdG8uSXRlbVBhY2thZ2UuUGFj",
             "a2FnZXNFbnRyeVIIcGFja2FnZXMSRgoLdW5sb2NrSXRlbXMYAiADKAsyJC56",
             "cHJvdG8uSXRlbVBhY2thZ2UuVW5sb2NrSXRlbXNFbnRyeVILdW5sb2NrSXRl",
             "bXMSGgoIcXVpY2tCYXIYAyABKAVSCHF1aWNrQmFyEhoKCGl0ZW1VdWlkGAQg",
             "ASgFUghpdGVtVXVpZBJDCgp1c2VHcm91cENkGAUgAygLMiMuenByb3RvLkl0",
-            "ZW1QYWNrYWdlLlVzZUdyb3VwQ2RFbnRyeVIKdXNlR3JvdXBDZBpACg1QYWNr",
-            "YWdlc0VudHJ5EgsKA2tleRgBIAEoBRIeCgV2YWx1ZRgCIAEoCzIPLnpwcm90",
-            "by5QYWNrYWdlOgI4ARoyChBVbmxvY2tJdGVtc0VudHJ5EgsKA2tleRgBIAEo",
-            "BRINCgV2YWx1ZRgCIAEoBToCOAEaMQoPVXNlR3JvdXBDZEVudHJ5EgsKA2tl",
-            "eRgBIAEoBRINCgV2YWx1ZRgCIAEoAzoCOAFiBnByb3RvMw=="));
+            "ZW1QYWNrYWdlLlVzZUdyb3VwQ2RFbnRyeVIKdXNlR3JvdXBDZBIYCgd2ZXJz",
+            "aW9uGAYgASgFUgd2ZXJzaW9uGkAKDVBhY2thZ2VzRW50cnkSCwoDa2V5GAEg",
+            "ASgFEh4KBXZhbHVlGAIgASgLMg8uenByb3RvLlBhY2thZ2U6AjgBGjIKEFVu",
+            "bG9ja0l0ZW1zRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4",
+            "ARoxCg9Vc2VHcm91cENkRW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIg",
+            "ASgDOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruPackageReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ItemPackage), global::Zproto.ItemPackage.Parser, new[]{ "Packages", "UnlockItems", "QuickBar", "ItemUuid", "UseGroupCd" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ItemPackage), global::Zproto.ItemPackage.Parser, new[]{ "Packages", "UnlockItems", "QuickBar", "ItemUuid", "UseGroupCd", "Version" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
           }));
     }
     #endregion
@@ -86,6 +87,7 @@ namespace Zproto {
       quickBar_ = other.quickBar_;
       itemUuid_ = other.itemUuid_;
       useGroupCd_ = other.useGroupCd_.Clone();
+      version_ = other.version_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -152,6 +154,18 @@ namespace Zproto {
       get { return useGroupCd_; }
     }
 
+    /// <summary>Field number for the "version" field.</summary>
+    public const int VersionFieldNumber = 6;
+    private int version_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Version {
+      get { return version_; }
+      set {
+        version_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -172,6 +186,7 @@ namespace Zproto {
       if (QuickBar != other.QuickBar) return false;
       if (ItemUuid != other.ItemUuid) return false;
       if (!UseGroupCd.Equals(other.UseGroupCd)) return false;
+      if (Version != other.Version) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -184,6 +199,7 @@ namespace Zproto {
       if (QuickBar != 0) hash ^= QuickBar.GetHashCode();
       if (ItemUuid != 0) hash ^= ItemUuid.GetHashCode();
       hash ^= UseGroupCd.GetHashCode();
+      if (Version != 0) hash ^= Version.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -213,6 +229,10 @@ namespace Zproto {
         output.WriteInt32(ItemUuid);
       }
       useGroupCd_.WriteTo(output, _map_useGroupCd_codec);
+      if (Version != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Version);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -234,6 +254,10 @@ namespace Zproto {
         output.WriteInt32(ItemUuid);
       }
       useGroupCd_.WriteTo(ref output, _map_useGroupCd_codec);
+      if (Version != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Version);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -253,6 +277,9 @@ namespace Zproto {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ItemUuid);
       }
       size += useGroupCd_.CalculateSize(_map_useGroupCd_codec);
+      if (Version != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Version);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -274,6 +301,9 @@ namespace Zproto {
         ItemUuid = other.ItemUuid;
       }
       useGroupCd_.MergeFrom(other.useGroupCd_);
+      if (other.Version != 0) {
+        Version = other.Version;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -313,6 +343,10 @@ namespace Zproto {
             useGroupCd_.AddEntriesFrom(input, _map_useGroupCd_codec);
             break;
           }
+          case 48: {
+            Version = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -350,6 +384,10 @@ namespace Zproto {
           }
           case 42: {
             useGroupCd_.AddEntriesFrom(ref input, _map_useGroupCd_codec);
+            break;
+          }
+          case 48: {
+            Version = input.ReadInt32();
             break;
           }
         }

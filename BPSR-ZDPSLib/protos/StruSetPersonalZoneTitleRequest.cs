@@ -25,12 +25,13 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CipzdHJ1X3NldF9wZXJzb25hbF96b25lX3RpdGxlX3JlcXVlc3QucHJvdG8S",
-            "Bnpwcm90byI3ChtTZXRQZXJzb25hbFpvbmVUaXRsZVJlcXVlc3QSGAoHdGl0",
-            "bGVJZBgBIAEoBVIHdGl0bGVJZGIGcHJvdG8z"));
+            "Bnpwcm90byJXChtTZXRQZXJzb25hbFpvbmVUaXRsZVJlcXVlc3QSGAoHdGl0",
+            "bGVJZBgBIAEoBVIHdGl0bGVJZBIeCgp0aXRsZUxldmVsGAIgASgFUgp0aXRs",
+            "ZUxldmVsYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.SetPersonalZoneTitleRequest), global::Zproto.SetPersonalZoneTitleRequest.Parser, new[]{ "TitleId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.SetPersonalZoneTitleRequest), global::Zproto.SetPersonalZoneTitleRequest.Parser, new[]{ "TitleId", "TitleLevel" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,6 +74,7 @@ namespace Zproto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetPersonalZoneTitleRequest(SetPersonalZoneTitleRequest other) : this() {
       titleId_ = other.titleId_;
+      titleLevel_ = other.titleLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,6 +96,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "titleLevel" field.</summary>
+    public const int TitleLevelFieldNumber = 2;
+    private int titleLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int TitleLevel {
+      get { return titleLevel_; }
+      set {
+        titleLevel_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -110,6 +124,7 @@ namespace Zproto {
         return true;
       }
       if (TitleId != other.TitleId) return false;
+      if (TitleLevel != other.TitleLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -118,6 +133,7 @@ namespace Zproto {
     public override int GetHashCode() {
       int hash = 1;
       if (TitleId != 0) hash ^= TitleId.GetHashCode();
+      if (TitleLevel != 0) hash ^= TitleLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -140,6 +156,10 @@ namespace Zproto {
         output.WriteRawTag(8);
         output.WriteInt32(TitleId);
       }
+      if (TitleLevel != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(TitleLevel);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -154,6 +174,10 @@ namespace Zproto {
         output.WriteRawTag(8);
         output.WriteInt32(TitleId);
       }
+      if (TitleLevel != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(TitleLevel);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -166,6 +190,9 @@ namespace Zproto {
       int size = 0;
       if (TitleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(TitleId);
+      }
+      if (TitleLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TitleLevel);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -181,6 +208,9 @@ namespace Zproto {
       }
       if (other.TitleId != 0) {
         TitleId = other.TitleId;
+      }
+      if (other.TitleLevel != 0) {
+        TitleLevel = other.TitleLevel;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -205,6 +235,10 @@ namespace Zproto {
             TitleId = input.ReadInt32();
             break;
           }
+          case 16: {
+            TitleLevel = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -226,6 +260,10 @@ namespace Zproto {
             break;
           case 8: {
             TitleId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            TitleLevel = input.ReadInt32();
             break;
           }
         }

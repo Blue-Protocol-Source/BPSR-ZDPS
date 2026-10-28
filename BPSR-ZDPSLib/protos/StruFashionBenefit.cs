@@ -27,7 +27,7 @@ namespace Zproto {
             "ChpzdHJ1X2Zhc2hpb25fYmVuZWZpdC5wcm90bxIGenByb3RvGi1zdHJ1X2Zh",
             "c2hpb25fYmVuZWZpdF9jb2xsZWN0aW9uX2hpc3RvcnkucHJvdG8aJHN0cnVf",
             "ZmFzaGlvbl9iZW5lZml0X3Rhc2tfaW5mby5wcm90bxoVc3RydV9kaXJ0eV9t",
-            "YXNrLnByb3RvIsQFCg5GYXNoaW9uQmVuZWZpdBIiCgxsYXN0UmV3YXJkSWQY",
+            "YXNrLnByb3RvIvgFCg5GYXNoaW9uQmVuZWZpdBIiCgxsYXN0UmV3YXJkSWQY",
             "ASABKAVSDGxhc3RSZXdhcmRJZBIUCgVsZXZlbBgCIAEoBVIFbGV2ZWwSHgoK",
             "cG9pbnRzVGFzaxgDIAEoBVIKcG9pbnRzVGFzaxIgCgtwb2ludHNDeWNsZRgE",
             "IAEoBVILcG9pbnRzQ3ljbGUSKgoQcG9pbnRzQ29sbGVjdGlvbhgFIAEoBVIQ",
@@ -41,13 +41,14 @@ namespace Zproto {
             "dHMSIAoLZXhwaXJlQ3ljbGUYDCABKAVSC2V4cGlyZUN5Y2xlEhwKCWxhc3RM",
             "ZXZlbBgNIAEoBVIJbGFzdExldmVsEiYKDmZpcnRFeHBpcmVUaW1lGA4gASgD",
             "Ug5maXJ0RXhwaXJlVGltZRIkCg1sYXN0UmV3YXJkSWRzGA8gAygFUg1sYXN0",
-            "UmV3YXJkSWRzGk8KDVRhc2tMaXN0RW50cnkSCwoDa2V5GAEgASgFEi0KBXZh",
-            "bHVlGAIgASgLMh4uenByb3RvLkZhc2hpb25CZW5lZml0VGFza0luZm86AjgB",
-            "YgZwcm90bzM="));
+            "UmV3YXJkSWRzEjIKFG93bmVkSGlzdG9yeVJlc3RvcmVkGBAgASgIUhRvd25l",
+            "ZEhpc3RvcnlSZXN0b3JlZBpPCg1UYXNrTGlzdEVudHJ5EgsKA2tleRgBIAEo",
+            "BRItCgV2YWx1ZRgCIAEoCzIeLnpwcm90by5GYXNoaW9uQmVuZWZpdFRhc2tJ",
+            "bmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.StruFashionBenefitCollectionHistoryReflection.Descriptor, global::Zproto.StruFashionBenefitTaskInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.FashionBenefit), global::Zproto.FashionBenefit.Parser, new[]{ "LastRewardId", "Level", "PointsTask", "PointsCycle", "PointsCollection", "TaskList", "CollectionHistory", "NextRefreshTime", "MaxPoints", "LastAddTime", "CurDayMaxPoints", "ExpireCycle", "LastLevel", "FirtExpireTime", "LastRewardIds" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.FashionBenefit), global::Zproto.FashionBenefit.Parser, new[]{ "LastRewardId", "Level", "PointsTask", "PointsCycle", "PointsCollection", "TaskList", "CollectionHistory", "NextRefreshTime", "MaxPoints", "LastAddTime", "CurDayMaxPoints", "ExpireCycle", "LastLevel", "FirtExpireTime", "LastRewardIds", "OwnedHistoryRestored" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -104,6 +105,7 @@ namespace Zproto {
       lastLevel_ = other.lastLevel_;
       firtExpireTime_ = other.firtExpireTime_;
       lastRewardIds_ = other.lastRewardIds_.Clone();
+      ownedHistoryRestored_ = other.ownedHistoryRestored_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -290,6 +292,18 @@ namespace Zproto {
       get { return lastRewardIds_; }
     }
 
+    /// <summary>Field number for the "ownedHistoryRestored" field.</summary>
+    public const int OwnedHistoryRestoredFieldNumber = 16;
+    private bool ownedHistoryRestored_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool OwnedHistoryRestored {
+      get { return ownedHistoryRestored_; }
+      set {
+        ownedHistoryRestored_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -320,6 +334,7 @@ namespace Zproto {
       if (LastLevel != other.LastLevel) return false;
       if (FirtExpireTime != other.FirtExpireTime) return false;
       if(!lastRewardIds_.Equals(other.lastRewardIds_)) return false;
+      if (OwnedHistoryRestored != other.OwnedHistoryRestored) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -342,6 +357,7 @@ namespace Zproto {
       if (LastLevel != 0) hash ^= LastLevel.GetHashCode();
       if (FirtExpireTime != 0L) hash ^= FirtExpireTime.GetHashCode();
       hash ^= lastRewardIds_.GetHashCode();
+      if (OwnedHistoryRestored != false) hash ^= OwnedHistoryRestored.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -411,6 +427,10 @@ namespace Zproto {
         output.WriteInt64(FirtExpireTime);
       }
       lastRewardIds_.WriteTo(output, _repeated_lastRewardIds_codec);
+      if (OwnedHistoryRestored != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(OwnedHistoryRestored);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -472,6 +492,10 @@ namespace Zproto {
         output.WriteInt64(FirtExpireTime);
       }
       lastRewardIds_.WriteTo(ref output, _repeated_lastRewardIds_codec);
+      if (OwnedHistoryRestored != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(OwnedHistoryRestored);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -521,6 +545,9 @@ namespace Zproto {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(FirtExpireTime);
       }
       size += lastRewardIds_.CalculateSize(_repeated_lastRewardIds_codec);
+      if (OwnedHistoryRestored != false) {
+        size += 2 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -572,6 +599,9 @@ namespace Zproto {
         FirtExpireTime = other.FirtExpireTime;
       }
       lastRewardIds_.Add(other.lastRewardIds_);
+      if (other.OwnedHistoryRestored != false) {
+        OwnedHistoryRestored = other.OwnedHistoryRestored;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -652,6 +682,10 @@ namespace Zproto {
             lastRewardIds_.AddEntriesFrom(input, _repeated_lastRewardIds_codec);
             break;
           }
+          case 128: {
+            OwnedHistoryRestored = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -730,6 +764,10 @@ namespace Zproto {
           case 122:
           case 120: {
             lastRewardIds_.AddEntriesFrom(ref input, _repeated_lastRewardIds_codec);
+            break;
+          }
+          case 128: {
+            OwnedHistoryRestored = input.ReadBool();
             break;
           }
         }

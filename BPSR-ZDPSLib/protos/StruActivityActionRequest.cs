@@ -25,14 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJzdHJ1X2FjdGl2aXR5X2FjdGlvbl9yZXF1ZXN0LnByb3RvEgZ6cHJvdG8a",
-            "FWVudW1fZV9wYXlfdHlwZS5wcm90byKDAQoVQWN0aXZpdHlBY3Rpb25SZXF1",
+            "FWVudW1fZV9wYXlfdHlwZS5wcm90byKdAQoVQWN0aXZpdHlBY3Rpb25SZXF1",
             "ZXN0EiIKDGFjdGl2aXR5VXVpZBgBIAEoA1IMYWN0aXZpdHlVdWlkEhoKCHJl",
             "d2FyZElkGAIgASgFUghyZXdhcmRJZBIqCgdwYXlUeXBlGAMgASgOMhAuenBy",
-            "b3RvLkVQYXlUeXBlUgdwYXlUeXBlYgZwcm90bzM="));
+            "b3RvLkVQYXlUeXBlUgdwYXlUeXBlEhgKB2V4dERhdGEYBCABKAlSB2V4dERh",
+            "dGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEPayTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ActivityActionRequest), global::Zproto.ActivityActionRequest.Parser, new[]{ "ActivityUuid", "RewardId", "PayType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.ActivityActionRequest), global::Zproto.ActivityActionRequest.Parser, new[]{ "ActivityUuid", "RewardId", "PayType", "ExtData" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,6 +78,7 @@ namespace Zproto {
       activityUuid_ = other.activityUuid_;
       rewardId_ = other.rewardId_;
       payType_ = other.payType_;
+      extData_ = other.extData_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -122,6 +124,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "extData" field.</summary>
+    public const int ExtDataFieldNumber = 4;
+    private string extData_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ExtData {
+      get { return extData_; }
+      set {
+        extData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -140,6 +154,7 @@ namespace Zproto {
       if (ActivityUuid != other.ActivityUuid) return false;
       if (RewardId != other.RewardId) return false;
       if (PayType != other.PayType) return false;
+      if (ExtData != other.ExtData) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,6 +165,7 @@ namespace Zproto {
       if (ActivityUuid != 0L) hash ^= ActivityUuid.GetHashCode();
       if (RewardId != 0) hash ^= RewardId.GetHashCode();
       if (PayType != global::Zproto.EPayType.PayTypeNull) hash ^= PayType.GetHashCode();
+      if (ExtData.Length != 0) hash ^= ExtData.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -180,6 +196,10 @@ namespace Zproto {
         output.WriteRawTag(24);
         output.WriteEnum((int) PayType);
       }
+      if (ExtData.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ExtData);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -202,6 +222,10 @@ namespace Zproto {
         output.WriteRawTag(24);
         output.WriteEnum((int) PayType);
       }
+      if (ExtData.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ExtData);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,6 +244,9 @@ namespace Zproto {
       }
       if (PayType != global::Zproto.EPayType.PayTypeNull) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PayType);
+      }
+      if (ExtData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ExtData);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -241,6 +268,9 @@ namespace Zproto {
       }
       if (other.PayType != global::Zproto.EPayType.PayTypeNull) {
         PayType = other.PayType;
+      }
+      if (other.ExtData.Length != 0) {
+        ExtData = other.ExtData;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -273,6 +303,10 @@ namespace Zproto {
             PayType = (global::Zproto.EPayType) input.ReadEnum();
             break;
           }
+          case 34: {
+            ExtData = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -302,6 +336,10 @@ namespace Zproto {
           }
           case 24: {
             PayType = (global::Zproto.EPayType) input.ReadEnum();
+            break;
+          }
+          case 34: {
+            ExtData = input.ReadString();
             break;
           }
         }

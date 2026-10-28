@@ -25,13 +25,15 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitzdHJ1X2NvbW11bml0eV9lbnRlcl9ob21lbGFuZF9yZXF1ZXN0LnByb3Rv",
-            "EgZ6cHJvdG8iYQodQ29tbXVuaXR5RW50ZXJIb21lbGFuZFJlcXVlc3QSIAoL",
-            "Y29tbXVuaXR5SWQYASABKANSC2NvbW11bml0eUlkEh4KCmhvbWVsYW5kSWQY",
-            "AiABKANSCmhvbWVsYW5kSWRiBnByb3RvMw=="));
+            "EgZ6cHJvdG8aIGVudW1fc2hhcmVfcmF0ZV9saW1pdF90eXBlLnByb3RvIqMB",
+            "Ch1Db21tdW5pdHlFbnRlckhvbWVsYW5kUmVxdWVzdBIgCgtjb21tdW5pdHlJ",
+            "ZBgBIAEoA1ILY29tbXVuaXR5SWQSHgoKaG9tZWxhbmRJZBgCIAEoA1IKaG9t",
+            "ZWxhbmRJZBJACg1yYXRlTGltaXRUeXBlGAMgASgOMhouenByb3RvLlNoYXJl",
+            "UmF0ZUxpbWl0VHlwZVINcmF0ZUxpbWl0VHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Zproto.EnumShareRateLimitTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CommunityEnterHomelandRequest), global::Zproto.CommunityEnterHomelandRequest.Parser, new[]{ "CommunityId", "HomelandId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.CommunityEnterHomelandRequest), global::Zproto.CommunityEnterHomelandRequest.Parser, new[]{ "CommunityId", "HomelandId", "RateLimitType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,6 +77,7 @@ namespace Zproto {
     public CommunityEnterHomelandRequest(CommunityEnterHomelandRequest other) : this() {
       communityId_ = other.communityId_;
       homelandId_ = other.homelandId_;
+      rateLimitType_ = other.rateLimitType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -108,6 +111,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "rateLimitType" field.</summary>
+    public const int RateLimitTypeFieldNumber = 3;
+    private global::Zproto.ShareRateLimitType rateLimitType_ = global::Zproto.ShareRateLimitType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.ShareRateLimitType RateLimitType {
+      get { return rateLimitType_; }
+      set {
+        rateLimitType_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -125,6 +140,7 @@ namespace Zproto {
       }
       if (CommunityId != other.CommunityId) return false;
       if (HomelandId != other.HomelandId) return false;
+      if (RateLimitType != other.RateLimitType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -134,6 +150,7 @@ namespace Zproto {
       int hash = 1;
       if (CommunityId != 0L) hash ^= CommunityId.GetHashCode();
       if (HomelandId != 0L) hash ^= HomelandId.GetHashCode();
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) hash ^= RateLimitType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -160,6 +177,10 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt64(HomelandId);
       }
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) RateLimitType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -178,6 +199,10 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt64(HomelandId);
       }
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) RateLimitType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -193,6 +218,9 @@ namespace Zproto {
       }
       if (HomelandId != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(HomelandId);
+      }
+      if (RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RateLimitType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,6 +239,9 @@ namespace Zproto {
       }
       if (other.HomelandId != 0L) {
         HomelandId = other.HomelandId;
+      }
+      if (other.RateLimitType != global::Zproto.ShareRateLimitType.None) {
+        RateLimitType = other.RateLimitType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -239,6 +270,10 @@ namespace Zproto {
             HomelandId = input.ReadInt64();
             break;
           }
+          case 24: {
+            RateLimitType = (global::Zproto.ShareRateLimitType) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -264,6 +299,10 @@ namespace Zproto {
           }
           case 16: {
             HomelandId = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            RateLimitType = (global::Zproto.ShareRateLimitType) input.ReadEnum();
             break;
           }
         }

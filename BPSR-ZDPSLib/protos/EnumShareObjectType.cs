@@ -24,14 +24,15 @@ namespace Zproto {
     static EnumShareObjectTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxlbnVtX3NoYXJlX29iamVjdF90eXBlLnByb3RvEgZ6cHJvdG8qogIKD1No",
+            "ChxlbnVtX3NoYXJlX29iamVjdF90eXBlLnByb3RvEgZ6cHJvdG8q3QIKD1No",
             "YXJlT2JqZWN0VHlwZRIXChNTaGFyZU9iamVjdFR5cGVOb25lEAASFwoTU2hh",
             "cmVPYmplY3RUeXBlSXRlbRABEiQKIFNoYXJlT2JqZWN0VHlwZUZpc2hQZXJz",
             "b25hbFRvdGFsEAISGwoXU2hhcmVPYmplY3RUeXBlRmlzaEl0ZW0QAxIbChdT",
             "aGFyZU9iamVjdFR5cGVGaXNoUmFuaxAEEh8KG1NoYXJlT2JqZWN0VHlwZVBl",
             "cnNvbmFsWm9uZRAFEiAKHFNoYXJlT2JqZWN0VHlwZVVuaW9uR3Jvd0Z1bmQQ",
             "BhIdChlTaGFyZU9iamVjdFR5cGVNYXN0ZXJNb2RlEAcSGwoXU2hhcmVPYmpl",
-            "Y3RUeXBlUG9zaXRpb24QCGIGcHJvdG8z"));
+            "Y3RUeXBlUG9zaXRpb24QCBIbChdTaGFyZU9iamVjdFR5cGVIb21lbGFuZBAJ",
+            "EhwKGFNoYXJlT2JqZWN0VHlwZUJsdWVwcmludBAKYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.ShareObjectType), }, null, null));
@@ -50,6 +51,8 @@ namespace Zproto {
     [pbr::OriginalName("ShareObjectTypeUnionGrowFund")] UnionGrowFund = 6,
     [pbr::OriginalName("ShareObjectTypeMasterMode")] MasterMode = 7,
     [pbr::OriginalName("ShareObjectTypePosition")] Position = 8,
+    [pbr::OriginalName("ShareObjectTypeHomeland")] Homeland = 9,
+    [pbr::OriginalName("ShareObjectTypeBlueprint")] Blueprint = 10,
   }
 
   #endregion

@@ -24,14 +24,15 @@ namespace Zproto {
     static EnumEItemPackageTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5lbnVtX2VfaXRlbV9wYWNrYWdlX3R5cGUucHJvdG8SBnpwcm90byq1AgoQ",
+            "Ch5lbnVtX2VfaXRlbV9wYWNrYWdlX3R5cGUucHJvdG8SBnpwcm90byreAgoQ",
             "RUl0ZW1QYWNrYWdlVHlwZRIPCgtQYWNrYWdlTm9kZRAAEg8KC1BhY2thZ2VJ",
             "dGVtEAESEAoMUGFja2FnZUVxdWlwEAISDwoLUGFja2FnZVNpZ24QBRISCg5Q",
             "YWNrYWdlRmFzaGlvbhAHEhUKEVBhY2thZ2VXZWFwb25Ta2luEAgSFwoTUGFj",
             "a2FnZVBlcnNvbmFsWm9uZRAJEhgKFFBhY2thZ2VVbmlvblJlc291cmNlEAoS",
             "FAoQUGFja2FnZUZ1cm5pdHVyZRALEg8KC1BhY2thZ2VSaWRlEAwSGwoXUGFj",
-            "a2FnZUhvbWVMYW5kQ3VycmVuY3kQDRIOCgpQYWNrYWdlUGV0EA4SEwoPUGFj",
-            "a2FnZUN1cnJlbmN5EGQSFQoRUGFja2FnZUxpZmVDYXJlZXIQZmIGcHJvdG8z"));
+            "a2FnZUhvbWVMYW5kQ3VycmVuY3kQDRIOCgpQYWNrYWdlUGV0EA4SEAoMUGFj",
+            "a2FnZU11c2ljEA8SFQoRUGFja2FnZVNlYXNvbkl0ZW0QEBITCg9QYWNrYWdl",
+            "Q3VycmVuY3kQZBIVChFQYWNrYWdlTGlmZUNhcmVlchBmYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EItemPackageType), }, null, null));
@@ -53,6 +54,8 @@ namespace Zproto {
     [pbr::OriginalName("PackageRide")] PackageRide = 12,
     [pbr::OriginalName("PackageHomeLandCurrency")] PackageHomeLandCurrency = 13,
     [pbr::OriginalName("PackagePet")] PackagePet = 14,
+    [pbr::OriginalName("PackageMusic")] PackageMusic = 15,
+    [pbr::OriginalName("PackageSeasonItem")] PackageSeasonItem = 16,
     [pbr::OriginalName("PackageCurrency")] PackageCurrency = 100,
     [pbr::OriginalName("PackageLifeCareer")] PackageLifeCareer = 102,
   }

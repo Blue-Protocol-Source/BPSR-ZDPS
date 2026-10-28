@@ -25,13 +25,14 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5zdHJ1X2luc3RhbGxfaXRlbV90b19taWRkbGVfbm9kZV9yZXF1ZXN0LnBy",
-            "b3RvEgZ6cHJvdG8iXAoeSW5zdGFsbEl0ZW1Ub01pZGRsZU5vZGVSZXF1ZXN0",
-            "EhYKBm5vZGVJZBgBIAEoBVIGbm9kZUlkEiIKDGl0ZW1Db25maWdJZBgCIAEo",
-            "BVIMaXRlbUNvbmZpZ0lkYgZwcm90bzM="));
+            "b3RvEgZ6cHJvdG8ihAEKHkluc3RhbGxJdGVtVG9NaWRkbGVOb2RlUmVxdWVz",
+            "dBIWCgZub2RlSWQYASABKAVSBm5vZGVJZBIiCgxpdGVtQ29uZmlnSWQYAiAB",
+            "KAVSDGl0ZW1Db25maWdJZBImCg5mYWN0b3JJdGVtVXVpZBgDIAEoA1IOZmFj",
+            "dG9ySXRlbVV1aWRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.InstallItemToMiddleNodeRequest), global::Zproto.InstallItemToMiddleNodeRequest.Parser, new[]{ "NodeId", "ItemConfigId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.InstallItemToMiddleNodeRequest), global::Zproto.InstallItemToMiddleNodeRequest.Parser, new[]{ "NodeId", "ItemConfigId", "FactorItemUuid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,6 +76,7 @@ namespace Zproto {
     public InstallItemToMiddleNodeRequest(InstallItemToMiddleNodeRequest other) : this() {
       nodeId_ = other.nodeId_;
       itemConfigId_ = other.itemConfigId_;
+      factorItemUuid_ = other.factorItemUuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -108,6 +110,18 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "factorItemUuid" field.</summary>
+    public const int FactorItemUuidFieldNumber = 3;
+    private long factorItemUuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long FactorItemUuid {
+      get { return factorItemUuid_; }
+      set {
+        factorItemUuid_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -125,6 +139,7 @@ namespace Zproto {
       }
       if (NodeId != other.NodeId) return false;
       if (ItemConfigId != other.ItemConfigId) return false;
+      if (FactorItemUuid != other.FactorItemUuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -134,6 +149,7 @@ namespace Zproto {
       int hash = 1;
       if (NodeId != 0) hash ^= NodeId.GetHashCode();
       if (ItemConfigId != 0) hash ^= ItemConfigId.GetHashCode();
+      if (FactorItemUuid != 0L) hash ^= FactorItemUuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -160,6 +176,10 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt32(ItemConfigId);
       }
+      if (FactorItemUuid != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(FactorItemUuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -178,6 +198,10 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt32(ItemConfigId);
       }
+      if (FactorItemUuid != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(FactorItemUuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -193,6 +217,9 @@ namespace Zproto {
       }
       if (ItemConfigId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ItemConfigId);
+      }
+      if (FactorItemUuid != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(FactorItemUuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,6 +238,9 @@ namespace Zproto {
       }
       if (other.ItemConfigId != 0) {
         ItemConfigId = other.ItemConfigId;
+      }
+      if (other.FactorItemUuid != 0L) {
+        FactorItemUuid = other.FactorItemUuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -239,6 +269,10 @@ namespace Zproto {
             ItemConfigId = input.ReadInt32();
             break;
           }
+          case 24: {
+            FactorItemUuid = input.ReadInt64();
+            break;
+          }
         }
       }
     #endif
@@ -264,6 +298,10 @@ namespace Zproto {
           }
           case 16: {
             ItemConfigId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            FactorItemUuid = input.ReadInt64();
             break;
           }
         }

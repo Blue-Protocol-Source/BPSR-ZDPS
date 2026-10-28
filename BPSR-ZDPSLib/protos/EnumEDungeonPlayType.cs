@@ -24,7 +24,7 @@ namespace Zproto {
     static EnumEDungeonPlayTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5lbnVtX2VfZHVuZ2Vvbl9wbGF5X3R5cGUucHJvdG8SBnpwcm90byrWBAoQ",
+            "Ch5lbnVtX2VfZHVuZ2Vvbl9wbGF5X3R5cGUucHJvdG8SBnpwcm90byr3BAoQ",
             "RUR1bmdlb25QbGF5VHlwZRIXChNEdW5nZW9uUGxheVR5cGVOdWxsEAASGQoV",
             "RHVuZ2VvblBsYXlUeXBlTm9ybWFsEAESGQoVRHVuZ2VvblBsYXlUeXBlTGlu",
             "ZWFyEAISHwobRHVuZ2VvblBsYXlUeXBlUGxhbmV0TWVtb3J5EAMSIwofRHVu",
@@ -38,7 +38,8 @@ namespace Zproto {
             "ZEJvc3MQDxIaChZEdW5nZW9uUGxheVdlZWtseVRvd2VyEBASHQoZRHVuZ2Vv",
             "blBsYXlUeXBlTWFzdGVyTW9kZRAREhcKE0R1bmdlb25QbGF5VHlwZVJhaWQQ",
             "EhIYChREdW5nZW9uUGxheVR5cGVSb2d1ZRATEhsKF0R1bmdlb25QbGF5VHlw",
-            "ZUhpZGVTZWVrEBRiBnByb3RvMw=="));
+            "ZUhpZGVTZWVrEBQSHwobRHVuZ2VvblBsYXlUeXBlVG93ZXJEZWZlbnNlEBVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Zproto.EDungeonPlayType), }, null, null));
@@ -68,6 +69,7 @@ namespace Zproto {
     [pbr::OriginalName("DungeonPlayTypeRaid")] DungeonPlayTypeRaid = 18,
     [pbr::OriginalName("DungeonPlayTypeRogue")] DungeonPlayTypeRogue = 19,
     [pbr::OriginalName("DungeonPlayTypeHideSeek")] DungeonPlayTypeHideSeek = 20,
+    [pbr::OriginalName("DungeonPlayTypeTowerDefense")] DungeonPlayTypeTowerDefense = 21,
   }
 
   #endregion

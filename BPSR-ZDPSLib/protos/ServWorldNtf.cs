@@ -59,7 +59,7 @@ namespace Zproto {
             "dV9zd2l0Y2hfaW5mby5wcm90bxoec3RydV9zeW5jX2ludml0ZV9yZXF1ZXN0",
             "LnByb3RvGhRzdHJ1X3RpcHNfaW5mby5wcm90bxogc3RydV91bmxvY2tfY29v",
             "a19ib29rX2luZm8ucHJvdG8aJXN0cnVfd29ybGRfYm9zc19yYW5rX2luZm9f",
-            "cGFyYW0ucHJvdG8i+yYKCFdvcmxkTnRmGksKD1N5bmNQaW9uZWVySW5mbxIa",
+            "cGFyYW0ucHJvdG8iyicKCFdvcmxkTnRmGksKD1N5bmNQaW9uZWVySW5mbxIa",
             "Cgh0YXJnZXRJZBgBIAEoDVIIdGFyZ2V0SWQSHAoJdGFyZ2V0TnVtGAIgASgN",
             "Ugl0YXJnZXROdW0aOAoQU3luY1N3aXRjaENoYW5nZRIOCgJpZBgBIAEoDVIC",
             "aWQSFAoFb25PZmYYAiABKA1SBW9uT2ZmGjgKDlN5bmNTd2l0Y2hJbmZvEiYK",
@@ -139,38 +139,40 @@ namespace Zproto {
             "bmZvGj4KDk5vdGlmeUl0ZW1XYXJuEiwKBXZJbmZvGAEgASgLMhYuenByb3Rv",
             "Lkl0ZW1XYXJuTm90aWZ5UgV2SW5mbxpRChtOb3RpZnlCcm9hZGNhc3RDbGll",
             "bnRBY3Rpb24SMgoGdlBhcmFtGAEgASgLMhouenByb3RvLkNsaWVudEFjdGlv",
-            "blBhcmFtc1IGdlBhcmFtGiAKCFF0ZUJlZ2luEhQKBXF0ZUlkGAEgASgNUgVx",
-            "dGVJZBomCgpRdWVzdEFib3J0EhgKB3F1ZXN0SWQYASABKAVSB3F1ZXN0SWQa",
-            "TQoTTm90aWZ5QnV5U2hvcFJlc3VsdBI2CgVwYXJhbRgBIAEoCzIgLnpwcm90",
-            "by5Ob3RpZnlCdXlTaG9wUmVzdWx0UGFyYW1SBXBhcmFtGk8KFE5vdGlmeVNo",
-            "b3BJdGVtQ2FuQnV5EjcKBXBhcmFtGAEgASgLMiEuenByb3RvLk5vdGlmeVNo",
-            "b3BJdGVtQ2FuQnV5UGFyYW1SBXBhcmFtGlIKFFdvcmxkQm9zc1JhbmtJbmZv",
-            "TnRmEjoKCHJhbmtJbmZvGAEgASgLMh4uenByb3RvLldvcmxkQm9zc1JhbmtJ",
-            "bmZvUGFyYW1SCHJhbmtJbmZvGlUKE0VudGVyTWF0Y2hSZXN1bHROdGYSPgoI",
-            "dlJlcXVlc3QYASABKAsyIi56cHJvdG8uRW50ZXJNYXRjaFJlc3VsdE50ZlJl",
-            "cXVlc3RSCHZSZXF1ZXN0GksKFU5vdGlmeURyaXZlckFwcGx5UmlkZRIyCgVw",
-            "YXJhbRgBIAEoCzIcLnpwcm90by5Ecml2ZXJBcHBseVJpZGVQYXJhbVIFcGFy",
-            "YW0aSwoVTm90aWZ5SW52aXRlQXBwbHlSaWRlEjIKBXBhcmFtGAEgASgLMhwu",
-            "enByb3RvLkludml0ZUFwcGx5UmlkZVBhcmFtUgVwYXJhbRpJChFOb3RpZnlS",
-            "aWRlSXNBZ3JlZRI0CgVwYXJhbRgBIAEoCzIeLnpwcm90by5Ob3RpZnlSaWRl",
-            "SXNBZ3JlZVBhcmFtUgVwYXJhbRo9Cg1Ob3RpZnlQYXlJbmZvEiwKBXBhcmFt",
-            "GAEgASgLMhYuenByb3RvLk5vdGlmeVBheVBhcmFtUgVwYXJhbRpuCiVOb3Rp",
-            "ZnlMaWZlUHJvZmVzc2lvbldvcmtIaXN0b3J5Q2hhbmdlEkUKBGluZm8YASAB",
-            "KAsyMS56cHJvdG8uTm90aWZ5TGlmZVByb2Zlc3Npb25Xb3JrSGlzdG9yeUNo",
-            "YW5nZUluZm9SBGluZm8aZAogTm90aWZ5TGlmZVByb2Zlc3Npb25VbmxvY2tS",
-            "ZWNpcGUSQAoEaW5mbxgBIAEoCzIsLnpwcm90by5Ob3RpZnlMaWZlUHJvZmVz",
-            "c2lvblVubG9ja1JlY2lwZUluZm9SBGluZm8aTwoQU2lnblJld2FyZE5vdGlm",
-            "eRI7Cgh2UmVxdWVzdBgBIAEoCzIfLnpwcm90by5TaWduUmV3YXJkTm90aWZ5",
-            "UmVxdWVzdFIIdlJlcXVlc3QaTQoPTWFoam9uZ1N0YXJ0TnRmEjoKCHZSZXF1",
-            "ZXN0GAEgASgLMh4uenByb3RvLk1haGpvbmdTdGFydE50ZlJlcXVlc3RSCHZS",
-            "ZXF1ZXN0GkkKDU1haGpvbmdFbmROdGYSOAoIdlJlcXVlc3QYASABKAsyHC56",
-            "cHJvdG8uTWFoam9uZ0VuZE50ZlJlcXVlc3RSCHZSZXF1ZXN0GksKFU5vdGlm",
-            "eUVudHJ5UmFuZG9tRGF0YRIyCgVwYXJhbRgBIAEoCzIcLnpwcm90by5FbnRy",
-            "eVJhbmRvbURhdGFQYXJhbVIFcGFyYW0aTQoWTm90aWZ5RW50cnlVcGdyYWRl",
-            "RGF0YRIzCgVwYXJhbRgBIAEoCzIdLnpwcm90by5FbnRyeVVwZ3JhZGVEYXRh",
-            "UGFyYW1SBXBhcmFtGlIKGE5vdGlmeVBsYXlEYXRhQXR0YWNrSW5mbxIcCgl2",
-            "QXR0YWNrZXIYASABKANSCXZBdHRhY2tlchIYCgd2VmljdGltGAIgASgDUgd2",
-            "VmljdGltYgZwcm90bzM="));
+            "blBhcmFtc1IGdlBhcmFtGk0KHk5vdGlmeUR1bmdlb25CYWNrcGFja1Nob3dJ",
+            "dGVtcxIrCgV2SW5mbxgBIAEoCzIVLnpwcm90by5TaG93SXRlbXNJbmZvUgV2",
+            "SW5mbxogCghRdGVCZWdpbhIUCgVxdGVJZBgBIAEoDVIFcXRlSWQaJgoKUXVl",
+            "c3RBYm9ydBIYCgdxdWVzdElkGAEgASgFUgdxdWVzdElkGk0KE05vdGlmeUJ1",
+            "eVNob3BSZXN1bHQSNgoFcGFyYW0YASABKAsyIC56cHJvdG8uTm90aWZ5QnV5",
+            "U2hvcFJlc3VsdFBhcmFtUgVwYXJhbRpPChROb3RpZnlTaG9wSXRlbUNhbkJ1",
+            "eRI3CgVwYXJhbRgBIAEoCzIhLnpwcm90by5Ob3RpZnlTaG9wSXRlbUNhbkJ1",
+            "eVBhcmFtUgVwYXJhbRpSChRXb3JsZEJvc3NSYW5rSW5mb050ZhI6CghyYW5r",
+            "SW5mbxgBIAEoCzIeLnpwcm90by5Xb3JsZEJvc3NSYW5rSW5mb1BhcmFtUghy",
+            "YW5rSW5mbxpVChNFbnRlck1hdGNoUmVzdWx0TnRmEj4KCHZSZXF1ZXN0GAEg",
+            "ASgLMiIuenByb3RvLkVudGVyTWF0Y2hSZXN1bHROdGZSZXF1ZXN0Ugh2UmVx",
+            "dWVzdBpLChVOb3RpZnlEcml2ZXJBcHBseVJpZGUSMgoFcGFyYW0YASABKAsy",
+            "HC56cHJvdG8uRHJpdmVyQXBwbHlSaWRlUGFyYW1SBXBhcmFtGksKFU5vdGlm",
+            "eUludml0ZUFwcGx5UmlkZRIyCgVwYXJhbRgBIAEoCzIcLnpwcm90by5JbnZp",
+            "dGVBcHBseVJpZGVQYXJhbVIFcGFyYW0aSQoRTm90aWZ5UmlkZUlzQWdyZWUS",
+            "NAoFcGFyYW0YASABKAsyHi56cHJvdG8uTm90aWZ5UmlkZUlzQWdyZWVQYXJh",
+            "bVIFcGFyYW0aPQoNTm90aWZ5UGF5SW5mbxIsCgVwYXJhbRgBIAEoCzIWLnpw",
+            "cm90by5Ob3RpZnlQYXlQYXJhbVIFcGFyYW0abgolTm90aWZ5TGlmZVByb2Zl",
+            "c3Npb25Xb3JrSGlzdG9yeUNoYW5nZRJFCgRpbmZvGAEgASgLMjEuenByb3Rv",
+            "Lk5vdGlmeUxpZmVQcm9mZXNzaW9uV29ya0hpc3RvcnlDaGFuZ2VJbmZvUgRp",
+            "bmZvGmQKIE5vdGlmeUxpZmVQcm9mZXNzaW9uVW5sb2NrUmVjaXBlEkAKBGlu",
+            "Zm8YASABKAsyLC56cHJvdG8uTm90aWZ5TGlmZVByb2Zlc3Npb25VbmxvY2tS",
+            "ZWNpcGVJbmZvUgRpbmZvGk8KEFNpZ25SZXdhcmROb3RpZnkSOwoIdlJlcXVl",
+            "c3QYASABKAsyHy56cHJvdG8uU2lnblJld2FyZE5vdGlmeVJlcXVlc3RSCHZS",
+            "ZXF1ZXN0Gk0KD01haGpvbmdTdGFydE50ZhI6Cgh2UmVxdWVzdBgBIAEoCzIe",
+            "Lnpwcm90by5NYWhqb25nU3RhcnROdGZSZXF1ZXN0Ugh2UmVxdWVzdBpJCg1N",
+            "YWhqb25nRW5kTnRmEjgKCHZSZXF1ZXN0GAEgASgLMhwuenByb3RvLk1haGpv",
+            "bmdFbmROdGZSZXF1ZXN0Ugh2UmVxdWVzdBpLChVOb3RpZnlFbnRyeVJhbmRv",
+            "bURhdGESMgoFcGFyYW0YASABKAsyHC56cHJvdG8uRW50cnlSYW5kb21EYXRh",
+            "UGFyYW1SBXBhcmFtGk0KFk5vdGlmeUVudHJ5VXBncmFkZURhdGESMwoFcGFy",
+            "YW0YASABKAsyHS56cHJvdG8uRW50cnlVcGdyYWRlRGF0YVBhcmFtUgVwYXJh",
+            "bRpSChhOb3RpZnlQbGF5RGF0YUF0dGFja0luZm8SHAoJdkF0dGFja2VyGAEg",
+            "ASgDUgl2QXR0YWNrZXISGAoHdlZpY3RpbRgCIAEoA1IHdlZpY3RpbWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Zproto.EnumEErrorCodeReflection.Descriptor, global::Zproto.EnumEPictureTypeReflection.Descriptor, global::Zproto.StruAwardDataReflection.Descriptor, global::Zproto.StruCardInfoReflection.Descriptor, global::Zproto.StruCharSerializeReflection.Descriptor, global::Zproto.StruClientActionParamsReflection.Descriptor, global::Zproto.StruClientCustomEventParamsReflection.Descriptor, global::Zproto.StruDebugMessageTipInfoReflection.Descriptor, global::Zproto.StruDriverApplyRideParamReflection.Descriptor, global::Zproto.StruDungeonReadyInfoReflection.Descriptor, global::Zproto.StruDungeonSyncDataReflection.Descriptor, global::Zproto.StruEnterMatchResultNtfRequestReflection.Descriptor, global::Zproto.StruEntryRandomDataParamReflection.Descriptor, global::Zproto.StruEntryUpgradeDataParamReflection.Descriptor, global::Zproto.StruInviteApplyRideParamReflection.Descriptor, global::Zproto.StruItemWarnNotifyReflection.Descriptor, global::Zproto.StruMahjongEndNtfRequestReflection.Descriptor, global::Zproto.StruMahjongStartNtfRequestReflection.Descriptor, global::Zproto.StruNoticeInfoReflection.Descriptor, global::Zproto.StruNoticeMultiLanguageInfoReflection.Descriptor, global::Zproto.StruNotifyAllSourcePrivilegeEffectDataReflection.Descriptor, global::Zproto.StruNotifyAllValidBattlePassDataReflection.Descriptor, global::Zproto.StruNotifyAwardAllItemInfoReflection.Descriptor, global::Zproto.StruNotifyBuyShopResultParamReflection.Descriptor, global::Zproto.StruNotifyFunctionParamsReflection.Descriptor, global::Zproto.StruNotifyLifeProfessionUnlockRecipeInfoReflection.Descriptor, global::Zproto.StruNotifyLifeProfessionWorkHistoryChangeInfoReflection.Descriptor, global::Zproto.StruNotifyPayParamReflection.Descriptor, global::Zproto.StruNotifyQuestAcceptParamReflection.Descriptor, global::Zproto.StruNotifyQuestChangeStepParamReflection.Descriptor, global::Zproto.StruNotifyQuestCompleteParamReflection.Descriptor, global::Zproto.StruNotifyQuestGiveUpParamReflection.Descriptor, global::Zproto.StruNotifyRideIsAgreeParamReflection.Descriptor, global::Zproto.StruNotifyShopItemCanBuyParamReflection.Descriptor, global::Zproto.StruParkourRecordReflection.Descriptor, global::Zproto.StruPaymentResultReflection.Descriptor, global::Zproto.StruShowItemsInfoReflection.Descriptor, global::Zproto.StruSignRewardNotifyRequestReflection.Descriptor, global::Zproto.StruStartPlayingDungeonParamReflection.Descriptor, global::Zproto.StruSwitchInfoReflection.Descriptor, global::Zproto.StruSyncInviteRequestReflection.Descriptor, global::Zproto.StruTipsInfoReflection.Descriptor, global::Zproto.StruUnlockCookBookInfoReflection.Descriptor, global::Zproto.StruWorldBossRankInfoParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -220,6 +222,7 @@ namespace Zproto {
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyNoticeMultiLanguageInfo), global::Zproto.WorldNtf.Types.NotifyNoticeMultiLanguageInfo.Parser, new[]{ "VInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyItemWarn), global::Zproto.WorldNtf.Types.NotifyItemWarn.Parser, new[]{ "VInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyBroadcastClientAction), global::Zproto.WorldNtf.Types.NotifyBroadcastClientAction.Parser, new[]{ "VParam" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyDungeonBackpackShowItems), global::Zproto.WorldNtf.Types.NotifyDungeonBackpackShowItems.Parser, new[]{ "VInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.QteBegin), global::Zproto.WorldNtf.Types.QteBegin.Parser, new[]{ "QteId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.QuestAbort), global::Zproto.WorldNtf.Types.QuestAbort.Parser, new[]{ "QuestId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.WorldNtf.Types.NotifyBuyShopResult), global::Zproto.WorldNtf.Types.NotifyBuyShopResult.Parser, new[]{ "Param" }, null, null, null, null),
@@ -10324,6 +10327,213 @@ namespace Zproto {
       }
 
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class NotifyDungeonBackpackShowItems : pb::IMessage<NotifyDungeonBackpackShowItems>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<NotifyDungeonBackpackShowItems> _parser = new pb::MessageParser<NotifyDungeonBackpackShowItems>(() => new NotifyDungeonBackpackShowItems());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<NotifyDungeonBackpackShowItems> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[46]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyDungeonBackpackShowItems() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyDungeonBackpackShowItems(NotifyDungeonBackpackShowItems other) : this() {
+          vInfo_ = other.vInfo_ != null ? other.vInfo_.Clone() : null;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NotifyDungeonBackpackShowItems Clone() {
+          return new NotifyDungeonBackpackShowItems(this);
+        }
+
+        /// <summary>Field number for the "vInfo" field.</summary>
+        public const int VInfoFieldNumber = 1;
+        private global::Zproto.ShowItemsInfo vInfo_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Zproto.ShowItemsInfo VInfo {
+          get { return vInfo_; }
+          set {
+            vInfo_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as NotifyDungeonBackpackShowItems);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(NotifyDungeonBackpackShowItems other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (!object.Equals(VInfo, other.VInfo)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (vInfo_ != null) hash ^= VInfo.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (vInfo_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(VInfo);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (vInfo_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(VInfo);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (vInfo_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(VInfo);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(NotifyDungeonBackpackShowItems other) {
+          if (other == null) {
+            return;
+          }
+          if (other.vInfo_ != null) {
+            if (vInfo_ == null) {
+              VInfo = new global::Zproto.ShowItemsInfo();
+            }
+            VInfo.MergeFrom(other.VInfo);
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                if (vInfo_ == null) {
+                  VInfo = new global::Zproto.ShowItemsInfo();
+                }
+                input.ReadMessage(VInfo);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                if (vInfo_ == null) {
+                  VInfo = new global::Zproto.ShowItemsInfo();
+                }
+                input.ReadMessage(VInfo);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class QteBegin : pb::IMessage<QteBegin>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -10338,7 +10548,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[46]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[47]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10536,7 +10746,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[47]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[48]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10734,7 +10944,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[48]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[49]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10941,7 +11151,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[49]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[50]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11148,7 +11358,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[50]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[51]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11355,7 +11565,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[51]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[52]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11562,7 +11772,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[52]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[53]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11769,7 +11979,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[53]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[54]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11976,7 +12186,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[54]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[55]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12183,7 +12393,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[55]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[56]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12390,7 +12600,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[56]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[57]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12597,7 +12807,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[57]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[58]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12804,7 +13014,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[58]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[59]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13011,7 +13221,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[59]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[60]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13218,7 +13428,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[60]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[61]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13425,7 +13635,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[61]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[62]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13632,7 +13842,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[62]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[63]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13839,7 +14049,7 @@ namespace Zproto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[63]; }
+          get { return global::Zproto.WorldNtf.Descriptor.NestedTypes[64]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -27,31 +27,36 @@ namespace Zproto {
             "Cg9zdHJ1X2l0ZW0ucHJvdG8SBnpwcm90bxoVc3RydV9hZmZpeF9kYXRhLnBy",
             "b3RvGhtlbnVtX2VfaXRlbV9iaW5kX2ZsYWcucHJvdG8aFXN0cnVfZXF1aXBf",
             "YXR0ci5wcm90bxobc3RydV9pdGVtX2V4dGVuZF9kYXRhLnByb3RvGhNzdHJ1",
-            "X21vZF9hdHRyLnByb3RvGhdzdHJ1X21vZF9uZXdfYXR0ci5wcm90bxoVc3Ry",
-            "dV9kaXJ0eV9tYXNrLnByb3RvItIGCgRJdGVtEhIKBHV1aWQYASABKANSBHV1",
-            "aWQSGgoIY29uZmlnSWQYAiABKAVSCGNvbmZpZ0lkEhQKBWNvdW50GAMgASgD",
-            "UgVjb3VudBIYCgdpbnZhbGlkGAQgASgFUgdpbnZhbGlkEjEKCGJpbmRGbGFn",
-            "GAUgASgOMhUuenByb3RvLkVJdGVtQmluZEZsYWdSCGJpbmRGbGFnEh4KCmNy",
-            "ZWF0ZVRpbWUYBiABKANSCmNyZWF0ZVRpbWUSHgoKZXhwaXJlVGltZRgHIAEo",
-            "A1IKZXhwaXJlVGltZRIWCgZvcHRTcmMYCCABKAVSBm9wdFNyYxIYCgdxdWFs",
-            "aXR5GAkgASgFUgdxdWFsaXR5Ei8KCWVxdWlwQXR0chgKIAEoCzIRLnpwcm90",
-            "by5FcXVpcEF0dHJSCWVxdWlwQXR0chIpCgdtb2RBdHRyGAsgASgLMg8uenBy",
-            "b3RvLk1vZEF0dHJSB21vZEF0dHISLgoSY29vbERvd25FeHBpcmVUaW1lGAwg",
-            "ASgDUhJjb29sRG93bkV4cGlyZVRpbWUSMgoKbW9kTmV3QXR0chgNIAEoCzIS",
-            "Lnpwcm90by5Nb2ROZXdBdHRyUgptb2ROZXdBdHRyEi8KCWFmZml4RGF0YRgO",
-            "IAEoCzIRLnpwcm90by5BZmZpeERhdGFSCWFmZml4RGF0YRI8CgpleHRlbmRB",
-            "dHRyGA8gAygLMhwuenByb3RvLkl0ZW0uRXh0ZW5kQXR0ckVudHJ5UgpleHRl",
-            "bmRBdHRyEhoKCHJld2FyZElkGBAgASgFUghyZXdhcmRJZBJCCgxnZW5lU2Vx",
-            "dWVuY2UYESADKAsyHi56cHJvdG8uSXRlbS5HZW5lU2VxdWVuY2VFbnRyeVIM",
-            "Z2VuZVNlcXVlbmNlEh4KCmdlbmVTb3VyY2UYEiABKAVSCmdlbmVTb3VyY2US",
-            "FgoGbG9ja2VkGBMgASgIUgZsb2NrZWQaSQoPRXh0ZW5kQXR0ckVudHJ5EgsK",
-            "A2tleRgBIAEoBRIlCgV2YWx1ZRgCIAEoCzIWLnpwcm90by5JdGVtRXh0ZW5k",
-            "RGF0YToCOAEaMwoRR2VuZVNlcXVlbmNlRW50cnkSCwoDa2V5GAEgASgFEg0K",
-            "BXZhbHVlGAIgASgFOgI4AWIGcHJvdG8z"));
+            "X21vZF9hdHRyLnByb3RvGhdzdHJ1X21vZF9uZXdfYXR0ci5wcm90bxoZc3Ry",
+            "dV9tb2RfcGFydF9sZXZlbC5wcm90bxoVc3RydV9kaXJ0eV9tYXNrLnByb3Rv",
+            "Ip0ICgRJdGVtEhIKBHV1aWQYASABKANSBHV1aWQSGgoIY29uZmlnSWQYAiAB",
+            "KAVSCGNvbmZpZ0lkEhQKBWNvdW50GAMgASgDUgVjb3VudBIYCgdpbnZhbGlk",
+            "GAQgASgFUgdpbnZhbGlkEjEKCGJpbmRGbGFnGAUgASgOMhUuenByb3RvLkVJ",
+            "dGVtQmluZEZsYWdSCGJpbmRGbGFnEh4KCmNyZWF0ZVRpbWUYBiABKANSCmNy",
+            "ZWF0ZVRpbWUSHgoKZXhwaXJlVGltZRgHIAEoA1IKZXhwaXJlVGltZRIWCgZv",
+            "cHRTcmMYCCABKAVSBm9wdFNyYxIYCgdxdWFsaXR5GAkgASgFUgdxdWFsaXR5",
+            "Ei8KCWVxdWlwQXR0chgKIAEoCzIRLnpwcm90by5FcXVpcEF0dHJSCWVxdWlw",
+            "QXR0chIpCgdtb2RBdHRyGAsgASgLMg8uenByb3RvLk1vZEF0dHJSB21vZEF0",
+            "dHISLgoSY29vbERvd25FeHBpcmVUaW1lGAwgASgDUhJjb29sRG93bkV4cGly",
+            "ZVRpbWUSMgoKbW9kTmV3QXR0chgNIAEoCzISLnpwcm90by5Nb2ROZXdBdHRy",
+            "Ugptb2ROZXdBdHRyEi8KCWFmZml4RGF0YRgOIAEoCzIRLnpwcm90by5BZmZp",
+            "eERhdGFSCWFmZml4RGF0YRI8CgpleHRlbmRBdHRyGA8gAygLMhwuenByb3Rv",
+            "Lkl0ZW0uRXh0ZW5kQXR0ckVudHJ5UgpleHRlbmRBdHRyEhoKCHJld2FyZElk",
+            "GBAgASgFUghyZXdhcmRJZBJCCgxnZW5lU2VxdWVuY2UYESADKAsyHi56cHJv",
+            "dG8uSXRlbS5HZW5lU2VxdWVuY2VFbnRyeVIMZ2VuZVNlcXVlbmNlEh4KCmdl",
+            "bmVTb3VyY2UYEiABKAVSCmdlbmVTb3VyY2USFgoGbG9ja2VkGBMgASgIUgZs",
+            "b2NrZWQSPwoLc2VsZWN0SXRlbXMYFCADKAsyHS56cHJvdG8uSXRlbS5TZWxl",
+            "Y3RJdGVtc0VudHJ5UgtzZWxlY3RJdGVtcxI4Cgxtb2RQYXJ0TGV2ZWwYFSAB",
+            "KAsyFC56cHJvdG8uTW9kUGFydExldmVsUgxtb2RQYXJ0TGV2ZWwSGgoIc3Rh",
+            "ck1hcmsYFiABKAhSCHN0YXJNYXJrGkkKD0V4dGVuZEF0dHJFbnRyeRILCgNr",
+            "ZXkYASABKAUSJQoFdmFsdWUYAiABKAsyFi56cHJvdG8uSXRlbUV4dGVuZERh",
+            "dGE6AjgBGjMKEUdlbmVTZXF1ZW5jZUVudHJ5EgsKA2tleRgBIAEoBRINCgV2",
+            "YWx1ZRgCIAEoBToCOAEaMgoQU2VsZWN0SXRlbXNFbnRyeRILCgNrZXkYASAB",
+            "KAUSDQoFdmFsdWUYAiABKAU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruAffixDataReflection.Descriptor, global::Zproto.EnumEItemBindFlagReflection.Descriptor, global::Zproto.StruEquipAttrReflection.Descriptor, global::Zproto.StruItemExtendDataReflection.Descriptor, global::Zproto.StruModAttrReflection.Descriptor, global::Zproto.StruModNewAttrReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruAffixDataReflection.Descriptor, global::Zproto.EnumEItemBindFlagReflection.Descriptor, global::Zproto.StruEquipAttrReflection.Descriptor, global::Zproto.StruItemExtendDataReflection.Descriptor, global::Zproto.StruModAttrReflection.Descriptor, global::Zproto.StruModNewAttrReflection.Descriptor, global::Zproto.StruModPartLevelReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.Item), global::Zproto.Item.Parser, new[]{ "Uuid", "ConfigId", "Count", "Invalid", "BindFlag", "CreateTime", "ExpireTime", "OptSrc", "Quality", "EquipAttr", "ModAttr", "CoolDownExpireTime", "ModNewAttr", "AffixData", "ExtendAttr", "RewardId", "GeneSequence", "GeneSource", "Locked" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.Item), global::Zproto.Item.Parser, new[]{ "Uuid", "ConfigId", "Count", "Invalid", "BindFlag", "CreateTime", "ExpireTime", "OptSrc", "Quality", "EquipAttr", "ModAttr", "CoolDownExpireTime", "ModNewAttr", "AffixData", "ExtendAttr", "RewardId", "GeneSequence", "GeneSource", "Locked", "SelectItems", "ModPartLevel", "StarMark" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
           }));
     }
     #endregion
@@ -112,6 +117,9 @@ namespace Zproto {
       geneSequence_ = other.geneSequence_.Clone();
       geneSource_ = other.geneSource_;
       locked_ = other.locked_;
+      selectItems_ = other.selectItems_.Clone();
+      modPartLevel_ = other.modPartLevel_ != null ? other.modPartLevel_.Clone() : null;
+      starMark_ = other.starMark_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -347,6 +355,41 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "selectItems" field.</summary>
+    public const int SelectItemsFieldNumber = 20;
+    private static readonly pbc::MapField<int, int>.Codec _map_selectItems_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 162);
+    private readonly pbc::MapField<int, int> selectItems_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<int, int> SelectItems {
+      get { return selectItems_; }
+    }
+
+    /// <summary>Field number for the "modPartLevel" field.</summary>
+    public const int ModPartLevelFieldNumber = 21;
+    private global::Zproto.ModPartLevel modPartLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Zproto.ModPartLevel ModPartLevel {
+      get { return modPartLevel_; }
+      set {
+        modPartLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "starMark" field.</summary>
+    public const int StarMarkFieldNumber = 22;
+    private bool starMark_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool StarMark {
+      get { return starMark_; }
+      set {
+        starMark_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -381,6 +424,9 @@ namespace Zproto {
       if (!GeneSequence.Equals(other.GeneSequence)) return false;
       if (GeneSource != other.GeneSource) return false;
       if (Locked != other.Locked) return false;
+      if (!SelectItems.Equals(other.SelectItems)) return false;
+      if (!object.Equals(ModPartLevel, other.ModPartLevel)) return false;
+      if (StarMark != other.StarMark) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -407,6 +453,9 @@ namespace Zproto {
       hash ^= GeneSequence.GetHashCode();
       if (GeneSource != 0) hash ^= GeneSource.GetHashCode();
       if (Locked != false) hash ^= Locked.GetHashCode();
+      hash ^= SelectItems.GetHashCode();
+      if (modPartLevel_ != null) hash ^= ModPartLevel.GetHashCode();
+      if (StarMark != false) hash ^= StarMark.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -495,6 +544,15 @@ namespace Zproto {
         output.WriteRawTag(152, 1);
         output.WriteBool(Locked);
       }
+      selectItems_.WriteTo(output, _map_selectItems_codec);
+      if (modPartLevel_ != null) {
+        output.WriteRawTag(170, 1);
+        output.WriteMessage(ModPartLevel);
+      }
+      if (StarMark != false) {
+        output.WriteRawTag(176, 1);
+        output.WriteBool(StarMark);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -575,6 +633,15 @@ namespace Zproto {
         output.WriteRawTag(152, 1);
         output.WriteBool(Locked);
       }
+      selectItems_.WriteTo(ref output, _map_selectItems_codec);
+      if (modPartLevel_ != null) {
+        output.WriteRawTag(170, 1);
+        output.WriteMessage(ModPartLevel);
+      }
+      if (StarMark != false) {
+        output.WriteRawTag(176, 1);
+        output.WriteBool(StarMark);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -636,6 +703,13 @@ namespace Zproto {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(GeneSource);
       }
       if (Locked != false) {
+        size += 2 + 1;
+      }
+      size += selectItems_.CalculateSize(_map_selectItems_codec);
+      if (modPartLevel_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ModPartLevel);
+      }
+      if (StarMark != false) {
         size += 2 + 1;
       }
       if (_unknownFields != null) {
@@ -714,6 +788,16 @@ namespace Zproto {
       }
       if (other.Locked != false) {
         Locked = other.Locked;
+      }
+      selectItems_.MergeFrom(other.selectItems_);
+      if (other.modPartLevel_ != null) {
+        if (modPartLevel_ == null) {
+          ModPartLevel = new global::Zproto.ModPartLevel();
+        }
+        ModPartLevel.MergeFrom(other.ModPartLevel);
+      }
+      if (other.StarMark != false) {
+        StarMark = other.StarMark;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -822,6 +906,21 @@ namespace Zproto {
             Locked = input.ReadBool();
             break;
           }
+          case 162: {
+            selectItems_.AddEntriesFrom(input, _map_selectItems_codec);
+            break;
+          }
+          case 170: {
+            if (modPartLevel_ == null) {
+              ModPartLevel = new global::Zproto.ModPartLevel();
+            }
+            input.ReadMessage(ModPartLevel);
+            break;
+          }
+          case 176: {
+            StarMark = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -927,6 +1026,21 @@ namespace Zproto {
           }
           case 152: {
             Locked = input.ReadBool();
+            break;
+          }
+          case 162: {
+            selectItems_.AddEntriesFrom(ref input, _map_selectItems_codec);
+            break;
+          }
+          case 170: {
+            if (modPartLevel_ == null) {
+              ModPartLevel = new global::Zproto.ModPartLevel();
+            }
+            input.ReadMessage(ModPartLevel);
+            break;
+          }
+          case 176: {
+            StarMark = input.ReadBool();
             break;
           }
         }
