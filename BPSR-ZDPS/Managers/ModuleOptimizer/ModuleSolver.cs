@@ -107,14 +107,12 @@ namespace BPSR_ZDPS.Managers.Modules
             for (int i = 0; i < filtered.Count; i++)
             {
                 long modId = filtered[i];
-                var modStatIds = playerMods.ModulesPackage.Items[modId].ModNewAttr.ModParts;
 
-                int linkIdx = 0;
                 var mod1Ids = new byte[vecCount];
-                foreach (var statId in modStatIds)
+                foreach (var modKVP in playerMods.ModulesPackage.Items[modId].ModPartLevel.Levels)
                 {
-                    var idx = possibleStats[statId];
-                    mod1Ids[idx] = (byte)playerMods.Mod.ModInfos[modId].InitLinkNums[linkIdx++];
+                    var idx = possibleStats[modKVP.Key];
+                    mod1Ids[idx] = (byte)modKVP.Value;
                 }
 
                 var vec = new Vector<byte>(mod1Ids);
@@ -213,13 +211,14 @@ namespace BPSR_ZDPS.Managers.Modules
         public static ulong GetModuleId(PlayerModDataSave playerMods, long id)
         {
             var modItem = playerMods.ModulesPackage.Items[id];
-            var modInfo = playerMods.Mod.ModInfos[id];
 
             var modIds = new (byte, byte)[3];
-            for (int i = 0; i < modItem.ModNewAttr.ModParts.Count; i++)
+            int i = 0;
+            foreach (var modKVP in modItem.ModPartLevel.Levels)
             {
-                var idAndVal = ((byte)modItem.ModNewAttr.ModParts[i], (byte)modInfo.InitLinkNums[i]);
+                var idAndVal = ((byte)modKVP.Key, (byte)modKVP.Value);
                 modIds[i] = idAndVal;
+                i++;
             }
 
             modIds = modIds.OrderBy(x => x.Item1).ToArray();
@@ -275,16 +274,12 @@ namespace BPSR_ZDPS.Managers.Modules
             }
 
             var modItem = playerMods.ModulesPackage.Items[id];
-            var modInfo = playerMods.Mod.ModInfos[id];
-            for (int i = 0; i < modItem.ModNewAttr.ModParts.Count; i++)
+            foreach (var modKVP in modItem.ModPartLevel.Levels)
             {
-                var statId = modItem.ModNewAttr.ModParts[i];
-                var statValue = modInfo.InitLinkNums[i];
-
                 var powerCore = new PowerCore()
                 {
-                    Id = statId,
-                    Value = statValue,
+                    Id = modKVP.Key,
+                    Value = modKVP.Value,
                 };
 
                 powerCores.Add(powerCore);

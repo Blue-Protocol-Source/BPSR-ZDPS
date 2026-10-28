@@ -906,7 +906,6 @@ namespace BPSR_ZDPS
         public static void DrawModule(PlayerModDataSave modInv, long id, Zproto.Item item, bool showId = false)
         {
             var modTypeData = HelperMethods.DataTables.Modules.Data[item.ConfigId];
-            var modInfo = modInv.Mod.ModInfos[id];
             var startPos = ImGui.GetCursorPos();
             ImGui.PushClipRect(ImGui.GetCursorScreenPos(), ImGui.GetCursorScreenPos() + MOD_DISPLAY_SIZE, true);
             ImGui.BeginGroup();
@@ -940,13 +939,12 @@ namespace BPSR_ZDPS
 
             pos = ImGui.GetCursorPos();
             ImGui.SetCursorPos(pos + new Vector2(100, -MOD_ICON_SIZE.Y));
-            var numStats = item.ModNewAttr.ModParts.Count();
-            for (int i = 0; i < numStats; i++)
+            int i = 0;
+            foreach (var modKVP in item.ModPartLevel.Levels)
             {
-                var partId = item.ModNewAttr.ModParts[i];
-                var level = modInfo.InitLinkNums[i];
                 ImGui.SetCursorPos(pos + new Vector2(90 + (i * 102), -(MOD_ICON_SIZE.Y + 4)));
-                DrawModuleStat(partId, level);
+                DrawModuleStat(modKVP.Key, modKVP.Value);
+                i++;
             }
 
             ImGui.EndGroup();
