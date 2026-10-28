@@ -13384,5 +13384,5039 @@
     "SsprHeight": 0.0,
     "TimelineId": 0,
     "TransformId": 26101
+  },
+  "361": {
+    "Id": 361,
+    "EquipId": 2000635,
+    "BreakThroughTime": 1,
+    "EquipGs": 340,
+    "BasicAttrLibId": [
+      2,
+      1041110
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2041110
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7311141,
+    "Condition": [
+      [
+        9,
+        10401
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        8
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.18,
+    "TimelineId": 511001,
+    "TransformId": 200063501
+  },
+  "362": {
+    "Id": 362,
+    "EquipId": 2000636,
+    "BreakThroughTime": 1,
+    "EquipGs": 340,
+    "BasicAttrLibId": [
+      2,
+      1041120
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2041120
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7321141,
+    "Condition": [
+      [
+        9,
+        10401
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        8
+      ]
+    ],
+    "ModelPos": [
+      1.18,
+      1.08,
+      1.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.25,
+    "TimelineId": 511002,
+    "TransformId": 200063601
+  },
+  "363": {
+    "Id": 363,
+    "EquipId": 2000637,
+    "BreakThroughTime": 1,
+    "EquipGs": 340,
+    "BasicAttrLibId": [
+      2,
+      1041130
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2041130
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7340141,
+    "Condition": [
+      [
+        9,
+        10401
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        8
+      ]
+    ],
+    "ModelPos": [
+      1.0,
+      0.95,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.2,
+    "TimelineId": 511004,
+    "TransformId": 200063701
+  },
+  "364": {
+    "Id": 364,
+    "EquipId": 2000638,
+    "BreakThroughTime": 1,
+    "EquipGs": 340,
+    "BasicAttrLibId": [
+      2,
+      1041140
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2041140
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7350141,
+    "Condition": [
+      [
+        9,
+        10401
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        8
+      ]
+    ],
+    "ModelPos": [
+      1.1,
+      0.94,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0,
+      1.0
+    ],
+    "SsprHeight": 0.46,
+    "TimelineId": 511005,
+    "TransformId": 200063801
+  },
+  "365": {
+    "Id": 365,
+    "EquipId": 2000639,
+    "BreakThroughTime": 1,
+    "EquipGs": 340,
+    "BasicAttrLibId": [
+      2,
+      1041160
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2041160
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7370141,
+    "Condition": [
+      [
+        9,
+        10401
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        8
+      ]
+    ],
+    "ModelPos": [
+      1.0,
+      1.05,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.21,
+    "TimelineId": 511006,
+    "TransformId": 200063901
+  },
+  "366": {
+    "Id": 366,
+    "EquipId": 2000640,
+    "BreakThroughTime": 1,
+    "EquipGs": 340,
+    "BasicAttrLibId": [
+      2,
+      1041150
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2041150
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7390141,
+    "Condition": [
+      [
+        9,
+        10401
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        8
+      ]
+    ],
+    "ModelPos": [
+      1.0,
+      1.0,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      0.0,
+      1.0
+    ],
+    "SsprHeight": 0.37,
+    "TimelineId": 511009,
+    "TransformId": 200064001
+  },
+  "367": {
+    "Id": 367,
+    "EquipId": 2000641,
+    "BreakThroughTime": 1,
+    "EquipGs": 340,
+    "BasicAttrLibId": [
+      2,
+      1041170
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2041170
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7400141,
+    "Condition": [
+      [
+        9,
+        10401
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        8
+      ]
+    ],
+    "ModelPos": [
+      0.65,
+      0.58,
+      -2.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0,
+      1.0
+    ],
+    "SsprHeight": 0.41,
+    "TimelineId": 511010,
+    "TransformId": 200064101
+  },
+  "368": {
+    "Id": 368,
+    "EquipId": 2000642,
+    "BreakThroughTime": 1,
+    "EquipGs": 340,
+    "BasicAttrLibId": [
+      2,
+      1041180
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2041180
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7410141,
+    "Condition": [
+      [
+        9,
+        10401
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        8
+      ]
+    ],
+    "ModelPos": [
+      1.1,
+      1.0,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      0.0,
+      1.0
+    ],
+    "SsprHeight": 0.3,
+    "TimelineId": 511011,
+    "TransformId": 200064201
+  },
+  "369": {
+    "Id": 369,
+    "EquipId": 2000643,
+    "BreakThroughTime": 1,
+    "EquipGs": 340,
+    "BasicAttrLibId": [
+      2,
+      1041190
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2041190
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7331141,
+    "Condition": [
+      [
+        9,
+        10401
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        8
+      ]
+    ],
+    "ModelPos": [
+      1.1,
+      1.15,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.1,
+      1.1
+    ],
+    "SsprHeight": 0.5,
+    "TimelineId": 511012,
+    "TransformId": 200064301
+  },
+  "370": {
+    "Id": 370,
+    "EquipId": 2000635,
+    "BreakThroughTime": 2,
+    "EquipGs": 360,
+    "BasicAttrLibId": [
+      2,
+      1042110
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042110
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7311142,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        36
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.18,
+    "TimelineId": 511001,
+    "TransformId": 200063502
+  },
+  "371": {
+    "Id": 371,
+    "EquipId": 2000636,
+    "BreakThroughTime": 2,
+    "EquipGs": 360,
+    "BasicAttrLibId": [
+      2,
+      1042120
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042120
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7321142,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        36
+      ]
+    ],
+    "ModelPos": [
+      1.18,
+      1.08,
+      1.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.25,
+    "TimelineId": 511002,
+    "TransformId": 200063602
+  },
+  "372": {
+    "Id": 372,
+    "EquipId": 2000637,
+    "BreakThroughTime": 2,
+    "EquipGs": 360,
+    "BasicAttrLibId": [
+      2,
+      1042130
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042130
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7340142,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        36
+      ]
+    ],
+    "ModelPos": [
+      1.0,
+      0.95,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.2,
+    "TimelineId": 511004,
+    "TransformId": 200063702
+  },
+  "373": {
+    "Id": 373,
+    "EquipId": 2000638,
+    "BreakThroughTime": 2,
+    "EquipGs": 360,
+    "BasicAttrLibId": [
+      2,
+      1042140
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042140
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7350142,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        36
+      ]
+    ],
+    "ModelPos": [
+      1.1,
+      0.94,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0,
+      1.0
+    ],
+    "SsprHeight": 0.46,
+    "TimelineId": 511005,
+    "TransformId": 200063802
+  },
+  "374": {
+    "Id": 374,
+    "EquipId": 2000639,
+    "BreakThroughTime": 2,
+    "EquipGs": 360,
+    "BasicAttrLibId": [
+      2,
+      1042160
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042160
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7370142,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        36
+      ]
+    ],
+    "ModelPos": [
+      1.0,
+      1.05,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.21,
+    "TimelineId": 511006,
+    "TransformId": 200063902
+  },
+  "375": {
+    "Id": 375,
+    "EquipId": 2000640,
+    "BreakThroughTime": 2,
+    "EquipGs": 360,
+    "BasicAttrLibId": [
+      2,
+      1042150
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042150
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7390142,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        36
+      ]
+    ],
+    "ModelPos": [
+      1.0,
+      1.0,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      0.0,
+      1.0
+    ],
+    "SsprHeight": 0.37,
+    "TimelineId": 511009,
+    "TransformId": 200064002
+  },
+  "376": {
+    "Id": 376,
+    "EquipId": 2000641,
+    "BreakThroughTime": 2,
+    "EquipGs": 360,
+    "BasicAttrLibId": [
+      2,
+      1042170
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042170
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7400142,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        36
+      ]
+    ],
+    "ModelPos": [
+      0.65,
+      0.58,
+      -2.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0,
+      1.0
+    ],
+    "SsprHeight": 0.41,
+    "TimelineId": 511010,
+    "TransformId": 200064102
+  },
+  "377": {
+    "Id": 377,
+    "EquipId": 2000642,
+    "BreakThroughTime": 2,
+    "EquipGs": 360,
+    "BasicAttrLibId": [
+      2,
+      1042180
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042180
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7410142,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        36
+      ]
+    ],
+    "ModelPos": [
+      1.1,
+      1.0,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      0.0,
+      1.0
+    ],
+    "SsprHeight": 0.3,
+    "TimelineId": 511011,
+    "TransformId": 200064202
+  },
+  "378": {
+    "Id": 378,
+    "EquipId": 2000643,
+    "BreakThroughTime": 2,
+    "EquipGs": 360,
+    "BasicAttrLibId": [
+      2,
+      1042190
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042190
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7331142,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        36
+      ]
+    ],
+    "ModelPos": [
+      1.1,
+      1.0,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      0.0,
+      1.0
+    ],
+    "SsprHeight": 0.3,
+    "TimelineId": 511012,
+    "TransformId": 200064302
+  },
+  "379": {
+    "Id": 379,
+    "EquipId": 2000635,
+    "BreakThroughTime": 3,
+    "EquipGs": 380,
+    "BasicAttrLibId": [
+      2,
+      1043110
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2043110
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7311142,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        46
+      ],
+      [
+        1070081,
+        100
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.18,
+    "TimelineId": 511001,
+    "TransformId": 200063503
+  },
+  "380": {
+    "Id": 380,
+    "EquipId": 2000636,
+    "BreakThroughTime": 3,
+    "EquipGs": 380,
+    "BasicAttrLibId": [
+      2,
+      1043120
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2043120
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7321142,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        46
+      ],
+      [
+        1070081,
+        100
+      ]
+    ],
+    "ModelPos": [
+      1.18,
+      1.08,
+      1.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.25,
+    "TimelineId": 511002,
+    "TransformId": 200063603
+  },
+  "381": {
+    "Id": 381,
+    "EquipId": 2000637,
+    "BreakThroughTime": 3,
+    "EquipGs": 380,
+    "BasicAttrLibId": [
+      2,
+      1043130
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2043130
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7340142,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        46
+      ],
+      [
+        1070081,
+        100
+      ]
+    ],
+    "ModelPos": [
+      1.0,
+      0.95,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.2,
+    "TimelineId": 511004,
+    "TransformId": 200063703
+  },
+  "382": {
+    "Id": 382,
+    "EquipId": 2000638,
+    "BreakThroughTime": 3,
+    "EquipGs": 380,
+    "BasicAttrLibId": [
+      2,
+      1043140
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2043140
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7350142,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        46
+      ],
+      [
+        1070081,
+        100
+      ]
+    ],
+    "ModelPos": [
+      1.1,
+      0.94,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0,
+      1.0
+    ],
+    "SsprHeight": 0.46,
+    "TimelineId": 511005,
+    "TransformId": 200063803
+  },
+  "383": {
+    "Id": 383,
+    "EquipId": 2000639,
+    "BreakThroughTime": 3,
+    "EquipGs": 380,
+    "BasicAttrLibId": [
+      2,
+      1043160
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2043160
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7370142,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        46
+      ],
+      [
+        1070081,
+        100
+      ]
+    ],
+    "ModelPos": [
+      1.0,
+      1.05,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0
+    ],
+    "SsprHeight": 0.21,
+    "TimelineId": 511006,
+    "TransformId": 200063903
+  },
+  "384": {
+    "Id": 384,
+    "EquipId": 2000640,
+    "BreakThroughTime": 3,
+    "EquipGs": 380,
+    "BasicAttrLibId": [
+      2,
+      1043150
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2043150
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7390142,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        46
+      ],
+      [
+        1070081,
+        100
+      ]
+    ],
+    "ModelPos": [
+      1.0,
+      1.0,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      0.0,
+      1.0
+    ],
+    "SsprHeight": 0.37,
+    "TimelineId": 511009,
+    "TransformId": 200064003
+  },
+  "385": {
+    "Id": 385,
+    "EquipId": 2000641,
+    "BreakThroughTime": 3,
+    "EquipGs": 380,
+    "BasicAttrLibId": [
+      2,
+      1043170
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2043170
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7400142,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        46
+      ],
+      [
+        1070081,
+        100
+      ]
+    ],
+    "ModelPos": [
+      0.65,
+      0.58,
+      -2.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.0,
+      1.0
+    ],
+    "SsprHeight": 0.41,
+    "TimelineId": 511010,
+    "TransformId": 200064103
+  },
+  "386": {
+    "Id": 386,
+    "EquipId": 2000642,
+    "BreakThroughTime": 3,
+    "EquipGs": 380,
+    "BasicAttrLibId": [
+      2,
+      1043180
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2043180
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7410142,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        46
+      ],
+      [
+        1070081,
+        100
+      ]
+    ],
+    "ModelPos": [
+      1.1,
+      1.0,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      0.0,
+      1.0
+    ],
+    "SsprHeight": 0.3,
+    "TimelineId": 511011,
+    "TransformId": 200064203
+  },
+  "387": {
+    "Id": 387,
+    "EquipId": 2000643,
+    "BreakThroughTime": 3,
+    "EquipGs": 380,
+    "BasicAttrLibId": [
+      2,
+      1043190
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2043190
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 7331142,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1070124,
+        46
+      ],
+      [
+        1070081,
+        100
+      ]
+    ],
+    "ModelPos": [
+      1.1,
+      1.15,
+      0.0
+    ],
+    "ModelRot": [],
+    "TimelineScale": 1.0,
+    "ModelScale": [
+      1.1,
+      1.1
+    ],
+    "SsprHeight": 0.5,
+    "TimelineId": 511012,
+    "TransformId": 200064303
+  },
+  "388": {
+    "Id": 388,
+    "EquipId": 2011840,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "389": {
+    "Id": 389,
+    "EquipId": 2011841,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "390": {
+    "Id": 390,
+    "EquipId": 2011842,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "391": {
+    "Id": 391,
+    "EquipId": 2021840,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "392": {
+    "Id": 392,
+    "EquipId": 2021841,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "393": {
+    "Id": 393,
+    "EquipId": 2021842,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "394": {
+    "Id": 394,
+    "EquipId": 2031840,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "395": {
+    "Id": 395,
+    "EquipId": 2031841,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "396": {
+    "Id": 396,
+    "EquipId": 2031842,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "397": {
+    "Id": 397,
+    "EquipId": 2041840,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "398": {
+    "Id": 398,
+    "EquipId": 2041841,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "399": {
+    "Id": 399,
+    "EquipId": 2041842,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "400": {
+    "Id": 400,
+    "EquipId": 2081840,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "401": {
+    "Id": 401,
+    "EquipId": 2081841,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "402": {
+    "Id": 402,
+    "EquipId": 2081842,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "403": {
+    "Id": 403,
+    "EquipId": 2091840,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "404": {
+    "Id": 404,
+    "EquipId": 2091841,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "405": {
+    "Id": 405,
+    "EquipId": 2091842,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "406": {
+    "Id": 406,
+    "EquipId": 2011940,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "407": {
+    "Id": 407,
+    "EquipId": 2011941,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "408": {
+    "Id": 408,
+    "EquipId": 2011942,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "409": {
+    "Id": 409,
+    "EquipId": 2021940,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "410": {
+    "Id": 410,
+    "EquipId": 2021941,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "411": {
+    "Id": 411,
+    "EquipId": 2021942,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "412": {
+    "Id": 412,
+    "EquipId": 2031940,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "413": {
+    "Id": 413,
+    "EquipId": 2031941,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "414": {
+    "Id": 414,
+    "EquipId": 2031942,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "415": {
+    "Id": 415,
+    "EquipId": 2041940,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "416": {
+    "Id": 416,
+    "EquipId": 2041941,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "417": {
+    "Id": 417,
+    "EquipId": 2041942,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "418": {
+    "Id": 418,
+    "EquipId": 2081940,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "419": {
+    "Id": 419,
+    "EquipId": 2081941,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "420": {
+    "Id": 420,
+    "EquipId": 2081942,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "421": {
+    "Id": 421,
+    "EquipId": 2091940,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "422": {
+    "Id": 422,
+    "EquipId": 2091941,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "423": {
+    "Id": 423,
+    "EquipId": 2091942,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "424": {
+    "Id": 424,
+    "EquipId": 2011940,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "425": {
+    "Id": 425,
+    "EquipId": 2011941,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "426": {
+    "Id": 426,
+    "EquipId": 2011942,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "427": {
+    "Id": 427,
+    "EquipId": 2021940,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "428": {
+    "Id": 428,
+    "EquipId": 2021941,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "429": {
+    "Id": 429,
+    "EquipId": 2021942,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "430": {
+    "Id": 430,
+    "EquipId": 2031940,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "431": {
+    "Id": 431,
+    "EquipId": 2031941,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "432": {
+    "Id": 432,
+    "EquipId": 2031942,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "433": {
+    "Id": 433,
+    "EquipId": 2041940,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "434": {
+    "Id": 434,
+    "EquipId": 2041941,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "435": {
+    "Id": 435,
+    "EquipId": 2041942,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "436": {
+    "Id": 436,
+    "EquipId": 2081940,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "437": {
+    "Id": 437,
+    "EquipId": 2081941,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "438": {
+    "Id": 438,
+    "EquipId": 2081942,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "439": {
+    "Id": 439,
+    "EquipId": 2091940,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "440": {
+    "Id": 440,
+    "EquipId": 2091941,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "441": {
+    "Id": 441,
+    "EquipId": 2091942,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "442": {
+    "Id": 442,
+    "EquipId": 2011858,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "443": {
+    "Id": 443,
+    "EquipId": 2011859,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "444": {
+    "Id": 444,
+    "EquipId": 2011860,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "445": {
+    "Id": 445,
+    "EquipId": 2021858,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "446": {
+    "Id": 446,
+    "EquipId": 2021859,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "447": {
+    "Id": 447,
+    "EquipId": 2021860,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "448": {
+    "Id": 448,
+    "EquipId": 2031858,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "449": {
+    "Id": 449,
+    "EquipId": 2031859,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "450": {
+    "Id": 450,
+    "EquipId": 2031860,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "451": {
+    "Id": 451,
+    "EquipId": 2041858,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "452": {
+    "Id": 452,
+    "EquipId": 2041859,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "453": {
+    "Id": 453,
+    "EquipId": 2041860,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "454": {
+    "Id": 454,
+    "EquipId": 2081858,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "455": {
+    "Id": 455,
+    "EquipId": 2081859,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "456": {
+    "Id": 456,
+    "EquipId": 2081860,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "457": {
+    "Id": 457,
+    "EquipId": 2091858,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "458": {
+    "Id": 458,
+    "EquipId": 2091859,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "459": {
+    "Id": 459,
+    "EquipId": 2091860,
+    "BreakThroughTime": 1,
+    "EquipGs": 350,
+    "BasicAttrLibId": [
+      1,
+      1038002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2038000,
+      3038000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10411
+      ]
+    ],
+    "Consume": [
+      [
+        1022308,
+        20
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 34101
+  },
+  "460": {
+    "Id": 460,
+    "EquipId": 2011958,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "461": {
+    "Id": 461,
+    "EquipId": 2011959,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "462": {
+    "Id": 462,
+    "EquipId": 2011960,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "463": {
+    "Id": 463,
+    "EquipId": 2021958,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "464": {
+    "Id": 464,
+    "EquipId": 2021959,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "465": {
+    "Id": 465,
+    "EquipId": 2021960,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "466": {
+    "Id": 466,
+    "EquipId": 2031958,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "467": {
+    "Id": 467,
+    "EquipId": 2031959,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "468": {
+    "Id": 468,
+    "EquipId": 2031960,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "469": {
+    "Id": 469,
+    "EquipId": 2041958,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "470": {
+    "Id": 470,
+    "EquipId": 2041959,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "471": {
+    "Id": 471,
+    "EquipId": 2041960,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "472": {
+    "Id": 472,
+    "EquipId": 2081958,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "473": {
+    "Id": 473,
+    "EquipId": 2081959,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "474": {
+    "Id": 474,
+    "EquipId": 2081960,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "475": {
+    "Id": 475,
+    "EquipId": 2091958,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "476": {
+    "Id": 476,
+    "EquipId": 2091959,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "477": {
+    "Id": 477,
+    "EquipId": 2091960,
+    "BreakThroughTime": 1,
+    "EquipGs": 365,
+    "BasicAttrLibId": [
+      1,
+      1042002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2042000,
+      3042000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "478": {
+    "Id": 478,
+    "EquipId": 2011958,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "479": {
+    "Id": 479,
+    "EquipId": 2011959,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "480": {
+    "Id": 480,
+    "EquipId": 2011960,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "481": {
+    "Id": 481,
+    "EquipId": 2021958,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "482": {
+    "Id": 482,
+    "EquipId": 2021959,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "483": {
+    "Id": 483,
+    "EquipId": 2021960,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "484": {
+    "Id": 484,
+    "EquipId": 2031958,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "485": {
+    "Id": 485,
+    "EquipId": 2031959,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "486": {
+    "Id": 486,
+    "EquipId": 2031960,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "487": {
+    "Id": 487,
+    "EquipId": 2041958,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "488": {
+    "Id": 488,
+    "EquipId": 2041959,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "489": {
+    "Id": 489,
+    "EquipId": 2041960,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "490": {
+    "Id": 490,
+    "EquipId": 2081958,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "491": {
+    "Id": 491,
+    "EquipId": 2081959,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "492": {
+    "Id": 492,
+    "EquipId": 2081960,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "493": {
+    "Id": 493,
+    "EquipId": 2091958,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039001
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "494": {
+    "Id": 494,
+    "EquipId": 2091959,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039003
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
+  },
+  "495": {
+    "Id": 495,
+    "EquipId": 2091960,
+    "BreakThroughTime": 2,
+    "EquipGs": 370,
+    "BasicAttrLibId": [
+      1,
+      1039002
+    ],
+    "AdvancedAttrLibId": [
+      2,
+      2039000,
+      3039000
+    ],
+    "QualityChildAttrLibId": [],
+    "AvatarId": 0,
+    "Condition": [
+      [
+        9,
+        10412
+      ]
+    ],
+    "Consume": [
+      [
+        1022309,
+        25
+      ]
+    ],
+    "ModelPos": [],
+    "ModelRot": [],
+    "TimelineScale": 0.0,
+    "ModelScale": [],
+    "SsprHeight": 0.0,
+    "TimelineId": 0,
+    "TransformId": 36101
   }
 }

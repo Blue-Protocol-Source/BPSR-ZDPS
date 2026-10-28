@@ -3211,7 +3211,7 @@
       ]
     ],
     "IsTeamShare": true,
-    "TargetDes": "Defeat monsters and collect Stellar energy",
+    "TargetDes": "Defeat monsters and collect Engram Line energy",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -3443,7 +3443,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Talk to the injured captain",
+    "TargetDes": "Talk to the injured army leader",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -3634,7 +3634,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Use the key to open the gate",
+    "TargetDes": "Use the key to activate the gate",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -3678,7 +3678,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Proceed to the depths of the ruins",
+    "TargetDes": "Proceed deeper into the ruins",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -3722,7 +3722,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Proceed to the core of the ruins",
+    "TargetDes": "Proceed to the deepest part of the ruins",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -4005,7 +4005,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Clear mechanical units to find the access key",
+    "TargetDes": "Clear mechanical units to find the key",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -4049,7 +4049,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Use the key to open the gate",
+    "TargetDes": "Use the key to activate the gate",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -4704,7 +4704,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete spatial investigation within 9 minutes to unlock the boss battle",
+    "TargetDes": "Complete spatial investigation within 10 minutes to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -4768,7 +4768,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Defeat monsters and collect Stellar energy",
+    "TargetDes": "Defeat monsters and collect Engram Line energy",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -4825,7 +4825,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Defeat monsters and collect Stellar energy",
+    "TargetDes": "Defeat monsters and collect Engram Line energy",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -4920,7 +4920,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Defeat monsters and collect Stellar energy",
+    "TargetDes": "Defeat monsters and collect Engram Line energy",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -5248,7 +5248,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the Boss battle",
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -5282,7 +5282,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "The Boss releases all of its power upon going berserk.",
+    "TargetDes": "Defeat Igoreus",
     "IsShowProgress": false,
     "SpVariable": [
       [
@@ -7753,6 +7753,35 @@
     "ShowChange": [],
     "ShowColor": []
   },
+  "140118": {
+    "Id": 140118,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1401,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": true,
+    "TargetDes": "Nappo's Assist",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "cur_zhufu"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "max_zhufu"
+      ]
+    ],
+    "SpVariableName": [
+      "Oath Progress"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
   "140201": {
     "Id": 140201,
     "TargetType": 10,
@@ -8107,7 +8136,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation to start the boss battle",
+    "TargetDes": "Complete the spatial investigation to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -10781,7 +10810,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Challenge",
+    "TargetDes": "Start challenge",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -11582,7 +11611,7 @@
       ]
     ],
     "SpVariableName": [
-      "The number of machines entering Andra"
+      "Enter the number of machines in Andra"
     ],
     "IsShowSpVariableProgress": [],
     "ShowChange": [],
@@ -11662,7 +11691,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Collect the cargo from the dispatcher",
+    "TargetDes": "Help the courier carry the cargo",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -11706,7 +11735,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Deliver six cargos to the destination",
+    "TargetDes": "Deliver 6 cargos to the destination",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -11754,7 +11783,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Collect the cargo from the dispatcher",
+    "TargetDes": "Help the courier carry the cargo",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -11793,7 +11822,7 @@
       ]
     ],
     "IsTeamShare": false,
-    "TargetDes": "Deliver six cargos to the destination",
+    "TargetDes": "Deliver 6 cargos to the destination",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -14390,6 +14419,57 @@
     "ShowChange": [],
     "ShowColor": []
   },
+  "1303102": {
+    "Id": 1303102,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 0,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Lampsis Phase I",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1303103": {
+    "Id": 1303103,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 0,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Lampsis Phase II",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1303104": {
+    "Id": 1303104,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 0,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Lampsis Phase III",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
   "1501001": {
     "Id": 1501001,
     "TargetType": 10,
@@ -14554,7 +14634,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation to start the boss battle",
+    "TargetDes": "Complete the spatial investigation to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -15064,7 +15144,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the space investigation to unlock the final trial",
+    "TargetDes": "Complete the space investigation",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -15081,7 +15161,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the space investigation to unlock the final trial",
+    "TargetDes": "Complete the space investigation",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -15098,7 +15178,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation to start the boss battle",
+    "TargetDes": "Complete the spatial investigation to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -15115,7 +15195,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation within 15 minutes to start the Boss battle",
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -15258,7 +15338,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation within the time limit to unlock the boss battle",
+    "TargetDes": "Complete the spatial investigation within the time limit to unlock the Boss Battle",
     "IsShowProgress": false,
     "SpVariable": [
       [
@@ -15287,7 +15367,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation within the time limit to unlock the boss battle",
+    "TargetDes": "Complete the spatial investigation within the time limit to unlock the Boss Battle",
     "IsShowProgress": false,
     "SpVariable": [
       [
@@ -15478,7 +15558,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation to start the boss battle",
+    "TargetDes": "Complete the spatial investigation to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -15495,7 +15575,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation within 15 minutes to start the Boss battle",
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -15865,6 +15945,200 @@
     "TargetPos": [],
     "IsTeamShare": false,
     "TargetDes": "Complete in under 60s.",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6611001": {
+    "Id": 6611001,
+    "TargetType": 27,
+    "Num": 123,
+    "SceneId": 0,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6591001": {
+    "Id": 6591001,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6521,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat Anti-Imagine: Boyce",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6611002": {
+    "Id": 6611002,
+    "TargetType": 27,
+    "Num": 800,
+    "SceneId": 6613,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6591002": {
+    "Id": 6591002,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6523,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "stage1jindu"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "stage1jinduMax"
+      ]
+    ],
+    "SpVariableName": [
+      "Prevent Boyce from absorbing Engram energy"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6611003": {
+    "Id": 6611003,
+    "TargetType": 27,
+    "Num": 980,
+    "SceneId": 6615,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete spatial investigation within 9 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6591003": {
+    "Id": 6591003,
+    "TargetType": 27,
+    "Num": 420,
+    "SceneId": 6523,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6611004": {
+    "Id": 6611004,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6611,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Reach the depths of the Barren Courtyard",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6591004": {
+    "Id": 6591004,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6524,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete spatial investigation within 9 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "stage1jindu"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "stage1jinduMax"
+      ]
+    ],
+    "SpVariableName": [
+      "Prevent Boyce from absorbing Engram energy"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6611005": {
+    "Id": 6611005,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6611,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat Wirda",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6591005": {
+    "Id": 6591005,
+    "TargetType": 27,
+    "Num": 720,
+    "SceneId": 6524,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete spatial investigation within 9 minutes to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -16814,6 +17088,25 @@
     "ShowChange": [],
     "ShowColor": []
   },
+  "700004": {
+    "Id": 700004,
+    "TargetType": 9,
+    "Num": 1,
+    "SceneId": 0,
+    "Param": [
+      700111
+    ],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat the Lightchase Spirit within 45s",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
   "612101": {
     "Id": 612101,
     "TargetType": 27,
@@ -16822,7 +17115,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation to start the boss battle",
+    "TargetDes": "Complete the spatial investigation to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -16839,7 +17132,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Complete the spatial investigation within 15 minutes to start the Boss battle",
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -16890,7 +17183,7 @@
     "Param": [],
     "TargetPos": [],
     "IsTeamShare": false,
-    "TargetDes": "Go to the mountaintop to start the boss battle",
+    "TargetDes": "Go to the mountain top to start the boss battle",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],
@@ -16937,6 +17230,74 @@
     "ShowChange": [],
     "ShowColor": []
   },
+  "6000001": {
+    "Id": 6000001,
+    "TargetType": 1,
+    "Num": 0,
+    "SceneId": 60001,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": true,
+    "TargetDes": "Challenge any deep-sea monster based on your Power, then talk to Airona for the results.",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6000002": {
+    "Id": 6000002,
+    "TargetType": 1,
+    "Num": 0,
+    "SceneId": 60002,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": true,
+    "TargetDes": "Challenge any deep-sea monster based on your Power, then talk to Airona for the results.",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6000003": {
+    "Id": 6000003,
+    "TargetType": 1,
+    "Num": 0,
+    "SceneId": 60003,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": true,
+    "TargetDes": "Challenge any deep-sea monster based on your Power, then talk to Airona for the results.",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6000004": {
+    "Id": 6000004,
+    "TargetType": 1,
+    "Num": 0,
+    "SceneId": 60004,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": true,
+    "TargetDes": "Challenge any deep-sea monster based on your Power, then talk to Airona for the results.",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
   "611105": {
     "Id": 611105,
     "TargetType": 277,
@@ -16949,6 +17310,691 @@
     "TargetPos": [],
     "IsTeamShare": false,
     "TargetDes": "Obtain X Nappo masks on difficulty N Y time(s)",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "9300001": {
+    "Id": 9300001,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 9300,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Dreamdust",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "2",
+        "coin"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "coin_max"
+      ]
+    ],
+    "SpVariableName": [
+      "Dreamdust"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": [
+      "#dbff00"
+    ]
+  },
+  "9300002": {
+    "Id": 9300002,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 9300,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Nightmare Echo",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "RougeScore"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "RougeScore_max"
+      ]
+    ],
+    "SpVariableName": [
+      "Nightmare Echo"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": [
+      "#ff7c7c"
+    ]
+  },
+  "9300003": {
+    "Id": 9300003,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 9300,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Round",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "wave"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "wave_max"
+      ]
+    ],
+    "SpVariableName": [
+      "Round"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": [
+      "#ff7c7c"
+    ]
+  },
+  "9300004": {
+    "Id": 9300004,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 9300,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Deep Round",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "challenge_wave"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "challenge_wavemax"
+      ]
+    ],
+    "SpVariableName": [
+      "Deep Round"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": [
+      "#af59ff"
+    ]
+  },
+  "9300005": {
+    "Id": 9300005,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 9300,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Round",
+    "IsShowProgress": false,
+    "SpVariable": [
+      [
+        "1",
+        "normal_wave"
+      ]
+    ],
+    "SpVariableLimit": [
+      [
+        "1",
+        "normal_wavemax"
+      ]
+    ],
+    "SpVariableName": [
+      "Round"
+    ],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": [
+      "#ff7c7c"
+    ]
+  },
+  "6000005": {
+    "Id": 6000005,
+    "TargetType": 1,
+    "Num": 1,
+    "SceneId": 60000,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Looks like there's only this ordinary Skyfish down here... Let's take it out first.",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1901001": {
+    "Id": 1901001,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1901,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        131
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Touch the Imagine Seed",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1901002": {
+    "Id": 1901002,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1901,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        130
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat all enemies, then use the Teleportation Device",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1901003": {
+    "Id": 1901003,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1901,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        132
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Touch the Imagine Seed",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1901004": {
+    "Id": 1901004,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1901,
+    "Param": [],
+    "TargetPos": [
+      [
+        3,
+        28
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat the Guardian of Kartgriff's Realm",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1901005": {
+    "Id": 1901005,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1901,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        133
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Use the Teleportation Device",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1901006": {
+    "Id": 1901006,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1901,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        134
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat all enemies, then use the Teleportation Device",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610001": {
+    "Id": 6610001,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        3,
+        6
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Explore the Barren Courtyard",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1901007": {
+    "Id": 1901007,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1901,
+    "Param": [],
+    "TargetPos": [
+      [
+        3,
+        10
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat Lampsis",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610002": {
+    "Id": 6610002,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        217
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "View the clue",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610003": {
+    "Id": 6610003,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        3,
+        25
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Continue exploring the Barren Courtyard",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610004": {
+    "Id": 6610004,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        3,
+        33
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Continue exploring the Barren Courtyard",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610005": {
+    "Id": 6610005,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        3,
+        37
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Explore the Illusion and hear the [Oath] within",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610006": {
+    "Id": 6610006,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        218
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Explore the Illusion and witness the [Trial] within",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610007": {
+    "Id": 6610007,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        219
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Explore the Illusion and witness the [Trial] within",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610008": {
+    "Id": 6610008,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        3,
+        81
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Explore the Illusion and witness the [Trial] within",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610009": {
+    "Id": 6610009,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        220
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "View the clue",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610010": {
+    "Id": 6610010,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        221
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Explore the Illusion and overcome the [Malice] within",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610011": {
+    "Id": 6610011,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        221
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Break through the Illusion",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610012": {
+    "Id": 6610012,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        222
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "View the clue",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610013": {
+    "Id": 6610013,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        1,
+        223
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Time is running out. Find Fafala!",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "6610014": {
+    "Id": 6610014,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 6610,
+    "Param": [],
+    "TargetPos": [
+      [
+        3,
+        110507
+      ]
+    ],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat Wirda",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1933001": {
+    "Id": 1933001,
+    "TargetType": 27,
+    "Num": 400,
+    "SceneId": 1933,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete the spatial investigation within 15 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1933002": {
+    "Id": 1933002,
+    "TargetType": 27,
+    "Num": 700,
+    "SceneId": 1933,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Complete spatial investigation within 9 minutes to unlock the boss battle",
+    "IsShowProgress": false,
+    "SpVariable": [],
+    "SpVariableLimit": [],
+    "SpVariableName": [],
+    "IsShowSpVariableProgress": [],
+    "ShowChange": [],
+    "ShowColor": []
+  },
+  "1933003": {
+    "Id": 1933003,
+    "TargetType": 10,
+    "Num": 1,
+    "SceneId": 1933,
+    "Param": [],
+    "TargetPos": [],
+    "IsTeamShare": false,
+    "TargetDes": "Defeat Lampsis",
     "IsShowProgress": false,
     "SpVariable": [],
     "SpVariableLimit": [],

@@ -129,7 +129,7 @@
   },
   "2200010": {
     "Id": 2200010,
-    "Description": "To be implemented"
+    "Description": "Stay Tuned"
   },
   "2200020": {
     "Id": 2200020,
@@ -189,11 +189,11 @@
   },
   "2200160": {
     "Id": 2200160,
-    "Description": "<linktext=1101><style=\"ItemQuality_5\">Moonblades</style></linktext> have a fixed <style=\"accent-gn\">60%</style> chance to cast <linktext=1100><style=\"ItemQuality_5\">Thunderstrike</style></linktext> on a Lucky Strike. <br><linktext=1100><style=\"ItemQuality_5\">Thunderstrike</style></linktext> deals double DMG."
+    "Description": "When <linktext=1101><style=\"ItemQuality_5\">Moonblades</style></linktext> land a Lucky Strike, they have a fixed <style=\"accent-gn\">60%</style> chance to cast <linktext=1100><style=\"ItemQuality_5\">Thunderstrike</style></linktext> on a Lucky Strike. <br><linktext=1100><style=\"ItemQuality_5\">Thunderstrike</style></linktext> deals double DMG."
   },
   "2200170": {
     "Id": 2200170,
-    "Description": "Lucky Strikes of <linktext=1101><style=\"ItemQuality_5\">Moonblades</style></linktext> grant a fixed <style=\"accent-gn\">30%</style> chance to restore <style=\"accent-gn\">1</style> <linktext=1104><style=\"ItemQuality_5\">Thunder Sigil</style></linktext>, once per <style=\"accent-gn\">2</style> seconds."
+    "Description": "Lucky Strikes of <linktext=1101><style=\"ItemQuality_5\">Moonblades</style></linktext> grant a fixed <style=\"accent-gn\">30%</style> chance to restore <style=\"accent-gn\">1</style> <linktext=1104><style=\"ItemQuality_5\">Thunder Sigil</style></linktext>, once per <style=\"accent-gn\">2</style>s. <br>For <style=\"accent-gn\">15</style>s after casting <linktext=1507><style=\"ItemQuality_5\">Moonstrike</style></linktext> or its enhanced skill (<linktext=1506><style=\"ItemQuality_5\">​Chaos Breaker​</style></linktext>), doubles the Thunderstrike trigger chance and allows it to trigger Lucky Strike"
   },
   "2200180": {
     "Id": 2200180,
@@ -213,7 +213,7 @@
   },
   "2200220": {
     "Id": 2200220,
-    "Description": "For every <style=\"accent-gn\">10</style> instances of damage dealt, triggers <style=\"accent-gn\">Thunder Power</style>. <br><style=\"accent-gn\">Thunder Power</style>: Thunder DMG +<style=\"accent-gn\">15</style> for <style=\"accent-gn\">10</style>s, up to <style=\"accent-gn\">10</style> stacks."
+    "Description": "For every <style=\"accent-gn\">10</style> instances of damage dealt, triggers <style=\"accent-gn\">Thunder Power</style>. <br><style=\"accent-gn\">Thunder Power</style>: Thunder DMG +<style=\"accent-gn\">28</style>, lasts for <style=\"accent-gn\">10</style>s, stacks up to <style=\"accent-gn\">10</style> times."
   },
   "2200230": {
     "Id": 2200230,
@@ -297,11 +297,11 @@
   },
   "2200430": {
     "Id": 2200430,
-    "Description": "Activate <linktext=1504><style=\"ItemQuality_5\">Volt Surge</style></linktext>. <linktext=1501><style=\"ItemQuality_5\">Flash Strike</style></linktext> and <linktext=1554><style=\"ItemQuality_5\">Raijin Dash</style></linktext> evolve into <linktext=1584><style=\"ItemQuality_5\">Dracoflash</style></linktext> and <linktext=1585><style=\"ItemQuality_5\">Phantom Slash</style></linktext>."
+    "Description": "Activate <linktext=1504><style=\"ItemQuality_5\">Volt Surge</style></linktext>. <linktext=1501><style=\"ItemQuality_5\">Flash Strike</style></linktext> and <linktext=1554><style=\"ItemQuality_5\">Raijin Dash</style></linktext> evolve into <linktext=1584><style=\"ItemQuality_5\">Dracoflash</style></linktext> and <linktext=1585><style=\"ItemQuality_5\">Phantom Slash</style></linktext>. <br>Casting <linktext=1584><style=\"ItemQuality_5\">Dracoflash</style></linktext> or <linktext=1585><style=\"ItemQuality_5\">Phantom Slash</style></linktext> extends Volt Surge's duration by <style=\"accent-gn\">1.2</style>s."
   },
   "2200440": {
     "Id": 2200440,
-    "Description": "<linktext=1554><style=\"ItemQuality_5\">Raijin Dash</style></linktext> and its enhanced skill (<linktext=1585><style=\"ItemQuality_5\">Phantom Slash</style></linktext>) ignore the target's Armor. <br><linktext=1554><style=\"ItemQuality_5\">Raijin Dash</style></linktext> and its enhanced skill (<linktext=1585><style=\"ItemQuality_5\">Phantom Slash</style></linktext>) deal <style=\"accent-gn\">10%</style> more damage per additional <style=\"accent-gn\">1</style> enemy hit."
+    "Description": "<linktext=1554><style=\"ItemQuality_5\">Raijin Dash</style></linktext> and its enhanced skill (<linktext=1585><style=\"ItemQuality_5\">Phantom Slash</style></linktext>) ignore the target's Armor. <br><linktext=1554><style=\"ItemQuality_5\">Raijin Dash</style></linktext> and its enhanced skill (<linktext=1585><style=\"ItemQuality_5\">Phantom Slash</style></linktext>) deal <style=\"accent-gn\">20%</style> more damage per additional <style=\"accent-gn\">1</style> enemy hit (up to <style=\"accent-gn\">200%</style>)."
   },
   "2200450": {
     "Id": 2200450,
@@ -321,7 +321,7 @@
   },
   "2200490": {
     "Id": 2200490,
-    "Description": "Each use of <linktext=1584><style=\"ItemQuality_5\">Dracoflash</style></linktext> or <linktext=1585><style=\"ItemQuality_5\">Phantom Slash</style></linktext> grants <style=\"accent-gn\">4</style> stacks of <style=\"accent-gn\">Thundrage</style>, up to <style=\"accent-gn\">8</style> stacks."
+    "Description": "Each use of <linktext=1584><style=\"ItemQuality_5\">Dracoflash</style></linktext> or <linktext=1585><style=\"ItemQuality_5\">Phantom Slash</style></linktext> grants <style=\"accent-gn\">4</style> stacks of <style=\"accent-gn\">Thundrage</style>, up to <style=\"accent-gn\">8</style> stacks. <br>Greatly increases the Casting SPD of Thunder Cut."
   },
   "2200500": {
     "Id": 2200500,
@@ -365,7 +365,7 @@
   },
   "2200600": {
     "Id": 2200600,
-    "Description": "Casting <linktext=1586><style=\"ItemQuality_5\">Storm Scythe</style></linktext> <style=\"accent-gn\">7</style> times triggers <linktext=1587><style=\"ItemQuality_5\">Divine Sickle</style></linktext>.<br><linktext=1587><style=\"ItemQuality_5\">Divine Sickle</style></linktext> is guaranteed to Crit.<br>When Luck is between <style=\"accent-gn\">28%</style> and <style=\"accent-gn\">45%</style>, <linktext=1587><style=\"ItemQuality_5\">Divine Sickle</style></linktext>'s Final DMG increases by <style=\"accent-gn\">150%</style>, but requires <style=\"accent-gn\">14</style> casts of <linktext=1586><style=\"ItemQuality_5\">Storm Scythe</style></linktext> to trigger.<br>When Luck chance is above <style=\"accent-gn\">45%</style>, Final DMG increases by <style=\"accent-gn\">275%</style>, but requires <style=\"accent-gn\">21</style> casts of <linktext=1586><style=\"ItemQuality_5\">Storm Scythe</style></linktext> to trigger."
+    "Description": "Each <style=\"accent-gn\">7</style> casts of <linktext=1586><style=\"ItemQuality_5\">Storm Scythe</style></linktext> trigger <linktext=1587><style=\"ItemQuality_5\">Divine Sickle</style></linktext>. <br><linktext=1587><style=\"ItemQuality_5\">Divine Sickle</style></linktext> always Crits. <br><linktext=1587><style=\"ItemQuality_5\">Divine Sickle</style></linktext> deals <style=\"accent-gn\">5%</style> more damage per additional target hit (up to <style=\"accent-gn\">50%</style>). <br>When Luck Chance exceeds <style=\"accent-gn\">28%</style> but remains below <style=\"accent-gn\">45%</style>, <linktext=1587><style=\"ItemQuality_5\">Divine Sickle</style></linktext>' Final DMG increases by <style=\"accent-gn\">150%</style>, but requires <style=\"accent-gn\">14</style> casts of <linktext=1586><style=\"ItemQuality_5\">Storm Scythe</style></linktext> to trigger. <br>When Luck Chance exceeds <style=\"accent-gn\">45%</style>, its Final DMG increases by <style=\"accent-gn\">275%</style>, but requires <style=\"accent-gn\">21</style> casts of <linktext=1586><style=\"ItemQuality_5\">Storm Scythe</style></linktext> to trigger."
   },
   "2200610": {
     "Id": 2200610,
@@ -397,7 +397,7 @@
   },
   "2200680": {
     "Id": 2200680,
-    "Description": "When <linktext=1167><style=\"ItemQuality_5\">Blade Intent</style></linktext> is at least <style=\"accent-gn\">50</style>, <linktext=1507><style=\"ItemQuality_5\">Moonstrike</style></linktext> and its enhanced skill (<linktext=1506><style=\"ItemQuality_5\">Chaos Breaker</style></linktext>) are guaranteed to land a Crit."
+    "Description": "<linktext=1507><style=\"ItemQuality_5\">Moonstrike's Blade</style></linktext> Intent Recovery is increased by your <style=\"accent-gn\">Haste% × 2</style>."
   },
   "2200690": {
     "Id": 2200690,
@@ -681,7 +681,7 @@
   },
   "2201720": {
     "Id": 2201720,
-    "Description": "Mastery +<style=\"accent-gn\">6,250</style>.<br>During <linktext=1543><style=\"ItemQuality_5\">Brave Bastion</style></linktext>, Mastery +<style=\"accent-gn\">8%</style>."
+    "Description": "Mastery +<style=\"accent-gn\">25,000</style>.<br>During <linktext=1543><style=\"ItemQuality_5\">Brave Bastion</style></linktext>, Mastery +<style=\"accent-gn\">8%</style>."
   },
   "2201730": {
     "Id": 2201730,
@@ -693,7 +693,7 @@
   },
   "2202030": {
     "Id": 2202030,
-    "Description": "Every <style=\"accent-gn\">10</style> points of <style=\"accent-gn\">Intellect</style> grants <style=\"accent-gn\">1</style> MATK."
+    "Description": "Lucky Strike DMG <style=\"accent-gn\">+30%</style>, but the Inspiration talent is disabled."
   },
   "2202040": {
     "Id": 2202040,
@@ -709,7 +709,7 @@
   },
   "2202080": {
     "Id": 2202080,
-    "Description": "When <linktext=1529><style=\"ItemQuality_5\">Feral Seed</style></linktext> deals DMG, it increases <linktext=1530>ATK by <style=\"accent-gn\">Mastery % x Luck %</style></linktext> for the next <style=\"accent-gn\">10</style>s."
+    "Description": "When <linktext=1529><style=\"ItemQuality_5\">Feral Seed</style></linktext> deals DMG, it increases ATK by <style=\"accent-gn\">Mastery% x Luck%</style> for the next <style=\"accent-gn\">10</style>s."
   },
   "2202090": {
     "Id": 2202090,
@@ -793,7 +793,7 @@
   },
   "2202310": {
     "Id": 2202310,
-    "Description": "<linktext=1107><style=\"ItemQuality_5\">Inspiration</style></linktext> provides the target with an additional <style=\"accent-gn\">400</style> Armor."
+    "Description": "<linktext=1107><style=\"ItemQuality_5\">Inspiration</style></linktext> provides the target with an additional <style=\"accent-gn\">650</style> Armor."
   },
   "2202320": {
     "Id": 2202320,
@@ -821,7 +821,7 @@
   },
   "2202390": {
     "Id": 2202390,
-    "Description": "Replace <style=\"accent-gn\">Ultimate</style>, <linktext=1531><style=\"ItemQuality_5\">Divine Circle Bloom</style></linktext> with <linktext=1552><style=\"ItemQuality_5\">Bloomheal</style></linktext>."
+    "Description": ""
   },
   "2202400": {
     "Id": 2202400,
@@ -845,7 +845,7 @@
   },
   "2202450": {
     "Id": 2202450,
-    "Description": "If equipped with <linktext=1532><style=\"ItemQuality_5\">Regen Pulse</style></linktext> skill, <linktext=1535><style=\"ItemQuality_5\">Nature Ward</style></linktext> and <style=\"accent-gn\">Ultimates</style> will trigger <linktext=1532><style=\"ItemQuality_5\">Regen Pulse</style></linktext> when their CDs are completed."
+    "Description": "While in combat, if <linktext=1532><style=\"ItemQuality_5\">Regen Pulse</style></linktext> is equipped, <linktext=1535><style=\"ItemQuality_5\">Nature Ward</style></linktext> and <style=\"accent-gn\">Ultimates</style> will trigger <linktext=1532><style=\"ItemQuality_5\">Regen Pulse</style></linktext> whenever their CDs are completed."
   },
   "2202460": {
     "Id": 2202460,
@@ -857,7 +857,7 @@
   },
   "2202480": {
     "Id": 2202480,
-    "Description": "Successful hit of <linktext=1529><style=\"ItemQuality_5\">Feral Seed</style></linktext> on the targets with <linktext=1117><style=\"ItemQuality_5\">Thorn</style></linktext> spreads <linktext=1117><style=\"ItemQuality_5\">Thorn</style></linktext> to other units within <style=\"accent-gn\">10</style> meters.<br>Attacking Elite or stronger targets grants <style=\"accent-gn\">8%</style> Forest Bonus."
+    "Description": "When <linktext=1529><style=\"ItemQuality_5\">Feral Seed</style></linktext> hits the primary target, it spreads the primary target's <linktext=1117><style=\"ItemQuality_5\">Thorn</style></linktext> effect to other targets within <style=\"accent-gn\">10</style> meters. <br>Attacking Elite or stronger targets grants <style=\"accent-gn\">8%</style> Forest Bonus."
   },
   "2202490": {
     "Id": 2202490,
@@ -869,7 +869,7 @@
   },
   "2202510": {
     "Id": 2202510,
-    "Description": "<style=\"accent-gn\">Each</style> use or trigger of <linktext=1532><style=\"ItemQuality_5\">Regen Pulse</style></linktext>, reduces the CD of <linktext=1535><style=\"ItemQuality_5\">Nature Ward</style></linktext> by <style=\"accent-gn\">2s</style>."
+    "Description": "<style=\"accent-gn\">Each</style> use or trigger of <linktext=1532><style=\"ItemQuality_5\">Regen Pulse</style></linktext> reduces the CD of <linktext=1535><style=\"ItemQuality_5\">Nature Ward</style></linktext> by <style=\"accent-gn\">2</style>s. <br><linktext=1535><style=\"ItemQuality_5\">Nature Ward</style></linktext> grants Super Armor while active."
   },
   "2202520": {
     "Id": 2202520,
@@ -917,7 +917,7 @@
   },
   "2202630": {
     "Id": 2202630,
-    "Description": "<linktext=1528><style=\"ItemQuality_5\">Nourish</style></linktext> can stack up to <style=\"accent-gn\">5</style> times.<br>Each use of <linktext=1527><style=\"ItemQuality_5\">Life Bloom</style></linktext> grants the targets with <linktext=1528><style=\"ItemQuality_5\">Nourish</style></linktext> <style=\"accent-gn\">1</style> stack of <linktext=1528><style=\"ItemQuality_5\">Nourish</style></linktext>."
+    "Description": "<linktext=1528><style=\"ItemQuality_5\">Nourish</style></linktext> can stack up to <style=\"accent-gn\">5</style> times. <br>Each use of <linktext=1527><style=\"ItemQuality_5\">Life Bloom</style></linktext> grants targets affected by <linktext=1528><style=\"ItemQuality_5\">Nourish</style></linktext> <style=\"accent-gn\">1</style> stack of <linktext=1528><style=\"ItemQuality_5\">Nourish</style></linktext> and increases their Max HP by <style=\"accent-gn\">2%</style> for <style=\"accent-gn\">5</style>s (the duration cannot be refreshed when reapplied, and this Max HP increase cannot take effect at the same time as the one granted by Breath of Symbiosis)."
   },
   "2202640": {
     "Id": 2202640,
@@ -941,11 +941,11 @@
   },
   "2202690": {
     "Id": 2202690,
-    "Description": "Consumes <linktext=1121><style=\"ItemQuality_5\">Moonlight Solace</style></linktext> to launch <style=\"accent-gn\">Flower Dance - Tricolor Revelation</style>.<br><style=\"accent-gn\">Flower Dance - Tricolor Revelation</style>: Grants all effects of <style=\"accent-gn\">Flower Stalks</style>, once every <style=\"accent-gn\">60s</style>."
+    "Description": "Consumes <linktext=1121><style=\"ItemQuality_5\">Moonlight Solace</style></linktext> to trigger <style=\"accent-gn\">Flower Time Dance - Tricolor Revelation</style> (only takes effect if you have the \"Flower Time Dance\" talent). <br><style=\"accent-gn\">Flower Time Dance - Tricolor Revelation</style>: Grants the effects of all the <style=\"accent-gn\">Flower Stalks</style>, up to once every <style=\"accent-gn\">60</style>s."
   },
   "2202700": {
     "Id": 2202700,
-    "Description": "Every <style=\"accent-gn\">45s</style>, generates <style=\"accent-gn\">1</style> <style=\"accent-gn\">Flower Stalk</style> in the following order: <linktext=1119><style=\"ItemQuality_5\">Crimson Insight</style></linktext>, <linktext=1120><style=\"ItemQuality_5\">Golden Devotion</style></linktext>, and <linktext=1121><style=\"ItemQuality_5\">Moonlight Solace</style></linktext>."
+    "Description": "Every <style=\"accent-gn\">45</style>s (for every <style=\"accent-gn\">1%</style> Haste, generation speed increases by <style=\"accent-gn\">1%</style>), generates <style=\"accent-gn\">1</style> <style=\"accent-gn\">Flower Stalk</style> in the following order: <linktext=1119><style=\"ItemQuality_5\">Crimson Insight</style></linktext>, <linktext=1120><style=\"ItemQuality_5\">Golden Devotion</style></linktext>, and <linktext=1121><style=\"ItemQuality_5\">Moonlight Solace</style></linktext>."
   },
   "2202710": {
     "Id": 2202710,
@@ -953,7 +953,7 @@
   },
   "2202720": {
     "Id": 2202720,
-    "Description": "<linktext=1107><style=\"ItemQuality_5\">Inspiration</style></linktext> grants <style=\"accent-gn\">135</style> bonus <style=\"accent-gn\">Intellect</style>, <style=\"accent-gn\">Strength</style>, <style=\"accent-gn\">Agility</style>, and <style=\"accent-gn\">Endurance</style>."
+    "Description": "<linktext=1107><style=\"ItemQuality_5\">Inspiration</style></linktext> grants <style=\"accent-gn\">175</style> bonus <style=\"accent-gn\">Intellect</style>, <style=\"accent-gn\">Strength</style>, <style=\"accent-gn\">Agility</style>, and <style=\"accent-gn\">Endurance</style>."
   },
   "2202730": {
     "Id": 2202730,
@@ -1001,7 +1001,7 @@
   },
   "2203090": {
     "Id": 2203090,
-    "Description": "When <style=\"accent-gn\">Wild Wolf</style> launches a <style=\"accent-gn\">Coordinated Attack</style>, or <linktext=1139><style=\"ItemQuality_5\">Tail Sweep</style></linktext>, there is a fixed <style=\"accent-gn\">30%</style> chance to summon a <style=\"accent-gn\">Phantom Direwolf</style> using <linktext=1140><style=\"ItemQuality_5\">Pounce and Bite</style></linktext> to attack the current enemy. <br><linktext=1140><style=\"ItemQuality_5\">Pounce and Bite</style></linktext> inflicts <linktext=1141><style=\"ItemQuality_5\">Bleed</style></linktext>, and if the target is already suffered from <linktext=1141><style=\"ItemQuality_5\">Bleed</style></linktext>, <linktext=1140><style=\"ItemQuality_5\">Pounce and Bite</style></linktext> deals Crit DMG."
+    "Description": "Every <style=\"accent-gn\">2</style>s, DMG dealt by Wild Wolf's <style=\"accent-gn\">Coordinated Attack</style> or <linktext=1139><style=\"ItemQuality_5\">Tail Sweep</style></linktext> summons a Phantom Direwolf to attack the target with Pounce and Bite. After each Special Attack cast, the Phantom Direwolf's DMG +<style=\"accent-gn\">100%</style>, stacking up to <style=\"accent-gn\">5</style> times. The Phantom Direwolf disappears after dealing DMG. <br><linktext=1140><style=\"ItemQuality_5\">Pounce and Bite</style></linktext> is guaranteed to inflict <linktext=1141><style=\"ItemQuality_5\">Bleed</style></linktext>. If the target is already <linktext=1141><style=\"ItemQuality_5\">Bleeding</style></linktext>, <linktext=1140><style=\"ItemQuality_5\">Pounce and Bite</style></linktext> is bound to deal Crit DMG on hit."
   },
   "2203100": {
     "Id": 2203100,
@@ -1041,7 +1041,7 @@
   },
   "2203190": {
     "Id": 2203190,
-    "Description": "When the <style=\"accent-gn\">Falcon</style> strikes, grants you a fixed <style=\"accent-gn\">30%</style> chance to gain 1 stack of <style=\"accent-gn\">Weak Point Aim</style>. <br>Using <linktext=1557><style=\"ItemQuality_5\">Quadraflare</style></linktext> leaves behind a <style=\"accent-gn\">Radiance Rift</style> midair. <style=\"accent-gn\">Radiance Rift</style> fires <linktext=1188><style=\"ItemQuality_5\">Photon Arrows</style></linktext> equal to the current number of <style=\"accent-gn\">Weak Point Aim</style> stacks."
+    "Description": "<style=\"accent-gn\">Falcon</style> Strike grants 1 stack of <style=\"accent-gn\">Weak Point Aim</style> for every <style=\"accent-gn\">3</style> instances of damage dealt. <br>Casting <linktext=1557><style=\"ItemQuality_5\">​Quadraflare​</style></linktext> leaves behind a <style=\"accent-gn\">Radiant Rift</style> midair. <style=\"accent-gn\">Radiant Rift</style> fires <linktext=1188><style=\"ItemQuality_5\">Photon Arrows</style></linktext> equal to the current number of <style=\"accent-gn\">Weak Point Aim</style> stacks."
   },
   "2203200": {
     "Id": 2203200,
@@ -1053,7 +1053,7 @@
   },
   "2203220": {
     "Id": 2203220,
-    "Description": "Each <style=\"accent-gn\">1%</style> critical rate increases Crit DMG by <style=\"accent-gn\">0.5%</style>.<br>When <linktext=1547><style=\"ItemQuality_5\">Double Arrow</style></linktext> or <linktext=1557><style=\"ItemQuality_5\">Quadraflare</style></linktext> deals Crit DMG, <style=\"accent-gn\">2</style> <style=\"accent-gn\">Photon Energy</style> is restored."
+    "Description": "Crit DMG <style=\"accent-gn\">+20%</style>, and every <style=\"accent-gn\">1%</style> Crit grants <style=\"accent-gn\">0.4%</style> Crit DMG. <br><linktext=1547><style=\"ItemQuality_5\">Double Arrow</style></linktext> and <linktext=1557><style=\"ItemQuality_5\">​Quadraflare​</style></linktext> restore <style=\"accent-gn\">2</style> <style=\"accent-gn\">Photon Energy</style> when they trigger Crits."
   },
   "2203230": {
     "Id": 2203230,
@@ -1117,7 +1117,7 @@
   },
   "2203380": {
     "Id": 2203380,
-    "Description": "Each time you summon <style=\"accent-gn\">1</style> <style=\"accent-gn\">Wolf</style> or <style=\"accent-gn\">Phantom Wolf</style>, the remaining CD of <linktext=1550><style=\"ItemQuality_5\">Arrow Rain</style></linktext> -<style=\"accent-gn\">0.5s</style>."
+    "Description": "DMG dealt by <style=\"accent-gn\">Wild Wolf</style>'s <style=\"accent-gn\">Coordinated Attack</style> or <style=\"accent-gn\">Tail Sweep</style> has a fixed <style=\"accent-gn\">30%</style> chance to reduce <linktext=1550><style=\"ItemQuality_5\">Arrow Rain</style></linktext>'s CD by <style=\"accent-gn\">0.5</style>s."
   },
   "2203390": {
     "Id": 2203390,
@@ -1173,11 +1173,11 @@
   },
   "2203520": {
     "Id": 2203520,
-    "Description": "When the caster and the <style=\"accent-gn\">Falcon</style> deal Crit DMG, inflicts <style=\"accent-gn\">1</style> stack of <linktext=1148><style=\"ItemQuality_5\">Steel Beak</style></linktext> to the target.<br>Every <style=\"accent-gn\">10</style> stacks of <linktext=1148><style=\"ItemQuality_5\">Steel Beak</style></linktext> trigger <linktext=1143><style=\"ItemQuality_5\">Lightning Strike</style></linktext>, up to once every <style=\"accent-gn\">3s</style>."
+    "Description": "When the caster or the <style=\"accent-gn\">Falcon</style> deals Crit DMG to the primary target, inflicts <style=\"accent-gn\">1</style> stack of <linktext=1148><style=\"ItemQuality_5\">Steel Beak</style></linktext> on the target. <br>Every <style=\"accent-gn\">10</style> stacks of <linktext=1148><style=\"ItemQuality_5\">Steel Beak</style></linktext> trigger <linktext=1143><style=\"ItemQuality_5\">Lightning Strike</style></linktext>, up to once every <style=\"accent-gn\">3</style>s."
   },
   "2203530": {
     "Id": 2203530,
-    "Description": "Triggering <style=\"accent-gn\">Implosion</style> <style=\"accent-gn\">5</style> times summons a <linktext=1150><style=\"ItemQuality_5\">Phantom Falcon</style></linktext> to charge at the target. For each additional target hit by the <linktext=1150><style=\"ItemQuality_5\">Phantom Falcon</style></linktext>, its DMG increases by <style=\"accent-gn\">20%</style>, up to <style=\"accent-gn\">200%</style>."
+    "Description": "Every <style=\"accent-gn\">2</style>s, triggering Implosion summons a <linktext=1150><style=\"ItemQuality_5\">Phantom Falcon</style></linktext> to rush toward the target. Each time <style=\"accent-gn\">Implosion</style> deals DMG, the next Phantom Falcon deals <style=\"accent-gn\">20%</style> more Elemental DMG."
   },
   "2203540": {
     "Id": 2203540,
@@ -1229,7 +1229,7 @@
   },
   "2203660": {
     "Id": 2203660,
-    "Description": "When <linktext=1149><style=\"ItemQuality_5\">Celestial Eagle</style></linktext> hits a target, it prevents the target's <linktext=1148><style=\"ItemQuality_5\">Steel Beak</style></linktext> from naturally decaying."
+    "Description": "<linktext=1581><style=\"ItemQuality_5\">Radiance Barrage</style></linktext> deals <style=\"accent-gn\">1</style> additional instance of DMG for every <style=\"accent-gn\">4%</style> Haste."
   },
   "2203670": {
     "Id": 2203670,
@@ -1261,7 +1261,7 @@
   },
   "2204070": {
     "Id": 2204070,
-    "Description": "When <linktext=1509><style=\"ItemQuality_5\">Frostbeam</style></linktext> deals DMG, it has a <style=\"accent-gn\">30%</style> fixed chance to make <style=\"accent-gn\">Ice Crystal Core</style> fire an <style=\"accent-gn\">Ice Arrow</style>. Up to 1 <style=\"accent-gn\">Ice Arrow</style> can be fired every <style=\"accent-gn\">0</style>.<style=\"accent-gn\">5s</style>.<br><style=\"accent-gn\">The final DMG of the Ice Arrow</style> is doubled (this also affects DMG triggered by the Frost Explosion talent)."
+    "Description": "When <linktext=1509><style=\"ItemQuality_5\">​Frostbeam​</style></linktext> deals damage, it has a fixed <style=\"accent-gn\">30%</style> chance to make <style=\"accent-gn\">Ice Crystal Core</style> fire an <style=\"accent-gn\">Ice Arrow</style>. Up to 1 <style=\"accent-gn\">Ice Arrow</style> can be fired every <style=\"accent-gn\">0</style>.<style=\"accent-gn\">5</style>s. <br>The Final DMG of <style=\"accent-gn\">Ice Arrow</style> is increased (Ratio = Mastery% × 1.6; DMG triggered by Frost Explosion talent is also affected)."
   },
   "2204080": {
     "Id": 2204080,
@@ -1285,11 +1285,11 @@
   },
   "2204130": {
     "Id": 2204130,
-    "Description": "For every <style=\"accent-gn\">25</style> <style=\"accent-gn\">Ice Energy</style> consumed, the CD of <linktext=1510><style=\"ItemQuality_5\">Crystal Veil</style></linktext> -<style=\"accent-gn\">1</style>s."
+    "Description": "For every <style=\"accent-gn\">25</style> <style=\"accent-gn\">Ice Energy</style> consumed, the CD of <linktext=1510><style=\"ItemQuality_5\">Crystal Veil</style></linktext> -<style=\"accent-gn\">1</style>s. Each <linktext=1510><style=\"ItemQuality_5\">Crystal Veil</style></linktext> cast restores <style=\"accent-gn\">80</style> Energy over <style=\"accent-gn\">5</style>s."
   },
   "2204140": {
     "Id": 2204140,
-    "Description": "When <linktext=1512><style=\"ItemQuality_5\">Frost Lance</style></linktext> that consumes <linktext=1161><style=\"ItemQuality_5\">Frost Crystals</style></linktext> deals DMG, there is a fixed <style=\"accent-gn\">21%</style> chance to summon <linktext=1165><style=\"ItemQuality_5\">Frost Comet</style></linktext>."
+    "Description": "When <linktext=1512><style=\"ItemQuality_5\">Frost Lance</style></linktext> that consumes <linktext=1161><style=\"ItemQuality_5\">Frost Crystal</style></linktext> deals DMG, it has a chance to summon <linktext=1165><style=\"ItemQuality_5\">Frost Comet</style></linktext> (Chance = Luck%. If Luck% is below <style=\"accent-gn\">21%</style>, the summon chance is treated as 21%). <br>Frost Comet deals <style=\"accent-gn\">30%</style> more Final DMG per additional target hit (up to <style=\"accent-gn\">300%</style>)."
   },
   "2204150": {
     "Id": 2204150,
@@ -1361,7 +1361,7 @@
   },
   "2204320": {
     "Id": 2204320,
-    "Description": "Every <style=\"accent-gn\">50</style> hits by <linktext=1509><style=\"ItemQuality_5\">Frostbeam</style></linktext> trigger a <linktext=1166><style=\"ItemQuality_5\">Cold Pulse</style></linktext>.<br>For each additional enemy hit, increases <linktext=1166><style=\"ItemQuality_5\">Cold Pulse</style></linktext> DMG by <style=\"accent-gn\">20%</style>, up to <style=\"accent-gn\">500%</style>."
+    "Description": "<linktext=1509><style=\"ItemQuality_5\">​Frostbeam​</style></linktext> triggers a <linktext=1166><style=\"ItemQuality_5\">Cold Pulse</style></linktext> after every <style=\"accent-gn\">50</style> instances of damage dealt. <br><linktext=1166><style=\"ItemQuality_5\">Cold Pulse</style></linktext> deals <style=\"accent-gn\">30%</style> more damage for each target hit, up to <style=\"accent-gn\">300%</style>."
   },
   "2204330": {
     "Id": 2204330,
@@ -1381,7 +1381,7 @@
   },
   "2204370": {
     "Id": 2204370,
-    "Description": "Every <style=\"accent-gn\">20</style> <linktext=1161><style=\"ItemQuality_5\">Frost Crystals</style></linktext> consumed grants <style=\"accent-gn\">Endless Cold</style> effect. <br><style=\"accent-gn\">Endless Cold</style>: For <style=\"accent-gn\">10s</style>, increases <linktext=1511><style=\"ItemQuality_5\">Meteor Storm</style></linktext> DMG by <style=\"accent-gn\">150%</style>, and removes its CD and <style=\"accent-gn\">Ice Energy</style> cost. During this period, <style=\"accent-gn\">Ice Arrows</style> triggered by <linktext=1511><style=\"ItemQuality_5\">Meteor Storm</style></linktext> cannot produce <linktext=1161><style=\"ItemQuality_5\">Frost Crystal</style></linktext>.<br>When <style=\"accent-gn\">Endless Cold</style> is triggered during <linktext=1515><style=\"ItemQuality_5\">Permafrost</style></linktext>, enter the <style=\"accent-gn\">Endless Cold</style> state after the effect of <linktext=1515><style=\"ItemQuality_5\">Permafrost</style></linktext> ends. If the number of <linktext=1161><style=\"ItemQuality_5\">Frost Crystals</style></linktext> consumed during this period exceeds <style=\"accent-gn\">20</style>, proportionally increase the final damage dealt by <linktext=1511><style=\"ItemQuality_5\">Meteor Storm</style></linktext> (up to <style=\"accent-gn\">100%</style>)."
+    "Description": "Every <style=\"accent-gn\">20</style> <linktext=1161><style=\"ItemQuality_5\">Frost Crystals</style></linktext> consumed grants <style=\"accent-gn\">Endless Cold</style> effect. <br><style=\"accent-gn\">Endless Cold</style>: For <style=\"accent-gn\">10</style>s, increases <linktext=1511><style=\"ItemQuality_5\">Meteor Storm</style></linktext> DMG by <style=\"accent-gn\">150%</style>, and removes its CD and <style=\"accent-gn\">Ice Energy</style> cost. During this period, <style=\"accent-gn\">Ice Arrows</style> triggered by <linktext=1511><style=\"ItemQuality_5\">Meteor Storm</style></linktext> cannot produce <linktext=1161><style=\"ItemQuality_5\">Frost Crystal</style></linktext>. <br>When <style=\"accent-gn\">Endless Cold</style> is triggered during <linktext=1515><style=\"ItemQuality_5\">Permafrost</style></linktext>, enter the <style=\"accent-gn\">Endless Cold</style> state after the effect of <linktext=1515><style=\"ItemQuality_5\">Permafrost</style></linktext> ends. If the number of <linktext=1161><style=\"ItemQuality_5\">Frost Crystals</style></linktext> consumed during this period exceeds <style=\"accent-gn\">20</style>, proportionally increase the Final DMG dealt by <linktext=1511><style=\"ItemQuality_5\">Meteor Storm</style></linktext>."
   },
   "2204380": {
     "Id": 2204380,
@@ -1409,7 +1409,7 @@
   },
   "2204440": {
     "Id": 2204440,
-    "Description": "<linktext=1512><style=\"ItemQuality_5\">Frost Lance</style></linktext> deals <style=\"accent-gn\">1.5%</style> more Crit DMG. The effect lasts <style=\"accent-gn\">6s</style> and stacks up to <style=\"accent-gn\">10</style> times."
+    "Description": "<linktext=1512><style=\"ItemQuality_5\">Frost Lance</style></linktext> deals <style=\"accent-gn\">1.5%</style> more Crit DMG. The effect lasts <style=\"accent-gn\">10</style>s and stacks up to <style=\"accent-gn\">10</style> times."
   },
   "2204450": {
     "Id": 2204450,
@@ -1421,11 +1421,11 @@
   },
   "2204470": {
     "Id": 2204470,
-    "Description": "During <linktext=1515><style=\"ItemQuality_5\">Permafrost</style></linktext>, increases Crit DMG dealt by <style=\"accent-gn\">15%</style>.<br>During <linktext=1515><style=\"ItemQuality_5\">Permafrost</style></linktext>, increases allies' critical rate by <style=\"accent-gn\">3%</style>."
+    "Description": "During <linktext=1515><style=\"ItemQuality_5\">Permafrost</style></linktext>, increases Crit DMG dealt by <style=\"accent-gn\">15%</style> and Crit Chance by <style=\"accent-gn\">5%</style>."
   },
   "2204480": {
     "Id": 2204480,
-    "Description": "Every <style=\"accent-gn\">265</style> <style=\"accent-gn\">Intellect</style> grants <style=\"accent-gn\">0.5%</style> bonus Crit DMG."
+    "Description": "Every <style=\"accent-gn\">345</style> <style=\"accent-gn\">Intellect</style> grants <style=\"accent-gn\">0.5%</style> Crit DMG."
   },
   "2204490": {
     "Id": 2204490,
@@ -1433,7 +1433,7 @@
   },
   "2204500": {
     "Id": 2204500,
-    "Description": "<style=\"accent-gn\">Each</style> <linktext=1161><style=\"ItemQuality_5\">Frost Crystal</style></linktext> consumed increases <style=\"accent-gn\">Intellect</style> by <style=\"accent-gn\">55</style>. This effect lasts <style=\"accent-gn\">10</style>s and stacks up to <style=\"accent-gn\">5</style> times."
+    "Description": "<style=\"accent-gn\">Each</style> <linktext=1161><style=\"ItemQuality_5\">Frost Crystal</style></linktext> consumed increases <style=\"accent-gn\">Intellect</style> by <style=\"accent-gn\">71</style>. The effect lasts <style=\"accent-gn\">10</style>s and stacks up to <style=\"accent-gn\">5</style> times."
   },
   "2204510": {
     "Id": 2204510,
@@ -1449,7 +1449,7 @@
   },
   "2204540": {
     "Id": 2204540,
-    "Description": "The first hit of <linktext=1508><style=\"ItemQuality_5\">Tidepool</style></linktext> on the target grants <style=\"accent-gn\">5</style> <style=\"accent-gn\">Ice Energy</style>. Each additional <linktext=1161><style=\"ItemQuality_5\">Frost Crystal</style></linktext> increases <style=\"accent-gn\">Ice Energy</style> restored by <style=\"accent-gn\">10</style>."
+    "Description": "The first hit of <linktext=1508><style=\"ItemQuality_5\">Tidepool</style></linktext> on the target grants <style=\"accent-gn\">5</style> <style=\"accent-gn\">Ice Energy</style>. Each additional <linktext=1161><style=\"ItemQuality_5\">Frost Crystal</style></linktext> increases <style=\"accent-gn\">Ice Energy</style> restored by <style=\"accent-gn\">10</style>.<br>During <linktext=1515><style=\"ItemQuality_5\">Permafrost</style></linktext>, <linktext=1508><style=\"ItemQuality_5\">Tidepool</style></linktext> does not go on CD. During ​Frostbeam, tap <linktext=1508><style=\"ItemQuality_5\">Tidepool</style></linktext> again to adjust its position."
   },
   "2204550": {
     "Id": 2204550,
@@ -1489,7 +1489,7 @@
   },
   "2204640": {
     "Id": 2204640,
-    "Description": "Increases Haste by <style=\"accent-gn\">2500</style>.<br>During <linktext=1515><style=\"ItemQuality_5\">Permafrost</style></linktext>, Casting SPD increases by <style=\"accent-gn\">15%</style>."
+    "Description": "Increases Haste by <style=\"accent-gn\">10000</style>.<br>During <linktext=1515><style=\"ItemQuality_5\">Permafrost</style></linktext>, Casting SPD increases by <style=\"accent-gn\">15%</style>."
   },
   "2204650": {
     "Id": 2204650,
@@ -1497,7 +1497,7 @@
   },
   "2204660": {
     "Id": 2204660,
-    "Description": "When dealing DMG, <linktext=1509><style=\"ItemQuality_5\">Frostbeam</style></linktext> gains a fixed <style=\"accent-gn\">10%</style> chance to double <style=\"accent-gn\">Mastery</style> for 3s (which can only be triggers once on multiple hits)."
+    "Description": "When <linktext=1509><style=\"ItemQuality_5\">Frostbeam</style></linktext> deals DMG, doubles Mastery for the next <style=\"accent-gn\">3</style>s (only triggers once when hitting multiple targets)."
   },
   "2204670": {
     "Id": 2204670,
@@ -1577,7 +1577,7 @@
   },
   "2205180": {
     "Id": 2205180,
-    "Description": "<linktext=1521><style=\"ItemQuality_5\">Sharp Impact</style></linktext> and its enhanced skill (<linktext=1159><style=\"ItemQuality_5\">Typhoon: Sharp Impact</style></linktext>) increase the <style=\"accent-gn\">Courage</style> restored by the next <linktext=1553><style=\"ItemQuality_5\">​Galeform​</style></linktext> by <style=\"accent-gn\">50%</style>.<br>Casting <linktext=1521><style=\"ItemQuality_5\">Sharp Impact</style></linktext> immediately grants <style=\"accent-gn\">3</style> <linktext=1152><style=\"ItemQuality_5\">Sharp</style></linktext>, and casting its enhanced skill <linktext=1159><style=\"ItemQuality_5\">Typhoon: Sharp Impact</style></linktext> immediately grants <style=\"accent-gn\">6</style> <linktext=1152><style=\"ItemQuality_5\">Sharp</style></linktext>."
+    "Description": "<linktext=1521><style=\"ItemQuality_5\">Sharp Impact</style></linktext> and its enhanced skill (<linktext=1159><style=\"ItemQuality_5\">Typhoon: Sharp Impact</style></linktext>) cause the next <linktext=1553><style=\"ItemQuality_5\">​Galeform​</style></linktext> to restore <style=\"accent-gn\">50%</style> more <style=\"accent-gn\">Courage</style>. <br>Casting <linktext=1521><style=\"ItemQuality_5\">Sharp Impact</style></linktext> immediately grants <style=\"accent-gn\">3</style> <linktext=1152><style=\"ItemQuality_5\">Sharp</style></linktext>. Casting its enhanced skill <linktext=1159><style=\"ItemQuality_5\">Typhoon: Sharp Impact</style></linktext> immediately grants <style=\"accent-gn\">6</style> <linktext=1152><style=\"ItemQuality_5\">Sharp</style></linktext>. <br>Upon entering combat, immediately charges <linktext=1521><style=\"ItemQuality_5\">Sharp Impact</style></linktext> to the max."
   },
   "2205190": {
     "Id": 2205190,
@@ -1601,7 +1601,7 @@
   },
   "2205240": {
     "Id": 2205240,
-    "Description": "In combat, for every <style=\"accent-gn\">1</style> enemy target defeated (party-wide effect), ATK +<style=\"accent-gn\">65</style> for <style=\"accent-gn\">30</style>s, up to <style=\"accent-gn\">650</style>."
+    "Description": "In combat, for every <style=\"accent-gn\">1</style> enemy target defeated (party-wide effect), ATK +<style=\"accent-gn\">80</style> for <style=\"accent-gn\">30</style>s, up to <style=\"accent-gn\">800</style>."
   },
   "2205250": {
     "Id": 2205250,
@@ -1609,7 +1609,7 @@
   },
   "2205260": {
     "Id": 2205260,
-    "Description": "When <linktext=1553><style=\"ItemQuality_5\">Galeform</style></linktext> ends, it applies the <linktext=1179><style=\"ItemQuality_5\">Tempestrike</style></linktext>.<br>Every <style=\"accent-gn\">50</style> points of <style=\"accent-gn\">Courage</style> or <style=\"accent-gn\">3</style> points of <style=\"accent-gn\">Sharp</style> consumed during <linktext=1553><style=\"ItemQuality_5\">Galeform</style></linktext> extends the duration of <linktext=1179><style=\"ItemQuality_5\">Tempestrike</style></linktext> by <style=\"accent-gn\">1</style>s."
+    "Description": "<linktext=1553><style=\"ItemQuality_5\">​Galeform​</style></linktext> applies <linktext=1179><style=\"ItemQuality_5\">Tempestrike</style></linktext> when it ends (Recasting ​<linktext=1553><style=\"ItemQuality_5\">Galeform</style></linktext>​ while it is active also triggers this effect). <br>During ​<linktext=1553><style=\"ItemQuality_5\">Galeform</style></linktext>​, every <style=\"accent-gn\">50</style> <style=\"accent-gn\">Courage</style> or <style=\"accent-gn\">3</style> <style=\"accent-gn\">Sharp</style> consumed extends <linktext=1179><style=\"ItemQuality_5\">Tempestrike</style></linktext> by <style=\"accent-gn\">1</style>s."
   },
   "2205270": {
     "Id": 2205270,
@@ -1625,7 +1625,7 @@
   },
   "2205300": {
     "Id": 2205300,
-    "Description": "Further enhances <linktext=1517><style=\"ItemQuality_5\">Gale Thrust</style></linktext>.<br>Casting <linktext=1517><style=\"ItemQuality_5\">Gale Thrust</style></linktext> grants a <style=\"accent-gn\">20%</style> fixed chance to cause <style=\"accent-gn\">Basic Attacks</style> to evolve into <linktext=1592><style=\"ItemQuality_5\">Swift Blade</style></linktext>, with an additional <style=\"accent-gn\">5%</style> chance <style=\"accent-gn\">per</style> stack of <linktext=1152><style=\"ItemQuality_5\">Sharp</style></linktext>.<br><br><i><style=\"text_third_gray\"><size=20>Maximize Courage gain and expenditure to reduce the CD of Expertise skills. Haste increases Courage generation and the casting speed of core Expertise skills.</size></style></i>"
+    "Description": "Further enhances the ability to use <linktext=1517><style=\"ItemQuality_5\">Gale Thrust</style></linktext>. <br>Casting <linktext=1517><style=\"ItemQuality_5\">Gale Thrust</style></linktext> has a fixed <style=\"accent-gn\">20%</style> chance to make <style=\"accent-gn\">Basic Attacks</style> evolve into <linktext=1592><style=\"ItemQuality_5\">Swift Blade</style></linktext>. Every <style=\"accent-gn\">1</style> <linktext=1152><style=\"ItemQuality_5\">Sharp</style></linktext> increases this chance by <style=\"accent-gn\">5%</style>. The first <linktext=1517><style=\"ItemQuality_5\">Gale Thrust</style></linktext> after entering combat immediately fills <linktext=1152><style=\"ItemQuality_5\">Sharp</style></linktext> to max. <br><br><i><style=\"text_third_gray\"><size=20>Maximize the efficiency of gaining and consuming Courage to reduce the CD of Expertise Skills. Haste increases the efficiency of gaining Courage and the casting speed of core Expertise Skills.</size></style></i>"
   },
   "2205310": {
     "Id": 2205310,
@@ -1637,7 +1637,7 @@
   },
   "2205330": {
     "Id": 2205330,
-    "Description": "Each <style=\"accent-gn\">1%</style> Haste provides an additional <style=\"accent-gn\">1%</style> Attack Speed."
+    "Description": "Each <style=\"accent-gn\">1%</style> Haste provides an additional <style=\"accent-gn\">1%</style> Attack SPD."
   },
   "2205340": {
     "Id": 2205340,
@@ -1657,7 +1657,7 @@
   },
   "2205380": {
     "Id": 2205380,
-    "Description": "When <linktext=1517><style=\"ItemQuality_5\">Gale Thrust</style></linktext> deals DMG, it has a fixed <style=\"accent-gn\">50%</style> chance to grant <style=\"accent-gn\">1</style> stack of <style=\"accent-gn\">Wind Spiral</style> for <style=\"accent-gn\">20</style>s, stacking up to <style=\"accent-gn\">10</style> times.<br><style=\"accent-gn\">Wind Spiral</style>: When casting <linktext=1523><style=\"ItemQuality_5\">Spiral Thrust</style></linktext> or <linktext=1518><style=\"ItemQuality_5\">Valor Cyclone</style></linktext>, it triggers a Spiral Explosion, dealing <style=\"physical\">Attack DMG</style> equal to <style=\"accent-gn\">Wind Spiral</style> stacks x <style=\"accent-gn\">200%</style> ATK to nearby enemies. Each <style=\"accent-gn\">1%</style> of Mastery increases this DMG multiplier by <style=\"accent-gn\">7%</style>, up to <style=\"accent-gn\">560%</style>. This DMG cannot Crit, and decreases by <style=\"accent-gn\">5%</style> for each additional target hit, down to a minimum of <style=\"accent-gn\">25%</style>. Triggering this clears all <style=\"accent-gn\">Wind Spiral</style> stacks."
+    "Description": "When <linktext=1517><style=\"ItemQuality_5\">Gale Thrust</style></linktext> deals DMG to the main target, it has a fixed <style=\"accent-gn\">50%</style> chance to grant <style=\"accent-gn\">1</style> stack of <style=\"accent-gn\">Wind Spiral</style> (the chance increases by <style=\"accent-gn\">5%</style> for each additional target hit, and a single cast can grant up to <style=\"accent-gn\">6</style> stacks) for <style=\"accent-gn\">20</style>s, stacking up to <style=\"accent-gn\">10</style> times. <br><style=\"accent-gn\">Wind Spiral</style>: When casting <linktext=1523><style=\"ItemQuality_5\">Spiral Thrust</style></linktext> or <linktext=1518><style=\"ItemQuality_5\">Valor Cyclone</style></linktext>, it triggers a Spiral Explosion, dealing <style=\"physical\">Attack DMG</style> equal to <style=\"accent-gn\">Wind Spiral</style> stacks × <style=\"accent-gn\">200%</style> ATK to nearby enemies. Each <style=\"accent-gn\">1%</style> of Mastery increases this DMG multiplier by <style=\"accent-gn\">7%</style>. This DMG cannot Crit, and decreases by <style=\"accent-gn\">3%</style> for each additional target hit, down to a minimum of <style=\"accent-gn\">46%</style>. Triggering this clears all <style=\"accent-gn\">Wind Spiral</style> stacks."
   },
   "2205390": {
     "Id": 2205390,
@@ -1673,7 +1673,7 @@
   },
   "2205420": {
     "Id": 2205420,
-    "Description": "Using <linktext=1592><style=\"ItemQuality_5\">Swift Blade</style></linktext> grants it a fixed <style=\"accent-gn\">10%</style> chance to evolve <style=\"accent-gn\">Basic Attack</style> into <linktext=1591><style=\"ItemQuality_5\">Drake Cannon</style></linktext> in <style=\"accent-gn\">10s</style>. Each failure to evolve increases the chance by <style=\"accent-gn\">10%</style> until success."
+    "Description": "After every <style=\"accent-gn\">3</style> casts of <linktext=1592><style=\"ItemQuality_5\">Swift Blade</style></linktext>, your <style=\"accent-gn\">Basic Attacks</style> evolve into <linktext=1591><style=\"ItemQuality_5\">​Drake Cannon​</style></linktext> for the next <style=\"accent-gn\">10</style>s."
   },
   "2205430": {
     "Id": 2205430,
@@ -1837,11 +1837,11 @@
   },
   "2206150": {
     "Id": 2206150,
-    "Description": "Each time <linktext=1562><style=\"ItemQuality_5\">Shield Toss</style></linktext> deals DMG, gain a <linktext=1172><style=\"ItemQuality_5\">Radiant Shield</style></linktext> equal to <style=\"accent-gn\">13.75%</style> Armor (affected by Versatility and Element bonuses)."
+    "Description": "Each time <linktext=1562><style=\"ItemQuality_5\">Shield Toss</style></linktext> deals DMG, gain a <linktext=1172><style=\"ItemQuality_5\">Radiant Shield</style></linktext> equal to <style=\"accent-gn\">13.75%</style> Armor (affected by Versatility and Element bonuses; can Crit and is affected by Crit DMG)."
   },
   "2206160": {
     "Id": 2206160,
-    "Description": "During <linktext=1565><style=\"ItemQuality_5\">Aegis Ward</style></linktext>, <linktext=1170><style=\"ItemQuality_5\">Block</style></linktext> chance is increased to <style=\"accent-gn\">1.5</style> times. <br>When attacked, reduces <linktext=1565><style=\"ItemQuality_5\">Aegis Ward</style></linktext>'s remaining CD by <style=\"accent-gn\">0.5s</style>. This effect can only trigger once <style=\"accent-gn\">per</style> second."
+    "Description": "While <linktext=1565><style=\"ItemQuality_5\">​Aegis Ward​</style></linktext> is active, <linktext=1170><style=\"ItemQuality_5\">Block</style></linktext> Chance is <style=\"accent-gn\">doubled</style>. <br>When attacked, reduces <linktext=1565><style=\"ItemQuality_5\">Aegis Ward</style></linktext>'s remaining CD by <style=\"accent-gn\">0.5</style>s (up to once <style=\"accent-gn\">per</style> second)."
   },
   "2206170": {
     "Id": 2206170,
@@ -1849,7 +1849,11 @@
   },
   "2206180": {
     "Id": 2206180,
-    "Description": "Using <style=\"accent-gn\">Ultimate Skill</style> creates a <style=\"accent-gn\">Holy Barrier</style>, shielding nearby allies from DMG. The <style=\"accent-gn\">Holy Barrier</style> lasts for <style=\"accent-gn\">15s</style> or until it absorbs Total DMG equal to <style=\"accent-gn\">150%</style> Max HP +<style=\"accent-gn\">3000%</style> Armor."
+    "Description": "Using <style=\"accent-gn\">Ultimate Skill</style> creates a <style=\"accent-gn\">Holy Barrier</style>, shielding nearby allies from DMG. <style=\"accent-gn\">Holy Barrier</style> lasts for <style=\"accent-gn\">15</style>s or until it absorbs Total DMG equal to <style=\"accent-gn\">150%</style> Max HP + <style=\"accent-gn\">3000%</style> Armor. It continuously attracts nearby monsters while active."
+  },
+  "2206690": {
+    "Id": 2206690,
+    "Description": "Using <style=\"accent-gn\">Ultimate Skill</style> creates a <style=\"accent-gn\">Holy Barrier</style>, shielding nearby allies from DMG. <style=\"accent-gn\">Holy Barrier</style> lasts for <style=\"accent-gn\">15</style>s or until it absorbs Total DMG equal to <style=\"accent-gn\">150%</style> Max HP + <style=\"accent-gn\">3000%</style> Armor (every <style=\"accent-gn\">1%</style> Mastery increases its absorption by <style=\"accent-gn\">0.25%</style>)."
   },
   "2206190": {
     "Id": 2206190,
@@ -1873,7 +1877,7 @@
   },
   "2206240": {
     "Id": 2206240,
-    "Description": "When <linktext=1559><style=\"ItemQuality_5\">Sacred Blade</style></linktext> hits an enemy target, it applies a <linktext=1199><style=\"ItemQuality_5\">Holy Mark</style></linktext> to the target.<br><linktext=1566><style=\"ItemQuality_5\">Vanguard Strike</style></linktext> can spread this <linktext=1199><style=\"ItemQuality_5\">Holy Mark</style></linktext> to hit enemy targets."
+    "Description": "When <linktext=1559><style=\"ItemQuality_5\">Sacred Blade</style></linktext> hits an enemy target, it applies a <linktext=1199><style=\"ItemQuality_5\">Holy Mark</style></linktext> to the target. <br><linktext=1566><style=\"ItemQuality_5\">Vanguard Strike</style></linktext> can spread the primary target's <linktext=1199><style=\"ItemQuality_5\">Holy Mark</style></linktext> to enemy targets within <style=\"accent-gn\">5</style>m."
   },
   "2206250": {
     "Id": 2206250,
@@ -1977,7 +1981,7 @@
   },
   "2206490": {
     "Id": 2206490,
-    "Description": "While <linktext=1565><style=\"ItemQuality_5\">Aegis Ward</style></linktext> is active, each <style=\"accent-gn\">1%</style> Mastery grants <style=\"accent-gn\">0.5%</style> MATK Reduction, up to <style=\"accent-gn\">30%</style>."
+    "Description": "While <linktext=1565><style=\"ItemQuality_5\">​Aegis Ward​</style></linktext> is active, each <style=\"accent-gn\">1%</style> Mastery grants <style=\"accent-gn\">0.5%</style> MATK Reduction, up to <style=\"accent-gn\">30%</style>. <br>Upon activating <linktext=1565><style=\"ItemQuality_5\">​Aegis Ward​</style></linktext>, its base effect is multiplied by <style=\"accent-gn\">3</style>, then gradually decays over time until it returns to the base effect."
   },
   "2206500": {
     "Id": 2206500,
@@ -2041,7 +2045,7 @@
   },
   "2206650": {
     "Id": 2206650,
-    "Description": "While having <linktext=1172><style=\"ItemQuality_5\">Radiant shield</style></linktext>, gain <style=\"accent-gn\">5%</style> Light bonus."
+    "Description": "While having <linktext=1172><style=\"ItemQuality_5\">Radiant Shield</style></linktext>, gain <style=\"accent-gn\">5%</style> Light bonus."
   },
   "2206660": {
     "Id": 2206660,
@@ -2101,7 +2105,7 @@
   },
   "2207130": {
     "Id": 2207130,
-    "Description": "Gain <style=\"accent-gn\">1</style> <style=\"accent-gn\">Soundwave Energy</style> each time you deal DMG equal to <style=\"accent-gn\">10</style> times ATK. <br><style=\"accent-gn\">Soundwave Energy</style> stores up to <style=\"accent-gn\">50</style>. <br>Skills consuming <style=\"accent-gn\">Performance Passion</style> trigger <linktext=1191><style=\"ItemQuality_5\">Scorching Impact</style></linktext> when dealing DMG, consuming all <style=\"accent-gn\">Soundwave Energy</style>. Each <style=\"accent-gn\">1</style> <style=\"accent-gn\">Soundwave Energy</style> increases <linktext=1191><style=\"ItemQuality_5\">Scorching Impact</style></linktext> DMG by <style=\"accent-gn\">16%</style>."
+    "Description": "For every instance of damage equal to <style=\"accent-gn\">10</style> times ATK, grants <style=\"accent-gn\">1</style> <style=\"accent-gn\">Soundwave</style>. <br><style=\"accent-gn\">Soundwave</style> can store up to <style=\"accent-gn\">50</style>. <br>When a skill that consumes <style=\"accent-gn\">Performance Passion</style> deals damage, triggers <linktext=1191><style=\"ItemQuality_5\">Scorching Impact</style></linktext> and consumes all <style=\"accent-gn\">Soundwave</style>. Each <style=\"accent-gn\">1</style> <style=\"accent-gn\">Soundwave</style> increases <linktext=1191><style=\"ItemQuality_5\">Scorching Impact</style></linktext> DMG by <style=\"accent-gn\">16%</style>, and each additional <style=\"accent-gn\">1</style> target hit increases <linktext=1191><style=\"ItemQuality_5\">Scorching Impact</style></linktext> multiplier DMG by <style=\"accent-gn\">8%</style> (up to <style=\"accent-gn\">80%</style>)."
   },
   "2207140": {
     "Id": 2207140,
@@ -2149,11 +2153,11 @@
   },
   "2207250": {
     "Id": 2207250,
-    "Description": "While <linktext=1606><style=\"ItemQuality_5\">Healing Melody</style></linktext> is active, grants allies appropriate buffs (<style=\"accent-gn\">Strength</style>, <style=\"accent-gn\">Intellect</style>, <style=\"accent-gn\">Agility</style>) equal to <style=\"accent-gn\">8%</style> of <style=\"accent-gn\">Intellect</style>. (Buffs from different Beat Performers cannot stack. Only one with the highest value applies.)"
+    "Description": "While <linktext=1606><style=\"ItemQuality_5\">Healing Melody</style></linktext> is active, grants appropriate buffs (<style=\"accent-gn\">Strength</style>, <style=\"accent-gn\">Intellect</style>, <style=\"accent-gn\">Agility</style>) equal to <style=\"accent-gn\">8%</style> of your <style=\"accent-gn\">Intellect</style> to up to 20 allied targets, prioritizing party members. (Buffs from different Beat Performers cannot stack. Only the one with the highest value applies.)"
   },
   "2207260": {
     "Id": 2207260,
-    "Description": "For <style=\"accent-gn\">10s</style></linktext> after using <linktext=1608><style=\"ItemQuality_5\">Passion Burst</style></linktext> or its enhanced form (<linktext=1617><style=\"ItemQuality_5\">Passion Fury</style>), doubles the buffs that <linktext=1606><style=\"ItemQuality_5\">Healing Melody</style></linktext> provides to allies. While channeling <linktext=1617><style=\"ItemQuality_5\">Passion Fury</style></linktext>, DMG Reduction +<style=\"accent-gn\">10%</style>. The duration of the doubled stat buffs is refreshed and extended by <style=\"accent-gn\">0.4</style>s for every <style=\"accent-gn\">0.2</style>s channeled."
+    "Description": "For <style=\"accent-gn\">10s</style> after using <linktext=1608><style=\"ItemQuality_5\">Passion Burst</style></linktext> or its enhanced form (<linktext=1617><style=\"ItemQuality_5\">Passion Fury</style></linktext>), doubles the buffs that <linktext=1606><style=\"ItemQuality_5\">Healing Melody</style></linktext> provides to allies. While channeling <linktext=1617><style=\"ItemQuality_5\">Passion Fury</style></linktext>, DMG Reduction +<style=\"accent-gn\">10%</style>. The duration of the doubled stat buffs is refreshed and extended by <style=\"accent-gn\">0.4</style>s for every <style=\"accent-gn\">0.2</style>s channeled."
   },
   "2207270": {
     "Id": 2207270,
@@ -2213,7 +2217,7 @@
   },
   "2207410": {
     "Id": 2207410,
-    "Description": "When <style=\"accent-gn\">Expertise</style> deal DMG (only triggers once when hitting multiple targets), additionally heal targets with <linktext=1192><style=\"ItemQuality_5\">Note</style></linktext>."
+    "Description": "Applying a <linktext=1192><style=\"ItemQuality_5\">Note</style></linktext> to a target extends the duration of the buffs granted by Finale Command by <style=\"accent-gn\">0.3</style>s, but the buffs are only <style=\"accent-gn\">50%</style> as effective during the extended duration."
   },
   "2207420": {
     "Id": 2207420,
@@ -2229,7 +2233,7 @@
   },
   "2207450": {
     "Id": 2207450,
-    "Description": "Within <style=\"accent-gn\">10s</style> of casting <linktext=1616><style=\"ItemQuality_5\">Encore</style></linktext>, each use of <linktext=1603><style=\"ItemQuality_5\">Rhapsody of Flame</style></linktext> caused targets affected by <linktext=1616><style=\"ItemQuality_5\">Encore</style></linktext> to trigger <linktext=1193><style=\"ItemQuality_5\">Encore Strings</style></linktext>."
+    "Description": "Within <style=\"accent-gn\">10</style>s of casting <linktext=1616><style=\"ItemQuality_5\">Encore</style></linktext>, each use of <linktext=1603><style=\"ItemQuality_5\">Rhapsody of Flame</style></linktext> causes targets affected by <linktext=1616><style=\"ItemQuality_5\">Encore</style></linktext> to immediately trigger <linktext=1193><style=\"ItemQuality_5\">Encore Strings</style></linktext>. <br>Casting <linktext=1616><style=\"ItemQuality_5\">Encore</style></linktext> grants appropriate buffs (Strength, Intellect, Agility) equal to <style=\"accent-gn\">10%</style> of your Intellect to up to <style=\"accent-gn\">20</style> allied targets, prioritizing party members, for <style=\"accent-gn\">10</style>s. <br>(Buffs granted by different specs of different Beat Performers cannot stack. Effects from the Concerto take priority.)"
   },
   "2207460": {
     "Id": 2207460,
@@ -2245,11 +2249,11 @@
   },
   "2207490": {
     "Id": 2207490,
-    "Description": "After you use <linktext=1610><style=\"ItemQuality_5\">Center Stage</style></linktext>, the number of enhanced skills increases from <style=\"accent-gn\">1</style> to <style=\"accent-gn\">2</style>."
+    "Description": "After you use <linktext=1610><style=\"ItemQuality_5\">Center Stage</style></linktext>, the number of enhanced skills increases from <style=\"accent-gn\">1</style> to <style=\"accent-gn\">2</style>. <br>While <linktext=1610><style=\"ItemQuality_5\">Center Stage</style></linktext> is active, the Lucky Strike DMG multiplier is increased to ×<style=\"accent-gn\">1.3</style>."
   },
   "2207500": {
     "Id": 2207500,
-    "Description": "<style=\"accent-gn\">Each</style> <style=\"accent-gn\">Performance Passion</style> consumed reduces the CD of <linktext=1610><style=\"ItemQuality_5\">Center Stage</style></linktext> by <style=\"accent-gn\">1</style> second."
+    "Description": "When Amplified Beat deals DMG to the primary target, reduces the remaining CD of <linktext=1610><style=\"ItemQuality_5\">Center Stage</style></linktext> by <style=\"accent-gn\">0.2</style>s, plus an additional <style=\"accent-gn\">0.05</style>s for every <style=\"accent-gn\">5%</style> Haste (up to <style=\"accent-gn\">1</style>s in total). <br><style=\"accent-gn\">Each</style> <style=\"accent-gn\">Performance Passion</style> consumed reduces the remaining CD of <linktext=1610><style=\"ItemQuality_5\">Center Stage</style></linktext> by <style=\"accent-gn\">1</style>s."
   },
   "2207510": {
     "Id": 2207510,
@@ -2301,7 +2305,7 @@
   },
   "2207630": {
     "Id": 2207630,
-    "Description": "Within <style=\"accent-gn\">10s</style> after you cast <linktext=1616><style=\"ItemQuality_5\">Encore</style></linktext>, each use of <style=\"accent-gn\">Expertise Skill</style> triggers <linktext=1193><style=\"ItemQuality_5\">Encore Strings</style></linktext> for targets affected by <linktext=1616><style=\"ItemQuality_5\">Encore</style></linktext>."
+    "Description": "For <style=\"accent-gn\">10</style>s after casting <linktext=1616><style=\"ItemQuality_5\">Encore</style></linktext>, each time you cast a <style=\"accent-gn\">Expertise Skill</style>, targets affected by <linktext=1616><style=\"ItemQuality_5\">Encore</style></linktext> immediately trigger <linktext=1193><style=\"ItemQuality_5\">Encore Strings</style></linktext> (an affected target can trigger this at most <style=\"accent-gn\">once</style> every <style=\"accent-gn\">0.3</style>s)."
   },
   "2207640": {
     "Id": 2207640,
@@ -2425,7 +2429,7 @@
   },
   "2208260": {
     "Id": 2208260,
-    "Description": "Every <style=\"accent-gn\">1%</style> Mastery grants <style=\"accent-gn\">0.2%</style> Fire Bonus."
+    "Description": "Each <style=\"accent-gn\">1%</style> Mastery grants <style=\"accent-gn\">0.26%</style> Fire Bonus."
   },
   "2208270": {
     "Id": 2208270,
@@ -2437,7 +2441,7 @@
   },
   "2208290": {
     "Id": 2208290,
-    "Description": "Every </linktext><style=\"accent-gn\">1%</style> Luck increases the trigger chance of <linktext=1216><style=\"ItemQuality_5\">Formless Flame Slash</style> stages <style=\"accent-gn\">1</style> to <style=\"accent-gn\">3</style> by <style=\"accent-gn\">0.2%</style>/<style=\"accent-gn\">0.1%</style>/<style=\"accent-gn\">0.05%</style> respectively, but the Crit Rate of <linktext=1216><style=\"ItemQuality_5\">Formless Flame Slash</style></linktext> is halved."
+    "Description": "Every <style=\"accent-gn\">1%</style> Luck increases the trigger chance of <linktext=1216><style=\"ItemQuality_5\">Formless Flame Slash</style></linktext> stages <style=\"accent-gn\">1</style> to <style=\"accent-gn\">3</style> by <style=\"accent-gn\">0.2%</style>/<style=\"accent-gn\">0.1%</style>/<style=\"accent-gn\">0.05%</style> respectively, but the Crit Rate of <linktext=1216><style=\"ItemQuality_5\">Formless Flame Slash</style></linktext> is halved."
   },
   "2208300": {
     "Id": 2208300,
@@ -2461,7 +2465,7 @@
   },
   "2208350": {
     "Id": 2208350,
-    "Description": "<style=\"accent-gn\">Expertise Skills</style> ignore <style=\"accent-gn\">35%</style> of the target's Armor."
+    "Description": "<style=\"accent-gn\">Expertise Skills</style> and <linktext=1216><style=\"ItemQuality_5\">Formless Flame Slash</style></linktext> ignore <style=\"accent-gn\">35%</style> of the target's Armor."
   },
   "2208360": {
     "Id": 2208360,
@@ -2477,7 +2481,7 @@
   },
   "2208390": {
     "Id": 2208390,
-    "Description": "Fire Bonus +<style=\"accent-gn\">8%</style> when attacking Elite or higher targets."
+    "Description": "Increases Fire Bonus by <style=\"accent-gn\">8%</style> when attacking Elite or higher targets."
   },
   "2208400": {
     "Id": 2208400,
@@ -2497,11 +2501,11 @@
   },
   "2208440": {
     "Id": 2208440,
-    "Description": "For every <style=\"accent-gn\">10%</style> <style=\"accent-gn\">Crimson Soul Gauge</style> charged, immediately gains a buff: Increases ATK bonuses from all sources by <style=\"accent-gn\">2%</style> for <style=\"accent-gn\">5</style>s. This effect can stack up to <style=\"accent-gn\">3</style> times."
+    "Description": "When the <style=\"accent-gn\">Crimson Soul Gauge</style> reaches <style=\"accent-gn\">20%</style>, <style=\"accent-gn\">50%</style>, and <style=\"accent-gn\">80%</style>, grants 1 stack of a buff that increases ATK by <style=\"accent-gn\">2%</style> when dealing DMG. <br>This effect is doubled while <style=\"accent-gn\">Bloodboil</style> is active."
   },
   "2208450": {
     "Id": 2208450,
-    "Description": "For every <style=\"accent-gn\">10%</style> Max HP or <style=\"accent-gn\">Crimson Soul Gauge</style> lost, a stack of a buff is immediately gained: Crit Chance from all sources is increased by <style=\"accent-gn\">2.5%</style> for <style=\"accent-gn\">5</style>s. This effect can stack up to <style=\"accent-gn\">3</style> times."
+    "Description": "For every <style=\"accent-gn\">10%</style> Max HP lost, immediately grants 1 stack of a buff that increases Crit Chance gained from all sources by <style=\"accent-gn\">2.5%</style> for <style=\"accent-gn\">5</style>s. This effect can stack up to <style=\"accent-gn\">3</style> times."
   },
   "2208460": {
     "Id": 2208460,
@@ -2533,7 +2537,7 @@
   },
   "2208530": {
     "Id": 2208530,
-    "Description": "While <linktext=1629><style=\"ItemQuality_5\">Endless Hellfire</style></linktext> is active, the <style=\"accent-gn\">Crimson Recovery</style> effect is doubled and the final consumption of the <style=\"accent-gn\">Crimson Soul Gauge</style> is reduced by half."
+    "Description": "While <linktext=1629><style=\"ItemQuality_5\">Endless Hellfire</style></linktext> is active, the effect of <style=\"accent-gn\">Crimson Recovery</style> is doubled."
   },
   "2208540": {
     "Id": 2208540,
@@ -2549,7 +2553,7 @@
   },
   "2208570": {
     "Id": 2208570,
-    "Description": "Activating <linktext=1629><style=\"ItemQuality_5\">Endless Hellfire</style></linktext> immediately grants <style=\"accent-gn\">5</style> stacks of <linktext=1211><style=\"ItemQuality_5\">Infernal Combo</style></linktext>, which are not consumed while it is active.<br><linktext=1629>While <style=\"ItemQuality_5\">Endless Hellfire</style></linktext> is active, <style=\"accent-gn\">Strength</style> +<style=\"accent-gn\">15%</style>."
+    "Description": "Activating <linktext=1629><style=\"ItemQuality_5\">Endless Hellfire</style></linktext> immediately grants <style=\"accent-gn\">5</style> stacks of <linktext=1211><style=\"ItemQuality_5\">Infernal Combo</style></linktext>, which are not consumed while it is active.<br>While <linktext=1629><style=\"ItemQuality_5\">Endless Hellfire</style></linktext> is active, <style=\"accent-gn\">Strength</style> +<style=\"accent-gn\">15%</style>."
   },
   "2208580": {
     "Id": 2208580,
@@ -2565,7 +2569,7 @@
   },
   "2208610": {
     "Id": 2208610,
-    "Description": "Every <style=\"accent-gn\">1%</style> Mastery grants <style=\"accent-gn\">2%</style> <style=\"accent-gn\">Crimson Recovery</style> final effect."
+    "Description": "When the <style=\"accent-gn\">Crimson Soul Gauge</style> is full, your next instance of damage no longer grants <style=\"accent-gn\">Bloodboil</style>. When you cast an Ultimate while the <style=\"accent-gn\">Crimson Soul Gauge</style> is full, you immediately enter <style=\"accent-gn\">Bloodboil</style>. While <style=\"accent-gn\">Bloodboil</style> is active, you gain an additional <style=\"accent-gn\">15%</style> Fire Bonus."
   },
   "2208620": {
     "Id": 2208620,
@@ -2573,7 +2577,7 @@
   },
   "2208630": {
     "Id": 2208630,
-    "Description": "<linktext=1626><style=\"ItemQuality_5\">Wildfire Dance</style></linktext> can trigger <linktext=1216><style=\"ItemQuality_5\">Formless Flame Slash</style></linktext>, but can no longer trigger Lucky Strikes.<br><linktext=1216>The damage multiplier of <style=\"ItemQuality_5\">Formless Flame Slash</style></linktext> is adjusted to the skill multiplier that triggered it * (<style=\"accent-gn\">30%</style> + Crit%)."
+    "Description": "<linktext=1626><style=\"ItemQuality_5\">Wildfire Dance</style></linktext> can trigger <linktext=1216><style=\"ItemQuality_5\">Formless Flame Slash</style></linktext>, but can no longer trigger Lucky Strikes.<br><linktext=1216><style=\"ItemQuality_5\">Formless Flame Slash</style></linktext> The damage multiplier of Formless Flame Slash is adjusted to the skill multiplier that triggered it * (<style=\"accent-gn\">30%</style> + Crit%)."
   },
   "2208640": {
     "Id": 2208640,
@@ -2589,7 +2593,7 @@
   },
   "2208670": {
     "Id": 2208670,
-    "Description": "Every <style=\"accent-gn\">15%</style> <style=\"accent-gn\">Crimson Soul Gauge</style> charged reduces the remaining CD of <linktext=1629><style=\"ItemQuality_5\">Endless Hellfire</style></linktext> by <style=\"accent-gn\">0.5</style>s. Every <style=\"accent-gn\">10%</style> of Haste reduces it by an additional <style=\"accent-gn\">0.1</style>s, up to <style=\"accent-gn\">1</style>s."
+    "Description": "During <linktext=1629><style=\"ItemQuality_5\">Endless Hellfire</style></linktext>, every <style=\"accent-gn\">10</style> instances of DMG dealt to the primary target by <linktext=1626><style=\"ItemQuality_5\">Wildfire Dance</style></linktext> extends the duration of <linktext=1629><style=\"ItemQuality_5\">Endless Hellfire</style></linktext> by <style=\"accent-gn\">0.5</style>s, up to <style=\"accent-gn\">5</style>s."
   },
   "2300020": {
     "Id": 2300020,
@@ -3447,14 +3451,6 @@
     "Id": 3002280,
     "Description": "When non-<style=\"accent-gn\">Basic Attack</style> Direct-DMG class skills deal Crit DMG, <linktext=1201><style=\"ItemQuality_5\">Phantom Execution</style></linktext> trigger count +<style=\"accent-gn\">1</style>, and internal CD −<style=\"accent-gn\">0</style>.<style=\"accent-gn\">5s</style> (up to once every <style=\"accent-gn\">0.5s</style>)."
   },
-  "3002410": {
-    "Id": 3002410,
-    "Description": "Casting a DMG-type <style=\"accent-gn\">Expertise Skill</style> summons <linktext=1202><style=\"ItemQuality_5\">Phantom Arrows</style></linktext>, up to once every <style=\"accent-gn\">7s</style>. During combat, each summon of <linktext=1202><style=\"ItemQuality_5\">Phantom Arrows</style></linktext> increases the number of <linktext=1202><style=\"ItemQuality_5\">Phantom Arrows</style></linktext> summoned the next time by <style=\"accent-gn\">1</style> (up to <style=\"accent-gn\">8</style>). <style=\"accent-gn\">Each</style> use of <style=\"accent-gn\">Special Attack</style> reduces internal CD of <linktext=1202><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> by <style=\"accent-gn\">0</style>.<style=\"accent-gn\">6s</style>. If no <linktext=1202><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> is triggered for <style=\"accent-gn\">60s</style>, stack count resets. Each <style=\"accent-gn\">1%</style> Mastery increases its DMG by <style=\"accent-gn\">0.5%</style>."
-  },
-  "3002420": {
-    "Id": 3002420,
-    "Description": "When <style=\"accent-gn\">Special Attack</style> reduces <linktext=1202><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> CD, it has a fixed <style=\"accent-gn\">30%</style> chance to double the reduction."
-  },
   "3002430": {
     "Id": 3002430,
     "Description": "Increases <linktext=1202><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> Illusion-Breaking DMG by <style=\"accent-gn\">50%</style>, but <linktext=1202><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> can no longer deal Crit DMG."
@@ -3463,17 +3459,9 @@
     "Id": 3002440,
     "Description": "Illusion-Breaking DMG of <linktext=1202><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> +<style=\"accent-gn\">30%</style>."
   },
-  "3002450": {
-    "Id": 3002450,
-    "Description": "Increases <linktext=1202><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> Illusion-Breaking DMG by <style=\"accent-gn\">15%</style>. Increases <linktext=1202><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> max stack count by <style=\"accent-gn\">2</style>."
-  },
   "3002460": {
     "Id": 3002460,
     "Description": "Refined ATK and Refined Armor +<style=\"accent-gn\">10%</style>."
-  },
-  "3002470": {
-    "Id": 3002470,
-    "Description": "<linktext=1202><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> nullifies Defense (both Armor and Resistance)."
   },
   "3002480": {
     "Id": 3002480,
@@ -3546,10 +3534,6 @@
   "3003020": {
     "Id": 3003020,
     "Description": "When your HP falls below <style=\"accent-gn\">50%</style>, triggers <linktext=1206><style=\"ItemQuality_5\">Annihilation Strike</style></linktext> (up to once every <style=\"accent-gn\">15s</style>)."
-  },
-  "3003030": {
-    "Id": 3003030,
-    "Description": "Taking lethal DMG triggers <linktext=1207><style=\"ItemQuality_5\">Near Death</style></linktext> for <style=\"accent-gn\">1s</style>, up to once every <style=\"accent-gn\">45s</style>."
   },
   "3003040": {
     "Id": 3003040,
@@ -4335,10 +4319,6 @@
     "Id": 3056020,
     "Description": "Gains Super Armor when casting Infusion; Infusion Illusion-Breaking DMG +<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>.<br>Dealing damage with Infusion grants <style=\"accent-gn\">{*Decision.unmarknormal(2)*}</style> Illusion Energy."
   },
-  "3056030": {
-    "Id": 3056030,
-    "Description": "Regen Pulse becomes instant cast; Regen Pulse Illusion-Breaking DMG +<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>.<br>Triggering Regen Pulse grants <style=\"accent-gn\">{*Decision.unmarknormal(2)*}</style> Illusion Energy."
-  },
   "3056040": {
     "Id": 3056040,
     "Description": "When affected by Symbiotic Mark, MATK +<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>.<br>While in Symbiotic Mark state, grants <style=\"accent-gn\">{*Decision.unmarknormal(2)*}</style> Illusion Energy per second."
@@ -4513,19 +4493,19 @@
   },
   "3058050": {
     "Id": 3058050,
-    "Description": "Crit gained in any way +<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>, but Mastery gained in any way –<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    "Description": "Crit gained in any way <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>, but Mastery gained in any way <style=\"accent-gn\">-6%</style> (this effect does not stack)."
   },
   "3058060": {
     "Id": 3058060,
-    "Description": "Luck gained in any way +<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>, but Haste gained in any way –<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    "Description": "Luck gained in any way <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>, but Haste gained in any way <style=\"accent-gn\">-6%</style>. (this effect does not stack)."
   },
   "3058070": {
     "Id": 3058070,
-    "Description": "Mastery gained in any way +<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>, but Luck gained in any way –<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    "Description": "Mastery gained in any way <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>, but Luck gained in any way <style=\"accent-gn\">-6%</style>. (this effect does not stack)."
   },
   "3058080": {
     "Id": 3058080,
-    "Description": "Haste gained in any way +<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>, but Crit gained in any way –<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+    "Description": "Haste gained in any way <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>, but Crit gained in any way <style=\"accent-gn\">-6%</style>. (this effect does not stack)."
   },
   "3058090": {
     "Id": 3058090,
@@ -4969,7 +4949,7 @@
   },
   "3401107": {
     "Id": 3401107,
-    "Description": "Grants the blessed target <style=\"accent-gn\">135</style> <style=\"accent-gn\">Intellect</style>, <style=\"accent-gn\">Strength</style>, <style=\"accent-gn\">Agility</style>, and <style=\"accent-gn\">Endurance</style>, as well as <style=\"accent-gn\">1.5%</style> <style=\"accent-gn\">Crit</style>, <style=\"accent-gn\">Haste</style>, <style=\"accent-gn\">Luck</style>, <style=\"accent-gn\">Mastery</style>, and <style=\"accent-gn\">Versatility</style>."
+    "Description": "Grants the blessed target <style=\"accent-gn\">175</style> <style=\"accent-gn\">Intellect</style>, <style=\"accent-gn\">Strength</style>, <style=\"accent-gn\">Agility</style>, and <style=\"accent-gn\">Endurance</style>, as well as <style=\"accent-gn\">1.5%</style> <style=\"accent-gn\">Crit</style>, <style=\"accent-gn\">Haste</style>, <style=\"accent-gn\">Luck</style>, <style=\"accent-gn\">Mastery</style>, and <style=\"accent-gn\">Versatility</style>."
   },
   "3401108": {
     "Id": 3401108,
@@ -5005,7 +4985,7 @@
   },
   "3401116": {
     "Id": 3401116,
-    "Description": "Explodes upon contact with an enemy, dealing <style=\"magic\">Magic DMG</style> equal to <style=\"accent-gn\">100%</style> ATK."
+    "Description": "Explodes upon contact with an enemy, dealing <style=\"magic\">Magic DMG</style> equal to <style=\"accent-gn\">100%</style> ATK. This is a Luck effect."
   },
   "3401117": {
     "Id": 3401117,
@@ -5097,7 +5077,7 @@
   },
   "3401139": {
     "Id": 3401139,
-    "Description": "Deals <style=\"physical\">Attack DMG</style> equal to <style=\"accent-gn\">80%</style> ATK to enemies within <style=\"accent-gn\">5</style> meters. For each additional enemy hit, increases the DMG dealt by <style=\"accent-gn\">30%</style> (which scales with the Level/Tier of <style=\"accent-gn\">Basic Attack</style>, up to +<style=\"accent-gn\">120%</style>)."
+    "Description": "Deals <style=\"physical\">Attack DMG</style> equal to <style=\"accent-gn\">72%</style> ATK to enemies within <style=\"accent-gn\">5</style> meters. For each additional enemy hit, increases the DMG dealt by <style=\"accent-gn\">30%</style> (which scales with the Level/Tier of <style=\"accent-gn\">Basic Attack</style>, up to +<style=\"accent-gn\">120%</style>)."
   },
   "3401140": {
     "Id": 3401140,
@@ -5510,5 +5490,1777 @@
   "2409120": {
     "Id": 2409120,
     "Description": "Great Crimson Lotus ignores 55% of the target's Armor."
+  },
+  "3004900": {
+    "Id": 3004900,
+    "Description": "Enters combat to deal damage and trigger <linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> on enemies (CD: <style=\"accent-gn\">5s</style>). <br><br>Disillusion Impact: Deals fixed damage equal to <style=\"accent-gn\">4000%</style> × Oath Strength."
+  },
+  "3004910": {
+    "Id": 3004910,
+    "Description": "<linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> can and will always Crit. Each <style=\"accent-gn\">1%</style> Crit Rate is converted into <style=\"accent-gn\">1%</style> Crit DMG for this effect (up to <style=\"accent-gn\">70%</style>)."
+  },
+  "3004920": {
+    "Id": 3004920,
+    "Description": "Each <style=\"accent-gn\">1%</style> Luck grants <style=\"accent-gn\">80%</style> <linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> Multiplier (up to <style=\"accent-gn\">5600%</style>)."
+  },
+  "3004930": {
+    "Id": 3004930,
+    "Description": "Each <style=\"accent-gn\">1%</style> Haste grants <style=\"accent-gn\">2%</style> <linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> DMG (up to <style=\"accent-gn\">140%</style>)."
+  },
+  "3004940": {
+    "Id": 3004940,
+    "Description": "Each <style=\"accent-gn\">1%</style> Mastery grants <style=\"accent-gn\">2%</style> <linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> DMG (up to <style=\"accent-gn\">140%</style>)."
+  },
+  "3004950": {
+    "Id": 3004950,
+    "Description": "The CD of <linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> becomes <style=\"accent-gn\">3s</style>, but its damage is multiplied by <style=\"accent-gn\">0.8</style>."
+  },
+  "3004960": {
+    "Id": 3004960,
+    "Description": "<linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> has a <style=\"accent-gn\">20%</style> chance to trigger <style=\"accent-gn\">1</style> additional time when activated (if it fails to trigger, the chance increases by <style=\"accent-gn\">20%</style> for the next activation; resets after triggering)."
+  },
+  "3004970": {
+    "Id": 3004970,
+    "Description": "The CD of <linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> becomes <style=\"accent-gn\">10s</style>, but its damage is multiplied by <style=\"accent-gn\">3</style>."
+  },
+  "3004980": {
+    "Id": 3004980,
+    "Description": "After <linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> triggers, your Oath DMG increases by <style=\"accent-gn\">10%</style> for <style=\"accent-gn\">6s</style>."
+  },
+  "3004990": {
+    "Id": 3004990,
+    "Description": "After <linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> triggers, your Oath DMG Reduction increases by <style=\"accent-gn\">10%</style> for <style=\"accent-gn\">6s</style>."
+  },
+  "3005000": {
+    "Id": 3005000,
+    "Description": "<linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> increases the Oath DMG taken by the target by <style=\"accent-gn\">2%</style> for <style=\"accent-gn\">6s</style>. (Cannot stack. Only one effect may be active at a time.)"
+  },
+  "3005010": {
+    "Id": 3005010,
+    "Description": "<linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> deals <style=\"accent-gn\">1.5×</style> damage to targets with HP above <style=\"accent-gn\">80%</style> or below <style=\"accent-gn\">20%</style>."
+  },
+  "3005020": {
+    "Id": 3005020,
+    "Description": "<linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> deals <style=\"accent-gn\">1.35×</style> damage to targets with HP above <style=\"accent-gn\">20%</style> and below <style=\"accent-gn\">80%</style>."
+  },
+  "3005030": {
+    "Id": 3005030,
+    "Description": "<linktext=1228><style=\"ItemQuality_5\">Disillusion Impact</style></linktext> DMG is multiplied by <style=\"accent-gn\">2</style>."
+  },
+  "3005100": {
+    "Id": 3005100,
+    "Description": "Upon entering combat, grants <style=\"accent-gn\">1</style> stack of <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> every <style=\"accent-gn\">10s</style>. After remaining in combat for <style=\"accent-gn\">360s</style>, all <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> stacks disappear, and no more can be gained during that combat (stacks are cleared upon defeat or leaving combat). <br><br>Engraving: Each stack grants <style=\"accent-gn\">25</style> ATK (increases to <style=\"accent-gn\">40</style> as the season level rises)."
+  },
+  "3005110": {
+    "Id": 3005110,
+    "Description": "When <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> reaches <style=\"accent-gn\">20</style> stacks, each additional stack grants <style=\"accent-gn\">0.8%</style> ATK."
+  },
+  "3005120": {
+    "Id": 3005120,
+    "Description": "When <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> reaches <style=\"accent-gn\">20</style> stacks, each additional stack grants <style=\"accent-gn\">0.8%</style> Attack SPD."
+  },
+  "3005130": {
+    "Id": 3005130,
+    "Description": "When <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> reaches <style=\"accent-gn\">20</style> stacks, each additional stack grants <style=\"accent-gn\">1.6%</style> Casting SPD."
+  },
+  "3005140": {
+    "Id": 3005140,
+    "Description": "Upon entering combat, immediately grants <style=\"accent-gn\">3</style> stacks of <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext>."
+  },
+  "3005150": {
+    "Id": 3005150,
+    "Description": "<linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> now gains 1 stack every <style=\"accent-gn\">15s</style>, and each stack grants <style=\"accent-gn\">50</style> ATK (increases to <style=\"accent-gn\">80</style> as the season level rises)."
+  },
+  "3005160": {
+    "Id": 3005160,
+    "Description": "<linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> now gains 1 stack every <style=\"accent-gn\">8s</style>."
+  },
+  "3005170": {
+    "Id": 3005170,
+    "Description": "When <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> is between <style=\"accent-gn\">20</style> and <style=\"accent-gn\">24</style> stacks, Engraving effects are multiplied by <style=\"accent-gn\">1.2</style>."
+  },
+  "3005180": {
+    "Id": 3005180,
+    "Description": "When <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> reaches <style=\"accent-gn\">30</style> stacks, Engraving effects are multiplied by <style=\"accent-gn\">1.2</style>."
+  },
+  "3005190": {
+    "Id": 3005190,
+    "Description": "When taking damage greater than your current HP, consumes <style=\"accent-gn\">5</style> stacks of <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> to reduce that damage by <style=\"accent-gn\">20%</style> (cannot trigger if there is insufficient <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext>). This effect can trigger at most once every <style=\"accent-gn\">30s</style>."
+  },
+  "3005200": {
+    "Id": 3005200,
+    "Description": "When <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> reaches <style=\"accent-gn\">10</style> stacks, gains <style=\"accent-gn\">10%</style> Oath DMG Reduction."
+  },
+  "3005210": {
+    "Id": 3005210,
+    "Description": "When <linktext=1220><style=\"ItemQuality_5\">Engraving</style></linktext> has lasted for <style=\"accent-gn\">300s</style>, enters ultimate burst: Oath DMG +<style=\"accent-gn\">30%</style>."
+  },
+  "3005300": {
+    "Id": 3005300,
+    "Description": "Elemental DMG dealt by the active effect of Resonance Skills +<style=\"accent-gn\">20%</style>, while Final DMG dealt by non-Resonance Skills -<style=\"accent-gn\">50%</style> (additional damage effects based on copied damage are reduced again)."
+  },
+  "3005310": {
+    "Id": 3005310,
+    "Description": "While not transformed, Oath DMG dealt by the active effect of Resonance Skills is increased by <style=\"accent-gn\">200%</style>."
+  },
+  "3005320": {
+    "Id": 3005320,
+    "Description": "While transformed, Oath DMG dealt by the active effect of Resonance Skills increases by <style=\"accent-gn\">5%</style>."
+  },
+  "3005330": {
+    "Id": 3005330,
+    "Description": "When a Resonance Skill deals damage, Oath DMG from the active effect of Resonance Skills increases by <style=\"accent-gn\">0.5%</style> for <style=\"accent-gn\">2s</style>, stacking up to <style=\"accent-gn\">10</style> times."
+  },
+  "3005340": {
+    "Id": 3005340,
+    "Description": "Every <style=\"accent-gn\">30s</style>, grants <style=\"accent-gn\">10%</style> increased Elemental DMG for the active effect of Resonance Skills for <style=\"accent-gn\">15s</style>."
+  },
+  "3005350": {
+    "Id": 3005350,
+    "Description": "While transformed, the highest of your Crit%, Luck%, Haste%, or Mastery% is multiplied by <style=\"accent-gn\">1.2</style>, and Armor increases by <style=\"accent-gn\">30%</style>."
+  },
+  "3005360": {
+    "Id": 3005360,
+    "Description": "Casting a Class Skill grants <style=\"accent-gn\">1</style> stack of Empowerment Sigil, stacking up to <style=\"accent-gn\">10</style> times. Casting a Resonance Skill consumes all Empowerment Sigils, granting <style=\"accent-gn\">20%</style> Oath DMG to the active effect of Resonance Skills per stack for <style=\"accent-gn\">5s</style>. During this time, Empowerment Sigils cannot be gained, and casting another Resonance Skill immediately removes the effect."
+  },
+  "3005370": {
+    "Id": 3005370,
+    "Description": "Refined ATK of the active effect of Resonance Skills +<style=\"accent-gn\">10%</style>."
+  },
+  "3005380": {
+    "Id": 3005380,
+    "Description": "Potions and Food additionally increase the Elemental DMG of the active effect of Resonance Skills by <style=\"accent-gn\">3%</style>."
+  },
+  "3005390": {
+    "Id": 3005390,
+    "Description": "When Oath Strength exceeds <style=\"accent-gn\">3000</style>, every additional <style=\"accent-gn\">10</style> Oath Strength increases the Elemental DMG of the active effect of Resonance Skills by <style=\"accent-gn\">0.1%</style>."
+  },
+  "3005500": {
+    "Id": 3005500,
+    "Description": "When dealing damage, triggers <style=\"accent-gn\">1</style> instance of AoE fixed damage equal to <style=\"accent-gn\">2000%</style> × Oath Strength on the target (each<style=\"accent-gn\">1%</style> Mastery increases this damage by <style=\"accent-gn\">5%</style>, up to <style=\"accent-gn\">300%</style>), and grants yourself <style=\"accent-gn\">1</style> stack of <linktext=1221><style=\"ItemQuality_5\">Bloodthirst</style></linktext>. Can trigger at most <style=\"accent-gn\">1</style> time every <style=\"accent-gn\">10s</style>. <br>When this fixed damage hits an enemy, inflicts <linktext=1222><style=\"ItemQuality_5\">Bloodthirst Reduction</style></linktext> equal to half of your current Bloodthirst stacks. <br><br>Bloodthirst: Increases this fixed damage by <style=\"accent-gn\">6%</style> and Oath DMG Reduction by <style=\"accent-gn\">1%</style>, stacking up to <style=\"accent-gn\">10</style> times. Loses <style=\"accent-gn\">1</style> stack per second while moving, loses <style=\"accent-gn\">1</style> stack when triggering a Perfect Dodge, and all stacks are cleared upon leaving combat. <br><br>Bloodthirst Reduction: Each stack reduces ATK by <style=\"accent-gn\">1%</style>. Only <style=\"accent-gn\">1</style> instance can take effect at a time regardless of how many players inflict it. Lasts <style=\"accent-gn\">10s</style>, and re-inflicting recalculates the stack count."
+  },
+  "3005510": {
+    "Id": 3005510,
+    "Description": "While standing still, gains an additional <style=\"accent-gn\">1</style> stack of <linktext=1221><style=\"ItemQuality_5\">Bloodthirst</style></linktext> every <style=\"accent-gn\">15s</style>."
+  },
+  "3005520": {
+    "Id": 3005520,
+    "Description": "Taking damage reduces the trigger interval by <style=\"accent-gn\">1s</style> (CD: <style=\"accent-gn\">1s</style>)."
+  },
+  "3005530": {
+    "Id": 3005530,
+    "Description": "When <linktext=1221><style=\"ItemQuality_5\">Bloodthirst</style></linktext> reaches <style=\"accent-gn\">3</style> stacks, the fixed damage becomes <style=\"accent-gn\">2000%</style> × Oath Strength + <style=\"accent-gn\">7%</style> Max HP as fixed damage."
+  },
+  "3005540": {
+    "Id": 3005540,
+    "Description": "When <linktext=1221><style=\"ItemQuality_5\">Bloodthirst</style></linktext> reaches <style=\"accent-gn\">3</style> stacks, the fixed damage becomes <style=\"accent-gn\">2000%</style> × Oath Strength + <style=\"accent-gn\">240%</style> Armor as fixed damage."
+  },
+  "3005550": {
+    "Id": 3005550,
+    "Description": "<linktext=1221><style=\"ItemQuality_5\">Bloodthirst</style></linktext> stack cap +<style=\"accent-gn\">2</style>."
+  },
+  "3005560": {
+    "Id": 3005560,
+    "Description": "When <linktext=1221><style=\"ItemQuality_5\">Bloodthirst</style></linktext> stacks are consumed, there is a <style=\"accent-gn\">30%</style> chance to refund <style=\"accent-gn\">1</style> stack."
+  },
+  "3005570": {
+    "Id": 3005570,
+    "Description": "Each stack of <linktext=1221><style=\"ItemQuality_5\">Bloodthirst</style></linktext> additionally grants <style=\"accent-gn\">0.75%</style> Armor. At <style=\"accent-gn\">6</style> stacks, this effect doubles."
+  },
+  "3005580": {
+    "Id": 3005580,
+    "Description": "Each stack of <linktext=1221><style=\"ItemQuality_5\">Bloodthirst</style></linktext> additionally increases Max HP by <style=\"accent-gn\">0.75%</style>. At <style=\"accent-gn\">6</style> stacks, this effect is doubled."
+  },
+  "3005590": {
+    "Id": 3005590,
+    "Description": "When <linktext=1221><style=\"ItemQuality_5\">Bloodthirst</style></linktext> reaches <style=\"accent-gn\">8</style> stacks, DMG dealt triggers <style=\"accent-gn\">1</style> additional instance of fixed single-target DMG equal to <style=\"accent-gn\">10%</style> of Max HP + <style=\"accent-gn\">800%</style> Armor (can trigger at most <style=\"accent-gn\">1</style> time every <style=\"accent-gn\">3s</style>)."
+  },
+  "3005700": {
+    "Id": 3005700,
+    "Description": "After entering combat, gains a <style=\"accent-gn\">15</style>m-radius aura that applies <linktext=1223><style=\"ItemQuality_5\">Inspire</style></linktext> to you and up to <style=\"accent-gn\">20</style> allies within range. <br><br><linktext=1223><style=\"ItemQuality_5\">Inspire</style></linktext>: Oath DMG +<style=\"accent-gn\">3%</style>. This effect does not stack. Only <style=\"accent-gn\">1</style> instance can take effect."
+  },
+  "3005710": {
+    "Id": 3005710,
+    "Description": "The <linktext=1223><style=\"ItemQuality_5\">Inspire</style></linktext> effect also grants: Strength/Intellect/Agility +<style=\"accent-gn\">1%</style>, ATK +<style=\"accent-gn\">3%</style>."
+  },
+  "3005720": {
+    "Id": 3005720,
+    "Description": "Enemy targets within the aura have Oath DMG Reduction reduced by <style=\"accent-gn\">5%</style> (This effect does not stack. Only <style=\"accent-gn\">1</style> instance can take effect)."
+  },
+  "3005730": {
+    "Id": 3005730,
+    "Description": "Within <style=\"accent-gn\">10s</style> after casting a Healing Skill, increases Healing Strength by <style=\"accent-gn\">15%</style>."
+  },
+  "3005740": {
+    "Id": 3005740,
+    "Description": "Casting a Healing Skill increases Casting SPD by <style=\"accent-gn\">10%</style> for <style=\"accent-gn\">10s</style>."
+  },
+  "3005750": {
+    "Id": 3005750,
+    "Description": "Casting a Healing Skill increases Attack SPD by <style=\"accent-gn\">5%</style> for <style=\"accent-gn\">10s</style>."
+  },
+  "3005760": {
+    "Id": 3005760,
+    "Description": "<linktext=1223><style=\"ItemQuality_5\">Inspire</style></linktext> effect ×<style=\"accent-gn\">1.35</style>."
+  },
+  "3005770": {
+    "Id": 3005770,
+    "Description": "Every <style=\"accent-gn\">30s</style>, <linktext=1223><style=\"ItemQuality_5\">Inspire</style></linktext> is enhanced for <style=\"accent-gn\">15s</style> and its effect is multiplied by <style=\"accent-gn\">1.5</style> during this time."
+  },
+  "3005780": {
+    "Id": 3005780,
+    "Description": "You take <style=\"accent-gn\">10%</style> less Oath DMG from enemy targets within the aura."
+  },
+  "3003030": {
+    "Id": 3003030,
+    "Description": "Taking lethal DMG triggers <linktext=1207><style=\"ItemQuality_5\">Near Death</style></linktext> for <style=\"accent-gn\">0.5</style>s, up to once every <style=\"accent-gn\">80</style>s."
+  },
+  "3005800": {
+    "Id": 3005800,
+    "Description": "After casting a Class Healing Skill, the <linktext=1223><style=\"ItemQuality_5\">Inspire</style></linktext> effect you receive is multiplied by <style=\"accent-gn\">3.5</style> for <style=\"accent-gn\">10s</style>."
+  },
+  "3005900": {
+    "Id": 3005900,
+    "Description": "Dealing DMG to the primary target <style=\"accent-gn\">15</style> times with Basic Attacks or Special Attacks grants <style=\"accent-gn\">1</style> stack of <linktext=1224><style=\"ItemQuality_5\">Charge</style></linktext>. At max stacks, all Charge stacks are converted into <linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext>. You cannot gain <linktext=1224><style=\"ItemQuality_5\">Charge</style></linktext> while Burst is active. <br><br>Charge: Increases ATK by <style=\"accent-gn\">74</style> (scaling to 112 with Season Level), lasts <style=\"accent-gn\">8s</style>, and stacks up to <style=\"accent-gn\">5</style> times. <br>Burst: Increases ATK by <style=\"accent-gn\">400</style> (scaling to 700 with Season Level) and lasts <style=\"accent-gn\">8s</style>."
+  },
+  "3005910": {
+    "Id": 3005910,
+    "Description": "<linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext> additionally increases ATK by <style=\"accent-gn\">8%</style>."
+  },
+  "3005920": {
+    "Id": 3005920,
+    "Description": "Each stack of <linktext=1224><style=\"ItemQuality_5\">Charge</style></linktext> grants <style=\"accent-gn\">0.8%</style> Attack SPD. <br><linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext> additionally increases Attack SPD by <style=\"accent-gn\">5%</style>."
+  },
+  "3005930": {
+    "Id": 3005930,
+    "Description": "<linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext> additionally increases Casting SPD by <style=\"accent-gn\">15%</style>."
+  },
+  "3005940": {
+    "Id": 3005940,
+    "Description": "The number of DMG instances required to gain each stack of <linktext=1224><style=\"ItemQuality_5\">Charge</style></linktext> is reduced by <style=\"accent-gn\">7</style>."
+  },
+  "3005950": {
+    "Id": 3005950,
+    "Description": "Melee DMG count increases by <style=\"accent-gn\">7</style>.<br>While in combat, <linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext> is extended by <style=\"accent-gn\">0.5s</style> for every <style=\"accent-gn\">1s</style> spent standing still, up to <style=\"accent-gn\">5s</style> per <linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext>."
+  },
+  "3005960": {
+    "Id": 3005960,
+    "Description": "<linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext> effect ×<style=\"accent-gn\">1.5</style>."
+  },
+  "3005970": {
+    "Id": 3005970,
+    "Description": "<linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext> and <linktext=1224><style=\"ItemQuality_5\">Charge</style></linktext> effects ×<style=\"accent-gn\">1.35</style>."
+  },
+  "3005980": {
+    "Id": 3005980,
+    "Description": "After <linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext> ends, immediately gain <style=\"accent-gn\">2</style> stacks of <linktext=1224><style=\"ItemQuality_5\">Charge</style></linktext>."
+  },
+  "3005990": {
+    "Id": 3005990,
+    "Description": "Max <linktext=1224><style=\"ItemQuality_5\">Charge</style></linktext> stacks +<style=\"accent-gn\">2</style> (<linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext> requires <style=\"accent-gn\">2</style> additional Charge stacks). <br>The base ATK provided by <linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext> increases to <style=\"accent-gn\">480</style> (scaling to <style=\"accent-gn\">840</style> with Season Level)."
+  },
+  "3006000": {
+    "Id": 3006000,
+    "Description": "Each stack of <linktext=1224><style=\"ItemQuality_5\">Charge</style></linktext> additionally grants <style=\"accent-gn\">1.6%</style> Oath DMG. <br><linktext=1225><style=\"ItemQuality_5\">Burst</style></linktext> additionally grants <style=\"accent-gn\">10%</style> Oath DMG."
+  },
+  "3006100": {
+    "Id": 3006100,
+    "Description": "Casting a Basic Attack, Special Attack, Expertise Skill, or Ultimate Skill grants <style=\"accent-gn\">1</style> stack of <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> for that skill type. <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> effects granted by the four skill types stack and have independent timers. <br><br>Stat Symphony: Whichever is highest among your Crit%, Luck%, Haste%, and Mastery% is increased by <style=\"accent-gn\">1.5%</style> for <style=\"accent-gn\">5s</style>."
+  },
+  "3006110": {
+    "Id": 3006110,
+    "Description": "Each stack of <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> additionally grants <style=\"accent-gn\">1.12%</style> ATK."
+  },
+  "3006120": {
+    "Id": 3006120,
+    "Description": "Each stack of <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> additionally grants <style=\"accent-gn\">1%</style> Attack SPD."
+  },
+  "3006130": {
+    "Id": 3006130,
+    "Description": "<linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> gained after casting a Basic Attack lasts <style=\"accent-gn\">5s</style> longer."
+  },
+  "3006140": {
+    "Id": 3006140,
+    "Description": "<linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> gained after casting an Ultimate Skill lasts <style=\"accent-gn\">8s</style> longer."
+  },
+  "3006150": {
+    "Id": 3006150,
+    "Description": "When <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> loses a stack, there is a <style=\"accent-gn\">35%</style> chance to refund that stack. (If this does not trigger, the chance increases by <style=\"accent-gn\">35%</style> next time; resets after triggering)."
+  },
+  "3006160": {
+    "Id": 3006160,
+    "Description": "The <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> effect granted by Basic Attacks is multiplied by <style=\"accent-gn\">1.6</style>."
+  },
+  "3006170": {
+    "Id": 3006170,
+    "Description": "The <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> effect granted by Ultimate Skills is multiplied by <style=\"accent-gn\">2</style>."
+  },
+  "3006180": {
+    "Id": 3006180,
+    "Description": "Casting a non-Basic Attack skill different from the previously cast skill grants an additional stack of <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext>. Casting the same skill again removes that stack."
+  },
+  "3006190": {
+    "Id": 3006190,
+    "Description": "After maintaining <style=\"accent-gn\">3</style> stacks of <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> for <style=\"accent-gn\">5s</style>, Perfect Symphony activates. The buff effect of <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> is multiplied by <style=\"accent-gn\">2</style> for <style=\"accent-gn\">10s</style>, after which all stacks disappear."
+  },
+  "3006200": {
+    "Id": 3006200,
+    "Description": "When <linktext=1226><style=\"ItemQuality_5\">Stat Symphony</style></linktext> has <style=\"accent-gn\">3</style> stacks, it also grants <style=\"accent-gn\">20%</style> Oath DMG."
+  },
+  "3002410": {
+    "Id": 3002410,
+    "Description": "Casting a DMG-type Expertise Skill summons <linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext>, up to once every <style=\"accent-gn\">7</style>s. <br>Each summon of <linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> increases the number of <linktext=1227><style=\"ItemQuality_5\">Phantom Arrows</style></linktext> summoned the next time by <style=\"accent-gn\">1</style>, up to a maximum of <style=\"accent-gn\">4</style>. <br><style=\"accent-gn\">Each</style> use of Special Attack reduces the internal CD of <linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> by <style=\"accent-gn\">0.6</style>s. If no <linktext=1227><style=\"ItemQuality_5\">Phantom Arrows</style></linktext> are triggered for <style=\"accent-gn\">60</style>s, the accumulated count resets. <br><br>Phantom Arrow: Deals <style=\"accent-gn\">500%</style> ATK as adaptive DMG to enemy targets within <style=\"accent-gn\">3</style>m."
+  },
+  "3002490": {
+    "Id": 3002490,
+    "Description": "<linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext>'s Oath DMG increases by <style=\"accent-gn\">1%</style> for every <style=\"accent-gn\">1%</style> Mastery, but it cannot Crit."
+  },
+  "3002500": {
+    "Id": 3002500,
+    "Description": "<linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext>'s Crit Rate is doubled, and each <style=\"accent-gn\">1%</style> Crit also grants <style=\"accent-gn\">1%</style> Crit DMG."
+  },
+  "3002420": {
+    "Id": 3002420,
+    "Description": "Using Special Attack now reduces the CD of <linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> by <style=\"accent-gn\">0.9</style>s."
+  },
+  "3002510": {
+    "Id": 3002510,
+    "Description": "<linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext>'s CD becomes <style=\"accent-gn\">10s</style>, but each cast summons <style=\"accent-gn\">twice</style> as many arrows."
+  },
+  "3002520": {
+    "Id": 3002520,
+    "Description": "Each <linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> trigger increases Expertise Skill Oath DMG by <style=\"accent-gn\">20%</style> for <style=\"accent-gn\">6s</style>."
+  },
+  "3002530": {
+    "Id": 3002530,
+    "Description": "Each <linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> trigger increases Oath DMG by <style=\"accent-gn\">10%</style> for <style=\"accent-gn\">6s</style>."
+  },
+  "3002470": {
+    "Id": 3002470,
+    "Description": "<linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> nullifies Defense (both Armor and Resistance)."
+  },
+  "3002450": {
+    "Id": 3002450,
+    "Description": "Increases <linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> max stack count by <style=\"accent-gn\">1</style>."
+  },
+  "3002540": {
+    "Id": 3002540,
+    "Description": "After each <linktext=1227><style=\"ItemQuality_5\">Phantom Arrow</style></linktext> trigger, Expertise Skill's Final DMG is increased for <style=\"accent-gn\">6s</style> based on the number of <linktext=1227><style=\"ItemQuality_5\">Phantom Arrows</style></linktext> summoned by that trigger: base increase <style=\"accent-gn\">12%</style>, plus <style=\"accent-gn\">0.8%</style> per additional arrow summoned."
+  },
+  "3210250": {
+    "Id": 3210250,
+    "Description": "When casting an Expertise Skill, the next Basic Attack's Crit DMG increases by <style=\"accent-gn\"></style><style=\"accent-gn\"> for {*Decision.unmarkpercent(1)*}10s</style>, stacking up to <style=\"accent-gn\">8</style> times; all stacks are removed when triggered."
+  },
+  "3210260": {
+    "Id": 3210260,
+    "Description": "When a healing effect triggers a Lucky Strike, Sunfire's Blessing triggers (CD: <style=\"accent-gn\">0.1s</style>): Increases Lucky Strike Multiplier by <style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>, lasts <style=\"accent-gn\">10s</style>, and stacks up to <style=\"accent-gn\">3</style> times. <br>When a damaging effect triggers a Lucky Strike, Moonstrike's Curse triggers (CD: <style=\"accent-gn\">0.1s</style>): Deals 1 instance of <style=\"magic\">Magic DMG</style> equal to <style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style> of ATK. This damage counts as a Luck effect and is guaranteed to Crit. Its Crit multiplier is fixed at <style=\"accent-gn\">× (100% + {*Decision.unmarkpercent(3)*})</style> and is unaffected by the Crit DMG stat."
+  },
+  "3210270": {
+    "Id": 3210270,
+    "Description": "Every <style=\"accent-gn\">{*Decision.unmarknormal(1)*}</style> Haste (requirement changes each season) grants an additional <style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style> Haste, up to <style=\"accent-gn\">{*Decision.unmarkpercent(3)*}</style>."
+  },
+  "3210280": {
+    "Id": 3210280,
+    "Description": "Every <style=\"accent-gn\">{*Decision.unmarknormal(1)*}</style> Mastery (requirement changes each season) grants an additional <style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style> Mastery, up to <style=\"accent-gn\">{*Decision.unmarkpercent(3)*}</style>."
+  },
+  "3210290": {
+    "Id": 3210290,
+    "Description": "While in combat, you deal 1 instance of AoE <style=\"physical\">Attack DMG</style> equal to <style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style> of ATK to nearby targets every <style=\"accent-gn\">2s</style>. Each time you Block, this damage increases by <style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>, stacking up to <style=\"accent-gn\">10</style> times for <style=\"accent-gn\">10s</style>."
+  },
+  "3210300": {
+    "Id": 3210300,
+    "Description": "Whenever you cast a Shield-type Class Skill, deal 1 instance of AoE <style=\"physical\">Attack DMG</style> equal to <style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style> of ATK to nearby targets (CD: <style=\"accent-gn\">1s</style>). Targets hit deal <style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style> less DMG to you for <style=\"accent-gn\">5s</style>."
+  },
+  "3210310": {
+    "Id": 3210310,
+    "Description": "DMG taken from within <style=\"accent-gn\">5</style>m is reduced by <style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3210320": {
+    "Id": 3210320,
+    "Description": "Casting Class Skills reduces the current Resonance Skill's active-effect CD by <style=\"accent-gn\">{*Decision.unmarktime(1)*}</style>."
+  },
+  "3210330": {
+    "Id": 3210330,
+    "Description": "Casting Class Skills adds <style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style> charge to the current Resonance Skill's active effect."
+  },
+  "3210340": {
+    "Id": 3210340,
+    "Description": "Casting SPD +<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style><br> Attack SPD +<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>"
+  },
+  "3050601": {
+    "Id": 3050601,
+    "Description": "\"Judgment Cut\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050602": {
+    "Id": 3050602,
+    "Description": "\"Iaido Slash\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050603": {
+    "Id": 3050603,
+    "Description": "\"Moonstrike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050604": {
+    "Id": 3050604,
+    "Description": "\"Oblivion Combo\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050605": {
+    "Id": 3050605,
+    "Description": "\"Flash Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050606": {
+    "Id": 3050606,
+    "Description": "\"Raijin Dash\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050607": {
+    "Id": 3050607,
+    "Description": "\"Overdrive\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050608": {
+    "Id": 3050608,
+    "Description": "\"Scythe Wheel, Moonblade\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050609": {
+    "Id": 3050609,
+    "Description": "\"Thundercut\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050610": {
+    "Id": 3050610,
+    "Description": "\"Stormflash\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050611": {
+    "Id": 3050611,
+    "Description": "\"Dracoflash\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050612": {
+    "Id": 3050612,
+    "Description": "\"Phantom Slash\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050613": {
+    "Id": 3050613,
+    "Description": "\"Thunder Cut\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050614": {
+    "Id": 3050614,
+    "Description": "\"Thundercleave\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050615": {
+    "Id": 3050615,
+    "Description": "\"Storm Scythe\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050616": {
+    "Id": 3050616,
+    "Description": "\"Divine Sickle\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050617": {
+    "Id": 3050617,
+    "Description": "\"Chaos Breaker\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050618": {
+    "Id": 3050618,
+    "Description": "Stormblade's \"Lucky Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050619": {
+    "Id": 3050619,
+    "Description": "\"Bladewind Domain\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050620": {
+    "Id": 3050620,
+    "Description": "\"Thunderstrike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051601": {
+    "Id": 3051601,
+    "Description": "\"Windborne Grace\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051602": {
+    "Id": 3051602,
+    "Description": "\"Gale Thrust\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051603": {
+    "Id": 3051603,
+    "Description": "\"Skyfall\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051604": {
+    "Id": 3051604,
+    "Description": "\"Typhoon Cleave\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051605": {
+    "Id": 3051605,
+    "Description": "\"Spiral Thrust\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051606": {
+    "Id": 3051606,
+    "Description": "\"Breach Pursuit\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051607": {
+    "Id": 3051607,
+    "Description": "\"Falcon Toss\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051608": {
+    "Id": 3051608,
+    "Description": "\"Instant Edge\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>. (Excludes \"Instant Edge Combo\")"
+  },
+  "3051609": {
+    "Id": 3051609,
+    "Description": "\"Valor Cyclone\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051610": {
+    "Id": 3051610,
+    "Description": "\"Sharp Impact, Typhoon: Sharp Impact\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051611": {
+    "Id": 3051611,
+    "Description": "\"Vortex Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>.<br>Upon entering combat, this skill evolves into Vortex Strike."
+  },
+  "3051612": {
+    "Id": 3051612,
+    "Description": "\"Drake Cannon\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051613": {
+    "Id": 3051613,
+    "Description": "\"Wind Spiral\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051614": {
+    "Id": 3051614,
+    "Description": "\"Swift Blade\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051615": {
+    "Id": 3051615,
+    "Description": "\"Instant Edge Combo\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051616": {
+    "Id": 3051616,
+    "Description": "\"Tornado\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051617": {
+    "Id": 3051617,
+    "Description": "\"Azure Sever\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051618": {
+    "Id": 3051618,
+    "Description": "\"Wind Rift Diffusion\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051619": {
+    "Id": 3051619,
+    "Description": "\"Rend\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3051620": {
+    "Id": 3051620,
+    "Description": "Wind Knight's \"Lucky Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052601": {
+    "Id": 3052601,
+    "Description": "\"Raincall Surge\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052602": {
+    "Id": 3052602,
+    "Description": "\"Frost Lance\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052603": {
+    "Id": 3052603,
+    "Description": "\"Frostbeam\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052604": {
+    "Id": 3052604,
+    "Description": "\"Glacier Hymn\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052605": {
+    "Id": 3052605,
+    "Description": "\"Meteor Storm\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052606": {
+    "Id": 3052606,
+    "Description": "\"Crystal Veil\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052607": {
+    "Id": 3052607,
+    "Description": "\"Blizzard\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052608": {
+    "Id": 3052608,
+    "Description": "\"Maelstrom\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052609": {
+    "Id": 3052609,
+    "Description": "\"Frozen Gale\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052610": {
+    "Id": 3052610,
+    "Description": "\"Tidepool\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052611": {
+    "Id": 3052611,
+    "Description": "\"Frost Shelter\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052612": {
+    "Id": 3052612,
+    "Description": "\"Ice Arrow\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052613": {
+    "Id": 3052613,
+    "Description": "\"Piercing Ice Lance\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052614": {
+    "Id": 3052614,
+    "Description": "\"Frost Comet\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052615": {
+    "Id": 3052615,
+    "Description": "\"Frost Explosion\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052616": {
+    "Id": 3052616,
+    "Description": "\"Cold Pulse\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052617": {
+    "Id": 3052617,
+    "Description": "\"Icy Bolt\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052618": {
+    "Id": 3052618,
+    "Description": "\"Frost Shock\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3052619": {
+    "Id": 3052619,
+    "Description": "Frost Mage's \"Lucky Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053601": {
+    "Id": 3053601,
+    "Description": "\"Bullseye\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053602": {
+    "Id": 3053602,
+    "Description": "\"Storm Arrow\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053603": {
+    "Id": 3053603,
+    "Description": "\"Double Arrow, Quadraflare\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053604": {
+    "Id": 3053604,
+    "Description": "\"Luminary Bolt, Photon Explosion\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053605": {
+    "Id": 3053605,
+    "Description": "\"Torrent Volley, Lumi Torrent\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053606": {
+    "Id": 3053606,
+    "Description": "\"Arrow Rain\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053607": {
+    "Id": 3053607,
+    "Description": "\"Powerdraw\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053608": {
+    "Id": 3053608,
+    "Description": "\"Radiance Barrage\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053609": {
+    "Id": 3053609,
+    "Description": "\"Deter Shot\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053610": {
+    "Id": 3053610,
+    "Description": "\"Blast Shot\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053611": {
+    "Id": 3053611,
+    "Description": "\"Wildcall (Wild Wolf Pounce, Falcon Dive)\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053612": {
+    "Id": 3053612,
+    "Description": "\"Wild Wolf Bite\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053613": {
+    "Id": 3053613,
+    "Description": "\"Wild Wolf - Tail Sweep\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053614": {
+    "Id": 3053614,
+    "Description": "Marksman's \"Lucky Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053615": {
+    "Id": 3053615,
+    "Description": "\"Lightseeker Arrow\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>; <br>Crit DMG is always calculated at 150%."
+  },
+  "3053616": {
+    "Id": 3053616,
+    "Description": "\"Bleed\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053617": {
+    "Id": 3053617,
+    "Description": "\"Falcon Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053618": {
+    "Id": 3053618,
+    "Description": "\"Implosion\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053619": {
+    "Id": 3053619,
+    "Description": "\"Phantom Falcon\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3053620": {
+    "Id": 3053620,
+    "Description": "\"Celestial Eagle\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060601": {
+    "Id": 3060601,
+    "Description": "\"Blazing Swing\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060602": {
+    "Id": 3060602,
+    "Description": "\"Blazing Ascension\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060603": {
+    "Id": 3060603,
+    "Description": "\"Frenzied Slash\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060604": {
+    "Id": 3060604,
+    "Description": "\"Cinderfall! Hellfire Shiranui\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060605": {
+    "Id": 3060605,
+    "Description": "\"Blazing Assault\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060606": {
+    "Id": 3060606,
+    "Description": "\"Rage Cleave\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060607": {
+    "Id": 3060607,
+    "Description": "\"Axe Wind\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060608": {
+    "Id": 3060608,
+    "Description": "\"Wildfire Dance\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060609": {
+    "Id": 3060609,
+    "Description": "\"Unbound Meteor\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060610": {
+    "Id": 3060610,
+    "Description": "\"Flowing Splendor Slash\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060611": {
+    "Id": 3060611,
+    "Description": "\"Formless Flame Slash\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060612": {
+    "Id": 3060612,
+    "Description": "\"Hellfire Meteor\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060613": {
+    "Id": 3060613,
+    "Description": "\"Burn\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060614": {
+    "Id": 3060614,
+    "Description": "\"Explosion\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060615": {
+    "Id": 3060615,
+    "Description": "\"Wildfire Dance: Final Slash\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060616": {
+    "Id": 3060616,
+    "Description": "\"Soaring Flame\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060617": {
+    "Id": 3060617,
+    "Description": "\"Great Crimson Lotus\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060618": {
+    "Id": 3060618,
+    "Description": "\"Falling Hellfire\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3060619": {
+    "Id": 3060619,
+    "Description": "Twin Striker's \"Lucky Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054601": {
+    "Id": 3054601,
+    "Description": "\"Blade of Justice\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054602": {
+    "Id": 3054602,
+    "Description": "\"Valor Bash\" grants an additional <style=\"accent-gn\">+{*Decision.unmarknormal(1)*}</style> Defense per stack."
+  },
+  "3054603": {
+    "Id": 3054603,
+    "Description": "\"Vanguard Strike, Vanguard Hunt\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054604": {
+    "Id": 3054604,
+    "Description": "\"Radiant Infusion\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054605": {
+    "Id": 3054605,
+    "Description": "\"Judgment\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054606": {
+    "Id": 3054606,
+    "Description": "\"Reckoning\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054607": {
+    "Id": 3054607,
+    "Description": "\"Shield Toss\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054608": {
+    "Id": 3054608,
+    "Description": "\"Sacred Blade\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054609": {
+    "Id": 3054609,
+    "Description": "\"Radiance\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054610": {
+    "Id": 3054610,
+    "Description": "\"Aegis Ward\" grants an additional <style=\"accent-gn\">+{*Decision.unmarknormal(1)*}</style> Defense."
+  },
+  "3054611": {
+    "Id": 3054611,
+    "Description": "\"Zeal Crusade\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054612": {
+    "Id": 3054612,
+    "Description": "\"Divine Circle\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054613": {
+    "Id": 3054613,
+    "Description": "\"Inferno Reckon\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054614": {
+    "Id": 3054614,
+    "Description": "\"Scorching Judgment\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054615": {
+    "Id": 3054615,
+    "Description": "\"Condemn, Enhanced Condemn\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054616": {
+    "Id": 3054616,
+    "Description": "\"Radiant Impact\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054617": {
+    "Id": 3054617,
+    "Description": "Shield Knight's \"Lucky Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054618": {
+    "Id": 3054618,
+    "Description": "\"Divine Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054619": {
+    "Id": 3054619,
+    "Description": "\"Radiant Core\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3054620": {
+    "Id": 3054620,
+    "Description": "\"Zeal Crusade: Outward Burst\" DMG Multiplier <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055601": {
+    "Id": 3055601,
+    "Description": "\"Halberd's Edge\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055602": {
+    "Id": 3055602,
+    "Description": "\"Shield Bash, Shield Combo\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055603": {
+    "Id": 3055603,
+    "Description": "\"Countercrush\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055604": {
+    "Id": 3055604,
+    "Description": "\"Cracking Echo\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055605": {
+    "Id": 3055605,
+    "Description": "\"Star Shatter\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055606": {
+    "Id": 3055606,
+    "Description": "\"Sandshroud\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055607": {
+    "Id": 3055607,
+    "Description": "\"Stoneform\" grants an additional <style=\"accent-gn\">+{*Decision.unmarknormal(1)*}</style> Defense."
+  },
+  "3055608": {
+    "Id": 3055608,
+    "Description": "\"Sandgrip\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055609": {
+    "Id": 3055609,
+    "Description": "\"Brave Bastion\" grants an additional {*Decision.unmarknormal(1)*} Armor."
+  },
+  "3055610": {
+    "Id": 3055610,
+    "Description": "\"Granite Fury\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055611": {
+    "Id": 3055611,
+    "Description": "\"Rage Burst\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055612": {
+    "Id": 3055612,
+    "Description": "\"Sandward\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055613": {
+    "Id": 3055613,
+    "Description": "\"Rageblow\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055614": {
+    "Id": 3055614,
+    "Description": "\"Starfall\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055615": {
+    "Id": 3055615,
+    "Description": "\"Rupture\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055616": {
+    "Id": 3055616,
+    "Description": "\"Terra Sunder\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055617": {
+    "Id": 3055617,
+    "Description": "\"Stone Fist\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055618": {
+    "Id": 3055618,
+    "Description": "\"Countercrush\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055619": {
+    "Id": 3055619,
+    "Description": "\"Sand Crystal Shock\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3055620": {
+    "Id": 3055620,
+    "Description": "Heavy Guardian's \"Lucky Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056601": {
+    "Id": 3056601,
+    "Description": "\"Vines' Embrace\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056602": {
+    "Id": 3056602,
+    "Description": "\"Wild Bloom\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056603": {
+    "Id": 3056603,
+    "Description": "\"Life Bloom\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056604": {
+    "Id": 3056604,
+    "Description": "\"Divine Circle Bloom, Bloomheal\" Oath DMG and Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056605": {
+    "Id": 3056605,
+    "Description": "\"Feral Seed\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056606": {
+    "Id": 3056606,
+    "Description": "\"Nourish\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056607": {
+    "Id": 3056607,
+    "Description": "\"Regen Pulse\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056608": {
+    "Id": 3056608,
+    "Description": "\"Infusion\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056609": {
+    "Id": 3056609,
+    "Description": "\"Grove Wish\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056610": {
+    "Id": 3056610,
+    "Description": "\"Nature Shield\" Shield Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056611": {
+    "Id": 3056611,
+    "Description": "\"Blossom Charge\" Oath DMG and Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056612": {
+    "Id": 3056612,
+    "Description": "\"Stag Charge\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056613": {
+    "Id": 3056613,
+    "Description": "\"Healing Pulse\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056614": {
+    "Id": 3056614,
+    "Description": "\"Pulse Retrospect\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056615": {
+    "Id": 3056615,
+    "Description": "\"Wild Seed\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056616": {
+    "Id": 3056616,
+    "Description": "\"Nourishing Seed\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056617": {
+    "Id": 3056617,
+    "Description": "\"Healing Chain\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056618": {
+    "Id": 3056618,
+    "Description": "\"Thorn\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056619": {
+    "Id": 3056619,
+    "Description": "Verdant Oracle's \"Lucky Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3056620": {
+    "Id": 3056620,
+    "Description": "\"Natural Bloom\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057601": {
+    "Id": 3057601,
+    "Description": "\"String Strike, Resonant Strings\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057602": {
+    "Id": 3057602,
+    "Description": "\"Amplified Beat\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057603": {
+    "Id": 3057603,
+    "Description": "\"Healing Beat\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057604": {
+    "Id": 3057604,
+    "Description": "\"Rock the Stage, Infinite Rhapsody, Concert Circuit\" Oath DMG and Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057605": {
+    "Id": 3057605,
+    "Description": "\"Harmonic Anthem\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057606": {
+    "Id": 3057606,
+    "Description": "\"Rhapsody of Flame\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057607": {
+    "Id": 3057607,
+    "Description": "\"Heroic Melody\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057608": {
+    "Id": 3057608,
+    "Description": "\"Healing Melody\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057609": {
+    "Id": 3057609,
+    "Description": "\"Fivefold Crescendo\" Oath DMG and Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057610": {
+    "Id": 3057610,
+    "Description": "\"Passion Burst\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>. (Excludes \"Passion Fury\")"
+  },
+  "3057611": {
+    "Id": 3057611,
+    "Description": "\"Encore\" Oath DMG and Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057612": {
+    "Id": 3057612,
+    "Description": "\"Flame Note\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057613": {
+    "Id": 3057613,
+    "Description": "\"Flame's Rampage\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057614": {
+    "Id": 3057614,
+    "Description": "\"Fierce Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057615": {
+    "Id": 3057615,
+    "Description": "\"Passion Fury\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057616": {
+    "Id": 3057616,
+    "Description": "\"Sonic Surge\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057617": {
+    "Id": 3057617,
+    "Description": "\"Note\" Healing Strength <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057618": {
+    "Id": 3057618,
+    "Description": "Beat Performer's \"Lucky Strike\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057619": {
+    "Id": 3057619,
+    "Description": "\"Flame Shock\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3057620": {
+    "Id": 3057620,
+    "Description": "\"Scorching Impact\" Oath DMG <style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>."
+  },
+  "3050580": {
+    "Id": 3050580,
+    "Description": "Each time <style=\"accent-gn\">1</style> Thunder Sigil or <style=\"accent-gn\">20</style> Blade Intent is consumed, increases Oath DMG Reduction by <style=\"accent-gn\">2%</style> for <style=\"accent-gn\">5s</style>, stacking up to <style=\"accent-gn\">5</style> times."
+  },
+  "3050590": {
+    "Id": 3050590,
+    "Description": "During Volt Surge and Stormflash, increases Oath DMG Reduction by <style=\"accent-gn\">15%</style>."
+  },
+  "3051580": {
+    "Id": 3051580,
+    "Description": "During Chasing Step and Valor Cyclone, increases Oath DMG Reduction by <style=\"accent-gn\">10%</style>."
+  },
+  "3051590": {
+    "Id": 3051590,
+    "Description": "Within <style=\"accent-gn\">10s</style> after casting Typhoon Cleave (only the first hit applies), increases Oath DMG Reduction by <style=\"accent-gn\">15%</style>."
+  },
+  "3052580": {
+    "Id": 3052580,
+    "Description": "During Permafrost, increases Oath DMG Reduction by <style=\"accent-gn\">20%</style>."
+  },
+  "3052590": {
+    "Id": 3052590,
+    "Description": "When Frost Crystal or Ice Energy is consumed, gain <style=\"accent-gn\">1%</style> Oath DMG Reduction, stacking up to <style=\"accent-gn\">10</style> times for <style=\"accent-gn\">5s</style>."
+  },
+  "3053580": {
+    "Id": 3053580,
+    "Description": "While Photon Reforge is active, increases Oath DMG Reduction by <style=\"accent-gn\">10%</style>."
+  },
+  "3053590": {
+    "Id": 3053590,
+    "Description": "While Focus is active, increases Oath DMG Reduction by <style=\"accent-gn\">20%</style>."
+  },
+  "3060580": {
+    "Id": 3060580,
+    "Description": "Each stack of Infernal Combo grants <style=\"accent-gn\">2%</style> Oath DMG Reduction."
+  },
+  "3060590": {
+    "Id": 3060590,
+    "Description": "While Wasteland's End or Endless Hellfire is active, increases Oath DMG Reduction by <style=\"accent-gn\">15%</style>."
+  },
+  "3054580": {
+    "Id": 3054580,
+    "Description": "For each <style=\"accent-gn\">1</style> Lightforged Barrier, increases Oath DMG Reduction by <style=\"accent-gn\">0.8%</style>."
+  },
+  "3054590": {
+    "Id": 3054590,
+    "Description": "When Radiant Shield expires, increases Oath DMG Reduction by <style=\"accent-gn\">15%</style> for <style=\"accent-gn\">5s</style>."
+  },
+  "3055580": {
+    "Id": 3055580,
+    "Description": "While Enraged, increases Oath DMG Reduction by <style=\"accent-gn\">10%</style>."
+  },
+  "3055590": {
+    "Id": 3055590,
+    "Description": "For each <style=\"accent-gn\">50</style> Rage or <style=\"accent-gn\">1</style> Sand Crystal consumed, recover <style=\"accent-gn\">1%</style> of Max HP."
+  },
+  "3056580": {
+    "Id": 3056580,
+    "Description": "During Fast Growth or Nature Ward, increases Oath DMG Reduction by <style=\"accent-gn\">15%</style>."
+  },
+  "3056590": {
+    "Id": 3056590,
+    "Description": "Excess self-healing from Grove Wish and Regen Pulse converts into a shield that stacks up to <style=\"accent-gn\">10%</style> of Max HP and lasts <style=\"accent-gn\">5s</style>."
+  },
+  "3057580": {
+    "Id": 3057580,
+    "Description": "Within <style=\"accent-gn\">15s</style> after casting Encore or Center Stage, increases Oath DMG Reduction by <style=\"accent-gn\">10%</style>."
+  },
+  "3057590": {
+    "Id": 3057590,
+    "Description": "Excess self-healing from Heroic Melody and Healing Melody converts into a shield that stacks up to <style=\"accent-gn\">10%</style> of Max HP and lasts <style=\"accent-gn\">5s</style>."
+  },
+  "3059280": {
+    "Id": 3059280,
+    "Description": "For enemies within <style=\"accent-gn\">5m</style>, increases Oath DMG Reduction by <style=\"accent-gn\">4%</style>. The closer the enemy, the stronger the effect, reaching the maximum of <style=\"accent-gn\">8%</style> at <style=\"accent-gn\">1</style>m."
+  },
+  "3059290": {
+    "Id": 3059290,
+    "Description": "For enemies beyond <style=\"accent-gn\">5m</style>, increases Oath DMG Reduction by <style=\"accent-gn\">4%</style>. The farther the enemy, the stronger the effect, reaching the maximum of <style=\"accent-gn\">8%</style> at <style=\"accent-gn\">9</style>m."
+  },
+  "3059300": {
+    "Id": 3059300,
+    "Description": "When HP falls below <style=\"accent-gn\">30%</style>, gain <style=\"accent-gn\">30%</style> DMG Reduction for <style=\"accent-gn\">3s</style>. CD: <style=\"accent-gn\">45s</style>."
+  },
+  "3059310": {
+    "Id": 3059310,
+    "Description": "When taking damage, gain <style=\"accent-gn\">1.2%</style> Oath DMG Reduction for <style=\"accent-gn\">5s</style>, stacking up to <style=\"accent-gn\">10</style> times."
+  },
+  "3050460": {
+    "Id": 3050460,
+    "Description": "Volt Surge charge count <style=\"accent-gn\">+1</style>."
+  },
+  "3050470": {
+    "Id": 3050470,
+    "Description": "Casting Thunder Cut also unleashes 1 additional Thunder Cut blade wave."
+  },
+  "3050480": {
+    "Id": 3050480,
+    "Description": "Casting Iaido Slash reduces the Ultimate Skill's remaining CD by <style=\"accent-gn\">0.5s</style>. When Overdrive deals DMG to the primary target, the Ultimate Skill's remaining CD is reduced by <style=\"accent-gn\">1.5s</style>."
+  },
+  "3050490": {
+    "Id": 3050490,
+    "Description": "When gaining Thundrage, there is a <style=\"accent-gn\">40%</style> chance to gain 1 additional stack. If it does not trigger, the chance increases by <style=\"accent-gn\">40%</style> on the next attempt. The bonus resets after triggering."
+  },
+  "3050500": {
+    "Id": 3050500,
+    "Description": "Moonblade's Luck Chance from any source increases by <style=\"accent-gn\">50%</style>."
+  },
+  "3050510": {
+    "Id": 3050510,
+    "Description": "Moonstrike hit count <style=\"accent-gn\">+3</style>."
+  },
+  "3050520": {
+    "Id": 3050520,
+    "Description": "Stormflash duration <style=\"accent-gn\">+5s</style>."
+  },
+  "3050530": {
+    "Id": 3050530,
+    "Description": "For every <style=\"accent-gn\">10</style> hits Moonblade deals to the primary target, it triggers <style=\"accent-gn\">1</style> Storm Scythe in the direction you are facing."
+  },
+  "3051460": {
+    "Id": 3051460,
+    "Description": "Gale Thrust costs <style=\"accent-gn\">60%</style> more Courage. After casting Gale Thrust, increases Armor Penetration by<style=\"accent-gn\">25%</style> for <style=\"accent-gn\">5s</style>."
+  },
+  "3051470": {
+    "Id": 3051470,
+    "Description": "When Courage is below <style=\"accent-gn\">50%</style>, increases Oath DMG from Drake Cannon and Vortex Strike by <style=\"accent-gn\">20%</style>."
+  },
+  "3051480": {
+    "Id": 3051480,
+    "Description": "When Courage is above <style=\"accent-gn\">50%</style>, increases Oath DMG from Valor Cyclone by <style=\"accent-gn\">20%</style>."
+  },
+  "3051490": {
+    "Id": 3051490,
+    "Description": "Galeform duration <style=\"accent-gn\">+5s</style>."
+  },
+  "3051560": {
+    "Id": 3051560,
+    "Description": "Upon gaining <style=\"accent-gn\">5</style> Chasing Step stacks, you summon a giant tornado that deals Attack DMG equal to <style=\"accent-gn\">900%</style> ATK in a single hit."
+  },
+  "3051510": {
+    "Id": 3051510,
+    "Description": "While Chasing Step is active, the Luck Chance of Instant Edge, Instant Edge Combo, and Sharp Impact increases by <style=\"accent-gn\">100%</style>, regardless of source."
+  },
+  "3051520": {
+    "Id": 3051520,
+    "Description": "Chasing Step stack <style=\"accent-gn\">+1</style>."
+  },
+  "3051530": {
+    "Id": 3051530,
+    "Description": "Skyfall's Courage cost is reduced by <style=\"accent-gn\">50%</style>, and its Crit Rate is doubled."
+  },
+  "3052460": {
+    "Id": 3052460,
+    "Description": "While Permafrost is active, Crit <style=\"accent-gn\">-5%</style>, Luck <style=\"accent-gn\">+8%</style>, and Oath DMG from Lucky Strike <style=\"accent-gn\">+35%</style>."
+  },
+  "3052470": {
+    "Id": 3052470,
+    "Description": "During Endless Cold, increases Permafrost CD Speed by <style=\"accent-gn\">30%</style>."
+  },
+  "3052480": {
+    "Id": 3052480,
+    "Description": "When Frost Lance both Crits and triggers a Lucky Strike, gain 1 stack of Phantom Ice. At <style=\"accent-gn\">15</style> stacks, Crystal Veil is cast forward."
+  },
+  "3052490": {
+    "Id": 3052490,
+    "Description": "During Permafrost, Frost Crystal cap <style=\"accent-gn\">+2</style>, Frost Lance Oath DMG <style=\"accent-gn\">+10%</style>."
+  },
+  "3052520": {
+    "Id": 3052520,
+    "Description": "For every <style=\"accent-gn\">15</style> hits dealt by Frostbeam to the primary target, the Frost Crystal cap increases by <style=\"accent-gn\">3</style> for <style=\"accent-gn\">15s</style>. During this time, Frostbeam's Ice Energy cost is reduced by <style=\"accent-gn\">2.5%</style> for each <style=\"accent-gn\">1</style> Frost Crystal you hold."
+  },
+  "3052530": {
+    "Id": 3052530,
+    "Description": "While the Cold Wind Convergence Talent is active, increases Oath DMG from Ice Arrow and Frost Explosion by <style=\"accent-gn\">30%</style>."
+  },
+  "3052540": {
+    "Id": 3052540,
+    "Description": "After Frozen Gale hits a target, gain Permafrost for <style=\"accent-gn\">2s</style> plus 1s per target hit, up to <style=\"accent-gn\">10s</style>. This duration cannot be extended by Talents."
+  },
+  "3052550": {
+    "Id": 3052550,
+    "Description": "Maelstrom Energy Recovery is doubled. After casting Maelstrom, doubles the fixed Luck value during Frostbeam for <style=\"accent-gn\">15s</style> and increase Lucky Strike Multiplier by <style=\"accent-gn\">20%</style>."
+  },
+  "3053460": {
+    "Id": 3053460,
+    "Description": "When casting an Ultimate Skill, you summon a Wild Wolf to fight alongside you for <style=\"accent-gn\">15s</style>."
+  },
+  "3053470": {
+    "Id": 3053470,
+    "Description": "Storm Arrow and Lightseeker Arrow are guaranteed to Crit."
+  },
+  "3053480": {
+    "Id": 3053480,
+    "Description": "When Photon Energy is full, increases Photon Energy cap by <style=\"accent-gn\">40</style> for <style=\"accent-gn\">10s</style>."
+  },
+  "3053490": {
+    "Id": 3053490,
+    "Description": "During Focus, increases Companion Attack SPD by <style=\"accent-gn\">20%</style>."
+  },
+  "3053500": {
+    "Id": 3053500,
+    "Description": "During Focus, Powerdraw becomes a double shot."
+  },
+  "3053510": {
+    "Id": 3053510,
+    "Description": "When casting an Ultimate Skill, additionally summon a Falcon to fight alongside you for <style=\"accent-gn\">10s</style>."
+  },
+  "3053520": {
+    "Id": 3053520,
+    "Description": "After Explosive Arrow detonates, it restores <style=\"accent-gn\">5</style> Photon Energy per stack."
+  },
+  "3053530": {
+    "Id": 3053530,
+    "Description": "After casting Blast Shot, Falcon skills (Falcon Strike, Falcon Lightning Strike, Phantom Falcon) deal <style=\"accent-gn\">20%</style> more Oath DMG for <style=\"accent-gn\">10s</style>."
+  },
+  "3060460": {
+    "Id": 3060460,
+    "Description": "Formless Flame Slash always Crits, and Crit DMG is always calculated at <style=\"accent-gn\">180%</style>."
+  },
+  "3060470": {
+    "Id": 3060470,
+    "Description": "Hellfire Meteor can trigger Formless Flame Slash."
+  },
+  "3060480": {
+    "Id": 3060480,
+    "Description": "When Blazing Assault deals DMG to the primary target, it triggers Hellfire Meteor."
+  },
+  "3060490": {
+    "Id": 3060490,
+    "Description": "During Wasteland's End, the trigger chances of Formless Flame Slash's 1st, 2nd, and 3rd stages each increase by <style=\"accent-gn\">20%</style>, while its final DMG decreases by <style=\"accent-gn\">40%</style>."
+  },
+  "3060500": {
+    "Id": 3060500,
+    "Description": "Each time Wildfire Dance Crits, it contributes <style=\"accent-gn\">6</style> times as much Final DMG bonus to the Final Slash."
+  },
+  "3060510": {
+    "Id": 3060510,
+    "Description": "During Endless Hellfire, you gain Crimson Soul Gauge <style=\"accent-gn\">50%</style> faster."
+  },
+  "3060520": {
+    "Id": 3060520,
+    "Description": "Casting Flowing Splendor Slash triggers Great Crimson Lotus. Great Crimson Lotus deals <style=\"accent-gn\">5%</style> more damage for each additional target hit (up to <style=\"accent-gn\">50%</style>)."
+  },
+  "3060530": {
+    "Id": 3060530,
+    "Description": "The Ultimate Skill's remaining CD is reduced by <style=\"accent-gn\">2s</style> every <style=\"accent-gn\">3</style> triggers of Great Crimson Lotus."
+  },
+  "3054460": {
+    "Id": 3054460,
+    "Description": "Aegis Ward duration <style=\"accent-gn\">+5s</style>."
+  },
+  "3054470": {
+    "Id": 3054470,
+    "Description": "Valor Bash has a <style=\"accent-gn\">15%</style> chance to trigger Shield Toss when it deals Crit DMG to the primary target."
+  },
+  "3054480": {
+    "Id": 3054480,
+    "Description": "Judgment Pursuit I can Crit, with Crit DMG fixed at <style=\"accent-gn\">150%</style>."
+  },
+  "3054490": {
+    "Id": 3054490,
+    "Description": "For each <style=\"accent-gn\">1</style> shield thrown, the Ultimate Skill's remaining CD is reduced by <style=\"accent-gn\">0.5s</style>."
+  },
+  "3054500": {
+    "Id": 3054500,
+    "Description": "For every <style=\"accent-gn\">10</style> hits dealt by Vanguard Strike or Judgment to the primary target, Sacred Blade triggers."
+  },
+  "3054510": {
+    "Id": 3054510,
+    "Description": "Radiance charges <style=\"accent-gn\">+1</style>."
+  },
+  "3054520": {
+    "Id": 3054520,
+    "Description": "Divine Arc Slash triggers every <style=\"accent-gn\">5</style> casts of Vanguard Hunt, dealing fixed DMG to enemy targets equal to <style=\"accent-gn\">30%</style> of your current HP."
+  },
+  "3054530": {
+    "Id": 3054530,
+    "Description": "Increases Divine Circle range by <style=\"accent-gn\">100%</style>, and when healing, it additionally restores <style=\"accent-gn\">5%</style> of the healed target's Max HP."
+  },
+  "3055460": {
+    "Id": 3055460,
+    "Description": "Terra Sunder deals additional DMG equal to <style=\"accent-gn\">15%</style> of Shield, but the additional DMG cannot exceed <style=\"accent-gn\">30%</style> of Max HP, and it can no longer Crit."
+  },
+  "3055470": {
+    "Id": 3055470,
+    "Description": "Casting Starfall restores <style=\"accent-gn\">2</style> stacks of Star Shatter."
+  },
+  "3055480": {
+    "Id": 3055480,
+    "Description": "Casting Terra Sunder reduces the Ultimate Skill's CD by <style=\"accent-gn\">2s</style>."
+  },
+  "3055490": {
+    "Id": 3055490,
+    "Description": "During Sandshroud, increases Attack SPD by <style=\"accent-gn\">10%</style>."
+  },
+  "3055500": {
+    "Id": 3055500,
+    "Description": "Countercrush can trigger Lucky Strike."
+  },
+  "3055510": {
+    "Id": 3055510,
+    "Description": "When Countercrush triggers, increases Lucky Strike Multiplier by <style=\"accent-gn\">5%</style> for <style=\"accent-gn\">5s</style>, stacking up to <style=\"accent-gn\">15</style> times."
+  },
+  "3055520": {
+    "Id": 3055520,
+    "Description": "After casting an Ultimate Skill, your next Stone Fist calls down a giant rock, dealing Attack DMG equal to <style=\"accent-gn\">2000%</style> of ATK. This damage counts as a Luck effect."
+  },
+  "3055530": {
+    "Id": 3055530,
+    "Description": "Casting Granite Fury restores <style=\"accent-gn\">5%</style> of your HP."
+  },
+  "3056030": {
+    "Id": 3056030,
+    "Description": "Regen Pulse becomes an instant cast. For <style=\"accent-gn\">15s</style> after triggering Regen Pulse, Crit <style=\"accent-gn\">+10%</style> and Crit DMG <style=\"accent-gn\">+30%</style>."
+  },
+  "3056470": {
+    "Id": 3056470,
+    "Description": "Doubles the duration of Nature Ward. While Nature Ward is active, the Oath DMG from Stag Charge is increased (Ratio = Luck%), and it always Crits."
+  },
+  "3056480": {
+    "Id": 3056480,
+    "Description": "While in Healing Rest, you automatically gain 1 Regen Bud every <style=\"accent-gn\">5s</style>. <br>When a Regen Bud is gained, increases Oath DMG by <style=\"accent-gn\">8%</style> for <style=\"accent-gn\">5s</style>."
+  },
+  "3056490": {
+    "Id": 3056490,
+    "Description": "When a Regen Bud is gained, the Ultimate Skill's CD is reduced by <style=\"accent-gn\">0.4s</style>, up to <style=\"accent-gn\">10s</style> per CD."
+  },
+  "3056500": {
+    "Id": 3056500,
+    "Description": "After casting Blossom Charge, the next Grove Wish heal is increased by <style=\"accent-gn\">100%</style>."
+  },
+  "3056510": {
+    "Id": 3056510,
+    "Description": "Every <style=\"accent-gn\">5</style> casts of Life Bloom generates one Flower Stalk, which is always Moonlight Solace."
+  },
+  "3056520": {
+    "Id": 3056520,
+    "Description": "Casting Blossom Charge grants Super Armor for <style=\"accent-gn\">5s</style> and increases control duration by <style=\"accent-gn\">1.5s</style>."
+  },
+  "3056530": {
+    "Id": 3056530,
+    "Description": "Each time Nourish is applied to you, Fast Growth's CD is reduced by <style=\"accent-gn\">0.3s</style>."
+  },
+  "3057460": {
+    "Id": 3057460,
+    "Description": "Casting Amplified Beat can also trigger <style=\"accent-gn\">1</style> Encore String, using the same trigger chance as Encore."
+  },
+  "3057470": {
+    "Id": 3057470,
+    "Description": "Harmonic Anthem charges <style=\"accent-gn\">50%</style> faster. <br>For <style=\"accent-gn\">15s</style> after casting Center Stage, Harmonic Anthem charges <style=\"accent-gn\">100%</style> faster and always reaches full charge. At the same time, the Final DMG of Scorching Impact increases by <style=\"accent-gn\">35%</style> and the Final DMG of Lucky Strike increases by <style=\"accent-gn\">6%</style>."
+  },
+  "3057480": {
+    "Id": 3057480,
+    "Description": "Heroic Melody CD is reduced by <style=\"accent-gn\">50%</style>."
+  },
+  "3057490": {
+    "Id": 3057490,
+    "Description": "Fierce Strike's Attack SPD increases by <style=\"accent-gn\">50%</style>, and casting Fierce Strike extends the buff granted by the next Finale Command by <style=\"accent-gn\">1.5s</style>."
+  },
+  "3057500": {
+    "Id": 3057500,
+    "Description": "After casting Fivefold Crescendo, Encore duration on you and your allies is extended by <style=\"accent-gn\">3s</style>."
+  },
+  "3057510": {
+    "Id": 3057510,
+    "Description": "Casting Healing Beat causes targets affected by Encore to immediately trigger Encore Damage Strings (does not trigger on self; an affected target can trigger this at most <style=\"accent-gn\">once</style> every <style=\"accent-gn\">0.3</style>s)."
+  },
+  "3057520": {
+    "Id": 3057520,
+    "Description": "Casting an Ultimate Skill summons a speaker for <style=\"accent-gn\">15s</style>."
+  },
+  "3057530": {
+    "Id": 3057530,
+    "Description": "Every <style=\"accent-gn\">5s</style>, the next Performance Passion you spend is refunded, restoring <style=\"accent-gn\">1</style> Performance Passion."
+  },
+  "3050540": {
+    "Id": 3050540,
+    "Description": "Each time Thunder Cut is gained, the next Flash Strike or Raijin Dash is replaced with Dracoflash or Phantom Slash, respectively. When Mastery reaches <style=\"accent-gn\">30%/40%/50%</style>, the DMG bonus that Thunder Sigils grant to Dracoflash and Phantom Slash increases by <style=\"accent-gn\">5%/10%/15%</style>."
+  },
+  "3050550": {
+    "Id": 3050550,
+    "Description": "Ultimate Slash becomes a <style=\"accent-gn\">4</style>-hit combo, with each hit dealing <style=\"accent-gn\">80%</style> of its original DMG. Its DMG is now calculated based on the number of Thunder Sigils consumed in the past <style=\"accent-gn\">20s</style>."
+  },
+  "3050560": {
+    "Id": 3050560,
+    "Description": "Each time Stormflash is cast, you gain Reversal Blade. The next 2 casts of Divine Sickle deal DMG twice."
+  },
+  "3050570": {
+    "Id": 3050570,
+    "Description": "For <style=\"accent-gn\">15s</style> after casting Overdrive, Luck Chance gained from any source increases by <style=\"accent-gn\">10%</style>, stacking up to <style=\"accent-gn\">3</style> times. At maximum stacks, the Final DMG of Luck Effect increases by <style=\"accent-gn\">50%</style>."
+  },
+  "3051540": {
+    "Id": 3051540,
+    "Description": "While Galeform is active, DMG dealt by Breach Pursuit adds a Windscar mark to the primary target for <style=\"accent-gn\">20s</style>, stacking up to 10 times. When Drake Cannon or Swift Blade hits, <style=\"accent-gn\">1</style> stack of Windscar detonates, dealing Attack DMG equal to <style=\"accent-gn\">1500%</style> of ATK and restoring a total of <style=\"accent-gn\">15</style> Courage over <style=\"accent-gn\">3s</style>."
+  },
+  "3051550": {
+    "Id": 3051550,
+    "Description": "For every <style=\"accent-gn\">30</style> stacks of Wind Spiral consumed, Valor Cyclone becomes Great Wind Cyclone for the next <style=\"accent-gn\">8s</style>, dealing DMG equal to <style=\"accent-gn\">650%</style> of ATK in a single hit."
+  },
+  "3051500": {
+    "Id": 3051500,
+    "Description": "Tornado can trigger Lucky Strike. For every <style=\"accent-gn\">1%</style> Luck, Tornado DMG increases by <style=\"accent-gn\">1%</style>."
+  },
+  "3051570": {
+    "Id": 3051570,
+    "Description": "After casting Sharp Impact or Typhoon: Sharp Impact, the next Instant Edge consumes all Sharp (up to <style=\"accent-gn\">5</style>). For each Sharp consumed, the Final DMG of Instant Edge and Instant Edge Combo increases by <style=\"accent-gn\">39%</style>."
+  },
+  "3052500": {
+    "Id": 3052500,
+    "Description": "During Endless Cold, increases Attack SPD by <style=\"accent-gn\">50%</style>, but Frost Lance can no longer be cast. During Permafrost, you build Endless Cold counters twice as fast."
+  },
+  "3052510": {
+    "Id": 3052510,
+    "Description": "During Endless Cold, Ice Arrows triggered by Meteor Storm can still grant Frost Crystal. <br>While either Permafrost or Endless Cold is active, the Final DMG of Frost Lance is increased (Ratio = Luck% × Crit%)."
+  },
+  "3052560": {
+    "Id": 3052560,
+    "Description": "Ice Arrow can trigger Lucky Strike. While Permafrost is active, increases the Final DMG of Lucky Strike by <style=\"accent-gn\">30%</style>."
+  },
+  "3052570": {
+    "Id": 3052570,
+    "Description": "After Frozen Gale hits a target, the next cast of Tidepool does not go on CD. This effect can stack up to <style=\"accent-gn\">2</style> times. When Mastery reaches <style=\"accent-gn\">80%</style>, a single Frozen Gale can directly grant <style=\"accent-gn\">2</style> stacks."
+  },
+  "3053540": {
+    "Id": 3053540,
+    "Description": "Legendary Beasts now appear together."
+  },
+  "3053550": {
+    "Id": 3053550,
+    "Description": "For every <style=\"accent-gn\">1%</style> Companion's DMG, Storm Arrow and Lightseeker Arrow DMG increases by <style=\"accent-gn\">1.2%</style>, but Companion's DMG is reduced by <style=\"accent-gn\">20%</style>."
+  },
+  "3053560": {
+    "Id": 3053560,
+    "Description": "Photon Energy cap <style=\"accent-gn\">-10</style>. The Final DMG of Powerdraw is increased (Ratio = Haste%)."
+  },
+  "3053570": {
+    "Id": 3053570,
+    "Description": "Explosive Arrow cannot be recast before detonating. The Explosive Arrow stack cap is removed, and Falcon Strike also adds stacks when it deals Crit DMG. Explosive Arrow always Crits. When Crit Rate exceeds 35%, the Final DMG of Explosive Arrow increases (Ratio = Crit Rate% - 35%)."
+  },
+  "3060540": {
+    "Id": 3060540,
+    "Description": "The chance for Rage Cleave to trigger Formless Flame Slash is doubled, and the Oath DMG from Rage Cleave increases by <style=\"accent-gn\">40%</style>."
+  },
+  "3060550": {
+    "Id": 3060550,
+    "Description": "Axe Wind cost <style=\"accent-gn\">-50%</style>, range +<style=\"accent-gn\">2m</style>. The Oath DMG from Axe Wind and Burn is increased (Ratio = Luck% × <style=\"accent-gn\">2</style> + Mastery% × <style=\"accent-gn\">2</style>)."
+  },
+  "3060560": {
+    "Id": 3060560,
+    "Description": "Talent enhancement for Wildfire Dance Final Slash: Removes the cap on Final DMG Bonus. For every <style=\"accent-gn\">1%</style> Crit, the Final Slash gains an additional <style=\"accent-gn\">3%</style> Crit DMG."
+  },
+  "3060570": {
+    "Id": 3060570,
+    "Description": "Each time Crimson Bloodline is gained, the number of stacks gained is doubled. The Oath DMG from Wildfire Dance <style=\"accent-gn\">+20%</style>."
+  },
+  "3054540": {
+    "Id": 3054540,
+    "Description": "While Aegis Ward is active, DMG Reduction from Radiant Shield increases by <style=\"accent-gn\">15%</style>. If DMG taken exceeds <style=\"accent-gn\">50%</style> of Max HP, immediately restores <style=\"accent-gn\">30%</style> of Max HP. Every <style=\"accent-gn\">1%</style> Crit increases the amount restored by <style=\"accent-gn\">1%</style> (each monster can trigger this effect only once within <style=\"accent-gn\">15s</style>)."
+  },
+  "3054550": {
+    "Id": 3054550,
+    "Description": "DMG Taken <style=\"accent-gn\">+50%</style>. <br>Inferno Reckon deals additional DMG equal to <style=\"accent-gn\">120%</style> Armor. <br>Threat generated is reduced by <style=\"accent-gn\">50%</style>."
+  },
+  "3054560": {
+    "Id": 3054560,
+    "Description": "Radiance's block ratio is multiplied by <style=\"accent-gn\">1.5</style>, but it cannot block more than <style=\"accent-gn\">80%</style> of the DMG from each incoming hit."
+  },
+  "3054570": {
+    "Id": 3054570,
+    "Description": "DMG Taken <style=\"accent-gn\">+50%</style>. <br>Sacred Blade deals additional DMG equal to <style=\"accent-gn\">10% + Mastery% × 0.25</style> of your Max HP, but Sacred Blade can no longer Crit. <br>Threat generated is reduced by <style=\"accent-gn\">50%</style>."
+  },
+  "3055540": {
+    "Id": 3055540,
+    "Description": "DMG Taken <style=\"accent-gn\">+30%</style>. <br>Star Shatter consumes <style=\"accent-gn\">50%</style> of Shield to deal additional DMG equal to <style=\"accent-gn\">70%</style> of Shield (capped at <style=\"accent-gn\">140%</style> of Max HP), but Star Shatter can no longer Crit. <br>Threat generated is reduced by <style=\"accent-gn\">50%</style>."
+  },
+  "3055550": {
+    "Id": 3055550,
+    "Description": "When Weakness Strike triggers, the CD of Sandshroud is reduced by <style=\"accent-gn\">2s</style>. While Sandshroud is active, Enraged duration <style=\"accent-gn\">+2s</style>."
+  },
+  "3055560": {
+    "Id": 3055560,
+    "Description": "Brave Bastion duration <style=\"accent-gn\">+5s</style>. While Brave Bastion is active, Attack SPD <style=\"accent-gn\">+15%</style>."
+  },
+  "3055570": {
+    "Id": 3055570,
+    "Description": "Block DMG Reduction <style=\"accent-gn\">-50%</style>. <br>Casting a Class Skill triggers Countercrush <style=\"accent-gn\">1</style> time, with a <style=\"accent-gn\">Luck% × 2</style> chance to trigger it <style=\"accent-gn\">2</style> times and a <style=\"accent-gn\">Luck%</style> chance to trigger it <style=\"accent-gn\">3</style> times. Every <style=\"accent-gn\">1%</style> Luck increases Countercrush DMG by <style=\"accent-gn\">5%</style>, up to <style=\"accent-gn\">300%</style>. <br>Threat generated is reduced by <style=\"accent-gn\">50%</style>, and Countercrush no longer generates a large amount of additional threat."
+  },
+  "3056540": {
+    "Id": 3056540,
+    "Description": "Thorn can trigger Lucky Strike."
+  },
+  "3056550": {
+    "Id": 3056550,
+    "Description": "Casting a Special Attack grants <style=\"accent-gn\">1</style> additional Regen Bud. Each time a Regen Bud is consumed, Mastery increases by <style=\"accent-gn\">2%</style> for <style=\"accent-gn\">10s</style>, stacking up to <style=\"accent-gn\">5</style> times."
+  },
+  "3056560": {
+    "Id": 3056560,
+    "Description": "When Flower Time Dance - Tricolor Revelation triggers, Inspiration is increased by 20% + Mastery%. If multiple Inspiration effects are active, only the one from the source with the highest Mastery applies. Lasts <style=\"accent-gn\">25s</style>."
+  },
+  "3056570": {
+    "Id": 3056570,
+    "Description": "The Fast Growth effect increases by your Haste% × <style=\"accent-gn\">2</style>, but this skill is unaffected by the CD Boost stat."
+  },
+  "3057540": {
+    "Id": 3057540,
+    "Description": "During Center Stage, Rhapsody of Flame is cast automatically. CD: <style=\"accent-gn\">2s</style>. Every <style=\"accent-gn\">1%</style> Haste increases CD Speed by <style=\"accent-gn\">1.8%</style>."
+  },
+  "3057550": {
+    "Id": 3057550,
+    "Description": "When Heroic Melody is cast, Encore's CD is reduced by <style=\"accent-gn\">2s</style>. <br>The buff effect applied by Finale Command is doubled when applied to yourself."
+  },
+  "3057560": {
+    "Id": 3057560,
+    "Description": "When Healing Beat is cast, Encore's CD is reduced by <style=\"accent-gn\">0.8s</style>."
+  },
+  "3057570": {
+    "Id": 3057570,
+    "Description": "While an actively cast Encore effect is active, when you trigger Encore Strings for an ally, the multipliers of the next <style=\"accent-gn\">2</style> Encore damage instances and <style=\"accent-gn\">2</style> Encore healing instances triggered by the target themselves within the next <style=\"accent-gn\">5s</style> are multiplied by <style=\"accent-gn\">10</style>. "
+  },
+  "2401160": {
+    "Id": 2401160,
+    "Description": "When Flash Strike, Raijin Dash, or their enhanced skills (Dracoflash, Phantom Slash) deal Crit DMG, Final DMG +15%."
+  },
+  "2401290": {
+    "Id": 2401290,
+    "Description": "When Moonstrike deals DMG to its primary target, Stormflash's CD is reduced by 0.7s."
+  },
+  "2402170": {
+    "Id": 2402170,
+    "Description": "After every 80 Lucky Strikes, the next DMG instance triggers Blizzard (at most once every 10s). Each time Blizzard is summoned, Intellect increases by 2.5% for 15s, stacking up to 3 times."
+  },
+  "2402300": {
+    "Id": 2402300,
+    "Description": "Every 2 active casts of Permafrost grant Raging Tide: During the next actively cast Permafrost, Tidepool always Crits and can trigger Lucky Strike. Immediately gains Raging Tide upon entering combat."
+  },
+  "2403180": {
+    "Id": 2403180,
+    "Description": "Every 3 casts of Vortex Strike, the third cast triggers 2 consecutive hits."
+  },
+  "2403300": {
+    "Id": 2403300,
+    "Description": "Wind Fury can stack up to 2 times (but the additional stack is only 30% as effective)."
+  },
+  "2404190": {
+    "Id": 2404190,
+    "Description": "After casting Regen Pulse, increases DMG from Lucky Strike by 20% for 20s. Whenever Thorn is reinflicted to the target, the remaining DMG is dealt immediately based on how many DMG instances remained from the previous infliction."
+  },
+  "2404300": {
+    "Id": 2404300,
+    "Description": "Grove Wish's overhealing converts into a shield that lasts for 10s (stacking up to 20% of the target's HP)."
+  },
+  "2406180": {
+    "Id": 2406180,
+    "Description": "When Sandshroud deals DMG to the primary target, there is a 20% chance to restore 1 Sand Crystal."
+  },
+  "2406300": {
+    "Id": 2406300,
+    "Description": "During Sandshroud, Granite Fury is guaranteed to trigger Weakness Strike."
+  },
+  "2405180": {
+    "Id": 2405180,
+    "Description": "During Focus, every 1% Mastery grants 0.3% Crit DMG."
+  },
+  "2405280": {
+    "Id": 2405280,
+    "Description": "During Focus, whenever Explosive Arrow detonates, Radiance Barrage's CD is reduced based on the detonation stacks (0.5s per stack, up to 10s)."
+  },
+  "2408160": {
+    "Id": 2408160,
+    "Description": "While in Rhapsody of Flame, Crit DMG from Lucky Strike is always calculated as 180%."
+  },
+  "2408290": {
+    "Id": 2408290,
+    "Description": "After casting Healing Beat, increases Crit Healing by 5% per stack for 6s, up to 3 times."
+  },
+  "2407180": {
+    "Id": 2407180,
+    "Description": "Photophobia's ATK reduction now applies against everyone (this effect does not stack. Only one instance can be active at a time), and the effect on the applier is additionally increased by 5%."
+  },
+  "2407320": {
+    "Id": 2407320,
+    "Description": "After dealing DMG to the primary target 20 times, gains 1 stack of Lightforged Barrier. DMG dealt to you by units bearing a Holy Mark is reduced by 0.5% per Lightforged Barrier."
+  },
+  "2409140": {
+    "Id": 2409140,
+    "Description": "During Wasteland's End, each stack of Formless gained reduces Wasteland's End's CD by 1.5s when the effect ends, up to 10s."
+  },
+  "2409160": {
+    "Id": 2409160,
+    "Description": "Entering Bloodboil extends Endless Hellfire's duration (including Endless Hellfire activated while in the Bloodboil state). When exiting the Bloodboil state, reduces Endless Hellfire's CD. The duration increase or reduction equals 5s × (1 + Haste%)."
+  },
+  "2401150": {
+    "Id": 2401150,
+    "Description": "Each time Thunder Cut is cast, reduces Ultimate Skill CD by 1s. Each time an Ultimate Skill is cast, reduces Volt Surge's CD by 5s."
+  },
+  "2401280": {
+    "Id": 2401280,
+    "Description": "While Breath of Mark is active, Lucky Strike Multiplier +30%."
+  },
+  "2402160": {
+    "Id": 2402160,
+    "Description": "Frost Lance and Meteor Storm Crit DMG +15%."
+  },
+  "2402290": {
+    "Id": 2402290,
+    "Description": "During Permafrost, Casting SPD increases by 2% every second, up to 10%. When the maximum is reached, Intellect increases by an additional 5%."
+  },
+  "2403170": {
+    "Id": 2403170,
+    "Description": "After every 8 active casts of Courage-consuming skills, 1 Drake Cannon is fired automatically. Every 100 Courage restored reduces Galeform's CD by 1s."
+  },
+  "2403290": {
+    "Id": 2403290,
+    "Description": "New Wind Fury effect: Luck +6%."
+  },
+  "2404180": {
+    "Id": 2404180,
+    "Description": "For 8s after casting Stag Charge, DMG taken is reduced by 15%, and 2 Energy is restored every second."
+  },
+  "2404290": {
+    "Id": 2404290,
+    "Description": "Life Bloom's Healing Strength increases by 10%, plus an additional 5% for each stack of Nourish on the target."
+  },
+  "2406170": {
+    "Id": 2406170,
+    "Description": "After Star Shatter hits a target, DMG dealt by the target to you is reduced by 5% for 6s."
+  },
+  "2406290": {
+    "Id": 2406290,
+    "Description": "Casting Stone Fist reduces Sandshroud's CD by 0.5s."
+  },
+  "2405170": {
+    "Id": 2405170,
+    "Description": "When Storm Arrow deals damage, reduces Focus's CD by 0.05s (up to 6s of reduction per CD period)."
+  },
+  "2405270": {
+    "Id": 2405270,
+    "Description": "Casting Quadraflare increases Crit DMG by 3% per stack for 10s, up to 4 times."
+  },
+  "2408150": {
+    "Id": 2408150,
+    "Description": "While Heroic Melody is active, if Lucky Strike fails to trigger a Crit, Crit Rate increases by 3% each time, then resets after triggering."
+  },
+  "2408280": {
+    "Id": 2408280,
+    "Description": "For 10s after casting Fivefold Crescendo, increases Crit Healing by 10%."
+  },
+  "2407170": {
+    "Id": 2407170,
+    "Description": "When Reckoning or Inferno Reckon hits a target, inflicts Photophobia on the target: The target's ATK against the applier is reduced by 5% for 5s."
+  },
+  "2407310": {
+    "Id": 2407310,
+    "Description": "The first instance of DMG received from each monster is reduced by 60%."
+  },
+  "2409130": {
+    "Id": 2409130,
+    "Description": "After casting an Ultimate Skill, immediately gains an S rating, and increases ATK by 12% for 15s."
+  },
+  "2409150": {
+    "Id": 2409150,
+    "Description": "DMG from Wildfire Dance (including its enhanced final slash) and Great Crimson Lotus nullifies 30% of the target's Armor."
   }
 }

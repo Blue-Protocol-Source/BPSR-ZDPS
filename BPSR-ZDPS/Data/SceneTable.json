@@ -93,7 +93,8 @@
     "SubScene": [
       6,
       7,
-      13
+      13,
+      23
     ],
     "AmbEvent": "",
     "ReverEvent": "Reverb_Normal",
@@ -243,7 +244,7 @@
     ],
     "Bgm": [
       "BGM_FlowPath_Scene",
-      "BGM_Fld002_Main"
+      "BGM_Fld003_Main"
     ],
     "LoadingBgm": "",
     "FallDis": 1.0,
@@ -694,6 +695,7 @@
     ],
     "Bgm": [
       "BGM_FlowPath_Scene",
+      "BGM_Fld001_North_Area_General",
       "BGM_Fld001_North"
     ],
     "LoadingBgm": "",
@@ -751,6 +753,7 @@
     ],
     "Bgm": [
       "BGM_FlowPath_Scene",
+      "BGM_Fld001_North_Area_General",
       "BGM_Fld001_North"
     ],
     "LoadingBgm": "",
@@ -935,6 +938,165 @@
     "MiniMapRatio": 50,
     "SubScene": [],
     "AmbEvent": "Amb_2D_Fld002_WindSoft_DayNight_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": true,
+    "FootstepFxOverride": []
+  },
+  "101": {
+    "Id": 101,
+    "Name": "Sunlit Trail",
+    "SceneType": 1,
+    "SceneSubType": 4,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 42,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 2048.0,
+      "y": 2048.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Object_Fld002"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      101,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Fld003_Main"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 1,
+    "CutsceneId": 0,
+    "MainUi": 1,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 50,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": true,
+    "FootstepFxOverride": []
+  },
+  "102": {
+    "Id": 102,
+    "Name": "Crimson Woods",
+    "SceneType": 1,
+    "SceneSubType": 4,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 43,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 2048.0,
+      "y": 2048.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Object_Fld002"
+    ],
+    "BornId": 2,
+    "ReviveTableId": [
+      101,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Fld003_Main"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 1,
+    "CutsceneId": 0,
+    "MainUi": 1,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 50,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": true,
+    "FootstepFxOverride": []
+  },
+  "103": {
+    "Id": 103,
+    "Name": "Golden Sand Beach",
+    "SceneType": 1,
+    "SceneSubType": 4,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 44,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 2048.0,
+      "y": 2048.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Object_Fld002"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      101,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Fld003_Main"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 1,
+    "CutsceneId": 0,
+    "MainUi": 1,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 50,
+    "SubScene": [],
+    "AmbEvent": "",
     "ReverEvent": "Reverb_Normal",
     "DefaultSceneArea": 0,
     "MoveSyncConfigId": 0,
@@ -1962,7 +2124,8 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 1,
     "ReviveTableId": [
@@ -2013,7 +2176,8 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 1,
     "ReviveTableId": [
@@ -2064,7 +2228,8 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 104050,
     "ReviveTableId": [
@@ -2116,7 +2281,8 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 104050,
     "ReviveTableId": [
@@ -2168,7 +2334,8 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 305,
     "ReviveTableId": [
@@ -2220,7 +2387,8 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 305,
     "ReviveTableId": [
@@ -2272,7 +2440,8 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 305,
     "ReviveTableId": [
@@ -2324,7 +2493,8 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 104050,
     "ReviveTableId": [
@@ -2333,7 +2503,9 @@
     ],
     "Bgm": [
       "BGM_FlowPath_Scene",
-      "BGM_Dng1201"
+      "BGM_Dng1201",
+      "BGM_Dng1201_Area_Boss",
+      "BGM_BossStep_A"
     ],
     "LoadingBgm": "",
     "FallDis": 1.0,
@@ -2376,7 +2548,8 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 104050,
     "ReviveTableId": [
@@ -2385,7 +2558,9 @@
     ],
     "Bgm": [
       "BGM_FlowPath_Scene",
-      "BGM_Dng1201"
+      "BGM_Dng1201",
+      "BGM_Dng1201_Area_Boss",
+      "BGM_BossStep_A"
     ],
     "LoadingBgm": "",
     "FallDis": 1.0,
@@ -2428,7 +2603,8 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 305,
     "ReviveTableId": [
@@ -2480,12 +2656,13 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 305,
     "ReviveTableId": [
-      110,
-      201
+      103,
+      200
     ],
     "Bgm": [
       "BGM_FlowPath_Scene",
@@ -2532,12 +2709,13 @@
     },
     "MapEntryCondition": [],
     "AudioBank": [
-      "Amb_Dng1201_Dragon"
+      "Amb_Dng1201_Dragon",
+      "Amb_2D_Common"
     ],
     "BornId": 305,
     "ReviveTableId": [
-      110,
-      201
+      103,
+      200
     ],
     "Bgm": [
       "BGM_FlowPath_Scene",
@@ -2913,6 +3091,222 @@
     "ReviveTableId": [
       109,
       201
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1301_Area_A",
+      "BGM_Dng1301"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld001_Cave_YaZhiYiJi_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1341": {
+    "Id": 1341,
+    "Name": "Unstable - Dark Mist Fortress",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 31,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Object_ShadowFort"
+    ],
+    "BornId": 104054,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1301_Area_A",
+      "BGM_Dng1301"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld001_Cave_YaZhiYiJi_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1342": {
+    "Id": 1342,
+    "Name": "Unstable - Dark Mist Fortress",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 31,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Object_ShadowFort"
+    ],
+    "BornId": 104054,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1301_Area_A",
+      "BGM_Dng1301"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld001_Cave_YaZhiYiJi_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1343": {
+    "Id": 1343,
+    "Name": "Chaotic - Dark Mist Fortress",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 31,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Object_ShadowFort"
+    ],
+    "BornId": 101498,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1301_Area_A",
+      "BGM_Dng1301"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld001_Cave_YaZhiYiJi_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1344": {
+    "Id": 1344,
+    "Name": "Chaotic - Dark Mist Fortress",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 31,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Object_ShadowFort"
+    ],
+    "BornId": 101498,
+    "ReviveTableId": [
+      102,
+      200
     ],
     "Bgm": [
       "BGM_FlowPath_Scene",
@@ -4029,6 +4423,483 @@
     "HaveWater": false,
     "FootstepFxOverride": []
   },
+  "1711": {
+    "Id": 1711,
+    "Name": "Unstable - Illusory Moonveil Wilds",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 32,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110539,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1401"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld002_IllusionFlower_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1712": {
+    "Id": 1712,
+    "Name": "Unstable - Illusory Moonveil Wilds",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 32,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110539,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1401"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld002_IllusionFlower_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1722": {
+    "Id": 1722,
+    "Name": "Chaotic - Illusory Moonveil Wilds",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 32,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 105996,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1401"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld002_IllusionFlower_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1723": {
+    "Id": 1723,
+    "Name": "Chaotic - Illusory Moonveil Wilds",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 32,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 102797,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1401"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld002_IllusionFlower_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1901": {
+    "Id": 1901,
+    "Name": "Cavern Zero",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 1901,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Boss_StoneSnake"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      1
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1901",
+      "BGM_Dng1901_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 0,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld002_MiningUnderground_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1911": {
+    "Id": 1911,
+    "Name": "Unstable - Cavern Zero",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 1901,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Boss_StoneSnake"
+    ],
+    "BornId": 9,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1901",
+      "BGM_Dng1901_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 0,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld002_MiningUnderground_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1912": {
+    "Id": 1912,
+    "Name": "Unstable - Cavern Zero",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 1901,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Boss_StoneSnake"
+    ],
+    "BornId": 9,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1901",
+      "BGM_Dng1901_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 0,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld002_MiningUnderground_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1931": {
+    "Id": 1931,
+    "Name": "Cavern Zero",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 1901,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Boss_StoneSnake"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1901",
+      "BGM_Dng1901_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 0,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld002_MiningUnderground_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "1932": {
+    "Id": 1932,
+    "Name": "Cavern Zero",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 1901,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common",
+      "Boss_StoneSnake"
+    ],
+    "BornId": 26,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1901",
+      "BGM_Dng1901_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 0,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld002_MiningUnderground_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
   "5000": {
     "Id": 5000,
     "Name": "Content mechanism test scene",
@@ -4708,6 +5579,110 @@
     "HaveWater": false,
     "FootstepFxOverride": []
   },
+  "51002": {
+    "Id": 51002,
+    "Name": "Fafala's Home",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 5605,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      2
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Fld002_Main",
+      "BGM_Fld002_Mood_Scene_Illusion"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "51004": {
+    "Id": 51004,
+    "Name": "Fafala's Home",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 5605,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 3,
+    "ReviveTableId": [
+      2
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Fld002_Main",
+      "BGM_Fld002_Mood_Scene_Illusion"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 10100114,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
   "5811": {
     "Id": 5811,
     "Name": "Smelting Furnace Pipes",
@@ -5016,6 +5991,55 @@
     "DefaultSceneArea": 0,
     "MoveSyncConfigId": 0,
     "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "5920": {
+    "Id": 5920,
+    "Name": "Dreamscape",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 19,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng6101"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": true,
     "FootstepFxOverride": []
   },
   "6001": {
@@ -8096,6 +9120,540 @@
     "HaveWater": false,
     "FootstepFxOverride": []
   },
+  "6610": {
+    "Id": 6610,
+    "Name": "Barren Courtyard",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 6610,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1701",
+      "BGM_Dng1701_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "6611": {
+    "Id": 6611,
+    "Name": "Unstable - Barren Courtyard",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 6610,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110506,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1701",
+      "BGM_Dng1701_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "6612": {
+    "Id": 6612,
+    "Name": "Unstable - Barren Courtyard",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 6610,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110506,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1701",
+      "BGM_Dng1701_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "6613": {
+    "Id": 6613,
+    "Name": "Chaotic - Barren Courtyard",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 6610,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110943,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1701",
+      "BGM_Dng1701_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "6614": {
+    "Id": 6614,
+    "Name": "Chaotic - Barren Courtyard",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 6610,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110506,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1701",
+      "BGM_Dng1701_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "6615": {
+    "Id": 6615,
+    "Name": "Chaotic - Barren Courtyard",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 6610,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110943,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1701",
+      "BGM_Dng1701_Area_General"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "6591": {
+    "Id": 6591,
+    "Name": "Unstable - Mirror Judgment",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 6591,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 8.81,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110578,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng6591",
+      "BGM_Dng6591_Area_Boss",
+      "BGM_BossStep_A"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 1,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "6592": {
+    "Id": 6592,
+    "Name": "Unstable - Mirror Judgment",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 6591,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 8.81,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110578,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng6591",
+      "BGM_Dng6591_Area_Boss",
+      "BGM_BossStep_A"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 1,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "6593": {
+    "Id": 6593,
+    "Name": "Chaotic - Mirror Judgment",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 6591,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 8.81,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110798,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng6591",
+      "BGM_Dng6591_Area_Boss",
+      "BGM_BossStep_A"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 1,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "6594": {
+    "Id": 6594,
+    "Name": "Chaotic - Mirror Judgment",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 6591,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 8.81,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 110798,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng6591",
+      "BGM_Dng6591_Area_Boss",
+      "BGM_BossStep_A"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 1,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
   "7001": {
     "Id": 7001,
     "Name": "Parkour",
@@ -10921,6 +12479,59 @@
     "HaveWater": true,
     "FootstepFxOverride": []
   },
+  "9300": {
+    "Id": 9300,
+    "Name": "Loom of Dreams​: Nightmare Purge",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 27,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 512.0,
+      "y": 512.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 248,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_BossStep_A",
+      "BGM_Dng6011"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Common_WindSoft_Grass_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
   "10001": {
     "Id": 10001,
     "Name": "Square Practice Field 1",
@@ -11313,6 +12924,57 @@
     "ParentId": 0,
     "IsShareParentSceneData": false,
     "SceneResourceId": 11001,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 1024.0,
+      "y": 1024.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      5
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Peekaboo"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 1,
+    "CutsceneId": 0,
+    "MainUi": 14,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "11002": {
+    "Id": 11002,
+    "Name": "Wondrous Tag",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 11002,
     "SceneUi": [
       "mainui"
     ],
@@ -12040,6 +13702,112 @@
     "HaveWater": false,
     "FootstepFxOverride": []
   },
+  "12024": {
+    "Id": 12024,
+    "Name": "Guild Hunt - Normal",
+    "SceneType": 2,
+    "SceneSubType": 9,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 18,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 3.44
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 148,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1301_Area_B",
+      "BGM_Dng1301"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 6,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "12025": {
+    "Id": 12025,
+    "Name": "Guild Hunt - Hard",
+    "SceneType": 2,
+    "SceneSubType": 9,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 18,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 3.44
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 21,
+    "ReviveTableId": [
+      106,
+      108
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng1301_Area_B",
+      "BGM_Dng1301"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 6,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
   "12030": {
     "Id": 12030,
     "Name": "Ee-chan's Story",
@@ -12714,6 +14482,108 @@
     "HaveWater": false,
     "FootstepFxOverride": []
   },
+  "14001": {
+    "Id": 14001,
+    "Name": "Winged Whale Investigation Area I",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 14001,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 2,
+    "ReviveTableId": [
+      1
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng7150"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 15,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "14002": {
+    "Id": 14002,
+    "Name": "Winged Whale Investigation Area II",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 14001,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 2,
+    "ReviveTableId": [
+      1
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng7150"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 15,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
   "13022": {
     "Id": 13022,
     "Name": "Brutal! Field of Forgotten Illusions",
@@ -12795,6 +14665,159 @@
     "Bgm": [
       "BGM_FlowPath_Scene",
       "BGM_Dng13021"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "13031": {
+    "Id": 13031,
+    "Name": "Clash! Twilight's Edge",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 13031,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 2048.0,
+      "y": 2048.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 111117,
+    "ReviveTableId": [
+      111
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng13031"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "13032": {
+    "Id": 13032,
+    "Name": "Brutal! Twilight's Edge",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 13031,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 2048.0,
+      "y": 2048.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 111399,
+    "ReviveTableId": [
+      112
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng13031"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "13033": {
+    "Id": 13033,
+    "Name": "Purge! Twilight's Edge",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 13031,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 2048.0,
+      "y": 2048.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 111399,
+    "ReviveTableId": [
+      113
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng13031"
     ],
     "LoadingBgm": "",
     "FallDis": 1.0,
@@ -28001,7 +30024,7 @@
   },
   "32101": {
     "Id": 32101,
-    "Name": "Floor 1",
+    "Name": "Stimen Vaults Floor 1",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28054,7 +30077,7 @@
   },
   "32102": {
     "Id": 32102,
-    "Name": "Floor 2",
+    "Name": "Stimen Vaults Floor 2",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28107,7 +30130,7 @@
   },
   "32103": {
     "Id": 32103,
-    "Name": "Floor 3",
+    "Name": "Stimen Vaults Floor 3",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28160,7 +30183,7 @@
   },
   "32104": {
     "Id": 32104,
-    "Name": "Floor 4",
+    "Name": "Stimen Vaults Floor 4",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28213,7 +30236,7 @@
   },
   "32105": {
     "Id": 32105,
-    "Name": "Floor 5",
+    "Name": "Stimen Vaults Floor 5",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28266,7 +30289,7 @@
   },
   "32106": {
     "Id": 32106,
-    "Name": "Floor 6",
+    "Name": "Stimen Vaults Floor 6",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28319,7 +30342,7 @@
   },
   "32107": {
     "Id": 32107,
-    "Name": "Floor 7",
+    "Name": "Stimen Vaults Floor 7",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28372,7 +30395,7 @@
   },
   "32108": {
     "Id": 32108,
-    "Name": "Floor 8",
+    "Name": "Stimen Vaults Floor 8",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28425,7 +30448,7 @@
   },
   "32109": {
     "Id": 32109,
-    "Name": "Floor 9",
+    "Name": "Stimen Vaults Floor 9",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28478,7 +30501,7 @@
   },
   "32110": {
     "Id": 32110,
-    "Name": "Floor 10",
+    "Name": "Stimen Vaults Floor 10",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28531,7 +30554,7 @@
   },
   "32111": {
     "Id": 32111,
-    "Name": "Floor 11",
+    "Name": "Stimen Vaults Floor 11",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28584,7 +30607,7 @@
   },
   "32112": {
     "Id": 32112,
-    "Name": "Floor 12",
+    "Name": "Stimen Vaults Floor 12",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28637,7 +30660,7 @@
   },
   "32113": {
     "Id": 32113,
-    "Name": "Floor 13",
+    "Name": "Stimen Vaults Floor 13",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28690,7 +30713,7 @@
   },
   "32114": {
     "Id": 32114,
-    "Name": "Floor 14",
+    "Name": "Stimen Vaults Floor 14",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28743,7 +30766,7 @@
   },
   "32115": {
     "Id": 32115,
-    "Name": "Floor 15",
+    "Name": "Stimen Vaults Floor 15",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28796,7 +30819,7 @@
   },
   "32116": {
     "Id": 32116,
-    "Name": "Floor 16",
+    "Name": "Stimen Vaults Floor 16",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28849,7 +30872,7 @@
   },
   "32117": {
     "Id": 32117,
-    "Name": "Floor 17",
+    "Name": "Stimen Vaults Floor 17",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28902,7 +30925,7 @@
   },
   "32118": {
     "Id": 32118,
-    "Name": "Floor 18",
+    "Name": "Stimen Vaults Floor 18",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -28955,7 +30978,7 @@
   },
   "32119": {
     "Id": 32119,
-    "Name": "Floor 19",
+    "Name": "Stimen Vaults Floor 19",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29008,7 +31031,7 @@
   },
   "32120": {
     "Id": 32120,
-    "Name": "Floor 20",
+    "Name": "Stimen Vaults Floor 20",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29061,7 +31084,7 @@
   },
   "32121": {
     "Id": 32121,
-    "Name": "Floor 21",
+    "Name": "Stimen Vaults Floor 21",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29113,7 +31136,7 @@
   },
   "32122": {
     "Id": 32122,
-    "Name": "Floor 22",
+    "Name": "Stimen Vaults Floor 22",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29165,7 +31188,7 @@
   },
   "32123": {
     "Id": 32123,
-    "Name": "Floor 23",
+    "Name": "Stimen Vaults Floor 23",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29217,7 +31240,7 @@
   },
   "32124": {
     "Id": 32124,
-    "Name": "Floor 24",
+    "Name": "Stimen Vaults Floor 24",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29269,7 +31292,7 @@
   },
   "32125": {
     "Id": 32125,
-    "Name": "Floor 25",
+    "Name": "Stimen Vaults Floor 25",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29321,7 +31344,7 @@
   },
   "32126": {
     "Id": 32126,
-    "Name": "Floor 26",
+    "Name": "Stimen Vaults Floor 26",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29373,7 +31396,7 @@
   },
   "32127": {
     "Id": 32127,
-    "Name": "Floor 27",
+    "Name": "Stimen Vaults Floor 27",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29425,7 +31448,7 @@
   },
   "32128": {
     "Id": 32128,
-    "Name": "Floor 28",
+    "Name": "Stimen Vaults Floor 28",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29477,7 +31500,7 @@
   },
   "32129": {
     "Id": 32129,
-    "Name": "Floor 29",
+    "Name": "Stimen Vaults Floor 29",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29529,7 +31552,7 @@
   },
   "32130": {
     "Id": 32130,
-    "Name": "Floor 30",
+    "Name": "Stimen Vaults Floor 30",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29581,7 +31604,7 @@
   },
   "32131": {
     "Id": 32131,
-    "Name": "Floor 31",
+    "Name": "Stimen Vaults Floor 31",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29633,7 +31656,7 @@
   },
   "32132": {
     "Id": 32132,
-    "Name": "Floor 32",
+    "Name": "Stimen Vaults Floor 32",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29685,7 +31708,7 @@
   },
   "32133": {
     "Id": 32133,
-    "Name": "Floor 33",
+    "Name": "Stimen Vaults Floor 33",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29737,7 +31760,7 @@
   },
   "32134": {
     "Id": 32134,
-    "Name": "Floor 34",
+    "Name": "Stimen Vaults Floor 34",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29789,7 +31812,7 @@
   },
   "32135": {
     "Id": 32135,
-    "Name": "Floor 35",
+    "Name": "Stimen Vaults Floor 35",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29841,7 +31864,7 @@
   },
   "32136": {
     "Id": 32136,
-    "Name": "Floor 36",
+    "Name": "Stimen Vaults Floor 36",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29893,7 +31916,7 @@
   },
   "32137": {
     "Id": 32137,
-    "Name": "Floor 37",
+    "Name": "Stimen Vaults Floor 37",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29945,7 +31968,7 @@
   },
   "32138": {
     "Id": 32138,
-    "Name": "Floor 38",
+    "Name": "Stimen Vaults Floor 38",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -29997,7 +32020,7 @@
   },
   "32139": {
     "Id": 32139,
-    "Name": "Floor 39",
+    "Name": "Stimen Vaults Floor 39",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30049,7 +32072,7 @@
   },
   "32140": {
     "Id": 32140,
-    "Name": "Floor 40",
+    "Name": "Stimen Vaults Floor 40",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30101,7 +32124,7 @@
   },
   "32141": {
     "Id": 32141,
-    "Name": "Floor 41",
+    "Name": "Stimen Vaults Floor 41",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30153,7 +32176,7 @@
   },
   "32142": {
     "Id": 32142,
-    "Name": "Floor 42",
+    "Name": "Stimen Vaults Floor 42",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30205,7 +32228,7 @@
   },
   "32143": {
     "Id": 32143,
-    "Name": "Floor 43",
+    "Name": "Stimen Vaults Floor 43",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30257,7 +32280,7 @@
   },
   "32144": {
     "Id": 32144,
-    "Name": "Floor 44",
+    "Name": "Stimen Vaults Floor 44",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30309,7 +32332,7 @@
   },
   "32145": {
     "Id": 32145,
-    "Name": "Floor 45",
+    "Name": "Stimen Vaults Floor 45",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30361,7 +32384,7 @@
   },
   "32146": {
     "Id": 32146,
-    "Name": "Floor 46",
+    "Name": "Stimen Vaults Floor 46",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30413,7 +32436,7 @@
   },
   "32147": {
     "Id": 32147,
-    "Name": "Floor 47",
+    "Name": "Stimen Vaults Floor 47",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30465,7 +32488,7 @@
   },
   "32148": {
     "Id": 32148,
-    "Name": "Floor 48",
+    "Name": "Stimen Vaults Floor 48",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30517,7 +32540,7 @@
   },
   "32149": {
     "Id": 32149,
-    "Name": "Floor 49",
+    "Name": "Stimen Vaults Floor 49",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30569,7 +32592,7 @@
   },
   "32150": {
     "Id": 32150,
-    "Name": "Floor 50",
+    "Name": "Stimen Vaults Floor 50",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30621,7 +32644,7 @@
   },
   "32151": {
     "Id": 32151,
-    "Name": "Floor 51",
+    "Name": "Stimen Vaults Floor 51",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30673,7 +32696,7 @@
   },
   "32152": {
     "Id": 32152,
-    "Name": "Floor 52",
+    "Name": "Stimen Vaults Floor 52",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30725,7 +32748,7 @@
   },
   "32153": {
     "Id": 32153,
-    "Name": "Floor 53",
+    "Name": "Stimen Vaults Floor 53",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30777,7 +32800,7 @@
   },
   "32154": {
     "Id": 32154,
-    "Name": "Floor 54",
+    "Name": "Stimen Vaults Floor 54",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30829,7 +32852,7 @@
   },
   "32155": {
     "Id": 32155,
-    "Name": "Floor 55",
+    "Name": "Stimen Vaults Floor 55",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30881,7 +32904,7 @@
   },
   "32156": {
     "Id": 32156,
-    "Name": "Floor 56",
+    "Name": "Stimen Vaults Floor 56",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30933,7 +32956,7 @@
   },
   "32157": {
     "Id": 32157,
-    "Name": "Floor 57",
+    "Name": "Stimen Vaults Floor 57",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -30985,7 +33008,7 @@
   },
   "32158": {
     "Id": 32158,
-    "Name": "Floor 58",
+    "Name": "Stimen Vaults Floor 58",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -31037,7 +33060,7 @@
   },
   "32159": {
     "Id": 32159,
-    "Name": "Floor 59",
+    "Name": "Stimen Vaults Floor 59",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -31089,7 +33112,7 @@
   },
   "32160": {
     "Id": 32160,
-    "Name": "Floor 60",
+    "Name": "Stimen Vaults Floor 60",
     "SceneType": 2,
     "SceneSubType": 5,
     "ParentId": 0,
@@ -31117,6 +33140,430 @@
     ],
     "Bgm": [
       "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33101": {
+    "Id": 33101,
+    "Name": "Stimen Vaults Floor 1",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33102": {
+    "Id": 33102,
+    "Name": "Stimen Vaults Floor 2",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "60000": {
+    "Id": 60000,
+    "Name": "Track! The Deep-Sea Fish Shadow",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 75,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 256.0,
+      "y": 256.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 2,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng002_Area_B",
+      "BGM_Dng002"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 6,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld001_UnderWaterCave_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "60001": {
+    "Id": 60001,
+    "Name": "First White Waves",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 75,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 256.0,
+      "y": 256.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 34,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng002_Area_B",
+      "BGM_Dng002"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 6,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld001_UnderWaterCave_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "60002": {
+    "Id": 60002,
+    "Name": "Foggy Sea Shadows",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 75,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 256.0,
+      "y": 256.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 34,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng002_Area_B",
+      "BGM_Dng002"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 6,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld001_UnderWaterCave_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "60003": {
+    "Id": 60003,
+    "Name": "Deep Tide Anomaly",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 75,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 256.0,
+      "y": 256.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 34,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng002_Area_B",
+      "BGM_Dng002"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 6,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld001_UnderWaterCave_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "60004": {
+    "Id": 60004,
+    "Name": "Raging Sea Finale",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 75,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 256.0,
+      "y": 256.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 34,
+    "ReviveTableId": [
+      102,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng002_Area_B",
+      "BGM_Dng002"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": 6,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Fld001_UnderWaterCave_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33103": {
+    "Id": 33103,
+    "Name": "Stimen Vaults Floor 3",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
       "BGM_Dng_Tower"
     ],
     "LoadingBgm": "",
@@ -31191,6 +33638,59 @@
     "HaveWater": true,
     "FootstepFxOverride": []
   },
+  "33104": {
+    "Id": 33104,
+    "Name": "Stimen Vaults Floor 4",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
   "171001": {
     "Id": 171001,
     "Name": "Isolated Island",
@@ -31237,6 +33737,2934 @@
     "MiniMapRatio": 0,
     "SubScene": [],
     "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33105": {
+    "Id": 33105,
+    "Name": "Stimen Vaults Floor 5",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33106": {
+    "Id": 33106,
+    "Name": "Stimen Vaults Floor 6",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33107": {
+    "Id": 33107,
+    "Name": "Stimen Vaults Floor 7",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33108": {
+    "Id": 33108,
+    "Name": "Stimen Vaults Floor 8",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33109": {
+    "Id": 33109,
+    "Name": "Stimen Vaults Floor 9",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33110": {
+    "Id": 33110,
+    "Name": "Stimen Vaults Floor 10",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33111": {
+    "Id": 33111,
+    "Name": "Stimen Vaults Floor 11",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33112": {
+    "Id": 33112,
+    "Name": "Stimen Vaults Floor 12",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33113": {
+    "Id": 33113,
+    "Name": "Stimen Vaults Floor 13",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33114": {
+    "Id": 33114,
+    "Name": "Stimen Vaults Floor 14",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33115": {
+    "Id": 33115,
+    "Name": "Stimen Vaults Floor 15",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33116": {
+    "Id": 33116,
+    "Name": "Stimen Vaults Floor 16",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33117": {
+    "Id": 33117,
+    "Name": "Stimen Vaults Floor 17",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33118": {
+    "Id": 33118,
+    "Name": "Stimen Vaults Floor 18",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33119": {
+    "Id": 33119,
+    "Name": "Stimen Vaults Floor 19",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33120": {
+    "Id": 33120,
+    "Name": "Stimen Vaults Floor 20",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33121": {
+    "Id": 33121,
+    "Name": "Stimen Vaults Floor 21",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33122": {
+    "Id": 33122,
+    "Name": "Stimen Vaults Floor 22",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33123": {
+    "Id": 33123,
+    "Name": "Stimen Vaults Floor 23",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33124": {
+    "Id": 33124,
+    "Name": "Stimen Vaults Floor 24",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33125": {
+    "Id": 33125,
+    "Name": "Stimen Vaults Floor 25",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33126": {
+    "Id": 33126,
+    "Name": "Stimen Vaults Floor 26",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33127": {
+    "Id": 33127,
+    "Name": "Stimen Vaults Floor 27",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33128": {
+    "Id": 33128,
+    "Name": "Stimen Vaults Floor 28",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33129": {
+    "Id": 33129,
+    "Name": "Stimen Vaults Floor 29",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33130": {
+    "Id": 33130,
+    "Name": "Stimen Vaults Floor 30",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33131": {
+    "Id": 33131,
+    "Name": "Stimen Vaults Floor 31",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33132": {
+    "Id": 33132,
+    "Name": "Stimen Vaults Floor 32",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33133": {
+    "Id": 33133,
+    "Name": "Stimen Vaults Floor 33",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33134": {
+    "Id": 33134,
+    "Name": "Stimen Vaults Floor 34",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33135": {
+    "Id": 33135,
+    "Name": "Stimen Vaults Floor 35",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33136": {
+    "Id": 33136,
+    "Name": "Stimen Vaults Floor 36",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33137": {
+    "Id": 33137,
+    "Name": "Stimen Vaults Floor 37",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33138": {
+    "Id": 33138,
+    "Name": "Stimen Vaults Floor 38",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33139": {
+    "Id": 33139,
+    "Name": "Stimen Vaults Floor 39",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33140": {
+    "Id": 33140,
+    "Name": "Stimen Vaults Floor 40",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33141": {
+    "Id": 33141,
+    "Name": "Stimen Vaults Floor 41",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33142": {
+    "Id": 33142,
+    "Name": "Stimen Vaults Floor 42",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33143": {
+    "Id": 33143,
+    "Name": "Stimen Vaults Floor 43",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33144": {
+    "Id": 33144,
+    "Name": "Stimen Vaults Floor 44",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33145": {
+    "Id": 33145,
+    "Name": "Stimen Vaults Floor 45",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33146": {
+    "Id": 33146,
+    "Name": "Stimen Vaults Floor 46",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33147": {
+    "Id": 33147,
+    "Name": "Stimen Vaults Floor 47",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33148": {
+    "Id": 33148,
+    "Name": "Stimen Vaults Floor 48",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33149": {
+    "Id": 33149,
+    "Name": "Stimen Vaults Floor 49",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33150": {
+    "Id": 33150,
+    "Name": "Stimen Vaults Floor 50",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33151": {
+    "Id": 33151,
+    "Name": "Stimen Vaults Floor 51",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33152": {
+    "Id": 33152,
+    "Name": "Stimen Vaults Floor 52",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33153": {
+    "Id": 33153,
+    "Name": "Stimen Vaults Floor 53",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33154": {
+    "Id": 33154,
+    "Name": "Stimen Vaults Floor 54",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33155": {
+    "Id": 33155,
+    "Name": "Stimen Vaults Floor 55",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 1,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33156": {
+    "Id": 33156,
+    "Name": "Stimen Vaults Floor 56",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33157": {
+    "Id": 33157,
+    "Name": "Stimen Vaults Floor 57",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33158": {
+    "Id": 33158,
+    "Name": "Stimen Vaults Floor 58",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33159": {
+    "Id": 33159,
+    "Name": "Stimen Vaults Floor 59",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 50,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 100551,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_General",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "33160": {
+    "Id": 33160,
+    "Name": "Stimen Vaults Floor 60",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 51,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 128.0,
+      "y": 128.0
+    },
+    "MapOffset": {
+      "x": 5.7,
+      "y": 11.35
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 102231,
+    "ReviveTableId": [
+      104,
+      200
+    ],
+    "Bgm": [
+      "BGM_Dng_Tower_Boss",
+      "BGM_Dng_Tower"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 2,
+    "CanChangeLayer": false,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 0,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "Amb_2D_Dng002_RobotFactory_Loop",
     "ReverEvent": "Reverb_Normal",
     "DefaultSceneArea": 0,
     "MoveSyncConfigId": 0,

@@ -2066,8 +2066,8 @@
     "AttrParams": [
       1418
     ],
-    "LowerLimit": 0,
-    "UpperLimit": 10000,
+    "LowerLimit": -99999,
+    "UpperLimit": 99999,
     "IsSyncClient": true,
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
@@ -3533,6 +3533,291 @@
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
   },
+  "90254": {
+    "Id": 90254,
+    "Name": "忽略技能CD减少固定值",
+    "Desc": "11750",
+    "AttrType": 104,
+    "LogicType": 1,
+    "AttrParams": [
+      1714
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 1,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90243": {
+    "Id": 90243,
+    "Name": "赛季天赋层数",
+    "Desc": "",
+    "AttrType": 503,
+    "LogicType": 4,
+    "AttrParams": [
+      3005501
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 10,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90255": {
+    "Id": 90255,
+    "Name": "忽略技能CD减少万分比",
+    "Desc": "11760",
+    "AttrType": 105,
+    "LogicType": 1,
+    "AttrParams": [
+      1714
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 1,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90244": {
+    "Id": 90244,
+    "Name": "赛季天赋层数",
+    "Desc": "",
+    "AttrType": 503,
+    "LogicType": 4,
+    "AttrParams": [
+      3005901
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 10,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90256": {
+    "Id": 90256,
+    "Name": "忽略技能CD加速",
+    "Desc": "11960",
+    "AttrType": 106,
+    "LogicType": 1,
+    "AttrParams": [
+      1714
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 1,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90245": {
+    "Id": 90245,
+    "Name": "赛季天赋buff时间",
+    "Desc": "",
+    "AttrType": 502,
+    "LogicType": 4,
+    "AttrParams": [
+      3006102
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90257": {
+    "Id": 90257,
+    "Name": "忽略技能CD减少固定值",
+    "Desc": "11750",
+    "AttrType": 104,
+    "LogicType": 3,
+    "AttrParams": [
+      5
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 1,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90246": {
+    "Id": 90246,
+    "Name": "赛季天赋buff时间",
+    "Desc": "",
+    "AttrType": 502,
+    "LogicType": 4,
+    "AttrParams": [
+      3006105
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90258": {
+    "Id": 90258,
+    "Name": "忽略技能CD减少万分比",
+    "Desc": "11760",
+    "AttrType": 105,
+    "LogicType": 3,
+    "AttrParams": [
+      5
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 1,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90247": {
+    "Id": 90247,
+    "Name": "【追击身法】层数",
+    "Desc": "",
+    "AttrType": 503,
+    "LogicType": 4,
+    "AttrParams": [
+      2205211
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 10,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90259": {
+    "Id": 90259,
+    "Name": "忽略技能CD加速",
+    "Desc": "11960",
+    "AttrType": 106,
+    "LogicType": 3,
+    "AttrParams": [
+      5
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 1,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90248": {
+    "Id": 90248,
+    "Name": "【勇者壁垒】持续时间",
+    "Desc": "",
+    "AttrType": 502,
+    "LogicType": 4,
+    "AttrParams": [
+      50058
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 999999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90249": {
+    "Id": 90249,
+    "Name": "【圣光守卫】持续时间",
+    "Desc": "",
+    "AttrType": 502,
+    "LogicType": 4,
+    "AttrParams": [
+      55405
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 999999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90250": {
+    "Id": 90250,
+    "Name": "【翔返】消耗减少",
+    "Desc": "【翔返】消耗减少",
+    "AttrType": 302,
+    "LogicType": 1,
+    "AttrParams": [
+      1419
+    ],
+    "LowerLimit": -99999,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90251": {
+    "Id": 90251,
+    "Name": "英勇乐章冷却缩减",
+    "Desc": "",
+    "AttrType": 100,
+    "LogicType": 1,
+    "AttrParams": [
+      2310
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 999999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90252": {
+    "Id": 90252,
+    "Name": "猛烈挥击攻击速度",
+    "Desc": "",
+    "AttrType": 700,
+    "LogicType": 1,
+    "AttrParams": [
+      2317
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 999999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90253": {
+    "Id": 90253,
+    "Name": "聚合乐章充能速度",
+    "Desc": "",
+    "AttrType": 103,
+    "LogicType": 1,
+    "AttrParams": [
+      2308
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 999999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90260": {
+    "Id": 90260,
+    "Name": "忽略技能CD加速",
+    "Desc": "11960",
+    "AttrType": 106,
+    "LogicType": 1,
+    "AttrParams": [
+      1524
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 1,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "90261": {
+    "Id": 90261,
+    "Name": "激怒持续时间",
+    "Desc": "激怒持续时间",
+    "AttrType": 502,
+    "LogicType": 4,
+    "AttrParams": [
+      2201311
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 10000,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
   "90300": {
     "Id": 90300,
     "Name": "【光明决心】充能上限变化",
@@ -3543,7 +3828,7 @@
       2420
     ],
     "LowerLimit": 0,
-    "UpperLimit": 2,
+    "UpperLimit": 3,
     "IsSyncClient": true,
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
@@ -3558,7 +3843,7 @@
       1926
     ],
     "LowerLimit": 0,
-    "UpperLimit": 2,
+    "UpperLimit": 3,
     "IsSyncClient": true,
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
@@ -3930,7 +4215,7 @@
     "LowerLimit": -99999,
     "UpperLimit": 99999,
     "IsSyncClient": true,
-    "AttrDesc": "Movement Speed +{*tempAttr.un*}",
+    "AttrDesc": "Movement Speed+{*tempAttr.up*}",
     "AttrIcon": "ui/atlas/weaponhero/new/common_icon21"
   },
   "92001": {
@@ -4541,6 +4826,36 @@
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
   },
+  "92109": {
+    "Id": 92109,
+    "Name": "【载具】引梦至彼岸",
+    "Desc": "【载具】引梦至彼岸充能上限提升",
+    "AttrType": 352,
+    "LogicType": 1,
+    "AttrParams": [
+      4751
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 6,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "92110": {
+    "Id": 92110,
+    "Name": "【载具】引梦至彼岸高定",
+    "Desc": "【载具】引梦至彼岸高定充能上限提升",
+    "AttrType": 352,
+    "LogicType": 1,
+    "AttrParams": [
+      4753
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 6,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
   "93000": {
     "Id": 93000,
     "Name": "【黯影堡垒】限制虚蚀层数",
@@ -4564,6 +4879,23 @@
     "LogicType": 3,
     "AttrParams": [
       1003
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 1,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "93002": {
+    "Id": 93002,
+    "Name": "【拉普西斯02】禁止释放职业技能",
+    "Desc": "【拉普西斯02】禁止释放职业技能",
+    "AttrType": 509,
+    "LogicType": 3,
+    "AttrParams": [
+      1010,
+      8,
+      103
     ],
     "LowerLimit": 0,
     "UpperLimit": 1,
@@ -4924,6 +5256,51 @@
     "AttrDesc": "全子弹大小",
     "AttrIcon": ""
   },
+  "98010": {
+    "Id": 98010,
+    "Name": "冰之灌注冷却加速",
+    "Desc": "冰之灌注冷却加速",
+    "AttrType": 103,
+    "LogicType": 1,
+    "AttrParams": [
+      1243
+    ],
+    "LowerLimit": 0,
+    "UpperLimit": 99999,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "98012": {
+    "Id": 98012,
+    "Name": "木桩幻想禁止",
+    "Desc": "木桩幻想禁止",
+    "AttrType": 509,
+    "LogicType": 1,
+    "AttrParams": [
+      3995
+    ],
+    "LowerLimit": -1,
+    "UpperLimit": 1,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
+  "98011": {
+    "Id": 98011,
+    "Name": "冰霜之矛禁止",
+    "Desc": "冰霜之矛禁止",
+    "AttrType": 509,
+    "LogicType": 1,
+    "AttrParams": [
+      1242
+    ],
+    "LowerLimit": -1,
+    "UpperLimit": 1,
+    "IsSyncClient": true,
+    "AttrDesc": "全子弹大小",
+    "AttrIcon": ""
+  },
   "98981": {
     "Id": 98981,
     "Name": "S1赛季强度",
@@ -4960,7 +5337,7 @@
     "LowerLimit": 0,
     "UpperLimit": 99999,
     "IsSyncClient": true,
-    "AttrDesc": "Season 3 Strength {*tempAttr.un*}",
+    "AttrDesc": "Illusion-Breaking Strength (Inactive){*tempAttr.un*}",
     "AttrIcon": "ui/atlas/weaponhero/new/common_icon01"
   },
   "98984": {
