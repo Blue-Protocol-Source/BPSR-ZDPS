@@ -51,6 +51,7 @@ namespace BPSR_ZDPS.Windows
         static bool minimalProcessingWhileEncounterSavingPaused;
         static bool includeHealEventsOutsideOfCombat;
 
+        static bool meterSettingsDPSShowDeathIndicator;
         static bool meterSettingsTankingShowDeaths;
         static bool meterSettingsNpcTakenShowHpData;
         static bool meterSettingsNpcTakenHideMaxHp;
@@ -1000,6 +1001,18 @@ namespace BPSR_ZDPS.Windows
                         {
                             ImGui.Indent();
 
+                            ImGui.SeparatorText("DPS");
+
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.Text("Show Death Indicator: ");
+                            ImGui.SameLine();
+                            ImGui.Checkbox("##MeterSettingsDPSShowDeathIndicator", ref meterSettingsDPSShowDeathIndicator);
+                            ImGui.Indent();
+                            ImGui.BeginDisabled(true);
+                            ImGui.TextWrapped("When enabled, dead players have their contribution bar dimmed and name turned red in the DPS Meter.");
+                            ImGui.EndDisabled();
+                            ImGui.Unindent();
+
                             ImGui.SeparatorText("Tanking");
 
                             ImGui.AlignTextToFramePadding();
@@ -1761,6 +1774,7 @@ namespace BPSR_ZDPS.Windows
 
             includeHealEventsOutsideOfCombat = Settings.Instance.IncludeHealEventsOutsideOfCombat;
 
+            meterSettingsDPSShowDeathIndicator = Settings.Instance.MeterSettingsDPSShowDeathIndicator;
             meterSettingsTankingShowDeaths = Settings.Instance.MeterSettingsTankingShowDeaths;
             meterSettingsNpcTakenShowHpData = Settings.Instance.MeterSettingsNpcTakenShowHpData;
             meterSettingsNpcTakenHideMaxHp = Settings.Instance.MeterSettingsNpcTakenHideMaxHp;
@@ -1884,6 +1898,7 @@ namespace BPSR_ZDPS.Windows
 
             Settings.Instance.IncludeHealEventsOutsideOfCombat = includeHealEventsOutsideOfCombat;
 
+            Settings.Instance.MeterSettingsDPSShowDeathIndicator = meterSettingsDPSShowDeathIndicator;
             Settings.Instance.MeterSettingsTankingShowDeaths = meterSettingsTankingShowDeaths;
             Settings.Instance.MeterSettingsNpcTakenShowHpData = meterSettingsNpcTakenShowHpData;
             Settings.Instance.MeterSettingsNpcTakenHideMaxHp = meterSettingsNpcTakenHideMaxHp;

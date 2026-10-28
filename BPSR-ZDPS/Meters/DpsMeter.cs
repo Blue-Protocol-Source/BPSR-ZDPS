@@ -200,6 +200,10 @@ namespace BPSR_ZDPS.Meters
                         //renderSplitter.Merge(drawList);
 
                         bool isDead = entity.Hp == 0 && entity.MaxHp > 0;
+                        if (!Settings.Instance.MeterSettingsDPSShowDeathIndicator)
+                        {
+                            isDead = false;
+                        }
                         if (isDead)
                         {
                             ImGui.PushStyleColor(ImGuiCol.PlotHistogram, Professions.ProfessionColors(professionId) * new Vector4(0.65f, 0.65f, 0.65f, 0.60f));

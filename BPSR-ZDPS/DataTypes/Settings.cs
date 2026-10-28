@@ -47,6 +47,7 @@ public class Settings
     public bool MinimalProcessingWhileEncounterSavingPaused { get; set; } = false;
     public bool IncludeHealEventsOutsideOfCombat { get; set; } = false;
 
+    public bool MeterSettingsDPSShowDeathIndicator { get; set; } = true;
     public bool MeterSettingsTankingShowDeaths { get; set; } = false;
     public bool MeterSettingsNpcTakenShowHpData { get; set; } = false;
     public bool MeterSettingsNpcTakenHideMaxHp { get; set; } = false;
