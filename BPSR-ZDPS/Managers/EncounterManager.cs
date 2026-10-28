@@ -1147,13 +1147,26 @@ namespace BPSR_ZDPS
             //GetOrCreateEntity(entityUuid).AddBuffEventAttribute(shieldBuffUuid, "AttrShieldList", 0);
         }
 
-        public void NotifyBuffEvent(long entityUuid, EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, int layer, int duration, int sourceConfigId, DateTime? creationTime, ExtraPacketData extraPacketData)
+        public void NotifyBuffEvent(long entityUuid, EBuffEventType buffEventType, int buffUuid, int baseId, int level, long fireUuid, long hostUuid, int layer, int duration, int sourceConfigId, DateTime? creationTime, ExtraPacketData extraPacketData)
         {
             string entityCasterName = "";
             if (fireUuid > 0)
             {
                 var caster = GetOrCreateEntity(fireUuid);
-                if (!string.IsNullOrEmpty(caster.Name))
+                if (caster.SummonerEntityType != EEntityType.EntErrType)
+                {
+                    var topSummonerId = caster.GetAttrKV("AttrTopSummonerId") as long?;
+                    if (topSummonerId != null && topSummonerId > 0)
+                    {
+                        var summoner = GetOrCreateEntity(topSummonerId.Value);
+                        if (!string.IsNullOrEmpty(summoner.Name))
+                        {
+                            entityCasterName = summoner.Name;
+                        }
+                        fireUuid = summoner.UUID;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(caster.Name))
                 {
                     entityCasterName = caster.Name;
                 }

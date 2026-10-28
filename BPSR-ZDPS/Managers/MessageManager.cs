@@ -1240,7 +1240,7 @@ namespace BPSR_ZDPS
                                     creationTime = dto.UtcDateTime;
                                 }
                                 //System.Diagnostics.Debug.WriteLine($"({buffEffect.Type}) buffEffect[{buffIdx}].logicEffect[{logicIdx}] (Type:{logicEffect.EffectType}) = (BuffUUID:{buffEffect.BuffUuid}){buffInfo}");
-                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId, creationTime, extraData);
+                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, buffInfo.BaseId, buffInfo.Level, buffInfo.FireUuid, buffEffect.HostUuid, buffInfo.Layer, buffInfo.Duration, buffInfo.FightSourceInfo.SourceConfigId, creationTime, extraData);
                             }
                             else if (logicEffect.EffectType == EBuffEffectLogicPbType.BuffEffectBuffChange)
                             {
@@ -1254,18 +1254,18 @@ namespace BPSR_ZDPS
                                     creationTime = dto.UtcDateTime;
                                 }
                                 //System.Diagnostics.Debug.WriteLine($"({buffEffect.Type}) buffEffect[{buffIdx}].logicEffect[{logicIdx}] (Type:{logicEffect.EffectType}) = (BuffUUID:{buffEffect.BuffUuid}){changeInfo}");
-                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, changeInfo.Layer, (int)changeInfo.Duration, 0, creationTime, extraData);
+                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, buffEffect.HostUuid, changeInfo.Layer, (int)changeInfo.Duration, 0, creationTime, extraData);
                             }
                             else if (logicEffect.EffectType == EBuffEffectLogicPbType.BuffEffectEnergyDisplay)
                             {
                                 var energyDisplay = BuffEnergyDisplayInfo.Parser.ParseFrom(reader);
                                 //System.Diagnostics.Debug.WriteLine($"{targetUuid} has BuffEffectEnergyDisplay EffectId={energyDisplay.EffectId} {buffEffect}");
-                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, 0, 0, 0, null, extraData);
+                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, buffEffect.HostUuid, 0, 0, 0, null, extraData);
                             }
                             else if (logicEffect.EffectType == null)
                             {
                                 //System.Diagnostics.Debug.WriteLine($"Unhandled Logic Effect {buffEffect}");
-                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, 0, 0, 0, null, extraData);
+                                EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, buffEffect.HostUuid, 0, 0, 0, null, extraData);
                             }
                             else
                             {
@@ -1280,7 +1280,7 @@ namespace BPSR_ZDPS
                         //System.Diagnostics.Debug.WriteLine($"No Logic Effect {buffEffect}");
                         if (!LogicHandledBuffs.Contains(buffEffect.BuffUuid))
                         {
-                            EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, 0, 0, 0, null, extraData);
+                            EncounterManager.Current.NotifyBuffEvent(targetUuid, buffEffect.Type, buffEffect.BuffUuid, 0, 0, 0, buffEffect.HostUuid, 0, 0, 0, null, extraData);
                         }
                     }
 
