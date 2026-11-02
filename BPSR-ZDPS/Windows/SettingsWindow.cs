@@ -77,6 +77,9 @@ namespace BPSR_ZDPS.Windows
         static bool IsBindingToggleWindowMinimizeKey = false;
         static uint ToggleWindowMinimizeKey;
         static string ToggleWindowMinimizeKeyName = "";
+        static bool IsBindingToggleEventTrackerContainersKey = false;
+        static uint ToggleEventTrackerContainersKey;
+        static string ToggleEventTrackerContainersKeyName = "";
 
         static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
         static EGameCapturePreference GameCapturePreference;
@@ -430,6 +433,13 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
                         ImGui.TextWrapped(AppStrings.GetLocalized("Settings_Keybinds_ToggleWindowMinimize_Desc"));
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        RebindKeyButton("Toggle Event Tracker Containers", ref ToggleEventTrackerContainersKey, ref ToggleEventTrackerContainersKeyName, ref IsBindingToggleEventTrackerContainersKey);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped(AppStrings.GetLocalized("Settings_Keybinds_ToggleEventTrackerContainers_Desc"));
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -1721,6 +1731,16 @@ namespace BPSR_ZDPS.Windows
                         ToggleWindowMinimizeKeyName = ImGui.GetKeyNameS(HotKeyManager.VirtualKeyToImGuiKey((int)ToggleWindowMinimizeKey));
                     }
 
+                    ToggleEventTrackerContainersKey = Settings.Instance.HotkeysToggleEventTrackerContainers;
+                    if (ToggleEventTrackerContainersKey == 0)
+                    {
+                        ToggleEventTrackerContainersKeyName = "[UNBOUND]";
+                    }
+                    else
+                    {
+                        ToggleEventTrackerContainersKeyName = ImGui.GetKeyNameS(HotKeyManager.VirtualKeyToImGuiKey((int)ToggleEventTrackerContainersKey));
+                    }
+
                     RegisterAllHotkeys(mainWindow);
 
                     ImGui.CloseCurrentPopup();
@@ -1839,6 +1859,8 @@ namespace BPSR_ZDPS.Windows
                 Settings.Instance.GameCaptureCustomExeName = gameCaptureCustomExeName;
 
                 MessageManager.InitializeCapturing();
+
+                mainWindow.ClearAllContainerTrackersData();
             }
             if (allowGamepadNavigationInputInZDPS)
             {
@@ -2019,6 +2041,16 @@ namespace BPSR_ZDPS.Windows
             {
                 ToggleWindowMinimizeKeyName = ImGui.GetKeyNameS(HotKeyManager.VirtualKeyToImGuiKey((int)ToggleWindowMinimizeKey));
             }
+
+            ToggleEventTrackerContainersKey = Settings.Instance.HotkeysToggleEventTrackerContainers;
+            if (ToggleEventTrackerContainersKey == 0)
+            {
+                ToggleEventTrackerContainersKeyName = "[UNBOUND]";
+            }
+            else
+            {
+                ToggleEventTrackerContainersKeyName = ImGui.GetKeyNameS(HotKeyManager.VirtualKeyToImGuiKey((int)ToggleEventTrackerContainersKey));
+            }
         }
 
         static void RegisterAllHotkeys(MainWindow mainWindow)
@@ -2040,6 +2072,12 @@ namespace BPSR_ZDPS.Windows
                 HotKeyManager.RegisterKey("ToggleWindowMinimize", mainWindow.ToggleWindowMinimize, ToggleWindowMinimizeKey);
             }
             Settings.Instance.HotkeysToggleWindowMinimize = ToggleWindowMinimizeKey;
+
+            if (ToggleEventTrackerContainersKey != 0)
+            {
+                HotKeyManager.RegisterKey("ToggleEventTrackerContainers", mainWindow.ToggleEventTrackerContainers, ToggleEventTrackerContainersKey);
+            }
+            Settings.Instance.HotkeysToggleEventTrackerContainers = ToggleEventTrackerContainersKey;
         }
 
         public static void RebindKeyButton(string bindingName, ref uint bindingVariable, ref string bindingVariableName, ref bool bindingState)

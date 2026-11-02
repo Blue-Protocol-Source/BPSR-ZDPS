@@ -82,6 +82,8 @@ namespace BPSR_ZDPS.Windows
 
         static string DragDropTargetName = "";
 
+        static bool IsPendingTrackerDataClear = false;
+
         struct FAttrValueData
         {
             public Type Type;
@@ -2155,6 +2157,32 @@ namespace BPSR_ZDPS.Windows
         {
             if (EventTrackerContainers.Count > 0)
             {
+                if (IsPendingTrackerDataClear)
+                {
+                    IsPendingTrackerDataClear = false;
+
+                    foreach (var eventContainer in EventTrackerContainers)
+                    {
+                        foreach (var eventTracker in eventContainer.Value.EventTrackers)
+                        {
+                            long idToRemove = -1;
+                            foreach (var trackerData in eventTracker.Value.EventData)
+                            {
+                                if (trackerData.Value.Cooldown != null)
+                                {
+                                    trackerData.Value.Cooldown.EndCooldown();
+                                    trackerData.Value.Cooldown = null;
+                                }
+                                idToRemove = trackerData.Key;
+                            }
+                            if (idToRemove > -1)
+                            {
+                                eventTracker.Value.EventData.TryRemove(idToRemove, out _);
+                            }
+                        }
+                    }
+                }
+
                 if (ForceHideAllContainers)
                 {
                     return;
@@ -4598,6 +4626,14 @@ namespace BPSR_ZDPS.Windows
 
                     ImGui.Separator();
 
+                    if (ImGui.MenuItem("Clear Tracker Data In Current Containers"))
+                    {
+                        ClearAllContainerTrackersData();
+                    }
+                    ImGui.SetItemTooltip("Clears all the trackers running in the current Containers.");
+
+                    ImGui.Separator();
+
                     if (ImGui.MenuItem("Reload Internal Presets"))
                     {
                         LoadDefaultPresets(true);
@@ -6987,6 +7023,11 @@ namespace BPSR_ZDPS.Windows
                 container.Value.HadTransparentBackground = false;
                 container.Value.LastSetOpacity = 100;
             }
+        }
+
+        public static void ClearAllContainerTrackersData()
+        {
+            IsPendingTrackerDataClear = true;
         }
 
         private static void LoadDefaultPresets(bool forceAdd = false)

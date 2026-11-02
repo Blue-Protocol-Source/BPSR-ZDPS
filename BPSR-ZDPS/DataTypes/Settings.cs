@@ -92,6 +92,7 @@ public class Settings
     public uint HotkeysEncounterReset { get; set; }
     public uint HotkeysPinnedWindowClickthrough { get; set; }
     public uint HotkeysToggleWindowMinimize { get; set; }
+    public uint HotkeysToggleEventTrackerContainers { get; set; }
 
     public uint FixedFramerateScale { get; set; } = 1;
 
@@ -123,6 +124,11 @@ public class Settings
         if (HotkeysToggleWindowMinimize > 0)
         {
             HotKeyManager.RegisterKey("ToggleWindowMinimize", mainWindow.ToggleWindowMinimize, HotkeysToggleWindowMinimize);
+        }
+
+        if (HotkeysToggleEventTrackerContainers > 0)
+        {
+            HotKeyManager.RegisterKey("ToggleEventTrackerContainers", mainWindow.ToggleEventTrackerContainers, HotkeysToggleEventTrackerContainers);
         }
     }
 

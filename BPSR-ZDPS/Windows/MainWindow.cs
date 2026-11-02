@@ -423,7 +423,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.PushStyleColor(ImGuiCol.Text, EventTrackerWindow.ForceHideAllContainers ? Colors.Red * new Vector4(1, 1, 1, 0.75f) : Colors.White);
                     if (ImGui.MenuItem($"{(EventTrackerWindow.ForceHideAllContainers ? FASIcons.EyeSlash : FASIcons.Eye)}##ForceToggleVisibilityBtn"))
                     {
-                        EventTrackerWindow.ToggleForceHideAllContainers(!EventTrackerWindow.ForceHideAllContainers);
+                        ToggleEventTrackerContainers();
                     }
                     ImGui.PopStyleColor();
                     ImGui.PopFont();
@@ -899,6 +899,11 @@ namespace BPSR_ZDPS.Windows
             {
                 Utils.MinimizeWindow(HelperMethods.MainWindowPlatformHandleRaw);
             }
+        }
+
+        public void ToggleEventTrackerContainers()
+        {
+            EventTrackerWindow.ToggleForceHideAllContainers(!EventTrackerWindow.ForceHideAllContainers);
         }
 
         public void SetDbWorkComplete()
