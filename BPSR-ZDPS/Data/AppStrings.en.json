@@ -80,6 +80,8 @@
     "Settings_Keybinds_EncounterReset_Warning": "[Split Encounters On New Phases] is Enabled. You likely do not need this keybind to manually reset an Encounter. ZDPS will handle Encounter separation for you.",
     "Settings_Keybinds_PinnedWindowClickthrough_Desc": "This allows your mouse input to go 'through' the pinned (Top Most) window, ignoring it, and interacting with whatever may be behind it such as the game or another application.",
     "Settings_Keybinds_ToggleWindowMinimize_Desc": "This will let you minimize, or restore, the Main Window with a key press.",
+    "Settings_Keybinds_ToggleEventTrackerContainers_Desc": "This toggles the visibility state of all Event Tracker Containers with a key press.",
+    "Settings_Keybinds_ClearAllContainerTrackersData_Desc": "This clears the data in all Event Tracker Containers.",
     "Settings_CheckForZDPSUpdatesOnStartup": "Check For ZDPS Updates On Startup: ",
     "Settings_CheckForZDPSUpdatesOnStartup_Desc": "When enabled, ZDPS will check online for available updates when the application is launched.",
     "Settings_LatestZDPSVersionCheckURL": "Latest ZDPS Version Check URL: ",

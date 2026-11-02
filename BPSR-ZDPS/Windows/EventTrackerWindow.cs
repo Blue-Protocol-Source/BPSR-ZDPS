@@ -153,6 +153,8 @@ namespace BPSR_ZDPS.Windows
             { Zproto.EAttrType.AttrBossDamRes.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrSuppressDamInc.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrSuppressDamRes.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrOtherDamInc.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrOtherDamRes.ToString(), new FAttrValueData(typeof(int)) },
 
             { Zproto.EAttrType.AttrFireAtk.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrFireDamage.ToString(), new FAttrValueData(typeof(int)) },
@@ -206,10 +208,13 @@ namespace BPSR_ZDPS.Windows
             { Zproto.EAttrType.AttrMaxOriginEnergy.ToString(), new FAttrValueData(typeof(int)) },
 
             { Zproto.EAttrType.AttrSeasonLevel.ToString(), new FAttrValueData(typeof(int)) },
-            { Zproto.EAttrType.AttrMonsterSeasonLevel.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrSeasonLv.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrSeasonStrength.ToString(), new FAttrValueData(typeof(long)) },
             { Zproto.EAttrType.AttrSeasonStrengthAdd.ToString(), new FAttrValueData(typeof(long)) },
             { Zproto.EAttrType.AttrSeasonStrengthTotal.ToString(), new FAttrValueData(typeof(int)) },
+
+            { Zproto.EAttrType.AttrMonsterLevel.ToString(), new FAttrValueData(typeof(int)) },
+            { Zproto.EAttrType.AttrMonsterRank.ToString(), new FAttrValueData(typeof(int)) },
 
             { Zproto.EAttrType.AttrIsLockStunned.ToString(), new FAttrValueData(typeof(int)) },
             { Zproto.EAttrType.AttrStunned.ToString(), new FAttrValueData(typeof(int)) },
@@ -741,7 +746,7 @@ namespace BPSR_ZDPS.Windows
                             //eventTracker.EventData.Add(e.EntityUuid, eventData);
                         }
 
-                        if ((eventTracker.TrackedBuffId == e.BaseId && (eventTracker.EventSourceMustBeSelf ? AppState.PlayerUUID == e.FireUuid : true))
+                        if (((eventTracker.TrackedBuffId == e.BaseId || (eventTracker.OverrideTrackedId ? eventTracker.OverrideTrackedIdValue == e.BaseId : false)) && (eventTracker.EventSourceMustBeSelf ? AppState.PlayerUUID == e.FireUuid : true))
                             || (eventData != null && e.BuffUuid != 0 && eventData.Uuid == e.BuffUuid))
                         {
                             if (eventTracker.BuffEvents.Contains(e.BuffEventType))
@@ -2651,6 +2656,7 @@ namespace BPSR_ZDPS.Windows
                                 {
                                     hasShownEntityName.Add(eventData.OwnerEntityUuid);
 
+                                    ImGui.PushFont(null, eventTracker.EntityNameSize);
                                     if (EntityCache.Instance.Cache.Lines.TryGetValue(eventData.OwnerEntityUuid, out var cached))
                                     {
                                         ImGui.TextUnformatted($"{cached.Name}");
@@ -2659,6 +2665,8 @@ namespace BPSR_ZDPS.Windows
                                     {
                                         ImGui.TextUnformatted($"[{eventData.OwnerEntityUuid}]");
                                     }
+                                    ImGui.PopFont();
+
                                     var tempBR = ImGui.GetItemRectMax().X;
                                     if (tempBR > farthestEndpoint)
                                     {
@@ -2673,6 +2681,7 @@ namespace BPSR_ZDPS.Windows
 
                                 if (eventTracker.ShowCasterName && eventTracker.TrackerType == ETrackerType.Buffs)
                                 {
+                                    ImGui.PushFont(null, eventTracker.CasterNameSize);
                                     if (!string.IsNullOrEmpty(eventData.SourceEntityName))
                                     {
                                         ImGui.TextUnformatted($"Caster: {eventData.SourceEntityName}");
@@ -2681,6 +2690,7 @@ namespace BPSR_ZDPS.Windows
                                     {
                                         ImGui.TextUnformatted($"Caster: [{eventData.SourceEntityUuid}]");
                                     }
+                                    ImGui.PopFont();
                                 }
 
                                 ImGui.BeginGroup();
@@ -4513,6 +4523,8 @@ namespace BPSR_ZDPS.Windows
                 windowSettings.WindowPosition = ImGui.GetWindowPos();
                 windowSettings.WindowSize = ImGui.GetWindowSize();
 
+                ImFileBrowser.Draw();
+
                 ImGui.End();
             }
 
@@ -5585,6 +5597,15 @@ namespace BPSR_ZDPS.Windows
             }
             ImGui.Unindent();
             ImGui.EndDisabled();
+
+            ImGui.Checkbox("Override Tracked Id", ref ActiveTrackedEventEntry.OverrideTrackedId);
+            ImGui.SetItemTooltip("This is primarily useful for setting an ID that does not exist in the above filter list.");
+            if (ActiveTrackedEventEntry.OverrideTrackedId)
+            {
+                ImGui.Indent();
+                ImGui.InputInt("##OverrideTrackedIdValue", ref ActiveTrackedEventEntry.OverrideTrackedIdValue, ImGuiInputTextFlags.CharsDecimal);
+                ImGui.Unindent();
+            }
         }
 
         private static void DrawSkillTrackerOptions()
@@ -5923,9 +5944,35 @@ namespace BPSR_ZDPS.Windows
 
             ImGui.Checkbox("Show Entity Name", ref ActiveTrackedEventEntry.ShowEntityName);
 
+            ImGui.Indent();
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted("Entity Name Size:");
+            ImGui.SameLine();
+            ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+            ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderInt("##EntityNameSize", ref ActiveTrackedEventEntry.EntityNameSize, 16, 96);
+            ImGui.PopStyleColor(2);
+
+            ImGui.Unindent();
+
             if (ActiveTrackedEventEntry.TrackerType == ETrackerType.Buffs)
             {
                 ImGui.Checkbox("Show Caster Name", ref ActiveTrackedEventEntry.ShowCasterName);
+
+                ImGui.Indent();
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted("Caster Name Size:");
+                ImGui.SameLine();
+                ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
+                ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
+                ImGui.SetNextItemWidth(-1);
+                ImGui.SliderInt("##CasterNameSize", ref ActiveTrackedEventEntry.CasterNameSize, 16, 96);
+                ImGui.PopStyleColor(2);
+
+                ImGui.Unindent();
             }
 
             ImGui.SeparatorText("Icon");
@@ -5949,6 +5996,24 @@ namespace BPSR_ZDPS.Windows
                 {
                     ActiveTrackedEventEntry.UpdateIconData("", false);
                 }
+
+                ImGui.SameLine();
+                if (ImGui.Button("Browse...##CustomIconFilePicker"))
+                {
+                    string defaultIconDir = File.Exists(ActiveTrackedEventEntry.CustomIconPath) ? Path.GetDirectoryName(ActiveTrackedEventEntry.CustomIconPath) : Path.Combine(Utils.DATA_DIR_NAME, "Images");
+                    ImFileBrowser.OpenFile((selectedFilePath) =>
+                    {
+                        string relativePath = Path.GetRelativePath(Path.Combine(Utils.DATA_DIR_NAME, "Images"), Path.ChangeExtension(selectedFilePath, null));
+                        if (File.Exists(Path.Combine(Utils.DATA_DIR_NAME, "Images", Path.ChangeExtension(relativePath, ".png"))))
+                        {
+                            relativePath = Path.Combine("..", relativePath);
+                        }
+                        ActiveTrackedEventEntry.CustomIconPath = relativePath;
+                        ActiveTrackedEventEntry.UpdateIconData("", false);
+                    }, "Select a custom icon to use...", defaultIconDir, "PNG (*.png)|*.png", 0);
+                }
+                ImGui.SetItemTooltip("Select the custom icon using the file browser.");
+                
                 if (ActiveTrackedEventEntry.UseCustomIcon)
                 {
                     ImGui.Indent();
@@ -8008,6 +8073,8 @@ namespace BPSR_ZDPS.Windows
         public int DurationProgressBarCircleThickness = 5;
         public float DurationProgressBarTextureScale = 1.0f;
         public int AttributeValueSize = 18;
+        public int EntityNameSize = 18;
+        public int CasterNameSize = 18;
 
         public bool ShowDurationEnded = false;
         //public bool HideIfNoDuration = false;
