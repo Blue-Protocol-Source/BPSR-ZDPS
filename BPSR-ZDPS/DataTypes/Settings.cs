@@ -93,6 +93,7 @@ public class Settings
     public uint HotkeysPinnedWindowClickthrough { get; set; }
     public uint HotkeysToggleWindowMinimize { get; set; }
     public uint HotkeysToggleEventTrackerContainers { get; set; }
+    public uint HotkeysClearAllContainerTrackersData { get; set; }
 
     public uint FixedFramerateScale { get; set; } = 1;
 
@@ -129,6 +130,11 @@ public class Settings
         if (HotkeysToggleEventTrackerContainers > 0)
         {
             HotKeyManager.RegisterKey("ToggleEventTrackerContainers", mainWindow.ToggleEventTrackerContainers, HotkeysToggleEventTrackerContainers);
+        }
+
+        if (HotkeysClearAllContainerTrackersData > 0)
+        {
+            HotKeyManager.RegisterKey("ClearAllContainerTrackersData", mainWindow.ClearAllContainerTrackersData, HotkeysClearAllContainerTrackersData);
         }
     }
 

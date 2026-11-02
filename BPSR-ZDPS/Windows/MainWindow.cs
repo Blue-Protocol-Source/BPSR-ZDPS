@@ -906,6 +906,11 @@ namespace BPSR_ZDPS.Windows
             EventTrackerWindow.ToggleForceHideAllContainers(!EventTrackerWindow.ForceHideAllContainers);
         }
 
+        public void ClearAllContainerTrackersData()
+        {
+            EventTrackerWindow.ClearAllContainerTrackersData();
+        }
+
         public void SetDbWorkComplete()
         {
             ResumeFromDbWork = true;

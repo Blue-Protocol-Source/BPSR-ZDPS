@@ -80,6 +80,9 @@ namespace BPSR_ZDPS.Windows
         static bool IsBindingToggleEventTrackerContainersKey = false;
         static uint ToggleEventTrackerContainersKey;
         static string ToggleEventTrackerContainersKeyName = "";
+        static bool IsBindingClearAllContainerTrackersDataKey = false;
+        static uint ClearAllContainerTrackersDataKey;
+        static string ClearAllContainerTrackersDataKeyName = "";
 
         static SharpPcap.LibPcap.LibPcapLiveDeviceList? NetworkDevices;
         static EGameCapturePreference GameCapturePreference;
@@ -440,6 +443,13 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
                         ImGui.TextWrapped(AppStrings.GetLocalized("Settings_Keybinds_ToggleEventTrackerContainers_Desc"));
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        RebindKeyButton("Clear All Container Trackers Data", ref ClearAllContainerTrackersDataKey, ref ClearAllContainerTrackersDataKeyName, ref IsBindingClearAllContainerTrackersDataKey);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped(AppStrings.GetLocalized("Settings_Keybinds_ClearAllContainerTrackersData_Desc"));
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
@@ -1741,6 +1751,16 @@ namespace BPSR_ZDPS.Windows
                         ToggleEventTrackerContainersKeyName = ImGui.GetKeyNameS(HotKeyManager.VirtualKeyToImGuiKey((int)ToggleEventTrackerContainersKey));
                     }
 
+                    ClearAllContainerTrackersDataKey = Settings.Instance.HotkeysClearAllContainerTrackersData;
+                    if (ClearAllContainerTrackersDataKey == 0)
+                    {
+                        ClearAllContainerTrackersDataKeyName = "[UNBOUND]";
+                    }
+                    else
+                    {
+                        ClearAllContainerTrackersDataKeyName = ImGui.GetKeyNameS(HotKeyManager.VirtualKeyToImGuiKey((int)ClearAllContainerTrackersDataKey));
+                    }
+
                     RegisterAllHotkeys(mainWindow);
 
                     ImGui.CloseCurrentPopup();
@@ -2051,6 +2071,16 @@ namespace BPSR_ZDPS.Windows
             {
                 ToggleEventTrackerContainersKeyName = ImGui.GetKeyNameS(HotKeyManager.VirtualKeyToImGuiKey((int)ToggleEventTrackerContainersKey));
             }
+
+            ClearAllContainerTrackersDataKey = Settings.Instance.HotkeysClearAllContainerTrackersData;
+            if (ClearAllContainerTrackersDataKey == 0)
+            {
+                ClearAllContainerTrackersDataKeyName = "[UNBOUND]";
+            }
+            else
+            {
+                ClearAllContainerTrackersDataKeyName = ImGui.GetKeyNameS(HotKeyManager.VirtualKeyToImGuiKey((int)ClearAllContainerTrackersDataKey));
+            }
         }
 
         static void RegisterAllHotkeys(MainWindow mainWindow)
@@ -2078,6 +2108,12 @@ namespace BPSR_ZDPS.Windows
                 HotKeyManager.RegisterKey("ToggleEventTrackerContainers", mainWindow.ToggleEventTrackerContainers, ToggleEventTrackerContainersKey);
             }
             Settings.Instance.HotkeysToggleEventTrackerContainers = ToggleEventTrackerContainersKey;
+
+            if (ClearAllContainerTrackersDataKey != 0)
+            {
+                HotKeyManager.RegisterKey("ClearAllContainerTrackersData", mainWindow.ClearAllContainerTrackersData, ClearAllContainerTrackersDataKey);
+            }
+            Settings.Instance.HotkeysClearAllContainerTrackersData = ClearAllContainerTrackersDataKey;
         }
 
         public static void RebindKeyButton(string bindingName, ref uint bindingVariable, ref string bindingVariableName, ref bool bindingState)
