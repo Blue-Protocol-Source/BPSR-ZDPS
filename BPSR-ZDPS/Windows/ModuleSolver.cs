@@ -649,7 +649,16 @@ namespace BPSR_ZDPS
                 foreach (var item in ModStatInfos.AsValueEnumerable().Where(x => !SolverConfig.StatPriorities.Any(y => y.Id == x.Key)))
                 {
                     //ImGui.BeginGroup();
-                    ImGui.Image(item.Value.IconRef.Value, new Vector2(22, 22));
+                    var icon = item.Value.IconRef ?? ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"));
+                    if (icon.HasValue)
+                    {
+                        ImGui.Image(icon.Value, new Vector2(22, 22));
+                    }
+                    else
+                    {
+                        ImGui.Dummy(new Vector2(22, 22));
+                    }
+
                     ImGui.SameLine();
                     ImGui.AlignTextToFramePadding();
                     if (ImGui.Selectable($"{item.Value.Name}##StatToSelect", item.Key == PendingStatToAdd.StatId))
@@ -662,7 +671,11 @@ namespace BPSR_ZDPS
             }
 
             ImGui.SetCursorPos(pos + new Vector2(2, 2));
-            ImGui.Image(PendingStatToAdd.IconRef.Value, new Vector2(22, 22));
+            var pendingStatIcon = PendingStatToAdd.IconRef ?? ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"));
+            if (pendingStatIcon.HasValue)
+            {
+                ImGui.Image(pendingStatIcon.Value, new Vector2(22, 22));
+            }
 
             ImGui.SetCursorPos(pos + new Vector2(leftWidth - 50, 0));
             var isAlreadyAdded = SolverConfig.StatPriorities.Any(x => x.Id == PendingStatToAdd.StatId);
@@ -841,7 +854,14 @@ namespace BPSR_ZDPS
 
             var stat = ModStatInfos[SolverConfig.StatPriorities[i].Id];
             ImGui.SetCursorPos(pos + new Vector2(40, 4));
-            ImGui.Image(stat.IconRef.Value, new Vector2(32, 32));
+            if (stat.IconRef.HasValue)
+            {
+                ImGui.Image(stat.IconRef.Value, new Vector2(32, 32));
+            }
+            else
+            {
+                ImGui.Dummy(new Vector2(32, 32));
+            }
 
             ImGui.SetCursorPos(pos + new Vector2(80, 9));
             ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
@@ -935,7 +955,15 @@ namespace BPSR_ZDPS
             ImGui.PopFont();
 
             var pos = ImGui.GetCursorPos();
-            ImGui.Image(qualityBg, MOD_ICON_SIZE);
+            if (qualityBg != null)
+            {
+                ImGui.Image(qualityBg.Value, MOD_ICON_SIZE);
+            }
+            else
+            {
+                ImGui.Dummy(MOD_ICON_SIZE);
+            }
+
             ImGui.SetCursorPos(pos);
             if (modIcon != null)
             {
@@ -979,12 +1007,21 @@ namespace BPSR_ZDPS
             {
                 var pos = ImGui.GetCursorPos();
                 var titleWidth = ImGui.CalcTextSize(statInfo.Name).X;
-                var icon = statInfo.IconRef.Value;
+                var icon = statInfo.IconRef;
                 ImGui.SetCursorPos(pos + new Vector2((size.X / 2) - (titleWidth / 2), 0));
                 ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], 17);
                 ImGui.TextUnformatted(statInfo.Name);
                 ImGui.SetCursorPos(pos + new Vector2((size.X / 2) - (iconSize.X / 2), 25));
-                ImGui.Image(icon, iconSize);
+
+                if (icon.HasValue)
+                {
+                    ImGui.Image(icon.Value, iconSize);
+                }
+                else
+                {
+                    ImGui.Dummy(iconSize);
+                }
+
                 ImGui.SetCursorPos(pos + new Vector2((size.X / 2) - 10, 60));
                 ImGui.TextUnformatted($"+{level}");
                 ImGui.PopFont();
@@ -1302,11 +1339,11 @@ namespace BPSR_ZDPS
             return icon;
         }
 
-        private static ImTextureRef GetItemQualityBg(int quality)
+        private static ImTextureRef? GetItemQualityBg(int quality)
         {
             var icon = ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, $"item_quality_{quality}.png")) ?? ImageHelper.LoadTexture(Path.Combine(ModuleImgBasePath, "Missing.png"));
 
-            return icon.Value;
+            return icon;
         }
 
         private static bool IsModuleOfType(int id, ModuleType modType) => ModTypeMapping.TryGetValue(id, out var info) ? info == modType : false;
