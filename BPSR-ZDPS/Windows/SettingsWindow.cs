@@ -1881,6 +1881,10 @@ namespace BPSR_ZDPS.Windows
                 MessageManager.InitializeCapturing();
 
                 mainWindow.ClearAllContainerTrackersData();
+
+                EncounterManager.StartEncounter(true, EncounterStartReason.Force);
+
+                mainWindow.ClearAllContainerTrackersData();
             }
             if (allowGamepadNavigationInputInZDPS)
             {
