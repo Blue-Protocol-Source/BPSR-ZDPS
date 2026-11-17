@@ -69,11 +69,11 @@ namespace BPSR_ZDPS
 
             // Path for background arc (dimmed arc)
             draw_list.PathArcTo(new Vector2(x + size * 0.5f, y + size * 0.5f), size * 0.5f - thickness * 0.5f, 3.141592f * a_min_factor, 3.141592f * a_max_factor_100percentage);
-            draw_list.PathStroke(ImGui.GetColorU32(ImGuiCol.FrameBg), ImDrawFlags.None, thickness);
+            draw_list.PathStroke(ImGui.GetColorU32(ImGuiCol.FrameBg), thickness, ImDrawFlags.None);
             
             // Path for progress filling (highlighted arc)
             draw_list.PathArcTo(new Vector2(x + size * 0.5f, y + size * 0.5f), size * 0.5f - thickness * 0.5f, 3.141592f * a_min_factor, 3.141592f * a_max_factor);
-            draw_list.PathStroke(ImGui.GetColorU32(ImGuiCol.PlotHistogram), ImDrawFlags.None, thickness);
+            draw_list.PathStroke(ImGui.GetColorU32(ImGuiCol.PlotHistogram), thickness, ImDrawFlags.None);
         }
 
         public static void ProgressBarArc(float size, float max_angle_factor, float percentage, Vector2 pos, float thickness, ImTextureRef? imTextureRef = null, float texScale = 1.0f, int texStretchLeft = 0, int texStretchRight = 0, bool isFilled = false)

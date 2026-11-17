@@ -54,10 +54,10 @@
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="Hexa.NET.GLFW" Version="1.0.5" />
-    <PackageReference Include="Hexa.NET.ImGui" Version="2.2.9" />
-    <PackageReference Include="Hexa.NET.ImGui.Backends" Version="1.0.18" />
-    <PackageReference Include="Hexa.NET.ImGui.Backends.GLFW" Version="1.0.18" />
-    <PackageReference Include="Hexa.NET.ImPlot" Version="2.2.9" />
+    <PackageReference Include="Hexa.NET.ImGui" Version="3.1.0-experimental" />
+    <PackageReference Include="Hexa.NET.ImGui.Backends" Version="3.1.0-experimental" />
+    <PackageReference Include="Hexa.NET.ImGui.Backends.GLFW" Version="3.1.0-experimental" />
+    <PackageReference Include="Hexa.NET.ImPlot" Version="3.1.0-experimental" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.0" />
     <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="NAudio.Vorbis" Version="1.5.0" />
@@ -65,8 +65,8 @@
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
     <PackageReference Include="Serilog.Sinks.Debug" Version="3.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
-    <PackageReference Include="Silk.NET.Direct3D.Compilers" Version="2.22.0" />
-    <PackageReference Include="Silk.NET.Direct3D11" Version="2.22.0" />
+    <PackageReference Include="Silk.NET.Direct3D.Compilers" Version="2.23.0" />
+    <PackageReference Include="Silk.NET.Direct3D11" Version="2.23.0" />
     <PackageReference Include="Silk.NET.DirectComposition" Version="2.23.0" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />
     <PackageReference Include="System.IO.Hashing" Version="10.0.0" />

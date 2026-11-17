@@ -380,20 +380,20 @@ namespace BPSR_ZDPS
             //ff = new FontFile("BPSR_ZDPS.Fonts.fot-seuratpron-m.otf");
             var ff = new FontFile("BPSR_ZDPS.Fonts.fot-seuratpron-m.otf", new GlyphRange(0x3000, 0x303F));
             var res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+            //ff.Dispose();
 
             // Chinese character supporting font (this is very heavy to load into memory - 16MB)
             ff = new FontFile("BPSR_ZDPS.Fonts.SourceHanSansSC-Regular.otf", new GlyphRange(0x4E00, 0x9FFF));
             res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+            //ff.Dispose();
 
             // Korean character supporting font
             ff = new FontFile("BPSR_ZDPS.Fonts.NotoSansKR-Regular.ttf", new GlyphRange(0x4E00, 0x9FFF));
             res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+            //ff.Dispose();
 
             // Setting Segoe to be the default application font (though the other fonts will be used if their glyphs are required)
-            ImGui.AddFontDefault(HelperMethods.Fonts["Segoe"].ContainerAtlas);
+            ImGui.AddFontDefault(HelperMethods.Fonts["Segoe"].OwnerAtlas);
 
             // Note: Segoe-Bold will not support multi-language when it's used
             HelperMethods.Fonts.Add("Segoe-Bold", io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\segoeuib.ttf", 18.0f));
@@ -401,36 +401,36 @@ namespace BPSR_ZDPS
             ff = new FontFile("BPSR_ZDPS.Fonts.FAS.ttf", new GlyphRange(0x0021, 0xF8FF));
             res = ff.BindToImGui(18.0f);
             HelperMethods.Fonts.Add("FASIcons", res);
-            ff.Dispose();
+            //ff.Dispose();
 
             // Windows 11 doesn't actually have this anymore so we can't rely on the system, we have to embed it
             //HelperMethods.Fonts.Add("Cascadia-Mono", io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\CascadiaMono.ttf", 18.0f));
             ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaMono.ttf");
             res = ff.BindToImGui(18.0f);
             HelperMethods.Fonts.Add("Cascadia-Mono", res);
-            ff.Dispose();
+            //ff.Dispose();
 
             // The below fonts are being merged into Cascadia-Mono
 
             // Japanese character supporting monospace font
             ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextJP.wght.ttf");
             res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+            //ff.Dispose();
 
             // Chinese Simplified character supporting monospace font
             ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextSC.wght.ttf");
             res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+            //ff.Dispose();
 
             // Chinese Traditional character supporting monospace font
             ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextTC.wght.ttf");
             res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+            //ff.Dispose();
 
             // Korean character supporting monospace font
             ff = new FontFile("BPSR_ZDPS.Fonts.D2Coding.ttf");
             res = ff.BindToImGui(18.0f, true);
-            ff.Dispose();
+            //ff.Dispose();
         }
 
         static unsafe void SetWindowIcon(GLFWwindowPtr window, string IconFilePath)

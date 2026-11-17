@@ -1431,11 +1431,25 @@ namespace BPSR_ZDPS.Windows
                                         return fmt.Length + 1;
                                     }
                                 });
+
+                                ImPlotPoint Getter(int idx, void* userData)
+                                {
+                                    return new ImPlotPoint(SkillSnapshotTimestampSeconds[idx], SkillSnapshotsDamageCumulative[idx]);
+                                }
+
+                                ImPlotSpec plotSpec = default(ImPlotSpec);
+                                plotSpec.FillColor = ImPlot.IMPLOT_AUTO_COL;
+                                plotSpec.LineColor = ImPlot.IMPLOT_AUTO_COL;
+                                plotSpec.LineWeight = 1.0f;
+                                plotSpec.FillAlpha = 1.0f;
+
+                                ImPlot.PlotBarsG("Bars", Getter, null, SkillSnapshotsDamage.Length, 1, plotSpec);
+                                ImPlot.PlotLineG("Line", Getter, null, SkillSnapshotsDamage.Length, plotSpec);
                             }
 
                             //ImPlot.FitPointY(SkillSnapshotsDamage.Max());
-                            ImPlot.PlotBars("Bars", ref SkillSnapshotTimestampSeconds[0], ref SkillSnapshotsDamageCumulative.ToArray()[0], SkillSnapshotsDamage.Length, 1);
-                            ImPlot.PlotLine("Line", ref SkillSnapshotTimestampSeconds[0], ref SkillSnapshotsDamageCumulative.ToArray()[0], SkillSnapshotsDamage.Length);
+                            //ImPlot.PlotBars("Bars", ref SkillSnapshotTimestampSeconds[0], ref SkillSnapshotsDamageCumulative.ToArray()[0], SkillSnapshotsDamage.Length, 1);
+                            //ImPlot.PlotLine("Line", ref SkillSnapshotTimestampSeconds[0], ref SkillSnapshotsDamageCumulative.ToArray()[0], SkillSnapshotsDamage.Length);
 
                             ImPlot.EndPlot();
                         }
@@ -1455,29 +1469,69 @@ namespace BPSR_ZDPS.Windows
                                         return fmt.Length + 1;
                                     }
                                 });
+
+                                ImPlotPoint Getter(int idx, void* userData)
+                                {
+                                    return new ImPlotPoint(SkillSnapshotTimestampSeconds[idx], SkillSnapshotsDamage[idx]);
+                                }
+
+                                ImPlotSpec plotSpec = default(ImPlotSpec);
+                                plotSpec.FillColor = ImPlot.IMPLOT_AUTO_COL;
+                                plotSpec.LineColor = ImPlot.IMPLOT_AUTO_COL;
+                                plotSpec.LineWeight = 1.0f;
+                                plotSpec.FillAlpha = 1.0f;
+
+                                ImPlot.PlotBarsG("Bars", Getter, null, SkillSnapshotsDamage.Length, 1, plotSpec);
+                                ImPlot.PlotLineG("Line", Getter, null, SkillSnapshotsDamage.Length, plotSpec);
                             }
 
-                            ImPlot.PlotBars("Bars", ref SkillSnapshotTimestampSeconds[0], ref SkillSnapshotsDamage[0], SkillSnapshotsDamage.Length, 1);
-                            ImPlot.PlotLine("Line", ref SkillSnapshotTimestampSeconds[0], ref SkillSnapshotsDamage[0], SkillSnapshotsDamage.Length);
+                            //ImPlot.PlotBars("Bars", ref SkillSnapshotTimestampSeconds[0], ref SkillSnapshotsDamage[0], SkillSnapshotsDamage.Length, 1);
+                            //ImPlot.PlotLine("Line", ref SkillSnapshotTimestampSeconds[0], ref SkillSnapshotsDamage[0], SkillSnapshotsDamage.Length);
 
                             ImPlot.EndPlot();
                         }
 
-                        if (ImPlot.BeginPlot("Hits By Source", new Vector2(-1, 520), ImPlotFlags.NoMouseText))
+                        // Disable Hits By Source for now until PlotPieChart works again
+                        if (false)
                         {
-                            ImPlot.SetupAxes("", "", ImPlotAxisFlags.NoDecorations | ImPlotAxisFlags.AutoFit, ImPlotAxisFlags.NoDecorations | ImPlotAxisFlags.AutoFit);
-                            ImPlot.SetupLegend(ImPlotLocation.West, ImPlotLegendFlags.Outside);
-                            ImPlot.PlotPieChart(SkillSnapshotsNames, ref SkillSnapshotsHits[0], SkillSnapshotsNames.Length, 0, 0, 1, ImPlotPieChartFlags.IgnoreHidden);
-                            ImPlot.EndPlot();
+                            if (ImPlot.BeginPlot("Hits By Source", new Vector2(-1, 520), ImPlotFlags.NoMouseText))
+                            {
+                                ImPlot.SetupAxes("", "", ImPlotAxisFlags.NoDecorations | ImPlotAxisFlags.AutoFit, ImPlotAxisFlags.NoDecorations | ImPlotAxisFlags.AutoFit);
+                                ImPlot.SetupLegend(ImPlotLocation.West, ImPlotLegendFlags.Outside);
+
+                                ImPlotSpec plotSpec = new();
+                                plotSpec.Flags = (ImPlotItemFlags)ImPlotPieChartFlags.IgnoreHidden;
+                                ImPlot.PlotPieChart(SkillSnapshotsNames, ref SkillSnapshotsHits[0], SkillSnapshotsNames.Length, 0, 0, 1, plotSpec);
+                                ImPlot.EndPlot();
+                            }
                         }
 
                         if (ImPlot.BeginPlot("Damage Skills Timeline", new Vector2(-1, 520), ImPlotFlags.None))
                         {
                             ImPlot.SetupAxes("Time (Encounter Duration In Seconds)", "Casts", ImPlotAxisFlags.AutoFit, ImPlotAxisFlags.AutoFit | ImPlotAxisFlags.NoTickLabels);
 
-                            foreach (var item in SkillScatterMap)
+                            unsafe
                             {
-                                ImPlot.PlotScatter(item.Key, ref item.Value.TimeArray[0], ref item.Value.SkillIdentifierArray[0], item.Value.Time.Count);
+                                foreach (var item in SkillScatterMap)
+                                {
+                                    ImPlotPoint Getter(int idx, void* userData)
+                                    {
+                                        return new ImPlotPoint(item.Value.TimeArray[idx], item.Value.SkillIdentifierArray[idx]);
+                                    }
+
+                                    ImPlotSpec plotSpec = default(ImPlotSpec);
+                                    plotSpec.Marker = ImPlotMarker.Circle;
+                                    plotSpec.MarkerSize = 4.0f;
+                                    plotSpec.FillColor = ImPlot.IMPLOT_AUTO_COL;
+                                    plotSpec.LineColor = ImPlot.IMPLOT_AUTO_COL;
+                                    plotSpec.MarkerFillColor = new Vector4(0f, 0f, 0f, -1.0f);
+                                    plotSpec.MarkerLineColor = new Vector4(0f, 0f, 0f, -1.0f);
+                                    plotSpec.LineWeight = 1.0f;
+                                    plotSpec.FillAlpha = 1.0f;
+
+                                    //ImPlot.PlotScatter(item.Key, ref item.Value.TimeArray[0], ref item.Value.SkillIdentifierArray[0], item.Value.Time.Count);
+                                    ImPlot.PlotScatterG(item.Key, Getter, null, item.Value.Time.Count, plotSpec);
+                                }
                             }
 
                             ImPlot.EndPlot();

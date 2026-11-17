@@ -63,7 +63,7 @@ namespace BPSR_ZDPS
             io.ConfigViewportsNoAutoMerge = true; // If this is false, putting an ImGui window on top of an GLFW window will dock into it even if it's not shown
             io.ConfigViewportsNoTaskBarIcon = false;
 
-            LoadFonts();
+            //LoadFonts();
 
             // Init only the D3D11 backend
             ImGuiImplD3D11.SetCurrentContext(_ctx);

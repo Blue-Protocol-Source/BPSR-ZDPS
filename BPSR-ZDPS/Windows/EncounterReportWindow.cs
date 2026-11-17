@@ -48,7 +48,7 @@ namespace BPSR_ZDPS.Windows
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
-            ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono_Offscreen"], 18f);
+            ImGui.PushFont(HelperMethods.Fonts["Cascadia-Mono"], 18f);
             string difficultyText = "";
             if (encounter.ExData.DungeonDifficulty > 0)
             {
@@ -58,7 +58,7 @@ namespace BPSR_ZDPS.Windows
             ImGui.SetNextWindowSize(new Vector2(-1, -1), ImGuiCond.Always);
             ImGui.Begin($"{TitleText}###EncounterReportWindow", ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoResize);
 
-            ImGui.PushFont(HelperMethods.Fonts["Segoe_Offscreen"], 18f);
+            ImGui.PushFont(HelperMethods.Fonts["Segoe"], 18f);
             // Removed ImGuiTableFlags.ScrollX for the direct SizingFixedFit flag instead to perform same layout be ensure the scroll bar never appears at the bottom
             if (ImGui.BeginTable("##ReportTable", 27, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit, new Vector2(-1, -1)))
             {
