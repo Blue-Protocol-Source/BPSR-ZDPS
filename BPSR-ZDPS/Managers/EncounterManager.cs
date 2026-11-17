@@ -801,6 +801,14 @@ namespace BPSR_ZDPS
                     entity.SummonerEntityType = summoner.EntityType;
                 }
             }
+            else if (key == "AttrCurSchoolId")
+            {
+                var subProfessionId = Professions.GetSubProfessionIdFromSchoolId((int)value);
+                if (subProfessionId != DataTypes.Enums.Professions.SubProfessionId.SubProfession_Unknown)
+                {
+                    entity.SetSubProfessionId((int)subProfessionId);
+                }
+            }
 
             OnAttributeUpdated(this, new AttributeUpdatedEventArgs() { EntityUuid = uuid, Entity = entity, AttributeName = key, AttributeValue = value });
         }

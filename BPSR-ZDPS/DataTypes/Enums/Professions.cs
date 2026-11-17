@@ -71,9 +71,9 @@ namespace BPSR_ZDPS.DataTypes.Enums
             SubProfession_Icicle = 104,
             SubProfession_Frostbeam = 105,
 
-            //Profession_TwinStriker = 000,
-            SubProfession_FormlessExpertise = 124,
-            SubProfession_CrimsonExpertise = 125,
+            //Profession_TwinStriker = 127,
+            SubProfession_FormlessExpertise = 128,
+            SubProfession_CrimsonExpertise = 129,
 
             Profession_WindKnight = 106,
             SubProfession_Vanguard = 107,
@@ -83,7 +83,7 @@ namespace BPSR_ZDPS.DataTypes.Enums
             SubProfession_Smite = 110,
             SubProfession_Lifebind = 111,
 
-            //Profession_Dorothy = 000,
+            //Profession_Dorothy = 124,
             //SubProfession_Dorothy1 = 125,
             //SubProfession_Dorothy2 = 126,
 
@@ -102,6 +102,38 @@ namespace BPSR_ZDPS.DataTypes.Enums
             Profession_BeatPerformer = 118,
             SubProfession_Dissonance = 119,
             SubProfession_Concerto = 120,
+        }
+
+        public enum ESchoolId : int
+        {
+            SubProfession_Unknown = 0,
+
+            SubProfession_Iaido = 101,
+            SubProfession_Moonstrike = 102,
+
+            SubProfession_Icicle = 104,
+            SubProfession_Frostbeam = 105,
+
+            SubProfession_Vanguard = 107,
+            SubProfession_Skyward = 108,
+
+            SubProfession_Smite = 110,
+            SubProfession_Lifebind = 111,
+
+            SubProfession_Earthfort = 113,
+            SubProfession_Block = 114,
+
+            SubProfession_Wildpack = 116,
+            SubProfession_Falconry = 117,
+
+            SubProfession_Dissonance = 119,
+            SubProfession_Concerto = 120,
+
+            SubProfession_Recovery = 122,
+            SubProfession_Shield = 123,
+
+            SubProfession_FormlessExpertise = 128,
+            SubProfession_CrimsonExpertise = 129,
         }
     }
 }

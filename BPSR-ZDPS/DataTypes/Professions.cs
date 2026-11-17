@@ -210,6 +210,52 @@ namespace BPSR_ZDPS.DataTypes
             _ => ""
         };
 
+        public static SubProfessionId GetSubProfessionIdByBuffId(int buffId) => buffId switch
+        {
+            2200320 => SubProfessionId.SubProfession_Iaido,
+            2200590 => SubProfessionId.SubProfession_Moonstrike,
+            2204300 => SubProfessionId.SubProfession_Icicle,
+            2204120 => SubProfessionId.SubProfession_Frostbeam,
+            2208130 => SubProfessionId.SubProfession_FormlessExpertise,
+            2208430 => SubProfessionId.SubProfession_CrimsonExpertise,
+            2205300 => SubProfessionId.SubProfession_Vanguard,
+            2205290 => SubProfessionId.SubProfession_Skyward,
+            2202110 => SubProfessionId.SubProfession_Smite,
+            2202340 => SubProfessionId.SubProfession_Lifebind,
+            2201330 => SubProfessionId.SubProfession_Earthfort,
+            2201320 => SubProfessionId.SubProfession_Block,
+            2203260 => SubProfessionId.SubProfession_Wildpack,
+            2203290 => SubProfessionId.SubProfession_Falconry,
+            2206090 => SubProfessionId.SubProfession_Recovery,
+            2206190 => SubProfessionId.SubProfession_Shield,
+            2207090 => SubProfessionId.SubProfession_Dissonance,
+            2207180 => SubProfessionId.SubProfession_Concerto,
+            _ => SubProfessionId.SubProfession_Unknown
+        };
+
+        public static SubProfessionId GetSubProfessionIdFromSchoolId(int schoolId) => schoolId switch
+        {
+            (int)ESchoolId.SubProfession_Iaido => SubProfessionId.SubProfession_Iaido,
+            (int)ESchoolId.SubProfession_Moonstrike => SubProfessionId.SubProfession_Moonstrike,
+            (int)ESchoolId.SubProfession_Icicle => SubProfessionId.SubProfession_Icicle,
+            (int)ESchoolId.SubProfession_Frostbeam => SubProfessionId.SubProfession_Frostbeam,
+            (int)ESchoolId.SubProfession_FormlessExpertise => SubProfessionId.SubProfession_FormlessExpertise,
+            (int)ESchoolId.SubProfession_CrimsonExpertise => SubProfessionId.SubProfession_CrimsonExpertise,
+            (int)ESchoolId.SubProfession_Vanguard => SubProfessionId.SubProfession_Vanguard,
+            (int)ESchoolId.SubProfession_Skyward => SubProfessionId.SubProfession_Skyward,
+            (int)ESchoolId.SubProfession_Smite => SubProfessionId.SubProfession_Smite,
+            (int)ESchoolId.SubProfession_Lifebind => SubProfessionId.SubProfession_Lifebind,
+            (int)ESchoolId.SubProfession_Earthfort => SubProfessionId.SubProfession_Earthfort,
+            (int)ESchoolId.SubProfession_Block => SubProfessionId.SubProfession_Block,
+            (int)ESchoolId.SubProfession_Wildpack => SubProfessionId.SubProfession_Wildpack,
+            (int)ESchoolId.SubProfession_Falconry => SubProfessionId.SubProfession_Falconry,
+            (int)ESchoolId.SubProfession_Recovery => SubProfessionId.SubProfession_Recovery,
+            (int)ESchoolId.SubProfession_Shield => SubProfessionId.SubProfession_Shield,
+            (int)ESchoolId.SubProfession_Dissonance => SubProfessionId.SubProfession_Dissonance,
+            (int)ESchoolId.SubProfession_Concerto => SubProfessionId.SubProfession_Concerto,
+            _ => SubProfessionId.SubProfession_Unknown
+        };
+
         public static Vector4 ProfessionColors(string professionName)
         {
             if (professionName == AppStrings.GetLocalized("Profession_Unknown"))
