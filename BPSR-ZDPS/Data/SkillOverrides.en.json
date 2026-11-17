@@ -803,7 +803,7 @@
     },
     "2331":
     {
-        "Name": "Sound Blaze - Sorching Impact"
+        "Name": "Sound Blaze - Scorching Impact"
     },
     "2332":
     {
@@ -1229,6 +1229,171 @@
         "Desc": "",
         "Icon": ""
     },
+    "3898":
+    {
+        "Name": "Stunt! Frostwind Vortex",
+        "Desc": "Valley Brawler",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_099",
+        "SkillLevelGroup": 3898,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3899":
+    {
+        "Name": "Stunt! Blaze Purge",
+        "Desc": "Goblin Sage",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_100",
+        "SkillLevelGroup": 3899,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3901":
+    {
+        "Name": "Arcane! Flame Roar",
+        "Desc": "Inferno Ogre",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_017",
+        "SkillLevelGroup": 3901,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3988":
+    {
+        "Name": "Arcane! Sacred Flame Breath",
+        "Desc": "Tonatiuh",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_087",
+        "SkillLevelGroup": 3988,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3989":
+    {
+        "Name": "Arcane! Twin Star Duel",
+        "Desc": "Sunfire & Moonstrike",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_088",
+        "SkillLevelGroup": 3989,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3990":
+    {
+        "Name": "Arcane! Shatterstone Storm",
+        "Desc": "Withered Bloomshard",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_089",
+        "SkillLevelGroup": 3990,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3991":
+    {
+        "Name": "Arcane! Avatar of the End",
+        "Desc": "Erosion Bloom Afterimage",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_090",
+        "SkillLevelGroup": 3991,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3992":
+    {
+        "Name": "Arcane! Corrupted Strike",
+        "Desc": "Shell-Gathering Cultist",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_091",
+        "SkillLevelGroup": 3992,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3993":
+    {
+        "Name": "Arcane! Glacial Reverse Blade",
+        "Desc": "Valley Skirmisher",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_092",
+        "SkillLevelGroup": 3993,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3994":
+    {
+        "Name": "Arcane! Ironcleave Stance",
+        "Desc": "Wandering Traveler",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_093",
+        "SkillLevelGroup": 3994,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3995":
+    {
+        "Name": "Arcane! Sharkspin Torrent",
+        "Desc": "Ravine Aberration",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_094",
+        "SkillLevelGroup": 3995,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3996":
+    {
+        "Name": "Arcane! Breath of Illusions",
+        "Desc": "Dream Manifestor",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_095",
+        "SkillLevelGroup": 3996,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3997":
+    {
+        "Name": "Stunt! Cascading Tidal Pillars",
+        "Desc": "Paralyzing Shrimpshroom",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_096",
+        "SkillLevelGroup": 3997,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3998":
+    {
+        "Name": "Stunt! Fin Hammer Slam",
+        "Desc": "Underriver Fin",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_097",
+        "SkillLevelGroup": 3998,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3999":
+    {
+        "Name": "Stunt! Bursting Water Shell",
+        "Desc": "Valley Ranger",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_098",
+        "SkillLevelGroup": 3999,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
     "45300":
     {
         "Name": "Arcane! Illusion Resonance: Chain Lightning",
@@ -1436,14 +1601,14 @@
     "7997":
     {
         "Name": "Phantom Arrow",
-        "Desc": "Season 2 Skill",
-        "Icon": "ui/atlas/skill/season/s2talent03_01sel"
+        "Desc": "Season 4 Skill",
+        "Icon": "ui/atlas/skill/season/s2talent03_01"
     },
     "7998":
     {
-        "Name": "Fantasia Impact",
-        "Desc": "Season 2 Skill",
-        "Icon": "ui/atlas/skill/season/s2talent01_01sel"
+        "Name": "Disillusion Impact",
+        "Desc": "Season 4 Skill (Fantasia Impact in Season 2)",
+        "Icon": "ui/atlas/skill/season/s2talent02_01"
     },
     "20301":
     {
@@ -2244,6 +2409,11 @@
         "Icon": "ui/atlas/skill_weapon_cq/weapon_cq-01_kx08",
         "SkillLevelGroup": 1431
     },
+    "149908":
+    {
+        "Name": "Wind Knight Inspiration X5",
+        "Desc": "Tornado triggered from Wind Knight Inspiration X5"
+    },
     "150101":
     {
         "Name": "Stag Charge",
@@ -2401,6 +2571,10 @@
     "170260":
     {
         "Name": "Void Corruption Decay DMG"
+    },
+    "170261":
+    {
+        "Name": "Void Corruption Annihilation"
     },
     "170401":
     {
@@ -3082,6 +3256,31 @@
         "Name": "Divine Decree - Cumulative Sentence (Phantom)",
         "Desc": "Paradox-Calamity Remnant - Final"
     },
+    "829438":
+    {
+        "Name": "Phantom Breach",
+        "Desc": "Lampsis"
+    },
+    "829520":
+    {
+        "Name": "Light Spear Explosion",
+        "Desc": "Lampsis"
+    },
+    "829710":
+    {
+        "Name": "Light Celestial Body",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "829711":
+    {
+        "Name": "Dark Celestial Body",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "829721":
+    {
+        "Name": "Dark Corrosion",
+        "Desc": "Lampsis: Polar Night"
+    },
     "833018":
     {
         "Name": "Nappo Bomb Self Destruct"
@@ -3141,6 +3340,10 @@
     "881603":
     {
         "Name": "Void Corruption: Mark (Debuff)"
+    },
+    "881662":
+    {
+        "Name": "Grapple Skill"
     },
     "881721":
     {
@@ -3435,6 +3638,17 @@
     "1002205":
     {
         "Name": "Double Slam Down (Non-Lethal Skill)"
+    },
+    "1002241":
+    {
+        "Name": "Stunt! Frostwind Vortex (Active)",
+        "Desc": "Valley Brawler",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_099",
+        "SkillLevelGroup": 3898,
+        "SlotPositionId": [
+            7,
+            8
+        ]
     },
     "1002406":
     {
@@ -4362,6 +4576,116 @@
         "Desc": "Bloodthirsy Furball",
         "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_079",
         "SkillLevelGroup": 3976,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1122241":
+    {
+        "Name": "Stunt! Cascading Tidal Pillars (Active)",
+        "Desc": "Paralyzing Shrimpshroom",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_096",
+        "SkillLevelGroup": 3997,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1122341":
+    {
+        "Name": "Arcane! Breath of Illusions (Active)",
+        "Desc": "Dream Manifestor",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_095",
+        "SkillLevelGroup": 3996,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1122741":
+    {
+        "Name": "Arcane! Glacial Reverse Blade (Active)",
+        "Desc": "Valley Skirmisher",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_092",
+        "SkillLevelGroup": 3993,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1123041":
+    {
+        "Name": "Stunt! Blaze Purge (Active)",
+        "Desc": "Goblin Sage",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_100",
+        "SkillLevelGroup": 3899,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1123141":
+    {
+        "Name": "Arcane! Corrupted Strike (Active)",
+        "Desc": "Shell-Gathering Cultist",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_091",
+        "SkillLevelGroup": 3992,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1123441":
+    {
+        "Name": "Stunt! Bursting Water Shell (Active)",
+        "Desc": "Valley Ranger",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_098",
+        "SkillLevelGroup": 3999,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1123541":
+    {
+        "Name": "Arcane! Ironcleave Stance (Active)",
+        "Desc": "Wandering Traveler",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_093",
+        "SkillLevelGroup": 3994,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1123841":
+    {
+        "Name": "Stunt! Fin Hammer Slam (Active)",
+        "Desc": "Underriver Fin",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_097",
+        "SkillLevelGroup": 3998,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1123941":
+    {
+        "Name": "Arcane! Sharkspin Torrent",
+        "Desc": "Ravine Aberration",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_094",
+        "SkillLevelGroup": 3995,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "1123942":
+    {
+        "Name": "Arcane! Sharkspin Torrent",
+        "Desc": "Ravine Aberration",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_094",
+        "SkillLevelGroup": 3995,
         "SlotPositionId": [
             7,
             8
@@ -5557,6 +5881,18 @@
         "Desc": "Season 2 Skill",
         "Icon": "ui/atlas/skill/season/s2talent07_01sel"
     },
+    "3005504":
+    {
+        "Name": "Bloodthirst (DMG)",
+        "Desc": "Season 4 Skill",
+        "Icon": "ui/atlas/skill/season/s2talent07_01"
+    },
+    "3005590":
+    {
+        "Name": "Bloodthirst (Ten-Stack Roar)",
+        "Desc": "Season 4 Skill",
+        "Icon": "ui/atlas/skill/season/s2talent07_01"
+    },
     "3030909":
     {
         "Name": "Void Human Claw Combo (Hero Dungeon)"
@@ -5593,6 +5929,16 @@
     {
         "Name": "Dark Mist Legion Shield Countercrush (Heroic)"
     },
+    "3051541":
+    {
+        "Name": "Windscar (Detonation)",
+        "Desc": "Windscar mark deonation triggered from Wind Knight Singularity X1"
+    },
+    "3054151":
+    {
+        "Name": "Divine Arc Slash",
+        "Desc": "Divine Arc Slash triggered from Shield Knight Inspiration X7"
+    },
     "3054412":
     {
         "Name": "Shield Knight Reality X2",
@@ -5602,6 +5948,16 @@
     {
         "Name": "Shield Knight Reality X5",
         "Desc": "Sacred Blade triggered from Shield Knight Reality X5"
+    },
+    "3055530":
+    {
+        "Name": "Heavy Guardian Inspiration X8",
+        "Desc": "Casting Granite Fury restores HP, recover Max HP triggered from Heavy Guardian Inspiration X8"
+    },
+    "3055590":
+    {
+        "Name": "Heavy Guardian Stasis X2",
+        "Desc": "For each 50 Rage or 1 Sand Crystal consumed, recover Max HP triggered from Heavy Guardian Stasis X2"
     },
     "3057111":
     {
@@ -5782,6 +6138,17 @@
             8
         ]
     },
+    "3210161":
+    {
+        "Name": "Stunt! Carpet Bombing (Passive)",
+        "Desc": "Goblin Trickster",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_061",
+        "SkillLevelGroup": 3961,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
     "3210210":
     {
         "Name": "Arcane! Precision Burst (Passive)",
@@ -5799,6 +6166,28 @@
         "Desc": "Bloodthirsy Furball",
         "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_079",
         "SkillLevelGroup": 3976,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3210262":
+    {
+        "Name": "Arcane! Twin Star Duel (Moonstrike's Curse)",
+        "Desc": "Sunfire & Moonstrike",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_088",
+        "SkillLevelGroup": 3989,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "3210300":
+    {
+        "Name": "Arcane! Breath of Illusions (Passive)",
+        "Desc": "Dream Manifestor",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_095",
+        "SkillLevelGroup": 3996,
         "SlotPositionId": [
             7,
             8
@@ -6384,6 +6773,21 @@
         "Name": "Engram Orb Repulse",
         "Desc": "Cursed Radiant Tomb"
     },
+    "3395156":
+    {
+        "Name": "Light Spear",
+        "Desc": "Lampsis"
+    },
+    "3395162":
+    {
+        "Name": "Flash Pursuit AOE",
+        "Desc": "Lampsis"
+    },
+    "3395170":
+    {
+        "Name": "Raidwide AOE",
+        "Desc": "Lampsis"
+    },
     "3913001":
     {
         "Name": "Stunt! Electro Bomb",
@@ -6696,6 +7100,28 @@
     {
         "Name": "Boar Charge V2"
     },
+    "10270141":
+    {
+        "Name": "Arcane! Sacred Flame Breath (Active)",
+        "Desc": "Tonatiuh",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_087",
+        "SkillLevelGroup": 3988,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
+    "10280041":
+    {
+        "Name": "Arcane! Twin Star Duel (Active)",
+        "Desc": "Sunfire & Moonstrike",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_088",
+        "SkillLevelGroup": 3989,
+        "SlotPositionId": [
+            7,
+            8
+        ]
+    },
     "10290102":
     {
         "Name": "Basic Attack Combo",
@@ -6745,6 +7171,17 @@
     {
         "Name": "Earthshatter Fist - Combo",
         "Desc": "Withered Bloomshard"
+    },
+    "10290141":
+    {
+        "Name": "Arcane! Shatterstone Storm (Active)",
+        "Desc": "Withered Bloomshard",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_089",
+        "SkillLevelGroup": 3990,
+        "SlotPositionId": [
+            7,
+            8
+        ]
     },
     "10290151":
     {
@@ -6820,6 +7257,17 @@
     {
         "Name": "Erosion Bloom - Great Inferno Ring",
         "Desc": "Erosion Bloom Afterimage"
+    },
+    "10300141":
+    {
+        "Name": "Arcane! Avatar of the End (Active)",
+        "Desc": "Erosion Bloom Afterimage",
+        "Icon": "ui/textures/skill_aoyi/skill_aoyi_skill_icon_090",
+        "SkillLevelGroup": 3991,
+        "SlotPositionId": [
+            7,
+            8
+        ]
     },
     "10300151":
     {
@@ -7145,6 +7593,46 @@
     {
         "Name": "Annihilation Cannon - 60° Cone",
         "Desc": "Paradox-Calamity Remnant - Final"
+    },
+    "10360001":
+    {
+        "Name": "Void Traversal (Left Hand)",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "10360002":
+    {
+        "Name": "Void Traversal (Right Hand)",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "10360004":
+    {
+        "Name": "Summon Black Hole",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "10360010":
+    {
+        "Name": "Celestial Summoning",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "10360011":
+    {
+        "Name": "Celestial Rotation",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "10360012":
+    {
+        "Name": "Darkfall",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "10360095":
+    {
+        "Name": "Judgment",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "10360096":
+    {
+        "Name": "Black Hole AOE",
+        "Desc": "Lampsis: Polar Night"
     },
     "11010101":
     {

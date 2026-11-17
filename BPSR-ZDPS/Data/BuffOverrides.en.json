@@ -665,6 +665,12 @@
         "Desc": "Zeal Crusade is boosting Bold Fearless effect from Wide Raid talent",
         "BuffType": 1
     },
+    "55433":
+    {
+        "Name": "Aegis Ward (Death Immunity)",
+        "Desc": "If you take Lethal DMG during this period, avoid it and immediately restore HP",
+        "BuffType": 1
+    },
     "55405":
     {
         "Name": "Aegis Ward",
@@ -1246,6 +1252,11 @@
     {
         "Name": "Mech Sentinel Phase: Enable Shield Explosion",
         "Desc": "At the end of the duration, Mech Sentinels are allowed to explode their shields to deal damage"
+    },
+    "829245":
+    {
+        "Name": "Decay Bomb",
+        "Desc": "Paradox-Calamity Remnant - Continuation places a bomb on the player which detaches half way through it's duration.\nAt the end of the total duration it will explode."
     },
     "829304":
     {
@@ -2275,6 +2286,40 @@
     {
         "Name": "Blue Flames for Tier 0-4",
         "Desc": "Applies Blue Flames on the Caster while actively transformed in Imagine Tier 0-4",
+        "BuffType": 1
+    },
+    "2110174":
+    {
+        "Name": "Power of Light and Darkness",
+        "Desc": "Increases Luck and the Crit Rate of Luck effects for its duration\nArcane! Twin Star Duel",
+        "Icon": "ui/atlas/buff/buff_icon18",
+        "BuffType": 1
+    },
+    "2110177":
+    {
+        "Name": "Goblin's Rage",
+        "Desc": "Increases Crit for its duration\nArcane! Corrupted Strike",
+        "Icon": "ui/atlas/buff/buff_icon_baoji",
+        "BuffType": 1
+    },
+    "2110180":
+    {
+        "Name": "Lucky Muku",
+        "Desc": "Increases Luck for its duration\nArcane! Ironcleave Stane",
+        "Icon": "ui/atlas/buff/buff_icon18",
+        "BuffType": 1
+    },
+    "2110182":
+    {
+        "Name": "Inspiring Shield",
+        "Desc": "Shield from Arcane! Breath of Illusions",
+        "BuffType": 1
+    },
+    "2110183":
+    {
+        "Name": "Inspiring Shield (ATK Increase)",
+        "Desc": "Increases ATK\nArcane! Breath of Illusions",
+        "Icon": "ui/atlas/buff/buff_icon107",
         "BuffType": 1
     },
     "2200020":
@@ -3748,8 +3793,14 @@
     },
     "2202690":
     {
+        "Name": "Tricolor Revelation (Talent)",
+        "Desc": "Consumes Moonlight Solace to launch Flower Dance - Tricolor Revelation.\nFlower Dance - Tricolor Revelation: Grants all effects of Flower Stalks once every 60s",
+        "BuffType": 1
+    },
+    "2202691":
+    {
         "Name": "Tricolor Revelation",
-        "Desc": "Consumes Moonlight Solace to launch Flower Dance - Tricolor Revelation.\nFlower Dance - Tricolor Revelation: Grants all effects of Flowe Stalks once every 60s",
+        "Desc": "Consumes Moonlight Solace to trigger Flower Time Dance - Tricolor Revelation.\nFlower Time Dance - Tricolor Revelation: Grants all effects of Flower Stalks once every 60s",
         "BuffType": 1
     },
     "2202700":
@@ -3780,6 +3831,36 @@
     {
         "Name": "Bud to Blossom (Tracking)",
         "Desc": "When a Flower Stalk appears, grants 1 Regen Bud every 2s for 10s",
+        "BuffType": 1
+    },
+    "2202712":
+    {
+        "Name": "Flower Time Dance (Buff Tracking)",
+        "Desc": "",
+        "BuffType": 1
+    },
+    "2202713":
+    {
+        "Name": "Crimson Insight (Flower Time Dance)",
+        "Desc": "The next Expertise Skill used has its CD reduced",
+        "BuffType": 1
+    },
+    "2202714":
+    {
+        "Name": "Golden Devotion (Flower Time Dance)",
+        "Desc": "After the next cast of a Expertise Skill, increases your Healing",
+        "BuffType": 1
+    },
+    "2202715":
+    {
+        "Name": "Moonlight Solace (Flower Time Dance)",
+        "Desc": "The next Life Bloom grants the target a Shield",
+        "BuffType": 1
+    },
+    "2202716":
+    {
+        "Name": "Flower Stalk Generation (Tracking)",
+        "Desc": "Generates a Flower Stalk at end of duration from Flower Time Dance talent",
         "BuffType": 1
     },
     "2202720":
@@ -7290,6 +7371,48 @@
         "Desc": "Dream DMG of Expertise Skill +12%",
         "BuffType": 1
     },
+    "3002490":
+    {
+        "Name": "Arrow Rain: Arrow Mastery",
+        "Desc": "Phantom Arrow's Oath DMG increases based on Mastery but cannot Crit",
+        "BuffType": 1
+    },
+    "3002500":
+    {
+        "Name": "Arrow Rain: Crit Arrows",
+        "Desc": "Phantom Arrow's Crit Rate is doubled, and Crit grants Crit DMG",
+        "BuffType": 1
+    },
+    "3002510":
+    {
+        "Name": "Arrow Rain: Charged Barrage",
+        "Desc": "Phantom Arrow's CD becomes 10s but each cast summons twice as many arrows",
+        "BuffType": 1
+    },
+    "3002520":
+    {
+        "Name": "Arrow Rain: Rain Echo",
+        "Desc": "Each Phantom Arrow trigger increases Expertise Skill Oath DMG for a few seconds",
+        "BuffType": 1
+    },
+    "3002530":
+    {
+        "Name": "Arrow Rain: Gale Shadows",
+        "Desc": "Each Phantom Arrow trigger increases Oath DMG for a few seconds",
+        "BuffType": 1
+    },
+    "3002540":
+    {
+        "Name": "Arrow Rain: Specialist Arrows",
+        "Desc": "After each Phantom Arrow trigger, Expertise Skill's Final DMG is increased based on number of Phantom Arrows summoned by that trigger",
+        "BuffType": 1
+    },
+    "3002541":
+    {
+        "Name": "Arrow Rain: Specialist Arrows (Buff)",
+        "Desc": "Expertise Skill's Final DMG is increased",
+        "BuffType": 1
+    },
     "3002610":
     {
         "Name": "Mirage Dream",
@@ -7510,124 +7633,639 @@
         "Desc": "Crit +30%. For any permanent Crit above 50%, every 2% is converted to 1% Crit DMG up to 50%",
         "BuffType": 1
     },
-    "3051010":
+    "3004900":
     {
-        "Name": "Wind Knight X1",
-        "Desc": "Valor Cyclone Illusion-Breaking DMG increased",
+        "Name": "Disillusion Worldbreak",
+        "Desc": "Enters combat to deal damage and trigger Disillusion Impact on enemies",
         "BuffType": 1
     },
-    "3051020":
+    "3004901":
     {
-        "Name": "Wind Knight X2",
-        "Desc": "Spiral Thrust, Breach Pursuit Illusion-Breaking DMG increased",
+        "Name": "Disillusion Impact Cooldown",
+        "Desc": "Cooldown before Disillusion Impact can trigger again from Disillusion Worldbreak",
+        "BuffType": 0
+    },
+    "3004910":
+    {
+        "Name": "Disillusion: Crit",
+        "Desc": "Disillusion Impact can and will always Crit. Crit Rate is converted into Crit DMG",
         "BuffType": 1
     },
-    "3051030":
+    "3004920":
     {
-        "Name": "Wind Knight X3",
-        "Desc": "Trigger Vortex Strike upon entering battle state.\nVortex Strike Illusion-Breaking DMG increased",
+        "Name": "Disillusion: Luck",
+        "Desc": "Luck grants Disillusion Impact a multiplier",
         "BuffType": 1
     },
-    "3051040":
+    "3004930":
     {
-        "Name": "Wind Knight X4",
-        "Desc": "Drake Cannon Illusion-Breaking DMG increased",
+        "Name": "Disillusion: Haste",
+        "Desc": "Haste grants Disillusion Impact a multiplier",
         "BuffType": 1
     },
-    "3051050":
+    "3004940":
     {
-        "Name": "Wind Knight X5",
-        "Desc": "Valor Cyclone can Lucky Strike.\nValor Cyclone Illusion-Breaking DMG increased",
+        "Name": "Disillusion: Mastery",
+        "Desc": "Mastery grants Disillusion Impact a multiplier",
         "BuffType": 1
     },
-    "3051060":
+    "3004950":
     {
-        "Name": "Wind Knight X6",
-        "Desc": "Galeform duration increased",
+        "Name": "Disillusion: Quickcast",
+        "Desc": "The cooldown of Disillusion Impact is 3s but damage is multiplied differently",
         "BuffType": 1
     },
-    "3051070":
+    "3004960":
     {
-        "Name": "Wind Knight X7",
-        "Desc": "Instant Edge Illusion-Breaking DMG increased",
+        "Name": "Disillusion: Rapid Fire",
+        "Desc": "Disillusion Impact has a chance to trigger an additional time when activated",
         "BuffType": 1
     },
-    "3051080":
+    "3004970":
     {
-        "Name": "Wind Knight X8",
-        "Desc": "Falcon Toss, Instant Edge Combo Illusion-Breaking DMG increased",
+        "Name": "Disillusion: Charge",
+        "Desc": "The cooldown of Disillusion Impact is 10s but damage is multiplied differently",
         "BuffType": 1
     },
-    "3051090":
+    "3004980":
     {
-        "Name": "Wind Knight X9",
-        "Desc": "Tornado can trigger Lucky Strike.\nTornado Illusion-Breaking DMG increased",
+        "Name": "Disillusion: Erosion Mark",
+        "Desc": "After Disillusion Impact triggers, Oath DMG increases",
         "BuffType": 1
     },
-    "3051100":
+    "3004990":
     {
-        "Name": "Wind Knight X10",
-        "Desc": "Azure Sever always triggers Crit.\nAzure Sever Illusion-Breaking DMG increased",
+        "Name": "Disillusion: Resolve",
+        "Desc": "After Disillusion Impact triggers, Oath DMG Reduction increases",
         "BuffType": 1
     },
-    "3051110":
+    "3004991":
     {
-        "Name": "Wind Knight X11",
-        "Desc": "Every few seconds, Sharp Impact gains charge.\nSharp Impact, Typhoon: Sharp Impact Illusion-Breaking DMG increased",
+        "Name": "Disillusion: Resolve (Buff)",
+        "Desc": "Oath DMG Reduction increased",
         "BuffType": 1
     },
-    "3051400":
+    "3005000":
     {
-        "Name": "Wind Knight Reality X1",
-        "Desc": "When Illusion Energy reaches enough points, reduces the remaining CD of Galeform",
+        "Name": "Disillusion: Weakening",
+        "Desc": "Disillusion Impact increases Oath DMG taken by target",
         "BuffType": 1
     },
-    "3051410":
+    "3005010":
     {
-        "Name": "Wind Knight Reality X2",
-        "Desc": "When Illusion Energy reaches enough points, triggers Drake Cannon",
+        "Name": "Disillusion: Bookends",
+        "Desc": "Disillusion Impact deals increased damage to targets with HP above 80% and below 20%",
         "BuffType": 1
     },
-    "3051411":
+    "3005020":
     {
-        "Name": "Wind Knight Reality X2 (Drake Cannon)",
-        "Desc": "Triggers Drake Cannon",
+        "Name": "Disillusion: Interval",
+        "Desc": "Disillusion Impact deals increased damage to targets with HP above 20% and below 80%",
         "BuffType": 1
     },
-    "3051420":
+    "3005030":
     {
-        "Name": "Wind Knight Reality X3",
-        "Desc": "When Illusion Energy reaches enough points, trigger Great Cyclone if Valor Cyclone is active, dealing ATK DMG to enemies within 5 meters",
+        "Name": "Final Disillusion",
+        "Desc": "Disillusion Impact DMG is doubled",
         "BuffType": 1
     },
-    "3051430":
+    "3005100":
     {
-        "Name": "Wind Knight Reality X4",
-        "Desc": "When Illusion Energy reaches enough points, Special Attack Crit increases for 15s",
+        "Name": "Cumulative Engraving",
+        "Desc": "Upon entering combat, grants 1 stack of Engraving every 10s.\nAfter 360s, all Engraving stacks disappear.\nEngraving: Each stack grants ATK",
         "BuffType": 1
     },
-    "3051431":
+    "3005101":
     {
-        "Name": "Enhanced Special Attack",
-        "Desc": "Increases Special Attack Crit Rate for the duration.\nWind Knight Reality X4",
+        "Name": "Engraving Expiration",
+        "Desc": "After 360s, all Engraving stacks disappear",
+        "BuffType": 0
+    },
+    "3005102":
+    {
+        "Name": "Engraving",
+        "Desc": "Increases ATK per stack",
+        "Icon": "ui/atlas/buff/buff_icon138",
         "BuffType": 1
     },
-    "3051440":
+    "3005110":
     {
-        "Name": "Wind Knight Reality X5",
-        "Desc": "When Illusion Energy reaches enough points, next Instant Edge or Sharp Impact during Chasing Step has its Luck Chance increased",
+        "Name": "Engraving: Critical Stats",
+        "Desc": "When Engraving reaches 20 stacks, each additional stack grants increased ATK",
         "BuffType": 1
     },
-    "3051441":
+    "3005120":
     {
-        "Name": "Wind Knight Reality X5 (Buff)",
-        "Desc": "Next Instant Edge or Sharp Impact during Chasing Step has its Luck Chance increased",
+        "Name": "Engraving: Critical Haste",
+        "Desc": "When Engraving reaches 20 stacks, each additional stack grants increased ATK SPD",
         "BuffType": 1
     },
-    "3051450":
+    "3005130":
     {
-        "Name": "Wind Knight Reality X6",
-        "Desc": "When Illusion Energy reaches enough points, Sharp Impact gains charge",
+        "Name": "Engraving: Critical Casting",
+        "Desc": "When Engraving reaches 20 stacks, each additional stack grants increased Casting SPD",
+        "BuffType": 1
+    },
+    "3005140":
+    {
+        "Name": "Engraving: Deployment",
+        "Desc": "Upon entering combat, immediately grants stacks of Engraving",
+        "BuffType": 1
+    },
+    "3005150":
+    {
+        "Name": "Engraving: Charge",
+        "Desc": "Engraving now gains a stack every few seconds, and each stack grants ATK",
+        "BuffType": 1
+    },
+    "3005160":
+    {
+        "Name": "Engraving: Gale",
+        "Desc": "Engraving now gains a stack every few seconds",
+        "BuffType": 1
+    },
+    "3005170":
+    {
+        "Name": "Engraving: Golden Hour",
+        "Desc": "When Engraving stacks are between a threshold, Engraving effects are multiplied",
+        "BuffType": 1
+    },
+    "3005180":
+    {
+        "Name": "Engraving: Stepwise Power",
+        "Desc": "When Engraving stacks reach a threshold, Engraving effects are multiplied",
+        "BuffType": 1
+    },
+    "3005190":
+    {
+        "Name": "Engraving: Restart",
+        "Desc": "When taking damage greater than your current HP, consumes stacks of Engraving to reduce that damage",
+        "BuffType": 1
+    },
+    "3005200":
+    {
+        "Name": "Engraving: Overdraw",
+        "Desc": "When Engraving reaches 10 stacks, gains Oath DMG Reduction",
+        "BuffType": 1
+    },
+    "3005210":
+    {
+        "Name": "Engraving: Final Reckoning",
+        "Desc": "When Engraving has lasted for 300s, enters ultimate burst, increasing Oath DMG",
+        "BuffType": 1
+    },
+    "3005300":
+    {
+        "Name": "Imagine Manifest",
+        "Desc": "Elemental DMG dealt by the active effect of Resonance Skills increased.\nFinal DMG dealts by non-Resonance Skills decreased",
+        "BuffType": 1
+    },
+    "3005310":
+    {
+        "Name": "Imagine: Steady Form",
+        "Desc": "While not transformed, Oath DMG dealt by active effect of Resonance Skills is increased",
+        "BuffType": 1
+    },
+    "3005320":
+    {
+        "Name": "Imagine: Solid Shift",
+        "Desc": "While transformed, Oath DMG dealt by active effect of Resonance Skills increases",
+        "BuffType": 1
+    },
+    "3005330":
+    {
+        "Name": "Imagine: Chain",
+        "Desc": "When a Resonance Skill deals damage, Oath DMG from active effect of Resonance Skills increases",
+        "BuffType": 1
+    },
+    "3005340":
+    {
+        "Name": "Imagine: Cycle",
+        "Desc": "Every few seconds, grants increased Elemental DMG for the active effect of Resonance Sills",
+        "BuffType": 1
+    },
+    "3005350":
+    {
+        "Name": "Imagine: Phantom Amplifier",
+        "Desc": "While transformed, highest of Crit%, Luck%, or Mastery% is multiplied and Armor increased",
+        "BuffType": 1
+    },
+    "3005360":
+    {
+        "Name": "Imagine: Charged Burst",
+        "Desc": "Casting a Class Skill grants a stack of Empowerment Sigil, stacking.\nCasting a Resonance Skill consumes all Empowerment Sigils, granting increased Oath DMG to active effect of Resonance Skills per stack",
+        "BuffType": 1
+    },
+    "3005370":
+    {
+        "Name": "Imagine: Resonance Refinement",
+        "Desc": "Refined ATK of the active effect of Resonance Skills increased",
+        "BuffType": 1
+    },
+    "3005380":
+    {
+        "Name": "Imagine: Resonance Harmony",
+        "Desc": "Potions and Food additionally increase the Elemental DMG of the active effect of Resonance Skills",
+        "BuffType": 1
+    },
+    "3005390":
+    {
+        "Name": "Imagine: Manifest Overflow",
+        "Desc": "When Oath Strength exceeds 3000, every additional 10 Oath Strength increases the Elemental DMG of the active effect of Resonance Skills",
+        "BuffType": 1
+    },
+    "3005500":
+    {
+        "Name": "Battle Surge",
+        "Desc": "When dealing damage, triggers 1 instance of AoE on the target and grants 1 stack of Bloodthrist.\nInflicts Bloodthirst Reduction on enemy",
+        "BuffType": 1
+    },
+    "3005502":
+    {
+        "Name": "Bloodthirst Reduction",
+        "Desc": "Each stack reduces ATK.\nOnly 1 instance can take effect.\nRe-inflicting recalculates stack count",
+        "BuffType": 0
+    },
+    "3005503":
+    {
+        "Name": "Bloodthirst Cooldown",
+        "Desc": "Cooldown for Battle Surge's Bloodthirst trigger",
+        "BuffType": 1
+    },
+    "3005504":
+    {
+        "Name": "Bloodthirst (DMG)",
+        "Desc": "Bloodthirst deals DMG to target",
+        "BuffType": 0
+    },
+    "3005510":
+    {
+        "Name": "Bloodthirst: Steadfast Edge",
+        "Desc": "While standing still, gains an additional stack of Bloodthirst every few seconds",
+        "BuffType": 1
+    },
+    "3005520":
+    {
+        "Name": "Bloodthirst: Pain-Fueled Will",
+        "Desc": "Taking damage reduces the trigger interval",
+        "BuffType": 1
+    },
+    "3005530":
+    {
+        "Name": "Bloodthirst: Sixfold Shock",
+        "Desc": "When Bloodthirst reaches the set amount of stacks, damage increases with Max HP",
+        "BuffType": 1
+    },
+    "3005540":
+    {
+        "Name": "Bloodthirst: Battle Frenzy",
+        "Desc": "When Bloodthirst reaches the set amount of stacks, damage increases with Armor",
+        "BuffType": 1
+    },
+    "3005550":
+    {
+        "Name": "Bloodthirst: Exaltation Cap",
+        "Desc": "Bloodthirst stack cap increased",
+        "BuffType": 1
+    },
+    "3005560":
+    {
+        "Name": "Bloodthirst: Lingering Momentum",
+        "Desc": "When Bloodthirst stacks are consumed, there is a chance to refund a stack",
+        "BuffType": 1
+    },
+    "3005570":
+    {
+        "Name": "Bloodthirst: Iron Will",
+        "Desc": "Each stack of Bloodthirst additionally grants Armor",
+        "BuffType": 1
+    },
+    "3005580":
+    {
+        "Name": "Bloodthirst: Bloodforged Body",
+        "Desc": "Each stack of Bloodthirst additionally increases Max HP",
+        "BuffType": 1
+    },
+    "3005590":
+    {
+        "Name": "Bloodthirst: Ten-Stack Roar",
+        "Desc": "When Bloodthirst reaches a number of stacks, DMG dealt triggers an additional instance of DMG",
+        "BuffType": 1
+    },
+    "3005700":
+    {
+        "Name": "Inspiring Chant",
+        "Desc": "After entering combat, gains a 15m-radius aura that applies Inspire to you and up to 20 allies.\nInspire: Oath DMG increased",
+        "BuffType": 1
+    },
+    "3005701":
+    {
+        "Name": "Inspiring Chant (Radius)",
+        "Desc": "Radius aura that applies Inspire to allies",
+        "BuffType": 1
+    },
+    "3005703":
+    {
+        "Name": "Inspire (Inspiring Chant)",
+        "Desc": "Oath DMG increased",
+        "BuffType": 1
+    },
+    "3005710":
+    {
+        "Name": "Inspire: Graceful Harmony",
+        "Desc": "The Inspire effect also increases Strength/Intellect/Agility and ATK",
+        "BuffType": 1
+    },
+    "3005720":
+    {
+        "Name": "Inspire: Armorbreak Anthem",
+        "Desc": "Enemy targets within the aura have Oath DMG Reduction reduced by 5%",
+        "BuffType": 1
+    },
+    "3005721":
+    {
+        "Name": "Inspire: Armorbreak Anthem",
+        "Desc": "Oath DMG Reduction reduced by 5%",
+        "BuffType": 0
+    },
+    "3005730":
+    {
+        "Name": "Inspire: Healing Aria",
+        "Desc": "Within 10s after casting a Healing Skill, increases Healing Strength by 15%",
+        "BuffType": 1
+    },
+    "3005731":
+    {
+        "Name": "Inspire: Healing Aria (Buff)",
+        "Desc": "Increased Healing Strength by 15%",
+        "BuffType": 1
+    },
+    "3005740":
+    {
+        "Name": "Inspire: Rapid Chant",
+        "Desc": "Casting a Healing Skill increases Casting SPD by 10% for 10s",
+        "BuffType": 1
+    },
+    "3005750":
+    {
+        "Name": "Inspire: Battle Prayer",
+        "Desc": "Casting a Healing Skill increases Attack SPD by 5% for 10s",
+        "BuffType": 1
+    },
+    "3005760":
+    {
+        "Name": "Inspire: Anthem Amplifier",
+        "Desc": "Inspire effect increased",
+        "BuffType": 1
+    },
+    "3005770":
+    {
+        "Name": "Inspire: Crescendo Anthem",
+        "Desc": "Every few seconds, Inspire is enhanced briefly and effect is multiplied",
+        "BuffType": 1
+    },
+    "3005771":
+    {
+        "Name": "Crescendo Anthem",
+        "Desc": "Enhanced Inspire: The Inspire effect is increased",
+        "Icon": "ui/atlas/buff/buff_passive_icon_general_sup_inspire",
+        "BuffType": 1
+    },
+    "3005772":
+    {
+        "Name": "Crescendo Anthem Cooldown",
+        "Desc": "Cooldown before Inspire can be Enhanced again",
+        "BuffType": 0
+    },
+    "3005780":
+    {
+        "Name": "Inspire: Holy Shield Melody",
+        "Desc": "You take less Oath DMG from enemy targets within the aura",
+        "BuffType": 1
+    },
+    "3005781":
+    {
+        "Name": "Inspire: Holy Shield Melody",
+        "Desc": "Deal less damage to the caster",
+        "BuffType": 0
+    },
+    "3005790":
+    {
+        "Name": "Inspire: Soulguard Finale",
+        "Desc": "Taking lethal DMG triggers Near Death for 0.5s up to once every 80s",
+        "BuffType": 1
+    },
+    "3005800":
+    {
+        "Name": "Inspire: Solo Ascension",
+        "Desc": "After casting a Class Healing Skill, the Inspire effect is multiplied by 3.5 for 10s",
+        "BuffType": 1
+    },
+    "3005801":
+    {
+        "Name": "Inspire: Solo Ascension (Buff)",
+        "Desc": "Inspire effect is multiplied",
+        "BuffType": 1
+    },
+    "3005900":
+    {
+        "Name": "Momentum Burst",
+        "Desc": "Dealing DMG to the primary target 15 times with Basic Attacks or Special Attacks grants 1 stack of Charge.\nAt max stacks, all Charge staks are converted into Burst.\nCharge: Increases ATK\nBurst: Increases ATK further",
+        "BuffType": 1
+    },
+    "3005901":
+    {
+        "Name": "Charge",
+        "Desc": "Increases ATK for its duration. Can stack up to 5 times by default",
+        "Icon": "ui/atlas/buff/buff_icon07",
+        "BuffType": 1
+    },
+    "3005902":
+    {
+        "Name": "Burst",
+        "Desc": "Greatly increases ATK for its duration, and Charge cannot be accumulated while active",
+        "Icon": "ui/atlas/buff/buff_icon08",
+        "BuffType": 1
+    },
+    "3005910":
+    {
+        "Name": "Momentum: Break",
+        "Desc": "Burst additionally increases ATK",
+        "BuffType": 1
+    },
+    "3005920":
+    {
+        "Name": "Momentum: Chant",
+        "Desc": "Each stack of Charge increases ATK SPD.\nBurst additionally increases ATK SPD",
+        "BuffType": 1
+    },
+    "3005930":
+    {
+        "Name": "Momentum: Swift",
+        "Desc": "Burst additionally increases Casting SPD",
+        "BuffType": 1
+    },
+    "3005940":
+    {
+        "Name": "Momentum: Rapid Drive",
+        "Desc": "The number of DMG instances required to gain each stack of Charge is reduced",
+        "BuffType": 1
+    },
+    "3005950":
+    {
+        "Name": "Momentum: Engage",
+        "Desc": "Melee DMG count increased.\nWhile in combat, Burst is extended for every second spent standing still",
+        "BuffType": 1
+    },
+    "3005951":
+    {
+        "Name": "Momentum: Engage (Buff)",
+        "Desc": "While in combat, Burst is extended for every second spent standing still",
+        "BuffType": 1
+    },
+    "3005960":
+    {
+        "Name": "Momentum: Surge",
+        "Desc": "Burst effect increased",
+        "BuffType": 1
+    },
+    "3005970":
+    {
+        "Name": "Momentum: Dual",
+        "Desc": "Burst and Charge effects increased",
+        "BuffType": 1
+    },
+    "3005980":
+    {
+        "Name": "Momentum: Afterglow",
+        "Desc": "After Burst ends, immediately gain 2 stacks of Charge",
+        "BuffType": 1
+    },
+    "3005990":
+    {
+        "Name": "Momentum: Deep Charge",
+        "Desc": "Max Charge stacks increased.\nThe base ATK provided by Burst increased",
+        "BuffType": 1
+    },
+    "3006000":
+    {
+        "Name": "Momentum: Finale",
+        "Desc": "Each stack of Charge additionally grants Oath DMG.\nBurst additionally grants Oath DMG",
+        "BuffType": 1
+    },
+    "3006100":
+    {
+        "Name": "Stat Symphony (Oath)",
+        "Desc": "Casting a Basic Attack, Special Attack, Expertise Skill, or Ultimate Skill grants 1 stack for that skill type.\nStat Symphony: Whichever stat (Crit, Luck, Haste, Mastery) is highest is briefly increased",
+        "BuffType": 1
+    },
+    "3006101":
+    {
+        "Name": "Stat Symphony",
+        "Desc": "During its duration, whichever is highest among Crit%, Luck%, Haste%, and Mastery% is increased",
+        "Icon": "ui/atlas/buff/buff_icon22",
+        "BuffType": 1
+    },
+    "3006102":
+    {
+        "Name": "Basic Attack (Stat Symphony)",
+        "Desc": "Stat Symphony Stacks",
+        "BuffType": 1
+    },
+    "3006103":
+    {
+        "Name": "Special Attack (Stat Symphony)",
+        "Desc": "Stat Symphony Stacks",
+        "BuffType": 1
+    },
+    "3006104":
+    {
+        "Name": "Expertise Skill (Stat Symphony)",
+        "Desc": "Stat Symphony Stacks",
+        "BuffType": 1
+    },
+    "3006105":
+    {
+        "Name": "Ultimate Skill (Stat Symphony)",
+        "Desc": "Stat Symphony Stacks",
+        "BuffType": 1
+    },
+    "3006110":
+    {
+        "Name": "Symphony: Power Movement",
+        "Desc": "Each stack of Stat Symphony additionally grants ATK",
+        "BuffType": 1
+    },
+    "3006120":
+    {
+        "Name": "Symphony: Rapid Tempo",
+        "Desc": "Each stack of Stat Symphony additionally grants ATK SPD",
+        "BuffType": 1
+    },
+    "3006130":
+    {
+        "Name": "Symphony: Sustained Note",
+        "Desc": "Stat Symphony gained after casting a Basic Attack lasts longer",
+        "BuffType": 1
+    },
+    "3006140":
+    {
+        "Name": "Symphony: Finale Echo",
+        "Desc": "Stat Symphony gained after casting an Ultimate Skill lasts longer",
+        "BuffType": 1
+    },
+    "3006150":
+    {
+        "Name": "Symphony: Lingering Echo",
+        "Desc": "When Stat Symphony loses a stack, there is a chance to refund that stack",
+        "BuffType": 1
+    },
+    "3006160":
+    {
+        "Name": "Symphony: Downbeat Reprise",
+        "Desc": "The Stat Symphony effect granted by Basic Attacks is multiplied",
+        "BuffType": 1
+    },
+    "3006170":
+    {
+        "Name": "Symphony: Finale Burst",
+        "Desc": "The Stat Symphony effect granted by Ultimate Skills is multiplied",
+        "BuffType": 1
+    },
+    "3006180":
+    {
+        "Name": "Symphony: Modulation Resonance",
+        "Desc": "Casting a non-Basic Attack skill different from the previously cast skill grants an additional stack of Stat Symphony.\nCasting the same skill again removes that stack",
+        "BuffType": 1
+    },
+    "3006181":
+    {
+        "Name": "Symphony: Modulation Resonance (Buff)",
+        "Desc": "",
+        "BuffType": 1
+    },
+    "3006190":
+    {
+        "Name": "Symphony: Perfect Symphony",
+        "Desc": "After maintaining 3 stacks of Stat Symphony for 5s, Perfect Symphony activates.\nThe buff effect of Stat Symphony is multiplied and then disappears",
+        "BuffType": 1
+    },
+    "3006191":
+    {
+        "Name": "Symphony: Perfect Symphony (Tracker)",
+        "Desc": "After maintaining 3 stacks of Stat Symphony for 5s, Perfect Symphony activates",
+        "BuffType": 1
+    },
+    "3006192":
+    {
+        "Name": "Symphony: Perfect Symphony (Buff)",
+        "Desc": "Perfect Symphony is active, increasing effect of Stat Symphony",
+        "BuffType": 1
+    },
+    "3006200":
+    {
+        "Name": "Symphony: Fourfold Finale",
+        "Desc": "When Stat Symphony has 3 stacks, it also grants Oath DMG",
         "BuffType": 1
     },
     "3050010":
@@ -7748,6 +8386,360 @@
     {
         "Name": "Stormblade Reality X6",
         "Desc": "When Illusion Energy reaches enough points, triggers Storm Scythe",
+        "BuffType": 1
+    },
+    "3050460":
+    {
+        "Name": "Stormblade Inspiration X1",
+        "Desc": "Volt Surge charge count increased",
+        "BuffType": 1
+    },
+    "3050470":
+    {
+        "Name": "Stormblade Inspiration X2",
+        "Desc": "Casting Thunder Cut also unleashes 1 additional Thunder Cut blade wave",
+        "BuffType": 1
+    },
+    "3050480":
+    {
+        "Name": "Stormblade Inspiration X3",
+        "Desc": "Casting Iaido Slash reduces Ultimate Skill cooldown.\nWhen Overdrive deals DMG to primary target, Ultimate Skill cooldown is reduced",
+        "BuffType": 1
+    },
+    "3050490":
+    {
+        "Name": "Stormblade Inspiration X4",
+        "Desc": "When gaining Thundrage, there is a chance to gain an additional stack.\nIf it does not trigger, chance increases on next attempt",
+        "BuffType": 1
+    },
+    "3050500":
+    {
+        "Name": "Stormblade Inspiration X5",
+        "Desc": "Moonblade's Luck Chance from any source increased",
+        "BuffType": 1
+    },
+    "3050510":
+    {
+        "Name": "Stormblade Inspiration X6",
+        "Desc": "Moonstrike hit count increased",
+        "BuffType": 1
+    },
+    "3050520":
+    {
+        "Name": "Stormblade Inspiration X7",
+        "Desc": "Stormflash duration increased",
+        "BuffType": 1
+    },
+    "3050530":
+    {
+        "Name": "Stormblade Inspiration X8",
+        "Desc": "For every few hits Moonblade deals to primary target, trigger Storm Scythe",
+        "BuffType": 1
+    },
+    "3050540":
+    {
+        "Name": "Stormblade Singularity X1",
+        "Desc": "Each time Thunder Cut is gained, next Flash Strike or Raijin Dash is replaced with Dracoflash or Phantom Slash.\nWhen Mastery reaches a threshold, DMG bonus that Thunder Sigils grant increases",
+        "BuffType": 1
+    },
+    "3050550":
+    {
+        "Name": "Stormblade Singularity X2",
+        "Desc": "Ultimate Slash becomes a 4-hit combo, with each hit dealing 80% of original DMG.\nDMG is now calculated based on number of Thunder Sigils consumed in the past 20s",
+        "BuffType": 1
+    },
+    "3050560":
+    {
+        "Name": "Stormblade Singularity X3",
+        "Desc": "Each time Stormflash is cast, you gain Reversal Blade.\nThe next 2 casts of Divine Sickle deal DMG twice",
+        "BuffType": 1
+    },
+    "3050570":
+    {
+        "Name": "Stormblade Singularity X4",
+        "Desc": "For a few seconds after Overdrive, Luck Chance gained from any source increases",
+        "BuffType": 1
+    },
+    "3051010":
+    {
+        "Name": "Wind Knight X1",
+        "Desc": "Valor Cyclone Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051020":
+    {
+        "Name": "Wind Knight X2",
+        "Desc": "Spiral Thrust, Breach Pursuit Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051030":
+    {
+        "Name": "Wind Knight X3",
+        "Desc": "Trigger Vortex Strike upon entering battle state.\nVortex Strike Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051040":
+    {
+        "Name": "Wind Knight X4",
+        "Desc": "Drake Cannon Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051050":
+    {
+        "Name": "Wind Knight X5",
+        "Desc": "Valor Cyclone can Lucky Strike.\nValor Cyclone Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051060":
+    {
+        "Name": "Wind Knight X6",
+        "Desc": "Galeform duration increased",
+        "BuffType": 1
+    },
+    "3051070":
+    {
+        "Name": "Wind Knight X7",
+        "Desc": "Instant Edge Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051080":
+    {
+        "Name": "Wind Knight X8",
+        "Desc": "Falcon Toss, Instant Edge Combo Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051090":
+    {
+        "Name": "Wind Knight X9",
+        "Desc": "Tornado can trigger Lucky Strike.\nTornado Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051100":
+    {
+        "Name": "Wind Knight X10",
+        "Desc": "Azure Sever always triggers Crit.\nAzure Sever Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051110":
+    {
+        "Name": "Wind Knight X11",
+        "Desc": "Every few seconds, Sharp Impact gains charge.\nSharp Impact, Typhoon: Sharp Impact Illusion-Breaking DMG increased",
+        "BuffType": 1
+    },
+    "3051400":
+    {
+        "Name": "Wind Knight Reality X1",
+        "Desc": "When Illusion Energy reaches enough points, reduces the remaining CD of Galeform",
+        "BuffType": 1
+    },
+    "3051410":
+    {
+        "Name": "Wind Knight Reality X2",
+        "Desc": "When Illusion Energy reaches enough points, triggers Drake Cannon",
+        "BuffType": 1
+    },
+    "3051411":
+    {
+        "Name": "Wind Knight Reality X2 (Drake Cannon)",
+        "Desc": "Triggers Drake Cannon",
+        "BuffType": 1
+    },
+    "3051420":
+    {
+        "Name": "Wind Knight Reality X3",
+        "Desc": "When Illusion Energy reaches enough points, trigger Great Cyclone if Valor Cyclone is active, dealing ATK DMG to enemies within 5 meters",
+        "BuffType": 1
+    },
+    "3051430":
+    {
+        "Name": "Wind Knight Reality X4",
+        "Desc": "When Illusion Energy reaches enough points, Special Attack Crit increases for 15s",
+        "BuffType": 1
+    },
+    "3051431":
+    {
+        "Name": "Enhanced Special Attack",
+        "Desc": "Increases Special Attack Crit Rate for the duration.\nWind Knight Reality X4",
+        "BuffType": 1
+    },
+    "3051440":
+    {
+        "Name": "Wind Knight Reality X5",
+        "Desc": "When Illusion Energy reaches enough points, next Instant Edge or Sharp Impact during Chasing Step has its Luck Chance increased",
+        "BuffType": 1
+    },
+    "3051441":
+    {
+        "Name": "Wind Knight Reality X5 (Buff)",
+        "Desc": "Next Instant Edge or Sharp Impact during Chasing Step has its Luck Chance increased",
+        "BuffType": 1
+    },
+    "3051450":
+    {
+        "Name": "Wind Knight Reality X6",
+        "Desc": "When Illusion Energy reaches enough points, Sharp Impact gains charge",
+        "BuffType": 1
+    },
+    "3051460":
+    {
+        "Name": "Wind Knight Inspiration X1",
+        "Desc": "Gale Thrust costs 60% more Courage.\nAfter casting Gale Thrust, increase Armor Penetration",
+        "BuffType": 1
+    },
+    "3051470":
+    {
+        "Name": "Wind Knight Inspiration X2",
+        "Desc": "When Courage is below 50%, increases Oath DMG from Drake Cannon and Vortex Strike",
+        "BuffType": 1
+    },
+    "3051480":
+    {
+        "Name": "Wind Knight Inspiration X3",
+        "Desc": "When Courage is above 50%, increases Oath DMG from Valor Cyclone",
+        "BuffType": 1
+    },
+    "3051490":
+    {
+        "Name": "Wind Knight Inspiration X4",
+        "Desc": "Galeform duration increased",
+        "BuffType": 1
+    },
+    "3051500":
+    {
+        "Name": "Wind Knight Singularity X3",
+        "Desc": "Tornado can trigger Lucky Strike",
+        "BuffType": 1
+    },
+    "3051510":
+    {
+        "Name": "Wind Knight Inspiration X6",
+        "Desc": "While Chasing Step is active, the Luck Chance of Instant Edge, Instant Edge Combo, and Sharp Impact increases",
+        "BuffType": 1
+    },
+    "3051520":
+    {
+        "Name": "Wind Knight Inspiration X7",
+        "Desc": "Chasing Step stack increased",
+        "BuffType": 1
+    },
+    "3051530":
+    {
+        "Name": "Wind Knight Inspiration X8",
+        "Desc": "Skyfall's Courage cost is reduced and Crit Rate doubled",
+        "BuffType": 1
+    },
+    "3051540":
+    {
+        "Name": "Wind Knight Singularity X1",
+        "Desc": "While Galeform is active, DMG dealt by Breach Pursuit adds a Windscar mark to the primary target for a few seconds.\nWhen Drake Cannon or Swift Blade hits, a stack of Windscar detonates, dealing ATK DMG and restoring Courage over time",
+        "BuffType": 1
+    },
+    "3051541":
+    {
+        "Name": "Windscar",
+        "Desc": "Windscar mark from Wind Knight Singularity X1.\nWhen Drake Cannon or Swift Blade hits, a stack of Windscar detonates",
+        "BuffType": 0
+    },
+    "3051542":
+    {
+        "Name": "Windscar Restoration",
+        "Desc": "Restoring Courage over time from detonating a Windscar mark",
+        "BuffType": 1
+    },
+    "3051550":
+    {
+        "Name": "Wind Knight Singularity X2",
+        "Desc": "For every few stacks of Wind Spiral consumed, Valor Cyclone becomes Great Wind Cyclone for the next few seconds, dealing DMG equal to a large amount of ATK in a single hit",
+        "BuffType": 1
+    },
+    "3051560":
+    {
+        "Name": "Wind Knight Inspiration X5",
+        "Desc": "Upon gaining enough Chasing Step stacks, you summon a giant tornado that deals Attack DMG in a single hit",
+        "BuffType": 1
+    },
+    "3051570":
+    {
+        "Name": "Wind Knight Singularity X4",
+        "Desc": "After casting Sharp Impact or Typhoon: Sharp Impact, next Instant Edge consumes all Sharp.\nEach Sharp consumed increases Final DMG of Instant Edge and Instant Edge Combo",
+        "BuffType": 1
+    },
+    "3052460":
+    {
+        "Name": "Frost Mage Inspiration X1",
+        "Desc": "While Permafrost is active, Crit reduced, Luck increased, and Oath DMG from Lucky Strike increased",
+        "BuffType": 1
+    },
+    "3052470":
+    {
+        "Name": "Frost Mage Inspiration X2",
+        "Desc": "During Endless Cold, increases Permafrost CD Speed",
+        "BuffType": 1
+    },
+    "3052480":
+    {
+        "Name": "Frost Mage Inspiration X3",
+        "Desc": "When Frost Lance both Crits and triggers a Lucky Strike, gain a stack of Phantom Ice.\nAt a number of stacks, Crystal Veil is cast foward",
+        "BuffType": 1
+    },
+    "3052490":
+    {
+        "Name": "Frost Mage Inspiration X4",
+        "Desc": "During Permafrost, Frost Crystal cap increased, Frost Lance Oath DMG increased",
+        "BuffType": 1
+    },
+    "3052500":
+    {
+        "Name": "Frost Mage Singularity X1",
+        "Desc": "During Endless Cold, increases ATK SPD, but Frost Lance can no longer be cast.\nDuring Permafrost, you build Endless Cold counters twice as fast",
+        "BuffType": 1
+    },
+    "3052510":
+    {
+        "Name": "Frost Mage Singularity X2",
+        "Desc": "During Endless Cold, Ice Arrows triggered by Meteor Storm can still grant Frost Crystal.\nWhile either Permafrost or Endless Cold is active, the Final DMG of Frost Lance is increased",
+        "BuffType": 1
+    },
+    "3052520":
+    {
+        "Name": "Frost Mage Inspiration X5",
+        "Desc": "For every few hits dealt by Frostbeam to primary target, Frost Crystal cap increases for a few seconds.\nDuring this time, Frostbeam's Ice Energy cost is reduced for each Frost Crystal held",
+        "BuffType": 1
+    },
+    "3052530":
+    {
+        "Name": "Frost Mage Inspiration X6",
+        "Desc": "While the Cold Wind Convergence Talent is active, increases Oath DMG from Ice Arrow and Frost Explosion",
+        "BuffType": 1
+    },
+    "3052540":
+    {
+        "Name": "Frost Mage Inspiration X7",
+        "Desc": "After Frozen Gale hits a target, gain Permafrost based on each target hit.\nThis duration cannot be extended by Talents",
+        "BuffType": 1
+    },
+    "3052550":
+    {
+        "Name": "Frost Mage Inspiration X8",
+        "Desc": "Maelstrom Energy Recovery is doubled.\nAfter casting Maelstrom, doubles the fixed Luck value during Frostbeam and increases Lucky Strike Multiplier",
+        "BuffType": 1
+    },
+    "3052580":
+    {
+        "Name": "Frost Mage Stasis X1",
+        "Desc": "During Permafrost, increases Oath DMG Reduction",
+        "BuffType": 1
+    },
+    "3052590":
+    {
+        "Name": "Frost Mage Stasis X2",
+        "Desc": "When Frost Crystal or Ice Energy is consumed, gain Oath DMG Reduction",
+        "BuffType": 1
+    },
+    "3052591":
+    {
+        "Name": "Frost Mage Stasis X2 (Buff)",
+        "Desc": "Oath DMG Reduction",
         "BuffType": 1
     },
     "3053010":
@@ -7888,6 +8880,84 @@
         "Desc": "Summons Celestial Eagle at the target's location with increased damage",
         "BuffType": 1
     },
+    "3053460":
+    {
+        "Name": "Marksman Inspiration X1",
+        "Desc": "When casting an Ultimate Skill, you summon a Wild Wolf to fight alongside you",
+        "BuffType": 1
+    },
+    "3053470":
+    {
+        "Name": "Marksman Inspiration X2",
+        "Desc": "Storm Arrow and Lightseeker Arrow are guaranteed to Crit",
+        "BuffType": 1
+    },
+    "3053480":
+    {
+        "Name": "Marksman Inspiration X3",
+        "Desc": "When Photon Energy is full, increases Photon Energy cap",
+        "BuffType": 1
+    },
+    "3053490":
+    {
+        "Name": "Marksman Inspiration X4",
+        "Desc": "During Focus, increases Companion Attack SPD",
+        "BuffType": 1
+    },
+    "3053500":
+    {
+        "Name": "Marksman Inspiration X5",
+        "Desc": "During Focus, Powerdraw becomes a double shot",
+        "BuffType": 1
+    },
+    "3053510":
+    {
+        "Name": "Marksman Inspiration X6",
+        "Desc": "When casting an Ultimate Skill, additionally summon a Falcon to fight alongside you",
+        "BuffType": 1
+    },
+    "3053520":
+    {
+        "Name": "Marksman Inspiration X7",
+        "Desc": "After Explosive Arrow detonates, it restores PHoton Energy per stack",
+        "BuffType": 1
+    },
+    "3053530":
+    {
+        "Name": "Marksman Inspiration X8",
+        "Desc": "After casting Blast Shot, Falcon skill deal more Oath DMG",
+        "BuffType": 1
+    },
+    "3053531":
+    {
+        "Name": "Marksman Inspiration X8 (Buff)",
+        "Desc": "After casting Blast Shot, Falcon skill deal more Oath DMG",
+        "BuffType": 1
+    },
+    "3053540":
+    {
+        "Name": "Marksman Singularity X1",
+        "Desc": "Legendary Beasts now appear together",
+        "BuffType": 1
+    },
+    "3053550":
+    {
+        "Name": "Marksman Singularity X2",
+        "Desc": "For every % Companion's DMG, increases Storm Arrow and Lightseeker Arrow DMG, but Companions DMG is reduced",
+        "BuffType": 1
+    },
+    "3053560":
+    {
+        "Name": "Marksman Singularity X3",
+        "Desc": "Photon Energy cap reduced.\nFinal DMG of Powerdraw increased",
+        "BuffType": 1
+    },
+    "3053570":
+    {
+        "Name": "Marksman Singularity X4",
+        "Desc": "Explosive Arrow cannot be recast before detonating.\nThe Explosive Arrow stack cap is removed and Falon Strike also adds stacks when it deals Crit DMG.\nExplosive Arrow always Crits",
+        "BuffType": 1
+    },
     "3054010":
     {
         "Name": "Shield Knight X1",
@@ -7960,6 +9030,12 @@
         "Desc": "When in Divine Circle, ATK increased",
         "BuffType": 1
     },
+    "3054151":
+    {
+        "Name": "Shield Knight Inspiration X7 - Divine Arc Slash",
+        "Desc": "Divine Arc Slash is triggered every few casts of Vanguard Hunt",
+        "BuffType": 1
+    },
     "3054400":
     {
         "Name": "Shield Knight Reality X1",
@@ -8018,6 +9094,90 @@
     {
         "Name": "Shield Knight Reality X6",
         "Desc": "When Illusion Energy reaches enough points, remaining CD of Ultimate is reduced by 1s",
+        "BuffType": 1
+    },
+    "3054460":
+    {
+        "Name": "Shield Knight Inspiration X1",
+        "Desc": "Aegis Ward duration increased",
+        "BuffType": 1
+    },
+    "3054470":
+    {
+        "Name": "Shield Knight Inspiration X2",
+        "Desc": "Valor Bash has a chance to trigger Shield Toss when it deals Crit DMG to primary target",
+        "BuffType": 1
+    },
+    "3054480":
+    {
+        "Name": "Shield Knight Inspiration X3",
+        "Desc": "Judgment Pursuit I can Crit",
+        "BuffType": 1
+    },
+    "3054490":
+    {
+        "Name": "Shield Knight Inspiration X4",
+        "Desc": "Each shield thrown reduces Ultimate Skill remaining cooldown",
+        "BuffType": 1
+    },
+    "3054500":
+    {
+        "Name": "Shield Knight Inspiration X5",
+        "Desc": "Every few hits from Vanguard Strike or Judgment to primary target triggers Sacred Blade",
+        "BuffType": 1
+    },
+    "3054510":
+    {
+        "Name": "Shield Knight Inspiration X6",
+        "Desc": "Radiance charges increased",
+        "BuffType": 1
+    },
+    "3054520":
+    {
+        "Name": "Shield Knight Inspiration X7",
+        "Desc": "Divine Arc Slash triggers every few casts of Vanguard Hunt deal damage based on your current HP",
+        "BuffType": 1
+    },
+    "3054530":
+    {
+        "Name": "Shield Knight Inspiration X8",
+        "Desc": "Increases Divine Circle range and restores additional HP to the target",
+        "BuffType": 1
+    },
+    "3054540":
+    {
+        "Name": "Shield Knight Singularity X1",
+        "Desc": "While Aegis Ward is actived, DMG Reduction from Radiant Shield increased.\nIf DMG taken exceeds 50% of Max HP, heals 30% of Max HP",
+        "BuffType": 1
+    },
+    "3054550":
+    {
+        "Name": "Shield Knight Singularity X2",
+        "Desc": "DMG Taken increased.\nInferno Reckon deals additional DMG based on Armor.\nThreat generated is reduced",
+        "BuffType": 1
+    },
+    "3054560":
+    {
+        "Name": "Shield Knight Singularity X3",
+        "Desc": "Radiance's block ratio is increased but cannot block more than 80% of DMG each hit",
+        "BuffType": 1
+    },
+    "3054570":
+    {
+        "Name": "Shield Knight Singularity X4",
+        "Desc": "DMG Taken increased.\nSacred Blade deals additional DMG based on Max HP, but can no longer Crit.\nThreat generated is reduced",
+        "BuffType": 1
+    },
+    "3054580":
+    {
+        "Name": "Shield Knight Stasis X1",
+        "Desc": "For each Lightforged Barrier, increases Oath DMG Reduction",
+        "BuffType": 1
+    },
+    "3054590":
+    {
+        "Name": "Shield Knight Stasis X2",
+        "Desc": "When Radiant Shield expires, increases Oath DMG Reduction",
         "BuffType": 1
     },
     "3055010":
@@ -8152,6 +9312,96 @@
         "Desc": "Block DMG Reduction is decreased and Class Skill Final DMG is increased",
         "BuffType": 1
     },
+    "3055460":
+    {
+        "Name": "Heavy Guardian Inspiration X1",
+        "Desc": "Terra Sunder deals additional DMG based on Shield but additional DMG cannot exceed part of Max HP and can no longer Crit",
+        "BuffType": 1
+    },
+    "3055470":
+    {
+        "Name": "Heavy Guardian Inspiration X2",
+        "Desc": "Casting Starfall restores stacks of Star Shatter",
+        "BuffType": 1
+    },
+    "3055480":
+    {
+        "Name": "Heavy Guardian Inspiration X3",
+        "Desc": "Casting Terra Sunder reduces the Ultimate Skill's CD",
+        "BuffType": 1
+    },
+    "3055490":
+    {
+        "Name": "Heavy Guardian Inspiration X4",
+        "Desc": "During Sandshroud, increases ATK SPD",
+        "BuffType": 1
+    },
+    "3055500":
+    {
+        "Name": "Heavy Guardian Inspiration X5",
+        "Desc": "Countercrush can trigger Lucky Strike",
+        "BuffType": 1
+    },
+    "3055510":
+    {
+        "Name": "Heavy Guardian Inspiration X6",
+        "Desc": "When Countercrush triggers, increases Lucky Strike Multiplier",
+        "BuffType": 1
+    },
+    "3055520":
+    {
+        "Name": "Heavy Guardian Inspiration X7",
+        "Desc": "After casting an Ultimate Skill, your next Stone Fist calls down a giant rock, dealing Attack DMG.\nThis damage counts as a Luck effect",
+        "BuffType": 1
+    },
+    "3055521":
+    {
+        "Name": "Heavy Guardian Inspiration X7 (Buff)",
+        "Desc": "Next Stone Fist calls down a giant rock",
+        "BuffType": 1
+    },
+    "3055530":
+    {
+        "Name": "Heavy Guardian Inspiration X8",
+        "Desc": "Casting Granite Fury restores HP",
+        "BuffType": 1
+    },
+    "3055540":
+    {
+        "Name": "Heavy Guardian Singularity X1",
+        "Desc": "Dmg Taken increased.\nStar Shatter consumes 50% of Shield to deal additional DMG based on Shield but Star Shatter can no longer Crit.\nThreat generated is reduced",
+        "BuffType": 1
+    },
+    "3055550":
+    {
+        "Name": "Heavy Guardian Singularity X2",
+        "Desc": "When Weakness Strike triggers, the CD of Sandshroud is reduced.\nWhile Sandshroud is active, Enraged duration increased",
+        "BuffType": 1
+    },
+    "3055560":
+    {
+        "Name": "Heavy Guardian Singularity X3",
+        "Desc": "Brave Bastion duration increased.\nWhile Brave Bastion is active, ATK SPD increased",
+        "BuffType": 1
+    },
+    "3055570":
+    {
+        "Name": "Heavy Guardian Singularity X4",
+        "Desc": "Block DMG Reduction reduced.\nCasting a Class Skill triggers Countercrush.\nThreat generated is reduced and Countercrush no longer generates large threat",
+        "BuffType": 1
+    },
+    "3055580":
+    {
+        "Name": "Heavy Guardian Stasis X1",
+        "Desc": "While Enraged, increases Oath DMG Reduction",
+        "BuffType": 1
+    },
+    "3055590":
+    {
+        "Name": "Heavy Guardian Stasis X2",
+        "Desc": "For each 50 Rage or 1 Sand Crystal consumed, recover Max HP",
+        "BuffType": 1
+    },
     "3056010":
     {
         "Name": "Verdant Oracle X1",
@@ -8172,8 +9422,8 @@
     },
     "3056030":
     {
-        "Name": "Verdant Oracle X3",
-        "Desc": "Regen Pulse becomes instant cast.\nRegen Pulse Illusion-Breaking DMG increased",
+        "Name": "Verdant Oracle Inspiration X1",
+        "Desc": "Regen Pulse becomes instant cast.\nAfter casting, Crit and Crit DMG increased for a few seconds",
         "BuffType": 1
     },
     "3056040":
@@ -8242,6 +9492,84 @@
         "Desc": "Lucky Strike Illusion-Breaking DMG increased, but Symbiotic Mark converted healing is reduced",
         "BuffType": 1
     },
+    "3056470":
+    {
+        "Name": "Verdant Oracle Inspiration X2",
+        "Desc": "Doubles the duration of Nature Ward.\nWhile Nature Ward is active, the Oath DMG from Stag Charge is increased and always Crits",
+        "BuffType": 1
+    },
+    "3056480":
+    {
+        "Name": "Verdant Oracle Inspiration X3",
+        "Desc": "While in Healing Rest, you automatically gain 1 Regen Bud every few seconds.\nWhen a Regen Bud is gained, increases Oath DMG",
+        "BuffType": 1
+    },
+    "3056481":
+    {
+        "Name": "Verdant Oracle Inspiration X3 (Passive CD)",
+        "Desc": "Cooldown for next Regen Bud gain from Factor",
+        "BuffType": 0
+    },
+    "3056490":
+    {
+        "Name": "Verdant Oracle Inspiration X4",
+        "Desc": "When a Regen Bud is gained, the Ultimate Skill's cooldown is reduced",
+        "BuffType": 1
+    },
+    "3056500":
+    {
+        "Name": "Verdant Oracle Inspiration X5",
+        "Desc": "After casting Blossom Charge, the next Grove Wish heal is increased",
+        "BuffType": 1
+    },
+    "3056510":
+    {
+        "Name": "Verdant Oracle Inspiration X6",
+        "Desc": "Every few casts of Life Bloom generates one Flower Stalk, which is always Moonlight Solace",
+        "BuffType": 1
+    },
+    "3056520":
+    {
+        "Name": "Verdant Oracle Inspiration X7",
+        "Desc": "Casting Blossom Charge grants Super Armor for a few seconds and increases control duration",
+        "BuffType": 1
+    },
+    "3056530":
+    {
+        "Name": "Verdant Oracle Inspiration X8",
+        "Desc": "Each time Nourish is applied to you, Fast Growth's cooldown is reduced",
+        "BuffType": 1
+    },
+    "3056540":
+    {
+        "Name": "Verdant Oracle Singularity X1",
+        "Desc": "Thorn can trigger Lucky Strike",
+        "BuffType": 1
+    },
+    "3056550":
+    {
+        "Name": "Verdant Oracle Singularity X2",
+        "Desc": "Casting a Special Attack grants 1 additional Regen Bud.\nEach time a Regen Bud is consumed, Mastery is increased",
+        "BuffType": 1
+    },
+    "3056560":
+    {
+        "Name": "Verdant Oracle Singularity X3",
+        "Desc": "When Flower Time Dance - Tricolor Revelation triggers, Inspiration is increased.\nIf multiple Inspiration effects are active, only the one with highest Mastery applies",
+        "BuffType": 1
+    },
+    "3056561":
+    {
+        "Name": "Verdant Oracle Singularity X3 (Buff)",
+        "Desc": "Inspiration is increased",
+        "BuffType": 1
+    },
+    "3056570":
+    {
+        "Name": "Verdant Oracle Singularity X4",
+        "Desc": "The Fast Growth effect increases by your Haste but is unaffected by the CD Boost stat",
+        "BuffType": 1
+    },
     "3057060":
     {
         "Name": "Beat Performer X6",
@@ -8300,6 +9628,90 @@
     {
         "Name": "Beat Performer Reality X4 (Activated)",
         "Desc": "The Caster triggers Surge Healing once, restoring HP equal to a portion of ATK to nearby allies",
+        "BuffType": 1
+    },
+    "3057460":
+    {
+        "Name": "Beat Performer Inspiration X1",
+        "Desc": "Casting Amplified Beat can also trigger Encore String, using the same trigger chance as Encore",
+        "BuffType": 1
+    },
+    "3057470":
+    {
+        "Name": "Beat Performer Inspiration X2",
+        "Desc": "Harmonic Anthem charges faster.\nFor a few seconds after casting Center Stage, Hermonic Anthem charges even faster and always reaches full charge.\nAt the same time, Final DMG of Scorching Impact and Lucky Strike increases",
+        "BuffType": 1
+    },
+    "3057480":
+    {
+        "Name": "Beat Performer Inspiration X3",
+        "Desc": "Heroic Melody CD is reduced",
+        "BuffType": 1
+    },
+    "3057490":
+    {
+        "Name": "Beat Performer Inspiration X4",
+        "Desc": "Fierce Strike's Attack SPD increases and casting Fierce Strike extends the buff granted by the next Finale Command",
+        "BuffType": 1
+    },
+    "3057500":
+    {
+        "Name": "Beat Performer Inspiration X5",
+        "Desc": "After casting Fivefold Crescendo, Encore duration is extended",
+        "BuffType": 1
+    },
+    "3057510":
+    {
+        "Name": "Beat Performer Inspiration X6",
+        "Desc": "Casting Healing Beat causes targets affected by Encore to immediately trigger Encore Damage Strings",
+        "BuffType": 1
+    },
+    "3057520":
+    {
+        "Name": "Beat Performer Inspiration X7",
+        "Desc": "Casting an Ultimate Skill summons a Speaker for a few seconds",
+        "BuffType": 1
+    },
+    "3057530":
+    {
+        "Name": "Beat Performer Inspiration X8",
+        "Desc": "Every few seconds, next Performance Passion spent is refunded",
+        "BuffType": 1
+    },
+    "3057560":
+    {
+        "Name": "Beat Performer Singularity X3",
+        "Desc": "When Healing Beat is cast, Encore's CD is reduced",
+        "BuffType": 1
+    },
+    "3057570":
+    {
+        "Name": "Beat Performer Singularity X4",
+        "Desc": "While an actively cast Encore effect is active, when you trigger Encore Strings for an ally, the multipliers of the next few Encore instances are multiplied",
+        "BuffType": 1
+    },
+    "3057580":
+    {
+        "Name": "Beat Performer Stasis X1",
+        "Desc": "Within a few seconds after casting Encore or Center Stage, increases Oath DMG Reduction",
+        "BuffType": 1
+    },
+    "3057581":
+    {
+        "Name": "Beat Performer Stasis X1 (Buff)",
+        "Desc": "Oath DMG Reduction increased",
+        "BuffType": 1
+    },
+    "3057590":
+    {
+        "Name": "Beat Performer Stasis X2",
+        "Desc": "Excess self-healing from Heroic Melody and Healing Melody converts into a shield that stacks up to a % of Max HP",
+        "BuffType": 1
+    },
+    "3057591":
+    {
+        "Name": "Beat Performer Stasis X2 (Shield)",
+        "Desc": "Shield from Beat Performer Stasis X2",
         "BuffType": 1
     },
     "3058110":
@@ -8390,6 +9802,36 @@
     {
         "Name": "Flame Vanguard Stasis X2 (Buff)",
         "Desc": "While casting Wildfire Dance, grants Super Armor and increases Illusion-Breaking DMG Reduction",
+        "BuffType": 1
+    },
+    "3059280":
+    {
+        "Name": "Stasis X1",
+        "Desc": "For enemies within a range, increases Oath DMG Reduction. The closer the enemy, the stronger the effect",
+        "BuffType": 1
+    },
+    "3059290":
+    {
+        "Name": "Stasis X2",
+        "Desc": "For enemies beyond a range, increases Oath DMG Reduction. The farther the enemy, the stronger the effect",
+        "BuffType": 1
+    },
+    "3059300":
+    {
+        "Name": "Stasis X3",
+        "Desc": "When HP falls below threshold, gain DMG Reduction for a few seconds",
+        "BuffType": 1
+    },
+    "3059310":
+    {
+        "Name": "Stasis X4",
+        "Desc": "When taking damage, gain Oath DMG Reduction that can stack",
+        "BuffType": 1
+    },
+    "3059311":
+    {
+        "Name": "Stasis X4 (Buff)",
+        "Desc": "Oath DMG Reduction",
         "BuffType": 1
     },
     "3060010":
@@ -8516,6 +9958,78 @@
     {
         "Name": "Flame Vanguard Reality X6",
         "Desc": "When Illusion Energy reaches enough points, remaining CD of Ultimate is reduced by 0.5s",
+        "BuffType": 1
+    },
+    "3060460":
+    {
+        "Name": "Flame Vanguard Inspiration X1",
+        "Desc": "Formless Flame Slash always Crits, and Crit DMG is always calculated higher",
+        "BuffType": 1
+    },
+    "3060470":
+    {
+        "Name": "Flame Vanguard Inspiration X2",
+        "Desc": "Hellfire Meteor can trigger Formless Flame Slash",
+        "BuffType": 1
+    },
+    "3060480":
+    {
+        "Name": "Flame Vanguard Inspiration X3",
+        "Desc": "When Blazing Assault deals DMG to the primary target, it triggers Hellfire Meteor",
+        "BuffType": 1
+    },
+    "3060490":
+    {
+        "Name": "Flame Vanguard Inspiration X4",
+        "Desc": "During Wasteland's End, the trigger chances of Formless Flame Slash's 1st, 2nd, and 3rd stages each increase while its final DMG decreases",
+        "BuffType": 1
+    },
+    "3060500":
+    {
+        "Name": "Flame Vanguard Inspiration X5",
+        "Desc": "Each time Wildfire Dance Crits, it contributes more times as much Final DMG bonus to the Final Slash",
+        "BuffType": 1
+    },
+    "3060510":
+    {
+        "Name": "Flame Vanguard Inspiration X6",
+        "Desc": "During Endless Hellfire, you gain Crimson Soul Gauge faster",
+        "BuffType": 1
+    },
+    "3060520":
+    {
+        "Name": "Flame Vanguard Inspiration X7",
+        "Desc": "Casting Flowing Splendor Slash triggers Great Crimson Lotus.\nGreat Crimson Lotus deals more damage for each additional target hit",
+        "BuffType": 1
+    },
+    "3060530":
+    {
+        "Name": "Flame Vanguard Inspiration X8",
+        "Desc": "The Ultimate Skill's remaining CD is reduced every few triggers of Great Crimson Lotus",
+        "BuffType": 1
+    },
+    "3060560":
+    {
+        "Name": "Flame Vanguard Singularity X3",
+        "Desc": "Talent enhancement for Wildfire Dance Final Slash: Removes the cap on Final DMG Bonus",
+        "BuffType": 1
+    },
+    "3060580":
+    {
+        "Name": "Flame Vanguard Stasis X1",
+        "Desc": "Each stack of Infernal Combo grants Oath DMG Reduction",
+        "BuffType": 1
+    },
+    "3060590":
+    {
+        "Name": "Flame Vanguard Stasis X2",
+        "Desc": "While Wasteland's End of Endless Hellfire is active, increases Oath DMG Reduction",
+        "BuffType": 1
+    },
+    "3200004":
+    {
+        "Name": "Stunt! Boarrier Rush - Passive",
+        "Desc": "Special Attack DMG and healing increased",
         "BuffType": 1
     },
     "3200009":
@@ -8653,6 +10167,30 @@
     {
         "Name": "Arcane! Swift Devour Passive - AOE",
         "Desc": "For every 10 instance of DMG from Class Skills, next DMG instance deals AOE Adaptive Attack/Magic DMG",
+        "BuffType": 1
+    },
+    "3210261":
+    {
+        "Name": "Sunfire's Blessing",
+        "Desc": "Each stack increases Lucky Strike Multiplier",
+        "BuffType": 1
+    },
+    "3210262":
+    {
+        "Name": "Moonstrike's Curse",
+        "Desc": "Deals Magic DMG based on ATK",
+        "BuffType": 0
+    },
+    "3210290":
+    {
+        "Name": "Arcane! Glacial Reverse Blade Passive",
+        "Desc": "",
+        "BuffType": 1
+    },
+    "3210300":
+    {
+        "Name": "Arcane! Breath of Illusions Passive",
+        "Desc": "",
         "BuffType": 1
     }
 }
