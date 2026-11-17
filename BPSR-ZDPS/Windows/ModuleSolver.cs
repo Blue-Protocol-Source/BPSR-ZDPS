@@ -36,6 +36,7 @@ namespace BPSR_ZDPS
         private static List<ModComboResult>? BestModResults = null;
         private static bool ShouldBlockMainUI = false;
         private static bool IsCalculating = false;
+        public static string PreCalcWarningLabel = null;
         private static CancellationTokenSource ModuleCalcCancelTokenSource = new();
         private static Task ModuleCalcTask;
         private static DateTime ModuleCalcStartTime = DateTime.Now;
@@ -636,6 +637,7 @@ namespace BPSR_ZDPS
             if (idToRemove != -1)
             {
                 SolverConfig.StatPriorities.RemoveAt(idToRemove);
+                VerifyStatPrioritiesCanMakeCombos();
             }
 
             ImGui.EndChild();
@@ -674,6 +676,8 @@ namespace BPSR_ZDPS
                 });
 
                 configChanged = true;
+
+                VerifyStatPrioritiesCanMakeCombos();
             }
 
             if (isAlreadyAdded)
@@ -694,7 +698,13 @@ namespace BPSR_ZDPS
             ImGui.SetCursorPosX(leftWidth + 8);
             ImGui.SetCursorPosY(85);
 
-            ImGui.BeginChild("RightSection", new Vector2(windowSize.X - leftWidth - 5, contentRegion.Y - 55), ImGuiChildFlags.Borders);
+            float sectionHeight = contentRegion.Y - 55;
+            if (PreCalcWarningLabel != null)
+            {
+                sectionHeight -= 25;
+            }
+
+            ImGui.BeginChild("RightSection", new Vector2(windowSize.X - leftWidth - 5, sectionHeight), ImGuiChildFlags.Borders);
             ImGui.Spacing();
 
             if (BestModResults?.Count > 0)
@@ -712,7 +722,7 @@ namespace BPSR_ZDPS
 
                                 ModComboResult modsResult = BestModResults[i];
                                 ImGui.SeparatorText($"Result: {i + 1} (Ability Score: {modsResult.CombatScore:#,##}) [ZScore: {modsResult.Score:#,##}]");
-                                
+
                                 var perLine = 3;
                                 var statPos = ImGui.GetCursorPos();
                                 for (int i1 = 0; i1 < modsResult.Stats.Length; i1++)
@@ -777,6 +787,12 @@ namespace BPSR_ZDPS
 
             ImGui.EndChild();
             ImGui.SetCursorPosX(leftWidth + 8);
+            if (PreCalcWarningLabel != null)
+            {
+                ColoredTextBar($"<!> {PreCalcWarningLabel} <!>", Colors.OrangeRed_Transparent);
+                ImGui.SetCursorPosX(leftWidth + 8);
+            }
+
             if (ImGui.Button($"Calculate {SolverConfig.NumModules} module combo sets", new Vector2(contentRegion.X - leftWidth, 0)))
             {
                 ModuleCalcCancelTokenSource = new CancellationTokenSource();
@@ -991,7 +1007,7 @@ namespace BPSR_ZDPS
 
             uint col = ImGui.ColorConvertFloat4ToU32(color);
 
-            ImGui.GetWindowDrawList().AddRect(min, max, col, rounding, ImDrawFlags.None, thickness);
+            ImGui.GetWindowDrawList().AddRect(min, max, col, rounding, thickness, ImDrawFlags.None);
         }
 
         private static bool CheckAndDrawNoModulesBanner()
@@ -1212,7 +1228,7 @@ namespace BPSR_ZDPS
                 {
                     ImGui.Text($"{mod[i]:00} ");
 
-                    if (i != Vector<byte>.Count -1)
+                    if (i != Vector<byte>.Count - 1)
                         ImGui.SameLine();
                 }
             }
@@ -1313,6 +1329,38 @@ namespace BPSR_ZDPS
             IsCalculating = false;
         }
 
+        private static void VerifyStatPrioritiesCanMakeCombos()
+        {
+            // This is not ideal but better to show the user before clicking calc
+
+            PreCalcWarningLabel = null;
+            if (SolverConfig.StatPriorities.Count > 0)
+            {
+                if (ModuleOptimizer.FilterModulesWithStats(SolverConfig, PlayerModData).Count < SolverConfig.NumModules)
+                {
+                    PreCalcWarningLabel = $"Current Stat Priorities don't produce enough modules for a {SolverConfig.NumModules} set.";
+                }
+            }
+        }
+
+        private static void ColoredTextBar(string text, Vector4 bgColor)
+        {
+            Vector2 pos = ImGui.GetCursorScreenPos();
+            float width = ImGui.GetContentRegionAvail().X;
+            float height = ImGui.GetTextLineHeightWithSpacing();
+            ImDrawListPtr drawList = ImGui.GetWindowDrawList();
+
+            drawList.AddRectFilled(pos, new Vector2(pos.X + width, pos.Y + height), ImGui.ColorConvertFloat4ToU32(bgColor));
+
+            var textSize = ImGui.CalcTextSize(text);
+            ImGui.SetCursorScreenPos(new Vector2((pos.X + ImGui.GetStyle().FramePadding.X) + (width / 2 - textSize.X / 2), pos.Y));
+            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], 18.0f);
+            ImGui.TextUnformatted(text);
+            ImGui.PopFont();
+
+            ImGui.Dummy(new Vector2(0, 1));
+        }
+
         public static long CountCombinations4(int n)
         {
             if (n < 4) return 0;
@@ -1368,14 +1416,14 @@ namespace BPSR_ZDPS
     {
         public string Name { get; set; }
         public string Icon { get; set; }
-        public int StatId   { get; set; }
+        public int StatId { get; set; }
         public ImTextureRef? IconRef { get; set; }
     }
 
     public class ModTypeInfo
     {
         public string Name { get; set; }
-        public string Icon {  set; get; }
+        public string Icon { set; get; }
     }
 
     public struct ModuleSet

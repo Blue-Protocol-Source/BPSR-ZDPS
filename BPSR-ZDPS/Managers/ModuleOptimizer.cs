@@ -691,7 +691,7 @@ namespace BPSR_ZDPS.Managers
             return true;
         }
 
-        private List<long> FilterModulesWithStats(SolverConfig config, PlayerModDataSave playerMods)
+        public static List<long> FilterModulesWithStats(SolverConfig config, PlayerModDataSave playerMods)
         {
             var modules = new List<long>();
             foreach (var item in playerMods.ModulesPackage.Items)
