@@ -1557,6 +1557,22 @@ namespace BPSR_ZDPS.Windows
 
                                                 resolvedLong = totalShieldValue;
                                             }
+                                            else if (eventTracker.FormatAttributeNumberShort && attrType == typeof(int))
+                                            {
+                                                resolvedValue = Utils.NumberToShorthand<int>((int)converted);
+                                            }
+                                            else if (eventTracker.FormatAttributeNumberShort && attrType == typeof(long))
+                                            {
+                                                resolvedValue = Utils.NumberToShorthand<long>((long)converted);
+                                            }
+                                            else if (eventTracker.FormatAttributeNumberThousandsSeparator && attrType == typeof(int))
+                                            {
+                                                resolvedValue = ((int)converted).ToString("N0");
+                                            }
+                                            else if (eventTracker.FormatAttributeNumberThousandsSeparator && attrType == typeof(long))
+                                            {
+                                                resolvedValue = ((long)converted).ToString("N0");
+                                            }
 
                                             attributeEventData.AttributeValue = resolvedValue;
 
@@ -2419,9 +2435,25 @@ namespace BPSR_ZDPS.Windows
                         if (eventContainer.ShowContainerName)
                         {
                             ImGui.TextUnformatted(eventContainer.ContainerName);
+
+                            if (eventContainer.ShowAllTrackersCount)
+                            {
+                                ImGui.SameLine();
+                                ImGui.TextUnformatted($"({eventContainer.ActiveTrackerDataCount})");
+                            }
+
+                            if (eventContainer.ShowTrackedEntitiesCount)
+                            {
+                                ImGui.SameLine();
+                                ImGui.TextUnformatted($"[{eventContainer.ActiveEntitiesTrackedCount}]");
+                            }
                         }
 
                         List<long> hasShownEntityName = [];
+                        HashSet<long> uniqueEntityIdList = [];
+
+                        eventContainer.ActiveTrackerDataCount = 0;
+                        eventContainer.ActiveEntitiesTrackedCount = 0;
 
                         int eventTrackersIdx = -1;
                         foreach (var eventTrackerKVP in eventContainer.EventTrackers.AsValueEnumerable())
@@ -2594,6 +2626,9 @@ namespace BPSR_ZDPS.Windows
                                     }
                                 }
 
+                                // Count valid trackers here before the single instance limit check is done
+                                eventContainer.ActiveTrackerDataCount += 1;
+
                                 if (eventTracker.OnlyDisplayOneTrackerInstance)
                                 {
                                     if (hasDisplayedTrackerData)
@@ -2639,7 +2674,14 @@ namespace BPSR_ZDPS.Windows
 
                                 var containerWindowSize = ImGui.GetWindowSize();
 
-                                ImGui.BeginChild($"{eventData.OwnerEntityUuid}", new Vector2(maxWindowSize, 0), childFlags | ImGuiChildFlags.AutoResizeX | ImGuiChildFlags.AutoResizeY, ImGuiWindowFlags.NoScrollbar);
+                                bool GroupBySourceUuid = eventContainer.GroupBySourceUuid;
+                                long groupUuid = eventData.OwnerEntityUuid;
+                                if (GroupBySourceUuid)
+                                {
+                                    groupUuid = eventData.SourceEntityUuid;
+                                }
+
+                                ImGui.BeginChild($"{groupUuid}", new Vector2(maxWindowSize, 0), childFlags | ImGuiChildFlags.AutoResizeX | ImGuiChildFlags.AutoResizeY, ImGuiWindowFlags.NoScrollbar);
                                 
                                 ImGui.BeginGroup();
 
@@ -2651,6 +2693,9 @@ namespace BPSR_ZDPS.Windows
 
                                 float farthestEndpoint = 0.0f;
                                 float farthestStartpoint = ImGui.GetCursorScreenPos().X;
+
+                                uniqueEntityIdList.Add(eventData.OwnerEntityUuid);
+                                eventContainer.ActiveEntitiesTrackedCount = uniqueEntityIdList.Count;
 
                                 if (eventTracker.ShowEntityName && !eventTracker.ShowEntityNameInsideProgressBar && !hasShownEntityName.Contains(eventData.OwnerEntityUuid))
                                 {
@@ -4890,6 +4935,24 @@ namespace BPSR_ZDPS.Windows
                     ImGui.Checkbox(AppStrings.GetLocalized("EventTracker_HideTrackerBorders"), ref ActiveTrackerContainer.HideTrackerBorders);
                     ImGui.SetItemTooltip("Removes the borders around Trackers.\nWorks well when combined with Transparent Background.");
 
+                    ImGui.TableNextColumn();
+
+                    ImGui.Checkbox("Group By Caster Id", ref ActiveTrackerContainer.GroupBySourceUuid);
+                    ImGui.SetItemTooltip("Groups Trackers by the Caster's Id instead of the Entity's Id.");
+
+                    ImGui.TableNextColumn();
+                    // Skip this space so the "Show All Count" settings are next to each other
+
+                    ImGui.TableNextColumn();
+
+                    ImGui.Checkbox("Show All Trackers Count", ref ActiveTrackerContainer.ShowAllTrackersCount);
+                    ImGui.SetItemTooltip("Adds the total active Trackers with data count to the Container Name");
+
+                    ImGui.TableNextColumn();
+
+                    ImGui.Checkbox("Show All Tracked Entities Count", ref ActiveTrackerContainer.ShowTrackedEntitiesCount);
+                    ImGui.SetItemTooltip("Adds the total tracked entities to the Container Name");
+
                     ImGui.EndTable();
                 }
 
@@ -5932,6 +5995,8 @@ namespace BPSR_ZDPS.Windows
                         if (ActiveTrackedEventEntry.TrackerType == ETrackerType.Attributes && tracker.Value.TrackerType == ETrackerType.Attributes)
                         {
                             tracker.Value.FormatAttributeAsPercent = ActiveTrackedEventEntry.FormatAttributeAsPercent;
+                            tracker.Value.FormatAttributeNumberShort = ActiveTrackedEventEntry.FormatAttributeNumberShort;
+                            tracker.Value.FormatAttributeNumberThousandsSeparator = ActiveTrackedEventEntry.FormatAttributeNumberThousandsSeparator;
                         }
                         tracker.Value.HideTrackerCondition = ActiveTrackedEventEntry.HideTrackerCondition;
 
@@ -6435,6 +6500,12 @@ namespace BPSR_ZDPS.Windows
 
                 ImGui.Checkbox("Format As Percent", ref ActiveTrackedEventEntry.FormatAttributeAsPercent);
                 ImGui.SetItemTooltip("Changes the value displayed to be a Percent if supported.");
+
+                ImGui.Checkbox("Format As Short Number", ref ActiveTrackedEventEntry.FormatAttributeNumberShort);
+                ImGui.SetItemTooltip("Changes the value displayed to be a short number format, similar to the DPS Meter.");
+
+                ImGui.Checkbox("Format Number With Separators", ref ActiveTrackedEventEntry.FormatAttributeNumberThousandsSeparator);
+                ImGui.SetItemTooltip("If the value is a number, it will place thousands separators.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Value Size:");
@@ -7894,6 +7965,10 @@ namespace BPSR_ZDPS.Windows
         public int TrackerBackgroundOpacityValue = 0;
         public bool HideTrackerBorders = false;
 
+        public bool GroupBySourceUuid = false;
+        public bool ShowAllTrackersCount = false;
+        public bool ShowTrackedEntitiesCount = false;
+
         public void RecheckTrackerStates()
         {
             HasEnabledTrackers = EventTrackers.Any(x => x.Value.IsEnabled);
@@ -7906,6 +7981,12 @@ namespace BPSR_ZDPS.Windows
 
         [JsonIgnore]
         public bool HasLoadedSaveDataOnce = false;
+
+        [JsonIgnore]
+        public int ActiveTrackerDataCount = 0;
+
+        [JsonIgnore]
+        public int ActiveEntitiesTrackedCount = 0;
 
         public object Clone(uint counter, ref uint trackerCounter)
         {
@@ -8014,6 +8095,8 @@ namespace BPSR_ZDPS.Windows
         public string TrackedAttributeName = "";
         public string TrackedAttributeNameOverride = "";
         public bool FormatAttributeAsPercent = false;
+        public bool FormatAttributeNumberShort = false;
+        public bool FormatAttributeNumberThousandsSeparator = false;
 
         public bool LimitToOneTrackerInstance = false;
         public bool OnlyDisplayOneTrackerInstance = false;
