@@ -1461,7 +1461,14 @@ namespace BPSR_ZDPS
                         {
                             if (AppState.BenchmarkSingleTargetUUID == 0)
                             {
-                                AppState.BenchmarkSingleTargetUUID = targetUuid;
+                                if (AppState.BenchmarkSingleLockedUUID != 0)
+                                {
+                                    AppState.BenchmarkSingleTargetUUID = AppState.BenchmarkSingleLockedUUID;
+                                }
+                                else
+                                {
+                                    AppState.BenchmarkSingleTargetUUID = targetUuid;
+                                }
                             }
 
                             // Only care about recording details for our first hit target

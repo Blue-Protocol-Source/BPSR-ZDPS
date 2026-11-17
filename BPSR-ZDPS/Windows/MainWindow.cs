@@ -657,7 +657,45 @@ namespace BPSR_ZDPS.Windows
                                 ImGui.SetItemTooltip(AppStrings.GetLocalized("FeaturesMenu_Benchmark_StartBenchmark_Tooltip"));
                             }
                         }
-                        
+
+                        if (AppState.BenchmarkSingleTarget)
+                        {
+                            ImGui.Separator();
+                            ImGui.AlignTextToFramePadding();
+                            ImGui.TextUnformatted("Current Target:");
+                            if (EncounterManager.Current != null && AppState.PlayerUUID != 0)
+                            {
+                                var player = EncounterManager.Current.GetOrCreateEntity(AppState.PlayerUUID);
+                                if (player != null)
+                                {
+                                    var targetId = player.GetAttrKV("AttrTargetId") as long?;
+                                    if (targetId != null && targetId > 0)
+                                    {
+                                        ImGui.SameLine();
+                                        ImGui.TextUnformatted(targetId.ToString());
+                                        ImGui.SameLine();
+                                        if (AppState.BenchmarkSingleLockedUUID == 0)
+                                        {
+                                            if (ImGui.Button("Lock Target"))
+                                            {
+                                                AppState.BenchmarkSingleLockedUUID = targetId.Value;
+                                                AppState.BenchmarkSingleTargetUUID = targetId.Value;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (ImGui.Button("Clear Target"))
+                                            {
+                                                AppState.BenchmarkSingleTargetUUID = 0;
+                                                AppState.BenchmarkSingleLockedUUID = 0;
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+
                         ImGui.EndMenu();
                     }
 
