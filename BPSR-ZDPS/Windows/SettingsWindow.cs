@@ -221,6 +221,15 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.SeparatorText("Localization (Experimental)");
 
+                        if (Settings.Instance.Language != Language)
+                        {
+                            ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Goldenrod_Transparent);
+                            ImGui.BeginChild($"##LanguageChangedReloadPrompt", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
+                            ImGui.TextWrapped($"ZDPS should be restarted after changing languages to ensure all text looks correct.");
+                            ImGui.EndChild();
+                            ImGui.PopStyleColor();
+                        }
+
                         //ImGui.BeginDisabled();
                         ImGui.AlignTextToFramePadding();
                         ImGui.TextUnformatted("Language: ");

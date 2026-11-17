@@ -375,22 +375,33 @@ namespace BPSR_ZDPS
             HelperMethods.Fonts.Add("Segoe", segoe);
 
             // Merging additional fonts into Segoe for multi-language support
+            // Note: Fonts cannot be directly disposed after loading with atlas changes in Hexa.NET.ImGui-3.0.1-experimental
 
-            // Japanese character supporting font (this is a bit heavy to load into memory - 5MB)
-            //ff = new FontFile("BPSR_ZDPS.Fonts.fot-seuratpron-m.otf");
-            var ff = new FontFile("BPSR_ZDPS.Fonts.fot-seuratpron-m.otf", new GlyphRange(0x3000, 0x303F));
-            var res = ff.BindToImGui(18.0f, true);
-            //ff.Dispose();
+            // If Japanese is the primary language, load Japanese ahead of Chinese in case of glyph conflicts
+            if (Settings.Instance.Language == "ja")
+            {
+                // Japanese character supporting font
+                var tempFF = new FontFile("BPSR_ZDPS.Fonts.BIZUDPGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
+                var tempRes = tempFF.BindToImGui(13.5f, true);
 
-            // Chinese character supporting font (this is very heavy to load into memory - 16MB)
-            ff = new FontFile("BPSR_ZDPS.Fonts.SourceHanSansSC-Regular.otf", new GlyphRange(0x4E00, 0x9FFF));
-            res = ff.BindToImGui(18.0f, true);
-            //ff.Dispose();
+                // Chinese character supporting font (this is very heavy to load into memory - 16MB)
+                tempFF = new FontFile("BPSR_ZDPS.Fonts.SourceHanSansSC-Regular.otf", new GlyphRange(0x4E00, 0x9FFF));
+                tempRes = tempFF.BindToImGui(18.0f, true);
+            }
+            else
+            {
+                // Chinese character supporting font (this is very heavy to load into memory - 16MB)
+                var tempFF = new FontFile("BPSR_ZDPS.Fonts.SourceHanSansSC-Regular.otf", new GlyphRange(0x4E00, 0x9FFF));
+                var tempRes = tempFF.BindToImGui(18.0f, true);
+
+                // Japanese character supporting font
+                tempFF = new FontFile("BPSR_ZDPS.Fonts.BIZUDPGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
+                tempRes = tempFF.BindToImGui(13.5f, true);
+            }
 
             // Korean character supporting font
-            ff = new FontFile("BPSR_ZDPS.Fonts.NotoSansKR-Regular.ttf", new GlyphRange(0x4E00, 0x9FFF));
-            res = ff.BindToImGui(18.0f, true);
-            //ff.Dispose();
+            var ff = new FontFile("BPSR_ZDPS.Fonts.NotoSansKR-Regular.ttf", new GlyphRange(0x4E00, 0x9FFF));
+            var res = ff.BindToImGui(18.0f, true);
 
             // Setting Segoe to be the default application font (though the other fonts will be used if their glyphs are required)
             ImGui.AddFontDefault(HelperMethods.Fonts["Segoe"].OwnerAtlas);
@@ -401,36 +412,43 @@ namespace BPSR_ZDPS
             ff = new FontFile("BPSR_ZDPS.Fonts.FAS.ttf", new GlyphRange(0x0021, 0xF8FF));
             res = ff.BindToImGui(18.0f);
             HelperMethods.Fonts.Add("FASIcons", res);
-            //ff.Dispose();
 
             // Windows 11 doesn't actually have this anymore so we can't rely on the system, we have to embed it
             //HelperMethods.Fonts.Add("Cascadia-Mono", io.Fonts.AddFontFromFileTTF(@"C:\Windows\Fonts\CascadiaMono.ttf", 18.0f));
             ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaMono.ttf");
             res = ff.BindToImGui(18.0f);
             HelperMethods.Fonts.Add("Cascadia-Mono", res);
-            //ff.Dispose();
 
             // The below fonts are being merged into Cascadia-Mono
 
-            // Japanese character supporting monospace font
-            ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextJP.wght.ttf");
-            res = ff.BindToImGui(18.0f, true);
-            //ff.Dispose();
+            if (Settings.Instance.Language == "ja")
+            {
+                // Japanese character supporting monospace font
+                ff = new FontFile("BPSR_ZDPS.Fonts.BIZUDGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
+                res = ff.BindToImGui(13.5f, true);
 
-            // Chinese Simplified character supporting monospace font
-            ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextSC.wght.ttf");
-            res = ff.BindToImGui(18.0f, true);
-            //ff.Dispose();
+                // Chinese Simplified character supporting monospace font
+                ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextSC.wght.ttf");
+                res = ff.BindToImGui(18.0f, true);
+            }
+            else
+            {
+                // Chinese Simplified character supporting monospace font
+                ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextSC.wght.ttf");
+                res = ff.BindToImGui(18.0f, true);
+
+                // Japanese character supporting monospace font
+                ff = new FontFile("BPSR_ZDPS.Fonts.BIZUDGothic-Regular.ttf", new GlyphRange(0x3000, 0x9FFF));
+                res = ff.BindToImGui(13.5f, true);
+            }
 
             // Chinese Traditional character supporting monospace font
             ff = new FontFile("BPSR_ZDPS.Fonts.CascadiaNextTC.wght.ttf");
             res = ff.BindToImGui(18.0f, true);
-            //ff.Dispose();
 
             // Korean character supporting monospace font
             ff = new FontFile("BPSR_ZDPS.Fonts.D2Coding.ttf");
             res = ff.BindToImGui(18.0f, true);
-            //ff.Dispose();
         }
 
         static unsafe void SetWindowIcon(GLFWwindowPtr window, string IconFilePath)
