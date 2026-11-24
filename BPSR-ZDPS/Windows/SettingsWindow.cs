@@ -184,10 +184,12 @@ namespace BPSR_ZDPS.Windows
             // Will need to use GLFW to figure out monitors/sizes/positions/etc
 
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSizeConstraints(new Vector2(550, 350), new Vector2(ImGui.GETFLTMAX()));
+            DpiScaling.BeginWindow(TITLE_ID);
+
+            ImGui.SetNextWindowSizeConstraints(new Vector2(550, 350) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
             //ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
 
-            ImGui.SetNextWindowSize(new Vector2(700, 700), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(700, 700)), ImGuiCond.FirstUseEver);
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
             if (ImGui.BeginPopupModal($"Settings{TITLE_ID}"))
@@ -217,7 +219,7 @@ namespace BPSR_ZDPS.Windows
                     if (ImGui.BeginTabItem("General"))
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
-                        ImGui.BeginChild("##GeneralTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+                        ImGui.BeginChild("##GeneralTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56 * DpiScaling.Scale), ImGuiChildFlags.Borders);
 
                         ImGui.SeparatorText("Localization (Experimental)");
 
@@ -234,7 +236,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.AlignTextToFramePadding();
                         ImGui.TextUnformatted("Language: ");
                         ImGui.SameLine();
-                        ImGui.SetNextItemWidth(150);
+                        ImGui.SetNextItemWidth(150 * DpiScaling.Scale);
                         if (ImGui.BeginCombo("##LanguageCombo", System.Globalization.CultureInfo.GetCultureInfo(Language).EnglishName))
                         {
                             if (ImGui.Selectable("English (EN)"))
@@ -263,7 +265,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
                             ImGui.BeginChild($"##VeryOutOfDateNpcapVersion", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
-                            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetStyle().FontSizeBase);
                             ImGui.TextUnformatted("ERROR:");
                             ImGui.PopFont();
                             ImGui.TextWrapped($"Npcap version is EXTREMELY OUT OF DATE. Please update your Npcap install immediately.");
@@ -274,7 +276,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Goldenrod_Transparent);
                             ImGui.BeginChild($"##OutOfDateNpcapVersion", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
-                            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetStyle().FontSizeBase);
                             ImGui.TextUnformatted("WARNING:");
                             ImGui.PopFont();
                             ImGui.TextWrapped($"Npcap version ({npcapVersion}) is below 1.86. It is strongly recommended to update to this version, or higher, to avoid problems.");
@@ -331,7 +333,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.SameLine();
 
                         var gamePrefName = Utils.GameCapturePreferenceToName(GameCapturePreference);
-                        ImGui.SetNextItemWidth(150);
+                        ImGui.SetNextItemWidth(150 * DpiScaling.Scale);
                         if (ImGui.BeginCombo("##EGameCapturePreference", gamePrefName, ImGuiComboFlags.HeightLarge))
                         {
                             if (ImGui.Selectable("Auto"))
@@ -412,7 +414,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
                             ImGui.BeginChild("##KeybindsNotice", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
-                            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                            ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetStyle().FontSizeBase);
                             ImGui.TextWrapped("Important Note:");
                             ImGui.PopFont();
                             ImGui.TextWrapped(AppStrings.GetLocalized("Settings_Keybinds_Notice"));
@@ -595,7 +597,7 @@ namespace BPSR_ZDPS.Windows
                     if (ImGui.BeginTabItem("Combat"))
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
-                        ImGui.BeginChild("##CombatTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+                        ImGui.BeginChild("##CombatTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56 * DpiScaling.Scale), ImGuiChildFlags.Borders);
 
                         ImGui.SeparatorText("Combat");
 
@@ -724,7 +726,7 @@ namespace BPSR_ZDPS.Windows
                     if (ImGui.BeginTabItem("User Interface"))
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
-                        ImGui.BeginChild("##UserInterfaceTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+                        ImGui.BeginChild("##UserInterfaceTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56 * DpiScaling.Scale), ImGuiChildFlags.Borders);
 
                         ImGui.SeparatorText("User Interface");
 
@@ -1210,7 +1212,7 @@ namespace BPSR_ZDPS.Windows
                     if (ImGui.BeginTabItem("Matchmaking"))
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
-                        ImGui.BeginChild("##MatchmakingTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+                        ImGui.BeginChild("##MatchmakingTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56 * DpiScaling.Scale), ImGuiChildFlags.Borders);
 
                         ImGui.SeparatorText("Matchmaking");
                         ImGui.AlignTextToFramePadding();
@@ -1228,10 +1230,10 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.AlignTextToFramePadding();
                         ImGui.Text("Matchmake Notification Sound Path: ");
-                        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X - 140 - ImGui.GetStyle().ItemSpacing.X);
+                        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X - 140 * DpiScaling.Scale - ImGui.GetStyle().ItemSpacing.X);
                         ImGui.InputText("##MatchmakeNotificationSoundPath", ref matchmakeNotificationSoundPath, 1024);
                         ImGui.SameLine();
-                        if (ImGui.Button("Browse...##MatchmakeSoundPathBrowseBtn", new Vector2(140, 0)))
+                        if (ImGui.Button("Browse...##MatchmakeSoundPathBrowseBtn", new Vector2(140 * DpiScaling.Scale, 0)))
                         {
                             string defaultDir = File.Exists(matchmakeNotificationSoundPath) ? Path.GetDirectoryName(matchmakeNotificationSoundPath) : "";
 
@@ -1292,10 +1294,10 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.AlignTextToFramePadding();
                         ImGui.Text("Ready Check Notification Sound Path: ");
-                        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X - 140 - ImGui.GetStyle().ItemSpacing.X);
+                        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X - 140 * DpiScaling.Scale - ImGui.GetStyle().ItemSpacing.X);
                         ImGui.InputText("##ReadyCheckNotificationSoundPath", ref readyCheckNotificationSoundPath, 1024);
                         ImGui.SameLine();
-                        if (ImGui.Button("Browse...##ReadyCheckSoundPathBrowseBtn", new Vector2(140, 0)))
+                        if (ImGui.Button("Browse...##ReadyCheckSoundPathBrowseBtn", new Vector2(140 * DpiScaling.Scale, 0)))
                         {
                             string defaultDir = File.Exists(readyCheckNotificationSoundPath) ? Path.GetDirectoryName(readyCheckNotificationSoundPath) : "";
 
@@ -1348,7 +1350,7 @@ namespace BPSR_ZDPS.Windows
                     if (ImGui.BeginTabItem("Integrations"))
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
-                        ImGui.BeginChild("##IntegrationsTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+                        ImGui.BeginChild("##IntegrationsTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56 * DpiScaling.Scale), ImGuiChildFlags.Borders);
 
                         ImGui.SeparatorText("Integrations");
 
@@ -1622,7 +1624,7 @@ namespace BPSR_ZDPS.Windows
                     if (ImGui.BeginTabItem("Development"))
                     {
                         var contentRegionAvail = ImGui.GetContentRegionAvail();
-                        ImGui.BeginChild("##DevelopmentTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+                        ImGui.BeginChild("##DevelopmentTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56 * DpiScaling.Scale), ImGuiChildFlags.Borders);
 
                         ImGui.SeparatorText("Development");
                         if (ImGui.Button("Reload DataTables"))
@@ -1701,7 +1703,7 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.NewLine();
-                float buttonWidth = 120;
+                float buttonWidth = 120 * DpiScaling.Scale;
                 ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkGreen_Transparent);
                 if (ImGui.Button(AppStrings.GetLocalized("Settings_SaveBtn"), new Vector2(buttonWidth, 0)))
                 {
@@ -2019,7 +2021,7 @@ namespace BPSR_ZDPS.Windows
             {
                 ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
                 ImGui.BeginChild($"##RestartRequiredNotice_{settingName}", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
-                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetStyle().FontSizeBase);
                 ImGui.TextUnformatted("Important Note:");
                 ImGui.PopFont();
                 ImGui.TextWrapped($"Changing the [{settingName}] setting requires restarting ZDPS to take effect.");
@@ -2034,7 +2036,7 @@ namespace BPSR_ZDPS.Windows
             {
                 ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Red_Transparent);
                 ImGui.BeginChild($"##GenericImportantNotice_{uniqueName}", new Vector2(0, 0), ImGuiChildFlags.AutoResizeY | ImGuiChildFlags.Borders);
-                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetStyle().FontSizeBase);
                 ImGui.TextUnformatted("Important Note:");
                 ImGui.PopFont();
                 ImGui.TextWrapped($"{text}");
@@ -2178,7 +2180,7 @@ namespace BPSR_ZDPS.Windows
             {
                 ImGui.PushStyleColor(ImGuiCol.Button, ImGui.GetStyle().Colors[(int)ImGuiCol.ButtonHovered]);
             }
-            if (ImGui.Button($"{bindDisplay}##BindBtn_{bindingName}", new Vector2(120, 0)))
+            if (ImGui.Button($"{bindDisplay}##BindBtn_{bindingName}", new Vector2(120 * DpiScaling.Scale, 0)))
             {
                 bindingState = true;
             }

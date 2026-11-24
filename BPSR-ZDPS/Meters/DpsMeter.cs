@@ -22,7 +22,7 @@ namespace BPSR_ZDPS.Meters
 
         public override void Draw(MainWindow mainWindow)
         {
-            ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(2, ImGui.GetStyle().FramePadding.Y));
+            ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(2 * DpiScaling.Scale, ImGui.GetStyle().FramePadding.Y));
 
             if (ImGui.BeginListBox("##DPSMeterList", new Vector2(-1, -1)))
             {

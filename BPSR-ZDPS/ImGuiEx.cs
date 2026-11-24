@@ -26,7 +26,7 @@ namespace BPSR_ZDPS
             ImGui.EndGroup();
         }
 
-        private static void DrawArc(float size, float max_angle_factor, float percentage, float thickness, Vector2 pos, ImTextureRef? imTextureRef = null, float texScale = 1.0f, int texStretchLeft = 0, int texStretchRight = 0, bool isFilled = false)
+        private static void DrawArc(float size, float max_angle_factor, float percentage, float thickness, Vector2 pos, ImTextureRef? imTextureRef = null, float texScale = 1.0f, float texStretchLeft = 0, float texStretchRight = 0, bool isFilled = false)
         {
             var draw_list = ImGui.GetWindowDrawList();
             
@@ -76,14 +76,14 @@ namespace BPSR_ZDPS
             draw_list.PathStroke(ImGui.GetColorU32(ImGuiCol.PlotHistogram), thickness, ImDrawFlags.None);
         }
 
-        public static void ProgressBarArc(float size, float max_angle_factor, float percentage, Vector2 pos, float thickness, ImTextureRef? imTextureRef = null, float texScale = 1.0f, int texStretchLeft = 0, int texStretchRight = 0, bool isFilled = false)
+        public static void ProgressBarArc(float size, float max_angle_factor, float percentage, Vector2 pos, float thickness, ImTextureRef? imTextureRef = null, float texScale = 1.0f, float texStretchLeft = 0, float texStretchRight = 0, bool isFilled = false)
         {
             var windowPos = ImGui.GetWindowPos();
 
             DrawArc(size, max_angle_factor, percentage, thickness, new Vector2(pos.X + windowPos.X, pos.Y + windowPos.Y), imTextureRef, texScale, texStretchLeft, texStretchRight, isFilled);
         }
 
-        public static void ProgressBarArc(float size, float max_angle_factor, float percentage, float thickness = 2.0f, ImTextureRef? imTextureRef = null, float texScale = 1.0f, int texStretchLeft = 0, int texStretchRight = 0, bool isFilled = false)
+        public static void ProgressBarArc(float size, float max_angle_factor, float percentage, float thickness = 2.0f, ImTextureRef? imTextureRef = null, float texScale = 1.0f, float texStretchLeft = 0, float texStretchRight = 0, bool isFilled = false)
         {
             var pos = ImGui.GetCursorScreenPos();
             ImGui.Dummy(new Vector2(size));

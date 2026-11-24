@@ -41,7 +41,9 @@ namespace BPSR_ZDPS.Windows
             var main_viewport = ImGui.GetMainViewport();
 
             //ImGui.SetNextWindowPos(new Vector2(io.DisplaySize.X, io.DisplaySize.Y), ImGuiCond.Appearing);
-            ImGui.SetNextWindowSize(new Vector2(550, 550), ImGuiCond.FirstUseEver);
+            DpiScaling.BeginWindow(TITLE_ID);
+
+            ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(550, 550)), ImGuiCond.FirstUseEver);
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 

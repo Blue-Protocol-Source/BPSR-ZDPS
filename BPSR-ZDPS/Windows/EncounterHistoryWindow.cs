@@ -136,8 +136,10 @@ namespace BPSR_ZDPS.Windows
 
             encounterReportWindow.Draw();
 
-            ImGui.SetNextWindowSize(new Vector2(880, 675), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSizeConstraints(new Vector2(500, 250), new Vector2(ImGui.GETFLTMAX()));
+            DpiScaling.BeginWindow("###EncounterHistoryWindow");
+
+            ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(880, 675)), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSizeConstraints(new Vector2(500, 250) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
 
             if (IsFullScreen && IsFullscreenToggleState)
             {
@@ -232,7 +234,7 @@ namespace BPSR_ZDPS.Windows
 
                 string[] OrderByOptions = { "Order By Damage", "Order By Healing", "Order By Taken" };
                 ImGui.SameLine();
-                ImGui.SetNextItemWidth(ImGui.CalcTextSize($"{OrderByOptions[SelectedOrderByOption]}").X + 32); // Extra spaces to ensure full text is visible
+                ImGui.SetNextItemWidth(ImGui.CalcTextSize($"{OrderByOptions[SelectedOrderByOption]}").X + 32 * DpiScaling.Scale); // Extra spaces to ensure full text is visible
                 ImGui.Combo("##OrderByCombo", ref SelectedOrderByOption, OrderByOptions, OrderByOptions.Length);
 
                 string selectedPreviewText = "";
@@ -423,7 +425,7 @@ namespace BPSR_ZDPS.Windows
                         }
 
                         // Adds vertical padding in each row
-                        ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(ImGui.GetStyle().CellPadding.X, ImGui.GetStyle().CellPadding.Y + 2));
+                        ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(ImGui.GetStyle().CellPadding.X, ImGui.GetStyle().CellPadding.Y + 2 * DpiScaling.Scale));
 
                         for (int entIdx = 0; entIdx < entities.Length; entIdx++)
                         {

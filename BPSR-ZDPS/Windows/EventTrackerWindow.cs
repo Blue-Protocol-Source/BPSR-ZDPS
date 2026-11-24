@@ -72,6 +72,7 @@ namespace BPSR_ZDPS.Windows
         static ConcurrentQueue<string> DebugEventTrackerLog = new();
 
         static bool IsPresetManagerOpened = false;
+        static bool ShouldDrawPresetManager = false;
         static bool ShouldPresetManagerFocusNext = false;
         static bool IsPresetManagerInContainerMode = false;
         static TrackedEventEntry? SelectedPresetManagerTracker = null;
@@ -2307,6 +2308,8 @@ namespace BPSR_ZDPS.Windows
                         }
                     }
 
+                    DpiScaling.BeginWindow($"{eventContainer.IdTracker}", windowSettings.ContainerPositions.GetValueOrDefault(eventContainer.IdTracker));
+
                     if (eventContainer.ShowInTaskBar)
                     {
                         ImGui.SetNextWindowClass(EventTrackerDisplayInTaskBarClass);
@@ -2331,11 +2334,11 @@ namespace BPSR_ZDPS.Windows
                         {
                             if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedSize)
                             {
-                                ImGui.SetNextWindowSize(eventContainer.ContainerFixedSize, ImGuiCond.Appearing);
+                                ImGui.SetNextWindowSize(DpiScaling.ToScaled(eventContainer.ContainerFixedSize), ImGuiCond.Appearing);
                             }
                             else if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedWidth)
                             {
-                                ImGui.SetNextWindowSize(new Vector2(eventContainer.ContainerFixedSize.X, 0), windowSettings.IsContainerEditMode ? ImGuiCond.Appearing : ImGuiCond.None);
+                                ImGui.SetNextWindowSize(new Vector2(DpiScaling.ToScaled(eventContainer.ContainerFixedSize).X, 0), windowSettings.IsContainerEditMode ? ImGuiCond.Appearing : ImGuiCond.None);
                             }
                         }    
                     }
@@ -2384,11 +2387,11 @@ namespace BPSR_ZDPS.Windows
 
                         if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedSize)
                         {
-                            eventContainer.ContainerFixedSize = windowBaseSize;
+                            eventContainer.ContainerFixedSize = DpiScaling.ToUnscaled(windowBaseSize);
                         }
                         else if (eventContainer.ContainerSizeConstraint == EContainerSizeConstraint.FixedWidth)
                         {
-                            eventContainer.ContainerFixedSize = new Vector2(windowBaseSize.X, 0);
+                            eventContainer.ContainerFixedSize = new Vector2(DpiScaling.ToUnscaled(windowBaseSize).X, 0);
                         }
 
                         if (eventContainer.ModifiedWindowOpacity && eventContainer.LastSetOpacity != eventContainer.WindowOpacityValue)
@@ -2423,7 +2426,7 @@ namespace BPSR_ZDPS.Windows
                             }
                         }
 
-                        if (windowBaseSize == new Vector2(8, 8) && eventContainer.LastSetOpacity != 0)
+                        if (windowBaseSize == ImGui.GetStyle().WindowPadding * 2 && eventContainer.LastSetOpacity != 0)
                         {
                             if (Utils.CheckIfViewportValid(ImGui.GetWindowViewport()))
                             {
@@ -2830,7 +2833,7 @@ namespace BPSR_ZDPS.Windows
                                 if (eventTracker.ShowIcon && eventTracker.IsIconValid && !eventTracker.ShowIconInsideProgressBar)
                                 {
                                     var tex = ImageArchive.LoadImage(eventTracker.IconPath);
-                                    float texSize = eventTracker.IconSize;
+                                    float texSize = eventTracker.IconSize * DpiScaling.Scale;
                                     if (tex != null)
                                     {
                                         ImGui.Image((ImTextureRef)tex, new Vector2(texSize, texSize));
@@ -3127,7 +3130,7 @@ namespace BPSR_ZDPS.Windows
                                                 {
                                                     float ratio = eventTracker.DurationProgressBarVerticalOffset * 0.01f;
                                                     var lastItemSize = ImGui.GetItemRectSize();
-                                                    ImGui.SetCursorPosY(ImGui.GetCursorPosY() + (lastItemSize.Y * ratio) - (eventTracker.DurationProgressBarSize * ratio));
+                                                    ImGui.SetCursorPosY(ImGui.GetCursorPosY() + (lastItemSize.Y * ratio) - (eventTracker.DurationProgressBarSize * DpiScaling.Scale * ratio));
                                                 }
                                             }
 
@@ -3159,7 +3162,7 @@ namespace BPSR_ZDPS.Windows
                                                 {
                                                     var tex = ImageArchive.LoadImage(eventTracker.IconPath);
                                                     // If the texture is null it will be skipped during the render process automatically
-                                                    ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, tex, eventTracker.DurationProgressBarTextureScale, eventTracker.IconStretchLeftValue, eventTracker.IconStretchRightValue, eventTracker.UseDurationProgressBarCircleBackgroundFill);
+                                                    ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize * DpiScaling.Scale, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness * DpiScaling.Scale, tex, eventTracker.DurationProgressBarTextureScale, eventTracker.IconStretchLeftValue * DpiScaling.Scale, eventTracker.IconStretchRightValue * DpiScaling.Scale, eventTracker.UseDurationProgressBarCircleBackgroundFill);
                                                     if (showTooltip)
                                                     {
                                                         ImGui.PopFont(); // Undo font size adjustment for tooltips
@@ -3169,7 +3172,7 @@ namespace BPSR_ZDPS.Windows
                                                 }
                                                 else
                                                 {
-                                                    ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness, null, 1.0f, 0, 0, eventTracker.UseDurationProgressBarCircleBackgroundFill);
+                                                    ImGuiEx.ProgressBarArc(eventTracker.DurationProgressBarSize * DpiScaling.Scale, 360, remainingPct * 100.0f, eventTracker.DurationProgressBarCircleThickness * DpiScaling.Scale, null, 1.0f, 0, 0, eventTracker.UseDurationProgressBarCircleBackgroundFill);
                                                     if (showTooltip && !eventTracker.ShowIcon)
                                                     {
                                                         ImGui.PopFont(); // Undo font size adjustment for tooltips
@@ -3181,7 +3184,7 @@ namespace BPSR_ZDPS.Windows
 
                                                 if (eventTracker.ShowDurationText && eventTracker.ShowDurationTextInProgressBar)
                                                 {
-                                                    ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                                                    ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetStyle().FontSizeBase);
                                                     string durationFormat = "";
                                                     if (eventTracker.ShowDurationText && eventTracker.ShowDurationTextInProgressBar)
                                                     {
@@ -3206,7 +3209,7 @@ namespace BPSR_ZDPS.Windows
                                                     var endPos = ImGui.GetCursorPos();
                                                     var textSize = ImGui.CalcTextSize(durationFormat);
 
-                                                    ImGui.SetCursorPosX(startPos.X + (eventTracker.DurationProgressBarSize * 0.50f) - (textSize.X * 0.50f));
+                                                    ImGui.SetCursorPosX(startPos.X + (eventTracker.DurationProgressBarSize * DpiScaling.Scale * 0.50f) - (textSize.X * 0.50f));
                                                     ImGui.SetCursorPosY(((startPos.Y + endPos.Y) * 0.50f) - (textSize.Y * 0.50f) - ImGui.GetStyle().FramePadding.Y);
 
                                                     bool customTextColor = eventTracker.UseCustomDurationTextColor;
@@ -3223,13 +3226,13 @@ namespace BPSR_ZDPS.Windows
                                                 }
                                                 else if (eventTracker.ShowLayers && eventTracker.ShowLayersInsideProgressBar)
                                                 {
-                                                    ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetFontSize());
+                                                    ImGui.PushFont(HelperMethods.Fonts["Segoe-Bold"], ImGui.GetStyle().FontSizeBase);
                                                     string layersFormat = $"{eventData.Layers}";
 
                                                     var endPos = ImGui.GetCursorPos();
                                                     var textSize = ImGui.CalcTextSize(layersFormat);
 
-                                                    ImGui.SetCursorPosX(startPos.X + (eventTracker.DurationProgressBarSize * 0.50f) - (textSize.X * 0.50f));
+                                                    ImGui.SetCursorPosX(startPos.X + (eventTracker.DurationProgressBarSize * DpiScaling.Scale * 0.50f) - (textSize.X * 0.50f));
                                                     ImGui.SetCursorPosY(((startPos.Y + endPos.Y) * 0.50f) - (textSize.Y * 0.50f) - ImGui.GetStyle().FramePadding.Y);
 
                                                     bool customTextColor = eventTracker.UseCustomLayersTextColor;
@@ -3249,7 +3252,7 @@ namespace BPSR_ZDPS.Windows
                                             {
                                                 // The Progress Bar should never be shorter than this size
                                                 // TODO: It may be worth exposing this as a user setting
-                                                float minWidth = 8.0f;
+                                                float minWidth = 8.0f * DpiScaling.Scale;
 
                                                 //var itemRectSize2 = ImGui.GetItemRectSize();
                                                 //var windowSize = ImGui.GetWindowSize();
@@ -3348,7 +3351,7 @@ namespace BPSR_ZDPS.Windows
 
                                                 if (eventTracker.ShowIcon && eventTracker.IsIconValid && eventTracker.ShowIconInsideProgressBar)
                                                 {
-                                                    calcWidth += eventTracker.IconSize + 0;
+                                                    calcWidth += eventTracker.IconSize * DpiScaling.Scale + 0;
                                                 }
 
                                                 if (!string.IsNullOrEmpty(nameFormat))
@@ -3394,7 +3397,7 @@ namespace BPSR_ZDPS.Windows
 
                                                 var startProgPos = ImGui.GetCursorPos();
 
-                                                ImGui.ProgressBar(remainingPct, new Vector2(sX, eventTracker.DurationProgressBarSize), "##BuffDurationProgressBar");
+                                                ImGui.ProgressBar(remainingPct, new Vector2(sX, eventTracker.DurationProgressBarSize * DpiScaling.Scale), "##BuffDurationProgressBar");
                                                 var endProgPos = ImGui.GetCursorPos();
                                                 var endPointY = startProgPos.Y + ImGui.GetItemRectSize().Y;
                                                 ImGui.SetCursorPos(startProgPos);
@@ -3416,8 +3419,8 @@ namespace BPSR_ZDPS.Windows
                                                     var tex = ImageArchive.LoadImage(eventTracker.IconPath);
                                                     if (tex != null)
                                                     {
-                                                        ImGui.SetCursorPosY(mid - (eventTracker.IconSize * 0.5f));
-                                                        ImGui.Image(tex.Value, new Vector2(eventTracker.IconSize, eventTracker.IconSize), new Vector2(0, 0), new Vector2(1, 1));
+                                                        ImGui.SetCursorPosY(mid - (eventTracker.IconSize * DpiScaling.Scale * 0.5f));
+                                                        ImGui.Image(tex.Value, new Vector2(eventTracker.IconSize * DpiScaling.Scale, eventTracker.IconSize * DpiScaling.Scale), new Vector2(0, 0), new Vector2(1, 1));
 
                                                         if (showTooltip)
                                                         {
@@ -3431,7 +3434,7 @@ namespace BPSR_ZDPS.Windows
                                                 // Entity Name
                                                 if (!string.IsNullOrEmpty(entityNameFormat))
                                                 {
-                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f) - itemSpacingY);
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * DpiScaling.Scale * 0.5f) - itemSpacingY);
                                                     ImGui.TextUnformatted(entityNameFormat);
 
                                                     ImGui.SameLine();
@@ -3440,7 +3443,7 @@ namespace BPSR_ZDPS.Windows
                                                 // Name
                                                 if (!string.IsNullOrEmpty(nameFormat))
                                                 {
-                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f) - itemSpacingY);
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * DpiScaling.Scale * 0.5f) - itemSpacingY);
                                                     bool nameColor = eventTracker.UseCustomNameTextColor;
                                                     if (nameColor)
                                                     {
@@ -3458,7 +3461,7 @@ namespace BPSR_ZDPS.Windows
                                                 // Layers
                                                 if (!string.IsNullOrEmpty(layersFormat))
                                                 {
-                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f) - itemSpacingY);
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * DpiScaling.Scale * 0.5f) - itemSpacingY);
                                                     bool layersColor = eventTracker.UseCustomLayersTextColor;
                                                     if (layersColor)
                                                     {
@@ -3476,7 +3479,7 @@ namespace BPSR_ZDPS.Windows
                                                 // Duration
                                                 if (!string.IsNullOrEmpty(durationFormat))
                                                 {
-                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * 0.5f) - itemSpacingY);
+                                                    ImGui.SetCursorPosY(mid - (eventTracker.DurationProgressBarTextSize * DpiScaling.Scale * 0.5f) - itemSpacingY);
                                                     bool durationColor = eventTracker.UseCustomDurationTextColor;
                                                     if (durationColor)
                                                     {
@@ -3650,14 +3653,14 @@ namespace BPSR_ZDPS.Windows
                 ImGui.TextUnformatted("Are you sure you want to delete the Container?");
                 ImGui.NewLine();
                 ImGui.Separator();
-                if (ImGui.Button("Yes", new Vector2(140, 0)))
+                if (ImGui.Button("Yes", new Vector2(140 * DpiScaling.Scale, 0)))
                 {
                     DeleteActiveContainer();
                     ImGui.CloseCurrentPopup();
                 }
                 ImGui.SameLine();
-                ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - 140);
-                if (ImGui.Button("No", new Vector2(140, 0)))
+                ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - 140 * DpiScaling.Scale);
+                if (ImGui.Button("No", new Vector2(140 * DpiScaling.Scale, 0)))
                 {
                     ImGui.CloseCurrentPopup();
                 }
@@ -3697,14 +3700,14 @@ namespace BPSR_ZDPS.Windows
                 ImGui.TextUnformatted("Are you sure you want to delete the selected Tracker?");
                 ImGui.NewLine();
                 ImGui.Separator();
-                if (ImGui.Button("Yes", new Vector2(140, 0)))
+                if (ImGui.Button("Yes", new Vector2(140 * DpiScaling.Scale, 0)))
                 {
                     DeleteActiveTracker();
                     ImGui.CloseCurrentPopup();
                 }
                 ImGui.SameLine();
-                ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - 140);
-                if (ImGui.Button("No", new Vector2(140, 0)))
+                ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - 140 * DpiScaling.Scale);
+                if (ImGui.Button("No", new Vector2(140 * DpiScaling.Scale, 0)))
                 {
                     ImGui.CloseCurrentPopup();
                 }
@@ -3754,9 +3757,11 @@ namespace BPSR_ZDPS.Windows
                 return;
             }
 
+            DpiScaling.BeginWindow("###EventTrackerPresetManagerWindow");
+
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr("EventTrackerPresetManager"));
-            ImGui.SetNextWindowSizeConstraints(new Vector2(400, 350), new Vector2(ImGui.GETFLTMAX()));
-            ImGui.SetNextWindowSize(new Vector2(400, 650), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSizeConstraints(new Vector2(400, 350) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
+            ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(400, 650)), ImGuiCond.FirstUseEver);
             if (ImGui.Begin("Preset Manager###EventTrackerPresetManagerWindow", ref IsPresetManagerOpened, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
             {
                 if (ShouldPresetManagerFocusNext)
@@ -4097,7 +4102,9 @@ namespace BPSR_ZDPS.Windows
 
             if (ShowDebugLogWindow)
             {
-                ImGui.SetNextWindowSize(new Vector2(450, 300), ImGuiCond.FirstUseEver);
+                DpiScaling.BeginWindow("Event Tracker Debug Log");
+
+                ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(450, 300)), ImGuiCond.FirstUseEver);
                 if (ImGui.Begin("Event Tracker Debug Log", ref ShowDebugLogWindow, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
                 {
                     ImGui.Checkbox("Debug Log Scene Events", ref DebugAllSceneEvents);
@@ -4205,9 +4212,11 @@ namespace BPSR_ZDPS.Windows
 
             var windowSettings = Settings.Instance.WindowSettings.EventTracker;
 
-            ImGui.SetNextWindowSizeConstraints(new Vector2(1020, 500), new Vector2(ImGui.GETFLTMAX()));
+            DpiScaling.BeginWindow(TITLE_ID, windowSettings.WindowPosition);
 
-            ImGui.SetNextWindowSize(new Vector2(1200, 850), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSizeConstraints(new Vector2(1020, 500) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
+
+            ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(1200, 850)), ImGuiCond.FirstUseEver);
 
             if (windowSettings.WindowPosition != new Vector2())
             {
@@ -4223,7 +4232,7 @@ namespace BPSR_ZDPS.Windows
 
             if (windowSettings.WindowSize != new Vector2())
             {
-                ImGui.SetNextWindowSize(windowSettings.WindowSize, ImGuiCond.FirstUseEver);
+                ImGui.SetNextWindowSize(DpiScaling.ToScaled(windowSettings.WindowSize), ImGuiCond.FirstUseEver);
             }
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -4283,10 +4292,10 @@ namespace BPSR_ZDPS.Windows
 
                     if (IsPresetManagerInContainerMode)
                     {
-                        DrawPresetManagerWindow();
+                        ShouldDrawPresetManager = true;
                     }
 
-                    if (ImGui.BeginListBox("##ContainersListBox", new Vector2(ImGui.GetContentRegionAvail().X, -100)))
+                    if (ImGui.BeginListBox("##ContainersListBox", new Vector2(ImGui.GetContentRegionAvail().X, -100 * DpiScaling.Scale)))
                     {
                         bool queuedReorder = false;
                         int movingIdx = -1;
@@ -4296,7 +4305,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             bool isSelected = ActiveTrackerContainer == container.Value;
                             ImGuiSelectableFlags highlight = isSelected ? ImGuiSelectableFlags.Highlight : ImGuiSelectableFlags.None;
-                            ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1);
+                            ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, DpiScaling.ToScaledThickness(1));
                             if (ImGui.Checkbox($"##ContainerIsEnabledCB_{container.Value.IdTracker}", ref container.Value.IsContainerEnabled))
                             {
                                 container.Value.HadTransparentBackground = false;
@@ -4349,7 +4358,7 @@ namespace BPSR_ZDPS.Windows
 
                                     float lineY = insertBefore ? min.Y : max.Y;
 
-                                    ImGui.GetWindowDrawList().AddLine(new Vector2(min.X, lineY), new Vector2(max.X, lineY), ImGui.ColorConvertFloat4ToU32(Colors.LightBlue_Transparent), 2.0f);
+                                    ImGui.GetWindowDrawList().AddLine(new Vector2(min.X, lineY), new Vector2(max.X, lineY), ImGui.ColorConvertFloat4ToU32(Colors.LightBlue_Transparent), DpiScaling.ToScaledThickness(2.0f));
 
                                     if (reorder_payload.IsDelivery())
                                     {
@@ -4495,7 +4504,7 @@ namespace BPSR_ZDPS.Windows
                     }
 
                     ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkGreen_Transparent);
-                    if (ImGui.Button(AppStrings.GetLocalized("EventTracker_CreateNewTrackerContainer"), new Vector2(230, 0)))
+                    if (ImGui.Button(AppStrings.GetLocalized("EventTracker_CreateNewTrackerContainer"), new Vector2(230 * DpiScaling.Scale, 0)))
                     {
                         ActiveTrackerContainer = new TrackerContainer(++PersistentContainerCount);
                         ActiveTrackerContainer.ContainerName = $"Tracker Container {PersistentContainerCount}";
@@ -4511,7 +4520,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.BeginDisabled(ActiveTrackerContainer == null);
                     //ImGui.SetCursorPosX(ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - 230);
                     ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkRed_Transparent);
-                    if (ImGui.Button(AppStrings.GetLocalized("EventTracker_DeleteSelectedTrackerContainer"), new Vector2(230, 0)))
+                    if (ImGui.Button(AppStrings.GetLocalized("EventTracker_DeleteSelectedTrackerContainer"), new Vector2(230 * DpiScaling.Scale, 0)))
                     {
                         if (ActiveTrackerContainer.EventTrackers.Count > 0)
                         {
@@ -4525,8 +4534,8 @@ namespace BPSR_ZDPS.Windows
                     ImGui.PopStyleColor();
                     ImGui.EndDisabled();
 
-                    ImGui.SetCursorPosX(((ImGui.GetContentRegionAvail().X - 230) / 2.0f));
-                    if (ImGui.Button(AppStrings.GetLocalized("EventTracker_ContainerPresetManager"), new Vector2(230, 0)))
+                    ImGui.SetCursorPosX(((ImGui.GetContentRegionAvail().X - 230 * DpiScaling.Scale) / 2.0f));
+                    if (ImGui.Button(AppStrings.GetLocalized("EventTracker_ContainerPresetManager"), new Vector2(230 * DpiScaling.Scale, 0)))
                     {
                         IsPresetManagerInContainerMode = true;
                         OpenPresetManagerWindow();
@@ -4566,11 +4575,17 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 windowSettings.WindowPosition = ImGui.GetWindowPos();
-                windowSettings.WindowSize = ImGui.GetWindowSize();
+                windowSettings.WindowSize = DpiScaling.ToUnscaled(ImGui.GetWindowSize());
 
                 ImFileBrowser.Draw();
 
                 ImGui.End();
+
+                if (ShouldDrawPresetManager)
+                {
+                    ShouldDrawPresetManager = false;
+                    DrawPresetManagerWindow();
+                }
             }
 
             if (!IsOpened && ShouldTrackOpenState)
@@ -4618,7 +4633,7 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 4) - (ImGui.GetStyle().ItemSpacing.X * 3));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 ImGui.PushStyleColor(ImGuiCol.Text, windowSettings.IsContainerEditMode ? Colors.Red * new Vector4(1, 1, 1, 0.75f) : Colors.White);
                 if (ImGui.MenuItem($"{FASIcons.Pen}##ForceEditModeBtn"))
                 {
@@ -4629,7 +4644,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetItemTooltip("Toggles Container Editing Mode.");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 3) - (ImGui.GetStyle().ItemSpacing.X * 2));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 ImGui.PushStyleColor(ImGuiCol.Text, ForceHideAllContainers ? Colors.Red * new Vector4(1, 1, 1, 0.75f) : Colors.White);
                 if (ImGui.MenuItem($"{(ForceHideAllContainers ? FASIcons.EyeSlash : FASIcons.Eye)}##ForceToggleVisibilityBtn"))
                 {
@@ -4647,7 +4662,7 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 2) - ImGui.GetStyle().ItemSpacing.X);
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.MenuItem($"{FASIcons.Gear}##SettingsBtn"))
                 {
                     ImGui.SetNextWindowPos(ImGui.GetItemRectMax(), ImGuiCond.Appearing, new Vector2(1, 0));
@@ -4742,11 +4757,11 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.MenuItem($"X##CloseBtn"))
                 {
                     windowSettings.WindowPosition = ImGui.GetWindowPos();
-                    windowSettings.WindowSize = ImGui.GetWindowSize();
+                    windowSettings.WindowSize = DpiScaling.ToUnscaled(ImGui.GetWindowSize());
                     IsOpened = false;
                 }
                 ImGui.PopFont();
@@ -4828,7 +4843,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.AlignTextToFramePadding();
                     ImGui.TextUnformatted(AppStrings.GetLocalized("EventTracker_LayoutListDirection"));
                     ImGui.SameLine();
-                    ImGui.SetNextItemWidth(100);
+                    ImGui.SetNextItemWidth(100 * DpiScaling.Scale);
                     if (ImGui.BeginCombo("##LayoutDirectionCombo", ActiveTrackerContainer.ContainerListDirection.ToString(), ImGuiComboFlags.None))
                     {
                         int idx = 0;
@@ -4857,7 +4872,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted(AppStrings.GetLocalized("EventTracker_LayoutSizeConstraints"));
                 ImGui.SameLine();
-                ImGui.SetNextItemWidth(100);
+                ImGui.SetNextItemWidth(100 * DpiScaling.Scale);
                 if (ImGui.BeginCombo("##LayoutSizeConstraintCombo", ActiveTrackerContainer.ContainerSizeConstraint.ToString(), ImGuiComboFlags.None))
                 {
                     if (ImGui.Selectable($"{EContainerSizeConstraint.AutoSize.ToString()}"))
@@ -5065,7 +5080,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
 
                         ImGui.SameLine();
-                        ImGui.SetNextItemWidth(300);
+                        ImGui.SetNextItemWidth(300 * DpiScaling.Scale);
                         if (ImGui.SliderInt2("##ContainerPos", ref posArray[0], 0, 9999))
                         {
                             pos[0] = posArray[0];
@@ -5104,7 +5119,7 @@ namespace BPSR_ZDPS.Windows
 
             ImGui.SeparatorText("Event Trackers"u8);
 
-            if (ImGui.BeginListBox("##TrackersListbox", new Vector2(ImGui.GetContentRegionAvail().X, 140)))
+            if (ImGui.BeginListBox("##TrackersListbox", new Vector2(ImGui.GetContentRegionAvail().X, 140 * DpiScaling.Scale)))
             {
                 int idx = 0;
                 foreach (var eventTracker in ActiveTrackerContainer.EventTrackers.AsValueEnumerable())
@@ -5216,7 +5231,7 @@ namespace BPSR_ZDPS.Windows
                     {
                         ImGui.SameLine();
                         ImGui.PushStyleColor(ImGuiCol.Text, Colors.DarkGreen);
-                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                         ImGui.TextUnformatted($"{FASIcons.Bug}");
                         ImGui.PopFont();
                         ImGui.PopStyleColor();
@@ -5281,7 +5296,7 @@ namespace BPSR_ZDPS.Windows
 
             if (!IsPresetManagerInContainerMode)
             {
-                DrawPresetManagerWindow();
+                ShouldDrawPresetManager = true;
             }
             ImGui.SameLine();
             if (ImGui.Button(AppStrings.GetLocalized("EventTracker_TrackerPresetManager")))
@@ -5293,7 +5308,7 @@ namespace BPSR_ZDPS.Windows
 
             ImGui.SameLine();
             ImGui.BeginDisabled(ActiveTrackedEventEntryIdx < 1);
-            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
             if (ImGui.Button($"{FASIcons.ChevronUp}##TrackerMoveUpBtn"))
             {
                 var currentIndex = ActiveTrackerContainer.EventTrackers.IndexOf(ActiveTrackedEventEntry.IdTracker);
@@ -5308,7 +5323,7 @@ namespace BPSR_ZDPS.Windows
             ImGui.SetItemTooltip("Move Selected Tracker Up.");
             ImGui.SameLine();
             ImGui.BeginDisabled(ActiveTrackedEventEntryIdx == -1 || ActiveTrackedEventEntryIdx == ActiveTrackerContainer.EventTrackers.Count - 1);
-            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
             if (ImGui.Button($"{FASIcons.ChevronDown}##TrackerMoveDownBtn"))
             {
                 var currentIndex = ActiveTrackerContainer.EventTrackers.IndexOf(ActiveTrackedEventEntry.IdTracker);
@@ -5460,7 +5475,7 @@ namespace BPSR_ZDPS.Windows
                 }
             }
 
-            if (ImGui.BeginListBox("##BuffsListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140)))
+            if (ImGui.BeginListBox("##BuffsListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140 * DpiScaling.Scale)))
             {
                 if (BuffFilterMatches != null && BuffFilterMatches.Any())
                 {
@@ -5570,7 +5585,7 @@ namespace BPSR_ZDPS.Windows
             ImGui.TextUnformatted("What Events To Track:");
             ImGui.SameLine();
             ImGui.Checkbox("View All Events", ref ShowAllBuffEventsToTrack);
-            if (ImGui.BeginListBox("##TrackedBuffEventsListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140)))
+            if (ImGui.BeginListBox("##TrackedBuffEventsListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140 * DpiScaling.Scale)))
             {
                 Zproto.EBuffEventType[] eventsList = System.Enum.GetValues<Zproto.EBuffEventType>();
                 if (!ShowAllBuffEventsToTrack)
@@ -5709,7 +5724,7 @@ namespace BPSR_ZDPS.Windows
                 }
             }
 
-            if (ImGui.BeginListBox("##SkillsListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140)))
+            if (ImGui.BeginListBox("##SkillsListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140 * DpiScaling.Scale)))
             {
                 if (SkillFilterMatches != null && SkillFilterMatches.Any())
                 {
@@ -5779,7 +5794,7 @@ namespace BPSR_ZDPS.Windows
 
             ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted("What Events To Track:");
-            if (ImGui.BeginListBox("##TrackedSkillEventsListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140)))
+            if (ImGui.BeginListBox("##TrackedSkillEventsListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140 * DpiScaling.Scale)))
             {
                 foreach (var skillEventType in System.Enum.GetValues<ESkillEventTrackingType>())
                 {
@@ -5919,7 +5934,7 @@ namespace BPSR_ZDPS.Windows
                 AttributeFilterMatches = AttrSupported.ToArray();
             }
 
-            if (ImGui.BeginListBox("##AttributesListBox", new Vector2(ImGui.GetContentRegionAvail().X, 180)))
+            if (ImGui.BeginListBox("##AttributesListBox", new Vector2(ImGui.GetContentRegionAvail().X, 180 * DpiScaling.Scale)))
             {
                 foreach (var attribute in AttributeFilterMatches)
                 {
@@ -6130,7 +6145,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Checkbox("Use Custom Name Text Color##UseCustomNameTextColor", ref ActiveTrackedEventEntry.UseCustomNameTextColor);
                 ImGui.SetItemTooltip("Changes the color of Name Text.");
                 ImGui.SameLine();
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllCustomNameTextColorBtn"))
                 {
                     foreach (var tracker in ActiveTrackerContainer.EventTrackers)
@@ -6186,7 +6201,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.Checkbox("Use Custom Layers Text Color##UseCustomLayersTextColor", ref ActiveTrackedEventEntry.UseCustomLayersTextColor);
                     ImGui.SetItemTooltip("Changes the color of Layers Text.");
                     ImGui.SameLine();
-                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                     if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllCustomLayersTextColorBtn"))
                     {
                         foreach (var tracker in ActiveTrackerContainer.EventTrackers)
@@ -6238,7 +6253,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.Checkbox("Use Custom Duration Text Color##UseCustomDurationTextColor", ref ActiveTrackedEventEntry.UseCustomDurationTextColor);
                     ImGui.SetItemTooltip("Changes the color of Duration Text when NOT combined with other elements.");
                     ImGui.SameLine();
-                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                     if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllCustomDurationTextColorBtn"))
                     {
                         foreach (var tracker in ActiveTrackerContainer.EventTrackers)
@@ -6330,7 +6345,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.Checkbox("Use Custom Color Duration Progress Bar##UseCustomColorDurationProgressBar", ref ActiveTrackedEventEntry.UseCustomColorDurationProgressBar);
 
                     ImGui.SameLine();
-                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                     if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllCustomColorDurationProgressBarBtn"))
                     {
                         foreach (var tracker in ActiveTrackerContainer.EventTrackers)
@@ -6397,7 +6412,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.TextUnformatted("Duration Progress Bar Icon Scale:");
 
                         ImGui.SameLine();
-                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                         if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyIconScaleValueBtn"))
                         {
                             foreach (var tracker in ActiveTrackerContainer.EventTrackers)
@@ -6424,7 +6439,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.AlignTextToFramePadding();
                         ImGui.TextUnformatted("Icon Stretch");
                         ImGui.SameLine();
-                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                         if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllIconStretchValuesBtn"))
                         {
                             foreach (var tracker in ActiveTrackerContainer.EventTrackers)
@@ -6519,7 +6534,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Checkbox("Use Custom Value Text Color##UseCustomAttributeValueTextColor", ref ActiveTrackedEventEntry.UseCustomAttributeValueTextColor);
                 ImGui.SetItemTooltip("Changes the color of Attribute Value Text.");
                 ImGui.SameLine();
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.Button($"{FASIcons.CheckDouble}##ApplyAllCustomAttributeValueTextColorBtn"))
                 {
                     foreach (var tracker in ActiveTrackerContainer.EventTrackers)
