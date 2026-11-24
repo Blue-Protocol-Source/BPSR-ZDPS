@@ -31,6 +31,7 @@ namespace BPSR_ZDPS.Windows
         static bool showPlayerSummonsInMeters;
         static bool showPlayerImaginesInMeters;
         static bool useAutomaticWipeDetection;
+        static bool checkAlternateWipePattern;
         static bool skipTeleportStateCheckInAutomaticWipeDetection;
         static bool disableWipeRecalculationOverwriting;
         static bool useLegacyWipeDetection;
@@ -324,6 +325,14 @@ namespace BPSR_ZDPS.Windows
                             }
 
                             ImGui.EndCombo();
+                        }
+
+                        if (ImGui.Button("Refresh Device List"))
+                        {
+                            if (NetworkDevices != null)
+                            {
+                                NetworkDevices.Refresh();
+                            }
                         }
 
                         ImGui.AlignTextToFramePadding();
@@ -630,6 +639,16 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text(AppStrings.GetLocalized("Settings_CheckAlternateWipePattern"));
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##CheckAlternateWipePattern", ref checkAlternateWipePattern);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("Include the alternate wipe pattern condition in automatic detection.\nThis is very rarely used since it's a bug on the game side.\nAn example of this is wiping to Dark Mist Denvel sword failure.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
                         ImGui.BeginDisabled(!useAutomaticWipeDetection);
 
                         ImGui.AlignTextToFramePadding();
@@ -666,7 +685,7 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Indent();
                         ImGui.BeginDisabled(true);
                         //ImGui.TextWrapped("When enabled, the internal process of checking the Dead status of all players in the Encounter is allowed to overwrite the detected wipe status from the normal automatic detector.\nAllowing this to overturn results is experimental so only enable it if you run into incorrect wipe reporting.");
-                        ImGui.TextWrapped("When enabled, the new Wipe Recalcuation logic will be Disabled and the original method will be used (if 'Use Automatic Wipe Detection' if still Enabled).");
+                        ImGui.TextWrapped("When enabled, the new Wipe Recalcuation logic will be Disabled and the original method will be used (if 'Use Automatic Wipe Detection' is still Enabled).");
                         ImGui.EndDisabled();
                         ImGui.Unindent();
                         ImGui.EndDisabled();
@@ -1801,6 +1820,7 @@ namespace BPSR_ZDPS.Windows
             showPlayerSummonsInMeters = Settings.Instance.ShowPlayerSummonsInMeters;
             showPlayerImaginesInMeters = Settings.Instance.ShowPlayerImaginesInMeters;
             useAutomaticWipeDetection = Settings.Instance.UseAutomaticWipeDetection;
+            checkAlternateWipePattern = Settings.Instance.CheckAlternateWipePattern;
             skipTeleportStateCheckInAutomaticWipeDetection = Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection;
             disableWipeRecalculationOverwriting = Settings.Instance.DisableWipeRecalculationOverwriting;
             useLegacyWipeDetection = Settings.Instance.UseLegacyWipeDetection;
@@ -1932,6 +1952,7 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.ShowPlayerSummonsInMeters = showPlayerSummonsInMeters;
             Settings.Instance.ShowPlayerImaginesInMeters = showPlayerImaginesInMeters;
             Settings.Instance.UseAutomaticWipeDetection = useAutomaticWipeDetection;
+            Settings.Instance.CheckAlternateWipePattern = checkAlternateWipePattern;
             Settings.Instance.SkipTeleportStateCheckInAutomaticWipeDetection = skipTeleportStateCheckInAutomaticWipeDetection;
             Settings.Instance.DisableWipeRecalculationOverwriting = disableWipeRecalculationOverwriting;
             Settings.Instance.UseLegacyWipeDetection = useLegacyWipeDetection;

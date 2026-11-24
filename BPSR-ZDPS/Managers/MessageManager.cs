@@ -1886,6 +1886,7 @@ namespace BPSR_ZDPS
                         long foundDeathMarkerUUID = 0;
                         long foundReviveMarkerUUID = 0;
                         long foundWipeMarkerUUID = 0;
+                        bool foundOtherWipeMarker = false;
                         BuffEvent? foundWipeMarker = null;
 
                         if (character.Value.RecentBuffEventHistory.Count > 0)
@@ -1922,12 +1923,40 @@ namespace BPSR_ZDPS
                                         foundWipeMarkerUUID = recentBuff.Value.Uuid;
                                     }
                                 }
+                                else if (recentBuff.Value.BaseId == 900122 && Settings.Instance.CheckAlternateWipePattern)
+                                {
+                                    // There are a few rare cases where this reset is incorrectly used for a wipe
+                                    // To handle these, those cases should always have a matching player state pattern
+                                    // In this case, StateRes must come directly before StateTelePort
+                                    bool didRes = false;
+                                    foreach (var state in PlayerStateHistory)
+                                    {
+                                        if (state == EActorState.ActorStateResurrection)
+                                        {
+                                            didRes = true;
+                                        }
+                                        else if (state == EActorState.ActorStateTelePort)
+                                        {
+                                            if (didRes)
+                                            {
+                                                foundWipeMarker = recentBuff.Value;
+                                                foundWipeMarkerUUID = recentBuff.Value.Uuid;
+                                                foundOtherWipeMarker = true;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            didRes = false;
+                                        }
+                                    }
+                                }
                             }
                         }
 
-                        if (foundDeathMarkerUUID > 0 && foundWipeMarkerUUID > 0 && foundDeathMarkerUUID < foundWipeMarkerUUID && foundWipeMarker != null)
+                        if (foundOtherWipeMarker || (foundDeathMarkerUUID > 0 && foundWipeMarkerUUID > 0 && foundDeathMarkerUUID < foundWipeMarkerUUID) && foundWipeMarker != null)
                         {
-                            if (foundWipeMarker.EventAddTime.TotalSeconds < 2 || EncounterManager.Current.StartTime.AddSeconds(1) > foundWipeMarker.AddDateTime)
+                            // TODO: Commented out second safety condition for now, will need to unify DateTimes across the board to prevent DST and time-zone differences from impacting it
+                            if (foundWipeMarker.EventAddTime.TotalSeconds < 2)// || EncounterManager.Current.StartTime.AddSeconds(1) > foundWipeMarker.AddDateTime)
                             {
                                 // Some dungeons incorrectly send this buff on Start, this should let us ignore it
                                 EncounterManager.Current.SetWipeState(false);

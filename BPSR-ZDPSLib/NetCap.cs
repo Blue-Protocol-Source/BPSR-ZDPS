@@ -632,6 +632,7 @@ public class NetCap
     private ICaptureDevice GetCaptureDevice()
     {
         var devices = CaptureDeviceList.Instance;
+        devices.Refresh();
 
         try
         {

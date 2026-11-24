@@ -97,6 +97,7 @@
     "Settings_NormalizeMeterContributionBars": "Normalize Meter Contribution Bars: ",
     "Settings_UseShortWidthNumberFormatting": "Use Short Width Number Formatting: ",
     "Settings_UseAutomaticWipeDetection": "Use Automatic Wipe Detection: ",
+    "Settings_CheckAlternateWipePattern": "Check Alternate Wipe Pattern: ",
     "Settings_UseLegacyWipeDetection": "Use Legacy Wipe Detection: ",
     "Settings_SkipTeleportStateCheckInAutomaticWipeDetection": "Skip Teleport State Check In Automatic Wipe Detection: ",
     "Settings_DisableWipeRecalculationOverwriting": "Disable Wipe Recalculation Overwriting: ",

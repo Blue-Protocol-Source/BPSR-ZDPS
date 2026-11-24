@@ -27,6 +27,7 @@ public class Settings
     public bool ShowPlayerSummonsInMeters { get; set; } = false;
     public bool ShowPlayerImaginesInMeters { get; set; } = false;
     public bool UseAutomaticWipeDetection { get; set; } = true;
+    public bool CheckAlternateWipePattern { get; set; } = true;
     public bool SkipTeleportStateCheckInAutomaticWipeDetection { get; set; } = false;
     public bool DisableWipeRecalculationOverwriting { get; set; } = false;
     public bool UseLegacyWipeDetection { get; set; } = false;
