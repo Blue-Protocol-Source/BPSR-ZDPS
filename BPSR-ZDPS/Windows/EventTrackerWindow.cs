@@ -431,6 +431,8 @@ namespace BPSR_ZDPS.Windows
                             {
                                 PersistentTrackerCount = eventTracker.Value.IdTracker;
                             }
+
+                            eventTracker.Value.HandleMigrations();
                         }
                     }
                 }
@@ -967,14 +969,14 @@ namespace BPSR_ZDPS.Windows
                                 //System.Diagnostics.Debug.WriteLine($"{e.BuffEventType} ({eventData.Uuid}) {eventTracker.Name} - Dur={e.Duration}, Upd={e.UpdateDateTime}, Add={eventData.Added}, Rmv={eventData.Removed}");
                             }
                         }
-                        else if (eventTracker.HideTrackerCondition == EHideTrackerCondition.HideOnOtherBuffEvent && eventTracker.HideOnOtherBuffId == e.BaseId
-                            || eventData != null && e.BuffUuid != 0 && eventData.HideOnOtherBuffUuid == e.BuffUuid)
+                        else if (eventTracker.HideTrackerCondition == EHideTrackerCondition.HideOnOtherBuffEvent && eventTracker.HideOnOtherBuffIdValues.Contains(e.BaseId)
+                            || eventData != null && e.BuffUuid != 0 && eventData.HideOnOtherBuffUuids.Contains(e.BuffUuid))
                         {
                             if (e.BuffEventType == EBuffEventType.BuffEventAddTo)
                             {
                                 if (eventData != null)
                                 {
-                                    eventData.HideOnOtherBuffUuid = e.BuffUuid;
+                                    eventData.HideOnOtherBuffUuids.Add(e.BuffUuid);
 
                                     if (eventTracker.OnOtherBuffGain == EOtherBuffEventAction.Show)
                                     {
@@ -5311,6 +5313,8 @@ namespace BPSR_ZDPS.Windows
                                     ActiveTrackedEventEntryIdx = ActiveTrackerContainer.EventTrackers.Count - 1;
                                     ActiveTrackedEventEntry.UpdateIconData(ActiveTrackedEventEntry.OriginalIconPath, false);
                                     ActiveTrackerContainer.RecheckTrackerStates();
+
+                                        ActiveTrackedEventEntry.HandleMigrations();
                                 }
                             }
                             catch (Exception ex)
@@ -6725,12 +6729,12 @@ namespace BPSR_ZDPS.Windows
             }
             if (ActiveTrackedEventEntry.HideTrackerCondition == EHideTrackerCondition.HideOnOtherBuffEvent)
             {
-                ImGui.TextUnformatted("Other Buff ID (Hides current Tracker when other Gains):");
-                int hideOnOtherBuffId = ActiveTrackedEventEntry.HideOnOtherBuffId;
-                if (ImGui.InputInt("##HideOnOtherBuffId", ref hideOnOtherBuffId, ImGuiInputTextFlags.CharsDecimal))
+                ImGui.TextUnformatted("Other Buff IDs (Hides current Tracker when other Gains):");
+                if (ImGui.InputTextWithHint("##HideOnOtherBuffIds", "0", ref ActiveTrackedEventEntry.HideOnOtherBuffIds, 512))
                 {
-                    ActiveTrackedEventEntry.HideOnOtherBuffId = hideOnOtherBuffId;
+                    ActiveTrackedEventEntry.UpdateHideOnOtherBuffIdValuesFromString();
                 }
+                ImGui.SetItemTooltip("Comma delimited list of Buff Ids.");
 
                 ImGui.TextUnformatted("OnOtherBuffGain:");
                 ImGui.SameLine();
@@ -8287,7 +8291,10 @@ namespace BPSR_ZDPS.Windows
         //public bool HideIfNoDuration = false;
         public EHideTrackerCondition HideTrackerCondition = EHideTrackerCondition.HideOnRemoveEvent;
         public Zproto.EBuffEventType? HideOnSpecificBuffEventValue = null;
-        public int HideOnOtherBuffId = 0;
+        public int HideOnOtherBuffId = 0; // No longer used, kept for migration purposes
+        public string HideOnOtherBuffIds = "";
+        [JsonProperty]
+        public HashSet<int> HideOnOtherBuffIdValues { get; private set; } = new();
         public EOtherBuffEventAction OnOtherBuffGain = EOtherBuffEventAction.None;
         public EOtherBuffEventAction OnOtherBuffRemove = EOtherBuffEventAction.None;
 
@@ -8409,6 +8416,13 @@ namespace BPSR_ZDPS.Windows
 
             cloned.SkillEvents = new(SkillEvents);
 
+            cloned.HideOnOtherBuffIds = new(HideOnOtherBuffIds);
+            cloned.HideOnOtherBuffIdValues = new();
+            foreach (var id in HideOnOtherBuffIdValues)
+            {
+                cloned.HideOnOtherBuffIdValues.Add(id);
+            }
+
             cloned.RaidWarningTrackerDatas = new();
             foreach (var rw in RaidWarningTrackerDatas)
             {
@@ -8416,6 +8430,49 @@ namespace BPSR_ZDPS.Windows
             }
             return cloned;
         }
+
+        public void UpdateHideOnOtherBuffIdValuesFromString()
+        {
+            var ids = HideOnOtherBuffIds.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+            HideOnOtherBuffIdValues = new();
+            foreach (var id in ids)
+            {
+                if (int.TryParse(id, out var newId))
+                {
+                    if (newId < 9_999_999 && newId > -9_999_999)
+                    {
+                        HideOnOtherBuffIdValues.Add(newId);
+                    }
+                }
+            }
+            HideOnOtherBuffIds = string.Join(", ", HideOnOtherBuffIdValues);
+        }
+
+        public void UpdateHideOnOtherBuffIdsFromList()
+        {
+            HideOnOtherBuffIds = string.Join(", ", HideOnOtherBuffIdValues);
+        }
+
+        public void HandleMigrations()
+        {
+            HandleHideOnOtherBuffIdMigration();
+        }
+
+        private void HandleHideOnOtherBuffIdMigration()
+        {
+            if (HideOnOtherBuffId > 0)
+            {
+                // Migrate the old single value HideOnOtherBuffId variable to the new multi-value version if no multi-value has been set
+                if (string.IsNullOrEmpty(HideOnOtherBuffIds) || HideOnOtherBuffIds == "0")
+                {
+                    HideOnOtherBuffIds = HideOnOtherBuffId.ToString();
+                    UpdateHideOnOtherBuffIdValuesFromString();
+
+                    // Set the single value to 0 to ensure it is not migrated again
+                    HideOnOtherBuffId = 0;
+                }
+            }
+    }
     }
 
     public class RaidWarningTrackerData : ICloneable
@@ -8647,7 +8704,8 @@ namespace BPSR_ZDPS.Windows
         public string SourceEntityName = "";
         public long OwnerEntityUuid = 0;
         public DataTypes.Enum.EBuffType? BuffType = null;
-        public int HideOnOtherBuffUuid = 0;
+        //public int HideOnOtherBuffUuid = 0;
+        public HashSet<int> HideOnOtherBuffUuids = new();
 
         [JsonIgnore]
         public EventCooldownData? Cooldown;
