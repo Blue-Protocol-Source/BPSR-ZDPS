@@ -4463,6 +4463,18 @@ namespace BPSR_ZDPS.Windows
                                 }
                                 ImGui.SetItemTooltip($"Copies Container '{container.Value.ContainerName}' like a Preset to the clipboard.");
 
+                                if (ImGui.MenuItem("Copy Container To Clipboard As File"))
+                                {
+                                    uint tempTrackerId = 0;
+                                    var newContainer = ((TrackerContainer)container.Value.Clone(0, ref tempTrackerId));
+
+                                    string tempFilePath = Path.Combine(Path.GetTempPath(), "ZDPS_Tracker.json");
+                                    File.WriteAllText(tempFilePath, JsonConvert.SerializeObject(newContainer));
+
+                                    User32.CopyFileToClipboard(tempFilePath);
+                                }
+                                ImGui.SetItemTooltip($"Copies Container '{container.Value.ContainerName}' like a Preset but as a file to the clipboard.");
+
                                 ImGui.Separator();
 
                                 if (ImGui.MenuItem("Duplicate Container"))
@@ -5263,6 +5275,18 @@ namespace BPSR_ZDPS.Windows
                             ImGui.SetClipboardText(JsonConvert.SerializeObject(newTracker));
                         }
                         ImGui.SetItemTooltip($"Copies Tracker '{eventTracker.Value.Name}' like a Preset to the clipboard.");
+
+                            if (ImGui.MenuItem("Copy Tracker To Clipboard As File"))
+                            {
+                                // Create a cleaned version of the Tracker that is dependency-free before it is copied
+                                var newTracker = (TrackedEventEntry)eventTracker.Value.Clone(0);
+
+                                string tempFilePath = Path.Combine(Path.GetTempPath(), "ZDPS_Tracker.json");
+                                File.WriteAllText(tempFilePath, JsonConvert.SerializeObject(newTracker));
+
+                                User32.CopyFileToClipboard(tempFilePath);
+                            }
+                            ImGui.SetItemTooltip($"Copies Tracker '{eventTracker.Value.Name}' like a Preset but as a file to the clipboard.");
 
                         ImGui.Separator();
 

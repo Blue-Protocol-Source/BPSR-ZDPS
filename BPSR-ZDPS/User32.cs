@@ -72,6 +72,9 @@ public class User32
     public const int MONITOR_DEFAULTTOPRIMARY = 1;
     public const int MONITOR_DEFAULTTONEAREST = 2;
     public const int MONITORINFOF_PRIMARY = 0x00000001;
+    private const uint CF_HDROP = 15;
+    private const uint GMEM_MOVEABLE = 0x0002;
+    private const uint GMEM_ZEROINIT = 0x0040;
 
     [StructLayout(LayoutKind.Sequential)]
     public struct RECT
@@ -101,6 +104,16 @@ public class User32
 
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
         public string szDevice;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    private struct DROPFILES
+    {
+        public uint pFiles;
+        public int ptX;
+        public int ptY;
+        public int fNC;
+        public int fWide;
     }
 
     public static uint COLORREF(byte r, byte g, byte b) => (uint)(r | (g << 8) | (b << 16));
@@ -218,5 +231,74 @@ public class User32
 
         }
         return new Version();
+    }
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern bool OpenClipboard(IntPtr hWndNewOwner);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern bool CloseClipboard();
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern bool EmptyClipboard();
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern IntPtr SetClipboardData(uint uFormat, IntPtr hMem);
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    private static extern IntPtr GlobalAlloc(uint uFlags, nuint dwBytes);
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    private static extern IntPtr GlobalLock(IntPtr hMem);
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    private static extern bool GlobalUnlock(IntPtr hMem);
+
+    public static bool CopyFileToClipboard(string filePath)
+    {
+        byte[] pathBytes = System.Text.Encoding.Unicode.GetBytes(filePath + "\0\0");
+        int headerSize = Marshal.SizeOf<DROPFILES>();
+        int totalSize = headerSize + pathBytes.Length;
+
+        IntPtr hGlobal = GlobalAlloc(GMEM_MOVEABLE | GMEM_ZEROINIT, (nuint)totalSize);
+        if (hGlobal == IntPtr.Zero)
+        {
+            return false;
+        }
+
+        IntPtr ptr = GlobalLock(hGlobal);
+        try
+        {
+            var dropFiles = new DROPFILES
+            {
+                pFiles = (uint)headerSize,
+                fWide = 1
+            };
+
+            Marshal.StructureToPtr(dropFiles, ptr, false);
+            Marshal.Copy(pathBytes, 0, ptr + headerSize, pathBytes.Length);
+        }
+        finally
+        {
+            GlobalUnlock(hGlobal);
+        }
+
+        if (OpenClipboard(IntPtr.Zero))
+        {
+            try
+            {
+                EmptyClipboard();
+                SetClipboardData(CF_HDROP, hGlobal);
+            }
+            finally
+            {
+                CloseClipboard();
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
