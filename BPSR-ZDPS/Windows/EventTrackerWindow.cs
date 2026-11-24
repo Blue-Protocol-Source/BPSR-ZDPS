@@ -67,6 +67,8 @@ namespace BPSR_ZDPS.Windows
         static string AttributeFilterText = "";
         static KeyValuePair<string, FAttrValueData>[]? AttributeFilterMatches;
 
+        static string TrackerNameFilter = "";
+
         static bool ShowDebugLogWindow = false;
         static bool DebugLogAutoScroll = true;
         static ConcurrentQueue<string> DebugEventTrackerLog = new();
@@ -5104,7 +5106,15 @@ namespace BPSR_ZDPS.Windows
 
             ImGui.SeparatorText("Event Trackers"u8);
 
-            if (ImGui.BeginListBox("##TrackersListbox", new Vector2(ImGui.GetContentRegionAvail().X, 140)))
+            if (ImGui.BeginChild("##ResizingTrackersListBox", new Vector2(ImGui.GetContentRegionAvail().X, 140), ImGuiChildFlags.ResizeY))
+            {
+                ImGui.SetNextItemWidth(-1);
+                if (ImGui.InputTextWithHint("##TrackerNameFilterInput", "Filter By Tracker Name", ref TrackerNameFilter, 128))
+                {
+
+                }
+                ImGui.SetItemTooltip("Matched Trackers will turn green and the rest will turn gray.");
+                if (ImGui.BeginListBox("##TrackersListbox", new Vector2(ImGui.GetContentRegionAvail().X, -1)))
             {
                 int idx = 0;
                 foreach (var eventTracker in ActiveTrackerContainer.EventTrackers.AsValueEnumerable())
@@ -5112,11 +5122,31 @@ namespace BPSR_ZDPS.Windows
                     bool isSelected = ActiveTrackedEventEntryIdx == idx;
                     ImGuiSelectableFlags highlight = isSelected ? ImGuiSelectableFlags.Highlight : ImGuiSelectableFlags.None;
 
+                        bool isFilterActive = TrackerNameFilter.Length > 0;
+                        bool isFilterMatched = eventTracker.Value.TrackerName.Contains(TrackerNameFilter, StringComparison.OrdinalIgnoreCase);
+                        if (isFilterActive)
+                        {
+                            if (isFilterMatched)
+                            {
+                                ImGui.PushStyleColor(ImGuiCol.Text, Colors.Green);
+                            }
+                            else
+                            {
+                                ImGui.PushStyleColor(ImGuiCol.Text, Colors.Gray);
+                            }
+                        }
+
                     if (ImGui.Selectable($"{eventTracker.Value.TrackerName}##TrackerEntry_{idx}", true, ImGuiSelectableFlags.SpanAllColumns | highlight | ImGuiSelectableFlags.AllowOverlap))
                     {
                         ActiveTrackedEventEntryIdx = idx;
                         ActiveTrackedEventEntry = eventTracker.Value;
                     }
+
+                        if (isFilterActive)
+                        {
+                            ImGui.PopStyleColor();
+                        }
+
                     if (ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
                     {
                         unsafe
@@ -5241,6 +5271,7 @@ namespace BPSR_ZDPS.Windows
                 }
                 ImGui.EndListBox();
             }
+            ImGui.EndChild();
 
             bool hasSingleTracker = ActiveTrackerContainer.ContainerLayoutStyle == EContainerLayoutStyle.SingleItem && ActiveTrackerContainer.EventTrackers.Count == 1;
             ImGui.BeginDisabled(hasSingleTracker);
