@@ -4730,12 +4730,18 @@ namespace BPSR_ZDPS.Windows
                         EventTrackerContainers.Clear();
                         foreach (var container in optimizedEventContainers)
                         {
+                            container.Value.HasLoadedSaveDataOnce = false;
                             EventTrackerContainers.Add(container.Key, container.Value);
                         }
                         windowSettings.ContainerPositions.Clear();
                         foreach (var containerPos in optimizedContainerPositions)
                         {
                             windowSettings.ContainerPositions.Add(containerPos.Key, containerPos.Value);
+                            var window = ImGuiP.FindWindowByID(ImGuiP.ImHashStr($"{containerPos.Key}"));
+                            if (!window.IsNull)
+                            {
+                                ImGuiP.SetWindowPos(window, containerPos.Value, ImGuiCond.Always);
+                            }
                         }
                         System.Diagnostics.Debug.WriteLine("Optimized Event Tracker Database!");
                     }
@@ -5080,7 +5086,10 @@ namespace BPSR_ZDPS.Windows
                             pos[1] = posArray[1];
 
                             var window = ImGuiP.FindWindowByID(ImGuiP.ImHashStr($"{ActiveTrackerContainer.IdTracker}"));
+                            if (!window.IsNull)
+                            {
                             ImGuiP.SetWindowPos(window, pos, ImGuiCond.Always);
+                        }
                         }
                         ImGui.PopStyleColor(2);
 
