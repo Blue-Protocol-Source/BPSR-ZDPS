@@ -5321,7 +5321,39 @@ namespace BPSR_ZDPS.Windows
                             {
                                 Serilog.Log.Error(ex, "Error attempting to import an Event Tracker from clipboard.");
                             }
+                            }
+
+                            ImGui.Separator();
+
+                            if (ImGui.MenuItem("Copy Tracked Id To Clipboard"))
+                            {
+                                if (eventTracker.Value.TrackerType == ETrackerType.Buffs)
+                                {
+                                    if (eventTracker.Value.OverrideTrackedId)
+                                    {
+                                        ImGui.SetClipboardText(eventTracker.Value.OverrideTrackedIdValue.ToString());
+                                    }
+                                    else
+                                    {
+                                        ImGui.SetClipboardText(eventTracker.Value.TrackedBuffId.ToString());
+                                    }
+                                }
+                                else if (eventTracker.Value.TrackerType == ETrackerType.Skills)
+                                {
+                                    if (eventTracker.Value.OverrideTrackedId)
+                                    {
+                                        ImGui.SetClipboardText(eventTracker.Value.OverrideTrackedIdValue.ToString());
+                                    }
+                                    else
+                                    {
+                                        ImGui.SetClipboardText(eventTracker.Value.TrackedSkillId.ToString());
                         }
+                                }
+                                else if (eventTracker.Value.TrackerType == ETrackerType.Attributes)
+                                {
+                                    ImGui.SetClipboardText(eventTracker.Value.TrackedAttributeName.ToString());
+                                }
+                            }
 
                         ImGui.EndPopup();
                     }
