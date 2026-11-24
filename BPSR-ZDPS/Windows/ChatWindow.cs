@@ -683,6 +683,110 @@ namespace BPSR_ZDPS.Windows
             {
                 ImGui.PushTextWrapPos(0f);
                 ImGui.TextUnformatted(msg.Msg.MsgText);
+                if (ImGui.BeginPopupContextItem($"##ChatContextMenu_{msg.SenderId}_{msg.TimeStamp}", ImGuiPopupFlags.MouseButtonLeft))
+                {
+                    if (ImGui.MenuItem("Copy Message Text"))
+                    {
+                        ImGui.SetClipboardText(msg.Msg.MsgText);
+                    }
+                    ImGui.SetItemTooltip("Copies chat message text to the clipboard.");
+
+                    ImGui.EndPopup();
+                }
+                ImGui.PopTextWrapPos();
+            }
+            else if (msg.Msg.MsgType == ChitChatMsgType.ChatMsgHypertext)
+            {
+                System.Text.StringBuilder formatted = new();
+
+                var msgConfigId = msg.Msg.ChatHypertext.ConfigId;
+                foreach (var content in msg.Msg.ChatHypertext.HypertextContents)
+                {
+                    switch (content.Type)
+                    {
+                        case PlaceHolderType.None:
+                            break;
+                        case PlaceHolderType.Val:
+                            var val = Zproto.PlaceHolderVal.Parser.ParseFrom(content.BytesContent);
+                            formatted.Append($"[{val.Value}]");
+                            break;
+                        case PlaceHolderType.Player:
+                            var player = Zproto.PlaceHolderPlayer.Parser.ParseFrom(content.BytesContent);
+                            formatted.Append(player.Name);
+                            break;
+                        case PlaceHolderType.Item:
+                            var item = Zproto.PlaceHolderItem.Parser.ParseFrom(content.BytesContent);
+                            if (HelperMethods.DataTables.Items.Data.TryGetValue(item.ItemDetail.ConfigId.ToString(), out var itemData))
+                            {
+                                formatted.Append($"[{itemData.Name}]");
+                            }
+                            else
+                            {
+                                formatted.Append($"[ItemId={item.ItemDetail.ConfigId}]");
+                            }
+                            break;
+                        case PlaceHolderType.Union:
+                            var union = Zproto.PlaceHolderUnion.Parser.ParseFrom(content.BytesContent);
+                            break;
+                        case PlaceHolderType.Buff:
+                            var buff = Zproto.PlaceHolderBuff.Parser.ParseFrom(content.BytesContent);
+                            if (HelperMethods.DataTables.Buffs.Data.TryGetValue(buff.BuffId.ToString(), out var buffData))
+                            {
+                                formatted.Append($"[{buffData.Name}]");
+                            }
+                            else
+                            {
+                                formatted.Append($"[BuffId={buff.BuffId}]");
+                            }
+                            break;
+                        case PlaceHolderType.Timestamp:
+                            var timestamp = Zproto.PlaceHolderTimestamp.Parser.ParseFrom(content.BytesContent);
+                            break;
+                        case PlaceHolderType.String:
+                            var str = Zproto.PlaceHolderStr.Parser.ParseFrom(content.BytesContent);
+                            formatted.Append(str.Text);
+                            break;
+                        case PlaceHolderType.FishPersonalTotal:
+                            break;
+                        case PlaceHolderType.FishItem:
+                            break;
+                        case PlaceHolderType.FishRank:
+                            break;
+                        case PlaceHolderType.UnionGroup:
+                            break;
+                        case PlaceHolderType.MasterMode:
+                            var masterMode = Zproto.PlaceHolderMasterMode.Parser.ParseFrom(content.BytesContent);
+                            break;
+                        case PlaceHolderType.ScenePosition:
+                            var scenePos = Zproto.PlaceHolderScenePosition.Parser.ParseFrom(content.BytesContent);
+                            string sceneName = scenePos.SceneId.ToString();
+                            if (HelperMethods.DataTables.Scenes.Data.TryGetValue(sceneName, out var sceneData))
+                            {
+                                sceneName = sceneData.Name;
+                            }
+                            formatted.Append($"[{sceneName} Line {scenePos.LineId} ({scenePos.PositionX}, {scenePos.PositionY}, {scenePos.PositionZ})]");
+                            break;
+                        case PlaceHolderType.Homeland:
+                            break;
+                        case PlaceHolderType.Blueprint:
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                ImGui.PushTextWrapPos(0f);
+                ImGui.TextUnformatted(formatted.ToString());
+                if (ImGui.BeginPopupContextItem($"##ChatContextMenu_{msg.SenderId}_{msg.TimeStamp}", ImGuiPopupFlags.MouseButtonLeft))
+                {
+                    if (ImGui.MenuItem("Copy Message Text"))
+                    {
+                        ImGui.SetClipboardText(formatted.ToString());
+                    }
+                    ImGui.SetItemTooltip("Copies chat message text to the clipboard.");
+
+                    ImGui.EndPopup();
+                }
                 ImGui.PopTextWrapPos();
             }
 
@@ -698,7 +802,7 @@ namespace BPSR_ZDPS.Windows
                 
             }
             ImGui.PopStyleColor();
-            if (ImGui.BeginPopupContextItem(ImGuiPopupFlags.MouseButtonLeft))
+            if (ImGui.BeginPopupContextItem($"##ChatContextMenu_{msg.SenderId}_{msg.TimeStamp}", ImGuiPopupFlags.MouseButtonLeft))
             {
                 if (ImGui.MenuItem("Copy Name"))
                 {
