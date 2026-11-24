@@ -539,6 +539,8 @@ namespace BPSR_ZDPS
         public event SceneEventEventHandler SceneEvent;
         public delegate void DamageEventHandler(object sender, DamageEventArgs e);
         public event DamageEventHandler DamageEvent;
+        public delegate void HealingEventHandler(object sender, HealingEventArgs e);
+        public event HealingEventHandler HealingEvent;
 
         public EncounterExData ExData { get; set; } = new();
         public byte[] ExDataBlob { get; set; }
@@ -1072,6 +1074,21 @@ namespace BPSR_ZDPS
             EDamageProperty damageElement, EDamageType damageType, EDamageMode damageMode,
             bool isCrit, bool isLucky, bool isCauseLucky, bool isMiss, bool isDead, Vec3 damagePos, ExtraPacketData extraPacketData)
         {
+            var entity = GetOrCreateEntity(attackerUuid);
+            var targetEntity = GetOrCreateEntity(targetUuid);
+
+            // Send the HealingEvent before the settings check is performed so handlers can decide if they want to ignore or not
+            OnHealingEvent(new HealingEventArgs()
+            {
+                AttackerUuid = attackerUuid,
+                TargetUuid = targetUuid,
+                SkillId = skillId,
+                HitEventId = hitEventId,
+                SkillLevel = skillLevel,
+                ActivationDateTime = DateTime.Now,
+                FirstDamageTimeStamp = ExData.FirstDamageTimeStamp,
+            });
+
             if (!AppState.IsBenchmarkMode && ExData.FirstDamageTimeStamp == null && !Settings.Instance.IncludeHealEventsOutsideOfCombat)
             {
                 return;
@@ -1092,9 +1109,6 @@ namespace BPSR_ZDPS
             {
                 TotalHealing += (ulong)damage;
             }
-
-            var entity = GetOrCreateEntity(attackerUuid);
-            var targetEntity = GetOrCreateEntity(targetUuid);
 
             long? currentHp = targetEntity.GetAttrKV("AttrHp") as long?;
             long? maxHp = targetEntity.GetAttrKV("AttrMaxHp") as long?;
@@ -1119,7 +1133,7 @@ namespace BPSR_ZDPS
             {
                 TotalOverhealing += (ulong)overhealing;
             }
-            
+
             entity.AddHealing(targetUuid, skillId, hitEventId, skillLevel, damage, overhealing, effectiveHealing, hpLessen, shieldBreak, damageElement, damageType, damageMode, isCrit, isLucky, isCauseLucky, isMiss, isDead, damagePos, extraPacketData);
         }
 
@@ -1267,6 +1281,11 @@ namespace BPSR_ZDPS
             DamageEvent?.Invoke(this, e);
         }
 
+        protected virtual void OnHealingEvent(HealingEventArgs e)
+        {
+            HealingEvent?.Invoke(this, e);
+        }
+
         public void RemoveEntityHandlers()
         {
             foreach (var entity in Entities)
@@ -1284,6 +1303,7 @@ namespace BPSR_ZDPS
             AttributeUpdated = null;
             SceneEvent = null;
             DamageEvent = null;
+            HealingEvent = null;
 
             RemoveEntityHandlers();
         }
@@ -2485,6 +2505,17 @@ namespace BPSR_ZDPS
         public int SkillLevel { get; set; }
         public bool IsKillingBlow { get; set; }
         public DateTime ActivationDateTime { get; set; }
+    }
+
+    public class HealingEventArgs : EventArgs
+    {
+        public long AttackerUuid { get; set; }
+        public long TargetUuid { get; set; }
+        public int SkillId { get; set; }
+        public int HitEventId { get; set; }
+        public int SkillLevel { get; set; }
+        public DateTime ActivationDateTime { get; set; }
+        public DateTime? FirstDamageTimeStamp { get; set; } = null;
     }
 
     public enum ESkillType : int

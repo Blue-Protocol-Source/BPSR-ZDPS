@@ -514,6 +514,8 @@ namespace BPSR_ZDPS.Windows
             e.Encounter.SkillActivated -= Encounter_SkillActivated;
             //e.Encounter.AttributeUpdated -= Encounter_AttributeUpdated;
             e.Encounter.SceneEvent -= Encounter_SceneEvent;
+            //e.Encounter.DamageEvent -= Encounter_DamageEvent;
+            //e.Encounter.HealingEvent -= Encounter_HealingEvent;
         }
 
         private static void EncounterManager_EncounterStart(EncounterStartEventArgs e)
@@ -564,6 +566,8 @@ namespace BPSR_ZDPS.Windows
             EncounterManager.Current.SceneEvent += Encounter_SceneEvent;
             EncounterManager.Current.DamageEvent -= Encounter_DamageEvent;
             EncounterManager.Current.DamageEvent += Encounter_DamageEvent;
+            EncounterManager.Current.HealingEvent -= Encounter_HealingEvent;
+            EncounterManager.Current.HealingEvent += Encounter_HealingEvent;
         }
 
         public static void AddDebugLog(string log)
@@ -1982,6 +1986,135 @@ namespace BPSR_ZDPS.Windows
                             if (eventTracker.DebugLogTracker)
                             {
                                 DebugEventTrackerLog.Enqueue($"{DateTime.Now} Damage Event ({e.SkillId}) AttackerUUID={e.AttackerUuid} TargetUUID={e.TargetUuid} HitEventId={e.HitEventId} IsKillingBlow={e.IsKillingBlow}");
+                            }
+
+                            // TODO: Currently we're reusing the BuffType to turn this bar red
+                            // This should however use a Skill-specific variable to handle hostility assignment
+                            eventData.BuffType = DataTypes.Enum.EBuffType.Debuff;
+
+                            eventData.Cooldown.StartOrUpdate(DateTime.UtcNow);
+
+                            var rw = GetEnabledRaidWarning(eventTracker, ERaidWarningActivationType.OnGain);
+
+                            if (rw != null)
+                            {
+                                bool didRaidWarning = HandleRaidWarnings(rw, eventTracker, eventData, eventData.OwnerEntityUuid, eventData.SourceEntityUuid);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private static void Encounter_HealingEvent(object sender, HealingEventArgs e)
+        {
+            foreach (var eventContainer in EventTrackerContainers)
+            {
+                if (!eventContainer.Value.IsContainerEnabled)
+                {
+                    continue;
+                }
+
+                foreach (var eventTrackerKVP in eventContainer.Value.EventTrackers)
+                {
+                    var eventTracker = eventTrackerKVP.Value;
+
+                    if (eventTracker.TrackerType != ETrackerType.Skills)
+                    {
+                        continue;
+                    }
+
+                    if (!eventTracker.LoadEvents.AllowHealingEventsOutsideCombat)
+                    {
+                        if (e.FirstDamageTimeStamp == null)
+                        {
+                            continue;
+                        }
+                    }
+
+                    bool shouldHandle = CheckIfShouldHandleEvent(eventTracker, e.AttackerUuid);
+
+                    if (shouldHandle)
+                    {
+                        if (!eventTracker.SkillEvents.Contains(ESkillEventTrackingType.HealingEvent))
+                        {
+                            continue;
+                        }
+
+                        if (eventTracker.EventTargetMustBeSelf && AppState.PlayerUUID != e.TargetUuid)
+                        {
+                            continue;
+                        }
+
+                        if (e.SkillId == eventTracker.TrackedSkillId && (eventTracker.OverrideTrackedId ? e.HitEventId == eventTracker.OverrideTrackedIdValue : true))
+                        {
+                            eventTracker.EventData.TryGetValue(e.TargetUuid, out var eventData);
+
+                            if (eventData == null)
+                            {
+                                //eventData = new SkillEventData();
+                                eventData = new EventData();
+                                eventTracker.EventData.TryAdd(e.TargetUuid, eventData);
+                            }
+
+                            //SkillEventData skillEventData = eventData as SkillEventData;
+
+                            eventData.IsHidden = false;
+
+                            eventData.OwnerEntityUuid = e.TargetUuid;
+                            eventData.SourceEntityUuid = e.AttackerUuid;
+
+                            if (HelperMethods.DataTables.Skills.Data.TryGetValue(eventTracker.TrackedSkillId.ToString(), out var matched))
+                            {
+                                if (string.IsNullOrEmpty(eventTracker.Name) || eventTracker.Name != matched.Name)
+                                {
+                                    eventTracker.Name = matched.Name;
+                                }
+
+                                string matchedIconName = matched.GetIconName();
+                                if (!string.IsNullOrEmpty(matchedIconName))
+                                {
+                                    string baseDir = "Skills";
+                                    if (matched.IsRoleSlot())
+                                    {
+                                        baseDir = "Skills_Imagines";
+                                    }
+                                    string resolvedIconName = Path.Combine(baseDir, matchedIconName);
+                                    if (eventTracker.IconPath != resolvedIconName)
+                                    {
+                                        eventTracker.UpdateIconData(matchedIconName, true);
+                                    }
+                                }
+
+                                if (!string.IsNullOrEmpty(matched.Desc) && eventTracker.Desc != matched.Desc)
+                                {
+                                    eventTracker.Desc = matched.Desc;
+                                }
+                            }
+
+                            eventData.Layers += 1;
+
+                            if (eventTracker.ShouldResetLayersAtMaxValue)
+                            {
+                                if (eventTracker.ResetLayersAtMaxValue > 0 && eventData.Layers >= eventTracker.ResetLayersAtMaxValue)
+                                {
+                                    eventData.Layers = 0;
+                                }
+                            }
+
+                            if (eventTracker.OverrideDuration)
+                            {
+                                eventData.Cooldown = new(eventTracker.DurationOverrideValue, 0, 0);
+                            }
+
+                            if (eventData.Cooldown == null)
+                            {
+                                eventData.Cooldown = new(0, 0, 0);
+                            }
+
+                            if (eventTracker.DebugLogTracker)
+                            {
+                                DebugEventTrackerLog.Enqueue($"{DateTime.Now} Healing Event ({e.SkillId}) AttackerUUID={e.AttackerUuid} TargetUUID={e.TargetUuid} HitEventId={e.HitEventId}");
                             }
 
                             // TODO: Currently we're reusing the BuffType to turn this bar red
@@ -7335,6 +7468,10 @@ namespace BPSR_ZDPS.Windows
             ImGui.Checkbox("Keep On Restart", ref ActiveTrackedEventEntry.LoadEvents.KeepOnRestart);
             ImGui.SetItemTooltip("The Tracker will persist through Restart events. These are typically when a Raid Boss is killed.");
             HandleApplyToOthersContextMenu((tracker) => { tracker.LoadEvents.KeepOnRestart = ActiveTrackedEventEntry.LoadEvents.KeepOnRestart; });
+
+            ImGui.Checkbox("Allow Healing Events Outside Combat", ref ActiveTrackedEventEntry.LoadEvents.AllowHealingEventsOutsideCombat);
+            ImGui.SetItemTooltip("Normally Healing Events are specifically ignored outside of combat.\nThis will allow using them for the Tracker without impacting Encounter data.");
+            HandleApplyToOthersContextMenu((tracker) => { tracker.LoadEvents.AllowHealingEventsOutsideCombat = ActiveTrackedEventEntry.LoadEvents.AllowHealingEventsOutsideCombat; });
         }
 
         public static void ToggleForceHideAllContainers(bool newState)
@@ -8227,6 +8364,7 @@ namespace BPSR_ZDPS.Windows
         BossWarning = 1,
         NoticeTip = 2,
         DamageEvent = 3,
+        HealingEvent = 4,
     }
 
     public enum EDurationProgressBarStyle
@@ -8604,6 +8742,8 @@ namespace BPSR_ZDPS.Windows
         public bool KeepOnSceneChange = false;
         public bool KeepOnWipe = false;
         public bool KeepOnRestart = false;
+
+        public bool AllowHealingEventsOutsideCombat = false;
 
         [JsonProperty]
         public List<int> SceneIdValues { get; private set; } = new();
