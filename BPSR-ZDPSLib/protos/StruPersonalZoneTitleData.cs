@@ -25,13 +25,19 @@ namespace Zproto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNzdHJ1X3BlcnNvbmFsX3pvbmVfdGl0bGVfZGF0YS5wcm90bxIGenByb3Rv",
-            "GhVzdHJ1X2RpcnR5X21hc2sucHJvdG8iUQoVUGVyc29uYWxab25lVGl0bGVE",
-            "YXRhEhgKB3RpdGxlSWQYASABKAVSB3RpdGxlSWQSHgoKdGl0bGVMZXZlbBgC",
-            "IAEoBVIKdGl0bGVMZXZlbGIGcHJvdG8z"));
+            "GiNzdHJ1X3BlcnNvbmFsX3pvbmVfdGl0bGVfaW5mby5wcm90bxoVc3RydV9k",
+            "aXJ0eV9tYXNrLnByb3RvIqQCChVQZXJzb25hbFpvbmVUaXRsZURhdGESGAoH",
+            "dGl0bGVJZBgBIAEoBVIHdGl0bGVJZBIeCgp0aXRsZUxldmVsGAIgASgFUgp0",
+            "aXRsZUxldmVsEioKEHRpdGxlQ3ljbGVTd2l0Y2gYAyABKAhSEHRpdGxlQ3lj",
+            "bGVTd2l0Y2gSKAoPdGl0bGVDeWNsZVNwZWVkGAQgASgFUg90aXRsZUN5Y2xl",
+            "U3BlZWQSRQoOdGl0bGVDeWNsZUxpc3QYBSADKAsyHS56cHJvdG8uUGVyc29u",
+            "YWxab25lVGl0bGVJbmZvUg50aXRsZUN5Y2xlTGlzdBI0ChV0aXRsZUN5Y2xl",
+            "VW5sb2NrU2xvdHMYBiADKAVSFXRpdGxlQ3ljbGVVbmxvY2tTbG90c2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Zproto.StruDirtyMaskReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Zproto.StruPersonalZoneTitleInfoReflection.Descriptor, global::Zproto.StruDirtyMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PersonalZoneTitleData), global::Zproto.PersonalZoneTitleData.Parser, new[]{ "TitleId", "TitleLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Zproto.PersonalZoneTitleData), global::Zproto.PersonalZoneTitleData.Parser, new[]{ "TitleId", "TitleLevel", "TitleCycleSwitch", "TitleCycleSpeed", "TitleCycleList", "TitleCycleUnlockSlots" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,6 +81,10 @@ namespace Zproto {
     public PersonalZoneTitleData(PersonalZoneTitleData other) : this() {
       titleId_ = other.titleId_;
       titleLevel_ = other.titleLevel_;
+      titleCycleSwitch_ = other.titleCycleSwitch_;
+      titleCycleSpeed_ = other.titleCycleSpeed_;
+      titleCycleList_ = other.titleCycleList_.Clone();
+      titleCycleUnlockSlots_ = other.titleCycleUnlockSlots_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -108,6 +118,52 @@ namespace Zproto {
       }
     }
 
+    /// <summary>Field number for the "titleCycleSwitch" field.</summary>
+    public const int TitleCycleSwitchFieldNumber = 3;
+    private bool titleCycleSwitch_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool TitleCycleSwitch {
+      get { return titleCycleSwitch_; }
+      set {
+        titleCycleSwitch_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "titleCycleSpeed" field.</summary>
+    public const int TitleCycleSpeedFieldNumber = 4;
+    private int titleCycleSpeed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int TitleCycleSpeed {
+      get { return titleCycleSpeed_; }
+      set {
+        titleCycleSpeed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "titleCycleList" field.</summary>
+    public const int TitleCycleListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Zproto.PersonalZoneTitleInfo> _repeated_titleCycleList_codec
+        = pb::FieldCodec.ForMessage(42, global::Zproto.PersonalZoneTitleInfo.Parser);
+    private readonly pbc::RepeatedField<global::Zproto.PersonalZoneTitleInfo> titleCycleList_ = new pbc::RepeatedField<global::Zproto.PersonalZoneTitleInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Zproto.PersonalZoneTitleInfo> TitleCycleList {
+      get { return titleCycleList_; }
+    }
+
+    /// <summary>Field number for the "titleCycleUnlockSlots" field.</summary>
+    public const int TitleCycleUnlockSlotsFieldNumber = 6;
+    private static readonly pb::FieldCodec<int> _repeated_titleCycleUnlockSlots_codec
+        = pb::FieldCodec.ForInt32(50);
+    private readonly pbc::RepeatedField<int> titleCycleUnlockSlots_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> TitleCycleUnlockSlots {
+      get { return titleCycleUnlockSlots_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -125,6 +181,10 @@ namespace Zproto {
       }
       if (TitleId != other.TitleId) return false;
       if (TitleLevel != other.TitleLevel) return false;
+      if (TitleCycleSwitch != other.TitleCycleSwitch) return false;
+      if (TitleCycleSpeed != other.TitleCycleSpeed) return false;
+      if(!titleCycleList_.Equals(other.titleCycleList_)) return false;
+      if(!titleCycleUnlockSlots_.Equals(other.titleCycleUnlockSlots_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -134,6 +194,10 @@ namespace Zproto {
       int hash = 1;
       if (TitleId != 0) hash ^= TitleId.GetHashCode();
       if (TitleLevel != 0) hash ^= TitleLevel.GetHashCode();
+      if (TitleCycleSwitch != false) hash ^= TitleCycleSwitch.GetHashCode();
+      if (TitleCycleSpeed != 0) hash ^= TitleCycleSpeed.GetHashCode();
+      hash ^= titleCycleList_.GetHashCode();
+      hash ^= titleCycleUnlockSlots_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -160,6 +224,16 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt32(TitleLevel);
       }
+      if (TitleCycleSwitch != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(TitleCycleSwitch);
+      }
+      if (TitleCycleSpeed != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(TitleCycleSpeed);
+      }
+      titleCycleList_.WriteTo(output, _repeated_titleCycleList_codec);
+      titleCycleUnlockSlots_.WriteTo(output, _repeated_titleCycleUnlockSlots_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -178,6 +252,16 @@ namespace Zproto {
         output.WriteRawTag(16);
         output.WriteInt32(TitleLevel);
       }
+      if (TitleCycleSwitch != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(TitleCycleSwitch);
+      }
+      if (TitleCycleSpeed != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(TitleCycleSpeed);
+      }
+      titleCycleList_.WriteTo(ref output, _repeated_titleCycleList_codec);
+      titleCycleUnlockSlots_.WriteTo(ref output, _repeated_titleCycleUnlockSlots_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -194,6 +278,14 @@ namespace Zproto {
       if (TitleLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(TitleLevel);
       }
+      if (TitleCycleSwitch != false) {
+        size += 1 + 1;
+      }
+      if (TitleCycleSpeed != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TitleCycleSpeed);
+      }
+      size += titleCycleList_.CalculateSize(_repeated_titleCycleList_codec);
+      size += titleCycleUnlockSlots_.CalculateSize(_repeated_titleCycleUnlockSlots_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -212,6 +304,14 @@ namespace Zproto {
       if (other.TitleLevel != 0) {
         TitleLevel = other.TitleLevel;
       }
+      if (other.TitleCycleSwitch != false) {
+        TitleCycleSwitch = other.TitleCycleSwitch;
+      }
+      if (other.TitleCycleSpeed != 0) {
+        TitleCycleSpeed = other.TitleCycleSpeed;
+      }
+      titleCycleList_.Add(other.titleCycleList_);
+      titleCycleUnlockSlots_.Add(other.titleCycleUnlockSlots_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -239,6 +339,23 @@ namespace Zproto {
             TitleLevel = input.ReadInt32();
             break;
           }
+          case 24: {
+            TitleCycleSwitch = input.ReadBool();
+            break;
+          }
+          case 32: {
+            TitleCycleSpeed = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            titleCycleList_.AddEntriesFrom(input, _repeated_titleCycleList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            titleCycleUnlockSlots_.AddEntriesFrom(input, _repeated_titleCycleUnlockSlots_codec);
+            break;
+          }
         }
       }
     #endif
@@ -264,6 +381,23 @@ namespace Zproto {
           }
           case 16: {
             TitleLevel = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            TitleCycleSwitch = input.ReadBool();
+            break;
+          }
+          case 32: {
+            TitleCycleSpeed = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            titleCycleList_.AddEntriesFrom(ref input, _repeated_titleCycleList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            titleCycleUnlockSlots_.AddEntriesFrom(ref input, _repeated_titleCycleUnlockSlots_codec);
             break;
           }
         }

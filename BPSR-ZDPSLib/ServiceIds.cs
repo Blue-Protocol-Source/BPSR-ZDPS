@@ -27,5 +27,6 @@ namespace BPSR_ZDPSLib
         PhotographNtf = 829259716,
         GrpcCharactor = 1232729813,
         WorldActNtf = 548813240,
+        WorldNtfSeasonCultivateLine = 525524766,
     }
 }

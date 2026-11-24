@@ -77,6 +77,11 @@ public enum WorldNtf
     NotifyUserAllValidBattlePassData = 0x4F, // 79
     NotifyPlayerBeginInteraction = 0x51, // 81
     SyncSubSceneAttrs = 0x52, // 82
+    NotifyNoticeMultiLanguageInfo = 0x53, // 83
+    NotifyItemWarn = 0x54, // 84
+    NotifyBroadcastClientAction = 0x55, // 85
+    NotifyDungeonBackpackShowItems = 0x56, // 86
+    NotifySceneMark = 0x57, // 87
     QteBegin = 0x3001, // 12289
     SyncClientUseSkill = 0x3002, // 12290
     NotifyBuffChange = 0x3003, // 12291

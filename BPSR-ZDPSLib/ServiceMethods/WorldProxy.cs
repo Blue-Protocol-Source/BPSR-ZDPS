@@ -105,6 +105,11 @@
         GetMasterModeAward = 0x11018, // 69656
         SetShowMasterModeScore = 0x11019, // 69657
         GetWeeklyTowerJumpReward = 0x1101A, // 69658
+        LeaderBoardVote = 0x1101B, // 69659
+        SetSceneMark = 0x1101C, // 69660
+        RemoveSceneMark = 0x1101D, // 69661
+        SetTeammateMark = 0x1101E, // 69662
+        RemoveTeammateMark = 0x1101F, // 69663
         FashionSetColor = 0x12002, // 73730
         UnlockColor = 0x12003, // 73731
         GetCollectionReward = 0x12004, // 73732
