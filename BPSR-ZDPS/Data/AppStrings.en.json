@@ -133,6 +133,7 @@
     "Settings_IncludeOwnCharacterDataInReport": "Include Own Character Data In Report: ",
     "Settings_BPTimerFieldBossHPReports": "BPTimer Field Boss HP Reports: ",
     "Settings_AggressiveExceptionDebugLogging": "Aggressive Exception Debug Logging: ",
+    "Settings_SplitSeason4RaidsWorkaround": "Split Season 4 Raids Workaround: ",
     "EventTracker_CreateNewTrackerContainer": "Create New Tracker Container",
     "EventTracker_DeleteSelectedTrackerContainer": "Delete Selected Tracker Container",
     "EventTracker_ContainerPresetManager": "Container Preset Manager",

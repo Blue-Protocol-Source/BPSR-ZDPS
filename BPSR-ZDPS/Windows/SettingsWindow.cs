@@ -110,6 +110,8 @@ namespace BPSR_ZDPS.Windows
 
         static bool aggressiveExceptionDebugLogging;
 
+        static bool splitSeason4RaidsWorkaround;
+
         // External Settings
         static bool externalBPTimerEnabled;
         static bool externalBPTimerIncludeCharacterId;
@@ -1716,6 +1718,31 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndTabItem();
                     }
                     
+                    if (ImGui.BeginTabItem("Workarounds"))
+                    {
+                        var contentRegionAvail = ImGui.GetContentRegionAvail();
+                        ImGui.BeginChild("##WorkaroundsTabContent", new Vector2(contentRegionAvail.X, contentRegionAvail.Y - 56), ImGuiChildFlags.Borders);
+
+                        ImGui.SeparatorText("Workarounds");
+                        ImGui.BeginDisabled();
+                        ImGui.TextWrapped("These are temporary solutions to solve game related bugs.");
+                        ImGui.EndDisabled();
+                        ImGui.NewLine();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text(AppStrings.GetLocalized("Settings_SplitSeason4RaidsWorkaround"));
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##SplitSeason4RaidsWorkaround", ref splitSeason4RaidsWorkaround);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, works around the game bug with Season 4 Raid Quest States preventing the raids from having their Encounters split automatically.\nThis should be Enabled until the game bug is resolved.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.EndChild();
+                        ImGui.EndTabItem();
+                    }
+
                     ImGui.EndTabBar();
                 }
 
@@ -1886,6 +1913,8 @@ namespace BPSR_ZDPS.Windows
 
             aggressiveExceptionDebugLogging = Settings.Instance.AggressiveExceptionDebugLogging;
 
+            splitSeason4RaidsWorkaround = Settings.Instance.SplitSeason4RaidsWorkaround;
+
             // External
             externalBPTimerEnabled = Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled;
             externalBPTimerIncludeCharacterId = Settings.Instance.External.BPTimerSettings.ExternalBPTimerIncludeCharacterId;
@@ -2014,6 +2043,8 @@ namespace BPSR_ZDPS.Windows
             RendererImpl.EnableGDIBackBufferCopyCompatibility = enableGDIBackBufferCopyCompatibility;
 
             Settings.Instance.AggressiveExceptionDebugLogging = aggressiveExceptionDebugLogging;
+
+            Settings.Instance.SplitSeason4RaidsWorkaround = splitSeason4RaidsWorkaround;
 
             // External
             Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled = externalBPTimerEnabled;

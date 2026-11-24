@@ -102,6 +102,9 @@ public class Settings
 
     public bool AggressiveExceptionDebugLogging = false;
 
+    // TODO: Remove workarounds as game bugs are resolved
+    public bool SplitSeason4RaidsWorkaround { get; set; } = true;
+
     public ChatSettings Chat { get; set; } = new();
 
     public void Apply()

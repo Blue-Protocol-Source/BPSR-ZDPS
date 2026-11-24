@@ -903,6 +903,24 @@ namespace BPSR_ZDPS
                 }
 
                 OnSceneEvent(this, new SceneEventNoticeTipEventArgs() { EventType = WorldEventType.NoticeTip, MessageId = messageId, ExtraId = extraId });
+
+                // HACK: Season 4 Raids encounter split temporary workaround
+                // Currently S4 Raids do not update their quest state due to a game bug
+                // This will be a temporary solution to split each encounter when the boss is dead based on the notice event
+                switch (messageId)
+                {
+                    case "8000803": // Lampsis
+                    case "8000807": // Lampsis Midnight Sun
+                    case "8000811": // Lampsis Polar Night
+                        if (Settings.Instance.SplitSeason4RaidsWorkaround)
+                        {
+                            EncounterManager.StopEncounter();
+                            EncounterManager.StartEncounter(false, EncounterStartReason.Restart);
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
