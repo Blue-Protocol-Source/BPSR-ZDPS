@@ -3079,6 +3079,11 @@ namespace BPSR_ZDPS.Windows
                                                     remainingPct = ((float)eventData.Layers / (float)eventTracker.LayersForDurationMaxValue);
                                                     remainingSeconds = eventTracker.LayersForDurationMaxValue;
                                                 }
+                                                else if (eventData.Layers == eventTracker.LayersForDurationMaxValue && eventTracker.LayersForDurationMaxValue > 0)
+                                                {
+                                                    remainingPct = 1.0f;
+                                                    remainingSeconds = eventData.Layers;
+                                                }
                                                 if (remainingPct < 0)
                                                 {
                                                     remainingPct = 0;
