@@ -5136,6 +5136,9 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetItemTooltip("Matched Trackers will turn green and the rest will turn gray.");
                 if (ImGui.BeginListBox("##TrackersListbox", new Vector2(ImGui.GetContentRegionAvail().X, -1)))
             {
+                    bool queuedReorder = false;
+                    int movingIdx = -1;
+                    int targetIdx = -1;
                 int idx = 0;
                 foreach (var eventTracker in ActiveTrackerContainer.EventTrackers.AsValueEnumerable())
                 {
@@ -5187,6 +5190,39 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.EndDragDropSource();
                     }
+                        ImGui.PushStyleColor(ImGuiCol.DragDropTarget, Colors.LightBlue_Transparent);
+                        if (ImGui.BeginDragDropTarget())
+                        {
+                            var payload = ImGui.AcceptDragDropPayload("TrackedEvent", ImGuiDragDropFlags.AcceptBeforeDelivery | ImGuiDragDropFlags.AcceptNoDrawDefaultRect);
+
+                            if (!payload.IsNull)
+                            {
+                                var min = ImGui.GetItemRectMin();// - ImGui.GetStyle().ItemSpacing;
+                                var max = ImGui.GetItemRectMax();// + ImGui.GetStyle().ItemSpacing;
+                                float midY = (min.Y + max.Y) * 0.5f;
+                                float mouseY = ImGui.GetIO().MousePos.Y;
+                                bool insertBefore = mouseY < midY;
+
+                                float lineY = insertBefore ? min.Y : max.Y;
+
+                                ImGui.GetWindowDrawList().AddLine(new Vector2(min.X, lineY), new Vector2(max.X, lineY), ImGui.ColorConvertFloat4ToU32(Colors.LightBlue_Transparent), 2.0f);
+
+                                if (payload.IsDelivery())
+                                {
+                                    movingIdx = ActiveTrackedEventEntryIdx;
+
+                                    queuedReorder = true;
+                                    targetIdx = insertBefore ? idx : idx + 1;
+                                    if (movingIdx < idx)
+                                    {
+                                        targetIdx -= 1;
+                                    }
+                                }
+                            }
+
+                            ImGui.EndDragDropTarget();
+                        }
+                        ImGui.PopStyleColor();
                     if (ImGui.BeginItemTooltip())
                     {
                         ImGui.TextUnformatted($"IdTracker: {eventTracker.Value.IdTracker}");
@@ -5290,6 +5326,19 @@ namespace BPSR_ZDPS.Windows
                     idx++;
                 }
                 ImGui.EndListBox();
+                    if (queuedReorder)
+                    {
+                        queuedReorder = false;
+
+                        ActiveTrackerContainer.EventTrackers.Remove(ActiveTrackedEventEntry.IdTracker);
+
+                        ActiveTrackerContainer.EventTrackers.Insert(targetIdx, ActiveTrackedEventEntry.IdTracker, ActiveTrackedEventEntry);
+                        ActiveTrackedEventEntryIdx = targetIdx;
+
+                        movingIdx = -1;
+                        targetIdx = -1;
+                    }
+                }
             }
             ImGui.EndChild();
 
