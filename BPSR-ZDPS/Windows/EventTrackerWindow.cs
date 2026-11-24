@@ -1961,6 +1961,14 @@ namespace BPSR_ZDPS.Windows
 
                             eventData.Layers += 1;
 
+                            if (eventTracker.ShouldResetLayersAtMaxValue)
+                            {
+                                if (eventTracker.ResetLayersAtMaxValue > 0 && eventData.Layers >= eventTracker.ResetLayersAtMaxValue)
+                                {
+                                    eventData.Layers = 0;
+                                }
+                            }
+
                             if (eventTracker.OverrideDuration)
                             {
                                 eventData.Cooldown = new(eventTracker.DurationOverrideValue, 0, 0);
@@ -6056,6 +6064,19 @@ namespace BPSR_ZDPS.Windows
             ImGui.Checkbox("Use Boss Warning Cooldown Duration", ref ActiveTrackedEventEntry.UseBossDbmCdDuration);
             ImGui.SetItemTooltip("Uses the Cooldown Duration reported in the Boss Skill Warning table.");
 
+            ImGui.Checkbox("Should Reset Layers At Max Value", ref ActiveTrackedEventEntry.ShouldResetLayersAtMaxValue);
+            ImGui.SetItemTooltip("If when the Layers Count reaches a specific value, the value gets reset back to 0.");
+            if (ActiveTrackedEventEntry.ShouldResetLayersAtMaxValue)
+            {
+                ImGui.Indent();
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted("Reset Layers At Max Value:");
+                ImGui.SameLine();
+                ImGui.InputInt("##ResetLayersAtMaxValueInput", ref ActiveTrackedEventEntry.ResetLayersAtMaxValue, ImGuiInputTextFlags.CharsDecimal);
+                ImGui.SetItemTooltip("Value the Layers Count needs to reach in order to be reset back to 0.");
+                ImGui.Unindent();
+            }
+
             ImGui.Checkbox("Override Tracked Id", ref ActiveTrackedEventEntry.OverrideTrackedId);
             ImGui.SetItemTooltip("This is primarily useful for changing the ID used with Notice Tip Events.\nThis is also used for Damage Events to specify the Hit Event Id. This can be found in the Entity Inspector when viewing all Skill Instances.");
             if (ActiveTrackedEventEntry.OverrideTrackedId)
@@ -8348,6 +8369,9 @@ namespace BPSR_ZDPS.Windows
         public bool IgnoreCooldownDuration = false;
         public bool UseLayersForDuration = false;
         public int LayersForDurationMaxValue = 0;
+
+        public bool ShouldResetLayersAtMaxValue = false;
+        public int ResetLayersAtMaxValue = 0;
 
         public List<RaidWarningTrackerData> RaidWarningTrackerDatas = new();
 
