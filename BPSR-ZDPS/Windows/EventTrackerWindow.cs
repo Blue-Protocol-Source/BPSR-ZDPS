@@ -2453,6 +2453,13 @@ namespace BPSR_ZDPS.Windows
                                 skipContainer = false;
                                 break;
                             }
+                            else
+                            {
+                                if (tracker.Value.LoadEvents.ClearDataWhenShouldNotLoad && tracker.Value.EventData != null && tracker.Value.EventData.Count > 0)
+                                {
+                                    tracker.Value.EventData.Clear();
+                                }
+                            }
                         }
 
                         if (skipContainer)
@@ -2616,6 +2623,10 @@ namespace BPSR_ZDPS.Windows
                         {
                             if (!eventTrackerKVP.Value.LoadEvents.CheckShouldLoad())
                             {
+                                if (eventTrackerKVP.Value.LoadEvents.ClearDataWhenShouldNotLoad && eventTrackerKVP.Value.EventData != null && eventTrackerKVP.Value.EventData.Count > 0)
+                                {
+                                    eventTrackerKVP.Value.EventData.Clear();
+                                }
                                 continue;
                             }
 
@@ -5253,8 +5264,8 @@ namespace BPSR_ZDPS.Windows
                             var window = ImGuiP.FindWindowByID(ImGuiP.ImHashStr($"{ActiveTrackerContainer.IdTracker}"));
                             if (!window.IsNull)
                             {
-                            ImGuiP.SetWindowPos(window, pos, ImGuiCond.Always);
-                        }
+                                ImGuiP.SetWindowPos(window, pos, ImGuiCond.Always);
+                            }
                         }
                         ImGui.PopStyleColor(2);
 
@@ -5295,15 +5306,15 @@ namespace BPSR_ZDPS.Windows
                 }
                 ImGui.SetItemTooltip("Matched Trackers will turn green and the rest will turn gray.");
                 if (ImGui.BeginListBox("##TrackersListbox", new Vector2(ImGui.GetContentRegionAvail().X, -1)))
-            {
+                {
                     bool queuedReorder = false;
                     int movingIdx = -1;
                     int targetIdx = -1;
-                int idx = 0;
-                foreach (var eventTracker in ActiveTrackerContainer.EventTrackers.AsValueEnumerable())
-                {
-                    bool isSelected = ActiveTrackedEventEntryIdx == idx;
-                    ImGuiSelectableFlags highlight = isSelected ? ImGuiSelectableFlags.Highlight : ImGuiSelectableFlags.None;
+                    int idx = 0;
+                    foreach (var eventTracker in ActiveTrackerContainer.EventTrackers.AsValueEnumerable())
+                    {
+                        bool isSelected = ActiveTrackedEventEntryIdx == idx;
+                        ImGuiSelectableFlags highlight = isSelected ? ImGuiSelectableFlags.Highlight : ImGuiSelectableFlags.None;
 
                         bool isFilterActive = TrackerNameFilter.Length > 0;
                         bool isFilterMatched = eventTracker.Value.TrackerName.Contains(TrackerNameFilter, StringComparison.OrdinalIgnoreCase);
@@ -5319,37 +5330,37 @@ namespace BPSR_ZDPS.Windows
                             }
                         }
 
-                    if (ImGui.Selectable($"{eventTracker.Value.TrackerName}##TrackerEntry_{idx}", true, ImGuiSelectableFlags.SpanAllColumns | highlight | ImGuiSelectableFlags.AllowOverlap))
-                    {
-                        ActiveTrackedEventEntryIdx = idx;
-                        ActiveTrackedEventEntry = eventTracker.Value;
-                    }
+                        if (ImGui.Selectable($"{eventTracker.Value.TrackerName}##TrackerEntry_{idx}", true, ImGuiSelectableFlags.SpanAllColumns | highlight | ImGuiSelectableFlags.AllowOverlap))
+                        {
+                            ActiveTrackedEventEntryIdx = idx;
+                            ActiveTrackedEventEntry = eventTracker.Value;
+                        }
 
                         if (isFilterActive)
                         {
                             ImGui.PopStyleColor();
                         }
 
-                    if (ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
-                    {
-                        unsafe
+                        if (ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
                         {
-                            ImGui.SetDragDropPayload("TrackedEvent", (void*)IntPtr.Zero, 0);
-                        }
-                        // Forcefully set the Tracker we're dragging as the Active Selected one so we can query it on the drop event
-                        ActiveTrackedEventEntryIdx = idx;
-                        ActiveTrackedEventEntry = eventTracker.Value;
+                            unsafe
+                            {
+                                ImGui.SetDragDropPayload("TrackedEvent", (void*)IntPtr.Zero, 0);
+                            }
+                            // Forcefully set the Tracker we're dragging as the Active Selected one so we can query it on the drop event
+                            ActiveTrackedEventEntryIdx = idx;
+                            ActiveTrackedEventEntry = eventTracker.Value;
 
-                        // Preview element
-                        string dropAction = "Moving";
-                        if (ImGui.IsKeyDown(ImGuiKey.ModCtrl))
-                        {
-                            dropAction = "Copying";
-                        }
-                        ImGui.TextUnformatted($"{dropAction} Tracker '{eventTracker.Value.TrackerName}'{(!string.IsNullOrEmpty(DragDropTargetName) ? $" to '{DragDropTargetName}'" : "")}");
+                            // Preview element
+                            string dropAction = "Moving";
+                            if (ImGui.IsKeyDown(ImGuiKey.ModCtrl))
+                            {
+                                dropAction = "Copying";
+                            }
+                            ImGui.TextUnformatted($"{dropAction} Tracker '{eventTracker.Value.TrackerName}'{(!string.IsNullOrEmpty(DragDropTargetName) ? $" to '{DragDropTargetName}'" : "")}");
 
-                        ImGui.EndDragDropSource();
-                    }
+                            ImGui.EndDragDropSource();
+                        }
                         ImGui.PushStyleColor(ImGuiCol.DragDropTarget, Colors.LightBlue_Transparent);
                         if (ImGui.BeginDragDropTarget())
                         {
@@ -5383,46 +5394,46 @@ namespace BPSR_ZDPS.Windows
                             ImGui.EndDragDropTarget();
                         }
                         ImGui.PopStyleColor();
-                    if (ImGui.BeginItemTooltip())
-                    {
-                        ImGui.TextUnformatted($"IdTracker: {eventTracker.Value.IdTracker}");
-                        ImGui.TextUnformatted($"TrackerType: {eventTracker.Value.TrackerType}");
+                        if (ImGui.BeginItemTooltip())
+                        {
+                            ImGui.TextUnformatted($"IdTracker: {eventTracker.Value.IdTracker}");
+                            ImGui.TextUnformatted($"TrackerType: {eventTracker.Value.TrackerType}");
 
-                        if (eventTracker.Value.TrackerType == ETrackerType.Buffs)
-                        {
-                            ImGui.TextUnformatted($"Buff ID: {eventTracker.Value.TrackedBuffId}");
-                            ImGui.TextUnformatted($"Buff Name: {eventTracker.Value.Name}");
-                        }
-                        else if (eventTracker.Value.TrackerType == ETrackerType.Skills)
-                        {
-                            ImGui.TextUnformatted($"Skill ID: {eventTracker.Value.TrackedSkillId}");
-                            ImGui.TextUnformatted($"Skill Name: {eventTracker.Value.Name}");
-                        }
-                        else if (eventTracker.Value.TrackerType == ETrackerType.Attributes)
-                        {
-                            ImGui.TextUnformatted($"Attribute Name: {eventTracker.Value.TrackedAttributeName}");
-                        }
+                            if (eventTracker.Value.TrackerType == ETrackerType.Buffs)
+                            {
+                                ImGui.TextUnformatted($"Buff ID: {eventTracker.Value.TrackedBuffId}");
+                                ImGui.TextUnformatted($"Buff Name: {eventTracker.Value.Name}");
+                            }
+                            else if (eventTracker.Value.TrackerType == ETrackerType.Skills)
+                            {
+                                ImGui.TextUnformatted($"Skill ID: {eventTracker.Value.TrackedSkillId}");
+                                ImGui.TextUnformatted($"Skill Name: {eventTracker.Value.Name}");
+                            }
+                            else if (eventTracker.Value.TrackerType == ETrackerType.Attributes)
+                            {
+                                ImGui.TextUnformatted($"Attribute Name: {eventTracker.Value.TrackedAttributeName}");
+                            }
 
-                        ImGui.TextUnformatted($"Who To Track: {eventTracker.Value.TrackedEntityType}");
+                            ImGui.TextUnformatted($"Who To Track: {eventTracker.Value.TrackedEntityType}");
 
-                        if (eventTracker.Value.DebugLogTracker)
-                        {
-                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
-                            ImGui.TextUnformatted("Debug Tracker: Enabled");
-                            ImGui.PopStyleColor();
-                        }
+                            if (eventTracker.Value.DebugLogTracker)
+                            {
+                                ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                                ImGui.TextUnformatted("Debug Tracker: Enabled");
+                                ImGui.PopStyleColor();
+                            }
 
-                        ImGui.EndTooltip();
-                    }
-                    if (ImGui.BeginPopupContextItem())
-                    {
-                        if (ImGui.MenuItem("Copy Tracker To Clipboard"))
-                        {
-                            // Create a cleaned version of the Tracker that is dependency-free before it is copied
-                            var newTracker = (TrackedEventEntry)eventTracker.Value.Clone(0);
-                            ImGui.SetClipboardText(JsonConvert.SerializeObject(newTracker));
+                            ImGui.EndTooltip();
                         }
-                        ImGui.SetItemTooltip($"Copies Tracker '{eventTracker.Value.Name}' like a Preset to the clipboard.");
+                        if (ImGui.BeginPopupContextItem())
+                        {
+                            if (ImGui.MenuItem("Copy Tracker To Clipboard"))
+                            {
+                                // Create a cleaned version of the Tracker that is dependency-free before it is copied
+                                var newTracker = (TrackedEventEntry)eventTracker.Value.Clone(0);
+                                ImGui.SetClipboardText(JsonConvert.SerializeObject(newTracker));
+                            }
+                            ImGui.SetItemTooltip($"Copies Tracker '{eventTracker.Value.Name}' like a Preset to the clipboard.");
 
                             if (ImGui.MenuItem("Copy Tracker To Clipboard As File"))
                             {
@@ -5436,37 +5447,37 @@ namespace BPSR_ZDPS.Windows
                             }
                             ImGui.SetItemTooltip($"Copies Tracker '{eventTracker.Value.Name}' like a Preset but as a file to the clipboard.");
 
-                        ImGui.Separator();
+                            ImGui.Separator();
 
-                        // TODO: Surface errors up to the UI so the user is aware why nothing happened
-                        if (ImGui.MenuItem("Import Tracker From Clipboard"))
-                        {
-                            try
+                            // TODO: Surface errors up to the UI so the user is aware why nothing happened
+                            if (ImGui.MenuItem("Import Tracker From Clipboard"))
                             {
-                                var newTrackerSrc = JsonConvert.DeserializeObject<TrackedEventEntry>(ImGui.GetClipboardTextS());
-                                if (newTrackerSrc != null)
+                                try
                                 {
-                                    if (string.IsNullOrEmpty(newTrackerSrc.TrackerName))
+                                    var newTrackerSrc = JsonConvert.DeserializeObject<TrackedEventEntry>(ImGui.GetClipboardTextS());
+                                    if (newTrackerSrc != null)
                                     {
-                                        throw new FormatException("Imported Tracker was missing required data (TrackerName is null).");
-                                    }
+                                        if (string.IsNullOrEmpty(newTrackerSrc.TrackerName))
+                                        {
+                                            throw new FormatException("Imported Tracker was missing required data (TrackerName is null).");
+                                        }
 
-                                    var newTracker = (TrackedEventEntry)newTrackerSrc.Clone(++PersistentTrackerCount);
-                                    newTracker.SourceLocationType = ESourceLocationType.Manual;
-                                    ActiveTrackerContainer.EventTrackers.Add(newTracker.IdTracker, newTracker);
+                                        var newTracker = (TrackedEventEntry)newTrackerSrc.Clone(++PersistentTrackerCount);
+                                        newTracker.SourceLocationType = ESourceLocationType.Manual;
+                                        ActiveTrackerContainer.EventTrackers.Add(newTracker.IdTracker, newTracker);
 
-                                    ActiveTrackedEventEntry = ActiveTrackerContainer.EventTrackers[newTracker.IdTracker];
-                                    ActiveTrackedEventEntryIdx = ActiveTrackerContainer.EventTrackers.Count - 1;
-                                    ActiveTrackedEventEntry.UpdateIconData(ActiveTrackedEventEntry.OriginalIconPath, false);
-                                    ActiveTrackerContainer.RecheckTrackerStates();
+                                        ActiveTrackedEventEntry = ActiveTrackerContainer.EventTrackers[newTracker.IdTracker];
+                                        ActiveTrackedEventEntryIdx = ActiveTrackerContainer.EventTrackers.Count - 1;
+                                        ActiveTrackedEventEntry.UpdateIconData(ActiveTrackedEventEntry.OriginalIconPath, false);
+                                        ActiveTrackerContainer.RecheckTrackerStates();
 
                                         ActiveTrackedEventEntry.HandleMigrations();
+                                    }
                                 }
-                            }
-                            catch (Exception ex)
-                            {
-                                Serilog.Log.Error(ex, "Error attempting to import an Event Tracker from clipboard.");
-                            }
+                                catch (Exception ex)
+                                {
+                                    Serilog.Log.Error(ex, "Error attempting to import an Event Tracker from clipboard.");
+                                }
                             }
 
                             ImGui.Separator();
@@ -5493,7 +5504,7 @@ namespace BPSR_ZDPS.Windows
                                     else
                                     {
                                         ImGui.SetClipboardText(eventTracker.Value.TrackedSkillId.ToString());
-                        }
+                                    }
                                 }
                                 else if (eventTracker.Value.TrackerType == ETrackerType.Attributes)
                                 {
@@ -5501,37 +5512,37 @@ namespace BPSR_ZDPS.Windows
                                 }
                             }
 
-                        ImGui.EndPopup();
-                    }
+                            ImGui.EndPopup();
+                        }
 
-                    if (eventTracker.Value.DebugLogTracker)
-                    {
-                        ImGui.SameLine();
-                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.DarkGreen);
-                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                        ImGui.TextUnformatted($"{FASIcons.Bug}");
-                        ImGui.PopFont();
-                        ImGui.PopStyleColor();
-                    }
+                        if (eventTracker.Value.DebugLogTracker)
+                        {
+                            ImGui.SameLine();
+                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.DarkGreen);
+                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                            ImGui.TextUnformatted($"{FASIcons.Bug}");
+                            ImGui.PopFont();
+                            ImGui.PopStyleColor();
+                        }
 
-                    if (idx == 0 && ActiveTrackerContainer.TrackAllBuffs && eventTracker.Value.TrackerType != ETrackerType.Buffs)
-                    {
-                        ImGui.SameLine();
-                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
-                        ImGui.TextUnformatted("[Incorrect Tracker Type For 'Track All Buffs']");
-                        ImGui.PopStyleColor();
-                    }
-                    else if (idx == 0 && ActiveTrackerContainer.TrackAllSkills && eventTracker.Value.TrackerType != ETrackerType.Skills)
-                    {
-                        ImGui.SameLine();
-                        ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
-                        ImGui.TextUnformatted("[Incorrect Tracker Type For 'Track All Skills']");
-                        ImGui.PopStyleColor();
-                    }
+                        if (idx == 0 && ActiveTrackerContainer.TrackAllBuffs && eventTracker.Value.TrackerType != ETrackerType.Buffs)
+                        {
+                            ImGui.SameLine();
+                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                            ImGui.TextUnformatted("[Incorrect Tracker Type For 'Track All Buffs']");
+                            ImGui.PopStyleColor();
+                        }
+                        else if (idx == 0 && ActiveTrackerContainer.TrackAllSkills && eventTracker.Value.TrackerType != ETrackerType.Skills)
+                        {
+                            ImGui.SameLine();
+                            ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
+                            ImGui.TextUnformatted("[Incorrect Tracker Type For 'Track All Skills']");
+                            ImGui.PopStyleColor();
+                        }
 
-                    idx++;
-                }
-                ImGui.EndListBox();
+                        idx++;
+                    }
+                    ImGui.EndListBox();
                     if (queuedReorder)
                     {
                         queuedReorder = false;
@@ -7472,6 +7483,10 @@ namespace BPSR_ZDPS.Windows
             ImGui.Checkbox("Allow Healing Events Outside Combat", ref ActiveTrackedEventEntry.LoadEvents.AllowHealingEventsOutsideCombat);
             ImGui.SetItemTooltip("Normally Healing Events are specifically ignored outside of combat.\nThis will allow using them for the Tracker without impacting Encounter data.");
             HandleApplyToOthersContextMenu((tracker) => { tracker.LoadEvents.AllowHealingEventsOutsideCombat = ActiveTrackedEventEntry.LoadEvents.AllowHealingEventsOutsideCombat; });
+
+            ImGui.Checkbox("Clear Data When 'Should Not Load'", ref ActiveTrackedEventEntry.LoadEvents.ClearDataWhenShouldNotLoad);
+            ImGui.SetItemTooltip("When the above Load Event conditions result in the Tracker not loading, this will make all the existing Tracker data be cleared.");
+            HandleApplyToOthersContextMenu((tracker) => { tracker.LoadEvents.ClearDataWhenShouldNotLoad = ActiveTrackedEventEntry.LoadEvents.ClearDataWhenShouldNotLoad; });
         }
 
         public static void ToggleForceHideAllContainers(bool newState)
@@ -8678,7 +8693,7 @@ namespace BPSR_ZDPS.Windows
                     HideOnOtherBuffId = 0;
                 }
             }
-    }
+        }
     }
 
     public class RaidWarningTrackerData : ICloneable
@@ -8744,6 +8759,8 @@ namespace BPSR_ZDPS.Windows
         public bool KeepOnRestart = false;
 
         public bool AllowHealingEventsOutsideCombat = false;
+
+        public bool ClearDataWhenShouldNotLoad = false;
 
         [JsonProperty]
         public List<int> SceneIdValues { get; private set; } = new();
