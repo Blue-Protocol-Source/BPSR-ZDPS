@@ -69,6 +69,7 @@ namespace BPSR_ZDPS.Windows
             ChatWindow.Draw(this);
             EventTrackerWindow.Draw(this);
             SkillCastTimelineWindow.Draw(this);
+            PlayerMetricsWindow.Draw(this);
         }
 
         static bool p_open = true;
@@ -764,6 +765,10 @@ namespace BPSR_ZDPS.Windows
                         if (ImGui.MenuItem("Entity Cache Viewer"))
                         {
                             EntityCacheViewerWindow.Open();
+                        }
+                        if (ImGui.MenuItem("Player Metrics"))
+                        {
+                            PlayerMetricsWindow.Open();
                         }
                         ImGui.EndMenu();
                     }

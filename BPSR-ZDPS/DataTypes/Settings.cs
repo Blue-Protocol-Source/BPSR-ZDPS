@@ -213,6 +213,7 @@ public class WindowSettings : ICloneable
     public ChatWindowSettings ChatWindow { get; set; } = new();
     public EventTrackerWindowSettings EventTracker { get; set; } = new();
     public SkillCastTimelineWindowSettings SkillCastTimeline { get; set; } = new();
+    public PlayerMetricsWindowSettings PlayerMetrics { get; set; } = new();
 
     public object Clone()
     {
@@ -225,6 +226,7 @@ public class WindowSettings : ICloneable
         cloned.ChatWindow = (ChatWindowSettings)this.ChatWindow.Clone();
         cloned.EventTracker = (EventTrackerWindowSettings)this.EventTracker.Clone();
         cloned.SkillCastTimeline = (SkillCastTimelineWindowSettings)this.SkillCastTimeline.Clone();
+        cloned.PlayerMetrics = (PlayerMetricsWindowSettings)this.PlayerMetrics.Clone();
         return cloned;
     }
 }

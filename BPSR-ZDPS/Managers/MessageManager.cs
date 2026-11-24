@@ -1660,6 +1660,8 @@ namespace BPSR_ZDPS
                 }
                 EncounterManager.Current.SetAttrKV(playerUuid, "AttrEquipData", playerEquips);
             }
+
+            PlayerMetricsWindow.LoadCharData(vData);
         }
 
         public static void ProcessSyncContainerDirtyData(ReadOnlySpan<byte> payloadBuffer, ExtraPacketData extraData)

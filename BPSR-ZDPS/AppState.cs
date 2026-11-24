@@ -292,6 +292,44 @@ namespace BPSR_ZDPS
                 Log.Information("Loaded DummyOverrides.en.json");
             }
 
+            string FunctionTableFile = Path.Combine(Utils.DATA_DIR_NAME, "FunctionTable.json");
+            if (File.Exists(FunctionTableFile))
+            {
+                var functions = JsonConvert.DeserializeObject<Dictionary<string, Function>>(File.ReadAllText(FunctionTableFile));
+                HelperMethods.DataTables.Functions.Data = functions;
+                Log.Information("Loaded FunctionTable.json");
+            }
+
+            string functionOverridesFile = Path.Combine(Utils.DATA_DIR_NAME, "FunctionOverrides.en.json");
+            if (File.Exists(functionOverridesFile))
+            {
+                var overrides = JsonConvert.DeserializeObject<Dictionary<string, Function>>(File.ReadAllText(functionOverridesFile));
+                foreach (var item in overrides)
+                {
+                    if (HelperMethods.DataTables.Functions.Data.TryGetValue(item.Key, out var functionData))
+                    {
+                        functionData.Name = string.IsNullOrEmpty(item.Value.Name) ? functionData.Name : item.Value.Name;
+                    }
+                }
+                Log.Information("Loaded FunctionOverrides.en.json");
+            }
+
+            string SeasonGlobalTableFile = Path.Combine(Utils.DATA_DIR_NAME, "SeasonGlobalTable.json");
+            if (File.Exists(SeasonGlobalTableFile))
+            {
+                var seasonGlobals = JsonConvert.DeserializeObject<Dictionary<string, SeasonGlobal>>(File.ReadAllText(SeasonGlobalTableFile));
+                HelperMethods.DataTables.SeasonGlobals.Data = seasonGlobals;
+                Log.Information("Loaded SeasonGlobalTable.json");
+            }
+
+            string SkillAoyiTableFile = Path.Combine(Utils.DATA_DIR_NAME, "SkillAoyiTable.json");
+            if (File.Exists(SkillAoyiTableFile))
+            {
+                var skillAoyis = JsonConvert.DeserializeObject<Dictionary<string, SkillAoyi>>(File.ReadAllText(SkillAoyiTableFile));
+                HelperMethods.DataTables.SkillAoyis.Data = skillAoyis;
+                Log.Information("Loaded SkillAoyiTable.json");
+            }
+
             try
             {
                 System.Reflection.FieldInfo fi = typeof(Managers.External.BPTimerManager).GetField(Encoding.UTF8.GetString([0x41, 0x50, 0x49, 0x5f, 0x4b, 0x45, 0x59]),
