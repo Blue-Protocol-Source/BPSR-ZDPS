@@ -1908,6 +1908,11 @@ namespace BPSR_ZDPS.Windows
                             continue;
                         }
 
+                        if (eventTracker.EventTargetMustBeSelf && AppState.PlayerUUID != e.TargetUuid)
+                        {
+                            continue;
+                        }
+
                         if (e.SkillId == eventTracker.TrackedSkillId && (eventTracker.OverrideTrackedId ? e.HitEventId == eventTracker.OverrideTrackedIdValue : true))
                         {
                             eventTracker.EventData.TryGetValue(e.TargetUuid, out var eventData);
@@ -5935,6 +5940,12 @@ namespace BPSR_ZDPS.Windows
 
             DrawWhoToTrack();
 
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted("Event Target Must Be 'Self':");
+            ImGui.SameLine();
+            ImGui.Checkbox("##EventTargetMustBeSelf", ref ActiveTrackedEventEntry.EventTargetMustBeSelf);
+            ImGui.SetItemTooltip("Only applies to DamageEvent and HealingEvent.");
+
             ImGui.NewLine();
 
             ImGui.AlignTextToFramePadding();
@@ -8241,6 +8252,7 @@ namespace BPSR_ZDPS.Windows
         public long LastUserTargetEntityUuid = 0;
         public bool EventSourceMustBeSelf = false;
         public bool OnlyTrackSummonsFromSelf = false;
+        public bool EventTargetMustBeSelf = false;
 
         public int TrackedBuffId = 0;
         public List<Zproto.EBuffEventType> BuffEvents = new();
