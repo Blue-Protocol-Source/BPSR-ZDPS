@@ -44,6 +44,9 @@ namespace BPSR_ZDPS
             public static TempAttrTable TempAttrs = new TempAttrTable();
             public static AttrDescriptionTable AttrDescriptions = new AttrDescriptionTable();
             public static DummyTable Dummys = new DummyTable();
+            public static FunctionTable Functions = new FunctionTable();
+            public static SeasonGlobalTable SeasonGlobals = new SeasonGlobalTable();
+            public static SkillAoyiTable SkillAoyis = new SkillAoyiTable();
         }
     }
 }

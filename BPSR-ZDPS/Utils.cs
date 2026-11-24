@@ -382,7 +382,7 @@ namespace BPSR_ZDPS
 
         public static void MinimizeWindow(IntPtr platformHandleRaw)
         {
-            User32.ShowWindow(platformHandleRaw, User32.SW_MINIMIZE);
+            User32.ShowWindow(platformHandleRaw, User32.SW_SHOWMINNOACTIVE);
         }
 
         public static void RestoreWindow(ImGuiViewportPtr? viewport = null)
