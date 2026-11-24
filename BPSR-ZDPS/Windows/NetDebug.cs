@@ -25,7 +25,9 @@ public static class NetDebug
         if (!IsOpened)
             return;
         
-        ImGui.SetNextWindowSize(new Vector2(1000, 600), ImGuiCond.FirstUseEver);
+        DpiScaling.BeginWindow(TITLE_ID);
+
+        ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(1000, 600)), ImGuiCond.FirstUseEver);
 
         ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
@@ -98,16 +100,16 @@ public static class NetDebug
             if (ImGui.CollapsingHeader("Active TCP Streams"))
             {
                 if (ImGui.BeginTable("TcpConnectionsTable", 10, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame)) {
-                    ImGui.TableSetupColumn("Endpoint", ImGuiTableColumnFlags.WidthFixed, 180.0f);
-                    ImGui.TableSetupColumn("Is Synced", ImGuiTableColumnFlags.WidthFixed, 60.0f);
-                    ImGui.TableSetupColumn("Next Expected Seq", ImGuiTableColumnFlags.WidthFixed, 100.0f);
-                    ImGui.TableSetupColumn("Last Seq", ImGuiTableColumnFlags.WidthFixed, 100.0f);
-                    ImGui.TableSetupColumn("Seq Diff", ImGuiTableColumnFlags.WidthFixed, 50.0f);
-                    ImGui.TableSetupColumn("Cached", ImGuiTableColumnFlags.WidthFixed, 50.0f);
-                    ImGui.TableSetupColumn("Bytes Sent", ImGuiTableColumnFlags.WidthFixed, 100.0f);
-                    ImGui.TableSetupColumn("Packets Seen", ImGuiTableColumnFlags.WidthFixed, 100.0f);
+                    ImGui.TableSetupColumn("Endpoint", ImGuiTableColumnFlags.WidthFixed, 180.0f * DpiScaling.Scale);
+                    ImGui.TableSetupColumn("Is Synced", ImGuiTableColumnFlags.WidthFixed, 60.0f * DpiScaling.Scale);
+                    ImGui.TableSetupColumn("Next Expected Seq", ImGuiTableColumnFlags.WidthFixed, 100.0f * DpiScaling.Scale);
+                    ImGui.TableSetupColumn("Last Seq", ImGuiTableColumnFlags.WidthFixed, 100.0f * DpiScaling.Scale);
+                    ImGui.TableSetupColumn("Seq Diff", ImGuiTableColumnFlags.WidthFixed, 50.0f * DpiScaling.Scale);
+                    ImGui.TableSetupColumn("Cached", ImGuiTableColumnFlags.WidthFixed, 50.0f * DpiScaling.Scale);
+                    ImGui.TableSetupColumn("Bytes Sent", ImGuiTableColumnFlags.WidthFixed, 100.0f * DpiScaling.Scale);
+                    ImGui.TableSetupColumn("Packets Seen", ImGuiTableColumnFlags.WidthFixed, 100.0f * DpiScaling.Scale);
                     ImGui.TableSetupColumn("Last Packet At", ImGuiTableColumnFlags.WidthStretch);
-                    ImGui.TableSetupColumn("Remove", ImGuiTableColumnFlags.WidthFixed, 80.0f);
+                    ImGui.TableSetupColumn("Remove", ImGuiTableColumnFlags.WidthFixed, 80.0f * DpiScaling.Scale);
                     ImGui.TableHeadersRow();
 
                     foreach (var conn in MessageManager.netCap.TcpReassempler.Connections)

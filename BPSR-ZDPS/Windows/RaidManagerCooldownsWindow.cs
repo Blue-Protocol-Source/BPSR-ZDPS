@@ -17,7 +17,7 @@ namespace BPSR_ZDPS.Windows
         public static string TITLE = "Cooldown Priority Tracker";
         public static bool IsOpened = false;
         public static bool CollapseToContentOnly = false;
-        public static Vector2 DefaultWindowSize = new Vector2(700, 600);
+        public static Vector2 DefaultWindowSize => DpiScaling.ToScaledWindowSize(new Vector2(700, 600));
         public static bool ResetWindowSize = false;
 
         static int RunOnceDelayed = 0;
@@ -94,8 +94,10 @@ namespace BPSR_ZDPS.Windows
 
             var windowSettings = Settings.Instance.WindowSettings.RaidManagerCooldowns;
 
+            DpiScaling.BeginWindow(TITLE_ID, windowSettings.WindowPosition);
+
             ImGui.SetNextWindowSize(DefaultWindowSize, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSizeConstraints(new Vector2(300, 240), new Vector2(ImGui.GETFLTMAX()));
+            ImGui.SetNextWindowSizeConstraints(new Vector2(300, 240) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
 
             if (windowSettings.WindowPosition != new Vector2())
             {
@@ -104,7 +106,7 @@ namespace BPSR_ZDPS.Windows
 
             if (windowSettings.WindowSize != new Vector2())
             {
-                ImGui.SetNextWindowSize(windowSettings.WindowSize, ImGuiCond.FirstUseEver);
+                ImGui.SetNextWindowSize(DpiScaling.ToScaled(windowSettings.WindowSize), ImGuiCond.FirstUseEver);
             }
 
             if (ResetWindowSize)
@@ -156,10 +158,10 @@ namespace BPSR_ZDPS.Windows
                 // When they cast a specific skill, begin tracking the cooldown time for it
                 // Indicate they are on cooldown and have the next entity in priority ready to go
                 
-                ImGui.PushStyleVarX(ImGuiStyleVar.FramePadding, 4);
-                ImGui.PushStyleVarY(ImGuiStyleVar.FramePadding, 1);
+                ImGui.PushStyleVarX(ImGuiStyleVar.FramePadding, 4 * DpiScaling.Scale);
+                ImGui.PushStyleVarY(ImGuiStyleVar.FramePadding, 1 * DpiScaling.Scale);
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, ImGui.ColorConvertFloat4ToU32(new Vector4(37 / 255f, 37 / 255f, 38 / 255f, 1.0f)));
-                ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1);
+                ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, DpiScaling.ToScaledThickness(1));
                 //ImGui.BeginChild("ConditionListBoxChild", new Vector2(0, 140), ImGuiChildFlags.FrameStyle);
                 float listBoxHeight = ImGui.GetContentRegionAvail().Y - EntityFilterSectionHeight - SkillFilterSectionHeight - ImGui.GetStyle().ItemSpacing.Y;
                 if (ImGui.BeginListBox("##ConditionsListBox", new Vector2(-1, listBoxHeight)))
@@ -178,10 +180,10 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Text($"{EntityCache.Instance.Cache.Lines[trackedEntity.Key]?.Name}");
                         ImGui.SameLine();
 
-                        ImGui.SetCursorPosX(ImGui.GetWindowWidth() - ((20 * 4) + ImGui.GetStyle().ItemSpacing.X));
+                        ImGui.SetCursorPosX(ImGui.GetWindowWidth() - ((20 * 4 * DpiScaling.Scale) + ImGui.GetStyle().ItemSpacing.X));
 
                         ImGui.BeginDisabled(trackedEntityIdx == 0);
-                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                         if (ImGui.Button($"{FASIcons.ChevronUp}##MoveUpBtn_{trackedEntityIdx}"))
                         {
                             delayMoveKeySelection = trackedEntity.Key;
@@ -193,7 +195,7 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.SameLine();
                         ImGui.BeginDisabled(trackedEntityIdx == TrackedEntities.Count - 1);
-                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                         if (ImGui.Button($"{FASIcons.ChevronDown}##MoveDownBtn_{trackedEntityIdx}"))
                         {
                             delayMoveKeySelection = trackedEntity.Key;
@@ -205,7 +207,7 @@ namespace BPSR_ZDPS.Windows
 
                         ImGui.SameLine();
                         ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
-                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                         if (ImGui.Button($"{FASIcons.Minus}##RemoveBtn_{trackedEntityIdx}"))
                         {
                             delayMoveKeySelection = trackedEntity.Key;
@@ -283,7 +285,7 @@ namespace BPSR_ZDPS.Windows
                                     }
                                     float remainingPct = (float)Math.Round(remainingTime.TotalSeconds / totalCooldown, 4);
                                     ImGui.PushStyleColor(ImGuiCol.PlotHistogram, Colors.DarkRed);
-                                    ImGui.ProgressBar(remainingPct, new Vector2(progressBarWidth, 18), "");
+                                    ImGui.ProgressBar(remainingPct, new Vector2(progressBarWidth, 18 * DpiScaling.Scale), "");
                                     ImGui.PopStyleColor();
                                     ImGui.SetCursorPos(new Vector2(labelX, cursorPos.Y + (ImGui.GetItemRectSize().Y - textSize.Y) * textAlignment));
                                     ImGui.Text(displayText);
@@ -364,7 +366,7 @@ namespace BPSR_ZDPS.Windows
                             }
                         }
                         // Require at least 3 characters to perform our search to maintain performance against large lists
-                        if (ImGui.BeginListBox("##FilteredEntitiesListBox", new Vector2(ImGui.GetContentRegionAvail().X, 120)))
+                        if (ImGui.BeginListBox("##FilteredEntitiesListBox", new Vector2(ImGui.GetContentRegionAvail().X, 120 * DpiScaling.Scale)))
                         {
                             if (EntityFilterMatches != null && (EntityFilterMatches.Length < 100 || EntityNameFilter.Length > 2))
                             {
@@ -378,8 +380,8 @@ namespace BPSR_ZDPS.Windows
                                         if (isSelected)
                                         {
                                             ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
-                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                                            if (ImGui.Button($"{FASIcons.Minus}##RemoveBtn_{matchIdx}", new Vector2(30, 30)))
+                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
+                                            if (ImGui.Button($"{FASIcons.Minus}##RemoveBtn_{matchIdx}", new Vector2(30, 30) * DpiScaling.Scale))
                                             {
                                                 TrackedEntities.Remove(match.Value.UUID);
                                                 BindCurrentEncounterEvents();
@@ -390,8 +392,8 @@ namespace BPSR_ZDPS.Windows
                                         else
                                         {
                                             ImGui.PushStyleColor(ImGuiCol.Text, Colors.Green_Transparent);
-                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                                            if (ImGui.Button($"{FASIcons.Plus}##AddBtn_{matchIdx}", new Vector2(30, 30)))
+                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
+                                            if (ImGui.Button($"{FASIcons.Plus}##AddBtn_{matchIdx}", new Vector2(30, 30) * DpiScaling.Scale))
                                             {
                                                 TrackedEntities.Add(match.Value.UUID, new List<TrackedSkill>());
                                                 BindCurrentEncounterEvents();
@@ -438,7 +440,7 @@ namespace BPSR_ZDPS.Windows
                             }
                         }
 
-                        if (ImGui.BeginListBox("##SkillFilterList", new Vector2(-1, 120)))
+                        if (ImGui.BeginListBox("##SkillFilterList", new Vector2(-1, 120 * DpiScaling.Scale)))
                         {
                             if (SkillCastConditionValue.Length > 0)
                             {
@@ -457,8 +459,8 @@ namespace BPSR_ZDPS.Windows
 
                                             ImGui.AlignTextToFramePadding();
                                             ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
-                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                                            if (ImGui.Button($"{FASIcons.Minus}##SkillBtn_{skillMatchIdx}", new Vector2(30, ImGui.GetFontSize() * 2.5f)))
+                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
+                                            if (ImGui.Button($"{FASIcons.Minus}##SkillBtn_{skillMatchIdx}", new Vector2(30 * DpiScaling.Scale, ImGui.GetFontSize() * 2.5f)))
                                             {
                                                 TrackedSkills.Remove(skillId);
                                                 foreach (var trackedEntity in TrackedEntities)
@@ -548,7 +550,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Text($"Raid Manager - {TITLE}");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 4));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.MenuItem($"{FASIcons.Rotate}##ClearCooldownsBtn"))
                 {
                     foreach (var trackedEntity in TrackedEntities)
@@ -563,7 +565,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetItemTooltip("Clear All Active Cooldown Timers");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 3));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, AppState.MousePassthrough ? 0.0f : 1.0f, AppState.MousePassthrough ? 0.0f : 1.0f, windowSettings.TopMost ? 1.0f : 0.5f));
                 if (ImGui.MenuItem($"{FASIcons.Thumbtack}##TopMostBtn"))
                 {
@@ -588,7 +590,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetItemTooltip("Pin Window As Top Most");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 2));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 1.0f, 1.0f, CollapseToContentOnly ? 1.0f : 0.5f));
                 if (ImGui.MenuItem($"{(CollapseToContentOnly ? FASIcons.AnglesDown : FASIcons.AnglesUp)}##CollapseToContentBtn"))
                 {
@@ -607,11 +609,11 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.MenuItem($"X##CloseBtn"))
                 {
                     windowSettings.WindowPosition = ImGui.GetWindowPos();
-                    windowSettings.WindowSize = ImGui.GetWindowSize();
+                    windowSettings.WindowSize = DpiScaling.ToUnscaled(ImGui.GetWindowSize());
                     IsOpened = false;
                 }
                 ImGui.PopFont();

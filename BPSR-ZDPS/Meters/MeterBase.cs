@@ -26,7 +26,7 @@ namespace BPSR_ZDPS.Meters
             float offset = ImGui.CalcTextSize(number).X;
             if (Settings.Instance.ShowClassIconsInMeters)
             {
-                offset += (ImGui.GetStyle().ItemSpacing.X * 2) + (texSize + 2);
+                offset += (ImGui.GetStyle().ItemSpacing.X * 2) + (texSize + 2 * DpiScaling.Scale);
             }
             else
             {
@@ -92,7 +92,7 @@ namespace BPSR_ZDPS.Meters
             float offset = ImGui.CalcTextSize(number).X;
             if (Settings.Instance.ShowClassIconsInMeters)
             {
-                offset += (ImGui.GetStyle().ItemSpacing.X * 2) + (texSize + 2);
+                offset += (ImGui.GetStyle().ItemSpacing.X * 2) + (texSize + 2 * DpiScaling.Scale);
             }
             else
             {
@@ -102,8 +102,8 @@ namespace BPSR_ZDPS.Meters
             if (Settings.Instance.ShowPlayerImaginesInMeters)
             {
                 // Setup 2 placeholder slots
-                offset += (ImGui.GetStyle().ItemSpacing.X * 1) + (texSize + 2);
-                offset += (ImGui.GetStyle().ItemSpacing.X * 1) + (texSize + 2);
+                offset += (ImGui.GetStyle().ItemSpacing.X * 1) + (texSize + 2 * DpiScaling.Scale);
+                offset += (ImGui.GetStyle().ItemSpacing.X * 1) + (texSize + 2 * DpiScaling.Scale);
             }
 
             ImGui.SetCursorPosX(offset);

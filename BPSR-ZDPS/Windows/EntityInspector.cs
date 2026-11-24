@@ -99,9 +99,11 @@ namespace BPSR_ZDPS.Windows
 
             var main_viewport = ImGui.GetMainViewport();
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSize(new Vector2(900, 600), ImGuiCond.FirstUseEver);
+            DpiScaling.BeginWindow(TITLE_ID);
 
-            ImGui.SetNextWindowSizeConstraints(new Vector2(400, 150), new Vector2(ImGui.GETFLTMAX()));
+            ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(900, 600)), ImGuiCond.FirstUseEver);
+
+            ImGui.SetNextWindowSizeConstraints(new Vector2(400, 150) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
@@ -189,7 +191,7 @@ namespace BPSR_ZDPS.Windows
                         var tex = ImageHelper.GetTextureByKey($"Profession_{LoadedEntity.ProfessionId}_128");
                         if (tex != null)
                         {
-                            float texSize = 96.0f;
+                            float texSize = 96.0f * DpiScaling.Scale;
                             ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - texSize - ImGui.GetStyle().ItemSpacing.X - ImGui.GetStyle().FramePadding.X);
                             if (Settings.Instance.ColorClassIconsByRole)
                             {
@@ -544,7 +546,7 @@ namespace BPSR_ZDPS.Windows
 
                 if (TableFilterMode == ETableFilterMode.SkillsDamage || TableFilterMode == ETableFilterMode.SkillsHealing || TableFilterMode == ETableFilterMode.SkillsTaken)
                 {
-                    ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f, ImGui.GetStyle().CellPadding.Y));
+                    ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f * DpiScaling.Scale, ImGui.GetStyle().CellPadding.Y));
 
                     int columnCount = 9;
                     if (TableFilterMode == ETableFilterMode.SkillsDamage)
@@ -908,7 +910,7 @@ namespace BPSR_ZDPS.Windows
                 }
                 else if (TableFilterMode == ETableFilterMode.EntityTaken)
                 {
-                    ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f, ImGui.GetStyle().CellPadding.Y));
+                    ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f * DpiScaling.Scale, ImGui.GetStyle().CellPadding.Y));
 
                     if (ImGui.BeginTable("##TakenByEntityTable", 9, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit))
                     {
@@ -1014,7 +1016,7 @@ namespace BPSR_ZDPS.Windows
                 {
                     ImGui.TextUnformatted("Attributes:");
 
-                    if (ImGui.BeginListBox("##AttrListBox", new Vector2(-1, -32)))
+                    if (ImGui.BeginListBox("##AttrListBox", new Vector2(-1, -32 * DpiScaling.Scale)))
                     {
                         var attributes = (IReadOnlyList<KeyValuePair<string, object>>)LoadedEntity.Attributes.AsValueEnumerable().ToList();
                         int idx = 0;
@@ -1075,7 +1077,7 @@ namespace BPSR_ZDPS.Windows
                 }
                 else if (TableFilterMode == ETableFilterMode.Buffs)
                 {
-                    ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f, ImGui.GetStyle().CellPadding.Y));
+                    ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f * DpiScaling.Scale, ImGui.GetStyle().CellPadding.Y));
 
                     if (ImGui.BeginTable("##BuffEventsTable", 10, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit))
                     {
@@ -1440,7 +1442,7 @@ namespace BPSR_ZDPS.Windows
                                 ImPlotSpec plotSpec = default(ImPlotSpec);
                                 plotSpec.FillColor = ImPlot.IMPLOT_AUTO_COL;
                                 plotSpec.LineColor = ImPlot.IMPLOT_AUTO_COL;
-                                plotSpec.LineWeight = 1.0f;
+                                plotSpec.LineWeight = DpiScaling.ToScaledThickness(1.0f);
                                 plotSpec.FillAlpha = 1.0f;
 
                                 ImPlot.PlotBarsG("Bars", Getter, null, SkillSnapshotsDamage.Length, 1, plotSpec);
@@ -1478,7 +1480,7 @@ namespace BPSR_ZDPS.Windows
                                 ImPlotSpec plotSpec = default(ImPlotSpec);
                                 plotSpec.FillColor = ImPlot.IMPLOT_AUTO_COL;
                                 plotSpec.LineColor = ImPlot.IMPLOT_AUTO_COL;
-                                plotSpec.LineWeight = 1.0f;
+                                plotSpec.LineWeight = DpiScaling.ToScaledThickness(1.0f);
                                 plotSpec.FillAlpha = 1.0f;
 
                                 ImPlot.PlotBarsG("Bars", Getter, null, SkillSnapshotsDamage.Length, 1, plotSpec);
@@ -1494,7 +1496,7 @@ namespace BPSR_ZDPS.Windows
                         // Disable Hits By Source for now until PlotPieChart works again
                         if (false)
                         {
-                            if (ImPlot.BeginPlot("Hits By Source", new Vector2(-1, 520), ImPlotFlags.NoMouseText))
+                            if (ImPlot.BeginPlot("Hits By Source", new Vector2(-1, 520 * DpiScaling.Scale), ImPlotFlags.NoMouseText))
                             {
                                 ImPlot.SetupAxes("", "", ImPlotAxisFlags.NoDecorations | ImPlotAxisFlags.AutoFit, ImPlotAxisFlags.NoDecorations | ImPlotAxisFlags.AutoFit);
                                 ImPlot.SetupLegend(ImPlotLocation.West, ImPlotLegendFlags.Outside);
@@ -1506,7 +1508,7 @@ namespace BPSR_ZDPS.Windows
                             }
                         }
 
-                        if (ImPlot.BeginPlot("Damage Skills Timeline", new Vector2(-1, 520), ImPlotFlags.None))
+                        if (ImPlot.BeginPlot("Damage Skills Timeline", new Vector2(-1, 520 * DpiScaling.Scale), ImPlotFlags.None))
                         {
                             ImPlot.SetupAxes("Time (Encounter Duration In Seconds)", "Casts", ImPlotAxisFlags.AutoFit, ImPlotAxisFlags.AutoFit | ImPlotAxisFlags.NoTickLabels);
 
@@ -1521,12 +1523,12 @@ namespace BPSR_ZDPS.Windows
 
                                     ImPlotSpec plotSpec = default(ImPlotSpec);
                                     plotSpec.Marker = ImPlotMarker.Circle;
-                                    plotSpec.MarkerSize = 4.0f;
+                                    plotSpec.MarkerSize = 4.0f * DpiScaling.Scale;
                                     plotSpec.FillColor = ImPlot.IMPLOT_AUTO_COL;
                                     plotSpec.LineColor = ImPlot.IMPLOT_AUTO_COL;
                                     plotSpec.MarkerFillColor = new Vector4(0f, 0f, 0f, -1.0f);
                                     plotSpec.MarkerLineColor = new Vector4(0f, 0f, 0f, -1.0f);
-                                    plotSpec.LineWeight = 1.0f;
+                                    plotSpec.LineWeight = DpiScaling.ToScaledThickness(1.0f);
                                     plotSpec.FillAlpha = 1.0f;
 
                                     //ImPlot.PlotScatter(item.Key, ref item.Value.TimeArray[0], ref item.Value.SkillIdentifierArray[0], item.Value.Time.Count);
@@ -1554,7 +1556,7 @@ namespace BPSR_ZDPS.Windows
                         {
                             var list = (List<DataTypes.Skills.SkillLevelInfo>)skillLevelIdList;
 
-                            ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f, ImGui.GetStyle().CellPadding.Y));
+                            ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(8f * DpiScaling.Scale, ImGui.GetStyle().CellPadding.Y));
 
                             if (ImGui.BeginTable("##SkillStatsTable", 4, ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit))
                             {
@@ -1676,7 +1678,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.TextUnformatted($"{TITLE} - {entityName}");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 2));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, AppState.MousePassthrough ? 0.0f : 1.0f, AppState.MousePassthrough ? 0.0f : 1.0f, windowSettings.TopMost ? 1.0f : 0.5f));
                 if (ImGui.MenuItem($"{FASIcons.Thumbtack}##TopMostBtn"))
                 {
@@ -1701,7 +1703,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetItemTooltip("Pin Window As Top Most");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.MenuItem($"X##CloseBtn"))
                 {
                     IsOpened = false;

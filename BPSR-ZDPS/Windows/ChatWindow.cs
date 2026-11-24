@@ -16,7 +16,7 @@ namespace BPSR_ZDPS.Windows
         public static bool IsOpened = false;
 
         static int RunOnceDelayed = 0;
-        public static Vector2 DefaultWindowSize = new Vector2(700, 600);
+        public static Vector2 DefaultWindowSize => DpiScaling.ToScaledWindowSize(new Vector2(700, 600));
         public static bool ResetWindowSize = false;
 
         static ImGuiWindowClassPtr ChatWindowClass = ImGui.ImGuiWindowClass();
@@ -117,7 +117,7 @@ namespace BPSR_ZDPS.Windows
                 exWindowFlags |= ImGuiWindowFlags.NoInputs;
             }
             ImGuiWindowFlags windowFlags = ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoBackground | exWindowFlags;
-            if (ImGui.Begin($"Chat##ChatWindow", windowFlags))
+            if (ImGui.Begin("Chat###ChatWindow", windowFlags))
             {
                 if (RunOnceDelayed == 0)
                 {
@@ -146,7 +146,7 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0, 0, 0, windowSettings.BackgroundOpacity));
-                if (ImGui.BeginChild("##ChatWindowChild", new Vector2(0, windowSettings.WindowSize.Y - 8), ImGuiChildFlags.AutoResizeY))
+                if (ImGui.BeginChild("##ChatWindowChild", new Vector2(0, ImGui.GetWindowSize().Y - 8 * DpiScaling.Scale), ImGuiChildFlags.AutoResizeY))
                 {
                     DrawChatTabs();
                     DrawManageButtons();
@@ -159,7 +159,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PopStyleColor();
 
                 windowSettings.WindowPosition = ImGui.GetWindowPos();
-                windowSettings.WindowSize = ImGui.GetWindowSize();
+                windowSettings.WindowSize = DpiScaling.ToUnscaled(ImGui.GetWindowSize());
 
                 ImGui.End();
             }
@@ -169,8 +169,10 @@ namespace BPSR_ZDPS.Windows
 
         private static void PreDraw(ChatWindowSettings windowSettings)
         {
+            DpiScaling.BeginWindow(TITLE_ID, windowSettings.WindowPosition);
+
             ImGui.SetNextWindowSize(DefaultWindowSize, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSizeConstraints(new Vector2(450, 360), new Vector2(ImGui.GETFLTMAX()));
+            ImGui.SetNextWindowSizeConstraints(new Vector2(450, 360) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
 
             if (windowSettings.WindowPosition != new Vector2())
             {
@@ -179,7 +181,7 @@ namespace BPSR_ZDPS.Windows
 
             if (windowSettings.WindowSize != new Vector2())
             {
-                ImGui.SetNextWindowSize(windowSettings.WindowSize, ImGuiCond.FirstUseEver);
+                ImGui.SetNextWindowSize(DpiScaling.ToScaled(windowSettings.WindowSize), ImGuiCond.FirstUseEver);
             }
 
             if (ResetWindowSize)
@@ -204,7 +206,7 @@ namespace BPSR_ZDPS.Windows
             }
 
             ImGui.SameLine();
-            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
             if (ImGui.Button("+"))
             {
                 EditingTab = new ChatTab(new ChatTabConfig()
@@ -274,7 +276,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red);
             }
             ImGui.SetCursorPosX(ImGui.GetWindowSize().X - (ImGui.GetFontSize() + ImGui.GetStyle().FramePadding.X));
-            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
             if (ImGui.Button($"{FASIcons.Gear}##OptionsMenu"))
             {
                 ImGui.OpenPopup("SettingsPopup");
@@ -287,7 +289,7 @@ namespace BPSR_ZDPS.Windows
             ImGui.SameLine();
 
             //ImGui.SetCursorPosX(ImGui.GetCursorPosX() - 200);
-            ImGui.SetNextWindowPos(ImGui.GetWindowPos() + new Vector2(ImGui.GetWindowSize().X - 350, 30f));
+            ImGui.SetNextWindowPos(ImGui.GetWindowPos() + new Vector2(ImGui.GetWindowSize().X - 350 * DpiScaling.Scale, 30f * DpiScaling.Scale));
             if (ImGui.BeginPopup("SettingsPopup"))
             {
                 ImGui.TextUnformatted("Chat Settings");
@@ -301,7 +303,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SameLine();
                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                ImGui.SetNextItemWidth(200);
+                ImGui.SetNextItemWidth(200 * DpiScaling.Scale);
                 if (ImGui.SliderFloat("##BackgroundOpacity", ref backgroundOpacity, 0.03f, 1f, $"{(int)(backgroundOpacity * 100)}%%", ImGuiSliderFlags.ClampOnInput))
                 {
                     chatWindowSettings.BackgroundOpacity = MathF.Round(backgroundOpacity, 2);
@@ -312,11 +314,11 @@ namespace BPSR_ZDPS.Windows
                 ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("Window Opacity:");
                 ImGui.SameLine();
-                ImGui.Dummy(new Vector2(17, 0));
+                ImGui.Dummy(new Vector2(17 * DpiScaling.Scale, 0));
                 ImGui.SameLine();
                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                ImGui.SetNextItemWidth(200);
+                ImGui.SetNextItemWidth(200 * DpiScaling.Scale);
                 if (ImGui.SliderInt("##Opacity", ref opacity, 10, 100, $"{opacity}%%", ImGuiSliderFlags.ClampOnInput))
                 {
                     chatWindowSettings.Opacity = opacity;
@@ -393,7 +395,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SameLine();
                 ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, ImGui.GetColorU32(ImGuiCol.FrameBgHovered, 0.55f));
                 ImGui.PushStyleColor(ImGuiCol.FrameBgActive, ImGui.GetColorU32(ImGuiCol.FrameBgActive, 0.55f));
-                ImGui.SetNextItemWidth(200);
+                ImGui.SetNextItemWidth(200 * DpiScaling.Scale);
                 var wasMaxChatHistoryChanged = ImGui.SliderInt("##MaxChatHistory", ref maxChatHistory, 1, 500);
                 Settings.Instance.Chat.MaxChatHistory = maxChatHistory;
                 ImGui.PopStyleColor(2);
@@ -403,7 +405,7 @@ namespace BPSR_ZDPS.Windows
                     ChatManager.RemoveMessagesOverCap(Settings.Instance.Chat.MaxChatHistory);
                 }
 
-                ImGui.Dummy(new Vector2(0, 5));
+                ImGui.Dummy(new Vector2(0, 5 * DpiScaling.Scale));
                 ImGui.Separator();
                 if (ImGui.Button("Manage Blocked Users", new Vector2(-1, 0)))
                 {
@@ -414,7 +416,7 @@ namespace BPSR_ZDPS.Windows
                 if (ImGui.MenuItem("Close Chat Window"))
                 {
                     chatWindowSettings.WindowPosition = ImGui.GetWindowPos();
-                    chatWindowSettings.WindowSize = ImGui.GetWindowSize();
+                    chatWindowSettings.WindowSize = DpiScaling.ToUnscaled(ImGui.GetWindowSize());
                     IsOpened = false;
                 }
 
@@ -426,23 +428,23 @@ namespace BPSR_ZDPS.Windows
                 ImGui.OpenPopup("BlockedUsersPopup");
             }
 
-            ImGui.SetNextWindowPos(ImGui.GetWindowPos() + new Vector2(ImGui.GetWindowSize().X - 550, 30f));
+            ImGui.SetNextWindowPos(ImGui.GetWindowPos() + new Vector2(ImGui.GetWindowSize().X - 550 * DpiScaling.Scale, 30f * DpiScaling.Scale));
             if (ImGui.BeginPopup("BlockedUsersPopup"))
             {
                 ImGui.TextUnformatted("Blocked Users");
                 ImGui.Separator();
 
                 var height = windowViewport.Size.Y - 100;
-                if (ImGui.BeginChild("BlockedUserArea", new Vector2(500, height), ImGuiChildFlags.None, ImGuiWindowFlags.NoDecoration))
+                if (ImGui.BeginChild("BlockedUserArea", new Vector2(500 * DpiScaling.Scale, height), ImGuiChildFlags.None, ImGuiWindowFlags.NoDecoration))
                 {
                     if (ImGui.CollapsingHeader("Blocked Users", ImGuiTreeNodeFlags.DefaultOpen))
                     {
                         if (ImGui.BeginTable("BlockedUserTable", 4, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchProp))
                         {
-                            ImGui.TableSetupColumn("Blocked At", ImGuiTableColumnFlags.WidthFixed, 100f);
-                            ImGui.TableSetupColumn("UID", ImGuiTableColumnFlags.WidthFixed, 100f);
+                            ImGui.TableSetupColumn("Blocked At", ImGuiTableColumnFlags.WidthFixed, 100f * DpiScaling.Scale);
+                            ImGui.TableSetupColumn("UID", ImGuiTableColumnFlags.WidthFixed, 100f * DpiScaling.Scale);
                             ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
-                            ImGui.TableSetupColumn("Actions", ImGuiTableColumnFlags.WidthFixed, 80f);
+                            ImGui.TableSetupColumn("Actions", ImGuiTableColumnFlags.WidthFixed, 80f * DpiScaling.Scale);
                             ImGui.TableHeadersRow();
 
                             foreach (var blockedUser in Settings.Instance.Chat.BlockedUsers.Values)
@@ -490,7 +492,7 @@ namespace BPSR_ZDPS.Windows
                             }
                         }
 
-                        if (ImGui.BeginListBox("##PlayerListBox", new Vector2(ImGui.GetContentRegionAvail().X, 120)))
+                        if (ImGui.BeginListBox("##PlayerListBox", new Vector2(ImGui.GetContentRegionAvail().X, 120 * DpiScaling.Scale)))
                         {
                             if (EntityFilterMatches != null && (EntityFilterMatches.Length < 100 || EntityNameFilter.Length > 2))
                             {
@@ -502,8 +504,8 @@ namespace BPSR_ZDPS.Windows
                                         if (!ChatManager.IsUserBlocked(match.Value.UID))
                                         {
                                             ImGui.PushStyleColor(ImGuiCol.Text, Colors.Green_Transparent);
-                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                                            if (ImGui.Button($"{FASIcons.Plus}##AddBtn_{matchIdx}", new Vector2(30, 30)))
+                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
+                                            if (ImGui.Button($"{FASIcons.Plus}##AddBtn_{matchIdx}", new Vector2(30, 30) * DpiScaling.Scale))
                                             {
                                                 var user = new User(new BasicShowInfo()
                                                 {
@@ -518,8 +520,8 @@ namespace BPSR_ZDPS.Windows
                                         else
                                         {
                                             ImGui.PushStyleColor(ImGuiCol.Text, Colors.Red_Transparent);
-                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
-                                            if (ImGui.Button($"{FASIcons.Minus}##RemoveBtn_{matchIdx}", new Vector2(30, 30)))
+                                            ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
+                                            if (ImGui.Button($"{FASIcons.Minus}##RemoveBtn_{matchIdx}", new Vector2(30, 30) * DpiScaling.Scale))
                                             {
                                                 ChatManager.UnblockUser(match.Value.UID);
                                             }
@@ -549,7 +551,7 @@ namespace BPSR_ZDPS.Windows
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
             if (EditingTab != null)
             {
-                ImGui.SetNextWindowPos(ImGui.GetWindowPos() + new Vector2(10, 30f));
+                ImGui.SetNextWindowPos(ImGui.GetWindowPos() + new Vector2(10, 30f) * DpiScaling.Scale);
                 if (ImGui.BeginPopup("EditChatTab"))
                 {
                     ImGui.TextUnformatted($"Chat Tab Settings for {EditingTab.Config.Name}");
@@ -583,11 +585,11 @@ namespace BPSR_ZDPS.Windows
         private static void DrawDeleteChatTabConfirm()
         {
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
-            ImGui.SetNextWindowPos(ImGui.GetWindowPos() + new Vector2(10, 30f));
+            ImGui.SetNextWindowPos(ImGui.GetWindowPos() + new Vector2(10, 30f) * DpiScaling.Scale);
             ImGui.SetNextWindowSize(new Vector2(0, 0));
             if (ImGui.BeginPopup("DeleteConfirm", ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoDocking))
             {
-                var windowWidth = ImGui.GetContentRegionAvail().X - 10;
+                var windowWidth = ImGui.GetContentRegionAvail().X - 10 * DpiScaling.Scale;
                 ImGui.TextUnformatted($"Are you sure you want to delete: {EditingTab.Config.Name}");
                 if (ImGui.Button("Yes", new Vector2(windowWidth / 2, 0)))
                 {
@@ -616,7 +618,7 @@ namespace BPSR_ZDPS.Windows
 
         private static void DrawChatMessages()
         {
-            ImGui.SetCursorPos(new Vector2(0, 27));
+            ImGui.SetCursorPos(new Vector2(0, 27 * DpiScaling.Scale));
             var shouldScrollToBottom = true;
             if (ImGui.BeginChild("Messages", ImGuiChildFlags.None, ImGuiWindowFlags.AlwaysVerticalScrollbar | ImGuiWindowFlags.NoBackground))
             {

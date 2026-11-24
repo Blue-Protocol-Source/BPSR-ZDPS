@@ -181,7 +181,9 @@ namespace BPSR_ZDPS.Windows
                 return;
             }
 
-            ImGui.SetNextWindowSize(new Vector2(500, 720), ImGuiCond.Appearing);
+            DpiScaling.BeginWindow(TITLE_ID);
+
+            ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(500, 720)), ImGuiCond.Appearing);
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
 
@@ -312,15 +314,17 @@ namespace BPSR_ZDPS.Windows
         {
             var windowSettings = Settings.Instance.WindowSettings.SkillCastTimeline;
 
-            ImGui.SetNextWindowSizeConstraints(new Vector2(300, 100), new Vector2(ImGui.GETFLTMAX()));
+            DpiScaling.BeginWindow("###SkillCastTimelineDisplay", windowSettings.TimelinePosition);
 
-            ImGui.SetNextWindowSize(new Vector2(800, 200), ImGuiCond.FirstUseEver);
-            float maxHeight = windowSettings.TimelineIconSize + ImGui.GetStyle().FramePadding.Y;
-            ImGui.SetNextWindowSizeConstraints(new Vector2(100, maxHeight), new Vector2(ImGui.GETFLTMAX(), maxHeight));
+            ImGui.SetNextWindowSizeConstraints(new Vector2(300, 100) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
+
+            ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(800, 200)), ImGuiCond.FirstUseEver);
+            float maxHeight = windowSettings.TimelineIconSize * DpiScaling.Scale + ImGui.GetStyle().FramePadding.Y;
+            ImGui.SetNextWindowSizeConstraints(new Vector2(100 * DpiScaling.Scale, maxHeight), new Vector2(ImGui.GETFLTMAX(), maxHeight));
 
             if (windowSettings.TimelineSize != new Vector2())
             {
-                ImGui.SetNextWindowSize(windowSettings.TimelineSize, ImGuiCond.FirstUseEver);
+                ImGui.SetNextWindowSize(DpiScaling.ToScaled(windowSettings.TimelineSize), ImGuiCond.FirstUseEver);
             }
 
             if (windowSettings.TimelinePosition != new Vector2())
@@ -349,7 +353,7 @@ namespace BPSR_ZDPS.Windows
             bool shouldTransparentBg = windowSettings.TimelineTransparentBackground || windowSettings.TimelineUseChromaKey;
 
             ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0, 0));
-            if (ImGui.Begin("Skill Cast Timeline##SkillCastTimelineDisplay", ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoFocusOnAppearing | exWindowFlags))
+            if (ImGui.Begin("Skill Cast Timeline###SkillCastTimelineDisplay", ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoFocusOnAppearing | exWindowFlags))
             {
                 if (windowSettings.TimelineWindowModifiedOpacity && LastSetTimelineOpacity != windowSettings.TimelineWindowOpacityValue)
                 {
@@ -409,7 +413,7 @@ namespace BPSR_ZDPS.Windows
                     var texBg = ImageArchive.LoadImage(Path.Combine("Misc", "skill_bg"));
                     if (tex != null && texBg != null)
                     {
-                        float texSize = windowSettings.TimelineIconSize;
+                        float texSize = windowSettings.TimelineIconSize * DpiScaling.Scale;
                         float startX = ImGui.GetWindowWidth() - (texSize * 1);
                         double currentPosition = Lerp(startX, texSize * -2, (DateTime.Now - entry.StartTime).TotalSeconds / windowSettings.TimelineSpeed);
 
@@ -473,7 +477,7 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 windowSettings.TimelinePosition = ImGui.GetWindowPos();
-                windowSettings.TimelineSize = ImGui.GetWindowSize();
+                windowSettings.TimelineSize = DpiScaling.ToUnscaled(ImGui.GetWindowSize());
                 ImGui.End();
                 ImGui.PopStyleVar();
             }

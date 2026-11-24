@@ -135,9 +135,10 @@ namespace BPSR_ZDPS
                 return;
             }
 
-            ImGui.SetNextWindowSize(new Vector2(820, 450), ImGuiCond.Appearing);
-            ImGui.SetNextWindowSizeConstraints(new Vector2(650, 350), new Vector2(float.PositiveInfinity, float.PositiveInfinity));
-            ImGui.SetNextWindowPos(ImGui.GetMainViewport().Size * 0.5f, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
+            ImGui.SetNextWindowSize(new Vector2(820, 450) * DpiScaling.Scale, ImGuiCond.Appearing);
+            ImGui.SetNextWindowSizeConstraints(new Vector2(650, 350) * DpiScaling.Scale, new Vector2(float.PositiveInfinity, float.PositiveInfinity));
+            var parentViewport = ImGui.GetWindowViewport();
+            ImGui.SetNextWindowPos(parentViewport.Pos + parentViewport.Size * 0.5f, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(POPUP_LAYER_ID));
             if (ImGui.BeginPopupModal($"{(string.IsNullOrEmpty(Title) ? "File Browser" : Title)}{POPUP_ID}", ref IsOpen, ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking))
             {
@@ -148,7 +149,7 @@ namespace BPSR_ZDPS
                 ImGui.BeginDisabled(DirHistory.Count <= 0);
                 ImGui.PushFont(HelperMethods.Fonts["FASIcons"], 13.0f);
                 // chevron-left Unicode: F053
-                if (ImGui.Button($"{FASIcons.ChevronLeft}", new Vector2(26, 26)))
+                if (ImGui.Button($"{FASIcons.ChevronLeft}", new Vector2(26, 26) * DpiScaling.Scale))
                 {
                     GoBack();
                 }
@@ -156,7 +157,7 @@ namespace BPSR_ZDPS
                 ImGui.EndDisabled();
 
                 // chevron-up Unicode: F077
-                if (ImGui.Button($"{FASIcons.ChevronUp}", new Vector2(26, 26)))
+                if (ImGui.Button($"{FASIcons.ChevronUp}", new Vector2(26, 26) * DpiScaling.Scale))
                 {
                     GoUp();
                 }
@@ -226,7 +227,7 @@ namespace BPSR_ZDPS
 
                         ImGui.SameLine();
 
-                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                         if (entry.EntryType == EntryInfo.EntryTypes.Dir)
                         {
                             // folder-open Unicode: F07C, F115, 01F4C2, 01F5C1
@@ -413,7 +414,7 @@ namespace BPSR_ZDPS
                     FilePathList = SelectedEntries.First().Name;
                 }
             }
-            float FilterComboWidth = 175f;
+            float FilterComboWidth = 175f * DpiScaling.Scale;
             ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X - FilterComboWidth);
             if (ImGui.InputText("##SelectedFilePathNames", ref FilePathList, 255, DialogMode == Mode.SaveFile ? ImGuiInputTextFlags.None : ImGuiInputTextFlags.ReadOnly))
             {
@@ -514,7 +515,7 @@ namespace BPSR_ZDPS
 
         private static void DrawSidePanel(float Height)
         {
-            if (ImGui.BeginChild("##FileBrowserSidePanel", new Vector2(130, Height), ImGuiChildFlags.Borders))
+            if (ImGui.BeginChild("##FileBrowserSidePanel", new Vector2(130 * DpiScaling.Scale, Height), ImGuiChildFlags.Borders))
             {
                 if (ImGui.BeginTable("##SidePanelItems", 1, ImGuiTableFlags.ScrollY))
                 {
@@ -530,10 +531,10 @@ namespace BPSR_ZDPS
 
                         ImGui.SameLine();
 
-                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                        ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                         ImGui.Text(entry.IconPrefixCode);
                         ImGui.PopFont();
-                        ImGui.SameLine(32f);
+                        ImGui.SameLine(32f * DpiScaling.Scale);
                         ImGui.Text(entry.Name);
                     }
                     ImGui.EndTable();

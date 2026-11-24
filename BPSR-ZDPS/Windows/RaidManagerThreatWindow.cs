@@ -82,8 +82,10 @@ namespace BPSR_ZDPS.Windows
 
             var windowSettings = Settings.Instance.WindowSettings.RaidManagerThreat;
 
-            ImGui.SetNextWindowSize(new Vector2(700, 600), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSizeConstraints(new Vector2(300, 240), new Vector2(ImGui.GETFLTMAX()));
+            DpiScaling.BeginWindow(TITLE_ID, windowSettings.WindowPosition);
+
+            ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(new Vector2(700, 600)), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSizeConstraints(new Vector2(300, 240) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
 
             if (windowSettings.WindowPosition != new Vector2())
             {
@@ -92,7 +94,7 @@ namespace BPSR_ZDPS.Windows
 
             if (windowSettings.WindowSize != new Vector2())
             {
-                ImGui.SetNextWindowSize(windowSettings.WindowSize, ImGuiCond.FirstUseEver);
+                ImGui.SetNextWindowSize(DpiScaling.ToScaled(windowSettings.WindowSize), ImGuiCond.FirstUseEver);
             }
 
             ImGuiP.PushOverrideID(ImGuiP.ImHashStr(LAYER));
@@ -134,10 +136,10 @@ namespace BPSR_ZDPS.Windows
 
                 DrawMenuBar();
 
-                ImGui.PushStyleVarX(ImGuiStyleVar.FramePadding, 4);
-                ImGui.PushStyleVarY(ImGuiStyleVar.FramePadding, 1);
+                ImGui.PushStyleVarX(ImGuiStyleVar.FramePadding, 4 * DpiScaling.Scale);
+                ImGui.PushStyleVarY(ImGuiStyleVar.FramePadding, 1 * DpiScaling.Scale);
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, ImGui.ColorConvertFloat4ToU32(new Vector4(37 / 255f, 37 / 255f, 38 / 255f, 1.0f)));
-                ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1);
+                ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, DpiScaling.ToScaledThickness(1));
                 if (ImGui.BeginListBox("##ThreatsListBox", new Vector2(-1,-1)))
                 {
                     ImGui.PopStyleVar();
@@ -196,13 +198,13 @@ namespace BPSR_ZDPS.Windows
                                 progressPct = (float)Math.Round((double)threat.ThreatValue / (double)topThreatValue, 4);
                             }
 
-                            ImGui.ProgressBar(progressPct, new Vector2(-1, 18), $"{(!string.IsNullOrEmpty(threatName) ? threatName : threat.EntityUuid)} :: {threat.ThreatValue}");
+                            ImGui.ProgressBar(progressPct, new Vector2(-1, 18 * DpiScaling.Scale), $"{(!string.IsNullOrEmpty(threatName) ? threatName : threat.EntityUuid)} :: {threat.ThreatValue}");
                             ImGui.PopStyleColor();
                             ImGui.Unindent();
 
                             if (threatListIdx == 0 && threatListCount > 1)
                             {
-                                ImGui.Dummy(new Vector2(1, 5));
+                                ImGui.Dummy(new Vector2(1, 5 * DpiScaling.Scale));
                             }
 
                             threatListIdx++;
@@ -242,7 +244,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.Text($"Raid Manager - {TITLE} (ZDPS BETA)");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 4));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.MenuItem($"{FASIcons.Question}"))
                 {
 
@@ -251,7 +253,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetItemTooltip($"This feature is in Beta Testing. Please provide feedback to help improve it.");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 3));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 1.0f, 1.0f, windowSettings.TopMost ? 1.0f : 0.5f));
                 if (ImGui.MenuItem($"{FASIcons.Thumbtack}"))
                 {
@@ -276,7 +278,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.SetItemTooltip("Pin Window As Top Most");
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth * 2));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 1.0f, 1.0f, CollapseToContentOnly ? 1.0f : 0.5f));
                 if (ImGui.MenuItem($"{(CollapseToContentOnly ? FASIcons.AnglesDown : FASIcons.AnglesUp)}"))
                 {
@@ -295,11 +297,11 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SetCursorPosX(MenuBarSize.X - (MenuBarButtonWidth));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.MenuItem($"X"))
                 {
                     windowSettings.WindowPosition = ImGui.GetWindowPos();
-                    windowSettings.WindowSize = ImGui.GetWindowSize();
+                    windowSettings.WindowSize = DpiScaling.ToUnscaled(ImGui.GetWindowSize());
                     IsOpened = false;
                 }
                 ImGui.PopFont();

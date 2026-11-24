@@ -138,6 +138,8 @@ namespace BPSR_ZDPS
             io.ConfigFlags |= ImGuiConfigFlags.ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
             io.ConfigViewportsNoAutoMerge = true; // If this is false, putting an ImGui window on top of an GLFW window will dock into it even if it's not shown
             io.ConfigViewportsNoTaskBarIcon = false;
+            io.ConfigDpiScaleFonts = true;
+            io.ConfigDpiScaleViewports = true;
 
             LoadFonts();
 
@@ -168,6 +170,7 @@ namespace BPSR_ZDPS
             InitWindows();
 
             Theme.VSDarkTheme();
+            DpiScaling.Initialize(guiContext);
 
             // Windows 11 does not properly update the task bar icon when instructed to, so you have to tell it multiple times
             using (var iconStream = assembly.GetManifestResourceStream(iconAssemblyPath))

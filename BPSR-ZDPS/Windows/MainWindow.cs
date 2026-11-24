@@ -77,16 +77,18 @@ namespace BPSR_ZDPS.Windows
             var io = ImGui.GetIO();
             var main_viewport = ImGui.GetMainViewport();
 
+            DpiScaling.BeginWindow("ZDPS", Settings.Instance.WindowSettings.MainWindow.WindowPosition);
+
             //ImGui.SetNextWindowPos(new Vector2(main_viewport.WorkPos.X + 200, main_viewport.WorkPos.Y + 120), ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowSize(DefaultWindowSize, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(DefaultWindowSize), ImGuiCond.FirstUseEver);
 
             if (!Settings.Instance.AllowEncounterSavingPausingInOpenWorld)
             {
-                ImGui.SetNextWindowSizeConstraints(new Vector2(375, 150), new Vector2(ImGui.GETFLTMAX()));
+                ImGui.SetNextWindowSizeConstraints(new Vector2(375, 150) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
             }
             else
             {
-                ImGui.SetNextWindowSizeConstraints(new Vector2(400, 220), new Vector2(ImGui.GETFLTMAX()));
+                ImGui.SetNextWindowSizeConstraints(new Vector2(400, 220) * DpiScaling.Scale, new Vector2(ImGui.GETFLTMAX()));
             }
 
             var windowSettings = Settings.Instance.WindowSettings.MainWindow;
@@ -98,7 +100,7 @@ namespace BPSR_ZDPS.Windows
 
             if (windowSettings.WindowSize != new Vector2())
             {
-                ImGui.SetNextWindowSize(windowSettings.WindowSize, ImGuiCond.FirstUseEver);
+                ImGui.SetNextWindowSize(DpiScaling.ToScaled(windowSettings.WindowSize), ImGuiCond.FirstUseEver);
             }
 
             if (NextWindowPosition != new Vector2())
@@ -109,7 +111,7 @@ namespace BPSR_ZDPS.Windows
 
             if (NextWindowSize != new Vector2())
             {
-                ImGui.SetNextWindowSize(NextWindowSize, ImGuiCond.Always);
+                ImGui.SetNextWindowSize(DpiScaling.ToScaledWindowSize(NextWindowSize), ImGuiCond.Always);
                 NextWindowSize = new Vector2();
             }
 
@@ -140,7 +142,7 @@ namespace BPSR_ZDPS.Windows
             }
 
             WindowPosition = ImGui.GetWindowPos();
-            WindowSize = ImGui.GetWindowSize();
+            WindowSize = DpiScaling.ToUnscaled(ImGui.GetWindowSize());
 
             DrawMenuBar();
 
@@ -288,7 +290,7 @@ namespace BPSR_ZDPS.Windows
 
                     bool isSelected = (SelectedTabIndex == i);
 
-                    ImGui.PushStyleVar(ImGuiStyleVar.FrameRounding, 5);
+                    ImGui.PushStyleVar(ImGuiStyleVar.FrameRounding, 5 * DpiScaling.Scale);
 
                     if (isSelected)
                     {
@@ -318,9 +320,9 @@ namespace BPSR_ZDPS.Windows
                     ImGui.PushStyleColor(ImGuiCol.ChildBg, Colors.Goldenrod_Transparent);
                     ImGui.BeginChild("##EncounterNotCurrentChild", ImGuiChildFlags.AutoResizeY);
                     ImGui.TextAligned(0.5f, -1, "Viewing Historical Encounter Data");
-                    ImGui.SetCursorPosX((ImGui.GetContentRegionAvail().X - 200) * 0.5f);
+                    ImGui.SetCursorPosX((ImGui.GetContentRegionAvail().X - 200 * DpiScaling.Scale) * 0.5f);
                     ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkGreen);
-                    if (ImGui.Button("Go To Current Encounter##GoToCurrentEncounterBtn", new Vector2(200, 0)))
+                    if (ImGui.Button("Go To Current Encounter##GoToCurrentEncounterBtn", new Vector2(200 * DpiScaling.Scale, 0)))
                     {
                         AppState.OpenedHistoricalEncounter = null;
                         AppState.ActiveEncounter = EncounterManager.Current;
@@ -342,9 +344,9 @@ namespace BPSR_ZDPS.Windows
                 {
                     ImGui.TextAligned(0.5f, -1, "Automatically resumes if you change maps.");
                 }
-                ImGui.SetCursorPosX((ImGui.GetContentRegionAvail().X - 200) * 0.5f);
+                ImGui.SetCursorPosX((ImGui.GetContentRegionAvail().X - 200 * DpiScaling.Scale) * 0.5f);
                 ImGui.PushStyleColor(ImGuiCol.Button, Colors.DarkGreen);
-                if (ImGui.Button("RESUME SAVING NOW##ResumeEncounterSavingBtn", new Vector2(200, 0)))
+                if (ImGui.Button("RESUME SAVING NOW##ResumeEncounterSavingBtn", new Vector2(200 * DpiScaling.Scale, 0)))
                 {
                     AppState.IsEncounterSavingPaused = false;
                 }
@@ -419,7 +421,7 @@ namespace BPSR_ZDPS.Windows
                 if (showForcehideContainersBtn)
                 {
                     ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
-                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                     ImGui.PushStyleColor(ImGuiCol.Text, EventTrackerWindow.ForceHideAllContainers ? Colors.Red * new Vector4(1, 1, 1, 0.75f) : Colors.White);
                     if (ImGui.MenuItem($"{(EventTrackerWindow.ForceHideAllContainers ? FASIcons.EyeSlash : FASIcons.Eye)}##ForceToggleVisibilityBtn"))
                     {
@@ -442,7 +444,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.BeginDisabled(AppState.IsBenchmarkMode);
 
                     ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
-                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                     ImGui.PushStyleColor(ImGuiCol.Text, (AppState.IsEncounterSavingPaused ? Colors.Red_Transparent : Colors.White));
                     if (ImGui.MenuItem($"{FASIcons.Pause}##PauseEncounterSavingBtn"))
                     {
@@ -457,7 +459,7 @@ namespace BPSR_ZDPS.Windows
                 }
 
                 ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.MenuItem($"{FASIcons.WindowMinimize}##MinimizeBtn"))
                 {
                     Utils.MinimizeWindow();
@@ -465,7 +467,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.PopFont();
 
                 ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, AppState.MousePassthrough ? 0.0f : 1.0f, AppState.MousePassthrough ? 0.0f : 1.0f, windowSettings.TopMost ? 1.0f : 0.5f));
                 if (ImGui.MenuItem($"{FASIcons.Thumbtack}##TopMostBtn"))
                 {
@@ -494,7 +496,7 @@ namespace BPSR_ZDPS.Windows
                     ImGui.BeginDisabled(AppState.IsEncounterSavingPaused || AppState.IsBenchmarkMode);
 
                     ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
-                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                    ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                     if (ImGui.MenuItem($"{FASIcons.Skull}##CallWipeBtn"))
                     {
                         CallWipeEncounter();
@@ -509,7 +511,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.BeginDisabled(AppState.IsEncounterSavingPaused);
 
                 ImGui.SetCursorPosX(MainMenuBarSize.X - (settingsWidth * btnIdx--));
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.MenuItem($"{FASIcons.Rotate}##StartNewEncounterBtn"))
                 {
                     CreateNewEncounter();
@@ -520,7 +522,7 @@ namespace BPSR_ZDPS.Windows
                 ImGui.EndDisabled();
 
                 ImGui.SetCursorPosX(MainMenuBarSize.X - settingsWidth);
-                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetFontSize());
+                ImGui.PushFont(HelperMethods.Fonts["FASIcons"], ImGui.GetStyle().FontSizeBase);
                 if (ImGui.BeginMenu($"{FASIcons.Gear}##OptionsMenu"))
                 {
                     if (SettingsRunOnceDelayedPerOpen == 0)
