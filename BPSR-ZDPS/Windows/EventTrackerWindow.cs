@@ -748,7 +748,13 @@ namespace BPSR_ZDPS.Windows
                             //eventTracker.EventData.Add(e.EntityUuid, eventData);
                         }
 
-                        if (((eventTracker.TrackedBuffId == e.BaseId || (eventTracker.OverrideTrackedId ? eventTracker.OverrideTrackedIdValue == e.BaseId : false)) && (eventTracker.EventSourceMustBeSelf ? AppState.PlayerUUID == e.FireUuid : true))
+                        int actualTrackedId = eventTracker.TrackedBuffId;
+                        if (eventTracker.OverrideTrackedId)
+                        {
+                            actualTrackedId = eventTracker.OverrideTrackedIdValue;
+                        }
+
+                        if ((actualTrackedId == e.BaseId && (eventTracker.EventSourceMustBeSelf ? AppState.PlayerUUID == e.FireUuid : true))
                             || (eventData != null && e.BuffUuid != 0 && eventData.Uuid == e.BuffUuid))
                         {
                             if (eventTracker.BuffEvents.Contains(e.BuffEventType))
