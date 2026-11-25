@@ -111,6 +111,7 @@ namespace BPSR_ZDPS.Windows
         static bool aggressiveExceptionDebugLogging;
 
         static bool splitSeason4RaidsWorkaround;
+        static bool splitDarkMistFortressMobbingPhaseWorkaround;
 
         // External Settings
         static bool externalBPTimerEnabled;
@@ -1739,6 +1740,16 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text(AppStrings.GetLocalized("Settings_SplitDarkMistFortressMobbingPhaseWorkaround"));
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##SplitDarkMistFortressMobbingPhaseWorkaround", ref splitDarkMistFortressMobbingPhaseWorkaround);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, works around the game bug with Dark Mist Fortress not sending the correct state when clearing the mobbing phase.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
                         ImGui.EndChild();
                         ImGui.EndTabItem();
                     }
@@ -1914,6 +1925,7 @@ namespace BPSR_ZDPS.Windows
             aggressiveExceptionDebugLogging = Settings.Instance.AggressiveExceptionDebugLogging;
 
             splitSeason4RaidsWorkaround = Settings.Instance.SplitSeason4RaidsWorkaround;
+            splitDarkMistFortressMobbingPhaseWorkaround = Settings.Instance.SplitDarkMistFortressMobbingPhaseWorkaround;
 
             // External
             externalBPTimerEnabled = Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled;
@@ -2045,6 +2057,7 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.AggressiveExceptionDebugLogging = aggressiveExceptionDebugLogging;
 
             Settings.Instance.SplitSeason4RaidsWorkaround = splitSeason4RaidsWorkaround;
+            Settings.Instance.SplitDarkMistFortressMobbingPhaseWorkaround = splitDarkMistFortressMobbingPhaseWorkaround;
 
             // External
             Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled = externalBPTimerEnabled;

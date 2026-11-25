@@ -23,6 +23,7 @@ namespace BPSR_ZDPS
 
         public static int CurrentBattleId = 0;
         public static uint LevelMapId { get; private set; }
+        public static int LevelPlayType { get; private set; }
         public static bool AllowSceneUpdate = true;
 
         public static string SceneName { get; private set; }
@@ -367,6 +368,11 @@ namespace BPSR_ZDPS
                     else
                     {
                         SceneName = "";
+                    }
+
+                    if (dungeon != null)
+                    {
+                        LevelPlayType = dungeon.PlayType;
                     }
                 }
             }
@@ -916,6 +922,24 @@ namespace BPSR_ZDPS
                         {
                             EncounterManager.StopEncounter();
                             EncounterManager.StartEncounter(false, EncounterStartReason.Restart);
+                        }
+                        break;
+                    case "50140014":
+                        if (Settings.Instance.SplitDarkMistFortressMobbingPhaseWorkaround)
+                        {
+                            switch (EncounterManager.LevelMapId)
+                            {
+                                case 1331: // Dark Mist Fortress (Normal)
+                                case 1332: // Dark Mist Fortress (Hard)
+                                case 1333: // Dark Mist Fortress (Master)
+                                case 1343: // Dark Mist Fortress S4 (Hard)
+                                case 1344: // Dark Mist Fortress S4 (Master)
+                                    BattleStateMachine.ManualDeferNewObjectiveStart();
+                                    //EncounterManager.StartEncounter(false, EncounterStartReason.NewObjective);
+                                    break;
+                                default:
+                                    break;
+                            }
                         }
                         break;
                     default:

@@ -240,6 +240,13 @@ namespace BPSR_ZDPS
             DeferredEncounterEndFinalData = data;
         }
 
+        public static void ManualDeferNewObjectiveStart()
+        {
+            Log.Debug("ManualDeferNewObjectiveStart - deferring a New Objective EncounterStart");
+            DeferredEncounterStartReason = EncounterStartReason.NewObjective;
+            DeferredEncounterStartTime = DateTime.Now.AddSeconds(1);
+        }
+
         public static void CheckDeferredCalls()
         {
             if (AppState.IsBenchmarkMode && AppState.HasBenchmarkBegun)
