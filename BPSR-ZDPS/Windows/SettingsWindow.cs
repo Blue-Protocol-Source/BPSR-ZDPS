@@ -111,6 +111,8 @@ namespace BPSR_ZDPS.Windows
         static bool aggressiveExceptionDebugLogging;
 
         static bool splitSeason4RaidsWorkaround;
+        static bool splitSeason4RaidWipesWorkaround;
+        static bool splitSeason4RaidWipes2Workaround;
         static bool splitDarkMistFortressMobbingPhaseWorkaround;
 
         // External Settings
@@ -1741,6 +1743,26 @@ namespace BPSR_ZDPS.Windows
                         ImGui.Unindent();
 
                         ImGui.AlignTextToFramePadding();
+                        ImGui.Text(AppStrings.GetLocalized("Settings_SplitSeason4RaidWipesWorkaround"));
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##SplitSeason4RaidWipesWorkaround", ref splitSeason4RaidWipesWorkaround);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, works around the game bug with Season 4 Raid Quest States preventing wipes from tracking correctly.\nThis should be Enabled until the game bug is resolved.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text(AppStrings.GetLocalized("Settings_SplitSeason4RaidWipes2Workaround"));
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##SplitSeason4RaidWipes2Workaround", ref splitSeason4RaidWipes2Workaround);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, works around the game bug with Season 4 Raid Quest States preventing wipes from tracking correctly.\nThis is yet another method for trying to ensure all wipes are detected.\nThis should be Enabled until the game bug is resolved.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
+                        ImGui.AlignTextToFramePadding();
                         ImGui.Text(AppStrings.GetLocalized("Settings_SplitDarkMistFortressMobbingPhaseWorkaround"));
                         ImGui.SameLine();
                         ImGui.Checkbox("##SplitDarkMistFortressMobbingPhaseWorkaround", ref splitDarkMistFortressMobbingPhaseWorkaround);
@@ -1925,6 +1947,8 @@ namespace BPSR_ZDPS.Windows
             aggressiveExceptionDebugLogging = Settings.Instance.AggressiveExceptionDebugLogging;
 
             splitSeason4RaidsWorkaround = Settings.Instance.SplitSeason4RaidsWorkaround;
+            splitSeason4RaidWipesWorkaround = Settings.Instance.SplitSeason4RaidWipesWorkaround;
+            splitSeason4RaidWipes2Workaround = Settings.Instance.SplitSeason4RaidWipes2Workaround;
             splitDarkMistFortressMobbingPhaseWorkaround = Settings.Instance.SplitDarkMistFortressMobbingPhaseWorkaround;
 
             // External
@@ -2057,6 +2081,8 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.AggressiveExceptionDebugLogging = aggressiveExceptionDebugLogging;
 
             Settings.Instance.SplitSeason4RaidsWorkaround = splitSeason4RaidsWorkaround;
+            Settings.Instance.SplitSeason4RaidWipesWorkaround = splitSeason4RaidWipesWorkaround;
+            Settings.Instance.SplitSeason4RaidWipes2Workaround = splitSeason4RaidWipes2Workaround;
             Settings.Instance.SplitDarkMistFortressMobbingPhaseWorkaround = splitDarkMistFortressMobbingPhaseWorkaround;
 
             // External

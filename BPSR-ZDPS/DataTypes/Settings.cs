@@ -104,6 +104,8 @@ public class Settings
 
     // TODO: Remove workarounds as game bugs are resolved
     public bool SplitSeason4RaidsWorkaround { get; set; } = true;
+    public bool SplitSeason4RaidWipesWorkaround { get; set; } = true;
+    public bool SplitSeason4RaidWipes2Workaround { get; set; } = true;
     public bool SplitDarkMistFortressMobbingPhaseWorkaround { get; set; } = true;
 
     public ChatSettings Chat { get; set; } = new();

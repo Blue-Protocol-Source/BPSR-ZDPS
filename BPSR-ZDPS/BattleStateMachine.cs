@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZLinq;
 using Zproto;
 
 namespace BPSR_ZDPS
@@ -107,6 +108,41 @@ namespace BPSR_ZDPS
 
             DungeonTargetDataHistory.Enqueue(newDungeonTargetData);
             Log.Information($"{DateTime.Now} - BattleStateMachine.DungeonTargetDataHistoryAdd: TargetId={dungeonTargetData.TargetId}, Complete={dungeonTargetData.Complete}, Nums={dungeonTargetData.Nums}");
+
+            // HACK: Yet another (again) method for trying to identify Season 4 Raid wipes as they are not consistent at all for some reason
+            if (Settings.Instance.SplitSeason4RaidWipesWorkaround && EncounterManager.LevelPlayType == 18)
+            {
+                if (dungeonTargetData.TargetId == 1301101 && EncounterManager.Current != null && EncounterManager.Current.HasStatsBeenRecorded())
+                {
+                    switch (EncounterManager.LevelMapId)
+                    {
+                        case 13031:
+                        case 13032:
+                        case 13033:
+                            {
+                                var bosses = EncounterManager.Current.Entities.AsValueEnumerable().Where(x => x.Value.MonsterType == EMonsterType.Boss);
+                                if (bosses.Count() > 0)
+                                {
+                                    foreach (var boss in bosses)
+                                    {
+                                        if (boss.Value.TotalDeaths == 0)
+                                        {
+                                            // Player has quest state to be at the lobby again, but no boss in the encounter was killed
+                                            // This is most likely going to have been a wipe that happened
+
+                                            EncounterManager.Current.SetWipeState(true);
+                                            EncounterManager.StartEncounter(false, EncounterStartReason.Wipe);
+                                            return;
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                }
+            }
 
             if (DungeonTargetDataHistory.Count > 2 && dungeonTargetData.Complete == 0 && dungeonTargetData.Nums == 0)
             {

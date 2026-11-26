@@ -1975,6 +1975,62 @@ namespace BPSR_ZDPS
                             }
                         }
 
+                        if (EncounterManager.LevelPlayType == 18 && foundWipeMarkerUUID > 0 && foundWipeMarker != null)
+                        {
+                            // HACK: This may prove safe enough for now but it's not reliable long term and the reason why this wipe pattern isn't working in the raids should be found
+                            // The pattern does occur but it's possible buff history may push it out too soon.
+                            if (Settings.Instance.SplitSeason4RaidWipesWorkaround)
+                            {
+                                if (foundWipeMarker.EventAddTime.Add(TimeSpan.FromSeconds(1.0)).TotalSeconds <= currentEncounterDuration.TotalSeconds)
+                                {
+                                    Log.Debug("Encounter Wipe Reset buff was found and duration was hit (in Raid), creating a new Encounter now");
+                                    EncounterManager.Current.SetWipeState(true);
+                                    EncounterManager.StartEncounter(false, EncounterStartReason.Wipe);
+                                    return;
+                                }
+                            }
+                        }
+
+                        // HACK: Yet another method for trying to identify Season 4 Raid wipes as they are not consistent at all for some reason
+                        if (Settings.Instance.SplitSeason4RaidWipesWorkaround && EncounterManager.LevelPlayType == 18)
+                        {
+                            switch (EncounterManager.LevelMapId)
+                            {
+                                case 13031:
+                                case 13032:
+                                case 13033:
+                                    {
+                                        if (foundDeathMarkerUUID > 0 || foundReviveMarkerUUID > 0)
+                                        {
+                                            foreach (var history in BattleStateMachine.DungeonTargetDataHistory.AsValueEnumerable())
+                                            {
+                                                if (history.Key.TargetId == 1301101)
+                                                {
+                                                    var duration = (DateTime.Now - history.Value).Duration();
+                                                    if (duration <= TimeSpan.FromSeconds(10))
+                                                    {
+                                                        // Player has died recently and the boss selection target was within the past 10 seconds
+                                                        // This is almost certainly a wipe that has happened
+
+                                                        Log.Debug("Encounter Death or Revive buff was found and Dungeon Target Selection was hit within duration for a wipe, creating a new Encounter now");
+                                                        EncounterManager.Current.SetWipeState(true);
+                                                        EncounterManager.StartEncounter(false, EncounterStartReason.Wipe);
+                                                        return;
+                                                    }
+                                                    else
+                                                    {
+                                                        Log.Debug($"Encounter Death ({foundDeathMarkerUUID}) or Revive ({foundReviveMarkerUUID}) buff found but Season 4 Raid timeout was not in range: {DateTime.Now} - {history.Value} : {duration}");
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        break;
+                                    }
+                                default:
+                                    break;
+                            }
+                        }
+
                         if (foundOtherWipeMarker || (foundDeathMarkerUUID > 0 && foundWipeMarkerUUID > 0 && foundDeathMarkerUUID < foundWipeMarkerUUID) && foundWipeMarker != null)
                         {
                             // TODO: Commented out second safety condition for now, will need to unify DateTimes across the board to prevent DST and time-zone differences from impacting it
@@ -1991,12 +2047,17 @@ namespace BPSR_ZDPS
 
                             // This buff indicates a wipe is actively occurring.
                             // There are a few events that will occur over the next several seconds so we delay to let them register into the current event
-                            if (foundWipeMarker.EventAddTime.Add(TimeSpan.FromSeconds(1.0)).TotalSeconds <= currentEncounterDuration.TotalSeconds)
+                            var delayTime = foundWipeMarker.EventAddTime.Add(TimeSpan.FromSeconds(1.0)).TotalSeconds;
+                            if (delayTime <= currentEncounterDuration.TotalSeconds)
                             {
                                 Log.Debug($"Encounter Wipe Reset buff was found and duration was hit, creating a new Encounter now");
                                 EncounterManager.Current.SetWipeState(true);
                                 EncounterManager.StartEncounter(false, EncounterStartReason.Wipe);
                                 return;
+                            }
+                            else
+                            {
+                                Log.Debug($"Encounter Wipe Reset buff was found but delay has not completed ({delayTime} > {currentEncounterDuration.TotalSeconds})");
                             }
                         }
                     }
