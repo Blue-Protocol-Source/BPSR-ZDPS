@@ -87,6 +87,9 @@ namespace BPSR_ZDPS
 
             netCap.RegisterNotifyHandler((ulong)EServiceId.WorldLoginNtf, (uint)BPSR_ZDPSLib.ServiceMethods.WorldLoginNtf.NotifyEnterWorld, ProcessNotifyEnterWorld);
 
+            netCap.RegisterProxyHandler((uint)EProxyServiceId.World, (uint)BPSR_ZDPSLib.ServiceMethods.WorldProxy.UseSlot, ProcessUseSlot);
+            netCap.RegisterProxyReturnHandler((uint)EProxyServiceId.World, (uint)BPSR_ZDPSLib.ServiceMethods.WorldProxy.UseSlot, ProcessUseSlot);
+
             // Uncomment to debug print unhandled events
             //netCap.RegisterUnhandledHandler(ProcessUnhandled);
             //netCap.RegisterUnhandledProxyHandler(ProcessProxyUnhandled);
@@ -196,6 +199,25 @@ namespace BPSR_ZDPS
             if (payloadBuffer.Length == 0)
             {
                 return;
+            }
+        }
+
+        public static void ProcessUseSlot(ReadOnlySpan<byte> payloadBuffer, uint id, ExtraPacketData extraData)
+        {
+            if (payloadBuffer.Length == 0)
+            {
+                return;
+            }
+
+            var data = World.Types.UseSlot.Parser.ParseFrom(payloadBuffer);
+            if (data != null && data.VRequest != null && data.VRequest.UseType == EUseSlotType.UseSlotTypeSkill)
+            {
+                var vExtra = UseSkillParam.Parser.ParseFrom(data.VRequest.ExtraData);
+                var dto = DateTimeOffset.FromUnixTimeMilliseconds(vExtra.BeginTime);
+                if (EncounterManager.Current != null)
+                {
+                    EncounterManager.Current.NotifyUseSlotSkill(new UseSlotSkillEventArgs() { CasterUuid = AppState.PlayerUUID, SkillId = vExtra.Skillid, BeginDateTime = dto.LocalDateTime});
+                }
             }
         }
 

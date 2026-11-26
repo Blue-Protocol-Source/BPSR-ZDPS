@@ -547,6 +547,8 @@ namespace BPSR_ZDPS
         public event DamageEventHandler DamageEvent;
         public delegate void HealingEventHandler(object sender, HealingEventArgs e);
         public event HealingEventHandler HealingEvent;
+        public delegate void UseSlotSkillEventHandler(object sender, UseSlotSkillEventArgs e);
+        public event UseSlotSkillEventHandler UseSlotSkillEvent;
 
         public EncounterExData ExData { get; set; } = new();
         public byte[] ExDataBlob { get; set; }
@@ -1059,8 +1061,11 @@ namespace BPSR_ZDPS
 
         public void RegisterSkillActivation(long uuid, int skillId)
         {
-            var entity = GetOrCreateEntity(uuid);
-            entity.RegisterSkillActivation(skillId);
+            if (skillId != 0)
+            {
+                var entity = GetOrCreateEntity(uuid);
+                entity.RegisterSkillActivation(skillId);
+            }
         }
 
         public void AddDamage(
@@ -1254,9 +1259,19 @@ namespace BPSR_ZDPS
             GetOrCreateEntity(entityUuid).NotifyBuffEvent(buffEventType, buffUuid, baseId, level, fireUuid, entityCasterName, layer, duration, sourceConfigId, DateTime.Now.Subtract(EncounterManager.Current.StartTime), creationTime, extraPacketData);
         }
 
+        public void NotifyUseSlotSkill(UseSlotSkillEventArgs e)
+        {
+            OnUseSlotSkill(e);
+        }
+
         protected virtual void OnSkillActivated(SkillActivatedEventArgs e)
         {
             SkillActivated?.Invoke(this, e);
+        }
+
+        protected virtual void OnUseSlotSkill(UseSlotSkillEventArgs e)
+        {
+            UseSlotSkillEvent?.Invoke(this, e);
         }
 
         protected virtual void OnBossHpUpdated(object sender, HpUpdatedEventArgs e)
@@ -1346,6 +1361,7 @@ namespace BPSR_ZDPS
             SceneEvent = null;
             DamageEvent = null;
             HealingEvent = null;
+            UseSlotSkillEvent = null;
 
             RemoveEntityHandlers();
         }
@@ -1858,6 +1874,11 @@ namespace BPSR_ZDPS
 
         public void RegisterSkillActivation(int skillId)
         {
+            if (skillId == 0)
+            {
+                return;
+            }
+
             if (!SkillMetrics.TryGetValue(skillId, out var container))
             {
                 container = new();
@@ -2492,6 +2513,14 @@ namespace BPSR_ZDPS
         public long CasterUuid { get; set; }
         public int SkillId { get; set; }
         public DateTime ActivationDateTime { get; set; }
+        public bool IsUseSlot { get; set; } = false;
+    }
+
+    public class UseSlotSkillEventArgs : EventArgs
+    {
+        public long CasterUuid { get; set; }
+        public int SkillId { get; set; }
+        public DateTime BeginDateTime { get; set; }
     }
 
     public class HpUpdatedEventArgs : EventArgs

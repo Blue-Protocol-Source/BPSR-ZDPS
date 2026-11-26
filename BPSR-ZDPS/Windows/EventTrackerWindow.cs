@@ -516,6 +516,7 @@ namespace BPSR_ZDPS.Windows
             e.Encounter.SceneEvent -= Encounter_SceneEvent;
             //e.Encounter.DamageEvent -= Encounter_DamageEvent;
             //e.Encounter.HealingEvent -= Encounter_HealingEvent;
+            e.Encounter.UseSlotSkillEvent -= Encounter_UseSlotSkillEvent;
         }
 
         private static void EncounterManager_EncounterStart(EncounterStartEventArgs e)
@@ -568,6 +569,8 @@ namespace BPSR_ZDPS.Windows
             EncounterManager.Current.DamageEvent += Encounter_DamageEvent;
             EncounterManager.Current.HealingEvent -= Encounter_HealingEvent;
             EncounterManager.Current.HealingEvent += Encounter_HealingEvent;
+            EncounterManager.Current.UseSlotSkillEvent -= Encounter_UseSlotSkillEvent;
+            EncounterManager.Current.UseSlotSkillEvent += Encounter_UseSlotSkillEvent;
         }
 
         public static void AddDebugLog(string log)
@@ -1025,6 +1028,18 @@ namespace BPSR_ZDPS.Windows
             }
         }
 
+        private static void Encounter_UseSlotSkillEvent(object sender, UseSlotSkillEventArgs e)
+        {
+            var args = new SkillActivatedEventArgs()
+            {
+                CasterUuid = e.CasterUuid,
+                SkillId = e.SkillId,
+                ActivationDateTime = e.BeginDateTime,
+                IsUseSlot = true,
+            };
+            Encounter_SkillActivated(sender, args);
+        }
+
         private static void Encounter_SkillActivated(object sender, SkillActivatedEventArgs e)
         {
             foreach (var eventContainer in EventTrackerContainers)
@@ -1096,6 +1111,25 @@ namespace BPSR_ZDPS.Windows
                     }
 
                     bool shouldHandle = CheckIfShouldHandleEvent(eventTracker, e.CasterUuid);
+
+                    if (e.IsUseSlot)
+                    {
+                        if (!eventTracker.UseSlotSkillEvent)
+                        {
+                            continue;
+                        }
+                        if (eventTracker.TrackedEntityType != ETrackedEntityType.Self)
+                        {
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        if (eventTracker.UseSlotSkillEvent)
+                        {
+                            continue;
+                        }
+                    }
 
                     if (shouldHandle)
                     {
@@ -1307,6 +1341,16 @@ namespace BPSR_ZDPS.Windows
                                 }
                             }
 
+                            eventData.Layers += 1;
+
+                            if (eventTracker.ShouldResetLayersAtMaxValue)
+                            {
+                                if (eventTracker.ResetLayersAtMaxValue > 0 && eventData.Layers >= eventTracker.ResetLayersAtMaxValue)
+                                {
+                                    eventData.Layers = 0;
+                                }
+                            }
+
                             if (eventTracker.OverrideDuration)
                             {
                                 eventData.Cooldown = new(eventTracker.DurationOverrideValue, 0, 0);
@@ -1319,7 +1363,7 @@ namespace BPSR_ZDPS.Windows
 
                             if (eventTracker.DebugLogTracker)
                             {
-                                AddDebugLog($"{DateTime.Now} Skill Event SkillActivated ({e.SkillId}) FromUUID={e.CasterUuid} Name={eventTracker.Name} MaxCharges={skillEventData.MaxCharges} ChargesTimesCount={skillEventData.ChargeTimes.Count} AppliedDur={skillEventData.Cooldown.BaseDuration}");
+                                AddDebugLog($"{DateTime.Now} Skill Event SkillActivated ({e.SkillId}) FromUUID={e.CasterUuid} Name={eventTracker.Name} MaxCharges={skillEventData.MaxCharges} ChargesTimesCount={skillEventData.ChargeTimes.Count} AppliedDur={skillEventData.Cooldown.BaseDuration} Layers={eventData.Layers} IsUseSlot={e.IsUseSlot}");
                             }
 
                             eventData.Cooldown.StartOrUpdate(e.ActivationDateTime.ToUniversalTime());
@@ -1759,6 +1803,16 @@ namespace BPSR_ZDPS.Windows
                                 eventData.Cooldown = new(bossDbm.Duration, 0, 0);
                             }
 
+                            eventData.Layers += 1;
+
+                            if (eventTracker.ShouldResetLayersAtMaxValue)
+                            {
+                                if (eventTracker.ResetLayersAtMaxValue > 0 && eventData.Layers >= eventTracker.ResetLayersAtMaxValue)
+                                {
+                                    eventData.Layers = 0;
+                                }
+                            }
+
                             if (eventData.Cooldown == null)
                             {
                                 eventData.Cooldown = new(0, 0, 0);
@@ -1769,7 +1823,7 @@ namespace BPSR_ZDPS.Windows
 
                             if (eventTracker.DebugLogTracker)
                             {
-                                DebugEventTrackerLog.Enqueue($"{DateTime.Now} Skill Event SceneEvent [BossWarning] ({bossDbm.SkillId}) FromUUID={bossUuid} Name={eventTracker.Name} AppliedDur={eventData.Cooldown.BaseDuration} ServerTime={serverTime}");
+                                DebugEventTrackerLog.Enqueue($"{DateTime.Now} Skill Event SceneEvent [BossWarning] ({bossDbm.SkillId}) FromUUID={bossUuid} Name={eventTracker.Name} AppliedDur={eventData.Cooldown.BaseDuration} ServerTime={serverTime} Layers={eventData.Layers}");
                             }
 
                             // TODO: Currently we're reusing the BuffType to turn this bar red
@@ -1854,6 +1908,16 @@ namespace BPSR_ZDPS.Windows
                                 }
                             }
 
+                            eventData.Layers += 1;
+
+                            if (eventTracker.ShouldResetLayersAtMaxValue)
+                            {
+                                if (eventTracker.ResetLayersAtMaxValue > 0 && eventData.Layers >= eventTracker.ResetLayersAtMaxValue)
+                                {
+                                    eventData.Layers = 0;
+                                }
+                            }
+
                             if (eventTracker.OverrideDuration)
                             {
                                 eventData.Cooldown = new(eventTracker.DurationOverrideValue, 0, 0);
@@ -1868,7 +1932,7 @@ namespace BPSR_ZDPS.Windows
 
                             if (eventTracker.DebugLogTracker)
                             {
-                                DebugEventTrackerLog.Enqueue($"{DateTime.Now} Skill Event SceneEvent [NoticeTip] ({noticeTip.MessageId}) FromUUID={bossUuid} Name={eventTracker.Name} AppliedDur={eventData.Cooldown.BaseDuration}");
+                                DebugEventTrackerLog.Enqueue($"{DateTime.Now} Skill Event SceneEvent [NoticeTip] ({noticeTip.MessageId}) FromUUID={bossUuid} Name={eventTracker.Name} AppliedDur={eventData.Cooldown.BaseDuration} Layers={eventData.Layers}");
                             }
 
                             eventData.Cooldown.StartOrUpdate(startTime);
@@ -1985,7 +2049,7 @@ namespace BPSR_ZDPS.Windows
 
                             if (eventTracker.DebugLogTracker)
                             {
-                                DebugEventTrackerLog.Enqueue($"{DateTime.Now} Damage Event ({e.SkillId}) AttackerUUID={e.AttackerUuid} TargetUUID={e.TargetUuid} HitEventId={e.HitEventId} IsKillingBlow={e.IsKillingBlow}");
+                                DebugEventTrackerLog.Enqueue($"{DateTime.Now} Damage Event ({e.SkillId}) AttackerUUID={e.AttackerUuid} TargetUUID={e.TargetUuid} HitEventId={e.HitEventId} IsKillingBlow={e.IsKillingBlow} Layers={eventData.Layers}");
                             }
 
                             // TODO: Currently we're reusing the BuffType to turn this bar red
@@ -2114,7 +2178,7 @@ namespace BPSR_ZDPS.Windows
 
                             if (eventTracker.DebugLogTracker)
                             {
-                                DebugEventTrackerLog.Enqueue($"{DateTime.Now} Healing Event ({e.SkillId}) AttackerUUID={e.AttackerUuid} TargetUUID={e.TargetUuid} HitEventId={e.HitEventId}");
+                                DebugEventTrackerLog.Enqueue($"{DateTime.Now} Healing Event ({e.SkillId}) AttackerUUID={e.AttackerUuid} TargetUUID={e.TargetUuid} HitEventId={e.HitEventId} Layers={eventData.Layers}");
                             }
 
                             // TODO: Currently we're reusing the BuffType to turn this bar red
@@ -6098,6 +6162,12 @@ namespace BPSR_ZDPS.Windows
             ImGui.Checkbox("##EventTargetMustBeSelf", ref ActiveTrackedEventEntry.EventTargetMustBeSelf);
             ImGui.SetItemTooltip("Only applies to DamageEvent and HealingEvent.");
 
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted("Use Slot Skill Event:");
+            ImGui.SameLine();
+            ImGui.Checkbox("##UseSlotSkillEvent", ref ActiveTrackedEventEntry.UseSlotSkillEvent);
+            ImGui.SetItemTooltip("Only works for SkillCast Events and when 'Who To Track' is 'Self'.\nMakes it possible to accurately track the Skill Cast Event even when animation canceling.");
+
             ImGui.NewLine();
 
             ImGui.AlignTextToFramePadding();
@@ -8434,6 +8504,7 @@ namespace BPSR_ZDPS.Windows
         public int TrackedSkillId = 0;
         public List<ESkillEventTrackingType> SkillEvents = new();
         public bool UseBossDbmCdDuration = false;
+        public bool UseSlotSkillEvent = false;
 
         public bool OverrideTrackedId = false;
         public int OverrideTrackedIdValue = 0;
