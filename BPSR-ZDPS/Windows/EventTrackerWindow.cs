@@ -6278,6 +6278,26 @@ namespace BPSR_ZDPS.Windows
             ImGui.Checkbox("Use Boss Warning Cooldown Duration", ref ActiveTrackedEventEntry.UseBossDbmCdDuration);
             ImGui.SetItemTooltip("Uses the Cooldown Duration reported in the Boss Skill Warning table.");
 
+            ImGui.Checkbox("Ignore Duration", ref ActiveTrackedEventEntry.IgnoreCooldownDuration);
+            ImGui.SetItemTooltip("The duration of the Tracker will be ignored. This may prevent some Events from triggering.");
+
+            ImGui.BeginDisabled(!ActiveTrackedEventEntry.IgnoreCooldownDuration);
+            ImGui.Indent();
+            ImGui.Checkbox("Use Layers For Duration", ref ActiveTrackedEventEntry.UseLayersForDuration);
+            ImGui.SetItemTooltip("The Skill's Layers count will be used to indicate progress via the Duration Progress Bar.");
+            if (ActiveTrackedEventEntry.UseLayersForDuration)
+            {
+                ImGui.Indent();
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted("Layers Duration Max Value:");
+                ImGui.SameLine();
+                ImGui.InputInt("##LayersForDurationMaxValue", ref ActiveTrackedEventEntry.LayersForDurationMaxValue, ImGuiInputTextFlags.CharsDecimal);
+                ImGui.SetItemTooltip("This value will be used as the max target for the Skill's Layer count to reach.");
+                ImGui.Unindent();
+            }
+            ImGui.Unindent();
+            ImGui.EndDisabled();
+
             ImGui.Checkbox("Should Reset Layers At Max Value", ref ActiveTrackedEventEntry.ShouldResetLayersAtMaxValue);
             ImGui.SetItemTooltip("If when the Layers Count reaches a specific value, the value gets reset back to 0.");
             if (ActiveTrackedEventEntry.ShouldResetLayersAtMaxValue)
