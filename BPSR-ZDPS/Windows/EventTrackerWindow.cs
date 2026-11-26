@@ -1215,7 +1215,7 @@ namespace BPSR_ZDPS.Windows
                                 }
 
                                 // TODO: MaxEnergyChargeNum can be Negative to indicate the skill starts with no extra charges, but can gain them
-                                if (matched.MaxEnergyChargeNum > 0)
+                                if (matched.MaxEnergyChargeNum > 0 && !eventTracker.SkipSkillChargeHandling)
                                 {
                                     // TODO: When Charges are used, need to store the activation of each one
                                     // This will allow us to calculate per-charge remaining time
@@ -3021,7 +3021,7 @@ namespace BPSR_ZDPS.Windows
                                         ImGui.PushStyleColor(ImGuiCol.Text, eventTracker.LayersTextColor);
                                     }
                                     ImGui.PushFont(null, eventTracker.LayerSize);
-                                    if (skillEventData != null)
+                                    if (skillEventData != null && !eventTracker.SkipSkillChargeHandling)
                                     {
                                         int chargesInQueue = skillEventData.ChargeTimes.Count;
                                         foreach (var chargeTime in skillEventData.ChargeTimes)
@@ -3128,7 +3128,7 @@ namespace BPSR_ZDPS.Windows
                                         ImGui.PushStyleColor(ImGuiCol.Text, eventTracker.LayersTextColor);
                                     }
                                     ImGui.PushFont(null, eventTracker.LayerSize);
-                                    if (skillEventData != null)
+                                    if (skillEventData != null && !eventTracker.SkipSkillChargeHandling)
                                     {
                                         int chargesInQueue = skillEventData.ChargeTimes.Count;
                                         foreach (var chargeTime in skillEventData.ChargeTimes)
@@ -3239,7 +3239,7 @@ namespace BPSR_ZDPS.Windows
                                             remainingPct = 1.0f - eventData.Cooldown.GetProgressPercent();
                                         }
 
-                                        if (eventData.Cooldown != null && skillEventData != null && skillEventData.ChargeTimes.Count > 0)
+                                        if (eventData.Cooldown != null && skillEventData != null && skillEventData.ChargeTimes.Count > 0 && !eventTracker.SkipSkillChargeHandling)
                                         {
                                             DateTime? lastFinish = null;
                                             foreach (var chargeTime in skillEventData.ChargeTimes)
@@ -6261,6 +6261,9 @@ namespace BPSR_ZDPS.Windows
                 ImGui.EndCombo();
             }
 
+            ImGui.Checkbox("Skip Skill Charge Handling", ref ActiveTrackedEventEntry.SkipSkillChargeHandling);
+            ImGui.SetItemTooltip("Ignore 'Charge' events and behavior to allow using Layers instead.\nUseful for tracking number of times a skill was cast.");
+
             ImGui.NewLine();
 
             ImGui.Checkbox("Override Duration", ref ActiveTrackedEventEntry.OverrideDuration);
@@ -8627,6 +8630,7 @@ namespace BPSR_ZDPS.Windows
         public EChargeCooldownType ChargeCooldownType = EChargeCooldownType.ChargeCooldownStartsAfterPrevious;
         public bool ShowChargeCooldownsAsSingleBar = true;
         public EChargeDurationDisplayType ChargeDurationDisplayType = EChargeDurationDisplayType.CombinedTotal;
+        public bool SkipSkillChargeHandling = false;
 
         public bool DebugLogTracker = false;
 
