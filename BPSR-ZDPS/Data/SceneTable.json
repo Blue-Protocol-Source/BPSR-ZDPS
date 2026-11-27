@@ -148,6 +148,7 @@
     "ShowMiniMap": 0,
     "MiniMapRatio": 50,
     "SubScene": [
+      8,
       10
     ],
     "AmbEvent": "",
@@ -14584,6 +14585,266 @@
     "HaveWater": false,
     "FootstepFxOverride": []
   },
+  "14003": {
+    "Id": 14003,
+    "Name": "Nightveil Woods (Ice)",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 14002,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 256.0,
+      "y": 256.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 26,
+    "ReviveTableId": [
+      1
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_TowerDefense_Halloween",
+      "BGM_TowerDefense_Halloween_Explore"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 15,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "14004": {
+    "Id": 14004,
+    "Name": "Nightveil Woods (Fire)",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 14002,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 256.0,
+      "y": 256.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 17,
+    "ReviveTableId": [
+      1
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_TowerDefense_Halloween",
+      "BGM_TowerDefense_Halloween_Explore"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 15,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "14005": {
+    "Id": 14005,
+    "Name": "Nightveil Woods (Light)",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 14002,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 256.0,
+      "y": 256.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 14,
+    "ReviveTableId": [
+      1
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_TowerDefense_Halloween",
+      "BGM_TowerDefense_Halloween_Explore"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 15,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "14006": {
+    "Id": 14006,
+    "Name": "Nightveil Woods (Dark)",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 14002,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 256.0,
+      "y": 256.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 14,
+    "ReviveTableId": [
+      1
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_TowerDefense_Halloween",
+      "BGM_TowerDefense_Halloween_Explore"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 15,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
+  "14007": {
+    "Id": 14007,
+    "Name": "Nightveil Woods (Endless)",
+    "SceneType": 2,
+    "SceneSubType": 5,
+    "ParentId": 0,
+    "IsShareParentSceneData": false,
+    "SceneResourceId": 14002,
+    "SceneUi": [
+      "mainui"
+    ],
+    "MapSize": {
+      "x": 256.0,
+      "y": 256.0
+    },
+    "MapOffset": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "MapEntryCondition": [],
+    "AudioBank": [
+      "Amb_2D_Common"
+    ],
+    "BornId": 14,
+    "ReviveTableId": [
+      1
+    ],
+    "Bgm": [
+      "BGM_FlowPath_Scene",
+      "BGM_TowerDefense_Halloween",
+      "BGM_TowerDefense_Halloween_Explore"
+    ],
+    "LoadingBgm": "",
+    "FallDis": 1.0,
+    "Weather": -1,
+    "DayAndNight": 0,
+    "CutsceneId": 0,
+    "MainUi": 15,
+    "CanChangeLayer": true,
+    "PreloadCutscenes": [],
+    "PreloadEPFlows": [],
+    "EPFlowId": 0,
+    "ShowMiniMap": 1,
+    "MiniMapRatio": 0,
+    "SubScene": [],
+    "AmbEvent": "",
+    "ReverEvent": "Reverb_Normal",
+    "DefaultSceneArea": 0,
+    "MoveSyncConfigId": 0,
+    "HaveWater": false,
+    "FootstepFxOverride": []
+  },
   "13022": {
     "Id": 13022,
     "Name": "Brutal! Field of Forgotten Illusions",
@@ -14724,7 +14985,14 @@
     "CutsceneId": 0,
     "MainUi": 2,
     "CanChangeLayer": false,
-    "PreloadCutscenes": [],
+    "PreloadCutscenes": [
+      101030608,
+      101030607,
+      101030509,
+      101030510,
+      101030511,
+      101030512
+    ],
     "PreloadEPFlows": [],
     "EPFlowId": 0,
     "ShowMiniMap": 1,
@@ -14775,7 +15043,14 @@
     "CutsceneId": 0,
     "MainUi": 2,
     "CanChangeLayer": false,
-    "PreloadCutscenes": [],
+    "PreloadCutscenes": [
+      101030608,
+      101030607,
+      101030509,
+      101030510,
+      101030511,
+      101030512
+    ],
     "PreloadEPFlows": [],
     "EPFlowId": 0,
     "ShowMiniMap": 1,
@@ -14826,7 +15101,14 @@
     "CutsceneId": 0,
     "MainUi": 2,
     "CanChangeLayer": false,
-    "PreloadCutscenes": [],
+    "PreloadCutscenes": [
+      101030608,
+      101030607,
+      101030509,
+      101030510,
+      101030511,
+      101030512
+    ],
     "PreloadEPFlows": [],
     "EPFlowId": 0,
     "ShowMiniMap": 1,

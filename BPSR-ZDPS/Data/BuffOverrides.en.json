@@ -1318,6 +1318,21 @@
         "Name": "Divine Decree - Cumulative Sentence (Phantom)",
         "Desc": "Player is marked with a large phantom tankbuster, exploding at end of duration"
     },
+    "829501":
+    {
+        "Name": "Rapid Light Arrow (Target)",
+        "Desc": "Targets the highest threat target with rapid firing arrows at the end of the duration"
+    },
+    "829526":
+    {
+        "Name": "Jump Disabled",
+        "Desc": "Jumping is disabled"
+    },
+    "829626":
+    {
+        "Name": "Meteor Barrage",
+        "Desc": "Player is marked to have multiple meteors land at their position"
+    },
     "840007":
     {
         "Name": "Tina's Party Stack Marker",
@@ -3677,6 +3692,12 @@
         "Desc": "Each use or trigger of Regen Pulse reduces the CD of Nature Ward by 2s",
         "BuffType": 1
     },
+    "2202511":
+    {
+        "Name": "Swift Shelter (Buff)",
+        "Desc": "Each use or trigger of Regen Pulse reduces the CD of Nature Ward by 2s",
+        "BuffType": 1
+    },
     "2202520":
     {
         "Name": "Pulse Retrospect",
@@ -5996,6 +6017,12 @@
     "2207280":
     {
         "Name": "Critical Acclaim",
+        "Desc": "During Center Stage, triggering Encore Strings has a 30% chance to grant Passion Surge",
+        "BuffType": 1
+    },
+    "2207281":
+    {
+        "Name": "Critical Acclaim (Buff)",
         "Desc": "During Center Stage, triggering Encore Strings has a 30% chance to grant Passion Surge",
         "BuffType": 1
     },
@@ -9678,6 +9705,24 @@
         "Desc": "Every few seconds, next Performance Passion spent is refunded",
         "BuffType": 1
     },
+    "3057540":
+    {
+        "Name": "Beat Performer Singularity X1",
+        "Desc": "During Center Stage, Rhapsody of Flame is cast automatically.\nHaste increases CD Speed",
+        "BuffType": 1
+    },
+    "3057541":
+    {
+        "Name": "Beat Performer Singularity X1 (Buff)",
+        "Desc": "During Center Stage, Rhapsody of Flame is cast automatically",
+        "BuffType": 1
+    },
+    "3057550":
+    {
+        "Name": "Beat Performer Singularity X2",
+        "Desc": "When Heroic Melody is cast, Encore's CD is reduced.\nEffect applied by Finale Command is doubled when applied to self",
+        "BuffType": 1
+    },
     "3057560":
     {
         "Name": "Beat Performer Singularity X3",
@@ -9820,6 +9865,12 @@
     {
         "Name": "Stasis X3",
         "Desc": "When HP falls below threshold, gain DMG Reduction for a few seconds",
+        "BuffType": 1
+    },
+    "3059301":
+    {
+        "Name": "Stasis X3 (Buff)",
+        "Desc": "DMG Reduction",
         "BuffType": 1
     },
     "3059310":
@@ -10190,6 +10241,12 @@
     "3210300":
     {
         "Name": "Arcane! Breath of Illusions Passive",
+        "Desc": "",
+        "BuffType": 1
+    },
+    "3210301":
+    {
+        "Name": "Arcane! Breath of Illusions (Shield)",
         "Desc": "",
         "BuffType": 1
     }

@@ -617,14 +617,32 @@
     "LimitTime": 600,
     "ScoreRank": []
   },
+  "14003": {
+    "DungeonId": 14003,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
   "1723": {
     "DungeonId": 1723,
     "BaseRatio": 100,
     "LimitTime": 510,
     "ScoreRank": []
   },
+  "14004": {
+    "DungeonId": 14004,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
   "6611": {
     "DungeonId": 6611,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "14005": {
+    "DungeonId": 14005,
     "BaseRatio": 100,
     "LimitTime": -1,
     "ScoreRank": []
@@ -635,8 +653,20 @@
     "LimitTime": -1,
     "ScoreRank": []
   },
+  "14006": {
+    "DungeonId": 14006,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
   "6614": {
     "DungeonId": 6614,
+    "BaseRatio": 100,
+    "LimitTime": -1,
+    "ScoreRank": []
+  },
+  "14007": {
+    "DungeonId": 14007,
     "BaseRatio": 100,
     "LimitTime": -1,
     "ScoreRank": []

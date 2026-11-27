@@ -3263,8 +3263,13 @@
     },
     "829520":
     {
-        "Name": "Light Spear Explosion",
+        "Name": "Light Spear Explosion (DoT)",
         "Desc": "Lampsis"
+    },
+    "829623":
+    {
+        "Name": "Maelstrom",
+        "Desc": "Lampsis: Midnight Sun"
     },
     "829710":
     {
@@ -5949,6 +5954,11 @@
         "Name": "Shield Knight Reality X5",
         "Desc": "Sacred Blade triggered from Shield Knight Reality X5"
     },
+    "3054540":
+    {
+        "Name": "Shield Knight Singularity X1",
+        "Desc": "If DMG taken exceeds 50% of Max HP, heals 30% of Max HP from Shield Knight Singularity X1"
+    },
     "3055530":
     {
         "Name": "Heavy Guardian Inspiration X8",
@@ -6773,14 +6783,29 @@
         "Name": "Engram Orb Repulse",
         "Desc": "Cursed Radiant Tomb"
     },
+    "3395155":
+    {
+        "Name": "Rapid Light Arrow",
+        "Desc": "Lampsis"
+    },
     "3395156":
     {
         "Name": "Light Spear",
         "Desc": "Lampsis"
     },
+    "3395157":
+    {
+        "Name": "Light Spear Explosion",
+        "Desc": "Lampsis"
+    },
     "3395162":
     {
         "Name": "Flash Pursuit AOE",
+        "Desc": "Lampsis"
+    },
+    "3395163":
+    {
+        "Name": "Triple Light Blade Cleave",
         "Desc": "Lampsis"
     },
     "3395170":
@@ -7604,6 +7629,11 @@
         "Name": "Void Traversal (Right Hand)",
         "Desc": "Lampsis: Polar Night"
     },
+    "10360003":
+    {
+        "Name": "Void Explosion Raidwide",
+        "Desc": "Lampsis: Polar Night"
+    },
     "10360004":
     {
         "Name": "Summon Black Hole",
@@ -7632,6 +7662,16 @@
     "10360096":
     {
         "Name": "Black Hole AOE",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "10360098":
+    {
+        "Name": "Dark Celestial Body Cleave",
+        "Desc": "Lampsis: Polar Night"
+    },
+    "10360099":
+    {
+        "Name": "Light Celestial Body Cleave",
         "Desc": "Lampsis: Polar Night"
     },
     "11010101":

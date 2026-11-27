@@ -3412,8 +3412,7 @@
       401,
       402,
       403,
-      999,
-      119
+      999
     ],
     "AffixPool": 0,
     "TimerAffix": [],
@@ -4403,8 +4402,7 @@
       401,
       402,
       403,
-      999,
-      119
+      999
     ],
     "AffixPool": 0,
     "TimerAffix": [],
@@ -7084,8 +7082,7 @@
       401,
       402,
       403,
-      999,
-      119
+      999
     ],
     "AffixPool": 0,
     "TimerAffix": [],
@@ -7596,8 +7593,7 @@
       401,
       402,
       403,
-      999,
-      119
+      999
     ],
     "AffixPool": 0,
     "TimerAffix": [],
@@ -15746,8 +15742,7 @@
       401,
       402,
       403,
-      999,
-      119
+      999
     ],
     "AffixPool": 0,
     "TimerAffix": [],
@@ -16174,8 +16169,7 @@
       401,
       402,
       403,
-      999,
-      119
+      999
     ],
     "AffixPool": 0,
     "TimerAffix": [],
@@ -24184,6 +24178,416 @@
     "ActiveStateTime": 0,
     "ReadyStateTime": 0,
     "PlayingStateTime": 7200,
+    "EndTime": 5,
+    "SettlementStateTime": 300,
+    "ExitTransferType": 0,
+    "Affix": [],
+    "AffixPool": 0,
+    "TimerAffix": [],
+    "AttrGrowRangeBuff": false,
+    "DungeonsAttrGrowRange": 0,
+    "DeathReleaseTime": 0,
+    "RecommendFightValue": 0,
+    "AssessId": 0,
+    "AffixEntityAttrId": 0,
+    "AssitNumber": [],
+    "IsShowFakeAttr": false,
+    "CanRide": false,
+    "IsDpsTrackerOn": false,
+    "CanSummoned": 0,
+    "ItemTempId": [
+      3001,
+      3002,
+      3003
+    ],
+    "KickTime": 5,
+    "DamageShow": 1
+  },
+  "14003": {
+    "Id": 14003,
+    "Name": "Nightveil Woods (Ice)",
+    "Content": "Mildly Unstable Engram. There are 30 waves of monster attacks. Clear all for extra rewards. <br><br><style=\"tipsYellow\">Tips: Many monsters have Ice Resistance; Burn Guide is recommended.</style>",
+    "DungeonTypeName": "",
+    "FunctionID": 820101,
+    "PlayType": 21,
+    "SceneID": 14003,
+    "Condition": [
+      [
+        9,
+        41132
+      ]
+    ],
+    "LimitedNum": [
+      1,
+      1
+    ],
+    "TeamType": 0,
+    "SingleAiCondition": [],
+    "SingleModeLimitNum": [],
+    "SingleAiMode": 0,
+    "SingleModeDungeonId": 0,
+    "SingleAwardCounterId": 0,
+    "ItemConsume": [],
+    "DungeonsLimit": [],
+    "IgnoreDungeonCheck": false,
+    "MonsterGS": 0,
+    "MonsterLv": [
+      60,
+      114003
+    ],
+    "Season": [],
+    "SeasonLv": [],
+    "SeasonRank": [],
+    "IsLoadRank": false,
+    "ShowResultHudType": 2,
+    "ResultCurscenePos": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    "ExploreConfig": [],
+    "ExploreAward": [],
+    "HideQuest": 1,
+    "DungeonTarget": [],
+    "FirstPassAward": [],
+    "PassAward": [
+      17003091
+    ],
+    "CountLimit": 0,
+    "ExtraAward": 0,
+    "FailText": "",
+    "DisableTransport": 0,
+    "ActiveStateTime": 0,
+    "ReadyStateTime": 0,
+    "PlayingStateTime": 999999,
+    "EndTime": 5,
+    "SettlementStateTime": 300,
+    "ExitTransferType": 0,
+    "Affix": [],
+    "AffixPool": 0,
+    "TimerAffix": [],
+    "AttrGrowRangeBuff": false,
+    "DungeonsAttrGrowRange": 0,
+    "DeathReleaseTime": 0,
+    "RecommendFightValue": 0,
+    "AssessId": 0,
+    "AffixEntityAttrId": 0,
+    "AssitNumber": [],
+    "IsShowFakeAttr": false,
+    "CanRide": false,
+    "IsDpsTrackerOn": false,
+    "CanSummoned": 0,
+    "ItemTempId": [
+      3001,
+      3002,
+      3003
+    ],
+    "KickTime": 5,
+    "DamageShow": 1
+  },
+  "14004": {
+    "Id": 14004,
+    "Name": "Nightveil Woods (Fire)",
+    "Content": "Mildly Unstable Engram. There are 30 waves of monster attacks. Clear all for extra rewards. <br><br><style=\"tipsYellow\">Tips: Many monsters have Fire Resistance; Cold Stream Guide is recommended.</style>",
+    "DungeonTypeName": "",
+    "FunctionID": 820101,
+    "PlayType": 21,
+    "SceneID": 14004,
+    "Condition": [
+      [
+        9,
+        41132
+      ]
+    ],
+    "LimitedNum": [
+      1,
+      1
+    ],
+    "TeamType": 0,
+    "SingleAiCondition": [],
+    "SingleModeLimitNum": [],
+    "SingleAiMode": 0,
+    "SingleModeDungeonId": 0,
+    "SingleAwardCounterId": 0,
+    "ItemConsume": [],
+    "DungeonsLimit": [],
+    "IgnoreDungeonCheck": false,
+    "MonsterGS": 0,
+    "MonsterLv": [
+      60,
+      114003
+    ],
+    "Season": [],
+    "SeasonLv": [],
+    "SeasonRank": [],
+    "IsLoadRank": false,
+    "ShowResultHudType": 2,
+    "ResultCurscenePos": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    "ExploreConfig": [],
+    "ExploreAward": [],
+    "HideQuest": 1,
+    "DungeonTarget": [],
+    "FirstPassAward": [],
+    "PassAward": [
+      17003091
+    ],
+    "CountLimit": 0,
+    "ExtraAward": 0,
+    "FailText": "",
+    "DisableTransport": 0,
+    "ActiveStateTime": 0,
+    "ReadyStateTime": 0,
+    "PlayingStateTime": 999999,
+    "EndTime": 5,
+    "SettlementStateTime": 300,
+    "ExitTransferType": 0,
+    "Affix": [],
+    "AffixPool": 0,
+    "TimerAffix": [],
+    "AttrGrowRangeBuff": false,
+    "DungeonsAttrGrowRange": 0,
+    "DeathReleaseTime": 0,
+    "RecommendFightValue": 0,
+    "AssessId": 0,
+    "AffixEntityAttrId": 0,
+    "AssitNumber": [],
+    "IsShowFakeAttr": false,
+    "CanRide": false,
+    "IsDpsTrackerOn": false,
+    "CanSummoned": 0,
+    "ItemTempId": [
+      3001,
+      3002,
+      3003
+    ],
+    "KickTime": 5,
+    "DamageShow": 1
+  },
+  "14005": {
+    "Id": 14005,
+    "Name": "Nightveil Woods (Light)",
+    "Content": "Mildly Unstable Engram. There are 30 waves of monster attacks. Clear all for extra rewards. <br><br><style=\"tipsYellow\">Tips: Many monsters have Light Resistance; Specter Parade Guide is recommended.</style>",
+    "DungeonTypeName": "",
+    "FunctionID": 820101,
+    "PlayType": 21,
+    "SceneID": 14005,
+    "Condition": [
+      [
+        9,
+        41133
+      ]
+    ],
+    "LimitedNum": [
+      1,
+      1
+    ],
+    "TeamType": 0,
+    "SingleAiCondition": [],
+    "SingleModeLimitNum": [],
+    "SingleAiMode": 0,
+    "SingleModeDungeonId": 0,
+    "SingleAwardCounterId": 0,
+    "ItemConsume": [],
+    "DungeonsLimit": [],
+    "IgnoreDungeonCheck": false,
+    "MonsterGS": 0,
+    "MonsterLv": [
+      60,
+      114003
+    ],
+    "Season": [],
+    "SeasonLv": [],
+    "SeasonRank": [],
+    "IsLoadRank": false,
+    "ShowResultHudType": 2,
+    "ResultCurscenePos": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    "ExploreConfig": [],
+    "ExploreAward": [],
+    "HideQuest": 1,
+    "DungeonTarget": [],
+    "FirstPassAward": [],
+    "PassAward": [
+      17003091
+    ],
+    "CountLimit": 0,
+    "ExtraAward": 0,
+    "FailText": "",
+    "DisableTransport": 0,
+    "ActiveStateTime": 0,
+    "ReadyStateTime": 0,
+    "PlayingStateTime": 999999,
+    "EndTime": 5,
+    "SettlementStateTime": 300,
+    "ExitTransferType": 0,
+    "Affix": [],
+    "AffixPool": 0,
+    "TimerAffix": [],
+    "AttrGrowRangeBuff": false,
+    "DungeonsAttrGrowRange": 0,
+    "DeathReleaseTime": 0,
+    "RecommendFightValue": 0,
+    "AssessId": 0,
+    "AffixEntityAttrId": 0,
+    "AssitNumber": [],
+    "IsShowFakeAttr": false,
+    "CanRide": false,
+    "IsDpsTrackerOn": false,
+    "CanSummoned": 0,
+    "ItemTempId": [
+      3001,
+      3002,
+      3003
+    ],
+    "KickTime": 5,
+    "DamageShow": 1
+  },
+  "14006": {
+    "Id": 14006,
+    "Name": "Nightveil Woods (Dark)",
+    "Content": "Mildly Unstable Engram. There are 30 waves of monster attacks. Clear all for extra rewards. <br><br><style=\"tipsYellow\">Tips: Monsters have random Resistances; choose your Guide wisely.</style>",
+    "DungeonTypeName": "",
+    "FunctionID": 820101,
+    "PlayType": 21,
+    "SceneID": 14006,
+    "Condition": [
+      [
+        9,
+        41133
+      ]
+    ],
+    "LimitedNum": [
+      1,
+      1
+    ],
+    "TeamType": 0,
+    "SingleAiCondition": [],
+    "SingleModeLimitNum": [],
+    "SingleAiMode": 0,
+    "SingleModeDungeonId": 0,
+    "SingleAwardCounterId": 0,
+    "ItemConsume": [],
+    "DungeonsLimit": [],
+    "IgnoreDungeonCheck": false,
+    "MonsterGS": 0,
+    "MonsterLv": [
+      60,
+      114003
+    ],
+    "Season": [],
+    "SeasonLv": [],
+    "SeasonRank": [],
+    "IsLoadRank": false,
+    "ShowResultHudType": 2,
+    "ResultCurscenePos": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    "ExploreConfig": [],
+    "ExploreAward": [],
+    "HideQuest": 1,
+    "DungeonTarget": [],
+    "FirstPassAward": [],
+    "PassAward": [
+      17003091
+    ],
+    "CountLimit": 0,
+    "ExtraAward": 0,
+    "FailText": "",
+    "DisableTransport": 0,
+    "ActiveStateTime": 0,
+    "ReadyStateTime": 0,
+    "PlayingStateTime": 999999,
+    "EndTime": 5,
+    "SettlementStateTime": 300,
+    "ExitTransferType": 0,
+    "Affix": [],
+    "AffixPool": 0,
+    "TimerAffix": [],
+    "AttrGrowRangeBuff": false,
+    "DungeonsAttrGrowRange": 0,
+    "DeathReleaseTime": 0,
+    "RecommendFightValue": 0,
+    "AssessId": 0,
+    "AffixEntityAttrId": 0,
+    "AssitNumber": [],
+    "IsShowFakeAttr": false,
+    "CanRide": false,
+    "IsDpsTrackerOn": false,
+    "CanSummoned": 0,
+    "ItemTempId": [
+      3001,
+      3002,
+      3003
+    ],
+    "KickTime": 5,
+    "DamageShow": 1
+  },
+  "14007": {
+    "Id": 14007,
+    "Name": "Nightveil Woods (Endless)",
+    "Content": "Extremely Unstable Engram. Monsters invade endlessly without stop.",
+    "DungeonTypeName": "",
+    "FunctionID": 820101,
+    "PlayType": 21,
+    "SceneID": 14007,
+    "Condition": [
+      [
+        9,
+        41134
+      ]
+    ],
+    "LimitedNum": [
+      1,
+      1
+    ],
+    "TeamType": 0,
+    "SingleAiCondition": [],
+    "SingleModeLimitNum": [],
+    "SingleAiMode": 0,
+    "SingleModeDungeonId": 0,
+    "SingleAwardCounterId": 0,
+    "ItemConsume": [],
+    "DungeonsLimit": [],
+    "IgnoreDungeonCheck": false,
+    "MonsterGS": 0,
+    "MonsterLv": [
+      60,
+      114003
+    ],
+    "Season": [],
+    "SeasonLv": [],
+    "SeasonRank": [],
+    "IsLoadRank": false,
+    "ShowResultHudType": 2,
+    "ResultCurscenePos": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    "ExploreConfig": [],
+    "ExploreAward": [],
+    "HideQuest": 1,
+    "DungeonTarget": [],
+    "FirstPassAward": [],
+    "PassAward": [
+      17003120
+    ],
+    "CountLimit": 0,
+    "ExtraAward": 0,
+    "FailText": "",
+    "DisableTransport": 0,
+    "ActiveStateTime": 0,
+    "ReadyStateTime": 0,
+    "PlayingStateTime": 999999,
     "EndTime": 5,
     "SettlementStateTime": 300,
     "ExitTransferType": 0,
