@@ -17,7 +17,9 @@ namespace BPSR_ZDPS.Windows
 
         static string Language;
         static int PreviousSelectedNetworkDeviceIdx = -1;
+        static string PreviousSelectedNetworkDeviceName = "";
         static int SelectedNetworkDeviceIdx = -1;
+        static string SelectedNetworkDeviceName = "";
         static bool normalizeMeterContributions;
         static bool useShortWidthNumberFormatting;
         static bool showClassIconsInMeters;
@@ -155,11 +157,13 @@ namespace BPSR_ZDPS.Windows
                     if (NetworkDevices[i].Name == Settings.Instance.NetCaptureDeviceName)
                     {
                         SelectedNetworkDeviceIdx = i;
+                        SelectedNetworkDeviceName = NetworkDevices[i].Name;
                         if (PreviousSelectedNetworkDeviceIdx == -1)
                         {
                             // This is the first time we're opening the menu, so let's set the default previous value as well
                             // Doing so prevents the capture from being restarted on first save
                             PreviousSelectedNetworkDeviceIdx = i;
+                            PreviousSelectedNetworkDeviceName = NetworkDevices[i].Name;
                         }
                     }
                 }
@@ -169,6 +173,7 @@ namespace BPSR_ZDPS.Windows
             if (SelectedNetworkDeviceIdx == -1 && NetworkDevices?.Count > 0)
             {
                 SelectedNetworkDeviceIdx = 0;
+                SelectedNetworkDeviceName = NetworkDevices[0].Name;
             }
 
             // Disable all HotKeys while we're in the Settings menu to prevent unexpected behavior when rebinding
@@ -314,6 +319,7 @@ namespace BPSR_ZDPS.Windows
                                 if (ImGui.Selectable($"{friendlyName}{device.Description}\n{device.Name}", isSelected))
                                 {
                                     SelectedNetworkDeviceIdx = i;
+                                    SelectedNetworkDeviceName = device.Name;
                                 }
 
                                 if (isSelected)
@@ -337,6 +343,25 @@ namespace BPSR_ZDPS.Windows
                             if (NetworkDevices != null)
                             {
                                 NetworkDevices.Refresh();
+                                if (NetworkDevices.Count > 0)
+                                {
+                                    bool foundNewIdx = false;
+                                    for (int i = 0; i < NetworkDevices.Count; i++)
+                                    {
+                                        if (SelectedNetworkDeviceName == NetworkDevices[i].Name)
+                                        {
+                                            SelectedNetworkDeviceIdx = i;
+                                            foundNewIdx = true;
+                                        }
+                                    }
+
+                                    if (!foundNewIdx)
+                                    {
+                                        // The device previously selected is now removed, we'll default to first device in the list
+                                        SelectedNetworkDeviceIdx = 0;
+                                        SelectedNetworkDeviceName = NetworkDevices[0].Name;
+                                    }
+                                }
                             }
                         }
 
@@ -1796,6 +1821,7 @@ namespace BPSR_ZDPS.Windows
                 if (ImGui.Button(AppStrings.GetLocalized("Settings_CloseBtn"), new Vector2(buttonWidth, 0)))
                 {
                     SelectedNetworkDeviceIdx = PreviousSelectedNetworkDeviceIdx;
+                    SelectedNetworkDeviceName = PreviousSelectedNetworkDeviceName;
 
                     Load();
 
@@ -1960,9 +1986,10 @@ namespace BPSR_ZDPS.Windows
         private static void Save(MainWindow mainWindow)
         {
             var io = ImGui.GetIO();
-            if (SelectedNetworkDeviceIdx != PreviousSelectedNetworkDeviceIdx || GameCapturePreference != Settings.Instance.GameCapturePreference)
+            if (SelectedNetworkDeviceIdx != PreviousSelectedNetworkDeviceIdx || SelectedNetworkDeviceName != PreviousSelectedNetworkDeviceName || GameCapturePreference != Settings.Instance.GameCapturePreference)
             {
                 PreviousSelectedNetworkDeviceIdx = SelectedNetworkDeviceIdx;
+                PreviousSelectedNetworkDeviceName = SelectedNetworkDeviceName;
 
                 MessageManager.StopCapturing();
 
