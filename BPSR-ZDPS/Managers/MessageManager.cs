@@ -2019,7 +2019,10 @@ namespace BPSR_ZDPS
                                                     }
                                                     else
                                                     {
-                                                        Log.Debug($"Encounter Death ({foundDeathMarkerUUID}) or Revive ({foundReviveMarkerUUID}) buff found but Season 4 Raid timeout was not in range: {DateTime.Now} - {history.Value} : {duration}");
+                                                        if (Settings.Instance.EnableAdditionalWipeDebugLogging)
+                                                        {
+                                                            Log.Debug($"Encounter Death ({foundDeathMarkerUUID}) or Revive ({foundReviveMarkerUUID}) buff found but Season 4 Raid timeout was not in range: {DateTime.Now} - {history.Value} : {duration}");
+                                                        }
                                                     }
                                                 }
                                             }
@@ -2057,7 +2060,10 @@ namespace BPSR_ZDPS
                             }
                             else
                             {
-                                Log.Debug($"Encounter Wipe Reset buff was found but delay has not completed ({delayTime} > {currentEncounterDuration.TotalSeconds})");
+                                if (Settings.Instance.EnableAdditionalWipeDebugLogging)
+                                {
+                                    Log.Debug($"Encounter Wipe Reset buff was found but delay has not completed ({delayTime} > {currentEncounterDuration.TotalSeconds})");
+                                }
                             }
                         }
                     }

@@ -107,6 +107,7 @@ public class Settings
     public bool SplitSeason4RaidWipesWorkaround { get; set; } = true;
     public bool SplitSeason4RaidWipes2Workaround { get; set; } = true;
     public bool SplitDarkMistFortressMobbingPhaseWorkaround { get; set; } = true;
+    public bool EnableAdditionalWipeDebugLogging { get; set; } = false;
 
     public ChatSettings Chat { get; set; } = new();
 

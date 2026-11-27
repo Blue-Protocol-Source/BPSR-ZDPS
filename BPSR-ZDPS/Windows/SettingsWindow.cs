@@ -116,6 +116,7 @@ namespace BPSR_ZDPS.Windows
         static bool splitSeason4RaidWipesWorkaround;
         static bool splitSeason4RaidWipes2Workaround;
         static bool splitDarkMistFortressMobbingPhaseWorkaround;
+        static bool enableAdditionalWipeDebugLogging;
 
         // External Settings
         static bool externalBPTimerEnabled;
@@ -1797,6 +1798,16 @@ namespace BPSR_ZDPS.Windows
                         ImGui.EndDisabled();
                         ImGui.Unindent();
 
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.TextUnformatted("Enable Additional Wipe Debug Logging: ");
+                        ImGui.SameLine();
+                        ImGui.Checkbox("##EnableAdditionalWipeDebugLogging", ref enableAdditionalWipeDebugLogging);
+                        ImGui.Indent();
+                        ImGui.BeginDisabled(true);
+                        ImGui.TextWrapped("When enabled, writes additional debug logging data to try and help identify why a wipe did not get detected.");
+                        ImGui.EndDisabled();
+                        ImGui.Unindent();
+
                         ImGui.EndChild();
                         ImGui.EndTabItem();
                     }
@@ -1976,6 +1987,7 @@ namespace BPSR_ZDPS.Windows
             splitSeason4RaidWipesWorkaround = Settings.Instance.SplitSeason4RaidWipesWorkaround;
             splitSeason4RaidWipes2Workaround = Settings.Instance.SplitSeason4RaidWipes2Workaround;
             splitDarkMistFortressMobbingPhaseWorkaround = Settings.Instance.SplitDarkMistFortressMobbingPhaseWorkaround;
+            enableAdditionalWipeDebugLogging = Settings.Instance.EnableAdditionalWipeDebugLogging;
 
             // External
             externalBPTimerEnabled = Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled;
@@ -2111,6 +2123,7 @@ namespace BPSR_ZDPS.Windows
             Settings.Instance.SplitSeason4RaidWipesWorkaround = splitSeason4RaidWipesWorkaround;
             Settings.Instance.SplitSeason4RaidWipes2Workaround = splitSeason4RaidWipes2Workaround;
             Settings.Instance.SplitDarkMistFortressMobbingPhaseWorkaround = splitDarkMistFortressMobbingPhaseWorkaround;
+            Settings.Instance.EnableAdditionalWipeDebugLogging = enableAdditionalWipeDebugLogging;
 
             // External
             Settings.Instance.External.BPTimerSettings.ExternalBPTimerEnabled = externalBPTimerEnabled;
